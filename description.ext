@@ -1,0 +1,83 @@
+#include "Functions\warlords_constants.inc"
+
+onLoadName = "Warlords Redux 0.57";
+dev = "Jezuro";
+author = "Jezuro";
+
+respawn = 3;
+respawnDelay = 20;
+respawnOnStart = -1;
+
+disabledAI = 1;
+
+class Header
+{
+	gameType = Warlords;
+	minPlayers = 1;
+	maxPlayers = 48;
+};
+
+onPauseScript[] = {BIS_fnc_WL2_onPause};
+
+#include "multiplayerSecurity.inc"
+#include "requisitions.inc"
+
+corpseManagerMode = 1;
+corpseLimit = 50;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 1800;
+
+wreckManagerMode = 1;
+wreckLimit = 50;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 120;
+
+minPlayerDistance = WL_ASSET_REMOVAL_SAFEZONE;
+
+class CfgDebriefing
+{
+	class BIS_WLVictoryGUER
+	{
+		title = $STR_A3_endgame_debriefing_victory;
+		subtitle = $STR_A3_WL_game_over_victory;
+		picture = "n_installation";
+		pictureBackground = "\A3\Map_Altis\data\ui_Altis_ca.paa";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class BIS_WLDefeatGUER
+	{
+		title = $STR_A3_endgame_debriefing_defeat;
+		subtitle = $STR_A3_WL_game_over_loss;
+		picture = "n_installation";
+		pictureBackground = "\A3\Map_Altis\data\ui_Altis_ca.paa";
+		pictureColor[] = {0,0.5,0,1};
+	};
+};
+
+class Params
+{
+	class BIS_WL_savingEnabled
+	{
+		title = $STR_A3_WL_param_saving;
+		values[] = {1, 0};
+		texts[] = {$STR_DISP_OPT_ENABLED, $STR_DISP_OPT_DISABLED};
+		default = 0;
+		isBool = 1;
+	};
+	
+	class BIS_WL_zoneRestrictionSetting
+	{
+		title = $STR_A3_mdl_supp_zonerest_name;
+		values[] = {0, 1};
+		texts[] = {$STR_A3_to_zoneprotection7, $STR_A3_to_zoneprotection9};
+		default = 0;
+	};
+	
+	class BIS_WL_fogOfWar
+	{
+		title = $STR_A3_WL_param_fog_of_war;
+		values[] = {0, 1, 2};
+		texts[] = {$STR_DISP_OPT_DISABLED, $STR_A3_WL_param_fog_of_war_value1, $STR_A3_WL_param_fog_of_war_value2};
+		default = 1;
+	};
+};
