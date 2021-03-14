@@ -116,7 +116,7 @@ if (isPlayer _owner) then {
 										private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
 										{
 											_asset removeMagazineTurret [_x, _turret];
-											_asset addMagazineTurret [_x, _turret];
+											_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
 										} forEach _mags;
 									} forEach allTurrets _asset;
 									_asset selectWeapon _curWeapon;
