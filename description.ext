@@ -10,7 +10,31 @@ respawnOnStart = -1;
 
 disabledAI = 1;
 
+/*******************************START CUSTOM CONTENT HERE****************************/
+
 enableDebugConsole[] = {"76561198034106257"}; //Admin control
+
+//GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
+
+		class CfgFunctions
+		{
+
+			#include "scripts\GOM\functions\GOM_fnc_functions.hpp"
+
+		};
+
+
+		class CfgCommunicationMenu
+		{
+
+			#include "scripts\GOM\functions\GOM_fnc_aircraftLoadoutMenu.hpp"
+
+		};
+
+		#include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
+		#include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
+
+/*******************************END OF CUSTOM CONTENT HERE****************************/
 
 class Header
 {

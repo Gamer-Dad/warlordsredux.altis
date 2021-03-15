@@ -112,12 +112,25 @@ if (isPlayer _owner) then {
 								if ((_asset getVariable "BIS_WL_nextRearm") <= WL_SYNCED_TIME) then {
 									_curWeapon = currentWeapon _asset;
 									{
-										private _turret = _x;
-										private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
-										{
-											_asset removeMagazineTurret [_x, _turret];
-											_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
-										} forEach _mags;
+										
+										if (_asset isKindOf "Air") then {
+												
+											[player] spawn GOM_fnc_aircraftLoadout;	
+
+										} else {
+
+												private _turret = _x;
+												private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
+												{
+													
+													  	_asset removeMagazineTurret [_x, _turret];
+														_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
+															
+
+												 
+
+												} forEach _mags;
+										};	
 									} forEach allTurrets _asset;
 									_asset selectWeapon _curWeapon;
 									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM];
