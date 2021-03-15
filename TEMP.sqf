@@ -2,7 +2,7 @@ BIS_WL_initModule setVariable ["BIS_WL_combatantsPreset", 0];
 BIS_WL_initModule setVariable ["BIS_WL_faction_WEST", "BLU_F"];
 BIS_WL_initModule setVariable ["BIS_WL_faction_EAST", "OPF_F"];
 BIS_WL_initModule setVariable ["BIS_WL_faction_GUER", "IND_F"];
-BIS_WL_initModule setVariable ["BIS_WL_startCP", 50000];
+BIS_WL_initModule setVariable ["BIS_WL_startCP", 500];
 BIS_WL_initModule setVariable ["BIS_WL_targetVotingDuration", 15];
 BIS_WL_initModule setVariable ["BIS_WL_allowAIVoting", FALSE];
 BIS_WL_initModule setVariable ["BIS_WL_announcerEnabled", TRUE];
