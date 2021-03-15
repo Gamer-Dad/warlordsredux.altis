@@ -1,14 +1,16 @@
 #include "Functions\warlords_constants.inc"
 
-onLoadName = "Warlords Redux 0.57";
-dev = "Jezuro";
-author = "Jezuro";
+onLoadName = "Warlords Redux 0.57 - WSV";
+dev = "Jezuro + WSV";
+author = "Jezuro + WSV";
 
 respawn = 3;
 respawnDelay = 20;
 respawnOnStart = -1;
 
 disabledAI = 1;
+
+enableDebugConsole[] = {"76561198034106257"}; //Admin control
 
 class Header
 {
