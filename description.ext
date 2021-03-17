@@ -12,7 +12,9 @@ disabledAI = 1;
 
 /*******************************START CUSTOM CONTENT HERE****************************/
 
-enableDebugConsole[] = {"76561198034106257"}; //Admin control
+enableDebugConsole[] = {"76561198034106257", "76561198244978698", "76561198090659935", "76561198158899847"}; //Gamerdad, AN-27, Bryce/Killer, Hydroflouric Acid
+  
+
 
 //GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
 
