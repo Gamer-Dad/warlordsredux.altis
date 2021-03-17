@@ -7,7 +7,7 @@ switch (_locality) do {
 		BIS_WL_sidesArray = [WEST, EAST, RESISTANCE];
 		BIS_WL_competingSides = [[WEST, EAST], [WEST, RESISTANCE], [EAST, RESISTANCE]] # (BIS_WL_initModule getVariable ["BIS_WL_combatantsPreset", 0]);
 		BIS_WL_targetVotingDuration = BIS_WL_initModule getVariable ["BIS_WL_targetVotingDuration", 15];
-		BIS_WL_startCP = BIS_WL_initModule getVariable ["BIS_WL_startCP", 500];
+		BIS_WL_startCP = BIS_WL_initModule getVariable ["BIS_WL_startCP", 500]; //This doesn't work, look in TEMP.sqf
 		BIS_WL_fogOfWar = BIS_WL_initModule getVariable ["BIS_WL_fogOfWar", 1];
 		BIS_WL_localSide = (BIS_WL_sidesArray - BIS_WL_competingSides) # 0;
 		BIS_WL_missionEnd = FALSE;
