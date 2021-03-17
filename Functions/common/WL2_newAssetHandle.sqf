@@ -112,7 +112,8 @@ if (isPlayer _owner) then {
 								if ((_asset getVariable "BIS_WL_nextRearm") <= WL_SYNCED_TIME) then {
 									_curWeapon = currentWeapon _asset;
 									{
-										
+										/*This commented out script was the original, it had to be moved outside of the {} for jets. Script skipped over them.
+
 										if (_asset isKindOf "Air") then {
 												
 											[player] spawn GOM_fnc_aircraftLoadout;	
@@ -122,18 +123,35 @@ if (isPlayer _owner) then {
 												private _turret = _x;
 												private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
 												{
-													
+												
 													  	_asset removeMagazineTurret [_x, _turret];
 														_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
-															
-
-												 
 
 												} forEach _mags;
-										};	
+										};
+
+										*/   
+
+										
+											if (_asset isKindOf "LandVehicle") then {
+												
+												private _turret = _x;
+												private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
+												{											
+													  	_asset removeMagazineTurret [_x, _turret];
+														_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
+												} forEach _mags;
+																				 
+											};
+										
+
 									} forEach allTurrets _asset;
+
+									//The line below was moved outside the {} and rearms jets using GOMs airloadout.
+									if (_asset isKindOf "Air") then {  [player] spawn GOM_fnc_aircraftLoadout; }; 
+
 									_asset selectWeapon _curWeapon;
-									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM];
+									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM];					
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 									[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
 								} else {
