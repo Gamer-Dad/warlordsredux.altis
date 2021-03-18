@@ -47,7 +47,7 @@ class Header
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 
-#include "multiplayerSecurity.inc"
+//Disabled until needed #include "multiplayerSecurity.inc" 
 #include "requisitions.inc"
 
 corpseManagerMode = 1;

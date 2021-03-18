@@ -83,7 +83,7 @@ _shadow = if (_shadow) then {2} else {0};
 	_colorArr pushBack _baseColorHTML;
 } forEach _textArr;
 
-_textStructured = "<t size = '" + str ((1.45 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)) + "' align = 'center' shadow = '" + (str _shadow) + "'>" + _textStructured + "</t>";
+_textStructured = "<t size = '" + str ((1.01 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)) + "' align = 'center' shadow = '" + (str _shadow) + "'>" + _textStructured + "</t>";
 _textStructuredFormat = [_textStructured];
 
 _done = FALSE;
