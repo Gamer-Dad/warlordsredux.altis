@@ -4,6 +4,8 @@ params ["_displayClass"];
 
 waitUntil {!isNull WL_DISPLAY_MAIN};
 
+// OSD equals the lower right hand HUD stuff for the most part
+
 switch (_displayClass) do {
 	case "OSD": {
 		{
@@ -45,7 +47,7 @@ switch (_displayClass) do {
 		_displayW = _blockW * 180;
 		_displayH = _blockH * 54;
 		_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-		_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 100);
+		_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
 
 		_osd_cp_current ctrlSetPosition [_displayX, _displayY, _blockW * 75, _blockH * 16];
 
