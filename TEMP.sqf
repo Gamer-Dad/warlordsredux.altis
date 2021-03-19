@@ -28,7 +28,7 @@ BIS_WL_initModule setVariable ["BIS_WL_arsenalCost", 1000];
 BIS_WL_initModule setVariable ["BIS_WL_maxSubordinates", 3];
 BIS_WL_initModule setVariable ["BIS_WL_assetLimit", 10];
 BIS_WL_initModule setVariable ["BIS_WL_targetResetTimeout", 300];
-BIS_WL_initModule setVariable ["BIS_WL_baseValue", 10];
+BIS_WL_initModule setVariable ["BIS_WL_baseValue", 50]; //test to see what this changes, default value 10
 BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMin", 5];
 BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMax", -1];
 BIS_WL_initModule setVariable ["BIS_WL_scanCooldown", 90];
