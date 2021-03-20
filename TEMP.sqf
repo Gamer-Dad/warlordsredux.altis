@@ -13,8 +13,8 @@ BIS_WL_initModule setVariable ["BIS_WL_playersAlpha", 50];
 BIS_WL_initModule setVariable ["BIS_WL_markersAlpha", 50];
 BIS_WL_initModule setVariable ["BIS_WL_requisitionPreset", "['A3ReduxAll']"];
 BIS_WL_initModule setVariable ["BIS_WL_scanCost", 350];
-BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostOwned", 25];
-BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostContested", 50];
+BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostOwned", 0];
+BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostContested", 10];
 BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 500];
 BIS_WL_initModule setVariable ["BIS_WL_targetResetCost", 2000]; //default value 2000
 BIS_WL_initModule setVariable ["BIS_WL_scanEnabled", TRUE];
