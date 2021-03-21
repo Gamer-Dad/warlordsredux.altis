@@ -29,7 +29,8 @@ if (!BIS_WL_savingEnabled && isMultiplayer) then {
 	enableSaving [FALSE, FALSE];
 };
 
-setViewDistance 4000; //view distance toogle 
+//disabling this to allow script to work
+//setViewDistance 4000; 
 
 call BIS_fnc_WL2_playersListHandle;
 

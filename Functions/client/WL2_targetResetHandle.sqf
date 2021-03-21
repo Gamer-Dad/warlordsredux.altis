@@ -26,7 +26,7 @@ BIS_WL_playerSide spawn {
 			params ["_display", "_key"];
 			
 			if (_key == 29) then {BIS_WL_ctrlDown = TRUE};
-			if (_key == 44) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemOK"; player setVariable ["BIS_WL_targetResetVote", 1, TRUE]}};
+			if (_key == 21) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemOK"; player setVariable ["BIS_WL_targetResetVote", 1, TRUE]}};
 			if (_key == 49) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemFailed"; player setVariable ["BIS_WL_targetResetVote", 0, TRUE]}};
 			if (_remove) then {
 				WL_DISPLAY_MAIN displayRemoveEventHandler ["KeyDown", BIS_WL_targetResetVoteEH1];
