@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=370;
+		nextID=389;
 	};
 	class MarkerIDProvider
 	{
-		nextID=1;
+		nextID=17;
 	};
 	class Camera
 	{
-		pos[]={14170.434,46.448971,13090.125};
-		dir[]={-0.016262572,-0.49331903,-0.86969894};
-		up[]={-0.0092228279,0.86984748,-0.49323481};
-		aside[]={-0.99982697,2.1425512e-007,0.018695295};
+		pos[]={18659.986,25.196901,21774.357};
+		dir[]={-1.2363449e-007,-0.70710683,0.70710683};
+		up[]={-1.2363449e-007,0.70710671,0.70710683};
+		aside[]={1,0,1.7484557e-007};
 	};
 };
 binarizationWanted=0;
@@ -33,13 +33,14 @@ addons[]=
 	"A3_Armor_F_Gamma_APC_Wheeled_03",
 	"A3_Armor_F_EPB_APC_Tracked_03",
 	"A3_Soft_F_Beta_MRAP_03",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -89,6 +90,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item7
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -128,7 +136,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=230;
+		items=234;
 		class Item0
 		{
 			dataType="Logic";
@@ -8028,6 +8036,51 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item230
+		{
+			dataType="Marker";
+			position[]={19506.221,0,21896.172};
+			name="marker_16";
+			markerType="RECTANGLE";
+			type="rectangle";
+			fillName="SolidFull";
+			a=515.22101;
+			b=191.40401;
+			id=385;
+			atlOffset=174.30568;
+		};
+		class Item231
+		{
+			dataType="Marker";
+			position[]={19098.828,50.95842,21791.352};
+			name="marker_13";
+			text="https://discord.gg/grmzsZE4ua";
+			type="loc_Tree";
+			colorName="ColorWhite";
+			id=386;
+			atlOffset=184.14532;
+		};
+		class Item232
+		{
+			dataType="Marker";
+			position[]={19100.205,44.054199,21900.365};
+			name="marker_11";
+			text="Join our Discord for access to admins, news, and scheduled events.";
+			type="loc_Tree";
+			colorName="ColorWhite";
+			id=387;
+			atlOffset=173.05394;
+		};
+		class Item233
+		{
+			dataType="Marker";
+			position[]={19098.545,49.333008,22005.963};
+			name="marker_9";
+			text="Welcome to WarSim Vets!";
+			type="flag_USA";
+			id=388;
+			atlOffset=180.66164;
 		};
 	};
 	class Connections
