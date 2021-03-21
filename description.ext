@@ -33,6 +33,14 @@ ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
 //};
 // end view distance section, moved this down to line 48 
 
+//earplug script stuff
+class RscTitles
+{
+	#include "GF_Earplugs\GF_Earplugs_HPP.hpp"	
+};
+//end of earplug script info
+
+
 /*******************************START CUSTOM CONTENT HERE****************************/
 
 enableDebugConsole = 1;
