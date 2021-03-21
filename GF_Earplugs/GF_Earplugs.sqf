@@ -74,7 +74,7 @@ GF_Earplugs_hintSilent_info					= true;
 GF_Earplugs_systemchat_info 				= true;
 GF_Earplugs_diag_log_info 					= true;
 
-GF_Earplugs_key								= 0x07;	//	key 6
+GF_Earplugs_key								= 0xD2;	//	key insert https://community.bistudio.com/wiki/DIK_KeyCodes
 
 
 
@@ -127,7 +127,7 @@ diag_log "//________________	GF Earplugs Script - Mod initializing	_____________
 
 if (GF_Earplugs_systemchat_info) then{
 systemchat "GF Earplugs Script - Mod initialized";
-systemchat "E a r p l u g s    w i t h    k e y    6";			
+systemchat "E a r p l u g s    w i t h    i n s e r t    k e y";			
 };	
 
 if (GF_Earplugs_diag_log_info) then{
