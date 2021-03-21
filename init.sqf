@@ -100,4 +100,10 @@ BIS_fnc_WL2_zoneRestrictionHandleServer = compile preprocessFileLineNumbers "Fun
 
 endLoadingScreen;
 
+//view distance limits 
+tawvd_maxRange = 4000; //max range allowed
+tawvd_disablenone = true; //disables the disabling of grass I think
+//
+
+
 [] call BIS_fnc_WL2_initCommon;

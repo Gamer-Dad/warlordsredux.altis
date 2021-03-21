@@ -1,4 +1,7 @@
 #include "Functions\warlords_constants.inc"
+// required for view distance script
+#include "taw_vd\GUI.h"
+
 
 onLoadName = "Warlords Redux 0.57 - WSV";
 dev = "Jezuro + WSV";
@@ -10,6 +13,7 @@ respawnOnStart = -1;
 
 disabledAI = 1;
 
+//revive settings below
 ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
 ReviveUnconsciousStateMode = 0;         //0: basic, 1: advanced, 2: realistic
 ReviveRequiredTrait = 0;                //0: none, 1: medic trait is required
@@ -19,6 +23,15 @@ ReviveDelay = 15;                        //time needed to revive someone (in sec
 ReviveMedicSpeedMultiplier = 2;         //speed multiplier for revive performed by medic
 ReviveForceRespawnDelay = 3;            //time needed to perform force respawn (in secs)
 ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
+//end of revive section 
+
+// View distance script info 
+// limit settings in init.sqf
+//class CfgFunctions
+//{
+//	#include "taw_vd\CfgFunctions.hpp"
+//};
+// end view distance section, moved this down to line 48 
 
 /*******************************START CUSTOM CONTENT HERE****************************/
 
@@ -32,6 +45,7 @@ enableDebugConsole = 1;
 		{
 
 			#include "scripts\GOM\functions\GOM_fnc_functions.hpp"
+			#include "taw_vd\CfgFunctions.hpp"
 
 		};
 
