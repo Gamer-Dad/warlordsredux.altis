@@ -56,7 +56,7 @@ _log_briefing = player createDiaryRecord ["GF Earplugs Script", ["About and Cred
 <br />
 <br />
 <br /><font size='15' color='#A1D2FA'>GF Earplugs Script , mute or lower sound , with a key interaction , configurable key bindings.
-<br />Use your Earplugs with key 6
+<br />Use your Earplugs with Insert key 
 <br />
 <br />You are free to do anything but 
 <br />i would like to give me Credits for this!
