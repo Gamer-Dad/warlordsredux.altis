@@ -3,7 +3,7 @@
 
 
 
-GOM_fnc_aircraftLoadout_NeedsFuelSource = true;
+GOM_fnc_aircraftLoadout_NeedsFuelSource = false;
 //(default: true) needs fuel supply within 50m of the aircraft or functions will be unavailable
 
 GOM_fnc_aircraftLoadout_NeedsAmmoSource = true;
