@@ -58,13 +58,13 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];
 	publicVariableServer _varFormat;
-	
+	//changed pos > 5 to 2
 	_pos = position player;
 	_confirmReposition = FALSE;
 	while {!_confirmReposition} do {
-		waitUntil {player distance _pos > 5};
+		waitUntil {player distance _pos > 2}; 
 		uiSleep 1;
-		if (player distance _pos > 5) then {
+		if (player distance _pos > 2) then {
 			_confirmReposition = TRUE;
 		};
 	};
