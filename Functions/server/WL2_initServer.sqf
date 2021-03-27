@@ -17,6 +17,7 @@ WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
+//this part sets fog and rain to zero
 [] spawn {
 	while {TRUE} do {
 		_overcastPreset = random 1;

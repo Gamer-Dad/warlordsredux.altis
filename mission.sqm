@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9202.0654,93.222382,21499.801};
+		pos[]={8322.9258,1606.7963,19082.514};
 		dir[]={-0.47812432,-0.55839425,0.67793292};
 		up[]={-0.32182944,0.82957572,0.45632225};
 		aside[]={0.81720442,0,0.57634807};
@@ -8466,11 +8466,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=126;
+			nextID=127;
 		};
 		class Links
 		{
-			items=126;
+			items=127;
 			class Item0
 			{
 				linkID=0;
@@ -9726,6 +9726,16 @@ class Mission
 				linkID=125;
 				item0=46;
 				item1=45;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item126
+			{
+				linkID=126;
+				item0=11;
+				item1=34;
 				class CustomData
 				{
 					type="Sync";
