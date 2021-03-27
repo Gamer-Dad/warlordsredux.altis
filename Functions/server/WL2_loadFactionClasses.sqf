@@ -135,7 +135,7 @@ BIS_WL_factionVehicleClasses = [
 		"I_LT_01_AT_F",				100, //Nyx AT, default 50
 		"I_LT_01_cannon_F",			50, //Nyx 20mm, default 50
 		"I_MRAP_03_gmg_F",			50, //strider GMG, default 100
-		"I_MRAP_03_hmg_F",			50, //strider HMG, default 100
+		"I_MRAP_03_hmg_F",			51, //strider HMG, default 100
 		"I_MBT_03_cannon_F",			50 //Kuma, default 25
 	]
 ];
