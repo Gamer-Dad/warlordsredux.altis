@@ -21,6 +21,9 @@ if !(isNull _instigator) then {
 			};
 			if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 				_reward = round ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "cost")) / 10000);
+				if(_reward == 4) then {
+					_reward=250;
+				};
 				if (_responsibleLeader == player) then {
 					systemChat format [localize "STR_A3_WL_award_kill", _reward];
 				};

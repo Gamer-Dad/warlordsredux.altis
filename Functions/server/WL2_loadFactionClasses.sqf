@@ -73,27 +73,27 @@ BIS_WL_factionUnitClasses = [
 		"O_sniper_F",			10 //sniper, default 10
 	],
 	[
-		"I_soldier_F",			100, //rifleman, default 100
+		"I_soldier_F",			20, //rifleman, default 100
 		"I_Soldier_GL_F",		80, //Grenadir, default 80
 		"I_Soldier_AR_F",		70, //Autorifleman, default 70
-		"I_Soldier_AAR_F",		70, //Asst Autorifleman, default 70
-		"I_Soldier_TL_F",		30, //Team leader. default 30
-		"I_Soldier_A_F",		20, //Ammo, default 20
-		"I_Soldier_M_F",		20, //Marksman, default 20
-		"I_Soldier_LAT_F",		20, //PCML, default 20
-		"I_Soldier_LAT2_F",		20, //MAAWS? , deault 20
+		"I_Soldier_AAR_F",		15, //Asst Autorifleman, default 70
+		"I_Soldier_TL_F",		5, //Team leader. default 30
+		"I_Soldier_A_F",		5, //Ammo, default 20
+		"I_Soldier_M_F",		100, //Marksman, default 20
+		"I_Soldier_LAT_F",		30, //PCML, default 20
+		"I_Soldier_LAT2_F",		30, //MAAWS? , deault 20
 		"I_Soldier_SL_F",		15, //Squad leader, default 15
-		"I_Soldier_AAT_F",		15, //Asst AT, default 15
-		"I_Soldier_AAA_F",		15, //Asst AA, default 15
-		"I_Soldier_AT_F",		15, //Titan AT, default 15
-		"I_Soldier_AA_F",		15, //Titan AA, default 15
-		"I_medic_F",			15, //Medic, default 15
-		"I_Soldier_repair_F",	15, //Repair, default 15
-		"I_engineer_F",			15, //engineer, default 15
-		"I_Soldier_exp_F",		10, //APERS, default 10
-		"I_officer_F",			10, //officer, default 10
-		"I_Spotter_F",			10, //spotter, default 10
-		"I_Sniper_F",			10 //sniper, default 10
+		"I_Soldier_AAT_F",		5, //Asst AT, default 15
+		"I_Soldier_AAA_F",		5, //Asst AA, default 15
+		"I_Soldier_AT_F",		55, //Titan AT, default 15
+		"I_Soldier_AA_F",		55, //Titan AA, default 15
+		"I_medic_F",			70, //Medic, default 15
+		"I_Soldier_repair_F",	5, //Repair, default 15
+		"I_engineer_F",			5, //engineer, default 15
+		"I_Soldier_exp_F",		5, //APERS, default 10
+		"I_officer_F",			5, //officer, default 10
+		"I_Spotter_F",			5, //spotter, default 10
+		"I_Sniper_F",			5 //sniper, default 10
 	]
 ];
 
@@ -129,14 +129,14 @@ BIS_WL_factionVehicleClasses = [
 	],
 	[
 		
-		"I_LT_01_AA_F",				50, //Nyx AA, default 50
+		"I_LT_01_AA_F",				100, //Nyx AA, default 50
 		"I_APC_Wheeled_03_cannon_F",		50, //Gorgan, default 50
-		"I_APC_tracked_03_cannon_F",		50, //Mora, default 50
-		"I_LT_01_AT_F",				50, //Nyx AT, default 50
+		"I_APC_tracked_03_cannon_F",		25, //Mora, default 50
+		"I_LT_01_AT_F",				100, //Nyx AT, default 50
 		"I_LT_01_cannon_F",			50, //Nyx 20mm, default 50
-		"I_MRAP_03_gmg_F",			100, //strider GMG, default 100
-		"I_MRAP_03_hmg_F",			100, //strider HMG, default 100
-		"I_MBT_03_cannon_F",			25 //Kuma, default 25
+		"I_MRAP_03_gmg_F",			50, //strider GMG, default 100
+		"I_MRAP_03_hmg_F",			51, //strider HMG, default 100
+		"I_MBT_03_cannon_F",			50 //Kuma, default 25
 	]
 ];
 
@@ -150,6 +150,8 @@ BIS_WL_factionAircraftClasses = [
 		"O_Heli_Light_02_dynamicLoadout_F",	100 //Orca, default 100
 	],
 	[
-		"I_Heli_light_03_dynamicLoadout_F",	100 //hellcat, default 100
+		"I_Plane_Fighter_03_CAS_F",	100 //hellcat, default 100
+		//default value "I_Heli_light_03_dynamicLoadout_F"
+		//Test value "I_Plane_Fighter_03_CAS_F"
 	]
 ];

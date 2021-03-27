@@ -6,6 +6,9 @@ waitUntil {!isNull player && isPlayer player};
 
 "client" call BIS_fnc_WL2_varsInit;
 
+
+//this whole if statement stops side switching
+/*
 private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
 
 waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
@@ -18,6 +21,7 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 		} forEach allMapMarkers;
 	}];
 	sleep 0.1;
+	// This section controls the "you can't switch teams" display
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	player removeItem "ItemMap";
 	player removeItem "ItemRadio";
@@ -49,18 +53,18 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 		localize "STR_A3_WL_switch_teams_info"
 	];
 };
-
+*/
 [] spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];
 	publicVariableServer _varFormat;
-	
+	//changed pos > 5 to 2
 	_pos = position player;
 	_confirmReposition = FALSE;
 	while {!_confirmReposition} do {
-		waitUntil {player distance _pos > 5};
+		waitUntil {player distance _pos > 2}; 
 		uiSleep 1;
-		if (player distance _pos > 5) then {
+		if (player distance _pos > 2) then {
 			_confirmReposition = TRUE;
 		};
 	};

@@ -11,7 +11,7 @@ if (!isNull _sector) then {
 		["base_vulnerable", _sector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
 		_sector spawn {
 			sleep 30;
-			_this setVariable ["BIS_WL_fastTravelEnabled", FALSE, TRUE];
+			_this setVariable ["BIS_WL_fastTravelEnabled", TRUE, TRUE];
 		};
 	} else {
 		private _owner = _sector getVariable "BIS_WL_owner";
