@@ -75,19 +75,19 @@ BIS_WL_factionUnitClasses = [
 	[
 		"I_soldier_F",			20, //rifleman, default 100
 		"I_Soldier_GL_F",		80, //Grenadir, default 80
-		"I_Soldier_AR_F",		70, //Autorifleman, default 70
+		"I_Soldier_AR_F",		40, //Autorifleman, default 70
 		"I_Soldier_AAR_F",		15, //Asst Autorifleman, default 70
 		"I_Soldier_TL_F",		5, //Team leader. default 30
 		"I_Soldier_A_F",		5, //Ammo, default 20
-		"I_Soldier_M_F",		100, //Marksman, default 20
+		"I_Soldier_M_F",		30, //Marksman, default 20
 		"I_Soldier_LAT_F",		10, //PCML, default 20
 		"I_Soldier_LAT2_F",		50, //MAAWS? , deault 20
 		"I_Soldier_SL_F",		15, //Squad leader, default 15
 		"I_Soldier_AAT_F",		5, //Asst AT, default 15
 		"I_Soldier_AAA_F",		5, //Asst AA, default 15
-		"I_Soldier_AT_F",		55, //Titan AT, default 15
-		"I_Soldier_AA_F",		55, //Titan AA, default 15
-		"I_medic_F",			70, //Medic, default 15
+		"I_Soldier_AT_F",		5, //Titan AT, default 15
+		"I_Soldier_AA_F",		20, //Titan AA, default 15
+		"I_medic_F",			25, //Medic, default 15
 		"I_Soldier_repair_F",	5, //Repair, default 15
 		"I_engineer_F",			5, //engineer, default 15
 		"I_Soldier_exp_F",		5, //APERS, default 10
