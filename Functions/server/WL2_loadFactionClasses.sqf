@@ -80,8 +80,8 @@ BIS_WL_factionUnitClasses = [
 		"I_Soldier_TL_F",		5, //Team leader. default 30
 		"I_Soldier_A_F",		5, //Ammo, default 20
 		"I_Soldier_M_F",		100, //Marksman, default 20
-		"I_Soldier_LAT_F",		30, //PCML, default 20
-		"I_Soldier_LAT2_F",		30, //MAAWS? , deault 20
+		"I_Soldier_LAT_F",		10, //PCML, default 20
+		"I_Soldier_LAT2_F",		50, //MAAWS? , deault 20
 		"I_Soldier_SL_F",		15, //Squad leader, default 15
 		"I_Soldier_AAT_F",		5, //Asst AT, default 15
 		"I_Soldier_AAA_F",		5, //Asst AA, default 15
