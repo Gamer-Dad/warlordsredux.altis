@@ -3,7 +3,7 @@
 #include "taw_vd\GUI.h"
 
 
-onLoadName = "Warlords 2 (Redux)";
+onLoadName = "Warlords 2 (Redux)"; 
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 
@@ -25,13 +25,6 @@ ReviveForceRespawnDelay = 3;            //time needed to perform force respawn (
 ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
 //end of revive section 
 
-// View distance script info 
-// limit settings in init.sqf
-//class CfgFunctions
-//{
-//	#include "taw_vd\CfgFunctions.hpp"
-//};
-// end view distance section, moved this down to line 48 
 
 //earplug script stuff
 class RscTitles

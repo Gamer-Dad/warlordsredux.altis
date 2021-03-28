@@ -18,7 +18,7 @@ if !(isNull _instigator) then {
 					case 2: {RESISTANCE};
 					default {CIVILIAN};
 				};
-			};
+			}; //reward == 4 block is fix to gorgan CP reward, by dara 
 			if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 				_reward = round ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "cost")) / 10000);
 				if(_reward == 4) then {
