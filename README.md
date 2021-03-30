@@ -21,4 +21,4 @@ Warlords Redux Server info: https://www.battlemetrics.com/servers/arma3/5449720
 
 Github page: you are already here :)
 
-Check this video out by Gamer Dad to help you get started: https://www.youtube.com/watch?v=tVIDyepo2WE
+Check this video out by GamerDad to help you get started: https://www.youtube.com/watch?v=tVIDyepo2WE
