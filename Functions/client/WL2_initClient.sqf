@@ -6,7 +6,7 @@ waitUntil {!isNull player && isPlayer player};
 
 "client" call BIS_fnc_WL2_varsInit;
 
-
+//Apirl fools joke :)
 //this whole if statement stops side switching
 /*
 private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
@@ -79,6 +79,7 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 };
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
+
 
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
