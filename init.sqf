@@ -131,4 +131,8 @@ if ( hasInterface ) then
 };
 //End of Vehicle unflip
 
+//welcome test 
+[] execVM "welcome.sqf";
+//end welcome section 
+
 [] call BIS_fnc_WL2_initCommon;
