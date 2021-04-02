@@ -103,6 +103,11 @@ endLoadingScreen;
 //view distance limits 
 tawvd_maxRange = 4000; //max range allowed
 tawvd_disablenone = true; //disables the disabling of grass I think
+tawvd_foot = 2000;
+tawvd_car = 3000;
+tawvd_air = 4000;
+tawvd_drone = 4000;
+tawvd_object = tawvd_foot;
 
 // runs the earplug script
 [] execVM "scripts\GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
