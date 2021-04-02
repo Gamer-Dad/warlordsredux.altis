@@ -105,7 +105,7 @@ tawvd_maxRange = 4000; //max range allowed
 tawvd_disablenone = true; //disables the disabling of grass I think
 
 // runs the earplug script
-[] execVM "GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
+[] execVM "scripts\GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
 
 addMissionEventHandler ["Loaded", {
 	params ["_saveType"];
@@ -115,7 +115,7 @@ addMissionEventHandler ["Loaded", {
 	};
 }];
 
-[] execVM "GF_Earplugs\GF_Earplugs.sqf";
+[] execVM "scripts\GF_Earplugs\GF_Earplugs.sqf";
 //end of earplug section 
 
 //Vehicle unflip 
