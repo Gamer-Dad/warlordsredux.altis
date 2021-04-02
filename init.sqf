@@ -103,7 +103,7 @@ endLoadingScreen;
 //view distance limits 
 tawvd_maxRange = 4000; //max range allowed
 tawvd_disablenone = true; //disables the disabling of grass I think
-//
+
 // runs the earplug script
 [] execVM "GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
 
@@ -117,5 +117,18 @@ addMissionEventHandler ["Loaded", {
 
 [] execVM "GF_Earplugs\GF_Earplugs.sqf";
 //end of earplug section 
+
+//Vehicle unflip 
+if ( hasInterface ) then
+{
+	waitUntil { !isNull player };
+	
+	// Call the Vehicle Speed Limit Script.
+	//Not needed:  [30, true] call KS_fnc_limitVehicleSpeed;
+	
+	// Spawn the Vehicle Unflip Script Loop.
+	[] spawn KSLOOP_fnc_unflipVehicleAddAction;
+};
+//End of Vehicle unflip
 
 [] call BIS_fnc_WL2_initCommon;
