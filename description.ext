@@ -37,17 +37,42 @@ class RscTitles
 /*******************************START CUSTOM CONTENT HERE****************************/
 
 enableDebugConsole = 1;
-  
+ 
 
+//Vehicle unflip Mod 
 
-//GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
+    //author = "KiloSwiss";
+
+allowFunctionsLog = 1;
+
 
 		class CfgFunctions
 		{
 
+			//GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
 			#include "scripts\GOM\functions\GOM_fnc_functions.hpp"
+			//Distance MOD
 			#include "taw_vd\CfgFunctions.hpp"
-
+			//Unflip Mod
+			class KS
+				{	
+					class normalFunctions
+					{
+						file = "scripts\VUnflip\functions";	// Folder where all functions are.
+						class unflipVehicle {};
+						//Not needed: class limitVehicleSpeed {}; 
+					};
+				};		
+	
+			class KSLOOP
+				{
+					class spawnThese //Seriously "spawn" these, do not "call" them!
+					{
+						file = "scripts\VUnflip\functions\loops";
+						class unflipVehicleAddAction {};
+					};
+					
+				};		
 		};
 
 
