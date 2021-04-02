@@ -1,4 +1,4 @@
-version=54;
+version=54; //korb says 54 is a nice number
 class EditorData
 {
 	moveGridStep=1;
