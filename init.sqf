@@ -118,4 +118,8 @@ addMissionEventHandler ["Loaded", {
 [] execVM "GF_Earplugs\GF_Earplugs.sqf";
 //end of earplug section 
 
+//welcome test 
+[] execVM "welcome.sqf";
+//end welcome section 
+
 [] call BIS_fnc_WL2_initCommon;
