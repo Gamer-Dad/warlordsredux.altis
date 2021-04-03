@@ -1,6 +1,6 @@
 #include "Functions\warlords_constants.inc"
 // required for view distance script
-#include "taw_vd\GUI.h"
+#include "scripts\taw_vd\GUI.h"
 
 
 onLoadName = "Warlords 2 (Redux)"; 
@@ -12,6 +12,11 @@ respawnDelay = 20;
 respawnOnStart = -1;
 
 disabledAI = 1;
+
+
+/*******************************START CUSTOM CONTENT HERE****************************/
+
+enableDebugConsole = 1;
 
 //revive settings below
 ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
@@ -25,29 +30,48 @@ ReviveForceRespawnDelay = 3;            //time needed to perform force respawn (
 ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
 //end of revive section 
 
-
 //earplug script stuff
 class RscTitles
 {
-	#include "GF_Earplugs\GF_Earplugs_HPP.hpp"	
+	#include "scripts\GF_Earplugs\GF_Earplugs_HPP.hpp"	
 };
 //end of earplug script info
+ 
 
+//Vehicle unflip Mod 
 
-/*******************************START CUSTOM CONTENT HERE****************************/
+    //author = "KiloSwiss";
 
-enableDebugConsole = 1;
-  
+allowFunctionsLog = 1;
 
-
-//GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
 
 		class CfgFunctions
 		{
 
+			//GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
 			#include "scripts\GOM\functions\GOM_fnc_functions.hpp"
-			#include "taw_vd\CfgFunctions.hpp"
-
+			//Distance MOD
+			#include "scripts\taw_vd\CfgFunctions.hpp"
+			//Unflip Mod
+			class KS
+				{	
+					class normalFunctions
+					{
+						file = "scripts\VUnflip\functions";	// Folder where all functions are.
+						class unflipVehicle {};
+						//Not needed: class limitVehicleSpeed {}; 
+					};
+				};		
+	
+			class KSLOOP
+				{
+					class spawnThese //Seriously "spawn" these, do not "call" them!
+					{
+						file = "scripts\VUnflip\functions\loops";
+						class unflipVehicleAddAction {};
+					};
+					
+				};		
 		};
 
 
