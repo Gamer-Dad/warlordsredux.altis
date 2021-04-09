@@ -15,7 +15,7 @@ BIS_WL_initModule setVariable ["BIS_WL_requisitionPreset", "['A3ReduxAll']"];
 BIS_WL_initModule setVariable ["BIS_WL_scanCost", 350];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostOwned", 0];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostContested", 50]; //Cost of fast travel to contested sector
-BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 500];
+BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 1000];  //Set to 1000 to prevent relog and transfer for a +500 CP profit
 BIS_WL_initModule setVariable ["BIS_WL_targetResetCost", 2000]; //default value 2000
 BIS_WL_initModule setVariable ["BIS_WL_scanEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelEnabled", 1];
