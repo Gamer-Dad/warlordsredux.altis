@@ -10,6 +10,7 @@ switch (_locality) do {
 		BIS_WL_startCP = BIS_WL_initModule getVariable ["BIS_WL_startCP", 500]; //This doesn't work, look in TEMP.sqf
 		BIS_WL_fogOfWar = BIS_WL_initModule getVariable ["BIS_WL_fogOfWar", 1];
 		BIS_WL_localSide = (BIS_WL_sidesArray - BIS_WL_competingSides) # 0;
+		BIS_WL_localSide_all = (BIS_WL_sidesArray + BIS_WL_competingSides) # 0;
 		BIS_WL_missionEnd = FALSE;
 		BIS_WL_sectorUpdateInProgress = FALSE;
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
