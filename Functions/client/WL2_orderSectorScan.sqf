@@ -8,7 +8,7 @@ params ["_toContested"];
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
-	WL_CONTROL_MAP ctrlMapAnimAdd [0, 1, [BIS_WL_mapSize / 2, BIS_WL_mapSize / 2]];
+	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_targetSector = objNull;

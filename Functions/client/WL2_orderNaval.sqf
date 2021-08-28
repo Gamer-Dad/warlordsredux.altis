@@ -6,7 +6,7 @@ params ["_class", "_cost"];
 [toUpper localize "STR_A3_WL_popup_airdrop_selection_water"] spawn BIS_fnc_WL2_smoothText;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
-	WL_CONTROL_MAP ctrlMapAnimAdd [0, 1, [BIS_WL_mapSize / 2, BIS_WL_mapSize / 2]];
+	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_waterDropPos = [];

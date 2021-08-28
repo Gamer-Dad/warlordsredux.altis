@@ -6,7 +6,7 @@ params ["_class", "_cost", "_requirements"];
 [toUpper localize "STR_A3_WL_popup_appropriate_sector_selection"] spawn BIS_fnc_WL2_smoothText;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
-	WL_CONTROL_MAP ctrlMapAnimAdd [0, 1, [BIS_WL_mapSize / 2, BIS_WL_mapSize / 2]];
+	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_targetSector = objNull;
