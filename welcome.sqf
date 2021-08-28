@@ -11,7 +11,7 @@ private _linefour = "Welcome to the fight, hold I to load the Warlords MENU";
 
 _structuredText = composeText [_lineone, lineBreak, lineBreak, _linetwo, lineBreak, lineBreak, _linethree, lineBreak, lineBreak, _linefour];
 
-sleep 5;
+sleep 12;
 
 "Welcome to WSV Warlords 2 (Redux)! Please read below..." hintC _structuredText; 
 hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
