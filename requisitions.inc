@@ -77,10 +77,10 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				class B_HMG_01_F							{cost = 250;	requirements[]={};	};	// "Mk30 HMG .50"
-				class B_HMG_01_high_F						{cost = 250;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
-				class B_GMG_01_F							{cost = 250;	requirements[]={};	};	// "Mk32 GMG 20 mm"
-				class B_GMG_01_high_F						{cost = 250;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
+				class B_HMG_01_F							{cost = 1500;	requirements[]={};	};	// "Mk30 HMG .50"
+				class B_HMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
+				class B_GMG_01_F							{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm"
+				class B_GMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class B_static_AA_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
 				class B_static_AT_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
 				class B_SAM_System_03_F						{cost = 27500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
@@ -160,10 +160,10 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				class O_HMG_01_F							{cost = 250;	requirements[]={};	};	// "Mk30 HMG .50"
-				class O_HMG_01_high_F						{cost = 250;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
-				class O_GMG_01_F							{cost = 250;	requirements[]={};	};	// "Mk32 GMG 20 mm"
-				class O_GMG_01_high_F						{cost = 250;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
+				class O_HMG_01_F							{cost = 1500;	requirements[]={};	};	// "Mk30 HMG .50"
+				class O_HMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
+				class O_GMG_01_F							{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm"
+				class O_GMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class O_static_AA_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"
 				class O_static_AT_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
 				class O_SAM_System_04_F						{cost = 27500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
