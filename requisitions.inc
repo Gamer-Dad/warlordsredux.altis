@@ -83,7 +83,7 @@ class CfgWLRequisitionPresets
 				class B_GMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class B_static_AA_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
 				class B_static_AT_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
-				class B_SAM_System_03_F						{cost = 27500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
+				class B_SAM_System_03_F						{cost = 24500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
 				class B_Radar_System_01_F					{cost = 8500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
 			};
 		};
@@ -166,7 +166,7 @@ class CfgWLRequisitionPresets
 				class O_GMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class O_static_AA_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"
 				class O_static_AT_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
-				class O_SAM_System_04_F						{cost = 27500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
+				class O_SAM_System_04_F						{cost = 24500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
 				class O_Radar_System_02_F					{cost = 8500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
 			};
 		};
