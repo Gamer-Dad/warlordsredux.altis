@@ -29,7 +29,7 @@ BIS_WL_initModule setVariable ["BIS_WL_maxSubordinates", 8]; //Future state, nee
 BIS_WL_initModule setVariable ["BIS_WL_assetLimit", 10];
 BIS_WL_initModule setVariable ["BIS_WL_targetResetTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_baseValue", 50]; //this changes money from main base ie starter CP/Min, default value 10
-BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMin", 6]; //default value 5
+BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMin", 8]; //default value 5
 BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMax", -1]; //default value -1 
 BIS_WL_initModule setVariable ["BIS_WL_scanCooldown", 90];
 BIS_WL_initModule setVariable ["BIS_WL_lastLoadoutCost", 100];
