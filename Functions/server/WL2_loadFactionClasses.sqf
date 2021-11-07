@@ -142,18 +142,23 @@ BIS_WL_factionVehicleClasses = [
 
 BIS_WL_factionAircraftClasses = [
 	[
-		"B_Plane_CAS_01_F",	100 //Wipeout, default 100
+		"B_Plane_CAS_01_F",	75 //Wipeout, default 100
+		"B_Heli_Attack_01_dynamicLoadout_F", 25 //blackfoot, deault 50
+		"B_Plane_Fighter_01_F", 10  // F/A-181 Black Wasp II 
 		//"B_Heli_Light_01_dynamicLoadout_F",	100, //AH9, default 100
-		//"B_Heli_Attack_01_dynamicLoadout_F",	50 //blackfoot, deault 50
+		
 	],
 	[
-		"O_Plane_CAS_02_F",	100 //Neophron, default 100
-		//"O_Heli_Attack_02_dynamicLoadout_F",	50, //Kajmen, defualt 50
+		"O_Plane_CAS_02_F",	75 //Neophron, default 100
+		"O_Heli_Attack_02_dynamicLoadout_F", 25, //Kajmen, defualt 50
+		"O_Plane_Fighter_02_F", 10 //To-201 Shikra
 		//"O_Heli_Light_02_dynamicLoadout_F",	100 //Orca, default 100
 	],
 	[
-		"I_Plane_Fighter_03_CAS_F",	100 //Indy A-10, default 100
-		//default value "I_Heli_light_03_dynamicLoadout_F" 
-		//Test value "I_Plane_Fighter_03_CAS_F"
+		"I_Plane_Fighter_03_CAS_F",	75 //Indy A-10, default 100
+		"I_Heli_light_03_F", 25 //Hellcat with rockets
+		"I_Plane_Fighter_04_F", 10 //A-149 Gryphon
+		//default value "I_Heli_light_03_dynamicLoadout_F" //hellcat without rockets
+		
 	]
 ];
