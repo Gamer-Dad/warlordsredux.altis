@@ -143,14 +143,14 @@ BIS_WL_factionVehicleClasses = [
 BIS_WL_factionAircraftClasses = [
 	[
 		"B_Plane_CAS_01_F",	75 //Wipeout, default 100
-		"B_Heli_Attack_01_dynamicLoadout_F", 25 //blackfoot, deault 50
+		"B_Heli_Attack_01_F", 25 //blackfoot, deault 50
 		"B_Plane_Fighter_01_F", 10  // F/A-181 Black Wasp II 
 		//"B_Heli_Light_01_dynamicLoadout_F",	100, //AH9, default 100
 		
 	],
 	[
 		"O_Plane_CAS_02_F",	75 //Neophron, default 100
-		"O_Heli_Attack_02_dynamicLoadout_F", 25, //Kajmen, defualt 50
+		"O_Heli_Attack_02_F", 25, //Kajmen, defualt 50
 		"O_Plane_Fighter_02_F", 10 //To-201 Shikra
 		//"O_Heli_Light_02_dynamicLoadout_F",	100 //Orca, default 100
 	],
