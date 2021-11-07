@@ -92,9 +92,9 @@ if (_side == BIS_WL_localSide_all) then {
 };
 
 if (count _spawnPosArr == 0) exitWith {};
-//adjust * value here to increase inf spawn numbers
+//adjust RD_GARRISON_SIZE_MOD in warlords_constants for more AI INF per town(I think)
 // Adjust GROUP_SIZE_MIN up to help smaller sectors without turning telos in to 1 FPS hell
-private _garrisonSize = (_sector getVariable "BIS_WL_value") * 2;
+private _garrisonSize = (_sector getVariable "BIS_WL_value") * RD_GARRISON_SIZE_MOD;
 private _unitsPool = BIS_WL_factionUnitClasses # (BIS_WL_sidesArray find _side);
 
 _i = 0;
