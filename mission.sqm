@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=413;
+		nextID=422;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7885.3682,1606.7963,18773.902};
-		dir[]={-0.18820333,-0.95065957,0.24662912};
-		up[]={-0.57671344,0.31023589,0.75574821};
-		aside[]={0.79497242,-1.4901161e-008,0.60664558};
+		pos[]={3410.8262,28.727924,12854.163};
+		dir[]={-0.89825863,-0.24452183,-0.36541381};
+		up[]={-0.22650689,0.96962702,-0.092142552};
+		aside[]={-0.37686524,-1.5139085e-007,0.92640787};
 	};
 };
 binarizationWanted=0;
@@ -35,13 +35,15 @@ addons[]=
 	"A3_Soft_F_Beta_MRAP_03",
 	"A3_Ui_F",
 	"A3_Structures_F_Mil_Helipads",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Boat_F_Jets_Carrier_01",
+	"A3_Structures_F_Training"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -105,12 +107,30 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item9
+		{
+			className="A3_Boat_F_Jets";
+			name="Arma 3 Jets - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item10
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
 {
 	enable=0;
 	saturateByObjectDistance=0;
+};
+dlcs[]=
+{
+	"Jets"
 };
 randomSeed=3694325;
 class ScenarioData
@@ -144,7 +164,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=255;
+		items=263;
 		class Item0
 		{
 			dataType="Logic";
@@ -175,7 +195,7 @@ class Mission
 				position[]={3552.104,8.5744362,12993.334};
 				angles[]={6.2645278,0,0.078504913};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W"", ""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
 			id=2;
 			type="Logic";
 			atlOffset=-9.5367432e-007;
@@ -8436,6 +8456,139 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item255
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3199.3337,0,12771.482};
+				angles[]={0,1.3708487,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=413;
+			type="Land_Carrier_01_base_F";
+			atlOffset=15.678947;
+		};
+		class Item256
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3363.1609,21.412655,12842.132};
+				angles[]={0,1.3810872,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=415;
+			type="Land_RampConcreteHigh_F";
+		};
+		class Item257
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3368.8667,21.609571,12843.434};
+				angles[]={0,1.3430134,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=416;
+			type="Land_RampConcrete_F";
+			atlOffset=1.3134251;
+		};
+		class Item258
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3373.9822,18.927433,12844.725};
+				angles[]={0,1.295964,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=417;
+			type="Land_RampConcreteHigh_F";
+			atlOffset=4.3624468;
+		};
+		class Item259
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3379.3098,15.373052,12845.979};
+				angles[]={0,1.3820685,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=418;
+			type="Land_RampConcreteHigh_F";
+			atlOffset=3.589963;
+		};
+		class Item260
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3384.426,12.175312,12846.938};
+				angles[]={0,1.3806185,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=419;
+			type="Land_RampConcreteHigh_F";
+			atlOffset=10.436895;
+		};
+		class Item261
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3391.8179,7.4892015,12848.446};
+				angles[]={0,1.3639793,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=420;
+			type="Land_RampConcreteHigh_F";
+			atlOffset=4.9027667;
+		};
+		class Item262
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3398.2666,3.2004023,12849.792};
+				angles[]={0,1.3549212,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=421;
+			type="Land_RampConcreteHigh_F";
+			atlOffset=1.1920929e-007;
 		};
 	};
 	class Connections
