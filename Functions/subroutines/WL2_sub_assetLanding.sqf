@@ -1,6 +1,5 @@
 #include "..\warlords_constants.inc"
-// line 25 "WL_TIMEOUT_SHORT" changed to LONG 
-// short = 0.25, long = 5 seconds
+
 
 params ["_asset", "_sender"];
 
@@ -23,7 +22,7 @@ _wpGetOut setWaypointStatements ["TRUE", "deleteVehicle this"];
 
 [_asset, _assetPilot] spawn {
 	params ["_asset", "_assetPilot"];
-	waitUntil {sleep WL_TIMEOUT_LONG; !alive _asset || isNull _assetPilot};
+	waitUntil {sleep WL_TIMEOUT_SHORT; !alive _asset || isNull _assetPilot};
 	if (!isNull _assetPilot) then {
 		if (vehicle _assetPilot == _asset) then {
 			_asset deleteVehicleCrew _assetPilot;
