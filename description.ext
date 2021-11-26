@@ -11,7 +11,7 @@ respawn = 3;
 respawnDelay = 20;
 respawnOnStart = -1;
 
-disabledAI = 1;
+disabledAI = 0;
 
 
 /*******************************START CUSTOM CONTENT HERE****************************/
