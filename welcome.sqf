@@ -9,11 +9,11 @@ private _linetwo = parseText "<a href='https://www.youtube.com/watch?v=A-I4QQELV
 private _linethree = parseText "<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Click HERE: What's different about REDUX?</a>";  
 private _linefour = "Welcome to the fight, hold I to load the Warlords MENU";
 
-_structuredText = composeText [_lineone, lineBreak, lineBreak, _linetwo, lineBreak, lineBreak, _linethree, lineBreak, lineBreak, _linefour];
+//_structuredText = composeText [_lineone, lineBreak, lineBreak, _linetwo, lineBreak, lineBreak, _linethree, lineBreak, lineBreak, _linefour];
 
 sleep 12;
-
-"Welcome to WSV Warlords 2 (Redux)! Please read below..." hintC _structuredText; 
+//orginal use was hintC _structuredText
+"Welcome to WSV Warlords 2 (Redux)! Please read below..." hintC [_lineone, _linetwo, _linethree, _linefour]; 
 hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
 	_this spawn {
 		_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
