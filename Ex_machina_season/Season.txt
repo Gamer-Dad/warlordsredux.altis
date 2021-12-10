@@ -12,7 +12,7 @@
 To turn season on:
  - Copy requisitions.inc file to main folder, This seaon is default costs 
  - Copy welcome.sqf to main folder
- - Default rwquisistions.inc and welcome.sqf are included in the the "back_in_the_ussr" folder
+ - Default requisitions.inc and welcome.sqf are included in the the "back_in_the_ussr" folder
  - Remove AI teammates(NYI)
  - Turn on DynamicGroups server side
 */
