@@ -1,0 +1,14 @@
+//season description
+/*
+-Top Gun season
+ - Reduce cost of armed aircraft by 50%
+- Reduce cost of Ammo/Fuel/repair trucks by 50%
+- Increase cost of AA tank by 50%
+- Increase cost of AA inf by 50%
+- Increase cost of weapon crates that have AA by 50%
+- Increase cost of SAM sites by 50%
+- Increase cost of AA statics by 50%
+- Enable autoland
+
+*/ 
+

@@ -1,0 +1,8 @@
+//season description
+/*
+-Back in the USSR season
+ - All cost default
+- Disable autoland
+
+*/ 
+

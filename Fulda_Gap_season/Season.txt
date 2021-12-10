@@ -1,0 +1,14 @@
+//season description
+/*
+-Fulda Gap season
+ - Reduce cost of Armor by 50%
+- Reduce cost of Armed Helis by 50%
+- Reduce cost of Ammo/Fuel/repair trucks by 50%
+- Increase cost of Jets by 50%
+- Increase cost of AT inf by 50%
+- Increase cost of weapon crates that have AT by 50%
+- Increase cost of AT statics by 50%
+- Disable autoland
+
+*/ 
+

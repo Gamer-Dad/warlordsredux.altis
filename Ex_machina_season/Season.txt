@@ -1,0 +1,10 @@
+//season description
+/*
+-Ex Machina season
+- All cost default
+ - Remove AI teammates
+- Add DynamicGroups 
+- Enable autoland
+
+*/ 
+

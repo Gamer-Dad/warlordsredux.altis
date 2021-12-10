@@ -1,0 +1,14 @@
+//season description
+/*
+-S-400 triumph season
+ - Reduce cost of SAM site by 50%
+- Reduce cost of AA tank by 50%
+- Reduce cost of AA inf by 50%
+- Reduce cost of weapon crates that have AA by 50%
+- Reduce cost of AA statics by 50%
+- Reduce cost of Ammo truck by 50%
+- Increase cost of armed aircraft by 50%
+- Disable autoland 
+
+*/ 
+
