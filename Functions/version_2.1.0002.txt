@@ -1,0 +1,5 @@
+2.1.0001
+ - Baseline version number
+
+2.1.0002
+ - Added dynamic AI buddy count based on player count. toggles in warlords_constants.inc file.
