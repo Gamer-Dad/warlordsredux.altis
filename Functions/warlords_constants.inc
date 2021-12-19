@@ -59,8 +59,7 @@
 #define WL_TARGET_RESET_VOTING_TIME 60
 #define RD_KILL_REWARD_MOD 4444  //Original value 10,000
 #define RD_GARRISON_SIZE_MOD 2  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
-#define RD_HIGH_PLAYER_COUNT 7  //This is the toggle for player count to reduce AI numbers 
-#define RD_LOW_AI_BUDDY_COUNT 2 //This is the number that AI buddies are reduced to when "high player" count is reached.
+
 
 #define WL_SYNCED_TIME (call BIS_fnc_WL2_syncedTime)
 #define WL_TARGET_FRIENDLY (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])
