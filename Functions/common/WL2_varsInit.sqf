@@ -30,7 +30,7 @@ switch (_locality) do {
 		BIS_WL_arsenalEnabled = BIS_WL_initModule getVariable ["BIS_WL_arsenalEnabled", TRUE];
 		BIS_WL_arsenalCost = BIS_WL_initModule getVariable ["BIS_WL_arsenalCost", 1000];
 		BIS_WL_assetLimit = BIS_WL_initModule getVariable ["BIS_WL_assetLimit", 10];
-		BIS_WL_maxSubordinates = BIS_WL_initModule getVariable ["BIS_WL_maxSubordinates", 3];
+		BIS_WL_maxSubordinates = BIS_WL_initModule getVariable ["BIS_WL_maxSubordinates", 0];
 		BIS_WL_targetResetTimeout = BIS_WL_initModule getVariable ["BIS_WL_targetResetTimeout", 300];
 		BIS_WL_baseValue = BIS_WL_initModule getVariable ["BIS_WL_baseValue", 10];
 		BIS_WL_scanCooldown = (BIS_WL_initModule getVariable ["BIS_WL_scanCooldown", 90]) max WL_SCAN_DURATION;
@@ -121,7 +121,7 @@ switch (_locality) do {
 		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
-		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 2);
+		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 8);
 		BIS_WL_matesInBasket = 0;
 		BIS_WL_vehsInBasket = 0;
 		BIS_WL_dropPool = [];
