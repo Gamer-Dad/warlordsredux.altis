@@ -9,7 +9,16 @@ private _params = _actionArray - [_action];
 
 if (isMultiplayer) then {
 	_var = (_var splitString "BIS_WL_") # 0;
-		
+
+		// Thanks to marii for the AI limiting code
+	        //_text =  format ["# OF PLAYERS ON THE SEVER : %1 ", count BIS_WL_allWarlords];
+            //[_text] remoteExec ["systemChat", 0];
+
+            _players = count BIS_WL_allWarlords;
+            if (_players >= RD_HIGH_PLAYER_COUNT) then {
+            BIS_WL_maxSubordinates = RD_LOW_AI_BUDDY_COUNT;
+		};
+
 	private _senderArr = BIS_WL_allWarlords select {getPlayerUID _x == _var};
 	if (count _senderArr == 0) exitWith {};
 

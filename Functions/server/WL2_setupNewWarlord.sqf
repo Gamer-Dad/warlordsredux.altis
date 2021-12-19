@@ -16,7 +16,15 @@ if (isPlayer _warlord) then {
 	_boundToAnotherTeam = (getPlayerUID _warlord) in (missionNamespace getVariable format ["BIS_WL_boundTo%1", (BIS_WL_competingSides - [side group _warlord]) # 0]);
 	missionNamespace setVariable [_playerVarID, !_boundToAnotherTeam];
 	(owner _warlord) publicVariableClient _playerVarID;
-		
+	// Thanks to marii for the AI limiting code
+	//_text =  format ["# OF PLAYERS ON THE SEVER : %1 ", count BIS_WL_allWarlords];
+    //[_text] remoteExec ["systemChat", 0];
+
+    _players = count BIS_WL_allWarlords;
+    if (_players >= RD_HIGH_PLAYER_COUNT) then {
+    BIS_WL_maxSubordinates = RD_LOW_AI_BUDDY_COUNT;
+    };
+	
 	if !(_boundToAnotherTeam) then {
 		(missionNamespace getVariable format ["BIS_WL_boundTo%1", side group _warlord]) pushBackUnique getPlayerUID _warlord;
 		_playerSideArr = BIS_WL_playerIDArr # (BIS_WL_competingSides find side group _warlord);
@@ -25,6 +33,7 @@ if (isPlayer _warlord) then {
 		
 		if (isMultiplayer) then {
 			_var addPublicVariableEventHandler BIS_fnc_WL2_processClientRequest;
+		
 		else {
 			missionNamespace setVariable [_var, ""];
 			_var spawn {
