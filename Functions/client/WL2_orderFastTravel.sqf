@@ -12,7 +12,7 @@ if !(visibleMap) then {
 	if (_toContested) then {
 		WL_CONTROL_MAP ctrlMapAnimAdd [0, BIS_WL_mapSizeIndex / 75, WL_TARGET_FRIENDLY];
 	} else {
-		WL_CONTROL_MAP ctrlMapAnimAdd [0, 1, [BIS_WL_mapSize / 2, BIS_WL_mapSize / 2]];
+		WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.3, player];
 	};
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
