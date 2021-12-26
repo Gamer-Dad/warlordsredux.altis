@@ -64,7 +64,7 @@ if (_side == BIS_WL_localSide) then {
 	}; //below is heli/jet spawn code, molos AF never gets one because its not connected to any friendly towns when attacked 
 	if (!_connectedToBase && "H" in (_sector getVariable "BIS_WL_services")) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
-		if (count _neighbors > -1) then {
+		if (count _neighbors > 0) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted (BIS_WL_factionAircraftClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			
