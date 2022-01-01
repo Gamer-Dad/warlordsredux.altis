@@ -15,7 +15,7 @@ BIS_WL_initModule setVariable ["BIS_WL_requisitionPreset", "['A3ReduxAll']"];
 BIS_WL_initModule setVariable ["BIS_WL_scanCost", 350];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostOwned", 0];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostContested", 50]; //Cost of fast travel to contested sector
-BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 1000];  //Set to 1000 to prevent relog and transfer for a +500 CP profit
+BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 2000];  //default 1000; Increased to 2000 to limits a CP exploit on official servers
 BIS_WL_initModule setVariable ["BIS_WL_targetResetCost", 1200]; //default value 2000; lowered to 1200 for official servers
 BIS_WL_initModule setVariable ["BIS_WL_scanEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelEnabled", 1];
