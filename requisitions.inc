@@ -41,7 +41,7 @@ class CfgWLRequisitionPresets
 				
 				class B_APC_Wheeled_01_cannon_F				{cost = 3000;	requirements[]={};	};	// "AMV-7 Marshall"
 				class B_APC_Tracked_01_rcws_F				{cost = 3500;	requirements[]={};	};	// "IFV-6c Panther"
-				class B_APC_Tracked_01_AA_F					{cost = 4000;	requirements[]={};	};	// "IFV-6a Cheetah"
+				class B_APC_Tracked_01_AA_F					{cost = 3000;	requirements[]={};	};	// "IFV-6a Cheetah"
 				class B_MBT_01_cannon_F						{cost = 5000;	requirements[]={};	};	// "M2A1 Slammer"
 				class B_MBT_01_TUSK_F						{cost = 5500;	requirements[]={};	};	// "M2A1 Slammer UP"
 				class B_AFV_Wheeled_01_cannon_F				{cost = 7000;	requirements[]={};	};	// "Rhino MGS"
@@ -83,7 +83,7 @@ class CfgWLRequisitionPresets
 				class B_GMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class B_static_AA_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
 				class B_static_AT_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
-				class B_SAM_System_03_F						{cost = 24500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
+				class B_SAM_System_03_F						{cost = 12500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
 				class B_Radar_System_01_F					{cost = 8500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
 			};
 		};
@@ -125,7 +125,7 @@ class CfgWLRequisitionPresets
 				class O_MRAP_02_gmg_F						{cost = 1600;	requirements[]={};	};	// "Ifrit GMG"
 				class O_APC_Wheeled_02_rcws_v2_F			{cost = 3000;	requirements[]={};	};	// "MSE-3 Marid"
 				class O_APC_Tracked_02_cannon_F				{cost = 3500;	requirements[]={};	};	// "BTR-K Kamysh"
-				class O_APC_Tracked_02_AA_F					{cost = 4000;	requirements[]={};	};	// "ZSU-39 Tigris"
+				class O_APC_Tracked_02_AA_F					{cost = 3000;	requirements[]={};	};	// "ZSU-39 Tigris"
 				class O_MBT_02_cannon_F						{cost = 5500;	requirements[]={};	};	// "T-100 Varsuk"
 				class O_MBT_04_cannon_F						{cost = 6500;	requirements[]={};	};	// "T-140 Angara"
 				class O_MBT_04_command_F					{cost = 7500;	requirements[]={};	};	// "T-140K Angara"
@@ -166,7 +166,7 @@ class CfgWLRequisitionPresets
 				class O_GMG_01_high_F						{cost = 1500;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class O_static_AA_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"
 				class O_static_AT_F							{cost = 500;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
-				class O_SAM_System_04_F						{cost = 24500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
+				class O_SAM_System_04_F						{cost = 12500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
 				class O_Radar_System_02_F					{cost = 8500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
 			};
 		};
