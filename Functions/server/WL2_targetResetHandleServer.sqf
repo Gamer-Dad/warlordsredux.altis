@@ -13,7 +13,7 @@
 				sleep WL_TIMEOUT_SHORT;
 				
 				_warlords = BIS_WL_allWarlords select {side group _x == _this};
-				_limit = ceil ((count _warlords) / 2);
+				_limit = ceil ((count _warlords) / 4);
 				_votedYes = count (_warlords select {(_x getVariable ["BIS_WL_targetResetVote", -1]) == 1});
 				_votedNo = count (_warlords select {(_x getVariable ["BIS_WL_targetResetVote", -1]) == 0});
 				
