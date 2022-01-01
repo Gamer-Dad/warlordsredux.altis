@@ -13,3 +13,7 @@
 2.1.0005
  - Fix for unflip script on MP servers 
  - Minor changes to spawn tables/numbers for official servers
+
+ 2.1.0006
+  - Reduced number of votes required to reset a sector
+  - Reduced CP cost to start a target reset sector vote
