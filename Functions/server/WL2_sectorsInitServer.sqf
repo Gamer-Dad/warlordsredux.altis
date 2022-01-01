@@ -28,9 +28,9 @@ while {count _sectorsToCheckNext > 0} do {
 	};
 	_distance = _distance + 1;
 };
-
+//Use _tolerance value in combo with baseDistanceMin to add randomness to base distances
 _potentialBases = [];
-_tolerance = 0;
+_tolerance = 8;
 while {count _potentialBases == 0} do {
 	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && (_x # 0) <= BIS_WL_baseDistanceMax};
 	_tolerance = _tolerance + 1;
