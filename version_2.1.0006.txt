@@ -24,3 +24,4 @@
   - base starting locations are now 200% more random
   - Reduced AI enemies per town to help with server/network performance
   - Improved flight profile/waypoints of AI aircraft
+  - Ammo Box adjusted to prevent exploits 
