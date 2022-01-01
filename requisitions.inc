@@ -66,7 +66,7 @@ class CfgWLRequisitionPresets
 			};
 			class Gear
 			{
-				class Box_NATO_Ammo_F						{cost = 200;	requirements[]={};	};	// "Basic Ammo [NATO]"
+				class Box_NATO_Ammo_F						{cost = 800;	requirements[]={};	};	// "Basic Ammo [NATO]"
 				class Box_NATO_Grenades_F					{cost = 200;	requirements[]={};	};	// "Grenades [NATO]"
 				class Box_NATO_Wps_F						{cost = 250;	requirements[]={};	};	// "Basic Weapons [NATO]"
 				class Box_NATO_AmmoOrd_F					{cost = 250;	requirements[]={};	};	// "Explosives [NATO]"
@@ -149,7 +149,7 @@ class CfgWLRequisitionPresets
 			};
 			class Gear
 			{
-				class Box_East_Ammo_F						{cost = 200;	requirements[]={};	};	// "Basic Ammo [CSAT]"
+				class Box_East_Ammo_F						{cost = 800;	requirements[]={};	};	// "Basic Ammo [CSAT]"
 				class Box_East_Grenades_F					{cost = 200;	requirements[]={};	};	// "Grenades [CSAT]"
 				class Box_East_Wps_F						{cost = 250;	requirements[]={};	};	// "Basic Weapons [CSAT]"
 				class Box_East_AmmoOrd_F					{cost = 250;	requirements[]={};	};	// "Explosives [CSAT]"
