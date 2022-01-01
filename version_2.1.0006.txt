@@ -17,3 +17,4 @@
  2.1.0006
   - Reduced number of votes required to reset a sector
   - Reduced CP cost to start a target reset sector vote
+  - Increased player count before AI buddy reduction
