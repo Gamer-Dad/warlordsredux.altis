@@ -22,3 +22,4 @@
   - Rebalanced VTOL cost based on PvP effectiveness
   - Increased CP transfer tax rate from 2% to 4% in order to limit early game money laundering schemes 
   - base starting locations are now 200% more random
+  - Reduced AI enemies per town to help with server/network performance

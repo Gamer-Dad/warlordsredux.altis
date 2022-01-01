@@ -54,11 +54,11 @@
 #define WL_LOSING_SECTOR_WARN_FREQ 30
 #define WL_MUSIC_VOLUME 0.1
 #define WL_GARRISON_GROUP_SIZE_MIN 3
-#define WL_GARRISON_GROUP_SIZE_MAX 6
+#define WL_GARRISON_GROUP_SIZE_MAX 5
 #define WL_ASSET_IRRELEVANT_RANGE 1000
 #define WL_TARGET_RESET_VOTING_TIME 60
 #define RD_KILL_REWARD_MOD 4444  //Original value 10,000
-#define RD_GARRISON_SIZE_MOD 3  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
+#define RD_GARRISON_SIZE_MOD 2.5  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
 
 
 #define WL_SYNCED_TIME (call BIS_fnc_WL2_syncedTime)
