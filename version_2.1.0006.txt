@@ -19,3 +19,4 @@
   - Reduced CP cost to start a target reset sector vote
   - Increased player count before AI buddy reduction
   - Reduced to the cost of SAM battery and AA tanks to balance out re-arm timer
+  - Rebalanced VTOL cost based on PvP effectiveness

@@ -54,7 +54,7 @@ class CfgWLRequisitionPresets
 				class B_Heli_Transport_01_F					{cost = 3000;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 4500;	requirements[]={"H"};	};	// "CH-67 Huron"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 6000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
-				class B_T_VTOL_01_armed_F					{cost = 9000;	requirements[]={"H"};	};	// "V-44 X Blackfish (Armed)"
+				class B_T_VTOL_01_armed_F					{cost = 7000;	requirements[]={"H"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 10500;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 13500;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
 			};
@@ -137,7 +137,7 @@ class CfgWLRequisitionPresets
 				class O_Heli_Transport_04_F					{cost = 2750;	requirements[]={"H"};	};	// "Mi-290 Taru"
 				class O_Heli_Transport_04_covered_F			{cost = 3000;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 6000;	requirements[]={"H"};	};	// "Mi-48 Kajman"
-				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 7000;	requirements[]={"H"};	};	// "Y-32 Xi'an (Infantry Transport)"
+				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 9000;	requirements[]={"H"};	};	// "Y-32 Xi'an (Infantry Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 10500;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"
 				class O_Plane_Fighter_02_F					{cost = 13500;	requirements[]={"A"};	};	// "To-201 Shikra"
 			};
