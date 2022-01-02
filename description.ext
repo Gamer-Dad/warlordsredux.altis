@@ -122,12 +122,12 @@ onPauseScript[] = {BIS_fnc_WL2_onPause};
 corpseManagerMode = 1;
 corpseLimit = 50;
 corpseRemovalMinTime = 300;
-corpseRemovalMaxTime = 1800;
+corpseRemovalMaxTime = 1500; //1800
 
 wreckManagerMode = 1;
-wreckLimit = 50;
-wreckRemovalMinTime = 60;
-wreckRemovalMaxTime = 120;
+wreckLimit = 32; //50
+wreckRemovalMinTime = 120; //60
+wreckRemovalMaxTime = 240; //120
 
 minPlayerDistance = WL_ASSET_REMOVAL_SAFEZONE;
 
