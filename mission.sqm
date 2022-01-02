@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={3402.0591,16.759096,12800.534};
-		dir[]={-0.52418995,-0.12433125,-0.84261447};
-		up[]={-0.06572023,0.99213952,-0.1056482};
-		aside[]={-0.84925365,4.1414751e-008,0.52831334};
+		dir[]={-0.52412909,-0.1243168,-0.8425166};
+		up[]={-0.065667458,0.99224263,-0.10555783};
+		aside[]={-0.84910351,7.4505806e-009,0.52822679};
 	};
 };
 binarizationWanted=0;
@@ -196,7 +196,7 @@ class Mission
 				position[]={3552.104,8.5744362,12993.334};
 				angles[]={6.2645278,0,0.078504913};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
 			id=2;
 			type="Logic";
 			atlOffset=-9.5367432e-007;
