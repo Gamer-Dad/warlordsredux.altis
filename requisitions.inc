@@ -66,14 +66,14 @@ class CfgWLRequisitionPresets
 			};
 			class Gear
 			{
-				class Box_NATO_Ammo_F						{cost = 800;	requirements[]={};	};	// "Basic Ammo [NATO]"
+				class Box_NATO_Ammo_F						{cost = 200;	requirements[]={};	};	// "Basic Ammo [NATO]"
 				class Box_NATO_Grenades_F					{cost = 200;	requirements[]={};	};	// "Grenades [NATO]"
 				class Box_NATO_Wps_F						{cost = 250;	requirements[]={};	};	// "Basic Weapons [NATO]"
 				class Box_NATO_AmmoOrd_F					{cost = 250;	requirements[]={};	};	// "Explosives [NATO]"
 				class Box_NATO_WpsLaunch_F					{cost = 300;	requirements[]={};	};	// "Launchers [NATO]"
 				class Box_NATO_WpsSpecial_F					{cost = 500;	requirements[]={};	};	// "Special Weapons [NATO]"
 				class B_supplyCrate_F						{cost = 500;	requirements[]={};	};	// "Supply Box [NATO]"
-				class Box_NATO_AmmoVeh_F					{cost = 500;	requirements[]={};	};	// "Vehicle Ammo [NATO]"
+				class Box_NATO_AmmoVeh_F					{cost = 800;	requirements[]={};	};	// "Vehicle Ammo [NATO]"
 			};
 			class Defences
 			{
@@ -149,14 +149,14 @@ class CfgWLRequisitionPresets
 			};
 			class Gear
 			{
-				class Box_East_Ammo_F						{cost = 800;	requirements[]={};	};	// "Basic Ammo [CSAT]"
+				class Box_East_Ammo_F						{cost = 200;	requirements[]={};	};	// "Basic Ammo [CSAT]"
 				class Box_East_Grenades_F					{cost = 200;	requirements[]={};	};	// "Grenades [CSAT]"
 				class Box_East_Wps_F						{cost = 250;	requirements[]={};	};	// "Basic Weapons [CSAT]"
 				class Box_East_AmmoOrd_F					{cost = 250;	requirements[]={};	};	// "Explosives [CSAT]"
 				class Box_East_WpsLaunch_F					{cost = 300;	requirements[]={};	};	// "Launchers [CSAT]"
 				class Box_East_WpsSpecial_F					{cost = 500;	requirements[]={};	};	// "Special Weapons [CSAT]"
 				class O_supplyCrate_F						{cost = 500;	requirements[]={};	};	// "Supply Box [CSAT]"
-				class Box_East_AmmoVeh_F					{cost = 500;	requirements[]={};	};	// "Vehicle Ammo [CSAT]"
+				class Box_East_AmmoVeh_F					{cost = 800;	requirements[]={};	};	// "Vehicle Ammo [CSAT]"
 			};
 			class Defences
 			{
