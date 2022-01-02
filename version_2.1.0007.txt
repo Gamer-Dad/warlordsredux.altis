@@ -27,4 +27,5 @@
 
 2.1.0007
   - Vec Ammo Box cost adjusted to prevent abuse
-  -
+  - Corpse and Asset cleanup code Improved
+  - Kavala removed as a heliport until Heli spawn code is improved
