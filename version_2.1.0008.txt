@@ -34,3 +34,4 @@
   - Removed all mines from arsenal
   - Increased cost of Exp crates by 3x
   - All mines are deleted from the map when a zone is captured
+  - Friendly fire penalty is 3x more painful
