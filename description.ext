@@ -111,7 +111,7 @@ class Header
 {
 	gameType = Warlords;
 	minPlayers = 1;
-	maxPlayers = 48;
+	maxPlayers = 72;
 };
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
