@@ -114,7 +114,7 @@ if !(isNull _sender) then {
 						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
 						_asset setDir _dir;
 					} else {
-						_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
+						_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"]; //heli spawn code, need anti-building check added
 						_asset setDir _dir;
 					};
 				} else {
