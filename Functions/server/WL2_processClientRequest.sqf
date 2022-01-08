@@ -195,7 +195,7 @@ if !(isNull _sender) then {
 						};
 					}; 
 				} else {
-					_parachute setPos ((position _parachute) vectorAdd [5 + random 5, 5 + random 5, 30 + random 15]);
+					_parachute setPos ((position _parachute) vectorAdd [0, 0, 0]);
 					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
 					_asset setVariable ["BIS_WL_deployPos", _targetPosFinal];
 					_bBox = boundingBoxReal _asset;
@@ -204,7 +204,7 @@ if !(isNull _sender) then {
 					_assetDummy = _className createVehicleLocal _targetPosFinal;
 					_assetDummy setPos _targetPosFinal;
 					_assetDummy hideObject TRUE;
-					_assetDummy enableSimulation FALSE;
+					_assetDummy enableSimulation TRUE;
 					
 					[_parachute, _asset, _assetDummy] spawn {
 						params ["_parachute", "_asset", "_assetDummy"];
