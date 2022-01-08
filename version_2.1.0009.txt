@@ -39,4 +39,7 @@
 2.1.0009
   - Fixed some first time player spawns being in the ocean
   - Randomized AI Vehicle locations spawning at non-randomized zones
+  - Inf and Vehicles now spawn on the ground
+  - Fix for Vehicles landing on buildings
+  - Fix for Vehicles falling through the ground
   
