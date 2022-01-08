@@ -42,4 +42,6 @@
   - Inf and Vehicles now spawn on the ground
   - Fix for Vehicles landing on buildings
   - Fix for Vehicles falling through the ground
+  - Helis/VTOLs now spawn on the player
+  - Kavala heliport added back
   
