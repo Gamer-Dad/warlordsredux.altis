@@ -23,7 +23,7 @@ _processTargetPos = {
 	private _targetPosFinal = [];
 	
 	if !(surfaceIsWater _targetPos) then {
-		_nearSectorArr = _targetPos nearObjects ["Logic", 10];
+		_nearSectorArr = _targetPos nearObjects ["Logic", 20];
 		
 		if (count _nearSectorArr == 0) then {
 			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;
@@ -38,7 +38,7 @@ _processTargetPos = {
 	if (count _targetPosFinalArr > 0) then {
 		_targetPosFinal = selectRandom _targetPosFinalArr;
 	} else {
-		_targetPosFinal = [_targetPos, random 100, random 360] call BIS_fnc_relPos;
+		_targetPosFinal = [_targetPos, random 20, random 100] call BIS_fnc_relPos;
 	};
 	
 	[_targetPosFinal, _targetPosFinalArr]
@@ -114,7 +114,7 @@ if !(isNull _sender) then {
 						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
 						_asset setDir _dir;
 					} else {
-						_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"]; //heli spawn code, need anti-building check added
+						_asset = createVehicle [_className, position _sender, [], 0, "NONE"]; //heli spawn code, need anti-building check added
 						_asset setDir _dir;
 					};
 				} else {
