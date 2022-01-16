@@ -1,0 +1,47 @@
+2.1.0001
+ - Baseline version number
+
+2.1.0002
+- Fixed capping height to be 25 meters-ish
+
+2.1.0003
+ - Fixed fast travel to friendly sector zoom bug
+
+2.1.0004
+ - Dynamic AI buddy count working on dedi servers
+
+2.1.0005
+ - Fix for unflip script on MP servers 
+ - Minor changes to spawn tables/numbers for official servers
+
+ 2.1.0006
+  - Reduced number of votes required to reset a sector
+  - Reduced CP cost to start a target reset sector vote
+  - Increased player count before AI buddy reduction
+  - Reduced to the cost of SAM battery and AA tanks to balance out re-arm timer
+  - Rebalanced VTOL cost based on PvP effectiveness
+  - Increased CP transfer tax rate from 2% to 4% in order to limit early game money laundering schemes 
+  - base starting locations are now 200% more random
+  - Reduced AI enemies per town to help with server/network performance
+  - Improved flight profile/waypoints of AI aircraft
+
+2.1.0007
+  - Vec Ammo Box cost adjusted to prevent abuse
+  - Corpse and Asset cleanup code Improved
+  - Kavala removed as a heliport until Heli spawn code is improved
+
+2.1.0008
+  - Removed all mines from arsenal
+  - Increased cost of Exp crates by 3x
+  - All mines are deleted from the map when a zone is captured
+  - Friendly fire penalty is 3x more painful
+
+2.1.0009
+  - Fixed some first time player spawns being in the ocean
+  - Randomized AI Vehicle locations spawning at non-randomized zones
+  - Inf and Vehicles now spawn on the ground
+  - Fix for Vehicles landing on buildings
+  - Fix for Vehicles falling through the ground
+  - Helis/VTOLs now spawn on the player
+  - Kavala heliport added back
+  

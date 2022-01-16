@@ -23,7 +23,7 @@ _processTargetPos = {
 	private _targetPosFinal = [];
 	
 	if !(surfaceIsWater _targetPos) then {
-		_nearSectorArr = _targetPos nearObjects ["Logic", 10];
+		_nearSectorArr = _targetPos nearObjects ["Logic", 20];
 		
 		if (count _nearSectorArr == 0) then {
 			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;
@@ -38,7 +38,7 @@ _processTargetPos = {
 	if (count _targetPosFinalArr > 0) then {
 		_targetPosFinal = selectRandom _targetPosFinalArr;
 	} else {
-		_targetPosFinal = [_targetPos, random 100, random 360] call BIS_fnc_relPos;
+		_targetPosFinal = [_targetPos, random 20, random 100] call BIS_fnc_relPos;
 	};
 	
 	[_targetPosFinal, _targetPosFinalArr]
@@ -114,7 +114,7 @@ if !(isNull _sender) then {
 						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
 						_asset setDir _dir;
 					} else {
-						_asset = createVehicle [_className, _targetPosFinal, [], 0, "CAN_COLLIDE"];
+						_asset = createVehicle [_className, position _sender, [], 0, "NONE"]; //heli spawn code, need anti-building check added
 						_asset setDir _dir;
 					};
 				} else {
@@ -181,7 +181,7 @@ if !(isNull _sender) then {
 				};
 				
 				private _asset = objNull;
-				_parachute = createVehicle [if (_isMan) then {"Steerable_Parachute_F"} else {"B_Parachute_02_F"}, _targetPosFinal, [], 0, "FLY"];
+				_parachute = createVehicle [if (_isMan) then {"Steerable_Parachute_F"} else {"B_Parachute_02_F"}, _targetPosFinal, [], 0, "NONE"];
 				
 				if (_isMan) then {
 					_asset = (group _sender) createUnit [_className, _targetPosFinal, [], 0, "NONE"];
@@ -195,7 +195,7 @@ if !(isNull _sender) then {
 						};
 					}; 
 				} else {
-					_parachute setPos ((position _parachute) vectorAdd [5 + random 5, 5 + random 5, 30 + random 15]);
+					_parachute setPos ((position _parachute) vectorAdd [0, 0, 5]);
 					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
 					_asset setVariable ["BIS_WL_deployPos", _targetPosFinal];
 					_bBox = boundingBoxReal _asset;
@@ -204,7 +204,7 @@ if !(isNull _sender) then {
 					_assetDummy = _className createVehicleLocal _targetPosFinal;
 					_assetDummy setPos _targetPosFinal;
 					_assetDummy hideObject TRUE;
-					_assetDummy enableSimulation FALSE;
+					_assetDummy enableSimulation TRUE;
 					
 					[_parachute, _asset, _assetDummy] spawn {
 						params ["_parachute", "_asset", "_assetDummy"];

@@ -64,6 +64,7 @@ if (_side == BIS_WL_localSide) then {
 	}; //below is heli/jet spawn code, molos AF never gets one because its not connected to any friendly towns when attacked 
 	if (!_connectedToBase && "H" in (_sector getVariable "BIS_WL_services")) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
+		
 		if (count _neighbors > 0) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted (BIS_WL_factionAircraftClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
@@ -76,16 +77,18 @@ if (_side == BIS_WL_localSide) then {
 				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
-			[_group, 0] setWaypointPosition [position _vehicle, 0];
+			
+
+			[_group, 0] setWaypointPosition [position _vehicle, 300];
 			_group deleteGroupWhenEmpty TRUE;
 			
-			_wp1 = _group addWaypoint [position _sector, 200];
+			_wp1 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 400];
 			_wp1 setWaypointType "SAD";
 			
-			_wp2 = _group addWaypoint [position _sector, 200];
+			_wp2 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 400];
 			_wp2 setWaypointType "SAD";
 			
-			_wp3 = _group addWaypoint [waypointPosition _wp1, 0];
+			_wp3 = _group addWaypoint [waypointPosition _wp1 vectorAdd [0, 0, 300], 400];
 			_wp3 setWaypointType "CYCLE";
 		};
 	};
