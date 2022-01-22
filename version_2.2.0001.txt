@@ -50,3 +50,7 @@
 
 2.2.0001
   - Vehicles now spawn on the ground
+  - Minor tweaks to heli spawn code
+  - Minor tweaks to jet spawn code
+  - Minor tweaks to Kavala
+  
