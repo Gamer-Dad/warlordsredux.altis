@@ -115,7 +115,7 @@ if !(isNull _sender) then {
 						_asset setDir _dir;
 					} else {
 						private _carrierspawn = getPosATL _sender;
-						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.5], [], 0, "NONE"]; //heli spawn code, need anti-building check added
+						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"]; //heli spawn code, need anti-building check added
 						_asset setDir _dir;
 					};
 				} else {
