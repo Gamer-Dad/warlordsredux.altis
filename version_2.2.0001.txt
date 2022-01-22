@@ -47,3 +47,6 @@
 
 2.2.0000
   - Prices for vehicles and aircraft overhauled.
+
+2.2.0001
+  - Vehicles now spawn on the ground
