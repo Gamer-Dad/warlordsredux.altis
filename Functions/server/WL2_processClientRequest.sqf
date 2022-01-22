@@ -114,8 +114,8 @@ if !(isNull _sender) then {
 						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
 						_asset setDir _dir;
 					} else {
-						_carrierspawn = getPosATL _sender
-						_asset = createVehicle [_className, _carrierspawn, [], 0, "NONE"]; //heli spawn code, need anti-building check added
+						private _carrierspawn = getPosATL _sender;
+						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.5], [], 0, "NONE"]; //heli spawn code, need anti-building check added
 						_asset setDir _dir;
 					};
 				} else {
