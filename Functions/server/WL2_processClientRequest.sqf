@@ -182,7 +182,7 @@ if !(isNull _sender) then {
 				
 				private _asset = objNull;
 				_parachute = createVehicle [if (_isMan) then {"Steerable_Parachute_F"} else {"B_Parachute_02_F"}, _targetPosFinal, [], 0, "NONE"];
-				
+				//called in Inf and Vehicle spawning code. Inf = _isMan, Vic = Else 
 				if (_isMan) then {
 					_asset = (group _sender) createUnit [_className, _targetPosFinal, [], 0, "NONE"];
 					_asset assignAsDriver _parachute;
@@ -195,6 +195,8 @@ if !(isNull _sender) then {
 						};
 					}; 
 				} else {
+					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
+					/*
 					_parachute setPos ((position _parachute) vectorAdd [0, 0, 5]);
 					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
 					_asset setVariable ["BIS_WL_deployPos", _targetPosFinal];
@@ -238,7 +240,7 @@ if !(isNull _sender) then {
 								playSound3D [_dropSound + ".wss", _asset];
 							};
 						};
-					};
+					};*/
 				};
 				
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;
