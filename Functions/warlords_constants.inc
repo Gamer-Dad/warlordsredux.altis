@@ -2,7 +2,7 @@
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_INFANTRY 5
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_VEHICLES 15
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_AIRCRAFT 5
-#define WL_MAX_SEIZING_HEIGHT 42 //this is AGL, default value 150, actual cap height = this/2-ish. 50 gives a cap height of 35?
+#define WL_MAX_SEIZING_HEIGHT 38 //this is AGL, default value 150, actual cap height = this/2-ish. 50 gives a cap height of 35?
 #define WL_TIMEOUT_MIN 0.025
 #define WL_TIMEOUT_SHORT 0.25
 #define WL_TIMEOUT_MEDIUM 0.5
