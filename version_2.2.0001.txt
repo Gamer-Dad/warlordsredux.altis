@@ -53,4 +53,4 @@
   - Minor tweaks to heli spawn code
   - Minor tweaks to jet spawn code
   - Minor tweaks to Kavala
-  
+  - Doubled spawn protection timer
