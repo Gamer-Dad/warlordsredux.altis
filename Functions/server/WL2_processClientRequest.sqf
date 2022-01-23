@@ -56,14 +56,14 @@ _setOwner = {
 			_assetGrp = group effectiveCommander _asset;
 			while {!(_assetGrp setGroupOwner (owner _sender)) && _i < 50} do {
 				_i = _i + 1;
-				_assetGrp setOwner (owner _sender);
+				_assetGrp setGroupOwner (owner _sender);
 				sleep WL_TIMEOUT_SHORT;
 			};
 		};
 		_i = 0;
 		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && _i < 50} do {
 			_i = _i + 1;
-			_asset setOwner (owner _sender);
+			_asset setGroupOwner (owner _sender);
 			sleep WL_TIMEOUT_SHORT;
 		};
 	};
