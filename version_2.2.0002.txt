@@ -54,3 +54,7 @@
   - Minor tweaks to jet spawn code
   - Minor tweaks to Kavala
   - Doubled spawn protection timer
+
+2.2.0002
+  - GOM script fix
+  - 80% fix for setOwner bug
