@@ -1273,7 +1273,7 @@ GOM_fnc_handleResources = {
 			_check = _kinds apply {typeof _killed iskindof _x};
 			_index = _check find true;
 
-			_kills set [_index,((_kills select _index)+1)];
+			_kills set [_index,((_kills select (_index+1)))];
 
 			_killer setvariable ["GOM_fnc_aircraftLoadoutTrackStats",_kills,true];
 		};
