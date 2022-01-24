@@ -155,9 +155,10 @@ if (isPlayer _owner) then {
 									////Beta
 									if (_asset isKindOf "Helicopter") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
 									} else { if (_asset isKindOf "Plane") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
-										} else { if (_asset isKindOf "Artillery") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-											} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
-									}};   
+										} else { if (_asset isKindOf "B_MBT_01_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+											} else { if (_asset isKindOf "O_MBT_02_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+												} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
+									}}};   
 									////Beta
 
 
