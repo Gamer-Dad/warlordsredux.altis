@@ -23,6 +23,7 @@ class CfgWLRequisitionPresets
 				class B_soldier_AA_F						{cost = 300;	requirements[]={};	};	// "Missile Specialist (AA)"
 				class B_Sharpshooter_F						{cost = 300;	requirements[]={};	};	// "Sharpshooter"
 				class B_sniper_F							{cost = 300;	requirements[]={};	};	// "Sniper"
+				class B_Captain_Dwarden_F					{cost = 1000;	requirements[]={};	};	// "Dwarden"
 			};
 			class Vehicles
 			{

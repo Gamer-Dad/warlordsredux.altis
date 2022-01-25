@@ -73,3 +73,4 @@
     - Taru Medical O_Heli_Transport_04_medevac_F
     -  Xi'an Vic   O_T_VTOL_02_vehicle_F
   - Added HMG and AT offroads
+  - Added Dwarden...he costs 1,000 CP
