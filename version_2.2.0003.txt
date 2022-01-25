@@ -58,3 +58,8 @@
 2.2.0002
   - GOM script fix
   - 80% fix for setOwner bug
+  - Tiered Rearming
+  - Added Arty
+
+2.2.0003
+  - 
