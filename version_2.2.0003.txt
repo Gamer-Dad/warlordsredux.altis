@@ -65,3 +65,11 @@
   - Revive system sent to the gulag
   - Added "Camping world megastore" to Makrynisi Island
   - Added "Camping world megastore" to Galana Nera bay beach
+  - Added Stealth jets
+  - Added new Helis/VTOLs
+    - blackfish Inf B_T_VTOL_01_infantry_F
+    - Blackfish Vic B_T_VTOL_01_vehicle_F
+
+    - Taru Medical O_Heli_Transport_04_medevac_F
+    -  Xi'an Vic   O_T_VTOL_02_vehicle_F
+  
