@@ -77,7 +77,8 @@
   - Added Mortars
   - Drones are now single AO use only to prevent spam <--Temp removed for troubleshooting
   - Added most drones to the game
-   - All drones are set to 25000 CP because they might not be working...need troubleshooting
+   - non-working drones are set to 25000 CP
+   - working drones are at normal prices
   - Doubled CP cost of Mortars
   - Revamped AI buddy system, More AI buddies and more modular system
     - 18 or less players = 8 AI buddies
