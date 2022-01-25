@@ -19,7 +19,7 @@ disabledAI = 1;
 enableDebugConsole = 1;
 
 //revive settings below
-ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
+ReviveMode = 0;                         //0: disabled, 1: enabled, 2: controlled by player attributes
 ReviveUnconsciousStateMode = 0;         //0: basic, 1: advanced, 2: realistic
 ReviveRequiredTrait = 0;                //0: none, 1: medic trait is required
 ReviveRequiredItems = 2;                //0: none, 1: medkit, 2: medkit or first aid kit
