@@ -62,4 +62,6 @@
   - Added Arty
 
 2.2.0003
-  - 
+  - Revive system sent to the gulag
+  - Added "Camping world megastore" to Makrynisi Island
+  - Added "Camping world megastore" to Galana Nera bay beach
