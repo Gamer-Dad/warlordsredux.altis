@@ -79,4 +79,8 @@
   - Added most drones to the game
    - All drones are set to 25000 CP because they might not be working...need troubleshooting
   - Doubled CP cost of Mortars
+  - Revamped AI buddy system, More AI buddies and more modular system
+    - 18 or less players = 8 AI buddies
+    - 19 - 32 = 4 AI buddies
+    - 33+ = 2 AI buddies
   
