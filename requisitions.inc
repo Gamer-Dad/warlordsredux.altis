@@ -95,7 +95,7 @@ class CfgWLRequisitionPresets
 				class B_static_AT_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
 				class B_SAM_System_03_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
 				class B_Radar_System_01_F					{cost = 6000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
-				class B_Mortar_01_F							{cost = 3000;	requirements[]={};	};	// "Mortar"
+				class B_Mortar_01_F							{cost = 8000;	requirements[]={};	};	// "Mortar"
 				class B_UGV_01_rcws_F						{cost = 1500;	requirements[]={};	};	// "UGAS" 
 				class B_UGV_02_Demining_F					{cost = 1000;	requirements[]={};	};	// "UGAS demining"
 				class B_UAV_05_F 							{cost = 25000;	requirements[]={"A"};	};	// "UCAV";
@@ -194,7 +194,7 @@ class CfgWLRequisitionPresets
 				class O_static_AT_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
 				class O_SAM_System_04_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
 				class O_Radar_System_02_F					{cost = 6000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
-				class O_Mortar_01_F							{cost = 3000;	requirements[]={};	};	// "Mortar"
+				class O_Mortar_01_F							{cost = 8000;	requirements[]={};	};	// "Mortar"
 				class O_UGV_01_rcws_F						{cost = 1500;	requirements[]={};	};	// "UGAV rcws"
 				class O_UGV_02_Demining_F					{cost = 1000;	requirements[]={};	};	// "UGAV demining"
 				class O_UAV_02_F							{cost = 25000;	requirements[]={"A"};	};	// "K40 AT"
