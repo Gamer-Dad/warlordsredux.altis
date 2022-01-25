@@ -78,3 +78,5 @@
   - Drones are now single AO use only to prevent spam
   - Added most drones to the game
    - All drones are set to 500 CP because they might not be working...need troubleshooting
+  - Doubled CP cost of Mortars
+  
