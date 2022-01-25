@@ -75,3 +75,4 @@
   - Added HMG and AT offroads
   - Added Dwarden...he costs 1,000 CP
   - Added Mortars
+  - Drones are now single AO use only to prevent spam

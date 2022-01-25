@@ -8,6 +8,7 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
 	{ deleteVehicle _x } forEach allMines;
+	{ _x setDamage 1 } forEach allUnitsUAV;
 	_previousOwners pushBack _owner;
 	if (time > 0 && count _previousOwners == 1) then {
 		{
