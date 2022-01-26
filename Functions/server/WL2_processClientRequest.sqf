@@ -125,13 +125,9 @@ if !(isNull _sender) then {
 						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
 						_asset setDir _dir;*/
 					} else {
-						private _carrierspawn = getPosATL _sender;
-						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"]; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
+						_asset = createVehicle [_className, _targetPosFinal, [], 0, "None"];; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
 						_asset setDir _dir;
-						/*if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
-							createVehicleCrew _asset;
-							(effectiveCommander _asset) setSkill 1;
-							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE; */
+						
 					};
 				} else {
 					if (_isStatic) then {
