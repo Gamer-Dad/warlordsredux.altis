@@ -87,3 +87,4 @@
   
 2.2.0004
  - Vehicles slightly less likely to explode on buildings
+ - More improvements to Vic spawning
