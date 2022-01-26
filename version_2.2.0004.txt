@@ -85,3 +85,5 @@
     - 19 - 32 = 4 AI buddies
     - 33+ = 2 AI buddies
   
+2.2.0004
+ 
