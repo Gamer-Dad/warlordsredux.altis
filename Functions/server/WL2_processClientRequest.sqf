@@ -95,13 +95,6 @@ if !(isNull _sender) then {
 				if (_className isKindOf "Air") then {
 					_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _className >> "simulation")) in ["airplanex", "airplane"] && !(_className isKindOf "VTOL_Base_F");
 					if (_isPlane) then {
-						private _carrierspawn = getPosATL _sender;
-						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"];
-						/*if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
-							createVehicleCrew _asset;
-							(effectiveCommander _asset) setSkill 1;
-							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE; */
-						/*
 						private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
 						private _taxiNodesCnt = count _taxiNodes;
@@ -123,9 +116,9 @@ if !(isNull _sender) then {
 							_spawnPos = _targetPosFinal;
 						};
 						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
-						_asset setDir _dir;*/
+						_asset setDir _dir;
 					} else {
-						_asset = createVehicle [_className, _targetPosFinal, [], 0, "None"];; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
+						_asset = createVehicle [_className, _targetPosFinal, [], 0, "CAN_COLLIDE"];; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
 						_asset setDir _dir;
 						
 					};
