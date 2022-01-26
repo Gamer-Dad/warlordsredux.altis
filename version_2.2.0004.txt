@@ -86,4 +86,4 @@
     - 33+ = 2 AI buddies
   
 2.2.0004
- 
+ - Vehicles slightly less likely to explode on buildings
