@@ -7,7 +7,14 @@ _sector setVariable ["BIS_WL_owner", _owner, TRUE];
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
-	{ deleteVehicle _x } forEach allMines;
+	_text =  format ["# OF Mines ON THE SEVER : %1 ", count allMines];
+    [_text] remoteExec ["systemChat", 0];
+
+	_minecount = count allMines;
+	if (_minecount > 400) then {
+		{ deleteVehicle _x } forEach allMines;
+	};
+	//{ deleteVehicle _x } forEach allMines;
 	//{ _x setDamage 1 } forEach allUnitsUAV;
 	_previousOwners pushBack _owner;
 	if (time > 0 && count _previousOwners == 1) then {

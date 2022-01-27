@@ -63,7 +63,7 @@ _setOwner = {
 		_i = 0;
 		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && _i < 50} do {
 			_i = _i + 1;
-			_asset setGroupOwner (owner _sender);
+			_asset setOwner (owner _sender);
 			sleep WL_TIMEOUT_SHORT;
 		};
 	};
@@ -87,10 +87,7 @@ if !(isNull _sender) then {
 			if (_className isKindOf "Ship") then {
 				_asset = createVehicle [_className, _targetPosFinal, [], 0, "CAN_COLLIDE"];
 				_asset setPos (_targetPosFinal vectorAdd [0,0,3]);
-				/*if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
-					createVehicleCrew _asset;
-					(effectiveCommander _asset) setSkill 1;
-					(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;*/
+				
 			} else {
 				if (_className isKindOf "Air") then {
 					_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _className >> "simulation")) in ["airplanex", "airplane"] && !(_className isKindOf "VTOL_Base_F");
