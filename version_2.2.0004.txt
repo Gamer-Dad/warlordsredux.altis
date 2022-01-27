@@ -87,3 +87,4 @@
   
 2.2.0004
  - All Jet/Heli/Inf/Tank spawning system reverted default/safe state.
+ - Added easter egg to the map
