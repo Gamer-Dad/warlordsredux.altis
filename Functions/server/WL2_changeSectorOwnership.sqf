@@ -13,10 +13,10 @@ if !(_owner in _previousOwners) then {
 	};
 	
 	_uavcount = count allUnitsUAV;
-	if (_uavcount > 50) then {
+	if (_uavcount > RD_UAVCOUNT_DELETE_THRESHOLD) then {
 		{ _x setDamage 1 } forEach allUnitsUAV;
 	};
-	/
+	
 	_previousOwners pushBack _owner;
 	if (time > 0 && count _previousOwners == 1) then {
 		{
