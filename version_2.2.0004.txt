@@ -91,3 +91,5 @@
  - Added easter egg to the AI aircraft spawn list
  - Added Backpack UAVs
  - VTOLs are now airfield only spawnable
+ - Improved Mine removal when a sector is capped, Mines only removed if a total # is met
+   -- Current Value is set to 400, Full 6 round burst from arty is 144 mines in a minefield. 
