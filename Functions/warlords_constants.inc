@@ -62,6 +62,7 @@
 #define WL_TARGET_RESET_VOTING_TIME 60
 #define RD_KILL_REWARD_MOD 4444  //Original value 10,000
 #define RD_GARRISON_SIZE_MOD 2.5  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
+#define RD_MINECOUNT_DELETE_THRESHOLD 400 //Original value 400; Total # of mines allowed on server anymore will be delete when any sector is capped
 
 
 #define WL_SYNCED_TIME (call BIS_fnc_WL2_syncedTime)
