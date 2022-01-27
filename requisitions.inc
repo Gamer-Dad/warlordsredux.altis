@@ -102,10 +102,10 @@ class CfgWLRequisitionPresets
 				//class B_UAV_02_F 							{cost = 25000;	requirements[]={"A"};	};	// "greyhawk AT";
 				//class B_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "greyhawk LGB";
 				//class B_T_UAV_03_F 						{cost = 25000;	requirements[]={"A"};	};	// "Firescout";
-				class B_UAV_01_F 							{cost = 500;	requirements[]={};	};	// "AR-2 Darter";
-				class B_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL-6 Pelican";
-				class B_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL-6 Pelican medical";
-				class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
+				//class B_UAV_01_F 							{cost = 500;	requirements[]={};	};	// "AR-2 Darter";
+				//class B_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL-6 Pelican";
+				//class B_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL-6 Pelican medical";
+				//class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
 
 			};
 		};
@@ -205,10 +205,10 @@ class CfgWLRequisitionPresets
 				//class O_UAV_02_F							{cost = 25000;	requirements[]={"A"};	};	// "K40 AT"
 				//class O_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "K40 LGB"
 				//class O_T_UAV_04_CAS_F					{cost = 25000;	requirements[]={"A"};	};	// "KH-3A CAS"
-				class O_UAV_01_F							{cost = 500;	requirements[]={};	};	// "AR-2 Darter"
-				class O_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL_6 Pelican"
-				class O_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL_6 Pelican Medical"
-				class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
+				//class O_UAV_01_F							{cost = 500;	requirements[]={};	};	// "AR-2 Darter"
+				//class O_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL_6 Pelican"
+				//class O_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL_6 Pelican Medical"
+				//class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
 
 			};
 		};
