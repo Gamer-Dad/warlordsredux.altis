@@ -105,6 +105,7 @@ class CfgWLRequisitionPresets
 				class B_UAV_01_F 							{cost = 500;	requirements[]={};	};	// "AR-2 Darter";
 				class B_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL-6 Pelican";
 				class B_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL-6 Pelican medical";
+				class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
 
 			};
 		};
@@ -207,6 +208,7 @@ class CfgWLRequisitionPresets
 				class O_UAV_01_F							{cost = 500;	requirements[]={};	};	// "AR-2 Darter"
 				class O_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL_6 Pelican"
 				class O_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL_6 Pelican Medical"
+				class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
 
 			};
 		};
