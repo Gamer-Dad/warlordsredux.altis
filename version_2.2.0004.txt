@@ -90,3 +90,4 @@
  - Added easter egg to the map
  - Added easter egg to the AI aircraft spawn list
  - Added Backpack UAVs
+ - VTOLs are now airfield only spawnable
