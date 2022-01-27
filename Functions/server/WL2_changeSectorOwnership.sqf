@@ -11,8 +11,12 @@ if !(_owner in _previousOwners) then {
 	if (_minecount > RD_MINECOUNT_DELETE_THRESHOLD) then {
 		{ deleteVehicle _x } forEach allMines;
 	};
-	//{ deleteVehicle _x } forEach allMines;
-	//{ _x setDamage 1 } forEach allUnitsUAV;
+	
+	_uavcount = count allUnitsUAV;
+	if (_uavcount > 50) then {
+		{ _x setDamage 1 } forEach allUnitsUAV;
+	};
+	/
 	_previousOwners pushBack _owner;
 	if (time > 0 && count _previousOwners == 1) then {
 		{
