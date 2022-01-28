@@ -7,7 +7,7 @@ while {!BIS_WL_missionEnd} do {
 		// Thanks to marii for the AI limiting code; Adjust numbers below for AI buddy count change
         //_text =  format ["# OF PLAYERS ON THE SEVER : %1 ", count BIS_WL_allWarlords];
         //[_text] remoteExec ["systemChat", 0];
-
+        /*
         _players = count BIS_WL_allWarlords;
         if (_players >= 32) then 
 		{
@@ -21,7 +21,7 @@ while {!BIS_WL_missionEnd} do {
 				BIS_WL_maxSubordinates = 4;
 				publicVariable "BIS_WL_maxSubordinates"
 			} 
-		};
+		};*/
 	} forEach _newPlayers;
 	
 	uiSleep WL_TIMEOUT_STANDARD;
