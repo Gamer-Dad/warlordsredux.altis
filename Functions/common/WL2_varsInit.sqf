@@ -121,7 +121,7 @@ switch (_locality) do {
 		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
-		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 4);
+		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 6);
 		BIS_WL_matesInBasket = 0;
 		BIS_WL_vehsInBasket = 0;
 		BIS_WL_dropPool = [];

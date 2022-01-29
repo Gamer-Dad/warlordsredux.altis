@@ -58,3 +58,50 @@
 2.2.0002
   - GOM script fix
   - 80% fix for setOwner bug
+  - Tiered Rearming
+  - Added Arty
+
+2.2.0003
+  - Revive system sent to the gulag
+  - Added "Camping world megastore" to Makrynisi Island
+  - Added "Camping world megastore" to Galana Nera bay beach
+  - Added Stealth jets
+  - Added new Helis/VTOLs
+    - blackfish Inf B_T_VTOL_01_infantry_F
+    - Blackfish Vic B_T_VTOL_01_vehicle_F
+
+    - Taru Medical O_Heli_Transport_04_medevac_F
+    -  Xi'an Vic   O_T_VTOL_02_vehicle_F
+  - Added HMG and AT offroads
+  - Added Dwarden...he costs 1,000 CP
+  - Added Mortars
+  - Drones are now single AO use only to prevent spam <--Temp removed for troubleshooting
+  - Added most drones to the game
+   - non-working drones are set to 25000 CP
+   - working drones are at normal prices
+  - Doubled CP cost of Mortars
+  - Revamped AI buddy system, More AI buddies and more modular system
+    - 18 or less players = 8 AI buddies
+    - 19 - 32 = 4 AI buddies
+    - 33+ = 2 AI buddies
+  
+2.2.0004
+ - All Jet/Heli/Inf/Tank spawning system reverted default/safe state.
+ - Added easter egg to the map
+ - Added easter egg to the AI aircraft spawn list
+ - Added Backpack UAVs
+ - VTOLs are now airfield only spawnable
+ - Improved Mine removal when a sector is capped, Mines only removed if a total # is met
+   -- Current Value is set to 400, Full 6 round burst from arty is 144 mines in a minefield. 
+ - Improved UAV removal when a sector is capped,  only UAVs removed if a total # is met
+   -- Current Value is set to 50. 
+
+2.2.0005
+ - Rebalnced UGAVs CP cost for less spam
+ - Dynamic AI Buddy count improvements for less lag
+ - Default AI buddy count increased to 12
+ - AI buddy system, More AI buddies and more modular system
+    - 12 or less players = 12 AI buddies
+    - 20 or less players = 8 AI buddies
+    - 19 - 32 = 4 AI buddies
+    - 33+ = 2 AI buddies
