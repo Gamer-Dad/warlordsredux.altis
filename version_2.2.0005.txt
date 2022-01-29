@@ -97,4 +97,5 @@
    -- Current Value is set to 50. 
 
 2.2.0005
- - 
+ - Rebalnced UGAVs CP cost for less spam
+ - Dynamic AI Buddy count improvements for less lag
