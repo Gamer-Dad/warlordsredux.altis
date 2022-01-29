@@ -7,39 +7,7 @@ _sector setVariable ["BIS_WL_owner", _owner, TRUE];
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
-	//Mine removal code
-	_minecount = count allMines;
-	if (_minecount > RD_MINECOUNT_DELETE_THRESHOLD) then {
-		{ deleteVehicle _x } forEach allMines;
-	};
-	//UAV removal code
-	_uavcount = count allUnitsUAV;
-	if (_uavcount > RD_UAVCOUNT_DELETE_THRESHOLD) then {
-		{ _x setDamage 1 } forEach allUnitsUAV;
-	};
-	//AI buddy count system
-	_players = count BIS_WL_allWarlords;
-    	if (_players >= 32) then 
-		{
-        	BIS_WL_maxSubordinates = 2;
-			publicVariable "BIS_WL_maxSubordinates"
-        }
-		Else 
-		{
-			if (_players >= 20) then
-			{
-				BIS_WL_maxSubordinates = 4;
-				publicVariable "BIS_WL_maxSubordinates"
-			}
-			Else 
-			{
-				if (_players >= 12) then
-				{
-					BIS_WL_maxSubordinates = 8;
-					publicVariable "BIS_WL_maxSubordinates"
-				}
-			} 
-		};
+	{ deleteVehicle _x } forEach allMines;
 	_previousOwners pushBack _owner;
 	if (time > 0 && count _previousOwners == 1) then {
 		{

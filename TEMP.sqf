@@ -25,7 +25,7 @@ BIS_WL_initModule setVariable ["BIS_WL_dropCost_far", 1000];
 BIS_WL_initModule setVariable ["BIS_WL_autonomous_limit", 2];
 BIS_WL_initModule setVariable ["BIS_WL_arsenalEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_arsenalCost", 1000];
-BIS_WL_initModule setVariable ["BIS_WL_maxSubordinates", 12]; //default value 8
+BIS_WL_initModule setVariable ["BIS_WL_maxSubordinates", 8]; //default value 8
 BIS_WL_initModule setVariable ["BIS_WL_assetLimit", 10];
 BIS_WL_initModule setVariable ["BIS_WL_targetResetTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_baseValue", 50]; //this changes money from main base ie starter CP/Min, default value 10

@@ -157,8 +157,7 @@ BIS_WL_factionAircraftClasses = [
 	[
 		"I_Plane_Fighter_03_CAS_F",	100, //Indy A-10, default 100
 		"I_Heli_light_03_F", 70, //Hellcat with rockets, default 70
-		"I_Plane_Fighter_04_F", 50, //A-149 Gryphon. default 50
-		"I_C_Plane_Civil_01_F", 5 //Caesar BTT. default 5
+		"I_Plane_Fighter_04_F", 50 //A-149 Gryphon. default 50
 		//default value "I_Heli_light_03_dynamicLoadout_F" //hellcat without rockets
 		
 	]
