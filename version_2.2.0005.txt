@@ -95,3 +95,6 @@
    -- Current Value is set to 400, Full 6 round burst from arty is 144 mines in a minefield. 
  - Improved UAV removal when a sector is capped,  only UAVs removed if a total # is met
    -- Current Value is set to 50. 
+
+2.2.0005
+ - 
