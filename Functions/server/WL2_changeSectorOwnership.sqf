@@ -17,7 +17,7 @@ if !(_owner in _previousOwners) then {
 	if (_uavcount > RD_UAVCOUNT_DELETE_THRESHOLD) then {
 		{ _x setDamage 1 } forEach allUnitsUAV;
 	};
-	
+	//AI buddy count system
 	_players = count BIS_WL_allWarlords;
     	if (_players >= 32) then 
 		{
@@ -26,10 +26,18 @@ if !(_owner in _previousOwners) then {
         }
 		Else 
 		{
-			if (_players >= 18) then
+			if (_players >= 20) then
 			{
 				BIS_WL_maxSubordinates = 4;
 				publicVariable "BIS_WL_maxSubordinates"
+			}
+			Else 
+			{
+				if (_players >= 12) then
+				{
+					BIS_WL_maxSubordinates = 8;
+					publicVariable "BIS_WL_maxSubordinates"
+				}
 			} 
 		};
 	_previousOwners pushBack _owner;

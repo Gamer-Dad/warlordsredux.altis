@@ -99,3 +99,9 @@
 2.2.0005
  - Rebalnced UGAVs CP cost for less spam
  - Dynamic AI Buddy count improvements for less lag
+ - Default AI buddy count increased to 12
+ - Revamped AI buddy system, More AI buddies and more modular system
+    - 12 or less players = 12 AI buddies
+    - 20 or less players = 8 AI buddies
+    - 19 - 32 = 4 AI buddies
+    - 33+ = 2 AI buddies
