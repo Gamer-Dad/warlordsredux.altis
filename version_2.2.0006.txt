@@ -107,3 +107,4 @@
 
 2.2.0006
  - Modified Camo/gear looks for static spawn vehicles
+ - SAM sites not longer get removed by UAV cleanup, code by Marii
