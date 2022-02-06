@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={3440.5649,33.231461,12663.366};
-		dir[]={-0.15821643,-0.27054274,0.94974041};
-		up[]={-0.044473521,0.96256399,0.26695386};
-		aside[]={0.9865731,5.2656469e-007,0.16435716};
+		dir[]={-0.15819816,-0.27051127,0.94962996};
+		up[]={-0.044451684,0.96271682,0.26683405};
+		aside[]={0.98640639,-7.4505806e-009,0.16432472};
 	};
 };
 binarizationWanted=0;
@@ -12419,7 +12419,7 @@ class Mission
 			};
 			id=493;
 			type="Land_RampConcrete_F";
-			atlOffset=18.499983;
+			atlOffset=18.499987;
 		};
 		class Item283
 		{
@@ -12467,7 +12467,7 @@ class Mission
 			};
 			id=496;
 			type="Land_RampConcrete_F";
-			atlOffset=12.899992;
+			atlOffset=12.899994;
 		};
 		class Item286
 		{
@@ -12523,7 +12523,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3422.0034,10.856731,12790.973};
-				angles[]={0,4.7486067,-0};
+				angles[]={0,4.7486067,0};
 			};
 			side="Empty";
 			flags=1;

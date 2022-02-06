@@ -25,7 +25,7 @@ BIS_WL_initModule setVariable ["BIS_WL_dropCost_far", 1000];
 BIS_WL_initModule setVariable ["BIS_WL_autonomous_limit", 2];
 BIS_WL_initModule setVariable ["BIS_WL_arsenalEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_arsenalCost", 1000];
-BIS_WL_initModule setVariable ["BIS_WL_maxSubordinates", 8]; //default value 8
+BIS_WL_initModule setVariable ["BIS_WL_maxSubordinates", 20]; //default value 8
 BIS_WL_initModule setVariable ["BIS_WL_assetLimit", 10];
 BIS_WL_initModule setVariable ["BIS_WL_targetResetTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_baseValue", 50]; //this changes money from main base ie starter CP/Min, default value 10
@@ -34,7 +34,7 @@ BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMax", -1]; //default value -1
 BIS_WL_initModule setVariable ["BIS_WL_scanCooldown", 90];
 BIS_WL_initModule setVariable ["BIS_WL_lastLoadoutCost", 100];
 BIS_WL_initModule setVariable ["BIS_WL_wreckRemovalTimeout", 30];
-BIS_WL_initModule setVariable ["BIS_WL_corpseRemovalTimeout", 600];
+BIS_WL_initModule setVariable ["BIS_WL_corpseRemovalTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_savedLoadoutCost", 500];
 BIS_WL_initModule setVariable ["BIS_WL_timeMultiplier", 6];
 BIS_WL_initModule setVariable ["BIS_WL_zoneRestrictionSetting", 0];
