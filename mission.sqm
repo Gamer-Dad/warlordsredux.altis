@@ -8,11 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=511;
+		nextID=512;
 	};
 	class MarkerIDProvider
 	{
-		nextID=17;
+		nextID=18;
 	};
 	class Camera
 	{
@@ -165,7 +165,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=300;
+		items=301;
 		class Item0
 		{
 			dataType="Logic";
@@ -12695,6 +12695,19 @@ class Mission
 			id=510;
 			type="Land_Pier_F";
 			atlOffset=36.400002;
+		};
+		class Item300
+		{
+			dataType="Marker";
+			position[]={14955.695,0,13948.092};
+			name="marker_17";
+			text="Push & hold i to load the menu!";
+			type="hd_warning";
+			colorName="ColorRed";
+			a=2;
+			b=2;
+			id=511;
+			atlOffset=38.282616;
 		};
 	};
 	class Connections
