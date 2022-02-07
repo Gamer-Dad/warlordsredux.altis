@@ -62,9 +62,7 @@
   - Added Arty
 
 2.2.0003
-  - Revive system sent to the gulag
-  - Added "Camping world megastore" to Makrynisi Island
-  - Added "Camping world megastore" to Galana Nera bay beach
+
   - Added Stealth jets
   - Added new Helis/VTOLs
     - blackfish Inf B_T_VTOL_01_infantry_F
@@ -73,18 +71,17 @@
     - Taru Medical O_Heli_Transport_04_medevac_F
     -  Xi'an Vic   O_T_VTOL_02_vehicle_F
   - Added HMG and AT offroads
-  - Added Dwarden...he costs 1,000 CP
+  - Added Dwarden.
   - Added Mortars
-  - Drones are now single AO use only to prevent spam <--Temp removed for troubleshooting
-  - Added most drones to the game
-   - non-working drones are set to 25000 CP
-   - working drones are at normal prices
-  - Doubled CP cost of Mortars
+   - Doubled CP cost of Mortars
   - Revamped AI buddy system, More AI buddies and more modular system
-    - 18 or less players = 8 AI buddies
-    - 19 - 32 = 4 AI buddies
-    - 33+ = 2 AI buddies
-  
+   
 2.2.0004
- - Vehicles slightly less likely to explode on buildings
- - More improvements to Vic spawning
+  
+  -Price Adjustments 1.2 - More expensive jets, cheaper INF
+  -TROPHY System - Partially works, only seems to work on 1st vehicle.
+  -Added "Push & Hold I for menu"
+  -Increased Funds Transfer cost to 5k
+  -Sector Reset Cheaper at 500
+  
+  
