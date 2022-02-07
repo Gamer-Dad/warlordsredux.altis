@@ -100,6 +100,9 @@ BIS_fnc_WL2_zoneRestrictionHandleServer = compile preprocessFileLineNumbers "Fun
 
 endLoadingScreen;
 
+//---Trophy
+call compile preprocessFile "Functions\External\Baked_AIS\Baked_AIS_init.sqf";
+
 //view distance limits 
 tawvd_maxRange = 4000; //max range allowed
 tawvd_disablenone = true; //disables the disabling of grass I think
@@ -117,8 +120,12 @@ addMissionEventHandler ["Loaded", {
 	
 	If(_saveType isEqualto "continue") then{
 		[] execVM "GF_Earplugs\GF_Earplugs.sqf";
+		
 	};
 }];
+
+
+
 
 [] execVM "scripts\GF_Earplugs\GF_Earplugs.sqf";
 //end of earplug section 
