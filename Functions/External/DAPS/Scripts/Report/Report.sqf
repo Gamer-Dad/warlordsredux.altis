@@ -6,7 +6,7 @@ _indicator=_this select 3;
 if(dapsDebug)then{
 	//"DAPS REPORT"remoteExec["systemChat"];
 	systemChat"DAPS REPORT";
-	execVM"DAPS\Scripts\Report\DetailedReport.sqf";
+	execVM"Functions\External\DAPS\Scripts\Report\DetailedReport.sqf";
 	sleep 2;
 };
 if!((vehicle player)==_v)exitWith{};
@@ -24,6 +24,6 @@ if(_d<1)then{_d=1};
 _d=ceil(_d/22.5);
 //if(_d<1)then{_d=1};
 _colour="#999999";
-_pic=format["DAPS\Pics\dir%1.paa",_d];
+_pic=format["Functions\External\DAPS\Pics\dir%1.paa",_d];
 hint(parseText format["<img size='7' color='%1' img image='%2'/><br/><br/>%3",_colour,_pic,_text]);
 playSound"Alarm";

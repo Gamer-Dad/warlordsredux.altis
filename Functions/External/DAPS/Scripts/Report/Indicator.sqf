@@ -5,6 +5,6 @@ _d=_this select 1;
 if(_d<1)then{_d=1};
 _d=ceil(_d/45);
 _colour="#999999";
-_pic=format["DAPS\Pics\d%1.paa",_d];
+_pic=format["Functions\External\DAPS\Pics\d%1.paa",_d];
 hint(parseText format["<img size='7' color='%1' img image='%2'/>%3",_colour,_pic," "]);
 playSound"Alarm";

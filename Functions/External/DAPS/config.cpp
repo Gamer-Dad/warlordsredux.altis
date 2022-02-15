@@ -13,7 +13,7 @@ class cfgPatches
 
 class Extended_PostInit_EventHandlers 
 {
-	dapsInit = "execVM '\DAPS\Scripts\Start.sqf'";
+	dapsInit = "execVM '\Functions\External\DAPS\Scripts\Start.sqf'";
 };
 
 
@@ -138,7 +138,7 @@ class CfgFunctions
 		tag="DAPS";
 		class Start
 		{
-			file="\DAPS\functions";
+			file="\Functions\External\DAPS\functions";
 			class AssignAPS{};
 			//class ClearAllAPS{};
 		};
