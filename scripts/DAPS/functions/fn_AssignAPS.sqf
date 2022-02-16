@@ -7,5 +7,5 @@ sleep .1;
 waitUntil{!(isNil"dapsDefinitionsLoaded")};
 waitUntil{dapsDefinitionsLoaded};
 waitUntil{!(isNil"dapsDefinitionsLoaded2")};
-if(_activated)then{[(_module getVariable"dapsAPSType"),_units]execVM"Functions\External\DAPS\Scripts\Management\AssignAPS.sqf"};
+if(_activated)then{[(_module getVariable"dapsAPSType"),_units]execVM"scripts\DAPS\Scripts\Management\AssignAPS.sqf"};
 TRUE

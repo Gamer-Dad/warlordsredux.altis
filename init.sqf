@@ -102,7 +102,7 @@ endLoadingScreen;
 
 //---Trophy
 //call compile preprocessFile "Functions\External\Baked_AIS\Baked_AIS_init.sqf";
-execVM "Functions\External\DAPS\Scripts\Start.sqf";
+execVM "scripts\DAPS\Scripts\Start.sqf";
 
 //view distance limits 
 tawvd_maxRange = 4000; //max range allowed
