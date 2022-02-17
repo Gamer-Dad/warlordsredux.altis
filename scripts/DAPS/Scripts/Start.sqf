@@ -161,7 +161,19 @@ DAPS_fnc_React=compile preprocessFile"scripts\DAPS\Scripts\Misc\React.sqf";
 //https://community.bistudio.com/wiki/DIK_KeyCodes
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 sleep 1;
-["Drongo's APS","APS report",["Show Dialog","Tool Tip"],"",{call daps_fnc_KeyPressed},[211,[FALSE,FALSE,FALSE]]]call cba_fnc_addKeybind;
+//["Drongo's APS","APS report",["Show Dialog","Tool Tip"],"",{call daps_fnc_KeyPressed},[211,[FALSE,FALSE,FALSE]]]call cba_fnc_addKeybind;
+
+dapsKeyHandle=[]spawn{
+    while{TRUE}do{
+		//https://community.bistudio.com/wiki/inputAction/actions
+		if((inputaction"cycleThrownItems")>.1)then{
+			call DAPS_fnc_KeyPressed;
+			sleep .3;
+		};
+		sleep .1;
+    };
+};
+
 dapsReady=TRUE;
 dapsServer=FALSE;
 if(isServer)then{
