@@ -79,9 +79,10 @@
 2.2.0004
   
   -Price Adjustments 1.2 - More expensive jets, cheaper INF
-  -TROPHY System - Partially works, only seems to work on 1st vehicle.
-  -Added "Push & Hold I for menu"
+  -Drongos TROPHY System - Fully working, might needs tweaking.
+  -Added "Push & Hold I for menu" on map
   -Increased Funds Transfer cost to 5k
   -Sector Reset Cheaper at 500
+  -More AI in early game overall, no AI when players > 40.
   
   
