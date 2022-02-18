@@ -66,7 +66,7 @@ class CfgWLRequisitionPresets
 				class B_T_VTOL_01_armed_F					{cost = 10000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 16000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 32000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
-				class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II Stealth";
+				//class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II Stealth";
 				
 			};
 			class Naval
@@ -170,7 +170,7 @@ class CfgWLRequisitionPresets
 				class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"
 				class O_Plane_Fighter_02_F					{cost = 35000;	requirements[]={"A"};	};	// "To-201 Shikra"
-				class O_Plane_Fighter_02_Stealth_F			{cost = 42000;	requirements[]={"A"};	};	// "To-201 Shikra Stealth"
+				//class O_Plane_Fighter_02_Stealth_F			{cost = 42000;	requirements[]={"A"};	};	// "To-201 Shikra Stealth"
 				
 			};
 			class Naval
