@@ -57,14 +57,14 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class B_Heli_Light_01_F						{cost = 500;	requirements[]={"H"};	};	// "MH-9 Hummingbird"
-				class B_Heli_Light_01_dynamicLoadout_F		{cost = 2000;	requirements[]={"H"};	};	// "AH-9 Pawnee"
+				class B_Heli_Light_01_dynamicLoadout_F		{cost = 1500;	requirements[]={"H"};	};	// "AH-9 Pawnee"
 				class B_Heli_Transport_01_F					{cost = 1000;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 1500;	requirements[]={"H"};	};	// "CH-67 Huron"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
 				class B_T_VTOL_01_infantry_F				{cost = 1800;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
 				class B_T_VTOL_01_vehicle_F					{cost = 1800;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
-				class B_T_VTOL_01_armed_F					{cost = 10000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
-				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 16000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
+				class B_T_VTOL_01_armed_F					{cost = 12000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
+				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 32000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
 				//class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II Stealth";
 				
@@ -94,8 +94,8 @@ class CfgWLRequisitionPresets
 				class B_GMG_01_high_F						{cost = 450;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class B_static_AA_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
 				class B_static_AT_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
-				class B_SAM_System_03_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
-				class B_Radar_System_01_F					{cost = 6000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
+				class B_SAM_System_03_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
+				class B_Radar_System_01_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
 				class B_Mortar_01_F							{cost = 8000;	requirements[]={};	};	// "Mortar"
 				class B_UGV_01_rcws_F						{cost = 2500;	requirements[]={};	};	// "UGAS" 
 				class B_UGV_02_Demining_F					{cost = 1500;	requirements[]={};	};	// "UGAS demining"
@@ -152,8 +152,8 @@ class CfgWLRequisitionPresets
 				class O_APC_Tracked_02_cannon_F				{cost = 6000;	requirements[]={};	};	// "BTR-K Kamysh"
 				class O_APC_Tracked_02_AA_F					{cost = 5000;	requirements[]={};	};	// "ZSU-39 Tigris"
 				class O_MBT_02_cannon_F						{cost = 10000;	requirements[]={};	};	// "T-100 Varsuk"
-				class O_MBT_04_cannon_F						{cost = 14000;	requirements[]={};	};	// "T-140 Angara"
-				class O_MBT_04_command_F					{cost = 16000;	requirements[]={};	};	// "T-140K Angara"
+				class O_MBT_04_cannon_F						{cost = 12000;	requirements[]={};	};	// "T-140 Angara"
+				class O_MBT_04_command_F					{cost = 13000;	requirements[]={};	};	// "T-140K Angara"
 				class O_MBT_02_arty_F						{cost = 20000;	requirements[]={};	};	// "2S9 Sochor"
 				
 
@@ -161,7 +161,7 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class O_Heli_Light_02_unarmed_F				{cost = 700;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"
-				class O_Heli_Light_02_dynamicLoadout_F		{cost = 1500;	requirements[]={"H"};	};	// "PO-30 Orca"
+				class O_Heli_Light_02_dynamicLoadout_F		{cost = 2500;	requirements[]={"H"};	};	// "PO-30 Orca"
 				class O_Heli_Transport_04_F					{cost = 500;	requirements[]={"H"};	};	// "Mi-290 Taru"
 				class O_Heli_Transport_04_covered_F			{cost = 1000;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"
 				class O_Heli_Transport_04_medevac_F 		{cost = 1000;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"
@@ -169,7 +169,7 @@ class CfgWLRequisitionPresets
 				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"
 				class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"
-				class O_Plane_Fighter_02_F					{cost = 35000;	requirements[]={"A"};	};	// "To-201 Shikra"
+				class O_Plane_Fighter_02_F					{cost = 33000;	requirements[]={"A"};	};	// "To-201 Shikra"
 				//class O_Plane_Fighter_02_Stealth_F			{cost = 42000;	requirements[]={"A"};	};	// "To-201 Shikra Stealth"
 				
 			};
@@ -198,8 +198,8 @@ class CfgWLRequisitionPresets
 				class O_GMG_01_high_F						{cost = 450;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
 				class O_static_AA_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"
 				class O_static_AT_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
-				class O_SAM_System_04_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
-				class O_Radar_System_02_F					{cost = 6000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
+				class O_SAM_System_04_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
+				class O_Radar_System_02_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
 				class O_Mortar_01_F							{cost = 8000;	requirements[]={};	};	// "Mortar"
 				class O_UGV_01_rcws_F						{cost = 2500;	requirements[]={};	};	// "UGAV rcws"
 				class O_UGV_02_Demining_F					{cost = 1500;	requirements[]={};	};	// "UGAV demining"
