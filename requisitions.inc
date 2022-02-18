@@ -161,7 +161,7 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class O_Heli_Light_02_unarmed_F				{cost = 700;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"
-				class O_Heli_Light_02_dynamicLoadout_F		{cost = 2500;	requirements[]={"H"};	};	// "PO-30 Orca"
+				class O_Heli_Light_02_dynamicLoadout_F		{cost = 5000;	requirements[]={"H"};	};	// "PO-30 Orca"
 				class O_Heli_Transport_04_F					{cost = 500;	requirements[]={"H"};	};	// "Mi-290 Taru"
 				class O_Heli_Transport_04_covered_F			{cost = 1000;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"
 				class O_Heli_Transport_04_medevac_F 		{cost = 1000;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"
