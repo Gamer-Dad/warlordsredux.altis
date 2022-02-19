@@ -8,7 +8,7 @@ class CfgWLRequisitionPresets
 			{
 				class B_Soldier_F 							{cost = 20;		requirements[]={};	};	// "Rifleman"
 				class B_soldier_PG_F						{cost = 25;		requirements[]={};	};	// "Para Trooper"
-				class B_CTRG_soldier_F						{cost = 30;		requirements[]={};	};	// "CTRG Rifleman"
+				class B_CTRG_Soldier_tna_F					{cost = 30;		requirements[]={};	};	// "CTRG Scout"
 				class B_crew_F 								{cost = 15;		requirements[]={};	};	// "Crewman"
 				class B_Helipilot_F 						{cost = 10;		requirements[]={};	};	// "Helicopter Pilot"
 				class B_Pilot_F 							{cost = 10;		requirements[]={};	};	// "Pilot"
