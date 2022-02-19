@@ -25,7 +25,7 @@ _purchase_items = _display displayCtrl 1;
 (_display displayCtrl 103) ctrlSetStructuredText parseText format [
 	"<t align = 'center' size = '%2'>%1</t>",
 	[
-		format [localize "STR_A3_WL_asset_infantry_info", BIS_WL_maxSubordinates + 1],
+		format [localize "STR_A3_WL_asset_infantry_info", BIS_WL_maxSubordinates ],
 		localize "STR_A3_WL_asset_vehicles_info",
 	 	localize "STR_A3_WL_asset_aircraft_info",
 	 	localize "STR_A3_WL_asset_naval_info",

@@ -18,59 +18,6 @@ if !(_owner in _previousOwners) then {
 		{ _x setDamage 1 } forEach (allUnitsUAV select {!(typeOf _x in ["B_SAM_System_03_F","B_Radar_System_01_F","O_SAM_System_04_F","O_Radar_System_02_F"])}); //better way to filter the ones u dont want to blow up.
 	};
 
-	//AI buddy count system
-	_players = count BIS_WL_allWarlords;
-    	if (_players >= 40) then 
-		{
-        	BIS_WL_maxSubordinates = 0;
-			publicVariable "BIS_WL_maxSubordinates";
-			systemchat "Player count at 40 or greater. Max AI now at 0; human interaction now required!";			
-        }
-		Else 
-		{
-			if (_players >= 30) then
-			{
-				BIS_WL_maxSubordinates = 2;
-				publicVariable "BIS_WL_maxSubordinates";
-				systemchat "Player count at 30 or greater. Max AI now at 2; make em count!";
-			}
-			Else 
-			{
-				if (_players >= 20) then
-				{
-					BIS_WL_maxSubordinates = 4;
-					publicVariable "BIS_WL_maxSubordinates";
-					systemchat "Player count at 20 or greater. Max AI now at 4; put them to work!";
-				}
-				Else 
-				{
-					if (_players >= 10) then
-					{
-						BIS_WL_maxSubordinates = 8;
-						publicVariable "BIS_WL_maxSubordinates";
-						systemchat "Player count at 10 or greater. Max AI now at 8; squad size!";
-					}
-					Else 
-					{
-						if (_players >= 6) then
-						{
-							BIS_WL_maxSubordinates = 16;
-							publicVariable "BIS_WL_maxSubordinates";
-							systemchat "Player count at 6 or greater. Max AI now at 16; you can make it work!";
-						}
-						Else 
-						{
-							if (_players < 6) then
-							{
-								BIS_WL_maxSubordinates = 20;
-								publicVariable "BIS_WL_maxSubordinates";
-								systemchat "Player count at less than 6. Max AI now at 20; full company size!";
-							}
-						} 
-					} 
-				} 
-			} 
-		};
 		
 	_previousOwners pushBack _owner;
 	if (time > 0 && count _previousOwners == 1) then {
