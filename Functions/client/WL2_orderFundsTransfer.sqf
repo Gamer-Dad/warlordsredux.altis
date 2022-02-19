@@ -46,14 +46,19 @@ _purchase_transfer_units lbSetCurSel 0;
 	_color = BIS_WL_colorFriendly;
 	while {ctrlEnabled (_this # 1)} do {
 		_valueArr = toArray ctrlText (_this # 2);
-		{
-			if (_x < 48 || _x > 57) then {
-				_valueArr deleteAt _forEachIndex
+		private _i = 0;
+		while {_i < count _valueArr} do {
+			if (_valueArr # _i < 48 || {_valueArr # _i > 57}) then {
+				_valueArr deleteAt _i;
+			}
+			else {
+				_i = _i + 1;
 			};
-		} forEach _valueArr;
+		};
+		_i = nil;
 		_valueText = toString _valueArr;
 		(_this # 2) ctrlSetText _valueText;
-		_value = (if (_valueText != "") then {call compile _valueText} else {0});
+		_value = (if (_valueText != "") then {parseNumber _valueText} else {0});
 		if (_value <= (player getVariable "BIS_WL_funds") && _value > 0) then {
 			uiNamespace setVariable ["BIS_WL_fundsTransferPossible", TRUE];
 			(_this # 1) ctrlSetBackgroundColor _color;

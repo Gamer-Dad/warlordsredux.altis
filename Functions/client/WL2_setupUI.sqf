@@ -605,7 +605,7 @@ switch (_displayClass) do {
 			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
 				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 				_targetName = (_display displayCtrl 116) lbText lbCurSel (_display displayCtrl 116);
-				_amount = (call compile ctrlText (_display displayCtrl 117)) min (player getVariable "BIS_WL_funds");
+				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min (player getVariable "BIS_WL_funds");
 				_targetArr = BIS_WL_allWarlords select {name _x == _targetName};
 				if (count _targetArr > 0) then {
 					playSound "AddItemOK";
