@@ -18,7 +18,7 @@
 #define WL_ANNOUNCER_PAUSE 0.5
 #define WL_SECTOR_CAPTURE_REWARD_MULTIPLIER 30
 #define WL_SECTOR_PAYOFF_PERIOD 75 
-#define WL_SPAWN_GRID_SIZE 60 //default value 40
+#define WL_SPAWN_GRID_SIZE 40
 #define WL_PLAYER_ICON_RANGE 75
 #define WL_BASE_DANGER_SPAWN_RANGE 200
 #define WL_ID_SELECTION_NONE 0
@@ -63,7 +63,7 @@
 #define RD_KILL_REWARD_MOD 4444  //Original value 10,000
 #define RD_GARRISON_SIZE_MOD 2.5  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
 
-
+#define RD_UAVCOUNT_DELETE_THRESHOLD 1 //Original value 50;  
 #define WL_SYNCED_TIME (call BIS_fnc_WL2_syncedTime)
 #define WL_TARGET_FRIENDLY (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])
 #define WL_TARGET_ENEMY (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_enemySide])
