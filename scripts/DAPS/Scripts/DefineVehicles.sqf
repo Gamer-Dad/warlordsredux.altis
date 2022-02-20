@@ -104,6 +104,8 @@ dapsTrophyMV=[
 "RHS_M6"
 ];
 dapsTrophyHV=[
+"B_MBT_01_arty_F",
+"O_MBT_02_arty_F",
 "O_MBT_02_cannon_F",
 "O_T_MBT_02_cannon_ghex_F",
 "B_MBT_01_cannon_F",
