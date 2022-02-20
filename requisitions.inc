@@ -174,7 +174,7 @@ class CfgWLRequisitionPresets
 				class O_Heli_Transport_04_medevac_F 		{cost = 1000;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 12000;	requirements[]={"H"};	};	// "Mi-48 Kajman"
 				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"
-				class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
+				//class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"
 				class O_Plane_Fighter_02_F					{cost = 33000;	requirements[]={"A"};	};	// "To-201 Shikra"
 				//class O_Plane_Fighter_02_Stealth_F		{cost = 42000;	requirements[]={"A"};	};	// "To-201 Shikra Stealth"
