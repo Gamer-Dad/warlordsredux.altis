@@ -103,6 +103,7 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 	};
 };
 
+/*
 if (count _ret < 20) then {
 	private _roadPosArr = ((_center nearRoads _maxAxis) select {_x call _areaCheck}) apply {position _x};
 
@@ -115,7 +116,7 @@ if (count _ret < 20) then {
 
 	_roadPosArr = _roadPosArr - [objNull];
 	_ret append _roadPosArr;
-};
+};*/
 
 _ret = _ret apply {[_x distance2D _sortCenter, [_x]]};
 _ret sort TRUE;
