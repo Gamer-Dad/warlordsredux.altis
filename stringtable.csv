@@ -6,7 +6,7 @@ STR_A3_WL_info_vehs_in_basket, "Only infantry and ammoboxes can be airdropped on
 STR_A3_WL_info_no_units_selected, "No units selected."
 STR_A3_WL_popup_asset_rearmed, "Asset rearmed."
 STR_A3_WL_popup_asset_repaired, "Asset repaired."
-STR_A3_WL_hint_maintenance, "With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot."
+STR_A3_WL_hint_maintenance, "With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot and looking at the vehicle."
 STR_A3_WL_popup_losing_sector, "%1 is capturing %2!"
 STR_A3_WL_popup_asset_not_empty, "Selected asset is not empty."
 STR_A3_WL_popup_asset_deleted, "%1 deleted."
