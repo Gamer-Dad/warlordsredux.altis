@@ -2,7 +2,7 @@
 
 params ["_caller", ["_fullRecalc", FALSE]];
 
-waitUntil {!BIS_WL_sectorUpdateInProgress};
+//waitUntil {!BIS_WL_sectorUpdateInProgress};
 
 BIS_WL_sectorUpdateInProgress = TRUE;
 
