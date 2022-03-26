@@ -85,4 +85,9 @@
   -Sector Reset Cheaper at 500
   -More AI in early game overall, no AI when players > 40.
   
+  2.3
+  
+  -Price Adjustments based on use.
+  -Performance tweaks thanks to Korbels
+  
   
