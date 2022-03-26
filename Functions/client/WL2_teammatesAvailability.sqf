@@ -3,8 +3,8 @@
 BIS_manLost = FALSE;
 
 while {TRUE} do {
-	_t = time + 120;
-	waitUntil {sleep WL_TIMEOUT_SHORT; time > _t || BIS_manLost};
+	_t = WL_SYNCED_TIME + 120;
+	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || BIS_manLost};
 	if (BIS_manLost) then {
 		BIS_manLost = FALSE;
 	} else {
