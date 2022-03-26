@@ -20,7 +20,7 @@ if !(_owner in _previousOwners) then {
 
 		
 	_previousOwners pushBack _owner;
-	if (time > 0 && count _previousOwners == 1) then {
+	if (WL_SYNCED_TIME > 0 && count _previousOwners == 1) then {
 		{
 			[_x, (_sector getVariable "BIS_WL_value") * WL_SECTOR_CAPTURE_REWARD_MULTIPLIER] call BIS_fnc_WL2_fundsControl;
 		} forEach (BIS_WL_allWarlords select {side group _x == _owner});
