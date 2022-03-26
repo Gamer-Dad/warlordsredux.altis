@@ -3,7 +3,7 @@
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_VEHICLES 120
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_AIRCRAFT 120
 #define WL_MAX_SEIZING_HEIGHT 38 //this is AGL, default value 150, actual cap height = this/2-ish. 50 gives a cap height of 35?
-#define WL_TIMEOUT_MIN 0.025
+#define WL_TIMEOUT_MIN 0.055 //25, 55 = 20 FPS + 3 MS + 2ms(for slop) to safely run scripts at 20 fps.
 #define WL_TIMEOUT_SHORT 0.25
 #define WL_TIMEOUT_MEDIUM 0.5
 #define WL_TIMEOUT_STANDARD 1
