@@ -91,8 +91,8 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 				_finalPos = _spawnCheckPos isFlatEmpty [3, -1, 0.45, 5, 0, FALSE, objNull];
 				if !(_finalPos isEqualTo []) then {
 					_finalPos = ASLToATL _finalPos;
-					_nearObjs = _finalPos nearObjects ["AllVehicles", 15];
-					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 20];
+					_nearObjs = _finalPos nearObjects ["AllVehicles", 5];
+					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 6];
 					if (count _nearObjs == 0 && count _nearMapObjs == 0) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
