@@ -40,7 +40,7 @@
 			
 			if !(call _votingReset) then {
 				_votingEnd = WL_SYNCED_TIME + BIS_WL_targetVotingDuration;
-				_nextUpdate = time;
+				_nextUpdate = WL_SYNCED_TIME;
 				
 				while {WL_SYNCED_TIME < _votingEnd && !(call _votingReset)} do {
 					_warlords = BIS_WL_allWarlords select {side group _x == _side};
@@ -71,9 +71,9 @@
 						};
 					} forEach _playerVotingVariableNames;
 					
-					if (time >= _nextUpdate) then {
+					if (WL_SYNCED_TIME >= _nextUpdate) then {
 						missionNamespace setVariable [format ["BIS_WL_mostVoted_%1", _side], [call _calculateMostVotedSector, _votingEnd], TRUE];
-						_nextUpdate = time + WL_TIMEOUT_STANDARD;
+						_nextUpdate = WL_SYNCED_TIME + WL_TIMEOUT_STANDARD;
 					};
 					
 					sleep WL_TIMEOUT_SHORT;
