@@ -40,7 +40,7 @@ if (_state == "start") then {
 	BIS_WL_selectionMapManager = addMissionEventHandler ["EachFrame", {
 		if (visibleMap && isNull (findDisplay 160 displayCtrl 51)) then {
 			_mapScale = ctrlMapScale WL_CONTROL_MAP;
-			_timer = (time % WL_MAP_PULSE_FREQ);
+			_timer = (WL_SYNCED_TIME % WL_MAP_PULSE_FREQ);
 			_timer = if (_timer <= (WL_MAP_PULSE_FREQ / 2)) then {_timer} else {WL_MAP_PULSE_FREQ - _timer};
 			_markerSize = linearConversion [0, WL_MAP_PULSE_FREQ / 2, _timer, 1, WL_MAP_PULSE_ICON_SIZE];
 			_markerSizeArr = [_markerSize, _markerSize];
