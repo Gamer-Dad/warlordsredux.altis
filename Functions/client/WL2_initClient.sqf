@@ -6,9 +6,9 @@ waitUntil {!isNull player && isPlayer player};
 
 "client" call BIS_fnc_WL2_varsInit;
 
-//Apirl fools joke :)
+
 //this whole if statement stops side switching
-/*
+
 private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
 
 waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
@@ -53,7 +53,7 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 		localize "STR_A3_WL_switch_teams_info"
 	];
 };
-*/
+
 [] spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];
