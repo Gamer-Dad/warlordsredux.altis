@@ -89,5 +89,13 @@
   
   -Price Adjustments based on use.
   -Performance tweaks thanks to Korbels
+  -Team Switch Revert
+  -Vehicles no longer spawn on roads/buildings
+  -Increased safe spawn for vehicles
+  -Sector Selection Fix
+  -Sector ownership bug Fix
+  -Fixed UAV delete bug
+  -Possible Teleport bug fix
+  -Sector Voting Bug Fix
   
   
