@@ -11,9 +11,9 @@ Offical Arma 3 discord:  https://discord.gg/arma
 
 ## Warlords Redux 2.3 
 
-Warlords Redux 2.2 project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.
+Warlords Redux 2.3 project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.
 
-Warlord Redux 2.0 discord: https://discord.gg/grmzsZE4ua
+Warlord Redux 2.3 discord: https://discord.gg/grmzsZE4ua
 
 Warlords Redux Server info: https://www.battlemetrics.com/servers/arma3/5449720
 
