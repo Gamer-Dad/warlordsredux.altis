@@ -125,9 +125,6 @@ addMissionEventHandler ["Loaded", {
 	};
 }];
 
-
-
-
 [] execVM "scripts\GF_Earplugs\GF_Earplugs.sqf";
 //end of earplug section 
 

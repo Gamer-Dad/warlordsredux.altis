@@ -1,5 +1,9 @@
 //-- KiloSwiss 20:53 05/05/2018
+<<<<<<< HEAD
 // Korb - addaction "title" format orginal: format["<img image='icons\action_unflip.paa' /><t color='#E5E500' shadow='2'>&#160;Unflip %1</t>", _vehicleName],
+=======
+
+>>>>>>> malden
 if ( !canSuspend ) exitWith
 {
 	["Can not call this function, attempting to spawn it instead."] call BIS_fnc_error;
@@ -31,7 +35,11 @@ while { alive player } do
 					private _vehicleName = (configFile >> 'cfgVehicles' >> typeOf _vehicle >> 'displayName') call BIS_fnc_GetCfgData;
 					_unflipVehicleActionID = _vehicle addaction
 					[
+<<<<<<< HEAD
 						format["<t color='#E5E500' shadow='2'>&#160;Unflip %1</t>", _vehicleName],
+=======
+						format["<img image='icons\action_unflip.paa' /><t color='#E5E500' shadow='2'>&#160;Unflip %1</t>", _vehicleName],
+>>>>>>> malden
 						"_this select 3 call KS_fnc_unflipVehicle;", [_vehicle], 12, true, false, "", "isNull objectParent player", _vehicleUnflipRange
 					];
 					//systemChat format[ "Addaction %1 added to %2 (%3).", _unflipVehicleActionID, _vehicleName, _vehicle];
