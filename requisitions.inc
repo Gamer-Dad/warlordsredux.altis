@@ -8,7 +8,6 @@ class CfgWLRequisitionPresets
 			{
 				class CUP_B_USMC_Soldier					{cost = 20;		requirements[]={};	};	// "Rifleman"
 				class CUP_B_BAF_Soldier_Paratrooper_DPM		{cost = 25;		requirements[]={};	};	// "Para Trooper"
-				class B_CTRG_Soldier_tna_F					{cost = 30;		requirements[]={};	};	// "CTRG Scout"
 				class CUP_B_USMC_Crew						{cost = 15;		requirements[]={};	};	// "Crewman"
 				class CUP_B_USMC_Pilot 						{cost = 10;		requirements[]={};	};	// "Pilot"
 				class CUP_B_USMC_Soldier_GL					{cost = 50;		requirements[]={};	};	// "Grenadier"
@@ -32,7 +31,7 @@ class CfgWLRequisitionPresets
 				class CUP_B_M1152_USMC			 			{cost = 100;	requirements[]={};	};	// "Unarmed Humvee Pickup"
 				class CUP_B_nM1025_Unarmed_USMC_WDL			{cost = 150;	requirements[]={};	};	// "Unarmed HUMVEE"								
 				class CUP_B_MTVR_USMC		 				{cost = 200;	requirements[]={};	};	// "MTVR Transport"
-				class CUP_B_MTVR_Fuel_USMC					{cost = 500;	requirements[]={};	};	// "MTVR Fuel"
+				class CUP_B_MTVR_ReFuel_USMC				{cost = 500;	requirements[]={};	};	// "MTVR Fuel"
 				class CUP_B_nM997_USMC_WDL					{cost = 350;	requirements[]={};	};	// "Humvee Medical"
 				class CUP_B_nM1025_SOV_M2_USMC_WDL			{cost = 200;	requirements[]={};	};	// "Opentop HUMVEE w/.50"
 				class CUP_B_nM1025_SOV_MK19_USMC_WDL		{cost = 250;	requirements[]={};	};	// "Opentop HUMVEE GMG"
@@ -50,7 +49,7 @@ class CfgWLRequisitionPresets
 				class CUP_B_M1128_MGS_Woodland				{cost = 2500;	requirements[]={};	};	// "Striker MGS"
 				class CUP_B_M2Bradley_USA_W					{cost = 5000;	requirements[]={};	};	// "Bradley IFV"
 				class CUP_B_M6LineBacker_USA_W				{cost = 6000;	requirements[]={};	};	// "Bradley IFV AA"
-				class CUP_M60A3_TTS_USMC					{cost = 7000;	requirements[]={};	};	// "M60 Patton"
+				class CUP_B_M60A3_TTS_USMC					{cost = 7000;	requirements[]={};	};	// "M60 Patton"
 				class CUP_B_M1A1FEP_Woodland_USMC			{cost = 12000;	requirements[]={};	};	// "Abrams"
 				class CUP_B_M270_HE_USMC					{cost = 20000;	requirements[]={};	};	// "M270 Artillery" 
 				 
@@ -59,7 +58,7 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class CUP_B_MH6J_USA						{cost = 500;	requirements[]={"H"};	};	// "Littlebird"
-				class CUP_B_USMC_Pilot						{cost = 1500;	requirements[]={"H"};	};	// "Littlebird Armed"
+				class CUP_B_AH6J_USA						{cost = 1500;	requirements[]={"H"};	};	// "Littlebird Armed"
 				class CUP_B_UH60M_US						{cost = 1000;	requirements[]={"H"};	};	// "Blackhawk Armed"
 				class CUP_B_CH47F_USA						{cost = 1500;	requirements[]={"H"};	};	// "CH-47F Chinook"
 				class CUP_B_C130J_GB						{cost = 2000;	requirements[]={"A"};	};	// "C130 Transport";
@@ -196,8 +195,8 @@ class CfgWLRequisitionPresets
 			class Defences
 			{
 				class CUP_O_KORD_high_RU					{cost = 300;	requirements[]={};	};	// "KORD HMG .50"
-				class CUP_O_RU_Soldier						{cost = 450;	requirements[]={};	};	// "\MG 20 mm"
-				class CUP_O_Ural_ZU23_RU					{cost = 600;	requirements[]={};	};	// "Static Cannon AA Launcher"
+				class CUP_O_AGS_RU							{cost = 450;	requirements[]={};	};	// "MG 20 mm"
+				class CUP_O_ZU23_RU							{cost = 600;	requirements[]={};	};	// "Static Cannon AA Launcher"
 				class CUP_O_Igla_AA_pod_RU_M_BeigeDigital	{cost = 600;	requirements[]={};	};	// "Static Launcher (AA)"
 				class CUP_O_Metis_RU						{cost = 600;	requirements[]={};	};	// "Static Metis Launcher (AT) LOW"
 				class CUP_O_Kornet_RU						{cost = 600;	requirements[]={};	};	// "Static Kornet Launcher (AT) High"
