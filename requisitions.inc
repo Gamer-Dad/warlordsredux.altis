@@ -6,103 +6,100 @@ class CfgWLRequisitionPresets
 		{
 			class Infantry
 			{
-				class B_Soldier_F 							{cost = 20;		requirements[]={};	};	// "Rifleman"
-				class B_soldier_PG_F						{cost = 25;		requirements[]={};	};	// "Para Trooper"
+				class CUP_B_USMC_Soldier					{cost = 20;		requirements[]={};	};	// "Rifleman"
+				class CUP_B_BAF_Soldier_Paratrooper_DPM		{cost = 25;		requirements[]={};	};	// "Para Trooper"
 				class B_CTRG_Soldier_tna_F					{cost = 30;		requirements[]={};	};	// "CTRG Scout"
-				class B_crew_F 								{cost = 15;		requirements[]={};	};	// "Crewman"
-				class B_Helipilot_F 						{cost = 10;		requirements[]={};	};	// "Helicopter Pilot"
-				class B_Pilot_F 							{cost = 10;		requirements[]={};	};	// "Pilot"
-				class B_Soldier_GL_F 						{cost = 50;		requirements[]={};	};	// "Grenadier"
+				class CUP_B_USMC_Crew						{cost = 15;		requirements[]={};	};	// "Crewman"
+				class CUP_B_USMC_Pilot 						{cost = 10;		requirements[]={};	};	// "Pilot"
+				class CUP_B_USMC_Soldier_GL					{cost = 50;		requirements[]={};	};	// "Grenadier"
+				class CUP_B_USMC_Medic						{cost = 20;		requirements[]={};	};	// "Combat Life Saver"
+				class CUP_B_USMC_Soldier_AR					{cost = 50;		requirements[]={};	};	// "Autorifleman"
+				class CUP_B_USMC_SpecOps_SD					{cost = 25;		requirements[]={};	};	// "Shotgun"
+				class CUP_B_USMC_Soldier_Marksman			{cost = 60;		requirements[]={};	};	// "Marksman"
+				class CUP_B_USMC_Engineer					{cost = 100;	requirements[]={};	};	// "Repair Specialist"
+				class CUP_B_USMC_Soldier_MG					{cost = 80;		requirements[]={};	};	// "Heavy Gunner"
+				class CUP_B_USMC_Soldier_AT					{cost = 100;	requirements[]={};	};	// "Rifleman (AT)"
+				class CUP_B_USMC_Soldier_HAT				{cost = 150;	requirements[]={};	};	// "Missile Specialist (AT)"
+				class CUP_B_USMC_Soldier_AA					{cost = 150;	requirements[]={};	};	// "Missile Specialist (AA)"
+				class CUP_B_USMC_Sniper_M40A3				{cost = 80;		requirements[]={};	};	// "Sharpshooter"
+				class CUP_B_USMC_Sniper_M107				{cost = 100;	requirements[]={};	};	// "Sniper"
 				
-				class B_medic_F								{cost = 20;		requirements[]={};	};	// "Combat Life Saver"
-				class B_soldier_AR_F						{cost = 50;		requirements[]={};	};	// "Autorifleman"
-				class B_Soldier_A_F							{cost = 25;		requirements[]={};	};	// "Ammo Bearer"
-				class B_soldier_M_F							{cost = 60;		requirements[]={};	};	// "Marksman"
-				class B_soldier_repair_F					{cost = 100;	requirements[]={};	};	// "Repair Specialist"
-				class B_HeavyGunner_F						{cost = 80;		requirements[]={};	};	// "Heavy Gunner"
-				class B_soldier_LAT_F						{cost = 100;	requirements[]={};	};	// "Rifleman (AT)"
-				class B_soldier_LAT2_F						{cost = 100;	requirements[]={};	};	// "Rifleman (Light AT)"
-				class B_CTRG_Soldier_LAT_tna_F 				{cost = 150;	requirements[]={};	};	// "Rifleman (Light AT)"
-				class B_soldier_AT_F						{cost = 150;	requirements[]={};	};	// "Missile Specialist (AT)"
-				class B_soldier_AA_F						{cost = 150;	requirements[]={};	};	// "Missile Specialist (AA)"
-				class B_Sharpshooter_F						{cost = 80;		requirements[]={};	};	// "Sharpshooter"
-				class B_sniper_F							{cost = 100;	requirements[]={};	};	// "Sniper"
-				class B_Captain_Dwarden_F					{cost = 150;	requirements[]={};	};	// "Dwarden"
 			};
 			class Vehicles
 			{
+				class CUP_B_M1030_USMC						{cost =  10;	requirements[]={};	};	// "Bike"
 				class B_Quadbike_01_F						{cost =  20;	requirements[]={};	};	// "Quad Bike"
-				class B_LSV_01_unarmed_F					{cost = 100;	requirements[]={};	};	// "Prowler (Unarmed)"
-				class B_MRAP_01_F							{cost = 300;	requirements[]={};	};	// "Hunter"
-				class B_Truck_01_transport_F				{cost = 200;	requirements[]={};	};	// "HEMTT Transport"
-				class B_Truck_01_fuel_F						{cost = 500;	requirements[]={};	};	// "HEMTT Fuel"
-				class B_Truck_01_medical_F					{cost = 350;	requirements[]={};	};	// "HEMTT Medical"
-				class B_LSV_01_armed_F						{cost = 350;	requirements[]={};	};	// "Prowler (HMG)"
-				class B_G_Offroad_01_armed_F				{cost = 200;	requirements[]={};	};	// "Offroad (HMG)"
-				class B_LSV_01_AT_F							{cost = 700;	requirements[]={};	};	// "Prowler (AT)"
-				class B_G_Offroad_01_AT_F					{cost = 350;	requirements[]={};	};	// "Offroad (AT)"
-				class B_Truck_01_Repair_F					{cost = 2000;	requirements[]={};	};	// "HEMTT Repair"
-				class B_Truck_01_ammo_F						{cost = 3000;	requirements[]={};	};	// "HEMTT Ammo"
-				class B_MRAP_01_hmg_F						{cost = 1000;	requirements[]={};	};	// "Hunter HMG"
-				class B_MRAP_01_gmg_F						{cost = 1200;	requirements[]={};	};	// "Hunter GMG"
+				class CUP_B_M1152_USMC			 			{cost = 100;	requirements[]={};	};	// "Unarmed Humvee Pickup"
+				class CUP_B_nM1025_Unarmed_USMC_WDL			{cost = 150;	requirements[]={};	};	// "Unarmed HUMVEE"								
+				class CUP_B_MTVR_USMC		 				{cost = 200;	requirements[]={};	};	// "MTVR Transport"
+				class CUP_B_MTVR_Fuel_USMC					{cost = 500;	requirements[]={};	};	// "MTVR Fuel"
+				class CUP_B_nM997_USMC_WDL					{cost = 350;	requirements[]={};	};	// "Humvee Medical"
+				class CUP_B_nM1025_SOV_M2_USMC_WDL			{cost = 200;	requirements[]={};	};	// "Opentop HUMVEE w/.50"
+				class CUP_B_nM1025_SOV_MK19_USMC_WDL		{cost = 250;	requirements[]={};	};	// "Opentop HUMVEE GMG"
+				class CUP_B_M1151_M2_USMC					{cost = 500;	requirements[]={};	};	// "Humvee HMG"
+				class CUP_B_M1165_GMV_USMC					{cost = 600;	requirements[]={};	};	// "Humvee Minigun"
+				class CUP_B_M1151_Mk19_USMC					{cost = 700;	requirements[]={};	};	// "Humvee GMG"
+				class CUP_B_nM1036_TOW_DF_USMC_WDL			{cost = 1200;	requirements[]={};	};	// "Humvee TOW"
+				class CUP_B_nM1097_AVENGER_USA_WDL			{cost = 3000;	requirements[]={};	};	// "Humvee Avenger AA"
+				class CUP_B_MTVR_Repair_USMC				{cost = 2000;	requirements[]={};	};	// "MTVR Repair"
+				class CUP_B_MTVR_Ammo_USMC					{cost = 3000;	requirements[]={};	};	// "HEMTT Ammo"
 				
-				class B_APC_Wheeled_03_cannon_F				{cost = 2500;	requirements[]={};	};	// "BLUFOR Gorgon"
-				class B_APC_Wheeled_01_cannon_F				{cost = 2500;	requirements[]={};	};	// "AMV-7 Marshall"
-				class B_APC_Tracked_01_rcws_F				{cost = 3000;	requirements[]={};	};	// "IFV-6c Panther"
-				class B_APC_Tracked_01_AA_F					{cost = 5000;	requirements[]={};	};	// "IFV-6a Cheetah"
-				class B_MBT_01_cannon_F						{cost = 9000;	requirements[]={};	};	// "M2A1 Slammer"
-				class B_MBT_01_TUSK_F						{cost = 10500;	requirements[]={};	};	// "M2A1 Slammer UP"
-				class B_AFV_Wheeled_01_cannon_F				{cost = 15000;	requirements[]={};	};	// "Rhino MGS"
-				class B_AFV_Wheeled_01_up_cannon_F			{cost = 17000;	requirements[]={};	};	// "Rhino MGS UP" 
-				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher" 
+				
+				class CUP_B_M1126_ICV_M2_Woodland			{cost = 2000;	requirements[]={};	};	// "Striker M2"
+				class CUP_B_M1126_ICV_MK19_Woodland			{cost = 2200;	requirements[]={};	};	// "Striker MK19"
+				class CUP_B_M1128_MGS_Woodland				{cost = 2500;	requirements[]={};	};	// "Striker MGS"
+				class CUP_B_M2Bradley_USA_W					{cost = 5000;	requirements[]={};	};	// "Bradley IFV"
+				class CUP_B_M6LineBacker_USA_W				{cost = 6000;	requirements[]={};	};	// "Bradley IFV AA"
+				class CUP_M60A3_TTS_USMC					{cost = 7000;	requirements[]={};	};	// "M60 Patton"
+				class CUP_B_M1A1FEP_Woodland_USMC			{cost = 12000;	requirements[]={};	};	// "Abrams"
+				class CUP_B_M270_HE_USMC					{cost = 20000;	requirements[]={};	};	// "M270 Artillery" 
 				 
 				 
 			};
 			class Aircraft
 			{
-				class B_Heli_Light_01_F						{cost = 500;	requirements[]={"H"};	};	// "MH-9 Hummingbird"
-				class B_Heli_Light_01_dynamicLoadout_F		{cost = 1500;	requirements[]={"H"};	};	// "AH-9 Pawnee"
-				class B_Heli_Transport_01_F					{cost = 1000;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
-				class B_Heli_Transport_03_F					{cost = 1500;	requirements[]={"H"};	};	// "CH-67 Huron"
-				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
-				class B_T_VTOL_01_infantry_F				{cost = 1800;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
-				//class B_T_VTOL_01_vehicle_F					{cost = 1800;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
-				class B_T_VTOL_01_armed_F					{cost = 12000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
-				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
-				class B_Plane_Fighter_01_F					{cost = 32000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
-				//class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II Stealth";
+				class CUP_B_MH6J_USA						{cost = 500;	requirements[]={"H"};	};	// "Littlebird"
+				class CUP_B_USMC_Pilot						{cost = 1500;	requirements[]={"H"};	};	// "Littlebird Armed"
+				class CUP_B_UH60M_US						{cost = 1000;	requirements[]={"H"};	};	// "Blackhawk Armed"
+				class CUP_B_CH47F_USA						{cost = 1500;	requirements[]={"H"};	};	// "CH-47F Chinook"
+				class CUP_B_C130J_GB						{cost = 2000;	requirements[]={"A"};	};	// "C130 Transport";
+				class CUP_B_MH60L_DAP_4x_US					{cost = 8000;	requirements[]={"H"};	};	// "Blackhawk Rockets"
+				class CUP_B_AH1Z_Dynamic_USMC				{cost = 12000;	requirements[]={"H"};	};	// "AH1Z Cobra"
+				class CUP_B_AH64D_DL_USA					{cost = 15000;	requirements[]={"H"};	};	// "AH64D Apache"				
+				class CUP_B_A10_DYN_USA						{cost = 18000;	requirements[]={"A"};	};	// "A-10 Warthog"
+				class CUP_B_AV8B_DYN_USMC					{cost = 25000;	requirements[]={"A"};	};	// "Sea Harrier";
+				
 				
 			};
 			class Naval
 			{
-				class B_Boat_Transport_01_F					{cost = 100;	requirements[]={"W"};	};	// "Assault Boat"
-				class B_Boat_Armed_01_minigun_F				{cost = 750;	requirements[]={"W"};	};	// "Speedboat Minigun"
-				class B_SDV_01_F							{cost = 900;	requirements[]={"W"};	};	// "SDV"
+				class CUP_B_RHIB_USMC						{cost = 100;	requirements[]={"W"};	};	// "RHIB"
+				class CUP_B_LCU1600_USMC					{cost = 2000;	requirements[]={"W"};	};	// "Large Boat"
+				
 			};
 			class Gear
 			{
-				class Box_NATO_Ammo_F						{cost = 200;	requirements[]={};	};	// "Basic Ammo [NATO]"
-				class Box_NATO_Grenades_F					{cost = 200;	requirements[]={};	};	// "Grenades [NATO]"
-				class Box_NATO_Wps_F						{cost = 250;	requirements[]={};	};	// "Basic Weapons [NATO]"
-				class Box_NATO_AmmoOrd_F					{cost = 750;	requirements[]={};	};	// "Explosives [NATO]"
-				class Box_NATO_WpsLaunch_F					{cost = 300;	requirements[]={};	};	// "Launchers [NATO]"
-				class Box_NATO_WpsSpecial_F					{cost = 500;	requirements[]={};	};	// "Special Weapons [NATO]"
-				class B_supplyCrate_F						{cost = 500;	requirements[]={};	};	// "Supply Box [NATO]"
-				class Box_NATO_AmmoVeh_F					{cost = 500;	requirements[]={};	};	// "Vehicle Ammo [NATO]"
+				class CUP_BOX_USMC_Uniforms_F				{cost = 100;	requirements[]={};	};	// "Uniforms Box "
+				class CUP_BOX_USMC_Ammo_F					{cost = 200;	requirements[]={};	};	// "Basic Ammo "
+				class CUP_BOX_USMC_Grenades_F				{cost = 200;	requirements[]={};	};	// "Grenades"
+				class CUP_BOX_USMC_Wps_F					{cost = 250;	requirements[]={};	};	// "Basic Weapons "
+				class CUP_BOX_USMC_AmmoOrd_F				{cost = 750;	requirements[]={};	};	// "Explosives "
+				class CUP_BOX_USMC_WpsLaunch_F				{cost = 300;	requirements[]={};	};	// "Launchers "
+				class CUP_BOX_USMC_Support_F				{cost = 400;	requirements[]={};	};	// "Special Support "
+				class CUP_BOX_USMC_AmmoVeh_F				{cost = 500;	requirements[]={};	};	// "Vehicle Ammo"					
 			};
 			class Defences
 			{
-				class B_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"
-				class B_HMG_01_high_F						{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
-				class B_GMG_01_F							{cost = 450;	requirements[]={};	};	// "Mk32 GMG 20 mm"
-				class B_GMG_01_high_F						{cost = 450;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
-				class B_static_AA_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
-				class B_static_AT_F							{cost = 600;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
-				class B_SAM_System_03_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
+				class CUP_B_M2StaticMG_MiniTripod_USMC		{cost = 300;	requirements[]={};	};	// "M2 .50 Low"
+				class CUP_B_M2StaticMG_USMC					{cost = 300;	requirements[]={};	};	// "M2 .50 Raised"
+				class CUP_B_MK19_TriPod_USMC				{cost = 450;	requirements[]={};	};	// "MK19 Low"
+				class CUP_B_Stinger_AA_pod_Base_USMC		{cost = 600;	requirements[]={};	};	// "Static Stinger (AA) "
+				class CUP_B_TOW_TriPod_USMC					{cost = 600;	requirements[]={};	};	// "Static TOW (AT) "
+				//class B_SAM_System_03_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
 				class B_Radar_System_01_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
-				class B_Mortar_01_F							{cost = 10000;	requirements[]={};	};	// "Mortar"
-				class B_UGV_01_rcws_F						{cost = 2500;	requirements[]={};	};	// "UGAS" 
-				class B_UGV_02_Demining_F					{cost = 1500;	requirements[]={};	};	// "UGAS demining"
+				class CUP_B_M252_USMC						{cost = 10000;	requirements[]={};	};	// "Mortar"
+				class CUP_B_M119_USMC						{cost = 20000;	requirements[]={};	};	// "Cannon" 
+				//class B_UGV_02_Demining_F					{cost = 1500;	requirements[]={};	};	// "UGAS demining"
 				//class B_UAV_05_F 							{cost = 25000;	requirements[]={"A"};	};	// "UCAV";
 				//class B_UAV_02_F 							{cost = 25000;	requirements[]={"A"};	};	// "greyhawk AT";
 				//class B_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "greyhawk LGB";
