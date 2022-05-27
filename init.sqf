@@ -97,6 +97,7 @@ BIS_fnc_WL2_updateSectorArrays = compile preprocessFileLineNumbers "Functions\co
 BIS_fnc_WL2_varsInit = compile preprocessFileLineNumbers "Functions\common\WL2_varsInit.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleClient = compile preprocessFileLineNumbers "Functions\client\WL2_zoneRestrictionHandleClient.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleServer = compile preprocessFileLineNumbers "Functions\server\WL2_zoneRestrictionHandleServer.sqf";
+BIS_fnc_WL2_welcome = compile preprocessFileLineNumbers "welcome.sqf";
 
 endLoadingScreen;
 
@@ -145,7 +146,7 @@ if ( hasInterface ) then
 //End of Vehicle unflip
 
 //welcome test 
-[] execVM "welcome.sqf";
+//[] execVM "welcome.sqf";
 //end welcome section 
 
 //all thermal vision off
