@@ -659,7 +659,7 @@ switch (_displayClass) do {
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
 			playSound "AddItemFailed";
-			[player, BIS_WL_transferCost] call BIS_fnc_WL2_fundsControl;
+			[player, BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
 		}];
 		
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;
