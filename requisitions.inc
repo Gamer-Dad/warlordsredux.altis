@@ -44,9 +44,9 @@ class CfgWLRequisitionPresets
 				class CUP_B_MTVR_Ammo_USMC					{cost = 3000;	requirements[]={};	};	// "HEMTT Ammo"
 				
 				
-				class CUP_B_M1126_ICV_M2_Woodland			{cost = 2000;	requirements[]={};	};	// "Striker M2"
-				class CUP_B_M1126_ICV_MK19_Woodland			{cost = 2200;	requirements[]={};	};	// "Striker MK19"
-				class CUP_B_M1128_MGS_Woodland				{cost = 2500;	requirements[]={};	};	// "Striker MGS"
+				//class CUP_B_M1126_ICV_M2_Woodland			{cost = 2000;	requirements[]={};	};	// "Striker M2"
+				//class CUP_B_M1126_ICV_MK19_Woodland			{cost = 2200;	requirements[]={};	};	// "Striker MK19"
+				//class CUP_B_M1128_MGS_Woodland				{cost = 2500;	requirements[]={};	};	// "Striker MGS"
 				class CUP_B_M2Bradley_USA_W					{cost = 5000;	requirements[]={};	};	// "Bradley IFV"
 				class CUP_B_M6LineBacker_USA_W				{cost = 6000;	requirements[]={};	};	// "Bradley IFV AA"
 				class CUP_B_M60A3_TTS_USMC					{cost = 7000;	requirements[]={};	};	// "M60 Patton"
@@ -58,7 +58,7 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class CUP_B_MH6J_USA						{cost = 500;	requirements[]={"H"};	};	// "Littlebird"
-				class CUP_B_AH6J_USA						{cost = 1500;	requirements[]={"H"};	};	// "Littlebird Armed"
+				class CUP_B_AH6J_USA						{cost = 5000;	requirements[]={"H"};	};	// "Littlebird Armed"
 				class CUP_B_UH60M_US						{cost = 1000;	requirements[]={"H"};	};	// "Blackhawk Armed"
 				class CUP_B_CH47F_USA						{cost = 1500;	requirements[]={"H"};	};	// "CH-47F Chinook"
 				class CUP_B_C130J_GB						{cost = 2000;	requirements[]={"A"};	};	// "C130 Transport";
