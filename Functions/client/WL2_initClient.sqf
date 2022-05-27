@@ -199,6 +199,7 @@ call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 "init" spawn BIS_fnc_WL2_hintHandle;
 [] spawn BIS_fnc_WL2_music;
+[] spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
