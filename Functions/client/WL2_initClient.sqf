@@ -64,6 +64,9 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 	while {!_confirmReposition} do {
 		waitUntil {player distance _pos > 2}; 
 		uiSleep 1;
+		enableRadio TRUE;
+		enableSentences TRUE;
+		{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
 		if (player distance _pos > 2) then {
 			_confirmReposition = TRUE;
 		};
@@ -213,6 +216,7 @@ waitUntil {WL_PLAYER_FUNDS != -1};
 	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || visibleMap};
 	if !(visibleMap) then {
 		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
+		
 	};
 };
 
