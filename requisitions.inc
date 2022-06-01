@@ -47,11 +47,17 @@ class CfgWLRequisitionPresets
 				//class CUP_B_M1126_ICV_M2_Woodland			{cost = 2000;	requirements[]={};	};	// "Striker M2"
 				//class CUP_B_M1126_ICV_MK19_Woodland			{cost = 2200;	requirements[]={};	};	// "Striker MK19"
 				//class CUP_B_M1128_MGS_Woodland				{cost = 2500;	requirements[]={};	};	// "Striker MGS"
+				class CUP_B_M113A3_USA						{cost = 1200;	requirements[]={};	};	// "APC w/.50"
+				class CUP_B_M163_Vulcan_USA					{cost = 2000;	requirements[]={};	};	// "APC w/gatlin gun"
+				class CUP_B_AAV_USMC						{cost = 2000;	requirements[]={};	};	// "Marine APC"
+				class CUP_B_LAV25M240_USMC					{cost = 3000;	requirements[]={};	};	// "LAV25"
 				class CUP_B_M2Bradley_USA_W					{cost = 5000;	requirements[]={};	};	// "Bradley IFV"
 				class CUP_B_M6LineBacker_USA_W				{cost = 6000;	requirements[]={};	};	// "Bradley IFV AA"
-				class CUP_B_M60A3_TTS_USMC					{cost = 7000;	requirements[]={};	};	// "M60 Patton"
+				class CUP_B_M60A3_TTS_USMC					{cost = 6000;	requirements[]={};	};	// "M60 Patton"
 				class CUP_B_M1A1FEP_Woodland_USMC			{cost = 12000;	requirements[]={};	};	// "Abrams"
-				class CUP_B_M270_HE_USMC					{cost = 20000;	requirements[]={};	};	// "M270 Artillery" 
+				class CUP_B_Challenger2_2CW_BAF				{cost = 12000;	requirements[]={};	};	// "Challenger 2"
+				class CUP_B_Leopard2A6_HIL					{cost = 12000;	requirements[]={};	};	// "Leopard2"
+				class CUP_B_M270_DPICM_USMC					{cost = 20000;	requirements[]={};	};	// "M270 Artillery" 
 				 
 				 
 			};
@@ -62,10 +68,12 @@ class CfgWLRequisitionPresets
 				class CUP_B_UH60M_US						{cost = 1000;	requirements[]={"H"};	};	// "Blackhawk Armed"
 				class CUP_B_CH47F_USA						{cost = 1500;	requirements[]={"H"};	};	// "CH-47F Chinook"
 				class CUP_B_C130J_GB						{cost = 2000;	requirements[]={"A"};	};	// "C130 Transport";
+				class CUP_B_UH1Y_Gunship_Dynamic_USMC		{cost = 6000;	requirements[]={"H"};	};	// "Venom Gunship"
 				class CUP_B_MH60L_DAP_4x_US					{cost = 8000;	requirements[]={"H"};	};	// "Blackhawk Rockets"
 				class CUP_B_AH1Z_Dynamic_USMC				{cost = 12000;	requirements[]={"H"};	};	// "AH1Z Cobra"
 				class CUP_B_AH64D_DL_USA					{cost = 15000;	requirements[]={"H"};	};	// "AH64D Apache"				
 				class CUP_B_A10_DYN_USA						{cost = 18000;	requirements[]={"A"};	};	// "A-10 Warthog"
+				class CUP_B_JAS39_HIL						{cost = 20000;	requirements[]={"A"};	};	// "JAS39 GRIPEN"
 				class CUP_B_AV8B_DYN_USMC					{cost = 25000;	requirements[]={"A"};	};	// "Sea Harrier";
 				
 				
@@ -90,13 +98,14 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
+				class CUP_B_SearchLight_static_USMC			{cost = 50;	requirements[]={};	};		// "Search Light"
 				class CUP_B_M2StaticMG_MiniTripod_USMC		{cost = 300;	requirements[]={};	};	// "M2 .50 Low"
 				class CUP_B_M2StaticMG_USMC					{cost = 300;	requirements[]={};	};	// "M2 .50 Raised"
 				class CUP_B_MK19_TriPod_USMC				{cost = 450;	requirements[]={};	};	// "MK19 Low"
 				class CUP_B_Stinger_AA_pod_Base_USMC		{cost = 600;	requirements[]={};	};	// "Static Stinger (AA) "
 				class CUP_B_TOW_TriPod_USMC					{cost = 600;	requirements[]={};	};	// "Static TOW (AT) "
 				//class B_SAM_System_03_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
-				class B_Radar_System_01_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
+				//class B_Radar_System_01_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
 				class CUP_B_M252_USMC						{cost = 10000;	requirements[]={};	};	// "Mortar"
 				class CUP_B_M119_USMC						{cost = 20000;	requirements[]={};	};	// "Cannon Artillery" 
 				//class B_UGV_02_Demining_F					{cost = 1500;	requirements[]={};	};	// "UGAS demining"
@@ -151,12 +160,16 @@ class CfgWLRequisitionPresets
 				class CUP_O_GAZ_Vodnik_BPPU_RU				{cost = 1500;	requirements[]={};	};	// "Vodnik GMG Cannon"
 				class CUP_O_BTR60_RU						{cost = 2000;	requirements[]={};	};	// "BTR60"
 				class CUP_O_BRDM2_ATGM_RUS					{cost = 2500;	requirements[]={};	};	// "BRDM-2 ATGM"
-				class CUP_O_BTR80_CAMO_RU					{cost = 2500;	requirements[]={};	};	// "BTR80"
-				class CUP_O_BTR80A_CAMO_RU					{cost = 3500;	requirements[]={};	};	// "BTR80a"
-				class CUP_O_BMP2_RU							{cost = 6000;	requirements[]={};	};	// "BMP-2"
+				class CUP_O_BTR80_CAMO_RU					{cost = 3000;	requirements[]={};	};	// "BTR80"
+				class CUP_O_BTR80A_CAMO_RU					{cost = 4000;	requirements[]={};	};	// "BTR80a"
+				class CUP_O_BMP2_RU							{cost = 5000;	requirements[]={};	};	// "BMP-2"
 				class CUP_O_Ural_ZU23_RU					{cost = 2000;	requirements[]={};	};	// "Ural AA"
-				class CUP_O_2S6_RU							{cost = 6000;	requirements[]={};	};	// "Tunguska"
+				class CUP_O_ZSU23_ChDKZ						{cost = 4500;	requirements[]={};	};	// "APC AA"
+				class CUP_O_2S6_RU							{cost = 12000;	requirements[]={};	};	// "Tunguska"
+				class CUP_O_T34_TKA							{cost = 4000;	requirements[]={};	};	// "T-34"
+				class CUP_O_T55_CHDKZ						{cost = 6000;	requirements[]={};	};	// "T-55"
 				class CUP_O_T72_RU							{cost = 9500;	requirements[]={};	};	// "T-72"
+
 				class CUP_O_BM21_RU							{cost = 20000;	requirements[]={};	};	// "Grad Artillery"
 				
 
@@ -168,7 +181,8 @@ class CfgWLRequisitionPresets
 				class CUP_O_MI6A_RU							{cost = 1800;	requirements[]={"H"};	};	// "Mi-6A Hook"
 				class CUP_O_Mi8_RU							{cost = 9000;	requirements[]={"H"};	};	// "Mi-8 Rockets"	
 				class CUP_O_Mi24_V_Dynamic_RU				{cost = 12000;	requirements[]={"H"};	};	// "Mi-24 Dynamic"				
-				class CUP_O_Ka52_RU							{cost = 15000;	requirements[]={"H"};	};	// "KA-52"
+				class CUP_O_Ka50_DL_RU						{cost = 15000;	requirements[]={"H"};	};	// "KA-50"
+				class CUP_O_L39_TK							{cost = 14000;	requirements[]={"A"};	};	// "L-39zA"
 				class CUP_O_Su25_Dyn_RU						{cost = 18000;	requirements[]={"A"};	};	// "SU25 Frogfoot (CAS)"
 				class CUP_O_SU34_RU							{cost = 30000;	requirements[]={"A"};	};	// "SU-34"
 				
@@ -195,6 +209,7 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
+				class CUP_O_SearchLight_static_RU			{cost = 50;	requirements[]={};		};	// "SearchLight"
 				class CUP_O_KORD_high_RU					{cost = 300;	requirements[]={};	};	// "KORD HMG .50"
 				class CUP_O_AGS_RU							{cost = 450;	requirements[]={};	};	// "MG 20 mm"
 				class CUP_O_ZU23_RU							{cost = 600;	requirements[]={};	};	// "Static Cannon AA Launcher"
