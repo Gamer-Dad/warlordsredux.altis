@@ -217,7 +217,7 @@ class CfgWLRequisitionPresets
 				class CUP_O_Metis_RU						{cost = 600;	requirements[]={};	};	// "Static Metis Launcher (AT) LOW"
 				class CUP_O_Kornet_RU						{cost = 600;	requirements[]={};	};	// "Static Kornet Launcher (AT) High"
 				//class O_SAM_System_04_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
-				class O_Radar_System_02_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
+				//class O_Radar_System_02_F					{cost = 5000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
 				class CUP_O_2b14_82mm_RU					{cost = 10000;	requirements[]={};	};	// "Mortar"
 				class CUP_O_D30_RU		 					{cost = 20000;	requirements[]={};	};	// "Heavy Artillery";
 
