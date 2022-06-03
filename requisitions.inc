@@ -94,6 +94,7 @@ class CfgWLRequisitionPresets
 				class CUP_BOX_USMC_WpsLaunch_F				{cost = 300;	requirements[]={};	};	// "Launchers "
 				class CUP_BOX_USMC_Support_F				{cost = 400;	requirements[]={};	};	// "Support"
 				class CUP_BOX_USMC_WpsSpecial_F				{cost = 600;	requirements[]={};	};	// "Support"
+				class CUP_VABox_USMC						{cost = 2000;	requirements[]={};	};	// "Arsenal"
 				class CUP_BOX_USMC_AmmoVeh_F				{cost = 500;	requirements[]={};	};	// "Vehicle Ammo"					
 			};
 			class Defences
@@ -204,6 +205,7 @@ class CfgWLRequisitionPresets
 				class CUP_BOX_RU_WpsLaunch_F				{cost = 300;	requirements[]={};	};	// "Launchers [CSAT]"
 				class CUP_BOX_RU_WpsSpecial_F				{cost = 600;	requirements[]={};	};	// "Special Weapons [CSAT]"
 				class CUP_BOX_RU_Support_F					{cost = 500;	requirements[]={};	};	// "Supply Box [CSAT]"
+				class CUP_VABox_RU							{cost = 2000;	requirements[]={};	};	// "Arsenal"
 				class CUP_BOX_RU_AmmoVeh_F					{cost = 500;	requirements[]={};	};	// "Vehicle Ammo [CSAT]"
 
 			};
