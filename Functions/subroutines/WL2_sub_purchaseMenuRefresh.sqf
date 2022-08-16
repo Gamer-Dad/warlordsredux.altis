@@ -1,5 +1,5 @@
 #include "..\warlords_constants.inc"
-
+// test
 _display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 
 if (isNull _display) exitWith {};
