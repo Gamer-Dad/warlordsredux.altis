@@ -199,7 +199,7 @@ if !(isNull _sender) then {
 						};
 					}; 
 				} else {
-					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
+					_asset = createVehicle [_className, player, [], 0, "NONE"];
 					/*
 					_parachute setPos ((position _parachute) vectorAdd [0, 0, 5]);
 					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];

@@ -525,11 +525,16 @@ switch (_displayClass) do {
 			};
 		}];
 		_purchase_drop_sector ctrlAddEventHandler ["ButtonClick", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
+			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
+			if ((_visitedSectorID == -1)) then { // if not inside an owned sector
+			    playSound "AddItemFailed";
+			} else {
+				if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
 				playSound "AddItemOK";
 				[FALSE] spawn BIS_fnc_WL2_orderAirdrop
-			} else {
-				playSound "AddItemFailed";
+			    } else {
+					playSound "AddItemFailed";
+				};
 			};
 		}];
 		

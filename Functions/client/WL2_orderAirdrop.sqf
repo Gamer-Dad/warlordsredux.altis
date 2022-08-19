@@ -8,27 +8,26 @@ if (_customDropzone) then {
 	BIS_WL_targetSector = player;
 	[player, -BIS_WL_dropCost_far] call BIS_fnc_WL2_fundsControl;
 } else {
-	[player, -BIS_WL_dropCost] call BIS_fnc_WL2_fundsControl;
+	[player, -BIS_WL_dropCost] call BIS_fnc_WL2_fundsControl;	
 	"Dropzone" call BIS_fnc_WL2_announcer;
-	[toUpper localize "STR_A3_WL_popup_airdrop_selection"] spawn BIS_fnc_WL2_smoothText;
-	if !(visibleMap) then {
-		processDiaryLink createDiaryLink ["Map", player, ""];
-		WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
-		ctrlMapAnimCommit WL_CONTROL_MAP;
-	};
-	BIS_WL_targetSector = objNull;
-	BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRDROP;
-	BIS_WL_orderedAssetRequirements = [];
+    [toUpper localize "STR_A3_WL_popup_airdrop_selection"] spawn BIS_fnc_WL2_smoothText;
+    if !(visibleMap) then {
+	    processDiaryLink createDiaryLink ["Map", player, ""];
+	    WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
+	    ctrlMapAnimCommit WL_CONTROL_MAP;
+    };
+    BIS_WL_targetSector = objNull;
+    BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRDROP;
+    BIS_WL_orderedAssetRequirements = [];
 	sleep 0.25;
 
-	"dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
+    "dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
 
 	waitUntil {sleep WL_TIMEOUT_MIN; !isNull BIS_WL_targetSector || !visibleMap || BIS_WL_currentSelection == WL_ID_SELECTION_VOTING};
 
 	["dropping", "end"] call BIS_fnc_WL2_sectorSelectionHandle;
-
 	if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRDROP) then {
-		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	    BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
 	};
 };
 
