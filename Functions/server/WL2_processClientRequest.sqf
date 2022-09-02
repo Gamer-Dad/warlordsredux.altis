@@ -120,6 +120,9 @@ if !(isNull _sender) then {
 						private _carrierspawn = getPosATL _sender;
 						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"]; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
 						_asset setDir _dir;
+						sleep 3;
+	                    _asset setDamage 0;
+	                    _asset setFuel 1;
 					};
 				} else {
 					if (_isStatic) then {
