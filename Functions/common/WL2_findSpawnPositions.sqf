@@ -33,24 +33,11 @@ switch (typeName _center) do {
 				_axisB = _area # 2;
 			}
 		};
-		//These random x,y,z don't seem to break anything so I'm leaving them in. If spawning breaks later remove them.
-		private _randomx = random 60;
-		private _randomy = random 60;
-		private _randomz = 0;
-
-		_center = position _center vectorAdd [_randomx, _randomy, _randomz];
+		_center = position _center;
 	};
 };
 
 if (isNull _sortCenter) then {_sortCenter = _center};
-
-//These random x,y,z don't seem to break anything so I'm leaving them in. If spawning breaks later remove them.
-private _randomx = random 60;
-private _randomy = random 60;
-private _randomz = 0;
-
-
-if (isNull _sortCenter) then {_sortCenter = _center vectorAdd [_randomx, _randomy, _randomz]};
 
 private _rimArea = _area;
 private _axisRimA = 0;
@@ -101,11 +88,11 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 		_spawnCheckPos = [_axisXSpawnCheck, _axisYSpawnCheck, 0];
 		if (_spawnCheckPos call _areaCheck) then {
 			if !(isOnRoad _spawnCheckPos || surfaceIsWater _spawnCheckPos || !(_spawnCheckPos inArea BIS_WL_mapAreaArray)) then {
-				_finalPos = _spawnCheckPos isFlatEmpty [5, -1, 0.65, 5, 0, FALSE, objNull];
+				_finalPos = _spawnCheckPos isFlatEmpty [3, -1, 0.45, 5, 0, FALSE, objNull];
 				if !(_finalPos isEqualTo []) then {
 					_finalPos = ASLToATL _finalPos;
-					_nearObjs = _finalPos nearObjects ["AllVehicles", 10];
-					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 10];
+					_nearObjs = _finalPos nearObjects ["AllVehicles", 5];
+					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 6];
 					if (count _nearObjs == 0 && count _nearMapObjs == 0) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
