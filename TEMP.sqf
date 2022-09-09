@@ -12,10 +12,10 @@ BIS_WL_initModule setVariable ["BIS_WL_fogOfWar", 1];
 BIS_WL_initModule setVariable ["BIS_WL_playersAlpha", 50];
 BIS_WL_initModule setVariable ["BIS_WL_markersAlpha", 50];
 BIS_WL_initModule setVariable ["BIS_WL_requisitionPreset", "['A3ReduxAll']"];
-BIS_WL_initModule setVariable ["BIS_WL_scanCost", 350];
+BIS_WL_initModule setVariable ["BIS_WL_scanCost", 1000];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostOwned", 0];
-BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostContested", 50]; //Cost of fast travel to contested sector
-BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 5000];  //default 1000; Increased to 2000 to limits a CP exploit on official servers
+BIS_WL_initModule setVariable ["BIS_WL_fastTravelCostContested", 350]; //Cost of fast travel to contested sector
+BIS_WL_initModule setVariable ["BIS_WL_fundsTransferCost", 2000];  //default 1000; Increased to 2000 to limits a CP exploit on official servers
 BIS_WL_initModule setVariable ["BIS_WL_targetResetCost", 500]; //default value 2000; lowered to 500 for official servers
 BIS_WL_initModule setVariable ["BIS_WL_scanEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelEnabled", 1];
@@ -31,12 +31,12 @@ BIS_WL_initModule setVariable ["BIS_WL_targetResetTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_baseValue", 50]; //this changes money from main base ie starter CP/Min, default value 10
 BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMin", 18]; //default value 5; Use _tolerance value in combo with baseDistanceMin to add randomness to base distances
 BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMax", -1]; //default value -1 
-BIS_WL_initModule setVariable ["BIS_WL_scanCooldown", 90];
+BIS_WL_initModule setVariable ["BIS_WL_scanCooldown", 300];
 BIS_WL_initModule setVariable ["BIS_WL_lastLoadoutCost", 100];
 BIS_WL_initModule setVariable ["BIS_WL_wreckRemovalTimeout", 30];
 BIS_WL_initModule setVariable ["BIS_WL_corpseRemovalTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_savedLoadoutCost", 500];
-BIS_WL_initModule setVariable ["BIS_WL_timeMultiplier", 6];
+BIS_WL_initModule setVariable ["BIS_WL_timeMultiplier", 3];
 BIS_WL_initModule setVariable ["BIS_WL_zoneRestrictionSetting", 0];
 BIS_WL_initModule setVariable ["BIS_WL_savingEnabled", FALSE];
 
