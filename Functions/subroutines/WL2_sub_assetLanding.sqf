@@ -30,4 +30,8 @@ _wpGetOut setWaypointStatements ["TRUE", "deleteVehicle this"];
 			deleteVehicle _assetPilot;
 		};
 	};
+	// this code block waits for the hei to 'bounce' then repair and refuels it.
+	sleep 2;
+	_asset setDamage 0;
+	_asset setFuel 1;
 };
