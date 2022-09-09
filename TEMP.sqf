@@ -20,8 +20,8 @@ BIS_WL_initModule setVariable ["BIS_WL_targetResetCost", 500]; //default value 2
 BIS_WL_initModule setVariable ["BIS_WL_scanEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_fastTravelEnabled", 1];
 BIS_WL_initModule setVariable ["BIS_WL_maxCP", 50000];
-BIS_WL_initModule setVariable ["BIS_WL_dropCost", 25];
-BIS_WL_initModule setVariable ["BIS_WL_dropCost_far", 1000];
+BIS_WL_initModule setVariable ["BIS_WL_dropCost", 0];
+BIS_WL_initModule setVariable ["BIS_WL_dropCost_far", 3000]; //Cost to drop crates/infantry anywhere near your position
 BIS_WL_initModule setVariable ["BIS_WL_autonomous_limit", 2];
 BIS_WL_initModule setVariable ["BIS_WL_arsenalEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_arsenalCost", 1000];
