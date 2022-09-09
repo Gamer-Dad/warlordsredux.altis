@@ -112,5 +112,6 @@
   -Rearm bug fixed
   -Vehicle spawn adjustments
   -Town AI spawn in combat mode.
+  -Mission End Timer @ 6 hours.
   
   
