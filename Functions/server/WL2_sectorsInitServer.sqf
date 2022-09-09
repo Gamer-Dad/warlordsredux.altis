@@ -192,7 +192,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 		private _array = [typeOf _vehicle, position _vehicle, direction _vehicle, locked _vehicle];
 		private _waypoints = +(waypoints _group);
 		reverse _waypoints;
-		_waypoints resize ((count _waypoints) - 1);
+		_waypoints resize ((count _waypoints) - .5);
 		reverse _waypoints;
 		_waypoints = _waypoints apply {[waypointPosition _x, waypointType _x, waypointSpeed _x, waypointBehaviour _x, waypointTimeout _x]};
 		_array pushBack _waypoints;
