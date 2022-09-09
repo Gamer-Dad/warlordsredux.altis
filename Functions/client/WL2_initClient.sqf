@@ -226,6 +226,8 @@ waitUntil {WL_PLAYER_FUNDS != -1};
 	sleep 5;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[format [toUpper localize "STR_A3_WL_tip_menu", (actionKeysNamesArray "Gear") # 0], 5] spawn BIS_fnc_WL2_smoothText;
+		enableRadio TRUE;
+		enableSentences TRUE;
 		sleep 30;
 	};
 };
