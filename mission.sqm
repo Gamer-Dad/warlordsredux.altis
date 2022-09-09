@@ -99,16 +99,16 @@ class DynamicSimulation
 randomSeed=3694325;
 class ScenarioData
 {
-	author="Jezuro";
-	overviewText="Warlords Redux introduces a lot of new features like Fog of War and random base locations.";
-	overViewPicture="reduxME_welcome.paa";
+	author="Jezuro+WSV";
+	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
+	overViewPicture="wl_logo_ca.paa";
 	wreckRemovalMaxTime=240;
 };
 class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords Redux Miller Edition";
+		briefingName="Warlords Redux WSD Edition";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
