@@ -3,7 +3,7 @@
 #include "scripts\taw_vd\GUI.h"
 
 
-onLoadName = "Warlords Redux 2.3"; 
+onLoadName = "Warlords Redux 2.4"; 
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 
