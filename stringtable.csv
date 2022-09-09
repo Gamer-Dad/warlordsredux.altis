@@ -1,6 +1,8 @@
 LANGUAGE, "Original"
 
 STR_A3_WL_popup_appropriate_sector_selection, "Select an appropriate sector."
+STR_A3_WL_owned_sector, "You need to be inside an owned sector"
+STR_A3_WL_get_out_of_vehicle, "You have to get out of your vehicle"
 STR_A3_WL_popup_asset_limit_reached, "Assets limit reached."
 STR_A3_WL_info_vehs_in_basket, "Only infantry and ammoboxes can be airdropped on your coordinates."
 STR_A3_WL_info_no_units_selected, "No units selected."
