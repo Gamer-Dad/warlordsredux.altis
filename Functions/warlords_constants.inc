@@ -63,6 +63,7 @@
 #define WL_TARGET_RESET_VOTING_TIME 60
 #define RD_KILL_REWARD_MOD 4444  //Original value 10,000
 #define RD_GARRISON_SIZE_MOD 2.5  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
+#define RD_DISABLE_TEAM_SWITCHING 1  //default 1; 1 = Team switching disabled; 2 = Team switching enabled
 
 #define RD_UAVCOUNT_DELETE_THRESHOLD 30 //Original value 50;  
 #define WL_SYNCED_TIME (call BIS_fnc_WL2_syncedTime)
