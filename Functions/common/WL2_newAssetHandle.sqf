@@ -40,7 +40,7 @@ if (isPlayer _owner) then {
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		_asset setVariable ["BIS_WL_nextRearm", 0];
+		_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM];
 		private _defaultMags = [];
 		{
 			_defaultMags pushBack (_asset magazinesTurret _x);
