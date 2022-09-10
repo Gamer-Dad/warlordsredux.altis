@@ -8746,7 +8746,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="21600";
+							value="32400";
 						};
 					};
 				};
