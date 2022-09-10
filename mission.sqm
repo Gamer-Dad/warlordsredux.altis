@@ -32,14 +32,13 @@ addons[]=
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Ui_F",
-	"A3_Modules_F_Warlords",
 	"A3_Modules_F_Curator_Multiplayer"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=6;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -82,13 +81,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
-		{
-			className="A3_Modules_F_Warlords";
-			name="Arma 3 Warlords - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 class DynamicSimulation
@@ -128,7 +120,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=284;
+		items=283;
 		class Item0
 		{
 			dataType="Logic";
@@ -8731,34 +8723,6 @@ class Mission
 			atlOffset=65.602745;
 		};
 		class Item282
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={25398.268,-0.12283571,11346.893};
-			};
-			id=833;
-			type="ModuleWLResponse_F";
-			atlOffset=185.84717;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleWLResponse_F_Group";
-					expression="_this setVariable ['Group',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item283
 		{
 			dataType="Logic";
 			class PositionInfo
