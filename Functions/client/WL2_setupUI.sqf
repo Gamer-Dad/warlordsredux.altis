@@ -526,16 +526,21 @@ switch (_displayClass) do {
 		}];
 		_purchase_drop_sector ctrlAddEventHandler ["ButtonClick", {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
-			if ((_visitedSectorID == -1)) then { // if not inside an owned sector
-			    playSound "AddItemFailed";
-			} else {
-				if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
+			if (BIS_WL_vehsInBasket != ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool)) then { //if there is a vehicle in queue
+				if ((_visitedSectorID == -1)) then { // if not inside an onwned sector
+					playSound "AddItemFailed";
+				} else { // if they are in an owned sector
+				    if (vehicle player != player) then {
+						playSound "AddItemFailed";
+					} else {
+						playSound "AddItemOK";
+						[FALSE] spawn BIS_fnc_WL2_orderAirdrop
+					};				
+				};
+			} else { //if there is no vehicle in queue
 				playSound "AddItemOK";
 				[FALSE] spawn BIS_fnc_WL2_orderAirdrop
-			    } else {
-					playSound "AddItemFailed";
-				};
-			};
+		    };
 		}];
 		
 		_purchase_drop_player ctrlSetTooltip format ["%1%4: %2 %3", localize "STR_A3_WL_menu_cost", BIS_WL_dropCost_far, localize "STR_A3_WL_unit_cp", if (toLower language == "french") then {" "} else {""}];

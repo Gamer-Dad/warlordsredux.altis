@@ -31,6 +31,7 @@ BIS_fnc_WL2_mainAIHandle = compile preprocessFileLineNumbers "Functions\server\W
 BIS_fnc_WL2_mapControlHandle = compile preprocessFileLineNumbers "Functions\client\WL2_mapControlHandle.sqf";
 BIS_fnc_WL2_mapDrawHandle = compile preprocessFileLineNumbers "Functions\client\WL2_mapDrawHandle.sqf";
 BIS_fnc_WL2_missionEndHandle = compile preprocessFileLineNumbers "Functions\common\WL2_missionEndHandle.sqf";
+BIS_fnc_WL2_mineLimit = compile preprocessFileLineNumbers "Functions\server\WL2_mineLimit.sqf";
 BIS_fnc_WL2_music = compile preprocessFileLineNumbers "Functions\client\WL2_music.sqf";
 BIS_fnc_WL2_newAssetHandle = compile preprocessFileLineNumbers "Functions\common\WL2_newAssetHandle.sqf";
 BIS_fnc_WL2_onPause = compile preprocessFileLineNumbers "Functions\client\WL2_onPause.sqf";
@@ -149,4 +150,6 @@ if ( hasInterface ) then
 //[] execVM "welcome.sqf";
 //end welcome section 
 
+[] call BIS_fnc_WL2_mineLimit;
 [] call BIS_fnc_WL2_initCommon;
+
