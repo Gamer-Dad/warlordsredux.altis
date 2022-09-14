@@ -23,7 +23,7 @@ _processTargetPos = {
 	private _targetPosFinal = [];
 	
 	if !(surfaceIsWater _targetPos) then {
-		_nearSectorArr = _targetPos nearObjects ["Logic", 20];
+		_nearSectorArr = _targetPos nearObjects ["Logic", 10];
 		
 		if (count _nearSectorArr == 0) then {
 			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;
@@ -38,7 +38,7 @@ _processTargetPos = {
 	if (count _targetPosFinalArr > 0) then {
 		_targetPosFinal = selectRandom _targetPosFinalArr;
 	} else {
-		_targetPosFinal = [_targetPos, random 20, random 100] call BIS_fnc_relPos;
+		_targetPosFinal = [_targetPos, random 10, random 100] call BIS_fnc_relPos;
 	};
 	
 	[_targetPosFinal, _targetPosFinalArr]
@@ -202,7 +202,7 @@ if !(isNull _sender) then {
 						};
 					}; 
 				} else {
-					_asset = createVehicle [_className, player, [], 0, "NONE"];
+					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
 					/*
 					_parachute setPos ((position _parachute) vectorAdd [0, 0, 5]);
 					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];

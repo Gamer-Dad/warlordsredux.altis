@@ -97,5 +97,21 @@
   -Fixed UAV delete bug
   -Possible Teleport bug fix
   -Sector Voting Bug Fix
+
+  2.4
+  -Price Adjustments after months of data
+  -Mortar rearm delays
+  -Edits to map to prevent explosions on spawn
+  -AI take longer to become available to prevent spam 
+  -Increased AI to players
+  -Aircraft refuel/repair after spawn
+  -Teamswitch chat removal fixed
+  -Defending players have a larger spawn in zone
+  -Friendly fire threshold decreased
+  -AI max is 1 until script changes
+  -Rearm bug fixed
+  -Vehicle spawn adjustments
+  -Town AI spawn in combat mode.
+  -Mission End Timer @ 6 hours.
   
   

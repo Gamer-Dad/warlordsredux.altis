@@ -114,7 +114,7 @@ while {_i < _garrisonSize} do {
 		uiSleep WL_TIMEOUT_MIN;
 	};
 	
-	_newGrp setBehaviour "SAFE";
+	_newGrp setBehaviour "COMBAT";
 	_newGrp setSpeedMode "LIMITED";
 	[_newGrp, 0] setWaypointPosition [_pos, 0];
 	_newGrp deleteGroupWhenEmpty TRUE;

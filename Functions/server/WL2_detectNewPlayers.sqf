@@ -10,15 +10,15 @@ while {!BIS_WL_missionEnd} do {
 
        //AI buddy count system
 		_players = count BIS_WL_allWarlords;
-    	if (_players >= 40) then 
+    	if (_players >= 51) then 
 		{
-        	BIS_WL_maxSubordinates = 0;
+        	BIS_WL_maxSubordinates = 1;
 			publicVariable "BIS_WL_maxSubordinates";
 			systemchat "Player count at 40 or greater. Max AI now at 0; human interaction now required!";			
         }
 		Else 
 		{
-			if (_players >= 30) then
+			if (_players >= 50) then
 			{
 				BIS_WL_maxSubordinates = 2;
 				publicVariable "BIS_WL_maxSubordinates";
@@ -26,7 +26,7 @@ while {!BIS_WL_missionEnd} do {
 			}
 			Else 
 			{
-				if (_players >= 20) then
+				if (_players >= 40) then
 				{
 					BIS_WL_maxSubordinates = 4;
 					publicVariable "BIS_WL_maxSubordinates";
@@ -34,7 +34,7 @@ while {!BIS_WL_missionEnd} do {
 				}
 				Else 
 				{
-					if (_players >= 10) then
+					if (_players >= 30) then
 					{
 						BIS_WL_maxSubordinates = 8;
 						publicVariable "BIS_WL_maxSubordinates";
@@ -42,7 +42,7 @@ while {!BIS_WL_missionEnd} do {
 					}
 					Else 
 					{
-						if (_players >= 6) then
+						if (_players >= 20) then
 						{
 							BIS_WL_maxSubordinates = 16;
 							publicVariable "BIS_WL_maxSubordinates";
@@ -50,7 +50,7 @@ while {!BIS_WL_missionEnd} do {
 						}
 						Else 
 						{
-							if (_players < 6) then
+							if (_players < 10) then
 							{
 								BIS_WL_maxSubordinates = 20;
 								publicVariable "BIS_WL_maxSubordinates";

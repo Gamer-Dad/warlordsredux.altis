@@ -40,7 +40,7 @@ if (isPlayer _owner) then {
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		_asset setVariable ["BIS_WL_nextRearm", 0];
+		_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM];
 		private _defaultMags = [];
 		{
 			_defaultMags pushBack (_asset magazinesTurret _x);
@@ -152,13 +152,15 @@ if (isPlayer _owner) then {
 
 									_asset selectWeapon _curWeapon;
 
-									////Beta
+									////Beta   
 									if (_asset isKindOf "Helicopter") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
 									} else { if (_asset isKindOf "Plane") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
 										} else { if (_asset isKindOf "B_MBT_01_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 											} else { if (_asset isKindOf "O_MBT_02_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-												} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
-									}}};   
+												} else { if (_asset isKindOf "B_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+													} else { if (_asset isKindOf "O_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+														} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
+									}}}}};   
 									////Beta
 
 
