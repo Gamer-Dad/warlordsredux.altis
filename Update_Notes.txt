@@ -100,18 +100,21 @@
 
   2.4
   -Price Adjustments after months of data
-  -Mortar rearm delays
+  -Extended Mortar rearm delays
   -Edits to map to prevent explosions on spawn
-  -AI take longer to become available to prevent spam 
-  -Increased AI to players
-  -Aircraft refuel/repair after spawn
+  -AI take 10min to become available to prevent spam 
+  -Increased AI to players, at max population 1 will be allowed
+  -Aircraft will only spawn at airfields now
   -Teamswitch chat removal fixed
   -Defending players have a larger spawn in zone
   -Friendly fire threshold decreased
-  -AI max is 1 until script changes
+  -AI max starts players out at 0 upon first load into server
   -Rearm bug fixed
   -Vehicle spawn adjustments
   -Town AI spawn in combat mode.
-  -Mission End Timer @ 6 hours.
+  -Mission End Timer @ 8 hours.
+  -Added simple defenses for players to build, counts against total assets allowed at at time.
+  -Added a mine limit script.
+  -Many more bug fixes and performance improvements.
   
   
