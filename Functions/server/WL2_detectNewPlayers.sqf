@@ -14,7 +14,7 @@ while {!BIS_WL_missionEnd} do {
 		{
         	BIS_WL_maxSubordinates = 1;
 			publicVariable "BIS_WL_maxSubordinates";
-			systemchat "Player count at 40 or greater. Max AI now at 0; human interaction now required!";			
+			systemchat "Player count between 50-41. Max AI now at 2; make em count!";			
         }
 		Else 
 		{
@@ -22,31 +22,31 @@ while {!BIS_WL_missionEnd} do {
 			{
 				BIS_WL_maxSubordinates = 2;
 				publicVariable "BIS_WL_maxSubordinates";
-				systemchat "Player count at 30 or greater. Max AI now at 2; make em count!";
+				systemchat "Player count between 40-31. Max AI now at 3; put them to work!";
 			}
 			Else 
 			{
 				if (_players >= 40) then
 				{
-					BIS_WL_maxSubordinates = 4;
+					BIS_WL_maxSubordinates = 3;
 					publicVariable "BIS_WL_maxSubordinates";
-					systemchat "Player count at 20 or greater. Max AI now at 4; put them to work!";
+					systemchat "Player count at 20 or greater. Max AI now at 4; lead them to victory!";
 				}
 				Else 
 				{
 					if (_players >= 30) then
 					{
-						BIS_WL_maxSubordinates = 8;
+						BIS_WL_maxSubordinates = 6;
 						publicVariable "BIS_WL_maxSubordinates";
-						systemchat "Player count at 10 or greater. Max AI now at 8; squad size!";
+						systemchat "Player count between 30-21. Max AI now at 6; squad size!";
 					}
 					Else 
 					{
 						if (_players >= 20) then
 						{
-							BIS_WL_maxSubordinates = 16;
+							BIS_WL_maxSubordinates = 12;
 							publicVariable "BIS_WL_maxSubordinates";
-							systemchat "Player count at 6 or greater. Max AI now at 16; you can make it work!";
+							systemchat "Player count between 20-10. Max AI now at 12; you can make it work!";
 						}
 						Else 
 						{
@@ -54,7 +54,7 @@ while {!BIS_WL_missionEnd} do {
 							{
 								BIS_WL_maxSubordinates = 20;
 								publicVariable "BIS_WL_maxSubordinates";
-								systemchat "Player count at less than 6. Max AI now at 20; full company size!";
+								systemchat "Player count at less than 10. Max AI now at 20; max AI size!";
 							}
 						} 
 					} 
