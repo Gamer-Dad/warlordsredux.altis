@@ -6,7 +6,7 @@ if(_d<20)exitWith{};
 if((typeOf _i)in dapsExcludedAmmo)exitWith{};
 sleep 0.001;
 if ((_v distance _i)>_d)exitWith{};
-if((getNumber(configFile>>"CfgAmmo">>typeOf _i>>"hit"))>999)exitWith{};
+if((getNumber(configFile>>"CfgAmmo">>typeOf _i>>"hit"))>5000)exitWith{};
 _p=getPosATL _i;
 _id=getDir _i;
 _rd=[_id,_v]call DAPS_fnc_RelDir2;
