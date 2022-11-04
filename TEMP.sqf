@@ -39,6 +39,9 @@ BIS_WL_initModule setVariable ["BIS_WL_savedLoadoutCost", 500];
 BIS_WL_initModule setVariable ["BIS_WL_timeMultiplier", 3];
 BIS_WL_initModule setVariable ["BIS_WL_zoneRestrictionSetting", 0];
 BIS_WL_initModule setVariable ["BIS_WL_savingEnabled", FALSE];
+BIS_WL_initModule setVariable ["BIS_WL_respawnVehicle", 750]; //price of respawn vehicle
+BIS_WL_initModule setVariable ["BIS_WL_respawnVehicleFT", 50]; //price of respawn vehicle
+
 
 {
 	_x setVariable ["objectArea", triggerArea ((_x nearObjects ["EmptyDetector", 100]) # 0)];

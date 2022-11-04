@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={18534.48,-78.87072,21643.842};
-		dir[]={-1.2363449e-007,-0.70710683,0.70710683};
-		up[]={-1.2363449e-007,0.70710671,0.70710683};
-		aside[]={1,0,1.7484557e-007};
+		pos[]={17782.357,4874.186,11103.847};
+		dir[]={-0.022991486,-0.6148144,0.78833663};
+		up[]={-0.017923167,0.78867179,0.61455309};
+		aside[]={0.9995749,0,0.029152159};
 	};
 };
 binarizationWanted=0;
@@ -94,13 +94,13 @@ class ScenarioData
 	author="Jezuro+WSV";
 	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
 	overViewPicture="wl_logo_ca.paa";
-	wreckRemovalMaxTime=240;
+	wreckRemovalMaxTime= 240;
 };
 class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords 2 (Redux)";
+		briefingName="Warlords 2.4 (Redux)";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
@@ -8743,7 +8743,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="SideScore";
+							value="EveryoneLost";
 						};
 					};
 				};
@@ -8756,7 +8756,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="32400";
+							value="36000";
 						};
 					};
 				};

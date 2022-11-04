@@ -204,51 +204,6 @@ if !(isNull _sender) then {
 				} else {
 					private _playerPos = getPosATL _sender;
 					_asset = createVehicle [_className, _playerPos, [], 0, "NONE"];
-					/*
-					_parachute setPos ((position _parachute) vectorAdd [0, 0, 5]);
-					_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
-					_asset setVariable ["BIS_WL_deployPos", _targetPosFinal];
-					_bBox = boundingBoxReal _asset;
-					_bBoxCenter = (_bbox # 0) vectorAdd (_bBox # 1);
-					_asset attachTo [_parachute, _bBoxCenter];
-					_assetDummy = _className createVehicleLocal _targetPosFinal;
-					_assetDummy setPos _targetPosFinal;
-					_assetDummy hideObject TRUE;
-					_assetDummy enableSimulation TRUE;
-					
-					[_parachute, _asset, _assetDummy] spawn {
-						params ["_parachute", "_asset", "_assetDummy"];
-						
-						while {alive _parachute && alive _asset && (position _asset) # 2 >= 4} do {
-							_parachute setVelocity [0, 0, (velocity _parachute) # 2];
-							_parachute setVectorUp [0,0,1];
-							sleep 0.25;
-						};
-						
-						deleteVehicle _assetDummy;
-						
-						if (isNull _asset) then {
-							deleteVehicle _parachute;
-						} else {
-							detach _asset;
-							_parachute disableCollisionWith _asset;
-							_itemConfig = configFile >> "CfgVehicles" >> typeOf _asset;
-							_dropSoundClassArr = getArray (_itemConfig >> "soundBuildingCrash");
-							_dropSoundArr = [];
-							
-							{
-								if (_forEachIndex % 2 == 0) then {
-									_dropSoundArr pushBack ((getArray (_itemConfig >> _x)) # 0);
-								};
-							} forEach _dropSoundClassArr;
-							
-							if (count _dropSoundArr > 0) then {
-								_dropSound = selectRandom _dropSoundArr;
-								sleep 0.75;
-								playSound3D [_dropSound + ".wss", _asset];
-							};
-						};
-					};*/
 				};
 				
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;

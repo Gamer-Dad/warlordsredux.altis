@@ -31,3 +31,8 @@ STR_A3_WL_param_fog_of_war_value2, "Show nothing"
 STR_A3_WL_asset_dispatched_TODO_REWRITE, "Asset dispatched."
 STR_A3_WL_transfer_restr1_TODO_REWRITE, "No allied players available."
 STR_A3_WL_popup_voting_reset_user_TODO_REWRITE, "Sector voting reset requested by %1.
+STR_A3_WL_respawn_vicFT, "Fast travel to FOB."
+STR_A3_WL_respawn_vicFT2, "Order FOB vehicle."
+STR_A3_WL_cp_saved, "your current CP has been saved."
+STR_A3_WL_cp_recieved, "your prior CP has been recieved."
+STR_A3_WL_cp_failed, "You had no prior CP."
