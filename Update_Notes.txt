@@ -113,5 +113,13 @@
   -Vehicle spawn adjustments
   -Town AI spawn in combat mode.
   -Mission End Timer @ 6 hours.
+
+ 2.4.1
+ -CP is saved every 5 minutes.
+ -CP is saved after every funds transfer for each person.
+ -Prior CP is given back on join.
+ -Code improvements.
+ -Anti-cheat improvements.
+ -Mine limit is fixed (limit is now server sided not per client).
   
   
