@@ -64,8 +64,8 @@ class CfgWLRequisitionPresets
 				class B_Heli_Transport_01_F					{cost = 1000;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 1000;	requirements[]={"H"};	};	// "CH-67 Huron"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
-				class B_T_VTOL_01_infantry_F				{cost = 1800;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
-				//class B_T_VTOL_01_vehicle_F					{cost = 1800;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
+				class B_T_VTOL_01_infantry_F				{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
+				class B_T_VTOL_01_vehicle_F					{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
 				class B_T_VTOL_01_armed_F					{cost = 10000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 35000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
@@ -102,6 +102,12 @@ class CfgWLRequisitionPresets
 				class B_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
 				class B_UGV_01_rcws_F						{cost = 800;	requirements[]={};	};	// "UGAS" 
 				class B_UGV_02_Demining_F					{cost = 500;	requirements[]={};	};	// "UGAS demining"
+				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
+				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
+				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
+
+				      	
+
 				//class B_UAV_05_F 							{cost = 25000;	requirements[]={"A"};	};	// "UCAV";
 				//class B_UAV_02_F 							{cost = 25000;	requirements[]={"A"};	};	// "greyhawk AT";
 				//class B_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "greyhawk LGB";
@@ -210,6 +216,9 @@ class CfgWLRequisitionPresets
 				class O_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
 				class O_UGV_01_rcws_F						{cost = 800;	requirements[]={};	};	// "UGAV rcws"
 				class O_UGV_02_Demining_F					{cost = 500;	requirements[]={};	};	// "UGAV demining"
+				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
+				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
+				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
 				//class O_UAV_02_F							{cost = 25000;	requirements[]={"A"};	};	// "K40 AT"
 				//class O_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "K40 LGB"
 				//class O_T_UAV_04_CAS_F					{cost = 25000;	requirements[]={"A"};	};	// "KH-3A CAS"
