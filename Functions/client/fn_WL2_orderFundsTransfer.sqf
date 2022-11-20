@@ -5,6 +5,8 @@ for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 };
 
 [player, -BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
+private  _id = clientOwner;
+[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 
 _purchase_transfer_background = _display displayCtrl 115;
 _purchase_transfer_units = _display displayCtrl 116;

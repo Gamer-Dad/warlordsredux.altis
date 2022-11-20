@@ -5,6 +5,8 @@ params ["_toContested"];
 "Sector" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_scan"] spawn BIS_fnc_WL2_smoothText;
 [player, -BIS_WL_scanCost] call BIS_fnc_WL2_fundsControl;
+private  _id = clientOwner;
+[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
@@ -30,6 +32,8 @@ if (isNull BIS_WL_targetSector) exitWith {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_scan_canceled"] spawn BIS_fnc_WL2_smoothText;
 	[player, BIS_WL_scanCost] call BIS_fnc_WL2_fundsControl;
+	private  _id = clientOwner;
+	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 };
 
 BIS_WL_targetSector setVariable [format ["BIS_WL_lastScanEnd_%1", BIS_WL_playerSide], WL_SYNCED_TIME + WL_SCAN_DURATION, TRUE];

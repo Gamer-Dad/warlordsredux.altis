@@ -2,6 +2,8 @@
 
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 [player, -BIS_WL_lastLoadoutCost] call BIS_fnc_WL2_fundsControl;
+private  _id = clientOwner;
+[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 
 player setUnitLoadout BIS_WL_lastLoadout;
 BIS_WL_loadoutApplied = TRUE;

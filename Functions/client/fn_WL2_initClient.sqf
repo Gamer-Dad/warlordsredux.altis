@@ -249,4 +249,4 @@ private _uid = getPlayerUID player; //CP Saving system
 private _id = clientOwner;
 [_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2]; //CP Saving system
 sleep 1;
-[] call BIS_fnc_WL2_clientFundsUpdate;
+[] call BIS_fnc_WL2_clientFundsUpdateLoop;

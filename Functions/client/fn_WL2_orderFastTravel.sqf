@@ -6,6 +6,8 @@ params ["_toContested"];
 [toUpper localize "STR_A3_WL_popup_destination"] spawn BIS_fnc_WL2_smoothText;
 private _cost = if (_toContested) then {BIS_WL_fastTravelCostContested} else {BIS_WL_fastTravelCostOwned};
 [player, -_cost] call BIS_fnc_WL2_fundsControl;
+private  _id = clientOwner;
+[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
@@ -62,6 +64,8 @@ if (isNull BIS_WL_targetSector) exitWith {
 	deleteMarkerLocal _marker;
 	deleteMarkerLocal _markerText;
 	[player, _cost] call BIS_fnc_WL2_fundsControl;
+	private  _id = clientOwner;
+	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 };
 
 titleCut ["", "BLACK OUT", 1];
