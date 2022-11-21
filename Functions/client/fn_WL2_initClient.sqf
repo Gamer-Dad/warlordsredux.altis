@@ -245,6 +245,8 @@ sleep 1;
 [] spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 [] spawn BIS_fnc_WL2_assetMapControl;
 
+[] call BIS_fnc_WL2_timer;
+
 private _uid = getPlayerUID player; //CP Saving system
 private _id = clientOwner;
 [_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2]; //CP Saving system
