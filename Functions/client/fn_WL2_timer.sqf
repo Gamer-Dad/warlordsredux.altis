@@ -12,7 +12,7 @@ _ctrlTimer = WL_DISPLAY_MAIN ctrlCreate ["RscStructuredText", -1];
 _ctrlTimer ctrlSetPosition [_displayX + (_blockW * 105), _displayY - (_blockH * 10), _blockW * 75, _blockH * 16];
 
 
-while {alive player} do {
+while {true} do {
 	_timeLeft = 36000 - serverTime;
 	_ctrlTimer ctrlSetStructuredText parseText format ["~<t color = '#ffffff'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString];
 	_ctrlTimer ctrlCommit 0;
