@@ -116,6 +116,8 @@ dapsTrophyHV=[
 "O_MBT_04_command_F",
 "O_T_MBT_04_cannon_F",
 "O_T_MBT_04_command_F",
+"O_APC_Tracked_02_AA_F",
+"B_APC_Tracked_01_AA_F",
 "rhsusf_m1a1aimwd_usarmy",
 "rhsusf_m1a1aimd_usarmy",
 "rhsusf_m1a1aim_tuski_wd",
