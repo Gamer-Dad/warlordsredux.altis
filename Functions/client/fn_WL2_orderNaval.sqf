@@ -32,6 +32,8 @@ removeMissionEventHandler ["MapSingleClick", _mapClickEH];
 
 if (count BIS_WL_waterDropPos == 0) exitWith {
 	[player, _cost] call BIS_fnc_WL2_fundsControl;
+	private  _id = clientOwner;
+	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_airdrop_canceled"] spawn BIS_fnc_WL2_smoothText;
 };

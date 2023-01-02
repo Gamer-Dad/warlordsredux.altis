@@ -91,6 +91,8 @@ if (BIS_WL_spacePressed) then {
 	player reveal [_asset, 4];
 } else {
 	[player, _cost] call BIS_fnc_WL2_fundsControl;
+	private  _id = clientOwner;
+	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
 };

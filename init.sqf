@@ -41,7 +41,11 @@ if ( hasInterface ) then
 [] remoteExecCall ["BIS_fnc_WL2_mineLimit", 2];
 if(isServer) then
 {
+	//CP databse
 	moneyDatabase = createHashmap;
+	// Mine Array
+	MRTM_spawnedAPERSMine_Range_Ammo = [];
+	MRTM_spawnedATMine_Range_Ammo = [];
 };
 [] call BIS_fnc_WL2_initCommon;
 

@@ -97,6 +97,7 @@ class CfgFunctions {
 			class WL2_clientFundsUpdate {};
 			class WL2_clientFundsUpdateLoop {};
 			class WL2_clientFundsRecieve {};
+			class WL2_timer {};
     	}
 		class Server 
 		{
