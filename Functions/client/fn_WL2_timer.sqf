@@ -20,7 +20,7 @@ while {true} do {
 	_ctrlTimer ctrlSetScale 1.1;
 	_ctrlTimer ctrlSetStructuredText parseText format ["<t color = '#ffffff'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString];
 	_ctrlTimer ctrlCommit 0;
-	_ctrlBackgroundTimer ctrlSetText "\A3\ui_f\data\igui\rsctitles\mpprogress\timer_ca.paa";
+	_ctrlBackgroundTimer ctrlSetText "img\timer_ca.paa";
 	_ctrlBackgroundTimer ctrlSetScale 0.7;
 	_ctrlBackgroundTimer ctrlCommit 0;
 	sleep 0.5;
