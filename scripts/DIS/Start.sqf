@@ -9,7 +9,7 @@ DIS_fnc_RegisterSAM=compile preprocessFile"scripts\DIS\SAM\RegisterSAM.sqf";
 
 //DAO_fnc_CheckIfAircraft=compile preprocessFile"DAO\Scripts\Aircraft\CheckIfAircraft.sqf";
 
-if!(isServer)exitWith{};
+//if!(isServer)exitWith{};
 
 private _units=[];
 private _isSAM=false;
