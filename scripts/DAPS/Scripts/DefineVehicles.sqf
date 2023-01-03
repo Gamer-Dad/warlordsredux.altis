@@ -173,7 +173,14 @@ dapsAfganitE=[
 "O_SFIA_MBT_02_cannon_lxWS", 
 "rhs_sprut_vdv"
 ];
-dapsDazzler=["CUP_O_T90_RU","MEC_SAA_T72","MEC_SAA_T90","WIC_SAA_T72","WIC_SAA_T90","rhs_t90a_tv","rhs_t90_tv","rhs_t80uk","CUP_O_BMP3_RU", "O_APC_Tracked_02_AA_F", "B_APC_Tracked_01_AA_F"/*,"B_MRAP_01_hmg_F","B_MRAP_01_gmg_F","B_APC_Wheeled_03_cannon_F","B_APC_Wheeled_01_cannon_F","B_APC_Tracked_01_rcws_F","B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F","B_MBT_01_TUSK_F","B_AFV_Wheeled_01_cannon_F","B_AFV_Wheeled_01_up_cannon_F","B_MBT_01_arty_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_APC_Wheeled_02_rcws_v2_F","O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_AA_F","O_MBT_02_cannon_F","O_MBT_04_cannon_F","O_MBT_04_command_F","O_MBT_02_arty_F"*/
+dapsDazzler=["CUP_O_T90_RU",
+"MEC_SAA_T72","MEC_SAA_T90","WIC_SAA_T72","WIC_SAA_T90","rhs_t90a_tv","rhs_t90_tv","rhs_t80uk","CUP_O_BMP3_RU"
+ /*"O_APC_Tracked_02_AA_F", "B_APC_Tracked_01_AA_F",
+ "B_MRAP_01_hmg_F","B_MRAP_01_gmg_F","B_APC_Wheeled_03_cannon_F","B_APC_Wheeled_01_cannon_F",
+ "B_APC_Tracked_01_rcws_F","B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F","B_MBT_01_TUSK_F",
+ "B_AFV_Wheeled_01_cannon_F","B_AFV_Wheeled_01_up_cannon_F","B_MBT_01_arty_F","O_MRAP_02_hmg_F",
+ "O_MRAP_02_gmg_F","O_APC_Wheeled_02_rcws_v2_F","O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_AA_F",
+ "O_MBT_02_cannon_F","O_MBT_04_cannon_F","O_MBT_04_command_F","O_MBT_02_arty_F"*/
 ];
 dapsIronFist=[
 "Burnes_FV4034_01",
