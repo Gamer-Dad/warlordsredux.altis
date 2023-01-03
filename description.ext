@@ -3,7 +3,7 @@
 #include "scripts\taw_vd\GUI.h"
 
 
-onLoadName = "Warlords Redux 2.4"; 
+onLoadName = "Warlords Redux 2.5"; 
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 
@@ -150,7 +150,6 @@ class CfgFunctions {
     		file = "Functions\subroutines";
     		class WL2_sub_arsenalSetup {};
 			class WL2_sub_assetAssemblyHandle {};
-			class WL2_sub_assetLanding {};
 			class WL2_sub_deleteAsset {};
 			class WL2_sub_purchaseMenuAssetAvailability {};
 			class WL2_sub_purchaseMenuGetUIScale {};
@@ -158,7 +157,6 @@ class CfgFunctions {
 			class WL2_sub_purchaseMenuRefresh {};
 			class WL2_sub_purchaseMenuSetAssetDetails {};
 			class WL2_sub_purchaseMenuSetItemsList {};
-			class WL2_sub_restrictMines {};
 			class WL2_sub_vehicleLockAction {};
     	}
 	}

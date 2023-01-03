@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
 		nextID=844;
@@ -93,14 +93,14 @@ class ScenarioData
 {
 	author="Jezuro+WSV";
 	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
-	overViewPicture="wl_logo_ca.paa";
-	wreckRemovalMaxTime= 240;
+	overViewPicture="img\wl_logo_ca.paa";
+	wreckRemovalMaxTime=240;
 };
 class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords 2.4 (Redux)";
+		briefingName="Warlords 2.5 (Redux)";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;

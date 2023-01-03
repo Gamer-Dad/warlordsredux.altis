@@ -87,7 +87,6 @@ _purchase_transfer_units lbSetCurSel 0;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
 			playSound "AddItemFailed";
-			//[player, BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
 		};
 		if (_set == "") then {
 			(_this # 0) lbSetCurSel 0;
