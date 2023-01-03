@@ -114,12 +114,15 @@
   -Town AI spawn in combat mode.
   -Mission End Timer @ 6 hours.
 
- 2.4.1
+ 2.5
  -CP is saved every 5 minutes.
- -CP is saved after every funds transfer for each person.
+ -CP is saved after every funds transfer.
  -Prior CP is given back on join.
  -Code improvements.
  -Anti-cheat improvements.
- -Mine limit is fixed (limit is now server sided not per client).
+ -Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
+ -Fixed the issue of UAV's beeing locked when a player dies.
+ -Air Burst Rounds
+ -Dazzler Munitions
   
   
