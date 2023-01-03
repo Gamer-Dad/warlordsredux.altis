@@ -94,7 +94,7 @@ class ScenarioData
 	author="Jezuro+WSV";
 	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
 	overViewPicture="wl_logo_ca.paa";
-	wreckRemovalMaxTime= 240;
+	wreckRemovalMaxTime=240;
 };
 class Mission
 {

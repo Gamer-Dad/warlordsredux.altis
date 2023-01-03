@@ -6,6 +6,9 @@ endLoadingScreen;
 // Trophy
 execVM "scripts\DAPS\Scripts\Start.sqf";
 
+// Air Burst
+execVM"scripts\DIS\Start.sqf";
+
 //view distance limits 
 tawvd_maxRange = 4000; //max range allowed
 tawvd_disablenone = true; //disables the disabling of grass I think
