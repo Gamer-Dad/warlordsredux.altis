@@ -2,8 +2,6 @@
 
 params [ "_playerPriorCP", "_event"];
 
-hint "Fundsrevieve";
-
 switch (_event) do {
 	case "succes": { 
 		[player, -1000] call BIS_fnc_WL2_fundsControl;

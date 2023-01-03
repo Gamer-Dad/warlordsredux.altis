@@ -6,6 +6,5 @@ while {true} do {
 	private _id = clientOwner;
 	[_uid, _playerCurrentAmount, _id, "save"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2];
 	[toUpper localize "STR_A3_WL_cp_saved"] spawn BIS_fnc_WL2_smoothText;
-	hint "Fundsupdateloop";
 	sleep 300;
 };                     
