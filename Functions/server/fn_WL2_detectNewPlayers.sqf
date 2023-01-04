@@ -13,16 +13,16 @@ while {!BIS_WL_missionEnd} do {
     	if (_players >= 51) then 
 		{
         	BIS_WL_maxSubordinates = 1;
-			publicVariable "BIS_WL_maxSubordinates";
-			systemchat "Player count at 40 or greater. Max AI now at 0; human interaction now required!";			
+			publicVariable "BIS_WL_maxSubordinates";		
+			["Player count at 51 or greater. Max AI now at 1; human interaction incuraged!"] remoteExec ["systemchat", -2];
         }
 		Else 
 		{
-			if (_players >= 50) then
+			if (_players >= 45) then
 			{
 				BIS_WL_maxSubordinates = 2;
 				publicVariable "BIS_WL_maxSubordinates";
-				systemchat "Player count at 30 or greater. Max AI now at 2; make em count!";
+				["Player count at 45 or greater. Max AI now at 2; make em count!"] remoteExec ["systemchat", -2];
 			}
 			Else 
 			{
@@ -30,7 +30,7 @@ while {!BIS_WL_missionEnd} do {
 				{
 					BIS_WL_maxSubordinates = 4;
 					publicVariable "BIS_WL_maxSubordinates";
-					systemchat "Player count at 20 or greater. Max AI now at 4; put them to work!";
+					["Player count at 40 or greater. Max AI now at 4; put them to work!"] remoteExec ["systemchat", -2];
 				}
 				Else 
 				{
@@ -38,7 +38,7 @@ while {!BIS_WL_missionEnd} do {
 					{
 						BIS_WL_maxSubordinates = 8;
 						publicVariable "BIS_WL_maxSubordinates";
-						systemchat "Player count at 10 or greater. Max AI now at 8; squad size!";
+						["Player count at 30 or greater. Max AI now at 8; squad size!"] remoteExec ["systemchat", -2];
 					}
 					Else 
 					{
@@ -46,7 +46,7 @@ while {!BIS_WL_missionEnd} do {
 						{
 							BIS_WL_maxSubordinates = 16;
 							publicVariable "BIS_WL_maxSubordinates";
-							systemchat "Player count at 6 or greater. Max AI now at 16; you can make it work!";
+							["Player count at 20 or greater. Max AI now at 16; you can make it work!"] remoteExec ["systemchat", -2];
 						}
 						Else 
 						{
@@ -54,7 +54,7 @@ while {!BIS_WL_missionEnd} do {
 							{
 								BIS_WL_maxSubordinates = 20;
 								publicVariable "BIS_WL_maxSubordinates";
-								systemchat "Player count at less than 6. Max AI now at 20; full company size!";
+								["Player count at less than 10. Max AI now at 20; full company size!"] remoteExec ["systemchat", -2];
 							}
 						} 
 					} 

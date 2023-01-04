@@ -147,7 +147,13 @@ BIS_WL_enemiesCheckTrigger setTriggerStatements [
 player addEventHandler ["GetInMan", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]]}];
 player addEventHandler ["GetOutMan", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]]}];
 
-player addEventHandler ["Fired", BIS_fnc_WL2_sub_restrictMines];
+player addEventHandler ["Killed", {
+	_connectedUAV = getConnectedUAV player;
+	if (_connectedUAV != objNull) exitWith {
+		player connectTerminalToUAV objNull;
+	};
+}];
+
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
@@ -228,27 +234,30 @@ waitUntil {WL_PLAYER_FUNDS != -1};
 	sleep 5;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[format [toUpper localize "STR_A3_WL_tip_menu", (actionKeysNamesArray "Gear") # 0], 5] spawn BIS_fnc_WL2_smoothText;
-		sleep 30;
+		sleep 10;
 	};
 };
 
-sleep 1;
+sleep 0.1;
 
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 ["maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
 
-sleep 1;
+sleep 0.1;
 
 [] spawn BIS_fnc_WL2_selectedTargetsHandle;
 [] spawn BIS_fnc_WL2_targetSelectionHandleClient;
 [] spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 [] spawn BIS_fnc_WL2_assetMapControl;
 
-[] call BIS_fnc_WL2_timer;
+[] spawn BIS_fnc_WL2_timer;
 
-private _uid = getPlayerUID player; //CP Saving system
+//CP Saving system
+private _uid = getPlayerUID player;
 private _id = clientOwner;
-[_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2]; //CP Saving system
+[_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2];
+
 sleep 1;
-[] call BIS_fnc_WL2_clientFundsUpdateLoop;
+
+[] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
