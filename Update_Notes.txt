@@ -122,5 +122,7 @@
  -Anti-cheat improvements.
  -Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
  -Fixed the issue of UAV's beeing locked when a player dies.
+ -Added SAM sites for each side.
+ -Fixed a coding issue regarding the scheduler.
   
   
