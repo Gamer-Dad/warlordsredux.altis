@@ -97,9 +97,8 @@ if !(isNull _sender) then {
 						private _carrierspawn = getPosATL _sender;
 						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"]; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
 						_asset setDir _dir;
-						sleep 2;
-	                    _asset setDamage 0;
-	                    _asset setFuel 1;
+						_asset setDamage 0;
+						_asset setFuel 1;
 					};
 				} else {
 					if (_isStatic) then {
@@ -112,7 +111,11 @@ if !(isNull _sender) then {
 							_asset hideObjectGlobal TRUE;
 						} else {
 							if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
+								//Code to allow Both sides to use a drone of the other side.
+								private _side = side _sender; 
+								private _group = createGroup _side;
 								createVehicleCrew _asset;
+								(crew _asset) joinSilent _group;
 								(effectiveCommander _asset) setSkill 1;
 								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 							};

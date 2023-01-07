@@ -94,3 +94,4 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 } forEach BIS_WL_competingSides;
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
+
