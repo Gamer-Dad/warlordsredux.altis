@@ -90,24 +90,24 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				class B_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"
-				class B_HMG_01_high_F						{cost = 400;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
-				class B_GMG_01_F							{cost = 550;	requirements[]={};	};	// "Mk32 GMG 20 mm"
-				class B_GMG_01_high_F						{cost = 650;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
-				class B_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
-				class B_static_AT_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
-				class B_SAM_System_03_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
-				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
-				class B_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
 				class B_UGV_01_rcws_F						{cost = 800;	requirements[]={};	};	// "UGAS" 
 				class B_UGV_02_Demining_F					{cost = 500;	requirements[]={};	};	// "UGAS demining"
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
-				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	};	// "Praetorian 1C";
-				class B_SAM_System_01_F					{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
-				class B_SAM_System_02_F					{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
-				class B_Ship_MRLS_01_F					{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
+				class B_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"
+				class B_HMG_01_high_F						{cost = 400;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
+				class B_GMG_01_F							{cost = 550;	requirements[]={};	};	// "Mk32 GMG 20 mm"
+				class B_GMG_01_high_F						{cost = 650;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
+				class B_static_AT_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"
+				class B_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
+				class B_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
+				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
+				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";
+				class B_SAM_System_01_F						{cost = 11000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";
+				class B_SAM_System_03_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
+				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion";
+				class B_Ship_MRLS_01_F						{cost = 50000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk41 VLS";
 
 			};
 		};
@@ -196,24 +196,24 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				class O_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"
-				class O_HMG_01_high_F						{cost = 400;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
-				class O_GMG_01_F							{cost = 550;	requirements[]={};	};	// "Mk32 GMG 20 mm"
-				class O_GMG_01_high_F						{cost = 650;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
-				class O_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"
-				class O_static_AT_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
-				class O_SAM_System_04_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
-				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
-				class O_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
 				class O_UGV_01_rcws_F						{cost = 800;	requirements[]={};	};	// "UGAV rcws"
 				class O_UGV_02_Demining_F					{cost = 500;	requirements[]={};	};	// "UGAV demining"
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
-				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	};	// "Praetorian 1C";
-				class B_SAM_System_01_F					{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
-				class B_SAM_System_02_F					{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
-				class B_Ship_MRLS_01_F					{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
+				class O_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"
+				class O_HMG_01_high_F						{cost = 400;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
+				class O_GMG_01_F							{cost = 550;	requirements[]={};	};	// "Mk32 GMG 20 mm"
+				class O_GMG_01_high_F						{cost = 650;	requirements[]={};	};	// "Mk32 GMG 20 mm (Raised)"
+				class O_static_AT_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AT) [CSAT]"
+				class O_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"
+				class O_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
+				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"
+				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";
+				class B_SAM_System_01_F						{cost = 11000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";
+				class O_SAM_System_04_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"
+				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion";
+				class B_Ship_MRLS_01_F						{cost = 50000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk41 VLS";
 			};
 		};
 	};
