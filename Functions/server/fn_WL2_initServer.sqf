@@ -51,6 +51,33 @@ addMissionEventHandler ["HandleDisconnect", {
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
+
+addMissionEventHandler ["EntityCreated", {
+	params ["_entity"];
+	if (typeOf _entity == "B_AAA_System_01_F") then { //Praetorian
+		private _side = side (crew _entity select 0);
+		if (_side == east) then {
+			_entity setObjectTexture [0, "img\AAA_system_01_olive_co.paa"];
+			_entity setObjectTexture [1, "img\AAA_system_02_olive_co.paa"];
+		};
+	} else {
+		if (typeOf _entity == "B_SAM_System_01_F") then { //Spartan
+			private _side = side (crew _entity select 0);
+			if (_side == east) then {
+				_entity setObjectTexture [0, "img\SAM_system_01_olive_co.paa"];
+			};
+		} else {
+			if (typeOf _entity == "B_SAM_System_02_F") then { //Centurion
+				private _side = side (crew _entity select 0);
+				if (_side == east) then {
+					_entity setObjectTexture [0, "img\SAM_system_02_olive_co.paa"];
+				};
+			};
+		};
+	};
+}];
+
+
 missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
@@ -94,3 +121,4 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 } forEach BIS_WL_competingSides;
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
+

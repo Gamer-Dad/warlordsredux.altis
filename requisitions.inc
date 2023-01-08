@@ -69,7 +69,6 @@ class CfgWLRequisitionPresets
 				class B_T_VTOL_01_armed_F					{cost = 10000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 35000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
-				//class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II Stealth";
 				
 			};
 			class Naval
@@ -105,17 +104,10 @@ class CfgWLRequisitionPresets
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
-
-				      	
-
-				//class B_UAV_05_F 							{cost = 25000;	requirements[]={"A"};	};	// "UCAV";
-				//class B_UAV_02_F 							{cost = 25000;	requirements[]={"A"};	};	// "greyhawk AT";
-				//class B_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "greyhawk LGB";
-				//class B_T_UAV_03_F 						{cost = 25000;	requirements[]={"A"};	};	// "Firescout";
-				//class B_UAV_01_F 							{cost = 500;	requirements[]={};	};	// "AR-2 Darter";
-				//class B_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL-6 Pelican";
-				//class B_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL-6 Pelican medical";
-				//class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
+				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	};	// "Praetorian 1C";
+				class B_SAM_System_01_F					{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
+				class B_SAM_System_02_F					{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
+				class B_Ship_MRLS_01_F					{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
 
 			};
 		};
@@ -183,7 +175,6 @@ class CfgWLRequisitionPresets
 				//class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"
 				class O_Plane_Fighter_02_F					{cost = 37000;	requirements[]={"A"};	};	// "To-201 Shikra"
-				//class O_Plane_Fighter_02_Stealth_F		{cost = 42000;	requirements[]={"A"};	};	// "To-201 Shikra Stealth"
 				
 			};
 			class Naval
@@ -219,14 +210,10 @@ class CfgWLRequisitionPresets
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
-				//class O_UAV_02_F							{cost = 25000;	requirements[]={"A"};	};	// "K40 AT"
-				//class O_UAV_02_CAS_F						{cost = 25000;	requirements[]={"A"};	};	// "K40 LGB"
-				//class O_T_UAV_04_CAS_F					{cost = 25000;	requirements[]={"A"};	};	// "KH-3A CAS"
-				//class O_UAV_01_F							{cost = 500;	requirements[]={};	};	// "AR-2 Darter"
-				//class O_UAV_06_F							{cost = 500;	requirements[]={};	};	// "AL_6 Pelican"
-				//class O_UAV_06_medical_F					{cost = 500;	requirements[]={};	};	// "AL_6 Pelican Medical"
-				//class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	};	// "Phalax";
-
+				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	};	// "Praetorian 1C";
+				class B_SAM_System_01_F					{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
+				class B_SAM_System_02_F					{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
+				class B_Ship_MRLS_01_F					{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
 			};
 		};
 	};
