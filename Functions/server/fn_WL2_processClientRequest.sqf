@@ -164,7 +164,11 @@ if !(isNull _sender) then {
 							_asset hideObjectGlobal TRUE;
 						} else {
 							if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
+								//Code to allow Both sides to use a drone of the other side.
+								private _side = side _sender; 
+								private _group = createGroup _side;
 								createVehicleCrew _asset;
+								(crew _asset) joinSilent _group;
 								(effectiveCommander _asset) setSkill 1;
 								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 							};
