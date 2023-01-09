@@ -210,7 +210,6 @@ if !(isNull _sender) then {
 				};
 				
 				private _asset = objNull;
-				_parachute = createVehicle [if (_isMan) then {"Steerable_Parachute_F"} else {"B_Parachute_02_F"}, _targetPosFinal, [], 0, "NONE"];
 				//called in Inf and Vehicle spawning code. Inf = _isMan, Vic = Else 
 				if (_isMan) then {
 					_asset = (group _sender) createUnit [_className, _targetPosFinal, [], 0, "NONE"];
