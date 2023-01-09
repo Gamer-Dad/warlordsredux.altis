@@ -170,7 +170,7 @@ if !(isNull _sender) then {
 			missionNamespace setVariable [_assetVar, _asset];
 			(owner _sender) publicVariableClient _assetVar;
 			
-			[_asset, _sender, _isStatic] spawn _setOwner; //TO DO Maybe add a line seperate for uav's with setgroupowner
+			[_asset, _sender, _isStatic] spawn _setOwner;
 		};
 		case "requestAssetArray": {
 			_params params ["_assetVar", "_infoArray", "_targetPos"];
