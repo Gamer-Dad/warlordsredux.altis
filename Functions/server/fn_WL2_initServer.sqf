@@ -54,6 +54,18 @@ addMissionEventHandler ["HandleDisconnect", {
 
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
+	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F") then {
+		[_entity] spawn {
+			_entity = _this select 0;
+			while {alive _entity} do {
+				_pos = getPosASLW _entity;
+				if (_pos select 2 < 0) then {
+					_entity setDamage 1;
+				};
+				sleep 5;
+			};
+		};
+	};
 	if (typeOf _entity == "B_AAA_System_01_F") then { //Praetorian
 		private _side = side (crew _entity select 0);
 		if (_side == east) then {
