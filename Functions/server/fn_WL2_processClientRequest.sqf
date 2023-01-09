@@ -91,14 +91,56 @@ if !(isNull _sender) then {
 				if (_className isKindOf "Air") then {
 					_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _className >> "simulation")) in ["airplanex", "airplane"] && !(_className isKindOf "VTOL_Base_F");
 					if (_isPlane) then {
-						private _carrierspawn = getPosATL _sender;
-						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"];
-					} else {
-						private _carrierspawn = getPosATL _sender;
-						_asset = createVehicle [_className, _carrierspawn vectorAdd [0, 0, 0.7], [], 0, "NONE"]; //heli spawn code, need anti-building check added. WARNING! messing with this code block breaks fast travel...I have no damn clue why.
+						private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
+						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
+						private _taxiNodesCnt = count _taxiNodes;
+						private _spawnPos = [];
+						private _dir = 0;
+						private _checks = 0;
+						while {count _spawnPos == 0 && _checks < 100} do {
+							_checks = _checks + 1;
+							private _i = (floor random _taxiNodesCnt) max 1;
+							private _pointB = _taxiNodes # _i;
+							private _pointA = _taxiNodes # (_i - 1);
+							_dir = _pointA getDir _pointB;
+							private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
+							if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+								_spawnPos = _pos;
+							}
+						};
+						if (count _spawnPos == 0) then {
+							_spawnPos = _targetPosFinal;
+						};
+						_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
 						_asset setDir _dir;
 						_asset setDamage 0;
-						_asset setFuel 1;
+	                    _asset setFuel 1;
+					} else {						
+						private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
+						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
+						private _taxiNodesCnt = count _taxiNodes;
+						private _spawnPos = [];
+						private _dir = 0;
+						private _checks = 0;
+						while {count _spawnPos == 0 && _checks < 100} do {
+							_checks = _checks + 1;
+							private _i = (floor random _taxiNodesCnt) max 1;
+							private _pointB = _taxiNodes # _i;
+							private _pointA = _taxiNodes # (_i - 1);
+							_dir = _pointA getDir _pointB;
+							private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
+							if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+								_spawnPos = _pos;
+							}
+						};
+						if (count _spawnPos == 0) then {
+							_spawnPos = _targetPosFinal;
+						};
+						_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+						_asset setDir _dir;
+						_asset setDamage 0;
+	                    _asset setFuel 1;
+
 					};
 				} else {
 					if (_isStatic) then {
@@ -112,9 +154,9 @@ if !(isNull _sender) then {
 						} else {
 							if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.
-								private _side = side _sender; 
-								private _group = createGroup _side;
 								createVehicleCrew _asset;
+								_side = side _sender; 
+								_group = createGroup _side;
 								(crew _asset) joinSilent _group;
 								(effectiveCommander _asset) setSkill 1;
 								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
@@ -128,7 +170,7 @@ if !(isNull _sender) then {
 			missionNamespace setVariable [_assetVar, _asset];
 			(owner _sender) publicVariableClient _assetVar;
 			
-			[_asset, _sender, _isStatic] spawn _setOwner;
+			[_asset, _sender, _isStatic] spawn _setOwner; //TO DO Maybe add a line seperate for uav's with setgroupowner
 		};
 		case "requestAssetArray": {
 			_params params ["_assetVar", "_infoArray", "_targetPos"];
@@ -172,15 +214,6 @@ if !(isNull _sender) then {
 				//called in Inf and Vehicle spawning code. Inf = _isMan, Vic = Else 
 				if (_isMan) then {
 					_asset = (group _sender) createUnit [_className, _targetPosFinal, [], 0, "NONE"];
-					_asset assignAsDriver _parachute;
-					_asset moveInDriver _parachute;
-					[_parachute, _asset] spawn {
-						params ["_parachute", "_asset"];
-						waitUntil {sleep WL_TIMEOUT_STANDARD; isNull _parachute || isNull _asset};
-						if (isNull _asset) then {
-							deleteVehicle _parachute;
-						};
-					}; 
 				} else {
 					private _playerPos = getPosATL _sender;
 					_asset = createVehicle [_className, _playerPos, [], 0, "NONE"];
