@@ -32,10 +32,10 @@ systemChat format["SAM detonated %1 meters from target",round _d];
 // Secondary at target location
 _type="ammo_Missile_rim116";
 //_type="GrenadeHand"; // very light damage even when detonated at 0m
-//_type="M_SPG9_HE";ch
-//_type="R_80mm_HE";ch
+//_type="M_SPG9_HE";
+//_type="R_80mm_HE";
 //_type="R_60mm_HE"; // Will kill a jet reliablych
-private _m2=createVehicle[_type,_tPos,[],30,"FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
+private _m2=createVehicle[_type,_tPos,[],45,"FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
 triggerAmmo _m2;
 
 /*
@@ -49,4 +49,4 @@ triggerAmmo _m2;
 sleep 1;
 if(isNull _target)exitWith{systemChat"Target destroyed"};
 if!(alive _target)exitWith{systemChat"Target destroyed"};
-systemChat format["Target damage: %1",getDammage _target];
+//systemChat format["Target damage: %1",getDammage _target]; //Testing Purposes Only

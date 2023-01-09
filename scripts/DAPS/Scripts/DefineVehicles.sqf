@@ -176,7 +176,7 @@ dapsAfganitE=[
 "rhs_sprut_vdv"
 ];
 dapsDazzler=["CUP_O_T90_RU",
-"MEC_SAA_T72","MEC_SAA_T90","WIC_SAA_T72","WIC_SAA_T90","rhs_t90a_tv","rhs_t90_tv","rhs_t80uk","CUP_O_BMP3_RU"
+"MEC_SAA_T72","MEC_SAA_T90","WIC_SAA_T72","WIC_SAA_T90","rhs_t90a_tv","rhs_t90_tv","rhs_t80uk","CUP_O_BMP3_RU","B_T_VTOL_01_armed_F"
  /*"O_APC_Tracked_02_AA_F", "B_APC_Tracked_01_AA_F",
  "B_MRAP_01_hmg_F","B_MRAP_01_gmg_F","B_APC_Wheeled_03_cannon_F","B_APC_Wheeled_01_cannon_F",
  "B_APC_Tracked_01_rcws_F","B_APC_Tracked_01_AA_F", "B_MBT_01_cannon_F","B_MBT_01_TUSK_F",
