@@ -113,33 +113,6 @@ if !(isNull _sender) then {
 						};
 						_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
 						_asset setDir _dir;
-						uiSleep 3;
-	                    _asset setDamage 0;
-	                    _asset setFuel 1;
-	                    */
-	                    private _carrierspawn = getPosATL _sender;							
-						private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
-						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
-						private _taxiNodesCnt = count _taxiNodes;
-						private _spawnPos = [];
-						private _dir = 0;
-						private _checks = 0;
-						while {count _spawnPos == 0 && _checks < 100} do {
-							_checks = _checks + 1;
-							private _i = (floor random _taxiNodesCnt) max 1;
-							private _pointB = _taxiNodes # _i;
-							private _pointA = _taxiNodes # (_i - 1);
-							_dir = _pointA getDir _pointB;
-							private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-							if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-								_spawnPos = _pos;
-							}
-						};
-						if (count _spawnPos == 0) then {
-							_spawnPos = _targetPosFinal;
-						};
-						_asset = createVehicle [_className, _spawnPos, [], 0, "CAN_COLLIDE"];
-						_asset setDir _dir;
 						_asset setDamage 0;
 	                    _asset setFuel 1;
 					} else {						
@@ -278,6 +251,7 @@ if !(isNull _sender) then {
 				_recipient = _recipientArr # 0;
 				[_sender, -_amount] call BIS_fnc_WL2_fundsControl;
 				[_recipient, _amount] call BIS_fnc_WL2_fundsControl;
+				[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate", -2];
 			};
 		};
 		case "fastTravel": {
