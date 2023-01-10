@@ -68,7 +68,8 @@ class CfgWLRequisitionPresets
 				class B_T_VTOL_01_vehicle_F					{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
 				class B_T_VTOL_01_armed_F					{cost = 14000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 18000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
-				class B_Plane_Fighter_01_F					{cost = 35000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II";
+				class B_Plane_Fighter_01_F					{cost = 35000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II"
+					  	
 				
 			};
 			class Naval
@@ -90,8 +91,12 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				class B_UGV_01_rcws_F						{cost = 800;	requirements[]={};	};	// "UGAS" 
-				class B_UGV_02_Demining_F					{cost = 500;	requirements[]={};	};	// "UGAS demining"
+				class B_UGV_02_Demining_F					{cost = 100;	requirements[]={};	};	// "UGAS demining"
+				class B_UGV_01_F							{cost = 150;	requirements[]={};	};	// "UGV Stomper" 
+				class B_UGV_01_rcws_F 						{cost = 800;	requirements[]={};	};	// "UGAS"
+				//class B_UAV_02_dynamicLoadout_F	  			{cost = 8000;	requirements[]={"A"};	};	// "MQ-4A Greyhawk"	
+				//class B_T_UAV_03_dynamicLoadout_F			{cost = 6000;	requirements[]={"H"};	};	// "MQ-12 Falcon"		
+				//class B_UAV_05_F							{cost = 10000;	requirements[]={"A"};	};	// "UCav Sentinel"
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
@@ -103,11 +108,11 @@ class CfgWLRequisitionPresets
 				class B_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"
 				class B_Mortar_01_F							{cost = 6500;	requirements[]={};	};	// "Mortar"
 				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"
-				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";
-				class B_SAM_System_01_F						{cost = 18000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";
+				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"
+				class B_SAM_System_01_F						{cost = 18000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan"
 				class B_SAM_System_03_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"
-				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion";
-				class B_Ship_MRLS_01_F						{cost = 50000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk41 VLS";
+				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion"
+				class B_Ship_MRLS_01_F						{cost = 50000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk41 VLS"
 
 			};
 		};
@@ -175,6 +180,7 @@ class CfgWLRequisitionPresets
 				//class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"
 				class O_Plane_Fighter_02_F					{cost = 37000;	requirements[]={"A"};	};	// "To-201 Shikra"
+					
 				
 			};
 			class Naval
@@ -196,8 +202,12 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
+				class O_UGV_02_Demining_F					{cost = 100;	requirements[]={};	};	// "UGAV demining"
+				class O_UGV_01_F							{cost = 150;	requirements[]={};	};	// "UGV Stomper" 
 				class O_UGV_01_rcws_F						{cost = 800;	requirements[]={};	};	// "UGAV rcws"
-				class O_UGV_02_Demining_F					{cost = 500;	requirements[]={};	};	// "UGAV demining"
+				//class O_UAV_02_dynamicLoadout_F	  			{cost = 8000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";	
+				//class B_T_UAV_03_dynamicLoadout_F			{cost = 6000;	requirements[]={"H"};	};	// "MQ-12 Falcon";		
+				//class O_T_UAV_04_CAS_F						{cost = 10000;	requirements[]={"A"};	};	// "KH-3A Fenghuang";
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
