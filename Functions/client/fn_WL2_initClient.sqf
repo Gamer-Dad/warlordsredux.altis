@@ -261,3 +261,4 @@ private _id = clientOwner;
 sleep 1;
 
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
+[] spawn BIS_fnc_timer;
