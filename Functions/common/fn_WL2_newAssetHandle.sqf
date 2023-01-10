@@ -131,27 +131,6 @@ if (isPlayer _owner) then {
 								if ((_asset getVariable "BIS_WL_nextRearm") <= WL_SYNCED_TIME) then {
 									_curWeapon = currentWeapon _asset;
 									{
-										/*This commented out script was the original, it had to be moved outside of the {} for jets. Script skipped over them.
-
-										if (_asset isKindOf "Air") then {
-												
-											[player] spawn GOM_fnc_aircraftLoadout;	
-
-										} else {
-
-												private _turret = _x;
-												private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
-												{
-												
-													  	_asset removeMagazineTurret [_x, _turret];
-														_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
-
-												} forEach _mags;
-										};
-
-										*/   
-
-										
 											if (_asset isKindOf "LandVehicle") then {
 												
 												private _turret = _x;
@@ -162,8 +141,6 @@ if (isPlayer _owner) then {
 												} forEach _mags;
 																				 
 											};
-										
-
 									} forEach allTurrets _asset;
 
 									//The line below was moved outside the {} and rearms jets using GOMs airloadout.
@@ -248,7 +225,7 @@ if (isPlayer _owner) then {
 			(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
 		},
 		[],
-		-20,
+		-100,
 		FALSE,
 		TRUE,
 		"",
