@@ -40,8 +40,6 @@ if ( hasInterface ) then
 };
 
 /*******************************END OF SCRIPTS****************************/
-
-[] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 if(isServer) then
 {
 	//CP databse
