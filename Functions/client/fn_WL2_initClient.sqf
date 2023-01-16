@@ -89,6 +89,7 @@ uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
 };
+
 call BIS_fnc_WL2_sectorsInitClient;
 ["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
 private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
