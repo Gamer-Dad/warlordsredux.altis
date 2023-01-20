@@ -91,14 +91,19 @@ if !(isServer) then {
 };
 
 call BIS_fnc_WL2_sectorsInitClient;
+
 ["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
+
 private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
+
 {
 	[_x, _x getVariable "BIS_WL_owner", _specialStateArray] call BIS_fnc_WL2_sectorMarkerUpdate;
 } forEach BIS_WL_allSectors;
+
 if !(isServer) then {
 	BIS_WL_playerSide call BIS_fnc_WL2_parsePurchaseList;
 };
+
 [] spawn BIS_fnc_WL2_zoneRestrictionHandleClient;
 [] spawn BIS_fnc_WL2_sectorCaptureStatus;
 [] spawn BIS_fnc_WL2_teammatesAvailability;
@@ -139,14 +144,18 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 BIS_WL_enemiesCheckTrigger = createTrigger ["EmptyDetector", position player, FALSE];
 BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
 BIS_WL_enemiesCheckTrigger setTriggerArea [200, 200, 0, FALSE];
-BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANY", "PRESENT", TRUE];
-BIS_WL_enemiesCheckTrigger setTriggerStatements [
-	"{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0",
-	"",
-	""
-];
-player addEventHandler ["GetInMan", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]]}];
-player addEventHandler ["GetOutMan", {detach BIS_WL_enemiesCheckTrigger; BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]]}];
+BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
+BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
+
+player addEventHandler ["GetInMan", {
+	detach BIS_WL_enemiesCheckTrigger; 
+	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]]
+}];
+
+player addEventHandler ["GetOutMan", {
+	detach BIS_WL_enemiesCheckTrigger; 
+	BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]]
+}];
 
 player addEventHandler ["Killed", {
 	_connectedUAV = getConnectedUAV player;
