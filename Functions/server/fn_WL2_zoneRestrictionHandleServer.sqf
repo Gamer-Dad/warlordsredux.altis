@@ -55,11 +55,6 @@ while {TRUE} do {
 					_player setDamage 1;
 				};
 			};
-		} else {
-			if (isPlayer leader group _x || (isPlayer leader ((UAVControl _x) # 0))) then {
-				_x setDamage 1;
-			};
-			_trespassers = _trespassers - [_x];
 		};
 	} forEach _trespassersNew;
 	
