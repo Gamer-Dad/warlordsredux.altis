@@ -32,6 +32,12 @@ STR_A3_WL_transfer_restr1_TODO_REWRITE, "No allied players available."
 STR_A3_WL_cp_saved, "your current CP has been saved."
 STR_A3_WL_cp_recieved, "your prior CP has been recieved."
 STR_A3_WL_cp_failed, "You had no prior CP."
+STR_A3_WL_respawn_vicFT_order, "Order fast travel vehicle."
+STR_A3_WL_respawn_vicFT_ft, "FT to moving spawn."
+STR_A3_WL_ftVehicle_restr, "FT Vehicle already exists."
+STR_A3_WL_ftVehicle_restr1, "You need to be in an owned sector";
+STR_A3_WL_ftVehicle_ft_restr, "No FT vehicle available."
+STR_A3_WL_popup_travelling_FTVehicle, "Fast travelling to FT vehicle."
 
 
 

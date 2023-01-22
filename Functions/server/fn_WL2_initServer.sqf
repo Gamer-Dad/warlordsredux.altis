@@ -1,5 +1,8 @@
 #include "..\warlords_constants.inc"
 
+missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
 {createCenter _x} forEach [WEST, EAST, RESISTANCE, CIVILIAN];
@@ -51,6 +54,16 @@ addMissionEventHandler ["HandleDisconnect", {
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
+addMissionEventHandler ["EntityKilled", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	if (typeOf _unit == "B_Truck_01_medical_F") then {
+		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+	};
+
+	if (typeOf _unit == "O_Truck_02_medical_F") then {
+		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+	};
+}];
 
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
@@ -131,6 +144,8 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 		};
 	};
 } forEach BIS_WL_competingSides;
+
+[] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
 
