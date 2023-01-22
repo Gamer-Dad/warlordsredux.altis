@@ -14,8 +14,9 @@ _ctrlBackgroundTimer ctrlSetPosition [_displayX + (_blockW * 78), _displayY - (_
 _ctrlTimer = WL_DISPLAY_MAIN ctrlCreate ["RscStructuredText", -1];
 _ctrlTimer ctrlSetPosition [_displayX + (_blockW * 108), _displayY - (_blockH * 12), _blockW * 75, _blockH * 16];
 
+_timeLeft = 36000 - serverTime;
 
-while {true} do {
+while {_timeLeft > 0} do {
 	_timeLeft = 36000 - serverTime;
 	_ctrlTimer ctrlSetScale 1.1;
 	_ctrlTimer ctrlSetStructuredText parseText format ["<t color = '#ffffff'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString];

@@ -57,6 +57,18 @@ if (_ret) then {
 		case "RemoveUnits": {
 			if (count ((groupSelectedUnits player) - [player]) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
 		};
+		case "RespawnVic": {
+			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
+			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
+			private _sideP = side player;
+			private _ftVehicle = if (_sideP == west) then {missionNamespace getVariable "ftVehicleExistsBlu"} else {missionNamespace getVariable "ftVehicleExistsOpf"};
+			if (_ftVehicle) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
+		};
+		case "RespawnVicFT": {
+			private _sideP = side player;
+			private _ftVehicle = if (_sideP == west) then {missionNamespace getVariable "ftVehicleExistsBlu"} else {missionNamespace getVariable "ftVehicleExistsOpf"};
+			if (_ftVehicle == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+		};
 		default {
 			_servicesAvailable = BIS_WL_sectorsArray # 5;
 			_vehiclesCnt = count WL_PLAYER_VEHS;

@@ -103,29 +103,8 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 	};
 };
 
-/*
-if (count _ret < 20) then {
-	private _roadPosArr = ((_center nearRoads _maxAxis) select {_x call _areaCheck}) apply {position _x};
-
-	{
-		private _pos = _x;
-		if (_roadPosArr findIf {_x distance2D _pos < _axisStep && _x distance2D _pos > 0} != -1 || count (_pos nearObjects ["AllVehicles", _axisStep]) > 0) then {
-			_roadPosArr set [_forEachIndex, objNull];
-		};
-	} forEach _roadPosArr;
-
-	_roadPosArr = _roadPosArr - [objNull];
-	_ret append _roadPosArr;
-};*/
-
 _ret = _ret apply {[_x distance2D _sortCenter, [_x]]};
 _ret sort TRUE;
 _ret = _ret apply {(_x # 1) # 0};
-/*
-{
-	_mrkr = createMarkerLocal [call BIS_fnc_WL2_generateVariableName, _x];
-	_mrkr setMarkerTypeLocal "mil_dot_noShadow";
-	_mrkr setMarkerSizeLocal [0.5, 0.5];
-} forEach _ret;
-*/
+
 _ret
