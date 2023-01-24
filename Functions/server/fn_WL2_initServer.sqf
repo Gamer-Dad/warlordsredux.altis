@@ -1,7 +1,35 @@
 #include "..\warlords_constants.inc"
 
+//CP databse
+moneyDatabase = createHashmap;
+
+// Mine Array's
+MRTM_spawnedAPERS = [];
+MRTM_spawnedAPERSDispenser = [];
+MRTM_spawnedAPERSDispenserAmmo = [];
+MRTM_spawnedAPERSBounding = [];
+MRTM_spawnedAT = [];
+MRTM_spawnedSLAMs = [];
+MRTM_spawnedTripwires = [];
+MRTM_spawnedClaymores = [];
+MRTM_spawnedSatchels = [];
+MRTM_spawnedCharges = [];
+MRTM_spawnedLIEDU = [];
+MRTM_spawnedLIEDDI = [];
+MRTM_spawnedSIEDU = [];
+MRTM_spawnedSIEDDI = [];
+
 missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+missionNamespace setVariable ["serverTime", 0, true];
+
+[] spawn {
+	while {true} do {
+		private _time = missionNamespace getVariable "serverTime";
+		missionNamespace setVariable ["serverTime", _time + 1, true];
+		sleep 1;
+	};
+};
 
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
@@ -65,6 +93,8 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
+
+
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
 	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F") then {
@@ -79,6 +109,7 @@ addMissionEventHandler ["EntityCreated", {
 			};
 		};
 	};
+	
 	if (typeOf _entity == "B_AAA_System_01_F") then { //Praetorian
 		private _side = side (crew _entity select 0);
 		if (_side == east) then {
@@ -148,4 +179,3 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
-

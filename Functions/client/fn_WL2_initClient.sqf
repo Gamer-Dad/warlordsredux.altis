@@ -89,13 +89,11 @@ uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
 };
-
 call BIS_fnc_WL2_sectorsInitClient;
 
 ["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
 
 private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
-
 {
 	[_x, _x getVariable "BIS_WL_owner", _specialStateArray] call BIS_fnc_WL2_sectorMarkerUpdate;
 } forEach BIS_WL_allSectors;
@@ -260,7 +258,6 @@ sleep 0.1;
 [] spawn BIS_fnc_WL2_targetSelectionHandleClient;
 [] spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 [] spawn BIS_fnc_WL2_assetMapControl;
-
 [] spawn BIS_fnc_WL2_timer;
 
 //CP Saving system
