@@ -21,12 +21,12 @@ MRTM_spawnedSIEDDI = [];
 
 missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-missionNamespace setVariable ["serverTime", 0, true];
+missionNamespace setVariable ["serverTimer", 0, true];
 
 [] spawn {
 	while {true} do {
-		private _time = missionNamespace getVariable "serverTime";
-		missionNamespace setVariable ["serverTime", _time + 1, true];
+		private _timeMission = missionNamespace getVariable "serverTimer";
+		missionNamespace setVariable ["serverTimer", _timeMission + 1, true];
 		sleep 1;
 	};
 };
