@@ -218,7 +218,6 @@ call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 "init" spawn BIS_fnc_WL2_hintHandle;
 [] spawn BIS_fnc_WL2_music;
-[] spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
@@ -268,3 +267,7 @@ private _id = clientOwner;
 sleep 1;
 
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
+player addAction ["Get 20k CP", {[player, 20000] call BIS_fnc_WL2_fundsControl}];
+
+sleep 3;
+[] spawn BIS_fnc_WL2_welcome;

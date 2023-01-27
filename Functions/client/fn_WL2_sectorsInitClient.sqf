@@ -1,6 +1,5 @@
 #include "..\warlords_constants.inc"
 
-
 _location1 = createLocation ["NameLocal", [12293.5,8890.99,0.00144958], 20, 20];
 _location1 setText "Skopos Base";
 
@@ -45,6 +44,8 @@ _location13 setText "Compound";
 
 _location13 = createLocation ["NameLocal", [23582.1,21097.6,0.0018158], 20, 20];
 _location13 setText "Nidasos Base";
+
+
 
 
 BIS_WL_sectorLinks = [];

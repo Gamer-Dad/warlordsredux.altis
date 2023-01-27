@@ -1,6 +1,8 @@
 #include "Functions\warlords_constants.inc"
-// required for view distance script
 #include "scripts\taw_vd\GUI.h"
+
+#include "ui\defines.hpp"
+#include "ui\controls.hpp"
 
 
 onLoadName = "Warlords Redux 2.5"; 
@@ -100,6 +102,7 @@ class CfgFunctions {
 			class WL2_timer {};
 			class WL2_orderFTVehicleFT {};
 			class WL2_orderFTVehicle {};
+			class WL2_welcome {};
     	}
 		class Server 
 		{
@@ -230,7 +233,6 @@ class Header
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 
-//Disabled until needed #include "multiplayerSecurity.inc" 
 #include "requisitions.inc"
 
 corpseManagerMode = 1;

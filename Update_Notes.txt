@@ -116,11 +116,12 @@
 
  2.5
  -CP is saved every 5 minutes.
- -CP is saved after every funds change.
+ -CP is saved after every funds transfer for each person.
  -Prior CP is given back on join.
  -Code improvements.
  -Anti-cheat improvements.
- -Mine limit is fixed (limit is now server sided not per client).
+ -Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
  -Fixed the issue of UAV's beeing locked when a player dies.
- -Added SAM sites for each side. (Also have different Camo: NATO, white. CSAT, Olive).
- -Fixed a coding issue regarding the scheduler.
+ -Added a new intro screen (Also accessible trough srategy).
+  
+  

@@ -1,6 +1,5 @@
 /*
 DAPS includes 15 types of APS:
-
 Light: Protection from rockets (2 charges). 20 meter MMD (Minimum Defeat Distance).
 Medium: Protection from rockets and missiles (4 charges). 20 meter MMD.
 Heavy: Protection from rockets, missiles and tank shells (6 charges). 20 meter MMD.
@@ -16,9 +15,7 @@ Afganit: Protection from rockets, missiles (5 charges each side, only covers the
 AfganitE: Protection from rockets, missiles and shells (5 charges each side, only covers the front 120 degrees). 30 meter MMD.
 Iron Fist: Protection from rockets and missiles (2 charges left, 2 charges right). 50 meter MMD.
 AMAP-ADS: Protection from rockets and missiles and (possibly) HE shells (5 charges left, 5 charges right). 5 meter MMD.
-
 The light, medium and heavy APS are not specifically based on any real-world system, but are intended as generalizations of various systems in use or development. They provide 360 degree protection.
-
 Vanilla NATO and AAF MRAPs use Trophy LV.
 Vanilla NATO and AAF IFVs use Trophy MV.
 NATO MBTs use Trophy HV.
@@ -31,9 +28,7 @@ Some RHS M1 MBT variants use Trophy HV.
 Some RHS M2 IFV variants use Trophy MV.
 CUP and MEC T-90s use dazzler.
 MEC T-72s use dazzler.
-
 As of 0.86 the following vehicles are added (thanks xxsogramboxx):
-
 Trophy HV:
 Burnes_M1A1_MEU_01_Public
 Burnes_M1A1_MEU_02_Public
@@ -43,22 +38,16 @@ sfp_strv122
 sfp_strv122b
 BWA3_Leopard2_Tropen
 BWA3_Leopard2_Fleck
-
 Iron Fist:
 Burnes_FV4034_01
 Burnes_FV4034_02
-
 Afganit:
 rhs_t90am_tv
 rhs_t90sm_tv
 Arena, Drozd, Drozd-2 and Afganit/AfganitE can not engage top-attack missiles (basically missiles that are 2 or more meters higher than the vehicle).
-
 AfganitE and TrophyHVe are capable of stopping tank rounds.
-
 AMAP-ADS is capable of stopping HE tank rounds.
-
 The dazzler does not destroy incoming projectiles, but rather causes those that use IR or laser guidance to veer away and (hopefully) miss the vehicle. Dazzlers have unlimited charges.
-
 Outgoing fire and low-caliber weapons should not trigger the APS. Be warned that firing RPGs while standing next to a friendly vehicle with APS may trigger the friendly APS.
 */
 
