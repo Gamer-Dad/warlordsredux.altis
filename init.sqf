@@ -1,7 +1,3 @@
-startLoadingScreen [""];
-BIS_fnc_WL2_welcome = compile preprocessFileLineNumbers "welcome.sqf";
-endLoadingScreen;
-
 /*******************************START OF SCRIPTS****************************/
 // Trophy
 execVM "scripts\DAPS\Scripts\Start.sqf";
@@ -38,8 +34,8 @@ if ( hasInterface ) then
 	waitUntil { !isNull player };
 	[] spawn KSLOOP_fnc_unflipVehicleAddAction;
 };
-
 /*******************************END OF SCRIPTS****************************/
+
 
 [] call BIS_fnc_WL2_initCommon;
 

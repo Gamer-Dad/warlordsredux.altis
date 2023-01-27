@@ -1849,17 +1849,12 @@ GOM_fnc_showResourceDisplay = {
 				"PuristaBold",
 				"center",
 				true
-
 				];
 
 
 		} foreach ((player nearEntities ["All",50]) select {speed _x < 15 AND {alive _x} AND {_x getvariable ["GOM_fnc_repaircargo",-1] >= 0}});
 
 	};
-
-
-
-
 
 
 

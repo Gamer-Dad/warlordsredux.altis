@@ -1,5 +1,3 @@
-//GOM_fnc_aircraftLoadout V1.342 made by Grumpy Old Man 17-5-2017
-
 ///////////////////////////////////////////////////////////////////////////
 /// Styles
 ///////////////////////////////////////////////////////////////////////////
@@ -77,7 +75,7 @@
 
 #define SL_TEXTURES       0x10
 
-// progress bar
+// progress bar 
 #define ST_VERTICAL       0x01
 #define ST_HORIZONTAL     0
 
