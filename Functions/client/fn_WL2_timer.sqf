@@ -2,28 +2,26 @@
 
 sleep 3;
 
-_blockW = safeZoneW / 1000;
-_blockH = safeZoneH / (1000 / (getResolution # 4));
-_displayW = _blockW * 180;
-_displayH = _blockH * 54;
-_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
+private _zoneX = safeZoneX;
+private _zoneY = safeZoneY;
+private _zoneW = safeZoneW;
+private _zoneH = safeZoneH;
 
 
-_ctrlBackgroundTimer = WL_DISPLAY_MAIN ctrlCreate ["RscPictureKeepAspect", -1];
-_ctrlBackgroundTimer ctrlSetPosition [_displayX + (_blockW * 78), _displayY - (_blockH * 11), _blockW * 75, _blockH * 16];
+_ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscPictureKeepAspect", 4567];
+_ctrlBackgroundTimer ctrlSetPosition [ 0.896219 * _zoneW + _zoneX, 0.790 * _zoneH + _zoneY, 0.0271875 * _zoneW, 0.040 * _zoneH];
 
-_ctrlTimer = WL_DISPLAY_MAIN ctrlCreate ["RscStructuredText", -1];
-_ctrlTimer ctrlSetPosition [_displayX + (_blockW * 108), _displayY - (_blockH * 12), _blockW * 75, _blockH * 16];
+_ctrlTimer = WL_DISPLAY_MAIN ctrlCreate ["RscStructuredText", 45671];
+_ctrlTimer ctrlSetPosition [ 0.910219 * _zoneW + _zoneX, 0.790 * _zoneH + _zoneY, 0.0571875 * _zoneW, 0.040 * _zoneH];
 
 while {true} do {
 	private _serverTime = missionNamespace getVariable "serverTimer";
 	_timeLeft = 36000 - _serverTime;
-	_ctrlTimer ctrlSetScale 1.1;
+	_ctrlTimer ctrlSetScale 1.2;
 	_ctrlTimer ctrlSetStructuredText parseText format ["<t color = '#ffffff'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString];
 	_ctrlTimer ctrlCommit 0;
 	_ctrlBackgroundTimer ctrlSetText "img\timer_ca.paa";
-	_ctrlBackgroundTimer ctrlSetScale 0.7;
+	_ctrlBackgroundTimer ctrlSetScale 0.6;
 	_ctrlBackgroundTimer ctrlCommit 0;
 	sleep 0.5;
 };

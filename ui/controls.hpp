@@ -115,8 +115,6 @@ class welcomeScreen
 					deletable = 0;
 					type = CT_STRUCTURED_TEXT;
 					style = ST_LEFT;
-					x = 0.295469 * safezoneW + safezoneX;
-					y = 0.230 * safezoneH + safezoneY;
 					w = 0.245937 * safezoneW;
 					h = 3 * safezoneH;
 				};	
