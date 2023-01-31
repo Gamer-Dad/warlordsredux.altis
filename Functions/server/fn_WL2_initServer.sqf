@@ -93,8 +93,6 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
-
-
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
 	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F") then {
@@ -149,7 +147,6 @@ call BIS_fnc_WL2_sectorsInitServer;
 [] spawn BIS_fnc_WL2_targetSelectionHandleServer;
 [] spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 [] spawn BIS_fnc_WL2_incomePayoff;
-[] spawn BIS_fnc_WL2_garbageCollector;
 [] spawn BIS_fnc_WL2_targetResetHandleServer;
 
 setTimeMultiplier BIS_WL_timeMultiplier;

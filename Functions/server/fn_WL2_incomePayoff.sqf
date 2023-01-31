@@ -1,8 +1,10 @@
 #include "..\warlords_constants.inc"
 
-while {TRUE} do {
-	sleep WL_SECTOR_PAYOFF_PERIOD;
-	{
+//CP Balancing here
+
+
+while {true} do {
+	sleep WL_SECTOR_PAYOFF_PERIOD;	{
 		_side = _x;
 		_income = _side call BIS_fnc_WL2_income;
 		{
