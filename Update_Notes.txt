@@ -115,14 +115,24 @@
   -Mission End Timer @ 6 hours.
 
  2.5
- -CP is saved every 5 minutes.
- -CP is saved after every funds transfer for each person.
- -Prior CP is given back on join.
+ -CP total remains with player until end of round.
  -Code improvements.
  -Anti-cheat improvements.
- -Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
- -Fixed the issue of UAV's beeing locked when a player dies.
+ -Mine limit introduced.
+ -Darters no longer inaccessable if a player connected and dies.
  -Added a new intro screen (Also accessible trough srategy).
  -Added sector names.
+ -Improved ground to air missile speeds and lock on abilities (deadlier)
+ -Introduced air burst to ground to air missiles. 
+ -Introduced all SAMS to both sides.
+ -Introduced all UAVs to both sides, including VLS.
+ -Introduced mission countdown timer.
+ -Introduced CP adjustment based on team player imbalance. 
+ -UGVs can no longer survive under water.
+ -Introduced mobile spawn truck (1 / team).
+ -Introduced improved introduction pop-up with guide.
+ 
+ 
+ 
   
   
