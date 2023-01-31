@@ -156,13 +156,6 @@ player addEventHandler ["GetOutMan", {
 }];
 
 player addEventHandler ["Killed", {
-	_connectedUAV = getConnectedUAV player;
-	if (_connectedUAV != objNull) exitWith {
-		player connectTerminalToUAV objNull;
-	};
-}];
-
-player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	
@@ -194,6 +187,11 @@ player addEventHandler ["Killed", {
 	_lastLoadoutArr set [5, _text];
 	_gearArr set [0, _lastLoadoutArr];
 	(missionNamespace getVariable _varName) set [5, _gearArr];
+
+	_connectedUAV = getConnectedUAV player;
+	if (_connectedUAV != objNull) exitWith {
+		player connectTerminalToUAV objNull;
+	};
 }];
 
 if (BIS_WL_arsenalEnabled) then {
@@ -218,12 +216,15 @@ call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 "init" spawn BIS_fnc_WL2_hintHandle;
 [] spawn BIS_fnc_WL2_music;
+[] spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
 waitUntil {WL_PLAYER_FUNDS != -1};
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
+[] spawn BIS_fnc_WL2_timer;
+
 
 [] spawn {
 	waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
@@ -257,7 +258,6 @@ sleep 0.1;
 [] spawn BIS_fnc_WL2_targetSelectionHandleClient;
 [] spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 [] spawn BIS_fnc_WL2_assetMapControl;
-[] spawn BIS_fnc_WL2_timer;
 
 //CP Saving system
 private _uid = getPlayerUID player;
@@ -265,9 +265,6 @@ private _id = clientOwner;
 [_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2];
 
 sleep 1;
-
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
-player addAction ["Get 20k CP", {[player, 20000] call BIS_fnc_WL2_fundsControl}];
 
-sleep 3;
-[] spawn BIS_fnc_WL2_welcome;
+player addAction ["Get 20k CP", {[player, 20000] call BIS_fnc_WL2_fundsControl}];

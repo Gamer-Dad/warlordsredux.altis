@@ -123,5 +123,6 @@
  -Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
  -Fixed the issue of UAV's beeing locked when a player dies.
  -Added a new intro screen (Also accessible trough srategy).
+ -Added sector names.
   
   

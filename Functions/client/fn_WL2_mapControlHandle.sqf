@@ -42,7 +42,7 @@ while {!BIS_WL_missionEnd} do {
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetBackgroundColor [0, 0, 0, 0];
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetTextColor [1,1,1,1];
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable FALSE;
-		
+
 		[] spawn BIS_fnc_WL2_mapDrawHandle;
 	};
 	

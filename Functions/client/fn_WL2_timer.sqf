@@ -11,7 +11,7 @@ private _zoneH = safeZoneH;
 _ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscPictureKeepAspect", 4567];
 _ctrlBackgroundTimer ctrlSetPosition [ 0.896219 * _zoneW + _zoneX, 0.790 * _zoneH + _zoneY, 0.0271875 * _zoneW, 0.040 * _zoneH];
 
-_ctrlTimer = WL_DISPLAY_MAIN ctrlCreate ["RscStructuredText", 45671];
+_ctrlTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 45671];
 _ctrlTimer ctrlSetPosition [ 0.910219 * _zoneW + _zoneX, 0.790 * _zoneH + _zoneY, 0.0571875 * _zoneW, 0.040 * _zoneH];
 
 while {true} do {
