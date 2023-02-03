@@ -22,6 +22,7 @@ MRTM_spawnedSIEDDI = [];
 missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 missionNamespace setVariable ["serverTimer", 0, true];
+missionNamespace setVariable ["imbalance", 0, true];
 
 [] spawn {
 	while {true} do {

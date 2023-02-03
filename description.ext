@@ -48,6 +48,7 @@ class CfgFunctions {
     	class Client 
 		{
     		file = "Functions\client";
+			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
 			class WL2_forceGroupIconsFunctionality {};
@@ -163,6 +164,7 @@ class CfgFunctions {
 			class WL2_sub_purchaseMenuSetAssetDetails {};
 			class WL2_sub_purchaseMenuSetItemsList {};
 			class WL2_sub_vehicleLockAction {};
+			class WL2_sub_logisticsAddAction {};
     	}
 	}
 
@@ -176,7 +178,6 @@ class CfgFunctions {
 		{
 			file = "scripts\VUnflip\functions";	// Folder where all functions are.
 			class unflipVehicle {};
-			//Not needed: class limitVehicleSpeed {}; 
 		};
 	};		
 
