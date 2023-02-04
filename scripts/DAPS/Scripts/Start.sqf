@@ -163,8 +163,9 @@ DAPS_fnc_React=compile preprocessFile"scripts\DAPS\Scripts\Misc\React.sqf";
 sleep 1;
 //["Drongo's APS","APS report",["Show Dialog","Tool Tip"],"",{call daps_fnc_KeyPressed},[211,[FALSE,FALSE,FALSE]]]call cba_fnc_addKeybind;
 
+
 dapsKeyHandle=[]spawn{
-    while{TRUE}do{
+    while{true}do{
 		//https://community.bistudio.com/wiki/inputAction/actions
 		if((inputaction"cycleThrownItems")>.1)then{
 			call DAPS_fnc_KeyPressed;
