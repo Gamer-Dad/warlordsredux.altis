@@ -55,8 +55,10 @@ if (isPlayer _owner) then {
 																	} else { if (_asset isKindOf "O_SAM_System_04_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
 																		} else { if (_asset isKindOf "B_SAM_System_02_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
 																			} else { if (_asset isKindOf "B_Ship_MRLS_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
-																				} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
-									}}}}}}}}}}};   
+																				} else { if (_asset isKindOf "B_MBT_01_mlrs_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																					} else { if (_asset isKindOf "I_Truck_02_MRL_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																						} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
+									}}}}}}}}}}}}};   
 
 		//]; //Used to be + WL_MAINTENANCE_COOLDOWN_REARM
 		
@@ -149,8 +151,8 @@ if (isPlayer _owner) then {
 									_asset selectWeapon _curWeapon;
 
 									////Beta   
-									if (_asset isKindOf "Helicopter") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
-									} else { if (_asset isKindOf "Plane") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
+									if (_asset isKindOf "Helicopter") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 720]; 
+									} else { if (_asset isKindOf "Plane") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 1200]; 
 										} else { if (_asset isKindOf "B_MBT_01_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 											} else { if (_asset isKindOf "O_MBT_02_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 												} else { if (_asset isKindOf "B_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
@@ -161,10 +163,10 @@ if (isPlayer _owner) then {
 																	} else { if (_asset isKindOf "O_SAM_System_04_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
 																		} else { if (_asset isKindOf "B_SAM_System_02_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
 																			} else { if (_asset isKindOf "B_Ship_MRLS_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
-																				} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
-									}}}}}}}}}}};   
-									////Beta
-
+																				} else { if (_asset isKindOf "B_MBT_01_mlrs_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																					} else { if (_asset isKindOf "I_Truck_02_MRL_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																						} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
+									}}}}}}}}}}}}};   
 
 
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
@@ -203,6 +205,16 @@ if (isPlayer _owner) then {
 			_initialLock = if (_asset isKindOf "StaticWeapon") then {FALSE} else {TRUE};
 			_asset lock _initialLock;
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
+
+			  if (typeOf _asset == "B_Truck_01_flatbed_F") then {
+                _asset call BIS_fnc_WL2_sub_logisticsAddAction;
+                if (side _owner == east) then {
+                    _entity setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
+                    _entity setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Middle of truck
+                    _entity setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
+                };
+            };
+
 			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
 				if (side _owner == east) then {
