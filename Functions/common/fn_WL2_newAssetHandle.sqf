@@ -205,6 +205,16 @@ if (isPlayer _owner) then {
 			_initialLock = if (_asset isKindOf "StaticWeapon") then {FALSE} else {TRUE};
 			_asset lock _initialLock;
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
+
+			  if (typeOf _asset == "B_Truck_01_flatbed_F") then {
+                _asset call BIS_fnc_WL2_sub_logisticsAddAction;
+                if (side _owner == east) then {
+                    _entity setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
+                    _entity setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Middle of truck
+                    _entity setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
+                };
+            };
+
 			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
 			};

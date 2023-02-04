@@ -115,15 +115,7 @@ addMissionEventHandler ["EntityCreated", {
         //_entity setObjectTextureGlobal [1, "A3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa"]; //Does nothing but keep for reminder
         _entity setObjectTextureGlobal [2, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak Bed&Launcher                
     };
-
-     if (typeOf _entity == "B_Truck_01_flatbed_F") then { //Flatbed HEMTT
-        if (side player == east) then {        
-        	_entity setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
-        	_entity setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Does nothing but keep for reminder
-        	_entity setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
-    	};
-    };                
-             
+   
 	
 	if (typeOf _entity == "B_AAA_System_01_F") then { //Praetorian
 		private _side = side (crew _entity select 0);
