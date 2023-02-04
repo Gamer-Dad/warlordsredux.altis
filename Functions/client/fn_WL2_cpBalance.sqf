@@ -1,5 +1,7 @@
 #include "..\warlords_constants.inc"
 
+waituntil {!isnull (findDisplay 46)};
+
 private _zoneX = safeZoneX;
 private _zoneY = safeZoneY;
 private _zoneW = safeZoneW;
