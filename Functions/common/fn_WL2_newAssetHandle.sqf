@@ -203,11 +203,9 @@ if (isPlayer _owner) then {
 			_initialLock = if (_asset isKindOf "StaticWeapon") then {FALSE} else {TRUE};
 			_asset lock _initialLock;
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
-			/*
-			if (typeOf _asset == "B_Truck_01_flatbed_F" || typeOf _asset == "O_Truck_02_transport_F") then {
+			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
 			};
-			*/
 		};
 		
 		_asset addEventHandler ["Killed", {

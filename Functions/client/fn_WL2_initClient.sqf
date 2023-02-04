@@ -85,6 +85,9 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 
+private _uidPlayer = getPlayerUID player;
+missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], nil];
+
 
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
@@ -224,7 +227,7 @@ waitUntil {WL_PLAYER_FUNDS != -1};
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 [] spawn BIS_fnc_WL2_timer;
-//[] spawn BIS_fnc_WL2_cpBalance;
+[] spawn BIS_fnc_WL2_cpBalance;
 
 
 [] spawn {

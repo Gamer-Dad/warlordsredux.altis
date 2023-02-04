@@ -40,6 +40,7 @@ class CfgWLRequisitionPresets
 				class B_G_Offroad_01_armed_F				{cost = 200;	requirements[]={};	};	// "Offroad (HMG)"
 				class B_LSV_01_AT_F							{cost = 1500;	requirements[]={};	};	// "Prowler (AT)"
 				class B_G_Offroad_01_AT_F					{cost = 500;	requirements[]={};	};	// "Offroad (AT)"
+				class B_Truck_01_flatbed_F					{cost = 700;	requirements[]={};	};	// "HEMTT Flatbed"
 				class B_Truck_01_Repair_F					{cost = 2000;	requirements[]={};	};	// "HEMTT Repair"
 				class B_Truck_01_ammo_F						{cost = 3000;	requirements[]={};	};	// "HEMTT Ammo"
 				
@@ -149,6 +150,7 @@ class CfgWLRequisitionPresets
 				class O_G_Offroad_01_armed_F				{cost = 200;	requirements[]={};	};	// "Offroad (HMG)"
 				class O_LSV_02_AT_F							{cost = 1500;	requirements[]={};	};	// "Qilin (AT)"
 				class O_G_Offroad_01_AT_F					{cost = 500;	requirements[]={};	};	// "Offroad (AT)"
+				class B_Truck_01_flatbed_F					{cost = 700;	requirements[]={};	};	// "HEMTT Flatbed"
 				class O_Truck_03_Repair_F					{cost = 2000;	requirements[]={};	};	// "Tempest Repair"
 				class O_Truck_03_ammo_F						{cost = 3000;	requirements[]={};	};	// "Tempest Ammo"
 				

@@ -21,8 +21,9 @@ MRTM_spawnedSIEDDI = [];
 
 missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-missionNamespace setVariable ["serverTimer", 0, true];
 missionNamespace setVariable ["imbalance", 0, true];
+
+missionNamespace setVariable ["serverTimer", 0, true];
 
 [] spawn {
 	while {true} do {
@@ -148,6 +149,7 @@ call BIS_fnc_WL2_sectorsInitServer;
 [] spawn BIS_fnc_WL2_targetSelectionHandleServer;
 [] spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 [] spawn BIS_fnc_WL2_incomePayoff;
+[] spawn BIS_fnc_WL2_garbageCollector;
 [] spawn BIS_fnc_WL2_targetResetHandleServer;
 
 setTimeMultiplier BIS_WL_timeMultiplier;
