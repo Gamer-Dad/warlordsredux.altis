@@ -18,7 +18,11 @@ ctrlShow [696991, false];
 _eng = lbAdd [69699, "English"];
 _russ = lbAdd [69699, "Русский"];
 
-lbSetCurSel [69699, _eng];
+if (language == "Russian") then {
+	lbSetCurSel [69699, _russ];
+} else {
+	lbSetCurSel [69699, _eng];
+};
 
 //Language selector Data
 lbSetData [69699, _eng, "langEnglish"];
@@ -67,9 +71,23 @@ while {dialog} do {
 
 	if (curSelLang == "langEnglish") then {
 		ctrlSetText [696990, "img\flagAmerican.paa"];
+		lbSetText[69695, _pageAbt, "About Warlords Redux"];
+		lbSetText[69695, _pageHow, "How To Play"];
+		lbSetText[69695, _theTeam, "The WSV Community"];
+		lbSetText[69695, _dc, "Our Discord"];
+		lbSetText[69695, _changelog, "Changelog"];
+		lbSetText[69695, _scripts, "Third Party Scripts"];
 	} else {
 		ctrlSetText [696990, "img\flagRussian.paa"];
+		lbSetText[69695, _pageAbt, "O Warlords Redux"];
+		lbSetText[69695, _pageHow, "Как играть"];
+		lbSetText[69695, _theTeam, "Сообщество WSV"];
+		lbSetText[69695, _dc, "Наш Discord"];
+		lbSetText[69695, _changelog, "Список изменений"];
+		lbSetText[69695, _scripts, "Сторонние скрипты"];
 	};
+
+	inventoryKey = actionKeysNames "gear";
 
 	switch (_curSel) do {
 		case "pageAbt": {
@@ -93,13 +111,12 @@ while {dialog} do {
 				_control ctrlSetStructuredText composeText [
 				"Добро пожаловать в Warlords Redux!", lineBreak,
 				"", lineBreak,
-				"Warlords Redux 2.5 — это проект сообщества по обновлению оригинальной Warlords Redux. Цель проекта — улучшить BI-видение военачальников с помощью исправлений ошибок и более сбалансированного взаимодействия с пользователем, сохраняя при этом совместимость с официальными серверами для наибольшего количества игроков.", lineBreak,
+				"Warlords Redux 2.5 — это проект сообщества по обновлению оригинальной Warlords Redux. Цель проекта — улучшить BI-видение военачальников c помощью исправлений ошибок и более сбалансированного взаимодействия c пользователем, сохраняя при этом совместимость c официальными серверами для наибольшего количества игроков.", lineBreak,
 				"", lineBreak,
-				"Warlords Redux представляет множество новых функций, таких как туман войны и случайные местоположения базы. Он имеет много других новых функций по сравнению с ванильными военачальниками, такими как: случайное расположение баз, пользовательские пилоны самолетов, введение всех дронов / ЗРК / ААА ...", lineBreak,
+				"Warlords Redux представляет множество новых функций, таких как туман войны и случайные местоположения базы. Он имеет много других новых функций по сравнению c ванильными военачальниками, такими как: случайное расположение баз, пользовательские пилоны самолетов, введение всех дронов / BPK / AAA ...", lineBreak,
 				"", lineBreak,
 				""
 				];	
-				 
 			};
 		};
 
@@ -111,12 +128,13 @@ while {dialog} do {
 				private _control = findDisplay 6969 displayCtrl 69696;
 				_control ctrlSetStructuredText composeText ["How to play.", lineBreak, 
 				"", lineBreak,
-				parseText format ["In this video you can see a detailed guide on how to play warlords redux: <a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Walords Redux Guide</a>"], lineBreak,
+				parseText format ["In these video's you can see a detailed guide on how to play warlords redux:"], lineBreak,
+				parseText format ["<a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Walords Redux Guide from GamerDad</a>"], lineBreak,
+				parseText format ["<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Walords Redux Guide from Ferrous Creek</a>"], lineBreak,
 				"", lineBreak,
 				"Keybinds:", lineBreak,
-				format ["Hold %1 - Opens the Warlords Menu.", actionKeysNames "Inventory"], lineBreak,
-				"		Strategy --> Contested Sector. to fast travel.", lineBreak,
-				"Hold INSERT - To get earplugs.", lineBreak,
+				format ["Hold %1 - Opens the Warlords Menu.", inventoryKey], lineBreak,
+				"Press INSERT - To insert your earplugs.", lineBreak,
 				"CTRL + G - Shows your APS in the chat.", lineBreak,
 				""
 				];
@@ -126,12 +144,11 @@ while {dialog} do {
 				private _control = findDisplay 6969 displayCtrl 69696;
 				_control ctrlSetStructuredText composeText ["Как играть.", lineBreak, 
 				"", lineBreak,
-				parseText format ["В этом видео вы можете увидеть подробный гайд как играть в Warlords Redux: <a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Руководство по Walords Redux</a>"], lineBreak,
+				parseText format ["B этом видео вы можете увидеть подробный гайд как играть в Warlords Redux: <a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Руководство по Walords Redux</a>"], lineBreak,
 				"", lineBreak,
 				"Связки клавиш:", lineBreak,
-				format ["Держать %1 - Открывает меню Warlords.", actionKeysNames "Inventory"], lineBreak,
-				"		Стратегия --> Спорный сектор. к быстрому путешествию.", lineBreak,
-				"Удерживайте INSERT - чтобы получить затычки для ушей.", lineBreak,
+				format ["Держать %1 - Открывает меню Warlords.", inventoryKey], lineBreak,
+				"Нажимать INSERT - Чтобы вставить беруши.", lineBreak,
 				"CTRL + G - Показывает ваш APS в чате.", lineBreak,
 				""
 				];			
@@ -216,8 +233,8 @@ while {dialog} do {
 				_control ctrlSetStructuredText composeText [
 				"Наш discord", lineBreak,
 				"", lineBreak, 
-				"Присоединяйтесь к нашему discord чтобы получать уведомления об обновлениях и событиях Warlords Redux.", lineBreak,
-				"В нашем discord вы также можете предлагать новые материалы или сообщать об ошибках.", lineBreak,
+				"Присоединяйтесь к нашему discord чтобы получать уведомления o6 обновлениях и событиях Warlords Redux.", lineBreak,
+				"B нашем discord вы также можете предлагать новые материалы или сообщать o6 ошибках.", lineBreak,
 				"", lineBreak, 				
 				parseText "<a href='https://discord.gg/grmzsZE4ua'>Наш Discord</a>"
 				];

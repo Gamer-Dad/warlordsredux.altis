@@ -2,13 +2,16 @@
 
 waituntil {!isnull (findDisplay 46)};
 
-private _zoneX = safeZoneX;
-private _zoneY = safeZoneY;
-private _zoneW = safeZoneW;
-private _zoneH = safeZoneH;
+_blockW = safeZoneW / 1000;
+_blockH = safeZoneH / (1000 / (getResolution # 4));
+
+_displayW = _blockW * 180;
+_displayH = _blockH * 54;
+_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 _cpBalanceCtrl = findDisplay 46 ctrlCreate ["RscStructuredText", 9876];
-_cpBalanceCtrl ctrlSetPosition [ 0.895219 * _zoneW + _zoneX, 0.832 * _zoneH + _zoneY, 0.0271875 * _zoneW, 0.040 * _zoneH];
+_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY + (_blockH * 10), _blockW * 40, _blockH * 16];
 
 
 while {true} do {

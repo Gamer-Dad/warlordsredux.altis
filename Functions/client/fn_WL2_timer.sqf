@@ -1,18 +1,21 @@
 #include "..\warlords_constants.inc"
 
-sleep 3;
+waituntil {!isnull (findDisplay 46)};
 
-private _zoneX = safeZoneX;
-private _zoneY = safeZoneY;
-private _zoneW = safeZoneW;
-private _zoneH = safeZoneH;
+_blockW = safeZoneW / 1000;
+_blockH = safeZoneH / (1000 / (getResolution # 4));
+
+_displayW = _blockW * 180;
+_displayH = _blockH * 54;
+_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 
 _ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscPictureKeepAspect", 4567];
-_ctrlBackgroundTimer ctrlSetPosition [ 0.896219 * _zoneW + _zoneX, 0.790 * _zoneH + _zoneY, 0.0271875 * _zoneW, 0.040 * _zoneH];
+_ctrlBackgroundTimer ctrlSetPosition [_displayX + (_blockW * 80), _displayY + (_blockH * - 13), _blockW * 40, _blockH * 16];
 
 _ctrlTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 45671];
-_ctrlTimer ctrlSetPosition [ 0.910219 * _zoneW + _zoneX, 0.790 * _zoneH + _zoneY, 0.0571875 * _zoneW, 0.040 * _zoneH];
+_ctrlTimer ctrlSetPosition [_displayX + (_blockW * 100), _displayY + (_blockH * - 13), _blockW * 40, _blockH * 16];
 
 while {true} do {
 	private _serverTime = missionNamespace getVariable "serverTimer";
@@ -21,7 +24,7 @@ while {true} do {
 	_ctrlTimer ctrlSetStructuredText parseText format ["<t color = '#ffffff'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString];
 	_ctrlTimer ctrlCommit 0;
 	_ctrlBackgroundTimer ctrlSetText "img\timer_ca.paa";
-	_ctrlBackgroundTimer ctrlSetScale 0.6;
+	_ctrlBackgroundTimer ctrlSetScale 0.8;
 	_ctrlBackgroundTimer ctrlCommit 0;
 	sleep 0.5;
 };
