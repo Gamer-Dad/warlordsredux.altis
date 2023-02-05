@@ -29,8 +29,6 @@ private _actionIDLoad = _asset addAction [
 	false
 ];
 
-_asset setUserActionText [_actionIDLoad, "Load cargo"];
-
 private _actionIDUnload = _asset addAction [
 	"Unload cargo",
 	{
