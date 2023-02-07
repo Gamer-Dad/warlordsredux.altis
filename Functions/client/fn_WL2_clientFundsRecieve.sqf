@@ -7,7 +7,7 @@ switch (_event) do {
 		[player, -1000] call BIS_fnc_WL2_fundsControl;
 		[player, _playerPriorCP] call BIS_fnc_WL2_fundsControl;
 		private  _id = clientOwner;
-		[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
+		[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate", _id];
 		if (language == "Russian") then {
 			[toUpper localize "STR_A3_WL_cp_recievedRuss"] spawn BIS_fnc_WL2_smoothText;
 		} else {

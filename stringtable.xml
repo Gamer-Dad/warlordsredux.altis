@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="Warlords Redux">
+    <Container name="WL2_onScreenText">
+        <Key ID="STR_A3_WL_popup_appropriate_sector_selection">
+            <Original>Select an appropriate sector.</Original>
+            <English>Select an appropriate sector.</English>
+            <Czech>Vyberte vhodný sektor.</Czech>
+            <French>Sélectionnez un secteur approprié.</French>
+            <German>Bitte geeigneten Sektor wählen.</German>
+            <Italian>Seleziona un settore appropriato.</Italian>
+            <Polish>Wybierz odpowiedni sektor.</Polish>
+            <Portuguese>Selecione um setor apropriado.</Portuguese>
+            <Russian>Выберите подходящий сектор.</Russian>
+            <Spanish>Seleccione un sector apropiado.</Spanish>
+            <Korean>적절한 섹터를 선택하십시오.</Korean>
+            <Japanese>適切なセクターを選択します。</Japanese>
+            <Chinesesimp>选择合适的部门。</Chinesesimp>
+            <Chinese>選擇合適的部門。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_owned_sector">
+            <Original>You need to be inside an owned sector.</Original>
+            <English>You need to be inside an owned sector.</English>
+            <Czech>Musíte být uvnitř vlastněného sektoru.</Czech>
+            <French>Vous devez être à l'intérieur d'un secteur détenu.</French>
+            <German>Du musst dich in einem von deiner Fraktion kontrollierten Sektor befinden.</German>
+            <Italian>Devi essere all'interno di un settore di proprietà.</Italian>
+            <Polish>Musisz znajdować się w posiadanym sektorze.</Polish>
+            <Portuguese>Você precisa estar dentro de um setor próprio.</Portuguese>
+            <Russian>Вы должны быть внутри собственного сектора.</Russian>
+            <Spanish>Necesitas estar dentro de un sector propio.</Spanish>
+            <Korean>소유 섹터 안에 있어야 합니다.</Korean>
+            <Japanese>所有セクター内にいる必要があります。</Japanese>
+            <Chinesesimp>您需要在拥有的部门内。</Chinesesimp>
+            <Chinese>您需要在擁有的部門內。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_get_out_of_vehicle">
+            <Original>You have to get out of your vehicle.</Original>
+            <English>You have to get out of your vehicle.</English>
+            <Czech>Musíte vystoupit ze svého vozidla.</Czech>
+            <French>Vous devez sortir de votre véhicule.</French>
+            <German>Du musst dein Fahrzeug zuerst verlassen.</German>
+            <Italian>Devi uscire dal tuo veicolo.</Italian>
+            <Polish>Musisz wysiąść z pojazdu.</Polish>
+            <Portuguese>Você tem que sair do seu veículo.</Portuguese>
+            <Russian>Вы должны выйти из своего автомобиля.</Russian>
+            <Spanish>Tienes que salir de tu vehículo.</Spanish>
+            <Korean>차량에서 내려야 합니다.</Korean>
+            <Japanese>車から降りなければなりません。</Japanese>
+            <Chinesesimp>你必须离开你的车。</Chinesesimp>
+            <Chinese>你必须离开你的车。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_asset_limit_reached">
+            <Original>Assets limit reached.</Original>
+            <English>Assets limit reached.</English>
+            <Czech>Bylo dosaženo limitu aktiv.</Czech>
+            <French>Limite d'actifs atteinte.</French>
+            <German>Gerätelimit erreicht.</German>
+            <Italian>Limite di risorse raggiunto.</Italian>
+            <Polish>Osiągnięto limit zasobów.</Polish>
+            <Portuguese>Limite de ativos atingido.</Portuguese>
+            <Russian>Достигнут предел активов.</Russian>
+            <Spanish>Límite de activos alcanzado.</Spanish>
+            <Korean>자산 한도에 도달했습니다.</Korean>
+            <Japanese>アセットの上限に達しました。</Japanese>
+            <Chinesesimp>已达到资产限额。</Chinesesimp>
+            <Chinese>已達到資產限額。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_info_vehs_in_basket">
+            <Original>Only infantry and ammoboxes can be airdropped on your coordinates.</Original>
+            <English>Only infantry and ammoboxes can be airdropped on your coordinates.</English>
+            <Czech>Na vašich souřadnicích lze vysadit pouze pěchotu a munice.</Czech>
+            <French>Seuls l'infanterie et les caisses de munitions peuvent être larguées sur vos coordonnées.</French>
+            <German>Lediglich Infanterie und Nachschubkisten können per Luftabwurf an deine Koordinaten geliefert werden.</German>
+            <Italian>Solo fanteria e casse di munizioni possono essere lanciate alle tue coordinate.</Italian>
+            <Polish>Tylko piechota i skrzynki z amunicją mogą być zrzucane na twoje współrzędne.</Polish>
+            <Portuguese>Apenas infantaria e caixas de munição podem ser lançadas em suas coordenadas.</Portuguese>
+            <Russian>По вашим координатам можно сбрасывать только пехоту и ящики с боеприпасами.</Russian>
+            <Spanish>Solo la infantería y las cajas de munición pueden lanzarse desde el aire en tus coordenadas.</Spanish>
+            <Korean>보병과 탄약 상자만 좌표에 투하할 수 있습니다.</Korean>
+            <Japanese>座標にエアドロップできるのは歩兵と弾薬箱のみです。</Japanese>
+            <Chinesesimp>只有步兵和弹药箱可以空投到您的坐标上。</Chinesesimp>
+            <Chinese>只有步兵和彈藥箱可以空投到您的坐標上。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_info_no_units_selected">
+            <Original>No units selected.</Original>
+            <English>No units selected.</English>
+            <Czech>Nejsou vybrány žádné jednotky.</Czech>
+            <French>Aucune unité sélectionnée.</French>
+            <German>Keine Einheiten ausgewählt.</German>
+            <Italian>Nessuna unità selezionata.</Italian>
+            <Polish>Nie wybrano jednostek.</Polish>
+            <Portuguese>Nenhuma unidade selecionada.</Portuguese>
+            <Russian>Единицы не выбраны.</Russian>
+            <Spanish>No hay unidades seleccionadas.</Spanish>
+            <Korean>선택한 단위가 없습니다.</Korean>
+            <Japanese>ユニットが選択されていません。</Japanese>
+            <Chinesesimp>未选择单位。</Chinesesimp>
+            <Chinese>未選擇單位。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_asset_rearmed">
+            <Original>Asset rearmed.</Original>
+            <English>Asset rearmed.</English>
+            <Czech>Majetek přezbrojen.</Czech>
+            <French>Actif réarmé.</French>
+            <German>Gerät wurde neu aufmunitioniert.</German>
+            <Italian>Asset riarmato.</Italian>
+            <Polish>Zasób ponownie uzbrojony.</Polish>
+            <Portuguese>Ativo rearmado.</Portuguese>
+            <Russian>Актив перевооружен.</Russian>
+            <Spanish>Activo rearmado.</Spanish>
+            <Korean>자산이 재정비되었습니다.</Korean>
+            <Japanese>アセットが再装備されました。</Japanese>
+            <Chinesesimp>资产重新装备。</Chinesesimp>
+            <Chinese>資產重新裝備。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_asset_repaired">
+            <Original>Asset repaired.</Original>
+            <English>Asset repaired.</English>
+            <Czech>Majetek opraven.</Czech>
+            <French>Réparé.</French>
+            <German>Gerät wurde instandgesetzt.</German>
+            <Italian>Asset riparato.</Italian>
+            <Polish>Zasób naprawiony.</Polish>
+            <Portuguese>Ativo reparado.</Portuguese>
+            <Russian>Актив отремонтирован.</Russian>
+            <Spanish>Activo reparado.</Spanish>
+            <Korean>자산이 수리되었습니다.</Korean>
+            <Japanese>アセットが修復されました。</Japanese>
+            <Chinesesimp>资产修复。</Chinesesimp>
+            <Chinese>資產修復。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_hint_maintenance">
+            <Original>With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot and looking at the vehicle.</Original>
+            <English>With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot and looking at the vehicle.</English>
+            <Czech>S příslušnými prostředky v blízkosti můžete %1 OPRAVIT %2 nebo %1 ZNOVU ZAPOJIT %2 svá vozidla prostřednictvím nabídky Akce. To lze provést pouze tehdy, když jdete pěšky a díváte se na vozidlo.</Czech>
+            <French>Avec les ressources appropriées à proximité, vous pouvez %1 RÉPARER %2 ou %1 RÉARMER %2 vos véhicules via le menu Action. Cela ne peut être fait que lorsque vous êtes à pied et que vous regardez le véhicule.</French>
+            <German>Mit den entsprechenden Anlagen in der Nähe können Sie Ihre Fahrzeuge über das Aktionsmenü %1 REPARIEREN %2 oder %1 NEU AKTIVIEREN %2. Dies ist nur möglich, wenn Sie zu Fuß unterwegs sind und sich das Fahrzeug ansehen.</German>
+            <Italian>Con le risorse appropriate nelle vicinanze, puoi %1 RIPARARE %2 o %1 RIARMARE %2 i tuoi veicoli tramite il menu Azione. Questo può essere fatto solo quando sei a piedi e guardi il veicolo.</Italian>
+            <Polish>Mając w pobliżu odpowiednie zasoby, możesz %1 NAPRAWIĆ %2 lub %1 PONOWNIE UZBROJĆ %2 swoje pojazdy za pomocą menu Czynności. Można to zrobić tylko, gdy jesteś na piechotę i patrzysz na pojazd.</Polish>
+            <Portuguese>Com os ativos apropriados por perto, você pode %1 REPARAR %2 ou %1 REARMAR %2 seus veículos através do menu Ação. Isso só pode ser feito quando você estiver a pé e olhando o veículo.</Portuguese>
+            <Russian>Имея подходящие активы поблизости, вы можете %1 РЕМОНТИТЬ %2 или %1 ПОВТОРИТЬ %2 свои транспортные средства через меню «Действие». Это можно сделать только тогда, когда вы идете пешком и смотрите на автомобиль.</Russian>
+            <Spanish>Con los activos apropiados cerca, puede %1 REPARAR %2 o %1 REARMAR %2 sus vehículos a través del menú Acción. Esto solo se puede hacer cuando está a pie y mirando el vehículo.</Spanish>
+            <Korean>근처에 적절한 자산이 있으면 작업 메뉴를 통해 차량을 %1 수리 %2 또는 %1 재무장 %2할 수 있습니다. 이 작업은 도보로 차량을 보고 있을 때만 수행할 수 있습니다.</Korean>
+            <Japanese>適切なアセットが近くにあれば、アクション メニューから %1 修理 %2 または %1 リアーム %2 できます。 これは、徒歩で車両を見ているときにのみ実行できます。</Japanese>
+            <Chinesesimp>如果附近有合适的资产，您可以通过“操作”菜单 %1 修理 %2 或 %1 重新武装 %2 您的车辆。 这只能在您步行并看着车辆时完成。</Chinesesimp>
+            <Chinese>如果附近有合適的資產，您可以通過“操作”菜單 %1 修理 %2 或 %1 重新武裝 %2 您的車輛。 這只能在您步行並看著車輛時完成。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_losing_sector">
+            <Original>%1 is capturing %2!</Original>
+            <English>%1 is capturing %2!</English>
+            <Czech>%1 zachycuje %2!</Czech>
+            <French>%1 capture %2 !</French>
+            <German>%1 erobert %2!</German>
+            <Italian>%1 は %2 をキャプチャしています!</Italian>
+            <Polish>%1 przechwytuje %2!</Polish>
+            <Portuguese>%1 está capturando %2!</Portuguese>
+            <Russian>%1 захватывает %2!</Russian>
+            <Spanish>¡%1 está capturando a %2!</Spanish>
+            <Korean>%1 이(가) %2 를 캡처 중입니다!</Korean>
+            <Japanese>%1 は %2 をキャプチャしています!</Japanese>
+            <Chinesesimp>%1 正在捕获 %2!</Chinesesimp>
+            <Chinese>%1 正在捕獲 %2!</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_asset_not_empty">
+            <Original>Selected asset is not empty.</Original>
+            <English>Selected asset is not empty.</English>
+            <Czech>Vybraný přístroj není prázdný.</Czech>
+            <French>L'élément sélectionné n'est pas vide.</French>
+            <German>Das ausgewählte Gerät ist nicht leer.</German>
+            <Italian>L'elemento selezionato non è vuoto.</Italian>
+            <Polish>Wybrany element nie jest pusty.</Polish>
+            <Portuguese>O elemento selecionado não está vazio.</Portuguese>
+            <Russian>Выбранный элемент не пуст.</Russian>
+            <Spanish>El elemento seleccionado no está vacío.</Spanish>
+            <Korean>선택된 자산이 비어 있지 않습니다.</Korean>
+            <Japanese>選択された資産は空ではありません。</Japanese>
+            <Chinesesimp>选择的资产不为空。</Chinesesimp>
+            <Chinese>选择的资产不为空。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_asset_deleted">
+            <Original>%1 deleted.</Original>
+            <English>%1 deleted.</English>
+            <Czech>%1 bylo smazáno.</Czech>
+            <French>%1 a été supprimé.</French>
+            <German>%1 wurde entfernt.</German>
+            <Italian>%1 è stato eliminato.</Italian>
+            <Polish>%1 usunięte.</Polish>
+            <Portuguese>%1 excluído.</Portuguese>
+            <Russian>%1 удалено.</Russian>
+            <Spanish>%1 eliminado.</Spanish>
+            <Korean>%1 삭제됨.</Korean>
+            <Japanese>%1は削除されました。</Japanese>
+            <Chinesesimp>%1已删除。</Chinesesimp>
+            <Chinese>%1已删除。</Chinese>
+        </Key>
+        </Key>
+        <Key ID="STR_A3_WL_info_asset_map_deletion">
+            <Original>Alt-Shift-click to %1delete%2%3%4.</Original>
+            <English>Alt-Shift-click to %1delete%2%3%4.</English>
+            <Czech>Alt-Shift-kliknutí pro %1smazání%2%3%4.</Czech>
+            <French>Alt-Shift-cliquez pour %1supprimer%2%3%4.</French>
+            <German>Alt-Shift-click to %1delete%2%3%4.</German>
+            <Italian>Alt-Shift-clicca per %1eliminare%2%3%4.</Italian>
+            <Polish>Alt-Shift-kliknij, aby %1usunąć%2%3%4.</Polish>
+            <Portuguese>Alt-Shift-clique para %1apagar%2%3%4.</Portuguese>
+            <Russian>Alt-Shift-щелкните, чтобы %1удалить%2%3%4.</Russian>
+            <Spanish>Alt-Shift-clic para %1borrar%2%3%4.</Spanish>
+            <Korean>Alt-Shift-클릭하여 %1삭제%2%3%4.</Korean>
+            <Japanese>Alt-Shift-クリックして%1削除%2%3%4。</Japanese>
+            <Chinesesimp>Alt-Shift-单击以%1删除%2%3%4。</Chinesesimp>
+            <Chinese>Alt-Shift-點擊以%1刪除%2%3%4。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_save_loadout">
+            <Original>Save loadout.</Original>
+            <English>Save loadout.</English>
+            <Czech>Uložit výbavu.</Czech>
+            <French>Enregistrer la configuration.</French>
+            <German>Ausrüstung speichern.</German>
+            <Italian>Salva configurazione.</Italian>
+            <Polish>Zapisz wyposażenie.</Polish>
+            <Portuguese>Salvar configuração.</Portuguese>
+            <Russian>Сохранить экипировку.</Russian>
+            <Spanish>Guardar configuración.</Spanish>
+            <Korean>장비 저장.</Korean>
+            <Japanese>装備を保存。</Japanese>
+            <Chinesesimp>保存装备。</Chinesesimp>
+            <Chinese>保存裝備。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_save_loadout_info">
+            <Original>Save your current loadout for later reapplication.</Original>
+            <English>Save your current loadout for later reapplication.</English>
+            <Czech>Ulož svůj současný náklad pro pozdější použití.</Czech>
+            <French>Enregistrer votre configuration actuelle pour une utilisation ultérieure.</French>
+            <German>Speichert deine aktuelle Ausrüstung, um sie später erneut abrufen zu können.</German>
+            <Italian>Salva il tuo loadout attuale per una successiva applicazione.</Italian>
+            <Polish>Zapisz swój obecny wyposażenie na później.</Polish>
+            <Portuguese>Salve sua configuração atual para uma reaplicação posterior.</Portuguese>
+            <Russian>Сохраните текущую комплектацию для повторного использования.</Russian>
+            <Spanish>Guarda tu loadout actual para su reaplicación posterior.</Spanish>
+            <Korean>나중에 다시 적용할 수 있도록 현재 로드아웃을 저장하십시오.</Korean>
+            <Japanese>後で再適用するために現在のロードアウトを保存します。</Japanese>
+            <Chinesesimp>保存您当前的配置以备后用。</Chinesesimp>
+            <Chinese>保存您当前的装载方案，以便后续使用。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_saved_loadout">
+            <Original>Your saved loadout.</Original>
+            <English>Your saved loadout.</English>
+            <Czech>Tvůj uložený výběr výzbroje.</Czech>
+            <French>Votre équipement enregistré.</French>
+            <German>Deine gespeicherte Ausrüstung.</German>
+            <Italian>Il tuo equipaggiamento salvato.</Italian>
+            <Polish>Twój zapisany wybór wyposażenia.</Polish>
+            <Portuguese>Seu equipamento salvo.</Portuguese>
+            <Russian>Твой сохраненный выбор вооружения.</Russian>
+            <Spanish>Tu equipación guardada.</Spanish>
+            <Korean>저장된 로드아웃.</Korean>
+            <Japanese>保存された装備。</Japanese>
+            <Chinesesimp>你保存的装备。</Chinesesimp>
+            <Chinese>您保存的装备。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_saved_loadout_info">
+            <Original>Apply your saved loadout.%1You can save your current loadout by requesting 'Save loadout' at the end of this list.</Original>
+            <English>Apply your saved loadout.%1You can save your current loadout by requesting 'Save loadout' at the end of this list.</English>
+            <Czech>Použijte svůj uložený rozložení.%1Své aktuální rozložení můžete uložit požadavkem "Uložit rozložení" na konci tohoto seznamu.</Czech>
+            <French>Appliquez votre configuration sauvegardée.%1Vous pouvez enregistrer votre configuration actuelle en demandant "Enregistrer la configuration" à la fin de cette liste.</French>
+            <German>Anwenden deiner gespeicherten Ausrüstung.%1Du kannst deine aktuelle Ausrüstung über den Befehl 'Ausrüstung speichern' am Ende dieser Liste speichern.</German>
+            <Italian>Applica la tua configurazione salvata.%1Puoi salvare la tua configurazione corrente richiedendo "Salva configurazione" alla fine di questo elenco.</Italian>
+            <Polish>Zastosuj swoją zapisaną konfigurację.%1Możesz zapisać swoją bieżącą konfigurację poprzez żądanie "Zapisz konfigurację" na końcu tej listy.</Polish>
+            <Portuguese>Aplique sua configuração salva.%1Você pode salvar sua configuração atual solicitando "Salvar configuração" no final desta lista.</Portuguese>
+            <Russian>Примените сохраненный набор.%1Вы можете сохранить текущий набор, запросив 'Save loadout' в конце этого списка.</Russian>
+            <Spanish>Aplica tu configuración guardada.%1Puedes guardar tu configuración actual solicitando "Guardar configuración" al final de esta lista.</Spanish>
+            <Korean>저장된 로드아웃을 적용하세요.%1이 목록의 끝에서 'Save loadout'을 요청하여 현재 로드아웃을 저장할 수 있습니다.</Korean>
+            <Japanese>保存されたロードアウトを適用してください。%1このリストの最後に「Save loadout」を要求することで現在のロードアウトを保存することができます。</Japanese>
+            <Chinesesimp>请应用您保存的装载配置。%1您可以在此列表末尾请求“保存装载配置”以保存当前装载配置。</Chinesesimp>
+            <Chinese>请应用您保存的装载配置。%1您可以在此列表末尾请求“保存装载配置”以保存当前装载配置。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_loadout_saved">
+            <Original>Loadout saved.</Original>
+            <English>Loadout saved.</English>
+            <Czech>Uložený rozpis výbavy.</Czech>
+            <French>Équipement enregistré.</French>
+            <German>Ausrüstung gespeichert.</German>
+            <Italian>Configurazione salvata.</Italian>
+            <Polish>Zapisano wyposażenie.</Polish>
+            <Portuguese>Configuração de equipamento salva.</Portuguese>
+            <Russian>Комплектация сохранена.</Russian>
+            <Spanish>Equipación guardada.</Spanish>
+            <Korean>저장된 로드아웃</Korean>
+            <Japanese>ロードアウトが保存されました</Japanese>
+            <Chinesesimp>装备配置已保存</Chinesesimp>
+            <Chinese>装备配置已保存</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_switch_teams">
+            <Original>Switching teams is disabled.</Original>
+            <English>Switching teams is disabled.</English>
+            <Czech>Přepínání týmů je zakázáno.</Czech>
+            <French>Le changement d'équipe est désactivé.</French>
+            <German>Ein Wechseln der Teams ist nicht möglich.</German>
+            <Italian>Il cambio di squadra è disabilitato.</Italian>
+            <Polish>Przełączanie zespołów jest wyłączone.</Polish>
+            <Portuguese>A troca de equipes está desativada.</Portuguese>
+            <Russian>Смена команд отключена.</Russian>
+            <Spanish>El cambio de equipos está desactivado.</Spanish>
+            <Korean>팀 전환이 비활성화되었습니다.</Korean>
+            <Japanese>チームのスイッチングは無効です。</Japanese>
+            <Chinesesimp>团队切换被禁用。</Chinesesimp>
+            <Chinese>团队切换被禁用。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_switch_teams_info">
+            <Original>You've already joined the opposing faction. Please switch back to your team.</Original>
+            <English>You've already joined the opposing faction. Please switch back to your team.</English>
+            <Czech>Již jste se připojil k opačné frakci. Prosím, přepněte zpět na svůj tým.</Czech>
+            <French>Vous avez déjà rejoint la faction adverse. Veuillez revenir à votre équipe.</French>
+            <German>Du bist in der aktuellen Runde bereits der gegnerischen Fraktion beigetreten. Bitte wechsle zurück zu deinem Team.</German>
+            <Italian>Hai già aderito alla fazione avversaria. Si prega di tornare al proprio team.</Italian>
+            <Polish>Już dołączyłeś do frakcji przeciwnej. Proszę przełącz się z powrotem do swojej drużyny.</Polish>
+            <Portuguese>Você já se juntou à facção oposta. Por favor, volte para o seu time.</Portuguese>
+            <Russian>Вы уже присоединились к противоположной фракции. Пожалуйста, вернитесь к своей команде.</Russian>
+            <Spanish>Ya te uniste a la facción opuesta. Por favor, regresa a tu equipo.</Spanish>
+            <Korean>이미 반대 파업에 참여했습니다. 자신의 팀으로 돌아가주십시오.</Korean>
+            <Japanese>既に対抗の派閥に参加しています。 あなたのチームに戻ってください。</Japanese>
+            <Chinesesimp>您已经加入了对抗派别。请返回您的团队。</Chinesesimp>
+            <Chinese>您已加入对抗派别。请返回您的团队。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_target_reset_info">
+            <Original>Reset target selection?</Original>
+            <English>Reset target selection?</English>
+            <Czech>Resetovat výběr cíle?</Czech>
+            <French>Réinitialiser la sélection de cible ?</French>
+            <German>Zielsektorauswahl zurücksetzen?</German>
+            <Italian>Reimposta la selezione del bersaglio?</Italian>
+            <Polish>Resetuj wybór celu?</Polish>
+            <Portuguese>Resetar a seleção de alvo?</Portuguese>
+            <Russian>Сбросить выбор цели?</Russian>
+            <Spanish>¿Reiniciar selección de objetivo?</Spanish>
+            <Korean>대상 선택 재설정?</Korean>
+            <Japanese>ターゲットの選択をリセットしますか？</Japanese>
+            <Chinesesimp>重置目标选择？</Chinesesimp>
+            <Chinese>重置目标选择？</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_target_reset_votes_needed">
+            <Original>Votes needed.</Original>
+            <English>Votes needed.</English>
+            <Czech>Potřebné hlasy.</Czech>
+            <French>Nombre de votes nécessaires.</French>
+            <German>Benötigte Stimmen.</German>
+            <Italian>Voti necessari.</Italian>
+            <Polish>Potrzebne głosy.</Polish>
+            <Portuguese>Votos necessários.</Portuguese>
+            <Russian>Требуется голосов.</Russian>
+            <Spanish>Votos necesarios.</Spanish>
+            <Korean>필요한 투표 수.</Korean>
+            <Japanese>必要な投票数。</Japanese>
+            <Chinesesimp>需要的投票数。</Chinesesimp>
+            <Chinese>需要的投票數。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_param_saving">
+            <Original>Saving.</Original>
+            <English>Saving.</English>
+            <Czech>Ukládání.</Czech>
+            <French>Enregistrement en cours.</French>
+            <German>Speichern.</German>
+            <Italian>Salvataggio in corso.</Italian>
+            <Polish>Zapisywanie.</Polish>
+            <Portuguese>Salvando.</Portuguese>
+            <Russian>Сохранение.</Russian>
+            <Spanish>Guardando.</Spanish>
+            <Korean>저장 중.</Korean>
+            <Japanese>保存中。</Japanese>
+            <Chinesesimp>正在保存。</Chinesesimp>
+            <Chinese>正在存储。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_param_saving_info">
+            <Original>Possibility to save game in the pause menu.</Original>
+            <English>Possibility to save game in the pause menu.</English>
+            <Czech>Možnost uložit hru v menu pozastavení.</Czech>
+            <French>Possibilité de sauvegarder le jeu dans le menu pause.</French>
+            <German>Die Möglichkeit, das Spiel im Pause-Menü zu speichern.</German>
+            <Italian>Possibilità di salvare il gioco nel menu di pausa.</Italian>
+            <Polish>Możliwość zapisania gry w menu pauzy.</Polish>
+            <Portuguese>Possibilidade de salvar o jogo no menu de pausa.</Portuguese>
+            <Russian>Возможность сохранить игру в меню паузы.</Russian>
+            <Spanish>Posibilidad de guardar el juego en el menú de pausa.</Spanish>
+            <Korean>일시 정지 메뉴에서 게임을 저장할 수 있는 가능성.</Korean>
+            <Japanese>ポーズメニューでゲームを保存する可能性。</Japanese>
+            <Chinesesimp>在暂停菜单保存游戏的可能性。</Chinesesimp>
+            <Chinese>在暫停選單保存遊戲的可能性。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_param_fog_of_war">
+            <Original>Fog of war.</Original>
+            <English>Fog of war.</English>
+            <Czech>Mlha války.</Czech>
+            <French>Brouillard de guerre.</French>
+            <German>Nebel des Krieges.</German>
+            <Italian>Nebbia della guerra.</Italian>
+            <Polish>Mgła wojny.</Polish>
+            <Portuguese>Neblina de guerra.</Portuguese>
+            <Russian>Туман войны.</Russian>
+            <Spanish>Niebla de la guerra.</Spanish>
+            <Korean>전쟁의 안개.</Korean>
+            <Japanese>戦争の霧.</Japanese>
+            <Chinesesimp>战争迷雾.</Chinesesimp>
+            <Chinese>战争迷雾.</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_param_fog_of_war_value1">
+            <Original>Show enemy base location.</Original>
+            <English>Show enemy base location.</English>
+            <Czech>Ukázat umístění nepřátelské základny.</Czech>
+            <French>Afficher l'emplacement de la base ennemie.</French>
+            <German>Zeige die Basis des Gegners.</German>
+            <Italian>Mostra la posizione della base nemica.</Italian>
+            <Polish>Pokaż lokalizację bazy wroga.</Polish>
+            <Portuguese>Mostrar localização da base inimiga.</Portuguese>
+            <Russian>Показать местоположение вражеской базы.</Russian>
+            <Spanish>Mostrar ubicación de la base enemiga.</Spanish>
+            <Korean>적 기지 위치 표시</Korean>
+            <Japanese>敵の基地の位置を示す</Japanese>
+            <Chinesesimp>显示敌方基地位置。</Chinesesimp>
+            <Chinese>显示敌方基地位置。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_param_fog_of_war_value2">
+            <Original>Show nothing.</Original>
+            <English>Show nothing.</English>
+            <Czech>Ukázat nic.</Czech>
+            <French>Ne montrer rien.</French>
+            <German>Zeige nichts.</German>
+            <Italian>Non mostrare nulla.</Italian>
+            <Polish>Pokaż nic.</Polish>
+            <Portuguese>Mostrar nada.</Portuguese>
+            <Russian>Ничего не показывать.</Russian>
+            <Spanish>No mostrar nada.</Spanish>
+            <Korean>아무것도 보여주지 않음.</Korean>
+            <Japanese>何も表示しない。</Japanese>
+            <Chinesesimp>不显示任何内容。</Chinesesimp>
+            <Chinese>不显示任何东西。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_asset_dispatched_TODO_REWRITE">
+            <Original>Asset dispatched.</Original>
+            <English>Asset dispatched.</English>
+            <Czech>Prostředek odeslán.</Czech>
+            <French>Actif dépêché.</French>
+            <German>Gerät ausgeliefert.</German>
+            <Italian>Asset inviato.</Italian>
+            <Polish>Zasób wysłany.</Polish>
+            <Portuguese>Ativo despachado.</Portuguese>
+            <Russian>Актив отправлен.</Russian>
+            <Spanish>Activo enviado.</Spanish>
+            <Korean>자산 배송됨.</Korean>
+            <Japanese>アセット送信済み。</Japanese>
+            <Chinesesimp>资产已派遣。</Chinesesimp>
+            <Chinese>资产已派遣。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_transfer_restr1_TODO_REWRITE">
+            <Original>No allied players available.</Original>
+            <English>No allied players available.</English>
+            <Czech>Žádní spojenci nejsou k dispozici.</Czech>
+            <French>Aucun joueur allié disponible.</French>
+            <German>Keine verbündeten Spieler verfügbar.</German>
+            <Italian>Nessun giocatore alleato disponibile.</Italian>
+            <Polish>Brak dostępnych graczy sojuszniczych.</Polish>
+            <Portuguese>Não há jogadores aliados disponíveis.</Portuguese>
+            <Russian>Нет доступных союзных игроков.</Russian>
+            <Spanish>No hay jugadores aliados disponibles.</Spanish>
+            <Korean>얼라이언스 플레이어가 없습니다.</Korean>
+            <Japanese>同盟プレイヤーがいません。</Japanese>
+            <Chinesesimp>没有可用的盟军玩家。</Chinesesimp>
+            <Chinese>没有可用的盟军玩家。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_respawn_vicFT_order">
+            <Original>Order fast travel vehicle.</Original>
+            <English>Order fast travel vehicle.</English>
+            <Czech>Objednat rychlé cestovní vozidlo.</Czech>
+            <French>Commander un véhicule de voyage rapide.</French>
+            <German>Schnellreisefahrzeug anfordern.</German>
+            <Italian>Ordina un veicolo per il viaggio rapido.</Italian>
+            <Polish>Zamów szybki środek transportu.</Polish>
+            <Portuguese>Solicitar veículo de viagem rápida.</Portuguese>
+            <Russian>Заказать быстроходный автомобиль.</Russian>
+            <Spanish>Pedir vehículo de viaje rápido.</Spanish>
+            <Korean>빠른 여행 차량 주문.</Korean>
+            <Japanese>高速旅行車を注文する。</Japanese>
+            <Chinesesimp>订购快速旅行车辆。</Chinesesimp>
+            <Chinese>訂購快速旅行車輛。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_respawn_vicFT_ft">
+            <Original>Fast travel to moving spawn.</Original>
+            <English>Fast travel to moving spawn.</English>
+            <Czech>Rychlé cestování k pohybujícímu se spawnu.</Czech>
+            <French>Voyage rapide vers le spawn mobile.</French>
+            <German>Schnellreise zum bewegten Spawnpunkt.</German>
+            <Italian>Viaggio rapido al punto di spawn in movimento.</Italian>
+            <Polish>Szybka podróż do poruszającego się punktu spawnu.</Polish>
+            <Portuguese>Viagem rápida para o ponto de geração em movimento.</Portuguese>
+            <Russian>Быстрое путешествие к движущемуся спавну.</Russian>
+            <Spanish>Viaje rápido al punto de aparición móvil.</Spanish>
+            <Korean>이동하는 스폰지점으로의 빠른 여행.</Korean>
+            <Japanese>移動するスポーンへのフラストトラベル.</Japanese>
+            <Chinesesimp>快速旅行到移动的生成点。</Chinesesimp>
+            <Chinese>快速旅行到移动的生成点。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_ftVehicle_restr">
+            <Original>Fast travel vehicle already exists.</Original>
+            <English>Fast travel vehicle already exists.</English>
+            <Czech>Rychlé cestovní vozidlo již existuje.</Czech>
+            <French>Le véhicule de voyage rapide existe déjà.</French>
+            <German>Schnellreisefahrzeug existiert bereits.</German>
+            <Italian>Il veicolo di viaggio veloce esiste già.</Italian>
+            <Polish>Szybki pojazd podróżny już istnieje.</Polish>
+            <Portuguese>Veículo de viagem rápida já existe.</Portuguese>
+            <Russian>Быстрый путешественный транспорт уже существует.</Russian>
+            <Spanish>El vehículo de viaje rápido ya existe.</Spanish>
+            <Korean>빠른 여행 차량이 이미 존재합니다.</Korean>
+            <Japanese>早い旅行車両がすでに存在します。</Japanese>
+            <Chinesesimp>快速旅行车辆已经存在。</Chinesesimp>
+            <Chinese>快速旅行车辆已经存在。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_ftVehicle_restr1">
+            <Original>You need to be in an owned sector.</Original>
+            <English>You need to be in an owned sector.</English>
+            <Czech>Je nutné být v vlastněném sektoru.</Czech>
+            <French>Vous devez être dans un secteur détenu.</French>
+            <German>Du musst dich in einem von deiner Fraktion kontrollierten Sektor befinden.</German>
+            <Italian>Devi essere in un settore posseduto.</Italian>
+            <Polish>Musisz być w posiadanym sektorze.</Polish>
+            <Portuguese>Você precisa estar em um setor de propriedade.</Portuguese>
+            <Russian>Вы должны быть в собственном секторе.</Russian>
+            <Spanish>Necesitas estar en un sector propiedad.</Spanish>
+            <Korean>소유한 섹터에 있어야 합니다.</Korean>
+            <Japanese>所有権のあるセクターにいる必要があります。</Japanese>
+            <Chinesesimp>您需要在拥有的扇区中。</Chinesesimp>
+            <Chinese>您需要在拥有的扇区中。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_ftVehicle_ft_restr">
+            <Original>No fast travel vehicle available.</Original>
+            <English>No fast travel vehicle available.</English>
+            <Czech>Není k dispozici žádné rychlé cestovní vozidlo.</Czech>
+            <French>Aucun véhicule de voyage rapide n'est disponible.</French>
+            <German>Kein Schnellreisefahrzeug verfügbar.</German>
+            <Italian>Nessun veicolo di viaggio rapido disponibile.</Italian>
+            <Polish>Brak dostępnego pojazdu do szybkiej podróży.</Polish>
+            <Portuguese>Nenhum veículo de viagem rápida disponível.</Portuguese>
+            <Russian>Нет доступного скоростного транспортного средства.</Russian>
+            <Spanish>No hay ningún vehículo de viaje rápido disponible.</Spanish>
+            <Korean>속도 여행 용 차량이 없습니다.</Korean>
+            <Japanese>高速旅行用の車両が利用可能ではありません。</Japanese>
+            <Chinesesimp>没有快速旅行车辆。</Chinesesimp>
+            <Chinese>没有快速旅行车辆。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_travelling_FTVehicle">
+            <Original>Fast travelling to fast travel vehicle.</Original>
+            <English>Fast travelling to fast travel vehicle.</English>
+            <Czech>Rychle cestuji ke zrychlenému cestovnímu vozidlu.</Czech>
+            <French>En train de faire un voyage rapide vers le véhicule de voyage rapide.</French>
+            <German>Schnelle Reise zum Schnellreisefahrzeug.</German>
+            <Italian>Viaggiando rapidamente al veicolo di viaggio rapido.</Italian>
+            <Polish>Szybko podróżuję do pojazdu szybkiego przemieszczania się.</Polish>
+            <Portuguese>Viajando rápido para o veículo de viagem rápida.</Portuguese>
+            <Russian>Быстрый путешествие к средству быстрой передачи.</Russian>
+            <Spanish>Viajando rápidamente al vehículo de viaje rápido.</Spanish>
+            <Korean>빠른 여행 차량으로 빠른 여행 중입니다.</Korean>
+            <Japanese>高速旅行車両に高速旅行中です。</Japanese>
+            <Chinesesimp>正在快速旅行到快速旅行车辆。</Chinesesimp>
+            <Chinese>正在快速旅行到快速旅行车辆。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_cp_saved">
+            <Original>your current command points (CP) have been saved.</Original>
+            <English>your current command points (CP) have been saved.</English>
+            <Czech>vaše aktuální příkazové body (CP) byly uloženy.</Czech>
+            <French>vos points de commande actuels (CP) ont été enregistrés.</French>
+            <German>deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
+            <Italian>i tuoi punti comando attuali (CP) sono stati salvati.</Italian>
+            <Polish>Twoje bieżące punkty komendy (CP) zostały zapisane.</Polish>
+            <Portuguese>seus pontos de comando atuais (CP) foram salvos.</Portuguese>
+            <Russian>ваши текущие командные очки (CP) были сохранены.</Russian>
+            <Spanish>sus puntos de comando actuales (CP) han sido guardados.</Spanish>
+            <Korean>현재의 커맨드 포인트 (CP)가 저장되었습니다.</Korean>
+            <Japanese>現在のコマンドポイント (CP) が保存されました。</Japanese>
+            <Chinesesimp>您当前的命令点 (CP) 已被保存。</Chinesesimp>
+            <Chinese>您目前的指令點數 (CP) 已被儲存。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_cp_recieved">
+            <Original>your prior command points (CP) have been recieved.</Original>
+            <English>your prior command points (CP) have been received.</English>
+            <Czech>vaše předchozí příkazové body (CP) byly přijaty.</Czech>
+            <French>vos points de commande (CP) précédents ont été reçus.</French>
+            <German>deine vorherigen Kommandopunkte (CP) wurden empfangen.</German>
+            <Italian>i tuoi punti di comando (CP) precedententi sono stati ricevuti.</Italian>
+            <Polish>twoje poprzednie punkty poleceń (CP) zostały odebrane.</Polish>
+            <Portuguese>seus pontos de comando anteriores (CP) foram recebidos.</Portuguese>
+            <Russian>ваши предыдущие командные очки (CP) были получены.</Russian>
+            <Spanish>sus puntos de comando anteriores (CP) han sido recibidos.</Spanish>
+            <Korean>이전 명령 포인트 (CP)가 수신되었습니다.</Korean>
+            <Japanese>以前のコマンドポイント (CP) が受信されました。</Japanese>
+            <Chinesesimp>您以前的命令点 (CP) 已收到。</Chinesesimp>
+            <Chinese>您以前的命令点 (CP) 已收到。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_cp_failed">
+            <Original>You had no prior CP.</Original>
+            <English>You had no prior CP.</English>
+            <Czech>Nemáte žádné předchozí příkazní body (CP).</Czech>
+            <French>Vous n'aviez pas de points de commande (CP) précédents.</French>
+            <German>Du hattest keine vorherigen Kommandopunkte (CP).</German>
+            <Italian>Non avevi punti di comando (CP) precedenti.</Italian>
+            <Polish>Nie miałeś wcześniejszych punktów poleceń (CP).</Polish>
+            <Portuguese>Você não tinha pontos de comando (CP) anteriores.</Portuguese>
+            <Russian>у вас не было предыдущих командных очков (CP).</Russian>
+            <Spanish>No tenías puntos de comando (CP) previos.</Spanish>
+            <Korean>전에는 명령 포인트(CP)가 없었습니다.</Korean>
+            <Japanese>以前はコマンドポイント(CP)がありませんでした。</Japanese>
+            <Chinesesimp>您以前没有指挥点(CP)。</Chinesesimp>
+            <Chinese>您以前没有指挥点(CP)。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_infoScreen">
+            <Original>Open the info menu.</Original>
+            <English>Open the info menu.</English>
+            <Czech>Otevřete informační menu.</Czech>
+            <French>Ouvrir le menu d'information.</French>
+            <German>Öffne das Informationsmenü.</German>
+            <Italian>Apri il menu informazioni.</Italian>
+            <Polish>Otwórz menu informacji.</Polish>
+            <Portuguese>Abra o menu de informações.</Portuguese>
+            <Russian>Открыть меню "Информация".</Russian>
+            <Spanish>Abrir el menú de información.</Spanish>
+            <Korean>정보 메뉴 열기.</Korean>
+            <Japanese>情報メニューを開きます。</Japanese>
+            <Chinesesimp>打开信息菜单。</Chinesesimp>
+            <Chinese>打开信息菜单。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_voting_reset_user_TODO_REWRITE">
+            <Original>Sector voting reset requested by %1.</Original>
+            <English>Sector voting reset requested by %1.</English>
+            <Czech>Vynulování hlasování v sektoru požadováno %1.</Czech>
+            <French>Réinitialisation du vote par secteur demandée par %1.</French>
+            <German>Sektor-Abstimmungs-Zurücksetzung angefordert von %1.</German>
+            <Italian>Reset del voto settoriale richiesto da %1.</Italian>
+            <Polish>Reset głosowania sektora zażądany przez %1.</Polish>
+            <Portuguese>Reset de votação por setor solicitado por %1.</Portuguese>
+            <Russian>Запрос на сброс голосования по секторам от %1.</Russian>
+            <Spanish>Reinicio de la votación por sector solicitado por %1.</Spanish>
+            <Korean>%1에 의해 섹터 투표 재설정이 요청되었습니다.</Korean>
+            <Japanese>%1によるセクター投票のリセットが要求されました。</Japanese>
+            <Chinesesimp>%1请求重置部门投票。</Chinesesimp>
+            <Chinese>%1请求重置部门投票。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_donate_cp">
+            <Original>%1 donated %3CP to %2.</Original>
+            <English>%1 donated %3CP to %2.</English>
+            <Czech></Czech>
+            <French></French>
+            <German>%1 hat %3CP an %2 gestiftet.</German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>   
+    </Container>
+    <Container name="MRTM_welcomeScreen">
+         <Key ID="STR_MRTM_welcomeInteract_01">
+            <Original>About Warlords Redux.</Original>
+            <English>About Warlords Redux.</English>
+            <Czech> </Czech>
+            <French> </French>
+            <German> </German>
+            <Italian> </Italian>
+            <Polish> </Polish>
+            <Portuguese> </Portuguese>
+            <Russian>O Warlords Redux.</Russian>
+            <Spanish> </Spanish>
+            <Korean> </Korean>
+            <Japanese> </Japanese>
+            <Chinesesimp> </Chinesesimp>
+            <Chinese> </Chinese>
+        </Key>  
+         <Key ID="STR_MRTM_welcomeInteract_02">
+            <Original>How To Play.</Original>
+            <English>How To Play.</English>
+            <Czech>Jak Hrát.</Czech>
+            <French>Comment Jouer.</French>
+            <German>Wie man spielt.</German>
+            <Italian>Come Giocare.</Italian>
+            <Polish>Jak Grać.</Polish>
+            <Portuguese>Como Jogar.</Portuguese>
+            <Russian>Как играть.</Russian>
+            <Spanish>Cómo Jugar.</Spanish>
+            <Korean>어떻게 플레이하나요.</Korean>
+            <Japanese>どのようにプレイするか.</Japanese>
+            <Chinesesimp>如何玩耍。</Chinesesimp>
+            <Chinese>如何玩耍。</Chinese>
+        </Key> 
+         <Key ID="STR_MRTM_welcomeInteract_03">
+            <Original>The WSV Community.</Original>
+            <English>The WSV Community.</English>
+            <Czech> </Czech>
+            <French> </French>
+            <German> </German>
+            <Italian> </Italian>
+            <Polish> </Polish>
+            <Portuguese> </Portuguese>
+            <Russian>Сообщество WSV.</Russian>
+            <Spanish> </Spanish>
+            <Korean> </Korean>
+            <Japanese> </Japanese>
+            <Chinesesimp> </Chinesesimp>
+            <Chinese> </Chinese>
+        </Key> 
+         <Key ID="STR_MRTM_welcomeInteract_04">
+            <Original>Our Discord.</Original>
+            <English>Our Discord.</English>
+            <Czech> </Czech>
+            <French> </French>
+            <German> </German>
+            <Italian> </Italian>
+            <Polish> </Polish>
+            <Portuguese> </Portuguese>
+            <Russian>Наш Discord.</Russian>
+            <Spanish> </Spanish>
+            <Korean> </Korean>
+            <Japanese> </Japanese>
+            <Chinesesimp> </Chinesesimp>
+            <Chinese> </Chinese>
+        </Key> 
+         <Key ID="STR_MRTM_welcomeInteract_05">
+            <Original>Changelog.</Original>
+            <English>Changelog.</English>
+            <Czech>Seznam změn.</Czech>
+            <French>Journal des modifications.</French>
+            <German>Changelog.</German>
+            <Italian>Registro delle modifiche.</Italian>
+            <Polish>Dziennik zmian.</Polish>
+            <Portuguese>Registro de mudanças.</Portuguese>
+            <Russian>Журнал изменений.</Russian>
+            <Spanish>Registro de cambios.</Spanish>
+            <Korean>변경 사항 기록.</Korean>
+            <Japanese>変更履歴。</Japanese>
+            <Chinesesimp>更改日志。</Chinesesimp>
+            <Chinese>更改日志。</Chinese>
+        </Key> 
+         <Key ID="STR_MRTM_welcomeInteract_06">
+            <Original>Third Party Scripts.</Original>
+            <English>Third Party Scripts.</English>
+            <Czech>Skripty třetích stran.</Czech>
+            <French>Scripts de tiers.</French>
+            <German>Skripte von Drittanbietern.</German>
+            <Italian>Script di terze parti.</Italian>
+            <Polish>Skrypty stron trzecich.</Polish>
+            <Portuguese>Scripts de terceiros.</Portuguese>
+            <Russian>Скрипты третьих лиц.</Russian>
+            <Spanish>Scripts de terceros.</Spanish>
+            <Korean>제3자 스크립트.</Korean>
+            <Japanese>サードパーティースクリプト。</Japanese>
+            <Chinesesimp>第三方脚本。</Chinesesimp>
+            <Chinese>第三方脚本。</Chinese>
+        </Key>  
+        <Key ID="STR_MRTM_welcome">
+            <Original>Welcome to Warlords Redux!</Original>
+            <English>Welcome to Warlords Redux!</English>
+            <Czech> </Czech>
+            <French> </French>
+            <German> </German>
+            <Italian> </Italian>
+            <Polish> </Polish>
+            <Portuguese> </Portuguese>
+            <Russian>Добро пожаловать в Warlords Redux!</Russian>
+            <Spanish> </Spanish>
+            <Korean> </Korean>
+            <Japanese> </Japanese>
+            <Chinesesimp> </Chinesesimp>
+            <Chinese> </Chinese>
+        </Key>
+    </Container>
+</Project>
