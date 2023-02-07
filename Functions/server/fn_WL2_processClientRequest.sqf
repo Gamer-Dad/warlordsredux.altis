@@ -89,7 +89,7 @@ if !(isNull _sender) then {
 				_asset setPos (_targetPosFinal vectorAdd [0,0,3]);
 			} else {
 				if (_className isKindOf "Air") then {
-					if (_className == "B_UAV_02_dynamicLoadout_F" || _className == "B_T_UAV_03_dynamicLoadout_F" || _className == "B_UAV_05_F" || _className == "O_UAV_02_dynamicLoadout_F" || _className == "O_T_UAV_04_CAS_F") then {
+					if (_className == "B_UAV_02_dynamicLoadout_F" || _className == "B_T_UAV_03_dynamicLoadout_F" || _className == "B_UAV_05_F") then {
 						private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
 						private _taxiNodesCnt = count _taxiNodes;

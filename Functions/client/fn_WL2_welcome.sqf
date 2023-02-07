@@ -6,14 +6,6 @@ howRead = false;
 
 ctrlShow [696991, false];
 
-/*
-(findDisplay 6969) displayAddEventhandler ["KeyDown",{
-	if (howRead == false) then {
-		(_this select 1) isEqualTo 1;
-	};
-}];
-*/
-
 //Language selector
 _eng = lbAdd [69699, "English"];
 _russ = lbAdd [69699, "Русский"];
@@ -43,12 +35,12 @@ if (side player == west) then {
 };
 
 //List Menu + Scripts
-_pageAbt = lbAdd [69695, "About Warlords Redux"];
-_pageHow = lbAdd [69695, "How To Play"];
-_theTeam = lbAdd [69695, "The WSV Community"];
-_dc = lbAdd [69695, "Our Discord"];
-_changelog = lbAdd [69695, "Changelog"];
-_scripts = lbAdd [69695, "Third Party Scripts"];
+_pageAbt = lbAdd [69695, localize "STR_MRTM_welcomeInteract_01"];
+_pageHow = lbAdd [69695, localize "STR_MRTM_welcomeInteract_02"];
+_theTeam = lbAdd [69695, localize "STR_MRTM_welcomeInteract_03"];
+_dc = lbAdd [69695, localize "STR_MRTM_welcomeInteract_04"];
+_changelog = lbAdd [69695, localize "STR_MRTM_welcomeInteract_05"];
+_scripts = lbAdd [69695, localize "STR_MRTM_welcomeInteract_06"];
 
 
 //List Menu Data + Scrips
@@ -71,21 +63,16 @@ while {dialog} do {
 
 	if (curSelLang == "langEnglish") then {
 		ctrlSetText [696990, "img\flagAmerican.paa"];
-		lbSetText[69695, _pageAbt, "About Warlords Redux"];
-		lbSetText[69695, _pageHow, "How To Play"];
-		lbSetText[69695, _theTeam, "The WSV Community"];
-		lbSetText[69695, _dc, "Our Discord"];
-		lbSetText[69695, _changelog, "Changelog"];
-		lbSetText[69695, _scripts, "Third Party Scripts"];
 	} else {
 		ctrlSetText [696990, "img\flagRussian.paa"];
-		lbSetText[69695, _pageAbt, "O Warlords Redux"];
-		lbSetText[69695, _pageHow, "Как играть"];
-		lbSetText[69695, _theTeam, "Сообщество WSV"];
-		lbSetText[69695, _dc, "Наш Discord"];
-		lbSetText[69695, _changelog, "Список изменений"];
-		lbSetText[69695, _scripts, "Сторонние скрипты"];
 	};
+
+	lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
+	lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
+	lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
+	lbSetText[69695, _dc, localize "STR_MRTM_welcomeInteract_04"];
+	lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
+	lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 
 	inventoryKey = actionKeysNames "gear";
 
@@ -96,7 +83,7 @@ while {dialog} do {
 
 				private _control = findDisplay 6969 displayCtrl 69696;
 				_control ctrlSetStructuredText composeText [
-				"Welcome to Warlords Redux!", lineBreak,
+				localize "STR_MRTM_welcome", lineBreak,
 				"", lineBreak,
 				"Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.", lineBreak,
 				"", lineBreak,
@@ -109,7 +96,7 @@ while {dialog} do {
 
 				private _control = findDisplay 6969 displayCtrl 69696;
 				_control ctrlSetStructuredText composeText [
-				"Добро пожаловать в Warlords Redux!", lineBreak,
+				localize "STR_MRTM_welcome", lineBreak,
 				"", lineBreak,
 				"Warlords Redux 2.5 — это проект сообщества по обновлению оригинальной Warlords Redux. Цель проекта — улучшить BI-видение военачальников c помощью исправлений ошибок и более сбалансированного взаимодействия c пользователем, сохраняя при этом совместимость c официальными серверами для наибольшего количества игроков.", lineBreak,
 				"", lineBreak,

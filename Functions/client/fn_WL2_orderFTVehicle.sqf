@@ -1,6 +1,7 @@
 [player, -700] call BIS_fnc_WL2_fundsControl;
 private  _id = clientOwner;
 [] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
+["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (side player == west) then {
 	private _center = getPosATL player;

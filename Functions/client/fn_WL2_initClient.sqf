@@ -272,3 +272,4 @@ sleep 1;
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
 
 player addAction ["Get 20k CP", {[player, 20000] call BIS_fnc_WL2_fundsControl}];
+

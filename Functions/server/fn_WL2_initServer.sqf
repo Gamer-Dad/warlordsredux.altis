@@ -33,6 +33,8 @@ missionNamespace setVariable ["serverTimer", 0, true];
 	};
 };
 
+
+
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
 {createCenter _x} forEach [WEST, EAST, RESISTANCE, CIVILIAN];
@@ -109,38 +111,29 @@ addMissionEventHandler ["EntityCreated", {
 			};
 		};
 	};
-
-    if (typeOf _entity == "I_Truck_02_MRL_F") then { //Zamak MLRS
-        _entity setObjectTextureGlobal [0, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak cabin
-        //_entity setObjectTextureGlobal [1, "A3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa"]; //Does nothing but keep for reminder
-        _entity setObjectTextureGlobal [2, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak Bed&Launcher                
-    };
-   
 	
 	if (typeOf _entity == "B_AAA_System_01_F") then { //Praetorian
 		private _side = side (crew _entity select 0);
 		if (_side == east) then {
-			_entity setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
-			_entity setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
+			_entity setObjectTexture [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
+			_entity setObjectTexture [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
 		};
+	} else {
+		if (typeOf _entity == "B_SAM_System_01_F") then { //Spartan
+			private _side = side (crew _entity select 0);
+			if (_side == east) then {
+				_entity setObjectTexture [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
+			};
 		} else {
-			if (typeOf _entity == "B_SAM_System_01_F") then { //Spartan
+			if (typeOf _entity == "B_SAM_System_02_F") then { //Centurion
 				private _side = side (crew _entity select 0);
 				if (_side == east) then {
-					_entity setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
+					_entity setObjectTexture [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
 				};
-			} else {
-				if (typeOf _entity == "B_SAM_System_02_F") then { //Centurion
-					private _side = side (crew _entity select 0);
-					if (_side == east) then {
-						_entity setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
-					};
-				};
-			};	
-		};	
-			
+			};
+		};
+	};
 }];
-
 
 
 missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
