@@ -102,7 +102,7 @@
             <English>Asset rearmed.</English>
             <Czech>Majetek přezbrojen.</Czech>
             <French>Actif réarmé.</French>
-            <German>Gerät wurde neu aufmunitioniert.</German>
+            <German>Gerät wurde neu bewaffnet.</German>
             <Italian>Asset riarmato.</Italian>
             <Polish>Zasób ponownie uzbrojony.</Polish>
             <Portuguese>Ativo rearmado.</Portuguese>
@@ -134,7 +134,7 @@
             <English>With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot and looking at the vehicle.</English>
             <Czech>S příslušnými prostředky v blízkosti můžete %1 OPRAVIT %2 nebo %1 ZNOVU ZAPOJIT %2 svá vozidla prostřednictvím nabídky Akce. To lze provést pouze tehdy, když jdete pěšky a díváte se na vozidlo.</Czech>
             <French>Avec les ressources appropriées à proximité, vous pouvez %1 RÉPARER %2 ou %1 RÉARMER %2 vos véhicules via le menu Action. Cela ne peut être fait que lorsque vous êtes à pied et que vous regardez le véhicule.</French>
-            <German>Mit den entsprechenden Anlagen in der Nähe können Sie Ihre Fahrzeuge über das Aktionsmenü %1 REPARIEREN %2 oder %1 NEU AKTIVIEREN %2. Dies ist nur möglich, wenn Sie zu Fuß unterwegs sind und sich das Fahrzeug ansehen.</German>
+            <German>Mit den entsprechenden Anlagen in der Nähe kannst du Deine Fahrzeuge über das Aktionsmenü %1 REPARIEREN %2 oder %1 NEU BEWAFFNEN %2. Dies ist nur möglich, wenn du zu Fuß unterwegs bist und das Fahrzeug betrachtest.</German>
             <Italian>Con le risorse appropriate nelle vicinanze, puoi %1 RIPARARE %2 o %1 RIARMARE %2 i tuoi veicoli tramite il menu Azione. Questo può essere fatto solo quando sei a piedi e guardi il veicolo.</Italian>
             <Polish>Mając w pobliżu odpowiednie zasoby, możesz %1 NAPRAWIĆ %2 lub %1 PONOWNIE UZBROJĆ %2 swoje pojazdy za pomocą menu Czynności. Można to zrobić tylko, gdy jesteś na piechotę i patrzysz na pojazd.</Polish>
             <Portuguese>Com os ativos apropriados por perto, você pode %1 REPARAR %2 ou %1 REARMAR %2 seus veículos através do menu Ação. Isso só pode ser feito quando você estiver a pé e olhando o veículo.</Portuguese>
@@ -199,7 +199,7 @@
             <English>Alt-Shift-click to %1delete%2%3%4.</English>
             <Czech>Alt-Shift-kliknutí pro %1smazání%2%3%4.</Czech>
             <French>Alt-Shift-cliquez pour %1supprimer%2%3%4.</French>
-            <German>Alt-Shift-click to %1delete%2%3%4.</German>
+            <German>Alt-Shift-Klick um %1 zu löschen %2%3%4.</German>
             <Italian>Alt-Shift-clicca per %1eliminare%2%3%4.</Italian>
             <Polish>Alt-Shift-kliknij, aby %1usunąć%2%3%4.</Polish>
             <Portuguese>Alt-Shift-clique para %1apagar%2%3%4.</Portuguese>
@@ -487,7 +487,7 @@
             <English>Fast travel to moving spawn.</English>
             <Czech>Rychlé cestování k pohybujícímu se spawnu.</Czech>
             <French>Voyage rapide vers le spawn mobile.</French>
-            <German>Schnellreise zum bewegten Spawnpunkt.</German>
+            <German>Schnellreise zum Schnellreisefahrzeug.</German>
             <Italian>Viaggio rapido al punto di spawn in movimento.</Italian>
             <Polish>Szybka podróż do poruszającego się punktu spawnu.</Polish>
             <Portuguese>Viagem rápida para o ponto de geração em movimento.</Portuguese>
@@ -567,7 +567,7 @@
             <English>your current command points (CP) have been saved.</English>
             <Czech>vaše aktuální příkazové body (CP) byly uloženy.</Czech>
             <French>vos points de commande actuels (CP) ont été enregistrés.</French>
-            <German>deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
+            <German>Deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
             <Italian>i tuoi punti comando attuali (CP) sono stati salvati.</Italian>
             <Polish>Twoje bieżące punkty komendy (CP) zostały zapisane.</Polish>
             <Portuguese>seus pontos de comando atuais (CP) foram salvos.</Portuguese>
@@ -583,7 +583,7 @@
             <English>your prior command points (CP) have been received.</English>
             <Czech>vaše předchozí příkazové body (CP) byly přijaty.</Czech>
             <French>vos points de commande (CP) précédents ont été reçus.</French>
-            <German>deine vorherigen Kommandopunkte (CP) wurden empfangen.</German>
+            <German>Deine vorherigen Kommandopunkte (CP) wurden abgerufen.</German>
             <Italian>i tuoi punti di comando (CP) precedententi sono stati ricevuti.</Italian>
             <Polish>twoje poprzednie punkty poleceń (CP) zostały odebrane.</Polish>
             <Portuguese>seus pontos de comando anteriores (CP) foram recebidos.</Portuguese>
@@ -631,7 +631,7 @@
             <English>Sector voting reset requested by %1.</English>
             <Czech>Vynulování hlasování v sektoru požadováno %1.</Czech>
             <French>Réinitialisation du vote par secteur demandée par %1.</French>
-            <German>Sektor-Abstimmungs-Zurücksetzung angefordert von %1.</German>
+            <German>Erneute Zielsektorauswahl wurde von %1 angefordert.</German>
             <Italian>Reset del voto settoriale richiesto da %1.</Italian>
             <Polish>Reset głosowania sektora zażądany przez %1.</Polish>
             <Portuguese>Reset de votação por setor solicitado por %1.</Portuguese>
@@ -681,7 +681,7 @@
             <English>How To Play.</English>
             <Czech>Jak Hrát.</Czech>
             <French>Comment Jouer.</French>
-            <German>Wie man spielt.</German>
+            <German>Spielanleitung</German>
             <Italian>Come Giocare.</Italian>
             <Polish>Jak Grać.</Polish>
             <Portuguese>Como Jogar.</Portuguese>
@@ -729,7 +729,7 @@
             <English>Changelog.</English>
             <Czech>Seznam změn.</Czech>
             <French>Journal des modifications.</French>
-            <German>Changelog.</German>
+            <German>Versionshistorie</German>
             <Italian>Registro delle modifiche.</Italian>
             <Polish>Dziennik zmian.</Polish>
             <Portuguese>Registro de mudanças.</Portuguese>
@@ -793,7 +793,7 @@
             <English>Warlords Redux introduces many new features like Fog of War and random base locations. It has many other new features compared to vanilla warlords such as random base locations, custom aircraft pylons, and the introduction of all drones/SAMs/AAA...</English>
             <Czech>Warlords Redux přináší mnoho nových funkcí, jako je Mlha války a náhodná umístění základen. Má mnoho dalších nových funkcí ve srovnání s vanilkovými Warlordy, jako jsou náhodná umístění základen, vlastní pylony letadel a úvod všech bezpilotních letadel/SAM/AAA...</Czech>
             <French>Warlords Redux introduit de nombreuses nouvelles fonctionnalités telles que le brouillard de guerre et les emplacements de bases aléatoires. Il a de nombreuses autres nouvelles fonctionnalités par rapport aux Warlords d'origine, telles que les emplacements de bases aléatoires, les pylônes d'aéronefs personnalisés et l'introduction de tous les drones/SAM/AAA...</French>
-            <German>Warlords Redux führt viele neue Funktionen wie den Nebel des Krieges und zufällige Basislagen ein. Es hat viele andere neue Funktionen im Vergleich zu den ursprünglichen Warlords wie zufällige Basislagen, benutzerdefinierte Flugzeugpylone und die Einführung aller Drohnen/SAMs/AAA...</German>
+            <German>Warlords Redux führt viele neue Funktionen wie den Nebel des Krieges und zufällige Startpunkte ein. Es hat viele andere neue Funktionen im Vergleich zu den ursprünglichen Warlords wie benutzerdefinierte Flugzeugpylone und die Einführung aller Drohnen/SAMs/AAA...</German>
             <Italian>Warlords Redux introduce molte nuove funzionalità come la Nebbia di Guerra e le posizioni di base casuali. Ha molte altre nuove funzionalità rispetto ai Warlord originali, come posizioni di base casuali, pattini per aerei personalizzati e l'introduzione di tutti i droni/SAM/AAA...</Italian>
             <Polish>Warlords Redux wprowadza wiele nowych funkcji, takich jak Mgła Wojny i losowe lokalizacje baz. Ma wiele innych nowych funkcji w porównaniu z warlordami vanilla, takich jak losowe lokalizacje baz, niestandardowe pylony samolotów i wprowadzenie wszystkich bezzałogowych samolotów/SAM/AAA...</Polish>
             <Portuguese>Warlords Redux apresenta muitos novos recursos, como a Névoa da Guerra e localizações de base aleatórias. Possui muitos outros recursos novos em comparação com o Warlords original, como localizações de base aleatórias, pás de aeronaves personalizadas e a introdução de todos os drones/SAMs/AAA...</Portuguese>
@@ -809,7 +809,7 @@
             <English>In these videos you can see a detailed guide on how to play Warlords Redux.</English>
             <Czech>V těchto videích můžete vidět podrobný návod, jak hrát Warlords Redux.</Czech>
             <French>Dans ces vidéos, vous pouvez voir un guide détaillé sur comment jouer à Warlords Redux.</French>
-            <German>In diesen Videos können Sie eine ausführliche Anleitung zum Spielen von Warlords Redux sehen.</German>
+            <German>In diesen Videos kannst du eine ausführliche Anleitung zum Spielen von Warlords Redux sehen.</German>
             <Italian>In questi video puoi vedere una guida dettagliata su come giocare a Warlords Redux.</Italian>
             <Polish>W tych filmach można zobaczyć szczegółowy przewodnik dotyczący gry w Warlords Redux.</Polish>
             <Portuguese>Nesses vídeos você pode ver um guia detalhado de como jogar Warlords Redux.</Portuguese>
@@ -841,7 +841,7 @@
             <English>Hold %1 - Opens the Warlords Menu.</English>
             <Czech>Držet %1 - Otevře menu Warlordů.</Czech>
             <French>Maintenir %1 - Ouvre le menu des Warlords.</French>
-            <German>Halten Sie %1 - Öffnet das Warlords-Menü.</German>
+            <German>Halten %1 zum Öffnen des Warlords-Menüs gedrückt.</German>
             <Italian>Tenere premuto %1 - Apre il menu dei Warlord.</Italian>
             <Polish>Przytrzymaj %1 - Otwiera menu Warlordów.</Polish>
             <Portuguese>Segurar %1 - Abre o menu dos Warlords.</Portuguese>
@@ -857,7 +857,7 @@
             <English>Press INSERT - To insert your earplugs.</English>
             <Czech>Stiskněte INSERT - Pro vložení svých špuntů do uší.</Czech>
             <French>Appuyez sur INSERT - Pour insérer vos bouchons d'oreille.</French>
-            <German>Drücken Sie INSERT - Um Ihre Ohrstöpsel einzufügen.</German>
+            <German>Drücke Einfg zum Einsetzen der Ohrenstöpsel.</German>
             <Italian>Premere INSERT - Per inserire i tappi per le orecchie.</Italian>
             <Polish>Naciśnij INSERT - Aby włożyć wkładki do uszu.</Polish>
             <Portuguese>Pressione INSERT - Para inserir seus protetores de ouvido.</Portuguese>
@@ -873,7 +873,7 @@
             <English>CTRL + G - Shows your APS in the chat.</English>
             <Czech>CTRL + G - Zobrazuje vaše APS v chatu.</Czech>
             <French>CTRL + G - Affiche votre APS dans le chat.</French>
-            <German>CTRL + G - Zeigt Ihre APS im Chat an.</German>
+            <German>Strg + G - Zeigt dein APS im Chat an.</German>
             <Italian>CTRL + G - Mostra il tuo APS nella chat.</Italian>
             <Polish>CTRL + G - Pokazuje twoje APS na czacie.</Polish>
             <Portuguese>CTRL + G - Mostra sua APS no chat.</Portuguese>
@@ -889,7 +889,7 @@
             <English>The War Sim Vets community organizes arma 3 events and works on the Warlords Redux project know as EU#11.</English>
             <Czech>Komunita War Sim Vets organizuje akce v rámci hry Arma 3 a pracuje na projektu Warlords Redux známém jako EU#11.</Czech>
             <French>La communauté War Sim Vets organise des événements Arma 3 et travaille sur le projet Warlords Redux connu sous le nom de EU#11.</French>
-            <German>Die War Sim Vets Community organisiert Arma 3-Veranstaltungen und arbeitet an dem Warlords Redux-Projekt, das als EU#11 bekannt ist.</German>
+            <German>Die War Sim Vets Community organisiert Arma 3-Events und arbeitet an dem Warlords Redux-Projekt, das als EU#11 bekannt ist.</German>
             <Italian>La comunità War Sim Vets organizza eventi di Arma 3 e lavora sul progetto Warlords Redux conosciuto come EU#11.</Italian>
             <Polish>Społeczność War Sim Vets organizuje wydarzenia Arma 3 i pracuje nad projektem Warlords Redux znanym jako EU#11.</Polish>
             <Portuguese>A comunidade War Sim Vets organiza eventos Arma 3 e trabalha no projeto Warlords Redux conhecido como EU#11.</Portuguese>
@@ -937,7 +937,7 @@
             <English>Admins: (Events)</English>
             <Czech>Správci: (Události)</Czech>
             <French>Administrateurs: (Evénements)</French>
-            <German>Administratoren: (Veranstaltungen)</German>
+            <German>Administratoren: (Events)</German>
             <Italian>Amministratori: (Eventi)</Italian>
             <Polish>Administratorzy: (Wydarzenia)</Polish>
             <Portuguese>Administradores: (Eventos)</Portuguese>
@@ -953,7 +953,7 @@
             <English>Join our discord to stay notified of Warlords Redux updates and events.</English>
             <Czech>Připojte se k našemu discordu, abyste byli informováni o aktualizacích a událostech Warlords Redux.</Czech>
             <French>Rejoignez notre discord pour être informé des mises à jour et des événements Warlords Redux.</French>
-            <German>Trete unserem Discord bei, um über Warlords Redux-Updates und Veranstaltungen informiert zu bleiben.</German>
+            <German>Trete unserem Discord bei, um über Warlords Redux-Updates und Events informiert zu bleiben.</German>
             <Italian>Unisciti al nostro discord per rimanere informato sulle aggiornamenti e gli eventi di Warlords Redux.</Italian>
             <Polish>Dołącz do naszego discorda, aby być powiadomionym o aktualizacjach i wydarzeniach Warlords Redux.</Polish>
             <Portuguese>Junte-se ao nosso discord para ficar informado sobre atualizações e eventos do Warlords Redux.</Portuguese>
