@@ -6,20 +6,6 @@ howRead = false;
 
 ctrlShow [696991, false];
 
-//Language selector
-_eng = lbAdd [69699, "English"];
-_russ = lbAdd [69699, "Русский"];
-
-if (language == "Russian") then {
-	lbSetCurSel [69699, _russ];
-} else {
-	lbSetCurSel [69699, _eng];
-};
-
-//Language selector Data
-lbSetData [69699, _eng, "langEnglish"];
-lbSetData [69699, _russ, "langRussian"];	
-
 if (side player == west) then {
 	private _control1 = findDisplay 6969 displayCtrl 69692;
 	_control1 ctrlSetTextColor [0,0.3,0.5,1];
@@ -57,15 +43,6 @@ lbSetCurSel [69695, _pageAbt];
 while {dialog} do {
 	_index = lbCurSel 69695;
 	_curSel = lbData [69695, _index];
-
-	indexLang = lbCurSel 69699;
-	curSelLang = lbData [69699, indexLang];
-
-	if (curSelLang == "langEnglish") then {
-		ctrlSetText [696990, "img\flagAmerican.paa"];
-	} else {
-		ctrlSetText [696990, "img\flagRussian.paa"];
-	};
 
 	lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
 	lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];

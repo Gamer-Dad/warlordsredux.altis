@@ -139,31 +139,5 @@ class welcomeScreen
 			w = 0.190781 * safezoneW;
 			h = 0.286 * safezoneH;
 		};
-
-		class welcomeLang: RscComboMRTM
-		{
-			idc = 69699;
-			deletable = 0;
-			type = CT_COMBO;
-			colorBackground[] = {0,0,0,0};
-			arrowEmpty = "\A3\3den\data\controls\ctrlcombo\arrowEmpty_ca.paa";
-			arrowFull = "\A3\3den\data\controls\ctrlcombo\arrowEmpty_ca.paa";
-			x = 0.649219 * safezoneW + safezoneX;
-			y = 0.220 * safezoneH + safezoneY;
-			w = 0.0781875 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-
-		class welcomeLangPic: RscPictureMRTM
-		{
-			idc = 696990;
-			deletable = 0;
-			text = "";
-			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
-			x = 0.615219 * safezoneW + safezoneX;
-			y = 0.215 * safezoneH + safezoneY;
-			w = 0.0271875 * safezoneW;
-			h = 0.040 * safezoneH;
-		};
 	};
 };
