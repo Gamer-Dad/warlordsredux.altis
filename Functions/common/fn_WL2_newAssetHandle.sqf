@@ -39,26 +39,64 @@ if (isPlayer _owner) then {
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		//_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; 
 
-
-		////Beta   
-									if (_asset isKindOf "Helicopter") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
-									} else { if (_asset isKindOf "Plane") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
-										} else { if (_asset isKindOf "B_MBT_01_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-											} else { if (_asset isKindOf "O_MBT_02_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-												} else { if (_asset isKindOf "B_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-													} else { if (_asset isKindOf "O_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-														} else { if (_asset isKindOf "B_AAA_System_01_F ") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
-															} else { if (_asset isKindOf "B_SAM_System_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
-																} else { if (_asset isKindOf "B_SAM_System_03_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-																	} else { if (_asset isKindOf "O_SAM_System_04_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-																		} else { if (_asset isKindOf "B_SAM_System_02_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
-																			} else { if (_asset isKindOf "B_Ship_MRLS_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
-																				} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
-									}}}}}}}}}}};   
-
-		//]; //Used to be + WL_MAINTENANCE_COOLDOWN_REARM
+		if (_asset isKindOf "Helicopter") then {  
+			_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
+		} else { 
+			if (_asset isKindOf "Plane") then {  
+				_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
+			} else { 
+				if (_asset isKindOf "B_MBT_01_arty_F") then {  
+					_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+				} else { 
+					if (_asset isKindOf "O_MBT_02_arty_F") then {  
+						_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+					} else { 
+						if (_asset isKindOf "B_Mortar_01_F") then {  
+							_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+						} else { 
+							if (_asset isKindOf "O_Mortar_01_F") then {  
+								_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+							} else { 
+								if (_asset isKindOf "B_AAA_System_01_F ") then {  
+									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
+								} else { 
+									if (_asset isKindOf "B_SAM_System_01_F") then {  
+										_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
+									} else { 
+										if (_asset isKindOf "B_SAM_System_03_F") then {  
+											_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+										} else { 
+											if (_asset isKindOf "O_SAM_System_04_F") then {  
+												_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+											} else { 
+												if (_asset isKindOf "B_SAM_System_02_F") then {  
+													_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
+												} else { 
+													if (_asset isKindOf "B_Ship_MRLS_01_F") then {  
+														_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
+													} else { 
+														if (_asset isKindOf "B_MBT_01_mlrs_F") then {  
+															_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+														} else { 
+															if (_asset isKindOf "I_Truck_02_MRL_F") then {  
+																_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+															} else { 
+																_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; 
+															};
+														};
+													};
+												};
+											};
+										};
+									};	
+								};
+							};
+						};
+					};
+				};
+			};
+		};     
 		
 		private _defaultMags = [];
 		{
@@ -149,24 +187,46 @@ if (isPlayer _owner) then {
 									_asset selectWeapon _curWeapon;
 
 									////Beta   
-									if (_asset isKindOf "Helicopter") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
-									} else { if (_asset isKindOf "Plane") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
-										} else { if (_asset isKindOf "B_MBT_01_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-											} else { if (_asset isKindOf "O_MBT_02_arty_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-												} else { if (_asset isKindOf "B_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-													} else { if (_asset isKindOf "O_Mortar_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-														} else { if (_asset isKindOf "B_AAA_System_01_F ") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
-															} else { if (_asset isKindOf "B_SAM_System_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
-																} else { if (_asset isKindOf "B_SAM_System_03_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-																	} else { if (_asset isKindOf "O_SAM_System_04_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-																		} else { if (_asset isKindOf "B_SAM_System_02_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
-																			} else { if (_asset isKindOf "B_Ship_MRLS_01_F") then {  _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
-																				} else { _asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; }
-									}}}}}}}}}}};   
+									if (_asset isKindOf "Helicopter") then {  
+										_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
+									} else { if (_asset isKindOf "Plane") then {  
+										_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
+										} else { if (_asset isKindOf "B_MBT_01_arty_F") then {  
+											_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+											} else { if (_asset isKindOf "O_MBT_02_arty_F") then {  
+												_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+												} else { if (_asset isKindOf "B_Mortar_01_F") then {  
+													_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+													} else { if (_asset isKindOf "O_Mortar_01_F") then {  
+														_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+														} else { if (_asset isKindOf "B_AAA_System_01_F ") then {  
+															_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
+															} else { if (_asset isKindOf "B_SAM_System_01_F") then {  
+																_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
+																} else { if (_asset isKindOf "B_SAM_System_03_F") then {  
+																	_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+																	} else { if (_asset isKindOf "O_SAM_System_04_F") then {  
+																		_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+																		} else { if (_asset isKindOf "B_SAM_System_02_F") then {  
+																			_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
+																			} else { if (_asset isKindOf "B_Ship_MRLS_01_F") then {  
+																				_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
+																				} else { 
+																					_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM];
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+											};
+										};
+									};   
 									////Beta
-
-
-
+									
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 									[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
 								} else {
