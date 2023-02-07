@@ -645,36 +645,36 @@
         <Key ID="STR_A3_WL_donate_cp">
             <Original>%1 donated %3CP to %2.</Original>
             <English>%1 donated %3CP to %2.</English>
-            <Czech></Czech>
-            <French></French>
+            <Czech>%1 daroval %3CP %2.</Czech>
+            <French>%1 a fait un don de %3CP à %2.</French>
             <German>%1 hat %3CP an %2 gestiftet.</German>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Portuguese></Portuguese>
-            <Russian></Russian>
-            <Spanish></Spanish>
-            <Korean></Korean>
-            <Japanese></Japanese>
-            <Chinesesimp></Chinesesimp>
-            <Chinese></Chinese>
+            <Italian>%1 ha donato %3CP a %2.</Italian>
+            <Polish>%1 przekazał %3CP dla %2.</Polish>
+            <Portuguese>%1 doou %3CP para %2.</Portuguese>
+            <Russian>%1 пожертвовал %3CP %2.</Russian>
+            <Spanish>%1 ha donado %3CP a %2.</Spanish>
+            <Korean>%1이 %2에게 %3CP를 기부했습니다.</Korean>
+            <Japanese>%1は%2に%3CPを寄付しました。</Japanese>
+            <Chinesesimp>%1捐赠了%3CP给%2。</Chinesesimp>
+            <Chinese>%1捐贈了%3CP給%2。</Chinese>
         </Key>   
     </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
             <Original>About Warlords Redux.</Original>
             <English>About Warlords Redux.</English>
-            <Czech> </Czech>
-            <French> </French>
-            <German> </German>
-            <Italian> </Italian>
-            <Polish> </Polish>
-            <Portuguese> </Portuguese>
+            <Czech>O Warlords Redux.</Czech>
+            <French>À propos de Warlords Redux.</French>
+            <German>Über Warlords Redux.</German>
+            <Italian>Informazioni su Warlords Redux.</Italian>
+            <Polish>O Warlords Redux.</Polish>
+            <Portuguese>Sobre Warlords Redux.</Portuguese>
             <Russian>O Warlords Redux.</Russian>
-            <Spanish> </Spanish>
-            <Korean> </Korean>
-            <Japanese> </Japanese>
-            <Chinesesimp> </Chinesesimp>
-            <Chinese> </Chinese>
+            <Spanish>Acerca de Warlords Redux.</Spanish>
+            <Korean>Warlords Redux에 대하여.</Korean>
+            <Japanese>Warlords Reduxについて。</Japanese>
+            <Chinesesimp>关于 Warlords Redux。</Chinesesimp>
+            <Chinese>关于 Warlords Redux。</Chinese>
         </Key>  
          <Key ID="STR_MRTM_welcomeInteract_02">
             <Original>How To Play.</Original>
@@ -695,34 +695,34 @@
          <Key ID="STR_MRTM_welcomeInteract_03">
             <Original>The WSV Community.</Original>
             <English>The WSV Community.</English>
-            <Czech> </Czech>
-            <French> </French>
-            <German> </German>
-            <Italian> </Italian>
-            <Polish> </Polish>
-            <Portuguese> </Portuguese>
+            <Czech>Komunita WSV.</Czech>
+            <French>La communauté WSV.</French>
+            <German>Die WSV-Community.</German>
+            <Italian>La comunità WSV.</Italian>
+            <Polish>Społeczność WSV.</Polish>
+            <Portuguese>A comunidade WSV.</Portuguese>
             <Russian>Сообщество WSV.</Russian>
-            <Spanish> </Spanish>
-            <Korean> </Korean>
-            <Japanese> </Japanese>
-            <Chinesesimp> </Chinesesimp>
-            <Chinese> </Chinese>
+            <Spanish>La comunidad WSV.</Spanish>
+            <Korean>WSV 커뮤니티.</Korean>
+            <Japanese>WSVコミュニティ.</Japanese>
+            <Chinesesimp>WSV社区.</Chinesesimp>
+            <Chinese>WSV社區。</Chinese>
         </Key> 
          <Key ID="STR_MRTM_welcomeInteract_04">
             <Original>Our Discord.</Original>
             <English>Our Discord.</English>
-            <Czech> </Czech>
-            <French> </French>
-            <German> </German>
-            <Italian> </Italian>
-            <Polish> </Polish>
-            <Portuguese> </Portuguese>
+            <Czech>Náš Discord.</Czech>
+            <French>Notre Discord.</French>
+            <German>Unser Discord.</German>
+            <Italian>Il nostro Discord.</Italian>
+            <Polish>Nasz Discord.</Polish>
+            <Portuguese>Nosso Discord.</Portuguese>
             <Russian>Наш Discord.</Russian>
-            <Spanish> </Spanish>
-            <Korean> </Korean>
-            <Japanese> </Japanese>
-            <Chinesesimp> </Chinesesimp>
-            <Chinese> </Chinese>
+            <Spanish>Nuestro Discord.</Spanish>
+            <Korean>우리의 Discord.</Korean>
+            <Japanese>私たちのDiscord.</Japanese>
+            <Chinesesimp>我们的Discord.</Chinesesimp>
+            <Chinese>我们的Discord.</Chinese>
         </Key> 
          <Key ID="STR_MRTM_welcomeInteract_05">
             <Original>Changelog.</Original>
@@ -756,21 +756,245 @@
             <Chinesesimp>第三方脚本。</Chinesesimp>
             <Chinese>第三方脚本。</Chinese>
         </Key>  
-        <Key ID="STR_MRTM_welcome">
+        <Key ID="STR_MRTM_welcomeInteract_07">
             <Original>Welcome to Warlords Redux!</Original>
             <English>Welcome to Warlords Redux!</English>
-            <Czech> </Czech>
-            <French> </French>
-            <German> </German>
-            <Italian> </Italian>
-            <Polish> </Polish>
-            <Portuguese> </Portuguese>
+            <Czech>Vítejte v Warlords Redux!</Czech>
+            <French>Bienvenue sur Warlords Redux!</French>
+            <German>Willkommen bei Warlords Redux!</German>
+            <Italian>Benvenuti in Warlords Redux!</Italian>
+            <Polish>Witaj w Warlords Redux!</Polish>
+            <Portuguese>Bem-vindo ao Warlords Redux!</Portuguese>
             <Russian>Добро пожаловать в Warlords Redux!</Russian>
-            <Spanish> </Spanish>
-            <Korean> </Korean>
-            <Japanese> </Japanese>
-            <Chinesesimp> </Chinesesimp>
-            <Chinese> </Chinese>
+            <Spanish>Bienvenido a Warlords Redux!</Spanish>
+            <Korean>Warlords Redux에 오신 것을 환영합니다!</Korean>
+            <Japanese>Warlords Reduxへようこそ！</Japanese>
+            <Chinesesimp>欢迎来到Warlords Redux！</Chinesesimp>
+            <Chinese>欢迎来到Warlords Redux！</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_08">
+            <Original>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.</Original>
+            <English>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatible with official servers for the best player count.</English>
+            <Czech>Warlords Redux 2.5 je projektem komunitního upgradu pro původní Warlords Redux. Jeho cílem je vylepšit BI vizi Warlordů s opravou chyb a vyváženějším uživatelským zážitkem a zároveň zůstat kompatibilním s oficiálními servery pro nejlepší počet hráčů.</Czech>
+            <French>Warlords Redux 2.5 est un projet de mise à niveau communautaire pour le Warlords Redux original. Son objectif est d'améliorer la vision de BI de Warlords avec des correctifs de bogues et une expérience utilisateur plus équilibrée tout en restant compatible avec les serveurs officiels pour le meilleur nombre de joueurs.</French>
+            <German>Warlords Redux 2.5 ist ein Community-Upgrade-Projekt für das Original Warlords Redux. Ziel des Projekts ist es, die BI-Vision von Warlords durch Fehlerbehebungen und eine ausgewogenere Benutzererfahrung zu verbessern, während eine Kompatibilität mit offiziellen Servern für die beste Spielerzahl beibehalten wird.</German>
+            <Italian>Warlords Redux 2.5 è un progetto di upgrade comunitario per l'originale Warlords Redux. Il suo obiettivo è migliorare la visione di BI di Warlords con correzioni di bug e un'esperienza utente più equilibrata mantenendo la compatibilità con i server ufficiali per il miglior numero di giocatori.</Italian>
+            <Polish>Warlords Redux 2.5 jest projektem aktualizacji społeczności dla oryginalnego Warlords Redux. Celem projektu jest poprawa wizji BI w Warlords z poprawkami błędów i bardziej wyrównaną jakością doświadczenia użytkownika, przy jednoczesnej zgodności z oficjalnymi serwerami dla najlepszej liczby graczy.</Polish>
+            <Portuguese>Warlords Redux 2.5 é um projeto de atualização da comunidade para o Warlords Redux original. O objetivo do projeto é melhorar a visão do BI de warlords com correções de bugs e uma experiência de usuário mais equilibrada, mantendo a compatibilidade com os servidores oficiais para o melhor número de jogadores.</Portuguese>
+            <Russian>Warlords Redux 2.5 - это проект обновления сообщества для Оригинального Warlords Redux. Цель проекта - улучшить видение BI военачальников с исправлением ошибок и более сбалансированным пользовательским опытом, при этом оставаясь совместимым с официальными серверами для лучшего количества игроков.</Russian>
+            <Spanish>Warlords Redux 2.5 es un proyecto de actualización de la comunidad para Warlords Redux original. Su objetivo de proyecto es mejorar la visión de BI de warlords con correcciones de errores y una experiencia de usuario más equilibrada, manteniendo la compatibilidad con los servidores oficiales para el mejor número de jugadores.</Spanish>
+            <Korean>Warlords Redux 2.5는 원래 Warlords Redux의 커뮤니티 업그레이드 프로젝트입니다. 그것의 프로젝트 목표는 버그 수정과 더 밸런스 있는 사용자 경험을 통해 Warlords의 BI 비전을 개선하면서도 공식 서버와 호환 가능한 최고 플레이어 수를 유지하는 것입니다.</Korean>
+            <Japanese>Warlords Redux 2.5は元のWarlords Reduxのコミュニティアップグレードプロジェクトです。そのプロジェクトの目的はバグの修正とよりバランスのとれたユーザーエクスペリエンスを通じてWarlordsのBIのビジョンを改善することであり、公式サーバとの互換性を維持しながら最高のプレイヤー数を確保することです。</Japanese>
+            <Chinesesimp>Warlords Redux 2.5是原始Warlords Redux的社区升级项目。它的目标是通过修复错误并提供更平衡的用户体验，在保持与官方服务器的兼容性的同时改进BI对Warlords的视野。</Chinesesimp>
+            <Chinese>Warlords Redux 2.5是原始Warlords Redux的社区升级项目。它的项目目标是通过修复错误并获得更平衡的用户体验来改进BI对Warlords的愿景，同时仍然与官方服务器兼容以获得最佳玩家数量。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_09">
+            <Original>Warlords Redux introduces a lot of new features like Fog of War and random base locations. It has a lot of other new features compared to vanilla warlords like: random base locations, custom aircraft pylons, introduction of all drones/ SAM's/ AAA...</Original>
+            <English>Warlords Redux introduces many new features like Fog of War and random base locations. It has many other new features compared to vanilla warlords such as random base locations, custom aircraft pylons, and the introduction of all drones/SAMs/AAA...</English>
+            <Czech>Warlords Redux přináší mnoho nových funkcí, jako je Mlha války a náhodná umístění základen. Má mnoho dalších nových funkcí ve srovnání s vanilkovými Warlordy, jako jsou náhodná umístění základen, vlastní pylony letadel a úvod všech bezpilotních letadel/SAM/AAA...</Czech>
+            <French>Warlords Redux introduit de nombreuses nouvelles fonctionnalités telles que le brouillard de guerre et les emplacements de bases aléatoires. Il a de nombreuses autres nouvelles fonctionnalités par rapport aux Warlords d'origine, telles que les emplacements de bases aléatoires, les pylônes d'aéronefs personnalisés et l'introduction de tous les drones/SAM/AAA...</French>
+            <German>Warlords Redux führt viele neue Funktionen wie den Nebel des Krieges und zufällige Basislagen ein. Es hat viele andere neue Funktionen im Vergleich zu den ursprünglichen Warlords wie zufällige Basislagen, benutzerdefinierte Flugzeugpylone und die Einführung aller Drohnen/SAMs/AAA...</German>
+            <Italian>Warlords Redux introduce molte nuove funzionalità come la Nebbia di Guerra e le posizioni di base casuali. Ha molte altre nuove funzionalità rispetto ai Warlord originali, come posizioni di base casuali, pattini per aerei personalizzati e l'introduzione di tutti i droni/SAM/AAA...</Italian>
+            <Polish>Warlords Redux wprowadza wiele nowych funkcji, takich jak Mgła Wojny i losowe lokalizacje baz. Ma wiele innych nowych funkcji w porównaniu z warlordami vanilla, takich jak losowe lokalizacje baz, niestandardowe pylony samolotów i wprowadzenie wszystkich bezzałogowych samolotów/SAM/AAA...</Polish>
+            <Portuguese>Warlords Redux apresenta muitos novos recursos, como a Névoa da Guerra e localizações de base aleatórias. Possui muitos outros recursos novos em comparação com o Warlords original, como localizações de base aleatórias, pás de aeronaves personalizadas e a introdução de todos os drones/SAMs/AAA...</Portuguese>
+            <Russian>Warlords Redux внедряет много новых функций, таких как Туман войны и случайные местоположения баз. Он имеет много других новых функций по сравнению со стандартным Warlords, таких как случайные местоположения баз, персонализированные подвески самолетов и введение всех дронов/SAM/AAA...</Russian>
+            <Spanish>Warlords Redux introduce muchas nuevas funciones como la Niebla de Guerra y ubicaciones de base aleatorias. Tiene muchas otras funciones nuevas en comparación con Warlords clásico, como ubicaciones de base aleatorias, pórticos de aeronaves personalizados y la introducción de todos los drones/SAMs/AAA...</Spanish>
+            <Korean>Warlords Redux은 흐림의 전장과 무작위 기지 위치 등 많은 새로운 기능을 소개합니다. 베이니실 워로드와 비교했을 때 무작위 기지 위치, 사용자 정의 항공기 피렌, 모든 드론/SAM/AAA 소개 등의 많은 다른 새로운 기능이 있습니다.</Korean>
+            <Japanese>Warlords Reduxは、「霧の戦場」や「ランダムな基地の位置」など多くの新しい機能を導入しています。バニラのWarlordsと比較すると、ランダムな基地の位置、カスタム航空機パイロン、すべてのドローン/SAM/AAAの導入など、多くの他の新しい機能があります。</Japanese>
+            <Chinesesimp>Warlords Redux引入了许多新功能，如雾战和随机基地位置。与香草Warlords相比，它还有许多其他新功能，如随机基地位置、自定义飞机悬挂点、所有无人机/SAM/AAA的引入等。</Chinesesimp>
+            <Chinese>Warlords Redux引入了很多新功能，如迷雾战争和随机基地位置。与香草战争者相比，它还有很多其他新功能，如随机基地位置、定制飞机架和所有无人机/ SAM/ AAA的引入...</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_10">
+            <Original>In these video's you can see a detailed guide on how to play warlords redux:</Original>
+            <English>In these videos you can see a detailed guide on how to play Warlords Redux.</English>
+            <Czech>V těchto videích můžete vidět podrobný návod, jak hrát Warlords Redux.</Czech>
+            <French>Dans ces vidéos, vous pouvez voir un guide détaillé sur comment jouer à Warlords Redux.</French>
+            <German>In diesen Videos können Sie eine ausführliche Anleitung zum Spielen von Warlords Redux sehen.</German>
+            <Italian>In questi video puoi vedere una guida dettagliata su come giocare a Warlords Redux.</Italian>
+            <Polish>W tych filmach można zobaczyć szczegółowy przewodnik dotyczący gry w Warlords Redux.</Polish>
+            <Portuguese>Nesses vídeos você pode ver um guia detalhado de como jogar Warlords Redux.</Portuguese>
+            <Russian>В этих видео вы можете увидеть подробное руководство по игре Warlords Redux.</Russian>
+            <Spanish>En estos videos puedes ver una guía detallada de cómo jugar a Warlords Redux.</Spanish>
+            <Korean>이 비디오에서는 Warlords Redux를 어떻게 하는지에 대한 상세한 안내를 볼 수 있습니다.</Korean>
+            <Japanese>これらのビデオではWarlords Reduxをどのようにプレイするかの詳細なガイドが見られます。</Japanese>
+            <Chinesesimp>在这些视频中，您可以看到关于如何玩Warlords Redux的详细指南。</Chinesesimp>
+            <Chinese>在這些視頻中，您可以看到有關如何玩Warlords Redux的詳細指南。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_11">
+            <Original>Keybinds:</Original>
+            <English>Keybinds:</English>
+            <Czech>Klávesové zkratky:</Czech>
+            <French>Raccourcis clavier :</French>
+            <German>Tastenkombinationen:</German>
+            <Italian>Tasti di scelta rapida:</Italian>
+            <Polish>Skróty klawiszowe:</Polish>
+            <Portuguese>Atalhos de teclado:</Portuguese>
+            <Russian>Горячие клавиши:</Russian>
+            <Spanish>Atajos de teclado:</Spanish>
+            <Korean>키바인드:</Korean>
+            <Japanese>キーバインド:</Japanese>
+            <Chinesesimp>快捷键：</Chinesesimp>
+            <Chinese>快捷键：</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_12">
+            <Original>Hold %1 - Opens the Warlords Menu.</Original>
+            <English>Hold %1 - Opens the Warlords Menu.</English>
+            <Czech>Držet %1 - Otevře menu Warlordů.</Czech>
+            <French>Maintenir %1 - Ouvre le menu des Warlords.</French>
+            <German>Halten Sie %1 - Öffnet das Warlords-Menü.</German>
+            <Italian>Tenere premuto %1 - Apre il menu dei Warlord.</Italian>
+            <Polish>Przytrzymaj %1 - Otwiera menu Warlordów.</Polish>
+            <Portuguese>Segurar %1 - Abre o menu dos Warlords.</Portuguese>
+            <Russian>Удерживать %1 - Открывает меню Warlords.</Russian>
+            <Spanish>Mantener presionado %1 - Abre el menú de Warlords.</Spanish>
+            <Korean>%1 누르고 있기 - Warlords 메뉴 열기.</Korean>
+            <Japanese>%1を保持 - Warlordsメニューを開きます。</Japanese>
+            <Chinesesimp>按住%1 - 打开Warlords菜单。</Chinesesimp>
+            <Chinese>按住%1 - 打开Warlords菜单。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_13">
+            <Original>Press INSERT - To insert your earplugs.</Original>
+            <English>Press INSERT - To insert your earplugs.</English>
+            <Czech>Stiskněte INSERT - Pro vložení svých špuntů do uší.</Czech>
+            <French>Appuyez sur INSERT - Pour insérer vos bouchons d'oreille.</French>
+            <German>Drücken Sie INSERT - Um Ihre Ohrstöpsel einzufügen.</German>
+            <Italian>Premere INSERT - Per inserire i tappi per le orecchie.</Italian>
+            <Polish>Naciśnij INSERT - Aby włożyć wkładki do uszu.</Polish>
+            <Portuguese>Pressione INSERT - Para inserir seus protetores de ouvido.</Portuguese>
+            <Russian>Нажмите INSERT - Чтобы вставить свои наушники.</Russian>
+            <Spanish>Presiona INSERT - Para insertar tus tapones para los oídos.</Spanish>
+            <Korean>삽입 누름 - 귀 플러그를 삽입하십시오.</Korean>
+            <Japanese>挿入を押す - 耳栓を挿入します。</Japanese>
+            <Chinesesimp>插入 - 插入耳塞。</Chinesesimp>
+            <Chinese>按插入 - 插入耳塞。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_14">
+            <Original>CTRL + G - Shows your APS in the chat.</Original>
+            <English>CTRL + G - Shows your APS in the chat.</English>
+            <Czech>CTRL + G - Zobrazuje vaše APS v chatu.</Czech>
+            <French>CTRL + G - Affiche votre APS dans le chat.</French>
+            <German>CTRL + G - Zeigt Ihre APS im Chat an.</German>
+            <Italian>CTRL + G - Mostra il tuo APS nella chat.</Italian>
+            <Polish>CTRL + G - Pokazuje twoje APS na czacie.</Polish>
+            <Portuguese>CTRL + G - Mostra sua APS no chat.</Portuguese>
+            <Russian>CTRL + G - Показывает вашу APS в чате.</Russian>
+            <Spanish>CTRL + G - Muestra tu APS en el chat.</Spanish>
+            <Korean>CTRL + G - 채팅에서 APS를 표시합니다.</Korean>
+            <Japanese>CTRL + G - チャットにAPSを表示します。</Japanese>
+            <Chinesesimp>CTRL + G - 在聊天中显示你的APS。</Chinesesimp>
+            <Chinese>CTRL + G - 在聊天中显示你的APS。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_15">
+            <Original>The War Sim Vets community organizes arma 3 events and works on the Warlords Redux project know as EU#11.</Original>
+            <English>The War Sim Vets community organizes arma 3 events and works on the Warlords Redux project know as EU#11.</English>
+            <Czech>Komunita War Sim Vets organizuje akce v rámci hry Arma 3 a pracuje na projektu Warlords Redux známém jako EU#11.</Czech>
+            <French>La communauté War Sim Vets organise des événements Arma 3 et travaille sur le projet Warlords Redux connu sous le nom de EU#11.</French>
+            <German>Die War Sim Vets Community organisiert Arma 3-Veranstaltungen und arbeitet an dem Warlords Redux-Projekt, das als EU#11 bekannt ist.</German>
+            <Italian>La comunità War Sim Vets organizza eventi di Arma 3 e lavora sul progetto Warlords Redux conosciuto come EU#11.</Italian>
+            <Polish>Społeczność War Sim Vets organizuje wydarzenia Arma 3 i pracuje nad projektem Warlords Redux znanym jako EU#11.</Polish>
+            <Portuguese>A comunidade War Sim Vets organiza eventos Arma 3 e trabalha no projeto Warlords Redux conhecido como EU#11.</Portuguese>
+            <Russian>Сообщество War Sim Vets организует события в Arma 3 и работает над проектом Warlords Redux, известным как EU#11.</Russian>
+            <Spanish>La comunidad War Sim Vets organiza eventos de Arma 3 y trabaja en el proyecto Warlords Redux conocido como EU#11.</Spanish>
+            <Korean>War Sim Vets 커뮤니티는 Arma 3 이벤트를 조직하고 EU#11으로 알려진 Warlords Redux 프로젝트에 참여합니다.</Korean>
+            <Japanese>War Sim VetsコミュニティはArma 3のイベントを開催し、EU#11として知られるWarlords Reduxプロジェクトに取り組んでいます。</Japanese>
+            <Chinesesimp>War Sim Vets社区组织Arma 3活动，并参与以EU＃11为代号的Warlords Redux项目。</Chinesesimp>
+            <Chinese>War Sim Vets社区组织Arma 3活动，并参与以EU＃11为代号的Warlords Redux项目。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_16">
+            <Original>Project Managers:</Original>
+            <English>Project Managers:</English>
+            <Czech>Správci projektu:</Czech>
+            <French>Gestionnaires de projet:</French>
+            <German>Projektmanager:</German>
+            <Italian>Responsabili del progetto:</Italian>
+            <Polish>Menedżerowie projektu:</Polish>
+            <Portuguese>Gerentes de Projeto:</Portuguese>
+            <Russian>Менеджеры проекта:</Russian>
+            <Spanish>Gerentes de Proyecto:</Spanish>
+            <Korean>프로젝트 관리자:</Korean>
+            <Japanese>プロジェクトマネージャー:</Japanese>
+            <Chinesesimp>项目经理：</Chinesesimp>
+            <Chinese>項目經理：</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_17">
+            <Original>Developers:</Original>
+            <English>Developers:</English>
+            <Czech>Vývojáři:</Czech>
+            <French>Développeurs:</French>
+            <German>Entwickler:</German>
+            <Italian>Sviluppatori:</Italian>
+            <Polish>Programiści:</Polish>
+            <Portuguese>Desenvolvedores:</Portuguese>
+            <Russian>Разработчики:</Russian>
+            <Spanish>Desarrolladores:</Spanish>
+            <Korean>개발자:</Korean>
+            <Japanese>開発者:</Japanese>
+            <Chinesesimp>开发人员：</Chinesesimp>
+            <Chinese>開發人員：</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_18">
+            <Original>Admins: (Events)</Original>
+            <English>Admins: (Events)</English>
+            <Czech>Správci: (Události)</Czech>
+            <French>Administrateurs: (Evénements)</French>
+            <German>Administratoren: (Veranstaltungen)</German>
+            <Italian>Amministratori: (Eventi)</Italian>
+            <Polish>Administratorzy: (Wydarzenia)</Polish>
+            <Portuguese>Administradores: (Eventos)</Portuguese>
+            <Russian>Администраторы: (Мероприятия)</Russian>
+            <Spanish>Administradores: (Eventos)</Spanish>
+            <Korean>관리자: (이벤트)</Korean>
+            <Japanese>管理者：（イベント）</Japanese>
+            <Chinesesimp>管理员：（事件）</Chinesesimp>
+            <Chinese>管理员：（活动）</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_19">
+            <Original>Join our discord to stay notified of Warlords Redux updates and events.</Original>
+            <English>Join our discord to stay notified of Warlords Redux updates and events.</English>
+            <Czech>Připojte se k našemu discordu, abyste byli informováni o aktualizacích a událostech Warlords Redux.</Czech>
+            <French>Rejoignez notre discord pour être informé des mises à jour et des événements Warlords Redux.</French>
+            <German>Trete unserem Discord bei, um über Warlords Redux-Updates und Veranstaltungen informiert zu bleiben.</German>
+            <Italian>Unisciti al nostro discord per rimanere informato sulle aggiornamenti e gli eventi di Warlords Redux.</Italian>
+            <Polish>Dołącz do naszego discorda, aby być powiadomionym o aktualizacjach i wydarzeniach Warlords Redux.</Polish>
+            <Portuguese>Junte-se ao nosso discord para ficar informado sobre atualizações e eventos do Warlords Redux.</Portuguese>
+            <Russian>Присоединяйтесь к нашему discord, чтобы быть в курсе обновлений и событий Warlords Redux.</Russian>
+            <Spanish>Únete a nuestro discord para estar informado de las actualizaciones y eventos de Warlords Redux.</Spanish>
+            <Korean>Warlords Redux 업데이트와 이벤트에 대한 알림을 받으려면 discord에 가입하세요.</Korean>
+            <Japanese>Warlords Redux のアップデートとイベントに関する通知を受け取るために私たちの discord に参加してください。</Japanese>
+            <Chinesesimp>加入我们的discord以保持对Warlords Redux更新和事件的通知。</Chinesesimp>
+            <Chinese>加入我們的discord以保持對Warlords Redux更新和事件的通知。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_20">
+            <Original>In our discord you can also suggest new stuff or report bugs.</Original>
+            <English>In our discord you can also suggest new stuff or report bugs.</English>
+            <Czech>V našem discordu můžete také navrhovat nové věci nebo hlásit chyby.</Czech>
+            <French>Sur notre discord, vous pouvez également suggérer de nouvelles choses ou signaler des bugs.</French>
+            <German>In unserem Discord kannst du auch neue Dinge vorschlagen oder Fehler melden.</German>
+            <Italian>Nel nostro discord puoi anche suggerire nuove cose o segnalare bug.</Italian>
+            <Polish>W naszym discordzie możesz również sugerować nowe rzeczy lub zgłaszać błędy.</Polish>
+            <Portuguese>No nosso discord, você também pode sugerir novas coisas ou relatar bugs.</Portuguese>
+            <Russian>В нашем discord вы также можете предложить новые вещи или сообщить об ошибках.</Russian>
+            <Spanish>En nuestro discord también puedes sugerir nuevas cosas o informar sobre errores.</Spanish>
+            <Korean>우리의 디스코드에서는 새로운 것을 제안하거나 버그를 보고할 수 있습니다.</Korean>
+            <Japanese>私たちの discord では、新しいものを提案するか、バグを報告することもできます。</Japanese>
+            <Chinesesimp>在我们的 discord 中，您也可以建议新东西或报告错误。</Chinesesimp>
+            <Chinese>在我们的 discord 中，您也可以建议新东西或报告错误。</Chinese>
+        </Key>
+        <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
         </Key>
     </Container>
 </Project>

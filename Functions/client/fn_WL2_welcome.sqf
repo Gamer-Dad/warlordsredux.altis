@@ -6,20 +6,6 @@ howRead = false;
 
 ctrlShow [696991, false];
 
-//Language selector
-_eng = lbAdd [69699, "English"];
-_russ = lbAdd [69699, "Русский"];
-
-if (language == "Russian") then {
-	lbSetCurSel [69699, _russ];
-} else {
-	lbSetCurSel [69699, _eng];
-};
-
-//Language selector Data
-lbSetData [69699, _eng, "langEnglish"];
-lbSetData [69699, _russ, "langRussian"];	
-
 if (side player == west) then {
 	private _control1 = findDisplay 6969 displayCtrl 69692;
 	_control1 ctrlSetTextColor [0,0.3,0.5,1];
@@ -58,15 +44,6 @@ while {dialog} do {
 	_index = lbCurSel 69695;
 	_curSel = lbData [69695, _index];
 
-	indexLang = lbCurSel 69699;
-	curSelLang = lbData [69699, indexLang];
-
-	if (curSelLang == "langEnglish") then {
-		ctrlSetText [696990, "img\flagAmerican.paa"];
-	} else {
-		ctrlSetText [696990, "img\flagRussian.paa"];
-	};
-
 	lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
 	lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
 	lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
@@ -78,154 +55,81 @@ while {dialog} do {
 
 	switch (_curSel) do {
 		case "pageAbt": {
-			if (curSelLang == "langEnglish") then {
-				ctrlSetText [69694, "img\wl_logo_ca.paa"];
+			ctrlSetText [69694, "img\wl_logo_ca.paa"];
 
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText [
-				localize "STR_MRTM_welcome", lineBreak,
-				"", lineBreak,
-				"Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.", lineBreak,
-				"", lineBreak,
-				"Warlords Redux introduces a lot of new features like Fog of War and random base locations. It has alot of other new features compared to vanilla warlords like: random base locations, custom aircraft pylons, introduction of all drones/ SAM's/ AAA...", lineBreak,
-				"", lineBreak,
-				""
-				];
-			} else {
-				ctrlSetText [69694, "img\wl_logo_ca.paa"];
-
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText [
-				localize "STR_MRTM_welcome", lineBreak,
-				"", lineBreak,
-				"Warlords Redux 2.5 — это проект сообщества по обновлению оригинальной Warlords Redux. Цель проекта — улучшить BI-видение военачальников c помощью исправлений ошибок и более сбалансированного взаимодействия c пользователем, сохраняя при этом совместимость c официальными серверами для наибольшего количества игроков.", lineBreak,
-				"", lineBreak,
-				"Warlords Redux представляет множество новых функций, таких как туман войны и случайные местоположения базы. Он имеет много других новых функций по сравнению c ванильными военачальниками, такими как: случайное расположение баз, пользовательские пилоны самолетов, введение всех дронов / BPK / AAA ...", lineBreak,
-				"", lineBreak,
-				""
-				];	
-			};
+			private _control = findDisplay 6969 displayCtrl 69696;
+			_control ctrlSetStructuredText composeText [
+			localize "STR_MRTM_welcomeInteract_07", lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_08", lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_09", lineBreak,
+			"", lineBreak,
+			""
+			];
 		};
 
 		case "pageHow": {
 			howRead = true;
-			if (curSelLang == "langEnglish") then {
-				ctrlSetText [69694, "img\wl.paa"];
+			ctrlSetText [69694, "img\wl.paa"];
 
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText ["How to play.", lineBreak, 
-				"", lineBreak,
-				parseText format ["In these video's you can see a detailed guide on how to play warlords redux:"], lineBreak,
-				parseText format ["<a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Walords Redux Guide from GamerDad</a>"], lineBreak,
-				parseText format ["<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Walords Redux Guide from Ferrous Creek</a>"], lineBreak,
-				"", lineBreak,
-				"Keybinds:", lineBreak,
-				format ["Hold %1 - Opens the Warlords Menu.", inventoryKey], lineBreak,
-				"Press INSERT - To insert your earplugs.", lineBreak,
-				"CTRL + G - Shows your APS in the chat.", lineBreak,
-				""
-				];
-			} else {
-				ctrlSetText [69694, "img\wl.paa"];
-
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText ["Как играть.", lineBreak, 
-				"", lineBreak,
-				parseText format ["B этом видео вы можете увидеть подробный гайд как играть в Warlords Redux: <a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Руководство по Walords Redux</a>"], lineBreak,
-				"", lineBreak,
-				"Связки клавиш:", lineBreak,
-				format ["Держать %1 - Открывает меню Warlords.", inventoryKey], lineBreak,
-				"Нажимать INSERT - Чтобы вставить беруши.", lineBreak,
-				"CTRL + G - Показывает ваш APS в чате.", lineBreak,
-				""
-				];			
-			};
+			private _control = findDisplay 6969 displayCtrl 69696;
+			_control ctrlSetStructuredText composeText [
+			localize "STR_MRTM_welcomeInteract_02", lineBreak, 
+			"", lineBreak,
+			parseText format [localize "STR_MRTM_welcomeInteract_10"], lineBreak,
+			parseText format ["<a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Walords Redux Guide from GamerDad</a>"], lineBreak,
+			parseText format ["<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Walords Redux Guide from Ferrous Creek</a>"], lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_11", lineBreak,
+			format [ localize "STR_MRTM_welcomeInteract_12", inventoryKey], lineBreak,
+			localize "STR_MRTM_welcomeInteract_13", lineBreak,
+			localize "STR_MRTM_welcomeInteract_14", lineBreak,
+			""
+			];
 		};
 
 		case "theCom": { 
-			if (curSelLang == "langEnglish") then {
-				ctrlSetText [69694, "img\sniper.paa"];
+			ctrlSetText [69694, "img\sniper.paa"];
 
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText [
-				"The WSV Community", lineBreak, 
-				"", lineBreak,
-				"The War Sim Vets community organizes arma 3 events and works on the Warlords Redux project know as EU#11.", lineBreak,
-				"", lineBreak,
-				"Project Managers:", lineBreak,
-				"- Gamerdad", lineBreak,
-				"- TenPenny", lineBreak,
-				"- Dwarden", lineBreak,
-				"", lineBreak,
-				"Developers:", lineBreak,
-				"- MrThomasM", lineBreak,
-				"- Tin", lineBreak,
-				"- ★ 爪卂尺ﾉﾉ ★", lineBreak,
-				"", lineBreak,
-				"Admins: (Events)", lineBreak,
-				"- Witch Doctor", lineBreak,
-				"- Coffee", lineBreak,
-				"- JWalker08", lineBreak,
-				"- [POLAND] Grom Soldier", lineBreak,
-				"- Iron", lineBreak,
-				""
-				];
-			} else {
-				ctrlSetText [69694, "img\sniper.paa"];
-
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText [
-				"Сообщество WSV", lineBreak, 
-				"", lineBreak,
-				"Сообщество War Sim Vets организует мероприятия Arma 3 и работает над проектом Warlords Redux, известным как EU#11.", lineBreak,
-				"", lineBreak,
-				"Менеджеры проекта:", lineBreak,
-				"- Gamerdad", lineBreak,
-				"- TenPenny", lineBreak,
-				"- Dwarden", lineBreak,
-				"", lineBreak,
-				"Разработчики:", lineBreak,
-				"- MrThomasM", lineBreak,
-				"- Tin", lineBreak,
-				"- ★ 爪卂尺ﾉﾉ ★", lineBreak,
-				"", lineBreak,
-				"Админы: (События)", lineBreak,
-				"- Witch Doctor", lineBreak,
-				"- Coffee", lineBreak,
-				"- JWalker08", lineBreak,
-				"- [POLAND] Grom Soldier", lineBreak,
-				"- Iron", lineBreak,
-				""
-				];
-			};
+			private _control = findDisplay 6969 displayCtrl 69696;
+			_control ctrlSetStructuredText composeText [
+			localize "STR_MRTM_welcomeInteract_03", lineBreak, 
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_15", lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_16", lineBreak,
+			"- Gamerdad", lineBreak,
+			"- TenPenny", lineBreak,
+			"- Dwarden", lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_17", lineBreak,
+			"- MrThomasM", lineBreak,
+			"- Tin", lineBreak,
+			"- 爪卂尺ﾉﾉ", lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_18", lineBreak,
+			"- Witch Doctor", lineBreak,
+			"- Coffee", lineBreak,
+			"- JWalker08", lineBreak,
+			"- [POLAND] Grom Soldier", lineBreak,
+			"- Iron", lineBreak,
+			""
+			];
 		};
 
 		case "discord": { 
-			if (curSelLang == "langEnglish") then {
-				ctrlSetText [69694, "img\wasp.paa"];
+			ctrlSetText [69694, "img\wasp.paa"];
 
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText [
-				"Our discord", lineBreak,
-				"", lineBreak, 
-				"Join our discord to stay notified of Warlords Redux updates and events.", lineBreak,
-				"In our discord you can also suggest new stuff or report bugs.", lineBreak,
-				"", lineBreak, 
-				parseText "<a href='https://discord.gg/grmzsZE4ua'>Our Discord</a>"
-				];
-			} else {
-				ctrlSetText [69694, "img\wasp.paa"];
-
-				private _control = findDisplay 6969 displayCtrl 69696;
-				_control ctrlSetStructuredText composeText [
-				"Наш discord", lineBreak,
-				"", lineBreak, 
-				"Присоединяйтесь к нашему discord чтобы получать уведомления o6 обновлениях и событиях Warlords Redux.", lineBreak,
-				"B нашем discord вы также можете предлагать новые материалы или сообщать o6 ошибках.", lineBreak,
-				"", lineBreak, 				
-				parseText "<a href='https://discord.gg/grmzsZE4ua'>Наш Discord</a>"
-				];
-			};
+			private _control = findDisplay 6969 displayCtrl 69696;
+			_control ctrlSetStructuredText composeText [
+			localize "STR_MRTM_welcomeInteract_04", lineBreak,
+			"", lineBreak, 
+			localize "STR_MRTM_welcomeInteract_19", lineBreak,
+			localize "STR_MRTM_welcomeInteract_20", lineBreak,
+			"", lineBreak, 
+			parseText "<a href='https://discord.gg/grmzsZE4ua'>Discord.</a>"
+			];
 		};
 
 		case "changelog": {
