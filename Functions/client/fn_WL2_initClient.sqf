@@ -273,3 +273,45 @@ sleep 1;
 
 player addAction ["Get 20k CP", {[player, 20000] call BIS_fnc_WL2_fundsControl}];
 
+waituntil {!isnull (findDisplay 12)};
+
+if (side player == west) then {
+	((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
+		{
+		private _truck = _x;
+		(_this select 0) drawIcon [
+			getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
+			[0,0.3,0.6,1],
+			ASLToAGL getPosASL _truck,
+			15,
+			15,
+			direction _truck,
+			"Fast travel vehicle",
+			1,
+			WL_MAP_FONT_SIZE,
+			"RobotoCondensed",
+			"right"
+		]; 
+		} forEach entities "B_Truck_01_medical_F";
+	}];
+} else {
+	((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
+		{
+		private _truck = _x;
+		(_this select 0) drawIcon [
+			getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
+			[0.5,0,0,1],
+			ASLToAGL getPosASL _truck,
+			15,
+			15,
+			direction _truck,
+			"Fast travel vehicle",
+			1,
+			WL_MAP_FONT_SIZE,
+			"RobotoCondensed",
+			"right"
+		]; 
+		} forEach entities "O_Truck_02_medical_F";
+	}];
+};
+

@@ -1,15 +1,15 @@
 private["_v","_i","_p","_d","_ex","_id","_rd"];
-_v=_this select 0;
-_i=_this select 1;
-_d=_v distance _i;
+private _v=_this select 0;
+private _i=_this select 1;
+private _d=_v distance _i;
 if(_d<20)exitWith{};
 if((typeOf _i)in dapsExcludedAmmo)exitWith{};
 sleep 0.001;
 if ((_v distance _i)>_d)exitWith{};
 if((getNumber(configFile>>"CfgAmmo">>typeOf _i>>"hit"))>5000)exitWith{};
-_p=getPosATL _i;
-_id=getDir _i;
-_rd=[_id,_v]call DAPS_fnc_RelDir2;
+private _p=getPosATL _i;
+private _id=getDir _i;
+private _rd=[_id,_v]call DAPS_fnc_RelDir2;
 [_v,_id,_p,_i]call DAPS_fnc_React;
 _ex=TRUE;
 while{TRUE}do{
@@ -22,10 +22,8 @@ while{TRUE}do{
 };
 if!(alive _v)exitWith{};
 if!(_ex)exitWith{};
-//_p=getPosATL _i;
 deleteVehicle _i;
-//_p remoteExec["DAPS_fnc_Blast"];
 _p call DAPS_fnc_Blast;
 _a=_v getVariable"dapsAmmo";
-[_v,_s,_a]call DAPS_fnc_DeductAmmo;
-[_v,_s,_rd,TRUE]remoteExec["DAPS_fnc_Report"];
+[_v,"",_a]call DAPS_fnc_DeductAmmo;
+[_v,"",_rd,TRUE]remoteExec["DAPS_fnc_Report"];
