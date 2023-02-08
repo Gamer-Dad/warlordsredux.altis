@@ -658,6 +658,22 @@
             <Chinesesimp>%1捐赠了%3CP给%2。</Chinesesimp>
             <Chinese>%1捐贈了%3CP給%2。</Chinese>
         </Key>   
+        <Key ID="STR_A3_WL_info_unavailable">
+            <Original>Unavailable.</Original>
+            <English>Unavailable</English>
+            <Czech>Není k dispozici.</Czech>
+            <French>Indisponible.</French>
+            <German>Nicht verfügbar.</German>
+            <Italian>Non disponibile.</Italian>
+            <Polish>Niedostępne.</Polish>
+            <Portuguese>Indisponível.</Portuguese>
+            <Russian>Недоступен.</Russian>
+            <Spanish>Indisponible.</Spanish>
+            <Korean>없는.</Korean>
+            <Japanese>利用できません。</Japanese>
+            <Chinesesimp>不可用。</Chinesesimp>
+            <Chinese>不可用。</Chinese>
+        </Key> 
     </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
