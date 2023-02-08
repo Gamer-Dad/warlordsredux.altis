@@ -186,6 +186,7 @@ _strategyArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_a
 _strategyArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_unlock_all"];
 _strategyArr pushBack ["RespawnVic", 700, [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
 _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_ft", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_ft"];
+_strategyArr pushBack ["Surrender", 0, [], localize "STR_A3_WL_surrender", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_surrender_info"];
 _strategyArr pushBack ["welcomeScreen", 0, [], localize "STR_A3_WL_infoScreen", "img\wl_logo_ca.paa", localize "STR_A3_WL_infoScreen"];
 _sortedArray pushBack _strategyArr;
 
