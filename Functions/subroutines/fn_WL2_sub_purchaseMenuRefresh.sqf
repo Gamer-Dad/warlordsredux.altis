@@ -152,18 +152,29 @@ if (count _assetDetails > 0) then {
 			_purchase_drop_sector ctrlSetTextColor [0.5, 0.5, 0.5, 1];
 		};
 		if (_funds >= BIS_WL_dropCost_far && BIS_WL_vehsInBasket == ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool) && ctrlEnabled _purchase_request) then {
-			uiNamespace setVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", TRUE];
-			_purchase_drop_player ctrlSetTooltip format ["%1%4: %2 %3", localize "STR_A3_WL_menu_cost", BIS_WL_dropCost_far, localize "STR_A3_WL_unit_cp", if (toLower language == "french") then {" "} else {""}];
-			if !(uiNamespace getVariable ["BIS_WL_purchaseMenuButtonDropPlayerHover", FALSE]) then {
-				_purchase_drop_player ctrlSetBackgroundColor _color;
-				_purchase_drop_player ctrlSetTextColor [1, 1, 1, 1];
+			if (BIS_WL_matesInBasket == count BIS_WL_dropPool) then {
+				uiNamespace setVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", TRUE];
+				_purchase_drop_player ctrlSetTooltip format ["%1%4: %2 %3", localize "STR_A3_WL_menu_cost", BIS_WL_dropCost_far, localize "STR_A3_WL_unit_cp", if (toLower language == "french") then {" "} else {""}];
+				if !(uiNamespace getVariable ["BIS_WL_purchaseMenuButtonDropPlayerHover", FALSE]) then {
+					_purchase_drop_player ctrlSetBackgroundColor _color;
+					_purchase_drop_player ctrlSetTextColor [1, 1, 1, 1];
+				};
+			} else {
+				uiNamespace setVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE];
+				if (BIS_WL_vehsInBasket != ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool)) then {
+					_purchase_drop_player ctrlSetTooltip localize "STR_A3_WL_info_vehs_in_basket";
+				} else {
+					_purchase_drop_player ctrlSetTooltip localize "STR_A3_WL_info_unavailable";
+				};
+				_purchase_drop_player ctrlSetBackgroundColor [(_color # 0) * 0.5, (_color # 1) * 0.5, (_color # 2) * 0.5, _color # 3];
+				_purchase_drop_player ctrlSetTextColor [0.5, 0.5, 0.5, 1];				
 			};
 		} else {
 			uiNamespace setVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE];
 			if (BIS_WL_vehsInBasket != ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool)) then {
 				_purchase_drop_player ctrlSetTooltip localize "STR_A3_WL_info_vehs_in_basket";
 			} else {
-				_purchase_drop_player ctrlSetTooltip format ["%1%4: %2 %3", localize "STR_A3_WL_menu_cost", BIS_WL_dropCost_far, localize "STR_A3_WL_unit_cp", if (toLower language == "french") then {" "} else {""}];
+				_purchase_drop_player ctrlSetTooltip localize "STR_A3_WL_info_unavailable";
 			};
 			_purchase_drop_player ctrlSetBackgroundColor [(_color # 0) * 0.5, (_color # 1) * 0.5, (_color # 2) * 0.5, _color # 3];
 			_purchase_drop_player ctrlSetTextColor [0.5, 0.5, 0.5, 1];
