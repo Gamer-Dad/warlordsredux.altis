@@ -66,6 +66,14 @@ if (_ret) then {
 			private _ftVehicle = if (_sideP == west) then {missionNamespace getVariable "ftVehicleExistsBlu"} else {missionNamespace getVariable "ftVehicleExistsOpf"};
 			if (_ftVehicle == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 		};
+		case "Surrender": {
+			private _sideP =  side player;
+			if (_sideP == west) then {
+				if !(playersNumber west >= 5) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_surrender_restr"};
+			} else {
+				if !(playersNumber east >= 5) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_surrender_restr"};
+			};
+		};
 		default {
 			_servicesAvailable = BIS_WL_sectorsArray # 5;
 			_vehiclesCnt = count WL_PLAYER_VEHS;

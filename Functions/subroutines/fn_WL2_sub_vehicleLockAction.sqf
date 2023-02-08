@@ -18,7 +18,7 @@ private _actionID = _asset addAction [
 	FALSE,
 	"",
 	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerGrp', grpNull])",
-	95,
+	94,
 	TRUE
 ];
 

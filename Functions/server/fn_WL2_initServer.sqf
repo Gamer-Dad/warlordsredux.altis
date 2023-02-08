@@ -187,3 +187,11 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
+
+[] spawn {
+	while {true} do {
+		sleep 600;
+		missionNamespace setVariable ["bluSurrenders", 0, true];
+		missionNamespace setVariable ["opfSurrenders", 0, true];
+	};
+};

@@ -129,6 +129,7 @@ class CfgFunctions {
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
 			class WL2_dataBase {};
+			class WL2_handleSurrender {};
     	}
     	class Common {
     		file = "Functions\common";

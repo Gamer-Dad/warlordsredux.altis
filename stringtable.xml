@@ -706,6 +706,70 @@
             <Chinesesimp>禁用 dazzler</Chinesesimp>
             <Chinese>禁用 dazzler</Chinese>
         </Key> 
+        <Key ID="STR_A3_WL_surrender">
+            <Original>Surrender</Original>
+            <English>Surrender</English>
+            <Czech>Kapitulace</Czech>
+            <French>Se rendre</French>
+            <German>Aufgeben</German>
+            <Italian>Resa</Italian>
+            <Polish>Poddać się</Polish>
+            <Portuguese>Render</Portuguese>
+            <Russian>Сдаваться</Russian>
+            <Spanish>Rendirse</Spanish>
+            <Korean>항복</Korean>
+            <Japanese>降伏</Japanese>
+            <Chinesesimp>投降</Chinesesimp>
+            <Chinese>投降</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_surrender_info">
+            <Original>Vote to surrender.</Original>
+            <English>Vote to surrender.</English>
+            <Czech>Hlasujte, abyste se vzdali.</Czech>
+            <French>Votez pour vous rendre.</French>
+            <German>Stimmen Sie für die Kapitulation.</German>
+            <Italian>Vota per arrendersi.</Italian>
+            <Polish>Głosuj za poddaniem się.</Polish>
+            <Portuguese>Vote para se render.</Portuguese>
+            <Russian>Голосуйте за сдачу.</Russian>
+            <Spanish>Voto para rendirse.</Spanish>
+            <Korean>항복에 투표하십시오.</Korean>
+            <Japanese>降伏に投票してください。</Japanese>
+            <Chinesesimp>投票投降。</Chinesesimp>
+            <Chinese>投票投降。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_surrender_restr">
+            <Original>Need atleast 4 team members in your team.</Original>
+            <English>Need atleast 4 team members in your team.</English>
+            <Czech>Ve svém týmu potřebujete alespoň 4 členy týmu.</Czech>
+            <French>Besoin d'au moins 4 membres d'équipe dans votre équipe.</French>
+            <German>Benötigen Sie mindestens 4 Teammitglieder in Ihrem Team.</German>
+            <Italian>Hai bisogno di almeno 4 membri del team nella tua squadra.</Italian>
+            <Polish>Potrzebujesz co najmniej 4 członków zespołu w swoim zespole.</Polish>
+            <Portuguese>Precisa de pelo menos 4 membros da equipe em sua equipe.</Portuguese>
+            <Russian>В вашей команде должно быть не менее 4 человек.</Russian>
+            <Spanish>Necesita al menos 4 miembros del equipo en su equipo.</Spanish>
+            <Korean>팀에 최소 4명의 팀원이 필요합니다.</Korean>
+            <Japanese>チームには少なくとも 4 人のチーム メンバーが必要です。</Japanese>
+            <Chinesesimp>您的团队中至少需要 4 名团队成员。</Chinesesimp>
+            <Chinese>您的團隊中至少需要 4 名團隊成員。</Chinese>
+        </Key>
+        <Key ID="keep_empty!!!!!!!!">
+            <Original></Original>
+            <English></English>
+            <Czech></Czech>
+            <French></French>
+            <German></German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
+        </Key>
     </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
