@@ -674,6 +674,38 @@
             <Chinesesimp>不可用。</Chinesesimp>
             <Chinese>不可用。</Chinese>
         </Key> 
+        <Key ID="STR_A3_dazzler_enable">
+            <Original>Enable dazzler</Original>
+            <English>Enable dazzler</English>
+            <Czech>Povolit dazzler</Czech>
+            <French>Activer dazzler</French>
+            <German>Dazzler aktivieren</German>
+            <Italian>Abilita dazzler</Italian>
+            <Polish>Włącz dazzler</Polish>
+            <Portuguese>Habilitar dazzler</Portuguese>
+            <Russian>Включить dazzler</Russian>
+            <Spanish>Habilitar dazzler</Spanish>
+            <Korean>Dazzler 활성화</Korean>
+            <Japanese>Dazzler を有効にする</Japanese>
+            <Chinesesimp>启用 dazzler</Chinesesimp>
+            <Chinese>啟用 dazzler</Chinese>
+        </Key> 
+        <Key ID="STR_A3_dazzler_disable">
+            <Original>Disable dazzler</Original>
+            <English>Disable dazzler</English>
+            <Czech>Zakázat dazzler</Czech>
+            <French>Désactiver dazzler</French>
+            <German>Dazzler deaktivieren</German>
+            <Italian>Disattiva dazzler</Italian>
+            <Polish>Wyłącz dazzler</Polish>
+            <Portuguese>Desativar dazzler</Portuguese>
+            <Russian>Отключить dazzler</Russian>
+            <Spanish>Deshabilitar dazzler</Spanish>
+            <Korean>Dazzler 비활성화</Korean>
+            <Japanese>Dazzler を無効にする</Japanese>
+            <Chinesesimp>禁用 dazzler</Chinesesimp>
+            <Chinese>禁用 dazzler</Chinese>
+        </Key> 
     </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
