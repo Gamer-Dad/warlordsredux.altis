@@ -16,6 +16,7 @@ _id = lbCurSel _purchase_category;
 		["_offset", [0,0,0]]
 	];
 	(_display displayCtrl 101) lbAdd _displayName;
+	if (_className == "RemoveUnits") then {uiNamespace setVariable ["BIS_WL_removeUnitsListID", -1 + lbSize (_display displayCtrl 101)]};
 	(_display displayCtrl 101) lbSetData [_forEachIndex, format ["%1|||%2|||%3|||%4|||%5|||%6", _className, _requirements, _displayName, _picture, _text, _offset]];
 	(_display displayCtrl 101) lbSetValue [_forEachIndex, _x # 1];
 } forEach (WL_PLAYER_REQUISITION_LIST # _id);

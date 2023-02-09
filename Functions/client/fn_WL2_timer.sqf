@@ -15,7 +15,7 @@ _ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscPictureKeepAspect", 4567];
 _ctrlBackgroundTimer ctrlSetPosition [_displayX + (_blockW * 80), _displayY + (_blockH * - 13), _blockW * 40, _blockH * 16];
 
 _ctrlTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 45671];
-_ctrlTimer ctrlSetPosition [_displayX + (_blockW * 100), _displayY + (_blockH * - 13), _blockW * 40, _blockH * 16];
+_ctrlTimer ctrlSetPosition [_displayX + (_blockW * 100), _displayY + (_blockH * - 13), _blockW * 90, _blockH * 16];
 
 while {true} do {
 	private _serverTime = missionNamespace getVariable "serverTimer";
