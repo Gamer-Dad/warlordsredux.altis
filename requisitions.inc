@@ -55,8 +55,6 @@ class CfgWLRequisitionPresets
 				class B_AFV_Wheeled_01_up_cannon_F			{cost = 14000;	requirements[]={};	};	// "Rhino MGS UP" 
 				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher"
 				class B_MBT_01_mlrs_F						{cost = 25000;	requirements[]={};	};	// "M5 Sandstorm MLRS" 
-				 
-				 
 			};
 			class Aircraft
 			{
@@ -76,6 +74,7 @@ class CfgWLRequisitionPresets
 			};
 			class Naval
 			{
+				class C_Scooter_Transport_01_F				{cost = 50;		requirements[]={"W"};	};	// "Water scooter"
 				class B_Boat_Transport_01_F					{cost = 100;	requirements[]={"W"};	};	// "Assault Boat"
 				class B_Boat_Armed_01_minigun_F				{cost = 750;	requirements[]={"W"};	};	// "Speedboat Minigun"
 				class B_SDV_01_F							{cost = 900;	requirements[]={"W"};	};	// "SDV"
@@ -164,28 +163,24 @@ class CfgWLRequisitionPresets
 				class O_MBT_04_command_F					{cost = 15000;	requirements[]={};	};	// "T-140K Angara"
 				class O_MBT_02_arty_F						{cost = 20000;	requirements[]={};	};	// "2S9 Sochor"
 				class I_Truck_02_MRL_F						{cost = 25000;	requirements[]={};	};	// "Zamak MRL"  
-				
-
 			};
 			class Aircraft
-			{
-				//class B_T_UAV_03_dynamicLoadout_F			{cost = 6000;	requirements[]={"H"};	};	// "MQ-12 Falcon";		  
-				class O_UAV_02_dynamicLoadout_F	  			{cost = 8000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					 
-				class O_T_UAV_04_CAS_F						{cost = 10000;	requirements[]={"A"};	};	// "KH-3A Fenghuang";  
+			{	  
 				class O_Heli_Light_02_unarmed_F				{cost = 750;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"  
 				class O_Heli_Light_02_dynamicLoadout_F		{cost = 3750;	requirements[]={"H"};	};	// "PO-30 Orca"  
 				class O_Heli_Transport_04_F					{cost = 450;	requirements[]={"H"};	};	// "Mi-290 Taru"  
 				class O_Heli_Transport_04_covered_F			{cost = 450;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"  
 				class O_Heli_Transport_04_medevac_F 		{cost = 488;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"  
+				class O_UAV_02_dynamicLoadout_F	  			{cost = 8000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					  
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 9000;	requirements[]={"H"};	};	// "Mi-48 Kajman"  
+				class O_T_UAV_04_CAS_F						{cost = 10000;	requirements[]={"A"};	};	// "KH-3A Fenghuang"; 
 				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"  
-				//class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"  
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"  
 				class O_Plane_Fighter_02_F					{cost = 37000;	requirements[]={"A"};	};	// "To-201 Shikra"  
-				
 			};
 			class Naval
 			{
+				class C_Scooter_Transport_01_F				{cost = 50;		requirements[]={"W"};	};	// "Water scooter"
 				class O_Boat_Transport_01_F					{cost = 100;	requirements[]={"W"};	};	// "Assault Boat"
 				class O_Boat_Armed_01_hmg_F					{cost = 750;	requirements[]={"W"};	};	// "Speedboat HMG"
 				class O_SDV_01_F							{cost = 900;	requirements[]={"W"};	};	// "SDV"
