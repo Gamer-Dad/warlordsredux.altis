@@ -48,7 +48,7 @@ class CfgWLRequisitionPresets
 				class B_APC_Wheeled_03_cannon_F				{cost = 3500;	requirements[]={};	};	// "BLUFOR Gorgon"
 				class B_APC_Wheeled_01_cannon_F				{cost = 2200;	requirements[]={};	};	// "AMV-7 Marshall"
 				class B_APC_Tracked_01_rcws_F				{cost = 1800;	requirements[]={};	};	// "IFV-6c Panther"
-				class B_APC_Tracked_01_AA_F					{cost = 3000;	requirements[]={};	};	// "IFV-6a Cheetah"
+				class B_APC_Tracked_01_AA_F					{cost = 6000;	requirements[]={};	};	// "IFV-6a Cheetah"
 				class B_MBT_01_cannon_F						{cost = 7000;	requirements[]={};	};	// "M2A1 Slammer"
 				class B_MBT_01_TUSK_F						{cost = 9000;	requirements[]={};	};	// "M2A1 Slammer UP"
 				class B_AFV_Wheeled_01_cannon_F				{cost = 12000;	requirements[]={};	};	// "Rhino MGS"
@@ -63,9 +63,9 @@ class CfgWLRequisitionPresets
 				class B_Heli_Light_01_dynamicLoadout_F		{cost = 3000;	requirements[]={"H"};	};	// "AH-9 Pawnee"
 				class B_Heli_Transport_01_F					{cost = 1000;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 1000;	requirements[]={"H"};	};	// "CH-67 Huron"
-				class B_UAV_02_dynamicLoadout_F         {cost = 4000;   requirements[]={A};  };  // "Greyhawk"
-				class B_T_UAV_03_dynamicLoadout_F		{cost = 5000;   requirements[]={H};  };  // "Falcon"
-				class B_UAV_05_F						{cost = 6000;   requirements[]={A};  };  // "Sentinel"
+				class B_UAV_02_dynamicLoadout_F         	{cost = 4000;   requirements[]={A};  };  // "Greyhawk"
+				class B_T_UAV_03_dynamicLoadout_F			{cost = 5000;   requirements[]={H};  };  // "Falcon"
+				class B_UAV_05_F							{cost = 6000;   requirements[]={A};  };  // "Sentinel"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
 				class B_T_VTOL_01_infantry_F				{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
 				class B_T_VTOL_01_vehicle_F					{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
@@ -107,9 +107,9 @@ class CfgWLRequisitionPresets
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
 				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	};	// "Praetorian 1C";
-				class B_SAM_System_01_F					{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
-				class B_SAM_System_02_F					{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
-				class B_Ship_MRLS_01_F					{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
+				class B_SAM_System_01_F						{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
+				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
+				class B_Ship_MRLS_01_F						{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
 			};
 		};
 		class EAST
@@ -156,7 +156,7 @@ class CfgWLRequisitionPresets
 				class O_MRAP_02_gmg_F						{cost = 1200;	requirements[]={};	};	// "Ifrit GMG"
 				class O_APC_Wheeled_02_rcws_v2_F			{cost = 1500;	requirements[]={};	};	// "MSE-3 Marid"
 				class O_APC_Tracked_02_cannon_F				{cost = 3700;	requirements[]={};	};	// "BTR-K Kamysh"
-				class O_APC_Tracked_02_AA_F					{cost = 3000;	requirements[]={};	};	// "ZSU-39 Tigris"
+				class O_APC_Tracked_02_AA_F					{cost = 6000;	requirements[]={};	};	// "ZSU-39 Tigris"
 				class O_MBT_02_cannon_F						{cost = 8000;	requirements[]={};	};	// "T-100 Varsuk"
 				class O_MBT_04_cannon_F						{cost = 13000;	requirements[]={};	};	// "T-140 Angara"
 				class O_MBT_04_command_F					{cost = 15000;	requirements[]={};	};	// "T-140K Angara"
@@ -167,13 +167,13 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class O_Heli_Light_02_unarmed_F				{cost = 1000;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"
-				class O_Heli_Light_02_dynamicLoadout_F		{cost = 5000;	requirements[]={"H"};	};	// "PO-30 Orca"
+				class O_Heli_Light_02_dynamicLoadout_F		{cost = 4500;	requirements[]={"H"};	};	// "PO-30 Orca"
 				class O_Heli_Transport_04_F					{cost = 600;	requirements[]={"H"};	};	// "Mi-290 Taru"
 				class O_Heli_Transport_04_covered_F			{cost = 600;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"
 				class O_Heli_Transport_04_medevac_F 		{cost = 650;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"
-				class B_UAV_02_dynamicLoadout_F         {cost = 4000;   requirements[]={A};  };  // "Greyhawk"
-				class B_T_UAV_03_dynamicLoadout_F		{cost = 5000;   requirements[]={H};  };  // "Falcon"
-				class B_UAV_05_F						{cost = 6000;   requirements[]={A};  };  // "Sentinel"
+				class B_UAV_02_dynamicLoadout_F        		{cost = 4000;   requirements[]={A};  };  // "Greyhawk"
+				//class B_T_UAV_03_dynamicLoadout_F			{cost = 5000;   requirements[]={H};  };  // "Falcon"
+				class B_UAV_05_F							{cost = 6000;   requirements[]={A};  };  // "Sentinel"
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 12000;	requirements[]={"H"};	};	// "Mi-48 Kajman"
 				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 14000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"
 				//class O_T_VTOL_02_vehicle_F             	{cost = 20000;	requirements[]={"A"};	};	// "Y-32 Xi'an (vehicle Transport)"
@@ -215,9 +215,9 @@ class CfgWLRequisitionPresets
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"
 				class B_AAA_System_01_F 					{cost = 6500;	requirements[]={};	};	// "Praetorian 1C";
-				class B_SAM_System_01_F					{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
-				class B_SAM_System_02_F					{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
-				class B_Ship_MRLS_01_F					{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
+				class B_SAM_System_01_F						{cost = 11000;	requirements[]={};	};	// "Mk49 Spartan";
+				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	};	// "Mk21 Centurion";
+				class B_Ship_MRLS_01_F						{cost = 50000;	requirements[]={};	};	// "Mk41 VLS";
 			};
 		};
 	};
