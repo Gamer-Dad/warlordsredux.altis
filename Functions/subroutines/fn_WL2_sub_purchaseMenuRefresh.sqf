@@ -78,6 +78,17 @@ if (count _assetDetails > 0) then {
 	_availability = call BIS_fnc_WL2_sub_purchaseMenuAssetAvailability;
 	_purchase_request ctrlSetTooltipColorBox [1, 1, 1, 1];
 	_purchase_request ctrlSetTooltipColorText [1, 1, 1, 1];
+	if (_id == 6) then {
+		_removeUnitsID = uiNamespace getVariable ["BIS_WL_removeUnitsListID", -1];
+		if (_removeUnitsID != -1) then {
+			_selectedCnt = count ((groupSelectedUnits player) - [player]);
+			if (_selectedCnt > 0) then {
+				_purchase_items lbSetText [_removeUnitsID, format [(localize "STR_A3_WL_feature_dismiss_selected") + " (%1)", _selectedCnt]];
+			} else {
+				_purchase_items lbSetText [_removeUnitsID, localize "STR_A3_WL_feature_dismiss_selected"];
+			};
+		};
+	};
 	if (_availability # 0 && ctrlEnabled _purchase_request) then {
 		uiNamespace setVariable ["BIS_WL_purchaseMenuItemAffordable", TRUE];
 		if (uiNamespace getVariable ["BIS_WL_purchaseMenuButtonHover", FALSE]) then {

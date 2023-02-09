@@ -54,6 +54,9 @@ if (_ret) then {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
 		};
+		case "RemoveUnits": {
+			if (count ((groupSelectedUnits player) - [player]) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
+		};
 		case "RespawnVic": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
@@ -64,7 +67,19 @@ if (_ret) then {
 		case "RespawnVicFT": {
 			private _sideP = side player;
 			private _ftVehicle = if (_sideP == west) then {missionNamespace getVariable "ftVehicleExistsBlu"} else {missionNamespace getVariable "ftVehicleExistsOpf"};
-			if (_ftVehicle == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+			if (_sideP == west) then {
+				{
+					altitudeBluFT = getPosATL _x;
+				} forEach entities "B_Truck_01_medical_F";
+				
+				if (_ftVehicle == false && (altitudeBluFT select 2) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+			} else {
+				{
+					altitudeOpfFT = getPosATL _x;
+				} forEach entities "O_Truck_02_medical_F";
+
+				if (_ftVehicle == false && (altitudeOpfFT select 2) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+			}; 
 		};
 		case "Surrender": {
 			private _sideP =  side player;
