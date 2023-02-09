@@ -169,7 +169,7 @@ class CfgWLRequisitionPresets
 			};
 			class Aircraft
 			{
-				class B_T_UAV_03_dynamicLoadout_F			{cost = 6000;	requirements[]={"H"};	};	// "MQ-12 Falcon";		  
+				//class B_T_UAV_03_dynamicLoadout_F			{cost = 6000;	requirements[]={"H"};	};	// "MQ-12 Falcon";		  
 				class O_UAV_02_dynamicLoadout_F	  			{cost = 8000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					 
 				class O_T_UAV_04_CAS_F						{cost = 10000;	requirements[]={"A"};	};	// "KH-3A Fenghuang";  
 				class O_Heli_Light_02_unarmed_F				{cost = 750;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"  
