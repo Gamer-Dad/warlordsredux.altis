@@ -12,12 +12,15 @@ MRTM_spawnedAT = [];
 MRTM_spawnedSLAMs = [];
 MRTM_spawnedTripwires = [];
 MRTM_spawnedClaymores = [];
+MRTM_spawnedClaymoresAmmo = [];
 MRTM_spawnedSatchels = [];
 MRTM_spawnedCharges = [];
 MRTM_spawnedLIEDU = [];
 MRTM_spawnedLIEDDI = [];
 MRTM_spawnedSIEDU = [];
 MRTM_spawnedSIEDDI = [];
+MRTM_spawnedTripWires = [];
+MRTM_spawnedSLAMs_Ammo = [];
 
 missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];

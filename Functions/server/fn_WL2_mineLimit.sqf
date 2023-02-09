@@ -136,6 +136,28 @@ addMissionEventhandler ["EntityCreated", {
   };
 }];
 
+//M6 SLAM Mine
+addMissionEventhandler ["EntityCreated", {
+  params ["_entity"];
+  if (typeOf _entity != "SLAMDirectionalMine_Wire_Ammo") exitwith {};
+  if (count MRTM_spawnedSLAMs_Ammo >= 10) then {
+    private _mines = MRTM_spawnedSLAMs_Ammo;
+    // to get rid of destroyed mines without messing up the order
+    if (count MRTM_spawnedSLAMs_Ammo >= 10) then {
+      private _t = _mines find objNull;
+      if (_t == -1) then {break};
+      _mines deleteAt _t;
+    };
+    if (count MRTM_spawnedSLAMs_Ammo >= 10) then {
+      deleteVehicle _entity;
+    } else {
+      MRTM_spawnedSLAMs_Ammo pushBack _entity;
+    };
+  } else {
+    MRTM_spawnedSLAMs_Ammo pushBack _entity;
+  };
+}];
+
 //APERS Tripwire Mine
 addMissionEventhandler ["EntityCreated", {
   params ["_entity"];
@@ -177,6 +199,28 @@ addMissionEventhandler ["EntityCreated", {
     };
   } else {
     MRTM_spawnedClaymores pushBack _entity;
+  };
+}];
+
+//Claymore Charge
+addMissionEventhandler ["EntityCreated", {
+  params ["_entity"];
+  if (typeOf _entity != "ClaymoreDirectionalMine_Remote_Ammo") exitwith {};
+  if (count MRTM_spawnedClaymoresAmmo >= 6) then {
+    private _mines = MRTM_spawnedClaymoresAmmo;
+    // to get rid of destroyed mines without messing up the order
+    if (count MRTM_spawnedClaymoresAmmo >= 6) then {
+      private _t = _mines find objNull;
+      if (_t == -1) then {break};
+      _mines deleteAt _t;
+    };
+    if (count MRTM_spawnedClaymoresAmmo >= 6) then {
+      deleteVehicle _entity;
+    } else {
+      MRTM_spawnedClaymoresAmmo pushBack _entity;
+    };
+  } else {
+    MRTM_spawnedClaymoresAmmo pushBack _entity;
   };
 }];
 
@@ -309,5 +353,27 @@ addMissionEventhandler ["EntityCreated", {
     };
   } else {
     MRTM_spawnedSIEDDI pushBack _entity;
+  };
+}];
+
+//Trip Wire
+addMissionEventhandler ["EntityCreated", {
+  params ["_entity"];
+  if (typeOf _entity != "APERSTripMine_Wire_Ammo") exitwith {};
+  if (count MRTM_spawnedTripWires >= 5) then {
+    private _mines = MRTM_spawnedTripWires;
+    // to get rid of destroyed mines without messing up the order
+    if (count MRTM_spawnedTripWires >= 5) then {
+      private _t = _mines find objNull;
+      if (_t == -1) then {break};
+      _mines deleteAt _t;
+    };
+    if (count MRTM_spawnedTripWires >= 5) then {
+      deleteVehicle _entity;
+    } else {
+      MRTM_spawnedTripWires pushBack _entity;
+    };
+  } else {
+    MRTM_spawnedTripWires pushBack _entity;
   };
 }];
