@@ -22,6 +22,9 @@ while{TRUE}do{
 		if((count _r)>1)then{[_v,_r select 1]spawn DAPS_fnc_Generic;_l=.5};
 		if(_l>0)then{sleep _l;_l=0};
 	};
-	if((call DAPS_fnc_Time)>_time)then{_v call DAPS_fnc_Rearm;_time=(call DAPS_fnc_Time)+dapsRearmDelay};
+	if ((call DAPS_fnc_Time) > _time) then {
+		_v call DAPS_fnc_Rearm;
+		_time = (call DAPS_fnc_Time) + dapsRearmDelay
+	};
 	sleep .005;
 };
