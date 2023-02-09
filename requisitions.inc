@@ -53,7 +53,8 @@ class CfgWLRequisitionPresets
 				class B_MBT_01_TUSK_F						{cost = 9000;	requirements[]={};	};	// "M2A1 Slammer UP"
 				class B_AFV_Wheeled_01_cannon_F				{cost = 12000;	requirements[]={};	};	// "Rhino MGS"
 				class B_AFV_Wheeled_01_up_cannon_F			{cost = 14000;	requirements[]={};	};	// "Rhino MGS UP" 
-				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher" 
+				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher"
+				class B_MBT_01_mlrs_F						{cost = 25000;	requirements[]={};	};	// "M5 Sandstorm MLRS" 
 				 
 				 
 			};
@@ -161,6 +162,7 @@ class CfgWLRequisitionPresets
 				class O_MBT_04_cannon_F						{cost = 13000;	requirements[]={};	};	// "T-140 Angara"
 				class O_MBT_04_command_F					{cost = 15000;	requirements[]={};	};	// "T-140K Angara"
 				class O_MBT_02_arty_F						{cost = 20000;	requirements[]={};	};	// "2S9 Sochor"
+				class I_Truck_02_MRL_F						{cost = 25000;	requirements[]={};	};	// "Zamak MRL"  
 				
 
 			};
