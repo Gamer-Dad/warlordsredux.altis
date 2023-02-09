@@ -72,13 +72,13 @@ if (_ret) then {
 					altitudeBluFT = getPosATL _x;
 				} forEach entities "B_Truck_01_medical_F";
 				
-				if (_ftVehicle == false && (altitudeBluFT select 2) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+				if (_ftVehicle == false && (altitudeBluFT select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 			} else {
 				{
 					altitudeOpfFT = getPosATL _x;
 				} forEach entities "O_Truck_02_medical_F";
 
-				if (_ftVehicle == false && (altitudeOpfFT select 2) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+				if (_ftVehicle == false && (altitudeOpfFT select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 			}; 
 		};
 		case "Surrender": {
