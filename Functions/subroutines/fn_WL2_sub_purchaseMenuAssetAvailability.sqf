@@ -69,9 +69,9 @@ if (_ret) then {
 		case "Surrender": {
 			private _sideP =  side player;
 			if (_sideP == west) then {
-				if !(playersNumber west >= 5) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_surrender_restr"};
+				if !(playersNumber west >= 80) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_surrender_restr"};
 			} else {
-				if !(playersNumber east >= 5) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_surrender_restr"};
+				if !(playersNumber east >= 80) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_surrender_restr"};
 			};
 		};
 		default {
