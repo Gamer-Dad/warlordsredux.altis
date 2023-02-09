@@ -25,5 +25,5 @@ if!(_ex)exitWith{};
 deleteVehicle _i;
 _p call DAPS_fnc_Blast;
 _a=_v getVariable"dapsAmmo";
-[_v,"",_a]call DAPS_fnc_DeductAmmo;
-[_v,"",_rd,TRUE]remoteExec["DAPS_fnc_Report"];
+[_v,_s,_a]call DAPS_fnc_DeductAmmo;
+[_v,_s,_rd,TRUE]remoteExec["DAPS_fnc_Report"];
