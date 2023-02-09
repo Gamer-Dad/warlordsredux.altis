@@ -28,14 +28,7 @@ missionNamespace setVariable ["imbalance", 0, true];
 
 missionNamespace setVariable ["serverTimer", 0, true];
 
-[] spawn {
-	while {true} do {
-		private _timeMission = missionNamespace getVariable "serverTimer";
-		missionNamespace setVariable ["serverTimer", _timeMission + 1, true];
-		sleep 1;
-	};
-};
-
+[36000] call BIS_fnc_countdown;
 
 
 ["server_init"] call BIS_fnc_startLoadingScreen;

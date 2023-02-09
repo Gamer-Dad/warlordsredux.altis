@@ -563,8 +563,8 @@
             <Chinese>正在快速旅行到快速旅行车辆。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_cp_saved">
-            <Original>your current command points (CP) have been saved.</Original>
-            <English>your current command points (CP) have been saved.</English>
+            <Original>your current CP has been saved.</Original>
+            <English>your current CP has been saved.</English>
             <Czech>vaše aktuální příkazové body (CP) byly uloženy.</Czech>
             <French>vos points de commande actuels (CP) ont été enregistrés.</French>
             <German>Deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
