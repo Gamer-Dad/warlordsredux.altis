@@ -243,7 +243,7 @@ if !(isNull _sender) then {
 							};
 						} else {	
 							_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {_sender inArea (_x getVariable "objectAreaComplete")};
-							if (_visitedSectorID == -1) {												
+							if (_visitedSectorID == -1) then {												
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
 								private _taxiNodesCnt = count _taxiNodes;
