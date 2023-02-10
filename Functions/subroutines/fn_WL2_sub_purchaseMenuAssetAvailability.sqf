@@ -67,19 +67,24 @@ if (_ret) then {
 		case "RespawnVicFT": {
 			private _sideP = side player;
 			private _ftVehicle = if (_sideP == west) then {missionNamespace getVariable "ftVehicleExistsBlu"} else {missionNamespace getVariable "ftVehicleExistsOpf"};
+			/*
 			if (_sideP == west) then {
 				{
 					altitudeBluFT = getPosATL _x;
+					missionNamespace setVariable ["BluFTPos", altitudeBluFT];
 				} forEach entities "B_Truck_01_medical_F";
 				
-				if (_ftVehicle == false && (altitudeBluFT select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+				if (_ftVehicle == false && (missionNamespace getVariable "BluFTPos" select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 			} else {
 				{
 					altitudeOpfFT = getPosATL _x;
+					missionNamespace setVariable ["OpfFTPos", altitudeOpfFT];
 				} forEach entities "O_Truck_02_medical_F";
 
-				if (_ftVehicle == false && (altitudeOpfFT select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+				if (_ftVehicle == false && (missionNamespace getVariable "OpfFTPos" select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 			}; 
+			*/
+			if (true) exitwith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 		};
 		case "Surrender": {
 			private _sideP =  side player;
