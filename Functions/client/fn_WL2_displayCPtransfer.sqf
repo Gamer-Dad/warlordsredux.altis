@@ -5,6 +5,4 @@
 */
 params ["_from", "_to", "_amount"];
 
-if (true) exitwith {
-	[side _to, "Base"] commandChat format [ localize "STR_A3_WL_donate_cp", name _from, name _to, _amount];
-};
+[side _to, "Base"] commandChat format [ localize "STR_A3_WL_donate_cp", name _from, name _to, _amount];
