@@ -14,8 +14,8 @@ _v setVariable ["dapsAmmoMax", 1, true];
 while {true} do{
 	if !(alive _v) exitWith {};
 	if (_v call DAPS_fnc_Active) then {
-		_r = _v nearObjects ["RocketCore", 300];
-		_m = _v nearObjects ["MissileCore", 300];
+		_r = _v nearObjects ["RocketCore", 600];
+		_m = _v nearObjects ["MissileCore", 600];
 		_r = _r + _m;
 		if ((count _r) > 0) then {
 			[ _v, _r select 0] spawn DAPS_fnc_Dazzler;
