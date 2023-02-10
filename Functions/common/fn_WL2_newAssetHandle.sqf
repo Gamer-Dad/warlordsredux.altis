@@ -264,7 +264,7 @@ if (isPlayer _owner) then {
 			_asset lock _initialLock;
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 
-			if (typeof _asset == "B_APC_Tracked_01_AA_F" || typeof _asset == "O_APC_Tracked_02_AA_F") then {
+			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", false, true];
 				_asset spawn DAPS_fnc_APSDazzler;
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
