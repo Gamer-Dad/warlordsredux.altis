@@ -117,24 +117,23 @@
 
 2.5
 
-  -CP is saved every 5 minutes.
-  -CP is saved after every funds transfer for each person.
-  -Prior CP is given back on join.
-  -Code improvements.
-  -Anti-cheat improvements.
-  -Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
-  -Fixed the issue of UAV's beeing locked when a player dies.
-  -Added a new intro screen (Also accessible trough srategy).
-  -Added sector names.
-  -Added logistics transport.
-  -Added a cp balance code.
-  -Reworked the mission timer.
-  -Fixed gear boxes spawning on position after beeing ordered in owned sector.
-  -Added the fast travel vehicle.
-  -Added jetskis
-  -Added a anti air, air burst system.
-  -Fixed the asset limit bug.
-  -New stringtable system. (Allows for more languages)
-  -Added cp log in command chat.
+	-CP is now saved.
+	-Added cp log in command chat. Players can now see who's sending CP.
+	-Perf Code improvements.
+	-Anti-cheat improvements.
+	-Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
+	-Fixed the issue of UAV's beeing locked when a player dies.
+	-Added a new intro screen with player guide, multiple languages available. 
+	-Added sector names.
+	-Added logistics transport. Ability to load crates on flatbed. Can't spawn gear/infantry outside of owned sectors anymore. 
+	-Added a CP bonus multiplier and punishment when teams are uneven. (Combat team stacking)
+	-Reworked the mission timer and added gui.
+	-Fixed gear boxes spawning on position after beeing ordered in owned sector.
+	-Added respawn vehicle, 1/team.
+	-Added jetskis, MLRS, all SAMS, VLS.
+	-Added all UAVs
+	-Added anti air, air burst system & improved missile speed and maneuverability. 
+	-Fixed the asset limit bug.
+	-Added DAZZLER defense for the device truck, added to both sides. Type of electronic warfare defense to confuse incoming guided missiles in a dome of 300m around truck, also effects outgoing.  We'll likely dive into EW in 2.6 and make more fun stuff.
   
   
