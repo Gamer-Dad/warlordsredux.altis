@@ -24,7 +24,8 @@ switch (_displayClass) do {
 			["BIS_WL_osd_action_title", "RscStructuredText"],
 			["BIS_WL_osd_progress_voting_background", "RscText"],
 			["BIS_WL_osd_progress_voting", "RscProgress"],
-			["BIS_WL_osd_action_voting_title", "RscStructuredText"]
+			["BIS_WL_osd_action_voting_title", "RscStructuredText"],
+			["BIS_WL_osd_rearm_possible", "RscStructuredText"]
 		];
 
 		_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
@@ -40,6 +41,7 @@ switch (_displayClass) do {
 		_osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
 		_osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
 		_osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
+		_osd_rearm_possible = uiNamespace getVariable "BIS_WL_osd_rearm_possible";
 
 		_blockW = safeZoneW / 1000;
 		_blockH = safeZoneH / (1000 / (getResolution # 4));
@@ -49,19 +51,21 @@ switch (_displayClass) do {
 		_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
 		_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
 
-		_osd_cp_current ctrlSetPosition [_displayX, _displayY, _blockW * 75, _blockH * 16];
+		_osd_cp_current ctrlSetPosition [_displayX, _displayY - (_blockH * 16), _blockW * 75, _blockH * 16];
 
-		_osd_icon_side_1 ctrlSetPosition [_displayX + (_blockW * 75), _displayY, _blockW * 16, _blockH * 16];
+		_osd_icon_side_1 ctrlSetPosition [_displayX + (_blockW * 75), _displayY - (_blockH * 16), _blockW * 16, _blockH * 16];
 		_osd_icon_side_1 ctrlSetText (BIS_WL_sectorIconsArray # (BIS_WL_sidesArray find BIS_WL_playerSide));
 		_osd_icon_side_1 ctrlSetTextColor BIS_WL_colorFriendly;
 
-		_osd_sectors_side_1 ctrlSetPosition [_displayX + (_blockW * 73), _displayY + (_blockH * 3), _blockW * 20, _blockH * 16];
+		_osd_sectors_side_1 ctrlSetPosition [_displayX + (_blockW * 73), _displayY - (_blockH * 13), _blockW * 20, _blockH * 16];
 
-		_osd_income_side_1 ctrlSetPosition [_displayX + (_blockW * 88), _displayY + (_blockH * 3), _blockW * 40, _blockH * 16];
+		_osd_income_side_1 ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
 
-		_osd_icon_side_2 ctrlSetPosition [_displayX + (_blockW * 124), _displayY, _blockW * 16, _blockH * 16];
+		_osd_icon_side_2 ctrlSetPosition [_displayX + (_blockW * 124), _displayY - (_blockH * 16), _blockW * 16, _blockH * 16];
 
-		_osd_income_side_2 ctrlSetPosition [_displayX + (_blockW * 137), _displayY + (_blockH * 3), _blockW * 40, _blockH * 16];
+		_osd_income_side_2 ctrlSetPosition [_displayX + (_blockW * 137), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
+		
+		_osd_rearm_possible ctrlSetPosition [_displayX + (_blockW * 73), _displayY + (_blockH * 8), _blockW * 120, _blockH * 16];
 
 		if (BIS_WL_fogOfWar != 0) then {
 			_osd_icon_side_2 ctrlSetText "\A3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
@@ -71,7 +75,7 @@ switch (_displayClass) do {
 			_osd_icon_side_2 ctrlSetTextColor _color;
 			
 			_osd_sectors_side_2 ctrlSetTextColor [1,1,1,0.5];
-			_osd_sectors_side_2 ctrlSetPosition [_displayX + (_blockW * 122), _displayY + (_blockH * 3), _blockW * 20, _blockH * 16];
+			_osd_sectors_side_2 ctrlSetPosition [_displayX + (_blockW * 122), _displayY - (_blockH * 13), _blockW * 20, _blockH * 16];
 			
 			_osd_income_side_2 ctrlSetTextColor [1,1,1,0.5];
 		};
@@ -97,7 +101,8 @@ switch (_displayClass) do {
 			_osd_action_title,
 			_osd_progress_voting_background,
 			_osd_progress_voting,
-			_osd_action_voting_title
+			_osd_action_voting_title,
+			_osd_rearm_possible
 		];
 
 		BIS_WL_OSDEventArr = [[], [], []];

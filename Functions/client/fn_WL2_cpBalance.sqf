@@ -11,7 +11,7 @@ _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
 _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 _cpBalanceCtrl = findDisplay 46 ctrlCreate ["RscStructuredText", 9876];
-_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY + (_blockH * 10), _blockW * 40, _blockH * 16];
+_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 40, _blockH * 16];
 
 
 while {true} do {

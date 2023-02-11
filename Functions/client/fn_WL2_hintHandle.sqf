@@ -2,6 +2,7 @@
 
 params ["_event", ["_show", TRUE]];
 
+
 switch (_event) do {
 	case "init": {
 		{
@@ -22,18 +23,6 @@ switch (_event) do {
 					localize "STR_A3_assemble",
 					localize "STR_dik_back",
 					localize "STR_ca_cancel"
-				];
-			};
-			
-			if (BIS_WL_showHint_maintenance) then {
-				_hintText = _hintText + format [
-					"%1<t size = '1.1' shadow = '0'>%2</t>",
-					if (_hintText == "") then {""} else {"<br/><br/>"},
-					format [
-						localize "STR_A3_WL_hint_maintenance",
-						"<t color = '#4bff58'>",
-						"</t>"
-					]
 				];
 			};
 			
@@ -72,6 +61,9 @@ switch (_event) do {
 				params ["_varName", "_show"];
 				while {!BIS_WL_missionEnd} do {
 					missionNamespace setVariable [_varName, call _show];
+					if (_varName == "BIS_WL_showHint_maintenance") then {
+						[FALSE] call BIS_fnc_WL2_refreshOSD;
+					};
 					sleep WL_TIMEOUT_STANDARD;
 				};
 			};
