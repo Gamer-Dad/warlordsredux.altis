@@ -6,15 +6,18 @@ class cfgPatches
 		name = "Drongo's APS";
 		units[] = {};
 		weapons[] = {};
-		requiredAddons[] = {"CBA_main"};	
+		requiredAddons[] = {"CBA_main"};
 	};
 };
 
 
 class Extended_PostInit_EventHandlers 
 {
-	dapsInit = "execVM 'scripts\DAPS\Scripts\Start.sqf'";
+	dapsInit="execVM'\scripts\DAPS\Scripts\Start.sqf'";
 };
+
+#include "\scripts\DAPS\Menu\zCoreDefines.hpp"
+#include "\scripts\DAPS\Menu\Dialog.hpp"
 
 
 class cfgAmmo
@@ -138,8 +141,9 @@ class CfgFunctions
 		tag="DAPS";
 		class Start
 		{
-			file="scripts\DAPS\functions";
+			file="\scripts\DAPS\functions";
 			class AssignAPS{};
+			class ForceRecheck{};
 			//class ClearAllAPS{};
 		};
 	};
@@ -344,6 +348,16 @@ class CfgVehicles
 						name="Dazzler";
 						value="Dazzler";
 					};
+					class Vitebsk
+					{
+						name="Vitebsk";
+						value="Vitebsk";
+					};
+					class Nemesis
+					{
+						name="Nemesis";
+						value="Nemesis";
+					};
 				};
 			};
 		};
@@ -356,6 +370,21 @@ class CfgVehicles
 		scope=1;
 		displayName="Clear all APS settings";
 		category="DAPS_faction";
+		functionPriority=1;
+		isGlobal=1;
+		isTriggerActivated=0;
+		isDisposable=0;
+	};
+
+	class DAPS_ForceRecheck: Module_F
+	{
+		author="Drongo";
+		_generalMacro="DAPS_ForceRecheck";
+		scope=2;
+		scopeCurator=2;
+		displayName="Force recheck";
+		category="DAPS_faction";
+		function="DAPS_fnc_ForceRecheck";
 		functionPriority=1;
 		isGlobal=1;
 		isTriggerActivated=0;

@@ -1,9 +1,8 @@
-private["_v","_supply","_found","_ammo","_max"];
-_v=_this;
-_supply=[];
-_found=FALSE;
-_ammo=0;
-_max=0;
+private _v=_this;
+private _supply=[];
+private _found=FALSE;
+private _ammo=0;
+private _max=0;
 if((typeOf _v)in dapsDouble)then{
 	_ammo=(_v getVariable"dapsAmmoL")+(_v getVariable"dapsAmmoR");
 	_max=(_v getVariable"dapsAmmoMaxL")+(_v getVariable"dapsAmmoMaxR");
