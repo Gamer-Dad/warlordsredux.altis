@@ -8,8 +8,6 @@ if !( isEngineOn _v) exitWith {
 	false
 };
 
-if (_v getVariable "dazzlerActivated") then {
-	true
-} else {
-	false
-};
+if (_v getVariable "dazzlerActivated" == false) exitwith {false};
+
+true
