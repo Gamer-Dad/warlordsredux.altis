@@ -14,9 +14,9 @@ private _reg=[];
 while{TRUE}do{
 	if!(alive _v)exitWith{};
 	if(TRUE)then{
-		_r=_v nearObjects["RocketCore",300];
-		_m=_v nearObjects["MissileCore",300];
-		_sm=_v nearObjects["SubmunitionCore",300];
+		_r=_v nearObjects["RocketCore",500];
+		_m=_v nearObjects["MissileCore",500];
+		_sm=_v nearObjects["SubmunitionCore",500];
 		_p=_v nearObjects["ammo_Penetrator_Base",200];
 		_r=_r+_m+_sm+_p;
 		_r=_r-_reg;
