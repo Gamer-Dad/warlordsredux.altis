@@ -4,7 +4,7 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 	params ["_units", "_pos", "_alt", "_shift"];
 	if (_alt && _shift) then {
 		if !(isNull BIS_WL_mapAssetTarget) then {
-			if ((BIS_WL_mapAssetTarget in WL_PLAYER_VEHS) && (crew BIS_WL_mapAssetTarget) # 0 findIf {alive _x}) then {
+			if ((BIS_WL_mapAssetTarget in WL_PLAYER_VEHS) && (crew BIS_WL_mapAssetTarget) # 0 findIf {alive _x} == -1) then {
 				playSound "AddItemFailed";
 				[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;
 			} else {
