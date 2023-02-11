@@ -82,6 +82,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
+
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	if (typeOf _unit == "B_Truck_01_medical_F") then {
@@ -92,6 +93,35 @@ addMissionEventHandler ["EntityKilled", {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
 }];
+
+
+[] spawn {
+	while {true} do {
+		{
+			if (alive _x) then {
+				missionNamespace setVariable ["ftVehicleExistsBlu", true, true];
+			} else {
+				missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+			};
+			
+		} forEach entities "B_Truck_01_medical_F";
+		sleep 5;
+	};
+};
+
+[] spawn {
+	while {true} do {
+		{
+			if (alive _x) then {
+				missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
+			} else {
+				missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+			};
+			
+		} forEach entities "O_Truck_02_medical_F";
+		sleep 5;
+	};
+};
 
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
