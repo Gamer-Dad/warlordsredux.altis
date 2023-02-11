@@ -63,7 +63,7 @@ _setOwner = {
 		_i = 0;
 		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && _i < 50} do {
 			_i = _i + 1;
-			_asset setGroupOwner (owner _sender);
+			_asset setOwner (owner _sender);
 			sleep WL_TIMEOUT_SHORT;
 		};
 	};
@@ -126,7 +126,7 @@ if !(isNull _sender) then {
 							(effectiveCommander _asset) setSkill 1;
 							(group effectiveCommander _asset) deleteGroupWhenEmpty true;
 						} else {
-							private _sector = nearestObject [_sender, "Logic"];
+							private _sector = nearestObject [_targetPos, "Logic"];
 							if ("A" in (_sector getVariable "BIS_WL_services")) then {
 								private _pos = getPosATL _sender;
 								_asset = createVehicle [_className, _pos, [], 0, "NONE"];
@@ -207,7 +207,7 @@ if !(isNull _sender) then {
 								_asset setDamage 0;
 								_asset setFuel 1;
 							} else {
-								private _sector = nearestObject [_sender, "Logic"];
+								private _sector = nearestObject [_targetPos, "Logic"];
 								if ("A" in (_sector getVariable "BIS_WL_services")) then {
 									private _pos = getPosATL _sender;
 									_asset = createVehicle [_className, _pos, [], 0, "NONE"];
@@ -269,7 +269,7 @@ if !(isNull _sender) then {
 								_asset setDamage 0;
 								_asset setFuel 1;
 							} else {
-								private _sector = nearestObject [_sender, "Logic"];
+								private _sector = nearestObject [_targetPos, "Logic"];
 								if ("H" in (_sector getVariable "BIS_WL_services")) then {
 									private _pos = getPosATL _sender;
 									_asset = createVehicle [_className, _pos, [], 0, "NONE"];
