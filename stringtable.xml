@@ -547,8 +547,8 @@
             <Chinese>正在快速旅行到快速旅行车辆。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_cp_saved">
-            <Original>your current CP has been saved.</Original>
-            <English>your current CP has been saved.</English>
+            <Original>Your current CP has been saved.</Original>
+            <English>Your current CP has been saved.</English>
             <Czech>vaše aktuální příkazové body (CP) byly uloženy.</Czech>
             <French>vos points de commande actuels (CP) ont été enregistrés.</French>
             <German>Deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
@@ -563,11 +563,11 @@
             <Chinese>您目前的指令點數 (CP) 已被儲存。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_cp_recieved">
-            <Original>your prior command points (CP) have been recieved.</Original>
-            <English>your prior command points (CP) have been received.</English>
+            <Original>Your prior command points (CP) have been restored.</Original>
+            <English>Your prior command points (CP) have been restored.</English>
             <Czech>vaše předchozí příkazové body (CP) byly přijaty.</Czech>
             <French>vos points de commande (CP) précédents ont été reçus.</French>
-            <German>Deine vorherigen Kommandopunkte (CP) wurden abgerufen.</German>
+            <German>Deine vorherigen Kommandopunkte (CP) wurden wiederhergestellt.</German>
             <Italian>i tuoi punti di comando (CP) precedententi sono stati ricevuti.</Italian>
             <Polish>twoje poprzednie punkty poleceń (CP) zostały odebrane.</Polish>
             <Portuguese>seus pontos de comando anteriores (CP) foram recebidos.</Portuguese>
