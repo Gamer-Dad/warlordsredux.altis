@@ -78,62 +78,63 @@
    
 2.2.0004
   
-  -Price Adjustments 1.2 - More expensive jets, cheaper INF
-  -Drongos TROPHY System - Fully working, might needs tweaking.
-  -Added "Push & Hold I for menu" on map
-  -Increased Funds Transfer cost to 5k
-  -Sector Reset Cheaper at 500
-  -More AI in early game overall, no AI when players > 40.
+  - Price Adjustments 1.2 - More expensive jets, cheaper INF
+  - Drongos TROPHY System - Fully working, might needs tweaking.
+  - Added "Push & Hold I for menu" on map
+  - Increased Funds Transfer cost to 5k
+  - Sector Reset Cheaper at 500
+  - More AI in early game overall, no AI when players > 40.
   
 2.3
 
-  -Price Adjustments based on use.
-  -Performance tweaks thanks to Korbels
-  -Team Switch Revert
-  -Vehicles no longer spawn on roads/buildings
-  -Increased safe spawn for vehicles
-  -Sector Selection Fix
-  -Sector ownership bug Fix
-  -Fixed UAV delete bug
-  -Possible Teleport bug fix
-  -Sector Voting Bug Fix
+  - Price Adjustments based on use.
+  - Performance tweaks thanks to Korbels
+  - Team Switch Revert
+  - Vehicles no longer spawn on roads/buildings
+  - Increased safe spawn for vehicles
+  - Sector Selection Fix
+  - Sector ownership bug Fix
+  - Fixed UAV delete bug
+  - Possible Teleport bug fix
+  - Sector Voting Bug Fix
 
 2.4
 
-  -Price Adjustments after months of data
-  -Extended Mortar rearm delays
-  -Edits to map to prevent explosions on spawn
-  -AI take 10min to become available to prevent spam 
-  -Increased AI to players, at max population 1 will be allowed
-  -Aircraft will only spawn at airfields now
-  -Teamswitch chat removal fixed
-  -Defending players have a larger spawn in zone
-  -Friendly fire threshold decreased
-  -AI max starts players out at 0 upon first load into server
-  -Rearm bug fixed
-  -Vehicle spawn adjustments
-  -Town AI spawn in combat mode.
-  -Mission End Timer @ 6 hours.
+  - Price Adjustments after months of data
+  - Extended Mortar rearm delays
+  - Edits to map to prevent explosions on spawn
+  - AI take 10min to become available to prevent spam 
+  - Increased AI to players, at max population 1 will be allowed
+  - Aircraft will only spawn at airfields now
+  - Teamswitch chat removal fixed
+  - Defending players have a larger spawn in zone
+  - Friendly fire threshold decreased
+  - AI max starts players out at 0 upon first load into server
+  - Rearm bug fixed
+  - Vehicle spawn adjustments
+  - Town AI spawn in combat mode.
+  - Mission End Timer @ 6 hours.
 
 2.5
 
-	-CP is now saved.
-	-Added cp log in command chat. Players can now see who's sending CP.
-	-Perf Code improvements.
-	-Anti-cheat improvements.
-	-Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
-	-Fixed the issue of UAV's beeing locked when a player dies.
-	-Added a new intro screen with player guide, multiple languages available. 
-	-Added sector names.
-	-Added logistics transport. Ability to load crates on flatbed. Can't spawn gear/infantry outside of owned sectors anymore. 
-	-Added a CP bonus multiplier and punishment when teams are uneven. (Combat team stacking)
-	-Reworked the mission timer and added gui.
-	-Fixed gear boxes spawning on position after beeing ordered in owned sector.
-	-Added respawn vehicle, 1/team.
-	-Added jetskis, MLRS, all SAMS, VLS.
-	-Added all UAVs
-	-Added anti air, air burst system & improved missile speed and maneuverability. 
-	-Fixed the asset limit bug.
-	-Added DAZZLER defense for the device truck, added to both sides. Type of electronic warfare defense to confuse incoming guided missiles in a dome of 300m around truck, also effects outgoing.  We'll likely dive into EW in 2.6 and make more fun stuff.
+  - CP is now saved.
+  - Added cp log in command chat. Players can now see who's sending CP.
+  - Perf Code improvements.
+  - Anti-cheat improvements.
+  - Mine limit is fixed (limit is now server sided not per client, you recieve a message when limit is reached).
+  - Fixed the issue of UAV's beeing locked when a player dies.
+  - Added a new intro screen with player guide, multiple languages available. 
+  - Added sector names.
+  - Added logistics transport. Ability to load crates on flatbed. Can't spawn gear/infantry outside of owned sectors anymore. 
+  - Added a CP bonus multiplier and punishment when teams are uneven. (Combat team stacking)
+  - Reworked the mission timer and added gui.
+  - Fixed gear boxes spawning on position after beeing ordered in owned sector.
+  - Added respawn vehicle, 1/team.
+  - Added jetskis, MLRS, all SAMS, VLS.
+  - Added all UAVs
+  - Added anti air, air burst system & improved missile speed and maneuverability. 
+  - Fixed the asset limit bug.
+  - Added DAZZLER defense for the device truck, added to both sides. Type of electronic warfare defense to confuse incoming guided missiles in a dome of 300m around truck, also effects outgoing.  We'll likely dive into EW in 2.6 and make more fun stuff.
+  - Removed the Hint when near a repair or rearm source and replaced it with a green line under the lower right OSD.
   
   

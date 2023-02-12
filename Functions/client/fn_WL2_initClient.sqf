@@ -84,6 +84,7 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 };
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
+uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
 
 private _uidPlayer = getPlayerUID player;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], nil];

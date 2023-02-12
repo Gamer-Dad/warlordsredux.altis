@@ -54,7 +54,7 @@
             <English>Assets limit reached.</English>
             <Czech>Bylo dosaženo limitu aktiv.</Czech>
             <French>Limite d'actifs atteinte.</French>
-            <German>Gerätelimit erreicht.</German>
+            <German>Fahrzeuglimit erreicht.</German>
             <Italian>Limite di risorse raggiunto.</Italian>
             <Polish>Osiągnięto limit zasobów.</Polish>
             <Portuguese>Limite de ativos atingido.</Portuguese>
@@ -102,7 +102,7 @@
             <English>Asset rearmed.</English>
             <Czech>Majetek přezbrojen.</Czech>
             <French>Actif réarmé.</French>
-            <German>Gerät wurde neu bewaffnet.</German>
+            <German>Fahrzeug wurde neu bewaffnet.</German>
             <Italian>Asset riarmato.</Italian>
             <Polish>Zasób ponownie uzbrojony.</Polish>
             <Portuguese>Ativo rearmado.</Portuguese>
@@ -118,7 +118,7 @@
             <English>Asset repaired.</English>
             <Czech>Majetek opraven.</Czech>
             <French>Réparé.</French>
-            <German>Gerät wurde instandgesetzt.</German>
+            <German>Fahrzeug wurde instandgesetzt.</German>
             <Italian>Asset riparato.</Italian>
             <Polish>Zasób naprawiony.</Polish>
             <Portuguese>Ativo reparado.</Portuguese>
@@ -128,22 +128,6 @@
             <Japanese>アセットが修復されました。</Japanese>
             <Chinesesimp>资产修复。</Chinesesimp>
             <Chinese>資產修復。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_hint_maintenance">
-            <Original>With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot and looking at the vehicle.</Original>
-            <English>With the appropriate assets nearby, you can %1REPAIR%2 or %1REARM%2 your vehicles via Action menu. This can only be done when you're on foot and looking at the vehicle.</English>
-            <Czech>S příslušnými prostředky v blízkosti můžete %1 OPRAVIT %2 nebo %1 ZNOVU ZAPOJIT %2 svá vozidla prostřednictvím nabídky Akce. To lze provést pouze tehdy, když jdete pěšky a díváte se na vozidlo.</Czech>
-            <French>Avec les ressources appropriées à proximité, vous pouvez %1 RÉPARER %2 ou %1 RÉARMER %2 vos véhicules via le menu Action. Cela ne peut être fait que lorsque vous êtes à pied et que vous regardez le véhicule.</French>
-            <German>Mit den entsprechenden Anlagen in der Nähe kannst du Deine Fahrzeuge über das Aktionsmenü %1 REPARIEREN %2 oder %1 NEU BEWAFFNEN %2. Dies ist nur möglich, wenn du zu Fuß unterwegs bist und das Fahrzeug betrachtest.</German>
-            <Italian>Con le risorse appropriate nelle vicinanze, puoi %1 RIPARARE %2 o %1 RIARMARE %2 i tuoi veicoli tramite il menu Azione. Questo può essere fatto solo quando sei a piedi e guardi il veicolo.</Italian>
-            <Polish>Mając w pobliżu odpowiednie zasoby, możesz %1 NAPRAWIĆ %2 lub %1 PONOWNIE UZBROJĆ %2 swoje pojazdy za pomocą menu Czynności. Można to zrobić tylko, gdy jesteś na piechotę i patrzysz na pojazd.</Polish>
-            <Portuguese>Com os ativos apropriados por perto, você pode %1 REPARAR %2 ou %1 REARMAR %2 seus veículos através do menu Ação. Isso só pode ser feito quando você estiver a pé e olhando o veículo.</Portuguese>
-            <Russian>Имея подходящие активы поблизости, вы можете %1 РЕМОНТИТЬ %2 или %1 ПОВТОРИТЬ %2 свои транспортные средства через меню «Действие». Это можно сделать только тогда, когда вы идете пешком и смотрите на автомобиль.</Russian>
-            <Spanish>Con los activos apropiados cerca, puede %1 REPARAR %2 o %1 REARMAR %2 sus vehículos a través del menú Acción. Esto solo se puede hacer cuando está a pie y mirando el vehículo.</Spanish>
-            <Korean>근처에 적절한 자산이 있으면 작업 메뉴를 통해 차량을 %1 수리 %2 또는 %1 재무장 %2할 수 있습니다. 이 작업은 도보로 차량을 보고 있을 때만 수행할 수 있습니다.</Korean>
-            <Japanese>適切なアセットが近くにあれば、アクション メニューから %1 修理 %2 または %1 リアーム %2 できます。 これは、徒歩で車両を見ているときにのみ実行できます。</Japanese>
-            <Chinesesimp>如果附近有合适的资产，您可以通过“操作”菜单 %1 修理 %2 或 %1 重新武装 %2 您的车辆。 这只能在您步行并看着车辆时完成。</Chinesesimp>
-            <Chinese>如果附近有合適的資產，您可以通過“操作”菜單 %1 修理 %2 或 %1 重新武裝 %2 您的車輛。 這只能在您步行並看著車輛時完成。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_popup_losing_sector">
             <Original>%1 is capturing %2!</Original>
@@ -166,7 +150,7 @@
             <English>Selected asset is not empty.</English>
             <Czech>Vybraný přístroj není prázdný.</Czech>
             <French>L'élément sélectionné n'est pas vide.</French>
-            <German>Das ausgewählte Gerät ist nicht leer.</German>
+            <German>Das ausgewählte Fahrzeug ist nicht leer.</German>
             <Italian>L'elemento selezionato non è vuoto.</Italian>
             <Polish>Wybrany element nie jest pusty.</Polish>
             <Portuguese>O elemento selecionado não está vazio.</Portuguese>
@@ -439,7 +423,7 @@
             <English>Asset dispatched.</English>
             <Czech>Prostředek odeslán.</Czech>
             <French>Actif dépêché.</French>
-            <German>Gerät ausgeliefert.</German>
+            <German>Fahrzeug ausgeliefert.</German>
             <Italian>Asset inviato.</Italian>
             <Polish>Zasób wysłany.</Polish>
             <Portuguese>Ativo despachado.</Portuguese>
@@ -551,7 +535,7 @@
             <English>Fast travelling to fast travel vehicle.</English>
             <Czech>Rychle cestuji ke zrychlenému cestovnímu vozidlu.</Czech>
             <French>En train de faire un voyage rapide vers le véhicule de voyage rapide.</French>
-            <German>Schnelle Reise zum Schnellreisefahrzeug.</German>
+            <German>Schnellreise zum Schnellreisefahrzeug.</German>
             <Italian>Viaggiando rapidamente al veicolo di viaggio rapido.</Italian>
             <Polish>Szybko podróżuję do pojazdu szybkiego przemieszczania się.</Polish>
             <Portuguese>Viajando rápido para o veículo de viagem rápida.</Portuguese>
@@ -563,8 +547,8 @@
             <Chinese>正在快速旅行到快速旅行车辆。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_cp_saved">
-            <Original>your current CP has been saved.</Original>
-            <English>your current CP has been saved.</English>
+            <Original>Your current CP has been saved.</Original>
+            <English>Your current CP has been saved.</English>
             <Czech>vaše aktuální příkazové body (CP) byly uloženy.</Czech>
             <French>vos points de commande actuels (CP) ont été enregistrés.</French>
             <German>Deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
@@ -579,11 +563,11 @@
             <Chinese>您目前的指令點數 (CP) 已被儲存。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_cp_recieved">
-            <Original>your prior command points (CP) have been recieved.</Original>
-            <English>your prior command points (CP) have been received.</English>
+            <Original>Your prior command points (CP) have been restored.</Original>
+            <English>Your prior command points (CP) have been restored.</English>
             <Czech>vaše předchozí příkazové body (CP) byly přijaty.</Czech>
             <French>vos points de commande (CP) précédents ont été reçus.</French>
-            <German>Deine vorherigen Kommandopunkte (CP) wurden abgerufen.</German>
+            <German>Deine vorherigen Kommandopunkte (CP) wurden wiederhergestellt.</German>
             <Italian>i tuoi punti di comando (CP) precedententi sono stati ricevuti.</Italian>
             <Polish>twoje poprzednie punkty poleceń (CP) zostały odebrane.</Polish>
             <Portuguese>seus pontos de comando anteriores (CP) foram recebidos.</Portuguese>
@@ -723,11 +707,11 @@
             <Chinese>投降</Chinese>
         </Key>
         <Key ID="STR_A3_WL_surrender_info">
-            <Original>Vote to surrender.</Original>
-            <English>Vote to surrender.</English>
+            <Original>Start a vote on whether or not to surrender.</Original>
+            <English>Start a vote on whether or not to surrender.</English>
             <Czech>Hlasujte, abyste se vzdali.</Czech>
             <French>Votez pour vous rendre.</French>
-            <German>Stimmen Sie für die Kapitulation.</German>
+            <German>Starte eine Abstimmung, ob dein Team aufgeben soll.</German>
             <Italian>Vota per arrendersi.</Italian>
             <Polish>Głosuj za poddaniem się.</Polish>
             <Portuguese>Vote para se render.</Portuguese>
@@ -743,7 +727,7 @@
             <English>Need atleast 4 team members in your team.</English>
             <Czech>Ve svém týmu potřebujete alespoň 4 členy týmu.</Czech>
             <French>Besoin d'au moins 4 membres d'équipe dans votre équipe.</French>
-            <German>Benötigen Sie mindestens 4 Teammitglieder in Ihrem Team.</German>
+            <German>Für diese Abstimmung benötigst du mindestens 4 Mitglieder in deinem Team.</German>
             <Italian>Hai bisogno di almeno 4 membri del team nella tua squadra.</Italian>
             <Polish>Potrzebujesz co najmniej 4 członków zespołu w swoim zespole.</Polish>
             <Portuguese>Precisa de pelo menos 4 membros da equipe em sua equipe.</Portuguese>
@@ -753,6 +737,22 @@
             <Japanese>チームには少なくとも 4 人のチーム メンバーが必要です。</Japanese>
             <Chinesesimp>您的团队中至少需要 4 名团队成员。</Chinesesimp>
             <Chinese>您的團隊中至少需要 4 名團隊成員。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_OSD_rearm_possible">
+            <Original>Repair / Rearm possible</Original>
+            <English>Repair / Rearm possible</English>
+            <Czech></Czech>
+            <French></French>
+            <German>Reparatur / Neu Bewaffnen möglich</German>
+            <Italian></Italian>
+            <Polish></Polish>
+            <Portuguese></Portuguese>
+            <Russian></Russian>
+            <Spanish></Spanish>
+            <Korean></Korean>
+            <Japanese></Japanese>
+            <Chinesesimp></Chinesesimp>
+            <Chinese></Chinese>
         </Key>
         <Key ID="keep_empty!!!!!!!!">
             <Original></Original>
@@ -889,7 +889,7 @@
             <English>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatible with official servers for the best player count.</English>
             <Czech>Warlords Redux 2.5 je projektem komunitního upgradu pro původní Warlords Redux. Jeho cílem je vylepšit BI vizi Warlordů s opravou chyb a vyváženějším uživatelským zážitkem a zároveň zůstat kompatibilním s oficiálními servery pro nejlepší počet hráčů.</Czech>
             <French>Warlords Redux 2.5 est un projet de mise à niveau communautaire pour le Warlords Redux original. Son objectif est d'améliorer la vision de BI de Warlords avec des correctifs de bogues et une expérience utilisateur plus équilibrée tout en restant compatible avec les serveurs officiels pour le meilleur nombre de joueurs.</French>
-            <German>Warlords Redux 2.5 ist ein Community-Upgrade-Projekt für das Original Warlords Redux. Ziel des Projekts ist es, die BI-Vision von Warlords durch Fehlerbehebungen und eine ausgewogenere Benutzererfahrung zu verbessern, während eine Kompatibilität mit offiziellen Servern für die beste Spielerzahl beibehalten wird.</German>
+            <German>Warlords Redux 2.5 ist ein Community-Upgrade-Projekt für das Original Warlords Redux. Ziel des Projekts ist es, die BI-Vision von Warlords durch Fehlerbehebungen und eine ausgewogenere Benutzererfahrung zu verbessern, während eine Kompatibilität mit offiziellen Servern für die größtmögliche Spielerzahl beibehalten wird.</German>
             <Italian>Warlords Redux 2.5 è un progetto di upgrade comunitario per l'originale Warlords Redux. Il suo obiettivo è migliorare la visione di BI di Warlords con correzioni di bug e un'esperienza utente più equilibrata mantenendo la compatibilità con i server ufficiali per il miglior numero di giocatori.</Italian>
             <Polish>Warlords Redux 2.5 jest projektem aktualizacji społeczności dla oryginalnego Warlords Redux. Celem projektu jest poprawa wizji BI w Warlords z poprawkami błędów i bardziej wyrównaną jakością doświadczenia użytkownika, przy jednoczesnej zgodności z oficjalnymi serwerami dla najlepszej liczby graczy.</Polish>
             <Portuguese>Warlords Redux 2.5 é um projeto de atualização da comunidade para o Warlords Redux original. O objetivo do projeto é melhorar a visão do BI de warlords com correções de bugs e uma experiência de usuário mais equilibrada, mantendo a compatibilidade com os servidores oficiais para o melhor número de jogadores.</Portuguese>
@@ -905,7 +905,7 @@
             <English>Warlords Redux introduces many new features like Fog of War and random base locations. It has many other new features compared to vanilla warlords such as random base locations, custom aircraft pylons, and the introduction of all drones/SAMs/AAA...</English>
             <Czech>Warlords Redux přináší mnoho nových funkcí, jako je Mlha války a náhodná umístění základen. Má mnoho dalších nových funkcí ve srovnání s vanilkovými Warlordy, jako jsou náhodná umístění základen, vlastní pylony letadel a úvod všech bezpilotních letadel/SAM/AAA...</Czech>
             <French>Warlords Redux introduit de nombreuses nouvelles fonctionnalités telles que le brouillard de guerre et les emplacements de bases aléatoires. Il a de nombreuses autres nouvelles fonctionnalités par rapport aux Warlords d'origine, telles que les emplacements de bases aléatoires, les pylônes d'aéronefs personnalisés et l'introduction de tous les drones/SAM/AAA...</French>
-            <German>Warlords Redux führt viele neue Funktionen wie den Nebel des Krieges und zufällige Startpunkte ein. Es hat viele andere neue Funktionen im Vergleich zu den ursprünglichen Warlords wie benutzerdefinierte Flugzeugpylone und die Einführung aller Drohnen/SAMs/AAA...</German>
+            <German>Warlords Redux führt viele neue Funktionen wie den Nebel des Krieges und zufällige Startpunkte ein. Es hat viele andere neue Funktionen im Vergleich zu den ursprünglichen Warlords wie benutzerdefinierbare Flugzeugpylone und die Einführung aller Drohnen/SAMs/AAA...</German>
             <Italian>Warlords Redux introduce molte nuove funzionalità come la Nebbia di Guerra e le posizioni di base casuali. Ha molte altre nuove funzionalità rispetto ai Warlord originali, come posizioni di base casuali, pattini per aerei personalizzati e l'introduzione di tutti i droni/SAM/AAA...</Italian>
             <Polish>Warlords Redux wprowadza wiele nowych funkcji, takich jak Mgła Wojny i losowe lokalizacje baz. Ma wiele innych nowych funkcji w porównaniu z warlordami vanilla, takich jak losowe lokalizacje baz, niestandardowe pylony samolotów i wprowadzenie wszystkich bezzałogowych samolotów/SAM/AAA...</Polish>
             <Portuguese>Warlords Redux apresenta muitos novos recursos, como a Névoa da Guerra e localizações de base aleatórias. Possui muitos outros recursos novos em comparação com o Warlords original, como localizações de base aleatórias, pás de aeronaves personalizadas e a introdução de todos os drones/SAMs/AAA...</Portuguese>
@@ -953,7 +953,7 @@
             <English>Hold %1 - Opens the Warlords Menu.</English>
             <Czech>Držet %1 - Otevře menu Warlordů.</Czech>
             <French>Maintenir %1 - Ouvre le menu des Warlords.</French>
-            <German>Halten %1 zum Öffnen des Warlords-Menüs gedrückt.</German>
+            <German>Halte %1 zum Öffnen des Warlords-Menüs gedrückt.</German>
             <Italian>Tenere premuto %1 - Apre il menu dei Warlord.</Italian>
             <Polish>Przytrzymaj %1 - Otwiera menu Warlordów.</Polish>
             <Portuguese>Segurar %1 - Abre o menu dos Warlords.</Portuguese>
