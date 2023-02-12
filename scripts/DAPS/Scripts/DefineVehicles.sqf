@@ -124,15 +124,7 @@ dapsAfganitE=[
 "rhs_sprut_vdv"
 ];
 dapsDazzler=[
-"CUP_O_T90_RU",
-"MEC_SAA_T72",
-"MEC_SAA_T90",
-"WIC_SAA_T72",
-"WIC_SAA_T90",
-"rhs_t90a_tv",
-"rhs_t90_tv",
-"rhs_t80uk",
-"CUP_O_BMP3_RU"
+"O_T_Truck_03_device_ghex_F"
 ];
 dapsIronFist=[
 "Burnes_FV4034_01",
