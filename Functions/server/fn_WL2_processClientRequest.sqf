@@ -105,7 +105,7 @@ if !(isNull _sender) then {
 							private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
 							if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
 								_spawnPos = _pos;
-							}
+							};
 						};
 						if (count _spawnPos == 0) then {
 							_spawnPos = _targetPosFinal;
@@ -164,18 +164,17 @@ if !(isNull _sender) then {
 								private _pointA = _taxiNodes # (_i - 1);
 								_dir = _pointA getDir _pointB;
 								private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-									if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-										_spawnPos = _pos;
-									};
+								if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+									_spawnPos = _pos;
 								};
-								if (count _spawnPos == 0) then {
-									_spawnPos = _targetPosFinal;
-								};
-								_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
-								_asset setDir _dir;
-								_asset setDamage 0;
-								_asset setFuel 1;
 							};
+							if (count _spawnPos == 0) then {
+								_spawnPos = _targetPosFinal;
+							};
+							_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+							_asset setDir _dir;
+							_asset setDamage 0;
+							_asset setFuel 1;
 						};
 					};
 				} else {
