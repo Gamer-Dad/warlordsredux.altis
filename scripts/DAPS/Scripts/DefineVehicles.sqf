@@ -132,8 +132,7 @@ dapsDazzler=[
 "rhs_t90a_tv",
 "rhs_t90_tv",
 "rhs_t80uk",
-"CUP_O_BMP3_RU",
-"B_MRAP_01_F"
+"CUP_O_BMP3_RU"
 ];
 dapsIronFist=[
 "Burnes_FV4034_01",

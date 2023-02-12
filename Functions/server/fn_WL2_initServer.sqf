@@ -95,34 +95,6 @@ addMissionEventHandler ["EntityKilled", {
 }];
 
 
-[] spawn {
-	while {true} do {
-		{
-			if (alive _x) then {
-				missionNamespace setVariable ["ftVehicleExistsBlu", true, true];
-			} else {
-				missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-			};
-			
-		} forEach entities "B_Truck_01_medical_F";
-		sleep 5;
-	};
-};
-
-[] spawn {
-	while {true} do {
-		{
-			if (alive _x) then {
-				missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
-			} else {
-				missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-			};
-			
-		} forEach entities "O_Truck_02_medical_F";
-		sleep 5;
-	};
-};
-
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
 	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F") then {
