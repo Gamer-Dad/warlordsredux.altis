@@ -268,7 +268,9 @@ if (isPlayer _owner) then {
 				_asset setVariable ["dazzlerActivated", false, true];
 				//_asset spawn DAPS_fnc_APSDazzler;
 				[_asset] spawn {
-					_v = this select 0;
+					params ["_v"];
+					private _time=-1;
+					private _reg=[];
 					while {alive _v} do {
 						_r=_v nearObjects["RocketCore",500];
 						_m=_v nearObjects["MissileCore",500];
