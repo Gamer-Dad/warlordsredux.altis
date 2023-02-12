@@ -6,6 +6,12 @@ howRead = false;
 
 ctrlShow [696991, false];
 
+(findDisplay 6969) displayAddEventhandler ["KeyDown",{
+	if (howRead == false) then {
+		(_this select 1) isEqualTo 1;
+	};
+}];
+
 if (side player == west) then {
 	private _control1 = findDisplay 6969 displayCtrl 69692;
 	_control1 ctrlSetTextColor [0,0.3,0.5,1];
