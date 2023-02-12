@@ -415,10 +415,6 @@ switch (_displayClass) do {
 					case "RemoveUnits": {{_x call BIS_fnc_WL2_sub_deleteAsset} forEach ((groupSelectedUnits player) - [player])};
 					case "RespawnVic": {[] spawn BIS_fnc_WL2_orderFTVehicle};
 					case "RespawnVicFT": {[] spawn BIS_fnc_WL2_orderFTVehicleFT};
-					case "Surrender": {
-						[side player, getPlayerUID player] remoteExec ["BIS_fnc_WL2_handleSurrender", 2];
-						["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
-					};
 					case "welcomeScreen": {[] spawn BIS_fnc_WL2_welcome};
 					default {[_className, _cost, _category, _requirements, _offset] call BIS_fnc_WL2_requestPurchase};
 				};

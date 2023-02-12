@@ -88,4 +88,4 @@ if (isServer) then {
 
 if (!isDedicated && hasInterface) then {call BIS_fnc_WL2_initClient};
 
-["handleEnd"] spawn BIS_fnc_WL2_missionEndHandle;
+[] spawn BIS_fnc_WL2_missionEndHandle;

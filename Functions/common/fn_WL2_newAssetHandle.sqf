@@ -304,12 +304,12 @@ if (isPlayer _owner) then {
 		},
 		[],
 		-100,
-		FALSE,
-		TRUE,
+		false,
+		true,
 		"",
 		"alive _target && vehicle _this != _target && group _this == (_target getVariable ['BIS_WL_ownerGrp', grpNull])",
-		-1,
-		FALSE
+		30,
+		false
 	];
 
 	_asset setUserActionText [_removeActionID, format ["<t color = '#ff4b4b'>%1</t>", localize "STR_xbox_hint_remove"]];

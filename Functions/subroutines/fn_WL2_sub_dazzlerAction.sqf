@@ -13,12 +13,12 @@ private _actionID = _asset addAction [
 		_asset call BIS_fnc_WL2_sub_dazzlerAction;
 	},
 	[],
-	5.1,
+	100,
 	false,
 	false,
 	"",
 	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerGrp', grpNull])",
-	95,
+	30,
 	true
 ];
 
