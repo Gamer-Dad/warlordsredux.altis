@@ -1,2 +1,2 @@
-if(isMultiplayer)exitWith{serverTime};
+//if(isMultiplayer)exitWith{serverTime};
 TIME

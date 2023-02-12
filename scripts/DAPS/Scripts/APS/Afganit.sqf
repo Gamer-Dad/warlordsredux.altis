@@ -8,7 +8,7 @@ _rd=0;
 _p=getPos _i;
 _d=_v distance _i;
 if(_d<30)exitWith{};
-sleep .00001;
+sleep .2;
 if((_v distance _i)>_d)exitWith{};
 _id=getDir _i;
 [_v,_id,_p,_i]call DAPS_fnc_React;
@@ -21,7 +21,7 @@ if(_sh)exitWith{
 		[_v,_rd,_p,_id]call DAPS_fnc_Afganit2;
 	};
 };
-if ((getNumber(configFile>>"CfgAmmo">>typeOf _i>>"hit"))>999)exitWith{};
+if((getNumber(configFile>>"CfgAmmo">>typeOf _i>>"hit"))>dapsHitLimit)exitWith{};
 if((typeOf _i)in dapsExcludedAmmo)exitWith{};
 _fire=FALSE;
 while{alive _i}do{
