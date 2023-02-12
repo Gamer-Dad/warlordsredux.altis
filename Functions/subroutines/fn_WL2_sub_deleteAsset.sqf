@@ -2,6 +2,14 @@
 
 params ["_asset"];
 
+if (typeOf _asset == "B_Truck_01_medical_F") then {
+	missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+};
+
+if (typeOf _asset == "O_Truck_02_medical_F") then {
+	missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+};
+
 private _groupUnit = local _asset && _asset isKindOf "Man";
 
 if (isServer) then {
