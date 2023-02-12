@@ -2748,7 +2748,7 @@ class Mission
 					class Attributes
 					{
 						rank="MAJOR";
-						isPlayer=1;
+						isPlayable=1;
 					};
 					id=212;
 					type="B_Soldier_TL_F";
@@ -5825,7 +5825,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15542.077,29.506014,19838.105};
+						position[]={15562.183,29.053112,19860.559};
 					};
 					side="West";
 					flags=7;

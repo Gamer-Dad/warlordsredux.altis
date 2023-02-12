@@ -128,19 +128,55 @@ if !(isNull _sender) then {
 						} else {
 							private _sector = nearestObject [_targetPos, "Logic"];
 							if ("A" in (_sector getVariable "BIS_WL_services")) then {
-								private _pos = getPosATL _sender;
-								_asset = createVehicle [_className, _pos, [], 0, "NONE"];
-								_asset setDir _dir;
-								_asset setDamage 0;
-								_asset setFuel 1;
+								if (_sender distance _sector < 250) then {
+									private _pos = getPosATL _sender;
+									_asset = createVehicle [_className, _pos, [], 0, "NONE"];
+									_asset setDir _dir;
+									_asset setDamage 0;
+									_asset setFuel 1;
 
-								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								createVehicleCrew _asset;
-								_side = side _sender; 
-								_group = createGroup _side;
-								(crew _asset) joinSilent _group;
-								(effectiveCommander _asset) setSkill 1;
-								(group effectiveCommander _asset) deleteGroupWhenEmpty true;								
+									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+									createVehicleCrew _asset;
+									_side = side _sender; 
+									_group = createGroup _side;
+									(crew _asset) joinSilent _group;
+									(effectiveCommander _asset) setSkill 1;
+									(group effectiveCommander _asset) deleteGroupWhenEmpty true;
+								} else {
+									private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
+									private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
+									private _taxiNodesCnt = count _taxiNodes;
+									private _spawnPos = [];
+									private _dir = 0;
+									private _checks = 0;
+									while {count _spawnPos == 0 && _checks < 100} do {
+										_checks = _checks + 1;
+										private _i = (floor random _taxiNodesCnt) max 1;
+										private _pointB = _taxiNodes # _i;
+										private _pointA = _taxiNodes # (_i - 1);
+										_dir = _pointA getDir _pointB;
+										private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
+										if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+											_spawnPos = _pos;
+										}
+									};
+									if (count _spawnPos == 0) then {
+										_spawnPos = _targetPosFinal;
+									};
+
+									_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+									_asset setDir _dir;
+									_asset setDamage 0;
+									_asset setFuel 1;
+
+									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+									createVehicleCrew _asset;
+									_side = side _sender; 
+									_group = createGroup _side;
+									(crew _asset) joinSilent _group;
+									(effectiveCommander _asset) setSkill 1;
+									(group effectiveCommander _asset) deleteGroupWhenEmpty true;
+								};								
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -209,11 +245,38 @@ if !(isNull _sender) then {
 							} else {
 								private _sector = nearestObject [_targetPos, "Logic"];
 								if ("A" in (_sector getVariable "BIS_WL_services")) then {
-									private _pos = getPosATL _sender;
-									_asset = createVehicle [_className, _pos, [], 0, "NONE"];
-									_asset setDir _dir;
-									_asset setDamage 0;
-									_asset setFuel 1;
+									if (_sender distance _sector < 250) then {
+										private _pos = getPosATL _sender;
+										_asset = createVehicle [_className, _pos, [], 0, "NONE"];
+										_asset setDir _dir;
+										_asset setDamage 0;
+										_asset setFuel 1;
+									} else {
+										private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
+										private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
+										private _taxiNodesCnt = count _taxiNodes;
+										private _spawnPos = [];
+										private _dir = 0;
+										private _checks = 0;
+										while {count _spawnPos == 0 && _checks < 100} do {
+											_checks = _checks + 1;
+											private _i = (floor random _taxiNodesCnt) max 1;
+											private _pointB = _taxiNodes # _i;
+											private _pointA = _taxiNodes # (_i - 1);
+											_dir = _pointA getDir _pointB;
+											private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
+											if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+												_spawnPos = _pos;
+											}
+										};
+										if (count _spawnPos == 0) then {
+											_spawnPos = _targetPosFinal;
+										};
+										_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+										_asset setDir _dir;
+										_asset setDamage 0;
+										_asset setFuel 1;
+									};
 								} else {
 									private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 									private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -271,11 +334,38 @@ if !(isNull _sender) then {
 							} else {
 								private _sector = nearestObject [_targetPos, "Logic"];
 								if ("H" in (_sector getVariable "BIS_WL_services")) then {
-									private _pos = getPosATL _sender;
-									_asset = createVehicle [_className, _pos, [], 0, "NONE"];
-									_asset setDir _dir;
-									_asset setDamage 0;
-									_asset setFuel 1;
+									if (_sender distance _sector < 250) then {
+										private _pos = getPosATL _sender;
+										_asset = createVehicle [_className, _pos, [], 0, "NONE"];
+										_asset setDir _dir;
+										_asset setDamage 0;
+										_asset setFuel 1;
+									} else {
+										private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
+										private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
+										private _taxiNodesCnt = count _taxiNodes;
+										private _spawnPos = [];
+										private _dir = 0;
+										private _checks = 0;
+										while {count _spawnPos == 0 && _checks < 100} do {
+											_checks = _checks + 1;
+											private _i = (floor random _taxiNodesCnt) max 1;
+											private _pointB = _taxiNodes # _i;
+											private _pointA = _taxiNodes # (_i - 1);
+											_dir = _pointA getDir _pointB;
+											private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
+											if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+												_spawnPos = _pos;
+											}
+										};
+										if (count _spawnPos == 0) then {
+											_spawnPos = _targetPosFinal;
+										};
+										_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+										_asset setDir _dir;
+										_asset setDamage 0;
+										_asset setFuel 1;
+									};
 								} else {
 									private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 									private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
