@@ -265,9 +265,9 @@ if (isPlayer _owner) then {
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
-				_asset setVariable ["dazzlerActivated", false, true];
+				_asset setVariable ["dazzlerActivated", true, true];
 				_asset spawn DAPS_fnc_APSDazzler;
-				_asset call BIS_fnc_WL2_sub_dazzlerAction;
+				//_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
 
 			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
