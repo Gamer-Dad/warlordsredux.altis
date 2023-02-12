@@ -13,12 +13,12 @@ private _actionID = _asset addAction [
 		_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 	},
 	[],
-	5.1,
+	99,
 	if ((locked _this) == 2) then {TRUE} else {FALSE},
 	FALSE,
 	"",
 	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerGrp', grpNull])",
-	94,
+	30,
 	TRUE
 ];
 
