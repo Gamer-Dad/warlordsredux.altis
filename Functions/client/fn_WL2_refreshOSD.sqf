@@ -24,8 +24,9 @@ if (_fullRefresh) then {
 		(uiNamespace getVariable "BIS_WL_osd_income_side_2") ctrlSetStructuredText parseText format ["<t size = '%2' shadow = '2'>+%1</t>", BIS_WL_enemySide call BIS_fnc_WL2_income, 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 	};
 };
+
 if (BIS_WL_showHint_maintenance) then {
 		(uiNamespace getVariable "BIS_WL_osd_rearm_possible") ctrlSetStructuredText parseText format ["<t color = '#00ff00' size = '%2' shadow = '2'>%1</t>", localize "STR_A3_WL_OSD_rearm_possible", 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 } else {
 		(uiNamespace getVariable "BIS_WL_osd_rearm_possible") ctrlSetStructuredText parseText format ["<t color = '#00ff00' size = '%1' shadow = '2'></t>", 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
-}
+};
