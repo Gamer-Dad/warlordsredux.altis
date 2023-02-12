@@ -17,7 +17,7 @@ while{TRUE}do{
 		_r=_v nearObjects["RocketCore",500];
 		_m=_v nearObjects["MissileCore",500];
 		_sm=_v nearObjects["SubmunitionCore",500];
-		_p=_v nearObjects["ammo_Penetrator_Base",200];
+		_p=_v nearObjects["ammo_Penetrator_Base",300];
 		_r=_r+_m+_sm+_p;
 		_r=_r-_reg;
 		if((count _r)>0)then{[_v,_r select 0]spawn DAPS_fnc_Dazzler;_l=.3;_reg pushBack(_r select 0)};
