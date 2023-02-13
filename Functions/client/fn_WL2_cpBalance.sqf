@@ -11,7 +11,7 @@ _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
 _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 _cpBalanceCtrl = findDisplay 46 ctrlCreate ["RscStructuredText", 9876];
-_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 40, _blockH * 16];
+_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 60, _blockH * 16];
 
 
 while {true} do {
@@ -26,26 +26,22 @@ while {true} do {
 			if (_west > _east) then {
 				if (side player == west) then {
 					private _imbalance = missionNamespace getVariable "imbalance";
-					_cpBalanceCtrl ctrlSetStructuredText parseText format ["- %1%2", _imbalance, "%"];
-					_cpBalanceCtrl ctrlSetScale 0.9;
+					_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%3' >- %1%2</t>", round _imbalance, "%", (1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 					_cpBalanceCtrl ctrlSetTextColor [1, 0, 0, 1];
 				} else {
 					private _imbalance = missionNamespace getVariable "imbalance";
-					_cpBalanceCtrl ctrlSetStructuredText parseText format ["+ %1%2", _imbalance, "%"];
-					_cpBalanceCtrl ctrlSetScale 0.9;
+					_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%3' >+ %1%2</t>", round _imbalance, "%", (1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 					_cpBalanceCtrl ctrlSetTextColor [0, 1, 0, 1];
 				};
 			} else {
 				if (_east > _west) then {
 					if (side player == west) then {
 						private _imbalance = missionNamespace getVariable "imbalance";
-						_cpBalanceCtrl ctrlSetStructuredText parseText format ["+ %1%2", _imbalance, "%"];
-						_cpBalanceCtrl ctrlSetScale 0.9;
+						_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%3' >+ %1%2</t>", round _imbalance, "%", (1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 						_cpBalanceCtrl ctrlSetTextColor [0, 1, 0, 1];
 					} else {
 						private _imbalance = missionNamespace getVariable "imbalance";
-						_cpBalanceCtrl ctrlSetStructuredText parseText format ["- %1%2", _imbalance, "%"];
-						_cpBalanceCtrl ctrlSetScale 0.9;
+						_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%3' >- %1%2</t>", round _imbalance, "%", (1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 						_cpBalanceCtrl ctrlSetTextColor [1, 0, 0, 1];
 					};
 				};

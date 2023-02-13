@@ -24,6 +24,8 @@ while {true} do {
 					missionNamespace setVariable ["imbalance", _imbalancePercentage, true];
 				};
 			};
+		} else {
+			missionNamespace setVariable ["imbalance", 0, true];
 		};
 	};
 

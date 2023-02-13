@@ -415,7 +415,15 @@ switch (_displayClass) do {
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer};
 					case "TargetReset": {call BIS_fnc_WL2_orderTargetReset};
-					case "LockVehicles": {{_x lock TRUE; _x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]]} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_lock_all_msg"] spawn BIS_fnc_WL2_smoothText};
+					case "LockVehicles": {
+						{
+							if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_02_medical_F") then {
+								_x lock true; 
+								_x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]];
+							};
+						} forEach (WL_PLAYER_VEHS select {alive _x}); 
+						[toUpper localize "STR_A3_WL_feature_lock_all_msg"] spawn BIS_fnc_WL2_smoothText
+					};
 					case "UnlockVehicles": {{_x lock FALSE; _x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]]} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_unlock_all_msg"] spawn BIS_fnc_WL2_smoothText};
 					case "RemoveUnits": {{_x call BIS_fnc_WL2_sub_deleteAsset} forEach ((groupSelectedUnits player) - [player])};
 					case "RespawnVic": {[] spawn BIS_fnc_WL2_orderFTVehicle};

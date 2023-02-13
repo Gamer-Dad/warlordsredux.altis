@@ -4,30 +4,14 @@ private  _id = clientOwner;
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (side player == west) then {
-	private _center = getPosATL player;
-	private _radius = 20;
-
-	private _angle = random 360;					
-	private _randomSquareRoot = sqrt random 1;			
-	private _distance = _radius * _randomSquareRoot;	
-	private _position = _center getPos [_distance, _angle];
-
-	private _assetBlu = "B_Truck_01_medical_F" createVehicle _position;
+	private _assetBlu = createVehicle ["B_Truck_01_medical_F", player , [], 0, "NONE"];
 	[player, _assetBlu] call BIS_fnc_WL2_newAssetHandle;
 
 	missionNamespace setVariable ["ftVehicleExistsBlu", true, true];
 };
 
 if (side player == east) then {
-	private _center = getPosATL player;
-	private _radius = 20;
-
-	private _angle = random 360;					
-	private _randomSquareRoot = sqrt random 1;			
-	private _distance = _radius * _randomSquareRoot;	
-	private _position = _center getPos [_distance, _angle];
-
-	private _assetOpf = "O_Truck_02_medical_F" createVehicle _position;
+	private _assetOpf = createVehicle ["O_Truck_02_medical_F", player , [], 0, "NONE"];
 	[player, _assetOpf] call BIS_fnc_WL2_newAssetHandle;
 
 	missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
