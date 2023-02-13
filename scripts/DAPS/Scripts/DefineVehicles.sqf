@@ -124,7 +124,7 @@ dapsAfganitE=[
 "rhs_sprut_vdv"
 ];
 dapsDazzler=[
-"O_T_Truck_03_device_ghex_F"
+//"O_T_Truck_03_device_ghex_F"
 ];
 dapsIronFist=[
 "Burnes_FV4034_01",
