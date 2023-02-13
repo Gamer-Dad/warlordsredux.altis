@@ -260,9 +260,13 @@ if (isPlayer _owner) then {
 		};
 
 		if !(_assembled || _asset isKindOf "Thing") then {
-			_initialLock = if (_asset isKindOf "StaticWeapon") then {FALSE} else {TRUE};
-			_asset lock _initialLock;
-			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
+			if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_02_medical_F") then {
+				_asset call BIS_fnc_WL2_sub_vehicleLockAction;
+				_initialLock = if (_asset isKindOf "StaticWeapon") then {FALSE} else {TRUE};
+				_asset lock _initialLock;
+			} else {
+				_asset lock 0;
+			};
 
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", true, true];
