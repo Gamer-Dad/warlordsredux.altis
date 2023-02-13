@@ -51,5 +51,4 @@ while {true} do {
 		_time = TIME + 60;
 	};
 	sleep .01;
-	"Incoming!" remoteExec ["systemChat", -2];
 };
