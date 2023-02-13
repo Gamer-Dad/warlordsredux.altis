@@ -192,6 +192,14 @@ class CfgFunctions {
 		};
 		
 	};	
+	class DAPS
+	{
+		class MISC
+		{
+			file = "scripts\DAPS\Scripts\Misc";
+			class MisguideMissile {};
+		};
+	};
 	/* Keep for later if needed	
 	class DAPS
 	{

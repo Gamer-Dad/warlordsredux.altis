@@ -105,7 +105,7 @@ dapsAvailable=TRUE;
 
 DAPS_fnc_ReportDIRCM = compile preprocessFile"scripts\DAPS\Scripts\DIRCM\Report.sqf";
 
-DAPS_fnc_MisguideMissile = compile preprocessFile"scripts\DAPS\Scripts\Misc\MisguideMissile.sqf";
+//DAPS_fnc_MisguideMissile = compile preprocessFile"scripts\DAPS\Scripts\Misc\MisguideMissile.sqf";
 DAPS_fnc_MisguideSAM = compile preprocessFile"scripts\DAPS\Scripts\DIRCM\MisguideSAM.sqf";
 
 DAPS_fnc_IsIRguided = compile preprocessFile"scripts\DAPS\Scripts\Misc\IsIRguided.sqf";
