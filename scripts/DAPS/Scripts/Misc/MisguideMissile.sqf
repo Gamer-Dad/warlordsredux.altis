@@ -1,3 +1,4 @@
+"Misguided!" remoteExec ["systemChat", -2];
 private _vehicle=_this select 0;
 private _missile=_this select 1;
 private _power=90;

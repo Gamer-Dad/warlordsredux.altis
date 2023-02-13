@@ -25,5 +25,3 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 [_v, _i] spawn DAPS_fnc_MisguideMissile;
 while {alive _i} do {sleep 5};
 dapsDazzled = dapsDazzled - [_i];
-
-"Incoming!" remoteExec ["systemChat", -2];
