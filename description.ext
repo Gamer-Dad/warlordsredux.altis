@@ -105,7 +105,7 @@ class CfgFunctions {
 			class WL2_orderFTVehicle {};
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
-    	}
+    	};
 		class Server 
 		{
     		file = "Functions\server";
@@ -129,7 +129,7 @@ class CfgFunctions {
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
 			class WL2_dataBase {};
-    	}
+    	};
     	class Common {
     		file = "Functions\common";
     		class WL2_findSpawnPositions {};
@@ -151,7 +151,7 @@ class CfgFunctions {
 			class WL2_syncedTime {};
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
-    	}
+    	};
 		class Subroutines 
 		{
     		file = "Functions\subroutines";
@@ -167,8 +167,8 @@ class CfgFunctions {
 			class WL2_sub_vehicleLockAction {};
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_dazzlerAction {};
-    	}
-	}
+    	};
+	};
 
 /*******************************START OF CUSTOM CONTENT HERE****************************/
 	#include "scripts\GOM\functions\GOM_fnc_functions.hpp" //GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
@@ -191,7 +191,106 @@ class CfgFunctions {
 			class unflipVehicleAddAction {};
 		};
 		
-	};		
+	};	
+	/* Keep for later if needed	
+	class DAPS
+	{
+		class APS 
+		{
+			file = "scripts\DAPS\Scripts\APS";
+			class Afganit {};
+			class Afganit2 {};
+			class AMAP {};
+			class AMAP2 {};
+			class APSAfganit {};
+			class APSAfganitE {};
+			class APSAMAP {};
+			class APSArena {};
+			class APSDazzler {};
+			class APSDrozd {};
+			class APSDrozd2 {};
+			class APSheavy {};
+			class APSironFist {};
+			class APSlight {};
+			class APSmedium {};
+			class APSTrophyHV {};
+			class APSTrophyHVe {};
+			class APSTrophyLV {};
+			class Arena {};
+			class Dazzler {};
+			class Drozd {};
+			class Drozd2 {};
+			class Generic {};
+			class IronFist {};
+			class TrophyHV {};
+			class TrophyHVe {};
+			class TrophyHVe2 {};
+			class TrophyLV {};
+			class TrophyMV {};
+		};
+		class DIRCM
+		{
+			file = "scripts\DAPS\Scripts\DIRCM";
+			class MisguideSAM {};
+			class Nemesis {};
+			class Nemesis2 {};
+			class Report {};
+			class Vitebsk {};
+			class Vitebsk2 {};
+		};
+		class Management
+		{
+			file = "scripts\DAPS\Scripts\Management";
+			class AssignAPS {};
+			class BroadcastTypes {};
+			class CustomAmmo {};
+			class ForceRecheck {};
+			class KeyPressed {};
+			class KeyPressed2 {};
+			class RearmAPS {};
+			class RegisterAll {};
+			class RegisterLoop {};
+			class RegisterNewType {};
+			class RegisterVehicle {};
+		};
+		class Misc
+		{
+			file = "scripts\DAPS\Scripts\Misc";
+			class Active {};
+			class Blast {};
+			class CanSmoke {};
+			class CountAmmo {};
+			class DeductAmmo {};
+			class GetDirection {};
+			class GetIncoming {};
+			class HasCharges {};
+			class IsIRguided {};
+			class IsLaserGuided {};
+			class IsRadarGuided {};
+			class IsVisualGuided {};
+			class MisguideMissile {};
+			class popSmoke {};
+			class PopSmoke2 {};
+			class PopSmokeTurn {};
+			class React {};
+			class Rearm {};
+			class Rearm2 {};
+			class RearmCheck {};
+			class RelDir {};
+			class RelDir2 {};
+			class RelPos {};
+			class Time {};
+		}:
+		class Report
+		{
+			file = "scripts\DAPS\Scripts\Report";
+			class DetailedReport {};
+			class Indicator {};
+			class Report {};
+			class ReportRearm {};
+		};
+	};
+	*/
 };
 
 //Advanced Sling Load Mod
