@@ -23,6 +23,6 @@ if (_exit) exitWith {dapsDazzled = dapsDazzled - [_i]};
 private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 [_v, "", _rd, true] remoteExec ["DAPS_fnc_Report"];
 //[_v, _i] spawn DAPS_fnc_MisguideMissile;
-[_v, _i] remoteExec ["DAPS_fnc_MisguideMissile", 2];
+[_v, _i] remoteExec ["DAPS_fnc_MisguideMissile", -2];
 while {alive _i} do {sleep 5};
 dapsDazzled = dapsDazzled - [_i];
