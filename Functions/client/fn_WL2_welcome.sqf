@@ -4,12 +4,16 @@ createDialog ["welcomeScreen", true];
 
 howRead = false;
 
-ctrlShow [696991, false];
-
 (findDisplay 6969) displayAddEventhandler ["KeyDown",{
-	if (howRead == false) then {
+	if (dialog) then {
 		(_this select 1) isEqualTo 1;
 	};
+}];
+
+_ctrlButton = findDisplay 6969 displayCtrl 6969691;
+_ctrlButton ctrlAddEventHandler ["onMouseButtonClick", {
+	params ["_control", "_button", "_xPos", "_yPos", "_shift", "_ctrl", "_alt"];
+	closeDialog 2;
 }];
 
 if (side player == west) then {
@@ -49,6 +53,13 @@ lbSetCurSel [69695, _pageAbt];
 while {dialog} do {
 	_index = lbCurSel 69695;
 	_curSel = lbData [69695, _index];
+
+	if (howRead == false) then {
+		ctrlShow [6969691, true];
+		ctrlSetText [6969691, localize "STR_MRTM_welcomeInteract_21"];
+	} else {
+		ctrlShow [6969691, false];
+	};
 
 	lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
 	lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
