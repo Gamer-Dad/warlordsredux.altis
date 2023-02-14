@@ -1092,6 +1092,22 @@
             <Chinesesimp>在我们的 discord 中，您也可以建议新东西或报告错误。</Chinesesimp>
             <Chinese>在我们的 discord 中，您也可以建议新东西或报告错误。</Chinese>
         </Key>
+        <Key ID="STR_MRTM_welcomeInteract_21">
+            <Original>Please read how to play first</Original>
+            <English>Please read how to play first</English>
+            <Czech>Nejprve si přečtěte, jak hrát</Czech>
+            <French>Veuillez d'abord lire comment jouer</French>
+            <German>Bitte lesen Sie zuerst, wie man spielt</German>
+            <Italian>Si prega di leggere prima come giocare</Italian>
+            <Polish>Najpierw przeczytaj, jak grać</Polish>
+            <Portuguese>Por favor, leia como jogar primeiro</Portuguese>
+            <Russian>Сначала прочитайте, как играть</Russian>
+            <Spanish>Por favor, lea cómo jugar primero</Spanish>
+            <Korean>먼저 플레이 방법을 읽어주세요</Korean>
+            <Japanese>最初に遊び方をお読みください</Japanese>
+            <Chinesesimp>请先阅读如何玩</Chinesesimp>
+            <Chinese>請先閱讀如何玩</Chinese>
+        </Key>
         <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
             <Original></Original>
             <English></English>
