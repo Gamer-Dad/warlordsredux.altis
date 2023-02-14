@@ -29,6 +29,10 @@ while {true} do {
 		};
 	};
 
+	if (missionNamespace getVariable "imbalance" > 80) then {
+		missionNamespace setVariable ["imbalance", 80, true];
+	};
+
 	sleep 5;
 
 	{
