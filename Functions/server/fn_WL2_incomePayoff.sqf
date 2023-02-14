@@ -4,6 +4,7 @@ balanceKickIn = 2;
 
 private _cpMultiplier = createHashMap;
 private _cpIncome = createHashMap;
+missionNamespace setVariable ["balanceMultiplier", _cpMultiplier, true];
 while {true} do {
 	sleep WL_SECTOR_PAYOFF_PERIOD;
 
