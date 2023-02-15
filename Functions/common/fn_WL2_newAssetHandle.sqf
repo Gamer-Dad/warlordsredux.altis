@@ -181,6 +181,8 @@ if (isPlayer _owner) then {
 											};
 									} forEach allTurrets _asset;
 
+									_asset spawn DAPS_fnc_RearmAPS;
+
 									//The line below was moved outside the {} and rearms jets using GOMs airloadout.
 									if (_asset isKindOf "Air") then {  [player] spawn GOM_fnc_aircraftLoadout; }; 
 
