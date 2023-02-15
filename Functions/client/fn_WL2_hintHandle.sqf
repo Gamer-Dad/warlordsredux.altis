@@ -50,7 +50,6 @@ switch (_event) do {
 			if((_hintText != "" ) or ( _lastHint != "")) then {
 				hintSilent parseText _hintText;
 				_lastHint = _hintText;
-				systemChat format ["Setting Hint to %1", parseText _hintText];
 			};
 			sleep WL_TIMEOUT_MEDIUM;
 		};
