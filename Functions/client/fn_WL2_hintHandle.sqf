@@ -13,6 +13,8 @@ switch (_event) do {
 			};
 		} forEach ["assembly", "maintenance", "targetResetVoting"];
 		
+		_hintText = "";
+		_lastHint = "";
 		while {!BIS_WL_missionEnd} do {
 			_hintText = "";
 			
@@ -45,8 +47,10 @@ switch (_event) do {
 					if (_hintText == "") then {""} else {"<br/><br/>"}
 				];
 			};
-			
-			hintSilent parseText _hintText;
+			if((_hintText != "" ) or ( _lastHint != "")) then {
+				hintSilent parseText _hintText;
+				_lastHint = _hintText;
+			};
 			sleep WL_TIMEOUT_MEDIUM;
 		};
 	};
