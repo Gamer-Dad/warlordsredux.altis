@@ -16,7 +16,7 @@ while {true} do {
 	sleep 5;
 	{
 		_incomeStandard = _x call BIS_fnc_WL2_income;
-		_actualIncome = _incomeStandard * (_cpMultiplier get _x);
+		_actualIncome = round (_incomeStandard * (_cpMultiplier get _x));
 		_cpIncome set [ _x, _actualIncome];
 	} forEach BIS_WL_competingSides; // we calculate the actual income for each faction and store it in the income hashmap. That allows us to keep the loop for all players trivial.
 
