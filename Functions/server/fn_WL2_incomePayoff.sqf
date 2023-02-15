@@ -1,5 +1,23 @@
 #include "..\warlords_constants.inc"
 
+
+while {true} do {
+	sleep WL_SECTOR_PAYOFF_PERIOD;
+	{
+		_side = _x;
+		_income = _side call BIS_fnc_WL2_income;
+		{
+			[_x, _income] call BIS_fnc_WL2_fundsControl;
+		} forEach (BIS_WL_allWarlords select {side group _x == _side});
+	} forEach BIS_WL_competingSides;
+};
+
+
+
+
+
+
+/*
 balanceKickIn = 2;
 
 private _cpMultiplier = createHashMap;
@@ -26,3 +44,4 @@ while {true} do {
 		[_x, _actualIncome] call BIS_fnc_WL2_fundsControl;
 	} forEach allPlayers; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
 };
+*/
