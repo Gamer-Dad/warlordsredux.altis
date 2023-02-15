@@ -16,7 +16,7 @@ _cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH
 
 while {true} do {
 	_balanceMultiplier = missionNamespace getVariable "balanceMultiplier";
-	_sideMultiplier = (_balanceMultiplier get (side player)) - 1; // have to substract 1 here because we can be [0..2] with 1 being the middle. with -1 we get to [-1..1] which makes more sense for displaying.
+	_sideMultiplier = (_balanceMultiplier get (side group player)) - 1; // have to substract 1 here because we can be [0..2] with 1 being the middle. with -1 we get to [-1..1] which makes more sense for displaying.
 	_sidePercentage = if(isNil "_sideMultiplier") then [{0}, {_sideMultiplier * 100}];
 	_sidePercentage = round _sidePercentage;
 	_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentage >0) then [{"+"},{""}]), _sidePercentage, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
