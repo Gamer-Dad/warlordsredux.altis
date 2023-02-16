@@ -62,9 +62,9 @@ class CfgWLRequisitionPresets
 				class B_Heli_Light_01_dynamicLoadout_F		{cost = 3000;	requirements[]={"H"};	};	// "AH-9 Pawnee"
 				class B_Heli_Transport_01_F					{cost = 1000;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 1000;	requirements[]={"H"};	};	// "CH-67 Huron"
-				class B_UAV_02_dynamicLoadout_F         	{cost = 4000;   requirements[]={A};  };  // "Greyhawk"
-				class B_T_UAV_03_dynamicLoadout_F			{cost = 5000;   requirements[]={H};  };  // "Falcon"
-				class B_UAV_05_F							{cost = 6000;   requirements[]={A};  };  // "Sentinel"
+				class B_UAV_02_dynamicLoadout_F         	{cost = 7000;   requirements[]={A};  };  // "Greyhawk"
+				class B_T_UAV_03_dynamicLoadout_F			{cost = 8000;   requirements[]={H};  };  // "Falcon"
+				class B_UAV_05_F							{cost = 10000;   requirements[]={A};  };  // "Sentinel"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
 				class B_T_VTOL_01_infantry_F				{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
 				class B_T_VTOL_01_vehicle_F					{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
@@ -171,9 +171,9 @@ class CfgWLRequisitionPresets
 				class O_Heli_Transport_04_F					{cost = 450;	requirements[]={"H"};	};	// "Mi-290 Taru"  
 				class O_Heli_Transport_04_covered_F			{cost = 450;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"  
 				class O_Heli_Transport_04_medevac_F 		{cost = 488;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"  
-				class O_UAV_02_dynamicLoadout_F	  			{cost = 8000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					  
+				class O_UAV_02_dynamicLoadout_F	  			{cost = 7000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					  
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 9000;	requirements[]={"H"};	};	// "Mi-48 Kajman"  
-				class O_T_UAV_04_CAS_F						{cost = 10000;	requirements[]={"A"};	};	// "KH-3A Fenghuang"; 
+				class O_T_UAV_04_CAS_F						{cost = 6000;	requirements[]={"A"};	};	// "KH-3A Fenghuang"; 
 				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"  
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"  
 				class O_Plane_Fighter_02_F					{cost = 37000;	requirements[]={"A"};	};	// "To-201 Shikra"  
