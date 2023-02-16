@@ -228,7 +228,7 @@ waitUntil {WL_PLAYER_FUNDS != -1};
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 [] spawn BIS_fnc_WL2_timer;
-//[] spawn BIS_fnc_WL2_cpBalance;
+[] spawn BIS_fnc_WL2_cpBalance;
 
 
 [] spawn {
