@@ -15,12 +15,21 @@ _cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH
 
 
 while {true} do {
-	_balanceMultiplier = missionNamespace getVariable "balanceMultiplier";
-	_sideMultiplier = (_balanceMultiplier get (side group player)) - 1; // have to substract 1 here because we can be [0..2] with 1 being the middle. with -1 we get to [-1..1] which makes more sense for displaying.
-	_sidePercentage = if(isNil "_sideMultiplier") then [{0}, {_sideMultiplier * 100}];
-	_sidePercentage = round _sidePercentage;
-	_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentage >0) then [{"+"},{""}]), _sidePercentage, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-	_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentage > 0) then {[0,1,0,1]} else {if (_sidePercentage < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
+	if (side player == west) then {
+		private _balanceMultiplier = (missionNamespace getVariable "blanceMultilplierBlu") - 1;
+		private _sidePercentage = if(isNil "_balanceMultiplier") then [{0}, {_balanceMultiplier * 100}];
+		private _sidePercentageFinal = round _sidePercentage;
+		_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentageFinal >0) then [{"+"},{""}]), _sidePercentageFinal, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+		_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentageFinal > 0) then {[0,1,0,1]} else {if (_sidePercentageFinal < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
+		player setVariable ["sidePerc", _sidePercentageFinal, true]; // testing
+	} else {
+		private _balanceMultiplier = (missionNamespace getVariable "blanceMultilplierOpf") - 1;
+		private _sidePercentage = if(isNil "_balanceMultiplier") then [{0}, {_balanceMultiplier * 100}];
+		private _sidePercentageFinal = round _sidePercentage;
+		_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentageFinal >0) then [{"+"},{""}]), _sidePercentageFinal, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+		_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentageFinal > 0) then {[0,1,0,1]} else {if (_sidePercentageFinal < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
+		player setVariable ["sidePerc", _sidePercentageFinal, true]; // testing
+	};
 	_cpBalanceCtrl ctrlCommit 0;
 	sleep 5;
 };
