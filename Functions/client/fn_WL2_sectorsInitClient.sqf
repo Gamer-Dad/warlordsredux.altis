@@ -45,6 +45,9 @@ _location13 setText "Compound";
 _location13 = createLocation ["NameLocal", [23582.1,21097.6,0.0018158], 20, 20];
 _location13 setText "Nidasos Base";
 
+_location14 = createLocation ["NameLocal", [23128.7,18689.5,0.00143886], 20, 20];
+_location14 setText "Salt Flats";
+
 
 
 
