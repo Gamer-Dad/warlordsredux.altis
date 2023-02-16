@@ -3,14 +3,21 @@
 private _cpMultiplier = createHashMap;
 private _cpIncome = createHashMap;
 missionNamespace setVariable ["balanceMultiplier", _cpMultiplier, true];
-while {true} do {
-	sleep (WL_SECTOR_PAYOFF_PERIOD - 5); // -5 Seconds here to get to the full period with the additional 5 seconds sleep further down.
 
+_updateMultiplier = {
 	private _countFaction0 = playersNumber (BIS_WL_competingSides # 0);
-        _fac0Percentage = (1.6 * _countFaction0 / count allPlayers) + 0.2; // We multiply by 1.6 and add 0.2 to get a range of [0.2..1.8] (20% income to 180% income)
+		_fac0Percentage = (1.6 * _countFaction0 / count allPlayers) + 0.2; // We multiply by 1.6 and add 0.2 to get a range of [0.2..1.8] (20% income to 180% income)
 	_cpMultiplier set [ BIS_WL_competingSides # 0, 2 - _fac0Percentage]; // if side # 0 has e.g. 40% of the players, _fac0Percentage is 0.8, which substracted by 2 leaves 1.2 = 120% payout for that faction.
 	_cpMultiplier set [ BIS_WL_competingSides # 1, _fac0Percentage]; // the other side just gets the complementary of this. both entries added together will always end up being 2.
+};
 
+while {true} do {
+	sleep (WL_SECTOR_PAYOFF_PERIOD - 25); // -25 Seconds here to get to the full period with the additional 5 seconds sleep further down.
+	[] call _updateMultiplier;
+	sleep 10;
+	[] call _updateMultiplier;
+	sleep 10;
+	[] call _updateMultiplier;
 	sleep 5;
 	{
 		_incomeStandard = _x call BIS_fnc_WL2_income;

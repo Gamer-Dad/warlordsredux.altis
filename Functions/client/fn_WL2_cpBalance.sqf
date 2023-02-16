@@ -19,8 +19,20 @@ while {true} do {
 	_sideMultiplier = (_balanceMultiplier get (side group player)) - 1; // have to substract 1 here because we can be [0..2] with 1 being the middle. with -1 we get to [-1..1] which makes more sense for displaying.
 	_sidePercentage = if(isNil "_sideMultiplier") then [{0}, {_sideMultiplier * 100}];
 	_sidePercentage = round _sidePercentage;
-	_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentage >0) then [{"+"},{""}]), _sidePercentage, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-	_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentage > 0) then {[0,1,0,1]} else {if (_sidePercentage < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
+	switch (true) do {
+		case (_sidePercentage > 0): { 
+			_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", "+", _sidePercentage,"%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+			_cpBalanceCtrl ctrlSetTextColor [0,1,0,1];
+		};
+		case (_sidePercentage < 0): { 
+			_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", "", _sidePercentage,"%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+			_cpBalanceCtrl ctrlSetTextColor [1,0,0,1];
+		};
+		default { 
+			_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", "", _sidePercentage,"%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+			_cpBalanceCtrl ctrlSetTextColor [1,1,1,1];
+		};
+	};
 	_cpBalanceCtrl ctrlCommit 0;
 	sleep 5;
 };
