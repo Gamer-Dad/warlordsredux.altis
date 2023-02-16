@@ -1,30 +1,10 @@
 #include "..\warlords_constants.inc"
 
-
-while {true} do {
-	sleep WL_SECTOR_PAYOFF_PERIOD;
-	{
-		_side = _x;
-		_income = _side call BIS_fnc_WL2_income;
-		{
-			[_x, _income] call BIS_fnc_WL2_fundsControl;
-		} forEach (BIS_WL_allWarlords select {side group _x == _side});
-	} forEach BIS_WL_competingSides;
-};
-
-
-
-
-
-
-/*
-balanceKickIn = 2;
-
 private _cpMultiplier = createHashMap;
 private _cpIncome = createHashMap;
 missionNamespace setVariable ["balanceMultiplier", _cpMultiplier, true];
 while {true} do {
-	sleep WL_SECTOR_PAYOFF_PERIOD;
+	sleep (WL_SECTOR_PAYOFF_PERIOD - 5); // -5 Seconds here to get to the full period with the additional 5 seconds sleep further down.
 
 	private _countFaction0 = playersNumber (BIS_WL_competingSides # 0);
         _fac0Percentage = (1.6 * _countFaction0 / count allPlayers) + 0.2; // We multiply by 1.6 and add 0.2 to get a range of [0.2..1.8] (20% income to 180% income)
@@ -41,7 +21,9 @@ while {true} do {
 	{
 		_side = side group _x;
 		_actualIncome = _cpIncome get _side;
-		[_x, _actualIncome] call BIS_fnc_WL2_fundsControl;
+		// prevent players with odd sides for whatever reason		
+		if(!isNil "_actualIncome") then {
+			[_x, _actualIncome] call BIS_fnc_WL2_fundsControl;
+		}
 	} forEach allPlayers; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
 };
-*/
