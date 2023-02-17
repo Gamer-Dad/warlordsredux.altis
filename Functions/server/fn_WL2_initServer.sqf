@@ -159,6 +159,8 @@ call BIS_fnc_WL2_sectorsInitServer;
 [] spawn BIS_fnc_WL2_targetResetHandleServer;
 
 setTimeMultiplier BIS_WL_timeMultiplier;
+private _spaceLukkie = createSimpleObject ["\A3\Structures_F\Civ\Dead\HumanSkeleton_F.p3d", [17366.8,12577.2,18.2285]];
+_spaceLukkie setDir 122;
 
 [] spawn {
 	while {TRUE} do {
