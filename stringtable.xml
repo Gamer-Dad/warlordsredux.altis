@@ -26,7 +26,7 @@
             <Italian>Devi essere all'interno di un settore di proprietà.</Italian>
             <Polish>Musisz znajdować się w posiadanym sektorze.</Polish>
             <Portuguese>Você precisa estar dentro de um setor próprio.</Portuguese>
-            <Russian>Вы должны быть внутри собственного сектора.</Russian>
+            <Russian>Вы должны быть внутри контролируемого сектора.</Russian>
             <Spanish>Necesitas estar dentro de un sector propio.</Spanish>
             <Korean>소유 섹터 안에 있어야 합니다.</Korean>
             <Japanese>所有セクター内にいる必要があります。</Japanese>
@@ -42,7 +42,7 @@
             <Italian>Devi uscire dal tuo veicolo.</Italian>
             <Polish>Musisz wysiąść z pojazdu.</Polish>
             <Portuguese>Você tem que sair do seu veículo.</Portuguese>
-            <Russian>Вы должны выйти из своего автомобиля.</Russian>
+            <Russian>Вы должны выйти из своей техники.</Russian>
             <Spanish>Tienes que salir de tu vehículo.</Spanish>
             <Korean>차량에서 내려야 합니다.</Korean>
             <Japanese>車から降りなければなりません。</Japanese>
@@ -58,7 +58,7 @@
             <Italian>Limite di risorse raggiunto.</Italian>
             <Polish>Osiągnięto limit zasobów.</Polish>
             <Portuguese>Limite de ativos atingido.</Portuguese>
-            <Russian>Достигнут предел активов.</Russian>
+            <Russian>Достигнут предел объектов.</Russian>
             <Spanish>Límite de activos alcanzado.</Spanish>
             <Korean>자산 한도에 도달했습니다.</Korean>
             <Japanese>アセットの上限に達しました。</Japanese>
@@ -106,7 +106,7 @@
             <Italian>Asset riarmato.</Italian>
             <Polish>Zasób ponownie uzbrojony.</Polish>
             <Portuguese>Ativo rearmado.</Portuguese>
-            <Russian>Актив перевооружен.</Russian>
+            <Russian>Объект перевооружен.</Russian>
             <Spanish>Activo rearmado.</Spanish>
             <Korean>자산이 재정비되었습니다.</Korean>
             <Japanese>アセットが再装備されました。</Japanese>
@@ -122,7 +122,7 @@
             <Italian>Asset riparato.</Italian>
             <Polish>Zasób naprawiony.</Polish>
             <Portuguese>Ativo reparado.</Portuguese>
-            <Russian>Актив отремонтирован.</Russian>
+            <Russian>Объект отремонтирован.</Russian>
             <Spanish>Activo reparado.</Spanish>
             <Korean>자산이 수리되었습니다.</Korean>
             <Japanese>アセットが修復されました。</Japanese>
@@ -219,7 +219,7 @@
             <Italian>Salva il tuo loadout attuale per una successiva applicazione.</Italian>
             <Polish>Zapisz swój obecny wyposażenie na później.</Polish>
             <Portuguese>Salve sua configuração atual para uma reaplicação posterior.</Portuguese>
-            <Russian>Сохраните текущую комплектацию для повторного использования.</Russian>
+            <Russian>Сохраните текущую экипировку для повторного использования.</Russian>
             <Spanish>Guarda tu loadout actual para su reaplicación posterior.</Spanish>
             <Korean>나중에 다시 적용할 수 있도록 현재 로드아웃을 저장하십시오.</Korean>
             <Japanese>後で再適用するために現在のロードアウトを保存します。</Japanese>
@@ -235,7 +235,7 @@
             <Italian>Il tuo equipaggiamento salvato.</Italian>
             <Polish>Twój zapisany wybór wyposażenia.</Polish>
             <Portuguese>Seu equipamento salvo.</Portuguese>
-            <Russian>Твой сохраненный выбор вооружения.</Russian>
+            <Russian>Ваш сохраненный набор вооружения.</Russian>
             <Spanish>Tu equipación guardada.</Spanish>
             <Korean>저장된 로드아웃.</Korean>
             <Japanese>保存された装備。</Japanese>
@@ -251,7 +251,7 @@
             <Italian>Applica la tua configurazione salvata.%1Puoi salvare la tua configurazione corrente richiedendo "Salva configurazione" alla fine di questo elenco.</Italian>
             <Polish>Zastosuj swoją zapisaną konfigurację.%1Możesz zapisać swoją bieżącą konfigurację poprzez żądanie "Zapisz konfigurację" na końcu tej listy.</Polish>
             <Portuguese>Aplique sua configuração salva.%1Você pode salvar sua configuração atual solicitando "Salvar configuração" no final desta lista.</Portuguese>
-            <Russian>Примените сохраненный набор.%1Вы можете сохранить текущий набор, запросив 'Save loadout' в конце этого списка.</Russian>
+            <Russian>Примените сохраненный набор.%1Вы можете сохранить текущий набор, запросив 'Сохранить экипировку' в конце этого списка.</Russian>
             <Spanish>Aplica tu configuración guardada.%1Puedes guardar tu configuración actual solicitando "Guardar configuración" al final de esta lista.</Spanish>
             <Korean>저장된 로드아웃을 적용하세요.%1이 목록의 끝에서 'Save loadout'을 요청하여 현재 로드아웃을 저장할 수 있습니다.</Korean>
             <Japanese>保存されたロードアウトを適用してください。%1このリストの最後に「Save loadout」を要求することで現在のロードアウトを保存することができます。</Japanese>
@@ -267,7 +267,7 @@
             <Italian>Configurazione salvata.</Italian>
             <Polish>Zapisano wyposażenie.</Polish>
             <Portuguese>Configuração de equipamento salva.</Portuguese>
-            <Russian>Комплектация сохранена.</Russian>
+            <Russian>Экипировка сохранена.</Russian>
             <Spanish>Equipación guardada.</Spanish>
             <Korean>저장된 로드아웃</Korean>
             <Japanese>ロードアウトが保存されました</Japanese>
@@ -427,7 +427,7 @@
             <Italian>Asset inviato.</Italian>
             <Polish>Zasób wysłany.</Polish>
             <Portuguese>Ativo despachado.</Portuguese>
-            <Russian>Актив отправлен.</Russian>
+            <Russian>Объект отправлен.</Russian>
             <Spanish>Activo enviado.</Spanish>
             <Korean>자산 배송됨.</Korean>
             <Japanese>アセット送信済み。</Japanese>
@@ -459,7 +459,7 @@
             <Italian>Ordina un veicolo per il viaggio rapido.</Italian>
             <Polish>Zamów szybki środek transportu.</Polish>
             <Portuguese>Solicitar veículo de viagem rápida.</Portuguese>
-            <Russian>Заказать быстроходный автомобиль.</Russian>
+            <Russian>Заказать передвиждной спавн.</Russian>
             <Spanish>Pedir vehículo de viaje rápido.</Spanish>
             <Korean>빠른 여행 차량 주문.</Korean>
             <Japanese>高速旅行車を注文する。</Japanese>
@@ -475,7 +475,7 @@
             <Italian>Viaggio rapido al punto di spawn in movimento.</Italian>
             <Polish>Szybka podróż do poruszającego się punktu spawnu.</Polish>
             <Portuguese>Viagem rápida para o ponto de geração em movimento.</Portuguese>
-            <Russian>Быстрое путешествие к движущемуся спавну.</Russian>
+            <Russian>Быстрое перемещение к передвижному спавну.</Russian>
             <Spanish>Viaje rápido al punto de aparición móvil.</Spanish>
             <Korean>이동하는 스폰지점으로의 빠른 여행.</Korean>
             <Japanese>移動するスポーンへのフラストトラベル.</Japanese>
@@ -491,7 +491,7 @@
             <Italian>Il veicolo di viaggio veloce esiste già.</Italian>
             <Polish>Szybki pojazd podróżny już istnieje.</Polish>
             <Portuguese>Veículo de viagem rápida já existe.</Portuguese>
-            <Russian>Быстрый путешественный транспорт уже существует.</Russian>
+            <Russian>Передвижной спавн уже существует.</Russian>
             <Spanish>El vehículo de viaje rápido ya existe.</Spanish>
             <Korean>빠른 여행 차량이 이미 존재합니다.</Korean>
             <Japanese>早い旅行車両がすでに存在します。</Japanese>
@@ -523,7 +523,7 @@
             <Italian>Nessun veicolo di viaggio rapido disponibile.</Italian>
             <Polish>Brak dostępnego pojazdu do szybkiej podróży.</Polish>
             <Portuguese>Nenhum veículo de viagem rápida disponível.</Portuguese>
-            <Russian>Нет доступного скоростного транспортного средства.</Russian>
+            <Russian>Нет доступного передвижного спавна.</Russian>
             <Spanish>No hay ningún vehículo de viaje rápido disponible.</Spanish>
             <Korean>속도 여행 용 차량이 없습니다.</Korean>
             <Japanese>高速旅行用の車両が利用可能ではありません。</Japanese>
@@ -539,7 +539,7 @@
             <Italian>Viaggiando rapidamente al veicolo di viaggio rapido.</Italian>
             <Polish>Szybko podróżuję do pojazdu szybkiego przemieszczania się.</Polish>
             <Portuguese>Viajando rápido para o veículo de viagem rápida.</Portuguese>
-            <Russian>Быстрый путешествие к средству быстрой передачи.</Russian>
+            <Russian>Быстрое перемещение к передвижному спавну.</Russian>
             <Spanish>Viajando rápidamente al vehículo de viaje rápido.</Spanish>
             <Korean>빠른 여행 차량으로 빠른 여행 중입니다.</Korean>
             <Japanese>高速旅行車両に高速旅行中です。</Japanese>
@@ -563,8 +563,8 @@
             <Chinese>您目前的指令點數 (CP) 已被儲存。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_cp_recieved">
-            <Original>Your prior command points (CP) have been restored.</Original>
-            <English>Your prior command points (CP) have been restored.</English>
+            <Original>Your prior CP has been restored.</Original>
+            <English>Your prior CP has been restored.</English>
             <Czech>vaše předchozí příkazové body (CP) byly přijaty.</Czech>
             <French>vos points de commande (CP) précédents ont été reçus.</French>
             <German>Deine vorherigen Kommandopunkte (CP) wurden wiederhergestellt.</German>
@@ -715,7 +715,7 @@
             <Italian>Vota per arrendersi.</Italian>
             <Polish>Głosuj za poddaniem się.</Polish>
             <Portuguese>Vote para se render.</Portuguese>
-            <Russian>Голосуйте за сдачу.</Russian>
+            <Russian>Начать голосование за сдачу.</Russian>
             <Spanish>Voto para rendirse.</Spanish>
             <Korean>항복에 투표하십시오.</Korean>
             <Japanese>降伏に投票してください。</Japanese>
@@ -741,18 +741,18 @@
         <Key ID="STR_A3_WL_OSD_rearm_possible">
             <Original>Repair / Rearm possible</Original>
             <English>Repair / Rearm possible</English>
-            <Czech></Czech>
-            <French></French>
+            <Czech>Oprava / přezbrojení možná</Czech>
+            <French>Réparation / Réarmement possible</French>
             <German>Reparatur / Neu Bewaffnen möglich</German>
-            <Italian></Italian>
-            <Polish></Polish>
-            <Portuguese></Portuguese>
-            <Russian></Russian>
-            <Spanish></Spanish>
-            <Korean></Korean>
-            <Japanese></Japanese>
-            <Chinesesimp></Chinesesimp>
-            <Chinese></Chinese>
+            <Italian>Riparazione / Riarmo possibile</Italian>
+            <Polish>Możliwa naprawa / ponowne uzbrojenie</Polish>
+            <Portuguese>Consertar / Rearmar possível</Portuguese>
+            <Russian>Перевооружение / Ремонт доступны</Russian>
+            <Spanish>Reparación / Rearme posible</Spanish>
+            <Korean>수리/재장 가능</Korean>
+            <Japanese>修理・リアーム可能</Japanese>
+            <Chinesesimp>可以修理/重新装弹</Chinesesimp>
+            <Chinese>可以修理/重新裝彈</Chinese>
         </Key>
         <Key ID="keep_empty!!!!!!!!">
             <Original></Original>
@@ -885,15 +885,15 @@
             <Chinese>欢迎来到Warlords Redux！</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_08">
-            <Original>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.</Original>
-            <English>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. It's project goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatible with official servers for the best player count.</English>
+            <Original>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. The project's goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatable with official servers for the best player count.</Original>
+            <English>Warlords Redux 2.5 is a community upgrade project for the Original Warlords Redux. The project's goal is to improve on BI vision of warlords with bugfixes and more balanced user experience while staying compatible with official servers for the best player count.</English>
             <Czech>Warlords Redux 2.5 je projektem komunitního upgradu pro původní Warlords Redux. Jeho cílem je vylepšit BI vizi Warlordů s opravou chyb a vyváženějším uživatelským zážitkem a zároveň zůstat kompatibilním s oficiálními servery pro nejlepší počet hráčů.</Czech>
             <French>Warlords Redux 2.5 est un projet de mise à niveau communautaire pour le Warlords Redux original. Son objectif est d'améliorer la vision de BI de Warlords avec des correctifs de bogues et une expérience utilisateur plus équilibrée tout en restant compatible avec les serveurs officiels pour le meilleur nombre de joueurs.</French>
             <German>Warlords Redux 2.5 ist ein Community-Upgrade-Projekt für das Original Warlords Redux. Ziel des Projekts ist es, die BI-Vision von Warlords durch Fehlerbehebungen und eine ausgewogenere Benutzererfahrung zu verbessern, während eine Kompatibilität mit offiziellen Servern für die größtmögliche Spielerzahl beibehalten wird.</German>
             <Italian>Warlords Redux 2.5 è un progetto di upgrade comunitario per l'originale Warlords Redux. Il suo obiettivo è migliorare la visione di BI di Warlords con correzioni di bug e un'esperienza utente più equilibrata mantenendo la compatibilità con i server ufficiali per il miglior numero di giocatori.</Italian>
             <Polish>Warlords Redux 2.5 jest projektem aktualizacji społeczności dla oryginalnego Warlords Redux. Celem projektu jest poprawa wizji BI w Warlords z poprawkami błędów i bardziej wyrównaną jakością doświadczenia użytkownika, przy jednoczesnej zgodności z oficjalnymi serwerami dla najlepszej liczby graczy.</Polish>
             <Portuguese>Warlords Redux 2.5 é um projeto de atualização da comunidade para o Warlords Redux original. O objetivo do projeto é melhorar a visão do BI de warlords com correções de bugs e uma experiência de usuário mais equilibrada, mantendo a compatibilidade com os servidores oficiais para o melhor número de jogadores.</Portuguese>
-            <Russian>Warlords Redux 2.5 - это проект обновления сообщества для Оригинального Warlords Redux. Цель проекта - улучшить видение BI военачальников с исправлением ошибок и более сбалансированным пользовательским опытом, при этом оставаясь совместимым с официальными серверами для лучшего количества игроков.</Russian>
+            <Russian>Warlords Redux 2.5 – это проект обновления оригинального Warlords от сообщества War Sim Vets. Цель проекта – представить наилучшие решения для Warlords с исправлением ошибок и более сбалансированным пользовательским опытом, оставаясь при этом совместимым с официальными серверами для привлечения большего количества игроков.</Russian>
             <Spanish>Warlords Redux 2.5 es un proyecto de actualización de la comunidad para Warlords Redux original. Su objetivo de proyecto es mejorar la visión de BI de warlords con correcciones de errores y una experiencia de usuario más equilibrada, manteniendo la compatibilidad con los servidores oficiales para el mejor número de jugadores.</Spanish>
             <Korean>Warlords Redux 2.5는 원래 Warlords Redux의 커뮤니티 업그레이드 프로젝트입니다. 그것의 프로젝트 목표는 버그 수정과 더 밸런스 있는 사용자 경험을 통해 Warlords의 BI 비전을 개선하면서도 공식 서버와 호환 가능한 최고 플레이어 수를 유지하는 것입니다.</Korean>
             <Japanese>Warlords Redux 2.5は元のWarlords Reduxのコミュニティアップグレードプロジェクトです。そのプロジェクトの目的はバグの修正とよりバランスのとれたユーザーエクスペリエンスを通じてWarlordsのBIのビジョンを改善することであり、公式サーバとの互換性を維持しながら最高のプレイヤー数を確保することです。</Japanese>
@@ -909,7 +909,7 @@
             <Italian>Warlords Redux introduce molte nuove funzionalità come la Nebbia di Guerra e le posizioni di base casuali. Ha molte altre nuove funzionalità rispetto ai Warlord originali, come posizioni di base casuali, pattini per aerei personalizzati e l'introduzione di tutti i droni/SAM/AAA...</Italian>
             <Polish>Warlords Redux wprowadza wiele nowych funkcji, takich jak Mgła Wojny i losowe lokalizacje baz. Ma wiele innych nowych funkcji w porównaniu z warlordami vanilla, takich jak losowe lokalizacje baz, niestandardowe pylony samolotów i wprowadzenie wszystkich bezzałogowych samolotów/SAM/AAA...</Polish>
             <Portuguese>Warlords Redux apresenta muitos novos recursos, como a Névoa da Guerra e localizações de base aleatórias. Possui muitos outros recursos novos em comparação com o Warlords original, como localizações de base aleatórias, pás de aeronaves personalizadas e a introdução de todos os drones/SAMs/AAA...</Portuguese>
-            <Russian>Warlords Redux внедряет много новых функций, таких как Туман войны и случайные местоположения баз. Он имеет много других новых функций по сравнению со стандартным Warlords, таких как случайные местоположения баз, персонализированные подвески самолетов и введение всех дронов/SAM/AAA...</Russian>
+            <Russian>Warlords Redux внедряет множество новых функций, таких как Туман Войны и случайное расположение баз команд. Также представлены и другие особенности: настраиваемые подвесы для авиации и введение всех оригинальных БПА/ЗРК/ПВО…</Russian>
             <Spanish>Warlords Redux introduce muchas nuevas funciones como la Niebla de Guerra y ubicaciones de base aleatorias. Tiene muchas otras funciones nuevas en comparación con Warlords clásico, como ubicaciones de base aleatorias, pórticos de aeronaves personalizados y la introducción de todos los drones/SAMs/AAA...</Spanish>
             <Korean>Warlords Redux은 흐림의 전장과 무작위 기지 위치 등 많은 새로운 기능을 소개합니다. 베이니실 워로드와 비교했을 때 무작위 기지 위치, 사용자 정의 항공기 피렌, 모든 드론/SAM/AAA 소개 등의 많은 다른 새로운 기능이 있습니다.</Korean>
             <Japanese>Warlords Reduxは、「霧の戦場」や「ランダムな基地の位置」など多くの新しい機能を導入しています。バニラのWarlordsと比較すると、ランダムな基地の位置、カスタム航空機パイロン、すべてのドローン/SAM/AAAの導入など、多くの他の新しい機能があります。</Japanese>
@@ -925,7 +925,7 @@
             <Italian>In questi video puoi vedere una guida dettagliata su come giocare a Warlords Redux.</Italian>
             <Polish>W tych filmach można zobaczyć szczegółowy przewodnik dotyczący gry w Warlords Redux.</Polish>
             <Portuguese>Nesses vídeos você pode ver um guia detalhado de como jogar Warlords Redux.</Portuguese>
-            <Russian>В этих видео вы можете увидеть подробное руководство по игре Warlords Redux.</Russian>
+            <Russian>В этих видео вы можете посмотреть подробное руководство по игре Warlords Redux.</Russian>
             <Spanish>En estos videos puedes ver una guía detallada de cómo jugar a Warlords Redux.</Spanish>
             <Korean>이 비디오에서는 Warlords Redux를 어떻게 하는지에 대한 상세한 안내를 볼 수 있습니다.</Korean>
             <Japanese>これらのビデオではWarlords Reduxをどのようにプレイするかの詳細なガイドが見られます。</Japanese>
@@ -973,7 +973,7 @@
             <Italian>Premere INSERT - Per inserire i tappi per le orecchie.</Italian>
             <Polish>Naciśnij INSERT - Aby włożyć wkładki do uszu.</Polish>
             <Portuguese>Pressione INSERT - Para inserir seus protetores de ouvido.</Portuguese>
-            <Russian>Нажмите INSERT - Чтобы вставить свои наушники.</Russian>
+            <Russian>Нажатие INSERT - использовать беруши.</Russian>
             <Spanish>Presiona INSERT - Para insertar tus tapones para los oídos.</Spanish>
             <Korean>삽입 누름 - 귀 플러그를 삽입하십시오.</Korean>
             <Japanese>挿入を押す - 耳栓を挿入します。</Japanese>
@@ -989,7 +989,7 @@
             <Italian>CTRL + G - Mostra il tuo APS nella chat.</Italian>
             <Polish>CTRL + G - Pokazuje twoje APS na czacie.</Polish>
             <Portuguese>CTRL + G - Mostra sua APS no chat.</Portuguese>
-            <Russian>CTRL + G - Показывает вашу APS в чате.</Russian>
+            <Russian>CTRL + G - показать состояние вашего КАЗ в чате.</Russian>
             <Spanish>CTRL + G - Muestra tu APS en el chat.</Spanish>
             <Korean>CTRL + G - 채팅에서 APS를 표시합니다.</Korean>
             <Japanese>CTRL + G - チャットにAPSを表示します。</Japanese>
@@ -1101,7 +1101,7 @@
             <Italian>Si prega di leggere prima come giocare</Italian>
             <Polish>Najpierw przeczytaj, jak grać</Polish>
             <Portuguese>Por favor, leia como jogar primeiro</Portuguese>
-            <Russian>Сначала прочитайте, как играть</Russian>
+            <Russian>Сначала прочитайте раздел "как играть"</Russian>
             <Spanish>Por favor, lea cómo jugar primero</Spanish>
             <Korean>먼저 플레이 방법을 읽어주세요</Korean>
             <Japanese>最初に遊び方をお読みください</Japanese>

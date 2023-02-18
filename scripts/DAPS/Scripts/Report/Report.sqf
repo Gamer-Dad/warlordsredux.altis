@@ -15,7 +15,7 @@ if!(_indicator)then{
 	//if(_v getVariable"dapsActive")then{systemChat format["%1 is ON",_type]}else{systemChat format["%1 is OFF",_type]};
 	if(_v getVariable"dapsActive")then{hintSilent format["%1 is ON",_type]}else{hintSilent format["%1 is OFF",_type]};
 };
-sleep .3;
+sleep .5;
 private _text="";
 if((typeOf _v)in dapsDouble)then{
 	_text=format["%1 charges:<br/><br/>L: %2/%3         R: %4/%5",(_v getVariable"dapsType"),(_v getVariable"dapsAmmoL"),(_v getVariable"dapsAmmoMaxL"),(_v getVariable"dapsAmmoR"),(_v getVariable"dapsAmmoMaxR")];
@@ -25,7 +25,7 @@ if((typeOf _v)in dapsDouble)then{
 if((typeOf _v)in dapsDazzler)then{_text="Dazzler active"};
 if!(_indicator)exitWith{
 	hintSilent(parseText format["%1",_text]);
-	sleep 2;
+	sleep 3;
 	hintSilent "";
 };
 if(_d<1)then{_d=1};
@@ -34,5 +34,5 @@ _colour="#999999";
 _pic=format["scripts\DAPS\Pics\dir%1.paa",_d];
 playSound"Alarm";
 hintSilent(parseText format["<img size='7' color='%1' img image='%2'/><br/><br/>%3",_colour,_pic,_text]);
-sleep 2;
+sleep 3;
 hintSilent "";
