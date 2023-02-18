@@ -15,7 +15,7 @@ _cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH
 
 
 while {true} do {
-	if (side player == west) then {
+	if (side group player == west) then {
 		private _balanceMultiplier = (missionNamespace getVariable "blanceMultilplierBlu") - 1;
 		private _sidePercentage = if(isNil "_balanceMultiplier") then [{0}, {_balanceMultiplier * 100}];
 		private _sidePercentageFinal = round _sidePercentage;
