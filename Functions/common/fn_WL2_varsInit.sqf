@@ -19,7 +19,7 @@ switch (_locality) do {
 		BIS_WL_purchaseListTeplateArr = call compile (BIS_WL_initModule getVariable ["BIS_WL_requisitionPreset", "['A3DefaultAll']"]);
 		BIS_WL_scanCost = BIS_WL_initModule getVariable ["BIS_WL_scanCost", 350];
 		BIS_WL_fastTravelCostOwned = BIS_WL_initModule getVariable ["BIS_WL_fastTravelCostOwned", 0];
-		BIS_WL_fastTravelCostContested = BIS_WL_initModule getVariable ["BIS_WL_fastTravelCostContested", 50];
+		BIS_WL_fastTravelCostContested = BIS_WL_initModule getVariable ["BIS_WL_fastTravelCostContested", 200];
 		BIS_WL_fundsTransferCost = BIS_WL_initModule getVariable ["BIS_WL_fundsTransferCost", 500];
 		BIS_WL_targetResetCost = BIS_WL_initModule getVariable ["BIS_WL_targetResetCost", 2000];
 		BIS_WL_scanEnabled = BIS_WL_initModule getVariable ["BIS_WL_scanEnabled", TRUE];

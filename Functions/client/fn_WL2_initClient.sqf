@@ -311,7 +311,7 @@ if (side player == west) then {
 			"RobotoCondensed",
 			"right"
 		]; 
-		} forEach entities "O_Truck_02_medical_F";
+		} forEach entities "O_Truck_03_medical_F";
 	}];
 };
 

@@ -89,7 +89,7 @@ addMissionEventHandler ["EntityKilled", {
 		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 	};
 
-	if (typeOf _unit == "O_Truck_02_medical_F") then {
+	if (typeOf _unit == "O_Truck_03_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
 }];

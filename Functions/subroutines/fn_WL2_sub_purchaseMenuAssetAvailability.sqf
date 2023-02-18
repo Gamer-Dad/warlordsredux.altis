@@ -76,16 +76,22 @@ if (_ret) then {
 				} else {
 					if (missionNamespace getVariable "ftVehicleExistsBlu" == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
+				{
+					if ((count fullCrew [_x, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};					
+				} forEach entities "B_Truck_01_medical_F";
 			} else {
 				if (missionNamespace getVariable "ftVehicleExistsOpf") then {
 					{
 						altitudeOpfFT = getPosATL _x;
 						missionNamespace setVariable ["OpfFTPos", altitudeOpfFT];
-					} forEach entities "=O_Truck_02_medical_F";
+					} forEach entities "=O_Truck_03_medical_F";
 					if ((missionNamespace getVariable "OpfFTPos" select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
 					if (missionNamespace getVariable "ftVehicleExistsOpf" == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
+				{
+					if ((count fullCrew [_x, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};					
+				} forEach entities "O_Truck_03_medical_F";
 			}; 
 		};
 		default {

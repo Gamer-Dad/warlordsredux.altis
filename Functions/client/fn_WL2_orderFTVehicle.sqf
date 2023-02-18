@@ -11,7 +11,7 @@ if (side player == west) then {
 };
 
 if (side player == east) then {
-	private _assetOpf = createVehicle ["O_Truck_02_medical_F", player , [], 0, "NONE"];
+	private _assetOpf = createVehicle ["O_Truck_03_medical_F", player , [], 0, "NONE"];
 	[player, _assetOpf] call BIS_fnc_WL2_newAssetHandle;
 
 	missionNamespace setVariable ["ftVehicleExistsOpf", true, true];

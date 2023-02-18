@@ -7,7 +7,7 @@ if (typeOf _asset == "B_Truck_01_medical_F") then {
 	deleteVehicle _asset;
 };
 
-if (typeOf _asset == "O_Truck_02_medical_F") then {
+if (typeOf _asset == "O_Truck_03_medical_F") then {
 	missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	deleteVehicle _asset;
 };
