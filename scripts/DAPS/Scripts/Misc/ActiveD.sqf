@@ -3,7 +3,7 @@ if ((count (crew _v)) < 1) exitWith {
 	false;
 	"not enough crew!" remoteExec ["systemChat", -2];
 };
-//if ((crew _v) # 0 findIf {alive _x} == -1) exitWith {false};
+
 if (_v getHitPointDamage "hitEngine" > 0.5) exitWith {
 	false;
 	"to much dmg!" remoteExec ["systemChat", -2];
