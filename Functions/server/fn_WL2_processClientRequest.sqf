@@ -113,7 +113,6 @@ if !(isNull _sender) then {
 
 						_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
 						_asset setDir _dir;
-						sleep 3;
 						_asset setDamage 0;
 						_asset setFuel 1;
 
@@ -149,7 +148,6 @@ if !(isNull _sender) then {
 							};
 							_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
 							_asset setDir _dir;
-							sleep 3;
 							_asset setDamage 0;
 							_asset setFuel 1;
 						} else {
@@ -175,7 +173,6 @@ if !(isNull _sender) then {
 							};
 							_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
 							_asset setDir _dir;
-							sleep 3;
 							_asset setDamage 0;
 							_asset setFuel 1;
 						};
