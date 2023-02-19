@@ -10,20 +10,11 @@ if !(_v getVariable "dapsActive") exitWith {false};
 
 if (typeOf _v == "O_T_Truck_03_device_ghex_F" || typeof _v == "O_Truck_03_device_F") then {
 	if !(_v getVariable "dazzlerActivated") exitWith {
-		false;
-		_dazzlerActivated = false;
+		if (true) exitWith {false};
 	};
-	_dazzlerActivated = true;
 	if (_v getHitPointDamage "hitEngine" > 0.5) exitWith {
-		false;
-		_dazzlerEngineHit = true;
+		if (true) exitWith {false};
 	};
-	_dazzlerEngineHit = false;
 };
 
-if (_dazzlerEngineHit == true) exitWith {false};
-
-if (_dazzlerActivated == false) exitWith {
-	if (_v == typeOf "O_T_Truck_03_device_ghex_F" || typeof _v == "O_Truck_03_device_F") then [{false}, {true}];
-};
 true

@@ -19,9 +19,26 @@ while {true} do {
 	} forEach BIS_WL_competingSides; // we calculate the actual income for each faction and store it in the income hashmap. That allows us to keep the loop for all players trivial.
 	{
 		_side = side group _x;
+		/*
 		if (_side == west) then [
 			{[_x, (missionNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsControl}, 
 			{[_x, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsControl}
 		];
+		*/
+		if (_side == west) then {
+			if ((missionNamespace getVariable "actualIncomeBlu") < 50) then {
+				_incomeStandard = side _x call BIS_fnc_WL2_income;
+				[_x, _incomeStandard] call BIS_fnc_WL2_fundsControl;
+			} else {
+				[_x, (missionNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsControl;
+			};
+		} else {
+			if ((missionNamespace getVariable "actualIncomeOpf") < 50) then {
+				_incomeStandard = side _x call BIS_fnc_WL2_income;
+				[_x, _incomeStandard] call BIS_fnc_WL2_fundsControl;
+			} else {
+				[_x, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsControl;
+			};
+		};
 	} forEach allPlayers; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
 };
