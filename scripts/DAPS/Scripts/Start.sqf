@@ -121,7 +121,6 @@ DAPS_fnc_KeyPressed2 = compile preprocessFile"scripts\DAPS\Scripts\Management\Ke
 DAPS_fnc_Time = compile preprocessFile"scripts\DAPS\Scripts\Misc\Time.sqf";
 DAPS_fnc_Indicator = compile preprocessFile"scripts\DAPS\Scripts\Report\Indicator.sqf";
 DAPS_fnc_Active = compile preprocessFile"scripts\DAPS\Scripts\Misc\Active.sqf";
-DAPS_fnc_ActiveDazzler = compile preprocessFile"scripts\DAPS\Scripts\Misc\ActiveD.sqf";
 DAPS_fnc_Inc = compile preprocessFile"scripts\DAPS\Scripts\Misc\GetIncoming.sqf";
 DAPS_fnc_CountAmmo = compile preprocessFile"scripts\DAPS\Scripts\Misc\CountAmmo.sqf";
 DAPS_fnc_RearmCheck = compile preprocessFile"scripts\DAPS\Scripts\Misc\RearmCheck.sqf";

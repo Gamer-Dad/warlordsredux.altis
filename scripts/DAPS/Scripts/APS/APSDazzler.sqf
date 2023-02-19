@@ -15,7 +15,7 @@ private _reg = [];
 
 while {true} do {
 	if !(alive _v) exitWith {};
-	if (_v call DAPS_fnc_ActiveDazzler) then {
+	if (_v call DAPS_fnc_Active) then {
 		_r = _v nearObjects ["RocketCore", 500];
 		_m = _v nearObjects ["MissileCore", 500];
 		_sm = _v nearObjects ["SubmunitionCore", 500];
