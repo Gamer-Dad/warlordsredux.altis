@@ -16,6 +16,7 @@ private _reg = [];
 while {true} do {
 	if !(alive _v) exitWith {};
 	if (_v call DAPS_fnc_ActiveD) then {
+		"dazzler!" remoteExec ["systemChat", -2];
 		_r = _v nearObjects ["RocketCore", 500];
 		_m = _v nearObjects ["MissileCore", 500];
 		_sm = _v nearObjects ["SubmunitionCore", 500];
