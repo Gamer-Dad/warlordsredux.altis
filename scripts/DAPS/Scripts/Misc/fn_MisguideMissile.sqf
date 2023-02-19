@@ -31,6 +31,7 @@ while{TRUE}do{
 while{TRUE}do{
 	if!(alive _vehicle)exitWith{};
 	if!(alive _missile)exitWith{};
+	"Misguided!" remoteExec ["systemChat", -2];
 	_velocity=velocityModelSpace _missile;
 	//_up=_power;if((random 10)>5)then{_up=-_power};
 	//_left=_power;if((random 10)>5)then{_left=-_power};
