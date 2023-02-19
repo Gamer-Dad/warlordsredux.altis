@@ -278,9 +278,6 @@ if (isPlayer _owner) then {
 
 			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-			};
-
-			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
 				if (side _owner == east) then {
 					_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
 					_asset setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Does nothing but keep for reminder
