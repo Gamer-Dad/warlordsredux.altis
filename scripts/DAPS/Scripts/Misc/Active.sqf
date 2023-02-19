@@ -23,5 +23,7 @@ if (typeOf _v == "O_T_Truck_03_device_ghex_F" || typeof _v == "O_Truck_03_device
 
 if (_dazzlerEngineHit == true) exitWith {false};
 
-if (_dazzlerActivated == false) exitWith {false};
+if (_dazzlerActivated == false) exitWith {
+	if (_v == typeOf "O_T_Truck_03_device_ghex_F" || typeof _v == "O_Truck_03_device_F") then [{false}, {true}];
+};
 true
