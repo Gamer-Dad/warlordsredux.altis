@@ -1,14 +1,22 @@
 #include "..\warlords_constants.inc"
 
-while {true} do {
-	sleep (WL_SECTOR_PAYOFF_PERIOD - 5); // -5 Seconds here to get to the full period with the additional 5 seconds sleep further down.
-
+_refreshBalance = {
 	private _countFaction0 = playersNumber west;
     _fac0Percentage = (1.6 * _countFaction0 / count allPlayers) + 0.2; // We multiply by 1.6 and add 0.2 to get a range of [0.2..1.8] (20% income to 180% income)
 	_multiBlu = 2 - _fac0Percentage;
 	missionNamespace setVariable ["blanceMultilplierBlu", _multiBlu, true];
 	_multiOpf = _fac0Percentage;
 	missionNamespace setVariable ["blanceMultilplierOpf", _multiOpf, true];
+};
+
+while {true} do {
+	sleep (WL_SECTOR_PAYOFF_PERIOD - 25); // -25 Seconds here to get to the full period with the additional 5 seconds sleep further down.
+
+	call _refreshBalance;
+
+	sleep 20;
+
+	call _refreshBalance;
 	
 	sleep 5;
 
