@@ -37,14 +37,14 @@ while {true} do {
 		if (_side == west) then {
 			if ((missionNamespace getVariable "actualIncomeBlu") < 50) then {
 				_incomeStandard = west call BIS_fnc_WL2_income;
-				[_x, _incomeStandard] call BIS_fnc_WL2_fundsControl;
+				[_x, 50] call BIS_fnc_WL2_fundsControl;
 			} else {
 				[_x, (missionNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsControl;
 			};
 		} else {
 			if ((missionNamespace getVariable "actualIncomeOpf") < 50) then {
 				_incomeStandard = east call BIS_fnc_WL2_income;
-				[_x, _incomeStandard] call BIS_fnc_WL2_fundsControl;
+				[_x, 50] call BIS_fnc_WL2_fundsControl;
 			} else {
 				[_x, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsControl;
 			};
