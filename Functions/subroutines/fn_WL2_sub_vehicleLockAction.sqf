@@ -13,7 +13,7 @@ private _actionID = _asset addAction [
 		_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 	},
 	[],
-	99,
+	100,
 	if ((locked _this) == 2) then {TRUE} else {FALSE},
 	FALSE,
 	"",

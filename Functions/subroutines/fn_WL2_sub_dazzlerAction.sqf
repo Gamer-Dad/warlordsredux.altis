@@ -13,7 +13,7 @@ private _actionID = _asset addAction [
 		_asset call BIS_fnc_WL2_sub_dazzlerAction;
 	},
 	[],
-	100,
+	99,
 	false,
 	false,
 	"",
