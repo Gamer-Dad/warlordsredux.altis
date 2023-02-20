@@ -7,6 +7,12 @@ _refreshBalance = {
 	missionNamespace setVariable ["blanceMultilplierBlu", _multiBlu, true];
 	_multiOpf = _fac0Percentage;
 	missionNamespace setVariable ["blanceMultilplierOpf", _multiOpf, true];
+
+	{
+		_incomeStandard = _x call BIS_fnc_WL2_income;
+		_actualIncome = round (_incomeStandard * (if (_x == west) then [{missionNamespace getVariable "blanceMultilplierBlu"}, {missionNamespace getVariable "blanceMultilplierOpf"}]));
+		if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome, true]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome, true]}]
+	} forEach BIS_WL_competingSides; // we calculate the actual income for each faction and store it in the income hashmap. That allows us to keep the loop for all players trivial.
 };
 
 while {true} do {
@@ -20,11 +26,6 @@ while {true} do {
 	
 	sleep 5;
 
-	{
-		_incomeStandard = _x call BIS_fnc_WL2_income;
-		_actualIncome = round (_incomeStandard * (if (_x == west) then [{missionNamespace getVariable "blanceMultilplierBlu"}, {missionNamespace getVariable "blanceMultilplierOpf"}]));
-		if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome, true]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome, true]}]
-	} forEach BIS_WL_competingSides; // we calculate the actual income for each faction and store it in the income hashmap. That allows us to keep the loop for all players trivial.
 	{
 		_side = side group _x;
 		/*
