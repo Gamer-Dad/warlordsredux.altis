@@ -5,7 +5,7 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 	if (_alt && _shift) then {
 		if !(isNull BIS_WL_mapAssetTarget) then {
 			if ((BIS_WL_mapAssetTarget in WL_PLAYER_VEHS) && count crew BIS_WL_mapAssetTarget > 0) then {
-				if ((crew BIS_WL_mapAssetTarget) # 0 findIf {alive _x} == -1) then {
+				if ((crew BIS_WL_mapAssetTarget) findIf {alive _x} == -1) then {
 					playSound "AddItemOK";
 					[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (BIS_WL_mapAssetTarget getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
 					_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
