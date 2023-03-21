@@ -754,6 +754,22 @@
             <Chinesesimp>可以修理/重新装弹</Chinesesimp>
             <Chinese>可以修理/重新裝彈</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_menu_arsenal_restr2">
+            <Original>Close your inventory.</Original>
+            <English>Close your inventory.</English>
+            <Czech>Zavřete svůj inventář.</Czech>
+            <French>Fermez votre inventaire.</French>
+            <German>Schließen Sie Ihr Inventar.</German>
+            <Italian>Chiudi il tuo inventario.</Italian>
+            <Polish>Zamknij inwentarz.</Polish>
+            <Portuguese>Feche seu inventário.</Portuguese>
+            <Russian>Закройте свой инвентарь.</Russian>
+            <Spanish>Cierra tu inventario.</Spanish>
+            <Korean>인벤토리를 닫습니다.</Korean>
+            <Japanese>在庫を閉じます。</Japanese>
+            <Chinesesimp>关闭您的库存。</Chinesesimp>
+            <Chinese>關閉您的庫存。</Chinese>
+        </Key>
         <Key ID="keep_empty!!!!!!!!">
             <Original></Original>
             <English></English>
