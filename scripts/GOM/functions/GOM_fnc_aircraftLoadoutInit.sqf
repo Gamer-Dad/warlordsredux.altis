@@ -1684,7 +1684,7 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 
 params ["_obj"];
 
-	_nearbyVehs = (_obj nearEntities ["All",50]) select {speed _x < 1 AND {alive _x}};
+	_nearbyVehs = (_obj nearEntities ["All", WL_MAINTENANCE_RADIUS]) select {speed _x < 1 AND {alive _x}};
 
 	_refuelVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_fuelcargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0};
 	_rearmVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_ammocargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0};

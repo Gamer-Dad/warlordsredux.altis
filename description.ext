@@ -105,6 +105,7 @@ class CfgFunctions {
 			class WL2_orderFTVehicle {};
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
+			class WL2_getUavConnected {};
     	};
 		class Server 
 		{

@@ -275,6 +275,7 @@ sleep 0.1;
 [] spawn BIS_fnc_WL2_targetSelectionHandleClient;
 [] spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 [] spawn BIS_fnc_WL2_assetMapControl;
+[] spawn BIS_fnc_WL2_getUavConnected;
 
 //CP Saving system
 private _uid = getPlayerUID player;

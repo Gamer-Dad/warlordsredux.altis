@@ -451,36 +451,36 @@
             <Chinese>没有可用的盟军玩家。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_respawn_vicFT_order">
-            <Original>Order fast travel vehicle.</Original>
-            <English>Order fast travel vehicle.</English>
-            <Czech>Objednat rychlé cestovní vozidlo.</Czech>
-            <French>Commander un véhicule de voyage rapide.</French>
-            <German>Schnellreisefahrzeug anfordern.</German>
-            <Italian>Ordina un veicolo per il viaggio rapido.</Italian>
-            <Polish>Zamów szybki środek transportu.</Polish>
-            <Portuguese>Solicitar veículo de viagem rápida.</Portuguese>
-            <Russian>Заказать передвиждной спавн.</Russian>
-            <Spanish>Pedir vehículo de viaje rápido.</Spanish>
-            <Korean>빠른 여행 차량 주문.</Korean>
-            <Japanese>高速旅行車を注文する。</Japanese>
-            <Chinesesimp>订购快速旅行车辆。</Chinesesimp>
-            <Chinese>訂購快速旅行車輛。</Chinese>
+            <Original>Order fast travel vehicle</Original>
+            <English>Order fast travel vehicle</English>
+            <Czech>Objednat rychlé cestovní vozidlo</Czech>
+            <French>Commander un véhicule de voyage rapide</French>
+            <German>Schnellreisefahrzeug anfordern</German>
+            <Italian>Ordina un veicolo per il viaggio rapido</Italian>
+            <Polish>Zamów szybki środek transportu</Polish>
+            <Portuguese>Solicitar veículo de viagem rápida</Portuguese>
+            <Russian>Заказать передвиждной спавн</Russian>
+            <Spanish>Pedir vehículo de viaje rápido</Spanish>
+            <Korean>빠른 여행 차량 주문</Korean>
+            <Japanese>高速旅行車を注文する</Japanese>
+            <Chinesesimp>订购快速旅行车辆</Chinesesimp>
+            <Chinese>訂購快速旅行車輛</Chinese>
         </Key>
         <Key ID="STR_A3_WL_respawn_vicFT_ft">
-            <Original>Fast travel to moving spawn.</Original>
-            <English>Fast travel to moving spawn.</English>
-            <Czech>Rychlé cestování k pohybujícímu se spawnu.</Czech>
-            <French>Voyage rapide vers le spawn mobile.</French>
-            <German>Schnellreise zum Schnellreisefahrzeug.</German>
-            <Italian>Viaggio rapido al punto di spawn in movimento.</Italian>
-            <Polish>Szybka podróż do poruszającego się punktu spawnu.</Polish>
-            <Portuguese>Viagem rápida para o ponto de geração em movimento.</Portuguese>
-            <Russian>Быстрое перемещение к передвижному спавну.</Russian>
-            <Spanish>Viaje rápido al punto de aparición móvil.</Spanish>
-            <Korean>이동하는 스폰지점으로의 빠른 여행.</Korean>
-            <Japanese>移動するスポーンへのフラストトラベル.</Japanese>
-            <Chinesesimp>快速旅行到移动的生成点。</Chinesesimp>
-            <Chinese>快速旅行到移动的生成点。</Chinese>
+            <Original>Fast travel to moving spawn</Original>
+            <English>Fast travel to moving spawn</English>
+            <Czech>Rychlé cestování k pohybujícímu se spawnu</Czech>
+            <French>Voyage rapide vers le spawn mobile</French>
+            <German>Schnellreise zum Schnellreisefahrzeug</German>
+            <Italian>Viaggio rapido al punto di spawn in movimento</Italian>
+            <Polish>Szybka podróż do poruszającego się punktu spawnu</Polish>
+            <Portuguese>Viagem rápida para o ponto de geração em movimento</Portuguese>
+            <Russian>Быстрое перемещение к передвижному спавну</Russian>
+            <Spanish>Viaje rápido al punto de aparición móvil</Spanish>
+            <Korean>이동하는 스폰지점으로의 빠른 여행</Korean>
+            <Japanese>移動するスポーンへのフラストトラベル</Japanese>
+            <Chinesesimp>快速旅行到移动的生成点</Chinesesimp>
+            <Chinese>快速旅行到移动的生成点</Chinese>
         </Key>
         <Key ID="STR_A3_WL_ftVehicle_restr">
             <Original>Fast travel vehicle already exists.</Original>
@@ -595,20 +595,20 @@
             <Chinese>您以前没有指挥点(CP)。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_infoScreen">
-            <Original>Open the info menu.</Original>
-            <English>Open the info menu.</English>
-            <Czech>Otevřete informační menu.</Czech>
-            <French>Ouvrir le menu d'information.</French>
-            <German>Öffne das Informationsmenü.</German>
-            <Italian>Apri il menu informazioni.</Italian>
-            <Polish>Otwórz menu informacji.</Polish>
-            <Portuguese>Abra o menu de informações.</Portuguese>
-            <Russian>Открыть меню "Информация".</Russian>
-            <Spanish>Abrir el menú de información.</Spanish>
-            <Korean>정보 메뉴 열기.</Korean>
-            <Japanese>情報メニューを開きます。</Japanese>
-            <Chinesesimp>打开信息菜单。</Chinesesimp>
-            <Chinese>打开信息菜单。</Chinese>
+            <Original>Open the info menu</Original>
+            <English>Open the info menu</English>
+            <Czech>Otevřete informační menu</Czech>
+            <French>Ouvrir le menu d'information</French>
+            <German>Öffne das Informationsmenü</German>
+            <Italian>Apri il menu informazioni</Italian>
+            <Polish>Otwórz menu informacji</Polish>
+            <Portuguese>Abra o menu de informações</Portuguese>
+            <Russian>Открыть меню "Информация"</Russian>
+            <Spanish>Abrir el menú de información</Spanish>
+            <Korean>정보 메뉴 열기</Korean>
+            <Japanese>情報メニューを開きます</Japanese>
+            <Chinesesimp>打开信息菜单</Chinesesimp>
+            <Chinese>打开信息菜单</Chinese>
         </Key>
         <Key ID="STR_A3_WL_popup_voting_reset_user_TODO_REWRITE">
             <Original>Sector voting reset requested by %1.</Original>
