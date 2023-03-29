@@ -5029,6 +5029,7 @@ class Mission
 			{
 				position[]={18881.859,0.029945374,20445.063};
 			};
+			init="this setVariable [""showNotification"", false];";
 			id=412;
 			type="ModuleCurator_F";
 			atlOffset=103.717;
@@ -8541,6 +8542,7 @@ class Mission
 			{
 				position[]={19146.932,20.533974,20427.326};
 			};
+			init="this setVariable [""showNotification"", false];";
 			id=844;
 			type="ModuleCurator_F";
 			atlOffset=103.717;
