@@ -78,6 +78,8 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	publicVariableServer _varFormat;
 };
 
+
+
 if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
@@ -341,3 +343,16 @@ player addAction [
 	"player distance [17366.7,12577.5,0.00148773] < 7",
 	5
 ];
+
+[] spawn {
+	waituntil {!isnull (findDisplay 46)};
+	(findDisplay 46) displayAddEventHandler ["KeyDown", {
+		_key = actionKeysNames "curatorInterface";
+		_keyName = (keyName (_this select 1));
+		if (_keyName == _key) then {
+			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+				true;
+			};
+		};
+	}];
+};

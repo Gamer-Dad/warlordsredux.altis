@@ -88,7 +88,7 @@ class welcomeScreen
 			deletable = 0;
 			text = ""; //--- ToDo: Localize;
 			font = "puristaMedium";
-			x = 0.578594 * safezoneW + safezoneX;
+			x = 0.508594 * safezoneW + safezoneX;
 			y = 0.801 * safezoneH + safezoneY;
 			w = 0.189531 * safezoneW;
 			h = 0.033 * safezoneH;
