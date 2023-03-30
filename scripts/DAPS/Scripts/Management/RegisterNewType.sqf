@@ -19,4 +19,3 @@ if(_t=="IronFist")then{dapsIronFist pushBack _c};
 if(_t=="AMAP")then{dapsAMAP pushBack _c};
 call DAPS_fnc_CompileTypes;
 call DAPS_fnc_BroadcastTypes;
-{if((typeOf _x)==_t)then{dapsNoAPS=dapsNoAPS-[_x];_x call DAPS_fnc_RegisterVehicle}}forEach dapsNoAPS;

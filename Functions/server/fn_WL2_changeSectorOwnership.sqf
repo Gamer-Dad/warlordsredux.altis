@@ -7,18 +7,6 @@ _sector setVariable ["BIS_WL_owner", _owner, TRUE];
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
-	//Mine removal code
-	_minecount = count allMines;
-	if (_minecount > RD_MINECOUNT_DELETE_THRESHOLD) then {
-		{ deleteVehicle _x } forEach allMines;
-	};
-	//UAV removal code
-	_uavcount = count allUnitsUAV;
-	if (_uavcount > RD_UAVCOUNT_DELETE_THRESHOLD) then {
-		{ _x setDamage 1 } forEach (allUnitsUAV select {!(typeOf _x in ["B_SAM_System_03_F","B_Radar_System_01_F","O_SAM_System_04_F","O_Radar_System_02_F"])}); //better way to filter the ones u dont want to blow up.
-	};
-
-		
 	_previousOwners pushBack _owner;
 	if (WL_SYNCED_TIME > 0 && count _previousOwners == 1) then {
 		{

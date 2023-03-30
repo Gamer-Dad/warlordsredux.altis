@@ -18,5 +18,3 @@ if(_type in dapsAfganit)exitWith{_vehicle spawn DAPS_fnc_APSAfganit};
 if(_type in dapsAfganitE)exitWith{_vehicle spawn DAPS_fnc_APSAfganitE};
 if(_type in dapsIronFist)exitWith{_vehicle spawn DAPS_fnc_APSIronFist};
 if(_type in dapsAMAP)exitWith{_vehicle spawn DAPS_fnc_APSAMAP};
-dapsNoAPS pushBack _vehicle;
-publicVariable"dapsNoAPS";

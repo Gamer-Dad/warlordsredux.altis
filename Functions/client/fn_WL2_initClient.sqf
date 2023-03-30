@@ -288,7 +288,7 @@ sleep 1;
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
 
 
-waituntil {!isnull (findDisplay 12)};
+waituntil {sleep 0.1; !isnull (findDisplay 12)};
 
 if (side player == west) then {
 	((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
@@ -309,7 +309,8 @@ if (side player == west) then {
 		]; 
 		} forEach entities "B_Truck_01_medical_F";
 	}];
-} else {
+};
+if (side player == east) then {
 	((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
 		{
 		private _truck = _x;

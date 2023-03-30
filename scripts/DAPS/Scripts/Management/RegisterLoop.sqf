@@ -1,1 +1,4 @@
-while{dapsLoop}do{call DAPS_fnc_RegisterAll;sleep 5};
+while {dapsLoop} do {
+	call DAPS_fnc_RegisterAll; 
+	sleep 5;
+};

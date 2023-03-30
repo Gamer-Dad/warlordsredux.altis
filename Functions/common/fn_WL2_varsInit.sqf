@@ -63,6 +63,9 @@ switch (_locality) do {
 			"I_E_UGV_02_Science_backpack_F",
 			"B_UGV_02_Science_backpack_F"
 		];
+
+		BIS_WL_blacklistedBackpacks deleteAt (BIS_WL_blacklistedBackpacks find "B_Static_Designator_01_weapon_F");
+		BIS_WL_blacklistedBackpacks deleteAt (BIS_WL_blacklistedBackpacks find "O_Static_Designator_02_weapon_F");
 	};
 	case "server": {
 		BIS_WL_allowAIVoting = BIS_WL_initModule getVariable ["BIS_WL_allowAIVoting", FALSE];
