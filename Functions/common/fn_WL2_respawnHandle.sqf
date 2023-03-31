@@ -20,7 +20,6 @@ if (_newUnit getVariable ["BIS_WL_ignore", FALSE]) exitWith {};
 		};
 		
 		if (isServer) then {
-			_newUnit call BIS_fnc_WL2_mainAIHandle;
 			_base = WL_BASES # (WL_BASES findIf {(_x getVariable "BIS_WL_owner") == side group _newUnit});
 			if (WL_SYNCED_TIME == 0 || _newUnit inArea (_base getVariable "objectAreaComplete")) then {
 				[_newUnit, FALSE] remoteExec ["allowDamage", _newUnit];

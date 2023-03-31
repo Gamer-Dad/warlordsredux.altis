@@ -118,7 +118,6 @@ class CfgFunctions {
 			class WL2_incomePayoff {};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
-			class WL2_mainAIHandle {};
 			class WL2_mineLimit {};
 			class WL2_populateSector {};
 			class WL2_processClientRequest {};
