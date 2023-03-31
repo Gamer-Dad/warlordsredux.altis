@@ -21,27 +21,22 @@ if (isServer) exitWith {
 	};
 };
 
-_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _asset) >> "displayName");
-_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
+if (typeOf _asset == "B_Truck_01_medical_F") then {
+	missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+	deleteVehicle _asset;
+};
 
-if (_result) exitWith {
-	if (typeOf _asset == "B_Truck_01_medical_F") then {
-		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-		deleteVehicle _asset;
-	};
+if (typeOf _asset == "O_Truck_03_medical_F") then {
+	missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+	deleteVehicle _asset;
+};
 
-	if (typeOf _asset == "O_Truck_03_medical_F") then {
-		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-		deleteVehicle _asset;
-	};
+["deleteAsset", [_asset]] call BIS_fnc_WL2_sendClientRequest;
 
-	["deleteAsset", [_asset]] call BIS_fnc_WL2_sendClientRequest;
-
-	private _groupUnit = local _asset && _asset isKindOf "Man";
-	if (_groupUnit) then {
-		[] spawn {
-			sleep 0.5;
-			[] spawn BIS_fnc_WL2_refreshOSD;
-		};
+private _groupUnit = local _asset && _asset isKindOf "Man";
+if (_groupUnit) then {
+	[] spawn {
+		sleep 0.5;
+		[] spawn BIS_fnc_WL2_refreshOSD;
 	};
 };

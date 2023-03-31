@@ -301,10 +301,15 @@ if (isPlayer _owner) then {
 	private _removeActionID = _asset addAction [
 		"",
 		{
-			_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-			missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0]];
-			publicVariableServer _ownedVehiclesVarName;
-			(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
+			_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _asset) >> "displayName");
+			_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
+
+			if (_result) exitWith {
+				_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
+				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0]];
+				publicVariableServer _ownedVehiclesVarName;
+				(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
+			};
 		},
 		[],
 		-100,
