@@ -872,21 +872,22 @@ GOM_fnc_setPylonsRearm = {
 
 	if (lbCursel 1500 < 0) exitWith {systemchat "No aircraft selected!";false};
 	params ["_obj",["_rearm",false],["_pylons",[]],["_pylonAmmoCounts",[]]];
-_nul = [_obj,_rearm,_pylons,_pylonAmmoCounts] spawn {
+	_nul = [_obj,_rearm,_pylons,_pylonAmmoCounts] spawn {
 
 	params ["_obj",["_rearm",false],["_pylons",[]],["_pylonAmmoCounts",[]]];
 
-		_veh = call compile lbData [1500,lbcursel 1500];
+	_veh = call compile lbData [1500,lbcursel 1500];
 
 
-_check = _veh call GOM_fnc_rearmCheck;
-_check params ["_abort","_text","_ammosource"];
-if (_abort) exitWith {true};
+	_check = _veh call GOM_fnc_rearmCheck;
+	_check params ["_abort","_text","_ammosource"];
+	if (_abort) exitWith {true};
 
 	if (!alive _veh) exitWith {systemchat "Aircraft is destroyed!"};
 	if (_veh getVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false]) exitWith {systemchat "Aircraft is currently being rearmed!"};
 	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true,true];
 	_activePylonMags = GetPylonMagazines _veh;
+
 	if (_rearm) exitWith {
 
 		[_obj] call GOM_fnc_clearAllPylons;
@@ -895,116 +896,101 @@ if (_abort) exitWith {true};
 		{
 			_pylonOwner = if (_pylonOwners isequalto []) then {[]} else {_pylonOwners select (_foreachindex + 1)};
 
-		[_veh,[_foreachindex+1,_x,true,_pylonOwner]] remoteexec ["setPylonLoadOut",0] ;
-		[_veh,[_foreachIndex + 1,0]] remoteexec ["SetAmmoOnPylon",0] ;
+			[_veh,[_foreachindex+1,_x,true,_pylonOwner]] remoteexec ["setPylonLoadOut",0] ;
+			[_veh,[_foreachIndex + 1,0]] remoteexec ["SetAmmoOnPylon",0] ;
 		} foreach _pylons;
 
-
-		sleep random [0,1,2];
-_check = _veh call GOM_fnc_rearmCheck;
-_check params ["_abort","_text","_ammosource"];
-if (_abort) exitWith {true};
-{
-
-_mag = _activePylonMags select _forEachIndex;
-
+		sleep 0.1;
+		_check = _veh call GOM_fnc_rearmCheck;
+		_check params ["_abort","_text","_ammosource"];
+		if (_abort) exitWith {true};
+		
+		{
+			_mag = _activePylonMags select _forEachIndex;
 
 			_pylonOwners = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwners",[]];
 			_pylonOwner = if (_pylonOwners isequalto []) then {[]} else {_pylonOwners select (_foreachindex + 1)};
 			_maxAmount = (_pylonAmmoCounts select _forEachIndex);
 
-		sleep random [0,1,2];
+			sleep 0.2;
 
-		[_ammosource,_x,_veh] call GOM_fnc_handleAmmoCost;
+			[_ammosource,_x,_veh] call GOM_fnc_handleAmmoCost;
+
+			_cargo = _ammosource getVariable ["GOM_fnc_ammoCargo",0];
+			if (_cargo <= 0) exitwith {_abort = true; systemchat "Your ammo is depleted!"};
+
+			if (_maxamount < 24) then {
+
+				for "_i" from 0 to _maxamount do {
+					sleep 0.01;
+					[_veh, [_foreachIndex + 1, _i]] remoteexec ["SetAmmoOnPylon", 0];
+					if (_i > 0) then {
+						_sound = [_veh,_foreachIndex] call GOM_fnc_pylonSound;
+					};
+				};
+			} else {
+				[_veh, [_foreachIndex + 1, _maxamount]] remoteexec ["SetAmmoOnPylon",0] ;
+				_sound = [_veh,_foreachIndex] call GOM_fnc_pylonSound;
+			};
+		} forEach _pylons;
+
+		playSound "Click";
+		_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
+		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+		if (_abort) exitWith {true};
+		_veh setVehicleAmmo 1;
+		systemchat "All pylons, counter measures and board guns rearmed!";
+		true
+	};
 
 
-		_cargo = _ammosource getVariable ["GOM_fnc_ammoCargo",0];
-		if (_cargo <= 0) exitwith {_abort = true;systemchat "Your ammo is depleted!"};
-
-
-		if (_maxamount < 24) then {
-
-		for "_i" from 0 to _maxamount do {
-		sleep random [0.1,0.5,1.5];
-		[_veh,[_foreachIndex + 1,_i]] remoteexec ["SetAmmoOnPylon",0];
-		if (_i > 0) then {
-
-		_sound = [_veh,_foreachIndex] call GOM_fnc_pylonSound;
-		};
-		};
-		} else {
-
-		[_veh,[_foreachIndex + 1,_maxamount]] remoteexec ["SetAmmoOnPylon",0] ;
-		_sound = [_veh,_foreachIndex] call GOM_fnc_pylonSound;
-		};
-
-
-
-	} forEach _pylons;
-	playSound "Click";
-	_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
-	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+	sleep 0.1;
+	_check = _veh call GOM_fnc_rearmCheck;
+	_check params ["_abort","_text","_ammosource"];
 	if (_abort) exitWith {true};
-	_veh setVehicleAmmo 1;
-	systemchat "All pylons, counter measures and board guns rearmed!";
-true
-};
 
-
-		sleep random [0,2,5];
-_check = _veh call GOM_fnc_rearmCheck;
-_check params ["_abort","_text","_ammosource"];
-if (_abort) exitWith {true};
-
-_mounts = [];
+	_mounts = [];
 	{
+		_mount = [_veh,_forEachIndex+1,_x,_ammosource] spawn {
+		params ["_veh","_ind","_mag","_ammosource"];
 
+		_maxAmount = getNumber (configfile >> "CfgMagazines" >> _mag >> "count");
+			sleep 0.1;
+			[_ammosource,_mag,_veh] call GOM_fnc_handleAmmoCost;
 
+			_cargo = _ammosource getVariable ["GOM_fnc_ammoCargo",0];
+			if (_cargo <= 0) exitwith {_abort = true;systemchat "Your ammo is depleted!"};
 
-			_mount = [_veh,_forEachIndex+1,_x,_ammosource] spawn {
-				params ["_veh","_ind","_mag","_ammosource"];
+			if (_maxamount < 24) then {
 
-	_maxAmount = getNumber (configfile >> "CfgMagazines" >> _mag >> "count");
-		sleep random [0,2,5];
-
-
-
-		[_ammosource,_mag,_veh] call GOM_fnc_handleAmmoCost;
-
-		_cargo = _ammosource getVariable ["GOM_fnc_ammoCargo",0];
-		if (_cargo <= 0) exitwith {_abort = true;systemchat "Your ammo is depleted!"};
-
-		if (_maxamount < 24) then {
-
-		for "_i" from (_veh AmmoOnPylon _ind) to _maxamount do {
-		sleep random [0.1,0.5,1.5];
+			for "_i" from (_veh AmmoOnPylon _ind) to _maxamount do {
+				sleep 0.01;
 				[_veh,[_ind,_i]] remoteexec ["SetAmmoOnPylon",0];
 
-		if (_i > 0) then {
+				if (_i > 0) then {
+					_sound = [_veh,_ind - 1] call GOM_fnc_pylonSound;
+				};
+			};
+			} else {
+					[_veh,[_ind,_maxamount]] remoteexec ["SetAmmoOnPylon",0];
 
-		_sound = [_veh,_ind - 1] call GOM_fnc_pylonSound;
-		}
+			_sound = [_veh, _ind - 1] call GOM_fnc_pylonSound;
+			};
 		};
-		} else {
-				[_veh,[_ind,_maxamount]] remoteexec ["SetAmmoOnPylon",0];
-
-		_sound = [_veh, _ind - 1] call GOM_fnc_pylonSound;
-		};
-	};
-	_mounts pushback _mount;
+		_mounts pushback _mount;
 
 	} forEach _activePylonMags;
+
 	waituntil {!alive _veh OR {scriptdone _x} count _mounts isequalto count _mounts};
 	_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	playSound "Click";
 	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+
 	if (_abort) exitWith {true};
-	_veh setVehicleAmmo 1;
-
-	systemchat "All pylons, counter measures and board guns rearmed!";
-
-};
-true
+		_veh setVehicleAmmo 1;
+		systemchat "All pylons, counter measures and board guns rearmed!";
+	};
+	true
 };
 
 GOM_fnc_setPylonsRepair = {
