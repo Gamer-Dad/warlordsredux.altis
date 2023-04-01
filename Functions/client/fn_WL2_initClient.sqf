@@ -91,8 +91,6 @@ uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
 private _uidPlayer = getPlayerUID player;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], nil];
 
-player setVariable ["inventoryOpen", false, true];
-
 
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
@@ -200,16 +198,6 @@ player addEventHandler ["Killed", {
 	if (_connectedUAV != objNull) exitWith {
 		player connectTerminalToUAV objNull;
 	};
-}];
-
-player addEventHandler ["InventoryOpened", {
-	params ["_unit", "_container"];
-	player setVariable ["inventoryOpen", true, true];
-}];
-
-player addEventHandler ["InventoryClosed", {
-	params ["_unit", "_container"];
-	player setVariable ["inventoryOpen", false, true];
 }];
 
 if (BIS_WL_arsenalEnabled) then {

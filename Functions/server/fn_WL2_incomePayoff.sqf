@@ -10,9 +10,9 @@ _refreshBalance = {
 
 	{
 		_incomeStandard = _x call BIS_fnc_WL2_income;
-		_actualIncome = round (_incomeStandard * (if (_x == west) then [{missionNamespace getVariable "blanceMultilplierBlu"}, {missionNamespace getVariable "blanceMultilplierOpf"}]));
+		_actualIncome = round (_incomeStandard * (if (_x == west) then [{(missionNamespace getVariable "blanceMultilplierBlu") * 1.7}, {(missionNamespace getVariable "blanceMultilplierOpf") * 1.7}]));
 		if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome, true]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome, true]}]
-	} forEach BIS_WL_competingSides; // we calculate the actual income for each faction and store it in the income hashmap. That allows us to keep the loop for all players trivial.
+	} forEach BIS_WL_competingSides;
 };
 
 while {true} do {

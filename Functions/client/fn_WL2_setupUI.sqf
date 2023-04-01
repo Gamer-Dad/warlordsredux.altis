@@ -406,7 +406,7 @@ switch (_displayClass) do {
 				_offset = call compile _offset;
 				_requirements = call compile _requirements;
 				switch (_className) do {
-					case "Arsenal": {if !(player getVariable "inventoryOpen") then {call BIS_fnc_WL2_orderArsenal} else {playSound "AddItemFailed"}};
+					case "Arsenal": {if (isNull (findDisplay 602)) then {call BIS_fnc_WL2_orderArsenal} else {playSound "AddItemFailed"}};
 					case "LastLoadout": {call BIS_fnc_WL2_orderLastLoadout};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
 					case "SavedLoadout": {"apply" call BIS_fnc_WL2_orderSavedLoadout};

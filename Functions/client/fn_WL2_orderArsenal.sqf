@@ -6,6 +6,7 @@ _uniform = uniform player;
 [player, -BIS_WL_arsenalCost] call BIS_fnc_WL2_fundsControl;
 private  _id = clientOwner;
 [] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
+
 ["Open", TRUE] spawn BIS_fnc_arsenal;
 
 _uniform spawn {
@@ -18,5 +19,15 @@ _uniform spawn {
 			player forceAddUniform _this;
 		};
 		sleep WL_TIMEOUT_MIN;
+	};
+};
+
+[] spawn {
+	waitUntil {!isNull (uiNamespace getVariable "BIS_fnc_arsenal_cam")};
+	while {!isNull (uiNamespace getVariable "BIS_fnc_arsenal_cam")} do {
+		if !(isNull (findDisplay 602)) then {
+			(findDisplay 602) closeDisplay 1;
+		};
+		sleep 0.1;
 	};
 };
