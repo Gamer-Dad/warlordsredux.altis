@@ -301,7 +301,7 @@ if (isPlayer _owner) then {
 	private _removeActionID = _asset addAction [
 		"",
 		{
-			_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _asset) >> "displayName");
+			_displayName = getText (configFile >> "CfgVehicles" >> (typeOf (_this # 0)) >> "displayName");
 			_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
 
 			if (_result) exitWith {
