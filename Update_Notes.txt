@@ -139,6 +139,7 @@
 
 2.5.1
 
+  - Remote designator added.
   - Added a confirmation when deleting assets.
   - Fixed arsenal - inventory exploit.
   - Improved server performance.
