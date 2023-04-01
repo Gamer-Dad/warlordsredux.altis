@@ -2,7 +2,6 @@
 
 //CP databse
 moneyDatabase = createHashmap;
-serverNamespace setVariable ["fundsDatabase", createHashMap];
 
 // Mine Array's
 MRTM_spawnedAPERS = [];
