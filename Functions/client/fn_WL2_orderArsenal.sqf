@@ -7,27 +7,31 @@ _uniform = uniform player;
 private  _id = clientOwner;
 [] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 
-["Open", TRUE] spawn BIS_fnc_arsenal;
+sleep 1;
+if (isNull (findDisplay 602)) then {
 
-_uniform spawn {
-	waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
-	while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
-		if ((backpack player) in BIS_WL_blacklistedBackpacks) then {
-			removeBackpack player;
+	["Open", TRUE] spawn BIS_fnc_arsenal;
+
+	_uniform spawn {
+		waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
+		while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
+			if ((backpack player) in BIS_WL_blacklistedBackpacks) then {
+				removeBackpack player;
+			};
+			if !(uniform player in BIS_WL_factionAppropriateUniforms) then {
+				player forceAddUniform _this;
+			};
+			sleep WL_TIMEOUT_MIN;
 		};
-		if !(uniform player in BIS_WL_factionAppropriateUniforms) then {
-			player forceAddUniform _this;
-		};
-		sleep WL_TIMEOUT_MIN;
 	};
-};
 
-[] spawn {
-	waitUntil {!isNull (uiNamespace getVariable "BIS_fnc_arsenal_cam")};
-	while {!isNull (uiNamespace getVariable "BIS_fnc_arsenal_cam")} do {
-		if !(isNull (findDisplay 602)) then {
-			(findDisplay 602) closeDisplay 1;
+	[] spawn {
+		waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
+		while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
+			if !(isNull (findDisplay 602)) then {
+				(findDisplay 602) closeDisplay 1;
+			};
+			sleep 0.1;
 		};
-		sleep 0.1;
 	};
 };

@@ -154,6 +154,17 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
+			"2.5.1", lineBreak,
+			"-Added a confirmation when deleting assets.", lineBreak,
+			"-Fixed arsenal - inventory exploit.", lineBreak,
+			"-Improved server performance.", lineBreak,
+			"-Stopped players from connecting to unowned drone.", lineBreak,
+			"-Increased CP balance.", lineBreak,
+			"-Stopped players from having unlimited rockets on their aircrafts.", lineBreak,
+			"-Player slot count now 40 Nato - 40 Csat to allow for better balancing.", lineBreak,
+			"-Removed UAV cleanup code.", lineBreak,
+			"-Fixed chat spam on ai availability.", lineBreak,
+			"", lineBreak,
 			"2.5", lineBreak,
 			"-CP is saved every 5 minutes.", lineBreak,
 			"-CP is saved after every funds transfer for each person.", lineBreak,

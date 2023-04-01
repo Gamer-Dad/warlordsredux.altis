@@ -136,5 +136,16 @@
   - Fixed the asset limit bug.
   - Added DAZZLER defense for the device truck, added to both sides. Type of electronic warfare defense to confuse incoming guided missiles in a dome of 300m around truck, also effects outgoing.  We'll likely dive into EW in 2.6 and make more fun stuff.
   - Removed the Hint when near a repair or rearm source and replaced it with a green line under the lower right OSD.
-  
+
+2.5.1
+
+  - Added a confirmation when deleting assets.
+  - Fixed arsenal - inventory exploit.
+  - Improved server performance.
+  - Stopped players from connecting to unowned drone.
+  - Increased CP balance.
+  - Stopped players from having unlimited rockets on their aircrafts.
+  - Player slot count now 40 Nato - 40 Csat to allow for better balancing.
+  - Removed UAV cleanup code.
+  - Fixed chat spam on ai availability.
   
