@@ -189,6 +189,19 @@ player addEventHandler ["GetOutMan", {
 	};
 }];
 
+player addEventHandler ["InventoryOpened",{
+	params ["_unit","_container"];
+	_override = false;
+	_allUnitBackpackContainers = allPlayers select {alive _x} apply {backpackContainer _x};
+
+	if (_container in _allUnitBackpackContainers) then {
+		systemchat "Access denied!";
+		_override = true;
+	};
+
+	_override;
+}];
+
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;

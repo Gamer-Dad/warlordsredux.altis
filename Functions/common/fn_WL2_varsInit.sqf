@@ -38,34 +38,6 @@ switch (_locality) do {
 		BIS_WL_savedLoadoutCost = BIS_WL_initModule getVariable ["BIS_WL_savedLoadoutCost", 500];
 		BIS_WL_zoneRestrictionSetting = BIS_WL_initModule getVariable ["BIS_WL_zoneRestrictionSetting", 0];
 		BIS_WL_savingEnabled = BIS_WL_initModule getVariable ["BIS_WL_savingEnabled", FALSE];
-		BIS_WL_blacklistedBackpacks = [];
-		{
-			private _class = _x;
-			private _bases = getArray (_class >> "assembleInfo" >> "base");
-			if (count _bases > 0 || (toLower configName _class) find "respawn" != -1) then {
-				BIS_WL_blacklistedBackpacks pushBackUnique configName _class;
-				{
-					BIS_WL_blacklistedBackpacks pushBackUnique _x;
-				} forEach _bases;
-			};
-		} forEach ("getNumber (_x >> 'scope') == 2 && (configName _x) isKindOf 'Bag_Base'" configClasses (configFile >> "CfgVehicles"));
-
-		BIS_WL_blacklistedBackpacks = BIS_WL_blacklistedBackpacks - [""];
-
-		BIS_WL_blacklistedBackpacks append [
-			"C_IDAP_UGV_02_Demining_backpack_F",
-			"I_UGV_02_Demining_backpack_F",
-			"O_UGV_02_Demining_backpack_F",
-			"I_E_UGV_02_Demining_backpack_F",
-			"B_UGV_02_Demining_backpack_F",
-			"I_UGV_02_Science_backpack_F",
-			"O_UGV_02_Science_backpack_F",
-			"I_E_UGV_02_Science_backpack_F",
-			"B_UGV_02_Science_backpack_F"
-		];
-
-		BIS_WL_blacklistedBackpacks deleteAt (BIS_WL_blacklistedBackpacks find "B_Static_Designator_01_weapon_F");
-		BIS_WL_blacklistedBackpacks deleteAt (BIS_WL_blacklistedBackpacks find "O_Static_Designator_02_weapon_F");
 	};
 	case "server": {
 		BIS_WL_allowAIVoting = BIS_WL_initModule getVariable ["BIS_WL_allowAIVoting", FALSE];

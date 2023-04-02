@@ -1,26 +1,4 @@
 #include "..\warlords_constants.inc"
-/*
-BIS_WL_factionUnitClasses = [];
-
-_cfgVehicles = "getNumber (_x >> 'scope') == 2 && getNumber (_x >> 'isMan') == 1 && vectorMagnitude getArray (_x >> 'threat') > 0.5 && (BIS_WL_blacklistedBackpacks find (getText (_x >> 'backpack')) == -1) && count getArray (_x >> 'weapons') > 2 && !((tolower getText (_x >> 'vehicleClass')) in ['menstory', 'mendiver'])" configClasses (configFile >> "CfgVehicles");
-
-{
-	private _side = _x;
-	private _sideID = if (_forEachIndex < 2) then {abs (_forEachIndex - 1)} else {_forEachIndex};
-	private _faction = missionNamespace getVariable format ["BIS_WL_faction_%1", _side];
-	private _factionConfigs = _cfgVehicles select {
-		getNumber (_x >> "side") == _sideID &&
-		toLower getText (_x >> "faction") == toLower _faction
-	};
-	private _factionClassWeights = _factionConfigs apply {(1000000 - getNumber (_x >> "cost")) / 100000};
-	_factionClassesWeighted = [];
-	{
-		_factionClassesWeighted pushBack configName _x;
-		_factionClassesWeighted pushBack (_factionClassWeights # _forEachIndex);
-	} forEach _factionConfigs;
-	BIS_WL_factionUnitClasses pushBack _factionClassesWeighted;
-} forEach BIS_WL_sidesArray;
-*/
 
 BIS_WL_factionUnitClasses = [
 	[

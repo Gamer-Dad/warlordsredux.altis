@@ -7,13 +7,16 @@ _unit addEventHandler ["WeaponAssembled", {
 		(_this # 0) action ["Disassemble", (_this # 1)];
 		playSound 'AddItemFailed';
 		[toUpper localize 'STR_A3_WL_popup_asset_limit_reached'] spawn BIS_fnc_WL2_smoothText;
-		(_this # 1) spawn {
-			_pos = position _this;
-			sleep 2;
-			if (_this distance _pos < 100) then {_this call BIS_fnc_WL2_sub_deleteAsset};
-		};
+		[_this # 1] spawn BIS_fnc_WL2_sub_deleteAsset;
 	} else {
-		[player, (_this # 1), TRUE] call BIS_fnc_WL2_newAssetHandle;
+		if (({getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "isUav") == 1} count WL_PLAYER_VEHS) >= BIS_WL_autonomous_limit) then {
+			(_this # 0) action ["Disassemble", (_this # 1)];
+			playSound 'AddItemFailed';
+			[toUpper localize 'STR_A3_WL_popup_asset_limit_reached'] spawn BIS_fnc_WL2_smoothText;
+			[_this # 1] spawn BIS_fnc_WL2_sub_deleteAsset;
+		} else {
+			[player, (_this # 1), TRUE] call BIS_fnc_WL2_newAssetHandle;
+		};
 	};
 }];
 

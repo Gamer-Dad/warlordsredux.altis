@@ -9,7 +9,7 @@ private  _id = clientOwner;
 
 [_uniform] spawn {
 	params ["_uniform"];
-	sleep 0.2;
+	sleep 0.1;
 	if (isNull (findDisplay 602)) then {
 
 		["Open", TRUE] spawn BIS_fnc_arsenal;
@@ -17,11 +17,33 @@ private  _id = clientOwner;
 		_uniform spawn {
 			waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
 			while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
-				if ((backpack player) in BIS_WL_blacklistedBackpacks) then {
-					removeBackpack player;
+				if (side player == west) then {
+					if !((backpack player) in NATObackpackWhitelist) then {
+						removeBackpack player;
+					};
+					if !(uniform player in NATOuniformsWhitelist) then {
+						player forceAddUniform _this;
+					};
+					if !(vest player in NATOvestWhitelist) then {
+						removeVest player;
+					};
+					if !(headgear player in NATOhelmetsWhitelist) then {
+						player addHeadgear "H_HelmetB";
+					};
 				};
-				if !(uniform player in BIS_WL_factionAppropriateUniforms) then {
-					player forceAddUniform _this;
+				if (side player == east) then {
+					if !((backpack player) in CSATbackpackWhitelist) then {
+						removeBackpack player;
+					};
+					if !(uniform player in CSATuniformsWhitelist) then {
+						player forceAddUniform _this;
+					};
+					if !(vest player in CSATvestWhitelist) then {
+						removeVest player;
+					};
+					if !(headgear player in CSAThelmetsWhitelist) then {
+						player addHeadgear "H_HelmetO_ocamo";
+					};
 				};
 				sleep WL_TIMEOUT_MIN;
 			};
