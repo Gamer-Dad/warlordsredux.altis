@@ -44,6 +44,7 @@ while {!BIS_WL_missionEnd} do {
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable FALSE;
 
 		[] spawn BIS_fnc_WL2_mapDrawHandle;
+		[] spawn BIS_fnc_WL2_mapIcons;
 	};
 	
 	uiSleep WL_TIMEOUT_STANDARD;

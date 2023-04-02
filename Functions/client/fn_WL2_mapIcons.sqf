@@ -1,7 +1,8 @@
 #include "..\warlords_constants.inc"
 
+{(_x displayCtrl 51) ctrlRemoveEventHandler ["Draw", missionNamespace getVariable ["BIS_WL_mapIconHandler", -1]]} forEach allDisplays;
+
 waitUntil {!isNil "BIS_WL_playerSide"};
-sleep 5;
 
 westColor = [0,0.3,0.6,0.8];
 eastColor = [0.5,0,0,0.8];
@@ -54,7 +55,7 @@ MRTM_fnc_iconText = {
 	_t;
 };
 
-WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
+BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 	{
 		if (_x == player) then {
 			WL_CONTROL_MAP drawIcon [
@@ -122,18 +123,20 @@ WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 	} forEach (WL_PLAYER_VEHS select {(crew _x) findIf {_x == player} != 0}); // All of the players's vehicles
 
 	{
-		WL_CONTROL_MAP drawIcon [
-			getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-			[_x] call MRTM_fnc_iconColor,
-			getPosATL _x,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_iconSize,
-			getDir _x,
-			format [" %1", name _x],
-			0,
-			WL_MAP_FONT_SIZE,
-			"RobotoCondensed",
-			"right"
-		];
-	} forEach (units (group player)) select {_x != player && isNull (objectParent _x)};
+		if !(_x == player) then {
+			WL_CONTROL_MAP drawIcon [
+				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
+				[_x] call MRTM_fnc_iconColor,
+				getPosATL _x,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				getDir _x,
+				format [" %1", name _x],
+				0,
+				WL_MAP_FONT_SIZE,
+				"RobotoCondensed",
+				"right"
+			];
+		};
+	} forEach (units (group player)) select {isNull (objectParent _x)};
 }];
