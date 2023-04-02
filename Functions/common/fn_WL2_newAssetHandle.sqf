@@ -285,6 +285,20 @@ if (isPlayer _owner) then {
 					_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
 				};
 			};
+
+			if (typeOf _asset == "B_Plane_Fighter_01_F" || typeOf _asset == "B_Plane_CAS_01_dynamicLoadout_F") then {
+				_asset addEventHandler ["Gear", {
+					params ["_vehicle", "_gearState"];
+					if (_gearState == true) then {
+						_vehicle setVariable ["landingGear", true, true];
+					} else {
+						_vehicle setVariable ["landingGear", false, true];
+					};
+				}];
+				_asset setVariable ["landingGear", true, true];
+				_asset setVariable ["bettyEnabled", false, true];
+				_asset call BIS_fnc_WL2_sub_bettyAction;
+			};
 		};
 		
 		_asset addEventHandler ["Killed", {

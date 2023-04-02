@@ -106,6 +106,7 @@ class CfgFunctions {
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
 			class WL2_getUavConnected {};
+			class WL2_betty {};
     	};
 		class Server 
 		{
@@ -167,6 +168,7 @@ class CfgFunctions {
 			class WL2_sub_vehicleLockAction {};
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_dazzlerAction {};
+			class WL2_sub_bettyAction {};
     	};
 	};
 
@@ -356,6 +358,46 @@ wreckRemovalMinTime = 120; //60
 wreckRemovalMaxTime = 240; //120
 
 minPlayerDistance = WL_ASSET_REMOVAL_SAFEZONE;
+
+class CfgSounds {
+	//playSoundUI ["class", 1, 1];
+
+	class altWarning {
+        name="altitude warning";
+        sound[]={"sounds\altSound.ogg", 1, 1};
+        titles[] = {};	
+	};
+
+	class pullUp {
+        name="Pull up";
+        sound[]={"sounds\pullUpSound.ogg", 1, 1};
+        titles[] = {};	
+	};
+
+	class bingoFuel {
+        name="Fuel low";
+        sound[]={"sounds\bingoSound.ogg", 1, 1};
+        titles[] = {};	
+	};
+	
+	class radarLock {
+        name="Visible on radar";
+        sound[]={"sounds\onSensorSound.ogg", 1, 1};
+        titles[] = {};	
+	};	
+
+	class radarTargetNew {
+        name="New radar target";
+        sound[]={"sounds\newTargetSound.ogg", 1, 1};
+        titles[] = {};	
+	};	
+
+	class radarTargetLost {
+        name="Lost radar target";
+        sound[]={"sounds\lostTargetSound.ogg", 1, 1};
+        titles[] = {};	
+	};
+};
 
 class CfgDebriefing
 {

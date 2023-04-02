@@ -152,8 +152,12 @@ BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
 BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
 
 player addEventHandler ["GetInMan", {
+	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger; 
-	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]]
+	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
+	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
+		[] spawn BIS_fnc_WL2_betty;
+	};
 }];
 
 player addEventHandler ["GetOutMan", {
