@@ -162,7 +162,31 @@ player addEventHandler ["GetInMan", {
 
 player addEventHandler ["GetOutMan", {
 	detach BIS_WL_enemiesCheckTrigger; 
-	BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]]
+	BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
+	if (_vehicle isKindOf "Air" && getPosATL player # 2 > 100) then {
+		[] spawn {
+			sleep 1;
+			playerFreeFalling = getUnitFreefallInfo player;
+			if (playerFreeFalling # 0) then {
+				private _backpack = unitBackpack player; 
+				private _oldbackpack = typeOf unitBackpack player;
+				private _oldbackpackItems = backpackItems player;
+
+				if (!(isNull _backpack)) then { //--check if player has a backpack
+					removeBackpack player;             //--remove it
+					player addBackpack "B_Parachute";  //--add the parachute backpack
+				} else {
+					player addBackpack "B_Parachute";
+				};
+
+				waitUntil {sleep 1; (getPosATL player # 2) <= 50 || (not (alive player))};
+				player action ["OpenParachute", player];
+				waitUntil {sleep 1; isNull objectParent player};
+				player addBackpack _oldbackpack;
+				{player addItemToBackpack _x;} forEach oldbackpackItems;
+			};
+		};
+	};
 }];
 
 player addEventHandler ["Killed", {

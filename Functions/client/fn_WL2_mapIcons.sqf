@@ -11,10 +11,10 @@ civilianColor = [0.4,0,0.5,0.8];
 
 MRTM_fnc_iconColor = {
 	params["_e"];
-	if (side group _e == west) exitWith {westColor};
-	if (side group _e == east) exitWith {eastColor};
-	if (side group _e == resistance) exitWith {aafColor};
-	if (side group _e == civilian) exitWith {civilianColor};
+	if (side _e == west) exitWith {westColor};
+	if (side _e == east) exitWith {eastColor};
+	if (side _e == resistance) exitWith {aafColor};
+	if (side _e == civilian) exitWith {civilianColor};
 	civilianColor;
 };
 
