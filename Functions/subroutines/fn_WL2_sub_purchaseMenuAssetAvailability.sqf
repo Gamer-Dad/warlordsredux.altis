@@ -104,6 +104,14 @@ if (_ret) then {
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_airdrop_restr1"};
 			if (_category == "Infantry" && (count units group player) - 1 + BIS_WL_matesInBasket >= BIS_WL_matesAvailable) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && _vehiclesCnt + BIS_WL_vehsInBasket >= BIS_WL_assetLimit) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
+			if (_category == "Aircraft") exitWith {
+				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
+					if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1} count WL_PLAYER_VEHS) >= BIS_WL_autonomous_limit) then {
+						_ret = FALSE;
+						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", BIS_WL_autonomous_limit];
+					};
+				};				
+			};
 			if (_category == "Defences") exitWith {
 				if (vehicle player != player) then {
 					_ret = FALSE;

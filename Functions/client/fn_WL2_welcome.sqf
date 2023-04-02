@@ -155,6 +155,8 @@ while {dialog} do {
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
 			"2.5.1", lineBreak,
+			"-UAV limit to 2 again.", lineBreak,
+			"-Added drones under the aircraft section to autonomous limit.", lineBreak,
 			"-Remote designator added.", lineBreak,
 			"-Added a confirmation when deleting assets.", lineBreak,
 			"-Fixed arsenal - inventory exploit.", lineBreak,

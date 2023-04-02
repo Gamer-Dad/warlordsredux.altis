@@ -149,4 +149,6 @@
   - Player slot count now 40 Nato - 40 Csat to allow for better balancing.
   - Removed UAV cleanup code.
   - Fixed chat spam on ai availability.
+  - UAV limit to 2 again
+  - Added drones under the aircraft section to autonomous limit.
   
