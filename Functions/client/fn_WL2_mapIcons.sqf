@@ -4,10 +4,10 @@
 
 waitUntil {!isNil "BIS_WL_playerSide"};
 
-westColor = [0,0.3,0.6,0.8];
-eastColor = [0.5,0,0,0.8];
-aafColor = [0,0.5,0,0.8];
-civilianColor = [0.4,0,0.5,0.8];
+westColor = [0,0.3,0.6,0.9];
+eastColor = [0.5,0,0,0.9];
+aafColor = [0,0.5,0,0.9];
+civilianColor = [0.4,0,0.5,0.9];
 
 MRTM_fnc_iconColor = {
 	params["_e"];
@@ -108,7 +108,7 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 		if (_x != vehicle player) then {
 			WL_CONTROL_MAP drawIcon [
 				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-				[_x] call MRTM_fnc_iconColor,
+				if (side player == west) then {westColor} else {eastColor},
 				getPosATL _x,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
@@ -138,5 +138,5 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 				"right"
 			];
 		};
-	} forEach (units (group player)) select {isNull (objectParent _x)};
+	} forEach (units (group player)) select {(objectParent _x) == _x};
 }];
