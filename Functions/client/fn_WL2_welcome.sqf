@@ -154,6 +154,10 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
+			"2.5.2", lineBreak,
+			"-Added the famous 'Bitching' betty to NATO's wipeout and blackwasp.", lineBreak,
+			parseText format ["<a href='https://www.youtube.com/watch?v=zg8FcRgOfPY'>Bitching betty preview.</a>"], lineBreak,
+			"", lineBreak,
 			"2.5.1", lineBreak,
 			"-UAV limit to 2 again.", lineBreak,
 			"-Added drones under the aircraft section to autonomous limit.", lineBreak,

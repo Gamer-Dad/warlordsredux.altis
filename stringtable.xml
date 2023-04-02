@@ -770,7 +770,39 @@
             <Chinesesimp>关闭您的库存。</Chinesesimp>
             <Chinese>關閉您的庫存。</Chinese>
         </Key>
-        <Key ID="keep_empty!!!!!!!!">
+        <Key ID="STR_A3_betty_enable">
+            <Original>Enable betty</Original>
+            <English>Enable betty</English>
+            <Czech>Povolit Betty</Czech>
+            <French>Activer Betty</French>
+            <German>Betty aktivieren</German>
+            <Italian>Abilita betty</Italian>
+            <Polish>Włącz betty</Polish>
+            <Portuguese>ativar betty</Portuguese>
+            <Russian>Включить Бетти</Russian>
+            <Spanish>Habilitar betty</Spanish>
+            <Korean>베티 활성화</Korean>
+            <Japanese>ベティを有効にする</Japanese>
+            <Chinesesimp>启用贝蒂</Chinesesimp>
+            <Chinese>啟用貝蒂</Chinese>
+        </Key>
+        <Key ID="STR_A3_betty_disable">
+            <Original>Disable betty</Original>
+            <English>Disable betty</English>
+            <Czech>Zakázat betty</Czech>
+            <French>Désactiver Betty</French>
+            <German>Betty deaktivieren</German>
+            <Italian>Disabilita betty</Italian>
+            <Polish>Wyłącz Betty</Polish>
+            <Portuguese>desativar betty</Portuguese>
+            <Russian>Отключить Бетти</Russian>
+            <Spanish>Deshabilitar betty</Spanish>
+            <Korean>베티 비활성화</Korean>
+            <Japanese>ベティを無効にする</Japanese>
+            <Chinesesimp>禁用贝蒂</Chinesesimp>
+            <Chinese>禁用貝蒂</Chinese>
+        </Key>
+        <Key ID="keep_empty">
             <Original></Original>
             <English></English>
             <Czech></Czech>
