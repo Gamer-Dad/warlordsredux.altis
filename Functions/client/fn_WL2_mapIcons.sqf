@@ -4,10 +4,10 @@
 
 waitUntil {!isNil "BIS_WL_playerSide"};
 
-westColor = [0,0.3,0.6,0.9];
-eastColor = [0.5,0,0,0.9];
-aafColor = [0,0.5,0,0.9];
-civilianColor = [0.4,0,0.5,0.9];
+westColor = [0,0.3,0.6,1];
+eastColor = [0.5,0,0,1];
+aafColor = [0,0.5,0,1];
+civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params["_e"];
