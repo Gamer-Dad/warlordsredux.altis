@@ -13,6 +13,7 @@ private  _id = clientOwner;
 	if (isNull (findDisplay 602)) then {
 
 		["Open", TRUE] spawn BIS_fnc_arsenal;
+		player setVariable ["arsenalOpened", true, true];
 
 		_uniform spawn {
 			waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
@@ -47,6 +48,7 @@ private  _id = clientOwner;
 				};
 				sleep WL_TIMEOUT_MIN;
 			};
+			player setVariable ["arsenalOpened", false, true];
 		};
 
 		[] spawn {

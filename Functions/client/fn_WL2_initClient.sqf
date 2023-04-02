@@ -192,7 +192,7 @@ player addEventHandler ["GetOutMan", {
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
 	_override = false;
-	_allUnitBackpackContainers = allPlayers select {alive _x} apply {backpackContainer _x};
+	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {isPlayer _x && _x getVariable "arsenalOpened"} apply {backpackContainer _x};
 
 	if (_container in _allUnitBackpackContainers) then {
 		systemchat "Access denied!";
@@ -315,6 +315,8 @@ private _id = clientOwner;
 
 sleep 1;
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
+
+player setVariable ["arsenalOpened", false, true];
 
 [] spawn {
 	waitUntil {sleep 0.1; !isNil "BIS_WL_playerSide"};
