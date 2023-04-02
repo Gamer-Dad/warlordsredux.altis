@@ -172,9 +172,9 @@ player addEventHandler ["GetOutMan", {
 				private _oldbackpack = typeOf unitBackpack player;
 				private _oldbackpackItems = backpackItems player;
 
-				if (!(isNull _backpack)) then { //--check if player has a backpack
-					removeBackpack player;             //--remove it
-					player addBackpack "B_Parachute";  //--add the parachute backpack
+				if (!(isNull _backpack)) then {
+					removeBackpack player;
+					player addBackpack "B_Parachute";
 				} else {
 					player addBackpack "B_Parachute";
 				};
