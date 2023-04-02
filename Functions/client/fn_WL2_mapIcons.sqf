@@ -135,5 +135,5 @@ WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 			"RobotoCondensed",
 			"right"
 		];
-	} forEach (units (group player));
+	} forEach (units (group player)) select {_x != player && isNull (objectParent _x)};
 }];
