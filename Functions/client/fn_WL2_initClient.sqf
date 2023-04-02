@@ -279,63 +279,70 @@ private _id = clientOwner;
 sleep 1;
 [] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
 
-
-waituntil {sleep 0.1; !isnull (findDisplay 12)};
-
-if (side player == west) then {
-	((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
-		{
-		private _truck = _x;
-		(_this select 0) drawIcon [
-			getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
-			[0,0.3,0.6,1],
-			ASLToAGL getPosASL _truck,
-			15,
-			15,
-			direction _truck,
-			"Fast travel vehicle",
-			1,
-			WL_MAP_FONT_SIZE,
-			"RobotoCondensed",
-			"right"
-		]; 
-		} forEach entities "B_Truck_01_medical_F";
-	}];
-};
-if (side player == east) then {
-	((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
-		{
-		private _truck = _x;
-		(_this select 0) drawIcon [
-			getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
-			[0.5,0,0,1],
-			ASLToAGL getPosASL _truck,
-			15,
-			15,
-			direction _truck,
-			"Fast travel vehicle",
-			1,
-			WL_MAP_FONT_SIZE,
-			"RobotoCondensed",
-			"right"
-		]; 
-		} forEach entities "O_Truck_03_medical_F";
-	}];
+[] spawn {
+	waitUntil {sleep 0.1; !isNil "BIS_WL_playerSide"};
+	[] spawn BIS_fnc_WL2_mapIcons;
 };
 
-player addAction [
-	"Commemorate",
-	{
-		[toUpper "R.I.P. Spacelukkie"] spawn BIS_fnc_WL2_smoothText;
-	},
-	nil,
-	92,
-	true,
-	false,
-	"",
-	"player distance [17366.7,12577.5,0.00148773] < 7",
-	5
-];
+[] spawn {
+	waituntil {sleep 0.1; !isnull (findDisplay 12)};
+	if (side player == west) then {
+		((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
+			{
+			private _truck = _x;
+			(_this select 0) drawIcon [
+				getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
+				[0,0.3,0.6,1],
+				ASLToAGL getPosASL _truck,
+				15,
+				15,
+				direction _truck,
+				"Fast travel vehicle",
+				1,
+				WL_MAP_FONT_SIZE,
+				"RobotoCondensed",
+				"right"
+			]; 
+			} forEach entities "B_Truck_01_medical_F";
+		}];
+	};
+	if (side player == east) then {
+		((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
+			{
+			private _truck = _x;
+			(_this select 0) drawIcon [
+				getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
+				[0.5,0,0,1],
+				ASLToAGL getPosASL _truck,
+				15,
+				15,
+				direction _truck,
+				"Fast travel vehicle",
+				1,
+				WL_MAP_FONT_SIZE,
+				"RobotoCondensed",
+				"right"
+			]; 
+			} forEach entities "O_Truck_03_medical_F";
+		}];
+	};
+};
+
+[] spawn {
+	player addAction [
+		"Commemorate",
+		{
+			[toUpper "R.I.P. Spacelukkie"] spawn BIS_fnc_WL2_smoothText;
+		},
+		nil,
+		92,
+		true,
+		false,
+		"",
+		"player distance [17366.7,12577.5,0.00148773] < 7",
+		5
+	];
+};
 
 [] spawn {
 	waituntil {!isnull (findDisplay 46)};

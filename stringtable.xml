@@ -453,34 +453,34 @@
         <Key ID="STR_A3_WL_respawn_vicFT_order">
             <Original>Order fast travel vehicle</Original>
             <English>Order fast travel vehicle</English>
-            <Czech>Objednat rychlé cestovní vozidlo</Czech>
-            <French>Commander un véhicule de voyage rapide</French>
-            <German>Schnellreisefahrzeug anfordern</German>
-            <Italian>Ordina un veicolo per il viaggio rapido</Italian>
-            <Polish>Zamów szybki środek transportu</Polish>
-            <Portuguese>Solicitar veículo de viagem rápida</Portuguese>
-            <Russian>Заказать передвиждной спавн</Russian>
-            <Spanish>Pedir vehículo de viaje rápido</Spanish>
-            <Korean>빠른 여행 차량 주문</Korean>
+            <Czech>Objednejte si rychlý cestovní zdravotnický vůz</Czech>
+            <French>Commander un camion médical de voyage rapide</French>
+            <German>Bestellen Sie einen medizinischen Schnellreisewagen</German>
+            <Italian>Ordina un camion medico per viaggi veloci</Italian>
+            <Polish>Zamów szybką ciężarówkę medyczną</Polish>
+            <Portuguese>Encomendar caminhão médico de viagem rápida</Portuguese>
+            <Russian>Заказать быстроходный медицинский грузовик</Russian>
+            <Spanish>Solicite un camión médico de viaje rápido</Spanish>
+            <Korean>빠른 여행 의료 트럭 주문</Korean>
             <Japanese>高速旅行車を注文する</Japanese>
-            <Chinesesimp>订购快速旅行车辆</Chinesesimp>
-            <Chinese>訂購快速旅行車輛</Chinese>
+            <Chinesesimp>订购快速旅行医疗车</Chinesesimp>
+            <Chinese>訂購快速旅行醫療車</Chinese>
         </Key>
         <Key ID="STR_A3_WL_respawn_vicFT_ft">
-            <Original>Fast travel to moving spawn</Original>
-            <English>Fast travel to moving spawn</English>
-            <Czech>Rychlé cestování k pohybujícímu se spawnu</Czech>
-            <French>Voyage rapide vers le spawn mobile</French>
-            <German>Schnellreise zum Schnellreisefahrzeug</German>
-            <Italian>Viaggio rapido al punto di spawn in movimento</Italian>
-            <Polish>Szybka podróż do poruszającego się punktu spawnu</Polish>
-            <Portuguese>Viagem rápida para o ponto de geração em movimento</Portuguese>
-            <Russian>Быстрое перемещение к передвижному спавну</Russian>
-            <Spanish>Viaje rápido al punto de aparición móvil</Spanish>
-            <Korean>이동하는 스폰지점으로의 빠른 여행</Korean>
+            <Original>Fast Travel to Medical Truck</Original>
+            <English>Fast Travel to Medical Truck</English>
+            <Czech>Rychlá cesta do zdravotnického vozu</Czech>
+            <French>Voyage rapide vers le camion médical</French>
+            <German>Schnelle Fahrt zum medizinischen LKW</German>
+            <Italian>Viaggio veloce al camion medico</Italian>
+            <Polish>Szybka podróż do ciężarówki medycznej</Polish>
+            <Portuguese>Viagem rápida para caminhão médico</Portuguese>
+            <Russian>Быстрое путешествие в медицинский грузовик</Russian>
+            <Spanish>Viaje rápido a camión médico</Spanish>
+            <Korean>의료 트럭으로 빠른 이동</Korean>
             <Japanese>移動するスポーンへのフラストトラベル</Japanese>
-            <Chinesesimp>快速旅行到移动的生成点</Chinesesimp>
-            <Chinese>快速旅行到移动的生成点</Chinese>
+            <Chinesesimp>快速前往医疗卡车</Chinesesimp>
+            <Chinese>快速前往醫療卡車</Chinese>
         </Key>
         <Key ID="STR_A3_WL_ftVehicle_restr">
             <Original>Fast travel vehicle already exists.</Original>

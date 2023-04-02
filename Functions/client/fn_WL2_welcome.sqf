@@ -157,6 +157,7 @@ while {dialog} do {
 			"2.5.2", lineBreak,
 			"-Added the famous 'Bitching' betty to NATO's wipeout and blackwasp.", lineBreak,
 			parseText format ["<a href='https://www.youtube.com/watch?v=zg8FcRgOfPY'>Bitching betty preview.</a>"], lineBreak,
+			"-New map icons.", lineBreak,
 			"", lineBreak,
 			"2.5.1", lineBreak,
 			"-UAV limit to 2 again.", lineBreak,

@@ -107,6 +107,7 @@ class CfgFunctions {
 			class WL2_displayCPtransfer {};
 			class WL2_getUavConnected {};
 			class WL2_betty {};
+			class WL2_mapIcons {};
     	};
 		class Server 
 		{
