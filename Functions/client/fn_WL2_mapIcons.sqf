@@ -123,7 +123,7 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 	} forEach (WL_PLAYER_VEHS select {(crew _x) findIf {_x == player} != 0}); // All of the players's vehicles
 
 	{
-		if !(_x == player) then {
+		if !(_x == player && isNull (objectParent _x)) then {
 			WL_CONTROL_MAP drawIcon [
 				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
 				[_x] call MRTM_fnc_iconColor,
@@ -138,5 +138,5 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 				"right"
 			];
 		};
-	} forEach (units (group player)) select {(objectParent _x) == _x};
+	} forEach (units (group player));
 }];

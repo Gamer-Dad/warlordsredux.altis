@@ -51,26 +51,33 @@ while {!BIS_WL_missionEnd} do {
 	{
 		_westCnt = playersNumber west;
 		_eastCnt = playersNumber east;
+		private _unbalanceID = format ["BIS_WL_unbalanced_%1", getPlayerUID _x];
 
 		if (side _x == west) then {
 			if (_westCnt > _eastCnt) then {
 				if ((abs (_westCnt - _eastCnt)) > 3) then {
+					_x setVariable [format ["%1", _unbalanceID], true, true];
 					["imbalance", false, 1, false, true] remoteExec ["BIS_fnc_endMission", (owner _x)];
 				} else {
 					_x spawn BIS_fnc_WL2_setupNewWarlord;
+					_x setVariable [format ["%1", _unbalanceID], false, true];
 				};
 			} else {
 				_x spawn BIS_fnc_WL2_setupNewWarlord;
+				_x setVariable [format ["%1", _unbalanceID], false, true];
 			};
 		} else {
 			if (_eastCnt > _westCnt) then {
 				if ((abs (_eastCnt - _westCnt)) > 3) then {
+					_x setVariable [format ["%1", _unbalanceID], true, true];
 					["imbalance", false, true, false, true] remoteExec ["BIS_fnc_endMission", (owner _x)];
 				} else {
 					_x spawn BIS_fnc_WL2_setupNewWarlord;
+					_x setVariable [format ["%1", _unbalanceID], false, true];
 				};
 			} else {
 				_x spawn BIS_fnc_WL2_setupNewWarlord;
+				_x setVariable [format ["%1", _unbalanceID], false, true];
 			};
 		};
 

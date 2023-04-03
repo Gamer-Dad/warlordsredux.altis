@@ -3,7 +3,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 // Vars
 (objectParent player) setVariable ["currentTargets", [], true];
 (objectParent player) setVariable ["newTargets", [], true];
-(objectParent player) setVariable ["voiceAltVolume", 0.2, true];
+(objectParent player) setVariable ["voiceAltVolume", 0.3, true];
 (objectParent player) setVariable ["voiceVolume", 0.5, true];
 (objectParent player) setVariable ["altCeiling", 2000, true];
 (objectParent player) setVariable ["isBettyBitching", false, true];
