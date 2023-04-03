@@ -3,6 +3,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 // Vars
 (objectParent player) setVariable ["currentTargets", [], true];
 (objectParent player) setVariable ["newTargets", [], true];
+(objectParent player) setVariable ["voiceAltVolume", 0.2, true];
 (objectParent player) setVariable ["voiceVolume", 0.5, true];
 (objectParent player) setVariable ["altCeiling", 2000, true];
 (objectParent player) setVariable ["isBettyBitching", false, true];
@@ -21,12 +22,14 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 				if (asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 50) / speed (objectParent player))) then {
 					playSoundUI ["pullUp", (objectParent player) getVariable "voiceVolume", 1];
 					(objectParent player) setVariable ["isBettyBitching", true, true];
-					sleep 1.33;
+					private _startTime = serverTime + 1.33;
+					waitUntil {serverTime > _startTime};
 					(objectParent player) setVariable ["isBettyBitching", false, true];
 				};
 			};
 		};
-		sleep 1;
+		private _startTime1 = serverTime + 1;  
+		waitUntil {serverTime > _startTime1};
 	};
 };
 
@@ -35,15 +38,17 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if ((objectParent player) getVariable "bettyEnabled" && (objectParent player) getVariable "pullUpEnabled") then {
 			if ((getPosATL player select 2) < 200 && (objectParent player) getVariable "landingGear" == false && (objectParent player) getVariable "isBettyBitching" == false) then {
-				playSoundUI ["altWarning", ((objectParent player) getVariable "voiceVolume" - 0.2), 1];
+				playSoundUI ["altWarning", (objectParent player) getVariable "voiceAltVolume", 1];
 				(objectParent player) setVariable ["isBettyBitching", true, true];
-				hint "altitude";
-				sleep 1.5;
+				private _startTime = serverTime + 1.5; 
+				waitUntil {serverTime > _startTime};
 				(objectParent player) setVariable ["isBettyBitching", false, true];
-				hint "altitude";
+				private _startTime2 = serverTime + 1.5; 
+				waitUntil {serverTime > _startTime2}; 
 			};
 		};
-		sleep 1;
+		private _startTime1 = serverTime + 1;  
+		waitUntil {serverTime > _startTime1};
 	};
 };
 
@@ -54,11 +59,13 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 			if (fuel (objectParent player) < 0.2) then {
 				playSoundUI ["bingoFuel", (objectParent player) getVariable "voiceVolume", 1];
 				(objectParent player) setVariable ["isBettyBitching", true, true];
-				sleep 1.6;
+				private _startTime1 = serverTime + 1.6;  
+				waitUntil {serverTime > _startTime1};
 				(objectParent player) setVariable ["isBettyBitching", false, true];				
 			};
 		};
-		sleep 2;
+		private _startTime1 = serverTime + 2;  
+		waitUntil {serverTime > _startTime1};
 	};
 };
 
@@ -70,7 +77,8 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 				playSoundUI ["radarLock", (objectParent player) getVariable "voiceVolume", 1];
 			};
 		};
-		sleep 0.53;
+		private _startTime1 = serverTime + 0.53;  
+		waitUntil {serverTime > _startTime1};
 	};
 };
 
