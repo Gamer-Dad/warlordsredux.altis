@@ -11,15 +11,8 @@ waitUntil {!isNull player && isPlayer player};
 
 if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
-	private _unbalanceID = format ["BIS_WL_unbalanced_%1", getPlayerUID player];
 
-	waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID} || !isNil {player getVariable _unbalanceID}};
-
-	if (player getVariable _unbalanceID) exitWith {
-		["client_init"] call BIS_fnc_endLoadingScreen;
-		private _unbalanceID = format ["BIS_WL_unbalanced_%1", getPlayerUID player];
-		player setVariable [format ["%1", _unbalanceID], nil, true];
-	};
+	waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
 
 	if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 		addMissionEventHandler ["EachFrame", {
