@@ -123,20 +123,22 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 	} forEach (WL_PLAYER_VEHS select {(crew _x) findIf {_x == player} != 0}); // All of the players's vehicles
 
 	{
-		if !(_x == player && isNull (objectParent _x)) then {
-			WL_CONTROL_MAP drawIcon [
-				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-				[_x] call MRTM_fnc_iconColor,
-				getPosATL _x,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_iconSize,
-				getDir _x,
-				format [" %1", name _x],
-				0,
-				WL_MAP_FONT_SIZE,
-				"RobotoCondensed",
-				"right"
-			];
+		if !(_x == player) then {
+			if (isNull (objectParent _x)) then {
+				WL_CONTROL_MAP drawIcon [
+					getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
+					[_x] call MRTM_fnc_iconColor,
+					getPosATL _x,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					getDir _x,
+					format [" %1", name _x],
+					0,
+					WL_MAP_FONT_SIZE,
+					"RobotoCondensed",
+					"right"
+				];
+			};
 		};
 	} forEach (units (group player));
 }];
