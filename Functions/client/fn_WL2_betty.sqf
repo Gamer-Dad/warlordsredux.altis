@@ -77,7 +77,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 				playSoundUI ["radarLock", (objectParent player) getVariable "voiceVolume", 1];
 			};
 		};
-		private _startTime1 = serverTime + 0.53;  
+		private _startTime1 = serverTime + 0.52;  
 		waitUntil {serverTime > _startTime1};
 	};
 };
