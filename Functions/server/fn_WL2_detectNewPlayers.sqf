@@ -47,7 +47,7 @@
 };
 
 while {!BIS_WL_missionEnd} do {
-	_newPlayers = BIS_WL_allWarlords select {!isNull _x && ((_x getVariable ["BIS_WL_detectedByServerSince", -1]) == -1) || (isPlayer _x && isNil {missionNamespace getVariable format ["BIS_WL_teamCheckOK_%1", getPlayerUID _x]})};
+	_newPlayers = BIS_WL_allWarlords select {!isNull _x && /*((_x getVariable ["BIS_WL_detectedByServerSince", -1]) == -1) || */(isPlayer _x && isNil {missionNamespace getVariable format ["BIS_WL_teamCheckOK_%1", getPlayerUID _x]})};
 	{
 		_westCnt = playersNumber west;
 		_eastCnt = playersNumber east;
