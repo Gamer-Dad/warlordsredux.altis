@@ -10,7 +10,7 @@ _refreshBalance = {
 
 	{
 		_incomeStandard = _x call BIS_fnc_WL2_income;
-		_actualIncome = round (_incomeStandard * (if (_x == west) then [{(missionNamespace getVariable "blanceMultilplierBlu") * 1.7}, {(missionNamespace getVariable "blanceMultilplierOpf") * 1.7}]));
+		_actualIncome = round (_incomeStandard * (if (_x == west) then [{(missionNamespace getVariable "blanceMultilplierBlu")}, {(missionNamespace getVariable "blanceMultilplierOpf")}]));
 		if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome, true]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome, true]}]
 	} forEach BIS_WL_competingSides;
 };

@@ -199,6 +199,16 @@ if !(isNull _sender) then {
 						};
 					};
 				};
+
+				if (_className == "B_UAV_01_F" || _className == "O_UAV_01_F") then {
+					//Code to allow Both sides to use a drone of the other side.
+					createVehicleCrew _asset;
+					_side = side _sender; 
+					_group = createGroup _side;
+					(crew _asset) joinSilent _group;
+					(effectiveCommander _asset) setSkill 1;
+					(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;					
+				};
 			};
 			
 			_asset setVehicleVarName _assetVar;

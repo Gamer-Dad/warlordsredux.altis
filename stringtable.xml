@@ -802,6 +802,38 @@
             <Chinesesimp>禁用贝蒂</Chinesesimp>
             <Chinese>禁用貝蒂</Chinese>
         </Key>
+        <Key ID="STR_A3_debriefing_imbalance_title">
+            <Original>Teams are imbalanced</Original>
+            <English>Teams are imbalanced</English>
+            <Czech>Týmy jsou nevyrovnané</Czech>
+            <French>Les équipes sont déséquilibrées</French>
+            <German>Teams sind unausgewogen</German>
+            <Italian>Le squadre sono squilibrate</Italian>
+            <Polish>Drużyny są nierówne</Polish>
+            <Portuguese>As equipes estão desequilibradas</Portuguese>
+            <Russian>Команды не сбалансированы</Russian>
+            <Spanish>Los equipos están desequilibrados</Spanish>
+            <Korean>팀의 불균형</Korean>
+            <Japanese>チームのバランスが悪い</Japanese>
+            <Chinesesimp>团队不平衡</Chinesesimp>
+            <Chinese>團隊不平衡</Chinese>
+        </Key>
+        <Key ID="STR_A3_debriefing_imbalance_desription">
+            <Original>Please switch teams. This team is full.</Original>
+            <English>Please switch teams. This team is full.</English>
+            <Czech>Prosím vyměňte týmy. Tento tým je plný.</Czech>
+            <French>Veuillez changer d'équipe. Cette équipe est complète.</French>
+            <German>Bitte wechseln Sie das Team. Dieses Team ist voll.</German>
+            <Italian>Si prega di cambiare squadra. Questa squadra è piena.</Italian>
+            <Polish>Proszę o zmianę drużyn. Ten zespół jest pełny.</Polish>
+            <Portuguese>Por favor, troque de equipe. Este time está completo.</Portuguese>
+            <Russian>Пожалуйста, поменяйтесь командами. Эта команда полная.</Russian>
+            <Spanish>Por favor, cambie de equipo. Este equipo está lleno.</Spanish>
+            <Korean>팀을 바꿔주세요. 이 팀은 꽉 찼습니다.</Korean>
+            <Japanese>チームを切り替えてください。このチームは満員です。</Japanese>
+            <Chinesesimp>请换队。这个团队已经满员了。</Chinesesimp>
+            <Chinese>請換隊。這個團隊已經滿員了。</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>

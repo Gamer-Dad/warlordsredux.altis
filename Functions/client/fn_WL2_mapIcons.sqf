@@ -4,24 +4,24 @@
 
 waitUntil {!isNil "BIS_WL_playerSide"};
 
-westColor = [0,0.3,0.6,0.8];
-eastColor = [0.5,0,0,0.8];
-aafColor = [0,0.5,0,0.8];
-civilianColor = [0.4,0,0.5,0.8];
+westColor = [0,0.3,0.6,1];
+eastColor = [0.5,0,0,1];
+aafColor = [0,0.5,0,1];
+civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params["_e"];
-	if (side _e == west) exitWith {westColor};
-	if (side _e == east) exitWith {eastColor};
-	if (side _e == resistance) exitWith {aafColor};
-	if (side _e == civilian) exitWith {civilianColor};
+	if (side player == west) exitWith {westColor};
+	if (side player == east) exitWith {eastColor};
+	if (side player == resistance) exitWith {aafColor};
+	if (side player == civilian) exitWith {civilianColor};
 	civilianColor;
 };
 
 MRTM_fnc_iconSize = {
 	params ["_e"];
-	if (_e isKindOf 'Man') exitWith {20};
-	if (_e isKindOf 'StaticWeapon') exitWith {15};
+	if (_e isKindOf 'Man') exitWith {25};
+	if (_e isKindOf 'StaticWeapon') exitWith {20};
 	if (_e isKindOf 'LandVehicle') exitWith {30};
 	if (_e isKindOf 'Ship') exitWith {25};
 	if (_e isKindOf 'Air') exitWith {30};
@@ -108,12 +108,16 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 		if (_x != vehicle player) then {
 			WL_CONTROL_MAP drawIcon [
 				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-				[_x] call MRTM_fnc_iconColor,
+				if (side player == west) then {westColor} else {eastColor},
 				getPosATL _x,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
 				getDir _x,
-				_x getVariable "BIS_WL_iconText",
+				if (count crew _x > 0) then {
+					[_x] call MRTM_fnc_iconText;
+				} else {
+					_x getVariable "BIS_WL_iconText";
+				},
 				0,
 				WL_MAP_FONT_SIZE,
 				"RobotoCondensed",
@@ -124,19 +128,21 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 
 	{
 		if !(_x == player) then {
-			WL_CONTROL_MAP drawIcon [
-				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-				[_x] call MRTM_fnc_iconColor,
-				getPosATL _x,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_iconSize,
-				getDir _x,
-				format [" %1", name _x],
-				0,
-				WL_MAP_FONT_SIZE,
-				"RobotoCondensed",
-				"right"
-			];
+			if (isNull (objectParent _x)) then {
+				WL_CONTROL_MAP drawIcon [
+					getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
+					[_x] call MRTM_fnc_iconColor,
+					getPosATL _x,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					getDir _x,
+					format [" %1", name _x],
+					0,
+					WL_MAP_FONT_SIZE,
+					"RobotoCondensed",
+					"right"
+				];
+			};
 		};
-	} forEach (units (group player)) select {isNull (objectParent _x)};
+	} forEach (units (group player));
 }];

@@ -98,8 +98,8 @@ class CfgWLRequisitionPresets
 				class Land_BagFence_Round_F					{cost = 250;	requirements[]={};		offset[]={0, 2, 0};};	// "Semi Circle Sand bags"  
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};		offset[]={0, 5, 0};};	// "Razor Wire Fence"  
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};		offset[]={0, 2, 0};};	// "Tank barrier"
-				class B_Static_Designator_01_weapon_F		{cost = 150;    requirements[]={};	};  // Remote designator
-				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2
+				class B_Static_Designator_01_F				{cost = 150;    requirements[]={};	};  // Remote designator
+				class B_UAV_01_F							{cost = 150;    requirements[]={};	};  // AR-2
 				class B_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"  
 				class B_HMG_01_high_F						{cost = 400;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"  
 				class B_GMG_01_F							{cost = 550;	requirements[]={};	};	// "Mk32 GMG 20 mm"  
@@ -207,7 +207,7 @@ class CfgWLRequisitionPresets
 				class Land_Razorwire_F						{cost = 250;	requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"  
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 500;	requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"  
 				class O_Static_Designator_02_weapon_F       {cost = 150;    requirements[]={};  };	// Remote designator
-				class O_UAV_01_F       						{cost = 500;    requirements[]={};  };  // AR-2
+				class O_UAV_01_F       						{cost = 150;    requirements[]={};  };  // AR-2
 				class O_HMG_01_F							{cost = 300;	requirements[]={};	};	// "Mk30 HMG .50"  
 				class O_HMG_01_high_F						{cost = 400;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"  
 				class O_GMG_01_F							{cost = 550;	requirements[]={};	};	// "Mk32 GMG 20 mm"  
