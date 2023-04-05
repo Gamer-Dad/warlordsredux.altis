@@ -49,37 +49,7 @@
 while {!BIS_WL_missionEnd} do {
 	_newPlayers = BIS_WL_allWarlords select {!isNull _x && ((_x getVariable ["BIS_WL_detectedByServerSince", -1]) == -1) || (isPlayer _x && isNil {missionNamespace getVariable format ["BIS_WL_teamCheckOK_%1", getPlayerUID _x]})};
 	{
-		_westCnt = playersNumber west;
-		_eastCnt = playersNumber east;
-		private _unbalanceID = format ["BIS_WL_unbalanced_%1", getPlayerUID _x];
-
-		if (side _x == west) then {
-			if (_westCnt > _eastCnt) then {
-				if ((abs (_westCnt - _eastCnt)) > 1) then {
-					missionNamespace setVariable [format ["%1", _unbalanceID], true, true];
-				} else {
-					_x spawn BIS_fnc_WL2_setupNewWarlord;
-					missionNamespace setVariable [format ["%1", _unbalanceID], false, true];
-				};
-			} else {
-				_x spawn BIS_fnc_WL2_setupNewWarlord;
-				missionNamespace setVariable [format ["%1", _unbalanceID], false, true];
-			};
-		} else {
-			if (_eastCnt > _westCnt) then {
-				if ((abs (_eastCnt - _westCnt)) > 1) then {
-					missionNamespace setVariable [format ["%1", _unbalanceID], true, true];
-				} else {
-					_x spawn BIS_fnc_WL2_setupNewWarlord;
-					missionNamespace setVariable [format ["%1", _unbalanceID], false, true];
-				};
-			} else {
-				_x spawn BIS_fnc_WL2_setupNewWarlord;
-				missionNamespace setVariable [format ["%1", _unbalanceID], false, true];
-			};
-		};
-
-		//_x spawn BIS_fnc_WL2_setupNewWarlord;
+		_x spawn BIS_fnc_WL2_setupNewWarlord;
 		
 		// Thanks to marii for the AI limiting code; Adjust numbers below for AI buddy count change
         //AI buddy count system

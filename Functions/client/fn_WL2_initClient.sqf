@@ -11,7 +11,6 @@ waitUntil {!isNull player && isPlayer player};
 
 if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
-	private _teamBalanceNotOK = format ["BIS_WL_unbalanced_%1", getPlayerUID player];
 
 	waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
 	
@@ -54,17 +53,6 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 			(1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
 			localize "STR_A3_WL_switch_teams_info"
 		];
-	};
-
-	sleep 2;
-
-	if (missionNamespace getVariable [_teamBalanceNotOK, false]) then {
-		if !((getPlayerUID player) in (missionNamespace getVariable format ["BIS_WL_boundTo%1", side group player])) then {
-			["client_init"] call BIS_fnc_endLoadingScreen;
-			missionNamespace setVariable [format ["%1", _teamBalanceNotOK], nil, true];
-			["imbalance", false, true, false, true] call BIS_fnc_endMission;
-			sleep 15;
-		};
 	};
 };
 
@@ -275,11 +263,7 @@ call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 "init" spawn BIS_fnc_WL2_hintHandle;
 [] spawn BIS_fnc_WL2_music;
-
-private _teamCheckOK = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
-if (missionNamespace getVariable _teamCheckOK) then {
-	[] spawn BIS_fnc_WL2_welcome;
-};
+[] spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
