@@ -15,9 +15,9 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 
 	waitUntil {!isNil {missionNamespace getVariable _teamBalanceOK}};
 
-	if (player getVariable [_teamBalanceOK, false]) then {
+	if (missionNamespace getVariable [_teamBalanceOK, false]) then {
 		["client_init"] call BIS_fnc_endLoadingScreen;
-		player setVariable [format ["%1", _teamBalanceOK], nil, true];
+		missionNamespace setVariable [format ["%1", _teamBalanceOK], nil, true];
 		["imbalance", false, true, false, true] call BIS_fnc_endMission;
 	};
 
