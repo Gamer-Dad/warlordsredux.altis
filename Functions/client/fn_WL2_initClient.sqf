@@ -56,7 +56,7 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 		];
 	};
 
-	waitUntil {!isNil {missionNamespace getVariable _teamBalanceNotOK}};
+	sleep 2;
 
 	if (missionNamespace getVariable [_teamBalanceNotOK, false]) then {
 		if !((getPlayerUID player) in (missionNamespace getVariable format ["BIS_WL_boundTo%1", side group player])) then {
