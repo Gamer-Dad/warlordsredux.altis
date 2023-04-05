@@ -265,7 +265,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 [] spawn BIS_fnc_WL2_music;
 
 private _teamCheckOK = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
-if (missionNamespace getVariable _teamCheckOKVarID) then {
+if (missionNamespace getVariable _teamCheckOK) then {
 	[] spawn BIS_fnc_WL2_welcome;
 };
 
