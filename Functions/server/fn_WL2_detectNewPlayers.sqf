@@ -79,7 +79,7 @@ while {!BIS_WL_missionEnd} do {
 			};
 		};
 
-		//_x spawn BIS_fnc_WL2_setupNewWarlord;
+		_x spawn BIS_fnc_WL2_setupNewWarlord;
 		
 		// Thanks to marii for the AI limiting code; Adjust numbers below for AI buddy count change
         //AI buddy count system
