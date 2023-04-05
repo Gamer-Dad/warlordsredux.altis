@@ -15,7 +15,7 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 
 	waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID} || !isNil {player getVariable _unbalanceID}};
 
-	if (player getVariable [_unbalanceID, false] == true) then {
+	if (player getVariable [_unbalanceID, false] == true) exitWith {
 		["client_init"] call BIS_fnc_endLoadingScreen;
 		player setVariable [format ["%1", _unbalanceID], nil, true];
 		["imbalance", false, true, false, true] call BIS_fnc_endMission;
