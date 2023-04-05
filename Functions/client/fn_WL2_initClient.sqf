@@ -14,10 +14,12 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	private _teamBalanceOK = format ["BIS_WL_unbalanced_%1", getPlayerUID player];
 
 	waitUntil {!isNil {player getVariable _teamBalanceOK}};
-	if (player getVariable [_teamBalanceOK, false] == true) then {
-		["client_init"] call BIS_fnc_endLoadingScreen;
-		player setVariable [format ["%1", _teamBalanceOK], nil, true];
-		["imbalance", false, true, false, true] call BIS_fnc_endMission;
+	if (isNil {missionNamespace getVariable _teamCheckOKVarID}) then {
+		if (player getVariable [_teamBalanceOK, false] == true) then {
+			["client_init"] call BIS_fnc_endLoadingScreen;
+			player setVariable [format ["%1", _teamBalanceOK], nil, true];
+			["imbalance", false, true, false, true] call BIS_fnc_endMission;
+		};
 	};
 
 	waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
