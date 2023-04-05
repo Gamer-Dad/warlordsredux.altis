@@ -13,12 +13,16 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
 	private _teamBalanceOK = format ["BIS_WL_unbalanced_%1", getPlayerUID player];
 
+	waitUntil {!isNil {missionNamespace getVariable _teamBalanceOK}};
+
 	if (player getVariable [_teamBalanceOK, false]) then {
 		["client_init"] call BIS_fnc_endLoadingScreen;
 		player setVariable [format ["%1", _teamBalanceOK], nil, true];
 		["imbalance", false, true, false, true] call BIS_fnc_endMission;
 	};
 
+	waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
+	
 	if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 		addMissionEventHandler ["EachFrame", {
 			clearRadio;
