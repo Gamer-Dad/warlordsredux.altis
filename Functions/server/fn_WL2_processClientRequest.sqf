@@ -259,8 +259,9 @@ if !(isNull _sender) then {
 				if (_isMan) then {
 					_asset = (group _sender) createUnit [_className, _targetPosFinal, [], 0, "NONE"];
 				} else {
+					private _playerPos = getPosATL _sender;
 					if (_className == "Box_NATO_Ammo_F" || _className == "Box_NATO_Grenades_F" || _className == "Box_NATO_Wps_F" || _className == "Box_NATO_AmmoOrd_F" || _className == "Box_NATO_WpsLaunch_F" || _className == "Box_NATO_WpsSpecial_F" || _className == "B_supplyCrate_F" || _className == "Box_NATO_AmmoVeh_F" || _className == "Box_East_Ammo_F" || _className == "Box_East_Grenades_F" || _className == "Box_East_Wps_F" || _className == "Box_East_AmmoOrd_F" || _className == "Box_East_WpsLaunch_F" || _className == "Box_East_WpsSpecial_F" || _className == "O_supplyCrate_F" || _className == "Box_East_AmmoVeh_F") then {
-						_asset = createVehicle [_className, _targetPosFinal, [], 0, "NONE"];
+						_asset = createVehicle [_className, _playerPos, [], 0, "NONE"];
 					} else {
 						private _playerPos = getPosATL _sender;
 						_asset = createVehicle [_className, _playerPos, [], 0, "NONE"];

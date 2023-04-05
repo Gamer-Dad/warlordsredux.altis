@@ -151,10 +151,32 @@ if (count _assetDetails > 0) then {
 					};				
 				};
 			} else { //if there is no vehicle in queue
-				uiNamespace setVariable ["BIS_WL_purchaseMenuDropSectorAffordable", TRUE];
-			    if !(uiNamespace getVariable ["BIS_WL_purchaseMenuButtonDropSectorHover", FALSE]) then {
-				    _purchase_drop_sector ctrlSetBackgroundColor _color;
-				    _purchase_drop_sector ctrlSetTextColor [1, 1, 1, 1];
+				if (BIS_WL_vehsInBasket == ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool)) then {
+					if ((_visitedSectorID == -1)) then { // if not inside an onwned sector
+						uiNamespace setVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE];
+						_purchase_drop_sector ctrlSetTooltip localize "STR_A3_WL_owned_sector";
+						_purchase_drop_sector ctrlSetBackgroundColor [(_color # 0) * 0.5, (_color # 1) * 0.5, (_color # 2) * 0.5, _color # 3];
+						_purchase_drop_sector ctrlSetTextColor [0.5, 0.5, 0.5, 1];
+					} else { // if they are in an owned sector
+						if (vehicle player != player) then {
+							_purchase_drop_sector ctrlSetTooltip localize "STR_A3_WL_get_out_of_vehicle";
+							uiNamespace setVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE];
+							_purchase_drop_sector ctrlSetBackgroundColor [(_color # 0) * 0.5, (_color # 1) * 0.5, (_color # 2) * 0.5, _color # 3];
+							_purchase_drop_sector ctrlSetTextColor [0.5, 0.5, 0.5, 1];
+						} else {
+							uiNamespace setVariable ["BIS_WL_purchaseMenuDropSectorAffordable", TRUE];
+							if !(uiNamespace getVariable ["BIS_WL_purchaseMenuButtonDropSectorHover", FALSE]) then {
+								_purchase_drop_sector ctrlSetBackgroundColor _color;
+								_purchase_drop_sector ctrlSetTextColor [1, 1, 1, 1];
+							};	
+						};				
+					};
+				} else {
+					uiNamespace setVariable ["BIS_WL_purchaseMenuDropSectorAffordable", TRUE];
+					if !(uiNamespace getVariable ["BIS_WL_purchaseMenuButtonDropSectorHover", FALSE]) then {
+						_purchase_drop_sector ctrlSetBackgroundColor _color;
+						_purchase_drop_sector ctrlSetTextColor [1, 1, 1, 1];
+					};
 				};
 		    };
 		} else {
