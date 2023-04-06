@@ -169,12 +169,12 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{	  
 				class O_Heli_Light_02_unarmed_F				{cost = 550;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"  
-				class O_Heli_Light_02_dynamicLoadout_F		{cost = 4000;	requirements[]={"H"};	};	// "PO-30 Orca"  
+				class O_Heli_Light_02_dynamicLoadout_F		{cost = 8000;	requirements[]={"H"};	};	// "PO-30 Orca"  
 				class O_Heli_Transport_04_F					{cost = 600;	requirements[]={"H"};	};	// "Mi-290 Taru"  
 				class O_Heli_Transport_04_covered_F			{cost = 400;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"  
 				class O_Heli_Transport_04_medevac_F 		{cost = 500;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"  
 				class O_UAV_02_dynamicLoadout_F	  			{cost = 12000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					  
-				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 9000;	requirements[]={"H"};	};	// "Mi-48 Kajman"  
+				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 10000;	requirements[]={"H"};	};	// "Mi-48 Kajman"  
 				class O_T_UAV_04_CAS_F						{cost = 9500;	requirements[]={"A"};	};	// "KH-3A Fenghuang"; 
 				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"  
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"  
