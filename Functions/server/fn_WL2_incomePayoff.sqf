@@ -49,5 +49,5 @@ while {true} do {
 				[_x, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsControl;
 			};
 		};
-	} forEach allPlayers; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
+	} forEach BIS_WL_allWarlords; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
 };

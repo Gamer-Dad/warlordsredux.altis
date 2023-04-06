@@ -10,12 +10,6 @@ howRead = false;
 	};
 }];
 
-_ctrlButton = findDisplay 6969 displayCtrl 6969691;
-_ctrlButton ctrlAddEventHandler ["onMouseButtonClick", {
-	params ["_control", "_button", "_xPos", "_yPos", "_shift", "_ctrl", "_alt"];
-	closeDialog 2;
-}];
-
 if (side player == west) then {
 	private _control1 = findDisplay 6969 displayCtrl 69692;
 	_control1 ctrlSetTextColor [0,0.3,0.5,1];
