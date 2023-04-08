@@ -59,7 +59,7 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{
 				class B_Heli_Light_01_F						{cost = 350;	requirements[]={"H"};	};	// "MH-9 Hummingbird"
-				class B_Heli_Light_01_dynamicLoadout_F		{cost = 2000;	requirements[]={"H"};	};	// "AH-9 Pawnee"
+				class B_Heli_Light_01_dynamicLoadout_F		{cost = 4000;	requirements[]={"H"};	};	// "AH-9 Pawnee"
 				class B_Heli_Transport_01_F					{cost = 800;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 1000;	requirements[]={"H"};	};	// "CH-67 Huron"
 				class B_UAV_02_dynamicLoadout_F         	{cost = 12000;   requirements[]={A};  };  // "Greyhawk"
@@ -169,7 +169,7 @@ class CfgWLRequisitionPresets
 			class Aircraft
 			{	  
 				class O_Heli_Light_02_unarmed_F				{cost = 550;	requirements[]={"H"};	};	// "PO-30 Orca (Unarmed)"  
-				class O_Heli_Light_02_dynamicLoadout_F		{cost = 8000;	requirements[]={"H"};	};	// "PO-30 Orca"  
+				class O_Heli_Light_02_dynamicLoadout_F		{cost = 6500;	requirements[]={"H"};	};	// "PO-30 Orca"  
 				class O_Heli_Transport_04_F					{cost = 600;	requirements[]={"H"};	};	// "Mi-290 Taru"  
 				class O_Heli_Transport_04_covered_F			{cost = 400;	requirements[]={"H"};	};	// "Mi-290 Taru (Transport)"  
 				class O_Heli_Transport_04_medevac_F 		{cost = 500;	requirements[]={"H"};	};	// "Mi-290 Taru (Medical)"  
