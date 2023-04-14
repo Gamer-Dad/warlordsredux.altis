@@ -9,6 +9,6 @@ while {TRUE} do {
 		BIS_manLost = FALSE;
 	} else {
 		BIS_WL_matesAvailable = (BIS_WL_matesAvailable + 1) min BIS_WL_maxSubordinates;
-		[] spawn BIS_fnc_WL2_refreshOSD;
+		0 spawn BIS_fnc_WL2_refreshOSD;
 	};
 };

@@ -49,7 +49,7 @@ EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
 //this part sets fog and rain to zero
-[] spawn {
+0 spawn {
 	while {TRUE} do {
 		_overcastPreset = random 1;
 		(7200 * timeMultiplier) setOvercast _overcastPreset;
@@ -150,19 +150,19 @@ call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
 {_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
-[] spawn BIS_fnc_WL2_detectNewPlayers;
+0 spawn BIS_fnc_WL2_detectNewPlayers;
 ["server", TRUE] call BIS_fnc_WL2_updateSectorArrays;
-[] spawn BIS_fnc_WL2_targetSelectionHandleServer;
-[] spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
-[] spawn BIS_fnc_WL2_incomePayoff;
-[] spawn BIS_fnc_WL2_garbageCollector;
-[] spawn BIS_fnc_WL2_targetResetHandleServer;
+0 spawn BIS_fnc_WL2_targetSelectionHandleServer;
+0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
+0 spawn BIS_fnc_WL2_incomePayoff;
+0 spawn BIS_fnc_WL2_garbageCollector;
+0 spawn BIS_fnc_WL2_targetResetHandleServer;
 
 setTimeMultiplier BIS_WL_timeMultiplier;
 private _spaceLukkie = createSimpleObject ["\A3\Structures_F\Civ\Dead\HumanSkeleton_F.p3d", [17366.8,12577.2,18.2285]];
 _spaceLukkie setDir 122;
 
-[] spawn {
+0 spawn {
 	while {TRUE} do {
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || daytime < 5};
 		setTimeMultiplier ((BIS_WL_timeMultiplier * 4) min 24);

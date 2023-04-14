@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-[] spawn {
+0 spawn {
 	while {!BIS_WL_missionEnd} do {
 		_players = count BIS_WL_allWarlords;
     	if (_players >= 51) then 

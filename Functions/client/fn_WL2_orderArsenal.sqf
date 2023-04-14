@@ -51,7 +51,7 @@ private  _id = clientOwner;
 			player setVariable ["arsenalOpened", false, true];
 		};
 
-		[] spawn {
+		0 spawn {
 			waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
 			while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
 				if !(isNull (findDisplay 602)) then {

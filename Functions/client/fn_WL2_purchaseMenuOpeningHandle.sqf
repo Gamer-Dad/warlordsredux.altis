@@ -9,7 +9,7 @@ WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 		} else {
 			BIS_WL_gearKeyPressed = TRUE;
-			[] spawn {
+			0 spawn {
 				_t = time + 0.5;
 				waitUntil {!BIS_WL_gearKeyPressed || time >= _t};
 				if (time < _t) then {

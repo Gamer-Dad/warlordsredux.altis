@@ -8,7 +8,7 @@ while {!BIS_WL_missionEnd} do {
 	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	BIS_WL_currentSelection = WL_ID_SELECTION_VOTING;
-	[] spawn {
+	0 spawn {
 		sleep 1;
 		if (BIS_WL_missionEnd) exitWith {};
 		"Voting" call BIS_fnc_WL2_announcer;
@@ -33,7 +33,7 @@ while {!BIS_WL_missionEnd} do {
 	
 	"voting" spawn BIS_fnc_WL2_sectorSelectionHandle;
 
-	[] spawn {
+	0 spawn {
 		waitUntil {!(BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) || BIS_WL_missionEnd || BIS_WL_resetTargetSelection_client};
 		
 		["voting", "end"] spawn BIS_fnc_WL2_sectorSelectionHandle;

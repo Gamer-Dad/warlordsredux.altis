@@ -66,4 +66,4 @@ _assets = ["requestAssetArray", [_dropInfo, BIS_WL_targetSector]] call BIS_fnc_W
 	[player, _x] call BIS_fnc_WL2_newAssetHandle;
 } forEach _assets;
 
-[] spawn BIS_fnc_WL2_refreshOSD;
+0 spawn BIS_fnc_WL2_refreshOSD;

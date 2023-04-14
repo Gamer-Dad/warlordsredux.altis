@@ -1,5 +1,5 @@
 // Spawn the Vehicle Unflip Script Loop.
-[] spawn KSLOOP_fnc_unflipVehicleAddAction;
+0 spawn KSLOOP_fnc_unflipVehicleAddAction;
 
 player addAction [
 	"Commemorate",

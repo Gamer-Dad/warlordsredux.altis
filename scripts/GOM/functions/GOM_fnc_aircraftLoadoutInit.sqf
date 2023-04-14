@@ -2056,7 +2056,7 @@ if (_this select 4) then {	_veh = call compile lbdata [1500,lbcursel 1500];
 		if (displayNull isEqualTo findDisplay 66) exitWith {
 
 			removeMissionEventHandler ["EachFrame",_thisEventHandler];
-			_display = [] spawn GOM_fnc_showResourceDisplay;
+			_display = 0 spawn GOM_fnc_showResourceDisplay;
 			playSound "Click";
 
 		};
@@ -2081,14 +2081,6 @@ GOM_list_allPylonMags = GOM_list_allPylonMags apply {[gettext (configfile >> "Cf
 GOM_list_allPylonMags sort true;
 GOM_list_allPylonMags = GOM_list_allPylonMags apply {_x select 1};
 GOM_list_validDispNames = GOM_list_allPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
-
-if (GOM_fnc_removeFuelFromMapObjects) then {
-
-//muhaha
-([0,0,0] nearObjects 150000) select {typeOf _x isKindOf "Static" AND getFuelCargo _x > 0} apply {[_x,0] remoteExec ["setFuelCargo",_x];
-};
-
-};
 
 
 

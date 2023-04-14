@@ -113,11 +113,11 @@ switch (_displayClass) do {
 			} forEach ["voting", "seizing", "trespassing"];
 		}];
 
-		[] spawn {
+		0 spawn {
 			while {TRUE} do {
 				_oldCPValue = WL_PLAYER_FUNDS;
 				waitUntil {sleep WL_TIMEOUT_SHORT; WL_PLAYER_FUNDS != _oldCPValue};
-				[] spawn BIS_fnc_WL2_refreshOSD;
+				0 spawn BIS_fnc_WL2_refreshOSD;
 			};
 		};
 	};
@@ -410,7 +410,7 @@ switch (_displayClass) do {
 					case "LastLoadout": {call BIS_fnc_WL2_orderLastLoadout};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
 					case "SavedLoadout": {"apply" call BIS_fnc_WL2_orderSavedLoadout};
-					case "Scan": {[] spawn BIS_fnc_WL2_orderSectorScan};
+					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer};
@@ -426,9 +426,9 @@ switch (_displayClass) do {
 					};
 					case "UnlockVehicles": {{_x lock FALSE; _x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]]} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_unlock_all_msg"] spawn BIS_fnc_WL2_smoothText};
 					case "RemoveUnits": {{_x call BIS_fnc_WL2_sub_deleteAsset} forEach ((groupSelectedUnits player) - [player])};
-					case "RespawnVic": {[] spawn BIS_fnc_WL2_orderFTVehicle};
-					case "RespawnVicFT": {[] spawn BIS_fnc_WL2_orderFTVehicleFT};
-					case "welcomeScreen": {[] spawn BIS_fnc_WL2_welcome};
+					case "RespawnVic": {0 spawn BIS_fnc_WL2_orderFTVehicle};
+					case "RespawnVicFT": {0 spawn BIS_fnc_WL2_orderFTVehicleFT};
+					case "welcomeScreen": {0 spawn BIS_fnc_WL2_welcome};
 					default {[_className, _cost, _category, _requirements, _offset] call BIS_fnc_WL2_requestPurchase};
 				};
 			} else {

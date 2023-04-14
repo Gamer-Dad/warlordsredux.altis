@@ -32,7 +32,7 @@ addMissionEventHandler ["Loaded", {
 if ( hasInterface ) then
 {
 	waitUntil { !isNull player };
-	[] spawn KSLOOP_fnc_unflipVehicleAddAction;
+	0 spawn KSLOOP_fnc_unflipVehicleAddAction;
 };
 /*******************************END OF SCRIPTS****************************/
 

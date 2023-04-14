@@ -43,8 +43,8 @@ while {!BIS_WL_missionEnd} do {
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetTextColor [1,1,1,1];
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable FALSE;
 
-		[] spawn BIS_fnc_WL2_mapDrawHandle;
-		[] spawn BIS_fnc_WL2_mapIcons;
+		0 spawn BIS_fnc_WL2_mapDrawHandle;
+		0 spawn BIS_fnc_WL2_mapIcons;
 	};
 	
 	uiSleep WL_TIMEOUT_STANDARD;

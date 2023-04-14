@@ -53,7 +53,7 @@ _deployKeyHandle = WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 
 uiNamespace setVariable ["BIS_WL_deployKeyHandle", _deployKeyHandle];
 
-[] spawn {
+0 spawn {
 	waitUntil {
 		sleep WL_TIMEOUT_STANDARD;
 		BIS_WL_spacePressed ||

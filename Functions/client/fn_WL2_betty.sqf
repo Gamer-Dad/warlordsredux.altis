@@ -15,7 +15,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 
 
 //Pull up warning
-[] spawn {
+0 spawn {
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if ((objectParent player) getVariable "bettyEnabled" && (objectParent player) getVariable "altEnabled") then {
 			if (getPosATL player select 2 <= (objectParent player) getVariable "altCeiling" && getPosATL player select 2 > 200 && (objectParent player) getVariable "landingGear" == false && (objectParent player) getVariable "isBettyBitching" == false) then {
@@ -34,7 +34,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 };
 
 //Altitude warning
-[] spawn {
+0 spawn {
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if ((objectParent player) getVariable "bettyEnabled" && (objectParent player) getVariable "pullUpEnabled") then {
 			if ((getPosATL player select 2) < 100 && (objectParent player) getVariable "landingGear" == false && (objectParent player) getVariable "isBettyBitching" == false) then {
@@ -53,7 +53,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 };
 
 //Bingo fuel
-[] spawn {
+0 spawn {
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if ((objectParent player) getVariable "bettyEnabled" && (objectParent player) getVariable "fuelEnabled") then {
 			if (fuel (objectParent player) < 0.2) then {
@@ -70,7 +70,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 };
 
 //On enemy sensor
-[] spawn {
+0 spawn {
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if ((objectParent player) getVariable "bettyEnabled" && (objectParent player) getVariable "radarVisibleSystem") then {
 			if (east knowsAbout (objectParent player) >= 4) then {
@@ -83,7 +83,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 };
 
 //Sensor targets
-[] spawn {
+0 spawn {
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		(objectParent player) setVariable ["newTargets", getSensorTargets objectParent player, true];
 		if ((objectParent player) getVariable "bettyEnabled" && (objectParent player) getVariable "radarTargetSystem") then {

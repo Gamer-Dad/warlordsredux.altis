@@ -56,7 +56,7 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	};
 };
 
-[] spawn {
+0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];
 	publicVariableServer _varFormat;
@@ -108,11 +108,11 @@ if !(isServer) then {
 	BIS_WL_playerSide call BIS_fnc_WL2_parsePurchaseList;
 };
 
-[] spawn BIS_fnc_WL2_zoneRestrictionHandleClient;
-[] spawn BIS_fnc_WL2_sectorCaptureStatus;
-[] spawn BIS_fnc_WL2_teammatesAvailability;
-[] spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
-[] spawn BIS_fnc_WL2_mapControlHandle;
+0 spawn BIS_fnc_WL2_zoneRestrictionHandleClient;
+0 spawn BIS_fnc_WL2_sectorCaptureStatus;
+0 spawn BIS_fnc_WL2_teammatesAvailability;
+0 spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
+0 spawn BIS_fnc_WL2_mapControlHandle;
 
 BIS_WL_groupIconClickHandler = addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
 BIS_WL_groupIconEnterHandler = addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
@@ -156,7 +156,7 @@ player addEventHandler ["GetInMan", {
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
-		[] spawn BIS_fnc_WL2_betty;
+		0 spawn BIS_fnc_WL2_betty;
 	};
 }];
 
@@ -164,7 +164,7 @@ player addEventHandler ["GetOutMan", {
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
 	if (_vehicle isKindOf "Air" && getPosATL player # 2 > 100) then {
-		[] spawn {
+		0 spawn {
 			sleep 1;
 			playerFreeFalling = getUnitFreefallInfo player;
 			if (playerFreeFalling # 0) then {
@@ -245,7 +245,7 @@ if (BIS_WL_arsenalEnabled) then {
 	call BIS_fnc_WL2_sub_arsenalSetup;
 };
 
-[] spawn {
+0 spawn {
 	waitUntil {uiSleep WL_TIMEOUT_SHORT; !isNull WL_CONTROL_MAP};
 	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.35, BIS_WL_playerBase];
 	ctrlMapAnimCommit WL_CONTROL_MAP;
@@ -262,19 +262,19 @@ call BIS_fnc_WL2_sceneDrawHandle;
 call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 "init" spawn BIS_fnc_WL2_hintHandle;
-[] spawn BIS_fnc_WL2_music;
-[] spawn BIS_fnc_WL2_welcome;
+0 spawn BIS_fnc_WL2_music;
+0 spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
 waitUntil {WL_PLAYER_FUNDS != -1};
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
-[] spawn BIS_fnc_WL2_timer;
-[] spawn BIS_fnc_WL2_cpBalance;
+0 spawn BIS_fnc_WL2_timer;
+0 spawn BIS_fnc_WL2_cpBalance;
 
 
-[] spawn {
+0 spawn {
 	waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
 	_t = WL_SYNCED_TIME + 10;
 	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || visibleMap};
@@ -284,7 +284,7 @@ waitUntil {WL_PLAYER_FUNDS != -1};
 	};
 };
 
-[] spawn {
+0 spawn {
 	_t = WL_SYNCED_TIME + 10;
 	waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t && !isNull WL_TARGET_FRIENDLY};
 	sleep 5;
@@ -302,11 +302,11 @@ sleep 0.1;
 
 sleep 0.1;
 
-[] spawn BIS_fnc_WL2_selectedTargetsHandle;
-[] spawn BIS_fnc_WL2_targetSelectionHandleClient;
-[] spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
-[] spawn BIS_fnc_WL2_assetMapControl;
-[] spawn BIS_fnc_WL2_getUavConnected;
+0 spawn BIS_fnc_WL2_selectedTargetsHandle;
+0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
+0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
+0 spawn BIS_fnc_WL2_assetMapControl;
+0 spawn BIS_fnc_WL2_getUavConnected;
 
 //CP Saving system
 private _uid = getPlayerUID player;
@@ -314,16 +314,16 @@ private _id = clientOwner;
 [_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2];
 
 sleep 1;
-[] spawn BIS_fnc_WL2_clientFundsUpdateLoop;
+0 spawn BIS_fnc_WL2_clientFundsUpdateLoop;
 
 player setVariable ["arsenalOpened", false, true];
 
-[] spawn {
+0 spawn {
 	waitUntil {sleep 0.1; !isNil "BIS_WL_playerSide"};
-	[] spawn BIS_fnc_WL2_mapIcons;
+	0 spawn BIS_fnc_WL2_mapIcons;
 };
 
-[] spawn {
+0 spawn {
 	waituntil {sleep 0.1; !isnull (findDisplay 12)};
 	if (side player == west) then {
 		((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
@@ -367,7 +367,7 @@ player setVariable ["arsenalOpened", false, true];
 	};
 };
 
-[] spawn {
+0 spawn {
 	player addAction [
 		"Commemorate",
 		{
@@ -383,7 +383,7 @@ player setVariable ["arsenalOpened", false, true];
 	];
 };
 
-[] spawn {
+0 spawn {
 	waituntil {!isnull (findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
 		_key = actionKeysNames "curatorInterface";

@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-[] spawn {
+0 spawn {
 	sleep 600;
 	
 	{

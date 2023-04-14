@@ -3,7 +3,7 @@
 if ( !canSuspend ) exitWith
 {
 	["Can not call this function, attempting to spawn it instead."] call BIS_fnc_error;
-	[] spawn KSLOOP_fnc_unflipVehicleAddAction;
+	0 spawn KSLOOP_fnc_unflipVehicleAddAction;
 };
 
 private ["_vehicleUnflipRange","_vehicle","_unflipVehicleActionID","_isFlipped"];
