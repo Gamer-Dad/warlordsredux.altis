@@ -16,7 +16,7 @@ if (isServer) exitWith {
 	if (_groupUnit) then {
 		0 spawn {
 			sleep 0.5;
-			0 spawn BIS_fnc_WL2_refreshOSD;
+			[] spawn BIS_fnc_WL2_refreshOSD;
 		};
 	};
 };
@@ -37,6 +37,6 @@ private _groupUnit = local _asset && _asset isKindOf "Man";
 if (_groupUnit) then {
 	0 spawn {
 		sleep 0.5;
-		0 spawn BIS_fnc_WL2_refreshOSD;
+		[] spawn BIS_fnc_WL2_refreshOSD;
 	};
 };

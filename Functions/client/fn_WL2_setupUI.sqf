@@ -117,7 +117,7 @@ switch (_displayClass) do {
 			while {TRUE} do {
 				_oldCPValue = WL_PLAYER_FUNDS;
 				waitUntil {sleep WL_TIMEOUT_SHORT; WL_PLAYER_FUNDS != _oldCPValue};
-				0 spawn BIS_fnc_WL2_refreshOSD;
+				[] spawn BIS_fnc_WL2_refreshOSD;
 			};
 		};
 	};

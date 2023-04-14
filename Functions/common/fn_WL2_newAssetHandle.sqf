@@ -34,7 +34,7 @@ if (isPlayer _owner) then {
 		_asset addEventHandler ["Killed", {
 			BIS_WL_matesAvailable = BIS_WL_matesAvailable - 1;
 			BIS_manLost = TRUE;
-			0 spawn BIS_fnc_WL2_refreshOSD;
+			[] spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
