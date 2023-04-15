@@ -2,6 +2,7 @@
 
 //CP databse
 moneyDatabase = createHashmap;
+serverNamespace setVariable ["fundsDatabase", createHashMap];
 
 // Mine Array's
 MRTM_spawnedAPERS = [];
@@ -82,9 +83,11 @@ addMissionEventHandler ["HandleDisconnect", {
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
-
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	_this spawn BIS_fnc_WL2_killRewardHandle;
+	_this call BIS_fnc_WL2_friendlyFireHandleServer;
+
 	if (typeOf _unit == "B_Truck_01_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 	};
@@ -93,7 +96,6 @@ addMissionEventHandler ["EntityKilled", {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
 }];
-
 
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];

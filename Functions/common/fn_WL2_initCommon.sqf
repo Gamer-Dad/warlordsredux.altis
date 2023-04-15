@@ -34,13 +34,6 @@ if (!BIS_WL_savingEnabled && isMultiplayer) then {
 
 call BIS_fnc_WL2_playersListHandle;
 
-addMissionEventHandler ["EntityKilled", {
-	_this call BIS_fnc_WL2_killRewardHandle;
-	if (isServer) then {
-		_this call BIS_fnc_WL2_friendlyFireHandleServer;
-	};
-}];
-
 addMissionEventHandler ["EntityRespawned", {
 	_this call BIS_fnc_WL2_respawnHandle;
 }];

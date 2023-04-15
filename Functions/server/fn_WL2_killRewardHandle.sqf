@@ -9,6 +9,7 @@ if !(isNull _instigator) then {
 		_responsibleLeader = leader _instigator;
 		if (_responsibleLeader in BIS_WL_allWarlords) then {
 			_killerSide = side group _responsibleLeader;
+			_id = owner _responsibleLeader;
 			_unitSide = if (_unit isKindOf "Man") then {
 				side group _unit;
 			} else {
@@ -24,10 +25,10 @@ if !(isNull _instigator) then {
 				if(_reward == round (40000 / RD_KILL_REWARD_MOD)) then {
 					_reward = (_reward * 62);
 				};
-				if (_responsibleLeader == player) then {
-					systemChat format [localize "STR_A3_WL_award_kill", _reward];
-				};
+				[format [localize "STR_A3_WL_award_kill", _reward]] remoteExec ["systemChat", _id];
 				[_responsibleLeader, _reward] call BIS_fnc_WL2_fundsControl;
+				private _uid = getPlayerUID _responsibleLeader;
+				[_uid, _reward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 	};

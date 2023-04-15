@@ -28,25 +28,25 @@ while {true} do {
 
 	{
 		_side = side group _x;
-		/*
-		if (_side == west) then [
-			{[_x, (missionNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsControl}, 
-			{[_x, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsControl}
-		];
-		*/
+
+		private _uid = getPlayerUID _x;
 		if (_side == west) then {
 			if ((missionNamespace getVariable "actualIncomeBlu") < 50) then {
 				_incomeStandard = west call BIS_fnc_WL2_income;
 				[_x, 50] call BIS_fnc_WL2_fundsControl;
+				[_uid, 50] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			} else {
 				[_x, (missionNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsControl;
+				[_uid, (missionNamespace getVariable "actualIncomeBlu")] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		} else {
 			if ((missionNamespace getVariable "actualIncomeOpf") < 50) then {
 				_incomeStandard = east call BIS_fnc_WL2_income;
 				[_x, 50] call BIS_fnc_WL2_fundsControl;
+				[_uid, 50] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			} else {
 				[_x, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsControl;
+				[_uid, (missionNamespace getVariable "actualIncomeOpf")] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 	} forEach BIS_WL_allWarlords; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.

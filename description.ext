@@ -131,6 +131,9 @@ class CfgFunctions {
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
 			class WL2_dataBase {};
+			class WL2_killRewardHandle {};
+			class WL2_fundsDatabaseWrite {};
+			class WL2_fundsDatabaseUpdate {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -142,7 +145,6 @@ class CfgFunctions {
 			class WL2_handleRespawnMarkers {};
 			class WL2_income {};
 			class WL2_initCommon {};
-			class WL2_killRewardHandle {};
 			class WL2_missionEndHandle {};
 			class WL2_newAssetHandle {};
 			class WL2_parsePurchaseList {};
