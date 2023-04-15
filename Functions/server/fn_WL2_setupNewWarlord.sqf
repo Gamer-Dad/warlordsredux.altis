@@ -13,7 +13,7 @@ _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
 
 //CP database
 private _uid = getPlayerUID _warlord;
-private _fundsDB = (serverNamespace getVariable "fundsDatabase");
+private _fundsDB = (serverNamespace getVariable ["fundsDatabase", []]);
 if (_fundsFB getOrDefault [_uid, "Notfound"] == "Notfound") then {
 	[_uid, BIS_WL_startCP] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 };

@@ -134,6 +134,7 @@ class CfgFunctions {
 			class WL2_killRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
+			class WL2_killRewards {};
     	};
     	class Common {
     		file = "Functions\common";

@@ -2,6 +2,7 @@
 
 params ["_unit", "_killer", "_instigator"];
 
+_killReward = 0;
 if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer) # 0};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
@@ -19,16 +20,21 @@ if !(isNull _instigator) then {
 					case 2: {RESISTANCE};
 					default {CIVILIAN};
 				};
-			}; //"reward ==" block is fix to gorgan CP reward, default reward/value is 10,000
+			};
 			if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
-				_reward = round ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "cost")) / RD_KILL_REWARD_MOD);
-				if(_reward == round (40000 / RD_KILL_REWARD_MOD)) then {
-					_reward = (_reward * 62);
+				if (_unit isKindOf "Man") then {
+					if (isPlayer _unit) then {
+						_killReward = 75;
+					} else {
+						_killReward = 50;
+					};
+				} else {
+					_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 				};
-				[format [localize "STR_A3_WL_award_kill", _reward]] remoteExec ["systemChat", _id];
-				[_responsibleLeader, _reward] call BIS_fnc_WL2_fundsControl;
+				[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
+				[_responsibleLeader, _killReward] call BIS_fnc_WL2_fundsControl;
 				private _uid = getPlayerUID _responsibleLeader;
-				[_uid, _reward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 	};
