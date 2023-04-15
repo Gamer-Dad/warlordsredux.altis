@@ -115,7 +115,7 @@ switch (_displayClass) do {
 
 		0 spawn {
 			while {TRUE} do {
-				_oldCPValue = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
+				_oldCPValue = ((missionNamespace getVariable "fundsDatabaseClients") getOrDefault [(getPlayerUID player), 0]);
 				waitUntil {sleep WL_TIMEOUT_SHORT; ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) != _oldCPValue};
 				[] spawn BIS_fnc_WL2_refreshOSD;
 			};

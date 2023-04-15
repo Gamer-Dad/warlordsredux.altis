@@ -267,8 +267,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
-waitUntil {((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) != -1};
-
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 0 spawn BIS_fnc_WL2_timer;
 0 spawn BIS_fnc_WL2_cpBalance;
