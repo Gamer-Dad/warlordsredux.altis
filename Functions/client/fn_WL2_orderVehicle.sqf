@@ -10,7 +10,7 @@ if !(visibleMap) then {
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_targetSector = objNull;
-BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRCRAFT;
+BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRDROP;
 BIS_WL_orderedAssetRequirements = _requirements;
 sleep 0.25;
 
@@ -20,18 +20,25 @@ waitUntil {sleep WL_TIMEOUT_MIN; !isNull BIS_WL_targetSector || !visibleMap || B
 
 ["dropping", "end"] call BIS_fnc_WL2_sectorSelectionHandle;
 
-if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRCRAFT) then {
+if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRDROP) then {
 	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
 };
 
 if (isNull BIS_WL_targetSector) exitWith {
-	[player, _cost] call BIS_fnc_WL2_fundsControl;
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
+	[player, _cost] call BIS_fnc_WL2_fundsControl;
 };
 
-[toUpper localize "STR_A3_WL_asset_dispatched_TODO_REWRITE"] spawn BIS_fnc_WL2_smoothText;
+if (BIS_WL_targetSector distance2D player <= 300) then {
+	playSound3D ["A3\Data_F_Warlords\sfx\flyby.wss", objNull, FALSE, [(position BIS_WL_targetSector) # 0, (position BIS_WL_targetSector) # 1, 100]];
+};
+
+"Airdrop" call BIS_fnc_WL2_announcer;
+[toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WL2_smoothText;
 
 _asset = ["requestAsset", [_class, BIS_WL_targetSector]] call BIS_fnc_WL2_sendClientRequest;
 
 [player, _asset] call BIS_fnc_WL2_newAssetHandle;
+
+[player, "orderAsset", _class, _cost, BIS_WL_targetSector] remoteExec ["handleClientRequest", 2];

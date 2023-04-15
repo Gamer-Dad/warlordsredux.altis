@@ -7,9 +7,9 @@ call BIS_fnc_WL2_sub_purchaseMenuRefresh;
 waitUntil {!isNull (uiNamespace getVariable ["BIS_WL_osd_action_voting_title", controlNull])};
 
 if (uiNamespace getVariable "BIS_WL_cp_saved") then {
-	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#00dd00' shadow = '2' size = '%2'>%1 CP</t>", WL_PLAYER_FUNDS, 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
+	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#00dd00' shadow = '2' size = '%2'>%1 CP</t>", ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)), 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 } else {
-	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#ffffff' shadow = '2' size = '%2'>%1 CP</t>", WL_PLAYER_FUNDS, 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
+	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#ffffff' shadow = '2' size = '%2'>%1 CP</t>", ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)), 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 };
 
 if (BIS_WL_fogOfWar != 0) then {

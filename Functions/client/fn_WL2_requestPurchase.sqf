@@ -3,8 +3,6 @@
 params ["_class", "_cost", "_category", "_requirements", "_offset"];
 
 [player, -_cost] call BIS_fnc_WL2_fundsControl;
-private  _id = clientOwner;
-[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 
 if (_category == "Defences") exitWith {
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
@@ -21,10 +19,14 @@ if (_category == "Naval") exitWith {
 	[_class, _cost] spawn BIS_fnc_WL2_orderNaval;
 };
 
-if (_category == "Infantry") then {
-	BIS_WL_matesInBasket = BIS_WL_matesInBasket + 1;
-} else {
-	BIS_WL_vehsInBasket = BIS_WL_vehsInBasket + 1;
+if (_category == "Infantry") exitWith {
+	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+	[_class, _cost] spawn BIS_fnc_WL2_orderAI;
+};
+
+if (_category == "Vehicles") exitWith {
+	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+	[_class, _cost] spawn BIS_fnc_WL2_orderVehicle;
 };
 
 _display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];

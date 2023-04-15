@@ -4,9 +4,6 @@ for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 	(_display displayCtrl _i) ctrlEnable FALSE;
 };
 
-[player, -BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
-private  _id = clientOwner;
-[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 
 _purchase_transfer_background = _display displayCtrl 115;
 _purchase_transfer_units = _display displayCtrl 116;
@@ -26,7 +23,7 @@ _purchase_transfer_amount ctrlSetFade 0;
 _purchase_transfer_amount ctrlEnable TRUE;
 _purchase_transfer_amount ctrlCommit 0;
 
-_purchase_transfer_amount ctrlSetText str (ceil ((player getVariable "BIS_WL_funds") / 2));
+_purchase_transfer_amount ctrlSetText str (ceil (((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) / 2));
 
 _purchase_transfer_cp_title ctrlSetFade 0;
 _purchase_transfer_cp_title ctrlEnable TRUE;
@@ -61,7 +58,7 @@ _purchase_transfer_units lbSetCurSel 0;
 		_valueText = toString _valueArr;
 		(_this # 2) ctrlSetText _valueText;
 		_value = (if (_valueText != "") then {parseNumber _valueText} else {0});
-		if (_value <= (player getVariable "BIS_WL_funds") && _value > 0) then {
+		if (_value <= (((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) - 2000) && _value > 0) then {
 			uiNamespace setVariable ["BIS_WL_fundsTransferPossible", TRUE];
 			(_this # 1) ctrlSetBackgroundColor _color;
 			(_this # 1) ctrlSetTextColor [1, 1, 1, 1];

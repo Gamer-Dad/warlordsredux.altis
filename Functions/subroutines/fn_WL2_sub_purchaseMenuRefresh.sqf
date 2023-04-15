@@ -20,7 +20,7 @@ _purchase_drop_sector = _display displayCtrl 112;
 _purchase_drop_player = _display displayCtrl 113;
 _purchase_title_drop = _display displayCtrl 114;
 
-_funds = player getVariable ["BIS_WL_funds", 0];
+_funds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
 _matesAvail = (BIS_WL_matesAvailable + 1 - count units group player) max 0;
 _servicesAvailable = BIS_WL_sectorsArray # 5;
 

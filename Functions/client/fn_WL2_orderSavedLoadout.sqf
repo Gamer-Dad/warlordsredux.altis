@@ -36,8 +36,6 @@ if (_event == "save") then {
 	(missionNamespace getVariable _varName) set [5, _gearArr];
 } else {
 	[player, -BIS_WL_savedLoadoutCost] call BIS_fnc_WL2_fundsControl;
-	private  _id = clientOwner;
-	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 	player setUnitLoadout BIS_WL_savedLoadout;
 	[toUpper localize "STR_A3_WL_loadout_applied"] spawn BIS_fnc_WL2_smoothText;
 };

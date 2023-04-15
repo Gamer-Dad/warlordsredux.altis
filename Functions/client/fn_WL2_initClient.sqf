@@ -267,7 +267,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
-waitUntil {WL_PLAYER_FUNDS != -1};
+waitUntil {((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) != -1};
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 0 spawn BIS_fnc_WL2_timer;
@@ -307,14 +307,6 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_getUavConnected;
-
-//CP Saving system
-private _uid = getPlayerUID player;
-private _id = clientOwner;
-[_uid, 0, _id, "recieve"] remoteExecCall ["BIS_fnc_WL2_dataBase", 2];
-
-sleep 1;
-0 spawn BIS_fnc_WL2_clientFundsUpdateLoop;
 
 player setVariable ["arsenalOpened", false, true];
 

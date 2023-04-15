@@ -1,7 +1,6 @@
 #include "..\warlords_constants.inc"
 
 //CP databse
-moneyDatabase = createHashmap;
 serverNamespace setVariable ["fundsDatabase", createHashMap];
 
 // Mine Array's

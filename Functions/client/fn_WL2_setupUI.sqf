@@ -115,8 +115,8 @@ switch (_displayClass) do {
 
 		0 spawn {
 			while {TRUE} do {
-				_oldCPValue = WL_PLAYER_FUNDS;
-				waitUntil {sleep WL_TIMEOUT_SHORT; WL_PLAYER_FUNDS != _oldCPValue};
+				_oldCPValue = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
+				waitUntil {sleep WL_TIMEOUT_SHORT; ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) != _oldCPValue};
 				[] spawn BIS_fnc_WL2_refreshOSD;
 			};
 		};
@@ -152,8 +152,6 @@ switch (_displayClass) do {
 			if (ctrlEnabled (_display displayCtrl 120)) then {
 				playSound "AddItemFailed";
 				[player, BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
-				private  _id = clientOwner;
-				[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 			};
 			BIS_WL_purchaseMenuVisible = FALSE;
 			WL_CONTROL_MAP ctrlEnable TRUE;
@@ -485,8 +483,6 @@ switch (_displayClass) do {
 					_inf = ((BIS_WL_dropPool # _i) # 0) isKindOf "Man";
 					BIS_WL_dropPool deleteAt _i;
 					[player, _refund] call BIS_fnc_WL2_fundsControl;
-					private  _id = clientOwner;
-					[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 					if (_inf) then {BIS_WL_matesInBasket = BIS_WL_matesInBasket - 1} else {BIS_WL_vehsInBasket = BIS_WL_vehsInBasket - 1};
 					_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 					_purchase_items = _display displayCtrl 101;
@@ -504,8 +500,6 @@ switch (_displayClass) do {
 					_refundTotal = _refundTotal + (_x # 1);
 				} forEach BIS_WL_dropPool;
 				[player, _refundTotal] call BIS_fnc_WL2_fundsControl;
-				private  _id = clientOwner;
-				[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 				BIS_WL_matesInBasket = 0;
 				BIS_WL_vehsInBasket = 0;
 				BIS_WL_dropPool = [];
@@ -650,15 +644,15 @@ switch (_displayClass) do {
 			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
 				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 				_targetName = (_display displayCtrl 116) lbText lbCurSel (_display displayCtrl 116);
-				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min (player getVariable "BIS_WL_funds");
+				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
 				_targetArr = BIS_WL_allWarlords select {name _x == _targetName};
 				if (count _targetArr > 0) then {
 					playSound "AddItemOK";
 					_target = _targetArr # 0;
-					_targetFunds = _target getVariable "BIS_WL_funds";
+					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
 					_maxTransfer = BIS_WL_maxCP - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
-					["fundsTransfer", [_target, _finalTransfer]] call BIS_fnc_WL2_sendClientRequest;
+					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};
@@ -705,8 +699,6 @@ switch (_displayClass) do {
 			};
 			playSound "AddItemFailed";
 			[player, BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
-			private  _id = clientOwner;
-			[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 		}];
 		
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;

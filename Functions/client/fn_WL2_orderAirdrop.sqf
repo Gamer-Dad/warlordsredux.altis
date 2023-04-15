@@ -7,12 +7,8 @@ params ["_customDropzone"];
 if (_customDropzone) then {
 	BIS_WL_targetSector = player;
 	[player, -BIS_WL_dropCost_far] call BIS_fnc_WL2_fundsControl;
-	private  _id = clientOwner;
-	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 } else {
 	[player, -BIS_WL_dropCost] call BIS_fnc_WL2_fundsControl;	
-	private  _id = clientOwner;
-	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 	"Dropzone" call BIS_fnc_WL2_announcer;
     [toUpper localize "STR_A3_WL_popup_airdrop_selection"] spawn BIS_fnc_WL2_smoothText;
     if !(visibleMap) then {
@@ -39,8 +35,6 @@ if (isNull BIS_WL_targetSector) exitWith {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_airdrop_canceled"] spawn BIS_fnc_WL2_smoothText;
 	[player, BIS_WL_dropCost] call BIS_fnc_WL2_fundsControl;
-	private  _id = clientOwner;
-	[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 };
 
 if (BIS_WL_targetSector distance2D player <= 300) then {

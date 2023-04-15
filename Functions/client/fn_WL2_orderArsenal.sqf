@@ -4,8 +4,6 @@ _uniform = uniform player;
 
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 [player, -BIS_WL_arsenalCost] call BIS_fnc_WL2_fundsControl;
-private  _id = clientOwner;
-[] remoteExec ["BIS_fnc_WL2_clientFundsUpdate",  _id];
 
 [_uniform] spawn {
 	params ["_uniform"];

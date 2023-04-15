@@ -97,9 +97,6 @@ class CfgFunctions {
 			class WL2_targetSelectionHandleClient {};
 			class WL2_teammatesAvailability {};
 			class WL2_zoneRestrictionHandleClient {};
-			class WL2_clientFundsUpdate {};
-			class WL2_clientFundsUpdateLoop {};
-			class WL2_clientFundsRecieve {};
 			class WL2_timer {};
 			class WL2_orderFTVehicleFT {};
 			class WL2_orderFTVehicle {};
@@ -130,11 +127,11 @@ class CfgFunctions {
 			class WL2_targetResetHandleServer {};
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
-			class WL2_dataBase {};
 			class WL2_killRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_killRewards {};
+			class WL2_handleClientRequest {};
     	};
     	class Common {
     		file = "Functions\common";
