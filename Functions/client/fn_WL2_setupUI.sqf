@@ -652,7 +652,7 @@ switch (_displayClass) do {
 					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
 					_maxTransfer = BIS_WL_maxCP - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
-					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["handleClientRequest", 2];
+					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};
