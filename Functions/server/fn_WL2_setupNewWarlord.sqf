@@ -12,11 +12,17 @@ _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
 [_warlord, if (WL_SYNCED_TIME < (BIS_WL_missionStart + 30)) then {BIS_WL_startCP} else {BIS_WL_startCP min BIS_WL_startCP}] call BIS_fnc_WL2_fundsControl; //Mission start CP is controlled here
 
 //CP database
-private _uid = getPlayerUID _warlord;
-private _fundsDB = (serverNamespace getVariable ["fundsDatabase", []]);
-if (_fundsFB getOrDefault [_uid, "Notfound"] == "Notfound") then {
+if !(isDedicated) then {
+	private _uid = getPlayerUID _warlord;
 	[_uid, BIS_WL_startCP] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+} else {
+	private _uid = getPlayerUID _warlord;
+	private _fundsDB = (serverNamespace getVariable ["fundsDatabase", []]);
+	if (_fundsFB getOrDefault [_uid, "Notfound"] == "Notfound") then {
+		[_uid, BIS_WL_startCP] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+	};
 };
+
 
 _boundToAnotherTeam = FALSE;
 
