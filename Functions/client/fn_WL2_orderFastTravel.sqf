@@ -82,7 +82,7 @@ if (_toContested) then {
 	sleep 0.5;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	[player, "fastTravelContested", _cost, _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	[player, "fastTravelContested", 200, _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep 0.5;
 
