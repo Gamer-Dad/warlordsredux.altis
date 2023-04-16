@@ -404,10 +404,10 @@ switch (_displayClass) do {
 				_offset = call compile _offset;
 				_requirements = call compile _requirements;
 				switch (_className) do {
-					case "Arsenal": {if (isNull (findDisplay 602)) then {call BIS_fnc_WL2_orderArsenal} else {playSound "AddItemFailed"}};
-					case "LastLoadout": {call BIS_fnc_WL2_orderLastLoadout};
+					case "Arsenal": {if (isNull (findDisplay 602)) then {[player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteexec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
+					case "LastLoadout": {[player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteexec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
-					case "SavedLoadout": {"apply" call BIS_fnc_WL2_orderSavedLoadout};
+					case "SavedLoadout": {[player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteexec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};

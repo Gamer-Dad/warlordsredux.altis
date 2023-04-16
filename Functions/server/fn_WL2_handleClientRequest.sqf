@@ -66,9 +66,20 @@ if !(isNull _sender) then {
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
+		case "lastLoadout": {
+			if (_hasFunds) then {
+				0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
+
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			};
+		};
 		case "savedLoadout": {
 			if (_hasFunds) then {
-				
+				["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
+
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "orderFTVehicle": {
@@ -87,6 +98,13 @@ if !(isNull _sender) then {
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
+		case "orderArsenal": {
+			if (_hasFunds) then {
+				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;				
+			};
+		}:
 		case "orderAsset": {
 			if (_hasFunds) then {
 				_params params ["_assetVar", "_className", "_targetPos", "_isStatic", "_disable"];

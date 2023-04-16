@@ -3,11 +3,9 @@
 _uniform = uniform player;
 
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
-[player, -BIS_WL_arsenalCost] call BIS_fnc_WL2_fundsControl;
 
 [_uniform] spawn {
 	params ["_uniform"];
-	sleep 0.1;
 	if (isNull (findDisplay 602)) then {
 
 		["Open", TRUE] spawn BIS_fnc_arsenal;

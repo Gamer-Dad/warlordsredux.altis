@@ -35,7 +35,6 @@ if (_event == "save") then {
 	_gearArr set [1, _savedLoadoutArr];
 	(missionNamespace getVariable _varName) set [5, _gearArr];
 } else {
-	[player, -BIS_WL_savedLoadoutCost] call BIS_fnc_WL2_fundsControl;
 	player setUnitLoadout BIS_WL_savedLoadout;
 	[toUpper localize "STR_A3_WL_loadout_applied"] spawn BIS_fnc_WL2_smoothText;
 };
