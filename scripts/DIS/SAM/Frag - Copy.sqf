@@ -10,7 +10,7 @@ systemChat format["SAM prox fuse is %1 meters",_range];
 sleep 1;
 while{TRUE}do{
 	if!(alive _m)exitWith{};
-	_targets=nearestObjects[_m,["AIR"],_range]; // number is range at which frag will occur
+	_targets=nearestObjects[_m,["AIR"],_range]; // number is range at which frag will occur, // nearEntities for better perf 
 	if((count _targets)>0)exitWith{_frag=TRUE;_target=(_targets select 0)};
 	//sleep .1;
 	sleep .01;

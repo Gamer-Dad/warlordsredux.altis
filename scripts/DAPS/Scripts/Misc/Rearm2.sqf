@@ -11,7 +11,7 @@ if((typeOf _v)in dapsDouble)then{
 	_max=_v getVariable"dapsAmmoMax";
 };
 if!(_ammo<_max)exitWith{};
-_supply=nearestObjects[_v,["LandVehicle","ReammoBox_F"],dapsRearmRange];
+_supply=nearestObjects[_v,["LandVehicle","ReammoBox_F"],dapsRearmRange]; // nearEntities for better perf 
 {
 	if((getNumber(configFile>>"cfgVehicles">>(typeOf _x)>>"transportAmmo"))>0)exitWith{_found=TRUE};
 	if((getNumber(configFile>>"cfgVehicles">>(typeOf _x)>>"ace_rearm_defaultSupply"))>0)exitWith{_found=TRUE};
