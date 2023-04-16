@@ -11,10 +11,10 @@ civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params["_e"];
-	if (side player == west) exitWith {westColor};
-	if (side player == east) exitWith {eastColor};
-	if (side player == resistance) exitWith {aafColor};
-	if (side player == civilian) exitWith {civilianColor};
+	if (side group player == west) exitWith {westColor};
+	if (side group player == east) exitWith {eastColor};
+	if (side group player == resistance) exitWith {aafColor};
+	if (side group player == civilian) exitWith {civilianColor};
 	civilianColor;
 };
 
@@ -61,10 +61,10 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 			WL_CONTROL_MAP drawIcon [
 				"A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
 				[1, 0, 0, 0.8],
-				getPosATL _x,
+				getPosWorldVisual _x,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
-				getDir _x,
+				getDirVisual _x,
 				"",
 				0,
 				WL_MAP_FONT_SIZE,
@@ -75,10 +75,10 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 			WL_CONTROL_MAP drawIcon [
 				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
 				[_x] call MRTM_fnc_iconColor,
-				getPosATL _x,
+				getPosWorldVisual _x,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
-				getDir _x,
+				getDirVisual _x,
 				format [" %1", name _x],
 				0,
 				WL_MAP_FONT_SIZE,
@@ -92,10 +92,10 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 		WL_CONTROL_MAP drawIcon [
 			getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
 			[_x] call MRTM_fnc_iconColor,
-			getPosATL _x,
+			getPosWorldVisual _x,
 			[_x] call MRTM_fnc_iconSize,
 			[_x] call MRTM_fnc_iconSize,
-			getDir _x,
+			getDirVisual _x,
 			[_x] call MRTM_fnc_iconText,
 			0,
 			WL_MAP_FONT_SIZE,
@@ -109,10 +109,10 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 			WL_CONTROL_MAP drawIcon [
 				getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
 				if (side player == west) then {westColor} else {eastColor},
-				getPosATL _x,
+				getPosWorldVisual _x,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
-				getDir _x,
+				getDirVisual _x,
 				if (count crew _x > 0) then {
 					[_x] call MRTM_fnc_iconText;
 				} else {
@@ -132,10 +132,10 @@ BIS_WL_mapIconHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 				WL_CONTROL_MAP drawIcon [
 					getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
 					[_x] call MRTM_fnc_iconColor,
-					getPosATL _x,
+					getPosWorldVisual _x,
 					[_x] call MRTM_fnc_iconSize,
 					[_x] call MRTM_fnc_iconSize,
-					getDir _x,
+					getDirVisual _x,
 					format [" %1", name _x],
 					0,
 					WL_MAP_FONT_SIZE,
