@@ -25,7 +25,6 @@ if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRCRAFT) then {
 };
 
 if (isNull BIS_WL_targetSector) exitWith {
-	//[player, _cost] call BIS_fnc_WL2_fundsControl;
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
 };

@@ -32,7 +32,6 @@ if !(isNull _instigator) then {
 					_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 				};
 				[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
-				[_responsibleLeader, _killReward] call BIS_fnc_WL2_fundsControl;
 				private _uid = getPlayerUID _responsibleLeader;
 				[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};

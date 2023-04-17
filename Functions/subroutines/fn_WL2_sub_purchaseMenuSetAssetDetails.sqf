@@ -12,11 +12,6 @@ _purchase_title_cost = _display displayCtrl 106;
 _purchase_request = _display displayCtrl 107;
 _purchase_title_queue = _display displayCtrl 108;
 _purchase_queue = _display displayCtrl 109;
-_purchase_remove_item = _display displayCtrl 110;
-_purchase_remove_all = _display displayCtrl 111;
-_purchase_drop_sector = _display displayCtrl 112;
-_purchase_drop_player = _display displayCtrl 113;
-_purchase_title_drop = _display displayCtrl 114;
 
 _curSel = (lbCurSel _purchase_items) max 0;
 

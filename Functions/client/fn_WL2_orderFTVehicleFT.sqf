@@ -1,5 +1,3 @@
-[player, 0] call BIS_fnc_WL2_fundsControl;
-
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (side player == west) then {

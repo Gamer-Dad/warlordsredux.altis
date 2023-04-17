@@ -151,7 +151,6 @@ switch (_displayClass) do {
 			uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [lbCurSel (_display displayCtrl 100), lbCurSel (_display displayCtrl 101), lbCurSel (_display displayCtrl 109)]];
 			if (ctrlEnabled (_display displayCtrl 120)) then {
 				playSound "AddItemFailed";
-				[player, BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
 			};
 			BIS_WL_purchaseMenuVisible = FALSE;
 			WL_CONTROL_MAP ctrlEnable TRUE;
@@ -203,11 +202,6 @@ switch (_displayClass) do {
 		_purchase_request = _myDisplay ctrlCreate ["RscStructuredText", 107];
 		_purchase_title_queue = _myDisplay ctrlCreate ["RscStructuredText", 108];
 		_purchase_queue = _myDisplay ctrlCreate ["RscListBox", 109];
-		_purchase_remove_item = _myDisplay ctrlCreate ["RscStructuredText", 110];
-		_purchase_remove_all = _myDisplay ctrlCreate ["RscStructuredText", 111];
-		_purchase_title_drop = _myDisplay ctrlCreate ["RscStructuredText", 114];
-		_purchase_drop_sector = _myDisplay ctrlCreate ["RscStructuredText", 112];
-		_purchase_drop_player = _myDisplay ctrlCreate ["RscStructuredText", 113];
 		_purchase_transfer_background = _myDisplay ctrlCreate ["RscText", 115];
 		_purchase_transfer_units = _myDisplay ctrlCreate ["RscListBox", 116];
 		_purchase_transfer_amount = _myDisplay ctrlCreate ["RscEdit", 117];
@@ -233,11 +227,6 @@ switch (_displayClass) do {
 		_purchase_title_queue ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.3175), _wDef / 4, _hDef * 0.04];
 		_purchase_queue ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.3575), _wDef / 4, _hDef * 0.1875];
 		_purchase_background_2 ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.5452), _wDef, _hDef * 0.2598];
-		_purchase_remove_item ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.5502), _wDef / 4, _hDef * 0.035];
-		_purchase_remove_all ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.59), _wDef / 4, _hDef * 0.035];
-		_purchase_title_drop ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.6502), _wDef / 4, _hDef * 0.04];
-		_purchase_drop_sector ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.6902), _wDef / 4, _hDef * 0.055];
-		_purchase_drop_player ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.75), _wDef / 4, _hDef * 0.055];
 		_purchase_transfer_background ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 3, _hDef / 3];
 		_purchase_transfer_units ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 6, _hDef / 3];
 		_purchase_transfer_amount ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
@@ -266,19 +255,14 @@ switch (_displayClass) do {
 			_purchase_background_1,
 			_purchase_title_cost,
 			_purchase_title_queue,
-			_purchase_background_2,
-			_purchase_title_drop
+			_purchase_background_2
 		];
 		
 		{_x ctrlCommit 0} forEach [
 			_purchase_category,
 			_purchase_items,
 			_purchase_request,
-			_purchase_queue,
-			_purchase_remove_item,
-			_purchase_remove_all,
-			_purchase_drop_sector,
-			_purchase_drop_player
+			_purchase_queue
 		];
 
 		_purchase_background ctrlSetBackgroundColor [0, 0, 0, 0.5];
@@ -292,10 +276,6 @@ switch (_displayClass) do {
 		_purchase_background_1 ctrlSetBackgroundColor [0, 0, 0, 0.3];
 		_purchase_request ctrlSetBackgroundColor BIS_WL_colorFriendly;
 		_purchase_background_2 ctrlSetBackgroundColor [0, 0, 0, 0.3];
-		_purchase_remove_item ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_remove_all ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_drop_sector ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_drop_player ctrlSetBackgroundColor BIS_WL_colorFriendly;
 		_purchase_transfer_background ctrlSetBackgroundColor [0, 0, 0, 1];
 		_purchase_transfer_ok ctrlSetBackgroundColor BIS_WL_colorFriendly;
 		_purchase_transfer_cancel ctrlSetBackgroundColor BIS_WL_colorFriendly;
@@ -308,19 +288,13 @@ switch (_displayClass) do {
 			_purchase_info,
 			_purchase_info_asset,
 			_purchase_title_cost,
-			_purchase_title_queue,
-			_purchase_title_drop
+			_purchase_title_queue
 		];
 		
 		_purchase_title_assets ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", localize "STR_A3_WL_purchase_menu_title_assets", (1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_title_details ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", localize "STR_A3_WL_purchase_menu_title_detail", (1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_title_deployment ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", localize "STR_A3_WL_purchase_menu_title_deployment", (1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_request ctrlSetStructuredText parseText format ["<t font = 'PuristaLight' align = 'center' shadow = '2' size = '%2'>%1</t>", toUpper localize "STR_A3_WL_menu_request", (1.75 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_remove_item ctrlSetStructuredText parseText format ["<t font = 'PuristaLight' align = 'center' shadow = '2' size = '%2'>%1</t>", toUpper localize "STR_xbox_hint_remove", (1.15 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_remove_all ctrlSetStructuredText parseText format ["<t font = 'PuristaLight' align = 'center' shadow = '2' size = '%2'>%1</t>", toUpper localize "STR_A3_WL_menu_remove_all", (1.15 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_title_drop ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '0'>%1</t>", localize "STR_A3_WL_airdrop_target", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_drop_sector ctrlSetStructuredText parseText format ["<t font = 'PuristaLight' align = 'center' shadow = '2' size = '%4'>%1</t>", toUpper localize "STR_A3_WL_airdrop_owned_sector", BIS_WL_dropCost, localize "STR_A3_WL_unit_cp", (1.75 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_drop_player ctrlSetStructuredText parseText format ["<t font = 'PuristaLight' align = 'center' shadow = '2' size = '%4'>%1</t>", toUpper localize "STR_A3_WL_airdrop_player", BIS_WL_dropCost_far, localize "STR_A3_WL_unit_cp", (1.75 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_cp_title ctrlSetStructuredText parseText format ["<t align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_unit_cp", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_ok ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_A3_WL_button_transfer", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_cancel ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_disp_cancel", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
@@ -433,184 +407,6 @@ switch (_displayClass) do {
 				playSound "AddItemFailed";
 			};
 		}];
-
-		{
-			_x ctrlAddEventHandler ["MouseEnter", {
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				if (ctrlEnabled (_display displayCtrl 107)) then {
-					_button = _this # 0;
-					_color = BIS_WL_colorFriendly;
-					_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-					playSound "click";
-				};
-			}];
-			_x ctrlAddEventHandler ["MouseExit", {
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				if (ctrlEnabled (_display displayCtrl 107)) then {
-					_button = _this # 0;
-					_color = BIS_WL_colorFriendly;
-					_button ctrlSetTextColor [1, 1, 1, 1];
-					_button ctrlSetBackgroundColor _color;
-				};
-			}];
-			_x ctrlAddEventHandler ["MouseButtonDown", {
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				if (ctrlEnabled (_display displayCtrl 107)) then {
-					_button = _this # 0;
-					_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-				};
-			}];
-			_x ctrlAddEventHandler ["MouseButtonUp", {
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				if (ctrlEnabled (_display displayCtrl 107)) then {
-					_button = _this # 0;
-					_button ctrlSetTextColor [1, 1, 1, 1];
-				};
-			}];
-		} forEach [_purchase_remove_item, _purchase_remove_all];
-		
-		_purchase_remove_item ctrlAddEventHandler ["ButtonClick", {
-			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-			if (ctrlEnabled (_display displayCtrl 107)) then {
-				playSound "AddItemOK";
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				_purchase_queue = _display displayCtrl 109;
-				_refund = _purchase_queue lbValue lbCurSel _purchase_queue;
-				if (_refund > 0) then {
-					_class = _purchase_queue lbData lbCurSel _purchase_queue;
-					_i = -1;
-					{if ((_x # 0) == _class) then {_i = _forEachIndex}} forEach BIS_WL_dropPool;
-					_inf = ((BIS_WL_dropPool # _i) # 0) isKindOf "Man";
-					BIS_WL_dropPool deleteAt _i;
-					[player, _refund] call BIS_fnc_WL2_fundsControl;
-					if (_inf) then {BIS_WL_matesInBasket = BIS_WL_matesInBasket - 1} else {BIS_WL_vehsInBasket = BIS_WL_vehsInBasket - 1};
-					_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-					_purchase_items = _display displayCtrl 101;
-					call BIS_fnc_WL2_sub_purchaseMenuRefresh;
-				};
-			};
-		}];
-		
-		_purchase_remove_all ctrlAddEventHandler ["ButtonClick", {
-			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-			if (ctrlEnabled (_display displayCtrl 107)) then {
-				playSound "AddItemOK";
-				_refundTotal = 0;
-				{
-					_refundTotal = _refundTotal + (_x # 1);
-				} forEach BIS_WL_dropPool;
-				[player, _refundTotal] call BIS_fnc_WL2_fundsControl;
-				BIS_WL_matesInBasket = 0;
-				BIS_WL_vehsInBasket = 0;
-				BIS_WL_dropPool = [];
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				_purchase_items = _display displayCtrl 101;
-				call BIS_fnc_WL2_sub_purchaseMenuRefresh;
-			};
-		}];
-
-		_purchase_drop_sector ctrlSetTooltip format ["%1%4: %2 %3", localize "STR_A3_WL_menu_cost", BIS_WL_dropCost, localize "STR_A3_WL_unit_cp", if (toLower language == "french") then {" "} else {""}];
-		_purchase_drop_sector ctrlAddEventHandler ["MouseEnter", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
-				uiNamespace setVariable ["BIS_WL_purchaseMenuButtonDropSectorHover", TRUE];
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-				playSound "click";
-			};
-		}];
-		_purchase_drop_sector ctrlAddEventHandler ["MouseExit", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
-				uiNamespace setVariable ["BIS_WL_purchaseMenuButtonDropSectorHover", FALSE];
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-				_button ctrlSetBackgroundColor _color;
-			};
-		}];
-		_purchase_drop_sector ctrlAddEventHandler ["MouseButtonDown", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-			};
-		}];
-		_purchase_drop_sector ctrlAddEventHandler ["MouseButtonUp", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropSectorAffordable", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-			};
-		}];
-		_purchase_drop_sector ctrlAddEventHandler ["ButtonClick", {
-			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
-			if (BIS_WL_vehsInBasket != ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool)) then { //if there is a vehicle in queue
-				if ((_visitedSectorID == -1)) then { // if not inside an onwned sector
-					playSound "AddItemFailed";
-				} else { // if they are in an owned sector
-				    if (vehicle player != player) then {
-						playSound "AddItemFailed";
-					} else {
-						playSound "AddItemOK";
-						[FALSE] spawn BIS_fnc_WL2_orderAirdrop
-					};				
-				};
-			} else { //if there is no vehicle in queue
-				if (BIS_WL_vehsInBasket == ({(_x # 0) isKindOf "Thing"} count BIS_WL_dropPool)) then {
-					if ((_visitedSectorID == -1)) then { // if not inside an onwned sector
-						playSound "AddItemFailed";
-					} else { // if they are in an owned sector
-						if (vehicle player != player) then {
-							playSound "AddItemFailed";
-						} else {
-							playSound "AddItemOK";
-							[FALSE] spawn BIS_fnc_WL2_orderAirdrop
-						};				
-					};
-				} else {
-					playSound "AddItemOK";
-					[FALSE] spawn BIS_fnc_WL2_orderAirdrop
-				};
-		    };
-		}];
-		
-		_purchase_drop_player ctrlSetTooltip format ["%1%4: %2 %3", localize "STR_A3_WL_menu_cost", BIS_WL_dropCost_far, localize "STR_A3_WL_unit_cp", if (toLower language == "french") then {" "} else {""}];
-		_purchase_drop_player ctrlAddEventHandler ["MouseEnter", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE]) then {
-				uiNamespace setVariable ["BIS_WL_purchaseMenuButtonDropPlayerHover", TRUE];
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-				playSound "click";
-			};
-		}];
-		_purchase_drop_player ctrlAddEventHandler ["MouseExit", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE]) then {
-				uiNamespace setVariable ["BIS_WL_purchaseMenuButtonDropPlayerHover", FALSE];
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-				_button ctrlSetBackgroundColor _color;
-			};
-		}];
-		_purchase_drop_player ctrlAddEventHandler ["MouseButtonDown", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-			};
-		}];
-		_purchase_drop_player ctrlAddEventHandler ["MouseButtonUp", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-			};
-		}];
-		_purchase_drop_player ctrlAddEventHandler ["ButtonClick", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuDropPlayerAffordable", FALSE]) then {
-				playSound "AddItemOK";
-				[TRUE] spawn BIS_fnc_WL2_orderAirdrop
-			} else {
-				playSound "AddItemFailed";
-			};
-		}];
 		
 		_purchase_transfer_ok ctrlAddEventHandler ["MouseEnter", {
 			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
@@ -698,7 +494,6 @@ switch (_displayClass) do {
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
 			playSound "AddItemFailed";
-			[player, BIS_WL_fundsTransferCost] call BIS_fnc_WL2_fundsControl;
 		}];
 		
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;

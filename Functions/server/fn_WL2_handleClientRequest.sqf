@@ -87,7 +87,20 @@ if !(isNull _sender) then {
 		};
 		case "orderFTVehicle": {
 			if (_hasFunds) then {
-				
+				private _asset = if (_target == west) then {
+					createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
+				} else  {
+					createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
+				};
+				if (_target == west) then {
+					missionNamespace setVariable ["ftVehicleExistsBlu", true, true];
+				} else  {
+					missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
+				};
+				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "fastTravelContested": {
@@ -215,31 +228,21 @@ if !(isNull _sender) then {
 							_targetPos set [2, (_targetPos # 2) max 0];
 							_asset setDir direction _sender;
 							_asset setPos _targetPos;
-							if (_disable) then {
-								_asset enableSimulationGlobal FALSE;
-								_asset hideObjectGlobal TRUE;
-							} else {
-								if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-									//Code to allow Both sides to use a drone of the other side.
-									createVehicleCrew _asset;
-									_side = side _sender; 
-									_group = createGroup _side;
-									(crew _asset) joinSilent _group;
-									(effectiveCommander _asset) setSkill 1;
-									(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
-								};
+							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
+								//Code to allow Both sides to use a drone of the other side.
+								createVehicleCrew _asset;
+								_side = side _sender; 
+								_group = createGroup _side;
+								(crew _asset) joinSilent _group;
+								(effectiveCommander _asset) setSkill 1;
+								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 							};
 						} else {
 							if (_class isKindOf "Man") then {
 								_asset = (group _sender) createUnit [_class, _targetPosFinal, [], 0, "NONE"];
 							} else { // Vehicle creation code
-								if (_class == "Box_NATO_Ammo_F" || _class == "Box_NATO_Grenades_F" || _class == "Box_NATO_Wps_F" || _class == "Box_NATO_AmmoOrd_F" || _class == "Box_NATO_WpsLaunch_F" || _class == "Box_NATO_WpsSpecial_F" || _class == "B_supplyCrate_F" || _class == "Box_NATO_AmmoVeh_F" || _class == "Box_East_Ammo_F" || _class == "Box_East_Grenades_F" || _class == "Box_East_Wps_F" || _class == "Box_East_AmmoOrd_F" || _class == "Box_East_WpsLaunch_F" || _class == "Box_East_WpsSpecial_F" || _class == "O_supplyCrate_F" || _class == "Box_East_AmmoVeh_F") then {
-									private _playerPos = getPosATL _sender;
-									_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
-								} else {
-									private _playerPos = getPosATL _sender;
-									_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
-								};
+								private _playerPos = getPosATL _sender;
+								_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
 							};
 						};
 
@@ -250,7 +253,8 @@ if !(isNull _sender) then {
 							_group = createGroup _side;
 							(crew _asset) joinSilent _group;
 							(effectiveCommander _asset) setSkill 1;
-							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;					
+							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
+							_asset enableWeaponDisassembly fasle;
 						};
 					};
 				}; 
@@ -260,10 +264,8 @@ if !(isNull _sender) then {
 				missionNamespace setVariable [_assetVariable, _asset];
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", _sender];
 				(owner _sender) publicVariableClient _assetVariable;
-				
 				[_asset, _sender, _isStatic] spawn _setOwner;
-
-				[player, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
@@ -273,9 +275,12 @@ if !(isNull _sender) then {
 			if (_playerFunds >= (_cost + 2000)) then {
 				_targetUID = getPlayerUID _target;
 				_uid = getPlayerUID _sender;
+				_recipient = _targetUID call BIS_fnc_getUnitByUID;
 
 				[_targetUID, _cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 				[_uid, -(_cost + 2000)] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+
+				[_sender, _recipient, _amount] remoteExec ["BIS_fnc_WL2_displayCPtransfer", -2];
 			};
 		};
 	};

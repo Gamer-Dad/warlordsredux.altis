@@ -1,17 +1,10 @@
-[player, -200] call BIS_fnc_WL2_fundsControl;
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (side player == west) then {
-	private _assetBlu = createVehicle ["B_Truck_01_medical_F", player , [], 0, "NONE"];
-	[player, _assetBlu] call BIS_fnc_WL2_newAssetHandle;
-
-	missionNamespace setVariable ["ftVehicleExistsBlu", true, true];
+	[player, "orderFTVehicle", 200, 0, (side player), false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 };
 
 if (side player == east) then {
-	private _assetOpf = createVehicle ["O_Truck_03_medical_F", player , [], 0, "NONE"];
-	[player, _assetOpf] call BIS_fnc_WL2_newAssetHandle;
-
-	missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
+	[player, "orderFTVehicle", 200, 0, (side player), false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 };
 

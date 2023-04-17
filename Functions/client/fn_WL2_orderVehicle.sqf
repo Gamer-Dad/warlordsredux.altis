@@ -1,9 +1,9 @@
 #include "..\warlords_constants.inc"
 
-params ["_class", "_cost", "_requirements"];
+params ["_class", "_cost"];
 
-"Sector" call BIS_fnc_WL2_announcer;
-[toUpper localize "STR_A3_WL_popup_appropriate_sector_selection"] spawn BIS_fnc_WL2_smoothText;
+"Dropzone" call BIS_fnc_WL2_announcer;
+[toUpper localize "STR_A3_WL_popup_airdrop_selection"] spawn BIS_fnc_WL2_smoothText;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
 	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
@@ -11,7 +11,7 @@ if !(visibleMap) then {
 };
 BIS_WL_targetSector = objNull;
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRDROP;
-BIS_WL_orderedAssetRequirements = _requirements;
+BIS_WL_orderedAssetRequirements = [];
 sleep 0.25;
 
 "dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
@@ -26,8 +26,7 @@ if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRDROP) then {
 
 if (isNull BIS_WL_targetSector) exitWith {
 	"Canceled" call BIS_fnc_WL2_announcer;
-	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
-	[player, _cost] call BIS_fnc_WL2_fundsControl;
+	[toUpper localize "STR_A3_WL_airdrop_canceled"] spawn BIS_fnc_WL2_smoothText;
 };
 
 if (BIS_WL_targetSector distance2D player <= 300) then {
@@ -37,8 +36,4 @@ if (BIS_WL_targetSector distance2D player <= 300) then {
 "Airdrop" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WL2_smoothText;
 
-//_asset = ["requestAsset", [_class, BIS_WL_targetSector]] call BIS_fnc_WL2_sendClientRequest;
-
-[player, "orderAsset", _cost, BIS_WL_targetSector, player, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
-
-//[player, _asset] call BIS_fnc_WL2_newAssetHandle;
+[player, "orderAsset", _cost, BIS_WL_targetSector, _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];

@@ -9,7 +9,6 @@ private _varFormat = "";
 
 _warlord setVariable ["BIS_WL_detectedByServerSince", WL_SYNCED_TIME];
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
-//[_warlord, if (WL_SYNCED_TIME < (BIS_WL_missionStart + 30)) then {BIS_WL_startCP} else {BIS_WL_startCP min BIS_WL_startCP}] call BIS_fnc_WL2_fundsControl; //Mission start CP is controlled here
 
 //CP database
 if !(isDedicated) then {

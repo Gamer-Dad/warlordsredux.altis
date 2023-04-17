@@ -76,10 +76,10 @@ class CfgFunctions {
 			class WL2_mapDrawHandle {};
 			class WL2_onPause {};
 			class WL2_orderAircraft {};
-			class WL2_orderAirdrop {};
 			class WL2_orderArsenal {};
 			class WL2_orderDefence {};
 			class WL2_orderFastTravel {};
+			class WL2_orderVehicle {};
 			class WL2_orderFundsTransfer {};
 			class WL2_orderLastLoadout {};
 			class WL2_orderNaval {};
@@ -148,7 +148,6 @@ class CfgFunctions {
     	class Common {
     		file = "Functions\common";
     		class WL2_findSpawnPositions {};
-			class WL2_fundsControl {};
 			class WL2_generateVariableName {};
 			class WL2_getRespawnMarkers {};
 			class WL2_getSideBase {};

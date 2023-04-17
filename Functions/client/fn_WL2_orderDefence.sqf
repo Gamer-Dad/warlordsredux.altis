@@ -2,8 +2,6 @@
 
 params ["_class", "_cost", "_offset"];
 
-//[player, -_cost] call BIS_fnc_WL2_fundsControl;
-
 if (count _offset != 3) then {
 	_offset = [0, 1.5, 0];
 };
@@ -90,7 +88,6 @@ if (BIS_WL_spacePressed) then {
 	_asset setDir direction player;
 	player reveal [_asset, 4];
 } else {
-	[player, _cost] call BIS_fnc_WL2_fundsControl;
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
 };

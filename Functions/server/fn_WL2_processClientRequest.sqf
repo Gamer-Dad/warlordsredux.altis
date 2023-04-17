@@ -299,8 +299,7 @@ if !(isNull _sender) then {
 			_amount = parseNumber _amount;
 			if (count _recipientArr > 0) then {
 				_recipient = _recipientArr # 0;
-				[_sender, -_amount] call BIS_fnc_WL2_fundsControl;
-				[_recipient, _amount] call BIS_fnc_WL2_fundsControl;
+
 				[ _sender, _recipient, _amount] remoteExec ["BIS_fnc_WL2_displayCPtransfer", -2];
 			};
 		};
