@@ -10,8 +10,6 @@ _purchase_income = _display displayCtrl 104;
 _purchase_info_asset = _display displayCtrl 105;
 _purchase_title_cost = _display displayCtrl 106;
 _purchase_request = _display displayCtrl 107;
-_purchase_title_queue = _display displayCtrl 108;
-_purchase_queue = _display displayCtrl 109;
 
 _curSel = (lbCurSel _purchase_items) max 0;
 

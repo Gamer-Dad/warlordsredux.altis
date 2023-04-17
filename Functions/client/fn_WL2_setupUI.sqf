@@ -200,8 +200,6 @@ switch (_displayClass) do {
 		_purchase_info_asset = _myDisplay ctrlCreate ["RscStructuredText", 105];
 		_purchase_title_cost = _myDisplay ctrlCreate ["RscStructuredText", 106];
 		_purchase_request = _myDisplay ctrlCreate ["RscStructuredText", 107];
-		_purchase_title_queue = _myDisplay ctrlCreate ["RscStructuredText", 108];
-		_purchase_queue = _myDisplay ctrlCreate ["RscListBox", 109];
 		_purchase_transfer_background = _myDisplay ctrlCreate ["RscText", 115];
 		_purchase_transfer_units = _myDisplay ctrlCreate ["RscListBox", 116];
 		_purchase_transfer_amount = _myDisplay ctrlCreate ["RscEdit", 117];
@@ -224,8 +222,6 @@ switch (_displayClass) do {
 		_purchase_background_1 ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.195), _wDef, _hDef * 0.1625];
 		_purchase_title_cost ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.195), _wDef / 4, _hDef * 0.04];
 		_purchase_request ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.235), _wDef / 4, _hDef * 0.055];
-		_purchase_title_queue ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.3175), _wDef / 4, _hDef * 0.04];
-		_purchase_queue ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.3575), _wDef / 4, _hDef * 0.1875];
 		_purchase_background_2 ctrlSetPosition [_xDef + (_wDef * 0.75), _yDef + (_hDef * 0.5452), _wDef, _hDef * 0.2598];
 		_purchase_transfer_background ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 3, _hDef / 3];
 		_purchase_transfer_units ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 6, _hDef / 3];
@@ -254,15 +250,13 @@ switch (_displayClass) do {
 			_purchase_info_asset,
 			_purchase_background_1,
 			_purchase_title_cost,
-			_purchase_title_queue,
 			_purchase_background_2
 		];
 		
 		{_x ctrlCommit 0} forEach [
 			_purchase_category,
 			_purchase_items,
-			_purchase_request,
-			_purchase_queue
+			_purchase_request
 		];
 
 		_purchase_background ctrlSetBackgroundColor [0, 0, 0, 0.5];
@@ -287,8 +281,7 @@ switch (_displayClass) do {
 			_purchase_income,
 			_purchase_info,
 			_purchase_info_asset,
-			_purchase_title_cost,
-			_purchase_title_queue
+			_purchase_title_cost
 		];
 		
 		_purchase_title_assets ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", localize "STR_A3_WL_purchase_menu_title_assets", (1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
