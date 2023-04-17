@@ -41,4 +41,4 @@ _asset = ["requestAsset", [_class, BIS_WL_targetSector]] call BIS_fnc_WL2_sendCl
 
 [player, _asset] call BIS_fnc_WL2_newAssetHandle;
 
-[player, "orderAsset", _class, _cost, BIS_WL_targetSector] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+//[player, "orderAsset", _class, _cost, BIS_WL_targetSector] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
