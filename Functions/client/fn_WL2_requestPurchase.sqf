@@ -2,7 +2,7 @@
 
 params ["_class", "_cost", "_category", "_requirements", "_offset"];
 
-[player, -_cost] call BIS_fnc_WL2_fundsControl;
+//[player, -_cost] call BIS_fnc_WL2_fundsControl;
 
 if (_category == "Defences") exitWith {
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;

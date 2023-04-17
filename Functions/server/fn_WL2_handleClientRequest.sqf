@@ -1,16 +1,19 @@
 #include "..\warlords_constants.inc"
 
-params ["_sender", "_action", "_cost", "_pos", "_target"];
+params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic"];
+
 _assetVar = "";
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") get (getPlayerUID _sender));
 _hasFunds  = (_playerFunds >= _cost);
 
 _processTargetPos = {
+	params ["_pos"];
 	private _targetPosFinalArr = [];
 	private _targetPosFinal = [];
+	_pos = getPosATL _pos;
 	
-	if !(surfaceIsWater _targetPos) then {
-		_nearSectorArr = _targetPos nearObjects ["Logic", 10];
+	if !(surfaceIsWater _pos) then {
+		_nearSectorArr = _pos nearObjects ["Logic", 10];
 		
 		if (count _nearSectorArr == 0) then {
 			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;
@@ -19,13 +22,13 @@ _processTargetPos = {
 			_targetPosFinalArr = [_sector, nil, FALSE, if (_sender inArea (_sector getVariable "objectAreaComplete")) then {_sender}] call BIS_fnc_WL2_findSpawnPositions;
 		};
 	} else {
-		_targetPosFinalArr = [_targetPos];
+		_targetPosFinalArr = [_pos];
 	};
 
 	if (count _targetPosFinalArr > 0) then {
 		_targetPosFinal = selectRandom _targetPosFinalArr;
 	} else {
-		_targetPosFinal = [_targetPos, random 10, random 100] call BIS_fnc_relPos;
+		_targetPosFinal = [_pos, random 10, random 100] call BIS_fnc_relPos;
 	};
 	
 	[_targetPosFinal, _targetPosFinalArr]
@@ -104,24 +107,21 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;				
 			};
-		}:
+		};
 		case "orderAsset": {
 			if (_hasFunds) then {
-				_params params ["_assetVar", "_className", "_targetPos", "_isStatic", "_disable"];
+				private _class = _target;
 				private _asset = objNull;
 				
-				private _isStatic = call compile _isStatic;
-				private _disable = call compile _disable;
+				_targetPos = getPosATL _pos;
+				_targetPosFinal = if (_isStatic) then {_targetPos} else {( call _processTargetPos) # 0};
 				
-				_targetPos = call compile _targetPos;
-				_targetPosFinal = if (_isStatic) then {_targetPos} else {(call _processTargetPos) # 0};
-				
-				if (_className isKindOf "Ship") then {
-					_asset = createVehicle [_className, _targetPosFinal, [], 0, "CAN_COLLIDE"];
+				if (_class isKindOf "Ship") then {
+					_asset = createVehicle [_class, _targetPosFinal, [], 0, "CAN_COLLIDE"];
 					_asset setPos (_targetPosFinal vectorAdd [0,0,3]);
 				} else {
-					if (_className isKindOf "Air") then {
-						if (_className == "B_UAV_02_dynamicLoadout_F" || _className == "B_T_UAV_03_dynamicLoadout_F" || _className == "B_UAV_05_F" || _className == "O_UAV_02_dynamicLoadout_F" || _className == "O_T_UAV_04_CAS_F") then {
+					if (_class isKindOf "Air") then {
+						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
 							private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 							private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
 							private _taxiNodesCnt = count _taxiNodes;
@@ -143,7 +143,7 @@ if !(isNull _sender) then {
 								_spawnPos = _targetPosFinal;
 							};
 
-							_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+							_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 							_asset setDir _dir;
 							_asset setDamage 0;
 							_asset setFuel 1;
@@ -156,7 +156,7 @@ if !(isNull _sender) then {
 							(effectiveCommander _asset) setSkill 1;
 							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 						} else {
-							_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _className >> "simulation")) in ["airplanex", "airplane"] && !(_className isKindOf "VTOL_Base_F");
+							_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && !(_class isKindOf "VTOL_Base_F");
 							if (_isPlane) then {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -178,7 +178,7 @@ if !(isNull _sender) then {
 								if (count _spawnPos == 0) then {
 									_spawnPos = _targetPosFinal;
 								};
-								_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
 								_asset setDamage 0;
 								_asset setFuel 1;
@@ -203,7 +203,7 @@ if !(isNull _sender) then {
 								if (count _spawnPos == 0) then {
 									_spawnPos = _targetPosFinal;
 								};
-								_asset = createVehicle [_className, _spawnPos, [], 0, "NONE"];
+								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
 								_asset setDamage 0;
 								_asset setFuel 1;
@@ -211,7 +211,7 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							_asset = createVehicle [_className, _targetPos, [], 0, "CAN_COLLIDE"];
+							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_targetPos set [2, (_targetPos # 2) max 0];
 							_asset setDir direction _sender;
 							_asset setPos _targetPos;
@@ -219,7 +219,7 @@ if !(isNull _sender) then {
 								_asset enableSimulationGlobal FALSE;
 								_asset hideObjectGlobal TRUE;
 							} else {
-								if (getNumber (configFile >> "CfgVehicles" >> _className >> "isUav") == 1) then {
+								if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 									//Code to allow Both sides to use a drone of the other side.
 									createVehicleCrew _asset;
 									_side = side _sender; 
@@ -230,19 +230,20 @@ if !(isNull _sender) then {
 								};
 							};
 						} else {
-							if (_className isKindOf "Man") then {
-								_asset = (group _sender) createUnit [_className, _targetPosFinal, [], 0, "NONE"];
+							if (_class isKindOf "Man") then {
+								_asset = (group _sender) createUnit [_class, _targetPosFinal, [], 0, "NONE"];
 							} else { // Vehicle creation code
-								if (_className == "Box_NATO_Ammo_F" || _className == "Box_NATO_Grenades_F" || _className == "Box_NATO_Wps_F" || _className == "Box_NATO_AmmoOrd_F" || _className == "Box_NATO_WpsLaunch_F" || _className == "Box_NATO_WpsSpecial_F" || _className == "B_supplyCrate_F" || _className == "Box_NATO_AmmoVeh_F" || _className == "Box_East_Ammo_F" || _className == "Box_East_Grenades_F" || _className == "Box_East_Wps_F" || _className == "Box_East_AmmoOrd_F" || _className == "Box_East_WpsLaunch_F" || _className == "Box_East_WpsSpecial_F" || _className == "O_supplyCrate_F" || _className == "Box_East_AmmoVeh_F") then {
-									_asset = createVehicle [_className, _playerPos, [], 0, "NONE"];
+								if (_class == "Box_NATO_Ammo_F" || _class == "Box_NATO_Grenades_F" || _class == "Box_NATO_Wps_F" || _class == "Box_NATO_AmmoOrd_F" || _class == "Box_NATO_WpsLaunch_F" || _class == "Box_NATO_WpsSpecial_F" || _class == "B_supplyCrate_F" || _class == "Box_NATO_AmmoVeh_F" || _class == "Box_East_Ammo_F" || _class == "Box_East_Grenades_F" || _class == "Box_East_Wps_F" || _class == "Box_East_AmmoOrd_F" || _class == "Box_East_WpsLaunch_F" || _class == "Box_East_WpsSpecial_F" || _class == "O_supplyCrate_F" || _class == "Box_East_AmmoVeh_F") then {
+									private _playerPos = getPosATL _sender;
+									_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
 								} else {
 									private _playerPos = getPosATL _sender;
-									_asset = createVehicle [_className, _playerPos, [], 0, "NONE"];
+									_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
 								};
 							};
 						};
 
-						if (_className == "B_UAV_01_F" || _className == "O_UAV_01_F") then {
+						if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 							//Code to allow Both sides to use a drone of the other side.
 							createVehicleCrew _asset;
 							_side = side _sender; 
@@ -254,11 +255,15 @@ if !(isNull _sender) then {
 					};
 				}; 
 				
-				_asset setVehicleVarName _assetVar;
-				missionNamespace setVariable [_assetVar, _asset];
-				(owner _sender) publicVariableClient _assetVar;
+				_assetVariable = call BIS_fnc_WL2_generateVariableName;
+				_asset setVehicleVarName _assetVariable;
+				missionNamespace setVariable [_assetVariable, _asset];
+				[_asset, _assetVariable] remoteExec ["setVehicleVarName", _sender];
+				(owner _sender) publicVariableClient _assetVariable;
 				
 				[_asset, _sender, _isStatic] spawn _setOwner;
+
+				[player, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;

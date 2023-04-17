@@ -37,8 +37,8 @@ if (BIS_WL_targetSector distance2D player <= 300) then {
 "Airdrop" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WL2_smoothText;
 
-_asset = ["requestAsset", [_class, BIS_WL_targetSector]] call BIS_fnc_WL2_sendClientRequest;
+//_asset = ["requestAsset", [_class, BIS_WL_targetSector]] call BIS_fnc_WL2_sendClientRequest;
 
-[player, _asset] call BIS_fnc_WL2_newAssetHandle;
+[player, "orderAsset", _cost, BIS_WL_targetSector, player, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
-//[player, "orderAsset", _class, _cost, BIS_WL_targetSector] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+//[player, _asset] call BIS_fnc_WL2_newAssetHandle;
