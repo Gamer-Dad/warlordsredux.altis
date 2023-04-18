@@ -129,7 +129,6 @@ class CfgFunctions {
 			class WL2_loadFactionClasses {};
 			class WL2_mineLimit {};
 			class WL2_populateSector {};
-			class WL2_processClientRequest {};
 			class WL2_processRunways {};
 			class WL2_sectorsInitServer {};
 			class WL2_selectTarget {};
