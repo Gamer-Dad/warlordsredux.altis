@@ -79,7 +79,6 @@ addMissionEventHandler ["HandleDisconnect", {
 		if !(isPlayer _x) then {_x setDamage 1};
 	} forEach ((units group _unit) - [_unit]);
 	
-	missionNamespace setVariable [format ["BIS_WL_%1", _uid], nil];
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 

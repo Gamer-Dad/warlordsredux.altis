@@ -31,8 +31,6 @@ if (typeOf _asset == "O_Truck_03_medical_F") then {
 	deleteVehicle _asset;
 };
 
-["deleteAsset", [_asset]] call BIS_fnc_WL2_sendClientRequest;
-
 private _groupUnit = local _asset && _asset isKindOf "Man";
 if (_groupUnit) then {
 	0 spawn {
@@ -40,3 +38,5 @@ if (_groupUnit) then {
 		[] spawn BIS_fnc_WL2_refreshOSD;
 	};
 };
+
+[_asset] remoteExec ["BIS_fnc_WL2_sub_deleteAsset", 2];

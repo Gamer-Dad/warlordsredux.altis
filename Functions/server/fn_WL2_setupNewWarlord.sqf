@@ -38,18 +38,6 @@ if (isPlayer _warlord) then {
 		(missionNamespace getVariable format ["BIS_WL_boundTo%1", side group _warlord]) pushBackUnique getPlayerUID _warlord;
 		_playerSideArr = BIS_WL_playerIDArr # (BIS_WL_competingSides find side group _warlord);
 		_playerSideArr pushBackUnique getPlayerUID _warlord;
-		_var = format ["BIS_WL_%1", getPlayerUID _warlord];
-				
-		if (isMultiplayer) then {
-			_var addPublicVariableEventHandler BIS_fnc_WL2_processClientRequest;
-		} else {
-			missionNamespace setVariable [_var, ""];
-			_var spawn {
-				waitUntil {(missionNamespace getVariable _this) != ""};
-				[_this, missionNamespace getVariable _this] call BIS_fnc_WL2_processClientRequest;
-				waitUntil {(missionNamespace getVariable _this) == ""};
-			};
-		};
 		
 		_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID _warlord];
 		waitUntil {!(missionNamespace getVariable [_varFormat, TRUE])};

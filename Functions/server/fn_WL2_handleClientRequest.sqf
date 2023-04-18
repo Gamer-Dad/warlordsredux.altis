@@ -69,6 +69,14 @@ if !(isNull _sender) then {
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
+		case "targetReset": {
+			if (_hasFunds) then {
+				missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], WL_SYNCED_TIME, true];
+				missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", side _sender], name _sender, true];
+
+				_sender setVariable ["BIS_WL_targetResetVote", 1, TRUE];
+			};
+		};
 		case "lastLoadout": {
 			if (_hasFunds) then {
 				0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
@@ -228,6 +236,7 @@ if !(isNull _sender) then {
 							_targetPos set [2, (_targetPos # 2) max 0];
 							_asset setDir direction _sender;
 							_asset setPos _targetPos;
+							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.
 								createVehicleCrew _asset;

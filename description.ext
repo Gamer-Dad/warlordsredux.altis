@@ -85,7 +85,6 @@ class CfgFunctions {
 			class WL2_orderNaval {};
 			class WL2_orderSavedLoadout {};
 			class WL2_orderSectorScan {};
-			class WL2_orderTargetReset {};
 			class WL2_purchaseMenuOpeningHandle {};
 			class WL2_refreshCurrentTargetData {};
 			class WL2_refreshIconsToDraw {};
@@ -99,7 +98,6 @@ class CfgFunctions {
 			class WL2_sectorsInitClient {};
 			class WL2_sectorOwnershipHandleClient {};
 			class WL2_selectedTargetsHandle {};
-			class WL2_sendClientRequest {};
 			class WL2_setOSDEvent {};
 			class WL2_setupUI {};
 			class WL2_sideToFaction {};
