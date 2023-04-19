@@ -7,6 +7,11 @@ if (_unit isKindOf "Man") then {
 	if (isNull _instigator) then {_instigator = _killer};
 	if (!isNull _instigator) then {
 		private _responsibleLeader = leader _instigator;
+		if (isPlayer _instigator) then {
+			_responsibleLeader = _instigator;
+		} else {
+			_responsibleLeader = ((_instigator getVariable "BIS_WL_Owned_By") call BIS_fnc_getUnitByUID);
+		};
 		if (isPlayer _responsibleLeader && _responsibleLeader in BIS_WL_allWarlords) then {
 			if (side group _unit == side group _instigator && group _unit != group _instigator) then {
 				_friendlyKillTimestamps = _instigator getVariable ["BIS_WL_friendlyKillTimestamps", []];

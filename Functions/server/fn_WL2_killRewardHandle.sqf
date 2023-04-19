@@ -6,7 +6,12 @@ _killReward = 0;
 if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer) # 0};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
-	_responsibleLeader = leader _instigator;
+	private _responsibleLeader = leader _instigator;
+	if (isPlayer _instigator) then {
+		_responsibleLeader = _instigator;
+	} else {
+		_responsibleLeader = ((_instigator getVariable "BIS_WL_Owned_By") call BIS_fnc_getUnitByUID);
+	};
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
 		_id = owner _responsibleLeader;

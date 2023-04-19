@@ -249,6 +249,7 @@ if !(isNull _sender) then {
 						} else {
 							if (_class isKindOf "Man") then {
 								_asset = (group _sender) createUnit [_class, _targetPosFinal, [], 0, "NONE"];
+								_asset setVariable ["BIS_WL_Owned_By", getPlayerUID _sender, true];
 							} else { // Vehicle creation code
 								private _playerPos = getPosATL _sender;
 								_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
