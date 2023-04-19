@@ -187,4 +187,6 @@ _spaceLukkie setDir 122;
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
+["Initialize"] call BIS_fnc_dynamicGroups;
+
 ["server_init"] call BIS_fnc_endLoadingScreen;

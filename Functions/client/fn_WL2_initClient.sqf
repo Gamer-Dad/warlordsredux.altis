@@ -304,6 +304,7 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_getUavConnected;
+["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 player setVariable ["arsenalOpened", false, true];
 
