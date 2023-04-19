@@ -106,7 +106,6 @@ MRTM_fnc_iconText = {
 
 MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
-	hint format ["%1", _m];
 	{
 		if (!isNull _x) then {
 			_ve = vehicle _x;
