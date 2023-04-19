@@ -373,6 +373,14 @@ player setVariable ["arsenalOpened", false, true];
 	];
 };
 
+player addAction [
+	"Get 20k CP",
+	{
+		_uid = getPlayerUID player;
+		[_uid, 20000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
+	}
+];
+
 0 spawn {
 	waituntil {!isnull (findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
