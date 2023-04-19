@@ -72,9 +72,9 @@ MRTM_fnc_iconText = {
 	} else {
 		if (count (crew _t) == 1) then {
 			if (isPlayer ((crew _t) select 0)) then {
-				_text = format ["%1", name ((crew _t) select 0)];
+				_text = format ["%1: %2", _vd, name ((crew _t) select 0)];
 			} else {
-				_text = format ["%1 [AI]", name ((crew _t) select 0)];
+				_text = format ["%1: %2 [AI]", _vd, name ((crew _t) select 0)];
 			};
 		} else {
 			_playerCrew = (crew _t) select {isPlayer _x};
@@ -90,13 +90,14 @@ MRTM_fnc_iconText = {
 			if (countCrewAi > 0) then {
 				_text = _text + format ["+%1", countCrewAi];
 			};
+			_text = format ["%1: %2", _vd, _text];
 		};
 	};
 
 	if (unitIsUAV _t) then {
 		if (isUAVConnected _t) then {
 			_op = (UAVControl _t) select 0;
-			_text = format ["%1", name _op];
+			_text = format ["%1: %2", _vd, name _op];
 		} else {
 			_text = format ["[AUTO] [%1]", _vd];
 		};

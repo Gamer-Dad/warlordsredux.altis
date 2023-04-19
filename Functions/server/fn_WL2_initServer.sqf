@@ -82,6 +82,14 @@ addMissionEventHandler ["HandleDisconnect", {
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
+addMissionEventHandler ["GroupCreated", {
+	params ["_group"];
+	_group addEventHandler ["unitLeft", {
+		params ["_group", "_oldUnit"];
+		hint format ["%1", _oldUnit];
+	}];
+}];
+
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	_this spawn BIS_fnc_WL2_killRewardHandle;
