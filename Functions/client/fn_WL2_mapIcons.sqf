@@ -88,7 +88,7 @@ MRTM_fnc_iconText = {
 
 			countCrewAi = count ((crew _t) - _playerCrew);
 			if (countCrewAi > 0) then {
-				_text = _text + format ["+%1", countCrewAi];
+				_text = _text + format [" +%1", countCrewAi];
 			};
 			_text = format ["%1: %2", _vd, _text];
 		};
