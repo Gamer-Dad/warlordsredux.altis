@@ -45,7 +45,7 @@ allowFunctionsLog = 1;
 class  cfgRemoteExec {
 	class Functions
 	{
-		mode = 0;
+		mode = 2;
 		jip = 1;
 		class BIS_fnc_WL2_fundsDatabaseWrite
 		{
