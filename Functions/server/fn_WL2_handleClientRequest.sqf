@@ -134,7 +134,7 @@ if !(isNull _sender) then {
 				private _class = _target;
 				private _asset = objNull;
 				
-				_targetPos = getPosATL _pos;
+				_targetPos = _pos;
 				_targetPosFinal = if (_isStatic) then {_targetPos} else {( call _processTargetPos) # 0};
 				
 				if (_class isKindOf "Ship") then {

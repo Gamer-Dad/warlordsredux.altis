@@ -14,7 +14,7 @@ if (visibleMap) then {
 };
 
 _asset = createVehicle [_class, player modelToWorld _offset, [], 0, "CAN_COLLIDE"];
-_asset setDir direction _sender;
+_asset setDir direction player;
 _asset enableSimulationGlobal false;
 _asset hideObjectGlobal true;
 _asset lock true;
