@@ -49,7 +49,7 @@ class  cfgRemoteExec {
 		jip = 1;
 		class BIS_fnc_WL2_fundsDatabaseWrite
 		{
-			allowedTargets = 2;
+			allowedTargets = 1;
 			jip = 0;
 		};
 	};

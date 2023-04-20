@@ -16,7 +16,8 @@ if !(isDedicated) then {
 	[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 } else {
 	private _uid = getPlayerUID _warlord;
-	private _fundsDB = (serverNamespace getVariable ["fundsDatabase", []]);
+	private _fundsDB = (serverNamespace getVariable "fundsDatabase");
+	waitUntil {!isNil _fundsDB};
 	if (_fundsFB getOrDefault [_uid, "Notfound"] == "Notfound") then {
 		[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 	} else {
