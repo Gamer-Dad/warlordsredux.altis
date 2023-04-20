@@ -11,17 +11,18 @@ _warlord setVariable ["BIS_WL_detectedByServerSince", WL_SYNCED_TIME];
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
 
 //CP database
-if !(isDedicated) then {
+if (isDedicated) then {
 	private _uid = getPlayerUID _warlord;
 	[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 } else {
 	private _uid = getPlayerUID _warlord;
 	private _fundsDB = (serverNamespace getVariable "fundsDatabase");
-	waitUntil {!isNil _fundsDB};
-	if (_fundsFB getOrDefault [_uid, "Notfound"] == "Notfound") then {
-		[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+	waitUntil {!isNil {_fundsDB}};
+	if (_fundsDB getOrDefault [_uid, "NotFound"] == "NotFound") then {
+		[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;		
 	} else {
-		[_uid, (_fundsDB get _uid)] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+		_money = (serverNamespace getVariable "fundsDatabase") get _uid;
+		[_uid, _money] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 	};
 };
 
