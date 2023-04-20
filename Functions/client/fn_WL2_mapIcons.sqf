@@ -99,7 +99,7 @@ MRTM_fnc_iconText = {
 			_op = (UAVControl _t) select 0;
 			_text = format ["%1: %2", _vd, name _op];
 		} else {
-			_text = format ["[AUTO] [%1]", _vd];
+			_text = format ["[AUTO] %1", _vd];
 		};
 	};
 	_text;
