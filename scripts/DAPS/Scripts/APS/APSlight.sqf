@@ -11,8 +11,12 @@ private _reg=[];
 while{TRUE}do{
 	if!(alive _v)exitWith{};
 	if(_v call DAPS_fnc_Active)then{
-		_r=_v nearObjects["RocketCore",100];
-		_r=_r-_reg;
+		_r=_v nearObjects["RocketCore",200];
+		//_r=_r-_reg; 
+		/*This counts rounds that have already been detected by the system, so they aren't counted twice. 
+		The APS will only ever be able to react to a single incoming round at a time and will also spam reaction 
+		code at the same round which may cause strange behaviour
+		*/
 		if((count _r)>0)then{[_v,_r select 0]spawn DAPS_fnc_Generic;sleep .7;_reg pushBack(_r select 0)};
 	};
 	if((call DAPS_fnc_Time)>_time)then{

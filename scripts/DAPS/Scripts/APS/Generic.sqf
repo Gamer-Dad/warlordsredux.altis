@@ -15,8 +15,8 @@ while{TRUE}do{
 	if!(alive _i)exitWith{_ex=FALSE};
 	if!(alive _v)exitWith{};
 	_d=_v distance _i;
-	if(_d>101)exitWith{_ex=FALSE};
-	if(_d<30)exitWith{};
+	if(_d>150)exitWith{_ex=FALSE}; //Max intercept distance
+	if(_d<10)exitWith{};  //Min intercept distance
 	sleep 0.001;
 };
 if!(alive _v)exitWith{};

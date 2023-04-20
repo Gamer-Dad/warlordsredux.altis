@@ -29,7 +29,7 @@ dapsRearmTime=5;
 dapsRearmDelay=5; //15
 dapsBlastBig=FALSE;
 
-dapsHitLimit=2000; // Limit APS ability to intercept by damage
+dapsHitLimit=4500; // Limit APS ability to intercept by damage
 
 dapsScriptMode=FALSE;
 if!(isClass(configFile>>"cfgPatches">>"DrongosAPS"))then{dapsScriptMode=TRUE};
