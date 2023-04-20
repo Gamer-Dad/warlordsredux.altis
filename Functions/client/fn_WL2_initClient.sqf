@@ -202,6 +202,20 @@ player addEventHandler ["InventoryOpened",{
 	_override;
 }];
 
+(group player) addEventHandler ["unitLeft", {
+	params ["_group", "_oldUnit"];
+	if (isPlayer _oldUnit) then {
+		{
+			_u = _x;
+			[_u, _oldUnit] spawn {
+				params ["_u", "_p"];
+				[_u] joinSilent (group _p);
+				[_p, _u] spawn BIS_fnc_WL2_returnOwnerShip;
+			};
+		} forEach (allUnits select {_x != _oldUnit && (_x getVariable "BIS_WL_Owned_By" == getPlayerUID _oldUnit)});
+	};
+}];
+
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
