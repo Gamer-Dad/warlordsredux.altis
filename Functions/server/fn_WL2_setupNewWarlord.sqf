@@ -11,7 +11,7 @@ _warlord setVariable ["BIS_WL_detectedByServerSince", WL_SYNCED_TIME];
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
 
 //CP database
-if (isDedicated) then {
+if !(isDedicated) then {
 	private _uid = getPlayerUID _warlord;
 	[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 } else {
