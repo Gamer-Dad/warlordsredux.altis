@@ -153,6 +153,21 @@ MRTM_fnc_iconDrawMap = {
 		};
 	} count ((allUnits) select {side group _x == side group player && isNull objectParent _x});
 	{
+		_m drawIcon [
+			"iconManMedic",
+			[1, 0, 0, 1],
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allPlayers select {(!(alive _x)) && (side group _x == side group player)}));
+	{
 		if (!isNull _x) then {
 			_ve = vehicle _x;
 			if (alive _ve) then {
@@ -288,6 +303,21 @@ MRTM_fnc_iconDrawGPS = {
 			};
 		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
 	} forEach BIS_WL_currentlyScannedSectors;
+	{
+		_m drawIcon [
+			"iconManMedic",
+			[1, 0, 0, 1],
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allPlayers select {(!(alive _x)) && (side group _x == side group player)}));
 };
 
 waitUntil {
