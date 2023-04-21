@@ -105,6 +105,16 @@ MRTM_fnc_iconText = {
 	_text;
 };
 
+MRTM_fnc_iconTextSectorScan = {
+	params ["_t"];
+	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
+	_text = "";
+	if !(vehicle _t isKindOf "CAManBase") then {
+		_text = _vd;
+	};
+	_text;
+};
+
 MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
 	{
@@ -161,7 +171,7 @@ MRTM_fnc_iconDrawMap = {
 				];
 			};
 		};	
-	} count (vehicles select {(crew _x) findIf {isPlayer _x} == 0 && (crew _x ) findIf {side group _x == side group player} == 0});
+	} count (vehicles select {(crew _x) findIf {isPlayer _x} == 0 && (crew _x ) findIf {(side group _x != side group player) && (alive _x)} == 0});
 	{
 		if (!isNull _x) then {
 			_ve = vehicle _x;
@@ -204,6 +214,29 @@ MRTM_fnc_iconDrawMap = {
 			};
 		};	
 	} count (WL_PLAYER_VEHS select {(crew _x) findIf {_x == player} != 0});
+	{
+		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
+		{
+			if (!isNull _x) then {
+				_ve = vehicle _x;
+				if (alive _ve) then {
+					_m drawIcon [
+						[_x] call MRTM_fnc_iconType,
+						if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+						[_x] call MRTM_fnc_getPos,
+						[_x] call MRTM_fnc_iconSize,
+						[_x] call MRTM_fnc_iconSize,
+						[_x] call MRTM_fnc_getDir,
+						[_x] call MRTM_fnc_iconTextSectorScan,
+						1,
+						0.025,
+						"TahomaB",
+						"right"
+					];
+				};
+			};
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+	} forEach BIS_WL_currentlyScannedSectors;
 };
 
 MRTM_fnc_iconDrawGPS = {
@@ -216,21 +249,6 @@ MRTM_fnc_iconDrawGPS = {
 		if (!isNull _x) then {
 			_ve = vehicle _x;
 			if (alive _ve) then {
-				if (_ve isEqualTo (vehicle player)) then {
-					_m drawIcon [
-						'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
-						[1,0,0,0.75],
-						[_x] call MRTM_fnc_getPos,
-						24,
-						24,
-						[_x] call MRTM_fnc_getDir,
-						"",
-						0,
-						0.025,
-						"TahomaB",
-						"right"
-					];
-				};
 				_m drawIcon [
 					[_x] call MRTM_fnc_iconType,
 					[_x] call MRTM_fnc_iconColor,
@@ -247,6 +265,29 @@ MRTM_fnc_iconDrawGPS = {
 			};
 		};
 	} count ((allUnits) select {side group _x == side group player && isNull objectParent _x});
+	{
+		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
+		{
+			if (!isNull _x) then {
+				_ve = vehicle _x;
+				if (alive _ve) then {
+					_m drawIcon [
+						[_x] call MRTM_fnc_iconType,
+						if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+						[_x] call MRTM_fnc_getPos,
+						[_x] call MRTM_fnc_iconSize,
+						[_x] call MRTM_fnc_iconSize,
+						[_x] call MRTM_fnc_getDir,
+						"",
+						1,
+						0.025,
+						"TahomaB",
+						"right"
+					];
+				};
+			};
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+	} forEach BIS_WL_currentlyScannedSectors;
 };
 
 waitUntil {
