@@ -36,6 +36,7 @@ if !(isNull _instigator) then {
 			} else {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 				_bounty = _unit getVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _unit], 0];
+				_bounty = ((_bounty / 100) * 80);
 				_killReward = _killReward + _bounty;
 			};
 			[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
