@@ -327,5 +327,14 @@ if !(isNull _sender) then {
 				[_sender, _recipient, _amount] remoteExec ["BIS_fnc_WL2_displayCPtransfer", -2];
 			};
 		};
+		case "requestBounty": {
+			if (_hasFunds) then {
+			_targetUID = getPlayerUID _target;
+			_uid = getPlayerUID _sender;
+			[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			_target setVariable [format ["BIS_WL_Bounty_%1", _targetUID], _cost, true];
+			[format ["%1 set a bounty off %3CP on %2's head.", name _sender, name _target, _cost]] remoteExec ["systemChat", -2];
+			};
+		};
 	};
 };
