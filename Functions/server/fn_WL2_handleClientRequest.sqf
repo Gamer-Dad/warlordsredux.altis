@@ -279,6 +279,40 @@ if !(isNull _sender) then {
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				
+				if (typeOf _asset == "I_Truck_02_MRL_F") then { //Zamak MLRS
+					_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak cabin
+					_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak Bed&Launcher                
+				};
+
+				if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
+					_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
+					_asset setObjectTextureGlobal [1, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa"];
+					_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa"];
+					_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
+				};
+				
+				if (typeOf _asset == "B_AAA_System_01_F") then { //Praetorian
+					private _side = side (crew _asset select 0);
+					if (_side == east) then {
+						_asset setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
+						_asset setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
+					};
+				} else {
+					if (typeOf _asset == "B_SAM_System_01_F") then { //Spartan
+						private _side = side (crew _asset select 0);
+						if (_side == east) then {
+							_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
+						};
+					} else {
+						if (typeOf _asset == "B_SAM_System_02_F") then { //Centurion
+							private _side = side (crew _asset select 0);
+							if (_side == east) then {
+								_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
+							};
+						};
+					};
+				};
 			};
 		};
 		case "fundsTransfer": {

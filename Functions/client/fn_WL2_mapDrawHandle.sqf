@@ -49,14 +49,14 @@ BIS_WL_mapDrawHandler = WL_CONTROL_MAP ctrlAddEventHandler ["Draw", {
 					},
 					BIS_WL_colorsArray # (BIS_WL_sidesArray find side group _x),
 					position _x,
-					if (_isMan) then {20} else {30},
-					if (_isMan) then {20} else {30},
+					30,
+					30,
 					0,
 					if (_isMan) then {""} else {" " + (_x getVariable "BIS_WL_iconText")},
-					0,
+					1,
 					WL_MAP_FONT_SIZE,
 					"RobotoCondensed",
-                        		"right"
+                    "right"
 				];
 			};
 		} forEach ((list _revealTrigger) - WL_PLAYER_VEHS);
