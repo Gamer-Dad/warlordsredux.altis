@@ -160,13 +160,16 @@
 2.5.3
   - New CP system. (Should be more secure against cheaters)
   - Added the dynamic group system.
-  - Updated map icons.
+  - New improved map icons.
   - Gorgon has new camo.
   - Added an option to set a bounty on a player.
   - Performance updates. (both client and server)
   - Arsenal reworked. (More options added)
-  - APS Upgrades.
-  - Friendly fire forgive or report option.
+  - APS Upgrades added.
+  - Friendly fire forgive or report option is added.
+  - APS double deduction is now fixed.
+  - Fast travel truck not available when owner leaves is now fixed.
+  - Hemtt ammo capacity is now 30ton instead of 10t (ammo box is still 10ton).
 
 
   

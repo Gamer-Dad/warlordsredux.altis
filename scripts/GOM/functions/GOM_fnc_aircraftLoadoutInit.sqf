@@ -1333,7 +1333,14 @@ GOM_fnc_handleResources = {
 
 
 			_amount = _x getvariable ["GOM_fnc_ammoCargo",-1];
-			if (_amount < 0) then {_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 10000)};
+
+			if (_amount < 0) then {
+				if (typeOf _x == "B_Truck_01_ammo_F" || typeOf _x == "O_Truck_03_ammo_F" ) then {
+					_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 30000);
+				} else {
+					_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 10000);
+				};
+			};
 
 			_x setvariable ["GOM_fnc_ammoCargo",_amount,true];
 			[_x,0] remoteExec ["setAmmoCargo",_x];
