@@ -165,6 +165,8 @@
   - Added an option to set a bounty on a player.
   - Performance updates. (both client and server)
   - Arsenal reworked. (More options added)
+  - APS Upgrades.
+  - Friendly fire forgive or report option.
 
 
   
