@@ -113,7 +113,7 @@ if !(isNull _sender) then {
 		};
 		case "fastTravelContested": {
 			if (_hasFunds) then {
-				private _tagAlong = (units group _sender) select {_x distance2D _sender <= WL_FAST_TRAVEL_TEAM_RADIUS && vehicle _x == _x};
+				private _tagAlong = (units group _sender) select {(_x distance2D _sender <= WL_FAST_TRAVEL_TEAM_RADIUS) && (vehicle _x == _x) && ((_x getVariable ["BIS_WL_Owned_By", ""]) == getPlayerUID _sender)};
 				{
 					_x setVehiclePosition [_pos, [], 2, "NONE"];
 				} forEach _tagAlong;

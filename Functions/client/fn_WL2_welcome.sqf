@@ -117,7 +117,6 @@ while {dialog} do {
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
 			"- MrThomasM", lineBreak,
 			"- Tin", lineBreak,
-			"- 爪卂尺ﾉﾉ", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_18", lineBreak,
 			"- Witch Doctor", lineBreak,
@@ -148,6 +147,20 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
+			"2.5.3", lineBreak,
+			"-New CP system. (Should be more secure against cheaters)", lineBreak,
+			"-Added the dynamic group system.", lineBreak,
+			"-New improved map icons.", lineBreak,
+			"-Gorgon has new camo.", lineBreak,
+			"-Added an option to set a bounty on a player.", lineBreak,
+			"-Performance updates. (both client and server)", lineBreak,
+			"-Arsenal reworked. (More options added)", lineBreak,
+			"-APS Upgrades added.", lineBreak,
+			"-Friendly fire forgive or report option is added.", lineBreak,
+			"-APS double deduction is now fixed.", lineBreak,
+			"-Fast travel truck not available when owner leaves is now fixed.", lineBreak,
+			"-Ammo truck ammo is now 30ton instead of 10ton", lineBreak,
+			"", lineBreak,
 			"2.5.2", lineBreak,
 			"-Added the famous 'Bitching' betty to NATO's wipeout and blackwasp.", lineBreak,
 			parseText format ["<a href='https://www.youtube.com/watch?v=zg8FcRgOfPY'>Bitching betty preview.</a>"], lineBreak,
