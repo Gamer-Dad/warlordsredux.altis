@@ -72,6 +72,12 @@ addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	{
+		if (typeOf _x == "B_Truck_01_medical_F") then {
+			missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+		};
+		if (typeOf _x == "O_Truck_03_medical_F") then {
+			missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+		};
 		_x call BIS_fnc_WL2_sub_deleteAsset;
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	
@@ -99,6 +105,14 @@ addMissionEventHandler ["GroupCreated", {
 	}];
 }];
 
+addMissionEventHandler ["MarkerCreated", {
+	params ["_marker", "_channelNumber", "_owner", "_local"];
+	
+	if ((isPlayer _owner) && (_channelNumber == 0)) then {
+		deleteMarker _marker;
+	};
+}];
+
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	_this spawn BIS_fnc_WL2_killRewardHandle;
@@ -115,7 +129,7 @@ addMissionEventHandler ["EntityKilled", {
 
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
-	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F") then {
+	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F" || typeOf _entity == "O_Truck_03_medical_F" || typeOf _entity == "B_Truck_01_medical_F" || typeOf _entity == "O_APC_Wheeled_02_rcws_v2_F") then {
 		[_entity] spawn {
 			_entity = _this select 0;
 			while {alive _entity} do {
@@ -124,34 +138,6 @@ addMissionEventHandler ["EntityCreated", {
 					_entity setDamage 1;
 				};
 				sleep 5;
-			};
-		};
-	};
-
-    if (typeOf _entity == "I_Truck_02_MRL_F") then { //Zamak MLRS
-        _entity setObjectTextureGlobal [0, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak cabin
-        //_entity setObjectTextureGlobal [1, "A3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa"]; //Does nothing but keep for reminder
-        _entity setObjectTextureGlobal [2, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak Bed&Launcher                
-    };
-	
-	if (typeOf _entity == "B_AAA_System_01_F") then { //Praetorian
-		private _side = side (crew _entity select 0);
-		if (_side == east) then {
-			_entity setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
-			_entity setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
-		};
-	} else {
-		if (typeOf _entity == "B_SAM_System_01_F") then { //Spartan
-			private _side = side (crew _entity select 0);
-			if (_side == east) then {
-				_entity setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
-			};
-		} else {
-			if (typeOf _entity == "B_SAM_System_02_F") then { //Centurion
-				private _side = side (crew _entity select 0);
-				if (_side == east) then {
-					_entity setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
-				};
 			};
 		};
 	};

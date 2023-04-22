@@ -11,7 +11,7 @@ BIS_WL_playerSide spawn {
 		missionNamespace setVariable [_varNameReset, ""];
 		
 		if ((player getVariable ["BIS_WL_targetResetVote", -1]) == -1) then {
-			"targetResetVoting" call BIS_fnc_WL2_hintHandle;
+			[player, "targetResetVoting"] call BIS_fnc_WL2_hintHandle;
 		};
 		
 		BIS_WL_ctrlDown = FALSE;
@@ -36,7 +36,7 @@ BIS_WL_playerSide spawn {
 		
 		waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME >= ((missionNamespace getVariable _varNameVoting) + WL_TARGET_RESET_VOTING_TIME) || isNull WL_TARGET_FRIENDLY || (player getVariable ["BIS_WL_targetResetVote", -1]) != -1};
 
-		["targetResetVoting", FALSE] call BIS_fnc_WL2_hintHandle;
+		[player, "targetResetVoting", FALSE] call BIS_fnc_WL2_hintHandle;
 	};
 };
 

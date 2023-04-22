@@ -28,13 +28,8 @@ MRTM_fnc_isDowned = {
 MRTM_fnc_iconType = {
 	params ["_p"];
 	private _vt = typeOf (vehicle _p);
-	_r = "";
-	if (vehicle _p == _p) then {
-		_r = getText (configFile >> 'CfgVehicles' >> _vt >> 'icon');
-	} else {
-		_r = "";
-	};
-	_r;
+	_i = getText (configFile >> 'CfgVehicles' >> _vt >> 'icon');
+	_i;
 };
 
 MRTM_fnc_iconSize = {
@@ -69,6 +64,10 @@ MRTM_fnc_iconText = {
 		} else {
 			_text = format ["%1 [AI]", name _t];
 		};
+
+		if !(alive _t) then {
+			_text = _text + " [K.I.A.]";
+		};
 	} else {
 		if (count (crew _t) == 1) then {
 			if (isPlayer ((crew _t) select 0)) then {
@@ -80,9 +79,9 @@ MRTM_fnc_iconText = {
 			_playerCrew = (crew _t) select {isPlayer _x};
 			{
 				if ((_forEachindex + 1) == count _playerCrew) then {
-					_text= _text+ format ["%1", name _x];
+					_text = _text + format ["%1", name _x];
 				} else {
-					_text= _text+ format ["%1, ", name _x];
+					_text = _text + format ["%1, ", name _x];
 				};
 			} forEach _playerCrew;
 
@@ -99,8 +98,18 @@ MRTM_fnc_iconText = {
 			_op = (UAVControl _t) select 0;
 			_text = format ["%1: %2", _vd, name _op];
 		} else {
-			_text = format ["[AUTO] [%1]", _vd];
+			_text = format ["[AUTO] %1", _vd];
 		};
+	};
+	_text;
+};
+
+MRTM_fnc_iconTextSectorScan = {
+	params ["_t"];
+	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
+	_text = "";
+	if !(vehicle _t isKindOf "CAManBase") then {
+		_text = _vd;
 	};
 	_text;
 };
@@ -108,102 +117,181 @@ MRTM_fnc_iconText = {
 MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
 	{
-		if (!isNull _x) then {
-			_ve = vehicle _x;
-			if (alive _ve) then {
-				if (_ve isEqualTo (vehicle player)) then {
-					_m drawIcon [
-						'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
-						[1,0,0,0.75],
-						[_x] call MRTM_fnc_getPos,
-						24,
-						24,
-						[_x] call MRTM_fnc_getDir,
-						"",
-						0,
-						0.025,
-						"TahomaB",
-						"right"
-					];
-				};
-				_m drawIcon [
-					[_x] call MRTM_fnc_iconType,
-					[_x] call MRTM_fnc_iconColor,
-					[_x] call MRTM_fnc_getPos,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_getDir,
-					[_x] call MRTM_fnc_iconText,
-					1,
-					0.025,
-					"TahomaB",
-					"right"
-				];
-			};
+		if (_ve isEqualTo (vehicle player)) then {
+			_m drawIcon [
+				'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
+				[1,0,0,0.75],
+				[_x] call MRTM_fnc_getPos,
+				24,
+				24,
+				[_x] call MRTM_fnc_getDir,
+				"",
+				0,
+				0.025,
+				"TahomaB",
+				"right"
+			];
 		};
-	} count ((allUnits) select {side group _x == side group player && isNull objectParent _x});
+		_m drawIcon [
+			[_x] call MRTM_fnc_iconType,
+			[_x] call MRTM_fnc_iconColor,
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x)});
+	{
+		_m drawIcon [
+			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+			[1, 0, 0, 1],
+			[_x] call MRTM_fnc_getPos,
+			20,
+			20,
+			0,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
 	{
 		if (!isNull _x) then {
-			_ve = vehicle _x;
-			if (alive _ve) then {
-				_m drawIcon [
-					[_x] call MRTM_fnc_iconType,
-					[_x] call MRTM_fnc_iconColor,
-					[_x] call MRTM_fnc_getPos,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_getDir,
-					[_x] call MRTM_fnc_iconText,
-					1,
-					0.025,
-					"TahomaB",
-					"right"
-				];
-			};
-		};	
-	} count (vehicles select {(crew _x) findIf {isPlayer _x} == 0 && (crew _x ) findIf {side group _x == side group player} == 0});
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		};
+	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && (side _x == side group player) && (alive _x)});
 	{
 		if (!isNull _x) then {
-			_ve = vehicle _x;
-			if (alive _ve) then {
-				_m drawIcon [
-					[_x] call MRTM_fnc_iconType,
-					[_x] call MRTM_fnc_iconColor,
-					[_x] call MRTM_fnc_getPos,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_getDir,
-					[_x] call MRTM_fnc_iconText,
-					1,
-					0.025,
-					"TahomaB",
-					"right"
-				];
-			};
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
 		};		
-	} count ((allUnitsUAV) select {side group (crew _x select 0) == side group player});
+	} count ((allUnitsUAV) select {(side group (crew _x select 0) == side group player) && (alive _x)});
 	{
 		if (!isNull _x) then {
-			_ve = vehicle _x;
-			if (alive _ve) then {
-				if (_x != vehicle player) then {
-					_m drawIcon [
-						[_x] call MRTM_fnc_iconType,
-						[_x] call MRTM_fnc_iconColor,
-						[_x] call MRTM_fnc_getPos,
-						[_x] call MRTM_fnc_iconSize,
-						[_x] call MRTM_fnc_iconSize,
-						[_x] call MRTM_fnc_getDir,
-						[_x] call MRTM_fnc_iconText,
-						1,
-						0.025,
-						"TahomaB",
-						"right"
-					];
-				};
-			};
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
 		};	
-	} count (WL_PLAYER_VEHS select {(crew _x) findIf {_x == player} != 0});
+	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x)});
+	{
+		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
+		{
+			if (!isNull _x) then {
+				_m drawIcon [
+					[_x] call MRTM_fnc_iconType,
+					if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+					[_x] call MRTM_fnc_getPos,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_getDir,
+					[_x] call MRTM_fnc_iconTextSectorScan,
+					1,
+					0.025,
+					"TahomaB",
+					"right"
+				];
+			};
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+	} forEach BIS_WL_currentlyScannedSectors;
+};
+
+MRTM_fnc_iconDrawGPS = {
+	if (
+		(!('MinimapDisplay' in ((infoPanel 'left') + (infoPanel 'right')))) ||
+		{(visibleMap)}
+	) exitWith {};	
+	_m = _this select 0;
+	{
+		if (!isNull _x) then {
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		};
+	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x) && (_x != player)});
+	{
+		_m drawIcon [
+			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+			[1, 0, 0, 1],
+			[_x] call MRTM_fnc_getPos,
+			20,
+			20,
+			0,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
+	{
+		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
+		{
+			if (!isNull _x) then {
+				_m drawIcon [
+					[_x] call MRTM_fnc_iconType,
+					if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+					[_x] call MRTM_fnc_getPos,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_getDir,
+					"",
+					1,
+					0.025,
+					"TahomaB",
+					"right"
+				];
+			};
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+	} forEach BIS_WL_currentlyScannedSectors;
 };
 
 waitUntil {
@@ -211,16 +299,16 @@ waitUntil {
 	!(isNull (findDisplay 12));
 };
 
-((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ['Draw',(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
+((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw",(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
 
 0 spawn {
 	_display1Opened = false;
 	_display2opened = false;
-	for '_x' from 0 to 1 step 0 do {
+	for '_i' from 0 to 1 step 0 do {
 		if (!(_display1Opened)) then {
 			if (!isNull ((findDisplay 160) displayCtrl 51)) then {
 				_display1Opened = TRUE;
-				((findDisplay 160) displayCtrl 51) ctrlAddEventHandler ['Draw',(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
+				((findDisplay 160) displayCtrl 51) ctrlAddEventHandler ["Draw",(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
 			};
 		} else {
 			if (isNull ((findDisplay 160) displayCtrl 51)) then {
@@ -230,7 +318,7 @@ waitUntil {
 		if (!(_display2opened)) then {
 			if (!isNull((findDisplay -1) displayCtrl 500)) then {
 				_display2opened = TRUE;
-				((findDisplay -1) displayCtrl 500) ctrlAddEventHandler ['Draw',(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
+				((findDisplay -1) displayCtrl 500) ctrlAddEventHandler ["Draw",(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
 			};
 		} else {
 			if (isNull ((findDisplay -1) displayCtrl 500)) then {
@@ -238,5 +326,24 @@ waitUntil {
 			};		
 		};
 		uiSleep 0.25;
+	};
+};
+
+0 spawn {
+	private _gps = controlNull;
+	private _e = false;
+	for "_i" from 0 to 1 step 0 do {
+		{
+			if (["311", (str _x), false] call BIS_fnc_inString) then {
+				if (!isNull (_x displayCtrl 101)) exitWith {
+					_gps = (_x displayCtrl 101);
+					_gps ctrlRemoveAllEventHandlers "Draw";
+					_gps ctrlAddEventHandler ["Draw",(format ['_this call %1',(MRTM_fnc_iconDrawGPS)])];
+					_e = true;
+				};
+			};
+		} forEach (uiNamespace getVariable 'IGUI_displays');
+		uiSleep 0.25;
+		if (_e) exitWith {};
 	};
 };

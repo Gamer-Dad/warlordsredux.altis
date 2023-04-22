@@ -49,7 +49,7 @@ class  cfgRemoteExec {
 		jip = 1;
 		class BIS_fnc_WL2_fundsDatabaseWrite
 		{
-			allowedTargets = 2;
+			allowedTargets = 1;
 			jip = 0;
 		};
 	};
@@ -115,6 +115,8 @@ class CfgFunctions {
 			class WL2_getUavConnected {};
 			class WL2_betty {};
 			class WL2_mapIcons {};
+			class WL2_orderBounty {};
+			class WL2_reportHandle {};
     	};
 		class Server 
 		{

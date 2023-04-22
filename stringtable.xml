@@ -834,6 +834,70 @@
             <Chinesesimp>请换队。这个团队已经满员了。</Chinesesimp>
             <Chinese>請換隊。這個團隊已經滿員了。</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_button_bounty">
+            <Original>Set bounty</Original>
+            <English>Set bounty</English>
+            <Czech>Nastavte odměnu</Czech>
+            <French>Définir la prime</French>
+            <German>Prämie festlegen</German>
+            <Italian>Imposta la taglia</Italian>
+            <Polish>Ustaw nagrodę</Polish>
+            <Portuguese>Definir recompensa</Portuguese>
+            <Russian>Установить награду</Russian>
+            <Spanish>Establecer recompensa</Spanish>
+            <Korean>현상금 설정</Korean>
+            <Japanese>報奨金を設定する</Japanese>
+            <Chinesesimp>设置赏金</Chinesesimp>
+            <Chinese>設置賞金</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_bounty_restr">
+            <Original>Not enough players</Original>
+            <English>Not enough players</English>
+            <Czech>Nedostatek hráčů</Czech>
+            <French>Pas assez de joueurs</French>
+            <German>Nicht genügend Spieler</German>
+            <Italian>Non ci sono abbastanza giocatori</Italian>
+            <Polish>Za mało graczy</Polish>
+            <Portuguese>Não há jogadores suficientes</Portuguese>
+            <Russian>Недостаточно игроков</Russian>
+            <Spanish>No hay suficientes jugadores</Spanish>
+            <Korean>플레이어가 충분하지 않습니다.</Korean>
+            <Japanese>プレイヤーが足りません</Japanese>
+            <Chinesesimp>玩家不足</Chinesesimp>
+            <Chinese>玩家不足</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_menu_bounty">
+            <Original>Designate a high value target</Original>
+            <English>Designate a high value target</English>
+            <Czech>Označte cíl s vysokou hodnotou</Czech>
+            <French>Désigner une cible à haute valeur</French>
+            <German>Einen hochwertigen Zielort bestimmen</German>
+            <Italian>Designare un bersaglio di alto valore</Italian>
+            <Polish>Wyznacz wysoko wartościowy cel</Polish>
+            <Portuguese>Designar um alvo de alto valor</Portuguese>
+            <Russian>Назначить цель c высокой ценностью</Russian>
+            <Spanish>Designar un objetivo de alto valor</Spanish>
+            <Korean>고가치 대상 지정</Korean>
+            <Japanese>高い価値の目標を指定する</Japanese>
+            <Chinesesimp>指定高价值目标</Chinesesimp>
+            <Chinese>指定高價值目標</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_menu_bounty_info">
+            <Original>Set a bounty on someone for players to collect.</Original>
+            <English>Set a bounty on someone for players to collect.</English>
+            <Czech>Nastavte odměnu na někoho, aby ji mohli hráči vyzvednout.</Czech>
+            <French>Mettre une prime sur quelqu'un pour que les joueurs la collectent.</French>
+            <German>Setzen Sie ein Kopfgeld auf jemanden aus, damit Spieler es einsammeln können.</German>
+            <Italian>Metti una taglia su qualcuno perché i giocatori la raccolgano.</Italian>
+            <Polish>Wystaw nagrodę za głowę kogoś, którą gracze mogą zdobyć.</Polish>
+            <Portuguese>Coloque uma recompensa em alguém para que os jogadores possam coletá-la.</Portuguese>
+            <Russian>Установите награду на кого-то, чтобы игроки могли ee собрать.</Russian>
+            <Spanish>Coloca una recompensa sobre alguien para que los jugadores la recolecten.</Spanish>
+            <Korean>플레이어가 모아들일 수 있는 누군가에게 보상을 지급하세요.</Korean>
+            <Japanese>プレイヤーが集めるために誰かに懸賞金を設定します。</Japanese>
+            <Chinesesimp>对某个人设置赏金，供玩家收集。</Chinesesimp>
+            <Chinese>對某人設置賞金，供玩家收集。</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>

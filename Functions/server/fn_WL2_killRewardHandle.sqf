@@ -3,6 +3,7 @@
 params ["_unit", "_killer", "_instigator"];
 
 _killReward = 0;
+_bounty = 0;
 if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer) # 0};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
@@ -34,10 +35,16 @@ if !(isNull _instigator) then {
 				};
 			} else {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
+				_bounty = _unit getVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _unit], 0];
+				_bounty = ((_bounty / 100) * 80);
+				_killReward = _killReward + _bounty;
 			};
 			[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
 			private _uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			if (_bounty > 0) then {
+				[format ["%1 has collected %2's bounty of %3CP!", name _sender, name _target, _bounty]] remoteExec ["systemChat", -2];
+			};
 		};
 	};
 };
