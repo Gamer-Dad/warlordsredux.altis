@@ -28,7 +28,6 @@ while{TRUE}do{
 		code at the same round which may cause strange behaviour
 		*/
 		if((count _r)>0)then{[_v,_r select 0]spawn DAPS_fnc_Generic;_l=.5;_reg pushBack(_r select 0)};
-		if((count _r)>1)then{[_v,_r select 1]spawn DAPS_fnc_Generic;_l=.5;_reg pushBack(_r select 1)};
 		if(_l>0)then{sleep _l;_l=0};
 	};
 	if((call DAPS_fnc_Time)>_time)then{
