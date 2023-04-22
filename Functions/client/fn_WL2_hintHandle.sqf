@@ -1,7 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_event", ["_show", TRUE]];
-
+params ["_killer", "_event", ["_show", true]];
 
 switch (_event) do {
 	case "init": {
@@ -9,9 +8,9 @@ switch (_event) do {
 			_varName = format ["BIS_WL_showHint_%1", _x];
 			
 			if (isNil _varName) then {
-				missionNamespace setVariable [_varName, FALSE]
+				missionNamespace setVariable [_varName, false]
 			};
-		} forEach ["assembly", "maintenance", "targetResetVoting"];
+		} forEach ["assembly", "maintenance", "targetResetVoting", "report"];
 		
 		_hintText = "";
 		_lastHint = "";
@@ -47,6 +46,18 @@ switch (_event) do {
 					if (_hintText == "") then {""} else {"<br/><br/>"}
 				];
 			};
+
+			if (BIS_WL_showHint_report) then {
+				_hintText = _hintText + format [
+				"<t size = '1' shadow = '0'><t valign = 'top'> %1 </t><br/><t align = 'left' >%2: </t><t align = 'right' color = '#4bff58'>%3</t><br/><t align = 'left'>%4: </t><t align = 'right' color = '#ff4b4b'> %5 </t></t>",
+				format ["You where killed by: %1. You can choose to report him or forgive him.", (name _killer)],
+				localize "STR_dik_space",
+				"Forgive",
+				localize "STR_dik_back",
+				"Report"
+				];
+			};
+
 			if((_hintText != "" ) or ( _lastHint != "")) then {
 				hintSilent parseText _hintText;
 				_lastHint = _hintText;

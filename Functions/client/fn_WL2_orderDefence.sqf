@@ -29,7 +29,7 @@ detach _asset;
 _offset_tweaked = [_offset select 0, _offset select 1, (_offset select 2) - _h];
 _asset attachTo [player, _offset_tweaked];
 
-"assembly" call BIS_fnc_WL2_hintHandle;
+[player, "assembly"] call BIS_fnc_WL2_hintHandle;
 
 BIS_WL_spacePressed = false;
 BIS_WL_backspacePressed = false;
@@ -73,7 +73,7 @@ _offset set [1, _asset distance player];
 detach _asset;
 deleteVehicle _asset;
 
-["assembly", false] call BIS_fnc_WL2_hintHandle;
+[player, "assembly", false] call BIS_fnc_WL2_hintHandle;
 
 if (BIS_WL_spacePressed) then {
 	playSound "assemble_target";
