@@ -264,19 +264,21 @@ MRTM_fnc_iconDrawGPS = {
 		if (!isNull _x) then {
 			_ve = vehicle _x;
 			if (alive _ve) then {
-				_m drawIcon [
-					[_x] call MRTM_fnc_iconType,
-					[_x] call MRTM_fnc_iconColor,
-					[_x] call MRTM_fnc_getPos,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_getDir,
-					[_x] call MRTM_fnc_iconText,
-					1,
-					0.025,
-					"TahomaB",
-					"right"
-				];
+				if (_x != player) then {
+					_m drawIcon [
+						[_x] call MRTM_fnc_iconType,
+						[_x] call MRTM_fnc_iconColor,
+						[_x] call MRTM_fnc_getPos,
+						[_x] call MRTM_fnc_iconSize,
+						[_x] call MRTM_fnc_iconSize,
+						[_x] call MRTM_fnc_getDir,
+						[_x] call MRTM_fnc_iconText,
+						1,
+						0.025,
+						"TahomaB",
+						"right"
+					];
+				};
 			};
 		};
 	} count ((allUnits) select {side group _x == side group player && isNull objectParent _x});
