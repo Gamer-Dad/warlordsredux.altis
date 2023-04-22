@@ -169,16 +169,16 @@ if (isPlayer _owner) then {
 								if ((_asset getVariable "BIS_WL_nextRearm") <= WL_SYNCED_TIME) then {
 									_curWeapon = currentWeapon _asset;
 									{
-											if (_asset isKindOf "LandVehicle") then {
-												
-												private _turret = _x;
-												private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
-												{											
-													  	_asset removeMagazineTurret [_x, _turret];
-														_asset setVehicleAmmoDef 1; //_asset addMagazineTurret [_x, _turret];
-												} forEach _mags;
-																				 
-											};
+										if (_asset isKindOf "LandVehicle") then {
+											
+											private _turret = _x;
+											private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
+											{											
+													_asset removeMagazineTurret [_x, _turret];
+													[_asset, 1]remoteExec ["setVehicleAmmoDef", 0];
+											} forEach _mags;
+																				
+										};
 									} forEach allTurrets _asset;
 
 									_asset spawn DAPS_fnc_RearmAPS;
