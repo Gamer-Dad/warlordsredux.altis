@@ -72,6 +72,12 @@ addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	{
+		if (typeOf _x == "B_Truck_01_medical_F") then {
+			missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
+		};
+		if (typeOf _x == "O_Truck_03_medical_F") then {
+			missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
+		};
 		_x call BIS_fnc_WL2_sub_deleteAsset;
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	
