@@ -1,31 +1,26 @@
 sleep 1;
 
-disReg=[];
+disReg = [];
 
-DIS_fnc_IsSAM=compile preprocessFile"scripts\DIS\SAM\IsSAM.sqf";
-DIS_fnc_RegisterSAM=compile preprocessFile"scripts\DIS\SAM\RegisterSAM.sqf";
-//dao_fnc_IsAAA=compile preprocessFile"DAO\Scripts\SAM\IsAAA.sqf";
-//DIS_fnc_RegisterSAM=compile preprocessFile"DAO\Scripts\SAM\RegisterSAM.sqf";
+DIS_fnc_IsSAM = compile preprocessFile"scripts\DIS\SAM\IsSAM.sqf";
+DIS_fnc_RegisterSAM = compile preprocessFile"scripts\DIS\SAM\RegisterSAM.sqf";
 
-//DAO_fnc_CheckIfAircraft=compile preprocessFile"DAO\Scripts\Aircraft\CheckIfAircraft.sqf";
+private _units = [];
+private _isSAM = false;
 
-//if!(isServer)exitWith{};
-
-private _units=[];
-private _isSAM=false;
-
-while{TRUE}do{
-	_units=[]+vehicles;
-	{if((count(crew _x))<1)then{_units=_units-[_x]}}forEach _units;
-	_units=_units-disReg;
-	// Add everything to Zeus for testing
-	{_x addCuratorEditableObjects[_units,TRUE]}forEach allCurators;
+while {true} do {
+	_units = [] + vehicles;
+	{
+		_units = _units - [_x];
+	} forEach _units select {((count (crew _x)) < 1)};
+	_units = _units - disReg;
 	
 	{
-		_isSAM=_x call DIS_fnc_IsSAM;
-		if(_isSAM)then{[_x]spawn DIS_fnc_RegisterSAM};
-		//if(_x call DIS_fnc_CheckIfAircraft)then{[_x]spawn DIS_fnc_RegisterAircraft};
-	}forEach _units;
-	publicVariable"daoVAMinfo";
+		_isSAM = _x call DIS_fnc_IsSAM;
+		if (_isSAM) then {
+			[_x] spawn DIS_fnc_RegisterSAM
+		};
+	} forEach _units;
+	publicVariable "daoVAMinfo"; // not needed?
 	sleep 5;
 };
