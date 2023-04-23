@@ -329,6 +329,7 @@ sleep 0.1;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
+[player, "nearSL", {(player distance2D (leader group player) <= 50)}] call BIS_fnc_WL2_hintHandle;
 
 sleep 0.1;
 

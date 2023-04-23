@@ -1,5 +1,10 @@
-// Spawn the Vehicle Unflip Script Loop.
+params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 0 spawn KSLOOP_fnc_unflipVehicleAddAction;
+
+if ((_newUnit != (leader group _newUnit)) && ((_oldUnit distance (leader group _newUnit)) < 50) && (alive (leader group _newUnit))) then {
+	0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", (owner _newUnit)];
+	_newUnit setVehiclePosition [getPosASL (leader group _newUnit), [], 2, "NONE"];
+};
 
 player addAction [
 	"Commemorate",

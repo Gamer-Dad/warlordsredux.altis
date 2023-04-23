@@ -10,7 +10,7 @@ switch (_event) do {
 			if (isNil _varName) then {
 				missionNamespace setVariable [_varName, false]
 			};
-		} forEach ["assembly", "maintenance", "targetResetVoting", "report"];
+		} forEach ["assembly", "maintenance", "targetResetVoting", "report", "nearSL"];
 		
 		_hintText = "";
 		_lastHint = "";
@@ -77,7 +77,10 @@ switch (_event) do {
 				while {!BIS_WL_missionEnd} do {
 					missionNamespace setVariable [_varName, call _show];
 					if (_varName == "BIS_WL_showHint_maintenance") then {
-						[FALSE] call BIS_fnc_WL2_refreshOSD;
+						[false] call BIS_fnc_WL2_refreshOSD;
+					};
+					if (_varName == "BIS_WL_showHint_nearSL") then {
+						[false] call BIS_fnc_WL2_refreshOSD;
 					};
 					sleep WL_TIMEOUT_STANDARD;
 				};
