@@ -1,6 +1,6 @@
 // Compile all vehicle types into single/double and the overall APS list
 // Vehicles with a single launcher
-dapsSingle=dapsLight+dapsMedium+dapsHeavy+dapsDazzler+dapsPersonal;
+dapsSingle = dapsLight + dapsMedium + dapsHeavy;
 // Vehicles with double launchers
-dapsDouble=dapsTrophyLV+dapsTrophyMV+dapsTrophyHV+dapsTrophyHVe+dapsArena+dapsDrozd+dapsDrozd2+dapsAfganit+dapsAfganitE+dapsIronFist+dapsAMAP;
-dapsAPStypes=dapsSingle+dapsDouble;
+dapsDouble = [];
+dapsAPStypes = dapsSingle + dapsDouble;

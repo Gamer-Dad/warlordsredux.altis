@@ -6,46 +6,28 @@ waitUntil{dapsDefinitionsLoaded};
 _vehicleType="";
 sleep(random .3);
 {
-_vehicleType=typeOf _x;
-dapsLight=dapsLight-[_vehicleType];
-dapsMedium=dapsMedium-[_vehicleType];
-dapsHeavy=dapsHeavy-[_vehicleType];
-dapsTrophyLV=dapsTrophyLV-[_vehicleType];
-dapsTrophyMV=dapsTrophyMV-[_vehicleType];
-dapsTrophyHV=dapsTrophyHV-[_vehicleType];
-dapsTrophyHVe=dapsTrophyHVe-[_vehicleType];
-dapsArena=dapsArena-[_vehicleType];
-dapsDazzler=dapsDazzler-[_vehicleType];
-dapsDrozd=dapsDrozd-[_vehicleType];
-dapsDrozd2=dapsDrozd2-[_vehicleType];
-dapsAfganit=dapsAfganit-[_vehicleType];
-dapsAfganitE=dapsAfganitE-[_vehicleType];
-dapsIronFist=dapsIronFist-[_vehicleType];
-dapsAMAP=dapsAMAP-[_vehicleType];
-if(_APS=="Light")then{dapsLight pushBack _vehicleType};
-if(_APS=="Medium")then{dapsMedium pushBack _vehicleType};
-if(_APS=="Heavy")then{dapsHeavy pushBack _vehicleType};
-if(_APS=="TrophyLV")then{dapsTrophyLV pushBack _vehicleType};
-if(_APS=="TrophyMV")then{dapsTrophyMV pushBack _vehicleType};
-if(_APS=="TrophyHV")then{dapsTrophyHV pushBack _vehicleType};
-if(_APS=="TrophyHVe")then{dapsTrophyHVe pushBack _vehicleType};
-if(_APS=="Arena")then{dapsArena pushBack _vehicleType};
-if(_APS=="Dazzler")then{dapsDazzler pushBack _vehicleType};
-if(_APS=="Drozd")then{dapsDrozd pushBack _vehicleType};
-if(_APS=="Drozd2")then{dapsDrozd2 pushBack _vehicleType};
-if(_APS=="Afganit")then{dapsAfganit pushBack _vehicleType};
-if(_APS=="AfganitE")then{dapsAfganitE pushBack _vehicleType};
-if(_APS=="IronFist")then{dapsIronFist pushBack _vehicleType};
-if(_APS=="AMAP")then{dapsAMAP pushBack _vehicleType};
-}forEach _units;
+	_vehicleType = typeOf _x;
+	dapsLight = dapsLight - [_vehicleType];
+	dapsMedium = dapsMedium - [_vehicleType];
+	dapsHeavy = dapsHeavy - [_vehicleType];
+	dapsDazzler = dapsDazzler - [_vehicleType];
+	if(_APS == "Light") then {dapsLight pushBack _vehicleType};
+	if(_APS == "Medium") then {dapsMedium pushBack _vehicleType};
+	if(_APS == "Heavy") then {dapsHeavy pushBack _vehicleType};
+	if (_APS == "Dazzler") then {dapsDazzler pushBack _vehicleType};
+} forEach _units;
 sleep 2;
 dapsDefinitionsLoaded2=TRUE;
 publicVariable"dapsDefinitionsLoaded2";
 sleep .5;
 {
-if(_x isKindOf"MAN")then{deleteVehicle _x}else{
-	{deleteVehicle _x}forEach(crew _x);
-	deleteVehicle _x;
-};
-sleep .1;
+	if (_x isKindOf"MAN") then {
+		deleteVehicle _x
+	} else {
+		{
+			deleteVehicle _x
+		} forEach (crew _x);
+		deleteVehicle _x;
+	};
+	sleep .1;
 }forEach _units;
