@@ -1,6 +1,4 @@
 private _v = _this;
-
-// if !(local _v) exitWith{};
 private _m = [];
 private _r = [];
 private _l = 0;
@@ -18,7 +16,7 @@ while {true} do {
     if !(alive _v) exitWith {};
 
     if (_v call DAPS_fnc_Active) then {
-        _r = [_v, 150] call DAPS_fnc_Inc; // Function stored in GetIncoming.sqf
+        _r = [_v, 100] call DAPS_fnc_Inc; // Function stored in GetIncoming.sqf
 
         if ((count _r) > 0) then {
 			if !((_r select 0) in _reg) then {
