@@ -58,6 +58,7 @@ uiNamespace setVariable ["BIS_WL_deployKeyHandle", _deployKeyHandle];
 		!alive player ||
 		lifeState player == "INCAPACITATED" ||
 		triggerActivated BIS_WL_enemiesCheckTrigger ||
+		(getPosATL player) select 2 > 1 ||
 		(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
 	};
 	if !(BIS_WL_spacePressed) then {
