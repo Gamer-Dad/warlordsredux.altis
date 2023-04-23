@@ -67,7 +67,9 @@ while {dialog} do {
 	lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
 	lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 
-	inventoryKey = actionKeysNames "gear";
+	_inventoryKey = actionKeysNames "gear";
+	_groupKey = actionKeysNames "teamSwitch";
+	_gearKey = actionKeysNames "cycleThrownItems";
 
 	switch (_curSel) do {
 		case "pageAbt": {
@@ -97,9 +99,10 @@ while {dialog} do {
 			parseText format ["<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Walords Redux Guide from Ferrous Creek</a>"], lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_11", lineBreak,
-			format [ localize "STR_MRTM_welcomeInteract_12", inventoryKey], lineBreak,
+			format [localize "STR_MRTM_welcomeInteract_12", _inventoryKey], lineBreak,
+			format [localize "STR_MRTM_welcomeInteract_22", _groupKey], lineBreak,
 			localize "STR_MRTM_welcomeInteract_13", lineBreak,
-			localize "STR_MRTM_welcomeInteract_14", lineBreak,
+			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
 			""
 			];
 		};
