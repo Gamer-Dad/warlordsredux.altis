@@ -2,13 +2,25 @@
 
 createDialog ["welcomeScreen", true];
 
-howRead = false;
-
 (findDisplay 6969) displayAddEventhandler ["KeyDown",{
 	if (dialog) then {
-		(_this select 1) isEqualTo 1;
+		_button = (_this select 1);
+		switch (_button) do {
+			case 1: {true};
+			case 15: {true};
+			case 56: {true};
+			default {false};
+		};
 	};
 }];
+
+0 spawn {
+	while {dialog} do {
+		_time = serverTime + 5;
+		waitUntil {sleep 0.1; serverTime > _time};
+		ctrlEnable [1, true];
+	};
+};
 
 if (side player == west) then {
 	private _control1 = findDisplay 6969 displayCtrl 69692;
@@ -48,13 +60,6 @@ while {dialog} do {
 	_index = lbCurSel 69695;
 	_curSel = lbData [69695, _index];
 
-	if (howRead == false) then {
-		ctrlShow [6969691, true];
-		ctrlSetText [6969691, localize "STR_MRTM_welcomeInteract_21"];
-	} else {
-		ctrlShow [6969691, false];
-	};
-
 	lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
 	lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
 	lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
@@ -81,7 +86,6 @@ while {dialog} do {
 		};
 
 		case "pageHow": {
-			howRead = true;
 			ctrlSetText [69694, "img\wl.paa"];
 
 			private _control = findDisplay 6969 displayCtrl 69696;

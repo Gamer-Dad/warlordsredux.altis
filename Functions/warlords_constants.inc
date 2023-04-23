@@ -1,3 +1,5 @@
+#define IDC_OK            1 // emulate "Ok" button
+#define IDC_CANCEL        2 // emulate "Cancel" button
 #define WL_RESPAWN_MARKERS_CNT 20
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_INFANTRY 120
 #define WL_ZONE_RESTRICTION_KILL_TIMEOUT_VEHICLES 120

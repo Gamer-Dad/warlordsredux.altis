@@ -50,38 +50,6 @@ class welcomeScreen
 			h = 0.033 * safezoneH;
 		};
 
-		class welcomeCloseButton: RscButtonMRTM
-		{
-			idc = 1;
-			access = 0;
-			type = CT_BUTTON;
-			text = "Close";
-			colorText[] = {1,1,1,1};
-			colorDisabled[] = {0,0,0,0};
-			colorBackground[] = {0,0,0,0};
-			colorBackgroundDisabled[] = {0,0,0,0};
-			colorBackgroundActive[] = {0,0,0,0};
-			colorFocused[] = {0,0,0,0};
-			colorShadow[] = {0,0,0,0};
-			colorBorder[] = {1,1,1,0};
-			soundEnter[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundEnter", 0.09, 1};
-			soundPush[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundPush", 0.0, 0};
-			soundClick[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundClick", 0.07, 1};
-			soundEscape[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundEscape", 0.09, 1};
-			style = 2;
-			x = 0.678594 * safezoneW + safezoneX;
-			y = 0.794 * safezoneH + safezoneY;
-			w = 0.059531 * safezoneW;
-			h = 0.033 * safezoneH;
-			shadow = 0;
-			sizeEx = 0.03921;
-			offsetX = 0.000;
-			offsetY = 0.000;
-			offsetPressedX = 0.002;
-			offsetPressedY = 0.002;
-			borderSize = 0;
-		};
-
 		class welcomeTextToRead: RscStructuredTextMRTM
 		{
 			idc = 6969691;
@@ -182,6 +150,38 @@ class welcomeScreen
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
 			h = 0.286 * safezoneH;
+		};
+		class welcomeCloseButton: RscButtonMRTM
+		{
+			idc = 1;
+			access = 0;
+			type = CT_BUTTON;
+			text = "Close";
+			colorText[] = {1,1,1,1};
+			colorDisabled[] = {0,0,0,0};
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBackgroundActive[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorBorder[] = {1,1,1,0};
+			soundEnter[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundEnter", 0.09, 1};
+			soundPush[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundPush", 0.0, 0};
+			soundClick[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundClick", 0.07, 1};
+			soundEscape[] = {"\A3\ui_f\data\Sound\RscButtonMenu\soundEscape", 0.09, 1};
+			style = 2;
+			x = 0.678594 * safezoneW + safezoneX;
+			y = 0.794 * safezoneH + safezoneY;
+			w = 0.059531 * safezoneW;
+			h = 0.033 * safezoneH;
+			shadow = 0;
+			sizeEx = 0.03921;
+			offsetX = 0.000;
+			offsetY = 0.000;
+			offsetPressedX = 0.002;
+			offsetPressedY = 0.002;
+			borderSize = 0;
+			onLoad =  "(_this # 0) ctrlEnable false;";
 		};
 	};
 };
