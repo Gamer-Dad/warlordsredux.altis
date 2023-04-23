@@ -2,8 +2,6 @@ private _v = _this select 0;
 private _i = _this select 1;
 private _d = _v distance _i;
 
-hint "Generic";
-
 if (_d < 20) exitWith {};
 if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
 
@@ -33,7 +31,6 @@ if (_ex) exitWith {};
 
 deleteVehicle _i;
 _p call DAPS_fnc_Blast;
-hint "blast";
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
