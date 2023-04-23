@@ -108,10 +108,10 @@ if (_toContested) then {
 	sleep 1;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	player setVehiclePosition [_pos, [], 1, "NONE"];
-	private _tagAlong = (units group _sender) select {(_x distance2D player <= WL_FAST_TRAVEL_TEAM_RADIUS) && (vehicle _x == _x) && ((_x getVariable ["BIS_WL_Owned_By", ""]) == getPlayerUID player)};
+	player setVehiclePosition [_destination, [], 1, "NONE"];
+	private _tagAlong = (units group player) select {(_x distance2D player <= 200) && (vehicle _x == _x) && ((_x getVariable ["BIS_WL_Owned_By", ""]) == getPlayerUID player)};
 	{
-		_x setVehiclePosition [_pos, [], 1, "NONE"];
+		_x setVehiclePosition [_destination, [], 1, "NONE"];
 	} forEach _tagAlong;
 
 	sleep 1;
