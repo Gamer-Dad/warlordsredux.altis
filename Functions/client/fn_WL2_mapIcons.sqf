@@ -242,19 +242,35 @@ MRTM_fnc_iconDrawGPS = {
 	_m = _this select 0;
 	{
 		if (!isNull _x) then {
-			_m drawIcon [
-				[_x] call MRTM_fnc_iconType,
-				[_x] call MRTM_fnc_iconColor,
-				[_x] call MRTM_fnc_getPos,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_getDir,
-				[_x] call MRTM_fnc_iconText,
-				1,
-				0.025,
-				"TahomaB",
-				"right"
-			];
+			if (_x in (units (group player))) then {
+				_m drawIcon [
+					if (_x == (leader (group player))) then {"\a3\3den\data\displays\display3den\panelright\modefavorites_ca.paa"} else {[_x] call MRTM_fnc_iconType},
+					[0, 0.65, 0, 1],
+					[_x] call MRTM_fnc_getPos,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_getDir,
+					[_x] call MRTM_fnc_iconText,
+					1,
+					0.025,
+					"TahomaB",
+					"right"
+				];
+			} else {
+				_m drawIcon [
+					[_x] call MRTM_fnc_iconType,
+					[_x] call MRTM_fnc_iconColor,
+					[_x] call MRTM_fnc_getPos,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_getDir,
+					[_x] call MRTM_fnc_iconText,
+					1,
+					0.025,
+					"TahomaB",
+					"right"
+				];
+			};
 		};
 	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x) && (_x != player)});
 	{
