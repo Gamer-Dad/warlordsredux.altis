@@ -249,7 +249,7 @@ MRTM_fnc_iconDrawGPS = {
 					[_x] call MRTM_fnc_getPos,
 					[_x] call MRTM_fnc_iconSize,
 					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_getDir,
+					if (_x == (leader (group player))) then {0} else {[_x] call MRTM_fnc_getDir},
 					[_x] call MRTM_fnc_iconText,
 					1,
 					0.025,
