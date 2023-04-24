@@ -16,7 +16,7 @@ createDialog ["welcomeScreen", true];
 
 0 spawn {
 	while {dialog} do {
-		_time = serverTime + 5;
+		_time = serverTime + 7;
 		waitUntil {sleep 0.1; serverTime > _time};
 		ctrlEnable [1, true];
 	};
