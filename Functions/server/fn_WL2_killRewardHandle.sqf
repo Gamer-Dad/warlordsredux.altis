@@ -44,6 +44,7 @@ if !(isNull _instigator) then {
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			if (_bounty > 0) then {
 				[format ["%1 has collected %2's bounty of %3CP!", name _sender, name _target, _bounty]] remoteExec ["systemChat", -2];
+				_unit setVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _unit], nil, true];
 			};
 		};
 	};

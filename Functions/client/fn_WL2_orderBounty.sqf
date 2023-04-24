@@ -37,7 +37,7 @@ _purchase_bounty_cancel ctrlSetFade 0;
 _purchase_bounty_cancel ctrlEnable TRUE;
 _purchase_bounty_cancel ctrlCommit 0;
 
-{_purchase_bounty_units lbAdd name _x} forEach ((BIS_WL_allWarlords select {(isPlayer _x) && ((_x getVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _x], "None"]) != "None") && (side group _x != side group player)}) - [player]);
+{_purchase_bounty_units lbAdd name _x} forEach ((BIS_WL_allWarlords select {(isPlayer _x) && ((_x getVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _x], "None"]) == "None") && (side group _x != side group player)}) - [player]);
 _purchase_bounty_units lbSetCurSel 0;
 
 [_purchase_bounty_units, _purchase_bounty_ok, _purchase_bounty_amount] spawn {
@@ -71,7 +71,7 @@ _purchase_bounty_units lbSetCurSel 0;
 		};
 		_set = (_this # 0) lbText lbCurSel (_this # 0);
 		lbClear (_this # 0);
-		{(_this # 0) lbAdd name _x} forEach ((BIS_WL_allWarlords select {(isPlayer _x) && ((_x getVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _x], "None"]) != "None") && (side group _x != side group player)}) - [player]);
+		{(_this # 0) lbAdd name _x} forEach ((BIS_WL_allWarlords select {(isPlayer _x) && ((_x getVariable [format ["BIS_WL_Bounty_%1", getPlayerUID _x], "None"]) == "None") && (side group _x != side group player)}) - [player]);
 		lbSort (_this # 0);
 		if (lbSize (_this # 0) == 0) exitWith {
 			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
