@@ -22,10 +22,20 @@ if !(_frag) exitWith {};
 if ((count _targets) < 1) exitWith {};
 _target = (_targets select 0);
 
+MRTM_fnc_getOwner = {
+	params ["_t"];
+	_owner = (crew _t) select 0;
+	if !(isAutonomous _t) then {
+		_owner = (crew _t) select {isPlayer _x};
+		_owner = _owner select 0;
+	};
+	_owner;
+};
+
 // Secondary at target location
 _type = "ammo_Missile_rim116";
 private _m2 = createVehicle[_type, _tPos, [] , 45, "FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
-_m2 setShotParents [_unit, gunner _unit];
+_m2 setShotParents [_unit, [_unit] call MRTM_fnc_getOwner];
 
 triggerAmmo _m2;
 
