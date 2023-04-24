@@ -7,7 +7,7 @@ _bounty = 0;
 if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer) # 0};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
-	_responsibleLeader = "";
+	_responsibleLeader = _instigator;
 	if (isPlayer _instigator) then {
 		_responsibleLeader = _instigator;
 	} else {
