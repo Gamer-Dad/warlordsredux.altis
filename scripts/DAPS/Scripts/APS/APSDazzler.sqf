@@ -2,7 +2,7 @@ private _v = _this;
 private _m = [];
 private _sm = [];
 private _p = [];
-private _r = [];
+private _a = [];
 private _l = 0;
 
 _v setVariable ["dapsActive", true, true];
@@ -21,27 +21,13 @@ while {true} do {
 		_m = _v nearObjects ["MissileCore", 225];
 		_sm = _v nearObjects ["SubmunitionCore", 225];
 		_p = _v nearObjects ["ammo_Penetrator_Base", 225];
-		_r = _r + _m + _sm + _p;
+		_a = _r + _m + _sm + _p;
 
-		if ((count _r)> 0) then{
-			if !((_r select 0) in _reg) then {
-				[_v, _r select 0] spawn DAPS_fnc_Dazzler;
+		if ((count _a) > 0) then{
+			if !((_a select 0) in _reg) then {
+				[_v, _a select 0] spawn DAPS_fnc_Dazzler;
 				_l = .3;
-				_reg pushBackUnique (_r select 0);
-			};
-		};
-		if ((count _r) > 1) then{
-			if !((_r select 0) in _reg) then {
-				[_v, _r select 1] spawn DAPS_fnc_Dazzler;
-				_l = .3;
-				_reg pushBackUnique (_r select 1);
-			};
-		};
-		if ((count _r) > 2) then{
-			if !((_r select 0) in _reg) then {
-				[_v, _r select 2] spawn DAPS_fnc_Dazzler;
-				_l = .3;
-				_reg pushBackUnique (_r select 2);
+				_reg pushBackUnique (_a select 0);
 			};
 		};
 		if (_l > 0) then {
@@ -55,7 +41,6 @@ while {true} do {
 				_reg = _reg - [_x];
 			;}
 		} forEach _reg;
-		_time = TIME + 60;
 	};
 	sleep .01;
 };

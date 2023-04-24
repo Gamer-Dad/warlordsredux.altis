@@ -1,5 +1,5 @@
 private _v = _this;
-private _r = [];
+private _a = [];
 
 _v setVariable ["dapsActive", TRUE, TRUE];
 _v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), TRUE];
@@ -12,20 +12,18 @@ private _reg = [];
 while {true} do {
 	if !(alive _v) exitWith {};
 	if (_v call DAPS_fnc_Active) then {
-		_r = _v nearObjects ["RocketCore", 100];
+		_a = _v nearObjects ["RocketCore", 100];
 
 		if ((count _r) > 0) then {
-			if !((_r select 0) in _reg) then {
-				[_v, _r select 0] spawn DAPS_fnc_Generic;
+			if !((_a select 0) in _reg) then {
+				[_v, _a select 0] spawn DAPS_fnc_Generic;
 				sleep 0.7;
-				_reg pushBackUnique (_r select 0);
+				_reg pushBackUnique (_a select 0);
 			};
 		};
 	};
 	
 	if ((call DAPS_fnc_Time) > _time) then {
-		_v call DAPS_fnc_RearmCheck;
-		_time = (call DAPS_fnc_Time) + dapsRearmDelay;
 		{
 			if !(alive _x) then {
 				_reg = _reg - [_x];
