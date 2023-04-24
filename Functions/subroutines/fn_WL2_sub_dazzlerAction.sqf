@@ -17,7 +17,7 @@ private _actionID = _asset addAction [
 	false,
 	false,
 	"",
-	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerGrp', grpNull])",
+	"alive _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
 	30,
 	true
 ];
