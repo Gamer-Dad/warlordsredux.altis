@@ -202,39 +202,6 @@ player addEventHandler ["InventoryOpened",{
 	_override;
 }];
 
-(group player) addEventHandler ["unitLeft", {
-	params ["_group", "_oldUnit"];
-	if (isPlayer _oldUnit) then {
-		{
-			_u = _x;
-			[_u, _oldUnit] spawn {
-				params ["_u", "_p"];
-				[_u] joinSilent (group _p);
-				[_p, _u] spawn BIS_fnc_WL2_returnOwnerShip;
-			};
-		} forEach (allUnits select {_x != _oldUnit && (_x getVariable "BIS_WL_Owned_By" == getPlayerUID _oldUnit)});
-		(group player) removeEventHandler [_thisEvent, _thisEventHandler];
-	};
-
-	0 spawn {
-		waitUntil {!isNull (group player)};
-		(group player) addEventHandler ["unitLeft", {
-			params ["_group", "_oldUnit"];
-			if (isPlayer _oldUnit) then {
-				{
-					_u = _x;
-					[_u, _oldUnit] spawn {
-						params ["_u", "_p"];
-						[_u] joinSilent (group _p);
-						[_p, _u] spawn BIS_fnc_WL2_returnOwnerShip;
-					};
-				} forEach (allUnits select {_x != _oldUnit && (_x getVariable "BIS_WL_Owned_By" == getPlayerUID _oldUnit)});
-				(group player) removeEventHandler [_thisEvent, _thisEventHandler];
-			};
-		}];
-	};
-}];
-
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
@@ -426,4 +393,15 @@ player addAction [
 			};
 		};
 	}];
+};
+
+0 spawn {
+	while {!BIS_WL_missionEnd} do {
+		waitUntil {!isNull (group player)};
+		{
+			[_x] joinSilent (group player);
+			_x setVariable ["BIS_WL_ownerGrp", (group player)];
+		} forEach (allUnits select {(_x getVariable "BIS_WL_Owned_By" == getPlayerUID player) && !(_x in (units (group player)))});
+		sleep 0.5;
+	};
 };

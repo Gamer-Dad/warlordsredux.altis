@@ -88,23 +88,6 @@ addMissionEventHandler ["HandleDisconnect", {
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
-addMissionEventHandler ["GroupCreated", {
-	params ["_group"];
-	_group addEventHandler ["unitLeft", {
-		params ["_group", "_oldUnit"];
-		if (isPlayer _oldUnit) then {
-			{
-				_u = _x;
-				[_u, _oldUnit] spawn {
-					params ["_u", "_p"];
-					[_u] joinSilent (group _p);
-					[_p, _u] remoteExec ["BIS_fnc_WL2_returnOwnerShip", (owner _p)];
-				};
-			} forEach (allUnits select {_x != _oldUnit && (_x getVariable "BIS_WL_Owned_By" == getPlayerUID _oldUnit)});
-		};
-	}];
-}];
-
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	

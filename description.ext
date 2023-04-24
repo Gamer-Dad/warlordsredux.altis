@@ -163,7 +163,6 @@ class CfgFunctions {
 			class WL2_syncedTime {};
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
-			class WL2_returnOwnerShip {};
     	};
 		class Subroutines 
 		{
