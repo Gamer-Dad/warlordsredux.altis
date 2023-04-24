@@ -7,6 +7,7 @@ dapsDazzled pushBack _i;
 if (_i call DAPS_fnc_IsLaserGuided) then {_exit = false};
 if (_i call DAPS_fnc_IsIRguided) then {_exit = false};
 if (_i call DAPS_fnc_IsVisualGuided) then {_exit = false};
+if (typeOf _i == "M_Vorona_HEAT" || typeOf _i == "M_Vorona_HE") then {_exit = false};
 if (_exit) exitWith {};
 
 private _d = _v distance _i;
