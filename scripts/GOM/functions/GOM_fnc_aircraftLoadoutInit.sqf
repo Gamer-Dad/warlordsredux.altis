@@ -426,11 +426,8 @@ _getText = (_repairVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + s
 
 	};
 
-	_driverName = name assigneddriver _veh;
-
-	_rank = [assignedDriver _veh,"displayName"] call BIS_fnc_rankParams;
-	_rank = _rank + " ";
-	if (assigneddriver _veh isEqualTo objnull) then {_driverName = "No Pilot";_rank = ""};
+	_driverName = (name (_veh getVariable "BIS_WL_ownerAsset"));
+	_rank = "";
 
 	_mag = "N/A";
 	_get = "";
