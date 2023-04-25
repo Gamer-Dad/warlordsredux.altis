@@ -27,7 +27,7 @@ while {true} do {
         _p = _v nearObjects ["ammo_Penetrator_Base", 100];
         _a = _r + _m + _s + _sm + _p;
 
-        if ((count _r) > 0) then {
+        if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
 				[_v, _a select 0] spawn DAPS_fnc_Generic;
 				_l = 0.5;

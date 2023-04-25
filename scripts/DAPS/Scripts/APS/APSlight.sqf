@@ -14,7 +14,7 @@ while {true} do {
 	if (_v call DAPS_fnc_Active) then {
 		_a = _v nearObjects ["RocketCore", 100];
 
-		if ((count _r) > 0) then {
+		if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
 				[_v, _a select 0] spawn DAPS_fnc_Generic;
 				sleep 0.7;
