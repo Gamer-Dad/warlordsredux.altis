@@ -108,7 +108,7 @@ if (_ret) then {
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_airdrop_restr1"};
 			if (_category == "Infantry" && (count (allUnits select {(_x getVariable ["BIS_WL_Owned_By", ""]) == getPlayerUID player})) >= BIS_WL_matesAvailable) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && _vehiclesCnt + BIS_WL_vehsInBasket >= BIS_WL_assetLimit) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
-			if (_category in ["Vehicles", "Infantry"] && (_visitedSectorID == -1)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
+			if (_category in ["Vehicles", "Infantry", "Gear"] && (_visitedSectorID == -1)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			if (_category == "Aircraft") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 					if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1} count WL_PLAYER_VEHS) >= BIS_WL_autonomous_limit) then {
