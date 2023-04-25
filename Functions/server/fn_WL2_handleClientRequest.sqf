@@ -205,37 +205,10 @@ if !(isNull _sender) then {
 								_asset setDamage 0;
 								_asset setFuel 1;
 							} else {
-								if (_class != "B_UAV_01_F" && _class != "O_UAV_01_F") then {
-									private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
-									private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
-									private _taxiNodesCnt = count _taxiNodes;
-									private _spawnPos = [];
-									private _dir = 0;
-									private _checks = 0;
-									while {count _spawnPos == 0 && _checks < 100} do {
-										_checks = _checks + 1;
-										private _i = (floor random _taxiNodesCnt) max 1;
-										private _pointB = _taxiNodes # _i;
-										private _pointA = _taxiNodes # (_i - 1);
-										_dir = _pointA getDir _pointB;
-										private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-										if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-											_spawnPos = _pos;
-										};
-									};
-									if (count _spawnPos == 0) then {
-										_spawnPos = _targetPosFinal;
-									};
-									_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
-									_asset setDir _dir;
-									_asset setDamage 0;
-									_asset setFuel 1;
-								} else {
-									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-									_asset setDir 0;
-									_asset setDamage 0;
-									_asset setFuel 1;
-								};
+								_asset = createVehicle [_class, _pos, [], 6, "NONE"];
+								_asset setDir 0;
+								_asset setDamage 0;
+								_asset setFuel 1;
 							};
 						};
 					} else {
