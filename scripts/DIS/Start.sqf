@@ -11,8 +11,10 @@ private _isSAM = false;
 while {true} do {
 	_units = [] + vehicles;
 	{
-		_units = _units - [_x];
-	} forEach _units select {((count (crew _x)) < 1)};
+		if ((count (crew _x)) < 1) then {
+			_units = _units - [_x];
+		};
+	} forEach _units;
 	_units = _units - disReg;
 	
 	{
