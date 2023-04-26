@@ -17,7 +17,7 @@ private _actionID = _asset addAction [
 	if ((locked _this) == 2) then {TRUE} else {FALSE},
 	FALSE,
 	"",
-	"alive _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
+	"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
 	30,
 	TRUE
 ];

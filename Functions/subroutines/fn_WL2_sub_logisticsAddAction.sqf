@@ -24,7 +24,7 @@ private _actionIDLoad = _asset addAction [
 	false,
 	false,
 	"",
-	"alive _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
+	"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
 	-98,
 	false
 ];
@@ -40,7 +40,7 @@ private _actionIDUnload = _asset addAction [
 	false,
 	false,
 	"",
-	"alive _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
+	"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
 	-98,
 	false
 ];

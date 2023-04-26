@@ -394,7 +394,7 @@ player setVariable ["arsenalOpened", false, true];
 		waitUntil {!isNull (group player)};
 		{
 			[_x] joinSilent (group player);
-			_x setVariable ["BIS_WL_ownerAsset", player];
+			_x setVariable ["BIS_WL_ownerAsset", (getPlayerUID player)];
 		} forEach (allUnits select {(_x getVariable "BIS_WL_Owned_By" == getPlayerUID player) && !(_x in (units (group player)))});
 		sleep 0.5;
 	};

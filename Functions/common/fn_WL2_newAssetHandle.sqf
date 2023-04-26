@@ -13,13 +13,13 @@ if (isNull _owner && isServer) then {
 };
 
 if (isPlayer _owner) then {
-	_asset setVariable ["BIS_WL_ownerAsset", _owner];
+	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner)];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
 	
 	_friendlyFireProtection = _asset addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 		_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", objNull];
-		if (_instigator != _ownerGrp && side group _instigator == side _ownerGrp) then {0};
+		if ((getPlayerUID _instigator)!= _ownerGrp && side group _instigator == side group ((getPlayerUID _ownerGrp) call BIS_fnc_getUnitByUID)) then {0};
 	}];
 	
 	[_asset, _friendlyFireProtection] spawn {
@@ -146,7 +146,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull]) && vehicle _this == _this",
+							"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull]) && vehicle _this == _this",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -241,7 +241,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull]) && vehicle _this == _this",
+							"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull]) && vehicle _this == _this",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -336,7 +336,7 @@ if (isPlayer _owner) then {
 		false,
 		true,
 		"",
-		"alive _target && vehicle _this != _target && player == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
+		"alive _target && vehicle _this != _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
 		30,
 		false
 	];
