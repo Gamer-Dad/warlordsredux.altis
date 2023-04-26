@@ -898,6 +898,38 @@
             <Chinesesimp>对某个人设置赏金，供玩家收集。</Chinesesimp>
             <Chinese>對某人設置賞金，供玩家收集。</Chinese>
         </Key>
+        <Key ID="STR_A3_cram_enable">
+            <Original>Enable CIWS</Original>
+            <English>Enable CIWS</English>
+            <Czech>Povolit CIWS</Czech>
+            <French>Activer CIWS</French>
+            <German>CIWS aktivieren</German>
+            <Italian>Abilita CIWS</Italian>
+            <Polish>Włącz CIWS</Polish>
+            <Portuguese>Ativar CIWS</Portuguese>
+            <Russian>Включить CIWS</Russian>
+            <Spanish>Habilitar CIWS</Spanish>
+            <Korean>CIWS 활성화</Korean>
+            <Japanese>CIWSを有効にする</Japanese>
+            <Chinesesimp>启用CIWS</Chinesesimp>
+            <Chinese>啟用CIWS</Chinese>
+        </Key>
+        <Key ID="STR_A3_cram_disable">
+            <Original>Disable CIWS</Original>
+            <English>Disable CIWS</English>
+            <Czech>Vypnout CIWS</Czech>
+            <French>Désactiver CIWS</French>
+            <German>CIWS deaktivieren</German>
+            <Italian>Disabilita CIWS</Italian>
+            <Polish>Wyłącz CIWS</Polish>
+            <Portuguese>Desativar CIWS</Portuguese>
+            <Russian>Отключить CIWS</Russian>
+            <Spanish>Deshabilitar CIWS</Spanish>
+            <Korean>CIWS 비활성화</Korean>
+            <Japanese>CIWSを無効にする</Japanese>
+            <Chinesesimp>禁用CIWS</Chinesesimp>
+            <Chinese>禁用CIWS</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>

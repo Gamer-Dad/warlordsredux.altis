@@ -143,6 +143,8 @@ class CfgFunctions {
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_killRewards {};
 			class WL2_handleClientRequest {};
+			class WL2_cramHandle {};
+			class WL2_missileHandle {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -180,6 +182,7 @@ class CfgFunctions {
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_bettyAction {};
+			class WL2_sub_cramAction {};
     	};
 	};
 
