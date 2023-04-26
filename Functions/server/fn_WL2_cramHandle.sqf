@@ -10,7 +10,7 @@ while {alive _v} do {
 			_dirFromTarget = _target getDir _v;
 			_dirTarget = direction _target;
 			while {(alive _target) && (!isNull _target)} do {
-				playSound3D ["air_raid", _v, true, [0,0,0], 5, 1, 100];
+				//playSound3D ["air_raid", _v, true, [0,0,0], 5, 1, 100];
 				_v doWatch (getPosASLVisual _target);
 				waitUntil {((_v distance _target) < (4000))};
 				_rounds = floor random 170;
