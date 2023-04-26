@@ -19,11 +19,3 @@ player addAction [
 	"player distance [17366.7,12577.5,0.00148773] < 7",
 	5
 ];
-
-player addAction [
-	"Get 20k CP",
-	{
-		_uid = getPlayerUID player;
-		[_uid, 20000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
-	}
-];
