@@ -19,7 +19,7 @@ if (isPlayer _owner) then {
 	_friendlyFireProtection = _asset addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 		_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", objNull];
-		if ((getPlayerUID _instigator)!= _ownerGrp && side group _instigator == side group ((getPlayerUID _ownerGrp) call BIS_fnc_getUnitByUID)) then {0};
+		if ((getPlayerUID _instigator)!= _ownerGrp && side group _instigator == side group (_ownerGrp call BIS_fnc_getUnitByUID)) then {0};
 	}];
 	
 	[_asset, _friendlyFireProtection] spawn {
