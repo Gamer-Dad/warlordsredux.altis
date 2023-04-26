@@ -4,21 +4,17 @@ params ["_v"];
 
 while {alive _v} do {
 	if (_v getVariable "cramActivated") then {
-		[format ["%1", _v getVariable "incomming"]] remoteExec ["hint", 0];
 		if ((count (_v getVariable "incomming") > 0)) then {
 			_target = (_v getVariable "incomming") select 0;
-			_dirFromTarget = _target getDir _v;
-			_dirTarget = direction _target;
 			while {(alive _target) && (!isNull _target)} do {
-				//playSound3D ["air_raid", _v, true, [0,0,0], 5, 1, 100];
-				_v doWatch (getPosASLVisual _target);
-				waitUntil {((_v distance _target) < (4000))};
+				_v doWatch (getPosATLVisual _target);
+				waitUntil {((_v distance _target) < (4500))};
 				_rounds = floor random 170;
-				while {_rounds > 0 && alive _target} do {
+				while {(_rounds > 0) && (alive _target) && (!isNull _target)} do {
 					_v fireAtTarget [_target, (currentWeapon _v)];
 					_rounds = _rounds - 1;
 					sleep .02;
-					_v doWatch (getPosASLVisual _target);
+					_v doWatch (getPosATLVisual _target);
 				};
 
 				if (alive _target) then {
