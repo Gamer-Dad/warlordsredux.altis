@@ -8,7 +8,7 @@ while {alive _v} do {
 			_target = (_v getVariable "incomming") select 0;
 			while {(alive _target) && (!isNull _target)} do {
 				_v doWatch (getPosATLVisual _target);
-				waitUntil {((_v distance _target) < (4500))};
+				waitUntil {((_v distance _target) < (4500)) && ((_v distance _target) > (150))};
 				_rounds = floor random 170;
 				while {(_rounds > 0) && (alive _target) && (!isNull _target)} do {
 					_v fireAtTarget [_target, (currentWeapon _v)];
