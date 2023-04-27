@@ -101,6 +101,7 @@ if (_ret) then {
 			}; 
 		};
 		default {
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			_servicesAvailable = BIS_WL_sectorsArray # 5;
 			_vehiclesCnt = count WL_PLAYER_VEHS;
