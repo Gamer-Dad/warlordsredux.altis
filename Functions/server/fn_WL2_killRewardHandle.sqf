@@ -19,12 +19,7 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			switch (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) do {
-				case 0: {EAST};
-				case 1: {WEST};
-				case 2: {RESISTANCE};
-				default {CIVILIAN};
-			};
+			side (group ((crew _unit) # 0));
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 			if (_unit isKindOf "Man") then {
