@@ -9,7 +9,7 @@ if (count _sectorsWithRunways > 0) then {
 		private _runwayPos = getArray (_class >> "ilsPosition");
 		
 		{
-			if (typeName _x == typeName "") then {_runwayPos set [_forEachIndex, parseNumber _x]};
+			if (_x isEqualType "") then {_runwayPos set [_forEachIndex, parseNumber _x]};
 		} forEach _runwayPos;
 		
 		if (count _runwayPos > 0) then {

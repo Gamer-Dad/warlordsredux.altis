@@ -1,7 +1,7 @@
 #include "..\warlords_constants.inc"
 
 params ["_area", ["_rimWidth", 0], ["_infantryOnly", TRUE], ["_sortCenter", objNull]];
-if (typeName _area != typeName []) then {_area = [_area]};
+if !(_area isEqualType []) then {_area = [_area]};
 
 private _center = _area # 0;
 private _axisA = 0;

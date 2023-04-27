@@ -69,7 +69,7 @@ switch (_event) do {
 	default {
 		_varName = format ["BIS_WL_showHint_%1", _event];
 		
-		if (typeName _show == typeName TRUE) then {
+		if (_show isEqualType true) then {
 			missionNamespace setVariable [_varName, _show];
 		} else {
 			[_varName, _show] spawn {
