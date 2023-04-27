@@ -1,7 +1,5 @@
 #include "..\warlords_constants.inc"
 
-{(_x displayCtrl 51) ctrlRemoveEventHandler ["Draw", missionNamespace getVariable ["BIS_WL_mapIconHandler", -1]]} forEach allDisplays;
-
 waitUntil {!isNil "BIS_WL_playerSide"};
 
 westColor = [0,0.3,0.6,1];
