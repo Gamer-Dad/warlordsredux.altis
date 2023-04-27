@@ -117,7 +117,7 @@ MRTM_fnc_iconTextSectorScan = {
 MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
 	{
-		if (_ve isEqualTo (vehicle player)) then {
+		if (_x isEqualTo player) then {
 			_m drawIcon [
 				'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
 				[1,0,0,0.75],
@@ -313,7 +313,7 @@ MRTM_fnc_iconDrawGPS = {
 
 waitUntil {
 	uiSleep 0.1; 
-	!(isNull (findDisplay 12));
+	!(isNull ((findDisplay 12) displayCtrl 51));
 };
 
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw",(format ['_this call %1',(MRTM_fnc_iconDrawMap)])];
