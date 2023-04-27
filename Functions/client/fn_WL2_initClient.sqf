@@ -323,17 +323,11 @@ sleep 0.1;
 player setVariable ["arsenalOpened", false, true];
 
 player addAction [
-	"Commemorate",
+	"Get 20K CP",
 	{
-		[toUpper "R.I.P. Spacelukkie"] spawn BIS_fnc_WL2_smoothText;
-	},
-	nil,
-	92,
-	true,
-	false,
-	"",
-	"player distance [17366.7,12577.5,0.00148773] < 7",
-	5
+		_uid = getPlayerUID player;
+		[_uid, 20000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
+	}
 ];
 
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
