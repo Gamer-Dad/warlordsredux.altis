@@ -178,42 +178,7 @@ MRTM_fnc_iconDrawMap = {
 			];
 		};
 	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && (side _x == side group player) && (alive _x)});
-
-	if (side group player == west) then {
-		{
-			_m drawIcon [
-				[_x] call MRTM_fnc_iconType,
-				[_x] call MRTM_fnc_iconColor,
-				[_x] call MRTM_fnc_getPos,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_getDir,
-				[_x] call MRTM_fnc_iconText,
-				1,
-				0.025,
-				"TahomaB",
-				"right"
-			];			
-		} count (entities "B_Truck_01_medical_F");
-	};
-
-	if (side group player == east) then {
-		{
-			_m drawIcon [
-				[_x] call MRTM_fnc_iconType,
-				[_x] call MRTM_fnc_iconColor,
-				[_x] call MRTM_fnc_getPos,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_iconSize,
-				[_x] call MRTM_fnc_getDir,
-				[_x] call MRTM_fnc_iconText,
-				1,
-				0.025,
-				"TahomaB",
-				"right"
-			];
-		} count (entities "O_Truck_03_medical_F");
-	};
+	
 	{
 		if (!isNull _x) then {
 			_m drawIcon [

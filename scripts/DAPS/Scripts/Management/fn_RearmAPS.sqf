@@ -1,0 +1,25 @@
+private["_v","_type","_max","_a","_report"];
+_v=_this;
+if!(local _v)exitWith{};
+_type=typeOf _v;
+_max=0;
+_a=0;
+_report=FALSE;
+if!(_type in dapsAPStypes)exitWith{};
+if(_type in dapsDouble)exitWith{
+	_max=_v getVariable"dapsAmmoMaxL";
+	if((_v getVariable"dapsAmmoL")<_max)then{_report=TRUE};
+	_v setVariable["dapsAmmoL",_max,TRUE];
+	_max=_v getVariable"dapsAmmoMaxR";
+	if((_v getVariable"dapsAmmoR")<_max)then{_report=TRUE};
+	_v setVariable["dapsAmmoR",_max,TRUE];
+	_a=_v call DAPS_fnc_CountAmmo;
+	_v setVariable["dapsLastAmmo",_a,TRUE];
+	if(_report)then{_v remoteExec["DAPS_fnc_ReportRearm"]};
+};
+_max=_v getVariable"dapsAmmoMax";
+if((_v getVariable"dapsAmmo")<_max)then{_report=TRUE};
+_v setVariable["dapsAmmo",_max,TRUE];
+_a=_v call DAPS_fnc_CountAmmo;
+_v setVariable["dapsLastAmmo",_a,TRUE];
+if(_report)then{_v remoteExec["DAPS_fnc_ReportRearm"]};
