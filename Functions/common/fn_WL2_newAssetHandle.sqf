@@ -271,12 +271,6 @@ if (isPlayer _owner) then {
 				_asset lock 0;
 			};
 
-			if (typeOf _asset == "B_AAA_System_01_F") then {
-				_asset setVariable ["cramActivated", false, true];
-				_asset setVariable ["incomming", [], true];
-				_asset call BIS_fnc_WL2_sub_cramAction;
-			};
-
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", false, true];
 				_asset spawn DAPS_fnc_APSDazzler;

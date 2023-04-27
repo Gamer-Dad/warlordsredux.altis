@@ -110,13 +110,6 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
-addMissionEventHandler ["ProjectileCreated", {
-	params ["_projectile"];
-	if (_projectile isKindOf "MissileCore" || _projectile isKindOf "ShellCore" || _projectile isKindOf "SubmunitionCore" || _projectile isKindOf "BombCore" || _projectile isKindOf "RocketCore") then {
-		[_projectile] spawn BIS_fnc_WL2_missileHandle;
-	};
-}];
-
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
 	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F" || typeOf _entity == "O_Truck_03_medical_F" || typeOf _entity == "B_Truck_01_medical_F" || typeOf _entity == "O_APC_Wheeled_02_rcws_v2_F") then {
