@@ -29,7 +29,7 @@ serverNamespace setVariable ["killRewards",
 		["B_static_AT_F", 200], ["B_static_AA_F", 200], ["B_Mortar_01_F", 200],
 		["B_Radar_System_01_F", 500],
 		["B_AAA_System_01_F", 750], ["B_SAM_System_01_F", 1000], ["B_SAM_System_03_F", 1000],
-		["B_SAM_System_02_F", 2000], ["B_Ship_MRLS_01_F", 5000],
+		["B_SAM_System_02_F", 1200], ["B_Ship_MRLS_01_F", 2000],
 		//CSAT
 		["O_Quadbike_01_F", 20], ["O_LSV_02_unarmed_F", 50], ["O_MRAP_02_F", 100],
 		["O_Truck_03_transport_F", 100], ["O_Truck_03_Fuel_F", 100],
@@ -56,11 +56,11 @@ serverNamespace setVariable ["killRewards",
 		["O_static_AT_F", 200], ["O_static_AA_F", 200], ["O_Mortar_01_F", 200],
 		["O_Radar_System_02_F", 500], // Radar
 		["B_AAA_System_01_F", 750], ["B_SAM_System_01_F", 1000], ["O_SAM_System_04_F", 1000],
-		["B_SAM_System_02_F", 2000], ["B_Ship_MRLS_01_F", 5000],
+		["B_SAM_System_02_F", 1200], ["B_Ship_MRLS_01_F", 2000],
 		//AAF
 		["I_MRAP_03_hmg_F", 250], ["I_MRAP_03_gmg_F", 250],
 		["I_LT_01_scout_F", 350], ["I_LT_01_AA_F", 350], ["I_LT_01_AT_F", 350],
 		["I_MBT_03_cannon_F", 800], ["I_APC_Wheeled_03_cannon_F", 500], ["I_APC_tracked_03_cannon_F", 600],
-		["I_Heli_light_03_dynamicLoadout_F", 500], ["I_Heli_light_03_F", 500], ["I_Plane_Fighter_03_dynamicLoadout_F", 1200], ["I_Plane_Fighter_03_CAS_F", 1200], ["I_Plane_Fighter_04_F", 1500]
+		["I_Heli_light_03_dynamicLoadout_F", 500], ["I_Heli_light_03_F", 500], ["I_Plane_Fighter_03_dynamicLoadout_F", 900], ["I_Plane_Fighter_03_CAS_F", 900], ["I_Plane_Fighter_04_F", 1100]
 	]
 ];
