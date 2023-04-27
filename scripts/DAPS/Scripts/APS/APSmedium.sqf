@@ -16,7 +16,7 @@ while {true} do {
     if !(alive _v) exitWith {};
 
     if (_v call DAPS_fnc_Active) then {
-        _a = [_v, 100] call DAPS_fnc_Inc; // Function stored in GetIncoming.sqf
+        _a = [_v, 150] call DAPS_fnc_Inc; // Function stored in GetIncoming.sqf
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {

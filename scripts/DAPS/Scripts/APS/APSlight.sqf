@@ -12,7 +12,7 @@ private _reg = [];
 while {true} do {
 	if !(alive _v) exitWith {};
 	if (_v call DAPS_fnc_Active) then {
-		_a = _v nearObjects ["RocketCore", 100];
+		_a = _v nearObjects ["RocketCore", 150];
 
 		if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {

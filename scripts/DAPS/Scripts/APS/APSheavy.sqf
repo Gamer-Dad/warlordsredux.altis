@@ -20,11 +20,11 @@ while {true} do {
     if !(alive _v) exitWith {};
 
     if (_v call DAPS_fnc_Active) then {
-        _s = _v nearObjects ["ShellCore", 100];
-        _r = _v nearObjects ["RocketCore", 100];
-        _m = _v nearObjects ["MissileCore", 100];
-        _sm = _v nearObjects ["SubmunitionCore", 100];
-        _p = _v nearObjects ["ammo_Penetrator_Base", 100];
+        _s = _v nearObjects ["ShellCore", 150];
+        _r = _v nearObjects ["RocketCore", 150];
+        _m = _v nearObjects ["MissileCore", 150];
+        _sm = _v nearObjects ["SubmunitionCore", 150];
+        _p = _v nearObjects ["ammo_Penetrator_Base", 150];
         _a = _r + _m + _s + _sm + _p;
 
         if ((count _a) > 0) then {
