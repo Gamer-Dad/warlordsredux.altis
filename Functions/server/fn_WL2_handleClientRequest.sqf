@@ -308,7 +308,7 @@ if !(isNull _sender) then {
 				[_targetUID, _cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 				[_uid, -(_cost + 2000)] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
-				[_sender, _recipient, _amount] remoteExec ["BIS_fnc_WL2_displayCPtransfer", -2];
+				[_sender, _recipient, _cost] remoteExec ["BIS_fnc_WL2_displayCPtransfer", 0];
 			};
 		};
 		case "requestBounty": {
