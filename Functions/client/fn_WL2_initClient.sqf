@@ -307,88 +307,7 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_getUavConnected;
-["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
-
-player setVariable ["arsenalOpened", false, true];
-
-0 spawn {
-	waitUntil {sleep 0.1; !isNil "BIS_WL_playerSide"};
-	0 spawn BIS_fnc_WL2_mapIcons;
-};
-
-0 spawn {
-	waituntil {sleep 0.1; !isnull (findDisplay 12)};
-	if (side player == west) then {
-		((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
-			{
-			private _truck = _x;
-			(_this select 0) drawIcon [
-				getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
-				[0,0.3,0.6,1],
-				ASLToAGL getPosASL _truck,
-				15,
-				15,
-				direction _truck,
-				"Fast travel vehicle",
-				1,
-				WL_MAP_FONT_SIZE,
-				"RobotoCondensed",
-				"right"
-			]; 
-			} forEach entities "B_Truck_01_medical_F";
-		}];
-	};
-	if (side player == east) then {
-		((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
-			{
-			private _truck = _x;
-			(_this select 0) drawIcon [
-				getText (configFile/"CfgVehicles"/typeOf _truck/"Icon"),
-				[0.5,0,0,1],
-				ASLToAGL getPosASL _truck,
-				15,
-				15,
-				direction _truck,
-				"Fast travel vehicle",
-				1,
-				WL_MAP_FONT_SIZE,
-				"RobotoCondensed",
-				"right"
-			]; 
-			} forEach entities "O_Truck_03_medical_F";
-		}];
-	};
-};
-
-0 spawn {
-	player addAction [
-		"Commemorate",
-		{
-			[toUpper "R.I.P. Spacelukkie"] spawn BIS_fnc_WL2_smoothText;
-		},
-		nil,
-		92,
-		true,
-		false,
-		"",
-		"player distance [17366.7,12577.5,0.00148773] < 7",
-		5
-	];
-};
-
-0 spawn {
-	waituntil {!isnull (findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["KeyDown", {
-		_key = actionKeysNames "curatorInterface";
-		_keyName = (keyName (_this select 1));
-		if (_keyName == _key) then {
-			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
-				true;
-			};
-		};
-	}];
-};
-
+0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {!isNull (group player)};
@@ -399,3 +318,31 @@ player setVariable ["arsenalOpened", false, true];
 		sleep 0.5;
 	};
 };
+["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+
+player setVariable ["arsenalOpened", false, true];
+
+player addAction [
+	"Commemorate",
+	{
+		[toUpper "R.I.P. Spacelukkie"] spawn BIS_fnc_WL2_smoothText;
+	},
+	nil,
+	92,
+	true,
+	false,
+	"",
+	"player distance [17366.7,12577.5,0.00148773] < 7",
+	5
+];
+
+waituntil {sleep 0.1; !isnull (findDisplay 46)};
+(findDisplay 46) displayAddEventHandler ["KeyDown", {
+	_key = actionKeysNames "curatorInterface";
+	_keyName = (keyName (_this select 1));
+	if (_keyName == _key) then {
+		if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+			true;
+		};
+	};
+}];
