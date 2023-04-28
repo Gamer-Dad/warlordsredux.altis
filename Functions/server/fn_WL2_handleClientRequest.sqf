@@ -205,7 +205,9 @@ if !(isNull _sender) then {
 								_asset setDamage 0;
 								_asset setFuel 1;
 							} else {
-								_asset = createVehicle [_class, _pos, [], 6, "NONE"];
+								_pos = getPosATL _pos;
+								_posFinal = _pos findEmptyPosition [0, 120, _class];
+								_asset = createVehicle [_class, _posFinal, [], 6, "NONE"];
 								_asset setDir 0;
 								_asset setDamage 0;
 								_asset setFuel 1;
@@ -217,7 +219,7 @@ if !(isNull _sender) then {
 							_targetPos set [2, (_targetPos # 2) max 0];
 							_asset setDir direction _sender;
 							_asset setPos _targetPos;
-							_asset enableWeaponDisassembly false;
+							[_asset, false] remoteExec ["enableWeaponDisassembly", 0, true];
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.
 								createVehicleCrew _asset;
@@ -246,7 +248,7 @@ if !(isNull _sender) then {
 						(crew _asset) joinSilent _group;
 						(effectiveCommander _asset) setSkill 0.2;
 						(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
-						_asset enableWeaponDisassembly false;
+						[_asset, false] remoteExec ["enableWeaponDisassembly", 0, true];
 					};
 					if (typeOf _asset == "B_AAA_System_01_F") then {
 						_asset spawn BIS_fnc_WL2_cramHandle;
@@ -298,6 +300,12 @@ if !(isNull _sender) then {
 					};
 				};
 			};
+		};
+		case "fundsTransferBill": {
+
+		};
+		case "fundsTransferCancel": {
+
 		};
 		case "fundsTransfer": {
 			if (_playerFunds >= (_cost + 2000)) then {
