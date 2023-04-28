@@ -212,12 +212,6 @@ switch (_displayClass) do {
 		_purchase_transfer_cp_title = _myDisplay ctrlCreate ["RscStructuredText", 118];
 		_purchase_transfer_ok = _myDisplay ctrlCreate ["RscStructuredText", 119];
 		_purchase_transfer_cancel = _myDisplay ctrlCreate ["RscStructuredText", 120];
-		_purchase_bounty_background = _myDisplay ctrlCreate ["RscText", 121];
-		_purchase_bounty_units = _myDisplay ctrlCreate ["RscListBox", 122];
-		_purchase_bounty_amount = _myDisplay ctrlCreate ["RscEdit", 123];
-		_purchase_bounty_cp_title = _myDisplay ctrlCreate ["RscStructuredText", 124];
-		_purchase_bounty_ok = _myDisplay ctrlCreate ["RscStructuredText", 125];
-		_purchase_bounty_cancel = _myDisplay ctrlCreate ["RscStructuredText", 126];
 		
 		uiNamespace setVariable ["BIS_WL_purchaseMenuDisplay", _myDisplay];
 		
@@ -242,12 +236,6 @@ switch (_displayClass) do {
 		_purchase_transfer_cp_title ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6) + (_wDef / 12), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
 		_purchase_transfer_ok ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.5502), _wDef / 6, _hDef * 0.035];
 		_purchase_transfer_cancel ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.59), _wDef / 6, _hDef * 0.035];
-		_purchase_bounty_background ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 3, _hDef / 3];
-		_purchase_bounty_units ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 6, _hDef / 3];
-		_purchase_bounty_amount ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
-		_purchase_bounty_cp_title ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6) + (_wDef / 12), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
-		_purchase_bounty_ok ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.5502), _wDef / 6, _hDef * 0.035];
-		_purchase_bounty_cancel ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.59), _wDef / 6, _hDef * 0.035];
 		
 		{_x ctrlSetFade 1; _x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
 			_purchase_transfer_background,
@@ -255,13 +243,7 @@ switch (_displayClass) do {
 			_purchase_transfer_amount,
 			_purchase_transfer_cp_title,
 			_purchase_transfer_ok,
-			_purchase_transfer_cancel,
-			_purchase_bounty_background,
-			_purchase_bounty_units,
-			_purchase_bounty_amount,
-			_purchase_bounty_cp_title,
-			_purchase_bounty_ok,
-			_purchase_bounty_cancel
+			_purchase_transfer_cancel
 		];
 		
 		{_x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
@@ -300,9 +282,6 @@ switch (_displayClass) do {
 		_purchase_transfer_background ctrlSetBackgroundColor [0, 0, 0, 1];
 		_purchase_transfer_ok ctrlSetBackgroundColor BIS_WL_colorFriendly;
 		_purchase_transfer_cancel ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_bounty_background ctrlSetBackgroundColor [0, 0, 0, 1];
-		_purchase_bounty_ok ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_bounty_cancel ctrlSetBackgroundColor BIS_WL_colorFriendly;
 
 		{_x ctrlSetTextColor [0.65, 0.65, 0.65, 1]} forEach [
 			_purchase_title_assets,
@@ -321,9 +300,6 @@ switch (_displayClass) do {
 		_purchase_transfer_cp_title ctrlSetStructuredText parseText format ["<t align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_unit_cp", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_ok ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_A3_WL_button_transfer", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_cancel ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_disp_cancel", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_bounty_cp_title ctrlSetStructuredText parseText format ["<t align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_unit_cp", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_bounty_ok ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_A3_WL_button_bounty", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_bounty_cancel ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_disp_cancel", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		
 		{
 			if (count (WL_PLAYER_REQUISITION_LIST # _forEachIndex) > 0) then {
@@ -412,7 +388,6 @@ switch (_displayClass) do {
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer};
-					case "requestBounty": {call BIS_fnc_WL2_orderBounty};
 					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderAsset", _cost, BIS_WL_waterDropPos, _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "LockVehicles": {
 						{
@@ -522,92 +497,6 @@ switch (_displayClass) do {
 			};
 			playSound "AddItemFailed";
 		}];
-
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseEnter", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-				playSound "click";
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseExit", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-				_button ctrlSetBackgroundColor _color;
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseButtonDown", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseButtonUp", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["ButtonClick", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				_targetName = (_display displayCtrl 116) lbText lbCurSel (_display displayCtrl 116);
-				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
-				_targetArr = BIS_WL_allWarlords select {name _x == _targetName};
-				if (count _targetArr > 0) then {
-					playSound "AddItemOK";
-					_target = _targetArr # 0;
-					[player, "orderBounty", _amount, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
-					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-						(_display displayCtrl _i) ctrlEnable TRUE;
-					};
-					for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-						(_display displayCtrl _i) ctrlEnable FALSE;
-						(_display displayCtrl _i) ctrlSetFade 1;
-						(_display displayCtrl _i) ctrlCommit 0;
-					};
-				} else {
-					playSound "AddItemFailed";
-				};
-			};
-		}];
-
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseEnter", {
-			_button = _this # 0;
-			_color = BIS_WL_colorFriendly;
-			_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-			playSound "click";
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseExit", {
-			_button = _this # 0;
-			_color = BIS_WL_colorFriendly;
-			_button ctrlSetTextColor [1, 1, 1, 1];
-			_button ctrlSetBackgroundColor _color;
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseButtonDown", {
-			_button = _this # 0;
-			_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseButtonUp", {
-			_button = _this # 0;
-			_button ctrlSetTextColor [1, 1, 1, 1];
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["ButtonClick", {
-			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-			for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable TRUE;
-			};
-			for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable FALSE;
-				(_display displayCtrl _i) ctrlSetFade 1;
-				(_display displayCtrl _i) ctrlCommit 0;
-			};
-			playSound "AddItemFailed";
-		}];
-		
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;
 	};
 	

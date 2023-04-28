@@ -101,7 +101,6 @@ class CfgFunctions {
 			class WL2_getUavConnected {};
 			class WL2_betty {};
 			class WL2_mapIcons {};
-			class WL2_orderBounty {};
 			class WL2_reportHandle {};
     	};
 		class Server 

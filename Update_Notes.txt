@@ -162,7 +162,6 @@
   - Added the dynamic group system.
   - New improved map icons.
   - Gorgon has new camo.
-  - Added an option to set a bounty on a player.
   - Performance updates. (both client and server)
   - Arsenal reworked. (More options added)
   - APS Upgrades added.

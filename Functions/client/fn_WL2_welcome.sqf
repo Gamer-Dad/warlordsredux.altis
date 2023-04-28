@@ -159,7 +159,6 @@ while {dialog} do {
 			"-Added the dynamic group system.", lineBreak,
 			"-New improved map icons.", lineBreak,
 			"-Gorgon has new camo.", lineBreak,
-			"-Added an option to set a bounty on a player.", lineBreak,
 			"-Performance updates. (both client and server)", lineBreak,
 			"-Arsenal reworked. (More options added)", lineBreak,
 			"-APS Upgrades added.", lineBreak,
