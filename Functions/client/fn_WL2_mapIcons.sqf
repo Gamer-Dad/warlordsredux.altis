@@ -1,5 +1,7 @@
 #include "..\warlords_constants.inc"
+sleep 2;
 
+waituntil {!isnull (findDisplay 46)};
 waitUntil {!isNil "BIS_WL_playerSide"};
 
 westColor = [0,0.3,0.6,1];
