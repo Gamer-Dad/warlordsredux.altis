@@ -920,7 +920,7 @@ GOM_fnc_setPylonsRearm = {
 
 				for "_i" from 0 to _maxamount do {
 					sleep 0.01;
-					[_veh, [_foreachIndex + 1, _i]] remoteexec ["SetAmmoOnPylon", 0];
+					[_veh, [_foreachIndex + 1, _i]] remoteexec ["SetAmmoOnPylon", 0, true];
 					if (_i > 0) then {
 						_sound = [_veh,_foreachIndex] call GOM_fnc_pylonSound;
 					};

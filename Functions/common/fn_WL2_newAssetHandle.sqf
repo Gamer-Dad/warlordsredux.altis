@@ -175,7 +175,7 @@ if (isPlayer _owner) then {
 											private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
 											{											
 													_asset removeMagazineTurret [_x, _turret];
-													[_asset, 1]remoteExec ["setVehicleAmmoDef", 0];
+													[_asset, 1]remoteExec ["setVehicleAmmoDef", 0, true];
 											} forEach _mags;
 																				
 										};
