@@ -175,7 +175,7 @@ class CfgWLRequisitionPresets
 				class O_UAV_02_dynamicLoadout_F	  			{cost = 12000;	requirements[]={"A"};	};	// "K40 Ababil-3 ";					  
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 10000;	requirements[]={"H"};	};	// "Mi-48 Kajman"  
 				class O_T_UAV_04_CAS_F						{cost = 9500;	requirements[]={"A"};	};	// "KH-3A Fenghuang"; 
-				class O_T_VTOL_02_infantry_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"  
+				class O_T_VTOL_02_vehicle_F               	{cost = 15000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Vehicle Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"  
 				class O_Plane_Fighter_02_F					{cost = 32000;	requirements[]={"A"};	};	// "To-201 Shikra"  
 			};
