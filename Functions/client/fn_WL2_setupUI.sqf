@@ -388,7 +388,7 @@ switch (_displayClass) do {
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer};
-					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderAsset", _cost, BIS_WL_waterDropPos, _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderAsset", 500, [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "LockVehicles": {
 						{
 							if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
