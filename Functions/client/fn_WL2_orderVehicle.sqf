@@ -2,7 +2,7 @@
 
 params ["_class", "_cost"];
 
-_offset = [0, 5, 0];
+_offset = [0, 7, 0];
 
 BIS_WL_currentSelection = WL_ID_SELECTION_DEPLOYING_DEFENCE;
 
