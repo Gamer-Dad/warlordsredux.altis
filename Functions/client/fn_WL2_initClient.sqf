@@ -192,6 +192,19 @@ player addEventHandler ["GetOutMan", {
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
 	_override = false;
+	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {(isPlayer _x) && (!alive _x)} apply {backpackContainer _x};
+
+	if (_container in _allUnitBackpackContainers) then {
+		systemchat "Access denied!";
+		_override = true;
+	};
+
+	_override;
+}];
+
+player addEventHandler ["InventoryOpened",{
+	params ["_unit","_container"];
+	_override = false;
 	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {isPlayer _x && _x getVariable "arsenalOpened"} apply {backpackContainer _x};
 
 	if (_container in _allUnitBackpackContainers) then {
@@ -296,7 +309,7 @@ sleep 0.1;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
-[player, "nearSL", {(player distance2D (leader group player) <= 50) && (player != (leader group player))}] call BIS_fnc_WL2_hintHandle;
+[player, "nearSL", {(player distance2D (leader group player) <= 100) && (player != (leader group player))}] call BIS_fnc_WL2_hintHandle;
 
 sleep 0.1;
 

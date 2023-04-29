@@ -108,9 +108,6 @@ addMissionEventHandler ["EntityKilled", {
 	if (typeOf _unit == "O_Truck_03_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
-	if (isPlayer [_unit]) then {
-		deleteVehicle _unit;
-	};
 }];
 
 addMissionEventHandler ["EntityCreated", {

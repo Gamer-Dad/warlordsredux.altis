@@ -15,7 +15,7 @@ if (isNull _owner && isServer) then {
 if (isPlayer _owner) then {
 	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner)];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
-	_asset spawn DAPS_fnc_RegisterVehicle;
+	[_asset] remoteExec ["DAPS_fnc_RegisterVehicle", 0, true];
 	
 	_friendlyFireProtection = _asset addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
