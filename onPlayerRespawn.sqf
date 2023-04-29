@@ -6,10 +6,12 @@ if ((_newUnit != (leader group _newUnit)) && ((_oldUnit distance (leader group _
 	_newUnit setVehiclePosition [getPosASL (leader group _newUnit), [], 2, "NONE"];
 };
 
-player addAction [
-	"Get 20K CP",
-	{
-		_uid = getPlayerUID player;
-		[_uid, 20000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
-	}
-];
+if (([0] call BIS_fnc_countdown) < (33000)) then {
+	player addAction [
+		"Get 10K CP",
+		{
+			_uid = getPlayerUID player;
+			[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
+		}
+	];
+};
