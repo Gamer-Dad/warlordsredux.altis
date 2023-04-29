@@ -330,14 +330,6 @@ sleep 0.1;
 
 player setVariable ["arsenalOpened", false, true];
 
-player addAction [
-	"Get 20K CP",
-	{
-		_uid = getPlayerUID player;
-		[_uid, 20000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
-	}
-];
-
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
 	_key = actionKeysNames "curatorInterface";
@@ -348,3 +340,12 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
 		};
 	};
 }];
+
+0 spawn {
+	while {true} do {
+		if (!isNull (findDisplay 60490) && (!alive player)) then {
+			(findDisplay 60490) closeDisplay 1;
+		};
+		sleep 0.5;
+	};
+};
