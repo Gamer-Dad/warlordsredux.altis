@@ -340,3 +340,12 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
 		};
 	};
 }];
+
+0 spawn {
+	while {true} do {
+		if (!isNull (findDisplay 60490) && (!alive player)) then {
+			(findDisplay 60490) closeDisplay 1;
+		};
+		sleep 0.5;
+	};
+};
