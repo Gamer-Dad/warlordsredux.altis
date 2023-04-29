@@ -139,8 +139,8 @@ if !(isNull _sender) then {
 				_targetPosFinal = if (_isStatic) then {_targetPos} else {( call _processTargetPos) # 0};
 				
 				if (_class isKindOf "Ship") then {
-					_asset = createVehicle [_class, _targetPosFinal, [], 0, "CAN_COLLIDE"];
-					_asset setPos (_targetPosFinal vectorAdd [0,0,3]);
+					_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+					_asset setPos (_pos vectorAdd [0,0,3]);
 				} else {
 					if (_class isKindOf "Air") then {
 						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
@@ -238,12 +238,11 @@ if !(isNull _sender) then {
 							};
 						} else {
 							if (_class isKindOf "Man") then {
-								private _playerPos = getPosATL _sender;
-								_asset = (group _sender) createUnit [_class, _playerPos, [], 3, "NONE"];
+								_asset = (group _sender) createUnit [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 								_asset setVariable ["BIS_WL_Owned_By", getPlayerUID _sender, true];
 							} else { // Vehicle creation code
-								private _playerPos = getPosATL _sender;
-								_asset = createVehicle [_class, _playerPos, [], 0, "NONE"];
+								_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
+								_asset setDir direction _sender;
 							};
 						};
 					};
