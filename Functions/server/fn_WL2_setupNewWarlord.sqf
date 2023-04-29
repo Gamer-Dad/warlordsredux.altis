@@ -9,6 +9,7 @@ private _varFormat = "";
 
 _warlord setVariable ["BIS_WL_detectedByServerSince", WL_SYNCED_TIME];
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
+serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _warlord], false];
 
 //CP database
 private _uid = getPlayerUID _warlord;

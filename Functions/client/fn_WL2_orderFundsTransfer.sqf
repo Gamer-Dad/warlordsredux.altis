@@ -23,7 +23,7 @@ _purchase_transfer_amount ctrlSetFade 0;
 _purchase_transfer_amount ctrlEnable TRUE;
 _purchase_transfer_amount ctrlCommit 0;
 
-_purchase_transfer_amount ctrlSetText str (ceil (((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) / 2));
+_purchase_transfer_amount ctrlSetText str (ceil ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)));
 
 _purchase_transfer_cp_title ctrlSetFade 0;
 _purchase_transfer_cp_title ctrlEnable TRUE;
@@ -37,7 +37,7 @@ _purchase_transfer_cancel ctrlSetFade 0;
 _purchase_transfer_cancel ctrlEnable TRUE;
 _purchase_transfer_cancel ctrlCommit 0;
 
-{_purchase_transfer_units lbAdd name _x} forEach ((BIS_WL_allWarlords select {isPlayer _x && side group _x == side group player}) - [player]);
+{_purchase_transfer_units lbAdd name _x} forEach ((BIS_WL_allWarlords select {/*isPlayer _x && */side group _x == side group player}) - [player]);
 _purchase_transfer_units lbSetCurSel 0;
 
 [_purchase_transfer_units, _purchase_transfer_ok, _purchase_transfer_amount] spawn {
@@ -58,7 +58,7 @@ _purchase_transfer_units lbSetCurSel 0;
 		_valueText = toString _valueArr;
 		(_this # 2) ctrlSetText _valueText;
 		_value = (if (_valueText != "") then {parseNumber _valueText} else {0});
-		if (_value <= (((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) - 2000) && _value > 0) then {
+		if (_value <= ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) && _value > 0) then {
 			uiNamespace setVariable ["BIS_WL_fundsTransferPossible", TRUE];
 			(_this # 1) ctrlSetBackgroundColor _color;
 			(_this # 1) ctrlSetTextColor [1, 1, 1, 1];
@@ -71,7 +71,7 @@ _purchase_transfer_units lbSetCurSel 0;
 		};
 		_set = (_this # 0) lbText lbCurSel (_this # 0);
 		lbClear (_this # 0);
-		{(_this # 0) lbAdd name _x} forEach ((BIS_WL_allWarlords select {isPlayer _x && side group _x == side group player}) - [player]);
+		{(_this # 0) lbAdd name _x} forEach ((BIS_WL_allWarlords select {/*isPlayer _x && */side group _x == side group player}) - [player]);
 		lbSort (_this # 0);
 		if (lbSize (_this # 0) == 0) exitWith {
 			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
