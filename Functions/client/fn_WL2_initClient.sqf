@@ -192,19 +192,6 @@ player addEventHandler ["GetOutMan", {
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
 	_override = false;
-	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {(isPlayer _x) && (!alive _x)} apply {backpackContainer _x};
-
-	if (_container in _allUnitBackpackContainers) then {
-		systemchat "Access denied!";
-		_override = true;
-	};
-
-	_override;
-}];
-
-player addEventHandler ["InventoryOpened",{
-	params ["_unit","_container"];
-	_override = false;
 	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {isPlayer _x && _x getVariable "arsenalOpened"} apply {backpackContainer _x};
 
 	if (_container in _allUnitBackpackContainers) then {
