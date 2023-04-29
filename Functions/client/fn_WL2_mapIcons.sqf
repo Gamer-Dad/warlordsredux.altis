@@ -233,6 +233,21 @@ MRTM_fnc_iconDrawMap = {
 			};
 		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
 	} forEach BIS_WL_currentlyScannedSectors;
+	{
+		_m drawIcon [
+			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
+			[(random 1), (random 1), (random 1), 1],
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			format ["%1, %2", name _x, "CP Cheater"],
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count (allPlayers select {_x getVariable ["BIS_WL_isCheater", false]});
 };
 
 MRTM_fnc_iconDrawGPS = {
