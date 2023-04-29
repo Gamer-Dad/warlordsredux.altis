@@ -21,24 +21,16 @@ while {true} do {
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
 				[_v, _a select 0] spawn DAPS_fnc_Generic;
-				_l = 0.5;
 				_reg pushBackUnique (_a select 0);
 			};
         };
+    };
 
-        if (_l > 0) then {
-            sleep _l;
-            _l = 0;
+    {
+        if !(alive _x) then {
+            _reg = _reg - [_x]
         };
-    };
-
-    if ((call DAPS_fnc_Time) > _time) then {
-        {
-            if !(alive _x) then {
-                _reg = _reg - [_x]
-            };
-        } forEach _reg;
-    };
+    } forEach _reg;
 
     sleep 0.01;
 };
