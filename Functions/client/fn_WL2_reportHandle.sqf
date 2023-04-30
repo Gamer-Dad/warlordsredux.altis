@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_unit", "_killer"];
+params ["_killer"];
 
 sleep 5;
 

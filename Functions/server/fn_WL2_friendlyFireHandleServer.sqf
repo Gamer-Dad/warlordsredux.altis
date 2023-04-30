@@ -10,7 +10,7 @@ if (_unit isKindOf "Man") then {
 		if (isPlayer _unit) then {
 			if (isPlayer _responsibleLeader && _responsibleLeader in BIS_WL_allWarlords) then {
 				if (side group _unit == side group _instigator && group _unit != group _instigator) then {
-					[_unit, _responsibleLeader] remoteExec ["BIS_fnc_WL2_reportHandle", (owner _unit)];
+					[_responsibleLeader] remoteExec ["BIS_fnc_WL2_reportHandle", (owner _unit)];
 					waitUntil {sleep 1; (_responsibleLeader getVariable [format ["BIS_WL_ReportedBy_%1", (getPlayerUID _unit)], 0]) != 0};
 					
 					_decission = (_responsibleLeader getVariable format ["BIS_WL_ReportedBy_%1", (getPlayerUID _unit)]);
