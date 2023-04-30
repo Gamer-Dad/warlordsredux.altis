@@ -59,7 +59,7 @@ serverNamespace setVariable ["killRewards",
 		["B_SAM_System_02_F", 1200], ["B_Ship_MRLS_01_F", 2000],
 		//AAF
 		["I_MRAP_03_hmg_F", 250], ["I_MRAP_03_gmg_F", 250],
-		["I_LT_01_scout_F", 350], ["I_LT_01_AA_F", 350], ["I_LT_01_AT_F", 350],
+		["I_LT_01_scout_F", 350], ["I_LT_01_AA_F", 350], ["I_LT_01_AT_F", 350], ["I_LT_01_cannon_F", 350],
 		["I_MBT_03_cannon_F", 800], ["I_APC_Wheeled_03_cannon_F", 500], ["I_APC_tracked_03_cannon_F", 600],
 		["I_Heli_light_03_dynamicLoadout_F", 500], ["I_Heli_light_03_F", 500], ["I_Plane_Fighter_03_dynamicLoadout_F", 900], ["I_Plane_Fighter_03_CAS_F", 900], ["I_Plane_Fighter_04_F", 1100]
 	]
