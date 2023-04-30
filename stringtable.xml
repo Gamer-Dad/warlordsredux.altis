@@ -1284,22 +1284,6 @@
             <Chinesesimp>请先阅读如何玩</Chinesesimp>
             <Chinese>請先閱讀如何玩</Chinese>
         </Key>
-        <Key ID="STR_MRTM_welcomeInteract_22">
-            <Original>%1 - Opens the group system.</Original>
-            <English>%1 - Opens the group system.</English>
-            <Czech>%1 - Otevře skupinový systém.</Czech>
-            <French>%1 - Ouvre le système de groupe.</French>
-            <German>%1 - Öffnet das Gruppensystem.</German>
-            <Italian>%1 - Apre il sistema di gruppo.</Italian>
-            <Polish>%1 - Otwiera system grupowy.</Polish>
-            <Portuguese>%1 - Abre o sistema de grupo.</Portuguese>
-            <Russian>%1 - Открывает систему групп.</Russian>
-            <Spanish>%1 - Abre el sistema de grupo.</Spanish>
-            <Korean>%1 - 그룹 시스템을 엽니다.</Korean>
-            <Japanese>%1 - グループシステムを開きます。</Japanese>
-            <Chinesesimp>%1 - 打开组群系统。</Chinesesimp>
-            <Chinese>%1 - 打開組群系統。</Chinese>
-        </Key>
         <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
             <Original></Original>
             <English></English>

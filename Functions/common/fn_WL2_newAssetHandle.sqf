@@ -13,14 +13,14 @@ if (isNull _owner && isServer) then {
 };
 
 if (isPlayer _owner) then {
-	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner)];
+	_asset setVariable ["BIS_WL_ownerAsset", (group _owner)];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
 	_asset spawn DAPS_fnc_RegisterVehicle;
 	
 	_friendlyFireProtection = _asset addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
-		_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", objNull];
-		if ((getPlayerUID _instigator)!= _ownerGrp && side group _instigator == side group (_ownerGrp call BIS_fnc_getUnitByUID)) then {0};
+		_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", grpNull];
+		if ((group _instigator)!= _ownerGrp && side group _instigator == side _ownerGrp) then {0};
 	}];
 	
 	[_asset, _friendlyFireProtection] spawn {
@@ -147,7 +147,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull]) && vehicle _this == _this",
+							"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && vehicle _this == _this",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -242,7 +242,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull]) && vehicle _this == _this",
+							"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && vehicle _this == _this",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -331,7 +331,7 @@ if (isPlayer _owner) then {
 		false,
 		true,
 		"",
-		"alive _target && vehicle _this != _target && (getPlayerUID player) == (_target getVariable ['BIS_WL_ownerAsset', objNull])",
+		"alive _target && vehicle _this != _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])",
 		30,
 		false
 	];

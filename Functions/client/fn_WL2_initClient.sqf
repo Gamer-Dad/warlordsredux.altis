@@ -306,7 +306,6 @@ sleep 0.1;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
-[player, "nearSL", {(player distance2D (leader group player) <= 100) && (player != (leader group player))}] call BIS_fnc_WL2_hintHandle;
 
 sleep 0.1;
 
@@ -316,17 +315,6 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_getUavConnected;
 0 spawn BIS_fnc_WL2_mapIcons;
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		waitUntil {!isNull (group player)};
-		{
-			[_x] joinSilent (group player);
-			_x setVariable ["BIS_WL_ownerAsset", (getPlayerUID player)];
-		} forEach (allUnits select {(_x getVariable "BIS_WL_Owned_By" == getPlayerUID player) && !(_x in (units (group player)))});
-		sleep 0.5;
-	};
-};
-["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 player setVariable ["arsenalOpened", false, true];
 
@@ -340,12 +328,3 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
 		};
 	};
 }];
-
-0 spawn {
-	while {true} do {
-		if (!isNull (findDisplay 60490) && (!alive player)) then {
-			(findDisplay 60490) closeDisplay 1;
-		};
-		sleep 0.5;
-	};
-};

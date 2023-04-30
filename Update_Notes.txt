@@ -159,7 +159,6 @@
 
 2.5.3
   - New CP system. (Should be more secure against cheaters)
-  - Added the dynamic group system.
   - New improved map icons.
   - Gorgon has new camo.
   - Performance updates. (both client and server)

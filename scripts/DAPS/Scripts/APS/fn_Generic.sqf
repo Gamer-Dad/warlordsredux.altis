@@ -29,7 +29,7 @@ while {true} do {
 if !(alive _v) exitWith {};
 if (_ex) exitWith {};
 
-deleteVehicle _i;
+[_i] remoteExec ["deleteVehicle", 0, true];
 _p call DAPS_fnc_Blast;
 
 private _a = _v getVariable "dapsAmmo";

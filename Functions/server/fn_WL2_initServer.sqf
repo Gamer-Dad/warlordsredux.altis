@@ -146,8 +146,6 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_targetResetHandleServer;
 
 setTimeMultiplier BIS_WL_timeMultiplier;
-private _spaceLukkie = createSimpleObject ["\A3\Structures_F\Civ\Dead\HumanSkeleton_F.p3d", [17366.8,12577.2,18.2285]];
-_spaceLukkie setDir 122;
 
 0 spawn {
 	while {TRUE} do {
@@ -172,7 +170,5 @@ _spaceLukkie setDir 122;
 } forEach BIS_WL_competingSides;
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
-
-["Initialize"] call BIS_fnc_dynamicGroups;
 
 ["server_init"] call BIS_fnc_endLoadingScreen;

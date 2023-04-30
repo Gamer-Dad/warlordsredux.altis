@@ -79,7 +79,7 @@ BIS_WL_assetMapHandler = addMissionEventHandler ["EachFrame", {
 	_shown = false;
 	
 	if (visibleMap) then {
-		_nearbyAssets = ((WL_CONTROL_MAP ctrlMapScreenToWorld getMousePosition) nearObjects ["All", (((ctrlMapScale WL_CONTROL_MAP) * 500) min 50) max 2]) select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", ""])};
+		_nearbyAssets = ((WL_CONTROL_MAP ctrlMapScreenToWorld getMousePosition) nearObjects ["All", (((ctrlMapScale WL_CONTROL_MAP) * 500) min 50) max 2]) select {(group player) == (_x getVariable ["BIS_WL_ownerAsset", ""])};
 		
 		if (count _nearbyAssets > 0) then {
 			BIS_WL_mapAssetTarget = _nearbyAssets # 0;

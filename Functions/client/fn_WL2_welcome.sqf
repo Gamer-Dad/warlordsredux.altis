@@ -68,7 +68,6 @@ while {dialog} do {
 	lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 
 	_inventoryKey = actionKeysNames "gear";
-	_groupKey = actionKeysNames "teamSwitch";
 	_gearKey = actionKeysNames "cycleThrownItems";
 
 	switch (_curSel) do {
@@ -100,7 +99,6 @@ while {dialog} do {
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_11", lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_12", _inventoryKey], lineBreak,
-			format [localize "STR_MRTM_welcomeInteract_22", _groupKey], lineBreak,
 			localize "STR_MRTM_welcomeInteract_13", lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
 			""
@@ -156,7 +154,6 @@ while {dialog} do {
 			_control ctrlSetStructuredText composeText [
 			"2.5.3", lineBreak,
 			"-New CP system. (Should be more secure against cheaters)", lineBreak,
-			"-Added the dynamic group system.", lineBreak,
 			"-New improved map icons.", lineBreak,
 			"-Gorgon has new camo.", lineBreak,
 			"-Performance updates. (both client and server)", lineBreak,

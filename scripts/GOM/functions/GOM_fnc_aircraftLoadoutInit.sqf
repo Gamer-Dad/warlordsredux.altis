@@ -426,7 +426,7 @@ _getText = (_repairVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + s
 
 	};
 
-	_driverName = (name (_veh getVariable "BIS_WL_ownerAsset"));
+	_driverName = (name (leader (_veh getVariable "BIS_WL_ownerAsset")));
 	_rank = "";
 
 	_mag = "N/A";
@@ -1934,7 +1934,7 @@ GOM_fnc_updateVehiclesLB = {
 	params ["_obj"];
 
 
-	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && (alive _x) && (isTouchingGround _x) && (_x getVariable ["BIS_WL_ownerAsset", objNull] == (getPlayerUID player))};
+	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && (alive _x) && (isTouchingGround _x) && (_x getVariable ["BIS_WL_ownerAsset", grpNull] == (group player))};
 	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles",[]];
 	if (_vehicles isEqualTo []) exitWith {true};
 	if (_vehicles isEqualTo _lastVehs AND !(lbsize 1500 isequalto 0)) exitWith {true};//only update this when really needed, called on each frame
