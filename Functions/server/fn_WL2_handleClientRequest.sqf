@@ -211,9 +211,9 @@ if !(isNull _sender) then {
 									_asset setDamage 0;
 									_asset setFuel 1;
 								} else {
-									_pos = getPosATL _pos;
-									_posFinal = _pos findEmptyPosition [0, 120, _class];
-									_asset = createVehicle [_class, _posFinal, [], 6, "NONE"];
+									_pos1 = (selectRandom (_pos call BIS_fnc_WL2_findSpawnPositions));
+									_posFinal = _pos1 findEmptyPosition [0, 20, _class];
+									_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 									_asset setDir 0;
 									_asset setDamage 0;
 									_asset setFuel 1;
