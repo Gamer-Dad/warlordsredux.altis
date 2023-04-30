@@ -426,7 +426,7 @@ _getText = (_repairVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + s
 
 	};
 
-	_driverName = (name (leader (_veh getVariable "BIS_WL_ownerAsset")));
+	_driverName = (name (leader (_veh getVariable ["BIS_WL_ownerAsset", grpNull])));
 	_rank = "";
 
 	_mag = "N/A";
