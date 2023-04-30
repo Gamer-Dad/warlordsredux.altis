@@ -18,7 +18,7 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			side (group ((crew _unit) # 0));
+			side (_unit getVariable ["BIS_WL_ownerAsset", group _unit]);
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 			if (_unit isKindOf "Man") then {
