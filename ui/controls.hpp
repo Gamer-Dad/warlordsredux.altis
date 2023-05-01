@@ -214,7 +214,7 @@ class rearmMenu
 		class MRTMRearmCamoText: RscStructuredTextMRTM
 		{
 			idc = 1100;
-			text = "Cammo Nettings:";
+			text = "Cammo Netting:";
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -274,7 +274,7 @@ class rearmMenu
 		class MRTMRearmLiveryText: RscStructuredTextMRTM
 		{
 			idc = 1102;
-			text = "Livery's: Soon™";
+			text = "Liveries: Soon™";
 			x = 0.577344 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
