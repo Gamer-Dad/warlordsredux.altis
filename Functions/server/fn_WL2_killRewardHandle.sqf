@@ -10,7 +10,7 @@ if !(isNull _instigator) then {
 	if (isPlayer _instigator) then {
 		_responsibleLeader = _instigator;
 	} else {
-		_responsibleLeader = ((_instigator getVariable "BIS_WL_Owned_By") call BIS_fnc_getUnitByUID);
+		_responsibleLeader = ((_instigator getVariable ["BIS_WL_Owned_By", ""]) call BIS_fnc_getUnitByUID);
 	};
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
