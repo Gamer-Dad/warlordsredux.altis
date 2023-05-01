@@ -202,12 +202,14 @@ class rearmMenu
 		};
 		class MRTMRearmOk: RscButtonMRTM
 		{
-			idc = 1600;
+			idc = 1;
+			type = CT_BUTTON;
 			text = "Rearm"; //--- ToDo: Localize;
 			x = 0.68975 * safezoneW + safezoneX;
 			y = 0.687 * safezoneH + safezoneY;
 			w = 0.0670312 * safezoneW;
 			h = 0.033 * safezoneH;
+			onLoad =  "(_this # 0) ctrlEnable true;";
 		};
 		class MRTMRearmCamoText: RscStructuredTextMRTM
 		{
@@ -243,23 +245,6 @@ class rearmMenu
 			w = 0.139219 * safezoneW;
 			h = 0.187 * safezoneH;
 		};
-		class MRTMRearmLiveryText: RscStructuredTextMRTM
-		{
-			idc = 1102;
-			text = "Livery's:";
-			x = 0.577344 * safezoneW + safezoneX;
-			y = 0.258 * safezoneH + safezoneY;
-			w = 0.139219 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		class MRTMRearmLiveryList: RscListboxMRTM
-		{
-			idc = 1502;
-			x = 0.577344 * safezoneW + safezoneX;
-			y = 0.302 * safezoneH + safezoneY;
-			w = 0.139219 * safezoneW;
-			h = 0.187 * safezoneH;
-		};
 		class MRTMRearmOtherText: RscStructuredTextMRTM
 		{
 			idc = 1103;
@@ -283,6 +268,15 @@ class rearmMenu
 			text = "Custom ammo: Soon™";
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.511 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmLiveryText: RscStructuredTextMRTM
+		{
+			idc = 1102;
+			text = "Livery's: Soon™";
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
@@ -325,6 +319,28 @@ class rearmMenu
 			y = 0.5066 * safezoneH + safezoneY;
 			w = 0.144375 * safezoneW;
 			h = 0.198 * safezoneH;
+		};
+		class MRTMRearmCustomAmmoClassified: RscPictureMRTM
+		{
+			idc = 69691;
+			deletable = 0;
+			text = "img\classified.paa";
+			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.530 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class MRTMRearmLiveryClassified: RscPictureMRTM
+		{
+			idc = 69691;
+			deletable = 0;
+			text = "img\classified.paa";
+			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.187 * safezoneH;
 		};
 	};
 };

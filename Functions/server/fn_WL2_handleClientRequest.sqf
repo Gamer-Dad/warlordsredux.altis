@@ -256,9 +256,6 @@ if !(isNull _sender) then {
 						(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 						[_asset, false] remoteExec ["enableWeaponDisassembly", 0, true];
 					};
-					if (typeOf _asset == "B_AAA_System_01_F") then {
-						_asset spawn BIS_fnc_WL2_cramHandle;
-					};
 				}; 
 				
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;

@@ -103,6 +103,7 @@ class CfgFunctions {
 			class WL2_mapIcons {};
 			class WL2_reportHandle {};
 			class WL2_fundsControl {};
+			class WL2_vehicleRearm {};
     	};
 		class Server 
 		{
@@ -166,6 +167,7 @@ class CfgFunctions {
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_bettyAction {};
+			class WL2_sub_rearmAction {};
     	};
 	};
 
