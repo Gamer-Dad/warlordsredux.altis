@@ -185,3 +185,146 @@ class welcomeScreen
 		};
 	};
 };
+
+class rearmMenu
+{
+	idd = 1000;
+
+	class controls
+	{
+		class MRTMRearmBack: IGUIBackMRTM
+		{
+			idc = 2200;
+			x = 0.247344 * safezoneW + safezoneX;
+			y = 0.236 * safezoneH + safezoneY;
+			w = 0.515625 * safezoneW;
+			h = 0.495 * safezoneH;
+		};
+		class MRTMRearmOk: RscButtonMRTM
+		{
+			idc = 1600;
+			text = "Rearm"; //--- ToDo: Localize;
+			x = 0.68975 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.0670312 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmCamoText: RscStructuredTextMRTM
+		{
+			idc = 1100;
+			text = "Cammo Nettings:";
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmHullList: RscListboxMRTM
+		{
+			idc = 1500;
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class MRTMRearmHullText: RscStructuredTextMRTM
+		{
+			idc = 1101;
+			text = "SLAT armor:";
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmCamoList: RscListboxMRTM
+		{
+			idc = 1501;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class MRTMRearmLiveryText: RscStructuredTextMRTM
+		{
+			idc = 1102;
+			text = "Livery's:";
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmLiveryList: RscListboxMRTM
+		{
+			idc = 1502;
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.187 * safezoneH;
+		};
+		class MRTMRearmOtherText: RscStructuredTextMRTM
+		{
+			idc = 1103;
+			text = "Other customizations:";
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmOtherList: RscListboxMRTM
+		{
+			idc = 1503;
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.555 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.143 * safezoneH;
+		};
+		class MRTMRearmCustomAmmoText: RscStructuredTextMRTM
+		{
+			idc = 1104;
+			text = "Custom ammo: Soon™";
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class RscFrame_1800: RscFrameMRTM
+		{
+			idc = 1800;
+			x = 0.265905 * safezoneW + safezoneX;
+			y = 0.5066 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.198 * safezoneH;
+		};
+		class RscFrame_1801: RscFrameMRTM
+		{
+			idc = 1801;
+			x = 0.265907 * safezoneW + safezoneX;
+			y = 0.2536 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.242 * safezoneH;
+		};
+		class RscFrame_1802: RscFrameMRTM
+		{
+			idc = 1802;
+			x = 0.420594 * safezoneW + safezoneX;
+			y = 0.2536 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.242 * safezoneH;
+		};
+		class RscFrame_1803: RscFrameMRTM
+		{
+			idc = 1803;
+			x = 0.576313 * safezoneW + safezoneX;
+			y = 0.2536 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.242 * safezoneH;
+		};
+		class RscFrame_1804: RscFrameMRTM
+		{
+			idc = 1804;
+			x = 0.420593 * safezoneW + safezoneX;
+			y = 0.5066 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.198 * safezoneH;
+		};
+	};
+};
