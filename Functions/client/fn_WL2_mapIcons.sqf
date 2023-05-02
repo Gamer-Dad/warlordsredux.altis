@@ -117,6 +117,21 @@ MRTM_fnc_iconTextSectorScan = {
 MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
 	{
+		_m drawIcon [
+			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+			[1, 0, 0, 1],
+			[_x] call MRTM_fnc_getPos,
+			20,
+			20,
+			0,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
+	{
 		if (_x isEqualTo player) then {
 			_m drawIcon [
 				'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
@@ -146,21 +161,6 @@ MRTM_fnc_iconDrawMap = {
 			"right"
 		];
 	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x)});
-	{
-		_m drawIcon [
-			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
-			[1, 0, 0, 1],
-			[_x] call MRTM_fnc_getPos,
-			20,
-			20,
-			0,
-			[_x] call MRTM_fnc_iconText,
-			1,
-			0.025,
-			"TahomaB",
-			"right"
-		];
-	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -257,6 +257,21 @@ MRTM_fnc_iconDrawGPS = {
 	) exitWith {};	
 	_m = _this select 0;
 	{
+		_m drawIcon [
+			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+			[1, 0, 0, 1],
+			[_x] call MRTM_fnc_getPos,
+			20,
+			20,
+			0,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
+	{
 		if (!isNull _x) then {
 			_m drawIcon [
 				[_x] call MRTM_fnc_iconType,
@@ -273,21 +288,6 @@ MRTM_fnc_iconDrawGPS = {
 			];
 		};
 	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x) && (_x != player)});
-	{
-		_m drawIcon [
-			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
-			[1, 0, 0, 1],
-			[_x] call MRTM_fnc_getPos,
-			20,
-			20,
-			0,
-			[_x] call MRTM_fnc_iconText,
-			1,
-			0.025,
-			"TahomaB",
-			"right"
-		];
-	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
