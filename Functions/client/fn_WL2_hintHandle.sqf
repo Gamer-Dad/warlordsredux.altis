@@ -10,7 +10,7 @@ switch (_event) do {
 			if (isNil _varName) then {
 				missionNamespace setVariable [_varName, false]
 			};
-		} forEach ["assembly", "maintenance", "targetResetVoting", "report"];
+		} forEach ["assembly", "maintenance", "targetResetVoting"];
 		
 		_hintText = "";
 		_lastHint = "";
@@ -44,17 +44,6 @@ switch (_event) do {
 					0 max (_limit - _votedYes),
 					0 max ceil (((missionNamespace getVariable [_varNameVoting, -1]) + WL_TARGET_RESET_VOTING_TIME) - WL_SYNCED_TIME),
 					if (_hintText == "") then {""} else {"<br/><br/>"}
-				];
-			};
-
-			if (BIS_WL_showHint_report) then {
-				_hintText = format [
-				"<t size = '1' shadow = '0'><t valign = 'top'> %1 </t><br/><t align = 'left' >%2: </t><t align = 'right' color = '#4bff58'>%3</t><br/><t align = 'left'>%4: </t><t align = 'right' color = '#ff4b4b'> %5 </t></t>",
-				format ["You where killed by: %1. You can choose to report him or forgive him.", (name _killer)],
-				localize "STR_dik_space",
-				"Forgive",
-				localize "STR_dik_back",
-				"Report"
 				];
 			};
 
