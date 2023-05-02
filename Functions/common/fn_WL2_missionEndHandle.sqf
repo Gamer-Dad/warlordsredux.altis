@@ -1,8 +1,8 @@
 #include "..\warlords_constants.inc"
 
-waitUntil {sleep WL_TIMEOUT_SHORT; (BIS_WL_base1 getVariable "BIS_WL_owner") == (BIS_WL_base2 getVariable "BIS_WL_owner")};
+waitUntil {sleep WL_TIMEOUT_SHORT; (((BIS_WL_base1 getVariable "BIS_WL_owner") == (BIS_WL_base2 getVariable "BIS_WL_owner")) || (BIS_WL_missionEnd == true))};
 
-BIS_WL_missionEnd = TRUE;
+BIS_WL_missionEnd = true;
 
 private _winner = BIS_WL_base1 getVariable "BIS_WL_owner";
 
@@ -35,10 +35,15 @@ if !(isDedicated) then {
 		"BIS_WL_osd_action_voting_title"
 	];
 	
+	if (!isNil {(missionNamespace getVariable "BIS_WL_ffTeam")}) exitWith {
+		_victory = ((missionNamespace getVariable "BIS_WL_ffTeam") == BIS_WL_playerSide);
+		_debriefing = format ["BIS_WL%1%2", if (_victory) then {"Victory"} else {"Defeat"}, BIS_WL_playerSide];
+		[_debriefing, _victory] call BIS_fnc_endMission;
+	};
 	_victory = _winner == BIS_WL_playerSide;
 	_debriefing = format ["BIS_WL%1%2", if (_victory) then {"Victory"} else {"Defeat"}, BIS_WL_playerSide];
 	[_debriefing, _victory] call BIS_fnc_endMission;
 } else {
 	sleep 15;
-	endMission "End1"
+	endMission "End1";
 };

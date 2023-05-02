@@ -50,6 +50,10 @@ if (_ret) then {
 			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 		};
+		case "forfeitVote": {
+			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
+			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600)) exitWith {_ret = false; _tooltip = (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600) - WL_SYNCED_TIME))};
+		};
 		case "Arsenal": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};

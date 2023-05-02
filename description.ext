@@ -104,6 +104,8 @@ class CfgFunctions {
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
 			class WL2_assistHandle {};
+			class WL2_forfeitHandle {};
+			class WL2_orderForfeit {};
     	};
 		class Server 
 		{
@@ -130,6 +132,7 @@ class CfgFunctions {
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_killRewards {};
 			class WL2_handleClientRequest {};
+			class WL2_forfeitHandleServer {};
     	};
     	class Common {
     		file = "Functions\common";
