@@ -170,35 +170,6 @@ if (([0] call BIS_fnc_countdown) < (33000)) then {
 	];
 };
 
-player addEventHandler ["GetOutMan", {
-	detach BIS_WL_enemiesCheckTrigger; 
-	BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
-	if (_vehicle isKindOf "Air" && getPosATL player # 2 > 100) then {
-		0 spawn {
-			sleep 1;
-			playerFreeFalling = getUnitFreefallInfo player;
-			if (playerFreeFalling # 0) then {
-				private _backpack = unitBackpack player; 
-				private _oldbackpack = typeOf unitBackpack player;
-				private _oldbackpackItems = backpackItems player;
-
-				if (!(isNull _backpack)) then {
-					removeBackpack player;
-					player addBackpack "B_Parachute";
-				} else {
-					player addBackpack "B_Parachute";
-				};
-
-				waitUntil {sleep 1; (getPosATL player # 2) <= 50 || (not (alive player))};
-				player action ["OpenParachute", player];
-				waitUntil {sleep 1; isNull objectParent player};
-				player addBackpack _oldbackpack;
-				{player addItemToBackpack _x;} forEach oldbackpackItems;
-			};
-		};
-	};
-}];
-
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
 	_override = false;
