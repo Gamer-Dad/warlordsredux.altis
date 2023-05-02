@@ -38,7 +38,7 @@ if !(isNull _instigator) then {
 			if (_cond > 0) then {
 				{
 					_uid = getPlayerUID _x;
-					_killReward = ((_killReward / 100) * 60);
+					_killReward = ((_killReward / 100) * 30);
 					_id = owner _x;
 					[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 					[format ["Assist: %1", (format [(localize "STR_A3_WL_award_kill"), _killReward])]] remoteExec ["systemChat", _id];
