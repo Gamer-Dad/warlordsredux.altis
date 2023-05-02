@@ -10,3 +10,5 @@ if (([0] call BIS_fnc_countdown) < (33000)) then {
 		}
 	];
 };
+
+player setVariable ["assistList", [], true];

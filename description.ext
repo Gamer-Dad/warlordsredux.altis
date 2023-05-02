@@ -104,6 +104,7 @@ class CfgFunctions {
 			class WL2_reportHandle {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
+			class WL2_assistHandle {};
     	};
 		class Server 
 		{
@@ -150,6 +151,7 @@ class CfgFunctions {
 			class WL2_syncedTime {};
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
+			class WL2_setAssist {};
     	};
 		class Subroutines 
 		{

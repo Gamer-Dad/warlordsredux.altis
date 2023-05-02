@@ -33,6 +33,17 @@ if !(isNull _instigator) then {
 			[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
 			private _uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			_cond = ((count (_unit getVariable "assistList")) select {_x != _responsibleLeader});
+			_assistList = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
+			if (_cond > 0) then {
+				{
+					_uid = getPlayerUID _x;
+					_killReward = ((_killReward / 100) * 60);
+					_id = owner _x;
+					[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+					[format ["Assist: %1", (format [(localize "STR_A3_WL_award_kill"), _killReward])]] remoteExec ["systemChat", _id];
+				} forEach _assistList;
+			};
 		};
 	};
 };
