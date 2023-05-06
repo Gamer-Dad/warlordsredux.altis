@@ -53,7 +53,7 @@ if (_ret) then {
 		case "forfeitVote": {
 			_countSide = (playersNumber (side (group player)));
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
-			if (_countSide < 15) exitWith {_ret = false; _tooltip = format ["%1/15 Players", _countSide]};
+			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
 			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600)) exitWith {_ret = false; _tooltip = (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600) - WL_SYNCED_TIME))};
 		};
 		case "Arsenal": {

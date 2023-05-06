@@ -9,7 +9,7 @@ if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
 	_responsibleLeader = _instigator;
 	if (isPlayer _instigator) then {
-		_responsibleLeader = _instigator;
+		_responsibleLeader = leader _instigator;
 	} else {
 		_responsibleLeader = (leader (group _instigator));
 	};
@@ -19,7 +19,7 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			side (_unit getVariable ["BIS_WL_ownerAsset", group _unit]);
+			side (_unit getVariable ["BIS_WL_ownerAsset", (group ((crew _unit) # 0))]);
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 			if (_unit isKindOf "Man") then {
