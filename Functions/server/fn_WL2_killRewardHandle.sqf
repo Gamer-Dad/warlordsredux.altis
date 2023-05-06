@@ -3,6 +3,7 @@
 params ["_unit", "_killer", "_instigator"];
 
 _killReward = 0;
+_responsibleLeader = _instigator;
 if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer) # 0};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
@@ -33,17 +34,19 @@ if !(isNull _instigator) then {
 			[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
 			private _uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-			_cond = ((count (_unit getVariable "assistList")) select {_x != _responsibleLeader});
-			_assistList = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
-			if (_cond > 0) then {
-				{
-					_uid = getPlayerUID _x;
-					_killReward = (round ((_killReward / 100) * 30));
-					_id = owner _x;
-					[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-					[format ["Assist: %1", (format [(localize "STR_A3_WL_award_kill"), _killReward])]] remoteExec ["systemChat", _id];
-				} forEach _assistList;
-			};
 		};
 	};
+};
+
+_cond = ((count (_unit getVariable "assistList")) select {_x != _responsibleLeader});
+_assistList = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
+if (_cond > 0) then {
+	{
+		_uid = getPlayerUID _x;
+		_killReward = (round ((_killReward / 100) * 30));
+		_id = owner _x;
+		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+		[format ["Assist: %1", (format [(localize "STR_A3_WL_award_kill"), _killReward])]] remoteExec ["systemChat", _id];
+	} forEach _assistList;
+	_unit setVariable ["assistList", [], true];
 };
