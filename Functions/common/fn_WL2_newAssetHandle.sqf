@@ -16,18 +16,6 @@ if (isPlayer _owner) then {
 	_asset setVariable ["BIS_WL_ownerAsset", (group _owner)];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
 	_asset spawn DAPS_fnc_RegisterVehicle;
-	
-	_friendlyFireProtection = _asset addEventHandler ["HandleDamage", {
-		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
-		_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", grpNull];
-		if ((group _instigator)!= _ownerGrp && side group _instigator == side _ownerGrp) then {0};
-	}];
-	
-	[_asset, _friendlyFireProtection] spawn {
-		params ["_asset", "_friendlyFireProtection"];
-		sleep WL_ASSET_PROTECTION_DURATION;
-		_asset removeEventHandler ["HandleDamage", _friendlyFireProtection];
-	};
 
 	if (_asset isKindOf "Man") then {
 		_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;
