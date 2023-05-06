@@ -160,15 +160,13 @@ player addEventHandler ["GetInMan", {
 	};
 }];
 
-if (([0] call BIS_fnc_countdown) < (33000)) then {
-	player addAction [
-		"Get 10K CP",
-		{
-			_uid = getPlayerUID player;
-			[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
-		}
-	];
-};
+player addAction [
+	"Get 10K CP",
+	{
+		_uid = getPlayerUID player;
+		[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
+	}
+];
 
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
