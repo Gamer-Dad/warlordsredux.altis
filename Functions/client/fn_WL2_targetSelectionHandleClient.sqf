@@ -9,11 +9,11 @@ while {!BIS_WL_missionEnd} do {
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	BIS_WL_currentSelection = WL_ID_SELECTION_VOTING;
 	0 spawn {
-		sleep 1;
+		sleep WL_TIMEOUT_STANDARD;
 		if (BIS_WL_missionEnd) exitWith {};
 		"Voting" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_popup_voting"] spawn BIS_fnc_WL2_smoothText;
-		sleep 1;
+		sleep WL_TIMEOUT_STANDARD;
 		waitUntil {visibleMap || !isNull WL_TARGET_FRIENDLY};
 		if (visibleMap && isNull BIS_WL_targetVote) then {
 			"Sector" call BIS_fnc_WL2_announcer;

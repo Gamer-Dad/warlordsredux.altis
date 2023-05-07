@@ -24,7 +24,7 @@ while {true} do {
 
 	call _refreshBalance;
 	
-	sleep 5;
+	sleep WL_TIMEOUT_LONG;
 
 	{
 		_side = side group _x;

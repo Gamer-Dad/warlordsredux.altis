@@ -31,5 +31,5 @@ while {true} do {
 		player setVariable ["sidePerc", _sidePercentageFinal, true]; // testing
 	};
 	_cpBalanceCtrl ctrlCommit 0;
-	sleep 5;
+	sleep WL_TIMEOUT_LONG;
 };

@@ -15,7 +15,6 @@ if (isServer) exitWith {
 	private _groupUnit = local _asset && _asset isKindOf "Man";
 	if (_groupUnit) then {
 		0 spawn {
-			sleep 0.5;
 			[] spawn BIS_fnc_WL2_refreshOSD;
 		};
 	};
@@ -34,7 +33,6 @@ if (typeOf _asset == "O_Truck_03_medical_F") then {
 private _groupUnit = local _asset && _asset isKindOf "Man";
 if (_groupUnit) then {
 	0 spawn {
-		sleep 0.5;
 		[] spawn BIS_fnc_WL2_refreshOSD;
 	};
 };

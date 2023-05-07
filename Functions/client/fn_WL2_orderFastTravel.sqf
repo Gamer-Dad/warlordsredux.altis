@@ -44,7 +44,7 @@ if (_toContested) then {
 	_markerText setMarkerTextLocal localize "STR_A3_cfgvehicles_moduletasksetdestination_f_arguments_destination_0";
 };
 
-sleep 0.25;
+sleep WL_TIMEOUT_SHORT;
 
 _action spawn BIS_fnc_WL2_sectorSelectionHandle;
 
@@ -79,12 +79,12 @@ if (_toContested) then {
 	"Fast_travel" call BIS_fnc_WL2_announcer;
 	[toUpper format [localize "STR_A3_WL_popup_travelling", BIS_WL_targetSector getVariable "BIS_WL_name"], nil, 3] spawn BIS_fnc_WL2_smoothText;
 
-	sleep 0.5;
+	sleep WL_TIMEOUT_MEDIUM;
 
 	player setDir (player getDir BIS_WL_targetSector);
 	[player, "fastTravelContested", 200, _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
-	sleep 0.5;
+	sleep WL_TIMEOUT_MEDIUM;
 
 	if (BIS_WL_currentSelection in [WL_ID_SELECTION_FAST_TRAVEL, WL_ID_SELECTION_FAST_TRAVEL_CONTESTED]) then {
 		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
@@ -105,7 +105,7 @@ if (_toContested) then {
 	"Fast_travel" call BIS_fnc_WL2_announcer;
 	[toUpper format [localize "STR_A3_WL_popup_travelling", BIS_WL_targetSector getVariable "BIS_WL_name"], nil, 3] spawn BIS_fnc_WL2_smoothText;
 
-	sleep 1;
+	sleep WL_TIMEOUT_STANDARD;
 
 	player setDir (player getDir BIS_WL_targetSector);
 	player setVehiclePosition [_destination, [], 1, "NONE"];
@@ -114,7 +114,7 @@ if (_toContested) then {
 		_x setVehiclePosition [_destination, [], 1, "NONE"];
 	} forEach _tagAlong;
 
-	sleep 1;
+	sleep WL_TIMEOUT_STANDARD;
 
 	if (BIS_WL_currentSelection in [WL_ID_SELECTION_FAST_TRAVEL, WL_ID_SELECTION_FAST_TRAVEL_CONTESTED]) then {
 		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;

@@ -11,7 +11,7 @@ if !(visibleMap) then {
 };
 BIS_WL_waterDropPos = [];
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_NAVAL;
-sleep 0.25;
+sleep WL_TIMEOUT_SHORT;
 
 _mapClickEH = addMissionEventHandler ["MapSingleClick", {
 	params ["_units", "_pos", "_alt", "_shift"];

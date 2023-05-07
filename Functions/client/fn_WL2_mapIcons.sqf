@@ -341,7 +341,7 @@ waitUntil {
 				_display2opened = false;
 			};		
 		};
-		uiSleep 0.25;
+		uiSleep WL_TIMEOUT_SHORT;
 	};
 };
 
@@ -359,7 +359,7 @@ waitUntil {
 				};
 			};
 		} forEach (uiNamespace getVariable 'IGUI_displays');
-		uiSleep 0.25;
+		uiSleep WL_TIMEOUT_SHORT;
 		if (_e) exitWith {};
 	};
 };

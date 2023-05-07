@@ -14,7 +14,7 @@ if !(visibleMap) then {
 BIS_WL_targetSector = objNull;
 BIS_WL_currentSelection = WL_ID_SELECTION_SCAN;
 
-sleep 0.25;
+sleep WL_TIMEOUT_SHORT;
 
 "scan" spawn BIS_fnc_WL2_sectorSelectionHandle;
 

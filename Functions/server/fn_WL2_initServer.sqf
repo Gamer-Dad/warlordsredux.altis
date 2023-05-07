@@ -120,7 +120,7 @@ addMissionEventHandler ["EntityCreated", {
 				if (_pos select 2 < 0) then {
 					_entity setDamage 1;
 				};
-				sleep 5;
+				sleep WL_TIMEOUT_LONG;
 			};
 		};
 	};

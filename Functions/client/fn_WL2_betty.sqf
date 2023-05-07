@@ -1,3 +1,5 @@
+#include "..\warlords_constants.inc"
+
 waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"};
 
 // Vars
@@ -98,6 +100,6 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 			};
 		};
 		(objectParent player) setVariable ["currentTargets", (objectParent player) getVariable "newTargets", true];
-		sleep 1;
+		sleep WL_TIMEOUT_STANDARD;
 	};
 };

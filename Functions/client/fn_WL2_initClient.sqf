@@ -65,7 +65,7 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	_confirmReposition = FALSE;
 	while {!_confirmReposition} do {
 		waitUntil {player distance _pos > 2}; 
-		uiSleep 1;
+		uiSleep WL_TIMEOUT_STANDARD;
 		enableRadio TRUE;
 		enableSentences TRUE;
 		{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
@@ -251,7 +251,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 
 0 spawn {
-	waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
+	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
 	_t = WL_SYNCED_TIME + 10;
 	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || visibleMap};
 	if !(visibleMap) then {
@@ -263,7 +263,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn {
 	_t = WL_SYNCED_TIME + 10;
 	waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t && !isNull WL_TARGET_FRIENDLY};
-	sleep 5;
+	sleep WL_TIMEOUT_LONG;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[format [toUpper localize "STR_A3_WL_tip_menu", (actionKeysNamesArray "Gear") # 0], 5] spawn BIS_fnc_WL2_smoothText;
 		sleep 10;

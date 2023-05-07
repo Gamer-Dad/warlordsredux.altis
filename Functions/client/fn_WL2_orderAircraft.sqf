@@ -12,7 +12,7 @@ if !(visibleMap) then {
 BIS_WL_targetSector = objNull;
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRCRAFT;
 BIS_WL_orderedAssetRequirements = _requirements;
-sleep 0.25;
+sleep WL_TIMEOUT_SHORT;
 
 "dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
 
