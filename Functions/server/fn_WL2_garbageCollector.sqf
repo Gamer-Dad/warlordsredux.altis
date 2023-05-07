@@ -4,14 +4,11 @@
 	sleep 600;
 	
 	{
-		if (_x isKindOf "WeaponHolder" || _x isKindOf "WeaponHolderSimulated") then {
-			_asset = _x;
-			
-			if (BIS_WL_allWarlords findIf {_x distance2D _asset < WL_ASSET_REMOVAL_SAFEZONE} == -1) then {
-				deleteVehicle _asset;
-			};
+		_asset = _x;
+		if !(alive _x) then {
+			deleteVehicle _asset;
 		};
-	} forEach allMissionObjects "";
+	} forEach ((allMissionObjects "") select {(_x isKindOf "WeaponHolder" || _x isKindOf "WeaponHolderSimulated" || ["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});
 };
 
 while {!BIS_WL_missionEnd} do {
