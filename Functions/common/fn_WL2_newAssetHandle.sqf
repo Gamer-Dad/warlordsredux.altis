@@ -191,6 +191,7 @@ if (isPlayer _owner) then {
 		_asset setVariable ["assistList", [], true];
 		_asset addEventHandler ["HandleDamage", {
 			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+			false;
 			_this spawn BIS_fnc_WL2_setAssist;
 		}];
 		
