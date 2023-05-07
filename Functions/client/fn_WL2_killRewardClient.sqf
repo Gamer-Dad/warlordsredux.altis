@@ -37,7 +37,7 @@ if (_unit isKindOf "Man") then {
 } else {
 	if (_assist) then {
 		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-		_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' color='#228b22'>Kill assist: %1 + %2CP</t>", _displayName, _reward];
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' color='#228b22'>Assist: %1 + %2CP</t>", _displayName, _reward];
 	} else {
 		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
 		_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
