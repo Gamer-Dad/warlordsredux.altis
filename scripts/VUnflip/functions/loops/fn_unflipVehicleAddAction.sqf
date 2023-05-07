@@ -16,7 +16,7 @@ _isFlipped = { params [ ["_veh", objNull, [objNull] ] ]; if(isNull _veh)exitWith
 
 while { alive player } do
 {
-	uisleep WL_TIMEOUT_STANDARD;
+	uisleep 1;
 	private _vehicleToCheck = cursorTarget;
 	
 	if ( _unflipVehicleActionID < 0 && { isNull _vehicle } && { !isNull _vehicleToCheck } && { alive _vehicleToCheck } ) then // No action added previously, check if player is looking at a vehicle
