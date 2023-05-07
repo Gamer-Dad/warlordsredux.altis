@@ -19,7 +19,11 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			side (_unit getVariable ["BIS_WL_ownerAsset", (group ((crew _unit) # 0))]);
+			switch (true) do {
+				case ((side (_unit getVariable "BIS_WL_ownerAsset")) == east): {east};
+				case ((side (_unit getVariable "BIS_WL_ownerAsset")) == west): {west};
+				default {Independent};
+			};
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 			if (_unit isKindOf "Man") then {
@@ -31,22 +35,22 @@ if !(isNull _instigator) then {
 			} else {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 			};
-			[format [localize "STR_A3_WL_award_kill", _killReward]] remoteExec ["systemChat", _id];
+			[_unit, _killReward, false] remoteExec ["BIS_fnc_WL2_killRewardClient", _id];
 			private _uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		};
 	};
 };
 
-_cond = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
-_assistList = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
-if ((count _cond) > 0) then {
+_cond = (count ((_unit getVariable ["assistList", []]) select {_x != _responsibleLeader}));
+if (_cond > 0) then {
+	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _responsibleLeader});
 	{
 		_uid = getPlayerUID _x;
 		_killReward = (round ((_killReward / 100) * 30));
 		_id = owner _x;
 		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[format ["Assist: %1", (format [(localize "STR_A3_WL_award_kill"), _killReward])]] remoteExec ["systemChat", _id];
+		[_unit, _killReward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", _id];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
 };
