@@ -3,7 +3,6 @@
 params ["_unit", "_killer", "_instigator"];
 
 _killReward = 0;
-_responsibleLeader = _instigator;
 if (isNull _instigator) then {_instigator = (leader (_killer getVariable "BIS_WL_ownerAsset"))};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
@@ -39,21 +38,32 @@ if !(isNull _instigator) then {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 			};
 			[_unit, _killReward, false] remoteExec ["BIS_fnc_WL2_killRewardClient", _id];
+			_unit setVariable ["BIS_WL_killer", _responsibleLeader, true];
 			private _uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		};
 	};
 };
 
-_cond = (count ((_unit getVariable ["assistList", []]) select {_x != _responsibleLeader}));
+_cond = (count ((_unit getVariable ["assistList", []]) select {_x != _x getVariable ["BIS_WL_killer", objNull]}));
 if (_cond > 0) then {
-	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _responsibleLeader});
+	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _x getVariable ["BIS_WL_killer", objNull]});
+	_killReward = if (_unit isKindOf "Man") then {
+		if (isPlayer _unit) then {
+			_killReward = 75;
+		} else {
+			_killReward = 50;
+		};		
+	} else {
+		(serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
+	};
+	_killReward = (round ((_killReward / 100) * 30));
 	{
 		_uid = getPlayerUID _x;
-		_killReward = (round ((_killReward / 100) * 30));
 		_id = owner _x;
 		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		[_unit, _killReward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", _id];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
+	_unit setVariable ["BIS_WL_killer", nil, true];
 };
