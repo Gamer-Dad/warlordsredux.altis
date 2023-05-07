@@ -21,8 +21,10 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl ctrlSetPosition _pos;
 	
 	_ctrl ctrlCommit 0.5;
-	sleep 0.05;
+	UISleep 0.1;
 } forEach activeControls;
+
+UISleep 0.2;
 
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", control];
 
@@ -49,7 +51,7 @@ _ctrl ctrlCommit 0;
 control spawn {
 	disableSerialization;
 	_ctrl = (findDisplay 46) displayCtrl _this;
-	UISleep 3;
+	UISleep 4;
 	_ctrl ctrlSetFade 1;
 	_ctrl ctrlCommit 3;
 };
