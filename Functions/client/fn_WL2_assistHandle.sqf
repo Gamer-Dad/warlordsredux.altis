@@ -1,9 +1,7 @@
 #include "..\warlords_constants.inc"
 
 player setVariable ["assistList", [], true];
-
-/*player addEventHandler ["HandleDamage", {
-	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+player addEventHandler ["Hit", {
+	params ["_unit", "_source", "_damage", "_instigator"];
 	_this spawn BIS_fnc_WL2_setAssist;
-	false;
-}];*/
+}];

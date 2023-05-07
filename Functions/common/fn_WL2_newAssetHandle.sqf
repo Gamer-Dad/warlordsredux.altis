@@ -188,13 +188,12 @@ if (isPlayer _owner) then {
 			publicVariableServer _ownedVehiclesVarID;
 		}];
 
-		/*_asset setVariable ["assistList", [], true];
-		_asset addEventHandler ["HandleDamage", {
-			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+		_asset setVariable ["assistList", [], true];
+		_asset addEventHandler ["Hit", {
+			params ["_unit", "_source", "_damage", "_instigator"];
 			_this spawn BIS_fnc_WL2_setAssist;
-			false;
 		}];
-		*/
+		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {_asset setRepairCargo 0; _asset setVariable ["BIS_WL_canRepair", TRUE, TRUE]};
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {_asset setAmmoCargo 0; _asset setVariable ["BIS_WL_canRearm", TRUE, TRUE]};
 	};

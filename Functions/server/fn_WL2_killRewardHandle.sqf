@@ -38,9 +38,9 @@ if !(isNull _instigator) then {
 	};
 };
 
-_cond = ((count (_unit getVariable "assistList")) select {_x != _responsibleLeader});
+_cond = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
 _assistList = ((_unit getVariable "assistList") select {_x != _responsibleLeader});
-if (_cond > 0) then {
+if ((count _cond) > 0) then {
 	{
 		_uid = getPlayerUID _x;
 		_killReward = (round ((_killReward / 100) * 30));
