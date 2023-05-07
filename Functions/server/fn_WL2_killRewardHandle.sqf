@@ -22,7 +22,10 @@ if !(isNull _instigator) then {
 			switch (true) do {
 				case ((side (_unit getVariable "BIS_WL_ownerAsset")) == east): {east};
 				case ((side (_unit getVariable "BIS_WL_ownerAsset")) == west): {west};
-				default {Independent};
+				case ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) == 0): {east};
+				case ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) == 1): {west};
+				case ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) == 2): {Independent};
+				default {Civilian};
 			};
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
