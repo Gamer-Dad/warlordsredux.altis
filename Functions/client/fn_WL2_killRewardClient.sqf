@@ -67,5 +67,5 @@ control spawn
 	activeControls = activeControls - [_this];
 };
 
-activeControls = activeControls + [control];
+activeControls pushBack control;
 control = control + 1;
