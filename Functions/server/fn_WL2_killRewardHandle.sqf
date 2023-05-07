@@ -4,7 +4,7 @@ params ["_unit", "_killer", "_instigator"];
 
 _killReward = 0;
 _responsibleLeader = _instigator;
-if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer) # 0};
+if (isNull _instigator) then {_instigator = (leader (_killer getVariable "BIS_WL_ownerAsset"))};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
 	_responsibleLeader = _instigator;
