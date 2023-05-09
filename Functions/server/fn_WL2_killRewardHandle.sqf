@@ -3,15 +3,13 @@
 params ["_unit", "_killer", "_instigator"];
 
 _killReward = 0;
-if (isNull _instigator) then {_instigator = (leader (_killer getVariable "BIS_WL_ownerAsset"))};
+if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer # 0)};
 if (isNull _instigator) then {_instigator = _killer};
 if !(isNull _instigator) then {
-	_responsibleLeader = _instigator;
-	if (isPlayer _instigator) then {
-		_responsibleLeader = leader _instigator;
-	} else {
-		_responsibleLeader = (leader (group _instigator));
-	};
+	_responsibleLeader = leader _instigator;
+	if (!isPlayer _responsibleLeader && unitIsUAV _killer) then {
+        _responsibleLeader = leader (_killer getVariable "BIS_WL_ownerAsset");
+    };
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
 		_id = owner _responsibleLeader;
