@@ -21,7 +21,7 @@ _asset lock true;
 _asset enableWeaponDisassembly false;
 {
 	_asset disableCollisionWith _x;
-} forEach allUnits;
+} forEach entities "";
 _asset hideObject false;
 
 player reveal [_asset, 4];
