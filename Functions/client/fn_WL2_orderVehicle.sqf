@@ -17,7 +17,9 @@ _asset enableSimulationGlobal false;
 _asset hideObjectGlobal true;
 _asset lock true;
 _asset enableWeaponDisassembly false;
-_asset disableCollisionWith player;
+{
+	_asset disableCollisionWith _x;
+} forEach allUnits;
 _asset hideObject false;
 
 player reveal [_asset, 4];
