@@ -3,7 +3,6 @@
 params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 
 if (unitIsUAV _source) then {_source = leader (_source getVariable "BIS_WL_ownerAsset")};
-if (isNull _source) then {_source = getShotParents _projectile};
 if !(isNull _source) then {
 	_list = (_unit getVariable "assistList");
 	_killerSide = side group _source;
