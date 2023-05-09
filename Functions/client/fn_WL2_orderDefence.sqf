@@ -19,6 +19,7 @@ _asset enableSimulationGlobal false;
 _asset hideObjectGlobal true;
 _asset lock true;
 _asset enableWeaponDisassembly false;
+_asset allowDamage false;
 {
 	_asset disableCollisionWith _x;
 } forEach entities "";
