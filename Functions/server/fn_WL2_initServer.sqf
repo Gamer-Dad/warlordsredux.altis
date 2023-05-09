@@ -108,6 +108,15 @@ addMissionEventHandler ["EntityKilled", {
 	if (typeOf _unit == "O_Truck_03_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
+
+	if (typeOf _unit == "Land_IRMaskingCover_01_F") then {
+		{
+			_asset = _x;
+			if !(alive _x) then {
+				deleteVehicle _asset;
+			};
+		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});		
+	};
 }];
 
 addMissionEventHandler ["EntityCreated", {
