@@ -10,7 +10,6 @@ sleep 0.1;
 if ((_v distance _i) > _d) exitWith {};
 if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
 
-private _p = getPosATL _i;
 private _id = getDir _i;
 private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 
@@ -29,8 +28,9 @@ while {true} do {
 if !(alive _v) exitWith {};
 if (_ex) exitWith {};
 
-[_i] remoteExec ["deleteVehicle", 0, true];
+private _p = getPosATL _i;
 _p call DAPS_fnc_Blast;
+[_i] remoteExec ["deleteVehicle", 0, true];
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
