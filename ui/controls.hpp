@@ -1,6 +1,6 @@
 class welcomeScreen
 {
-	idd = 6969
+	idd = 6969;
 
 	class controls
 	{
