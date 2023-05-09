@@ -16,7 +16,7 @@ while {true} do {
     if !(alive _i) exitWith {_ex = true};
     if !(alive _v) exitWith {_ex = true};
     _d = _v distance _i;
-    if (_d < 80) exitWith {_ex = false}; // Max intercept distance
+    if (_d < 60) exitWith {_ex = false}; // Max intercept distance
     sleep 0.001;
 };
 
