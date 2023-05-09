@@ -10,11 +10,6 @@ sleep 0.1;
 if ((_v distance _i) > _d) exitWith {};
 if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
 
-private _id = getDir _i;
-private _rd = [_id, _v] call DAPS_fnc_RelDir2;
-
-[_v, _id, _p, _i] call DAPS_fnc_React;
-
 private _ex = false;
 
 while {true} do {
