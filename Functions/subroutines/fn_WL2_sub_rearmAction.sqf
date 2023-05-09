@@ -29,7 +29,7 @@ while {alive _asset} do {
 							_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
 						} else { 
 							if (_asset isKindOf "Plane") then {  
-								_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
+								_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
 							} else { 
 								if (_asset isKindOf "B_MBT_01_arty_F") then {  
 									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
