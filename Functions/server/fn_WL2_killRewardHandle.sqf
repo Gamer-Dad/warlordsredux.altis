@@ -48,9 +48,9 @@ if (_cond > 0) then {
 	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _x getVariable ["BIS_WL_killer", objNull]});
 	_killReward = if (_unit isKindOf "Man") then {
 		if (isPlayer _unit) then {
-			_killReward = 75;
+			75;
 		} else {
-			_killReward = 50;
+			50;
 		};		
 	} else {
 		(serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];

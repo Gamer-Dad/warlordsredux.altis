@@ -199,9 +199,10 @@ if (isPlayer _owner) then {
 		}];
 
 		_asset setVariable ["assistList", [], true];
-		_asset addEventHandler ["Hit", {
-			params ["_unit", "_source", "_damage", "_instigator"];
+		_asset addEventHandler ["HandleDamage", {
+			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 			_this spawn BIS_fnc_WL2_setAssist;
+			_damage;
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {_asset setRepairCargo 0; _asset setVariable ["BIS_WL_canRepair", TRUE, TRUE]};
