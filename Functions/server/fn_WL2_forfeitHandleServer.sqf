@@ -20,7 +20,6 @@
 				if (_votedYes >= _limit) then {
 					missionNamespace setVariable ["BIS_WL_ffTeam", _this, true];
 					BIS_WL_missionEnd = true;
-					serverNamespace setVariable ["BIS_WL_misisonEndFF", true];
 					_terminate = true;
 				};
 			};
