@@ -155,7 +155,7 @@ if (isPlayer _owner) then {
 
 		if !(_assembled || _asset isKindOf "Thing") then {
 			if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
-				[_asset, true] remoteExec ["lock", 0, true];
+				_asset lock true;
 				_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 			} else {
 				_asset lock 0;
