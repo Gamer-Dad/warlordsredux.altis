@@ -1,7 +1,5 @@
 private _v = _this;
-private _m = [];
 private _a = [];
-private _l = 0;
 
 _v setVariable ["dapsActive", true, true];
 _v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), true];
@@ -16,10 +14,7 @@ while {true} do {
     if !(alive _v) exitWith {};
 
     if (_v call DAPS_fnc_Active) then {
-        _r = nearestObjects [_v, ["RocketCore"], 100];
-        _m = nearestObjects [_v, ["MissileCore"], 100];
-        _p = nearestObjects [_v, ["ammo_Penetrator_Base"], 100];
-        _a = _r + _m + _p;
+        _a = nearestObjects [_v, ["RocketCore", "MissileCore", "ammo_Penetrator_Base"], 100];
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {

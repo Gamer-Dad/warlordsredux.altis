@@ -1,11 +1,5 @@
 private _v = _this;
-private _m = [];
 private _a = [];
-private _s = [];
-private _sm = [];
-private _p = [];
-private _r = [];
-private _l = 0;
 
 _v setVariable ["dapsActive", TRUE, TRUE];
 _v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), TRUE];
@@ -18,13 +12,8 @@ private _reg = [];
 dapsRegistered pushBackUnique _v;
 while {true} do {
     if !(alive _v) exitWith {};
-
     if (_v call DAPS_fnc_Active) then {
-        _s = nearestObjects [_v, ["ShellCore"], 100];
-        _r = nearestObjects [_v, ["RocketCore"], 100];
-        _m = nearestObjects [_v, ["MissileCore"], 100];
-        _p = nearestObjects [_v, ["ammo_Penetrator_Base"], 100];
-        _a = _r + _m + _s + _p;
+        _a = nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 100];
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
@@ -41,5 +30,5 @@ while {true} do {
         };
     } forEach _reg;
 
-    sleep 0.005;
+    sleep 0.01;
 };
