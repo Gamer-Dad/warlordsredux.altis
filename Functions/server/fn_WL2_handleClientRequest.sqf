@@ -146,29 +146,38 @@ if !(isNull _sender) then {
 						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
 							private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 							private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
-							private _taxiNodesCnt = count _taxiNodes;
-							private _spawnPos = [];
-							private _dir = 0;
-							private _checks = 0;
-							while {count _spawnPos == 0 && _checks < 100} do {
-								_checks = _checks + 1;
-								private _i = (floor random _taxiNodesCnt) max 1;
-								private _pointB = _taxiNodes # _i;
-								private _pointA = _taxiNodes # (_i - 1);
-								_dir = _pointA getDir _pointB;
-								private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-								if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-									_spawnPos = _pos;
+							if (isNil {_taxiNodes}) then {
+								_pos1 = (selectRandom (_pos call BIS_fnc_WL2_findSpawnPositions));
+								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
+								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
+								_asset setDir 0;
+								_asset setDamage 0;
+								_asset setFuel 1;
+							} else {
+								private _taxiNodesCnt = count _taxiNodes;
+								private _spawnPos = [];
+								private _dir = 0;
+								private _checks = 0;
+								while {count _spawnPos == 0 && _checks < 100} do {
+									_checks = _checks + 1;
+									private _i = (floor random _taxiNodesCnt) max 1;
+									private _pointB = _taxiNodes # _i;
+									private _pointA = _taxiNodes # (_i - 1);
+									_dir = _pointA getDir _pointB;
+									private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
+									if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+										_spawnPos = _pos;
+									};
 								};
-							};
-							if (count _spawnPos == 0) then {
-								_spawnPos = _targetPosFinal;
-							};
+								if (count _spawnPos == 0) then {
+									_spawnPos = _targetPosFinal;
+								};
 
-							_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
-							_asset setDir _dir;
-							_asset setDamage 0;
-							_asset setFuel 1;
+								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
+								_asset setDir _dir;
+								_asset setDamage 0;
+								_asset setFuel 1;
+							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 							createVehicleCrew _asset;

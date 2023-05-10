@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-UISleep 10;
+Sleep 20;
 
 waitUntil {sleep WL_TIMEOUT_SHORT; (((BIS_WL_base1 getVariable "BIS_WL_owner") == (BIS_WL_base2 getVariable "BIS_WL_owner")) || (BIS_WL_missionEnd == true))};
 
