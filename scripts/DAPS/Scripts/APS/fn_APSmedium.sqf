@@ -11,16 +11,20 @@ _v setVariable ["dapsAmmoMax", 4, true];
 
 private _time = -1;
 private _reg = [];
-
+dapsRegistered pushBackUnique _v;
 while {true} do {
     if !(alive _v) exitWith {};
 
     if (_v call DAPS_fnc_Active) then {
-        _a = [_v, 150] call DAPS_fnc_GetIncoming; // Function stored in GetIncoming.sqf
+        _r = nearestObjects [_v, ["RocketCore"], 100];
+        _m = nearestObjects [_v, ["MissileCore"], 100];
+        _p = nearestObjects [_v, ["ammo_Penetrator_Base"], 100];
+        _a = _r + _m + _p;
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
-				[_v, _a select 0] spawn DAPS_fnc_Generic;
+				_d = _v distance (_a select 0);
+				[_v, _a select 0, _d] spawn DAPS_fnc_Generic;
 				_reg pushBackUnique (_a select 0);
 			};
         };
