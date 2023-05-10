@@ -145,7 +145,6 @@ if !(isNull _sender) then {
 					if (_class isKindOf "Air") then {
 						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
 							private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
-							private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
 							if (isNil {_sector}) then {
 								_pos1 = (selectRandom (_pos call BIS_fnc_WL2_findSpawnPositions));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
@@ -154,6 +153,7 @@ if !(isNull _sender) then {
 								_asset setDamage 0;
 								_asset setFuel 1;
 							} else {
+								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
 								private _taxiNodesCnt = count _taxiNodes;
 								private _spawnPos = [];
 								private _dir = 0;
