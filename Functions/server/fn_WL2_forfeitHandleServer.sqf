@@ -19,7 +19,7 @@
 				
 				if (_votedYes >= _limit) then {
 					missionNamespace setVariable ["BIS_WL_ffTeam", _this, true];
-					BIS_WL_missionEnd = true;
+					missionNamespace setVariable ["BIS_WL_missionEnd", true, true];
 					_terminate = true;
 				};
 			};
