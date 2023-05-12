@@ -18,7 +18,7 @@ if !(isDedicated) then {
 	{deleteMarkerLocal _x} forEach ["BIS_WL_targetEnemy", "BIS_WL_targetFriendly"];
 	
 	if (!isNil {(missionNamespace getVariable "BIS_WL_ffTeam")}) exitWith {
-		_victory = ((missionNamespace getVariable "BIS_WL_ffTeam") == BIS_WL_playerSide);
+		_victory = ((missionNamespace getVariable ["BIS_WL_ffTeam", Independent]) == side group player);
 		_debriefing = format ["BIS_WL%1%2", if (_victory) then {"Defeat"} else {"Victory"}, BIS_WL_playerSide];
 		[_debriefing, _victory] call BIS_fnc_endMission;
 	};
