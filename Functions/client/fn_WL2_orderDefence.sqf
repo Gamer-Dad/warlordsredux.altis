@@ -22,7 +22,12 @@ _asset enableWeaponDisassembly false;
 _asset allowDamage false;
 {
 	_asset disableCollisionWith _x;
+	[_asset, _x] remoteExecCall ["disableCollisionWith", 0, _asset];
 } forEach entities "";
+{
+	_asset disableCollisionWith _x;
+	[_asset, _x] remoteExecCall ["disableCollisionWith", 0, _asset];
+} forEach allUnits;
 _asset hideObject false;
 
 player reveal [_asset, 4];
