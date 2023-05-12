@@ -53,8 +53,8 @@ if (_ret) then {
 		case "forfeitVote": {
 			_countSide = (playersNumber (side (group player)));
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
-			if (_countSide < 4) exitWith {_ret = false; _tooltip = format ["%1/4 Players", _countSide]};
-			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600)) exitWith {_ret = false; _tooltip = (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600) - WL_SYNCED_TIME))};
+			if (_countSide < 4) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
+			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600)) exitWith {_ret = false; _tooltip = str (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 600) - WL_SYNCED_TIME))};
 		};
 		case "Arsenal": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};

@@ -54,7 +54,7 @@ switch (_event) do {
 				_votedYes = count (_warlords select {(_x getVariable ["BIS_WL_forfeitVote", -1]) == 1});
 				_hintText = _hintText + format [
 					"%10<t shadow = '0'><t align = 'center' size = '1.3'>%1</t><br/><t size = '1.2'><t align = 'left'>[ %2 + %3 ]</t><t align = 'right' color = '#4bff58'>%4</t><br/><t align = 'left'>[ %2 + %5 ]</t><t align = 'right' color = '#ff4b4b'>%6</t></t><t size = '1'><br/><br/><t align = 'left'>%7</t><t align = 'right'>%8</t><br/><t align = 'center'>- %9 -</t></t></t>",
-					toUpper localize "STR_A3_WL_target_reset_info",
+					toUpper "Surrender vote activated",
 					localize "str_dik_lcontrol",
 					localize "str_dik_y",
 					toUpper localize "str_lib_info_yes",

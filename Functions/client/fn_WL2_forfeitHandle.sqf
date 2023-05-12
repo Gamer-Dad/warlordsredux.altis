@@ -7,7 +7,7 @@ BIS_WL_playerSide spawn {
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && (missionNamespace getVariable [_varNameVotingBy, ""]) != ""};
 		
-		[toUpper format [localize "STR_A3_WL_popup_voting_reset_user_TODO_REWRITE", missionNamespace getVariable _varNameVotingBy]] spawn BIS_fnc_WLSmoothText;
+		[toUpper format ["Surrender ordered by %1", missionNamespace getVariable _varNameVotingBy]] spawn BIS_fnc_WLSmoothText;
 		missionNamespace setVariable [_varNameVotingBy, ""];
 		
 		if ((player getVariable ["BIS_WL_forfeitVote", -1]) == -1) then {

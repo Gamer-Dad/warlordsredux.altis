@@ -19,7 +19,7 @@ if !(isDedicated) then {
 	
 	if (!isNil {(missionNamespace getVariable "BIS_WL_ffTeam")}) exitWith {
 		_victory = ((missionNamespace getVariable "BIS_WL_ffTeam") == BIS_WL_playerSide);
-		_debriefing = format ["BIS_WL%1%2", if (_victory) then {"Victory"} else {"Defeat"}, BIS_WL_playerSide];
+		_debriefing = format ["BIS_WL%1%2", if (_victory) then {"Defeat"} else {"Victory"}, BIS_WL_playerSide];
 		[_debriefing, _victory] call BIS_fnc_endMission;
 	};
 	_victory = _winner == BIS_WL_playerSide;
