@@ -163,14 +163,6 @@ player addEventHandler ["GetInMan", {
 	};
 }];
 
-player addAction [
-	"Get 10K CP",
-	{
-		_uid = getPlayerUID player;
-		[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2];
-	}
-];
-
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
 	_override = false;
@@ -288,6 +280,7 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_getUavConnected;
 0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_assistHandle;
+0 spawn BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
 

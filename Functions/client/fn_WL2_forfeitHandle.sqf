@@ -5,7 +5,7 @@ BIS_WL_playerSide spawn {
 	_varNameVotingBy = format ["BIS_WL_forfeitOrderedBy_%1", _this];
 	
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && !isNull WL_TARGET_FRIENDLY && (missionNamespace getVariable [_varNameVotingBy, ""]) != ""};
+		waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && (missionNamespace getVariable [_varNameVotingBy, ""]) != ""};
 		
 		[toUpper format [localize "STR_A3_WL_popup_voting_reset_user_TODO_REWRITE", missionNamespace getVariable _varNameVotingBy]] spawn BIS_fnc_WLSmoothText;
 		missionNamespace setVariable [_varNameVotingBy, ""];
