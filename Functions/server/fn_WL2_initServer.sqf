@@ -25,6 +25,7 @@ MRTM_spawnedSLAMs_Ammo = [];
 missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 missionNamespace setVariable ["imbalance", 0, true];
+missionNamespace setVariable ["BIS_WL_missionEnd", false, true];
 
 missionNamespace setVariable ["serverTimer", 0, true];
 
