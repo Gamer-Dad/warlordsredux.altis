@@ -28,12 +28,12 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 
 [_v, _id, _p, _i] call DAPS_fnc_React;
 _p call DAPS_fnc_Blast;
-[_i] remoteExec ["deleteVehicle", 0, true];
+deleteVehicle _i;
 
 private _sm = nearestObjects [_p, ["SubmunitionCore"], 10];
 {
-    if !(alive _x) then {
-        [_x] remoteExec ["deleteVehicle", 0, true];
+    if (alive _x) then {
+        deleteVehicle _x;
      };
 } forEach _sm;
 
