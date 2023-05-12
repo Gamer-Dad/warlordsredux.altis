@@ -21,6 +21,9 @@ _asset allowDamage false;
 {
 	_asset disableCollisionWith _x;
 } forEach entities "";
+{
+	_asset disableCollisionWith _x;
+} forEach allUnits;
 _asset hideObject false;
 
 player reveal [_asset, 4];
