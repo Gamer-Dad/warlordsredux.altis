@@ -30,12 +30,11 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 _p call DAPS_fnc_Blast;
 [_i] remoteExec ["deleteVehicle", 0, true];
 
-private _sm = nearestObjects [_p, ["SubmunitionCore"], 10];
 {
     if (alive _x) then {
         [_x] remoteExec ["deleteVehicle", 0, true];
      };
-} forEach _sm;
+} forEach (nearestObjects [_p, ["SubmunitionCore"], 15]);
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
