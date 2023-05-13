@@ -7,15 +7,11 @@ if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
 if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
 if ((_v distance _i) > _d) exitWith {};
 
-private _ex = false;
+private _ex = true;
 
-while {true} do {
-    if !(alive _i) exitWith {_ex = true};
-    if !(alive _v) exitWith {_ex = true};
-    
+while {alive _i && alive _v} do {
     _d = _v distance _i;
-    if (_d < 50) exitWith {_ex = false}; // Max intercept distance
-    if (_d > 200) exitWith {_ex = true};
+    if (_d < 60) exitWith {_ex = false};
     sleep 0.001;
 };
 
@@ -29,12 +25,6 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 [_v, _id, _p, _i] call DAPS_fnc_React;
 _p call DAPS_fnc_Blast;
 [_i] remoteExec ["deleteVehicle", 0, true];
-
-{
-    if (alive _x) then {
-        [_x] remoteExec ["deleteVehicle", 0, true];
-     };
-} forEach (nearestObjects [_p, ["SubmunitionCore"], 15]);
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
