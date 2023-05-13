@@ -1,9 +1,11 @@
 /*******************************START OF SCRIPTS****************************/
 // Trophy
-execVM "scripts\DAPS\Scripts\Start.sqf";
+DAPS_fnc_start = compile preprocessFile "scripts\DAPS\Scripts\Start.sqf";
+call DAPS_fnc_start;
 
 // Air Burst
-execVM"scripts\DIS\Start.sqf";
+DIS_fnc_start = compile preprocessFile "scripts\DIS\Start.sqf";
+call DIS_fnc_start;
 
 //view distance limits 
 tawvd_maxRange = 4000; //max range allowed
