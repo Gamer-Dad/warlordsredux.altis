@@ -18,7 +18,7 @@ while {true} do {
 		if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
 				_d = _v distance (_a select 0);
-				[_v, _a select 0, _d] remoteExec ["DAPS_fnc_Generic", 2];
+				[_v, _a select 0, _d] spawn DAPS_fnc_Generic;
 				_reg pushBackUnique (_a select 0);
 			};
 		};
