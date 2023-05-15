@@ -3,7 +3,6 @@
 BIS_WL_playerSide spawn {
 	_varNameVoting = format ["BIS_WL_targetResetVotingSince_%1", _this];
 	_varNameReset = format ["BIS_WL_targetResetOrderedBy_%1", _this];
-	waitUntil {!isNil {BIS_WL_missionEnd}};
 	
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME < ((missionNamespace getVariable [_varNameVoting, -1]) + WL_TARGET_RESET_VOTING_TIME) && !isNull WL_TARGET_FRIENDLY && (missionNamespace getVariable [_varNameReset, ""]) != ""};
@@ -44,7 +43,6 @@ BIS_WL_playerSide spawn {
 BIS_WL_playerSide spawn {
 	_varName = format ["BIS_WL_recentTargetReset_%1", _this];
 	_target = objNull;
-	waitUntil {!isNil {BIS_WL_missionEnd}};
 	
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; !isNull WL_TARGET_FRIENDLY};
@@ -72,7 +70,6 @@ BIS_WL_playerSide spawn {
 BIS_WL_enemySide spawn {
 	_varName = format ["BIS_WL_targetResetOrderedBy_%1", _this];
 	_target = objNull;
-	waitUntil {!isNil {BIS_WL_missionEnd}};
 	
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; !isNull WL_TARGET_ENEMY};

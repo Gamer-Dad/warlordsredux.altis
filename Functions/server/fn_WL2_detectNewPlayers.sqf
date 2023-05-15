@@ -1,5 +1,4 @@
 #include "..\warlords_constants.inc"
-waitUntil {!isNil {BIS_WL_missionEnd}};
 
 0 spawn {
 	while {!BIS_WL_missionEnd} do {

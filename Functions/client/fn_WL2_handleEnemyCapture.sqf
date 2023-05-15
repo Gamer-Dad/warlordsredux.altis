@@ -6,7 +6,6 @@ _marker = (_sector getVariable "BIS_WL_markers") # 1;
 _nextPossibleWarn = 0;
 
 while {!BIS_WL_missionEnd} do {
-	waitUntil {!isNil {BIS_WL_missionEnd}};
 	waitUntil {sleep WL_TIMEOUT_LONG; (_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide};
 	
 	while {(_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide} do {
