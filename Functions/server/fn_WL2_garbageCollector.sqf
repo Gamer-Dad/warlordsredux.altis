@@ -1,4 +1,5 @@
 #include "..\warlords_constants.inc"
+waitUntil {!isNil {BIS_WL_missionEnd}};
 
 0 spawn {
 	sleep 600;

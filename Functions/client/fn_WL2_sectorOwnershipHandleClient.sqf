@@ -1,6 +1,7 @@
 #include "..\warlords_constants.inc"
 
 params ["_sector", "_prevOwner"];
+waitUntil {!isNil {BIS_WL_missionEnd}};
 
 while {!BIS_WL_missionEnd} do {
 	waitUntil {sleep WL_TIMEOUT_STANDARD; (_sector getVariable "BIS_WL_owner") != _prevOwner};

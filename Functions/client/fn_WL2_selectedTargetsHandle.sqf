@@ -5,6 +5,7 @@ _prevSector2 = objNull;
 
 _side1 = BIS_WL_playerSide;
 _side2 = BIS_WL_enemySide;
+waitUntil {!isNil {BIS_WL_missionEnd}};
 
 while {!BIS_WL_missionEnd} do {
 	if (_prevSector1 != WL_TARGET_FRIENDLY) then {

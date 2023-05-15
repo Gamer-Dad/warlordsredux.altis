@@ -159,6 +159,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 		};
 		[_x, _sector, _handledSide] spawn {
 			params ["_trigger", "_sector", "_side"];
+			waitUntil {!isNil {BIS_WL_missionEnd}};
 			while {!BIS_WL_missionEnd} do {
 				waitUntil {sleep WL_TIMEOUT_STANDARD; (triggerTimeoutCurrent _trigger) != -1 && (_sector getVariable "BIS_WL_owner") != _side};
 				_sector setVariable ["BIS_WL_seizingInfo", [_side, WL_SYNCED_TIME, WL_SYNCED_TIME + triggerTimeoutCurrent _trigger], TRUE];

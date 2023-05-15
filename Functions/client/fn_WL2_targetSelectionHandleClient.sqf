@@ -2,6 +2,7 @@
 
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
 _mostVotedVar = format ["BIS_WL_mostVoted_%1", BIS_WL_playerSide];
+waitUntil {!isNil {BIS_WL_missionEnd}};
 
 while {!BIS_WL_missionEnd} do {
 	_lastTarget = WL_TARGET_FRIENDLY;

@@ -2,6 +2,7 @@
 
 _previousSeizingInfo = [];
 _visitedSector = objNull;
+waitUntil {!isNil {BIS_WL_missionEnd}};
 
 while {!BIS_WL_missionEnd} do {
 	

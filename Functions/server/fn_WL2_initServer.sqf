@@ -168,6 +168,7 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 
 {
 	_x spawn {
+		waitUntil {!isNil {BIS_WL_missionEnd}};
 		_side = _this;
 		while {!BIS_WL_missionEnd} do {
 			waitUntil {sleep WL_TIMEOUT_LONG; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};

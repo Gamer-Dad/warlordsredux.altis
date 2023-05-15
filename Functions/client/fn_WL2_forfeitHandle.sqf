@@ -1,6 +1,7 @@
 #include "..\warlords_constants.inc"
 
 BIS_WL_playerSide spawn {
+	waitUntil {!isNil {BIS_WL_missionEnd}};
 	_varNameVoting = format ["BIS_WL_forfeitVotingSince_%1", _this];
 	_varNameVotingBy = format ["BIS_WL_forfeitOrderedBy_%1", _this];
 	

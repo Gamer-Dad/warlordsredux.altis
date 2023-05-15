@@ -1,6 +1,7 @@
 #include "..\warlords_constants.inc"
 
 BIS_WL_highlightedSector = objNull;
+waitUntil {!isNil {BIS_WL_missionEnd}};
 
 addMissionEventHandler ["Map", {
 	BIS_WL_highlightedSector = objNull;

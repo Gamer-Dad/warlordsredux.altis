@@ -3,6 +3,7 @@
 {
 	_x spawn {
 		_varName = format ["BIS_WL_targetResetVotingSince_%1", _this];
+		waitUntil {!isNil {BIS_WL_missionEnd}};
 		
 		while {!BIS_WL_missionEnd} do {
 			waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME < ((missionNamespace getVariable [_varName, -1]) + WL_TARGET_RESET_VOTING_TIME)};

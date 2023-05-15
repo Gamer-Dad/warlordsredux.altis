@@ -4,6 +4,7 @@ params ["_sector"];
 
 if (isServer) then {
 	_sector spawn {
+		waitUntil {!isNil {BIS_WL_missionEnd}};
 		while {!BIS_WL_missionEnd} do {
 			waitUntil {sleep WL_TIMEOUT_STANDARD; BIS_WL_competingSides findIf {(_this getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > WL_SYNCED_TIME} != -1};
 			_revealTrigger = createTrigger ["EmptyDetector", position _this];
@@ -32,6 +33,7 @@ if (isServer) then {
 
 if !(isDedicated) then {
 	_sector spawn {
+		waitUntil {!isNil {BIS_WL_missionEnd}};
 		while {!BIS_WL_missionEnd} do {
 			waitUntil {sleep WL_TIMEOUT_STANDARD; (_this getVariable [format ["BIS_WL_lastScanEnd_%1", BIS_WL_playerSide], -9999]) > WL_SYNCED_TIME && !isNull (_this getVariable ["BIS_WL_revealTrigger", objNull])};
 			_revealTrigger = _this getVariable ["BIS_WL_revealTrigger", objNull];

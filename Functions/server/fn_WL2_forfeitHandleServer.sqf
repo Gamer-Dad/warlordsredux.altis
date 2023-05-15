@@ -2,6 +2,7 @@
 
 {
 	_x spawn {
+		waitUntil {!isNil {BIS_WL_missionEnd}};
 		_varName = format ["BIS_WL_forfeitVotingSince_%1", _this];
 		
 		while {!BIS_WL_missionEnd} do {

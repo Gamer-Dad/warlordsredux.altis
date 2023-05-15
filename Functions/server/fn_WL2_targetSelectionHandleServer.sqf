@@ -6,6 +6,7 @@
 	[_x, _forEachIndex] spawn {
 		
 		params ["_side", "_sideIndex"];
+		waitUntil {!isNil {BIS_WL_missionEnd}};
 		
 		_votingResetVar = format ["BIS_WL_resetTargetSelection_server_%1", _side];
 		_votingReset = {missionNamespace getVariable [_votingResetVar, FALSE]};
