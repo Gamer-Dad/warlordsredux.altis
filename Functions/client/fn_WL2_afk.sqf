@@ -21,7 +21,7 @@ MRTM_fnc_idle = {
 
 while {true} do {
 	sleep 10;
-	if ((serverTime >= time_to_idle) && (player getVariable "BIS_WL_AFK") == false) then {
+	if ( serverTime >= time_to_idle) then {
 		0 spawn MRTM_fnc_idle;
 	};
 };
