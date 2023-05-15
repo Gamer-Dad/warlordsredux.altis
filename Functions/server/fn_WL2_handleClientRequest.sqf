@@ -114,7 +114,7 @@ if !(isNull _sender) then {
 		case "fastTravelContested": {
 			if (_hasFunds) then {
 				_sender setVehiclePosition [_pos, [], 1, "NONE"];
-				private _tagAlong = (units group _sender) select {(_x distance2D _sender <= 200) && (vehicle _x == _x) && ((_x getVariable ["BIS_WL_Owned_By", ""]) == getPlayerUID _sender)};
+				private _tagAlong = (units group _sender) select {(_x distance2D _sender <= 200) && (vehicle _x == _x)};
 				{
 					_x setVehiclePosition [_pos, [], 1, "NONE"];
 				} forEach _tagAlong;
@@ -248,7 +248,6 @@ if !(isNull _sender) then {
 						} else {
 							if (_class isKindOf "Man") then {
 								_asset = (group _sender) createUnit [_class, _targetPos, [], 0, "CAN_COLLIDE"];
-								_asset setVariable ["BIS_WL_Owned_By", getPlayerUID _sender, true];
 							} else { // Vehicle creation code
 								_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 								_asset setDir direction _sender;
