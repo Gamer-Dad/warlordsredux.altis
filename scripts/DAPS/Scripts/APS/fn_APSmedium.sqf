@@ -14,7 +14,7 @@ while {true} do {
     if !(alive _v) exitWith {};
 
     if (_v call DAPS_fnc_Active) then {
-        _a = nearestObjects [_v, ["RocketCore", "MissileCore", "ammo_Penetrator_Base"], 100];
+        _a = nearestObjects [_v, ["RocketCore", "MissileCore", "ammo_Penetrator_Base"], 70];
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
