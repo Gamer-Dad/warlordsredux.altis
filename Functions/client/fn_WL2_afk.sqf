@@ -1,8 +1,5 @@
 #include "..\warlords_constants.inc"
 
-_pos = [0,0,0];
-_dir = 0;
-_flags = 0;
 player setVariable ["BIS_WL_AFK", false, true];
 time_to_idle = serverTime + 600;
 
