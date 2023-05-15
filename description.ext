@@ -107,6 +107,7 @@ class CfgFunctions {
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
+			class WL2_afk {};
     	};
 		class Server 
 		{

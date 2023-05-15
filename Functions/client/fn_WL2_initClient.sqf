@@ -281,6 +281,7 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_assistHandle;
 0 spawn BIS_fnc_WL2_forfeitHandle;
+0 spawn BIS_fnc_WL2_afk;
 
 player setVariable ["arsenalOpened", false, true];
 

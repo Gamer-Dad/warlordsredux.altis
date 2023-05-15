@@ -45,5 +45,5 @@ while {true} do {
 				[_uid, (missionNamespace getVariable "actualIncomeOpf")] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
-	} forEach BIS_WL_allWarlords; // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
+	} forEach ((BIS_WL_allWarlords) select {(_x getVariable ["BIS_WL_AFK", false]) == false}); // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
 };
