@@ -43,9 +43,9 @@ _ctrl ctrlCommit 0;
 control spawn {
 	disableSerialization;
 	_ctrl = (findDisplay 46) displayCtrl _this;
-	UISleep 4;
+	UISleep 6;
 	_ctrl ctrlSetFade 1;
-	_ctrl ctrlCommit 3;
+	_ctrl ctrlCommit 4;
 
 	ctrlDelete _ctrl;
 	activeControls = activeControls - [_this];
