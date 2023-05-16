@@ -8,6 +8,7 @@ if (!isNull _sector) then {
 	_seizeControlTrg = ((_sector getVariable "BIS_WL_seizeControlTrgs") select {(_x getVariable "BIS_WL_handledSide") == _side}) # 0;
 	_seizeControlTrg enableSimulation TRUE;
 	if (_sector in WL_BASES) then {
+		_sector setVariable ["BIS_WL_baseUnderAttack", true, true];
 		["base_vulnerable", _sector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
 		_sector spawn {
 			sleep WL_TIMEOUT_MAX;
