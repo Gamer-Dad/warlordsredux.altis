@@ -14,7 +14,7 @@ if ((random 100) > 0) then {_forceHit = FALSE}; // Change 0 to percent chance if
 
 while {true} do {
 	if !(alive _m) exitWith{};
-	_targets = nearEntities [_m, ["AIR"], _range];
+	_targets = _m nearEntities [["AIR"], _range];
 	if ((count _targets) > 0) exitWith {_frag = TRUE; _target = (_targets select 0)};
 	sleep .01;
 };
