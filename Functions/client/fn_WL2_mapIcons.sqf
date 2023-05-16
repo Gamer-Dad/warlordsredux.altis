@@ -177,7 +177,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};
-	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && (side _x == side group player) && (alive _x)});
+	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && (side _x == side group player) && (alive _x) && (typeOf _x != "B_Truck_01_medical_F") && (typeOf _x != "O_Truck_03_medical_F")});
 	
 	{
 		if (!isNull _x) then {
@@ -248,6 +248,40 @@ MRTM_fnc_iconDrawMap = {
 			"right"
 		];
 	} count (allPlayers select {_x getVariable ["BIS_WL_isCheater", false]});
+	if (side group player == west) then {
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Fast travel truck",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {typeOf _x == "B_Truck_01_medical_F"});
+	};
+	if (side group player == east) then {
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Fast travel truck",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {typeOf _x == "O_Truck_03_medical_F"});
+	};
 };
 
 MRTM_fnc_iconDrawGPS = {
