@@ -212,7 +212,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};	
-	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x)});
+	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && (typeOf _x != "B_Truck_01_medical_F") && (typeOf _x != "O_Truck_03_medical_F")});
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
@@ -257,7 +257,7 @@ MRTM_fnc_iconDrawMap = {
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_getDir,
-				"Fast travel truck",
+				"Spawn travel truck",
 				1,
 				0.025,
 				"TahomaB",
@@ -274,7 +274,7 @@ MRTM_fnc_iconDrawMap = {
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_iconSize,
 				[_x] call MRTM_fnc_getDir,
-				"Fast travel truck",
+				"Spawn travel truck",
 				1,
 				0.025,
 				"TahomaB",
