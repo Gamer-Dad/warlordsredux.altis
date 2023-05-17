@@ -8,7 +8,7 @@ private _connectedToBase = count (WL_BASES arrayIntersect (_sector getVariable "
 //adjusting nearroads value below should change spawn slots for non-hard coded towns.
 // Orginal if (_side == BIS_WL_localSide)
 if (_side == BIS_WL_localSide) then {
-	if (_connectedToBase) then {
+	if (count (_sector getVariable "BIS_WL_vehiclesToSpawn") == 0) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
 			private _road = selectRandom _roads;
@@ -78,7 +78,8 @@ if (_side == BIS_WL_localSide) then {
 			} forEach _waypoints;
 			uiSleep WL_TIMEOUT_MIN;
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
-	}; //below is heli/jet spawn code 
+	}; 
+	//below is heli/jet spawn code 
 	if (!_connectedToBase && "H" in (_sector getVariable "BIS_WL_services")) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
 		
