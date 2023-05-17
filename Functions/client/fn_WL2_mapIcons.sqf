@@ -118,7 +118,7 @@ MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
 	{
 		_m drawIcon [
-			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+			"img\kia_ca.paa",
 			[1, 0, 0, 1],
 			[_x] call MRTM_fnc_getPos,
 			20,
@@ -292,7 +292,7 @@ MRTM_fnc_iconDrawGPS = {
 	_m = _this select 0;
 	{
 		_m drawIcon [
-			"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+			"img\kia_ca.paa",
 			[1, 0, 0, 1],
 			[_x] call MRTM_fnc_getPos,
 			20,
