@@ -119,22 +119,17 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
-addMissionEventHandler ["EntityCreated", {
-	params ["_entity"];
-	if (typeOf _entity == "B_UGV_01_rcws_F" || typeOf _entity == "B_UGV_02_Demining_F" || typeOf _entity == "O_UGV_01_rcws_F" || typeOf _entity == "O_UGV_02_Demining_F" || typeOf _entity == "O_Truck_03_medical_F" || typeOf _entity == "B_Truck_01_medical_F" || typeOf _entity == "O_APC_Wheeled_02_rcws_v2_F") then {
-		[_entity] spawn {
-			_entity = _this select 0;
-			while {alive _entity} do {
-				_pos = getPosASLW _entity;
-				if (_pos select 2 < 0) then {
-					_entity setDamage 1;
-				};
-				sleep WL_TIMEOUT_LONG;
-			};
-		};
+0 spawn {
+	while {true} do {
+		{
+			_pos = getPosASLW _x;
+			if (_pos select 2 < 0) then {
+				_x setDamage 1;
+			};			
+		} forEach (vehicles select {(!_x isKindOf "Ship") || (!isKindOf "Submarine")});
+		sleep 10;
 	};
-}];
-
+};
 
 missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
