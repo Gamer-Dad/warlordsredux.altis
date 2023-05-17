@@ -55,7 +55,6 @@ addMissionEventHandler ["EntityRespawned", {
 call BIS_fnc_WL2_processRunways;
 
 if (isServer) then {
-	missionNamespace setVariable ["BIS_WL_missionEnd", false, true];
 	call BIS_fnc_WL2_initServer;
 } else {
 	waitUntil {{isNil _x} count [
@@ -64,7 +63,6 @@ if (isServer) then {
 		format ["BIS_WL_currentTarget_%1", BIS_WL_competingSides # 0],
 		format ["BIS_WL_currentTarget_%1", BIS_WL_competingSides # 1],
 		"BIS_WL_missionStart",
-		"BIS_WL_missionEnd",
 		"BIS_WL_wrongTeamGroup"
 	] == 0};
 	

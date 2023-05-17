@@ -11,6 +11,7 @@ switch (_locality) do {
 		BIS_WL_fogOfWar = BIS_WL_initModule getVariable ["BIS_WL_fogOfWar", 1];
 		BIS_WL_localSide = (BIS_WL_sidesArray - BIS_WL_competingSides) # 0;
 		BIS_WL_localSide_all = (BIS_WL_sidesArray + BIS_WL_competingSides) # 0;
+		BIS_WL_missionEnd = FALSE;
 		BIS_WL_sectorUpdateInProgress = FALSE;
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
 		if (BIS_WL_mapSize == 0) then {BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "Grid" >> "OffsetY")};
