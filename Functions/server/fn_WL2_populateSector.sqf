@@ -8,7 +8,7 @@ private _connectedToBase = count (WL_BASES arrayIntersect (_sector getVariable "
 //adjusting nearroads value below should change spawn slots for non-hard coded towns.
 // Orginal if (_side == BIS_WL_localSide)
 if (_side == BIS_WL_localSide) then {
-	if (count (_sector getVariable "BIS_WL_vehiclesToSpawn") == 0 && !_connectedToBase) then {
+	if (_connectedToBase) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
 			private _road = selectRandom _roads;
@@ -46,6 +46,15 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleInfo params ["_type", "_pos", "_dir", "_lock", "_waypoints"];
 			_vehicleArray = [_pos, _dir, _type, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
+
+			if !(_vehicle isKindOf "Man") then {
+				_vehicle setVariable ["assistList", [], true];
+				_vehicle addEventHandler ["HandleDamage", {
+					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+					_this spawn BIS_fnc_WL2_setAssist;
+					_damage;
+				}];
+			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
