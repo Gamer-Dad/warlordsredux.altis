@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1056;
+		nextID=1061;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15480.371,177.71021,17258.633};
-		dir[]={-0.87583053,-0.4689756,0.11409837};
-		up[]={-0.4650577,0.88320374,0.060585868};
-		aside[]={0.12918676,2.6125235e-007,0.99164039};
+		pos[]={16192.443,185.42613,16671.506};
+		dir[]={-0.25440934,-0.37379387,0.8919577};
+		up[]={-0.1025302,0.92750347,0.35946977};
+		aside[]={0.9616614,3.0384399e-008,0.27429146};
 	};
 };
 binarizationWanted=0;
@@ -145,7 +145,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=278;
+		items=283;
 		class Item0
 		{
 			dataType="Logic";
@@ -7809,6 +7809,93 @@ class Mission
 			id=1055;
 			type="I_APC_Wheeled_03_cannon_F";
 			atlOffset=-5.7220459e-006;
+		};
+		class Item278
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={16205.05,26.492455,17285.158};
+				angles[]={6.2671871,0,6.2791886};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1056;
+			type="I_MRAP_03_hmg_F";
+			atlOffset=-3.4332275e-005;
+		};
+		class Item279
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={16438.863,26.680521,17231.98};
+				angles[]={-0,0,6.2738566};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1057;
+			type="I_MRAP_03_hmg_F";
+			atlOffset=-1.9073486e-006;
+		};
+		class Item280
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={16126.629,15.680232,17000.098};
+				angles[]={6.2605233,0,6.2805333};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=1058;
+			type="I_LT_01_AA_F";
+			atlOffset=-1.1444092e-005;
+		};
+		class Item281
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15941.071,17.926411,17185.75};
+				angles[]={6.2698536,0,6.272521};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1059;
+			type="I_APC_tracked_03_cannon_F";
+			atlOffset=-5.7220459e-006;
+		};
+		class Item282
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={16128.146,16.616032,16824.604};
+				angles[]={0.0039967569,0.80893213,6.2818484};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1060;
+			type="I_MBT_03_cannon_F";
+			atlOffset=1.0490417e-005;
 		};
 	};
 	class Connections
