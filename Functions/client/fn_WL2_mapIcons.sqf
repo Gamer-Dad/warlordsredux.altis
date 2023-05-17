@@ -34,12 +34,12 @@ MRTM_fnc_iconType = {
 
 MRTM_fnc_iconSize = {
 	params ["_e"];
-	if (_e isKindOf 'Man') exitWith {22};
-	if (_e isKindOf 'StaticWeapon') exitWith {22};
-	if (_e isKindOf 'LandVehicle') exitWith {26};
-	if (_e isKindOf 'Ship') exitWith {24};
-	if (_e isKindOf 'Air') exitWith {24};
-	22;
+	if (_e isKindOf 'Man') exitWith {23};
+	if (_e isKindOf 'StaticWeapon') exitWith {23};
+	if (_e isKindOf 'LandVehicle') exitWith {27};
+	if (_e isKindOf 'Ship') exitWith {25};
+	if (_e isKindOf 'Air') exitWith {25};
+	23;
 };
 
 MRTM_fnc_getDir = {
