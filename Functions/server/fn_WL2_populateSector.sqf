@@ -14,6 +14,14 @@ if (_side == BIS_WL_localSide) then {
 			private _road = selectRandom _roads;
 			_vehicleArray = [position _road, _road getDir selectRandom (roadsConnectedTo _road), selectRandomWeighted (BIS_WL_factionVehicleClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
+			if !(_vehicle isKindOf "Man") then {
+				_vehicle setVariable ["assistList", [], true];
+				_vehicle addEventHandler ["HandleDamage", {
+					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+					_this spawn BIS_fnc_WL2_setAssist;
+					_damage;
+				}];
+			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
@@ -61,13 +69,21 @@ if (_side == BIS_WL_localSide) then {
 			} forEach _waypoints;
 			uiSleep WL_TIMEOUT_MIN;
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
-	}; //below is heli/jet spawn code, molos AF never gets one because its not connected to any friendly towns when attacked 
+	}; //below is heli/jet spawn code 
 	if (!_connectedToBase && "H" in (_sector getVariable "BIS_WL_services")) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
 		
 		if (count _neighbors > 0) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted (BIS_WL_factionAircraftClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
+			if !(_vehicle isKindOf "Man") then {
+				_vehicle setVariable ["assistList", [], true];
+				_vehicle addEventHandler ["HandleDamage", {
+					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+					_this spawn BIS_fnc_WL2_setAssist;
+					_damage;
+				}];
+			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
