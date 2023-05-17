@@ -31,6 +31,7 @@ if (!isNull _sector) then {
 		_seizeControlTrg enableSimulation FALSE;
 	};
 	if (_prevSector in WL_BASES) then {
+		_sector setVariable ["BIS_WL_baseUnderAttack", false, true];
 		["base_safe", _prevSector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
 		_prevSector setVariable ["BIS_WL_fastTravelEnabled", TRUE, TRUE];
 	};
