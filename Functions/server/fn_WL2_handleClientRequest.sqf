@@ -235,7 +235,7 @@ if !(isNull _sender) then {
 							_targetPos set [2, (_targetPos # 2) max 0];
 							_asset setDir direction _sender;
 							_asset setPos _targetPos;
-							[_asset, false] remoteExec ["enableWeaponDisassembly", 0, true];
+							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.
 								createVehicleCrew _asset;
@@ -262,7 +262,7 @@ if !(isNull _sender) then {
 						(crew _asset) joinSilent _group;
 						(effectiveCommander _asset) setSkill 0.2;
 						(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
-						[_asset, false] remoteExec ["enableWeaponDisassembly", 0, true];
+						_asset enableWeaponDisassembly false;
 					};
 				}; 
 				

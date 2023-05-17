@@ -25,7 +25,7 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 
 [_v, _id, _p, _i] call DAPS_fnc_React;
 _p call DAPS_fnc_Blast;
-[_i] remoteExec ["deleteVehicle", 0, true];
+[_i] remoteExec ["deleteVehicle", owner _i, true];
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
