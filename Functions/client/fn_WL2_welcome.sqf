@@ -57,6 +57,19 @@ lbSetData[69695, _scripts, "scripts"];
 
 lbSetCurSel [69695, _pageAbt];
 
+lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
+lbSetPicture [69695, _pageAbt, 'img\star.paa'];
+lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
+lbSetPicture [69695, _pageHow, 'img\icon_important.paa'];
+lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
+lbSetPicture [69695, _theTeam, 'img\icon-user.paa'];
+lbSetText[69695, _dc, localize "STR_MRTM_welcomeInteract_04"];
+lbSetPicture [69695, _dc, 'img\link_out_white.paa'];
+lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
+lbSetPicture [69695, _changelog, 'img\icon_update.paa'];
+lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
+lbSetPicture [69695, _scripts, 'img\icon-file.paa'];
+
 
 while {dialog} do {
 	_index = lbCurSel 69695;
@@ -68,19 +81,6 @@ while {dialog} do {
 	} else {
 		ctrlShow [6969691, false];
 	};
-
-	lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
-	lbSetPicture [69695, _pageAbt, 'img\star.paa'];
-	lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
-	lbSetPicture [69695, _pageHow, 'img\icon_important.paa'];
-	lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
-	lbSetPicture [69695, _theTeam, 'img\icon-user.paa'];
-	lbSetText[69695, _dc, localize "STR_MRTM_welcomeInteract_04"];
-	lbSetPicture [69695, _dc, 'img\link_out_white.paa'];
-	lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
-	lbSetPicture [69695, _changelog, 'img\icon_update.paa'];
-	lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
-	lbSetPicture [69695, _scripts, 'img\icon-file.paa'];
 
 	_inventoryKey = actionKeysNames "gear";
 	_gearKey = actionKeysNames "cycleThrownItems";
