@@ -74,6 +74,7 @@ while {dialog} do {
 	lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
 	lbSetText[69695, _dc, localize "STR_MRTM_welcomeInteract_04"];
 	lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
+	lbSetPicture [69695, _changelog, 'img\icon_important.paa'];
 	lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 
 	_inventoryKey = actionKeysNames "gear";
