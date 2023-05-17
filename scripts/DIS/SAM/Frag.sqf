@@ -34,13 +34,13 @@ MRTM_fnc_getOwner = {
 
 // Secondary at target location
 _type = "ammo_Missile_rim116";
-private _m2 = createVehicle[_type, _tPos, [] , 45, "FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
+_tPos = getPos _target;
+private _m2 = createVehicle [_type, _tPos, [] , 45, "FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
 _m2 setShotParents [_unit, [_unit] call MRTM_fnc_getOwner];
 
 triggerAmmo _m2;
 
 _pos = getPos _m2;
-_tPos = getPos _target;
 private _d = _pos distance _tPos;
 systemChat format["SAM detonated %1 meters from target", round _d];
 
