@@ -307,16 +307,11 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
 	_key = actionKeysNames "curatorInterface";
 	_keyName = (keyName (_this select 1));
 	if (_keyName == _key) then {
+		{
+			_x addCuratorEditableObjects [(vehicles + allUnits), true];
+		} forEach allCurators;
 		if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
 			true;
 		};
 	};
 }];
-
-player addaction [
-	"10K CP", 
-	{
-		_uid = getPlayerUID player;
-		[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2]
-	}
-];
