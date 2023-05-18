@@ -128,7 +128,7 @@ addMissionEventHandler ["EntityKilled", {
 					sleep 2;
 					if (_pos select 2 < -2.5) then {
 						_x setDamage 1;
-					}:
+					};
 				};
 			};	
 		} forEach ((vehicles) select {(!(_x isKindOf "Ship") || !(_x isKindOf "Submarine"))});
