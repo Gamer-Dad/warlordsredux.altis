@@ -43,9 +43,9 @@ if !(isNull _instigator) then {
 	};
 };
 
-_cond = (count ((_unit getVariable ["assistList", []]) select {_x != _x getVariable ["BIS_WL_killer", objNull]}));
+_cond = (count ((_unit getVariable ["assistList", []]) select {_x != _unit getVariable ["BIS_WL_killer", objNull]}));
 if (_cond > 0) then {
-	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _x getVariable ["BIS_WL_killer", objNull]});
+	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _unit getVariable ["BIS_WL_killer", objNull]});
 	_killReward = if (_unit isKindOf "Man") then {
 		if (isPlayer _unit) then {
 			75;
