@@ -170,6 +170,11 @@
   - Option to vote forfeit.
   - Improved heli spawns.
   - New ground vehicle rearm menu added.
+  - Kill assists added.
+  - After 10 minutes of beeing AFK you get no more income.
+  - Vehicles cant go underwater.
+  - AAF has stronger defence on sectors with a helipad/runway.
+  - Rita (voice warning system) added to opfor aircrafts (Neophron and shikra).
 
 
   

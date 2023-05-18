@@ -175,6 +175,8 @@ while {dialog} do {
 			_control ctrlSetStructuredText composeText [
 			"2.5.3", lineBreak,
 			"-New CP system. (More secure against cheaters)", lineBreak,
+			"-Kill assists added.", lineBreak,
+			"-After 10 minutes of beeing AFK you get no more income.", lineBreak,
 			"-New improved map icons.", lineBreak,
 			"-Gorgon has new camo.", lineBreak,
 			"-Performance updates. (both client and server)", lineBreak,
@@ -186,6 +188,9 @@ while {dialog} do {
 			"-Option to vote for forfeit added", lineBreak,
 			"-Improved heli spawns", lineBreak,
 			"-New ground vehicle rearm menu added", lineBreak,
+			"-Vehicles cant go underwater.", lineBreak,
+			"-AAF has stronger defence on sectors with a helipad/runway.", lineBreak,
+			"-Rita (voice warning system) added to opfor aircrafts (Neophron and shikra).", lineBreak,
 			"", lineBreak,
 			"2.5.2", lineBreak,
 			"-Added the famous 'Bitching' betty to NATO's wipeout and blackwasp.", lineBreak,
