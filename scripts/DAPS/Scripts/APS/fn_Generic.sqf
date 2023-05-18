@@ -11,8 +11,8 @@ private _ex = true;
 
 while {alive _i && alive _v} do {
     _d = _v distance _i;
-    if (_d < 60) exitWith {_ex = false};
-    if (_d > 80) exitWith {_ex = true};
+    if (_d < 95) exitWith {_ex = false};
+    if (_d > 110) exitWith {_ex = true};
     sleep 0.001;
 };
 
@@ -26,6 +26,10 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 [_v, _id, _p, _i] call DAPS_fnc_React;
 _p call DAPS_fnc_Blast;
 [_i] remoteExec ["deleteVehicle", owner _i, true];
+
+{
+    [_x] remoteExec ["deleteVehicle", 0, true];
+} forEach (nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 75]);
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
