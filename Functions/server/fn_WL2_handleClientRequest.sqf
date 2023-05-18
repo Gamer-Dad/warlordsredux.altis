@@ -310,6 +310,7 @@ if !(isNull _sender) then {
 						};
 					};
 				};
+				_asset spawn DAPS_fnc_RegisterVehicle;
 			};
 		};
 		case "fundsTransferBill": {
