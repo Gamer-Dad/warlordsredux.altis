@@ -100,6 +100,7 @@ class CfgFunctions {
 			class WL2_displayCPtransfer {};
 			class WL2_getUavConnected {};
 			class WL2_betty {};
+			class WL2_rita {};
 			class WL2_mapIcons {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
@@ -174,6 +175,7 @@ class CfgFunctions {
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_bettyAction {};
 			class WL2_sub_rearmAction {};
+			class WL2_sub_ritaAction {};
     	};
 	};
 
@@ -337,6 +339,30 @@ class CfgSounds {
         name="Lost radar target";
         sound[]={"sounds\lostTargetSound.ogg", 1, 1};
         titles[] = {};	
+	};
+
+	class pullUpRita {
+        name="Pull up rita";
+        sound[]={"sounds\AngleOfAttackOverLimit.ogg", 1, 1};
+        titles[] = {};
+	};
+
+	class altRita {
+        name="Alt rita";
+		sound[]={"sounds\PullUp.ogg", 1, 1};
+        titles[] = {};
+	};
+
+	class sensorRita {
+        name="sensorWarning rita";
+        sound[]={"sounds\sensorWarning.ogg", 1, 1};
+        titles[] = {};
+	};
+
+	class fuelRita {
+        name="fuel low rita";
+        sound[]={"sounds\BingoFuel.ogg", 1, 1};
+        titles[] = {};
 	};
 };
 

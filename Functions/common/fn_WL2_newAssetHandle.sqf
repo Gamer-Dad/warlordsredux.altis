@@ -10,6 +10,7 @@ _asset addEventHandler ["Killed", {
 if (isNull _owner && isServer) then {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
 	_asset setSkill (0.2 + random 0.3);
+	_asset spawn DAPS_fnc_RegisterVehicle;
 };
 
 if (isPlayer _owner) then {
@@ -187,6 +188,19 @@ if (isPlayer _owner) then {
 				_asset setVariable ["landingGear", true, true];
 				_asset setVariable ["bettyEnabled", false, true];
 				_asset call BIS_fnc_WL2_sub_bettyAction;
+			};
+			if (typeOf _asset == "O_Plane_Fighter_02_F" || typeOf _asset == "O_Plane_CAS_02_dynamicLoadout_F") then {
+				_asset addEventHandler ["Gear", {
+					params ["_vehicle", "_gearState"];
+					if (_gearState == true) then {
+						_vehicle setVariable ["landingGear", true, true];
+					} else {
+						_vehicle setVariable ["landingGear", false, true];
+					};
+				}];
+				_asset setVariable ["landingGear", true, true];
+				_asset setVariable ["bettyEnabled", false, true];
+				_asset call BIS_fnc_WL2_sub_ritaAction;
 			};
 		};
 		

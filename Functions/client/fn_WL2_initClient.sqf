@@ -161,6 +161,9 @@ player addEventHandler ["GetInMan", {
 	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
 		0 spawn BIS_fnc_WL2_betty;
 	};
+	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
+		0 spawn BIS_fnc_WL2_rita;
+	};
 }];
 
 player addEventHandler ["InventoryOpened",{
