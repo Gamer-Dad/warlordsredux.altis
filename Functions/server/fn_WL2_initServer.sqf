@@ -123,7 +123,7 @@ addMissionEventHandler ["EntityKilled", {
 	while {true} do {
 		{
 			_pos = getPosASLW _x;
-			if (_pos select 2 < 0) then {
+			if (_pos select 2 < -2.5) then {
 				_x setDamage 1;
 			};			
 		} forEach ((vehicles) select {(!(_x isKindOf "Ship") || !(_x isKindOf "Submarine"))});
