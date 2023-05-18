@@ -19,15 +19,15 @@ while {alive _i && alive _v} do {
 if !(alive _v) exitWith {};
 if (_ex) exitWith {};
 
-[_i] remoteExec ["deleteVehicle", 0, true];
+[_i] remoteExec ["triggerAmmo", 0, true];
 {
     [_x] remoteExec ["deleteVehicle", 0, true];
-} forEach (nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 10]);
+} forEach (nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 15]);
 private _p = getPosATL _i;
 private _id = getDir _i;
 private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 [_v, _id, _p, _i] call DAPS_fnc_React;
-_p call DAPS_fnc_Blast;
+//_p call DAPS_fnc_Blast;
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
