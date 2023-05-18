@@ -44,7 +44,7 @@ MRTM_fnc_rearm = {
 		private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
 		{											
 			_asset removeMagazineTurret [_x, _turret];
-			[_asset, 1] remoteExec ["setVehicleAmmoDef", owner _asset];
+			[_asset, 1] remoteExec ["setVehicleAmmoDef", 0];
 		} forEach _mags;
 	} forEach allTurrets _asset;
 	playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
