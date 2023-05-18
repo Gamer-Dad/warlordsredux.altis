@@ -132,6 +132,9 @@ addMissionEventHandler ["EntityKilled", {
 				};
 			};	
 		} forEach ((vehicles) select {(!(_x isKindOf "Ship") || !(_x isKindOf "Submarine"))});
+		{
+			_x addCuratorEditableObjects [(vehicles + allUnits), true];
+		} forEach allCurators;
 		sleep 10;
 	};
 };
