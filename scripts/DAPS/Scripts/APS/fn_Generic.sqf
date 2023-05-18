@@ -29,7 +29,7 @@ _p call DAPS_fnc_Blast;
 
 {
     [_x] remoteExec ["deleteVehicle", 0, true];
-} forEach (nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 75]);
+} forEach (nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 10]);
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
