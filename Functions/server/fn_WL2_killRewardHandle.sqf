@@ -2,6 +2,8 @@
 
 params ["_unit", "_killer", "_instigator"];
 
+if (((serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69]) == 69) exitWith {};
+
 _killReward = 0;
 if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer # 0)};
 if (isNull _instigator) then {_instigator = _killer};
