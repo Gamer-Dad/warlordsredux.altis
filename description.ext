@@ -233,7 +233,6 @@ class CfgFunctions {
 			class CountAmmo {};
 			class DeductAmmo {};
 			class GetDirection {};
-			class GetIncoming {};
 			class HasCharges {};
 			class IsIRguided {};
 			class IsLaserGuided {};
@@ -244,8 +243,6 @@ class CfgFunctions {
 			class PopSmoke2 {};
 			class PopSmokeTurn {};
 			class React {};
-			class Rearm {};
-			class Rearm2 {};
 			class RearmCheck {};
 			class RelDir {};
 			class RelDir2 {};
