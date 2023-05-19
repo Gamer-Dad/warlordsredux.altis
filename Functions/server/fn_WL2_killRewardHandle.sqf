@@ -52,7 +52,7 @@ if (_cond > 0) then {
 		if (isPlayer _unit) then {
 			75;
 		} else {
-			50;
+			30;
 		};
 	} else {
 		(serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
