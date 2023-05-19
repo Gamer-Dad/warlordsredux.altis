@@ -32,7 +32,7 @@ if !(isNull _instigator) then {
 				if (isPlayer _unit) then {
 					_killReward = 75;
 				} else {
-					_killReward = 50;
+					_killReward = 30;
 				};
 			} else {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
