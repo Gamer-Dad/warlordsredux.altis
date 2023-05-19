@@ -84,20 +84,22 @@ _posFinal = getPosATL _asset;
 detach _asset;
 deleteVehicle _asset;
 
-[player, "assembly", false] call BIS_fnc_WL2_hintHandle;
+if ((player distance _posFinal) < 50) then {
+	[player, "assembly", false] call BIS_fnc_WL2_hintHandle;
 
-if (BIS_WL_spacePressed) then {
-	playSound "assemble_target";
-	[player, "orderAsset", _cost, _posFinal, _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
-} else {
-	"Canceled" call BIS_fnc_WL2_announcer;
-	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
-};
+	if (BIS_WL_spacePressed) then {
+		playSound "assemble_target";
+		[player, "orderAsset", _cost, _posFinal, _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	} else {
+		"Canceled" call BIS_fnc_WL2_announcer;
+		[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
+	};
 
-if (BIS_WL_currentSelection == WL_ID_SELECTION_DEPLOYING_DEFENCE) then {
-	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
-};
+	if (BIS_WL_currentSelection == WL_ID_SELECTION_DEPLOYING_DEFENCE) then {
+		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	};
 
 sleep 0.1;
 
 showCommandingMenu "";
+};
