@@ -53,7 +53,7 @@ if (_cond > 0) then {
 			75;
 		} else {
 			50;
-		};		
+		};
 	} else {
 		(serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 	};
