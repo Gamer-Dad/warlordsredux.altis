@@ -58,9 +58,8 @@ if (_cond > 0) then {
 	_killReward = (round ((_killReward / 100) * 30));
 	{
 		_uid = getPlayerUID _x;
-		_id = owner _x;
 		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", _id];
+		[_unit, _killReward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", _x];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
 	_unit setVariable ["BIS_WL_killer", nil, true];
