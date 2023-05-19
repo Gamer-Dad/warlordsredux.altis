@@ -132,6 +132,26 @@ MRTM_fnc_iconDrawMap = {
 		];
 	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
 	{
+		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
+		{
+			if (!isNull _x) then {
+				_m drawIcon [
+					[_x] call MRTM_fnc_iconType,
+					if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+					[_x] call MRTM_fnc_getPos,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_iconSize,
+					[_x] call MRTM_fnc_getDir,
+					[_x] call MRTM_fnc_iconTextSectorScan,
+					1,
+					0.025,
+					"TahomaB",
+					"right"
+				];
+			};
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+	} forEach BIS_WL_currentlyScannedSectors;
+	{
 		if (_x isEqualTo player) then {
 			_m drawIcon [
 				'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
@@ -213,26 +233,6 @@ MRTM_fnc_iconDrawMap = {
 			];
 		};	
 	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && (typeOf _x != "B_Truck_01_medical_F") && (typeOf _x != "O_Truck_03_medical_F")});
-	{
-		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
-		{
-			if (!isNull _x) then {
-				_m drawIcon [
-					[_x] call MRTM_fnc_iconType,
-					if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
-					[_x] call MRTM_fnc_getPos,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_iconSize,
-					[_x] call MRTM_fnc_getDir,
-					[_x] call MRTM_fnc_iconTextSectorScan,
-					1,
-					0.025,
-					"TahomaB",
-					"right"
-				];
-			};
-		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
-	} forEach BIS_WL_currentlyScannedSectors;
 	{
 		_m drawIcon [
 			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
