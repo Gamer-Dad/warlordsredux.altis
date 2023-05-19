@@ -180,7 +180,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x)});
+	} count ((allPlayers) select {(side group _x == side group player) && (isNull objectParent _x) && (alive _x)});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
