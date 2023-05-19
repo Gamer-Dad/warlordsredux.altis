@@ -35,7 +35,7 @@ while {true} do {
 			_l = 0;
 		};
 	};
-	if ((call DAPS_fnc_Time) > _time) then {
+	if ((time) > _time) then {
 		{
 			if !(alive _x) then {
 				_reg = _reg - [_x];

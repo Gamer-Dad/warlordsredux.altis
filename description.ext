@@ -244,16 +244,12 @@ class CfgFunctions {
 			class PopSmokeTurn {};
 			class React {};
 			class RearmCheck {};
-			class RelDir {};
 			class RelDir2 {};
 			class RelPos {};
-			class Time {};
 		};
 		class Report
 		{
 			file = "scripts\DAPS\Scripts\Report";
-			class DetailedReport {};
-			class Indicator {};
 			class Report {};
 			class ReportRearm {};
 		};
