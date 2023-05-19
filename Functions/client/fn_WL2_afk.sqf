@@ -6,10 +6,8 @@ time_to_idle = serverTime + 600;
 waitUntil {sleep 0.1; !isNull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["keyDown", {
 	params ["_displayOrControl", "_key", "_shift", "_ctrl", "_alt"];
-	if (_key == 42) then {
-		time_to_idle = serverTime + 600;
-		player setVariable ["BIS_WL_AFK", false, true];
-	};
+	time_to_idle = serverTime + 600;
+	player setVariable ["BIS_WL_AFK", false, true];
 	false;
 }];
 
