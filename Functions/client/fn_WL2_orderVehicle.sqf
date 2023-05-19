@@ -18,6 +18,10 @@ _asset hideObjectGlobal true;
 _asset lock true;
 _asset enableWeaponDisassembly false;
 _asset allowDamage false;
+clearItemCargoGlobal _asset;
+clearWeaponCargoGlobal _asset;
+clearMagazineCargoGlobal _asset;
+
 {
 	[_asset, _x] remoteExecCall ["disableCollisionWith", 0, _asset];
 } forEach entities "";
