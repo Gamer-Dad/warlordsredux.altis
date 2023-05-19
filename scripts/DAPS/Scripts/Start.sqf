@@ -95,7 +95,6 @@ dapsServer=FALSE;
 if(isServer)then{
 	dapsServer=TRUE;
 	publicVariable"dapsServer";
-	0 spawn DAPS_fnc_RegisterLoop;
-	sleep 3;
+	sleep 5;
 	call DAPS_fnc_BroadcastTypes;
 };

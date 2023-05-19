@@ -218,12 +218,9 @@ class CfgFunctions {
 			file = "scripts\DAPS\Scripts\Management";
 			class AssignAPS {};
 			class BroadcastTypes {};
-			class CustomAmmo {};
-			class ForceRecheck {};
 			class KeyPressed {};
 			class RearmAPS {};
 			class RegisterAll {};
-			class RegisterLoop {};
 			class RegisterVehicle {};
 			class CompileTypes {};
 		};
