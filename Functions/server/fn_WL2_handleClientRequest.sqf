@@ -326,7 +326,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "fundsTransfer": {
-			if (_playerFunds >= (_cost + 2000)) then {
+			if (_playerFunds >= (_cost)) then {
 				_targetUID = getPlayerUID _target;
 				_uid = getPlayerUID _sender;
 				_recipient = _targetUID call BIS_fnc_getUnitByUID;
