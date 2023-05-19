@@ -15,9 +15,9 @@ if (side player == west) then {
 		openMap false;
 		"Fast_travel" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_popup_travelling_FTVehicle"] spawn BIS_fnc_WL2_smoothText;
-		sleep WL_TIMEOUT_STANDARD;
+		sleep 1;
 		player moveInCargo _x;
-		sleep WL_TIMEOUT_STANDARD;
+		sleep 1;
 		titleCut ["", "BLACK IN", 1];
 	} forEach entities "B_Truck_01_medical_F";
 };
@@ -37,9 +37,9 @@ if (side player == east) then {
 		openMap false;
 		"Fast_travel" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_popup_travelling_FTVehicle"] spawn BIS_fnc_WL2_smoothText;
-		sleep WL_TIMEOUT_STANDARD;
+		sleep 1;
 		player moveInCargo _x;
-		sleep WL_TIMEOUT_STANDARD;
+		sleep 1;
 		titleCut ["", "BLACK IN", 1];
 	} forEach entities "O_Truck_03_medical_F";
 };

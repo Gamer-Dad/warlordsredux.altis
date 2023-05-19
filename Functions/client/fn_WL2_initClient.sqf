@@ -152,6 +152,7 @@ BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
 BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
 
 activeControls = [];
+missionNameSpace setVariable ["activeControls", [], clientOwner];
 control = 50000;
 
 player addEventHandler ["GetInMan", {

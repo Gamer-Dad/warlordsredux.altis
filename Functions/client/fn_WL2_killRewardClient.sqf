@@ -16,7 +16,7 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl = (findDisplay 46) displayCtrl _x;
 	_ctrl ctrlSetPosition [((ctrlPosition _ctrl) select 0), (((ctrlPosition _ctrl) select 1) - 0.025)];
 	_ctrl ctrlCommit 0;
-} count activeControls;
+} count (missionNameSpace getVariable "activeControls");
 
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", control];
 
@@ -48,8 +48,10 @@ control spawn {
 	_ctrl ctrlCommit 4;
 
 	ctrlDelete _ctrl;
-	activeControls = activeControls - [_this];
+	_var = ((missionNameSpace getVariable "activeControls") - [_this]);
+	missionNameSpace setVariable ["activeControls", _var, clientOwner];
 };
 
-activeControls pushBack control;
+_var = ((missionNameSpace getVariable "activeControls") pushBack control);
+missionNameSpace setVariable ["activeControls", _var, clientOwner];
 control = control + 1;
