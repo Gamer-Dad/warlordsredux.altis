@@ -13,7 +13,7 @@ dapsRegistered pushBackUnique _v;
 while {true} do {
 	if !(alive _v) exitWith {};
 	if (_v call DAPS_fnc_Active) then {
-		_a = nearestObjects [_v, ["RocketCore"], 100];
+		_a = nearestObjects [_v, ["RocketCore"], 30];
 
 		if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
