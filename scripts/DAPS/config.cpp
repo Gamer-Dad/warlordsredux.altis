@@ -50,46 +50,6 @@ class cfgAmmo
 		indirectHit = 1;
 		indirectHitRange = 5;
 	};
-	
-/*
-		explosionEffects = "ExploAmmoExplosion";
-		//explosionEffects = "HERocketExplosion";
-		//ExplosionEffects = "HEShellExplosion";
-		//explosionEffects = "DirectionalMineExplosion";
-		//explosionEffects = "ATRocketExplosion";
-		//explosionEffects = "ExploAmmoExplosionPlaneCAS";
-		//explosionEffects = "GrenadeExplosion";
-	
-	class DAPSblast2: DAPSblast
-	{
-		explosionEffects = "HERocketExplosion";
-	};
-	
-	class DAPSblast3: DAPSblast
-	{
-		ExplosionEffects = "HEShellExplosion";
-	};
-	
-	class DAPSblast4: DAPSblast
-	{
-		explosionEffects = "DirectionalMineExplosion";
-	};
-	
-	class DAPSblast5: DAPSblast
-	{
-		explosionEffects = "ATRocketExplosion";
-	};
-	
-	class DAPSblast6: DAPSblast
-	{
-		explosionEffects = "ExploAmmoExplosionPlaneCAS";
-	};
-	
-	class DAPSblast7: DAPSblast
-	{
-		explosionEffects = "GrenadeExplosion";
-	};
-	*/
 };
 
 // https://community.bistudio.com/wiki/CfgRemoteExec
@@ -181,13 +141,6 @@ class CfgVehicles
 					};
 				};
 			};
-/*			class dapsRearmCycle
-  			{
-				displayName="Rearm cycle";
-				description="How many seconds between APS rearm checks";
-				typeName="NUMBER";
-				defaultValue="15";
-			};*/
 			class dapsBlastSize
 			{
 				displayName="Blast size";
