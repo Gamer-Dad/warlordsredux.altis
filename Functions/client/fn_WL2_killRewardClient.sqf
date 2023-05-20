@@ -1,8 +1,9 @@
 #include "..\warlords_constants.inc"
 
-params ["_unit", "_reward", "_assist", "_player"];
+params ["_unit", "_reward", "_assist", "_uid"];
 
-if !(player == _player) exitWith {};
+_p = _uid call BIS_fnc_getUnitByUID;
+if !(local _p) exitWith {};
 
 disableSerialization;
 
