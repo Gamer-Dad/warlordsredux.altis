@@ -1,6 +1,8 @@
 #include "..\warlords_constants.inc"
 
-params ["_unit", "_reward", "_assist"];
+params ["_unit", "_reward", "_assist", "_player"];
+
+if !(player == _player) exitWith {};
 
 disableSerialization;
 
