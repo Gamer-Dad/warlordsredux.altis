@@ -51,7 +51,7 @@ control spawn {
 	_ctrl ctrlCommit 4;
 
 	ctrlDelete _ctrl;
-	_var = ((missionNameSpace getVariable "activeControls") - [_this]);
+	_var = ((missionNameSpace getVariable "activeControls") deleteAt _this);
 	missionNameSpace setVariable ["activeControls", _var, clientOwner];
 };
 

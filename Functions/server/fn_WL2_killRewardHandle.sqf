@@ -5,13 +5,11 @@ params ["_unit", "_killer", "_instigator"];
 if (((serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69]) == 69) exitWith {};
 
 _killReward = 0;
-if (isNull _instigator) then {_instigator = (UAVControl vehicle _killer # 0)};
+if (isNull _instigator) then {_instigator = leader (_killer getVariable "BIS_WL_ownerAsset")};
 if (isNull _instigator) then {_instigator = _killer};
+[format ["%1 isNull", isNull _instigator]] remoteExec ["hint", 0, true];
 if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
-	if (!isPlayer _responsibleLeader && unitIsUAV _killer) then {
-        _responsibleLeader = leader (_killer getVariable "BIS_WL_ownerAsset");
-    };
 	[format ["%1 In players", _responsibleLeader in BIS_WL_allWarlords]] remoteExec ["hint", 0, true];
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
