@@ -332,7 +332,7 @@ if !(isNull _sender) then {
 				_recipient = _targetUID call BIS_fnc_getUnitByUID;
 
 				[_targetUID, _cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-				[_uid, -(_cost + 2000)] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 				serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 				[_sender, _recipient, _cost] remoteExec ["BIS_fnc_WL2_displayCPtransfer", 0, true];
 			};
