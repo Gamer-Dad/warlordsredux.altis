@@ -2,7 +2,7 @@
 
 params ["_unit", "_killer", "_instigator"];
 
-if (((serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69]) == 69) exitWith {};
+if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69]) == 69)) exitWith {};
 
 _killReward = 0;
 if (isNull _instigator) then {_instigator = leader (_killer getVariable "BIS_WL_ownerAsset")};
