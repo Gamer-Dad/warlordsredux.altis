@@ -6,14 +6,15 @@ _v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), TRUE];
 _v setVariable ["dapsType", "Light APS", TRUE];
 _v setVariable ["dapsAmmo", 2, TRUE];
 _v setVariable ["dapsAmmoMax", 2, TRUE];
+_range = if (isServer) then {50} else {125};
 
-private _time = -1;
 private _reg = [];
 dapsRegistered pushBackUnique _v;
+
 while {true} do {
 	if !(alive _v) exitWith {};
 	if (_v call DAPS_fnc_Active) then {
-		_a = nearestObjects [_v, ["RocketCore"], 125];
+		_a = nearestObjects [_v, ["RocketCore"], _range];
 
 		if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
