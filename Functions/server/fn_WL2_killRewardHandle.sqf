@@ -12,10 +12,9 @@ if !(isNull _instigator) then {
 	if (!isPlayer _responsibleLeader && unitIsUAV _killer) then {
         _responsibleLeader = leader (_killer getVariable "BIS_WL_ownerAsset");
     };
-	[format ["%1", _responsibleLeader in BIS_WL_allWarlords]] remoteExec ["hint", 0, true];
+	[format ["%1 In players", _responsibleLeader in BIS_WL_allWarlords]] remoteExec ["hint", 0, true];
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
-		_id = owner _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
@@ -29,6 +28,7 @@ if !(isNull _instigator) then {
 			};
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
+			[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true];
 			if (_unit isKindOf "Man") then {
 				if (isPlayer _unit) then {
 					_killReward = 75;
@@ -38,9 +38,9 @@ if !(isNull _instigator) then {
 			} else {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 			};
-			[_unit, _killReward, false] remoteExec ["BIS_fnc_WL2_killRewardClient", _id];
+			_uid = getPlayerUID _responsibleLeader;
+			[_unit, _killReward, false, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			_unit setVariable ["BIS_WL_killer", _responsibleLeader, true];
-			private _uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		};
 	};
