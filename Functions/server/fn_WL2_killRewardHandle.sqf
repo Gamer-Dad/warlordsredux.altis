@@ -12,6 +12,7 @@ if !(isNull _instigator) then {
 	if (!isPlayer _responsibleLeader && unitIsUAV _killer) then {
         _responsibleLeader = leader (_killer getVariable "BIS_WL_ownerAsset");
     };
+	[format ["%1", _responsibleLeader in BIS_WL_allWarlords]] remoteExec ["hint", 0, true];
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
 		_id = owner _responsibleLeader;
