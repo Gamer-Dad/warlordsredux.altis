@@ -390,7 +390,7 @@ waitUntil {
 				_display2opened = false;
 			};		
 		};
-		uiSleep WL_TIMEOUT_SHORT;
+		uiSleep 1;
 	};
 };
 
