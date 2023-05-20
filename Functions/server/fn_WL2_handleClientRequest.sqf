@@ -278,8 +278,8 @@ if !(isNull _sender) then {
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 				
 				if (typeOf _asset == "I_Truck_02_MRL_F") then { //Zamak MLRS
-					_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak cabin
-					_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa"]; //Zamak Bed&Launcher                
+					_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"]; //Zamak cabin
+					_asset setObjectTextureGlobal [2, "a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa"]; //Zamak Bed&Launcher
 				};
 
 				if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
