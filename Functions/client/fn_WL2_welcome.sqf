@@ -176,7 +176,6 @@ while {dialog} do {
 			"2.5.3", lineBreak,
 			"-New CP system. (More secure against cheaters)", lineBreak,
 			"-Kill assists added.", lineBreak,
-			"-After 10 minutes of beeing AFK you get no more income.", lineBreak,
 			"-New improved map icons.", lineBreak,
 			"-Gorgon has new camo.", lineBreak,
 			"-Performance updates. (both client and server)", lineBreak,
