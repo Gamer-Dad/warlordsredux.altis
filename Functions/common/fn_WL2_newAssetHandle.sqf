@@ -14,7 +14,7 @@ if (isNull _owner && isServer) then {
 };
 
 if (isPlayer _owner) then {
-	_asset setVariable ["BIS_WL_ownerAsset", (group _owner)];
+	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), true];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
 
 	if (_asset isKindOf "Man") then {
