@@ -167,4 +167,4 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 ["server_init"] call BIS_fnc_endLoadingScreen;
 
 //Log difficulty
-diag_log (format ["Difficulty option death messages: %1", difficultyOption "deathMessages"]);
+diag_log (format ["Server difficulty option death messages: %1", difficultyOption "deathMessages"]);

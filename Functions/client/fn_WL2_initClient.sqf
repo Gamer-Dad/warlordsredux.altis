@@ -56,6 +56,9 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	};
 };
 
+//Log difficulty
+diag_log (format ["Client difficulty option death messages: %1", difficultyOption "deathMessages"]);
+
 0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];
