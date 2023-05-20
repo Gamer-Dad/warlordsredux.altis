@@ -165,3 +165,6 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
+
+//Log difficulty
+diag_log (format ["Difficulty option death messages: %1", difficultyOption "deathMessages"]);
