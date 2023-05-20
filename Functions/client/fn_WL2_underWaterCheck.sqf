@@ -14,4 +14,3 @@ while {true} do {
 	} forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && !(_x isKindOf "Man")});
 	sleep 10;
 };
-
