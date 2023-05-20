@@ -13,7 +13,7 @@ if (uiNamespace getVariable "BIS_WL_cp_saved") then {
 };
 
 if (BIS_WL_fogOfWar != 0) then {
-	(uiNamespace getVariable "BIS_WL_osd_income_side_2") ctrlSetStructuredText parseText format ["<t size = '%2' shadow = '2'>%1</t>", (BIS_WL_matesAvailable max 0), 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
+	(uiNamespace getVariable "BIS_WL_osd_income_side_2") ctrlSetStructuredText parseText format ["<t size = '%2' shadow = '2'>%1</t>", (((BIS_WL_matesAvailable - count (units player)) + 1); max 0), 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 };
 
 if (_fullRefresh) then {
