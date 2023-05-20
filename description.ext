@@ -220,7 +220,6 @@ class CfgFunctions {
 			class BroadcastTypes {};
 			class KeyPressed {};
 			class RearmAPS {};
-			class RegisterAll {};
 			class RegisterVehicle {};
 			class CompileTypes {};
 		};
