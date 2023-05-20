@@ -10,12 +10,12 @@ _asset addEventHandler ["Killed", {
 if (isNull _owner && isServer) then {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
 	_asset setSkill (0.2 + random 0.3);
-	_asset spawn DAPS_fnc_RegisterVehicle;
 };
 
 if (isPlayer _owner) then {
 	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), true];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
+	_asset spawn DAPS_fnc_RegisterVehicle;
 
 	if (_asset isKindOf "Man") then {
 		_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;

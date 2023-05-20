@@ -9,7 +9,7 @@ if ((_v distance _i) > _d) exitWith {};
 
 private _ex = false;
 
-while {(alive _i) && (alive _v) && ((_v distance _i) > 30)} do {
+while {(alive _i) && (alive _v) && ((_v distance _i) > 100)} do {
     _d = _v distance _i;
     if (_d > 110) exitWith {_ex = true};
     sleep 0.001;
