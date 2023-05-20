@@ -19,9 +19,9 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl = (findDisplay 46) displayCtrl _x;
 	_ctrl ctrlSetPosition [((ctrlPosition _ctrl) select 0), (((ctrlPosition _ctrl) select 1) - 0.025)];
 	_ctrl ctrlCommit 0;
-} count (missionNameSpace getVariable "activeControls");
+} forEach (uiNamespace getVariable ["activeControls", []]);
 
-_ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", control];
+_ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", (uiNamespace getVariable "control")];
 
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
@@ -43,18 +43,19 @@ if (_unit isKindOf "Man") then {
 
 _ctrl ctrlCommit 0;
 
-control spawn {
+(uiNamespace getVariable "control") spawn {
 	disableSerialization;
 	_ctrl = (findDisplay 46) displayCtrl _this;
 	UISleep 6;
 	_ctrl ctrlSetFade 1;
 	_ctrl ctrlCommit 4;
-
 	ctrlDelete _ctrl;
-	_var = ((missionNameSpace getVariable "activeControls") deleteAt _this);
-	missionNameSpace setVariable ["activeControls", _var, clientOwner];
+	
+	_var = ((uiNamespace getVariable ["activeControls", []]) - [_this]);
+	uiNamespace setVariable ["activeControls", _var];
 };
 
-_var = ((missionNameSpace getVariable "activeControls") pushBack control);
-missionNameSpace setVariable ["activeControls", _var, clientOwner];
-control = control + 1;
+_var = ((uiNamespace getVariable ["activeControls", []]) + [(uiNamespace getVariable "control")]);
+uiNamespace setVariable ["activeControls", _var];
+_c = (uiNamespace getVariable "control") + 1;
+uiNamespace setVariable ["control", _c];
