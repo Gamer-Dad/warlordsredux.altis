@@ -2,6 +2,7 @@ private _v = _this select 0;
 private _i = _this select 1;
 private _d = _this select 2;
 
+_d = _v distance _i;
 if (_d < 40) exitWith {};
 if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
 if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
