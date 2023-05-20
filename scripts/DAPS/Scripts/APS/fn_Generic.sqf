@@ -2,16 +2,17 @@ private _v = _this select 0;
 private _i = _this select 1;
 private _d = _this select 2;
 
-if (_d < 10) exitWith {};
+if (_d < 40) exitWith {};
 if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
 if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
 if ((_v distance _i) > _d) exitWith {};
 
 private _ex = false;
 
-while {(alive _i) && (alive _v) && ((_v distance _i) > 100)} do {
+while {(alive _i) && (alive _v)} do {
     _d = _v distance _i;
     if (_d > 110) exitWith {_ex = true};
+    if (_d > 40) exitWith {};
     sleep 0.001;
 };
 
