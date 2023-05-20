@@ -15,7 +15,7 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray = [position _road, _road getDir selectRandom (roadsConnectedTo _road), selectRandomWeighted (BIS_WL_factionVehicleClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
-				_asset spawn DAPS_fnc_RegisterVehicle;
+				_vehicle spawn DAPS_fnc_RegisterVehicle;
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
@@ -49,7 +49,7 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 
 			if !(_vehicle isKindOf "Man") then {
-				_asset spawn DAPS_fnc_RegisterVehicle;
+				_vehicle spawn DAPS_fnc_RegisterVehicle;
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
@@ -89,7 +89,7 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted (BIS_WL_factionAircraftClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
-				_asset spawn DAPS_fnc_RegisterVehicle;
+				_vehicle spawn DAPS_fnc_RegisterVehicle;
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
