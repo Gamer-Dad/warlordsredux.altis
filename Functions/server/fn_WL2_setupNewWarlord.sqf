@@ -62,3 +62,8 @@ if !(_boundToAnotherTeam) then {
 
 	[_warlord] call BIS_fnc_WL2_respawnHandle;
 };
+
+{
+	_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && (alive _x)};
+	_x addCuratorEditableObjects [_l, true];
+} forEach allCurators;

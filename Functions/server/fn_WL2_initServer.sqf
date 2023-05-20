@@ -119,27 +119,6 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
-0 spawn {
-	while {true} do {
-		{
-			_pos = getPosASLW _x;
-			if (_pos select 2 < -2.5) then {
-				_x spawn {
-					sleep 2;
-					if (_pos select 2 < -2.5) then {
-						_x setDamage 1;
-					};
-				};
-			};	
-		} forEach ((vehicles) select {((!(_x isKindOf "Ship") || !(_x isKindOf "Submarine")) && !(_x isKindOf "Man"))});
-		{
-			_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && (alive _x)};
-			_x addCuratorEditableObjects [_l, true];
-		} forEach allCurators;
-		sleep 10;
-	};
-};
-
 missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;

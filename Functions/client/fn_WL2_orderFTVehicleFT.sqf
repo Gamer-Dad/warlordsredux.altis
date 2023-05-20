@@ -1,3 +1,4 @@
+#include "..\warlords_constants.inc"
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (side player == west) then {
