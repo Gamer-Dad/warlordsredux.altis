@@ -23,6 +23,7 @@ _asset allowDamage false;
 clearItemCargoGlobal _asset;
 clearWeaponCargoGlobal _asset;
 clearMagazineCargoGlobal _asset;
+clearBackpackCargoGlobal _asset;
 
 {
 	[_asset, _x] remoteExecCall ["disableCollisionWith", 0, _asset];
