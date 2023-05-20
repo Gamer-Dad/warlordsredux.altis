@@ -235,6 +235,21 @@ MRTM_fnc_iconDrawMap = {
 	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && (typeOf _x != "B_Truck_01_medical_F") && (typeOf _x != "O_Truck_03_medical_F")});
 	{
 		_m drawIcon [
+			[_x] call MRTM_fnc_iconType,
+			[_x] call MRTM_fnc_iconColor,
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];		
+	} count ((units player) select {alive _x && _x != player});
+	{
+		_m drawIcon [
 			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
 			[(random 1), (random 1), (random 1), 1],
 			[_x] call MRTM_fnc_getPos,
