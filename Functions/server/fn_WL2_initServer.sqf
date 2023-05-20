@@ -99,7 +99,7 @@ addMissionEventHandler ["MarkerCreated", {
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	_this spawn BIS_fnc_WL2_killRewardHandle;
-	_this call BIS_fnc_WL2_friendlyFireHandleServer;
+	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
 
 	if (typeOf _unit == "B_Truck_01_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
