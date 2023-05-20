@@ -11,8 +11,8 @@ private _ex = false;
 
 while {(alive _i) && (alive _v)} do {
     _d = _v distance _i;
-    if (_d > 110) exitWith {_ex = true};
-    if (_d > 40) exitWith {};
+    if (_d < 140) exitWith {};
+    if (_d > 150) exitWith {_ex = true};
     sleep 0.001;
 };
 

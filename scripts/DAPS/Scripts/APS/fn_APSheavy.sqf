@@ -6,7 +6,7 @@ _v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), TRUE];
 _v setVariable ["dapsType", "Heavy APS", TRUE];
 _v setVariable ["dapsAmmo", 6, TRUE];
 _v setVariable ["dapsAmmoMax", 6, TRUE];
-_range = if (isServer) then {50} else {125};
+_range = if (isServer) then {50} else {150};
 
 private _reg = [];
 dapsRegistered pushBackUnique _v;
