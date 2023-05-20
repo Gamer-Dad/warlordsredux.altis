@@ -10,8 +10,8 @@ if (isNull _instigator) then {_instigator = _killer};
 [format ["%1 isNull", isNull _instigator]] remoteExec ["hint", 0, true];
 if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
-	[format ["%1 In players", _responsibleLeader in BIS_WL_allWarlords]] remoteExec ["hint", 0, true];
-	if (_responsibleLeader in BIS_WL_allWarlords) then {
+	[format ["%1 In players", _responsibleLeader in allPlayers]] remoteExec ["hint", 0, true];
+	if (_responsibleLeader in allPlayers) then {
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
