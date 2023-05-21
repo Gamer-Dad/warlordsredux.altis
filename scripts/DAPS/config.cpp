@@ -6,39 +6,6 @@ class Extended_PostInit_EventHandlers
 #include "\scripts\DAPS\Menu\zCoreDefines.hpp"
 #include "\scripts\DAPS\Menu\Dialog.hpp"
 
-
-class cfgAmmo
-{
-	class HelicopterExploSmall;
-	class DAPSblast: HelicopterExploSmall
-	{
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
-		caliber = 0;
-		CraterEffects = "GrenadeCrater";
-		CraterWaterEffects = "ImpactEffectsWaterExplosion";
-		directionalExplosion = 0; //0
-		explosionAngle = 60; //60
-		explosionDir = "explosionDir";
-		explosionEffects = "HERocketExplosion";
-		explosionEffectsDir = "explosionDir";
-		explosionSoundEffect = "DefaultExplosion";
-		explosionType = "explosive";
-		hit = 1;
-		indirectHit = 1;
-		indirectHitRange = 5;
-	};
-	
-	class DAPSblast2: HelicopterExploSmall
-	{
-		//model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
-		caliber = 0;
-		CraterEffects = "GrenadeCrater";
-		hit = 1;
-		indirectHit = 1;
-		indirectHitRange = 5;
-	};
-};
-
 class CfgFactionClasses
 {
 	class NO_CATEGORY;

@@ -43,6 +43,7 @@ if (_side == BIS_WL_localSide) then {
 			_wp setWaypointType "CYCLE";
 		};
 	} else {
+		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		{
 			private _road = selectRandom _roads;
 			_vehicleInfo = _x;
@@ -69,14 +70,14 @@ if (_side == BIS_WL_localSide) then {
 			} forEach _crew;
 			
 			_vehicle lock _lock;
-			[_group, 0] setWaypointPosition [position _vehicle, 0];
+			[_group, 0] setWaypointPosition [position _vehicle, 200];
 			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
-			_wp = _group addWaypoint [position _road, 200];
+			_wp = _group addWaypoint [position _vehicle, 200];
 			_wp setWaypointType "SAD";
 			
-			_wp = _group addWaypoint [position _road, 0];
+			_wp = _group addWaypoint [position _vehicle, 200];
 			_wp setWaypointType "CYCLE";
 			uiSleep 0.1;
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");

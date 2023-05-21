@@ -46,4 +46,9 @@ while {true} do {
 			};
 		};
 	} forEach (BIS_WL_allWarlords); // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
+
+	{
+		_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && (alive _x)};
+		_x addCuratorEditableObjects [_l, true];
+	} forEach allCurators;
 };
