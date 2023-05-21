@@ -39,6 +39,7 @@ if !(isNull _instigator) then {
 	};
 };
 
+/*
 _list = ((_unit getVariable ["assistList", []]) select {((getPlayerUID _x) != (getPlayerUID (_unit getVariable ["BIS_WL_killer", _unit])))});
 _cond = (count _list);
 if (_cond > 0) then {
@@ -61,3 +62,4 @@ if (_cond > 0) then {
 	_unit setVariable ["assistList", [], true];
 	_unit setVariable ["BIS_WL_killer", nil, true];
 };
+*/
