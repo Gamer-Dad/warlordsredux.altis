@@ -40,7 +40,6 @@ if !(isNull _instigator) then {
 };
 
 _list = ((_unit getVariable ["assistList", []]) select {((getPlayerUID _x) != (getPlayerUID (_unit getVariable ["BIS_WL_killer", objNull])))});
-[(format ["%1", _list])] remoteExec ["hint", 0, true];
 _cond = (count _list);
 if (_cond > 0) then {
 	_assistList = _list;
