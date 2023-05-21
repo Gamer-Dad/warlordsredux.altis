@@ -4,7 +4,6 @@ params ["_unit", "_killer", "_instigator"];
 
 if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69]) == 69)) exitWith {};
 
-_killReward = 0;
 if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable "BIS_WL_ownerAsset"))}) then [{(leader (_killer getVariable "BIS_WL_ownerAsset"))}, {((UAVControl _killer) # 0)}])};
 if (isNull _instigator) then {_instigator = (_killer)};
 [format ["%1 isNull", (isNull _instigator)]] remoteExec ["hint", 0, true];
@@ -13,7 +12,7 @@ if !(isNull _instigator) then {
 	[format ["%1 Players", (_responsibleLeader in allPlayers)]] remoteExec ["hint", 0, true];
 	if (_responsibleLeader in allPlayers) then {
 		_killerSide = if !(isNil {(side (_responsibleLeader getVariable "BIS_WL_ownerAsset"))}) then {
-			(side (_unit getVariable "BIS_WL_ownerAsset"))
+			(side (_responsibleLeader getVariable "BIS_WL_ownerAsset"));
 		} else {
 			(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _responsibleLeader >> "side"))) do {
 				case 0: {east};
@@ -23,7 +22,7 @@ if !(isNull _instigator) then {
 			});
 		};
 		_unitSide = if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
-			(side (_unit getVariable "BIS_WL_ownerAsset"))
+			(side (_unit getVariable "BIS_WL_ownerAsset"));
 		} else {
 			(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
 				case 0: {east};
