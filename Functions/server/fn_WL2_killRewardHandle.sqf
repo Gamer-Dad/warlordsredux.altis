@@ -16,13 +16,16 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			(side (_unit getVariable ["BIS_WL_ownerAsset", 
-			(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
-				case 0: {east};
-				case 1: {west};
-				case 2: {Independent};
-				default {Independent};
-			})]));
+			if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
+				(side (_unit getVariable "BIS_WL_ownerAsset"))
+			} else {
+				(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
+					case 0: {east};
+					case 1: {west};
+					case 2: {Independent};
+					default {Independent};
+				});
+			};
 		};
 		[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true]; // Debug
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
@@ -39,9 +42,9 @@ if !(isNull _instigator) then {
 	};
 };
 
-_cond = (count ((_unit getVariable ["assistList", []]) select {_x != _unit getVariable ["BIS_WL_killer", _unit]}));
+_cond = (count (_unit getVariable ["assistList", []]));
 if (_cond > 0) then {
-	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _unit getVariable ["BIS_WL_killer", _unit]});
+	_assistList = ((_unit getVariable ["assistList", []]) select {_x != _unit getVariable ["BIS_WL_killer", objNull]});
 	_killReward = if (_unit isKindOf "Man") then {
 		if (isPlayer _unit) then {
 			75;
@@ -55,7 +58,7 @@ if (_cond > 0) then {
 	{
 		_uid = getPlayerUID _x;
 		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward, true, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _X)];
+		[_unit, _killReward, true, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
 	_unit setVariable ["BIS_WL_killer", nil, true];

@@ -12,7 +12,7 @@ dapsRegistered pushBackUnique _v;
 
 while {alive _v} do {
     if (_v call DAPS_fnc_Active) then {
-        _a = nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], (if (isServer) then {50} else {150})];
+        _a = nearestObjects [_v, ["MissileBase", "RocketCore", "RocketBase", "MissileCore"], (if (isServer) then {50} else {150})];
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
