@@ -16,17 +16,16 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			switch (true) do {
-				case ((side (_unit getVariable "BIS_WL_ownerAsset")) == east): {east};
-				case ((side (_unit getVariable "BIS_WL_ownerAsset")) == west): {west};
-				case ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) == 0): {east};
-				case ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) == 1): {west};
-				case ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) == 2): {Independent};
-				default {Civilian};
-			};
+			(side (_unit getVariable ["BIS_WL_ownerAsset", 
+			(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
+				case 0: {east};
+				case 1: {west};
+				case 2: {Independent};
+				default {Independent};
+			})]));
 		};
+		[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true]; // Debug
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
-			[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true]; // Debug
 			if (_unit isKindOf "Man") then {
 				if (isPlayer _unit) then {
 					_killReward = 75;
