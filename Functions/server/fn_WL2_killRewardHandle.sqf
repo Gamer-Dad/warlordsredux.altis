@@ -5,7 +5,7 @@ params ["_unit", "_killer", "_instigator"];
 if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "killRewards") getOrDefault [(typeOf _unit), 69]) == 69)) exitWith {};
 
 if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable "BIS_WL_ownerAsset"))}) then [{(leader (_killer getVariable "BIS_WL_ownerAsset"))}, {((UAVControl vehicle _killer) # 0)}])};
-if (isNull _instigator) then {_instigator = (_killer)};
+if (isNull _instigator) then {_instigator = (vehicle _killer)};
 if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
@@ -13,20 +13,20 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			switch (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) do {
+			switch (getNumber (configFile >> "CfgVehicles" >> (typeOf _unit) >> "side")) do {
 				case 0: {EAST};
 				case 1: {WEST};
 				case 2: {RESISTANCE};
 				default {CIVILIAN};
 			};
 		};
-		[format ["%1, unit: %2, killer: %3 unitName: %4, killerName: %5", (_unitSide in [west, east, independent]), _unitSide, _killerSide, (name _unit), (name _responsibleLeader)]] remoteExec ["hint", 0, true];
+		[format ["%1, unit: %2, killer: %3 unitName: %4, killerName: %5", (_unitSide in [west, east, independent]), _unitSide, _killerSide, (name _unit), (name _responsibleLeader)]] remoteExec ["systemChat", 0, true];
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {30});
 			} else {
-				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
+				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [(typeOf _unit), 69];
 			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_unit, _killReward, false, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
