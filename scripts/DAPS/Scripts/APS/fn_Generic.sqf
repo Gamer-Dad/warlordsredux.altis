@@ -3,17 +3,17 @@ private _i = _this select 1;
 private _d = _this select 2;
 
 _d = _v distance _i;
-if (_d < 40) exitWith {};
+if (_d < 30) exitWith {};
 if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
 if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
 if ((_v distance _i) > _d) exitWith {};
 
-private _ex = false;
+private _ex = true;
 
 while {(alive _i) && (alive _v)} do {
     _d = _v distance _i;
-    if (_d < 140) exitWith {};
-    if (_d > 150) exitWith {_ex = true};
+    if (_d < 140) exitWith {_ex = false};
+    if (_d > 150) exitWith {};
     sleep 0.001;
 };
 
@@ -25,9 +25,6 @@ private _id = getDir _i;
 private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 
 [_i] remoteExec ["deleteVehicle", 0, true];
-{
-    [_x] remoteExec ["deleteVehicle", 0, true];
-} forEach (nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 15]);
 
 [_v, _id, _p, _i] call DAPS_fnc_React;
 _p call DAPS_fnc_Blast;
