@@ -43,6 +43,7 @@ if (_side == BIS_WL_localSide) then {
 		};
 	} else {
 		{
+			private _road = selectRandom _roads;
 			_vehicleInfo = _x;
 			_vehicleInfo params ["_type", "_pos", "_dir", "_lock", "_waypoints"];
 			_vehicleArray = [_pos, _dir, _type, _side] call BIS_fnc_spawnVehicle;
@@ -67,18 +68,15 @@ if (_side == BIS_WL_localSide) then {
 			} forEach _crew;
 			
 			_vehicle lock _lock;
-			[_group, 0] setWaypointPosition [_pos, 0];
+			[_group, 0] setWaypointPosition [position _vehicle, 0];
 			_group deleteGroupWhenEmpty TRUE;
 			
-			{
-				_x params ["_pos", "_type", "_speed", "_behavior", "_timeout"];
-				_wp = _group addWaypoint [_pos, 0];
-				_wp setWaypointType _type;
-				_wp setWaypointSpeed _speed;
-				_wp setWaypointBehaviour _behavior;
-				_wp setWaypointTimeout _timeout;
-			} forEach _waypoints;
-			uiSleep WL_TIMEOUT_MIN;
+			_wp = _group addWaypoint [position _road, 200];
+			_wp setWaypointType "SAD";
+			
+			_wp = _group addWaypoint [position _road, 0];
+			_wp setWaypointType "CYCLE";
+			uiSleep 0.1;
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
