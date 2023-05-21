@@ -13,7 +13,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if ((objectParent player) getVariable "bettyEnabled") then {
 			if (getPosATL player select 2 <= (objectParent player) getVariable "altCeiling" && getPosATL player select 2 > 100 && (objectParent player) getVariable "landingGear" == false && (objectParent player) getVariable "isBettyBitching" == false) then {
-				if (asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 50) / speed (objectParent player))) then {
+				if (asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 20) / speed (objectParent player))) then {
 					playSoundUI ["pullUp", 0.3, 1];
 					(objectParent player) setVariable ["isBettyBitching", true, true];
 					private _startTime = serverTime + 1.33;
@@ -22,7 +22,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 				};
 			};
 		};
-		private _startTime1 = serverTime + 1;  
+		private _startTime1 = serverTime + 0.2;  
 		waitUntil {serverTime > _startTime1};
 	};
 };
