@@ -143,7 +143,7 @@ setTimeMultiplier 3;
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || daytime < 5};
-		setTimeMultiplier 12;
+		setTimeMultiplier 9;
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && daytime > 5};
 		setTimeMultiplier 3;
 	};
