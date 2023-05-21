@@ -27,8 +27,8 @@ if !(isNull _instigator) then {
 				});
 			};
 		};
-		[format ["%1 sides", (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray)]] remoteExec ["hint", 0, true];
-		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
+		[format ["%1 sides", (_killerSide != _unitSide) && (_unitSide in [west, east, independent])]] remoteExec ["hint", 0, true];
+		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {30});
 			} else {
