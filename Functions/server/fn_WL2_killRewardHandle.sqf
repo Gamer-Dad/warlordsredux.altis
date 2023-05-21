@@ -12,20 +12,27 @@ if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
 	[format ["%1 Players", (_responsibleLeader in allPlayers)]] remoteExec ["hint", 0, true];
 	if (_responsibleLeader in allPlayers) then {
-		_killerSide = side group _responsibleLeader;
-		_unitSide = if (_unit isKindOf "Man") then {
-			if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
-				(side (_unit getVariable "BIS_WL_ownerAsset"))
-			} else {
-				(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
-					case 0: {east};
-					case 1: {west};
-					case 2: {Independent};
-					default {Independent};
-				});
-			};
+		_killerSide = if !(isNil {(side (_responsibleLeader getVariable "BIS_WL_ownerAsset"))}) then {
+			(side (_unit getVariable "BIS_WL_ownerAsset"))
+		} else {
+			(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _responsibleLeader >> "side"))) do {
+				case 0: {east};
+				case 1: {west};
+				case 2: {Independent};
+				default {Independent};
+			});
 		};
-		[format ["%1 sides", (_killerSide != _unitSide) && (_unitSide in [west, east, independent])]] remoteExec ["hint", 0, true];
+		_unitSide = if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
+			(side (_unit getVariable "BIS_WL_ownerAsset"))
+		} else {
+			(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
+				case 0: {east};
+				case 1: {west};
+				case 2: {Independent};
+				default {Independent};
+			});
+		};
+		[format ["%1 sides, unit: %2, killer: %3", (_killerSide != _unitSide) && (_unitSide in [west, east, independent]), _unitSide, _killerSide]] remoteExec ["hint", 0, true];
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {30});
