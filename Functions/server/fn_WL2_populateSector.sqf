@@ -33,6 +33,7 @@ if (_side == BIS_WL_localSide) then {
 			} forEach _crew;
 			
 			[_group, 0] setWaypointPosition [position _vehicle, 0];
+			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
 			_wp = _group addWaypoint [position _road, 200];
@@ -69,6 +70,7 @@ if (_side == BIS_WL_localSide) then {
 			
 			_vehicle lock _lock;
 			[_group, 0] setWaypointPosition [position _vehicle, 0];
+			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
 			_wp = _group addWaypoint [position _road, 200];
@@ -107,6 +109,7 @@ if (_side == BIS_WL_localSide) then {
 			
 
 			[_group, 0] setWaypointPosition [position _vehicle, 300];
+			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
 			_wp1 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 400];
