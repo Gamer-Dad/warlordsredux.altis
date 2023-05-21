@@ -7,8 +7,10 @@ if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "killRewards") get
 _killReward = 0;
 if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable "BIS_WL_ownerAsset"))}) then [{(leader (_killer getVariable "BIS_WL_ownerAsset"))}, {((UAVControl _killer) # 0)}])};
 if (isNull _instigator) then {_instigator = (_killer)};
+[format ["%1 isNull", (isNull _instigator)]] remoteExec ["hint", 0, true];
 if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
+	[format ["%1 Players", (_responsibleLeader in allPlayers)]] remoteExec ["hint", 0, true];
 	if (_responsibleLeader in allPlayers) then {
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
@@ -25,6 +27,7 @@ if !(isNull _instigator) then {
 				});
 			};
 		};
+		[format ["%1 sides", (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray)]] remoteExec ["hint", 0, true];
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {30});
@@ -39,7 +42,6 @@ if !(isNull _instigator) then {
 	};
 };
 
-/*
 _list = ((_unit getVariable ["assistList", []]) select {((getPlayerUID _x) != (getPlayerUID (_unit getVariable ["BIS_WL_killer", _unit])))});
 _cond = (count _list);
 if (_cond > 0) then {
@@ -62,4 +64,3 @@ if (_cond > 0) then {
 	_unit setVariable ["assistList", [], true];
 	_unit setVariable ["BIS_WL_killer", nil, true];
 };
-*/
