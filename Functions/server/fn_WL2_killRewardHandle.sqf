@@ -27,11 +27,7 @@ if !(isNull _instigator) then {
 		[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true]; // Debug
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
 			if (_unit isKindOf "Man") then {
-				if (isPlayer _unit) then {
-					_killReward = 75;
-				} else {
-					_killReward = 30;
-				};
+				_killReward = (if (isPlayer _unit) then {75} else {30});
 			} else {
 				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69];
 			};
@@ -59,7 +55,7 @@ if (_cond > 0) then {
 	{
 		_uid = getPlayerUID _x;
 		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward, true, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", -2];
+		[_unit, _killReward, true, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _X)];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
 	_unit setVariable ["BIS_WL_killer", nil, true];
