@@ -46,9 +46,8 @@ _ctrl ctrlCommit 0;
 (uiNamespace getVariable "control") spawn {
 	disableSerialization;
 	_ctrl = (findDisplay 46) displayCtrl _this;
-	UISleep 6;
-	_ctrl ctrlSetFade 1;
-	_ctrl ctrlCommit 4;
+	_ctrl ctrlCommit 0;
+	UISleep 10;
 	ctrlDelete _ctrl;
 	
 	_var = ((uiNamespace getVariable ["activeControls", []]) - [_this]);
