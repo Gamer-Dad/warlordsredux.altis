@@ -5,12 +5,12 @@ params ["_unit", "_killer", "_instigator"];
 if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "killRewards") getOrDefault [typeOf _unit, 69]) == 69)) exitWith {};
 
 _killReward = 0;
-if (isNull _instigator) then {_instigator = leader (_killer getVariable "BIS_WL_ownerAsset")};
-if (isNull _instigator) then {_instigator = _killer};
-[format ["%1 isNull", isNull _instigator]] remoteExec ["hint", 0, true];
+if (isNull _instigator) then {_instigator = (leader (_killer getVariable "BIS_WL_ownerAsset"))};
+if (isNull _instigator) then {_instigator = (_killer)};
+[format ["%1 isNull", isNull _instigator]] remoteExec ["hint", 0, true]; // Debug
 if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
-	[format ["%1 In players", _responsibleLeader in allPlayers]] remoteExec ["hint", 0, true];
+	[format ["%1 In players", _responsibleLeader in allPlayers]] remoteExec ["hint", 0, true]; // Debug
 	if (_responsibleLeader in allPlayers) then {
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
@@ -26,7 +26,7 @@ if !(isNull _instigator) then {
 			};
 		};
 		if (_killerSide != _unitSide && _unitSide in BIS_WL_sidesArray) then {
-			[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true];
+			[format ["%1 Side", _killerSide != _unitSide && _unitSide in BIS_WL_sidesArray]] remoteExec ["hint", 0, true]; // Debug
 			if (_unit isKindOf "Man") then {
 				if (isPlayer _unit) then {
 					_killReward = 75;
