@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-while {TRUE} do {
+while {!BIS_WL_missionEnd} do {
 	waitUntil {(player getVariable ["BIS_WL_zoneRestrictionKillTime", -1]) != -1};
 	_killTime = player getVariable "BIS_WL_zoneRestrictionKillTime";
 	["trespassing", [WL_SYNCED_TIME, _killTime]] spawn BIS_fnc_WL2_setOSDEvent;

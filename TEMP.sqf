@@ -36,7 +36,6 @@ BIS_WL_initModule setVariable ["BIS_WL_lastLoadoutCost", 100];
 BIS_WL_initModule setVariable ["BIS_WL_wreckRemovalTimeout", 30];
 BIS_WL_initModule setVariable ["BIS_WL_corpseRemovalTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_savedLoadoutCost", 500];
-BIS_WL_initModule setVariable ["BIS_WL_timeMultiplier", 3];
 BIS_WL_initModule setVariable ["BIS_WL_zoneRestrictionSetting", 0];
 BIS_WL_initModule setVariable ["BIS_WL_savingEnabled", FALSE];
 BIS_WL_initModule setVariable ["BIS_WL_respawnVehicle", 750]; //price of respawn vehicle

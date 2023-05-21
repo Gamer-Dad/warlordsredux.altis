@@ -10,8 +10,7 @@ _v setVariable ["dapsAmmoMax", 2, TRUE];
 private _reg = [];
 dapsRegistered pushBackUnique _v;
 
-while {true} do {
-	if !(alive _v) exitWith {};
+while {alive _v} do {
 	if (_v call DAPS_fnc_Active) then {
 		_a = nearestObjects [_v, ["RocketCore"], (if (isServer) then {50} else {150})];
 

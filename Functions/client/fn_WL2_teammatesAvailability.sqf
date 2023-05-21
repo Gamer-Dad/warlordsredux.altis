@@ -2,7 +2,7 @@
 
 BIS_manLost = FALSE;
 
-while {TRUE} do {
+while {!BIS_WL_missionEnd} do {
 	_t = WL_SYNCED_TIME + 600;
 	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || BIS_manLost};
 	if (BIS_manLost) then {

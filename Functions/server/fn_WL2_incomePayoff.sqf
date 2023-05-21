@@ -15,7 +15,7 @@ _refreshBalance = {
 	} forEach BIS_WL_competingSides;
 };
 
-while {true} do {
+while {!BIS_WL_missionEnd} do {
 	sleep (WL_SECTOR_PAYOFF_PERIOD - 25); // -25 Seconds here to get to the full period with the additional 5 seconds sleep further down.
 
 	call _refreshBalance;

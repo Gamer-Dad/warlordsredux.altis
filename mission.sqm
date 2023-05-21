@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={23655.656,200.80415,20920.934};
-		dir[]={0.14922488,-0.59155709,0.79234695};
-		up[]={0.10948597,0.80625528,0.58134305};
-		aside[]={0.98273253,4.2283318e-008,-0.18507999};
+		dir[]={0.14922328,-0.59155065,0.79233849};
+		up[]={0.10948363,0.8062678,0.58133084};
+		aside[]={0.98272371,0,-0.18507904};
 	};
 };
 binarizationWanted=0;
@@ -7059,7 +7059,7 @@ class Mission
 			};
 			id=1013;
 			type="I_MBT_03_cannon_F";
-			atlOffset=1.9073486e-006;
+			atlOffset=2.8610229e-005;
 		};
 		class Item234
 		{
@@ -7076,6 +7076,7 @@ class Mission
 			};
 			id=1014;
 			type="I_LT_01_cannon_F";
+			atlOffset=-0.016774178;
 		};
 		class Item235
 		{
@@ -7092,6 +7093,7 @@ class Mission
 			};
 			id=1015;
 			type="I_MBT_03_cannon_F";
+			atlOffset=-0.00039291382;
 		};
 		class Item236
 		{
@@ -7108,7 +7110,7 @@ class Mission
 			};
 			id=1016;
 			type="I_APC_Wheeled_03_cannon_F";
-			atlOffset=1.9073486e-006;
+			atlOffset=-0.0044784546;
 		};
 		class Item237
 		{
@@ -7125,6 +7127,7 @@ class Mission
 			};
 			id=1017;
 			type="I_MBT_03_cannon_F";
+			atlOffset=-0.00059509277;
 		};
 		class Item238
 		{
@@ -7141,6 +7144,7 @@ class Mission
 			};
 			id=1018;
 			type="I_APC_tracked_03_cannon_F";
+			atlOffset=-5.9127808e-005;
 		};
 		class Item239
 		{
@@ -7159,6 +7163,7 @@ class Mission
 			};
 			id=1019;
 			type="I_LT_01_AA_F";
+			atlOffset=-2.2888184e-005;
 		};
 		class Item240
 		{
@@ -7175,6 +7180,7 @@ class Mission
 			};
 			id=1020;
 			type="I_LT_01_AT_F";
+			atlOffset=-0.00016975403;
 		};
 		class Item241
 		{
@@ -7191,6 +7197,7 @@ class Mission
 			};
 			id=1021;
 			type="I_MBT_03_cannon_F";
+			atlOffset=-0.00031089783;
 		};
 		class Item242
 		{
@@ -7207,6 +7214,7 @@ class Mission
 			};
 			id=1022;
 			type="I_APC_tracked_03_cannon_F";
+			atlOffset=-9.5367432e-006;
 		};
 		class Item243
 		{
@@ -7223,6 +7231,7 @@ class Mission
 			};
 			id=1023;
 			type="I_APC_Wheeled_03_cannon_F";
+			atlOffset=-0.0020866394;
 		};
 		class Item244
 		{
@@ -7241,6 +7250,7 @@ class Mission
 			};
 			id=1024;
 			type="I_LT_01_AA_F";
+			atlOffset=-1.335144e-005;
 		};
 		class Item245
 		{
@@ -7362,6 +7372,7 @@ class Mission
 			};
 			id=1031;
 			type="I_LT_01_cannon_F";
+			atlOffset=-0.00038909912;
 		};
 		class Item252
 		{
@@ -7414,6 +7425,7 @@ class Mission
 			};
 			id=1034;
 			type="I_APC_Wheeled_03_cannon_F";
+			atlOffset=-4.3869019e-005;
 		};
 		class Item255
 		{
@@ -7464,6 +7476,7 @@ class Mission
 			};
 			id=1037;
 			type="I_LT_01_cannon_F";
+			atlOffset=-0.0055298805;
 		};
 		class Item258
 		{
@@ -7514,7 +7527,7 @@ class Mission
 			};
 			id=1040;
 			type="I_APC_tracked_03_cannon_F";
-			atlOffset=3.8146973e-006;
+			atlOffset=-0.00016784668;
 		};
 		class Item261
 		{
@@ -7606,6 +7619,7 @@ class Mission
 			};
 			id=1045;
 			type="I_LT_01_AA_F";
+			atlOffset=-0.00126791;
 		};
 		class Item266
 		{
@@ -7704,6 +7718,7 @@ class Mission
 			};
 			id=1051;
 			type="I_MRAP_03_gmg_F";
+			atlOffset=-0.031204224;
 		};
 		class Item272
 		{
@@ -7875,6 +7890,7 @@ class Mission
 			};
 			id=1061;
 			type="I_LT_01_cannon_F";
+			atlOffset=-0.00045585632;
 		};
 	};
 	class Connections

@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-while {true} do {
+while {!BIS_WL_missionEnd} do {
 	{
 		_pos = getPosASLW _x;
 		if (_pos select 2 < -2.5) then {

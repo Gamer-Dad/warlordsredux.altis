@@ -3,7 +3,7 @@
 if (isNil "BIS_WL_soundMsgBuffer" && BIS_WL_announcerEnabled) then {
 	BIS_WL_soundMsgBuffer = [];
 	0 spawn {
-		while {TRUE} do {
+		while {!BIS_WL_missionEnd} do {
 			waitUntil {sleep WL_TIMEOUT_SHORT; count BIS_WL_soundMsgBuffer > 0};
 			_msg = BIS_WL_soundMsgBuffer # 0;
 			_length = getNumber (configFile >> "CfgSounds" >> _msg >> "duration");
