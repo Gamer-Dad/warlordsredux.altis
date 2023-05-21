@@ -46,7 +46,7 @@ serverNamespace setVariable ["killRewards",
 		["O_Heli_Transport_04_F", 125], ["O_Heli_Transport_04_covered_F", 125], ["O_Heli_Transport_04_medevac_F", 125],
 		["O_UAV_02_dynamicLoadout_F", 700], ["O_T_UAV_04_CAS_F", 700],
 		["O_Heli_Attack_02_dynamicLoadout_F", 750],
-		["O_T_VTOL_02_infantry_dynamicLoadout_F", 1100],
+		["O_T_VTOL_02_vehicle_dynamicLoadout_F", 1100],
 		["O_Plane_CAS_02_dynamicLoadout_F", 1200], ["O_Plane_Fighter_02_F", 1500],
 		["C_Scooter_Transport_01_F", 20], ["O_Boat_Transport_01_F", 50], ["O_Boat_Armed_01_hmg_F", 100], ["O_SDV_01_F", 50],
 		//Boxes
