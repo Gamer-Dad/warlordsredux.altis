@@ -14,8 +14,6 @@ if !(isNull _instigator) then {
 	if (_responsibleLeader in allPlayers) then {
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
-			side group _unit;
-		} else {
 			if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
 				(side (_unit getVariable "BIS_WL_ownerAsset"))
 			} else {
