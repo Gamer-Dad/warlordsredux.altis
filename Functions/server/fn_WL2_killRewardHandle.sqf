@@ -31,7 +31,7 @@ if !(isNull _instigator) then {
 				default {Independent};
 			});
 		};
-		[format ["%1 sides, unit: %2, killer: %3", (_killerSide != _unitSide) && (_unitSide in [west, east, independent]), _unitSide, _killerSide]] remoteExec ["hint", 0, true];
+		[format ["%1, unit: %2, killer: %3", (_unitSide in [west, east, independent]), _unitSide, _killerSide]] remoteExec ["hint", 0, true];
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {30});
