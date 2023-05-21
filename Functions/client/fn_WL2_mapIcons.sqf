@@ -247,7 +247,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];		
-	} count ((units player) select {alive _x && _x != player});
+	} count ((units player) select {(alive _x) && (_x != player) && (isNull objectParent _x)});
 	{
 		_m drawIcon [
 			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
