@@ -97,25 +97,24 @@ addMissionEventHandler ["MarkerCreated", {
 }];
 
 addMissionEventHandler ["EntityKilled", {
-	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	_this spawn BIS_fnc_WL2_killRewardHandle;
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
 
-	if (typeOf _unit == "B_Truck_01_medical_F") then {
+	if ((typeOf (_this # 0)) == "B_Truck_01_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 	};
 
-	if (typeOf _unit == "O_Truck_03_medical_F") then {
+	if ((typeOf (_this # 0)) == "O_Truck_03_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
 
-	if (typeOf _unit == "Land_IRMaskingCover_01_F") then {
+	if ((typeOf (_this # 0)) == "Land_IRMaskingCover_01_F") then {
 		{
 			_asset = _x;
 			if !(alive _x) then {
 				deleteVehicle _asset;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});		
+		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});	
 	};
 }];
 
