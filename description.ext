@@ -104,7 +104,6 @@ class CfgFunctions {
 			class WL2_mapIcons {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
-			class WL2_assistHandle {};
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};

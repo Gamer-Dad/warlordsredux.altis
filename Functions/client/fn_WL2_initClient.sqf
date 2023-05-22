@@ -181,6 +181,7 @@ player addEventHandler ["InventoryOpened",{
 
 player addEventHandler ["HandleDamage", {
 	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+	_this spawn BIS_fnc_WL2_setAssist;
 	_base = (([BIS_WL_base1, BIS_WL_base2] select {(_x getVariable "BIS_WL_owner") == (side group _unit)}) # 0);
 	if ((_unit inArea (_base getVariable "objectAreaComplete")) && ((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false) && ((side (group _unit)) == west)) then {
 		_unit setDamage 0;
@@ -297,7 +298,6 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_getUavConnected;
 0 spawn BIS_fnc_WL2_mapIcons;
-0 spawn BIS_fnc_WL2_assistHandle;
 0 spawn BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
