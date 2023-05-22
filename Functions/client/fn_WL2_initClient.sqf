@@ -187,6 +187,8 @@ player addEventHandler ["HandleDamage", {
 	} else {
 		if ((_unit inArea (_base getVariable "objectAreaComplete")) && ((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false) && ((side (group _unit)) == east)) then {
 			_unit setDamage 0;
+		} else {
+			_damage;
 		};
 	};
 }];
