@@ -13,11 +13,15 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			switch (getNumber (configFile >> "CfgVehicles" >> (typeOf _unit) >> "side")) do {
-				case 0: {EAST};
-				case 1: {WEST};
-				case 2: {RESISTANCE};
-				default {CIVILIAN};
+			if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
+				(side (_unit getVariable "BIS_WL_ownerAsset"))
+			} else {
+				(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
+					case 0: {east};
+					case 1: {west};
+					case 2: {Independent};
+					default {Independent};
+				});
 			};
 		};
 		[format ["%1, unit: %2, killer: %3 unitName: %4, killerName: %5", (_unitSide in [west, east, independent]), _unitSide, _killerSide, (name _unit), (name _responsibleLeader)]] remoteExec ["systemChat", 0, true];
