@@ -27,7 +27,7 @@ if !(isNull _instigator) then {
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
-				_killReward = (if (isPlayer _unit) then {75} else {30});
+				_killReward = (if (isPlayer _unit) then {75} else {40});
 			} else {
 				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
@@ -47,7 +47,7 @@ if (_cond > 0) then {
 		if (isPlayer _unit) then {
 			75;
 		} else {
-			30;
+			40;
 		};
 	} else {
 		(serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
