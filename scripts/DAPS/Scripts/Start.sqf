@@ -29,19 +29,6 @@ private _module = objNull;
 dapsScriptWait = execVM "scripts\DAPS\Scripts\DefineVehicles.sqf";
 waitUntil { scriptDone dapsScriptWait };
 
-if (count (entities "DAPS_Options") > 0) then {
-    _module = (entities "DAPS_Options") select 0;
-    if ((_module getVariable "dapsDebug") == "TRUE") then { dapsDebug = TRUE };
-    //dapsRearmDelay = _module getVariable "dapsRearmCycle";
-    if ((_module getVariable "dapsBlastSize") == "BIG") then { dapsBlastBig = TRUE };
-    if ((_module getVariable "dapsClearAll") == "TRUE") then {
-        dapsLight = [];
-        dapsMedium = [];
-        dapsHeavy = [];
-		dapsDazzler = [];
-    };
-};
-
 dapsDefinitionsLoaded = TRUE;
 dapsDefinitionsLoaded2 = FALSE;
 

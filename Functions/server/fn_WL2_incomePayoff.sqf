@@ -15,7 +15,7 @@ _refreshBalance = {
 	} forEach BIS_WL_competingSides;
 };
 
-while {true} do {
+while {!BIS_WL_missionEnd} do {
 	sleep (WL_SECTOR_PAYOFF_PERIOD - 25); // -25 Seconds here to get to the full period with the additional 5 seconds sleep further down.
 
 	call _refreshBalance;
@@ -46,4 +46,9 @@ while {true} do {
 			};
 		};
 	} forEach (BIS_WL_allWarlords); // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it.
+
+	{
+		_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && (alive _x)};
+		_x addCuratorEditableObjects [_l, true];
+	} forEach allCurators;
 };

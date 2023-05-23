@@ -15,7 +15,7 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray = [position _road, _road getDir selectRandom (roadsConnectedTo _road), selectRandomWeighted (BIS_WL_factionVehicleClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
-				_asset spawn DAPS_fnc_RegisterVehicle;
+				_vehicle spawn DAPS_fnc_RegisterVehicle;
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
@@ -32,24 +32,27 @@ if (_side == BIS_WL_localSide) then {
 				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
-			[_group, 0] setWaypointPosition [position _vehicle, 0];
+			[_group, 0] setWaypointPosition [position _vehicle, 100];
+			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
-			_wp = _group addWaypoint [position _road, 200];
+			_wp = _group addWaypoint [position _road, 100];
 			_wp setWaypointType "SAD";
 			
-			_wp = _group addWaypoint [position _road, 0];
+			_wp = _group addWaypoint [position _road, 100];
 			_wp setWaypointType "CYCLE";
 		};
 	} else {
+		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		{
+			private _road = selectRandom _roads;
 			_vehicleInfo = _x;
 			_vehicleInfo params ["_type", "_pos", "_dir", "_lock", "_waypoints"];
 			_vehicleArray = [_pos, _dir, _type, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 
 			if !(_vehicle isKindOf "Man") then {
-				_asset spawn DAPS_fnc_RegisterVehicle;
+				_vehicle spawn DAPS_fnc_RegisterVehicle;
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
@@ -67,18 +70,16 @@ if (_side == BIS_WL_localSide) then {
 			} forEach _crew;
 			
 			_vehicle lock _lock;
-			[_group, 0] setWaypointPosition [_pos, 0];
+			[_group, 0] setWaypointPosition [position _vehicle, 100];
+			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
-			{
-				_x params ["_pos", "_type", "_speed", "_behavior", "_timeout"];
-				_wp = _group addWaypoint [_pos, 0];
-				_wp setWaypointType _type;
-				_wp setWaypointSpeed _speed;
-				_wp setWaypointBehaviour _behavior;
-				_wp setWaypointTimeout _timeout;
-			} forEach _waypoints;
-			uiSleep WL_TIMEOUT_MIN;
+			_wp = _group addWaypoint [position _vehicle, 100];
+			_wp setWaypointType "SAD";
+			
+			_wp = _group addWaypoint [position _vehicle, 100];
+			_wp setWaypointType "CYCLE";
+			uiSleep 0.1;
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
@@ -89,7 +90,7 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted (BIS_WL_factionAircraftClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
-				_asset spawn DAPS_fnc_RegisterVehicle;
+				_vehicle spawn DAPS_fnc_RegisterVehicle;
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
@@ -109,15 +110,16 @@ if (_side == BIS_WL_localSide) then {
 			
 
 			[_group, 0] setWaypointPosition [position _vehicle, 300];
+			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
 			
-			_wp1 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 400];
+			_wp1 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 300];
 			_wp1 setWaypointType "SAD";
 			
-			_wp2 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 400];
+			_wp2 = _group addWaypoint [position _sector vectorAdd [0, 0, 300], 300];
 			_wp2 setWaypointType "SAD";
 			
-			_wp3 = _group addWaypoint [waypointPosition _wp1 vectorAdd [0, 0, 300], 400];
+			_wp3 = _group addWaypoint [waypointPosition _wp1 vectorAdd [0, 0, 300], 300];
 			_wp3 setWaypointType "CYCLE";
 		};
 	};

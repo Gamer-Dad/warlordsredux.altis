@@ -1,16 +1,3 @@
-class cfgPatches
-{
-	class DrongosAPS
-	{
-		author = "Drongo";
-		name = "Drongo's APS";
-		units[] = {};
-		weapons[] = {};
-		requiredAddons[] = {"CBA_main"};
-	};
-};
-
-
 class Extended_PostInit_EventHandlers 
 {
 	dapsInit="execVM'\scripts\DAPS\Scripts\Start.sqf'";
@@ -18,62 +5,6 @@ class Extended_PostInit_EventHandlers
 
 #include "\scripts\DAPS\Menu\zCoreDefines.hpp"
 #include "\scripts\DAPS\Menu\Dialog.hpp"
-
-
-class cfgAmmo
-{
-	class HelicopterExploSmall;
-	class DAPSblast: HelicopterExploSmall
-	{
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
-		caliber = 0;
-		CraterEffects = "GrenadeCrater";
-		CraterWaterEffects = "ImpactEffectsWaterExplosion";
-		directionalExplosion = 0; //0
-		explosionAngle = 60; //60
-		explosionDir = "explosionDir";
-		explosionEffects = "HERocketExplosion";
-		explosionEffectsDir = "explosionDir";
-		explosionSoundEffect = "DefaultExplosion";
-		explosionType = "explosive";
-		hit = 1;
-		indirectHit = 1;
-		indirectHitRange = 5;
-	};
-	
-	class DAPSblast2: HelicopterExploSmall
-	{
-		//model = "\A3\Weapons_f\Data\bullettracer\tracer_white";
-		caliber = 0;
-		CraterEffects = "GrenadeCrater";
-		hit = 1;
-		indirectHit = 1;
-		indirectHitRange = 5;
-	};
-};
-
-// https://community.bistudio.com/wiki/CfgRemoteExec
-class CfgRemoteExec
-{
-	// List of script functions allowed to be sent from client via remoteExec
-	class Functions
-	{
-		// RemoteExec modes:
-		// 0- turned off
-		// 1- turned on, taking whitelist into account
-		// 2- turned on, ignoring whitelist (default, because of backward compatibility)
-		mode = 2;
-		// Ability to send jip messages: 0-disabled, 1-enabled (default)
-		jip = 1;
-		class DAPS_fnc_RegisterVehicle{allowedTargets=0;};
-		class DAPS_fnc_DeductAmmo{allowedTargets=0;};
-		class DAPS_fnc_Blast{allowedTargets=0;};
-		class DAPS_fnc_RearmAPS{allowedTargets=0;};
-		class DAPS_fnc_DisableAPStype{allowedTargets=0;};
-		class DAPS_fnc_DisableAPS{allowedTargets=0;};
-		//class DAPS_fnc_Report{allowedTargets=0;};
-	};
-};
 
 class CfgFactionClasses
 {

@@ -14,8 +14,7 @@ _v setVariable ["dapsAmmoMax", 999, true];
 private _time = -1;
 private _reg = [];
 
-while {true} do {
-	if !(alive _v) exitWith {};
+while {alive _v} do {
 	if (_v call DAPS_fnc_Active) then {
 		_r = _v nearObjects ["RocketCore", 225];
 		_m = _v nearObjects ["MissileCore", 225];

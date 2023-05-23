@@ -104,7 +104,6 @@ class CfgFunctions {
 			class WL2_mapIcons {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
-			class WL2_assistHandle {};
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
@@ -220,7 +219,6 @@ class CfgFunctions {
 			class BroadcastTypes {};
 			class KeyPressed {};
 			class RearmAPS {};
-			class RegisterAll {};
 			class RegisterVehicle {};
 			class CompileTypes {};
 		};

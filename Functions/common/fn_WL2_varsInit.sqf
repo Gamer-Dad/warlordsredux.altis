@@ -69,7 +69,6 @@ switch (_locality) do {
 		{
 			missionNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
 		} forEach BIS_WL_competingSides;
-		BIS_WL_timeMultiplier = BIS_WL_initModule getVariable ["BIS_WL_timeMultiplier", 12];
 	};
 	case "client": {
 		BIS_WL_playerSide = side group player;

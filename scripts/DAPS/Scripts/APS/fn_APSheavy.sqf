@@ -7,13 +7,12 @@ _v setVariable ["dapsType", "Heavy APS", TRUE];
 _v setVariable ["dapsAmmo", 6, TRUE];
 _v setVariable ["dapsAmmoMax", 6, TRUE];
 
-private _time = -1;
 private _reg = [];
 dapsRegistered pushBackUnique _v;
-while {true} do {
-    if !(alive _v) exitWith {};
+
+while {alive _v} do {
     if (_v call DAPS_fnc_Active) then {
-        _a = nearestObjects [_v, ["ShellCore", "RocketCore", "MissileCore", "ammo_Penetrator_Base"], 125];
+        _a = nearestObjects [_v, ["RocketCore", "MissileCore", "SubmunitionCore", "ammo_Penetrator_Base"], (if (isServer) then {50} else {150})];
 
         if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {

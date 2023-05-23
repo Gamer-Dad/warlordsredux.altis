@@ -14,7 +14,7 @@ _cpBalanceCtrl = findDisplay 46 ctrlCreate ["RscStructuredText", 9876];
 _cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 60, _blockH * 16];
 
 
-while {true} do {
+while {!BIS_WL_missionEnd} do {
 	if (side group player == west) then {
 		private _balanceMultiplier = (missionNamespace getVariable "blanceMultilplierBlu") - 1;
 		private _sidePercentage = if(isNil "_balanceMultiplier") then [{0}, {_balanceMultiplier * 100}];

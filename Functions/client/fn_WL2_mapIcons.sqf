@@ -247,7 +247,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];		
-	} count ((units player) select {alive _x && _x != player});
+	} count ((units player) select {(alive _x) && (_x != player) && (isNull objectParent _x)});
 	{
 		_m drawIcon [
 			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
@@ -321,7 +321,22 @@ MRTM_fnc_iconDrawGPS = {
 		];
 	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
 	{
-		if (!isNull _x) then {
+		_m drawIcon [
+			[_x] call MRTM_fnc_iconType,
+			[_x] call MRTM_fnc_iconColor,
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];		
+	} count ((units player) select {(alive _x) && (_x != player) && (isNull objectParent _x)});
+	{
+		if !(_x isEqualTo player) then {
 			_m drawIcon [
 				[_x] call MRTM_fnc_iconType,
 				[_x] call MRTM_fnc_iconColor,
@@ -336,7 +351,7 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};
-	} count ((allUnits) select {(side group _x == side group player) && (isNull objectParent _x) && (_x != player)});
+	} count ((allPlayers) select {(side group _x == side group player) && (isNull objectParent _x) && (alive _x)});
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
@@ -390,7 +405,7 @@ waitUntil {
 				_display2opened = false;
 			};		
 		};
-		uiSleep 1;
+		uiSleep 0.2;
 	};
 };
 

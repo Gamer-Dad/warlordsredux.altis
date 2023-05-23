@@ -51,7 +51,7 @@ RESISTANCE setFriend [CIVILIAN, 1];
 
 //this part sets fog and rain to zero
 0 spawn {
-	while {TRUE} do {
+	while {!BIS_WL_missionEnd} do {
 		_overcastPreset = random 1;
 		(7200 * timeMultiplier) setOvercast _overcastPreset;
 		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
@@ -97,25 +97,24 @@ addMissionEventHandler ["MarkerCreated", {
 }];
 
 addMissionEventHandler ["EntityKilled", {
-	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	_this spawn BIS_fnc_WL2_killRewardHandle;
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
 
-	if (typeOf _unit == "B_Truck_01_medical_F") then {
+	if ((typeOf (_this # 0)) == "B_Truck_01_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 	};
 
-	if (typeOf _unit == "O_Truck_03_medical_F") then {
+	if ((typeOf (_this # 0)) == "O_Truck_03_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 	};
 
-	if (typeOf _unit == "Land_IRMaskingCover_01_F") then {
+	if ((typeOf (_this # 0)) == "Land_IRMaskingCover_01_F") then {
 		{
 			_asset = _x;
 			if !(alive _x) then {
 				deleteVehicle _asset;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});		
+		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});	
 	};
 }];
 
@@ -138,14 +137,14 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_targetResetHandleServer;
 0 spawn BIS_fnc_WL2_forfeitHandleServer;
 
-setTimeMultiplier BIS_WL_timeMultiplier;
+setTimeMultiplier 3;
 
 0 spawn {
-	while {TRUE} do {
+	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || daytime < 5};
-		setTimeMultiplier ((BIS_WL_timeMultiplier * 4) min 24);
+		setTimeMultiplier 9;
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && daytime > 5};
-		setTimeMultiplier BIS_WL_timeMultiplier;
+		setTimeMultiplier 3;
 	};
 };
 
@@ -165,3 +164,6 @@ setTimeMultiplier BIS_WL_timeMultiplier;
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
+
+//Log difficulty
+diag_log (format ["Server difficulty option death messages: %1", difficultyOption "deathMessages"]);
