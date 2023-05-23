@@ -398,14 +398,20 @@ class CfgHints
 		class rita
 		{
 			displayName = "Rita voice warning system";
-			displayNameShort = "Rita System";
-			description = "";
+			displayNameShort = "";
+			description = "In your scoll wheel options you can enable the %3voice warning system: Rita.%4%1%2 It'll give you terrain info, getting to low to the terrain or diving to fast will trigger alerts.%1%2 It'll also warn you when you are visible on enemy sensors.%1";
+			tip = "";
+			image = "A3\ui_f\data\gui\cfg\hints\voice_ca.paa";
+			noImage = false;
 		};
 		class betty
 		{
 			displayName = "Betty voice warning system";
-			displayNameShort = "Betty System";
-			description = "";
+			displayNameShort = "";
+			description = "In your scoll wheel options you can enable the %3voice warning system: Betty.%4%1%2 It'll give you %3information about new enemies%4 on your sensor or when you lose sight of an enemy.%1%2 It'll also give you %3terrain info%4, getting to low to the terrain or diving to fast will trigger alerts.%1%2 Last but not least the system also %3warns you%4 when you are %3visible on enemy sensors.%4%1";
+			tip = "";
+			image = "A3\ui_f\data\gui\cfg\hints\voice_ca.paa";
+			noImage = false;
 		};
 	};
 };

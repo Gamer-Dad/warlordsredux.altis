@@ -159,9 +159,11 @@ player addEventHandler ["GetInMan", {
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
+		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_betty;
 	};
 	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
+		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
 }];
