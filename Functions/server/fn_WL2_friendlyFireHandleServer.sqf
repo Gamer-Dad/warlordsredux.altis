@@ -14,6 +14,7 @@ if (_unit isKindOf "Man") then {
 				_friendlyKillTimestamps = _friendlyKillTimestamps select {_x >= WL_SYNCED_TIME - WL_FRIENDLY_FIRE_PENALTY_MAX};
 				_instigator setVariable ["BIS_WL_friendlyKillTimestamps", _friendlyKillTimestamps];
 				_friendlyKillTimestampsCnt = count _friendlyKillTimestamps;
+				[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", (owner _instigator)];
 				
 				if (_friendlyKillTimestampsCnt >= WL_FRIENDLY_FIRE_THRESHOLD) then {
 					_friendlyKillTimestampsCnt = _friendlyKillTimestampsCnt - WL_FRIENDLY_FIRE_THRESHOLD + 1;
