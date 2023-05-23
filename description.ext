@@ -132,7 +132,7 @@ class CfgFunctions {
 			class WL2_killRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
-			class WL2_killRewards {};
+			class WL2_tablesSetUp {};
 			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
     	};
