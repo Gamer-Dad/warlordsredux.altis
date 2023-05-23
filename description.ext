@@ -379,7 +379,7 @@ class CfgHints
 			displayName = "Friendly fire warning";
 			displayNameShort = "FF Warning";
 			description = "%3%12%4, Killing to many friendlies will result in jail time. Make sure you identify your targets before you shoot.%1%2 When identifying targets you can make use of %11 and ask if that target is friendly.%1";
-			tip = "Get to know the color of what your enemies wear, this can help. You have %13 friednly fire kills left before you get jailed.";
+			tip = "Get to know the color of what your enemies wear, this can help. You have %13 friendly fire kills left before you get jailed.";
 			arguments[] =
 			{
 				{{"TacticalPing"}},
