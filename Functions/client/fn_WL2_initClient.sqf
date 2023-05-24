@@ -159,9 +159,11 @@ player addEventHandler ["GetInMan", {
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
+		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_betty;
 	};
 	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
+		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
 }];
@@ -279,7 +281,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t && !isNull WL_TARGET_FRIENDLY};
 	sleep WL_TIMEOUT_LONG;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
-		[format [toUpper localize "STR_A3_WL_tip_menu", (actionKeysNamesArray "Gear") # 0], 5] spawn BIS_fnc_WL2_smoothText;
+		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
 		sleep 10;
 	};
 };

@@ -29,7 +29,7 @@ missionNamespace setVariable ["imbalance", 0, true];
 missionNamespace setVariable ["serverTimer", 0, true];
 
 [36000] call BIS_fnc_countdown;
-0 spawn BIS_fnc_WL2_killRewards;
+0 spawn BIS_fnc_WL2_tablesSetUp;
 
 
 ["server_init"] call BIS_fnc_startLoadingScreen;

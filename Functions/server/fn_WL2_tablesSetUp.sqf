@@ -1,6 +1,7 @@
 #include "..\warlords_constants.inc"
 
-serverNamespace setVariable ["killRewards", 
+// Rewards
+serverNamespace setVariable ["BIS_WL2_killRewards", 
 	createHashMapFromArray [
 		//NATO
 		["B_Quadbike_01_F", 20], ["B_LSV_01_unarmed_F", 50], ["B_MRAP_01_F", 100],
@@ -64,5 +65,51 @@ serverNamespace setVariable ["killRewards",
 		["I_LT_01_scout_F", 280], ["I_LT_01_AA_F", 280], ["I_LT_01_AT_F", 280], ["I_LT_01_cannon_F", 280],
 		["I_MBT_03_cannon_F", 400], ["I_APC_Wheeled_03_cannon_F", 400], ["I_APC_tracked_03_cannon_F", 400],
 		["I_Heli_light_03_dynamicLoadout_F", 450], ["I_Heli_light_03_F", 450], ["I_Plane_Fighter_03_dynamicLoadout_F", 750], ["I_Plane_Fighter_03_CAS_F", 750], ["I_Plane_Fighter_04_F", 800]
+	]
+];
+
+// Capture points
+serverNamespace setVariable ["BIS_WL2_capturePoints", 
+	createHashMapFromArray [
+		//NATO
+		["B_LSV_01_armed_F", 2], ["B_G_Offroad_01_armed_F", 2], ["B_LSV_01_AT_F", 2], ["B_G_Offroad_01_AT_F", 2],
+		["B_MRAP_01_hmg_F", 3], ["B_MRAP_01_gmg_F", 3],
+		["B_APC_Wheeled_03_cannon_F", 4], ["B_APC_Wheeled_01_cannon_F", 4], ["B_APC_Tracked_01_rcws_F", 4],
+		["B_APC_Tracked_01_AA_F", 4],
+		["B_MBT_01_cannon_F", 5], ["B_MBT_01_TUSK_F", 5],
+		["B_AFV_Wheeled_01_cannon_F", 4], ["B_AFV_Wheeled_01_up_cannon_F", 4],
+		["B_MBT_01_arty_F", 5], ["B_MBT_01_mlrs_F", 5],
+		["B_Heli_Light_01_dynamicLoadout_F", 2],
+		["B_UAV_02_dynamicLoadout_F", 3], ["B_T_UAV_03_dynamicLoadout_F", 3], ["B_UAV_05_F", 3],
+		["B_Heli_Attack_01_dynamicLoadout_F", 3], ["B_T_VTOL_01_armed_F", 3],
+		["B_Plane_CAS_01_dynamicLoadout_F", 3], ["B_Plane_Fighter_01_F", 3],
+		["B_Boat_Armed_01_minigun_F", 2],
+		["B_HMG_01_F", 1], ["B_HMG_01_high_F", 1], ["B_GMG_01_F", 1], ["B_GMG_01_high_F", 1],
+		["B_static_AT_F", 1], ["B_static_AA_F", 1], ["B_Mortar_01_F", 0],
+		//Static
+		["B_AAA_System_01_F", 2], ["B_SAM_System_01_F", 2], ["B_SAM_System_03_F", 2],
+		["B_SAM_System_02_F", 2], ["B_Ship_MRLS_01_F", 2],
+		//CSAT
+		["O_LSV_02_armed_F", 2], ["O_G_Offroad_01_armed_F", 2], ["O_LSV_02_AT_F", 2], ["O_G_Offroad_01_AT_F", 2],
+		["O_MRAP_02_hmg_F", 3], ["O_MRAP_02_gmg_F", 3],
+		["O_APC_Wheeled_02_rcws_v2_F", 4], ["O_APC_Tracked_02_cannon_F", 4],
+		["O_APC_Tracked_02_AA_F", 4],
+		["O_MBT_02_cannon_F", 5], ["O_MBT_04_cannon_F", 5], ["O_MBT_04_command_F", 5],
+		["O_MBT_02_arty_F", 5], ["I_Truck_02_MRL_F", 5],
+		["O_Heli_Light_02_dynamicLoadout_F", 2],
+		["O_UAV_02_dynamicLoadout_F", 3], ["O_T_UAV_04_CAS_F", 3],
+		["O_Heli_Attack_02_dynamicLoadout_F", 3], ["O_T_VTOL_02_vehicle_dynamicLoadout_F", 3],
+		["O_Plane_CAS_02_dynamicLoadout_F", 3], ["O_Plane_Fighter_02_F", 3],
+		["O_Boat_Armed_01_hmg_F", 2],
+		["O_HMG_01_F", 1], ["O_HMG_01_high_F", 1], ["O_GMG_01_F", 1], ["O_GMG_01_high_F", 1],
+		["O_static_AT_F", 1], ["O_static_AA_F", 1], ["O_Mortar_01_F", 1],
+		//Static
+		["B_AAA_System_01_F", 2], ["B_SAM_System_01_F", 2], ["O_SAM_System_04_F", 2],
+		["B_SAM_System_02_F", 2], ["B_Ship_MRLS_01_F", 2],
+		//
+		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
+		["I_LT_01_scout_F", 3], ["I_LT_01_AA_F", 3], ["I_LT_01_AT_F", 3], ["I_LT_01_cannon_F", 3],
+		["I_MBT_03_cannon_F", 4], ["I_APC_Wheeled_03_cannon_F", 4], ["I_APC_tracked_03_cannon_F", 4],
+		["I_Heli_light_03_dynamicLoadout_F", 4], ["I_Heli_light_03_F", 4], ["I_Plane_Fighter_03_dynamicLoadout_F", 4], ["I_Plane_Fighter_03_CAS_F", 4], ["I_Plane_Fighter_04_F", 4]
 	]
 ];

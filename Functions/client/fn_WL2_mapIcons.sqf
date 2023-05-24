@@ -60,9 +60,9 @@ MRTM_fnc_iconText = {
 	_text = "";
 	if (vehicle _t isKindOf 'CAManBase') then {
 		if (isPlayer _t) then {
-			_text = name _t;
+			_text = str (name _t);
 		} else {
-			_text = format ["%1 [AI]", name _t];
+			_text = format ["%1 [AI]", str (name _t)];
 		};
 
 		if !(alive _t) then {
@@ -71,7 +71,7 @@ MRTM_fnc_iconText = {
 	} else {
 		if (count (crew _t) == 1) then {
 			if (isPlayer ((crew _t) select 0)) then {
-				_text = format ["%1: %2", _vd, name ((crew _t) select 0)];
+				_text = format ["%1: %2", _vd, str (name ((crew _t) select 0))];
 			} else {
 				_text = format ["%1: %2 [AI]", _vd, name ((crew _t) select 0)];
 			};
@@ -79,9 +79,9 @@ MRTM_fnc_iconText = {
 			_playerCrew = (crew _t) select {isPlayer _x};
 			{
 				if ((_forEachindex + 1) == count _playerCrew) then {
-					_text = _text + format ["%1", name _x];
+					_text = _text + format ["%1", str (name _x)];
 				} else {
-					_text = _text + format ["%1, ", name _x];
+					_text = _text + format ["%1, ", str (name _x)];
 				};
 			} forEach _playerCrew;
 
@@ -96,7 +96,7 @@ MRTM_fnc_iconText = {
 	if (unitIsUAV _t) then {
 		if (isUAVConnected _t) then {
 			_op = (UAVControl _t) select 0;
-			_text = format ["%1: %2", _vd, name _op];
+			_text = format ["%1: %2", _vd, str (name _op)];
 		} else {
 			_text = format ["[AUTO] %1", _vd];
 		};

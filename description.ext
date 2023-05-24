@@ -132,7 +132,7 @@ class CfgFunctions {
 			class WL2_killRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
-			class WL2_killRewards {};
+			class WL2_tablesSetUp {};
 			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
     	};
@@ -351,6 +351,68 @@ class CfgSounds {
         name="fuel low rita";
         sound[]={"sounds\BingoFuel.ogg", 1, 1};
         titles[] = {};
+	};
+};
+
+class CfgHints
+{
+	class common
+	{
+		displayName = "Common Controls";
+
+		class warlordsMenu
+		{
+			displayName = "Open Warlords Menu";
+			displayNameShort = "";
+			description = "%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.";
+			tip = "Hold %11";
+			arguments[] =
+			{
+				{{"Gear"}},
+				"format [localize 'STR_A3_WL_tip_menu', (actionKeysNamesArray 'Gear') # 0]"
+			};
+			image = "img\wl_logo_ca.paa";
+			noImage = false;
+		};
+		class friendlyFire
+		{
+			displayName = "Friendly fire warning";
+			displayNameShort = "";
+			description = "%3%12%4, Killing to many friendlies will result in jail time. Make sure you identify your targets before you shoot.%1%2 When identifying targets you can make use of %11 and ask if that target is friendly.%1";
+			tip = "Get to know the color of what your enemies wear, this can help. You have %13 friendly fire kills left before you get jailed.";
+			arguments[] =
+			{
+				{{"TacticalPing"}},
+				"name player",
+				"format ['%1', (3 - (count (player getVariable ['BIS_WL_friendlyKillTimestamps', []])))]"
+			};
+			image = ;
+			noImage = true;
+		};
+	};
+
+	class voiceWarningSystem
+	{
+		displayName = "Rita Controls";
+
+		class rita
+		{
+			displayName = "Rita voice warning system";
+			displayNameShort = "";
+			description = "In your scoll wheel options you can enable the %3voice warning system: Rita.%4%1%2 It'll give you %3terrain info%4, getting to low to the terrain or diving to fast will trigger alerts.%1%2 It'll also %3warn you%4 when you are %3visible on enemy sensors.%4%1";
+			tip = "";
+			image = "A3\ui_f\data\gui\cfg\hints\voice_ca.paa";
+			noImage = false;
+		};
+		class betty
+		{
+			displayName = "Betty voice warning system";
+			displayNameShort = "";
+			description = "In your scoll wheel options you can enable the %3voice warning system: Betty.%4%1%2 It'll give you %3information about new enemies%4 on your sensor or when you lose sight of an enemy.%1%2 It'll also give you %3terrain info%4, getting to low to the terrain or diving to fast will trigger alerts.%1%2 Last but not least the system also %3warns you%4 when you are %3visible on enemy sensors.%4%1";
+			tip = "";
+			image = "A3\ui_f\data\gui\cfg\hints\voice_ca.paa";
+			noImage = false;
+		};
 	};
 };
 

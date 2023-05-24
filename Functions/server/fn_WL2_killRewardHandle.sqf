@@ -2,7 +2,7 @@
 
 params ["_unit", "_killer", "_instigator"];
 
-if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "killRewards") getOrDefault [(typeOf _unit), 69]) == 69)) exitWith {};
+if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69]) == 69)) exitWith {};
 
 if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable "BIS_WL_ownerAsset"))}) then [{(leader (_killer getVariable "BIS_WL_ownerAsset"))}, {((UAVControl vehicle _killer) # 0)}])};
 if (isNull _instigator) then {_instigator = (vehicle _killer)};
@@ -27,9 +27,9 @@ if !(isNull _instigator) then {
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
-				_killReward = (if (isPlayer _unit) then {75} else {30});
+				_killReward = (if (isPlayer _unit) then {75} else {40});
 			} else {
-				_killReward = (serverNamespace getVariable "killRewards") getOrDefault [(typeOf _unit), 69];
+				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_unit, _killReward, false, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
@@ -47,10 +47,10 @@ if (_cond > 0) then {
 		if (isPlayer _unit) then {
 			75;
 		} else {
-			30;
+			40;
 		};
 	} else {
-		(serverNamespace getVariable "killRewards") getOrDefault [(typeOf _unit), 69];
+		(serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 	});
 	_killReward = (round ((_killReward / 100) * 30));
 	{
