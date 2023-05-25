@@ -186,7 +186,6 @@ if (isPlayer _owner) then {
 				}];
 				_asset setVariable ["landingGear", true, true];
 				_asset setVariable ["bettyEnabled", false, true];
-				_asset call BIS_fnc_WL2_sub_bettyAction;
 			};
 			if (typeOf _asset == "O_Plane_Fighter_02_F" || typeOf _asset == "O_Plane_CAS_02_dynamicLoadout_F") then {
 				_asset addEventHandler ["Gear", {
@@ -199,7 +198,6 @@ if (isPlayer _owner) then {
 				}];
 				_asset setVariable ["landingGear", true, true];
 				_asset setVariable ["bettyEnabled", false, true];
-				_asset call BIS_fnc_WL2_sub_ritaAction;
 			};
 		};
 		
