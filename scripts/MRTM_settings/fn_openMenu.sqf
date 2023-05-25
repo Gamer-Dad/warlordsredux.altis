@@ -20,9 +20,9 @@ disableSerialization;
 } forEach [[1125, MRTM_inf], [1126, MRTM_ground], [1127, MRTM_air], [1128, MRTM_drones], [1129, MRTM_objects]];
 
 {
-	slidersetRange [(_x select 0), 0.1, 5];
+	slidersetRange [(_x select 0), 0.05, 2];
 	sliderSetPosition[(_x select 0), (_x select 1)];
-	((findDisplay 8000) displayCtrl (_x select 0)) sliderSetSpeed [(_x select 0), 1, 0.1];
+	((findDisplay 8000) displayCtrl (_x select 0)) sliderSetSpeed [(_x select 0), 0.05, 0.01];
 } forEach [[1130, MRTM_rwr1], [1131, MRTM_rwr2], [1132, MRTM_rwr3], [1133, MRTM_rwr4]];
 
 ctrlSetText[1101, (name player)];

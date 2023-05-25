@@ -684,7 +684,7 @@ class MRTM_settingsMenu
 		class MRTMRWREdit1: RscEditMRTM
 		{
 			idc = 1405;
-			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			onKeyUp = "[_this select 0, _this select 1, 'RWR1',true] call MRTM_fnc_onChar;";
 			x = 0.672179 * safezoneW + safezoneX;
 			y = 0.3042 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -693,7 +693,7 @@ class MRTM_settingsMenu
 		class MRTMRWREdit2: RscEditMRTM
 		{
 			idc = 1406;
-			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			onKeyUp = "[_this select 0, _this select 1, 'RWR2',true] call MRTM_fnc_onChar;";
 			x = 0.672218 * safezoneW + safezoneX;
 			y = 0.3416 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -702,7 +702,7 @@ class MRTM_settingsMenu
 		class MRTMRWREdit3: RscEditMRTM
 		{
 			idc = 1407;
-			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			onKeyUp = "[_this select 0, _this select 1, 'RWR3',true] call MRTM_fnc_onChar;";
 			x = 0.672219 * safezoneW + safezoneX;
 			y = 0.3812 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -711,7 +711,7 @@ class MRTM_settingsMenu
 		class MRTMRWREdit4: RscEditMRTM
 		{
 			idc = 1408;
-			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			onKeyUp = "[_this select 0, _this select 1, 'RWR4',true] call MRTM_fnc_onChar;";
 			x = 0.672218 * safezoneW + safezoneX;
 			y = 0.4186 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;

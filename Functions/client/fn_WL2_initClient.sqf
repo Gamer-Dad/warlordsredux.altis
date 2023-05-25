@@ -66,10 +66,10 @@ MRTM_syncObjects = true;
 setTerrainGrid 3.125;
 
 //Radar warning system
-MRTM_rwr1 = 1;
-MRTM_rwr2 = 1;
-MRTM_rwr3 = 1;
-MRTM_rwr4 = 1;
+MRTM_rwr1 = 0.4;
+MRTM_rwr2 = 0.4;
+MRTM_rwr3 = 0.3;
+MRTM_rwr4 = 0.4;
 
 //Options
 player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
