@@ -29,7 +29,7 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 		["B_HMG_01_F", 125], ["B_HMG_01_high_F", 125], ["B_GMG_01_F", 125], ["B_GMG_01_high_F", 125],
 		["B_static_AT_F", 125], ["B_static_AA_F", 125], ["B_Mortar_01_F", 125],
 		//Static
-		["B_Radar_System_01_F", 400],
+		["B_Radar_System_01_F", 400], ["B_UAV_01_F", 20],
 		["B_AAA_System_01_F", 500], ["B_SAM_System_01_F", 600], ["B_SAM_System_03_F", 600],
 		["B_SAM_System_02_F", 700], ["B_Ship_MRLS_01_F", 1000],
 		//CSAT
@@ -57,7 +57,7 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 		["O_HMG_01_F", 125], ["O_HMG_01_high_F", 125], ["O_GMG_01_F", 125], ["O_GMG_01_high_F", 125],
 		["O_static_AT_F", 125], ["O_static_AA_F", 125], ["O_Mortar_01_F", 125],
 		//Static
-		["O_Radar_System_02_F", 400], // Radar
+		["O_Radar_System_02_F", 400], ["O_UAV_01_F", 20],
 		["B_AAA_System_01_F", 500], ["B_SAM_System_01_F", 600], ["O_SAM_System_04_F", 600],
 		["B_SAM_System_02_F", 700], ["B_Ship_MRLS_01_F", 1000],
 		//AAF
