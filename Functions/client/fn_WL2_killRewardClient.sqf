@@ -40,6 +40,9 @@ if (_unit isKindOf "Man") then {
 		_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
 	};
 };
+if (MRTM_playKillSound) then {
+	playSoundUI ["AddItemOK", 0.1, 1];
+};
 
 _ctrl ctrlCommit 0;
 
