@@ -113,8 +113,8 @@ if !(isNull _sender) then {
 		};
 		case "fastTravelContested": {
 			if (_hasFunds) then {
+				private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && (isNull objectParent _x) && (alive _x) && (_x != _sender)};
 				_sender setVehiclePosition [_pos, [], 1, "NONE"];
-				private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && (isNull objectParent _x) && (alive _x)};
 				{
 					_x setVehiclePosition [_pos, [], 1, "NONE"];
 				} forEach _tagAlong;
