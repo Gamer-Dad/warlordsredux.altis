@@ -865,7 +865,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText4: RscStructuredTextMRTM
 		{
 			idc = 1120;
-			text = "Enable the voice warning system on aircrafts";
+			text = "Enable the voice warning system on aircraft";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
