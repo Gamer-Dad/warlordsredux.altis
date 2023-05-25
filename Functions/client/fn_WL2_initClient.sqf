@@ -57,11 +57,11 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 };
 
 //View distance
-MRTM_inf = 1500;
-MRTM_ground = 1500;
-MRTM_air = 2000;
-MRTM_drones = 2000;
-MRTM_objects = 1500;
+MRTM_inf = 2000;
+MRTM_ground = 3000;
+MRTM_air = 4000;
+MRTM_drones = 4000;
+MRTM_objects = 2000;
 MRTM_syncObjects = true;
 setTerrainGrid 3.125;
 
