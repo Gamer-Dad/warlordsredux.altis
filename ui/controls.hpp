@@ -738,7 +738,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton1: RscCheckboxMRTM
 		{
 			idc = 2801;
-			action = "if (MRTM_3rdPersonDiabled) then {MRTM_3rdPersonDiabled = false} else {MRTM_3rdPersonDiabled = true}";
+			action = "if (player getVariable 'MRTM_3rdPersonDisabled') then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]];}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;

@@ -31,6 +31,9 @@ if !(isNull _instigator) then {
 			} else {
 				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
+			if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
+				_killReward = (_killReward * 1.5);
+			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_unit, _killReward, false, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			_unit setVariable ["BIS_WL_killer", _responsibleLeader, true];

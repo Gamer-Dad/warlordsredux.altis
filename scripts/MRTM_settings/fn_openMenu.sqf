@@ -37,7 +37,7 @@ if (MRTM_syncObjects) then {
 	ctrlEnable [1404, true];
 };
 
-if (MRTM_3rdPersonDiabled) then {
+if (player getVariable "MRTM_3rdPersonDisabled") then {
 	((findDisplay 8000) displayCtrl 2801) cbSetChecked true;
 } else {
 	((findDisplay 8000) displayCtrl 2801) cbSetChecked false;

@@ -72,7 +72,7 @@ MRTM_rwr3 = 1;
 MRTM_rwr4 = 1;
 
 //Options
-MRTM_3rdPersonDiabled = false;
+player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
 MRTM_showDrones = true;
 MRTM_playKillSound = true;
 MRTM_EnableRWR = true;

@@ -98,7 +98,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Update_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && (!isNil {MRTM_3rdPersonDiabled}) && MRTM_3rdPersonDiabled);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && (player getVariable [""MRTM_3rdPersonDisabled"", false]));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
