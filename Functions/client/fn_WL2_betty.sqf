@@ -67,7 +67,7 @@ waitUntil {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf object
 0 spawn {
 	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
 		if (MRTM_EnableRWR) then {
-			if (east knowsAbout (objectParent player) >= 4) then {
+			if ((east knowsAbout (objectParent player) >= 4) || (independent knowsAbout (objectParent player) >= 4)) then {
 				playSoundUI ["radarLock", MRTM_rwr3, 1];
 			};
 		};
