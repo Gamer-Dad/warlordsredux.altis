@@ -43,7 +43,7 @@ class welcomeScreen
 		{
 			idc = 69692;
 			deletable = 0;
-			text = "Warlords Redux v2.5"; //--- ToDo: Localize;
+			text = "Warlords Redux v2.5";
 			x = 0.288594 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
 			w = 0.149531 * safezoneW;
@@ -54,7 +54,7 @@ class welcomeScreen
 		{
 			idc = 6969691;
 			deletable = 0;
-			text = ""; //--- ToDo: Localize;
+			text = "";
 			font = "puristaMedium";
 			x = 0.508594 * safezoneW + safezoneX;
 			y = 0.801 * safezoneH + safezoneY;
@@ -100,7 +100,7 @@ class welcomeScreen
 			h = 0.528 * safezoneH;
 		};
 
-		class welcomeControlGroup: RscControlsGroup
+		class welcomeControlGroup: RscControlsGroupMRTM
 		{
 			deletable = 0;
 			fade = 0;
@@ -204,7 +204,7 @@ class rearmMenu
 		{
 			idc = 1;
 			type = CT_BUTTON;
-			text = "Rearm"; //--- ToDo: Localize;
+			text = "Rearm";
 			x = 0.68975 * safezoneW + safezoneX;
 			y = 0.687 * safezoneH + safezoneY;
 			w = 0.0670312 * safezoneW;
@@ -341,6 +341,721 @@ class rearmMenu
 			y = 0.302 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
 			h = 0.187 * safezoneH;
+		};
+	};
+};
+
+class MRTM_settingsMenu
+{
+	idd = 8000;
+
+	class controls
+	{
+		class MRTMBackground: IGUIBackMRTM
+		{
+			idc = 1600;
+			colorBackground[] = {0,0,0,0.75};
+			x = 0.26836 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class MRTMHeaderBackground: IGUIBackMRTM
+		{
+			idc = 2200;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMHeaderTextLeft: RscStructuredTextMRTM
+		{
+			idc = 1100;
+			text = "Option menu";
+			colorBackground[] = {0,0,0,0};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMHeaderTextRight: RscStructuredTextMRTM
+		{
+			idc = 1101;
+			colorBackground[] = {0,0,0,0};
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.144375 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "right";
+				shadow = 1;
+			};
+		};
+		class MRTMViewHeaderText: RscStructuredTextMRTM
+		{
+			idc = 1103;
+			text = "View Settings";
+			colorBackground[] = {0,0,0,0.9};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.185625 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMViewInfText: RscStructuredTextMRTM
+		{
+			idc = 1102;
+			text = "Infantry:";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3042 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMViewGroundText: RscStructuredTextMRTM
+		{
+			idc = 1104;
+			text = "Vehicles:";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3416 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMViewAirText: RscStructuredTextMRTM
+		{
+			idc = 1105;
+			text = "Air:";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3812 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMViewDronesText: RscStructuredTextMRTM
+		{
+			idc = 1106;
+			text = "Drones:";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.4186 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMViewInfEdit: RscEditMRTM
+		{
+			idc = 1400;
+			onKeyUp = "[_this select 0, _this select 1, 'inf',true] call MRTM_fnc_onChar;";
+			x = 0.411271 * safezoneW + safezoneX;
+			y = 0.3042 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMViewVehiclesEdit: RscEditMRTM
+		{
+			idc = 1401;
+			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			x = 0.411313 * safezoneW + safezoneX;
+			y = 0.3416 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMViewAirEdit: RscEditMRTM
+		{
+			idc = 1402;
+			onKeyUp = "[_this select 0, _this select 1, 'air',true] call MRTM_fnc_onChar;";
+			x = 0.411313 * safezoneW + safezoneX;
+			y = 0.3812 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMViewDronesEdit: RscEditMRTM
+		{
+			idc = 1403;
+			onKeyUp = "[_this select 0, _this select 1, 'drones',true] call MRTM_fnc_onChar;";
+			x = 0.411311 * safezoneW + safezoneX;
+			y = 0.4186 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMObjectsHeaderText: RscStructuredTextMRTM
+		{
+			idc = 1108;
+			text = "Object Settings";
+			colorBackground[] = {0,0,0,0.9};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.4582 * safezoneH + safezoneY;
+			w = 0.185625 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMObjectsButton: RscCheckboxMRTM
+		{
+			idc = 2800;
+			action = "if (MRTM_syncObjects) then {MRTM_syncObjects = false} else {MRTM_syncObjects = true}; [] call MRTM_fnc_openMenu;";
+			x = 0.273125 * safezoneW + safezoneX;
+			y = 0.5044 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+			tooltip = "Sync object rendering";
+		};
+		class MRTMObjectsButtonText: RscStructuredTextMRTM
+		{
+			idc = 1109;
+			text = "Sync object rendering with view distance";
+			x = 0.291687 * safezoneW + safezoneX;
+			y = 0.5044 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMObjectsText: RscStructuredTextMRTM
+		{
+			idc = 1110;
+			text = "Objects:";
+			x = 0.273125 * safezoneW + safezoneX;
+			y = 0.5374 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMObjectsEdit: RscEditMRTM
+		{
+			idc = 1404;
+			onKeyUp = "[_this select 0, _this select 1, 'objects',true] call MRTM_fnc_onChar;";
+			x = 0.411289 * safezoneW + safezoneX;
+			y = 0.5374 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRWRHeaderText: RscStructuredTextMRTM
+		{
+			idc = 1111;
+			text = "Voice Warning Volume Settings";
+			colorBackground[] = {0,0,0,0.9};
+			x = 0.453594 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.268125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMRWRText1: RscStructuredTextMRTM
+		{
+			idc = 1112;
+			text = "Pull Up Volume:";
+			x = 0.456652 * safezoneW + safezoneX;
+			y = 0.3042 * safezoneH + safezoneY;
+			w = 0.0800312 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMRWRText2: RscStructuredTextMRTM
+		{
+			idc = 1113;
+			text = "Altitude Volume:";
+			x = 0.456687 * safezoneW + safezoneX;
+			y = 0.3416 * safezoneH + safezoneY;
+			w = 0.0800312 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMRWRText3: RscStructuredTextMRTM
+		{
+			idc = 1114;
+			text = "Warning Volume:";
+			x = 0.456687 * safezoneW + safezoneX;
+			y = 0.3812 * safezoneH + safezoneY;
+			w = 0.0800312 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMRWRText4: RscStructuredTextMRTM
+		{
+			idc = 1115;
+			text = "Other:";
+			x = 0.456687 * safezoneW + safezoneX;
+			y = 0.4186 * safezoneH + safezoneY;
+			w = 0.0800312 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMRWREdit1: RscEditMRTM
+		{
+			idc = 1405;
+			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			x = 0.672179 * safezoneW + safezoneX;
+			y = 0.3042 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRWREdit2: RscEditMRTM
+		{
+			idc = 1406;
+			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			x = 0.672218 * safezoneW + safezoneX;
+			y = 0.3416 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRWREdit3: RscEditMRTM
+		{
+			idc = 1407;
+			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			x = 0.672219 * safezoneW + safezoneX;
+			y = 0.3812 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMRWREdit4: RscEditMRTM
+		{
+			idc = 1408;
+			onKeyUp = "[_this select 0, _this select 1, 'ground',true] call MRTM_fnc_onChar;";
+			x = 0.672218 * safezoneW + safezoneX;
+			y = 0.4186 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMOtherSettingsHeaderText: RscStructuredTextMRTM
+		{
+			idc = 1116;
+			text = "Other Settings";
+			colorBackground[] = {0,0,0,0.9};
+			x = 0.453594 * safezoneW + safezoneX;
+			y = 0.4582 * safezoneH + safezoneY;
+			w = 0.268125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherButton1: RscCheckboxMRTM
+		{
+			idc = 2801;
+			action = "if (MRTM_3rdPersonDiabled) then {MRTM_3rdPersonDiabled = false} else {MRTM_3rdPersonDiabled = true}";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.5 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton2: RscCheckboxMRTM
+		{
+			idc = 2802;
+			action = "if (MRTM_showDrones) then {MRTM_showDrones = false} else {MRTM_showDrones = true}";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.533 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton3: RscCheckboxMRTM
+		{
+			idc = 2803;
+			action = "if (MRTM_playKillSound) then {MRTM_playKillSound = false} else {MRTM_playKillSound = true}";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.566 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton4: RscCheckboxMRTM
+		{
+			idc = 2804;
+			action = "if (MRTM_EnableRWR) then {MRTM_EnableRWR = false} else {MRTM_EnableRWR = true}";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.599 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton5: RscCheckboxMRTM
+		{
+			idc = 2805;
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.632 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton6: RscCheckboxMRTM
+		{
+			idc = 2806;
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.665 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton7: RscCheckboxMRTM
+		{
+			idc = 2807;
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.698 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherButton8: RscCheckboxMRTM
+		{
+			idc = 2808;
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
+			x = 0.463906 * safezoneW + safezoneX;
+			y = 0.731 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMOtherText1: RscStructuredTextMRTM
+		{
+			idc = 1117;
+			text = "Disable 3rd person view";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.5 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText2: RscStructuredTextMRTM
+		{
+			idc = 1118;
+			text = "Show my drones on map for teammates";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.533 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText3: RscStructuredTextMRTM
+		{
+			idc = 1119;
+			text = "Play sound for kill reward";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.566 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText4: RscStructuredTextMRTM
+		{
+			idc = 1120;
+			text = "Enable the voice warning system on aircrafts";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.599 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText5: RscStructuredTextMRTM
+		{
+			idc = 1121;
+			text = "";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.632 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText6: RscStructuredTextMRTM
+		{
+			idc = 1122;
+			text = "";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.665 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText7: RscStructuredTextMRTM
+		{
+			idc = 1123;
+			text = "";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.698 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMOtherText8: RscStructuredTextMRTM
+		{
+			idc = 1124;
+			text = "";
+			x = 0.481437 * safezoneW + safezoneX;
+			y = 0.731 * safezoneH + safezoneY;
+			w = 0.221719 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMViewInfSlider: RscXSliderHMRTM
+		{
+			idc = 1125;
+			text = "";
+			onSliderPosChanged = "[0, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "View Distance while on foot";
+			x = 0.311063 * safezoneW + safezoneX;
+			y = 0.3072 * safezoneH + safezoneY;
+			w = 0.09525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMViewIGroundlider: RscXSliderHMRTM
+		{
+			idc = 1126;
+			text = "";
+			onSliderPosChanged = "[1, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "View distance while in a ground vehicle";
+			x = 0.311063 * safezoneW + safezoneX;
+			y = 0.3446 * safezoneH + safezoneY;
+			w = 0.09525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMViewAirSlider: RscXSliderHMRTM
+		{
+			idc = 1127;
+			text = "";
+			onSliderPosChanged = "[2, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "View distance while in an aircraft";
+			x = 0.311063 * safezoneW + safezoneX;
+			y = 0.3842 * safezoneH + safezoneY;
+			w = 0.09525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMViewDronesSlider: RscXSliderHMRTM
+		{
+			idc = 1128;
+			text = "";
+			onSliderPosChanged = "[4, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "View distance while operating a UAV/UGV";
+			x = 0.311063 * safezoneW + safezoneX;
+			y = 0.4216 * safezoneH + safezoneY;
+			w = 0.09525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMViewObjectsSlider: RscXSliderHMRTM
+		{
+			idc = 1129;
+			text = "";
+			onSliderPosChanged = "[3, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "Objects rendering distance";
+			x = 0.311063 * safezoneW + safezoneX;
+			y = 0.5404 * safezoneH + safezoneY;
+			w = 0.09525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMRWRPullUpSlider: RscXSliderHMRTM
+		{
+			idc = 1130;
+			text = "";
+			onSliderPosChanged = "[5, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "Pull up warning volume";
+			x = 0.536063 * safezoneW + safezoneX;
+			y = 0.3072 * safezoneH + safezoneY;
+			w = 0.12525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMRWRAltSlider: RscXSliderHMRTM
+		{
+			idc = 1131;
+			text = "";
+			onSliderPosChanged = "[6, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "Altitude warning volume";
+			x = 0.536063 * safezoneW + safezoneX;
+			y = 0.3446 * safezoneH + safezoneY;
+			w = 0.12525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMRWRWarningSlider: RscXSliderHMRTM
+		{
+			idc = 1132;
+			text = "";
+			onSliderPosChanged = "[7, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "Alarm warning volume";
+			x = 0.536063 * safezoneW + safezoneX;
+			y = 0.3842 * safezoneH + safezoneY;
+			w = 0.12525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMRWROtherSlider: RscXSliderHMRTM
+		{
+			idc = 1133;
+			text = "";
+			onSliderPosChanged = "[8, _this select 1] call MRTM_fnc_onSliderChanged;";
+			toolTip = "Other warnings volume";
+			x = 0.536063 * safezoneW + safezoneX;
+			y = 0.4216 * safezoneH + safezoneY;
+			w = 0.12525 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMCloseButton: RscButtonMRTM
+		{
+			idc = 1604;
+			text = "CLOSE";
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action =  "closeDialog 1";
 		};
 	};
 };

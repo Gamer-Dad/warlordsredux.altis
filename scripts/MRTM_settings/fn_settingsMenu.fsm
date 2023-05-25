@@ -1,0 +1,209 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, settingsHandler">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-47.939026,-223.090698,42.060974,-173.090698,0.000000,"Init"};
+item1[] = {"True",8,218,-47.229279,-122.770691,42.770721,-72.770691,0.000000,"True"};
+item2[] = {"loop",2,250,-47.834045,-44.867096,42.165970,5.132904,0.000000,"loop"};
+item3[] = {"State",4,218,80.194305,-46.187500,170.194305,3.812500,1.000000,"State"};
+item4[] = {"Dead",4,218,-106.900124,15.986816,-16.900116,65.986816,2.000000,"Dead"};
+item5[] = {"Remove_action",2,250,-220.412338,16.095428,-130.412247,66.095428,0.000000,"Remove action"};
+item6[] = {"Alive",4,218,-220.412216,-50.838165,-130.412262,-0.838165,0.000000,"Alive"};
+item7[] = {"Re_Add_action",2,250,-220.874084,-122.849548,-130.873840,-72.849548,0.000000,"Re-Add action"};
+item8[] = {"update",2,250,79.634979,-122.849518,169.634995,-72.849518,0.000000,"update"};
+item9[] = {"View_changed",4,218,-47.753273,63.588287,42.246735,113.588287,0.000000,"View changed"};
+item10[] = {"Update_1",2,250,83.902374,63.430969,173.902374,113.430969,0.000000,"Update"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {2,9};
+link5[] = {3,8};
+link6[] = {4,5};
+link7[] = {5,6};
+link8[] = {6,7};
+link9[] = {7,1};
+link10[] = {8,1};
+link11[] = {9,10};
+link12[] = {10,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,13,6316128,1,-337.460266,296.532990,230.822144,-340.439117,1425,1284,1};
+window[] = {2,-1,-1,-1,-1,1085,26,1946,26,3,1443};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "settingsHandler";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private [""_pState"", ""_dState"", ""_corpse"", ""_actionID""];" \n
+                         "" \n
+                         "_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];" \n
+                         "_pState = vehicle player;" \n
+                         "_dState = UAVControl (getConnectedUAV player) select 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "loop">*/
+                class loop
+                {
+                        name = "loop";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Dead">*/
+                                class Dead
+                                {
+                                        itemno = 4;
+                                        priority = 2.000000;
+                                        to="Remove_action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!alive player);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "State">*/
+                                class State
+                                {
+                                        itemno = 3;
+                                        priority = 1.000000;
+                                        to="update";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((vehicle player != _pState || (UAVControl getConnectedUAV player select 1) != _dState));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "View_changed">*/
+                                class View_changed
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="Update_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && (!isNil {MRTM_3rdPersonDiabled}) && MRTM_3rdPersonDiabled);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Remove_action">*/
+                class Remove_action
+                {
+                        name = "Remove_action";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"_corpse = player;" \n
+                         "_corpse removeAction _actionID;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Alive">*/
+                                class Alive
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="Re_Add_action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Re_Add_action">*/
+                class Re_Add_action
+                {
+                        name = "Re_Add_action";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "update">*/
+                class update
+                {
+                        name = "update";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"[] call MRTM_fnc_updateViewDistance;" \n
+                         "_pState = vehicle player;" \n
+                         "_dState = UAVControl (getConnectedUAV player) select 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Update_1">*/
+                class Update_1
+                {
+                        name = "Update_1";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"player switchCamera ""INTERNAL"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

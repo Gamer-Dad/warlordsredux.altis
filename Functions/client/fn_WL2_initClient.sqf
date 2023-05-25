@@ -56,6 +56,27 @@ if (RD_DISABLE_TEAM_SWITCHING == 1) then{
 	};
 };
 
+//View distance
+MRTM_inf = 1500;
+MRTM_ground = 1500;
+MRTM_air = 2000;
+MRTM_drones = 2000;
+MRTM_objects = 1500;
+MRTM_syncObjects = true;
+setTerrainGrid 3.125;
+
+//Radar warning system
+MRTM_rwr1 = 1;
+MRTM_rwr2 = 1;
+MRTM_rwr3 = 1;
+MRTM_rwr4 = 1;
+
+//Options
+MRTM_3rdPersonDiabled = false;
+MRTM_showDrones = true;
+MRTM_playKillSound = true;
+MRTM_EnableRWR = true;
+
 0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];

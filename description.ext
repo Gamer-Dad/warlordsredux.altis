@@ -1,6 +1,4 @@
 #include "Functions\warlords_constants.inc"
-#include "scripts\taw_vd\GUI.h"
-
 #include "ui\defines.hpp"
 #include "ui\controls.hpp"
 
@@ -32,12 +30,12 @@ ReviveForceRespawnDelay = 3;            //time needed to perform force respawn (
 ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
 //end of revive section 
 
-//earplug script stuff
-class RscTitles
+class Header
 {
-	#include "scripts\GF_Earplugs\GF_Earplugs_HPP.hpp"	
+	gameType = Warlords;
+	minPlayers = 1;
+	maxPlayers = 100;
 };
-//end of earplug script info
 
 allowFunctionsLog = 1;
 
@@ -179,8 +177,21 @@ class CfgFunctions {
 	};
 
 /*******************************START OF CUSTOM CONTENT HERE****************************/
+	class MRTM {
+		class Init {
+			file = "scripts\MRTM_settings";
+			class settingsMenu {
+				ext = ".fsm";
+				postInit = 1;
+				headerType = -1;
+			};
+			class onSliderChanged {};
+			class updateViewDistance {};
+			class openMenu {};
+			class onChar {};
+		};
+	};
 	#include "scripts\GOM\functions\GOM_fnc_functions.hpp" //GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
-	#include "scripts\taw_vd\CfgFunctions.hpp" //Distance MOD
 	//Unflip Mod
 	class KS
 	{	
@@ -262,17 +273,15 @@ class CfgCommunicationMenu
 
 };
 
+class RscTitles
+{
+	#include "scripts\GF_Earplugs\GF_Earplugs_HPP.hpp"	
+};
+
 #include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
 
 /*******************************END OF CUSTOM CONTENT HERE****************************/
-
-class Header
-{
-	gameType = Warlords;
-	minPlayers = 1;
-	maxPlayers = 100;
-};
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 
