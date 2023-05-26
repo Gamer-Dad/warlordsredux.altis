@@ -99,11 +99,11 @@ class FSM
                         itemno = 4;
                         init = /*%FSM<STATEINIT""">*/"[_v, _inc] spawn {" \n
                          "	_target = (((_this # 1) select {alive _x && (!isNull _x)}) # 0);" \n
-                         "	while {alive _target && (!isNull _target) && (alive (_this # 0))} do {" \n
+                         "	while {(!isNull _target) && (alive (_this # 0) && alive _target)} do {" \n
                          "		(_this # 0) doWatch (getPosATLVisual _target);" \n
                          "   	if ((_this # 0) distance _target > 200) then {" \n
                          "			_rounds = floor random 170;" \n
-                         "			while {_rounds > 0 && alive _target && (!isNull _target)} do {" \n
+                         "			while {_rounds > 0 && (!isNull _target) && alive _target} do {" \n
                          "				(_this # 0) fireAtTarget [_target, (currentWeapon (_this # 0))];" \n
                          "				sleep 0.04;" \n
                          "				(_this # 0) doWatch (getPosAtlVisual _target);" \n
@@ -112,7 +112,6 @@ class FSM
                          "			if (alive _target) then {" \n
                          "				sleep (((_this # 0) distance _target) / 1440);" \n
                          "				[_target] remoteExec [""triggerAmmo"", 0, true];" \n
-                         "				createVehicle [""HelicopterExploSmall"", (getPosAtlVisual _target), [], 0, ""FLY""];" \n
                          "			};" \n
                          "		};" \n
                          "		(_this # 0) doWatch objNull;" \n
