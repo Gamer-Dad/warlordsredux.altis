@@ -831,7 +831,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText2: RscStructuredTextMRTM
 		{
 			idc = 1118;
-			text = "Show my drones on map for teammates";
+			text = "Empty";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
