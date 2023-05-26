@@ -262,7 +262,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} count (allPlayers select {_x getVariable ["BIS_WL_isCheater", false]});
+	} count (allPlayers select {_x getVariable ["BIS_WL_isCheater", false] && (!isNil {_x getVariable "BIS_WL_funds"})});
 	if (side group player == west) then {
 		{
 			_m drawIcon [
