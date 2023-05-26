@@ -24,13 +24,6 @@ clearItemCargoGlobal _asset;
 clearWeaponCargoGlobal _asset;
 clearMagazineCargoGlobal _asset;
 clearBackpackCargoGlobal _asset;
-
-{
-	[_asset, _x] remoteExecCall ["disableCollisionWith", 0, _asset];
-} forEach entities "";
-{
-	[_asset, _x] remoteExecCall ["disableCollisionWith", 0, _asset];
-} forEach allUnits;
 _asset hideObject false;
 
 player reveal [_asset, 4];
