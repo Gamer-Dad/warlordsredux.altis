@@ -107,6 +107,7 @@ class FSM
                          "				(_this # 0) fireAtTarget [_target, (currentWeapon (_this # 0))];" \n
                          "				sleep 0.04;" \n
                          "				(_this # 0) doWatch (getPosAtlVisual _target);" \n
+                                                        _rounds = _rounds - 1;
                          "			};" \n
                          "" \n
                          "			if (alive _target) then {" \n
