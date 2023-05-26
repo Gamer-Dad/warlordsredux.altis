@@ -22,7 +22,7 @@ link8[] = {6,7};
 link9[] = {7,1};
 link10[] = {7,5};
 globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-361.043488,379.447479,345.110779,-563.866394,777,924,1};
-window[] = {2,-1,-1,-1,-1,1295,2560,4480,236,3,795};
+window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,795};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -107,7 +107,7 @@ class FSM
                          "				(_this # 0) fireAtTarget [_target, (currentWeapon (_this # 0))];" \n
                          "				sleep 0.04;" \n
                          "				(_this # 0) doWatch (getPosAtlVisual _target);" \n
-                                                        _rounds = _rounds - 1;
+                         "				_rounds = _rounds - 1;" \n
                          "			};" \n
                          "" \n
                          "			if (alive _target) then {" \n
