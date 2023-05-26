@@ -97,7 +97,6 @@ class CfgFunctions {
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
 			class WL2_getUavConnected {};
-			class WL2_betty {};
 			class WL2_rita {};
 			class WL2_mapIcons {};
 			class WL2_fundsControl {};
@@ -172,6 +171,12 @@ class CfgFunctions {
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_rearmAction {};
     	};
+		class FSM
+		{
+			file = "Functions\fsm";
+			class MRTM_betty {ext = ".fsm";};
+			class MRTM_bettyRWR {ext = ".fsm"};
+		};
 	};
 
 /*******************************START OF CUSTOM CONTENT HERE****************************/
