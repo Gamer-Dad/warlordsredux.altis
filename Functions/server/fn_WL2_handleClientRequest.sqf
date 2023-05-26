@@ -266,6 +266,9 @@ if !(isNull _sender) then {
 							_asset setDir direction _sender;
 							_asset setPos _targetPos;
 							_asset enableWeaponDisassembly false;
+							if (typeOf _asset == "B_AAA_System_01_F") then {
+								_asset spawn BIS_fnc_MRTM_ciws;
+							};
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.
 								createVehicleCrew _asset;
