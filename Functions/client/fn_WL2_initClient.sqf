@@ -179,14 +179,12 @@ player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
-	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
-		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
-		0 spawn BIS_fnc_WL2_rita;
-	};
 }];
 
 0 spawn BIS_fnc_MRTM_betty;
 0 spawn BIS_fnc_MRTM_bettyRWR;
+0 spawn BIS_fnc_MRTM_rita;
+0 spawn BIS_fnc_MRTM_ritaRWR;
 
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];

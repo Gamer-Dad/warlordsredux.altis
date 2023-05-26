@@ -97,7 +97,6 @@ class CfgFunctions {
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
 			class WL2_getUavConnected {};
-			class WL2_rita {};
 			class WL2_mapIcons {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
@@ -176,6 +175,8 @@ class CfgFunctions {
 			file = "Functions\fsm";
 			class MRTM_betty {ext = ".fsm";};
 			class MRTM_bettyRWR {ext = ".fsm"};
+			class MRTM_rita {ext = ".fsm";};
+			class MRTM_ritaRWR {ext = ".fsm"};
 		};
 	};
 
