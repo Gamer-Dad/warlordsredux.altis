@@ -181,10 +181,13 @@ player addEventHandler ["GetInMan", {
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 }];
 
-0 spawn BIS_fnc_MRTM_betty;
-0 spawn BIS_fnc_MRTM_bettyRWR;
-0 spawn BIS_fnc_MRTM_rita;
-0 spawn BIS_fnc_MRTM_ritaRWR;
+if (side group player == west) then {
+	0 spawn BIS_fnc_MRTM_betty;
+	0 spawn BIS_fnc_MRTM_bettyRWR;
+} else {
+	0 spawn BIS_fnc_MRTM_rita;
+	0 spawn BIS_fnc_MRTM_ritaRWR;
+};
 
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
