@@ -84,7 +84,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Fire";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_inc = nearestObjects [_v, [""RocketCore"", ""MissileCore"", ""SubmunitionCore"", ""ammo_Penetrator_Base"", ""RocketBase"", ""ShellBase"", ""ShellCore"", ""SubmunitionBase"",""BombCore""], 4000];;" \n
+                                        condition=/*%FSM<CONDITION""">*/"_inc = nearestObjects [_v, [""RocketCore"", ""MissileCore"", ""SubmunitionCore"", ""ammo_Penetrator_Base"", ""RocketBase"", ""ShellBase"", ""ShellCore"", ""SubmunitionBase"",""BombCore""], 5000];;" \n
                                          "(count (_inc select {alive _x}) > 0);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
@@ -101,7 +101,7 @@ class FSM
                          "	_target = (((_this # 1) select {alive _x && (!isNull _x)}) # 0);" \n
                          "	while {(!isNull _target) && (alive (_this # 0) && alive _target)} do {" \n
                          "		(_this # 0) doWatch (getPosATLVisual _target);" \n
-                         "   	if ((_this # 0) distance _target > 200) then {" \n
+                         "   	if ((_this # 0) distance _target > 200 && (_this # 0) distance _target < 4500) then {" \n
                          "			_rounds = floor random 170;" \n
                          "			while {_rounds > 0 && (!isNull _target) && alive _target} do {" \n
                          "				(_this # 0) fireAtTarget [_target, (currentWeapon (_this # 0))];" \n
