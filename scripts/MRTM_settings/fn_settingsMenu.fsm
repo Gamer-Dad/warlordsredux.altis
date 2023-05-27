@@ -5,12 +5,12 @@ item0[] = {"Init",0,250,-47.939026,-223.090698,42.060974,-173.090698,0.000000,"I
 item1[] = {"True",8,218,-47.229279,-122.770691,42.770721,-72.770691,0.000000,"True"};
 item2[] = {"loop",2,250,-47.834045,-44.867096,42.165970,5.132904,0.000000,"loop"};
 item3[] = {"State",4,218,80.194305,-46.187500,170.194305,3.812500,1.000000,"State"};
-item4[] = {"Dead",4,218,-106.900124,15.986816,-16.900116,65.986816,2.000000,"Dead"};
+item4[] = {"Dead",4,218,-106.900124,15.986816,-16.900116,65.986816,0.000000,"Dead"};
 item5[] = {"Remove_action",2,250,-220.412338,16.095428,-130.412247,66.095428,0.000000,"Remove action"};
 item6[] = {"Alive",4,218,-220.412216,-50.838165,-130.412262,-0.838165,0.000000,"Alive"};
-item7[] = {"Re_Add_action",2,250,-220.874084,-122.849548,-130.873840,-72.849548,0.000000,"Re-Add action"};
+item7[] = {"Re_Add_action",2,4346,-220.874084,-122.849548,-130.873840,-72.849548,0.000000,"Re-Add action"};
 item8[] = {"update",2,250,79.634979,-122.849518,169.634995,-72.849518,0.000000,"update"};
-item9[] = {"View_changed",4,218,-47.753273,63.588287,42.246735,113.588287,0.000000,"View changed"};
+item9[] = {"View_changed",4,218,-47.753273,63.588287,42.246735,113.588287,1.000000,"View changed"};
 item10[] = {"Update_1",2,250,83.902374,63.430969,173.902374,113.430969,0.000000,"Update"};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -26,7 +26,7 @@ link10[] = {8,1};
 link11[] = {9,10};
 link12[] = {10,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,13,6316128,1,-337.460266,296.532990,230.822144,-340.439117,1425,1284,1};
-window[] = {2,-1,-1,-1,-1,1085,26,1946,26,3,1443};
+window[] = {2,-1,-1,-1,-1,1111,52,1972,52,3,1443};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -69,14 +69,14 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "Dead">*/
-                                class Dead
+                                /*%FSM<LINK "View_changed">*/
+                                class View_changed
                                 {
-                                        itemno = 4;
-                                        priority = 2.000000;
-                                        to="Remove_action";
+                                        itemno = 9;
+                                        priority = 1.000000;
+                                        to="Update_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(!alive player);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && (player getVariable [""MRTM_3rdPersonDisabled"", false]));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -91,14 +91,14 @@ class FSM
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
-                                /*%FSM<LINK "View_changed">*/
-                                class View_changed
+                                /*%FSM<LINK "Dead">*/
+                                class Dead
                                 {
-                                        itemno = 9;
+                                        itemno = 4;
                                         priority = 0.000000;
-                                        to="Update_1";
+                                        to="Remove_action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && (player getVariable [""MRTM_3rdPersonDisabled"", false]));"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!alive player);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -122,7 +122,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Re_Add_action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"alive player;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
