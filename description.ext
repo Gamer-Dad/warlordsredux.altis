@@ -129,7 +129,6 @@ class CfgFunctions {
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_tablesSetUp {};
-			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
     	};
     	class Common {
@@ -179,6 +178,7 @@ class CfgFunctions {
 			class MRTM_rita {ext = ".fsm";};
 			class MRTM_ritaRWR {ext = ".fsm"};
 			class MRTM_ciws {ext = ".fsm"};
+			class WL2_handleClientRequest {ext = ".fsm"};
 		};
 	};
 
