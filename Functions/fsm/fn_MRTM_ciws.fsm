@@ -21,8 +21,8 @@ link7[] = {5,8};
 link8[] = {6,7};
 link9[] = {7,1};
 link10[] = {7,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-429.879913,448.283691,246.494019,-578.350220,1367,1284,1};
-window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1385};
+globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-429.879913,448.283691,246.494019,-578.350220,1017,1284,1};
+window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1035};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -100,38 +100,41 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"[_v, _inc] spawn {" \n
                          "	_v = (_this # 0);" \n
                          "	_target = (((_this # 1) select {alive _x && (!isNull _x)}) # 0);" \n
-                         "	while {(!isNull _target) && (alive _v) && (alive _target) && (_v distance _target < 5000)} do {" \n
-                         "		_v doWatch (getPosATLVisual _target);" \n
+                         "	_v setVariable [""isTargetting"", true, clientOwner];" \n
+                         "	while {(alive _target) && (alive _v) && ((_v distance _target) < 5000)} do {" \n
+                         "		_v lookAt (getPosATLVisual _target);" \n
                          "		if (_v distance _target > 200 && _v distance _target < 4500) then {" \n
                          "			_vDirArr = _v weaponDirection (currentWeapon _v);" \n
-                         "			_vDir = (_vDirArr select 0) atan2 (_vDirArr select 1);" \n
-                         "			_relDir = _v getRelDir _target;" \n
+                         "			_tVector = vectorDir _target; " \n
+                         "			_vDiff = ((_tVector vectorDiff _vDirArr) # 2);" \n
                          "			_targetExplo = getText (configFile >> ""CfgAmmo"" >> typeOf _target >> ""explosionEffects"");" \n
-                         "			_rounds = floor random 170;" \n
-                         "			if (_rounds == 0) then {" \n
-                         "				_rounds = 150;" \n
-                         "			};" \n
-                         "			while {(_rounds > 0) && (!isNull _target) && (alive _target) && (_v distance _target < 4500)} do {" \n
-                         "				if ((_vDir < _relDir + 10) && (_vDir > _relDir - 10)) then {" \n
-                         "					_v fireAtTarget [_target, (currentWeapon _v)];" \n
-                         "					sleep 0.04;" \n
-                         "					_v doWatch (getPosAtlVisual _target);" \n
-                         "					_rounds = _rounds - 1;" \n
-                         "				} else {" \n
-                         "					_v doWatch (getPosAtlVisual _target);" \n
                          "" \n
-                         "					sleep 0.2;" \n
+                         "			_rounds = floor random 230;  " \n
+                         "			if (_rounds == 0) then {" \n
+                         "				_rounds = 170;" \n
+                         "			};" \n
+                         "			_v lookAt (getPosATLVisual _target);" \n
+                         "			while {(_rounds > 0) && (alive _v) && (alive _target) && (_v distance _target < 4500)} do {" \n
+                         "				if ((abs _vDiff) < 0.2) then {" \n
+                         "					_v fire (currentWeapon _v);" \n
+                         "					sleep 0.04;" \n
+                         "					_rounds = _rounds - 1;" \n
+                         "					_v lookAt (getPosAtlVisual _target);" \n
+                         "				} else {" \n
+                         "					_v lookAt (getPosAtlVisual _target);" \n
+                         "					sleep 0.1;" \n
                          "				};" \n
                          "			};" \n
                          "" \n
-                         "			if (alive _target) then {" \n
+                         "			if ((alive _target) && ((_v distance _target) < 4500)) then {" \n
                          "				sleep ((_v distance _target) / 1440);" \n
                          "				_targetExplo createVehicle (getPos _target);" \n
                          "				[_target] remoteExec [""triggerAmmo"", 0, true];" \n
                          "			};" \n
                          "		};" \n
-                         "      sleep 0.2;" \n
+                         "		sleep 0.5;" \n
                          "	};" \n
+                         "	_v setVariable [""isTargetting"", false, clientOwner];" \n
                          "	_v doWatch objNull;" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -144,7 +147,7 @@ class FSM
                                         priority = 0.000000;
                                         to="True";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"alive _v;"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(alive _v) && (_v getVariable [""isTargetting"", false] == false);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
