@@ -111,17 +111,15 @@ class FSM
                          "			if (_rounds == 0) then {" \n
                          "				_rounds = 150;" \n
                          "			};" \n
-                         "			[format [""Rounds %1"", _rounds]] remoteExec [""hint"", 0, true];" \n
                          "			while {(_rounds > 0) && (!isNull _target) && (alive _target) && (_v distance _target < 4500)} do {" \n
                          "				if ((_vDir < _relDir + 10) && (_vDir > _relDir - 10)) then {" \n
                          "					_v fireAtTarget [_target, (currentWeapon _v)];" \n
                          "					sleep 0.04;" \n
                          "					_v doWatch (getPosAtlVisual _target);" \n
                          "					_rounds = _rounds - 1;" \n
-                         "					[format [""%1"", _rounds]] remoteExec [""hint"", 0, true];" \n
                          "				} else {" \n
                          "					_v doWatch (getPosAtlVisual _target);" \n
-                         "					[format [""scanning %1"", (_v distance _target)]] remoteExec [""hint"", 0, true];" \n
+                         "" \n
                          "					sleep 0.2;" \n
                          "				};" \n
                          "			};" \n
@@ -130,7 +128,6 @@ class FSM
                          "				sleep ((_v distance _target) / 1440);" \n
                          "				_targetExplo createVehicle (getPos _target);" \n
                          "				[_target] remoteExec [""triggerAmmo"", 0, true];" \n
-                         "				[format [""Killed %1"", ""...""]] remoteExec [""hint"", 0, true];" \n
                          "			};" \n
                          "		};" \n
                          "      sleep 0.2;" \n
