@@ -25,9 +25,11 @@ _target = (_targets select 0);
 MRTM_fnc_getOwner = {
 	params ["_t"];
 	_owner = (crew _t) select 0;
-	if !(isAutonomous _t) then {
-		_owner = (crew _t) select {isPlayer _x};
-		_owner = _owner select 0;
+	if (unitIsUAV _t) then {
+		if !(isAutonomous _t) then {
+			_owner = (crew _t) select {isPlayer _x};
+			_owner = _owner select 0;
+		};
 	};
 	_owner;
 };
@@ -36,7 +38,7 @@ MRTM_fnc_getOwner = {
 _type = "ammo_Missile_rim116";
 _tPos = getPos _target;
 private _m2 = createVehicle [_type, _tPos, [] , 45, "FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
-_m2 setShotParents [_unit, [_unit] call MRTM_fnc_getOwner];
+_m2 setShotParents [_unit, ([_unit] call MRTM_fnc_getOwner)];
 
 triggerAmmo _m2;
 
