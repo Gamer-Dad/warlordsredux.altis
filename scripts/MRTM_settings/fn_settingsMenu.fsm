@@ -103,7 +103,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((getConnectedUAV player != objNull) && ((group player) != (_connectedUav getVariable ['BIS_WL_ownerAsset', grpNull])));"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((getConnectedUAV player != objNull) && ((group player) != ((getConnectedUAV player) getVariable ['BIS_WL_ownerAsset', grpNull])));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
