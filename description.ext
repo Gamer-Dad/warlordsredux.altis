@@ -139,7 +139,6 @@ class CfgFunctions {
 			class WL2_handleRespawnMarkers {};
 			class WL2_income {};
 			class WL2_initCommon {};
-			class WL2_missionEndHandle {};
 			class WL2_newAssetHandle {};
 			class WL2_parsePurchaseList {};
 			class WL2_playersListHandle {};
@@ -178,6 +177,7 @@ class CfgFunctions {
 			class MRTM_ritaRWR {ext = ".fsm"};
 			class MRTM_ciws {ext = ".fsm"};
 			class WL2_handleClientRequest {ext = ".fsm"};
+			class WL2_missionEndHandle {ext = ".fsm"};
 		};
 	};
 
