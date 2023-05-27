@@ -17,7 +17,7 @@ item12[] = {"True_1",2,250,201.474487,-268.118103,291.474487,-218.118103,0.00000
 item13[] = {"Altitude__Warnin",2,250,118.944817,172.039978,208.944839,222.039978,0.000000,"Altitude " \n "Warning"};
 item14[] = {"Delay",4,218,302.343994,167.871826,392.343994,217.871826,0.000000,"Delay"};
 item15[] = {"True_2",2,250,351.528320,43.660522,441.528320,93.660522,0.000000,"True"};
-item16[] = {"Missile__Warning",2,4346,-128.643982,174.540955,-38.643967,224.540955,0.000000,"Missile " \n "Warning"};
+item16[] = {"Missile__Warning",2,250,-128.643982,174.540955,-38.643967,224.540955,0.000000,"Missile " \n "Warning"};
 item17[] = {"Missile_Gone",4,218,-129.477600,308.755859,-39.477600,358.755859,1.000000,"Missile Gone"};
 item18[] = {"True_3",2,250,-287.867767,150.365662,-197.867920,200.365662,0.000000,"True"};
 item19[] = {"Delay",4,218,-13.602791,255.403320,76.397217,305.403320,0.000000,"Delay"};
@@ -47,7 +47,6 @@ link21[] = {17,18};
 link22[] = {18,1};
 link23[] = {19,20};
 link24[] = {20,1};
-link25[] = {20,6};
 globals[] = {0.000000,0,0,0,0,640,480,1,58,6316128,1,-568.390381,560.234863,515.163269,-531.157776,1385,1284,1};
 window[] = {2,-1,-1,-1,-1,1371,312,2232,312,3,1403};
 *//*%FSM</HEAD>*/
@@ -370,17 +369,6 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "Incomming">*/
-                                class Incomming
-                                {
-                                        itemno = 6;
-                                        priority = 2.000000;
-                                        to="Missile__Warning";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(count ((objectParent player) getVariable ""Incomming"")) > 0;"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "True">*/
                                 class True
                                 {
