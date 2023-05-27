@@ -49,7 +49,7 @@ link23[] = {19,20};
 link24[] = {20,1};
 link25[] = {20,6};
 globals[] = {0.000000,0,0,0,0,640,480,1,58,6316128,1,-568.390381,560.234863,515.163269,-531.157776,1385,1284,1};
-window[] = {2,-1,-1,-1,-1,1163,104,2024,104,3,1403};
+window[] = {2,-1,-1,-1,-1,1371,312,2232,312,3,1403};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -309,7 +309,7 @@ class FSM
                          "};" \n
                          "_sound = format [""incMissile_%1"", _fDir];" \n
                          "playSoundUI [_sound, (MRTM_rwr4 + 0.4), 1];" \n
-                         "_delay = serverTime + 3;"/*%FSM</STATEINIT""">*/;
+                         "_delay = serverTime + 3.3;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
