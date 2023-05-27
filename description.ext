@@ -367,6 +367,30 @@ class CfgSounds {
         sound[]={"sounds\BingoFuel.ogg", 1, 1};
         titles[] = {};
 	};
+
+	class incMissile_0 {
+        name="incomming 0";
+        sound[]={"sounds\critical_missile12.ogg", 1, 1};
+        titles[] = {};		
+	};
+
+	class incMissile_90 {
+        name="incomming 90";
+        sound[]={"sounds\critical_missile03.ogg", 1, 1};
+        titles[] = {};
+	};
+
+	class incMissile_180 {
+        name="incomming 180";
+        sound[]={"sounds\critical_missile06.ogg", 1, 1};
+        titles[] = {};
+	};
+
+	class incMissile_270 {
+        name="incomming 270";
+        sound[]={"sounds\critical_missile09.ogg", 1, 1};
+        titles[] = {};
+	};
 };
 
 class CfgHints

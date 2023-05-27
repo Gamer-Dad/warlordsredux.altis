@@ -176,7 +176,7 @@ if (isPlayer _owner) then {
 			};
 
 			if (typeOf _asset == "B_Plane_Fighter_01_F" || typeOf _asset == "B_Plane_CAS_01_dynamicLoadout_F") then {
-				_asset setVariable ["Incomming", true, [clientOwner, 2]];
+				_asset setVariable ["Incomming", [], [clientOwner, 2]];
 				_asset setVariable ["landingGear", true, clientOwner];
 				_asset addEventHandler ["Gear", {
 					params ["_vehicle", "_gearState"];
@@ -188,11 +188,11 @@ if (isPlayer _owner) then {
 				}];
 				_asset addEventHandler ["IncomingMissile", {
 					params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-					_target setVariable ["Incomming", ((_target getVariable "Incomming") pushBackUnique _ammo), [clientOwner, 2]];
+					_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile]), [clientOwner, 2]];
 				}];
 			};
 			if (typeOf _asset == "O_Plane_Fighter_02_F" || typeOf _asset == "O_Plane_CAS_02_dynamicLoadout_F") then {
-				_asset setVariable ["Incomming", true, [clientOwner, 2]];
+				_asset setVariable ["Incomming", [], [clientOwner, 2]];
 				_asset setVariable ["landingGear", true, clientOwner];
 				_asset addEventHandler ["Gear", {
 					params ["_vehicle", "_gearState"];
@@ -204,7 +204,7 @@ if (isPlayer _owner) then {
 				}];
 				_asset addEventHandler ["IncomingMissile", {
 					params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-					_target setVariable ["Incomming", ((_target getVariable "Incomming") pushBackUnique _ammo), [clientOwner, 2]];
+					_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile]), [clientOwner, 2]];
 				}];
 			};
 			if (typeOf _asset == "B_AAA_System_01_F") then {
