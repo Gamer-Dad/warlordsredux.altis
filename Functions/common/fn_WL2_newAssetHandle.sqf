@@ -245,7 +245,7 @@ if (isPlayer _owner) then {
 			};
 		},
 		[],
-		-100,
+		-99,
 		false,
 		true,
 		"",

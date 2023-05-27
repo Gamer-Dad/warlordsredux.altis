@@ -40,7 +40,7 @@ class FSM
                         itemno = 0;
                         init = /*%FSM<STATEINIT""">*/"private [""_pState"", ""_dState"", ""_corpse"", ""_actionID""];" \n
                          "" \n
-                         "_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];" \n
+                         "_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -100, false, false, """", ''];" \n
                          "_pState = vehicle player;" \n
                          "_dState = UAVControl (getConnectedUAV player) select 1;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -134,7 +134,7 @@ class FSM
                 {
                         name = "Re_Add_action";
                         itemno = 7;
-                        init = /*%FSM<STATEINIT""">*/"_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -100, false, false, """", ''];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
