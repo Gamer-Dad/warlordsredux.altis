@@ -310,7 +310,7 @@ class FSM
                          "};" \n
                          "_sound = format [""incMissile_%1"", _fDir];" \n
                          "playSoundUI [_sound, (MRTM_rwr4 + 0.3), 1];" \n
-                         "_delay = serverTime + 3.2;"/*%FSM</STATEINIT""">*/;
+                         "_delay = serverTime + 3;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
