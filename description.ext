@@ -112,7 +112,6 @@ class CfgFunctions {
 			class WL2_friendlyFireHandleServer {};
 			class WL2_garbageCollector {};
 			class WL2_changeSectorOwnership {};
-			class WL2_incomePayoff {};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
 			class WL2_mineLimit {};
@@ -178,6 +177,7 @@ class CfgFunctions {
 			class MRTM_ciws {ext = ".fsm"};
 			class WL2_handleClientRequest {ext = ".fsm"};
 			class WL2_missionEndHandle {ext = ".fsm"};
+			class WL2_incomePayoff {ext = ".fsm"};
 		};
 	};
 
