@@ -21,8 +21,8 @@ link7[] = {5,8};
 link8[] = {6,7};
 link9[] = {7,1};
 link10[] = {7,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-361.043488,379.447479,345.110779,-563.866394,777,924,1};
-window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,795};
+globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-429.879913,448.283691,246.494019,-578.350220,1367,1284,1};
+window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1385};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -98,26 +98,44 @@ class FSM
                         name = "Fire";
                         itemno = 4;
                         init = /*%FSM<STATEINIT""">*/"[_v, _inc] spawn {" \n
+                         "	_v = (_this # 0);" \n
                          "	_target = (((_this # 1) select {alive _x && (!isNull _x)}) # 0);" \n
-                         "	while {(!isNull _target) && (alive (_this # 0) && alive _target)} do {" \n
-                         "		(_this # 0) doWatch (getPosATLVisual _target);" \n
-                         "   	if ((_this # 0) distance _target > 200 && (_this # 0) distance _target < 4500) then {" \n
+                         "	while {(!isNull _target) && (alive _v) && (alive _target) && (_v distance _target < 5000)} do {" \n
+                         "		_v doWatch (getPosATLVisual _target);" \n
+                         "		if (_v distance _target > 200 && _v distance _target < 4500) then {" \n
+                         "			_vDirArr = _v weaponDirection (currentWeapon _v);" \n
+                         "			_vDir = (_vDirArr select 0) atan2 (_vDirArr select 1);" \n
+                         "			_relDir = _v getRelDir _target;" \n
+                         "			_targetExplo = getText (configFile >> ""CfgAmmo"" >> typeOf _target >> ""explosionEffects"");" \n
                          "			_rounds = floor random 170;" \n
-                         "			while {_rounds > 0 && (!isNull _target) && alive _target} do {" \n
-                         "				(_this # 0) fireAtTarget [_target, (currentWeapon (_this # 0))];" \n
-                         "				sleep 0.04;" \n
-                         "				(_this # 0) doWatch (getPosAtlVisual _target);" \n
-                         "				_rounds = _rounds - 1;" \n
+                         "			if (_rounds == 0) then {" \n
+                         "				_rounds = 150;" \n
+                         "			};" \n
+                         "			[format [""Rounds %1"", _rounds]] remoteExec [""hint"", 0, true];" \n
+                         "			while {(_rounds > 0) && (!isNull _target) && (alive _target) && (_v distance _target < 4500)} do {" \n
+                         "				if ((_vDir < _relDir + 10) && (_vDir > _relDir - 10)) then {" \n
+                         "					_v fireAtTarget [_target, (currentWeapon _v)];" \n
+                         "					sleep 0.04;" \n
+                         "					_v doWatch (getPosAtlVisual _target);" \n
+                         "					_rounds = _rounds - 1;" \n
+                         "					[format [""%1"", _rounds]] remoteExec [""hint"", 0, true];" \n
+                         "				} else {" \n
+                         "					_v doWatch (getPosAtlVisual _target);" \n
+                         "					[format [""scanning %1"", (_v distance _target)]] remoteExec [""hint"", 0, true];" \n
+                         "					sleep 0.2;" \n
+                         "				};" \n
                          "			};" \n
                          "" \n
                          "			if (alive _target) then {" \n
-                         "				sleep (((_this # 0) distance _target) / 1440);" \n
+                         "				sleep ((_v distance _target) / 1440);" \n
+                         "				_targetExplo createVehicle (getPos _target);" \n
                          "				[_target] remoteExec [""triggerAmmo"", 0, true];" \n
+                         "				[format [""Killed %1"", ""...""]] remoteExec [""hint"", 0, true];" \n
                          "			};" \n
                          "		};" \n
-                         "		(_this # 0) doWatch objNull;" \n
-                         "      sleep 1;" \n
+                         "      sleep 0.2;" \n
                          "	};" \n
+                         "	_v doWatch objNull;" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -152,7 +170,7 @@ class FSM
                 {
                         name = "True";
                         itemno = 7;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_v doWatch objNull;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
