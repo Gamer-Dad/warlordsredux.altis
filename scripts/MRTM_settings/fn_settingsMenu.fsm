@@ -8,25 +8,30 @@ item3[] = {"State",4,218,80.194305,-46.187500,170.194305,3.812500,1.000000,"Stat
 item4[] = {"Dead",4,218,-106.900124,15.986816,-16.900116,65.986816,0.000000,"Dead"};
 item5[] = {"Remove_action",2,250,-220.412338,16.095428,-130.412247,66.095428,0.000000,"Remove action"};
 item6[] = {"Alive",4,218,-220.412216,-50.838165,-130.412262,-0.838165,0.000000,"Alive"};
-item7[] = {"Re_Add_action",2,4346,-220.874084,-122.849548,-130.873840,-72.849548,0.000000,"Re-Add action"};
+item7[] = {"Re_Add_action",2,250,-220.874084,-122.849548,-130.873840,-72.849548,0.000000,"Re-Add action"};
 item8[] = {"update",2,250,79.634979,-122.849518,169.634995,-72.849518,0.000000,"update"};
 item9[] = {"View_changed",4,218,-47.753273,63.588287,42.246735,113.588287,1.000000,"View changed"};
-item10[] = {"Update_1",2,250,83.902374,63.430969,173.902374,113.430969,0.000000,"Update"};
+item10[] = {"Update_1",2,250,79.755493,137.152344,169.755493,187.152344,0.000000,"Update"};
+item11[] = {"Uav",4,218,153.361938,52.880615,243.361938,102.880623,0.000000,"Uav"};
+item12[] = {"Action",2,250,228.626831,-44.127502,318.626831,5.872498,0.000000,"Action"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
 link3[] = {2,4};
 link4[] = {2,9};
-link5[] = {3,8};
-link6[] = {4,5};
-link7[] = {5,6};
-link8[] = {6,7};
-link9[] = {7,1};
-link10[] = {8,1};
-link11[] = {9,10};
-link12[] = {10,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,13,6316128,1,-337.460266,296.532990,230.822144,-340.439117,1425,1284,1};
-window[] = {2,-1,-1,-1,-1,1111,52,1972,52,3,1443};
+link5[] = {2,11};
+link6[] = {3,8};
+link7[] = {4,5};
+link8[] = {5,6};
+link9[] = {6,7};
+link10[] = {7,1};
+link11[] = {8,1};
+link12[] = {9,10};
+link13[] = {10,1};
+link14[] = {11,12};
+link15[] = {12,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,15,6316128,1,-417.695374,376.767670,303.117859,-412.735107,1425,1284,1};
+window[] = {2,-1,-1,-1,-1,1319,260,2180,260,3,1443};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -88,6 +93,17 @@ class FSM
                                         to="update";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((vehicle player != _pState || (UAVControl getConnectedUAV player select 1) != _dState));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Uav">*/
+                                class Uav
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((getConnectedUAV player != objNull) && ((group player) != (_connectedUav getVariable ['BIS_WL_ownerAsset', grpNull])));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -183,6 +199,29 @@ class FSM
                         name = "Update_1";
                         itemno = 10;
                         init = /*%FSM<STATEINIT""">*/"player switchCamera ""INTERNAL"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/"player connectTerminalToUAV objNull;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
