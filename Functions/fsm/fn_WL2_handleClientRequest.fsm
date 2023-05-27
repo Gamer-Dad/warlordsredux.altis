@@ -55,7 +55,7 @@ item50[] = {"Action_18",2,250,-582.488586,-183.549133,-492.488586,-133.549133,0.
 item51[] = {"Runway",4,218,-695.624634,-220.222656,-605.624573,-170.222656,0.000000,"Runway"};
 item52[] = {"No_runway",4,218,-586.005676,-271.331329,-496.005615,-221.331329,0.000000,"No runway"};
 item53[] = {"Action_19",2,250,-673.003906,-321.879517,-583.003906,-271.879486,0.000000,"Action"};
-item54[] = {"Action_20",2,250,-784.538879,-265.303864,-694.538879,-215.303864,0.000000,"Action"};
+item54[] = {"Action_20",2,4346,-784.538879,-265.303864,-694.538879,-215.303864,0.000000,"Action"};
 item55[] = {"__isNull",4,218,-968.565430,-127.890297,-878.565430,-77.890305,0.000000,"!isNull"};
 item56[] = {"Action_21",2,250,-983.688416,352.438324,-893.688416,402.438324,0.000000,"Action"};
 item57[] = {"MLRS",4,218,-825.472229,444.320679,-735.472229,494.320679,1.000000,"MLRS"};
@@ -164,8 +164,8 @@ link89[] = {66,68};
 link90[] = {67,68};
 link91[] = {68,14};
 link92[] = {69,14};
-globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1634.315430,605.173828,1271.688110,-501.125916,1622,1284,1};
-window[] = {2,-1,-1,-32000,-32000,1319,260,2180,260,3,1640};
+globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1622.004517,219.225830,925.968933,-531.577148,1622,1284,1};
+window[] = {2,-1,-1,-1,-1,1319,260,2180,260,3,1640};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -181,7 +181,7 @@ class FSM
                          "private [""_asset"", ""_target""];" \n
                          "" \n
                          "_asset = objNull;" \n
-                         "_target = _this # 5;" \n
+                         "_targetType = _targetType;" \n
                          "_sender setVariable [""BIS_WL_isOrdering"", true, [(owner _sender), 2]];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
@@ -365,7 +365,7 @@ class FSM
                 {
                         name = "Action";
                         itemno = 15;
-                        init = /*%FSM<STATEINIT""">*/"_targetType setVariable [format [""BIS_WL_lastScanEnd_%1"", side _sender], WL_SYNCED_TIME + WL_SCAN_DURATION, TRUE];" \n
+                        init = /*%FSM<STATEINIT""">*/"_targetType setVariable [format [""BIS_WL_lastScanEnd_%1"", side _sender], serverTime + 45, TRUE];" \n
                          "" \n
                          "_uid = getPlayerUID _sender;" \n
                          "[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
@@ -391,7 +391,7 @@ class FSM
                 {
                         name = "Action_1";
                         itemno = 16;
-                        init = /*%FSM<STATEINIT""">*/"missionNamespace setVariable [format [""BIS_WL_targetResetVotingSince_%1"", side _sender], WL_SYNCED_TIME, true];" \n
+                        init = /*%FSM<STATEINIT""">*/"missionNamespace setVariable [format [""BIS_WL_targetResetVotingSince_%1"", side _sender], serverTime, true];" \n
                          "missionNamespace setVariable [format [""BIS_WL_targetResetOrderedBy_%1"", side _sender], name _sender, true];" \n
                          "" \n
                          "_sender setVariable [""BIS_WL_targetResetVote"", 1, TRUE];" \n

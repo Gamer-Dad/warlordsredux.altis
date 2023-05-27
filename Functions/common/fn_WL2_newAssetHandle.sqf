@@ -9,7 +9,7 @@ _asset addEventHandler ["Killed", {
 
 if (isNull _owner && isServer) then {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
-	_asset setSkill (0.2 + random 0.3);
+	_asset setSkill (0.2 + random 0.7);
 };
 
 if (isPlayer _owner) then {
