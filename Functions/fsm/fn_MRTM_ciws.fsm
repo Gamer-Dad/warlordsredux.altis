@@ -105,9 +105,6 @@ class FSM
                          "		if (_v distance _t > 200 && _v distance _t < 4500) then {" \n
                          "			_targetExplo = getText (configFile >> ""CfgAmmo"" >> typeOf _t >> ""explosionEffects"");" \n
                          "			_rounds = floor random [20, 120, 200];  " \n
-                         "			if (_rounds == 0) then {" \n
-                         "				_rounds = 120;" \n
-                         "			};" \n
                          "			_v lookAt (getPosATLVisual _t);" \n
                          "			while {(_rounds > 0) && (alive _v) && (alive _t) && (_v distance _t < 4500) && (_v getVariable ""CIWS_enabled"" == true)} do {" \n
                          "				_relDir = _v getDir _t;" \n
@@ -122,7 +119,7 @@ class FSM
                          "					_v lookAt (getPosAtlVisual _t);" \n
                          "				} else {" \n
                          "					_v lookAt (getPosAtlVisual _t);" \n
-                         "					sleep 0.1;" \n
+                         "					sleep 0.01;" \n
                          "				};" \n
                          "			};" \n
                          "" \n
