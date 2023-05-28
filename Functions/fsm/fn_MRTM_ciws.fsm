@@ -21,8 +21,8 @@ link7[] = {5,8};
 link8[] = {6,7};
 link9[] = {7,1};
 link10[] = {7,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-336.374023,326.391357,342.566162,-480.545715,694,924,1};
-window[] = {2,-1,-1,-1,-1,1307,2560,4480,248,3,712};
+globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-336.374023,326.391357,342.566162,-480.545715,694,1284,1};
+window[] = {2,-1,-1,-1,-1,1371,312,2232,312,3,712};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -105,9 +105,9 @@ class FSM
                          "		_v lookAt (getPosATLVisual _t);" \n
                          "		if (_v distance _t > 200 && _v distance _t < 4500) then {" \n
                          "			_targetExplo = getText (configFile >> ""CfgAmmo"" >> typeOf _t >> ""explosionEffects"");" \n
-                         "			_rounds = floor random 250;  " \n
+                         "			_rounds = floor random [40, 150, 270];  " \n
                          "			if (_rounds == 0) then {" \n
-                         "				_rounds = 170;" \n
+                         "				_rounds = 200;" \n
                          "			};" \n
                          "			_v lookAt (getPosATLVisual _t);" \n
                          "			while {(_rounds > 0) && (alive _v) && (alive _t) && (_v distance _t < 4500) && (_v getVariable ""CIWS_enabled"" == true)} do {" \n
@@ -116,7 +116,6 @@ class FSM
                          "				_vDir = ((_vDirArr # 0) atan2 (_vDirArr # 1));" \n
                          "				_tVector = vectorDir _t;" \n
                          "				_vDiff = ((_tVector vectorDiff _vDirArr) # 2);" \n
-                         "				[format [""(%1 > %2) && (%1 < %3) && (%4 < 0.2)"", _vDir, ((_relDir - 360) - 25), ((_relDir - 360) + 25), (abs _vDiff)]] remoteExec [""hint"", 0, true];" \n
                          "				if ((_vDir > ((_relDir - 360) - 25)) && (_vDir < ((_relDir - 360) + 25)) && ((abs _vDiff) < 0.2)) then {" \n
                          "					_v fire (currentWeapon _v);" \n
                          "					sleep 0.04;" \n
