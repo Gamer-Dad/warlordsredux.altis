@@ -126,7 +126,7 @@ class FSM
                          "			if ((alive _t) && ((_v distance _t) < 4500) && (_v getVariable ""CIWS_enabled"" == true)) then {" \n
                          "				sleep ((_v distance _t) / 1440);" \n
                          "				_targetExplo createVehicle (getPos _t);" \n
-                         "				[_t] remoteExec [""triggerAmmo"", 0, true];" \n
+                         "				[_t] remoteExec [""triggerAmmo"", owner _t, true];" \n
                          "			};" \n
                          "		};" \n
                          "		sleep 0.5;" \n
