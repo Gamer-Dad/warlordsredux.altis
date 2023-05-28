@@ -42,9 +42,9 @@ while {!BIS_WL_missionEnd} do {
 	
 	{
 		if (isPlayer _x) then {
-			_timeout = WL_ZONE_RESTRICTION_KILL_TIMEOUT_VEHICLES;
-			if (vehicle player == player) then {_timeout = WL_ZONE_RESTRICTION_KILL_TIMEOUT_INFANTRY} else {
-				if ((vehicle player) isKindOf "Air") then {_timeout = WL_ZONE_RESTRICTION_KILL_TIMEOUT_AIRCRAFT};
+			_timeout = 20;
+			if (vehicle player == player) then {_timeout = 45} else {
+				if ((vehicle player) isKindOf "Air") then {_timeout = 20};
 			};
 			_x setVariable ["BIS_WL_zoneRestrictionKillTime", (serverTime + _timeout), true];
 			[_x, (serverTime + _timeout)] spawn {
