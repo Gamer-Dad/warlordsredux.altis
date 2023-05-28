@@ -83,7 +83,6 @@ class CfgFunctions {
 			class WL2_smoothText {};
 			class WL2_targetResetHandle {};
 			class WL2_targetSelected {};
-			class WL2_teammatesAvailability {};
 			class WL2_zoneRestrictionHandleClient {};
 			class WL2_timer {};
 			class WL2_orderFTVehicleFT {};
@@ -177,6 +176,7 @@ class CfgFunctions {
 			class WL2_sectorOwnershipHandleClient {ext = ".fsm"};
 			class WL2_selectedTargetsHandle {ext = ".fsm"};
 			class WL2_targetSelectionHandleClient {ext = ".fsm"};
+			class WL2_teammatesAvailability {ext = ".fsm"};
 		};
 	};
 
