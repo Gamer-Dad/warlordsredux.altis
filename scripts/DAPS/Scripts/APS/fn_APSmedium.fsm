@@ -16,7 +16,7 @@ link4[] = {3,4};
 link5[] = {4,5};
 link6[] = {5,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,9,6316128,1,-562.071106,500.865234,416.483917,-433.335663,1606,1284,1};
-window[] = {2,-1,-1,-1,-1,1163,104,2024,104,3,1624};
+window[] = {2,-1,-1,-1,-1,1111,52,1972,52,3,1624};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -104,7 +104,7 @@ class FSM
                         itemno = 5;
                         init = /*%FSM<STATEINIT""">*/"_inc = _a # 0;" \n
                          "_d = _v distance _inc;" \n
-                         "[_v, _inc, _d] remoteExec [""""DAPS_fnc_Generic"""", 2];" \n
+                         "[_v, _inc, _d] remoteExec [""DAPS_fnc_Generic"", 2];" \n
                          "_reg pushBackUnique _inc;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
