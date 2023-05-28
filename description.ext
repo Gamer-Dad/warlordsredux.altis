@@ -57,7 +57,6 @@ class CfgFunctions {
 			class WL2_hintHandle {};
 			class WL2_initClient {};
 			class WL2_mapControlHandle {};
-			class WL2_mapDrawHandle {};
 			class WL2_onPause {};
 			class WL2_orderAircraft {};
 			class WL2_orderArsenal {};
