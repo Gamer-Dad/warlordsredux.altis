@@ -119,14 +119,12 @@ class CfgFunctions {
 			class WL2_sectorsInitServer {};
 			class WL2_selectTarget {};
 			class WL2_setupNewWarlord {};
-			class WL2_targetResetHandleServer {};
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
 			class WL2_killRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_tablesSetUp {};
-			class WL2_forfeitHandleServer {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -177,6 +175,8 @@ class CfgFunctions {
 			class WL2_handleClientRequest {ext = ".fsm"};
 			class WL2_missionEndHandle {ext = ".fsm"};
 			class WL2_incomePayoff {ext = ".fsm"};
+			class WL2_forfeitHandleServer {ext = ".fsm"};
+			class WL2_targetResetHandleServer {ext = ".fsm"};
 		};
 	};
 
