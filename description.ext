@@ -73,7 +73,6 @@ class CfgFunctions {
 			class WL2_refreshOSD {};
 			class WL2_requestPurchase {};
 			class WL2_sceneDrawHandle {};
-			class WL2_sectorCaptureStatus {};
 			class WL2_sectorMarkerUpdate {};
 			class WL2_sectorRevealHandle {};
 			class WL2_sectorSelectionHandle {};
@@ -177,6 +176,7 @@ class CfgFunctions {
 			class WL2_targetResetHandleServer {ext = ".fsm"};
 			class WL2_forfeitHandle {ext = ".fsm"};
 			class WL2_handleEnemyCapture {ext = ".fsm"};
+			class WL2_sectorCaptureStatus {ext = ".fsm"};
 		};
 	};
 
