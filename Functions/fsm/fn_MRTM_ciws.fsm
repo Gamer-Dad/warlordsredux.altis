@@ -116,7 +116,7 @@ class FSM
                          "				_vDir = ((_vDirArr # 0) atan2 (_vDirArr # 1));" \n
                          "				_tVector = vectorDir _t;" \n
                          "				_vDiff = ((_tVector vectorDiff _vDirArr) # 2);" \n
-                         "				if ((_vDir > ((_relDir - 360) - 25)) && (_vDir < ((_relDir - 360) + 25)) && ((abs _vDiff) < 0.2)) then {" \n
+                         "				if ((_vDir > ((_relDir - 360) - 25)) && (_vDir < ((_relDir - 360) + 25)) && ((abs _vDiff) < 0.2) && (count (lineIntersectsSurfaces [(AGLToASL (_v modelToWorld [0,0,0])), (AGLToASL (_t modelToWorld [0,0,0])), _v, _t]) == 0)) then {" \n
                          "					_v fire (currentWeapon _v);" \n
                          "					sleep 0.04;" \n
                          "					_rounds = _rounds - 1;" \n
