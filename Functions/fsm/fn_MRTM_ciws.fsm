@@ -102,7 +102,11 @@ class FSM
                          "	_t = (((_this # 1) select {alive _x && (!isNull _x)}) # 0);" \n
                          "	_v setVariable [""isTargetting"", true, clientOwner];" \n
                          "	while {(alive _t) && (alive _v) && ((_v distance _t) < 5000) && (_v getVariable ""CIWS_enabled"" == true)} do {" \n
+                         "		_v doWatch _t;" \n
+                         "		_v doTarget _t;" \n
                          "		if (_v distance _t > 200 && _v distance _t < 4500) then {" \n
+                         "			_v doWatch _t;" \n
+                         "			_v doTarget _t;" \n
                          "			_targetExplo = getText (configFile >> ""CfgAmmo"" >> typeOf _t >> ""explosionEffects"");" \n
                          "			_rounds = floor random [20, 120, 200];  " \n
                          "			if (_rounds == 0) then {" \n
