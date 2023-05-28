@@ -7,7 +7,7 @@ item2[] = {"End",1,4346,-45.521454,135.023773,44.478577,185.023758,0.000000,"End
 link0[] = {0,1};
 link1[] = {1,2};
 globals[] = {0.000000,0,0,0,0,640,480,1,5,6316128,1,-311.942749,315.710449,353.962524,-227.499680,1386,1284,1};
-window[] = {2,-1,-1,-1,-1,1241,182,2102,182,3,1404};
+window[] = {2,-1,-1,-1,-1,1111,52,1972,52,3,1404};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -45,7 +45,6 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"private _winner = BIS_WL_base1 getVariable ""BIS_WL_owner"";" \n
                          "" \n
                          "if !(isDedicated) then {" \n
-                         "	(uiNamespace getVariable [""BIS_WL_mapControl"", controlNull]) ctrlRemoveEventHandler [""Draw"", missionNamespace getVariable [""BIS_WL_mapDrawHandler"", -1]];" \n
                          "	removeMissionEventHandler [""EachFrame"", BIS_WL_assetMapHandler];" \n
                          "	removeMissionEventHandler [""MapSingleClick"", BIS_WL_assetMapClickHandler];" \n
                          "	removeMissionEventHandler [""Draw3D"", missionNamespace getVariable [""BIS_WL_sceneDrawHandler"", -1]];" \n
