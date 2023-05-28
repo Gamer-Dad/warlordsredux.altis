@@ -4,8 +4,8 @@
 item0[] = {"Init",0,250,23.655350,-299.057251,113.655350,-249.057236,0.000000,"Init"};
 item1[] = {"True",8,218,23.224350,-229.229660,113.224350,-179.229660,0.000000,"True"};
 item2[] = {"Loop",2,250,21.960739,-145.854630,111.960747,-95.854630,0.000000,"Loop"};
-item3[] = {"Incoming_",4,218,23.020386,-63.417175,113.020393,-13.417175,0.000000,"Incoming!"};
-item4[] = {"Fire",2,4346,22.300781,20.388855,112.300781,70.388855,0.000000,"Fire"};
+item3[] = {"Incoming_",4,4314,23.020386,-63.417175,113.020393,-13.417175,0.000000,"Incoming!"};
+item4[] = {"Fire",2,250,22.300781,20.388855,112.300781,70.388855,0.000000,"Fire"};
 item5[] = {"Dead",4,218,-118.958504,-66.881409,-28.958496,-16.881409,0.000000,"Dead"};
 item6[] = {"Alive",4,218,189.445435,24.826233,279.445435,74.826233,0.000000,"Alive"};
 item7[] = {"True",2,250,190.924622,-140.099609,280.924622,-90.099609,0.000000,"True"};
@@ -21,8 +21,8 @@ link7[] = {5,8};
 link8[] = {6,7};
 link9[] = {7,1};
 link10[] = {7,5};
-globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-429.879913,448.283691,246.494019,-578.350220,1017,1284,1};
-window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1035};
+globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-429.879913,448.283691,246.494019,-578.350220,755,924,1};
+window[] = {2,-1,-1,-1,-1,1307,2560,4480,248,3,773};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -84,7 +84,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Fire";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_inc = nearestObjects [_v, [""RocketCore"", ""MissileCore"", ""SubmunitionCore"", ""ammo_Penetrator_Base"", ""RocketBase"", ""ShellBase"", ""ShellCore"", ""SubmunitionBase"",""BombCore""], 5000];;" \n
+                                        condition=/*%FSM<CONDITION""">*/"_inc = nearestObjects [_v, [""ammo_Missile_AntiRadiationBase"", ""ammo_Bomb_LaserGuidedBase"", ""M_120mm_cannon_ATGM_LG"", ""M_Titan_AA"", ""ammo_Missile_s750"", ""ammo_Missile_rim162"", ""ammo_Missile_mim145"", ""ammo_Missile_rim116"", ""ammo_Missile_CruiseBase"", ""R_230mm_fly"", ""R_230mm_HE"", ""Sh_155mm_AMOS"", ""Sh_155mm_AMOS_guided"", ""Sh_155mm_AMOS_LG"", ""Mine_155mm_AMOS_range"", ""AT_Mine_155mm_AMOS_range"", ""Cluster_155mm_AMOS""], 5000];;" \n
                                          "(count (_inc select {alive _x}) > 0);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
