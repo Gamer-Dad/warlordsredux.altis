@@ -114,7 +114,7 @@ class CfgWLRequisitionPresets
 				class B_UGV_01_rcws_F 						{cost = 1000;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAS" 				
 				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2  
 				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"  
-				class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"  
+				class B_AAA_System_01_F 					{cost = 9000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"  
 				class B_SAM_System_01_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan"  
 				class B_SAM_System_03_F						{cost = 12000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"  
 				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion"  
@@ -228,7 +228,7 @@ class CfgWLRequisitionPresets
 				class O_UGV_01_rcws_F						{cost = 1000;	requirements[]={};	};	// "UGAV rcws"  
 				class O_UAV_01_F       						{cost = 500;    requirements[]={};  };  // AR-2
 				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"  
-				class B_AAA_System_01_F 					{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";  
+				class B_AAA_System_01_F 					{cost = 9000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";  
 				class B_SAM_System_01_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";  
 				class O_SAM_System_04_F						{cost = 12000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"  
 				class B_SAM_System_02_F						{cost = 20000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion";  
