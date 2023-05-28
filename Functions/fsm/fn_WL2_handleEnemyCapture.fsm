@@ -3,7 +3,7 @@
 /*
 item0[] = {"Init",0,250,-47.286194,-10.964478,42.713806,39.035522,0.000000,"Init"};
 item1[] = {"Activated",4,218,-46.318359,62.126801,43.681641,112.126801,0.000000,"Activated"};
-item2[] = {"Action",2,250,-173.623383,169.585754,-83.623367,219.585754,0.000000,"Action"};
+item2[] = {"Action",2,4346,-173.623383,169.585754,-83.623367,219.585754,0.000000,"Action"};
 item3[] = {"Clear",4,218,-44.866188,272.206329,45.133820,322.206329,0.000000,"Clear"};
 item4[] = {"Action_1",2,250,91.635712,159.422836,181.635727,209.422836,0.000000,"Action"};
 link0[] = {0,1};
@@ -61,6 +61,8 @@ class FSM
                          "	};" \n
                          "	" \n
                          "	_sector spawn {" \n
+                         "		params [""_sector""];" \n
+                         "		_marker = (_sector getVariable ""BIS_WL_markers"") # 1;" \n
                          "		while {count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3 && (_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide} do {" \n
                          "			_marker setMarkerBrushLocal ""Solid"";" \n
                          "			_marker setMarkerColorLocal BIS_WL_colorMarkerEnemy;" \n
