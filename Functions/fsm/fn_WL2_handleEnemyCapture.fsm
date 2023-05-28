@@ -1,0 +1,123 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_handleEnemyCapture.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-47.286194,-10.964478,42.713806,39.035522,0.000000,"Init"};
+item1[] = {"Activated",4,218,-46.318359,62.126801,43.681641,112.126801,0.000000,"Activated"};
+item2[] = {"Action",2,250,-173.623383,169.585754,-83.623367,219.585754,0.000000,"Action"};
+item3[] = {"Clear",4,218,-44.866188,272.206329,45.133820,322.206329,0.000000,"Clear"};
+item4[] = {"Action_1",2,250,91.635712,159.422836,181.635727,209.422836,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,7,6316128,1,-362.418488,277.978760,480.177002,-141.342285,1323,1284,1};
+window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1341};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_handleEnemyCapture.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_sector""];" \n
+                         "private [""_sector"", ""_nextPossibleWarn""];" \n
+                         "_sector = _sector;" \n
+                         "_nextPossibleWarn = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Activated">*/
+                                class Activated
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_sector getVariable ""BIS_WL_owner"") == (side group player));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_seizingInfo = _sector getVariable ""BIS_WL_seizingInfo"";" \n
+                         "_seizingInfo params [""_side""];" \n
+                         "" \n
+                         "if (_side == BIS_WL_enemySide) then {" \n
+                         "	if (serverTime > _nextPossibleWarn) then {" \n
+                         "		_nextPossibleWarn = serverTime + 30;" \n
+                         "		""under_attack"" call BIS_fnc_WL2_announcer;" \n
+                         "		[toUpper format [localize ""STR_A3_WL_popup_losing_sector"", BIS_WL_enemySide call BIS_fnc_WL2_sideToFaction, _sector getVariable ""BIS_WL_name""]] spawn BIS_fnc_WL2_smoothText;" \n
+                         "	};" \n
+                         "	" \n
+                         "	_sector spawn {" \n
+                         "		while {count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3 && (_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide} do {" \n
+                         "			_marker setMarkerBrushLocal ""Solid"";" \n
+                         "			_marker setMarkerColorLocal BIS_WL_colorMarkerEnemy;" \n
+                         "			sleep 1;" \n
+                         "			" \n
+                         "			if ((_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide) then {" \n
+                         "				_marker setMarkerBrushLocal ""Border"";" \n
+                         "				_marker setMarkerColorLocal BIS_WL_colorMarkerFriendly;" \n
+                         "				sleep 1;" \n
+                         "			};" \n
+                         "		};" \n
+                         "	};" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Clear">*/
+                                class Clear
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) || ((_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Activated">*/
+                                class Activated
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_sector getVariable ""BIS_WL_owner"") == (side group player));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

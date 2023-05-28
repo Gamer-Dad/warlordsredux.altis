@@ -53,7 +53,6 @@ class CfgFunctions {
 			class WL2_groupIconClickHandle {};
 			class WL2_groupIconEnterHandle {};
 			class WL2_groupIconLeaveHandle {};
-			class WL2_handleEnemyCapture {};
 			class WL2_hintHandle {};
 			class WL2_initClient {};
 			class WL2_mapControlHandle {};
@@ -177,6 +176,7 @@ class CfgFunctions {
 			class WL2_forfeitHandleServer {ext = ".fsm"};
 			class WL2_targetResetHandleServer {ext = ".fsm"};
 			class WL2_forfeitHandle {ext = ".fsm"};
+			class WL2_handleEnemyCapture {ext = ".fsm"};
 		};
 	};
 
