@@ -1,0 +1,128 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_zoneRestrictionHandleClient.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-116.405884,1548.139282,-26.405884,1598.139282,0.000000,"Init"};
+item1[] = {"Mission_end",4,218,-117.187408,1626.789673,-27.187424,1676.789673,0.000000,"Mission end"};
+item2[] = {"True",2,250,-241.427734,1676.147583,-151.427734,1726.147583,0.000000,"True"};
+item3[] = {"Condition",4,218,-244.482147,1784.575439,-154.482147,1834.575439,0.000000,"Condition"};
+item4[] = {"Action",2,250,-118.730682,1806.976440,-28.730652,1856.976440,0.000000,"Action"};
+item5[] = {"Condition",4,218,0.911514,1781.011597,90.911530,1831.011597,0.000000,"Condition"};
+item6[] = {"Action_1",2,250,-0.106689,1664.933350,89.893311,1714.933350,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,8,6316128,1,-377.672577,135.515915,2039.186768,1385.482178,1008,1284,1};
+window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1026};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_zoneRestrictionHandleClient.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Mission_end">*/
+                                class Mission_end
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((player getVariable [""BIS_WL_zoneRestrictionKillTime"", -1]) != -1);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_killTime = player getVariable ""BIS_WL_zoneRestrictionKillTime"";" \n
+                         "[""trespassing"", [WL_SYNCED_TIME, _killTime]] spawn BIS_fnc_WL2_setOSDEvent;" \n
+                         "[toUpper localize ""STR_A3_WL_zone_warn""] spawn BIS_fnc_WL2_smoothText;" \n
+                         "playSound ""air_raid"";"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((player getVariable ""BIS_WL_zoneRestrictionKillTime"") == -1 || !alive player);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"player setVariable [""BIS_WL_zoneRestrictionKillTime"", -1];" \n
+                         "[""trespassing"", []] spawn BIS_fnc_WL2_setOSDEvent;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Mission_end">*/
+                                class Mission_end
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/
