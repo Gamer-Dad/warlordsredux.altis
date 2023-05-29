@@ -187,6 +187,7 @@ class CfgFunctions {
 			class WL2_enviHandle {ext = ".fsm"};
 			class WL2_timeHandle {ext = ".fsm"};
 			class WL2_currentTargetHandle {ext = ".fsm"};
+			class WL2_sectorStatusHandle {ext = ".fsm"};
 		};
 	};
 

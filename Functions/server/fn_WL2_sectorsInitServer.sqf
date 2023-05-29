@@ -157,15 +157,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 		if !(_handledSide in (_sector getVariable "BIS_WL_previousOwners")) then {
 			_x enableSimulation FALSE;
 		};
-		[_x, _sector, _handledSide] spawn {
-			params ["_trigger", "_sector", "_side"];
-			while {!BIS_WL_missionEnd} do {
-				waitUntil {sleep WL_TIMEOUT_STANDARD; (triggerTimeoutCurrent _trigger) != -1 && (_sector getVariable "BIS_WL_owner") != _side};
-				_sector setVariable ["BIS_WL_seizingInfo", [_side, WL_SYNCED_TIME, WL_SYNCED_TIME + triggerTimeoutCurrent _trigger], TRUE];
-				waitUntil {(triggerTimeoutCurrent _trigger) == -1};
-				_sector setVariable ["BIS_WL_seizingInfo", [], TRUE];
-			};
-		};
+		[_x, _sector, _handledSide] spawn BIS_fnc_WL2_sectorStatusHandle;
 	} forEach [_seizeControlTrg1, _seizeControlTrg2];
 	
 	if (count (_sector getVariable "BIS_WL_revealedBy") != 2) then {
