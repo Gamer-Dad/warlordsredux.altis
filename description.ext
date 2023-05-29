@@ -45,7 +45,6 @@ class CfgFunctions {
     	class Client 
 		{
     		file = "Functions\client";
-			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
 			class WL2_forceGroupIconsFunctionality {};
@@ -177,6 +176,7 @@ class CfgFunctions {
 			class WL2_teammatesAvailability {ext = ".fsm"};
 			class WL2_zoneRestrictionHandleClient {ext = ".fsm"};
 			class WL2_underWaterCheck {ext = ".fsm"};
+			class WL2_cpBalance {ext = ".fsm"};
 		};
 	};
 
