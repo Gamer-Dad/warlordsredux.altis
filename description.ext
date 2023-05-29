@@ -184,6 +184,7 @@ class CfgFunctions {
 			class WL2_detectNewPlayers {ext = ".fsm"};
 			class WL2_pCountMsg {ext = ".fsm"};
 			class WL2_garbageCollector {ext = ".fsm"};
+			class WL2_enviHandle {ext = ".fsm"};
 		};
 	};
 

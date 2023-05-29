@@ -49,14 +49,7 @@ WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
-//this part sets fog and rain to zero
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		_overcastPreset = random 1;
-		(7200 * timeMultiplier) setOvercast _overcastPreset;
-		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
-	};
-};
+0 spawn BIS_fnc_WL2_enviHandle;
 
 "server" call BIS_fnc_WL2_varsInit;
 

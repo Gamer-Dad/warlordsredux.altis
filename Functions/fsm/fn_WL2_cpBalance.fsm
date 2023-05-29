@@ -12,7 +12,7 @@ link2[] = {2,3};
 link3[] = {3,4};
 link4[] = {4,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,6,6316128,1,-499.276886,71.317215,821.348755,267.574829,1323,1284,1};
-window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1341};
+window[] = {2,-1,-1,-1,-1,1189,130,2050,130,3,1341};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -24,7 +24,16 @@ class FSM
                 {
                         name = "Init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_blockW = safeZoneW / 1000;" \n
+                         "_blockH = safeZoneH / (1000 / (getResolution # 4));" \n
+                         "" \n
+                         "_displayW = _blockW * 180;" \n
+                         "_displayH = _blockH * 54;" \n
+                         "_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);" \n
+                         "_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);" \n
+                         "" \n
+                         "_cpBalanceCtrl = findDisplay 46 ctrlCreate [""RscStructuredText"", 9876];" \n
+                         "_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 60, _blockH * 16];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -70,18 +79,7 @@ class FSM
                 {
                         name = "Action";
                         itemno = 4;
-                        init = /*%FSM<STATEINIT""">*/"_blockW = safeZoneW / 1000;" \n
-                         "_blockH = safeZoneH / (1000 / (getResolution # 4));" \n
-                         "" \n
-                         "_displayW = _blockW * 180;" \n
-                         "_displayH = _blockH * 54;" \n
-                         "_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);" \n
-                         "_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);" \n
-                         "" \n
-                         "_cpBalanceCtrl = findDisplay 46 ctrlCreate [""RscStructuredText"", 9876];" \n
-                         "_cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 60, _blockH * 16];" \n
-                         "" \n
-                         "if (side group player == west) then {" \n
+                        init = /*%FSM<STATEINIT""">*/"if (side group player == west) then {" \n
                          "	private _balanceMultiplier = (missionNamespace getVariable ""blanceMultilplierBlu"") - 1;" \n
                          "	private _sidePercentage = if(isNil ""_balanceMultiplier"") then [{0}, {_balanceMultiplier * 100}];" \n
                          "	private _sidePercentageFinal = round _sidePercentage;" \n
@@ -96,6 +94,7 @@ class FSM
                          "	_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentageFinal > 0) then {[0,1,0,1]} else {if (_sidePercentageFinal < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});" \n
                          "	player setVariable [""sidePerc"", _sidePercentageFinal, true]; // testing" \n
                          "};" \n
+                         "" \n
                          "_cpBalanceCtrl ctrlCommit 0;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
