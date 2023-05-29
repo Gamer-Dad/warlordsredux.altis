@@ -107,6 +107,7 @@ if (isPlayer _owner) then {
 		};
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
+		_asset spawn BIS_fnc_WL2_sub_vehicleKickAction;
 		_asset spawn {
 			params ["_asset"];
 			_repairActionID = -1;

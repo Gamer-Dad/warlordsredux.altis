@@ -150,6 +150,7 @@ class CfgFunctions {
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_rearmAction {};
 			class WL2_sub_cramAction {};
+			class WL2_sub_vehicleKickAction {};
     	};
 		class FSM
 		{
