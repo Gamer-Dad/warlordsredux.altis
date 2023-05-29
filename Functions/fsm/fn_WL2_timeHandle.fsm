@@ -13,12 +13,14 @@ item8[] = {"Action_1",2,250,-221.242859,813.600281,-131.242859,863.600281,0.0000
 link0[] = {0,3};
 link1[] = {1,2};
 link2[] = {3,4};
-link3[] = {4,7};
-link4[] = {5,6};
-link5[] = {6,1};
-link6[] = {6,3};
-link7[] = {7,8};
-link8[] = {8,5};
+link3[] = {4,1};
+link4[] = {4,7};
+link5[] = {5,6};
+link6[] = {6,1};
+link7[] = {6,3};
+link8[] = {7,8};
+link9[] = {8,1};
+link10[] = {8,5};
 globals[] = {0.000000,0,0,0,0,640,480,1,10,6316128,1,-456.580139,114.014023,948.578735,394.804810,1323,1284,1};
 window[] = {2,-1,-1,-1,-1,1189,130,2050,130,3,1341};
 *//*%FSM</HEAD>*/
@@ -82,6 +84,17 @@ class FSM
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                         };
                 };
                 /*%FSM</STATE>*/
@@ -136,6 +149,17 @@ class FSM
                                         to="Action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(daytime < 20 && daytime > 5);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
