@@ -18,10 +18,6 @@ item13[] = {"Action_2",2,250,-108.359306,883.982727,-18.359283,933.982727,0.0000
 item14[] = {"Action_3",2,250,5.929657,880.653870,95.929672,930.653870,0.000000,"Action"};
 item15[] = {"True",8,218,-162.807434,978.193481,-72.807434,1028.193359,0.000000,"True"};
 item16[] = {"Action_4",2,250,-162.807281,1050.020020,-72.807281,1100.020020,0.000000,"Action"};
-item17[] = {"Option_1",4,4314,-223.586914,1131.359253,-133.586914,1181.359253,1.000000,"Option 1"};
-item18[] = {"True",8,218,-95.706543,1134.469116,-5.706543,1184.469116,0.000000,"True"};
-item19[] = {"Action_5",2,250,-94.235809,1216.988525,-4.235779,1266.988525,0.000000,"Action"};
-item20[] = {"Action_6",2,250,-225.883240,1217.793457,-135.883240,1267.793579,0.000000,"Action"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
@@ -41,13 +37,8 @@ link15[] = {12,14};
 link16[] = {13,15};
 link17[] = {14,15};
 link18[] = {15,16};
-link19[] = {16,17};
-link20[] = {16,18};
-link21[] = {17,20};
-link22[] = {18,19};
-link23[] = {19,1};
-link24[] = {20,18};
-globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-574.479614,219.983154,1362.433350,350.438965,1008,1284,1};
+link19[] = {16,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-550.047058,244.415710,1418.392334,406.398193,1008,1284,1};
 window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1026};
 *//*%FSM</HEAD>*/
 class FSM
@@ -287,42 +278,15 @@ class FSM
                          "private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);" \n
                          "{" \n
                          "	[_x, _x getVariable ""BIS_WL_owner"", _specialStateArray] call BIS_fnc_WL2_sectorMarkerUpdate" \n
-                         "} forEach (BIS_WL_allSectors - [_sector]);"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                                /*%FSM<LINK "Option_1">*/
-                                class Option_1
-                                {
-                                        itemno = 17;
-                                        priority = 1.000000;
-                                        to="Action_6";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_owner = _sector getVariable ""BIS_WL_owner"";" \n
-                                         "(_owner == BIS_WL_playerSide);"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                                /*%FSM<LINK "True">*/
-                                class True
-                                {
-                                        itemno = 18;
-                                        priority = 0.000000;
-                                        to="Action_5";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "Action_5">*/
-                class Action_5
-                {
-                        name = "Action_5";
-                        itemno = 19;
-                        init = /*%FSM<STATEINIT""">*/"_prevOwner = _owner;"/*%FSM</STATEINIT""">*/;
+                         "} forEach (BIS_WL_allSectors - [_sector]);" \n
+                         "" \n
+                         "if (BIS_WL_playerSide in (_sector getVariable ""BIS_WL_revealedBy"")) then {" \n
+                         "	if (_prevOwner != BIS_WL_playerSide && _owner != BIS_WL_playerSide) then {" \n
+                         "		""Enemy_advancing"" call BIS_fnc_WL2_announcer;" \n
+                         "	};" \n
+                         "	[toUpper format [localize ""STR_A3_WL_popup_sector_seized"", _sector getVariable ""BIS_WL_name"", _owner call BIS_fnc_WL2_sideToFaction]] spawn BIS_fnc_WL2_smoothText;" \n
+                         "};" \n
+                         "_prevOwner = _owner;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -334,33 +298,6 @@ class FSM
                                         to="True";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((_sector getVariable ""BIS_WL_owner"") != _prevOwner);"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
-                        };
-                };
-                /*%FSM</STATE>*/
-                /*%FSM<STATE "Action_6">*/
-                class Action_6
-                {
-                        name = "Action_6";
-                        itemno = 20;
-                        init = /*%FSM<STATEINIT""">*/"if (_sector in [BIS_WL_base1, BIS_WL_base2]) then {" \n
-                         "	""Victory"" call BIS_fnc_WL2_announcer;" \n
-                         "} else {" \n
-                         "	""Seized"" call BIS_fnc_WL2_announcer;" \n
-                         "};"/*%FSM</STATEINIT""">*/;
-                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-                        class Links
-                        {
-                                /*%FSM<LINK "True">*/
-                                class True
-                                {
-                                        itemno = 18;
-                                        priority = 0.000000;
-                                        to="Action_5";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
