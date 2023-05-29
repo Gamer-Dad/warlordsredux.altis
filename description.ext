@@ -178,6 +178,8 @@ class CfgFunctions {
 			class WL2_cpBalance {ext = ".fsm"};
 			class WL2_cpUpdate {ext = ".fsm"};
 			class WL2_playersListHandle {ext = ".fsm"};
+			class WL2_sectorScanHandleServer {ext = ".fsm"};
+			class WL2_sectorScanHandleClient {ext = ".fsm"};
 		};
 	};
 
