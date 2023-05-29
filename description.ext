@@ -180,6 +180,9 @@ class CfgFunctions {
 			class WL2_playersListHandle {ext = ".fsm"};
 			class WL2_sectorScanHandleServer {ext = ".fsm"};
 			class WL2_sectorScanHandleClient {ext = ".fsm"};
+			class WL2_targetResetHandle1 {ext = ".fsm"};
+			class WL2_targetResetHandle2 {ext = ".fsm"};
+			class WL2_targetResetHandle3 {ext = ".fsm"};
 		};
 	};
 
