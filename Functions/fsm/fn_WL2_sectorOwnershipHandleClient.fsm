@@ -18,7 +18,7 @@ item13[] = {"Action_2",2,250,-108.359306,883.982727,-18.359283,933.982727,0.0000
 item14[] = {"Action_3",2,250,5.929657,880.653870,95.929672,930.653870,0.000000,"Action"};
 item15[] = {"True",8,218,-162.807434,978.193481,-72.807434,1028.193359,0.000000,"True"};
 item16[] = {"Action_4",2,250,-162.807281,1050.020020,-72.807281,1100.020020,0.000000,"Action"};
-item17[] = {"Option_1",4,218,-223.586914,1131.359253,-133.586914,1181.359253,1.000000,"Option 1"};
+item17[] = {"Option_1",4,4314,-223.586914,1131.359253,-133.586914,1181.359253,1.000000,"Option 1"};
 item18[] = {"True",8,218,-95.706543,1134.469116,-5.706543,1184.469116,0.000000,"True"};
 item19[] = {"Action_5",2,250,-94.235809,1216.988525,-4.235779,1266.988525,0.000000,"Action"};
 item20[] = {"Action_6",2,250,-225.883240,1217.793457,-135.883240,1267.793579,0.000000,"Action"};
@@ -47,8 +47,8 @@ link21[] = {17,20};
 link22[] = {18,19};
 link23[] = {19,1};
 link24[] = {20,18};
-globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-529.698120,192.540771,1350.324707,430.329956,1008,1284,1};
-window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1026};
+globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-574.479614,219.983154,1362.433350,350.438965,1008,1284,1};
+window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1026};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -98,7 +98,8 @@ class FSM
                                         priority = 0.000000;
                                         to="True_2";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_owner == BIS_WL_playerSide);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_owner = _sector getVariable ""BIS_WL_owner"";" \n
+                                         "(_owner == BIS_WL_playerSide);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -297,7 +298,8 @@ class FSM
                                         priority = 1.000000;
                                         to="Action_6";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(_owner == BIS_WL_playerSide);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_owner = _sector getVariable ""BIS_WL_owner"";" \n
+                                         "(_owner == BIS_WL_playerSide);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

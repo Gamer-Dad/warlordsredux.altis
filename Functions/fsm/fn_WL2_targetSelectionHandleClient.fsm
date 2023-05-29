@@ -349,7 +349,7 @@ class FSM
                         name = "Action_6";
                         itemno = 20;
                         init = /*%FSM<STATEINIT""">*/"""Selected"" call BIS_fnc_WL2_announcer;" \n
-                         "[toUpper format [localize ""STR_A3_WL_popup_voting_done"", WL_TARGET_FRIENDLY getVariable ""BIS_WL_name""]] spawn BIS_fnc_WL2_smoothText;" \n
+                         "[toUpper format [localize ""STR_A3_WL_popup_voting_done"", (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]) getVariable ""BIS_WL_name""]] spawn BIS_fnc_WL2_smoothText;" \n
                          "[""client"", TRUE] call BIS_fnc_WL2_updateSectorArrays;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
