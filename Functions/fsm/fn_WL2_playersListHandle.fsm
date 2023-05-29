@@ -1,0 +1,104 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_playersListHandle.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-272.564941,630.301758,-182.564941,680.301758,0.000000,"Init"};
+item1[] = {"Mission_End",4,218,-274.290070,710.952515,-184.290070,760.952515,1.000000,"Mission End"};
+item2[] = {"Exit",1,250,-140.013458,627.268005,-50.013428,677.267944,0.000000,"Exit"};
+item3[] = {"True",8,218,-137.856995,714.819458,-47.856995,764.819458,0.000000,"True"};
+item4[] = {"Action",2,250,-203.990204,802.816895,-113.990173,852.816895,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {3,2};
+link3[] = {4,1};
+link4[] = {4,3};
+globals[] = {0.000000,0,0,0,0,640,480,1,6,6316128,1,-516.527954,54.066147,928.738403,374.964478,1323,1284,1};
+window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1341};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_playersListHandle.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"BIS_WL_allWarlords = +(playableUnits + switchableUnits) select {(side group _x) in BIS_WL_competingSides && !(_x getVariable [""BIS_WL_ignore"", false])};" \n
+                         "" \n
+                         "0 spawn BIS_fnc_WL2_refreshIconsToDraw;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 1.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"BIS_WL_allWarlords = BIS_WL_allWarlords - [objNull];" \n
+                         "{" \n
+                         "	BIS_WL_allWarlords pushBackUnique _x" \n
+                         "} forEach ((playableUnits + switchableUnits) select {(side group _x) in BIS_WL_competingSides && !(_x getVariable [""BIS_WL_ignore"", false])});" \n
+                         "call BIS_fnc_WL2_refreshIconsToDraw;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 1.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/
