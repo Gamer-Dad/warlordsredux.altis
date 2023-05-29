@@ -134,20 +134,10 @@ call BIS_fnc_WL2_sectorsInitServer;
 } forEach BIS_WL_competingSides;
 
 setTimeMultiplier 3;
-
 0 spawn BIS_fnc_WL2_timeHandle;
 
 {
-	_x spawn {
-		_side = _this;
-		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep WL_TIMEOUT_LONG; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};
-			sleep WL_TIMEOUT_LONG;
-			if (((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side) then {
-				[_side, objNull] call BIS_fnc_WL2_selectTarget;
-			};
-		};
-	};
+	_x spawn BIS_fnc_WL2_currentTargetHandle;
 } forEach BIS_WL_competingSides;
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];

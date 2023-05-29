@@ -186,6 +186,7 @@ class CfgFunctions {
 			class WL2_garbageCollector {ext = ".fsm"};
 			class WL2_enviHandle {ext = ".fsm"};
 			class WL2_timeHandle {ext = ".fsm"};
+			class WL2_currentTargetHandle {ext = ".fsm"};
 		};
 	};
 
