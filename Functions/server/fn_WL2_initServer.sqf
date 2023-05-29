@@ -131,14 +131,14 @@ call BIS_fnc_WL2_sectorsInitServer;
 {
 	_x spawn BIS_fnc_WL2_targetResetHandleServer;
 	_x spawn BIS_fnc_WL2_forfeitHandleServer;
-} forEach BIS_WL_competingSides;
+} forEach [west, east];
 
 setTimeMultiplier 3;
 0 spawn BIS_fnc_WL2_timeHandle;
 
 {
 	_x spawn BIS_fnc_WL2_currentTargetHandle;
-} forEach BIS_WL_competingSides;
+} forEach [west, east];
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 

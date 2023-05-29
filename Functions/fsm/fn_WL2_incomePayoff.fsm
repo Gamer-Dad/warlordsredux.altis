@@ -16,7 +16,7 @@ link4[] = {4,1};
 link5[] = {4,5};
 link6[] = {5,6};
 globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,-291.492432,438.041565,401.418396,-326.981018,1286,1284,1};
-window[] = {2,-1,-1,-32000,-32000,1241,182,2102,182,3,1304};
+window[] = {2,-1,-1,-1,-1,1163,104,2024,104,3,1304};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -112,7 +112,9 @@ class FSM
                          "} forEach (BIS_WL_allWarlords); // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it." \n
                          "" \n
                          "{" \n
-                         "		_l = (vehicles + allUnits) select {(typeOf _x != ""Logic"") && (alive _x)};" \n
+                         "	_l = (vehicles + allUnits) select {(typeOf _x != ""Logic"") && (alive _x) && (!(_x isKindOf ""WeaponHolder"")) && (!(_x isKindOf ""WeaponHolderSimulated""))};" \n
+                         "	_l1	= (vehicles + allUnits) select {(!alive _x) && (_x isKindOf ""WeaponHolder"") && (_x isKindOf ""WeaponHolderSimulated"")};" \n
+                         "	_x removeCuratorEditableObjects [_l1, true];" \n
                          "	_x addCuratorEditableObjects [_l, true];" \n
                          "} forEach allCurators;" \n
                          "" \n
