@@ -1,0 +1,190 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_detectNewPlayers.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
+item1[] = {"__Mission_End",4,218,-39.871033,-50.134125,50.128967,-0.134125,1.000000,"!Mission End"};
+item2[] = {"Exit",1,250,93.254700,-130.512024,183.254730,-80.512039,0.000000,"Exit"};
+item3[] = {"Mission_End",4,218,92.788452,-53.576874,182.788452,-3.576874,0.000000,"Mission End"};
+item4[] = {"True",2,250,-97.223145,36.126953,-7.223114,86.126953,0.000000,"True"};
+item5[] = {"Condition",4,218,-32.411118,108.399384,57.588867,158.399384,1.000000,"Condition"};
+item6[] = {"Action",2,250,118.662727,101.871277,208.662750,151.871277,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {3,2};
+link3[] = {4,3};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,1};
+link7[] = {6,3};
+globals[] = {0.000000,0,0,0,0,640,480,1,8,6316128,1,-402.393677,476.066101,328.301025,-270.393951,1884,1284,1};
+window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1902};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_detectNewPlayers.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__Mission_End">*/
+                                class __Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 1.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_newPlayers = BIS_WL_allWarlords select {!isNull _x && ((_x getVariable [""BIS_WL_detectedByServerSince"", -1]) == -1) || (isPlayer _x && isNil {missionNamespace getVariable format [""BIS_WL_teamCheckOK_%1"", getPlayerUID _x]})};" \n
+                                         "((count _newPlayers) > 0);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_newPlayers = BIS_WL_allWarlords select {!isNull _x && ((_x getVariable [""BIS_WL_detectedByServerSince"", -1]) == -1) || (isPlayer _x && isNil {missionNamespace getVariable format [""BIS_WL_teamCheckOK_%1"", getPlayerUID _x]})};" \n
+                         "{" \n
+                         "	_x spawn BIS_fnc_WL2_setupNewWarlord;" \n
+                         "" \n
+                         "	// Thanks to marii for the AI limiting code; Adjust numbers below for AI buddy count change" \n
+                         "	//AI buddy count system" \n
+                         "	_players = count BIS_WL_allWarlords;" \n
+                         "	if (_players >= 51) then " \n
+                         "	{" \n
+                         "		BIS_WL_maxSubordinates = 1;" \n
+                         "		publicVariable ""BIS_WL_maxSubordinates"";		" \n
+                         "	}" \n
+                         "	Else " \n
+                         "	{" \n
+                         "		if (_players >= 45) then" \n
+                         "		{" \n
+                         "			BIS_WL_maxSubordinates = 2;" \n
+                         "			publicVariable ""BIS_WL_maxSubordinates"";" \n
+                         "		}" \n
+                         "		Else " \n
+                         "		{" \n
+                         "			if (_players >= 40) then" \n
+                         "			{" \n
+                         "				BIS_WL_maxSubordinates = 3;" \n
+                         "				publicVariable ""BIS_WL_maxSubordinates"";" \n
+                         "			}" \n
+                         "			Else " \n
+                         "			{" \n
+                         "				if (_players >= 30) then" \n
+                         "				{" \n
+                         "					BIS_WL_maxSubordinates = 4;" \n
+                         "					publicVariable ""BIS_WL_maxSubordinates"";" \n
+                         "				}" \n
+                         "				Else " \n
+                         "				{" \n
+                         "					if (_players >= 20) then" \n
+                         "					{" \n
+                         "						BIS_WL_maxSubordinates = 5;" \n
+                         "						publicVariable ""BIS_WL_maxSubordinates"";" \n
+                         "					}" \n
+                         "					Else " \n
+                         "					{" \n
+                         "						if (_players < 10) then" \n
+                         "						{" \n
+                         "							BIS_WL_maxSubordinates = 6;" \n
+                         "							publicVariable ""BIS_WL_maxSubordinates"";" \n
+                         "						};" \n
+                         "					};" \n
+                         "				};" \n
+                         "			};" \n
+                         "		};" \n
+                         "	};" \n
+                         "} forEach _newPlayers;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__Mission_End">*/
+                                class __Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 1.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/
