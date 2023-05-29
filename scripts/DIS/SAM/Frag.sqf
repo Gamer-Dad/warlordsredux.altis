@@ -12,8 +12,7 @@ sleep 1;
 private _forceHit = TRUE;
 if ((random 100) > 0) then {_forceHit = FALSE}; // Change 0 to percent chance if forced frag hit
 
-while {true} do {
-	if !(alive _m) exitWith{};
+while {alive _m} do {
 	_targets = _m nearEntities [["AIR"], _range];
 	if ((count _targets) > 0) exitWith {_frag = TRUE; _target = (_targets select 0)};
 	sleep .01;
