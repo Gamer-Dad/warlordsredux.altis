@@ -98,7 +98,6 @@ class CfgFunctions {
     		file = "Functions\server";
     		class WL2_assetRelevanceCheck {};
 			class WL2_friendlyFireHandleServer {};
-			class WL2_garbageCollector {};
 			class WL2_changeSectorOwnership {};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
@@ -184,6 +183,7 @@ class CfgFunctions {
 			class WL2_targetResetHandle3 {ext = ".fsm"};
 			class WL2_detectNewPlayers {ext = ".fsm"};
 			class WL2_pCountMsg {ext = ".fsm"};
+			class WL2_garbageCollector {ext = ".fsm"};
 		};
 	};
 
