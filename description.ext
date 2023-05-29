@@ -177,6 +177,7 @@ class CfgFunctions {
 			class WL2_zoneRestrictionHandleClient {ext = ".fsm"};
 			class WL2_underWaterCheck {ext = ".fsm"};
 			class WL2_cpBalance {ext = ".fsm"};
+			class WL2_cpUpdate {ext = ".fsm"};
 		};
 	};
 

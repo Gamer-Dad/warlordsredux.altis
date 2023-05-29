@@ -321,6 +321,7 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
+0 spawn BIS_fnc_WL2_cpUpdate;
 (side group player) spawn BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
