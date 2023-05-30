@@ -20,7 +20,7 @@ if !(isNull _source) then {
 	};
 	if (_killerSide != _unitSide) then {
 		if ((!(_source in _list)) && (isPlayer _source)) then {
-			_list = (_unit getVariable "assistList") + [_source];
+			_list = ((_unit getVariable "assistList") pushBack _source);
 		};
 		_unit setVariable ["assistList", _list, true];
 	};
