@@ -8,17 +8,19 @@ DIS_fnc_start = compile preprocessFile "scripts\DIS\Start.sqf";
 0 spawn DIS_fnc_start;
 
 // earplug script
-[] execVM "scripts\GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
+GF_fnc_EarplugsCredits = compile preprocessFile "scripts\GF_Earplugs\Credits.sqf";
+call GF_fnc_EarplugsCredits;	// Please keep the Credits or add them to your Diary
+
+GF_fnc_Earplugs = compile preprocessFile "scripts\GF_Earplugs\Credits.sqf";
+call GF_fnc_Earplugs;
 
 addMissionEventHandler ["Loaded", {
 	params ["_saveType"];
 	
 	If(_saveType isEqualto "continue") then{
-		[] execVM "GF_Earplugs\GF_Earplugs.sqf";
-		
+		call GF_fnc_Earplugs;
 	};
 }];
-[] execVM "scripts\GF_Earplugs\GF_Earplugs.sqf";
 
 
 //Vehicle unflip 
