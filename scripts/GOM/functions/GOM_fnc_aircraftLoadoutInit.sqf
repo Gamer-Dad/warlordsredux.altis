@@ -1233,8 +1233,7 @@ params ["_plane"];
 
 };
 
-GOM_fnc_handleResources = {
-//run on server only, init for supply vehicles, only sets variables and fuel/ammo/repaircargo to 0
+GOM_fnc_handleResources = { //run on server only, init for supply vehicles, only sets variables and fuel/ammo/repaircargo to 0
 	waituntil {time > 0};
 
 	_vehicles = vehicles;
@@ -1269,87 +1268,66 @@ GOM_fnc_handleResources = {
 
 
 	while {true} do {
-
-		_timeout = time + 10;
-
-
+		_timeout = serverTime + 10;
 		{
-
 			_x addEventHandler ["LandedTouchDown",{
-
-
 				params ["_plane"];
 				_plane removeEventHandler ["LandedTouchDown",_thisEventHandler];
 				_this spawn GOM_fnc_landingsCheck;
-
 			}];
-
 			_x setVariable ["GOM_fnc_AircraftStatsLandingEH",true];
-
 		} foreach (_vehicles select {!(_x getVariable ["GOM_fnc_AircraftStatsLandingEH",false])});
 
 
 		if (GOM_fnc_aircraftLoadout_NeedsFuelSource) then {
+			_refuelVehs = vehicles select {_x getVariable ["GOM_fnc_fuelCargo",-1] < 0 AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0}};
+			_refuelVehs apply {
+				_amount = _x getvariable ["GOM_fnc_fuelCargo",-1];
+				if (_amount < 0) then {_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel")) min 10000)};
 
-		_refuelVehs = vehicles select {_x getVariable ["GOM_fnc_fuelCargo",-1] < 0 AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0}};
-
-		_refuelVehs apply {
-
-			_amount = _x getvariable ["GOM_fnc_fuelCargo",-1];
-
-			if (_amount < 0) then {_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel")) min 10000)};
-
-			_x setvariable ["GOM_fnc_fuelCargo",_amount,true];
-			[_x,0] remoteExec ["setFuelCargo",_x];
-		};
+				_x setvariable ["GOM_fnc_fuelCargo",_amount,true];
+				[_x,0] remoteExec ["setFuelCargo",_x];
+			};
 		};
 
 		if (GOM_fnc_aircraftLoadout_NeedsRepairSource) then {
+			_repairVehs = vehicles select {_x getVariable ["GOM_fnc_repairCargo",-1] < 0 AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0}};
+			_repairVehs apply {
+				_amount = _x getvariable ["GOM_fnc_repairCargo",-1];
+				if (_amount < 0) then {_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair")) min 10000)};
 
-		_repairVehs = vehicles select {_x getVariable ["GOM_fnc_repairCargo",-1] < 0 AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0}};
-
-		_repairVehs apply {
-
-
-
-			_amount = _x getvariable ["GOM_fnc_repairCargo",-1];
-			if (_amount < 0) then {_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair")) min 10000)};
-
-
-			_x setvariable ["GOM_fnc_repairCargo",_amount,true];
-			[_x,0] remoteExec ["setRepairCargo",_x];
-
-		};
-	};
-
-	if (GOM_fnc_aircraftLoadout_NeedsAmmoSource) then {
-
-		_reammoVehs = vehicles select {_x getVariable ["GOM_fnc_ammoCargo",-1] < 0 AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0}};
-
-		_reammoVehs apply {
-
-
-			_amount = _x getvariable ["GOM_fnc_ammoCargo",-1];
-
-			if (_amount < 0) then {
-				if (typeOf _x == "B_Truck_01_ammo_F" || typeOf _x == "O_Truck_03_ammo_F" ) then {
-					_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 30000);
-				} else {
-					_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 10000);
-				};
+				_x setvariable ["GOM_fnc_repairCargo",_amount,true];
+				[_x,0] remoteExec ["setRepairCargo",_x];
 			};
-
-			_x setvariable ["GOM_fnc_ammoCargo",_amount,true];
-			[_x,0] remoteExec ["setAmmoCargo",_x];
-
-
 		};
-	};
 
-		waituntil {time > _timeout OR {!(vehicles isEqualTo _vehicles)}};
+		if (GOM_fnc_aircraftLoadout_NeedsAmmoSource) then {
+
+			_reammoVehs = vehicles select {_x getVariable ["GOM_fnc_ammoCargo",-1] < 0 AND {alive _x} AND {getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0}};
+
+			_reammoVehs apply {
+
+
+				_amount = _x getvariable ["GOM_fnc_ammoCargo",-1];
+
+				if (_amount < 0) then {
+					if (typeOf _x == "B_Truck_01_ammo_F" || typeOf _x == "O_Truck_03_ammo_F" ) then {
+						_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 30000);
+					} else {
+						_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 10000);
+					};
+				};
+
+				_x setvariable ["GOM_fnc_ammoCargo",_amount,true];
+				[_x,0] remoteExec ["setAmmoCargo",_x];
+
+
+			};
+		};
+
+		waituntil {sleep 1; (serverTime > _timeout || {!(vehicles isEqualTo _vehicles)})};
 		_vehicles = vehicles;
 	};
-
 };
 
 GOM_fnc_aircraftGetSerialNumber = {
