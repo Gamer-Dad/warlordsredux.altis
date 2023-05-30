@@ -543,7 +543,7 @@ class MRTM_settingsMenu
 		class MRTMObjectsButton: RscCheckboxMRTM
 		{
 			idc = 2800;
-			action = "if (MRTM_syncObjects) then {MRTM_syncObjects = false} else {MRTM_syncObjects = true}; [] call MRTM_fnc_openMenu;";
+			action = "if (MRTM_syncObjects) then {MRTM_syncObjects = false} else {MRTM_syncObjects = true}; call MRTM_fnc_openMenu;";
 			x = 0.273125 * safezoneW + safezoneX;
 			y = 0.5044 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;

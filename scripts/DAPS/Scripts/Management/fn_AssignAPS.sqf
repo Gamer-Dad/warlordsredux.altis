@@ -7,10 +7,10 @@ _vehicleType="";
 sleep(random .3);
 {
 	_vehicleType = typeOf _x;
-	dapsLight = dapsLight - [_vehicleType];
-	dapsMedium = dapsMedium - [_vehicleType];
-	dapsHeavy = dapsHeavy - [_vehicleType];
-	dapsDazzler = dapsDazzler - [_vehicleType];
+	dapsLight = (dapsLight deleteAt (dapsLight find _vehicleType));
+	dapsMedium = (dapsMedium deleteAt (dapsMedium find _vehicleType));
+	dapsHeavy = (dapsHeavy deleteAt (dapsHeavy find _vehicleType));
+	dapsDazzler = (dapsDazzler deleteAt (dapsDazzler find _vehicleType));
 	if(_APS == "Light") then {dapsLight pushBack _vehicleType};
 	if(_APS == "Medium") then {dapsMedium pushBack _vehicleType};
 	if(_APS == "Heavy") then {dapsHeavy pushBack _vehicleType};

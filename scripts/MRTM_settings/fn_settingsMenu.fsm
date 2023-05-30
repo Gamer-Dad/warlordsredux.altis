@@ -173,7 +173,7 @@ class FSM
                 {
                         name = "update";
                         itemno = 8;
-                        init = /*%FSM<STATEINIT""">*/"[] call MRTM_fnc_updateViewDistance;" \n
+                        init = /*%FSM<STATEINIT""">*/"call MRTM_fnc_updateViewDistance;" \n
                          "_pState = vehicle player;" \n
                          "_dState = UAVControl (getConnectedUAV player) select 1;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;

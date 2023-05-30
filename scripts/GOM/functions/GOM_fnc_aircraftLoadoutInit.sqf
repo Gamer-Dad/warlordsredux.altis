@@ -490,7 +490,7 @@ if (typeof _veh iskindof "Helicopter") then {_landingtext = "<br />"};
 if (lbcursel 1502 >= 0) then {_landingtext = "";_killtext = ""};
 
 
-	_tailNumber = [] call GOM_fnc_aircraftGetSerialNumber;
+	_tailNumber = call GOM_fnc_aircraftGetSerialNumber;
 
 
 	_text = format ["<t align='center' size='0.75'>%1 - %11, Integrity: %2%3<br />Pilot: %4%5<br />Fuel: %6l / %7l<br />%8<br />%9<br />%10",_dispName,_integrity,"%",_rank,_driverName,_fuel,_maxFuel,_pylontext,_landingtext,_killtext,_tailnumber];
@@ -536,7 +536,7 @@ GOM_fnc_updateAmmoCountDisplay = {
 
 	ctrlSettext [1600,format ["Set Serial Number",""]];
 	(finddisplay 66 displayctrl 1105) ctrlSetStructuredText parsetext "<t align='center'>Serial Number:";
-	ctrlSetText [1400,[] call GOM_fnc_aircraftGetSerialNumber];
+	ctrlSetText [1400, call GOM_fnc_aircraftGetSerialNumber];
 
 	};
 
@@ -666,7 +666,7 @@ sleep random [0.5,1,2.5];
 	};
 		_ammosource setvariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	_checkOut = _veh getVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[]];
-	_checkOut = _checkOut - [_pylonNum];
+	_checkOut = (_checkOut deleteAt (_checkOut find _pylonNum));
 	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut,true];
 
 	systemchat format ["Successfully installed %1 %2 on %3!",_finalAmount,_magDispName,_pylonName];
@@ -1428,7 +1428,7 @@ GOM_fnc_titleText = {
 
 	if !(_checkDate isequalto _lastDate) then {
 
-	_weekday = [] call GOM_fnc_getWeekday;
+	_weekday = call GOM_fnc_getWeekday;
 	player setvariable ["GOM_fnc_titleTextCheckDate",[_checkdate,_weekday]];
 
 	};
@@ -1861,7 +1861,7 @@ GOM_fnc_aircraftLoadoutDeletePreset = {
 
 	_toDelete = _presets select {(_x select 1) isEqualTo lbText [2101,lbcursel 2101]};
 	if (count _toDelete isequalto 0)  exitWith {systemchat "Preset not found!";playsound "Simulation_Fatal"};
-	_presets = _presets - [_toDelete select 0];
+	_presets = (_presets deleteAt (_presets find (_toDelete select 0)));
 	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",_presets];
 		_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
 
@@ -1949,7 +1949,7 @@ GOM_fnc_aircraftLoadout = {
 
 	finddisplay 66 displayCtrl 2100 ctrlAddEventHandler ["LBSelChanged",format ["[%1,true] call GOM_fnc_aircraftLoadoutPaintjob",_getvar]];
 	finddisplay 66 displayCtrl 2101 ctrlAddEventHandler ["LBSelChanged",format ["",_getvar]];//
-	buttonSetAction [1600, format ["[%1] call GOM_fnc_pylonInstallWeapon;[] call GOM_fnc_aircraftSetSerialNumber",_getvar]];
+	buttonSetAction [1600, format ["[%1] call GOM_fnc_pylonInstallWeapon; call GOM_fnc_aircraftSetSerialNumber",_getvar]];
 	buttonSetAction [1601, format ["[%1] call GOM_fnc_clearAllPylons",_getvar]];
 	buttonSetAction [1602, format ["[%1] call GOM_fnc_setPylonsRepair",_getvar]];
 	buttonSetAction [1603, format ["[%1] call GOM_fnc_setPylonsRefuel",_getvar]];
@@ -2033,7 +2033,7 @@ if (_this select 4) then {	_veh = call compile lbdata [1500,lbcursel 1500];
 		};
 
 		_check = [_obj] call GOM_fnc_updateDialog;
-		[] call GOM_fnc_titleText;
+		call GOM_fnc_titleText;
 
 		true
 
