@@ -814,10 +814,6 @@ class FSM
                          "_asset setPos _targetPos;" \n
                          "_asset enableWeaponDisassembly false;" \n
                          "" \n
-                         "if (typeOf _asset == ""B_AAA_System_01_F"") then {" \n
-                         "	[_asset] spawn BIS_fnc_MRTM_ciws;" \n
-                         "};" \n
-                         "" \n
                          "if (getNumber (configFile >> ""CfgVehicles"" >> _class >> ""isUav"") == 1) then {" \n
                          "	createVehicleCrew _asset;" \n
                          "	_side = side _sender; " \n

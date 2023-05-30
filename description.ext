@@ -149,7 +149,6 @@ class CfgFunctions {
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_rearmAction {};
-			class WL2_sub_cramAction {};
 			class WL2_sub_vehicleKickAction {};
     	};
 		class FSM
@@ -159,7 +158,6 @@ class CfgFunctions {
 			class MRTM_bettyRWR {ext = ".fsm"};
 			class MRTM_rita {ext = ".fsm";};
 			class MRTM_ritaRWR {ext = ".fsm"};
-			class MRTM_ciws {ext = ".fsm"};
 			class WL2_handleClientRequest {ext = ".fsm"};
 			class WL2_missionEndHandle {ext = ".fsm"};
 			class WL2_incomePayoff {ext = ".fsm"};

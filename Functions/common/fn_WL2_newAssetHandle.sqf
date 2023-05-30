@@ -208,10 +208,6 @@ if (isPlayer _owner) then {
 					_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile]), [clientOwner, 2]];
 				}];
 			};
-			if (typeOf _asset == "B_AAA_System_01_F") then {
-				_asset setVariable ["CIWS_enabled", false, [clientOwner, 2]];
-				_asset spawn BIS_fnc_WL2_sub_cramAction;
-			};
 		};
 		
 		_asset addEventHandler ["Killed", {
