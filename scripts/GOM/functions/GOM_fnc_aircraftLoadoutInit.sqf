@@ -1234,38 +1234,27 @@ params ["_plane"];
 };
 
 GOM_fnc_handleResources = { //run on server only, init for supply vehicles, only sets variables and fuel/ammo/repaircargo to 0
-	waituntil {time > 0};
-
+	waituntil {sleep 0.1; (serverTime > 0)};
 	_vehicles = vehicles;
-
-
 	//track stats, landings, kills every aircraft made and display it in the menu
-
 	addMissionEventHandler ["EntityKilled",{
-
 		params ["_killed","_killer"];
-
 		if (_killer isequalto _killed OR vehicle _killer isequalto vehicle _killed) exitWith {false};
+
 		if (typeof _killer isKindof "Plane" OR typeof _killer isKindOf "Helicopter") then {
+			if (_killed in allunits OR _killed in vehicles) then {
 
-		if (_killed in allunits OR _killed in vehicles) then {
+				_kills = _killer getVariable ["GOM_fnc_aircraftLoadoutTrackStats",[0,0,0,0,0,0,0,0,0]];
+				_kinds = ["CAManBase","StaticWeapon","Car","Tank","Helicopter","Plane","Ship","House","B_Parachute"];
+				_check = _kinds apply {typeof _killed iskindof _x};
+				_index = _check find true;
 
-			_kills = _killer getVariable ["GOM_fnc_aircraftLoadoutTrackStats",[0,0,0,0,0,0,0,0,0]];
-			_kinds = ["CAManBase","StaticWeapon","Car","Tank","Helicopter","Plane","Ship","House","B_Parachute"];
-			_check = _kinds apply {typeof _killed iskindof _x};
-			_index = _check find true;
+				_kills set [_index,((_kills select (_index+1)))];
 
-			_kills set [_index,((_kills select (_index+1)))];
-
-			_killer setvariable ["GOM_fnc_aircraftLoadoutTrackStats",_kills,true];
+				_killer setvariable ["GOM_fnc_aircraftLoadoutTrackStats",_kills,true];
+			};
 		};
-
-		};
-
-
-
 	}];
-
 
 	while {true} do {
 		_timeout = serverTime + 10;
