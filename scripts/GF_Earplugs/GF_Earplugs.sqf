@@ -46,6 +46,25 @@ https://community.bistudio.com/wiki/DIK_KeyCodes
 DIK_5               0x06
 DIK_TAB             0x0F
 
+
+//________________	Place this code in the init.sqf	________________
+
+[] execVM "GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
+
+addMissionEventHandler ["Loaded", {
+	params ["_saveType"];
+	
+	If(_saveType isEqualto "continue") then{
+		[] execVM "GF_Earplugs\GF_Earplugs.sqf";
+	};
+}];
+
+[] execVM "GF_Earplugs\GF_Earplugs.sqf";
+*/
+
+
+
+
 waitUntil {!isNull player};
 
 //________________ Settings ________________

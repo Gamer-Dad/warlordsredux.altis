@@ -26,9 +26,8 @@ if !(isClass(configFile >> "cfgPatches" >> "DrongosAPS")) then {
 };
 
 private _module = objNull;
-DAPS_fnc_initStart = compile preprocessFile "scripts\DAPS\Scripts\DefineVehicles.sqf";
-dapsScriptWait = call DAPS_fnc_initStart;
-waitUntil {scriptDone dapsScriptWait};
+dapsScriptWait = execVM "scripts\DAPS\Scripts\DefineVehicles.sqf";
+waitUntil { scriptDone dapsScriptWait };
 
 dapsDefinitionsLoaded = TRUE;
 dapsDefinitionsLoaded2 = FALSE;

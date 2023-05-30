@@ -10,6 +10,6 @@ if !(("MissileBase" in _parents) OR ("MissileCore" in _parents)) exitWith {};
 private _airlock = getNumber(configfile >> "CfgAmmo" >> _ammo >> "airLock");
 private _thrust = getNumber(configfile >> "CfgAmmo" >> _ammo >> "thrust");
 if ((_airlock == 0) AND (_thrust == 0)) exitWith {};
-[_missile, _unit] call DIS_fnc_frag;
-[_missile, (assignedTarget _unit), 1000] call DIS_fnc_maneuver;
+[_missile, _unit] execVM "scripts\DIS\SAM\Frag.sqf";
+[_missile, (assignedTarget _unit), 1000] execVM "scripts\DIS\SAM\SAManeuver.sqf";
 systemChat "SAM away";
