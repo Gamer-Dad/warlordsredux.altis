@@ -121,23 +121,23 @@ call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
 {_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
-0 spawn BIS_fnc_WL2_detectNewPlayers;
+call BIS_fnc_WL2_detectNewPlayers;
 ["server", TRUE] call BIS_fnc_WL2_updateSectorArrays;
-0 spawn BIS_fnc_WL2_targetSelectionHandleServer;
-0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
-0 spawn BIS_fnc_WL2_incomePayoff;
-0 spawn BIS_fnc_WL2_garbageCollector;
-0 spawn BIS_fnc_WL2_pCountMsg;
+call BIS_fnc_WL2_targetSelectionHandleServer;
+call BIS_fnc_WL2_zoneRestrictionHandleServer;
+call BIS_fnc_WL2_incomePayoff;
+call BIS_fnc_WL2_garbageCollector;
+call BIS_fnc_WL2_pCountMsg;
 {
-	_x spawn BIS_fnc_WL2_targetResetHandleServer;
-	_x spawn BIS_fnc_WL2_forfeitHandleServer;
+	_x call BIS_fnc_WL2_targetResetHandleServer;
+	_x call BIS_fnc_WL2_forfeitHandleServer;
 } forEach [west, east];
 
 setTimeMultiplier 3;
-0 spawn BIS_fnc_WL2_timeHandle;
+call BIS_fnc_WL2_timeHandle;
 
 {
-	_x spawn BIS_fnc_WL2_currentTargetHandle;
+	_x call BIS_fnc_WL2_currentTargetHandle;
 } forEach [west, east];
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];

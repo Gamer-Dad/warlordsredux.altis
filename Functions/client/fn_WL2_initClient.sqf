@@ -128,11 +128,11 @@ if !(isServer) then {
 	BIS_WL_playerSide call BIS_fnc_WL2_parsePurchaseList;
 };
 
-0 spawn BIS_fnc_WL2_zoneRestrictionHandleClient;
-0 spawn BIS_fnc_WL2_sectorCaptureStatus;
-0 spawn BIS_fnc_WL2_teammatesAvailability;
-0 spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
-0 spawn BIS_fnc_WL2_mapControlHandle;
+call BIS_fnc_WL2_zoneRestrictionHandleClient;
+call BIS_fnc_WL2_sectorCaptureStatus;
+call BIS_fnc_WL2_teammatesAvailability;
+call BIS_fnc_WL2_forceGroupIconsFunctionality;
+call BIS_fnc_WL2_mapControlHandle;
 
 BIS_WL_groupIconClickHandler = addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
 BIS_WL_groupIconEnterHandler = addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
@@ -181,11 +181,11 @@ player addEventHandler ["GetInMan", {
 }];
 
 if (side group player == west) then {
-	0 spawn BIS_fnc_MRTM_betty;
-	0 spawn BIS_fnc_MRTM_bettyRWR;
+	call BIS_fnc_MRTM_betty;
+	call BIS_fnc_MRTM_bettyRWR;
 } else {
-	0 spawn BIS_fnc_MRTM_rita;
-	0 spawn BIS_fnc_MRTM_ritaRWR;
+	call BIS_fnc_MRTM_rita;
+	call BIS_fnc_MRTM_ritaRWR;
 };
 
 player addEventHandler ["InventoryOpened",{
@@ -275,15 +275,15 @@ call BIS_fnc_WL2_refreshCurrentTargetData;
 call BIS_fnc_WL2_sceneDrawHandle;
 call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
-[player, "init"] spawn BIS_fnc_WL2_hintHandle;
-0 spawn BIS_fnc_WL2_underWaterCheck;
-0 spawn BIS_fnc_WL2_welcome;
+[player, "init"] call BIS_fnc_WL2_hintHandle;
+call BIS_fnc_WL2_underWaterCheck;
+call BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
-["OSD"] spawn BIS_fnc_WL2_setupUI;
-0 spawn BIS_fnc_WL2_timer;
-0 spawn BIS_fnc_WL2_cpBalance;
+["OSD"] call BIS_fnc_WL2_setupUI;
+call BIS_fnc_WL2_timer;
+call BIS_fnc_WL2_cpBalance;
 
 
 0 spawn {
@@ -291,7 +291,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	_t = WL_SYNCED_TIME + 10;
 	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || visibleMap};
 	if !(visibleMap) then {
-		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
+		[toUpper localize "STR_A3_WL_tip_voting", 5] call BIS_fnc_WL2_smoothText;
 		
 	};
 };
@@ -309,18 +309,18 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 sleep 0.1;
 
 "Initialized" call BIS_fnc_WL2_announcer;
-[toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
+[toUpper localize "STR_A3_WL_popup_init"] call BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
 
 sleep 0.1;
 
-0 spawn BIS_fnc_WL2_selectedTargetsHandle;
-0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
-0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
-0 spawn BIS_fnc_WL2_assetMapControl;
-0 spawn BIS_fnc_WL2_mapIcons;
-0 spawn BIS_fnc_WL2_cpUpdate;
-(side group player) spawn BIS_fnc_WL2_forfeitHandle;
+call BIS_fnc_WL2_selectedTargetsHandle;
+call BIS_fnc_WL2_targetSelectionHandleClient;
+call BIS_fnc_WL2_purchaseMenuOpeningHandle;
+call BIS_fnc_WL2_assetMapControl;
+call BIS_fnc_WL2_mapIcons;
+call BIS_fnc_WL2_cpUpdate;
+(side group player) call BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
 
