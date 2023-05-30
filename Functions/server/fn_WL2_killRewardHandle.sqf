@@ -40,8 +40,8 @@ if !(isNull _instigator) then {
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			if ((objectParent _responsibleLeader) != _responsibleLeader) then {
 				{
-					_l = (_unit getVariable ["assistList", []]) pushBackUnique _x;
-					_unit setVariable ["assistList", _l, true];
+					(_unit getVariable ["assistList", []]) pushBackUnique _x;
+					_unit setVariable ["assistList", (_unit getVariable ["assistList", []]), true];
 				} forEach (crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || (_x isEqualTo (driver (objectParent _responsibleLeader))) || (_x isEqualTo (commander (objectParent _responsibleLeader)))) && _x != _responsibleLeader};
 			};
 		};
