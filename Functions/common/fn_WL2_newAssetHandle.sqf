@@ -102,7 +102,7 @@ if (isPlayer _owner) then {
 			_asset spawn {
 				_t = WL_SYNCED_TIME + WL_ASSET_SCENE_ICON_DURATION;
 				waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t || !alive _this || vehicle player == _this};
-				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
+				BIS_WL_recentlyPurchasedAssets = (BIS_WL_recentlyPurchasedAssets deleteAt (BIS_WL_recentlyPurchasedAssets find _this));
 			};
 		};
 		
@@ -213,7 +213,7 @@ if (isPlayer _owner) then {
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
 			_ownedVehiclesVarID = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset]];
+			missionNamespace setVariable [_ownedVehiclesVarID, (WL_PLAYER_VEHS deleteAt (WL_PLAYER_VEHS find _asset))];
 			publicVariableServer _ownedVehiclesVarID;
 		}];
 
@@ -236,7 +236,7 @@ if (isPlayer _owner) then {
 
 			if (_result) exitWith {
 				_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0]];
+				missionNamespace setVariable [_ownedVehiclesVarName, (WL_PLAYER_VEHS deleteAt (WL_PLAYER_VEHS find (_this # 0)))];
 				publicVariableServer _ownedVehiclesVarName;
 				(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
 			};

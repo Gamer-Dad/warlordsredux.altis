@@ -53,7 +53,7 @@ _ctrl ctrlCommit 0;
 	UISleep 10;
 	ctrlDelete _ctrl;
 	
-	_var = ((uiNamespace getVariable ["activeControls", []]) - [_this]);
+	_var = ((uiNamespace getVariable ["activeControls", []]) deleteAt ((uiNamespace getVariable ["activeControls", []]) find _this));
 	uiNamespace setVariable ["activeControls", _var];
 };
 

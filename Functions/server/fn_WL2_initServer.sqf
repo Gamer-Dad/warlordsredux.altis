@@ -56,11 +56,11 @@ RESISTANCE setFriend [CIVILIAN, 1];
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
 	
-	BIS_WL_allWarlords = BIS_WL_allWarlords - [_unit];
+	BIS_WL_allWarlords = (BIS_WL_allWarlords deleteAt (BIS_WL_allWarlords find _unit));
 	_sideID = BIS_WL_competingSides find (side group _unit);
 	if (_sideID != -1) then {
 		_playerSideArr = BIS_WL_playerIDArr # _sideID;
-		_playerSideArr = _playerSideArr - [_uid];
+		_playerSideArr = (_playerSideArr deleteAt (_playerSideArr find _uid));
 		BIS_WL_playerIDArr set [_sideID, _playerSideArr];
 	};
 
@@ -76,7 +76,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	
 	{
 		if !(isPlayer _x) then {_x setDamage 1};
-	} forEach ((units group _unit) - [_unit]);
+	} forEach ((units group _unit) deleteAt ((units group _unit) find _unit));
 	
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];

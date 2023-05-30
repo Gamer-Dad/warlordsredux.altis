@@ -666,7 +666,7 @@ sleep random [0.5,1,2.5];
 	};
 		_ammosource setvariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	_checkOut = _veh getVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[]];
-	_checkOut = _checkOut - [_pylonNum];
+	_checkOut = (_checkOut deleteAt (_checkOut find _pylonNum));
 	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut,true];
 
 	systemchat format ["Successfully installed %1 %2 on %3!",_finalAmount,_magDispName,_pylonName];
@@ -1861,7 +1861,7 @@ GOM_fnc_aircraftLoadoutDeletePreset = {
 
 	_toDelete = _presets select {(_x select 1) isEqualTo lbText [2101,lbcursel 2101]};
 	if (count _toDelete isequalto 0)  exitWith {systemchat "Preset not found!";playsound "Simulation_Fatal"};
-	_presets = _presets - [_toDelete select 0];
+	_presets = (_presets deleteAt (_presets find (_toDelete select 0)));
 	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",_presets];
 		_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
 
