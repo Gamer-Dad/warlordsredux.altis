@@ -82,7 +82,6 @@ MRTM_EnableRWR = true;
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE];
 	publicVariableServer _varFormat;
-	//changed pos > 5 to 2
 	_pos = position player;
 	_confirmReposition = FALSE;
 	while {!_confirmReposition} do {
@@ -91,7 +90,7 @@ MRTM_EnableRWR = true;
 		enableRadio TRUE;
 		enableSentences TRUE;
 		{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
-		if (player distance _pos > 2) then {
+		if (player distance _pos > 1) then {
 			_confirmReposition = TRUE;
 		};
 	};
@@ -300,8 +299,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 0 spawn {
 	_t = WL_SYNCED_TIME + 10;
-	waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t && !isNull WL_TARGET_FRIENDLY};
-	sleep WL_TIMEOUT_LONG;
+	waitUntil {sleep 1; (serverTime > _t && !isNull WL_TARGET_FRIENDLY)};
+	sleep 5;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
 		sleep 10;
