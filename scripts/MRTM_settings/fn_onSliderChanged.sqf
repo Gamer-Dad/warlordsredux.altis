@@ -22,7 +22,7 @@ _varData = switch(_mode) do {
 
 missionNamespace setVariable [(_varData # 0), _value];
 ctrlSetText [(_varData # 1), str (missionNamespace getVariable (_varData # 0))];
-[] call MRTM_fnc_updateViewDistance;
+call MRTM_fnc_updateViewDistance;
 
 if(_mode isEqualTo 3) then {
 	setObjectViewDistance [MRTM_objects, 100];
