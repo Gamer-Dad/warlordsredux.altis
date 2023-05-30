@@ -49,7 +49,13 @@ WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
-0 spawn BIS_fnc_WL2_enviHandle;
+0 spawn {
+	while {!BIS_WL_missionEnd} do  {
+		_overcastPreset = random 1;
+		(7200 * timeMultiplier) setOvercast _overcastPreset;
+		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
+	};
+};
 
 "server" call BIS_fnc_WL2_varsInit;
 
@@ -117,8 +123,8 @@ BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
 
 if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
 
-call BIS_fnc_WL2_loadFactionClasses;
-call BIS_fnc_WL2_sectorsInitServer;
+0 spawn BIS_fnc_WL2_loadFactionClasses;
+0 spawn BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
 {_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
 0 spawn BIS_fnc_WL2_detectNewPlayers;
@@ -129,15 +135,15 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_garbageCollector;
 0 spawn BIS_fnc_WL2_pCountMsg;
 {
-	_x spawn BIS_fnc_WL2_targetResetHandleServer;
-	_x spawn BIS_fnc_WL2_forfeitHandleServer;
+	_x call BIS_fnc_WL2_targetResetHandleServer;
+	_x call BIS_fnc_WL2_forfeitHandleServer;
 } forEach [west, east];
 
 setTimeMultiplier 3;
 0 spawn BIS_fnc_WL2_timeHandle;
 
 {
-	_x spawn BIS_fnc_WL2_currentTargetHandle;
+	_x call BIS_fnc_WL2_currentTargetHandle;
 } forEach [west, east];
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
