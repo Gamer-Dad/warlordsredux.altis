@@ -78,13 +78,13 @@ addMissionEventHandler ["HandleDisconnect", {
 			missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 		};
 		_x call BIS_fnc_WL2_sub_deleteAsset;
-	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", getPlayerUID _uid]);
+	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	
 	{
 		if !(isPlayer _x) then {_x setDamage 1};
 	} forEach ((units group _unit) - [_unit]);
 	
-	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
+	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
 }];
 
 addMissionEventHandler ["MarkerCreated", {

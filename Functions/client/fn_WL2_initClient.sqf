@@ -109,7 +109,7 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 
 private _uidPlayer = getPlayerUID player;
-missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], []];
+missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], nil];
 
 
 if !(isServer) then {
