@@ -23,7 +23,7 @@ _boundToAnotherTeam = FALSE;
 
 if (isPlayer _warlord) then {
 	_playerVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID _warlord];
-	_boundToAnotherTeam = (getPlayerUID _warlord) in (missionNamespace getVariable format ["BIS_WL_boundTo%1", (BIS_WL_competingSides deleteAt (BIS_WL_competingSides find (side group _warlord))) # 0]);
+	_boundToAnotherTeam = (getPlayerUID _warlord) in (missionNamespace getVariable format ["BIS_WL_boundTo%1", (BIS_WL_competingSides - [side group _warlord]) # 0]);
 	missionNamespace setVariable [_playerVarID, !_boundToAnotherTeam];
 	(owner _warlord) publicVariableClient _playerVarID;
 	
@@ -39,7 +39,7 @@ if (isPlayer _warlord) then {
 		_warlord setVariable ["BIS_WL_ignore", TRUE, TRUE];   //think this code block is server side blocking team switching
 		_warlord enableSimulationGlobal FALSE;
 		_warlord hideObjectGlobal TRUE;
-		BIS_WL_allWarlords = (BIS_WL_allWarlords deleteAt (BIS_WL_allWarlords find _warlord));
+		BIS_WL_allWarlords = BIS_WL_allWarlords - [_warlord];
 	};    
 };
 

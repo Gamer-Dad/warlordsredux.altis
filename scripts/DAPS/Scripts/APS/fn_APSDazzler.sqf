@@ -37,7 +37,7 @@ while {alive _v} do {
 	if ((time) > _time) then {
 		{
 			if !(alive _x) then {
-				_reg = (_reg deleteAt (_reg find _x));
+				_reg = _reg - [_x];
 			;}
 		} forEach _reg;
 	};

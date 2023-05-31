@@ -24,7 +24,7 @@ _unit addEventHandler ["WeaponDisassembled", {
 	_arr = WL_PLAYER_VEHS - vehicles;
 	if (count _arr > 0) then {
 		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-		missionNamespace setVariable [_ownedVehiclesVarName, (WL_PLAYER_VEHS deleteAt (WL_PLAYER_VEHS find (_arr # 0)))];
+		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_arr # 0]];
 		publicVariableServer _ownedVehiclesVarName;
 	};
 }];

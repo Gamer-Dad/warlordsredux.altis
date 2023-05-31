@@ -3,7 +3,7 @@
 _potentialBases = BIS_WL_allSectors select {_x getVariable ["BIS_WL_canBeBase", FALSE]};
 private _firstBase = selectRandom ["BIS_WL_base1", "BIS_WL_base2"];
 missionNamespace setVariable [_firstBase, selectRandom _potentialBases, TRUE];
-_potentialBases = (_potentialBases deleteAt (_potentialBases find (missionNamespace getVariable _firstBase)));
+_potentialBases = _potentialBases - [missionNamespace getVariable _firstBase];
 
 private _tiers = [];
 private _checkedAgainst = [];
@@ -36,8 +36,8 @@ while {count _potentialBases == 0} do {
 	_tolerance = _tolerance + 1;
 };
 _potentialBases = selectRandom _potentialBases;
-_potentialBases = (_potentialBases deleteAt (_potentialBases find (_potentialBases # 0)));
-missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] deleteAt (["BIS_WL_base1", "BIS_WL_base2"] find _firstBase)) # 0, selectRandom _potentialBases, TRUE];
+_potentialBases = _potentialBases - [_potentialBases # 0];
+missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) # 0, selectRandom _potentialBases, TRUE];
 
 {
 	_side = BIS_WL_competingSides # _forEachIndex;

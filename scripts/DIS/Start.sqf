@@ -15,7 +15,7 @@ while {true} do {
 	_units = [] + vehicles;
 	{
 		if ((count (crew _x)) < 1) then {
-			_units = (_units deleteAt (_units find _x));
+			_units = _units - [_x];
 		};
 	} forEach _units;
 	_units = _units - disReg;

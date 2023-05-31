@@ -62,7 +62,7 @@ if (_ret) then {
 			if !(isNull (findDisplay 602)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr2"};
 		};
 		case "RemoveUnits": {
-			if (count ((groupSelectedUnits player) deleteAt ((groupSelectedUnits player) find player)) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
+			if (count ((groupSelectedUnits player) - [player]) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
 		};
 		case "RespawnVic": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};

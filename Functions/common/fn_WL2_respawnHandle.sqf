@@ -2,7 +2,7 @@
 
 params ["_newUnit", ["_corpse", objNull]];
 
-BIS_WL_allWarlords = (BIS_WL_allWarlords deleteAt (BIS_WL_allWarlords find _corpse));
+BIS_WL_allWarlords = BIS_WL_allWarlords - [_corpse];
 
 if (_newUnit getVariable ["BIS_WL_ignore", FALSE]) exitWith {};
 

@@ -46,7 +46,7 @@ _hDef = safezoneH;
 if (count BIS_onScreenMessagesVisible >= _maxLines) then {
 	BIS_onScreenMessagesBuffer pushBack _messageID;
 	waitUntil {count BIS_onScreenMessagesVisible < _maxLines && (BIS_onScreenMessagesBuffer find _messageID) == 0};
-	BIS_onScreenMessagesBuffer = (BIS_onScreenMessagesBuffer deleteAt (BIS_onScreenMessagesBuffer find _messageID));
+	BIS_onScreenMessagesBuffer = BIS_onScreenMessagesBuffer - [_messageID];
 };
 
 BIS_onScreenMessagesVisible pushBack _messageID;
@@ -58,7 +58,7 @@ if (count BIS_onScreenMessagesVisible > 1) then {
 		waitUntil {ctrlCommitted _ctrl || ctrlFade _ctrl > 0};
 		_ctrl ctrlSetPosition [_xDef, ((ctrlPosition _ctrl) # 1) + (_hDef / 25), _wDef, _hDef / 25];
 		_ctrl ctrlCommit 0.25;
-	} forEach (BIS_onScreenMessagesVisible deleteAt (BIS_onScreenMessagesVisible find _messageID));
+	} forEach (BIS_onScreenMessagesVisible - [_messageID]);
 };
 
 _box ctrlSetPosition [_xDef, _yDef + (_hDef / 4), _wDef, _hDef / 25];
@@ -131,5 +131,5 @@ _box ctrlCommit 1;
 
 waitUntil {ctrlCommitted _box};
 
-BIS_onScreenMessagesVisible = (BIS_onScreenMessagesVisible deleteAt (BIS_onScreenMessagesVisible find _messageID));
+BIS_onScreenMessagesVisible = BIS_onScreenMessagesVisible - [_messageID];
 ctrlDelete _box;

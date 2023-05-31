@@ -72,7 +72,7 @@ switch (_locality) do {
 	};
 	case "client": {
 		BIS_WL_playerSide = side group player;
-		BIS_WL_enemySide = (BIS_WL_competingSides deleteAt (BIS_WL_competingSides find BIS_WL_playerSide)) # 0;
+		BIS_WL_enemySide = (BIS_WL_competingSides - [BIS_WL_playerSide]) # 0;
 		BIS_WL_playersAlpha = (BIS_WL_initModule getVariable ["BIS_WL_playersAlpha", 50]) / 100;
 		BIS_WL_markersAlpha = (BIS_WL_initModule getVariable ["BIS_WL_markersAlpha", 50]) / 100;
 		BIS_WL_autonomous_limit = BIS_WL_initModule getVariable ["BIS_WL_autonomous_limit", 2];

@@ -65,7 +65,7 @@ class FSM
                         itemno = 3;
                         init = /*%FSM<STATEINIT""">*/"{" \n
                          "   if !(alive _x) then {" \n
-                         "   	_reg = (_reg deleteAt (_reg find _x));" \n
+                         "   	_reg = _reg - [_x];" \n
                          "	};" \n
                          "} forEach _reg;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;

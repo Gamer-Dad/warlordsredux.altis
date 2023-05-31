@@ -74,7 +74,7 @@ if (count _assetDetails > 0) then {
 	if (_id == 6) then {
 		_removeUnitsID = uiNamespace getVariable ["BIS_WL_removeUnitsListID", -1];
 		if (_removeUnitsID != -1) then {
-			_selectedCnt = count ((groupSelectedUnits player) deleteAt ((groupSelectedUnits player) find player));
+			_selectedCnt = count ((groupSelectedUnits player) - [player]);
 			if (_selectedCnt > 0) then {
 				_purchase_items lbSetText [_removeUnitsID, format [(localize "STR_A3_WL_feature_dismiss_selected") + " (%1)", _selectedCnt]];
 			} else {
