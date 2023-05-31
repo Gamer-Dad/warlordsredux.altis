@@ -96,7 +96,6 @@ class CfgFunctions {
 		class Server 
 		{
     		file = "Functions\server";
-    		class WL2_assetRelevanceCheck {};
 			class WL2_friendlyFireHandleServer {};
 			class WL2_changeSectorOwnership {};
 			class WL2_initServer {};
