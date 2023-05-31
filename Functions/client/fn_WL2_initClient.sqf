@@ -115,7 +115,7 @@ missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], ni
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
 };
-0 spawn BIS_fnc_WL2_sectorsInitClient;
+call BIS_fnc_WL2_sectorsInitClient;
 
 ["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
 
@@ -256,7 +256,7 @@ player addEventHandler ["Killed", {
 }];
 
 if (BIS_WL_arsenalEnabled) then {
-	0 spawn BIS_fnc_WL2_sub_arsenalSetup;
+	call BIS_fnc_WL2_sub_arsenalSetup;
 };
 
 0 spawn {
@@ -271,6 +271,12 @@ sleep 0.01;
 
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
 
+0 spawn BIS_fnc_WL2_refreshCurrentTargetData;
+0 spawn BIS_fnc_WL2_sceneDrawHandle;
+0 spawn BIS_fnc_WL2_targetResetHandle;
+player 0 spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
+[player, "init"] 0 spawn BIS_fnc_WL2_hintHandle;
+0 spawn BIS_fnc_WL2_underWaterCheck;
 0 spawn BIS_fnc_WL2_welcome;
 0 spawn BIS_fnc_WL2_underWaterCheck;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
@@ -319,8 +325,8 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
-(side group player) call BIS_fnc_WL2_forfeitHandle;
 0 spawn BIS_fnc_WL2_cpUpdate;
+(side group player) call BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
 
