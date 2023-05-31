@@ -93,8 +93,7 @@ if (isPlayer _owner) then {
 		} forEach allTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID _owner];
-		(WL_PLAYER_VEHS pushBack _asset);
-		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS];
+		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset]];
 		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
@@ -190,8 +189,7 @@ if (isPlayer _owner) then {
 				}];
 				_asset addEventHandler ["IncomingMissile", {
 					params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-					((_target getVariable "Incomming") pushBack _missile);
-					_target setVariable ["Incomming", (_target getVariable "Incomming"), [clientOwner, 2]];
+					_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile]), [clientOwner, 2]];
 				}];
 			};
 			if (typeOf _asset == "O_Plane_Fighter_02_F" || typeOf _asset == "O_Plane_CAS_02_dynamicLoadout_F") then {
@@ -207,8 +205,7 @@ if (isPlayer _owner) then {
 				}];
 				_asset addEventHandler ["IncomingMissile", {
 					params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-					((_target getVariable "Incomming") pushBack _missile);
-					_target setVariable ["Incomming", (_target getVariable "Incomming"), [clientOwner, 2]];
+					_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile]), [clientOwner, 2]];
 				}];
 			};
 		};
