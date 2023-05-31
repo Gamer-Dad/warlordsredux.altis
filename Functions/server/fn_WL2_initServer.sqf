@@ -135,15 +135,15 @@ if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
 0 spawn BIS_fnc_WL2_garbageCollector;
 0 spawn BIS_fnc_WL2_pCountMsg;
 {
-	_x call BIS_fnc_WL2_targetResetHandleServer;
-	_x call BIS_fnc_WL2_forfeitHandleServer;
+	_x spawn BIS_fnc_WL2_targetResetHandleServer;
+	_x spawn BIS_fnc_WL2_forfeitHandleServer;
 } forEach [west, east];
 
 setTimeMultiplier 3;
 0 spawn BIS_fnc_WL2_timeHandle;
 
 {
-	_x call BIS_fnc_WL2_currentTargetHandle;
+	_x spawn BIS_fnc_WL2_currentTargetHandle;
 } forEach [west, east];
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
