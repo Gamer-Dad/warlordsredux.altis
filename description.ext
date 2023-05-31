@@ -73,7 +73,6 @@ class CfgFunctions {
 			class WL2_requestPurchase {};
 			class WL2_sceneDrawHandle {};
 			class WL2_sectorMarkerUpdate {};
-			class WL2_sectorRevealHandle {};
 			class WL2_sectorSelectionHandle {};
 			class WL2_sectorsInitClient {};
 			class WL2_setOSDEvent {};
@@ -186,6 +185,7 @@ class CfgFunctions {
 			class WL2_timeHandle {ext = ".fsm"};
 			class WL2_currentTargetHandle {ext = ".fsm"};
 			class WL2_sectorStatusHandle {ext = ".fsm"};
+			class WL2_sectorRevealHandle {ext = ".fsm"};
 		};
 	};
 
