@@ -274,8 +274,8 @@ sleep 0.01;
 0 spawn BIS_fnc_WL2_refreshCurrentTargetData;
 0 spawn BIS_fnc_WL2_sceneDrawHandle;
 0 spawn BIS_fnc_WL2_targetResetHandle;
-player 0 spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
-[player, "init"] 0 spawn BIS_fnc_WL2_hintHandle;
+player spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
+[player, "init"] spawn BIS_fnc_WL2_hintHandle;
 0 spawn BIS_fnc_WL2_underWaterCheck;
 0 spawn BIS_fnc_WL2_welcome;
 
