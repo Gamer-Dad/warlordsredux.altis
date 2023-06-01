@@ -330,13 +330,15 @@ sleep 0.1;
 
 player setVariable ["arsenalOpened", false, true];
 
-player addaction [
-"10K CP", 
-{
-    _uid = getPlayerUID player;
-    [_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2]
-}
-];
+if ([0] call BIS_fnc_countdown < 28800) then {
+	player addaction [
+	"10K CP", 
+		{
+			_uid = getPlayerUID player;
+			[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2]
+		}
+	];
+};
 
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
