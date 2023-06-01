@@ -112,6 +112,7 @@ class CfgFunctions {
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_tablesSetUp {};
+			class WL2_detectNewPlayers {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -178,8 +179,6 @@ class CfgFunctions {
 			class WL2_targetResetHandle1 {ext = ".fsm"};
 			class WL2_targetResetHandle2 {ext = ".fsm"};
 			class WL2_targetResetHandle3 {ext = ".fsm"};
-			class WL2_detectNewPlayers {ext = ".fsm"};
-			class WL2_pCountMsg {ext = ".fsm"};
 			class WL2_garbageCollector {ext = ".fsm"};
 			class WL2_enviHandle {ext = ".fsm"};
 			class WL2_timeHandle {ext = ".fsm"};

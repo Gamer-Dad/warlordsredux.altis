@@ -127,7 +127,6 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_garbageCollector;
-0 spawn BIS_fnc_WL2_pCountMsg;
 {
 	_x spawn BIS_fnc_WL2_targetResetHandleServer;
 	_x spawn BIS_fnc_WL2_forfeitHandleServer;
