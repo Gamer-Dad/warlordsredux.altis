@@ -4,7 +4,7 @@
 
 waitUntil {!isNull player && isPlayer player};
 
-"client" spawn BIS_fnc_WL2_varsInit;
+"client" call BIS_fnc_WL2_varsInit;
 
 
 //this whole if statement stops side switching. Line 11 to 56 comment out
@@ -256,7 +256,7 @@ player addEventHandler ["Killed", {
 }];
 
 if (BIS_WL_arsenalEnabled) then {
-	0 spawn BIS_fnc_WL2_sub_arsenalSetup;
+	call BIS_fnc_WL2_sub_arsenalSetup;
 };
 
 0 spawn {
@@ -307,7 +307,7 @@ player spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
 	waitUntil {sleep 1; (serverTime > _t && !isNull WL_TARGET_FRIENDLY)};
 	sleep 5;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
-		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] spawn BIS_fnc_advHint;
+		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
 		sleep 10;
 	};
 };
