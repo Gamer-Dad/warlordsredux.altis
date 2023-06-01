@@ -342,15 +342,16 @@ if ([0] call BIS_fnc_countdown < 28800) then {
 
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
+	_exit = false;
 	_key = actionKeysNames "curatorInterface";
-	_key1 = actionKeysNames "tacticalView";
 	_keyName = (keyName (_this select 1));
-	if (_keyName == _key1) then {
-		true;
+	if ((_this # 1) == ((actionKeys "tacticalView") # 0)) then {
+		_exit = true;
 	};
 	if (_keyName == _key) then {
 		if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
-			true;
+			_exit = true;
 		};
 	};
+	_exit;
 }];
