@@ -4,7 +4,7 @@
 
 waitUntil {!isNull player && isPlayer player};
 
-"client" call BIS_fnc_WL2_varsInit;
+"client" spawn BIS_fnc_WL2_varsInit;
 
 
 //this whole if statement stops side switching. Line 11 to 56 comment out
@@ -113,11 +113,11 @@ missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], ni
 
 
 if !(isServer) then {
-	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
+	"setup" spawn BIS_fnc_WL2_handleRespawnMarkers;
 };
-call BIS_fnc_WL2_sectorsInitClient;
+0 spawn BIS_fnc_WL2_sectorsInitClient;
 
-["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
+["client", TRUE] spawn BIS_fnc_WL2_updateSectorArrays;
 
 private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
 {
@@ -256,7 +256,7 @@ player addEventHandler ["Killed", {
 }];
 
 if (BIS_WL_arsenalEnabled) then {
-	call BIS_fnc_WL2_sub_arsenalSetup;
+	spawn BIS_fnc_WL2_sub_arsenalSetup;
 };
 
 0 spawn {
@@ -265,7 +265,7 @@ if (BIS_WL_arsenalEnabled) then {
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 
-["client_init"] call BIS_fnc_endLoadingScreen;
+["client_init"] spawn BIS_fnc_endLoadingScreen;
 
 sleep 0.01;
 
@@ -307,14 +307,14 @@ player spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
 	waitUntil {sleep 1; (serverTime > _t && !isNull WL_TARGET_FRIENDLY)};
 	sleep 5;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
-		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
+		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] spawn BIS_fnc_advHint;
 		sleep 10;
 	};
 };
 
 sleep 0.1;
 
-"Initialized" call BIS_fnc_WL2_announcer;
+"Initialized" spawn BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
 
@@ -326,7 +326,7 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_cpUpdate;
-(side group player) call BIS_fnc_WL2_forfeitHandle;
+(side group player) spawn BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
 
