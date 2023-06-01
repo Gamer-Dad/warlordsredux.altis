@@ -32,7 +32,7 @@ missionNamespace setVariable ["serverTimer", 0, true];
 0 spawn BIS_fnc_WL2_tablesSetUp;
 
 
-["server_init"] call BIS_fnc_startLoadingScreen;
+["server_init"] spawn BIS_fnc_startLoadingScreen;
 
 {createCenter _x} forEach [WEST, EAST, RESISTANCE, CIVILIAN];
 
@@ -51,7 +51,7 @@ RESISTANCE setFriend [CIVILIAN, 1];
 
 0 spawn BIS_fnc_WL2_enviHandle;
 
-"server" call BIS_fnc_WL2_varsInit;
+"server" spawn BIS_fnc_WL2_varsInit;
 
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
@@ -71,7 +71,7 @@ addMissionEventHandler ["HandleDisconnect", {
 		if (typeOf _x == "O_Truck_03_medical_F") then {
 			missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 		};
-		_x call BIS_fnc_WL2_sub_deleteAsset;
+		_x spawn BIS_fnc_WL2_sub_deleteAsset;
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	
 	{
@@ -117,12 +117,12 @@ BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
 
 if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
 
-call BIS_fnc_WL2_loadFactionClasses;
-call BIS_fnc_WL2_sectorsInitServer;
-"setup" call BIS_fnc_WL2_handleRespawnMarkers;
-{_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
+0 spawn BIS_fnc_WL2_loadFactionClasses;
+0 spawn BIS_fnc_WL2_sectorsInitServer;
+"setup" spawn BIS_fnc_WL2_handleRespawnMarkers;
+{_x spawn BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
 0 spawn BIS_fnc_WL2_detectNewPlayers;
-["server", TRUE] call BIS_fnc_WL2_updateSectorArrays;
+["server", TRUE] spawn BIS_fnc_WL2_updateSectorArrays;
 0 spawn BIS_fnc_WL2_targetSelectionHandleServer;
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
