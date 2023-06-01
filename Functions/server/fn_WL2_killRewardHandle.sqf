@@ -40,7 +40,7 @@ if !(isNull _instigator) then {
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			if ((objectParent _responsibleLeader) != _responsibleLeader) then {
 				{
-					if (_x in (_unit getVariable ["assistList", []])) then {
+					if !(_x in (_unit getVariable ["assistList", []])) then {
 						_l = (_unit getVariable ["assistList", []]) + [_x];
 						_unit setVariable ["assistList", _l, true];
 					};
