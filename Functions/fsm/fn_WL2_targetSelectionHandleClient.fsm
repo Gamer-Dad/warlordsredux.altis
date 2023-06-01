@@ -111,7 +111,7 @@ class FSM
                 {
                         name = "Action";
                         itemno = 4;
-                        init = /*%FSM<STATEINIT""">*/"[""RequestMenu_close""] call BIS_fnc_WL2_setupUI;" \n
+                        init = /*%FSM<STATEINIT""">*/"[""RequestMenu_close""] spawn BIS_fnc_WL2_setupUI;" \n
                          "BIS_WL_currentSelection = 1;" \n
                          "" \n
                          "0 spawn {" \n

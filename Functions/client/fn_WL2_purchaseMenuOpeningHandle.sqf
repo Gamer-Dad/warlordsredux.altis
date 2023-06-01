@@ -6,7 +6,7 @@ WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 	_key = _this # 1;
 	if (_key in actionKeys "Gear" && !(missionNamespace getVariable ["BIS_WL_gearKeyPressed", FALSE]) && alive player && lifeState player != "INCAPACITATED" && !BIS_WL_penalized) then {
 		if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
-			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+			["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 		} else {
 			BIS_WL_gearKeyPressed = TRUE;
 			0 spawn {
@@ -29,7 +29,7 @@ WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 				} else {
 					if (BIS_WL_gearKeyPressed) then {
 						if (BIS_WL_currentSelection in [WL_ID_SELECTION_NONE, WL_ID_SELECTION_VOTED]) then {
-							["RequestMenu_open"] call BIS_fnc_WL2_setupUI;
+							["RequestMenu_open"] spawn BIS_fnc_WL2_setupUI;
 						} else {
 							playSound "AddItemFailed";
 							_action = switch (BIS_WL_currentSelection) do {

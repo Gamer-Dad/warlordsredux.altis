@@ -156,7 +156,7 @@ switch (_displayClass) do {
 		_myDisplay displayAddEventHandler ["KeyDown", {
 			_key = _this # 1;
 			if (_key in actionKeys "Gear" && !BIS_WL_gearKeyPressed) then {
-				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+				["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 				TRUE
 			};
 		}];
@@ -164,7 +164,7 @@ switch (_displayClass) do {
 		_myDisplay spawn {
 			disableSerialization;
 			waitUntil {sleep WL_TIMEOUT_SHORT; lifeState player == "INCAPACITATED" || isNull _this};
-			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+			["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 		};
 		
 		_myDisplay displayAddEventHandler ["KeyUp", {
@@ -372,15 +372,15 @@ switch (_displayClass) do {
 				_offset = call compile _offset;
 				_requirements = call compile _requirements;
 				switch (_className) do {
-					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
-					case "LastLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI; [player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
+					case "LastLoadout": {["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI; [player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
-					case "SavedLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "SavedLoadout": {["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI; [player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill", 0, [], 0] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
-					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "TargetReset": {["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "forfeitVote": {0 spawn BIS_fnc_WL2_orderForfeit};
 					case "LockVehicles": {
 						{
