@@ -113,11 +113,11 @@ missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], ni
 
 
 if !(isServer) then {
-	"setup" spawn BIS_fnc_WL2_handleRespawnMarkers;
+	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
 };
-0 spawn BIS_fnc_WL2_sectorsInitClient;
+call BIS_fnc_WL2_sectorsInitClient;
 
-["client", TRUE] spawn BIS_fnc_WL2_updateSectorArrays;
+["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
 
 private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
 {
@@ -256,7 +256,7 @@ player addEventHandler ["Killed", {
 }];
 
 if (BIS_WL_arsenalEnabled) then {
-	spawn BIS_fnc_WL2_sub_arsenalSetup;
+	0 spawn BIS_fnc_WL2_sub_arsenalSetup;
 };
 
 0 spawn {
@@ -265,16 +265,16 @@ if (BIS_WL_arsenalEnabled) then {
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 
-["client_init"] spawn BIS_fnc_endLoadingScreen;
+["client_init"] call BIS_fnc_endLoadingScreen;
 
 sleep 0.01;
 
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
 
-0 spawn BIS_fnc_WL2_refreshCurrentTargetData;
-0 spawn BIS_fnc_WL2_sceneDrawHandle;
-0 spawn BIS_fnc_WL2_targetResetHandle;
-player spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
+call BIS_fnc_WL2_refreshCurrentTargetData;
+call BIS_fnc_WL2_sceneDrawHandle;
+call BIS_fnc_WL2_targetResetHandle;
+player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
 0 spawn BIS_fnc_WL2_underWaterCheck;
 0 spawn BIS_fnc_WL2_welcome;
@@ -314,7 +314,7 @@ player spawn BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 sleep 0.1;
 
-"Initialized" spawn BIS_fnc_WL2_announcer;
+"Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
 
