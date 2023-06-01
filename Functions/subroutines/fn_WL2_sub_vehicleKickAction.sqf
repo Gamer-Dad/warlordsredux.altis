@@ -6,7 +6,7 @@ _asset addAction [
 		_this params ["_asset", "_caller", "_actionID"];
 		{
 			moveOut _x;
-		} forEach ((crew _asset) select {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group player)});
+		} forEach ((crew _asset) select {(_x != player) && (_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group player)});
 	},
 	[],
 	-95,
