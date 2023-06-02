@@ -42,8 +42,8 @@ item37[] = {"__isNull",4,218,-670.973022,131.521332,-580.973022,181.521332,0.000
 item38[] = {"isNull",4,218,-41.329163,-210.774445,48.670837,-160.774445,0.000000,"isNull"};
 item39[] = {"Exit_1",1,250,-39.805969,-287.220673,50.194061,-237.220657,0.000000,"Exit"};
 item40[] = {"True_3",2,250,-972.110229,165.253815,-882.110229,215.253815,0.000000,"True"};
-item41[] = {"Uav",4,218,-542.819885,-116.910919,-452.819885,-66.910919,2.000000,"Uav"};
-item42[] = {"Plane",4,218,-626.752075,-77.455597,-536.752075,-27.455597,3.000000,"Plane"};
+item41[] = {"Uav",4,218,-542.819885,-116.910919,-452.819885,-66.910919,3.000000,"Uav"};
+item42[] = {"Plane",4,218,-626.752075,-77.455597,-536.752075,-27.455597,2.000000,"Plane"};
 item43[] = {"Darter",4,218,-683.489441,-23.208344,-593.489441,26.791656,1.000000,"Darter"};
 item44[] = {"Runway",4,218,-748.316406,98.095184,-658.316345,148.095184,0.000000,"Runway"};
 item45[] = {"No_runway",4,218,-736.965332,29.890045,-646.965271,79.890045,0.000000,"No runway"};
@@ -54,8 +54,8 @@ item49[] = {"Action_17",2,250,-690.433228,-140.008423,-600.433228,-90.008423,0.0
 item50[] = {"Action_18",2,250,-582.488586,-183.549133,-492.488586,-133.549133,0.000000,"Action"};
 item51[] = {"Runway",4,218,-695.624634,-220.222656,-605.624573,-170.222656,0.000000,"Runway"};
 item52[] = {"No_runway",4,218,-586.005676,-271.331329,-496.005615,-221.331329,0.000000,"No runway"};
-item53[] = {"Action_19",2,4346,-673.003906,-321.879517,-583.003906,-271.879486,0.000000,"Action"};
-item54[] = {"Action_20",2,250,-784.538879,-265.303864,-694.538879,-215.303864,0.000000,"Action"};
+item53[] = {"Action_19",2,250,-673.003906,-321.879517,-583.003906,-271.879486,0.000000,"Action"};
+item54[] = {"Action_20",2,4346,-784.538879,-265.303864,-694.538879,-215.303864,0.000000,"Action"};
 item55[] = {"__isNull",4,218,-968.565430,-127.890297,-878.565430,-77.890305,0.000000,"!isNull"};
 item56[] = {"Action_21",2,250,-983.688416,352.438324,-893.688416,402.438324,0.000000,"Action"};
 item57[] = {"MLRS",4,218,-825.472229,444.320679,-735.472229,494.320679,1.000000,"MLRS"};
@@ -164,8 +164,8 @@ link89[] = {66,68};
 link90[] = {67,68};
 link91[] = {68,14};
 link92[] = {69,14};
-globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1447.087646,44.308960,787.502075,-393.110260,1622,1284,1};
-window[] = {2,-1,-1,-1,-1,1319,260,2180,260,3,1640};
+globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1256.325073,272.760864,723.235474,-487.212494,1622,1284,1};
+window[] = {2,-1,-1,-1,-1,1371,312,2232,312,3,1640};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -742,26 +742,26 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
-                                /*%FSM<LINK "Plane">*/
-                                class Plane
-                                {
-                                        itemno = 42;
-                                        priority = 3.000000;
-                                        to="Action_17";
-                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_isPlane = (toLower getText (configFile >> ""CfgVehicles"" >> _class >> ""simulation"")) in [""airplanex"", ""airplane""] && !(_class isKindOf ""VTOL_Base_F"");" \n
-                                         "_isPlane;"/*%FSM</CONDITION""">*/;
-                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-                                };
-                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "Uav">*/
                                 class Uav
                                 {
                                         itemno = 41;
-                                        priority = 2.000000;
+                                        priority = 3.000000;
                                         to="Action_18";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(_class == ""B_UAV_02_dynamicLoadout_F"" || _class == ""B_T_UAV_03_dynamicLoadout_F"" || _class == ""B_UAV_05_F"" || _class == ""O_UAV_02_dynamicLoadout_F"" || _class == ""O_T_UAV_04_CAS_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Plane">*/
+                                class Plane
+                                {
+                                        itemno = 42;
+                                        priority = 2.000000;
+                                        to="Action_17";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_isPlane = (toLower getText (configFile >> ""CfgVehicles"" >> _class >> ""simulation"")) in [""airplanex"", ""airplane""] && !(_class isKindOf ""VTOL_Base_F"");" \n
+                                         "_isPlane;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -1037,8 +1037,8 @@ class FSM
                          "_asset setFuel 1;" \n
                          "createVehicleCrew _asset;" \n
                          "_side = side _sender; " \n
-                         "_group = createGroup _side;" \n
-                         "(crew _asset) joinSilent _group;" \n
+                         "_groupA = createGroup _side;" \n
+                         "(crew _asset) joinSilent _groupA;" \n
                          "(effectiveCommander _asset) setSkill 0.2;" \n
                          "(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
                          "_asset enableWeaponDisassembly false;"/*%FSM</STATEINIT""">*/;
@@ -1184,9 +1184,9 @@ class FSM
                          "_asset setFuel 1;" \n
                          "" \n
                          "createVehicleCrew _asset;" \n
-                         "_side = side _sender; " \n
-                         "_group = createGroup _side;" \n
-                         "(crew _asset) joinSilent _group;" \n
+                         "_side = side group _sender;" \n
+                         "_groupA = createGroup _side;" \n
+                         "(crew _asset) joinSilent _groupA;" \n
                          "(effectiveCommander _asset) setSkill 0.2;" \n
                          "(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
                          "_asset enableWeaponDisassembly false;"/*%FSM</STATEINIT""">*/;
@@ -1268,9 +1268,9 @@ class FSM
                          "_asset setFuel 1;" \n
                          "" \n
                          "createVehicleCrew _asset;" \n
-                         "_side = side _sender; " \n
-                         "_group = createGroup _side;" \n
-                         "(crew _asset) joinSilent _group;" \n
+                         "_side = side group _sender;" \n
+                         "_groupA = createGroup _side;" \n
+                         "(crew _asset) joinSilent _groupA;" \n
                          "(effectiveCommander _asset) setSkill 0.2;" \n
                          "(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
                          "_asset enableWeaponDisassembly false;"/*%FSM</STATEINIT""">*/;
