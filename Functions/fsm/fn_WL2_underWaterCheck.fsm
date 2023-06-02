@@ -45,10 +45,10 @@ class FSM
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"{" \n
                          "	_pos = getPosASLW _x;" \n
-                         "	if (_pos select 2 < -2.5) then {" \n
+                         "	if (_pos select 2 < -2.8) then {" \n
                          "		[_x, _pos] spawn {" \n
-                         "			sleep 2;" \n
-                         "			if ((_this # 1) select 2 < -2.5) then {" \n
+                         "			sleep 3;" \n
+                         "			if ((_this # 1) select 2 < -2.8) then {" \n
                          "				(_this # 0) setDamage 1;" \n
                          "			};" \n
                          "		};" \n
