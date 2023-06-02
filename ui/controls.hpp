@@ -739,6 +739,7 @@ class MRTM_settingsMenu
 		{
 			idc = 2801;
 			action = "if (player getVariable 'MRTM_3rdPersonDisabled') then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]];}";
+			tooltip = "Recieve +50% CP bonus for killing enemies";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -747,7 +748,8 @@ class MRTM_settingsMenu
 		class MRTMOtherButton2: RscCheckboxMRTM
 		{
 			idc = 2802;
-			action = "if (MRTM_showDrones) then {MRTM_showDrones = false} else {MRTM_showDrones = true}";
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -831,7 +833,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText2: RscStructuredTextMRTM
 		{
 			idc = 1118;
-			text = "Empty";
+			text = "";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
