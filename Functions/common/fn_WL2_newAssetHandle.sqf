@@ -2,11 +2,6 @@
 
 params ["_owner", "_asset", ["_assembled", FALSE]];
 
-_asset addEventHandler ["Killed", {
-	params ["_asset"];
-	_asset setVariable ["BIS_WL_deleteAt", WL_SYNCED_TIME + (if (_asset isKindOf "Man") then {BIS_WL_corpseRemovalTimeout} else {BIS_WL_wreckRemovalTimeout}), !isServer];
-}];
-
 if (isNull _owner && isServer) then {
 	_asset setSkill (0.2 + random 0.7);
 };
