@@ -17,7 +17,7 @@ item12[] = {"Option_2",4,218,3.710480,794.104980,93.710480,844.104980,0.000000,"
 item13[] = {"Action_2",2,250,-108.359306,883.982727,-18.359283,933.982727,0.000000,"Action"};
 item14[] = {"Action_3",2,250,5.929657,880.653870,95.929672,930.653870,0.000000,"Action"};
 item15[] = {"True",8,218,-162.807434,978.193481,-72.807434,1028.193359,0.000000,"True"};
-item16[] = {"Action_4",2,250,-162.807281,1050.020020,-72.807281,1100.020020,0.000000,"Action"};
+item16[] = {"Action_4",2,4346,-162.807281,1050.020020,-72.807281,1100.020020,0.000000,"Action"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
@@ -38,8 +38,8 @@ link16[] = {13,15};
 link17[] = {14,15};
 link18[] = {15,16};
 link19[] = {16,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-550.047058,244.415710,1418.392334,406.398193,1008,1284,1};
-window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1026};
+globals[] = {0.000000,0,0,0,0,640,480,1,24,6316128,1,-599.700989,194.761780,1334.846680,322.851318,1008,1284,1};
+window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1026};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -273,7 +273,8 @@ class FSM
                 {
                         name = "Action_4";
                         itemno = 16;
-                        init = /*%FSM<STATEINIT""">*/"[""client""] call BIS_fnc_WL2_updateSectorArrays;" \n
+                        init = /*%FSM<STATEINIT""">*/"_owner = _sector getVariable ""BIS_WL_owner"";" \n
+                         "[""client""] call BIS_fnc_WL2_updateSectorArrays;" \n
                          "[_sector, _owner] call BIS_fnc_WL2_sectorMarkerUpdate;" \n
                          "private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);" \n
                          "{" \n
@@ -286,7 +287,7 @@ class FSM
                          "	};" \n
                          "	[toUpper format [localize ""STR_A3_WL_popup_sector_seized"", _sector getVariable ""BIS_WL_name"", _owner call BIS_fnc_WL2_sideToFaction]] spawn BIS_fnc_WL2_smoothText;" \n
                          "};" \n
-                         "_prevOwner = _owner;"/*%FSM</STATEINIT""">*/;
+                         "_prevOwner = (_sector getVariable ""BIS_WL_owner"");"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
