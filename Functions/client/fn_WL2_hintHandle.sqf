@@ -8,7 +8,7 @@ switch (_event) do {
 			_varName = format ["BIS_WL_showHint_%1", _x];
 			
 			if (isNil _varName) then {
-				missionNamespace setVariable [_varName, false]
+				missionNamespace setVariable [_varName, false, clientOwner]
 			};
 		} forEach ["assembly", "maintenance", "targetResetVoting", "forfeitVoting"];
 		
@@ -84,7 +84,7 @@ switch (_event) do {
 			[_varName, _show] spawn {
 				params ["_varName", "_show"];
 				while {!BIS_WL_missionEnd} do {
-					missionNamespace setVariable [_varName, call _show];
+					missionNamespace setVariable [_varName, call _show, clientOwner];
 					if (_varName == "BIS_WL_showHint_maintenance") then {
 						[false] call BIS_fnc_WL2_refreshOSD;
 					};

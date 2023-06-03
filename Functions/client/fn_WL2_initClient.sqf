@@ -79,7 +79,7 @@ MRTM_EnableRWR = true;
 
 0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
-	missionNamespace setVariable [_varFormat, FALSE];
+	missionNamespace setVariable [_varFormat, FALSE, [2, clientOwner]];
 	publicVariableServer _varFormat;
 	_pos = position player;
 	_confirmReposition = FALSE;
@@ -94,8 +94,7 @@ MRTM_EnableRWR = true;
 		};
 	};
 
-	missionNamespace setVariable [_varFormat, TRUE];
-	publicVariableServer _varFormat;
+	missionNamespace setVariable [_varFormat, TRUE, [2, clientOwner]];
 };
 
 
@@ -108,7 +107,7 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 
 private _uidPlayer = getPlayerUID player;
-missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], [], [2, clientOwner]];
+missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], []];
 
 
 if !(isServer) then {

@@ -88,7 +88,6 @@ if (isPlayer _owner) then {
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID _owner];
 		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset], [2, clientOwner]];
-		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			BIS_WL_recentlyPurchasedAssets pushBack _asset;
@@ -157,7 +156,7 @@ if (isPlayer _owner) then {
 			};
 
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
-				_asset setVariable ["dazzlerActivated", false, true];
+				_asset setVariable ["dazzlerActivated", false, [2, clientOwner]];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
 
@@ -208,7 +207,6 @@ if (isPlayer _owner) then {
 			params ["_asset"];
 			_ownedVehiclesVarID = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
 			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset], [2, clientOwner]];
-			publicVariableServer _ownedVehiclesVarID;
 		}];
 
 		_asset setVariable ["assistList", [], true];
@@ -231,7 +229,6 @@ if (isPlayer _owner) then {
 			if (_result) exitWith {
 				_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
 				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0], [2, clientOwner]];
-				publicVariableServer _ownedVehiclesVarName;
 				(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
 			};
 		},
