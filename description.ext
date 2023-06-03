@@ -409,8 +409,8 @@ class CfgHints
 		{
 			displayName = "Open Warlords Menu";
 			displayNameShort = "";
-			description = "%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.";
-			tip = "Hold %11";
+			description = $STR_A3_WL_Menu_Hint;
+			tip = $STR_A3_WL_Menu_Hint_01;
 			arguments[] =
 			{
 				{{"Gear"}},

@@ -930,6 +930,38 @@
             <Chinesesimp>禁用CIWS</Chinesesimp>
             <Chinese>禁用CIWS</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_Menu_Hint">
+            <Original>%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.</Original>
+            <English>%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.</English>
+            <Czech>%3%12%4 %1%2 Objednejte si vozidla, letadla, obranu, SAMS, AAA ...%1%2 Poskytne vám také přístup ke skenování sektorů, resetování sektorů a dalším strategickým věcem.%1%2 Zde může také přenášet CP.</Czech>
+            <French>%3%12%4 %1%2 Commandez des véhicules, des avions, des défenses, des SAMS, des AAA ...%1%2 Cela vous donnera également accès aux analyses de secteur, à la réinitialisation du secteur et à d'autres éléments stratégiques.%1%2 Ici, vous peut également transférer CP.</French>
+            <German>%3%12%4 %1%2 Bestellen Sie Fahrzeuge, Flugzeuge, Verteidigungsanlagen, SAMS, AAA ...%1%2 Sie erhalten außerdem Zugriff auf Sektorscans, Sektor-Resets und andere strategische Dinge.%1%2 Hier sind Sie kann auch CP übertragen.</German>
+            <Italian>%3%12%4 %1%2 Ordina veicoli, velivoli, difese, SAMS, AAA ...%1%2 Ti darà anche accesso alle scansioni del settore, al ripristino del settore e ad altre cose strategiche.%1%2 Ecco a te può anche trasferire CP.</Italian>
+            <Polish>%3%12%4 %1%2 Zamów pojazdy, samoloty, obronę, SAMS, AAA ...%1%2 Daje to również dostęp do skanowania sektorów, resetowania sektorów i innych strategicznych rzeczy.%1%2 Tutaj może również przenosić CP.</Polish>
+            <Portuguese>%3%12%4 %1%2 Encomendar veículos, aeronaves, defesas, SAMS, AAA...%1%2 Também lhe dará acesso a varreduras de setor, reinicialização de setor e outras coisas estratégicas.%1%2 Aqui você também pode transferir CP.</Portuguese>
+            <Russian>%3%12%4 %1%2 Заказ транспортных средств, самолетов, средств защиты, BPK, ПВО...%1%2 Это также даст вам доступ к сканированию секторов, сбросу секторов и другим стратегическим вещам.%1%2 Здесь вы также может передавать CP.</Russian>
+            <Spanish>%3%12%4 %1%2 Solicite vehículos, aeronaves, defensas, SAMS, AAA ...%1%2 También le dará acceso a escaneos de sector, restablecimiento de sector y otras cosas estratégicas.%1%2 Aquí usted también puede transferir CP.</Spanish>
+            <Korean>%3%12%4 %1%2 차량, 항공기, 방어, SAMS, AAA ...%1%2 또한 섹터 스캔, 섹터 재설정 및 기타 전략적 요소에 대한 액세스 권한을 제공합니다.%1%2 여기 있습니다 CP도 양도할 수 있습니다.</Korean>
+            <Japanese>%3%12%4 %1%2 車両、航空機、防衛、SAMS、AAA ...%1%2 セクター スキャン、セクター リセット、その他の戦略的な機能にもアクセスできます。%1%2 ここで CPも移行できる。</Japanese>
+            <Chinesesimp>%3%12%4 %1%2 订购车辆、飞机、防御系统、SAMS、AAA ...%1%2 它还会让您访问扇区扫描、扇区重置和其他战略内容。%1%2 给您 还能转CP。</Chinesesimp>
+            <Chinese>%3%12%4 %1%2 訂購車輛、飛機、防禦系統、SAMS、AAA ...%1%2 它還會讓您訪問扇區掃描、扇區重置和其他戰略內容。%1%2 給您 還能轉CP。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_Menu_Hint_01">
+            <Original>Hold %11</Original>
+            <English>Hold %11</English>
+            <Czech>Podržte %11</Czech>
+            <French>Maintenez %11</French>
+            <German>Halten Sie %11 gedrückt</German>
+            <Italian>Mantieni %11</Italian>
+            <Polish>Przytrzymaj %11</Polish>
+            <Portuguese>Segure % 11</Portuguese>
+            <Russian>Удерживать %11</Russian>
+            <Spanish>Mantener %11</Spanish>
+            <Korean>%11 보류</Korean>
+            <Japanese>%11を押し続ける</Japanese>
+            <Chinesesimp>按住 %11</Chinesesimp>
+            <Chinese>按住 %11</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>
