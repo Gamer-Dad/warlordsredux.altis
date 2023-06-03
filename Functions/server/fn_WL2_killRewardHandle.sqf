@@ -35,7 +35,7 @@ if !(isNull _instigator) then {
 				_killReward = (round (_killReward * 1.5));
 			};
 			_uid = getPlayerUID _responsibleLeader;
-			[_unit, _killReward, false, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
+			[_unit, _killReward, false, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			_unit setVariable ["BIS_WL_killer", _responsibleLeader, true];
 			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			if ((objectParent _responsibleLeader) != _responsibleLeader) then {
@@ -67,7 +67,7 @@ if (_cond > 0) then {
 	{
 		_uid = getPlayerUID _x;
 		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward, true, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+		[_unit, _killReward, true, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
 	_unit setVariable ["BIS_WL_killer", nil, true];

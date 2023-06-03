@@ -88,7 +88,7 @@ addMissionEventHandler ["MarkerCreated", {
 }];
 
 addMissionEventHandler ["EntityKilled", {
-	_this spawn BIS_fnc_WL2_killRewardHandle;
+	_this call BIS_fnc_WL2_killRewardHandle;
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
 
 	if ((typeOf (_this # 0)) == "B_Truck_01_medical_F") then {
