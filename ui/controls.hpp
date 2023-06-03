@@ -1030,6 +1030,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1132;
 			text = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			onSliderPosChanged = "[7, _this select 1] call MRTM_fnc_onSliderChanged;";
 			toolTip = "Alarm warning volume";
 			x = 0.536063 * safezoneW + safezoneX;
