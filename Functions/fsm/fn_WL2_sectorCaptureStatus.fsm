@@ -5,8 +5,8 @@ item0[] = {"Init",0,250,-88.914063,152.162170,1.085938,202.162170,0.000000,"Init
 item1[] = {"True",8,218,-88.430023,232.514282,1.569977,282.514282,0.000000,"True"};
 item2[] = {"Loop",2,250,-90.850174,306.573853,-0.850174,356.573853,0.000000,"Loop"};
 item3[] = {"Start",4,218,-157.020096,382.424194,-67.020096,432.424194,0.000000,"Start"};
-item4[] = {"Wait",4,218,-26.471985,384.021637,63.528015,434.021637,1.000000,"Wait"};
-item5[] = {"Action",2,4346,54.315887,304.976318,144.315903,354.976318,0.000000,"Action"};
+item4[] = {"Wait",4,4314,-26.471985,384.021637,63.528015,434.021637,1.000000,"Wait"};
+item5[] = {"Action",2,250,54.315887,304.976318,144.315903,354.976318,0.000000,"Action"};
 item6[] = {"True",2,250,-165.322113,456.481232,-75.322083,506.481140,0.000000,"True"};
 item7[] = {"Check_2",4,218,-57.765945,546.465637,32.234039,596.465637,0.000000,"Check 2"};
 item8[] = {"Check_1",4,218,-260.098694,546.465698,-170.098694,596.465698,0.000000,"Check 1"};
@@ -36,8 +36,8 @@ link16[] = {11,14};
 link17[] = {12,13};
 link18[] = {13,1};
 link19[] = {14,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,16,6316128,1,-496.767059,207.670044,753.032532,69.361206,1323,1284,1};
-window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1341};
+globals[] = {0.000000,0,0,0,0,640,480,1,16,6316128,1,-608.350769,244.018066,814.856384,-12.385895,1323,1284,1};
+window[] = {2,-1,-1,-32000,-32000,1241,182,2102,182,3,1341};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -88,7 +88,7 @@ class FSM
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_sectorsToCheck = +(BIS_WL_sectorsArray # 3);" \n
                                          "_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable ""objectAreaComplete"")};" \n
-                                         "(_visitedSectorID == -1);"/*%FSM</CONDITION""">*/;
+                                         "(_visitedSectorID == -1) || (!(alive player));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -155,7 +155,7 @@ class FSM
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_sectorsToCheck = +(BIS_WL_sectorsArray # 3);" \n
                                          "_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable ""objectAreaComplete"")};" \n
-                                         "(_visitedSectorID == -1);"/*%FSM</CONDITION""">*/;
+                                         "(_visitedSectorID == -1) || (!(alive player));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -181,7 +181,9 @@ class FSM
                                         priority = 0.000000;
                                         to="Action_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_visitedSector = _sectorsToCheck # _visitedSectorID;" \n
+                                        condition=/*%FSM<CONDITION""">*/"_sectorsToCheck = +(BIS_WL_sectorsArray # 3);" \n
+                                         "_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable ""objectAreaComplete"")};" \n
+                                         "_visitedSector = _sectorsToCheck # _visitedSectorID;" \n
                                          "_info = _visitedSector getVariable [""BIS_WL_seizingInfo"", []];" \n
                                          "(_previousSeizingInfo isEqualTo _info);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -195,7 +197,10 @@ class FSM
                 {
                         name = "Action_1";
                         itemno = 9;
-                        init = /*%FSM<STATEINIT""">*/"if ((_visitedSector getVariable ""BIS_WL_owner"") != BIS_WL_playerSide && count _info == 0 && (_visitedSector in (BIS_WL_sectorsArray # 7)) && _visitedSector != (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide])) then {" \n
+                        init = /*%FSM<STATEINIT""">*/"_sectorsToCheck = +(BIS_WL_sectorsArray # 3);" \n
+                         "_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable ""objectAreaComplete"")};" \n
+                         "_visitedSector = _sectorsToCheck # _visitedSectorID;" \n
+                         "if ((_visitedSector getVariable ""BIS_WL_owner"") != BIS_WL_playerSide && count _info == 0 && (_visitedSector in (BIS_WL_sectorsArray # 7)) && _visitedSector != (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide])) then {" \n
                          "	[""seizingDisabled"", [_visitedSector getVariable ""BIS_WL_owner""]] spawn BIS_fnc_WL2_setOSDEvent;" \n
                          "	_visitedSector setVariable [""BIS_WL_seizingInfo"", [""seizingDisabled""]];" \n
                          "	_previousSeizingInfo = [""seizingDisabled""];" \n
@@ -235,7 +240,7 @@ class FSM
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_sectorsToCheck = +(BIS_WL_sectorsArray # 3);" \n
                                          "_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable ""objectAreaComplete"")};" \n
-                                         "(_visitedSectorID == -1);"/*%FSM</CONDITION""">*/;
+                                         "(_visitedSectorID == -1) || (!(alive player));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
