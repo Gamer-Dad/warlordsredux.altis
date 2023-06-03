@@ -87,7 +87,7 @@ if (isPlayer _owner) then {
 		} forEach allTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID _owner];
-		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset]];
+		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset], [2, clientOwner]];
 		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
@@ -207,7 +207,7 @@ if (isPlayer _owner) then {
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
 			_ownedVehiclesVarID = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset]];
+			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset], [2, clientOwner]];
 			publicVariableServer _ownedVehiclesVarID;
 		}];
 
@@ -230,7 +230,7 @@ if (isPlayer _owner) then {
 
 			if (_result) exitWith {
 				_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0]];
+				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0], [2, clientOwner]];
 				publicVariableServer _ownedVehiclesVarName;
 				(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
 			};
