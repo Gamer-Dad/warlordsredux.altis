@@ -9,6 +9,7 @@ if (isNull _owner && isServer) then {
 if (isPlayer _owner) then {
 	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), true];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
+	_asset setOwner clientOwner;
 	_asset spawn DAPS_fnc_RegisterVehicle;
 
 	if (_asset isKindOf "Man") then {
