@@ -80,7 +80,6 @@ MRTM_EnableRWR = true;
 0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
 	missionNamespace setVariable [_varFormat, FALSE, [2, clientOwner]];
-	publicVariableServer _varFormat;
 	_pos = position player;
 	_confirmReposition = FALSE;
 	while {!_confirmReposition} do {
