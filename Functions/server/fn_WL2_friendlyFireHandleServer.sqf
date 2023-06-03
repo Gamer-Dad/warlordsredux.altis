@@ -19,8 +19,7 @@ if (_unit isKindOf "Man") then {
 				if (_friendlyKillTimestampsCnt >= WL_FRIENDLY_FIRE_THRESHOLD) then {
 					_friendlyKillTimestampsCnt = _friendlyKillTimestampsCnt - WL_FRIENDLY_FIRE_THRESHOLD + 1;
 					_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
-					missionNamespace setVariable [_varName, WL_SYNCED_TIME + (WL_FRIENDLY_FIRE_PENALTY_MAX min (WL_FRIENDLY_FIRE_PENALTY * _friendlyKillTimestampsCnt))];
-					(owner _responsibleLeader) publicVariableClient _varName;
+					missionNamespace setVariable [_varName, (WL_SYNCED_TIME + (WL_FRIENDLY_FIRE_PENALTY_MAX min (WL_FRIENDLY_FIRE_PENALTY * _friendlyKillTimestampsCnt))), [2, (owner _responsibleLeader)]];
 				};
 			};
 		};
