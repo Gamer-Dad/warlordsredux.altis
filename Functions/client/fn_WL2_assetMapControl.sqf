@@ -16,7 +16,6 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 							[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (_target getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
 							_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
 							missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target], [2, clientOwner]];
-							publicVariableServer _ownedVehiclesVarName;
 							_target call BIS_fnc_WL2_sub_deleteAsset;
 							((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
 							((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
@@ -39,7 +38,6 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 								[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (_target getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
 								_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
 								missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target], [2, clientOwner]];
-								publicVariableServer _ownedVehiclesVarName;
 								_target call BIS_fnc_WL2_sub_deleteAsset;
 								((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
 								((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
@@ -60,7 +58,6 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 						[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (_target getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
 						_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
 						missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target], [2, clientOwner]];
-						publicVariableServer _ownedVehiclesVarName;
 						_target call BIS_fnc_WL2_sub_deleteAsset;
 						((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
 						((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
