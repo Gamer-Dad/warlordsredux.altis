@@ -86,7 +86,6 @@ class CfgFunctions {
 			class WL2_orderFTVehicle {};
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
-			class WL2_mapIcons {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
 			class WL2_orderForfeit {};
@@ -185,6 +184,7 @@ class CfgFunctions {
 			class WL2_currentTargetHandle {ext = ".fsm"};
 			class WL2_sectorStatusHandle {ext = ".fsm"};
 			class WL2_sectorRevealHandle {ext = ".fsm"};
+			class WL2_mapIcons {ext = ".fsm"};
 		};
 	};
 

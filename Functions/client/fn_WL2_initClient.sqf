@@ -278,7 +278,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_refreshCurrentTargetData;
 
 0 spawn {
-	sleep 4;
+	waituntil {sleep 0.1; !isnull (findDisplay 46)};
+	sleep 2;
 	0 spawn BIS_fnc_WL2_welcome;
 };
 
@@ -321,9 +322,12 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
-0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_cpUpdate;
 (side group player) spawn BIS_fnc_WL2_forfeitHandle;
+0 spawn {
+	waituntil {!(isNull ((findDisplay 12) displayCtrl 51))};
+	0 spawn BIS_fnc_WL2_mapIcons;
+};
 
 player setVariable ["arsenalOpened", false, true];
 
