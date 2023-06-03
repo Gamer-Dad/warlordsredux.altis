@@ -420,7 +420,7 @@ class FSM
                 {
                         name = "Action_2";
                         itemno = 17;
-                        init = /*%FSM<STATEINIT""">*/"0 remoteExec [""BIS_fnc_WL2_orderLastLoadout"", (owner _sender)];" \n
+                        init = /*%FSM<STATEINIT""">*/"0 remoteExecCall [""BIS_fnc_WL2_orderLastLoadout"", (owner _sender)];" \n
                          "" \n
                          "_uid = getPlayerUID _sender;" \n
                          "[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
@@ -446,7 +446,7 @@ class FSM
                 {
                         name = "Action_3";
                         itemno = 18;
-                        init = /*%FSM<STATEINIT""">*/"[""apply""] remoteExec [""BIS_fnc_WL2_orderSavedLoadout"", (owner _sender)];" \n
+                        init = /*%FSM<STATEINIT""">*/"[""apply""] remoteExecCall [""BIS_fnc_WL2_orderSavedLoadout"", (owner _sender)];" \n
                          "" \n
                          "_uid = getPlayerUID _sender;" \n
                          "[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
@@ -482,7 +482,7 @@ class FSM
                          "} else  {" \n
                          "	missionNamespace setVariable [""ftVehicleExistsOpf"", true, true];" \n
                          "};" \n
-                         "[_sender, _asset] remoteExec [""BIS_fnc_WL2_newAssetHandle"", (owner _sender)];" \n
+                         "[_sender, _asset] remoteExecCall [""BIS_fnc_WL2_newAssetHandle"", (owner _sender)];" \n
                          "" \n
                          "_uid = getPlayerUID _sender;" \n
                          "[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
@@ -538,7 +538,7 @@ class FSM
                 {
                         name = "Action_6";
                         itemno = 21;
-                        init = /*%FSM<STATEINIT""">*/"0 remoteExec [""BIS_fnc_WL2_orderArsenal"", (owner _sender)];" \n
+                        init = /*%FSM<STATEINIT""">*/"0 remoteExecCall [""BIS_fnc_WL2_orderArsenal"", (owner _sender)];" \n
                          "_uid = getPlayerUID _sender;" \n
                          "[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -691,7 +691,7 @@ class FSM
                          "[_targetUID, _cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;" \n
                          "[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;" \n
                          "serverNamespace setVariable [format [""BIS_WL_isTransferring_%1"", _uid], false];" \n
-                         "[_sender, _recipient, _cost] remoteExec [""BIS_fnc_WL2_displayCPtransfer"", 0, true];"/*%FSM</STATEINIT""">*/;
+                         "[_sender, _recipient, _cost] remoteExecCall [""BIS_fnc_WL2_displayCPtransfer"", 0, true];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
