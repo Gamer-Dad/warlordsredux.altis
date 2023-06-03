@@ -26,8 +26,6 @@ missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 missionNamespace setVariable ["imbalance", 0, true];
 
-missionNamespace setVariable ["serverTimer", 0, true];
-
 [36000] call BIS_fnc_countdown;
 0 spawn BIS_fnc_WL2_tablesSetUp;
 
