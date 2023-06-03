@@ -7,7 +7,7 @@ item2[] = {"End",1,4346,-45.521454,135.023773,44.478577,185.023758,0.000000,"End
 link0[] = {0,1};
 link1[] = {1,2};
 globals[] = {0.000000,0,0,0,0,640,480,1,5,6316128,1,-311.942749,315.710449,353.962524,-227.499680,1386,1284,1};
-window[] = {2,-1,-1,-1,-1,1111,52,1972,52,3,1404};
+window[] = {2,-1,-1,-1,-1,1085,26,1946,26,3,1404};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -64,7 +64,6 @@ class FSM
                          "	_debriefing = format [""BIS_WL%1%2"", if (_victory) then {""Victory""} else {""Defeat""}, BIS_WL_playerSide];" \n
                          "	[_debriefing, _victory] call BIS_fnc_endMission;" \n
                          "} else {" \n
-                         "	sleep 15;" \n
                          "	endMission ""End1"";" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
