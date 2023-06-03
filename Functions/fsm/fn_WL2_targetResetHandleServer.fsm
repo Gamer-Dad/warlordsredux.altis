@@ -18,7 +18,7 @@ link6[] = {5,1};
 link7[] = {6,3};
 link8[] = {6,4};
 globals[] = {0.000000,0,0,0,0,640,480,1,8,6316128,1,-428.929230,330.531158,595.550293,77.955963,1611,1284,1};
-window[] = {2,-1,-1,-1,-1,1241,182,2102,182,3,1629};
+window[] = {2,-1,-1,-1,-1,1371,312,2232,312,3,1629};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -126,6 +126,7 @@ class FSM
                          "_limit = ceil ((count _warlords) / 4);" \n
                          "_votedYes = count (_warlords select {(_x getVariable [""BIS_WL_targetResetVote"", -1]) == 1});" \n
                          "_votedNo = count (_warlords select {(_x getVariable [""BIS_WL_targetResetVote"", -1]) == 0});" \n
+                         "_varName = format [""BIS_WL_targetResetVotingSince_%1"", _side];" \n
                          "" \n
                          "if (_votedYes >= _limit) then {" \n
                          "	_terminate = true;" \n
@@ -140,7 +141,7 @@ class FSM
                          "} else {" \n
                          "	if (_votedNo >= _limit) then {" \n
                          "		_terminate = true;" \n
-                         "		missionNamespace getVariable [_varName, serverTime - 60, true];" \n
+                         "		missionNamespace setVariable [_varName, serverTime - 60, true];" \n
                          "	};" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
