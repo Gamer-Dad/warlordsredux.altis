@@ -22,7 +22,7 @@ if (_sector in _availableSectors) then {
 		case WL_ID_SELECTION_VOTED: {
 			BIS_WL_targetVote = _sector;
 			_variableFormat = format ["BIS_WL_targetVote_%1", getPlayerUID player];
-			missionNamespace setVariable [_variableFormat, _sector];
+			missionNamespace setVariable [_variableFormat, _sector, [2, clientOwner]];
 			publicVariableServer _variableFormat;
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_VOTING) then {
 				BIS_WL_currentSelection = WL_ID_SELECTION_VOTED;
