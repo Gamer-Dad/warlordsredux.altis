@@ -59,5 +59,5 @@ _ctrl ctrlCommit 0;
 
 _var = ((uiNamespace getVariable ["activeControls", []]) + [(uiNamespace getVariable "control")]);
 uiNamespace setVariable ["activeControls", _var];
-_c = (uiNamespace getVariable "control") + 1;
+_c = ((uiNamespace getVariable "control") + 1);
 uiNamespace setVariable ["control", _c];
