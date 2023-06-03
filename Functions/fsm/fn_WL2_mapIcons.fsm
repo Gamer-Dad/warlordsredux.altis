@@ -89,6 +89,12 @@ class FSM
                          "MRTM_fnc_getDir = {" \n
                          "	params [""_t""];" \n
                          "	_dir = getDirVisual _t;" \n
+                         "	if ((getPlayerChannel _t) in [1,2]) then {" \n
+                         "		_dir = 0;" \n
+                         "	};" \n
+                         "	if (((getPlayerChannel _t) == 5) && ((player distance2D _t) < 100)) then {" \n
+                         "		_dir = 0;" \n
+                         "	};" \n
                          "	_dir;" \n
                          "};" \n
                          "" \n
