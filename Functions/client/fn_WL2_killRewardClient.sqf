@@ -21,7 +21,8 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl ctrlCommit 0;
 } forEach (uiNamespace getVariable ["activeControls", []]);
 
-_ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", (uiNamespace getVariable "control")];
+_control = (uiNamespace getVariable "control");
+_ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _control];
 
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
@@ -46,7 +47,7 @@ if (MRTM_playKillSound) then {
 
 _ctrl ctrlCommit 0;
 
-(uiNamespace getVariable "control") spawn {
+_control spawn {
 	disableSerialization;
 	_ctrl = (findDisplay 46) displayCtrl _this;
 	_ctrl ctrlCommit 0;
@@ -57,7 +58,7 @@ _ctrl ctrlCommit 0;
 	uiNamespace setVariable ["activeControls", _var];
 };
 
-_var = ((uiNamespace getVariable ["activeControls", []]) + [(uiNamespace getVariable "control")]);
+_var = ((uiNamespace getVariable ["activeControls", []]) + [_control]);
 uiNamespace setVariable ["activeControls", _var];
-_c = ((uiNamespace getVariable "control") + 1);
+_c = (_control + 1);
 uiNamespace setVariable ["control", _c];
