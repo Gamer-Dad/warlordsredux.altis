@@ -49,7 +49,7 @@ class FSM
                          "" \n
                          "MRTM_fnc_iconColor = {" \n
                          "	params [""_t""];" \n
-                                if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};
+                         "      if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};" \n
                          "	if (side group player == west) exitWith {westColor};" \n
                          "	if (side group player == east) exitWith {eastColor};" \n
                          "	if (side group player == resistance) exitWith {aafColor};" \n
