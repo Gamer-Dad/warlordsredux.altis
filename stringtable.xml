@@ -466,6 +466,22 @@
             <Chinesesimp>订购快速旅行医疗车</Chinesesimp>
             <Chinese>訂購快速旅行醫療車</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_feature_forfeit_vote">
+            <Original>Order forfeit</Original>
+            <English>Order forfeit</English>
+            <Czech>Požádejte o kapitulaci</Czech>
+            <French>Demander à rendre les armes</French>
+            <German>Bitten Sie um Kapitulation</German>
+            <Italian>Chiedi la resa</Italian>
+            <Polish>Żądaj poddania się</Polish>
+            <Portuguese>Exigir rendição</Portuguese>
+            <Russian>Попросить сдать оружие</Russian>
+            <Spanish>Llama a la rendición</Spanish>
+            <Korean>항복을 요구하다</Korean>
+            <Japanese>降伏を求める</Japanese>
+            <Chinesesimp>要求投降</Chinesesimp>
+            <Chinese>要求投降</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_respawn_vicFT_ft">
             <Original>Fast Travel to Spawn Truck</Original>
             <English>Fast Travel to Spawn Truck</English>
@@ -1025,6 +1041,38 @@
             <Japanese>敵が着ている服の色を知ると役に立ちます。 投獄されるまでに残り %13 の味方射撃キルが残っています。</Japanese>
             <Chinesesimp>了解敌人穿着的颜色，这会有所帮助。 在您入狱之前，您还剩下 %13 次友军射击击杀。</Chinesesimp>
             <Chinese>了解敵人穿著的顏色，這會有所幫助。 在您入獄之前，您還剩下 %13 次友軍射擊擊殺。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_action_kick_players_vehicle">
+            <Original>Kick players</Original>
+            <English>Kick players</English>
+            <Czech>Vyhodit hráče</Czech>
+            <French>Éjecter les joueurs du véhicule</French>
+            <German>Spieler rauswerfen</German>
+            <Italian>Espellere i giocatori</Italian>
+            <Polish>Wyrzucaj graczy</Polish>
+            <Portuguese>Chutar jogadores</Portuguese>
+            <Russian>Выгнать игроков</Russian>
+            <Spanish>Expulsar jugadores</Spanish>
+            <Korean>차량 비우기</Korean>
+            <Japanese>車両を空にする</Japanese>
+            <Chinesesimp>清空车辆</Chinesesimp>
+            <Chinese>清空車輛</Chinese>
+        </Key>
+        <Key ID="STR_A3_MRTM_action_settings">
+            <Original>Settings</Original>
+            <English>Settings</English>
+            <Czech>Nastavení</Czech>
+            <French>Paramètres</French>
+            <German>Einstellungen</German>
+            <Italian>Parametri</Italian>
+            <Polish>Parametry</Polish>
+            <Portuguese>Parâmetros</Portuguese>
+            <Russian>Параметры</Russian>
+            <Spanish>Parámetros</Spanish>
+            <Korean>매개변수</Korean>
+            <Japanese>パラメータ</Japanese>
+            <Chinesesimp>参数</Chinesesimp>
+            <Chinese>参数</Chinese>
         </Key>
         <Key ID="keep_empty">
             <Original></Original>
