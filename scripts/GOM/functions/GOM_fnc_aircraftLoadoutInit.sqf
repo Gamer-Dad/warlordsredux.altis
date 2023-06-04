@@ -733,7 +733,7 @@ GOM_fnc_handleResources = { //run on server only, init for supply vehicles, only
 				_amount = _x getvariable ["GOM_fnc_repairCargo",-1];
 				if (_amount < 0) then {_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair")) min 10000)};
 				_x setvariable ["GOM_fnc_repairCargo",_amount,true];
-				[_x,0] remoteExec ["setRepairCargo",_x];
+				[_x, 0] remoteExec ["setRepairCargo", _x];
 			};
 		};
 
@@ -749,7 +749,7 @@ GOM_fnc_handleResources = { //run on server only, init for supply vehicles, only
 					};
 				};
 				_x setvariable ["GOM_fnc_ammoCargo",_amount,true];
-				[_x,0] remoteExec ["setAmmoCargo",_x];
+				[_x, 0] remoteExec ["setAmmoCargo", _x];
 			};
 		};
 		waituntil {sleep 1; (serverTime > _timeout || {!(vehicles isEqualTo _vehicles)})};
@@ -973,10 +973,10 @@ GOM_fnc_aircraftLoadoutPaintjob = {
 
 GOM_fnc_aircraftLoadoutResourcesCheck = {
 	params ["_obj"];
-	_nearbyVehs = (_obj nearEntities ["All", 50]) select {speed _x < 1 AND {alive _x}};
-	_refuelVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_fuelcargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0};
-	_rearmVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_ammocargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0};
-	_repairVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_repairCargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0};
+	_nearbyVehs = (_obj nearEntities ["All", 50]) select {speed _x < 1 && {alive _x}};
+	_refuelVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_fuelcargo",-1] >= 0 || getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0};
+	_rearmVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_ammocargo",-1] >= 0 || getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0};
+	_repairVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_repairCargo",-1] >= 0 || getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0};
 	_flags = [];
 	_flags set [0,[!GOM_fnc_aircraftLoadout_NeedsFuelSource,(GOM_fnc_aircraftLoadout_NeedsFuelSource AND count _refuelVehs > 0)] select GOM_fnc_aircraftLoadout_NeedsFuelSource];
 	_flags set [1,[!GOM_fnc_aircraftLoadout_NeedsRepairSource,(GOM_fnc_aircraftLoadout_NeedsRepairSource AND count _repairVehs > 0)] select GOM_fnc_aircraftLoadout_NeedsRepairSource] ;
@@ -984,9 +984,9 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 	_flags params ["_canRefuel","_canRepair","_canRearm"];
 	_vehs = [_refuelVehs,_repairVehs,_rearmVehs];
 	{
-		[_x,0] remoteExec ["setAmmoCargo",_x];
-		[_x,0] remoteExec ["setFuelCargo",_x];
-		[_x,0] remoteExec ["setRepairCargo",_x];
+		[_x, 0] remoteExec ["setAmmoCargo", _x];
+		[_x, 0] remoteExec ["setFuelCargo", _x];
+		[_x, 0] remoteExec ["setRepairCargo", _x];
 	} foreach _nearbyVehs;
 	_buttons = [1600,1602,1603,1604];
 	ctrlEnable [1600,_canRearm];
