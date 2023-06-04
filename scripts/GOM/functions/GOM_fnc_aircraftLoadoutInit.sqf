@@ -78,47 +78,6 @@ GOM_fnc_updateDialog = {
 	_veh = call compile  lbData [1500,lbcursel 1500];
 	_dispName = lbText [1500,lbCurSel 1500];
 
-	if (lbcursel 2101 >= 0) exitWith {
-		_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-		_preset = (_presets select {(_x select 0) isEqualTo typeOf _veh AND {(_x select 1) isEqualTo lbText [2101,lbcursel 2101]}}) select 0;
-		_preset params ["_vehType","_presetName","_pylons","_pylonAmmoCounts","_textureParams","_pylonOwners","_priorities","_serialNumber"];
-		_textureParams params ["_textureName","_textures"];
-		_pylonInfoText = "";
-		_sel = 0;
-		_align = ["<t align='left'>","<t align='center'>","<t align='right'>"];
-		_count = 0;
-		_priorities = 	_veh getVariable ["GOM_fnc_pylonPriorities",[]];
-
-		{
-			_count = _count + 1;
-			_owner = "Pilot";
-			if !(_pylonOwners isEqualTo []) then {
-				_owner = if ((_pylonowners select _forEachIndex+1) isEqualTo []) then {"Pilot"} else {"Gunner"};
-			};
-			_pylonDispname = getText (configfile >> "CfgMagazines" >> _x >> "displayName");
-			_setAlign = _align select _sel;
-			_sel = _sel + 1;
-			_break = "";
-			if (_sel > 2) then {
-				_sel = 0;
-				_break = "<br />";
-			};
-			if (count _pylons <= 6) then {
-				_setAlign = "<t align='left'>";
-				_break = "<br />";
-			};
-
-			_priority = "N/A";
-			if (count _priorities > 0) then {
-				_priority = _priorities select _foreachindex;
-			};
-			_pylonInfoText = _pylonInfoText + format ["%1Pyl%2: %3 Prio. %4 %5 (%6).%7",_setAlign,_count,_owner,_priority,_pylonDispname,_pylonAmmoCounts select _forEachIndex,_break];
-		} forEach _pylons;
-		
-		_text = format ["<t align='center' size='0.75'>Selected %1 preset: %2 Tail No. %5<br /><br /><t align='left'>Livery: %3<br />%4",_dispName,_presetName,_textureName,_pylonInfoText,_serialNumber];
-		(finddisplay 66 displayctrl 1100) ctrlSetStructuredText parsetext _text;
-	};
-
 	if (lbCursel 1502 < 0 AND lbCursel 1501 >= 0) exitWith {
 		_pylonInfoText = "";
 		_sel = 0;
@@ -1037,19 +996,6 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 	[_flags,_vehs]
 };
 
-GOM_fnc_updatePresetLB = {
-	params ["_obj"];
-	if (lbCursel 1500 < 0) exitWith {false};
-	_veh = call compile  lbData [1500,lbcursel 1500];
-	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-	_validPresets = _presets select {_x#0 isequalTo typeof _veh AND _x#8 isEqualTo GOM_fnc_allowAllPylons};
-	lbClear 2101;
-	{
-		lbAdd [2101,_x select 1];
-	} forEach _validPresets;
-	true;
-};
-
 GOM_fnc_showResourceDisplay = {
 	GOM_fnc_aircraftResourceDisplayTimeout = time + 20;
 	_ID = addMissionEventHandler ["Draw3D", {
@@ -1134,59 +1080,6 @@ GOM_fnc_showResourceDisplay = {
 	true,
 };
 
-GOM_fnc_aircraftLoadoutSavePreset = {
-	params ["_obj"];
-	if (lbCursel 1500 < 0) exitWith {false};
-	_veh = call compile  lbData [1500,lbcursel 1500];
-	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-	_index = 0;
-	_pylonOwners = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwners",[]];
-	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
-	_preset = [typeof _veh,ctrlText 1401,GetPylonMagazines _veh,((GetPylonMagazines _veh) apply {_index = _index + 1;_veh AmmoOnPylon _index}),[lbText [2100,lbCursel 2100],getObjectTextures _veh],_pylonOwners,_priorities,[_veh] call GOM_fnc_aircraftGetSerialNumber,GOM_fnc_allowAllPylons];
-	if (!(_presets isEqualTo []) AND {count (_presets select {ctrlText 1401 isequalTo (_x select 1)}) > 0}) exitWith {systemchat "Preset exists! Chose another name!";playsound "Simulation_Fatal"};
-	if (ctrlText 1401 isEqualTo "") exitWith {systemchat "Invalid name! Choose another one!";playSound "Simulation_Fatal"};
-	_presets pushback _preset;
-	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",_presets];
-	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-	systemchat format ["Saved %1 preset: %2!",_vehDispName,str ctrlText 1401];
-	_updateLB = [_obj] call GOM_fnc_updatePresetLB;
-	lbsetcursel [2101,((lbsize 2101) -1)];
-	true;
-};
-
-GOM_fnc_aircraftLoadoutDeletePreset = {
-	params ["_obj"];
-	if (lbCursel 1500 < 0) exitWith {false};
-	_veh = call compile  lbData [1500,lbcursel 1500];
-	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-	_toDelete = _presets select {(_x select 1) isEqualTo lbText [2101,lbcursel 2101]};
-	if (count _toDelete isequalto 0)  exitWith {systemchat "Preset not found!";playsound "Simulation_Fatal"};
-	_presets = _presets - [_toDelete select 0];
-	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",_presets];
-	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-	Systemchat format ["Deleting %1 preset: %2",_vehDispName,str (_todelete select 0 select 1)];
-	_updateLB = [_obj] call GOM_fnc_updatePresetLB;
-	true;
-};
-
-GOM_fnc_aircraftLoadoutLoadPreset = {
-	params ["_obj"];
-	if (lbCursel 1500 < 0) exitWith {false};
-	if (lbCursel 2101 < 0) exitWith {systemchat "No preset selected."};
-	_veh = call compile  lbData [1500,lbcursel 1500];
-	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-	_preset = (_presets select {(_x#0) isEqualTo typeOf _veh AND (_x#1) isEqualTo lbText [2101,lbcursel 2101] AND (_x#8 isEqualTo GOM_fnc_allowAllPylons)}) select 0;
-	_preset params ["_vehType","_presetName","_pylons","_pylonAmmoCounts","_textureParams","_pylonOwners","_pylonPriorities",["_serialNumber","N/A"],["_restrictedLoadout",GOM_fnc_allowAllPylons]];
-	[_veh,_serialNumber] call GOM_fnc_aircraftSetSerialNumber;
-	[_obj,true,_pylons,_pylonAmmoCounts] call	GOM_fnc_setPylonsRearm;
-	_veh setPylonsPriority _pylonPriorities;
-	_textureParams params ["_textureName","_textures"];
-	{
-		_veh setObjectTextureGlobal [_foreachIndex,_x];
-	} forEach _textures;
-	true;
-};
-
 GOM_fnc_updateVehiclesLB = {
 	params ["_obj"];
 	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(_x getVariable ["BIS_WL_ownerAsset", grpNull] == (group player))}}}};
@@ -1220,23 +1113,17 @@ GOM_fnc_aircraftLoadout = {
 	finddisplay 66 displayCtrl 1501 ctrlAddEventHandler ["LBSelChanged",format ["lbclear 1502;[%1] call GOM_fnc_fillPylonsLB;[%1,'NOCOUNT'] call GOM_fnc_setPylonPriority",_getvar]];
 	finddisplay 66 displayCtrl 1502 ctrlAddEventHandler ["LBSelChanged",format ["[%1] call GOM_fnc_updateAmmoCountDisplay;",_getvar]];
 	finddisplay 66 displayCtrl 2100 ctrlAddEventHandler ["LBSelChanged",format ["[%1,true] call GOM_fnc_aircraftLoadoutPaintjob",_getvar]];
-	finddisplay 66 displayCtrl 2101 ctrlAddEventHandler ["LBSelChanged",format ["",_getvar]];
 	buttonSetAction [1600, format ["[%1] call GOM_fnc_pylonInstallWeapon;[] call GOM_fnc_aircraftSetSerialNumber",_getvar]];
 	buttonSetAction [1601, format ["[%1] call GOM_fnc_clearAllPylons",_getvar]];
 	buttonSetAction [1602, format ["[%1] call GOM_fnc_setPylonsRepair",_getvar]];
 	buttonSetAction [1603, format ["[%1] call GOM_fnc_setPylonsRefuel",_getvar]];
 	buttonSetAction [1604, format ["[%1] call GOM_fnc_setPylonsReArm",_getvar]];
 	buttonSetAction [1605, format ["[%1] call GOM_fnc_setPylonOwner",_getvar]];
-	buttonSetAction [1606, format ["[%1] call GOM_fnc_aircraftLoadoutSavePreset",_getvar]];
-	buttonSetAction [1607, format ["[%1] call GOM_fnc_aircraftLoadoutDeletePreset",_getvar]];
-	buttonSetAction [1608, format ["[%1] call GOM_fnc_aircraftLoadoutLoadPreset",_getvar]];
 	buttonSetAction [1609, format ["lbclear 1502;lbSetCurSel [1502,-1];lbclear 1501;lbSetCurSel [1501,-1];lbclear 1500;lbSetCurSel [1500,-1]",""]];
 	buttonSetAction [1610, format ["[%1] call GOM_fnc_setPylonPriority",_getvar]];
 	findDisplay 66 displayAddEventHandler ["KeyDown",{
 		finddisplay 66 setVariable ["GOM_fnc_keyDown",_this];
 		if (_this select 3) then {
-			ctrlEnable [1607,true];
-			ctrlSetText [1607,"Delete"];
 			ctrlSetText [1610,format ["Set all to 1",""]];
 		};
 		if (_this select 4) then {
@@ -1250,7 +1137,6 @@ GOM_fnc_aircraftLoadout = {
 	}];
 	findDisplay 66 displayAddEventHandler ["KeyUp",{finddisplay 66 setVariable ["GOM_fnc_keyDown",[]];
 		if (_this select 3) then {
-			ctrlEnable [1607,false];ctrlSetText [1607,"CTRL"];
 			_veh = call compile lbdata [1500,lbcursel 1500];
 			_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
 			if (lbcursel 1501 >= 0) then {
@@ -1267,13 +1153,11 @@ GOM_fnc_aircraftLoadout = {
 			};
 		};
 	}];
-	ctrlEnable [1607,false];
-	ctrlSetText [1607,"CTRL"];
 	findDisplay 66 displayCtrl 2800 ctrlAddEventHandler ["CheckedChanged",format ["[_this,%1] call GOM_fnc_CheckComponents",_getvar]];
 	findDisplay 66 displayCtrl 2801 ctrlAddEventHandler ["CheckedChanged",format ["[_this,%1] call GOM_fnc_CheckComponents",_getvar]];
 	findDisplay 66 displayCtrl 2802 ctrlAddEventHandler ["CheckedChanged",format ["[_this,%1] call GOM_fnc_CheckComponents",_getvar]];
 	_color = [0,0,0,0.6];
-	_dark = [1100,1103,1104,1105,1109,1101,1102,1103,1104,1105,1400,1401,1500,1501,1800,1801,1802,1803,1804,1805,1806,1807,1808,1809,2100,2101];
+	_dark = [1100,1103,1104,1105,1109,1101,1102,1103,1104,1105,1400,1500,1501,1800,1801,1802,1803,1804,1805,1806,1807,1808,2100];
 	{
 		findDisplay 66 displayCtrl _x ctrlSetBackgroundColor _color;
 	} forEach _dark;
