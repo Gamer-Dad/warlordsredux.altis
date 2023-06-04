@@ -21,10 +21,10 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl ctrlCommit 0;
 } forEach (uiNamespace getVariable ["activeControls", []]);
 
-_control = (uiNamespace getVariable "control");
-if ((isNil {_control}) && {!(9 isEqualType _control)}) exitWith {
+if ((isNil {(uiNamespace getVariable "control")}) && {!(9 isEqualType (uiNamespace getVariable "control"))}) exitWith {
 	diag_log ("Error client kill reward control is not a number. | File: killRewardClient.sqf | Line: 24");
 };
+_control = (uiNamespace getVariable "control");
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _control];
 
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
