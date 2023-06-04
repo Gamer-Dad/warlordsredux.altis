@@ -174,6 +174,17 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
+			"2.5.4", lineBreak,
+			"-All friendly AI owned by players is shown on map.", lineBreak,
+			"-Gunner/Driver/Command of a vehicle all (nut the person who got the kill) get the assist for the kill. (blackfish armed not so bad anymore)", lineBreak,
+			"-You can kick players/ AI that you don't own out of your vehicles. (As long as you are within 50 meters)", lineBreak,
+			"-Vehicle spawning reworked.", lineBreak,
+			"-Voice warning systems have been improved.", lineBreak,
+			"-New settings menu.", lineBreak,
+			"-You can now change the volumes of the voice warning systems.", lineBreak,
+			"-Kill bonus for people using 1st person. + 50%", lineBreak,
+			"-Option to disable kill sound.", lineBreak,
+			"", lineBreak,
 			"2.5.3", lineBreak,
 			"-New CP system. (More secure against cheaters)", lineBreak,
 			"-Kill assists added.", lineBreak,
