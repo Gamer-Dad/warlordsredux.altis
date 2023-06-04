@@ -282,7 +282,7 @@ class FSM
                          "} forEach (BIS_WL_allSectors - [_sector]);" \n
                          "" \n
                          "if (BIS_WL_playerSide in (_sector getVariable ""BIS_WL_revealedBy"")) then {" \n
-                         "	if (_prevOwner != BIS_WL_playerSide && _owner != BIS_WL_playerSide) then {" \n
+                         "	if (_prevOwner != BIS_WL_playerSide && {_owner != BIS_WL_playerSide}) then {" \n
                          "		""Enemy_advancing"" call BIS_fnc_WL2_announcer;" \n
                          "	};" \n
                          "	[toUpper format [localize ""STR_A3_WL_popup_sector_seized"", _sector getVariable ""BIS_WL_name"", _owner call BIS_fnc_WL2_sideToFaction]] spawn BIS_fnc_WL2_smoothText;" \n

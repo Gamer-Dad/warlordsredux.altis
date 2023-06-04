@@ -26,7 +26,7 @@ switch (_action) do {
 		_actionParams params ["_tStart", "_tEnd", "_var"];
 		_osd_progress_voting_background ctrlSetBackgroundColor [0, 0, 0, 0.25];
 		_osd_progress_voting ctrlSetTextColor BIS_WL_colorFriendly;
-		while {WL_SYNCED_TIME < _tEnd && !BIS_WL_terminateOSDEvent_voting} do {
+		while {WL_SYNCED_TIME < _tEnd && {!BIS_WL_terminateOSDEvent_voting}} do {
 			_osd_action_voting_title ctrlSetStructuredText parseText format ["<t shadow = '2' align = 'center' size = '%4'>%1%3: %2</t>", localize "STR_A3_WL_voting_hud_most_voted", ((missionNamespace getVariable _var) # 0) getVariable "BIS_WL_name", if (toLower language == "french") then {" "} else {""}, 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 			_osd_progress_voting progressSetPosition linearConversion [_tStart, _tEnd, WL_SYNCED_TIME, 0, 1];
 			sleep WL_TIMEOUT_MIN;
@@ -48,7 +48,7 @@ switch (_action) do {
 		_color = BIS_WL_colorsArray # (BIS_WL_sidesArray find _side);
 		_color set [3, 1];
 		_osd_progress ctrlSetTextColor _color;
-		while {WL_SYNCED_TIME < _tEnd && !BIS_WL_terminateOSDEvent_seizing} do {
+		while {WL_SYNCED_TIME < _tEnd && {!BIS_WL_terminateOSDEvent_seizing}} do {
 			_osd_action_title ctrlSetStructuredText parseText format ["<t shadow = '2' align = 'center' size = '%2'>%1</t>", _sector getVariable "BIS_WL_name", 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 			_osd_progress progressSetPosition linearConversion [_tStart, _tEnd, WL_SYNCED_TIME, 0, 1];
 			sleep WL_TIMEOUT_MIN;
@@ -69,7 +69,7 @@ switch (_action) do {
 		_actionParams params ["_tStart", "_tEnd"];
 		_osd_progress_background ctrlSetBackgroundColor [0, 0, 0, 0.25];
 		_osd_progress ctrlSetTextColor [1, 0, 0, 1];
-		while {WL_SYNCED_TIME < _tEnd && !BIS_WL_terminateOSDEvent_trespassing} do {
+		while {WL_SYNCED_TIME < _tEnd && {!BIS_WL_terminateOSDEvent_trespassing}} do {
 			_osd_action_title ctrlSetStructuredText parseText format ["<t shadow = '2' align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_osd_zone", 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 			_osd_progress progressSetPosition linearConversion [_tStart, _tEnd, WL_SYNCED_TIME, 0, 1];
 			sleep WL_TIMEOUT_MIN;

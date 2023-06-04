@@ -121,7 +121,7 @@ class FSM
                          "	[toUpper localize ""STR_A3_WL_popup_voting""] spawn BIS_fnc_WL2_smoothText;" \n
                          "	sleep 1;" \n
                          "	waitUntil {visibleMap || !isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide])};" \n
-                         "	if (visibleMap && isNull BIS_WL_targetVote) then {" \n
+                         "	if (visibleMap && {isNull BIS_WL_targetVote}) then {" \n
                          "		""Sector"" call BIS_fnc_WL2_announcer;" \n
                          "		[toUpper localize ""STR_A3_WL_info_voting_click""] spawn BIS_fnc_WL2_smoothText;" \n
                          "	};" \n

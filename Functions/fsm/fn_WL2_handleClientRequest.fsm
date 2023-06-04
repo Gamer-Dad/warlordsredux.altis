@@ -208,7 +208,7 @@ class FSM
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_playerFunds = ((serverNamespace getVariable ""fundsDatabase"") get (getPlayerUID _sender));" \n
                                          "_hasFunds  = (_playerFunds >= _cost);" \n
-                                         "((!isNull _sender) && (_hasFunds));"/*%FSM</CONDITION""">*/;
+                                         "((!isNull _sender) && {(_hasFunds)});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -508,7 +508,7 @@ class FSM
                 {
                         name = "Action_5";
                         itemno = 20;
-                        init = /*%FSM<STATEINIT""">*/"_tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && (isNull objectParent _x) && (alive _x) && (_x != _sender)};" \n
+                        init = /*%FSM<STATEINIT""">*/"_tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};" \n
                          "_sender setVehiclePosition [_pos, [], 1, ""NONE""];" \n
                          "{" \n
                          "	_x setVehiclePosition [_pos, [], 1, ""NONE""];" \n
@@ -760,7 +760,7 @@ class FSM
                                         priority = 2.000000;
                                         to="Action_17";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_isPlane = (toLower getText (configFile >> ""CfgVehicles"" >> _class >> ""simulation"")) in [""airplanex"", ""airplane""] && !(_class isKindOf ""VTOL_Base_F"");" \n
+                                        condition=/*%FSM<CONDITION""">*/"_isPlane = (toLower getText (configFile >> ""CfgVehicles"" >> _class >> ""simulation"")) in [""airplanex"", ""airplane""] && {!(_class isKindOf ""VTOL_Base_F"")};" \n
                                          "_isPlane;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
@@ -927,7 +927,7 @@ class FSM
                         name = "Action_14";
                         itemno = 46;
                         init = /*%FSM<STATEINIT""">*/"_array = (_pos call BIS_fnc_WL2_findSpawnPositions);" \n
-                         "_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));" \n
+                         "_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && {((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5)})}));" \n
                          "_posFinal = _pos1 findEmptyPosition [0, 20, _class];" \n
                          "_asset = createVehicle [_class, _posFinal, [], 5, ""NONE""];" \n
                          "_asset setDir 0;" \n
@@ -990,7 +990,7 @@ class FSM
                          "_dir = 0;" \n
                          "_checks = 0;" \n
                          "" \n
-                         "while {count _spawnPos == 0 && _checks < 100} do {" \n
+                         "while {count _spawnPos == 0 && {_checks < 100}} do {" \n
                          "	_checks = _checks + 1;" \n
                          "	_i = (floor random _taxiNodesCnt) max 1;" \n
                          "	_pointB = _taxiNodes # _i;" \n
@@ -1099,7 +1099,7 @@ class FSM
                          "_spawnPos = [];" \n
                          "_dir = 0;" \n
                          "_checks = 0;" \n
-                         "while {count _spawnPos == 0 && _checks < 100} do {" \n
+                         "while {count _spawnPos == 0 && {_checks < 100}} do {" \n
                          "	_checks = _checks + 1;" \n
                          "	_i = (floor random _taxiNodesCnt) max 1;" \n
                          "	_pointB = _taxiNodes # _i;" \n
@@ -1176,7 +1176,7 @@ class FSM
                         name = "Action_19";
                         itemno = 53;
                         init = /*%FSM<STATEINIT""">*/"_array = (_pos call BIS_fnc_WL2_findSpawnPositions);" \n
-                         "_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));" \n
+                         "_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && {((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5)})}));" \n
                          "_posFinal = _pos1 findEmptyPosition [0, 20, _class];" \n
                          "_asset = createVehicle [_class, _posFinal, [], 5, ""NONE""];" \n
                          "_asset setDir 0;" \n
@@ -1247,7 +1247,7 @@ class FSM
                          "_dir = 0;" \n
                          "_checks = 0;" \n
                          "" \n
-                         "while {count _spawnPos == 0 && _checks < 100} do {" \n
+                         "while {count _spawnPos == 0 && {_checks < 100}} do {" \n
                          "	_checks = _checks + 1;" \n
                          "	_i = (floor random _taxiNodesCnt) max 1;" \n
                          "	_pointB = _taxiNodes # _i;" \n
@@ -1304,16 +1304,16 @@ class FSM
                          "			waitUntil {sleep 0.1; {uniform _x == ""U_VirtualMan_F""} count crew _asset == 0};" \n
                          "		};" \n
                          "		_i = 0;" \n
-                         "		if (count crew _asset > 0 && _isStatic) then {" \n
+                         "		if (count crew _asset > 0 && {_isStatic}) then {" \n
                          "			_assetGrp = group effectiveCommander _asset;" \n
-                         "			while {!(_assetGrp setGroupOwner (owner _sender)) && _i < 50} do {" \n
+                         "			while {!(_assetGrp setGroupOwner (owner _sender)) && {_i < 50}} do {" \n
                          "				_i = _i + 1;" \n
                          "				_assetGrp setGroupOwner (owner _sender);" \n
                          "				sleep 0.1;" \n
                          "			};" \n
                          "		};" \n
                          "		_i = 0;" \n
-                         "		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && _i < 50} do {" \n
+                         "		while {!(_asset setOwner (owner _sender)) && {(owner _asset) != (owner _sender) && {_i < 50}}} do {" \n
                          "			_i = _i + 1;" \n
                          "			_asset setOwner (owner _sender);" \n
                          "			sleep 0.1;" \n

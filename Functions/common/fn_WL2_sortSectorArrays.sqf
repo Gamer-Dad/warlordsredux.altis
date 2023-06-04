@@ -30,14 +30,14 @@ while {count _knots > 0} do {
 	{
 		{
 			_link = _x;
-			if (!(_link in _linked) && (_link in _owned)) then {_linked pushBack _link; _knots pushBack _link}
+			if (!(_link in _linked) && {(_link in _owned)}) then {_linked pushBack _link; _knots pushBack _link}
 		} forEach (_x getVariable "BIS_WL_connectedSectors");
 	} forEach _knotsCurrent;
 };
 
 {
 	private _sector = _x;
-	if ((_sector getVariable ["BIS_WL_owner", sideUnknown]) != _side && _linked findIf {_sector in (_x getVariable "BIS_WL_connectedSectors")} >= 0) then {
+	if ((_sector getVariable ["BIS_WL_owner", sideUnknown]) != _side && {_linked findIf {_sector in (_x getVariable "BIS_WL_connectedSectors")} >= 0}) then {
 		_available pushBack _sector;
 	};
 } forEach (_pool - _owned);

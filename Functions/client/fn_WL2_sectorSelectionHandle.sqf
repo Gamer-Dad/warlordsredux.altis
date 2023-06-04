@@ -38,7 +38,7 @@ if (_state == "start") then {
 	};
 
 	BIS_WL_selectionMapManager = addMissionEventHandler ["EachFrame", {
-		if (visibleMap && isNull (findDisplay 160 displayCtrl 51)) then {
+		if (visibleMap && {isNull (findDisplay 160 displayCtrl 51)}) then {
 			_mapScale = ctrlMapScale WL_CONTROL_MAP;
 			_timer = (WL_SYNCED_TIME % WL_MAP_PULSE_FREQ);
 			_timer = if (_timer <= (WL_MAP_PULSE_FREQ / 2)) then {_timer} else {WL_MAP_PULSE_FREQ - _timer};
@@ -64,7 +64,7 @@ if (_state == "start") then {
 	{
 		_mrkrMain = (_x getVariable "BIS_WL_markers") # 0;
 		_mrkrMain setMarkerAlphaLocal 1;
-		_mrkrMain setMarkerSizeLocal (if !(_x in WL_BASES && BIS_WL_playerSide in (_x getVariable "BIS_WL_revealedBy")) then {[1, 1]} else {[WL_BASE_ICON_SIZE, WL_BASE_ICON_SIZE]});
+		_mrkrMain setMarkerSizeLocal (if !(_x in WL_BASES && {BIS_WL_playerSide in (_x getVariable "BIS_WL_revealedBy")}) then {[1, 1]} else {[WL_BASE_ICON_SIZE, WL_BASE_ICON_SIZE]});
 		((_x getVariable "BIS_WL_markers") # 1) setMarkerAlphaLocal 1;
 	} forEach BIS_WL_allSectors;
 	

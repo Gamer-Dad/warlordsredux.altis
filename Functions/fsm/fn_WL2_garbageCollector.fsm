@@ -66,7 +66,7 @@ class FSM
                          "	if !(alive _x) then {" \n
                          "		deleteVehicle _asset;" \n
                          "	};" \n
-                         "} forEach ((allMissionObjects """") select {(_x isKindOf ""WeaponHolder"" || _x isKindOf ""WeaponHolderSimulated"" || [""BIS_WL_"", str _x, false] call BIS_fnc_inString) && !([""BIS_WL_init"", str _x, false] call BIS_fnc_inString)});" \n
+                         "} forEach ((allMissionObjects """") select {(_x isKindOf ""WeaponHolder"" || _x isKindOf ""WeaponHolderSimulated"" || [""BIS_WL_"", str _x, false] call BIS_fnc_inString) && {!([""BIS_WL_init"", str _x, false] call BIS_fnc_inString)}});" \n
                          "_d = serverTime + 300;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links

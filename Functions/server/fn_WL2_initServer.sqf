@@ -82,7 +82,7 @@ addMissionEventHandler ["HandleDisconnect", {
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	
-	if ((isPlayer _owner) && (_channelNumber == 0)) then {
+	if ((_channelNumber == 0) && {(isPlayer _owner)}) then {
 		deleteMarker _marker;
 	};
 }];
@@ -105,7 +105,7 @@ addMissionEventHandler ["EntityKilled", {
 			if !(alive _x) then {
 				deleteVehicle _asset;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});	
+		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});	
 	};
 }];
 
@@ -113,7 +113,7 @@ missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
 
-if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
+if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 
 call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;

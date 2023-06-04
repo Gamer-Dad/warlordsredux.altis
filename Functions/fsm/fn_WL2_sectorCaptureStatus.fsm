@@ -200,7 +200,7 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_sectorsToCheck = +(BIS_WL_sectorsArray # 3);" \n
                          "_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable ""objectAreaComplete"")};" \n
                          "_visitedSector = _sectorsToCheck # _visitedSectorID;" \n
-                         "if ((_visitedSector getVariable ""BIS_WL_owner"") != BIS_WL_playerSide && count _info == 0 && (_visitedSector in (BIS_WL_sectorsArray # 7)) && _visitedSector != (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide])) then {" \n
+                         "if ((_visitedSector getVariable ""BIS_WL_owner"") != BIS_WL_playerSide && {count _info == 0 && {(_visitedSector in (BIS_WL_sectorsArray # 7)) && {_visitedSector != (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide])}}}) then {" \n
                          "	[""seizingDisabled"", [_visitedSector getVariable ""BIS_WL_owner""]] spawn BIS_fnc_WL2_setOSDEvent;" \n
                          "	_visitedSector setVariable [""BIS_WL_seizingInfo"", [""seizingDisabled""]];" \n
                          "	_previousSeizingInfo = [""seizingDisabled""];" \n

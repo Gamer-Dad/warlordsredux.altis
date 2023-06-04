@@ -41,7 +41,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && MRTM_EnableRWR);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -111,7 +111,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && MRTM_EnableRWR);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

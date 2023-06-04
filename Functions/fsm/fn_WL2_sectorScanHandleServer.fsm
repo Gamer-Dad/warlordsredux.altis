@@ -102,7 +102,7 @@ class FSM
                          "	params [""_sector"", ""_revealTrigger""];" \n
                          "	while {!isNull _revealTrigger} do {" \n
                          "		_eligibleSides = BIS_WL_competingSides select {(_sector getVariable [format [""BIS_WL_lastScanEnd_%1"", _x], -9999]) > serverTime};" \n
-                         "		_eligibleWarlords = BIS_WL_allWarlords select {local _x && (side group _x) in _eligibleSides};" \n
+                         "		_eligibleWarlords = BIS_WL_allWarlords select {local _x && {(side group _x) in _eligibleSides}};" \n
                          "		{" \n
                          "			_toReveal = _x;" \n
                          "			{" \n

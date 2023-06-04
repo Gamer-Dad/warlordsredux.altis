@@ -24,7 +24,7 @@ class FSM
                 {
                         name = "Init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"BIS_WL_allWarlords = +(playableUnits + switchableUnits) select {(side group _x) in BIS_WL_competingSides && !(_x getVariable [""BIS_WL_ignore"", false])};" \n
+                        init = /*%FSM<STATEINIT""">*/"BIS_WL_allWarlords = +(playableUnits + switchableUnits) select {(side group _x) in BIS_WL_competingSides && {!(_x getVariable [""BIS_WL_ignore"", false])}};" \n
                          "" \n
                          "0 spawn BIS_fnc_WL2_refreshIconsToDraw;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -64,7 +64,7 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"BIS_WL_allWarlords = BIS_WL_allWarlords - [objNull];" \n
                          "{" \n
                          "	BIS_WL_allWarlords pushBackUnique _x" \n
-                         "} forEach ((playableUnits + switchableUnits) select {(side group _x) in BIS_WL_competingSides && !(_x getVariable [""BIS_WL_ignore"", false])});" \n
+                         "} forEach ((playableUnits + switchableUnits) select {(side group _x) in BIS_WL_competingSides && {!(_x getVariable [""BIS_WL_ignore"", false])}});" \n
                          "call BIS_fnc_WL2_refreshIconsToDraw;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links

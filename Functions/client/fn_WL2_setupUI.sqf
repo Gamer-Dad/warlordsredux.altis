@@ -155,7 +155,7 @@ switch (_displayClass) do {
 		
 		_myDisplay displayAddEventHandler ["KeyDown", {
 			_key = _this # 1;
-			if (_key in actionKeys "Gear" && !BIS_WL_gearKeyPressed) then {
+			if (_key in actionKeys "Gear" && {!BIS_WL_gearKeyPressed}) then {
 				["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 				TRUE
 			};
