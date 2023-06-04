@@ -702,6 +702,7 @@ class MRTM_settingsMenu
 		class MRTMRWREdit3: RscEditMRTM
 		{
 			idc = 1407;
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			onKeyUp = "[_this select 0, _this select 1, 'RWR3',true] call MRTM_fnc_onChar;";
 			x = 0.672219 * safezoneW + safezoneX;
 			y = 0.3812 * safezoneH + safezoneY;
