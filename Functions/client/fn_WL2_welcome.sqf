@@ -20,6 +20,7 @@ hRead = false;
 		waitUntil {sleep 0.1; hRead == true};
 		_time = serverTime + 5;
 		waitUntil {sleep 0.1; serverTime > _time};
+		ctrlSetText [1, localize "STR_MRTM_welcomeInteract_close_btn"];
 		ctrlEnable [1, true];
 	};
 };

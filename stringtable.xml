@@ -1428,6 +1428,22 @@
             <Chinesesimp>请先阅读如何玩</Chinesesimp>
             <Chinese>請先閱讀如何玩</Chinese>
         </Key>
+        <Key ID="STR_MRTM_welcomeInteract_close_btn">
+            <Original>Close</Original>
+            <English>Close</English>
+            <Czech>Zavřít</Czech>
+            <French>Fermer</French>
+            <German>Schließen</German>
+            <Italian>Chiudere</Italian>
+            <Polish>Zamknąć</Polish>
+            <Portuguese>Fechar</Portuguese>
+            <Russian>закрывать</Russian>
+            <Spanish>Cerca</Spanish>
+            <Korean>닫다</Korean>
+            <Japanese>近い</Japanese>
+            <Chinesesimp>关闭</Chinesesimp>
+            <Chinese>關閉</Chinese>
+        </Key>
         <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
             <Original></Original>
             <English></English>
