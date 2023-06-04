@@ -100,16 +100,16 @@ class FSM
                          "	if (_side == west) then {" \n
                          "		if ((missionNamespace getVariable ""actualIncomeBlu"") < 50) then {" \n
                          "			_incomeStandard = west call BIS_fnc_WL2_income;" \n
-                         "			[_uid, 50] spawn BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "			[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
                          "		} else {" \n
-                         "			[_uid, (missionNamespace getVariable ""actualIncomeBlu"")] spawn BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "			[_uid, (missionNamespace getVariable ""actualIncomeBlu"")] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
                          "		};" \n
                          "	} else {" \n
                          "		if ((missionNamespace getVariable ""actualIncomeOpf"") < 50) then {" \n
                          "			_incomeStandard = east call BIS_fnc_WL2_income;" \n
-                         "			[_uid, 50] spawn BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "			[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
                          "		} else {" \n
-                         "			[_uid, (missionNamespace getVariable ""actualIncomeOpf"")] spawn BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "			[_uid, (missionNamespace getVariable ""actualIncomeOpf"")] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
                          "		};" \n
                          "	};" \n
                          "} forEach (BIS_WL_allWarlords); // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it." \n
