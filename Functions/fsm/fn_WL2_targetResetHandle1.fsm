@@ -83,7 +83,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(serverTime < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && !isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]) && (missionNamespace getVariable [_varNameReset, """"]) != """");"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(serverTime < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && {!isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]) && {(missionNamespace getVariable [_varNameReset, """"]) != """"}});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

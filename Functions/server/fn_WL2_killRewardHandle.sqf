@@ -2,7 +2,7 @@
 
 params ["_unit", "_killer", "_instigator"];
 
-if (!(_unit isKindOf "Man") && (((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69]) == 69)) exitWith {};
+if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69]) == 69)}) exitWith {};
 
 if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable "BIS_WL_ownerAsset"))}) then [{(leader (_killer getVariable "BIS_WL_ownerAsset"))}, {((UAVControl vehicle _killer) # 0)}])};
 if (isNull _instigator) then {_instigator = (vehicle _killer)};
@@ -24,7 +24,7 @@ if !(isNull _instigator) then {
 				});
 			};
 		};
-		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
+		if ((_killerSide != _unitSide) && {(_unitSide in [west, east, independent])}) then {
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {40});
@@ -44,7 +44,7 @@ if !(isNull _instigator) then {
 						_l = (_unit getVariable ["assistList", []]) + [_x];
 						_unit setVariable ["assistList", _l, true];
 					};
-				} forEach (crew (objectParent _responsibleLeader)) select {(((_x isEqualTo (gunner (objectParent _responsibleLeader))) || (_x isEqualTo (driver (objectParent _responsibleLeader))) || (_x isEqualTo (commander (objectParent _responsibleLeader)))) && (_x != _responsibleLeader) && (isPlayer _x))};
+				} forEach (crew (objectParent _responsibleLeader)) select {(((_x isEqualTo (gunner (objectParent _responsibleLeader))) || (_x isEqualTo (driver (objectParent _responsibleLeader))) || (_x isEqualTo (commander (objectParent _responsibleLeader)))) && {(_x != _responsibleLeader) && {(isPlayer _x)}})};
 			};
 		};
 	};

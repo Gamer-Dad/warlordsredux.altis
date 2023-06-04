@@ -53,7 +53,7 @@ class FSM
                          "			};" \n
                          "		};" \n
                          "	};	" \n
-                         "} forEach ((missionNamespace getVariable [format [""BIS_WL_%1_ownedVehicles"", getPlayerUID player], []]) select {(alive _x) && !(_x isKindOf ""Man"") && !(_x isKindOf ""Ship"")});"/*%FSM</STATEINIT""">*/;
+                         "} forEach ((missionNamespace getVariable [format [""BIS_WL_%1_ownedVehicles"", getPlayerUID player], []]) select {(alive _x) && {!(_x isKindOf ""Man"") && {!(_x isKindOf ""Ship"")}}});"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

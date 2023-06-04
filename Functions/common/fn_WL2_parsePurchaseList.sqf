@@ -35,17 +35,17 @@ private _savedLoadoutHandled = FALSE;
 				_data = _sortedArray # _index
 			};
 			
-			if (_category == "Gear" && !_arsenalHandled) then {
+			if (_category == "Gear" && {!_arsenalHandled}) then {
 				_arsenalHandled = TRUE;
 				_data pushBack ["Arsenal", BIS_WL_arsenalCost, [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
 			
-			if (_category == "Gear" && !_lastLoadoutHandled) then {
+			if (_category == "Gear" && {!_lastLoadoutHandled}) then {
 				_lastLoadoutHandled = TRUE;
 				_data pushBack ["LastLoadout", BIS_WL_lastLoadoutCost, [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
 			};
 			
-			if (_category == "Gear" && !_savedLoadoutHandled) then {
+			if (_category == "Gear" && {!_savedLoadoutHandled}) then {
 				_savedLoadoutHandled = TRUE;
 				_data pushBack ["SavedLoadout", BIS_WL_savedLoadoutCost, [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
 			};
@@ -163,7 +163,7 @@ private _savedLoadoutHandled = FALSE;
 				_data pushBack [_className, _cost, _requirements, _displayName, _picture, _text, _offset, _notForAIUse];
 			} forEach (configProperties [_preset >> str _side >> _x, "isClass _x"]);
 			
-			if (_category == "Gear" && !_saveLoadoutHandled) then {
+			if (_category == "Gear" && {!_saveLoadoutHandled}) then {
 				_saveLoadoutHandled = TRUE;
 				_data pushBack ["SaveLoadout", 0, [], "< " + (localize "STR_A3_WL_save_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_save_loadout_info"];
 			};

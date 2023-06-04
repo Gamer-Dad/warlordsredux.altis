@@ -115,8 +115,8 @@ class FSM
                          "} forEach (BIS_WL_allWarlords); // The allPlayers Loop simply fetches the player's side, uses the side to get the appropriate value from the hashmap and applies it." \n
                          "" \n
                          "{" \n
-                         "	_l = (vehicles + allUnits) select {(typeOf _x != ""Logic"") && (alive _x) && (!(_x isKindOf ""WeaponHolder"")) && (!(_x isKindOf ""WeaponHolderSimulated""))};" \n
-                         "	_l1	= (vehicles + allUnits) select {(!alive _x) && (_x isKindOf ""WeaponHolder"") && (_x isKindOf ""WeaponHolderSimulated"")};" \n
+                         "	_l = (vehicles + allUnits) select {(typeOf _x != ""Logic"") && {(alive _x) && {(!(_x isKindOf ""WeaponHolder"")) && {(!(_x isKindOf ""WeaponHolderSimulated""))}}}};" \n
+                         "	_l1	= (vehicles + allUnits) select {(!alive _x) && {(_x isKindOf ""WeaponHolder"") && {(_x isKindOf ""WeaponHolderSimulated"")}}};" \n
                          "	_x removeCuratorEditableObjects [_l1, true];" \n
                          "	_x addCuratorEditableObjects [_l, true];" \n
                          "} forEach allCurators;" \n

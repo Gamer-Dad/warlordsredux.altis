@@ -69,7 +69,7 @@ class FSM
                                         to="Action_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_varName = format [""BIS_WL_forfeitVotingSince_%1"", _side];" \n
-                                         "!_terminate && serverTime < ((missionNamespace getVariable [_varName, -1]) + 30);"/*%FSM</CONDITION""">*/;
+                                         "!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1]) + 30)};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -98,7 +98,7 @@ class FSM
                          "_votedYes = count (_warlords select {(_x getVariable [""BIS_WL_forfeitVote"", -1]) == 1});" \n
                          "_votedNo = count (_warlords select {(_x getVariable [""BIS_WL_forfeitVote"", -1]) == 0});" \n
                          "" \n
-                         "if ((_votedYes >= _limit) && (serverTime >= 180)) then {" \n
+                         "if ((_votedYes >= _limit) && {(serverTime >= 180)}) then {" \n
                          "	missionNamespace setVariable [""BIS_WL_ffTeam"", _side, true];" \n
                          "	missionNamespace setVariable [""BIS_WL_missionEnd"", true, true];" \n
                          "	_terminate = true;" \n
@@ -114,7 +114,7 @@ class FSM
                                         to="Action_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_varName = format [""BIS_WL_forfeitVotingSince_%1"", _side];" \n
-                                         "!_terminate && serverTime < ((missionNamespace getVariable [_varName, -1]) + 30);"/*%FSM</CONDITION""">*/;
+                                         "!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1]) + 30)};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

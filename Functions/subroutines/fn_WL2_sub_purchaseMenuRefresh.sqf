@@ -82,7 +82,7 @@ if (count _assetDetails > 0) then {
 			};
 		};
 	};
-	if (_availability # 0 && ctrlEnabled _purchase_request) then {
+	if (_availability # 0 && {ctrlEnabled _purchase_request}) then {
 		uiNamespace setVariable ["BIS_WL_purchaseMenuItemAffordable", TRUE];
 		if (uiNamespace getVariable ["BIS_WL_purchaseMenuButtonHover", FALSE]) then {
 			_color = BIS_WL_colorFriendly;

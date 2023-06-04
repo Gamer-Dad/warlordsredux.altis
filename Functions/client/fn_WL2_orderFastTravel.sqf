@@ -108,7 +108,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_STANDARD;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	private _tagAlong = (units player) select {(_x distance2D player <= 100) && (isNull objectParent _x) && (alive _x) && (_x != player)};
+	private _tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
 	player setVehiclePosition [_destination, [], 1, "NONE"];
 	{
 		_x setVehiclePosition [_destination, [], 1, "NONE"];

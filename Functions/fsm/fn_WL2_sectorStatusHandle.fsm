@@ -85,7 +85,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((triggerTimeoutCurrent _trigger) != -1 && (_sector getVariable ""BIS_WL_owner"") != _side);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((triggerTimeoutCurrent _trigger) != -1 && {(_sector getVariable ""BIS_WL_owner"") != _side});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

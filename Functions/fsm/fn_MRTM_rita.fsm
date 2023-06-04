@@ -60,7 +60,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && MRTM_EnableRWR);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -84,7 +84,7 @@ class FSM
                                         priority = 2.000000;
                                         to="Pull_Up__Warning";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(getPosATL player select 2 <= 2000 && getPosATL player select 2 > 100 && (objectParent player) getVariable ""landingGear"" == false && (asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 40) / speed (objectParent player))));"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(getPosATL player select 2 <= 2000 && {getPosATL player select 2 > 100 && {(objectParent player) getVariable ""landingGear"" == false && {(asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 40) / speed (objectParent player)))}}});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -95,7 +95,7 @@ class FSM
                                         priority = 1.000000;
                                         to="Altitude_Warning";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((getPosATL player select 2) < 100 && (objectParent player) getVariable [""landingGear"", true] == false);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((getPosATL player select 2) < 100 && {(objectParent player) getVariable [""landingGear"", true] == false});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -153,7 +153,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && MRTM_EnableRWR);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -200,7 +200,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && MRTM_EnableRWR);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -247,7 +247,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Loop";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && MRTM_EnableRWR);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

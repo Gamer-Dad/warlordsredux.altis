@@ -148,7 +148,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(daytime < 20 && daytime > 5);"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(daytime < 20 && {daytime > 5});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

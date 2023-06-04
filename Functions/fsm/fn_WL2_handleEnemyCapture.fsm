@@ -199,7 +199,7 @@ class FSM
                                         priority = 1.000000;
                                         to="Action_3";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && (_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide;"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && {(_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -233,7 +233,7 @@ class FSM
                                         priority = 1.000000;
                                         to="Action_3";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && (_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide;"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && {(_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -351,7 +351,7 @@ class FSM
                                         priority = 1.000000;
                                         to="Action_3";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && (_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide;"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && {(_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

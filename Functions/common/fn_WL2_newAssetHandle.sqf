@@ -2,7 +2,7 @@
 
 params ["_owner", "_asset", ["_assembled", FALSE]];
 
-if (isNull _owner && isServer) then {
+if (isNull _owner && {isServer}) then {
 	_asset setSkill (0.2 + random 0.7);
 };
 
@@ -128,7 +128,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && vehicle _this == _this",
+							"(alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {vehicle _this == _this}})",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -237,7 +237,7 @@ if (isPlayer _owner) then {
 		false,
 		true,
 		"",
-		"alive _target && vehicle _this != _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])",
+		"(alive _target && {vehicle _this != _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])}})",
 		30,
 		false
 	];

@@ -45,7 +45,7 @@ _hDef = safezoneH;
 
 if (count BIS_onScreenMessagesVisible >= _maxLines) then {
 	BIS_onScreenMessagesBuffer pushBack _messageID;
-	waitUntil {count BIS_onScreenMessagesVisible < _maxLines && (BIS_onScreenMessagesBuffer find _messageID) == 0};
+	waitUntil {count BIS_onScreenMessagesVisible < _maxLines && {(BIS_onScreenMessagesBuffer find _messageID) == 0}};
 	BIS_onScreenMessagesBuffer = BIS_onScreenMessagesBuffer - [_messageID];
 };
 
@@ -98,7 +98,7 @@ while {!_done} do {
 	
 	{
 		_letterFadeInStart = _startTime + (_forEachIndex * _popupDelay);
-		if (time >= _letterFadeInStart && time <= (_letterFadeInStart + _fadeDuration)) then {
+		if (time >= _letterFadeInStart && {time <= (_letterFadeInStart + _fadeDuration)}) then {
 			_done = FALSE;
 			_newAlpha = linearConversion [_letterFadeInStart, _letterFadeInStart + _fadeDuration, time, 0, _finalAlpha];
 			_newLetterColor = +_baseColor;
