@@ -14,7 +14,6 @@ GOM_fnc_kgToTon = {
 };
 
 if !(profileNamespace getVariable ["GOM_fnc_prepareUI",false]) then {
-	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
 	profileNamespace setVariable ["GOM_fnc_prepareUI",true];
 };
 
@@ -267,7 +266,7 @@ GOM_fnc_installPylons = {
 	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwners",_storePylonOwners, true];
 	systemchat format ["Installing %1 %2 on %3, operated by %4!",_finalAmount,_magDispName,_pylonName,_pylonOwnerName];
 	_check pushback _pylonNum;
-	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_check, true];
+	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_check, [2, clientOwner]];
 
 	sleep random 0.5;
 	[_veh, [_pylonNum, "", true, _pylonOwner]] remoteexec ["setPylonLoadOut", -2];
@@ -290,7 +289,7 @@ GOM_fnc_installPylons = {
 	_ammosource setvariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false, true];
 	_checkOut = _veh getVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[]];
 	_checkOut = _checkOut - [_pylonNum];
-	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut, true];
+	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut, [2, clientOwner]];
 
 	systemchat format ["Successfully installed %1 %2 on %3!",_finalAmount,_magDispName,_pylonName];
 	true;
@@ -421,7 +420,7 @@ GOM_fnc_setPylonsRearm = {
 	if (_abort) exitWith {true};
 	if (!alive _veh) exitWith {systemchat "Aircraft is destroyed!"};
 	if (_veh getVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false]) exitWith {systemchat "Aircraft is currently being rearmed!"};
-	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true,true];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true, [2, clientOwner]];
 	_activePylonMags = GetPylonMagazines _veh;
 	if (_rearm) exitWith {
 		[_obj] call GOM_fnc_clearAllPylons;
@@ -462,7 +461,7 @@ GOM_fnc_setPylonsRearm = {
 
 		playSound "Click";
 		_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
-		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,[2, clientOwner]];
 		if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
@@ -502,7 +501,7 @@ GOM_fnc_setPylonsRearm = {
 	waituntil {!alive _veh OR {scriptdone _x} count _mounts isequalto count _mounts};
 	_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	playSound "Click";
-	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,[2, clientOwner]];
 	if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
@@ -561,25 +560,17 @@ GOM_fnc_setPylonsRepair = {
 
 GOM_fnc_setPylonsRefuel = {
 	if (lbCursel 1500 < 0) exitWith {systemchat "No aircraft selected!";false};
-
 	params ["_obj"];
-
 	if (lbCursel 1500 < 0) exitWith {false};
-
 	_veh = call compile  lbData [1500,lbcursel 1500];
+	_check = _veh call GOM_fnc_refuelCheck;
+	_check params ["_abort","_text","_refuelSource"];
+	if (_abort) exitWith {true};
 
-
-_check = _veh call GOM_fnc_refuelCheck;
-_check params ["_abort","_text","_refuelSource"];
-if (_abort) exitWith {true};
-
-_fuelLeak = [_veh] call GOM_fuelLeak;
-_fuelleak params ["_leaking","_leakingLevel"];
-if (_leaking AND _leakingLevel > 0.9) exitWith {systemchat "This aircraft will be heavily leaking fuel when refueling!";systemchat "Repair it first!";playsound "Simulation_Fatal";	_refuelSource setVariable ["GOM_fnc_aircraftLoadoutBusyFuelSource",false,true];
-};
-
-if (_leaking AND _leakingLevel < 0.9 AND _leakingLevel > 0.1) then {systemchat format ["This aircraft will leak fuel down to %1%2 when refueling!",round ((1 - _leakinglevel) * 100),"%"];systemchat "Repair it first!";playsound "Simulation_Restart"};
-
+	_fuelLeak = [_veh] call GOM_fuelLeak;
+	_fuelleak params ["_leaking","_leakingLevel"];
+	if (_leaking && _leakingLevel > 0.9) exitWith {systemchat "This aircraft will be heavily leaking fuel when refueling!";systemchat "Repair it first!";playsound "Simulation_Fatal";	_refuelSource setVariable ["GOM_fnc_aircraftLoadoutBusyFuelSource",false,true];};
+	if (_leaking && {_leakingLevel < 0.9 && {_leakingLevel > 0.1}}) then {systemchat format ["This aircraft will leak fuel down to %1%2 when refueling!",round ((1 - _leakinglevel) * 100),"%"];systemchat "Repair it first!";playsound "Simulation_Restart"};
 	_refuel = [_veh,_refuelSource,_obj] spawn {
 		params ["_veh","_refuelSource","_obj"];
 		_curFuel = fuel _veh;
@@ -674,7 +665,7 @@ GOM_fnc_landingsCheck = {
 		};
 		_check > 3 && {alive _plane} && {istouchingground _plane} && {speed _plane < 100}
 	};
-	_plane setVariable ["GOM_fnc_aircraftStatsLandings",(_landings + 1),true];
+	_plane setVariable ["GOM_fnc_aircraftStatsLandings",(_landings + 1); [2, clientOwner]];
 	_plane addEventHandler ["LandedTouchDown",{
 		params ["_plane"];
 		_plane removeEventHandler ["LandedTouchDown",_thisEventHandler];
@@ -686,22 +677,17 @@ GOM_fnc_landingsCheck = {
 GOM_fnc_handleResources = { //run on server only, init for supply vehicles, only sets variables and fuel/ammo/repaircargo to 0
 	waituntil {sleep 0.1; (serverTime > 0)};
 	_vehicles = vehicles;
-	//track stats, landings, kills every aircraft made and display it in the menu
 	addMissionEventHandler ["EntityKilled",{
 		params ["_killed","_killer"];
-		if (_killer isequalto _killed OR vehicle _killer isequalto vehicle _killed) exitWith {false};
-
-		if (typeof _killer isKindof "Plane" OR typeof _killer isKindOf "Helicopter") then {
-			if (_killed in allunits OR _killed in vehicles) then {
-
+		if (_killer isequalto _killed || vehicle _killer isequalto vehicle _killed) exitWith {false};
+		if (typeof _killer isKindof "Plane" || typeof _killer isKindOf "Helicopter") then {
+			if (_killed in allunits || _killed in vehicles) then {
 				_kills = _killer getVariable ["GOM_fnc_aircraftLoadoutTrackStats",[0,0,0,0,0,0,0,0,0]];
 				_kinds = ["CAManBase","StaticWeapon","Car","Tank","Helicopter","Plane","Ship","House","B_Parachute"];
 				_check = _kinds apply {typeof _killed iskindof _x};
 				_index = _check find true;
-
 				_kills set [_index,((_kills select (_index+1)))];
-
-				_killer setvariable ["GOM_fnc_aircraftLoadoutTrackStats",_kills,true];
+				_killer setvariable ["GOM_fnc_aircraftLoadoutTrackStats",_kills, [2, _killer]];
 			};
 		};
 	}];
@@ -893,7 +879,7 @@ GOM_fnc_setPylonOwner = {
 	_ownerName = "Pilot";
 	if (_pylonOwner isEqualTo []) then {_pylonOwner = [0];_ownerName = "Gunner"} else {_pylonOwner = []};
 	ctrlSetText [1605,format ["%1 control",_ownerName]];
-	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwner",_pylonOwner,true];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwner",_pylonOwner, [2, clientOWner]];
 	true;
 };
 
@@ -906,7 +892,7 @@ GOM_fnc_setPylonPriority = {
 	_selectedPriority = _priorities select lbcursel 1501;
 	if ("NOCOUNT" in _this) exitWith {
 		ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
-		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
+		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities, [2, clientOwner]];
 		_veh setPylonsPriority _priorities;
 	};
 	_keys = finddisplay 66 getVariable ["GOM_fnc_keyDown",["","",false,false,false]];
@@ -915,14 +901,14 @@ GOM_fnc_setPylonPriority = {
 		_selectedPriority = _selectedPriority - 1;
 		if (_selectedPriority < 1) then {_selectedPriority = count _priorities};
 		_priorities set [lbcursel 1501,_selectedPriority];
-		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
+		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,[2, clientOwner]];
 		_veh setPylonsPriority _priorities;
 		ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
 	};
 	if (_keyALT) exitWith {
 		_priorities = _priorities apply {_selectedPriority};
 		systemchat format ["All pylons priority set to %1",_selectedPriority];
-		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
+		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,[2, clientOwner]];
 		_veh setPylonsPriority _priorities;
 		ctrlsettext [1610,format ["Priority: %1",_selectedPriority]];
 	};
@@ -930,14 +916,14 @@ GOM_fnc_setPylonPriority = {
 	if (_keyctrl) exitWith {
 		systemchat format ["All pylons priority set to 1",""];
 		_priorities = _priorities apply {1};
-		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
+		_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,[2, clientOwner]];
 		_veh setPylonsPriority _priorities;
 		ctrlsettext [1610,format ["Priority: %1", 1]];
 	};
 	_selectedPriority = _selectedPriority + 1;
 	if (_selectedPriority > count _priorities) then {_selectedPriority = 1};
 	_priorities set [lbcursel 1501,_selectedPriority];
-	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
+	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,[2, clientOwner]];
 	_veh setPylonsPriority _priorities;
 	ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
 };
