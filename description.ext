@@ -91,6 +91,7 @@ class CfgFunctions {
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
 			class WL2_cpBalance {};
+			class WL2_sectorCaptureStatus {};
     	};
 		class Server 
 		{
@@ -164,7 +165,6 @@ class CfgFunctions {
 			class WL2_targetResetHandleServer {ext = ".fsm"};
 			class WL2_forfeitHandle {ext = ".fsm"};
 			class WL2_handleEnemyCapture {ext = ".fsm"};
-			class WL2_sectorCaptureStatus {ext = ".fsm"};
 			class WL2_sectorOwnershipHandleClient {ext = ".fsm"};
 			class WL2_selectedTargetsHandle {ext = ".fsm"};
 			class WL2_targetSelectionHandleClient {ext = ".fsm"};

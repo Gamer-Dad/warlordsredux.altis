@@ -665,7 +665,7 @@ GOM_fnc_landingsCheck = {
 		};
 		_check > 3 && {alive _plane} && {istouchingground _plane} && {speed _plane < 100}
 	};
-	_plane setVariable ["GOM_fnc_aircraftStatsLandings",(_landings + 1); [2, clientOwner]];
+	_plane setVariable ["GOM_fnc_aircraftStatsLandings",(_landings + 1), [2, clientOwner]];
 	_plane addEventHandler ["LandedTouchDown",{
 		params ["_plane"];
 		_plane removeEventHandler ["LandedTouchDown",_thisEventHandler];
