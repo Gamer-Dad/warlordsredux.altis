@@ -9,11 +9,11 @@ _asset addAction [
 		} forEach ((crew _asset) select {(_x != player) && (_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group player)});
 	},
 	[],
-	-95,
+	5,
 	false,
 	true,
 	"",
-	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && (count ((crew _target) select {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group _this)}) > 0) && (!(isAutonomous _target))",
+	"(alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {(count ((crew _target) select {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group _this)}) > 0) && {(!(unitIsUAV _target))}}})",
 	50,
 	true
 ];
