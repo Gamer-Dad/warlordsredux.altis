@@ -11,13 +11,6 @@ if (isServer) exitWith {
 		{_x setPos position _asset} forEach crew _asset;
 	};
 	deleteVehicle _asset;
-
-	private _groupUnit = (local _asset && {_asset isKindOf "Man"});
-	if (_groupUnit) then {
-		0 spawn {
-			[] spawn BIS_fnc_WL2_refreshOSD;
-		};
-	};
 };
 
 if (typeOf _asset == "B_Truck_01_medical_F") then {
