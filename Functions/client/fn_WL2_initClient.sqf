@@ -63,7 +63,7 @@ MRTM_air = 4000;
 MRTM_drones = 4000;
 MRTM_objects = 2000;
 MRTM_syncObjects = true;
-setTerrainGrid 3.125;
+setTerrainGrid 25;
 setViewDistance MRTM_inf;
 
 //Radar warning system
