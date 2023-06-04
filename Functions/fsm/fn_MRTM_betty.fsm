@@ -19,7 +19,7 @@ item14[] = {"Delay",4,218,302.343994,167.871826,392.343994,217.871826,0.000000,"
 item15[] = {"True_2",2,250,351.528320,43.660522,441.528320,93.660522,0.000000,"True"};
 item16[] = {"Missile__Warning",2,250,-128.643982,174.540955,-38.643967,224.540955,0.000000,"Missile " \n "Warning"};
 item17[] = {"Missile_Gone",4,218,-129.477600,308.755859,-39.477600,358.755859,1.000000,"Missile Gone"};
-item18[] = {"True_3",2,250,-287.867767,150.365662,-197.867920,200.365662,0.000000,"True"};
+item18[] = {"True_3",2,4346,-287.867767,150.365662,-197.867920,200.365662,0.000000,"True"};
 item19[] = {"Delay",4,218,-13.602791,255.403320,76.397217,305.403320,0.000000,"Delay"};
 item20[] = {"True_4",2,250,-14.530090,107.091667,75.469925,157.091675,0.000000,"True"};
 link0[] = {0,1};
@@ -48,7 +48,7 @@ link22[] = {18,1};
 link23[] = {19,20};
 link24[] = {20,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,58,6316128,1,-568.390381,560.234863,515.163269,-531.157776,1385,1284,1};
-window[] = {2,-1,-1,-1,-1,1371,312,2232,312,3,1403};
+window[] = {2,-1,-1,-1,-1,1240,664,2584,181,3,1403};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -342,7 +342,10 @@ class FSM
                 {
                         name = "True_3";
                         itemno = 18;
-                        init = /*%FSM<STATEINIT""">*/"(objectParent player) setVariable [""Incomming"", (((objectParent player) getVariable ""Incomming"") - [_incomming]), [clientOwner, 2]];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"(objectParent player) setVariable [""Incomming"", (((objectParent player) getVariable ""Incomming"") - [_incomming]), [clientOwner, 2]];" \n
+                         "{" \n
+                         "	(objectParent player) setVariable [""Incomming"", (((objectParent player) getVariable ""Incomming"") - [_x]), [clientOwner, 2]];" \n
+                         "} forEach ((objectParent player) getVariable ""Incomming"") select {!(alive _x)};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
