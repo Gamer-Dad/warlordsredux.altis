@@ -23,12 +23,9 @@ _target = (_targets select 0);
 
 MRTM_fnc_getOwner = {
 	params ["_t"];
-	_owner = (crew _t) select 0;
+	_owner = ((crew _t) select 0);
 	if (unitIsUAV _t) then {
-		if !(isAutonomous _t) then {
-			_owner = (crew _t) select {isPlayer _x};
-			_owner = _owner select 0;
-		};
+		_owner = (leader (_t getVariable "BIS_WL_ownerAsset"));
 	};
 	_owner;
 };
