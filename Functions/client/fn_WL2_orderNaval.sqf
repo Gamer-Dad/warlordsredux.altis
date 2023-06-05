@@ -13,7 +13,7 @@ BIS_WL_waterDropPos = [];
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_NAVAL;
 sleep WL_TIMEOUT_SHORT;
 
-_mapClickEH = addMissionEventHandler ["MapSingleClick", {
+private _mapClickEH = addMissionEventHandler ["MapSingleClick", {
 	params ["_units", "_pos", "_alt", "_shift"];
 	if (surfaceIsWater _pos) then {
 		BIS_WL_waterDropPos = _pos;

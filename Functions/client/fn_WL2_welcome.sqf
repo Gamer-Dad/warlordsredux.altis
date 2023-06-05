@@ -40,12 +40,12 @@ if (side player == west) then {
 };
 
 //List Menu + Scripts
-_pageAbt = lbAdd [69695, localize "STR_MRTM_welcomeInteract_01"];
-_pageHow = lbAdd [69695, localize "STR_MRTM_welcomeInteract_02"];
-_theTeam = lbAdd [69695, localize "STR_MRTM_welcomeInteract_03"];
-_dc = lbAdd [69695, localize "STR_MRTM_welcomeInteract_04"];
-_changelog = lbAdd [69695, localize "STR_MRTM_welcomeInteract_05"];
-_scripts = lbAdd [69695, localize "STR_MRTM_welcomeInteract_06"];
+private _pageAbt = lbAdd [69695, localize "STR_MRTM_welcomeInteract_01"];
+private _pageHow = lbAdd [69695, localize "STR_MRTM_welcomeInteract_02"];
+private _theTeam = lbAdd [69695, localize "STR_MRTM_welcomeInteract_03"];
+private _dc = lbAdd [69695, localize "STR_MRTM_welcomeInteract_04"];
+private _changelog = lbAdd [69695, localize "STR_MRTM_welcomeInteract_05"];
+private _scripts = lbAdd [69695, localize "STR_MRTM_welcomeInteract_06"];
 
 
 //List Menu Data + Scrips
@@ -71,10 +71,12 @@ lbSetPicture [69695, _changelog, 'img\icon_update.paa'];
 lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 lbSetPicture [69695, _scripts, 'img\icon-file.paa'];
 
+private _inventoryKey = actionKeysNames "gear";
+private _gearKey = actionKeysNames "cycleThrownItems";
 
 while {dialog} do {
-	_index = lbCurSel 69695;
-	_curSel = lbData [69695, _index];
+	private _index = lbCurSel 69695;
+	private _curSel = lbData [69695, _index];
 
 	if (hRead == false) then {
 		ctrlShow [6969691, true];
@@ -82,9 +84,6 @@ while {dialog} do {
 	} else {
 		ctrlShow [6969691, false];
 	};
-
-	_inventoryKey = actionKeysNames "gear";
-	_gearKey = actionKeysNames "cycleThrownItems";
 
 	switch (_curSel) do {
 		case "pageAbt": {

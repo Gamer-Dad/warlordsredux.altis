@@ -2,13 +2,13 @@
 
 waituntil {!isnull (findDisplay 46)};
 
-_blockW = safeZoneW / 1000;
-_blockH = safeZoneH / (1000 / (getResolution # 4));
+private _blockW = safeZoneW / 1000;
+private _blockH = safeZoneH / (1000 / (getResolution # 4));
 
-_displayW = _blockW * 180;
-_displayH = _blockH * 54;
-_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
+private _displayW = _blockW * 180;
+private _displayH = _blockH * 54;
+private _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+private _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 
 private _ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 4567];

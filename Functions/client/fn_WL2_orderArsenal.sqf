@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-_uniform = uniform player;
+private _uniform = uniform player;
 
 ["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 

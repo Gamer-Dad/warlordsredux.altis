@@ -29,29 +29,29 @@ switch (_displayClass) do {
 			["BIS_WL_osd_rearm_possible", "RscStructuredText"]
 		];
 
-		_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
-		_osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
-		_osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
-		_osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
-		_osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
-		_osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
-		_osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
-		_osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
-		_osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
-		_osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
-		_osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
-		_osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
-		_osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
-		_osd_action_sl_nearby = uiNamespace getVariable "BIS_WL_osd_sl_nearby";
-		_osd_rearm_possible = uiNamespace getVariable "BIS_WL_osd_rearm_possible";
+		private _osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
+		private _osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
+		private _osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
+		private _osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
+		private _osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
+		private _osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
+		private _osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
+		private _osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
+		private _osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
+		private _osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
+		private _osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
+		private _osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
+		private _osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
+		private _osd_action_sl_nearby = uiNamespace getVariable "BIS_WL_osd_sl_nearby";
+		private _osd_rearm_possible = uiNamespace getVariable "BIS_WL_osd_rearm_possible";
 
-		_blockW = safeZoneW / 1000;
-		_blockH = safeZoneH / (1000 / (getResolution # 4));
+		private _blockW = safeZoneW / 1000;
+		private _blockH = safeZoneH / (1000 / (getResolution # 4));
 
-		_displayW = _blockW * 180;
-		_displayH = _blockH * 54;
-		_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-		_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
+		private _displayW = _blockW * 180;
+		private _displayH = _blockH * 54;
+		private _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+		private _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
 
 		_osd_cp_current ctrlSetPosition [_displayX, _displayY - (_blockH * 16), _blockW * 75, _blockH * 16];
 
@@ -134,12 +134,12 @@ switch (_displayClass) do {
 		
 		hintSilent "";
 
-		_xDef = safezoneX;
-		_yDef = safezoneY;
-		_wDef = safezoneW;
-		_hDef = safezoneH;
+		private _xDef = safezoneX;
+		private _yDef = safezoneY;
+		private _wDef = safezoneW;
+		private _hDef = safezoneH;
 		
-		_myDisplay = WL_DISPLAY_MAIN createDisplay "RscDisplayEmpty";
+		private _myDisplay = WL_DISPLAY_MAIN createDisplay "RscDisplayEmpty";
 		
 		WL_CONTROL_MAP ctrlEnable FALSE;
 		
@@ -183,27 +183,27 @@ switch (_displayClass) do {
 			};
 		};
 		
-		_purchase_background = _myDisplay ctrlCreate ["RscText", -1];
-		_purchase_background_1 = _myDisplay ctrlCreate ["RscText", -1];
-		_purchase_background_2 = _myDisplay ctrlCreate ["RscText", -1];
-		_purchase_title_assets = _myDisplay ctrlCreate ["RscStructuredText", -1];
-		_purchase_title_details = _myDisplay ctrlCreate ["RscStructuredText", -1];
-		_purchase_title_deployment = _myDisplay ctrlCreate ["RscStructuredText", -1];
-		_purchase_category = _myDisplay ctrlCreate ["RscListBox", 100];
-		_purchase_items = _myDisplay ctrlCreate ["RscListBox", 101];
-		_purchase_pic = _myDisplay ctrlCreate ["RscStructuredText", 102];
-		_purchase_info = _myDisplay ctrlCreate ["RscStructuredText", 103];
-		_purchase_income = _myDisplay ctrlCreate ["RscStructuredText", 104];
-		_purchase_info_asset = _myDisplay ctrlCreate ["RscStructuredText", 105];
-		_purchase_title_cost = _myDisplay ctrlCreate ["RscStructuredText", 106];
-		_purchase_request = _myDisplay ctrlCreate ["RscStructuredText", 107];
-		_purchase_box = _myDisplay ctrlCreate ["RscStructuredText", 108];
-		_purchase_transfer_background = _myDisplay ctrlCreate ["RscText", 115];
-		_purchase_transfer_units = _myDisplay ctrlCreate ["RscListBox", 116];
-		_purchase_transfer_amount = _myDisplay ctrlCreate ["RscEdit", 117];
-		_purchase_transfer_cp_title = _myDisplay ctrlCreate ["RscStructuredText", 118];
-		_purchase_transfer_ok = _myDisplay ctrlCreate ["RscStructuredText", 119];
-		_purchase_transfer_cancel = _myDisplay ctrlCreate ["RscStructuredText", 120];
+		private _purchase_background = _myDisplay ctrlCreate ["RscText", -1];
+		private _purchase_background_1 = _myDisplay ctrlCreate ["RscText", -1];
+		private _purchase_background_2 = _myDisplay ctrlCreate ["RscText", -1];
+		private _purchase_title_assets = _myDisplay ctrlCreate ["RscStructuredText", -1];
+		private _purchase_title_details = _myDisplay ctrlCreate ["RscStructuredText", -1];
+		private _purchase_title_deployment = _myDisplay ctrlCreate ["RscStructuredText", -1];
+		private _purchase_category = _myDisplay ctrlCreate ["RscListBox", 100];
+		private _purchase_items = _myDisplay ctrlCreate ["RscListBox", 101];
+		private _purchase_pic = _myDisplay ctrlCreate ["RscStructuredText", 102];
+		private _purchase_info = _myDisplay ctrlCreate ["RscStructuredText", 103];
+		private _purchase_income = _myDisplay ctrlCreate ["RscStructuredText", 104];
+		private _purchase_info_asset = _myDisplay ctrlCreate ["RscStructuredText", 105];
+		private _purchase_title_cost = _myDisplay ctrlCreate ["RscStructuredText", 106];
+		private _purchase_request = _myDisplay ctrlCreate ["RscStructuredText", 107];
+		private _purchase_box = _myDisplay ctrlCreate ["RscStructuredText", 108];
+		private _purchase_transfer_background = _myDisplay ctrlCreate ["RscText", 115];
+		private _purchase_transfer_units = _myDisplay ctrlCreate ["RscListBox", 116];
+		private _purchase_transfer_amount = _myDisplay ctrlCreate ["RscEdit", 117];
+		private _purchase_transfer_cp_title = _myDisplay ctrlCreate ["RscStructuredText", 118];
+		private _purchase_transfer_ok = _myDisplay ctrlCreate ["RscStructuredText", 119];
+		private _purchase_transfer_cancel = _myDisplay ctrlCreate ["RscStructuredText", 120];
 		
 		uiNamespace setVariable ["BIS_WL_purchaseMenuDisplay", _myDisplay];
 		

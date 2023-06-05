@@ -3,14 +3,14 @@
 waitUntil {!isNull WL_DISPLAY_MAIN};
 sleep 2;
 WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
-	_key = _this # 1;
+	private _key = _this # 1;
 	if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", FALSE]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
 		if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 			["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 		} else {
 			BIS_WL_gearKeyPressed = TRUE;
 			0 spawn {
-				_t = time + 0.5;
+				private _t = time + 0.5;
 				waitUntil {!BIS_WL_gearKeyPressed || time >= _t};
 				if (time < _t) then {
 					if (isNull findDisplay 602) then {

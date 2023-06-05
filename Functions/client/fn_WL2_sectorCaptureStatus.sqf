@@ -1,7 +1,7 @@
 #include "..\warlords_constants.inc"
 
-_previousSeizingInfo = [];
-_visitedSector = objNull;
+private _previousSeizingInfo = [];
+private _visitedSector = objNull;
 
 while {!BIS_WL_missionEnd} do {
 	_sectorsToCheck = +(BIS_WL_sectorsArray # 3);
@@ -9,7 +9,7 @@ while {!BIS_WL_missionEnd} do {
 	
 	if (_visitedSectorID != -1) then {
 		_visitedSector = _sectorsToCheck # _visitedSectorID;
-		_info = (_visitedSector getVariable ["BIS_WL_seizingInfo", []]);
+		private _info = (_visitedSector getVariable ["BIS_WL_seizingInfo", []]);
 		if !(_previousSeizingInfo isEqualTo _info) then {
 			if (count _info > 1) then {
 				["seizing", [_visitedSector, _info # 0, _info # 1, _info # 2]] spawn BIS_fnc_WL2_setOSDEvent;

@@ -4,19 +4,19 @@ params ["_action", "_actionParams"];
 
 waitUntil {!isNull (uiNamespace getVariable ["BIS_WL_osd_action_voting_title", controlNull])};
 
-_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
-_osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
-_osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
-_osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
-_osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
-_osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
-_osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
-_osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
-_osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
-_osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
-_osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
-_osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
-_osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
+private _osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
+private _osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
+private _osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
+private _osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
+private _osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
+private _osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
+private _osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
+private _osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
+private _osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
+private _osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
+private _osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
+private _osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
+private _osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
 
 switch (_action) do {
 	case "voting": {

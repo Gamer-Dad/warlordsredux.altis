@@ -13,7 +13,7 @@ if (visibleMap) then {
 	titleCut ["", "BLACK IN", 0.5];
 };
 
-_asset = createVehicle [_class, player modelToWorld _offset, [], 0, "CAN_COLLIDE"];
+private _asset = createVehicle [_class, player modelToWorld _offset, [], 0, "CAN_COLLIDE"];
 _asset setDir direction player;
 _asset enableSimulationGlobal false;
 _asset hideObjectGlobal true;
@@ -28,9 +28,9 @@ _asset hideObject false;
 
 player reveal [_asset, 4];
 _asset attachTo [player, _offset];
-_h = (position _asset) # 2;
+private _h = (position _asset) # 2;
 detach _asset;
-_offset_tweaked = [_offset select 0, _offset select 1, (_offset select 2) - _h];
+private _offset_tweaked = [_offset select 0, _offset select 1, (_offset select 2) - _h];
 _asset attachTo [player, _offset_tweaked];
 
 [player, "assembly"] call BIS_fnc_WL2_hintHandle;
