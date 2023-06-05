@@ -12,7 +12,7 @@ private _reg = [];
 
 while {alive _v} do {
 	if (_v call DAPS_fnc_Active) then {
-		_a = ((nearestObjects [_v, ["M_Scalpel_AT", "M_Scalpel_AT_hidden", "M_SPG9_HE", "M_SPG9_HEAT", "M_Titan_AP", "M_Titan_AT", "M_Titan_AT_long", "M_Titan_AT_static", "M_Vorona_HE", "M_Vorona_HEAT", "Missile_AGM_01_F", "Missile_AGM_02_F", "R_MRAAWS_HE_F", "R_MRAAWS_HEAT_F", "R_MRAAWS_HEAT55_F", "R_PG32V_F", "R_PG7_F", "Rocket_03_AP_F", "Rocket_03_HE_F", "Rocket_04_AP_F", "Rocket_04_HE_F"], 225]) select {!(_x in _reg)});
+		_a = ((nearestObjects [_v, ["ammo_Missile_BIM9X", "ammo_Missile_ShortRangeAABase", "ammo_Missile_MediumRangeAABase", "ammo_Missile_LongRangeAABase", "ammo_Missile_KH58", "ammo_Missile_HARM", "ammo_Missile_AntiRadiationBase", "M_Scalpel_AT", "M_Scalpel_AT_hidden", "M_SPG9_HE", "M_SPG9_HEAT", "M_Titan_AP", "M_Titan_AT", "M_Titan_AT_long", "M_Titan_AT_static", "M_Vorona_HE", "M_Vorona_HEAT", "Missile_AGM_01_F", "Missile_AGM_02_F", "R_MRAAWS_HE_F", "R_MRAAWS_HEAT_F", "R_MRAAWS_HEAT55_F", "R_PG32V_F", "R_PG7_F", "Rocket_03_AP_F", "Rocket_03_HE_F", "Rocket_04_AP_F", "Rocket_04_HE_F"], 225]) select {!(_x in _reg)});
 
 		if ((count _a) > 0) then {
 			[_v, (_a select 0)] spawn DAPS_fnc_Dazzler;
