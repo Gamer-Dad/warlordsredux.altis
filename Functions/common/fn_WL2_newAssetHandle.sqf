@@ -157,6 +157,7 @@ if (isPlayer _owner) then {
 
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", false, [2, clientOwner]];
+				_asset spawn DAPS_fnc_APSDazzler;
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
 

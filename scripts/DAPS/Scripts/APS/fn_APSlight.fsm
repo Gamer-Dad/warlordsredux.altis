@@ -5,8 +5,8 @@ item0[] = {"Init",0,250,-36.888977,-128.307343,53.111023,-78.307343,0.000000,"In
 item1[] = {"true",8,218,-37.164734,-25.291351,52.835266,24.708649,0.000000,"true"};
 item2[] = {"Loop",2,250,-38.012543,64.996216,51.987473,114.996223,0.000000,"Loop"};
 item3[] = {"dead",4,218,-156.276489,67.539551,-66.276489,117.539551,0.000000,"dead"};
-item4[] = {"Incomming",4,4314,-39.284187,149.349365,50.715820,199.349365,0.000000,"Incomming"};
-item5[] = {"target",2,250,138.747620,145.110535,228.747635,195.110535,0.000000,"target"};
+item4[] = {"Incomming",4,218,-39.284187,149.349365,50.715820,199.349365,0.000000,"Incomming"};
+item5[] = {"target",2,4346,138.747620,145.110535,228.747635,195.110535,0.000000,"target"};
 item6[] = {"Exit",1,250,-278.355347,69.658997,-188.355347,119.658981,0.000000,"Exit"};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -15,8 +15,8 @@ link3[] = {2,4};
 link4[] = {3,6};
 link5[] = {4,5};
 link6[] = {5,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,8,6316128,1,-539.215332,492.150391,273.783600,-404.978516,368,924,1};
-window[] = {2,-1,-1,-1,-1,1302,2560,4480,243,3,386};
+globals[] = {0.000000,0,0,0,0,640,480,1,8,6316128,1,-539.215332,492.150391,273.783600,-404.978516,368,1284,1};
+window[] = {2,-1,-1,-1,-1,1397,338,2258,338,3,386};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -78,7 +78,7 @@ class FSM
                                         priority = 0.000000;
                                         to="target";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_a = (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 80]) select {!(_x in _reg)};" \n
+                                        condition=/*%FSM<CONDITION""">*/"_a = (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 120]) select {!(_x in _reg)};" \n
                                          "((count _a) > 0);"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
@@ -105,7 +105,8 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_inc = _a # 0;" \n
                          "_d = _v distance _inc;" \n
                          "[_v, _inc, _d] remoteExec [""DAPS_fnc_Generic"", 2];" \n
-                         "_reg pushBackUnique _inc;"/*%FSM</STATEINIT""">*/;
+                         "_reg pushBackUnique _inc;" \n
+                         "_reg = _reg;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

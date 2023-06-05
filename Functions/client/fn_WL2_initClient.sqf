@@ -273,12 +273,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_targetResetHandle;
 0 spawn BIS_fnc_WL2_sceneDrawHandle;
 0 spawn BIS_fnc_WL2_refreshCurrentTargetData;
-
-0 spawn {
-	waituntil {sleep 0.1; !isnull (findDisplay 46)};
-	sleep 2;
-	0 spawn BIS_fnc_WL2_welcome;
-};
+0 spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
