@@ -18,7 +18,7 @@ if((typeOf _v)in dapsDouble)then{
 }else{
 	_text=format["%1 charges:<br/><br/>%2/%3",(_v getVariable"dapsType"),(_v getVariable"dapsAmmo"),(_v getVariable"dapsAmmoMax")];
 };
-if((typeOf _v)in dapsDazzler)then{_text="Dazzler active"};
+if(typeof _v == "O_T_Truck_03_device_ghex_F" || typeof _v == "O_Truck_03_device_F")then{_text="Dazzler active"};
 if!(_indicator)exitWith{
 	hintSilent(parseText format["%1",_text]);
 	sleep 3;
