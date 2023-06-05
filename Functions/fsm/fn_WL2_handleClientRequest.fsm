@@ -42,11 +42,11 @@ item37[] = {"__isNull",4,218,-670.973022,131.521332,-580.973022,181.521332,0.000
 item38[] = {"isNull",4,218,-41.329163,-210.774445,48.670837,-160.774445,0.000000,"isNull"};
 item39[] = {"Exit_1",1,250,-39.805969,-287.220673,50.194061,-237.220657,0.000000,"Exit"};
 item40[] = {"True_3",2,250,-972.110229,165.253815,-882.110229,215.253815,0.000000,"True"};
-item41[] = {"Uav",4,218,-542.819885,-116.910919,-452.819885,-66.910919,3.000000,"Uav"};
-item42[] = {"Plane",4,218,-626.752075,-77.455597,-536.752075,-27.455597,2.000000,"Plane"};
-item43[] = {"Darter",4,218,-683.489441,-23.208344,-593.489441,26.791656,1.000000,"Darter"};
+item41[] = {"Uav",4,218,-542.819885,-116.910919,-452.819885,-66.910919,4.000000,"Uav"};
+item42[] = {"Plane",4,218,-626.752075,-77.455597,-536.752075,-27.455597,3.000000,"Plane"};
+item43[] = {"Darter",4,218,-683.489441,-23.208344,-593.489441,26.791656,2.000000,"Darter"};
 item44[] = {"Runway",4,218,-748.316406,98.095184,-658.316345,148.095184,0.000000,"Runway"};
-item45[] = {"No_runway",4,218,-736.965332,29.890045,-646.965271,79.890045,0.000000,"No runway"};
+item45[] = {"No_runway",4,4314,-736.965332,29.890045,-646.965271,79.890045,1.000000,"No runway"};
 item46[] = {"Action_14",2,250,-852.008728,16.478882,-762.008667,66.478882,0.000000,"Action"};
 item47[] = {"Action_15",2,250,-854.513550,108.458130,-764.513672,158.458130,0.000000,"Action"};
 item48[] = {"Action_16",2,250,-766.629395,-75.604492,-676.629395,-25.604492,0.000000,"Action"};
@@ -57,7 +57,7 @@ item52[] = {"No_runway",4,218,-586.005676,-271.331329,-496.005615,-221.331329,0.
 item53[] = {"Action_19",2,250,-673.003906,-321.879517,-583.003906,-271.879486,0.000000,"Action"};
 item54[] = {"Action_20",2,250,-784.538879,-265.303864,-694.538879,-215.303864,0.000000,"Action"};
 item55[] = {"__isNull",4,218,-968.565430,-127.890297,-878.565430,-77.890305,0.000000,"!isNull"};
-item56[] = {"Action_21",2,4346,-983.688416,352.438324,-893.688416,402.438324,0.000000,"Action"};
+item56[] = {"Action_21",2,250,-983.688416,352.438324,-893.688416,402.438324,0.000000,"Action"};
 item57[] = {"MLRS",4,218,-825.472229,444.320679,-735.472229,494.320679,1.000000,"MLRS"};
 item58[] = {"Centurion",4,218,-1258.946411,387.028503,-1168.946655,437.028503,1.000000,"Centurion"};
 item59[] = {"Gorgon",4,218,-936.813660,487.559998,-846.813660,537.559998,1.000000,"Gorgon"};
@@ -164,8 +164,8 @@ link89[] = {66,68};
 link90[] = {67,68};
 link91[] = {68,14};
 link92[] = {69,14};
-globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1517.745728,164.248291,923.560791,-407.931427,1622,1284,1};
-window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1640};
+globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1418.583740,65.086060,845.062500,-329.433289,1622,1284,1};
+window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1640};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -746,7 +746,7 @@ class FSM
                                 class Uav
                                 {
                                         itemno = 41;
-                                        priority = 3.000000;
+                                        priority = 4.000000;
                                         to="Action_18";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(_class == ""B_UAV_02_dynamicLoadout_F"" || _class == ""B_T_UAV_03_dynamicLoadout_F"" || _class == ""B_UAV_05_F"" || _class == ""O_UAV_02_dynamicLoadout_F"" || _class == ""O_T_UAV_04_CAS_F"");"/*%FSM</CONDITION""">*/;
@@ -757,7 +757,7 @@ class FSM
                                 class Plane
                                 {
                                         itemno = 42;
-                                        priority = 2.000000;
+                                        priority = 3.000000;
                                         to="Action_17";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"_isPlane = (toLower getText (configFile >> ""CfgVehicles"" >> _class >> ""simulation"")) in [""airplanex"", ""airplane""] && {!(_class isKindOf ""VTOL_Base_F"")};" \n
@@ -769,7 +769,7 @@ class FSM
                                 class Darter
                                 {
                                         itemno = 43;
-                                        priority = 1.000000;
+                                        priority = 2.000000;
                                         to="Action_16";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"(_class == ""B_UAV_01_F"" || _class == ""O_UAV_01_F"");"/*%FSM</CONDITION""">*/;
@@ -780,11 +780,10 @@ class FSM
                                 class No_runway
                                 {
                                         itemno = 45;
-                                        priority = 0.000000;
+                                        priority = 1.000000;
                                         to="Action_14";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_sector = ((_targetPos nearObjects [""Logic"", 10]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0;" \n
-                                         "isNil {_sector};"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(isNil {(((_targetPos nearObjects [""Logic"", 15]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0)});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -795,8 +794,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Action_15";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"_sector = ((_targetPos nearObjects [""Logic"", 10]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0;" \n
-                                         "!(isNil {_sector});"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isNil {(((_targetPos nearObjects [""Logic"", 15]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0)});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
