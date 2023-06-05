@@ -5,4 +5,3 @@ dapsMedium = ["O_APC_Wheeled_02_rcws_v2_F","O_APC_Tracked_02_cannon_F","O_APC_Tr
 ];
 dapsHeavy = ["O_MBT_02_cannon_F","O_MBT_04_cannon_F","O_MBT_04_command_F","B_MBT_01_cannon_F","B_MBT_01_TUSK_F","B_MBT_01_arty_F","B_MBT_01_mlrs_F","O_MBT_02_arty_F","I_Truck_02_MRL_F","I_APC_tracked_03_cannon_F","I_MBT_03_cannon_F"
 ];
-dapsDazzler = [];

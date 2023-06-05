@@ -11,7 +11,6 @@ dapsDebug = FALSE;
 dapsLight = [];
 dapsMedium = [];
 dapsHeavy = [];
-dapsDazzler = [];
 
 dapsRearmRange = 50;
 dapsRearmTime = 5;
