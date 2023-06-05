@@ -13,10 +13,12 @@ while {!BIS_WL_missionEnd} do {
 		if !(_previousSeizingInfo isEqualTo _info) then {
 			if (count _info > 1) then {
 				["seizing", [_visitedSector, _info # 0, _info # 1, _info # 2]] spawn BIS_fnc_WL2_setOSDEvent;
+				waitUntil {sleep 0.1; (count (_visitedSector getVariable ["BIS_WL_seizingInfo", []])) == 0};
+				_previousSeizingInfo = [];
 			} else {
 				["seizing", []] spawn BIS_fnc_WL2_setOSDEvent;
+				_previousSeizingInfo = _info;
 			};
-			_previousSeizingInfo = _info;
 		} else {
 			if ((_visitedSector getVariable "BIS_WL_owner") != BIS_WL_playerSide && {count _info == 0 && {(_visitedSector in (BIS_WL_sectorsArray # 7)) && {_visitedSector != WL_TARGET_FRIENDLY}}}) then {
 				["seizingDisabled", [_visitedSector getVariable "BIS_WL_owner"]] spawn BIS_fnc_WL2_setOSDEvent;
@@ -30,5 +32,5 @@ while {!BIS_WL_missionEnd} do {
 			_previousSeizingInfo = [];
 		};
 	};
-	sleep 1;
+	sleep (if (_visitedSectorID == -1) then {1} else {0.5});
 };
