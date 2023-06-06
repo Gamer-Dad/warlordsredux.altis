@@ -40,13 +40,13 @@ private _location13 = createLocation ["NameLocal", [12738.2,16531.8,0.000343323]
 _location13 setText "Lakka Factory";
 
 private _location14 = createLocation ["NameLocal", [15152.4,17273.3,0.00146675], 20, 20];
-_location13 setText "Compound";
+_location14 setText "Compound";
 
 private _location15 = createLocation ["NameLocal", [23582.1,21097.6,0.0018158], 20, 20];
-_location13 setText "Nidasos Base";
+_location15 setText "Nidasos Base";
 
 private _location16 = createLocation ["NameLocal", [23128.7,18689.5,0.00143886], 20, 20];
-_location14 setText "Salt Flats";
+_location16 setText "Salt Flats";
 
 
 
