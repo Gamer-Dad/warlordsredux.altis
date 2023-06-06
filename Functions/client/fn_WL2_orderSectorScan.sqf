@@ -31,4 +31,4 @@ if (isNull BIS_WL_targetSector) exitWith {
 	[toUpper localize "STR_A3_WL_scan_canceled"] spawn BIS_fnc_WL2_smoothText;
 };
 
-[player, "scan", BIS_WL_scanCost, [], BIS_WL_targetSector] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+[player, "scan", BIS_WL_scanCost, [], BIS_WL_targetSector] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];

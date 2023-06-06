@@ -12,19 +12,23 @@ item7[] = {"Delay",4,218,403.874695,-178.684937,493.874756,-128.684937,0.000000,
 item8[] = {"Delay",4,218,-339.178741,-155.988892,-249.178741,-105.988831,0.000000,"Delay"};
 item9[] = {"True",2,250,-226.784302,-231.460846,-136.784317,-181.460815,0.000000,"True"};
 item10[] = {"True_1",2,250,258.712128,-229.626297,348.712189,-179.626282,0.000000,"True"};
+item11[] = {"Exit",1,250,-103.427307,-393.774780,-13.427277,-343.774780,0.000000,"Exit"};
+item12[] = {"Exit_Cond",4,218,-101.375183,-307.884949,-11.375183,-257.884979,3.000000,"Exit Cond"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
 link3[] = {2,4};
-link4[] = {3,6};
-link5[] = {4,5};
-link6[] = {5,8};
-link7[] = {6,7};
-link8[] = {7,10};
-link9[] = {8,9};
-link10[] = {9,1};
-link11[] = {10,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,17,6316128,1,-696.682922,696.681641,355.935608,-561.065002,1884,1284,1};
+link4[] = {2,12};
+link5[] = {3,6};
+link6[] = {4,5};
+link7[] = {5,8};
+link8[] = {6,7};
+link9[] = {7,10};
+link10[] = {8,9};
+link11[] = {9,1};
+link12[] = {10,1};
+link13[] = {12,11};
+globals[] = {0.000000,0,0,0,0,640,480,1,20,6316128,1,-696.682922,696.681641,355.935608,-561.065002,1884,1284,1};
 window[] = {2,-1,-1,-1,-1,1215,156,2076,156,3,1902};
 *//*%FSM</HEAD>*/
 class FSM
@@ -72,6 +76,17 @@ class FSM
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
+                                /*%FSM<LINK "Exit_Cond">*/
+                                class Exit_Cond
+                                {
+                                        itemno = 12;
+                                        priority = 3.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(BIS_WL_missionEnd || (typeOf objectParent player != ""B_Plane_Fighter_01_F"" && typeOf objectParent player != ""B_Plane_CAS_01_dynamicLoadout_F""));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
                                 /*%FSM<LINK "Lost_target">*/
                                 class Lost_target
                                 {
@@ -193,10 +208,23 @@ class FSM
                         };
                 };
                 /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
         };
         initState="Init";
         finalStates[] =
         {
+                "Exit",
         };
 };
 /*%FSM</COMPILE>*/

@@ -23,5 +23,5 @@ while {[0] call BIS_fnc_countdown > 0} do {
 	_ctrlTimer ctrlCommit 0;
 	_ctrlBackgroundTimer ctrlSetStructuredText parseText format ["<img size = '%1' color = '#ffffff' image='img\timer_ca.paa'></img>", (0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 	_ctrlBackgroundTimer ctrlCommit 0;
-	sleep 0.2;
+	sleep 1;
 };

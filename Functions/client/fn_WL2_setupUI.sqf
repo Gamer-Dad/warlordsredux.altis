@@ -443,7 +443,7 @@ switch (_displayClass) do {
 					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
 					_maxTransfer = BIS_WL_maxCP - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
-					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};
@@ -488,7 +488,7 @@ switch (_displayClass) do {
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
-			[player, "fundsTransferCancel", 0, [], 0] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+			[player, "fundsTransferCancel", 0, [], 0] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 			playSound "AddItemFailed";
 		}];
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;

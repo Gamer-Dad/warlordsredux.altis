@@ -82,7 +82,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_MEDIUM;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	[player, "fastTravelContested", 200, _destination, ""] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+	[player, "fastTravelContested", 200, _destination, ""] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep WL_TIMEOUT_MEDIUM;
 

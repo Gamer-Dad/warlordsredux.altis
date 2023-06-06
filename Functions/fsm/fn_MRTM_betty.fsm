@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_bettyFSM">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Init",0,250,-45.862091,-242.672409,44.137909,-192.672409,0.000000,"Init"};
+item0[] = {"Init",0,250,36.441986,-308.678650,126.441994,-258.678650,0.000000,"Init"};
 item1[] = {"True",8,218,-46.293091,-172.844833,43.706909,-122.844833,0.000000,"True"};
 item2[] = {"Loop",2,250,-47.556702,-89.469803,42.443314,-39.469803,0.000000,"Loop"};
 item3[] = {"Pull_Up",4,218,120.231377,-88.163025,210.231384,-38.163025,3.000000,"Pull Up"};
@@ -19,36 +19,40 @@ item14[] = {"Delay",4,218,302.343994,167.871826,392.343994,217.871826,0.000000,"
 item15[] = {"True_2",2,250,351.528320,43.660522,441.528320,93.660522,0.000000,"True"};
 item16[] = {"Missile__Warning",2,250,-128.643982,174.540955,-38.643967,224.540955,0.000000,"Missile " \n "Warning"};
 item17[] = {"Missile_Gone",4,218,-129.477600,308.755859,-39.477600,358.755859,1.000000,"Missile Gone"};
-item18[] = {"True_3",2,4346,-287.867767,150.365662,-197.867920,200.365662,0.000000,"True"};
+item18[] = {"True_3",2,250,-287.867767,150.365662,-197.867920,200.365662,0.000000,"True"};
 item19[] = {"Delay",4,218,-13.602791,255.403320,76.397217,305.403320,0.000000,"Delay"};
 item20[] = {"True_4",2,250,-14.530090,107.091667,75.469925,157.091675,0.000000,"True"};
+item21[] = {"Exit",1,250,-122.400452,-363.941406,-32.400421,-313.941406,0.000000,"Exit"};
+item22[] = {"Exit_Cond",4,218,-121.644333,-277.627136,-31.644318,-227.627151,0.000000,"Exit Cond"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
 link3[] = {2,4};
 link4[] = {2,5};
 link5[] = {2,6};
-link6[] = {3,10};
-link7[] = {4,7};
-link8[] = {5,13};
-link9[] = {6,16};
-link10[] = {7,8};
-link11[] = {8,9};
-link12[] = {9,1};
-link13[] = {10,11};
-link14[] = {11,12};
-link15[] = {12,1};
-link16[] = {13,14};
-link17[] = {14,15};
-link18[] = {15,1};
-link19[] = {16,17};
-link20[] = {16,19};
-link21[] = {17,18};
-link22[] = {18,1};
-link23[] = {19,20};
-link24[] = {20,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,58,6316128,1,-568.390381,560.234863,515.163269,-531.157776,1385,1284,1};
-window[] = {2,-1,-1,-1,-1,1240,664,2584,181,3,1403};
+link6[] = {2,22};
+link7[] = {3,10};
+link8[] = {4,7};
+link9[] = {5,13};
+link10[] = {6,16};
+link11[] = {7,8};
+link12[] = {8,9};
+link13[] = {9,1};
+link14[] = {10,11};
+link15[] = {11,12};
+link16[] = {12,1};
+link17[] = {13,14};
+link18[] = {14,15};
+link19[] = {15,1};
+link20[] = {16,17};
+link21[] = {16,19};
+link22[] = {17,18};
+link23[] = {18,1};
+link24[] = {19,20};
+link25[] = {20,1};
+link26[] = {22,21};
+globals[] = {0.000000,0,0,0,0,640,480,1,60,6316128,1,-573.891357,441.871338,473.441467,-468.247528,1385,1284,1};
+window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1403};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -122,6 +126,17 @@ class FSM
                                         to="Altitude__Warnin";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"((getPosATL player select 2) < 100 && {(objectParent player) getVariable [""landingGear"", true] == false});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Exit_Cond">*/
+                                class Exit_Cond
+                                {
+                                        itemno = 22;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(BIS_WL_missionEnd || (typeOf objectParent player != ""B_Plane_Fighter_01_F"" && typeOf objectParent player != ""B_Plane_CAS_01_dynamicLoadout_F""));"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -386,10 +401,23 @@ class FSM
                         };
                 };
                 /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
         };
         initState="Init";
         finalStates[] =
         {
+                "Exit",
         };
 };
 /*%FSM</COMPILE>*/

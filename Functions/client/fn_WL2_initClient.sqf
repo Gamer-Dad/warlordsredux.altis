@@ -91,8 +91,8 @@ MRTM_EnableRWR = true;
 		if (player distance _pos > 1) then {
 			_confirmReposition = TRUE;
 		};
+		sleep 5;
 	};
-
 	missionNamespace setVariable [_varFormat, TRUE, [2, clientOwner]];
 };
 
@@ -177,12 +177,17 @@ player addEventHandler ["GetInMan", {
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 }];
 
-if (side group player == west) then {
-	0 spawn BIS_fnc_MRTM_betty;
-	0 spawn BIS_fnc_MRTM_bettyRWR;
-} else {
-	0 spawn BIS_fnc_MRTM_rita;
-};
+player addEventHandler ["GetIn", {
+	params ["_vehicle", "_role", "_unit", "_turret"];
+	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then {
+		0 spawn BIS_fnc_MRTM_betty;
+		0 spawn BIS_fnc_MRTM_bettyRWR;
+	};
+
+	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
+		0 spawn BIS_fnc_MRTM_rita;
+	};
+}];
 
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
