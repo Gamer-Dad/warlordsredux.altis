@@ -1,0 +1,423 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_bettyFSM">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,36.441986,-308.678650,126.441994,-258.678650,0.000000,"Init"};
+item1[] = {"True",8,218,-46.293091,-172.844833,43.706909,-122.844833,0.000000,"True"};
+item2[] = {"Loop",2,250,-47.556702,-89.469803,42.443314,-39.469803,0.000000,"Loop"};
+item3[] = {"Pull_Up",4,218,120.231377,-88.163025,210.231384,-38.163025,3.000000,"Pull Up"};
+item4[] = {"Bingo_Fuel",4,218,-231.549225,-84.060242,-141.549225,-34.060242,0.000000,"Bingo Fuel"};
+item5[] = {"Altitude",4,218,53.469208,31.387451,143.469208,81.387451,1.000000,"Altitude"};
+item6[] = {"Incomming",4,218,-128.726654,35.356445,-38.726654,85.356445,2.000000,"Incomming"};
+item7[] = {"Bingo_Warning",2,250,-404.576599,-85.552521,-314.576599,-35.552521,0.000000,"Bingo" \n "Warning"};
+item8[] = {"Delay",4,218,-409.578400,-228.103760,-319.578430,-178.103760,0.000000,"Delay"};
+item9[] = {"True",2,250,-257.857239,-228.103760,-167.857239,-178.103760,0.000000,"True"};
+item10[] = {"Pull_Up_Warning",2,250,314.014893,-88.887054,404.014893,-38.887054,0.000000,"Pull Up" \n "Warning"};
+item11[] = {"Delay",4,218,313.181274,-203.094757,403.181274,-153.094757,0.000000,"Delay"};
+item12[] = {"True_1",2,250,201.474487,-268.118103,291.474487,-218.118103,0.000000,"True"};
+item13[] = {"Altitude__Warnin",2,250,118.944817,172.039978,208.944839,222.039978,0.000000,"Altitude " \n "Warning"};
+item14[] = {"Delay",4,218,302.343994,167.871826,392.343994,217.871826,0.000000,"Delay"};
+item15[] = {"True_2",2,250,351.528320,43.660522,441.528320,93.660522,0.000000,"True"};
+item16[] = {"Missile__Warning",2,250,-128.643982,174.540955,-38.643967,224.540955,0.000000,"Missile " \n "Warning"};
+item17[] = {"Missile_Gone",4,218,-129.477600,308.755859,-39.477600,358.755859,1.000000,"Missile Gone"};
+item18[] = {"True_3",2,250,-287.867767,150.365662,-197.867920,200.365662,0.000000,"True"};
+item19[] = {"Delay",4,218,-13.602791,255.403320,76.397217,305.403320,0.000000,"Delay"};
+item20[] = {"True_4",2,250,-14.530090,107.091667,75.469925,157.091675,0.000000,"True"};
+item21[] = {"Exit",1,250,-122.400452,-363.941406,-32.400421,-313.941406,0.000000,"Exit"};
+item22[] = {"Exit_Cond",4,218,-121.644333,-277.627136,-31.644318,-227.627151,0.000000,"Exit Cond"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {2,5};
+link5[] = {2,6};
+link6[] = {2,22};
+link7[] = {3,10};
+link8[] = {4,7};
+link9[] = {5,13};
+link10[] = {6,16};
+link11[] = {7,8};
+link12[] = {8,9};
+link13[] = {9,1};
+link14[] = {10,11};
+link15[] = {11,12};
+link16[] = {12,1};
+link17[] = {13,14};
+link18[] = {14,15};
+link19[] = {15,1};
+link20[] = {16,17};
+link21[] = {16,19};
+link22[] = {17,18};
+link23[] = {18,1};
+link24[] = {19,20};
+link25[] = {20,1};
+link26[] = {22,21};
+globals[] = {0.000000,0,0,0,0,640,480,1,60,6316128,1,-573.891357,441.871338,473.441467,-468.247528,1385,1284,1};
+window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1403};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_bettyFSM";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private [""_delay"", ""_incomming""];" \n
+                         "" \n
+                         "_currentTargets = getSensorTargets objectParent player;" \n
+                         "_incomming = (objectParent player) getVariable ""Incomming"";" \n
+                         "_delay = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR && {alive player}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loop">*/
+                class Loop
+                {
+                        name = "Loop";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_currentTargets = getSensorTargets objectParent player;" \n
+                         "_delay = serverTime;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Pull_Up">*/
+                                class Pull_Up
+                                {
+                                        itemno = 3;
+                                        priority = 3.000000;
+                                        to="Pull_Up_Warning";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((getPosATL player select 2 <= 2000) && {(getPosATL player select 2 > 100) && {((objectParent player) getVariable [""landingGear"", true] == false) && {(asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 40) / speed (objectParent player)))}}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Incomming">*/
+                                class Incomming
+                                {
+                                        itemno = 6;
+                                        priority = 2.000000;
+                                        to="Missile__Warning";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count ((objectParent player) getVariable ""Incomming"")) > 0;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Altitude">*/
+                                class Altitude
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="Altitude__Warnin";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((getPosATL player select 2) < 100 && {(objectParent player) getVariable [""landingGear"", true] == false});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Exit_Cond">*/
+                                class Exit_Cond
+                                {
+                                        itemno = 22;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(BIS_WL_missionEnd || (typeOf objectParent player != ""B_Plane_Fighter_01_F"" && typeOf objectParent player != ""B_Plane_CAS_01_dynamicLoadout_F""));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Bingo_Fuel">*/
+                                class Bingo_Fuel
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="Bingo_Warning";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(fuel (objectParent player) < 0.2);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Bingo_Warning">*/
+                class Bingo_Warning
+                {
+                        name = "Bingo_Warning";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/"playSoundUI [""bingoFuel"", MRTM_rwr4, 1];" \n
+                         "_delay = serverTime + 3.6;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_delay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR && {alive player}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Pull_Up_Warning">*/
+                class Pull_Up_Warning
+                {
+                        name = "Pull_Up_Warning";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"playSoundUI [""pullUp"", MRTM_rwr1, 1];" \n
+                         "_delay = serverTime + 1.53;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="True_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_delay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_1">*/
+                class True_1
+                {
+                        name = "True_1";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR && {alive player}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Altitude__Warnin">*/
+                class Altitude__Warnin
+                {
+                        name = "Altitude__Warnin";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/"playSoundUI [""altWarning"", MRTM_rwr2, 1];" \n
+                         "_delay = serverTime + 4;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="True_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_delay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_2">*/
+                class True_2
+                {
+                        name = "True_2";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR && {alive player}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Missile__Warning">*/
+                class Missile__Warning
+                {
+                        name = "Missile__Warning";
+                        itemno = 16;
+                        init = /*%FSM<STATEINIT""">*/"_incomming = (((objectParent player) getVariable ""Incomming"") # 0);" \n
+                         "_mDir = ((objectParent player) getRelDir _incomming);" \n
+                         "" \n
+                         "_3Dir = abs (90 - _mDir);" \n
+                         "_6Dir = abs (180 - _mDir);" \n
+                         "_9Dir = abs (270 - _mDir);" \n
+                         "_12Dir = abs (360 - _mDir);" \n
+                         "_0Dir = abs (0 - _mDir);" \n
+                         "" \n
+                         "_fDir = 0;" \n
+                         "switch (true) do {" \n
+                         "	case ((_6Dir < _9Dir) && {(_6Dir < _3Dir) && {(_6Dir < _0Dir) && {(_6Dir < _12Dir)}}}): {" \n
+                         "		_fDir = 180;" \n
+                         "	};" \n
+                         "	case (((_3Dir < _6Dir)) && {(_3Dir < _0Dir) && {(_3Dir < _12Dir) && {(_3Dir < _9Dir)}}}): {" \n
+                         "		_fDir = 90;" \n
+                         "	};" \n
+                         "	case ((_9Dir < _6Dir) && {(_9Dir < _0Dir) && {(_9Dir < _12Dir) && {(_9Dir < _3Dir)}}}): {" \n
+                         "		_fDir = 270;" \n
+                         "	};" \n
+                         "};" \n
+                         "_sound = format [""incMissile_%1"", _fDir];" \n
+                         "playSoundUI [_sound, (MRTM_rwr4 + 0.4), 1];" \n
+                         "_delay = serverTime + 3.3;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Missile_Gone">*/
+                                class Missile_Gone
+                                {
+                                        itemno = 17;
+                                        priority = 1.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _incomming || isNull _incomming || missileTarget _incomming != (objectParent player) || !alive player;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 19;
+                                        priority = 0.000000;
+                                        to="True_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_delay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_3">*/
+                class True_3
+                {
+                        name = "True_3";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"(objectParent player) setVariable [""Incomming"", (((objectParent player) getVariable ""Incomming"") - [_incomming]), [clientOwner, 2]];" \n
+                         "{" \n
+                         "	(objectParent player) setVariable [""Incomming"", (((objectParent player) getVariable ""Incomming"") - [_x]), [clientOwner, 2]];" \n
+                         "} forEach ((objectParent player) getVariable ""Incomming"") select {!(alive _x)};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR && {alive player}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_4">*/
+                class True_4
+                {
+                        name = "True_4";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR && {alive player}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

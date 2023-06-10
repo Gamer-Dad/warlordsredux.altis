@@ -1,0 +1,378 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_handleEnemyCapture.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-47.286194,-10.964478,42.713806,39.035522,0.000000,"Init"};
+item1[] = {"is_owner",4,218,-48.253906,92.140045,41.746094,142.140045,0.000000,"is owner"};
+item2[] = {"True",2,250,-139.739227,152.162140,-49.739197,202.162140,0.000000,"True"};
+item3[] = {"Condition",4,218,-142.643509,221.865204,-52.643524,271.865204,0.000000,"Condition"};
+item4[] = {"Action",2,250,-105.642792,284.975586,-15.642761,334.975586,0.000000,"Action"};
+item5[] = {"Enemy_side",4,218,-106.325272,355.482239,-16.325272,405.482239,1.000000,"Enemy side"};
+item6[] = {"True",8,218,15.862686,274.804657,105.862694,324.804626,0.000000,"True"};
+item7[] = {"True_1",2,250,-104.387268,421.761810,-14.387268,471.761810,0.000000,"True"};
+item8[] = {"Condition",4,218,-142.457764,492.631470,-52.457764,542.631470,1.000000,"Condition"};
+item9[] = {"True",8,218,-27.660675,487.945862,62.339325,537.945862,0.000000,"True"};
+item10[] = {"Action_1",2,250,-146.557648,567.017029,-56.557648,617.017029,0.000000,"Action"};
+item11[] = {"Action_2",2,250,-28.246277,565.259888,61.753738,615.259888,0.000000,"Action"};
+item12[] = {"Condition",4,218,-84.537750,666.123474,5.462250,716.123413,1.000000,"Condition"};
+item13[] = {"True",8,218,-214.730164,659.474426,-124.730164,709.474426,0.000000,"True"};
+item14[] = {"True",8,218,41.817924,656.639587,131.817932,706.639587,0.000000,"True"};
+item15[] = {"Action_3",2,250,-87.164795,748.061401,2.835220,798.061401,0.000000,"Action"};
+item16[] = {"Delay",4,218,-87.164284,821.766663,2.835724,871.766602,0.000000,"Delay"};
+item17[] = {"True_2",2,250,-87.164246,890.510254,2.835770,940.510254,0.000000,"True"};
+item18[] = {"Condition",4,218,-138.899048,951.458130,-48.899048,1001.458130,1.000000,"Condition"};
+item19[] = {"True",8,218,-27.633736,948.623291,62.366272,998.623291,0.000000,"True"};
+item20[] = {"Action_4",2,250,-143.861328,1022.328430,-53.861328,1072.328369,0.000000,"Action"};
+item21[] = {"Delay",4,218,-144.570007,1114.458862,-54.570007,1164.458862,0.000000,"Delay"};
+item22[] = {"Reset",2,250,297.897034,661.156311,387.897034,711.156372,0.000000,"Reset"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {4,6};
+link6[] = {5,7};
+link7[] = {6,22};
+link8[] = {7,8};
+link9[] = {7,9};
+link10[] = {8,10};
+link11[] = {9,11};
+link12[] = {10,12};
+link13[] = {10,13};
+link14[] = {11,12};
+link15[] = {11,14};
+link16[] = {12,15};
+link17[] = {13,22};
+link18[] = {14,22};
+link19[] = {15,16};
+link20[] = {16,17};
+link21[] = {17,18};
+link22[] = {17,19};
+link23[] = {18,20};
+link24[] = {19,22};
+link25[] = {20,21};
+link26[] = {21,22};
+link27[] = {22,1};
+link28[] = {22,12};
+globals[] = {0.000000,0,0,0,0,640,480,1,33,6316128,1,-709.409729,670.021057,1302.150024,-36.617367,1323,1284,1};
+window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1341};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_handleEnemyCapture.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_sector""];" \n
+                         "private [""_sector"", ""_nextPossibleWarn"", ""_marker""];" \n
+                         "" \n
+                         "_sector = _sector;" \n
+                         "_nextPossibleWarn = 0;" \n
+                         "_marker = (_sector getVariable ""BIS_WL_markers"") # 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "is_owner">*/
+                                class is_owner
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_sector getVariable ""BIS_WL_owner"" == BIS_WL_playerSide;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_seizingInfo = (_sector getVariable ""BIS_WL_seizingInfo"");" \n
+                         "_seizingInfo params [""_side""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Enemy_side">*/
+                                class Enemy_side
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="True_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_side == BIS_WL_enemySide;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="Reset";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_1">*/
+                class True_1
+                {
+                        name = "True_1";
+                        itemno = 7;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 8;
+                                        priority = 1.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"serverTime > _nextPossibleWarn;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="Action_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/"_nextPossibleWarn = serverTime + 30;" \n
+                         """under_attack"" call BIS_fnc_WL2_announcer;" \n
+                         "[toUpper format [localize ""STR_A3_WL_popup_losing_sector"", BIS_WL_enemySide call BIS_fnc_WL2_sideToFaction, _sector getVariable ""BIS_WL_name""]] spawn BIS_fnc_WL2_smoothText;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 12;
+                                        priority = 1.000000;
+                                        to="Action_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && {(_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide};"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="Reset";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_2">*/
+                class Action_2
+                {
+                        name = "Action_2";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 12;
+                                        priority = 1.000000;
+                                        to="Action_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && {(_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide};"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="Reset";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_3">*/
+                class Action_3
+                {
+                        name = "Action_3";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"_marker setMarkerBrushLocal ""Solid"";" \n
+                         "_marker setMarkerColorLocal BIS_WL_colorMarkerEnemy;" \n
+                         "_d = serverTime + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 16;
+                                        priority = 0.000000;
+                                        to="True_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_d < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_2">*/
+                class True_2
+                {
+                        name = "True_2";
+                        itemno = 17;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 18;
+                                        priority = 1.000000;
+                                        to="Action_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 19;
+                                        priority = 0.000000;
+                                        to="Reset";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_4">*/
+                class Action_4
+                {
+                        name = "Action_4";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"_marker setMarkerBrushLocal ""Border"";" \n
+                         "_marker setMarkerColorLocal BIS_WL_colorMarkerFriendly;" \n
+                         "_d = serverTime + 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 21;
+                                        priority = 0.000000;
+                                        to="Reset";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_d < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Reset">*/
+                class Reset
+                {
+                        name = "Reset";
+                        itemno = 22;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 12;
+                                        priority = 1.000000;
+                                        to="Action_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (_sector getVariable [""BIS_WL_seizingInfo"", []]) == 3) && {(_sector getVariable ""BIS_WL_owner"") == BIS_WL_playerSide};"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "is_owner">*/
+                                class is_owner
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_sector getVariable ""BIS_WL_owner"" == BIS_WL_playerSide;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

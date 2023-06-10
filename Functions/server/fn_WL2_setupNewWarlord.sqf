@@ -24,8 +24,7 @@ _boundToAnotherTeam = FALSE;
 if (isPlayer _warlord) then {
 	_playerVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID _warlord];
 	_boundToAnotherTeam = (getPlayerUID _warlord) in (missionNamespace getVariable format ["BIS_WL_boundTo%1", (BIS_WL_competingSides - [side group _warlord]) # 0]);
-	missionNamespace setVariable [_playerVarID, !_boundToAnotherTeam];
-	(owner _warlord) publicVariableClient _playerVarID;
+	missionNamespace setVariable [_playerVarID, !_boundToAnotherTeam, [2, (owner _warlord)]];
 	
 	
 	if !(_boundToAnotherTeam) then {
@@ -47,7 +46,7 @@ if !(_boundToAnotherTeam) then {
 	_respawnPos = markerPos selectRandom _markers;
 
 	while {if (isPlayer _warlord) then {!(missionNamespace getVariable [_varFormat, FALSE])} else {_warlord distance2D _respawnPos > 100}} do {
-		[_warlord, [_respawnPos, [], 2, "NONE"]] remoteExec ["setVehiclePosition", _warlord];
+		[_warlord, [_respawnPos, [], 10, "NONE"]] remoteExec ["setVehiclePosition", _warlord];
 		uiSleep WL_TIMEOUT_STANDARD;
 	};
 	

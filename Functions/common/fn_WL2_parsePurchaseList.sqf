@@ -35,17 +35,17 @@ private _savedLoadoutHandled = FALSE;
 				_data = _sortedArray # _index
 			};
 			
-			if (_category == "Gear" && !_arsenalHandled) then {
+			if (_category == "Gear" && {!_arsenalHandled}) then {
 				_arsenalHandled = TRUE;
 				_data pushBack ["Arsenal", BIS_WL_arsenalCost, [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
 			
-			if (_category == "Gear" && !_lastLoadoutHandled) then {
+			if (_category == "Gear" && {!_lastLoadoutHandled}) then {
 				_lastLoadoutHandled = TRUE;
 				_data pushBack ["LastLoadout", BIS_WL_lastLoadoutCost, [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
 			};
 			
-			if (_category == "Gear" && !_savedLoadoutHandled) then {
+			if (_category == "Gear" && {!_savedLoadoutHandled}) then {
 				_savedLoadoutHandled = TRUE;
 				_data pushBack ["SavedLoadout", BIS_WL_savedLoadoutCost, [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
 			};
@@ -163,7 +163,7 @@ private _savedLoadoutHandled = FALSE;
 				_data pushBack [_className, _cost, _requirements, _displayName, _picture, _text, _offset, _notForAIUse];
 			} forEach (configProperties [_preset >> str _side >> _x, "isClass _x"]);
 			
-			if (_category == "Gear" && !_saveLoadoutHandled) then {
+			if (_category == "Gear" && {!_saveLoadoutHandled}) then {
 				_saveLoadoutHandled = TRUE;
 				_data pushBack ["SaveLoadout", 0, [], "< " + (localize "STR_A3_WL_save_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_save_loadout_info"];
 			};
@@ -184,7 +184,7 @@ _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_
 _strategyArr pushBack ["RespawnVic", 200, [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
 _strategyArr pushBack ["FundsTransfer", BIS_WL_fundsTransferCost, [], localize "STR_A3_WL_menu_fundstransfer", "\A3\Data_F_Warlords\Data\preview_cp_transfer.jpg", localize "STR_A3_WL_menu_fundstransfer_info"];
 _strategyArr pushBack ["TargetReset", BIS_WL_targetResetCost, [], localize "STR_A3_WL_menu_resetvoting", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_resetvoting_info"];
-_strategyArr pushBack ["forfeitVote", 0, [], "Order forfeit", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order forfeit"];
+_strategyArr pushBack ["forfeitVote", 0, [], localize "STR_A3_WL_feature_forfeit_vote", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_feature_forfeit_vote"];
 _strategyArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_lock_all"];
 _strategyArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_unlock_all"];
 _strategyArr pushBack ["RemoveUnits", 0, [], localize "STR_A3_WL_feature_dismiss_selected", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_dismiss_selected"];

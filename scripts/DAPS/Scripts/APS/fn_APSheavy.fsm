@@ -1,0 +1,146 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_APSHeavy">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-37.368317,-129.222809,52.631683,-79.222794,0.000000,"Init"};
+item1[] = {"true",8,218,-36.565735,-40.871231,53.434265,9.128769,0.000000,"true"};
+item2[] = {"Loop",2,250,-37.156006,43.526459,52.844009,93.526459,0.000000,"Loop"};
+item3[] = {"dead",4,218,-160.506470,42.346130,-70.506470,92.346130,0.000000,"dead"};
+item4[] = {"Exit",1,250,-294.335297,44.328613,-204.335236,94.328598,0.000000,"Exit"};
+item5[] = {"Incomming",4,218,-36.742867,108.979057,53.257141,158.979065,0.000000,"Incomming"};
+item6[] = {"target",2,4346,132.524719,109.215057,222.524734,159.215057,0.000000,"target"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,5};
+link4[] = {3,4};
+link5[] = {5,6};
+link6[] = {6,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,12,6316128,1,-320.977539,264.035889,693.568726,-583.909424,588,1284,1};
+window[] = {2,-1,-1,-1,-1,1397,338,2258,338,3,606};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_APSHeavy";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_v""];" \n
+                         "" \n
+                         "private _a = [];" \n
+                         "private _v = _v;" \n
+                         "private _reg = [];" \n
+                         "" \n
+                         "_v setVariable [""dapsActive"", true, true];" \n
+                         "_v setVariable [""dapsLastAmmo"", (_v call DAPS_fnc_CountAmmo), true];" \n
+                         "_v setVariable [""dapsType"", ""Heavy APS"", true];" \n
+                         "_v setVariable [""dapsAmmo"", 6, true];" \n
+                         "_v setVariable [""dapsAmmoMax"", 6, true];" \n
+                         "" \n
+                         "dapsRegistered pushBackUnique _v;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_v call DAPS_fnc_Active;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loop">*/
+                class Loop
+                {
+                        name = "Loop";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"{" \n
+                         "   if !(alive _x) then {" \n
+                         "   	_reg = _reg - [_x];" \n
+                         "	};" \n
+                         "} forEach _reg;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Incomming">*/
+                                class Incomming
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="target";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_a = (nearestObjects [_v, [""M_Scalpel_AT"", ""M_Scalpel_AT_hidden"", ""M_SPG9_HE"", ""M_SPG9_HEAT"", ""M_Titan_AP"", ""M_Titan_AT"", ""M_Titan_AT_long"", ""M_Titan_AT_static"", ""M_Vorona_HE"", ""M_Vorona_HEAT"", ""Missile_AGM_01_F"", ""Missile_AGM_02_F"", ""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""Rocket_03_AP_F"", ""Rocket_03_HE_F"", ""Rocket_04_AP_F"", ""Rocket_04_HE_F""], 120]) select {!(_x in _reg)};" \n
+                                         "((count _a) > 0);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _v;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "target">*/
+                class target
+                {
+                        name = "target";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_inc = _a # 0;" \n
+                         "_d = _v distance _inc;" \n
+                         "[_v, _inc, _d] remoteExec [""DAPS_fnc_Generic"", 2];" \n
+                         "_reg pushBackUnique _inc;" \n
+                         "_reg = _reg;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_v call DAPS_fnc_Active;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

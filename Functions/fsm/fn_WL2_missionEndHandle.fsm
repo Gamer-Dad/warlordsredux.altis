@@ -1,0 +1,82 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_missionEndHandle.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-45.212921,-132.523056,44.787079,-82.523056,0.000000,"Init"};
+item1[] = {"missionEnd",4,218,-44.999939,-6.316711,45.000061,43.683289,0.000000,"missionEnd"};
+item2[] = {"End",1,4346,-45.521454,135.023773,44.478577,185.023758,0.000000,"End"};
+link0[] = {0,1};
+link1[] = {1,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,5,6316128,1,-311.942749,315.710449,353.962524,-227.499680,1386,1284,1};
+window[] = {2,-1,-1,-1,-1,1085,26,1946,26,3,1404};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_missionEndHandle.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "missionEnd">*/
+                                class missionEnd
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="End";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(((BIS_WL_base1 getVariable ""BIS_WL_owner"") == (BIS_WL_base2 getVariable ""BIS_WL_owner"")) || (BIS_WL_missionEnd == true))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "End">*/
+                class End
+                {
+                        name = "End";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"private _winner = BIS_WL_base1 getVariable ""BIS_WL_owner"";" \n
+                         "" \n
+                         "if !(isDedicated) then {" \n
+                         "	removeMissionEventHandler [""EachFrame"", BIS_WL_assetMapHandler];" \n
+                         "	removeMissionEventHandler [""MapSingleClick"", BIS_WL_assetMapClickHandler];" \n
+                         "	removeMissionEventHandler [""Draw3D"", missionNamespace getVariable [""BIS_WL_sceneDrawHandler"", -1]];" \n
+                         "	removeMissionEventHandler [""GroupIconClick"", missionNamespace getVariable [""BIS_WL_groupIconClickHandler"", -1]];" \n
+                         "	removeMissionEventHandler [""GroupIconOverEnter"", missionNamespace getVariable [""BIS_WL_groupIconEnterHandler"", -1]];" \n
+                         "	removeMissionEventHandler [""GroupIconOverLeave"", missionNamespace getVariable [""BIS_WL_groupIconLeaveHandler"", -1]];" \n
+                         "	" \n
+                         "	{deleteMarkerLocal _x} forEach [""BIS_WL_targetEnemy"", ""BIS_WL_targetFriendly""];" \n
+                         "	" \n
+                         "	if (!isNil {(missionNamespace getVariable ""BIS_WL_ffTeam"")}) exitWith {" \n
+                         "		_victory = ((missionNamespace getVariable [""BIS_WL_ffTeam"", Independent]) == side group player);" \n
+                         "		_debriefing = format [""BIS_WL%1%2"", if (_victory) then {""Defeat""} else {""Victory""}, BIS_WL_playerSide];" \n
+                         "		_finalVictory = if (_victory) then {false} else {true};" \n
+                         "		[_debriefing, _finalVictory] call BIS_fnc_endMission;" \n
+                         "	};" \n
+                         "	_victory = _winner == BIS_WL_playerSide;" \n
+                         "	_debriefing = format [""BIS_WL%1%2"", if (_victory) then {""Victory""} else {""Defeat""}, BIS_WL_playerSide];" \n
+                         "	[_debriefing, _victory] call BIS_fnc_endMission;" \n
+                         "} else {" \n
+                         "	endMission ""End1"";" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "End",
+        };
+};
+/*%FSM</COMPILE>*/

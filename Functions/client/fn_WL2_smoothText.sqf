@@ -28,24 +28,24 @@ if (isNil "BIS_onScreenMessageID") then {
 };
 
 waitUntil {!isNull WL_DISPLAY_MAIN};
-_myDisplay = WL_DISPLAY_MAIN;
+private _myDisplay = WL_DISPLAY_MAIN;
 
-_box = _myDisplay ctrlCreate ["RscStructuredText", 9990000 + BIS_onScreenMessageID];
-_messageID = BIS_onScreenMessageID;
+private _box = _myDisplay ctrlCreate ["RscStructuredText", 9990000 + BIS_onScreenMessageID];
+private _messageID = BIS_onScreenMessageID;
 BIS_onScreenMessageID = BIS_onScreenMessageID + 1;
 
 if (BIS_onScreenMessageID > 1000) then {
 	BIS_onScreenMessageID = 0;
 };
 
-_xDef = safezoneX;
-_yDef = safezoneY;
-_wDef = safezoneW;
-_hDef = safezoneH;
+private _xDef = safezoneX;
+private _yDef = safezoneY;
+private _wDef = safezoneW;
+private _hDef = safezoneH;
 
 if (count BIS_onScreenMessagesVisible >= _maxLines) then {
 	BIS_onScreenMessagesBuffer pushBack _messageID;
-	waitUntil {count BIS_onScreenMessagesVisible < _maxLines && (BIS_onScreenMessagesBuffer find _messageID) == 0};
+	waitUntil {count BIS_onScreenMessagesVisible < _maxLines && {(BIS_onScreenMessagesBuffer find _messageID) == 0}};
 	BIS_onScreenMessagesBuffer = BIS_onScreenMessagesBuffer - [_messageID];
 };
 
@@ -67,16 +67,16 @@ _box ctrlSetTextColor _color;
 _box ctrlSetFontHeight (_hDef / 25);
 _box ctrlCommit 0;
 
-_textArr = toArray _text;
-_charsCnt = count _text;
-_textStructured = "";
-_finalAlpha = _color # 3;
-_baseColor = [_color # 0, _color # 1, _color # 2, 0];
-_baseColorHTML = _baseColor call BIS_fnc_colorRGBAtoHTML;
-_colorArr = [];
-_popupDelay = 0.025;
-_fadeDuration = 0.5;
-_shadow = if (_shadow) then {2} else {0};
+private _textArr = toArray _text;
+private _charsCnt = count _text;
+private _textStructured = "";
+private _finalAlpha = _color # 3;
+private _baseColor = [_color # 0, _color # 1, _color # 2, 0];
+private _baseColorHTML = _baseColor call BIS_fnc_colorRGBAtoHTML;
+private _colorArr = [];
+private _popupDelay = 0.025;
+private _fadeDuration = 0.5;
+private _shadow = if (_shadow) then {2} else {0};
 
 {
 	_textStructured = _textStructured + "<t color = '%" + str (_forEachIndex + 1) + "'>" + toString [_x] + "</t>";
@@ -84,21 +84,21 @@ _shadow = if (_shadow) then {2} else {0};
 } forEach _textArr;
 
 _textStructured = "<t size = '" + str ((1.01 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)) + "' align = 'center' shadow = '" + (str _shadow) + "'>" + _textStructured + "</t>";
-_textStructuredFormat = [_textStructured];
+private _textStructuredFormat = [_textStructured];
 
-_done = FALSE;
-_startTime = time;
+private _done = FALSE;
+private _startTime = time;
 
 while {!_done} do {
-	_oldTick = time;
+	private _oldTick = time;
 	waitUntil {time > _oldTick + 0.04};
 	
 	_done = TRUE;
-	_newLetterColor = [];
+	private _newLetterColor = [];
 	
 	{
 		_letterFadeInStart = _startTime + (_forEachIndex * _popupDelay);
-		if (time >= _letterFadeInStart && time <= (_letterFadeInStart + _fadeDuration)) then {
+		if (time >= _letterFadeInStart && {time <= (_letterFadeInStart + _fadeDuration)}) then {
 			_done = FALSE;
 			_newAlpha = linearConversion [_letterFadeInStart, _letterFadeInStart + _fadeDuration, time, 0, _finalAlpha];
 			_newLetterColor = +_baseColor;

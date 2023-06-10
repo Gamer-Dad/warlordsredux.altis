@@ -2,7 +2,7 @@
 
 params ["_event"];
 
-["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 
 if (_event == "save") then {
 	BIS_WL_savedLoadout = +getUnitLoadout player;

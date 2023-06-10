@@ -43,12 +43,6 @@ if (player getVariable "MRTM_3rdPersonDisabled") then {
 	((findDisplay 8000) displayCtrl 2801) cbSetChecked false;
 };
 
-if (MRTM_showDrones) then {
-	((findDisplay 8000) displayCtrl 2802) cbSetChecked true;
-} else {
-	((findDisplay 8000) displayCtrl 2802) cbSetChecked false;
-};
-
 if (MRTM_playKillSound) then {
 	((findDisplay 8000) displayCtrl 2803) cbSetChecked true;
 } else {

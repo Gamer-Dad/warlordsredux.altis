@@ -1,0 +1,127 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_MRTM_ritaRWR">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,23.655350,-299.057251,113.655350,-249.057236,0.000000,"Init"};
+item1[] = {"True",8,218,23.224350,-229.229660,113.224350,-179.229660,0.000000,"True"};
+item2[] = {"Loop",2,250,21.960739,-145.854630,111.960747,-95.854630,0.000000,"Loop"};
+item3[] = {"On_Radar",4,218,-67.947754,-46.406982,22.052246,3.593018,1.000000,"On Radar"};
+item4[] = {"Warning_On_Radar",2,250,29.654053,85.825073,119.654053,135.825073,0.000000,"Warning" \n "On Radar"};
+item5[] = {"Delay",4,4314,196.841858,-34.439514,286.842102,15.560486,0.000000,"Delay"};
+item6[] = {"True",2,250,200.988892,-208.178436,290.988892,-158.178436,0.000000,"True"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,17,6316128,1,-696.682922,696.681641,355.935608,-561.065002,1884,1284,1};
+window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1902};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_MRTM_ritaRWR";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private [""_delay""];" \n
+                         "" \n
+                         "_delay = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loop">*/
+                class Loop
+                {
+                        name = "Loop";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "On_Radar">*/
+                                class On_Radar
+                                {
+                                        itemno = 3;
+                                        priority = 1.000000;
+                                        to="Warning_On_Radar";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((west knowsAbout (objectParent player) >= 4) || (independent knowsAbout (objectParent player) >= 4));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Warning_On_Radar">*/
+                class Warning_On_Radar
+                {
+                        name = "Warning_On_Radar";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"playSoundUI [""sensorRita"", MRTM_rwr3, 1];" \n
+                         "_delay = serverTime + 0.75;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_delay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_rDelay = serverTime;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""O_Plane_Fighter_02_F"" || typeOf objectParent player == ""O_Plane_CAS_02_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

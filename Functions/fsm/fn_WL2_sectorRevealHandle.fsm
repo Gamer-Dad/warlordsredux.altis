@@ -1,0 +1,63 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_sectorRevealHandle.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,4346,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
+item1[] = {"Condition",4,218,-41.551758,-52.586182,48.448242,-2.586182,0.000000,"Condition"};
+item2[] = {"Exit",1,250,-40.259796,28.016418,49.740234,78.016403,0.000000,"Exit"};
+link0[] = {0,1};
+link1[] = {1,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,5,6316128,1,-308.620941,291.379059,390.516235,-209.483826,1008,887,1};
+window[] = {0,-1,-1,-1,-1,1331,359,2279,272,1,1026};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_sectorRevealHandle.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_sector""];" \n
+                         "private [""_sector""];" \n
+                         "" \n
+                         "_sector = _sector;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_playerSide in (_sector getVariable ""BIS_WL_revealedBy"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);" \n
+                         "[_sector, _sector getVariable ""BIS_WL_owner"", _specialStateArray] call BIS_fnc_WL2_sectorMarkerUpdate;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

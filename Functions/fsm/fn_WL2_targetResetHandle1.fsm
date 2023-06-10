@@ -1,0 +1,182 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_targetResetHandle1.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-329.450104,1322.016602,-239.450104,1372.016602,0.000000,"Init"};
+item1[] = {"Mission_End",4,218,-328.845886,1404.999756,-238.845886,1454.999756,0.000000,"Mission End"};
+item2[] = {"Exit",1,250,-176.300720,1318.700928,-86.300690,1368.700928,0.000000,"Exit"};
+item3[] = {"True",8,218,-176.871826,1402.648193,-86.871826,1452.648193,0.000000,"True"};
+item4[] = {"True",2,250,-401.758881,1473.588257,-311.758850,1523.588257,0.000000,"True"};
+item5[] = {"Condition",4,218,-449.157745,1550.111572,-359.157745,1600.111572,0.000000,"Condition"};
+item6[] = {"Action",2,250,-380.629120,1620.351685,-290.629089,1670.351685,0.000000,"Action"};
+item7[] = {"Condition",4,218,-240.145859,1634.057739,-150.145874,1684.057739,0.000000,"Condition"};
+item8[] = {"Action_1",2,250,-144.206116,1558.676392,-54.206085,1608.676392,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {3,2};
+link3[] = {4,5};
+link4[] = {5,6};
+link5[] = {6,7};
+link6[] = {7,8};
+link7[] = {8,1};
+link8[] = {8,3};
+globals[] = {0.000000,0,0,0,0,640,480,1,10,6316128,1,-657.712585,97.813202,1811.531738,1078.277344,1323,1284,1};
+window[] = {2,-1,-1,-1,-1,1137,78,1998,78,3,1341};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_targetResetHandle1.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_side""];" \n
+                         "private [""_side""];" \n
+                         "" \n
+                         "_side = _side;" \n
+                         "_varNameVoting = format [""BIS_WL_targetResetVotingSince_%1"", _side];" \n
+                         "_varNameReset = format [""BIS_WL_targetResetOrderedBy_%1"", _side];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(serverTime < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && {!isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]) && {(missionNamespace getVariable [_varNameReset, """"]) != """"}});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"[toUpper format [localize ""STR_A3_WL_popup_voting_reset_user_TODO_REWRITE"", missionNamespace getVariable _varNameReset]] spawn BIS_fnc_WLSmoothText;" \n
+                         "missionNamespace setVariable [_varNameReset, """"];" \n
+                         "" \n
+                         "if ((player getVariable [""BIS_WL_targetResetVote"", -1]) == -1) then {" \n
+                         "	[player, ""targetResetVoting""] call BIS_fnc_WL2_hintHandle;" \n
+                         "};" \n
+                         "" \n
+                         "BIS_WL_ctrlDown = false;" \n
+                         "" \n
+                         "BIS_WL_targetResetVoteEH1 = (findDisplay 46) displayAddEventHandler [""KeyUp"", {" \n
+                         "	params [""_display"", ""_key""];" \n
+                         "	" \n
+                         "	if (_key == 29) then {BIS_WL_ctrlDown = false};" \n
+                         "}];" \n
+                         "" \n
+                         "BIS_WL_targetResetVoteEH2 = (findDisplay 46) displayAddEventHandler [""KeyDown"", {" \n
+                         "	params [""_display"", ""_key""];" \n
+                         "	" \n
+                         "	if (_key == 29) then {BIS_WL_ctrlDown = true};" \n
+                         "	if (_key == 21) then {if (BIS_WL_ctrlDown) then {_remove = true; playSound ""AddItemOK""; player setVariable [""BIS_WL_targetResetVote"", 1, true]}};" \n
+                         "	if (_key == 49) then {if (BIS_WL_ctrlDown) then {_remove = true; playSound ""AddItemFailed""; player setVariable [""BIS_WL_targetResetVote"", 0, true]}};" \n
+                         "	if (_remove) then {" \n
+                         "		(findDisplay 46) displayRemoveEventHandler [""KeyDown"", BIS_WL_targetResetVoteEH1];" \n
+                         "		(findDisplay 46) displayRemoveEventHandler [""KeyUp"", BIS_WL_targetResetVoteEH2];" \n
+                         "	};" \n
+                         "}];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(serverTime >= ((missionNamespace getVariable _varNameVoting) + 60) || isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]) || (player getVariable [""BIS_WL_targetResetVote"", -1]) != -1);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"[player, ""targetResetVoting"", false] call BIS_fnc_WL2_hintHandle;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

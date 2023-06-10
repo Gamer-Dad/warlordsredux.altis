@@ -25,7 +25,7 @@ if (isMultiplayer) then {
 
 "common" call BIS_fnc_WL2_varsInit;
 
-if (!BIS_WL_savingEnabled && isMultiplayer) then {
+if (!BIS_WL_savingEnabled && {isMultiplayer}) then {
 	enableSaving [FALSE, FALSE];
 };
 
@@ -79,6 +79,6 @@ if (isServer) then {
 	} forEach BIS_WL_allSectors;
 };
 
-if (!isDedicated && hasInterface) then {call BIS_fnc_WL2_initClient};
+if (!isDedicated && {hasInterface}) then {call BIS_fnc_WL2_initClient};
 
 0 spawn BIS_fnc_WL2_missionEndHandle;

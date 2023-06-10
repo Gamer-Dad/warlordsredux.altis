@@ -1,0 +1,1542 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_handleClientRequest">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
+item1[] = {"__IsNull",4,218,-40.896698,-60.529572,49.103302,-10.529572,0.000000,"!IsNull"};
+item2[] = {"True",2,250,-38.845154,4.608917,51.154861,54.608917,0.000000,"True"};
+item3[] = {"scan",4,218,32.448334,-75.403671,122.448334,-25.403671,0.000000,"scan"};
+item4[] = {"targetReset",4,218,89.380219,-50.271530,179.380219,-0.271530,0.000000,"targetReset"};
+item5[] = {"lastLoadout",4,218,124.257423,-14.368408,214.257416,35.631592,0.000000,"lastLoadout"};
+item6[] = {"savedLoadout",4,218,93.483360,28.202332,183.483368,78.202332,0.000000,"savedLoadout"};
+item7[] = {"orderFTVehicle",4,218,41.167511,67.695740,131.167511,117.695740,0.000000,"orderFTVehicle"};
+item8[] = {"ftContested",4,218,-38.845062,88.211884,51.154938,138.211884,0.000000,"ftContested"};
+item9[] = {"arsenal",4,218,-113.728760,67.182938,-23.728760,117.182938,0.000000,"arsenal"};
+item10[] = {"orderAsset",4,218,-158.863953,34.357178,-68.863953,84.357178,1.000000,"orderAsset"};
+item11[] = {"fTransferBil",4,218,-192.715515,-9.752335,-102.715523,40.247665,0.000000,"fTransferBil"};
+item12[] = {"fTransferCancel",4,218,-173.738190,-54.374741,-83.738220,-4.374756,0.000000,"fTransferCancel"};
+item13[] = {"fundsTransfer",4,218,-111.164192,-78.481079,-21.164185,-28.481079,0.000000,"fundsTransfer"};
+item14[] = {"Exit",1,250,-57.965027,789.948486,32.035034,839.948486,0.000000,"Exit"};
+item15[] = {"Action",2,250,73.480133,-135.413132,163.480148,-85.413147,0.000000,"Action"};
+item16[] = {"Action_1",2,250,183.754059,-88.739075,273.754089,-38.739059,0.000000,"Action"};
+item17[] = {"Action_2",2,250,226.837677,-14.368439,316.837708,35.631561,0.000000,"Action"};
+item18[] = {"Action_3",2,250,186.318573,68.721588,276.318604,118.721588,0.000000,"Action"};
+item19[] = {"Action_4",2,250,88.867279,130.782623,178.867294,180.782623,0.000000,"Action"};
+item20[] = {"Action_5",2,250,-39.421478,151.235199,50.578537,201.235199,0.000000,"Action"};
+item21[] = {"Action_6",2,250,-171.173615,126.679352,-81.173615,176.679352,0.000000,"Action"};
+item22[] = {"true_1",2,250,-259.905518,62.053864,-169.905487,112.053864,0.000000,"true"};
+item23[] = {"Action_7",2,250,-291.639038,-21.818909,-201.639008,28.181091,0.000000,"Action"};
+item24[] = {"Action_8",2,250,-254.263580,-96.945518,-164.263580,-46.945526,0.000000,"Action"};
+item25[] = {"Action_9",2,250,-150.144714,-140.542130,-60.144714,-90.542130,0.000000,"Action"};
+item26[] = {"True",4,218,-977.291199,263.941528,-887.291199,313.941528,0.000000,"True"};
+item27[] = {"Ship",4,218,-367.411102,30.323669,-277.411102,80.323669,1.000000,"Ship"};
+item28[] = {"Air",4,218,-404.959473,67.213257,-314.959473,117.213257,3.000000,"Air"};
+item29[] = {"Static",4,218,-426.039185,110.690002,-336.039185,160.690002,2.000000,"Static"};
+item30[] = {"Man",4,218,-355.553711,129.793701,-265.553711,179.793701,2.000000,"Man"};
+item31[] = {"Action_10",2,250,-446.460175,-22.375702,-356.460144,27.624298,0.000000,"Action"};
+item32[] = {"true_2",2,250,-503.112000,38.887329,-413.111969,88.887329,0.000000,"true"};
+item33[] = {"Action_11",2,250,-528.144226,109.372650,-438.144135,159.372650,0.000000,"Action"};
+item34[] = {"Action_12",2,250,-439.872803,176.564270,-349.872803,226.564270,0.000000,"Action"};
+item35[] = {"Vehicle",4,218,-272.519714,146.262207,-182.519714,196.262207,0.000000,"Vehicle"};
+item36[] = {"Action_13",2,250,-322.616699,209.501526,-232.616699,259.501526,0.000000,"Action"};
+item37[] = {"__isNull",4,218,-670.973022,131.521332,-580.973022,181.521332,0.000000,"!isNull"};
+item38[] = {"isNull",4,218,-41.329163,-210.774445,48.670837,-160.774445,0.000000,"isNull"};
+item39[] = {"Exit_1",1,250,-39.805969,-287.220673,50.194061,-237.220657,0.000000,"Exit"};
+item40[] = {"True_3",2,250,-972.110229,165.253815,-882.110229,215.253815,0.000000,"True"};
+item41[] = {"Uav",4,218,-542.819885,-116.910919,-452.819885,-66.910919,4.000000,"Uav"};
+item42[] = {"Plane",4,218,-626.752075,-77.455597,-536.752075,-27.455597,3.000000,"Plane"};
+item43[] = {"Darter",4,218,-683.489441,-23.208344,-593.489441,26.791656,2.000000,"Darter"};
+item44[] = {"Runway",4,218,-748.316406,98.095184,-658.316345,148.095184,0.000000,"Runway"};
+item45[] = {"No_runway",4,218,-736.965332,29.890045,-646.965271,79.890045,1.000000,"No runway"};
+item46[] = {"Action_14",2,250,-852.008728,16.478882,-762.008667,66.478882,0.000000,"Action"};
+item47[] = {"Action_15",2,4346,-854.513550,108.458130,-764.513672,158.458130,0.000000,"Action"};
+item48[] = {"Action_16",2,250,-766.629395,-75.604492,-676.629395,-25.604492,0.000000,"Action"};
+item49[] = {"Action_17",2,250,-690.433228,-140.008423,-600.433228,-90.008423,0.000000,"Action"};
+item50[] = {"Action_18",2,250,-582.488586,-183.549133,-492.488586,-133.549133,0.000000,"Action"};
+item51[] = {"Runway",4,218,-695.624634,-220.222656,-605.624573,-170.222656,0.000000,"Runway"};
+item52[] = {"No_runway",4,218,-586.005676,-271.331329,-496.005615,-221.331329,0.000000,"No runway"};
+item53[] = {"Action_19",2,250,-673.003906,-321.879517,-583.003906,-271.879486,0.000000,"Action"};
+item54[] = {"Action_20",2,250,-784.538879,-265.303864,-694.538879,-215.303864,0.000000,"Action"};
+item55[] = {"__isNull",4,218,-968.565430,-127.890297,-878.565430,-77.890305,0.000000,"!isNull"};
+item56[] = {"Action_21",2,250,-983.688416,352.438324,-893.688416,402.438324,0.000000,"Action"};
+item57[] = {"MLRS",4,218,-825.472229,444.320679,-735.472229,494.320679,1.000000,"MLRS"};
+item58[] = {"Centurion",4,218,-1258.946411,387.028503,-1168.946655,437.028503,1.000000,"Centurion"};
+item59[] = {"Gorgon",4,218,-936.813660,487.559998,-846.813660,537.559998,1.000000,"Gorgon"};
+item60[] = {"Spartan",4,218,-1167.062866,443.239563,-1077.062866,493.239563,1.000000,"Spartan"};
+item61[] = {"Praetorian",4,218,-1064.369507,486.479065,-974.369568,536.479065,1.000000,"Praetorian"};
+item62[] = {"True",4,218,-702.240051,434.591675,-612.240051,484.591675,0.000000,"True"};
+item63[] = {"Action_22",2,250,-1272.999390,554.580872,-1182.999390,604.580872,0.000000,"Action"};
+item64[] = {"Action_23",2,250,-1164.901001,591.334473,-1074.901001,641.334473,0.000000,"Action"};
+item65[] = {"Action_24",2,250,-1056.802490,609.711060,-966.802551,659.711060,0.000000,"Action"};
+item66[] = {"Action_25",2,250,-941.137634,606.468018,-851.137634,656.468018,0.000000,"Action"};
+item67[] = {"Action_26",2,250,-831.958069,585.929443,-741.958069,635.929443,0.000000,"Action"};
+item68[] = {"True",4,218,-1040.588135,802.126160,-950.588196,852.126099,0.000000,"True"};
+item69[] = {"True",4,218,-37.073311,309.447784,52.926697,359.447784,0.000000,"True"};
+link0[] = {0,1};
+link1[] = {0,38};
+link2[] = {1,2};
+link3[] = {2,3};
+link4[] = {2,4};
+link5[] = {2,5};
+link6[] = {2,6};
+link7[] = {2,7};
+link8[] = {2,8};
+link9[] = {2,9};
+link10[] = {2,10};
+link11[] = {2,11};
+link12[] = {2,12};
+link13[] = {2,13};
+link14[] = {3,15};
+link15[] = {4,16};
+link16[] = {5,17};
+link17[] = {6,18};
+link18[] = {7,19};
+link19[] = {8,20};
+link20[] = {9,21};
+link21[] = {10,22};
+link22[] = {11,23};
+link23[] = {12,24};
+link24[] = {13,25};
+link25[] = {15,69};
+link26[] = {16,69};
+link27[] = {17,69};
+link28[] = {18,69};
+link29[] = {19,69};
+link30[] = {20,69};
+link31[] = {21,69};
+link32[] = {22,27};
+link33[] = {22,28};
+link34[] = {22,29};
+link35[] = {22,30};
+link36[] = {22,35};
+link37[] = {23,69};
+link38[] = {24,69};
+link39[] = {25,69};
+link40[] = {26,56};
+link41[] = {27,31};
+link42[] = {28,32};
+link43[] = {29,33};
+link44[] = {30,34};
+link45[] = {31,37};
+link46[] = {32,41};
+link47[] = {32,42};
+link48[] = {32,43};
+link49[] = {32,44};
+link50[] = {32,45};
+link51[] = {33,37};
+link52[] = {34,37};
+link53[] = {35,36};
+link54[] = {36,37};
+link55[] = {37,40};
+link56[] = {38,39};
+link57[] = {40,26};
+link58[] = {41,50};
+link59[] = {42,49};
+link60[] = {43,48};
+link61[] = {44,47};
+link62[] = {45,46};
+link63[] = {46,55};
+link64[] = {47,55};
+link65[] = {48,55};
+link66[] = {49,55};
+link67[] = {50,51};
+link68[] = {50,52};
+link69[] = {51,54};
+link70[] = {52,53};
+link71[] = {53,55};
+link72[] = {54,55};
+link73[] = {55,40};
+link74[] = {56,57};
+link75[] = {56,58};
+link76[] = {56,59};
+link77[] = {56,60};
+link78[] = {56,61};
+link79[] = {56,62};
+link80[] = {57,67};
+link81[] = {58,63};
+link82[] = {59,66};
+link83[] = {60,64};
+link84[] = {61,65};
+link85[] = {62,14};
+link86[] = {63,68};
+link87[] = {64,68};
+link88[] = {65,68};
+link89[] = {66,68};
+link90[] = {67,68};
+link91[] = {68,14};
+link92[] = {69,14};
+globals[] = {0.000000,0,0,0,0,640,480,1,86,6316128,1,-1293.174194,42.128662,681.144897,-375.901215,1622,1284,1};
+window[] = {2,-1,-1,-1,-1,1163,104,2024,104,3,1640};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_handleClientRequest";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_sender"", ""_action"", ""_cost"", ""_pos"", ""_targetType"", ""_isStatic""];" \n
+                         "private [""_asset"", ""_target""];" \n
+                         "" \n
+                         "_asset = objNull;" \n
+                         "_targetType = _targetType;" \n
+                         "_sender setVariable [""BIS_WL_isOrdering"", true, [(owner _sender), 2]];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "isNull">*/
+                                class isNull
+                                {
+                                        itemno = 38;
+                                        priority = 0.000000;
+                                        to="Exit_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_playerFunds = ((serverNamespace getVariable ""fundsDatabase"") get (getPlayerUID _sender));" \n
+                                         "_hasFunds  = (_playerFunds >= _cost);" \n
+                                         "((isNull _sender) || (!(_hasFunds)));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__IsNull">*/
+                                class __IsNull
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_playerFunds = ((serverNamespace getVariable ""fundsDatabase"") get (getPlayerUID _sender));" \n
+                                         "_hasFunds  = (_playerFunds >= _cost);" \n
+                                         "((!isNull _sender) && {(_hasFunds)});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "orderAsset">*/
+                                class orderAsset
+                                {
+                                        itemno = 10;
+                                        priority = 1.000000;
+                                        to="true_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""orderAsset"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "lastLoadout">*/
+                                class lastLoadout
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="Action_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""lastLoadout"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "savedLoadout">*/
+                                class savedLoadout
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="Action_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""savedLoadout"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "orderFTVehicle">*/
+                                class orderFTVehicle
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="Action_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""orderFTVehicle"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "scan">*/
+                                class scan
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""scan"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "arsenal">*/
+                                class arsenal
+                                {
+                                        itemno = 9;
+                                        priority = 0.000000;
+                                        to="Action_6";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""orderArsenal"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "targetReset">*/
+                                class targetReset
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""targetReset"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "ftContested">*/
+                                class ftContested
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="Action_5";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""fastTravelContested"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "fTransferBil">*/
+                                class fTransferBil
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="Action_7";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""fundsTransferBill"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "fTransferCancel">*/
+                                class fTransferCancel
+                                {
+                                        itemno = 12;
+                                        priority = 0.000000;
+                                        to="Action_8";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""fundsTransferCancel"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "fundsTransfer">*/
+                                class fundsTransfer
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="Action_9";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_action == ""fundsTransfer"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 14;
+                        init = /*%FSM<STATEINIT""">*/"_sender setVariable [""BIS_WL_isOrdering"", false, [(owner _sender), 2]];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 15;
+                        init = /*%FSM<STATEINIT""">*/"_targetType setVariable [format [""BIS_WL_lastScanEnd_%1"", side _sender], serverTime + 45, TRUE];" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 16;
+                        init = /*%FSM<STATEINIT""">*/"missionNamespace setVariable [format [""BIS_WL_targetResetVotingSince_%1"", side _sender], serverTime, true];" \n
+                         "missionNamespace setVariable [format [""BIS_WL_targetResetOrderedBy_%1"", side _sender], name _sender, true];" \n
+                         "" \n
+                         "_sender setVariable [""BIS_WL_targetResetVote"", 1, TRUE];" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_2">*/
+                class Action_2
+                {
+                        name = "Action_2";
+                        itemno = 17;
+                        init = /*%FSM<STATEINIT""">*/"0 remoteExecCall [""BIS_fnc_WL2_orderLastLoadout"", (owner _sender)];" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_3">*/
+                class Action_3
+                {
+                        name = "Action_3";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"[""apply""] remoteExecCall [""BIS_fnc_WL2_orderSavedLoadout"", (owner _sender)];" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_4">*/
+                class Action_4
+                {
+                        name = "Action_4";
+                        itemno = 19;
+                        init = /*%FSM<STATEINIT""">*/"_asset = if (_targetType == west) then {" \n
+                         "	createVehicle [""B_Truck_01_medical_F"", _sender, [], 0, ""NONE""];" \n
+                         "} else  {" \n
+                         "	createVehicle [""O_Truck_03_medical_F"", _sender, [], 0, ""NONE""];" \n
+                         "};" \n
+                         "if (_targetType == west) then {" \n
+                         "	missionNamespace setVariable [""ftVehicleExistsBlu"", true, true];" \n
+                         "} else  {" \n
+                         "	missionNamespace setVariable [""ftVehicleExistsOpf"", true, true];" \n
+                         "};" \n
+                         "[_sender, _asset] remoteExecCall [""BIS_fnc_WL2_newAssetHandle"", (owner _sender)];" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_5">*/
+                class Action_5
+                {
+                        name = "Action_5";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"_tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};" \n
+                         "_sender setVehiclePosition [_pos, [], 1, ""NONE""];" \n
+                         "{" \n
+                         "	_x setVehiclePosition [_pos, [], 1, ""NONE""];" \n
+                         "} forEach _tagAlong;" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_6">*/
+                class Action_6
+                {
+                        name = "Action_6";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/"0 remoteExecCall [""BIS_fnc_WL2_orderArsenal"", (owner _sender)];" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "true_1">*/
+                class true_1
+                {
+                        name = "true_1";
+                        itemno = 22;
+                        init = /*%FSM<STATEINIT""">*/"true;" \n
+                         "_class = _targetType;" \n
+                         "_targetPos = _pos;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Air">*/
+                                class Air
+                                {
+                                        itemno = 28;
+                                        priority = 3.000000;
+                                        to="true_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_class isKindOf ""Air"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Static">*/
+                                class Static
+                                {
+                                        itemno = 29;
+                                        priority = 2.000000;
+                                        to="Action_11";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_isStatic;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Man">*/
+                                class Man
+                                {
+                                        itemno = 30;
+                                        priority = 2.000000;
+                                        to="Action_12";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_class isKindOf ""Man"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Ship">*/
+                                class Ship
+                                {
+                                        itemno = 27;
+                                        priority = 1.000000;
+                                        to="Action_10";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_class isKindOf ""Ship"";"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Vehicle">*/
+                                class Vehicle
+                                {
+                                        itemno = 35;
+                                        priority = 0.000000;
+                                        to="Action_13";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_7">*/
+                class Action_7
+                {
+                        name = "Action_7";
+                        itemno = 23;
+                        init = /*%FSM<STATEINIT""">*/"_uid = getPlayerUID _sender;" \n
+                         "[_uid, -2000] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "serverNamespace setVariable [format [""BIS_WL_isTransferring_%1"", _uid], true];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_8">*/
+                class Action_8
+                {
+                        name = "Action_8";
+                        itemno = 24;
+                        init = /*%FSM<STATEINIT""">*/"_uid = getPlayerUID _sender;" \n
+                         "if (serverNamespace getVariable (format [""BIS_WL_isTransferring_%1"", _uid])) then {" \n
+                         "	[_uid, 2000] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "	serverNamespace setVariable [format [""BIS_WL_isTransferring_%1"", _uid], false];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_9">*/
+                class Action_9
+                {
+                        name = "Action_9";
+                        itemno = 25;
+                        init = /*%FSM<STATEINIT""">*/"_targetUID = getPlayerUID _targetType;" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "_recipient = _targetUID call BIS_fnc_getUnitByUID;" \n
+                         "" \n
+                         "[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;" \n
+                         "serverNamespace setVariable [format [""BIS_WL_isTransferring_%1"", _uid], false];" \n
+                         "[_sender, _recipient, _cost] remoteExecCall [""BIS_fnc_WL2_displayCPtransfer"", 0, true];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 69;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_10">*/
+                class Action_10
+                {
+                        name = "Action_10";
+                        itemno = 31;
+                        init = /*%FSM<STATEINIT""">*/"_asset = createVehicle [_class, _pos, [], 0, ""CAN_COLLIDE""];" \n
+                         "_asset setPos (_pos vectorAdd [0,0,3]);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 37;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "true_2">*/
+                class true_2
+                {
+                        name = "true_2";
+                        itemno = 32;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Uav">*/
+                                class Uav
+                                {
+                                        itemno = 41;
+                                        priority = 4.000000;
+                                        to="Action_18";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_class == ""B_UAV_02_dynamicLoadout_F"" || _class == ""B_T_UAV_03_dynamicLoadout_F"" || _class == ""B_UAV_05_F"" || _class == ""O_UAV_02_dynamicLoadout_F"" || _class == ""O_T_UAV_04_CAS_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Plane">*/
+                                class Plane
+                                {
+                                        itemno = 42;
+                                        priority = 3.000000;
+                                        to="Action_17";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_isPlane = (toLower getText (configFile >> ""CfgVehicles"" >> _class >> ""simulation"")) in [""airplanex"", ""airplane""] && {!(_class isKindOf ""VTOL_Base_F"")};" \n
+                                         "_isPlane;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Darter">*/
+                                class Darter
+                                {
+                                        itemno = 43;
+                                        priority = 2.000000;
+                                        to="Action_16";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_class == ""B_UAV_01_F"" || _class == ""O_UAV_01_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "No_runway">*/
+                                class No_runway
+                                {
+                                        itemno = 45;
+                                        priority = 1.000000;
+                                        to="Action_14";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(isNil {(((_targetPos nearObjects [""Logic"", 15]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0)});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Runway">*/
+                                class Runway
+                                {
+                                        itemno = 44;
+                                        priority = 0.000000;
+                                        to="Action_15";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isNil {(((_targetPos nearObjects [""Logic"", 15]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0)});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_11">*/
+                class Action_11
+                {
+                        name = "Action_11";
+                        itemno = 33;
+                        init = /*%FSM<STATEINIT""">*/"_asset = createVehicle [_class, _targetPos, [], 0, ""CAN_COLLIDE""];" \n
+                         "_targetPos set [2, (_targetPos # 2) max 0];" \n
+                         "_asset setDir direction _sender;" \n
+                         "_asset setPos _targetPos;" \n
+                         "_asset enableWeaponDisassembly false;" \n
+                         "" \n
+                         "if (getNumber (configFile >> ""CfgVehicles"" >> _class >> ""isUav"") == 1) then {" \n
+                         "	createVehicleCrew _asset;" \n
+                         "	_side = side _sender; " \n
+                         "	_group = createGroup _side;" \n
+                         "	(crew _asset) joinSilent _group;" \n
+                         "	(effectiveCommander _asset) setSkill 0.2;" \n
+                         "	(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 37;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_12">*/
+                class Action_12
+                {
+                        name = "Action_12";
+                        itemno = 34;
+                        init = /*%FSM<STATEINIT""">*/"_asset = (group _sender) createUnit [_class, _pos, [], 0, ""NONE""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 37;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_13">*/
+                class Action_13
+                {
+                        name = "Action_13";
+                        itemno = 36;
+                        init = /*%FSM<STATEINIT""">*/"_asset = createVehicle [_class, _pos, [], 10, ""NONE""];" \n
+                         "_asset setDir direction _sender;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 37;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit_1">*/
+                class Exit_1
+                {
+                        name = "Exit_1";
+                        itemno = 39;
+                        init = /*%FSM<STATEINIT""">*/"_sender setVariable [""BIS_WL_isOrdering"", false, [(owner _sender), 2]];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_3">*/
+                class True_3
+                {
+                        name = "True_3";
+                        itemno = 40;
+                        init = /*%FSM<STATEINIT""">*/"_asset setOwner (owner _sender);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 26;
+                                        priority = 0.000000;
+                                        to="Action_21";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_14">*/
+                class Action_14
+                {
+                        name = "Action_14";
+                        itemno = 46;
+                        init = /*%FSM<STATEINIT""">*/"_array = (_pos call BIS_fnc_WL2_findSpawnPositions);" \n
+                         "_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && {((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5)})}));" \n
+                         "_posFinal = _pos1 findEmptyPosition [0, 20, _class];" \n
+                         "_asset = createVehicle [_class, _posFinal, [], 5, ""NONE""];" \n
+                         "_asset setDir 0;" \n
+                         "_asset setDamage 0;" \n
+                         "_asset setFuel 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_15">*/
+                class Action_15
+                {
+                        name = "Action_15";
+                        itemno = 47;
+                        init = /*%FSM<STATEINIT""">*/"_processTargetPos = {" \n
+                         "	params [""_pos""];" \n
+                         "	private _targetPosFinalArr = [];" \n
+                         "	private _targetPosFinal = [];" \n
+                         "	_pos = getPosATL _pos;" \n
+                         "	" \n
+                         "	if !(surfaceIsWater _pos) then {" \n
+                         "		_nearSectorArr = _pos nearObjects [""Logic"", 10];" \n
+                         "		" \n
+                         "		if (count _nearSectorArr == 0) then {" \n
+                         "			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;" \n
+                         "		} else {" \n
+                         "			_sector = _nearSectorArr # 0;" \n
+                         "			_targetPosFinalArr = [_sector, nil, FALSE, if (_sender inArea (_sector getVariable ""objectAreaComplete"")) then {_sender}] call BIS_fnc_WL2_findSpawnPositions;" \n
+                         "		};" \n
+                         "	} else {" \n
+                         "		_targetPosFinalArr = [_pos];" \n
+                         "	};" \n
+                         "" \n
+                         "	if (count _targetPosFinalArr > 0) then {" \n
+                         "		_targetPosFinal = selectRandom _targetPosFinalArr;" \n
+                         "	} else {" \n
+                         "		_targetPosFinal = [_pos, random 10, random 100] call BIS_fnc_relPos;" \n
+                         "	};" \n
+                         "	" \n
+                         "	[_targetPosFinal, _targetPosFinalArr]" \n
+                         "};" \n
+                         "" \n
+                         "_targetPosFinal = ( call _processTargetPos) # 0;" \n
+                         "_sector = (((_targetPos nearObjects [""Logic"", 10]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0);" \n
+                         "_taxiNodes = _sector getVariable ""BIS_WL_runwaySpawnPosArr"";" \n
+                         "_taxiNodesCnt = count _taxiNodes;" \n
+                         "_spawnPos = [];" \n
+                         "_dir = 0;" \n
+                         "_checks = 0;" \n
+                         "" \n
+                         "while {count _spawnPos == 0 && {_checks < 100}} do {" \n
+                         "	_checks = _checks + 1;" \n
+                         "	_i = (floor random _taxiNodesCnt) max 1;" \n
+                         "	_pointB = _taxiNodes # _i;" \n
+                         "	_pointA = _taxiNodes # (_i - 1);" \n
+                         "	_dir = _pointA getDir _pointB;" \n
+                         "	_pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;" \n
+                         "	if (count (_pos nearObjects [""AllVehicles"", 20]) == 0) then {" \n
+                         "		_spawnPos = _pos;" \n
+                         "	};" \n
+                         "};" \n
+                         "if (count _spawnPos == 0) then {" \n
+                         "	_spawnPos = _targetPosFinal;" \n
+                         "};" \n
+                         "" \n
+                         "_asset = createVehicle [_class, _spawnPos, [], 0, ""NONE""];" \n
+                         "_asset setDir _dir;" \n
+                         "_asset setDamage 0;" \n
+                         "_asset setFuel 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_16">*/
+                class Action_16
+                {
+                        name = "Action_16";
+                        itemno = 48;
+                        init = /*%FSM<STATEINIT""">*/"_asset = createVehicle [_class, _pos, [], 6, ""NONE""];" \n
+                         "_asset setDir 0;" \n
+                         "_asset setDamage 0;" \n
+                         "_asset setFuel 1;" \n
+                         "createVehicleCrew _asset;" \n
+                         "_side = side _sender; " \n
+                         "_groupA = createGroup _side;" \n
+                         "(crew _asset) joinSilent _groupA;" \n
+                         "(effectiveCommander _asset) setSkill 0.2;" \n
+                         "(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
+                         "_asset enableWeaponDisassembly false;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_17">*/
+                class Action_17
+                {
+                        name = "Action_17";
+                        itemno = 49;
+                        init = /*%FSM<STATEINIT""">*/"_processTargetPos = {" \n
+                         "	params [""_pos""];" \n
+                         "	private _targetPosFinalArr = [];" \n
+                         "	private _targetPosFinal = [];" \n
+                         "	_pos = getPosATL _pos;" \n
+                         "	" \n
+                         "	if !(surfaceIsWater _pos) then {" \n
+                         "		_nearSectorArr = _pos nearObjects [""Logic"", 10];" \n
+                         "		" \n
+                         "		if (count _nearSectorArr == 0) then {" \n
+                         "			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;" \n
+                         "		} else {" \n
+                         "			_sector = _nearSectorArr # 0;" \n
+                         "			_targetPosFinalArr = [_sector, nil, FALSE, if (_sender inArea (_sector getVariable ""objectAreaComplete"")) then {_sender}] call BIS_fnc_WL2_findSpawnPositions;" \n
+                         "		};" \n
+                         "	} else {" \n
+                         "		_targetPosFinalArr = [_pos];" \n
+                         "	};" \n
+                         "" \n
+                         "	if (count _targetPosFinalArr > 0) then {" \n
+                         "		_targetPosFinal = selectRandom _targetPosFinalArr;" \n
+                         "	} else {" \n
+                         "		_targetPosFinal = [_pos, random 10, random 100] call BIS_fnc_relPos;" \n
+                         "	};" \n
+                         "	" \n
+                         "	[_targetPosFinal, _targetPosFinalArr]" \n
+                         "};" \n
+                         "" \n
+                         "_targetPosFinal = ( call _processTargetPos) # 0;" \n
+                         "_sector = ((_targetPos nearObjects [""Logic"", 10]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0;" \n
+                         "_taxiNodes = _sector getVariable ""BIS_WL_runwaySpawnPosArr"";" \n
+                         "_taxiNodesCnt = count _taxiNodes;" \n
+                         "_spawnPos = [];" \n
+                         "_dir = 0;" \n
+                         "_checks = 0;" \n
+                         "while {count _spawnPos == 0 && {_checks < 100}} do {" \n
+                         "	_checks = _checks + 1;" \n
+                         "	_i = (floor random _taxiNodesCnt) max 1;" \n
+                         "	_pointB = _taxiNodes # _i;" \n
+                         "	_pointA = _taxiNodes # (_i - 1);" \n
+                         "	_dir = _pointA getDir _pointB;" \n
+                         "	_pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;" \n
+                         "	if (count (_pos nearObjects [""AllVehicles"", 20]) == 0) then {" \n
+                         "		_spawnPos = _pos;" \n
+                         "	};" \n
+                         "};" \n
+                         "if (count _spawnPos == 0) then {" \n
+                         "	_spawnPos = _targetPosFinal;" \n
+                         "};" \n
+                         "_asset = createVehicle [_class, _spawnPos, [], 0, ""NONE""];" \n
+                         "_asset setDir _dir;" \n
+                         "_asset setDamage 0;" \n
+                         "_asset setFuel 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_18">*/
+                class Action_18
+                {
+                        name = "Action_18";
+                        itemno = 50;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "No_runway">*/
+                                class No_runway
+                                {
+                                        itemno = 52;
+                                        priority = 0.000000;
+                                        to="Action_19";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_sector = ((_targetPos nearObjects [""Logic"", 10]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0;" \n
+                                         "isNil {_sector};"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Runway">*/
+                                class Runway
+                                {
+                                        itemno = 51;
+                                        priority = 0.000000;
+                                        to="Action_20";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_sector = ((_targetPos nearObjects [""Logic"", 10]) select {count (_x getVariable [""BIS_WL_runwaySpawnPosArr"", []]) > 0}) # 0;" \n
+                                         "!(isNil {_sector});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_19">*/
+                class Action_19
+                {
+                        name = "Action_19";
+                        itemno = 53;
+                        init = /*%FSM<STATEINIT""">*/"_array = (_pos call BIS_fnc_WL2_findSpawnPositions);" \n
+                         "_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && {((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5)})}));" \n
+                         "_posFinal = _pos1 findEmptyPosition [0, 20, _class];" \n
+                         "_asset = createVehicle [_class, _posFinal, [], 5, ""NONE""];" \n
+                         "_asset setDir 0;" \n
+                         "_asset setDamage 0;" \n
+                         "_asset setFuel 1;" \n
+                         "" \n
+                         "createVehicleCrew _asset;" \n
+                         "_side = side group _sender;" \n
+                         "_groupA = createGroup _side;" \n
+                         "(crew _asset) joinSilent _groupA;" \n
+                         "(effectiveCommander _asset) setSkill 0.2;" \n
+                         "(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
+                         "_asset enableWeaponDisassembly false;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_20">*/
+                class Action_20
+                {
+                        name = "Action_20";
+                        itemno = 54;
+                        init = /*%FSM<STATEINIT""">*/"_processTargetPos = {" \n
+                         "	params [""_pos""];" \n
+                         "	private _targetPosFinalArr = [];" \n
+                         "	private _targetPosFinal = [];" \n
+                         "	_pos = getPosATL _pos;" \n
+                         "	" \n
+                         "	if !(surfaceIsWater _pos) then {" \n
+                         "		_nearSectorArr = _pos nearObjects [""Logic"", 10];" \n
+                         "		" \n
+                         "		if (count _nearSectorArr == 0) then {" \n
+                         "			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;" \n
+                         "		} else {" \n
+                         "			_sector = _nearSectorArr # 0;" \n
+                         "			_targetPosFinalArr = [_sector, nil, FALSE, if (_sender inArea (_sector getVariable ""objectAreaComplete"")) then {_sender}] call BIS_fnc_WL2_findSpawnPositions;" \n
+                         "		};" \n
+                         "	} else {" \n
+                         "		_targetPosFinalArr = [_pos];" \n
+                         "	};" \n
+                         "" \n
+                         "	if (count _targetPosFinalArr > 0) then {" \n
+                         "		_targetPosFinal = selectRandom _targetPosFinalArr;" \n
+                         "	} else {" \n
+                         "		_targetPosFinal = [_pos, random 10, random 100] call BIS_fnc_relPos;" \n
+                         "	};" \n
+                         "	" \n
+                         "	[_targetPosFinal, _targetPosFinalArr]" \n
+                         "};" \n
+                         "" \n
+                         "_targetPosFinal = ( call _processTargetPos) # 0;" \n
+                         "_taxiNodes = _sector getVariable ""BIS_WL_runwaySpawnPosArr"";" \n
+                         "_taxiNodesCnt = count _taxiNodes;" \n
+                         "_spawnPos = [];" \n
+                         "_dir = 0;" \n
+                         "_checks = 0;" \n
+                         "" \n
+                         "while {count _spawnPos == 0 && {_checks < 100}} do {" \n
+                         "	_checks = _checks + 1;" \n
+                         "	_i = (floor random _taxiNodesCnt) max 1;" \n
+                         "	_pointB = _taxiNodes # _i;" \n
+                         "	_pointA = _taxiNodes # (_i - 1);" \n
+                         "	_dir = _pointA getDir _pointB;" \n
+                         "	_pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;" \n
+                         "	if (count (_pos nearObjects [""AllVehicles"", 20]) == 0) then {" \n
+                         "		_spawnPos = _pos;" \n
+                         "	};" \n
+                         "};" \n
+                         "if (count _spawnPos == 0) then {" \n
+                         "	_spawnPos = _targetPosFinal;" \n
+                         "};" \n
+                         "" \n
+                         "_asset = createVehicle [_class, _spawnPos, [], 0, ""NONE""];" \n
+                         "_asset setDir _dir;" \n
+                         "_asset setDamage 0;" \n
+                         "_asset setFuel 1;" \n
+                         "" \n
+                         "createVehicleCrew _asset;" \n
+                         "_side = side group _sender;" \n
+                         "_groupA = createGroup _side;" \n
+                         "(crew _asset) joinSilent _groupA;" \n
+                         "(effectiveCommander _asset) setSkill 0.2;" \n
+                         "(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;" \n
+                         "_asset enableWeaponDisassembly false;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__isNull">*/
+                                class __isNull
+                                {
+                                        itemno = 55;
+                                        priority = 0.000000;
+                                        to="True_3";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull _asset;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_21">*/
+                class Action_21
+                {
+                        name = "Action_21";
+                        itemno = 56;
+                        init = /*%FSM<STATEINIT""">*/"_setOwner = {" \n
+                         "	params [""_asset"", ""_sender"", [""_isStatic"", FALSE]];" \n
+                         "	if (_asset isKindOf ""Man"") exitWith {};" \n
+                         "	if (isMultiplayer) then {" \n
+                         "		if !(_isStatic) then {" \n
+                         "			waitUntil {sleep 0.1; {uniform _x == ""U_VirtualMan_F""} count crew _asset == 0};" \n
+                         "		};" \n
+                         "		_i = 0;" \n
+                         "		if (count crew _asset > 0 && {_isStatic}) then {" \n
+                         "			_assetGrp = group effectiveCommander _asset;" \n
+                         "			while {!(_assetGrp setGroupOwner (owner _sender)) && {_i < 50}} do {" \n
+                         "				_i = _i + 1;" \n
+                         "				_assetGrp setGroupOwner (owner _sender);" \n
+                         "				sleep 0.1;" \n
+                         "			};" \n
+                         "		};" \n
+                         "		_i = 0;" \n
+                         "		while {!(_asset setOwner (owner _sender)) && {(owner _asset) != (owner _sender) && {_i < 50}}} do {" \n
+                         "			_i = _i + 1;" \n
+                         "			_asset setOwner (owner _sender);" \n
+                         "			sleep 0.1;" \n
+                         "		};" \n
+                         "	};" \n
+                         "};" \n
+                         "" \n
+                         "_assetVariable = call BIS_fnc_WL2_generateVariableName;" \n
+                         "_asset setVehicleVarName _assetVariable;" \n
+                         "missionNamespace setVariable [_assetVariable, _asset];" \n
+                         "[_asset, _assetVariable] remoteExec [""setVehicleVarName"", _sender];" \n
+                         "(owner _sender) publicVariableClient _assetVariable;" \n
+                         "[_asset, _sender, _isStatic] spawn _setOwner;" \n
+                         "[_sender, _asset] remoteExecCall [""BIS_fnc_WL2_newAssetHandle"", (owner _sender)];" \n
+                         "" \n
+                         "_uid = getPlayerUID _sender;" \n
+                         "[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Centurion">*/
+                                class Centurion
+                                {
+                                        itemno = 58;
+                                        priority = 1.000000;
+                                        to="Action_22";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(typeOf _asset == ""B_SAM_System_02_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Gorgon">*/
+                                class Gorgon
+                                {
+                                        itemno = 59;
+                                        priority = 1.000000;
+                                        to="Action_25";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(typeOf _asset == ""B_APC_Wheeled_03_cannon_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Spartan">*/
+                                class Spartan
+                                {
+                                        itemno = 60;
+                                        priority = 1.000000;
+                                        to="Action_23";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(typeOf _asset == ""B_SAM_System_01_F"")"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Praetorian">*/
+                                class Praetorian
+                                {
+                                        itemno = 61;
+                                        priority = 1.000000;
+                                        to="Action_24";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(typeOf _asset == ""B_AAA_System_01_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "MLRS">*/
+                                class MLRS
+                                {
+                                        itemno = 57;
+                                        priority = 1.000000;
+                                        to="Action_26";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(typeOf _asset == ""I_Truck_02_MRL_F"");"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 62;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_22">*/
+                class Action_22
+                {
+                        name = "Action_22";
+                        itemno = 63;
+                        init = /*%FSM<STATEINIT""">*/"_side = side (crew _asset select 0);" \n
+                         "if (_side == east) then {" \n
+                         "	_asset setObjectTextureGlobal [0, ""A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa""];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 68;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_23">*/
+                class Action_23
+                {
+                        name = "Action_23";
+                        itemno = 64;
+                        init = /*%FSM<STATEINIT""">*/"_side = side (crew _asset select 0);" \n
+                         "if (_side == east) then {" \n
+                         "	_asset setObjectTextureGlobal [0, ""A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa""];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 68;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_24">*/
+                class Action_24
+                {
+                        name = "Action_24";
+                        itemno = 65;
+                        init = /*%FSM<STATEINIT""">*/"_side = side (crew _asset select 0);" \n
+                         "if (_side == east) then {" \n
+                         "	_asset setObjectTextureGlobal [0, ""A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa""];" \n
+                         "	_asset setObjectTextureGlobal [1, ""A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa""];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 68;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_25">*/
+                class Action_25
+                {
+                        name = "Action_25";
+                        itemno = 66;
+                        init = /*%FSM<STATEINIT""">*/"_asset setObjectTextureGlobal [0, ""A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa""];" \n
+                         "_asset setObjectTextureGlobal [1, ""A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa""];" \n
+                         "_asset setObjectTextureGlobal [2, ""A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa""];" \n
+                         "_asset setObjectTextureGlobal [3, ""A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 68;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_26">*/
+                class Action_26
+                {
+                        name = "Action_26";
+                        itemno = 67;
+                        init = /*%FSM<STATEINIT""">*/"_asset setObjectTextureGlobal [0, ""a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa""]; //Zamak cabin" \n
+                         "_asset setObjectTextureGlobal [2, ""a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa""]; //Zamak Bed&Launcher"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 68;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+                "Exit_1",
+        };
+};
+/*%FSM</COMPILE>*/

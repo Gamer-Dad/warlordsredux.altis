@@ -2,13 +2,13 @@
 
 waituntil {!isnull (findDisplay 46)};
 
-_blockW = safeZoneW / 1000;
-_blockH = safeZoneH / (1000 / (getResolution # 4));
+private _blockW = safeZoneW / 1000;
+private _blockH = safeZoneH / (1000 / (getResolution # 4));
 
-_displayW = _blockW * 180;
-_displayH = _blockH * 54;
-_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
+private _displayW = _blockW * 180;
+private _displayH = _blockH * 54;
+private _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+private _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 
 private _ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 4567];
@@ -23,5 +23,5 @@ while {[0] call BIS_fnc_countdown > 0} do {
 	_ctrlTimer ctrlCommit 0;
 	_ctrlBackgroundTimer ctrlSetStructuredText parseText format ["<img size = '%1' color = '#ffffff' image='img\timer_ca.paa'></img>", (0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 	_ctrlBackgroundTimer ctrlCommit 0;
-	sleep 0.2;
+	sleep 1;
 };

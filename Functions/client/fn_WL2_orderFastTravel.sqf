@@ -5,7 +5,7 @@ params ["_toContested"];
 "Destination" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_destination"] spawn BIS_fnc_WL2_smoothText;
 
-["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
 	if (_toContested) then {
@@ -82,7 +82,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_MEDIUM;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	[player, "fastTravelContested", 200, _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	[player, "fastTravelContested", 200, _destination, ""] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep WL_TIMEOUT_MEDIUM;
 
@@ -108,7 +108,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_STANDARD;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	private _tagAlong = (units player) select {(_x distance2D player <= 100) && (isNull objectParent _x) && (alive _x) && (_x != player)};
+	private _tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
 	player setVehiclePosition [_destination, [], 1, "NONE"];
 	{
 		_x setVehiclePosition [_destination, [], 1, "NONE"];

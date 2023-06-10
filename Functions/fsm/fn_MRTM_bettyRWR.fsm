@@ -1,0 +1,230 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_MRTM_bettyRWR">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,23.655350,-299.057251,113.655350,-249.057236,0.000000,"Init"};
+item1[] = {"True",8,218,23.224350,-229.229660,113.224350,-179.229660,0.000000,"True"};
+item2[] = {"Loop",2,250,21.960739,-145.854630,111.960747,-95.854630,0.000000,"Loop"};
+item3[] = {"New_Target",4,218,126.121277,-41.917542,216.121277,8.082458,0.000000,"New Target"};
+item4[] = {"Lost_target",4,218,-48.363457,-40.023163,41.636505,9.976837,0.000000,"Lost target"};
+item5[] = {"Warning_Lost_Tar",2,250,-222.728333,-43.689117,-132.728577,6.310974,0.000000,"Warning" \n "Lost Target"};
+item6[] = {"Warning__New_Tar",2,250,285.375946,-45.038025,375.376068,4.961975,0.000000,"Warning " \n "New Target"};
+item7[] = {"Delay",4,218,403.874695,-178.684937,493.874756,-128.684937,0.000000,"Delay"};
+item8[] = {"Delay",4,218,-339.178741,-155.988892,-249.178741,-105.988831,0.000000,"Delay"};
+item9[] = {"True",2,250,-226.784302,-231.460846,-136.784317,-181.460815,0.000000,"True"};
+item10[] = {"True_1",2,250,258.712128,-229.626297,348.712189,-179.626282,0.000000,"True"};
+item11[] = {"Exit",1,250,-103.427307,-393.774780,-13.427277,-343.774780,0.000000,"Exit"};
+item12[] = {"Exit_Cond",4,218,-101.375183,-307.884949,-11.375183,-257.884979,3.000000,"Exit Cond"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {2,12};
+link5[] = {3,6};
+link6[] = {4,5};
+link7[] = {5,8};
+link8[] = {6,7};
+link9[] = {7,10};
+link10[] = {8,9};
+link11[] = {9,1};
+link12[] = {10,1};
+link13[] = {12,11};
+globals[] = {0.000000,0,0,0,0,640,480,1,20,6316128,1,-696.682922,696.681641,355.935608,-561.065002,1884,1284,1};
+window[] = {2,-1,-1,-1,-1,1215,156,2076,156,3,1902};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_MRTM_bettyRWR";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private [""_pState"", ""_currentTargets"", ""_pDelay"", ""_aDelay"", ""_fDelay"", ""_rDelay"", ""_nDelay"", ""_lDelay""];" \n
+                         "" \n
+                         "_currentTargets = getSensorTargets objectParent player;" \n
+                         "_pDelay = 0;" \n
+                         "_aDelay = 0;" \n
+                         "_fDelay = 0;" \n
+                         "_rDelay = 0;" \n
+                         "_nDelay = 0;" \n
+                         "_lDelay = 0;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loop">*/
+                class Loop
+                {
+                        name = "Loop";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_currentTargets = getSensorTargets objectParent player;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Exit_Cond">*/
+                                class Exit_Cond
+                                {
+                                        itemno = 12;
+                                        priority = 3.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(BIS_WL_missionEnd || (typeOf objectParent player != ""B_Plane_Fighter_01_F"" && typeOf objectParent player != ""B_Plane_CAS_01_dynamicLoadout_F""));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Lost_target">*/
+                                class Lost_target
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="Warning_Lost_Tar";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (getSensorTargets objectParent player) < count (_currentTargets));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "New_Target">*/
+                                class New_Target
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Warning__New_Tar";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (getSensorTargets objectParent player) > count (_currentTargets));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Warning_Lost_Tar">*/
+                class Warning_Lost_Tar
+                {
+                        name = "Warning_Lost_Tar";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"_currentTargets = getSensorTargets objectParent player;" \n
+                         "playSoundUI [""radarTargetLost"", MRTM_rwr4, 1];" \n
+                         "_lDelay = serverTime + 0.1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="True";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_lDelay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_lDelay = serverTime;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Warning__New_Tar">*/
+                class Warning__New_Tar
+                {
+                        name = "Warning__New_Tar";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_currentTargets = getSensorTargets objectParent player;" \n
+                         "playSoundUI [""radarTargetNew"", MRTM_rwr4, 1];" \n
+                         "_nDelay = serverTime + 0.1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="True_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_nDelay < serverTime;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_nDelay = serverTime;"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True">*/
+                class True
+                {
+                        name = "True";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "True_1">*/
+                class True_1
+                {
+                        name = "True_1";
+                        itemno = 10;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((typeOf objectParent player == ""B_Plane_Fighter_01_F"" || typeOf objectParent player == ""B_Plane_CAS_01_dynamicLoadout_F"") && {MRTM_EnableRWR});"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

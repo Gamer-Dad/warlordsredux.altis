@@ -1,9 +1,5 @@
 private _v = _this;
-private _m = [];
-private _sm = [];
-private _p = [];
 private _a = [];
-private _l = 0;
 
 _v setVariable ["dapsActive", true, true];
 _v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), true];
@@ -16,30 +12,18 @@ private _reg = [];
 
 while {alive _v} do {
 	if (_v call DAPS_fnc_Active) then {
-		_r = _v nearObjects ["RocketCore", 225];
-		_m = _v nearObjects ["MissileCore", 225];
-		_sm = _v nearObjects ["SubmunitionCore", 225];
-		_p = _v nearObjects ["ammo_Penetrator_Base", 225];
-		_a = _r + _m + _sm + _p;
+		_a = ((nearestObjects [_v, ["ammo_Missile_BIM9X", "ammo_Missile_ShortRangeAABase", "ammo_Missile_MediumRangeAABase", "ammo_Missile_LongRangeAABase", "ammo_Missile_KH58", "ammo_Missile_HARM", "ammo_Missile_AntiRadiationBase", "M_Scalpel_AT", "M_Scalpel_AT_hidden", "M_SPG9_HE", "M_SPG9_HEAT", "M_Titan_AP", "M_Titan_AT", "M_Titan_AT_long", "M_Titan_AT_static", "M_Vorona_HE", "M_Vorona_HEAT", "Missile_AGM_01_F", "Missile_AGM_02_F", "R_MRAAWS_HE_F", "R_MRAAWS_HEAT_F", "R_MRAAWS_HEAT55_F", "R_PG32V_F", "R_PG7_F", "Rocket_03_AP_F", "Rocket_03_HE_F", "Rocket_04_AP_F", "Rocket_04_HE_F"], 225]) select {!(_x in _reg)});
 
-		if ((count _a) > 0) then{
-			if !((_a select 0) in _reg) then {
-				[_v, _a select 0] spawn DAPS_fnc_Dazzler;
-				_l = .3;
-				_reg pushBackUnique (_a select 0);
-			};
-		};
-		if (_l > 0) then {
-			sleep _l;
-			_l = 0;
+		if ((count _a) > 0) then {
+			[_v, (_a select 0)] spawn DAPS_fnc_Dazzler;
+			_reg pushBackUnique (_a select 0);
 		};
 	};
-	if ((time) > _time) then {
-		{
-			if !(alive _x) then {
-				_reg = _reg - [_x];
-			;}
-		} forEach _reg;
-	};
+
+	{
+		if !(alive _x) then {
+			_reg = _reg - [_x];
+		};
+	} forEach _reg;
 	sleep .01;
 };

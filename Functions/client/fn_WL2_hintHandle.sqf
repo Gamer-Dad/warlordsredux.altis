@@ -5,15 +5,15 @@ params ["_killer", "_event", ["_show", true]];
 switch (_event) do {
 	case "init": {
 		{
-			_varName = format ["BIS_WL_showHint_%1", _x];
+			private _varName = format ["BIS_WL_showHint_%1", _x];
 			
 			if (isNil _varName) then {
-				missionNamespace setVariable [_varName, false]
+				missionNamespace setVariable [_varName, false, clientOwner]
 			};
 		} forEach ["assembly", "maintenance", "targetResetVoting", "forfeitVoting"];
 		
-		_hintText = "";
-		_lastHint = "";
+		private _hintText = "";
+		private _lastHint = "";
 		while {!BIS_WL_missionEnd} do {
 			_hintText = "";
 			
@@ -28,10 +28,10 @@ switch (_event) do {
 			};
 			
 			if (BIS_WL_showHint_targetResetVoting) then {
-				_varNameVoting = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
-				_warlords = BIS_WL_allWarlords select {side group _x == BIS_WL_playerSide};
-				_limit = ceil ((count _warlords) / 2);
-				_votedYes = count (_warlords select {(_x getVariable ["BIS_WL_targetResetVote", -1]) == 1});
+				private _varNameVoting = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
+				private _warlords = BIS_WL_allWarlords select {side group _x == BIS_WL_playerSide};
+				private _limit = ceil ((count _warlords) / 2);
+				private _votedYes = count (_warlords select {(_x getVariable ["BIS_WL_targetResetVote", -1]) == 1});
 				_hintText = _hintText + format [
 					"%10<t shadow = '0'><t align = 'center' size = '1.3'>%1</t><br/><t size = '1.2'><t align = 'left'>[ %2 + %3 ]</t><t align = 'right' color = '#4bff58'>%4</t><br/><t align = 'left'>[ %2 + %5 ]</t><t align = 'right' color = '#ff4b4b'>%6</t></t><t size = '1'><br/><br/><t align = 'left'>%7</t><t align = 'right'>%8</t><br/><t align = 'center'>- %9 -</t></t></t>",
 					toUpper localize "STR_A3_WL_target_reset_info",
@@ -48,10 +48,10 @@ switch (_event) do {
 			};
 
 			if (BIS_WL_showHint_forfeitVoting) then {
-				_varNameVoting = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
-				_warlords = BIS_WL_allWarlords select {side group _x == BIS_WL_playerSide};
-				_limit = ceil ((count _warlords) / 2);
-				_votedYes = count (_warlords select {(_x getVariable ["BIS_WL_forfeitVote", -1]) == 1});
+				private _varNameVoting = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
+				private _warlords = BIS_WL_allWarlords select {side group _x == BIS_WL_playerSide};
+				private _limit = ceil ((count _warlords) / 2);
+				private _votedYes = count (_warlords select {(_x getVariable ["BIS_WL_forfeitVote", -1]) == 1});
 				_hintText = _hintText + format [
 					"%10<t shadow = '0'><t align = 'center' size = '1.3'>%1</t><br/><t size = '1.2'><t align = 'left'>[ %2 + %3 ]</t><t align = 'right' color = '#4bff58'>%4</t><br/><t align = 'left'>[ %2 + %5 ]</t><t align = 'right' color = '#ff4b4b'>%6</t></t><t size = '1'><br/><br/><t align = 'left'>%7</t><t align = 'right'>%8</t><br/><t align = 'center'>- %9 -</t></t></t>",
 					toUpper "Surrender vote activated",
@@ -76,7 +76,7 @@ switch (_event) do {
 	};
 	
 	default {
-		_varName = format ["BIS_WL_showHint_%1", _event];
+		private _varName = format ["BIS_WL_showHint_%1", _event];
 		
 		if (_show isEqualType true) then {
 			missionNamespace setVariable [_varName, _show];
@@ -84,7 +84,7 @@ switch (_event) do {
 			[_varName, _show] spawn {
 				params ["_varName", "_show"];
 				while {!BIS_WL_missionEnd} do {
-					missionNamespace setVariable [_varName, call _show];
+					missionNamespace setVariable [_varName, call _show, clientOwner];
 					if (_varName == "BIS_WL_showHint_maintenance") then {
 						[false] call BIS_fnc_WL2_refreshOSD;
 					};

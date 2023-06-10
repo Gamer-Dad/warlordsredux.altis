@@ -1,0 +1,146 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_selectedTargetsHandle.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-201.775421,869.955444,-111.775421,919.955566,0.000000,"Init"};
+item1[] = {"mission_end",4,218,-203.643860,947.012146,-113.643860,997.012085,0.000000,"mission end"};
+item2[] = {"Loop",2,250,-205.299561,1027.595093,-115.299530,1077.595093,0.000000,"Loop"};
+item3[] = {"Option_1",4,218,-275.946167,1114.247681,-185.946106,1164.247681,0.000000,"Option 1"};
+item4[] = {"Option_2",4,218,-126.925980,1113.143555,-36.925995,1163.143555,0.000000,"Option 2"};
+item5[] = {"Action",2,250,-372.533142,1030.907959,-282.533173,1080.907959,0.000000,"Action"};
+item6[] = {"Action_1",2,250,-38.617706,1025.940308,51.382294,1075.940308,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {3,5};
+link5[] = {4,6};
+link6[] = {5,1};
+link7[] = {6,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,8,6316128,1,-470.482117,85.859650,1373.265869,664.592163,1008,1284,1};
+window[] = {2,-1,-1,-1,-1,1345,286,2206,286,3,1026};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_selectedTargetsHandle.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"private [""_prevSector1"", ""_prevSector2"", ""_side1"", ""_side2""];" \n
+                         "" \n
+                         "_prevSector1 = objNull;" \n
+                         "_prevSector2 = objNull;" \n
+                         "" \n
+                         "_side1 = BIS_WL_playerSide;" \n
+                         "_side2 = BIS_WL_enemySide;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "mission_end">*/
+                                class mission_end
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loop">*/
+                class Loop
+                {
+                        name = "Loop";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Option_2">*/
+                                class Option_2
+                                {
+                                        itemno = 4;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_prevSector2 != (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_enemySide]));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Option_1">*/
+                                class Option_1
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_prevSector1 != (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]));"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"if !(isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide])) then {[(missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]), _side1, TRUE] call BIS_fnc_WL2_targetSelected};" \n
+                         "if !(isNull _prevSector1) then {[_prevSector1, _side1, false] call BIS_fnc_WL2_targetSelected};" \n
+                         "_prevSector1 = (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_playerSide]);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "mission_end">*/
+                                class mission_end
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"if !(isNull (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_enemySide])) then {[(missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_enemySide]), _side2, true] call BIS_fnc_WL2_targetSelected};" \n
+                         "if !(isNull _prevSector2) then {[_prevSector2, _side2, FALSE] call BIS_fnc_WL2_targetSelected};" \n
+                         "_prevSector2 = (missionNamespace getVariable format [""BIS_WL_currentTarget_%1"", BIS_WL_enemySide]);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "mission_end">*/
+                                class mission_end
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

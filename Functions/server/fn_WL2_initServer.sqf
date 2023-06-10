@@ -26,8 +26,6 @@ missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 missionNamespace setVariable ["imbalance", 0, true];
 
-missionNamespace setVariable ["serverTimer", 0, true];
-
 [36000] call BIS_fnc_countdown;
 0 spawn BIS_fnc_WL2_tablesSetUp;
 
@@ -49,14 +47,7 @@ WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
-//this part sets fog and rain to zero
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		_overcastPreset = random 1;
-		(7200 * timeMultiplier) setOvercast _overcastPreset;
-		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
-	};
-};
+0 spawn BIS_fnc_WL2_enviHandle;
 
 "server" call BIS_fnc_WL2_varsInit;
 
@@ -85,19 +76,19 @@ addMissionEventHandler ["HandleDisconnect", {
 		if !(isPlayer _x) then {_x setDamage 1};
 	} forEach ((units group _unit) - [_unit]);
 	
-	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
+	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], [], [2, clientOwner]];
 }];
 
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	
-	if ((isPlayer _owner) && (_channelNumber == 0)) then {
+	if ((_channelNumber == 0) && {(isPlayer _owner)}) then {
 		deleteMarker _marker;
 	};
 }];
 
 addMissionEventHandler ["EntityKilled", {
-	_this spawn BIS_fnc_WL2_killRewardHandle;
+	_this call BIS_fnc_WL2_killRewardHandle;
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
 
 	if ((typeOf (_this # 0)) == "B_Truck_01_medical_F") then {
@@ -114,7 +105,7 @@ addMissionEventHandler ["EntityKilled", {
 			if !(alive _x) then {
 				deleteVehicle _asset;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});	
+		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});	
 	};
 }];
 
@@ -122,7 +113,7 @@ missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
 
-if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
+if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 
 call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
@@ -134,36 +125,18 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_garbageCollector;
-0 spawn BIS_fnc_WL2_targetResetHandleServer;
-0 spawn BIS_fnc_WL2_forfeitHandleServer;
+{
+	_x spawn BIS_fnc_WL2_targetResetHandleServer;
+	_x spawn BIS_fnc_WL2_forfeitHandleServer;
+} forEach [west, east];
 
 setTimeMultiplier 3;
-
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || daytime < 5};
-		setTimeMultiplier 9;
-		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && daytime > 5};
-		setTimeMultiplier 3;
-	};
-};
+0 spawn BIS_fnc_WL2_timeHandle;
 
 {
-	_x spawn {
-		_side = _this;
-		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep WL_TIMEOUT_LONG; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};
-			sleep WL_TIMEOUT_LONG;
-			if (((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side) then {
-				[_side, objNull] call BIS_fnc_WL2_selectTarget;
-			};
-		};
-	};
-} forEach BIS_WL_competingSides;
+	_x spawn BIS_fnc_WL2_currentTargetHandle;
+} forEach [west, east];
 
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
-
-//Log difficulty
-diag_log (format ["Server difficulty option death messages: %1", difficultyOption "deathMessages"]);

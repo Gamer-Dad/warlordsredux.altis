@@ -1,0 +1,172 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_enviHandle.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
+item1[] = {"__Mission_End",4,218,-39.396515,-52.586243,50.603485,-2.586243,0.000000,"!Mission End"};
+item2[] = {"Mission_End",4,218,92.241425,-54.310333,182.241425,-4.310333,0.000000,"Mission End"};
+item3[] = {"Exit",1,250,90.948303,-131.465530,180.948334,-81.465546,0.000000,"Exit"};
+item4[] = {"Action",2,250,-40.754944,28.320389,49.245071,78.320389,0.000000,"Action"};
+item5[] = {"Action_1",2,250,94.601959,29.001526,184.601974,79.001526,0.000000,"Action"};
+item6[] = {"Delay",4,218,26.053352,97.110168,116.053337,147.110168,0.000000,"Delay"};
+item7[] = {"Fog",4,218,-93.558746,97.324982,-3.558746,147.324982,0.000000,"Fog"};
+item8[] = {"Rain",4,218,-33.369064,121.183983,56.630936,171.183975,0.000000,"Rain"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {2,3};
+link3[] = {4,2};
+link4[] = {4,6};
+link5[] = {4,7};
+link6[] = {4,8};
+link7[] = {5,1};
+link8[] = {5,2};
+link9[] = {6,5};
+link10[] = {7,5};
+link11[] = {8,5};
+globals[] = {0.000000,0,0,0,0,640,480,1,13,6316128,1,-266.001007,374.396210,279.577606,-201.398224,1181,887,1};
+window[] = {0,-1,-1,-1,-1,1189,130,2050,130,1,1199};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_enviHandle.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "__Mission_End">*/
+                                class __Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_overcastPreset = random 1;" \n
+                         "(7200 * timeMultiplier) setOvercast _overcastPreset;" \n
+                         "0 setFog 0; " \n
+                         "0 setRain 0;" \n
+                         "simulWeatherSync;" \n
+                         "_d = serverTime + 600;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Delay">*/
+                                class Delay
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_d < serverTime);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Fog">*/
+                                class Fog
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(fog > 0);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Rain">*/
+                                class Rain
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(rain > 0);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"0 setFog 0; " \n
+                         "0 setRain 0;" \n
+                         "simulWeatherSync;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Mission_End">*/
+                                class Mission_End
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "__Mission_End">*/
+                                class __Mission_End
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!BIS_WL_missionEnd;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

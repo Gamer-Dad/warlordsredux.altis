@@ -27,7 +27,9 @@ switch (true) do {
 	};
 };
 
-if(MRTM_syncObjects) then {
-	setObjectViewDistance [_dist, 100];
-	MRTM_objects = _dist;
+if !(isNil {MRTM_syncObjects}) then {
+	if(MRTM_syncObjects) then {
+		setObjectViewDistance [_dist, 100];
+		MRTM_objects = _dist;
+	};
 };
