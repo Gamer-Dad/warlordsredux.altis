@@ -2,6 +2,7 @@ private _v = _this select 0;
 private _i = _this select 1;
 private _d = _this select 2;
 
+_i setOwner 2;
 _d = _v distance _i;
 if (_d < 30) exitWith {};
 if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
@@ -12,9 +13,9 @@ private _ex = true;
 
 while {(alive _i) && (alive _v)} do {
     _d = _v distance _i;
-    if (_d < 140) exitWith {_ex = false};
-    if (_d > 150) exitWith {};
-    sleep 0.001;
+    if (_d < 115) exitWith {_ex = false};
+    if (_d > 125) exitWith {};
+    sleep 0.01;
 };
 
 if !(alive _v) exitWith {};
@@ -24,8 +25,7 @@ private _p = getPosATL _i;
 private _id = getDir _i;
 private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 
-[_i] remoteExec ["deleteVehicle", 0, true];
-
+deleteVehicle _i;
 [_v, _id, _p, _i] call DAPS_fnc_React;
 _p call DAPS_fnc_Blast;
 

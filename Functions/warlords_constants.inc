@@ -61,15 +61,8 @@
 #define WL_MAINTENANCE_COOLDOWN_REARM_Artillery 1800 
 #define WL_MAINTENANCE_COOLDOWN_REARM_VLS 2700
 #define WL_LOSING_SECTOR_WARN_FREQ 30
-#define WL_MUSIC_VOLUME 0.1
-#define WL_GARRISON_GROUP_SIZE_MIN 3
-#define WL_GARRISON_GROUP_SIZE_MAX 5
-#define WL_ASSET_IRRELEVANT_RANGE 1000
 #define WL_TARGET_RESET_VOTING_TIME 60
-#define RD_KILL_REWARD_MOD 4444  //Original value 10,000
-#define RD_GARRISON_SIZE_MOD 2.5  //Original value 2; adjust this to increase total INF spawning in an AI sector. 
 #define RD_DISABLE_TEAM_SWITCHING 1  //default 1; 1 = Team switching disabled; 2 = Team switching enabled
-#define WL_SYNCED_TIME (call BIS_fnc_WL2_syncedTime)
 #define WL_TARGET_FRIENDLY (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])
 #define WL_TARGET_ENEMY (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_enemySide])
 #define WL_CONTROL_MAP (uiNamespace getVariable ["BIS_WL_mapControl", controlNull])

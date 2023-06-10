@@ -59,8 +59,8 @@ if (_selected) then {
 	
 	_sector spawn {
 		params ["_sector"];
-		_t = WL_SYNCED_TIME + 3;
-		waitUntil {WL_SYNCED_TIME > _t || BIS_WL_playerSide in (_sector getVariable "BIS_WL_previousOwners")};
+		_t = serverTime + 3;
+		waitUntil {serverTime > _t || BIS_WL_playerSide in (_sector getVariable "BIS_WL_previousOwners")};
 		if (!(BIS_WL_playerSide in (_sector getVariable "BIS_WL_previousOwners"))) then {
 			_area = _sector getVariable "objectArea";
 			_borderWidth = _sector getVariable ["BIS_WL_borderWidth", 0];

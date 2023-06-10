@@ -5,7 +5,7 @@ params ["_asset"];
 _rearmActionID = -1;
 while {alive _asset} do {
 	_nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select {alive _x};
-	_rearmCooldown = ((_asset getVariable "BIS_WL_nextRearm") - WL_SYNCED_TIME) max 0;
+	_rearmCooldown = ((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0;
 	
 	if (_nearbyVehicles findIf {_x getVariable ["BIS_WL_canRearm", FALSE]} != -1) then {
 		if (_rearmActionID == -1) then {
@@ -13,7 +13,7 @@ while {alive _asset} do {
 				"",
 				{
 					params ["_asset"];
-					if ((_asset getVariable "BIS_WL_nextRearm") <= WL_SYNCED_TIME) then {
+					if ((_asset getVariable "BIS_WL_nextRearm") <= serverTime) then {
 						_curWeapon = currentWeapon _asset;
 						if (_asset isKindOf "LandVehicle") then {
 							_asset spawn BIS_fnc_WL2_vehicleRearm;
@@ -26,48 +26,48 @@ while {alive _asset} do {
 						_asset selectWeapon _curWeapon;
 
 						if (_asset isKindOf "Helicopter") then {  
-							_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
+							_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
 						} else { 
 							if (_asset isKindOf "Plane") then {  
-								_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
+								_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
 							} else { 
 								if (_asset isKindOf "B_MBT_01_arty_F") then {  
-									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+									_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 								} else { 
 									if (_asset isKindOf "O_MBT_02_arty_F") then {  
-										_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+										_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 									} else { 
 										if (_asset isKindOf "B_Mortar_01_F") then {  
-											_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+											_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
 										} else { 
 											if (_asset isKindOf "O_Mortar_01_F") then {  
-												_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+												_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
 											} else { 
 												if (_asset isKindOf "B_AAA_System_01_F ") then {  
-													_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
+													_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
 												} else { 
 													if (_asset isKindOf "B_SAM_System_01_F") then {  
-														_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
+														_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
 													} else { 
 														if (_asset isKindOf "B_SAM_System_03_F") then {  
-															_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+															_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
 														} else { 
 															if (_asset isKindOf "O_SAM_System_04_F") then {  
-																_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+																_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
 															} else { 
 																if (_asset isKindOf "B_SAM_System_02_F") then {  
-																	_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
+																	_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
 																} else { 
 																	if (_asset isKindOf "B_Ship_MRLS_01_F") then {  
-																		_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
+																		_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
 																	} else { 
 																		if (_asset isKindOf "B_MBT_01_mlrs_F") then {  
-																			_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																			_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 																		} else { 
 																			if (_asset isKindOf "I_Truck_02_MRL_F") then {  
-																				_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																				_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 																			} else { 
-																				_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; 
+																				_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM]; 
 																			};
 																		};
 																	};

@@ -23,11 +23,11 @@ _this spawn {
 	(WL_DISPLAY_MAIN displayCtrl 994000) ctrlSetPosition [safeZoneX + 0.1, safeZoneY + (safeZoneH * 0.5), safeZoneW, safeZoneH];
 	(WL_DISPLAY_MAIN displayCtrl 994000) ctrlCommit 0;
 	
-	while {_penaltyEnd > WL_SYNCED_TIME} do {
+	while {_penaltyEnd > serverTime} do {
 		(WL_DISPLAY_MAIN displayCtrl 994000) ctrlSetStructuredText parseText format [
 			"<t shadow = '0'><t size = '%1' color = '#ff4b4b'>%2</t><br/><t size = '%3'>%4</t></t>",
 			(2.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
-			[(_penaltyEnd - WL_SYNCED_TIME) max 0, "MM:SS"] call BIS_fnc_secondsToString,
+			[(_penaltyEnd - serverTime) max 0, "MM:SS"] call BIS_fnc_secondsToString,
 			(1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
 			localize "STR_A3_mission_failed_friendly_fire"
 		];

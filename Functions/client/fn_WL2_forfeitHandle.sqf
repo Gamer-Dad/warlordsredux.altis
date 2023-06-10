@@ -5,7 +5,7 @@ BIS_WL_playerSide spawn {
 	_varNameVotingBy = format ["BIS_WL_forfeitOrderedBy_%1", _this];
 	
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && (missionNamespace getVariable [_varNameVotingBy, ""]) != ""};
+		waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime < ((missionNamespace getVariable [_varNameVoting, -1]) + 60) && (missionNamespace getVariable [_varNameVotingBy, ""]) != ""};
 		
 		[toUpper format ["Surrender ordered by %1", missionNamespace getVariable _varNameVotingBy]] spawn BIS_fnc_WLSmoothText;
 		missionNamespace setVariable [_varNameVotingBy, ""];
@@ -34,7 +34,7 @@ BIS_WL_playerSide spawn {
 			};
 		}];
 		
-		waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME >= ((missionNamespace getVariable _varNameVoting) + 60) || (player getVariable ["BIS_WL_forfeitVote", -1]) != -1};
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime >= ((missionNamespace getVariable _varNameVoting) + 60) || (player getVariable ["BIS_WL_forfeitVote", -1]) != -1};
 
 		[player, "forfeitVoting", FALSE] call BIS_fnc_WL2_hintHandle;
 	};

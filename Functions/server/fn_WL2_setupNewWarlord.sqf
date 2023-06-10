@@ -7,7 +7,7 @@ private _markers = (side group _warlord) call BIS_fnc_WL2_getRespawnMarkers;
 private _varFormat = "";
 
 
-_warlord setVariable ["BIS_WL_detectedByServerSince", WL_SYNCED_TIME];
+_warlord setVariable ["BIS_WL_detectedByServerSince", serverTime];
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", []];
 serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _warlord], false];
 
@@ -56,7 +56,7 @@ if !(_boundToAnotherTeam) then {
 	};
 	
 	_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _warlord];
-	if ((missionNamespace getVariable _friendlyFireVarName) > WL_SYNCED_TIME) then {
+	if ((missionNamespace getVariable _friendlyFireVarName) > serverTime) then {
 		(owner _warlord) publicVariableClient _friendlyFireVarName;
 	};
 

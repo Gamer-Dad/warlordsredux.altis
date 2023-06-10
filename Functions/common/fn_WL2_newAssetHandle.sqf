@@ -4,7 +4,7 @@ params ["_owner", "_asset", ["_assembled", FALSE]];
 
 _asset addEventHandler ["Killed", {
 	params ["_asset"];
-	_asset setVariable ["BIS_WL_deleteAt", WL_SYNCED_TIME + (if (_asset isKindOf "Man") then {BIS_WL_corpseRemovalTimeout} else {BIS_WL_wreckRemovalTimeout}), !isServer];
+	_asset setVariable ["BIS_WL_deleteAt", serverTime + (if (_asset isKindOf "Man") then {BIS_WL_corpseRemovalTimeout} else {BIS_WL_wreckRemovalTimeout}), !isServer];
 }];
 
 if (isNull _owner && isServer) then {
@@ -30,48 +30,48 @@ if (isPlayer _owner) then {
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 
 		if (_asset isKindOf "Helicopter") then {  
-			_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
+			_asset setVariable ["BIS_WL_nextRearm", serverTime + 30]; 
 		} else { 
 			if (_asset isKindOf "Plane") then {  
-				_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + 30]; 
+				_asset setVariable ["BIS_WL_nextRearm", serverTime + 30]; 
 			} else { 
 				if (_asset isKindOf "B_MBT_01_arty_F") then {  
-					_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+					_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 				} else { 
 					if (_asset isKindOf "O_MBT_02_arty_F") then {  
-						_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+						_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 					} else { 
 						if (_asset isKindOf "B_Mortar_01_F") then {  
-							_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+							_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
 						} else { 
 							if (_asset isKindOf "O_Mortar_01_F") then {  
-								_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
+								_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
 							} else { 
 								if (_asset isKindOf "B_AAA_System_01_F ") then {  
-									_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
+									_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
 								} else { 
 									if (_asset isKindOf "B_SAM_System_01_F") then {  
-										_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
+										_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
 									} else { 
 										if (_asset isKindOf "B_SAM_System_03_F") then {  
-											_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+											_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
 										} else { 
 											if (_asset isKindOf "O_SAM_System_04_F") then {  
-												_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
+												_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
 											} else { 
 												if (_asset isKindOf "B_SAM_System_02_F") then {  
-													_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
+													_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
 												} else { 
 													if (_asset isKindOf "B_Ship_MRLS_01_F") then {  
-														_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
+														_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
 													} else { 
 														if (_asset isKindOf "B_MBT_01_mlrs_F") then {  
-															_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+															_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 														} else { 
 															if (_asset isKindOf "I_Truck_02_MRL_F") then {  
-																_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
+																_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
 															} else { 
-																_asset setVariable ["BIS_WL_nextRearm", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REARM]; 
+																_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM]; 
 															};
 														};
 													};
@@ -100,19 +100,20 @@ if (isPlayer _owner) then {
 			BIS_WL_recentlyPurchasedAssets pushBack _asset;
 			
 			_asset spawn {
-				_t = WL_SYNCED_TIME + WL_ASSET_SCENE_ICON_DURATION;
-				waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t || !alive _this || vehicle player == _this};
+				_t = serverTime + WL_ASSET_SCENE_ICON_DURATION;
+				waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t || !alive _this || vehicle player == _this};
 				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
 			};
 		};
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
+		_asset spawn BIS_fnc_WL2_sub_vehicleKickAction;
 		_asset spawn {
 			params ["_asset"];
 			_repairActionID = -1;
 			while {alive _asset} do {
 				_nearbyVehicles = (_asset nearEntities ["All", WL_MAINTENANCE_RADIUS]) select {alive _x};
-				_repairCooldown = ((_asset getVariable "BIS_WL_nextRepair") - WL_SYNCED_TIME) max 0;
+				_repairCooldown = ((_asset getVariable "BIS_WL_nextRepair") - serverTime) max 0;
 				
 				if (_nearbyVehicles findIf {_x getVariable ["BIS_WL_canRepair", FALSE]} != -1) then {
 					if (_repairActionID == -1) then {
@@ -120,9 +121,9 @@ if (isPlayer _owner) then {
 							"",
 							{
 								params ["_asset"];
-								if ((_asset getVariable "BIS_WL_nextRepair") <= WL_SYNCED_TIME) then {
+								if ((_asset getVariable "BIS_WL_nextRepair") <= serverTime) then {
 									_asset setDamage 0;
-									_asset setVariable ["BIS_WL_nextRepair", WL_SYNCED_TIME + WL_MAINTENANCE_COOLDOWN_REPAIR];
+									_asset setVariable ["BIS_WL_nextRepair", serverTime + WL_MAINTENANCE_COOLDOWN_REPAIR];
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Repair.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 									[toUpper localize "STR_A3_WL_popup_asset_repaired"] spawn BIS_fnc_WL2_smoothText;
 								} else {
@@ -162,7 +163,7 @@ if (isPlayer _owner) then {
 			};
 
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
-				_asset setVariable ["dazzlerActivated", false, true];
+				_asset setVariable ["dazzlerActivated", false];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
 
@@ -173,31 +174,6 @@ if (isPlayer _owner) then {
 					_asset setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Does nothing but keep for reminder
 					_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
 				};
-			};
-
-			if (typeOf _asset == "B_Plane_Fighter_01_F" || typeOf _asset == "B_Plane_CAS_01_dynamicLoadout_F") then {
-				_asset addEventHandler ["Gear", {
-					params ["_vehicle", "_gearState"];
-					if (_gearState == true) then {
-						_vehicle setVariable ["landingGear", true, true];
-					} else {
-						_vehicle setVariable ["landingGear", false, true];
-					};
-				}];
-				_asset setVariable ["landingGear", true, true];
-				_asset setVariable ["bettyEnabled", false, true];
-			};
-			if (typeOf _asset == "O_Plane_Fighter_02_F" || typeOf _asset == "O_Plane_CAS_02_dynamicLoadout_F") then {
-				_asset addEventHandler ["Gear", {
-					params ["_vehicle", "_gearState"];
-					if (_gearState == true) then {
-						_vehicle setVariable ["landingGear", true, true];
-					} else {
-						_vehicle setVariable ["landingGear", false, true];
-					};
-				}];
-				_asset setVariable ["landingGear", true, true];
-				_asset setVariable ["bettyEnabled", false, true];
 			};
 		};
 		

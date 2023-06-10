@@ -37,7 +37,7 @@ if (_sector in _availableSectors) then {
 			playSound "AddItemOK";
 		};
 		case WL_ID_SELECTION_SCAN: {
-			if ((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]) < (WL_SYNCED_TIME) - BIS_WL_scanCooldown) then {
+			if ((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]) < (serverTime) - BIS_WL_scanCooldown) then {
 				BIS_WL_targetSector = _sector;
 				playSound "AddItemOK";
 			} else {

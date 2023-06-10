@@ -42,7 +42,7 @@ switch (_event) do {
 					toUpper localize "str_lib_info_no",
 					localize "STR_A3_WL_target_reset_votes_needed",
 					0 max (_limit - _votedYes),
-					0 max ceil (((missionNamespace getVariable [_varNameVoting, -1]) + WL_TARGET_RESET_VOTING_TIME) - WL_SYNCED_TIME),
+					0 max ceil (((missionNamespace getVariable [_varNameVoting, -1]) + WL_TARGET_RESET_VOTING_TIME) - serverTime),
 					if (_hintText == "") then {""} else {"<br/><br/>"}
 				];
 			};
@@ -62,7 +62,7 @@ switch (_event) do {
 					toUpper localize "str_lib_info_no",
 					localize "STR_A3_WL_target_reset_votes_needed",
 					0 max (_limit - _votedYes),
-					0 max ceil (((missionNamespace getVariable [_varNameVoting, -1]) + 60) - WL_SYNCED_TIME),
+					0 max ceil (((missionNamespace getVariable [_varNameVoting, -1]) + 60) - serverTime),
 					if (_hintText == "") then {""} else {"<br/><br/>"}
 				];
 			};

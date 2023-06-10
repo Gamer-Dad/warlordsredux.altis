@@ -21,8 +21,8 @@
 		};
 		
 		while {!BIS_WL_missionEnd} do {
-			_t = WL_SYNCED_TIME + 10 + random 10;
-			_tNoPlayers = WL_SYNCED_TIME + 2 + random 5;
+			_t = serverTime + 10 + random 10;
+			_tNoPlayers = serverTime + 2 + random 5;
 			_variablesPool = [];
 			_votesPool = [];
 			_npcsVoted = FALSE;
@@ -35,14 +35,14 @@
 				_npcs = _warlords select {!isPlayer _x};
 				_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
 				_playerVotingVariableNames = _players apply {format ["BIS_WL_targetVote_%1", getPlayerUID _x]};
-				(call _votingReset) || ((_playerVotingVariableNames findIf {!isNull (missionNamespace getVariable [_x, objNull])} != -1) || (if (count _npcs > 0) then {if (_noPlayers) then {WL_SYNCED_TIME > _tNoPlayers} else {if (BIS_WL_allowAIVoting) then {WL_SYNCED_TIME > _t} else {FALSE}}} else {FALSE}))
+				(call _votingReset) || ((_playerVotingVariableNames findIf {!isNull (missionNamespace getVariable [_x, objNull])} != -1) || (if (count _npcs > 0) then {if (_noPlayers) then {serverTime > _tNoPlayers} else {if (BIS_WL_allowAIVoting) then {serverTime > _t} else {FALSE}}} else {FALSE}))
 			};
 			
 			if !(call _votingReset) then {
-				_votingEnd = WL_SYNCED_TIME + BIS_WL_targetVotingDuration;
-				_nextUpdate = WL_SYNCED_TIME;
+				_votingEnd = serverTime + BIS_WL_targetVotingDuration;
+				_nextUpdate = serverTime;
 				
-				while {WL_SYNCED_TIME < _votingEnd && !(call _votingReset)} do {
+				while {serverTime < _votingEnd && !(call _votingReset)} do {
 					_warlords = BIS_WL_allWarlords select {side group _x == _side};
 					_players = _warlords select {isPlayer _x};
 					_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
@@ -71,9 +71,9 @@
 						};
 					} forEach _playerVotingVariableNames;
 					
-					if (WL_SYNCED_TIME >= _nextUpdate) then {
+					if (serverTime >= _nextUpdate) then {
 						missionNamespace setVariable [format ["BIS_WL_mostVoted_%1", _side], [call _calculateMostVotedSector, _votingEnd], TRUE];
-						_nextUpdate = WL_SYNCED_TIME + WL_TIMEOUT_STANDARD;
+						_nextUpdate = serverTime + WL_TIMEOUT_STANDARD;
 					};
 					
 					sleep WL_TIMEOUT_SHORT;

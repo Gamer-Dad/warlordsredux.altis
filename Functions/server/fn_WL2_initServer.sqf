@@ -118,7 +118,7 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
-missionNamespace setVariable ["BIS_WL_missionStart", WL_SYNCED_TIME, TRUE];
+missionNamespace setVariable ["BIS_WL_missionStart", serverTime, TRUE];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
 
@@ -164,6 +164,3 @@ setTimeMultiplier 3;
 [] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
-
-//Log difficulty
-diag_log (format ["Server difficulty option death messages: %1", difficultyOption "deathMessages"]);

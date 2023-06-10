@@ -8,7 +8,7 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
 	_previousOwners pushBack _owner;
-	if (WL_SYNCED_TIME > 0 && count _previousOwners == 1) then {
+	if (serverTime > 0 && count _previousOwners == 1) then {
 		{
 			private _uid = getPlayerUID _x;
 			[_uid, (_sector getVariable "BIS_WL_value") * WL_SECTOR_CAPTURE_REWARD_MULTIPLIER] spawn BIS_fnc_WL2_fundsDatabaseWrite;

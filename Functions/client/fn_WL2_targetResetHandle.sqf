@@ -5,7 +5,7 @@ BIS_WL_playerSide spawn {
 	_varNameReset = format ["BIS_WL_targetResetOrderedBy_%1", _this];
 	
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME < ((missionNamespace getVariable [_varNameVoting, -1]) + WL_TARGET_RESET_VOTING_TIME) && !isNull WL_TARGET_FRIENDLY && (missionNamespace getVariable [_varNameReset, ""]) != ""};
+		waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime < ((missionNamespace getVariable [_varNameVoting, -1]) + WL_TARGET_RESET_VOTING_TIME) && !isNull WL_TARGET_FRIENDLY && (missionNamespace getVariable [_varNameReset, ""]) != ""};
 		
 		[toUpper format [localize "STR_A3_WL_popup_voting_reset_user_TODO_REWRITE", missionNamespace getVariable _varNameReset]] spawn BIS_fnc_WLSmoothText;
 		missionNamespace setVariable [_varNameReset, ""];
@@ -34,7 +34,7 @@ BIS_WL_playerSide spawn {
 			};
 		}];
 		
-		waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME >= ((missionNamespace getVariable _varNameVoting) + WL_TARGET_RESET_VOTING_TIME) || isNull WL_TARGET_FRIENDLY || (player getVariable ["BIS_WL_targetResetVote", -1]) != -1};
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime >= ((missionNamespace getVariable _varNameVoting) + WL_TARGET_RESET_VOTING_TIME) || isNull WL_TARGET_FRIENDLY || (player getVariable ["BIS_WL_targetResetVote", -1]) != -1};
 
 		[player, "targetResetVoting", FALSE] call BIS_fnc_WL2_hintHandle;
 	};
@@ -50,8 +50,8 @@ BIS_WL_playerSide spawn {
 		_target = WL_TARGET_FRIENDLY;
 		waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
 		
-		_t = WL_SYNCED_TIME + 3;
-		waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || (_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || (missionNamespace getVariable [_varName, FALSE])};
+		_t = serverTime + 3;
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || (_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || (missionNamespace getVariable [_varName, FALSE])};
 		
 		if (missionNamespace getVariable [_varName, FALSE]) then {
 			"Reset" call BIS_fnc_WL2_announcer;
@@ -77,8 +77,8 @@ BIS_WL_enemySide spawn {
 		_target = WL_TARGET_ENEMY;
 		waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_ENEMY};
 		
-		_t = WL_SYNCED_TIME + 3;
-		waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || (_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || ((missionNamespace getVariable [_varName, ""]) != "")};
+		_t = serverTime + 3;
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || (_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || ((missionNamespace getVariable [_varName, ""]) != "")};
 		
 		if ((missionNamespace getVariable [_varName, ""]) != "") then {
 			missionNamespace setVariable [_varName, ""];

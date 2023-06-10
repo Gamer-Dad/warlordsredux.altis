@@ -4,7 +4,7 @@ params ["_side", "_sector"];
 
 if (!isNull _sector) then {
 	missionNamespace setVariable [format ["BIS_WL_currentTarget_%1", _side], _sector, TRUE];
-	missionNamespace setVariable [format ["BIS_WL_sectorSelectedTimestamp_%1", _side], WL_SYNCED_TIME, TRUE];
+	missionNamespace setVariable [format ["BIS_WL_sectorSelectedTimestamp_%1", _side], serverTime, TRUE];
 	_seizeControlTrg = ((_sector getVariable "BIS_WL_seizeControlTrgs") select {(_x getVariable "BIS_WL_handledSide") == _side}) # 0;
 	_seizeControlTrg enableSimulation TRUE;
 	if (_sector in WL_BASES) then {

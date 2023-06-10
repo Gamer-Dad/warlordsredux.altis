@@ -32,12 +32,18 @@ if !(isNull _instigator) then {
 				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
 			if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
-				_killReward = (_killReward * 1.5);
+				_killReward = (round (_killReward * 1.5));
 			};
 			_uid = getPlayerUID _responsibleLeader;
-			[_unit, _killReward, false, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
-			_unit setVariable ["BIS_WL_killer", _responsibleLeader, true];
-			[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_unit, _killReward, false, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
+			_unit setVariable ["BIS_WL_killer", _responsibleLeader];
+			if ((objectParent _responsibleLeader) != _responsibleLeader) then {
+				{
+					_l = (_unit getVariable ["assistList", []]) + [_x];
+					_unit setVariable ["assistList", _l, true];
+				} forEach (crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || (_x isEqualTo (driver (objectParent _responsibleLeader))) || (_x isEqualTo (commander (objectParent _responsibleLeader))) && {(_x != _responsibleLeader)})};
+			};
 		};
 	};
 };
@@ -58,9 +64,9 @@ if (_cond > 0) then {
 	_killReward = (round ((_killReward / 100) * 30));
 	{
 		_uid = getPlayerUID _x;
-		[_uid, _killReward] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward, true, _uid] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+		[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
+		[_unit, _killReward, true, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 	} forEach _assistList;
 	_unit setVariable ["assistList", [], true];
-	_unit setVariable ["BIS_WL_killer", nil, true];
+	_unit setVariable ["BIS_WL_killer", nil];
 };

@@ -15,7 +15,7 @@ while {!BIS_WL_missionEnd} do {
 	sleep WL_TIMEOUT_MAX;
 	{
 		_asset = _x;
-		if (WL_SYNCED_TIME >= (_x getVariable ["BIS_WL_deleteAt", 0])) then {
+		if (serverTime >= (_x getVariable ["BIS_WL_deleteAt", 0])) then {
 			if (BIS_WL_allWarlords findIf {_x distance2D _asset < WL_ASSET_REMOVAL_SAFEZONE} == -1) then {
 				if (_asset isKindOf "Man") then {
 					if (vehicle _asset != _asset) then {

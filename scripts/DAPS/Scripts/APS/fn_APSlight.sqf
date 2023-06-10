@@ -12,12 +12,12 @@ dapsRegistered pushBackUnique _v;
 
 while {alive _v} do {
 	if (_v call DAPS_fnc_Active) then {
-		_a = nearestObjects [_v, ["RocketCore", "RocketBase", "ShellBase","ShellCore"], (if (isServer) then {50} else {150})];
+		_a = nearestObjects [_v, ["R_MRAAWS_HE_F", "R_MRAAWS_HEAT_F", "R_MRAAWS_HEAT55_F", "R_PG32V_F", "R_PG7_F", "M_NLAW_AT_F"], 125];
 
 		if ((count _a) > 0) then {
 			if !((_a select 0) in _reg) then {
 				_d = _v distance (_a select 0);
-				[_v, _a select 0, _d] spawn DAPS_fnc_Generic;
+				[_v, _a select 0, _d] remoteExec ["DAPS_fnc_Generic", 2];
 				_reg pushBackUnique (_a select 0);
 			};
 		};

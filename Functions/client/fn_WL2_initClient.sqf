@@ -289,8 +289,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 0 spawn {
 	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
-	_t = WL_SYNCED_TIME + 10;
-	waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME > _t || visibleMap};
+	_t = serverTime + 10;
+	waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || visibleMap};
 	if !(visibleMap) then {
 		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
 		
@@ -298,8 +298,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 };
 
 0 spawn {
-	_t = WL_SYNCED_TIME + 10;
-	waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t && !isNull WL_TARGET_FRIENDLY};
+	_t = serverTime + 10;
+	waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t && !isNull WL_TARGET_FRIENDLY};
 	sleep WL_TIMEOUT_LONG;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
@@ -319,7 +319,6 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
-0 spawn BIS_fnc_WL2_getUavConnected;
 0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_forfeitHandle;
 
@@ -329,6 +328,10 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
 	_key = actionKeysNames "curatorInterface";
 	_keyName = (keyName (_this select 1));
+	_key1 = actionKeysNames "tacticalView";
+	if (_keyName == _key1) then {
+		true;
+	};
 	if (_keyName == _key) then {
 		if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
 			true;

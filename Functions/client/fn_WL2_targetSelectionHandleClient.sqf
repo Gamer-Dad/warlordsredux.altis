@@ -21,8 +21,8 @@ while {!BIS_WL_missionEnd} do {
 		};
 	};
 	if !(isNull _lastTarget) then {
-		_t = WL_SYNCED_TIME + 3;
-		waitUntil {(_lastTarget getVariable "BIS_WL_owner") == BIS_WL_playerSide || WL_SYNCED_TIME > _t};
+		_t = serverTime + 3;
+		waitUntil {(_lastTarget getVariable "BIS_WL_owner") == BIS_WL_playerSide || serverTime > _t};
 	};
 	["client"] call BIS_fnc_WL2_updateSectorArrays;
 	_mostVotedVar spawn {

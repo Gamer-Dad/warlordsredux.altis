@@ -1,9 +1,7 @@
-#include "..\warlords_constants.inc"
-
 params ["_sector", "_side"];
 
 private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
-private _connectedToBase = count (WL_BASES arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
+private _connectedToBase = count ([BIS_WL_base1, BIS_WL_base2] arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 
 //adjusting nearroads value below should change spawn slots for non-hard coded towns.
 // Orginal if (_side == BIS_WL_localSide)
@@ -126,9 +124,8 @@ if (_side == BIS_WL_localSide) then {
 };
 
 if (count _spawnPosArr == 0) exitWith {};
-//adjust RD_GARRISON_SIZE_MOD in warlords_constants for more AI INF per town(I think)
 // Adjust GROUP_SIZE_MIN up to help smaller sectors without turning telos in to 1 FPS hell
-private _garrisonSize = (_sector getVariable "BIS_WL_value") * RD_GARRISON_SIZE_MOD;
+private _garrisonSize = (_sector getVariable "BIS_WL_value") * 2.3; // * x: the bigger x the more ai
 private _unitsPool = BIS_WL_factionUnitClasses # (BIS_WL_sidesArray find _side);
 
 _i = 0;
@@ -136,7 +133,7 @@ _i = 0;
 while {_i < _garrisonSize} do {
 	private _pos = selectRandom _spawnPosArr;
 	private _newGrp = createGroup _side;
-	private _grpSize = floor (WL_GARRISON_GROUP_SIZE_MIN + random (WL_GARRISON_GROUP_SIZE_MAX - WL_GARRISON_GROUP_SIZE_MIN));
+	private _grpSize = floor (3 + random (5 - 3));
 	
 	for [{_i2 = 0}, {_i2 < _grpSize && _i < _garrisonSize}, {_i2 = _i2 + 1; _i = _i + 1}] do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
@@ -157,3 +154,8 @@ while {_i < _garrisonSize} do {
 	_newWP = _newGrp addWaypoint [_pos, 0];
 	_newWP setWaypointType "CYCLE";
 };
+
+	{
+		_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && (alive _x)};
+		_x addCuratorEditableObjects [_l, true];
+	} forEach allCurators;

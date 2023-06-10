@@ -12,6 +12,6 @@ while {!BIS_WL_missionEnd} do {
 				};
 			};
 		};	
-	} forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && !(_x isKindOf "Man")});
+	} forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {((alive _x) && {!(_x isKindOf "Man") && {(!(_x isKindOf "Ship")) && {(!(_x isKindOf "Submarine"))}}})});
 	sleep 10;
 };

@@ -14,8 +14,8 @@ while {!BIS_WL_missionEnd} do {
 		
 		_seizingInfo params ["_side"];
 		if (_side == BIS_WL_enemySide) then {
-			if (WL_SYNCED_TIME > _nextPossibleWarn) then {
-				_nextPossibleWarn = WL_SYNCED_TIME + WL_LOSING_SECTOR_WARN_FREQ;
+			if (serverTime > _nextPossibleWarn) then {
+				_nextPossibleWarn = serverTime + WL_LOSING_SECTOR_WARN_FREQ;
 				"under_attack" call BIS_fnc_WL2_announcer;
 				[toUpper format [localize "STR_A3_WL_popup_losing_sector", BIS_WL_enemySide call BIS_fnc_WL2_sideToFaction, _sector getVariable "BIS_WL_name"]] spawn BIS_fnc_WL2_smoothText;
 			};

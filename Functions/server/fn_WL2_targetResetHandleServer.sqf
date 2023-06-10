@@ -5,11 +5,11 @@
 		_varName = format ["BIS_WL_targetResetVotingSince_%1", _this];
 		
 		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME < ((missionNamespace getVariable [_varName, -1]) + WL_TARGET_RESET_VOTING_TIME)};
+			waitUntil {sleep WL_TIMEOUT_SHORT; serverTime < ((missionNamespace getVariable [_varName, -1]) + WL_TARGET_RESET_VOTING_TIME)};
 			
 			_terminate = FALSE;
 			
-			while {!_terminate && WL_SYNCED_TIME < ((missionNamespace getVariable [_varName, -1]) + WL_TARGET_RESET_VOTING_TIME)} do {
+			while {!_terminate && serverTime < ((missionNamespace getVariable [_varName, -1]) + WL_TARGET_RESET_VOTING_TIME)} do {
 				sleep WL_TIMEOUT_SHORT;
 				
 				_warlords = BIS_WL_allWarlords select {side group _x == _this};
@@ -29,7 +29,7 @@
 				} else {
 					if (_votedNo >= _limit) then {
 						_terminate = TRUE;
-						missionNamespace getVariable [_varName, WL_SYNCED_TIME - WL_TARGET_RESET_VOTING_TIME, TRUE];
+						missionNamespace getVariable [_varName, serverTime - WL_TARGET_RESET_VOTING_TIME, TRUE];
 					};
 				};
 			};

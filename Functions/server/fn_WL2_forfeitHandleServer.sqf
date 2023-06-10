@@ -5,11 +5,11 @@
 		_varName = format ["BIS_WL_forfeitVotingSince_%1", _this];
 		
 		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep WL_TIMEOUT_SHORT; WL_SYNCED_TIME < ((missionNamespace getVariable [_varName, -1]) + 30)};
+			waitUntil {sleep WL_TIMEOUT_SHORT; serverTime < ((missionNamespace getVariable [_varName, -1]) + 30)};
 			
 			_terminate = FALSE;
 			
-			while {!_terminate && WL_SYNCED_TIME < ((missionNamespace getVariable [_varName, -1]) + 30)} do {
+			while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1]) + 30)}} do {
 				sleep WL_TIMEOUT_SHORT;
 				
 				_warlords = BIS_WL_allWarlords select {side group _x == _this};

@@ -47,14 +47,14 @@ if (_ret) then {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_conflict"};
 			_sectorSelectedTimestampVarID = format ["BIS_WL_sectorSelectedTimestamp_%1", BIS_WL_playerSide];
 			_targetResetVotingVarID = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
-			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
-			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
+			if (serverTime < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
+			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 		};
 		case "forfeitVote": {
 			_countSide = (playersNumber (side (group player)));
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
 			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
-			if (WL_SYNCED_TIME < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = str (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - WL_SYNCED_TIME))};
+			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = str (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime))};
 		};
 		case "Arsenal": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};

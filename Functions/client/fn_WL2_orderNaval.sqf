@@ -44,4 +44,4 @@ BIS_WL_waterDropPos set [2, 0];
 [toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WL2_smoothText;
 playSound "AddItemOK";
 
-[player, "orderAsset", _cost, BIS_WL_waterDropPos, _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+[player, "orderAsset", _cost, BIS_WL_waterDropPos, _class, false] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
