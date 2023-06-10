@@ -24,7 +24,7 @@ private _actionIDLoad = _asset addAction [
 	false,
 	false,
 	"",
-	"(alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])})",
+	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])",
 	-98,
 	false
 ];
@@ -40,7 +40,7 @@ private _actionIDUnload = _asset addAction [
 	false,
 	false,
 	"",
-	"(alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])})",
+	"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])",
 	-98,
 	false
 ];

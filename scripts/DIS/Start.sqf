@@ -23,5 +23,6 @@ while {true} do {
 			[_x] spawn DIS_fnc_RegisterSAM
 		};
 	} forEach _units;
+	publicVariable "daoVAMinfo"; // not needed?
 	sleep 5;
 };

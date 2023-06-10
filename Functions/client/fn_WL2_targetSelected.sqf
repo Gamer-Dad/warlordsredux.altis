@@ -32,7 +32,7 @@ if (_side != BIS_WL_playerSide) exitWith {
 	} else {
 		"BIS_WL_targetEnemy" setMarkerAlphaLocal 0;
 		"BIS_WL_targetEnemy" setMarkerDirLocal 0;
-		if ((markerPos "BIS_WL_targetEnemy") distance2D BIS_WL_playerBase < 1 && {!isServer}) then {
+		if ((markerPos "BIS_WL_targetEnemy") distance2D BIS_WL_playerBase < 1 && !isServer) then {
 			["base_safe", BIS_WL_playerSide] call BIS_fnc_WL2_handleRespawnMarkers;
 		};
 	};

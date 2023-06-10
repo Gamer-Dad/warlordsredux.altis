@@ -11,6 +11,13 @@ if (isServer) exitWith {
 		{_x setPos position _asset} forEach crew _asset;
 	};
 	deleteVehicle _asset;
+
+	private _groupUnit = local _asset && _asset isKindOf "Man";
+	if (_groupUnit) then {
+		0 spawn {
+			[] spawn BIS_fnc_WL2_refreshOSD;
+		};
+	};
 };
 
 if (typeOf _asset == "B_Truck_01_medical_F") then {
@@ -23,10 +30,11 @@ if (typeOf _asset == "O_Truck_03_medical_F") then {
 	deleteVehicle _asset;
 };
 
-private _groupUnit = (local _asset && {_asset isKindOf "Man"});
+private _groupUnit = local _asset && _asset isKindOf "Man";
 if (_groupUnit) then {
-	deleteVehicle _asset;
-	[] spawn BIS_fnc_WL2_refreshOSD;
+	0 spawn {
+		[] spawn BIS_fnc_WL2_refreshOSD;
+	};
 };
 
 [_asset] remoteExec ["BIS_fnc_WL2_sub_deleteAsset", 2];

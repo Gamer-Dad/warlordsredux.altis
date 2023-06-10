@@ -29,7 +29,7 @@ switch (_locality) do {
 		BIS_WL_dropCost_far = BIS_WL_initModule getVariable ["BIS_WL_dropCost_far", 1000];
 		BIS_WL_arsenalEnabled = BIS_WL_initModule getVariable ["BIS_WL_arsenalEnabled", TRUE];
 		BIS_WL_arsenalCost = BIS_WL_initModule getVariable ["BIS_WL_arsenalCost", 1000];
-		BIS_WL_assetLimit = BIS_WL_initModule getVariable ["BIS_WL_assetLimit", 6];
+		BIS_WL_assetLimit = BIS_WL_initModule getVariable ["BIS_WL_assetLimit", 10];
 		BIS_WL_maxSubordinates = BIS_WL_initModule getVariable ["BIS_WL_maxSubordinates", 2];
 		BIS_WL_targetResetTimeout = BIS_WL_initModule getVariable ["BIS_WL_targetResetTimeout", 300];
 		BIS_WL_baseValue = BIS_WL_initModule getVariable ["BIS_WL_baseValue", 10];

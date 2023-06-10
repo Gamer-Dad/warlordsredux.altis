@@ -3,19 +3,19 @@
 waitUntil {!isNull WL_DISPLAY_MAIN};
 sleep 2;
 WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
-	private _key = _this # 1;
-	if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", FALSE]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
+	_key = _this # 1;
+	if (_key in actionKeys "Gear" && !(missionNamespace getVariable ["BIS_WL_gearKeyPressed", FALSE]) && alive player && lifeState player != "INCAPACITATED" && !BIS_WL_penalized) then {
 		if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
-			["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
+			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 		} else {
 			BIS_WL_gearKeyPressed = TRUE;
 			0 spawn {
-				private _t = time + 0.5;
+				_t = time + 0.5;
 				waitUntil {!BIS_WL_gearKeyPressed || time >= _t};
 				if (time < _t) then {
 					if (isNull findDisplay 602) then {
 						if (vehicle player == player) then {
-							if (cursorTarget distance player <= 5 && {!(cursorTarget isKindOf "House") && {(!alive cursorTarget || {!(cursorTarget isKindOf "Man")})}}) then {
+							if (cursorTarget distance player <= 5 && !(cursorTarget isKindOf "House") && (!alive cursorTarget || !(cursorTarget isKindOf "Man"))) then {
 								player action ["Gear", cursorTarget];
 							} else {
 								player action ["Gear", objNull];
@@ -29,7 +29,7 @@ WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 				} else {
 					if (BIS_WL_gearKeyPressed) then {
 						if (BIS_WL_currentSelection in [WL_ID_SELECTION_NONE, WL_ID_SELECTION_VOTED]) then {
-							["RequestMenu_open"] spawn BIS_fnc_WL2_setupUI;
+							["RequestMenu_open"] call BIS_fnc_WL2_setupUI;
 						} else {
 							playSound "AddItemFailed";
 							_action = switch (BIS_WL_currentSelection) do {

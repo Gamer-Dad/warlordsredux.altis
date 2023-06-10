@@ -15,13 +15,13 @@ while {count _sectorsToCheckNext > 0} do {
 	private _currentTier = [_distance];
 	{
 		private _sector = _x;
-		if (_sector in _potentialBases && {!(_sector in _checkedAgainst)}) then {
+		if (_sector in _potentialBases && !(_sector in _checkedAgainst)) then {
 			_currentTier pushBack _sector;
 		};
 		_checkedAgainst pushBackUnique _sector;
 		{
 			_sectorsToCheckNext pushBackUnique _x;
-		} forEach ((synchronizedObjects _sector) select {_x != (missionNamespace getVariable _firstBase) && {_x in BIS_WL_allSectors && {!(_x in _checkedAgainst)}}});
+		} forEach ((synchronizedObjects _sector) select {_x != (missionNamespace getVariable _firstBase) && _x in BIS_WL_allSectors && !(_x in _checkedAgainst)});
 	} forEach _sectorsToCheckNow;
 	if (count _currentTier > 1) then {
 		_tiers pushBack _currentTier;
@@ -32,7 +32,7 @@ while {count _sectorsToCheckNext > 0} do {
 _potentialBases = [];
 _tolerance = 8;
 while {count _potentialBases == 0} do {
-	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && {(_x # 0) <= BIS_WL_baseDistanceMax}};
+	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && (_x # 0) <= BIS_WL_baseDistanceMax};
 	_tolerance = _tolerance + 1;
 };
 _potentialBases = selectRandom _potentialBases;
@@ -157,7 +157,15 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 		if !(_handledSide in (_sector getVariable "BIS_WL_previousOwners")) then {
 			_x enableSimulation FALSE;
 		};
-		[_x, _sector, _handledSide] spawn BIS_fnc_WL2_sectorStatusHandle;
+		[_x, _sector, _handledSide] spawn {
+			params ["_trigger", "_sector", "_side"];
+			while {!BIS_WL_missionEnd} do {
+				waitUntil {sleep WL_TIMEOUT_STANDARD; (triggerTimeoutCurrent _trigger) != -1 && (_sector getVariable "BIS_WL_owner") != _side};
+				_sector setVariable ["BIS_WL_seizingInfo", [_side, WL_SYNCED_TIME, WL_SYNCED_TIME + triggerTimeoutCurrent _trigger], TRUE];
+				waitUntil {(triggerTimeoutCurrent _trigger) == -1};
+				_sector setVariable ["BIS_WL_seizingInfo", [], TRUE];
+			};
+		};
 	} forEach [_seizeControlTrg1, _seizeControlTrg2];
 	
 	if (count (_sector getVariable "BIS_WL_revealedBy") != 2) then {

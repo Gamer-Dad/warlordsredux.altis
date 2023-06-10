@@ -11,7 +11,7 @@ while {!BIS_WL_missionEnd} do {
 	{
 		_side = _x;
 		_sideID = _forEachIndex;
-		_warlords = BIS_WL_allWarlords select {alive _x && {side group _x == _side && {WL_SYNCED_TIME > ((_x getVariable ["BIS_WL_detectedByServerSince", 10e10]) + 3)}}};
+		_warlords = BIS_WL_allWarlords select {alive _x && side group _x == _side && WL_SYNCED_TIME > ((_x getVariable ["BIS_WL_detectedByServerSince", 10e10]) + 3)};
 		_warlords append (allUnitsUAV select {side group _x == _side});
 		_restrictedSectors = BIS_WL_allSectors - ((BIS_WL_sectorsArrays # _sideID) # 3);
 		
@@ -42,15 +42,15 @@ while {!BIS_WL_missionEnd} do {
 	
 	{
 		if (isPlayer _x) then {
-			_timeout = 45;
-			if (vehicle player == player) then {_timeout = 60} else {
-				if ((vehicle player) isKindOf "Air") then {_timeout = 60};
+			_timeout = WL_ZONE_RESTRICTION_KILL_TIMEOUT_VEHICLES;
+			if (vehicle player == player) then {_timeout = WL_ZONE_RESTRICTION_KILL_TIMEOUT_INFANTRY} else {
+				if ((vehicle player) isKindOf "Air") then {_timeout = WL_ZONE_RESTRICTION_KILL_TIMEOUT_AIRCRAFT};
 			};
-			_x setVariable ["BIS_WL_zoneRestrictionKillTime", (serverTime + _timeout), true];
-			[_x, (serverTime + _timeout)] spawn {
+			_x setVariable ["BIS_WL_zoneRestrictionKillTime", WL_SYNCED_TIME + _timeout, TRUE];
+			[_x, WL_SYNCED_TIME + _timeout] spawn {
 				params ["_player", "_timeout"];
-				waitUntil {((serverTime >= _timeout) || ((_player getVariable ["BIS_WL_zoneRestrictionKillTime", 1]) == -1))};
-				if (serverTime >= _timeout) then {
+				waitUntil {WL_SYNCED_TIME >= _timeout || (_player getVariable "BIS_WL_zoneRestrictionKillTime") == -1};
+				if (WL_SYNCED_TIME >= _timeout) then {
 					(vehicle _player) setDamage 1;
 					_player setDamage 1;
 				};

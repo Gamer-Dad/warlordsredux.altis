@@ -83,7 +83,7 @@ if (_side == BIS_WL_localSide) then {
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
-	if (!_connectedToBase && {"H" in (_sector getVariable "BIS_WL_services")}) then {
+	if (!_connectedToBase && "H" in (_sector getVariable "BIS_WL_services")) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
 		
 		if (count _neighbors > 0) then {
@@ -138,7 +138,7 @@ while {_i < _garrisonSize} do {
 	private _newGrp = createGroup _side;
 	private _grpSize = floor (WL_GARRISON_GROUP_SIZE_MIN + random (WL_GARRISON_GROUP_SIZE_MAX - WL_GARRISON_GROUP_SIZE_MIN));
 	
-	for [{_i2 = 0}, {_i2 < _grpSize && {_i < _garrisonSize}}, {_i2 = _i2 + 1; _i = _i + 1}] do {
+	for [{_i2 = 0}, {_i2 < _grpSize && _i < _garrisonSize}, {_i2 = _i2 + 1; _i = _i + 1}] do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
 		[objNull, _newUnit] call BIS_fnc_WL2_newAssetHandle;

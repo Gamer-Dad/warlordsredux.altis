@@ -42,12 +42,12 @@
 				_votingEnd = WL_SYNCED_TIME + BIS_WL_targetVotingDuration;
 				_nextUpdate = WL_SYNCED_TIME;
 				
-				while {WL_SYNCED_TIME < _votingEnd && {!(call _votingReset)}} do {
+				while {WL_SYNCED_TIME < _votingEnd && !(call _votingReset)} do {
 					_warlords = BIS_WL_allWarlords select {side group _x == _side};
 					_players = _warlords select {isPlayer _x};
 					_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
 					
-					if (!_npcsVoted && {(BIS_WL_allowAIVoting || _noPlayers)}) then {
+					if (!_npcsVoted && (BIS_WL_allowAIVoting || _noPlayers)) then {
 						_npcsVoted = TRUE;
 						_npcs = _warlords select {!isPlayer _x};
 						{

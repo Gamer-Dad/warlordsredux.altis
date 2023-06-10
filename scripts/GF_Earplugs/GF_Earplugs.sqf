@@ -71,7 +71,24 @@ waitUntil {!isNull player};
 //________________ Set true or false  ________________
 
 GF_Earplugs_hintSilent_info					= true;
+GF_Earplugs_systemchat_info 				= true;
+GF_Earplugs_diag_log_info 					= true;
+
 GF_Earplugs_key								= 0xD2;	//	key insert https://community.bistudio.com/wiki/DIK_KeyCodes
+
+
+
+
+if (GF_Earplugs_systemchat_info) then{
+systemchat "GF Earplugs Script - Mod initializing";			
+};	
+
+if (GF_Earplugs_diag_log_info) then{
+diag_log "//________________	GF Earplugs Script - Mod initializing	________________";
+};
+
+
+
 
 [player] spawn {
 
@@ -105,4 +122,14 @@ GF_Earplugs_key								= 0xD2;	//	key insert https://community.bistudio.com/wiki
 			};
 		};
 	}];
+};
+
+
+if (GF_Earplugs_systemchat_info) then{
+systemchat "GF Earplugs Script - Mod initialized";
+systemchat "E a r p l u g s    w i t h    i n s e r t    k e y";			
+};	
+
+if (GF_Earplugs_diag_log_info) then{
+diag_log "//________________	GF Earplugs Script - Mod initialized	________________";
 };

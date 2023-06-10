@@ -28,7 +28,7 @@ BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
 				0,
 				0.75,
 				0,
-				format ["%1%2 %3", _dist, if (_dist % 1 == 0 && {_units == "km"}) then {".0"} else {""}, if (_units == "m") then {BIS_WL_localized_m} else {BIS_WL_localized_km}],
+				format ["%1%2 %3", _dist, if (_dist % 1 == 0 && _units == "km") then {".0"} else {""}, if (_units == "m") then {BIS_WL_localized_m} else {BIS_WL_localized_km}],
 				2,
 				WL_SCENE_FONT_SIZE,
 				"RobotoCondensedBold"

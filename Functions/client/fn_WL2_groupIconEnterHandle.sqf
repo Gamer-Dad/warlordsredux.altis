@@ -32,7 +32,7 @@ if (_scanCD == 0) then {_scanCD = -1};
 	if ((_airstrip || _helipad) && _harbor) then {", "} else {""},
 	if (_harbor) then {localize "STR_A3_WL_param30_title"} else {""},
 	localize "STR_A3_WL_param_scan_timeout",
-	[(ceil _scanCD), "MM:SS"] call BIS_fnc_secondsToString
+	ceil _scanCD
 ];
 
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow TRUE;

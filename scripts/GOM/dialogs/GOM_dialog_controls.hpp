@@ -331,6 +331,17 @@ class GOMRscFrame_1807: GOMRscFrame
 	w = 39 * GUI_GRID_W;
 	h = 9.5 * GUI_GRID_H;
 };
+class GOMRscCombo_2101: GOMRscCombo
+{
+	idc = 2101;
+
+	text = "Preset"; //--- ToDo: Localize;
+	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 16 * GUI_GRID_H + GUI_GRID_Y;
+	w = 6.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+	sizeEx = 0.03;
+};
 class GOMRscFrame_1808: GOMRscFrame
 {
 	idc = 1808;
@@ -339,6 +350,55 @@ class GOMRscFrame_1808: GOMRscFrame
 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 7.5 * GUI_GRID_W;
 	h = 6.5 * GUI_GRID_H;
+};
+class GOMRscEdit_1401: GOMRscEdit
+{
+	idc = 1401;
+
+	text = "Your Preset"; //--- ToDo: Localize;
+	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 19.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 6.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class GOMRscButton_1606: GOMRscButton
+{
+	idc = 1606;
+
+	text = "Save"; //--- ToDo: Localize;
+	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 21 * GUI_GRID_H + GUI_GRID_Y;
+	w = 3 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class GOMRscButton_1607: GOMRscButton
+{
+	idc = 1607;
+
+	text = "Delete"; //--- ToDo: Localize;
+	x = 36 * GUI_GRID_W + GUI_GRID_X;
+	y = 21 * GUI_GRID_H + GUI_GRID_Y;
+	w = 3 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class GOMRscFrame_1809: GOMRscFrame
+{
+	idc = 1809;
+
+	x = 32 * GUI_GRID_W + GUI_GRID_X;
+	y = 16 * GUI_GRID_H + GUI_GRID_Y;
+	w = 7.5 * GUI_GRID_W;
+	h = 6.5 * GUI_GRID_H;
+};
+class GOMRscButton_1608: GOMRscButton
+{
+	idc = 1608;
+
+	text = "Load Preset"; //--- ToDo: Localize;
+	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 17.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 6.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
 };
 class GOMRscButton_1609: GOMRscButton
 {

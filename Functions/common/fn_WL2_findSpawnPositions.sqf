@@ -73,9 +73,9 @@ private _areaCheck = if (_rimWidth == 0) then {
 	{_this inArea _area}
 } else {
 	if (_rimWidth > 0) then {
-		{_this inArea _rimArea && {!(_this inArea _area)}}
+		{_this inArea _rimArea && !(_this inArea _area)}
 	} else {
-		{_this inArea _area && {!(_this inArea _rimArea)}}
+		{_this inArea _area && !(_this inArea _rimArea)}
 	}
 };
 
@@ -93,7 +93,7 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 					_finalPos = ASLToATL _finalPos;
 					_nearObjs = _finalPos nearObjects ["AllVehicles", 5];
 					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 6];
-					if (count _nearObjs == 0 && {count _nearMapObjs == 0}) then {
+					if (count _nearObjs == 0 && count _nearMapObjs == 0) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
 					};

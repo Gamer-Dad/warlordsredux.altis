@@ -1,7 +1,7 @@
 #include "..\warlords_constants.inc"
 
 if !(isNull WL_TARGET_FRIENDLY) then {
-	private _color = if (BIS_WL_playerSide in (WL_TARGET_FRIENDLY getVariable "BIS_WL_revealedBy")) then {
+	_color = if (BIS_WL_playerSide in (WL_TARGET_FRIENDLY getVariable "BIS_WL_revealedBy")) then {
 		BIS_WL_colorsArray # (BIS_WL_sidesArray find (WL_TARGET_FRIENDLY getVariable "BIS_WL_owner"))
 	} else {
 		BIS_WL_colorsArray # 3

@@ -4,19 +4,19 @@ params ["_action", "_actionParams"];
 
 waitUntil {!isNull (uiNamespace getVariable ["BIS_WL_osd_action_voting_title", controlNull])};
 
-private _osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
-private _osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
-private _osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
-private _osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
-private _osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
-private _osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
-private _osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
-private _osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
-private _osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
-private _osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
-private _osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
-private _osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
-private _osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
+_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
+_osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
+_osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
+_osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
+_osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
+_osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
+_osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
+_osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
+_osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
+_osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
+_osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
+_osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
+_osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
 
 switch (_action) do {
 	case "voting": {
@@ -26,7 +26,7 @@ switch (_action) do {
 		_actionParams params ["_tStart", "_tEnd", "_var"];
 		_osd_progress_voting_background ctrlSetBackgroundColor [0, 0, 0, 0.25];
 		_osd_progress_voting ctrlSetTextColor BIS_WL_colorFriendly;
-		while {WL_SYNCED_TIME < _tEnd && {!BIS_WL_terminateOSDEvent_voting}} do {
+		while {WL_SYNCED_TIME < _tEnd && !BIS_WL_terminateOSDEvent_voting} do {
 			_osd_action_voting_title ctrlSetStructuredText parseText format ["<t shadow = '2' align = 'center' size = '%4'>%1%3: %2</t>", localize "STR_A3_WL_voting_hud_most_voted", ((missionNamespace getVariable _var) # 0) getVariable "BIS_WL_name", if (toLower language == "french") then {" "} else {""}, 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 			_osd_progress_voting progressSetPosition linearConversion [_tStart, _tEnd, WL_SYNCED_TIME, 0, 1];
 			sleep WL_TIMEOUT_MIN;
@@ -48,7 +48,7 @@ switch (_action) do {
 		_color = BIS_WL_colorsArray # (BIS_WL_sidesArray find _side);
 		_color set [3, 1];
 		_osd_progress ctrlSetTextColor _color;
-		while {WL_SYNCED_TIME < _tEnd && {!BIS_WL_terminateOSDEvent_seizing}} do {
+		while {WL_SYNCED_TIME < _tEnd && !BIS_WL_terminateOSDEvent_seizing} do {
 			_osd_action_title ctrlSetStructuredText parseText format ["<t shadow = '2' align = 'center' size = '%2'>%1</t>", _sector getVariable "BIS_WL_name", 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 			_osd_progress progressSetPosition linearConversion [_tStart, _tEnd, WL_SYNCED_TIME, 0, 1];
 			sleep WL_TIMEOUT_MIN;
@@ -69,7 +69,7 @@ switch (_action) do {
 		_actionParams params ["_tStart", "_tEnd"];
 		_osd_progress_background ctrlSetBackgroundColor [0, 0, 0, 0.25];
 		_osd_progress ctrlSetTextColor [1, 0, 0, 1];
-		while {WL_SYNCED_TIME < _tEnd && {!BIS_WL_terminateOSDEvent_trespassing}} do {
+		while {WL_SYNCED_TIME < _tEnd && !BIS_WL_terminateOSDEvent_trespassing} do {
 			_osd_action_title ctrlSetStructuredText parseText format ["<t shadow = '2' align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_osd_zone", 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 			_osd_progress progressSetPosition linearConversion [_tStart, _tEnd, WL_SYNCED_TIME, 0, 1];
 			sleep WL_TIMEOUT_MIN;

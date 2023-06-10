@@ -63,8 +63,7 @@ MRTM_air = 4000;
 MRTM_drones = 4000;
 MRTM_objects = 2000;
 MRTM_syncObjects = true;
-setTerrainGrid 12.5;
-setViewDistance MRTM_inf;
+setTerrainGrid 3.125;
 
 //Radar warning system
 MRTM_rwr1 = 0.4;
@@ -74,12 +73,15 @@ MRTM_rwr4 = 0.4;
 
 //Options
 player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
+MRTM_showDrones = true;
 MRTM_playKillSound = true;
 MRTM_EnableRWR = true;
 
 0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
-	missionNamespace setVariable [_varFormat, FALSE, [2, clientOwner]];
+	missionNamespace setVariable [_varFormat, FALSE];
+	publicVariableServer _varFormat;
+	//changed pos > 5 to 2
 	_pos = position player;
 	_confirmReposition = FALSE;
 	while {!_confirmReposition} do {
@@ -88,12 +90,13 @@ MRTM_EnableRWR = true;
 		enableRadio TRUE;
 		enableSentences TRUE;
 		{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
-		if (player distance _pos > 1) then {
+		if (player distance _pos > 2) then {
 			_confirmReposition = TRUE;
 		};
-		sleep 5;
 	};
-	missionNamespace setVariable [_varFormat, TRUE, [2, clientOwner]];
+
+	missionNamespace setVariable [_varFormat, TRUE];
+	publicVariableServer _varFormat;
 };
 
 
@@ -104,9 +107,10 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 };
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
+uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
 
 private _uidPlayer = getPlayerUID player;
-missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], []];
+missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], nil];
 
 
 if !(isServer) then {
@@ -175,17 +179,13 @@ player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
-}];
-
-player addEventHandler ["GetIn", {
-	params ["_vehicle", "_role", "_unit", "_turret"];
-	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then {
-		0 spawn BIS_fnc_MRTM_betty;
-		0 spawn BIS_fnc_MRTM_bettyRWR;
+	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
+		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
+		0 spawn BIS_fnc_WL2_betty;
 	};
-
 	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
-		0 spawn BIS_fnc_MRTM_rita;
+		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
+		0 spawn BIS_fnc_WL2_rita;
 	};
 }];
 
@@ -206,10 +206,10 @@ player addEventHandler ["HandleDamage", {
 	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 	_this spawn BIS_fnc_WL2_setAssist;
 	_base = (([BIS_WL_base1, BIS_WL_base2] select {(_x getVariable "BIS_WL_owner") == (side group _unit)}) # 0);
-	if ((_unit inArea (_base getVariable "objectAreaComplete")) && {((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false) && {((side (group _unit)) == west)}}) then {
+	if ((_unit inArea (_base getVariable "objectAreaComplete")) && ((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false) && ((side (group _unit)) == west)) then {
 		_unit setDamage 0;
 	} else {
-		if ((_unit inArea (_base getVariable "objectAreaComplete")) && {((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false) && {((side (group _unit)) == east)}}) then {
+		if ((_unit inArea (_base getVariable "objectAreaComplete")) && ((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false) && ((side (group _unit)) == east)) then {
 			_unit setDamage 0;
 		} else {
 			_damage;
@@ -219,7 +219,7 @@ player addEventHandler ["HandleDamage", {
 
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
-	["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
+	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	
 	BIS_WL_lastLoadout = +getUnitLoadout player;
 	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
@@ -272,12 +272,12 @@ sleep 0.01;
 
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
 
+call BIS_fnc_WL2_refreshCurrentTargetData;
+call BIS_fnc_WL2_sceneDrawHandle;
+call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
 0 spawn BIS_fnc_WL2_underWaterCheck;
-0 spawn BIS_fnc_WL2_targetResetHandle;
-0 spawn BIS_fnc_WL2_sceneDrawHandle;
-0 spawn BIS_fnc_WL2_refreshCurrentTargetData;
 0 spawn BIS_fnc_WL2_welcome;
 
 (format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
@@ -299,8 +299,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 0 spawn {
 	_t = WL_SYNCED_TIME + 10;
-	waitUntil {sleep 1; (serverTime > _t && !isNull WL_TARGET_FRIENDLY)};
-	sleep 5;
+	waitUntil {sleep WL_TIMEOUT_STANDARD; WL_SYNCED_TIME > _t && !isNull WL_TARGET_FRIENDLY};
+	sleep WL_TIMEOUT_LONG;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
 		sleep 10;
@@ -319,27 +319,19 @@ sleep 0.1;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
-0 spawn BIS_fnc_WL2_cpUpdate;
-(side group player) spawn BIS_fnc_WL2_forfeitHandle;
-0 spawn {
-	waituntil {!(isNull ((findDisplay 12) displayCtrl 51))};
-	0 spawn BIS_fnc_WL2_mapIcons;
-};
+0 spawn BIS_fnc_WL2_getUavConnected;
+0 spawn BIS_fnc_WL2_mapIcons;
+0 spawn BIS_fnc_WL2_forfeitHandle;
 
 player setVariable ["arsenalOpened", false, true];
 
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
-	_exit = false;
 	_key = actionKeysNames "curatorInterface";
 	_keyName = (keyName (_this select 1));
-	if ((_this # 1) == ((actionKeys "tacticalView") # 0)) then {
-		_exit = true;
-	};
 	if (_keyName == _key) then {
 		if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
-			_exit = true;
+			true;
 		};
 	};
-	_exit;
 }];

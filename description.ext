@@ -45,6 +45,7 @@ class CfgFunctions {
     	class Client 
 		{
     		file = "Functions\client";
+			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
 			class WL2_forceGroupIconsFunctionality {};
@@ -52,9 +53,11 @@ class CfgFunctions {
 			class WL2_groupIconClickHandle {};
 			class WL2_groupIconEnterHandle {};
 			class WL2_groupIconLeaveHandle {};
+			class WL2_handleEnemyCapture {};
 			class WL2_hintHandle {};
 			class WL2_initClient {};
 			class WL2_mapControlHandle {};
+			class WL2_mapDrawHandle {};
 			class WL2_onPause {};
 			class WL2_orderAircraft {};
 			class WL2_orderArsenal {};
@@ -72,32 +75,47 @@ class CfgFunctions {
 			class WL2_refreshOSD {};
 			class WL2_requestPurchase {};
 			class WL2_sceneDrawHandle {};
+			class WL2_sectorCaptureStatus {};
 			class WL2_sectorMarkerUpdate {};
+			class WL2_sectorRevealHandle {};
 			class WL2_sectorSelectionHandle {};
 			class WL2_sectorsInitClient {};
+			class WL2_sectorOwnershipHandleClient {};
+			class WL2_selectedTargetsHandle {};
 			class WL2_setOSDEvent {};
 			class WL2_setupUI {};
 			class WL2_sideToFaction {};
 			class WL2_smoothText {};
 			class WL2_targetResetHandle {};
 			class WL2_targetSelected {};
+			class WL2_targetSelectionHandleClient {};
+			class WL2_teammatesAvailability {};
+			class WL2_zoneRestrictionHandleClient {};
 			class WL2_timer {};
 			class WL2_orderFTVehicleFT {};
 			class WL2_orderFTVehicle {};
 			class WL2_welcome {};
 			class WL2_displayCPtransfer {};
+			class WL2_getUavConnected {};
+			class WL2_betty {};
+			class WL2_rita {};
+			class WL2_mapIcons {};
 			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
+			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
-			class WL2_cpBalance {};
-			class WL2_sectorCaptureStatus {};
+			class WL2_underWaterCheck {};
     	};
 		class Server 
 		{
     		file = "Functions\server";
+    		class WL2_assetRelevanceCheck {};
+			class WL2_detectNewPlayers {};
 			class WL2_friendlyFireHandleServer {};
+			class WL2_garbageCollector {};
 			class WL2_changeSectorOwnership {};
+			class WL2_incomePayoff {};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
 			class WL2_mineLimit {};
@@ -106,13 +124,15 @@ class CfgFunctions {
 			class WL2_sectorsInitServer {};
 			class WL2_selectTarget {};
 			class WL2_setupNewWarlord {};
+			class WL2_targetResetHandleServer {};
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
 			class WL2_killRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_tablesSetUp {};
-			class WL2_detectNewPlayers {};
+			class WL2_handleClientRequest {};
+			class WL2_forfeitHandleServer {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -123,8 +143,10 @@ class CfgFunctions {
 			class WL2_handleRespawnMarkers {};
 			class WL2_income {};
 			class WL2_initCommon {};
+			class WL2_missionEndHandle {};
 			class WL2_newAssetHandle {};
 			class WL2_parsePurchaseList {};
+			class WL2_playersListHandle {};
 			class WL2_respawnHandle {};
 			class WL2_sectorScanHandle {};
 			class WL2_sortSectorArrays {};
@@ -149,43 +171,7 @@ class CfgFunctions {
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_dazzlerAction {};
 			class WL2_sub_rearmAction {};
-			class WL2_sub_vehicleKickAction {};
     	};
-		class FSM
-		{
-			file = "Functions\fsm";
-			class MRTM_betty {ext = ".fsm";};
-			class MRTM_bettyRWR {ext = ".fsm"};
-			class MRTM_rita {ext = ".fsm";};
-			class MRTM_ritaRWR {ext = ".fsm"};
-			class WL2_handleClientRequest {ext = ".fsm"};
-			class WL2_missionEndHandle {ext = ".fsm"};
-			class WL2_incomePayoff {ext = ".fsm"};
-			class WL2_forfeitHandleServer {ext = ".fsm"};
-			class WL2_targetResetHandleServer {ext = ".fsm"};
-			class WL2_forfeitHandle {ext = ".fsm"};
-			class WL2_handleEnemyCapture {ext = ".fsm"};
-			class WL2_sectorOwnershipHandleClient {ext = ".fsm"};
-			class WL2_selectedTargetsHandle {ext = ".fsm"};
-			class WL2_targetSelectionHandleClient {ext = ".fsm"};
-			class WL2_teammatesAvailability {ext = ".fsm"};
-			class WL2_zoneRestrictionHandleClient {ext = ".fsm"};
-			class WL2_underWaterCheck {ext = ".fsm"};
-			class WL2_cpUpdate {ext = ".fsm"};
-			class WL2_playersListHandle {ext = ".fsm"};
-			class WL2_sectorScanHandleServer {ext = ".fsm"};
-			class WL2_sectorScanHandleClient {ext = ".fsm"};
-			class WL2_targetResetHandle1 {ext = ".fsm"};
-			class WL2_targetResetHandle2 {ext = ".fsm"};
-			class WL2_targetResetHandle3 {ext = ".fsm"};
-			class WL2_garbageCollector {ext = ".fsm"};
-			class WL2_enviHandle {ext = ".fsm"};
-			class WL2_timeHandle {ext = ".fsm"};
-			class WL2_currentTargetHandle {ext = ".fsm"};
-			class WL2_sectorStatusHandle {ext = ".fsm"};
-			class WL2_sectorRevealHandle {ext = ".fsm"};
-			class WL2_mapIcons {ext = ".fsm"};
-		};
 	};
 
 /*******************************START OF CUSTOM CONTENT HERE****************************/
@@ -229,9 +215,9 @@ class CfgFunctions {
 		{
 			file = "scripts\DAPS\Scripts\APS";
 			class APSDazzler {};
-			class APSheavy {ext = ".fsm"};
-			class APSlight {ext = ".fsm"};
-			class APSmedium {ext = ".fsm"};
+			class APSheavy {};
+			class APSlight {};
+			class APSmedium {};
 			class Dazzler {};
 			class Generic {};
 		};
@@ -373,30 +359,6 @@ class CfgSounds {
         sound[]={"sounds\BingoFuel.ogg", 1, 1};
         titles[] = {};
 	};
-
-	class incMissile_0 {
-        name="incomming 0";
-        sound[]={"sounds\critical_missile12.ogg", 1, 1};
-        titles[] = {};		
-	};
-
-	class incMissile_90 {
-        name="incomming 90";
-        sound[]={"sounds\critical_missile03.ogg", 1, 1};
-        titles[] = {};
-	};
-
-	class incMissile_180 {
-        name="incomming 180";
-        sound[]={"sounds\critical_missile06.ogg", 1, 1};
-        titles[] = {};
-	};
-
-	class incMissile_270 {
-        name="incomming 270";
-        sound[]={"sounds\critical_missile09.ogg", 1, 1};
-        titles[] = {};
-	};
 };
 
 class CfgHints
@@ -407,10 +369,10 @@ class CfgHints
 
 		class warlordsMenu
 		{
-			displayName = $STR_A3_WL_Menu_Hint_Name;
+			displayName = "Open Warlords Menu";
 			displayNameShort = "";
-			description = $STR_A3_WL_Menu_Hint;
-			tip = $STR_A3_WL_Menu_Hint_01;
+			description = "%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.";
+			tip = "Hold %11";
 			arguments[] =
 			{
 				{{"Gear"}},
@@ -421,10 +383,10 @@ class CfgHints
 		};
 		class friendlyFire
 		{
-			displayName = $STR_A3_WL_FF_Hint_Name;
+			displayName = "Friendly fire warning";
 			displayNameShort = "";
-			description = $STR_A3_WL_FF_Hint;
-			tip = $STR_A3_WL_FF_Hint_01;
+			description = "%3%12%4, Killing to many friendlies will result in jail time. Make sure you identify your targets before you shoot.%1%2 When identifying targets you can make use of %11 and ask if that target is friendly.%1";
+			tip = "Get to know the color of what your enemies wear, this can help. You have %13 friendly fire kills left before you get jailed.";
 			arguments[] =
 			{
 				{{"TacticalPing"}},

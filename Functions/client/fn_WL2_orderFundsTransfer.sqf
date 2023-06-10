@@ -5,12 +5,12 @@ for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 };
 
 
-private _purchase_transfer_background = _display displayCtrl 115;
-private _purchase_transfer_units = _display displayCtrl 116;
-private _purchase_transfer_amount = _display displayCtrl 117;
-private _purchase_transfer_cp_title = _display displayCtrl 118;
-private _purchase_transfer_ok = _display displayCtrl 119;
-private _purchase_transfer_cancel = _display displayCtrl 120;
+_purchase_transfer_background = _display displayCtrl 115;
+_purchase_transfer_units = _display displayCtrl 116;
+_purchase_transfer_amount = _display displayCtrl 117;
+_purchase_transfer_cp_title = _display displayCtrl 118;
+_purchase_transfer_ok = _display displayCtrl 119;
+_purchase_transfer_cancel = _display displayCtrl 120;
 
 _purchase_transfer_background ctrlSetFade 0;
 _purchase_transfer_background ctrlCommit 0;
@@ -41,10 +41,10 @@ _purchase_transfer_cancel ctrlCommit 0;
 _purchase_transfer_units lbSetCurSel 0;
 
 [_purchase_transfer_units, _purchase_transfer_ok, _purchase_transfer_amount] spawn {
-	private _valueText = ctrlText (_this # 2);
-	private _color = BIS_WL_colorFriendly;
+	_valueText = ctrlText (_this # 2);
+	_color = BIS_WL_colorFriendly;
 	while {ctrlEnabled (_this # 1)} do {
-		private _valueArr = toArray ctrlText (_this # 2);
+		_valueArr = toArray ctrlText (_this # 2);
 		private _i = 0;
 		while {_i < count _valueArr} do {
 			if (_valueArr # _i < 48 || {_valueArr # _i > 57}) then {

@@ -2,8 +2,14 @@
 
 params ["_owner", "_asset", ["_assembled", FALSE]];
 
-if (isNull _owner && {isServer}) then {
-	_asset setSkill (0.2 + random 0.7);
+_asset addEventHandler ["Killed", {
+	params ["_asset"];
+	_asset setVariable ["BIS_WL_deleteAt", WL_SYNCED_TIME + (if (_asset isKindOf "Man") then {BIS_WL_corpseRemovalTimeout} else {BIS_WL_wreckRemovalTimeout}), !isServer];
+}];
+
+if (isNull _owner && isServer) then {
+	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
+	_asset setSkill (0.2 + random 0.3);
 };
 
 if (isPlayer _owner) then {
@@ -87,7 +93,8 @@ if (isPlayer _owner) then {
 		} forEach allTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID _owner];
-		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset], [2, clientOwner]];
+		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset]];
+		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			BIS_WL_recentlyPurchasedAssets pushBack _asset;
@@ -100,7 +107,6 @@ if (isPlayer _owner) then {
 		};
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
-		_asset spawn BIS_fnc_WL2_sub_vehicleKickAction;
 		_asset spawn {
 			params ["_asset"];
 			_repairActionID = -1;
@@ -128,7 +134,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"(alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {vehicle _this == _this}})",
+							"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && vehicle _this == _this",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -149,15 +155,14 @@ if (isPlayer _owner) then {
 
 		if !(_assembled || _asset isKindOf "Thing") then {
 			if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
-				_asset lock 2;
+				[_asset, true] remoteExec ["lock", 0];
 				_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 			} else {
 				_asset lock 0;
 			};
 
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
-				_asset setVariable ["dazzlerActivated", false, [2, clientOwner]];
-				_asset spawn DAPS_fnc_APSDazzler;
+				_asset setVariable ["dazzlerActivated", false, true];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
 
@@ -171,8 +176,6 @@ if (isPlayer _owner) then {
 			};
 
 			if (typeOf _asset == "B_Plane_Fighter_01_F" || typeOf _asset == "B_Plane_CAS_01_dynamicLoadout_F") then {
-				_asset setVariable ["Incomming", [], [clientOwner, 2]];
-				_asset setVariable ["landingGear", true, clientOwner];
 				_asset addEventHandler ["Gear", {
 					params ["_vehicle", "_gearState"];
 					if (_gearState == true) then {
@@ -181,15 +184,10 @@ if (isPlayer _owner) then {
 						_vehicle setVariable ["landingGear", false, true];
 					};
 				}];
-				_asset addEventHandler ["IncomingMissile", {
-					params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-					(_target getVariable "Incomming") pushBackUnique _missile;
-					_target setVariable ["Incomming", (_target getVariable "Incomming"), [clientOwner, 2]];
-				}];
+				_asset setVariable ["landingGear", true, true];
+				_asset setVariable ["bettyEnabled", false, true];
 			};
 			if (typeOf _asset == "O_Plane_Fighter_02_F" || typeOf _asset == "O_Plane_CAS_02_dynamicLoadout_F") then {
-				_asset setVariable ["Incomming", [], [clientOwner, 2]];
-				_asset setVariable ["landingGear", true, clientOwner];
 				_asset addEventHandler ["Gear", {
 					params ["_vehicle", "_gearState"];
 					if (_gearState == true) then {
@@ -198,18 +196,16 @@ if (isPlayer _owner) then {
 						_vehicle setVariable ["landingGear", false, true];
 					};
 				}];
-				_asset addEventHandler ["IncomingMissile", {
-					params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-					(_target getVariable "Incomming") pushBackUnique _missile;
-					_target setVariable ["Incomming", (_target getVariable "Incomming"), [clientOwner, 2]];
-				}];
+				_asset setVariable ["landingGear", true, true];
+				_asset setVariable ["bettyEnabled", false, true];
 			};
 		};
 		
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
 			_ownedVehiclesVarID = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset], [2, clientOwner]];
+			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset]];
+			publicVariableServer _ownedVehiclesVarID;
 		}];
 
 		_asset setVariable ["assistList", [], true];
@@ -231,16 +227,17 @@ if (isPlayer _owner) then {
 
 			if (_result) exitWith {
 				_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0], [2, clientOwner]];
+				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0]];
+				publicVariableServer _ownedVehiclesVarName;
 				(_this # 0) call BIS_fnc_WL2_sub_deleteAsset;
 			};
 		},
 		[],
-		-99,
+		-100,
 		false,
 		true,
 		"",
-		"(alive _target && {vehicle _this != _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])}})",
+		"alive _target && vehicle _this != _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])",
 		30,
 		false
 	];

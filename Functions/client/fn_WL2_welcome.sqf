@@ -1,4 +1,4 @@
-["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
+["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 createDialog ["welcomeScreen", true];
 hRead = false;
@@ -20,7 +20,6 @@ hRead = false;
 		waitUntil {sleep 0.1; hRead == true};
 		_time = serverTime + 5;
 		waitUntil {sleep 0.1; serverTime > _time};
-		ctrlSetText [1, localize "STR_MRTM_welcomeInteract_close_btn"];
 		ctrlEnable [1, true];
 	};
 };
@@ -40,12 +39,12 @@ if (side player == west) then {
 };
 
 //List Menu + Scripts
-private _pageAbt = lbAdd [69695, localize "STR_MRTM_welcomeInteract_01"];
-private _pageHow = lbAdd [69695, localize "STR_MRTM_welcomeInteract_02"];
-private _theTeam = lbAdd [69695, localize "STR_MRTM_welcomeInteract_03"];
-private _dc = lbAdd [69695, localize "STR_MRTM_welcomeInteract_04"];
-private _changelog = lbAdd [69695, localize "STR_MRTM_welcomeInteract_05"];
-private _scripts = lbAdd [69695, localize "STR_MRTM_welcomeInteract_06"];
+_pageAbt = lbAdd [69695, localize "STR_MRTM_welcomeInteract_01"];
+_pageHow = lbAdd [69695, localize "STR_MRTM_welcomeInteract_02"];
+_theTeam = lbAdd [69695, localize "STR_MRTM_welcomeInteract_03"];
+_dc = lbAdd [69695, localize "STR_MRTM_welcomeInteract_04"];
+_changelog = lbAdd [69695, localize "STR_MRTM_welcomeInteract_05"];
+_scripts = lbAdd [69695, localize "STR_MRTM_welcomeInteract_06"];
 
 
 //List Menu Data + Scrips
@@ -71,12 +70,10 @@ lbSetPicture [69695, _changelog, 'img\icon_update.paa'];
 lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 lbSetPicture [69695, _scripts, 'img\icon-file.paa'];
 
-private _inventoryKey = actionKeysNames "gear";
-private _gearKey = actionKeysNames "cycleThrownItems";
 
 while {dialog} do {
-	private _index = lbCurSel 69695;
-	private _curSel = lbData [69695, _index];
+	_index = lbCurSel 69695;
+	_curSel = lbData [69695, _index];
 
 	if (hRead == false) then {
 		ctrlShow [6969691, true];
@@ -84,6 +81,9 @@ while {dialog} do {
 	} else {
 		ctrlShow [6969691, false];
 	};
+
+	_inventoryKey = actionKeysNames "gear";
+	_gearKey = actionKeysNames "cycleThrownItems";
 
 	switch (_curSel) do {
 		case "pageAbt": {
@@ -173,17 +173,6 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
-			"2.5.4", lineBreak,
-			"-All friendly AI owned by players is shown on map.", lineBreak,
-			"-Gunner/Driver/Command of a vehicle all (nut the person who got the kill) get the assist for the kill. (blackfish armed not so bad anymore)", lineBreak,
-			"-You can kick players/ AI that you don't own out of your vehicles. (As long as you are within 50 meters)", lineBreak,
-			"-Vehicle spawning reworked.", lineBreak,
-			"-Voice warning systems have been improved.", lineBreak,
-			"-New settings menu.", lineBreak,
-			"-You can now change the volumes of the voice warning systems.", lineBreak,
-			"-Kill bonus for people using 1st person. + 50%", lineBreak,
-			"-Option to disable kill sound.", lineBreak,
-			"", lineBreak,
 			"2.5.3", lineBreak,
 			"-New CP system. (More secure against cheaters)", lineBreak,
 			"-Kill assists added.", lineBreak,

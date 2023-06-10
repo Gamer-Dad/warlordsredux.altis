@@ -1,8 +1,8 @@
 #include "..\warlords_constants.inc"
 
-private _uniform = uniform player;
+_uniform = uniform player;
 
-["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
+["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (isNull (findDisplay 602)) then {
 	["Open", true] spawn BIS_fnc_arsenal;
