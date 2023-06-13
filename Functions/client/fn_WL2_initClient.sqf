@@ -75,6 +75,8 @@ MRTM_rwr4 = 0.4;
 player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
 MRTM_playKillSound = true;
 MRTM_EnableRWR = true;
+has_recieved_reward = false;
+reward_active = false;
 
 0 spawn {
 	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];

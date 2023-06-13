@@ -130,6 +130,23 @@ MRTM_fnc_iconTextSectorScan = {
 
 MRTM_fnc_iconDrawMap = {
 	_m = _this select 0;
+	if (reward_active) then {
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				if (side group _x == west) then {westColor} else {eastColor},
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} forEach ((allPlayers) select {(side group _x == BIS_WL_enemySide) && {(isNull objectParent _x) && {(alive _x)}}});		
+	};
 	if !(isNull BIS_WL_highlightedSector) then {
 		_m drawIcon [
 			"A3\ui_f\data\map\groupicons\selector_selectedMission_ca.paa",

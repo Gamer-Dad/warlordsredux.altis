@@ -1108,6 +1108,10 @@
             <Original>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</Original>
             <English>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</English>
         </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_reward">
+            <Original>Ah, young traveler, before you continue your journey, take a moment to consult your map. As a token of gratitude for your presence and determination, I have bestowed upon you a small gift. May it serve as a guiding light amidst the challenges that lie ahead. Remember, with each step you take, you carry the wisdom of this village within you. Safe travels, and may our paths cross again in serendipitous harmony.</Original>
+            <English>Ah, young traveler, before you continue your journey, take a moment to consult your map. As a token of gratitude for your presence and determination, I have bestowed upon you a small gift. May it serve as a guiding light amidst the challenges that lie ahead. Remember, with each step you take, you carry the wisdom of this village within you. Safe travels, and may our paths cross again in serendipitous harmony.</English>
+        </Key>
     </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
