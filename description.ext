@@ -259,6 +259,18 @@ class CfgFunctions {
 			class ReportRearm {};
 		};
 	};
+	class DIS
+	{
+		class SAM {
+			file = "scripts\DIS\SAM";
+			class getOwner {};
+			class Frag {};
+			class IsSam {};
+			class RegisterSAM {};
+			class SAMManeuver {};
+			class SAMfired {};
+		};
+	};
 };
 
 

@@ -1,9 +1,7 @@
 private _rocket = _this select 0;
 private _target = _this select 1;
-private _speed = 1000;
-if ((count _this) > 2) then {
-    _speed = _this select 2
-};
+private _speed = 800;
+
 private _minDistanceToTarget = 5;
 while {!isNull _rocket && {!isNull _target}} do {
     private _currentPos = getPosASLVisual _rocket;
