@@ -155,7 +155,7 @@ while {_i < _garrisonSize} do {
 	_newWP setWaypointType "CYCLE";
 };
 
-	{
-		_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && (alive _x)};
-		_x addCuratorEditableObjects [_l, true];
-	} forEach allCurators;
+{
+	_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && {(alive _x)}};
+	_x addCuratorEditableObjects [_l, true];
+} forEach allCurators;
