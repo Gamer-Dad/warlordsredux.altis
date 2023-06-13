@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1177;
+		nextID=1178;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7867.6274,276.68961,14623.342};
-		dir[]={0.21216232,-0.44688365,0.86916244};
-		up[]={0.10598976,0.89454216,0.43420619};
-		aside[]={0.9715479,-9.5192809e-007,-0.23715554};
+		pos[]={7868.0991,276.87851,14626.62};
+		dir[]={0.11593524,-0.9300372,0.34869736};
+		up[]={0.29342648,0.36746538,0.88253617};
+		aside[]={0.94892567,0,-0.31549972};
 	};
 };
 binarizationWanted=0;
@@ -50,13 +50,14 @@ addons[]=
 	"A3_Structures_F_Items_Food",
 	"A3_Props_F_Orange_Humanitarian_Supplies",
 	"A3_Props_F_Oldman_Items",
-	"A3_Structures_F_Bootcamp_Items_Sport"
+	"A3_Structures_F_Bootcamp_Items_Sport",
+	"A3_Misc_F_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=15;
+		items=16;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -162,6 +163,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item15
+		{
+			className="A3_Misc_F";
+			name="Arma 3 - 3D Aids and Helpers";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -209,7 +217,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=300;
+		items=301;
 		class Item0
 		{
 			dataType="Logic";
@@ -7999,7 +8007,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7868.2109,275.49286,14627.03};
+				position[]={7868.2222,275.49136,14627.096};
+				angles[]={0,0.310168,-0};
 			};
 			side="Empty";
 			class Attributes
@@ -8009,7 +8018,7 @@ class Mission
 			};
 			id=1070;
 			type="Land_PCSet_01_keyboard_F";
-			atlOffset=0.046478271;
+			atlOffset=0.04498291;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8067,10 +8076,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7868.5972,275.51871,14627.053};
-				angles[]={0,6.0693302,0};
+				position[]={7868.5684,275.51883,14626.978};
+				angles[]={-0,0.095453918,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				createAsSimpleObject=1;
@@ -8078,7 +8088,6 @@ class Mission
 			};
 			id=1072;
 			type="Land_PCSet_01_mouse_F";
-			atlOffset=0.055053711;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8172,8 +8181,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7868.1802,275.26794,14626.494};
-				angles[]={0,3.2818649,0};
+				position[]={7868.1543,275.26776,14626.523};
+				angles[]={-0,3.4038115,0};
 			};
 			side="Empty";
 			flags=4;
@@ -8184,7 +8193,6 @@ class Mission
 			};
 			id=1076;
 			type="Land_OfficeChair_01_F";
-			atlOffset=0.00018310547;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8494,19 +8502,20 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7868.9702,274.59512,14626.26};
-						angles[]={0,5.8516178,0};
+						position[]={7869.0161,274.59518,14626.272};
+						angles[]={0,5.5463943,0};
 					};
 					side="Civilian";
 					flags=7;
 					class Attributes
 					{
-						presence=0.032973271;
+						init="this forceAddUniform ""U_O_R_Gorka_01_black_F"";" \n "this addHeadgear ""H_PilotHelmetHeli_B"";" \n "this addVest ""V_PlateCarrier1_blk"";" \n "this addGoggles ""G_bandanna_beast"";" \n "this addItem ""NVGoggles""; " \n "this assignItem ""NVGoggles"";" \n "removeBackpack this;" \n "[this,""SIT_AT_TABLE"",""ASIS"",chairMRTM] call BIS_fnc_ambientAnim;";
 						disableSimulation=1;
+						ignoreByDynSimulGrid=1;
 					};
 					id=1167;
 					type="C_Man_smart_casual_1_F";
-					atlOffset=0.00033569336;
+					atlOffset=0.00039672852;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8569,7 +8578,7 @@ class Mission
 			{
 			};
 			id=1166;
-			atlOffset=0.00033569336;
+			atlOffset=0.00039672852;
 		};
 		class Item293
 		{
@@ -8798,6 +8807,41 @@ class Mission
 			id=1174;
 			type="Land_Trophy_01_gold_F";
 			atlOffset=1.1690979;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item300
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7868.1597,275.23743,14626.521};
+				angles[]={0,0.26942664,-0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="chairMRTM";
+				disableSimulation=1;
+			};
+			id=1177;
+			type="Sign_Pointer_Cyan_F";
+			atlOffset=0.59408569;
 			class CustomAttributes
 			{
 				class Attribute0
