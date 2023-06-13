@@ -1043,6 +1043,68 @@
             <Chinese></Chinese>
         </Key>
     </Container>
+    </Container name="MRTM_easterEggs">
+        <Key ID="STR_MRTM_easterEgg_hint_01">
+            <Original>"Beyond the clouds, an enigmatic dwelling is concealed, accessible only to those who explore the peaks."</Original>
+            <English>"Beyond the clouds, an enigmatic dwelling is concealed, accessible only to those who explore the peaks."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_02">
+            <Original>"Amidst the jagged crags and swirling mist, a hidden dwelling awaits those who decipher the ancient symbols."</Original>
+            <English>"Amidst the jagged crags and swirling mist, a hidden dwelling awaits those who decipher the ancient symbols."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_03">
+            <Original>"A keen eye will spot the fleeting glimmer, revealing the covert dwelling nestled in the rugged embrace of the mountain."</Original>
+            <English>"A keen eye will spot the fleeting glimmer, revealing the covert dwelling nestled in the rugged embrace of the mountain."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_04">
+            <Original>"Navigate through the treacherous pass, where only the most daring shall uncover the concealed house veiled by nature's camouflage."</Original>
+            <English>"Navigate through the treacherous pass, where only the most daring shall uncover the concealed house veiled by nature's camouflage."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_05">
+            <Original>"The wind whispers tales of a lone guardian, hidden high above the world, awaiting those who dare to uncover his hidden retreat."</Original>
+            <English>"The wind whispers tales of a lone guardian, hidden high above the world, awaiting those who dare to uncover his hidden retreat."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_06">
+            <Original>"Venture into the realm of the mountain's sage, where whispers of knowledge and secrets entwine, beckoning the curious to unearth his hidden dwelling."</Original>
+            <English>"Venture into the realm of the mountain's sage, where whispers of knowledge and secrets entwine, beckoning the curious to unearth his hidden dwelling."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_07">
+            <Original>"Seek the blessing of the wise villager perched on high, for their permission ensures your safe passage and a future among these valleys."</Original>
+            <English>"Seek the blessing of the wise villager perched on high, for their permission ensures your safe passage and a future among these valleys."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_08">
+            <Original>"Pay homage to the wise villager on the hill, as their approval determines whether your journey finds a haven in these lands."</Original>
+            <English>"Pay homage to the wise villager on the hill, as their approval determines whether your journey finds a haven in these lands."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_hint_09">
+            <Original>"Commune with the wise villager residing on the hill, as their favor dictates whether you are granted the privilege of calling this land your home."</Original>
+            <English>"Commune with the wise villager residing on the hill, as their favor dictates whether you are granted the privilege of calling this land your home."</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_1">
+            <Original>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</Original>
+            <English>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_2">
+            <Original>Know that the home you seek is not merely a shelter, but a privilege bestowed upon those who prove their worth. The decision lies in my hands, as the wise villager entrusted with the harmony of this village.</Original>
+            <English>Know that the home you seek is not merely a shelter, but a privilege bestowed upon those who prove their worth. The decision lies in my hands, as the wise villager entrusted with the harmony of this village.</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_3">
+            <Original>To be granted a place among us, you must prove your dedication to the well-being of this community. Embark on quests, aid the villagers, and let your actions speak louder than words. It is through your deeds that you shall find your true belonging.</Original>
+            <English>To be granted a place among us, you must prove your dedication to the well-being of this community. Embark on quests, aid the villagers, and let your actions speak louder than words. It is through your deeds that you shall find your true belonging.</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_4">
+            <Original>Remember, the fate of your residency rests upon the choices you make. The village flourishes when each resident contributes selflessly and respects the balance of nature that surrounds us.</Original>
+            <English>Remember, the fate of your residency rests upon the choices you make. The village flourishes when each resident contributes selflessly and respects the balance of nature that surrounds us.</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_5">
+            <Original>Should you prove yourself, the embrace of this cherished community shall be yours to claim. But tread carefully, for the wise villager's judgment is fair but discerning.</Original>
+            <English>Should you prove yourself, the embrace of this cherished community shall be yours to claim. But tread carefully, for the wise villager's judgment is fair but discerning.</English>
+        </Key>
+        <Key ID="STR_MRTM_easterEgg_interact_6">
+            <Original>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</Original>
+            <English>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</English>
+        </Key>
+    </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
             <Original>About Warlords Redux.</Original>

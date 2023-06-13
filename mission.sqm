@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7868.5376,276.66483,14624.361};
-		dir[]={0.139476,-0.53440374,0.8336522};
-		up[]={0.088189013,0.84520704,0.52710879};
-		aside[]={0.98629814,3.8329745e-008,-0.16501452};
+		pos[]={7867.9092,276.66483,14625.175};
+		dir[]={0.49686807,-0.68837517,0.52845228};
+		up[]={0.47153699,0.72535479,0.50151098};
+		aside[]={0.7285431,-1.4901161e-008,-0.68499994};
 	};
 };
 binarizationWanted=0;
@@ -8510,6 +8510,7 @@ class Mission
 					class Attributes
 					{
 						init="this forceAddUniform ""U_O_R_Gorka_01_black_F"";" \n "this addHeadgear ""H_PilotHelmetHeli_B"";" \n "this addVest ""V_PlateCarrier1_blk"";" \n "this addGoggles ""G_bandanna_beast"";" \n "this addItem ""NVGoggles""; " \n "this assignItem ""NVGoggles"";" \n "removeBackpack this;" \n "[this,""SIT_AT_TABLE"",""ASIS"",chairMRTM] call BIS_fnc_ambientAnim;";
+						name="Dev_MrThomasM";
 						presence=0.69693905;
 						disableSimulation=1;
 						ignoreByDynSimulGrid=1;

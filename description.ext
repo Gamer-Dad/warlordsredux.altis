@@ -104,6 +104,7 @@ class CfgFunctions {
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
 			class WL2_underWaterCheck {};
+			class WL2_mrtmAction;
     	};
 		class Server 
 		{
