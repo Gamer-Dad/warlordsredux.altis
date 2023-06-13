@@ -42,6 +42,7 @@
 				};
 			};
 		};
+		[localize (format ["STR_MRTM_easterEgg_hint_%1", (floor (random 9))])] remoteExec ["systemchat", -2];
 		uiSleep 900;
 	};
 };

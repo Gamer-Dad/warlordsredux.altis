@@ -324,7 +324,6 @@ sleep 0.1;
 player setVariable ["arsenalOpened", false, true];
 
 if !(isNil {Dev_MrThomasM}) then {
-	Dev_MrThomasM kbAddTopic ["Villager", "\villagerTalk.bikb"];
 	0 spawn BIS_fnc_WL2_mrtmAction;
 };
 
