@@ -66,7 +66,7 @@ if !(isNull _sender) then {
 				_target setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], serverTime + WL_SCAN_DURATION, TRUE];
 
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "targetReset": {
@@ -82,7 +82,7 @@ if !(isNull _sender) then {
 				0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "savedLoadout": {
@@ -90,7 +90,7 @@ if !(isNull _sender) then {
 				["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "orderFTVehicle": {
@@ -108,7 +108,7 @@ if !(isNull _sender) then {
 				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "fastTravelContested": {
@@ -120,14 +120,14 @@ if !(isNull _sender) then {
 				} forEach _tagAlong;
 
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "orderArsenal": {
 			if (_hasFunds) then {
 				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;				
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;				
 			};
 		};
 		case "orderAsset": {
@@ -187,6 +187,14 @@ if !(isNull _sender) then {
 							(crew _asset) joinSilent _group;
 							(effectiveCommander _asset) setSkill 0.2;
 							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
+							switch (side group _sender) do {
+								case west: {
+									(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
+								};
+								case east: {
+									(vestContainer _sender) addItemCargoGlobal ["O_UavTerminal", 1];
+								};
+							};
 						} else {
 							_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && !(_class isKindOf "VTOL_Base_F");
 							if (_isPlane) then {
@@ -229,6 +237,14 @@ if !(isNull _sender) then {
 									(effectiveCommander _asset) setSkill 0.2;
 									(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 									_asset enableWeaponDisassembly false;
+									switch (side group _sender) do {
+										case west: {
+											(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
+										};
+										case east: {
+											(vestContainer _sender) addItemCargoGlobal ["O_UavTerminal", 1];
+										};
+									};
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 										_array = (_pos call BIS_fnc_WL2_findSpawnPositions);
@@ -283,6 +299,14 @@ if !(isNull _sender) then {
 								(crew _asset) joinSilent _group;
 								(effectiveCommander _asset) setSkill 0.2;
 								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
+								switch (side group _sender) do {
+									case west: {
+										(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
+									};
+									case east: {
+										(vestContainer _sender) addItemCargoGlobal ["O_UavTerminal", 1];
+									};
+								};
 							};
 						} else {
 							if (_class isKindOf "Man") then {
@@ -304,7 +328,7 @@ if !(isNull _sender) then {
 				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				
 				if (typeOf _asset == "I_Truck_02_MRL_F") exitWith { //Zamak MLRS
 					_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"]; //Zamak cabin
@@ -341,13 +365,13 @@ if !(isNull _sender) then {
 		};
 		case "fundsTransferBill": {
 			private _uid = getPlayerUID _sender;
-			[_uid, -2000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			[_uid, -2000] call BIS_fnc_WL2_fundsDatabaseWrite;
 			serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], true];
 		};
 		case "fundsTransferCancel": {
 			private _uid = getPlayerUID _sender;
 			if (serverNamespace getVariable (format ["BIS_WL_isTransferring_%1", _uid])) then {
-				[_uid, 2000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, 2000] call BIS_fnc_WL2_fundsDatabaseWrite;
 				serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 			};
 		};
@@ -357,8 +381,8 @@ if !(isNull _sender) then {
 				_uid = getPlayerUID _sender;
 				_recipient = _targetUID call BIS_fnc_getUnitByUID;
 
-				[_targetUID, _cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 				[_sender, _recipient, _cost] remoteExec ["BIS_fnc_WL2_displayCPtransfer", 0, true];
 			};

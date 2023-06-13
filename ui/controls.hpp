@@ -703,6 +703,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1407;
 			onKeyUp = "[_this select 0, _this select 1, 'RWR3',true] call MRTM_fnc_onChar;";
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			x = 0.672219 * safezoneW + safezoneX;
 			y = 0.3812 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -739,6 +740,7 @@ class MRTM_settingsMenu
 		{
 			idc = 2801;
 			action = "if (player getVariable 'MRTM_3rdPersonDisabled') then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]];}";
+			toolTip = "Recieve a +40% CP bonus.";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -747,7 +749,8 @@ class MRTM_settingsMenu
 		class MRTMOtherButton2: RscCheckboxMRTM
 		{
 			idc = 2802;
-			action = "if (MRTM_showDrones) then {MRTM_showDrones = false} else {MRTM_showDrones = true}";
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -831,7 +834,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText2: RscStructuredTextMRTM
 		{
 			idc = 1118;
-			text = "Show my drones on map for teammates";
+			text = "";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1030,6 +1033,7 @@ class MRTM_settingsMenu
 			text = "";
 			onSliderPosChanged = "[7, _this select 1] call MRTM_fnc_onSliderChanged;";
 			toolTip = "Alarm warning volume";
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			x = 0.536063 * safezoneW + safezoneX;
 			y = 0.3842 * safezoneH + safezoneY;
 			w = 0.12525 * safezoneW;

@@ -1,0 +1,141 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_assetRelevanceCheck.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-51.595795,47.803558,38.404205,97.803558,0.000000,"Init"};
+item1[] = {"Condition",4,218,-105.545532,103.832642,-15.545532,153.832642,0.000000,"Condition"};
+item2[] = {"Dead",4,218,17.668823,102.193970,107.668823,152.193970,0.000000,"Dead"};
+item3[] = {"Exit",1,250,85.799194,50.954773,175.799225,100.954758,0.000000,"Exit"};
+item4[] = {"Action",2,250,-45.986725,156.269638,44.013275,206.269623,0.000000,"Action"};
+item5[] = {"Condition",4,218,-43.969879,224.021729,46.030106,274.021729,0.000000,"Condition"};
+item6[] = {"Action_1",2,250,65.756660,222.351257,155.756683,272.351257,0.000000,"Action"};
+item7[] = {"True",8,218,62.983505,155.103409,152.983505,205.103409,0.000000,"True"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,4};
+link3[] = {2,3};
+link4[] = {4,2};
+link5[] = {4,5};
+link6[] = {5,6};
+link7[] = {6,7};
+link8[] = {7,3};
+globals[] = {0.000000,0,0,0,0,640,480,1,20,6316128,1,-307.982880,352.017120,518.422729,-96.514252,952,887,1};
+window[] = {0,-1,-1,-1,-1,1345,286,2206,286,1,970};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_assetRelevanceCheck.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_asset""];" \n
+                         "" \n
+                         "_parentSector = _asset getVariable [""BIS_WL_parentSector"", objNull];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Dead">*/
+                                class Dead
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _asset);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(isNull _parentSector);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Exit">*/
+                class Exit
+                {
+                        name = "Exit";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_originalOwner = (_parentSector getVariable ""BIS_WL_owner"");"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Condition">*/
+                                class Condition
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="Action_1";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(_parentSector getVariable ""BIS_WL_owner"") != _originalOwner && {BIS_WL_allWarlords findIf {_x distance2D _asset < 100} == -1};"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Dead">*/
+                                class Dead
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(alive _asset);"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action_1">*/
+                class Action_1
+                {
+                        name = "Action_1";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"_asset setDamage 1;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "True">*/
+                                class True
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="Exit";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "Exit",
+        };
+};
+/*%FSM</COMPILE>*/

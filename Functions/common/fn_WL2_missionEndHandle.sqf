@@ -5,7 +5,6 @@ waitUntil {sleep WL_TIMEOUT_SHORT; (((BIS_WL_base1 getVariable "BIS_WL_owner") =
 private _winner = BIS_WL_base1 getVariable "BIS_WL_owner";
 
 if !(isDedicated) then {
-	WL_CONTROL_MAP ctrlRemoveEventHandler ["Draw", missionNamespace getVariable ["BIS_WL_mapDrawHandler", -1]];
 	removeMissionEventHandler ["EachFrame", BIS_WL_assetMapHandler];
 	removeMissionEventHandler ["MapSingleClick", BIS_WL_assetMapClickHandler];
 	removeMissionEventHandler ["Draw3D", missionNamespace getVariable ["BIS_WL_sceneDrawHandler", -1]];

@@ -66,7 +66,7 @@ class CfgWLRequisitionPresets
 				class B_T_UAV_03_dynamicLoadout_F			{cost = 16000;   requirements[]={H};  };  // "Falcon"
 				class B_UAV_05_F							{cost = 18000;   requirements[]={A};  };  // "Sentinel"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 13000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
-				//class B_T_VTOL_01_infantry_F				{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
+				class B_T_VTOL_01_infantry_F				{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)";
 				class B_T_VTOL_01_vehicle_F					{cost = 3000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)";
 				class B_T_VTOL_01_armed_F					{cost = 12000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"

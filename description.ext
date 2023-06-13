@@ -108,12 +108,11 @@ class CfgFunctions {
 		class Server 
 		{
     		file = "Functions\server";
-    		class WL2_assetRelevanceCheck {};
+    		class WL2_assetRelevanceCheck {ext = ".fsm"};
 			class WL2_detectNewPlayers {};
 			class WL2_friendlyFireHandleServer {};
-			class WL2_garbageCollector {};
 			class WL2_changeSectorOwnership {};
-			class WL2_incomePayoff {};
+			class WL2_incomePayoff {ext = ".fsm"};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
 			class WL2_mineLimit {};
@@ -416,10 +415,10 @@ class CfgHints
 
 		class warlordsMenu
 		{
-			displayName = "Open Warlords Menu";
+			displayName = $STR_A3_WL_Menu_Hint_Name;
 			displayNameShort = "";
-			description = "%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.";
-			tip = "Hold %11";
+			description = $STR_A3_WL_Menu_Hint;
+			tip = $STR_A3_WL_Menu_Hint_01;
 			arguments[] =
 			{
 				{{"Gear"}},
@@ -430,10 +429,10 @@ class CfgHints
 		};
 		class friendlyFire
 		{
-			displayName = "Friendly fire warning";
+			displayName = $STR_A3_WL_FF_Hint_Name;
 			displayNameShort = "";
-			description = "%3%12%4, Killing to many friendlies will result in jail time. Make sure you identify your targets before you shoot.%1%2 When identifying targets you can make use of %11 and ask if that target is friendly.%1";
-			tip = "Get to know the color of what your enemies wear, this can help. You have %13 friendly fire kills left before you get jailed.";
+			description = $STR_A3_WL_FF_Hint;
+			tip = $STR_A3_WL_FF_Hint_01;
 			arguments[] =
 			{
 				{{"TacticalPing"}},

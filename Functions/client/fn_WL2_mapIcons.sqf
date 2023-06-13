@@ -11,6 +11,7 @@ civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params ["_t"];
+	if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};
 	if (side group player == west) exitWith {westColor};
 	if (side group player == east) exitWith {eastColor};
 	if (side group player == resistance) exitWith {aafColor};
@@ -29,6 +30,12 @@ MRTM_fnc_iconType = {
 	params ["_p"];
 	private _vt = typeOf (vehicle _p);
 	_i = getText (configFile >> 'CfgVehicles' >> _vt >> 'icon');
+	if ((getPlayerChannel _p) in [1,2]) then {
+		_i = "a3\ui_f\data\igui\rscingameui\rscdisplayvoicechat\microphone_ca.paa";
+	};
+	if (((getPlayerChannel _p) == 5) && {((player distance2D _p) < 100)}) then {
+		_i = "a3\ui_f\data\igui\rscingameui\rscdisplayvoicechat\microphone_ca.paa";
+	};
 	_i;
 };
 
@@ -58,38 +65,45 @@ MRTM_fnc_iconText = {
 	params ["_t"];
 	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
 	_text = "";
-	if (vehicle _t isKindOf 'CAManBase') then {
-		if (isPlayer _t) then {
-			_text = (name _t);
-		} else {
-			_text = format ["%1 [AI]", (name _t)];
-		};
-
-		if !(alive _t) then {
-			_text = _text + " [K.I.A.]";
-		};
+	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
+		_text = (name _t);
+		_text = _text + " [K.I.A.]";
 	} else {
-		if (count (crew _t) == 1) then {
-			if (isPlayer ((crew _t) select 0)) then {
-				_text = format ["%1: %2", _vd, (name ((crew _t) select 0))];
+		if (vehicle _t isKindOf 'CAManBase') then {
+			if (isPlayer _t) then {
+				_text = (name _t);
 			} else {
-				_text = format ["%1: %2 [AI]", _vd, name ((crew _t) select 0)];
+				_text = format ["%1 [AI]", (name _t)];
 			};
 		} else {
-			_playerCrew = (crew _t) select {isPlayer _x};
-			{
-				if ((_forEachindex + 1) == count _playerCrew) then {
-					_text = _text + format ["%1", (name _x)];
+			if (count (crew _t) == 1) then {
+				_crew = ((crew _t) select 0);
+				if (isPlayer _crew) then {
+					if (alive _crew) then {
+						_text = format ["%1", (name _crew)];
+					};
 				} else {
-					_text = _text + format ["%1, ", (name _x)];
+					if (alive _crew) then {
+						_text = format ["%1 [AI]", name ((crew _t) select 0)];
+					};
 				};
-			} forEach _playerCrew;
+				_text = format ["%1: %2", _vd, _text];
+			} else {
+				_playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
+				{
+					if ((_forEachindex + 1) == count _playerCrew) then {
+						_text = _text + format ["%1", (name _x)];
+					} else {
+						_text = _text + format ["%1, ", (name _x)];
+					};
+				} forEach _playerCrew;
 
-			countCrewAi = count ((crew _t) - _playerCrew);
-			if (countCrewAi > 0) then {
-				_text = _text + format [" +%1", countCrewAi];
+				countCrewAi = count (((crew _t) - _playerCrew) select {alive _x});
+				if (countCrewAi > 0) then {
+					_text = _text + format [" +%1", countCrewAi];
+				};
+				_text = format ["%1: %2", _vd, _text];
 			};
-			_text = format ["%1: %2", _vd, _text];
 		};
 	};
 
@@ -162,7 +176,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
+	} count ((allPlayers) select {(!alive _x) && {(side group _x == side group player)}});
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
@@ -181,7 +195,7 @@ MRTM_fnc_iconDrawMap = {
 					"right"
 				];
 			};
-		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 	} forEach BIS_WL_currentlyScannedSectors;
 	{
 		if (_x isEqualTo player) then {
@@ -212,7 +226,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allPlayers) select {(side group _x == side group player) && (isNull objectParent _x) && (alive _x)});
+	} count ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -229,7 +243,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};
-	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && (side _x == side group player) && (alive _x) && (typeOf _x != "B_Truck_01_medical_F") && (typeOf _x != "O_Truck_03_medical_F")});
+	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
 	
 	{
 		if (!isNull _x) then {
@@ -247,7 +261,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};		
-	} count ((allUnitsUAV) select {(side group (crew _x select 0) == side group player) && (alive _x)});
+	} count ((allUnitsUAV) select {(side group (crew _x select 0) == side group player) && {(alive _x)}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -264,7 +278,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};	
-	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && (typeOf _x != "B_Truck_01_medical_F") && (typeOf _x != "O_Truck_03_medical_F")});
+	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}});
 	{
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
@@ -279,7 +293,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];		
-	} count ((units player) select {(alive _x) && (_x != player) && (isNull objectParent _x)});
+	} count ((units player) select {(alive _x) && {(_x != player) && {(isNull objectParent _x)}}});
 	{
 		_m drawIcon [
 			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
@@ -351,7 +365,7 @@ MRTM_fnc_iconDrawGPS = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allPlayers) select {(!alive _x) && (side group _x == side group player) && (isNull objectParent _x)});
+	} count ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
 	{
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
@@ -366,7 +380,7 @@ MRTM_fnc_iconDrawGPS = {
 			"TahomaB",
 			"right"
 		];		
-	} count ((units player) select {(alive _x) && (_x != player) && (isNull objectParent _x)});
+	} count ((units player) select {(alive _x) && {(_x != player) && {(isNull objectParent _x)}}});
 	{
 		if !(_x isEqualTo player) then {
 			_m drawIcon [
@@ -383,7 +397,7 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};
-	} count ((allPlayers) select {(side group _x == side group player) && (isNull objectParent _x) && (alive _x)});
+	} count ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
@@ -402,7 +416,7 @@ MRTM_fnc_iconDrawGPS = {
 					"right"
 				];
 			};
-		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && (alive _x) && ((side group _x) in BIS_WL_sidesArray)});
+		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 	} forEach BIS_WL_currentlyScannedSectors;
 };
 

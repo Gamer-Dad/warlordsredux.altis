@@ -32,7 +32,7 @@ if !(isNull _instigator) then {
 				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
 			if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
-				_killReward = (round (_killReward * 1.5));
+				_killReward = (round (_killReward * 1.4));
 			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;

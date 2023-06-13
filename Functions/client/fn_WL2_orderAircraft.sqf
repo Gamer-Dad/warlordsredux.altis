@@ -12,11 +12,11 @@ if !(visibleMap) then {
 BIS_WL_targetSector = objNull;
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRCRAFT;
 BIS_WL_orderedAssetRequirements = _requirements;
-sleep WL_TIMEOUT_SHORT;
+sleep 0.25;
 
 "dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
 
-waitUntil {sleep WL_TIMEOUT_MIN; !isNull BIS_WL_targetSector || !visibleMap || BIS_WL_currentSelection == WL_ID_SELECTION_VOTING};
+waitUntil {sleep 0.05; !isNull BIS_WL_targetSector || !visibleMap || BIS_WL_currentSelection == WL_ID_SELECTION_VOTING};
 
 ["dropping", "end"] call BIS_fnc_WL2_sectorSelectionHandle;
 

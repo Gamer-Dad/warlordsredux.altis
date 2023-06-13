@@ -66,14 +66,13 @@ MRTM_syncObjects = true;
 setTerrainGrid 3.125;
 
 //Radar warning system
-MRTM_rwr1 = 0.4;
-MRTM_rwr2 = 0.4;
-MRTM_rwr3 = 0.3;
+MRTM_rwr1 = 0.3;
+MRTM_rwr2 = 0.3;
+MRTM_rwr3 = 0.2;
 MRTM_rwr4 = 0.4;
 
 //Options
 player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
-MRTM_showDrones = true;
 MRTM_playKillSound = true;
 MRTM_EnableRWR = true;
 
@@ -179,11 +178,11 @@ player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger; 
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
-	if (typeOf _vehicle == "B_Plane_Fighter_01_F" || typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") then  {
+	if ((typeOf _vehicle == "B_Plane_Fighter_01_F") || (typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") || (typeOf _vehicle == "B_Heli_Attack_01_dynamicLoadout_F") || (typeOf _vehicle == "B_T_VTOL_01_armed_F") || (typeOf _vehicle == "B_T_VTOL_01_vehicle_F") || (typeOf _vehicle == "B_T_VTOL_01_infantry_F")) then  {
 		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_betty;
 	};
-	if (typeOf _vehicle == "O_Plane_Fighter_02_F" || typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") then {
+	if ((typeOf _vehicle == "O_Plane_Fighter_02_F") || (typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") || (typeOf _vehicle == "O_Heli_Attack_02_dynamicLoadout_F") || (typeOf _vehicle == "O_T_VTOL_02_vehicle_dynamicLoadout_F")) then {
 		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
@@ -303,7 +302,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	sleep WL_TIMEOUT_LONG;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
-		sleep 10;
+		sleep 13;
 	};
 };
 

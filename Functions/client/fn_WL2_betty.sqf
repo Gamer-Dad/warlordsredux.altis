@@ -1,13 +1,17 @@
-waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F")};
+_type = (typeOf objectParent player);
+waitUntil {sleep 0.1; (_type == "B_Plane_Fighter_01_F" || {_type == "B_Plane_CAS_01_dynamicLoadout_F" || {_type == "B_Heli_Attack_01_dynamicLoadout_F" || {_type == "B_T_VTOL_01_armed_F" || {_type == "B_T_VTOL_01_vehicle_F" || {_type == "B_T_VTOL_01_infantry_F" || {!(alive player)}}}}}})};
 
+if !(alive player) exitWith {};
+
+_v = (objectParent player);
 // Vars
-(objectParent player) setVariable ["currentTargets", []];
-(objectParent player) setVariable ["newTargets", []];
-(objectParent player) setVariable ["altCeiling", 2000,];
-(objectParent player) setVariable ["isBettyBitching", false];
-(objectParent player) setVariable ["landingGear", true];
-(objectParent player) setVariable ["Incomming", []];
-(objectParent player) addEventHandler ["Gear", {
+_v setVariable ["currentTargets", []];
+_v setVariable ["newTargets", []];
+_v setVariable ["altCeiling", 2000];
+_v setVariable ["isBettyBitching", false];
+_v setVariable ["landingGear", true];
+_v setVariable ["Incomming", []];
+_v addEventHandler ["Gear", {
 	params ["_vehicle", "_gearState"];
 	if (_gearState == true) then {
 		_vehicle setVariable ["landingGear", true];
@@ -15,12 +19,12 @@ waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || t
 		_vehicle setVariable ["landingGear", false];
 	};
 }];
-(objectParent player) addEventHandler ["IncomingMissile", {
+_v addEventHandler ["IncomingMissile", {
 	params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
 	_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile])];
 }];
 
-(objectParent player) addEventHandler ["Killed", {
+_v addEventHandler ["Killed", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	_unit removeAllEventHandlers "Gear";
 	_unit removeAllEventHandlers "IncomingMissile";
@@ -29,15 +33,16 @@ waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || t
 
 //Pull up warning
 0 spawn {
-	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
-		if (MRTM_EnableRWR && {((objectParent player) getVariable "isBettyBitching" == false)}) then {
-			if (getPosATL player select 2 <= (objectParent player) getVariable "altCeiling" && getPosATL player select 2 > 100 && (objectParent player) getVariable "landingGear" == false) then {
-				if (asin (vectorDir (objectParent player) select 2) < - (((getPosATL player select 2) * 40) / speed (objectParent player))) then {
+	_v = objectParent player; 
+	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
+			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
+				if (asin (vectorDir _v select 2) < - (((getPosATL player select 2) * 40) / speed _v)) then {
 					playSoundUI ["pullUp", MRTM_rwr1, 1];
-					(objectParent player) setVariable ["isBettyBitching", true];
+					_v setVariable ["isBettyBitching", true];
 					private _startTime = serverTime + 1.33;
 					waitUntil {serverTime > _startTime};
-					(objectParent player) setVariable ["isBettyBitching", false];
+					_v setVariable ["isBettyBitching", false];
 				};
 			};
 		};
@@ -48,14 +53,15 @@ waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || t
 
 //Altitude warning
 0 spawn {
-	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
-		if (MRTM_EnableRWR && {((objectParent player) getVariable "isBettyBitching" == false)}) then {
-			if ((getPosATL player select 2) < 100 && (objectParent player) getVariable "landingGear" == false) then {
+	_v = objectParent player; 
+	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
+			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
 				playSoundUI ["altWarning", MRTM_rwr2, 1];
-				(objectParent player) setVariable ["isBettyBitching", true];
+				_v setVariable ["isBettyBitching", true];
 				private _startTime = serverTime + 3; 
 				waitUntil {serverTime > _startTime};
-				(objectParent player) setVariable ["isBettyBitching", false];
+				_v setVariable ["isBettyBitching", false];
 			};
 		};
 		private _startTime1 = serverTime + 1;  
@@ -65,14 +71,15 @@ waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || t
 
 //Bingo fuel
 0 spawn {
-	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
+	_v = objectParent player; 
+	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
 		if (MRTM_EnableRWR) then {
-			if (fuel (objectParent player) < 0.2) then {
+			if (fuel _v < 0.2) then {
 				playSoundUI ["bingoFuel", MRTM_rwr4, 1];
-				(objectParent player) setVariable ["isBettyBitching", true];
+				_v setVariable ["isBettyBitching", true];
 				private _startTime1 = serverTime + 1.6;  
 				waitUntil {serverTime > _startTime1};
-				(objectParent player) setVariable ["isBettyBitching", false];				
+				_v setVariable ["isBettyBitching", false];				
 			};
 		};
 		private _startTime1 = serverTime + 2;  
@@ -82,30 +89,32 @@ waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || t
 
 //Sensor targets
 0 spawn {
-	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
-		(objectParent player) setVariable ["newTargets", getSensorTargets objectParent player];
+	_v = objectParent player; 
+	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		_V setVariable ["newTargets", getSensorTargets _v];
 		if (MRTM_EnableRWR) then {
-			if (count ((objectParent player) getVariable "newTargets") > count ((objectParent player) getVariable "currentTargets")) then {
+			if (count (_v getVariable "newTargets") > count (_v getVariable "currentTargets")) then {
 				playSoundUI ["radarTargetNew", MRTM_rwr4, 1];
 				sleep 0.1;
 			};
 
-			if (count ((objectParent player) getVariable "newTargets") < count ((objectParent player) getVariable "currentTargets")) then {
+			if (count (_v getVariable "newTargets") < count (_v getVariable "currentTargets")) then {
 				playSoundUI ["radarTargetLost", MRTM_rwr4, 1];
 				sleep 0.1;
 			};
 		};
-		(objectParent player) setVariable ["currentTargets", (objectParent player) getVariable "newTargets"];
+		_v setVariable ["currentTargets", _v getVariable "newTargets"];
 		sleep 1;
 	};
 };
 
 0 spawn {
-	while {typeOf objectParent player == "B_Plane_Fighter_01_F" || typeOf objectParent player == "B_Plane_CAS_01_dynamicLoadout_F"} do {
-		if (MRTM_EnableRWR && {((objectParent player) getVariable "isBettyBitching" == false)}) then {
-			(objectParent player) setVariable ["isBettyBitching", true];
-           	_incomming = (((objectParent player) getVariable "Incomming") # 0);
-			_mDir = ((objectParent player) getRelDir _incomming);
+	_v = objectParent player; 
+	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
+			_v setVariable ["isBettyBitching", true];
+           	_incomming = ((_v getVariable "Incomming") # 0);
+			_mDir = (_v getRelDir _incomming);
 			_3Dir = abs (90 - _mDir);
 			_6Dir = abs (180 - _mDir);
 			_9Dir = abs (270 - _mDir);
@@ -114,25 +123,25 @@ waitUntil {sleep 0.1; (typeOf objectParent player == "B_Plane_Fighter_01_F" || t
 
 			_fDir = 0;
 			switch (true) do {
-				case ((_6Dir < _9Dir) && (_6Dir < _3Dir) && (_6Dir < _0Dir) && (_6Dir < _12Dir)): {
+				case ((_6Dir < _9Dir) && {(_6Dir < _3Dir) && {(_6Dir < _0Dir) && {(_6Dir < _12Dir)}}}): {
 					_fDir = 180;
 				};
-				case (((_3Dir < _6Dir)) && (_3Dir < _0Dir) && (_3Dir < _12Dir) && (_3Dir < _9Dir)): {
+				case (((_3Dir < _6Dir)) && {(_3Dir < _0Dir) && {(_3Dir < _12Dir) && {(_3Dir < _9Dir)}}}): {
 					_fDir = 90;
 				};
-				case ((_9Dir < _6Dir) && (_9Dir < _0Dir) && (_9Dir < _12Dir) && (_9Dir < _3Dir)): {
+				case ((_9Dir < _6Dir) && {(_9Dir < _0Dir) && {(_9Dir < _12Dir) && {(_9Dir < _3Dir)}}}): {
 					_fDir = 270;
 				};
 			};
 			_sound = format ["incMissile_%1", _fDir];
 			playSoundUI [_sound, (MRTM_rwr4 + 0.3), 1];
 			sleep 2.3;
-			(objectParent player) setVariable ["isBettyBitching", false];
+			_v setVariable ["isBettyBitching", false];
 		};
 
 		{
-			(objectParent player) setVariable ["Incomming", (((objectParent player) getVariable "Incomming") - [_x])];
-		} forEach (((objectParent player) getVariable "Incomming") select {!alive _x});
+			_v setVariable ["Incomming", ((_v getVariable "Incomming") - [_x])];
+		} forEach ((_v getVariable "Incomming") select {!alive _x});
 		sleep 1;
 	};
 };
