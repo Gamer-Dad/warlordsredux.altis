@@ -10,5 +10,5 @@ private _airlock = getNumber(configfile >> "CfgAmmo" >> _ammo >> "airLock");
 private _thrust = getNumber(configfile >> "CfgAmmo" >> _ammo >> "thrust");
 if ((_airlock == 0) AND (_thrust == 0)) exitWith {};
 [_missile, _unit] spawn DIS_fnc_frag;
-[_missile, (assignedTarget _unit), 800] spawn DIS_fnc_SAMManeuver;
+[_missile, (assignedTarget _unit), 800] spawn DIS_fnc_SAMmaneuver;
 systemChat "SAM away";

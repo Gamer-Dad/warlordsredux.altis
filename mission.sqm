@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=24;
+		nextID=32;
 	};
 	class Camera
 	{
-		pos[]={7868.0991,276.87851,14626.62};
-		dir[]={0.11593524,-0.9300372,0.34869736};
-		up[]={0.29342648,0.36746538,0.88253617};
-		aside[]={0.94892567,0,-0.31549972};
+		pos[]={7868.5376,276.66483,14624.361};
+		dir[]={0.139476,-0.53440374,0.8336522};
+		up[]={0.088189013,0.84520704,0.52710879};
+		aside[]={0.98629814,3.8329745e-008,-0.16501452};
 	};
 };
 binarizationWanted=0;
@@ -8007,8 +8007,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7868.2222,275.49136,14627.096};
-				angles[]={0,0.310168,-0};
+				position[]={7868.2305,275.49088,14627.12};
+				angles[]={0,0.310168,0};
 			};
 			side="Empty";
 			class Attributes
@@ -8018,7 +8018,7 @@ class Mission
 			};
 			id=1070;
 			type="Land_PCSet_01_keyboard_F";
-			atlOffset=0.04498291;
+			atlOffset=0.044494629;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8076,7 +8076,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7868.5684,275.51883,14626.978};
+				position[]={7868.5498,275.51883,14626.981};
 				angles[]={-0,0.095453918,0};
 			};
 			side="Empty";
@@ -8182,7 +8182,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7868.1543,275.26776,14626.523};
-				angles[]={-0,3.4038115,0};
+				angles[]={0,3.4038115,0};
 			};
 			side="Empty";
 			flags=4;
@@ -8370,7 +8370,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={7868.6543,275.44952,14627.382};
-										angles[]={-0,4.9417253,0};
+										angles[]={0,4.9417253,0};
 									};
 									side="Empty";
 									flags=4;
@@ -8510,6 +8510,7 @@ class Mission
 					class Attributes
 					{
 						init="this forceAddUniform ""U_O_R_Gorka_01_black_F"";" \n "this addHeadgear ""H_PilotHelmetHeli_B"";" \n "this addVest ""V_PlateCarrier1_blk"";" \n "this addGoggles ""G_bandanna_beast"";" \n "this addItem ""NVGoggles""; " \n "this assignItem ""NVGoggles"";" \n "removeBackpack this;" \n "[this,""SIT_AT_TABLE"",""ASIS"",chairMRTM] call BIS_fnc_ambientAnim;";
+						presence=0.69693905;
 						disableSimulation=1;
 						ignoreByDynSimulGrid=1;
 					};
@@ -8657,7 +8658,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7868.1133,275.47946,14627.379};
-				angles[]={-0,4.1139679,0};
+				angles[]={0,4.1139679,0};
 			};
 			side="Empty";
 			flags=4;
@@ -8830,8 +8831,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7868.1597,275.23743,14626.521};
-				angles[]={0,0.26942664,-0};
+				position[]={7868.1602,275.23773,14626.521};
+				angles[]={0,0.26942647,0};
 			};
 			side="Empty";
 			class Attributes
@@ -8841,10 +8842,23 @@ class Mission
 			};
 			id=1177;
 			type="Sign_Pointer_Cyan_F";
-			atlOffset=0.59408569;
+			atlOffset=0.59439087;
 			class CustomAttributes
 			{
 				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="#(argb,8,8,3)color(0,0,0,0)";
+						};
+					};
+				};
+				class Attribute1
 				{
 					property="allowDamage";
 					expression="_this allowdamage _value;";
@@ -8857,7 +8871,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 	};

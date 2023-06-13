@@ -267,7 +267,7 @@ class CfgFunctions {
 			class Frag {};
 			class IsSam {};
 			class RegisterSAM {};
-			class SAMManeuver {};
+			class SAMmaneuver {};
 			class SAMfired {};
 		};
 	};
