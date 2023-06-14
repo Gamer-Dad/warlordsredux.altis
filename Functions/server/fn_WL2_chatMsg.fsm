@@ -3,12 +3,12 @@
 /*
 item0[] = {"Init",0,250,-40.921448,-122.609390,49.078552,-72.609390,0.000000,"Init"};
 item1[] = {"Timeout",4,218,-40.689636,-48.507690,49.310364,1.492310,0.000000,"Timeout"};
-item2[] = {"Msg",2,250,-40.059296,30.236221,49.940720,80.236221,0.000000,"Msg"};
+item2[] = {"Msg",2,4346,-40.059296,30.236221,49.940720,80.236221,0.000000,"Msg"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,9,6316128,1,-311.637817,288.362183,387.929596,-212.070404,952,887,1};
-window[] = {0,-1,-1,-32000,-32000,1339,286,2206,280,1,970};
+window[] = {0,-1,-1,-1,-1,1137,78,1998,78,1,970};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -20,7 +20,8 @@ class FSM
                 {
                         name = "Init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 120;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 120;" \n
+                         "_h = serverTime + 1800;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -84,7 +85,10 @@ class FSM
                          "	};" \n
                          "};" \n
                          "" \n
-                         "[localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))])] remoteExec [""hintSilent"", 0];" \n
+                         "if (serverTime > _h) then {" \n
+                         "	[localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))])] remoteExec [""hintSilent"", 0];" \n
+                         "	_h = serverTime + 1800;" \n
+                         "};" \n
                          "_t = serverTime + 900;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
