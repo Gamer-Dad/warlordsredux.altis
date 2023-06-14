@@ -632,7 +632,7 @@ GOM_fnc_installPylons = {
 
 	systemchat format ["Installing %1 %2 on %3, operated by %4!",_finalAmount,_magDispName,_pylonName,_pylonOwnerName];
 	_check pushback _pylonNum;
-	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_check,true];
+	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_check, [2, clientOwner]];
 
 sleep random [0.5,1,2.5];
 
@@ -667,7 +667,7 @@ sleep random [0.5,1,2.5];
 		_ammosource setvariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	_checkOut = _veh getVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[]];
 	_checkOut = _checkOut - [_pylonNum];
-	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut,true];
+	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut,[2, clientOwner]];
 
 	systemchat format ["Successfully installed %1 %2 on %3!",_finalAmount,_magDispName,_pylonName];
 	true
@@ -882,7 +882,7 @@ GOM_fnc_setPylonsRearm = {
 
 	if (!alive _veh) exitWith {systemchat "Aircraft is destroyed!"};
 	if (_veh getVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false]) exitWith {systemchat "Aircraft is currently being rearmed!"};
-	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true,true];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true,[2, clientOwner]];
 	_activePylonMags = GetPylonMagazines _veh;
 
 	if (_rearm) exitWith {
@@ -933,7 +933,7 @@ GOM_fnc_setPylonsRearm = {
 
 		playSound "Click";
 		_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
-		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,[2, clientOwner]];
 		if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
