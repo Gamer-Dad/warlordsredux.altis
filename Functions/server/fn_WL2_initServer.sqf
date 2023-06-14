@@ -62,7 +62,6 @@ RESISTANCE setFriend [CIVILIAN, 1];
 
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-	
 	BIS_WL_allWarlords = BIS_WL_allWarlords - [_unit];
 	_sideID = BIS_WL_competingSides find (side group _unit);
 	if (_sideID != -1) then {
@@ -80,27 +79,12 @@ addMissionEventHandler ["HandleDisconnect", {
 		};
 		_x call BIS_fnc_WL2_sub_deleteAsset;
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
-	
 	{
 		if !(isPlayer _x) then {_x setDamage 1};
 	} forEach ((units group _unit) - [_unit]);
+	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 	
-	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], nil];
-
-	private _countFaction0 = playersNumber west;
-	_fac0Percentage = 0.1;
-	if ((count allPlayers) > 0) then {
-		_fac0Percentage = (1.6 * _countFaction0 / count allPlayers) + 0.2;
-	};
-	_multiBlu = 2 - _fac0Percentage;
-	missionNamespace setVariable ["blanceMultilplierBlu", _multiBlu, true];
-	_multiOpf = _fac0Percentage;
-	missionNamespace setVariable ["blanceMultilplierOpf", _multiOpf, true];
-	{
-		_incomeStandard = _x call BIS_fnc_WL2_income;
-		_actualIncome = round (_incomeStandard * (if (_x == west) then [{(missionNamespace getVariable "blanceMultilplierBlu")}, {(missionNamespace getVariable "blanceMultilplierOpf")}]));
-		if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome, true]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome, true]}]
-	} forEach BIS_WL_competingSides;
+	call BIS_fnc_WL2_calcImbalance;
 }];
 
 addMissionEventHandler ["MarkerCreated", {

@@ -3,7 +3,7 @@
 /*
 item0[] = {"Init",0,250,-40.921448,-122.609390,49.078552,-72.609390,0.000000,"Init"};
 item1[] = {"Timeout",4,218,-40.689636,-48.507690,49.310364,1.492310,0.000000,"Timeout"};
-item2[] = {"Payoff",2,4346,-40.059296,30.236221,49.940720,80.236221,0.000000,"Payoff"};
+item2[] = {"Msg",2,250,-40.059296,30.236221,49.940720,80.236221,0.000000,"Msg"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
@@ -29,7 +29,7 @@ class FSM
                                 {
                                         itemno = 1;
                                         priority = 0.000000;
-                                        to="Payoff";
+                                        to="Msg";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"serverTime > _t;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -38,10 +38,10 @@ class FSM
                         };
                 };
                 /*%FSM</STATE>*/
-                /*%FSM<STATE "Payoff">*/
-                class Payoff
+                /*%FSM<STATE "Msg">*/
+                class Msg
                 {
-                        name = "Payoff";
+                        name = "Msg";
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"_players = count BIS_WL_allWarlords;" \n
                          "if (_players >= 51) then " \n
@@ -94,7 +94,7 @@ class FSM
                                 {
                                         itemno = 1;
                                         priority = 0.000000;
-                                        to="Payoff";
+                                        to="Msg";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
                                         condition=/*%FSM<CONDITION""">*/"serverTime > _t;"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
