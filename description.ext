@@ -45,6 +45,7 @@ class CfgFunctions {
     	class Client 
 		{
     		file = "Functions\client";
+			class WL2_mrtmConvo {ext = ".fsm"};
 			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
@@ -104,16 +105,17 @@ class CfgFunctions {
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
 			class WL2_underWaterCheck {};
-			class WL2_mrtmAction;
+			class WL2_mrtmAction {};
     	};
 		class Server 
 		{
     		file = "Functions\server";
     		class WL2_assetRelevanceCheck {ext = ".fsm"};
+			class WL2_incomePayoff {ext = ".fsm"};
+			class WL2_chatMsg {ext = ".fsm"};
 			class WL2_detectNewPlayers {};
 			class WL2_friendlyFireHandleServer {};
 			class WL2_changeSectorOwnership {};
-			class WL2_incomePayoff {ext = ".fsm"};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
 			class WL2_mineLimit {};

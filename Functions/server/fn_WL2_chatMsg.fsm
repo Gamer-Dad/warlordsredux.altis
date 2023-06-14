@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_incomePayoff.fsm">*/
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_chatMsg.fsm">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Init",0,250,-40.921448,-122.609390,49.078552,-72.609390,0.000000,"Init"};
@@ -12,7 +12,7 @@ window[] = {0,-1,-1,-1,-1,1397,338,2258,338,1,970};
 *//*%FSM</HEAD>*/
 class FSM
 {
-        fsmName = "fn_WL2_incomePayoff.fsm";
+        fsmName = "fn_WL2_chatMsg.fsm";
         class States
         {
                 /*%FSM<STATE "Init">*/
