@@ -8,7 +8,7 @@ link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,9,6316128,1,-311.637817,288.362183,387.929596,-212.070404,952,887,1};
-window[] = {0,-1,-1,-1,-1,1397,338,2258,338,1,970};
+window[] = {0,-1,-1,-32000,-32000,1339,286,2206,280,1,970};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -20,7 +20,7 @@ class FSM
                 {
                         name = "Init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 900;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 120;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -46,45 +46,45 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_players = count BIS_WL_allWarlords;" \n
                          "if (_players >= 51) then " \n
                          "{	" \n
-                         "	[""Player count at 51 or greater. Max AI now at 1, human interaction encouraged!""] remoteExec [""systemchat"", -2];" \n
+                         "	[""Max AI now at 1, human interaction encouraged!""] remoteExec [""systemchat"", 0];" \n
                          "}" \n
                          "Else " \n
                          "{" \n
                          "	if (_players >= 45) then" \n
                          "	{" \n
-                         "		[""Player count at 45 or greater. Max AI now at 2, make em count!""] remoteExec [""systemchat"", -2];" \n
+                         "		[""Max AI now at 2, make em count!""] remoteExec [""systemchat"", 0];" \n
                          "	}" \n
                          "	Else " \n
                          "	{" \n
                          "		if (_players >= 40) then" \n
                          "		{" \n
-                         "			[""Player count at 40 or greater. Max AI now at 3, put them to work!""] remoteExec [""systemchat"", -2];" \n
+                         "			[""Max AI now at 3, put them to work!""] remoteExec [""systemchat"", 0];" \n
                          "		}" \n
                          "		Else " \n
                          "		{" \n
                          "			if (_players >= 30) then" \n
                          "			{" \n
-                         "				[""Player count at 30 or greater. Max AI now at 4, squad size!""] remoteExec [""systemchat"", -2];" \n
+                         "				[""Max AI now at 4, squad size!""] remoteExec [""systemchat"", 0];" \n
                          "			}" \n
                          "			Else " \n
                          "			{" \n
                          "				if (_players >= 20) then" \n
                          "				{" \n
-                         "					[""Player count at 20 or greater. Max AI now at 5, you can make it work!""] remoteExec [""systemchat"", -2];" \n
+                         "					[""Max AI now at 5, you can make it work!""] remoteExec [""systemchat"", 0];" \n
                          "				}" \n
                          "				Else " \n
                          "				{" \n
                          "					if (_players < 10) then" \n
                          "					{" \n
-                         "						[""Player count at less than 10. Max AI now at 6, full company size!""] remoteExec [""systemchat"", -2];" \n
+                         "						[""Max AI now at 6, full company size!""] remoteExec [""systemchat"", 0];" \n
                          "					};" \n
                          "				};" \n
                          "			};" \n
                          "		};" \n
                          "	};" \n
                          "};" \n
-                         "[localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))])] remoteExec [""systemchat"", -2];" \n
                          "" \n
+                         "[localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))])] remoteExec [""hintSilent"", 0];" \n
                          "_t = serverTime + 900;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
