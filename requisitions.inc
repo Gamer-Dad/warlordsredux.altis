@@ -166,7 +166,7 @@ class CfgWLRequisitionPresets
 				class O_APC_Wheeled_02_rcws_v2_F			{cost = 1500;	requirements[]={};	};	// "MSE-3 Marid"
 				class O_APC_Tracked_02_cannon_F				{cost = 3700;	requirements[]={};	};	// "BTR-K Kamysh"
 				class O_APC_Tracked_02_AA_F					{cost = 5000;	requirements[]={};	};	// "ZSU-39 Tigris"
-				class O_MBT_02_cannon_F						{cost = 9500;	requirements[]={};	};	// "T-100 Varsuk"
+				class O_MBT_02_cannon_F						{cost = 8000;	requirements[]={};	};	// "T-100 Varsuk"
 				class O_MBT_04_cannon_F						{cost = 13000;	requirements[]={};	};	// "T-140 Angara"
 				class O_MBT_04_command_F					{cost = 15000;	requirements[]={};	};	// "T-140K Angara"
 				class O_MBT_02_arty_F						{cost = 20000;	requirements[]={};	};	// "2S9 Sochor"
