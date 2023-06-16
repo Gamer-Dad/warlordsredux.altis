@@ -12,6 +12,7 @@
             <Portuguese>Selecione um setor apropriado.</Portuguese>
             <Russian>Выберите подходящий сектор.</Russian>
             <Spanish>Seleccione un sector apropiado.</Spanish>
+            <Turkish>Uygun bir sektör seçin.</Turkish>
             <Korean>적절한 섹터를 선택하십시오.</Korean>
             <Japanese>適切なセクターを選択します。</Japanese>
             <Chinesesimp>选择合适的部门。</Chinesesimp>
@@ -28,6 +29,7 @@
             <Portuguese>Você precisa estar dentro de um setor próprio.</Portuguese>
             <Russian>Вы должны быть внутри контролируемого сектора.</Russian>
             <Spanish>Necesitas estar dentro de un sector propio.</Spanish>
+            <Turkish>Sahip olunan bir sektörün içinde olmanız gerekiyor.</Turkish> 
             <Korean>소유 섹터 안에 있어야 합니다.</Korean>
             <Japanese>所有セクター内にいる必要があります。</Japanese>
             <Chinesesimp>您需要在拥有的部门内。</Chinesesimp>
@@ -44,6 +46,7 @@
             <Portuguese>Você tem que sair do seu veículo.</Portuguese>
             <Russian>Вы должны выйти из своей техники.</Russian>
             <Spanish>Tienes que salir de tu vehículo.</Spanish>
+            <Turkish>Aracınızdan inmeniz gerekiyor.</Turkish>
             <Korean>차량에서 내려야 합니다.</Korean>
             <Japanese>車から降りなければなりません。</Japanese>
             <Chinesesimp>你必须离开你的车。</Chinesesimp>
@@ -60,6 +63,7 @@
             <Portuguese>Limite de ativos atingido.</Portuguese>
             <Russian>Достигнут предел объектов.</Russian>
             <Spanish>Límite de activos alcanzado.</Spanish>
+            <Turkish>Varlık sınırına ulaşıldı.</Turkish>
             <Korean>자산 한도에 도달했습니다.</Korean>
             <Japanese>アセットの上限に達しました。</Japanese>
             <Chinesesimp>已达到资产限额。</Chinesesimp>
@@ -76,6 +80,7 @@
             <Portuguese>Apenas infantaria e caixas de munição podem ser lançadas em suas coordenadas.</Portuguese>
             <Russian>По вашим координатам можно сбрасывать только пехоту и ящики с боеприпасами.</Russian>
             <Spanish>Solo la infantería y las cajas de munición pueden lanzarse desde el aire en tus coordenadas.</Spanish>
+            <Turkish>Koordinatlarınıza yalnızca piyade ve cephane kutuları havadan atılabilir.</Turkish>
             <Korean>보병과 탄약 상자만 좌표에 투하할 수 있습니다.</Korean>
             <Japanese>座標にエアドロップできるのは歩兵と弾薬箱のみです。</Japanese>
             <Chinesesimp>只有步兵和弹药箱可以空投到您的坐标上。</Chinesesimp>
@@ -92,6 +97,7 @@
             <Portuguese>Nenhuma unidade selecionada.</Portuguese>
             <Russian>Единицы не выбраны.</Russian>
             <Spanish>No hay unidades seleccionadas.</Spanish>
+            <Turkish>Seçili birim yok.</Turkish>
             <Korean>선택한 단위가 없습니다.</Korean>
             <Japanese>ユニットが選択されていません。</Japanese>
             <Chinesesimp>未选择单位。</Chinesesimp>
@@ -108,6 +114,7 @@
             <Portuguese>Ativo rearmado.</Portuguese>
             <Russian>Объект перевооружен.</Russian>
             <Spanish>Activo rearmado.</Spanish>
+            <Turkish>Varlık yeniden silahlandırıldı.</Turkish>
             <Korean>자산이 재정비되었습니다.</Korean>
             <Japanese>アセットが再装備されました。</Japanese>
             <Chinesesimp>资产重新装备。</Chinesesimp>
@@ -124,6 +131,7 @@
             <Portuguese>Ativo reparado.</Portuguese>
             <Russian>Объект отремонтирован.</Russian>
             <Spanish>Activo reparado.</Spanish>
+            <Turkish>Varlık tamir edildi.</Turkish>
             <Korean>자산이 수리되었습니다.</Korean>
             <Japanese>アセットが修復されました。</Japanese>
             <Chinesesimp>资产修复。</Chinesesimp>
@@ -135,11 +143,12 @@
             <Czech>%1 zachycuje %2!</Czech>
             <French>%1 capture %2 !</French>
             <German>%1 erobert %2!</German>
-            <Italian>%1 は %2 をキャプチャしています!</Italian>
+            <Italian>%1 sta catturando %2!</Italian>
             <Polish>%1 przechwytuje %2!</Polish>
             <Portuguese>%1 está capturando %2!</Portuguese>
             <Russian>%1 захватывает %2!</Russian>
             <Spanish>¡%1 está capturando a %2!</Spanish>
+            <Turkish>%1 tarafından %2 ele geçiriliyor!</Turkish>
             <Korean>%1 이(가) %2 를 캡처 중입니다!</Korean>
             <Japanese>%1 は %2 をキャプチャしています!</Japanese>
             <Chinesesimp>%1 正在捕获 %2!</Chinesesimp>
@@ -156,6 +165,7 @@
             <Portuguese>O elemento selecionado não está vazio.</Portuguese>
             <Russian>Выбранный элемент не пуст.</Russian>
             <Spanish>El elemento seleccionado no está vacío.</Spanish>
+            <Turkish>Seçilen varlık boş değil.</Turkish>
             <Korean>선택된 자산이 비어 있지 않습니다.</Korean>
             <Japanese>選択された資産は空ではありません。</Japanese>
             <Chinesesimp>选择的资产不为空。</Chinesesimp>
@@ -172,6 +182,7 @@
             <Portuguese>%1 excluído.</Portuguese>
             <Russian>%1 удалено.</Russian>
             <Spanish>%1 eliminado.</Spanish>
+            <Turkish>%1 silindi.</Turkish>
             <Korean>%1 삭제됨.</Korean>
             <Japanese>%1は削除されました。</Japanese>
             <Chinesesimp>%1已删除。</Chinesesimp>
@@ -189,6 +200,7 @@
             <Portuguese>Alt-Shift-clique para %1apagar%2%3%4.</Portuguese>
             <Russian>Alt-Shift-щелкните, чтобы %1удалить%2%3%4.</Russian>
             <Spanish>Alt-Shift-clic para %1borrar%2%3%4.</Spanish>
+            <Turkish>Alt-Shift-tıkla bunu %1sil%2%3%4.</Turkish>
             <Korean>Alt-Shift-클릭하여 %1삭제%2%3%4.</Korean>
             <Japanese>Alt-Shift-クリックして%1削除%2%3%4。</Japanese>
             <Chinesesimp>Alt-Shift-单击以%1删除%2%3%4。</Chinesesimp>
@@ -205,6 +217,7 @@
             <Portuguese>Salvar configuração.</Portuguese>
             <Russian>Сохранить экипировку.</Russian>
             <Spanish>Guardar configuración.</Spanish>
+            <Turkish>Ekipman kaydet.</Turkish>
             <Korean>장비 저장.</Korean>
             <Japanese>装備を保存。</Japanese>
             <Chinesesimp>保存装备。</Chinesesimp>
@@ -221,6 +234,7 @@
             <Portuguese>Salve sua configuração atual para uma reaplicação posterior.</Portuguese>
             <Russian>Сохраните текущую экипировку для повторного использования.</Russian>
             <Spanish>Guarda tu loadout actual para su reaplicación posterior.</Spanish>
+            <Turkish>Mevcut ekipmanınızı daha sonraki uygulamalar için kaydedin.</Turkish>
             <Korean>나중에 다시 적용할 수 있도록 현재 로드아웃을 저장하십시오.</Korean>
             <Japanese>後で再適用するために現在のロードアウトを保存します。</Japanese>
             <Chinesesimp>保存您当前的配置以备后用。</Chinesesimp>
@@ -237,6 +251,7 @@
             <Portuguese>Seu equipamento salvo.</Portuguese>
             <Russian>Ваш сохраненный набор вооружения.</Russian>
             <Spanish>Tu equipación guardada.</Spanish>
+            <Turkish>Kaydedilen ekipmanınız.</Turkish>
             <Korean>저장된 로드아웃.</Korean>
             <Japanese>保存された装備。</Japanese>
             <Chinesesimp>你保存的装备。</Chinesesimp>
@@ -253,6 +268,7 @@
             <Portuguese>Aplique sua configuração salva.%1Você pode salvar sua configuração atual solicitando "Salvar configuração" no final desta lista.</Portuguese>
             <Russian>Примените сохраненный набор.%1Вы можете сохранить текущий набор, запросив 'Сохранить экипировку' в конце этого списка.</Russian>
             <Spanish>Aplica tu configuración guardada.%1Puedes guardar tu configuración actual solicitando "Guardar configuración" al final de esta lista.</Spanish>
+            <Turkish>Kayıtlı ekipmanınızı uygulayın.%1Bu listenin sonundaki 'Ekipman kaydet' seçeneğine tıklayarak mevcut ekipmanınızı kaydedebilirsiniz.</Turkish>
             <Korean>저장된 로드아웃을 적용하세요.%1이 목록의 끝에서 'Save loadout'을 요청하여 현재 로드아웃을 저장할 수 있습니다.</Korean>
             <Japanese>保存されたロードアウトを適用してください。%1このリストの最後に「Save loadout」を要求することで現在のロードアウトを保存することができます。</Japanese>
             <Chinesesimp>请应用您保存的装载配置。%1您可以在此列表末尾请求“保存装载配置”以保存当前装载配置。</Chinesesimp>
@@ -269,6 +285,7 @@
             <Portuguese>Configuração de equipamento salva.</Portuguese>
             <Russian>Экипировка сохранена.</Russian>
             <Spanish>Equipación guardada.</Spanish>
+            <Turkish>Ekipmanınız kaydedildi.</Turkish>
             <Korean>저장된 로드아웃</Korean>
             <Japanese>ロードアウトが保存されました</Japanese>
             <Chinesesimp>装备配置已保存</Chinesesimp>
@@ -285,6 +302,7 @@
             <Portuguese>A troca de equipes está desativada.</Portuguese>
             <Russian>Смена команд отключена.</Russian>
             <Spanish>El cambio de equipos está desactivado.</Spanish>
+            <Turkish>Takım değiştirme devre dışı bırakıldı.</Turkish>
             <Korean>팀 전환이 비활성화되었습니다.</Korean>
             <Japanese>チームのスイッチングは無効です。</Japanese>
             <Chinesesimp>团队切换被禁用。</Chinesesimp>
@@ -301,6 +319,7 @@
             <Portuguese>Você já se juntou à facção oposta. Por favor, volte para o seu time.</Portuguese>
             <Russian>Вы уже присоединились к противоположной фракции. Пожалуйста, вернитесь к своей команде.</Russian>
             <Spanish>Ya te uniste a la facción opuesta. Por favor, regresa a tu equipo.</Spanish>
+            <Turkish>Zaten karşı tarafa katıldınız. Lütfen takımınıza dönün.</Turkish>
             <Korean>이미 반대 파업에 참여했습니다. 자신의 팀으로 돌아가주십시오.</Korean>
             <Japanese>既に対抗の派閥に参加しています。 あなたのチームに戻ってください。</Japanese>
             <Chinesesimp>您已经加入了对抗派别。请返回您的团队。</Chinesesimp>
@@ -317,6 +336,7 @@
             <Portuguese>Resetar a seleção de alvo?</Portuguese>
             <Russian>Сбросить выбор цели?</Russian>
             <Spanish>¿Reiniciar selección de objetivo?</Spanish>
+            <Turkish>Hedef seçimi sıfırlansın mı?</Turkish>
             <Korean>대상 선택 재설정?</Korean>
             <Japanese>ターゲットの選択をリセットしますか？</Japanese>
             <Chinesesimp>重置目标选择？</Chinesesimp>
@@ -333,6 +353,7 @@
             <Portuguese>Votos necessários.</Portuguese>
             <Russian>Требуется голосов.</Russian>
             <Spanish>Votos necesarios.</Spanish>
+            <Turkish>Oy gerekli.</Turkish>
             <Korean>필요한 투표 수.</Korean>
             <Japanese>必要な投票数。</Japanese>
             <Chinesesimp>需要的投票数。</Chinesesimp>
@@ -349,6 +370,7 @@
             <Portuguese>Salvando.</Portuguese>
             <Russian>Сохранение.</Russian>
             <Spanish>Guardando.</Spanish>
+            <Turkish>Kaydediliyor.</Turkish>
             <Korean>저장 중.</Korean>
             <Japanese>保存中。</Japanese>
             <Chinesesimp>正在保存。</Chinesesimp>
@@ -365,6 +387,7 @@
             <Portuguese>Possibilidade de salvar o jogo no menu de pausa.</Portuguese>
             <Russian>Возможность сохранить игру в меню паузы.</Russian>
             <Spanish>Posibilidad de guardar el juego en el menú de pausa.</Spanish>
+            <Turkish>Duraklatma menüsünde oyunu kaydetme imkanı.</Turkish>
             <Korean>일시 정지 메뉴에서 게임을 저장할 수 있는 가능성.</Korean>
             <Japanese>ポーズメニューでゲームを保存する可能性。</Japanese>
             <Chinesesimp>在暂停菜单保存游戏的可能性。</Chinesesimp>
@@ -381,6 +404,7 @@
             <Portuguese>Neblina de guerra.</Portuguese>
             <Russian>Туман войны.</Russian>
             <Spanish>Niebla de la guerra.</Spanish>
+            <Turkish>Savaş sisi.</Turkish>
             <Korean>전쟁의 안개.</Korean>
             <Japanese>戦争の霧.</Japanese>
             <Chinesesimp>战争迷雾.</Chinesesimp>
@@ -397,6 +421,7 @@
             <Portuguese>Mostrar localização da base inimiga.</Portuguese>
             <Russian>Показать местоположение вражеской базы.</Russian>
             <Spanish>Mostrar ubicación de la base enemiga.</Spanish>
+            <Turkish>Düşman üssünün yerini göster.</Turkish>
             <Korean>적 기지 위치 표시</Korean>
             <Japanese>敵の基地の位置を示す</Japanese>
             <Chinesesimp>显示敌方基地位置。</Chinesesimp>
@@ -413,6 +438,7 @@
             <Portuguese>Mostrar nada.</Portuguese>
             <Russian>Ничего не показывать.</Russian>
             <Spanish>No mostrar nada.</Spanish>
+            <Turkish>Hiçbir şey gösterme.</Turkish>
             <Korean>아무것도 보여주지 않음.</Korean>
             <Japanese>何も表示しない。</Japanese>
             <Chinesesimp>不显示任何内容。</Chinesesimp>
@@ -429,6 +455,7 @@
             <Portuguese>Ativo despachado.</Portuguese>
             <Russian>Объект отправлен.</Russian>
             <Spanish>Activo enviado.</Spanish>
+            <Turkish>Varlık sevk edildi.</Turkish>
             <Korean>자산 배송됨.</Korean>
             <Japanese>アセット送信済み。</Japanese>
             <Chinesesimp>资产已派遣。</Chinesesimp>
@@ -445,6 +472,7 @@
             <Portuguese>Não há jogadores aliados disponíveis.</Portuguese>
             <Russian>Нет доступных союзных игроков.</Russian>
             <Spanish>No hay jugadores aliados disponibles.</Spanish>
+            <Turkish>Müttefik oyuncu yok.</Turkish>
             <Korean>얼라이언스 플레이어가 없습니다.</Korean>
             <Japanese>同盟プレイヤーがいません。</Japanese>
             <Chinesesimp>没有可用的盟军玩家。</Chinesesimp>
@@ -461,6 +489,7 @@
             <Portuguese>Encomendar caminhão médico de viagem rápida</Portuguese>
             <Russian>Заказать быстроходный медицинский грузовик</Russian>
             <Spanish>Solicite un camión médico de viaje rápido</Spanish>
+            <Turkish>Hızlı seyahat aracı sipariş edin</Turkish>
             <Korean>빠른 여행 의료 트럭 주문</Korean>
             <Japanese>高速旅行車を注文する</Japanese>
             <Chinesesimp>订购快速旅行医疗车</Chinesesimp>
@@ -477,6 +506,7 @@
             <Portuguese>Viagem rápida para caminhão médico</Portuguese>
             <Russian>Быстрое путешествие в медицинский грузовик</Russian>
             <Spanish>Viaje rápido a camión médico</Spanish>
+            <Turkish>Tıbbi araca hızlı seyahat</Turkish>
             <Korean>의료 트럭으로 빠른 이동</Korean>
             <Japanese>移動するスポーンへのフラストトラベル</Japanese>
             <Chinesesimp>快速前往医疗卡车</Chinesesimp>
@@ -493,6 +523,7 @@
             <Portuguese>Veículo de viagem rápida já existe.</Portuguese>
             <Russian>Передвижной спавн уже существует.</Russian>
             <Spanish>El vehículo de viaje rápido ya existe.</Spanish>
+            <Turkish>Hızlı seyahat aracı zaten mevcüt.</Turkish>
             <Korean>빠른 여행 차량이 이미 존재합니다.</Korean>
             <Japanese>早い旅行車両がすでに存在します。</Japanese>
             <Chinesesimp>快速旅行车辆已经存在。</Chinesesimp>
@@ -509,6 +540,7 @@
             <Portuguese>Você precisa estar em um setor de propriedade.</Portuguese>
             <Russian>Вы должны быть в собственном секторе.</Russian>
             <Spanish>Necesitas estar en un sector propiedad.</Spanish>
+            <Turkish>Sahip olunan bir sektörde olmanız gerekiyor.</Turkish>
             <Korean>소유한 섹터에 있어야 합니다.</Korean>
             <Japanese>所有権のあるセクターにいる必要があります。</Japanese>
             <Chinesesimp>您需要在拥有的扇区中。</Chinesesimp>
@@ -525,6 +557,7 @@
             <Portuguese>Nenhum veículo de viagem rápida disponível.</Portuguese>
             <Russian>Нет доступного передвижного спавна.</Russian>
             <Spanish>No hay ningún vehículo de viaje rápido disponible.</Spanish>
+            <Turkish>Hızlı seyahat aracı mevcut değildir.</Turkish>
             <Korean>속도 여행 용 차량이 없습니다.</Korean>
             <Japanese>高速旅行用の車両が利用可能ではありません。</Japanese>
             <Chinesesimp>没有快速旅行车辆。</Chinesesimp>
@@ -541,6 +574,7 @@
             <Portuguese>Viajando rápido para o veículo de viagem rápida.</Portuguese>
             <Russian>Быстрое перемещение к передвижному спавну.</Russian>
             <Spanish>Viajando rápidamente al vehículo de viaje rápido.</Spanish>
+            <Turkish>Hızlı seyahat aracına hızlı seyahat ediliyor.</Turkish>
             <Korean>빠른 여행 차량으로 빠른 여행 중입니다.</Korean>
             <Japanese>高速旅行車両に高速旅行中です。</Japanese>
             <Chinesesimp>正在快速旅行到快速旅行车辆。</Chinesesimp>
@@ -557,6 +591,7 @@
             <Portuguese>seus pontos de comando atuais (CP) foram salvos.</Portuguese>
             <Russian>ваши текущие командные очки (CP) были сохранены.</Russian>
             <Spanish>sus puntos de comando actuales (CP) han sido guardados.</Spanish>
+            <Turkish>Mevcut komuta puanınız (CP) kaydedildi.</Turkish>
             <Korean>현재의 커맨드 포인트 (CP)가 저장되었습니다.</Korean>
             <Japanese>現在のコマンドポイント (CP) が保存されました。</Japanese>
             <Chinesesimp>您当前的命令点 (CP) 已被保存。</Chinesesimp>
@@ -573,6 +608,7 @@
             <Portuguese>seus pontos de comando anteriores (CP) foram recebidos.</Portuguese>
             <Russian>ваши предыдущие командные очки (CP) были получены.</Russian>
             <Spanish>sus puntos de comando anteriores (CP) han sido recibidos.</Spanish>
+            <Turkish>Kaydedilen komuta puanınız (CP) geri yüklendi.</Turkish>
             <Korean>이전 명령 포인트 (CP)가 수신되었습니다.</Korean>
             <Japanese>以前のコマンドポイント (CP) が受信されました。</Japanese>
             <Chinesesimp>您以前的命令点 (CP) 已收到。</Chinesesimp>
@@ -589,6 +625,7 @@
             <Portuguese>Você não tinha pontos de comando (CP) anteriores.</Portuguese>
             <Russian>у вас не было предыдущих командных очков (CP).</Russian>
             <Spanish>No tenías puntos de comando (CP) previos.</Spanish>
+            <Turkish>Önceden komuta puanınız (CP) yoktu.</Turkish>
             <Korean>전에는 명령 포인트(CP)가 없었습니다.</Korean>
             <Japanese>以前はコマンドポイント(CP)がありませんでした。</Japanese>
             <Chinesesimp>您以前没有指挥点(CP)。</Chinesesimp>
@@ -605,6 +642,7 @@
             <Portuguese>Abra o menu de informações</Portuguese>
             <Russian>Открыть меню "Информация"</Russian>
             <Spanish>Abrir el menú de información</Spanish>
+            <Turkish>Bilgi menüsünü açın.</Turkish>
             <Korean>정보 메뉴 열기</Korean>
             <Japanese>情報メニューを開きます</Japanese>
             <Chinesesimp>打开信息菜单</Chinesesimp>
@@ -621,6 +659,7 @@
             <Portuguese>Reset de votação por setor solicitado por %1.</Portuguese>
             <Russian>Запрос на сброс голосования по секторам от %1.</Russian>
             <Spanish>Reinicio de la votación por sector solicitado por %1.</Spanish>
+            <Turkish>Sektör oylamasının sıfırlanması %1 tarafından talep edildi.</Turkish>
             <Korean>%1에 의해 섹터 투표 재설정이 요청되었습니다.</Korean>
             <Japanese>%1によるセクター投票のリセットが要求されました。</Japanese>
             <Chinesesimp>%1请求重置部门投票。</Chinesesimp>
@@ -637,6 +676,7 @@
             <Portuguese>%1 doou %3CP para %2.</Portuguese>
             <Russian>%1 пожертвовал %3CP %2.</Russian>
             <Spanish>%1 ha donado %3CP a %2.</Spanish>
+            <Turkish>%1 tarafından %3CP bağışlandı %2 tarafına.</Turkish>
             <Korean>%1이 %2에게 %3CP를 기부했습니다.</Korean>
             <Japanese>%1は%2に%3CPを寄付しました。</Japanese>
             <Chinesesimp>%1捐赠了%3CP给%2。</Chinesesimp>
@@ -653,6 +693,7 @@
             <Portuguese>Indisponível.</Portuguese>
             <Russian>Недоступен.</Russian>
             <Spanish>Indisponible.</Spanish>
+            <Turkish>Ulaşılabilir değil.</Turkish>
             <Korean>없는.</Korean>
             <Japanese>利用できません。</Japanese>
             <Chinesesimp>不可用。</Chinesesimp>
@@ -669,6 +710,7 @@
             <Portuguese>Habilitar dazzler</Portuguese>
             <Russian>Включить dazzler</Russian>
             <Spanish>Habilitar dazzler</Spanish>
+            <Turkish>Dazzler'ı etkinleştir</Turkish>
             <Korean>Dazzler 활성화</Korean>
             <Japanese>Dazzler を有効にする</Japanese>
             <Chinesesimp>启用 dazzler</Chinesesimp>
@@ -685,6 +727,7 @@
             <Portuguese>Desativar dazzler</Portuguese>
             <Russian>Отключить dazzler</Russian>
             <Spanish>Deshabilitar dazzler</Spanish>
+            <Turkish>Dazzler'ı devre dışı bırak</Turkish>
             <Korean>Dazzler 비활성화</Korean>
             <Japanese>Dazzler を無効にする</Japanese>
             <Chinesesimp>禁用 dazzler</Chinesesimp>
@@ -701,6 +744,7 @@
             <Portuguese>Render</Portuguese>
             <Russian>Сдаваться</Russian>
             <Spanish>Rendirse</Spanish>
+            <Turkish>Teslim ol</Turkish>
             <Korean>항복</Korean>
             <Japanese>降伏</Japanese>
             <Chinesesimp>投降</Chinesesimp>
@@ -717,6 +761,7 @@
             <Portuguese>Vote para se render.</Portuguese>
             <Russian>Начать голосование за сдачу.</Russian>
             <Spanish>Voto para rendirse.</Spanish>
+            <Turkish>Teslim olma oylaması başlatın.</Turkish>
             <Korean>항복에 투표하십시오.</Korean>
             <Japanese>降伏に投票してください。</Japanese>
             <Chinesesimp>投票投降。</Chinesesimp>
@@ -733,6 +778,7 @@
             <Portuguese>Precisa de pelo menos 4 membros da equipe em sua equipe.</Portuguese>
             <Russian>В вашей команде должно быть не менее 4 человек.</Russian>
             <Spanish>Necesita al menos 4 miembros del equipo en su equipo.</Spanish>
+            <Turkish>Takımınızda en az 4 takım üyesi olması gerekiyor.</Turkish>
             <Korean>팀에 최소 4명의 팀원이 필요합니다.</Korean>
             <Japanese>チームには少なくとも 4 人のチーム メンバーが必要です。</Japanese>
             <Chinesesimp>您的团队中至少需要 4 名团队成员。</Chinesesimp>
@@ -749,6 +795,7 @@
             <Portuguese>Consertar / Rearmar possível</Portuguese>
             <Russian>Перевооружение / Ремонт доступны</Russian>
             <Spanish>Reparación / Rearme posible</Spanish>
+            <Turkish>Onarım / Yeniden silahlandırma mümkün</Turkish>
             <Korean>수리/재장 가능</Korean>
             <Japanese>修理・リアーム可能</Japanese>
             <Chinesesimp>可以修理/重新装弹</Chinesesimp>
@@ -765,6 +812,7 @@
             <Portuguese>Feche seu inventário.</Portuguese>
             <Russian>Закройте свой инвентарь.</Russian>
             <Spanish>Cierra tu inventario.</Spanish>
+            <Turkish>Envanterinizi kapatın.</Turkish>
             <Korean>인벤토리를 닫습니다.</Korean>
             <Japanese>在庫を閉じます。</Japanese>
             <Chinesesimp>关闭您的库存。</Chinesesimp>
@@ -781,6 +829,7 @@
             <Portuguese>ativar betty</Portuguese>
             <Russian>Включить Бетти</Russian>
             <Spanish>Habilitar betty</Spanish>
+            <Turkish>Betty'yi etkinleştir.</Turkish>
             <Korean>베티 활성화</Korean>
             <Japanese>ベティを有効にする</Japanese>
             <Chinesesimp>启用贝蒂</Chinesesimp>
@@ -797,6 +846,7 @@
             <Portuguese>desativar betty</Portuguese>
             <Russian>Отключить Бетти</Russian>
             <Spanish>Deshabilitar betty</Spanish>
+            <Turkish>Betty'yi kapat</Turkish>
             <Korean>베티 비활성화</Korean>
             <Japanese>ベティを無効にする</Japanese>
             <Chinesesimp>禁用贝蒂</Chinesesimp>
@@ -813,6 +863,7 @@
             <Portuguese>As equipes estão desequilibradas</Portuguese>
             <Russian>Команды не сбалансированы</Russian>
             <Spanish>Los equipos están desequilibrados</Spanish>
+            <Turkish>Takımlar dengesiz</Turkish>
             <Korean>팀의 불균형</Korean>
             <Japanese>チームのバランスが悪い</Japanese>
             <Chinesesimp>团队不平衡</Chinesesimp>
@@ -829,6 +880,7 @@
             <Portuguese>Por favor, troque de equipe. Este time está completo.</Portuguese>
             <Russian>Пожалуйста, поменяйтесь командами. Эта команда полная.</Russian>
             <Spanish>Por favor, cambie de equipo. Este equipo está lleno.</Spanish>
+            <Turkish>Lütfen takım değiştiriniz. Bu takım dolu.</Turkish>
             <Korean>팀을 바꿔주세요. 이 팀은 꽉 찼습니다.</Korean>
             <Japanese>チームを切り替えてください。このチームは満員です。</Japanese>
             <Chinesesimp>请换队。这个团队已经满员了。</Chinesesimp>
@@ -845,6 +897,7 @@
             <Portuguese>Definir recompensa</Portuguese>
             <Russian>Установить награду</Russian>
             <Spanish>Establecer recompensa</Spanish>
+            <Turkish>Ödül belirle</Turkish>
             <Korean>현상금 설정</Korean>
             <Japanese>報奨金を設定する</Japanese>
             <Chinesesimp>设置赏金</Chinesesimp>
@@ -861,6 +914,7 @@
             <Portuguese>Não há jogadores suficientes</Portuguese>
             <Russian>Недостаточно игроков</Russian>
             <Spanish>No hay suficientes jugadores</Spanish>
+            <Turkish>Yeterli sayıda oyuncu yok</Turkish>
             <Korean>플레이어가 충분하지 않습니다.</Korean>
             <Japanese>プレイヤーが足りません</Japanese>
             <Chinesesimp>玩家不足</Chinesesimp>
@@ -877,6 +931,7 @@
             <Portuguese>Designar um alvo de alto valor</Portuguese>
             <Russian>Назначить цель c высокой ценностью</Russian>
             <Spanish>Designar un objetivo de alto valor</Spanish>
+            <Turkish>Yüksek değerli bir hedef atayın</Turkish>
             <Korean>고가치 대상 지정</Korean>
             <Japanese>高い価値の目標を指定する</Japanese>
             <Chinesesimp>指定高价值目标</Chinesesimp>
@@ -893,6 +948,7 @@
             <Portuguese>Coloque uma recompensa em alguém para que os jogadores possam coletá-la.</Portuguese>
             <Russian>Установите награду на кого-то, чтобы игроки могли ee собрать.</Russian>
             <Spanish>Coloca una recompensa sobre alguien para que los jugadores la recolecten.</Spanish>
+            <Turkish>Oyuncuların toplaması için birine ödül koyun.</Turkish>
             <Korean>플레이어가 모아들일 수 있는 누군가에게 보상을 지급하세요.</Korean>
             <Japanese>プレイヤーが集めるために誰かに懸賞金を設定します。</Japanese>
             <Chinesesimp>对某个人设置赏金，供玩家收集。</Chinesesimp>
@@ -909,6 +965,7 @@
             <Portuguese>Ativar CIWS</Portuguese>
             <Russian>Включить CIWS</Russian>
             <Spanish>Habilitar CIWS</Spanish>
+            <Turkish>CIWS'yi etkinleştir</Turkish>
             <Korean>CIWS 활성화</Korean>
             <Japanese>CIWSを有効にする</Japanese>
             <Chinesesimp>启用CIWS</Chinesesimp>
@@ -925,6 +982,7 @@
             <Portuguese>Desativar CIWS</Portuguese>
             <Russian>Отключить CIWS</Russian>
             <Spanish>Deshabilitar CIWS</Spanish>
+            <Turkish>CIWS'yi kapat</Turkish>
             <Korean>CIWS 비활성화</Korean>
             <Japanese>CIWSを無効にする</Japanese>
             <Chinesesimp>禁用CIWS</Chinesesimp>
@@ -941,6 +999,7 @@
             <Portuguese>Abra o Menu Warlords</Portuguese>
             <Russian>Откройте Меню Warlords</Russian>
             <Spanish>Abre el Menú Warlords</Spanish>
+            <Turkish>Warlords Menüsünü Aç</Turkish>
             <Korean>Warlords 메뉴 열기</Korean>
             <Japanese>Warlords メニューを開く</Japanese>
             <Chinesesimp>打开Warlords菜单</Chinesesimp>
@@ -957,6 +1016,7 @@
             <Portuguese>%3%12%4 %1%2 Encomendar veículos, aeronaves, defesas, SAMS, AAA...%1%2 Também lhe dará acesso a varreduras de setor, reinicialização de setor e outras coisas estratégicas.%1%2 Aqui você também pode transferir CP.</Portuguese>
             <Russian>%3%12%4 %1%2 Заказ транспортных средств, самолетов, средств защиты, BPK, ПВО...%1%2 Это также даст вам доступ к сканированию секторов, сбросу секторов и другим стратегическим вещам.%1%2 Здесь вы также может передавать CP.</Russian>
             <Spanish>%3%12%4 %1%2 Solicite vehículos, aeronaves, defensas, SAMS, AAA ...%1%2 También le dará acceso a escaneos de sector, restablecimiento de sector y otras cosas estratégicas.%1%2 Aquí usted también puede transferir CP.</Spanish>
+            <Turkish>%3%12%4 %1%2 Araçlar, uçaklar, savunmalar, hava savunma sistemi, uçaksavar topçusu ... sipariş edin %1%2 Ayrıca sektör taramalarına, sektör sıfırlamaya ve diğer stratejik şeylere erişmenizi sağlar.%1%2 Burda ayrıca diğer oyunculara CP aktarılabilir.</Turkish>
             <Korean>%3%12%4 %1%2 차량, 항공기, 방어, SAMS, AAA ...%1%2 또한 섹터 스캔, 섹터 재설정 및 기타 전략적 요소에 대한 액세스 권한을 제공합니다.%1%2 여기 있습니다 CP도 양도할 수 있습니다.</Korean>
             <Japanese>%3%12%4 %1%2 車両、航空機、防衛、SAMS、AAA ...%1%2 セクター スキャン、セクター リセット、その他の戦略的な機能にもアクセスできます。%1%2 ここで CPも移行できる。</Japanese>
             <Chinesesimp>%3%12%4 %1%2 订购车辆、飞机、防御系统、SAMS、AAA ...%1%2 它还会让您访问扇区扫描、扇区重置和其他战略内容。%1%2 给您 还能转CP。</Chinesesimp>
@@ -973,6 +1033,7 @@
             <Portuguese>Segure % 11</Portuguese>
             <Russian>Удерживать %11</Russian>
             <Spanish>Mantener %11</Spanish>
+            <Turkish>%11 tuşunu basılı tutun</Turkish>
             <Korean>%11 보류</Korean>
             <Japanese>%11を押し続ける</Japanese>
             <Chinesesimp>按住 %11</Chinesesimp>
@@ -989,6 +1050,7 @@
             <Portuguese>Aviso de fogo amigo</Portuguese>
             <Russian>Предупреждение o братском выстреле</Russian>
             <Spanish>Advertencia de disparo fraternal</Spanish>
+            <Turkish>Dost ateşi uyarısı</Turkish>
             <Korean>형제 총격 경고</Korean>
             <Japanese>兄弟銃撃警告</Japanese>
             <Chinesesimp>兄弟出手警告</Chinesesimp>
@@ -1005,6 +1067,7 @@
             <Portuguese>%3%12%4, Matar muitos amigos resultará em prisão. Certifique-se de identificar seus alvos antes de atirar.%1%2 Ao identificar os alvos, você pode usar %11 e perguntar se esse alvo é amigável.%1</Portuguese>
             <Russian>%3%12%4, Убийство многих товарищей приведет к тюремному заключению. Убедитесь, что вы определили свои цели, прежде чем стрелять.%1%2 При определении целей вы можете использовать %11 и спросить, является ли эта цель дружественной.%1</Russian>
             <Spanish>%3%12%4, Matar a muchos amigos te llevará a la cárcel. Asegúrate de identificar tus objetivos antes de disparar.%1%2 Al identificar objetivos, puedes utilizar %11 y preguntar si ese objetivo es amistoso.%1</Spanish>
+            <Turkish>%3%12%4, Çok sayıda dost öldürmek hapis cezasıyla sonuçlanacak. Ateş etmeden önce hedeflerinizi belirlediğinizden emin olun.%1%2 Hedefleri belirlerken, %11 kullanıp ve bu hedefin dost olup olmadığını sorabilirsiniz.%1</Turkish>
             <Korean>%3%12%4, 많은 아군을 죽이면 감옥에 가게 됩니다. 쏘기 전에 목표물을 확인하십시오.%1%2 목표물을 식별할 때 %11을(를) 활용하고 목표물이 우호적인지 물어볼 수 있습니다.%1</Korean>
             <Japanese>%3%12%4, 多くの味方を殺害すると懲役刑が科せられます。 射撃する前に必ずターゲットを特定してください。%1%2 ターゲットを特定するときは、%11 を利用して、そのターゲットが友好的かどうかを尋ねることができます。%1</Japanese>
             <Chinesesimp>%3%12%4, 杀死许多友军将导致入狱。 确保在射击前识别目标。%1%2 在识别目标时，您可以使用 %11 并询问该目标是否友好。%1</Chinesesimp>
@@ -1021,6 +1084,7 @@
             <Portuguese>Conheça a cor do que seus inimigos vestem, isso pode ajudar. Você tem %13 mortes por fogo amigo antes de ser preso.</Portuguese>
             <Russian>Узнайте цвет одежды ваших врагов, это может помочь. У вас осталось %13 убийств дружественным огнем до того, как вас посадят в тюрьму.</Russian>
             <Spanish>Conozca el color de lo que usan sus enemigos, esto puede ayudar. Te quedan %13 muertes por fuego amigo antes de que te encarcelen.</Spanish>
+            <Turkish>Düşmanlarınızın giydiği renkleri öğrenmek önemlidir, bu size yardımcı olabilir. Hapsedilmeden önce yapabileceğiniz %13 dost ateşi öldürme hakkınız bulunmaktadır.</Turkish>
             <Korean>적의 옷 색깔을 파악하면 도움이 될 수 있습니다. 투옥되기 전에 %13 아군 사살이 남았습니다.</Korean>
             <Japanese>敵が着ている服の色を知ると役に立ちます。 投獄されるまでに残り %13 の味方射撃キルが残っています。</Japanese>
             <Chinesesimp>了解敌人穿着的颜色，这会有所帮助。 在您入狱之前，您还剩下 %13 次友军射击击杀。</Chinesesimp>
@@ -1037,6 +1101,7 @@
             <Portuguese></Portuguese>
             <Russian></Russian>
             <Spanish></Spanish>
+            <Turkish></Turkish>
             <Korean></Korean>
             <Japanese></Japanese>
             <Chinesesimp></Chinesesimp>
@@ -1047,70 +1112,87 @@
         <Key ID="STR_MRTM_easterEgg_hint_0">
             <Original>"Gain the acceptance of the respected villager on the hill, as their judgement determines whether you become an integral part of the village's fabric."</Original>
             <English>"Gain the acceptance of the respected villager on the hill, as their judgement determines whether you become an integral part of the village's fabric."</English>
+            <Turkish>"Saygın köylünün tepedeki kabulünü kazanın, çünkü sizin köyün dokusunun ayrılmaz bir parçası olmanızı belirler."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_1">
             <Original>"Beyond the clouds, an enigmatic dwelling is concealed, accessible only to those who explore the peaks."</Original>
             <English>"Beyond the clouds, an enigmatic dwelling is concealed, accessible only to those who explore the peaks."</English>
+            <Turkish>"Bulutların ötesinde, gizemli bir ikamet yeri gizlidir, sadece zirveleri keşfedenlere erişilebilir."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_2">
             <Original>"Amidst the jagged crags and swirling mist, a hidden dwelling awaits those who decipher the ancient symbols."</Original>
             <English>"Amidst the jagged crags and swirling mist, a hidden dwelling awaits those who decipher the ancient symbols."</English>
+            <Turkish>"Sivrilen kayalıklar ve dönen sisin arasında, eski sembolleri çözenlere gizli bir ikamet yeri bekliyor."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_3">
             <Original>"A keen eye will spot the fleeting glimmer, revealing the covert dwelling nestled in the rugged embrace of the mountain."</Original>
             <English>"A keen eye will spot the fleeting glimmer, revealing the covert dwelling nestled in the rugged embrace of the mountain."</English>
+            <Turkish>"Dikkatli bir göz, kaçan parıltıyı fark edecek, dağın kaba kucaklamasına gömülen gizli ikamet yeri ortaya çıkacak."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_4">
             <Original>"Navigate through the treacherous pass, where only the most daring shall uncover the concealed house veiled by nature's camouflage."</Original>
             <English>"Navigate through the treacherous pass, where only the most daring shall uncover the concealed house veiled by nature's camouflage."</English>
+            <Turkish>"En tehlikeli geçitten geçerek, doğanın kamuflajıyla örtülü gizli bir evi ortaya çıkaran yalnızca en cesur olanlar olacak."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_5">
             <Original>"The wind whispers tales of a lone guardian, hidden high above the world, awaiting those who dare to uncover his hidden retreat."</Original>
             <English>"The wind whispers tales of a lone guardian, hidden high above the world, awaiting those who dare to uncover his hidden retreat."</English>
+            <Turkish>"Rüzgar, dünyanın üzerinde yüksekte saklanan yalnız bir bekçinin hikayelerini fısıldıyor, gizli sığınağını ortaya çıkarmak için cesaret edenleri bekliyor."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_6">
             <Original>"Venture into the realm of the mountain's sage, where whispers of knowledge and secrets entwine, beckoning the curious to unearth his hidden dwelling."</Original>
             <English>"Venture into the realm of the mountain's sage, where whispers of knowledge and secrets entwine, beckoning the curious to unearth his hidden dwelling."</English>
+            <Turkish>"Bilginin ve sırların fısıltılarıyla örülü dağın bilge köylüsünün krallığına girin, meraklıları çağıran gizli ikamet yerini ortaya çıkarın."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_7">
             <Original>"Seek the blessing of the wise villager perched on high, for their permission ensures your safe passage and a future among these valleys."</Original>
             <English>"Seek the blessing of the wise villager perched on high, for their permission ensures your safe passage and a future among these valleys."</English>
+            <Turkish>"Yüksekte konumlanmış bilge köylünün rızasını arayın, çünkü izinleri güvenli geçişinizi ve bu vadilerdeki geleceğinizi sağlar."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_8">
             <Original>"Pay homage to the wise villager on the hill, as their approval determines whether your journey finds a haven in these lands."</Original>
             <English>"Pay homage to the wise villager on the hill, as their approval determines whether your journey finds a haven in these lands."</English>
+            <Turkish>"Tepeye konuşlanmış bilge köylüye saygı gösterin, çünkü onların onayı sizin yolculuğunuzun bu topraklarda bir sığınak bulup bulmayacağını belirler."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_hint_9">
             <Original>"Commune with the wise villager residing on the hill, as their favor dictates whether you are granted the privilege of calling this land your home."</Original>
             <English>"Commune with the wise villager residing on the hill, as their favor dictates whether you are granted the privilege of calling this land your home."</English>
+            <Turkish>"Tepeye yerleşmiş bilge köylüyle iletişim kurun, çünkü onların lütfu size bu toprakları eviniz olarak seçme ayrıcalığını verir."</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_1">
             <Original>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</Original>
             <English>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</English>
+            <Turkish>Yorgun yolcu, tepedeki bilge köylünün denetimindeki krallığa hoş geldin. Yollarımızın kesişmesi tesadüf değildir, çünkü sizi bu an için yönlendiren azminizdir.</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_2">
             <Original>Know that the home you seek is not merely a shelter, but a privilege bestowed upon those who prove their worth. The decision lies in my hands, as the wise villager entrusted with the harmony of this village.</Original>
             <English>Know that the home you seek is not merely a shelter, but a privilege bestowed upon those who prove their worth. The decision lies in my hands, as the wise villager entrusted with the harmony of this village.</English>
+            <Turkish>Bilin ki aradığınız ev sadece bir sığınak değil, değerlerini kanıtlayanlara bahşedilen bir ayrıcalıktır. Karar, bu köyün uyumuna güvenilen bilge köylünün elindedir.</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_3">
             <Original>To be granted a place among us, you must prove your dedication to the well-being of this community. Embark on quests, aid the villagers, and let your actions speak louder than words. It is through your deeds that you shall find your true belonging.</Original>
             <English>To be granted a place among us, you must prove your dedication to the well-being of this community. Embark on quests, aid the villagers, and let your actions speak louder than words. It is through your deeds that you shall find your true belonging.</English>
+            <Turkish>Aramızda yer almak için, bu toplumun refahına olan bağlılığınızı kanıtlamanız gerekmektedir. Görevlere katılın, köylülere yardım edin ve eylemleriniz sözlerinizden daha fazla konuşsun. Gerçek aidiyetinizi eylemlerinizle bulacaksınız.</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_4">
             <Original>Remember, the fate of your residency rests upon the choices you make. The village flourishes when each resident contributes selflessly and respects the balance of nature that surrounds us.</Original>
             <English>Remember, the fate of your residency rests upon the choices you make. The village flourishes when each resident contributes selflessly and respects the balance of nature that surrounds us.</English>
+            <Turkish>Unutmayın, ikamet yerinizin kaderi yaptığınız seçimlere bağlıdır. Köy, her sakinin özverili katkılarıyla ve etrafımızı saran doğanın dengesine saygı göstererek gelişir.</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_5">
             <Original>Should you prove yourself, the embrace of this cherished community shall be yours to claim. But tread carefully, for the wise villager's judgment is fair but discerning.</Original>
             <English>Should you prove yourself, the embrace of this cherished community shall be yours to claim. But tread carefully, for the wise villager's judgment is fair but discerning.</English>
+            <Turkish>Eğer kendinizi kanıtlarsanız, bu sevgi dolu topluluğun kucaklaması size ait olacak. Ancak dikkatli adımlar atın, çünkü bilge köylünün hükmü adildir ancak seçicidir.</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_6">
             <Original>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</Original>
             <English>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</English>
+            <Turkish>Yolunuz dürüstlükle yönlendirilsin ve varlığınız alçakgönüllü köyümüzde uyumu sağlasın. Seçim şimdi sizin elinizde. Kararlılıkla ilerleyin ve talihin layık olanları korusun.</Turkish>
         </Key>
         <Key ID="STR_MRTM_easterEgg_interact_reward">
             <Original>Ah, young traveler, before you continue your journey, take a moment to consult your map. As a token of gratitude for your presence and determination, I have bestowed upon you a small gift. May it serve as a guiding light amidst the challenges that lie ahead. Remember, with each step you take, you carry the wisdom of this village within you. Safe travels, and may our paths cross again in serendipitous harmony.</Original>
             <English>Ah, young traveler, before you continue your journey, take a moment to consult your map. As a token of gratitude for your presence and determination, I have bestowed upon you a small gift. May it serve as a guiding light amidst the challenges that lie ahead. Remember, with each step you take, you carry the wisdom of this village within you. Safe travels, and may our paths cross again in serendipitous harmony.</English>
+            <Turkish>Ah, genç yolcu, yolculuğunuza devam etmeden önce haritanıza bir göz atma zamanı. Varlığınız ve azminiz için bir teşekkür olarak size küçük bir hediye sundum. İleriye yönelik zorluklar karşısında size yol gösteren bir ışık olsun. Unutmayın, attığınız her adımda bu köyün bilgeliğini taşıyorsunuz. Güvenli seyahatler ve umarım yollarımız yeniden serendipitik bir uyumla kesişir.</Turkish>
         </Key>
     </Container>
     <Container name="MRTM_welcomeScreen">
@@ -1125,6 +1207,7 @@
             <Portuguese>Sobre Warlords Redux.</Portuguese>
             <Russian>O Warlords Redux.</Russian>
             <Spanish>Acerca de Warlords Redux.</Spanish>
+            <Turkish>Warlords Redux Hakkında.</Turkish>
             <Korean>Warlords Redux에 대하여.</Korean>
             <Japanese>Warlords Reduxについて。</Japanese>
             <Chinesesimp>关于 Warlords Redux。</Chinesesimp>
@@ -1141,6 +1224,7 @@
             <Portuguese>Como Jogar.</Portuguese>
             <Russian>Как играть.</Russian>
             <Spanish>Cómo Jugar.</Spanish>
+            <Turkish>Nasıl Oynanır.</Turkish>
             <Korean>어떻게 플레이하나요.</Korean>
             <Japanese>どのようにプレイするか.</Japanese>
             <Chinesesimp>如何玩耍。</Chinesesimp>
@@ -1157,6 +1241,7 @@
             <Portuguese>A comunidade WSV.</Portuguese>
             <Russian>Сообщество WSV.</Russian>
             <Spanish>La comunidad WSV.</Spanish>
+            <Turkish>WSV Topluluğu.</Turkish>
             <Korean>WSV 커뮤니티.</Korean>
             <Japanese>WSVコミュニティ.</Japanese>
             <Chinesesimp>WSV社区.</Chinesesimp>
@@ -1173,6 +1258,7 @@
             <Portuguese>Nosso Discord.</Portuguese>
             <Russian>Наш Discord.</Russian>
             <Spanish>Nuestro Discord.</Spanish>
+            <Turkish>Discord Sunucumuz.</Turkish>
             <Korean>우리의 Discord.</Korean>
             <Japanese>私たちのDiscord.</Japanese>
             <Chinesesimp>我们的Discord.</Chinesesimp>
@@ -1189,6 +1275,7 @@
             <Portuguese>Registro de mudanças.</Portuguese>
             <Russian>Журнал изменений.</Russian>
             <Spanish>Registro de cambios.</Spanish>
+            <Turkish>Değişiklik Günlüğü.</Turkish>
             <Korean>변경 사항 기록.</Korean>
             <Japanese>変更履歴。</Japanese>
             <Chinesesimp>更改日志。</Chinesesimp>
@@ -1205,6 +1292,7 @@
             <Portuguese>Scripts de terceiros.</Portuguese>
             <Russian>Скрипты третьих лиц.</Russian>
             <Spanish>Scripts de terceros.</Spanish>
+            <Turkish>Üçüncü Taraf Komut Dosyaları.</Turkish>
             <Korean>제3자 스크립트.</Korean>
             <Japanese>サードパーティースクリプト。</Japanese>
             <Chinesesimp>第三方脚本。</Chinesesimp>
@@ -1221,6 +1309,7 @@
             <Portuguese>Bem-vindo ao Warlords Redux!</Portuguese>
             <Russian>Добро пожаловать в Warlords Redux!</Russian>
             <Spanish>Bienvenido a Warlords Redux!</Spanish>
+            <Turkish>Warlords Redux'a hoş geldiniz!</Turkish>    
             <Korean>Warlords Redux에 오신 것을 환영합니다!</Korean>
             <Japanese>Warlords Reduxへようこそ！</Japanese>
             <Chinesesimp>欢迎来到Warlords Redux！</Chinesesimp>
@@ -1237,6 +1326,7 @@
             <Portuguese>Warlords Redux 2.5 é um projeto de atualização da comunidade para o Warlords Redux original. O objetivo do projeto é melhorar a visão do BI de warlords com correções de bugs e uma experiência de usuário mais equilibrada, mantendo a compatibilidade com os servidores oficiais para o melhor número de jogadores.</Portuguese>
             <Russian>Warlords Redux 2.5 – это проект обновления оригинального Warlords от сообщества War Sim Vets. Цель проекта – представить наилучшие решения для Warlords с исправлением ошибок и более сбалансированным пользовательским опытом, оставаясь при этом совместимым с официальными серверами для привлечения большего количества игроков.</Russian>
             <Spanish>Warlords Redux 2.5 es un proyecto de actualización de la comunidad para Warlords Redux original. Su objetivo de proyecto es mejorar la visión de BI de warlords con correcciones de errores y una experiencia de usuario más equilibrada, manteniendo la compatibilidad con los servidores oficiales para el mejor número de jugadores.</Spanish>
+            <Turkish>Warlords Redux 2.5 Orijinal Warlords Redux için bir topluluk yükseltme projesidir. Projenin amacı, warlords'un Bi vizyonunu hataları düzelterek ve daha dengeli bir kullanıcı deneyimi sunarak geliştirmektir. Aynı zamanda en iyi oyuncu sayısı için resmi sunucularla uyumlu olmayı hedefler.</Turkish>
             <Korean>Warlords Redux 2.5는 원래 Warlords Redux의 커뮤니티 업그레이드 프로젝트입니다. 그것의 프로젝트 목표는 버그 수정과 더 밸런스 있는 사용자 경험을 통해 Warlords의 BI 비전을 개선하면서도 공식 서버와 호환 가능한 최고 플레이어 수를 유지하는 것입니다.</Korean>
             <Japanese>Warlords Redux 2.5は元のWarlords Reduxのコミュニティアップグレードプロジェクトです。そのプロジェクトの目的はバグの修正とよりバランスのとれたユーザーエクスペリエンスを通じてWarlordsのBIのビジョンを改善することであり、公式サーバとの互換性を維持しながら最高のプレイヤー数を確保することです。</Japanese>
             <Chinesesimp>Warlords Redux 2.5是原始Warlords Redux的社区升级项目。它的目标是通过修复错误并提供更平衡的用户体验，在保持与官方服务器的兼容性的同时改进BI对Warlords的视野。</Chinesesimp>
@@ -1253,6 +1343,7 @@
             <Portuguese>Warlords Redux apresenta muitos novos recursos, como a Névoa da Guerra e localizações de base aleatórias. Possui muitos outros recursos novos em comparação com o Warlords original, como localizações de base aleatórias, pás de aeronaves personalizadas e a introdução de todos os drones/SAMs/AAA...</Portuguese>
             <Russian>Warlords Redux внедряет множество новых функций, таких как Туман Войны и случайное расположение баз команд. Также представлены и другие особенности: настраиваемые подвесы для авиации и введение всех оригинальных БПА/ЗРК/ПВО…</Russian>
             <Spanish>Warlords Redux introduce muchas nuevas funciones como la Niebla de Guerra y ubicaciones de base aleatorias. Tiene muchas otras funciones nuevas en comparación con Warlords clásico, como ubicaciones de base aleatorias, pórticos de aeronaves personalizados y la introducción de todos los drones/SAMs/AAA...</Spanish>
+            <Turkish>Warlords Redux, Savaş Sisi ve rastgele üs konumları gibi birçok yeni özellik sunar. Rastgele üs konumları, özel uçak pylonları, tüm dronların/Hava Savunma Sistemlerinin (SAM)/Uçaksavar Topçuları (AAA) tanıtımı gibi vanilla warlords'a kıyasla diğer birçok yeni özelliği bulunmaktadır.</Turkish>
             <Korean>Warlords Redux은 흐림의 전장과 무작위 기지 위치 등 많은 새로운 기능을 소개합니다. 베이니실 워로드와 비교했을 때 무작위 기지 위치, 사용자 정의 항공기 피렌, 모든 드론/SAM/AAA 소개 등의 많은 다른 새로운 기능이 있습니다.</Korean>
             <Japanese>Warlords Reduxは、「霧の戦場」や「ランダムな基地の位置」など多くの新しい機能を導入しています。バニラのWarlordsと比較すると、ランダムな基地の位置、カスタム航空機パイロン、すべてのドローン/SAM/AAAの導入など、多くの他の新しい機能があります。</Japanese>
             <Chinesesimp>Warlords Redux引入了许多新功能，如雾战和随机基地位置。与香草Warlords相比，它还有许多其他新功能，如随机基地位置、自定义飞机悬挂点、所有无人机/SAM/AAA的引入等。</Chinesesimp>
@@ -1269,6 +1360,7 @@
             <Portuguese>Nesses vídeos você pode ver um guia detalhado de como jogar Warlords Redux.</Portuguese>
             <Russian>В этих видео вы можете посмотреть подробное руководство по игре Warlords Redux.</Russian>
             <Spanish>En estos videos puedes ver una guía detallada de cómo jugar a Warlords Redux.</Spanish>
+            <Turkish>Bu videolarda Warlords Redux nasıl oynanacağına dair detaylı bir rehber bulabilirsiniz.</Turkish>
             <Korean>이 비디오에서는 Warlords Redux를 어떻게 하는지에 대한 상세한 안내를 볼 수 있습니다.</Korean>
             <Japanese>これらのビデオではWarlords Reduxをどのようにプレイするかの詳細なガイドが見られます。</Japanese>
             <Chinesesimp>在这些视频中，您可以看到关于如何玩Warlords Redux的详细指南。</Chinesesimp>
@@ -1285,6 +1377,7 @@
             <Portuguese>Atalhos de teclado:</Portuguese>
             <Russian>Горячие клавиши:</Russian>
             <Spanish>Atajos de teclado:</Spanish>
+            <Turkish>Tuş Atamaları:</Turkish>
             <Korean>키바인드:</Korean>
             <Japanese>キーバインド:</Japanese>
             <Chinesesimp>快捷键：</Chinesesimp>
@@ -1301,6 +1394,7 @@
             <Portuguese>Segurar %1 - Abre o menu dos Warlords.</Portuguese>
             <Russian>Удерживать %1 - Открывает меню Warlords.</Russian>
             <Spanish>Mantener presionado %1 - Abre el menú de Warlords.</Spanish>
+            <Turkish>%1 tuşunu basılı tutun - Warlords Menüsünü açar.</Turkish>
             <Korean>%1 누르고 있기 - Warlords 메뉴 열기.</Korean>
             <Japanese>%1を保持 - Warlordsメニューを開きます。</Japanese>
             <Chinesesimp>按住%1 - 打开Warlords菜单。</Chinesesimp>
@@ -1317,6 +1411,7 @@
             <Portuguese>Pressione INSERT - Para inserir seus protetores de ouvido.</Portuguese>
             <Russian>Нажатие INSERT - использовать беруши.</Russian>
             <Spanish>Presiona INSERT - Para insertar tus tapones para los oídos.</Spanish>
+            <Turkish>iNSERT tuşuna basın - Kulak tıkacınızı takın.</Turkish>
             <Korean>삽입 누름 - 귀 플러그를 삽입하십시오.</Korean>
             <Japanese>挿入を押す - 耳栓を挿入します。</Japanese>
             <Chinesesimp>插入 - 插入耳塞。</Chinesesimp>
@@ -1333,6 +1428,7 @@
             <Portuguese>%1 - Mostra sua APS no chat.</Portuguese>
             <Russian>%1 - показать состояние вашего КАЗ в чате.</Russian>
             <Spanish>%1 - Muestra tu APS en el chat.</Spanish>
+            <Turkish>%1 - Aktif koruma sistemi'nizi (APS) sohbette gösterir.</Turkish>
             <Korean>%1 - 채팅에서 APS를 표시합니다.</Korean>
             <Japanese>%1 - チャットにAPSを表示します。</Japanese>
             <Chinesesimp>%1 - 在聊天中显示你的APS。</Chinesesimp>
@@ -1349,6 +1445,7 @@
             <Portuguese>A comunidade War Sim Vets organiza eventos Arma 3 e trabalha no projeto Warlords Redux conhecido como EU#11.</Portuguese>
             <Russian>Сообщество War Sim Vets организует события в Arma 3 и работает над проектом Warlords Redux, известным как EU#11.</Russian>
             <Spanish>La comunidad War Sim Vets organiza eventos de Arma 3 y trabaja en el proyecto Warlords Redux conocido como EU#11.</Spanish>
+            <Turkish>War Sim Vets topluluğu, Arma 3 etkinlikleri düzenlemekte ve EU#11 olarak bilinen Warlords Redux projesi üzerinde çalışmaktadır.</Turkish>
             <Korean>War Sim Vets 커뮤니티는 Arma 3 이벤트를 조직하고 EU#11으로 알려진 Warlords Redux 프로젝트에 참여합니다.</Korean>
             <Japanese>War Sim VetsコミュニティはArma 3のイベントを開催し、EU#11として知られるWarlords Reduxプロジェクトに取り組んでいます。</Japanese>
             <Chinesesimp>War Sim Vets社区组织Arma 3活动，并参与以EU＃11为代号的Warlords Redux项目。</Chinesesimp>
@@ -1365,6 +1462,7 @@
             <Portuguese>Gerentes de Projeto:</Portuguese>
             <Russian>Менеджеры проекта:</Russian>
             <Spanish>Gerentes de Proyecto:</Spanish>
+            <Turkish>Proje Yöneticileri:</Turkish>
             <Korean>프로젝트 관리자:</Korean>
             <Japanese>プロジェクトマネージャー:</Japanese>
             <Chinesesimp>项目经理：</Chinesesimp>
@@ -1381,6 +1479,7 @@
             <Portuguese>Desenvolvedores:</Portuguese>
             <Russian>Разработчики:</Russian>
             <Spanish>Desarrolladores:</Spanish>
+            <Turkish>Geliştiriciler:</Turkish>
             <Korean>개발자:</Korean>
             <Japanese>開発者:</Japanese>
             <Chinesesimp>开发人员：</Chinesesimp>
@@ -1397,6 +1496,7 @@
             <Portuguese>Administradores: (Eventos)</Portuguese>
             <Russian>Администраторы: (Мероприятия)</Russian>
             <Spanish>Administradores: (Eventos)</Spanish>
+            <Turkish>Yöneticiler: (Etkinlikler)</Turkish>
             <Korean>관리자: (이벤트)</Korean>
             <Japanese>管理者：（イベント）</Japanese>
             <Chinesesimp>管理员：（事件）</Chinesesimp>
@@ -1413,6 +1513,7 @@
             <Portuguese>Junte-se ao nosso discord para ficar informado sobre atualizações e eventos do Warlords Redux.</Portuguese>
             <Russian>Присоединяйтесь к нашему discord, чтобы быть в курсе обновлений и событий Warlords Redux.</Russian>
             <Spanish>Únete a nuestro discord para estar informado de las actualizaciones y eventos de Warlords Redux.</Spanish>
+            <Turkish>Warlords Redux güncellemeleri ve etkinliklerinden haberdar olmak için discord sunucumuza katılın.</Turkish>
             <Korean>Warlords Redux 업데이트와 이벤트에 대한 알림을 받으려면 discord에 가입하세요.</Korean>
             <Japanese>Warlords Redux のアップデートとイベントに関する通知を受け取るために私たちの discord に参加してください。</Japanese>
             <Chinesesimp>加入我们的discord以保持对Warlords Redux更新和事件的通知。</Chinesesimp>
@@ -1429,6 +1530,7 @@
             <Portuguese>No nosso discord, você também pode sugerir novas coisas ou relatar bugs.</Portuguese>
             <Russian>В нашем discord вы также можете предложить новые вещи или сообщить об ошибках.</Russian>
             <Spanish>En nuestro discord también puedes sugerir nuevas cosas o informar sobre errores.</Spanish>
+            <Turkish>Discord sunucumuzda ayrıca yeni şeyler önermek veya hataları bildirmek için yer alabilirsiniz.</Turkish>
             <Korean>우리의 디스코드에서는 새로운 것을 제안하거나 버그를 보고할 수 있습니다.</Korean>
             <Japanese>私たちの discord では、新しいものを提案するか、バグを報告することもできます。</Japanese>
             <Chinesesimp>在我们的 discord 中，您也可以建议新东西或报告错误。</Chinesesimp>
@@ -1445,6 +1547,7 @@
             <Portuguese>Por favor, leia como jogar primeiro</Portuguese>
             <Russian>Сначала прочитайте раздел "как играть"</Russian>
             <Spanish>Por favor, lea cómo jugar primero</Spanish>
+            <Turkish>Lütfen önce nasıl oynanacağını okuyun.</Turkish>
             <Korean>먼저 플레이 방법을 읽어주세요</Korean>
             <Japanese>最初に遊び方をお読みください</Japanese>
             <Chinesesimp>请先阅读如何玩</Chinesesimp>
@@ -1461,6 +1564,7 @@
             <Portuguese></Portuguese>
             <Russian></Russian>
             <Spanish></Spanish>
+            <Turkish></Turkish>
             <Korean></Korean>
             <Japanese></Japanese>
             <Chinesesimp></Chinesesimp>
