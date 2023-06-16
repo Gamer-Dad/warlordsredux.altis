@@ -1,8 +1,6 @@
-_type = (typeOf objectParent player);
-waitUntil {sleep 0.1; (_type == "B_Plane_Fighter_01_F" || {_type == "B_Plane_CAS_01_dynamicLoadout_F" || {_type == "B_Heli_Attack_01_dynamicLoadout_F" || {_type == "B_T_VTOL_01_armed_F" || {_type == "B_T_VTOL_01_vehicle_F" || {_type == "B_T_VTOL_01_infantry_F" || {!(alive player)}}}}}})};
+waitUntil {sleep 0.1; ((typeOf objectParent player) ==  "B_Plane_Fighter_01_F" || {(typeOf objectParent player) ==  "B_Plane_CAS_01_dynamicLoadout_F" || {(typeOf objectParent player) ==  "B_Heli_Attack_01_dynamicLoadout_F" || {(typeOf objectParent player) ==  "B_T_VTOL_01_armed_F" || {(typeOf objectParent player) ==  "B_T_VTOL_01_vehicle_F" || {(typeOf objectParent player) ==  "B_T_VTOL_01_infantry_F" || {!(alive player)}}}}}})};
 
 if !(alive player) exitWith {};
-
 _v = (objectParent player);
 // Vars
 _v setVariable ["currentTargets", []];
@@ -33,8 +31,8 @@ _v addEventHandler ["Killed", {
 
 //Pull up warning
 0 spawn {
-	_v = objectParent player; 
-	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		_v = (objectParent player);
 		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
 			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
 				if (asin (vectorDir _v select 2) < - (((getPosATL player select 2) * 40) / speed _v)) then {
@@ -53,8 +51,8 @@ _v addEventHandler ["Killed", {
 
 //Altitude warning
 0 spawn {
-	_v = objectParent player; 
-	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		_v = (objectParent player);
 		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
 			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
 				playSoundUI ["altWarning", MRTM_rwr2, 1];
@@ -71,8 +69,8 @@ _v addEventHandler ["Killed", {
 
 //Bingo fuel
 0 spawn {
-	_v = objectParent player; 
-	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		_v = (objectParent player);
 		if (MRTM_EnableRWR) then {
 			if (fuel _v < 0.2) then {
 				playSoundUI ["bingoFuel", MRTM_rwr4, 1];
@@ -89,9 +87,9 @@ _v addEventHandler ["Killed", {
 
 //Sensor targets
 0 spawn {
-	_v = objectParent player; 
-	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
-		_V setVariable ["newTargets", getSensorTargets _v];
+	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		_v = (objectParent player);
+		_v setVariable ["newTargets", getSensorTargets _v];
 		if (MRTM_EnableRWR) then {
 			if (count (_v getVariable "newTargets") > count (_v getVariable "currentTargets")) then {
 				playSoundUI ["radarTargetNew", MRTM_rwr4, 1];
@@ -109,8 +107,8 @@ _v addEventHandler ["Killed", {
 };
 
 0 spawn {
-	_v = objectParent player; 
-	while {((typeOf _v == "B_Plane_Fighter_01_F" || {typeOf _v == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf _v == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf _v == "B_T_VTOL_01_armed_F" || {typeOf _v == "B_T_VTOL_01_vehicle_F" || {typeOf _v == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
+		_v = (objectParent player);
 		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
 			_v setVariable ["isBettyBitching", true];
            	_incomming = ((_v getVariable "Incomming") # 0);

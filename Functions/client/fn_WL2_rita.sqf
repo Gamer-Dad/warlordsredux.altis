@@ -1,8 +1,6 @@
-_type = (typeOf objectParent player);
-waitUntil {sleep 0.1; (_type == "O_Plane_Fighter_02_F" || {_type == "O_Plane_CAS_02_dynamicLoadout_F" || {_type == "O_Heli_Attack_02_dynamicLoadout_F" || {_type == "O_T_VTOL_02_vehicle_dynamicLoadout_F" || {!(alive player)}}}})};
+waitUntil {sleep 0.1; ((typeOf objectParent player) ==  "O_Plane_Fighter_02_F" || {(typeOf objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {(typeOf objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {(typeOf objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F" || {!(alive player)}}}})};
 
 if !(alive player) exitWith {};
-
 _v = (objectParent player);
 // Vars
 _v setVariable ["altCeiling", 2000];
@@ -31,8 +29,8 @@ _v addEventHandler ["Killed", {
 
 //Pull up warning
 0 spawn {
-	_v = objectParent player;
-	while {((typeOf _v == "O_Plane_Fighter_02_F" || {typeOf _v == "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf _v == "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf _v == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+		_v = objectParent player;
 		if (MRTM_EnableRWR && {_v getVariable "isBettyBitching" == false}) then {
 			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
 				if (asin (vectorDir _v select 2) < - (((getPosATL player select 2) * 40) / speed _v)) then {
@@ -51,8 +49,8 @@ _v addEventHandler ["Killed", {
 
 //Altitude warning
 0 spawn {
-	_v = objectParent player;
-	while {((typeOf _v == "O_Plane_Fighter_02_F" || {typeOf _v == "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf _v == "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf _v == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+		_v = objectParent player;
 		if (MRTM_EnableRWR && {_v getVariable "isBettyBitching" == false}) then {
 			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
 				playSoundUI ["altRita", MRTM_rwr2, 1];
@@ -69,8 +67,8 @@ _v addEventHandler ["Killed", {
 
 //Bingo fuel
 0 spawn {
-	_v = objectParent player;
-	while {((typeOf _v == "O_Plane_Fighter_02_F" || {typeOf _v == "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf _v == "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf _v == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+		_v = objectParent player;
 		if (MRTM_EnableRWR) then {
 			if (fuel _v < 0.2) then {
 				playSoundUI ["fuelRita", MRTM_rwr4, 1]; 
@@ -86,8 +84,8 @@ _v addEventHandler ["Killed", {
 };
 
 0 spawn {
-	_v = objectParent player;
-	while {((typeOf _v == "O_Plane_Fighter_02_F" || {typeOf _v == "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf _v == "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf _v == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+		_v = objectParent player;
 		if (MRTM_EnableRWR && {(_v getVariable "isBettyBitching" == false)}) then {
 			_v setVariable ["isBettyBitching", true];
            	_incomming = ((_v getVariable "Incomming") # 0);
