@@ -13,5 +13,10 @@ while {!BIS_WL_missionEnd} do {
 			};
 		};	
 	} forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {((alive _x) && {!(_x isKindOf "Man") && {(!(_x isKindOf "Ship")) && {(!(_x isKindOf "Submarine"))}}})});
+
+	if (((player getVariable ["BIS_WL_funds", 0]) > 0) && {!(player getVariable ["BIS_WL_cheaterTriggered", false])}) then {
+		player setVariable ["BIS_WL_cheaterTriggered", true];
+		0 spawn BIS_fnc_WL2_fundsControl;
+	};
 	sleep 10;
 };
