@@ -37,6 +37,17 @@ class Header
 	maxPlayers = 100;
 };
 
+class CfgRemoteExec {
+	class Functions {
+		mode = 2;
+		jip = 1;
+
+		class WL2_fundsDatabaseWrite {
+			allowedTargets = 2;
+		};
+	};
+};
+
 class CfgDisabledCommands {
 	class  SETDAMAGE {
 		class SYNTAX1
