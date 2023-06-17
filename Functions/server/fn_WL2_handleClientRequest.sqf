@@ -114,7 +114,7 @@ if !(isNull _sender) then {
 		};
 		case "fastTravelContested": {
 			if (_hasFunds) then {
-				private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && (isNull objectParent _x) && (alive _x) && (_x != _sender)};
+				private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};
 				_sender setVehiclePosition [_pos, [], 1, "NONE"];
 				{
 					_x setVehiclePosition [_pos, [], 1, "NONE"];
@@ -123,6 +123,13 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
+		};
+		case "fastTravel": {
+			private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};
+			_sender setVehiclePosition [_pos, [], 1, "NONE"];
+			{
+				_x setVehiclePosition [_pos, [], 1, "NONE"];
+			} forEach _tagAlong;
 		};
 		case "orderArsenal": {
 			if (_hasFunds) then {
