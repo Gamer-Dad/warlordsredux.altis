@@ -203,7 +203,7 @@ if (isPlayer _owner) then {
 			};
 		},
 		[],
-		-100,
+		-98,
 		false,
 		true,
 		"",
