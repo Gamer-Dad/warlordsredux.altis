@@ -60,6 +60,7 @@ _setOwner = {
 };
 
 if !(isNull _sender) then {
+	_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 	switch (_action) do {
 		case "scan" : {
 			if (_hasFunds) then {
@@ -329,6 +330,12 @@ if !(isNull _sender) then {
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
+				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
+					_asset lock true;
+				} else {
+					_asset lock 0;
+				};
 				
 				if (typeOf _asset == "I_Truck_02_MRL_F") exitWith { //Zamak MLRS
 					_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"]; //Zamak cabin
@@ -361,6 +368,8 @@ if !(isNull _sender) then {
 						_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
 					};
 				};
+				waitUntil {sleep 0.1; !(isNull _asset)};
+				_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 			};
 		};
 		case "fundsTransferBill": {
@@ -387,5 +396,6 @@ if !(isNull _sender) then {
 				[_sender, _recipient, _cost] remoteExec ["BIS_fnc_WL2_displayCPtransfer", 0, true];
 			};
 		};
+		_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 	};
 };

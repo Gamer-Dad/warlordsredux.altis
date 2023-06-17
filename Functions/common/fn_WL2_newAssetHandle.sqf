@@ -108,6 +108,7 @@ if (isPlayer _owner) then {
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 		_asset spawn BIS_fnc_WL2_sub_vehicleKickAction;
+		_asset spawn BIS_fnc_WL2_sub_vehicleLockAction;
 		_asset spawn {
 			params ["_asset"];
 			_repairActionID = -1;
@@ -155,13 +156,6 @@ if (isPlayer _owner) then {
 		};
 
 		if !(_assembled || _asset isKindOf "Thing") then {
-			if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
-				[_asset, true] remoteExec ["lock", 0];
-				_asset call BIS_fnc_WL2_sub_vehicleLockAction;
-			} else {
-				_asset lock 0;
-			};
-
 			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", false];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;

@@ -4,7 +4,7 @@ waitUntil {!isNull WL_DISPLAY_MAIN};
 sleep 2;
 WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 	_key = _this # 1;
-	if (_key in actionKeys "Gear" && !(missionNamespace getVariable ["BIS_WL_gearKeyPressed", FALSE]) && alive player && lifeState player != "INCAPACITATED" && !BIS_WL_penalized) then {
+	if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized && {(!(player getVariable ["BIS_WL_isOrdering", false]))}}}}}) then {
 		if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 		} else {
