@@ -45,91 +45,35 @@ https://community.bistudio.com/wiki/DIK_KeyCodes
 
 DIK_5               0x06
 DIK_TAB             0x0F
-
-
-//________________	Place this code in the init.sqf	________________
-
-[] execVM "GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
-
-addMissionEventHandler ["Loaded", {
-	params ["_saveType"];
-	
-	If(_saveType isEqualto "continue") then{
-		[] execVM "GF_Earplugs\GF_Earplugs.sqf";
-	};
-}];
-
-[] execVM "GF_Earplugs\GF_Earplugs.sqf";
 */
 
-
-
-
 waitUntil {!isNull player};
-
-//________________ Settings ________________
-//________________ Set true or false  ________________
-
-GF_Earplugs_hintSilent_info					= true;
-GF_Earplugs_systemchat_info 				= true;
-GF_Earplugs_diag_log_info 					= true;
-
-GF_Earplugs_key								= 0xD2;	//	key insert https://community.bistudio.com/wiki/DIK_KeyCodes
-
-
-
-
-if (GF_Earplugs_systemchat_info) then{
-systemchat "GF Earplugs Script - Mod initializing";			
-};	
-
-if (GF_Earplugs_diag_log_info) then{
-diag_log "//________________	GF Earplugs Script - Mod initializing	________________";
-};
-
-
-
-
-[player] spawn {
-
+0 spawn {
 	GF_Earplugs_soundvolume = soundvolume;
 	disableSerialization;
 	waitUntil {!(isNull (findDisplay 46))};
 	_display = findDisplay 46;
 	_display displayAddEventHandler["KeyDown", {
-	params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
-	_musicvolume = soundvolume;
-	_soundvolume = soundvolume;
-	
-		if(_key isEqualto GF_Earplugs_key) then {
+		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
+		_musicvolume = soundvolume;
+		_soundvolume = soundvolume;
+		_keyPlug = actionKeysNames "user2";
 
-			if (!(_soundvolume isEqualto 0.1) or !(_soundvolume isEqualto 0.1))then{
-			
+		if ((keyName (_this select 1)) == _keyPlug) then {
+			if (!(_soundvolume isEqualto 0.1) or !(_soundvolume isEqualto 0.1)) then {
 				//________________ EARPLUGS IN ________________
 				"GF_Earplugs" cutRsc ["Rsc_GF_Earplugs", "PLAIN"];
 				titleText ["<t color='#339933' size='2'font='PuristaBold'>EARPLUGS IN</t>", "PLAIN DOWN", -1, true, true];	
-				1 fadeSound 0.1;
-				//	hint str soundVolume;			
+				1 fadeSound 0.1;		
 			};
 				
-			if ((_soundvolume isEqualto 0.1) or (_soundvolume isEqualto 0.1))then{		
+			if ((_soundvolume isEqualto 0.1) or (_soundvolume isEqualto 0.1)) then {		
 				
 				//________________ EARPLUGS OUT ________________			
 				"GF_Earplugs" cutText ["", "PLAIN"];			
 				titleText ["<t color='#FF3333' size='2'font='PuristaBold'>EARPLUGS OUT</t>", "PLAIN DOWN", -1, true, true];	
-				1 fadeSound 0.5;	//forcing this up to 0.5
-				//	hint str soundVolume;	
+				1 fadeSound 0.5;
 			};
 		};
 	}];
-};
-
-
-if (GF_Earplugs_systemchat_info) then{
-systemchat "GF Earplugs Script - Mod initialized";
-systemchat "E a r p l u g s    w i t h    i n s e r t    k e y";			
-};	
-
-if (GF_Earplugs_diag_log_info) then{
-diag_log "//________________	GF Earplugs Script - Mod initialized	________________";
 };

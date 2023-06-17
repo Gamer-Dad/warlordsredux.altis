@@ -1435,21 +1435,21 @@
             <Chinese>按住%1 - 打开Warlords菜单。</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_13">
-            <Original>Press INSERT - To insert your earplugs.</Original>
-            <English>Press INSERT - To insert your earplugs.</English>
-            <Czech>Stiskněte INSERT - Pro vložení svých špuntů do uší.</Czech>
-            <French>Appuyez sur INSERT - Pour insérer vos bouchons d'oreille.</French>
-            <German>Drücke Einfg zum Einsetzen der Ohrenstöpsel.</German>
-            <Italian>Premere INSERT - Per inserire i tappi per le orecchie.</Italian>
-            <Polish>Naciśnij INSERT - Aby włożyć wkładki do uszu.</Polish>
-            <Portuguese>Pressione INSERT - Para inserir seus protetores de ouvido.</Portuguese>
-            <Russian>Нажатие INSERT - использовать беруши.</Russian>
-            <Spanish>Presiona INSERT - Para insertar tus tapones para los oídos.</Spanish>
-            <Turkish>iNSERT tuşuna basın - Kulak tıkacınızı takın.</Turkish>
-            <Korean>삽입 누름 - 귀 플러그를 삽입하십시오.</Korean>
-            <Japanese>挿入を押す - 耳栓を挿入します。</Japanese>
-            <Chinesesimp>插入 - 插入耳塞。</Chinesesimp>
-            <Chinese>按插入 - 插入耳塞。</Chinese>
+            <Original>Press %1 - To insert your earplugs.</Original>
+            <English>Press %1 - To insert your earplugs.</English>
+            <Czech>Stiskněte %1 - Pro vložení svých špuntů do uší.</Czech>
+            <French>Appuyez sur %1 - Pour insérer vos bouchons d'oreille.</French>
+            <German>Drücke %1 zum Einsetzen der Ohrenstöpsel.</German>
+            <Italian>Premere %1 - Per inserire i tappi per le orecchie.</Italian>
+            <Polish>Naciśnij %1 - Aby włożyć wkładki do uszu.</Polish>
+            <Portuguese>Pressione %1 - Para inserir seus protetores de ouvido.</Portuguese>
+            <Russian>Нажатие %1 - использовать беруши.</Russian>
+            <Spanish>Presiona %1 - Para insertar tus tapones para los oídos.</Spanish>
+            <Turkish>%1 tuşuna basın - Kulak tıkacınızı takın.</Turkish>
+            <Korean> %1을(를) 눌러 이어플러그를 삽입하세요.</Korean>
+            <Japanese> %1 を押して、イヤープラグを挿入してください。</Japanese>
+            <Chinesesimp>按下 %1 - 插入耳塞。</Chinesesimp>
+            <Chinese>按下 %1 - 插入耳塞。</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_14">
             <Original>%1 - Shows your APS in the chat.</Original>

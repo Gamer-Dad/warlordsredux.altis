@@ -339,15 +339,17 @@ player addaction [
 
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
-	_key = actionKeysNames "curatorInterface";
+	params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
+	_key1 = actionKeysNames "curatorInterface";
+	_key2 = actionKeysNames "tacticalView";
 	_keyName = (keyName (_this select 1));
-	_key1 = actionKeysNames "tacticalView";
+
 	if (_keyName == _key1) then {
-		true;
-	};
-	if (_keyName == _key) then {
 		if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
 			true;
 		};
+	};
+	if (_keyName == _key2) then {
+		true;
 	};
 }];
