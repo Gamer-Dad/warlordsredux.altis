@@ -137,6 +137,40 @@
             <Chinesesimp>资产修复。</Chinesesimp>
             <Chinese>資產修復。</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_popup_asset_locked">
+            <Original>Asset locked.</Original>
+            <English>Asset locked.</English>
+            <Czech>Prostředek uzamčený.</Czech>
+            <French>Actif verrouillé.</French>
+            <German>Asset gesperrt.</German>
+            <Italian>Asset bloccato.</Italian>
+            <Polish>Zasób zablokowany.</Polish>
+            <Portuguese>Ativo bloqueado.</Portuguese>
+            <Russian>Актив заблокирован.</Russian>
+            <Spanish>Activo bloqueado.</Spanish>
+            <Turkish>Varlık kilitli.</Turkish>
+            <Korean>자산 잠금됨.</Korean>
+            <Japanese>アセットがロックされました。</Japanese>
+            <Chinesesimp>资产已锁定。</Chinesesimp>
+            <Chinese>資產已鎖定。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_popup_asset_unlocked">
+            <Original>Asset unlocked.</Original>
+            <English>Asset unlocked.</English>
+            <Czech>Prostředek odemčen.</Czech>
+            <French>Actif débloqué.</French>
+            <German>Asset freigeschaltet.</German>
+            <Italian>Asset sbloccato.</Italian>
+            <Polish>Odblokowany zasób.</Polish>
+            <Portuguese>Ativo desbloqueado.</Portuguese>
+            <Russian>Актив разблокирован.</Russian>
+            <Spanish>Activo desbloqueado.</Spanish>
+            <Turkish>Varlık kilidi açıldı.</Turkish>
+            <Korean>자산 잠금 해제됨.</Korean>
+            <Japanese>アセットのロックが解除されました。</Japanese>
+            <Chinesesimp>资产已解锁。</Chinesesimp>
+            <Chinese>資產已解鎖。</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_popup_losing_sector">
             <Original>%1 is capturing %2!</Original>
             <English>%1 is capturing %2!</English>
