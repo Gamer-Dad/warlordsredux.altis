@@ -140,8 +140,7 @@ if !(isNull _sender) then {
 				_targetPosFinal = if (_isStatic) then {_targetPos} else {( call _processTargetPos) # 0};
 				
 				if (_class isKindOf "Ship") then {
-					_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-					_asset setPos (_pos vectorAdd [0,0,3]);
+					_asset = createVehicle [_class, (_pos vectorAdd [0,0,3]), [], 0, "CAN_COLLIDE"];
 				} else {
 					if (_class isKindOf "Air") then {
 						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
@@ -287,10 +286,8 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
-							_targetPos set [2, (_targetPos # 2) max 0];
+							_asset = createVehicle [_class, [(_targetPos # 0), (_targetPos # 1), 0], [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
-							_asset setPos _targetPos;
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.

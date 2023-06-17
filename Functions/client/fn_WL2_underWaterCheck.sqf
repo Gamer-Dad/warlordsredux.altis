@@ -7,7 +7,6 @@ while {!BIS_WL_missionEnd} do {
 			[_x, _pos] spawn {
 				sleep 2;
 				if ((_this # 1) select 2 < -2.5) then {
-					(_this # 0) setDamage 1;
 					deleteVehicle (_this # 0);
 				};
 			};

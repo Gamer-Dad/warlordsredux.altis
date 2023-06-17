@@ -7,8 +7,6 @@ if (isServer) exitWith {
 		private _grp = group effectiveCommander _asset;
 		{_asset deleteVehicleCrew _x} forEach crew _asset;
 		deleteGroup _grp;
-	} else {
-		{_x setPos position _asset} forEach crew _asset;
 	};
 	deleteVehicle _asset;
 

@@ -37,6 +37,24 @@ class Header
 	maxPlayers = 100;
 };
 
+class CfgDisabledCommands {
+	class  SETDAMAGE {
+		class SYNTAX1
+		{
+			targets[] = {1,0,0};
+			args[] = {{"OBJECT"},{"SCALAR","ARRAY"}};
+		};
+	};
+
+	class  SETDAMMAGE {
+		class SYNTAX1
+		{
+			targets[] = {0,0,0};
+			args[] = {{"OBJECT"},{"SCALAR"}};
+		};
+	};
+};
+
 allowFunctionsLog = 1;
 
 class CfgFunctions {
@@ -191,8 +209,14 @@ class CfgFunctions {
 			class onChar {};
 		};
 	};
-	#include "scripts\GOM\functions\GOM_fnc_functions.hpp" //GOM_fnc_aircraftLoadout V1.35 made by Grumpy Old Man 17-5-2017
-	//Unflip Mod
+	class GOM {
+		class init
+		{
+			file = "scripts\GOM\functions";
+			class aircraftLoadoutParameters {preInit = 1;};
+			class aircraftLoadoutInit {preInit = 1;};
+		};
+	};
 	class KS
 	{	
 		class normalFunctions
@@ -280,9 +304,16 @@ class CfgFunctions {
 
 class CfgCommunicationMenu
 {
-
-	#include "scripts\GOM\functions\GOM_fnc_aircraftLoadoutMenu.hpp"
-
+	class GOM_aircraftLoadoutMenu
+	{
+		text = "Aircraft Loadout Module";
+		submenu = "";
+		expression = "[player] spawn GOM_fnc_aircraftLoadout"; // Code executed upon activation
+		icon = "\a3\Ui_f\data\gui\Cfg\CommunicationMenu\call_ca.paa"; // Icon displayed permanently next to the command menu
+		cursor = "\a3\Ui_f\data\gui\Cfg\CommunicationMenu\call_ca.paa"; // Custom cursor displayed when the item is selected
+		enable = "1"; // Simple expression condition for enabling the item
+		removeAfterExpressionCall = 0; // 1 to remove the item after calling
+	};
 };
 
 class RscTitles
@@ -295,7 +326,7 @@ class RscTitles
 
 /*******************************END OF CUSTOM CONTENT HERE****************************/
 
-onPauseScript[] = {BIS_fnc_WL2_onPause};
+//onPauseScript[] = {BIS_fnc_WL2_onPause};
 
 #include "requisitions.inc"
 
@@ -511,33 +542,5 @@ class CfgDebriefing
 		picture = "n_installation";
 		pictureBackground = "img\wl_logo_ca.paa";
 		pictureColor[] = {0,0,0,1};
-	};
-};
-
-class Params
-{
-	class BIS_WL_savingEnabled
-	{
-		title = $STR_A3_WL_param_saving;
-		values[] = {1, 0};
-		texts[] = {$STR_DISP_OPT_ENABLED, $STR_DISP_OPT_DISABLED};
-		default = 0;
-		isBool = 1;
-	};
-	
-	class BIS_WL_zoneRestrictionSetting
-	{
-		title = $STR_A3_mdl_supp_zonerest_name;
-		values[] = {0, 1};
-		texts[] = {$STR_A3_to_zoneprotection7, $STR_A3_to_zoneprotection9};
-		default = 0;
-	};
-	
-	class BIS_WL_fogOfWar
-	{
-		title = $STR_A3_WL_param_fog_of_war;
-		values[] = {0, 1, 2};
-		texts[] = {$STR_DISP_OPT_DISABLED, $STR_A3_WL_param_fog_of_war_value1, $STR_A3_WL_param_fog_of_war_value2};
-		default = 1;
 	};
 };
