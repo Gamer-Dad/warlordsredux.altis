@@ -1,5 +1,6 @@
 ["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
+waituntil {sleep 0.1; !isnull (findDisplay 46)};
 createDialog ["welcomeScreen", true];
 hRead = false;
 
