@@ -25,14 +25,6 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
 	};
-	class SETPOS
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,0};
-			args[] = {{"OBJECT"},{"ARRAY"}};
-		};
-	};
 	class SETPOSASL
 	{
 		class SYNTAX1
