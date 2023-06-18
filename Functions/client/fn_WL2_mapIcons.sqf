@@ -215,21 +215,6 @@ MRTM_fnc_iconDrawMap = {
 		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 	} forEach BIS_WL_currentlyScannedSectors;
 	{
-		if (_x isEqualTo player) then {
-			_m drawIcon [
-				'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
-				[1,0,0,0.75],
-				[_x] call MRTM_fnc_getPos,
-				24,
-				24,
-				[_x] call MRTM_fnc_getDir,
-				"",
-				0,
-				0.025,
-				"TahomaB",
-				"right"
-			];
-		};
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
 			[_x] call MRTM_fnc_iconColor,
