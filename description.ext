@@ -132,8 +132,7 @@ class CfgDisabledCommands {
 			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};	
 		};
-	};
-	class 
+	}; 
 };
 
 allowFunctionsLog = 1;
