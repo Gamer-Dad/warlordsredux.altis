@@ -84,7 +84,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	} forEach ((units group _unit) - [_unit]);
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 	
-	call BIS_fnc_WL2_calcImbalance;
+	0 spawn BIS_fnc_WL2_calcImbalance;
 }];
 
 addMissionEventHandler ["MarkerCreated", {

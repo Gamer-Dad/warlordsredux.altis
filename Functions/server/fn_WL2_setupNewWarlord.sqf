@@ -32,7 +32,7 @@ if (isPlayer _warlord) then {
 		(missionNamespace getVariable format ["BIS_WL_boundTo%1", side group _warlord]) pushBackUnique getPlayerUID _warlord;
 		_playerSideArr = BIS_WL_playerIDArr # (BIS_WL_competingSides find side group _warlord);
 		_playerSideArr pushBackUnique getPlayerUID _warlord;
-		call BIS_fnc_WL2_calcImbalance;
+		0 spawn BIS_fnc_WL2_calcImbalance;
 		
 		_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID _warlord];
 		waitUntil {!(missionNamespace getVariable [_varFormat, TRUE])};
