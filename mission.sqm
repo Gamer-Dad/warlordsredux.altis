@@ -20,9 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15341.12,25.086609,14151.804};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710671,0.70710683};
+		pos[]={15394.085,612.87946,15287.222};
+		dir[]={-0.055472709,-0.35931048,0.93156797};
+		up[]={-0.021358272,0.93321806,0.35867512};
+		aside[]={0.99823177,1.8626451e-009,0.059442386};
 	};
 };
 binarizationWanted=0;
@@ -165,7 +166,14 @@ class ScenarioData
 	author="Jezuro+WSV";
 	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
 	overViewPicture="img\wl_logo_ca.paa";
-	wreckRemovalMaxTime=240;
+	wreckManagerMode=1;
+	wreckLimit=10;
+	wreckRemovalMaxTime=300;
+	corpseManagerMode=2;
+	corpseLimit=60;
+	corpseRemovalMinTime=300;
+	corpseRemovalMaxTime=1800;
+	minPlayerDistance=1000;
 };
 class Mission
 {
