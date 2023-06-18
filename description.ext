@@ -142,7 +142,7 @@ class CfgFunctions {
     	class Client 
 		{
     		file = "Functions\client";
-			class WL2_mrtmConvo {ext = ".fsm"};
+			class WL2_mrtmConvo {ext = ".fsm";};
 			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
@@ -207,9 +207,9 @@ class CfgFunctions {
 		class Server 
 		{
     		file = "Functions\server";
-    		class WL2_assetRelevanceCheck {ext = ".fsm"};
-			class WL2_incomePayoff {ext = ".fsm"};
-			class WL2_chatMsg {ext = ".fsm"};
+    		class WL2_assetRelevanceCheck {ext = ".fsm";};
+			class WL2_incomePayoff {ext = ".fsm";};
+			class WL2_chatMsg {ext = ".fsm";};
 			class WL2_detectNewPlayers {};
 			class WL2_friendlyFireHandleServer {};
 			class WL2_changeSectorOwnership {};
