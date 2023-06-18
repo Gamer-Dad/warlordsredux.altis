@@ -31,13 +31,13 @@ ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
 //start of garbage collector
 corpseManagerMode = 1;
 corpseLimit = 60;
-corpseRemovalMinTime = 30;
-corpseRemovalMaxTime = 60;
+corpseRemovalMinTime = 15;
+corpseRemovalMaxTime = 45;
 
 wreckManagerMode = 1;
 wreckLimit = 10;
-wreckRemovalMinTime = 30;
-wreckRemovalMaxTime = 120;
+wreckRemovalMinTime = 15;
+wreckRemovalMaxTime = 45;
 
 minPlayerDistance = 600;
 //end of garbage collector
