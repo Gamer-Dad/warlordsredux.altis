@@ -39,7 +39,7 @@ wreckLimit = 10;
 wreckRemovalMinTime = 15;
 wreckRemovalMaxTime = 45;
 
-minPlayerDistance = 600;
+minPlayerDistance = 50;
 //end of garbage collector
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
