@@ -44,8 +44,6 @@ switch (_locality) do {
 		BIS_WL_initialProgress = BIS_WL_initModule getVariable ["BIS_WL_initialProgress", FALSE];
 		BIS_WL_baseDistanceMin = BIS_WL_initModule getVariable ["BIS_WL_baseDistanceMin", 1];
 		BIS_WL_baseDistanceMax = BIS_WL_initModule getVariable ["BIS_WL_baseDistanceMax", -1];
-		BIS_WL_wreckRemovalTimeout = BIS_WL_initModule getVariable ["BIS_WL_wreckRemovalTimeout", 30];
-		BIS_WL_corpseRemovalTimeout = BIS_WL_initModule getVariable ["BIS_WL_corpseRemovalTimeout", 600];
 		if (BIS_WL_baseDistanceMax < 0) then {BIS_WL_baseDistanceMax = 999};
 		BIS_WL_initialProgress = switch (BIS_WL_initialProgress) do {
 			case 0: 	{[0, 0]};
@@ -82,7 +80,6 @@ switch (_locality) do {
 		BIS_WL_colorMarkerFriendly = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_playerSide);
 		BIS_WL_colorMarkerEnemy = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_enemySide);
 		BIS_WL_targetVote = objNull;
-		BIS_WL_musicEnabled = BIS_WL_initModule getVariable ["BIS_WL_musicEnabled", TRUE];
 		BIS_WL_terminateOSDEvent_voting = FALSE;
 		BIS_WL_terminateOSDEvent_seizing = FALSE;
 		BIS_WL_terminateOSDEvent_trespassing = FALSE;

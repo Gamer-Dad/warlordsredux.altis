@@ -8,8 +8,7 @@ if!((vehicle player)==_v)exitWith{};
 if!((typeOf _v)in dapsAPStypes)exitWith{};
 private _type=_v getVariable"dapsType";
 if!(_indicator)then{
-	//if(_v getVariable"dapsActive")then{systemChat format["%1 is ON",_type]}else{systemChat format["%1 is OFF",_type]};
-	if(_v getVariable"dapsActive")then{hintSilent format["%1 is ON",_type]}else{hintSilent format["%1 is OFF",_type]};
+	hintSilent (format["%1 is ON",_type]);
 };
 sleep .5;
 private _text="";

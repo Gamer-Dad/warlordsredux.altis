@@ -5,7 +5,6 @@ BIS_WL_initModule setVariable ["BIS_WL_faction_GUER", "IND_F"];
 BIS_WL_initModule setVariable ["BIS_WL_startCP", 1000]; // Correct place to change starting CP, defualt value 1000
 BIS_WL_initModule setVariable ["BIS_WL_targetVotingDuration", 15];
 BIS_WL_initModule setVariable ["BIS_WL_allowAIVoting", FALSE];
-BIS_WL_initModule setVariable ["BIS_WL_musicEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_initialProgress", 0];
 BIS_WL_initModule setVariable ["BIS_WL_fogOfWar", 1];
 BIS_WL_initModule setVariable ["BIS_WL_playersAlpha", 50];
@@ -32,8 +31,6 @@ BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMin", 18]; //default value 5;
 BIS_WL_initModule setVariable ["BIS_WL_baseDistanceMax", -1]; //default value -1 
 BIS_WL_initModule setVariable ["BIS_WL_scanCooldown", 300];
 BIS_WL_initModule setVariable ["BIS_WL_lastLoadoutCost", 100];
-BIS_WL_initModule setVariable ["BIS_WL_wreckRemovalTimeout", 30];
-BIS_WL_initModule setVariable ["BIS_WL_corpseRemovalTimeout", 300];
 BIS_WL_initModule setVariable ["BIS_WL_savedLoadoutCost", 500];
 BIS_WL_initModule setVariable ["BIS_WL_zoneRestrictionSetting", 0];
 BIS_WL_initModule setVariable ["BIS_WL_savingEnabled", FALSE];
