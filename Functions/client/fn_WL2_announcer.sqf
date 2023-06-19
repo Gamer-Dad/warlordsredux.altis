@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-if (isNil "BIS_WL_soundMsgBuffer" && BIS_WL_announcerEnabled) then {
+if (isNil "BIS_WL_soundMsgBuffer") then {
 	BIS_WL_soundMsgBuffer = [];
 	0 spawn {
 		while {!BIS_WL_missionEnd} do {
@@ -15,6 +15,6 @@ if (isNil "BIS_WL_soundMsgBuffer" && BIS_WL_announcerEnabled) then {
 	};
 };
 
-if (BIS_WL_announcerEnabled) then {
+if !(MRTM_muteVoiceInformer) then {
 	BIS_WL_soundMsgBuffer pushBack format ["BIS_WL_%1_%2", _this, BIS_WL_sidesArray # ((BIS_WL_sidesArray find BIS_WL_playerSide) min 1)];
 };

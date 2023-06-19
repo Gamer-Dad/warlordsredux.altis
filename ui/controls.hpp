@@ -749,8 +749,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton2: RscCheckboxMRTM
 		{
 			idc = 2802;
-			action = "";
-			onLoad =  "(_this # 0) ctrlEnable false;";
+			action = "if (MRTM_muteVoiceInformer) then {MRTM_muteVoiceInformer = false} else {MRTM_muteVoiceInformer = true}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -834,7 +833,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText2: RscStructuredTextMRTM
 		{
 			idc = 1118;
-			text = "";
+			text = "Mute the warlords voice informer";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;

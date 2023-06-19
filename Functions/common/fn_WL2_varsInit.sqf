@@ -82,7 +82,6 @@ switch (_locality) do {
 		BIS_WL_colorMarkerFriendly = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_playerSide);
 		BIS_WL_colorMarkerEnemy = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_enemySide);
 		BIS_WL_targetVote = objNull;
-		BIS_WL_announcerEnabled = BIS_WL_initModule getVariable ["BIS_WL_announcerEnabled", TRUE];
 		BIS_WL_musicEnabled = BIS_WL_initModule getVariable ["BIS_WL_musicEnabled", TRUE];
 		BIS_WL_terminateOSDEvent_voting = FALSE;
 		BIS_WL_terminateOSDEvent_seizing = FALSE;

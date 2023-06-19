@@ -49,6 +49,12 @@ if (MRTM_playKillSound) then {
 	((findDisplay 8000) displayCtrl 2803) cbSetChecked false;
 };
 
+if (MRTM_muteVoiceInformer) then {
+	((findDisplay 8000) displayCtrl 2802) cbSetChecked true;
+} else {
+	((findDisplay 8000) displayCtrl 2802) cbSetChecked false;
+};
+
 if (MRTM_EnableRWR) then {
 	((findDisplay 8000) displayCtrl 2804) cbSetChecked true;
 } else {

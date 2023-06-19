@@ -5,7 +5,6 @@ BIS_WL_initModule setVariable ["BIS_WL_faction_GUER", "IND_F"];
 BIS_WL_initModule setVariable ["BIS_WL_startCP", 1000]; // Correct place to change starting CP, defualt value 1000
 BIS_WL_initModule setVariable ["BIS_WL_targetVotingDuration", 15];
 BIS_WL_initModule setVariable ["BIS_WL_allowAIVoting", FALSE];
-BIS_WL_initModule setVariable ["BIS_WL_announcerEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_musicEnabled", TRUE];
 BIS_WL_initModule setVariable ["BIS_WL_initialProgress", 0];
 BIS_WL_initModule setVariable ["BIS_WL_fogOfWar", 1];
