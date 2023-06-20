@@ -5,6 +5,7 @@ class CfgFunctions {
 		{
     		file = "Functions\client";
 			class WL2_mrtmConvo {ext = ".fsm";};
+			class WL2_chatMsg {ext = ".fsm";};
 			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
@@ -71,7 +72,6 @@ class CfgFunctions {
     		file = "Functions\server";
     		class WL2_assetRelevanceCheck {ext = ".fsm";};
 			class WL2_incomePayoff {ext = ".fsm";};
-			class WL2_chatMsg {ext = ".fsm";};
 			class WL2_garbageCollector {ext = ".fsm";};
 			class WL2_detectNewPlayers {};
 			class WL2_friendlyFireHandleServer {};

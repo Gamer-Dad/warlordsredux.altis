@@ -8,7 +8,7 @@ link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,9,6316128,1,-311.637817,288.362183,387.929596,-212.070404,952,887,1};
-window[] = {0,-1,-1,-1,-1,1137,78,1998,78,1,970};
+window[] = {0,-1,-1,-1,-1,1397,338,2258,338,1,970};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -47,37 +47,37 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"_players = count BIS_WL_allWarlords;" \n
                          "if (_players >= 51) then " \n
                          "{	" \n
-                         "	[""Max AI now at 1, human interaction encouraged!""] remoteExec [""systemchat"", 0];" \n
+                         "	systemchat ""Max AI now at 1, human interaction encouraged!"";" \n
                          "}" \n
                          "Else " \n
                          "{" \n
                          "	if (_players >= 45) then" \n
                          "	{" \n
-                         "		[""Max AI now at 2, make em count!""] remoteExec [""systemchat"", 0];" \n
+                         "		systemchat ""Max AI now at 2, make em count!"";" \n
                          "	}" \n
                          "	Else " \n
                          "	{" \n
                          "		if (_players >= 40) then" \n
                          "		{" \n
-                         "			[""Max AI now at 3, put them to work!""] remoteExec [""systemchat"", 0];" \n
+                         "			systemchat ""Max AI now at 3, put them to work!"";" \n
                          "		}" \n
                          "		Else " \n
                          "		{" \n
                          "			if (_players >= 30) then" \n
                          "			{" \n
-                         "				[""Max AI now at 4, squad size!""] remoteExec [""systemchat"", 0];" \n
+                         "				systemchat ""Max AI now at 4, squad size!"";" \n
                          "			}" \n
                          "			Else " \n
                          "			{" \n
                          "				if (_players >= 20) then" \n
                          "				{" \n
-                         "					[""Max AI now at 5, you can make it work!""] remoteExec [""systemchat"", 0];" \n
+                         "					systemchat ""Max AI now at 5, you can make it work!"";" \n
                          "				}" \n
                          "				Else " \n
                          "				{" \n
                          "					if (_players < 10) then" \n
                          "					{" \n
-                         "						[""Max AI now at 6, full company size!""] remoteExec [""systemchat"", 0];" \n
+                         "						systemchat ""Max AI now at 6, full company size!"";" \n
                          "					};" \n
                          "				};" \n
                          "			};" \n
@@ -86,7 +86,7 @@ class FSM
                          "};" \n
                          "" \n
                          "if (serverTime > _h) then {" \n
-                         "	[localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))])] remoteExec [""hintSilent"", 0];" \n
+                         "	hintSilent (localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))]));" \n
                          "	_h = serverTime + 1800;" \n
                          "};" \n
                          "_t = serverTime + 900;"/*%FSM</STATEINIT""">*/;

@@ -136,6 +136,7 @@ if !(isServer) then {
 0 spawn BIS_fnc_WL2_teammatesAvailability;
 0 spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
 0 spawn BIS_fnc_WL2_mapControlHandle;
+0 spawn BIS_fnc_WL2_chatMsg;
 
 BIS_WL_groupIconClickHandler = addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
 BIS_WL_groupIconEnterHandler = addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
