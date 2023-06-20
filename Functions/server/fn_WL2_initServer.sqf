@@ -134,6 +134,7 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_targetResetHandleServer;
 0 spawn BIS_fnc_WL2_forfeitHandleServer;
+0 spawn BIS_fnc_WL2_garbageCollector;
 
 setTimeMultiplier 3;
 

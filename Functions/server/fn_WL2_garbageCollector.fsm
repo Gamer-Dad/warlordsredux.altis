@@ -1,0 +1,90 @@
+/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_garbageCollector.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
+item1[] = {"Timeout",4,218,-41.120697,-56.034485,48.879303,-6.034485,0.000000,"Timeout"};
+item2[] = {"Action",2,250,-41.120819,23.706650,48.879196,73.706650,0.000000,"Action"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-290.948425,309.051575,443.534241,-156.465759,1392,887,1};
+window[] = {0,-1,-1,-1,-1,1371,312,2232,312,1,1410};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "fn_WL2_garbageCollector.fsm";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 300;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Timeout">*/
+                                class Timeout
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"serverTime > _t;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Action">*/
+                class Action
+                {
+                        name = "Action";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"{" \n
+                         "	_asset = _x;" \n
+                         "			if (_asset isKindOf ""Man"") then {" \n
+                         "				if (vehicle _asset != _asset) then {" \n
+                         "					(vehicle _asset) deleteVehicleCrew _asset;" \n
+                         "				} else {" \n
+                         "						deleteVehicle _asset;" \n
+                         "				};" \n
+                         "			} else {" \n
+                         "				{_x setPos position _asset} forEach crew _asset;" \n
+                         "				deleteVehicle _asset;" \n
+                         "			};" \n
+                         "} forEach allDead;" \n
+                         "" \n
+                         "{" \n
+                         "	if (_x isKindOf ""WeaponHolder"" || _x isKindOf ""WeaponHolderSimulated"" || typeOf _x in _canopy) then {" \n
+                         "		_asset = _x;" \n
+                         "		deleteVehicle _asset;" \n
+                         "	};" \n
+                         "} forEach allMissionObjects """";" \n
+                         "_t = serverTime + 300;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Timeout">*/
+                                class Timeout
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Action";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"serverTime > _t;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

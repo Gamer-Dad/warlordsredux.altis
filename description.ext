@@ -17,29 +17,12 @@ enableDebugConsole = 1;
 allowFunctionsLog = 1;
 
 //revive settings below
-ReviveMode = 0;                         //0: disabled, 1: enabled, 2: controlled by player attributes
-ReviveUnconsciousStateMode = 0;         //0: basic, 1: advanced, 2: realistic
-ReviveRequiredTrait = 0;                //0: none, 1: medic trait is required
-ReviveRequiredItems = 2;                //0: none, 1: medkit, 2: medkit or first aid kit
-ReviveRequiredItemsFakConsumed = 1;     //0: first aid kit is not consumed upon revive, 1: first aid kit is consumed
-ReviveDelay = 15;                        //time needed to revive someone (in secs)
-ReviveMedicSpeedMultiplier = 2;         //speed multiplier for revive performed by medic
-ReviveForceRespawnDelay = 3;            //time needed to perform force respawn (in secs)
-ReviveBleedOutDelay = 180;              //unconscious state duration (in secs)
+ReviveMode = 0;
 //end of revive section 
 
 //start of garbage collector
-corpseManagerMode = 1;
-corpseLimit = 60;
-corpseRemovalMinTime = 15;
-corpseRemovalMaxTime = 45;
-
-wreckManagerMode = 1;
-wreckLimit = 10;
-wreckRemovalMinTime = 15;
-wreckRemovalMaxTime = 45;
-
-minPlayerDistance = 50;
+corpseManagerMode = 0;
+wreckManagerMode = 0;
 //end of garbage collector
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
