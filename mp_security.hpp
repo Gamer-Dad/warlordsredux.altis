@@ -11,6 +11,13 @@ class CfgRemoteExec {
 };
 
 class CfgDisabledCommands {
+	class DISABLECOLLISIONWITH {
+		class SYNTAX1 
+		{
+			targets[] = {1,0,0};
+			args[] = {{"OBJECT"},{"OBJECT"}};
+		};
+	};
 	class SETVELOCITYMODELSPACE {
 		class SYNTAX1 
 		{
