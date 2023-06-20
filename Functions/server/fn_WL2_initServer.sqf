@@ -87,14 +87,6 @@ addMissionEventHandler ["HandleDisconnect", {
 	0 spawn BIS_fnc_WL2_calcImbalance;
 }];
 
-addMissionEventHandler ["MarkerCreated", {
-	params ["_marker", "_channelNumber", "_owner", "_local"];
-	
-	if ((isPlayer _owner) && (_channelNumber == 0)) then {
-		deleteMarker _marker;
-	};
-}];
-
 addMissionEventHandler ["EntityKilled", {
 	_this spawn BIS_fnc_WL2_killRewardHandle;
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;

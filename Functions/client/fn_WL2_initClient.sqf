@@ -258,6 +258,14 @@ player addEventHandler ["Killed", {
 	};
 }];
 
+addMissionEventHandler ["MarkerCreated", {
+	params ["_marker", "_channelNumber", "_owner", "_local"];
+	
+	if ((isPlayer _owner) && (_channelNumber == 0)) then {
+		deleteMarker _marker;
+	};
+}];
+
 if (BIS_WL_arsenalEnabled) then {
 	call BIS_fnc_WL2_sub_arsenalSetup;
 };
