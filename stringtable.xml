@@ -1435,8 +1435,8 @@
             <Chinese>按住%1 - 打开Warlords菜单。</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_13">
-            <Original>Press %1 - To insert your earplugs.</Original>
-            <English>Press %1 - To insert your earplugs.</English>
+            <Original>Press %1 - To insert your earplugs. (custom action 2)</Original>
+            <English>Press %1 - To insert your earplugs. (custom action 2)</English>
             <Czech>Stiskněte %1 - Pro vložení svých špuntů do uší.</Czech>
             <French>Appuyez sur %1 - Pour insérer vos bouchons d'oreille.</French>
             <German>Drücke %1 zum Einsetzen der Ohrenstöpsel.</German>
