@@ -8266,7 +8266,7 @@ class Mission
 						skill=1;
 						init="this forceAddUniform ""U_O_R_Gorka_01_black_F"";" \n "this addHeadgear ""H_PilotHelmetHeli_B"";" \n "this addVest ""V_PlateCarrier1_blk"";" \n "this addGoggles ""G_bandanna_beast"";" \n "this addItem ""NVGoggles""; " \n "this assignItem ""NVGoggles"";" \n "removeBackpack this;" \n "[this,""SIT_AT_TABLE"",""ASIS"",chairMRTM] call BIS_fnc_ambientAnim;";
 						name="Dev_MrThomasM";
-						presence=0.40;
+						presence=0.40000001;
 						disableSimulation=1;
 						ignoreByDynSimulGrid=1;
 					};

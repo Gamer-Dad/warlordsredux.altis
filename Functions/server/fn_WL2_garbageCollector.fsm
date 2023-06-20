@@ -3,12 +3,12 @@
 /*
 item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
 item1[] = {"Timeout",4,218,-41.120697,-56.034485,48.879303,-6.034485,0.000000,"Timeout"};
-item2[] = {"Action",2,250,-41.120819,23.706650,48.879196,73.706650,0.000000,"Action"};
+item2[] = {"Action",2,4346,-41.120819,23.706650,48.879196,73.706650,0.000000,"Action"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,4,6316128,1,-290.948425,309.051575,443.534241,-156.465759,1392,887,1};
-window[] = {0,-1,-1,-1,-1,1371,312,2232,312,1,1410};
+window[] = {0,-1,-1,-1,-1,1085,26,1946,26,1,1410};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -57,6 +57,7 @@ class FSM
                          "			};" \n
                          "} forEach allDead;" \n
                          "" \n
+                         "_canopy = [""Plane_Fighter_03_Canopy_F"", ""Plane_CAS_02_Canopy_F"", ""Plane_CAS_01_Canopy_F"", ""Plane_Fighter_01_Canopy_F"", ""Plane_Fighter_02_Canopy_F"", ""Plane_Fighter_04_Canopy_F""];" \n
                          "{" \n
                          "	if (_x isKindOf ""WeaponHolder"" || _x isKindOf ""WeaponHolderSimulated"" || typeOf _x in _canopy) then {" \n
                          "		_asset = _x;" \n
