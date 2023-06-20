@@ -26,11 +26,8 @@ missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
 missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 missionNamespace setVariable ["imbalance", 0, true];
 
-missionNamespace setVariable ["serverTimer", 0, true];
-
 [36000] call BIS_fnc_countdown;
 0 spawn BIS_fnc_WL2_tablesSetUp;
-
 
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
@@ -48,15 +45,6 @@ CIVILIAN setFriend [RESISTANCE, 1];
 WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
-
-//this part sets fog and rain to zero
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		_overcastPreset = random 1;
-		(7200 * timeMultiplier) setOvercast _overcastPreset;
-		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
-	};
-};
 
 "server" call BIS_fnc_WL2_varsInit;
 
@@ -109,9 +97,9 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
-missionNamespace setVariable ["BIS_WL_missionStart", serverTime, TRUE];
-missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, TRUE];
-BIS_WL_wrongTeamGroup deleteGroupWhenEmpty FALSE;
+missionNamespace setVariable ["BIS_WL_missionStart", serverTime, true];
+missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
+BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
 
 if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
 
@@ -120,22 +108,30 @@ call BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
 {_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
 0 spawn BIS_fnc_WL2_detectNewPlayers;
-["server", TRUE] call BIS_fnc_WL2_updateSectorArrays;
+["server", true] call BIS_fnc_WL2_updateSectorArrays;
 0 spawn BIS_fnc_WL2_targetSelectionHandleServer;
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_targetResetHandleServer;
 0 spawn BIS_fnc_WL2_forfeitHandleServer;
 0 spawn BIS_fnc_WL2_garbageCollector;
+0 spawn BIS_fnc_WL2_mineLimit;
 
 setTimeMultiplier 3;
-
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || daytime < 5};
 		setTimeMultiplier 9;
 		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && daytime > 5};
 		setTimeMultiplier 3;
+	};
+};
+
+0 spawn {
+	while {!BIS_WL_missionEnd} do {
+		_overcastPreset = random 1;
+		(7200 * timeMultiplier) setOvercast _overcastPreset;
+		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
 	};
 };
 
@@ -151,7 +147,5 @@ setTimeMultiplier 3;
 		};
 	};
 } forEach BIS_WL_competingSides;
-
-[] remoteExec ["BIS_fnc_WL2_mineLimit", 2];
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
