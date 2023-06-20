@@ -7,7 +7,7 @@ if (isMultiplayer) then {
 		(_display displayCtrl 1010) ctrlAddEventHandler ["ButtonClick", {
 			0 spawn {
 				sleep WL_TIMEOUT_SHORT;
-				(findDisplay 49 displayCtrl 235106) ctrlAddEventHandler ["ButtonClick", {(findDisplay 49) closeDisplay 1; player setDamage 1}];
+				(findDisplay 49 displayCtrl 235106) ctrlAddEventHandler ["ButtonClick", {(findDisplay 49) closeDisplay 1; [player, 1] remoteExec ["setDamage", 2]}];
 			};
 		}];
 	};
