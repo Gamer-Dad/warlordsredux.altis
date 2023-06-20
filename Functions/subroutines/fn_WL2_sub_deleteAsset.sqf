@@ -15,17 +15,15 @@ if (isServer) exitWith {
 		{_asset deleteVehicleCrew _x} forEach crew _asset;
 		deleteGroup _grp;
 	};
-	deleteVehicle _asset;
 
 	if (typeOf _asset == "B_Truck_01_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-		deleteVehicle _asset;
 	};
-
 	if (typeOf _asset == "O_Truck_03_medical_F") then {
 		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-		deleteVehicle _asset;
 	};
+	
+	deleteVehicle _asset;
 };
 
 [_asset] remoteExec ["BIS_fnc_WL2_sub_deleteAsset", 2];
