@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-waitUntil {sleep WL_TIMEOUT_SHORT; (((BIS_WL_base1 getVariable "BIS_WL_owner") == (BIS_WL_base2 getVariable "BIS_WL_owner")) || (BIS_WL_missionEnd == true))};
+waitUntil {sleep WL_TIMEOUT_SHORT; (((BIS_WL_base1 getVariable ["BIS_WL_owner", civilian]) == (BIS_WL_base2 getVariable ["BIS_WL_owner", independent])) || (BIS_WL_missionEnd == true))};
 
 private _winner = BIS_WL_base1 getVariable "BIS_WL_owner";
 
