@@ -5,7 +5,7 @@ class CfgRemoteExec {
 		jip = 1;
 
 		class WL2_fundsDatabaseWrite {
-			allowedTargets = 2;
+			allowedTargets = 1;
 		};
 	};
 };
