@@ -11,6 +11,13 @@ class CfgRemoteExec {
 };
 
 class CfgDisabledCommands {
+	class SETPOS {
+		class SYNTAX1
+		{
+			targets[] = {1,0,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
+		};
+	};
 	class  SETDAMAGE {
 		class SYNTAX1
 		{
