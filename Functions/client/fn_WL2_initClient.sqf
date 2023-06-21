@@ -334,14 +334,6 @@ if !(isNil {Dev_MrThomasM}) then {
 	0 spawn BIS_fnc_WL2_mrtmAction;
 };
 
-player addaction [
-	"10K CP", 
-	{
-		_uid = getPlayerUID player;
-		[_uid, 10000] remoteExec ["BIS_fnc_WL2_fundsDatabaseWrite", 2]
-	}
-];
-
 0 spawn {
 	waituntil {sleep 0.1; !isnull (findDisplay 46)};
 	0 spawn BIS_fnc_WL2_welcome;
