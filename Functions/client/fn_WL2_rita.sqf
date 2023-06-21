@@ -2,11 +2,8 @@ waitUntil {sleep 0.1; ((typeOf objectParent player) ==  "O_Plane_Fighter_02_F" |
 
 if !(alive player) exitWith {};
 _v = (objectParent player);
-// Vars
 
-if (typeOf _v == "O_Heli_Attack_02_dynamicLoadout_F") then {
-	_v setVariable ["landingGear", false];
-};
+// Vars
 _v setVariable ["altCeiling", 2000];
 _v setVariable ["isBettyBitching", false];
 _v setVariable ["landingGear", true];
@@ -30,6 +27,10 @@ _v addEventHandler ["Killed", {
 	_unit removeAllEventHandlers "IncomingMissile";
 	_unit removeAllEventHandlers "Killed";
 }];
+
+if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
+	(vehicle player) setVariable ["landingGear", false];
+};
 
 //Pull up warning
 0 spawn {
