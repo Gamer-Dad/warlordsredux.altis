@@ -3,6 +3,10 @@ waitUntil {sleep 0.1; ((typeOf objectParent player) ==  "O_Plane_Fighter_02_F" |
 if !(alive player) exitWith {};
 _v = (objectParent player);
 // Vars
+
+if (typeOf _v == "O_Heli_Attack_02_dynamicLoadout_F") then {
+	_v setVariable ["landingGear", false];
+};
 _v setVariable ["altCeiling", 2000];
 _v setVariable ["isBettyBitching", false];
 _v setVariable ["landingGear", true];
