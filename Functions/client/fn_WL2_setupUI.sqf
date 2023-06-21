@@ -402,7 +402,7 @@ switch (_displayClass) do {
 					case "UnlockVehicles": {{_x lock FALSE; _x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]]} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_unlock_all_msg"] spawn BIS_fnc_WL2_smoothText};
 					case "RemoveUnits": {
 						{
-							[_x, 1] remoteExec ["setDamage", 2];
+							deleteVehicle _x;
 						} forEach ((groupSelectedUnits player) select {_x != player});
 						[] spawn BIS_fnc_WL2_refreshOSD;
 					};
