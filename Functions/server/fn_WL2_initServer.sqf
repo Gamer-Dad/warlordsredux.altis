@@ -65,7 +65,11 @@ addMissionEventHandler ["HandleDisconnect", {
 		if (typeOf _x == "O_Truck_03_medical_F") then {
 			missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 		};
-		_x call BIS_fnc_WL2_sub_deleteAsset;
+		if (_x isKindOf "Man") then {
+			deleteVehicle _x;
+		} else {
+			_x spawn BIS_fnc_WL2_sub_deleteAsset;
+		};
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	{
 		if !(isPlayer _x) then {_x setDamage 1};
