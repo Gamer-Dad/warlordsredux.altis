@@ -776,8 +776,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton5: RscCheckboxMRTM
 		{
 			idc = 2805;
-			action = "";
-			onLoad =  "(_this # 0) ctrlEnable false;";
+			action = "if (MRTM_disableHint) then {MRTM_disableHint = false} else {MRTM_disableHint = true}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -884,7 +883,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText5: RscStructuredTextMRTM
 		{
 			idc = 1121;
-			text = "";
+			text = "Disable easter egg hints";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;

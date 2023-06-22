@@ -43,20 +43,26 @@ if (player getVariable "MRTM_3rdPersonDisabled") then {
 	((findDisplay 8000) displayCtrl 2801) cbSetChecked false;
 };
 
-if (MRTM_playKillSound) then {
-	((findDisplay 8000) displayCtrl 2803) cbSetChecked true;
-} else {
-	((findDisplay 8000) displayCtrl 2803) cbSetChecked false;
-};
-
 if (MRTM_muteVoiceInformer) then {
 	((findDisplay 8000) displayCtrl 2802) cbSetChecked true;
 } else {
 	((findDisplay 8000) displayCtrl 2802) cbSetChecked false;
 };
 
+if (MRTM_playKillSound) then {
+	((findDisplay 8000) displayCtrl 2803) cbSetChecked true;
+} else {
+	((findDisplay 8000) displayCtrl 2803) cbSetChecked false;
+};
+
 if (MRTM_EnableRWR) then {
 	((findDisplay 8000) displayCtrl 2804) cbSetChecked true;
 } else {
 	((findDisplay 8000) displayCtrl 2804) cbSetChecked false;
+};
+
+if (MRTM_disableHint) then {
+	((findDisplay 8000) displayCtrl 2805) cbSetChecked true;
+} else {
+	((findDisplay 8000) displayCtrl 2805) cbSetChecked false;
 };

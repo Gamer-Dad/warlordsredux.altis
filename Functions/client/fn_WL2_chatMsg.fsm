@@ -8,7 +8,7 @@ link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,9,6316128,1,-311.637817,288.362183,387.929596,-212.070404,952,887,1};
-window[] = {0,-1,-1,-1,-1,1397,338,2258,338,1,970};
+window[] = {0,-1,-1,-1,-1,1189,130,2050,130,1,970};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -45,39 +45,41 @@ class FSM
                         name = "Msg";
                         itemno = 2;
                         init = /*%FSM<STATEINIT""">*/"_players = count BIS_WL_allWarlords;" \n
-                         "if (_players >= 51) then " \n
-                         "{	" \n
-                         "	systemchat ""Max AI now at 1, human interaction encouraged!"";" \n
-                         "}" \n
-                         "Else " \n
-                         "{" \n
-                         "	if (_players >= 45) then" \n
-                         "	{" \n
-                         "		systemchat ""Max AI now at 2, make em count!"";" \n
+                         "if !(MRTM_disableHint) then {" \n
+                         "	if (_players >= 51) then " \n
+                         "	{	" \n
+                         "		systemchat ""Max AI now at 1, human interaction encouraged!"";" \n
                          "	}" \n
                          "	Else " \n
                          "	{" \n
-                         "		if (_players >= 40) then" \n
+                         "		if (_players >= 45) then" \n
                          "		{" \n
-                         "			systemchat ""Max AI now at 3, put them to work!"";" \n
+                         "			systemchat ""Max AI now at 2, make em count!"";" \n
                          "		}" \n
                          "		Else " \n
                          "		{" \n
-                         "			if (_players >= 30) then" \n
+                         "			if (_players >= 40) then" \n
                          "			{" \n
-                         "				systemchat ""Max AI now at 4, squad size!"";" \n
+                         "				systemchat ""Max AI now at 3, put them to work!"";" \n
                          "			}" \n
                          "			Else " \n
                          "			{" \n
-                         "				if (_players >= 20) then" \n
+                         "				if (_players >= 30) then" \n
                          "				{" \n
-                         "					systemchat ""Max AI now at 5, you can make it work!"";" \n
+                         "					systemchat ""Max AI now at 4, squad size!"";" \n
                          "				}" \n
                          "				Else " \n
                          "				{" \n
-                         "					if (_players < 10) then" \n
+                         "					if (_players >= 20) then" \n
                          "					{" \n
-                         "						systemchat ""Max AI now at 6, full company size!"";" \n
+                         "						systemchat ""Max AI now at 5, you can make it work!"";" \n
+                         "					}" \n
+                         "					Else " \n
+                         "					{" \n
+                         "						if (_players < 10) then" \n
+                         "						{" \n
+                         "							systemchat ""Max AI now at 6, full company size!"";" \n
+                         "						};" \n
                          "					};" \n
                          "				};" \n
                          "			};" \n

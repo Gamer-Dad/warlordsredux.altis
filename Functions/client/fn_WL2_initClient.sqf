@@ -76,6 +76,7 @@ player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
 MRTM_playKillSound = true;
 MRTM_muteVoiceInformer = false;
 MRTM_EnableRWR = true;
+MRTM_disableHint = true;
 has_recieved_reward = false;
 reward_active = false;
 
@@ -303,7 +304,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || visibleMap};
 	if !(visibleMap) then {
 		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
-		
 	};
 };
 
