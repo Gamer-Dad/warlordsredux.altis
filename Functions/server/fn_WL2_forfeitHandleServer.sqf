@@ -26,7 +26,7 @@
 			
 			{
 				if ((_x getVariable ["BIS_WL_forfeitVote", -1]) != -1) then {
-					_x setVariable ["BIS_WL_forfeitVote", -1, true];
+					_x setVariable ["BIS_WL_forfeitVote", -1, [2, (owner _x)]];
 				};
 			} forEach (BIS_WL_allWarlords select {side group _x == _this});
 		};

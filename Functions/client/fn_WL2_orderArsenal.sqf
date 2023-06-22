@@ -6,7 +6,6 @@ _uniform = uniform player;
 
 if (isNull (findDisplay 602)) then {
 	["Open", true] spawn BIS_fnc_arsenal;
-	player setVariable ["arsenalOpened", true, true];
 
 	_uniform spawn {
 		waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
@@ -41,7 +40,6 @@ if (isNull (findDisplay 602)) then {
 			};
 			sleep WL_TIMEOUT_MIN;
 		};
-		player setVariable ["arsenalOpened", false, true];
 	};
 
 	0 spawn {

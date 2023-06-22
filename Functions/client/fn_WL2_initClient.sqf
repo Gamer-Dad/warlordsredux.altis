@@ -193,19 +193,6 @@ player addEventHandler ["GetInMan", {
 	};
 }];
 
-player addEventHandler ["InventoryOpened",{
-	params ["_unit","_container"];
-	_override = false;
-	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {isPlayer _x && _x getVariable "arsenalOpened"} apply {backpackContainer _x};
-
-	if (_container in _allUnitBackpackContainers) then {
-		systemchat "Access denied!";
-		_override = true;
-	};
-
-	_override;
-}];
-
 player addEventHandler ["HandleDamage", {
 	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 	[_this] call BIS_fnc_WL2_setAssist;
@@ -327,8 +314,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_forfeitHandle;
-
-player setVariable ["arsenalOpened", false, true];
 
 if !(isNil {Dev_MrThomasM}) then {
 	0 spawn BIS_fnc_WL2_mrtmAction;
