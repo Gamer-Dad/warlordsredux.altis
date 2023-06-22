@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=641;
 	class ItemIDProvider
 	{
 		nextID=1210;
@@ -8595,6 +8595,7 @@ class Mission
 						skill=1;
 						init="this spawn { " \n " params [""_c""]; " \n " waitUntil {sleep 0.1; !isNil {chairMRTM}}; " \n " _c forceAddUniform ""U_O_R_Gorka_01_black_F""; " \n " _c addHeadgear ""H_PilotHelmetHeli_B""; " \n " _c addVest ""V_PlateCarrier1_blk""; " \n " _c addGoggles ""G_bandanna_beast""; " \n " _c addItem ""NVGoggles"";  " \n " _c assignItem ""NVGoggles""; " \n " removeBackpack _c; " \n " [_c,""SIT_AT_TABLE"",""ASIS"",chairMRTM] call BIS_fnc_ambientAnim; " \n "};";
 						name="Dev_MrThomasM";
+						presence=0.39590353;
 						disableSimulation=1;
 						ignoreByDynSimulGrid=1;
 					};
