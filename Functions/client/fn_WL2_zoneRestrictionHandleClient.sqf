@@ -9,6 +9,6 @@ while {!BIS_WL_missionEnd} do {
 
 	waitUntil {(player getVariable "BIS_WL_zoneRestrictionKillTime") == -1 || !alive player};
 
-	player setVariable ["BIS_WL_zoneRestrictionKillTime", -1];
+	player setVariable ["BIS_WL_zoneRestrictionKillTime", -1, true];
 	["trespassing", []] spawn BIS_fnc_WL2_setOSDEvent;
 };
