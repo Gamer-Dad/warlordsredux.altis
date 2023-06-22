@@ -17,4 +17,10 @@ while {true} do {
 		};
 	} forEach _units;
 	sleep 5;
+
+	{
+		if !(alive _x) then {
+			disReg = disReg - [_x];
+		};
+	} forEach disReg;
 };
