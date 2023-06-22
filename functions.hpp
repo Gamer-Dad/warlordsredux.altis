@@ -31,7 +31,6 @@ class CfgFunctions {
 			class WL2_orderSectorScan {};
 			class WL2_purchaseMenuOpeningHandle {};
 			class WL2_refreshCurrentTargetData {};
-			class WL2_refreshIconsToDraw {};
 			class WL2_refreshOSD {};
 			class WL2_requestPurchase {};
 			class WL2_sceneDrawHandle {};
@@ -110,7 +109,6 @@ class CfgFunctions {
 			class WL2_respawnHandle {};
 			class WL2_sectorScanHandle {};
 			class WL2_sortSectorArrays {};
-			class WL2_syncedTime {};
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
 			class WL2_setAssist {};

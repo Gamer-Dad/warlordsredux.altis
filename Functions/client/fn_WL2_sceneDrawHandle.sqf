@@ -35,28 +35,6 @@ BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
 			];
 		};
 	};
-	if (BIS_WL_playersAlpha > 0) then {
-		{
-			drawIcon3D [
-				"A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
-				[1, 1, 1, BIS_WL_playersAlpha],
-				if (vehicle _x == _x) then {
-					(_x modelToWorldVisual (_x selectionPosition "head")) vectorAdd [0,0,0.75];
-				} else {
-					getPosATLVisual _x
-				},
-				0,
-				0,
-				0,
-				name _x,
-				2,
-				WL_SCENE_FONT_SIZE,
-				"RobotoCondensedBold",
-				"center",
-				FALSE
-			];
-		} forEach BIS_WL_iconDrawArray3D;
-	};
 	{
 		drawIcon3D [
 			"\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa",

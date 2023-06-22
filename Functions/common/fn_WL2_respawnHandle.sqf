@@ -12,12 +12,6 @@ if (_newUnit getVariable ["BIS_WL_ignore", FALSE]) exitWith {};
 	
 	if ((side group _newUnit) in BIS_WL_competingSides) then {
 		BIS_WL_allWarlords pushBackUnique _newUnit;
-		
-		if !(isDedicated) then {
-			if ((side group _newUnit) == BIS_WL_playerSide) then {
-				call BIS_fnc_WL2_refreshIconsToDraw;
-			};
-		};
 	};
 };
 
