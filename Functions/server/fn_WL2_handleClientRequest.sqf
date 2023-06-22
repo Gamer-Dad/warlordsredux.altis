@@ -372,6 +372,14 @@ if !(isNull _sender) then {
 						_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
 					};
 				};
+
+				_asset setVariable ["assistList", []];
+				_asset addEventHandler ["HandleDamage", {
+					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+					[_this] call BIS_fnc_WL2_setAssist;
+					_damage;
+				}];
+
 				waitUntil {sleep 0.1; !(isNull _asset)};
 				_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 			};

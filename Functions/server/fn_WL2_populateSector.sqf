@@ -14,7 +14,8 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
 				_vehicle spawn DAPS_fnc_RegisterVehicle;
-				_vehicle setVariable ["assistList", [], true];
+				
+				_vehicle setVariable ["assistList", []];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 					[_this] call BIS_fnc_WL2_setAssist;
@@ -51,7 +52,8 @@ if (_side == BIS_WL_localSide) then {
 
 			if !(_vehicle isKindOf "Man") then {
 				_vehicle spawn DAPS_fnc_RegisterVehicle;
-				_vehicle setVariable ["assistList", [], true];
+
+				_vehicle setVariable ["assistList", []];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 					[_this] call BIS_fnc_WL2_setAssist;
@@ -89,7 +91,8 @@ if (_side == BIS_WL_localSide) then {
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
 				_vehicle spawn DAPS_fnc_RegisterVehicle;
-				_vehicle setVariable ["assistList", [], true];
+
+				_vehicle setVariable ["assistList", []];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 					[_this] call BIS_fnc_WL2_setAssist;

@@ -41,7 +41,7 @@ if !(isNull _instigator) then {
 			if ((objectParent _responsibleLeader) != _responsibleLeader) then {
 				{
 					_l = (_unit getVariable ["assistList", []]) + [_x];
-					_unit setVariable ["assistList", _l, true];
+					_unit setVariable ["assistList", _l];
 				} forEach (crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || (_x isEqualTo (driver (objectParent _responsibleLeader))) || (_x isEqualTo (commander (objectParent _responsibleLeader))) && {(_x != _responsibleLeader)})};
 			};
 		};
@@ -67,6 +67,6 @@ if (_cond > 0) then {
 		[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
 		[_unit, _killReward, true, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 	} forEach _assistList;
-	_unit setVariable ["assistList", [], true];
+	_unit setVariable ["assistList", nil];
 	_unit setVariable ["BIS_WL_killer", nil];
 };
