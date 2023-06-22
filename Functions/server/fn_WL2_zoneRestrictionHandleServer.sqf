@@ -28,7 +28,7 @@ while {!BIS_WL_missionEnd} do {
 	
 	{
 		if (isPlayer _x) then {
-			_x setVariable ["BIS_WL_zoneRestrictionKillTime", -1, true];
+			_x setVariable ["BIS_WL_zoneRestrictionKillTime", -1, [2, (owner _x)]];
 		};
 	} forEach _trespassersGone;
 	
@@ -46,7 +46,7 @@ while {!BIS_WL_missionEnd} do {
 			if (vehicle _x == _x) then {_timeout = 60} else {
 				if ((vehicle _x) isKindOf "Air") then {_timeout = 30};
 			};
-			_x setVariable ["BIS_WL_zoneRestrictionKillTime", serverTime + _timeout, true];
+			_x setVariable ["BIS_WL_zoneRestrictionKillTime", serverTime + _timeout, [2, (owner _x)]];
 			[_x, (serverTime + _timeout)] spawn {
 				params ["_player", "_timeout"];
 				waitUntil {serverTime >= _timeout || ((_player getVariable ["BIS_WL_zoneRestrictionKillTime", 0]) > serverTime)};
