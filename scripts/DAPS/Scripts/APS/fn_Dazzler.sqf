@@ -20,8 +20,7 @@ private _id = getDir _i;
 if !(alive _i) exitWith {};
 if (_exit) exitWith {dapsDazzled = dapsDazzled - [_i]};
 
-private _rd = [_id, _v] call DAPS_fnc_RelDir2;
-[_v, "", _rd, true] remoteExec ["DAPS_fnc_Report"];
 [_v, _i] remoteExec ["DAPS_fnc_MisguideMissile", 2];
-while {alive _i} do {sleep 5};
+
+waitUntil { sleep 2; !(alive _i)};
 dapsDazzled = dapsDazzled - [_i];
