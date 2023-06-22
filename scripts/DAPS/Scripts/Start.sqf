@@ -48,20 +48,6 @@ DAPS_fnc_CompileTypes = compile preprocessFile "scripts\DAPS\Scripts\Management\
 call DAPS_fnc_CompileTypes;
 // Projectiles that have been dazzled
 dapsDazzled=[];
-//dapsSmokeLaunchers=[];
-dapsSmokeLaunchers=["SmokeLauncher"];
-// Vehicles that have been registered
-dapsRegistered=[];
-// Registered vehicles with no APS
-dapsNoAPS=[];
-dapsLoop=true;
-// Classnames of ammo that will not activate APS.
-dapsExcludedAmmo=[];
-
-dapsAntiSpam=FALSE;
-
-// Used to allow/disallow the DAPS dialog
-dapsAvailable=TRUE;
 
 //https://community.bistudio.com/wiki/DIK_KeyCodes
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"

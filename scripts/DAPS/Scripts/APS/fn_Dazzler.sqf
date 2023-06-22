@@ -1,7 +1,6 @@
 private _v = _this select 0;
 private _i = _this select 1;
 private _exit = true;
-if ((typeOf _i) in dapsExcludedAmmo) exitWith {};
 if (_i in dapsDazzled) exitWith {};
 dapsDazzled pushBack _i;
 if (_i call DAPS_fnc_IsLaserGuided) then {_exit = false};

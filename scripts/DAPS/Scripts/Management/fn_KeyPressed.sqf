@@ -1,5 +1,4 @@
 private["_v"];
-if ( !dapsAvailable) exitWith {};
 _v = vehicle player;
 if ( _v == player) exitWith{};
 if (isNil { _v getVariable"dapsType"}) exitWith { systemChat "No APS"};
