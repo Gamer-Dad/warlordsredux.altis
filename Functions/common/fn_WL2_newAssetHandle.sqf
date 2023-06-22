@@ -20,6 +20,13 @@ if (isPlayer _owner) then {
 			BIS_manLost = TRUE;
 			[] spawn BIS_fnc_WL2_refreshOSD;
 		}];
+
+		_asset setVariable ["assistList", [], true];
+		_asset addEventHandler ["HandleDamage", {
+			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
+			[_this] call BIS_fnc_WL2_setAssist;
+			_damage;
+		}];
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
@@ -176,7 +183,7 @@ if (isPlayer _owner) then {
 		_asset setVariable ["assistList", [], true];
 		_asset addEventHandler ["HandleDamage", {
 			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
-			_this spawn BIS_fnc_WL2_setAssist;
+			[_this] call BIS_fnc_WL2_setAssist;
 			_damage;
 		}];
 		

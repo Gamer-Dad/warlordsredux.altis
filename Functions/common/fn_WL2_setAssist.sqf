@@ -25,3 +25,5 @@ if !(isNull _source) then {
 		_unit setVariable ["assistList", _list, true];
 	};
 };
+
+_damage;

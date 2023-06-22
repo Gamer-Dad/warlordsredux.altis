@@ -17,7 +17,7 @@ if (_side == BIS_WL_localSide) then {
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
-					_this spawn BIS_fnc_WL2_setAssist;
+					[_this] call BIS_fnc_WL2_setAssist;
 					_damage;
 				}];
 			};
@@ -54,7 +54,7 @@ if (_side == BIS_WL_localSide) then {
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
-					_this spawn BIS_fnc_WL2_setAssist;
+					[_this] call BIS_fnc_WL2_setAssist;
 					_damage;
 				}];
 			};
@@ -92,7 +92,7 @@ if (_side == BIS_WL_localSide) then {
 				_vehicle setVariable ["assistList", [], true];
 				_vehicle addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
-					_this spawn BIS_fnc_WL2_setAssist;
+					[_this] call BIS_fnc_WL2_setAssist;
 					_damage;
 				}];
 			};
