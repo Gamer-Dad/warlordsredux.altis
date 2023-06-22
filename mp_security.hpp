@@ -62,14 +62,6 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
-	class SETPOSWORLD
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,0};
-			args[] = {{"OBJECT"},{"ARRAY"}};
-		};
-	};
 	class SETVEHICLEPOSITION
 	{
 		class SYNTAX1
