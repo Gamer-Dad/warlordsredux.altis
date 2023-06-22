@@ -39,7 +39,10 @@ switch (typeName _center) do {
 
 if (isNull _sortCenter) then {_sortCenter = _center};
 
-private _rimArea = _area;
+_rimArea = [];
+if !(isNil {_area}) then {
+	_rimArea = _area;
+};
 private _axisRimA = 0;
 private _axisRimB = 0;
 
