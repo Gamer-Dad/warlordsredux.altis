@@ -70,12 +70,4 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
-	class SETVELOCITY
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,0};
-			args[] = {{"OBJECT"},{"ARRAY"}};	
-		};
-	}; 
 };
