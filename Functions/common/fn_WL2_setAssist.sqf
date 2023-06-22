@@ -22,7 +22,7 @@ if !(isNull _source) then {
 		if ((!(_source in _list)) && (isPlayer _source)) then {
 			_list = (_unit getVariable ["assistList", []]) + [_source];
 		};
-		_unit setVariable ["assistList", _list];
+		_unit setVariable ["assistList", _list, 2];
 	};
 };
 

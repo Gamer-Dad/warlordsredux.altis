@@ -373,7 +373,7 @@ if !(isNull _sender) then {
 					};
 				};
 
-				_asset setVariable ["assistList", []];
+				_asset setVariable ["assistList", [], 2];
 				_asset addEventHandler ["HandleDamage", {
 					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 					[_this] call BIS_fnc_WL2_setAssist;

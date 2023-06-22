@@ -99,7 +99,6 @@ addMissionEventHandler ["EntityKilled", {
 
 addMissionEventHandler ["EntityRespawned", {
 	params ["_newEntity", "_oldEntity"];
-	_oldEntity removeAllEventHandlers "HandleDamage";
 	
 	_newEntity addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
