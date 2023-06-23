@@ -37,37 +37,6 @@ if !(isNull _instigator) then {
 			_uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
 			[_unit, _killReward, false, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
-			_unit setVariable ["BIS_WL_killer", _responsibleLeader];
-			if ((objectParent _responsibleLeader) != _responsibleLeader) then {
-				{
-					_l = (_unit getVariable ["assistList", []]) + [_x];
-					_unit setVariable ["assistList", _l, 2];
-				} forEach (crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || (_x isEqualTo (driver (objectParent _responsibleLeader))) || (_x isEqualTo (commander (objectParent _responsibleLeader))) && {(_x != _responsibleLeader) && {isPlayer _x}})};
-			};
 		};
 	};
 };
-
-_list = ((_unit getVariable ["assistList", []]) select {((getPlayerUID _x) != (getPlayerUID (_unit getVariable ["BIS_WL_killer", _unit])))});
-_cond = (count _list);
-if (_cond > 0) then {
-	_assistList = _list;
-	_killReward = (if (_unit isKindOf "Man") then {
-		if (isPlayer _unit) then {
-			75;
-		} else {
-			40;
-		};
-	} else {
-		(serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
-	});
-	_killReward = (round ((_killReward / 100) * 30));
-	{
-		_uid = getPlayerUID _x;
-		[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward, true, _uid] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _x)];
-	} forEach _assistList;
-	_unit setVariable ["BIS_WL_killer", nil];
-};
-
-_unit setVariable ["assistList", nil, 2];

@@ -875,7 +875,7 @@ GOM_fnc_setPylonsRepair = {
 				if (_repairCargo isEqualTo 0) exitWith {systemchat "You have no more spare parts!";_empty = true};
 			};
 
-			[_veh, (_curDamage - _repairTick)] remoteExec ["setDamage", 2];
+			[player, "repair", 0, (_curDamage - _repairTick), _veh] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 			_sound = [_veh] call GOM_fnc_pylonSound;
 			_damDisp = [((_curDamage * 100) - 100) * -1] call GOM_fnc_roundByDecimals;
 			if (_timer % 10 isEqualTo 0) then {

@@ -111,7 +111,6 @@ class CfgFunctions {
 			class WL2_sortSectorArrays {};
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
-			class WL2_setAssist {};
 			class WL2_calcImbalance {};
     	};
 		class Subroutines 

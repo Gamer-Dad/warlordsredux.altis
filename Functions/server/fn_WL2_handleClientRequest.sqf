@@ -62,6 +62,16 @@ _setOwner = {
 if !(isNull _sender) then {
 	_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 	switch (_action) do {
+		case "kill" : {
+			if ((owner _sender) == _cost) then {
+				_sender setDamage 1;
+			};
+		};
+		case "repair" : {
+			if ((!isNil {_cost}) && {_cost <= serverTime}) then {
+				_target setDamage _pos;
+			};
+		};
 		case "scan" : {
 			if (_hasFunds) then {
 				_target setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], serverTime + WL_SCAN_DURATION, TRUE];
@@ -372,13 +382,6 @@ if !(isNull _sender) then {
 						_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
 					};
 				};
-
-				_asset setVariable ["assistList", [], 2];
-				_asset addEventHandler ["HandleDamage", {
-					params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
-					[_this] call BIS_fnc_WL2_setAssist;
-					_damage;
-				}];
 
 				waitUntil {sleep 0.1; !(isNull _asset)};
 				_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
