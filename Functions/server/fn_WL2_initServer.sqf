@@ -206,7 +206,7 @@ setTimeMultiplier 3;
 	};
 	waitUntil { sleep 0.1; !isNil {_seat}};
 	if ((random 1) < 2) then {
-		DEV_MrThomasM = createSimpleObject ["Civilian", [4189.28,20095.9,316.912]];
+		DEV_MrThomasM = createVehicle ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
 		DEV_MrThomasM forceAddUniform "U_O_R_Gorka_01_black_F";
 		DEV_MrThomasM addHeadgear "H_PilotHelmetHeli_B"; 
 		DEV_MrThomasM addVest "V_PlateCarrier1_blk"; 
