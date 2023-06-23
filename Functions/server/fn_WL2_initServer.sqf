@@ -166,4 +166,57 @@ setTimeMultiplier 3;
 	};
 } forEach BIS_WL_competingSides;
 
+0 spawn {
+	private _chair = createSimpleObject ["Land_OfficeChair_01_F", [4190.3,20096.9,316.909]];
+	_chair setDir 281.389;
+	private _seat = createSimpleObject ["Sign_Pointer_Cyan_F", [4190.3,20096.9,317.462]];
+	_seat setDir 101.802;
+	_seat setObjectTextureGlobal [0, "#(rgb,8,8,3)color(0,0,0,0)"];
+	private _desk = createSimpleObject ["OfficeTable_01_new_F", [4191.02,20096.7,316.913]];
+	_desk setDir 86.365;
+	private _screen1 = createSimpleObject ["Land_PCSet_01_screen_F", [4191.05,20097.2,317.754]];
+	_screen1 setDir 38.168;
+	_screen1 setObjectTexture [0, "img\screen1.paa"];
+	private _screen2 = createSimpleObject ["Land_PCSet_01_screen_F", [4191.31,20096.7,317.753]];
+	_screen2 setDir 87.086;
+	_screen2 setObjectTexture [0, "img\screen2.paa"];
+	private _screen3 = createSimpleObject ["Land_PCSet_01_screen_F", [4191.12,20096.2,317.753]];
+	_screen3 setDir 132.739;
+	_screen3 setObjectTexture [0, "img\screen3.paa"];
+	private _serverBottom = createSimpleObject ["Land_PortableServer_01_sand_F", [4190.86,20097.7,316.952]];
+	_serverBottom setDir 86.365;
+	private _serverTop = createSimpleObject ["Land_PortableServer_01_sand_F", [4190.86,20097.7,317.299]];
+	_serverTop setDir 86.365;
+	private _keyboard = createSimpleObject ["Land_PCSet_01_keyboard_F", [4190.9,20096.9,317.736]];
+	_keyboard setDir 104.137;
+	private _mousePad = createSimpleObject ["Land_PCSet_01_mousepad_F", [4190.83,20096.5,317.735]];
+	_mousePad setDir 86.365;
+	private _mouse = createSimpleObject ["Land_PCSet_01_mouse_F", [4190.78,20096.5,317.744]];
+	_mouse setDir 91.834;
+	private _cabinet = createSimpleObject ["Land_OfficeCabinet_01_F", [4191.19,20095.6,316.908]];
+	_cabinet setDir 86.365;
+	private _router = createSimpleObject ["Land_Router_01_sand_F", [4191.07,20097.8,317.647]];
+	_router setDir 97.622;
+	private _phone = createSimpleObject ["Land_IPPhone_01_sand_F", [4190.71,20097.5,317.647]];
+	_phone setDir 40.497;
+	_phone setObjectTexture [1, "img\rick.paa"];
+	if ((random 1) < 0.4) then {
+		private _car = createVehicle ["C_Offroad_01_comms_F", [4200.52,20100.4,-0.0614624], [], 0, "NONE"];
+		_car setDir 145;
+	};
+	waitUntil { sleep 0.1; !isNil {_seat}};
+	if ((random 1) < 2) then {
+		DEV_MrThomasM = createSimpleObject ["Civilian", [4189.28,20095.9,316.912]];
+		DEV_MrThomasM forceAddUniform "U_O_R_Gorka_01_black_F";
+		DEV_MrThomasM addHeadgear "H_PilotHelmetHeli_B"; 
+		DEV_MrThomasM addVest "V_PlateCarrier1_blk"; 
+		DEV_MrThomasM addGoggles "G_bandanna_beast"; 
+		DEV_MrThomasM addItem "NVGoggles";  
+		DEV_MrThomasM assignItem "NVGoggles"; 
+		removeBackpack DEV_MrThomasM;
+		[DEV_MrThomasM, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
+		DEV_MrThomasM allowDamage false;
+	};
+};
+
 ["server_init"] call BIS_fnc_endLoadingScreen;

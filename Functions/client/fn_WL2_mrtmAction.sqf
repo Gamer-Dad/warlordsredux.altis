@@ -1,3 +1,6 @@
+_t = serverTime + 15;
+waitUntil { sleep 0.1; ((serverTime > _t) || !(isNil {DEV_MrThomasM}))};
+
 Dev_MrThomasM addAction [
 	"Talk with the wise villager",
 	{
