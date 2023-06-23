@@ -200,13 +200,14 @@ setTimeMultiplier 3;
 	private _phone = createSimpleObject ["Land_IPPhone_01_sand_F", [4190.71,20097.5,317.647]];
 	_phone setDir 40.497;
 	_phone setObjectTexture [1, "img\rick.paa"];
-	if ((random 1) < 0.4) then {
+	if ((random 1) < 0.6) then {
 		private _car = createVehicle ["C_Offroad_01_comms_F", [4200.52,20100.4,-0.0614624], [], 0, "NONE"];
 		_car setDir 145;
 	};
 	waitUntil { sleep 0.1; !isNil {_seat}};
-	if ((random 1) < 2) then {
+	if ((random 1) < 0.4) then {
 		DEV_MrThomasM = createVehicle ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
+		publicVariable "DEV_MrThomasM";
 		DEV_MrThomasM forceAddUniform "U_O_R_Gorka_01_black_F";
 		DEV_MrThomasM addHeadgear "H_PilotHelmetHeli_B"; 
 		DEV_MrThomasM addVest "V_PlateCarrier1_blk"; 
@@ -216,6 +217,7 @@ setTimeMultiplier 3;
 		removeBackpack DEV_MrThomasM;
 		[DEV_MrThomasM, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
 		DEV_MrThomasM allowDamage false;
+		[DEV_MrThomasM, "InsigniaMrThomasM"] call BIS_fnc_setUnitInsignia;
 	};
 };
 

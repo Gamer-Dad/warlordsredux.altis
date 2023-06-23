@@ -300,8 +300,12 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_mapIcons;
 0 spawn BIS_fnc_WL2_forfeitHandle;
 
-if !(isNil {Dev_MrThomasM}) then {
-	0 spawn BIS_fnc_WL2_mrtmAction;
+0 spawn {
+	_t = serverTime + 10;
+	waitUntil {sleep 0.1; ((serverTime > _t) || !(isNil {Dev_MrThomasM}))};
+	if (!(isNil {Dev_MrThomasM})) then {
+		0 spawn BIS_fnc_WL2_mrtmAction;
+	};
 };
 
 0 spawn {
