@@ -84,54 +84,55 @@ class CfgRemoteExec {
 		};
 	};
 
-	class Commands
-	mode = 1; // Whitelist only
+	class Commands {
+		mode = 1; // Whitelist only
 
-	//Server only
-	class setVehiclePosition {
-		allowedTargets = 2;
-	};
+		//Server only
+		class setVehiclePosition {
+			allowedTargets = 2;
+		};
 
-	//Client only
-	class setVehicleVarName {
-		allowedTargets = 1;
-	};
+		//Client only
+		class setVehicleVarName {
+			allowedTargets = 1;
+		};
 
-	//All allowed
-	class setVehicleAmmoDef {
-		allowedTargets = 0;
-	};
+		//All allowed
+		class setVehicleAmmoDef {
+			allowedTargets = 0;
+		};
 
-	class systemChat {
-		allowedTargets = 0;
-	};
+		class systemChat {
+			allowedTargets = 0;
+		};
 
-	class setPylonLoadOut {
-		allowedTargets = 0;
-	};
+		class setPylonLoadOut {
+			allowedTargets = 0;
+		};
 
-	class SetAmmoOnPylon {
-		allowedTargets = 0;
-	};
+		class SetAmmoOnPylon {
+			allowedTargets = 0;
+		};
 
-	class setFuel {
-		allowedTargets = 0;
-	};
+		class setFuel {
+			allowedTargets = 0;
+		};
 
-	class setFuelCargo {
-		allowedTargets = 0;
-	};
+		class setFuelCargo {
+			allowedTargets = 0;
+		};
 
-	class setRepairCargo {
-		allowedTargets = 0;
-	};
+		class setRepairCargo {
+			allowedTargets = 0;
+		};
 
-	class setAmmoCargo {
-		allowedTargets = 0;
-	};
+		class setAmmoCargo {
+			allowedTargets = 0;
+		};
 
-	class setPylonsPriority {
-		allowedTargets = 0;
+		class setPylonsPriority {
+			allowedTargets = 0;
+		};
 	};
 };
 
