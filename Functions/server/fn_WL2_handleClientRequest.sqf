@@ -4,7 +4,6 @@ params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic"];
 
 _assetVar = "";
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") get (getPlayerUID _sender));
-_hasFunds  = (_playerFunds >= _cost);
 
 _processTargetPos = {
 	params ["_pos"];
@@ -73,6 +72,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "scan" : {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				_target setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], serverTime + WL_SCAN_DURATION, TRUE];
 
@@ -81,6 +81,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "targetReset": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], serverTime, true];
 				missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", side _sender], name _sender, true];
@@ -89,6 +90,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "lastLoadout": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
 
@@ -97,6 +99,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "savedLoadout": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
 
@@ -105,6 +108,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "orderFTVehicle": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				private _asset = if (_target == west) then {
 					createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
@@ -123,6 +127,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "fastTravelContested": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};
 				_sender setVehiclePosition [_pos, [], 1, "NONE"];
@@ -142,6 +147,7 @@ if !(isNull _sender) then {
 			} forEach _tagAlong;
 		};
 		case "orderArsenal": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];
 				private _uid = getPlayerUID _sender;
@@ -149,6 +155,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "orderAsset": {
+			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				private _class = _target;
 				private _asset = objNull;
