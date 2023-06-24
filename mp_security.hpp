@@ -140,6 +140,10 @@ class CfgRemoteExec {
 		class setPylonsPriority {
 			allowedTargets = 0;
 		};
+
+		class hint {
+			allowedTargets = 0;
+		};
 	};
 };
 
