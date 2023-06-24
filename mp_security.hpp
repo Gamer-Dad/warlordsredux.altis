@@ -144,53 +144,57 @@ class CfgRemoteExec {
 };
 
 class CfgDisabledCommands {
+	//Other
 	class DISABLECOLLISIONWITH {
 		class SYNTAX1 
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"OBJECT"}};
 		};
 	};
 
-    class CREATEUNIT
-    {
-        class SYNTAX1
-        {
-            targets[] = {0,0,0};
-            args[] = {{"STRING"},{"ARRAY"}};
-        };
+	class CREATEUNIT
+	{
+		class SYNTAX1
+		{
+			targets[] = {1,0,0};
+			args[] = {{"STRING"}, {"ARRAY"}};
+		};
+	};
 
-        class SYNTAX2
-        {
-            targets[] = {1,1,1};
-            args[] = {{"GROUP"},{"ARRAY"}};
-        };
-    };
+	class CREATEVEHICLELOCAL
+	{
+		class SYNTAX1
+		{
+			targets[] = {1,0,1};
+			args[] = {{"STRING"},{"ARRAY"}};
+		};
+	};
 
 	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};			
 		};
 	};
 	class ADDFORCE {
 		class SYNTAX1 {
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};			
 		};
 	};
 	class SETVELOCITYMODELSPACE {
 		class SYNTAX1 
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};		
 		};
 	};
 	class SETANIMSPEEDCOEF {
 		class SYNTAX1 
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
 	};
@@ -198,33 +202,33 @@ class CfgDisabledCommands {
 	//Damage
 	class SETHIT {
 		class SYNTAX1 {
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
 	class SETHITINDEX {
 		class SYNTAX1 {
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
 	class SETHITPOINTDAMAGE {
 		class SYNTAX1 {
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
 	class SETDAMAGE {
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"SCALAR", "ARRAY"}};
 		};
 	};
 	class SETDAMMAGE {
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
 	};
@@ -234,7 +238,7 @@ class CfgDisabledCommands {
 	{
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
@@ -242,7 +246,7 @@ class CfgDisabledCommands {
 	{
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
@@ -250,7 +254,7 @@ class CfgDisabledCommands {
 	{
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
@@ -258,7 +262,7 @@ class CfgDisabledCommands {
 	{
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
@@ -266,7 +270,7 @@ class CfgDisabledCommands {
 	{
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
@@ -274,7 +278,7 @@ class CfgDisabledCommands {
 	{
 		class SYNTAX1
 		{
-			targets[] = {0,1,0};
+			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
