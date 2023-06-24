@@ -82,6 +82,13 @@ class CfgRemoteExec {
 		class BIS_fnc_WL2_newAssetHandle {
 			allowedTargets = 0;
 		};
+
+		//Don't touch
+		class BIS_fnc_effectKilledAirDestruction {allowedTargets = 0; jip = 0;};
+		class BIS_fnc_effectKilledSecondaries {allowedTargets = 0; jip = 0;};
+		class BIS_fnc_objectVar {allowedTargets = 0; jip = 0;};
+		class BIS_fnc_setCustomSoundController {allowedTargets = 0; jip = 0;};
+		class BIS_fnc_debugConsoleExec {allowedTargets = 0; jip = 0;};
 	};
 
 	class Commands {
