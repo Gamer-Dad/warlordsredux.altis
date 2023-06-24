@@ -162,15 +162,6 @@ class CfgDisabledCommands {
 		};
 	};
 
-	class CREATEVEHICLELOCAL
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,1};
-			args[] = {{"STRING"},{"ARRAY"}};
-		};
-	};
-
 	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
