@@ -131,9 +131,9 @@ if !(isNull _sender) then {
 			if (_hasFunds) then {
 				_tagAlong = _target;
 				[format ["%1", _tagAlong]] remoteExec ["hint", 0];
-				_sender setVehiclePosition [_pos, [], 1, "NONE"];
+				_sender setVehiclePosition [_pos, [], 2, "NONE"];
 				{
-					_x setVehiclePosition [_pos, [], 1, "NONE"];
+					_x setPos _pos;
 				} forEach _tagAlong;
 
 				private _uid = getPlayerUID _sender;
@@ -143,9 +143,9 @@ if !(isNull _sender) then {
 		case "fastTravel": {
 			_tagAlong = _target;
 			[format ["%1", _tagAlong]] remoteExec ["hint", 0];
-			_sender setVehiclePosition [_pos, [], 1, "NONE"];
+			_sender setVehiclePosition [_pos, [], 3, "NONE"];
 			{
-				_x setVehiclePosition [_pos, [], 1, "NONE"];
+				_x setPos _pos;
 			} forEach _tagAlong;
 		};
 		case "orderArsenal": {
