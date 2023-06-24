@@ -117,7 +117,8 @@ if (isPlayer _owner) then {
 							"",
 							{
 								params ["_asset"];
-								0 spawn {
+								["_asset"] spawn {
+									params ["_asset"];
 									if ((_asset getVariable "BIS_WL_nextRepair") <= serverTime) then {
 										[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 										playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Repair.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
@@ -138,7 +139,6 @@ if (isPlayer _owner) then {
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
-						_asset setVariable ["BIS_WL_repairActionID", _repairActionID];
 					};
 					_asset setUserActionText [_repairActionID, if (_repairCooldown == 0) then {format ["<t color = '#4bff58'>%1</t>", localize "STR_repair"]} else {format ["<t color = '#7e7e7e'><t align = 'left'>%1</t><t align = 'right'>%2     </t></t>", localize "STR_repair", [_repairCooldown, "MM:SS"] call BIS_fnc_secondsToString]}, format ["<img size='2' color = '%1' image='\A3\ui_f\data\IGUI\Cfg\Actions\repair_ca.paa'/>", if (_repairCooldown == 0) then {"#ffffff"} else {"#7e7e7e"}]];
 				} else {
