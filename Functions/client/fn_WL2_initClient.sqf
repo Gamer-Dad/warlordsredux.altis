@@ -327,3 +327,18 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 		};
 	}];
 };
+
+0 spawn {
+	waituntil {sleep 0.1; !isnull (findDisplay 49)};
+	(findDisplay 49) displayAddEventHandler ["KeyDown", {
+		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
+		_key1 = actionKeysNames "curatorInterface";
+		_keyName = (keyName (_this select 1));
+
+		if (_keyName == _key1) then {
+			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+				true;
+			};
+		};
+	}];
+};
