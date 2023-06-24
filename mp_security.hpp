@@ -234,14 +234,6 @@ class CfgDisabledCommands {
 	};
 
 	//Positions
-	class SETPOS
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"ARRAY"}};
-		};
-	};
 	class SETPOSASLW
 	{
 		class SYNTAX1
@@ -251,14 +243,6 @@ class CfgDisabledCommands {
 		};
 	};
 	class SETPOSATL
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"ARRAY"}};
-		};
-	};
-	class SETPOSASL
 	{
 		class SYNTAX1
 		{
