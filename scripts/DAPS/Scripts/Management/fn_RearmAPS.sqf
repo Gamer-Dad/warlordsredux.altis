@@ -22,4 +22,4 @@ if((_v getVariable"dapsAmmo")<_max)then{_report=TRUE};
 _v setVariable["dapsAmmo",_max,TRUE];
 _a=_v call DAPS_fnc_CountAmmo;
 _v setVariable["dapsLastAmmo",_a,TRUE];
-if(_report)then{_v remoteExec["DAPS_fnc_ReportRearm"]};
+if(_report)then{_v remoteExec["DAPS_fnc_ReportRearm", (owner _v)]};

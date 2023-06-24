@@ -46,7 +46,27 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
+		class BIS_fnc_WL2_killRewardClient {
+			allowedTargets = 1;
+		};
+
+		class BIS_fnc_advHint {
+			allowedTargets = 1;
+		};
+
 		class DAPS_fnc_Report {
+			allowedTargets = 1;
+		};
+
+		class DAPS_fnc_ReportRearm {
+			allowedTargets = 1;
+		};
+
+		class DAPS_fnc_PopSmoke {
+			allowedTargets = 1;
+		};
+
+		class DAPS_fnc_PopSmokeTurn {
 			allowedTargets = 1;
 		};
 
