@@ -32,14 +32,32 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
 	};
-	class  SETDAMAGE {
+	class SETHIT {
+		class SYNTAX1 {
+			targets[] = {1,0,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
+		};
+	};
+	class SETHITINDEX {
+		class SYNTAX1 {
+			targets[] = {1,0,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
+		};
+	};
+	class SETHITPOINTDAMAGE {
+		class SYNTAX1 {
+			targets[] = {1,0,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
+		};
+	};
+	class SETDAMAGE {
 		class SYNTAX1
 		{
 			targets[] = {1,0,0};
 			args[] = {{"OBJECT"},{"SCALAR","ARRAY"}};
 		};
 	};
-	class  SETDAMMAGE {
+	class SETDAMMAGE {
 		class SYNTAX1
 		{
 			targets[] = {0,0,0};
