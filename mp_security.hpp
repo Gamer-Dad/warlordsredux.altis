@@ -70,10 +70,68 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
+		class BIS_fnc_WL2_orderSavedLoadout {
+			allowedTargets = 1;
+		};
+
+		class BIS_fnc_WL2_orderLastLoadout {
+			allowedTargets = 1;
+		};
+
 		//All allowed
 		class BIS_fnc_WL2_newAssetHandle {
 			allowedTargets = 0;
 		};
+	};
+
+	class Commands
+	mode = 1; // Whitelist only
+
+	//Server only
+	class setVehiclePosition {
+		allowedTargets = 2;
+	};
+
+	//Client only
+	class setVehicleVarName {
+		allowedTargets = 1;
+	};
+
+	//All allowed
+	class setVehicleAmmoDef {
+		allowedTargets = 0;
+	};
+
+	class systemChat {
+		allowedTargets = 0;
+	};
+
+	class setPylonLoadOut {
+		allowedTargets = 0;
+	};
+
+	class SetAmmoOnPylon {
+		allowedTargets = 0;
+	};
+
+	class setFuel {
+		allowedTargets = 0;
+	};
+
+	class setFuelCargo {
+		allowedTargets = 0;
+	};
+
+	class setRepairCargo {
+		allowedTargets = 0;
+	};
+
+	class setAmmoCargo {
+		allowedTargets = 0;
+	};
+
+	class setPylonsPriority {
+		allowedTargets = 0;
 	};
 };
 

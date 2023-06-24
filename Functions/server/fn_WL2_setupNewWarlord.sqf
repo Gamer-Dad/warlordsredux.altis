@@ -48,7 +48,7 @@ if !(_boundToAnotherTeam) then {
 	_respawnPos = markerPos selectRandom _markers;
 
 	while {if (isPlayer _warlord) then {!(missionNamespace getVariable [_varFormat, FALSE])} else {_warlord distance2D _respawnPos > 100}} do {
-		[_warlord, [_respawnPos, [], 2, "NONE"]] remoteExec ["setVehiclePosition", _warlord];
+		_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];
 		uiSleep WL_TIMEOUT_STANDARD;
 	};
 	
