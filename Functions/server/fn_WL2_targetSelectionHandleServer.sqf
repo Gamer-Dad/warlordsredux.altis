@@ -1,12 +1,12 @@
 #include "..\warlords_constants.inc"
 
 {
-	missionNamespace setVariable [format ["BIS_WL_currentTarget_%1", _x], objNull, TRUE];
+	missionNamespace setVariable [format ["BIS_WL_currentTarget_%1", _x], objNull, true];
 
 	[_x, _forEachIndex] spawn {
 		params ["_side", "_sideIndex"];
 		_votingResetVar = format ["BIS_WL_resetTargetSelection_server_%1", _side];
-		
+
 		_calculateMostVotedSector = {
 			_allSectorsVotedFor = [];
 			{
@@ -88,4 +88,4 @@
 			{missionNamespace setVariable [_x, objNull]} forEach _variablesPool;
 		};
 	};
-} forEach BIS_WL_competingSides;
+} forEach [WEST, EAST];
