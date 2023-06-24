@@ -3,14 +3,9 @@ params [ ["_vehicle", objNull, [objNull]] ];
 
 if ( isNull _vehicle ) exitWith { false };
 
-/*
-//-- Not needed, since the argument(s) and effect(s) of the command "addForce" are global.
-//-- https://community.bistudio.com/wiki/addForce
-if !( local _vehicle ) exitWith
-{
-	[_vehicle] remoteExec ["KS_fnc_unflipVehicle", [2, owner _vehicle] select isServer];
+if !(isServer) exitWith {
+	[_vehicle] remoteExec ["KS_fnc_unflipVehicle", 2];
 };
-*/
 
 private ["_vectorDiff","_upsideDown","_vehicleBank","_turnLeft","_forceParams","_force","_addForcePointX","_addForcePointZ"];
 
@@ -33,7 +28,6 @@ _force = getMass _vehicle * (_forceParams select _upsideDown);
 
 _addForcePointX = boundingBoxReal _vehicle select ([0, 1] select _turnLeft) select 0;
 _addForcePointZ = boundingBoxReal _vehicle select ([1, 0] select _upsideDown) select 2;
-//_addForcePointZ = [2, -4] select _upsideDown;
 
 _vehicle addForce [_vehicle vectorModelToWorld [[_force, - _force]select _turnLeft, 0, 0], [_addForcePointX, 0, _addForcePointZ]];
 

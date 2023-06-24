@@ -46,18 +46,6 @@ GOM_fnc_addAircraftLoadoutArea = {
 
 };
 
-GOM_fnc_addAircraftLoadoutToObject = {
-
-	params ["_object"];
-
-	_action = ["Edit Aircraft Loadout",{params ["_caller"];[_caller] spawn GOM_fnc_aircraftLoadout},[],0,true,true,"","_this isEqualTo vehicle _this AND {weaponLowered _this} AND {speed _this < 3} AND {alive _this} AND {alive _target}"];
-	[_object,_action] remoteExec ["addAction",[0,-2] select isDedicated,true];//compatibility check added, and JIP
-
-	true
-
-};
-
-
 GOM_fnc_roundByDecimals = {
 
 	params ["_num",["_digits",2]];

@@ -1,11 +1,58 @@
 // MP Security
 class CfgRemoteExec {
 	class Functions {
-		mode = 2;
+		mode = 1; // Whitelist only
 		jip = 1;
 
-		class WL2_fundsDatabaseWrite {
+		//Server only
+		class BIS_fnc_WL2_handleClientRequest {
+			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_sub_deleteAsset {
+			allowedTargets = 2;
+		};
+
+		class DAPS_fnc_Generic {
+			allowedTargets = 2;
+		};
+
+		class DAPS_fnc_MisguideMissile {
+			allowedTargets = 2;
+		};
+
+		class DIS_fnc_SAMmaneuver {
+			allowedTargets = 2;
+		};
+
+		class GOM_fnc_handleResources {
+			allowedTargets = 2;
+		};
+
+		class KS_fnc_unflipVehicle {
+			allowedTargets = 2;
+		};
+
+		//Client only
+		class BIS_fnc_WL2_refreshOSD {
 			allowedTargets = 1;
+		};
+
+		class BIS_fnc_WL2_orderArsenal {
+			allowedTargets = 1;
+		};
+
+		class BIS_fnc_WL2_displayCPtransfer {
+			allowedTargets = 1;
+		};
+
+		class DAPS_fnc_Report {
+			allowedTargets = 1;
+		};
+
+		//All allowed
+		class BIS_fnc_WL2_newAssetHandle {
+			allowedTargets = 0;
 		};
 	};
 };
@@ -28,7 +75,7 @@ class CfgDisabledCommands {
 	};
 	class ADDFORCE {
 		class SYNTAX1 {
-			targets[] = {0,0,0};
+			targets[] = {0,1,0};
 			args[] = {{"OBJECT"},{"ARRAY"}};			
 		};
 	};

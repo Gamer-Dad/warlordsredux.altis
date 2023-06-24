@@ -30,4 +30,4 @@ _p call DAPS_fnc_Blast;
 
 private _a = _v getVariable "dapsAmmo";
 [_v, "", _a] call DAPS_fnc_DeductAmmo;
-[_v, "", _rd, true] remoteExec ["DAPS_fnc_Report"];
+[_v, "", _rd, true] remoteExec ["DAPS_fnc_Report", (owner _v)];
