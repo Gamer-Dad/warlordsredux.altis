@@ -133,7 +133,7 @@ if !(isNull _sender) then {
 				[format ["%1", _tagAlong]] remoteExec ["hint", 0];
 				_sender setVehiclePosition [_pos, [], 2, "NONE"];
 				{
-					_x setPos _pos;
+					_x setVehiclePosition [_pos, [], 3, "NONE"];
 				} forEach _tagAlong;
 
 				private _uid = getPlayerUID _sender;
@@ -145,7 +145,7 @@ if !(isNull _sender) then {
 			[format ["%1", _tagAlong]] remoteExec ["hint", 0];
 			_sender setVehiclePosition [_pos, [], 3, "NONE"];
 			{
-				_x setPos _pos;
+				_x setVehiclePosition [_pos, [], 3, "NONE"];
 			} forEach _tagAlong;
 		};
 		case "orderArsenal": {
