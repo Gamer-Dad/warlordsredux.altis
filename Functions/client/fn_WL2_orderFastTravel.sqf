@@ -83,6 +83,9 @@ if (_toContested) then {
 
 	player setDir (player getDir BIS_WL_targetSector);
 	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
+	{
+		_x setVehiclePosition [_pos, [], 3, "NONE"];
+	} forEach _tagAlong;
 	[player, "fastTravelContested", 200, _destination, _tagAlong] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep WL_TIMEOUT_MEDIUM;
@@ -110,6 +113,9 @@ if (_toContested) then {
 
 	player setDir (player getDir BIS_WL_targetSector);
 	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
+	{
+		_x setVehiclePosition [_pos, [], 3, "NONE"];
+	} forEach _tagAlong;
 	[player, "fastTravel", 0, _destination, _tagAlong] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep WL_TIMEOUT_STANDARD;

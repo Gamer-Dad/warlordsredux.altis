@@ -206,7 +206,8 @@ setTimeMultiplier 3;
 	};
 	waitUntil { sleep 0.1; !isNil {_seat}};
 	if ((floor (random 11)) < 4) then {
-		DEV_MrThomasM = createVehicle ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
+		_group = createGroup civilian;
+		DEV_MrThomasM = _group createUnit ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
 		publicVariable "DEV_MrThomasM";
 		DEV_MrThomasM forceAddUniform "U_O_R_Gorka_01_black_F";
 		DEV_MrThomasM addHeadgear "H_PilotHelmetHeli_B"; 
