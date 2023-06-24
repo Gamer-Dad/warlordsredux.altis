@@ -163,9 +163,16 @@ switch (_displayClass) do {
 		
 		_myDisplay displayAddEventHandler ["KeyDown", {
 			_key = _this # 1;
+			_key1 = actionKeysNames "curatorInterface";
+			_keyName = (keyName (_this select 1));
 			if (_key in actionKeys "Gear" && !BIS_WL_gearKeyPressed) then {
 				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
-				TRUE
+				true;
+			};
+			if (_keyName == _key1) then {
+				if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+					true;
+				};
 			};
 		}];
 		
