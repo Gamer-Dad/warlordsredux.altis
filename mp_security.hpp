@@ -18,6 +18,8 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"OBJECT"}};
 		};
 	};
+
+	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
 			targets[] = {0,1,0};
@@ -44,6 +46,8 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
 	};
+
+	//Damage
 	class SETHIT {
 		class SYNTAX1 {
 			targets[] = {0,1,0};
@@ -66,18 +70,24 @@ class CfgDisabledCommands {
 		class SYNTAX1
 		{
 			targets[] = {0,1,0};
-			args[] = {{"OBJECT"},{"SCALAR"}};
-		};
-		class SYNTAX2 {
-			targets[] = {0,1,0};
-			args[] = {{"OBJECT"},{"ARRAY"}};
+			args[] = {{"OBJECT"},{"SCALAR", "ARRAY"}};
 		};
 	};
 	class SETDAMMAGE {
 		class SYNTAX1
 		{
-			targets[] = {0,0,0};
+			targets[] = {0,1,0};
 			args[] = {{"OBJECT"},{"SCALAR"}};
+		};
+	};
+
+	//Positions
+	class SETPOS
+	{
+		class SYNTAX1
+		{
+			targets[] = {0,1,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
 	class SETPOSASLW
@@ -89,6 +99,22 @@ class CfgDisabledCommands {
 		};
 	};
 	class SETPOSATL
+	{
+		class SYNTAX1
+		{
+			targets[] = {0,1,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
+		};
+	};
+	class SETPOSASL
+	{
+		class SYNTAX1
+		{
+			targets[] = {0,1,0};
+			args[] = {{"OBJECT"},{"ARRAY"}};
+		};
+	};
+	class SETPOSWORLD
 	{
 		class SYNTAX1
 		{
