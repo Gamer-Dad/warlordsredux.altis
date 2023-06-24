@@ -152,6 +152,21 @@ class CfgDisabledCommands {
 		};
 	};
 
+    class CREATEUNIT
+    {
+        class SYNTAX1
+        {
+            targets[] = {0,0,0};
+            args[] = {{"STRING"},{"ARRAY"}};
+        };
+
+        class SYNTAX2
+        {
+            targets[] = {1,1,1};
+            args[] = {{"GROUP"},{"ARRAY"}};
+        };
+    };
+
 	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
