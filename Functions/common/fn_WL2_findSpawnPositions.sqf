@@ -54,7 +54,7 @@ if (_rimWidth != 0) then {
 
 _center set [2, 0];
 
-private _maxAxis = (if (_area # 4) then {
+_maxAxis = (if (!(isNil {_area # 4}) && {(_area # 4)}) then {
 	if (_rimWidth > 0) then {
 		sqrt ((_axisRimA ^ 2) + (_axisRimB ^ 2));
 	} else {
