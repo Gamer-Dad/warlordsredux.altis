@@ -129,7 +129,7 @@ if !(isNull _sender) then {
 		case "fastTravelContested": {
 			_hasFunds  = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};
+				_tagAlong = _target;
 				[format ["%1", _tagAlong]] remoteExec ["hint", 0];
 				_sender setVehiclePosition [_pos, [], 1, "NONE"];
 				{
@@ -141,7 +141,7 @@ if !(isNull _sender) then {
 			};
 		};
 		case "fastTravel": {
-			private _tagAlong = (units _sender) select {(_x distance2D _sender <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != _sender)}}}};
+			_tagAlong = _target;
 			[format ["%1", _tagAlong]] remoteExec ["hint", 0];
 			_sender setVehiclePosition [_pos, [], 1, "NONE"];
 			{

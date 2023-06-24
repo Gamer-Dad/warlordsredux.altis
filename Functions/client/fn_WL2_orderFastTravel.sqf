@@ -82,7 +82,8 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_MEDIUM;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	[player, "fastTravelContested", 200, _destination] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
+	[player, "fastTravelContested", 200, _destination, _tagAlong] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep WL_TIMEOUT_MEDIUM;
 
@@ -108,7 +109,8 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_STANDARD;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	[player, "fastTravel", 0, _destination] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
+	[player, "fastTravel", 0, _destination, _tagAlong] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	sleep WL_TIMEOUT_STANDARD;
 
