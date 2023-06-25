@@ -54,7 +54,7 @@ if (_ret) then {
 			_countSide = (playersNumber (side (group player)));
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
 			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
-			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = str (round (((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime))};
+			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = str ([(((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "Arsenal": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
