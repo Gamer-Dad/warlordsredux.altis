@@ -59,7 +59,7 @@ _setOwner = {
 };
 
 if !(isNull _sender) then {
-	_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
+	_sender setVariable ["BIS_WL_isOrdering", true, [2, (owner _sender)]];
 	switch (_action) do {
 		case "kill" : {
 			if ((owner _sender) == _cost) then {
