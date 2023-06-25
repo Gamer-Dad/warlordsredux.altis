@@ -203,7 +203,6 @@ class CfgFunctions {
 			class Blast {};
 			class CanSmoke {};
 			class CountAmmo {};
-			class DeductAmmo {};
 			class GetDirection {};
 			class HasCharges {};
 			class IsIRguided {};
@@ -215,7 +214,6 @@ class CfgFunctions {
 			class PopSmoke2 {};
 			class PopSmokeTurn {};
 			class React {};
-			class RearmCheck {};
 			class RelDir2 {};
 			class RelPos {};
 		};

@@ -5,7 +5,6 @@ private _p = [];
 private _a = [];
 private _l = 0;
 
-_v setVariable ["dapsLastAmmo", (_v call DAPS_fnc_CountAmmo), true];
 _v setVariable ["dapsType", "Dazzler", true];
 _v setVariable ["dapsAmmo", 999, true];
 _v setVariable ["dapsAmmoMax", 999, true];

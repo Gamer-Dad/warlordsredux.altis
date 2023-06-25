@@ -1,8 +1,8 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_APSheavy.fsm">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Init",0,4346,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
-item1[] = {"Exit",1,250,69.827576,-130.172424,159.827606,-80.172432,0.000000,"Exit"};
+item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
+item1[] = {"Exit",1,4346,69.827576,-130.172424,159.827606,-80.172432,0.000000,"Exit"};
 item2[] = {"__Alive",4,218,69.827515,-56.465530,159.827515,-6.465530,0.000000,"!Alive"};
 item3[] = {"Alive",4,218,-40.689697,-56.896591,49.310303,-6.896591,0.000000,"Alive"};
 item4[] = {"Action",2,250,-40.258698,14.225098,49.741318,64.225098,0.000000,"Action"};
@@ -24,7 +24,7 @@ link10[] = {7,8};
 link11[] = {8,2};
 link12[] = {8,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,-363.862122,362.137817,192.731552,-269.884796,1074,1284,1};
-window[] = {2,-1,-1,-1,-1,1397,338,2258,338,3,1092};
+window[] = {2,-1,-1,-1,-1,1267,208,2128,208,3,1092};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -40,7 +40,6 @@ class FSM
                          "_v = _vehicle;" \n
                          "_a = [];" \n
                          "" \n
-                         "_v setVariable [""dapsLastAmmo"", (_v call DAPS_fnc_CountAmmo), true];" \n
                          "_v setVariable [""dapsType"", ""Heavy APS"", true];" \n
                          "_v setVariable [""dapsAmmo"", 6, true];" \n
                          "_v setVariable [""dapsAmmoMax"", 6, true];" \n
@@ -79,7 +78,7 @@ class FSM
                 {
                         name = "Exit";
                         itemno = 1;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_v setVariable [""dapsAmmo"", nil, true];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {

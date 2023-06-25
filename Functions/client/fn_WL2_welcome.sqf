@@ -140,8 +140,6 @@ while {dialog} do {
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
 			"- MrThomasM", lineBreak,
-			"- Tin", lineBreak,
-			"- Weasley Wells", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_18", lineBreak,
 			"- Coffee", lineBreak,
@@ -149,8 +147,6 @@ while {dialog} do {
 			"- Dagon", lineBreak,
 			"- Hazer_AL", lineBreak,
 			"- Tiber Brutus", lineBreak,
-			"- [POLAND] Grom Soldier", lineBreak,
-			"- Iron", lineBreak,
 			""
 			];
 		};
@@ -174,6 +170,13 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
+			"2.5.6", lineBreak,
+			"-Lag issues fixed", lineBreak,
+			"-Bug fixes", lineBreak,
+			"-Anti cheat improved", lineBreak,
+			"-Possible invincible ai fix", lineBreak,
+			"-APS improved", lineBreak,
+			"", lineBreak,
 			"2.5.5", lineBreak,
 			"-Extensive bug fixes", lineBreak,
 			"-Easter egg added (comes with it's own reward if its found)", lineBreak,

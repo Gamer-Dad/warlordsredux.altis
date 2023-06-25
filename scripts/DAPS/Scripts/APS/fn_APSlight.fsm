@@ -1,8 +1,8 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_APSlight.fsm">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Init",0,4346,-518.261841,-328.739777,-428.261871,-278.739777,0.000000,"Init"};
-item1[] = {"Exit",1,250,-406.882568,-328.739807,-316.882538,-278.739807,0.000000,"Exit"};
+item0[] = {"Init",0,250,-518.261841,-328.739777,-428.261871,-278.739777,0.000000,"Init"};
+item1[] = {"Exit",1,4346,-406.882568,-328.739807,-316.882538,-278.739807,0.000000,"Exit"};
 item2[] = {"__Alive",4,218,-406.882629,-255.032898,-316.882599,-205.032898,0.000000,"!Alive"};
 item3[] = {"Alive",4,218,-517.399841,-255.463959,-427.399811,-205.463959,0.000000,"Alive"};
 item4[] = {"True",2,250,-516.968811,-184.342270,-426.968811,-134.342270,0.000000,"True"};
@@ -23,7 +23,7 @@ link9[] = {7,8};
 link10[] = {8,2};
 link11[] = {8,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,-546.249268,-284.090057,217.978821,-467.965912,339,887,1};
-window[] = {0,-1,-1,-1,-1,1397,338,2258,338,1,357};
+window[] = {0,-1,-1,-1,-1,1267,208,2128,208,1,357};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -39,7 +39,6 @@ class FSM
                          "_v = _vehicle;" \n
                          "_a = [];" \n
                          "" \n
-                         "_v setVariable [""dapsLastAmmo"", (_v call DAPS_fnc_CountAmmo), true];" \n
                          "_v setVariable [""dapsType"", ""Light APS"", true];" \n
                          "_v setVariable [""dapsAmmo"", 2, true];" \n
                          "_v setVariable [""dapsAmmoMax"", 2, true];" \n
@@ -78,7 +77,7 @@ class FSM
                 {
                         name = "Exit";
                         itemno = 1;
-                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_v setVariable [""dapsAmmo"", nil, true];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
