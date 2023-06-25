@@ -2,6 +2,7 @@
 
 params ["_class", "_cost", "_offset"];
 
+player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
 if (count _offset != 3) then {
 	_offset = [0, 1.5, 0];
 };
@@ -13,16 +14,11 @@ if (visibleMap) then {
 	titleCut ["", "BLACK IN", 0.5];
 };
 
-_asset = createVehicle [_class, player modelToWorld _offset, [], 0, "CAN_COLLIDE"];
+_asset = createSimpleObject [_class, (AGLToASL (player modelToWorld _offset)), true];
 _asset setDir direction player;
-_asset enableSimulationGlobal false;
-_asset hideObjectGlobal true;
 _asset lock true;
 _asset enableWeaponDisassembly false;
 _asset allowDamage false;
-_asset hideObject false;
-
-player reveal [_asset, 4];
 _asset attachTo [player, _offset];
 _h = (position _asset) # 2;
 detach _asset;
@@ -72,16 +68,19 @@ WL_DISPLAY_MAIN displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "B
 uiNamespace setVariable ['BIS_WL_deployKeyHandle', nil];
 _offset set [1, _asset distance player];
 detach _asset;
+_p = getPosATL _asset;
 deleteVehicle _asset;
 
 [player, "assembly", false] call BIS_fnc_WL2_hintHandle;
 
 if (BIS_WL_spacePressed) then {
 	playSound "assemble_target";
-	[player, "orderAsset", _cost, (player modelToWorld _offset), _class, true] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
+	[player, "orderAsset", _cost, _p, _class, true] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 } else {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
+	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 };
 
 if (BIS_WL_currentSelection == WL_ID_SELECTION_DEPLOYING_DEFENCE) then {
