@@ -287,7 +287,7 @@ if !(isNull _sender) then {
 								};
 							};
 						} else {
-							_asset = createVehicle [_class, _targetPos, [], 10, "NONE"];
+							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
 						};
 					};
