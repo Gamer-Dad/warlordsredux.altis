@@ -176,6 +176,7 @@ while {dialog} do {
 			"-Anti cheat improved", lineBreak,
 			"-Possible invincible ai fix", lineBreak,
 			"-APS improved", lineBreak,
+			"-New asset spawning system", lineBreak,
 			"", lineBreak,
 			"2.5.5", lineBreak,
 			"-Extensive bug fixes", lineBreak,
