@@ -64,7 +64,7 @@ if !(isNull _sender) then {
 		case "lastLoadout": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
+				0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -73,7 +73,7 @@ if !(isNull _sender) then {
 		case "savedLoadout": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
+				["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -92,7 +92,7 @@ if !(isNull _sender) then {
 				} else {
 					missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
 				};
-				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -113,7 +113,7 @@ if !(isNull _sender) then {
 		case "orderArsenal": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];
+				0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", (owner _sender)];
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;				
 			};
@@ -309,7 +309,7 @@ if !(isNull _sender) then {
 				(owner _sender) publicVariableClient _assetVariable;
 				[_asset, _sender, _isStatic] spawn _setOwner;
 				_asset setOwner (owner _sender);
-				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
