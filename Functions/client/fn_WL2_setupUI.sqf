@@ -399,7 +399,7 @@ switch (_displayClass) do {
 					case "forfeitVote": {0 spawn BIS_fnc_WL2_orderForfeit};
 					case "LockVehicles": {
 						{
-							if !(typeOf _x == "B_Truck_01_medical_F" || typeOf _x == "O_Truck_03_medical_F") then {
+							if ((!(typeOf _x == "B_Truck_01_medical_F")) && {!(typeOf _x == "O_Truck_03_medical_F")}) then {
 								_x lock true;
 								_x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]];
 							};
