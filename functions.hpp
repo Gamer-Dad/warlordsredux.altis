@@ -200,7 +200,6 @@ class CfgFunctions {
 		{
 			file = "scripts\DAPS\Scripts\Misc";
 			class Active {};
-			class Blast {};
 			class CanSmoke {};
 			class CountAmmo {};
 			class GetDirection {};

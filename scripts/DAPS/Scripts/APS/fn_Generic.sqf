@@ -28,6 +28,6 @@ private _rd = [_id, _v] call DAPS_fnc_RelDir2;
 
 deleteVehicle _i;
 [_v, _id, _p, _i] call DAPS_fnc_React;
-_p call DAPS_fnc_Blast;
+createVehicle ["HelicopterExploSmall", _p, [], 0, "FLY"];
 
 [_v, "", _rd, true] remoteExec ["DAPS_fnc_Report", (owner _v)];

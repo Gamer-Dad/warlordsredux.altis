@@ -1,1 +1,0 @@
-createVehicle ["HelicopterExploSmall", _this, [], 0, "FLY"];

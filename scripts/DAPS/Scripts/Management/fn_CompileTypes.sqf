@@ -2,5 +2,4 @@
 // Vehicles with a single launcher
 dapsSingle = dapsLight + dapsMedium + dapsHeavy;
 // Vehicles with double launchers
-dapsDouble = [];
-dapsAPStypes = dapsSingle + dapsDouble;
+dapsAPStypes = dapsSingle;

@@ -52,46 +52,6 @@ class CfgVehicles
 		isDisposable=0;
 		class Arguments
 		{	
-			class dapsDebug
-			{
-				displayName="Debug";
-				description="Debug";
-				typeName="STRING";
-				class values
-				{
-					class TRUE
-					{
-						name="True";
-						value="TRUE";
-					};
-					class FALSE
-					{
-						name="False";
-						value="FALSE";
-						default=1;
-					};
-				};
-			};
-			class dapsBlastSize
-			{
-				displayName="Blast size";
-				description="Size of APS blast";
-				typeName="STRING";
-				class values
-				{
-					class SMALL
-					{
-						name="Small";
-						value="Small";
-						default=1;
-					};
-					class BIG
-					{
-						name="Big";
-						value="BIG";
-					};
-				};
-			};
 			class dapsClearAll
 			{
 				displayName="Clear all";
