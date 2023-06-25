@@ -10,8 +10,12 @@ _displayName = getText (configFile >> "CfgVehicles" >> (_class) >> "displayName"
 _result = [format ["Are you sure you would like to order: %1", _displayName], "Order asset", true, true] call BIS_fnc_guiMessage;
 
 if (_result) then {
-	playSound "assemble_target";
-	[player, "orderAsset", _cost, (getPosATL player), _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	if (_class isKindOf "Man") then {
+		(group player) createUnit [_class, (getPosATL player), [], 2, "NONE"];
+	} else {
+		playSound "assemble_target";
+		[player, "orderAsset", _cost, (getPosATL player), _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	};
 } else {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;

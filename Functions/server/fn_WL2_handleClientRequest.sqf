@@ -287,15 +287,14 @@ if !(isNull _sender) then {
 								};
 							};
 						} else {
-							if (_class isKindOf "Man") then {
-								_asset = (group _sender) createUnit [_class, _targetPos, [], 2, "NONE"];
-							} else { // Vehicle creation code
-								_asset = createVehicle [_class, _targetPos, [], 10, "NONE"];
-								_asset setDir direction _sender;
-							};
+							_asset = createVehicle [_class, _targetPos, [], 10, "NONE"];
+							_asset setDir direction _sender;
 						};
 					};
 				}; 
+
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
 				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
 					_asset lock true;
@@ -310,9 +309,6 @@ if !(isNull _sender) then {
 				[_asset, _sender, _isStatic] spawn _setOwner;
 				_asset setOwner (owner _sender);
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
-
-				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				
 				if (typeOf _asset == "I_Truck_02_MRL_F") then { //Zamak MLRS
 					_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"]; //Zamak cabin
