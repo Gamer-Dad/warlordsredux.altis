@@ -31,7 +31,6 @@ _setOwner = {
 };
 
 if !(isNull _sender) then {
-	_sender setVariable ["BIS_WL_isOrdering", true, [2, (owner _sender)]];
 	switch (_action) do {
 		case "kill" : {
 			if ((owner _sender) == _cost) then {
@@ -121,6 +120,7 @@ if !(isNull _sender) then {
 		case "orderAsset": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
+				_sender setVariable ["BIS_WL_isOrdering", true, [2, (owner _sender)]];
 				private _class = _target;
 				private _asset = objNull;
 				
@@ -370,6 +370,5 @@ if !(isNull _sender) then {
 				[_sender, _recipient, _cost] remoteExecCall ["BIS_fnc_WL2_displayCPtransfer", -2];
 			};
 		};
-		_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 	};
 };
