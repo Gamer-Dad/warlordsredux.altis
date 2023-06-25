@@ -314,32 +314,32 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				
-				if (typeOf _asset == "I_Truck_02_MRL_F") exitWith { //Zamak MLRS
+				if (typeOf _asset == "I_Truck_02_MRL_F") then { //Zamak MLRS
 					_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"]; //Zamak cabin
 					_asset setObjectTextureGlobal [2, "a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa"]; //Zamak Bed&Launcher
 				};
 
-				if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") exitWith {
+				if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
 					_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
 					_asset setObjectTextureGlobal [1, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa"];
 					_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa"];
 					_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
 				};
 				
-				if (typeOf _asset == "B_AAA_System_01_F") exitWith { //Praetorian
+				if (typeOf _asset == "B_AAA_System_01_F") then { //Praetorian
 					private _side = side (crew _asset select 0);
 					if (_side == east) then {
 						_asset setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
 						_asset setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
 					};
 				};
-				if (typeOf _asset == "B_SAM_System_01_F") exitWith { //Spartan
+				if (typeOf _asset == "B_SAM_System_01_F") then { //Spartan
 					private _side = side (crew _asset select 0);
 					if (_side == east) then {
 						_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
 					};
 				};
-				if (typeOf _asset == "B_SAM_System_02_F") exitWith { //Centurion
+				if (typeOf _asset == "B_SAM_System_02_F") then { //Centurion
 					private _side = side (crew _asset select 0);
 					if (_side == east) then {
 						_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
