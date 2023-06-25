@@ -288,7 +288,7 @@ if !(isNull _sender) then {
 							};
 						} else {
 							if (_class isKindOf "Man") then {
-								_asset = (group _sender) createUnit [_class, _targetPos, [], 0, "CAN_COLLIDE"];
+								_asset = (group _sender) createUnit [_class, _targetPos, [], 2, "NONE"];
 							} else { // Vehicle creation code
 								_asset = createVehicle [_class, _targetPos, [], 10, "NONE"];
 								_asset setDir direction _sender;
