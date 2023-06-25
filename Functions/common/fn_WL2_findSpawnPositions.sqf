@@ -59,7 +59,7 @@ _maxAxis = (if (!(isNil {_area # 4}) && {(_area # 4)}) then {
 		sqrt ((_axisRimA ^ 2) + (_axisRimB ^ 2));
 	} else {
 		sqrt ((_axisA ^ 2) + (_axisB ^ 2));
-	}
+	};
 } else {
 	if (_rimWidth > 0) then {
 		_axisRimA max _axisRimB;
