@@ -5,34 +5,6 @@ params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic"];
 _assetVar = "";
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") get (getPlayerUID _sender));
 
-_processTargetPos = {
-	params ["_pos"];
-	private _targetPosFinalArr = [];
-	private _targetPosFinal = [];
-	_pos = getPosATL _pos;
-	
-	if !(surfaceIsWater _pos) then {
-		_nearSectorArr = _pos nearObjects ["Logic", 10];
-		
-		if (count _nearSectorArr == 0) then {
-			_targetPosFinalArr = [_sender, nil, FALSE, _sender] call BIS_fnc_WL2_findSpawnPositions;
-		} else {
-			_sector = _nearSectorArr # 0;
-			_targetPosFinalArr = [_sector, nil, FALSE, if (_sender inArea (_sector getVariable "objectAreaComplete")) then {_sender}] call BIS_fnc_WL2_findSpawnPositions;
-		};
-	} else {
-		_targetPosFinalArr = [_pos];
-	};
-
-	if (count _targetPosFinalArr > 0) then {
-		_targetPosFinal = selectRandom _targetPosFinalArr;
-	} else {
-		_targetPosFinal = [_pos, random 10, random 100] call BIS_fnc_relPos;
-	};
-	
-	[_targetPosFinal, _targetPosFinalArr]
-};
-
 _setOwner = {
 	params ["_asset", "_sender", ["_isStatic", FALSE]];
 	if (_asset isKindOf "Man") exitWith {};
@@ -153,8 +125,6 @@ if !(isNull _sender) then {
 				private _asset = objNull;
 				
 				_targetPos = _pos;
-				_targetPosFinal = if (_isStatic) then {_targetPos} else {( call _processTargetPos) # 0};
-				
 				if (_class isKindOf "Ship") then {
 					_asset = createVehicle [_class, (_pos vectorAdd [0,0,3]), [], 0, "CAN_COLLIDE"];
 				} else {
@@ -186,9 +156,6 @@ if !(isNull _sender) then {
 									if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
 										_spawnPos = _pos;
 									};
-								};
-								if (count _spawnPos == 0) then {
-									_spawnPos = _targetPosFinal;
 								};
 
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
@@ -232,9 +199,7 @@ if !(isNull _sender) then {
 										_spawnPos = _pos;
 									};
 								};
-								if (count _spawnPos == 0) then {
-									_spawnPos = _targetPosFinal;
-								};
+
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
 								_asset setDamage 0;
@@ -289,9 +254,6 @@ if !(isNull _sender) then {
 											if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
 												_spawnPos = _pos;
 											};
-										};
-										if (count _spawnPos == 0) then {
-											_spawnPos = _targetPosFinal;
 										};
 
 										_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
