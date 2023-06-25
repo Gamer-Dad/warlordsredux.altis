@@ -22,7 +22,7 @@ _asset allowDamage false;
 _asset attachTo [player, _offset];
 _h = (position _asset) # 2;
 detach _asset;
-_offset_tweaked = [_offset select 0, _offset select 1, (_offset select 2) - _h];
+_offset_tweaked = [_offset select 0, _offset select 1, _h];
 _asset attachTo [player, _offset_tweaked];
 
 [player, "assembly"] call BIS_fnc_WL2_hintHandle;
