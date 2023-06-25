@@ -100,12 +100,13 @@ class CfgRemoteExec {
 		};
 
 		//Client only
-		class setVehicleVarName {
-			allowedTargets = 1;
-		};
 
 		//All allowed
 		class setVehicleAmmoDef {
+			allowedTargets = 0;
+		};
+
+		class setVehicleVarName {
 			allowedTargets = 0;
 		};
 

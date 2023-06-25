@@ -11,7 +11,11 @@ _result = [format ["Are you sure you would like to order: %1", _displayName], "O
 
 if (_result) then {
 	if (_class isKindOf "Man") then {
-		(group player) createUnit [_class, (getPosATL player), [], 2, "NONE"];
+		_asset = (group player) createUnit [_class, (getPosATL player), [], 2, "NONE"];
+		_assetVariable = call BIS_fnc_WL2_generateVariableName;
+		_asset setVehicleVarName _assetVariable;
+		[_asset, _assetVariable] remoteExec ["setVehicleVarName", 2];
+		[player, _asset] spawn BIS_fnc_WL2_newAssetHandle;
 	} else {
 		playSound "assemble_target";
 		[player, "orderAsset", _cost, (getPosATL player), _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
