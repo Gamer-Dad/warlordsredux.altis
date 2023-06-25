@@ -5,7 +5,7 @@ params ["_class", "_cost"];
 player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
 BIS_WL_currentSelection = WL_ID_SELECTION_DEPLOYING_DEFENCE;
 
-_offset = [0, 6, 0];
+_offset = [0, 8, 0];
 _asset = createSimpleObject [_class, (AGLToASL (player modelToWorld _offset)), true];
 
 _asset setDir direction player;
