@@ -4,6 +4,8 @@ if !(isServer) exitWith {};
 
 params ["_uid", "_amount"];
 
+if (isNil {_uid}) exitWith {};
+
 _fundsDB = (serverNamespace getVariable "fundsDatabase");
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, 0]);
 
