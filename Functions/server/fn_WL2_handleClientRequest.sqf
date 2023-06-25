@@ -161,7 +161,8 @@ if !(isNull _sender) then {
 					if (_class isKindOf "Air") then {
 						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
 							if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
-								_array = (_pos call BIS_fnc_WL2_findSpawnPositions);
+								_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
+								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
@@ -263,7 +264,8 @@ if !(isNull _sender) then {
 									};
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
-										_array = (_pos call BIS_fnc_WL2_findSpawnPositions);
+										_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
+										_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 										_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 										_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 										_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
