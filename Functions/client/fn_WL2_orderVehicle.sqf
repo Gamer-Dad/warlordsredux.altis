@@ -76,7 +76,7 @@ if (BIS_WL_spacePressed) then {
 	} else {
 		playSound "assemble_target";
 		player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
-		[player, "orderAsset", _cost, [(_p # 0), (_p # 1), 0.1], _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+		[player, "orderAsset", _cost, [(_p # 0), (_p # 1), 0], _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	};
 } else {
 	"Canceled" call BIS_fnc_WL2_announcer;
