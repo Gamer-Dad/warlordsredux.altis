@@ -371,7 +371,7 @@ if !(isNull _sender) then {
 				[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
-				[_sender, _recipient, _cost] remoteExec ["BIS_fnc_WL2_displayCPtransfer", -2, true];
+				[_sender, _recipient, _cost] remoteExecCall ["BIS_fnc_WL2_displayCPtransfer", -2];
 			};
 		};
 		_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
