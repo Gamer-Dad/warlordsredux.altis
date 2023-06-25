@@ -115,7 +115,7 @@ if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
 					};
 				};
 				_sound = format ["incMissileRuss_%1", _fDir];
-				playSoundUI [_sound, (MRTM_rwr4 + 0.5), 1];
+				playSoundUI [_sound, (MRTM_rwr4 + 0.2), 1];
 				sleep 2.3;
 				_v setVariable ["isBettyBitching", false];
 			};
