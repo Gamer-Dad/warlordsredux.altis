@@ -20,6 +20,7 @@ while {(alive _i) && (alive _v)} do {
 if !(alive _v) exitWith {};
 if (_ex) exitWith {};
 
+_a = _v getVariable "dapsAmmo";
 _v setVariable ["dapsAmmo", (_a-1), true];
 
 private _p = getPosATL _i;
