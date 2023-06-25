@@ -27,7 +27,7 @@ WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 						closeDialog 602;
 					};
 				} else {
-					if (BIS_WL_gearKeyPressed) then {
+					if (BIS_WL_gearKeyPressed && {!(player getVariable ["BIS_WL_isOrdering", false])}) then {
 						if (BIS_WL_currentSelection in [WL_ID_SELECTION_NONE, WL_ID_SELECTION_VOTED]) then {
 							["RequestMenu_open"] call BIS_fnc_WL2_setupUI;
 						} else {
