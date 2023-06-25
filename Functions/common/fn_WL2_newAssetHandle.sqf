@@ -117,7 +117,7 @@ if (isPlayer _owner) then {
 							"",
 							{
 								params ["_asset"];
-								["_asset"] spawn {
+								[_asset] spawn {
 									params ["_asset"];
 									if ((_asset getVariable "BIS_WL_nextRepair") <= serverTime) then {
 										[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
