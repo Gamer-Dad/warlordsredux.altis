@@ -41,4 +41,4 @@
 			} forEach (BIS_WL_allWarlords select {(side group _x == _this) && {!(isNil {_x})}});
 		};
 	};
-} forEach BIS_WL_competingSides;
+} forEach [west, east];
