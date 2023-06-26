@@ -210,7 +210,6 @@ class CfgFunctions {
 			class IsVisualGuided {};
 			class MisguideMissile {};
 			class popSmoke {};
-			class PopSmoke2 {};
 			class PopSmokeTurn {};
 			class React {};
 			class RelDir2 {};

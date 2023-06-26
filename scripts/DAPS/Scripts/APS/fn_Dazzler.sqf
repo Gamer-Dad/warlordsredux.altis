@@ -13,10 +13,6 @@ private _d = _v distance _i;
 sleep .2;
 if ((_v distance _i) > _d) exitWith {dapsDazzled = dapsDazzled - [_i]};
 
-private _p = getPosATL _i;
-private _id = getDir _i;
-[_v, _id, _p, _i] call DAPS_fnc_React;
-
 if !(alive _i) exitWith {};
 if (_exit) exitWith {dapsDazzled = dapsDazzled - [_i]};
 
