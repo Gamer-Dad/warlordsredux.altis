@@ -205,7 +205,7 @@ if !(isNull _sender) then {
 								_asset setFuel 1;
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
-									_asset = createVehicle [_class, _pos, [], 6, "NONE"];
+									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 									_asset setDir 0;
 									_asset setDamage 0;
 									_asset setFuel 1;
