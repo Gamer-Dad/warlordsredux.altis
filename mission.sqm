@@ -535,7 +535,7 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""M""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
 			id=33;
 			type="Logic";
-			atlOffset=0.0004234314;
+			atlOffset=0.00040245056;
 		};
 		class Item33
 		{
@@ -1369,6 +1369,7 @@ class Mission
 			};
 			id=105;
 			type="EmptyDetectorAreaR250";
+			atlOffset=1.5258789e-005;
 		};
 		class Item100
 		{
