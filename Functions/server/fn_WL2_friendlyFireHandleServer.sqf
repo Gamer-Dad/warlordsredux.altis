@@ -8,7 +8,7 @@ if (_unit isKindOf "Man") then {
 	if (!isNull _instigator) then {
 		_responsibleLeader = leader _instigator;
 		if (isPlayer _responsibleLeader && {_responsibleLeader in BIS_WL_allWarlords}) then {
-			if ((side (group _unit)) == (side (group _responsibleLeader))) then {
+			if ((side (group _unit)) == (side (group _responsibleLeader)) && {_unit != _responsibleLeader}) then {
 				_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [serverTime], [2, (owner _responsibleLeader)]];
 				[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", (owner _instigator)];
 				

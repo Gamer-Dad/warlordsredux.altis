@@ -43,4 +43,5 @@ _this spawn {
 	_camera cameraEffect ["Terminate", "Back"];
 	camDestroy _camera;
 	BIS_WL_penalized = FALSE;
+	player setVariable ["BIS_WL_friendlyKillTimestamps", [], [2, clientOwner]];
 };
