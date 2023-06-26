@@ -58,10 +58,6 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
-		class DAPS_fnc_ReportRearm {
-			allowedTargets = 1;
-		};
-
 		class DAPS_fnc_PopSmoke {
 			allowedTargets = 1;
 		};

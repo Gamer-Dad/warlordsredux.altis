@@ -213,13 +213,11 @@ class CfgFunctions {
 			class PopSmokeTurn {};
 			class React {};
 			class RelDir2 {};
-			class RelPos {};
 		};
 		class Report
 		{
 			file = "scripts\DAPS\Scripts\Report";
 			class Report {};
-			class ReportRearm {};
 		};
 	};
 	class DIS
