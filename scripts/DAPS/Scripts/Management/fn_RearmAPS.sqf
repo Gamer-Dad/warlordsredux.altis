@@ -7,7 +7,7 @@ _a=0;
 _report=FALSE;
 if!(_type in dapsAPStypes)exitWith{};
 
-_max=_v getVariable"dapsAmmoMax";
+_max = _v getVariable "dapsAmmoMax";
 if((_v getVariable"dapsAmmo")<_max)then{_report=TRUE};
 _v setVariable["dapsAmmo",_max,TRUE];
 _a=_v call DAPS_fnc_CountAmmo;

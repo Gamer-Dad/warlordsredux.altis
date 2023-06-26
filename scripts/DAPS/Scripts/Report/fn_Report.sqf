@@ -12,8 +12,11 @@ if!(_indicator)then{
 };
 sleep .5;
 private _text="";
-_text = format["%1 charges:<br/><br/>%2/%3", (_v getVariable"dapsType"), (_v getVariable"dapsAmmo"), (_v getVariable"dapsAmmoMax")];
-if((typeOf _v)in dapsDazzler)then{_text="Dazzler active"};
+if ((typeOf _v)in dapsDazzler) then {
+	_text="Dazzler active"
+} else {
+	_text = format["%1 charges:<br/><br/>%2/%3", (_v getVariable"dapsType"), (_v getVariable"dapsAmmo"), (_v getVariable "dapsAmmoMax")];
+};
 if!(_indicator)exitWith{
 	hintSilent(parseText format["%1",_text]);
 	sleep 3;

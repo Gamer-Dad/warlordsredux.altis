@@ -101,7 +101,9 @@ if (isPlayer _owner) then {
 			};
 		};
 		
-		_asset spawn BIS_fnc_WL2_sub_rearmAction;
+		if !(typeOf _asset == "O_T_Truck_03_device_ghex_F" || typeOf _asset == "O_Truck_03_device_F") then {
+			_asset spawn BIS_fnc_WL2_sub_rearmAction;
+		};
 		_asset spawn BIS_fnc_WL2_sub_vehicleKickAction;
 		_asset spawn BIS_fnc_WL2_sub_vehicleLockAction;
 		_asset spawn {
@@ -150,7 +152,7 @@ if (isPlayer _owner) then {
 		};
 
 		if !(_assembled || _asset isKindOf "Thing") then {
-			if (typeof _asset == "O_T_Truck_03_device_ghex_F" || typeof _asset == "O_Truck_03_device_F") then {
+			if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || typeOf _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", false];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
