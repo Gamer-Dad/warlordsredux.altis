@@ -246,6 +246,11 @@ player addEventHandler ["HandleDamage", {
 	};
 }];
 
+player addEventHandler ["HandleHeal", {
+	params ["_injured", "_healer"];
+	[_injured, _healer] remoteExec ["BIS_fnc_WL2_healRewardHandle", 2];
+}];
+
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	

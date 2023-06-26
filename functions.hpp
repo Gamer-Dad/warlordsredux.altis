@@ -87,6 +87,7 @@ class CfgFunctions {
 			class WL2_targetSelectionHandleServer {};
 			class WL2_zoneRestrictionHandleServer {};
 			class WL2_killRewardHandle {};
+			class WL2_healRewardHandle {};
 			class WL2_fundsDatabaseWrite {};
 			class WL2_fundsDatabaseUpdate {};
 			class WL2_tablesSetUp {};

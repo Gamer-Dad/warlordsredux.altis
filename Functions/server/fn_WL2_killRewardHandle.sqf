@@ -36,11 +36,11 @@ if !(isNull _instigator) then {
 			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
-			[_unit, _killReward] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
+			[_unit, _killReward, "kill"] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			{
 				_uid = getPlayerUID _x;
 				[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
-				[_unit, _killReward] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+				[_unit, _killReward, "kill"] remoteExecCall ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 			} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
 		};
 	};

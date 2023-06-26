@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_unit", "_reward"];
+params ["_unit", "_reward", "_type"];
 
 disableSerialization;
 
@@ -19,19 +19,28 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 } forEach (uiNamespace getVariable ["activeControls", []]);
 
 if ((isNil {(uiNamespace getVariable "control")}) && {!(9 isEqualType (uiNamespace getVariable "control"))}) exitWith {
-	diag_log ("Error: Client kill reward control is not a number. | File: fn_WL2_killRewardClient.sqf | Line: 24");
+	diag_log ("Error: Client kill reward control is not a number. | File: fn_WL2_killRewardClient.sqf | Line: 22");
 };
 _ctrlNmbr = (uiNamespace getVariable "control");
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
-if (_unit isKindOf "Man") then {
-	_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
-} else {
-	_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-	_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
+_scoreMessage = "Error: No score message. | File: fn_WL2_killRewardClient.sqf | Line: 29";
+if (_type == "kill") then {
+	if (_unit isKindOf "Man") then {
+		_scoreMessage = format ["<t size='0.9' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
+	} else {
+		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
+		_scoreMessage = format ["<t size='0.9' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
+	};
 };
+
+if (_type == "heal") then {
+	_scoreMessage = format ["<t size='0.9' align='right' shadow = '1' color='#228b22'>Player healed +%1CP</t>", _reward];
+};
+
+_ctrl ctrlSetStructuredText parseText _scoreMessage;
 
 if (MRTM_playKillSound) then {
 	playSoundUI ["AddItemOK", 0.1, 1];
