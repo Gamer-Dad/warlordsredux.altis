@@ -120,7 +120,6 @@ if !(isNull _sender) then {
 		case "orderAsset": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				_sender setVariable ["BIS_WL_isOrdering", true, [2, (owner _sender)]];
 				private _class = _target;
 				private _asset = objNull;
 				
@@ -343,8 +342,8 @@ if !(isNull _sender) then {
 				};
 
 				waitUntil {sleep 0.1; !(isNull _asset)};
-				_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 			};
+			_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 		};
 		case "fundsTransferBill": {
 			private _uid = getPlayerUID _sender;
