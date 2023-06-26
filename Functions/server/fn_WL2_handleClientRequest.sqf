@@ -167,7 +167,7 @@ if !(isNull _sender) then {
 							createVehicleCrew _asset;
 							_side = side _sender; 
 							_group = createGroup _side;
-							_group createVehicleCrew _asset;
+							(crew _asset) joinSilent _group;
 							(effectiveCommander _asset) setSkill 0.2;
 							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 							switch (side group _sender) do {
@@ -214,7 +214,7 @@ if !(isNull _sender) then {
 									createVehicleCrew _asset;
 									_side = side _sender; 
 									_group = createGroup _side;
-									_group createVehicleCrew _asset;
+									(crew _asset) joinSilent _group;
 									(effectiveCommander _asset) setSkill 0.2;
 									(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 									_asset enableWeaponDisassembly false;
@@ -270,9 +270,10 @@ if !(isNull _sender) then {
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side.
+								createVehicleCrew _asset;
 								_side = side _sender; 
 								_group = createGroup _side;
-								_group createVehicleCrew _asset;
+								(crew _asset) joinSilent _group;
 								(effectiveCommander _asset) setSkill 0.2;
 								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
 								switch (side group _sender) do {
