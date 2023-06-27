@@ -1,14 +1,14 @@
 /*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_WL2_incomePayoff.fsm">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Init",0,250,-40.921448,-122.609390,49.078552,-72.609390,0.000000,"Init"};
+item0[] = {"Init",0,4346,-40.921448,-122.609390,49.078552,-72.609390,0.000000,"Init"};
 item1[] = {"Timeout",4,218,-40.689636,-48.507690,49.310364,1.492310,0.000000,"Timeout"};
-item2[] = {"Payoff",2,4346,-40.059296,30.236221,49.940720,80.236221,0.000000,"Payoff"};
+item2[] = {"Payoff",2,250,-40.059296,30.236221,49.940720,80.236221,0.000000,"Payoff"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,1};
 globals[] = {0.000000,0,0,0,0,640,480,1,9,6316128,1,-311.637817,288.362183,387.929596,-212.070404,952,887,1};
-window[] = {0,-1,-1,-32000,-32000,1300,248,2168,241,1,970};
+window[] = {0,-1,-1,-1,-1,1085,26,1946,26,1,970};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -20,7 +20,7 @@ class FSM
                 {
                         name = "Init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 60;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 180;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
