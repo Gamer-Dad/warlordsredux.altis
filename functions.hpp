@@ -179,7 +179,7 @@ class CfgFunctions {
 		class APS 
 		{
 			file = "scripts\DAPS\Scripts\APS";
-			class APSDazzler {};
+			class APSDazzler {ext = ".fsm";};
 			class APSheavy {ext = ".fsm";};
 			class APSlight {ext = ".fsm";};
 			class APSmedium {ext = ".fsm";};

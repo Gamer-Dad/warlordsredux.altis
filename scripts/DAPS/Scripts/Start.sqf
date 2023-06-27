@@ -31,8 +31,6 @@ dapsSingle = [];
 dapsAPStypes = [];
 DAPS_fnc_CompileTypes = compile preprocessFile "scripts\DAPS\Scripts\Management\fn_CompileTypes.sqf";
 call DAPS_fnc_CompileTypes;
-// Projectiles that have been dazzled
-dapsDazzled = [];
 
 //https://community.bistudio.com/wiki/DIK_KeyCodes
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
