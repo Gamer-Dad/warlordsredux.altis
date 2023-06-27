@@ -80,14 +80,14 @@ if !(isNull _sender) then {
 		case "orderFTVehicle": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				private _asset = if (_target == west) then {
+				if (_target == west) then {
 					if ((count (entities "B_Truck_01_medical_F")) == 0) then {
-						createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
+						_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
 						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				} else {
 					if ((count (entities "O_Truck_03_medical_F")) == 0) then {
-						createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
+						_asset = createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
 						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				};
