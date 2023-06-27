@@ -394,7 +394,7 @@ switch (_displayClass) do {
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
-					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill", 0, [], 0] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "forfeitVote": {0 spawn BIS_fnc_WL2_orderForfeit};
 					case "LockVehicles": {
@@ -508,7 +508,7 @@ switch (_displayClass) do {
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
-			[player, "fundsTransferCancel", 0, [], 0] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+			[player, "fundsTransferCancel"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 			playSound "AddItemFailed";
 		}];
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;

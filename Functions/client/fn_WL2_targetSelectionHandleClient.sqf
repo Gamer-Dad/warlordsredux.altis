@@ -6,6 +6,10 @@ _mostVotedVar = format ["BIS_WL_mostVoted_%1", BIS_WL_playerSide];
 while {!BIS_WL_missionEnd} do {
 	_lastTarget = WL_TARGET_FRIENDLY;
 	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
+	if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
+		[player, "fundsTransferCancel"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+		playSound "AddItemFailed";
+	};
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	BIS_WL_currentSelection = WL_ID_SELECTION_VOTING;
 	0 spawn {

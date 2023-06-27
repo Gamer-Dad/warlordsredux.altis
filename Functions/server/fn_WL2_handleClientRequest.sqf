@@ -2,7 +2,6 @@
 
 params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic"];
 
-_assetVar = "";
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") get (getPlayerUID _sender));
 
 _setOwner = {
