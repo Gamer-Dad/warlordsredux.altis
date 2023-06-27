@@ -415,6 +415,8 @@ switch (_displayClass) do {
 					};
 					case "RespawnVic": {0 spawn BIS_fnc_WL2_orderFTVehicle};
 					case "RespawnVicFT": {0 spawn BIS_fnc_WL2_orderFTVehicleFT};
+					case "RespawnPod" : {0 spawn BIS_fnc_WL2_orderFTPod};
+					case "RespawnPodFT" : {0 spawn BIS_fnc_WL2_orderFTPodFT};
 					case "welcomeScreen": {0 spawn BIS_fnc_WL2_welcome};
 					default {[_className, _cost, _category, _requirements, _offset] call BIS_fnc_WL2_requestPurchase};
 				};

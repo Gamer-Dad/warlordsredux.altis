@@ -96,6 +96,25 @@ if !(isNull _sender) then {
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
+		case "orderFTPod": {
+			_hasFunds = (_playerFunds >= _cost);
+			if (_hasFunds) then {
+				if (_target == west) then {
+					if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
+						_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
+						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+					};
+				} else {
+					if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) == 0) then {
+						_asset = createVehicle ["Land_Pod_Heli_Transport_04_medevac_F", _sender, [], 0, "NONE"];
+						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+					};
+				};
+
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+			};
+		};
 		case "fastTravelContested": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
