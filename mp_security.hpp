@@ -17,7 +17,7 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class DAPS_fnc_MisguideMissile {
+		class DAPS_fnc_Dazzler {
 			allowedTargets = 2;
 		};
 
