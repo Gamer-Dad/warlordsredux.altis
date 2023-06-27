@@ -68,39 +68,29 @@ if (_ret) then {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			private _sideP = side player;
-			private _ftVehicle = if (_sideP == west) then {missionNamespace getVariable "ftVehicleExistsBlu"} else {missionNamespace getVariable "ftVehicleExistsOpf"};
+			private _ftVehicle = if (_sideP == west) then {((count (entities "B_Truck_01_medical_F")) > 0)} else {((count (entities "O_Truck_03_medical_F")) > 0)};
 			if (_ftVehicle) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
 			private _sideP = side player;
 			if (_sideP == west) then {
-				if (missionNamespace getVariable "ftVehicleExistsBlu") then {
-					{
-						altitudeBluFT = getPosATL _x;
-						missionNamespace setVariable ["BluFTPos", altitudeBluFT];
-					} forEach entities "B_Truck_01_medical_F";
-					if ((missionNamespace getVariable "BluFTPos" select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+				private _ftBlu = ((entities "B_Truck_01_medical_F") # 0);
+				if ((count (entities "B_Truck_01_medical_F")) > 0) then {
+					if (((getPosATL _ftBlu) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((count fullCrew [_ftBlu, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((speed _ftBlu) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
-					if (missionNamespace getVariable "ftVehicleExistsBlu" == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((count (entities "B_Truck_01_medical_F")) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
-				{
-					if ((count fullCrew [_x, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
-					if (speed _x > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
-				} forEach entities "B_Truck_01_medical_F";
 			} else {
-				if (missionNamespace getVariable "ftVehicleExistsOpf") then {
-					{
-						altitudeOpfFT = getPosATL _x;
-						missionNamespace setVariable ["OpfFTPos", altitudeOpfFT];
-					} forEach entities "=O_Truck_03_medical_F";
-					if ((missionNamespace getVariable "OpfFTPos" select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+				private _ftOpf = ((entities "O_Truck_03_medical_F") # 0);
+				if ((count (entities "O_Truck_03_medical_F")) > 0) then {
+					if (((getPosATL _ftOpf) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((count fullCrew [_ftOpf, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((speed _ftOpf) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
-					if (missionNamespace getVariable "ftVehicleExistsOpf" == false) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((count (entities "O_Truck_03_medical_F")) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
-				{
-					if ((count fullCrew [_x, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
-					if (speed _x > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
-				} forEach entities "O_Truck_03_medical_F";
 			}; 
 		};
 		default {

@@ -15,13 +15,6 @@ if (isServer) exitWith {
 		{_asset deleteVehicleCrew _x} forEach crew _asset;
 		deleteGroup _grp;
 	};
-
-	if (typeOf _asset == "B_Truck_01_medical_F") then {
-		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-	};
-	if (typeOf _asset == "O_Truck_03_medical_F") then {
-		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-	};
 	
 	deleteVehicle _asset;
 };

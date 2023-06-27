@@ -22,8 +22,6 @@ MRTM_spawnedSIEDDI = [];
 MRTM_spawnedTripWires = [];
 MRTM_spawnedSLAMs_Ammo = [];
 
-missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
 missionNamespace setVariable ["imbalance", 0, true];
 
 [36000] call BIS_fnc_countdown;
@@ -59,12 +57,6 @@ addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	{
-		if (typeOf _x == "B_Truck_01_medical_F") then {
-			missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-		};
-		if (typeOf _x == "O_Truck_03_medical_F") then {
-			missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-		};
 		_x spawn BIS_fnc_WL2_sub_deleteAsset;
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	{
@@ -78,14 +70,6 @@ addMissionEventHandler ["HandleDisconnect", {
 addMissionEventHandler ["EntityKilled", {
 	_this spawn BIS_fnc_WL2_killRewardHandle;
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
-
-	if ((typeOf (_this # 0)) == "B_Truck_01_medical_F") then {
-		missionNamespace setVariable ["ftVehicleExistsBlu", false, true];
-	};
-
-	if ((typeOf (_this # 0)) == "O_Truck_03_medical_F") then {
-		missionNamespace setVariable ["ftVehicleExistsOpf", false, true];
-	};
 
 	if ((typeOf (_this # 0)) == "Land_IRMaskingCover_01_F") then {
 		{

@@ -81,16 +81,16 @@ if !(isNull _sender) then {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				private _asset = if (_target == west) then {
-					createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
+					if ((count (entities "B_Truck_01_medical_F")) == 0) then {
+						createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
+						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+					};
 				} else {
-					createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
+					if ((count (entities "O_Truck_03_medical_F")) == 0) then {
+						createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
+						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+					};
 				};
-				if (_target == west) then {
-					missionNamespace setVariable ["ftVehicleExistsBlu", true, true];
-				} else {
-					missionNamespace setVariable ["ftVehicleExistsOpf", true, true];
-				};
-				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
