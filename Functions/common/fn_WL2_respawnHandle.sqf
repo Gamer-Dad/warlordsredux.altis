@@ -16,8 +16,6 @@ if (_newUnit getVariable ["BIS_WL_ignore", FALSE]) exitWith {};
 };
 
 if (local _newUnit) then {
-	[group _newUnit, 0] setWaypointPosition [getPosASL _newUnit, -1];
-
 	if (_newUnit == player) then {
 		detach BIS_WL_enemiesCheckTrigger;
 		BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
