@@ -29,9 +29,6 @@ if (!BIS_WL_savingEnabled && isMultiplayer) then {
 	enableSaving [FALSE, FALSE];
 };
 
-//disabling this to allow script to work
-//setViewDistance 4000; 
-
 call BIS_fnc_WL2_playersListHandle;
 
 addMissionEventHandler ["EntityRespawned", {
@@ -51,8 +48,6 @@ addMissionEventHandler ["EntityRespawned", {
 	private _axisB = (_sector getVariable "objectArea") # 1;
 	_sector setVariable ["BIS_WL_maxAxis", if ((_sector getVariable "objectArea") # 3) then {sqrt ((_axisA ^ 2) + (_axisB ^ 2))} else {_axisA max _axisB}];
 } forEach BIS_WL_allSectors;
-
-call BIS_fnc_WL2_processRunways;
 
 if (isServer) then {
 	call BIS_fnc_WL2_initServer;

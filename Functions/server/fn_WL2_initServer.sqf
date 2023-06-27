@@ -100,6 +100,7 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_forfeitHandleServer;
 0 spawn BIS_fnc_WL2_garbageCollector;
 0 spawn BIS_fnc_WL2_mineLimit;
+0 spawn BIS_fnc_WL2_processRunways;
 
 setTimeMultiplier 3;
 0 spawn {
