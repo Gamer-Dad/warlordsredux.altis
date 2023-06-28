@@ -63,6 +63,7 @@ MRTM_fnc_getPos = {
 
 MRTM_fnc_iconText = {
 	params ["_t"];
+	forceUnicode 0;
 	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
 	_text = "";
 	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
