@@ -27,10 +27,10 @@ _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
 if (_unit isKindOf "Man") then {
-	_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
+	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
 } else {
 	_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-	_ctrl ctrlSetStructuredText parseText format ["<t size='0.9' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
+	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
 };
 
 if (MRTM_playKillSound) then {
