@@ -190,8 +190,7 @@ if !(isNull _sender) then {
 							_side = side _sender; 
 							_group = createGroup _side;
 							(crew _asset) joinSilent _group;
-							(effectiveCommander _asset) setSkill 0.2;
-							(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
+							(group _asset) deleteGroupWhenEmpty true;
 							switch (side group _sender) do {
 								case west: {
 									(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
@@ -237,9 +236,7 @@ if !(isNull _sender) then {
 									_side = side _sender; 
 									_group = createGroup _side;
 									(crew _asset) joinSilent _group;
-									(effectiveCommander _asset) setSkill 0.2;
-									(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
-									_asset enableWeaponDisassembly false;
+									(group _asset) deleteGroupWhenEmpty true;
 									switch (side group _sender) do {
 										case west: {
 											(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
@@ -296,8 +293,7 @@ if !(isNull _sender) then {
 								_side = side _sender; 
 								_group = createGroup _side;
 								(crew _asset) joinSilent _group;
-								(effectiveCommander _asset) setSkill 0.2;
-								(group effectiveCommander _asset) deleteGroupWhenEmpty TRUE;
+								(group _asset) deleteGroupWhenEmpty true;
 								switch (side group _sender) do {
 									case west: {
 										(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
