@@ -11,7 +11,7 @@ if (side player == west) exitWith {
 		player moveInCargo _x;
 		sleep 1;
 		titleCut ["", "BLACK IN", 1];
-	} forEach entities "B_Truck_01_medical_F";
+	} forEach ((entities "B_Truck_01_medical_F") select {alive _x});
 };
 
 if (side player == east) exitWith {
@@ -24,5 +24,5 @@ if (side player == east) exitWith {
 		player moveInCargo _x;
 		sleep 1;
 		titleCut ["", "BLACK IN", 1];
-	} forEach entities "O_Truck_03_medical_F";
+	} forEach ((entities "O_Truck_03_medical_F") select {alive _x});
 };

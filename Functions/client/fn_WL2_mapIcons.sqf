@@ -327,7 +327,7 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {typeOf _x == "B_Truck_01_medical_F"});
+		} count (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
 	};
 	if (side group player == east) then {
 		{
@@ -344,7 +344,7 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {typeOf _x == "O_Truck_03_medical_F"});
+		} count (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
 	};
 };
 

@@ -68,28 +68,28 @@ if (_ret) then {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			private _sideP = side group player;
-			private _ftVehicle = if (_sideP == west) then {((count (entities "B_Truck_01_medical_F")) > 0)} else {((count (entities "O_Truck_03_medical_F")) > 0)};
+			private _ftVehicle = if (_sideP == west) then {((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0)} else {((count ((entities "O_Truck_03_medical_F") select {alive _x})) > 0)};
 			if (_ftVehicle) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
 			private _sideP = side group player;
 			if (_sideP == west) then {
-				private _ftBlu = ((entities "B_Truck_01_medical_F") # 0);
-				if ((count (entities "B_Truck_01_medical_F")) > 0) then {
+				private _ftBlu = (((entities "B_Truck_01_medical_F") select {alive _x}) # 0);
+				if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0) then {
 					if (((getPosATL _ftBlu) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((count fullCrew [_ftBlu, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((speed _ftBlu) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
-					if ((count (entities "B_Truck_01_medical_F")) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
 			} else {
-				private _ftOpf = ((entities "O_Truck_03_medical_F") # 0);
-				if ((count (entities "O_Truck_03_medical_F")) > 0) then {
+				private _ftOpf = (((entities "O_Truck_03_medical_F") select {alive _x}) # 0);
+				if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) > 0) then {
 					if (((getPosATL _ftOpf) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((count fullCrew [_ftOpf, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((speed _ftOpf) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
-					if ((count (entities "O_Truck_03_medical_F")) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
 			}; 
 		};
