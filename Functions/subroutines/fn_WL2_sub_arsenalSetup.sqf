@@ -3,6 +3,7 @@
 ["Preload"] call BIS_fnc_arsenal;
 
 _minesBlacklist = ["APERSMineDispenser_Mag", "ATMine_Range_Mag", "APERSBoundingMine_Range_Mag", "APERSMine_Range_Mag", "APERSTripMine_Wire_Mag", "ClaymoreDirectionalMine_Remote_Mag", "DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag", "IEDUrbanBig_Remote_Mag", "IEDLandBig_Remote_Mag", "SLAMDirectionalMine_Wire_Mag", "IEDUrbanSmall_Remote_Mag", "IEDLandSmall_Remote_Mag", "TrainingMine_Mag"];
+_nvgWhitelist = ["NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","O_NVGoggles_hex_F","O_NVGoggles_urb_F","O_NVGoggles_ghex_F","NVGoggles_tna_F","NVGogglesB_blk_F","NVGogglesB_grn_F","NVGogglesB_gry_F","O_NVGoggles_grn_F","Integrated_NVG_TI_0_F"]
 
 if (BIS_WL_playerSide == west) then {
 	//NATO
@@ -16,6 +17,7 @@ if (BIS_WL_playerSide == west) then {
 	BIS_fnc_arsenal_data set [5, NATObackpackWhitelist];
 	BIS_fnc_arsenal_data set [6, NATOhelmetsWhitelist];
 	BIS_fnc_arsenal_data set [23, (BIS_fnc_arsenal_data # 23) - _minesBlacklist];
+	BIS_fnc_arsenal_data set [8, _nvgWhitelist];
 };
 
 if (BIS_WL_playerSide == east) then {
@@ -30,4 +32,5 @@ if (BIS_WL_playerSide == east) then {
 	BIS_fnc_arsenal_data set [5, CSATbackpackWhitelist];
 	BIS_fnc_arsenal_data set [6, CSAThelmetsWhitelist];
 	BIS_fnc_arsenal_data set [23, (BIS_fnc_arsenal_data # 23) - _minesBlacklist];
+	BIS_fnc_arsenal_data set [8, _nvgWhitelist];
 };
