@@ -5,12 +5,9 @@ params ["_locality"];
 switch (_locality) do {
 	case "common": {
 		BIS_WL_sidesArray = [WEST, EAST, RESISTANCE];
-		BIS_WL_competingSides = [[WEST, EAST], [WEST, RESISTANCE], [EAST, RESISTANCE]] # (BIS_WL_initModule getVariable ["BIS_WL_combatantsPreset", 0]);
+		BIS_WL_competingSides = [WEST, EAST];
 		BIS_WL_targetVotingDuration = BIS_WL_initModule getVariable ["BIS_WL_targetVotingDuration", 15];
-		BIS_WL_startCP = BIS_WL_initModule getVariable ["BIS_WL_startCP", 500]; //This doesn't work, look in TEMP.sqf
-		BIS_WL_fogOfWar = BIS_WL_initModule getVariable ["BIS_WL_fogOfWar", 1];
 		BIS_WL_localSide = (BIS_WL_sidesArray - BIS_WL_competingSides) # 0;
-		BIS_WL_localSide_all = (BIS_WL_sidesArray + BIS_WL_competingSides) # 0;
 		BIS_WL_missionEnd = FALSE;
 		BIS_WL_sectorUpdateInProgress = FALSE;
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
@@ -22,12 +19,7 @@ switch (_locality) do {
 		BIS_WL_fastTravelCostContested = BIS_WL_initModule getVariable ["BIS_WL_fastTravelCostContested", 200];
 		BIS_WL_fundsTransferCost = BIS_WL_initModule getVariable ["BIS_WL_fundsTransferCost", 500];
 		BIS_WL_targetResetCost = BIS_WL_initModule getVariable ["BIS_WL_targetResetCost", 2000];
-		BIS_WL_scanEnabled = BIS_WL_initModule getVariable ["BIS_WL_scanEnabled", TRUE];
-		BIS_WL_fastTravelEnabled = BIS_WL_initModule getVariable ["BIS_WL_fastTravelEnabled", 1];
 		BIS_WL_maxCP = BIS_WL_initModule getVariable ["BIS_WL_maxCP", 50000];
-		BIS_WL_dropCost = BIS_WL_initModule getVariable ["BIS_WL_dropCost", 25];
-		BIS_WL_dropCost_far = BIS_WL_initModule getVariable ["BIS_WL_dropCost_far", 1000];
-		BIS_WL_arsenalEnabled = BIS_WL_initModule getVariable ["BIS_WL_arsenalEnabled", TRUE];
 		BIS_WL_arsenalCost = BIS_WL_initModule getVariable ["BIS_WL_arsenalCost", 1000];
 		BIS_WL_assetLimit = BIS_WL_initModule getVariable ["BIS_WL_assetLimit", 10];
 		BIS_WL_maxSubordinates = BIS_WL_initModule getVariable ["BIS_WL_maxSubordinates", 2];
@@ -36,34 +28,15 @@ switch (_locality) do {
 		BIS_WL_scanCooldown = (BIS_WL_initModule getVariable ["BIS_WL_scanCooldown", 90]) max WL_SCAN_DURATION;
 		BIS_WL_lastLoadoutCost = BIS_WL_initModule getVariable ["BIS_WL_lastLoadoutCost", 100];
 		BIS_WL_savedLoadoutCost = BIS_WL_initModule getVariable ["BIS_WL_savedLoadoutCost", 500];
-		BIS_WL_zoneRestrictionSetting = BIS_WL_initModule getVariable ["BIS_WL_zoneRestrictionSetting", 0];
-		BIS_WL_savingEnabled = BIS_WL_initModule getVariable ["BIS_WL_savingEnabled", FALSE];
 	};
 	case "server": {
-		BIS_WL_allowAIVoting = BIS_WL_initModule getVariable ["BIS_WL_allowAIVoting", FALSE];
-		BIS_WL_initialProgress = BIS_WL_initModule getVariable ["BIS_WL_initialProgress", FALSE];
 		BIS_WL_baseDistanceMin = BIS_WL_initModule getVariable ["BIS_WL_baseDistanceMin", 1];
 		BIS_WL_baseDistanceMax = BIS_WL_initModule getVariable ["BIS_WL_baseDistanceMax", -1];
 		if (BIS_WL_baseDistanceMax < 0) then {BIS_WL_baseDistanceMax = 999};
-		BIS_WL_initialProgress = switch (BIS_WL_initialProgress) do {
-			case 0: 	{[0, 0]};
-			case 2525: 	{[0.25, 0.25]};
-			case 5050: 	{[0.5, 0.5]};
-			case 250: 	{[0.25, 0]};
-			case 500: 	{[0.5, 0]};
-			case 750: 	{[0.75, 0]};
-			case 25: 	{[0, 0.25]};
-			case 50: 	{[0, 0.5]};
-			case 75: 	{[0, 0.75]};
-			case 5025: 	{[0.5, 0.25]};
-			case 7525: 	{[0.75, 0.25]};
-			case 2550: 	{[0.25, 0.5]};
-			case 2575: 	{[0.25, 0.75]};
-		};
 		BIS_WL_playerIDArr = [[], []];
-		BIS_WL_faction_WEST = BIS_WL_initModule getVariable ["BIS_WL_faction_WEST", "BLU_F"];
-		BIS_WL_faction_EAST = BIS_WL_initModule getVariable ["BIS_WL_faction_EAST", "OPF_F"];
-		BIS_WL_faction_GUER = BIS_WL_initModule getVariable ["BIS_WL_faction_GUER", "IND_F"];
+		BIS_WL_faction_WEST = "BLU_F";
+		BIS_WL_faction_EAST = "OPF_F";
+		BIS_WL_faction_GUER = "IND_F";
 		{
 			missionNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
 		} forEach BIS_WL_competingSides;
@@ -71,8 +44,6 @@ switch (_locality) do {
 	case "client": {
 		BIS_WL_playerSide = side group player;
 		BIS_WL_enemySide = (BIS_WL_competingSides - [BIS_WL_playerSide]) # 0;
-		BIS_WL_playersAlpha = (BIS_WL_initModule getVariable ["BIS_WL_playersAlpha", 50]) / 100;
-		BIS_WL_markersAlpha = (BIS_WL_initModule getVariable ["BIS_WL_markersAlpha", 50]) / 100;
 		BIS_WL_autonomous_limit = BIS_WL_initModule getVariable ["BIS_WL_autonomous_limit", 2];
 		BIS_WL_playerBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_enemyBase = BIS_WL_enemySide call BIS_fnc_WL2_getSideBase;
@@ -92,9 +63,6 @@ switch (_locality) do {
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
 		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 4);
-		BIS_WL_matesInBasket = 0;
-		BIS_WL_vehsInBasket = 0;
-		BIS_WL_dropPool = [];
 		BIS_WL_lastLoadout = [];
 		BIS_WL_savedLoadout = [];
 		BIS_WL_loadoutApplied = FALSE;

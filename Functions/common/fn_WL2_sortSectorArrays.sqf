@@ -45,65 +45,22 @@ while {count _knots > 0} do {
 if (_fullRecalc) then {
 	_enemySectors = BIS_WL_allSectors - _unlocked;
 	
-	switch (BIS_WL_zoneRestrictionSetting) do {
-		case 0: {
-			{
-				private _sector = _x;
-				private _zoneRestrictionAxis = ((_sector getVariable "BIS_WL_distanceToNearestSector") / 3) max (_sector getVariable "BIS_WL_maxAxis");
-				if (isServer) then {
-					_zoneRestrictionTrigger = ((_sector getVariable "BIS_WL_zoneRestrictionTrgs") select {(_x getVariable "BIS_WL_handledSide") == _side}) # 0;
-					_zoneRestrictionTrigger setTriggerArea [_zoneRestrictionAxis, _zoneRestrictionAxis, 0, FALSE];
-				};
-				
-				if !(isNil "BIS_WL_playerSide") then {
-					if (_side == BIS_WL_playerSide) then {
-						_sector setVariable ["BIS_WL_borderWidth", _zoneRestrictionAxis];
-						((_sector getVariable "BIS_WL_markers") # 2) setMarkerSizeLocal [_zoneRestrictionAxis, _zoneRestrictionAxis];
-						((_sector getVariable "BIS_WL_markers") # 1) setMarkerBrushLocal "Solid";
-					};
-				};
-			} forEach _enemySectors;
+	{
+		private _sector = _x;
+		private _zoneRestrictionAxis = ((_sector getVariable "BIS_WL_distanceToNearestSector") / 3) max (_sector getVariable "BIS_WL_maxAxis");
+		if (isServer) then {
+			_zoneRestrictionTrigger = ((_sector getVariable "BIS_WL_zoneRestrictionTrgs") select {(_x getVariable "BIS_WL_handledSide") == _side}) # 0;
+			_zoneRestrictionTrigger setTriggerArea [_zoneRestrictionAxis, _zoneRestrictionAxis, 0, FALSE];
 		};
 		
-		case 1: {
-			{
-				private _sector = _x;
-				_enemySectorsByDistance = _enemySectors apply {[_x distance2D _sector, _x]};
-				_enemySectorsByDistance sort TRUE;
-				_sector setVariable ["BIS_WL_nearestEnemySectorDistanceHalf", ((_enemySectorsByDistance # 0) # 0) / 2];
-				_linkedUnlocked = (synchronizedObjects _sector) select {_x in _unlocked};
-				_linkMiddles = [];
-				{_linkMiddles pushBack ([_sector, (_sector distance2D _x) / 2, _sector getDir _x] call BIS_fnc_relPos)} forEach _linkedUnlocked;
-				_sector setVariable ["BIS_WL_linkMiddles", _linkMiddles];
-			} forEach _unlocked;
-			
-			{
-				_sector = _x;
-				_unlockedSectorsByDistance = _unlocked apply {[_x distance2D _sector, _x]};
-				_unlockedSectorsByDistance sort TRUE;
-				_nearestUnlockedSector = (_unlockedSectorsByDistance # 0) # 1;
-				_linkMiddles = [];
-				{_linkMiddles append (_x getVariable ["BIS_WL_linkMiddles", []])} forEach _unlocked;
-				_linkMiddles = _linkMiddles apply {[_x distance2D _sector, _x]};
-				_linkMiddles sort TRUE;
-				_nearestBorder = if (count _linkMiddles > 0) then {(_linkMiddles # 0) # 1} else {[-10000,-10000,0]};
-				_zoneRestrictionAxis = if (_sector != _nearestUnlockedSector) then {((_sector distance2D _nearestUnlockedSector) min (_sector distance2D _nearestBorder)) - (_nearestUnlockedSector getVariable "BIS_WL_nearestEnemySectorDistanceHalf")} else {_nearestUnlockedSector getVariable "BIS_WL_nearestEnemySectorDistanceHalf"};
-				
-				if (isServer) then {
-					_zoneRestrictionTrigger = ((_sector getVariable "BIS_WL_zoneRestrictionTrgs") select {(_x getVariable "BIS_WL_handledSide") == _side}) # 0;
-					_zoneRestrictionTrigger setTriggerArea [_zoneRestrictionAxis, _zoneRestrictionAxis, 0, FALSE];
-				};
-				
-				if !(isNil "BIS_WL_playerSide") then {
-					if (_side == BIS_WL_playerSide) then {
-						_sector setVariable ["BIS_WL_borderWidth", _zoneRestrictionAxis];
-						((_sector getVariable "BIS_WL_markers") # 2) setMarkerSizeLocal [_zoneRestrictionAxis, _zoneRestrictionAxis];
-						((_sector getVariable "BIS_WL_markers") # 1) setMarkerBrushLocal "Solid";
-					};
-				};
-			} forEach _enemySectors;
+		if !(isNil "BIS_WL_playerSide") then {
+			if (_side == BIS_WL_playerSide) then {
+				_sector setVariable ["BIS_WL_borderWidth", _zoneRestrictionAxis];
+				((_sector getVariable "BIS_WL_markers") # 2) setMarkerSizeLocal [_zoneRestrictionAxis, _zoneRestrictionAxis];
+				((_sector getVariable "BIS_WL_markers") # 1) setMarkerBrushLocal "Solid";
+			};
 		};
-	};
+	} forEach _enemySectors;
 };
 
 [_owned, _available, _linked, _unlocked, _income, _services, _owned - _linked, (_unlocked - _owned) - _available]

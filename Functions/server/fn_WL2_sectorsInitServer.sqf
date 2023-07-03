@@ -45,17 +45,13 @@ missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) 
 	_base setVariable ["BIS_WL_owner", _side, TRUE];
 	_base setVariable ["BIS_WL_originalOwner", _side, TRUE];
 	_base setVariable ["BIS_WL_previousOwners", [_side], TRUE];
-	if (BIS_WL_fogOfWar == 2) then {
-		_base setVariable ["BIS_WL_revealedBy", [_side], TRUE];
-	} else {
-		_base setVariable ["BIS_WL_revealedBy", BIS_WL_competingSides, TRUE];
-	};
+	_base setVariable ["BIS_WL_revealedBy", BIS_WL_competingSides, TRUE];
 } forEach WL_BASES;
 
 _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
 
-_sectorsToGiveSide1 = floor (_nonBaseSectorsCnt * (BIS_WL_initialProgress # 0));
-_sectorsToGiveSide2 = floor (_nonBaseSectorsCnt * (BIS_WL_initialProgress # 1));
+_sectorsToGiveSide1 = floor (_nonBaseSectorsCnt * ([0, 0] # 0));
+_sectorsToGiveSide2 = floor (_nonBaseSectorsCnt * ([0, 0] # 1));
 
 while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 	if (_sectorsToGiveSide1 > 0) then {
@@ -66,11 +62,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 			_sector = selectRandom _available;
 			_sector setVariable ["BIS_WL_owner", _side, TRUE];
 			_sector setVariable ["BIS_WL_previousOwners", [_side], TRUE];
-			if (BIS_WL_fogOfWar != 0) then {
-				_sector setVariable ["BIS_WL_revealedBy", [_side], TRUE];
-			} else {
-				_sector setVariable ["BIS_WL_revealedBy", BIS_WL_competingSides, TRUE];
-			};
+			_sector setVariable ["BIS_WL_revealedBy", [_side], TRUE];
 			_sectorsToGiveSide1 = _sectorsToGiveSide1 - 1;
 		} else {
 			_sectorsToGiveSide1 = 0;
@@ -85,11 +77,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 			_sector = selectRandom _available;
 			_sector setVariable ["BIS_WL_owner", _side, TRUE];
 			_sector setVariable ["BIS_WL_previousOwners", [_side], TRUE];
-			if (BIS_WL_fogOfWar != 0) then {
-				_sector setVariable ["BIS_WL_revealedBy", [_side], TRUE];
-			} else {
-				_sector setVariable ["BIS_WL_revealedBy", BIS_WL_competingSides, TRUE];
-			};
+			_sector setVariable ["BIS_WL_revealedBy", [_side], TRUE];
 			_sectorsToGiveSide2 = _sectorsToGiveSide2 - 1;
 			if (count _available == 1) then {
 				_sectorsToGiveSide1 = 0;
@@ -107,11 +95,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 	if ((_sector getVariable ["BIS_WL_owner", sideUnknown]) == sideUnknown) then {
 		_sector setVariable ["BIS_WL_owner", BIS_WL_localSide, TRUE];
 		_sector setVariable ["BIS_WL_previousOwners", [], TRUE];
-		if (BIS_WL_fogOfWar != 0) then {
-			_sector setVariable ["BIS_WL_revealedBy", [], TRUE];
-		} else {
-			_sector setVariable ["BIS_WL_revealedBy", BIS_WL_competingSides, TRUE];
-		};
+		_sector setVariable ["BIS_WL_revealedBy", [], TRUE];
 	};
 	
 	_zoneRestrictionTrg1 = createTrigger ["EmptyDetector", _sectorPos, FALSE];

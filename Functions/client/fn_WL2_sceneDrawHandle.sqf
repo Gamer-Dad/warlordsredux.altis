@@ -1,39 +1,37 @@
 #include "..\warlords_constants.inc"
 
 BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
-	if (BIS_WL_markersAlpha > 0) then {
-		if !(isNull WL_TARGET_FRIENDLY) then {
-			drawIcon3D [
-				BIS_WL_currentTargetData # 0,
-				BIS_WL_currentTargetData # 1,
-				BIS_WL_currentTargetData # 2,
-				1,
-				1,
-				0,
-				"",
-				0,
-				0,
-				"RobotoCondensedBold",
-				"center",
-				TRUE
-			];
-			_dist = (getPosVisual player) distance WL_TARGET_FRIENDLY;
-			_units = "m";
-			_dist = ceil _dist;
-			if (_dist > 1000) then {_dist = _dist / 100; _dist = round _dist; _dist = _dist / 10; _units = "km"};
-			drawIcon3D [
-				"",
-				[1, 1, 1, BIS_WL_markersAlpha],
-				BIS_WL_currentTargetData # 2,
-				0,
-				0.75,
-				0,
-				format ["%1%2 %3", _dist, if (_dist % 1 == 0 && _units == "km") then {".0"} else {""}, if (_units == "m") then {BIS_WL_localized_m} else {BIS_WL_localized_km}],
-				2,
-				WL_SCENE_FONT_SIZE,
-				"RobotoCondensedBold"
-			];
-		};
+	if !(isNull WL_TARGET_FRIENDLY) then {
+		drawIcon3D [
+			BIS_WL_currentTargetData # 0,
+			BIS_WL_currentTargetData # 1,
+			BIS_WL_currentTargetData # 2,
+			1,
+			1,
+			0,
+			"",
+			0,
+			0,
+			"RobotoCondensedBold",
+			"center",
+			TRUE
+		];
+		_dist = (getPosVisual player) distance WL_TARGET_FRIENDLY;
+		_units = "m";
+		_dist = ceil _dist;
+		if (_dist > 1000) then {_dist = _dist / 100; _dist = round _dist; _dist = _dist / 10; _units = "km"};
+		drawIcon3D [
+			"",
+			[1, 1, 1, 0.5],
+			BIS_WL_currentTargetData # 2,
+			0,
+			0.75,
+			0,
+			format ["%1%2 %3", _dist, if (_dist % 1 == 0 && _units == "km") then {".0"} else {""}, if (_units == "m") then {BIS_WL_localized_m} else {BIS_WL_localized_km}],
+			2,
+			WL_SCENE_FONT_SIZE,
+			"RobotoCondensedBold"
+		];
 	};
 	{
 		drawIcon3D [

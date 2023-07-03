@@ -71,18 +71,7 @@ switch (_displayClass) do {
 
 		_osd_rearm_possible ctrlSetPosition [_displayX + (_blockW * 73), _displayY + (_blockH * 8), _blockW * 120, _blockH * 16];
 
-		if (BIS_WL_fogOfWar != 0) then {
-			_osd_icon_side_2 ctrlSetText "\A3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
-		} else {
-			_osd_icon_side_2 ctrlSetText (BIS_WL_sectorIconsArray # (BIS_WL_sidesArray find BIS_WL_enemySide));
-			_color = (BIS_WL_colorsArray # (BIS_WL_sidesArray find BIS_WL_enemySide)); _color set [3, 0.5];
-			_osd_icon_side_2 ctrlSetTextColor _color;
-			
-			_osd_sectors_side_2 ctrlSetTextColor [1,1,1,0.5];
-			_osd_sectors_side_2 ctrlSetPosition [_displayX + (_blockW * 122), _displayY - (_blockH * 13), _blockW * 20, _blockH * 16];
-			
-			_osd_income_side_2 ctrlSetTextColor [1,1,1,0.5];
-		};
+		_osd_icon_side_2 ctrlSetText "\A3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
 
 		{
 			_x ctrlSetPosition [_displayX, _displayY + (_blockH * 19), _displayW, _blockH * 16];

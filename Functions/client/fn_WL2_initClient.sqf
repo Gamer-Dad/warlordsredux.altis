@@ -254,9 +254,7 @@ addMissionEventHandler ["MarkerCreated", {
 	};
 }];
 
-if (BIS_WL_arsenalEnabled) then {
-	call BIS_fnc_WL2_sub_arsenalSetup;
-};
+call BIS_fnc_WL2_sub_arsenalSetup;
 
 0 spawn {
 	waitUntil {uiSleep WL_TIMEOUT_SHORT; !isNull WL_CONTROL_MAP};

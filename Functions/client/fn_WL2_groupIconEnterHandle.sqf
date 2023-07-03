@@ -9,7 +9,7 @@ private _services = (_sector getVariable "BIS_WL_services");
 private _airstrip = "A" in _services;
 private _helipad = "H" in _services;
 private _harbor = "W" in _services;
-_scanCD = if (BIS_WL_scanEnabled) then {((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]) + BIS_WL_scanCooldown - serverTime) max 0} else {-1};
+_scanCD = ((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]) + BIS_WL_scanCooldown - serverTime) max 0;
 if (_scanCD == 0) then {_scanCD = -1};
 
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];

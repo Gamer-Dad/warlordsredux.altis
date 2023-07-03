@@ -1,11 +1,9 @@
-#include "..\warlords_constants.inc"
-
 ["Preload"] call BIS_fnc_arsenal;
 
 _minesBlacklist = ["APERSMineDispenser_Mag", "ATMine_Range_Mag", "APERSBoundingMine_Range_Mag", "APERSMine_Range_Mag", "APERSTripMine_Wire_Mag", "ClaymoreDirectionalMine_Remote_Mag", "DemoCharge_Remote_Mag", "SatchelCharge_Remote_Mag", "IEDUrbanBig_Remote_Mag", "IEDLandBig_Remote_Mag", "SLAMDirectionalMine_Wire_Mag", "IEDUrbanSmall_Remote_Mag", "IEDLandSmall_Remote_Mag", "TrainingMine_Mag"];
-_nvgWhitelist = ["NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","O_NVGoggles_hex_F","O_NVGoggles_urb_F","O_NVGoggles_ghex_F","NVGoggles_tna_F","NVGogglesB_blk_F","NVGogglesB_grn_F","NVGogglesB_gry_F","O_NVGoggles_grn_F","Integrated_NVG_TI_0_F"]
+_nvgWhitelist = ["NVGoggles","NVGoggles_OPFOR","NVGoggles_INDEP","O_NVGoggles_hex_F","O_NVGoggles_urb_F","O_NVGoggles_ghex_F","NVGoggles_tna_F","NVGogglesB_blk_F","NVGogglesB_grn_F","NVGogglesB_gry_F","O_NVGoggles_grn_F","Integrated_NVG_TI_0_F"];
 
-if (BIS_WL_playerSide == west) then {
+if (side group player == west) then {
 	//NATO
 	private _NATOuniformsWhitelist = ["U_O_R_Gorka_01_black_F", "U_B_HeliPilotCoveralls", "U_B_GhillieSuit", "U_B_CombatUniform_mcam", "U_B_CombatUniform_mcam_tshirt", "U_B_CombatUniform_mcam_vest", "U_B_Wetsuit", "U_B_PilotCoveralls", "U_B_SpecopsUniform_sgg", "U_B_CTRG_1", "U_B_CTRG_2", "U_B_CTRG_3", "U_B_survival_uniform", "U_B_FullGhillie_lsh", "U_B_FullGhillie_sard", "U_B_FullGhillie_ard", "U_B_T_Soldier_F", "U_B_T_Soldier_AR_F", "U_B_T_Soldier_SL_F", "U_B_T_Sniper_F", "U_B_T_FullGhillie_tna_F", "U_B_CTRG_Soldier_F", "U_B_CTRG_Soldier_2_F", "U_B_CTRG_Soldier_3_F", "U_B_CTRG_Soldier_Arid_F", "U_B_CTRG_Soldier_2_Arid_F", "U_B_CTRG_Soldier_3_Arid_F", "U_B_CombatUniform_mcam_wdl_f", "U_B_CombatUniform_tshirt_mcam_wdL_f", "U_B_CombatUniform_vest_mcam_wdl_f"];
 	private _NATOhelmetsWhitelist = ["H_Booniehat_khk_hs","H_Booniehat_oli","H_Booniehat_tna_F","H_Cap_usblack","H_MilCap_mcamo","H_MilCap_tna_F","H_MilCap_wdl","H_HelmetB_light_black","H_HelmetB_light_desert","H_HelmetB_light_grass","H_HelmetB_light_sand","H_HelmetB_light_snakeskin","H_Cap_khaki_specops_UK","H_HelmetB_camo", "H_HelmetB", "H_HelmetB_paint", "H_Booniehat_mcamo", "H_Booniehat_grn", "H_Booniehat_tan", "H_HelmetB_plain_blk", "H_HelmetSpecB", "H_HelmetSpecB_paint1", "H_HelmetSpecB_paint2", "H_HelmetSpecB_blk", "H_HelmetSpecB_snakeskin", "H_HelmetSpecB_sand", "H_Cap_tan_specops_US", "H_HelmetCrew_B", "H_PilotHelmetFighter_B", "H_PilotHelmetHeli_B", "H_CrewHelmetHeli_B", "H_Beret_02", "H_HelmetB_TI_tna_F", "H_HelmetB_TI_arid_F", "H_HelmetB_Enh_tna_F", "H_HelmetB_Light_tna_F", "H_HelmetHBK_chops_F", "H_HelmetHBK_ear_F", "H_HelmetHBK_headset_F", "H_HelmetHBK_F", "H_Booniehat_wdl", "H_HelmetB_plain_wdl", "H_HelmetB_light_wdl", "H_HelmetSpecB_wdl", "H_HelmetB", "H_HelmetB_plain_blk", "H_HelmetB_plain_wdl", "H_HelmetB_camo", "H_HelmetB_paint", "H_HelmetB_snakeskin", "H_HelmetB_tna_F", "H_HelmetB_grass", "H_HelmetB_desert"];
@@ -20,7 +18,7 @@ if (BIS_WL_playerSide == west) then {
 	BIS_fnc_arsenal_data set [8, _nvgWhitelist];
 };
 
-if (BIS_WL_playerSide == east) then {
+if (side group player == east) then {
 	//CSAT
 	private _CSATuniformsWhitelist = ["U_O_SpecopsUniform_ocamo", "U_O_SpecopsUniform_blk", "U_O_OfficerUniform_ocamo", "U_O_Wetsuit", "U_O_GhillieSuit", "U_O_FullGhillie_lsh", "U_O_FullGhillie_sard", "U_O_FullGhillie_ard", "U_O_officer_noInsignia_hex_F", "U_O_V_Soldier_Viper_hex_F", "U_O_V_Soldier_Viper_F", "U_O_T_FullGhillie_tna_F", "U_O_T_Soldier_F", "U_O_T_Officer_F", "U_O_T_Sniper_F", "U_O_CombatUniform_oucamo", "U_O_PilotCoveralls", "U_O_R_Gorka_01_F", "U_O_R_Gorka_01_brown_F", "U_O_R_Gorka_01_camo_F", "U_O_R_Gorka_01_black_F"];
 	private _CSAThelmetsWhitelist = ["H_Cap_brn_SPECOPS", "H_HelmetCrew_O", "H_PilotHelmetFighter_O", "H_PilotHelmetHeli_O", "H_CrewHelmetHeli_O", "H_HelmetO_ocamo", "H_HelmetLeaderO_ocamo", "H_MilCap_ocamo", "H_HelmetO_oucamo", "H_HelmetLeaderO_oucamo", "H_HelmetSpecO_ocamo", "H_HelmetSpecO_blk", "H_Beret_ocamo", "H_HelmetO_ViperSP_hex_F", "H_HelmetO_ViperSP_ghex_F", "H_HelmetSpecO_ghex_F", "H_HelmetLeaderO_ghex_F", "H_HelmetO_ghex_F", "H_HelmetCrew_O_ghex_F", "H_MilCap_ghex_F", "H_Tank_black_F", "H_Beret_CSAT_01_F", "H_HelmetAggressor_F", "H_HelmetAggressor_cover_F", "H_HelmetAggressor_cover_taiga_F", "H_Beret_blk", "H_Booniehat_taiga", "H_Booniehat_khk" , "H_Cap_brn_SPECOPS", "H_MilCap_taiga"];

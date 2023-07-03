@@ -32,7 +32,7 @@
 				_npcs = _warlords select {!isPlayer _x};
 				_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
 				_playerVotingVariableNames = _players apply {format ["BIS_WL_targetVote_%1", getPlayerUID _x]};
-				(missionNamespace getVariable [_votingResetVar, false]) || ((_playerVotingVariableNames findIf {!isNull (missionNamespace getVariable [_x, objNull])} != -1) || (if (count _npcs > 0) then {if (_noPlayers) then {serverTime > _tNoPlayers} else {if (BIS_WL_allowAIVoting) then {serverTime > _t} else {FALSE}}} else {FALSE}))
+				(missionNamespace getVariable [_votingResetVar, false]) || ((_playerVotingVariableNames findIf {!isNull (missionNamespace getVariable [_x, objNull])} != -1) || (if (count _npcs > 0) then {if (_noPlayers) then {serverTime > _tNoPlayers} else {false}} else {false}))
 			};
 			
 			if !(missionNamespace getVariable [_votingResetVar, false]) then {
@@ -44,7 +44,7 @@
 					_players = _warlords select {isPlayer _x};
 					_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
 					
-					if (!_npcsVoted && (BIS_WL_allowAIVoting || _noPlayers)) then {
+					if (!_npcsVoted && (_noPlayers)) then {
 						_npcsVoted = TRUE;
 						_npcs = _warlords select {!isPlayer _x};
 						{

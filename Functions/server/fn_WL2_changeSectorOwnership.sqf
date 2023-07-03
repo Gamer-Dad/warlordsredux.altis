@@ -20,7 +20,7 @@ _previousOwners pushBackUnique _owner;
 _sector setVariable ["BIS_WL_previousOwners", _previousOwners, TRUE];
 
 _zoneRestrictionTrgs = _sector getVariable "BIS_WL_zoneRestrictionTrgs";
-_detectionTrgs = (if (BIS_WL_fogOfWar != 0) then {_sector getVariable "BIS_WL_detectionTrgs"} else {[]});
+_detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 
 {
 	if ((_x getVariable "BIS_WL_handledSide") == _owner) then {

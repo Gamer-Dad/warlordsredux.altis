@@ -60,7 +60,7 @@ _i = 0;
 	
 	_mrkrAreaBig = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_areaBig", _forEachIndex], _sectorPos];
 	_mrkrAreaBig setMarkerShapeLocal "ELLIPSE";
-	_mrkrAreaBig setMarkerBrushLocal (if (BIS_WL_zoneRestrictionSetting == 1) then {"FDiagonal"} else {"SolidBorder"});
+	_mrkrAreaBig setMarkerBrushLocal "SolidBorder";
 	_mrkrAreaBig setMarkerAlphaLocal 1;
 } forEach BIS_WL_allSectors;
 

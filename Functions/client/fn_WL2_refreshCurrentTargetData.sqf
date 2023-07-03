@@ -6,7 +6,7 @@ if !(isNull WL_TARGET_FRIENDLY) then {
 	} else {
 		BIS_WL_colorsArray # 3
 	};
-	_color set [3, BIS_WL_markersAlpha];
+	_color set [3, 0.5];
 	BIS_WL_currentTargetData = [
 		format ["\A3\ui_f\data\map\markers\nato\%1.paa", markerType ((WL_TARGET_FRIENDLY getVariable "BIS_WL_markers") # 0)],
 		_color,

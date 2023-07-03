@@ -25,9 +25,7 @@ if (isMultiplayer) then {
 
 "common" call BIS_fnc_WL2_varsInit;
 
-if (!BIS_WL_savingEnabled && isMultiplayer) then {
-	enableSaving [FALSE, FALSE];
-};
+enableSaving [false, false];
 
 call BIS_fnc_WL2_playersListHandle;
 

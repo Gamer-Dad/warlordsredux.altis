@@ -3,7 +3,6 @@
 params ["_side"];
 
 private _sortedArray = [];
-private _arsenalHandled = if (BIS_WL_arsenalEnabled) then {FALSE} else {TRUE};
 private _lastLoadoutHandled = FALSE;
 private _saveLoadoutHandled = FALSE;
 private _savedLoadoutHandled = FALSE;
@@ -35,8 +34,7 @@ private _savedLoadoutHandled = FALSE;
 				_data = _sortedArray # _index
 			};
 			
-			if (_category == "Gear" && !_arsenalHandled) then {
-				_arsenalHandled = TRUE;
+			if (_category == "Gear") then {
 				_data pushBack ["Arsenal", BIS_WL_arsenalCost, [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
 			
@@ -177,9 +175,9 @@ private _savedLoadoutHandled = FALSE;
 
 _strategyArr = [];
 
-if (BIS_WL_scanEnabled) then {_strategyArr pushBack ["Scan", BIS_WL_scanCost, [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"]};
-if (BIS_WL_fastTravelEnabled in [1, 2, 4]) then {_strategyArr pushBack ["FTSeized", BIS_WL_fastTravelCostOwned, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"]};
-if (BIS_WL_fastTravelEnabled in [1, 2]) then {_strategyArr pushBack ["FTConflict", BIS_WL_fastTravelCostContested, [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"]};
+_strategyArr pushBack ["Scan", BIS_WL_scanCost, [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"];
+_strategyArr pushBack ["FTSeized", BIS_WL_fastTravelCostOwned, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
+_strategyArr pushBack ["FTConflict", BIS_WL_fastTravelCostContested, [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
 _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_ft", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_ft"];
 _strategyArr pushBack ["RespawnPodFT", 0, [], "Fast travel to medical pod", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Fast travel to medical pod"];
 _strategyArr pushBack ["RespawnVic", 200, [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
