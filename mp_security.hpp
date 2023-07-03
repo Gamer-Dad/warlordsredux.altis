@@ -163,17 +163,60 @@ class CfgDisabledCommands {
 		};
 	};
 
+	class SKIPTIME {
+		class SYNTAX1
+		{
+			targets[] = {1,0,1};
+			args[] = {{}, {"SCALAR"}};
+		};		
+	};
+
+	class DRAWLINE3D {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{}, {"ARRAY"}};
+		};
+	};
+
+	class SETCUSTOMAIMCOEF {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{"OBJECT"}, {"SCALAR"}};
+		};
+	};
+
+	class REMOVEALLWEAPONS {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{}, {"OBJECT"}};
+		};
+	};
+
+	class ADDWEAPONGLOBAL {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{"OBJECT"}, {"STRING"}};
+		};
+	};
+
+	class CREATEAGENT {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{}, {"ARRAY"}};
+		};
+	};
+
 	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
 			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"ARRAY"}};			
+			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
 	class ADDFORCE {
 		class SYNTAX1 {
 			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"ARRAY"}};			
+			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
 	class SETVELOCITYMODELSPACE {
@@ -189,6 +232,13 @@ class CfgDisabledCommands {
 			targets[] = {1,0,1};
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
+	};
+
+	class ENABLEFATIGUE {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{"OBJECT"},{"BOOL"}};	
+		};		
 	};
 
 	//Damage
@@ -222,6 +272,12 @@ class CfgDisabledCommands {
 		{
 			targets[] = {1,0,1};
 			args[] = {{"OBJECT"},{"SCALAR"}};
+		};
+	};
+	class ALLOWDAMAGE {
+		class SYNTAX1 {
+			targets[] = {1,0,1};
+			args[] = {{"OBJECT"},{"BOOL"}};
 		};
 	};
 
