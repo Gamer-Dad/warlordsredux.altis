@@ -60,7 +60,6 @@ class CfgFunctions {
 			class WL2_betty {};
 			class WL2_rita {};
 			class WL2_mapIcons {};
-			class WL2_fundsControl {};
 			class WL2_vehicleRearm {};
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};

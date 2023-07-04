@@ -297,21 +297,6 @@ MRTM_fnc_iconDrawMap = {
 			"right"
 		];		
 	} count ((units player) select {(alive _x) && {(_x != player) && {(isNull objectParent _x)}}});
-	{
-		_m drawIcon [
-			"a3\3den\data\cfgwaypoints\dismiss_ca.paa",
-			[(random 1), (random 1), (random 1), 1],
-			[_x] call MRTM_fnc_getPos,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_getDir,
-			format ["%1, %2", name _x, "CP Cheater"],
-			1,
-			0.025,
-			"TahomaB",
-			"right"
-		];
-	} count (allPlayers select {_x getVariable ["BIS_WL_isCheater", false]});
 	if (side group player == west) then {
 		{
 			_m drawIcon [

@@ -1,37 +1,35 @@
-#include "..\warlords_constants.inc"
-
 params ["_locality"];
 
 switch (_locality) do {
 	case "common": {
 		BIS_WL_sidesArray = [WEST, EAST, RESISTANCE];
 		BIS_WL_competingSides = [WEST, EAST];
-		BIS_WL_targetVotingDuration = BIS_WL_initModule getVariable ["BIS_WL_targetVotingDuration", 15];
+		BIS_WL_targetVotingDuration = 15;
 		BIS_WL_localSide = (BIS_WL_sidesArray - BIS_WL_competingSides) # 0;
 		BIS_WL_missionEnd = FALSE;
 		BIS_WL_sectorUpdateInProgress = FALSE;
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
 		if (BIS_WL_mapSize == 0) then {BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "Grid" >> "OffsetY")};
 		BIS_WL_mapAreaArray = [[BIS_WL_mapSize / 2, BIS_WL_mapSize / 2], BIS_WL_mapSize / 2, BIS_WL_mapSize / 2, 0, TRUE];
-		BIS_WL_purchaseListTeplateArr = call compile (BIS_WL_initModule getVariable ["BIS_WL_requisitionPreset", "['A3DefaultAll']"]);
-		BIS_WL_scanCost = BIS_WL_initModule getVariable ["BIS_WL_scanCost", 350];
-		BIS_WL_fastTravelCostOwned = BIS_WL_initModule getVariable ["BIS_WL_fastTravelCostOwned", 0];
-		BIS_WL_fastTravelCostContested = BIS_WL_initModule getVariable ["BIS_WL_fastTravelCostContested", 200];
-		BIS_WL_fundsTransferCost = BIS_WL_initModule getVariable ["BIS_WL_fundsTransferCost", 500];
-		BIS_WL_targetResetCost = BIS_WL_initModule getVariable ["BIS_WL_targetResetCost", 2000];
-		BIS_WL_maxCP = BIS_WL_initModule getVariable ["BIS_WL_maxCP", 50000];
-		BIS_WL_arsenalCost = BIS_WL_initModule getVariable ["BIS_WL_arsenalCost", 1000];
-		BIS_WL_assetLimit = BIS_WL_initModule getVariable ["BIS_WL_assetLimit", 10];
-		BIS_WL_maxSubordinates = BIS_WL_initModule getVariable ["BIS_WL_maxSubordinates", 2];
-		BIS_WL_targetResetTimeout = BIS_WL_initModule getVariable ["BIS_WL_targetResetTimeout", 300];
-		BIS_WL_baseValue = BIS_WL_initModule getVariable ["BIS_WL_baseValue", 10];
-		BIS_WL_scanCooldown = (BIS_WL_initModule getVariable ["BIS_WL_scanCooldown", 90]) max WL_SCAN_DURATION;
-		BIS_WL_lastLoadoutCost = BIS_WL_initModule getVariable ["BIS_WL_lastLoadoutCost", 100];
-		BIS_WL_savedLoadoutCost = BIS_WL_initModule getVariable ["BIS_WL_savedLoadoutCost", 500];
+		BIS_WL_purchaseListTeplateArr = call compile "['A3DefaultAll']";
+		BIS_WL_scanCost = 750;
+		BIS_WL_fastTravelCostOwned = 0;
+		BIS_WL_fastTravelCostContested = 200;
+		BIS_WL_fundsTransferCost = 2000;
+		BIS_WL_targetResetCost = 500;
+		BIS_WL_maxCP = 50000;
+		BIS_WL_arsenalCost = 1000;
+		BIS_WL_assetLimit = 10;
+		BIS_WL_maxSubordinates = 1;
+		BIS_WL_targetResetTimeout = 300;
+		BIS_WL_baseValue = 50;
+		BIS_WL_scanCooldown = 300;
+		BIS_WL_lastLoadoutCost = 100;
+		BIS_WL_savedLoadoutCost = 500;
 	};
 	case "server": {
-		BIS_WL_baseDistanceMin = BIS_WL_initModule getVariable ["BIS_WL_baseDistanceMin", 1];
-		BIS_WL_baseDistanceMax = BIS_WL_initModule getVariable ["BIS_WL_baseDistanceMax", -1];
+		BIS_WL_baseDistanceMin = 20;
+		BIS_WL_baseDistanceMax = -1;
 		if (BIS_WL_baseDistanceMax < 0) then {BIS_WL_baseDistanceMax = 999};
 		BIS_WL_playerIDArr = [[], []];
 		BIS_WL_faction_WEST = "BLU_F";
@@ -44,7 +42,7 @@ switch (_locality) do {
 	case "client": {
 		BIS_WL_playerSide = side group player;
 		BIS_WL_enemySide = (BIS_WL_competingSides - [BIS_WL_playerSide]) # 0;
-		BIS_WL_autonomous_limit = BIS_WL_initModule getVariable ["BIS_WL_autonomous_limit", 2];
+		BIS_WL_autonomous_limit = 2;
 		BIS_WL_playerBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_enemyBase = BIS_WL_enemySide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_mapSizeIndex = BIS_WL_mapSize / 8192;
@@ -61,7 +59,7 @@ switch (_locality) do {
 		BIS_WL_purchaseMenuVisible = FALSE;
 		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
-		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+		BIS_WL_currentSelection = 0;
 		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 4);
 		BIS_WL_lastLoadout = [];
 		BIS_WL_savedLoadout = [];
