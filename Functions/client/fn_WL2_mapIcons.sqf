@@ -250,8 +250,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};
-	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
-	
+	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -410,6 +409,57 @@ MRTM_fnc_iconDrawGPS = {
 			};
 		} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 	} forEach BIS_WL_currentlyScannedSectors;
+	{
+		if (!isNull _x) then {
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		};
+	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
+	if (side group player == west) then {
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Spawn truck",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
+	};
+	if (side group player == east) then {
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Spawn truck",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
+	};
 };
 
 waitUntil {
