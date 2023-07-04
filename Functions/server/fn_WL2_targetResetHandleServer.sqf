@@ -29,7 +29,7 @@
 				} else {
 					if (_votedNo >= _limit) then {
 						_terminate = TRUE;
-						missionNamespace getVariable [_varName, serverTime - WL_TARGET_RESET_VOTING_TIME, true];
+						missionNamespace setVariable [_varName, (serverTime - WL_TARGET_RESET_VOTING_TIME), true];
 					};
 				};
 			};
