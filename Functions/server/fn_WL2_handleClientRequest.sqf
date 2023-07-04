@@ -11,18 +11,14 @@ _setOwner = {
 		if !(_isStatic) then {
 			waitUntil {sleep WL_TIMEOUT_SHORT; {uniform _x == "U_VirtualMan_F"} count crew _asset == 0};
 		};
-		_i = 0;
 		if (count crew _asset > 0 && _isStatic) then {
 			_assetGrp = group effectiveCommander _asset;
-			while {!(_assetGrp setGroupOwner (owner _sender)) && _i < 50} do {
-				_i = _i + 1;
+			while {!(_assetGrp setGroupOwner (owner _sender)) && {alive _asset}} do {
 				_assetGrp setGroupOwner (owner _sender);
 				sleep WL_TIMEOUT_SHORT;
 			};
 		};
-		_i = 0;
-		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && _i < 50} do {
-			_i = _i + 1;
+		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && {alive _asset}} do {
 			_asset setOwner (owner _sender);
 			sleep WL_TIMEOUT_SHORT;
 		};
@@ -323,8 +319,8 @@ if !(isNull _sender) then {
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				[_asset, _sender, _isStatic] spawn _setOwner;
 				_asset setOwner (owner _sender);
+				[_asset, _sender, _isStatic] spawn _setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				waitUntil {sleep 0.1; !(isNull _asset)};
