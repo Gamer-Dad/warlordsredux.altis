@@ -69,7 +69,7 @@ setTerrainGrid 3.125;
 MRTM_rwr1 = 0.3;
 MRTM_rwr2 = 0.3;
 MRTM_rwr3 = 0.2;
-MRTM_rwr4 = 0.4;
+MRTM_rwr4 = 0.3;
 
 //Options
 player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
