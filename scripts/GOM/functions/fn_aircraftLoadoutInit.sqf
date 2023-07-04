@@ -1157,7 +1157,7 @@ GOM_fnc_handleResources = {
 			_amount = _x getvariable ["GOM_fnc_ammoCargo",-1];
 
 			if (_amount < 0) then {
-				if (typeOf _x == "B_Truck_01_ammo_F" || typeOf _x == "O_Truck_03_ammo_F" ) then {
+				if (typeOf _x == "B_Truck_01_ammo_F" || typeOf _x == "O_Truck_03_ammo_F" || typeOf _x == "Land_Pod_Heli_Transport_04_ammo_F" || typeOf _x == "B_Slingload_01_Ammo_F") then {
 					_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 30000);
 				} else {
 					_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo")) min 10000);
@@ -1521,7 +1521,6 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 			[_x,0] remoteExec ["setRepairCargo",_x];
 		};
 	} foreach _nearbyVehs;
-	_buttons = [1600,1602,1603,1604];
 	ctrlEnable [1600,_canRearm];
 	ctrlEnable [1602,_canRepair];
 	ctrlEnable [1603,_canRefuel];

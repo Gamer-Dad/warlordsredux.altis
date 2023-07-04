@@ -90,20 +90,24 @@ MRTM_fnc_iconText = {
 				};
 				_text = format ["%1: %2", _vd, _text];
 			} else {
-				_playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
-				{
-					if ((_forEachindex + 1) == count _playerCrew) then {
-						_text = _text + format ["%1", (name _x)];
-					} else {
-						_text = _text + format ["%1, ", (name _x)];
-					};
-				} forEach _playerCrew;
+				if (count (crew _t) == 0) then {
+					_text = format ["%1", _vd];
+				} else {
+					_playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
+					{
+						if ((_forEachindex + 1) == count _playerCrew) then {
+							_text = _text + format ["%1", (name _x)];
+						} else {
+							_text = _text + format ["%1, ", (name _x)];
+						};
+					} forEach _playerCrew;
 
-				countCrewAi = count (((crew _t) - _playerCrew) select {alive _x});
-				if (countCrewAi > 0) then {
-					_text = _text + format [" +%1", countCrewAi];
+					countCrewAi = count (((crew _t) - _playerCrew) select {alive _x});
+					if (countCrewAi > 0) then {
+						_text = _text + format [" +%1", countCrewAi];
+					};
+					_text = format ["%1: %2", _vd, _text];
 				};
-				_text = format ["%1: %2", _vd, _text];
 			};
 		};
 	};

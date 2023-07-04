@@ -11,7 +11,7 @@ switch (_locality) do {
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
 		if (BIS_WL_mapSize == 0) then {BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "Grid" >> "OffsetY")};
 		BIS_WL_mapAreaArray = [[BIS_WL_mapSize / 2, BIS_WL_mapSize / 2], BIS_WL_mapSize / 2, BIS_WL_mapSize / 2, 0, TRUE];
-		BIS_WL_purchaseListTeplateArr = call compile "['A3DefaultAll']";
+		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
 		BIS_WL_scanCost = 750;
 		BIS_WL_fastTravelCostOwned = 0;
 		BIS_WL_fastTravelCostContested = 200;

@@ -7,7 +7,7 @@ while {alive _asset} do {
 	_nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select {alive _x};
 	_rearmCooldown = ((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0;
 	
-	if (_nearbyVehicles findIf {_x getVariable ["BIS_WL_canRearm", FALSE]} != -1) then {
+	if (_nearbyVehicles findIf {_x getVariable ["BIS_WL_canRearm", false]} != -1) then {
 		if (_rearmActionID == -1) then {
 			_rearmActionID = _asset addAction [
 				"",
