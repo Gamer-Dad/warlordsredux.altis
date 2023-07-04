@@ -250,7 +250,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};
-	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
+	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
 	
 	{
 		if (!isNull _x) then {
