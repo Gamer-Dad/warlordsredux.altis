@@ -1571,8 +1571,8 @@
             <Chinese>在我们的 discord 中，您也可以建议新东西或报告错误。</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_21">
-            <Original>Please read how to play first</Original>
-            <English>Please read how to play first</English>
+            <Original>Please read 'how to play' first to close</Original>
+            <English>Please read 'how to play' first to close</English>
             <Czech>Nejprve si přečtěte, jak hrát</Czech>
             <French>Veuillez d'abord lire comment jouer</French>
             <German>Bitte lesen Sie zuerst, wie man spielt</German>
