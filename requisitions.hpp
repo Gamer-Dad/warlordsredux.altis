@@ -39,7 +39,7 @@ class CfgWLRequisitionPresets
 				class B_G_Offroad_01_AT_F					{cost = 500;	requirements[]={};	};	// "Offroad (AT)"
 				class B_MRAP_01_hmg_F						{cost = 1000;	requirements[]={};	};	// "Hunter HMG"
 				class B_MRAP_01_gmg_F						{cost = 1200;	requirements[]={};	};	// "Hunter GMG"
-				class B_Truck_01_ammo_F						{cost = 3000;	requirements[]={};	};	// "HEMTT Ammo"
+				class B_Truck_01_ammo_F						{cost = 2500;	requirements[]={};	};	// "HEMTT Ammo"
 				class B_Truck_01_Repair_F					{cost = 2000;	requirements[]={};	};	// "HEMTT Repair"
 				class B_Truck_01_fuel_F						{cost = 500;	requirements[]={};	};	// "HEMTT Fuel"
 				class O_T_Truck_03_device_ghex_F            {cost = 2500;	requirements[]={};	};	// "Tempest Device"
@@ -90,10 +90,10 @@ class CfgWLRequisitionPresets
 				class Box_NATO_WpsLaunch_F					{cost = 250;	requirements[]={};	};	// "Launchers [NATO]"
 				class Box_NATO_WpsSpecial_F					{cost = 400;	requirements[]={};	};	// "Special Weapons [NATO]"
 				class B_supplyCrate_F						{cost = 500;	requirements[]={};	};	// "Supply Box [NATO]"
-				class Box_NATO_AmmoVeh_F					{cost = 800;	requirements[]={};	};	// "Vehicle Ammo [NATO]"
-				class B_Slingload_01_Ammo_F                 {cost = 1500;   requirements[]={};	};  // "Huron Ammo Container"
+				class Box_NATO_AmmoVeh_F					{cost = 700;	requirements[]={};	};	// "Vehicle Ammo [NATO]"
+				class B_Slingload_01_Ammo_F                 {cost = 2500;   requirements[]={};	};  // "Huron Ammo Container"
 				class B_Slingload_01_Repair_F				{cost = 2000;   requirements[]={};	};  // "Huron Repair Container"
-				class B_Slingload_01_Fuel_F					{cost = 800;    requirements[]={};	};  // "Huron Fuel Container"
+				class B_Slingload_01_Fuel_F					{cost = 500;    requirements[]={};	};  // "Huron Fuel Container"
 			};
 			class Defences
 			{
@@ -158,7 +158,7 @@ class CfgWLRequisitionPresets
 				class O_G_Offroad_01_AT_F					{cost = 500;	requirements[]={};	};	// "Offroad (AT)"
 				class O_MRAP_02_hmg_F						{cost = 1000;	requirements[]={};	};	// "Ifrit HMG"
 				class O_MRAP_02_gmg_F						{cost = 1200;	requirements[]={};	};	// "Ifrit GMG"
-				class O_Truck_03_ammo_F						{cost = 3000;	requirements[]={};	};	// "Tempest Ammo"
+				class O_Truck_03_ammo_F						{cost = 2500;	requirements[]={};	};	// "Tempest Ammo"
 				class O_Truck_03_Repair_F					{cost = 2000;	requirements[]={};	};	// "Tempest Repair"
 				class O_Truck_03_Fuel_F						{cost = 500;	requirements[]={};	};	// "Tempest Fuel"
 				class O_Truck_03_device_F            		{cost = 2500;	requirements[]={};	};	// "Tempest Device"
@@ -206,9 +206,9 @@ class CfgWLRequisitionPresets
 				class Box_East_WpsSpecial_F					{cost = 400;	requirements[]={};	};	// "Special Weapons [CSAT]"
 				class O_supplyCrate_F						{cost = 500;	requirements[]={};	};	// "Supply Box [CSAT]"
 				class Box_East_AmmoVeh_F					{cost = 800;	requirements[]={};	};	// "Vehicle Ammo [CSAT]"
-				class Land_Pod_Heli_Transport_04_ammo_F     {cost = 1500;   requirements[]={};	};  // "Taru Ammo Pod"
+				class Land_Pod_Heli_Transport_04_ammo_F     {cost = 2500;   requirements[]={};	};  // "Taru Ammo Pod"
 				class Land_Pod_Heli_Transport_04_repair_F	{cost = 2000;   requirements[]={};	};  // "Taru Repair Pod"
-				class Land_Pod_Heli_Transport_04_fuel_F		{cost = 800;   requirements[]={};	};  // "Taru Fuel Pod"
+				class Land_Pod_Heli_Transport_04_fuel_F		{cost = 500;    requirements[]={};	};  // "Taru Fuel Pod"
 			};
 			class Defences
 			{

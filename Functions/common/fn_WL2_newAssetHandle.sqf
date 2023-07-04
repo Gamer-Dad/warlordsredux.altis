@@ -160,7 +160,7 @@ if (isPlayer _owner) then {
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 			};
 
-			if (typeOf _asset == "B_Truck_01_flatbed_F") then {
+			if (typeOf _asset == "B_Truck_01_flatbed_F" || typeOf _asset == "B_T_VTOL_01_vehicle_F" || typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F") then {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
 				if (side _owner == east) then {
 					_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
