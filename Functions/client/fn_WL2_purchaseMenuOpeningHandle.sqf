@@ -1,8 +1,8 @@
 #include "..\warlords_constants.inc"
 
-waitUntil {!isNull WL_DISPLAY_MAIN};
+waitUntil {!isNull (findDisplay 46)};
 sleep 2;
-WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
+(findDisplay 46) displayAddEventHandler ["KeyDown", {
 	_key = _this # 1;
 	if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
 		if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
@@ -52,7 +52,7 @@ WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
 	};
 }];
 
-WL_DISPLAY_MAIN displayAddEventHandler ["KeyUp", {
+(findDisplay 46) displayAddEventHandler ["KeyUp", {
 	_key = _this # 1;
 	if (_key in actionKeys "Gear") then {
 		BIS_WL_gearKeyPressed = FALSE;

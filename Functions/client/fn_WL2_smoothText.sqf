@@ -14,7 +14,7 @@ addMissionEventHandler ["Loaded", {
 	BIS_onScreenMessageID = 0;
 	BIS_onScreenMessagesBuffer = [];
 	{
-		ctrlDelete (WL_DISPLAY_MAIN displayCtrl (9990000 + _x));
+		ctrlDelete ((findDisplay 46) displayCtrl (9990000 + _x));
 	} forEach BIS_onScreenMessagesVisible;
 	BIS_onScreenMessagesVisible = [];
 }];
@@ -27,8 +27,8 @@ if (isNil "BIS_onScreenMessageID") then {
 	BIS_onScreenMessagesBuffer = [];
 };
 
-waitUntil {!isNull WL_DISPLAY_MAIN};
-_myDisplay = WL_DISPLAY_MAIN;
+waitUntil {!isNull (findDisplay 46)};
+_myDisplay = (findDisplay 46);
 
 _box = _myDisplay ctrlCreate ["RscStructuredText", 9990000 + BIS_onScreenMessageID];
 _messageID = BIS_onScreenMessageID;
@@ -54,7 +54,7 @@ BIS_onScreenMessagesVisible pushBack _messageID;
 if (count BIS_onScreenMessagesVisible > 1) then {
 	{
 		_ctrlID = 9990000 + _x;
-		_ctrl = WL_DISPLAY_MAIN displayCtrl _ctrlID;
+		_ctrl = (findDisplay 46) displayCtrl _ctrlID;
 		waitUntil {ctrlCommitted _ctrl || ctrlFade _ctrl > 0};
 		_ctrl ctrlSetPosition [_xDef, ((ctrlPosition _ctrl) # 1) + (_hDef / 25), _wDef, _hDef / 25];
 		_ctrl ctrlCommit 0.25;

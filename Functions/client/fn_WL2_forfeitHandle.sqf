@@ -16,21 +16,21 @@ BIS_WL_playerSide spawn {
 		
 		BIS_WL_ctrlDown = FALSE;
 		
-		BIS_WL_forfeitVoteEH1 = WL_DISPLAY_MAIN displayAddEventHandler ["KeyUp", {
+		BIS_WL_forfeitVoteEH1 = (findDisplay 46) displayAddEventHandler ["KeyUp", {
 			params ["_display", "_key"];
 			
 			if (_key == 29) then {BIS_WL_ctrlDown = FALSE};
 		}];
 		
-		BIS_WL_forfeitVoteEH2 = WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
+		BIS_WL_forfeitVoteEH2 = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 			params ["_display", "_key"];
 			
 			if (_key == 29) then {BIS_WL_ctrlDown = TRUE};
 			if (_key == 21) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemOK"; player setVariable ["BIS_WL_forfeitVote", 1, [2, clientOwner]]}};
 			if (_key == 49) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemFailed"; player setVariable ["BIS_WL_forfeitVote", 0, [2, clientOwner]]}};
 			if (_remove) then {
-				WL_DISPLAY_MAIN displayRemoveEventHandler ["KeyDown", BIS_WL_forfeitVoteEH1];
-				WL_DISPLAY_MAIN displayRemoveEventHandler ["KeyUp", BIS_WL_forfeitVoteEH2];
+				(findDisplay 46) displayRemoveEventHandler ["KeyDown", BIS_WL_forfeitVoteEH1];
+				(findDisplay 46) displayRemoveEventHandler ["KeyUp", BIS_WL_forfeitVoteEH2];
 			};
 		}];
 		

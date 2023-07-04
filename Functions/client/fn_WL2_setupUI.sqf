@@ -2,7 +2,7 @@
 
 params ["_displayClass"];
 
-waitUntil {!isNull WL_DISPLAY_MAIN};
+waitUntil {!isNull (findDisplay 46)};
 
 // OSD equals the lower right hand HUD stuff for the most part
 
@@ -10,7 +10,7 @@ switch (_displayClass) do {
 	case "OSD": {
 		{
 			_x params ["_var", "_type"];
-			uiNamespace setVariable [_var, WL_DISPLAY_MAIN ctrlCreate [_type, -1]];
+			uiNamespace setVariable [_var, (findDisplay 46) ctrlCreate [_type, -1]];
 		} forEach [
 			["BIS_WL_osd_cp_current", "RscStructuredText"],
 			["BIS_WL_osd_icon_side_1", "RscPictureKeepAspect"],
@@ -136,7 +136,7 @@ switch (_displayClass) do {
 		_wDef = safezoneW;
 		_hDef = safezoneH;
 		
-		_myDisplay = WL_DISPLAY_MAIN createDisplay "RscDisplayEmpty";
+		_myDisplay = (findDisplay 46) createDisplay "RscDisplayEmpty";
 		
 		WL_CONTROL_MAP ctrlEnable FALSE;
 		

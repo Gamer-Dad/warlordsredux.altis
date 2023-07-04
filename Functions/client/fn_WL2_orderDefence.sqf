@@ -30,7 +30,7 @@ _asset attachTo [player, _offset_tweaked];
 BIS_WL_spacePressed = false;
 BIS_WL_backspacePressed = false;
 
-_deployKeyHandle = WL_DISPLAY_MAIN displayAddEventHandler ["KeyDown", {
+_deployKeyHandle = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 	if (_this # 1 == 57) then {
 		if !(BIS_WL_backspacePressed) then {
 			BIS_WL_spacePressed = TRUE;
@@ -64,7 +64,7 @@ uiNamespace setVariable ["BIS_WL_deployKeyHandle", _deployKeyHandle];
 
 waitUntil {sleep WL_TIMEOUT_MIN; BIS_WL_spacePressed || BIS_WL_backspacePressed};
 
-WL_DISPLAY_MAIN displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "BIS_WL_deployKeyHandle"];
+(findDisplay 46) displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "BIS_WL_deployKeyHandle"];
 uiNamespace setVariable ['BIS_WL_deployKeyHandle', nil];
 _offset set [1, _asset distance player];
 detach _asset;
