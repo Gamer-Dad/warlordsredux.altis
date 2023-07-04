@@ -1265,21 +1265,8 @@
             <Chinese>如何玩耍。</Chinese>
         </Key> 
          <Key ID="STR_MRTM_welcomeInteract_03">
-            <Original>The WSV Community.</Original>
-            <English>The WSV Community.</English>
-            <Czech>Komunita WSV.</Czech>
-            <French>La communauté WSV.</French>
-            <German>Die WSV-Community.</German>
-            <Italian>La comunità WSV.</Italian>
-            <Polish>Społeczność WSV.</Polish>
-            <Portuguese>A comunidade WSV.</Portuguese>
-            <Russian>Сообщество WSV.</Russian>
-            <Spanish>La comunidad WSV.</Spanish>
-            <Turkish>WSV Topluluğu.</Turkish>
-            <Korean>WSV 커뮤니티.</Korean>
-            <Japanese>WSVコミュニティ.</Japanese>
-            <Chinesesimp>WSV社区.</Chinesesimp>
-            <Chinese>WSV社區。</Chinese>
+            <Original>WarSim Vets.</Original>
+            <English>WarSim Vets.</English>
         </Key> 
          <Key ID="STR_MRTM_welcomeInteract_04">
             <Original>Our Discord.</Original>
