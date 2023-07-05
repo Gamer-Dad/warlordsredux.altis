@@ -44,10 +44,32 @@ if !(isNull _sender) then {
 		case "scan" : {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				_target setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], serverTime + WL_SCAN_DURATION, TRUE];
-
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
+				_target setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], serverTime + WL_SCAN_DURATION, TRUE];
+				_revealTrigger = createTrigger ["EmptyDetector", position _target];
+				_revealTrigger setTriggerArea (_target getVariable "objectArea");
+				_revealTrigger setTriggerActivation ["ANY", "PRESENT", FALSE];
+				_target setVariable ["BIS_WL_revealTrigger", _revealTrigger, TRUE];
+				[_target, _revealTrigger] spawn {
+					params ["_sector", "_revealTrigger"];
+					while {!isNull _revealTrigger} do {
+						_eligibleSides = BIS_WL_competingSides select {(_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime};
+						_eligibleWarlords = BIS_WL_allWarlords select {local _x && (side group _x) in _eligibleSides};
+						{
+							_toReveal = _x;
+							{
+								_x reveal [_toReveal, 4];
+							} forEach _eligibleWarlords;
+						} forEach list _revealTrigger;
+						sleep WL_TIMEOUT_STANDARD;
+					};
+				};
+				[_target, side group _sender] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
+				waitUntil {sleep WL_TIMEOUT_SHORT; BIS_WL_competingSides findIf {(_target getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
+				deleteVehicle _revealTrigger;
+				_target setVariable ["BIS_WL_revealTrigger", nil, TRUE];
 			};
 		};
 		case "targetReset": {

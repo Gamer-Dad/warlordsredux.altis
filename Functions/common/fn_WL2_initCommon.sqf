@@ -37,7 +37,6 @@ addMissionEventHandler ["EntityRespawned", {
 	private _sector = _x;
 	_sector setVariable ["BIS_WL_connectedSectors", (synchronizedObjects _sector) select {typeOf _x == "Logic"}];
 	_sector setVariable ["objectAreaComplete", [position _sector] + (_sector getVariable "objectArea")];
-	_sector spawn BIS_fnc_WL2_sectorScanHandle;
 	private _otherSectors = BIS_WL_allSectors - [_sector];
 	_otherSectors = _otherSectors apply {[_x distance2D _sector, _x]};
 	_otherSectors sort TRUE;
