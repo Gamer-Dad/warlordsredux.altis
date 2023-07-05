@@ -154,7 +154,7 @@ uiNamespace setVariable ["control", 50000];
 
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
-	detach BIS_WL_enemiesCheckTrigger; 
+	detach BIS_WL_enemiesCheckTrigger;
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 	if ((typeOf _vehicle == "B_Plane_Fighter_01_F") || (typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") || (typeOf _vehicle == "B_Heli_Attack_01_dynamicLoadout_F") || (typeOf _vehicle == "B_T_VTOL_01_armed_F") || (typeOf _vehicle == "B_T_VTOL_01_vehicle_F") || (typeOf _vehicle == "B_T_VTOL_01_infantry_F")) then  {
 		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;

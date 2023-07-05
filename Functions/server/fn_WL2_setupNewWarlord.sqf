@@ -42,7 +42,6 @@ if (isPlayer _warlord) then {
 
 if !(_boundToAnotherTeam) then {
 	_respawnPos = markerPos selectRandom _markers;
-
 	_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];
 	
 	_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _warlord];
