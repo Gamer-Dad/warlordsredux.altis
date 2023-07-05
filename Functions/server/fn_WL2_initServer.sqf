@@ -167,12 +167,12 @@ setTimeMultiplier 3;
 	private _phone = createSimpleObject ["Land_IPPhone_01_sand_F", [4190.71,20097.5,317.647]];
 	_phone setDir 40.497;
 	_phone setObjectTextureGlobal [1, "img\rick.paa"];
-	if ((random 1) < 0.6) then {
+	if ((random 1) < 0.4) then {
 		private _car = createVehicle ["C_Offroad_01_comms_F", [4200.52,20100.4,-0.0614624], [], 0, "NONE"];
 		_car setDir 145;
 	};
 	waitUntil { sleep 0.1; !isNil {_seat}};
-	if ((floor (random 11)) < 4) then {
+	if ((floor (random 11)) < 3) then {
 		_group = createGroup civilian;
 		DEV_MrThomasM = _group createUnit ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
 		publicVariable "DEV_MrThomasM";
