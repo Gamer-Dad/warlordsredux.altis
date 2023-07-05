@@ -126,9 +126,9 @@ GOM_fnc_updateDialog = {
 	_availableTexts = ["<t color='#E51B1B'>Not available!</t>","<t color='#1BE521'>Available!</t>"];
 
 
-	_fueltext = if (GOM_fnc_aircraftLoadout_NeedsFuelSource AND !_canRefuel) then {"You need fuel sources to refuel the aircraft."} else {""};
-	_repairtext = if (GOM_fnc_aircraftLoadout_NeedsRepairSource AND !_canRepair) then {"You need repair sources to repair the aircraft."} else {""};
-	_rearmtext = if (GOM_fnc_aircraftLoadout_NeedsAmmoSource AND !_canRearm) then {"You need ammo sources to rearm the aircraft."} else {""};
+	_fueltext = if (!_canRefuel) then {"You need fuel sources to refuel the aircraft."} else {""};
+	_repairtext = if (!_canRepair) then {"You need repair sources to repair the aircraft."} else {""};
+	_rearmtext = if (!_canRearm) then {"You need ammo sources to rearm the aircraft."} else {""};
 
 
 _totalfuel = 0;
@@ -148,7 +148,7 @@ _repairVehs = _repairVehs apply {typeof _x};
 _rearmVehs = _rearmVehs apply {typeof _x};
 
 
-	if (GOM_fnc_aircraftLoadout_NeedsFuelSource AND _canRefuel) then {
+	if (_canRefuel) then {
 		_t = "";
 _getText = (_refuelVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + str (_x select 1) + " " + (getText (configfile >> "CfgVehicles" >> (_x select 0) >> "displayName")) + ",")};
 
@@ -156,7 +156,7 @@ _getText = (_refuelVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + s
 
 		_fueltext = format ["%1%2 fuel %3 nearby:%4",_fuelInfo,count _refuelVehs,_s,_t select [0,((count _t) -1)]];
 	};
-	if (GOM_fnc_aircraftLoadout_NeedsRepairSource AND _canRepair) then {
+	if (_canRepair) then {
 		_t = "";
 _getText = (_repairVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + str (_x select 1) + " " + (getText (configfile >> "CfgVehicles" >> (_x select 0) >> "displayName")) + ",")};
 
@@ -165,7 +165,7 @@ _getText = (_repairVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + s
 		_repairtext = format ["%1%2 repair %3 nearby:%4",_repairInfo,count _repairVehs,_s,_t select [0,((count _t) -1)]];
 
 	};
-	if (GOM_fnc_aircraftLoadout_NeedsAmmoSource AND _canRearm) then {
+	if (_canRearm) then {
 		_t = "";
 	_getText = (_rearmVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + str (_x select 1) + " " + (getText (configfile >> "CfgVehicles" >> (_x select 0) >> "displayName")) + ",")};
 
@@ -574,7 +574,6 @@ params ["_source","_mag","_veh"];
 GOM_fnc_rearmCheck = {
 
 	params ["_veh"];
-	if (!GOM_fnc_aircraftLoadout_NeedsAmmoSource) exitWith {[false,"",objnull]};
 
 
 	_abort = false;
@@ -603,14 +602,12 @@ if (!_abort) then {_source setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",
 GOM_fnc_refuelCheck = {
 	params ["_veh"];
 
-	if (!GOM_fnc_aircraftLoadout_NeedsFuelSource) exitWith {[false,"",objnull]};
-
 	_abort = false;
 	_text = "";
 
 	_vehs = ((_veh nearEntities ["All",50]) select {speed _x < 1 AND {alive _x} AND {_x getvariable ["GOM_fnc_fuelCargo",0] > 0}});
 
-	if (_vehs isequalto [] AND GOM_fnc_aircraftLoadout_NeedsFuelSource) then {_abort = true;_text = "You have no valid fuel sources!";};
+	if (_vehs isequalto []) then {_abort = true;_text = "You have no valid fuel sources!";};
 	_vehs params ["_source"];
 	_cargo = _source getVariable ["GOM_fnc_fuelCargo",0];
 
@@ -674,14 +671,11 @@ GOM_fuelLeak = {
 GOM_fnc_repairCheck = {
 	params ["_veh"];
 
-	if (!GOM_fnc_aircraftLoadout_NeedsRepairSource) exitWith {[false,"",objnull]};
-
-
 	_abort = false;
 	_text = "";
 _vehs = ((_veh nearEntities ["All",50]) select {speed _x < 1 AND {alive _x} AND {_x getvariable ["GOM_fnc_repairCargo",0] > 0}});
 
-	if (_vehs isequalto [] AND GOM_fnc_aircraftLoadout_NeedsRepairSource) then {_abort = true;_text = "You have no more spare parts!";};
+	if (_vehs isequalto []) then {_abort = true;_text = "You have no more spare parts!";};
 	_vehs params ["_source"];
 	_cargo = _source getVariable ["GOM_fnc_repairCargo",0];
 
@@ -844,7 +838,7 @@ GOM_fnc_setPylonsRepair = {
 
 		_sourceDispname = getText (configfile >> "CfgVehicles" >> typeof _repairSource >> "displayName");
 		_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-		_repairTick = (1 / GOM_fnc_aircraftLoadoutRepairTime);
+		_repairTick = (1 / 60);
 		_timeNeeded = ceil (_curDamage / _repairtick);
 		_repairCargoPerTick = 30 * (getmass _veh * 0.00015);//30kg base per tick is decent enough, makes repairs more expensive than refuelling/rearming, also repairing heavier aircraft will be way more expensive than light ones
 		_damDisp = [((_curDamage * 100) - 100) * -1] call GOM_fnc_roundByDecimals;
@@ -856,12 +850,11 @@ GOM_fnc_setPylonsRepair = {
 			if (speed _veh > 3 OR speed _repairSource > 3) exitWith {_abort = true;systemchat "Aborting repair! Vehicle is moving!"};
 			_curDamage = damage _veh;
 			_timeNeeded = ceil (_curDamage / _repairtick);
-			if (GOM_fnc_aircraftLoadout_NeedsRepairSource) then {
-				_repairCargo = _repairSource getvariable ["GOM_fnc_repairCargo",0];
-				_repairCargo = (_repairCargo - _repairCargoPerTick) max 0;
-				_repairSource setvariable ["GOM_fnc_repairCargo",_repairCargo,true];
-				if (_repairCargo isEqualTo 0) exitWith {systemchat "You have no more spare parts!";_empty = true};
-			};
+
+			_repairCargo = _repairSource getvariable ["GOM_fnc_repairCargo",0];
+			_repairCargo = (_repairCargo - _repairCargoPerTick) max 0;
+			_repairSource setvariable ["GOM_fnc_repairCargo",_repairCargo,true];
+			if (_repairCargo isEqualTo 0) exitWith {systemchat "You have no more spare parts!";_empty = true};
 
 			[player, "repair", 0, (_curDamage - _repairTick), _veh] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 			_sound = [_veh] call GOM_fnc_pylonSound;
@@ -917,7 +910,6 @@ if (_leaking AND _leakingLevel < 0.9 AND _leakingLevel > 0.1) then {systemchat f
 		if (_curFuel isEqualTo 1) exitWith {systemchat "Aircraft is already at 100% fuel capacity!"};
 		_maxFuel = getNumber (configfile >> "CfgVehicles" >> typeof _veh >> "fuelCapacity");
 		_sourceDispname = getText (configfile >> "CfgVehicles" >> typeof _refuelSource >> "displayName");
-			if (!GOM_fnc_aircraftLoadout_NeedsFuelSource) then {_sourceDispname = selectRandom ["love and light","the love of friendship","a wondrous device","gimlis magic barrel"]};
 
 		_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
 		_fuel = round(_curFuel * _maxfuel);
@@ -944,14 +936,10 @@ if (_leaking AND fuel _veh > (1 - _leakingLevel)) exitWith {systemchat format ["
 			if (speed _veh > 3 OR speed _refuelSource > 3) exitWith {_abort = true;systemchat "Aborting refuelling! Vehicle is moving!"};
 		_curFuel = fuel _veh;
 
-	if (GOM_fnc_aircraftLoadout_NeedsFuelSource) then {
-
 		_fuelCargo = _refuelSource getvariable ["GOM_fnc_fuelCargo",0];
 		_fuelCargo = (_fuelCargo - _fuelPerTick) max 0;
 		_refuelSource setvariable ["GOM_fnc_fuelCargo",_fuelCargo,true];
 		if (_fuelCargo isEqualTo 0) exitWith {systemchat "Your fuel resource is empty!";_empty = true};
-
-};
 
 		[_veh,(_curFuel + _fuelTick)] remoteExec ["setFuel",_veh];
 
@@ -1360,9 +1348,9 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 
 	_flags = [];
 
-	_flags set [0,[!GOM_fnc_aircraftLoadout_NeedsFuelSource,(GOM_fnc_aircraftLoadout_NeedsFuelSource AND count _refuelVehs > 0)] select GOM_fnc_aircraftLoadout_NeedsFuelSource];
-	_flags set [1,[!GOM_fnc_aircraftLoadout_NeedsRepairSource,(GOM_fnc_aircraftLoadout_NeedsRepairSource AND count _repairVehs > 0)] select GOM_fnc_aircraftLoadout_NeedsRepairSource] ;
-	_flags set [2,[!GOM_fnc_aircraftLoadout_NeedsAmmoSource,(GOM_fnc_aircraftLoadout_NeedsAmmoSource AND count _rearmVehs > 0)] select GOM_fnc_aircraftLoadout_NeedsAmmoSource];
+	_flags set [0, (count _refuelVehs > 0)];
+	_flags set [1, (count _repairVehs > 0)];
+	_flags set [2, (count _rearmVehs > 0)];
 
 
 	_flags params ["_canRefuel","_canRepair","_canRearm"];
@@ -1408,25 +1396,16 @@ GOM_fnc_showResourceDisplay = {
 
 
 	_ID = addMissionEventHandler ["Draw3D", {
-
-
-	if (GOM_fnc_aircraftLoadout_NeedsAmmoSource) then {
-
 		{
-
 			_pos = visiblePositionASL _x;
 			_pos params ["_posX", "_posY", "_posZ"];
 
-
 			_amount = _x getvariable ["GOM_fnc_ammocargo",0];
-
 			_text = format ["%1 ammunition",(_amount call GOM_fnc_kgToTon)];
-
 
 			_drawicon = "";
 			_color = [1, 1, 1, 1];
-				drawIcon3D [
-
+			drawIcon3D [
 				_drawicon,
 				[1, 1, 1, log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10)],
 				[_posX, _posY, 3],
@@ -1439,33 +1418,19 @@ GOM_fnc_showResourceDisplay = {
 				"PuristaBold",
 				"center",
 				true
-
-				];
-
-
-
-
-
+			];
 		} foreach ((player nearEntities ["All",50]) select {speed _x < 15 AND {alive _x} AND {_x getvariable ["GOM_fnc_ammocargo",-1] >= 0}});
 
-	};
-
-	if (GOM_fnc_aircraftLoadout_NeedsFuelSource) then {
-
 		{
-
 			_pos = visiblePositionASL _x;
 			_pos params ["_posX", "_posY", "_posZ"];
 
 			_amount = _x getvariable ["GOM_fnc_fuelcargo",0];
-
 			_text = format ["%1l fuel",_amount];
-
 
 			_drawicon = "";
 			_color = [1, 1, 1, 1];
-				drawIcon3D [
-
+			drawIcon3D [
 				_drawicon,
 				[1, 1, 1, log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10)],
 				[_posX, _posY, 3],
@@ -1478,29 +1443,19 @@ GOM_fnc_showResourceDisplay = {
 				"PuristaBold",
 				"center",
 				true
-
-				];
-
-
+			];
 		} foreach ((player nearEntities ["All",50]) select {speed _x < 15 AND {alive _x} AND {_x getvariable ["GOM_fnc_fuelcargo",-1] >= 0}});
 
-	};
-
-	if (GOM_fnc_aircraftLoadout_NeedsRepairSource) then {
-
 		{
-
 			_pos = visiblePositionASL _x;
 			_pos params ["_posX", "_posY", "_posZ"];
 
 			_amount = _x getvariable ["GOM_fnc_repairCargo",0];
-
 			_text = format ["%1 spare parts",(_amount call GOM_fnc_kgToTon)];
 
 			_drawicon = "";
 			_color = [1, 1, 1, 1];
-				drawIcon3D [
-
+			drawIcon3D [
 				_drawicon,
 				[1, 1, 1, log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10)],
 				[_posX, _posY, 3],
@@ -1513,23 +1468,13 @@ GOM_fnc_showResourceDisplay = {
 				"PuristaBold",
 				"center",
 				true
-				];
-
-
+			];
 		} foreach ((player nearEntities ["All",50]) select {speed _x < 15 AND {alive _x} AND {_x getvariable ["GOM_fnc_repaircargo",-1] >= 0}});
-
-	};
-
-
-
-
 	}];
-
 
 	sleep 20;
 	removeMissionEventHandler ["Draw3D",_ID];
 	true
-
 };
 
 GOM_fnc_aircraftLoadoutSavePreset = {
