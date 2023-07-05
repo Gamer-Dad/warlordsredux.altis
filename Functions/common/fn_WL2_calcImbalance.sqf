@@ -4,11 +4,13 @@ if ((count allPlayers) > 0) then {
 	_fac0Percentage = (1.6 * _countFaction0 / count allPlayers) + 0.2;
 };
 _multiBlu = 2 - _fac0Percentage;
-missionNamespace setVariable ["blanceMultilplierBlu", _multiBlu, true];
+missionNamespace setVariable ["blanceMultilplierBlu", _multiBlu];
+publicVariable "blanceMultilplierBlu";
 _multiOpf = _fac0Percentage;
-missionNamespace setVariable ["blanceMultilplierOpf", _multiOpf, true];
+missionNamespace setVariable ["blanceMultilplierOpf", _multiOpf];
+publicVariable "blanceMultilplierOpf";
 {
 	_incomeStandard = _x call BIS_fnc_WL2_income;
 	_actualIncome = round (_incomeStandard * (if (_x == west) then [{(missionNamespace getVariable "blanceMultilplierBlu")}, {(missionNamespace getVariable "blanceMultilplierOpf")}]));
-	if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome, true]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome, true]}]
+	if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome]}]
 } forEach BIS_WL_competingSides;
