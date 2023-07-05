@@ -109,8 +109,6 @@ _i = 0;
 		_mrkrArea setMarkerColorLocal "ColorUNKNOWN";
 		[_sector] spawn BIS_fnc_WL2_sectorRevealHandle;
 	};
-
-	[_sector, _owner, _mrkrMain, _mrkrArea, _mrkrAreaBig] spawn BIS_fnc_WL2_sectorOwnershipHandleClient;
 	
 	_neighbors = (synchronizedObjects _sector) select {typeOf _x == "Logic"};
 	_sector setVariable ["BIS_WL_pairedWith", []];
