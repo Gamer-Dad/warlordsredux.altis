@@ -3,10 +3,6 @@
 DAPS_fnc_start = compile preprocessFile "scripts\DAPS\Scripts\Start.sqf";
 0 spawn DAPS_fnc_start;
 
-// Air Burst
-DIS_fnc_start = compile preprocessFile "scripts\DIS\Start.sqf";
-0 spawn DIS_fnc_start;
-
 // earplug script
 [] execVM "scripts\GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
 
@@ -25,7 +21,7 @@ addMissionEventHandler ["Loaded", {
 if ( hasInterface ) then
 {
 	waitUntil { !isNull player };
-	0 spawn KSLOOP_fnc_unflipVehicleAddAction;
+	0 spawn KS_fnc_unflipVehicleAddAction;
 };
 /*******************************END OF SCRIPTS****************************/
 

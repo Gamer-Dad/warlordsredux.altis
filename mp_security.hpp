@@ -25,10 +25,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class GOM_fnc_handleResources {
-			allowedTargets = 2;
-		};
-
 		class KS_fnc_unflipVehicle {
 			allowedTargets = 2;
 		};

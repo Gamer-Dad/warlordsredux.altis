@@ -65,7 +65,6 @@ if (_side == BIS_WL_localSide) then {
 			
 			_wp = _group addWaypoint [position _vehicle, 100];
 			_wp setWaypointType "CYCLE";
-			uiSleep 0.1;
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
@@ -121,7 +120,6 @@ while {_i < _garrisonSize} do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
 		[objNull, _newUnit] call BIS_fnc_WL2_newAssetHandle;
-		uiSleep 0.1;
 	};
 	
 	_newGrp setBehaviour "COMBAT";

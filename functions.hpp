@@ -163,18 +163,10 @@ class CfgFunctions {
 		{
 			file = "scripts\VUnflip\functions";	// Folder where all functions are.
 			class unflipVehicle {};
-		};
-	};		
-
-	class KSLOOP
-	{
-		class spawnThese //Seriously "spawn" these, do not "call" them!
-		{
-			file = "scripts\VUnflip\functions\loops";
 			class unflipVehicleAddAction {};
+			class isFlipped {};
 		};
-		
-	};	
+	};
 	class DAPS
 	{
 		class APS 

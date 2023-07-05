@@ -116,7 +116,7 @@ if (isPlayer _owner) then {
 				_nearbyVehicles = (_asset nearEntities ["All", WL_MAINTENANCE_RADIUS]) select {alive _x};
 				_repairCooldown = ((_asset getVariable "BIS_WL_nextRepair") - serverTime) max 0;
 				
-				if (_nearbyVehicles findIf {_x getVariable ["BIS_WL_canRepair", FALSE]} != -1) then {
+				if (_nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0} != -1) then {
 					if (_repairActionID == -1) then {
 						_repairActionID = _asset addAction [
 							"",
@@ -169,6 +169,10 @@ if (isPlayer _owner) then {
 				};
 			};
 		};
+
+		if (_asset call DIS_fnc_IsSAM) then {
+			[_x] spawn DIS_fnc_RegisterSAM;
+		};
 		
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
@@ -177,8 +181,24 @@ if (isPlayer _owner) then {
 			publicVariableServer _ownedVehiclesVarID;
 		}];
 		
-		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {_asset setRepairCargo 0; _asset setVariable ["BIS_WL_canRepair", true, true]};
-		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {_asset setAmmoCargo 0; _asset setVariable ["BIS_WL_canRearm", true, true]};
+		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
+			_asset setRepairCargo 0; 
+			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportRepair")) min 10000);
+			_asset setvariable ["GOM_fnc_repairCargo", _amount, true];
+		};
+		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {
+			_asset setAmmoCargo 0; 
+			_amount = 10000;
+			if (typeOf _asset == "B_Truck_01_ammo_F" || typeOf _asset == "O_Truck_03_ammo_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || typeOf _asset == "B_Slingload_01_Ammo_F") then {
+				_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportAmmo")) min 30000);
+			};
+			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];
+		};
+		if (getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportFuel") > 0) then {
+			_asset setFuelCargo 0;
+			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportFuel")) min 10000);
+			_asset setvariable ["GOM_fnc_fuelCargo", _amount, true];
+		};
 
 		if (typeOf _asset == "I_Truck_02_MRL_F") then {
 			_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"];

@@ -300,7 +300,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
-[player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(_x getVariable ["BIS_WL_canRepair", FALSE]) || (_x getVariable ["BIS_WL_canRearm", FALSE])} != -1}] call BIS_fnc_WL2_hintHandle;
+[player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || (getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)} != -1}] call BIS_fnc_WL2_hintHandle;
 
 0 spawn BIS_fnc_WL2_selectedTargetsHandle;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;

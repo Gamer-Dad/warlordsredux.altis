@@ -191,14 +191,8 @@ if !(isNull _sender) then {
 							_group = createGroup _side;
 							(crew _asset) joinSilent _group;
 							(group _asset) deleteGroupWhenEmpty true;
-							switch (side group _sender) do {
-								case west: {
-									(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
-								};
-								case east: {
-									(vestContainer _sender) addItemCargoGlobal ["O_UavTerminal", 1];
-								};
-							};
+							_asset addItemCargoGlobal ["B_UavTerminal", 1];
+							_asset addItemCargoGlobal ["O_UavTerminal", 1];
 						} else {
 							_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && !(_class isKindOf "VTOL_Base_F");
 							if (_isPlane) then {
@@ -235,16 +229,10 @@ if !(isNull _sender) then {
 									createVehicleCrew _asset;
 									_side = side _sender; 
 									_group = createGroup _side;
-									(crew _asset) joinSilent _group;
+									(crew _asset) join _group;
 									(group _asset) deleteGroupWhenEmpty true;
-									switch (side group _sender) do {
-										case west: {
-											(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
-										};
-										case east: {
-											(vestContainer _sender) addItemCargoGlobal ["O_UavTerminal", 1];
-										};
-									};
+									_asset addItemCargoGlobal ["B_UavTerminal", 1];
+									_asset addItemCargoGlobal ["O_UavTerminal", 1];
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 										_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
@@ -294,14 +282,8 @@ if !(isNull _sender) then {
 								_group = createGroup _side;
 								(crew _asset) joinSilent _group;
 								(group _asset) deleteGroupWhenEmpty true;
-								switch (side group _sender) do {
-									case west: {
-										(vestContainer _sender) addItemCargoGlobal ["B_UavTerminal", 1];
-									};
-									case east: {
-										(vestContainer _sender) addItemCargoGlobal ["O_UavTerminal", 1];
-									};
-								};
+								_asset addItemCargoGlobal ["B_UavTerminal", 1];
+								_asset addItemCargoGlobal ["O_UavTerminal", 1];
 							};
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
@@ -323,7 +305,7 @@ if !(isNull _sender) then {
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				_asset setOwner (owner _sender);
+				//_asset setOwner (owner _sender);
 				[_asset, _sender, _isStatic] spawn _setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
