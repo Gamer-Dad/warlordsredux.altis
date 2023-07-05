@@ -157,7 +157,4 @@ _i = 0;
 	};
 	
 	_sector setVariable ["BIS_WL_name", _name];
-	
-	_sector spawn BIS_fnc_WL2_handleEnemyCapture;
-	
 } forEach BIS_WL_allSectors;
