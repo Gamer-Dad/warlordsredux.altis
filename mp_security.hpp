@@ -270,12 +270,6 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"SCALAR"}};
 		};
 	};
-	class ALLOWDAMAGE {
-		class SYNTAX1 {
-			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"BOOL"}};
-		};
-	};
 
 	//Positions
 	class SETPOSASLW
