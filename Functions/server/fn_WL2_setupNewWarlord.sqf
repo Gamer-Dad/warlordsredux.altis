@@ -4,7 +4,6 @@ params ["_warlord"];
 
 private _startingPos = position _warlord;
 private _markers = (side group _warlord) call BIS_fnc_WL2_getRespawnMarkers;
-private _varFormat = "";
 
 
 _warlord setVariable ["BIS_WL_detectedByServerSince", serverTime];
@@ -33,9 +32,6 @@ if (isPlayer _warlord) then {
 		_playerSideArr = BIS_WL_playerIDArr # (BIS_WL_competingSides find side group _warlord);
 		_playerSideArr pushBackUnique getPlayerUID _warlord;
 		0 spawn BIS_fnc_WL2_calcImbalance;
-		
-		_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID _warlord];
-		waitUntil {!(missionNamespace getVariable [_varFormat, TRUE])};
 	} else {
 		_warlord setVariable ["BIS_WL_ignore", TRUE, TRUE];   //think this code block is server side blocking team switching
 		_warlord enableSimulationGlobal FALSE;
@@ -47,14 +43,7 @@ if (isPlayer _warlord) then {
 if !(_boundToAnotherTeam) then {
 	_respawnPos = markerPos selectRandom _markers;
 
-	while {if (isPlayer _warlord) then {!(missionNamespace getVariable [_varFormat, FALSE])} else {_warlord distance2D _respawnPos > 100}} do {
-		_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];
-		uiSleep WL_TIMEOUT_STANDARD;
-	};
-	
-	if (_varFormat != "") then {
-		missionNamespace setVariable [_varFormat, FALSE];
-	};
+	_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];
 	
 	_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _warlord];
 	if ((missionNamespace getVariable _friendlyFireVarName) > serverTime) then {

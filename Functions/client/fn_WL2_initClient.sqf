@@ -77,30 +77,6 @@ MRTM_disableHint = true;
 has_recieved_reward = false;
 reward_active = false;
 
-0 spawn {
-	_varFormat = format ["BIS_WL_%1_repositionDone", getPlayerUID player];
-	missionNamespace setVariable [_varFormat, FALSE];
-	publicVariableServer _varFormat;
-	//changed pos > 5 to 2
-	_pos = position player;
-	_confirmReposition = FALSE;
-	while {!_confirmReposition} do {
-		waitUntil {player distance _pos > 2}; 
-		uiSleep WL_TIMEOUT_STANDARD;
-		enableRadio TRUE;
-		enableSentences TRUE;
-		{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
-		if (player distance _pos > 2) then {
-			_confirmReposition = TRUE;
-		};
-	};
-
-	missionNamespace setVariable [_varFormat, TRUE];
-	publicVariableServer _varFormat;
-};
-
-
-
 if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
