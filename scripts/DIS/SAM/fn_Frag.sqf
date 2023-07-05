@@ -2,20 +2,16 @@ private _m = _this select 0;
 private _unit = _this select 1;
 private _targets = [];
 private _target = objNull;
-private _tPos = [];
+private _tPos = [0, 0, 0];
 private _frag = false;
-private _type = typeOf _m;
-private _range = (getNumber (configfile >> "CfgAmmo" >> _type >> "indirectHitRange") * 3.0);
 
-sleep 1;
 while {alive _m} do {
-	_targets = _m nearEntities [["AIR"], _range];
+	_targets = _m nearEntities [["AIR"], 20];
 	if ((count _targets) > 0) exitWith {_frag = true; _target = (_targets select 0)};
 	sleep .01;
 };
 if !(_frag) exitWith {};
-if ((count _targets) < 1) exitWith {};
-_target = (_targets select 0);
+if ((_target distance _m) > 20) exitWith {};
 
 // Secondary at target location
 _type = "ammo_Missile_rim116";
