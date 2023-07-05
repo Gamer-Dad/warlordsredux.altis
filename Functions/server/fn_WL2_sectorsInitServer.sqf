@@ -63,6 +63,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 			_sector setVariable ["BIS_WL_owner", _side, TRUE];
 			_sector setVariable ["BIS_WL_previousOwners", [_side], TRUE];
 			_sector setVariable ["BIS_WL_revealedBy", [_side], TRUE];
+			[_sector] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated];
 			_sectorsToGiveSide1 = _sectorsToGiveSide1 - 1;
 		} else {
 			_sectorsToGiveSide1 = 0;
@@ -78,6 +79,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 			_sector setVariable ["BIS_WL_owner", _side, TRUE];
 			_sector setVariable ["BIS_WL_previousOwners", [_side], TRUE];
 			_sector setVariable ["BIS_WL_revealedBy", [_side], TRUE];
+			[_sector] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated];
 			_sectorsToGiveSide2 = _sectorsToGiveSide2 - 1;
 			if (count _available == 1) then {
 				_sectorsToGiveSide1 = 0;
@@ -96,6 +98,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 		_sector setVariable ["BIS_WL_owner", BIS_WL_localSide, TRUE];
 		_sector setVariable ["BIS_WL_previousOwners", [], TRUE];
 		_sector setVariable ["BIS_WL_revealedBy", [], TRUE];
+		[_sector] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated];
 	};
 	
 	_zoneRestrictionTrg1 = createTrigger ["EmptyDetector", _sectorPos, FALSE];
@@ -164,7 +167,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 			_x setVariable ["BIS_WL_sector", _sector];
 			_x setTriggerArea _area;
 			_x setTriggerActivation [["WEST", "EAST", "GUER"] # (BIS_WL_sidesArray find _handledSide), "PRESENT", FALSE];
-			_x setTriggerStatements [format ["this && ((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %1) # 3))", _forEachIndex], format ["(thisTrigger getVariable 'BIS_WL_sector') setVariable ['BIS_WL_revealedBy', ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_revealedBy') + [%1], TRUE]", _handledSide], ""];
+			_x setTriggerStatements [format ["this && ((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %1) # 3))", _forEachIndex], format ["[(thisTrigger getVariable 'BIS_WL_sector')] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated]; (thisTrigger getVariable 'BIS_WL_sector') setVariable ['BIS_WL_revealedBy', ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_revealedBy') + [%1], TRUE]", _handledSide], ""];
 		} forEach [_detectionTrg1, _detectionTrg2];
 	};
 

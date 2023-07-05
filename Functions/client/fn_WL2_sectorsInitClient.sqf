@@ -107,8 +107,9 @@ _i = 0;
 		_mrkrMain setMarkerTypeLocal "u_installation";
 		_mrkrMain setMarkerColorLocal "ColorUNKNOWN";
 		_mrkrArea setMarkerColorLocal "ColorUNKNOWN";
-		[_sector] spawn BIS_fnc_WL2_sectorRevealHandle;
 	};
+
+	_sector spawn BIS_fnc_WL2_sectorRevealHandle;
 	
 	_neighbors = (synchronizedObjects _sector) select {typeOf _x == "Logic"};
 	_sector setVariable ["BIS_WL_pairedWith", []];
