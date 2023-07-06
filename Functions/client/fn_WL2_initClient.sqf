@@ -151,6 +151,10 @@ BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 50000];
 
+"fundsDatabaseClients" addPublicVariableEventHandler {
+	[] spawn BIS_fnc_WL2_refreshOSD;
+};
+
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger;

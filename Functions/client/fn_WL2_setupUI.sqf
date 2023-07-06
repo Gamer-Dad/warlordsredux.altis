@@ -106,14 +106,6 @@ switch (_displayClass) do {
 				[_x, BIS_WL_OSDEventArr # _forEachIndex] spawn BIS_fnc_WL2_setOSDEvent;
 			} forEach ["voting", "seizing", "trespassing"];
 		}];
-
-		0 spawn {
-			while {!BIS_WL_missionEnd} do {
-				_oldCPValue = ((missionNamespace getVariable "fundsDatabaseClients") getOrDefault [(getPlayerUID player), 0]);
-				waitUntil {sleep WL_TIMEOUT_SHORT; ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) != _oldCPValue};
-				[] spawn BIS_fnc_WL2_refreshOSD;
-			};
-		};
 	};
 	
 	case "RequestMenu_open": {
