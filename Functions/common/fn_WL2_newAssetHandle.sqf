@@ -16,8 +16,6 @@ if (isPlayer _owner) then {
 		_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	
 		_asset addEventHandler ["Killed", {
-			BIS_WL_matesAvailable = BIS_WL_matesAvailable - 1;
-			BIS_manLost = TRUE;
 			[] spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {

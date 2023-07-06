@@ -60,7 +60,7 @@ switch (_locality) do {
 		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = 0;
-		BIS_WL_matesAvailable = floor (BIS_WL_maxSubordinates / 4);
+		BIS_WL_matesAvailable = BIS_WL_maxSubordinates;
 		BIS_WL_lastLoadout = [];
 		BIS_WL_savedLoadout = [];
 		BIS_WL_loadoutApplied = FALSE;
