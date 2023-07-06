@@ -96,7 +96,6 @@ call BIS_fnc_WL2_sectorsInitServer;
 0 spawn BIS_fnc_WL2_targetSelectionHandleServer;
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
-0 spawn BIS_fnc_WL2_targetResetHandleServer;
 0 spawn BIS_fnc_WL2_garbageCollector;
 0 spawn BIS_fnc_WL2_mineLimit;
 0 spawn BIS_fnc_WL2_processRunways;

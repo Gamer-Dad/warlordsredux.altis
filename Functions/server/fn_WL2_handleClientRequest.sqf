@@ -77,8 +77,10 @@ if !(isNull _sender) then {
 			if (_hasFunds) then {
 				missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], serverTime, true];
 				missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", side _sender], name _sender, true];
-
 				_sender setVariable ["BIS_WL_targetResetVote", 1, [2, (owner _sender)]];
+
+				[side _sender] spawn BIS_fnc_WL2_targetResetHandleServer;
+				[side _sender] remoteExec ["BIS_fnc_WL2_targetResetHandleVote", [0, -2] select isDedicated];
 			};
 		};
 		case "lastLoadout": {
