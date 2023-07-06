@@ -34,6 +34,6 @@ BIS_WL_forfeitVoteEH2 = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 	};
 }];
 
-waitUntil {sleep WL_TIMEOUT_SHORT; serverTime >= ((missionNamespace getVariable _varNameVoting) + 60) || (player getVariable ["BIS_WL_forfeitVote", -1]) != -1};
+waitUntil {sleep WL_TIMEOUT_SHORT; serverTime >= ((missionNamespace getVariable _varNameVoting) + 30) || (player getVariable ["BIS_WL_forfeitVote", -1]) != -1};
 
 [player, "forfeitVoting", FALSE] call BIS_fnc_WL2_hintHandle;

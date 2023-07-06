@@ -29,6 +29,10 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
+		class BIS_fnc_WL2_forfeitHandleServer {
+			allowedTargets = 2;
+		};
+
 		//Client only
 		class BIS_fnc_WL2_refreshOSD {
 			allowedTargets = 1;
