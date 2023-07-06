@@ -105,7 +105,6 @@ if !(isServer) then {
 	BIS_WL_playerSide call BIS_fnc_WL2_parsePurchaseList;
 };
 
-0 spawn BIS_fnc_WL2_zoneRestrictionHandleClient;
 0 spawn BIS_fnc_WL2_sectorCaptureStatus;
 0 spawn BIS_fnc_WL2_teammatesAvailability;
 0 spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
