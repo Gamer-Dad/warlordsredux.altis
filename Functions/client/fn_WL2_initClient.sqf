@@ -283,7 +283,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
-0 spawn BIS_fnc_WL2_forfeitHandle;
 
 0 spawn {
 	_t = serverTime + 10;
