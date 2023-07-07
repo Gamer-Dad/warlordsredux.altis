@@ -219,13 +219,6 @@ class CfgDisabledCommands {
 		};
 	};
 
-	class CREATEAGENT {
-		class SYNTAX1 {
-			targets[] = {1,0,1};
-			args[] = {{}, {"ARRAY"}};
-		};
-	};
-
 	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
