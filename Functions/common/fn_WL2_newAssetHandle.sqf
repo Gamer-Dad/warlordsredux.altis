@@ -169,7 +169,7 @@ if (isPlayer _owner) then {
 		};
 
 		if (_asset call DIS_fnc_IsSAM) then {
-			[_x] spawn DIS_fnc_RegisterSAM;
+			[_asset] spawn DIS_fnc_RegisterSAM;
 		};
 		
 		_asset addEventHandler ["Killed", {
