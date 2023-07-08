@@ -100,7 +100,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Trigger";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(count (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_TBG32V_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 100])) > 0 && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(count (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_TBG32V_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 125])) > 0 && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -123,7 +123,7 @@ class FSM
                 {
                         name = "Trigger";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"_a = (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_TBG32V_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 100]) # 0;" \n
+                        init = /*%FSM<STATEINIT""">*/"_a = (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_TBG32V_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 125]) # 0;" \n
                          "" \n
                          "if !(_a in _reg) then {" \n
                          "	_d = _v distance _a;" \n
