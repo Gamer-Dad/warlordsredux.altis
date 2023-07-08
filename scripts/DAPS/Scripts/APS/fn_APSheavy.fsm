@@ -2,12 +2,12 @@
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Init",0,250,-41.551727,-130.172409,48.448273,-80.172409,0.000000,"Init"};
-item1[] = {"Exit",1,4346,69.827576,-130.172424,159.827606,-80.172432,0.000000,"Exit"};
+item1[] = {"Exit",1,250,69.827576,-130.172424,159.827606,-80.172432,0.000000,"Exit"};
 item2[] = {"__Alive",4,218,69.827515,-56.465530,159.827515,-6.465530,0.000000,"!Alive"};
 item3[] = {"Alive",4,218,-40.689697,-56.896591,49.310303,-6.896591,0.000000,"Alive"};
 item4[] = {"Action",2,250,-40.258698,14.225098,49.741318,64.225098,0.000000,"Action"};
 item5[] = {"Missile__",4,218,-39.475410,84.996185,50.524597,134.996185,0.000000,"Missile !"};
-item6[] = {"Trigger",2,250,-38.983128,158.600647,51.016891,208.600647,0.000000,"Trigger"};
+item6[] = {"Trigger",2,4346,-38.983128,158.600647,51.016891,208.600647,0.000000,"Trigger"};
 item7[] = {"__alive_m",4,218,70.022789,158.600586,160.022797,208.600586,0.000000,"!alive m"};
 item8[] = {"True",2,250,69.493561,15.199707,159.493576,65.199707,0.000000,"True"};
 link0[] = {0,2};
@@ -24,7 +24,7 @@ link10[] = {7,8};
 link11[] = {8,2};
 link12[] = {8,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,-363.862122,362.137817,192.731552,-269.884796,1074,1284,1};
-window[] = {2,-1,-1,-1,-1,1267,208,2128,208,3,1092};
+window[] = {2,-1,-1,-1,-1,1397,338,2258,338,3,1092};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -137,8 +137,10 @@ class FSM
                         itemno = 6;
                         init = /*%FSM<STATEINIT""">*/"_a = (nearestObjects [_v, [""R_TBG32V_F"", ""M_NLAW_AT_F"", ""M_AT"", ""M_PG_AT"", ""M_Scalpel_AT"", ""M_Scalpel_AT_hidden"", ""M_SPG9_HE"", ""M_SPG9_HEAT"", ""M_Titan_AP"", ""M_Titan_AT"", ""M_Titan_AT_long"", ""M_Titan_AT_static"", ""M_Vorona_HE"", ""M_Vorona_HEAT"", ""Missile_AGM_01_F"", ""Missile_AGM_02_F"", ""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""Rocket_03_AP_F"", ""Rocket_03_HE_F"", ""Rocket_04_AP_F"", ""Rocket_04_HE_F""], 125]) # 0;" \n
                          "" \n
+                         "[""Trigger""] remoteExec [""hint"", 0];" \n
                          "if !(_a in _reg) then {" \n
                          "	_d = _v distance _a;" \n
+                         "	[""new missile""] remoteExec [""hint"", 0];" \n
                          "   [_v, _a, _d] remoteExec [""DAPS_fnc_Generic"", 2];" \n
                          "	_reg pushBackUnique _a;" \n
                          "};" \n
