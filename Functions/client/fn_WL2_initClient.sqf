@@ -329,10 +329,3 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 		};
 	}];
 };
-
-player addaction [
-	"10K CP", 
-	{
-		[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
-	}
-];
