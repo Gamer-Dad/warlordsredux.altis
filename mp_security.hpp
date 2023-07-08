@@ -207,13 +207,6 @@ class CfgDisabledCommands {
 		};
 	};
 
-	class ADDWEAPONGLOBAL {
-		class SYNTAX1 {
-			targets[] = {1,0,1};
-			args[] = {{"OBJECT"}, {"STRING"}};
-		};
-	};
-
 	//Velocity
 	class SETVELOCITYTRANSFORMATION {
 		class SYNTAX1 {
