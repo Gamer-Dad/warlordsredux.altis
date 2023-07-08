@@ -211,7 +211,7 @@ if !(isNull _sender) then {
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 							createVehicleCrew _asset;
-							_side = side _sender; 
+							_side = side _sender;
 							_group = createGroup _side;
 							(crew _asset) joinSilent _group;
 							(group _asset) deleteGroupWhenEmpty true;

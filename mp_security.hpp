@@ -105,6 +105,8 @@ class CfgRemoteExec {
 		class BIS_fnc_objectVar {allowedTargets = 0; jip = 0;};
 		class BIS_fnc_setCustomSoundController {allowedTargets = 0; jip = 0;};
 		class BIS_fnc_debugConsoleExec {allowedTargets = 0; jip = 0;};
+		class BIS_fnc_setIdentity {allowedTargets = 0; jip = 0;};
+		class BIS_fnc_curatorRespawn {allowedTargets = 0; jip = 0;};
 	};
 
 	class Commands {
@@ -202,13 +204,6 @@ class CfgDisabledCommands {
 		class SYNTAX1 {
 			targets[] = {1,0,1};
 			args[] = {{"OBJECT"}, {"SCALAR"}};
-		};
-	};
-
-	class REMOVEALLWEAPONS {
-		class SYNTAX1 {
-			targets[] = {1,0,1};
-			args[] = {{}, {"OBJECT"}};
 		};
 	};
 
