@@ -316,6 +316,22 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		} count (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
+
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Medical container",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
 	};
 	if (side group player == east) then {
 		{
@@ -333,6 +349,22 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		} count (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
+
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Medical pod",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
 	};
 };
 
@@ -442,6 +474,22 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		} count (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
+
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Medical container",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
 	};
 	if (side group player == east) then {
 		{
@@ -459,6 +507,22 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		} count (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
+
+		{
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				"Medical pod",
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		} count (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
 	};
 };
 
