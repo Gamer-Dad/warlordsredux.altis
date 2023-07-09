@@ -199,8 +199,6 @@ while {dialog} do {
 			"", lineBreak,
 			"Visit our github to view the earlier changes.", lineBreak,
 			"", lineBreak,
-			"...", lineBreak,
-			"", lineBreak,
 			"2.1.0001", lineBreak,
 			"- Baseline version number"
 			];
