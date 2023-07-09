@@ -167,6 +167,18 @@ player addEventHandler ["GetInMan", {
 		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
+	if (typeOf _vehicle isKindOf "Air" || (getPlayerUID player) == "76561198034106257" || (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
+		1 radioChannelAdd [player];
+	};
+}];
+
+player addEventHandler ["GetOutMan", {
+	params ["_unit", "_role", "_vehicle", "_turret"];
+	detach BIS_WL_enemiesCheckTrigger;
+	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
+	if !((getPlayerUID player) == "76561198034106257" || (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
+		1 radioChannelRemove [player];
+	};
 }];
 
 player addEventHandler ["Killed", {
@@ -328,4 +340,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 			};
 		};
 	}];
+};
+
+if ((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
+	1 radioChannelAdd [player];
 };
