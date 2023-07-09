@@ -306,9 +306,7 @@ if !(isNull _sender) then {
 				} else {
 					_asset lock 0;
 				};
-				
-				_asset setDamage 0;
-				_asset setFuel 1;
+			
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
@@ -349,6 +347,7 @@ if !(isNull _sender) then {
 				};
 
 				waitUntil {sleep 0.1; !(isNull _asset)};
+				_asset setDamage 0;
 			};
 			_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 		};
