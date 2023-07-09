@@ -13,7 +13,7 @@ respawnDelay = 30;
 respawnOnStart = -1;
 
 disabledAI = 1;
-enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198034106257", "76561198865298977"};
 allowFunctionsLog = 1;
 
 //revive settings below
@@ -26,7 +26,6 @@ wreckManagerMode = 0;
 //end of garbage collector
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
-enableDebugConsole[] = {"76561198034106257", "76561198865298977"};
 
 class Header
 {
