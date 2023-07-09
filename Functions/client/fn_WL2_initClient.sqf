@@ -250,10 +250,6 @@ call BIS_fnc_WL2_sub_arsenalSetup;
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 
-["client_init"] call BIS_fnc_endLoadingScreen;
-
-sleep 0.01;
-
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
 
 call BIS_fnc_WL2_refreshCurrentTargetData;
@@ -289,8 +285,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	};
 };
 
-"Initialized" call BIS_fnc_WL2_announcer;
-[toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || (getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)} != -1}] call BIS_fnc_WL2_hintHandle;
 
 0 spawn BIS_fnc_WL2_selectedTargetsHandle;
@@ -309,39 +303,31 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 0 spawn {
 	waituntil {sleep 0.1; !isnull (findDisplay 46)};
-	0 spawn BIS_fnc_WL2_welcome;
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
 		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
-		_key1 = actionKeysNames "curatorInterface";
-		_key2 = actionKeysNames "tacticalView";
-		_keyName = (keyName (_this select 1));
-
+		private _key1 = actionKeysNames "curatorInterface";
+		private _key2 = actionKeysNames "tacticalView";
+		private _keyName = (keyName _key);
+		private _e = false;
+		
 		if (_keyName == _key1) then {
 			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
-				true;
+				_e = true;
 			};
 		};
 		if (_keyName == _key2) then {
-			true;
+			_e = true;
 		};
-	}];
-};
-
-0 spawn {
-	waituntil {sleep 0.1; !isnull (findDisplay 49)};
-	(findDisplay 49) displayAddEventHandler ["KeyDown", {
-		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
-		_key1 = actionKeysNames "curatorInterface";
-		_keyName = (keyName (_this select 1));
-
-		if (_keyName == _key1) then {
-			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
-				true;
-			};
-		};
+		_e;
 	}];
 };
 
 if ((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
 	1 radioChannelAdd [player];
 };
+
+["client_init"] call BIS_fnc_endLoadingScreen;
+
+"Initialized" call BIS_fnc_WL2_announcer;
+[toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
+0 spawn BIS_fnc_WL2_welcome;
