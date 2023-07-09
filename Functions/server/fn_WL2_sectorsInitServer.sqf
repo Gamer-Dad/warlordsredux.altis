@@ -45,7 +45,7 @@ missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) 
 	_base setVariable ["BIS_WL_owner", _side, TRUE];
 	_base setVariable ["BIS_WL_originalOwner", _side, TRUE];
 	_base setVariable ["BIS_WL_previousOwners", [_side], TRUE];
-	_base setVariable ["BIS_WL_revealedBy", BIS_WL_competingSides, TRUE];
+	_base setVariable ["BIS_WL_revealedBy", [_side], TRUE];
 } forEach WL_BASES;
 
 _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
