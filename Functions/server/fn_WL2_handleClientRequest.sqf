@@ -202,7 +202,9 @@ if !(isNull _sender) then {
 							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							createVehicleCrew _asset;
+							while {crew _asset = []} do {
+								createVehicleCrew _asset;
+							};
 							_side = side _sender;
 							_group = createGroup _side;
 							(crew _asset) joinSilent _group;
@@ -238,10 +240,12 @@ if !(isNull _sender) then {
 									_asset setDir 0;
 									
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									createVehicleCrew _asset;
-									_side = side _sender; 
+									while {crew _asset = []} do {
+										createVehicleCrew _asset;
+									};
+									_side = side _sender;
 									_group = createGroup _side;
-									(crew _asset) join _group;
+									(crew _asset) joinSilent _group;
 									(group _asset) deleteGroupWhenEmpty true;
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -284,9 +288,11 @@ if !(isNull _sender) then {
 							_asset setDir direction _sender;
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-								//Code to allow Both sides to use a drone of the other side.
-								createVehicleCrew _asset;
-								_side = side _sender; 
+								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+								while {crew _asset = []} do {
+									createVehicleCrew _asset;
+								};
+								_side = side _sender;
 								_group = createGroup _side;
 								(crew _asset) joinSilent _group;
 								(group _asset) deleteGroupWhenEmpty true;
