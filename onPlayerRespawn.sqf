@@ -1,5 +1,5 @@
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
-0 spawn KSL_fnc_unflipVehicleAddAction;
+0 spawn KS_fnc_unflipVehicleAddAction;
 
 {
 	if (isNull _x) then {
