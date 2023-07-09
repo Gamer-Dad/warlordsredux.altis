@@ -47,14 +47,14 @@ if (_ret) then {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_conflict"};
 			_sectorSelectedTimestampVarID = format ["BIS_WL_sectorSelectedTimestamp_%1", BIS_WL_playerSide];
 			_targetResetVotingVarID = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
-			if (serverTime < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout)) exitWith {_ret = FALSE; _tooltip = str ([(((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
-			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = FALSE; _tooltip = str ([(((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
+			if (serverTime < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout)) exitWith {_ret = FALSE; _tooltip = ([(((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
+			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = FALSE; _tooltip = ([(((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "forfeitVote": {
 			_countSide = (playersNumber (side (group player)));
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
 			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
-			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = str ([(((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
+			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "Arsenal": {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
