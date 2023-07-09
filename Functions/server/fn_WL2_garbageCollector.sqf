@@ -4,7 +4,7 @@ while {!BIS_WL_missionEnd} do {
 			if (vehicle _x != _x) then {
 				(vehicle _x) deleteVehicleCrew _x;
 			} else {
-					deleteVehicle _x;
+				deleteVehicle _x;
 			};
 		} else {
 			{_x setPos position _x} forEach crew _x;
