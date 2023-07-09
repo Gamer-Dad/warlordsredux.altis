@@ -740,7 +740,7 @@ class MRTM_settingsMenu
 		{
 			idc = 2801;
 			action = "if (player getVariable 'MRTM_3rdPersonDisabled') then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]];}";
-			toolTip = "Recieve a +40% CP bonus.";
+			toolTip = "Recieve a 100% CP bonus.";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
