@@ -304,6 +304,7 @@ if !(isNull _sender) then {
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
+							_asset setVariable ["BIS_WL_delete", (serverTime + 300), 2];
 						};
 					};
 				}; 
