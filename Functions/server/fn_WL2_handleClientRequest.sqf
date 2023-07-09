@@ -202,10 +202,10 @@ if !(isNull _sender) then {
 							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							createVehicleCrew _asset;
 							_side = side _sender;
 							_group = createGroup _side;
-							(crew _asset) joinSilent _group;
+							_crew = _group createVehicleCrew _asset;
+							_crew joinSilent _group;
 							(group _asset) deleteGroupWhenEmpty true;
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -282,10 +282,10 @@ if !(isNull _sender) then {
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								createVehicleCrew _asset;
 								_side = side _sender;
 								_group = createGroup _side;
-								(crew _asset) joinSilent _group;
+								_crew = _group createVehicleCrew _asset;
+								_crew joinSilent _group;
 								(group _asset) deleteGroupWhenEmpty true;
 								_asset addItemCargoGlobal ["B_UavTerminal", 1];
 								_asset addItemCargoGlobal ["O_UavTerminal", 1];
