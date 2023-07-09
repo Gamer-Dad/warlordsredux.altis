@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
 	if !(isNull WL_TARGET_FRIENDLY) then {
 		drawIcon3D [
@@ -29,10 +27,29 @@ BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
 			0,
 			format ["%1%2 %3", _dist, if (_dist % 1 == 0 && _units == "km") then {".0"} else {""}, if (_units == "m") then {BIS_WL_localized_m} else {BIS_WL_localized_km}],
 			2,
-			WL_SCENE_FONT_SIZE,
+			0.03,
 			"RobotoCondensedBold"
 		];
 	};
+	{
+		drawIcon3D [
+			"A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
+			[1, 1, 1, 1],
+			if (vehicle _x == _x) then {
+				(_x modelToWorldVisual (_x selectionPosition "head")) vectorAdd [0,0,0.6];
+			} else {
+				getPosATLVisual _x
+			},
+			0,
+			0,
+			0,
+			name _x,
+			2,
+			0.03,
+			"RobotoCondensedBold",
+			"center"
+		];
+	} forEach ((BIS_WL_allWarlords) select {alive _x && {player distance _x < 100 && {_x != player}}});
 	{
 		drawIcon3D [
 			"\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa",
@@ -43,7 +60,7 @@ BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
 			0,
 			_x getVariable ["BIS_WL_iconText", ""],
 			2,
-			WL_SCENE_FONT_SIZE,
+			0.03,
 			"RobotoCondensedBold",
 			"center",
 			FALSE
