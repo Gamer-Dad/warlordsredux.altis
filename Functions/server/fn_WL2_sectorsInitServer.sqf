@@ -46,6 +46,13 @@ missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) 
 	_base setVariable ["BIS_WL_originalOwner", _side, TRUE];
 	_base setVariable ["BIS_WL_previousOwners", [_side], TRUE];
 	_base setVariable ["BIS_WL_revealedBy", [_side], TRUE];
+	private _flag = createVehicle ["FlagPole_F", (position _x), [], 20,"NONE"];
+	if (_side == west) then {
+		_flag setFlagTexture "\A3\Data_F\Flags\flag_NATO_CO.paa";
+	} else {
+		_flag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+	};
+	_flag setFlagSide _side;
 } forEach WL_BASES;
 
 _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
