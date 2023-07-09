@@ -4,25 +4,6 @@ BIS_WL_allSectors = (entities "Logic") select {count synchronizedObjects _x > 0}
 
 call compile preprocessFileLineNumbers "TEMP.sqf";
 
-if (isMultiplayer) then {
-	_initModuleVars = allVariables BIS_WL_initModule;
-	
-	{
-		_param = configName _x;
-		
-		if ((toLower _param) in _initModuleVars) then {
-			_value = paramsArray # _forEachIndex;
-			_convertToBool = getNumber (_x >> "isBool") == 1;
-			
-			if (_convertToBool) then {
-				_value = [FALSE, TRUE] # _value;
-			};
-			
-			BIS_WL_initModule setVariable [_param, _value];
-		};
-	} forEach ("TRUE" configClasses (missionConfigFile >> "Params"));
-};
-
 "common" call BIS_fnc_WL2_varsInit;
 
 enableSaving [false, false];

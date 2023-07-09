@@ -1,5 +1,5 @@
-BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
-	if !(isNull WL_TARGET_FRIENDLY) then {
+addMissionEventHandler ["Draw3D", {
+	if !(isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])) then {
 		drawIcon3D [
 			BIS_WL_currentTargetData # 0,
 			BIS_WL_currentTargetData # 1,
@@ -14,7 +14,7 @@ BIS_WL_sceneDrawHandler = addMissionEventHandler ["Draw3D", {
 			"center",
 			TRUE
 		];
-		_dist = (getPosVisual player) distance WL_TARGET_FRIENDLY;
+		_dist = (getPosVisual player) distance (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide]);
 		_units = "m";
 		_dist = ceil _dist;
 		if (_dist > 1000) then {_dist = _dist / 100; _dist = round _dist; _dist = _dist / 10; _units = "km"};

@@ -1804,17 +1804,6 @@ class Mission
 			id=141;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item132
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={15555.562,31.828182,20244.412};
-			};
-			name="BIS_WL_initModule";
-			id=206;
-			type="Logic";
-		};
 		class Item133
 		{
 			dataType="Logic";
