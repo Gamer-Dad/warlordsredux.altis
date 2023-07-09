@@ -20,7 +20,7 @@ class FSM
                 {
                         name = "Init";
                         itemno = 0;
-                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 300;"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_t = serverTime + 120;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -64,7 +64,7 @@ class FSM
                          "		deleteVehicle _asset;" \n
                          "	};" \n
                          "} forEach allMissionObjects """";" \n
-                         "_t = serverTime + 300;"/*%FSM</STATEINIT""">*/;
+                         "_t = serverTime + 120;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
