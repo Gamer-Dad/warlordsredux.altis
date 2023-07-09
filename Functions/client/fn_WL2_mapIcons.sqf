@@ -249,6 +249,23 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
+		};		
+	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {((_x getVariable ["BIS_WL_ownerAsset", grpNull]) != grpNull) && {(isNull objectParent _x)}}}});	
+	{
+		if (!isNull _x) then {
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
 		};
 	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
 	{
@@ -390,21 +407,6 @@ MRTM_fnc_iconDrawGPS = {
 		];
 	} count ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
 	{
-		_m drawIcon [
-			[_x] call MRTM_fnc_iconType,
-			[_x] call MRTM_fnc_iconColor,
-			[_x] call MRTM_fnc_getPos,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_getDir,
-			[_x] call MRTM_fnc_iconText,
-			1,
-			0.025,
-			"TahomaB",
-			"right"
-		];		
-	} count ((units player) select {(alive _x) && {(_x != player) && {(isNull objectParent _x)}}});
-	{
 		if !(_x isEqualTo player) then {
 			_m drawIcon [
 				[_x] call MRTM_fnc_iconType,
@@ -421,6 +423,23 @@ MRTM_fnc_iconDrawGPS = {
 			];
 		};
 	} count ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
+	{
+		if (!isNull _x) then {
+			_m drawIcon [
+				[_x] call MRTM_fnc_iconType,
+				[_x] call MRTM_fnc_iconColor,
+				[_x] call MRTM_fnc_getPos,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_iconSize,
+				[_x] call MRTM_fnc_getDir,
+				[_x] call MRTM_fnc_iconText,
+				1,
+				0.025,
+				"TahomaB",
+				"right"
+			];
+		};		
+	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {((_x getVariable ["BIS_WL_ownerAsset", grpNull]) != grpNull) && {(isNull objectParent _x)}}}});	
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
