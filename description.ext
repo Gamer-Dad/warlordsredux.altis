@@ -4,7 +4,7 @@
 #include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
 
-onLoadName = "Warlords Redux 2.5"; 
+onLoadName = "Warlords Redux 2.5.7";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 
@@ -26,6 +26,7 @@ wreckManagerMode = 0;
 //end of garbage collector
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
+enableDebugConsole[] = {"76561198034106257", "76561198865298977"};
 
 class Header
 {

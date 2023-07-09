@@ -128,7 +128,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords 2.5 (Redux)";
+		briefingName="Warlords 2.5 (Redux) | WarSim Vets";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;

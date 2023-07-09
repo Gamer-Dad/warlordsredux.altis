@@ -175,5 +175,54 @@
   - AAF has stronger defence on sectors with a helipad/runway.
   - Rita (voice warning system) added to opfor aircrafts (Neophron and shikra).
 
+2.5.4
+  - New settings menu.
+  - You can now change the volumes of the voice warning systems.
+  - Kill bonus for people using 1st person.
+  - Option to disable kill sound.
+  - Voice warning systems have been improved.
+  - Vehicle spawning reworked.
+  - New faster code for ordering stuff. the server will be able to handle it better.
+  - APS perf improved.
+  - You can kick players/ AI that you don't own out of your vehicles. (As long as you are within 50 meters)
+  - Gunner/Driver/Command of a vehicle all (nut the person who got the kill) get the assist for the kill. (blackfish armed not so bad anymore)
+  - All friendly AI owned by players is shown on map.
 
-  
+2.5.5
+  - Easter egg added. (Comes with it's own reward when found)
+  - Anti cheat against cheaters killing/ teleporting all players improved.
+  - Custom keybind for earplugs added. (Custom control 2)
+  - Custom keybind for lock/ unlock added. (Custom control 1)
+  - Bug fixing.
+  - APS improved and bugs fixed such as -1 APS
+  - Option to mute the WL voice informer. (can be reverted if it loses the vote)
+  - Immortal AI fixed
+  - Bitching betty added to VTOL and heli's
+  - Rita added to VTOL and heli's
+
+2.5.6  (bug update)
+  - Lag issues fixed
+  - Bug fixes
+  - Anti cheat improved
+  - Possible invincible ai fix
+  - APS improved
+  - New asset spawning system
+
+2.5.7
+  - Alot of code improvement, wich leads to better gameplay experience.
+  - Teleporting issue when joining late game is should be fixed.
+  - Alot less network traffick.
+  - Code security improved.
+  - Zone restriction not killing a person after bar is filled fixed.
+  - GPS icons are better. you see alot more now then just infantry.
+  - Possible UAV issue fixed. (Needs alot of testing)
+  - Double spawn truck icon fixed.
+  - Spawn truck lock action fixed.
+  - Free AI Fixed.
+  - Starting a game with less then 1000CP (due to imbalance) fixed.
+  - Dazzler should work again like intented.
+  - Friendly fire penalty fixed
+  - All huron containers and Taru Pods are added as refuel, rearm, repair possibility.
+  - All Containers, pods, boxes are loadable onto the flatbed and can be loaded into the Y-32 and Blackfish Vehicle transport.
+  - New fast travel option added. The huron medical container and taru medical pod. This will allow for some interesting tactics since you can carry them/ move them very fast.
+  - You now get a CP refund if you where transfering CP and it canceled because of sector voting.
