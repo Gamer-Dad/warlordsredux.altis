@@ -178,8 +178,6 @@ if !(isNull _sender) then {
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 								_asset setDir 0;
-								_asset setDamage 0;
-								_asset setFuel 1;
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -201,8 +199,6 @@ if !(isNull _sender) then {
 
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
-								_asset setDamage 0;
-								_asset setFuel 1;
 							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
@@ -236,14 +232,10 @@ if !(isNull _sender) then {
 
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
-								_asset setDamage 0;
-								_asset setFuel 1;
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 									_asset setDir 0;
-									_asset setDamage 0;
-									_asset setFuel 1;
 									
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 									createVehicleCrew _asset;
@@ -261,8 +253,6 @@ if !(isNull _sender) then {
 										_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 										_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 										_asset setDir 0;
-										_asset setDamage 0;
-										_asset setFuel 1;
 									} else {
 										private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 										private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -284,8 +274,6 @@ if !(isNull _sender) then {
 
 										_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 										_asset setDir _dir;
-										_asset setDamage 0;
-										_asset setFuel 1;
 									};
 								};
 							};
@@ -316,16 +304,17 @@ if !(isNull _sender) then {
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
 				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
-					_asset lock true;
+					_asset lock 2;
 				} else {
 					_asset lock 0;
 				};
 				
+				_asset setDamage 0;
+				_asset setFuel 1;
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				//_asset setOwner (owner _sender);
 				[_asset, _sender, _isStatic] spawn _setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
