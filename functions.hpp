@@ -66,6 +66,7 @@ class CfgFunctions {
 			class WL2_killRewardClient {};
 			class WL2_underWaterCheck {};
 			class WL2_mrtmAction {};
+			class WL2_targetResetHandleVote {};
     	};
 		class Server 
 		{
@@ -93,7 +94,6 @@ class CfgFunctions {
 			class WL2_tablesSetUp {};
 			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
-			class WL2_targetResetHandleVote {};
     	};
     	class Common {
     		file = "Functions\common";
