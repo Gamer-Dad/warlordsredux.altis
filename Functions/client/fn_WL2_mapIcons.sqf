@@ -250,7 +250,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};		
-	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {((_x getVariable ["BIS_WL_ownerAsset", grpNull]) != grpNull) && {(isNull objectParent _x)}}}});	
+	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {((_x getVariable ["BIS_WL_ownerAsset", grpNull]) != grpNull) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}}});	
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -424,7 +424,7 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};		
-	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {((_x getVariable ["BIS_WL_ownerAsset", grpNull]) != grpNull) && {(isNull objectParent _x)}}}});	
+	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {((_x getVariable ["BIS_WL_ownerAsset", grpNull]) != grpNull) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}}});	
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
