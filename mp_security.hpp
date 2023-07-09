@@ -168,13 +168,6 @@ class CfgRemoteExec {
 
 class CfgDisabledCommands {
 	//Other
-	class DISABLECOLLISIONWITH {
-		class SYNTAX1 
-		{
-			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"OBJECT"}};
-		};
-	};
 
 	class CREATEUNIT
 	{
