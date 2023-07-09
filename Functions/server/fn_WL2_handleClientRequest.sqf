@@ -202,8 +202,9 @@ if !(isNull _sender) then {
 							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							while {crew _asset = []} do {
+							while {(crew _asset == [])} do {
 								createVehicleCrew _asset;
+								sleep 0.01;
 							};
 							_side = side _sender;
 							_group = createGroup _side;
@@ -240,7 +241,7 @@ if !(isNull _sender) then {
 									_asset setDir 0;
 									
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									while {crew _asset = []} do {
+									while {crew _asset == []} do {
 										createVehicleCrew _asset;
 									};
 									_side = side _sender;
@@ -289,8 +290,9 @@ if !(isNull _sender) then {
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								while {crew _asset = []} do {
+								while {crew _asset == []} do {
 									createVehicleCrew _asset;
+									sleep 0.01;
 								};
 								_side = side _sender;
 								_group = createGroup _side;
