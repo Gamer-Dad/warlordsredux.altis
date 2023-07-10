@@ -19,7 +19,7 @@ if (_class isKindOf "Man") then {
 	_asset = createSimpleObject [_class, (AGLToASL (player modelToWorld _offset)), true];
 
 	_asset setDir direction player;
-	_asset lock true;
+	_asset lock 2;
 	_asset allowDamage false;
 	_asset attachTo [player, _offset];
 	_h = (position _asset) # 2;

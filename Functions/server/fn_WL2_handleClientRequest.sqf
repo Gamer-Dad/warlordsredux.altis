@@ -300,12 +300,6 @@ if !(isNull _sender) then {
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
-
-				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F") then {
-					_asset lock 2;
-				} else {
-					_asset lock 0;
-				};
 			
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;
 				_asset setVehicleVarName _assetVariable;
