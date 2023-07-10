@@ -45,8 +45,10 @@ missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) 
 	_base setVariable ["BIS_WL_owner", _side, TRUE];
 	_base setVariable ["BIS_WL_originalOwner", _side, TRUE];
 	_base setVariable ["BIS_WL_previousOwners", [_side], TRUE];
-	_base setVariable ["BIS_WL_revealedBy", [_side], TRUE];
-	private _flag = createVehicle ["FlagPole_F", (position _x), [], 20,"NONE"];
+	_base setVariable ["BIS_WL_revealedBy", [_side], TRUE];								
+	private _positionBunker = (getPosATL _x) getPos [(00 * sqrt random 1), (random 360)];
+	private _bunker = createSimpleObject ["Land_PillboxBunker_01_big_F", (AGLToASL _positionBunker), false];
+	private _flag = createVehicle ["FlagPole_F", (position _bunker), [], 5,"NONE"];
 	if (_side == west) then {
 		_flag setFlagTexture "\A3\Data_F\Flags\flag_NATO_CO.paa";
 	} else {
