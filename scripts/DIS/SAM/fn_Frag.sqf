@@ -16,7 +16,7 @@ if ((_target distance _m) > 20) exitWith {};
 // Secondary at target location
 _type = "ammo_Missile_rim116";
 _tPos = getPos _target;
-private _m2 = createVehicle [_type, _tPos, [] , 45, "FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
+private _m2 = createVehicle [_type, _tPos, [] , 40, "FLY"]; // The number is the max possible radius from target. This at 5 is very deadly
 _m2 setShotParents [_unit, [_unit] call DIS_fnc_getOwner];
 
 triggerAmmo _m2;
