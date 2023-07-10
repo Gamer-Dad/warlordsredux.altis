@@ -19,5 +19,5 @@ while {!BIS_WL_missionEnd} do {
 			deleteVehicle _x;
 		};
 	} forEach allMissionObjects "";
-	sleep 120;
+	sleep 300;
 };
