@@ -296,7 +296,13 @@ if !(isNull _sender) then {
 							_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
 						};
 					};
-				}; 
+				};
+
+				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F") then {
+					[_asset, 2] remoteExec ["lock", 0];
+				} else {
+					[_asset, 0] remoteExec ["lock", 0];
+				};
 
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;

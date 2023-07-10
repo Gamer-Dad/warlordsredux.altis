@@ -113,9 +113,6 @@ class CfgRemoteExec {
 		mode = 1; // Whitelist only
 
 		//Server only
-		class setVehiclePosition {
-			allowedTargets = 2;
-		};
 
 		//Client only
 
@@ -161,6 +158,10 @@ class CfgRemoteExec {
 		};
 
 		class hint {
+			allowedTargets = 0;
+		};
+
+		class lock {
 			allowedTargets = 0;
 		};
 	};
