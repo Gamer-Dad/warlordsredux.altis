@@ -1,8 +1,8 @@
 private _rocket = _this select 0;
 private _target = _this select 1;
-private _speed = 800;
-
+private _speed = 1000;
 private _minDistanceToTarget = 5;
+
 while {!isNull _rocket && {!isNull _target}} do {
     private _currentPos = getPosASLVisual _rocket;
     private _targetPos = aimPos _target;
@@ -16,4 +16,3 @@ while {!isNull _rocket && {!isNull _target}} do {
     if (time>-1) exitWith {};
     sleep 0.01;
 };
-
