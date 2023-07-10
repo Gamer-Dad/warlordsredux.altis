@@ -513,8 +513,8 @@
             <Chinese>没有可用的盟军玩家。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_respawn_vicFT_order">
-            <Original>Order fast travel vehicle</Original>
-            <English>Order fast travel vehicle</English>
+            <Original>Purchase Fast Travel Vehicle</Original>
+            <English>Purchase Fast Travel Vehicle</English>
             <Czech>Objednejte si rychlý cestovní zdravotnický vůz</Czech>
             <French>Commander un camion médical de voyage rapide</French>
             <German>Bestellen Sie einen medizinischen Schnellreisewagen</German>
