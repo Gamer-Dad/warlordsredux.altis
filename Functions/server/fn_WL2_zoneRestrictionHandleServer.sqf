@@ -6,7 +6,6 @@ while {!BIS_WL_missionEnd} do {
 	sleep (if (count _trespassersOld == 0) then {WL_TIMEOUT_STANDARD} else {WL_TIMEOUT_SHORT});
 	
 	_trespassers = [];
-	_forgivenTrespassers = [];
 	
 	{
 		_side = _x;
@@ -32,14 +31,6 @@ while {!BIS_WL_missionEnd} do {
 	} forEach _trespassersGone;
 	
 	{
-		_side = _x;
-		if (missionNamespace getVariable [format ["BIS_WL_recentTargetReset_%1", _side], FALSE]) then {
-			_forgivenTrespassers = _trespassersNew select {side group _x == _side};
-			_trespassersNew = _trespassersNew - _forgivenTrespassers;
-		};
-	} forEach BIS_WL_competingSides;
-	
-	{
 		if (isPlayer _x) then {
 			_timeout = 80;
 			if (vehicle _x == _x) then {_timeout = 60} else {
@@ -59,5 +50,5 @@ while {!BIS_WL_missionEnd} do {
 		};
 	} forEach _trespassersNew;
 	
-	_trespassersOld = _trespassers - _forgivenTrespassers;
+	_trespassersOld = _trespassers;
 };
