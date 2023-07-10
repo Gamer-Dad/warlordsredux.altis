@@ -138,7 +138,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 	} else {
 		_sector setVariable ["BIS_WL_value", round (_size / 10000)];
 	};
-	
+
 	{
 		_handledSide = BIS_WL_competingSides # _forEachIndex;
 		_seizingTime = (WL_SEIZING_TIMEOUT_MIN max (_size / 3000)) min WL_SEIZING_TIMEOUT_MAX;
@@ -147,7 +147,7 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 		_x setTriggerArea _area;
 		_x setTriggerActivation [["WEST SEIZED", "EAST SEIZED", "GUER SEIZED"] # (BIS_WL_sidesArray find _handledSide), "PRESENT", true];
 		_x setTriggerTimeout [_seizingTime * 0.75, _seizingTime, _seizingTime * 1.25, TRUE];
-		_x setTriggerStatements [format ["this && triggerTimeoutCurrent (((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_seizeControlTrgs') # %1) == -1 && if ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_owner' == %2) then {TRUE} else {!((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %3) # 7)) || (thisTrigger getVariable 'BIS_WL_sector') == (missionNamespace getVariable [format ['BIS_WL_currentTarget_%2'], objNull])}", if (_forEachIndex == 0) then {1} else {0}, _handledSide, _forEachIndex], format ["if ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_owner' != %1) then {[thisTrigger getVariable 'BIS_WL_sector', %1] call BIS_fnc_WL2_changeSectorOwnership}", _handledSide], ""];
+		_x setTriggerStatements [format ["this && triggerTimeoutCurrent (((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_seizeControlTrgs') # %1) == -1 && if ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_owner' == %2) then {TRUE} else {((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %3) # 3)) || (thisTrigger getVariable 'BIS_WL_sector') == (missionNamespace getVariable [format ['BIS_WL_currentTarget_%2'], objNull])}", if (_forEachIndex == 0) then {1} else {0}, _handledSide, _forEachIndex], format ["if ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_owner' != %1) then {[thisTrigger getVariable 'BIS_WL_sector', %1] call BIS_fnc_WL2_changeSectorOwnership}", _handledSide], ""];
 		if !(_handledSide in (_sector getVariable "BIS_WL_previousOwners")) then {
 			_x enableSimulation FALSE;
 		};
