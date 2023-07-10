@@ -301,7 +301,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};	
-	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}});
+	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
 	if (side group player == west) then {
 		{
 			_m drawIcon [
