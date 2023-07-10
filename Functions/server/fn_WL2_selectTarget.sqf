@@ -16,12 +16,7 @@ if (!isNull _sector) then {
 		};
 	} else {
 		private _owner = _sector getVariable "BIS_WL_owner";
-		_spawnedGarrisons = _sector getVariable ["BIS_WL_spawnedGarrisons", []];
-		if !(_owner in _spawnedGarrisons) then {
-			_spawnedGarrisons pushBack _owner;
-			_sector setVariable ["BIS_WL_spawnedGarrisons", _spawnedGarrisons];
-			[_sector, _owner] spawn BIS_fnc_WL2_populateSector;
-		};
+		[_sector, _owner] spawn BIS_fnc_WL2_populateSector;
 	};
 } else {
 	_prevSector = missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side];
