@@ -70,7 +70,7 @@ _i = 0;
 	_area = _sector getVariable "objectArea";
 	
 	if !(isServer) then {
-		if (_sector in WL_BASES) then {
+		if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == (side player))) then {
 			_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
 		} else {
 			_area params ["_a", "_b", "_angle", "_isRectangle"];
