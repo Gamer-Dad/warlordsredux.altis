@@ -2,7 +2,7 @@
 
 params ["_sector"];
 
-if (BIS_WL_playerSide in (_sector getVariable ["BIS_WL_revealedBy", []])) then {
+if ((side (group player)) in (_sector getVariable ["BIS_WL_revealedBy", []])) then {
 	private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
 	[_sector, _sector getVariable "BIS_WL_owner", _specialStateArray] call BIS_fnc_WL2_sectorMarkerUpdate;
 };
