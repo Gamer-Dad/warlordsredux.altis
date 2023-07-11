@@ -24,64 +24,25 @@ while {alive _asset} do {
 						if (_asset isKindOf "Air") then {  [player] spawn GOM_fnc_aircraftLoadout; }; 
 
 						_asset selectWeapon _curWeapon;
-
-						if (_asset isKindOf "Helicopter") then {  
-							_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Helicopter]; 
-						} else { 
-							if (_asset isKindOf "Plane") then {  
-								_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Jets]; 
-							} else { 
-								if (_asset isKindOf "B_MBT_01_arty_F") then {  
-									_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-								} else { 
-									if (_asset isKindOf "O_MBT_02_arty_F") then {  
-										_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-									} else { 
-										if (_asset isKindOf "B_Mortar_01_F") then {  
-											_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-										} else { 
-											if (_asset isKindOf "O_Mortar_01_F") then {  
-												_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-											} else { 
-												if (_asset isKindOf "B_AAA_System_01_F ") then {  
-													_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
-												} else { 
-													if (_asset isKindOf "B_SAM_System_01_F") then {  
-														_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
-													} else { 
-														if (_asset isKindOf "B_SAM_System_03_F") then {  
-															_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-														} else { 
-															if (_asset isKindOf "O_SAM_System_04_F") then {  
-																_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-															} else { 
-																if (_asset isKindOf "B_SAM_System_02_F") then {  
-																	_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
-																} else { 
-																	if (_asset isKindOf "B_Ship_MRLS_01_F") then {  
-																		_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
-																	} else { 
-																		if (_asset isKindOf "B_MBT_01_mlrs_F") then {  
-																			_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-																		} else { 
-																			if (_asset isKindOf "I_Truck_02_MRL_F") then {  
-																				_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-																			} else { 
-																				_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM]; 
-																			};
-																		};
-																	};
-																};
-															};
-														};
-													};	
-												};
-											};
-										};
-									};
-								};
-							};  
-						}; 
+						
+						_rearmTime = switch true do {
+							case (_asset isKindOf "Helicopter"): { WL_MAINTENANCE_COOLDOWN_REARM_Helicopter };
+							case (_asset isKindOf "Plane"): { WL_MAINTENANCE_COOLDOWN_REARM_Jets };
+							case (_asset isKindOf "B_MBT_01_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+							case (_asset isKindOf "O_MBT_02_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+							case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
+							case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
+							case (_asset isKindOf "B_AAA_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Preatorian };
+							case (_asset isKindOf "B_SAM_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Spartan };
+							case (_asset isKindOf "B_SAM_System_03_F"): { WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea };
+							case (_asset isKindOf "O_SAM_System_04_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Centurion };
+							case (_asset isKindOf "B_Ship_MRLS_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
+							case (_asset isKindOf "B_MBT_01_mlrs_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+							case (_asset isKindOf "I_Truck_02_MRL_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+							default { WL_MAINTENANCE_COOLDOWN_REARM };
+						};
+						
+						_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
 						
 						playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 						[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;

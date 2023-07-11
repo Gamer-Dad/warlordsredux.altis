@@ -46,6 +46,7 @@ class FSM
                         init = /*%FSM<STATEINIT""">*/"private [""_pState"", ""_dState"", ""_corpse"", ""_actionID""];" \n
                          "" \n
                          "_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];" \n
+                         "player setUserActionText [_actionId, ""<t color='#FF0000'>Settings</t>"", ""<img size='3' image='\a3\3den\Data\Displays\Display3DEN\PanelRight\submode_logic_module_ca'/>""];" \n
                          "_pState = vehicle player;" \n
                          "_dState = UAVControl (getConnectedUAV player) select 1;"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
