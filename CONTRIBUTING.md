@@ -1,4 +1,4 @@
-Guidelines for Contributing
+# Guidelines for Contributing
 
 Thank you for your interest in contributing to our project! We welcome contributions from the community as they help improve the quality and functionality of our work. To ensure a smooth and efficient collaboration process, we have established some guidelines that we kindly request you to follow. 
 
