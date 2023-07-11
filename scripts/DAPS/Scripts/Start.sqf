@@ -10,8 +10,6 @@ dapsMedium = [];
 dapsHeavy = [];
 dapsDazzler = [];
 
-dapsHitLimit = 4500; // Limit APS ability to intercept by damage
-
 private _module = objNull;
 dapsScriptWait = execVM "scripts\DAPS\Scripts\DefineVehicles.sqf";
 waitUntil { scriptDone dapsScriptWait };

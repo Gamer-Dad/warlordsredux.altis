@@ -5,7 +5,6 @@ private _d = _this select 2;
 _i setOwner 2;
 _d = _v distance _i;
 if (_d < 30) exitWith {};
-if ((getNumber(configFile >> "CfgAmmo" >> typeOf _i >> "hit")) > dapsHitLimit) exitWith {};
 if ((_v distance _i) > _d) exitWith {};
 
 private _ex = true;
