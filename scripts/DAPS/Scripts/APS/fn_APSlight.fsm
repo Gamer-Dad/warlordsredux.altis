@@ -100,7 +100,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Trigger";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"(count (nearestObjects [_v, [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_TBG32V_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 125])) > 0 && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_v nearObjects [""MissileCore"", 125]) findIf { (typeOf _x) in [""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_TBG32V_F"", ""R_PG32V_F"", ""R_PG7_F""] } > -1 || count (_v nearObjects [""M_NLAW_AT_F"", 125]) > 0) && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
