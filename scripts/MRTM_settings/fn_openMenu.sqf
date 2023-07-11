@@ -66,3 +66,9 @@ if (MRTM_disableHint) then {
 } else {
 	((findDisplay 8000) displayCtrl 2805) cbSetChecked false;
 };
+
+if (MRTM_smallAnnouncerText) then {
+	((findDisplay 8000) displayCtrl 2806) cbSetChecked true;
+} else {
+	((findDisplay 8000) displayCtrl 2806) cbSetChecked false;
+};

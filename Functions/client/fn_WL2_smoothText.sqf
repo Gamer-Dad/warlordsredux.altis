@@ -61,10 +61,13 @@ if (count BIS_onScreenMessagesVisible > 1) then {
 	} forEach (BIS_onScreenMessagesVisible - [_messageID]);
 };
 
-_box ctrlSetPosition [_xDef, _yDef + (_hDef / 4), _wDef, _hDef / 25];
+_announcerPositionRatio = if (MRTM_smallAnnouncerText) then { 8 } else { 4 };
+_announcerSizeRatio = if (MRTM_smallAnnouncerText) then { 50 } else { 25 };
+
+_box ctrlSetPosition [_xDef, _yDef + (_hDef / _announcerPositionRatio), _wDef, _hDef / _announcerSizeRatio];
 _box ctrlSetBackgroundColor [0, 0, 0, 0];
 _box ctrlSetTextColor _color;
-_box ctrlSetFontHeight (_hDef / 25);
+_box ctrlSetFontHeight (_hDef / _announcerSizeRatio);
 _box ctrlCommit 0;
 
 _textArr = toArray _text;

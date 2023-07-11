@@ -785,8 +785,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton6: RscCheckboxMRTM
 		{
 			idc = 2806;
-			action = "";
-			onLoad =  "(_this # 0) ctrlEnable false;";
+			action = "if (MRTM_smallAnnouncerText) then {MRTM_smallAnnouncerText = false} else {MRTM_smallAnnouncerText = true}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.665 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -900,7 +899,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText6: RscStructuredTextMRTM
 		{
 			idc = 1122;
-			text = "";
+			text = "Small announcer font";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.665 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
