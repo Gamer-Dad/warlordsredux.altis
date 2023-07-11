@@ -21,64 +21,25 @@ if (isPlayer _owner) then {
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-
-		if (_asset isKindOf "Helicopter") then {  
-			_asset setVariable ["BIS_WL_nextRearm", serverTime + 30]; 
-		} else { 
-			if (_asset isKindOf "Plane") then {  
-				_asset setVariable ["BIS_WL_nextRearm", serverTime + 30]; 
-			} else { 
-				if (_asset isKindOf "B_MBT_01_arty_F") then {  
-					_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-				} else { 
-					if (_asset isKindOf "O_MBT_02_arty_F") then {  
-						_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-					} else { 
-						if (_asset isKindOf "B_Mortar_01_F") then {  
-							_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-						} else { 
-							if (_asset isKindOf "O_Mortar_01_F") then {  
-								_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Mortar];
-							} else { 
-								if (_asset isKindOf "B_AAA_System_01_F ") then {  
-									_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Preatorian];
-								} else { 
-									if (_asset isKindOf "B_SAM_System_01_F") then {  
-										_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Spartan];
-									} else { 
-										if (_asset isKindOf "B_SAM_System_03_F") then {  
-											_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-										} else { 
-											if (_asset isKindOf "O_SAM_System_04_F") then {  
-												_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea];
-											} else { 
-												if (_asset isKindOf "B_SAM_System_02_F") then {  
-													_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Centurion];
-												} else { 
-													if (_asset isKindOf "B_Ship_MRLS_01_F") then {  
-														_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_VLS];
-													} else { 
-														if (_asset isKindOf "B_MBT_01_mlrs_F") then {  
-															_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-														} else { 
-															if (_asset isKindOf "I_Truck_02_MRL_F") then {  
-																_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM_Artillery];
-															} else { 
-																_asset setVariable ["BIS_WL_nextRearm", serverTime + WL_MAINTENANCE_COOLDOWN_REARM]; 
-															};
-														};
-													};
-												};
-											};
-										};
-									};	
-								};
-							};
-						};
-					};
-				};
-			};  
+		
+		_rearmTime = switch true do {
+			case (_asset isKindOf "Helicopter"): { 30 };
+			case (_asset isKindOf "Plane"): { 30 };
+			case (_asset isKindOf "B_MBT_01_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+			case (_asset isKindOf "O_MBT_02_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+			case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
+			case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
+			case (_asset isKindOf "B_AAA_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Preatorian };
+			case (_asset isKindOf "B_SAM_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Spartan };
+			case (_asset isKindOf "B_SAM_System_03_F"): { WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea };
+			case (_asset isKindOf "O_SAM_System_04_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Centurion };
+			case (_asset isKindOf "B_Ship_MRLS_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
+			case (_asset isKindOf "B_MBT_01_mlrs_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+			case (_asset isKindOf "I_Truck_02_MRL_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+			default { WL_MAINTENANCE_COOLDOWN_REARM };
 		};
+		
+		_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
 		
 		private _defaultMags = [];
 		{
@@ -227,5 +188,5 @@ if (isPlayer _owner) then {
 		false
 	];
 
-	_asset setUserActionText [_removeActionID, format ["<t color = '#ff4b4b'>%1</t>", localize "STR_xbox_hint_remove"]];
+	_asset setUserActionText [_removeActionID, format ["<t color = '#ff4b4b'>%1</t>", localize "STR_xbox_hint_remove"], "<img size='2' color='#ff4b4b' image='\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca'/>"];
 };
