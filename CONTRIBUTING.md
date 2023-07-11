@@ -20,6 +20,4 @@ Thank you for your interest in contributing to our project! We welcome contribut
 
 Please note that while we strive to review contributions promptly, it may take some time depending on the volume of submissions. We appreciate your patience and understanding throughout the process.
 
-By contributing to our project, you agree to adhere to our code of conduct, fostering a positive and inclusive environment for collaboration.
-
 Thank you for your dedication and support in improving our project. We look forward to your valuable contributions!
