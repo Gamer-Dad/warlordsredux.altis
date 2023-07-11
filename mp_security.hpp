@@ -205,14 +205,14 @@ class CfgDisabledCommands {
 		class SYNTAX1 {
 			targets[] = {1,0,1};
 			args[] = {{}, {"STRING"}};
-		};		
+		};
 	};
 
 	class PUBLICVARIABLECLIENT {
 		class SYNTAX1 {
 			targets[] = {1,0,1};
 			args[] = {{"SCALAR"}, {"STRING"}};
-		};	
+		};
 	};
 
 	//Velocity
