@@ -1,6 +1,6 @@
 params ["_asset"];
 
-_asset addAction [
+private _actionId = _asset addAction [
 	"",
 	{
 		_this params ["_asset", "_caller", "_actionID"];
