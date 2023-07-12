@@ -74,6 +74,7 @@ MRTM_playKillSound = true;
 MRTM_muteVoiceInformer = false;
 MRTM_EnableRWR = true;
 MRTM_disableHint = true;
+MRTM_smallAnnouncerText = false;
 has_recieved_reward = false;
 reward_active = false;
 
