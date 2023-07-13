@@ -299,9 +299,9 @@ if !(isNull _sender) then {
 				};
 
 				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F") then {
-					[_asset, 2] remoteExec ["lock", 0];
+					[_asset, 2] remoteExec ["lock", (owner _asset)];
 				} else {
-					[_asset, 0] remoteExec ["lock", 0];
+					[_asset, 0] remoteExec ["lock", (owner _asset)];
 				};
 
 				private _uid = getPlayerUID _sender;
@@ -311,7 +311,7 @@ if !(isNull _sender) then {
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				[_asset, _sender, _isStatic] spawn _setOwner;
+				[_asset, _sender, _isStatic] call _setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				if (typeOf _asset == "I_Truck_02_MRL_F") then {
