@@ -75,7 +75,7 @@ _i = 0;
 		} else {
 			_area params ["_a", "_b", "_angle", "_isRectangle"];
 			_size = _a * _b * (if (_isRectangle) then {4} else {pi});
-			_sector setVariable ["BIS_WL_value", round (_size / 10000)];
+			_sector setVariable ["BIS_WL_value", round (_size / 13000)];
 		};
 	};
 	
