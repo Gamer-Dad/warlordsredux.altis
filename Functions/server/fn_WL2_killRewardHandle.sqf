@@ -25,6 +25,7 @@ if !(isNull _instigator) then {
 			};
 		};
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
+			private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"];
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {40});
@@ -32,7 +33,10 @@ if !(isNull _instigator) then {
 				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
 			if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
-				_killReward = (round (_killReward * 2));
+				_killReward = (round (_killReward * 2)); //1st person bonus
+			};
+			if ((_targets findIf {_responsibleLeader inArea (_x getVariable "objectAreaComplete")}) != -1) then {
+				_killReward = _killReward * 1.3; //Bonus for defending sector or attacking sector.
 			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
