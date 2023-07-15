@@ -243,7 +243,7 @@ switch (_displayClass) do {
 			_purchase_transfer_amount,
 			_purchase_transfer_cp_title,
 			_purchase_transfer_ok,
-			_purchase_transfer_cancel
+			_purchase_transfer_cancel,
 			_purchase_bounty_background,
 			_purchase_bounty_units,
 			_purchase_bounty_amount,
