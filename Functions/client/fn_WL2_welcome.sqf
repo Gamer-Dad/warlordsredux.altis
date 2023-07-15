@@ -176,6 +176,7 @@ while {dialog} do {
 			"-Teleporting issue when joining late game is should be fixed.", lineBreak,
 			"-Alot less network traffick.", lineBreak,
 			"-Code security improved.", lineBreak,
+			"-Added an option to set a bounty on an enemy player.", lineBreak,
 			"-Zone restriction not killing a person after bar is filled fixed.", lineBreak,
 			"-GPS icons are better. you see alot more now then just infantry.", lineBreak,
 			"-Possible UAV issue fixed. (Needs alot of testing)", lineBreak,

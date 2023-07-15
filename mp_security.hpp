@@ -42,10 +42,6 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
-		class BIS_fnc_WL2_displayCPtransfer {
-			allowedTargets = 1;
-		};
-
 		class BIS_fnc_WL2_killRewardClient {
 			allowedTargets = 1;
 		};
@@ -162,6 +158,10 @@ class CfgRemoteExec {
 		};
 
 		class lock {
+			allowedTargets = 0;
+		};
+
+		class commandChat {
 			allowedTargets = 0;
 		};
 	};

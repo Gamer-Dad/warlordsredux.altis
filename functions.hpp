@@ -56,7 +56,6 @@ class CfgFunctions {
 			class WL2_orderFTPodFT {};
 			class WL2_orderFTPod {};
 			class WL2_welcome {};
-			class WL2_displayCPtransfer {};
 			class WL2_betty {};
 			class WL2_rita {};
 			class WL2_mapIcons {};
@@ -67,6 +66,7 @@ class CfgFunctions {
 			class WL2_underWaterCheck {};
 			class WL2_mrtmAction {};
 			class WL2_targetResetHandleVote {};
+			class WL2_orderBounty {};
     	};
 		class Server 
 		{
