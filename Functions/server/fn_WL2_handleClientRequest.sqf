@@ -340,7 +340,7 @@ if !(isNull _sender) then {
 			};
 			_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 		};
-		case "requestBounty": {
+		case "orderBounty": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
 				_targetUID = getPlayerUID _target;

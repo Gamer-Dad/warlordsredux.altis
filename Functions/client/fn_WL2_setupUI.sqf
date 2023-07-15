@@ -556,7 +556,7 @@ switch (_displayClass) do {
 				if (count _targetArr > 0) then {
 					playSound "AddItemOK";
 					_target = _targetArr # 0;
-					[player, "orderBounty", _amount, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+					[player, "orderBounty", _amount, [], _target] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};
