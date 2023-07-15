@@ -346,8 +346,7 @@ if !(isNull _sender) then {
 				_targetUID = getPlayerUID _target;
 				_uid = getPlayerUID _sender;
 				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-				_target setVariable [format ["BIS_WL_Bounty_%1", _targetUID], _cost, true];
-				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", _targetUID], _cost];
+				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", _targetUID], ((serverNamespace getVariable [format ["BIS_WL_Bounty_%1", _targetUID], 0]) + _cost)];
 				[format ["%1 set a bounty off %3CP on %2's head.", name _sender, name _target, _cost]] remoteExec ["systemChat", -2];
 			};
 		};
