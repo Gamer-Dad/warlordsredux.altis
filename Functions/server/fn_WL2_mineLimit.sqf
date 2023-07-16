@@ -9,8 +9,8 @@ addMissionEventHandler ["EntityCreated", {
   switch (typeOf _entity) do
   {
     case "APERSTripMine_Wire_Mag" : { _entity call HandleApersTripWireMine; };
-	  case "APERSTripMine_Wire_Ammo" : { _entity call HandleApersTripWire; };
-	  case "IEDLandSmall_Remote_Mag": { _entity call HandleSmallIED; };
+    case "APERSTripMine_Wire_Ammo" : { _entity call HandleApersTripWire; };
+    case "IEDLandSmall_Remote_Mag": { _entity call HandleSmallIED; };
     case "IEDUrbanSmall_Remote_Mag": { _entity call HandleUrbanSmallIED; };
     case "IEDLandBig_Remote_Mag": { _entity call HandleLargeIED; };
     case "IEDUrbanBig_Remote_Mag": { _entity call HandleUrbanLargeIED; };
