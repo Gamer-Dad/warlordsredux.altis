@@ -176,11 +176,8 @@ if !(isNull _sender) then {
 								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-
-								_group = createGroup (side _sender);
-								private _info = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, _group] call BIS_fnc_spawnVehicle;
-								_asset = _info select 0;
-								_group deleteGroupWhenEmpty true;
+								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
+								_asset setDir 0;
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -200,12 +197,16 @@ if !(isNull _sender) then {
 									};
 								};
 
-								_group = createGroup (side _sender);
-								private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
-								_asset = _info select 0;
-								_group deleteGroupWhenEmpty true;
+								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
+								_asset setDir _dir;
 							};
 
+							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+							createVehicleCrew _asset;
+							_side = side _sender;
+							_group = createGroup _side;
+							(crew _asset) joinSilent _group;
+							(group _asset) deleteGroupWhenEmpty true;
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
 						} else {
@@ -233,11 +234,12 @@ if !(isNull _sender) then {
 								_asset setDir _dir;
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
-									_group = createGroup (side _sender);
-									private _info = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, _group] call BIS_fnc_spawnVehicle;
-									_asset = _info select 0;
-									_group deleteGroupWhenEmpty true;
+									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+									_asset setDir 0;
 									
+									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+									createVehicleCrew _asset;
+									(group _asset) deleteGroupWhenEmpty true;
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
 								} else {
@@ -275,14 +277,19 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							_group = createGroup (side _sender);
-							private _info = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, _group] call BIS_fnc_spawnVehicle;
-							_asset = _info select 0;
-							_group deleteGroupWhenEmpty true;
-							
-							_asset addItemCargoGlobal ["B_UavTerminal", 1];
-							_asset addItemCargoGlobal ["O_UavTerminal", 1];
+							_asset = createVehicle [_class, [(_targetPos # 0), (_targetPos # 1), 0], [], 0, "CAN_COLLIDE"];
+							_asset setDir direction _sender;
 							_asset enableWeaponDisassembly false;
+							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
+								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+								createVehicleCrew _asset;
+								_side = side _sender;
+								_group = createGroup _side;
+								(crew _asset) joinSilent _group;
+								(group _asset) deleteGroupWhenEmpty true;
+								_asset addItemCargoGlobal ["B_UavTerminal", 1];
+								_asset addItemCargoGlobal ["O_UavTerminal", 1];
+							};
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
@@ -304,7 +311,7 @@ if !(isNull _sender) then {
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				_asset setOwner (owner _sender);
+				[_asset, _sender, _isStatic] call _setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				switch (typeOf _asset) do {
@@ -345,16 +352,6 @@ if !(isNull _sender) then {
 			};
 			_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 		};
-		case "orderBounty": {
-			_hasFunds = (_playerFunds >= _cost);
-			if (_hasFunds) then {
-				_targetUID = getPlayerUID _target;
-				_uid = getPlayerUID _sender;
-				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", _targetUID], ((serverNamespace getVariable [format ["BIS_WL_Bounty_%1", _targetUID], 0]) + _cost)];
-				[format ["%1 set a bounty off %3CP on %2's head.", name _sender, name _target, _cost]] remoteExec ["systemChat", -2];
-			};
-		};
 		case "fundsTransferBill": {
 			private _uid = getPlayerUID _sender;
 			[_uid, -2000] call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -376,7 +373,7 @@ if !(isNull _sender) then {
 				[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
-				[[side _recipient, "Base"], format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost]] remoteExec ["commandChat", -2];
+				[_sender, _recipient, _cost] remoteExecCall ["BIS_fnc_WL2_displayCPtransfer", -2];
 			};
 		};
 	};
