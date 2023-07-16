@@ -240,7 +240,6 @@ HandleUrbanLargeIED = {
 //Large IED (Dug-in)
 HandleLargeIED = {
   params ["_entity"];
-  if (typeOf _entity != "IEDLandBig_Remote_Mag") exitwith {};
   if (count MRTM_spawnedLIEDDI >= 5) then {
     private _mines = MRTM_spawnedLIEDDI;
     // to get rid of destroyed mines without messing up the order
@@ -262,7 +261,6 @@ HandleLargeIED = {
 //Small IED (Urban)
 HandleUrbanSmallIED = {
   params ["_entity"];
-  if (typeOf _entity != "IEDUrbanSmall_Remote_Mag") exitwith {};
   if (count MRTM_spawnedSIEDU >= 5) then {
     private _mines = MRTM_spawnedSIEDU;
     // to get rid of destroyed mines without messing up the order
