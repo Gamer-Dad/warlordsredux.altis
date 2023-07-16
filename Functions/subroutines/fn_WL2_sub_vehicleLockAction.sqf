@@ -16,7 +16,7 @@ _actionID = _asset addAction [
 	-100,
 	if ((locked _this) == 2) then {true} else {false},
 	false,
-	"user1",
+	"",
 	"alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])}",
 	50,
 	true
