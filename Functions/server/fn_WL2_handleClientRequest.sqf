@@ -178,7 +178,7 @@ if !(isNull _sender) then {
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 
 								_group = createGroup (side _sender);
-								private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
+								private _info = [_pos, (direction _sender), _class, _group] call BIS_fnc_spawnVehicle;
 								_asset = _info select 0;
 								_group deleteGroupWhenEmpty true;
 							} else {
@@ -234,7 +234,7 @@ if !(isNull _sender) then {
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									_group = createGroup (side _sender);
-									private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
+									private _info = [_pos, (direction _sender), _class, _group] call BIS_fnc_spawnVehicle;
 									_asset = _info select 0;
 									_group deleteGroupWhenEmpty true;
 									
@@ -276,7 +276,7 @@ if !(isNull _sender) then {
 					} else {
 						if (_isStatic) then {
 							_group = createGroup (side _sender);
-							private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
+							private _info = [_pos, (direction _sender), _class, _group] call BIS_fnc_spawnVehicle;
 							_asset = _info select 0;
 							_group deleteGroupWhenEmpty true;
 							

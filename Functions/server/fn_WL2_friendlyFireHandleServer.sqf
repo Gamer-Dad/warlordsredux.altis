@@ -14,7 +14,7 @@ if (_unit isKindOf "Man") then {
 				
 				if ((count (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps")) >= WL_FRIENDLY_FIRE_THRESHOLD) then {
 					_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
-					missionNamespace setVariable [_varName, serverTime + 1200];
+					missionNamespace setVariable [_varName, serverTime + 1800];
 					(owner _responsibleLeader) publicVariableClient _varName;
 				};
 			};
