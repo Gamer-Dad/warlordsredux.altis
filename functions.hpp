@@ -133,6 +133,25 @@ class CfgFunctions {
 			class WL2_sub_rearmAction {};
 			class WL2_sub_vehicleKickAction {};
     	};
+		class MineCleanup 
+		{
+			file = "Functions\server\mineCleanup";
+			class WL2_handleApersMine {};
+			class WL2_handleApersBoundingMineMag {};
+			class WL2_HandleApersDispenserAmmo {};
+			class WL2_HandleATMineAmmo {};
+			class WL2_handleM6SlamMineMag {};
+			class WL2_handleM6SlamMineAmmo {};
+			class WL2_handleClaymoreChargeAmmo {};
+			class WL2_HandleExplosiveSatchel {};
+			class WL2_handleExplosiveCharge {};
+			class WL2_handleLargeIEDUrban {};
+			class WL2_handleLargeIED {};
+			class WL2_handleSmallIEDUrban {};
+			class WL2_handleSmallIED {};
+			class WL2_handleApersTripWireAmmo {};
+			class WL2_handleApersTripWireMag {};
+		}
 	};
 
 	/*******************************START OF CUSTOM CONTENT HERE****************************/
