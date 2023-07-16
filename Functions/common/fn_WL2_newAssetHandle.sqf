@@ -25,7 +25,8 @@ if (isPlayer _owner) then {
 		private _assetFF = _asset addEventHandler ["HandleDamage", {
 			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 			_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", grpNull];
-			if (side group _instigator == side _ownerGrp) then {0};
+			_base = (([BIS_WL_base1, BIS_WL_base2] select {(_x getVariable "BIS_WL_owner") == (side group _unit)}) # 0);
+			if (side group _instigator == side _ownerGrp && {(_unit inArea (_base getVariable "objectAreaComplete")) && {((_base getVariable ["BIS_WL_baseUnderAttack", false]) == false)}}) then {0};
 		}];
 		
 		[_asset, _assetFF] spawn {
