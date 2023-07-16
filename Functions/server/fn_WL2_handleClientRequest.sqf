@@ -176,9 +176,11 @@ if !(isNull _sender) then {
 								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-								private _info = [_posFinal, 0, _class, (side (group _sender))] call BIS_fnc_spawnVehicle;
+
+								_group = createGroup (side _sender);
+								private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
 								_asset = _info select 0;
-								(_info select 2) deleteGroupWhenEmpty true;
+								_group deleteGroupWhenEmpty true;
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -198,9 +200,10 @@ if !(isNull _sender) then {
 									};
 								};
 
-								private _info = [_spawnPos, _dir, _class, (side (group _sender))] call BIS_fnc_spawnVehicle;
+								_group = createGroup (side _sender);
+								private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
 								_asset = _info select 0;
-								(_info select 2) deleteGroupWhenEmpty true;
+								_group deleteGroupWhenEmpty true;
 							};
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
@@ -230,9 +233,10 @@ if !(isNull _sender) then {
 								_asset setDir _dir;
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
-									private _info = [_pos, 0, _class, (side (group _sender))] call BIS_fnc_spawnVehicle;
+									_group = createGroup (side _sender);
+									private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
 									_asset = _info select 0;
-									(_info select 2) deleteGroupWhenEmpty true;
+									_group deleteGroupWhenEmpty true;
 									
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -271,9 +275,10 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							private _info = [[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, (side (group _sender))] call BIS_fnc_spawnVehicle;
+							_group = createGroup (side _sender);
+							private _info = [_spawnPos, _dir, _class, _group] call BIS_fnc_spawnVehicle;
 							_asset = _info select 0;
-							(_info select 2) deleteGroupWhenEmpty true;
+							_group deleteGroupWhenEmpty true;
 							
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -299,7 +304,7 @@ if !(isNull _sender) then {
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				[_asset, _sender, _isStatic] call _setOwner;
+				_asset setOwner (owner _sender);
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				switch (typeOf _asset) do {
