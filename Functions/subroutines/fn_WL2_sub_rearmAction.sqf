@@ -55,7 +55,7 @@ while {alive _asset} do {
 				true,
 				false,
 				"",
-				"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && vehicle _this == _this",
+				"alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {vehicle _this == _this}}",
 				WL_MAINTENANCE_RADIUS,
 				false
 			];

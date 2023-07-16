@@ -3,7 +3,7 @@
 params ["_unit", "_killer", "_instigator"];
 
 if (_unit isKindOf "Man") then {
-	if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable "BIS_WL_ownerAsset"))}) then [{(leader (_killer getVariable "BIS_WL_ownerAsset"))}, {((UAVControl vehicle _killer) # 0)}])};
+	if (isNull _instigator) then {_instigator = (if (!isNil {(leader (_killer getVariable ["BIS_WL_ownerAsset", grpNull]))}) then [{(leader (_killer getVariable ["BIS_WL_ownerAsset", grpNull]))}, {((UAVControl vehicle _killer) # 0)}])};
 	if (isNull _instigator) then {_instigator = (vehicle _killer)};
 	if (!isNull _instigator) then {
 		_responsibleLeader = leader _instigator;

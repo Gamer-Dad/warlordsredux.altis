@@ -8,7 +8,7 @@ if (isNull _owner && isServer) then {
 };
 
 if (isPlayer _owner) then {
-	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), true];
+	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), [2, clientOwner]];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
 	_asset spawn DAPS_fnc_RegisterVehicle;
 
@@ -24,7 +24,7 @@ if (isPlayer _owner) then {
 
 		private _assetFF = _asset addEventHandler ["HandleDamage", {
 			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
-			_ownerGrp = _unit getVariable "BIS_WL_ownerAsset";
+			_ownerGrp = _unit getVariable ["BIS_WL_ownerAsset", grpNull];
 			if (side group _instigator == side _ownerGrp) then {0};
 		}];
 		
@@ -108,7 +108,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && vehicle _this == _this",
+							"alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {vehicle _this == _this}}",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
@@ -195,7 +195,7 @@ if (isPlayer _owner) then {
 		false,
 		true,
 		"",
-		"alive _target && vehicle _this != _target && (group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])",
+		"alive _target && {vehicle _this != _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])}}",
 		30,
 		false
 	];
