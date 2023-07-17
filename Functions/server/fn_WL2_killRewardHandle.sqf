@@ -13,8 +13,8 @@ if !(isNull _instigator) then {
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
 		} else {
-			if !(isNil {(side (_unit getVariable ["BIS_WL_ownerAsset", grpNull]))}) then {
-				(side (_unit getVariable ["BIS_WL_ownerAsset", grpNull]))
+			if !(isNil {(side (_unit getVariable "BIS_WL_ownerAsset"))}) then {
+				(side (_unit getVariable "BIS_WL_ownerAsset"))
 			} else {
 				(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
 					case 0: {east};
