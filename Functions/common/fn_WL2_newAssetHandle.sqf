@@ -134,19 +134,16 @@ if (isPlayer _owner) then {
 				_asset setVariable ["radarOperation", false];
 				_asset call BIS_fnc_WL2_sub_radarOperate;
 
-				_lookAtPositions = [0, 90, 180, 270] apply { _asset getRelPos [100, _x] };
-				_radarIter = 0;
-
 				while {alive _asset} do {
 					if (_asset getVariable "radarOperation") then {
-						_asset setVehicleRadar 1;
-						_asset lookAt (_lookAtPositions # _radarIter);
-						_radarIter = (_radarIter + 1) % 4;
+						if (!isVehicleRadarOn _asset) then {
+							_asset setVehicleRadar 1;
+						}
 					} else {
 						_asset setVehicleRadar 0;
 					};
 					sleep WL_TIMEOUT_LONG;
-				};				
+				};
 			};
 		};
 
