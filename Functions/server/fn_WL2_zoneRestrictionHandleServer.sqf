@@ -32,10 +32,7 @@ while {!BIS_WL_missionEnd} do {
 	
 	{
 		if (isPlayer _x) then {
-			_timeout = 80;
-			if (vehicle _x == _x) then {_timeout = 60} else {
-				if ((vehicle _x) isKindOf "Air") then {_timeout = 30};
-			};
+			_timeout = WL_DEATH_ZONE_TIMER;
 			_timeout = (serverTime + _timeout);
 			_x setVariable ["BIS_WL_zoneRestrictionKillTime", _timeout, [2, (owner _x)]];
 			[] remoteExec ["BIS_fnc_WL2_zoneRestrictionHandleClient", _x];
