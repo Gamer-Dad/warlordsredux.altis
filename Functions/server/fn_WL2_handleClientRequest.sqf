@@ -25,6 +25,34 @@ _setOwner = {
 	};
 };
 
+_createDroneCrew = {
+	params ["_asset", "_sender"];
+	private _vehCfg = configFile >> "CfgVehicles" >> typeOf _asset;
+	private _crewCount = { round getNumber (_x >> "dontCreateAI") < 1 && (
+						(_x == _vehCfg && {round getNumber (_x >> "hasDriver") > 0}) ||
+                    	(_x != _vehCfg && {round getNumber (_x >> "hasGunner") > 0})
+					)} count ([_asset, configNull] call BIS_fnc_getTurrets);
+
+	private _crewNotReady = { alive _asset && {alive _x && !isPlayer _x} count crew _asset < _crewCount };
+
+	_i = 0;
+	while { _i < 2 } do {
+		createVehicleCrew _asset;
+		if (call _crewNotReady) then {
+			_i = 0;
+		} else {
+			_i = _i + 1;
+		};
+		sleep WL_TIMEOUT_STANDARD;
+	};
+
+	if (!alive _asset) exitWith { grpNull };	// asset died on creation
+
+	_grp = createGroup side _sender;
+	(crew _asset) joinSilent _grp;
+	(group _asset) deleteGroupWhenEmpty true;
+};
+
 if !(isNull _sender) then {
 	switch (_action) do {
 		case "kill" : {
@@ -202,11 +230,8 @@ if !(isNull _sender) then {
 							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							createVehicleCrew _asset;
-							_side = side _sender;
-							_group = createGroup _side;
-							(crew _asset) joinSilent _group;
-							(group _asset) deleteGroupWhenEmpty true;
+							[_asset, _sender] call _createDroneCrew;
+
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
 						} else {
@@ -238,8 +263,7 @@ if !(isNull _sender) then {
 									_asset setDir 0;
 									
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									createVehicleCrew _asset;
-									(group _asset) deleteGroupWhenEmpty true;
+									[_asset, _sender] call _createDroneCrew;
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
 								} else {
@@ -282,11 +306,8 @@ if !(isNull _sender) then {
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								createVehicleCrew _asset;
-								_side = side _sender;
-								_group = createGroup _side;
-								(crew _asset) joinSilent _group;
-								(group _asset) deleteGroupWhenEmpty true;
+								[_asset, _sender] call _createDroneCrew;
+
 								_asset addItemCargoGlobal ["B_UavTerminal", 1];
 								_asset addItemCargoGlobal ["O_UavTerminal", 1];
 							};
@@ -297,8 +318,10 @@ if !(isNull _sender) then {
 						};
 					};
 				};
+				[_asset, _sender] call _createDroneCrew;
 
-				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F") then {
+
+				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || unitIsUAV _asset) then {
 					[_asset, 2] remoteExec ["lock", (owner _asset)];
 				} else {
 					[_asset, 0] remoteExec ["lock", (owner _asset)];
