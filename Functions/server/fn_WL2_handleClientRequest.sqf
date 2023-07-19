@@ -4,27 +4,6 @@ params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic"];
 
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 
-_setOwner = {
-	params ["_asset", "_sender", ["_isStatic", FALSE]];
-	if (_asset isKindOf "Man") exitWith {};
-	if (isMultiplayer) then {
-		if !(_isStatic) then {
-			waitUntil {sleep WL_TIMEOUT_SHORT; {uniform _x == "U_VirtualMan_F"} count crew _asset == 0};
-		};
-		if (count crew _asset > 0 && _isStatic) then {
-			_assetGrp = group effectiveCommander _asset;
-			while {!(_assetGrp setGroupOwner (owner _sender)) && {alive _asset}} do {
-				_assetGrp setGroupOwner (owner _sender);
-				sleep WL_TIMEOUT_SHORT;
-			};
-		};
-		while {!(_asset setOwner (owner _sender)) && (owner _asset) != (owner _sender) && {alive _asset}} do {
-			_asset setOwner (owner _sender);
-			sleep WL_TIMEOUT_SHORT;
-		};
-	};
-};
-
 if !(isNull _sender) then {
 	switch (_action) do {
 		case "kill" : {
@@ -202,11 +181,8 @@ if !(isNull _sender) then {
 							};
 
 							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							createVehicleCrew _asset;
-							_side = side _sender;
-							_group = createGroup _side;
-							(crew _asset) joinSilent _group;
-							(group _asset) deleteGroupWhenEmpty true;
+							[_asset, _sender] call BIS_fnc_WL2_createDroneCrew;
+
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
 						} else {
@@ -238,8 +214,7 @@ if !(isNull _sender) then {
 									_asset setDir 0;
 									
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									createVehicleCrew _asset;
-									(group _asset) deleteGroupWhenEmpty true;
+									[_asset, _sender] call BIS_fnc_WL2_createDroneCrew;
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
 								} else {
@@ -282,11 +257,8 @@ if !(isNull _sender) then {
 							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								createVehicleCrew _asset;
-								_side = side _sender;
-								_group = createGroup _side;
-								(crew _asset) joinSilent _group;
-								(group _asset) deleteGroupWhenEmpty true;
+								[_asset, _sender] call BIS_fnc_WL2_createDroneCrew;
+
 								_asset addItemCargoGlobal ["B_UavTerminal", 1];
 								_asset addItemCargoGlobal ["O_UavTerminal", 1];
 							};
@@ -298,7 +270,7 @@ if !(isNull _sender) then {
 					};
 				};
 
-				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F") then {
+				if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || unitIsUAV _asset) then {
 					[_asset, 2] remoteExec ["lock", (owner _asset)];
 				} else {
 					[_asset, 0] remoteExec ["lock", (owner _asset)];
@@ -311,7 +283,7 @@ if !(isNull _sender) then {
 				_asset setVehicleVarName _assetVariable;
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
-				[_asset, _sender, _isStatic] call _setOwner;
+				[_asset, _sender, _isStatic] call BIS_fnc_WL2_setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				switch (typeOf _asset) do {
