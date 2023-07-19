@@ -114,6 +114,7 @@ while {dialog} do {
 			parseText format ["<a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Walords Redux Guide by GamerDad</a>"], lineBreak,
 			parseText format ["<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Walords Redux Guide by Ferrous Creek</a>"], lineBreak,
 			parseText format ["<a href='https://streamable.com/3xwuma'>Mortar Guide by Spooker</a>"], lineBreak,
+			parseText format ["<a href='https://streamable.com/oh8k57'>Tank Guide by Spooker</a>"], lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_11", lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_12", _inventoryKey], lineBreak,
