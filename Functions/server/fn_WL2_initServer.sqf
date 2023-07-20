@@ -44,8 +44,6 @@ WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
-radioChannelCreate [[1,0.4,1,1], "Aircraft channel", "%UNIT_VEH_NAME", [], true];
-
 "server" call BIS_fnc_WL2_varsInit;
 
 addMissionEventHandler ["HandleDisconnect", {
