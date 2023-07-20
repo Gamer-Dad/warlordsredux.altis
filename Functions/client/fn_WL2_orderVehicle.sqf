@@ -9,7 +9,7 @@ if (_class isKindOf "Man") then {
 	_assetVariable = call BIS_fnc_WL2_generateVariableName;
 	_asset setVehicleVarName _assetVariable;
 	[_asset, _assetVariable] remoteExec ["setVehicleVarName", 2];
-	[player, "orderAI", _cost] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+	[player, "orderAI", _cost] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	[player, _asset] spawn BIS_fnc_WL2_newAssetHandle;
 	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 } else {

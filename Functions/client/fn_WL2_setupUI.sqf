@@ -392,15 +392,15 @@ switch (_displayClass) do {
 				_offset = call compile _offset;
 				_requirements = call compile _requirements;
 				switch (_className) do {
-					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
-					case "LastLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
+					case "LastLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
-					case "SavedLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "SavedLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
-					case "FundsTransfer": {0 spawn BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
-					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "FundsTransfer": {0 spawn BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "forfeitVote": {0 spawn BIS_fnc_WL2_orderForfeit};
 					case "requestBounty": {0 spawn BIS_fnc_WL2_orderBounty};
 					case "LockVehicles": {
@@ -471,7 +471,7 @@ switch (_displayClass) do {
 					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
 					_maxTransfer = BIS_WL_maxCP - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
-					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};
@@ -516,7 +516,7 @@ switch (_displayClass) do {
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
-			[player, "fundsTransferCancel"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+			[player, "fundsTransferCancel"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 			playSound "AddItemFailed";
 		}];
 		_purchase_bounty_ok ctrlAddEventHandler ["MouseEnter", {
@@ -556,7 +556,7 @@ switch (_displayClass) do {
 				if (count _targetArr > 0) then {
 					playSound "AddItemOK";
 					_target = _targetArr # 0;
-					[player, "orderBounty", _amount, [], _target] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+					[player, "orderBounty", _amount, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};

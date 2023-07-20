@@ -96,7 +96,7 @@ if (isPlayer _owner) then {
 							{
 								params ["_asset"];
 								if ((_asset getVariable "BIS_WL_nextRepair") <= serverTime) then {
-									[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+									[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Repair.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 									[toUpper localize "STR_A3_WL_popup_asset_repaired"] spawn BIS_fnc_WL2_smoothText;
 									_asset setVariable ["BIS_WL_nextRepair", serverTime + WL_MAINTENANCE_COOLDOWN_REPAIR];
