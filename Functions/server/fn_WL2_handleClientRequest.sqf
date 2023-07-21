@@ -412,13 +412,17 @@ if !(isNull _sender) then {
 			};
 		};
 		case "unloadSupplies": {
-			if (!WL_LOGISTICS_ENABLED) exitWith { false	};
+			if (!WL_LOGISTICS_ENABLED) exitWith { false };
 
+			// get distance to nearest supply point when cargo was loaded
 			_loadedDistance = _target getVariable ["BIS_WL_lastLoadedCargo", 1e10];
+
+			// get current distance to nearest supply point
 			_currentDistance = _sender call BIS_fnc_WL2_getDistanceToNearestSupplyPoint;
 	
 			_supplyPoints = _target getVariable ["supplyPoints", 0];
 
+			// reward for traveling AWAY from supply point, this doesn't reward team supply griefing/boosting
 			_traveled = 0;
 			_reward = if (_currentDistance > _loadedDistance) then {
 				_traveled = _currentDistance - _loadedDistance;
@@ -427,8 +431,10 @@ if !(isNull _sender) then {
 				0
 			};
 
+			// AI resupply counts for player
 			_sendingPlayer = (leader _sender);
 
+			// prevent spamming the message, only if the player/city has changed do we broadcast the unload praise
 			_lastTransported = serverNamespace getVariable ["BIS_WL_lastTransported", [objNull, -1]];
 			if (_traveled > 100 && ((_lastTransported # 0 != _sendingPlayer) || (_lastTransported # 1 != _traveled))) then {
 				_sectorName = (_sender call BIS_fnc_WL2_getCurrentSector) getVariable "BIS_WL_name";
@@ -438,6 +444,7 @@ if !(isNull _sender) then {
 				serverNamespace setVariable ["BIS_WL_lastTransported", [_sendingPlayer, _traveled]];
 			};
 
+			// add CP if reward > 0
 			if (_reward > 0) then {
 				_uid = getPlayerUID _sendingPlayer;
 				[_uid, _reward] call BIS_fnc_WL2_fundsDatabaseWrite;
