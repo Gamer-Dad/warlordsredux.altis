@@ -49,7 +49,7 @@ if !(isNull _instigator) then {
 			} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
 			if (_bounty > 0) then {
 				[_uid, (_bounty * 0.8)] call BIS_fnc_WL2_fundsDatabaseWrite;
-				[_unit, _killReward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+				[_unit, (_bounty * 0.8), true] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", (getPlayerUID _unit)], 0];
 			};
 		};
