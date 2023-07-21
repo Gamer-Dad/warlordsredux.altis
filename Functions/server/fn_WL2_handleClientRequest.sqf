@@ -50,6 +50,9 @@ if !(isNull _sender) then {
 		case "targetReset": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
 				missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], serverTime, true];
 				missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", side _sender], name _sender, true];
 				_sender setVariable ["BIS_WL_targetResetVote", 1, [2, (owner _sender)]];
@@ -61,24 +64,27 @@ if !(isNull _sender) then {
 		case "lastLoadout": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
-
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
+				0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
 			};
 		};
 		case "savedLoadout": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
-
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
+				["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
 			};
 		};
 		case "orderFTVehicle": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
 				if (_target == west) then {
 					if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) then {
 						_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
@@ -90,14 +96,14 @@ if !(isNull _sender) then {
 						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				};
-
-				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "orderFTPod": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
 				if (_target == west) then {
 					if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
 						_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
@@ -109,18 +115,15 @@ if !(isNull _sender) then {
 						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				};
-
-				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 		case "fastTravelContested": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				_sender setVehiclePosition [_pos, [], 2, "NONE"];
-
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
+				_sender setVehiclePosition [_pos, [], 2, "NONE"];
 			};
 		};
 		case "fastTravel": {
@@ -129,9 +132,10 @@ if !(isNull _sender) then {
 		case "orderArsenal": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
-				0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", (owner _sender)];
 				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;				
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;	
+
+				0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
 			};
 		};
 		case "orderAI" : {
@@ -141,6 +145,9 @@ if !(isNull _sender) then {
 		case "orderAsset": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
+				private _uid = getPlayerUID _sender;
+				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+
 				private _class = _target;
 				private _asset = objNull;
 				
@@ -275,9 +282,6 @@ if !(isNull _sender) then {
 				} else {
 					[_asset, 0] remoteExec ["lock", (owner _asset)];
 				};
-
-				private _uid = getPlayerUID _sender;
-				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 			
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;
 				_asset setVehicleVarName _assetVariable;
@@ -327,6 +331,7 @@ if !(isNull _sender) then {
 		case "fundsTransferBill": {
 			private _uid = getPlayerUID _sender;
 			[_uid, -2000] call BIS_fnc_WL2_fundsDatabaseWrite;
+			
 			serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], true];
 		};
 		case "fundsTransferCancel": {
