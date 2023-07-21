@@ -130,8 +130,22 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 	
 	if (_sector in [BIS_WL_base1, BIS_WL_base2]) then {
 		_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
+		
+		_sector setVariable ["BIS_WL_supplyPoints", 1e30, true];
+		_sector setVariable ["BIS_WL_supplyPointsMax", 0, true];
 	} else {
 		_sector setVariable ["BIS_WL_value", round (_size / 13000)];
+		
+		if ("A" in (_sector getVariable "BIS_WL_services")) then {
+			_sector setVariable ["BIS_WL_supplyPoints", 1e30, true];
+			_sector setVariable ["BIS_WL_supplyPointsMax", 0, true];
+		} else {
+			_defaultSupply = round (random [0, _size / 1000, _size / 500]) * 30;
+			_sector setVariable ["BIS_WL_supplyPoints", _defaultSupply, true];
+
+			_maxSupply = round (_defaultSupply * (random [2, 3, 4]) / 3) * 10;
+			_sector setVariable ["BIS_WL_supplyPointsMax", _maxSupply max WL_LOGISTICS_MIN_SECTOR_CAPACITY, true];
+		};
 	};
 	
 	if (count (_sector getVariable "BIS_WL_revealedBy") != 2) then {

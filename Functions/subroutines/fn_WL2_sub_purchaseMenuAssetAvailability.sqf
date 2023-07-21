@@ -12,6 +12,16 @@ if (_cost > _funds) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_low_funds
 if (!alive player) then {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr6"};
 if (lifeState player == "INCAPACITATED") then {_ret = FALSE; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
+_supplyCost = switch _class do {
+	case ("B_Truck_01_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+	case ("O_Truck_03_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+	case ("B_Slingload_01_Ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+	case ("Land_Pod_Heli_Transport_04_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+	case ("Box_NATO_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
+	case ("Box_East_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
+	default { _cost };
+};
+
 if (_ret) then {
 	switch (_class) do {
 		case "FTSeized": {
@@ -33,15 +43,25 @@ if (_ret) then {
 			if (count BIS_WL_lastLoadout == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
 			if (BIS_WL_loadoutApplied) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_loadout_reapply_info"};
 			if (BIS_WL_lastLoadout isEqualTo (getUnitLoadout player)) exitWith {_ret = FALSE; _tooltip = "You have the same gear as last time."};
-			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
+			_possibleSectors = (BIS_WL_sectorsArray # 0);
+			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
 			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((_possibleSectors # _visitedSectorID) getVariable ["BIS_WL_supplyPoints", 0] < _supplyCost) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_A3_WL_supplies_insufficient";
+			};
 		};
 		case "SavedLoadout": {
 			if (count BIS_WL_savedLoadout == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
-			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
+			_possibleSectors = (BIS_WL_sectorsArray # 0);
+			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
 			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((_possibleSectors # _visitedSectorID) getVariable ["BIS_WL_supplyPoints", 0] < _supplyCost) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_A3_WL_supplies_insufficient";
+			};
 		};
 		case "FundsTransfer": {
 			if (count (BIS_WL_allWarlords select {side group _x == side group player}) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
@@ -61,8 +81,13 @@ if (_ret) then {
 		};
 		case "Arsenal": {
 			if (vehicle player != player) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
-			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
+			_possibleSectors = (BIS_WL_sectorsArray # 0);
+			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
+			if ((_possibleSectors # _visitedSectorID) getVariable ["BIS_WL_supplyPoints", 0] < _supplyCost) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_A3_WL_supplies_insufficient";
+			};
 			if !(isNull (findDisplay 602)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr2"};
 			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
@@ -131,7 +156,8 @@ if (_ret) then {
 			}; 			
 		};
 		default {
-			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
+			_possibleSectors = (BIS_WL_sectorsArray # 0);
+			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			_servicesAvailable = BIS_WL_sectorsArray # 5;
 			_vehiclesCnt = count WL_PLAYER_VEHS;
 			
@@ -149,6 +175,14 @@ if (_ret) then {
 					};
 				};
 			};
+
+			if (WL_LOGISTICS_ENABLED && _category in ["Infantry", "Vehicles", "Gear", "Defences"]) then {
+				if ((_possibleSectors # _visitedSectorID) getVariable ["BIS_WL_supplyPoints", 0] < _supplyCost) exitWith {
+					_ret = false; 
+					_tooltip = localize "STR_A3_WL_supplies_insufficient";
+				};
+			}; 
+
 			if (_category == "Defences") exitWith {
 				if (vehicle player != player) then {
 					_ret = FALSE;

@@ -72,6 +72,26 @@ if (isPlayer _owner) then {
 			_asset call BIS_fnc_WL2_sub_vehicleKickAction;
 		};
 
+		if (WL_LOGISTICS_ENABLED && (_asset isKindOf "Truck_F" || _asset isKindOf "Slingload_base_F")) then {
+			switch (typeOf _asset) do {
+				case "B_Truck_01_ammo_F";
+				case "B_Truck_01_Repair_F";
+				case "B_Truck_01_fuel_F";
+				case "O_Truck_03_ammo_F";
+				case "O_Truck_03_repair_F";
+				case "O_Truck_03_fuel_F";
+				case "B_Slingload_01_Ammo_F";
+				case "B_Slingload_01_Repair_F";
+				case "B_Slingload_01_Fuel_F";
+				case "Land_Pod_Heli_Transport_04_ammo_F";
+				case "Land_Pod_Heli_Transport_04_repair_F";
+				case "Land_Pod_Heli_Transport_04_fuel_F": {
+					_asset call BIS_fnc_WL2_sub_loadSupplies;
+				};
+				default {};
+			};
+		};
+		
 		_asset spawn {
 			params ["_asset"];
 			_repairActionID = -1;

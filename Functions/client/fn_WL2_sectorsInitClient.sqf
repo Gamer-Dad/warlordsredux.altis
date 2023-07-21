@@ -153,5 +153,5 @@ _i = 0;
 		if (isLocalized _name) then {_name = localize _name};
 	};
 	
-	_sector setVariable ["BIS_WL_name", _name];
+	_sector setVariable ["BIS_WL_name", _name, true];
 } forEach BIS_WL_allSectors;
