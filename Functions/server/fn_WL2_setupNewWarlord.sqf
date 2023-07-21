@@ -41,13 +41,13 @@ if (isPlayer _warlord) then {
 };
 
 if !(_boundToAnotherTeam) then {
-	_respawnPos = markerPos selectRandom _markers;
-	_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];
-	
 	_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _warlord];
 	if ((missionNamespace getVariable _friendlyFireVarName) > serverTime) then {
 		(owner _warlord) publicVariableClient _friendlyFireVarName;
 	};
 
 	[_warlord] call BIS_fnc_WL2_respawnHandle;
+	
+	_respawnPos = markerPos selectRandom _markers;
+	for "_i" from 0 to 2 do {_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];};
 };
