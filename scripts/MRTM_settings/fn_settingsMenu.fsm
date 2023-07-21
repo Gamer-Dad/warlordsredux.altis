@@ -151,7 +151,8 @@ class FSM
                 {
                         name = "Re_Add_action";
                         itemno = 7;
-                        init = /*%FSM<STATEINIT""">*/"_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/"_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];" \n
+                        "player setUserActionText [_actionId, ""<t color='#FF0000'>Settings</t>"", ""<img size='3' image='\a3\3den\Data\Displays\Display3DEN\PanelRight\submode_logic_module_ca'/>""];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
