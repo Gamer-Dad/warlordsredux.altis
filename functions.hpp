@@ -210,7 +210,6 @@ class CfgFunctions {
 			class KeyPressed {};
 			class RearmAPS {};
 			class RegisterVehicle {};
-			class CompileTypes {};
 		};
 		class MISC
 		{

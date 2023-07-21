@@ -1,7 +1,5 @@
 sleep 3;
 
-if !(isNil "dapsExit") exitWith { systemChat "DAPS exit" };
-
 dapsReady = FALSE;
 
 // Vehicles that use each type of APS
@@ -23,12 +21,9 @@ if (count (entities "DAPS_AssignAPS") > 0) then {
     sleep 1;
 };
 
-// Vehicles with a single launcher
-dapsSingle = [];
-// All vehicles with APS
-dapsAPStypes = [];
-DAPS_fnc_CompileTypes = compile preprocessFile "scripts\DAPS\Scripts\Management\fn_CompileTypes.sqf";
-call DAPS_fnc_CompileTypes;
+// Compile all vehicle types into single and the overall APS list
+dapsSingle = dapsLight + dapsMedium + dapsHeavy;
+dapsAPStypes = dapsSingle;
 
 //https://community.bistudio.com/wiki/DIK_KeyCodes
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
