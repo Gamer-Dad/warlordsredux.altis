@@ -223,6 +223,8 @@ if !(isNull _sender) then {
 									_grp = createGroup (side group _sender);
 									_asset = (([_pos, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
 									_grp deleteGroupWhenEmpty true;
+									_asset setPosATL [((getPosATL _asset) # 0), ((getPosATL _asset) # 1), 0];
+									_asset engineOn false;
 
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
