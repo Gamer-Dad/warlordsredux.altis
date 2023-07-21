@@ -11,6 +11,9 @@ private _crewNotReady = { alive _asset && {alive _x && !isPlayer _x} count crew 
 _i = 0;
 while { _i < 2 } do {
 	createVehicleCrew _asset;
+	_side = (side group _sender);
+	_grp = createGroup _side;
+	(crew _asset) joinSilent _grp;
 	if (call _crewNotReady) then {
 		_i = 0;
 	} else {
@@ -19,8 +22,4 @@ while { _i < 2 } do {
 	sleep 1;
 };
 
-if (!alive _asset) exitWith { grpNull };	// asset died on creation
-
-_grp = createGroup side _sender;
-(crew _asset) joinSilent _grp;
 (group _asset) deleteGroupWhenEmpty true;
