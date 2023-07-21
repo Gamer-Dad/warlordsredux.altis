@@ -162,8 +162,11 @@ if !(isNull _sender) then {
 								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
-								_asset setDir 0;
+
+								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+								_grp = createGroup (side group _sender);
+								_asset = (([_posFinal, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
+								_grp deleteGroupWhenEmpty true;
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -183,12 +186,11 @@ if !(isNull _sender) then {
 									};
 								};
 
-								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
-								_asset setDir _dir;
+								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+								_grp = createGroup (side group _sender);
+								_asset = (([_spawnPos, _dir, _class, _grp] call BIS_fnc_spawnVehicle) # 0);
+								_grp deleteGroupWhenEmpty true;
 							};
-
-							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							[_asset, _sender] call BIS_fnc_WL2_createDroneCrew;
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -217,11 +219,11 @@ if !(isNull _sender) then {
 								_asset setDir _dir;
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
-									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-									_asset setDir 0;
-									
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									[_asset, _sender] call BIS_fnc_WL2_createDroneCrew;
+									_grp = createGroup (side group _sender);
+									_asset = (([_pos, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
+									_grp deleteGroupWhenEmpty true;
+
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
 								} else {
@@ -259,12 +261,12 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							_asset = createVehicle [_class, [(_targetPos # 0), (_targetPos # 1), 0], [], 0, "CAN_COLLIDE"];
-							_asset setDir direction _sender;
-							_asset enableWeaponDisassembly false;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								[_asset, _sender] call BIS_fnc_WL2_createDroneCrew;
+								_grp = createGroup (side group _sender);
+								_asset = (([[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
+								_grp deleteGroupWhenEmpty true;
+								_asset enableWeaponDisassembly false;
 
 								_asset addItemCargoGlobal ["B_UavTerminal", 1];
 								_asset addItemCargoGlobal ["O_UavTerminal", 1];
