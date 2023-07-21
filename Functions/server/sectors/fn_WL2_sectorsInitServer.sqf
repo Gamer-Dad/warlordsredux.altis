@@ -189,3 +189,5 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 	_agent enableSimulationGlobal FALSE;
 	_sector setVariable ["BIS_WL_agentGrp", _agentGrp, TRUE];
 } forEach BIS_WL_allSectors;
+
+call BIS_fnc_WL2_sectorNameInit;

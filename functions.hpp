@@ -133,6 +133,7 @@ class CfgFunctions {
 			class WL2_getSectorSupply {};
 			class WL2_hasSupplyContainerSpace {};
 			class WL2_isSectorSupplyFull {};
+			class WL2_sectorNameInit {};
     	};
 		class Subroutines 
 		{

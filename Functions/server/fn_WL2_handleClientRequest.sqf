@@ -431,8 +431,8 @@ if !(isNull _sender) then {
 				0
 			};
 
-			// AI resupply counts for player
-			_sendingPlayer = (leader _sender);
+			// give rewards to owner, not unloader
+			_sendingPlayer = leader (_target getVariable ['BIS_WL_ownerAsset', grpNull]);
 
 			// prevent spamming the message, only if the player/city has changed do we broadcast the unload praise
 			_lastTransported = serverNamespace getVariable ["BIS_WL_lastTransported", [objNull, -1]];
