@@ -162,11 +162,8 @@ if !(isNull _sender) then {
 								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-
-								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								_grp = createGroup (side group _sender);
-								_asset = (([_posFinal, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
-								_grp deleteGroupWhenEmpty true;
+								_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
+								_asset setDir _dir;
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -185,12 +182,8 @@ if !(isNull _sender) then {
 										_spawnPos = _pos;
 									};
 								};
-
-								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								_grp = createGroup (side group _sender);
-								_asset = (([_spawnPos, _dir, _class, _grp] call BIS_fnc_spawnVehicle) # 0);
-								_grp deleteGroupWhenEmpty true;
 							};
+							createVehicleCrew _asset;
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
