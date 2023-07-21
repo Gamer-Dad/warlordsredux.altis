@@ -182,8 +182,13 @@ if !(isNull _sender) then {
 										_spawnPos = _pos;
 									};
 								};
+
+								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
+								_asset setDir _dir;
 							};
-							createVehicleCrew _asset;
+							_grp = createGroup (side group _sender);
+							_grp createVehicleCrew _asset;
+							(crew _asset) joinSilent _grp;
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -214,7 +219,10 @@ if !(isNull _sender) then {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 									_grp = createGroup (side group _sender);
-									_asset = (([_pos, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
+									_result = ([_pos, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle);
+									_asset = _result # 0;
+									_crew = _result # 1;
+									_crew joinSilent _grp;
 									_grp deleteGroupWhenEmpty true;
 									_asset setPosATL [((getPosATL _asset) # 0), ((getPosATL _asset) # 1), 0];
 									_asset engineOn false;
@@ -256,14 +264,22 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-							_grp = createGroup (side group _sender);
-							_asset = (([[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
-							_grp deleteGroupWhenEmpty true;
-							_asset enableWeaponDisassembly false;
+							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
+								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+								_grp = createGroup (side group _sender);
+								_result = ([[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle);
+								_asset = _result # 0;
+								_crew = _result # 1;
+								_crew joinSilent _grp;
+								_grp deleteGroupWhenEmpty true;
 
-							_asset addItemCargoGlobal ["B_UavTerminal", 1];
-							_asset addItemCargoGlobal ["O_UavTerminal", 1];
+								_asset addItemCargoGlobal ["B_UavTerminal", 1];
+								_asset addItemCargoGlobal ["O_UavTerminal", 1];
+							} else {
+								_asset = createVehicle [_class, [(_targetPos # 0), (_targetPos # 1), 0], [], 0, "CAN_COLLIDE"];
+								_asset setDir (direction _sender);
+								_asset enableWeaponDisassembly false;
+							};
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
@@ -284,6 +300,8 @@ if !(isNull _sender) then {
 				(owner _sender) publicVariableClient _assetVariable;
 				[_asset, _sender, _isStatic] call BIS_fnc_WL2_setOwner;
 				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+
+				waitUntil {sleep 0.1; !(isNull _asset)};
 
 				switch (typeOf _asset) do {
 					case "I_Truck_02_MRL_F": {
@@ -317,9 +335,6 @@ if !(isNull _sender) then {
 					};
 					default {};
 				};
-
-				waitUntil {sleep 0.1; !(isNull _asset)};
-				_asset setDamage 0;
 			};
 			_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
 		};

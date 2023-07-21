@@ -95,7 +95,6 @@ class CfgFunctions {
 			class WL2_tablesSetUp {};
 			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
-			class WL2_createDroneCrew {};
 			class WL2_setOwner {};
     	};
     	class Common {
