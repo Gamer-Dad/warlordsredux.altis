@@ -314,20 +314,20 @@ if !(isNull _sender) then {
 						_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
 					};
 					case "B_AAA_System_01_F": {
-						private _side = side (crew _asset select 0);
+						private _side = side _sender;
 						if (_side == east) then {
 							_asset setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
 							_asset setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
 						};
 					};
 					case "B_SAM_System_01_F": {
-						private _side = side (crew _asset select 0);
+						private _side = side _sender;
 						if (_side == east) then {
 							_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
 						};
 					};
 					case "B_SAM_System_02_F": {
-						private _side = side (crew _asset select 0);
+						private _side = side _sender;
 						if (_side == east) then {
 							_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
 						};
