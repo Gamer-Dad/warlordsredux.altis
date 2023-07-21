@@ -186,9 +186,9 @@ if !(isNull _sender) then {
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
 							};
-							_grp = createGroup (side group _sender);
-							_grp createVehicleCrew _asset;
-							(crew _asset) joinSilent _grp;
+							createVehicleCrew _asset;
+							_group = createGroup (side group _sender);
+							(crew _asset) joinSilent _group;
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
