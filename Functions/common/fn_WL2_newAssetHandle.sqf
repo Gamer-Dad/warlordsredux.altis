@@ -19,6 +19,8 @@ if (isPlayer _owner) then {
 			[] spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
+		private _group = createGroup (side (group player));
+		(crew _asset) joinSilent _group;
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 
