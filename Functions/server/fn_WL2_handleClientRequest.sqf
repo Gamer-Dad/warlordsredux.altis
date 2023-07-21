@@ -186,9 +186,19 @@ if !(isNull _sender) then {
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
 							};
-							createVehicleCrew _asset;
-							_group = createGroup (side group _sender);
-							(crew _asset) joinSilent _group;
+
+							[_asset, _sender] spawn {
+								params ["_asset", "_sender"];
+								_t = serverTime;
+								createVehicleCrew _asset;
+								_group = createGroup (side group _sender);
+								while {(_t < serverTime + 30) && ((side ((crew _asset) # 0)) != (side group _sender))} do {
+									(crew _asset) joinSilent _group;
+									sleep 0.1;
+								};
+								(crew _asset) joinSilent _group;
+								_group deleteGroupWhenEmpty true;
+							};
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
 							_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -218,14 +228,21 @@ if !(isNull _sender) then {
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									_grp = createGroup (side group _sender);
-									_result = ([_pos, (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle);
-									_asset = _result # 0;
-									_crew = _result # 1;
-									_crew joinSilent _grp;
-									_grp deleteGroupWhenEmpty true;
-									_asset setPosATL [((getPosATL _asset) # 0), ((getPosATL _asset) # 1), 0];
-									_asset engineOn false;
+									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+									_asset setDirection (direction _sender);
+
+									[_asset, _sender] spawn {
+										params ["_asset", "_sender"];
+										_t = serverTime;
+										createVehicleCrew _asset;
+										_group = createGroup (side group _sender);
+										while {(_t < serverTime + 30) && ((side ((crew _asset) # 0)) != (side group _sender))} do {
+											(crew _asset) joinSilent _group;
+											sleep 0.1;
+										};
+										(crew _asset) joinSilent _group;
+										_group deleteGroupWhenEmpty true;
+									};
 
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
 									_asset addItemCargoGlobal ["O_UavTerminal", 1];
@@ -266,13 +283,22 @@ if !(isNull _sender) then {
 						if (_isStatic) then {
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								_grp = createGroup (side group _sender);
-								_result = ([[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle);
-								_asset = _result # 0;
-								_crew = _result # 1;
-								_crew joinSilent _grp;
-								_grp deleteGroupWhenEmpty true;
+								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+								_asset setDirection (direction _sender);
 
+								[_asset, _sender] spawn {
+									params ["_asset", "_sender"];
+									_t = serverTime;
+									createVehicleCrew _asset;
+									_group = createGroup (side group _sender);
+									while {(_t < serverTime + 30) && ((side ((crew _asset) # 0)) != (side group _sender))} do {
+										(crew _asset) joinSilent _group;
+										sleep 0.1;
+									};
+									(crew _asset) joinSilent _group;
+									_group deleteGroupWhenEmpty true;
+								};
+								
 								_asset addItemCargoGlobal ["B_UavTerminal", 1];
 								_asset addItemCargoGlobal ["O_UavTerminal", 1];
 							} else {
