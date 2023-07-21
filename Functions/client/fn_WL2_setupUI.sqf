@@ -170,15 +170,6 @@ switch (_displayClass) do {
 			};
 		}];
 		
-		_myDisplay spawn {
-			_selectedCnt = count ((groupSelectedUnits player) - [player]);
-			while {!isNull _this} do {
-				waitUntil {sleep WL_TIMEOUT_MIN; count ((groupSelectedUnits player) - [player]) != _selectedCnt};
-				_selectedCnt = count ((groupSelectedUnits player) - [player]);
-				call BIS_fnc_WL2_sub_purchaseMenuRefresh;
-			};
-		};
-		
 		_purchase_background = _myDisplay ctrlCreate ["RscText", -1];
 		_purchase_background_1 = _myDisplay ctrlCreate ["RscText", -1];
 		_purchase_background_2 = _myDisplay ctrlCreate ["RscText", -1];

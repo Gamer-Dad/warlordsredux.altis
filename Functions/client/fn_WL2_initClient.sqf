@@ -267,6 +267,15 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 };
 
 0 spawn {
+	_selectedCnt = count ((groupSelectedUnits player) - [player]);
+	while {!BIS_WL_missionEnd} do {
+		waitUntil {sleep 1; count ((groupSelectedUnits player) - [player]) != _selectedCnt};
+		_selectedCnt = count ((groupSelectedUnits player) - [player]);
+		call BIS_fnc_WL2_sub_purchaseMenuRefresh;
+	};
+};
+
+0 spawn {
 	_t = serverTime + 10;
 	waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t && !isNull WL_TARGET_FRIENDLY};
 	sleep WL_TIMEOUT_LONG;
