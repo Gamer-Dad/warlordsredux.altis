@@ -221,7 +221,7 @@ if !(isNull _sender) then {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-									_asset setDirection (direction _sender);
+									_asset setDir (direction _sender);
 									private _group = createGroup (side (group _sender));
 									createVehicleCrew _asset;
 									(crew _asset) joinSilent _group;
@@ -265,7 +265,7 @@ if !(isNull _sender) then {
 					} else {
 						if (_isStatic) then {
 							_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-							_asset setDirection (direction _sender);
+							_asset setDir (direction _sender);
 
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
