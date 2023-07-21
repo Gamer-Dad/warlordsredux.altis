@@ -256,16 +256,14 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								_grp = createGroup (side group _sender);
-								_asset = (([[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
-								_grp deleteGroupWhenEmpty true;
-								_asset enableWeaponDisassembly false;
+							//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
+							_grp = createGroup (side group _sender);
+							_asset = (([[(_targetPos # 0), (_targetPos # 1), 0], (direction _sender), _class, _grp] call BIS_fnc_spawnVehicle) # 0);
+							_grp deleteGroupWhenEmpty true;
+							_asset enableWeaponDisassembly false;
 
-								_asset addItemCargoGlobal ["B_UavTerminal", 1];
-								_asset addItemCargoGlobal ["O_UavTerminal", 1];
-							};
+							_asset addItemCargoGlobal ["B_UavTerminal", 1];
+							_asset addItemCargoGlobal ["O_UavTerminal", 1];
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
