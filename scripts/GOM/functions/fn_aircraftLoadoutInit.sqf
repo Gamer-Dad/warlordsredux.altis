@@ -1391,35 +1391,11 @@ true
 GOM_fnc_showResourceDisplay = {
 
 
-			GOM_fnc_aircraftResourceDisplayTimeout = time + 20;
+	GOM_fnc_aircraftResourceDisplayTimeout = time + 20;
 
 
 
 	_ID = addMissionEventHandler ["Draw3D", {
-		{
-			_pos = visiblePositionASL _x;
-			_pos params ["_posX", "_posY", "_posZ"];
-
-			_amount = _x getvariable ["GOM_fnc_ammocargo",0];
-			_text = format ["%1 ammunition",(_amount call GOM_fnc_kgToTon)];
-
-			_drawicon = "";
-			_color = [1, 1, 1, 1];
-			drawIcon3D [
-				_drawicon,
-				[1, 1, 1, log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10)],
-				[_posX, _posY, 3],
-				1,
-				1,
-				0,
-				_text,
-				2,
-				0.03 * log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10),
-				"PuristaBold",
-				"center",
-				true
-			];
-		} foreach ((player nearEntities ["All",50]) select {speed _x < 15 AND {alive _x} AND {_x getvariable ["GOM_fnc_ammocargo",-1] >= 0}});
 
 		{
 			_pos = visiblePositionASL _x;
