@@ -40,12 +40,17 @@ if !(isNull _instigator) then {
 			};
 			_uid = getPlayerUID _responsibleLeader;
 			[_uid, (round _killReward)] call BIS_fnc_WL2_fundsDatabaseWrite;
-			[_unit, (round _killReward), false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
+			[_unit, (round _killReward), false, false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			{
 				_uid = getPlayerUID _x;
-				[_uid, (round _killReward)] call BIS_fnc_WL2_fundsDatabaseWrite;
-				[_unit, (round _killReward), false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+				[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_unit, _killReward, false, false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 			} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
+			if (_bounty > 0) then {
+				[_uid, (_bounty * 0.8)] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_unit, (_bounty * 0.8), true, false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", (getPlayerUID _unit)], 0];
+			};
 		};
 	};
 };
