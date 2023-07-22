@@ -215,11 +215,9 @@ if !(isNull _sender) then {
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									_results = [_pos, (direction _sender), _class, (side (group _sender))] call bis_fnc_spawnvehicle;
-									_asset = (_results # 0);
-									_asset engineOn false;
-									_asset setPosATL [(_pos # 0), (_pos # 1), 0];
-									(_results # 2) deleteGroupWhenEmpty true;
+									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+									createVehicleCrew _asset;
+									(group _asset) deleteGroupWhenEmpty true;
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 										_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
@@ -256,10 +254,7 @@ if !(isNull _sender) then {
 					} else {
 						if (_isStatic) then {
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								_results = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, (side (group _sender))] call bis_fnc_spawnvehicle;
-								_asset = (_results # 0);
-								(_results # 2) deleteGroupWhenEmpty true;
+								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
 							} else {
 								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
 								_asset setDir (direction _sender);

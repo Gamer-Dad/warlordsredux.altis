@@ -19,8 +19,13 @@ if (isPlayer _owner) then {
 			[] spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
-		private _group = createGroup (side (group player));
-		(crew _asset) joinSilent _group;
+		if (typeOf _asset == "B_AAA_System_01_F" || typeOf _asset == "B_SAM_System_01_F" || typeOf _asset == "B_SAM_System_02_F" || typeOf _asset == "B_Ship_MRLS_01_F") then {
+			_grp = (createGroup (side player));
+			createVehicleCrew _asset;
+			{
+				[_x] joinSilent _grp
+			} forEach (crew _asset);
+		};
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 
