@@ -17,11 +17,11 @@ if (_side == BIS_WL_localSide) then {
 			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
-			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
+			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
 			
 			{
 				_x setVariable ["BIS_WL_parentSector", _sector];
-				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
+				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
 			[_group, 0] setWaypointPosition [position _vehicle, 100];
@@ -48,11 +48,11 @@ if (_side == BIS_WL_localSide) then {
 			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
-			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
+			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
 			
 			{
 				_x setVariable ["BIS_WL_parentSector", _sector];
-				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
+				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
 			_vehicle lock _lock;
@@ -79,11 +79,11 @@ if (_side == BIS_WL_localSide) then {
 			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
-			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
+			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
 			
 			{
 				_x setVariable ["BIS_WL_parentSector", _sector];
-				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
+				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
 			
@@ -119,7 +119,7 @@ while {_i < _garrisonSize} do {
 	for [{_i2 = 0}, {_i2 < _grpSize && _i < _garrisonSize}, {_i2 = _i2 + 1; _i = _i + 1}] do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
-		[objNull, _newUnit] call BIS_fnc_WL2_newAssetHandle;
+		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
 	};
 	
 	_newGrp setBehaviour "COMBAT";

@@ -88,12 +88,12 @@ if !(isNull _sender) then {
 				if (_target == west) then {
 					if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) then {
 						_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				} else {
 					if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) == 0) then {
 						_asset = createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				};
 			};
@@ -107,12 +107,12 @@ if !(isNull _sender) then {
 				if (_target == west) then {
 					if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
 						_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				} else {
 					if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) == 0) then {
 						_asset = createVehicle ["Land_Pod_Heli_Transport_04_medevac_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 					};
 				};
 			};
@@ -298,7 +298,7 @@ if !(isNull _sender) then {
 				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
 				(owner _sender) publicVariableClient _assetVariable;
 				[_asset, _sender, _isStatic] call BIS_fnc_WL2_setOwner;
-				[_sender, _asset] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 				waitUntil {sleep 0.1; !(isNull _asset)};
 
