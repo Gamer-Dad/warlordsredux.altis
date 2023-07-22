@@ -255,6 +255,9 @@ if !(isNull _sender) then {
 						if (_isStatic) then {
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+								_grp = (createGroup (side player));
+								createVehicleCrew _asset;
+								[_asset] joinSilent _grp;
 							} else {
 								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
 								_asset setDir (direction _sender);
