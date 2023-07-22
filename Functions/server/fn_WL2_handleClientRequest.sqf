@@ -189,7 +189,9 @@ if !(isNull _sender) then {
 
 							private _group = createGroup (side (group _sender));
 							createVehicleCrew _asset;
-							(crew _asset) joinSilent _group;
+							{
+								[_x] joinSilent _group;
+							} forEach (units _asset);
 							(group effectiveCommander _asset) deleteGroupWhenEmpty true;
 
 							_asset addItemCargoGlobal ["B_UavTerminal", 1];
@@ -224,7 +226,9 @@ if !(isNull _sender) then {
 									_asset setDir (direction _sender);
 									private _group = createGroup (side (group _sender));
 									createVehicleCrew _asset;
-									(crew _asset) joinSilent _group;
+									{
+										[_x] joinSilent _group;
+									} forEach (units _asset);
 									(group effectiveCommander _asset) deleteGroupWhenEmpty true;
 
 									_asset addItemCargoGlobal ["B_UavTerminal", 1];
@@ -271,7 +275,9 @@ if !(isNull _sender) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 								private _group = createGroup (side (group _sender));
 								createVehicleCrew _asset;
-								(crew _asset) joinSilent _group;
+								{
+									[_x] joinSilent _group;
+								} forEach (units _asset);
 								(group effectiveCommander _asset) deleteGroupWhenEmpty true;
 								
 								_asset addItemCargoGlobal ["B_UavTerminal", 1];
