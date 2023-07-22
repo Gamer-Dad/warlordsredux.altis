@@ -55,7 +55,7 @@ if !(isNull _sender) then {
 
 				missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], serverTime, true];
 				missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", side _sender], name _sender, true];
-				_sender setVariable ["BIS_WL_targetResetVote", 1, [2, (owner _sender)]];
+				_sender setVariable ["BIS_WL_targetResetVote", 1, [2, remoteExecutedOwner]];
 
 				[side _sender] spawn BIS_fnc_WL2_targetResetHandleServer;
 				[side _sender] remoteExec ["BIS_fnc_WL2_targetResetHandleVote", [0, -2] select isDedicated];
@@ -67,7 +67,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-				0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", (owner _sender)];
+				0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
 			};
 		};
 		case "savedLoadout": {
@@ -76,7 +76,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-				["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", (owner _sender)];
+				["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
 			};
 		};
 		case "orderFTVehicle": {
@@ -88,12 +88,12 @@ if !(isNull _sender) then {
 				if (_target == west) then {
 					if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) then {
 						_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 					};
 				} else {
 					if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) == 0) then {
 						_asset = createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 					};
 				};
 			};
@@ -107,12 +107,12 @@ if !(isNull _sender) then {
 				if (_target == west) then {
 					if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
 						_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 					};
 				} else {
 					if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) == 0) then {
 						_asset = createVehicle ["Land_Pod_Heli_Transport_04_medevac_F", _sender, [], 0, "NONE"];
-						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+						[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 					};
 				};
 			};
@@ -163,7 +163,7 @@ if !(isNull _sender) then {
 								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 								_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
-								_asset setDir _dir;
+								_asset setDir (direction _sender);
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -187,15 +187,8 @@ if !(isNull _sender) then {
 								_asset setDir _dir;
 							};
 
-							private _group = createGroup (side (group _sender));
 							createVehicleCrew _asset;
-							{
-								[_x] joinSilent _group;
-							} forEach (units _asset);
 							(group effectiveCommander _asset) deleteGroupWhenEmpty true;
-
-							_asset addItemCargoGlobal ["B_UavTerminal", 1];
-							_asset addItemCargoGlobal ["O_UavTerminal", 1];
 						} else {
 							_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && !(_class isKindOf "VTOL_Base_F");
 							if (_isPlane) then {
@@ -222,17 +215,9 @@ if !(isNull _sender) then {
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-									_asset setDir (direction _sender);
-									private _group = createGroup (side (group _sender));
-									createVehicleCrew _asset;
-									{
-										[_x] joinSilent _group;
-									} forEach (units _asset);
-									(group effectiveCommander _asset) deleteGroupWhenEmpty true;
-
-									_asset addItemCargoGlobal ["B_UavTerminal", 1];
-									_asset addItemCargoGlobal ["O_UavTerminal", 1];
+									_results = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, (side (group _sender))] call bis_fnc_spawnvehicle;
+									_asset = (_results # 0);
+									(_results # 2) deleteGroupWhenEmpty true;
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 										_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
@@ -268,21 +253,14 @@ if !(isNull _sender) then {
 						};
 					} else {
 						if (_isStatic) then {
-							_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-							_asset setDir (direction _sender);
-
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-								private _group = createGroup (side (group _sender));
-								createVehicleCrew _asset;
-								{
-									[_x] joinSilent _group;
-								} forEach (units _asset);
-								(group effectiveCommander _asset) deleteGroupWhenEmpty true;
-								
-								_asset addItemCargoGlobal ["B_UavTerminal", 1];
-								_asset addItemCargoGlobal ["O_UavTerminal", 1];
+								_results = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, (side (group _sender))] call bis_fnc_spawnvehicle;
+								_asset = (_results # 0);
+								(_results # 2) deleteGroupWhenEmpty true;
 							} else {
+								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+								_asset setDir (direction _sender);
 								_asset enableWeaponDisassembly false;
 							};
 						} else {
@@ -301,12 +279,12 @@ if !(isNull _sender) then {
 			
 				_assetVariable = call BIS_fnc_WL2_generateVariableName;
 				_asset setVehicleVarName _assetVariable;
-				[_asset, _assetVariable] remoteExec ["setVehicleVarName", (owner _sender)];
-				(owner _sender) publicVariableClient _assetVariable;
+				[_asset, _assetVariable] remoteExec ["setVehicleVarName", remoteExecutedOwner];
+				remoteExecutedOwner publicVariableClient _assetVariable;
 				[_asset, _sender, _isStatic] call BIS_fnc_WL2_setOwner;
-				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 
-				waitUntil {sleep 0.1; !(isNull _asset)};
+				waitUntil {sleep 0.01; !(isNull _asset)};
 
 				switch (typeOf _asset) do {
 					case "I_Truck_02_MRL_F": {
@@ -341,7 +319,7 @@ if !(isNull _sender) then {
 					default {};
 				};
 			};
-			_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
+			_sender setVariable ["BIS_WL_isOrdering", false, [2, remoteExecutedOwner]];
 		};
 		case "fundsTransferBill": {
 			private _uid = getPlayerUID _sender;
