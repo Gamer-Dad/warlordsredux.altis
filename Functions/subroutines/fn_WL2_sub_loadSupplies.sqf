@@ -8,7 +8,7 @@ _loadAction = {
 	// deduct supplies from current sector
 	_currentSector = [_caller] call BIS_fnc_WL2_getCurrentSector;
 	_sectorSupplyPoints = [_caller] call BIS_fnc_WL2_getSectorSupply;
-	_currentSector setVariable ["BIS_WL_supplyPoints", _sectorSupplyPoints - 1000, true];
+	_currentSector setVariable ["BIS_WL_supplyPoints", _sectorSupplyPoints - WL_LOGISTICS_CARGO_UNIT, true];
 
 	// add supplies to container
 	_prevSupplyPoints = _target getVariable ["supplyPoints", 0];
