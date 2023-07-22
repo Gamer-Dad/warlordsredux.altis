@@ -215,8 +215,10 @@ if !(isNull _sender) then {
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									_results = [[(_pos # 0), (_pos # 1), 0], (direction _sender), _class, (side (group _sender))] call bis_fnc_spawnvehicle;
+									_results = [_pos, (direction _sender), _class, (side (group _sender))] call bis_fnc_spawnvehicle;
 									_asset = (_results # 0);
+									_asset engineOn false;
+									_asset setPosATL [(_pos # 0), (_pos # 1), 0];
 									(_results # 2) deleteGroupWhenEmpty true;
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
