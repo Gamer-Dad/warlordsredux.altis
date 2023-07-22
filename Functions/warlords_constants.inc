@@ -52,7 +52,7 @@
 #define WL_LOGISTICS_FAST_TRAVEL_COST 200           // supply cost of fast traveling to friendly sectors
 #define WL_LOGISTICS_MAX_CARGO 20000                // maximum supply carried by ammo truck / pod, must be integer multiple of cargo_unit
 #define WL_LOGISTICS_CARGO_UNIT 2000                // how much to load/unload each time
-#define WL_LOGISTICS_MIN_SECTOR_CAPACITY 40000      // the minimum storage capacity of a sector
+#define WL_LOGISTICS_MIN_SECTOR_CAPACITY 42000      // the minimum storage capacity of a sector
 #define WL_LOGISTICS_LOADING_TIME 0.5               // duration of button holding per 1K supplies, does not apply to AI action
 #define WL_LOGISTICS_SMALL_AMMO_COST 2000           // vehicle ammo crate supply cost
 #define WL_LOGISTICS_LARGE_AMMO_COST 6000           // ammo truck / pod supply cost
