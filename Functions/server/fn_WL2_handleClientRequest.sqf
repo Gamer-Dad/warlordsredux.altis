@@ -266,7 +266,7 @@ if !(isNull _sender) then {
 									createVehicleCrew _asset;
 								};
 							} else {
-								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+								_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 								_asset enableWeaponDisassembly false;
 							};
 							_asset setDir (direction _sender);
