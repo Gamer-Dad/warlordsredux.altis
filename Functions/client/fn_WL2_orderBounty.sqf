@@ -1,6 +1,5 @@
 #include "..\warlords_constants.inc"
 
-
 for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 	(_display displayCtrl _i) ctrlEnable FALSE;
 };
@@ -100,7 +99,7 @@ _purchase_bounty_units lbSetCurSel 0;
 				(_this # 0) lbSetCurSel 0;
 			};
 		};
-		_t = WL_SYNCED_TIME + WL_TIMEOUT_SHORT;
-		waitUntil {WL_SYNCED_TIME > _t || ctrlText (_this # 2) != _valueText};
+		_t = serverTime + WL_TIMEOUT_SHORT;
+		waitUntil {serverTime > _t || ctrlText (_this # 2) != _valueText};
 	};
 };
