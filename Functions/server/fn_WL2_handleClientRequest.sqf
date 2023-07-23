@@ -287,6 +287,10 @@ if !(isNull _sender) then {
 									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 									createVehicleCrew _asset;
 								};
+
+								if (_asset call DIS_fnc_IsSam) then {
+									_asset spawn DIS_fnc_RegisterSam;
+								};
 							} else {
 								_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 								_asset enableWeaponDisassembly false;

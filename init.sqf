@@ -11,7 +11,8 @@ if !(isServer) then {
 	//Vehicle unflip 
 	waitUntil { !isNull player };
 	0 spawn KS_fnc_unflipVehicleAddAction;
-};
+}
+;
 /*******************************END OF SCRIPTS****************************/
 
 [] call BIS_fnc_WL2_initCommon;

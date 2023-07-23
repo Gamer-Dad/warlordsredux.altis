@@ -21,10 +21,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class DIS_fnc_SAMmaneuver {
-			allowedTargets = 2;
-		};
-
 		class KS_fnc_unflipVehicle {
 			allowedTargets = 2;
 		};

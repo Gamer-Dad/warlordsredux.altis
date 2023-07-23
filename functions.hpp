@@ -234,16 +234,15 @@ class CfgFunctions {
 			class Report {};
 		};
 	};
-	class DIS
-	{
-		class SAM {
-			file = "scripts\DIS\SAM";
-			class getOwner {};
+	class DIS {
+		class SAM
+		{
+			file = "scripts\DIS";
 			class Frag {};
-			class IsSam {};
+			class SAMFired {};
 			class RegisterSAM {};
+			class IsSam {};
 			class SAMmaneuver {};
-			class SAMfired {};
 		};
 	};
 };
