@@ -176,6 +176,18 @@ player addEventHandler ["GetOutMan", {
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 }];
 
+player addEventHandler ["InventoryOpened",{
+	params ["_unit","_container"];
+	_override = false;
+	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {isPlayer _x} apply {backpackContainer _x};
+
+	if (_container in _allUnitBackpackContainers) then {
+		systemchat "Access denied!";
+		_override = true;
+	};
+	_override;
+}];
+
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
