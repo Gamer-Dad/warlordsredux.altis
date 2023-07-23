@@ -1,6 +1,6 @@
 private _rocket = _this select 0;
 private _target = _this select 1;
-private _speed = 1000;
+private _speed = 1500;
 private _minDistanceToTarget = 5;
 
 while {!isNull _rocket && {!isNull _target}} do {
