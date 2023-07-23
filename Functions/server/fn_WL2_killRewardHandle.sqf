@@ -26,7 +26,6 @@ if !(isNull _instigator) then {
 		};
 		if ((_killerSide != _unitSide) && (_unitSide in [west, east, independent])) then {
 			private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"];
-			_bounty = serverNamespace getVariable [format ["BIS_WL_Bounty_%1",(getPlayerUID _unit)], 0];
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {40});
@@ -47,12 +46,6 @@ if !(isNull _instigator) then {
 				[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
 				[_unit, _killReward, false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 			} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
-			if (_bounty > 0) then {
-				[_uid, (_bounty * 0.8)] call BIS_fnc_WL2_fundsDatabaseWrite;
-				[_unit, (_bounty * 0.8), true] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
-				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", (getPlayerUID _unit)], 0];
-				[format ["%1 Collected %2's bounty off %3CP.", name _sender, name _target, _cost]] remoteExec ["systemChat", -2];
-			};
 		};
 	};
 };
