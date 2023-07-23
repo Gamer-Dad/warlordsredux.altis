@@ -1,5 +1,6 @@
 params ["_sam"];
 
-_sam addEventHandler["fired", {
-	_this spawn DIS_fnc_SAMFired;
+_sam addEventHandler ["fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	[_this] remoteExec ["DIS_fnc_SAMFired", (owner _projectile)];
 }];
