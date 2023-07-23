@@ -96,6 +96,7 @@ class CfgFunctions {
 			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
 			class WL2_setOwner {};
+			class WL2_createUAVCrew {};
     	};
     	class Common {
     		file = "Functions\common";

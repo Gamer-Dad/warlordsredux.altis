@@ -254,15 +254,22 @@ if !(isNull _sender) then {
 					} else {
 						if (_isStatic) then {
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-								_grp = (createGroup (side player));
-								createVehicleCrew _asset;
-								[_asset] joinSilent _grp;
+								if (_class == "B_AAA_System_01_F" || {_class == "B_SAM_System_01_F" || {_class == "B_SAM_System_02_F" || {_class == "B_Ship_MRLS_01_F"}}}) then {
+									if (side _sender == east) then {
+										_asset = [_pos, _class] call BIS_fnc_WL2_createUAVCrew;
+									} else {
+										_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+										createVehicleCrew _asset;										
+									};
+								} else {
+									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+									createVehicleCrew _asset;
+								};
 							} else {
 								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-								_asset setDir (direction _sender);
 								_asset enableWeaponDisassembly false;
 							};
+							_asset setDir (direction _sender);
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir direction _sender;
