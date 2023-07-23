@@ -44,7 +44,7 @@ if (_ret) then {
 			if (count (BIS_WL_allWarlords select {side group _x == side group player}) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
 		};
 		case "requestBounty": {
-			if (count (BIS_WL_allWarlords select {isPlayer _x}) < 5) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_bounty_restr"};
+			if (count (BIS_WL_allWarlords select {isPlayer _x}) < 1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_bounty_restr"};
 		};
 		case "TargetReset": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_conflict"};
