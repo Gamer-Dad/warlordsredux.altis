@@ -51,6 +51,7 @@ if !(isNull _instigator) then {
 				[_uid, (_bounty * 0.8)] call BIS_fnc_WL2_fundsDatabaseWrite;
 				[_unit, (_bounty * 0.8), true] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", (getPlayerUID _unit)], 0];
+				[format ["%1 Collected %2's bounty off %3CP.", name _sender, name _target, _cost]] remoteExec ["systemChat", -2];
 			};
 		};
 	};
