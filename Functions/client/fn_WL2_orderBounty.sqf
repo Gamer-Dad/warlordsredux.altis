@@ -78,7 +78,7 @@ _purchase_bounty_units lbSetCurSel 0;
 			for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 				(_display displayCtrl _i) ctrlEnable TRUE;
 			};
-			for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
+			for [{_i = 121}, {_i <= 126}, {_i = _i + 1}] do {
 				(_display displayCtrl _i) ctrlEnable FALSE;
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
