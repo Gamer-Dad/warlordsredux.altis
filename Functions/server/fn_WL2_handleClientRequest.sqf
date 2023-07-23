@@ -215,7 +215,7 @@ if !(isNull _sender) then {
 							} else {
 								if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
-									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
+									_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 									createVehicleCrew _asset;
 									(group _asset) deleteGroupWhenEmpty true;
 								} else {
