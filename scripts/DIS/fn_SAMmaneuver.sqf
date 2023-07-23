@@ -6,11 +6,9 @@ while {!isNull _rocket && {!isNull _target}} do{
     private _currentPos = getPosASLVisual _rocket;
     private _targetPos = aimPos _target;
     private _forwardVector = vectorNormalized (_targetPos vectorDiff _currentPos);
-    systemChat format ["%1", _forwardVector];
     private _rightVector = (_forwardVector vectorCrossProduct [0,0,1]) vectorMultiply -1;
     private _upVector = _forwardVector vectorCrossProduct _rightVector;
     private _targetVelocity = _forwardVector vectorMultiply _speed;
-    systemChat format ["%1", _targetVelocity];
     _rocket setVectorDirAndUp [_forwardVector,_upVector];
     _rocket setVelocity _targetVelocity;
     if (isNull _rocket || {isNull _target} || {(_rocket distance _targetPos) <= _minDistanceToTarget}) exitWith{};
