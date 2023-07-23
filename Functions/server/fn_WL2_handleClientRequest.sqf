@@ -188,7 +188,6 @@ if !(isNull _sender) then {
 							};
 
 							createVehicleCrew _asset;
-							(group effectiveCommander _asset) deleteGroupWhenEmpty true;
 						} else {
 							_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && !(_class isKindOf "VTOL_Base_F");
 							if (_isPlane) then {
@@ -217,7 +216,6 @@ if !(isNull _sender) then {
 									//Code to allow Both sides to use a drone of the other side. and code to allow for air drones.
 									_asset = createVehicle [_class, _pos, [], 0, "NONE"];
 									createVehicleCrew _asset;
-									(group _asset) deleteGroupWhenEmpty true;
 								} else {
 									if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 										_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
@@ -255,9 +253,7 @@ if !(isNull _sender) then {
 						if (_isStatic) then {
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
-								_grp = (createGroup (side player));
 								createVehicleCrew _asset;
-								[_asset] joinSilent _grp;
 							} else {
 								_asset = createVehicle [_class, _pos, [], 0, "NONE"];
 								_asset setDir (direction _sender);
