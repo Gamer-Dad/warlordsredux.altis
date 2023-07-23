@@ -10,7 +10,6 @@ while {!isNull _rocket && {!isNull _target}} do{
     private _targetVelocity = _forwardVector vectorMultiply _speed;
     _rocket setVectorDirAndUp [_forwardVector,_upVector];
     _rocket setVelocity _targetVelocity;
-    [format ["SAM Maneuver, %1", random 100]] remoteExec ["hint", 0];
     if (isNull _rocket || {isNull _target} || {(_rocket distance _targetPos) <= _minDistanceToTarget}) exitWith{};
     if (time > -1) exitWith{};
     sleep 0.01;
