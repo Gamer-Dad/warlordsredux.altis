@@ -330,6 +330,17 @@ if !(isNull _sender) then {
 			};
 			_sender setVariable ["BIS_WL_isOrdering", false, [2, remoteExecutedOwner]];
 		};
+		case "requestBounty": {
+			_hasFunds = (_playerFunds >= _cost);
+			if (_hasFunds) then {
+				_targetUID = getPlayerUID _target;
+				_uid = getPlayerUID _sender;
+				[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+				_target setVariable [format ["BIS_WL_Bounty_%1", _targetUID], _cost, true];
+				serverNamespace setVariable [format ["BIS_WL_Bounty_%1", _targetUID], _cost];
+				[format ["%1 set a bounty off %3CP on %2's head.", name _sender, name _target, _cost]] remoteExec ["systemChat", -2];
+			};
+		};
 		case "fundsTransferBill": {
 			private _uid = getPlayerUID _sender;
 			[_uid, -2000] call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -352,7 +363,9 @@ if !(isNull _sender) then {
 				[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 				serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
-				[_sender, _recipient, _cost] remoteExecCall ["BIS_fnc_WL2_displayCPtransfer", -2];
+				{
+					[[side _recipient, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost])] remoteExec ["commandChat", (owner _x)];
+				} forEach (allPlayers select {side group _x == side group _sender});
 			};
 		};
 	};
