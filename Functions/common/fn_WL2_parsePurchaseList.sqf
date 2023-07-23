@@ -179,7 +179,7 @@ _strategyArr pushBack ["Scan", BIS_WL_scanCost, [], localize "STR_A3_WL_param4_t
 _strategyArr pushBack ["FTSeized", BIS_WL_fastTravelCostOwned, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
 _strategyArr pushBack ["FTConflict", BIS_WL_fastTravelCostContested, [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
 _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_ft", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_ft"];
-_strategyArr pushBack ["RespawnPodFT", 0, [], "Fast Travel to Medical Pod", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Fast travel to medical pod"];
+_strategyArr pushBack ["RespawnPodFT", 0, [], "Fast Travel to Medical Pod (Free)", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Fast travel to medical pod"];
 _strategyArr pushBack ["RespawnVic", 200, [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
 _strategyArr pushBack ["RespawnPod", 200, [], "Purchase Fast Travel Pod", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order medical pod"];
 _strategyArr pushBack ["FundsTransfer", BIS_WL_fundsTransferCost, [], localize "STR_A3_WL_menu_fundstransfer", "\A3\Data_F_Warlords\Data\preview_cp_transfer.jpg", localize "STR_A3_WL_menu_fundstransfer_info"];
