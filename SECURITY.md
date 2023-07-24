@@ -2,7 +2,8 @@
 
 ## Supported Versions
 
-Supported versions will be marked with a :white_check_mark:.
+Supported versions will be marked with a :white_check_mark:. 
+Supported versions are version that are version that don't have any game braking bugs, it is still very possible that these versions have minor issue/ bugs but those won't be game braking.
 
 | Version | Supported          |
 | ------- | ------------------ |
