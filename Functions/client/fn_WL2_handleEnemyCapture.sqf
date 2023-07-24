@@ -5,9 +5,9 @@ params ["_sector"];
 _marker = (_sector getVariable "BIS_WL_markers") # 1;
 _nextPossibleWarn = 0;
 
-if !((_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide) exitWith {};
+if !((_sector getVariable "BIS_WL_owner") == (side group player)) exitWith {};
 
-while {(_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide && {count (_sector getVariable ["BIS_WL_seizingInfo", []]) == 3}} do {
+while {(_sector getVariable "BIS_WL_owner") == (side group player) && {count (_sector getVariable ["BIS_WL_seizingInfo", []]) == 3}} do {
 	private _seizingInfo = _sector getVariable "BIS_WL_seizingInfo";
 	
 	_seizingInfo params ["_side"];
@@ -18,12 +18,12 @@ while {(_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide && {count (_sec
 			[toUpper format [localize "STR_A3_WL_popup_losing_sector", BIS_WL_enemySide call BIS_fnc_WL2_sideToFaction, _sector getVariable "BIS_WL_name"]] spawn BIS_fnc_WL2_smoothText;
 		};
 		
-		while {count (_sector getVariable ["BIS_WL_seizingInfo", []]) == 3 && (_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide} do {
+		while {count (_sector getVariable ["BIS_WL_seizingInfo", []]) == 3 && (_sector getVariable "BIS_WL_owner") == (side group player)} do {
 			_marker setMarkerBrushLocal "Solid";
 			_marker setMarkerColorLocal BIS_WL_colorMarkerEnemy;
 			sleep WL_TIMEOUT_MEDIUM;
 			
-			if ((_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide) then {
+			if ((_sector getVariable "BIS_WL_owner") == (side group player)) then {
 				_marker setMarkerBrushLocal "Border";
 				_marker setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 				sleep WL_TIMEOUT_MEDIUM;
