@@ -3,7 +3,7 @@
 ## Supported Versions
 
 Supported versions will be marked with a :white_check_mark:. 
-Supported versions are version that don't have any game braking bugs, it is still very possible that these versions have minor issue/ bugs but those won't be game braking.
+Supported versions are versions that don't have any game braking bugs, it is still very possible that these versions have minor issues/ bugs but those won't be game braking.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -13,5 +13,5 @@ Supported versions are version that don't have any game braking bugs, it is stil
 ## Reporting a Vulnerability
 
 Be sure to report any issues or bugs on one of these places:
-- Github: https://github.com/Gamer-Dad/warlordsredux.altis/issues/new/choose 
+- Github: https://github.com/Gamer-Dad/warlordsredux.altis/issues/new/choose
 - Discord: https://discord.gg/grmzsZE4ua

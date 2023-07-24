@@ -49,5 +49,8 @@ if !(_boundToAnotherTeam) then {
 	[_warlord] call BIS_fnc_WL2_respawnHandle;
 	
 	_respawnPos = markerPos selectRandom _markers;
-	for "_i" from 0 to 2 do {_warlord setVehiclePosition [_respawnPos, [], 5, "NONE"];};
+	while {_warlord distance2D _respawnPos > 150} do {
+		[_warlord, [_respawnPos, [], 10, "NONE"]] remoteExec ["setVehiclePosition", _warlord];
+		sleep 1;
+	};
 };
