@@ -20,7 +20,8 @@ _seizingTime = (15 max (_size / 2500)) min 90;
 
 //Custom code
 while {!BIS_WL_missionEnd} do {
-	_info = _sector call BIS_fnc_WL2_getInfantry;
+	_info1 = _sector call BIS_fnc_WL2_getInfantry;
+	_info = [_sector, _info1] call BIS_fnc_WL2_getVehicles;
 	_highestPoints = (([_info, [], {(_x # 1)}, "DESCEND"] call BIS_fnc_sortBy) # 0);
 	_winner = (_highestPoints # 0);
 	if (_winner != _sector getVariable ["BIS_WL_owner", civilian] && {(count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0}) then {
