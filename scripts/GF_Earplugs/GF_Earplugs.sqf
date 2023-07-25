@@ -57,10 +57,9 @@ waitUntil {!isNull player};
 		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
 		_musicvolume = soundvolume;
 		_soundvolume = soundvolume;
-		_keyPlug = actionKeysNames "user2";
 		_keyPlug1 = 0xD2;
 
-		if (((keyName (_this select 1)) == _keyPlug) || (_key isEqualTo _keyPlug1)) then {
+		if (_key isEqualTo _keyPlug1) then {
 			if (!(_soundvolume isEqualto 0.1) or !(_soundvolume isEqualto 0.1)) then {
 				//________________ EARPLUGS IN ________________
 				"GF_Earplugs" cutRsc ["Rsc_GF_Earplugs", "PLAIN"];

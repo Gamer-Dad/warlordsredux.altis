@@ -84,7 +84,6 @@ while {dialog} do {
 
 	_inventoryKey = actionKeysNames "gear";
 	_gearKey = actionKeysNames "cycleThrownItems";
-	_earPlugKey = actionKeysNames "user2";
 
 	switch (_curSel) do {
 		case "pageAbt": {
@@ -118,7 +117,7 @@ while {dialog} do {
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_11", lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_12", _inventoryKey], lineBreak,
-			format [localize "STR_MRTM_welcomeInteract_13", _earPlugKey], lineBreak,
+			format [localize "STR_MRTM_welcomeInteract_13", "Insert"], lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
 			""
 			];
