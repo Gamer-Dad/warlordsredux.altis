@@ -76,7 +76,7 @@ MRTM_EnableRWR = true;
 MRTM_disableHint = true;
 MRTM_smallAnnouncerText = false;
 has_recieved_reward = false;
-reward_active = false;
+player setVariable ["reward_active", false];
 
 if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
