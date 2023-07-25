@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 _potentialBases = BIS_WL_allSectors select {_x getVariable ["BIS_WL_canBeBase", FALSE]};
 private _firstBase = selectRandom ["BIS_WL_base1", "BIS_WL_base2"];
 missionNamespace setVariable [_firstBase, selectRandom _potentialBases, TRUE];
@@ -54,7 +52,7 @@ missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) 
 		_flag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 	};
 	_flag setFlagSide _side;
-} forEach WL_BASES;
+} forEach [BIS_WL_base1, BIS_WL_base2];
 
 _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
 
@@ -125,34 +123,16 @@ while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
 	} forEach [_zoneRestrictionTrg1, _zoneRestrictionTrg2];
 	
 	_area = _sector getVariable "objectArea";
-	_area set [4, WL_MAX_SEIZING_HEIGHT];
-	
-	_seizeControlTrg1 = createTrigger ["EmptyDetector", _sectorPos, FALSE];
-	_seizeControlTrg2 = createTrigger ["EmptyDetector", _sectorPos, FALSE];
-	_sector setVariable ["BIS_WL_seizeControlTrgs", [_seizeControlTrg1, _seizeControlTrg2]];
+	_area set [4, 38];
 	
 	_area params ["_a", "_b", "_angle", "_isRectangle"];
 	_size = _a * _b * (if (_isRectangle) then {4} else {pi});
 	
-	if (_sector in WL_BASES) then {
+	if (_sector in [BIS_WL_base1, BIS_WL_base2]) then {
 		_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
 	} else {
 		_sector setVariable ["BIS_WL_value", round (_size / 13000)];
 	};
-
-	{
-		_handledSide = BIS_WL_competingSides # _forEachIndex;
-		_seizingTime = (WL_SEIZING_TIMEOUT_MIN max (_size / 3000)) min WL_SEIZING_TIMEOUT_MAX;
-		_x setVariable ["BIS_WL_handledSide", _handledSide];
-		_x setVariable ["BIS_WL_sector", _sector];
-		_x setTriggerArea _area;
-		_x setTriggerActivation [["WEST SEIZED", "EAST SEIZED", "GUER SEIZED"] # (BIS_WL_sidesArray find _handledSide), "PRESENT", true];
-		_x setTriggerTimeout [_seizingTime * 0.75, _seizingTime, _seizingTime * 1.25, TRUE];
-		_x setTriggerStatements [format ["this && triggerTimeoutCurrent (((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_seizeControlTrgs') # %1) == -1 && if ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_owner' == %2) then {TRUE} else {((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %3) # 3)) || (thisTrigger getVariable 'BIS_WL_sector') == (missionNamespace getVariable [format ['BIS_WL_currentTarget_%2'], objNull])}", if (_forEachIndex == 0) then {1} else {0}, _handledSide, _forEachIndex], format ["if ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_owner' != %1) then {[thisTrigger getVariable 'BIS_WL_sector', %1] call BIS_fnc_WL2_changeSectorOwnership}", _handledSide], ""];
-		if !(_handledSide in (_sector getVariable "BIS_WL_previousOwners")) then {
-			_x enableSimulation FALSE;
-		};
-	} forEach [_seizeControlTrg1, _seizeControlTrg2];
 	
 	if (count (_sector getVariable "BIS_WL_revealedBy") != 2) then {
 		_detectionTrg1 = createTrigger ["EmptyDetector", _sectorPos, FALSE];

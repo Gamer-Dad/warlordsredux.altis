@@ -82,7 +82,6 @@ class CfgFunctions {
 			class WL2_mineLimit {};
 			class WL2_populateSector {};
 			class WL2_processRunways {};
-			class WL2_sectorsInitServer {};
 			class WL2_selectTarget {};
 			class WL2_setupNewWarlord {};
 			class WL2_targetResetHandleServer {};
@@ -153,7 +152,15 @@ class CfgFunctions {
 			class WL2_handleSmallIED {};
 			class WL2_handleApersTripWireAmmo {};
 			class WL2_handleApersTripWireMag {};
-		}
+		};
+		class Sectors
+		{
+			file = "Functions\server\sectors";
+			class WL2_sectorsInitServer {};
+			class WL2_sectorCaptureHandle {};
+			class WL2_getVehicles {};
+			class WL2_getInfantry {};
+		};
 	};
 
 	/*******************************START OF CUSTOM CONTENT HERE****************************/
