@@ -149,7 +149,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} forEach ((allPlayers) select {(player getVariable "reward_active") && {(side group _x == BIS_WL_enemySide) && {(isNull objectParent _x) && {(alive _x)}}}});		
+	} forEach ((allUnits) select {(player getVariable ["reward_active", false]) && {(side group _x == BIS_WL_enemySide) && {(isNull objectParent _x) && {(alive _x)}}}});		
 	if !(isNull BIS_WL_highlightedSector) then {
 		_m drawIcon [
 			"A3\ui_f\data\map\groupicons\selector_selectedMission_ca.paa",
