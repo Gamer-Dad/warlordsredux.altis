@@ -33,18 +33,18 @@ if !(isNull _instigator) then {
 				_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69];
 			};
 			if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
-				_killReward = (round (_killReward * 2)); //1st person bonus
+				_killReward = _killReward * 2; //1st person bonus
 			};
 			if ((_targets findIf {_responsibleLeader inArea (_x getVariable "objectAreaComplete")}) != -1) then {
 				_killReward = _killReward * 1.3; //Bonus for defending sector or attacking sector.
 			};
 			_uid = getPlayerUID _responsibleLeader;
-			[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
-			[_unit, _killReward, false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
+			[_uid, (round _killReward)] call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_unit, (round _killReward), false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			{
 				_uid = getPlayerUID _x;
-				[_uid, _killReward] call BIS_fnc_WL2_fundsDatabaseWrite;
-				[_unit, _killReward, false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
+				[_uid, (round _killReward)] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_unit, (round _killReward), false] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 			} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
 		};
 	};
