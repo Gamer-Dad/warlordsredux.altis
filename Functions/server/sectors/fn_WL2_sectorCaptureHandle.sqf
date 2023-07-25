@@ -16,7 +16,7 @@ _sector spawn {
 
 _area = _sector getVariable "objectArea";
 _size = (_area # 0) * (_area # 1) * (if (_area # 3) then {4} else {pi});
-_seizingTime = (_size / 2900);
+_seizingTime = ((_size / 2900) min 90);
 
 [format ["%1", _seizingTime]] remoteExec ["hint", 0];
 
