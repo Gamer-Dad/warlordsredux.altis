@@ -15,6 +15,7 @@ respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;
 allowFunctionsLog = 1;
+zeusCompositionScriptLevel = 2;
 
 //revive settings below
 ReviveMode = 0;

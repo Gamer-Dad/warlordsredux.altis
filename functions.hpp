@@ -72,7 +72,7 @@ class CfgFunctions {
 		{
     		file = "Functions\server";
     		class WL2_assetRelevanceCheck {ext = ".fsm";};
-			class WL2_incomePayoff {ext = ".fsm";};
+			class WL2_incomePayoff {};
 			class WL2_garbageCollector {};
 			class WL2_detectNewPlayers {};
 			class WL2_friendlyFireHandleServer {};
