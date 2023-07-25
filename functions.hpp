@@ -67,6 +67,7 @@ class CfgFunctions {
 			class WL2_underWaterCheck {};
 			class WL2_mrtmAction {};
 			class WL2_targetResetHandleVote {};
+			class WL2_reportCheater {};
     	};
 		class Server 
 		{
