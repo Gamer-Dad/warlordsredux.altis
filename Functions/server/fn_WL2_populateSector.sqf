@@ -1,5 +1,8 @@
 params ["_sector", "_side"];
 
+if (_sector getVariable ["BIS_WL_aiSpawned", false]) exitWith {};
+
+_sector setVariable ["BIS_WL_aiSpawned", true];
 private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
 private _connectedToBase = count ([BIS_WL_base1, BIS_WL_base2] arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 
