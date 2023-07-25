@@ -66,6 +66,10 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
+		class BIS_fnc_WL2_reportCheater {
+			allowedTargets = 1;
+		};
+
 		//All allowed
 		class BIS_fnc_WL2_newAssetHandle {
 			allowedTargets = 0;
