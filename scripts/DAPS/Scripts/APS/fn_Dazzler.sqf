@@ -1,5 +1,5 @@
-private _v = _this select 0;
-private _i = _this select 1;
+params ["_v", "_i"];
+
 private _exit = true;
 _i setOwner 2;
 
