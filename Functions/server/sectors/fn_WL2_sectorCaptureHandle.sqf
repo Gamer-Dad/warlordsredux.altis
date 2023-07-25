@@ -16,7 +16,9 @@ _sector spawn {
 
 _area = _sector getVariable "objectArea";
 _size = (_area # 0) * (_area # 1) * (if (_area # 3) then {4} else {pi});
-_seizingTime = (15 max (_size / 2700)) min 90;
+_seizingTime = (_size / 2900);
+
+[format ["%1", _seizingTime]] remoteExec ["hint", 0];
 
 //Custom code
 while {!BIS_WL_missionEnd} do {
@@ -24,15 +26,12 @@ while {!BIS_WL_missionEnd} do {
 	_info = [_sector, _info1] call BIS_fnc_WL2_getVehicles;
 	_highestPoints = (([_info, [], {(_x # 1)}, "DESCEND"] call BIS_fnc_sortBy) # 0);
 	_winner = (_highestPoints # 0);
-	[format ["%1", (_sector getVariable ["BIS_WL_previousOwners", []])]] remoteExec ["hint", 0];
 	if (_winner != _sector getVariable ["BIS_WL_owner", civilian] && {(count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0}) then {
-		["Capturing"] remoteExec ["hint", 0];
 		_sector setVariable ["BIS_WL_seizingInfo", [_winner, serverTime, (serverTime + _seizingTime)], true];
 		[_sector] remoteExec ["BIS_fnc_WL2_handleEnemyCapture", [0, -2] select isDedicated];
 	} else {
 		if ((count (_sector getVariable ["BIS_WL_seizingInfo", []])) > 0 && {_winner == _sector getVariable ["BIS_WL_owner", civilian]}) then {
 			_sector setVariable ["BIS_WL_seizingInfo", [], true];
-			["Resetting"] remoteExec ["hint", 0];
 		};
 	};
 	sleep 1;
