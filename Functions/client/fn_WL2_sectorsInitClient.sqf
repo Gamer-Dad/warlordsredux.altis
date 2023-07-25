@@ -52,6 +52,7 @@ _location14 setText "Salt Flats";
 
 
 BIS_WL_sectorLinks = [];
+_i = 0;
 
 {
 	_sector = _x;
@@ -122,12 +123,14 @@ BIS_WL_sectorLinks = [];
 			_center = [((_pos1 # 0) + (_pos2 # 0)) / 2, ((_pos1 # 1) + (_pos2 # 1)) / 2];
 			_size = ((_pos1 distance2D _pos2) / 2) - 150;
 			_dir = _pos1 getDir _pos2;
-			_mrkr = createMarkerLocal [format ["BIS_WL_linkMrkr_%1", _forEachIndex], _center];
+			_mrkr = createMarkerLocal [format ["BIS_WL_linkMrkr_%1", _i], _center];
 			_mrkr setMarkerAlphaLocal WL_CONNECTING_LINE_ALPHA_MAX;
 			_mrkr setMarkerShapeLocal "RECTANGLE";
 			_mrkr setMarkerDirLocal _dir;
 			_mrkr setMarkerSizeLocal [WL_CONNECTING_LINE_AXIS, _size];
 			BIS_WL_sectorLinks pushBack _mrkr;
+			{_x setVariable ["BIS_WL_linkMarkerIndex", _i]} forEach [_sector, _neighbor];
+			_i = _i + 1;
 		};
 	} forEach _neighbors;
 	
