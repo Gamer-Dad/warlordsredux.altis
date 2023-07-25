@@ -154,6 +154,7 @@ if !(isNull _sender) then {
 				_targetPos = _pos;
 				if (_class isKindOf "Ship") then {
 					_asset = createVehicle [_class, (_pos vectorAdd [0,0,3]), [], 0, "CAN_COLLIDE"];
+					_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
 				} else {
 					if (_class isKindOf "Air") then {
 						if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
