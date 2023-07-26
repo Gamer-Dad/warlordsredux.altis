@@ -21,6 +21,8 @@ MRTM_spawnedSIEDU = [];
 MRTM_spawnedSIEDDI = [];
 MRTM_spawnedTripWires = [];
 MRTM_spawnedSLAMs_Ammo = [];
+MRTM_spawnedDemoCharge = [];
+MRTM_spawnedSatchel = [];
 
 missionNamespace setVariable ["imbalance", 0, true];
 

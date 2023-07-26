@@ -153,6 +153,8 @@ class CfgFunctions {
 			class WL2_handleSmallIED {};
 			class WL2_handleApersTripWireAmmo {};
 			class WL2_handleApersTripWireMag {};
+			class WL2_handleSatchelCharge {};
+			class WL2_handleDemoCharge {};
 		};
 		class Sectors
 		{
