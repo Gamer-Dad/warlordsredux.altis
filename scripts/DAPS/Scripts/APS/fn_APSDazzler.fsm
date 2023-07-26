@@ -134,7 +134,7 @@ class FSM
                         itemno = 6;
                         init = /*%FSM<STATEINIT""">*/"_a = (((nearestObjects [_v, [""ammo_Penetrator_Base"", ""SubmunitionCore"", ""MissileCore"", ""RocketCore""], 200]) select {!((typeOf _x) in _reg)}) # 0);" \n
                          "" \n
-                         "[_v, _a] remoteExec [""DAPS_fnc_Dazzler"", 2];" \n
+                         "[_v, _a] spawn DAPS_fnc_Dazzler;" \n
                          "_reg pushBackUnique _a;" \n
                          "" \n
                          "{" \n
