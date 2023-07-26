@@ -84,17 +84,10 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["B_MBT_01_cannon_F", 4], ["B_MBT_01_TUSK_F", 4],
 		["B_AFV_Wheeled_01_cannon_F", 4], ["B_AFV_Wheeled_01_up_cannon_F", 4],
 		["B_MBT_01_arty_F", 4], ["B_MBT_01_mlrs_F", 4],
-		//Boxes
-		["Box_NATO_Ammo_F", 0], ["Box_NATO_Grenades_F", 0], ["Box_NATO_Wps_F", 0], ["Box_NATO_AmmoOrd_F", 0], ["Box_NATO_WpsLaunch_F", 0], ["Box_NATO_WpsSpecial_F", 0], ["B_supplyCrate_F", 0], ["Box_NATO_AmmoVeh_F", 0],
 		["B_UGV_02_Demining_F", 0], ["B_UGV_01_F", 0], ["B_UGV_01_rcws_F", 0],
-		["Land_BagFence_Round_F", 0], ["Land_Razorwire_F", 0], ["Land_DragonsTeeth_01_1x1_new_F", 0],
 		["B_HMG_01_F", 0], ["B_HMG_01_high_F", 0], ["B_GMG_01_F", 0], ["B_GMG_01_high_F", 0],
 		["B_static_AT_F", 0], ["B_static_AA_F", 0], ["B_Mortar_01_F", 0],
-		["B_Slingload_01_Ammo_F", 0], ["B_Slingload_01_Repair_F", 0], ["B_Slingload_01_Fuel_F", 0], ["B_Slingload_01_Medevac_F", 0],
-		//Static
-		["B_Radar_System_01_F", 0],
-		["B_AAA_System_01_F", 4], ["B_SAM_System_01_F", 4], ["B_SAM_System_03_F", 4],
-		["B_SAM_System_02_F", 4], ["B_Ship_MRLS_01_F", 4],
+		["B_Radar_System_01_F", 2], ["B_SAM_System_03_F", 3],
 		//CSAT
 		["O_Quadbike_01_F", 0], ["O_LSV_02_unarmed_F", 0], ["O_MRAP_02_F", 0],
 		["O_Truck_03_transport_F", 0], ["O_Truck_03_Fuel_F", 0],
@@ -106,18 +99,16 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["O_APC_Tracked_02_AA_F", 4],
 		["O_MBT_02_cannon_F", 4], ["O_MBT_04_cannon_F", 4], ["O_MBT_04_command_F", 4],
 		["O_MBT_02_arty_F", 4], ["I_Truck_02_MRL_F", 4],
-		//Boxes
-		["Box_East_Ammo_F", 0], ["Box_East_Grenades_F", 0], ["Box_East_Wps_F", 0], ["Box_East_AmmoOrd_F", 0], ["Box_East_WpsLaunch_F", 0], ["Box_East_WpsSpecial_F", 0], ["O_supplyCrate_F", 0], ["Box_East_AmmoVeh_F", 0],
 		["O_UGV_02_Demining_F", 0], ["O_UGV_01_F", 0], ["O_UGV_01_rcws_F", 0],
-		["Land_BagFence_Round_F", 0], ["Land_Razorwire_F", 0], ["Land_DragonsTeeth_01_1x1_new_F", 0],
 		["O_HMG_01_F", 0], ["O_HMG_01_high_F", 0], ["O_GMG_01_F", 0], ["O_GMG_01_high_F", 0],
 		["O_static_AT_F", 0], ["O_static_AA_F", 0], ["O_Mortar_01_F", 0],
-		["Land_Pod_Heli_Transport_04_ammo_F", 0], ["Land_Pod_Heli_Transport_04_repair_F", 0], ["Land_Pod_Heli_Transport_04_fuel_F", 0], ["Land_Pod_Heli_Transport_04_medevac_F", 0],
-		//Static
-		["O_Radar_System_02_F", 0], ["O_SAM_System_04_F", 4],
+		["O_Radar_System_02_F", 2], ["O_SAM_System_04_F", 3],
 		//AAF
-		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
-		["I_LT_01_scout_F", 3], ["I_LT_01_AA_F", 3], ["I_LT_01_AT_F", 3], ["I_LT_01_cannon_F", 3],
-		["I_MBT_03_cannon_F", 5], ["I_APC_Wheeled_03_cannon_F", 5], ["I_APC_tracked_03_cannon_F", 5]
+		["I_MRAP_03_hmg_F", 4], ["I_MRAP_03_gmg_F", 4],
+		["I_LT_01_scout_F", 5], ["I_LT_01_AA_F", 5], ["I_LT_01_AT_F", 5], ["I_LT_01_cannon_F", 5],
+		["I_MBT_03_cannon_F", 6], ["I_APC_Wheeled_03_cannon_F", 6], ["I_APC_tracked_03_cannon_F", 6],
+		//Common
+		["B_SAM_System_02_F", 4], ["B_Ship_MRLS_01_F", 4],
+		["B_AAA_System_01_F", 4], ["B_SAM_System_01_F", 4]
 	]
 ];
