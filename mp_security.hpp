@@ -305,12 +305,4 @@ class CfgDisabledCommands {
 			args[] = {{"OBJECT"},{"ARRAY"}};
 		};
 	};
-	class SETPOSWORLD
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"ARRAY"}};
-		};
-	};
 };
