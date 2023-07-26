@@ -121,14 +121,11 @@ GOM_fnc_updateDialog = {
 	_rearmtext = if (!_canRearm) then {"You need ammo sources to rearm the aircraft."} else {""};
 
 
-_totalfuel = 0;
 _totalammo = 0;
 _totalrepair = 0;
 _rearmVehs apply {_totalammo = _totalammo + (_x getvariable ["GOM_fnc_ammoCargo",0])};
 _repairVehs apply {_totalrepair = _totalrepair + (_x getvariable ["GOM_fnc_repairCargo",0])};
 
-
-_fuelInfo = format ["%1l from ",_totalfuel];
 _ammoInfo = format ["%1 from ",(_totalammo call GOM_fnc_kgToTon)];
 _repairInfo = format ["%1 from ",(_totalrepair call GOM_fnc_kgToTon)];
 
@@ -1305,7 +1302,7 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 	} foreach _nearbyVehs;
 	ctrlEnable [1600,_canRearm];
 	ctrlEnable [1602,_canRepair];
-	ctrlEnable [1603,_canRefuel];
+	ctrlEnable [1603, false];
 	ctrlEnable [1604,_canRearm];
 	[_flags,_vehs]
 };
