@@ -11,7 +11,7 @@ civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params ["_t"];
-	if (_t getVariable ["BIS_WL_registerdCheater", false]) exitWith {[(random 1),(random 1),(random 1),1]};
+	if (_t getVariable ["BIS_WL_registerdCheater", false]) exitWith {(if (side group _t == west) then {westColor} else {eastColor})};
 	if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};
 	if (side group player == west) exitWith {westColor};
 	if (side group player == east) exitWith {eastColor};
@@ -120,7 +120,7 @@ MRTM_fnc_iconText = {
 		};
 	};
 	if (_x getVariable ["BIS_WL_registerdCheater", false]) then {
-		_text = _text + "Cheater";
+		_text = format ["%1: Cheater", _text];
 	};
 	_text;
 };
