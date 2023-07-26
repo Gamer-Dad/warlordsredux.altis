@@ -104,11 +104,11 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["O_static_AT_F", 0], ["O_static_AA_F", 0], ["O_Mortar_01_F", 0],
 		["O_Radar_System_02_F", 2], ["O_SAM_System_04_F", 3],
 		//AAF
-		["I_MRAP_03_hmg_F", 4], ["I_MRAP_03_gmg_F", 4],
-		["I_LT_01_scout_F", 5], ["I_LT_01_AA_F", 5], ["I_LT_01_AT_F", 5], ["I_LT_01_cannon_F", 5],
-		["I_MBT_03_cannon_F", 6], ["I_APC_Wheeled_03_cannon_F", 6], ["I_APC_tracked_03_cannon_F", 6],
+		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
+		["I_LT_01_scout_F", 4], ["I_LT_01_AA_F", 4], ["I_LT_01_AT_F", 4], ["I_LT_01_cannon_F", 4],
+		["I_MBT_03_cannon_F", 5], ["I_APC_Wheeled_03_cannon_F", 5], ["I_APC_tracked_03_cannon_F", 5],
 		//Common
 		["B_SAM_System_02_F", 4], ["B_Ship_MRLS_01_F", 4],
-		["B_AAA_System_01_F", 4], ["B_SAM_System_01_F", 4]
+		["B_AAA_System_01_F", 4], ["B_SAM_System_01_F", 0]
 	]
 ];
