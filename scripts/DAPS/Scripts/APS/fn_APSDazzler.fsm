@@ -23,8 +23,8 @@ link9[] = {6,7};
 link10[] = {7,8};
 link11[] = {8,2};
 link12[] = {8,3};
-globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,-515.390015,21.812347,236.181824,-542.337219,429,555,1};
-window[] = {0,-1,-1,-1,-1,1053,-8,1912,-6,1,447};
+globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,-488.529907,-5.047760,512.845886,-486.801270,429,887,1};
+window[] = {0,-1,-1,-1,-1,1241,182,2102,182,1,447};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -109,7 +109,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Trigger";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((count ((_v nearObjects [""ammo_Penetrator_Base"", 200]) + (_v nearObjects [""SubmunitionCore"", 200]) + (_v nearObjects [""MissileCore"", 200]) + (_v nearObjects [""RocketCore"", 200]))) > 0) && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((count (((_v nearObjects [""ammo_Penetrator_Base"", 200]) + (_v nearObjects [""SubmunitionCore"", 200]) + (_v nearObjects [""MissileCore"", 200]) + (_v nearObjects [""RocketCore"", 200])) select {!((typeOf _x) in _reg)})) > 0) && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -132,7 +132,7 @@ class FSM
                 {
                         name = "Trigger";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"_a = (nearestObjects [_v, [""ammo_Penetrator_Base"", ""SubmunitionCore"", ""MissileCore"", ""RocketCore""], 200]) # 0;" \n
+                        init = /*%FSM<STATEINIT""">*/"_a = (((nearestObjects [_v, [""ammo_Penetrator_Base"", ""SubmunitionCore"", ""MissileCore"", ""RocketCore""], 200]) select {!((typeOf _x) in _reg)}) # 0);" \n
                          "" \n
                          "if !(_a in _reg) then {" \n
                          "   [_v, _a] remoteExec [""DAPS_fnc_Dazzler"", 2];" \n

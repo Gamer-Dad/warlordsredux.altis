@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, fn_APSmedium.fsm">*/
+/*%FSM<COMPILE "scriptedFSM.cfg, fn_APSmedium.fsm">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Init",0,250,-89.873108,-206.791473,0.126892,-156.791473,0.000000,"Init"};
@@ -77,7 +77,7 @@ class FSM
                 {
                         name = "Exit";
                         itemno = 1;
-                        init = /*%FSM<STATEINIT""">*/"_v setVariable [""dapsAmmo"", nil, true];"/*%FSM</STATEINIT""">*/;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
@@ -100,7 +100,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Trigger";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((_v nearObjects [""MissileCore"", 125]) + (_v nearObjects [""RocketCore"", 125])) findIf { (typeOf _x) in [""M_120mm_cannon_ATGM_LG"", ""R_TBG32V_F"", ""M_AT"", ""M_PG_AT"", ""M_Scalpel_AT"", ""M_Scalpel_AT_hidden"", ""M_SPG9_HE"", ""M_SPG9_HEAT"", ""M_Titan_AP"", ""M_Titan_AT"", ""M_Titan_AT_long"", ""M_Titan_AT_static"", ""M_Vorona_HE"", ""M_Vorona_HEAT"", ""Missile_AGM_01_F"", ""Missile_AGM_02_F"", ""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""] } > -1 && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((_v nearObjects [""MissileCore"", 125]) + (_v nearObjects [""RocketCore"", 125])) findIf { (typeOf _x) in [""M_120mm_cannon_ATGM_LG"", ""R_TBG32V_F"", ""M_AT"", ""M_PG_AT"", ""M_Scalpel_AT"", ""M_Scalpel_AT_hidden"", ""M_SPG9_HE"", ""M_SPG9_HEAT"", ""M_Titan_AP"", ""M_Titan_AT"", ""M_Titan_AT_long"", ""M_Titan_AT_static"", ""M_Vorona_HE"", ""M_Vorona_HEAT"", ""Missile_AGM_01_F"", ""Missile_AGM_02_F"", ""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""] && {!((typeOf _x) in _reg)}} > -1 && {_v call DAPS_fnc_active};"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -123,7 +123,7 @@ class FSM
                 {
                         name = "Trigger";
                         itemno = 6;
-                        init = /*%FSM<STATEINIT""">*/"_a = (nearestObjects [_v, [""M_120mm_cannon_ATGM_LG"", ""R_TBG32V_F"", ""M_AT"", ""M_PG_AT"", ""M_Scalpel_AT"", ""M_Scalpel_AT_hidden"", ""M_SPG9_HE"", ""M_SPG9_HEAT"", ""M_Titan_AP"", ""M_Titan_AT"", ""M_Titan_AT_long"", ""M_Titan_AT_static"", ""M_Vorona_HE"", ""M_Vorona_HEAT"", ""Missile_AGM_01_F"", ""Missile_AGM_02_F"", ""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 125]) # 0;" \n
+                        init = /*%FSM<STATEINIT""">*/"_a = ((nearestObjects [_v, [""M_120mm_cannon_ATGM_LG"", ""R_TBG32V_F"", ""M_AT"", ""M_PG_AT"", ""M_Scalpel_AT"", ""M_Scalpel_AT_hidden"", ""M_SPG9_HE"", ""M_SPG9_HEAT"", ""M_Titan_AP"", ""M_Titan_AT"", ""M_Titan_AT_long"", ""M_Titan_AT_static"", ""M_Vorona_HE"", ""M_Vorona_HEAT"", ""Missile_AGM_01_F"", ""Missile_AGM_02_F"", ""R_MRAAWS_HE_F"", ""R_MRAAWS_HEAT_F"", ""R_MRAAWS_HEAT55_F"", ""R_PG32V_F"", ""R_PG7_F"", ""M_NLAW_AT_F""], 125]) select {!((typeOf _x) in _reg)}) # 0;" \n
                          "" \n
                          "if !(_a in _reg) then {" \n
                          "   [_v, _a] remoteExec [""DAPS_fnc_Generic"", 2];" \n
