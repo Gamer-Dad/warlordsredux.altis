@@ -73,12 +73,12 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 serverNamespace setVariable ["BIS_WL2_cappingValues",
 	createHashMapFromArray [
 		//NATO
-		["B_Quadbike_01_F", 0], ["B_LSV_01_unarmed_F", 0], ["B_MRAP_01_F", 0],
-		["B_Truck_01_transport_F", 0], ["B_Truck_01_fuel_F", 0],
+		["B_Quadbike_01_F", 1], ["B_LSV_01_unarmed_F", 1], ["B_MRAP_01_F", 1], //Unarmed
+		["B_Truck_01_transport_F", 1], ["B_Truck_01_fuel_F", 1], //Unarmed
 		["B_LSV_01_armed_F", 1], ["B_G_Offroad_01_armed_F", 1], ["B_LSV_01_AT_F", 1], ["B_G_Offroad_01_AT_F", 1],
-		["B_Truck_01_flatbed_F", 0], ["B_Truck_01_medical_F", 0],
+		["B_Truck_01_flatbed_F", 1], ["B_Truck_01_medical_F", 1], //Unarmed
 		["B_MRAP_01_hmg_F", 2], ["B_MRAP_01_gmg_F", 2],
-		["B_Truck_01_Repair_F", 0], ["O_T_Truck_03_device_ghex_F", 1], ["B_Truck_01_ammo_F", 0],
+		["B_Truck_01_Repair_F", 1], ["O_T_Truck_03_device_ghex_F", 1], ["B_Truck_01_ammo_F", 1], //Unarmed
 		["B_APC_Wheeled_03_cannon_F", 3], ["B_APC_Wheeled_01_cannon_F", 3], ["B_APC_Tracked_01_rcws_F", 3],
 		["B_APC_Tracked_01_AA_F", 4],
 		["B_MBT_01_cannon_F", 4], ["B_MBT_01_TUSK_F", 4],
@@ -89,12 +89,12 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["B_static_AT_F", 0], ["B_static_AA_F", 0], ["B_Mortar_01_F", 0],
 		["B_Radar_System_01_F", 2], ["B_SAM_System_03_F", 3],
 		//CSAT
-		["O_Quadbike_01_F", 0], ["O_LSV_02_unarmed_F", 0], ["O_MRAP_02_F", 0],
-		["O_Truck_03_transport_F", 0], ["O_Truck_03_Fuel_F", 0],
+		["O_Quadbike_01_F", 1], ["O_LSV_02_unarmed_F", 1], ["O_MRAP_02_F", 1], //Unarmed
+		["O_Truck_03_transport_F", 1], ["O_Truck_03_Fuel_F", 1], //Unarmed
 		["O_LSV_02_armed_F", 1], ["O_G_Offroad_01_armed_F", 1], ["O_LSV_02_AT_F", 1], ["O_G_Offroad_01_AT_F", 1],
-		["B_Truck_01_flatbed_F", 0], ["O_Truck_03_medical_F", 0],
+		["B_Truck_01_flatbed_F", 1], ["O_Truck_03_medical_F", 1], //Unarmed
 		["O_MRAP_02_hmg_F", 2], ["O_MRAP_02_gmg_F", 2],
-		["O_Truck_03_Repair_F", 0], ["O_Truck_03_device_F", 1], ["O_Truck_03_ammo_F", 0],
+		["O_Truck_03_Repair_F", 1], ["O_Truck_03_device_F", 1], ["O_Truck_03_ammo_F", 1], //Unarmed
 		["O_APC_Wheeled_02_rcws_v2_F", 3], ["O_APC_Tracked_02_cannon_F", 3],
 		["O_APC_Tracked_02_AA_F", 4],
 		["O_MBT_02_cannon_F", 4], ["O_MBT_04_cannon_F", 4], ["O_MBT_04_command_F", 4],
