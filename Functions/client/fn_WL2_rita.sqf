@@ -34,7 +34,7 @@ if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
 
 //Pull up warning
 0 spawn {
-	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) && {alive player})} do {
 		_v = objectParent player;
 		if (MRTM_EnableRWR && {!(_v getVariable "isBettyBitching")}) then {
 			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
@@ -54,7 +54,7 @@ if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
 
 //Altitude warning
 0 spawn {
-	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_Heli_Attack_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}}) && {alive player})} do {
+	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) && {alive player})} do {
 		_v = objectParent player;
 		if (MRTM_EnableRWR && {!(_v getVariable "isBettyBitching")}) then {
 			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
