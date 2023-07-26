@@ -1300,7 +1300,6 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 	{
 		if !(isNull _x) then {
 			[_x,0] remoteExec ["setAmmoCargo",_x];
-			[_x,0] remoteExec ["setFuelCargo",_x];
 			[_x,0] remoteExec ["setRepairCargo",_x];
 		};
 	} foreach _nearbyVehs;
