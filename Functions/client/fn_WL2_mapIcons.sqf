@@ -63,7 +63,6 @@ MRTM_fnc_getPos = {
 
 MRTM_fnc_iconText = {
 	params ["_t"];
-	forceUnicode 0;
 	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
 	_text = "";
 	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
@@ -265,7 +264,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};
-	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
+	} count ((entities [["Air", "LandVehicle", "Ship", "Thing"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -299,7 +298,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};	
-	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
+	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 	if (side group player == west) then {
 		{
 			_m drawIcon [
