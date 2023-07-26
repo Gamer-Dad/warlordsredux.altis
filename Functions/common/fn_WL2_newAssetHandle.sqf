@@ -166,9 +166,7 @@ if (isPlayer _owner) then {
 			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];
 		};
 		if (getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportFuel") > 0) then {
-			_asset setFuelCargo 0;
-			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportFuel")) min 10000);
-			_asset setvariable ["GOM_fnc_fuelCargo", _amount, true];
+			_asset setFuelCargo 1;
 		};
 	};
 

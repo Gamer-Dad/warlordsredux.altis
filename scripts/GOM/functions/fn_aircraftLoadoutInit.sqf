@@ -80,16 +80,6 @@ if !(profileNamespace getVariable ["GOM_fnc_prepareUI",false]) then {
 
 };
 
-
-GOM_fnc_setFuelCargo = {
-
-	params ["_veh","_amount"];
-	_veh setvariable ["GOM_fnc_fuelCargo",_amount max 0,true];
-	true
-
-
-};
-
 GOM_fnc_setAmmoCargo = {
 
 	params ["_veh","_amount"];
@@ -126,7 +116,7 @@ GOM_fnc_updateDialog = {
 	_availableTexts = ["<t color='#E51B1B'>Not available!</t>","<t color='#1BE521'>Available!</t>"];
 
 
-	_fueltext = if (!_canRefuel) then {"You need fuel sources to refuel the aircraft."} else {""};
+	_fueltext = "";
 	_repairtext = if (!_canRepair) then {"You need repair sources to repair the aircraft."} else {""};
 	_rearmtext = if (!_canRearm) then {"You need ammo sources to rearm the aircraft."} else {""};
 
@@ -134,7 +124,6 @@ GOM_fnc_updateDialog = {
 _totalfuel = 0;
 _totalammo = 0;
 _totalrepair = 0;
-_refuelVehs apply {_totalfuel = _totalfuel + (_x getvariable ["GOM_fnc_fuelCargo",0])};
 _rearmVehs apply {_totalammo = _totalammo + (_x getvariable ["GOM_fnc_ammoCargo",0])};
 _repairVehs apply {_totalrepair = _totalrepair + (_x getvariable ["GOM_fnc_repairCargo",0])};
 
@@ -143,19 +132,9 @@ _fuelInfo = format ["%1l from ",_totalfuel];
 _ammoInfo = format ["%1 from ",(_totalammo call GOM_fnc_kgToTon)];
 _repairInfo = format ["%1 from ",(_totalrepair call GOM_fnc_kgToTon)];
 
-_refuelVehs = _refuelVehs apply {typeof _x};
 _repairVehs = _repairVehs apply {typeof _x};
 _rearmVehs = _rearmVehs apply {typeof _x};
 
-
-	if (_canRefuel) then {
-		_t = "";
-_getText = (_refuelVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + str (_x select 1) + " " + (getText (configfile >> "CfgVehicles" >> (_x select 0) >> "displayName")) + ",")};
-
-		_s = ["source","sources"] select (count _refuelvehs > 1);
-
-		_fueltext = format ["%1%2 fuel %3 nearby:%4",_fuelInfo,count _refuelVehs,_s,_t select [0,((count _t) -1)]];
-	};
 	if (_canRepair) then {
 		_t = "";
 _getText = (_repairVehs call BIS_fnc_consolidateArray) apply {_t = (_t + " " + str (_x select 1) + " " + (getText (configfile >> "CfgVehicles" >> (_x select 0) >> "displayName")) + ",")};
@@ -599,36 +578,6 @@ if (!_abort) then {_source setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",
 
 };
 
-GOM_fnc_refuelCheck = {
-	params ["_veh"];
-
-	_abort = false;
-	_text = "";
-
-	_vehs = ((_veh nearEntities ["All",50]) select {speed _x < 1 AND {alive _x} AND {_x getvariable ["GOM_fnc_fuelCargo",0] > 0}});
-
-	if (_vehs isequalto []) then {_abort = true;_text = "You have no valid fuel sources!";};
-	_vehs params ["_source"];
-	_cargo = _source getVariable ["GOM_fnc_fuelCargo",0];
-
-	if (_cargo <= 0) then {_abort = true;_text = "Your fuel is depleted!"};
-
-		_notBusy = _vehs select {!(_x getVariable ["GOM_fnc_aircraftLoadoutBusyFuelSource",false])};
-
-		if (_notBusy isEqualTo []) then {_source = objnull;_text =  "All fuel sources are currently busy!";_abort = true;};
-		if !(_notBusy isEqualTo []) then {_source = _notBusy select 0;};
-
-
-
-
-if (_abort) then {systemchat _text;playsound "Simulation_Fatal"};
-	if (!_abort) then {_source setVariable ["GOM_fnc_aircraftLoadoutBusyFuelSource",true,true];};
-
-	[_abort,_text,_source]
-
-
-};
-
 GOM_fuelLeak = {
 
 	params ["_veh"];
@@ -889,7 +838,7 @@ GOM_fnc_setPylonsRefuel = {
 	_veh = call compile  lbData [1500,lbcursel 1500];
 
 
-_check = _veh call GOM_fnc_refuelCheck;
+_check = [false, "", objNull];
 _check params ["_abort","_text","_refuelSource"];
 if (_abort) exitWith {true};
 
@@ -905,7 +854,6 @@ if (_leaking AND _leakingLevel < 0.9 AND _leakingLevel > 0.1) then {systemchat f
 		_curFuel = fuel _veh;
 		_abort = false;
 		_timer = 0;
-		_fuelCargo = _refuelSource getvariable ["GOM_fnc_fuelCargo",0];
 		if (!alive _veh) exitWith {systemchat "Aircraft is destroyed!"};
 		if (_curFuel isEqualTo 1) exitWith {systemchat "Aircraft is already at 100% fuel capacity!"};
 		_maxFuel = getNumber (configfile >> "CfgVehicles" >> typeof _veh >> "fuelCapacity");
@@ -935,11 +883,6 @@ if (_leaking AND fuel _veh > (1 - _leakingLevel)) exitWith {systemchat format ["
 
 			if (speed _veh > 3 OR speed _refuelSource > 3) exitWith {_abort = true;systemchat "Aborting refuelling! Vehicle is moving!"};
 		_curFuel = fuel _veh;
-
-		_fuelCargo = _refuelSource getvariable ["GOM_fnc_fuelCargo",0];
-		_fuelCargo = (_fuelCargo - _fuelPerTick) max 0;
-		_refuelSource setvariable ["GOM_fnc_fuelCargo",_fuelCargo,true];
-		if (_fuelCargo isEqualTo 0) exitWith {systemchat "Your fuel resource is empty!";_empty = true};
 
 		[_veh,(_curFuel + _fuelTick)] remoteExec ["setFuel",_veh];
 
@@ -1341,14 +1284,12 @@ GOM_fnc_aircraftLoadoutResourcesCheck = {
 	params ["_obj"];
 
 	_nearbyVehs = (_obj nearEntities ["All", 50]) select {speed _x < 1 AND {alive _x}};
-
-	_refuelVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_fuelcargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportFuel") > 0};
 	_rearmVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_ammocargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0};
 	_repairVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_repairCargo",-1] >= 0 OR getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0};
 
 	_flags = [];
 
-	_flags set [0, (count _refuelVehs > 0)];
+	_flags set [0, true];
 	_flags set [1, (count _repairVehs > 0)];
 	_flags set [2, (count _rearmVehs > 0)];
 
@@ -1396,32 +1337,6 @@ GOM_fnc_showResourceDisplay = {
 
 
 	_ID = addMissionEventHandler ["Draw3D", {
-
-		{
-			_pos = visiblePositionASL _x;
-			_pos params ["_posX", "_posY", "_posZ"];
-
-			_amount = _x getvariable ["GOM_fnc_fuelcargo",0];
-			_text = format ["%1l fuel",_amount];
-
-			_drawicon = "";
-			_color = [1, 1, 1, 1];
-			drawIcon3D [
-				_drawicon,
-				[1, 1, 1, log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10)],
-				[_posX, _posY, 3],
-				1,
-				1,
-				0,
-				_text,
-				2,
-				0.03 * log ((GOM_fnc_aircraftResourceDisplayTimeout - time) min 10),
-				"PuristaBold",
-				"center",
-				true
-			];
-		} foreach ((player nearEntities ["All",50]) select {speed _x < 15 AND {alive _x} AND {_x getvariable ["GOM_fnc_fuelcargo",-1] >= 0}});
-
 		{
 			_pos = visiblePositionASL _x;
 			_pos params ["_posX", "_posY", "_posZ"];
