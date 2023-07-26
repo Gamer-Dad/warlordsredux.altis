@@ -11,6 +11,7 @@ civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params ["_t"];
+	if (_t getVariable ["BIS_WL_registerdCheater", false]) exitWith {[(random 1),(random 1),(random 1),1]};
 	if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};
 	if (side group player == west) exitWith {westColor};
 	if (side group player == east) exitWith {eastColor};
@@ -66,8 +67,7 @@ MRTM_fnc_iconText = {
 	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
 	_text = "";
 	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
-		_text = (name _t);
-		_text = _text + " [K.I.A.]";
+		_text = format ["%1 [K.I.A.]", (name _t)];
 	} else {
 		if (vehicle _t isKindOf 'CAManBase') then {
 			if (isPlayer _t) then {
@@ -80,7 +80,7 @@ MRTM_fnc_iconText = {
 				_crew = ((crew _t) select 0);
 				if (isPlayer _crew) then {
 					if (alive _crew) then {
-						_text = format ["%1", (name _crew)];
+						_text = (name _crew);
 					};
 				} else {
 					if (alive _crew) then {
@@ -95,7 +95,7 @@ MRTM_fnc_iconText = {
 					_playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
 					{
 						if ((_forEachindex + 1) == count _playerCrew) then {
-							_text = _text + format ["%1", (name _x)];
+							_text = _text + (name _x);
 						} else {
 							_text = _text + format ["%1, ", (name _x)];
 						};
@@ -118,6 +118,9 @@ MRTM_fnc_iconText = {
 		} else {
 			_text = format ["[AUTO] %1", _vd];
 		};
+	};
+	if (_x getVariable ["BIS_WL_registerdCheater", false]) then {
+		_text = _text + "Cheater";
 	};
 	_text;
 };
@@ -231,6 +234,21 @@ MRTM_fnc_iconDrawMap = {
 			"right"
 		];
 	} count ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
+	{
+		_m drawIcon [
+			[_x] call MRTM_fnc_iconType,
+			[_x] call MRTM_fnc_iconColor,
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	} forEach ((allPlayers) select {(_x getVariable ["BIS_WL_registerdCheater", false]) && {_x != player}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
