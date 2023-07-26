@@ -87,7 +87,7 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["B_UGV_02_Demining_F", 0], ["B_UGV_01_F", 0], ["B_UGV_01_rcws_F", 0],
 		["B_HMG_01_F", 0], ["B_HMG_01_high_F", 0], ["B_GMG_01_F", 0], ["B_GMG_01_high_F", 0],
 		["B_static_AT_F", 0], ["B_static_AA_F", 0], ["B_Mortar_01_F", 0],
-		["B_Radar_System_01_F", 2], ["B_SAM_System_03_F", 3],
+		["B_Radar_System_01_F", 0], ["B_SAM_System_03_F", 0],
 		//CSAT
 		["O_Quadbike_01_F", 1], ["O_LSV_02_unarmed_F", 1], ["O_MRAP_02_F", 1], //Unarmed
 		["O_Truck_03_transport_F", 1], ["O_Truck_03_Fuel_F", 1], //Unarmed
@@ -102,13 +102,13 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["O_UGV_02_Demining_F", 0], ["O_UGV_01_F", 0], ["O_UGV_01_rcws_F", 0],
 		["O_HMG_01_F", 0], ["O_HMG_01_high_F", 0], ["O_GMG_01_F", 0], ["O_GMG_01_high_F", 0],
 		["O_static_AT_F", 0], ["O_static_AA_F", 0], ["O_Mortar_01_F", 0],
-		["O_Radar_System_02_F", 2], ["O_SAM_System_04_F", 3],
+		["O_Radar_System_02_F", 0], ["O_SAM_System_04_F", 0],
 		//AAF
 		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
 		["I_LT_01_scout_F", 4], ["I_LT_01_AA_F", 4], ["I_LT_01_AT_F", 4], ["I_LT_01_cannon_F", 4],
 		["I_MBT_03_cannon_F", 5], ["I_APC_Wheeled_03_cannon_F", 5], ["I_APC_tracked_03_cannon_F", 5],
 		//Common
-		["B_SAM_System_02_F", 4], ["B_Ship_MRLS_01_F", 4],
-		["B_AAA_System_01_F", 4], ["B_SAM_System_01_F", 0]
+		["B_SAM_System_02_F", 0], ["B_Ship_MRLS_01_F", 0],
+		["B_AAA_System_01_F", 0], ["B_SAM_System_01_F", 0]
 	]
 ];
