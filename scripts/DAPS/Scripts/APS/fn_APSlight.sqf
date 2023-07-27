@@ -9,11 +9,14 @@ _v setVariable ["dapsAmmoMax", 2, true];
 
 while {alive _v} do {
 	if (_v call DAPS_fnc_active) then {
-		_a = (nearestObjects [_v, ["R_MRAAWS_HE_F", "R_MRAAWS_HEAT_F", "R_MRAAWS_HEAT55_F", "R_TBG32V_F", "R_PG32V_F", "R_PG7_F", "M_NLAW_AT_F"], 125]) # 0;
-		if !(isNil {_a}) then {
-			_reg pushBackUnique _a;
-			[_v, _a] remoteExec ["DAPS_fnc_Generic", 2];
-		};
+		_a = (nearestObjects [_v, ["R_MRAAWS_HE_F", "R_MRAAWS_HEAT_F", "R_MRAAWS_HEAT55_F", "R_TBG32V_F", "R_PG32V_F", "R_PG7_F", "M_NLAW_AT_F"], 125]) select {!((typeOf _x) in _reg)};
+
+		{
+			if !(isNil {_x}) then {
+				_reg pushBackUnique _x;
+				[_v, _x] remoteExec ["DAPS_fnc_Generic", 2];
+			};
+		} forEach _a;
 
 		{
 		    if !(alive _x) then {
