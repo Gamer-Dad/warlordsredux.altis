@@ -28,11 +28,11 @@ while {!BIS_WL_missionEnd} do {
 	if ((_points # 1) == 0) then {
 		_winner = (_sector getVariable ["BIS_WL_owner", independent]);
 	};
-	if ((_winner != independent) && {_winner != _sector getVariable ["BIS_WL_owner", civilian] && {(count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0} && {((count ((synchronizedObjects _sector) select {typeOf _x == "Logic" && {_winner == _x getVariable "BIS_WL_owner"}})) > 0)}}) then {
+	if ((_winner != independent) && {_winner != _sector getVariable ["BIS_WL_owner", independent] && {(count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0 && {((count ((synchronizedObjects _sector) select {(typeOf _x == "Logic") && {_winner == _x getVariable ["BIS_WL_owner", independent]}})) > 0)}}}) then {
 		_sector setVariable ["BIS_WL_seizingInfo", [_winner, serverTime, (serverTime + _seizingTime)], true];
 		[_sector] remoteExec ["BIS_fnc_WL2_handleEnemyCapture", [0, -2] select isDedicated];
 	} else {
-		if ((count (_sector getVariable ["BIS_WL_seizingInfo", []])) > 0 && {_winner == _sector getVariable ["BIS_WL_owner", civilian]}) then {
+		if ((count (_sector getVariable ["BIS_WL_seizingInfo", []])) > 0 && {_winner == _sector getVariable ["BIS_WL_owner", independent]}) then {
 			_sector setVariable ["BIS_WL_seizingInfo", [], true];
 		};
 	};
