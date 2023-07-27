@@ -7,11 +7,11 @@ _v setVariable ["dapsType", "Dazzler", true];
 
 while {alive _v} do {
 	if (_v call DAPS_fnc_active) then {
-		_a = (nearestObjects [_v, ["ammo_Penetrator_Base", "SubmunitionCore", "MissileCore", "RocketCore"], 200]) select {!((typeOf _x) in _reg)};
+		_a = (nearestObjects [_v, ["ammo_Penetrator_Base", "SubmunitionCore", "MissileCore", "RocketCore"], 200]) select {!(_x in _reg)};
 
 		{
 			if !(isNil {_x}) then {
-				_reg pushBackUnique _x;
+				_reg pushBack _x;
 				[_v, _x] spawn DAPS_fnc_Dazzler;
 			};
 		} forEach _a;
