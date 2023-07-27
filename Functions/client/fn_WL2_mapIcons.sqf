@@ -119,7 +119,7 @@ MRTM_fnc_iconText = {
 			_text = format ["[AUTO] %1", _vd];
 		};
 	};
-	if (_x getVariable ["BIS_WL_registerdCheater", false]) then {
+	if (_x getVariable ["BIS_WL_registerdCheater", false] && {_x != player}) then {
 		_text = format ["%1: Cheater", _text];
 	};
 	_text;
