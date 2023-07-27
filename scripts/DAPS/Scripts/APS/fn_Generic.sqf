@@ -1,5 +1,4 @@
-private _v = _this select 0;
-private _i = _this select 1;
+params ["_v", "_i"];
 
 _i setOwner 2;
 _d = _v distance _i;

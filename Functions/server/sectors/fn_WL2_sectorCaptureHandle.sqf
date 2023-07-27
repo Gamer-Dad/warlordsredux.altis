@@ -16,7 +16,7 @@ _sector spawn {
 
 _area = _sector getVariable "objectArea";
 _size = (_area # 0) * (_area # 1) * (if (_area # 3) then {4} else {pi});
-_seizingTime = ((_size / 2500) min 90);
+_seizingTime = ((20 max (_size / 2500)) min 90);
 
 //Custom code
 while {!BIS_WL_missionEnd} do {
