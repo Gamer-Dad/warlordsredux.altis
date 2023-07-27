@@ -14,8 +14,10 @@ while {alive _v} do {
 		{
 			if !(isNil {_x}) then {
 				_reg pushBack _x;
-				[_v, _x] remoteExec ["DAPS_fnc_Generic", 2];
-				_v spawn DAPS_fnc_PopSmoke;
+				if ((_x distance _v) > 30) then {
+					[_v, _x] remoteExec ["DAPS_fnc_Generic", 2];
+					_v spawn DAPS_fnc_PopSmoke;
+				};
 			};
 		} forEach _a;
 
