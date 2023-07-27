@@ -1,14 +1,14 @@
 params ["_sector", "_side"];
 
-if (_sector getVariable ["BIS_WL_aiSpawned", false]) exitWith {};
+if (_sector getVariable ["BIS_WL_aiSpawnedAAF", false]) exitWith {};
 
-_sector setVariable ["BIS_WL_aiSpawned", true];
 private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
 private _connectedToBase = count ([BIS_WL_base1, BIS_WL_base2] arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 
 //adjusting nearroads value below should change spawn slots for non-hard coded towns.
 // Orginal if (_side == BIS_WL_localSide)
 if (_side == BIS_WL_localSide) then {
+	_sector setVariable ["BIS_WL_aiSpawnedAAF", true];
 	if (count (_sector getVariable "BIS_WL_vehiclesToSpawn") == 0) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
