@@ -20,11 +20,15 @@ _seizingTime = ((_size / 2500) min 90);
 
 //Custom code
 while {!BIS_WL_missionEnd} do {
-	_info1 = _sector call BIS_fnc_WL2_getInfantry;
-	_info = [_sector, _info1] call BIS_fnc_WL2_getVehicles;
-	_highestPoints = (([_info, [], {(_x # 1)}, "DESCEND"] call BIS_fnc_sortBy) # 0);
+	_info = _sector call BIS_fnc_WL2_getInfantry;
+	_info = [_sector, _info] call BIS_fnc_WL2_getVehicles;
+	_points = ([_info, [], {(_x # 1)}, "DESCEND"] call BIS_fnc_sortBy);
+	_highestPoints = (_points # 0);
 	_winner = (_highestPoints # 0);
-	if ((_winner != independent) && {_winner != _sector getVariable ["BIS_WL_owner", civilian] && {(count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0}}) then {
+	if ((_points # 1) == 0) then {
+		_winner = (_sector getVariable ["BIS_WL_owner", independent]);
+	};
+	if ((_winner != independent) && {_winner != _sector getVariable ["BIS_WL_owner", civilian] && {(count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0} && {((count ((synchronizedObjects _sector) select {typeOf _x == "Logic" && {_winner == _x getVariable "BIS_WL_owner"}})) > 0)}}) then {
 		_sector setVariable ["BIS_WL_seizingInfo", [_winner, serverTime, (serverTime + _seizingTime)], true];
 		[_sector] remoteExec ["BIS_fnc_WL2_handleEnemyCapture", [0, -2] select isDedicated];
 	} else {
