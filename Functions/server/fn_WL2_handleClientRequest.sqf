@@ -142,10 +142,6 @@ if !(isNull _sender) then {
 			private _uid = getPlayerUID _sender;
 			[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;		
 		};
-		case "10k": {
-			_uid = getPlayerUID _sender;
-			[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;	
-		};
 		case "orderAsset": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {

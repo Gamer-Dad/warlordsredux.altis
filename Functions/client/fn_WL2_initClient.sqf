@@ -340,8 +340,3 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;
-
-player addAction [
-	"10K CP",
-	{[player, "10k"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]}
-];
