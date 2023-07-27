@@ -54,10 +54,6 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
-		class DAPS_fnc_PopSmokeTurn {
-			allowedTargets = 1;
-		};
-
 		class BIS_fnc_WL2_orderSavedLoadout {
 			allowedTargets = 1;
 		};
@@ -96,6 +92,10 @@ class CfgRemoteExec {
 		};
 
 		class DIS_fnc_SAMFired {
+			allowedTargets = 0;
+		};
+
+		class BIS_fnc_fire {
 			allowedTargets = 0;
 		};
 

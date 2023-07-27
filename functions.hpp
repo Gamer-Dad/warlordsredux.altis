@@ -224,7 +224,6 @@ class CfgFunctions {
 		{
 			file = "scripts\DAPS\Scripts\Misc";
 			class Active {};
-			class CanSmoke {};
 			class CountAmmo {};
 			class GetDirection {};
 			class HasCharges {};
@@ -234,8 +233,6 @@ class CfgFunctions {
 			class IsVisualGuided {};
 			class MisguideMissile {};
 			class popSmoke {};
-			class PopSmokeTurn {};
-			class React {};
 			class RelDir2 {};
 		};
 		class Report
