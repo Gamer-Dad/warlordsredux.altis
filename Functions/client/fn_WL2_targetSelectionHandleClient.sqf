@@ -10,7 +10,7 @@ while {!BIS_WL_missionEnd} do {
 		[player, "fundsTransferCancel"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 		playSound "AddItemFailed";
 	};
-	["RequestMenu_close"] spawn BIS_fnc_WL2_setupU;
+	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	BIS_WL_currentSelection = WL_ID_SELECTION_VOTING;
 	0 spawn {
 		sleep WL_TIMEOUT_STANDARD;

@@ -6,7 +6,7 @@ _this spawn {
 	params ["_varName", "_penaltyEnd"];
 
 	BIS_WL_penalized = TRUE;
-	["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
+	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	titleCut ["", "BLACK IN", 1];
 	showCinemaBorder FALSE;
 	private _camera = "Camera" camCreate position player;

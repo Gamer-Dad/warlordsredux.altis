@@ -1,4 +1,4 @@
-["RequestMenu_close"] spawn BIS_fnc_WL2_setupU;
+["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 
 if (side player == west) exitWith {
 	[player, "orderFTPod", 200, 0, (side player), false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];

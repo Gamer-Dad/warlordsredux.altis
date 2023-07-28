@@ -5,7 +5,7 @@ params ["_toContested"];
 "Sector" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_scan"] spawn BIS_fnc_WL2_smoothText;
 
-["RequestMenu_close"] spawn BIS_fnc_WL2_setupU;
+["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 if !(visibleMap) then {
 	processDiaryLink createDiaryLink ["Map", player, ""];
 	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.1, player];
