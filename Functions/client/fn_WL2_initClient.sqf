@@ -145,7 +145,7 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 
 BIS_WL_enemiesCheckTrigger = createTrigger ["EmptyDetector", position player, FALSE];
 BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
-BIS_WL_enemiesCheckTrigger setTriggerArea [200, 200, 0, FALSE];
+BIS_WL_enemiesCheckTrigger setTriggerArea [100, 100, 0, false];
 BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
 BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
 
