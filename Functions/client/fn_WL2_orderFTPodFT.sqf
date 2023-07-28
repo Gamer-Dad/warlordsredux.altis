@@ -1,5 +1,5 @@
 #include "..\warlords_constants.inc"
-["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+["RequestMenu_close"] spawn BIS_fnc_WL2_setupU;
 
 if (side player == west) exitWith {
 	{

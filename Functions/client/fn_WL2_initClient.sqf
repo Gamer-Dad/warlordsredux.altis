@@ -190,7 +190,7 @@ player addEventHandler ["InventoryOpened",{
 
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
-	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+	["RequestMenu_close"] spawn BIS_fnc_WL2_setupUI;
 	
 	BIS_WL_lastLoadout = +getUnitLoadout player;
 	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
