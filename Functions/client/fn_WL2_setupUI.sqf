@@ -170,15 +170,6 @@ switch (_displayClass) do {
 			};
 		}];
 		
-		_myDisplay spawn {
-			_selectedCnt = count ((groupSelectedUnits player) - [player]);
-			while {!isNull _this} do {
-				waitUntil {sleep WL_TIMEOUT_MIN; count ((groupSelectedUnits player) - [player]) != _selectedCnt};
-				_selectedCnt = count ((groupSelectedUnits player) - [player]);
-				call BIS_fnc_WL2_sub_purchaseMenuRefresh;
-			};
-		};
-		
 		_purchase_background = _myDisplay ctrlCreate ["RscText", -1];
 		_purchase_background_1 = _myDisplay ctrlCreate ["RscText", -1];
 		_purchase_background_2 = _myDisplay ctrlCreate ["RscText", -1];
@@ -200,12 +191,6 @@ switch (_displayClass) do {
 		_purchase_transfer_cp_title = _myDisplay ctrlCreate ["RscStructuredText", 118];
 		_purchase_transfer_ok = _myDisplay ctrlCreate ["RscStructuredText", 119];
 		_purchase_transfer_cancel = _myDisplay ctrlCreate ["RscStructuredText", 120];
-		_purchase_bounty_background = _myDisplay ctrlCreate ["RscText", 121];
-		_purchase_bounty_units = _myDisplay ctrlCreate ["RscListBox", 122];
-		_purchase_bounty_amount = _myDisplay ctrlCreate ["RscEdit", 123];
-		_purchase_bounty_cp_title = _myDisplay ctrlCreate ["RscStructuredText", 124];
-		_purchase_bounty_ok = _myDisplay ctrlCreate ["RscStructuredText", 125];
-		_purchase_bounty_cancel = _myDisplay ctrlCreate ["RscStructuredText", 126];
 		
 		uiNamespace setVariable ["BIS_WL_purchaseMenuDisplay", _myDisplay];
 		
@@ -230,12 +215,6 @@ switch (_displayClass) do {
 		_purchase_transfer_cp_title ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6) + (_wDef / 12), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
 		_purchase_transfer_ok ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.5502), _wDef / 6, _hDef * 0.035];
 		_purchase_transfer_cancel ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.59), _wDef / 6, _hDef * 0.035];
-		_purchase_bounty_background ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 3, _hDef / 3];
-		_purchase_bounty_units ctrlSetPosition [_xDef + (_wDef / 3), _yDef + (_hDef / 3), _wDef / 6, _hDef / 3];
-		_purchase_bounty_amount ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
-		_purchase_bounty_cp_title ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6) + (_wDef / 12), _yDef + (_hDef * 0.425), _wDef / 12, _hDef * 0.035];
-		_purchase_bounty_ok ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.5502), _wDef / 6, _hDef * 0.035];
-		_purchase_bounty_cancel ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.59), _wDef / 6, _hDef * 0.035];
 		
 		{_x ctrlSetFade 1; _x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
 			_purchase_transfer_background,
@@ -243,13 +222,7 @@ switch (_displayClass) do {
 			_purchase_transfer_amount,
 			_purchase_transfer_cp_title,
 			_purchase_transfer_ok,
-			_purchase_transfer_cancel,
-			_purchase_bounty_background,
-			_purchase_bounty_units,
-			_purchase_bounty_amount,
-			_purchase_bounty_cp_title,
-			_purchase_bounty_ok,
-			_purchase_bounty_cancel
+			_purchase_transfer_cancel
 		];
 		
 		{_x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
@@ -288,9 +261,6 @@ switch (_displayClass) do {
 		_purchase_transfer_background ctrlSetBackgroundColor [0, 0, 0, 1];
 		_purchase_transfer_ok ctrlSetBackgroundColor BIS_WL_colorFriendly;
 		_purchase_transfer_cancel ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_bounty_background ctrlSetBackgroundColor [0, 0, 0, 1];
-		_purchase_bounty_ok ctrlSetBackgroundColor BIS_WL_colorFriendly;
-		_purchase_bounty_cancel ctrlSetBackgroundColor BIS_WL_colorFriendly;
 
 		{_x ctrlSetTextColor [0.65, 0.65, 0.65, 1]} forEach [
 			_purchase_title_assets,
@@ -309,9 +279,6 @@ switch (_displayClass) do {
 		_purchase_transfer_cp_title ctrlSetStructuredText parseText format ["<t align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_unit_cp", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_ok ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_A3_WL_button_transfer", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_cancel ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_disp_cancel", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_bounty_cp_title ctrlSetStructuredText parseText format ["<t align = 'center' size = '%2'>%1</t>", localize "STR_A3_WL_unit_cp", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_bounty_ok ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_A3_WL_button_bounty", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
-		_purchase_bounty_cancel ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_disp_cancel", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		
 		{
 			if (count (WL_PLAYER_REQUISITION_LIST # _forEachIndex) > 0) then {
@@ -392,24 +359,21 @@ switch (_displayClass) do {
 				_offset = call compile _offset;
 				_requirements = call compile _requirements;
 				switch (_className) do {
-					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
-					case "LastLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderArsenal", BIS_WL_arsenalCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
+					case "LastLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "lastLoadout", BIS_WL_lastLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
-					case "SavedLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "SavedLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "savedLoadout", BIS_WL_savedLoadoutCost, [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
-					case "FundsTransfer": {0 spawn BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
-					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", 500, [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "forfeitVote": {0 spawn BIS_fnc_WL2_orderForfeit};
-					case "requestBounty": {0 spawn BIS_fnc_WL2_orderBounty};
 					case "LockVehicles": {
 						{
-							if ((!(typeOf _x == "B_Truck_01_medical_F")) && {!(typeOf _x == "O_Truck_03_medical_F")}) then {
-								_x lock 2;
-								_x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]];
-							};
-						} forEach (WL_PLAYER_VEHS select {alive _x}); 
+							_x lock 2;
+							_x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]];
+						} forEach (WL_PLAYER_VEHS select {alive _x && {(!(typeOf _x == "B_Truck_01_medical_F")) && {!(typeOf _x == "O_Truck_03_medical_F") && {!(typeOf _x == "B_Slingload_01_Medevac_F") && {!(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 						[toUpper localize "STR_A3_WL_feature_lock_all_msg"] spawn BIS_fnc_WL2_smoothText
 					};
 					case "UnlockVehicles": {{_x lock 0; _x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]]} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_unlock_all_msg"] spawn BIS_fnc_WL2_smoothText};
@@ -471,7 +435,7 @@ switch (_displayClass) do {
 					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
 					_maxTransfer = BIS_WL_maxCP - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
-					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
 						(_display displayCtrl _i) ctrlEnable TRUE;
 					};
@@ -516,91 +480,7 @@ switch (_displayClass) do {
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
-			[player, "fundsTransferCancel"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
-			playSound "AddItemFailed";
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseEnter", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-				playSound "click";
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseExit", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_color = BIS_WL_colorFriendly;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-				_button ctrlSetBackgroundColor _color;
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseButtonDown", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["MouseButtonUp", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_button = _this # 0;
-				_button ctrlSetTextColor [1, 1, 1, 1];
-			};
-		}];
-		_purchase_bounty_ok ctrlAddEventHandler ["ButtonClick", {
-			if (uiNamespace getVariable ["BIS_WL_bountyPossible", FALSE]) then {
-				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-				_targetName = (_display displayCtrl 116) lbText lbCurSel (_display displayCtrl 116);
-				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
-				_targetArr = BIS_WL_allWarlords select {name _x == _targetName};
-				if (count _targetArr > 0) then {
-					playSound "AddItemOK";
-					_target = _targetArr # 0;
-					[player, "orderBounty", _amount, [], _target] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
-					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-						(_display displayCtrl _i) ctrlEnable TRUE;
-					};
-					for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-						(_display displayCtrl _i) ctrlEnable FALSE;
-						(_display displayCtrl _i) ctrlSetFade 1;
-						(_display displayCtrl _i) ctrlCommit 0;
-					};
-				} else {
-					playSound "AddItemFailed";
-				};
-			};
-		}];
-
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseEnter", {
-			_button = _this # 0;
-			_color = BIS_WL_colorFriendly;
-			_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-			playSound "click";
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseExit", {
-			_button = _this # 0;
-			_color = BIS_WL_colorFriendly;
-			_button ctrlSetTextColor [1, 1, 1, 1];
-			_button ctrlSetBackgroundColor _color;
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseButtonDown", {
-			_button = _this # 0;
-			_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["MouseButtonUp", {
-			_button = _this # 0;
-			_button ctrlSetTextColor [1, 1, 1, 1];
-		}];
-		_purchase_bounty_cancel ctrlAddEventHandler ["ButtonClick", {
-			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-			for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable TRUE;
-			};
-			for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable FALSE;
-				(_display displayCtrl _i) ctrlSetFade 1;
-				(_display displayCtrl _i) ctrlCommit 0;
-			};
+			[player, "fundsTransferCancel"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 			playSound "AddItemFailed";
 		}];
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;

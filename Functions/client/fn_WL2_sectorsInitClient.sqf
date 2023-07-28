@@ -69,14 +69,12 @@ _i = 0;
 	_sectorPos = position _sector;
 	_area = _sector getVariable "objectArea";
 	
-	if !(isServer) then {
-		if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == (side player))) then {
-			_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
-		} else {
-			_area params ["_a", "_b", "_angle", "_isRectangle"];
-			_size = _a * _b * (if (_isRectangle) then {4} else {pi});
-			_sector setVariable ["BIS_WL_value", round (_size / 13000)];
-		};
+	if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == (side player))) then {
+		_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
+	} else {
+		_area params ["_a", "_b", "_angle", "_isRectangle"];
+		_size = _a * _b * (if (_isRectangle) then {4} else {pi});
+		_sector setVariable ["BIS_WL_value", round (_size / 13000)];
 	};
 	
 	_mrkrArea = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_area", _forEachIndex], _sectorPos];

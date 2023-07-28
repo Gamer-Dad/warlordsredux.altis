@@ -116,7 +116,7 @@ if (_toContested) then {
 	{
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
-	[player, "fastTravel", 0, _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	player setVehiclePosition [_destination, [], 3, "NONE"];
 
 	sleep WL_TIMEOUT_STANDARD;
 

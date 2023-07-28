@@ -9,6 +9,7 @@ private _actionID = _asset addAction [
 			_asset setVariable ["dazzlerActivated", false];
 		} else {
 			_asset setVariable ["dazzlerActivated", true];
+			_asset engineOn true;
 		};
 		_asset call BIS_fnc_WL2_sub_dazzlerAction;
 	},

@@ -76,7 +76,7 @@ MRTM_EnableRWR = true;
 MRTM_disableHint = true;
 MRTM_smallAnnouncerText = false;
 has_recieved_reward = false;
-reward_active = false;
+player setVariable ["reward_active", false];
 
 if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
@@ -145,7 +145,7 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 
 BIS_WL_enemiesCheckTrigger = createTrigger ["EmptyDetector", position player, FALSE];
 BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
-BIS_WL_enemiesCheckTrigger setTriggerArea [200, 200, 0, FALSE];
+BIS_WL_enemiesCheckTrigger setTriggerArea [100, 100, 0, false];
 BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
 BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
 
@@ -168,18 +168,24 @@ player addEventHandler ["GetInMan", {
 		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
-	if (typeOf _vehicle isKindOf "Air" || (getPlayerUID player) == "76561198034106257" || (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
-		1 radioChannelAdd [player];
-	};
 }];
 
 player addEventHandler ["GetOutMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger;
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
-	if !((getPlayerUID player) == "76561198034106257" || (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
-		1 radioChannelRemove [player];
+}];
+
+player addEventHandler ["InventoryOpened",{
+	params ["_unit","_container"];
+	_override = false;
+	_allUnitBackpackContainers = (player nearEntities ["Man", 50]) select {isPlayer _x} apply {backpackContainer _x};
+
+	if (_container in _allUnitBackpackContainers) then {
+		systemchat "Access denied!";
+		_override = true;
 	};
+	_override;
 }];
 
 player addEventHandler ["Killed", {
@@ -256,8 +262,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
 0 spawn BIS_fnc_WL2_underWaterCheck;
 
-(format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
-
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 0 spawn BIS_fnc_WL2_timer;
 0 spawn BIS_fnc_WL2_cpBalance;
@@ -269,6 +273,15 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || visibleMap};
 	if !(visibleMap) then {
 		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
+	};
+};
+
+0 spawn {
+	_selectedCnt = count ((groupSelectedUnits player) - [player]);
+	while {!BIS_WL_missionEnd} do {
+		waitUntil {sleep 1; count ((groupSelectedUnits player) - [player]) != _selectedCnt};
+		_selectedCnt = count ((groupSelectedUnits player) - [player]);
+		call BIS_fnc_WL2_sub_purchaseMenuRefresh;
 	};
 };
 
@@ -289,6 +302,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
+[] execVM "scripts\GF_Earplugs\GF_Earplugs.sqf";
 
 0 spawn {
 	_t = serverTime + 10;
@@ -317,10 +331,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 		};
 		_e;
 	}];
-};
-
-if ((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977" || name player == "Risk Division") then {
-	1 radioChannelAdd [player];
 };
 
 ["client_init"] call BIS_fnc_endLoadingScreen;

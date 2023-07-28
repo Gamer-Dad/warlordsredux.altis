@@ -13,8 +13,9 @@ respawnDelay = 30;
 respawnOnStart = -1;
 
 disabledAI = 1;
-enableDebugConsole[] = {"76561198034106257", "76561198865298977"};
+enableDebugConsole = 1;
 allowFunctionsLog = 1;
+zeusCompositionScriptLevel = 2;
 
 //revive settings below
 ReviveMode = 0;

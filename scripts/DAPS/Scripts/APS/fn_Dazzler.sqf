@@ -1,5 +1,5 @@
-private _v = _this select 0;
-private _i = _this select 1;
+params ["_v", "_i"];
+
 private _exit = true;
 _i setOwner 2;
 
@@ -9,4 +9,4 @@ if (_i call DAPS_fnc_IsVisualGuided) then {_exit = false};
 if (typeOf _i == "M_Vorona_HEAT" || typeOf _i == "M_Vorona_HE") then {_exit = false};
 if (_exit) exitWith {};
 
-[_v, _i] spawn DAPS_fnc_MisguideMissile;
+[_i] spawn DAPS_fnc_MisguideMissile;

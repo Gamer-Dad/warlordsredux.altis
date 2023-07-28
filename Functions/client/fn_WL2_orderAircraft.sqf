@@ -2,6 +2,8 @@
 
 params ["_class", "_cost", "_requirements"];
 
+player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
+
 "Sector" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_appropriate_sector_selection"] spawn BIS_fnc_WL2_smoothText;
 if !(visibleMap) then {
@@ -27,6 +29,7 @@ if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRCRAFT) then {
 if (isNull BIS_WL_targetSector) exitWith {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
+	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 };
 
 [toUpper localize "STR_A3_WL_asset_dispatched_TODO_REWRITE"] spawn BIS_fnc_WL2_smoothText;

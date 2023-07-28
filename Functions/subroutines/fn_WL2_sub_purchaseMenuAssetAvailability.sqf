@@ -34,17 +34,16 @@ if (_ret) then {
 			if (BIS_WL_loadoutApplied) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_loadout_reapply_info"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "SavedLoadout": {
 			if (count BIS_WL_savedLoadout == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FundsTransfer": {
 			if (count (BIS_WL_allWarlords select {side group _x == side group player}) < 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
-		};
-		case "requestBounty": {
-			if (count (BIS_WL_allWarlords select {isPlayer _x}) < 5) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_bounty_restr"};
 		};
 		case "TargetReset": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_conflict"};
@@ -63,11 +62,13 @@ if (_ret) then {
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
 			if !(isNull (findDisplay 602)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr2"};
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "RemoveUnits": {
 			if (count ((groupSelectedUnits player) - [player]) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
 		};
 		case "RespawnVic": {
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			private _sideP = side group player;
@@ -75,11 +76,12 @@ if (_ret) then {
 			if (_ftVehicle) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			private _sideP = side group player;
 			if (_sideP == west) then {
 				private _ftBlu = (((entities "B_Truck_01_medical_F") select {alive _x}) # 0);
 				if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0) then {
-					if (((getPosATL _ftBlu) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if (((getPosATL _ftBlu) select 2) > 5) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((count fullCrew [_ftBlu, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((speed _ftBlu) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
@@ -88,7 +90,7 @@ if (_ret) then {
 			} else {
 				private _ftOpf = (((entities "O_Truck_03_medical_F") select {alive _x}) # 0);
 				if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) > 0) then {
-					if (((getPosATL _ftOpf) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if (((getPosATL _ftOpf) select 2) > 5) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((count fullCrew [_ftOpf, "cargo", false]) >= 15) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((speed _ftOpf) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
@@ -97,6 +99,7 @@ if (_ret) then {
 			}; 
 		};
 		case "RespawnPod": {
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			private _sideP = side group player;
@@ -104,11 +107,12 @@ if (_ret) then {
 			if (_ftVehicle) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnPodFT" : {
+			if (triggerActivated BIS_WL_enemiesCheckTrigger) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			private _sideP = side group player;
 			if (_sideP == west) then {
 				private _ftBlu = ((entities "B_Slingload_01_Medevac_F") # 0);
 				if ((count (entities "B_Slingload_01_Medevac_F")) > 0) then {
-					if (((getPosATL _ftBlu) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if (((getPosATL _ftBlu) select 2) > 5) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((speed _ftBlu) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
 					if ((count (entities "B_Slingload_01_Medevac_F")) == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
@@ -116,7 +120,7 @@ if (_ret) then {
 			} else {
 				private _ftOpf = ((entities "Land_Pod_Heli_Transport_04_medevac_F") # 0);
 				if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) > 0) then {
-					if (((getPosATL _ftOpf) select 2) > 2) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
+					if (((getPosATL _ftOpf) select 2) > 5) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((count fullCrew [_ftOpf, "cargo", false]) >= 4) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 					if ((speed _ftOpf) > 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				} else {
@@ -141,7 +145,7 @@ if (_ret) then {
 						_ret = FALSE;
 						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", BIS_WL_autonomous_limit];
 					};
-				};				
+				};
 			};
 			if (_category == "Defences") exitWith {
 				if (vehicle player != player) then {

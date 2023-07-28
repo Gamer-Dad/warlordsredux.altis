@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1210;
+		nextID=1213;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15436.204,1773.3943,15289.294};
-		dir[]={-0.019175565,-0.52443027,0.85123742};
-		up[]={-0.011810685,0.85145336,0.5242973};
-		aside[]={0.99974632,0,0.02252098};
+		pos[]={9165.8203,113.73196,21331.605};
+		dir[]={-0.51027489,-0.51788795,0.68659419};
+		up[]={-0.30892009,0.85544848,0.41566369};
+		aside[]={0.80261314,0,0.59649986};
 	};
 };
 binarizationWanted=0;
@@ -148,7 +148,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=279;
+		items=280;
 		class Item0
 		{
 			dataType="Logic";
@@ -7836,6 +7836,26 @@ class Mission
 			id=1061;
 			type="I_LT_01_cannon_F";
 			atlOffset=-0.00045585632;
+		};
+		class Item279
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14295.961,21.986979,16238.173};
+				angles[]={6.2738566,0,0.0039967569};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=1210;
+			type="I_LT_01_scout_F";
+			atlOffset=-5.7220459e-006;
 		};
 	};
 	class Connections

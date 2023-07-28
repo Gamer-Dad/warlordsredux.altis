@@ -6,8 +6,9 @@ _rearmActionID = -1;
 while {alive _asset} do {
 	_nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select {alive _x};
 	_rearmCooldown = ((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0;
+	_rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
 	
-	if (_nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0} != -1) then {
+	if (_rearmVehicleIndex != -1) then {
 		if (_rearmActionID == -1) then {
 			_rearmActionID = _asset addAction [
 				"",
@@ -61,7 +62,10 @@ while {alive _asset} do {
 			];
 			_asset setVariable ["BIS_WL_rearmActionID", _rearmActionID];
 		};
-		_asset setUserActionText [_rearmActionID, if (_rearmCooldown == 0) then {format ["<t color = '#4bff58'>%1</t>", localize "STR_rearm"]} else {format ["<t color = '#7e7e7e'><t align = 'left'>%1</t><t align = 'right'>%2     </t></t>", localize "STR_rearm", [_rearmCooldown, "MM:SS"] call BIS_fnc_secondsToString]}, format ["<img size='2' color = '%1' image='\A3\ui_f\data\IGUI\Cfg\Actions\reammo_ca.paa'/>", if (_rearmCooldown == 0) then {"#ffffff"} else {"#7e7e7e"}]];
+
+		_amount = (_nearbyVehicles # _rearmVehicleIndex) getvariable ["GOM_fnc_ammocargo", 0];
+		_amountText = format ["(%1)", (_amount call GOM_fnc_kgToTon)];
+		_asset setUserActionText [_rearmActionID, if (_rearmCooldown == 0) then {format ["<t color = '#4bff58'>%1 %2</t>", localize "STR_rearm", _amountText]} else {format ["<t color = '#7e7e7e'><t align = 'left'>%1 %2</t><t align = 'right'>%3     </t></t>", localize "STR_rearm", _amountText, [_rearmCooldown, "MM:SS"] call BIS_fnc_secondsToString]}, format ["<img size='2' color = '%1' image='\A3\ui_f\data\IGUI\Cfg\Actions\reammo_ca.paa'/>", if (_rearmCooldown == 0) then {"#ffffff"} else {"#7e7e7e"}]];
 	} else {
 		if (_rearmActionID != -1) then {
 			_asset removeAction _rearmActionID;

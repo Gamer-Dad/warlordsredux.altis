@@ -17,14 +17,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class DAPS_fnc_Dazzler {
-			allowedTargets = 2;
-		};
-
-		class DIS_fnc_SAMmaneuver {
-			allowedTargets = 2;
-		};
-
 		class KS_fnc_unflipVehicle {
 			allowedTargets = 2;
 		};
@@ -34,64 +26,24 @@ class CfgRemoteExec {
 		};
 
 		//Client only
-		class BIS_fnc_WL2_refreshOSD {
+		class BIS_fnc_WL2_reportCheater {
 			allowedTargets = 1;
 		};
 
-		class BIS_fnc_WL2_orderArsenal {
-			allowedTargets = 1;
-		};
-
-		class BIS_fnc_WL2_killRewardClient {
-			allowedTargets = 1;
-		};
-
-		class BIS_fnc_advHint {
-			allowedTargets = 1;
-		};
-
-		class DAPS_fnc_Report {
-			allowedTargets = 1;
-		};
-
-		class DAPS_fnc_PopSmoke {
-			allowedTargets = 1;
-		};
-
-		class DAPS_fnc_PopSmokeTurn {
-			allowedTargets = 1;
-		};
-
-		class BIS_fnc_WL2_orderSavedLoadout {
-			allowedTargets = 1;
-		};
-
-		class BIS_fnc_WL2_orderLastLoadout {
+		class BIS_fnc_WL2_kickCheater {
 			allowedTargets = 1;
 		};
 
 		//All allowed
-		class BIS_fnc_WL2_newAssetHandle {
-			allowedTargets = 0;
-		};
-
-		class BIS_fnc_WL2_handleEnemyCapture {
-			allowedTargets = 0;
-		};
-
-		class BIS_fnc_WL2_sectorScanHandle {
-			allowedTargets = 0;
-		};
-
 		class BIS_fnc_WL2_forfeitHandle {
 			allowedTargets = 0;
 		};
 
-		class BIS_fnc_WL2_targetResetHandleVote {
+		class DIS_fnc_SAMFired {
 			allowedTargets = 0;
 		};
 
-		class BIS_fnc_WL2_zoneRestrictionHandleClient {
+		class BIS_fnc_fire {
 			allowedTargets = 0;
 		};
 
@@ -150,18 +102,6 @@ class CfgRemoteExec {
 		};
 
 		class setPylonsPriority {
-			allowedTargets = 0;
-		};
-
-		class hint {
-			allowedTargets = 0;
-		};
-
-		class lock {
-			allowedTargets = 0;
-		};
-
-		class commandChat {
 			allowedTargets = 0;
 		};
 	};
@@ -306,7 +246,7 @@ class CfgDisabledCommands {
 		class SYNTAX1
 		{
 			targets[] = {1,0,1};
-			args[] = {{"OBJECT"},{"ARRAY"}};
+			args[] = {{"OBJECT"},{"ARRAY"}};			
 		};
 	};
 };

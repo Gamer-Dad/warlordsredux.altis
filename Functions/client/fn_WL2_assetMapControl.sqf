@@ -6,80 +6,17 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 		if !(isNull BIS_WL_mapAssetTarget) then {
 			if ((BIS_WL_mapAssetTarget in WL_PLAYER_VEHS) && count crew BIS_WL_mapAssetTarget > 0) then {
 				if (getNumber (configFile >> "CfgVehicles" >> (typeOf BIS_WL_mapAssetTarget) >> "isUav") == 1) then {
-					[BIS_WL_mapAssetTarget] spawn {
-						params ["_target"];
-						_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName");
-						_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
-
-						if (_result) then {
-							playSound "AddItemOK";
-							[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (_target getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
-							_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-							missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target]];
-							publicVariableServer _ownedVehiclesVarName;
-							if (_target isKindOf "Man") then {
-								deleteVehicle _target;
-							} else {
-								_target spawn BIS_fnc_WL2_sub_deleteAsset;
-							};
-							((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
-							((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
-						} else {
-							playSound "AddItemFailed";
-						};
-					};
+					[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
 				} else {
 					if ((crew BIS_WL_mapAssetTarget) findIf {alive _x} != -1) then {
 						playSound "AddItemFailed";
 						[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;				
 					} else {
-						[BIS_WL_mapAssetTarget] spawn {
-							params ["_target"];
-							_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName");
-							_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
-
-							if (_result) then {
-								playSound "AddItemOK";
-								[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (_target getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
-								_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-								missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target]];
-								publicVariableServer _ownedVehiclesVarName;
-								if (_target isKindOf "Man") then {
-									deleteVehicle _target;
-								} else {
-									_target spawn BIS_fnc_WL2_sub_deleteAsset;
-								};
-								((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
-								((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
-							} else {
-								playSound "AddItemFailed";
-							};
-						};
+						[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
 					};
 				};
 			} else {
-				[BIS_WL_mapAssetTarget] spawn {
-					params ["_target"];
-					_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName");
-					_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
-
-					if (_result) then {
-						playSound "AddItemOK";
-						[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (_target getVariable "BIS_WL_iconText")], 2] spawn BIS_fnc_WL2_smoothText;
-						_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-						missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target]];
-						publicVariableServer _ownedVehiclesVarName;
-						if (_target isKindOf "Man") then {
-							deleteVehicle _target;
-						} else {
-							_target spawn BIS_fnc_WL2_sub_deleteAsset;
-						};
-						((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
-						((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
-					} else {
-						playSound "AddItemFailed";
-					};
-				};
+				[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
 			};
 		};
 	};
@@ -91,8 +28,8 @@ BIS_WL_assetMapHandler = addMissionEventHandler ["EachFrame", {
 	_shown = false;
 	
 	if (visibleMap) then {
-		_nearbyAssets = ((WL_CONTROL_MAP ctrlMapScreenToWorld getMousePosition) nearObjects ["All", (((ctrlMapScale WL_CONTROL_MAP) * 500) min 50) max 2]) select {(group player) == (_x getVariable ["BIS_WL_ownerAsset", grpNull])};
-		
+		_nearbyAssets = (nearestObjects [(WL_CONTROL_MAP ctrlMapScreenToWorld getMousePosition), ["All"], (((ctrlMapScale WL_CONTROL_MAP) * 500) min 50) max 2, true]) select {(group player) == (_x getVariable ["BIS_WL_ownerAsset", grpNull])};
+
 		if (count _nearbyAssets > 0) then {
 			BIS_WL_mapAssetTarget = _nearbyAssets # 0;
 			BIS_WL_assetInfoActive = true;

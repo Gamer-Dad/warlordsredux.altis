@@ -23,7 +23,7 @@ _unit addEventHandler ["WeaponAssembled", {
 				(_this # 1) spawn BIS_fnc_WL2_sub_deleteAsset;
 			};
 		} else {
-			[player, (_this # 1), TRUE] call BIS_fnc_WL2_newAssetHandle;
+			[player, (_this # 1), TRUE] spawn BIS_fnc_WL2_newAssetHandle;
 		};
 	};
 }];

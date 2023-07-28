@@ -84,7 +84,6 @@ while {dialog} do {
 
 	_inventoryKey = actionKeysNames "gear";
 	_gearKey = actionKeysNames "cycleThrownItems";
-	_earPlugKey = actionKeysNames "user2";
 
 	switch (_curSel) do {
 		case "pageAbt": {
@@ -114,10 +113,11 @@ while {dialog} do {
 			parseText format ["<a href='https://www.youtube.com/watch?v=qKfCpmqnmQ4'>Walords Redux Guide by GamerDad</a>"], lineBreak,
 			parseText format ["<a href='https://www.youtube.com/watch?v=mlZTCnWLgJg'>Walords Redux Guide by Ferrous Creek</a>"], lineBreak,
 			parseText format ["<a href='https://streamable.com/3xwuma'>Mortar Guide by Spooker</a>"], lineBreak,
+			parseText format ["<a href='https://streamable.com/oh8k57'>Tank Guide by Spooker</a>"], lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_11", lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_12", _inventoryKey], lineBreak,
-			format [localize "STR_MRTM_welcomeInteract_13", _earPlugKey], lineBreak,
+			format [localize "STR_MRTM_welcomeInteract_13", "Insert"], lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
 			""
 			];
@@ -141,6 +141,7 @@ while {dialog} do {
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
 			"- MrThomasM", lineBreak,
+			"- Rook", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_18", lineBreak,
 			"- Coffee", lineBreak,
@@ -171,15 +172,34 @@ while {dialog} do {
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
+			"2.5.7.1", lineBreak,
+			"-New capping values.", lineBreak,
+			"-Easter egg reward fixed.", lineBreak,
+			"-Initial spawn position on game start fixed.", lineBreak,
+			"-Vehicle garbage clean up enhanced.", lineBreak,
+			"-AAF spawning at sectors when enemy team already targeted it fixed.", lineBreak,
+			"-Spawn pod doesn't work when slightly crooked, fixed.", lineBreak,
+			"-Dazzler fixed. And when enabled it auto turns on the engine so people don't forget.", lineBreak,
+			"-APS and Dazzler intercept missiles faster, missiles that are shot fast after eachother should all still get intercepted.", lineBreak,
+			"-Attack helicopters don't play altitude or pull-up warnings anymore as they didn't work very well and would play constantly.", lineBreak,
+			"-.5 CP Won't happen anymore.", lineBreak,
+			"-AI Regeneration speed is back to normal.", lineBreak,
+			"-Map icons fixed. (Some stuff not showing up).", lineBreak,
+			"-Mine limit updated to more types.", lineBreak,
+			"-Refuelling fixed.", lineBreak,
+			"-Vehicles pop smoke when APS is triggered and there is a commander in the vehicle.", lineBreak,
+			"-HARM and ARM Missil added to medium APS.", lineBreak,
+			"-Sharurs added to heavy APS", lineBreak,
+			"", lineBreak,
+			"2.5.6", lineBreak,
 			"2.5.7", lineBreak,
 			"-Alot of code improvement, wich leads to better gameplay experience.", lineBreak,
 			"-Teleporting issue when joining late game is should be fixed.", lineBreak,
 			"-Alot less network traffick.", lineBreak,
 			"-Code security improved.", lineBreak,
-			"-Added an option to set a bounty on an enemy player.", lineBreak,
 			"-Zone restriction not killing a person after bar is filled fixed.", lineBreak,
 			"-GPS icons are better. you see alot more now then just infantry.", lineBreak,
-			"-Possible UAV issue fixed. (Needs alot of testing)", lineBreak,
+			"-UAV issue fixed.", lineBreak,
 			"-Double spawn truck icon fixed.", lineBreak,
 			"-Spawn truck lock action fixed.", lineBreak,
 			"-Free AI Fixed.", lineBreak,
@@ -190,6 +210,10 @@ while {dialog} do {
 			"-All Containers, pods, boxes are loadable onto the flatbed and can be loaded into the Y-32 and Blackfish Vehicle transport.", lineBreak,
 			"-New fast travel option added. The huron medical container and taru medical pod.", lineBreak,
 			"-You now get a CP refund if you where transfering CP and it canceled because of sector voting.", lineBreak,
+			"-Rearm resources shows on rearm action's text.", lineBreak,
+			"-APS improved, Added Rhino ATGM (Heavy + Medium) + Nyx AT's missile to the list. (Heavy)", lineBreak,
+			"-Newly bought assets have FF protection in base.", lineBreak,
+			"-Divers added", lineBreak,
 			"", lineBreak,
 			"2.5.6", lineBreak,
 			"-Lag issues fixed", lineBreak,

@@ -8,7 +8,7 @@ if!((vehicle player)==_v)exitWith{};
 if!((typeOf _v)in dapsAPStypes)exitWith{};
 private _type=_v getVariable"dapsType";
 if!(_indicator)then{
-	hintSilent (format["%1 is ON",_type]);
+	hintSilent (format["%1 is %2", _type, (if (_v call DAPS_fnc_active) then {"ON"} else {"OFF"})]);
 };
 sleep .5;
 private _text="";

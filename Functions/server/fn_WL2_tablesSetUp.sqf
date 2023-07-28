@@ -23,7 +23,7 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 		["B_Plane_CAS_01_dynamicLoadout_F", 800], ["B_Plane_Fighter_01_F", 1000],
 		["C_Scooter_Transport_01_F", 20], ["B_Boat_Transport_01_F", 20], ["B_Boat_Armed_01_minigun_F", 80], ["B_SDV_01_F", 20],
 		//Boxes
-		["Box_NATO_Ammo_F", 40], ["Box_NATO_Grenades_F", 40], ["Box_NATO_Wps_F", 40], ["Box_NATO_AmmoOrd_F", 40], ["Box_NATO_WpsLaunch_F", 40], ["Box_NATO_WpsSpecial_F", 40], ["B_supplyCrate_F", 40], ["Box_NATO_AmmoVeh_F", 70], // Boxes 
+		["Box_NATO_Ammo_F", 40], ["Box_NATO_Grenades_F", 40], ["Box_NATO_Wps_F", 40], ["Box_NATO_AmmoOrd_F", 40], ["Box_NATO_WpsLaunch_F", 40], ["Box_NATO_WpsSpecial_F", 40], ["B_supplyCrate_F", 40], ["Box_NATO_AmmoVeh_F", 70],
 		["B_UGV_02_Demining_F", 100], ["B_UGV_01_F", 50], ["B_UGV_01_rcws_F", 100],
 		["Land_BagFence_Round_F", 30], ["Land_Razorwire_F", 30], ["Land_DragonsTeeth_01_1x1_new_F", 30],
 		["B_HMG_01_F", 100], ["B_HMG_01_high_F", 100], ["B_GMG_01_F", 100], ["B_GMG_01_high_F", 100],
@@ -51,7 +51,7 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 		["O_Plane_CAS_02_dynamicLoadout_F", 900], ["O_Plane_Fighter_02_F", 1100],
 		["C_Scooter_Transport_01_F", 20], ["O_Boat_Transport_01_F", 20], ["O_Boat_Armed_01_hmg_F", 80], ["O_SDV_01_F", 20],
 		//Boxes
-		["Box_East_Ammo_F", 40], ["Box_East_Grenades_F", 40], ["Box_East_Wps_F", 40], ["Box_East_AmmoOrd_F", 40], ["Box_East_WpsLaunch_F", 40], ["Box_East_WpsSpecial_F", 40], ["O_supplyCrate_F", 40], ["Box_East_AmmoVeh_F", 70], // Boxes 
+		["Box_East_Ammo_F", 40], ["Box_East_Grenades_F", 40], ["Box_East_Wps_F", 40], ["Box_East_AmmoOrd_F", 40], ["Box_East_WpsLaunch_F", 40], ["Box_East_WpsSpecial_F", 40], ["O_supplyCrate_F", 40], ["Box_East_AmmoVeh_F", 70],
 		["O_UGV_02_Demining_F", 100], ["O_UGV_01_F", 50], ["O_UGV_01_rcws_F", 100],
 		["Land_BagFence_Round_F", 30], ["Land_Razorwire_F", 30], ["Land_DragonsTeeth_01_1x1_new_F", 30],
 		["O_HMG_01_F", 100], ["O_HMG_01_high_F", 100], ["O_GMG_01_F", 100], ["O_GMG_01_high_F", 100],
@@ -60,13 +60,55 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 		["Land_Pod_Heli_Transport_04_ammo_F", 150], ["Land_Pod_Heli_Transport_04_repair_F", 150], ["Land_Pod_Heli_Transport_04_fuel_F", 150],
 		["B_Slingload_01_Medevac_F", 300], ["Land_Pod_Heli_Transport_04_medevac_F", 300],
 		//Static
-		["O_Radar_System_02_F", 350], ["O_UAV_01_F", 20],
-		["B_AAA_System_01_F", 400], ["B_SAM_System_01_F", 500], ["O_SAM_System_04_F", 500],
-		["B_SAM_System_02_F", 600], ["B_Ship_MRLS_01_F", 700],
+		["O_Radar_System_02_F", 350], ["O_UAV_01_F", 20], ["O_SAM_System_04_F", 500],
 		//AAF
 		["I_MRAP_03_hmg_F", 130], ["I_MRAP_03_gmg_F", 130],
 		["I_LT_01_scout_F", 240], ["I_LT_01_AA_F", 240], ["I_LT_01_AT_F", 240], ["I_LT_01_cannon_F", 240],
 		["I_MBT_03_cannon_F", 400], ["I_APC_Wheeled_03_cannon_F", 400], ["I_APC_tracked_03_cannon_F", 400],
 		["I_Heli_light_03_dynamicLoadout_F", 300], ["I_Heli_light_03_F", 300], ["I_Plane_Fighter_03_dynamicLoadout_F", 600], ["I_Plane_Fighter_03_CAS_F", 500], ["I_Plane_Fighter_04_F", 600]
+	]
+];
+
+//Capture Points
+serverNamespace setVariable ["BIS_WL2_cappingValues",
+	createHashMapFromArray [
+		//NATO
+		["B_Quadbike_01_F", 1], ["B_LSV_01_unarmed_F", 1], ["B_MRAP_01_F", 1], //Unarmed
+		["B_Truck_01_transport_F", 1], ["B_Truck_01_fuel_F", 1], //Unarmed
+		["B_LSV_01_armed_F", 1], ["B_G_Offroad_01_armed_F", 1], ["B_LSV_01_AT_F", 1], ["B_G_Offroad_01_AT_F", 1],
+		["B_Truck_01_flatbed_F", 1], ["B_Truck_01_medical_F", 1], //Unarmed
+		["B_MRAP_01_hmg_F", 2], ["B_MRAP_01_gmg_F", 2],
+		["B_Truck_01_Repair_F", 1], ["O_T_Truck_03_device_ghex_F", 1], ["B_Truck_01_ammo_F", 1], //Unarmed
+		["B_APC_Wheeled_03_cannon_F", 3], ["B_APC_Wheeled_01_cannon_F", 3], ["B_APC_Tracked_01_rcws_F", 3],
+		["B_APC_Tracked_01_AA_F", 4],
+		["B_MBT_01_cannon_F", 4], ["B_MBT_01_TUSK_F", 4],
+		["B_AFV_Wheeled_01_cannon_F", 4], ["B_AFV_Wheeled_01_up_cannon_F", 4],
+		["B_MBT_01_arty_F", 4], ["B_MBT_01_mlrs_F", 4],
+		["B_UGV_02_Demining_F", 0], ["B_UGV_01_F", 0], ["B_UGV_01_rcws_F", 0],
+		["B_HMG_01_F", 0], ["B_HMG_01_high_F", 0], ["B_GMG_01_F", 0], ["B_GMG_01_high_F", 0],
+		["B_static_AT_F", 0], ["B_static_AA_F", 0], ["B_Mortar_01_F", 0],
+		["B_Radar_System_01_F", 0], ["B_SAM_System_03_F", 0],
+		//CSAT
+		["O_Quadbike_01_F", 1], ["O_LSV_02_unarmed_F", 1], ["O_MRAP_02_F", 1], //Unarmed
+		["O_Truck_03_transport_F", 1], ["O_Truck_03_Fuel_F", 1], //Unarmed
+		["O_LSV_02_armed_F", 1], ["O_G_Offroad_01_armed_F", 1], ["O_LSV_02_AT_F", 1], ["O_G_Offroad_01_AT_F", 1],
+		["B_Truck_01_flatbed_F", 1], ["O_Truck_03_medical_F", 1], //Unarmed
+		["O_MRAP_02_hmg_F", 2], ["O_MRAP_02_gmg_F", 2],
+		["O_Truck_03_Repair_F", 1], ["O_Truck_03_device_F", 1], ["O_Truck_03_ammo_F", 1], //Unarmed
+		["O_APC_Wheeled_02_rcws_v2_F", 3], ["O_APC_Tracked_02_cannon_F", 3],
+		["O_APC_Tracked_02_AA_F", 4],
+		["O_MBT_02_cannon_F", 4], ["O_MBT_04_cannon_F", 4], ["O_MBT_04_command_F", 4],
+		["O_MBT_02_arty_F", 4], ["I_Truck_02_MRL_F", 4],
+		["O_UGV_02_Demining_F", 0], ["O_UGV_01_F", 0], ["O_UGV_01_rcws_F", 0],
+		["O_HMG_01_F", 0], ["O_HMG_01_high_F", 0], ["O_GMG_01_F", 0], ["O_GMG_01_high_F", 0],
+		["O_static_AT_F", 0], ["O_static_AA_F", 0], ["O_Mortar_01_F", 0],
+		["O_Radar_System_02_F", 0], ["O_SAM_System_04_F", 0],
+		//AAF
+		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
+		["I_LT_01_scout_F", 4], ["I_LT_01_AA_F", 4], ["I_LT_01_AT_F", 4], ["I_LT_01_cannon_F", 4],
+		["I_MBT_03_cannon_F", 5], ["I_APC_Wheeled_03_cannon_F", 5], ["I_APC_tracked_03_cannon_F", 5],
+		//Common
+		["B_SAM_System_02_F", 0], ["B_Ship_MRLS_01_F", 0],
+		["B_AAA_System_01_F", 0], ["B_SAM_System_01_F", 0]
 	]
 ];

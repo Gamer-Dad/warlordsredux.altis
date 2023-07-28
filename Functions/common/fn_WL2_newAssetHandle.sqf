@@ -10,12 +10,16 @@ if (isNull _owner && isServer) then {
 if (isPlayer _owner) then {
 	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), [2, clientOwner]];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
-	_asset spawn DAPS_fnc_RegisterVehicle;
+	if !((typeOf _asset) in dapsDazzler) then {
+		_asset spawn DAPS_fnc_RegisterVehicle;
+	};
 
 	if (_asset isKindOf "Man") then {
 		_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	
 		_asset addEventHandler ["Killed", {
+			BIS_WL_matesAvailable = BIS_WL_matesAvailable - 1;
+			BIS_WL_manLost = true;
 			[] spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
@@ -77,7 +81,7 @@ if (isPlayer _owner) then {
 			_asset spawn BIS_fnc_WL2_sub_rearmAction;
 		};
 
-		if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F") then {
+		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 			_asset call BIS_fnc_WL2_sub_vehicleKickAction;
 		};
@@ -96,7 +100,7 @@ if (isPlayer _owner) then {
 							{
 								params ["_asset"];
 								if ((_asset getVariable "BIS_WL_nextRepair") <= serverTime) then {
-									[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+									[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Repair.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 									[toUpper localize "STR_A3_WL_popup_asset_repaired"] spawn BIS_fnc_WL2_smoothText;
 									_asset setVariable ["BIS_WL_nextRepair", serverTime + WL_MAINTENANCE_COOLDOWN_REPAIR];
@@ -162,10 +166,6 @@ if (isPlayer _owner) then {
 				};
 			};
 		};
-
-		if (_asset call DIS_fnc_IsSAM) then {
-			[_asset] spawn DIS_fnc_RegisterSAM;
-		};
 		
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
@@ -188,9 +188,7 @@ if (isPlayer _owner) then {
 			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];
 		};
 		if (getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportFuel") > 0) then {
-			_asset setFuelCargo 0;
-			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportFuel")) min 10000);
-			_asset setvariable ["GOM_fnc_fuelCargo", _amount, true];
+			_asset setFuelCargo 1;
 		};
 	};
 

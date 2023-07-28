@@ -530,11 +530,11 @@
             <Chinese>訂購快速旅行醫療車</Chinese>
         </Key>
         <Key ID="STR_A3_WL_respawn_vicFT_ft">
-            <Original>Fast Travel to Spawn Truck</Original>
-            <English>Fast Travel to Spawn Truck</English>
+            <Original>Fast Travel to Spawn Truck (Free)</Original>
+            <English>Fast Travel to Spawn Truck (Free)</English>
             <Czech>Rychlá cesta do zdravotnického vozu</Czech>
-            <French>Voyage rapide vers le camion médical</French>
-            <German>Schnelle Fahrt zum medizinischen LKW</German>
+            <French>Voyage rapide vers le camion médical (Gratuit)</French>
+            <German>Schnelle Fahrt zum medizinischen LKW (Gratis)</German>
             <Italian>Viaggio veloce al camion medico</Italian>
             <Polish>Szybka podróż do ciężarówki medycznej</Polish>
             <Portuguese>Viagem rápida para caminhão médico</Portuguese>

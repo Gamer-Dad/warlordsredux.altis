@@ -2,7 +2,7 @@
 
 params ["_sector", "_owner"];
 
-_sector setVariable ["BIS_WL_owner", _owner, TRUE];
+_sector setVariable ["BIS_WL_owner", _owner, true];
 [_sector] remoteExec ["BIS_fnc_WL2_sectorOwnershipHandleClient", [0, -2] select isDedicated];
 
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
@@ -18,18 +18,16 @@ if !(_owner in _previousOwners) then {
 };
 
 _previousOwners pushBackUnique _owner;
-_sector setVariable ["BIS_WL_previousOwners", _previousOwners, TRUE];
+_sector setVariable ["BIS_WL_previousOwners", _previousOwners, true];
 
-_zoneRestrictionTrgs = _sector getVariable "BIS_WL_zoneRestrictionTrgs";
 _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 
 {
 	if ((_x getVariable "BIS_WL_handledSide") == _owner) then {
 		deleteVehicle _x;
 	};
-} forEach (_zoneRestrictionTrgs + _detectionTrgs);
+} forEach _detectionTrgs;
 
-if (_zoneRestrictionTrgs findIf {!isNull _x} == -1) then {_zoneRestrictionTrgs = []};
 if (_detectionTrgs findIf {!isNull _x} == -1) then {_detectionTrgs = []};
 
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
@@ -38,8 +36,8 @@ if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", 
 
 private _enemySide = (BIS_WL_competingSides - [_owner]) # 0;
 if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _enemySide])) then {
-	missionNamespace setVariable [format ["BIS_WL_resetTargetSelection_server_%1", _enemySide], TRUE];
-	BIS_WL_resetTargetSelection_client = TRUE;
+	missionNamespace setVariable [format ["BIS_WL_resetTargetSelection_server_%1", _enemySide], true];
+	BIS_WL_resetTargetSelection_client = true;
 	{
 		(owner _x) publicVariableClient "BIS_WL_resetTargetSelection_client";
 	} forEach (BIS_WL_allWarlords select {side group _x == _enemySide});

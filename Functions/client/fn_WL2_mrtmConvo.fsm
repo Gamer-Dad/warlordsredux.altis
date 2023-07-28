@@ -446,15 +446,15 @@ class FSM
                         name = "Reward";
                         itemno = 32;
                         init = /*%FSM<STATEINIT""">*/"0 spawn {" \n
-                         "	if !(has_recieved_reward && {!reward_active}) then {" \n
+                         "	if !(has_recieved_reward && {!(player getVariable ""reward_active"")}) then {" \n
                          "		has_recieved_reward = true;" \n
                          "		[""Villager"", (localize ""STR_MRTM_easterEgg_interact_reward"")] spawn BIS_fnc_showSubtitle;" \n
                          "		sleep 7;" \n
                          "		[""Villager"", (localize ""STR_MRTM_easterEgg_interact_reward"")] spawn BIS_fnc_showSubtitle;" \n
                          "		sleep 11;" \n
-                         "		reward_active = true;" \n
-                         "		sleep 10;" \n
-                         "		reward_active = false;" \n
+                         "		player setVariable [""reward_active"", true];" \n
+                         "		sleep 20;" \n
+                         "		player setVariable [""reward_active"", false];" \n
                          "	};" \n
                          "};"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;

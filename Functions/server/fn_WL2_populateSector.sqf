@@ -1,11 +1,12 @@
 params ["_sector", "_side"];
 
+if (_side == BIS_WL_localSide && {_sector getVariable ["BIS_WL_aiSpawnedAAF", false]}) exitWith {};
+
 private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
 private _connectedToBase = count ([BIS_WL_base1, BIS_WL_base2] arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 
-//adjusting nearroads value below should change spawn slots for non-hard coded towns.
-// Orginal if (_side == BIS_WL_localSide)
 if (_side == BIS_WL_localSide) then {
+	_sector setVariable ["BIS_WL_aiSpawnedAAF", true];
 	if (count (_sector getVariable "BIS_WL_vehiclesToSpawn") == 0) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
@@ -17,11 +18,11 @@ if (_side == BIS_WL_localSide) then {
 			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
-			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
+			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
 			
 			{
 				_x setVariable ["BIS_WL_parentSector", _sector];
-				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
+				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
 			[_group, 0] setWaypointPosition [position _vehicle, 100];
@@ -33,6 +34,8 @@ if (_side == BIS_WL_localSide) then {
 			
 			_wp = _group addWaypoint [position _road, 100];
 			_wp setWaypointType "CYCLE";
+
+			[_vehicle, 2] remoteExec ["lock", (owner _vehicle)];
 		};
 	} else {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
@@ -48,11 +51,11 @@ if (_side == BIS_WL_localSide) then {
 			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
-			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
+			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
 			
 			{
 				_x setVariable ["BIS_WL_parentSector", _sector];
-				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
+				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
 			_vehicle lock _lock;
@@ -65,6 +68,7 @@ if (_side == BIS_WL_localSide) then {
 			
 			_wp = _group addWaypoint [position _vehicle, 100];
 			_wp setWaypointType "CYCLE";
+			[_vehicle, 2] remoteExec ["lock", (owner _vehicle)];
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
@@ -79,11 +83,11 @@ if (_side == BIS_WL_localSide) then {
 			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
-			[objNull, _vehicle] call BIS_fnc_WL2_newAssetHandle;
+			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
 			
 			{
 				_x setVariable ["BIS_WL_parentSector", _sector];
-				[objNull, _x] call BIS_fnc_WL2_newAssetHandle;
+				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
 			
@@ -100,6 +104,7 @@ if (_side == BIS_WL_localSide) then {
 			
 			_wp3 = _group addWaypoint [waypointPosition _wp1 vectorAdd [0, 0, 300], 300];
 			_wp3 setWaypointType "CYCLE";
+			[_vehicle, 2] remoteExec ["lock", (owner _vehicle)];
 		};
 	};
 };
@@ -119,7 +124,7 @@ while {_i < _garrisonSize} do {
 	for [{_i2 = 0}, {_i2 < _grpSize && _i < _garrisonSize}, {_i2 = _i2 + 1; _i = _i + 1}] do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
-		[objNull, _newUnit] call BIS_fnc_WL2_newAssetHandle;
+		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
 	};
 	
 	_newGrp setBehaviour "COMBAT";

@@ -1,11 +1,9 @@
-#include "..\warlords_constants.inc"
-
 _previousSeizingInfo = [];
 _visitedSector = objNull;
 
 while {!BIS_WL_missionEnd} do {
 	
-	sleep (if (count _previousSeizingInfo == 0) then {WL_TIMEOUT_STANDARD} else {WL_TIMEOUT_SHORT});
+	sleep (if (count _previousSeizingInfo == 0) then {1} else {0.25});
 	
 	_sectorsToCheck = +(BIS_WL_sectorsArray # 3);
 	_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable "objectAreaComplete")};
@@ -21,7 +19,7 @@ while {!BIS_WL_missionEnd} do {
 			};
 			_previousSeizingInfo = _info;
 		} else {
-			if ((_visitedSector getVariable "BIS_WL_owner") != BIS_WL_playerSide && count _info == 0 && (_visitedSector in (BIS_WL_sectorsArray # 7)) && _visitedSector != WL_TARGET_FRIENDLY) then {
+			if (((_visitedSector getVariable "BIS_WL_owner") != (side group player)) && {(count _info == 0) && {(_visitedSector in (BIS_WL_sectorsArray # 7)) && {(_visitedSector != (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", (side group player)]))}}}) then {
 				["seizingDisabled", [_visitedSector getVariable "BIS_WL_owner"]] spawn BIS_fnc_WL2_setOSDEvent;
 				_visitedSector setVariable ["BIS_WL_seizingInfo", ["seizingDisabled"]];
 				_previousSeizingInfo = ["seizingDisabled"];
@@ -32,7 +30,6 @@ while {!BIS_WL_missionEnd} do {
 			["seizing", []] spawn BIS_fnc_WL2_setOSDEvent;
 			["seizingDisabled", []] spawn BIS_fnc_WL2_setOSDEvent;
 			_previousSeizingInfo = [];
-			_visitedSector setVariable ["BIS_WL_seizingInfo", []];
 		};
 	};
 };
