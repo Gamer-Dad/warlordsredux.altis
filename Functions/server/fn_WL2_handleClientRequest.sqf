@@ -67,7 +67,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-				0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
+				0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
 			};
 		};
 		case "savedLoadout": {
@@ -76,7 +76,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-				["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
+				["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
 			};
 		};
 		case "orderFTVehicle": {
@@ -135,7 +135,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;	
 
-				0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
+				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
 			};
 		};
 		case "orderAI" : {
