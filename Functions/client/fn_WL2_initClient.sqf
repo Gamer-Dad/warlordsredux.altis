@@ -83,6 +83,8 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
 
+(format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
+
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
 
@@ -261,8 +263,6 @@ call BIS_fnc_WL2_targetResetHandle;
 player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
 0 spawn BIS_fnc_WL2_underWaterCheck;
-
-(format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID player]) addPublicVariableEventHandler BIS_fnc_WL2_friendlyFireHandleClient;
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 0 spawn BIS_fnc_WL2_timer;
