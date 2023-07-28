@@ -126,9 +126,6 @@ if !(isNull _sender) then {
 				_sender setVehiclePosition [_pos, [], 2, "NONE"];
 			};
 		};
-		case "fastTravel": {
-			_sender setVehiclePosition [_pos, [], 3, "NONE"];
-		};
 		case "orderArsenal": {
 			_hasFunds = (_playerFunds >= _cost);
 			if (_hasFunds) then {
