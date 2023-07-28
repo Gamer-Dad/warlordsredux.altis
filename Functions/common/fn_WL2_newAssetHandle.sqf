@@ -131,6 +131,29 @@ if (isPlayer _owner) then {
 			_asset removeAction _repairActionID;
 		};
 
+		if (typeOf _asset == "B_Radar_System_01_F" || typeOf _asset == "O_Radar_System_02_F") then {
+			_asset spawn {
+				params ["_asset"];
+
+				_asset setVariable ["radarOperation", false];
+				_asset call BIS_fnc_WL2_sub_radarOperate;
+
+				_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
+				_radarIter = 0;
+
+				while {alive _asset} do {
+					if (_asset getVariable "radarOperation") then {
+						_asset setVehicleRadar 1;
+						_asset lookAt (_lookAtPositions # _radarIter);
+						_radarIter = (_radarIter + 1) % 8;
+					} else {
+						_asset setVehicleRadar 0;
+					};
+					sleep 1.2;
+				};				
+			};
+		};
+
 		if !(_assembled || _asset isKindOf "Thing") then {
 			if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || typeOf _asset == "O_Truck_03_device_F") then {
 				_asset setVariable ["dazzlerActivated", false];

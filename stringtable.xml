@@ -766,7 +766,41 @@
             <Japanese>Dazzler を無効にする</Japanese>
             <Chinesesimp>禁用 dazzler</Chinesesimp>
             <Chinese>禁用 dazzler</Chinese>
-        </Key> 
+        </Key>
+        <Key ID="STR_A3_radar_operation_enable">
+            <Original>Turn on Automatic Radar</Original>
+            <English>Turn on Automatic Radar</English>
+            <Czech>Zapnout automatický radar</Czech>
+            <French>Allumer le radar automatique</French>
+            <German>Aktiviere automatische Radarfunktion</German>
+            <Italian>Attiva radar automatico</Italian>
+            <Polish>Włącz automatyczny radar</Polish>
+            <Portuguese>Ligar radar automático</Portuguese>
+            <Russian>Включить автоматический радар</Russian>
+            <Spanish>Encender radar automático</Spanish>
+            <Turkish>Otomatik Radarı Aç</Turkish>
+            <Korean>자동 레이더 켜기</Korean>
+            <Japanese>自動レーダーをオンにする</Japanese>
+            <Chinesesimp>启用自动雷达</Chinesesimp>
+            <Chinese>啟用自動雷達</Chinese>
+        </Key>
+        <Key ID="STR_A3_radar_operation_disable">
+            <Original>Shutdown Automatic Radar</Original>
+            <English>Shutdown Automatic Radar</English>
+            <Czech>Vypnout automatický radar</Czech>
+            <French>Arrêter le radar automatique</French>
+            <German>Automatische Radarabschaltung</German>
+            <Italian>Spegni radar automatico</Italian>
+            <Polish>Wyłączanie automatycznego radaru</Polish>
+            <Portuguese>Desligar radar automático</Portuguese>
+            <Russian>Отключение автоматического радара</Russian>
+            <Spanish>Apagar radar automático</Spanish>
+            <Turkish>Otomatik Radar Kapat</Turkish>
+            <Korean>자동 레이더 종료</Korean>
+            <Japanese>自動レーダーをシャットダウン</Japanese>
+            <Chinesesimp>关闭自动雷达</Chinesesimp>
+            <Chinese>關閉自動雷達</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_surrender">
             <Original>Surrender</Original>
             <English>Surrender</English>
