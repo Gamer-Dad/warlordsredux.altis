@@ -77,7 +77,7 @@ if (_class isKindOf "Man") then {
 
 	if (BIS_WL_spacePressed) then {
 		playSound "assemble_target";
-		[player, "orderAsset", _cost, [(_p # 0), (_p # 1), 0], _class, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+		[player, "orderAsset", _cost, [(_p # 0), (_p # 1), 0], _class, false, (direction player)] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	} else {
 		"Canceled" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;

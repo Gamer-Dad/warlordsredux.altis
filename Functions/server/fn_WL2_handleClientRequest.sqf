@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic"];
+params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic", "_direction"];
 
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 
@@ -293,10 +293,10 @@ if !(isNull _sender) then {
 								_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 								_asset enableWeaponDisassembly false;
 							};
-							_asset setDir (direction _sender);
+							_asset setDir _direction;
 						} else {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
-							_asset setDir direction _sender;
+							_asset setDir _direction;
 							_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
 
 							if ((typeOf _asset) in dapsDazzler) then {
