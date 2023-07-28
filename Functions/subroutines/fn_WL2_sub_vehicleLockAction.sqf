@@ -6,9 +6,9 @@ _actionID = _asset addAction [
 		_this params ["_asset", "_caller", "_actionID"];
 		_asset removeAction _actionID;
 		if (locked _asset == 2) then {
-			_asset lock 0;
+			[_asset, 0] remoteExec ["lock", (owner _asset)];
 		} else {
-			_asset lock 2;
+			[_asset, 2] remoteExec ["lock", (owner _asset)];
 		};
 		_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 	},
