@@ -49,9 +49,12 @@ if (dapsHeavySubmunitionBlockList find _projectile >= 0) then {
 			_msg remoteExec ["systemChat", owner _responsiblePlayer];
 			_msg remoteExec ["systemChat", owner _unit];
 
-			// reduce APS charges
-			_a = _unit getVariable "dapsAmmo";
-			_unit setVariable ["dapsAmmo", _a - 1, true];
+			_unit spawn { 
+				sleep 0.001;
+				// reduce APS charges
+				_a = _this getVariable "dapsAmmo";
+				_this setVariable ["dapsAmmo", _a - 1, true];
+			};
 
 			// block damage
 			_oldDamage
