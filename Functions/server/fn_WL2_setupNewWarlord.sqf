@@ -52,6 +52,6 @@ if !(_boundToAnotherTeam) then {
 	sleep 2;
 	_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _warlord];
 	if ((missionNamespace getVariable _friendlyFireVarName) > serverTime) then {
-		(owner _warlord) publicVariableClient _friendlyFireVarName;
+		[(missionNamespace getVariable _friendlyFireVarName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", (owner _responsibleLeader)];
 	};
 };

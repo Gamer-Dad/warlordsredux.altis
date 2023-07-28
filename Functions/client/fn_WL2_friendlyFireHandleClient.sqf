@@ -1,10 +1,12 @@
 #include "..\warlords_constants.inc"
 
+params ["_penalty"];
+
 if (BIS_WL_penalized) exitWith {};
 
-_this spawn {
-	params ["_varName", "_penaltyEnd"];
-
+_penalty spawn {
+	params ["_penaltyEnd"];
+	
 	BIS_WL_penalized = TRUE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 	titleCut ["", "BLACK IN", 1];
