@@ -6,7 +6,7 @@ if (!alive _unit) exitWith {	// vehicle already dead?
 if (!(_unit call DAPS_fnc_active)) exitWith {	// APS active and has charges?
 	nil;
 };
-if (_unit distance _source < 40) exitWith {	// too close?
+if (_unit distance _source < 30) exitWith {	// too close?
 	nil;
 };
 
