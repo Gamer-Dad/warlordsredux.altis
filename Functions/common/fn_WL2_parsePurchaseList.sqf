@@ -187,6 +187,7 @@ _strategyArr pushBack ["TargetReset", BIS_WL_targetResetCost, [], localize "STR_
 _strategyArr pushBack ["forfeitVote", 0, [], "Order forfeit", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order forfeit"];
 _strategyArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_lock_all"];
 _strategyArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_unlock_all"];
+_strategyArr pushBack ["clearVehicles", 0, [], "Kick players from all vehicles", "\A3\Data_F_Warlords\Data\preview_empty.jpg", "Kick players from all your vehicles. This doesn't include you or your AI."];
 _strategyArr pushBack ["RemoveUnits", 0, [], localize "STR_A3_WL_feature_dismiss_selected", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_dismiss_selected"];
 _strategyArr pushBack ["welcomeScreen", 0, [], localize "STR_A3_WL_infoScreen", "img\wl_logo_ca.paa", localize "STR_A3_WL_infoScreen"];
 _sortedArray pushBack _strategyArr;

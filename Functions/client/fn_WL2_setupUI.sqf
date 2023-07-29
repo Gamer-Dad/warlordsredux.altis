@@ -376,7 +376,17 @@ switch (_displayClass) do {
 						} forEach (WL_PLAYER_VEHS select {alive _x && {(!(typeOf _x == "B_Truck_01_medical_F")) && {!(typeOf _x == "O_Truck_03_medical_F") && {!(typeOf _x == "B_Slingload_01_Medevac_F") && {!(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 						[toUpper localize "STR_A3_WL_feature_lock_all_msg"] spawn BIS_fnc_WL2_smoothText
 					};
-					case "UnlockVehicles": {{[_x, 0] remoteExec ["lock", (owner _x)]; _x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]]} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_unlock_all_msg"] spawn BIS_fnc_WL2_smoothText};
+					case "UnlockVehicles": {
+						{
+							[_x, 0] remoteExec ["lock", (owner _x)]; 
+							_x setUserActionText [_x getVariable ["BIS_WL_lockActionID", -1], format ["<t color = '%1'>%2</t>", if ((locked _x) == 2) then {"#4bff58"} else {"#ff4b4b"}, if ((locked _x) == 2) then {localize "STR_A3_cfgvehicles_miscunlock_f_0"} else {localize "STR_A3_cfgvehicles_misclock_f_0"}]];
+						} forEach (WL_PLAYER_VEHS select {alive _x}); [toUpper localize "STR_A3_WL_feature_unlock_all_msg"] spawn BIS_fnc_WL2_smoothText};
+					case "clearVehicles": {
+						{		
+							{
+								moveOut _x;
+							} forEach ((crew _x) select {(_x != player) && {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group player)}});
+						} forEach (WL_PLAYER_VEHS select {alive _x});};
 					case "RemoveUnits": {
 						{
 							deleteVehicle _x;
