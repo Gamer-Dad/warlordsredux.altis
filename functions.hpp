@@ -69,6 +69,7 @@ class CfgFunctions {
 			class WL2_targetResetHandleVote {};
 			class WL2_reportCheater {};
 			class WL2_kickCheater {};
+			class WL2_wasMain {};
     	};
 		class Server 
 		{

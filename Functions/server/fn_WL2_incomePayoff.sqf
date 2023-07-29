@@ -1,5 +1,6 @@
 while {!BIS_WL_missionEnd} do {
 	sleep 60;
+	private _notBlocked = BIS_WL_allWarlords select {!(_x getVariable ["BIS_WL_incomeBlocked", false])};
 	{
 		_side = (side group _x);
 		_uid = getPlayerUID _x;
@@ -17,7 +18,7 @@ while {!BIS_WL_missionEnd} do {
 				[_uid, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
-	} forEach (BIS_WL_allWarlords) select {!(_x getVariable ["BIS_WL_incomeBlocked", false])};
+	} forEach _notBlocked;
 	
 	{
 		_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && {(alive _x) && {side group _x != civilian}}};
