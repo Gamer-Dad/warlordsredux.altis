@@ -49,12 +49,6 @@ while {!BIS_WL_missionEnd} do {
 	} else {
 		WAS_fired = false;
 	};
-	
-	//Selected sector
-	private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {not(isNull _x)};
-	if (((_targets findIf {player inArea (_x getVariable "objectAreaComplete")}) != -1)) then {
-		_inActScore = 0;
-	};
 
 	//In a vehicle with crew from another group
 	private _crewNotInGroup = (crew vehicle player) select {group _x != group player};
@@ -62,11 +56,16 @@ while {!BIS_WL_missionEnd} do {
 		_inActScore = _inActScore - 1;
 	};
 
+	//Selected sector
+	private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {not(isNull _x)};
+	if (((_targets findIf {player inArea (_x getVariable "objectAreaComplete")}) != -1)) then {
+		_inActScore = 0;
+	};
+
 	if (_inActScore > _maxInActScore) then {
 		hint "You are too inactive to earn passive income";
 		player setVariable ["BIS_WL_incomeBlocked", true, true];
 	} else {
-		hintSilent "";
 		player setVariable ["BIS_WL_incomeBlocked", false, true];
 	};
 };
