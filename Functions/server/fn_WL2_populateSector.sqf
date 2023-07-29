@@ -36,6 +36,13 @@ if (_side == BIS_WL_localSide) then {
 			_wp setWaypointType "CYCLE";
 
 			[_vehicle, 2] remoteExec ["lock", (owner _vehicle)];
+			[_vehicle, _crew] spawn {
+				params ["_v", "_crew"];
+				waitUntil {sleep 2; (!alive _v) || {(count (_crew select {alive _x})) == 0}};
+				if ((count (_crew select {alive _x})) == 0) then {
+					[_v, 0] remoteExec ["lock", (owner _v)];
+				};
+			};
 		};
 	} else {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
@@ -68,7 +75,15 @@ if (_side == BIS_WL_localSide) then {
 			
 			_wp = _group addWaypoint [position _vehicle, 100];
 			_wp setWaypointType "CYCLE";
+			
 			[_vehicle, 2] remoteExec ["lock", (owner _vehicle)];
+			[_vehicle, _crew] spawn {
+				params ["_v", "_crew"];
+				waitUntil {sleep 2; (!alive _v) || {(count (_crew select {alive _x})) == 0}};
+				if ((count (_crew select {alive _x})) == 0) then {
+					[_v, 0] remoteExec ["lock", (owner _v)];
+				};
+			};
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
@@ -104,7 +119,15 @@ if (_side == BIS_WL_localSide) then {
 			
 			_wp3 = _group addWaypoint [waypointPosition _wp1 vectorAdd [0, 0, 300], 300];
 			_wp3 setWaypointType "CYCLE";
+
 			[_vehicle, 2] remoteExec ["lock", (owner _vehicle)];
+			[_vehicle, _crew] spawn {
+				params ["_v", "_crew"];
+				waitUntil {sleep 2; (!alive _v) || {(count (_crew select {alive _x})) == 0}};
+				if ((count (_crew select {alive _x})) == 0) then {
+					[_v, 0] remoteExec ["lock", (owner _v)];
+				};
+			};
 		};
 	};
 };
