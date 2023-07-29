@@ -78,6 +78,10 @@ MRTM_smallAnnouncerText = false;
 has_recieved_reward = false;
 player setVariable ["reward_active", false];
 
+//WAS system
+0 spawn BIS_fnc_WL2_wasMain;
+
+
 if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;

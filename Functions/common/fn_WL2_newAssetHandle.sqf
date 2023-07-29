@@ -8,6 +8,7 @@ if (isNull _owner && isServer) then {
 };
 
 if (isPlayer _owner) then {
+	WAS_store = true;
 	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), [2, clientOwner]];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
 	if !((typeOf _asset) in dapsDazzler) then {
