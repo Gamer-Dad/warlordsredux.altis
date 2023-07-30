@@ -33,10 +33,10 @@ _v addEventHandler ["Killed", {
 0 spawn {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}) && {alive player})} do {
 		_v = (objectParent player);
-		if (MRTM_EnableRWR && {!(_v getVariable "isBettyBitching")}) then {
+		if ((profileNamespace getVariable "MRTM_EnableRWR") && {!(_v getVariable "isBettyBitching")}) then {
 			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
 				if (asin (vectorDir _v select 2) < - (((getPosATL player select 2) * 40) / speed _v)) then {
-					playSoundUI ["pullUp", MRTM_rwr1, 1];
+					playSoundUI ["pullUp", (profileNamespace getVariable "MRTM_rwr1"), 1];
 					_v setVariable ["isBettyBitching", true];
 					private _startTime = serverTime + 1.33;
 					waitUntil {serverTime > _startTime};
@@ -53,9 +53,9 @@ _v addEventHandler ["Killed", {
 0 spawn {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}) && {alive player})} do {
 		_v = (objectParent player);
-		if (MRTM_EnableRWR && {!(_v getVariable "isBettyBitching")}) then {
+		if ((profileNamespace getVariable "MRTM_EnableRWR") && {!(_v getVariable "isBettyBitching")}) then {
 			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
-				playSoundUI ["altWarning", MRTM_rwr2, 1];
+				playSoundUI ["altWarning", (profileNamespace getVariable "MRTM_rwr2"), 1];
 				_v setVariable ["isBettyBitching", true];
 				private _startTime = serverTime + 3; 
 				waitUntil {serverTime > _startTime};
@@ -71,9 +71,9 @@ _v addEventHandler ["Killed", {
 0 spawn {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
 		_v = (objectParent player);
-		if (MRTM_EnableRWR) then {
+		if ((profileNamespace getVariable "MRTM_EnableRWR")) then {
 			if (fuel _v < 0.2) then {
-				playSoundUI ["bingoFuel", MRTM_rwr4, 1];
+				playSoundUI ["bingoFuel", (profileNamespace getVariable "MRTM_rwr4"), 1];
 				_v setVariable ["isBettyBitching", true];
 				private _startTime1 = serverTime + 1.6;  
 				waitUntil {serverTime > _startTime1};
@@ -90,14 +90,14 @@ _v addEventHandler ["Killed", {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
 		_v = (objectParent player);
 		_v setVariable ["newTargets", getSensorTargets _v];
-		if (MRTM_EnableRWR) then {
+		if (profileNamespace getVariable "MRTM_EnableRWR") then {
 			if (count (_v getVariable "newTargets") > count (_v getVariable "currentTargets")) then {
-				playSoundUI ["radarTargetNew", MRTM_rwr4, 1];
+				playSoundUI ["radarTargetNew", (profileNamespace getVariable "MRTM_rwr4"), 1];
 				sleep 0.1;
 			};
 
 			if (count (_v getVariable "newTargets") < count (_v getVariable "currentTargets")) then {
-				playSoundUI ["radarTargetLost", MRTM_rwr4, 1];
+				playSoundUI ["radarTargetLost", (profileNamespace getVariable "MRTM_rwr4"), 1];
 				sleep 0.1;
 			};
 		};
@@ -109,7 +109,7 @@ _v addEventHandler ["Killed", {
 0 spawn {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_Heli_Attack_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}}) && {alive player})} do {
 		_v = (objectParent player);
-		if (MRTM_EnableRWR && {!(_v getVariable "isBettyBitching")}) then {
+		if ((profileNamespace getVariable "MRTM_EnableRWR") && {!(_v getVariable "isBettyBitching")}) then {
 			if (count (_v getVariable ["Incomming", []]) > 0) then {
 				_v setVariable ["isBettyBitching", true];
 				_incomming = ((_v getVariable "Incomming") # 0);
@@ -133,7 +133,7 @@ _v addEventHandler ["Killed", {
 					};
 				};
 				_sound = format ["incMissile_%1", _fDir];
-				playSoundUI [_sound, (MRTM_rwr4 + 0.3), 1];
+				playSoundUI [_sound, ((profileNamespace getVariable "MRTM_rwr4") + 0.3), 1];
 				sleep 2.3;
 				_v setVariable ["isBettyBitching", false];
 			};

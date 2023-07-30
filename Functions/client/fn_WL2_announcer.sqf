@@ -15,6 +15,6 @@ if (isNil "BIS_WL_soundMsgBuffer") then {
 	};
 };
 
-if !(MRTM_muteVoiceInformer) then {
+if !(profileNamespace getVariable "MRTM_muteVoiceInformer") then {
 	BIS_WL_soundMsgBuffer pushBack format ["BIS_WL_%1_%2", _this, BIS_WL_sidesArray # ((BIS_WL_sidesArray find BIS_WL_playerSide) min 1)];
 };

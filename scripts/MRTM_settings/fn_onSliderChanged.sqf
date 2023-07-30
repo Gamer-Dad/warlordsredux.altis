@@ -20,15 +20,15 @@ _varData = switch(_mode) do {
 	case 8: {["MRTM_rwr4", 1408]};
 };
 
-missionNamespace setVariable [(_varData # 0), _value];
-ctrlSetText [(_varData # 1), str (missionNamespace getVariable (_varData # 0))];
+profileNamespace setVariable [(_varData # 0), _value];
+ctrlSetText [(_varData # 1), str (profileNamespace getVariable (_varData # 0))];
 [] call MRTM_fnc_updateViewDistance;
 
 if(_mode isEqualTo 3) then {
-	setObjectViewDistance [MRTM_objects, 100];
+	setObjectViewDistance [(profileNamespace getVariable "MRTM_objects"), 100];
 };
 
-if(MRTM_syncObjects) then {
-	sliderSetPosition[1129, MRTM_objects];
-	ctrlSetText[1404, str (MRTM_objects)];
+if (profileNamespace getVariable "MRTM_syncObjects") then {
+	sliderSetPosition[1129, (profileNamespace getVariable "MRTM_objects")];
+	ctrlSetText[1404, str (profileNamespace getVariable "MRTM_objects")];
 };

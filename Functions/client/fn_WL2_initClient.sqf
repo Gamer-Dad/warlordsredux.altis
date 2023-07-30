@@ -53,45 +53,57 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 	];
 };
 
-//View distance
-MRTM_inf = 2000;
-MRTM_ground = 3000;
-MRTM_air = 4000;
-MRTM_drones = 4000;
-MRTM_objects = 2000;
-MRTM_syncObjects = true;
-setTerrainGrid 3.125;
-
-//Radar warning system
-MRTM_rwr1 = 0.3;
-MRTM_rwr2 = 0.3;
-MRTM_rwr3 = 0.2;
-MRTM_rwr4 = 0.3;
-
-//Options
-player setVariable ["MRTM_3rdPersonDisabled", false, [2, clientOwner]];
-MRTM_playKillSound = true;
-MRTM_muteVoiceInformer = false;
-MRTM_EnableRWR = true;
-MRTM_disableHint = true;
-MRTM_smallAnnouncerText = false;
-has_recieved_reward = false;
-player setVariable ["reward_active", false];
-
-//WAS system
-0 spawn BIS_fnc_WL2_wasMain;
-
-
 if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
 
-uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
-uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
+//View distance
+setTerrainGrid 3.125;
+if !(profileNamespace getVariable ["viewSettingsInitialzed", false]) then {
+	profileNamespace setVariable ["viewSettingsInitialzed", true];
+	profileNamespace setVariable ["MRTM_inf", 2000];
+	profileNamespace setVariable ["MRTM_ground", 3000];
+	profileNamespace setVariable ["MRTM_air", 4000];
+	profileNamespace setVariable ["MRTM_drones", 4000];
+	profileNamespace setVariable ["MRTM_objects", 2000];
+	profileNamespace setVariable ["MRTM_syncObjects", true];
+};
 
+//Radar warning system
+if !(profileNamespace getVariable ["warningSettingsInitialzed", false]) then {
+	profileNamespace setVariable ["warningSettingsInitialzed", true];
+	profileNamespace setVariable ["MRTM_rwr1", 0.3];
+	profileNamespace setVariable ["MRTM_rwr2", 0.3];
+	profileNamespace setVariable ["MRTM_rwr3", 0.2];
+	profileNamespace setVariable ["MRTM_rwr4", 0.3];
+};
+
+//Options
+if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
+	profileNamespace setVariable ["preferencesInitialzed", true];
+	profileNamespace setVariable ["MRTM_3rdPersonDisabled", false];
+	profileNamespace setVariable ["MRTM_playKillSound", true];
+	profileNamespace setVariable ["MRTM_muteVoiceInformer", false];
+	profileNamespace setVariable ["MRTM_EnableRWR", true];
+	profileNamespace setVariable ["MRTM_disableHint", true];
+	profileNamespace setVariable ["MRTM_smallAnnouncerText", false];
+};
+
+player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", false]), [2, clientOwner]];
+has_recieved_reward = false;
+player setVariable ["reward_active", false];
 private _uidPlayer = getPlayerUID player;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], []];
+
+//UI
+uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
+uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
+uiNamespace setVariable ["activeControls", []];
+uiNamespace setVariable ["control", 50000];
+
+//WAS system
+0 spawn BIS_fnc_WL2_wasMain;
 
 
 if !(isServer) then {
@@ -153,9 +165,8 @@ BIS_WL_enemiesCheckTrigger setTriggerArea [100, 100, 0, false];
 BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
 BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
 
-uiNamespace setVariable ["activeControls", []];
-uiNamespace setVariable ["control", 50000];
 
+//Evenhandlers
 "fundsDatabaseClients" addPublicVariableEventHandler {
 	[] spawn BIS_fnc_WL2_refreshOSD;
 };
@@ -249,6 +260,27 @@ addMissionEventHandler ["MarkerCreated", {
 	};
 }];
 
+0 spawn {
+	waituntil {sleep 0.1; !isnull (findDisplay 46)};
+	(findDisplay 46) displayAddEventHandler ["KeyDown", {
+		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
+		private _key1 = actionKeysNames "curatorInterface";
+		private _key2 = actionKeysNames "tacticalView";
+		private _keyName = (keyName _key);
+		private _e = false;
+		
+		if (_keyName == _key1) then {
+			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+				_e = true;
+			};
+		};
+		if (_keyName == _key2) then {
+			_e = true;
+		};
+		_e;
+	}];
+};
+
 call BIS_fnc_WL2_sub_arsenalSetup;
 
 0 spawn {
@@ -314,27 +346,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	if (!(isNil {Dev_MrThomasM})) then {
 		0 spawn BIS_fnc_WL2_mrtmAction;
 	};
-};
-
-0 spawn {
-	waituntil {sleep 0.1; !isnull (findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["KeyDown", {
-		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
-		private _key1 = actionKeysNames "curatorInterface";
-		private _key2 = actionKeysNames "tacticalView";
-		private _keyName = (keyName _key);
-		private _e = false;
-		
-		if (_keyName == _key1) then {
-			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
-				_e = true;
-			};
-		};
-		if (_keyName == _key2) then {
-			_e = true;
-		};
-		_e;
-	}];
 };
 
 ["client_init"] call BIS_fnc_endLoadingScreen;

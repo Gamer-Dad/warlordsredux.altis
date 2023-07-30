@@ -7,27 +7,27 @@
 _dist = 0;
 switch (true) do {
 	case (!((UAVControl getConnectedUAV player # 1) isEqualTo "")): {
-		setViewDistance MRTM_drones;
-		_dist = MRTM_drones;
+		setViewDistance (profileNamespace getVariable "MRTM_drones");
+		_dist = (profileNamespace getVariable "MRTM_drones");
 	};
 
 	case ((vehicle player) isKindOf "Man"): {
-		setViewDistance MRTM_inf;
-		_dist = MRTM_inf;
+		setViewDistance (profileNamespace getVariable "MRTM_inf");
+		_dist = (profileNamespace getVariable "MRTM_inf");
 	};
 
 	case (((vehicle player) isKindOf "LandVehicle") || ((vehicle player) isKindOf "Ship")): {
-		setViewDistance MRTM_ground;
-		_dist = MRTM_ground;
+		setViewDistance (profileNamespace getVariable "MRTM_ground");
+		_dist = (profileNamespace getVariable "MRTM_ground");
 	};
 
 	case ((vehicle player) isKindOf "Air"): {
-		setViewDistance MRTM_air;
-		_dist = MRTM_air;
+		setViewDistance (profileNamespace getVariable "MRTM_air");
+		_dist = (profileNamespace getVariable "MRTM_air");
 	};
 };
 
-if(MRTM_syncObjects) then {
+if (profileNamespace getVariable "MRTM_syncObjects") then {
 	setObjectViewDistance [_dist, 100];
-	MRTM_objects = _dist;
+	profileNamespace setVariable ["MRTM_objects", _dist];
 };

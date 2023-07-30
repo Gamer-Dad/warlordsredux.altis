@@ -85,7 +85,7 @@ class FSM
                          "	};" \n
                          "};" \n
                          "" \n
-                         "if (serverTime > _h && {!(MRTM_disableHint)}) then {" \n
+                         "if (serverTime > _h && {!(profileNamespace getVariable 'MRTM_disableHint')}) then {" \n
                          "	hintSilent (localize (format [""STR_MRTM_easterEgg_hint_%1"", (floor (random 9))]));" \n
                          "	_h = serverTime + 1800;" \n
                          "};" \n
