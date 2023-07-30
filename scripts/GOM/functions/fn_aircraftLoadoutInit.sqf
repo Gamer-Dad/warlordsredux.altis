@@ -311,11 +311,7 @@ true
 };
 
 GOM_fnc_setPylonLoadoutLBPylonsUpdate = {
-
 	params ["_obj"];
-	_check = [_obj] call GOM_fnc_aircraftLoadoutResourcesCheck;
-
-
 	if (lbCursel 1500 < 0) exitWith {false};
 
 	_veh = call compile  lbData [1500,lbcursel 1500];
@@ -324,21 +320,21 @@ GOM_fnc_setPylonLoadoutLBPylonsUpdate = {
 
 	lbClear 1501;
 	{
-
-		lbAdd [1501,_x];
-		lbsetData [1501,_foreachIndex,_x];
-
+		if !(["dummy", _x] call BIS_fnc_inString) then {
+			lbAdd [1501,_x];
+			lbsetData [1501,_foreachIndex,_x];
+		};
 	} forEach _validPylons;
 
-		_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
-		if (_colorConfigs isequalto []) then {lbclear 2100;lbAdd [2100,"No paintjobs available."];lbSetCurSel [2100,0]};
+	_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
+	if (_colorConfigs isequalto []) then {lbclear 2100;lbAdd [2100,"No paintjobs available."];lbSetCurSel [2100,0]};
 
 	findDisplay 66 displayCtrl 2800 cbSetChecked (vehicleReportRemoteTargets _veh);
 	findDisplay 66 displayCtrl 2801 cbSetChecked (vehicleReceiveRemoteTargets _veh);
 	findDisplay 66 displayCtrl 2802 cbSetChecked (vehicleReportOwnPosition _veh);
 
 	playSound "Click";
-true
+	true
 };
 
 GOM_fnc_updateAmmoCountDisplay = {
@@ -935,50 +931,35 @@ true
 };
 
 GOM_fnc_fillPylonsLB = {
-
 	params ["_obj"];
-
 	if (lbCursel 1500 < 0) exitWith {false};
 
 	_veh = call compile  lbData [1500,lbcursel 1500];
-
-
 	_pylon = lbData [1501,lbcursel 1501];
 	_getCompatibles = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons" >> _pylon >> "hardpoints");
 
 	if (_getCompatibles isEqualTo []) then {
-
 		//darn BI for using "Pylons" and "pylons" all over the place as if it doesnt fucking matter ffs honeybadger
-
 		_getCompatibles = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "Components" >> "TransportPylonsComponent" >> "pylons" >> _pylon >> "hardpoints");
-
 	};
-
-
 
 	_validPylonMags = GOM_list_allPylonMags select {!((getarray (configfile >> "CfgMagazines" >> _x >> "hardpoints") arrayIntersect _getCompatibles) isEqualTo [])};
 	_validDispNames = GOM_list_validDispNames;
 	lbClear 1502;
 
 	if (GOM_fnc_allowAllPylons) then {
-
 		_validPylonMags = GOM_list_allPylonMags;
 		_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
-
 	} else {
-
-	_validPylonMags = GOM_list_allPylonMags select {!((getarray (configfile >> "CfgMagazines" >> _x >> "hardpoints") arrayIntersect _getCompatibles) isEqualTo [])};
-
-	_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
+		_validPylonMags = GOM_list_allPylonMags select {!((getarray (configfile >> "CfgMagazines" >> _x >> "hardpoints") arrayIntersect _getCompatibles) isEqualTo [])};
+		_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
 	};
 
 	{
-
-		lbAdd [1502,_validDispNames select _foreachIndex];
+		lbAdd [1502, _validDispNames select _foreachIndex];
 		lbsetData [1502,_foreachIndex,_x];
-
 	} forEach _validPylonMags;
-true
+	true
 };
 
 GOM_fnc_aircraftGetSerialNumber = {
