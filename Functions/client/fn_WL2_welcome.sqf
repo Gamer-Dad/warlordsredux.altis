@@ -237,13 +237,6 @@ while {dialog} do {
 			
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
-			"APS System", lineBreak, 
-			"", lineBreak,
-			"For the APS System we use drongos Active Protection System.", lineBreak,
-			"You can use CTRL + G to check your APS Amount.", lineBreak,
-			"", lineBreak,
-			parseText "<img size='5' image='img\drongo_ca.paa'/>", lineBreak,
-			"", lineBreak,
 			"Aircraft Loadout", lineBreak,
 			"", lineBreak,
 			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
