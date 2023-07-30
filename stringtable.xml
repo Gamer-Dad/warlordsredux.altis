@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Warlords Redux">
     <Container name="WL2_onScreenText">
+        <Key ID="STR_A3_WL_aps_friendly_warning">
+            <Original>Watch where you're shooting! You've triggered the Active Protection System on a nearby friendly vehicle.</Original>
+            <English>Watch where you're shooting! You've triggered the Active Protection System on a nearby friendly vehicle.</English>
+            <Czech>Pozor, kam střílíš! Spustil jsi aktivní ochranný systém nedalekého spojeneckého vozidla.</Czech>
+            <French>Faites attention où vous tirez ! Vous avez déclenché le système de protection active d'un véhicule allié à proximité.</French>
+            <German>Achte darauf, wohin du schießt! Du hast das aktive Schutzsystem eines nahegelegenen befreundeten Fahrzeugs ausgelöst.</German>
+            <Italian>Stai attento a dove stai sparando! Hai attivato il sistema di protezione attiva su un veicolo alleato nelle vicinanze.</Italian>
+            <Polish>Uważaj, gdzie strzelasz! Wywołałeś aktywny system ochrony na pobliskim sojuszniczym pojazdzie.</Polish>
+            <Portuguese>Cuidado onde está a disparar! Ativaste o Sistema de Proteção Ativa num veículo aliado próximo.</Portuguese>
+            <Russian>Осторожно, куда стреляешь! Ты активировал систему активной защиты на ближайшем дружественном транспортном средстве.</Russian>
+            <Spanish>¡Cuidado dónde disparas! Has activado el Sistema de Protección Activa en un vehículo aliado cercano.</Spanish>
+            <Turkish>Nereye ateş ettiğine dikkat et! Yakındaki bir dost aracındaki Aktif Koruma Sistemini tetikledin.</Turkish>
+            <Korean>조심해, 쏘는 곳을 확인하세요! 근처 우호적인 차량의 능동 보호 시스템을 작동시켰습니다.</Korean>
+            <Japanese>撃つ場所に気をつけてください！近くの味方車両のアクティブ防御システムが作動しました。</Japanese>
+            <Chinesesimp>小心你的射击方向！你触发了附近友方车辆的主动防护系统。</Chinesesimp>
+            <Chinese>小心你的射擊方向！你觸發了附近友方車輛的主動防護系統。</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_popup_appropriate_sector_selection">
             <Original>Select an appropriate sector.</Original>
             <English>Select an appropriate sector.</English>

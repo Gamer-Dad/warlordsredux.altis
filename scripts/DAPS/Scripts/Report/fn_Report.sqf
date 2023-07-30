@@ -6,7 +6,12 @@ private _indicator=_this select 3;
 if!((vehicle player)==_v)exitWith{};
 
 if!((typeOf _v)in dapsAPStypes)exitWith{};
-private _type=_v getVariable"dapsType";
+private _type = switch (_v getVariable "dapsType") do {
+	case 2: { "Heavy APS" };
+	case 1: { "Medium APS" };
+	case 0: { "Light APS" };
+	default { "???" };
+};
 if!(_indicator)then{
 	hintSilent (format["%1 is %2", _type, (if (_v call DAPS_fnc_active) then {"ON"} else {"OFF"})]);
 };
@@ -15,7 +20,7 @@ private _text="";
 if ((typeOf _v)in dapsDazzler) then {
 	_text="Dazzler active"
 } else {
-	_text = format["%1 charges:<br/><br/>%2/%3", (_v getVariable"dapsType"), (_v getVariable"dapsAmmo"), (_v getVariable "dapsAmmoMax")];
+	_text = format["%1 charges:<br/><br/>%2/%3", _type, (_v getVariable"dapsAmmo"), (_v getVariable "dapsAmmoMax")];
 };
 if!(_indicator)exitWith{
 	hintSilent(parseText format["%1",_text]);

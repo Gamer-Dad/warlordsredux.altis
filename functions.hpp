@@ -207,13 +207,8 @@ class CfgFunctions {
 		class APS 
 		{
 			file = "scripts\DAPS\Scripts\APS";
-			class LagMitigation {};
-			class APSheavy {};
-			class APSmedium {};
-			class APSlight {};
-			class APSDazzler {};
-			class Dazzler {};
-			class Generic {};
+			class SetupProjectiles {};
+			class FiredProjectile {};
 		};
 		class Management
 		{
