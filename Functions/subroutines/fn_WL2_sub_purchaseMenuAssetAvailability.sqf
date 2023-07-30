@@ -31,6 +31,7 @@ if (_ret) then {
 		};
 		case "LastLoadout": {
 			if (count BIS_WL_lastLoadout == 0) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
+			if (BIS_WL_lastLoadout isEqualTo (getUnitLoadout player)) exitWith {_ret = FALSE; _tooltip = "You have the same gear as last time."};
 			if (BIS_WL_loadoutApplied) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_loadout_reapply_info"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
