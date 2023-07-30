@@ -134,7 +134,6 @@ class CfgFunctions {
 			class WL2_sub_purchaseMenuSetItemsList {};
 			class WL2_sub_vehicleLockAction {};
 			class WL2_sub_logisticsAddAction {};
-			class WL2_sub_dazzlerAction {};
 			class WL2_sub_radarOperate {};
 			class WL2_sub_rearmAction {};
 			class WL2_sub_rearmActionAir {};

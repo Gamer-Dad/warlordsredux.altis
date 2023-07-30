@@ -18,6 +18,40 @@
             <Chinesesimp>小心你的射击方向！你触发了附近友方车辆的主动防护系统。</Chinesesimp>
             <Chinese>小心你的射擊方向！你觸發了附近友方車輛的主動防護系統。</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_dazzler_instruction">
+            <Original>To activate the Dazzler device, enter the truck and press %1. Remember to keep the engines on.</Original>
+            <English>To activate the Dazzler device, enter the truck and press %1. Remember to keep the engines on.</English>
+            <Czech>Pro aktivaci zařízení Dazzler, usedněte do kamionu a stiskněte %1. Nepomíjejte ponechat motory zapnuté.</Czech>
+            <French>Pour activer le dispositif Dazzler, entrez dans le camion et appuyez sur %1. N'oubliez pas de laisser les moteurs allumés.</French>
+            <German>Um das Dazzler-Gerät zu aktivieren, steigen Sie in den Lastwagen ein und drücken Sie %1. Denken Sie daran, die Motoren eingeschaltet zu lassen.</German>
+            <Italian>Per attivare il dispositivo Dazzler, entra nel camion e premi %1. Ricorda di mantenere i motori accesi.</Italian>
+            <Polish>Aby aktywować urządzenie Dazzler, wejdź do ciężarówki i naciśnij %1. Pamiętaj, żeby pozostawić włączone silniki.</Polish>
+            <Portuguese>Para ativar o dispositivo Dazzler, entre no caminhão e pressione %1. Lembre-se de manter os motores ligados.</Portuguese>
+            <Russian>Чтобы активировать устройство "Ослепитель", зайдите в грузовик и нажмите %1. Не забывайте держать двигатели включенными.</Russian>
+            <Spanish>Para activar el dispositivo Dazzler, entra en el camión y presiona %1. Recuerda mantener los motores encendidos.</Spanish>
+            <Turkish>Dazzler cihazını etkinleştirmek için kamyonun içine girin ve %1 tuşuna basın. Motorları açık tutmayı unutmayın.</Turkish>
+            <Korean>활성화기를 작동시키려면 트럭으로 들어가 %1을(를) 누르세요. 엔진을 켜두는 것을 기억하세요.</Korean>
+            <Japanese>ダズラー装置を作動させるには、トラックに乗り込んで%1を押してください。エンジンをつけたままにすることを忘れないでください。</Japanese>
+            <Chinesesimp>要启动Dazzler设备，请进入卡车并按%1。记得保持发动机开启。</Chinesesimp>
+            <Chinese>要啟動Dazzler裝置，請進入卡車並按%1。記得保持引擎開啟。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_aps_off_warning">
+            <Original>APS is OFF. Your vehicle is vulnerable!</Original>
+            <English>APS is OFF. Your vehicle is vulnerable!</English>
+            <Czech>APS je VYPNUTÉ. Vaše vozidlo je zranitelné!</Czech>
+            <French>L'APS est DÉSACTIVÉ. Votre véhicule est vulnérable !</French>
+            <German>APS ist DEAKTIVIERT. Ihr Fahrzeug ist verwundbar!</German>
+            <Italian>Il sistema APS è DISATTIVATO. Il tuo veicolo è vulnerabile!</Italian>
+            <Polish>APS jest WYŁĄCZONE. Twoje pojazd jest podatny na ataki!</Polish>
+            <Portuguese>O APS está DESLIGADO. O seu veículo está vulnerável!</Portuguese>
+            <Russian>Система APS ВЫКЛЮЧЕНА. Ваш транспорт уязвим!</Russian>
+            <Spanish>¡El APS está DESACTIVADO! ¡Tu vehículo está vulnerable!</Spanish>
+            <Turkish>APS KAPALI. Aracınız savunmasız!</Turkish>
+            <Korean>APS가 꺼져 있습니다. 당신의 차량은 취약합니다!</Korean>
+            <Japanese>APSがオフになっています。あなたの車両は脆弱です！</Japanese>
+            <Chinesesimp>主动防护系统已关闭。您的车辆易受攻击！</Chinesesimp>
+            <Chinese>主動防護系統已關閉。您的車輛易受攻擊！</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_popup_appropriate_sector_selection">
             <Original>Select an appropriate sector.</Original>
             <English>Select an appropriate sector.</English>
