@@ -137,19 +137,8 @@ if !(isNull _sender) then {
 			};
 		};
 		case "fastTravel": {
-			_sender setVehiclePosition [_pos, [], 3, "NONE"];
-
-			_possibleSectors = _sender call BIS_fnc_WL2_getFriendlySectors;
-			_visitedSectorID = _possibleSectors findIf {_pos inArea (_x getVariable "objectAreaComplete")};
-
-			_sector = if (_visitedSectorID >= 0) then {
-				_possibleSectors # _visitedSectorID;
-			} else {
-				nil;
-			};
-			
-			if (!isNil "_sector") then {
-				[_sector, WL_LOGISTICS_FAST_TRAVEL_COST] call BIS_fnc_WL2_deductSuppliesFromSector;
+			if (!isNil "_target") then {
+				[_target, WL_LOGISTICS_FAST_TRAVEL_COST] call BIS_fnc_WL2_deductSuppliesFromSector;
 			};
 		};
 		case "orderArsenal": {
@@ -456,7 +445,7 @@ if !(isNull _sender) then {
 			};
 
 			// Let the user know they've transported something regardless if funds are added.
-			[_sendingPlayer, _reward, false, true] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _sendingPlayer)];
+			[_sendingPlayer, _reward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", owner _sendingPlayer];
 		};
 	};
 };

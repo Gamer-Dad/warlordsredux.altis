@@ -71,7 +71,6 @@ class CfgFunctions {
 			class WL2_kickCheater {};
 			class WL2_wasMain {};
 			class WL2_updateEarnedCP {};
-			class WL2_orderBounty {};
 			class WL2_canFastTravelToSector {};
 			class WL2_canOrderAircraftToSector {};
     	};
@@ -150,7 +149,6 @@ class CfgFunctions {
 			class WL2_sub_vehicleLockAction {};
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_radarOperate {};
-			class WL2_sub_dazzlerAction {};
 			class WL2_sub_loadSupplies {};
 			class WL2_sub_rearmAction {};
 			class WL2_sub_rearmActionAir {};

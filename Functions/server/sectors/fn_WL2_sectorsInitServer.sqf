@@ -1,3 +1,5 @@
+#include "..\..\warlords_constants.inc"
+
 _potentialBases = BIS_WL_allSectors select {_x getVariable ["BIS_WL_canBeBase", FALSE]};
 private _firstBase = selectRandom ["BIS_WL_base1", "BIS_WL_base2"];
 missionNamespace setVariable [_firstBase, selectRandom _potentialBases, TRUE];

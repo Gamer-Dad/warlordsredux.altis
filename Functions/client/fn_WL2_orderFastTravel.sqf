@@ -118,6 +118,8 @@ if (_toContested) then {
 	} forEach _tagAlong;
 	player setVehiclePosition [_destination, [], 3, "NONE"];
 
+	[player, "fastTravel", 0, _destination, BIS_WL_targetSector] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+
 	sleep WL_TIMEOUT_STANDARD;
 
 	if (BIS_WL_currentSelection in [WL_ID_SELECTION_FAST_TRAVEL, WL_ID_SELECTION_FAST_TRAVEL_CONTESTED]) then {
