@@ -26,6 +26,7 @@ disableSerialization;
 } forEach [[1130, (profileNamespace getVariable "MRTM_rwr1")], [1131, (profileNamespace getVariable "MRTM_rwr2")], [1132, (profileNamespace getVariable "MRTM_rwr3")], [1133, (profileNamespace getVariable "MRTM_rwr4")]];
 
 ctrlSetText[1101, (name player)];
+ctrlSetText[1134, format ["Total CP Earned: %1CP", (profileNamespace getVariable ["WL2_TotalEarnedCP", 0])]];
 
 if (profileNamespace getVariable "MRTM_syncObjects") then {
 	((findDisplay 8000) displayCtrl 2800) cbSetChecked true;
