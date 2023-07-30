@@ -298,11 +298,7 @@ if !(isNull _sender) then {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir _direction;
 							_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
-
-							if ((typeOf _asset) in dapsDazzler) then {
-								_asset spawn DAPS_fnc_RegisterVehicle;
-							};
-
+							
 							//Livery change
 							if (typeOf _asset == "I_Truck_02_MRL_F") then {
 								_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"];

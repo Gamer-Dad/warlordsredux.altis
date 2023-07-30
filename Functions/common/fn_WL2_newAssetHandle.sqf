@@ -11,9 +11,7 @@ if (isPlayer _owner) then {
 	WAS_store = true;
 	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), [2, clientOwner]];
 	_asset setVariable ["BIS_WL_iconText", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "displayName")];
-	if !((typeOf _asset) in dapsDazzler) then {
-		_asset spawn DAPS_fnc_RegisterVehicle;
-	};
+	_asset spawn DAPS_fnc_RegisterVehicle;
 
 	if (_asset isKindOf "Man") then {
 		_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;

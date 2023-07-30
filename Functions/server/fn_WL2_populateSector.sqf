@@ -127,6 +127,7 @@ while {_i < _garrisonSize} do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
 		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
+		_newUnit spawn DAPS_fnc_SetupProjectiles; 
 	};
 	
 	_newGrp setBehaviour "COMBAT";
