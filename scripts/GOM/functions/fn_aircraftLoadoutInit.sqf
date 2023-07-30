@@ -712,6 +712,14 @@ GOM_fnc_setPylonsRearm = {
 		if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
+
+		_rearmTime = switch true do {
+			case (_veh isKindOf "Helicopter"): {600};
+			case (_veh isKindOf "Plane"): {1200};
+			default {600};
+		};
+		_veh setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+		
 		true
 	};
 
@@ -758,9 +766,23 @@ GOM_fnc_setPylonsRearm = {
 	playSound "Click";
 	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
 
+	_rearmTime = switch true do {
+		case (_veh isKindOf "Helicopter"): {600};
+		case (_veh isKindOf "Plane"): {1200};
+		default {600};
+	};
+	_veh setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+
 	if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
+
+		_rearmTime = switch true do {
+			case (_veh isKindOf "Helicopter"): {600};
+			case (_veh isKindOf "Plane"): {1200};
+			default {600};
+		};
+		_veh setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
 	};
 	true
 };

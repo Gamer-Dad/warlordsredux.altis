@@ -1,9 +1,20 @@
-#include "..\warlords_constants.inc"
-
 params ["_asset"];
 
 createDialog ["rearmMenu", true];
 assetGlbl = _asset;
+
+_asset spawn {
+	params ["_asset"];
+	while {!isNull (findDisplay 1000)} do {
+		private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
+		private _nearbyVehicles = (_asset nearObjects ["All", 30]) select {alive _x};
+		private _rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
+		private _amount = (_nearbyVehicles # _rearmVehicleIndex) getvariable ["GOM_fnc_ammocargo", 0];
+		private _amountText = format ["(%1)", (_amount call GOM_fnc_kgToTon)];
+		ctrlSetText [1, (if (_cooldown == 0) then {(format ["%1 %2", localize "STR_rearm", _amountText])} else {[_cooldown, "MM:SS"] call BIS_fnc_secondsToString})];
+		sleep 1;
+	};
+};
 
 MRTM_fnc_getHulls = {
 	params ["_asset"];
@@ -21,11 +32,6 @@ MRTM_fnc_getCamos = {
 		lbSetData [1501, _lb, str ([_x, (_asset animationPhase _x)])];
 		lbSetCurSel [1501, _lb];
 	} forEach ((animationNames _asset) select {["showcamonet", _x, false] call BIS_fnc_inString});
-};
-
-MRTM_fnc_getLiverys = {
-	params ["_asset"];
-	//lbAdd [1502, _x];
 };
 
 MRTM_fnc_getExtras = {
@@ -47,6 +53,24 @@ MRTM_fnc_rearm = {
 			[_asset, 1] remoteExec ["setVehicleAmmoDef", 0];
 		} forEach _mags;
 	} forEach allTurrets _asset;
+
+	_rearmTime = switch true do {
+		case (_asset isKindOf "B_MBT_01_arty_F"): {1800};
+		case (_asset isKindOf "O_MBT_02_arty_F"): {1800};
+		case (_asset isKindOf "B_MBT_01_mlrs_F"): {1800};
+		case (_asset isKindOf "I_Truck_02_MRL_F"): {1800};
+		case (_asset isKindOf "B_Mortar_01_F"): {900};
+		case (_asset isKindOf "O_Mortar_01_F"): {900};
+		case (_asset isKindOf "B_AAA_System_01_F"): {300};
+		case (_asset isKindOf "B_SAM_System_01_F"): {600};
+		case (_asset isKindOf "B_SAM_System_03_F"): {750};
+		case (_asset isKindOf "O_SAM_System_04_F"): {900};
+		case (_asset isKindOf "B_Ship_MRLS_01_F"): {2700};
+		default {600};
+	};
+
+	_asset spawn DAPS_fnc_RearmAPS;
+	_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
 	playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
 	[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
 	((findDisplay 1000) displayCtrl 1500) ctrlRemoveAllEventHandlers "LBSelChanged";
@@ -112,5 +136,14 @@ _asset call MRTM_fnc_getExtras;
 ((findDisplay 1000) displayCtrl 1) ctrlAddEventHandler ["buttonClick", {
 	params ["_control"];
 	_asset = assetGlbl;
-	_asset spawn MRTM_fnc_rearm;
+	private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
+	private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
+	private _nearbyVehicles = (_asset nearObjects ["All", 30]) select {alive _x};
+	private _rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
+	private _amount = (_nearbyVehicles # _rearmVehicleIndex) getvariable ["GOM_fnc_ammocargo", 0];
+	if (_cooldown == 0 && {_amount > 0}) then {
+		_asset spawn MRTM_fnc_rearm;
+	} else {
+		_asset spawn BIS_fnc_WL2_vehicleRearm;	
+	};
 }];
