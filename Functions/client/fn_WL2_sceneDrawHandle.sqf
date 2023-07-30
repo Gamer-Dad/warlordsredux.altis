@@ -60,7 +60,7 @@ addMissionEventHandler ["Draw3D", {
 			1,
 			1,
 			0,
-			_x getVariable ["BIS_WL_iconText", ""],
+			getText (configFile >> "CfgVehicles" >> typeOf _x >> "displayName"),
 			2,
 			0.03,
 			"RobotoCondensedBold",
