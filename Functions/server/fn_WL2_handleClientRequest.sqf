@@ -6,6 +6,10 @@ _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(get
 
 if !(isNull _sender) then {
 	switch (_action) do {
+		case "10k": {
+			_uid = getPlayerUID _sender;
+			[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;	
+		};
 		case "kill" : {
 			if ((owner _sender) == _cost) then {
 				_sender setDamage 1;
