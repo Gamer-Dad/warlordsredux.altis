@@ -18,7 +18,7 @@ player addEventHandler ["Fired", {
 }];
 
 while {!BIS_WL_missionEnd} do {
-	sleep _sleepDuration;
+	sleep (if (player getVariable ["BIS_WL_incomeBlocked", false]) then {10} else {_sleepDuration});
 	private _inActScore = 0;
 
 	//Moved further than _minimumDistance in the last cycle
