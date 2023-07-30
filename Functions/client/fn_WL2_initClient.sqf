@@ -256,6 +256,8 @@ player addEventHandler ["HandleDamage", {
 	};
 }];
 
+player spawn DAPS_fnc_SetupProjectiles;
+
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	

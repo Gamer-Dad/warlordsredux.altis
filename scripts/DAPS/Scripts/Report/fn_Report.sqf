@@ -4,29 +4,27 @@ private _d=_this select 2;
 private _indicator=_this select 3;
 
 if!((vehicle player)==_v)exitWith{};
+if!((typeOf _v)in dapsAPSAll)exitWith{};
 
-if!((typeOf _v)in dapsAPStypes)exitWith{};
 private _type = switch (_v getVariable "dapsType") do {
 	case 2: { "Heavy APS" };
 	case 1: { "Medium APS" };
 	case 0: { "Light APS" };
-	default { "???" };
+	default { "Dazzler" };
 };
-if!(_indicator)then{
-	hintSilent (format["%1 is %2", _type, (if (_v call DAPS_fnc_active) then {"ON"} else {"OFF"})]);
+
+_text = "";
+if (!_indicator) then {
+	_text = format["%1 is now %2<br/>", _type, (if (_v call DAPS_fnc_active) then {"ON"} else {"OFF"})];
 };
-sleep .5;
-private _text="";
-if ((typeOf _v)in dapsDazzler) then {
-	_text="Dazzler active"
-} else {
-	_text = format["%1 charges:<br/><br/>%2/%3", _type, (_v getVariable"dapsAmmo"), (_v getVariable "dapsAmmoMax")];
+if !((typeOf _v) in dapsDazzler) then {
+	_text = _text + format["Charges: %1/%2", (_v getVariable"dapsAmmo"), (_v getVariable "dapsAmmoMax")];
 };
-if!(_indicator)exitWith{
+
+if (!_indicator) exitWith {
 	hintSilent(parseText format["%1",_text]);
-	sleep 3;
-	hintSilent "";
 };
+
 if(_d<1)then{_d=1};
 _d=ceil(_d/22.5);
 _colour="#999999";
