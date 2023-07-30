@@ -21,14 +21,14 @@ _varData = switch(_mode) do {
 };
 
 profileNamespace setVariable [(_varData # 0), _value];
-ctrlSetText [(_varData # 1), str (profileNamespace getVariable (_varData # 0))];
+ctrlSetText [(_varData # 1), str (profileNamespace getVariable [(_varData # 0), 0])];
 [] call MRTM_fnc_updateViewDistance;
 
 if(_mode isEqualTo 3) then {
-	setObjectViewDistance [(profileNamespace getVariable "MRTM_objects"), 100];
+	setObjectViewDistance [(profileNamespace getVariable ["MRTM_objects", 2000]), 50];
 };
 
-if (profileNamespace getVariable "MRTM_syncObjects") then {
-	sliderSetPosition[1129, (profileNamespace getVariable "MRTM_objects")];
-	ctrlSetText[1404, str (profileNamespace getVariable "MRTM_objects")];
+if (profileNamespace getVariable ["MRTM_syncObjects", true]) then {
+	sliderSetPosition[1129, (profileNamespace getVariable ["MRTM_objects", 2000])];
+	ctrlSetText[1404, str (profileNamespace getVariable ["MRTM_objects", 2000])];
 };

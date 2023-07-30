@@ -779,7 +779,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton1: RscCheckboxMRTM
 		{
 			idc = 2801;
-			action = "if (profileNamespace getVariable 'MRTM_3rdPersonDisabled') then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', false];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', true];}";
+			action = "if (profileNamespace getVariable ['MRTM_3rdPersonDisabled', false]) then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', false];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', true];}";
 			toolTip = "Recieve a 100% CP bonus.";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
@@ -799,7 +799,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton2: RscCheckboxMRTM
 		{
 			idc = 2802;
-			action = "if (profileNamespace getVariable 'MRTM_muteVoiceInformer') then {(profileNamespace setVariable ['MRTM_muteVoiceInformer', false])} else {(profileNamespace setVariable ['MRTM_muteVoiceInformer', true])}";
+			action = "if (profileNamespace getVariable ['MRTM_muteVoiceInformer', false]) then {(profileNamespace setVariable ['MRTM_muteVoiceInformer', false])} else {(profileNamespace setVariable ['MRTM_muteVoiceInformer', true])}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -818,7 +818,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton3: RscCheckboxMRTM
 		{
 			idc = 2803;
-			action = "if (profileNamespace getVariable 'MRTM_playKillSound') then {(profileNamespace setVariable ['MRTM_playKillSound', false])} else {(profileNamespace setVariable ['MRTM_playKillSound', true])}";
+			action = "if (profileNamespace getVariable ['MRTM_playKillSound', true]) then {(profileNamespace setVariable ['MRTM_playKillSound', false])} else {(profileNamespace setVariable ['MRTM_playKillSound', true])}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.566 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -837,7 +837,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton4: RscCheckboxMRTM
 		{
 			idc = 2804;
-			action = "if (profileNamespace getVariable 'MRTM_EnableRWR') then {(profileNamespace setVariable ['MRTM_EnableRWR', false])} else {(profileNamespace setVariable ['MRTM_EnableRWR', true])}";
+			action = "if (profileNamespace getVariable ['MRTM_EnableRWR', true]) then {(profileNamespace setVariable ['MRTM_EnableRWR', false])} else {(profileNamespace setVariable ['MRTM_EnableRWR', true])}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -856,7 +856,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton5: RscCheckboxMRTM
 		{
 			idc = 2805;
-			action = "if (profileNamespace getVariable 'MRTM_disableHint') then {(profileNamespace setVariable ['MRTM_disableHint', false])} else {(profileNamespace setVariable ['MRTM_disableHint', true])}";
+			action = "if (profileNamespace getVariable ['MRTM_disableHint', true]) then {(profileNamespace setVariable ['MRTM_disableHint', false])} else {(profileNamespace setVariable ['MRTM_disableHint', true])}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -875,7 +875,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton6: RscCheckboxMRTM
 		{
 			idc = 2806;
-			action = "if (profileNamespace getVariable 'MRTM_smallAnnouncerText') then {(profileNamespace setVariable ['MRTM_smallAnnouncerText', false])} else {(profileNamespace setVariable ['MRTM_smallAnnouncerText', true])}";
+			action = "if (profileNamespace getVariable ['MRTM_smallAnnouncerText', false]) then {(profileNamespace setVariable ['MRTM_smallAnnouncerText', false])} else {(profileNamespace setVariable ['MRTM_smallAnnouncerText', true])}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.665 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;

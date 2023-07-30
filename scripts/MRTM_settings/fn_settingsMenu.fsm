@@ -115,7 +115,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Update_1";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && {(profileNamespace getVariable ""MRTM_3rdPersonDisabled"")});"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((cameraView == ""EXTERNAL"") && {(profileNamespace getVariable  [""MRTM_3rdPersonDisabled"", false])});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
