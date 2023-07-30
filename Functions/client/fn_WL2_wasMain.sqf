@@ -63,7 +63,7 @@ while {!BIS_WL_missionEnd} do {
 	};
 
 	if (_inActScore > _maxInActScore) then {
-		hint "You are too inactive to earn passive income";
+		hintSilent "You are too inactive to earn passive income";
 		player setVariable ["BIS_WL_incomeBlocked", true, true];
 	} else {
 		player setVariable ["BIS_WL_incomeBlocked", false, true];

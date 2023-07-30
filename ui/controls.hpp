@@ -31,7 +31,7 @@ class welcomeScreen
 		{
 			idc = 69691;
 			deletable = 0;
-			text = "img\altis.paa";
+			text = "img\altis_ca.paa";
 			style = ST_MULTI + ST_TITLE_BAR;
 			x = 0.257656 * safezoneW + safezoneX;
 			y = 0.181 * safezoneH + safezoneY;
@@ -324,7 +324,7 @@ class rearmMenu
 		{
 			idc = 69691;
 			deletable = 0;
-			text = "img\classified.paa";
+			text = "img\classified_ca.paa";
 			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.530 * safezoneH + safezoneY;
@@ -335,7 +335,7 @@ class rearmMenu
 		{
 			idc = 69691;
 			deletable = 0;
-			text = "img\classified.paa";
+			text = "img\classified_ca.paa";
 			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
 			x = 0.577344 * safezoneW + safezoneX;
 			y = 0.302 * safezoneH + safezoneY;
@@ -549,6 +549,16 @@ class MRTM_settingsMenu
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
 			tooltip = "Sync object rendering";
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMObjectsButtonText: RscStructuredTextMRTM
 		{
@@ -745,6 +755,16 @@ class MRTM_settingsMenu
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton2: RscCheckboxMRTM
 		{
@@ -754,6 +774,16 @@ class MRTM_settingsMenu
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton3: RscCheckboxMRTM
 		{
@@ -763,6 +793,16 @@ class MRTM_settingsMenu
 			y = 0.566 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton4: RscCheckboxMRTM
 		{
@@ -772,6 +812,16 @@ class MRTM_settingsMenu
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton5: RscCheckboxMRTM
 		{
@@ -781,6 +831,16 @@ class MRTM_settingsMenu
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton6: RscCheckboxMRTM
 		{
@@ -790,6 +850,16 @@ class MRTM_settingsMenu
 			y = 0.665 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton7: RscCheckboxMRTM
 		{
@@ -800,6 +870,16 @@ class MRTM_settingsMenu
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherButton8: RscCheckboxMRTM
 		{
@@ -810,6 +890,16 @@ class MRTM_settingsMenu
 			y = 0.731 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
 			h = 0.022 * safezoneH;
+			textureUnChecked = "Img\toggle-left_ca.paa";
+			textureChecked = "Img\toggle-right_ca.paa";
+			textureFocusedChecked = "Img\toggle-right_ca.paa";
+			textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+			textureHoverChecked = "Img\toggle-right_ca.paa";
+			textureHoverUnchecked = "Img\toggle-left_ca.paa";
+			texturePressedChecked = "Img\toggle-right_ca.paa";
+			texturePressedUnchecked = "Img\toggle-left_ca.paa";
+			textureDisabledChecked = "Img\toggle-right_ca.paa";
+			textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 		};
 		class MRTMOtherText1: RscStructuredTextMRTM
 		{
