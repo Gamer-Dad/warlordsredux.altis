@@ -29,11 +29,12 @@ dapsAPSAll = dapsAPStypes + dapsDazzler;
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 sleep 1;
 
-
+APS_toggle = serverTime;
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
-	if ((inputaction "cycleThrownItems") > 0.01) then {
-        0 spawn DAPS_fnc_KeyPressed;
+    params ["_display", "_key"];
+    if (APS_toggle < serverTime) then {
+        if (_key == 34) then {0 spawn DAPS_fnc_KeyPressed; APS_toggle = (serverTime + 2);};
     };
 }];
 
