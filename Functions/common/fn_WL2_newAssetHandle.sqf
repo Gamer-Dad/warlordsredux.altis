@@ -91,6 +91,12 @@ if (isPlayer _owner) then {
 				default {};
 			};
 		};
+
+		if (profileNamespace getVariable ["MRTM_spawnEmpty", false]) then {
+			clearMagazineCargoGlobal _asset; 
+			clearItemCargoGlobal _asset;
+			clearWeaponCargoGlobal _asset;
+		};
 		
 		_asset spawn {
 			params ["_asset"];

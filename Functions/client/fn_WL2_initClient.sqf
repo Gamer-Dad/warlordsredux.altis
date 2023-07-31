@@ -69,7 +69,6 @@ if !(profileNamespace getVariable ["viewSettingsInitialzed", false]) then {
 	profileNamespace setVariable ["viewSettingsInitialzed", true];
 	saveProfileNamespace;
 };
-setViewDistance (profileNamespace getVariable ["MRTM_inf", 2000]);
 setTerrainGrid 3.125;
 
 //Radar warning system
@@ -90,6 +89,7 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_EnableRWR", true];
 	profileNamespace setVariable ["MRTM_disableHint", true];
 	profileNamespace setVariable ["MRTM_smallAnnouncerText", false];
+	profileNamespace setVariable ["MRTM_spawnEmpty", false];
 	profileNamespace setVariable ["preferencesInitialzed", true];
 	saveProfileNamespace;
 };
@@ -366,7 +366,6 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 };
 
 ["client_init"] call BIS_fnc_endLoadingScreen;
-
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;

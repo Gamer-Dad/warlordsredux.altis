@@ -182,6 +182,7 @@ class welcomeScreen
 			offsetPressedY = 0.002;
 			borderSize = 0;
 			onLoad =  "(_this # 0) ctrlEnable false;";
+			action = "[] call MRTM_fnc_updateViewDistance;";
 		};
 	};
 };
@@ -1002,8 +1003,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton7: RscCheckboxMRTM
 		{
 			idc = 2807;
-			action = "";
-			onLoad =  "(_this # 0) ctrlEnable false;";
+			action = "if (profileNamespace getVariable ['MRTM_spawnEmpty', false]) then {(profileNamespace setVariable ['MRTM_spawnEmpty', false])} else {(profileNamespace setVariable ['MRTM_spawnEmpty', true])}";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -1144,7 +1144,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText7: RscStructuredTextMRTM
 		{
 			idc = 1123;
-			text = "";
+			text = "Spawn vehicles with empty inventory";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;

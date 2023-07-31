@@ -76,3 +76,9 @@ if (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]) then {
 } else {
 	((findDisplay 8000) displayCtrl 2806) cbSetChecked false;
 };
+
+if (profileNamespace getVariable ["MRTM_spawnEmpty", false]) then {
+	((findDisplay 8000) displayCtrl 2807) cbSetChecked true;
+} else {
+	((findDisplay 8000) displayCtrl 2807) cbSetChecked false;
+};
