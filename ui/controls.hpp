@@ -31,7 +31,7 @@ class welcomeScreen
 		{
 			idc = 69691;
 			deletable = 0;
-			text = "img\altis_ca.paa";
+			text = "a3\map_altis\data\picturemap_ca.paa";
 			style = ST_MULTI + ST_TITLE_BAR;
 			x = 0.257656 * safezoneW + safezoneX;
 			y = 0.181 * safezoneH + safezoneY;

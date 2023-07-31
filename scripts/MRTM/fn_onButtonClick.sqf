@@ -27,10 +27,8 @@ if (_action == "Accept") exitWith {
 		_unit = _data call BIS_fnc_getUnitByUID;
 		_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
 		_group = (group _unit);
-		player joinSilent _group;
-		{
-			_x joinSilent _group;
-		} forEach _units;	
+		[player] joinSilent _group;
+		_units joinSilent _group;
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 
 	};
@@ -50,9 +48,7 @@ if (_action == "Promote") exitWith {
 if (_action == "Leave") exitWith {
 	_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
 	_group = createGroup (side group player);
-	player joinSilent _group;
-	{
-		_x joinSilent _group;
-	} forEach _units;
+	[player] joinSilent _group;
+	_units joinSilent _group;
 	[] call MRTM_fnc_openGroupMenu;
 };

@@ -73,7 +73,7 @@ lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
 lbSetPicture [69695, _changelog, 'img\icon_update_ca.paa'];
 lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
 lbSetPicture [69695, _scripts, 'img\icon-file_ca.paa'];
-
+ctrlSetText [69694, "img\wl_logo_ca.paa"];
 
 while {dialog} do {
 	_index = lbCurSel 69695;
@@ -91,8 +91,6 @@ while {dialog} do {
 
 	switch (_curSel) do {
 		case "pageAbt": {
-			ctrlSetText [69694, "img\wl_logo_ca.paa"];
-
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_07", lineBreak,
@@ -106,7 +104,6 @@ while {dialog} do {
 		};
 
 		case "pageHow": {
-			ctrlSetText [69694, "img\wl_ca.paa"];
 			hRead = true;
 
 			private _control = findDisplay 6969 displayCtrl 69696;
@@ -128,8 +125,6 @@ while {dialog} do {
 		};
 
 		case "theCom": { 
-			ctrlSetText [69694, "img\sniper_ca.paa"];
-
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_03", lineBreak, 
@@ -158,8 +153,6 @@ while {dialog} do {
 		};
 
 		case "discord": { 
-			ctrlSetText [69694, "img\wasp_ca.paa"];
-
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_04", lineBreak,
@@ -172,8 +165,6 @@ while {dialog} do {
 		};
 
 		case "changelog": {
-			ctrlSetText [69694, "img\arma_ca.paa"]; 
-
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
 			"2.5.7.1", lineBreak,
@@ -237,8 +228,6 @@ while {dialog} do {
 
 		//Scripts
 		case "scripts": { 
-			ctrlSetText [69694, "img\wl_logo_ca.paa"];
-			
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
 			"Aircraft Loadout", lineBreak,
@@ -246,7 +235,7 @@ while {dialog} do {
 			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
 			"You can order vehicle ammo box close to your aircraft and then look at the aircraft and press 'Rearm' to change you  loadout.", lineBreak,
 			"", lineBreak,
-			parseText "<img  size='5' image='img\wasp_ca.paa'/>", lineBreak,
+			parseText "<img  size='5' image='a3\data_f_jets\images\dlcbrowser_jets_loadouts_ca.paa'/>", lineBreak,
 			"", lineBreak,
 			"GF Earplugs", lineBreak,
 			"", lineBreak,
@@ -260,12 +249,10 @@ while {dialog} do {
 			"Oh no did your vehicle flip over? Simply walk up to it and use your scroll wheel to unflip the vehicle.", lineBreak,
 			"Note: Static defenses may experience difficulty flipping over.", lineBreak,
 			"", lineBreak,
-			parseText "<img  size='5' image='img\unflip_ca.paa'/>", lineBreak,
+			parseText "<img  size='5' image='a3\missions_f\data\img\showcase_vehicles_overview_ca.paa'/>", lineBreak,
 			""
 			];
 		};
 	};
 	sleep 0.1;
 };
-
-

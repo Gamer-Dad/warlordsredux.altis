@@ -1,7 +1,5 @@
 params ["_lb", "_info"];
 
-hint format ["%1, %2", _lb, _info];
-
 {
 	ctrlEnable [_x, false];
 } forEach [4101, 4102, 4103, 4104, 4105];
@@ -23,7 +21,7 @@ if (_lb == "Players") then {
 	//if (leader (group _unit) == player && {_unit != player && {isPlayer _unit}}) then {
 	//	ctrlEnable [4104, true];
 	//};
-	if (_unit == player) then {
+	if (_unit == player && {count ((units _unit) select {isPlayer _x}) > 1}) then {
 		ctrlEnable [4103, true];
 	};
 };
