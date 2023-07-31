@@ -32,4 +32,4 @@ lbClear 4006;
 	private _index = lbAdd [4006, ([_x] call MRTM_fnc_getLBText)];
 	lbSetData [4006, _index, (getPlayerUID _x)];
 	lbSetPicture [4006, _index, ([_x] call MRTM_fnc_getLBPicture)];
-} forEach (allPlayers select {_x != player && {!(_x in (units player))}});
+} forEach (allPlayers select {_x != player && {!(_x in (units player)) && {(side (group _x)) == (side (group player))}}});
