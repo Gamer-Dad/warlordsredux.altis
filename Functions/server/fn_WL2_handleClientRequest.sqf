@@ -147,7 +147,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;	
 
-				0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
+				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
 
 				[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 			};
