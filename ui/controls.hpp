@@ -735,6 +735,18 @@ class MRTM_settingsMenu
 				size = 0.9;
 			};
 		};
+		class MRTMkdRatioImg: RscPictureMRTM
+		{
+			idc = 1144;
+			deletable = 0;
+			text = "a3\ui_f_curator\data\cfgmarkers\kia_ca.paa";
+			style = ST_MULTI + ST_TITLE_BAR;
+			colorText[] = {1,1,1,1};
+			x = 0.270987 * safezoneW + safezoneX;
+			y = 0.6784 * safezoneH + safezoneY;
+			w = 0.015244 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
 		class MRTMObjectsText: RscStructuredTextMRTM
 		{
 			idc = 1110;
