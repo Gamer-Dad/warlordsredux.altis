@@ -10,6 +10,9 @@ if !(isNull _sender) then {
 			_uid = getPlayerUID _sender;
 			[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;	
 		};
+		case "10kSP": {
+			[_sender, -10000] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;	
+		};
 		case "kill" : {
 			if ((owner _sender) == _cost) then {
 				_sender setDamage 1;

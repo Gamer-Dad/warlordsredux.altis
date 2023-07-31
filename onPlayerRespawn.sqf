@@ -16,5 +16,5 @@ player addAction [
 
 player addAction [ 
 	"10K SP", 
-	{[player, -10000] remoteExec ["BIS_fnc_WL2_deductSuppliesFromCurrentSector", 2]} 
+	{[player, "10kSP"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} 
 ];
