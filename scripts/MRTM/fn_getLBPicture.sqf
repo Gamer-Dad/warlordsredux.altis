@@ -9,10 +9,14 @@ if (_unit in (units player)) then {
 	};
 } else {
 	if ((_unit getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID player)]), false]) || {player getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID _unit)]), false]}) then {
-		_pic = "Img\invite_ca.paa";
+		_pic = "Img\green_arrow_ca.paa";
 	} else {
-		if (!(_unit in (units player)) && {count ((units _unit) select {isPlayer _x}) > 1}) then {
-			_pic = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa";	
+		if (player getVariable [(format ["MRTM_InvitedNy_%1", (getPlayerUID _unit)]), false]) then {
+			_pic = "Img\red_arrow_ca.paa";
+		} else {
+			if (!(_unit in (units player)) && {count ((units _unit) select {isPlayer _x}) > 1}) then {
+				_pic = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa";	
+			};
 		};
 	};
 };
