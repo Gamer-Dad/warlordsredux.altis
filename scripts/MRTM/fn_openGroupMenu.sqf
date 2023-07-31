@@ -6,17 +6,6 @@
 
 if (isNull (findDisplay 4000)) then {
     createDialog "MRTM_groupsMenu";
-
-    // ((findDisplay 4000) displayCtrl 4005) ctrlAddEventHandler ["LBSelChanged", {
-    //     params ["_control", "_lbCurSel", "_lbSelection"];
-    //     ["Group"] spawn MRTM_fnc_onLBSelChanged;
-    // }];
-
-    // ((findDisplay 4000) displayCtrl 4006) ctrlAddEventHandler ["LBSelChanged", {
-    //     params ["_control", "_lbCurSel", "_lbSelection"];
-    //     ["Players"] spawn MRTM_fnc_onLBSelChanged;
-    // }];
-
     0 spawn {
         while {GROUP_ACTIVE} do {
             ["Group"] spawn MRTM_fnc_onLBSelChanged;
