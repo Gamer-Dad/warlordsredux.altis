@@ -5,7 +5,7 @@ if (_action == "Invite") exitWith {
 	_curSel = (lbCurSel 4006);
 	systemChat (format ["%1", _curSel]);
 	if (_curSel > -1) then {
-		_data = lbData [4007, _curSel];
+		_data = lbData [4006, _curSel];
 		_unit = _data call BIS_fnc_getUnitByUID;
 		systemChat (format ["%1, %2", _data, (name _unit)]);
 		[_unit, player] remoteExec ["MRTM_fnc_invite", 2];
@@ -16,7 +16,7 @@ if (_action == "Invite") exitWith {
 if (_action == "Decline") exitWith {
 	_curSel = lbCurSel 4006;
 	if (_curSel > -1) then {
-		_data = lbData [4007, _curSel];
+		_data = lbData [4006, _curSel];
 		_unit = _data call BIS_fnc_getUnitByUID;
 		systemChat (format ["%1, %2", _data, (name _unit)]);
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
