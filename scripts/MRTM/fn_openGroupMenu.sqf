@@ -16,6 +16,13 @@ if (isNull (findDisplay 4000)) then {
 		params ["_control", "_lbCurSel", "_lbSelection"];
 		["Players", _this] spawn MRTM_fnc_onLBSelChanged;
 	}];
+
+	0 spawn {
+		while {dialog} do {
+			0 spawn MRTM_fnc_onLBSelChanged;
+			sleep 0.1;
+		};
+	};
 };
 disableSerialization;
 
