@@ -1325,7 +1325,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1; 0 spawn MRTM_fnc_openGroupMenu;";
+			action =  "closeDialog 1; GROUP_ACTIVE = true; 0 spawn MRTM_fnc_openGroupMenu;";
 		};
 	};
 };
@@ -1465,7 +1465,7 @@ class MRTM_groupsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+			action = "closeDialog 1; GROUP_ACTIVE = false; 0 spawn MRTM_fnc_openMenu;";
 		};
 		class MRTMGroupsInviteButton: RscButtonMRTM
 		{
