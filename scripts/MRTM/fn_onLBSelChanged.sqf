@@ -9,11 +9,10 @@ if (_lb == "Players") then {
 	_unit = _data call BIS_fnc_getUnitByUID;
 	if (!(_unit getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID player)]), false]) && {count ((units _unit) select {isPlayer _x}) == 1}) then {
 		ctrlEnable [4101, true];
-	} else {
-		if (player getVariable [(format ["MRTM_InvitedBy_%1", _data]), false]) then {
-			ctrlEnable [4105, true];
-			ctrlEnable [4102, true];
-		};
+	};
+	if (player getVariable [(format ["MRTM_InvitedBy_%1", _data]), false]) then {
+		ctrlEnable [4105, true];
+		ctrlEnable [4102, true];
 	};
 } else {
 	_data = lbData [4005, (_info # 1)];
