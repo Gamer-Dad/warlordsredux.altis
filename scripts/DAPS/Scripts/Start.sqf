@@ -39,7 +39,7 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
         [vehicle player, 0, false] spawn DAPS_fnc_Report;
         APS_toggle = (serverTime + 2);
     };
-    if (inputAction "throw" > 0.01) then {
+    if (inputAction "user1" > 0.01) then {
         [vehicle player, 0, false] spawn DAPS_fnc_Report;
     };
 }];
