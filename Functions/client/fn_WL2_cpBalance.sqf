@@ -18,13 +18,13 @@ while {!BIS_WL_missionEnd} do {
 	if (side group player == west) then {
 		private _balanceMultiplier = (missionNamespace getVariable "blanceMultilplierBlu") - 1;
 		private _sidePercentage = if(isNil "_balanceMultiplier") then [{0}, {_balanceMultiplier * 100}];
-		private _sidePercentageFinal = round _sidePercentage;
+		private _sidePercentageFinal = (round _sidePercentage) min 100;
 		_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentageFinal >0) then [{"+"},{""}]), _sidePercentageFinal, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentageFinal > 0) then {[0,1,0,1]} else {if (_sidePercentageFinal < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
 	} else {
 		private _balanceMultiplier = (missionNamespace getVariable "blanceMultilplierOpf") - 1;
 		private _sidePercentage = if(isNil "_balanceMultiplier") then [{0}, {_balanceMultiplier * 100}];
-		private _sidePercentageFinal = round _sidePercentage;
+		private _sidePercentageFinal = (round _sidePercentage) min 100;
 		_cpBalanceCtrl ctrlSetStructuredText parseText format ["<t size = '%4' >%1%2%3</t>", (if(_sidePercentageFinal >0) then [{"+"},{""}]), _sidePercentageFinal, "%", (0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentageFinal > 0) then {[0,1,0,1]} else {if (_sidePercentageFinal < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
 	};
