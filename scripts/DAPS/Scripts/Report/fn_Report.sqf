@@ -1,7 +1,6 @@
 private _v=_this select 0;
-private _s=_this select 1; // Obsolete
-private _d=_this select 2;
-private _indicator=_this select 3;
+private _d=_this select 1;
+private _indicator=_this select 2;
 
 if!((vehicle player)==_v)exitWith{};
 if!((typeOf _v)in dapsAPSAll)exitWith{};

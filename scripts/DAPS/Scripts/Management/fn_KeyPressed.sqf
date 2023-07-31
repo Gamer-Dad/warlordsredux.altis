@@ -1,7 +1,6 @@
 private["_v"];
 _v = vehicle player;
 if ( _v == player) exitWith{};
-if (isNil { _v getVariable"dapsType"}) exitWith { systemChat "No APS"};
 
 _disabled = _v getVariable ["apsDisabled", false] || (typeOf _v in dapsDazzler && !isEngineOn _v);
 
@@ -13,5 +12,3 @@ if (_disabled) then {
 };
 
 _v setVariable ["apsDisabled", !_disabled, true];
-
-[ _v, "", 0, false] spawn DAPS_fnc_Report;
