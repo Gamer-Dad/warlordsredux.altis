@@ -48,6 +48,18 @@
 #define WL_MAINTENANCE_COOLDOWN_REARM_Centurion 900
 #define WL_MAINTENANCE_COOLDOWN_REARM_Artillery 1800 
 #define WL_MAINTENANCE_COOLDOWN_REARM_VLS 2700
+#define WL_LOGISTICS_ENABLED true                   // set to false to disable logistics system
+#define WL_LOGISTICS_FAST_TRAVEL_COST 200           // supply cost of fast traveling to friendly sectors
+#define WL_LOGISTICS_MAX_CARGO 20000                // maximum supply carried by ammo truck / pod, must be integer multiple of cargo_unit
+#define WL_LOGISTICS_CARGO_UNIT 2000                // how much to load/unload each time
+#define WL_LOGISTICS_MIN_SECTOR_CAPACITY 42000      // the minimum storage capacity of a sector
+#define WL_LOGISTICS_LOADING_TIME 0.5               // duration of button holding per 1K supplies, does not apply to AI action
+#define WL_LOGISTICS_SMALL_AMMO_COST 2000           // vehicle ammo crate supply cost
+#define WL_LOGISTICS_LARGE_AMMO_COST 6000           // ammo truck / pod supply cost
+#define WL_LOGISTICS_COST_RATIO 1.0                 // CP to SP conversion ratio
+#define WL_LOGISTICS_MIN_REWARD 1                   // minimum CP reward for logistics, if supplies were moved away from home base
+#define WL_LOGISTICS_MAX_REWARD 10                  // max CP reward for logistics
+#define WL_LOGISTICS_MIN_DISTANCE_FOR_SCORE 2500    // minimum logistics travel before +1 player score
 #define WL_LOSING_SECTOR_WARN_FREQ 30
 #define WL_TARGET_RESET_VOTING_TIME 60
 #define WL_TARGET_FRIENDLY (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])

@@ -9,9 +9,9 @@ if (isNull _sector) exitWith {};
 private _availableSectors = (switch (BIS_WL_currentSelection) do {
 	case WL_ID_SELECTION_VOTING;
 	case WL_ID_SELECTION_VOTED: {BIS_WL_sectorsArray # 1};
-	case WL_ID_SELECTION_ORDERING_AIRCRAFT: {(BIS_WL_sectorsArray # 0) select {BIS_WL_orderedAssetRequirements isEqualTo (BIS_WL_orderedAssetRequirements arrayIntersect (_x getVariable "BIS_WL_services"))}};
+	case WL_ID_SELECTION_ORDERING_AIRCRAFT: {(BIS_WL_sectorsArray # 0) select { _x call BIS_fnc_WL2_canOrderAircraftToSector }};
 	case WL_ID_SELECTION_ORDERING_AIRDROP: {BIS_WL_sectorsArray # 0};
-	case WL_ID_SELECTION_FAST_TRAVEL: {(BIS_WL_sectorsArray # 2) select {_x getVariable "BIS_WL_fastTravelEnabled"}};
+	case WL_ID_SELECTION_FAST_TRAVEL: {(BIS_WL_sectorsArray # 2) select { _x call BIS_fnc_WL2_canFastTravelToSector }};
 	case WL_ID_SELECTION_FAST_TRAVEL_CONTESTED: {[WL_TARGET_FRIENDLY]};
 	case WL_ID_SELECTION_SCAN: {BIS_WL_sectorsArray # 3};
 });

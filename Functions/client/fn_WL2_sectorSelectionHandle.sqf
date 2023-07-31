@@ -9,11 +9,11 @@ if (_state == "start") then {
 			BIS_WL_selection_showLinks = TRUE;
 		};
 		case "dropping": {
-			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 0) select {BIS_WL_orderedAssetRequirements isEqualTo (BIS_WL_orderedAssetRequirements arrayIntersect (_x getVariable "BIS_WL_services"))};
+			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 0) select { _x call BIS_fnc_WL2_canOrderAircraftToSector };
 			BIS_WL_selection_showLinks = FALSE;
 		};
 		case "travelling": {
-			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {_x getVariable "BIS_WL_fastTravelEnabled"};
+			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select { _x call BIS_fnc_WL2_canFastTravelToSector };
 			BIS_WL_selection_showLinks = FALSE;
 		};
 		case "travelling_contested": {
