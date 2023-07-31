@@ -578,12 +578,30 @@ class MRTM_settingsMenu
 				size = 0.9;
 			};
 		};
+		class MRTMStatsText: RscStructuredTextMRTM
+		{
+			idc = 1140;
+			text = "Player Stats:";
+			x = 0.270987 * safezoneW + safezoneX;
+			y = 0.5744 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
 		class MRTMTotalCPText: RscStructuredTextMRTM
 		{
 			idc = 1134;
 			text = "";
 			x = 0.285687 * safezoneW + safezoneX;
-			y = 0.5744 * safezoneH + safezoneY;
+			y = 0.5944 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
 			h = 0.022 * safezoneH;
 			class Attributes
@@ -604,7 +622,97 @@ class MRTM_settingsMenu
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
-			y = 0.5744 * safezoneH + safezoneY;
+			y = 0.5944 * safezoneH + safezoneY;
+			w = 0.015244 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMWinRatio: RscStructuredTextMRTM
+		{
+			idc = 1136;
+			text = "";
+			x = 0.285687 * safezoneW + safezoneX;
+			y = 0.6164 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMWinRatioImg: RscPictureMRTM
+		{
+			idc = 1137;
+			deletable = 0;
+			text = "a3\ui_f\data\gui\cfg\gametypes\seize_ca.paa";
+			style = ST_MULTI + ST_TITLE_BAR;
+			colorText[] = {1,1,1,1};
+			x = 0.270987 * safezoneW + safezoneX;
+			y = 0.6164 * safezoneH + safezoneY;
+			w = 0.015244 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMsectorsSeized: RscStructuredTextMRTM
+		{
+			idc = 1138;
+			text = "";
+			x = 0.285687 * safezoneW + safezoneX;
+			y = 0.6384 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMsectorsSeizedImg: RscPictureMRTM
+		{
+			idc = 1139;
+			deletable = 0;
+			text = "a3\ui_f_curator\data\cfgmpgametypes\zsc_ca.paa";
+			style = ST_MULTI + ST_TITLE_BAR;
+			colorText[] = {1,1,1,1};
+			x = 0.270987 * safezoneW + safezoneX;
+			y = 0.6384 * safezoneH + safezoneY;
+			w = 0.015244 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class MRTMdistanceKill: RscStructuredTextMRTM
+		{
+			idc = 1141;
+			text = "";
+			x = 0.285687 * safezoneW + safezoneX;
+			y = 0.6584 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMdistanceKillImg: RscPictureMRTM
+		{
+			idc = 1142;
+			deletable = 0;
+			text = "a3\ui_f\data\igui\rscingameui\rscunitinfo\role_gunner_ca.paa";
+			style = ST_MULTI + ST_TITLE_BAR;
+			colorText[] = {1,1,1,1};
+			x = 0.270987 * safezoneW + safezoneX;
+			y = 0.6584 * safezoneH + safezoneY;
 			w = 0.015244 * safezoneW;
 			h = 0.022 * safezoneH;
 		};

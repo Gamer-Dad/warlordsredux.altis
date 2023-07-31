@@ -17,6 +17,9 @@ if (_owner == BIS_WL_playerSide) then {
 		"Victory" call BIS_fnc_WL2_announcer;
 	} else {
 		"Seized" call BIS_fnc_WL2_announcer;
+		if (count ([player] inAreaArray (_sector getVariable "objectAreaComplete")) > 0) then {
+			["Seized"] call BIS_fnc_WL2_statTracker;
+		};
 	};
 };
 

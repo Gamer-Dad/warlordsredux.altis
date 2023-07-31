@@ -16,6 +16,8 @@ if !(isDedicated) then {
 	
 	if (!isNil {(missionNamespace getVariable "BIS_WL_ffTeam")}) exitWith {
 		_victory = ((missionNamespace getVariable ["BIS_WL_ffTeam", Independent]) == side group player);
+		if !(_victory) then {["Won"] call BIS_fnc_WL2_statTracker;} else {["Lost"] call BIS_fnc_WL2_statTracker;};
+		saveProfileNamespace;
 		_audio = if (_victory) then {"Defeat"} else {"Victory"};
 		_audio call BIS_fnc_WL2_announcer;
 		_debriefing = format ["BIS_WL%1%2", if (_victory) then {"Defeat"} else {"Victory"}, BIS_WL_playerSide];
