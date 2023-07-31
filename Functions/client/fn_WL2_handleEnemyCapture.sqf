@@ -2,6 +2,9 @@
 
 params ["_sector"];
 
+if (_sector getVariable ["handledEnemyCaptured", false]) exitWith {};
+_sector setVariable ["handledEnemyCaptured", true];
+
 _marker = (_sector getVariable "BIS_WL_markers") # 1;
 _nextPossibleWarn = 0;
 
