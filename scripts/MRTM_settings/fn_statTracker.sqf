@@ -15,9 +15,10 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 	};
 
 	if (_event == "Kill") exitWith {
-		if (_info isKindOf "Man") then {
+		if ((isPlayer _info) && {_info isKindOf "Man"}) then {
 			_kills = profileNamespace getVariable ["WL2_totalKills", 0];
 			profileNamespace setVariable ["WL2_totalKills", (_kills + 1)];
+
 			_dist = player distance _info;
 			_distanceKill = profileNamespace getVariable ["WL2_longestDistanceKill", 0];
 			if (_dist > _distanceKill) then {
