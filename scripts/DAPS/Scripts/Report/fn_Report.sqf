@@ -23,6 +23,8 @@ if !((typeOf _v) in dapsDazzler) then {
 
 if (!_indicator) exitWith {
 	hintSilent(parseText format["%1",_text]);
+	sleep 5;
+	hintSilent "";
 };
 
 if(_d<1)then{_d=1};
