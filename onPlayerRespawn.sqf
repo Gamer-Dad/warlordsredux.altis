@@ -7,7 +7,9 @@ params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 	};
 } forEach (missionNamespace getVariable (format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]));
 
-player addAction [ 
+["Died"] call MRTM_fnc_statTracker;
+
+player addAction [
 	"10K CP", 
 	{[player, "10k"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} 
 ];

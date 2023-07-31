@@ -101,6 +101,8 @@ if !(profileNamespace getVariable ["statsInitialized", false]) then {
 	profileNamespace setVariable ["WL2_gamesLost", 0];
 	profileNamespace setVariable ["WL2_sectorsSeized", 0];
 	profileNamespace setVariable ["WL2_longestDistanceKill", 0];
+	profileNamespace setVariable ["WL2_totalKills", 0];
+	profileNamespace setVariable ["WL2_totalDeaths", 0];
 	profileNamespace setVariable ["statsInitialized", true];
 	saveProfileNamespace;
 };

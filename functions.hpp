@@ -133,7 +133,6 @@ class CfgFunctions {
 			class WL2_hasSupplyContainerSpace {};
 			class WL2_isSectorSupplyFull {};
 			class WL2_sectorNameInit {};
-     		class WL2_statTracker {};
     	};
 		class Subroutines 
 		{
@@ -200,6 +199,7 @@ class CfgFunctions {
 			class updateViewDistance {};
 			class openMenu {};
 			class onChar {};
+			class statTracker {};
 		};
 	};
 	class GOM {

@@ -40,7 +40,7 @@ switch true do {
 	 };
 };
 
-["Kill", _unit] call BIS_fnc_WL2_statTracker;
+["Kill", _unit] call MRTM_fnc_statTracker;
 
 if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
 	playSoundUI ["AddItemOK", 0.1, 1];

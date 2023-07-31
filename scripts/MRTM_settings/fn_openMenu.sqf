@@ -30,6 +30,7 @@ ctrlSetText[1134, format ["Total CP earned: %1CP", (profileNamespace getVariable
 ctrlSetText[1136, format ["Win ratio: %1/%2", (profileNamespace getVariable ["WL2_gamesWon", 0]), (profileNamespace getVariable ["WL2_gamesLost", 0])]];
 ctrlSetText[1138, format ["Sectors seized: %1", (profileNamespace getVariable ["WL2_sectorsSeized", 0])]];
 ctrlSetText[1141, format ["Longest distance kill: %1meters", (profileNamespace getVariable ["WL2_longestDistanceKill", 0])]];
+ctrlSetText[1143, format ["K/D: %1", ((profileNamespace getVariable ["WL2_totalKills", 0])/(profileNamespace getVariable ["WL2_totalDeaths", 1]))]];
 
 if (profileNamespace getVariable ["MRTM_syncObjects", true]) then {
 	((findDisplay 8000) displayCtrl 2800) cbSetChecked true;
