@@ -34,8 +34,13 @@ waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
     params ["_display", "_key"];
     if (APS_toggle < serverTime && {((inputAction "cycleThrownItems") > 0.01)}) then {
-        0 spawn DAPS_fnc_KeyPressed; 
+        // Synchronous call to make sure it executes first before report
+        call DAPS_fnc_KeyPressed;
+        [vehicle player, 0, false] spawn DAPS_fnc_Report;
         APS_toggle = (serverTime + 2);
+    };
+    if (inputAction "throw" > 0.01) then {
+        [vehicle player, 0, false] spawn DAPS_fnc_Report;
     };
 }];
 

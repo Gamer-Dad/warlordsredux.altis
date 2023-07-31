@@ -48,7 +48,7 @@ while { _continue } do {
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = getDir _projectile;
 				private _relativeDirection = [_projectileDirection, _x] call DAPS_fnc_RelDir2;
-				[_x, "", _relativeDirection, true] remoteExec ["DAPS_fnc_Report", owner _x];
+				[_x, _relativeDirection, true] remoteExec ["DAPS_fnc_Report", owner _x];
 
 				// replace projectile with explosion
 				deleteVehicle _projectile;
