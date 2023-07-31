@@ -1,7 +1,9 @@
-params ["_action", "_ctrl"];
+params ["_action"];
 
+systemChat "Clicked";
 if (_action == "Invite") exitWith {
-	_curSel = lbCurSel 4007;
+	_curSel = (lbCurSel 4007);
+	systemChat (format ["%1", _curSel]);
 	if (_curSel > -1) then {
 		_data = lbData [4007, _curSel];
 		_unit = _data call BIS_fnc_getUnitByUID;
