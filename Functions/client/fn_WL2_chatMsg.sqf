@@ -1,6 +1,6 @@
 _h = serverTime + 600;
 
-while !{BIS_WL_missionEnd} do {
+while {!BIS_WL_missionEnd} do {
 	_players = count allPlayers;
 	if (_players >= 51) then {	
 		systemchat "Max AI now at 1, human interaction encouraged!";
