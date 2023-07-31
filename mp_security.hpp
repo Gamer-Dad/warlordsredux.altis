@@ -25,6 +25,14 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
+		class MRTM_fnc_invite {
+			allowedTargets = 2;
+		};
+
+		class MRTM_fnc_accept {
+			allowedTargets = 2;
+		};
+
 		//Client only
 		class BIS_fnc_WL2_reportCheater {
 			allowedTargets = 1;

@@ -1314,7 +1314,218 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1";
+			action =  "closeDialog 1;";
+		};		
+		class MRTMGroupsButton: RscButtonMRTM
+		{
+			idc = 1605;
+			text = "GROUPS";
+			x = 0.327969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action =  "closeDialog 1; 0 spawn MRTM_fnc_openGroupMenu;";
+		};
+	};
+};
+
+class MRTM_groupsMenu
+{
+	idd = 4000;
+
+	class controls
+	{
+		class MRTMGroupsBackground: IGUIBackMRTM
+		{
+			idc = 4001;
+			colorBackground[] = {0,0,0,0.75};
+			x = 0.26836 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class MRTMGroupsHeaderBackground: IGUIBackMRTM
+		{
+			idc = 4002;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMGroupsHeaderTextLeft: RscStructuredTextMRTM
+		{
+			idc = 4003;
+			text = "Group menu";
+			colorBackground[] = {0,0,0,0};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMGroupsInfoText: RscStructuredTextMRTM
+		{
+			idc = 4004;
+			text = "Welcome to the group system! Invite your friends to join your group here.";
+			colorBackground[] = {0,0,0,0};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.214687 * safezoneW;
+			h = 0.073 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.88;
+			};
+		};
+		class MRTMPlayersText: RscStructuredTextMRTM
+		{
+			idc = 4007;
+			text = "All players:";
+			colorBackground[] = {0,0,0,0};
+			x = 0.487969 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.223981 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.88;
+			};
+		};
+		class MRTMGroupsGroupList: RscListboxMRTM
+		{
+			idc = 4005;
+			deletable = 0;
+			canDrag = 0;
+			color[] = {1,0,0,1};
+			type = CT_LISTBOX;
+			x = 0.2695 * safezoneW + safezoneX;
+			y = 0.34 * safezoneH + safezoneY;
+			w = 0.214687 * safezoneW;
+			h = 0.426 * safezoneH;
+			autoScrollSpeed = -1;
+			autoScrollDelay = 5;
+			autoScrollRewind = 0;
+			class ListScrollBar{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			};
+			style = LB_TEXTURES;
+		};
+		class MRTMGroupsPlayersList: RscListboxMRTM
+		{
+			idc = 4006;
+			deletable = 0;
+			canDrag = 0;
+			color[] = {0,1,0,1};
+			type = CT_LISTBOX;
+			x = 0.487969 * safezoneW + safezoneX;
+			y = 0.30 * safezoneH + safezoneY;
+			w = 0.223981 * safezoneW;
+			h = 0.466 * safezoneH;
+			autoScrollSpeed = -1;
+			autoScrollDelay = 5;
+			autoScrollRewind = 0;
+			class ListScrollBar{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			};
+			style = LB_TEXTURES;
+		};
+		class MRTMGroupsCloseButton: RscButtonMRTM
+		{
+			idc = 4100;
+			text = "CLOSE";
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+		};
+		class MRTMGroupsInviteButton: RscButtonMRTM
+		{
+			idc = 4101;
+			text = "INVITE";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "['Invite'] call MRTM_fnc_onButtonClick;";
+			x = 0.652969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
+		class MRTMGroupsDeclineButton: RscButtonMRTM
+		{
+			idc = 4102;
+			text = "DECLINE";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "['Decline'] call MRTM_fnc_onButtonClick;";
+			x = 0.487969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
+		class MRTMGroupsLeaveButton: RscButtonMRTM
+		{
+			idc = 4103;
+			text = "LEAVE";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "['Leave'] call MRTM_fnc_onButtonClick;";
+			x = 0.427969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
+		class MRTMGroupsPromoteButton: RscButtonMRTM
+		{
+			idc = 4104;
+			text = "PROMOTE";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "['Promote'] call MRTM_fnc_onButtonClick;";
+			x = 0.327969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
+		class MRTMGroupsAcceptButton: RscButtonMRTM
+		{
+			idc = 4105;
+			text = "ACCEPT";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "['Accept'] call MRTM_fnc_onButtonClick;";
+			x = 0.550969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
 		};
 	};
 };

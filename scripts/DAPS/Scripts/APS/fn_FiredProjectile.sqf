@@ -55,7 +55,7 @@ while { _continue } do {
 				createVehicle ["HelicopterExploSmall", _projectilePosition, [], 0, "FLY"];
 
 				// if projectile triggers friendly APS, warn player that fired it
-				if (side _unit == side _x || (side _x == civilian && side (_x getVariable "BIS_WL_ownerAsset") == side _unit)) then {
+				if ((side _unit == side _x) || {(side _x == civilian) && {side ((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == side _unit}}) then {
 					0 spawn {
 						// wait so you can hear after loud boom
 						sleep 0.5;

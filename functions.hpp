@@ -189,7 +189,7 @@ class CfgFunctions {
 	/*******************************START OF CUSTOM CONTENT HERE****************************/
 	class MRTM {
 		class Init {
-			file = "scripts\MRTM_settings";
+			file = "scripts\MRTM";
 			class settingsMenu {
 				ext = ".fsm";
 				postInit = 1;
@@ -200,6 +200,13 @@ class CfgFunctions {
 			class openMenu {};
 			class onChar {};
 			class statTracker {};
+			class openGroupMenu {};
+			class getLBPicture {};
+			class getLBText {};
+			class onLBSelChanged {};
+			class invite {};
+			class accept {};
+			class onButtonClick {};
 		};
 	};
 	class GOM {
