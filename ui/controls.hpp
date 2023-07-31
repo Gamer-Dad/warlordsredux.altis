@@ -603,7 +603,7 @@ class MRTM_settingsMenu
 			text = "";
 			x = 0.285687 * safezoneW + safezoneX;
 			y = 0.5944 * safezoneH + safezoneY;
-			w = 0.159844 * safezoneW;
+			w = 0.164844 * safezoneW;
 			h = 0.022 * safezoneH;
 			class Attributes
 			{

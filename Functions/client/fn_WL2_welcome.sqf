@@ -16,10 +16,14 @@ hRead = false;
 }];
 
 0 spawn {
-	while {dialog} do {
-		waitUntil {sleep 0.1; hRead == true};
-		_time = serverTime + 5;
-		waitUntil {sleep 0.1; serverTime > _time};
+	if (["(EU) #11", serverName] call BIS_fnc_inString) then {
+		while {dialog} do {
+			waitUntil {sleep 0.1; hRead == true};
+			_time = serverTime + 5;
+			waitUntil {sleep 0.1; serverTime > _time};
+			ctrlEnable [1, true];
+		};
+	} else {
 		ctrlEnable [1, true];
 	};
 };
