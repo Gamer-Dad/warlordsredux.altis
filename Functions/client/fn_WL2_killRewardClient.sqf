@@ -33,7 +33,9 @@ if (_unit isKindOf "Man") then {
 	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
 };
 
-if (MRTM_playKillSound) then {
+["Kill", _unit] call BIS_fnc_WL2_statTracker;
+
+if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
 	playSoundUI ["AddItemOK", 0.1, 1];
 };
 

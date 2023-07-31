@@ -119,6 +119,7 @@ class CfgFunctions {
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
 			class WL2_calcImbalance {};
+			class WL2_statTracker {};
     	};
 		class Subroutines 
 		{

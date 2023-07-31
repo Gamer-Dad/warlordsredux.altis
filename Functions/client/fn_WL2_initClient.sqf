@@ -59,7 +59,6 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 };
 
 //View distance
-setTerrainGrid 3.125;
 if !(profileNamespace getVariable ["viewSettingsInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_inf", 2000];
 	profileNamespace setVariable ["MRTM_ground", 3000];
@@ -70,6 +69,8 @@ if !(profileNamespace getVariable ["viewSettingsInitialzed", false]) then {
 	profileNamespace setVariable ["viewSettingsInitialzed", true];
 	saveProfileNamespace;
 };
+setViewDistance (profileNamespace getVariable ["MRTM_inf", 2000]);
+setTerrainGrid 3.125;
 
 //Radar warning system
 if !(profileNamespace getVariable ["warningSettingsInitialzed", false]) then {
@@ -98,6 +99,8 @@ if !(profileNamespace getVariable ["statsInitialized", false]) then {
 	profileNamespace setVariable ["WL2_TotalEarnedCP", 0];
 	profileNamespace setVariable ["WL2_gamesWon", 0];
 	profileNamespace setVariable ["WL2_gamesLost", 0];
+	profileNamespace setVariable ["WL2_sectorsSeized", 0];
+	profileNamespace setVariable ["WL2_longestDistanceKill", 0];
 	profileNamespace setVariable ["statsInitialized", true];
 	saveProfileNamespace;
 };
