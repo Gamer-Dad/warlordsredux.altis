@@ -608,6 +608,36 @@ class MRTM_settingsMenu
 			w = 0.015244 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
+		class MRTMWinRatio: RscStructuredTextMRTM
+		{
+			idc = 1136;
+			text = "";
+			x = 0.285687 * safezoneW + safezoneX;
+			y = 0.5964 * safezoneH + safezoneY;
+			w = 0.159844 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMWinRatioImg: RscPictureMRTM
+		{
+			idc = 1137;
+			deletable = 0;
+			text = "a3\ui_f\data\gui\cfg\gametypes\seize_ca.paa";
+			style = ST_MULTI + ST_TITLE_BAR;
+			colorText[] = {1,1,1,1};
+			x = 0.270987 * safezoneW + safezoneX;
+			y = 0.5964 * safezoneH + safezoneY;
+			w = 0.015244 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
 		class MRTMObjectsText: RscStructuredTextMRTM
 		{
 			idc = 1110;

@@ -89,8 +89,16 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_EnableRWR", true];
 	profileNamespace setVariable ["MRTM_disableHint", true];
 	profileNamespace setVariable ["MRTM_smallAnnouncerText", false];
-	profileNamespace setVariable ["WL2_TotalEarnedCP", 0];
 	profileNamespace setVariable ["preferencesInitialzed", true];
+	saveProfileNamespace;
+};
+
+//Stats
+if !(profileNamespace getVariable ["statsInitialized", false]) then {
+	profileNamespace setVariable ["WL2_TotalEarnedCP", 0];
+	profileNamespace setVariable ["WL2_gamesWon", 0];
+	profileNamespace setVariable ["WL2_gamesLost", 0];
+	profileNamespace setVariable ["statsInitialized", true];
 	saveProfileNamespace;
 };
 
