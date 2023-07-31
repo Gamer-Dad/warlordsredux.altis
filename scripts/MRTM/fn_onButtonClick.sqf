@@ -25,7 +25,7 @@ if (_action == "Accept") exitWith {
 	if (_curSel > -1) then {
 		_data = lbData [4007, _curSel];
 		_unit = _data call BIS_fnc_getUnitByUID;
-		_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", objNull]) call BIS_fnc_getUnitByUID) == player});
+		_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
 		_group = (group _unit);
 		player joinSilent _group;
 		{
@@ -48,7 +48,7 @@ if (_action == "Promote") exitWith {
 };
 
 if (_action == "Leave") exitWith {
-	_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", objNull]) call BIS_fnc_getUnitByUID) == player});
+	_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
 	_group = createGroup (side group player);
 	player joinSilent _group;
 	{

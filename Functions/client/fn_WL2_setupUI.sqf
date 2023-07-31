@@ -385,7 +385,7 @@ switch (_displayClass) do {
 						{		
 							{
 								moveOut _x;
-							} forEach ((crew _x) select {(_x != player) && {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group player)}});
+							} forEach ((crew _x) select {(_x != player) && {player != ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}});
 						} forEach (WL_PLAYER_VEHS select {alive _x});};
 					case "RemoveUnits": {
 						{

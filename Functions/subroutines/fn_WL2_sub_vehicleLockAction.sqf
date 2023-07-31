@@ -17,7 +17,7 @@ _actionID = _asset addAction [
 	if ((locked _this) == 2) then {true} else {false},
 	false,
 	"",
-	"alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])}",
+	"alive _target && {_this == ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}",
 	50,
 	true
 ];

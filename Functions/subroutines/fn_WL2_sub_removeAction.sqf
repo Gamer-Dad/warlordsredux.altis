@@ -24,7 +24,7 @@ private _removeActionID = _asset addAction [
 	false,
 	true,
 	"",
-	"alive _target && {vehicle _this != _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull])}}",
+	"alive _target && {vehicle _this != _target && {_this == ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}}",
 	30,
 	false
 ];
