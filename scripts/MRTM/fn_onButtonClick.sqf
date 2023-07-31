@@ -5,6 +5,7 @@ if (_action == "Invite") exitWith {
 	if (_curSel > -1) then {
 		_data = lbData [4007, _curSel];
 		_unit = _data call BIS_fnc_getUnitByUID;
+		systemChat (format ["%1, %2", _data, (name _unit)]);
 		[_unit, player] remoteExec ["MRTM_fnc_invite", 2];
 	};
 	[] call MRTM_fnc_openGroupMenu;
@@ -15,6 +16,7 @@ if (_action == "Decline") exitWith {
 	if (_curSel > -1) then {
 		_data = lbData [4007, _curSel];
 		_unit = _data call BIS_fnc_getUnitByUID;
+		systemChat (format ["%1, %2", _data, (name _unit)]);
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 	};
 	[] call MRTM_fnc_openGroupMenu;
@@ -30,7 +32,6 @@ if (_action == "Accept") exitWith {
 		[player] joinSilent _group;
 		_units joinSilent _group;
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
-
 	};
 	[] call MRTM_fnc_openGroupMenu;
 };
