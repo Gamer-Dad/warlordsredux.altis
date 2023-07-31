@@ -7,7 +7,7 @@ params ["_lb", "_info"];
 if (_lb == "Players") then {
 	_data = lbData [4006, (_info # 1)];
 	_unit = _data call BIS_fnc_getUnitByUID;
-	if !((_unit getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID player)]), false]) && {count ((units _unit) select {isPlayer _x}) == 0}) then {
+	if (!(_unit getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID player)]), false]) && {count ((units _unit) select {isPlayer _x}) == 1}) then {
 		ctrlEnable [4101, true];
 	} else {
 		if (player getVariable [(format ["MRTM_InvitedBy_%1", _data]), false]) then {
