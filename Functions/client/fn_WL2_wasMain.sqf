@@ -4,7 +4,7 @@ WAS_fired = false;
 
 private _maxInActScore = 2;
 private _minimumDistance = 25;
-private _sleepDuration = 300;
+private _sleepDuration = 600;
 private _currentPos = getPos player;
 
 player addEventHandler ["HandleScore", {
@@ -64,8 +64,8 @@ while {!BIS_WL_missionEnd} do {
 
 	if (_inActScore > _maxInActScore) then {
 		hintSilent "You are too inactive to earn passive income";
-		player setVariable ["BIS_WL_incomeBlocked", true, true];
+		player setVariable ["BIS_WL_incomeBlocked", true, [clientOwner, 2]]; //Only server and client needs to know this
 	} else {
-		player setVariable ["BIS_WL_incomeBlocked", false, true];
+		player setVariable ["BIS_WL_incomeBlocked", false, [clientOwner, 2]]; //Only server and client needs to know this
 	};
 };

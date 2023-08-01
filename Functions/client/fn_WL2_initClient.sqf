@@ -123,7 +123,6 @@ uiNamespace setVariable ["control", 50000];
 //WAS system
 0 spawn BIS_fnc_WL2_wasMain;
 
-
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
 };
