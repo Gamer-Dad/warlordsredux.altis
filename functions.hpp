@@ -73,6 +73,7 @@ class CfgFunctions {
 			class WL2_updateEarnedCP {};
 			class WL2_canFastTravelToSector {};
 			class WL2_canOrderAircraftToSector {};
+			class WL2_askForgiveness {};
     	};
 		class Server 
 		{
@@ -103,6 +104,7 @@ class CfgFunctions {
 			class WL2_createUAVCrew {};
 			class WL2_deductSuppliesFromCurrentSector {};
 			class WL2_deductSuppliesFromSector {};
+			class WL2_forgiveTeamkill {};
     	};
     	class Common {
     		file = "Functions\common";
