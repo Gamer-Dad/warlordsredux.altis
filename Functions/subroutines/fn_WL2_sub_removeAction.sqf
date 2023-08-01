@@ -1,3 +1,4 @@
+#include "..\warlords_constants.inc"
 params ["_asset"];
 
 private _removeActionID = _asset addAction [
