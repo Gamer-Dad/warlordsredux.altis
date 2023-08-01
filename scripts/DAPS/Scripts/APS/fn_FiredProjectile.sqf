@@ -36,8 +36,17 @@ while { _continue } do {
 				[_projectile] spawn DAPS_fnc_MisguideMissile;
 			};
 		} else {
-			_distance =_x distance _projectile;
-			if (_vehicleAPSType >= _projectileAPSType && _distance < 125 && _distance > 30) exitWith {	// blockable by aps
+			if (_vehicleAPSType >= _projectileAPSType && {
+					// distance check
+					_distance =_x distance _projectile;
+					_distance < 125 && _distance > 30
+				} && {
+					// angle check
+					_projectileVector = vectorNormalized (velocity _projectile);
+					_vectorToVehicle = (getPosASL _projectile) vectorFromTo (getPosASL _x);
+					_incomingAngle = acos (_projectileVector vectorDotProduct _vectorToVehicle);
+					_incomingAngle < 30
+				}) exitWith {	// blockable by aps
 				_continue = false;
 
 				// deduct APS charge
