@@ -185,7 +185,6 @@ if !(isNull _sender) then {
 								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 								_asset setDir 0;
 								[_sector, _cost] call BIS_fnc_WL2_deductSuppliesFromSector;
-								_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
 								_asset setDir (direction _sender);
 							} else {
 								private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
