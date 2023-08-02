@@ -107,7 +107,6 @@ if !(profileNamespace getVariable ["statsInitialized", false]) then {
 	saveProfileNamespace;
 };
 
-GROUP_ACTIVE = false;
 player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", false]), [2, clientOwner]];
 has_recieved_reward = false;
 player setVariable ["reward_active", false];

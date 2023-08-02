@@ -1325,7 +1325,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1; GROUP_ACTIVE = true; 0 spawn MRTM_fnc_openGroupMenu;";
+			action =  "closeDialog 1; 0 spawn MRTM_fnc_openGroupMenu;";
 		};
 	};
 };
@@ -1410,6 +1410,25 @@ class MRTM_groupsMenu
 				size = 0.88;
 			};
 		};
+		class MRTMRefreshButton: RscCheckboxMRTM
+		{
+			idc = 4008;
+			action = "[] call MRTM_fnc_openGroupMenu;";
+			x = 0.698969 * safezoneW + safezoneX;
+			y = 0.27 * safezoneH + safezoneY;
+			w = 0.0154688 * safezoneW;
+			h = 0.022 * safezoneH;
+			textureUnChecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureChecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureFocusedChecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureFocusedUnchecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureHoverChecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureHoverUnchecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			texturePressedChecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			texturePressedUnchecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureDisabledChecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+			textureDisabledUnchecked = "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_icon_player_connecting_ca.paa";
+		};
 		class MRTMGroupsGroupList: RscListboxMRTM
 		{
 			idc = 4005;
@@ -1465,7 +1484,7 @@ class MRTM_groupsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "closeDialog 1; GROUP_ACTIVE = false; 0 spawn MRTM_fnc_openMenu;";
+			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
 		};
 		class MRTMGroupsInviteButton: RscButtonMRTM
 		{
