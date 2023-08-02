@@ -36,7 +36,7 @@ if !(isNull _instigator) then {
 			if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
 				_killReward = _killReward * 2; //1st person bonus
 			};
-			if ((_targets findIf {_responsibleLeader inArea (_x getVariable "objectAreaComplete")}) != -1) then {
+			if ((_targets findIf {_responsibleLeader inArea (_x getVariable "objectAreaComplete")}) != -1 || {(_targets findIf {_unit inArea (_x getVariable "objectAreaComplete")}) != -1}) then {
 				_killReward = _killReward * 1.3; //Bonus for defending sector or attacking sector.
 			};
 			_uid = getPlayerUID _responsibleLeader;
