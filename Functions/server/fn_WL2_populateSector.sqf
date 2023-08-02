@@ -122,12 +122,17 @@ while {_i < _garrisonSize} do {
 	private _pos = selectRandom _spawnPosArr;
 	private _newGrp = createGroup _side;
 	private _grpSize = floor (3 + random (5 - 3));
+	private _cnt = (count allPlayers) max 1;
 	
-	for [{_i2 = 0}, {_i2 < _grpSize && _i < _garrisonSize}, {_i2 = _i2 + 1; _i = _i + 1}] do {
+	private _i2 = 0;
+	for "_i2" from 0 to _grpSize do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
 		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
-		_newUnit spawn DAPS_fnc_SetupProjectiles; 
+		_newUnit spawn DAPS_fnc_SetupProjectiles;
+
+		_i = _i + ((_cnt/50) max 0.4);
+		if (_i >= _garrisonSize) exitwith {};
 	};
 	
 	_newGrp setBehaviour "COMBAT";
@@ -135,8 +140,9 @@ while {_i < _garrisonSize} do {
 	[_newGrp, 0] setWaypointPosition [_pos, 0];
 	_newGrp deleteGroupWhenEmpty TRUE;
 	
-	for [{_i3 = 0}, {_i3 < 5}, {_i3 = _i3 + 1}] do {
-		_newWP = _newGrp addWaypoint [selectRandom _spawnPosArr, 0];
+	_i3 = 0;
+	for "_i3" from 0 to 5 do {
+		_newGrp addWaypoint [selectRandom _spawnPosArr, 0];
 	};
 	
 	_newWP = _newGrp addWaypoint [_pos, 0];
