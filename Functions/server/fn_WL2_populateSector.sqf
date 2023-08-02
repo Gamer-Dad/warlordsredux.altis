@@ -131,7 +131,7 @@ while {_i < _garrisonSize} do {
 		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
 		_newUnit spawn DAPS_fnc_SetupProjectiles;
 
-		_i = _i + ((_cnt/50) max 0.4);
+		_i = _i + ((_cnt/60) max 0.4); //0.4 is the lowest value do not go lower!
 		if (_i >= _garrisonSize) exitwith {};
 	};
 	
