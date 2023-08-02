@@ -12,7 +12,7 @@ player addEventHandler ["Fired", {
 	WAS_fired = true;
 }];
 
-while {(!BIS_WL_missionEnd) and (alive player)} do {
+while {!BIS_WL_missionEnd} do {
 	sleep (if (player getVariable ["BIS_WL_incomeBlocked", false]) then {10} else {_sleepDuration});
 	private _inActScore = 5;
 
