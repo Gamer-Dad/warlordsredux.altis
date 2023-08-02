@@ -10,6 +10,9 @@ if !(isNull _sender) then {
 			_uid = getPlayerUID _sender;
 			[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;	
 		};
+		case "10kSP": {
+			[_sender, -10000] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;	
+		};
 		case "kill" : {
 			if ((owner _sender) == _cost) then {
 				_sender setDamage 1;
@@ -147,7 +150,7 @@ if !(isNull _sender) then {
 				private _uid = getPlayerUID _sender;
 				[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;	
 
-				0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
+				0 remoteExec ["BIS_fnc_WL2_orderArsenal", (owner _sender)];			
 
 				[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 			};
@@ -421,7 +424,7 @@ if !(isNull _sender) then {
 			};
 
 			// give rewards to owner, not unloader
-			_sendingPlayer = leader (_target getVariable ['BIS_WL_ownerAsset', grpNull]);
+			_sendingPlayer = ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID);
 
 			// prevent spamming the message, only if the player/city has changed do we broadcast the unload praise
 			_lastTransported = serverNamespace getVariable ["BIS_WL_lastTransported", [objNull, -1]];

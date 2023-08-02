@@ -6,14 +6,14 @@ _asset addAction [
 		_this params ["_asset", "_caller", "_actionID"];
 		{
 			moveOut _x;
-		} forEach ((crew _asset) select {(_x != player) && {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group player)}});
+		} forEach ((crew _asset) select {(_x != player) && {player != ((_x getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}});
 	},
 	[],
 	5,
 	false,
 	true,
 	"",
-	"(alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {(count ((crew _target) select {(_x getVariable ['BIS_WL_ownerAsset', grpNull]) != (group _this)}) > 0) && {(!(isAutonomous _target))}}})",
+	"(alive _target && {_this == ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID) && {(count ((crew _target) select {player != ((_x getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}) > 0) && {(!(isAutonomous _target))}}})",
 	50,
 	true
 ];

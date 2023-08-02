@@ -4,7 +4,7 @@ WAS_fired = false;
 
 private _maxInActScore = 3;
 private _minimumDistance = 25;
-private _sleepDuration = 300;
+private _sleepDuration = 600;
 private _currentPos = getPos player;
 
 player addEventHandler ["Fired", {

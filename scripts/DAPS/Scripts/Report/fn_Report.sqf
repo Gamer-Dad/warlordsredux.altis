@@ -1,7 +1,6 @@
 private _v=_this select 0;
-private _s=_this select 1; // Obsolete
-private _d=_this select 2;
-private _indicator=_this select 3;
+private _d=_this select 1;
+private _indicator=_this select 2;
 
 if!((vehicle player)==_v)exitWith{};
 if!((typeOf _v)in dapsAPSAll)exitWith{};
@@ -23,6 +22,8 @@ if !((typeOf _v) in dapsDazzler) then {
 
 if (!_indicator) exitWith {
 	hintSilent(parseText format["%1",_text]);
+	sleep 5;
+	hintSilent "";
 };
 
 if(_d<1)then{_d=1};

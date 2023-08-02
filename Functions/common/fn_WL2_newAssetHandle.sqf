@@ -9,12 +9,10 @@ if (isNull _owner && isServer) then {
 
 if (isPlayer _owner) then {
 	WAS_store = true;
-	_asset setVariable ["BIS_WL_ownerAsset", (group _owner), [2, clientOwner]];
+	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner), [2, clientOwner]];
 	_asset spawn DAPS_fnc_RegisterVehicle;
 
 	if (_asset isKindOf "Man") then {
-		_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;
-	
 		_asset addEventHandler ["Killed", {
 			BIS_WL_matesAvailable = BIS_WL_matesAvailable - 1;
 			BIS_WL_manLost = true;
@@ -65,6 +63,8 @@ if (isPlayer _owner) then {
 			} else {
 				_asset call BIS_fnc_WL2_sub_rearmAction;
 			};
+		} else {
+			_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;
 		};
 
 		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
@@ -125,7 +125,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && {(group _this) == (_target getVariable ['BIS_WL_ownerAsset', grpNull]) && {vehicle _this == _this}}",
+							"alive _target && {_this == ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID) && {vehicle _this == _this}}",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];

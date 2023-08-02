@@ -36,8 +36,17 @@ while { _continue } do {
 				[_projectile] spawn DAPS_fnc_MisguideMissile;
 			};
 		} else {
-			_distance =_x distance _projectile;
-			if (_vehicleAPSType >= _projectileAPSType && _distance < 125 && _distance > 30) exitWith {	// blockable by aps
+			if (_vehicleAPSType >= _projectileAPSType && {
+					// distance check
+					_distance =_x distance _projectile;
+					_distance < 125 && _distance > 30
+				} && {
+					// angle check
+					_projectileVector = vectorNormalized (velocity _projectile);
+					_vectorToVehicle = (getPosASL _projectile) vectorFromTo (getPosASL _x);
+					_incomingAngle = acos (_projectileVector vectorDotProduct _vectorToVehicle);
+					_incomingAngle < 30
+				}) exitWith {	// blockable by aps
 				_continue = false;
 
 				// deduct APS charge
@@ -48,14 +57,14 @@ while { _continue } do {
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = getDir _projectile;
 				private _relativeDirection = [_projectileDirection, _x] call DAPS_fnc_RelDir2;
-				[_x, "", _relativeDirection, true] remoteExec ["DAPS_fnc_Report", owner _x];
+				[_x, _relativeDirection, true] remoteExec ["DAPS_fnc_Report", owner _x];
 
 				// replace projectile with explosion
 				deleteVehicle _projectile;
 				createVehicle ["HelicopterExploSmall", _projectilePosition, [], 0, "FLY"];
 
 				// if projectile triggers friendly APS, warn player that fired it
-				if (side _unit == side _x || (side _x == civilian && side (_x getVariable "BIS_WL_ownerAsset") == side _unit)) then {
+				if ((side _unit == side _x) || {(side _x == civilian) && {side ((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == side _unit}}) then {
 					0 spawn {
 						// wait so you can hear after loud boom
 						sleep 0.5;

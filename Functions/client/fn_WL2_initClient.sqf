@@ -107,6 +107,7 @@ if !(profileNamespace getVariable ["statsInitialized", false]) then {
 	saveProfileNamespace;
 };
 
+GROUP_ACTIVE = false;
 player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", false]), [2, clientOwner]];
 has_recieved_reward = false;
 player setVariable ["reward_active", false];
@@ -121,7 +122,6 @@ uiNamespace setVariable ["control", 50000];
 
 //WAS system
 0 spawn BIS_fnc_WL2_wasMain;
-
 
 if !(isServer) then {
 	"setup" call BIS_fnc_WL2_handleRespawnMarkers;
@@ -375,4 +375,9 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 player addAction [
 	"10K CP",
 	{[player, "10k"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]}
+];
+
+player addAction [ 
+	"10K SP", 
+	{[player, "10kSP"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} 
 ];
