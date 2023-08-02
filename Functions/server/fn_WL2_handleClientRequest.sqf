@@ -280,19 +280,8 @@ if !(isNull _sender) then {
 							};
 						};
 					} else {
-						_supplyCost = switch _class do {
-							case ("B_Truck_01_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-							case ("O_Truck_03_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-							case ("B_Slingload_01_Ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-							case ("Land_Pod_Heli_Transport_04_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-							case ("Box_NATO_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
-							case ("Box_East_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
-							default { _cost };
-						};
-
-						[_sender, _supplyCost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
-
 						if (_isStatic) then {
+							[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 							if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 								if (_class == "B_AAA_System_01_F" || {_class == "B_SAM_System_01_F" || {_class == "B_SAM_System_02_F" || {_class == "B_Ship_MRLS_01_F"}}}) then {
 									if (side _sender == east) then {
@@ -341,6 +330,17 @@ if !(isNull _sender) then {
 							_asset = createVehicle [_class, _targetPos, [], 0, "CAN_COLLIDE"];
 							_asset setDir _direction;
 							_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
+
+							_supplyCost = switch _class do {
+								case ("B_Truck_01_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+								case ("O_Truck_03_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+								case ("B_Slingload_01_Ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+								case ("Land_Pod_Heli_Transport_04_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
+								case ("Box_NATO_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
+								case ("Box_East_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
+								default { _cost };
+							};
+							[_sender, _supplyCost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 							
 							//Livery change
 							if (typeOf _asset == "I_Truck_02_MRL_F") then {
