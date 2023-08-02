@@ -11,7 +11,7 @@ if (_side == BIS_WL_localSide) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
 			private _road = selectRandom _roads;
-			_vehicleArray = [position _road, _road getDir selectRandom (roadsConnectedTo _road), selectRandomWeighted (BIS_WL_factionVehicleClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
+			_vehicleArray = [position _road, _road getDir selectRandom (roadsConnectedTo _road), selectRandomWeighted BIS_WL_factionVehicleClasses, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
 				_vehicle spawn DAPS_fnc_RegisterVehicle;
@@ -77,7 +77,7 @@ if (_side == BIS_WL_localSide) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
 		
 		if (count _neighbors > 0) then {
-			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted (BIS_WL_factionAircraftClasses # (BIS_WL_sidesArray find _side)), _side] call BIS_fnc_spawnVehicle;
+			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted BIS_WL_factionAircraftClasses, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			if !(_vehicle isKindOf "Man") then {
 				_vehicle spawn DAPS_fnc_RegisterVehicle;
