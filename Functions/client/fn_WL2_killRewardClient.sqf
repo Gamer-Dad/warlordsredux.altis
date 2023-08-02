@@ -40,6 +40,7 @@ switch true do {
 	 };
 };
 
+WAS_score = true;
 ["Kill", _unit] call MRTM_fnc_statTracker;
 
 if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
