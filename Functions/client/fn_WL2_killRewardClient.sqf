@@ -18,9 +18,8 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl ctrlCommit 0;
 } forEach (uiNamespace getVariable ["activeControls", []]);
 
-if ((isNil {(uiNamespace getVariable "control")}) && {!(9 isEqualType (uiNamespace getVariable "control"))}) exitWith {
-	diag_log ("Error: Client kill reward control is not a number. | File: fn_WL2_killRewardClient.sqf | Line: 24");
-};
+if ((isNil {(uiNamespace getVariable "control")}) && {!(9 isEqualType (uiNamespace getVariable "control"))}) exitWith {};
+
 _ctrlNmbr = (uiNamespace getVariable "control");
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 
@@ -28,8 +27,7 @@ _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), 
 
 switch true do {
 	case (_transport): { 
-		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#add8e6'>%1%2</t>", localize "STR_A3_WL_supplied", 
-			if (_reward > 0) then { format [" +%1CP", _reward] } else { "" }];
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#add8e6'>%1</t>", localize "STR_A3_WL_supplied"];
 	};
 	case (_unit isKindOf "Man"): { 
 		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
