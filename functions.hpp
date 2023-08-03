@@ -209,6 +209,8 @@ class CfgFunctions {
 			class invite {};
 			class accept {};
 			class onButtonClick {};
+			class onLBSelChangedTraits {};
+			class onTraitButton {};
 		};
 	};
 	class GOM {

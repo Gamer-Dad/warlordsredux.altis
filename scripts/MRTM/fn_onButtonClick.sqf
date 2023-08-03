@@ -33,17 +33,13 @@ if (_action == "Accept") exitWith {
 		_group = (group _unit);
 		[player] joinSilent _group;
 		_units joinSilent _group;
+		player setUnitTrait ["Pilot", false, true];
+		player setUnitTrait ["Rifleman", false, true];
+		player setUnitTrait ["TeamLeader", false, true];
+		player setUnitTrait ["AT", false, true];
+		player setUnitTrait ["AA", false, true];
+		player setUnitTrait ["Engineer", false, false];
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
-	};
-	[] call MRTM_fnc_openGroupMenu;
-};
-
-if (_action == "Promote") exitWith {
-	_curSel = lbCurSel 4005;
-	if (_curSel > -1) then {
-		_data = lbData [4005, _curSel];
-		_unit = _data call BIS_fnc_getUnitByUID;
-		hint "Promote";
 	};
 	[] call MRTM_fnc_openGroupMenu;
 };
@@ -53,5 +49,11 @@ if (_action == "Leave") exitWith {
 	_group = createGroup (side group player);
 	[player] joinSilent _group;
 	_units joinSilent _group;
+	player setUnitTrait ["Pilot", false, true];
+	player setUnitTrait ["Rifleman", false, true];
+	player setUnitTrait ["TeamLeader", true, true];
+	player setUnitTrait ["AT", false, true];
+	player setUnitTrait ["AA", false, true];
+	player setUnitTrait ["Engineer", false, false];
 	[] call MRTM_fnc_openGroupMenu;
 };

@@ -107,6 +107,14 @@ if !(profileNamespace getVariable ["statsInitialized", false]) then {
 	saveProfileNamespace;
 };
 
+//Groups
+player setUnitTrait ["Pilot", false, true];
+player setUnitTrait ["Rifleman", false, true];
+player setUnitTrait ["TeamLeader", true, true];
+player setUnitTrait ["AT", false, true];
+player setUnitTrait ["AA", false, true];
+player setUnitTrait ["Engineer", false, false];
+
 player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", false]), [2, clientOwner]];
 has_recieved_reward = false;
 player setVariable ["reward_active", false];

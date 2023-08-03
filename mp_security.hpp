@@ -120,12 +120,19 @@ class CfgRemoteExec {
 		class lock {
 			allowedTargets = 0;
 		};
+
+		class setUnitTrait {
+			allowedTargets = 0;
+		};
+
+		class selectLeader {
+			allowedTargets = 0;
+		};
 	};
 };
 
 class CfgDisabledCommands {
 	//Other
-
 	class CREATEUNIT
 	{
 		class SYNTAX1

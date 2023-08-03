@@ -15,6 +15,10 @@ if (isNull (findDisplay 4000)) then {
 		params ["_control", "_lbCurSel", "_lbSelection"];
 		["Players", _this] spawn MRTM_fnc_onLBSelChanged;
 	}];
+    ((findDisplay 4000) displayCtrl 4009) ctrlAddEventHandler ["LBSelChanged", {
+		params ["_control", "_lbCurSel", "_lbSelection"];
+		_this spawn MRTM_fnc_onLBSelChangedTraits;
+	}];
 };
 disableSerialization;
 

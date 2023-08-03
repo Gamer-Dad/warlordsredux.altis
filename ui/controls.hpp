@@ -1475,6 +1475,30 @@ class MRTM_groupsMenu
 			};
 			style = LB_TEXTURES;
 		};
+		class MRTMTraitsList: RscListboxMRTM
+		{
+			idc = 4009;
+			onLoad = "(_this # 0) ctrlEnable false;";
+			deletable = 0;
+			canDrag = 0;
+			color[] = {0,1,0,1};
+			type = CT_LISTBOX;
+			x = 0.1795 * safezoneW + safezoneX;
+			y = 0.34 * safezoneH + safezoneY;
+			w = 0.084687 * safezoneW;
+			h = 0.226 * safezoneH;
+			autoScrollSpeed = -1;
+			autoScrollDelay = 5;
+			autoScrollRewind = 0;
+			class ListScrollBar{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			};
+			style = LB_TEXTURES;
+		};
 		class MRTMGroupsCloseButton: RscButtonMRTM
 		{
 			idc = 4100;
@@ -1522,18 +1546,6 @@ class MRTM_groupsMenu
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
 		};
-		class MRTMGroupsPromoteButton: RscButtonMRTM
-		{
-			idc = 4104;
-			text = "PROMOTE";
-			onLoad = "(_this # 0) ctrlEnable false;";
-			action = "['Promote'] call MRTM_fnc_onButtonClick;";
-			x = 0.327969 * safezoneW + safezoneX;
-			y = 0.786 * safezoneH + safezoneY;
-			w = 0.0567187 * safezoneW;
-			h = 0.022 * safezoneH;
-			font = "PuristaMedium";
-		};
 		class MRTMGroupsAcceptButton: RscButtonMRTM
 		{
 			idc = 4105;
@@ -1542,6 +1554,18 @@ class MRTM_groupsMenu
 			action = "['Accept'] call MRTM_fnc_onButtonClick;";
 			x = 0.550969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
+		class MRTMTraitApplyButton: RscButtonMRTM
+		{
+			idc = 4106;
+			text = "APPLY";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "[] call MRTM_fnc_onTraitButton;";
+			x = 0.207969 * safezoneW + safezoneX;
+			y = 0.566 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
