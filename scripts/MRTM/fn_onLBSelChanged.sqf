@@ -13,7 +13,8 @@ if (_lb == "Players") then {
 	if !((_unit getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID player)]), false]) && {(count ((units _unit) select {isPlayer _x}) == 0) && {leader player == player}}) then {
 		ctrlEnable [4101, true];
 	} else {
-		if (player getVariable [(format ["MRTM_InvitedBy_%1", _data]), false]) then {
+		ctrlEnable [4101, false];
+		if (player getVariable [(format ["MRTM_InvitedBy_%1", _unit]), false]) then {
 			ctrlEnable [4105, true];
 			ctrlEnable [4102, true];
 		} else {
