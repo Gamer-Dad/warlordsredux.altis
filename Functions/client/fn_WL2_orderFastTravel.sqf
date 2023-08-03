@@ -117,8 +117,7 @@ if (_toContested) then {
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
 	player setVehiclePosition [_destination, [], 3, "NONE"];
-
-	[player, "fastTravel", 0, _destination, BIS_WL_targetSector] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	[BIS_WL_targetSector, WL_LOGISTICS_FAST_TRAVEL_COST] spawn BIS_fnc_WL2_deductSuppliesFromSector;
 
 	sleep WL_TIMEOUT_STANDARD;
 
