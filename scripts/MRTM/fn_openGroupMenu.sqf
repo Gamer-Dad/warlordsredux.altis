@@ -19,6 +19,9 @@ if (isNull (findDisplay 4000)) then {
 		params ["_control", "_lbCurSel", "_lbSelection"];
 		_this spawn MRTM_fnc_onLBSelChangedTraits;
 	}];
+
+	ctrlShow [4009, false];
+	ctrlShow [4106, false];
 };
 disableSerialization;
 
