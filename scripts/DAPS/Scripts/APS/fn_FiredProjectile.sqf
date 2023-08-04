@@ -21,13 +21,12 @@ while { _continue } do {
 	// ensure consume APS charges from nearest vehicle 
 	_sortedEligibleList = [_eligibleNearbyVehicles, [_projectile], { _input0 distance _x }, "ASCEND"] call BIS_fnc_sortBy;
 
-	for "_i" from 0 to (count _sortedEligibleList - 1) do {
+	{	
 		// exit if projectile is dead
 		if (!alive _projectile || {!_continue}) exitWith {
 			_continue = false;
 		};
-		private _x = _sortedEligibleList select _i;
-		
+
 		// get APS type, get projectile's APS eligibility
 		_vehicleAPSType = _x getVariable ["dapsType", -1];
 		_projectileAPSType = dapsEligibleProjectiles get (typeOf _projectile);
@@ -77,7 +76,8 @@ while { _continue } do {
 					};
 				};
 			};
-		};	
-	};
+		};
+	} forEach _sortedEligibleList;
+
 	sleep 0.001;
 };

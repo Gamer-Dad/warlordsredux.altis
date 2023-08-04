@@ -5,8 +5,7 @@ while{(isNil"dapsDefinitionsLoaded")}do{sleep .2};
 waitUntil{dapsDefinitionsLoaded};
 _vehicleType="";
 sleep(random .3);
-for "_i" from 0 to (count _units - 1) do {
-	private _x = _units select _i;
+{
 	_vehicleType = typeOf _x;
 	dapsLight = dapsLight - [_vehicleType];
 	dapsMedium = dapsMedium - [_vehicleType];
@@ -16,14 +15,13 @@ for "_i" from 0 to (count _units - 1) do {
 	if(_APS == "Medium") then {dapsMedium pushBack _vehicleType};
 	if(_APS == "Heavy") then {dapsHeavy pushBack _vehicleType};
 	if (_APS == "Dazzler") then {dapsDazzler pushBack _vehicleType};
-};
+} forEach _units;
 sleep 2;
 dapsDefinitionsLoaded2=TRUE;
 publicVariable"dapsDefinitionsLoaded2";
 sleep .5;
-for "_i" from 0 to (count _units - 1) do {
-	private _x = _units select _i;
-	if (_x isKindOf "Man") then {
+{
+	if (_x isKindOf"MAN") then {
 		deleteVehicle _x
 	} else {
 		{
@@ -31,4 +29,5 @@ for "_i" from 0 to (count _units - 1) do {
 		} forEach (crew _x);
 		deleteVehicle _x;
 	};
-};
+	sleep .1;
+}forEach _units;
