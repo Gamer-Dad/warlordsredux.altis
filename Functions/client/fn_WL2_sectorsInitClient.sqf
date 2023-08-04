@@ -1,19 +1,20 @@
 #include "..\warlords_constants.inc"
 
 BIS_WL_sectorLinks = [];
-_i = 0;
 
-{
+for "_i1" from 0 to (count BIS_WL_allSectors - 1) do {
+	private _x = BIS_WL_allSectors select _i1;
 	_sector = _x;
 	_sectorPos = position _sector;
 	
-	_mrkrAreaBig = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_areaBig", _forEachIndex], _sectorPos];
+	_mrkrAreaBig = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_areaBig", _i1], _sectorPos];
 	_mrkrAreaBig setMarkerShapeLocal "ELLIPSE";
 	_mrkrAreaBig setMarkerBrushLocal "SolidBorder";
 	_mrkrAreaBig setMarkerAlphaLocal 1;
-} forEach BIS_WL_allSectors;
+};
 
-{
+for "_i2" from 0 to (count BIS_WL_allSectors - 1) do {
+	private _x = BIS_WL_allSectors select _i2;
 	_sector = _x;
 	_sectorPos = position _sector;
 	_area = _sector getVariable "objectArea";
@@ -26,14 +27,15 @@ _i = 0;
 		_sector setVariable ["BIS_WL_value", round (_size / 13000)];
 	};
 	
-	_mrkrArea = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_area", _forEachIndex], _sectorPos];
+	_mrkrArea = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_area", _i2], _sectorPos];
 	_mrkrArea setMarkerShapeLocal (if (_area # 3) then {"RECTANGLE"} else {"ELLIPSE"});
 	_mrkrArea setMarkerDirLocal (_area # 2);
 	_mrkrArea setMarkerBrushLocal "Solid";
 	_mrkrArea setMarkerAlphaLocal 1;
 	_mrkrArea setMarkerSizeLocal [(_area # 0), (_area # 1)];
-} forEach BIS_WL_allSectors;
+};
 
+_i = 0;
 {
 	_sector = _x;
 	

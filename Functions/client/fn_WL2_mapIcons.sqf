@@ -92,14 +92,15 @@ MRTM_fnc_iconText = {
 				if (count (crew _t) == 0) then {
 					_text = str _vd;
 				} else {
-					_playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
-					{
-						if ((_forEachindex + 1) == count _playerCrew) then {
+					private _playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
+					for "_i" from 0 to (count _playerCrew - 1) do {
+						private _x = _playerCrew select _i;
+						if ((_i + 1) == count _playerCrew) then {
 							_text = _text + (name _x);
 						} else {
 							_text = _text + format ["%1, ", (name _x)];
 						};
-					} forEach _playerCrew;
+					};
 
 					countCrewAi = count (((crew _t) - _playerCrew) select {alive _x});
 					if (countCrewAi > 0) then {
