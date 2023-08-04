@@ -98,8 +98,7 @@ while {_sectorsToGiveSide1 > 0 || {_sectorsToGiveSide2 > 0}} do {
 	};
 };
 
-for "_i" from 0 to (count BIS_WL_allSectors - 1) do {
-	private _x = BIS_WL_allSectors select _i;
+{
 	_sector = _x;
 	_sectorPos = position _sector;
 	
@@ -191,6 +190,6 @@ for "_i" from 0 to (count BIS_WL_allSectors - 1) do {
 	_agent = _agentGrp createUnit ["Logic", _sectorPos, [], 0, "CAN_COLLIDE"];
 	_agent enableSimulationGlobal FALSE;
 	_sector setVariable ["BIS_WL_agentGrp", _agentGrp, TRUE];
-};
+} forEach BIS_WL_allSectors;
 
 call BIS_fnc_WL2_sectorNameInit;

@@ -149,9 +149,7 @@ while {_i < _garrisonSize} do {
 	_newWP setWaypointType "CYCLE";
 };
 
-private _curators = allCurators;
-for "_i2" from 0 to (count _curators - 1) do {
-	private _x = _curators select _i2;
+{
 	_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && {(alive _x) && {side group _x != civilian}}};
 	_x addCuratorEditableObjects [_l, true];
-};
+} forEach allCurators;
