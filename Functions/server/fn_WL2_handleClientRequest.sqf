@@ -358,9 +358,11 @@ if (_action == "targetReset") exitWith {
 
 if (_action == "orderAI") exitWith {
 	private _uid = getPlayerUID _sender;
-	[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+	if (_cost > 0) then {
+		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-	[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
+		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
+	};
 };
 
 if (_action == "fundsTransfer") exitWith {
