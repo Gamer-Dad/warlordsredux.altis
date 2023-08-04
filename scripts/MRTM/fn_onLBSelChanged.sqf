@@ -14,7 +14,7 @@ if (_lb == "Players") then {
 		ctrlEnable [4101, true];
 	} else {
 		ctrlEnable [4101, false];
-		if (player getVariable [(format ["MRTM_InvitedBy_%1", _unit]), false]) then {
+		if (player getVariable [(format ["MRTM_InvitedBy_%1", _data]), false]) then {
 			ctrlEnable [4105, true];
 			ctrlEnable [4102, true];
 		} else {
