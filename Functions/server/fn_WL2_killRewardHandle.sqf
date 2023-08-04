@@ -9,7 +9,6 @@ if (isNull _instigator) then {_instigator = (vehicle _killer)};
 if !(isNull _instigator) then {
 	_responsibleLeader = leader _instigator;
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
-		["In warlords"] remoteExec ["systemChat", 0];
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
 			side group _unit;
