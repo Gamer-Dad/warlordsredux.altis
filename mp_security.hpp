@@ -133,14 +133,20 @@ class CfgRemoteExec {
 
 class CfgDisabledCommands {
 	//Other
-	class CREATEUNIT
-	{
-		class SYNTAX1
-		{
-			targets[] = {1,0,1};
-			args[] = {{"STRING"}, {"ARRAY"}};
-		};
-	};
+    class CREATEUNIT
+    {
+        class SYNTAX1
+        {
+            targets[] = {0,0,0};
+            args[] = {{"STRING"},{"ARRAY"}};
+        };
+
+        class SYNTAX2
+        {
+            targets[] = {1,1,1};
+            args[] = {{"GROUP"},{"ARRAY"}};
+        };
+    };
 
 	class SKIPTIME {
 		class SYNTAX1
