@@ -8,7 +8,10 @@ waitUntil {!isNull (findDisplay 46)};
 
 switch (_displayClass) do {
 	case "OSD": {
-		private _arr = [
+		{
+			_x params ["_var", "_type"];
+			uiNamespace setVariable [_var, (findDisplay 46) ctrlCreate [_type, -1]];
+		} forEach [
 			["BIS_WL_osd_cp_current", "RscStructuredText"],
 			["BIS_WL_osd_icon_side_1", "RscPictureKeepAspect"],
 			["BIS_WL_osd_sectors_side_1", "RscStructuredText"],
@@ -25,11 +28,6 @@ switch (_displayClass) do {
 			["BIS_WL_osd_sl_nearby", "RscStructuredText"],
 			["BIS_WL_osd_rearm_possible", "RscStructuredText"]
 		];
-		for "_i" from 0 to (count _arr - 1) do {
-			private _x = _arr select _i;
-			_x params ["_var", "_type"];
-			uiNamespace setVariable [_var, (findDisplay 46) ctrlCreate [_type, -1]];
-		};
 
 		_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
 		_osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
@@ -75,19 +73,15 @@ switch (_displayClass) do {
 
 		_osd_icon_side_2 ctrlSetText "\A3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
 
-		private _arr2 = [_osd_progress_background, _osd_progress, _osd_action_title];
-		for "_i2" from 0 to (count _arr2 - 1) do {
-			private _x = _arr2 select _i2;
+		{
 			_x ctrlSetPosition [_displayX, _displayY + (_blockH * 19), _displayW, _blockH * 16];
-		};
+		} forEach [_osd_progress_background, _osd_progress, _osd_action_title];
 
-		private _arr3 = [_osd_progress_voting_background, _osd_progress_voting, _osd_action_voting_title];
-		for "_i3" from 0 to (count _arr3 - 1) do {
-			private _x = _arr3 select _i3;
+		{
 			_x ctrlSetPosition [_displayX, _displayY + (_blockH * 38), _displayW, _blockH * 16];
-		};
+		} forEach [_osd_progress_voting_background, _osd_progress_voting, _osd_action_voting_title];
 
-		private _arr4 = [
+		{_x ctrlCommit 0} forEach [
 			_osd_cp_current,
 			_osd_icon_side_1,
 			_osd_sectors_side_1,
@@ -104,11 +98,6 @@ switch (_displayClass) do {
 			_osd_action_sl_nearby,
 			_osd_rearm_possible
 		];
-
-		for "_i4" from 0 to (count _arr4 - 1) do {
-			private _x = _arr4 select _i4;
-			_x ctrlCommit 0;
-		};
 
 		BIS_WL_OSDEventArr = [[], [], []];
 
@@ -227,7 +216,7 @@ switch (_displayClass) do {
 		_purchase_transfer_ok ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.5502), _wDef / 6, _hDef * 0.035];
 		_purchase_transfer_cancel ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.59), _wDef / 6, _hDef * 0.035];
 		
-		private _arr5 = [
+		{_x ctrlSetFade 1; _x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
 			_purchase_transfer_background,
 			_purchase_transfer_units,
 			_purchase_transfer_amount,
@@ -235,14 +224,8 @@ switch (_displayClass) do {
 			_purchase_transfer_ok,
 			_purchase_transfer_cancel
 		];
-		for "_i5" from 0 to (count _arr5 - 1) do {
-			private _x = _arr5 select _i5;
-			_x ctrlSetFade 1; 
-			_x ctrlEnable false; 
-			_x ctrlCommit 0;
-		};
-
-		private _arr6 = [
+		
+		{_x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
 			_purchase_background,
 			_purchase_title_assets,
 			_purchase_title_details,
@@ -255,22 +238,13 @@ switch (_displayClass) do {
 			_purchase_title_cost,
 			_purchase_background_2
 		];
-		for "_i6" from 0 to (count _arr6 - 1) do {
-			private _x = _arr6 select _i6;
-			_x ctrlEnable false; 
-			_x ctrlCommit 0;
-		};
 		
-		private _arr7 = [
+		{_x ctrlCommit 0} forEach [
 			_purchase_category,
 			_purchase_items,
 			_purchase_request,
 			_purchase_box
 		];
-		for "_i7" from 0 to (count _arr7 - 1) do {
-			private _x = _arr7 select _i7;
-			_x ctrlCommit 0;
-		};
 
 		_purchase_background ctrlSetBackgroundColor [0, 0, 0, 0.5];
 		_purchase_title_assets ctrlSetBackgroundColor [0, 0, 0, 0.5];
@@ -288,7 +262,7 @@ switch (_displayClass) do {
 		_purchase_transfer_ok ctrlSetBackgroundColor BIS_WL_colorFriendly;
 		_purchase_transfer_cancel ctrlSetBackgroundColor BIS_WL_colorFriendly;
 
-		private _arr8 = [
+		{_x ctrlSetTextColor [0.65, 0.65, 0.65, 1]} forEach [
 			_purchase_title_assets,
 			_purchase_title_details,
 			_purchase_title_deployment,
@@ -297,10 +271,6 @@ switch (_displayClass) do {
 			_purchase_info_asset,
 			_purchase_title_cost
 		];
-		for "_i8" from 0 to (count _arr8 - 1) do {
-			private _x = _arr8 select _i8;
-			_x ctrlSetTextColor [0.65, 0.65, 0.65, 1];
-		};
 		
 		_purchase_title_assets ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", localize "STR_A3_WL_purchase_menu_title_assets", (1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_title_details ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", localize "STR_A3_WL_purchase_menu_title_detail", (1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
@@ -310,7 +280,12 @@ switch (_displayClass) do {
 		_purchase_transfer_ok ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_A3_WL_button_transfer", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		_purchase_transfer_cancel ctrlSetStructuredText parseText format ["<t align = 'center' shadow = '2' size = '%2'>%1</t>", localize "STR_disp_cancel", (1.25 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 		
-		private _categories = [
+		{
+			if (count (WL_PLAYER_REQUISITION_LIST # _forEachIndex) > 0) then {
+				_purchase_category lbAdd _x;
+			};
+			_purchase_category lbSetValue [(lbSize _purchase_category) - 1, _forEachIndex];
+		} forEach [
 			localize "STR_A3_cfgmarkers_nato_inf",
 			localize "STR_dn_vehicles",
 			localize "STR_A3_WL_menu_aircraft",
@@ -319,14 +294,6 @@ switch (_displayClass) do {
 			localize "STR_A3_rscdisplaywelcome_exp_parb_list4_title",
 			localize "STR_A3_WL_menu_strategy"
 		];
-		for "_i9" from 0 to (count _categories - 1) do {
-			private _x = _categories select _i9;
-			if (count (WL_PLAYER_REQUISITION_LIST # _i9) > 0) then {
-				_purchase_category lbAdd _x;
-			};
-			_purchase_category lbSetValue [(lbSize _purchase_category) - 1, _i9];			
-		};
-
 		_purchase_category lbSetCurSel ((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0);
 		_purchase_category ctrlAddEventHandler ["LBSelChanged", {
 			(_this # 1) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;
