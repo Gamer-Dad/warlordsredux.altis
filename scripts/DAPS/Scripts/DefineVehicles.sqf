@@ -112,27 +112,33 @@ _lightBlockList = [
 
 // assumption: APS types are straight upgrades
 dapsEligibleProjectiles = createHashMap;
-{
+for "_i" from 0 to (count _heavyBlockList - 1) do {
+	private _x = _heavyBlockList select _i;
 	dapsEligibleProjectiles set [_x, 2];
-} forEach _heavyBlockList;
-{
+};
+for "_i" from 0 to (count _mediumBlockList - 1) do {
+	private _x = _mediumBlockList select _i;
 	dapsEligibleProjectiles set [_x, 1];
-} forEach _mediumBlockList;
-{
+};
+for "_i" from 0 to (count _lightBlockList - 1) do {
+	private _x = _lightBlockList select _i;
 	dapsEligibleProjectiles set [_x, 0];
-} forEach _lightBlockList;
+};
 
 dapsVehiclesMap = createHashMap;
-{
+for "_i" from 0 to (count dapsHeavy - 1) do {
+	private _x = dapsHeavy select _i;
 	dapsVehiclesMap set [_x, 2];
-} forEach dapsHeavy;
-{
+};
+for "_i" from 0 to (count dapsMedium - 1) do {
+	private _x = dapsMedium select _i;
 	dapsVehiclesMap set [_x, 1];
-} forEach dapsMedium;
-{
+};
+for "_i" from 0 to (count dapsLight - 1) do {
+	private _x = dapsLight select _i;
 	dapsVehiclesMap set [_x, 0];
-} forEach dapsLight;
-
-{
+};
+for "_i" from 0 to (count dapsDazzler - 1) do {
+	private _x = dapsDazzler select _i;
 	dapsVehiclesMap set [_x, 3];
-} forEach dapsDazzler;
+};
