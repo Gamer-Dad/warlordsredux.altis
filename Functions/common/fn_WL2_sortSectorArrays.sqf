@@ -9,7 +9,7 @@ private _available = [];
 private _income = 0;
 private _services = [];
 private _curTarget = missionNamespace getVariable [format ["BIS_WL_currentTarget_%1", _side], objNull];
-private _unlocked = _pool select {_x == _curTarget || _side in (_x getVariable ["BIS_WL_previousOwners", []])};
+private _unlocked = _pool select {_x == _curTarget || {_side in (_x getVariable ["BIS_WL_previousOwners", []])}};
 private _baseArr = WL_BASES select {(_x getVariable ["BIS_WL_owner", sideUnknown]) == _side};
 
 {

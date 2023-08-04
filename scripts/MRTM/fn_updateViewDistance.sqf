@@ -16,7 +16,7 @@ switch (true) do {
 		_dist = (profileNamespace getVariable ["MRTM_inf", 2000]);
 	};
 
-	case (((vehicle player) isKindOf "LandVehicle") || ((vehicle player) isKindOf "Ship")): {
+	case (((vehicle player) isKindOf "LandVehicle") || {((vehicle player) isKindOf "Ship")}): {
 		setViewDistance (profileNamespace getVariable ["MRTM_ground", 3000]);
 		_dist = (profileNamespace getVariable ["MRTM_ground", 3000]);
 	};

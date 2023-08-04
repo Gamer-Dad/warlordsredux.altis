@@ -2,7 +2,7 @@ private["_v"];
 _v = vehicle player;
 if ( _v == player) exitWith{};
 
-_disabled = _v getVariable ["apsDisabled", false] || (typeOf _v in dapsDazzler && !isEngineOn _v);
+_disabled = ((_v getVariable ["apsDisabled", false]) || {(typeOf _v in dapsDazzler && {!isEngineOn _v})});
 
 if (_disabled) then {
 	playSoundUI ["a3\ui_f_curator\data\sound\cfgsound\visionmode.wss", 1, 1];

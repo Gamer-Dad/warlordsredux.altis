@@ -22,7 +22,7 @@ _mapClickEH = addMissionEventHandler ["MapSingleClick", {
 	};
 }];
 
-waitUntil {sleep WL_TIMEOUT_MIN; count BIS_WL_waterDropPos > 0 || !visibleMap || BIS_WL_currentSelection == WL_ID_SELECTION_VOTING};
+waitUntil {sleep WL_TIMEOUT_MIN; count BIS_WL_waterDropPos > 0 || {!visibleMap || {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING}}};
 
 if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_NAVAL) then {
 	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;

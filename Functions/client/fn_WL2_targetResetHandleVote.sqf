@@ -34,6 +34,6 @@ BIS_WL_targetResetVoteEH2 = (findDisplay 46) displayAddEventHandler ["KeyDown", 
 	};
 }];
 
-waitUntil {sleep WL_TIMEOUT_SHORT; serverTime >= ((missionNamespace getVariable _varNameVoting) + WL_TARGET_RESET_VOTING_TIME) || isNull WL_TARGET_FRIENDLY || (player getVariable ["BIS_WL_targetResetVote", -1]) != -1};
+waitUntil {sleep WL_TIMEOUT_SHORT; serverTime >= ((missionNamespace getVariable _varNameVoting) + WL_TARGET_RESET_VOTING_TIME) || {isNull WL_TARGET_FRIENDLY || {(player getVariable ["BIS_WL_targetResetVote", -1]) != -1}}};
 
 [player, "targetResetVoting", FALSE] call BIS_fnc_WL2_hintHandle;

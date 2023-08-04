@@ -6,7 +6,7 @@ addMissionEventHandler ["Map", {
 	BIS_WL_highlightedSector = objNull;
 	BIS_WL_hoverSamplePlayed = FALSE;
 	if (_this # 0) then {
-		if (isNull WL_TARGET_FRIENDLY && BIS_WL_currentSelection == WL_ID_SELECTION_VOTING) then {
+		if (isNull WL_TARGET_FRIENDLY && {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING}) then {
 			WL_CONTROL_MAP ctrlMapAnimAdd [0, 1, [BIS_WL_mapSize / 2, BIS_WL_mapSize / 2]];
 			ctrlMapAnimCommit WL_CONTROL_MAP;
 		};
@@ -24,12 +24,12 @@ while {!BIS_WL_missionEnd} do {
 				uiNamespace setVariable ["BIS_WL_mapControl", (findDisplay 53) displayCtrl 51];
 			};
 		} else {
-			waitUntil {!isNull (findDisplay 37) || time > 0};
+			waitUntil {!isNull (findDisplay 37) || {time > 0}};
 			if (time > 0) exitWith {uiNamespace setVariable ["BIS_WL_mapControl", (findDisplay 52) displayCtrl 54]};
 			uiNamespace setVariable ["BIS_WL_mapControl", (findDisplay 37) displayCtrl 51];
 		};
 	} else {
-		waitUntil {!isNull (findDisplay 12) || !isNull (findDisplay 160)};
+		waitUntil {!isNull (findDisplay 12) || {!isNull (findDisplay 160)}};
 		if !(isNull (findDisplay 12)) then {
 			uiNamespace setVariable ["BIS_WL_mapControl", (findDisplay 12) displayCtrl 51];
 		} else {

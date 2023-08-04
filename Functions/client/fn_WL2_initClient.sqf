@@ -199,11 +199,11 @@ player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	detach BIS_WL_enemiesCheckTrigger;
 	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
-	if ((typeOf _vehicle == "B_Plane_Fighter_01_F") || (typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") || (typeOf _vehicle == "B_Heli_Attack_01_dynamicLoadout_F") || (typeOf _vehicle == "B_T_VTOL_01_armed_F") || (typeOf _vehicle == "B_T_VTOL_01_vehicle_F") || (typeOf _vehicle == "B_T_VTOL_01_infantry_F")) then  {
+	if ((typeOf _vehicle == "B_Plane_Fighter_01_F") || {(typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") || {(typeOf _vehicle == "B_Heli_Attack_01_dynamicLoadout_F") || {(typeOf _vehicle == "B_T_VTOL_01_armed_F") || {(typeOf _vehicle == "B_T_VTOL_01_vehicle_F") || {(typeOf _vehicle == "B_T_VTOL_01_infantry_F")}}}}}) then  {
 		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_betty;
 	};
-	if ((typeOf _vehicle == "O_Plane_Fighter_02_F") || (typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") || (typeOf _vehicle == "O_Heli_Attack_02_dynamicLoadout_F") || (typeOf _vehicle == "O_T_VTOL_02_vehicle_dynamicLoadout_F")) then {
+	if ((typeOf _vehicle == "O_Plane_Fighter_02_F") || {(typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") || {(typeOf _vehicle == "O_Heli_Attack_02_dynamicLoadout_F") || {(typeOf _vehicle == "O_T_VTOL_02_vehicle_dynamicLoadout_F")}}}) then {
 		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
@@ -296,7 +296,7 @@ addMissionEventHandler ["MarkerCreated", {
 		private _e = false;
 		
 		if (_keyName == _key1) then {
-			if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+			if !((getPlayerUID player) == "76561198034106257"|| {(getPlayerUID player) == "76561198865298977"}) then {
 				_e = true;
 			};
 		};
@@ -332,7 +332,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn {
 	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
 	_t = serverTime + 10;
-	waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || visibleMap};
+	waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {visibleMap}};
 	if !(visibleMap) then {
 		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
 	};
@@ -357,7 +357,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 	};
 };
 
-[player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || (getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)} != -1}] call BIS_fnc_WL2_hintHandle;
+[player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)}} != -1}] call BIS_fnc_WL2_hintHandle;
 
 0 spawn BIS_fnc_WL2_selectedTargetsHandle;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
@@ -368,7 +368,7 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 
 0 spawn {
 	_t = serverTime + 10;
-	waitUntil {sleep 0.1; ((serverTime > _t) || !(isNil {Dev_MrThomasM}))};
+	waitUntil {sleep 0.1; ((serverTime > _t) || {!(isNil {Dev_MrThomasM})})};
 	if (!(isNil {Dev_MrThomasM})) then {
 		0 spawn BIS_fnc_WL2_mrtmAction;
 	};

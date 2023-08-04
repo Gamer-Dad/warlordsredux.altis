@@ -53,12 +53,12 @@ _unloadAction = {
 };
 
 // conditions
-_playerReqs = "isPlayer _this && alive _target && _this distance _target < 30";
-_playerHoldReqs = "alive _target && _caller distance _target < 30";
-_aiReqs = "!isPlayer _this && alive _target";
+_playerReqs = "isPlayer _this && {alive _target && {_this distance _target < 30}}";
+_playerHoldReqs = "alive _target && {_caller distance _target < 30}";
+_aiReqs = "!isPlayer _this && {alive _target}";
 
-_loadReqs = " && _target call BIS_fnc_WL2_hasSupplyContainerSpace && _this call BIS_fnc_WL2_canLoad";
-_unloadReqs = " && _target call BIS_fnc_WL2_canUnload && !isNil { _this call BIS_fnc_WL2_getCurrentSector } && !(_this call BIS_fnc_WL2_isSectorSupplyFull)";
+_loadReqs = " && {_target call BIS_fnc_WL2_hasSupplyContainerSpace && {_this call BIS_fnc_WL2_canLoad}}";
+_unloadReqs = " && {_target call BIS_fnc_WL2_canUnload && {!isNil { _this call BIS_fnc_WL2_getCurrentSector } && {!(_this call BIS_fnc_WL2_isSectorSupplyFull)}}}";
 _queryReqs = "alive _target";
 
 // target: any player, action: load supplies, hold to activate

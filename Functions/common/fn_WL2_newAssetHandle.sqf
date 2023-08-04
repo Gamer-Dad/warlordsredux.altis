@@ -54,7 +54,7 @@ if (isPlayer _owner) then {
 			
 			_asset spawn {
 				_t = serverTime + WL_ASSET_SCENE_ICON_DURATION;
-				waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t || !alive _this || vehicle player == _this};
+				waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t || {!alive _this || {vehicle player == _this}}};
 				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
 			};
 
@@ -72,7 +72,7 @@ if (isPlayer _owner) then {
 			_asset call BIS_fnc_WL2_sub_vehicleKickAction;
 		};
 
-		if (WL_LOGISTICS_ENABLED && (_asset isKindOf "Truck_F" || _asset isKindOf "Slingload_base_F")) then {
+		if (WL_LOGISTICS_ENABLED && (_asset isKindOf "Truck_F" || {_asset isKindOf "Slingload_base_F"})) then {
 			switch (typeOf _asset) do {
 				case "B_Truck_01_ammo_F";
 				case "B_Truck_01_Repair_F";
@@ -197,7 +197,7 @@ if (isPlayer _owner) then {
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {
 			_asset setAmmoCargo 0; 
 			_amount = 10000;
-			if (typeOf _asset == "B_Truck_01_ammo_F" || typeOf _asset == "O_Truck_03_ammo_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || typeOf _asset == "B_Slingload_01_Ammo_F") then {
+			if (typeOf _asset == "B_Truck_01_ammo_F" || {typeOf _asset == "O_Truck_03_ammo_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || {typeOf _asset == "B_Slingload_01_Ammo_F"}}}) then {
 				_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportAmmo")) min 30000);
 			};
 			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];

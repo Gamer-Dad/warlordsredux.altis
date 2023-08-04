@@ -13,7 +13,7 @@ while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1
 	_votedYes = count (_warlords select {(_x getVariable ["BIS_WL_forfeitVote", -1]) == 1});
 	_votedNo = count (_warlords select {(_x getVariable ["BIS_WL_forfeitVote", -1]) == 0});
 	
-	if ((_votedYes >= _limit) && (serverTime >= 180)) then {
+	if ((_votedYes >= _limit) && {(serverTime >= 180)}) then {
 		missionNamespace setVariable ["BIS_WL_ffTeam", _side, true];
 		missionNamespace setVariable ["BIS_WL_missionEnd", true, true];
 		_terminate = true;

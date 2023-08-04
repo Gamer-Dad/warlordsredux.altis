@@ -19,7 +19,7 @@ sleep 0.25;
 
 "dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
 
-waitUntil {sleep 0.05; !isNull BIS_WL_targetSector || !visibleMap || BIS_WL_currentSelection == WL_ID_SELECTION_VOTING};
+waitUntil {sleep 0.05; !isNull BIS_WL_targetSector || {!visibleMap || {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING}}};
 
 ["dropping", "end"] call BIS_fnc_WL2_sectorSelectionHandle;
 

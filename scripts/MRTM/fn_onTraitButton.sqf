@@ -1,4 +1,4 @@
-if ((lbCurSel 4005) == -1 || (lbCurSel 4009) == -1) exitWith {};
+if ((lbCurSel 4005) == -1 || {(lbCurSel 4009) == -1}) exitWith {};
 
 _trait = lbData [4009, (lbCurSel 4009)];
 _unit = (lbData [4009, (lbCurSel 4009)]) call BIS_fnc_getUnitByUID;

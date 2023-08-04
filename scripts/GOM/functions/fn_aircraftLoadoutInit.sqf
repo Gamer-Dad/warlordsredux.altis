@@ -810,7 +810,7 @@ GOM_fnc_setPylonsRepair = {
 		systemchat format ["Repairing %1 from %2%3! Total duration: %4s.",_vehDispName,_damDisp,"%",_timeNeeded];
 		_empty = false;
 		
-		while {damage _veh > 0 && alive _veh && !_abort && !_empty} do {
+		while {damage _veh > 0 && {alive _veh && {!_abort && {!_empty}}}} do {
 			if (speed _veh > 3 OR speed _repairSource > 3) exitWith {_abort = true;systemchat "Aborting repair! Vehicle is moving!"};
 			_curDamage = damage _veh;
 			_timeNeeded = ceil (_curDamage / _repairtick);
@@ -827,7 +827,7 @@ GOM_fnc_setPylonsRepair = {
 				systemchat format ["%1 remaining: %2%3, %4s.",_vehDispName,_damDisp,"%",_timeNeeded];
 			};
 			_timeout = time + 1;
-			waituntil {time > _timeout || speed _veh > 3 || speed _repairSource > 3};
+			waituntil {time > _timeout || {speed _veh > 3 || {speed _repairSource > 3}}};
 			_timer = _timer + 1;
 		};
 
@@ -1443,7 +1443,7 @@ GOM_fnc_updateVehiclesLB = {
 	params ["_obj"];
 
 
-	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && (alive _x) && (isTouchingGround _x) && (((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player)};
+	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player)}}}};
 	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles",[]];
 	if (_vehicles isEqualTo []) exitWith {true};
 	if (_vehicles isEqualTo _lastVehs AND !(lbsize 1500 isequalto 0)) exitWith {true};//only update this when really needed, called on each frame

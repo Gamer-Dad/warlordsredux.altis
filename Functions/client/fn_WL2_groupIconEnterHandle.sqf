@@ -17,7 +17,7 @@ if (_scanCD == 0) then {_scanCD = -1};
 _isScanning = serverTime < _lastScan;
 _supplyPoints = (_sector getVariable ["BIS_WL_supplyPoints", 0]);
 _supplyPointsMax = (_sector getVariable ["BIS_WL_supplyPointsMax", 0]);
-_canSeeSupplyPoints = WL_LOGISTICS_ENABLED && _supplyPoints >= 0 && (_isScanning || (_sector in (BIS_WL_sectorsArray # 0)));
+_canSeeSupplyPoints = WL_LOGISTICS_ENABLED && {_supplyPoints >= 0 && {(_isScanning || {(_sector in (BIS_WL_sectorsArray # 0))})}};
 
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlCommit 0;
@@ -48,11 +48,11 @@ _canSeeSupplyPoints = WL_LOGISTICS_ENABLED && _supplyPoints >= 0 && (_isScanning
 		""
 	},
 	
-	if (_airstrip || _helipad || _harbor) then {"<br/>"} else {""},
+	if (_airstrip || {_helipad || {_harbor}}) then {"<br/>"} else {""},
 	if (_airstrip) then {localize "STR_A3_WL_param32_title"} else {""},
-	if (_airstrip && (_helipad || _harbor)) then {", "} else {""},
+	if (_airstrip && {(_helipad || {_harbor})}) then {", "} else {""},
 	if (_helipad) then {localize "STR_A3_WL_module_service_helipad"} else {""},
-	if ((_airstrip || _helipad) && _harbor) then {", "} else {""},
+	if ((_airstrip || {_helipad}) && {_harbor}) then {", "} else {""},
 	if (_harbor) then {localize "STR_A3_WL_param30_title"} else {""},
 	
 	localize "STR_A3_WL_param_scan_timeout",

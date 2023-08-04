@@ -151,7 +151,7 @@ switch (_displayClass) do {
 				true;
 			};
 			if (_keyName == _key1) then {
-				if !((getPlayerUID player) == "76561198034106257"|| (getPlayerUID player) == "76561198865298977") then {
+				if !((getPlayerUID player) == "76561198034106257"|| {(getPlayerUID player) == "76561198865298977"}) then {
 					true;
 				};
 			};
@@ -159,7 +159,7 @@ switch (_displayClass) do {
 		
 		_myDisplay spawn {
 			disableSerialization;
-			waitUntil {sleep WL_TIMEOUT_SHORT; lifeState player == "INCAPACITATED" || isNull _this};
+			waitUntil {sleep WL_TIMEOUT_SHORT; lifeState player == "INCAPACITATED" || {isNull _this}};
 			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 		};
 		

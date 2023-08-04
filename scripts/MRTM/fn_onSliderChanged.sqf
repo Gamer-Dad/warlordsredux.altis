@@ -5,7 +5,7 @@
 */
 
 params [["_mode", -1, [0]], ["_value", -1, [0]]];
-if((_mode isEqualTo -1) || (_value isEqualTo -1)) exitWith {};
+if((_mode isEqualTo -1) || {(_value isEqualTo -1)}) exitWith {};
 disableSerialization;
 
 _varData = switch(_mode) do {

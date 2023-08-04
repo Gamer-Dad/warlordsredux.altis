@@ -1,10 +1,10 @@
 params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-_dazzleable = _projectile call DAPS_fnc_IsLaserGuided ||
-	_projectile call DAPS_fnc_IsIRguided ||
-	_projectile call DAPS_fnc_IsVisualGuided ||
-	typeOf _projectile == "M_Vorona_HEAT" || 
-	typeOf _projectile == "M_Vorona_HE";
+_dazzleable = _projectile call DAPS_fnc_IsLaserGuided || {
+	_projectile call DAPS_fnc_IsIRguided || {
+	_projectile call DAPS_fnc_IsVisualGuided || {
+	typeOf _projectile == "M_Vorona_HEAT" || {
+	typeOf _projectile == "M_Vorona_HE"}}}};
 
 // smaller detection radius for non-dazzleable projectiles, saves perf
 _radius = if (_dazzleable) then { 225 } else { 125 };
@@ -23,7 +23,7 @@ while { _continue } do {
 
 	{	
 		// exit if projectile is dead
-		if (!alive _projectile || !_continue) exitWith {
+		if (!alive _projectile || {!_continue}) exitWith {
 			_continue = false;
 		};
 

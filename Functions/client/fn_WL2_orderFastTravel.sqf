@@ -48,7 +48,7 @@ sleep WL_TIMEOUT_SHORT;
 
 _action spawn BIS_fnc_WL2_sectorSelectionHandle;
 
-waitUntil {sleep WL_TIMEOUT_MIN; !isNull BIS_WL_targetSector || !visibleMap || BIS_WL_currentSelection == WL_ID_SELECTION_VOTING || !alive player || lifeState player == "INCAPACITATED"};
+waitUntil {sleep WL_TIMEOUT_MIN; !isNull BIS_WL_targetSector || {!visibleMap || {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING || {!alive player || {lifeState player == "INCAPACITATED"}}}}};
 
 [_action, "end"] call BIS_fnc_WL2_sectorSelectionHandle;
 

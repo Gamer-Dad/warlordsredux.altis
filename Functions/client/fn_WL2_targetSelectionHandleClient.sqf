@@ -18,7 +18,7 @@ while {!BIS_WL_missionEnd} do {
 		"Voting" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_popup_voting"] spawn BIS_fnc_WL2_smoothText;
 		sleep WL_TIMEOUT_STANDARD;
-		waitUntil {visibleMap || !isNull WL_TARGET_FRIENDLY};
+		waitUntil {visibleMap || {!isNull WL_TARGET_FRIENDLY}};
 		if (visibleMap && isNull BIS_WL_targetVote) then {
 			"Sector" call BIS_fnc_WL2_announcer;
 			[toUpper localize "STR_A3_WL_info_voting_click"] spawn BIS_fnc_WL2_smoothText;
@@ -26,7 +26,7 @@ while {!BIS_WL_missionEnd} do {
 	};
 	if !(isNull _lastTarget) then {
 		_t = serverTime + 3;
-		waitUntil {(_lastTarget getVariable "BIS_WL_owner") == BIS_WL_playerSide || serverTime > _t};
+		waitUntil {(_lastTarget getVariable "BIS_WL_owner") == BIS_WL_playerSide || {serverTime > _t}};
 	};
 	["client"] call BIS_fnc_WL2_updateSectorArrays;
 	_mostVotedVar spawn {
@@ -38,17 +38,17 @@ while {!BIS_WL_missionEnd} do {
 	"voting" spawn BIS_fnc_WL2_sectorSelectionHandle;
 
 	0 spawn {
-		waitUntil {!(BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) || BIS_WL_missionEnd || BIS_WL_resetTargetSelection_client};
+		waitUntil {!(BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) || {BIS_WL_missionEnd || {BIS_WL_resetTargetSelection_client}}};
 		
 		["voting", "end"] spawn BIS_fnc_WL2_sectorSelectionHandle;
 	};
 	
 	if !(isServer) then {
-		waitUntil {!isNull WL_TARGET_FRIENDLY || BIS_WL_missionEnd || BIS_WL_resetTargetSelection_client};
+		waitUntil {!isNull WL_TARGET_FRIENDLY || {BIS_WL_missionEnd || {BIS_WL_resetTargetSelection_client}}};
 	} else {
 		_pass = FALSE;
 		while {!_pass} do {
-			waitUntil {!isNull WL_TARGET_FRIENDLY || BIS_WL_missionEnd || BIS_WL_resetTargetSelection_client};
+			waitUntil {!isNull WL_TARGET_FRIENDLY || {BIS_WL_missionEnd || {BIS_WL_resetTargetSelection_client}}};
 			if (BIS_WL_resetTargetSelection_client) then {
 				sleep WL_TIMEOUT_STANDARD;
 				if (BIS_WL_resetTargetSelection_client) then {

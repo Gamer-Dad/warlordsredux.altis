@@ -11,11 +11,11 @@ sleep 2;
 			BIS_WL_gearKeyPressed = TRUE;
 			0 spawn {
 				_t = time + 0.5;
-				waitUntil {!BIS_WL_gearKeyPressed || time >= _t};
+				waitUntil {!BIS_WL_gearKeyPressed || {time >= _t}};
 				if (time < _t) then {
 					if (isNull findDisplay 602) then {
 						if (vehicle player == player) then {
-							if (cursorTarget distance player <= 5 && !(cursorTarget isKindOf "House") && (!alive cursorTarget || !(cursorTarget isKindOf "Man"))) then {
+							if (cursorTarget distance player <= 5 && {!(cursorTarget isKindOf "House") && {(!alive cursorTarget || {!(cursorTarget isKindOf "Man")})}}) then {
 								player action ["Gear", cursorTarget];
 							} else {
 								player action ["Gear", objNull];

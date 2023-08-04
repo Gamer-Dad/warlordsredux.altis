@@ -79,10 +79,10 @@ addMissionEventHandler ["EntityKilled", {
 			if !(alive _x) then {
 				deleteVehicle _asset;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && !(["BIS_WL_init", str _x, false] call BIS_fnc_inString)});	
+		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});
 	};
 
-	if ((typeOf (_this # 0)) == "Land_Pod_Heli_Transport_04_medevac_F" || (typeOf (_this # 0)) == "B_Slingload_01_Medevac_F") then {
+	if ((typeOf (_this # 0)) == "Land_Pod_Heli_Transport_04_medevac_F" || {(typeOf (_this # 0)) == "B_Slingload_01_Medevac_F"}) then {
 		deleteVehicle (_this # 0);
 	};
 }];
@@ -91,7 +91,7 @@ missionNamespace setVariable ["BIS_WL_missionStart", serverTime, true];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
 
-if !(isDedicated) then {waitUntil {!isNull player && isPlayer player}};
+if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 
 call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
@@ -109,9 +109,9 @@ call BIS_fnc_WL2_sectorsInitServer;
 setTimeMultiplier 3;
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || daytime < 5};
+		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || {daytime < 5}};
 		setTimeMultiplier 9;
-		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && daytime > 5};
+		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && {daytime > 5}};
 		setTimeMultiplier 3;
 	};
 };

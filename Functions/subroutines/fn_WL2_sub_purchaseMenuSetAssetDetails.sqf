@@ -35,10 +35,10 @@ _cost = _purchase_items lbValue lbCurSel _purchase_items;
 _funds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
 _supplies = player call BIS_fnc_WL2_getSectorSupply;
 
-_supplyCostText = if (!WL_LOGISTICS_ENABLED || _categoryId == "3") then {
+_supplyCostText = if (!WL_LOGISTICS_ENABLED || {_categoryId == "3"}) then {
 	""
 } else {
-	if (_categoryId == "6" && !(_className in ["FTSeized"])) then {
+	if (_categoryId == "6" && {!(_className in ["FTSeized"])}) then {
 		""
 	} else {
 		_supplyCost = switch _className do {

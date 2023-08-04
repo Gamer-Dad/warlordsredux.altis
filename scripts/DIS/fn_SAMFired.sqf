@@ -3,7 +3,7 @@ params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projecti
 if !(local _projectile) exitWith {};
 
 private _parents = [(configfile >> "CfgAmmo" >> _ammo), true] call BIS_fnc_returnParents;
-if !(("MissileBase" in _parents) || ("MissileCore" in _parents)) exitWith{};
+if !(("MissileBase" in _parents) || {("MissileCore" in _parents)}) exitWith{};
 
 private _airlock = getNumber (configfile>>"CfgAmmo">>_ammo>>"airLock");
 private _thrust = getNumber(configfile>>"CfgAmmo">>_ammo>>"thrust");

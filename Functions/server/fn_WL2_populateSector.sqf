@@ -73,7 +73,7 @@ if (_side == BIS_WL_localSide) then {
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 	}; 
 	//below is heli/jet spawn code 
-	if (!_connectedToBase && "H" in (_sector getVariable "BIS_WL_services")) then {
+	if (!_connectedToBase && {"H" in (_sector getVariable "BIS_WL_services")}) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
 		
 		if (count _neighbors > 0) then {

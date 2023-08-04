@@ -105,6 +105,6 @@ _purchase_transfer_units lbSetCurSel 0;
 			};
 		};
 		_t = serverTime + WL_TIMEOUT_SHORT;
-		waitUntil {serverTime > _t || ctrlText (_this # 2) != _valueText};
+		waitUntil {serverTime > _t || {ctrlText (_this # 2) != _valueText}};
 	};
 };

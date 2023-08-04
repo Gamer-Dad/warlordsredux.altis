@@ -15,13 +15,13 @@ while {count _sectorsToCheckNext > 0} do {
 	private _currentTier = [_distance];
 	{
 		private _sector = _x;
-		if (_sector in _potentialBases && !(_sector in _checkedAgainst)) then {
+		if (_sector in _potentialBases && {!(_sector in _checkedAgainst)}) then {
 			_currentTier pushBack _sector;
 		};
 		_checkedAgainst pushBackUnique _sector;
 		{
 			_sectorsToCheckNext pushBackUnique _x;
-		} forEach ((synchronizedObjects _sector) select {_x != (missionNamespace getVariable _firstBase) && _x in BIS_WL_allSectors && !(_x in _checkedAgainst)});
+		} forEach ((synchronizedObjects _sector) select {_x != (missionNamespace getVariable _firstBase) && {_x in BIS_WL_allSectors && {!(_x in _checkedAgainst)}}});
 	} forEach _sectorsToCheckNow;
 	if (count _currentTier > 1) then {
 		_tiers pushBack _currentTier;
@@ -32,7 +32,7 @@ while {count _sectorsToCheckNext > 0} do {
 _potentialBases = [];
 _tolerance = 8;
 while {count _potentialBases == 0} do {
-	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && (_x # 0) <= BIS_WL_baseDistanceMax};
+	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && {(_x # 0) <= BIS_WL_baseDistanceMax}};
 	_tolerance = _tolerance + 1;
 };
 _potentialBases = selectRandom _potentialBases;
@@ -61,7 +61,7 @@ _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
 _sectorsToGiveSide1 = floor (_nonBaseSectorsCnt * ([0, 0] # 0));
 _sectorsToGiveSide2 = floor (_nonBaseSectorsCnt * ([0, 0] # 1));
 
-while {_sectorsToGiveSide1 > 0 || _sectorsToGiveSide2 > 0} do {
+while {_sectorsToGiveSide1 > 0 || {_sectorsToGiveSide2 > 0}} do {
 	if (_sectorsToGiveSide1 > 0) then {
 		_side = BIS_WL_competingSides # 0;
 		_available = ([_side] call BIS_fnc_WL2_sortSectorArrays) # 1;

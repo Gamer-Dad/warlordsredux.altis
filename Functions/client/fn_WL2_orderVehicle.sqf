@@ -49,22 +49,23 @@ if (_class isKindOf "Man") then {
 
 	0 spawn {
 		waitUntil {
-			sleep WL_TIMEOUT_STANDARD;
-			BIS_WL_spacePressed ||
-			BIS_WL_backspacePressed ||
-			vehicle player != player ||
-			!alive player ||
-			lifeState player == "INCAPACITATED" ||
-			triggerActivated BIS_WL_enemiesCheckTrigger ||
-			(getPosATL player) select 2 > 1 ||
-			(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
-		};
+			sleep WL_TIMEOUT_STANDARD; 
+			BIS_WL_spacePressed || 
+			{BIS_WL_backspacePressed || 
+			{vehicle player != player || 
+			{!alive player || 
+			{lifeState player == "INCAPACITATED" || 
+			{triggerActivated BIS_WL_enemiesCheckTrigger || 
+			{(getPosATL player) select 2 > 1 || 
+			{(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
+		}}}}}}}};
+
 		if !(BIS_WL_spacePressed) then {
 			BIS_WL_backspacePressed = TRUE;
 		};
 	};
 
-	waitUntil {sleep WL_TIMEOUT_MIN; BIS_WL_spacePressed || BIS_WL_backspacePressed};
+	waitUntil {sleep WL_TIMEOUT_MIN; BIS_WL_spacePressed || {BIS_WL_backspacePressed}};
 
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "BIS_WL_deployKeyHandle"];
 	uiNamespace setVariable ['BIS_WL_deployKeyHandle', nil];

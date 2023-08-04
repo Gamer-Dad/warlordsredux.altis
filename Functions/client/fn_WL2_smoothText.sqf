@@ -55,7 +55,7 @@ if (count BIS_onScreenMessagesVisible > 1) then {
 	{
 		_ctrlID = 9990000 + _x;
 		_ctrl = (findDisplay 46) displayCtrl _ctrlID;
-		waitUntil {ctrlCommitted _ctrl || ctrlFade _ctrl > 0};
+		waitUntil {ctrlCommitted _ctrl || {ctrlFade _ctrl > 0}};
 		_ctrl ctrlSetPosition [_xDef, ((ctrlPosition _ctrl) # 1) + (_hDef / 25), _wDef, _hDef / 25];
 		_ctrl ctrlCommit 0.25;
 	} forEach (BIS_onScreenMessagesVisible - [_messageID]);

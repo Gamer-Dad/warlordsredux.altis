@@ -93,7 +93,7 @@ class FSM
                                         priority = 1.000000;
                                         to="update";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((vehicle player != _pState || (UAVControl getConnectedUAV player select 1) != _dState));"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(vehicle player != _pState || {(UAVControl getConnectedUAV player select 1) != _dState});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/

@@ -21,11 +21,11 @@ if (_action == "orderAsset") exitWith {
 			_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
 		} else {
 			if (_class isKindOf "Air") then {
-				if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
+				if (_class == "B_UAV_02_dynamicLoadout_F" || {_class == "B_T_UAV_03_dynamicLoadout_F" || {_class == "B_UAV_05_F" || {_class == "O_UAV_02_dynamicLoadout_F" || {_class == "O_T_UAV_04_CAS_F"}}}}) then {
 					if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 						_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
 						_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
-						_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
+						_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && {((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5)})}));
 						_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 						_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 						_asset setDir 0;
@@ -38,7 +38,7 @@ if (_action == "orderAsset") exitWith {
 						private _spawnPos = [];
 						private _dir = 0;
 						private _checks = 0;
-						while {count _spawnPos == 0 && _checks < 100} do {
+						while {count _spawnPos == 0 && {_checks < 100}} do {
 							_checks = _checks + 1;
 							private _i = (floor random _taxiNodesCnt) max 1;
 							private _pointB = _taxiNodes # _i;
@@ -58,7 +58,7 @@ if (_action == "orderAsset") exitWith {
 					createVehicleCrew _asset;
 					(group effectiveCommander _asset) deleteGroupWhenEmpty true;
 				} else {
-					_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && !(_class isKindOf "VTOL_Base_F");
+					_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && {!(_class isKindOf "VTOL_Base_F")};
 					if (_isPlane) then {
 						private _sector = ((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -66,7 +66,7 @@ if (_action == "orderAsset") exitWith {
 						private _spawnPos = [];
 						private _dir = 0;
 						private _checks = 0;
-						while {count _spawnPos == 0 && _checks < 100} do {
+						while {count _spawnPos == 0 && {_checks < 100}} do {
 							_checks = _checks + 1;
 							private _i = (floor random _taxiNodesCnt) max 1;
 							private _pointB = _taxiNodes # _i;
@@ -81,7 +81,7 @@ if (_action == "orderAsset") exitWith {
 						_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 						_asset setDir _dir;
 					} else {
-						if (_class == "B_UAV_01_F" || _class == "O_UAV_01_F") then {
+						if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
 							_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 							createVehicleCrew _asset;
 							(group _asset) deleteGroupWhenEmpty true;
@@ -91,7 +91,7 @@ if (_action == "orderAsset") exitWith {
 							if (isNil {((_targetPos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 								_sector = (((BIS_WL_allSectors) select {((_x distance _targetPos) < 15)}) # 0);
 								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
-								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
+								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && {((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5)})}));
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 								_asset setDir 0;
@@ -104,7 +104,7 @@ if (_action == "orderAsset") exitWith {
 								private _spawnPos = [];
 								private _dir = 0;
 								private _checks = 0;
-								while {count _spawnPos == 0 && _checks < 100} do {
+								while {count _spawnPos == 0 && {_checks < 100}} do {
 									_checks = _checks + 1;
 									private _i = (floor random _taxiNodesCnt) max 1;
 									private _pointB = _taxiNodes # _i;
@@ -203,7 +203,7 @@ if (_action == "orderAsset") exitWith {
 			};
 		};
 
-		if !(typeOf _asset == "B_Truck_01_medical_F" || typeOf _asset == "O_Truck_03_medical_F" || typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || unitIsUAV _asset) then {
+		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {unitIsUAV _asset}}}) then {
 			[_asset, 2] remoteExec ["lock", (owner _asset)];
 		} else {
 			[_asset, 0] remoteExec ["lock", (owner _asset)];
@@ -280,7 +280,7 @@ if (_action == "scan") exitWith {
 			params ["_sector", "_revealTrigger"];
 			while {!isNull _revealTrigger} do {
 				_eligibleSides = BIS_WL_competingSides select {(_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime};
-				_eligibleWarlords = BIS_WL_allWarlords select {local _x && (side group _x) in _eligibleSides};
+				_eligibleWarlords = BIS_WL_allWarlords select {(local _x) && {(side group _x) in _eligibleSides}};
 				{
 					_toReveal = _x;
 					{
@@ -415,7 +415,7 @@ if (_action == "unloadSupplies") exitWith {
 
 	// prevent spamming the message, only if the player/city has changed do we broadcast the unload praise
 	_lastTransported = serverNamespace getVariable ["BIS_WL_lastTransported", [objNull, -1]];
-	if (_traveled > 100 && ((_lastTransported # 0 != _sendingPlayer) || (_lastTransported # 1 != _traveled))) then {
+	if (_traveled > 100 && {((_lastTransported # 0 != _sendingPlayer) || {(_lastTransported # 1 != _traveled)})}) then {
 		_sectorName = (_sender call BIS_fnc_WL2_getCurrentSector) getVariable "BIS_WL_name";
 
 		_sideChatMessage = format [localize "STR_A3_WL_logistics_notification", name _sendingPlayer, floor _traveled, _sectorName];
