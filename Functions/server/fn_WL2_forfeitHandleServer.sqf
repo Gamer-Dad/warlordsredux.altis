@@ -20,8 +20,10 @@ while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1
 	};
 };
 
-{
+private _allPlayers = (BIS_WL_allWarlords select {side group _x == _side});
+for "_i" from 0 to (count _allPlayers - 1) do {
+	private _x = _allPlayers select _i;
 	if ((_x getVariable ["BIS_WL_forfeitVote", -1]) != -1) then {
 		_x setVariable ["BIS_WL_forfeitVote", -1, [2, (owner _x)]];
 	};
-} forEach (BIS_WL_allWarlords select {side group _x == _side});
+};

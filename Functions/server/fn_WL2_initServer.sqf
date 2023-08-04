@@ -58,12 +58,19 @@ addMissionEventHandler ["HandleDisconnect", {
 		BIS_WL_playerIDArr set [_sideID, _playerSideArr];
 	};
 
-	{
+	private _vehicles = (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
+	for "_i" from 0 to (count _vehicles - 1) do {
+		private _x = _vehicles select _i;
 		_x spawn BIS_fnc_WL2_sub_deleteAsset;
-	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
-	{
-		if !(isPlayer _x) then {deleteVehicle _x;};
-	} forEach ((units group _unit) - [_unit]);
+	};
+
+	private _units = ((units group _unit) - [_unit]);
+	for "_i2" from 0 to (count _units - 1) do {
+		private _x = _units select _i2;
+		if !(isPlayer _x) then {
+			deleteVehicle _x;
+		};
+	};
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 	
 	0 spawn BIS_fnc_WL2_calcImbalance;
@@ -74,12 +81,14 @@ addMissionEventHandler ["EntityKilled", {
 	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
 
 	if ((typeOf (_this # 0)) == "Land_IRMaskingCover_01_F") then {
-		{
+		private _objects = ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});
+		for "_i" from 0 to (count _objects - 1) do {
+			private _x = _objects select _i;
 			_asset = _x;
 			if !(alive _x) then {
 				deleteVehicle _asset;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});
+		};
 	};
 
 	if ((typeOf (_this # 0)) == "Land_Pod_Heli_Transport_04_medevac_F" || {(typeOf (_this # 0)) == "B_Slingload_01_Medevac_F"}) then {

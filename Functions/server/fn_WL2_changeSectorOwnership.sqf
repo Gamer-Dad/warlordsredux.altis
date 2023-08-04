@@ -10,23 +10,25 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 if !(_owner in _previousOwners) then {
 	_previousOwners pushBack _owner;
 	if (serverTime > 0 && count _previousOwners == 1) then {
-		{
+		private _allPlayers = (BIS_WL_allWarlords select {side group _x == _owner});
+		for "_i" from 0 to (count _allPlayers - 1) do {
+			private _x = _allPlayers select _i;
 			private _uid = getPlayerUID _x;
 			[_uid, (_sector getVariable "BIS_WL_value") * WL_SECTOR_CAPTURE_REWARD_MULTIPLIER] call BIS_fnc_WL2_fundsDatabaseWrite;
-		} forEach (BIS_WL_allWarlords select {side group _x == _owner});
+		};
 	};
 };
 
 _previousOwners pushBackUnique _owner;
 _sector setVariable ["BIS_WL_previousOwners", _previousOwners, true];
 
-_detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
-
-{
+private _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
+for "_i" from 0 to (count _detectionTrgs - 1) do {
+	private _x = _detectionTrgs select _i;
 	if ((_x getVariable "BIS_WL_handledSide") == _owner) then {
 		deleteVehicle _x;
 	};
-} forEach _detectionTrgs;
+};
 
 if (_detectionTrgs findIf {!isNull _x} == -1) then {_detectionTrgs = []};
 
@@ -38,9 +40,13 @@ private _enemySide = (BIS_WL_competingSides - [_owner]) # 0;
 if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _enemySide])) then {
 	missionNamespace setVariable [format ["BIS_WL_resetTargetSelection_server_%1", _enemySide], true];
 	BIS_WL_resetTargetSelection_client = true;
-	{
+
+	private _players = (BIS_WL_allWarlords select {side group _x == _enemySide});
+	for "_i" from 0 to (count _players - 1) do {
+		private _x = _players select _i;
 		(owner _x) publicVariableClient "BIS_WL_resetTargetSelection_client";
-	} forEach (BIS_WL_allWarlords select {side group _x == _enemySide});
+	};
+
 	if !(isDedicated) then {
 		if (BIS_WL_playerSide != _enemySide) then {
 			BIS_WL_resetTargetSelection_client = FALSE;

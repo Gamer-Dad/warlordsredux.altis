@@ -280,13 +280,16 @@ if (_action == "scan") exitWith {
 			params ["_sector", "_revealTrigger"];
 			while {!isNull _revealTrigger} do {
 				_eligibleSides = BIS_WL_competingSides select {(_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime};
-				_eligibleWarlords = BIS_WL_allWarlords select {(local _x) && {(side group _x) in _eligibleSides}};
-				{
+				private _eligibleWarlords = BIS_WL_allWarlords select {(local _x) && {(side group _x) in _eligibleSides}};
+				private _list = list _revealTrigger;
+				for "_i" from 0 to (count _list - 1) do {
+					private _x = _list select _i;
 					_toReveal = _x;
-					{
+					for "_i2" from 0 to (count _eligibleWarlords - 1) do {
+						private _x = _eligibleWarlords select _i2;
 						_x reveal [_toReveal, 4];
-					} forEach _eligibleWarlords;
-				} forEach list _revealTrigger;
+					};				
+				};
 				sleep WL_TIMEOUT_STANDARD;
 			};
 		};
@@ -372,9 +375,11 @@ if (_action == "fundsTransfer") exitWith {
 		[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
-		{
+		private _players = (allPlayers select {side group _x == side group _sender});
+		for "_i" from 0 to (count _players - 1) do {
+			private _x = _players select _i;
 			[[side _recipient, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost])] remoteExec ["commandChat", (owner _x)];
-		} forEach (allPlayers select {side group _x == side group _sender});
+		};
 	};
 };
 
