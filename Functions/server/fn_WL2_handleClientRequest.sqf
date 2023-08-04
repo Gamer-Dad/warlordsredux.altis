@@ -6,6 +6,8 @@ _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(get
 
 if (isNull _sender) exitWith {};
 
+if (_cost <= 0) exitWith {}; 
+
 if (_action == "orderAsset") exitWith {
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -358,11 +360,9 @@ if (_action == "targetReset") exitWith {
 
 if (_action == "orderAI") exitWith {
 	private _uid = getPlayerUID _sender;
-	if (_cost > 0) then {
-		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+	[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
-	};
+	[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 };
 
 if (_action == "fundsTransfer") exitWith {
