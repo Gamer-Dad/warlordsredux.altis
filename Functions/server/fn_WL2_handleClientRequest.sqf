@@ -426,7 +426,8 @@ if (_action == "unloadSupplies") exitWith {
 		serverNamespace setVariable ["BIS_WL_lastTransported", [_sendingPlayer, _traveled]];
 	};
 
-	_supplyRewardLimiter = _sender getVariable ["BIS_WL_supplyRewardLimiter", []];
+	_playerUID = getPlayerUID _sendingPlayer;
+	_supplyRewardLimiter = localNamespace getVariable [format["BIS_WL_supplyRewardLimiter_%1", _playerUID], []];
 	_currentTime = time;
 	_itemsToDelete = 0;
 	{
@@ -442,7 +443,7 @@ if (_action == "unloadSupplies") exitWith {
 	} else {
 		_supplyRewardLimiter pushBack _currentTime;
 	};
-	_sender setVariable["BIS_WL_supplyRewardLimiter", _supplyRewardLimiter];
+	localNamespace setVariable[format["BIS_WL_supplyRewardLimiter_%1", _playerUID], _supplyRewardLimiter];
 
 	// add CP if reward > 0
 	if (_reward > 0) then {
