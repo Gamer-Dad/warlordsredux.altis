@@ -17,7 +17,8 @@ if (count _sectorsWithRunways > 0) then {
 			private _spawnPosArr = [];
 			_taxiInArrCnt = count _taxiInArr;
 			
-			for [{_i = 0}, {_i <= (_taxiInArrCnt - 1)}, {_i = _i + 2}] do {
+			_i = 0;
+			for "_i" from 0 to (_taxiInArrCnt - 1) do {
 				_spawnPosArr pushBack [_taxiInArr # _i, _taxiInArr # (_i + 1), 0];
 			};
 			

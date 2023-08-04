@@ -1,9 +1,9 @@
 #include "..\warlords_constants.inc"
 
-for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-	(_display displayCtrl _i) ctrlEnable FALSE;
+_i = 100;
+for "_i" from 100 to 114 do {
+	(_display displayCtrl _i) ctrlEnable false;
 };
-
 
 _purchase_transfer_background = _display displayCtrl 115;
 _purchase_transfer_units = _display displayCtrl 116;
@@ -75,11 +75,13 @@ _purchase_transfer_units lbSetCurSel 0;
 		lbSort (_this # 0);
 		if (lbSize (_this # 0) == 0) exitWith {
 			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-			for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable TRUE;
+			_i = 100;
+			for "_i" from 100 to 114 do {
+				(_display displayCtrl _i) ctrlEnable true;
 			};
-			for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable FALSE;
+			_i = 115;
+			for "_i" from 115 to 120 do {
+				(_display displayCtrl _i) ctrlEnable false;
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
@@ -89,10 +91,12 @@ _purchase_transfer_units lbSetCurSel 0;
 			(_this # 0) lbSetCurSel 0;
 		} else {
 			_id = -1;
-			for [{_i = 0}, {_i < lbSize (_this # 0)}, {_i = _i + 1}] do {
+			_i = 0;
+			_size = ((lbSize (_this # 0)) - 1);
+			for "_i" from 0 to _size do {
 				if (((_this # 0) lbText _i) == _set) then {
 					_id = _i;
-				};
+				};				
 			};
 			if (_id >= 0) then {
 				(_this # 0) lbSetCurSel _id;

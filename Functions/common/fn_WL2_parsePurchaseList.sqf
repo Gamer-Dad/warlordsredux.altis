@@ -111,25 +111,32 @@ private _savedLoadoutHandled = FALSE;
 					case "Gear": {
 						_transportWeapons = _class >> "TransportWeapons";
 						_weaponsCnt = count _transportWeapons;
-						for [{_i = 0}, {_i < _weaponsCnt}, {_i = _i + 1}] do {
+						_i = 0;
+						for "_i" from 0 to (_weaponsCnt - 1) do {
 							_item = getText ((_transportWeapons select _i) >> "weapon");
 							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgWeapons" >> _item >> "displayName"), getNumber ((_transportWeapons select _i) >> "count"), if (_text == "") then {""} else {", "}];
 						};
+
 						_transportItems = _class >> "TransportItems";
 						_itemsCnt = count _transportItems;
-						for [{_i = 0}, {_i < _itemsCnt}, {_i = _i + 1}] do {
+						_i = 0;
+						for "_i" from 0 to (_itemsCnt - 1) do {
 							_item = getText ((_transportItems select _i) >> "name");
 							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgWeapons" >> _item >> "displayName"), getNumber ((_transportItems select _i) >> "count"), if (_text == "") then {""} else {", "}];
 						};
+
 						_transportMags = _class >> "TransportMagazines";
 						_magsCnt = count _transportMags;
-						for [{_i = 0}, {_i < _magsCnt}, {_i = _i + 1}] do {
+						_i = 0;
+						for "_i" from 0 to (_magsCnt - 1) do {
 							_item = getText ((_transportMags select _i) >> "magazine");
 							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgMagazines" >> _item >> "displayName"), getNumber ((_transportMags select _i) >> "count"), if (_text == "") then {""} else {", "}];
 						};
+
 						_transportBPacks = _class >> "TransportBackpacks";
 						_bPacksCnt = count _transportBPacks;
-						for [{_i = 0}, {_i < _bPacksCnt}, {_i = _i + 1}] do {
+						_i = 0;
+						for "_i" from 0 to (_bPacksCnt - 1) do {
 							_item = getText ((_transportBPacks select _i) >> "backpack");
 							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgVehicles" >> _item >> "displayName"), getNumber ((_transportBPacks select _i) >> "count"), if (_text == "") then {""} else {", "}];
 						};

@@ -446,11 +446,13 @@ switch (_displayClass) do {
 					_maxTransfer = BIS_WL_maxCP - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
 					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
-					for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-						(_display displayCtrl _i) ctrlEnable TRUE;
+					_i = 100;
+					for "_i" from 100 to 114 do {
+						(_display displayCtrl _i) ctrlEnable true;
 					};
-					for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-						(_display displayCtrl _i) ctrlEnable FALSE;
+					_i = 115;
+					for "_i" from 115 to 120 do {
+						(_display displayCtrl _i) ctrlEnable false;
 						(_display displayCtrl _i) ctrlSetFade 1;
 						(_display displayCtrl _i) ctrlCommit 0;
 					};
@@ -482,11 +484,13 @@ switch (_displayClass) do {
 		}];
 		_purchase_transfer_cancel ctrlAddEventHandler ["ButtonClick", {
 			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
-			for [{_i = 100}, {_i <= 114}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable TRUE;
+			_i = 100;
+			for "_i" from 100 to 114 do {
+				(_display displayCtrl _i) ctrlEnable true;
 			};
-			for [{_i = 115}, {_i <= 120}, {_i = _i + 1}] do {
-				(_display displayCtrl _i) ctrlEnable FALSE;
+			_i = 115;
+			for "_i" from 115 to 120 do {
+				(_display displayCtrl _i) ctrlEnable false;
 				(_display displayCtrl _i) ctrlSetFade 1;
 				(_display displayCtrl _i) ctrlCommit 0;
 			};
