@@ -27,7 +27,8 @@ _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), 
 
 switch true do {
 	case (_transport): { 
-		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#add8e6'>%1</t>", localize "STR_A3_WL_supplied"];
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#add8e6'>%1%2</t>", localize "STR_A3_WL_supplied", 
+			if (_reward > 0) then { format [" +%1CP", _reward] } else { "" }];
 	};
 	case (_unit isKindOf "Man"): { 
 		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];

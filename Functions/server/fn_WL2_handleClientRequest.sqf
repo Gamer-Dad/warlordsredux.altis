@@ -406,8 +406,11 @@ if (_action == "unloadSupplies") exitWith {
 
 	// reward for traveling AWAY from supply point, this doesn't reward team supply griefing/boosting
 	_traveled = 0;
-	if (_currentDistance > _loadedDistance) then {
+	_reward = if (_currentDistance > _loadedDistance) then {
 		_traveled = _currentDistance - _loadedDistance;
+		(WL_LOGISTICS_MIN_REWARD max (round (_traveled / 1000))) min WL_LOGISTICS_MAX_REWARD
+	} else {
+		0
 	};
 
 	// give rewards to owner, not unloader
@@ -423,13 +426,37 @@ if (_action == "unloadSupplies") exitWith {
 		serverNamespace setVariable ["BIS_WL_lastTransported", [_sendingPlayer, _traveled]];
 	};
 
+	_supplyRewardLimiter = _sender getVariable ["BIS_WL_supplyRewardLimiter", []];
+	_currentTime = time;
+	_itemsToDelete = 0;
+	{
+		if (_x > _currentTime - 300) then {
+			break;
+		} else {
+			_itemsToDelete = _itemsToDelete + 1;
+		};
+	} forEach _supplyRewardLimiter;
+	_supplyRewardLimiter deleteRange [0, _itemsToDelete];
+	if (count _supplyRewardLimiter >= 20) then {
+		_reward = 0;
+	} else {
+		_supplyRewardLimiter pushBack _currentTime;
+	};
+	_sender setVariable["BIS_WL_supplyRewardLimiter", _supplyRewardLimiter];
+
+	// add CP if reward > 0
+	if (_reward > 0) then {
+		_uid = getPlayerUID _sendingPlayer;
+		[_uid, _reward] call BIS_fnc_WL2_fundsDatabaseWrite;
+	};
+
 	// give +1 score if transported over threshold
 	if (_traveled >= WL_LOGISTICS_MIN_DISTANCE_FOR_SCORE) then {
 		_sendingPlayer addScore 1;
 	};
 
 	// Let the user know they've transported something regardless if funds are added.
-	[_sendingPlayer, 0, true] remoteExec ["BIS_fnc_WL2_killRewardClient", owner _sendingPlayer];
+	[_sendingPlayer, _reward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", owner _sendingPlayer];
 };
 
 if (_action == "repair") exitWith {
