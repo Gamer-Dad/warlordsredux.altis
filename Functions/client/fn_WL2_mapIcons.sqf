@@ -90,7 +90,7 @@ MRTM_fnc_iconText = {
 				_text = format ["%1: %2", _vd, _text];
 			} else {
 				if (count (crew _t) == 0) then {
-					_text = format ["%1", _vd];
+					_text = str _vd;
 				} else {
 					_playerCrew = (crew _t) select {isPlayer _x && {alive _x}};
 					{

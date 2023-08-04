@@ -1458,7 +1458,7 @@ GOM_fnc_updateVehiclesLB = {
 	{
 
 		_dispName = gettext (configfile >> "CfgVehicles" >> typeof _x >> "displayName");
-		_form = format ["%1",_dispName];
+		_form = str _dispName;
 		lbAdd [1500,_form];
 		lbSetData [1500,_foreachIndex,_x call BIS_fnc_objectVar];
 	} forEach _vehicles;
