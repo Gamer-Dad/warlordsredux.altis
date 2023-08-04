@@ -5,7 +5,8 @@ DAPS_fnc_start = compile preprocessFile "scripts\DAPS\Scripts\Start.sqf";
 
 if !(isServer) then {
 	//Earplugs
-	[] execVM "scripts\GF_Earplugs\Credits.sqf";	// Please keep the Credits or add them to your Diary
+	private _fncEarPlugsCredit = compile preprocessFileLineNumbers "scripts\GF_Earplugs\Credits.sqf";
+	call _fncEarPlugsCredit;
 
 	//Vehicle unflip 
 	waitUntil { !isNull player };

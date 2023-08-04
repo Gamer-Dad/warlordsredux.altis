@@ -5,5 +5,7 @@ _activated=_this select 2;
 waitUntil{!(isNil"dapsReady")};waitUntil{dapsReady};
 if(_activated)then{
 	deleteVehicle _module;
-	execVM"scripts\DAPS\Scripts\Management\ForceRecheck.sqf"};
+	private _fncForceRecheck = compile preprocessFileLineNumbers "scripts\DAPS\Scripts\Management\ForceRecheck.sqf";
+	call _fncForceRecheck;
+};
 TRUE

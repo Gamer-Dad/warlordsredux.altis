@@ -364,7 +364,8 @@ player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 0 spawn BIS_fnc_WL2_purchaseMenuOpeningHandle;
 0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
-[] execVM "scripts\GF_Earplugs\GF_Earplugs.sqf";
+private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF_Earplugs.sqf";
+call _fncEarPlugs;
 
 0 spawn {
 	_t = serverTime + 10;
