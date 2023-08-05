@@ -1,15 +1,16 @@
-class CfgDisabledCommands {
+class CfgDisabledCommands
+{
     class CREATEUNIT
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"STRING"},{"ARRAY"}};
         };
 
         class SYNTAX2
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"GROUP"},{"ARRAY"}};
         };
     };
@@ -18,7 +19,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{},{"SCALAR"}};
         };
     };
@@ -27,7 +28,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{},{"ARRAY"}};
         };
     };
@@ -36,7 +37,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"SCALAR"}};
         };
     };
@@ -45,7 +46,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{},{"STRING"}};
         };
     };
@@ -54,7 +55,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"SCALAR"},{"STRING"}};
         };
     };
@@ -63,7 +64,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -72,7 +73,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -81,7 +82,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -90,7 +91,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"SCALAR"}};
         };
     };
@@ -99,7 +100,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"BOOL"}};
         };
     };
@@ -108,7 +109,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -117,7 +118,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -126,7 +127,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -135,7 +136,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"SCALAR","ARRAY"}};
         };
     };
@@ -144,7 +145,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"SCALAR"}};
         };
     };
@@ -153,7 +154,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -162,7 +163,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -171,7 +172,7 @@ class CfgDisabledCommands {
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
