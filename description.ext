@@ -35,7 +35,8 @@ class Header
 	maxPlayers = 80;
 };
 
-#include "mp_security.hpp"
+#include "mp_securityCommands.hpp"
+#include "mp_securityFunctions.hpp"
 #include "functions.hpp"
 
 #include "communicationMenu.hpp"
