@@ -4,7 +4,10 @@ params ["_side", ["_fullRecalc", FALSE]];
 
 private _base = objNull;
 private _pool = BIS_WL_allSectors;
-private _owned = _pool select {(_x getVariable ["BIS_WL_owner", sideUnknown]) == _side};
+private _owned = _pool select {((_x getVariable ["BIS_WL_owner", sideUnknown]) == _side)};
+if !(isNil {BIS_WL_sectorsArrays}) then {
+	private _owned = _pool select {((_x getVariable ["BIS_WL_owner", sideUnknown]) == _side) && (_x in ((BIS_WL_sectorsArrays # (BIS_WL_competingSides find _side)) # 2))};
+};
 private _available = [];
 private _income = 0;
 private _services = [];
