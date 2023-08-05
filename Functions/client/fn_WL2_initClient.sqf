@@ -320,7 +320,6 @@ call BIS_fnc_WL2_sub_arsenalSetup;
 call BIS_fnc_WL2_refreshCurrentTargetData;
 call BIS_fnc_WL2_sceneDrawHandle;
 call BIS_fnc_WL2_targetResetHandle;
-player call BIS_fnc_WL2_sub_assetAssemblyHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
 0 spawn BIS_fnc_WL2_underWaterCheck;
 

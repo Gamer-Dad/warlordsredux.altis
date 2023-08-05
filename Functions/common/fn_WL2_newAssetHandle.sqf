@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_owner", "_asset", ["_assembled", FALSE]];
+params ["_owner", "_asset"];
 
 if (isNull _owner && isServer) then {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
@@ -21,24 +21,7 @@ if (isPlayer _owner) then {
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		
-		_rearmTime = switch true do {
-			case (_asset isKindOf "Helicopter"): { 30 };
-			case (_asset isKindOf "Plane"): { 30 };
-			case (_asset isKindOf "B_MBT_01_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-			case (_asset isKindOf "O_MBT_02_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-			case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
-			case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
-			case (_asset isKindOf "B_AAA_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Preatorian };
-			case (_asset isKindOf "B_SAM_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Spartan };
-			case (_asset isKindOf "B_SAM_System_03_F"): { WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea };
-			case (_asset isKindOf "O_SAM_System_04_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Centurion };
-			case (_asset isKindOf "B_Ship_MRLS_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
-			case (_asset isKindOf "B_MBT_01_mlrs_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-			case (_asset isKindOf "I_Truck_02_MRL_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-			default { WL_MAINTENANCE_COOLDOWN_REARM };
-		};
-		_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
+		_asset enableWeaponDisassembly false;
 		
 		private _defaultMags = [];
 		{
@@ -58,13 +41,74 @@ if (isPlayer _owner) then {
 				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
 			};
 
+			_rearmTime = switch true do {
+				case (_asset isKindOf "Helicopter"): { 30 };
+				case (_asset isKindOf "Plane"): { 30 };
+				case (_asset isKindOf "B_MBT_01_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+				case (_asset isKindOf "O_MBT_02_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+				case (_asset isKindOf "B_MBT_01_mlrs_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+				case (_asset isKindOf "I_Truck_02_MRL_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
+				default { WL_MAINTENANCE_COOLDOWN_REARM };
+			};
+			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+
 			if (_asset isKindOf "Air") then {
 				_asset spawn BIS_fnc_WL2_sub_rearmActionAir;
 			} else {
 				_asset call BIS_fnc_WL2_sub_rearmAction;
+				if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
+					_asset setVariable ["apsDisabled", true];
+					hintSilent parseText format[localize "STR_A3_WL_dazzler_instruction", actionKeysNames "cycleThrownItems"];
+				};
+
+				if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
+					_asset call BIS_fnc_WL2_sub_logisticsAddAction;
+					if (side _owner == east) then {
+						_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
+						_asset setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Does nothing but keep for reminder
+						_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
+					};
+				};
 			};
 		} else {
-			_asset call BIS_fnc_WL2_sub_assetAssemblyHandle;
+			_rearmTime = switch true do {
+				case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
+				case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
+				case (_asset isKindOf "B_AAA_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Preatorian };
+				case (_asset isKindOf "B_SAM_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Spartan };
+				case (_asset isKindOf "B_SAM_System_03_F"): { WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea };
+				case (_asset isKindOf "O_SAM_System_04_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Centurion };
+				case (_asset isKindOf "B_Ship_MRLS_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
+				default {WL_MAINTENANCE_COOLDOWN_REARM};
+			};
+			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+
+			if (direction _asset != (direction player)) then {
+				_asset setDir (direction player);
+			};
+
+			if (typeOf _asset == "B_Radar_System_01_F" || {typeOf _asset == "O_Radar_System_02_F"}) then {
+				_asset spawn {
+					params ["_asset"];
+
+					_asset setVariable ["radarOperation", false];
+					_asset call BIS_fnc_WL2_sub_radarOperate;
+
+					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
+					_radarIter = 0;
+
+					while {alive _asset} do {
+						if (_asset getVariable "radarOperation") then {
+							_asset setVehicleRadar 1;
+							_asset lookAt (_lookAtPositions # _radarIter);
+							_radarIter = (_radarIter + 1) % 8;
+						} else {
+							_asset setVehicleRadar 0;
+						};
+						sleep 1.2;
+					};				
+				};
+			};
 		};
 
 		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
@@ -141,45 +185,6 @@ if (isPlayer _owner) then {
 			};
 			
 			_asset removeAction _repairActionID;
-		};
-
-		if (typeOf _asset == "B_Radar_System_01_F" || {typeOf _asset == "O_Radar_System_02_F"}) then {
-			_asset spawn {
-				params ["_asset"];
-
-				_asset setVariable ["radarOperation", false];
-				_asset call BIS_fnc_WL2_sub_radarOperate;
-
-				_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
-				_radarIter = 0;
-
-				while {alive _asset} do {
-					if (_asset getVariable "radarOperation") then {
-						_asset setVehicleRadar 1;
-						_asset lookAt (_lookAtPositions # _radarIter);
-						_radarIter = (_radarIter + 1) % 8;
-					} else {
-						_asset setVehicleRadar 0;
-					};
-					sleep 1.2;
-				};				
-			};
-		};
-
-		if !(_assembled || {_asset isKindOf "Thing"}) then {
-			if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
-				_asset setVariable ["apsDisabled", true];
-				hintSilent parseText format[localize "STR_A3_WL_dazzler_instruction", actionKeysNames "cycleThrownItems"];
-			};
-
-			if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
-				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-				if (side _owner == east) then {
-					_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
-					_asset setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Does nothing but keep for reminder
-					_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
-				};
-			};
 		};
 		
 		_asset addEventHandler ["Killed", {

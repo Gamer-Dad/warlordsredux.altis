@@ -170,7 +170,6 @@ if (_action == "orderAsset") exitWith {
 						};
 					} else {
 						_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-						_asset enableWeaponDisassembly false;
 					};
 					_asset setDir _direction;
 				} else {
