@@ -1,3 +1,9 @@
+/*
+	Author: MrThomasM
+
+	Description: Exec's the actions behind the group menu's buttons.
+*/
+
 params ["_action"];
 
 if (_action == "Invite") exitWith {

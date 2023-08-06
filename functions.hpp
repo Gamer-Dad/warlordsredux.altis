@@ -210,6 +210,8 @@ class CfgFunctions {
 			class onButtonClick {};
 			class onLBSelChangedTraits {};
 			class onTraitButton {};
+			class openEmoteMenu {};
+			class emote {};
 		};
 	};
 	class GOM {

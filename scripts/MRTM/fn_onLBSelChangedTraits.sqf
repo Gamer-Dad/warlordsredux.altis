@@ -1,3 +1,9 @@
+/*
+	Author: MrThomasM
+
+	Description: Updates the role apply button.
+*/
+
 params ["_control", "_lbCurSel", "_lbSelection"];
 
 if ((_lbCurSel == -1) || {(lbCurSel 4005) == -1}) exitWith {};

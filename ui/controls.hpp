@@ -1327,6 +1327,17 @@ class MRTM_settingsMenu
 			font = "PuristaMedium";
 			action =  "closeDialog 1; 0 spawn MRTM_fnc_openGroupMenu;";
 		};
+		class MRTMEmotesButton: RscButtonMRTM
+		{
+			idc = 1606;
+			text = "EMOTES";
+			x = 0.387969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action =  "closeDialog 1; 0 spawn MRTM_fnc_openEmoteMenu;";
+		};
 	};
 };
 
@@ -1569,6 +1580,85 @@ class MRTM_groupsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
+		};
+	};
+};
+
+class MRTM_emotesMenu
+{
+	idd = 5000;
+
+	class Controls
+	{
+		class MRTMEmotesBackground: IGUIBackMRTM
+		{
+			idc = 5001;
+			colorBackground[] = {0,0,0,0.75};
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.20375 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class MRTMEmotesHeaderBackground: IGUIBackMRTM
+		{
+			idc = 5002;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.20375 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMEmotesHeaderTextLeft: RscStructuredTextMRTM
+		{
+			idc = 5003;
+			text = "Emote menu";
+			colorBackground[] = {0,0,0,0};
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMEmotesList: RscListboxMRTM
+		{
+			idc = 5004;
+			deletable = 0;
+			canDrag = 0;
+			color[] = {0,1,0,1};
+			type = CT_LISTBOX;
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.265 * safezoneH + safezoneY;
+			w = 0.203981 * safezoneW;
+			h = 0.496 * safezoneH;
+			autoScrollSpeed = -1;
+			autoScrollDelay = 5;
+			autoScrollRewind = 0;
+			class ListScrollBar{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			};
+			style = LB_TEXTURES;
+		};
+		class MRTMEmotesCloseButton: RscButtonMRTM
+		{
+			idc = 5100;
+			text = "CLOSE";
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
 		};
 	};
 };

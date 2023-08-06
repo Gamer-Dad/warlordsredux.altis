@@ -1,3 +1,8 @@
+/*
+	Author: MrThomasM
+
+	Description: Adds stats to the unit.
+*/
 params ["_event", "_info"];
 
 

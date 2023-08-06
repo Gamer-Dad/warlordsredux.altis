@@ -1,3 +1,8 @@
+/*
+	Author: MrThomasM
+
+	Description: Sets listbox picture.
+*/
 params ["_unit"];
 
 _pic = "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_toolbox_units_ca.paa";

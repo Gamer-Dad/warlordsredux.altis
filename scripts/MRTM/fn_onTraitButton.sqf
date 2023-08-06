@@ -1,3 +1,9 @@
+/*
+	Author: MrThomasM
+
+	Description: Sets unit's role.
+*/
+
 if ((lbCurSel 4005) == -1 || {(lbCurSel 4009) == -1}) exitWith {};
 
 _trait = lbData [4009, (lbCurSel 4009)];
