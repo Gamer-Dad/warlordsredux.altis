@@ -1,4 +1,8 @@
-params ["_pos", "_class"];
+params ["_pos", "_class", "_side"];
+
+if !(isServer) exitWith {};
+
+_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 
 private _vehCfg = configFile >> "CfgVehicles" >> _class; 
 private _crewCount = { 
@@ -9,12 +13,18 @@ private _crewCount = {
 private _myArray = [0];
 _myArray resize _crewCount;
 
-_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-private _grp = createGroup east;
-{
-	private _unit = _grp createUnit ["O_UAV_AI", _pos, [], 0, "NONE"];
-	_unit moveInAny _asset;
-} forEach _myArray;
-
+if (_side == west) then {
+	private _grp = createGroup west;
+	for "_i" from 0 to (count _myArray - 1) do {
+		private _unit = _grp createUnit ["B_UAV_AI", _pos, [], 0, "NONE"];
+		_unit moveInAny _asset;
+	};
+} else {
+	private _grp = createGroup east;
+	for "_i" from 0 to (count _myArray - 1) do {
+		private _unit = _grp createUnit ["O_UAV_AI", _pos, [], 0, "NONE"];
+		_unit moveInAny _asset;
+	};
+};
 
 _asset;

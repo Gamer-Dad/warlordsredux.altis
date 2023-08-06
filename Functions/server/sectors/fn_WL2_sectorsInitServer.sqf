@@ -32,7 +32,7 @@ while {count _sectorsToCheckNext > 0} do {
 _potentialBases = [];
 _tolerance = 8;
 while {count _potentialBases == 0} do {
-	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && {(_x # 0) <= BIS_WL_baseDistanceMax}};
+	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && {(_x # 0) <= 999}};
 	_tolerance = _tolerance + 1;
 };
 _potentialBases = selectRandom _potentialBases;
@@ -103,7 +103,7 @@ while {_sectorsToGiveSide1 > 0 || {_sectorsToGiveSide2 > 0}} do {
 	_sectorPos = position _sector;
 	
 	if ((_sector getVariable ["BIS_WL_owner", sideUnknown]) == sideUnknown) then {
-		_sector setVariable ["BIS_WL_owner", BIS_WL_localSide, TRUE];
+		_sector setVariable ["BIS_WL_owner", RESISTANCE, TRUE];
 		_sector setVariable ["BIS_WL_previousOwners", [], TRUE];
 		_sector setVariable ["BIS_WL_revealedBy", [], TRUE];
 		[_sector] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated];

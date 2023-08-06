@@ -35,17 +35,17 @@ private _savedLoadoutHandled = FALSE;
 			};
 			
 			if (_category == "Gear") then {
-				_data pushBack ["Arsenal", BIS_WL_arsenalCost, [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
+				_data pushBack ["Arsenal", 1000, [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
 			
 			if (_category == "Gear" && !_lastLoadoutHandled) then {
 				_lastLoadoutHandled = TRUE;
-				_data pushBack ["LastLoadout", BIS_WL_lastLoadoutCost, [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
+				_data pushBack ["LastLoadout", 100, [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
 			};
 			
 			if (_category == "Gear" && !_savedLoadoutHandled) then {
 				_savedLoadoutHandled = TRUE;
-				_data pushBack ["SavedLoadout", BIS_WL_savedLoadoutCost, [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
+				_data pushBack ["SavedLoadout", 500, [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
 			};
 			
 			{
@@ -182,15 +182,15 @@ private _savedLoadoutHandled = FALSE;
 
 _strategyArr = [];
 
-_strategyArr pushBack ["Scan", BIS_WL_scanCost, [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"];
-_strategyArr pushBack ["FTSeized", BIS_WL_fastTravelCostOwned, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
-_strategyArr pushBack ["FTConflict", BIS_WL_fastTravelCostContested, [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
+_strategyArr pushBack ["Scan", 750, [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"];
+_strategyArr pushBack ["FTSeized", 0, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
+_strategyArr pushBack ["FTConflict", 200, [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
 _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_ft", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_ft"];
 _strategyArr pushBack ["RespawnPodFT", 0, [], "Fast Travel to Medical Pod (Free)", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Fast travel to medical pod"];
 _strategyArr pushBack ["RespawnVic", 200, [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
 _strategyArr pushBack ["RespawnPod", 200, [], "Purchase Fast Travel Pod", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order medical pod"];
-_strategyArr pushBack ["FundsTransfer", BIS_WL_fundsTransferCost, [], localize "STR_A3_WL_menu_fundstransfer", "\A3\Data_F_Warlords\Data\preview_cp_transfer.jpg", localize "STR_A3_WL_menu_fundstransfer_info"];
-_strategyArr pushBack ["TargetReset", BIS_WL_targetResetCost, [], localize "STR_A3_WL_menu_resetvoting", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_resetvoting_info"];
+_strategyArr pushBack ["FundsTransfer", 2000, [], localize "STR_A3_WL_menu_fundstransfer", "\A3\Data_F_Warlords\Data\preview_cp_transfer.jpg", localize "STR_A3_WL_menu_fundstransfer_info"];
+_strategyArr pushBack ["TargetReset", 500, [], localize "STR_A3_WL_menu_resetvoting", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_resetvoting_info"];
 _strategyArr pushBack ["forfeitVote", 0, [], "Order forfeit", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order forfeit"];
 _strategyArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_lock_all"];
 _strategyArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_unlock_all"];

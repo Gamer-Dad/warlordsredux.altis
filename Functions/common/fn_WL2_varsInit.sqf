@@ -4,37 +4,19 @@ switch (_locality) do {
 	case "common": {
 		BIS_WL_sidesArray = [WEST, EAST, RESISTANCE];
 		BIS_WL_competingSides = [WEST, EAST];
-		BIS_WL_targetVotingDuration = 15;
-		BIS_WL_localSide = (BIS_WL_sidesArray - BIS_WL_competingSides) # 0;
 		BIS_WL_missionEnd = FALSE;
 		BIS_WL_sectorUpdateInProgress = FALSE;
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
 		if (BIS_WL_mapSize == 0) then {BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "Grid" >> "OffsetY")};
 		BIS_WL_mapAreaArray = [[BIS_WL_mapSize / 2, BIS_WL_mapSize / 2], BIS_WL_mapSize / 2, BIS_WL_mapSize / 2, 0, TRUE];
 		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
-		BIS_WL_scanCost = 750;
-		BIS_WL_fastTravelCostOwned = 0;
-		BIS_WL_fastTravelCostContested = 200;
-		BIS_WL_fundsTransferCost = 2000;
-		BIS_WL_targetResetCost = 500;
-		BIS_WL_maxCP = 50000;
-		BIS_WL_arsenalCost = 1000;
-		BIS_WL_assetLimit = 10;
 		BIS_WL_maxSubordinates = 1;
 		BIS_WL_targetResetTimeout = 300;
 		BIS_WL_baseValue = 50;
-		BIS_WL_scanCooldown = 300;
-		BIS_WL_lastLoadoutCost = 100;
-		BIS_WL_savedLoadoutCost = 500;
 	};
 	case "server": {
 		BIS_WL_baseDistanceMin = 20;
-		BIS_WL_baseDistanceMax = -1;
-		if (BIS_WL_baseDistanceMax < 0) then {BIS_WL_baseDistanceMax = 999};
 		BIS_WL_playerIDArr = [[], []];
-		BIS_WL_faction_WEST = "BLU_F";
-		BIS_WL_faction_EAST = "OPF_F";
-		BIS_WL_faction_GUER = "IND_F";
 		{
 			missionNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
 		} forEach BIS_WL_competingSides;
