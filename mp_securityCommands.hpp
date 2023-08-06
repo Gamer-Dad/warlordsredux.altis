@@ -10,7 +10,7 @@ class CfgDisabledCommands
 
         class SYNTAX2
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,1};
             args[] = {{"GROUP"},{"ARRAY"}};
         };
     };
