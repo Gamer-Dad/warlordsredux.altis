@@ -11,7 +11,7 @@ if (_unit in (units player)) then {
 			_pic = "Img\red_arrow_ca.paa";
 		} else {
 			if (!(_unit in (units player)) && {count ((units _unit) select {isPlayer _x}) > 1}) then {
-				_pic = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa";	
+				_pic = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa";
 			};
 		};
 	};

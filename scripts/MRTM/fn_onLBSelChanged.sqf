@@ -51,4 +51,4 @@ if (_lb == "Players") then {
 	};
 };
 
-[] call MRTM_fnc_openGroupMenu;
+0 spawn MRTM_fnc_openGroupMenu;

@@ -7,7 +7,7 @@ if (_action == "Invite") exitWith {
 		_unit = _data call BIS_fnc_getUnitByUID;
 		[_unit, player] remoteExec ["MRTM_fnc_invite", 2];
 	};
-	[] call MRTM_fnc_openGroupMenu;
+	0 spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Decline") exitWith {
@@ -17,7 +17,7 @@ if (_action == "Decline") exitWith {
 		_unit = _data call BIS_fnc_getUnitByUID;
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 	};
-	[] call MRTM_fnc_openGroupMenu;
+	0 spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Accept") exitWith {
@@ -37,7 +37,7 @@ if (_action == "Accept") exitWith {
 		player setUnitTrait ["Engineer", false, false];
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 	};
-	[] call MRTM_fnc_openGroupMenu;
+	0 spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Leave") exitWith {
@@ -51,5 +51,5 @@ if (_action == "Leave") exitWith {
 	player setUnitTrait ["AT", false, true];
 	player setUnitTrait ["AA", false, true];
 	player setUnitTrait ["Engineer", false, false];
-	[] call MRTM_fnc_openGroupMenu;
+	0 spawn MRTM_fnc_openGroupMenu;
 };

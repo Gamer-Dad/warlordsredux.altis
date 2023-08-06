@@ -1413,7 +1413,7 @@ class MRTM_groupsMenu
 		class MRTMRefreshButton: RscCheckboxMRTM
 		{
 			idc = 4008;
-			action = "[] call MRTM_fnc_openGroupMenu;";
+			action = "0 spawn MRTM_fnc_openGroupMenu;";
 			x = 0.698969 * safezoneW + safezoneX;
 			y = 0.27 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
