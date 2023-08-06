@@ -12,7 +12,7 @@ if (uiNamespace getVariable "BIS_WL_cp_saved") then {
 	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#ffffff' shadow = '2' size = '%2'>%1 CP</t>", ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)), 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 };
 
-(uiNamespace getVariable "BIS_WL_osd_income_side_2") ctrlSetStructuredText parseText format ["<t size = '%2' shadow = '2'>%1</t>", (((BIS_WL_matesAvailable - count (units player)) + 1) max 0), 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
+(uiNamespace getVariable "BIS_WL_osd_income_side_2") ctrlSetStructuredText parseText format ["<t size = '%3' shadow = '2'>%1/%2</t>", (((BIS_WL_matesAvailable - count (units player)) + 1) max 0), BIS_WL_matesAvailable, 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 
 if (_fullRefresh) then {
 	(uiNamespace getVariable "BIS_WL_osd_sectors_side_1") ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", count (BIS_WL_sectorsArray # 0), 0.6 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
