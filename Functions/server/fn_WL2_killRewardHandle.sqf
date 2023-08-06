@@ -7,6 +7,7 @@ if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewa
 if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then {((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {((UAVControl vehicle _killer) # 0)})};
 if (isNull _instigator) then {_instigator = (vehicle _killer)};
 if !(isNull _instigator) then {
+	if (isNil {_instigator getVariable "BIS_WL_ownerAsset"}) exitWith {};
 	_responsibleLeader = leader _instigator;
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
