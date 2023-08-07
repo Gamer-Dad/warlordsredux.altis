@@ -12,7 +12,7 @@ _data = lbData [4005, (lbCurSel 4005)];
 _unit = _data call BIS_fnc_getUnitByUID;
 
 if !(_unit getUnitTrait (lbData [4009, _lbCurSel])) then {
-	ctrlEnable [4106, true];
+	//ctrlEnable [4106, true];
 } else {
 	ctrlEnable [4106, false];
 };

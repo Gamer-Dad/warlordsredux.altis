@@ -46,8 +46,8 @@ if (_lb == "Players") then {
 		ctrlEnable [4103, false];
 	};
 	if ((leader _unit) == player && {isPlayer _unit}) then {
-		ctrlShow [4009, true];
-		ctrlShow [4106, true];
+		//ctrlShow [4009, true];
+		//ctrlShow [4106, true];
 		{
 			_index = lbAdd [4009, _x];
 			lbSetData [4009, _index, (lbData [4005, (lbCurSel 4005)])];
