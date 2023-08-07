@@ -1,5 +1,71 @@
 class CfgDisabledCommands
 {
+    class CREATEVEHICLE
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{"STRING"},{"ARRAY"}};
+        };
+
+        class SYNTAX2
+        {
+            targets[] = {1,0,0};
+            args[] = {{},{"ARRAY"}};
+        };
+    };
+
+    class CREATEVEHICLELOCAL
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{"STRING"},{"ARRAY"}};
+        };
+    };
+
+    class CREATE3DENENTITY
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{"GROUP"},{"ARRAY"}};
+        };
+
+        class SYNTAX2
+        {
+            targets[] = {1,0,0};
+            args[] = {{},{"ARRAY"}};
+        };
+    };
+
+    class CREATEAGENT
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{},{"ARRAY"}};
+        };
+    };
+
+    class CREATETRIGGER
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{},{"ARRAY"}};
+        };
+    };
+
+    class SETTRIGGERSTATEMENTS
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{"OBJECT"},{"ARRAY"}};
+        };
+    };
+
     class CREATEUNIT
     {
         class SYNTAX1

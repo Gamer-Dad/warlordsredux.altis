@@ -183,13 +183,6 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 	_x setMarkerTypeLocal "selector_selectedMission";
 } forEach [_mrkrTargetEnemy, _mrkrTargetFriendly];
 
-BIS_WL_enemiesCheckTrigger = createTrigger ["EmptyDetector", position player, FALSE];
-BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
-BIS_WL_enemiesCheckTrigger setTriggerArea [100, 100, 0, false];
-BIS_WL_enemiesCheckTrigger setTriggerActivation ["ANYPLAYER", "PRESENT", TRUE];
-BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS_WL_playerSide == 0} count thislist > 0", "", ""];
-
-
 //Evenhandlers
 "fundsDatabaseClients" addPublicVariableEventHandler {
 	[] spawn BIS_fnc_WL2_refreshOSD;
@@ -197,8 +190,6 @@ BIS_WL_enemiesCheckTrigger setTriggerStatements ["{(side group _x) getFriend BIS
 
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
-	detach BIS_WL_enemiesCheckTrigger;
-	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 	if ((typeOf _vehicle == "B_Plane_Fighter_01_F") || {(typeOf _vehicle == "B_Plane_CAS_01_dynamicLoadout_F") || {(typeOf _vehicle == "B_Heli_Attack_01_dynamicLoadout_F") || {(typeOf _vehicle == "B_T_VTOL_01_armed_F") || {(typeOf _vehicle == "B_T_VTOL_01_vehicle_F") || {(typeOf _vehicle == "B_T_VTOL_01_infantry_F")}}}}}) then  {
 		[["voiceWarningSystem", "betty"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_betty;
@@ -207,12 +198,6 @@ player addEventHandler ["GetInMan", {
 		[["voiceWarningSystem", "rita"], 0, "", 25, "", false, true, false, true] call BIS_fnc_advHint;
 		0 spawn BIS_fnc_WL2_rita;
 	};
-}];
-
-player addEventHandler ["GetOutMan", {
-	params ["_unit", "_role", "_vehicle", "_turret"];
-	detach BIS_WL_enemiesCheckTrigger;
-	BIS_WL_enemiesCheckTrigger attachTo [vehicle player, [0, 0, 0]];
 }];
 
 player addEventHandler ["InventoryOpened",{

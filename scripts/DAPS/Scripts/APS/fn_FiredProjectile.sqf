@@ -60,8 +60,7 @@ while { _continue } do {
 				[_x, _relativeDirection, true] remoteExec ["DAPS_fnc_Report", owner _x];
 
 				// replace projectile with explosion
-				deleteVehicle _projectile;
-				createVehicle ["HelicopterExploSmall", _projectilePosition, [], 0, "FLY"];
+				triggerAmmo _projectile;
 
 				// if projectile triggers friendly APS, warn player that fired it
 				if ((side _unit == side _x) || {(side _x == civilian) && {side ((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == side _unit}}) then {

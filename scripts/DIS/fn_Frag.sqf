@@ -22,8 +22,3 @@ _pos = getPos _m;
 triggerAmmo _m;
 _d = _pos distance _tPos;
 systemChat format ["SAM detonated %1 meters from target", round _d];
-
-//Burst explo
-_m2 = createVehicle [_type, _pos, [], 40, "FLY"];
-[_m2, [_unit, ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)]] remoteExecCall ["setShotParents", 2];
-triggerAmmo _m2;

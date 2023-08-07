@@ -14,13 +14,3 @@ if (_newUnit getVariable ["BIS_WL_ignore", FALSE]) exitWith {};
 		BIS_WL_allWarlords pushBackUnique _newUnit;
 	};
 };
-
-if (local _newUnit) then {
-	if (_newUnit == player) then {
-		0 spawn {
-			waitUntil {sleep 0.1; !isNil {BIS_WL_enemiesCheckTrigger}};
-			detach BIS_WL_enemiesCheckTrigger;
-			BIS_WL_enemiesCheckTrigger attachTo [player, [0, 0, 0]];
-		};
-	};
-};
