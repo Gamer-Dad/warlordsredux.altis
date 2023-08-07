@@ -11,7 +11,6 @@ ctrlShow [4106, false];
 ctrlShow [4103, false];
 
 private _number = random 200;
-[format ["%1: LB Sel changed", _number]] remoteExec ["systemChat", player];
 
 if (_lb == "Players") then {
 	if ((lbCurSel 4006) < 0) exitWith {};
