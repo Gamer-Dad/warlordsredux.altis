@@ -36,7 +36,7 @@
 			};
 			
 			if !(missionNamespace getVariable [_votingResetVar, false]) then {
-				_votingEnd = serverTime + 15;
+				_votingEnd = serverTime + (getMissionConfigValue ["BIS_WL_sectorVotingDuration", 15]);
 				_nextUpdate = serverTime;
 				
 				while {serverTime < _votingEnd && {!(missionNamespace getVariable [_votingResetVar, false])}} do {

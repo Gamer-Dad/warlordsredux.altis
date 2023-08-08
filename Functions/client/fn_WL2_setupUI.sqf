@@ -443,7 +443,7 @@ switch (_displayClass) do {
 					playSound "AddItemOK";
 					_target = _targetArr # 0;
 					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
-					_maxTransfer = 50000 - _targetFunds;
+					_maxTransfer = (getMissionConfigValue ["BIS_WL_maxCP", 50000]) - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
 					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					_i = 100;

@@ -35,17 +35,17 @@ private _savedLoadoutHandled = FALSE;
 			};
 			
 			if (_category == "Gear") then {
-				_data pushBack ["Arsenal", 1000, [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
+				_data pushBack ["Arsenal", (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]), [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
 			
 			if (_category == "Gear" && !_lastLoadoutHandled) then {
 				_lastLoadoutHandled = TRUE;
-				_data pushBack ["LastLoadout", 100, [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
+				_data pushBack ["LastLoadout", (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]), [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
 			};
 			
 			if (_category == "Gear" && !_savedLoadoutHandled) then {
 				_savedLoadoutHandled = TRUE;
-				_data pushBack ["SavedLoadout", 500, [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
+				_data pushBack ["SavedLoadout", (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]), [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
 			};
 			
 			{
@@ -182,15 +182,15 @@ private _savedLoadoutHandled = FALSE;
 
 _strategyArr = [];
 
-_strategyArr pushBack ["Scan", 750, [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"];
+_strategyArr pushBack ["Scan", (getMissionConfigValue ["BIS_WL_scanCost", 750]), [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"];
 _strategyArr pushBack ["FTSeized", 0, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
-_strategyArr pushBack ["FTConflict", 200, [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
+_strategyArr pushBack ["FTConflict", (getMissionConfigValue ["BIS_WL_fastTravelCostContested", 200]), [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
 _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_ft", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_ft"];
 _strategyArr pushBack ["RespawnPodFT", 0, [], "Fast Travel to Medical Pod (Free)", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Fast travel to medical pod"];
-_strategyArr pushBack ["RespawnVic", 200, [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
-_strategyArr pushBack ["RespawnPod", 200, [], "Purchase Fast Travel Pod", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order medical pod"];
-_strategyArr pushBack ["FundsTransfer", 2000, [], localize "STR_A3_WL_menu_fundstransfer", "\A3\Data_F_Warlords\Data\preview_cp_transfer.jpg", localize "STR_A3_WL_menu_fundstransfer_info"];
-_strategyArr pushBack ["TargetReset", 500, [], localize "STR_A3_WL_menu_resetvoting", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_resetvoting_info"];
+_strategyArr pushBack ["RespawnVic", (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]), [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_respawn_vicFT_order"];
+_strategyArr pushBack ["RespawnPod", (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]), [], "Purchase Fast Travel Pod", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order medical pod"];
+_strategyArr pushBack ["FundsTransfer", (getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000]), [], localize "STR_A3_WL_menu_fundstransfer", "\A3\Data_F_Warlords\Data\preview_cp_transfer.jpg", localize "STR_A3_WL_menu_fundstransfer_info"];
+_strategyArr pushBack ["TargetReset", (getMissionConfigValue ["BIS_WL_targetResetCost", 500]), [], localize "STR_A3_WL_menu_resetvoting", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_resetvoting_info"];
 _strategyArr pushBack ["forfeitVote", 0, [], "Order forfeit", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", "Order forfeit"];
 _strategyArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_lock_all"];
 _strategyArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", localize "STR_A3_WL_feature_unlock_all"];

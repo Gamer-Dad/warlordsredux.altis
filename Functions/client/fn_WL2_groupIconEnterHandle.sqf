@@ -11,7 +11,7 @@ private _helipad = "H" in _services;
 private _harbor = "W" in _services;
 
 _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]);
-_scanCD = (_lastScan + 300 - serverTime) max 0;
+_scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
 if (_scanCD == 0) then {_scanCD = -1};
 
 _isScanning = serverTime < _lastScan;

@@ -32,7 +32,7 @@ while {!BIS_WL_missionEnd} do {
 	_mostVotedVar spawn {
 		waitUntil {count (missionNamespace getVariable [_this, []]) > 0};
 		_data = (missionNamespace getVariable _this);
-		["voting", [(_data # 1) - 15, _data # 1, _this]] spawn BIS_fnc_WL2_setOSDEvent;
+		["voting", [(_data # 1) - (getMissionConfigValue ["BIS_WL_sectorVotingDuration", 15]), _data # 1, _this]] spawn BIS_fnc_WL2_setOSDEvent;
 	};
 	
 	"voting" spawn BIS_fnc_WL2_sectorSelectionHandle;
