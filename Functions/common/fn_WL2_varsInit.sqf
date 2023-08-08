@@ -11,8 +11,6 @@ switch (_locality) do {
 		BIS_WL_mapAreaArray = [[BIS_WL_mapSize / 2, BIS_WL_mapSize / 2], BIS_WL_mapSize / 2, BIS_WL_mapSize / 2, 0, TRUE];
 		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
 		BIS_WL_maxSubordinates = 1;
-		BIS_WL_targetResetTimeout = 300;
-		BIS_WL_baseValue = 50;
 	};
 	case "server": {
 		BIS_WL_baseDistanceMin = 20;
@@ -24,7 +22,6 @@ switch (_locality) do {
 	case "client": {
 		BIS_WL_playerSide = side group player;
 		BIS_WL_enemySide = (BIS_WL_competingSides - [BIS_WL_playerSide]) # 0;
-		BIS_WL_autonomous_limit = 2;
 		BIS_WL_playerBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_enemyBase = BIS_WL_enemySide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_mapSizeIndex = BIS_WL_mapSize / 8192;

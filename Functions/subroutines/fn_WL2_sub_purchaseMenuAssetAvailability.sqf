@@ -70,7 +70,7 @@ if (_ret) then {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_conflict"};
 			_sectorSelectedTimestampVarID = format ["BIS_WL_sectorSelectedTimestamp_%1", BIS_WL_playerSide];
 			_targetResetVotingVarID = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
-			if (serverTime < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout)) exitWith {_ret = FALSE; _tooltip = ([(((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + BIS_WL_targetResetTimeout) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
+			if (serverTime < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + (getMissionConfigValue ["BIS_WL_sectorResetTimeout", 300]))) exitWith {_ret = FALSE; _tooltip = ([(((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + (getMissionConfigValue ["BIS_WL_sectorResetTimeout", 300])) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = FALSE; _tooltip = ([(((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "forfeitVote": {
@@ -169,9 +169,9 @@ if (_ret) then {
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {((player getVariable ["BIS_WL_isOrdering", false]) == true)}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 			if (_category == "Aircraft") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-					if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1} count WL_PLAYER_VEHS) >= BIS_WL_autonomous_limit) then {
+					if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1} count WL_PLAYER_VEHS) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 						_ret = FALSE;
-						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", BIS_WL_autonomous_limit];
+						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};
 				};
 			};
@@ -198,9 +198,9 @@ if (_ret) then {
 							_tooltip = localize "STR_A3_WL_defence_restr1";
 						};
 						if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-							if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1} count WL_PLAYER_VEHS) >= BIS_WL_autonomous_limit) then {
+							if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1} count WL_PLAYER_VEHS) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 								_ret = FALSE;
-								_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", BIS_WL_autonomous_limit];
+								_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 							};
 						};
 					};

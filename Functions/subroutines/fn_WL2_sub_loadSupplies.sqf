@@ -43,7 +43,7 @@ _unloadAction = {
 	_target setVariable ["supplyPoints", _prevSupplyPoints - WL_LOGISTICS_CARGO_UNIT, true];
 
 	// call unload supplies for rewards
-	[_caller, "unloadSupplies", 0, [0, 0, 0], _target, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	[_caller, "unloadSupplies", _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 
 	// display message to loader's group (which includes AI)
 	_caller groupChat format [localize "STR_A3_WL_supplies_unloaded", _prevSupplyPoints - WL_LOGISTICS_CARGO_UNIT, _sectorSupplyPoints + WL_LOGISTICS_CARGO_UNIT];

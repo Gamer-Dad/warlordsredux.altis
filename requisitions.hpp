@@ -213,7 +213,7 @@ class CfgWLRequisitionPresets
 				class Box_East_WpsLaunch_F					{cost = 250;	requirements[]={};	};	// "Launchers [CSAT]"
 				class Box_East_WpsSpecial_F					{cost = 400;	requirements[]={};	};	// "Special Weapons [CSAT]"
 				class O_supplyCrate_F						{cost = 500;	requirements[]={};	};	// "Supply Box [CSAT]"
-				class Box_East_AmmoVeh_F					{cost = 800;	requirements[]={};	};	// "Vehicle Ammo [CSAT]"
+				class Box_East_AmmoVeh_F					{cost = 700;	requirements[]={};	};	// "Vehicle Ammo [CSAT]"
 				class Land_Pod_Heli_Transport_04_ammo_F     {cost = 2500;   requirements[]={};	};  // "Taru Ammo Pod"
 				class Land_Pod_Heli_Transport_04_repair_F	{cost = 2000;   requirements[]={};	};  // "Taru Repair Pod"
 				class Land_Pod_Heli_Transport_04_fuel_F		{cost = 500;    requirements[]={};	};  // "Taru Fuel Pod"

@@ -19,7 +19,7 @@ _i = 0;
 	_area = _sector getVariable "objectArea";
 	
 	if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == (side player))) then {
-		_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
+		_sector setVariable ["BIS_WL_value", (getMissionConfigValue ["BIS_WL_baseValue", 50])];
 	} else {
 		_area params ["_a", "_b", "_angle", "_isRectangle"];
 		_size = _a * _b * (if (_isRectangle) then {4} else {pi});

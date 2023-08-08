@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_sender", "_action", "_cost", "_pos", "_target", "_isStatic", "_direction"];
+params ["_sender", "_action", "_pos", "_target", "_isStatic", "_direction"];
 
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 
@@ -15,9 +15,8 @@ if (_action == "10k") exitWith {
 	[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;
 };
 
-if ((isNil {_cost}) || {_cost <= 0}) exitWith {};
-
 if (_action == "orderAsset") exitWith {
+	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_target, 50002]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -223,6 +222,7 @@ if (_action == "orderAsset") exitWith {
 };
 
 if (_action == "lastLoadout") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -234,6 +234,7 @@ if (_action == "lastLoadout") exitWith {
 };
 
 if (_action == "savedLoadout") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -245,6 +246,7 @@ if (_action == "savedLoadout") exitWith {
 };
 
 if (_action == "orderArsenal") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -257,6 +259,7 @@ if (_action == "orderArsenal") exitWith {
 };
 
 if (_action == "fastTravelContested") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_fastTravelCostContested", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -267,6 +270,7 @@ if (_action == "fastTravelContested") exitWith {
 };
 
 if (_action == "scan") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_scanCost", 750]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -299,6 +303,7 @@ if (_action == "scan") exitWith {
 };
 
 if (_action == "orderFTVehicle") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -321,6 +326,7 @@ if (_action == "orderFTVehicle") exitWith {
 };
 
 if (_action == "orderFTPod") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -343,6 +349,7 @@ if (_action == "orderFTPod") exitWith {
 };
 
 if (_action == "targetReset") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_targetResetCost", 500]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
@@ -358,6 +365,7 @@ if (_action == "targetReset") exitWith {
 };
 
 if (_action == "orderAI") exitWith {
+	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_pos, 150]);
 	private _uid = getPlayerUID _sender;
 	[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
@@ -365,13 +373,13 @@ if (_action == "orderAI") exitWith {
 };
 
 if (_action == "fundsTransfer") exitWith {
-	if (_playerFunds >= _cost) then {
+	if (_playerFunds >= _pos) then {
 		_targetUID = getPlayerUID _target;
 		_uid = getPlayerUID _sender;
 		_recipient = _targetUID call BIS_fnc_getUnitByUID;
 
-		[_targetUID, _cost] call BIS_fnc_WL2_fundsDatabaseWrite;
-		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
+		[_targetUID, _pos] call BIS_fnc_WL2_fundsDatabaseWrite;
+		[_uid, -_pos] call BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 		{
 			[[side _recipient, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost])] remoteExec ["commandChat", (owner _x)];
@@ -382,14 +390,14 @@ if (_action == "fundsTransfer") exitWith {
 if (_action == "fundsTransferCancel") exitWith {
 	private _uid = getPlayerUID _sender;
 	if (serverNamespace getVariable (format ["BIS_WL_isTransferring_%1", _uid])) then {
-		[_uid, 2000] call BIS_fnc_WL2_fundsDatabaseWrite;
+		[_uid, (getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000])] call BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 	};
 };
 
 if (_action == "fundsTransferBill") exitWith {
 	private _uid = getPlayerUID _sender;
-	[_uid, -2000] call BIS_fnc_WL2_fundsDatabaseWrite;
+	[_uid, -(getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000])] call BIS_fnc_WL2_fundsDatabaseWrite;
 	
 	serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], true];
 };
@@ -398,12 +406,12 @@ if (_action == "unloadSupplies") exitWith {
 	if (!WL_LOGISTICS_ENABLED) exitWith { false };
 
 	// get distance to nearest supply point when cargo was loaded
-	_loadedDistance = _target getVariable ["BIS_WL_lastLoadedCargo", 1e10];
+	_loadedDistance = _pos getVariable ["BIS_WL_lastLoadedCargo", 1e10];
 
 	// get current distance to nearest supply point
 	_currentDistance = _sender call BIS_fnc_WL2_getDistanceToNearestSupplyPoint;
 
-	_supplyPoints = _target getVariable ["supplyPoints", 0];
+	_supplyPoints = _pos getVariable ["supplyPoints", 0];
 
 	// reward for traveling AWAY from supply point, this doesn't reward team supply griefing/boosting
 	_traveled = 0;
@@ -412,7 +420,7 @@ if (_action == "unloadSupplies") exitWith {
 	};
 
 	// give rewards to owner, not unloader
-	_sendingPlayer = ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID);
+	_sendingPlayer = ((_pos getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID);
 
 	// prevent spamming the message, only if the player/city has changed do we broadcast the unload praise
 	_lastTransported = serverNamespace getVariable ["BIS_WL_lastTransported", [objNull, -1]];
@@ -434,13 +442,13 @@ if (_action == "unloadSupplies") exitWith {
 };
 
 if (_action == "repair") exitWith {
-	if ((!isNil {_cost}) && {_cost <= serverTime}) then {
-		_target setDamage _pos;
+	if ((!isNil {_pos}) && {_pos <= serverTime}) then {
+		_isStatic setDamage _target;
 	};
 };
 
 if (_action == "kill") exitWith {
-	if ((owner _sender) == _cost) then {
+	if ((owner _sender) == _pos) then {
 		_sender setDamage 1;
 	};
 };

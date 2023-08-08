@@ -131,7 +131,7 @@ while {_sectorsToGiveSide1 > 0 || {_sectorsToGiveSide2 > 0}} do {
 	_size = _a * _b * (if (_isRectangle) then {4} else {pi});
 	
 	if (_sector in [BIS_WL_base1, BIS_WL_base2]) then {
-		_sector setVariable ["BIS_WL_value", BIS_WL_baseValue];
+		_sector setVariable ["BIS_WL_value", (getMissionConfigValue ["BIS_WL_baseValue", 50])];
 		
 		_sector setVariable ["BIS_WL_supplyPoints", 1e30, true];
 		_sector setVariable ["BIS_WL_supplyPointsMax", 0, true];

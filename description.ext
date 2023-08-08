@@ -7,24 +7,34 @@
 onLoadName = "Warlords Redux 2.5.7";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
-
-respawn = 3;
-respawnDelay = 30;
-respawnOnStart = -1;
-
-disabledAI = 1;
-enableDebugConsole = 1;
 allowFunctionsLog = 1;
 zeusCompositionScriptLevel = 2;
 
-//revive settings below
+//Settings
+respawn = 3;
+respawnDelay = 30;
+respawnOnStart = -1;
+disabledAI = 1;
+enableDebugConsole = 1;
 ReviveMode = 0;
-//end of revive section 
-
-//start of garbage collector
 corpseManagerMode = 0;
 wreckManagerMode = 0;
-//end of garbage collector
+
+BIS_WL_sectorResetTimeout = 300;
+BIS_WL_sectorVotingDuration = 15;
+BIS_WL_scanCost = 750;
+BIS_WL_fastTravelCostContested = 200;
+BIS_WL_orderFTVehicleCost = 200;
+BIS_WL_fundsTransferCost = 2000;
+BIS_WL_targetResetCost = 500;
+BIS_WL_maxCP = 50000;
+BIS_WL_arsenalCost = 1000;
+BIS_WL_assetLimit = 10;
+BIS_WL_scanCooldown = 300;
+BIS_WL_lastLoadoutCost = 100;
+BIS_WL_savedLoadoutCost = 500;
+BIS_WL_baseValue = 50;
+BIS_WL_autonomous_limit = 2;
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 
