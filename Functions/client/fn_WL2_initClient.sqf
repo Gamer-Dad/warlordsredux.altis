@@ -273,7 +273,7 @@ addMissionEventHandler ["MarkerCreated", {
 		private _e = false;
 		
 		if (_keyName == _key1) then {
-			if !((getPlayerUID player) == "76561198034106257"|| {(getPlayerUID player) == "76561198865298977"}) then {
+			if !((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
 				_e = true;
 			};
 		};

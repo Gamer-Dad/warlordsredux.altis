@@ -61,7 +61,7 @@ _supplyCostText = if (!WL_LOGISTICS_ENABLED || {_categoryId == "3"}) then {
 	}
 };
 
-_costText = if (_cost == 0) then { "" } else {
+_costText = if (_cost == 0) then {"Free"} else {
 	if (_cost > _funds) then {
 		format ["<t color='#FF7276'>%1 %2</t>", _cost, localize "STR_A3_WL_unit_cp"];
 	} else {
