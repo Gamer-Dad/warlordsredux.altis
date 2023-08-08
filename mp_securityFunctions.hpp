@@ -105,10 +105,6 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class setUnitTrait {
-			allowedTargets = 0;
-		};
-
 		class selectLeader {
 			allowedTargets = 0;
 		};
