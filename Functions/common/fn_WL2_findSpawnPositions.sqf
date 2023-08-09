@@ -90,7 +90,7 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 	for [{_axisXSpawnCheck = _areaStart # 0}, {_axisXSpawnCheck < (_areaEnd # 0)}, {_axisXSpawnCheck = _axisXSpawnCheck + _axisStep}] do {
 		_spawnCheckPos = [_axisXSpawnCheck, _axisYSpawnCheck, 0];
 		if (_spawnCheckPos call _areaCheck) then {
-			if !(isOnRoad _spawnCheckPos || {surfaceIsWater _spawnCheckPos || {!(_spawnCheckPos inArea BIS_WL_mapAreaArray)}}) then {
+			if !(isOnRoad _spawnCheckPos || surfaceIsWater _spawnCheckPos || !(_spawnCheckPos inArea BIS_WL_mapAreaArray)) then {
 				_finalPos = _spawnCheckPos isFlatEmpty [3, -1, 0.45, 5, 0, FALSE, objNull];
 				if !(_finalPos isEqualTo []) then {
 					_finalPos = ASLToATL _finalPos;
