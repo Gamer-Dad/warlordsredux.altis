@@ -1437,7 +1437,7 @@ GOM_fnc_updateVehiclesLB = {
 	params ["_obj"];
 
 
-	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player)}}}};
+	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player) && {_x == BIS_WL_currentAirRearm}}}}};
 	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles",[]];
 	if (_vehicles isEqualTo []) exitWith {true};
 	if (_vehicles isEqualTo _lastVehs AND !(lbsize 1500 isequalto 0)) exitWith {true};//only update this when really needed, called on each frame
@@ -1452,7 +1452,7 @@ GOM_fnc_updateVehiclesLB = {
 	{
 
 		_dispName = gettext (configfile >> "CfgVehicles" >> typeof _x >> "displayName");
-		_form = str _dispName;
+		_form = _dispName;
 		lbAdd [1500,_form];
 		lbSetData [1500,_foreachIndex,_x call BIS_fnc_objectVar];
 	} forEach _vehicles;
