@@ -1,43 +1,17 @@
 #include "..\..\warlords_constants.inc"
 
-_potentialBases = BIS_WL_allSectors select {_x getVariable ["BIS_WL_canBeBase", FALSE]};
-private _firstBase = selectRandom ["BIS_WL_base1", "BIS_WL_base2"];
-missionNamespace setVariable [_firstBase, selectRandom _potentialBases, TRUE];
-_potentialBases = _potentialBases - [missionNamespace getVariable _firstBase];
+private _potBases = BIS_WL_allSectors select {(_x getVariable ["BIS_WL_canBeBase", true]) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
+private _firstBase = selectRandom _potBases;
 
-private _tiers = [];
-private _checkedAgainst = [];
-private _distance = 0;
-private _sectorsToCheckNext = (synchronizedObjects (missionNamespace getVariable _firstBase)) select {_x in BIS_WL_allSectors};
-while {count _sectorsToCheckNext > 0} do {
-	private _sectorsToCheckNow = _sectorsToCheckNext;
-	_sectorsToCheckNext = [];
-	private _currentTier = [_distance];
-	{
-		private _sector = _x;
-		if (_sector in _potentialBases && {!(_sector in _checkedAgainst)}) then {
-			_currentTier pushBack _sector;
-		};
-		_checkedAgainst pushBackUnique _sector;
-		{
-			_sectorsToCheckNext pushBackUnique _x;
-		} forEach ((synchronizedObjects _sector) select {_x != (missionNamespace getVariable _firstBase) && {_x in BIS_WL_allSectors && {!(_x in _checkedAgainst)}}});
-	} forEach _sectorsToCheckNow;
-	if (count _currentTier > 1) then {
-		_tiers pushBack _currentTier;
-	};
-	_distance = _distance + 1;
-};
-//Use _tolerance value in combo with baseDistanceMin to add randomness to base distances
-_potentialBases = [];
-_tolerance = 8;
-while {count _potentialBases == 0} do {
-	_potentialBases = _tiers select {(_x # 0) >= (BIS_WL_baseDistanceMin - _tolerance) && {(_x # 0) <= 999}};
-	_tolerance = _tolerance + 1;
-};
-_potentialBases = selectRandom _potentialBases;
-_potentialBases = _potentialBases - [_potentialBases # 0];
-missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) # 0, selectRandom _potentialBases, TRUE];
+private _baseDistanceMin = 6000;
+_potBases = _potBases - [_firstBase];
+_potBases = (_potBases select {(_x distanceSqr _firstBase) > 36000000});
+
+private _secondBase = selectRandom _potBases;
+
+missionNamespace setVariable ["BIS_WL_base1", _firstBase, true];
+missionNamespace setVariable ["BIS_WL_base2", _secondBase, true];
+profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 
 {
 	_side = BIS_WL_competingSides # _forEachIndex;
@@ -54,6 +28,8 @@ missionNamespace setVariable [(["BIS_WL_base1", "BIS_WL_base2"] - [_firstBase]) 
 		_flag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 	};
 	_flag setFlagSide _side;
+	_marker = createMarker ["base", _x, 0];
+	_marker setMarkerType "b_air"
 } forEach [BIS_WL_base1, BIS_WL_base2];
 
 _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
