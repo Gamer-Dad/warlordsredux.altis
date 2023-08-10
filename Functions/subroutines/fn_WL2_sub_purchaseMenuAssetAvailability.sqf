@@ -26,14 +26,12 @@ if (_ret) then {
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
-			if !(WL_TARGET_FRIENDLY getVariable ["BIS_WL_fastTravelEnabled", TRUE]) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr2"};
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = FALSE; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FTConflict": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_no_conflict"};
 			if (WL_TARGET_FRIENDLY in WL_BASES) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr1"};
-			if !(WL_TARGET_FRIENDLY getVariable ["BIS_WL_fastTravelEnabled", TRUE]) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr2"};
 			if !(WL_TARGET_FRIENDLY in (BIS_WL_sectorsArray # 1)) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr5"};
 			if (vehicle player != player) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = FALSE; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};

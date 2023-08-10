@@ -13,10 +13,6 @@ if (!isNull _sector) then {
 	if (_sector in WL_BASES) then {
 		_sector setVariable ["BIS_WL_baseUnderAttack", true, true];
 		["base_vulnerable", _sector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
-		_sector spawn {
-			sleep WL_TIMEOUT_MAX;
-			_this setVariable ["BIS_WL_fastTravelEnabled", true, true];
-		};
 	} else {
 		private _owner = _sector getVariable "BIS_WL_owner";
 		[_sector, _owner] spawn BIS_fnc_WL2_populateSector;
@@ -27,6 +23,5 @@ if (!isNull _sector) then {
 	if (_prevSector in WL_BASES) then {
 		_sector setVariable ["BIS_WL_baseUnderAttack", false, true];
 		["base_safe", _prevSector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
-		_prevSector setVariable ["BIS_WL_fastTravelEnabled", true, true];
 	};
 };
