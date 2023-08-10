@@ -28,8 +28,6 @@ profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 		_flag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 	};
 	_flag setFlagSide _side;
-	_marker = createMarker ["base", _x, 0];
-	_marker setMarkerType "b_air"
 } forEach [BIS_WL_base1, BIS_WL_base2];
 
 _nonBaseSectorsCnt = (count BIS_WL_allSectors) - 2;
