@@ -3,9 +3,9 @@
 private _potBases = BIS_WL_allSectors select {(_x getVariable ["BIS_WL_canBeBase", true]) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
 private _firstBase = selectRandom _potBases;
 
-private _baseDistanceMin = 6000;
+private _baseDistanceMin = 25000000;
 _potBases = _potBases - [_firstBase];
-_potBases = (_potBases select {(_x distanceSqr _firstBase) > 36000000});
+_potBases = (_potBases select {(_x distanceSqr _firstBase) > _baseDistanceMin});
 
 private _secondBase = selectRandom _potBases;
 
