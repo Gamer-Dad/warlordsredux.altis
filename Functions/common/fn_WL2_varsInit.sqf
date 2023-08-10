@@ -13,7 +13,6 @@ switch (_locality) do {
 		BIS_WL_maxSubordinates = 1;
 	};
 	case "server": {
-		BIS_WL_baseDistanceMin = 20;
 		BIS_WL_playerIDArr = [[], []];
 		{
 			missionNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];

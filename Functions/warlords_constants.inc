@@ -1,13 +1,9 @@
-#define IDC_OK            1 // emulate "Ok" button
-#define IDC_CANCEL        2 // emulate "Cancel" button
 #define WL_RESPAWN_MARKERS_CNT 20
-#define WL_MAX_SEIZING_HEIGHT 38 //this is AGL, default value 150, actual cap height = this/2-ish. 50 gives a cap height of 35?
 #define WL_TIMEOUT_MIN 0.055 //25, 55 = 20 FPS + 3 MS + 2ms(for slop) to safely run scripts at 20 fps.
 #define WL_TIMEOUT_SHORT 0.25
 #define WL_TIMEOUT_MEDIUM 0.5
 #define WL_TIMEOUT_STANDARD 1
 #define WL_TIMEOUT_LONG 5
-#define WL_TIMEOUT_MAX 30
 #define WL_CONNECTING_LINE_AXIS 20
 #define WL_CONNECTING_LINE_ALPHA_MIN 0.2
 #define WL_CONNECTING_LINE_ALPHA_MAX 0.5
@@ -28,8 +24,6 @@
 #define WL_ID_SELECTION_SCAN 7
 #define WL_ID_SELECTION_FAST_TRAVEL_CONTESTED 8
 #define WL_ID_SELECTION_DEPLOYING_DEFENCE 9
-#define WL_SEIZING_TIMEOUT_MIN 15
-#define WL_SEIZING_TIMEOUT_MAX 90
 #define WL_FAST_TRAVEL_OFFSET 100
 #define WL_FAST_TRAVEL_RANGE_AXIS 50
 #define WL_TARGET_RESET_ZONE_RESTRICTION_TOLERANCE 30
