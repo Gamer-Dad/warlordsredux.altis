@@ -247,7 +247,6 @@ class CfgFunctions {
 			class IsRadarGuided {};
 			class IsVisualGuided {};
 			class MisguideMissile {};
-			class popSmoke {};
 			class RelDir2 {};
 		};
 		class Report
