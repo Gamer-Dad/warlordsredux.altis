@@ -365,8 +365,3 @@ player addAction [
 	"10K CP",
 	{[player, "10k"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]}
 ];
-
-player addAction [ 
-	"10K SP", 
-	{[player, "10kSP"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} 
-];

@@ -6,10 +6,6 @@ _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(get
 
 if (isNull _sender) exitWith {};
 
-if (_action == "10kSP") exitWith {
-	[_sender, -10000] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;	
-};
-
 if (_action == "10k") exitWith {
 	_uid = getPlayerUID _sender;
 	[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -38,7 +34,6 @@ if (_action == "orderAsset") exitWith {
 						_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 						_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 						_asset setDir (direction _sender);
-						[_sector, _cost] spawn BIS_fnc_WL2_deductSuppliesFromSector;
 					} else {
 						private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -60,7 +55,6 @@ if (_action == "orderAsset") exitWith {
 
 						_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 						_asset setDir _dir;
-						[_sector, _cost] spawn BIS_fnc_WL2_deductSuppliesFromSector;
 					};
 
 					createVehicleCrew _asset;
@@ -92,8 +86,6 @@ if (_action == "orderAsset") exitWith {
 						if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
 							_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;
 							(group _asset) deleteGroupWhenEmpty true;
-
-							[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 						} else {
 							if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 								_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);
@@ -102,8 +94,6 @@ if (_action == "orderAsset") exitWith {
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 								_asset setDir 0;
-
-								[_sector, _cost] spawn BIS_fnc_WL2_deductSuppliesFromSector;
 							} else {
 								private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -125,15 +115,12 @@ if (_action == "orderAsset") exitWith {
 
 								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 								_asset setDir _dir;
-
-								[_sector, _cost] spawn BIS_fnc_WL2_deductSuppliesFromSector;
 							};
 						};
 					};
 				};
 			} else {
 				if (_isStatic) then {
-					[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 					if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 						if (_class == "B_AAA_System_01_F" || {_class == "B_SAM_System_01_F" || {_class == "B_SAM_System_02_F" || {_class == "B_Ship_MRLS_01_F"}}}) then {
 							_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;	
@@ -175,17 +162,6 @@ if (_action == "orderAsset") exitWith {
 					_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 					_asset setDir _direction;
 					_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
-
-					_supplyCost = switch _class do {
-						case ("B_Truck_01_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-						case ("O_Truck_03_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-						case ("B_Slingload_01_Ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-						case ("Land_Pod_Heli_Transport_04_ammo_F"): { WL_LOGISTICS_LARGE_AMMO_COST };
-						case ("Box_NATO_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
-						case ("Box_East_AmmoVeh_F"): { WL_LOGISTICS_SMALL_AMMO_COST };
-						default { _cost };
-					};
-					[_sender, _supplyCost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 					
 					//Livery change
 					if (typeOf _asset == "I_Truck_02_MRL_F") then {
@@ -229,7 +205,6 @@ if (_action == "lastLoadout") exitWith {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
 		0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
-		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 	};
 };
 
@@ -241,7 +216,6 @@ if (_action == "savedLoadout") exitWith {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
 		["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
-		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 	};
 };
 
@@ -252,9 +226,7 @@ if (_action == "orderArsenal") exitWith {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;	
 
-		0 remoteExec ["BIS_fnc_WL2_orderArsenal", remoteExecutedOwner];			
-
-		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
+		0 remoteExec ["BIS_fnc_WL2_orderArsenal", remoteExecutedOwner];
 	};
 };
 
@@ -320,8 +292,6 @@ if (_action == "orderFTVehicle") exitWith {
 				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 			};
 		};
-
-		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 	};
 };
 
@@ -343,8 +313,6 @@ if (_action == "orderFTPod") exitWith {
 				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 			};
 		};
-
-		[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 	};
 };
 
@@ -368,8 +336,6 @@ if (_action == "orderAI") exitWith {
 	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_pos, 150]);
 	private _uid = getPlayerUID _sender;
 	[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
-
-	[_sender, _cost] call BIS_fnc_WL2_deductSuppliesFromCurrentSector;
 };
 
 if (_action == "fundsTransfer") exitWith {
@@ -400,45 +366,6 @@ if (_action == "fundsTransferBill") exitWith {
 	[_uid, -(getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000])] call BIS_fnc_WL2_fundsDatabaseWrite;
 	
 	serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], true];
-};
-
-if (_action == "unloadSupplies") exitWith {
-	if (!WL_LOGISTICS_ENABLED) exitWith { false };
-
-	// get distance to nearest supply point when cargo was loaded
-	_loadedDistance = _pos getVariable ["BIS_WL_lastLoadedCargo", 1e10];
-
-	// get current distance to nearest supply point
-	_currentDistance = _sender call BIS_fnc_WL2_getDistanceToNearestSupplyPoint;
-
-	_supplyPoints = _pos getVariable ["supplyPoints", 0];
-
-	// reward for traveling AWAY from supply point, this doesn't reward team supply griefing/boosting
-	_traveled = 0;
-	if (_currentDistance > _loadedDistance) then {
-		_traveled = _currentDistance - _loadedDistance;
-	};
-
-	// give rewards to owner, not unloader
-	_sendingPlayer = ((_pos getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID);
-
-	// prevent spamming the message, only if the player/city has changed do we broadcast the unload praise
-	_lastTransported = serverNamespace getVariable ["BIS_WL_lastTransported", [objNull, -1]];
-	if (_traveled > 100 && {((_lastTransported # 0 != _sendingPlayer) || {(_lastTransported # 1 != _traveled)})}) then {
-		_sectorName = (_sender call BIS_fnc_WL2_getCurrentSector) getVariable "BIS_WL_name";
-
-		_sideChatMessage = format [localize "STR_A3_WL_logistics_notification", name _sendingPlayer, floor _traveled, _sectorName];
-		[[side _sendingPlayer, "Base"], _sideChatMessage] remoteExec ["sideChat"];
-		serverNamespace setVariable ["BIS_WL_lastTransported", [_sendingPlayer, _traveled]];
-	};
-
-	// give +1 score if transported over threshold
-	if (_traveled >= WL_LOGISTICS_MIN_DISTANCE_FOR_SCORE) then {
-		_sendingPlayer addScore 1;
-	};
-
-	// Let the user know they've transported something regardless if funds are added.
-	[_sendingPlayer, 0, true] remoteExec ["BIS_fnc_WL2_killRewardClient", owner _sendingPlayer];
 };
 
 if (_action == "repair") exitWith {

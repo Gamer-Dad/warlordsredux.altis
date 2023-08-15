@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_unit", "_reward", "_transport"];
+params ["_unit", "_reward"];
 
 disableSerialization;
 
@@ -25,17 +25,11 @@ _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
-switch true do {
-	case (_transport): { 
-		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#add8e6'>%1</t>", localize "STR_A3_WL_supplied"];
-	};
-	case (_unit isKindOf "Man"): { 
-		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
-	};
-	default { 
-		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
-	 };
+if (_unit isKindOf "Man") then {
+	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
+} else {
+	_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
+	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>%1 destroyed +%2CP</t>", _displayName, _reward];
 };
 
 WAS_score = true;

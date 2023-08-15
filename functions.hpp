@@ -71,8 +71,6 @@ class CfgFunctions {
 			class WL2_kickCheater {};
 			class WL2_wasMain {};
 			class WL2_updateEarnedCP {};
-			class WL2_canFastTravelToSector {};
-			class WL2_canOrderAircraftToSector {};
 			class WL2_askForgiveness {};
     	};
 		class Server 
@@ -102,8 +100,6 @@ class CfgFunctions {
 			class WL2_forfeitHandleServer {};
 			class WL2_setOwner {};
 			class WL2_createUAVCrew {};
-			class WL2_deductSuppliesFromCurrentSector {};
-			class WL2_deductSuppliesFromSector {};
 			class WL2_forgiveTeamkill {};
     	};
     	class Common {
@@ -125,15 +121,6 @@ class CfgFunctions {
 			class WL2_updateSectorArrays {};
 			class WL2_varsInit {};
 			class WL2_calcImbalance {};
-			class WL2_canLoad {};
-			class WL2_canUnload {};
-			class WL2_getCurrentSector {};
-			class WL2_getDistanceToNearestSupplyPoint {};
-			class WL2_getFriendlySectors {};
-			class WL2_getHomeBase {};
-			class WL2_getSectorSupply {};
-			class WL2_hasSupplyContainerSpace {};
-			class WL2_isSectorSupplyFull {};
 			class WL2_sectorNameInit {};
     	};
 		class Subroutines 
@@ -150,7 +137,6 @@ class CfgFunctions {
 			class WL2_sub_vehicleLockAction {};
 			class WL2_sub_logisticsAddAction {};
 			class WL2_sub_radarOperate {};
-			class WL2_sub_loadSupplies {};
 			class WL2_sub_rearmAction {};
 			class WL2_sub_rearmActionAir {};
 			class WL2_sub_vehicleKickAction {};
