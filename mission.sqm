@@ -588,8 +588,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16749.688,20.367319,12678.455};
-				angles[]={0.010663962,0,0.029321531};
+				position[]={16824.635,22.375416,12714.331};
+				angles[]={0.062584557,0,6.2551923};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; ";
 			id=38;
@@ -1495,12 +1495,12 @@ class Mission
 		class Item109
 		{
 			dataType="Trigger";
-			position[]={16749.688,20.410215,12674.762};
+			position[]={16826.514,22.487381,12710.167};
 			angle=1.1467338;
 			class Attributes
 			{
-				sizeA=300;
-				sizeB=300;
+				sizeA=270;
+				sizeB=270;
 			};
 			id=117;
 			type="EmptyDetectorAreaR250";
