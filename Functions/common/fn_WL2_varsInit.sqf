@@ -22,6 +22,7 @@ switch (_locality) do {
 		BIS_WL_playerSide = side group player;
 		BIS_WL_enemySide = (BIS_WL_competingSides - [BIS_WL_playerSide]) # 0;
 		BIS_WL_playerBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
+		BIS_WL_enemyBase = BIS_WL_enemySide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_mapSizeIndex = BIS_WL_mapSize / 8192;
 		BIS_WL_colorMarkerFriendly = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_playerSide);
 		BIS_WL_colorMarkerEnemy = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_enemySide);

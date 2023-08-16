@@ -148,6 +148,33 @@ BIS_WL_groupIconClickHandler = addMissionEventHandler ["GroupIconClick", BIS_fnc
 BIS_WL_groupIconEnterHandler = addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
 BIS_WL_groupIconLeaveHandler = addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
+_mapBorderMrkr1 = createMarkerLocal ["BIS_WL_mapBorder1", [(BIS_WL_mapSize / 2) + (BIS_WL_mapSize / 2), -(BIS_WL_mapSize / 2)]];
+_mapBorderMrkr2 = createMarkerLocal ["BIS_WL_mapBorder2", [BIS_WL_mapSize + (BIS_WL_mapSize / 2), BIS_WL_mapSize + (BIS_WL_mapSize / 2)]];
+_mapBorderMrkr3 = createMarkerLocal ["BIS_WL_mapBorder3", [-(BIS_WL_mapSize / 2), BIS_WL_mapSize + (BIS_WL_mapSize / 2)]];
+_mapBorderMrkr4 = createMarkerLocal ["BIS_WL_mapBorder4", [-(BIS_WL_mapSize / 2), BIS_WL_mapSize - (BIS_WL_mapSize / 2)]];
+
+{
+	_x setMarkerShapeLocal "RECTANGLE";
+	_x setMarkerBrushLocal "SolidFull";
+	_x setMarkerColorLocal "ColorBlack";
+} forEach [_mapBorderMrkr1, _mapBorderMrkr2, _mapBorderMrkr3, _mapBorderMrkr4];
+
+_mapBorderMrkr1 setMarkerSizeLocal [BIS_WL_mapSize + (BIS_WL_mapSize / 2), (BIS_WL_mapSize / 2)];
+_mapBorderMrkr2 setMarkerSizeLocal [(BIS_WL_mapSize / 2), BIS_WL_mapSize + (BIS_WL_mapSize / 2)];
+_mapBorderMrkr3 setMarkerSizeLocal [BIS_WL_mapSize + (BIS_WL_mapSize / 2), (BIS_WL_mapSize / 2)];
+_mapBorderMrkr4 setMarkerSizeLocal [(BIS_WL_mapSize / 2), BIS_WL_mapSize + (BIS_WL_mapSize / 2)];
+
+_mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enemyBase];
+_mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;
+_mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position BIS_WL_playerBase];
+_mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
+
+{
+	_x setMarkerAlphaLocal 0;
+	_x setMarkerSizeLocal [2, 2];
+	_x setMarkerTypeLocal "selector_selectedMission";
+} forEach [_mrkrTargetEnemy, _mrkrTargetFriendly];
+
 //Evenhandlers
 "fundsDatabaseClients" addPublicVariableEventHandler {
 	[] spawn BIS_fnc_WL2_refreshOSD;
@@ -256,10 +283,10 @@ addMissionEventHandler ["MarkerCreated", {
 		_e;
 	}];
 	//init radio after team check 
-	enableRadio true;
-	enableSentences true;
-	{_x enableChannel [true, true]} forEach [1,2,3,4,5];
-	{_x enableChannel [false, true]} forEach [0]; //no global chat
+	enableRadio TRUE;
+	enableSentences TRUE;
+	{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
+	{_x enableChannel [FALSE, FALSE]} forEach [0]; //no global chat
 };
 
 call BIS_fnc_WL2_sub_arsenalSetup;
