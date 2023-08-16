@@ -226,3 +226,23 @@
   - All Containers, pods, boxes are loadable onto the flatbed and can be loaded into the Y-32 and Blackfish Vehicle transport.
   - New fast travel option added. The huron medical container and taru medical pod. This will allow for some interesting tactics since you can carry them/ move them very fast.
   - You now get a CP refund if you where transfering CP and it canceled because of sector voting.
+
+2.5.8
+  - Performance improved.
+  - Group system added.
+  - APS Improved. 120m -> 40m interception range.
+  - User settings are saved across games.
+  - Player stats added: Total kills, K/D, Sectors seized, Total CP earned, Longest kill distance.
+  - Last loadout unavailable if it's the same as your current.
+  - Option to spawn vehicles with empty inventory added.
+  - Dynamic sector population. More players means less ai spawns.
+  - Kill bonus if the unit you killed was in the AO.
+  - Emotes added.
+  - AI availability UI enhanced. *available*/*Total*
+  - Cheaters can't spawn vehicles anymore.
+  - Cheaters can't get free vehicles.
+  - Cheaters can't get sector scans for free or target resets.
+  - Can't bypass rearm timer anymore.
+  - New base location code. Bases are now alot more random and never the same as the game before.
+  - Option to toggle APS on/off. by default: keybind to dwitch grenades.
+  - Option to see APS status added: Custom Controls > Use Action 1
