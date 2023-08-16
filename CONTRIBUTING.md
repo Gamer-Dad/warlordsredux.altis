@@ -1,6 +1,6 @@
 # Guidelines for Contributing
 
-Thank you for your interest in contributing to our project! We welcome contributions from the community as they help improve the quality and functionality of our work. To ensure a smooth and efficient collaboration process, we have established some guidelines that we kindly request you to follow. 
+Thank you for your interest in contributing to our project! We welcome contributions from the community, as they help improve the quality and functionality of our work. To ensure a smooth and efficient collaboration process, we have established some guidelines that we kindly request that you follow. 
 
 1. Fork the Repository: Start by forking the project repository to your own GitHub account. This will create a personal copy of the project that you can freely modify.
 
@@ -14,11 +14,11 @@ Thank you for your interest in contributing to our project! We welcome contribut
 
 6. Review Process: All contributions undergo a review process to maintain the quality and integrity of the project. Our designated reviewers, Gamerdad and MrThomasM, will carefully assess your changes, provide feedback, and suggest any necessary improvements.
 
-7. Code security: We are far from making the mission fully secured against cheaters, we try our hardest to make the mission more secure with each update. To avoid going 1 step forwards and 2 backwards no insecure code is allowed into the mission. The use of the argument that there is already insecure code in the mission to support your code beeing merged is something i don't believe in. We need to focus on making our security better with each update, if we do at some point not find any other way to make the mission more secure, then we can look at minimizing our vulnerabilities. But to make this point clear, at no point will insecure code be allowed in the mission.
+7. Code security: We are far from making the mission fully secured against cheaters, but we try our hardest to make the mission more secure with each update. To avoid going one step forwards and two steps backward, no insecure code is allowed into the mission. The use of the argument that there is already insecure code in the mission to support your code being merged is something we don't believe in. We need to focus on making our security better with each update. If we do not find any other way to make the mission more secure at some point, then we can look at minimizing our vulnerabilities. But to make this point clear, at no point will insecure code be allowed in the mission.
 
-7. Address Feedback: If your contribution requires revisions based on the review, make the necessary changes to your branch and push them to your forked repository. The pull request will be automatically updated.
+8. Address Feedback: If your contribution requires revisions based on the review, make the necessary changes to your branch and push them to your forked repository. The pull request will be automatically updated.
 
-8. Merge and Acknowledgment: Once your contribution has been reviewed and approved, one of our project maintainers will merge your changes into the main repository. You will be duly acknowledged for your valuable contribution.
+9. Merge and Acknowledgment: Once your contribution has been reviewed and approved, one of our project maintainers will merge your changes into the main repository. You will be duly acknowledged for your valuable contribution.
 
 Please note that while we strive to review contributions promptly, it may take some time depending on the volume of submissions. We appreciate your patience and understanding throughout the process.
 
