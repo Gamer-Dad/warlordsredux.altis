@@ -24,8 +24,6 @@ MRTM_spawnedSLAMs_Ammo = [];
 MRTM_spawnedDemoCharge = [];
 MRTM_spawnedSatchel = [];
 
-missionNamespace setVariable ["imbalance", 0, true];
-
 [36000] call BIS_fnc_countdown;
 0 spawn BIS_fnc_WL2_tablesSetUp;
 
