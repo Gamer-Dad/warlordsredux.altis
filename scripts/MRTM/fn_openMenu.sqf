@@ -85,3 +85,11 @@ if (profileNamespace getVariable ["MRTM_spawnEmpty", false]) then {
 } else {
 	((findDisplay 8000) displayCtrl 2807) cbSetChecked false;
 };
+
+if ((getMissionConfigValue ["MRTM_enableGroups", 1]) != 1) then {
+	ctrlEnable [1605, false];
+};
+
+if ((getMissionConfigValue ["MRTM_enableEmotes", 1]) != 1) then {
+	ctrlEnable [1606, false];
+};

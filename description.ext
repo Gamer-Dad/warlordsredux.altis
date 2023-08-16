@@ -36,8 +36,12 @@ BIS_WL_lastLoadoutCost = 100;
 BIS_WL_savedLoadoutCost = 500;
 BIS_WL_baseValue = 50;
 BIS_WL_autonomous_limit = 2;
-BIS_WL_minAPSDist = 30;
-BIS_WL_maxAPSDist = 80;
+BIS_WL_minAPSDist = 20;
+BIS_WL_maxAPSDist = 40;
+
+//MRTM Settings
+MRTM_enableGroups = 1; //0: Disabled 1: Enabled
+MRTM_enableEmotes = 1; //0: Disabled 1: Enabled
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 
