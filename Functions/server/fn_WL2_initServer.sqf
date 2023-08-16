@@ -1,8 +1,5 @@
 #include "..\warlords_constants.inc"
 
-//CP databse
-serverNamespace setVariable ["fundsDatabase", createHashMap];
-
 // Mine Array's
 MRTM_spawnedAPERS = [];
 MRTM_spawnedAPERSDispenser = [];
@@ -25,7 +22,7 @@ MRTM_spawnedDemoCharge = [];
 MRTM_spawnedSatchel = [];
 
 [36000] call BIS_fnc_countdown;
-0 spawn BIS_fnc_WL2_tablesSetUp;
+call BIS_fnc_WL2_tablesSetUp;
 
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
