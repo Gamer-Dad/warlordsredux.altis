@@ -9,6 +9,7 @@ dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
 zeusCompositionScriptLevel = 2;
+adminIDs[] = {"76561198034106257", "76561198865298977"};
 
 //Settings
 respawn = 3;
@@ -35,7 +36,8 @@ BIS_WL_lastLoadoutCost = 100;
 BIS_WL_savedLoadoutCost = 500;
 BIS_WL_baseValue = 50;
 BIS_WL_autonomous_limit = 2;
-adminIDs[] = {"76561198034106257", "76561198865298977"};
+BIS_WL_minAPSDist = 30;
+BIS_WL_maxAPSDist = 80;
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 

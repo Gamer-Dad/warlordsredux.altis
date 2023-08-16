@@ -39,7 +39,7 @@ while { _continue } do {
 			if (_vehicleAPSType >= _projectileAPSType && {
 					// distance check
 					_distance =_x distance _projectile;
-					_distance < 125 && _distance > 30
+					_distance < (getMissionConfigValue ["BIS_WL_maxAPSDist", 80]) && _distance > (getMissionConfigValue ["BIS_WL_minAPSDist", 30])
 				} && {
 					// angle check
 					_projectileVector = vectorNormalized (velocity _projectile);
