@@ -38,7 +38,6 @@ sleep 2;
 								case WL_ID_SELECTION_FAST_TRAVEL_CONTESTED: {localize "STR_A3_WL_action_destination_select"};
 								case WL_ID_SELECTION_ORDERING_NAVAL;
 								case WL_ID_SELECTION_ORDERING_AIRCRAFT;
-								case WL_ID_SELECTION_ORDERING_AIRDROP: {localize "STR_A3_WL_action_dropzone"};
 								case WL_ID_SELECTION_SCAN: {localize "STR_A3_WL_action_scan_select"};
 								default {""};
 							};
