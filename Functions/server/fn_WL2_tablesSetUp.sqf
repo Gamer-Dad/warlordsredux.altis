@@ -101,7 +101,7 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		//AAF
 		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
 		["I_LT_01_scout_F", 4], ["I_LT_01_AA_F", 4], ["I_LT_01_AT_F", 4], ["I_LT_01_cannon_F", 4],
-		["I_MBT_03_cannon_F", 5], ["I_APC_Wheeled_03_cannon_F", 5], ["I_APC_tracked_03_cannon_F", 5],
+		["I_MBT_03_cannon_F", 5], ["I_APC_Wheeled_03_cannon_F", 5], ["I_APC_tracked_03_cannon_F", 5]
 	]
 ];
 

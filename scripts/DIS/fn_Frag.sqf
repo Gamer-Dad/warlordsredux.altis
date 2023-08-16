@@ -22,3 +22,7 @@ _pos = getPos _m;
 triggerAmmo _m;
 _d = _pos distance _tPos;
 systemChat format ["SAM detonated %1 meters from target", round _d];
+
+//Burst Explo
+_m2 = createVehicle [_type, _pos, [], 50, "FLY"];
+triggerAmmo _m2;
