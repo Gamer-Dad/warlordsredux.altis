@@ -1,8 +1,8 @@
-DEV_MrThomasM addAction [
+((missionNamespace getVariable "devMRTM") # 0) addAction [
 	"Talk with the wise villager",
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		DEV_MrThomasM removeAction _actionId;
+		((missionNamespace getVariable "devMRTM") # 0) removeAction _actionId;
 		0 spawn BIS_fnc_WL2_mrtmConvo;
 	},
 	nil,
@@ -10,6 +10,6 @@ DEV_MrThomasM addAction [
 	true,
 	true,
 	"",
-	"((alive player) && {cursorObject == Dev_MrThomasM})",
+	"((alive player) && {cursorObject == ((missionNamespace getVariable 'devMRTM') # 0)})",
 	5
 ];

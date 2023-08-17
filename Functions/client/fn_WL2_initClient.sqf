@@ -323,8 +323,11 @@ call _fncEarPlugs;
 
 0 spawn {
 	_t = serverTime + 10;
-	waitUntil {sleep 0.1; ((serverTime > _t) || {!(isNil {Dev_MrThomasM})})};
-	if (!(isNil {Dev_MrThomasM})) then {
+	waitUntil {sleep 0.1; ((serverTime > _t) || {!(isNil {missionNamespace getVariable "devMRTM"})})};
+	if (!(isNil {missionNamespace getVariable "devMRTM"})) then {
+		_mrtm = (missionNamespace getVariable "devMRTM") # 0;
+		_seat = (missionNamespace getVariable "devMRTM") # 1;
+		[_mrtm, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
 		0 spawn BIS_fnc_WL2_mrtmAction;
 	};
 };
