@@ -24,15 +24,6 @@ class CfgDisabledCommands
         };
     };
 
-    class CREATEAGENT
-    {
-        class SYNTAX1
-        {
-            targets[] = {1,0,0};
-            args[] = {{},{"ARRAY"}};
-        };
-    };
-
     class CREATETRIGGER
     {
         class SYNTAX1
