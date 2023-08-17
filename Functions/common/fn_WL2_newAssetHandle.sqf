@@ -87,6 +87,10 @@ if (isPlayer _owner) then {
 				_asset setDir (direction player);
 			};
 
+			if (isAutonomous _asset) then {
+				_asset setAutonomous false;
+			};
+
 			if (typeOf _asset == "B_Radar_System_01_F" || {typeOf _asset == "O_Radar_System_02_F"}) then {
 				_asset spawn {
 					params ["_asset"];
