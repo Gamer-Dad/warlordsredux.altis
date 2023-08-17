@@ -15,7 +15,7 @@ if (isNull (findDisplay 4000)) then {
 		while {!(isNull (findDisplay 4000))} do {
 			["Players"] spawn MRTM_fnc_onLBSelChanged;
 			[""] spawn MRTM_fnc_onLBSelChanged;
-			sleep 0.3;
+			sleep 0.2;
 		};
 	};
 
