@@ -2,13 +2,12 @@
 
 params ["_unit", "_killer", "_instigator"];
 
-if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 69]) == 69)}) exitWith {};
+if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
+if (isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) exitWith {};
 
-if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then {((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {((UAVControl vehicle _killer) # 0)})};
-if (isNull _instigator) then {_instigator = (vehicle _killer)};
+if (isNull _instigator) then {_instigator = ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)};
 if !(isNull _instigator) then {
-	if (isNil {_instigator getVariable "BIS_WL_ownerAsset"}) exitWith {};
-	_responsibleLeader = leader _instigator;
+	_responsibleLeader = _instigator;
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
