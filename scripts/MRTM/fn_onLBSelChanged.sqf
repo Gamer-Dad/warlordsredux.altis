@@ -39,6 +39,7 @@ if (_lb == "Players") then {
 	if ((lbCurSel 4005) < 0) exitWith {};
 	_data = lbData [4005, (lbCurSel 4005)];
 	_unit = _data call BIS_fnc_getUnitByUID;
+	[format ["%1, %2", (_unit == player), ((count ((units player) select {isPlayer _x})) > 1)]] remoteExec ["systemChat", player];
 	if (_unit == player && {(count ((units player) select {isPlayer _x})) > 1}) then {
 		ctrlEnable [4103, true];
 	} else {

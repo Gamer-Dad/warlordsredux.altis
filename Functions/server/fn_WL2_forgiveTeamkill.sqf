@@ -3,7 +3,7 @@
 params ["_teamkiller", "_forgiver"];
 
 // check to make sure script executor is forgiver
-if ((owner _forgiver) != remoteExecutedOwner) exitWith { false };
+if ((owner _forgiver) != remoteExecutedOwner) exitWith {};
 
 _timestamps = _teamkiller getVariable "BIS_WL_friendlyKillTimestamps";
 

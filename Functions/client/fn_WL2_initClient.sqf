@@ -112,6 +112,8 @@ has_recieved_reward = false;
 player setVariable ["reward_active", false];
 private _uidPlayer = getPlayerUID player;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], []];
+player setVariable ["MRTM_invitesOut", [], [clientOwner, 2]];
+player setVariable ["MRTM_invitesIn", [], [clientOwner, 2]];
 
 //UI
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
