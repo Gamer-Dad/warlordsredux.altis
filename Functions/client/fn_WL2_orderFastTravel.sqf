@@ -82,7 +82,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_MEDIUM;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {!(isPlayer _x)}}}}};
 	{
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
@@ -112,12 +112,11 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_STANDARD;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player)}}}};
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {!(isPlayer _x)}}}}};
 	{
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
 	player setVehiclePosition [_destination, [], 3, "NONE"];
-	[BIS_WL_targetSector, WL_LOGISTICS_FAST_TRAVEL_COST] spawn BIS_fnc_WL2_deductSuppliesFromSector;
 
 	sleep WL_TIMEOUT_STANDARD;
 
