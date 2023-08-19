@@ -16,7 +16,7 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 	};
 
 	if (_event == "Lost") exitWith {
-		((profileNamespace getVariable ["WL2_gamesLost", 0]) + 1);
+		profileNamespace setVariable ["WL2_gamesLost", ((profileNamespace getVariable ["WL2_gamesLost", 0]) + 1)];
 	};
 
 	if (_event == "Kill") exitWith {
