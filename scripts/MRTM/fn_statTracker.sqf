@@ -36,3 +36,5 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 		profileNamespace setVariable ["WL2_totalDeaths", (_deaths + 1)];
 	};
 };
+
+saveProfileNamespace;
