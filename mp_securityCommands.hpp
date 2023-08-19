@@ -1,14 +1,5 @@
 class CfgDisabledCommands
 {
-    class CREATEVEHICLELOCAL
-    {
-        class SYNTAX1
-        {
-            targets[] = {1,0,0};
-            args[] = {{"STRING"},{"ARRAY"}};
-        };
-    };
-
     class CREATE3DENENTITY
     {
         class SYNTAX1
