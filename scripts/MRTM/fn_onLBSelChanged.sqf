@@ -19,14 +19,14 @@ if (_lb == "Players") then {
 	_unit = _data call BIS_fnc_getUnitByUID;
 	[format ["%1: _data: %2", _number, _data]] remoteExec ["systemChat", player];
 	[format ["%1: _unit: %2", _number, _unit]] remoteExec ["systemChat", player];
-	if (!(_unit getVariable [(format ["MRTM_InvitedBy_%1", (getPlayerUID player)]), false]) && {(count ((units _unit) select {isPlayer _x}) == 1) && {leader player == player}}) then {
+	if (!((getPlayerUID _unit) in (player getVariable ["MRTM_invitesOut", []])) && {(count ((units _unit) select {isPlayer _x}) == 1) && {leader player == player}}) then {
 		ctrlEnable [4101, true];
 		[format ["%1: Can Invite", _number]] remoteExec ["systemChat", player];
 	} else {
 		ctrlEnable [4101, false];
 		[format ["%1: Can't Invite", _number]] remoteExec ["systemChat", player];
 	};
-	if (player getVariable [(format ["MRTM_InvitedBy_%1", _data]), false]) then {
+	if ((getPlayerUID _unit) in (player getVariable ["MRTM_invitesIn", []])) then {
 		[format ["%1: Can accept", _number]] remoteExec ["systemChat", player];
 		ctrlEnable [4105, true];
 		ctrlEnable [4102, true];
