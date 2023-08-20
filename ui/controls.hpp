@@ -1072,7 +1072,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText1: RscStructuredTextMRTM
 		{
 			idc = 1117;
-			text = "Disable 3rd person view";
+			text = "Disable 3rd person view (x2 CP)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
