@@ -2,7 +2,7 @@
 
 BIS_WL_manLost = false;
 while {!BIS_WL_missionEnd} do {
-	_t = serverTime + 60;
+	_t = serverTime + 400;
 	waitUntil {sleep 2; _t < serverTime || {BIS_WL_manLost}};
 	if (BIS_WL_manLost) then {
 		BIS_WL_manLost = false;
