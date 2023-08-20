@@ -270,10 +270,10 @@ addMissionEventHandler ["MarkerCreated", {
 		_e;
 	}];
 	//init radio after team check 
-	enableRadio TRUE;
-	enableSentences TRUE;
-	{_x enableChannel [TRUE, TRUE]} forEach [1,2,3,4,5];
-	{_x enableChannel [FALSE, FALSE]} forEach [0]; //no global chat
+	enableRadio true;
+	enableSentences true;
+	{_x enableChannel [true, true]} forEach [1,2,3,4,5];
+	{_x enableChannel [true, false]} forEach [0]; //no global chat
 };
 
 call BIS_fnc_WL2_sub_arsenalSetup;
