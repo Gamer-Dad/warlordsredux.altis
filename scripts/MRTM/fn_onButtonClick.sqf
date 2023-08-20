@@ -42,6 +42,9 @@ if (_action == "Accept") exitWith {
 
 if (_action == "Leave") exitWith {
 	_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
+	if (player == leader group player) then {
+		[group player, (selectRandom ((units player) select {isPlayer _x}))] remoteExec ["setLeader", (units player)];
+	};
 	_group = createGroup (side group player);
 	_units joinSilent _group;
 	player setVariable ["MRTM_currentGroup", _group];
