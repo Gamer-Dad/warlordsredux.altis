@@ -2,7 +2,7 @@ params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 0 spawn KS_fnc_unflipVehicleAddAction;
 
 private _grp = (player getVariable ["MRTM_currentGroup", (createGroup (side player))]);
-_newUnit joinSilent _grp;
+[_newUnit] joinSilent _grp;
 
 private _leader = (leader _grp);
 [format ["%1, %2, %3", (_newUnit != _leader), (alive _leader), ((_oldUnit distance _leader) < 100)]] remoteExec ["systemChat", 0];
