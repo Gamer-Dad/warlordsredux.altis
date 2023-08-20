@@ -8,7 +8,6 @@ params ["_lb"];
 lbClear 4009;
 ctrlShow [4009, false];
 ctrlShow [4106, false];
-ctrlShow [4103, false];
 
 private _number = random 200;
 
