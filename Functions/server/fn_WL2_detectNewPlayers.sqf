@@ -9,26 +9,26 @@ while {!BIS_WL_missionEnd} do {
         //AI buddy count system
 		_players = count BIS_WL_allWarlords;
     	if (_players >= 51) then {
-        	BIS_WL_maxSubordinates = 1;
+        	BIS_WL_maxSubordinates = 2;
 			publicVariable "BIS_WL_maxSubordinates";		
         } Else {
 			if (_players >= 45) then {
-				BIS_WL_maxSubordinates = 2;
+				BIS_WL_maxSubordinates = 3;
 				publicVariable "BIS_WL_maxSubordinates";
 			} Else {
 				if (_players >= 40) then {
-					BIS_WL_maxSubordinates = 3;
+					BIS_WL_maxSubordinates = 4;
 					publicVariable "BIS_WL_maxSubordinates";
 				} Else {
 					if (_players >= 30) then {
-						BIS_WL_maxSubordinates = 4;
+						BIS_WL_maxSubordinates = 5;
 						publicVariable "BIS_WL_maxSubordinates";
 					} Else {
 						if (_players >= 20) then {
-							BIS_WL_maxSubordinates = 5;
+							BIS_WL_maxSubordinates = 6;
 							publicVariable "BIS_WL_maxSubordinates";
 						} Else {
-							BIS_WL_maxSubordinates = 6;
+							BIS_WL_maxSubordinates = 7;
 							publicVariable "BIS_WL_maxSubordinates";
 						};
 					};
