@@ -93,6 +93,8 @@ if (_action == "orderAsset") exitWith {
 								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
 								_asset setDir 0;
+								_pos2 = getPosATL _asset;
+								_asset setVehiclePosition [[_pos2 # 0, _pos2 # 1, ((_pos2 # 2) + 0.5)], [], 0, "CAN_COLLIDE"];
 							} else {
 								private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
