@@ -7,7 +7,8 @@ while {!BIS_WL_missionEnd} do {
 	if (BIS_WL_manLost) then {
 		BIS_WL_manLost = false;
 	} else {
-		BIS_WL_matesAvailable = (BIS_WL_matesAvailable + 1) min BIS_WL_maxSubordinates;
+		_ai = missionNamespace getVariable [format ["BIS_WL_maxSubordinates_%1", side group player], 1];
+		BIS_WL_matesAvailable = ((missionNamespace getVariable [format ["BIS_WL_maxSubordinates_%1", side group player], 1]) + 1) min _ai;
 		[] spawn BIS_fnc_WL2_refreshOSD;
 	};
 };

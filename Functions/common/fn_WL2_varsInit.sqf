@@ -10,7 +10,6 @@ switch (_locality) do {
 		if (BIS_WL_mapSize == 0) then {BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "Grid" >> "OffsetY")};
 		BIS_WL_mapAreaArray = [[BIS_WL_mapSize / 2, BIS_WL_mapSize / 2], BIS_WL_mapSize / 2, BIS_WL_mapSize / 2, 0, TRUE];
 		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
-		BIS_WL_maxSubordinates = 1;
 	};
 	case "server": {
 		BIS_WL_playerIDArr = [[], []];
@@ -38,7 +37,7 @@ switch (_locality) do {
 		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = 0;
-		BIS_WL_matesAvailable = BIS_WL_maxSubordinates;
+		BIS_WL_matesAvailable = missionNamespace getVariable [format ["BIS_WL_maxSubordinates_%1", side group player], 1];
 		BIS_WL_lastLoadout = [];
 		BIS_WL_savedLoadout = [];
 		BIS_WL_loadoutApplied = FALSE;
