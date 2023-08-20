@@ -2,7 +2,13 @@ params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 0 spawn KS_fnc_unflipVehicleAddAction;
 
 private _grp = (player getVariable ["MRTM_currentGroup", (createGroup (side player))]);
-player joinSilent _grp;
+_newUnit joinSilent _grp;
+
+private _leader = (leader _grp);
+if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100)}}) then {
+	0 spawn BIS_fnc_WL2_orderLastLoadout;
+	_newUnit setVehiclePosition [getPosATL _leader, [], 2, "NONE"];
+};
 
 {
 	if (isNull _x) then {
