@@ -5,6 +5,7 @@ private _grp = (player getVariable ["MRTM_currentGroup", (createGroup (side play
 _newUnit joinSilent _grp;
 
 private _leader = (leader _grp);
+[format ["%1, %2, %3", (_newUnit != _leader), (alive _leader), ((_oldUnit distance _leader) < 100)]] remoteExec ["systemChat", 0];
 if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100)}}) then {
 	0 spawn BIS_fnc_WL2_orderLastLoadout;
 	_newUnit setVehiclePosition [getPosATL _leader, [], 2, "NONE"];
