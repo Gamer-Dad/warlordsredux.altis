@@ -2,8 +2,6 @@
 
 params ["_sender", "_action", "_pos", "_target", "_isStatic", "_direction"];
 
-_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
-
 if (isNull _sender) exitWith {};
 
 if (_action == "10k") exitWith {
@@ -12,6 +10,7 @@ if (_action == "10k") exitWith {
 };
 
 if (_action == "orderAsset") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_target, 50002]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -198,6 +197,7 @@ if (_action == "orderAsset") exitWith {
 };
 
 if (_action == "lastLoadout") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -209,6 +209,7 @@ if (_action == "lastLoadout") exitWith {
 };
 
 if (_action == "savedLoadout") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -220,6 +221,7 @@ if (_action == "savedLoadout") exitWith {
 };
 
 if (_action == "orderArsenal") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -231,6 +233,7 @@ if (_action == "orderArsenal") exitWith {
 };
 
 if (_action == "fastTravelContested") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_fastTravelCostContested", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -242,6 +245,7 @@ if (_action == "fastTravelContested") exitWith {
 };
 
 if (_action == "scan") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_scanCost", 750]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -275,6 +279,7 @@ if (_action == "scan") exitWith {
 };
 
 if (_action == "orderFTVehicle") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -296,6 +301,7 @@ if (_action == "orderFTVehicle") exitWith {
 };
 
 if (_action == "orderFTPod") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -317,6 +323,7 @@ if (_action == "orderFTPod") exitWith {
 };
 
 if (_action == "targetReset") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_targetResetCost", 500]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
@@ -339,6 +346,7 @@ if (_action == "orderAI") exitWith {
 };
 
 if (_action == "fundsTransfer") exitWith {
+	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	if (_playerFunds >= _pos) then {
 		_targetUID = getPlayerUID _target;
 		_uid = getPlayerUID _sender;
