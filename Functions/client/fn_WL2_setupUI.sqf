@@ -390,7 +390,7 @@ switch (_displayClass) do {
 					case "RemoveUnits": {
 						{
 							deleteVehicle _x;
-						} forEach ((groupSelectedUnits player) select {_x != player});
+						} forEach ((groupSelectedUnits player) select {_x != player && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}});
 						[] spawn BIS_fnc_WL2_refreshOSD;
 					};
 					case "RespawnVic": {0 spawn BIS_fnc_WL2_orderFTVehicle};

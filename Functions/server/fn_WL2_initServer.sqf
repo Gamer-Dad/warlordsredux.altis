@@ -58,7 +58,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	{
 		if !(isPlayer _x) then {deleteVehicle _x;};
-	} forEach ((units group _unit) - [_unit]);
+	} forEach ((units group _unit) select {(_x getVariable ["BIS_WL_ownerAsset", "132"] == getPlayerUID _unit) && {_x != _unit}});
 	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 	
 	0 spawn BIS_fnc_WL2_calcImbalance;

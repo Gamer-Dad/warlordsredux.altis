@@ -307,10 +307,10 @@ call BIS_fnc_WL2_targetResetHandle;
 };
 
 0 spawn {
-	_selectedCnt = count ((groupSelectedUnits player) - [player]);
+	_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}});
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep 1; count ((groupSelectedUnits player) - [player]) != _selectedCnt};
-		_selectedCnt = count ((groupSelectedUnits player) - [player]);
+		waitUntil {sleep 1; count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}}) != _selectedCnt};
+		_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}});
 		call BIS_fnc_WL2_sub_purchaseMenuRefresh;
 	};
 };
