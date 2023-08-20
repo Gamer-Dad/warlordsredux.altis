@@ -11,20 +11,12 @@ civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params ["_t"];
-	if (_t getVariable ["BIS_WL_registerdCheater", false]) exitWith {(if (side group _t == west) then {westColor} else {eastColor})};
 	if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};
 	if (side group player == west) exitWith {westColor};
 	if (side group player == east) exitWith {eastColor};
 	if (side group player == resistance) exitWith {aafColor};
 	if (side group player == civilian) exitWith {civilianColor};
 	civilianColor;
-};
-
-MRTM_fnc_isDowned = {
-	params ["_p"];
-	_result = false;
-	if ((lifeState _p) isEqualTo 'INCAPACITATED') exitWith {true};
-	_result;
 };
 
 MRTM_fnc_iconType = {
@@ -119,9 +111,6 @@ MRTM_fnc_iconText = {
 			_text = format ["[AUTO] %1", _vd];
 		};
 	};
-	if (_x getVariable ["BIS_WL_registerdCheater", false] && {_x != player}) then {
-		_text = format ["%1: Cheater", _text];
-	};
 	_text;
 };
 
@@ -198,7 +187,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allPlayers) select {(!alive _x) && {(side group _x == side group player)}});
+	} forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player)}});
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
@@ -233,22 +222,7 @@ MRTM_fnc_iconDrawMap = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
-	{
-		_m drawIcon [
-			[_x] call MRTM_fnc_iconType,
-			[_x] call MRTM_fnc_iconColor,
-			[_x] call MRTM_fnc_getPos,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_iconSize,
-			[_x] call MRTM_fnc_getDir,
-			[_x] call MRTM_fnc_iconText,
-			1,
-			0.025,
-			"TahomaB",
-			"right"
-		];
-	} forEach ((allPlayers) select {(_x getVariable ["BIS_WL_registerdCheater", false]) && {_x != player}});
+	} forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -265,7 +239,22 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};		
-	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});	
+	} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
+	{
+		_m drawIcon [
+			[_x] call MRTM_fnc_iconType,
+			[0,0.6,0,1],
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];		
+	} forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -282,8 +271,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};
-	} count (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
-	
+	} forEach (vehicles select {(((crew _x) findIf {(side group _x == side group player)}) != -1) && {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -300,7 +288,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};		
-	} count ((allUnitsUAV) select {(side group (crew _x select 0) == side group player) && {(alive _x)}});
+	} forEach ((allUnitsUAV) select {(side group (crew _x select 0) == side group player) && {(alive _x)}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -317,7 +305,7 @@ MRTM_fnc_iconDrawMap = {
 				"right"
 			];
 		};	
-	} count ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
+	} forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 	if (side group player == west) then {
 		{
 			_m drawIcon [
@@ -333,7 +321,7 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
 
 		{
 			_m drawIcon [
@@ -349,7 +337,7 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
 	};
 	if (side group player == east) then {
 		{
@@ -366,7 +354,7 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
 
 		{
 			_m drawIcon [
@@ -382,7 +370,7 @@ MRTM_fnc_iconDrawMap = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
 	};
 };
 
@@ -406,7 +394,7 @@ MRTM_fnc_iconDrawGPS = {
 			"TahomaB",
 			"right"
 		];
-	} count ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
+	} forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
 	{
 		if !(_x isEqualTo player) then {
 			_m drawIcon [
@@ -423,7 +411,7 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};
-	} count ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
+	} forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
@@ -440,7 +428,7 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};		
-	} count ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});	
+	} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});	
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
@@ -477,7 +465,7 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};
-	} count ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
+	} forEach ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {(side _x == side group player) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
 	if (side group player == west) then {
 		{
 			_m drawIcon [
@@ -493,7 +481,7 @@ MRTM_fnc_iconDrawGPS = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
 
 		{
 			_m drawIcon [
@@ -509,7 +497,7 @@ MRTM_fnc_iconDrawGPS = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
 	};
 	if (side group player == east) then {
 		{
@@ -526,7 +514,7 @@ MRTM_fnc_iconDrawGPS = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
 
 		{
 			_m drawIcon [
@@ -542,7 +530,7 @@ MRTM_fnc_iconDrawGPS = {
 				"TahomaB",
 				"right"
 			];
-		} count (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
+		} forEach (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
 	};
 };
 
