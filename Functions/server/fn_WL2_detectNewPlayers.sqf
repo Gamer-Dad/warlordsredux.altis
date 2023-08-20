@@ -8,22 +8,22 @@ while {!BIS_WL_missionEnd} do {
 		{
 			_players = count (BIS_WL_allWarlords select {side group _x == _side});
 			private _side = _x;
-			if (_players >= 51) then {
+			if (_players >= 30) then {
 				missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 1, true];
 			} Else {
-				if (_players >= 45) then {
-					missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 2, true];
+				if (_players >= 25) then {
+					missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 3, true];
 				} Else {
-					if (_players >= 40) then {
-						missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 3, true];
+					if (_players >= 20) then {
+						missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 4, true];
 					} Else {
-						if (_players >= 30) then {
-							missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 4, true];
+						if (_players >= 15) then {
+							missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 5, true];
 						} Else {
-							if (_players >= 20) then {
-								missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 5, true];
-							} Else {
+							if (_players >= 10) then {
 								missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 6, true];
+							} Else {
+								missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 8, true];
 							};
 						};
 					};
