@@ -428,7 +428,22 @@ MRTM_fnc_iconDrawGPS = {
 				"right"
 			];
 		};		
-	} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});	
+	} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
+	{
+		_m drawIcon [
+			[_x] call MRTM_fnc_iconType,
+			[0,0.6,0,1],
+			[_x] call MRTM_fnc_getPos,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_iconSize,
+			[_x] call MRTM_fnc_getDir,
+			[_x] call MRTM_fnc_iconText,
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];		
+	} forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});	
 	{
 		private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 		{
