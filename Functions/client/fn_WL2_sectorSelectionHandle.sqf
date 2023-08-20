@@ -13,7 +13,7 @@ if (_state == "start") then {
 			BIS_WL_selection_showLinks = FALSE;
 		};
 		case "travelling": {
-			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {_x != (([BIS_WL_base1, BIS_WL_base2] select {(_x getVariable "BIS_WL_owner") != (side group _unit)}) # 0)};
+			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {_x != (([BIS_WL_base1, BIS_WL_base2] select {(_x getVariable "BIS_WL_owner") != (side group player)}) # 0)};
 			BIS_WL_selection_showLinks = FALSE;
 		};
 		case "travelling_contested": {
