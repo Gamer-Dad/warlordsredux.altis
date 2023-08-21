@@ -22,7 +22,11 @@ if (_lb == "Players") then {
 		ctrlEnable [4101, false];
 	};
 	if ((getPlayerUID _unit) in (player getVariable ["MRTM_invitesIn", []])) then {
-		ctrlEnable [4105, true];
+		if (count (units player) == 1) then {
+			ctrlEnable [4105, true];
+		} else {
+			ctrlEnable [4105, false];
+		};
 		ctrlEnable [4102, true];
 	} else {
 		ctrlEnable [4105, false];
