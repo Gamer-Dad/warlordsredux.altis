@@ -166,12 +166,6 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 //Evenhandlers
 "fundsDatabaseClients" addPublicVariableEventHandler {
 	[] spawn BIS_fnc_WL2_refreshOSD;
-	_new = _this select 1;
-	_old = _this select 0;
-	systemChat (str (_new - _old));
-	if (_new - _old > 0) then {
-		[(_new - _old)] spawn BIS_fnc_WL2_updateEarnedCP;
-	};
 };
 
 player addEventHandler ["GetInMan", {
