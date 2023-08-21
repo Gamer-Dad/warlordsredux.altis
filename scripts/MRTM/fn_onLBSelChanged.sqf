@@ -17,7 +17,11 @@ if (_lb == "Players") then {
 	_data = lbData [4006, (lbCurSel 4006)];
 	_unit = _data call BIS_fnc_getUnitByUID;
 	if (!((getPlayerUID _unit) in (player getVariable ["MRTM_invitesOut", []])) && {(count ((units _unit) select {isPlayer _x}) == 1) && {leader player == player}}) then {
-		ctrlEnable [4101, true];
+		if (count (units player) == 1) then {
+			ctrlEnable [4101, true];
+		} else {
+			ctrlEnable [4101, false];
+		};
 	} else {
 		ctrlEnable [4101, false];
 	};
