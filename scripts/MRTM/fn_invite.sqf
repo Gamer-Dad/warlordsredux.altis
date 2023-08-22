@@ -5,10 +5,10 @@
 */
 params ["_unit", "_by"];
 
-_invites = _unit getVariable ["MRTM_invitesIn", []];
+_invites = missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID _unit]), []];
 _invites pushBackUnique (getPlayerUID _by);
-_unit setVariable ["MRTM_invitesIn", _invites, [owner _unit, 2]];
+missionNamespace setVariable [(format ["MRTM_invitesIn_%1", getPlayerUID _unit]), _invites, [owner _unit, 2]];
 
-_invitesOut = _by getVariable ["MRTM_invitesOut", []];
+_invitesOut = missionNamespace getVariable [(format ["MRTM_invitesOut_%1", getPlayerUID _by]), []];
 _invitesOut pushBackUnique (getPlayerUID _unit);
-_by setVariable ["MRTM_invitesOut", _invitesOut, [owner _by, 2]];
+missionNamespace setVariable [(format ["MRTM_invitesOut_%1", getPlayerUID _by]), _invitesOut, [owner _by, 2]];
