@@ -6,8 +6,8 @@ while {!BIS_WL_missionEnd} do {
 		_x spawn BIS_fnc_WL2_setupNewWarlord;
 		
 		{
-			_players = count (BIS_WL_allWarlords select {side group _x == _side});
 			private _side = _x;
+			_players = count (BIS_WL_allWarlords select {side group _x == _side});
 			if (_players >= 30) then {
 				missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 1, true];
 			} Else {
