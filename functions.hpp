@@ -72,6 +72,7 @@ class CfgFunctions {
 			class WL2_wasMain {};
 			class WL2_updateEarnedCP {};
 			class WL2_askForgiveness {};
+			class WL2_clientEH {};
     	};
 		class Server 
 		{
@@ -198,6 +199,7 @@ class CfgFunctions {
 			class onTraitButton {};
 			class openEmoteMenu {};
 			class emote {};
+			class settingsinit {};
 		};
 	};
 	class GOM {
