@@ -1,7 +1,7 @@
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 0 spawn KS_fnc_unflipVehicleAddAction;
 
-private _grp = (player getVariable ["MRTM_currentGroup", (createGroup (side player))]);
+private _grp = (_newUnit getVariable ["MRTM_currentGroup", (createGroup (side _newUnit))]);
 [_newUnit] joinSilent _grp;
 
 private _leader = (leader _grp);
