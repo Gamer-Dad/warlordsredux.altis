@@ -17,8 +17,11 @@ profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 	_base setVariable ["BIS_WL_owner", _side, true];
 	_base setVariable ["BIS_WL_originalOwner", _side, true];
 	_base setVariable ["BIS_WL_previousOwners", [_side], true];
-	_base setVariable ["BIS_WL_revealedBy", [_side], true];								
-	private _bunker = createVehicle ["Land_PillboxBunker_01_big_F", [((position _x) # 0), (((position _x) # 1) - 50), ((position _x) # 2)], [], 10, "NONE"];
+	_base setVariable ["BIS_WL_revealedBy", [_side], true];
+	_arr = [((position _x) # 0), (((position _x) # 1) - 50), ((position _x) # 2)];
+	_pos = _arr findEmptyPosition [0, 20, "Land_PillboxBunker_01_big_F"];
+	_posFinal = if (count _pos == 0) then {_arr} else {_pos};
+	private _bunker = createVehicle ["Land_PillboxBunker_01_big_F", _posFinal, [], 0, "CAN_COLLIDE"];
 	private _flag = createVehicle ["FlagPole_F", (position _bunker), [], 0,"CAN_COLLIDE"];
 	if (_side == west) then {
 		_flag setFlagTexture "\A3\Data_F\Flags\flag_NATO_CO.paa";
