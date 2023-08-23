@@ -17,7 +17,7 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) <
 	};
 } forEach (missionNamespace getVariable (format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]));
 
-["Died"] call MRTM_fnc_statTracker;
+["Died"] spawn MRTM_fnc_statTracker;
 
 player addAction [
 	"10K CP", 

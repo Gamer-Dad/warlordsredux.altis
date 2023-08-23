@@ -18,8 +18,6 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 	_ctrl ctrlCommit 0;
 } forEach (uiNamespace getVariable ["activeControls", []]);
 
-if ((isNil {(uiNamespace getVariable "control")}) && {!(9 isEqualType (uiNamespace getVariable "control"))}) exitWith {};
-
 _ctrlNmbr = (uiNamespace getVariable "control");
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 
@@ -33,7 +31,7 @@ if (_unit isKindOf "Man") then {
 };
 
 WAS_score = true;
-["Kill", _unit] call MRTM_fnc_statTracker;
+["Kill", _unit] spawn MRTM_fnc_statTracker;
 
 if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
 	playSoundUI ["AddItemOK", 0.1, 1];
