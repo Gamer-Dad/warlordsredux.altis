@@ -86,9 +86,6 @@ while {dialog} do {
 		ctrlShow [6969691, false];
 	};
 
-	_inventoryKey = actionKeysNames "gear";
-	_gearKey = actionKeysNames "cycleThrownItems";
-
 	switch (_curSel) do {
 		case "pageAbt": {
 			private _control = findDisplay 6969 displayCtrl 69696;
@@ -105,6 +102,11 @@ while {dialog} do {
 
 		case "pageHow": {
 			hRead = true;
+			_inventoryKey = actionKeysNames "gear";
+			_gearKey = actionKeysNames "cycleThrownItems";
+			_settingsKey = actionKeysNames "user2";
+			_groupKey = actionKeysNames "user3";
+			_emotesKey = actionKeysNames "user4";
 
 			private _control = findDisplay 6969 displayCtrl 69696;
 			_control ctrlSetStructuredText composeText [
@@ -120,6 +122,9 @@ while {dialog} do {
 			format [localize "STR_MRTM_welcomeInteract_12", _inventoryKey], lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_13", "Insert"], lineBreak,
 			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
+			format ["Open your settings: %1", _settingsKey], lineBreak,
+			format ["Open the group menu: %1", _groupKey], lineBreak,
+			format ["Open the emote menu: %1", _emotesKey], lineBreak,
 			""
 			];
 		};
