@@ -26,15 +26,8 @@ if (isNull (findDisplay 602)) then {
 			};
 			sleep 0.01;
 		};
-	};
-
-	0 spawn {
-		waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
-		while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
-			if !(isNull (findDisplay 602)) then {
-				(findDisplay 602) closeDisplay 1;
-			};
-			sleep 0.1;
+		if !(isNull (findDisplay 602)) then {
+			(findDisplay 602) closeDisplay 1;
 		};
 	};
 };
