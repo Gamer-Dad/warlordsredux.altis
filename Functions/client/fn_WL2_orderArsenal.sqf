@@ -24,10 +24,10 @@ if (isNull (findDisplay 602)) then {
 					player addHeadgear "H_HelmetO_ocamo";
 				};
 			};
+			if !(isNull (findDisplay 602)) then {
+				(findDisplay 602) closeDisplay 1;
+			};
 			sleep 0.01;
-		};
-		if !(isNull (findDisplay 602)) then {
-			(findDisplay 602) closeDisplay 1;
 		};
 	};
 };
