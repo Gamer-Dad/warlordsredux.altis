@@ -174,9 +174,10 @@ setTimeMultiplier 3;
 	if ((random 1) < 0.4) then {
 		private _car = createVehicle ["C_Offroad_01_comms_F", [4200.52,20100.4,-0.0614624], [], 0, "NONE"];
 		_car setDir 145;
+		[_car, "InsigniaMrThomasM"] call BIS_fnc_setUnitInsignia;
 	};
 	waitUntil { sleep 0.1; !isNil {_seat}};
-	if ((floor (random 11)) < 3) then {
+	if ((floor (random 1)) < 0.3) then {
 		_group = createGroup civilian;
 		_devMRTM = _group createUnit ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
 		missionNamespace setVariable ["devMRTM", [_devMRTM, _seat], true];

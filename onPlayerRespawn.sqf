@@ -6,7 +6,7 @@ private _grp = (_newUnit getVariable ["MRTM_currentGroup", (createGroup (side _n
 
 private _leader = (leader _grp);
 
-if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100)}}) then {
+if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100) && {isPlayer _leader}}}) then {
 	0 spawn BIS_fnc_WL2_orderLastLoadout;
 	_newUnit setVehiclePosition [getPosATL _leader, [], 2, "NONE"];
 };
