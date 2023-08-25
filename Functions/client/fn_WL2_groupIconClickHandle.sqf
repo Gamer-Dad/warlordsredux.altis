@@ -30,7 +30,10 @@ if (_sector in _availableSectors) then {
 		};
 		case WL_ID_SELECTION_ORDERING_AIRCRAFT;
 		case WL_ID_SELECTION_FAST_TRAVEL;
-		case WL_ID_SELECTION_FAST_TRAVEL_CONTESTED;
+		case WL_ID_SELECTION_FAST_TRAVEL_CONTESTED: {
+			BIS_WL_targetSector = _sector;
+			playSound "AddItemOK";
+		};
 		case WL_ID_SELECTION_SCAN: {
 			if ((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]) < (serverTime) - (getMissionConfigValue ["BIS_WL_scanCooldown", 300])) then {
 				BIS_WL_targetSector = _sector;
