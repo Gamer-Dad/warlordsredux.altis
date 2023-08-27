@@ -185,11 +185,7 @@ if (_action == "orderAsset") exitWith {
 		} else {
 			[_asset, 0] remoteExec ["lock", (owner _asset)];
 		};
-	
-		_assetVariable = call BIS_fnc_WL2_generateVariableName;
-		_asset setVehicleVarName _assetVariable;
-		[_asset, _assetVariable] remoteExec ["setVehicleVarName", remoteExecutedOwner];
-		remoteExecutedOwner publicVariableClient _assetVariable;
+
 		[_asset, _sender, _isStatic] call BIS_fnc_WL2_setOwner;
 		[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 

@@ -73,10 +73,6 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class setVehicleVarName {
-			allowedTargets = 0;
-		};
-
 		class systemChat {
 			allowedTargets = 0;
 		};
