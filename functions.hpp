@@ -142,6 +142,7 @@ class CfgFunctions {
 			class WL2_sub_rearmActionAir {};
 			class WL2_sub_vehicleKickAction {};
 			class WL2_sub_removeAction {};
+			class WL2_sub_dazzlerAction {};
     	};
 		class MineCleanup 
 		{

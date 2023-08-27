@@ -19,14 +19,4 @@ if (_ammo == 0) then {
 	_vehicle setVariable ["dapsType", _type, true];
 };
 
-_vehicle spawn {
-	sleep 5;
-	while { alive _this } do {
-		if (vehicle player == _this && {(typeOf _this in dapsDazzler && {!isEngineOn _this})}) then {
-			hintSilent localize "STR_A3_WL_aps_off_warning";
-		};
-		sleep 30;
-	};
-};
-
 _vehicle spawn DAPS_fnc_SetupProjectiles;

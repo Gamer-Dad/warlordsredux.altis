@@ -56,7 +56,8 @@ if (isPlayer _owner) then {
 			} else {
 				_asset call BIS_fnc_WL2_sub_rearmAction;
 				if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
-					hintSilent parseText format[localize "STR_A3_WL_dazzler_instruction", actionKeysNames "cycleThrownItems"];
+					_asset setVariable ["dazzlerActivated", false];
+					_asset call BIS_fnc_WL2_sub_dazzlerAction;
 				};
 
 				if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
