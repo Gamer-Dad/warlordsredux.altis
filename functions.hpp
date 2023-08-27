@@ -196,7 +196,6 @@ class CfgFunctions {
 			class accept {};
 			class onButtonClick {};
 			class onLBSelChangedTraits {};
-			class onTraitButton {};
 			class openEmoteMenu {};
 			class emote {};
 			class settingsinit {};
@@ -233,7 +232,6 @@ class CfgFunctions {
 			file = "scripts\DAPS\Scripts\Management";
 			class AssignAPS {};
 			class BroadcastTypes {};
-			class KeyPressed {};
 			class RearmAPS {};
 			class RegisterVehicle {};
 		};

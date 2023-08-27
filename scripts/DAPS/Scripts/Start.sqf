@@ -31,7 +31,6 @@ sleep 1;
 
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
-    params ["_display", "_key"];
     if (inputAction "cycleThrownItems" > 0.01) then {
         [vehicle player, 0, false] spawn DAPS_fnc_Report;
     };
