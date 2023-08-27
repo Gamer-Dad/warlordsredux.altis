@@ -6,10 +6,6 @@
 
 if (isNull (findDisplay 4000)) then {
     createDialog "MRTM_groupsMenu";
-    ((findDisplay 4000) displayCtrl 4009) ctrlAddEventHandler ["LBSelChanged", {
-		params ["_control", "_lbCurSel", "_lbSelection"];
-		_this spawn MRTM_fnc_onLBSelChangedTraits;
-	}];
 
 	0 spawn {
 		while {!(isNull (findDisplay 4000))} do {
@@ -18,9 +14,6 @@ if (isNull (findDisplay 4000)) then {
 			sleep 0.2;
 		};
 	};
-
-	ctrlShow [4009, false];
-	ctrlShow [4106, false];
 };
 disableSerialization;
 
