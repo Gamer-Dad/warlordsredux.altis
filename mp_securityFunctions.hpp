@@ -36,7 +36,7 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
-		class BIS_fnc_WL2_kickCheater {
+		class BIS_fnc_WL2_publicHint {
 			allowedTargets = 1;
 		};
 
