@@ -13,18 +13,16 @@ if (_ammo > 0) then {
 	_vehicle setVariable ["dapsType", _type, true];
 	_vehicle setVariable ["dapsAmmo", _ammo, true];
 	_vehicle setVariable ["dapsAmmoMax", _ammo, true];
-	_vehicle setVariable ["apsDisabled", false, true];
 };
 
 if (_ammo == 0) then {
 	_vehicle setVariable ["dapsType", _type, true];
-	_vehicle setVariable ["apsDisabled", true, true];
 };
 
 _vehicle spawn {
 	sleep 5;
 	while { alive _this } do {
-		if (vehicle player == _this && {(_this getVariable ["apsDisabled", false] || {(typeOf _this in dapsDazzler && {!isEngineOn _this})})}) then {
+		if (vehicle player == _this && {(typeOf _this in dapsDazzler && {!isEngineOn _this})}) then {
 			hintSilent localize "STR_A3_WL_aps_off_warning";
 		};
 		sleep 30;

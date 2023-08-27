@@ -56,7 +56,6 @@ if (isPlayer _owner) then {
 			} else {
 				_asset call BIS_fnc_WL2_sub_rearmAction;
 				if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
-					_asset setVariable ["apsDisabled", true];
 					hintSilent parseText format[localize "STR_A3_WL_dazzler_instruction", actionKeysNames "cycleThrownItems"];
 				};
 

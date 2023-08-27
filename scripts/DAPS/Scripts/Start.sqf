@@ -29,17 +29,10 @@ dapsAPSAll = dapsAPStypes + dapsDazzler;
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 sleep 1;
 
-APS_toggle = serverTime;
 waituntil {sleep 0.1; !isnull (findDisplay 46)};
 (findDisplay 46) displayAddEventHandler ["KeyDown", {
     params ["_display", "_key"];
-    if (APS_toggle < serverTime && {((inputAction "cycleThrownItems") > 0.01)}) then {
-        // Synchronous call to make sure it executes first before report
-        call DAPS_fnc_KeyPressed;
-        [vehicle player, 0, false] spawn DAPS_fnc_Report;
-        APS_toggle = (serverTime + 2);
-    };
-    if (inputAction "user1" > 0.01) then {
+    if (inputAction "cycleThrownItems" > 0.01) then {
         [vehicle player, 0, false] spawn DAPS_fnc_Report;
     };
 }];
