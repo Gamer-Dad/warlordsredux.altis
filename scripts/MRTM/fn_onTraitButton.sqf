@@ -15,7 +15,7 @@ _unit = (lbData [4009, (lbCurSel 4009)]) call BIS_fnc_getUnitByUID;
 			[_unit, [_x, true, false]]remoteExec ["setUnitTrait", _unit];
 		} else {
 			if (_trait == "TeamLeader") then {
-				[(group _unit), _unit] remoteExec ["selectLeader", (group _unit)];
+				[(group _unit), _unit] remoteExec ["selectLeader", (groupOwner group _unit)];
 				player setUnitTrait [_x, false, true];
 				[_unit, [_x, true, true]]remoteExec ["setUnitTrait", _unit];
 			} else {

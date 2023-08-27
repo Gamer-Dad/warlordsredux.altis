@@ -3,8 +3,11 @@ params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 
 private _grp = (_newUnit getVariable ["MRTM_currentGroup", (createGroup (side _newUnit))]);
 [_newUnit] joinSilent _grp;
-
 private _leader = (leader _grp);
+
+if (count ((units _newUnit) select {!(isPlayer _x)}) > 0) then {
+	[group _newUnit, _newUnit] remoteExec ["selectLeader", (groupOwner group _newUnit)];
+};
 
 if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100) && {isPlayer _leader}}}) then {
 	0 spawn BIS_fnc_WL2_orderLastLoadout;
