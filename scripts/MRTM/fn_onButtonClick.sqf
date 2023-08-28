@@ -50,9 +50,17 @@ if (_action == "Leave") exitWith {
 	0 spawn MRTM_fnc_openGroupMenu;
 };
 
+if (_action == "Kick") exitWith {
+	_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
+	_group = createGroup (side group player);
+	_units joinSilent _group;
+	0 spawn MRTM_fnc_openGroupMenu;
+};
+
 if (_action == "Promote") exitWith {
 	if ((lbCurSel 4005) < 0) exitWith {};
 	_data = lbData [4005, (lbCurSel 4005)];
 	_unit = _data call BIS_fnc_getUnitByUID;
 	[group _unit, _unit] remoteExec ["selectLeader", (groupOwner group player)];
+	0 spawn MRTM_fnc_openGroupMenu;
 };

@@ -1513,7 +1513,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4102;
 			text = "DECLINE";
-			onLoad = "(_this # 0) ctrlEnable false;";
+			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Decline'] call MRTM_fnc_onButtonClick;";
 			x = 0.487969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
@@ -1525,7 +1525,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4103;
 			text = "LEAVE";
-			onLoad = "(_this # 0) ctrlEnable false;";
+			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Leave'] call MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
@@ -1537,7 +1537,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4104;
 			text = "PROMOTE";
-			onLoad = "(_this # 0) ctrlEnable false;";
+			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Promote'] call MRTM_fnc_onButtonClick;";
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
@@ -1549,9 +1549,21 @@ class MRTM_groupsMenu
 		{
 			idc = 4105;
 			text = "ACCEPT";
-			onLoad = "(_this # 0) ctrlEnable false;";
+			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Accept'] call MRTM_fnc_onButtonClick;";
 			x = 0.550969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
+		class MRTMGroupsKickButton: RscButtonMRTM
+		{
+			idc = 4106;
+			text = "KICK";
+			onLoad = "(_this # 0) ctrlShow false;";
+			action = "['Kick'] call MRTM_fnc_onButtonClick;";
+			x = 0.427969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
