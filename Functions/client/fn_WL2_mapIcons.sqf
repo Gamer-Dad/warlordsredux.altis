@@ -6,7 +6,7 @@ waitUntil {!isNil "BIS_WL_playerSide"};
 
 westColor = [0,0.3,0.6,1];
 eastColor = [0.5,0,0,1];
-aafColor = [0,0.5,0,1];
+aafColor = [0,0.6,0,1];
 civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
@@ -243,7 +243,7 @@ MRTM_fnc_iconDrawMap = {
 	{
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
-			[0,0.6,0,1],
+			[0,0.4,0,1],
 			[_x] call MRTM_fnc_getPos,
 			[_x] call MRTM_fnc_iconSize,
 			[_x] call MRTM_fnc_iconSize,
@@ -432,7 +432,7 @@ MRTM_fnc_iconDrawGPS = {
 	{
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
-			[0,0.6,0,1],
+			[0,0.4,0,1],
 			[_x] call MRTM_fnc_getPos,
 			[_x] call MRTM_fnc_iconSize,
 			[_x] call MRTM_fnc_iconSize,
