@@ -5,7 +5,6 @@ params ["_unit", "_killer", "_instigator"];
 if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
 if (isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) exitWith {};
 
-systemChat format ["%1, %2", _instigator, ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)];
 _instigator = ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
 if !(isNull _instigator) then {
 	_responsibleLeader = _instigator;
