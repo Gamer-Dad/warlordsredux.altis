@@ -34,7 +34,6 @@ if (_action == "Accept") exitWith {
 		_units = ((units player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player});
 		_group = (group _unit);
 		_units joinSilent _group;
-		player setVariable ["MRTM_currentGroup", _group];
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 	};
 	0 spawn MRTM_fnc_openGroupMenu;
@@ -48,6 +47,5 @@ if (_action == "Leave") exitWith {
 	};
 	_group = createGroup (side group player);
 	_units joinSilent _group;
-	player setVariable ["MRTM_currentGroup", _group];
 	0 spawn MRTM_fnc_openGroupMenu;
 };
