@@ -10,8 +10,8 @@ if (_lb == "Players") then {
 
 	_data = lbData [4006, (lbCurSel 4006)];
 	_unit = _data call BIS_fnc_getUnitByUID;
-	if (!((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), []])) && {(leader player == player) && {(count (units _unit) == 1)}}) then {
-		if (count (units player) == 1) then {
+	if (!((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), []])) && {(leader player == player)}) then {
+		if (count (units player) == 1 && {count (units _unit) == 1}) then {
 			ctrlEnable [4101, true];
 		} else {
 			ctrlEnable [4101, false];
@@ -19,9 +19,14 @@ if (_lb == "Players") then {
 	} else {
 		ctrlEnable [4101, false];
 	};
-	if ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []]) && {(count (units player) == 1)}) then {
-		ctrlEnable [4105, true];
-		ctrlEnable [4102, true];
+	if ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []])) then {
+		if (count (units player) == 1 && {count (units _unit) == 1}) then {
+			ctrlEnable [4105, true];
+			ctrlEnable [4102, true];
+		} else {
+			ctrlEnable [4105, false];
+			ctrlEnable [4102, true];
+		};
 	} else {
 		ctrlEnable [4105, false];
 		ctrlEnable [4102, false];
