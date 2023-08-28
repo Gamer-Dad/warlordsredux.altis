@@ -53,4 +53,3 @@ player setVariable ["reward_active", false];
 
 missionNamespace setVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), [], [clientOwner, 2]];
 missionNamespace setVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), [], [clientOwner, 2]];
-player setVariable ["MRTM_currentGroup", group player];

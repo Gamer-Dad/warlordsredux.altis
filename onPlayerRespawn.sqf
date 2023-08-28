@@ -8,11 +8,6 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) <
 	_newUnit setVehiclePosition [getPosASL _leader, [], 2, "NONE"];
 };
 
-private _grp = (_oldUnit getVariable ["MRTM_currentGroup", (createGroup (side _newUnit))]);
-if (group _newUnit != _grp) then {
-	[_newUnit] joinSilent _grp;
-};
-
 {
 	if (isNull _x) then {
 		missionNamespace setVariable [(format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]), ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) - [_x])];
