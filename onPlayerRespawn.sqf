@@ -1,15 +1,18 @@
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 0 spawn KS_fnc_unflipVehicleAddAction;
 
-private _grp = (_newUnit getVariable ["MRTM_currentGroup", (createGroup (side _newUnit))]);
-[_newUnit] joinSilent _grp;
+private _grp = (_oldUnit getVariable ["MRTM_currentGroup", (createGroup (side _newUnit))]);
 private _leader = (leader _grp);
 
-if (count ((units _newUnit) select {!(isPlayer _x)}) > 0) then {
+if (group _newUnit != _grp) then {
+	[_newUnit] joinSilent _grp;
+};
+
+if (_leader == _oldUnit) then {
 	[group _newUnit, _newUnit] remoteExec ["selectLeader", (groupOwner group _newUnit)];
 };
 
-if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100) && {isPlayer _leader}}}) then {
+if ((_oldUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 100) && {isPlayer _leader}}}) then {
 	0 spawn BIS_fnc_WL2_orderLastLoadout;
 	_newUnit setVehiclePosition [getPosATL _leader, [], 2, "NONE"];
 };
