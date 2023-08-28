@@ -1533,6 +1533,18 @@ class MRTM_groupsMenu
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
 		};
+		class MRTMGroupsPromoteButton: RscButtonMRTM
+		{
+			idc = 4104;
+			text = "PROMOTE";
+			onLoad = "(_this # 0) ctrlEnable false;";
+			action = "['Promote'] call MRTM_fnc_onButtonClick;";
+			x = 0.327969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+		};
 		class MRTMGroupsAcceptButton: RscButtonMRTM
 		{
 			idc = 4105;

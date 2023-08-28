@@ -32,8 +32,14 @@ if (_lb == "Players") then {
 	_unit = _data call BIS_fnc_getUnitByUID;
 	if (_unit == player && {(count ((units player) select {isPlayer _x})) > 1}) then {
 		ctrlEnable [4103, true];
+		ctrlEnable [4104, false];
 	} else {
 		ctrlEnable [4103, false];
+		if (_unit != player && {isPlayer _unit && {leader player == player}}) then {
+			ctrlEnable [4104, true];
+		} else {
+			ctrlEnable [4104, false];
+		};
 	};
 };
 
