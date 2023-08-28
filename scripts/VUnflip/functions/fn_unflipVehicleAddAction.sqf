@@ -9,6 +9,6 @@ player addAction [
 	true, 
 	false, 
 	"", 
-	"((isNull objectParent player) && {(alive cursorObject) && {(!isNull cursorObject) && {(cursorObject call KS_fnc_isFlipped) && {(cursorObject isKindOf 'LandVehicle') && {({alive _x} count crew cursorObject isEqualTo 0) && {(player distance cursorObject) < 10}}}}}})", 
+	"((isNull objectParent player) && {(alive cursorObject) && {(!isNull cursorObject) && {(cursorObject call KS_fnc_isFlipped) && {(cursorObject isKindOf 'LandVehicle') && {({alive _x} count crew cursorObject isEqualTo 0) && {(player distanceSqr cursorObject) < 100}}}}}})", 
 	10
 ];

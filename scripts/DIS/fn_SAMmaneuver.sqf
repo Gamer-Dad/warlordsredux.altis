@@ -1,7 +1,6 @@
 params ["_rocket", "_speed"];
 
 _target = missileTarget _rocket;
-private _minDistanceToTarget = 5;
 while {!isNull _rocket && {!isNull _target}} do{
     private _currentPos = getPosASLVisual _rocket;
     private _targetPos = aimPos _target;
@@ -11,7 +10,7 @@ while {!isNull _rocket && {!isNull _target}} do{
     private _targetVelocity = _forwardVector vectorMultiply _speed;
     _rocket setVectorDirAndUp [_forwardVector,_upVector];
     _rocket setVelocity _targetVelocity;
-    if (isNull _rocket || {isNull _target} || {(_rocket distance _targetPos) <= _minDistanceToTarget}) exitWith{};
+    if (isNull _rocket || {isNull _target} || {(_rocket distanceSqr _targetPos) <= 25}) exitWith{};
     if (time > -1) exitWith{};
     sleep 0.01;
 };

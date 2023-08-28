@@ -15,7 +15,7 @@ sleep 2;
 				if (time < _t) then {
 					if (isNull findDisplay 602) then {
 						if (vehicle player == player) then {
-							if (cursorTarget distance player <= 5 && {!(cursorTarget isKindOf "House") && {(!alive cursorTarget || {!(cursorTarget isKindOf "Man")})}}) then {
+							if (cursorTarget distanceSqr player <= 25 && {!(cursorTarget isKindOf "House") && {(!alive cursorTarget || {!(cursorTarget isKindOf "Man")})}}) then {
 								player action ["Gear", cursorTarget];
 							} else {
 								player action ["Gear", objNull];
