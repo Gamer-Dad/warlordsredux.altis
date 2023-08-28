@@ -6,17 +6,16 @@ waitUntil {!isNil "BIS_WL_playerSide"};
 
 westColor = [0,0.3,0.6,1];
 eastColor = [0.5,0,0,1];
-aafColor = [0,0.6,0,1];
-civilianColor = [0.4,0,0.5,1];
 
 MRTM_fnc_iconColor = {
 	params ["_t"];
 	if ((getPlayerChannel _t) in [1,2]) exitWith {[0,0.8,0,1]};
+	if (_t in (units player)) exitWith {[0,0.4,0,1]};
 	if (side group player == west) exitWith {westColor};
 	if (side group player == east) exitWith {eastColor};
-	if (side group player == resistance) exitWith {aafColor};
-	if (side group player == civilian) exitWith {civilianColor};
-	civilianColor;
+	if (side group player == resistance) exitWith {[0,0.6,0,1]};
+	if (side group player == civilian) exitWith {[0.4,0,0.5,1]};
+	[0.4,0,0.5,1];
 };
 
 MRTM_fnc_iconType = {
@@ -194,7 +193,7 @@ MRTM_fnc_iconDrawMap = {
 			if (!isNull _x) then {
 				_m drawIcon [
 					[_x] call MRTM_fnc_iconType,
-					if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+					if (side group _x == Independent) then {[0,0.6,0,1]} else {if (side group _x == west) then {westColor} else {eastColor}},
 					[_x] call MRTM_fnc_getPos,
 					[_x] call MRTM_fnc_iconSize,
 					[_x] call MRTM_fnc_iconSize,
@@ -243,7 +242,7 @@ MRTM_fnc_iconDrawMap = {
 	{
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
-			[0,0.4,0,1],
+			[_x] call MRTM_fnc_iconColor,
 			[_x] call MRTM_fnc_getPos,
 			[_x] call MRTM_fnc_iconSize,
 			[_x] call MRTM_fnc_iconSize,
@@ -432,7 +431,7 @@ MRTM_fnc_iconDrawGPS = {
 	{
 		_m drawIcon [
 			[_x] call MRTM_fnc_iconType,
-			[0,0.4,0,1],
+			[_x] call MRTM_fnc_iconColor,
 			[_x] call MRTM_fnc_getPos,
 			[_x] call MRTM_fnc_iconSize,
 			[_x] call MRTM_fnc_iconSize,
@@ -450,7 +449,7 @@ MRTM_fnc_iconDrawGPS = {
 			if (!isNull _x) then {
 				_m drawIcon [
 					[_x] call MRTM_fnc_iconType,
-					if (side group _x == Independent) then {aafColor} else {if (side group _x == west) then {westColor} else {eastColor}},
+					if (side group _x == Independent) then {[0,0.6,0,1]} else {if (side group _x == west) then {westColor} else {eastColor}},
 					[_x] call MRTM_fnc_getPos,
 					[_x] call MRTM_fnc_iconSize,
 					[_x] call MRTM_fnc_iconSize,
