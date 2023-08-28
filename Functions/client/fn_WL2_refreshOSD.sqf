@@ -6,11 +6,7 @@ call BIS_fnc_WL2_sub_purchaseMenuRefresh;
 
 waitUntil {!isNull (uiNamespace getVariable ["BIS_WL_osd_action_voting_title", controlNull])};
 
-if (uiNamespace getVariable "BIS_WL_cp_saved") then {
-	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#00dd00' shadow = '2' size = '%2'>%1 CP</t>", ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)), 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
-} else {
-	(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#ffffff' shadow = '2' size = '%2'>%1 CP</t>", ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)), 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
-};
+(uiNamespace getVariable "BIS_WL_osd_cp_current") ctrlSetStructuredText parseText format ["<t color='#ffffff' shadow = '2' size = '%2'>%1 CP</t>", ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)), 1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 
 (uiNamespace getVariable "BIS_WL_osd_income_side_2") ctrlSetStructuredText parseText format ["<t size = '%3' shadow = '2'>%1/%2</t>", (((BIS_WL_matesAvailable - count ((units player) select {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player})) + 1) max 0), BIS_WL_matesAvailable, 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 

@@ -72,7 +72,6 @@ player setVariable ["BIS_WL_ownerAsset", (getPlayerUID player), [2, clientOwner]
 
 //UI
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
-uiNamespace setVariable ["BIS_WL_cp_saved", FALSE];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 50000];
 
