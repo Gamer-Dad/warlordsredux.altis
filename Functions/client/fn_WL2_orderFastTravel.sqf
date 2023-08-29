@@ -82,7 +82,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_MEDIUM;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {!(isPlayer _x) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}}};
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
 	{
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
@@ -112,7 +112,7 @@ if (_toContested) then {
 	sleep WL_TIMEOUT_STANDARD;
 
 	player setDir (player getDir BIS_WL_targetSector);
-	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {!(isPlayer _x) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}}};
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
 	{
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
