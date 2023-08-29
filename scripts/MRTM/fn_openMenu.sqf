@@ -68,12 +68,6 @@ if (profileNamespace getVariable ["MRTM_EnableRWR", true]) then {
 	((findDisplay 8000) displayCtrl 2804) cbSetChecked false;
 };
 
-if (profileNamespace getVariable ["MRTM_disableHint", true]) then {
-	((findDisplay 8000) displayCtrl 2805) cbSetChecked true;
-} else {
-	((findDisplay 8000) displayCtrl 2805) cbSetChecked false;
-};
-
 if (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]) then {
 	((findDisplay 8000) displayCtrl 2806) cbSetChecked true;
 } else {

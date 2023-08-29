@@ -995,7 +995,8 @@ class MRTM_settingsMenu
 		class MRTMOtherButton5: RscCheckboxMRTM
 		{
 			idc = 2805;
-			action = "if (profileNamespace getVariable ['MRTM_disableHint', true]) then {(profileNamespace setVariable ['MRTM_disableHint', false])} else {(profileNamespace setVariable ['MRTM_disableHint', true])}";
+			action = "";
+			onLoad =  "(_this # 0) ctrlEnable false;";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;

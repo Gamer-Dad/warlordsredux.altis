@@ -5,7 +5,6 @@ class CfgFunctions {
 		{
     		file = "Functions\client";
 			class WL2_mrtmConvo {ext = ".fsm";};
-			class WL2_chatMsg {};
 			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};

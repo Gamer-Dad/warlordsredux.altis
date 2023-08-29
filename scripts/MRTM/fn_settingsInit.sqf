@@ -27,7 +27,6 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_playKillSound", true];
 	profileNamespace setVariable ["MRTM_muteVoiceInformer", false];
 	profileNamespace setVariable ["MRTM_EnableRWR", true];
-	profileNamespace setVariable ["MRTM_disableHint", true];
 	profileNamespace setVariable ["MRTM_smallAnnouncerText", false];
 	profileNamespace setVariable ["MRTM_spawnEmpty", false];
 	profileNamespace setVariable ["preferencesInitialzed", true];
