@@ -1193,57 +1193,7 @@
             <Chinese></Chinese>
         </Key>
     </Container>
-    </Container name="MRTM_easterEggs">    
-        <Key ID="STR_MRTM_easterEgg_hint_0">
-            <Original>"Gain the acceptance of the respected villager on the hill, as their judgement determines whether you become an integral part of the village's fabric."</Original>
-            <English>"Gain the acceptance of the respected villager on the hill, as their judgement determines whether you become an integral part of the village's fabric."</English>
-            <Turkish>"Saygın köylünün tepedeki kabulünü kazanın, çünkü sizin köyün dokusunun ayrılmaz bir parçası olmanızı belirler."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_1">
-            <Original>"Beyond the clouds, an enigmatic dwelling is concealed, accessible only to those who explore the peaks."</Original>
-            <English>"Beyond the clouds, an enigmatic dwelling is concealed, accessible only to those who explore the peaks."</English>
-            <Turkish>"Bulutların ötesinde, gizemli bir ikamet yeri gizlidir, sadece zirveleri keşfedenlere erişilebilir."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_2">
-            <Original>"Amidst the jagged crags and swirling mist, a hidden dwelling awaits those who decipher the ancient symbols."</Original>
-            <English>"Amidst the jagged crags and swirling mist, a hidden dwelling awaits those who decipher the ancient symbols."</English>
-            <Turkish>"Sivrilen kayalıklar ve dönen sisin arasında, eski sembolleri çözenlere gizli bir ikamet yeri bekliyor."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_3">
-            <Original>"A keen eye will spot the fleeting glimmer, revealing the covert dwelling nestled in the rugged embrace of the mountain."</Original>
-            <English>"A keen eye will spot the fleeting glimmer, revealing the covert dwelling nestled in the rugged embrace of the mountain."</English>
-            <Turkish>"Dikkatli bir göz, kaçan parıltıyı fark edecek, dağın kaba kucaklamasına gömülen gizli ikamet yeri ortaya çıkacak."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_4">
-            <Original>"Navigate through the treacherous pass, where only the most daring shall uncover the concealed house veiled by nature's camouflage."</Original>
-            <English>"Navigate through the treacherous pass, where only the most daring shall uncover the concealed house veiled by nature's camouflage."</English>
-            <Turkish>"En tehlikeli geçitten geçerek, doğanın kamuflajıyla örtülü gizli bir evi ortaya çıkaran yalnızca en cesur olanlar olacak."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_5">
-            <Original>"The wind whispers tales of a lone guardian, hidden high above the world, awaiting those who dare to uncover his hidden retreat."</Original>
-            <English>"The wind whispers tales of a lone guardian, hidden high above the world, awaiting those who dare to uncover his hidden retreat."</English>
-            <Turkish>"Rüzgar, dünyanın üzerinde yüksekte saklanan yalnız bir bekçinin hikayelerini fısıldıyor, gizli sığınağını ortaya çıkarmak için cesaret edenleri bekliyor."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_6">
-            <Original>"Venture into the realm of the mountain's sage, where whispers of knowledge and secrets entwine, beckoning the curious to unearth his hidden dwelling."</Original>
-            <English>"Venture into the realm of the mountain's sage, where whispers of knowledge and secrets entwine, beckoning the curious to unearth his hidden dwelling."</English>
-            <Turkish>"Bilginin ve sırların fısıltılarıyla örülü dağın bilge köylüsünün krallığına girin, meraklıları çağıran gizli ikamet yerini ortaya çıkarın."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_7">
-            <Original>"Seek the blessing of the wise villager perched on high, for their permission ensures your safe passage and a future among these valleys."</Original>
-            <English>"Seek the blessing of the wise villager perched on high, for their permission ensures your safe passage and a future among these valleys."</English>
-            <Turkish>"Yüksekte konumlanmış bilge köylünün rızasını arayın, çünkü izinleri güvenli geçişinizi ve bu vadilerdeki geleceğinizi sağlar."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_8">
-            <Original>"Pay homage to the wise villager on the hill, as their approval determines whether your journey finds a haven in these lands."</Original>
-            <English>"Pay homage to the wise villager on the hill, as their approval determines whether your journey finds a haven in these lands."</English>
-            <Turkish>"Tepeye konuşlanmış bilge köylüye saygı gösterin, çünkü onların onayı sizin yolculuğunuzun bu topraklarda bir sığınak bulup bulmayacağını belirler."</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_hint_9">
-            <Original>"Commune with the wise villager residing on the hill, as their favor dictates whether you are granted the privilege of calling this land your home."</Original>
-            <English>"Commune with the wise villager residing on the hill, as their favor dictates whether you are granted the privilege of calling this land your home."</English>
-            <Turkish>"Tepeye yerleşmiş bilge köylüyle iletişim kurun, çünkü onların lütfu size bu toprakları eviniz olarak seçme ayrıcalığını verir."</Turkish>
-        </Key>
+    </Container name="MRTM_easterEggs">
         <Key ID="STR_MRTM_easterEgg_interact_1">
             <Original>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</Original>
             <English>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</English>
