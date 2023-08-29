@@ -7,7 +7,7 @@ _dazzleable = _projectile call DAPS_fnc_IsLaserGuided || {
 	typeOf _projectile == "M_Vorona_HE"}}}
 };
 
-_radius = if (_dazzleable) then { 225 } else { 80 };
+_radius = if (_dazzleable) then { 125 } else { sqrt (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600]) };
 
 _continue = alive _projectile;
 
@@ -33,8 +33,8 @@ while { _continue } do {
 			};
 		} else {
 			if (_vehicleAPSType >= _projectileAPSType && {
-					_distance =_x distance _projectile;
-					_distance < (getMissionConfigValue ["BIS_WL_maxAPSDist", 80]) && _distance > (getMissionConfigValue ["BIS_WL_minAPSDist", 30])
+					_distance =_x distanceSqr _projectile;
+					_distance < (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600]) && _distance > (getMissionConfigValue ["BIS_WL_minAPSDist", 400])
 				} && {
 					_projectileVector = vectorNormalized (velocity _projectile);
 					_vectorToVehicle = (getPosASL _projectile) vectorFromTo (getPosASL _x);
