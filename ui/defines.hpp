@@ -178,7 +178,7 @@ class RscTextMRTM
 		0.5
 	};
 	font = "RobotoCondensed";
-	SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	SizeEx = "0.021 / (getResolution select 5)";
 	linespacing = 1;
 	tooltipColorText[] = 
 	{
@@ -230,7 +230,8 @@ class RscStructuredTextMRTM
 	h = 0.035;
 	w = 0.1;
 	text = "";
-	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	size = "0.021 / (getResolution select 5)";
+	sizeEx = "0.021 / (getResolution select 5)";
 	shadow = 1;
 };
 class RscPictureMRTM

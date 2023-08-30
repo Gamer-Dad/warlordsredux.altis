@@ -32,6 +32,7 @@ class welcomeScreen
 			idc = 69691;
 			deletable = 0;
 			text = "a3\map_altis\data\picturemap_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			x = 0.257656 * safezoneW + safezoneX;
 			y = 0.181 * safezoneH + safezoneY;
@@ -44,6 +45,7 @@ class welcomeScreen
 			idc = 69692;
 			deletable = 0;
 			text = "Warlords Redux v2.5";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.288594 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
 			w = 0.149531 * safezoneW;
@@ -55,6 +57,7 @@ class welcomeScreen
 			idc = 6969691;
 			deletable = 0;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			font = "puristaMedium";
 			x = 0.508594 * safezoneW + safezoneX;
 			y = 0.801 * safezoneH + safezoneY;
@@ -90,6 +93,7 @@ class welcomeScreen
 		class welcomeTextBlockFrame: RscFrameMRTM
 		{
 			type = CT_STATIC;
+			sizeEx = "0.021 / (getResolution select 5)";
 			idc = 69699;
 			deletable = 0;
 			style = ST_FRAME;
@@ -125,6 +129,7 @@ class welcomeScreen
 				{
 					idc = 69696;
 					deletable = 0;
+					sizeEx = "0.021 / (getResolution select 5)";
 					type = CT_STRUCTURED_TEXT;
 					style = ST_LEFT;
 					w = 0.245937 * safezoneW;
@@ -157,6 +162,7 @@ class welcomeScreen
 			access = 0;
 			type = CT_BUTTON;
 			text = "Close";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorText[] = {1,1,1,1};
 			colorDisabled[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
@@ -175,7 +181,6 @@ class welcomeScreen
 			w = 0.059531 * safezoneW;
 			h = 0.033 * safezoneH;
 			shadow = 0;
-			sizeEx = 0.03921;
 			offsetX = 0.000;
 			offsetY = 0.000;
 			offsetPressedX = 0.002;
@@ -206,6 +211,7 @@ class rearmMenu
 			idc = 1;
 			type = CT_BUTTON;
 			text = "Rearm";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.68975 * safezoneW + safezoneX;
 			y = 0.687 * safezoneH + safezoneY;
 			w = 0.0670312 * safezoneW;
@@ -216,6 +222,7 @@ class rearmMenu
 		{
 			idc = 1100;
 			text = "Cammo Netting:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -233,6 +240,7 @@ class rearmMenu
 		{
 			idc = 1101;
 			text = "SLAT armor:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -250,6 +258,7 @@ class rearmMenu
 		{
 			idc = 1103;
 			text = "Other customizations:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.511 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -267,6 +276,7 @@ class rearmMenu
 		{
 			idc = 1104;
 			text = "Custom ammo: Soon™";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.511 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -276,6 +286,7 @@ class rearmMenu
 		{
 			idc = 1102;
 			text = "Liveries: Soon™";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.577344 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -326,6 +337,7 @@ class rearmMenu
 			idc = 69691;
 			deletable = 0;
 			text = "img\classified_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.530 * safezoneH + safezoneY;
@@ -337,6 +349,7 @@ class rearmMenu
 			idc = 69691;
 			deletable = 0;
 			text = "img\classified_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
 			x = 0.577344 * safezoneW + safezoneX;
 			y = 0.302 * safezoneH + safezoneY;
@@ -374,6 +387,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1100;
 			text = "Option menu";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
@@ -391,6 +405,7 @@ class MRTM_settingsMenu
 		class MRTMHeaderTextRight: RscStructuredTextMRTM
 		{
 			idc = 1101;
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0};
 			x = 0.577344 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
@@ -409,6 +424,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1103;
 			text = "View Settings";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0.9};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.2646 * safezoneH + safezoneY;
@@ -419,6 +435,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1102;
 			text = "Infantry:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.271063 * safezoneW + safezoneX;
 			y = 0.3042 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -437,6 +454,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1104;
 			text = "Vehicles:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.271063 * safezoneW + safezoneX;
 			y = 0.3416 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -455,6 +473,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1105;
 			text = "Air:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.271063 * safezoneW + safezoneX;
 			y = 0.3812 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -473,6 +492,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1106;
 			text = "Drones:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.271063 * safezoneW + safezoneX;
 			y = 0.4186 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -527,6 +547,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1108;
 			text = "Object Settings";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0.9};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.4582 * safezoneH + safezoneY;
@@ -565,6 +586,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1109;
 			text = "Sync object rendering with view distance";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.291687 * safezoneW + safezoneX;
 			y = 0.5044 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
@@ -583,6 +605,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1140;
 			text = "Player Stats:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.270987 * safezoneW + safezoneX;
 			y = 0.5744 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
@@ -601,6 +624,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1134;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.285687 * safezoneW + safezoneX;
 			y = 0.5944 * safezoneH + safezoneY;
 			w = 0.164844 * safezoneW;
@@ -620,6 +644,7 @@ class MRTM_settingsMenu
 			idc = 1135;
 			deletable = 0;
 			text = "img\database_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
@@ -631,6 +656,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1136;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.285687 * safezoneW + safezoneX;
 			y = 0.6164 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
@@ -650,6 +676,7 @@ class MRTM_settingsMenu
 			idc = 1137;
 			deletable = 0;
 			text = "a3\ui_f\data\gui\cfg\gametypes\seize_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
@@ -661,6 +688,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1138;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.285687 * safezoneW + safezoneX;
 			y = 0.6384 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
@@ -680,6 +708,7 @@ class MRTM_settingsMenu
 			idc = 1139;
 			deletable = 0;
 			text = "a3\ui_f_curator\data\cfgmpgametypes\zsc_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
@@ -691,6 +720,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1141;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.285687 * safezoneW + safezoneX;
 			y = 0.6584 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
@@ -710,6 +740,7 @@ class MRTM_settingsMenu
 			idc = 1142;
 			deletable = 0;
 			text = "a3\ui_f\data\igui\cfg\simpletasks\types\kill_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
@@ -721,6 +752,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1143;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.285687 * safezoneW + safezoneX;
 			y = 0.6784 * safezoneH + safezoneY;
 			w = 0.159844 * safezoneW;
@@ -740,6 +772,7 @@ class MRTM_settingsMenu
 			idc = 1144;
 			deletable = 0;
 			text = "a3\ui_f_curator\data\cfgmarkers\kia_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
@@ -751,6 +784,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1110;
 			text = "Objects:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.273125 * safezoneW + safezoneX;
 			y = 0.5374 * safezoneH + safezoneY;
 			w = 0.04125 * safezoneW;
@@ -778,6 +812,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1111;
 			text = "Voice Warning Volume Settings";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0.9};
 			x = 0.453594 * safezoneW + safezoneX;
 			y = 0.2646 * safezoneH + safezoneY;
@@ -796,6 +831,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1112;
 			text = "Pull Up Volume:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.456652 * safezoneW + safezoneX;
 			y = 0.3042 * safezoneH + safezoneY;
 			w = 0.0800312 * safezoneW;
@@ -813,6 +849,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1113;
 			text = "Altitude Volume:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.456687 * safezoneW + safezoneX;
 			y = 0.3416 * safezoneH + safezoneY;
 			w = 0.0800312 * safezoneW;
@@ -830,6 +867,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1114;
 			text = "Warning Volume:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.456687 * safezoneW + safezoneX;
 			y = 0.3812 * safezoneH + safezoneY;
 			w = 0.0800312 * safezoneW;
@@ -847,6 +885,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1115;
 			text = "Other:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.456687 * safezoneW + safezoneX;
 			y = 0.4186 * safezoneH + safezoneY;
 			w = 0.0800312 * safezoneW;
@@ -901,6 +940,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1116;
 			text = "Other Settings";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0.9};
 			x = 0.453594 * safezoneW + safezoneX;
 			y = 0.4582 * safezoneH + safezoneY;
@@ -1074,6 +1114,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1117;
 			text = "Disable 3rd person view (x2 CP)";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1091,6 +1132,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1118;
 			text = "Mute the warlords voice informer";
+			sizeEx = "0.1 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1108,6 +1150,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1119;
 			text = "Play sound for kill reward";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.566 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1125,6 +1168,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1120;
 			text = "Enable the voice warning system on aircraft";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1142,6 +1186,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1121;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1159,6 +1204,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1122;
 			text = "Small announcer font";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.665 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1176,6 +1222,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1123;
 			text = "Spawn vehicles with empty inventory";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1193,6 +1240,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1124;
 			text = "";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.731 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
@@ -1310,6 +1358,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1604;
 			text = "CLOSE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1321,6 +1370,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1605;
 			text = "GROUPS";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1332,6 +1382,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1606;
 			text = "EMOTES";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.387969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1370,6 +1421,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4003;
 			text = "Group menu";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
@@ -1388,6 +1440,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4004;
 			text = "Welcome to the group system! Invite your friends to join your group here.";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.2646 * safezoneH + safezoneY;
@@ -1407,6 +1460,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4007;
 			text = "All players:";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0};
 			x = 0.487969 * safezoneW + safezoneX;
 			y = 0.2646 * safezoneH + safezoneY;
@@ -1491,6 +1545,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4100;
 			text = "CLOSE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1502,6 +1557,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4101;
 			text = "INVITE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlEnable false;";
 			action = "['Invite'] call MRTM_fnc_onButtonClick;";
 			x = 0.652969 * safezoneW + safezoneX;
@@ -1514,6 +1570,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4102;
 			text = "DECLINE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Decline'] call MRTM_fnc_onButtonClick;";
 			x = 0.487969 * safezoneW + safezoneX;
@@ -1526,6 +1583,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4103;
 			text = "LEAVE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Leave'] call MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
@@ -1538,6 +1596,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4104;
 			text = "PROMOTE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Promote'] call MRTM_fnc_onButtonClick;";
 			x = 0.327969 * safezoneW + safezoneX;
@@ -1550,6 +1609,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4105;
 			text = "ACCEPT";
+			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Accept'] call MRTM_fnc_onButtonClick;";
 			x = 0.550969 * safezoneW + safezoneX;
@@ -1562,6 +1622,7 @@ class MRTM_groupsMenu
 		{
 			idc = 4106;
 			text = "KICK";
+			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Kick'] call MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
@@ -1601,6 +1662,7 @@ class MRTM_emotesMenu
 		{
 			idc = 5003;
 			text = "Emote menu";
+			sizeEx = "0.021 / (getResolution select 5)";
 			colorBackground[] = {0,0,0,0};
 			x = 0.38836 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
@@ -1642,6 +1704,7 @@ class MRTM_emotesMenu
 		{
 			idc = 5100;
 			text = "CLOSE";
+			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.38836 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
