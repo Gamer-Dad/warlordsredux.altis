@@ -11,22 +11,13 @@ if (_lb == "Players") then {
 	_data = lbData [4006, (lbCurSel 4006)];
 	_unit = _data call BIS_fnc_getUnitByUID;
 	if (!((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), []])) && {(leader player == player)}) then {
-		if (count (units player) == 1 && {count (units _unit) == 1}) then {
-			ctrlEnable [4101, true];
-		} else {
-			ctrlEnable [4101, false];
-		};
+		ctrlEnable [4101, true];
 	} else {
 		ctrlEnable [4101, false];
 	};
 	if ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []])) then {
-		if (count (units player) == 1 && {count (units _unit) == 1}) then {
-			ctrlShow [4105, true];
-			ctrlShow [4105, true];
-		} else {
-			ctrlShow [4105, false];
-			ctrlShow [4105, true];
-		};
+		ctrlShow [4105, true];
+		ctrlShow [4105, true];
 	} else {
 		ctrlShow [4105, false];
 		ctrlShow [4105, false];
