@@ -54,7 +54,7 @@ if (_action == "Kick") exitWith {
 	if ((lbCurSel 4005) < 0) exitWith {};
 	_data = lbData [4005, (lbCurSel 4005)];
 	_unit = _data call BIS_fnc_getUnitByUID;
-	_units = ((units _unit) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == _unit});
+	_units = ((units _unit) select {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID _unit)});
 	_group = createGroup (side group _unit);
 	_units joinSilent _group;
 	0 spawn MRTM_fnc_openGroupMenu;
