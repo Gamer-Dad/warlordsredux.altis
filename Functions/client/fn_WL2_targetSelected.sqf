@@ -62,7 +62,6 @@ if (_selected) then {
 		_t = serverTime + 3;
 		waitUntil {serverTime > _t || {BIS_WL_playerSide in (_sector getVariable "BIS_WL_previousOwners")}};
 		if (!(BIS_WL_playerSide in (_sector getVariable "BIS_WL_previousOwners"))) then {
-			_area = _sector getVariable "objectArea";
 			_borderWidth = _sector getVariable ["BIS_WL_borderWidth", 0];
 			((_sector getVariable "BIS_WL_markers") # 2) setMarkerSizeLocal [_borderWidth, _borderWidth];
 		};
