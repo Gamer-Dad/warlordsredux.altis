@@ -70,6 +70,7 @@ if (isPlayer _owner) then {
 				};
 			};
 		} else {
+			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
 			_rearmTime = switch true do {
 				case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
 				case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };

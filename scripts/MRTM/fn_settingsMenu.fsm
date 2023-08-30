@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\SteamLibrary\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, settingsHandler">*/
+/*%FSM<COMPILE "scriptedFSM.cfg, settingsHandler">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Init",0,250,-47.939026,-223.090698,42.060974,-173.090698,0.000000,"Init"};
@@ -11,8 +11,8 @@ item6[] = {"Alive",4,218,-220.412216,-50.838165,-130.412262,-0.838165,0.000000,"
 item7[] = {"Re_Add_action",2,250,-220.874084,-122.849548,-130.873840,-72.849548,0.000000,"Re-Add action"};
 item8[] = {"update",2,250,79.634979,-122.849518,169.634995,-72.849518,0.000000,"update"};
 item9[] = {"View_changed",4,218,-19.279182,27.550812,70.720825,77.550812,0.000000,"View changed"};
-item10[] = {"Update_1",2,4346,52.313904,122.603607,142.313904,172.603607,0.000000,"Update"};
-item11[] = {"UAV",4,218,45.985741,-1.504730,135.985748,48.495270,0.000000,"UAV"};
+item10[] = {"Update_1",2,250,52.313904,122.603607,142.313904,172.603607,0.000000,"Update"};
+item11[] = {"UAV",4,4314,45.985741,-1.504730,135.985748,48.495270,0.000000,"UAV"};
 item12[] = {"Action",2,250,172.784363,-2.394592,262.784363,47.605408,0.000000,"Action"};
 link0[] = {0,1};
 link1[] = {1,2};
@@ -30,8 +30,8 @@ link12[] = {9,10};
 link13[] = {10,1};
 link14[] = {11,12};
 link15[] = {12,1};
-globals[] = {0.000000,0,0,0,0,640,480,1,15,6316128,1,-337.460266,296.532990,230.822144,-340.439117,1425,1284,1};
-window[] = {2,-1,-1,-1,-1,1085,26,1946,26,3,1443};
+globals[] = {0.000000,0,0,0,0,640,480,1,15,6316128,1,-442.386169,401.458771,325.365784,-434.982880,1425,1284,1};
+window[] = {2,-1,-1,-1,-1,1293,234,2154,234,3,1443};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -104,7 +104,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Action";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"((getConnectedUAV player != objNull) && {group player != (group (((getConnectedUAV player) getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID))});"/*%FSM</CONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((getConnectedUAV player != objNull) && {group player != (group (((getConnectedUAV player) getVariable ['BIS_WL_ownerUavAsset', '123']) call BIS_fnc_getUnitByUID))});"/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
                                 };
                                 /*%FSM</LINK>*/
@@ -152,7 +152,7 @@ class FSM
                         name = "Re_Add_action";
                         itemno = 7;
                         init = /*%FSM<STATEINIT""">*/"_actionID = player addAction[""<t color='#FF0000'>Settings</t>"", MRTM_fnc_openMenu, [], -99, false, false, """", ''];" \n
-                        "player setUserActionText [_actionId, ""<t color='#FF0000'>Settings</t>"", ""<img size='3' image='\a3\3den\Data\Displays\Display3DEN\PanelRight\submode_logic_module_ca'/>""];"/*%FSM</STATEINIT""">*/;
+                         "player setUserActionText [_actionId, ""<t color='#FF0000'>Settings</t>"", ""<img size='3' image='\a3\3den\Data\Displays\Display3DEN\PanelRight\submode_logic_module_ca'/>""];"/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
                         class Links
                         {
