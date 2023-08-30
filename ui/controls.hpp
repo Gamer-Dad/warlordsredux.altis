@@ -1141,7 +1141,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText5: RscStructuredTextMRTM
 		{
 			idc = 1121;
-			text = "Disable easter egg hints";
+			text = "";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.221719 * safezoneW;
