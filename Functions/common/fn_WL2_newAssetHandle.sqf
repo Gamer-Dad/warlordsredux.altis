@@ -70,7 +70,6 @@ if (isPlayer _owner) then {
 				};
 			};
 		} else {
-			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
 			_rearmTime = switch true do {
 				case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
 				case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
@@ -85,10 +84,6 @@ if (isPlayer _owner) then {
 
 			if (direction _asset != (direction player)) then {
 				_asset setDir (direction player);
-			};
-
-			if (isAutonomous _asset) then {
-				_asset setAutonomous false;
 			};
 
 			if (typeOf _asset == "B_Radar_System_01_F" || {typeOf _asset == "O_Radar_System_02_F"}) then {
@@ -113,6 +108,11 @@ if (isPlayer _owner) then {
 					};				
 				};
 			};
+		};
+
+		if (isAutonomous _asset) then {
+			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
+			_asset setAutonomous false;
 		};
 
 		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
