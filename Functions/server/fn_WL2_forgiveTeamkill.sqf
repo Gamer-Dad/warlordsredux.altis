@@ -20,6 +20,12 @@ _newestTeamkillTime = 0;
 
 // delete it
 _timestamps deleteAt _newestTeamkillOnForgiver;
-_forgiver setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, owner _teamkiller]];
+_teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, owner _teamkiller]];
 
-_forgiver addRating 1400;
+_teamKiller spawn {
+	params ["_killer"];
+	while {rating _killer < 0} do {
+		_teamkiller addRating 500;
+		sleep 0.1;
+	};
+};
