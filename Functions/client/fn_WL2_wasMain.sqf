@@ -53,15 +53,15 @@ while {!BIS_WL_missionEnd} do {
 	};
 
 	//Selected sector
-	private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {not(isNull _x)};
+	private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 	if (((_targets findIf {player inArea (_x getVariable "objectAreaComplete")}) != -1)) then {
 		_inActScore = 0;
 	};
 
 	if (_inActScore > _maxInActScore) then {
 		hintSilent "You are too inactive to earn passive income";
-		player setVariable ["BIS_WL_incomeBlocked", true, [clientOwner, 2]]; //Only server and client needs to know this
+		player setVariable ["BIS_WL_incomeBlocked", true, [clientOwner, 2]];
 	} else {
-		player setVariable ["BIS_WL_incomeBlocked", false, [clientOwner, 2]]; //Only server and client needs to know this
+		player setVariable ["BIS_WL_incomeBlocked", false, [clientOwner, 2]];
 	};
 };

@@ -25,7 +25,7 @@ if !(isNull _instigator) then {
 			};
 		};
 		if ((_killerSide != _unitSide) && {(_unitSide in [west, east, independent])}) then {
-			_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"];
+			_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 			_killReward = 0;
 			if (_unit isKindOf "Man") then {
 				_killReward = (if (isPlayer _unit) then {75} else {40});
