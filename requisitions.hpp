@@ -119,6 +119,7 @@ class CfgWLRequisitionPresets
 				class B_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class B_UGV_01_rcws_F 						{cost = 400;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAS" 				
 				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2  
+				class B_Ship_Gun_01_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MK45 Hammer"  
 				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"  
 				class B_SAM_System_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan"  
@@ -177,6 +178,7 @@ class CfgWLRequisitionPresets
 				class O_MBT_02_cannon_F						{cost = 8000;	requirements[]={};	};	// "T-100 Varsuk"
 				class O_MBT_04_cannon_F						{cost = 13000;	requirements[]={};	};	// "T-140 Angara"
 				class O_MBT_04_command_F					{cost = 15000;	requirements[]={};	};	// "T-140K Angara"
+				class O_MBT_02_railgun_F					{cost = 15000;	requirements[]={};	};	// "T-100 Futura"
 				class O_MBT_02_arty_F						{cost = 20000;	requirements[]={};	};	// "2S9 Sochor"
 				class I_Truck_02_MRL_F						{cost = 18000;	requirements[]={};	};	// "Zamak MRL"  
 			};
