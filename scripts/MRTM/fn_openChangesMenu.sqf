@@ -39,6 +39,8 @@ private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilen
 	"-Option to forgive friendly fire incidents.", lineBreak,
 	"-Anti AFK system added.", lineBreak,
 	"-UI rework.", lineBreak,
+	"-'T-100X Futura' added.", lineBreak,
+	"-MK45 Hammer added.", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.7.1 Update:" splitString " " joinString toString [160]], lineBreak,
 	"-New capping values.", lineBreak,
 	"-Easter egg reward fixed.", lineBreak,
