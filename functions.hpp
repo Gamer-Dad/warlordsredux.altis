@@ -199,6 +199,7 @@ class CfgFunctions {
 			class openEmoteMenu {};
 			class emote {};
 			class settingsinit {};
+			class openChangesMenu {};
 		};
 	};
 	class GOM {
