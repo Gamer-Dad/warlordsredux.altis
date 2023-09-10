@@ -4,11 +4,6 @@ params ["_sender", "_action", "_pos", "_target", "_isStatic", "_direction"];
 
 if (isNull _sender) exitWith {};
 
-if (_action == "10k") exitWith {
-	_uid = getPlayerUID _sender;
-	[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;
-};
-
 if (_action == "orderAsset") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_target, 50002]);
