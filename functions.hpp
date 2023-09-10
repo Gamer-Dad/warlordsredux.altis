@@ -200,6 +200,7 @@ class CfgFunctions {
 			class emote {};
 			class settingsinit {};
 			class openChangesMenu {};
+			class leaveGroup {};
 		};
 	};
 	class GOM {

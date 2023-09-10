@@ -51,14 +51,10 @@ if (_action == "Leave") exitWith {
 };
 
 if (_action == "Kick") exitWith {
-	["Kick"] remoteExec ["systemChat", 0];
-	if ((lbCurSel 4005) < 0) exitWith {["No selection"] remoteExec ["systemChat", 0];};
+	if ((lbCurSel 4005) < 0) exitWith {};
 	_data = lbData [4005, (lbCurSel 4005)];
 	_unit = _data call BIS_fnc_getUnitByUID;
-	[format ["%1, %2", _data, _unit]] remoteExec ["systemChat", 0];
-	_units = ((units _unit) select {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID _unit)});
-	_group = createGroup (side group _unit);
-	_units joinSilent _group;
+	0 remoteExec ["MRTM_fnc_leaveGroup", _unit];
 	0 spawn MRTM_fnc_openGroupMenu;
 };
 

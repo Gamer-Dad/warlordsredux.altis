@@ -104,5 +104,9 @@ class CfgRemoteExec {
 		class selectLeader {
 			allowedTargets = 0;
 		};
+
+		class leaveGroup {
+			allowedTargets = 0;
+		};
 	};
 };
