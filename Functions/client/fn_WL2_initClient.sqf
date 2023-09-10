@@ -170,7 +170,7 @@ call BIS_fnc_WL2_targetResetHandle;
 };
 
 [player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)}} != -1}] call BIS_fnc_WL2_hintHandle;
-[player, "nearSL", {(player distance2D (leader group player) <= 100) && {player != (leader group player)}}] call BIS_fnc_WL2_hintHandle;
+[player, "nearSL", {(player distance2D (leader group player) <= 200) && {player != (leader group player)}}] call BIS_fnc_WL2_hintHandle;
 
 0 spawn BIS_fnc_WL2_selectedTargetsHandle;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
