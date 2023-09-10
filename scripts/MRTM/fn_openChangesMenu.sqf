@@ -82,7 +82,7 @@ private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilen
 	"-Newly bought assets have FF protection in base.", lineBreak,
 	"-Divers added", lineBreak,
 	"", lineBreak,
-	parseText "<a href='https://github.com/Gamer-Dad/warlordsredux.altis'>Visit our github to view the earlier changes.</a>", lineBreak,
+	parseText format ["<a href='https://github.com/Gamer-Dad/warlordsredux.altis'>%1</a>", "Visit our github to view the earlier changes." splitString " " joinString toString [160]], lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.1.0001 Update:" splitString " " joinString toString [160]], lineBreak,
 	"- Baseline version number"
 ];
