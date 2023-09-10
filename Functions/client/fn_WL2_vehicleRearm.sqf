@@ -66,6 +66,7 @@ MRTM_fnc_rearm = {
 		case (_asset isKindOf "B_SAM_System_03_F"): {750};
 		case (_asset isKindOf "O_SAM_System_04_F"): {900};
 		case (_asset isKindOf "B_Ship_MRLS_01_F"): {2700};
+		case (_asset isKindOf "B_Ship_Gun_01_F"): {2700};
 		default {600};
 	};
 

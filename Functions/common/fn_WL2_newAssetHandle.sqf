@@ -78,6 +78,7 @@ if (isPlayer _owner) then {
 				case (_asset isKindOf "B_SAM_System_03_F"): { WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea };
 				case (_asset isKindOf "O_SAM_System_04_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Centurion };
 				case (_asset isKindOf "B_Ship_MRLS_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
+				case (_asset isKindOf "B_Ship_Gun_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
 				default {WL_MAINTENANCE_COOLDOWN_REARM};
 			};
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
