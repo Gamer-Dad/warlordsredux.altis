@@ -56,7 +56,7 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class leaveGroup {
+		class MRTM_fnc_leaveGroup {
 			allowedTargets = 0;
 		};
 
