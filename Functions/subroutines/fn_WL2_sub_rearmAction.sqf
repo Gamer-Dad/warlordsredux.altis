@@ -1,7 +1,7 @@
 params ["_asset"];
 
 _index = _asset addAction [
-	localize "STR_rearm",
+	format ["Modify/%1", localize "STR_rearm"],
 	{
 		params ["_asset"];
 		if (_asset isKindOf "LandVehicle") then {_asset spawn BIS_fnc_WL2_vehicleRearm;};
@@ -17,4 +17,4 @@ _index = _asset addAction [
 	false
 ];
 
-_asset setUserActionText [_index, localize "STR_rearm", "<img size='1.5' image='a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa'/>"];
+_asset setUserActionText [_index, format ["Modify/%1", localize "STR_rearm"], "<img size='1.5' image='a3\ui_f\data\igui\cfg\simpletasks\types\rearm_ca.paa'/>"];
