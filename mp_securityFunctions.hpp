@@ -56,6 +56,10 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
+		class leaveGroup {
+			allowedTargets = 0;
+		};
+
 		//Don't touch
 		class BIS_fnc_effectKilledAirDestruction {allowedTargets = 0; jip = 0;};
 		class BIS_fnc_effectKilledSecondaries {allowedTargets = 0; jip = 0;};
@@ -102,10 +106,6 @@ class CfgRemoteExec {
 		};
 
 		class selectLeader {
-			allowedTargets = 0;
-		};
-
-		class leaveGroup {
 			allowedTargets = 0;
 		};
 	};
