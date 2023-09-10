@@ -54,7 +54,7 @@ if (isPlayer _owner) then {
 			if (_asset isKindOf "Air") then {
 				_asset spawn BIS_fnc_WL2_sub_rearmActionAir;
 			} else {
-				_asset call BIS_fnc_WL2_sub_rearmAction;
+				_asset spawn BIS_fnc_WL2_sub_rearmAction;
 				if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
 					_asset setVariable ["dazzlerActivated", false];
 					_asset call BIS_fnc_WL2_sub_dazzlerAction;
@@ -81,6 +81,7 @@ if (isPlayer _owner) then {
 				default {WL_MAINTENANCE_COOLDOWN_REARM};
 			};
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+			_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
 			if (direction _asset != (direction player)) then {
 				_asset setDir (direction player);
