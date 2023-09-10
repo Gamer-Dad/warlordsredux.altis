@@ -28,6 +28,7 @@ dapsHeavy = [
 	"O_MBT_02_cannon_F",			// T-100
 	"O_MBT_04_cannon_F",			// T-140
 	"O_MBT_04_command_F",
+	"O_MBT_02_railgun_F",			//T-100 Futura
 	"B_MBT_01_cannon_F",			// Slammer
 	"B_MBT_01_TUSK_F",
 	"B_MBT_01_arty_F",				// Scorcher
