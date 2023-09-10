@@ -51,10 +51,10 @@ class CfgWLRequisitionPresets
 				class B_APC_Wheeled_01_cannon_F				{cost = 3200;	requirements[]={};	};	// "AMV-7 Marshall"
 				class B_APC_Tracked_01_rcws_F				{cost = 1800;	requirements[]={};	};	// "IFV-6c Panther"
 				class B_APC_Tracked_01_AA_F					{cost = 5000;	requirements[]={};	};	// "IFV-6a Cheetah"
-				class B_AFV_Wheeled_01_cannon_F				{cost = 5000;	requirements[]={};	};	// "Rhino MGS"
-				class B_AFV_Wheeled_01_up_cannon_F			{cost = 6000;	requirements[]={};	};	// "Rhino MGS UP" 
-				class B_MBT_01_cannon_F						{cost = 7000;	requirements[]={};	};	// "M2A1 Slammer"
-				class B_MBT_01_TUSK_F						{cost = 8500;	requirements[]={};	};	// "M2A1 Slammer UP"				
+				class B_AFV_Wheeled_01_cannon_F				{cost = 4000;	requirements[]={};	};	// "Rhino MGS"
+				class B_AFV_Wheeled_01_up_cannon_F			{cost = 4500;	requirements[]={};	};	// "Rhino MGS UP" 
+				class B_MBT_01_cannon_F						{cost = 6000;	requirements[]={};	};	// "M2A1 Slammer"
+				class B_MBT_01_TUSK_F						{cost = 7000;	requirements[]={};	};	// "M2A1 Slammer UP"				
 				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher"
 				class B_MBT_01_mlrs_F						{cost = 20000;	requirements[]={};	};	// "M5 Sandstorm MLRS" 
 			};
@@ -70,8 +70,8 @@ class CfgWLRequisitionPresets
 				class B_UAV_05_F							{cost = 18000;  requirements[]={"A"};   };  // "Sentinel"
 				class B_T_VTOL_01_infantry_F				{cost = 2000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)"
 				class B_T_VTOL_01_vehicle_F					{cost = 2000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)"
-				class B_T_VTOL_01_armed_F					{cost = 10000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
-				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
+				class B_T_VTOL_01_armed_F					{cost = 8000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
+				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 14000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 30000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II"
 				class B_Plane_Fighter_01_Stealth_F			{cost = 30000;	requirements[]={"A"};	};  //"F/A-181 Black Wasp II (Stealth)"
 			};
@@ -119,13 +119,13 @@ class CfgWLRequisitionPresets
 				class B_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class B_UGV_01_rcws_F 						{cost = 400;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAS" 				
 				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2  
-				class B_Ship_Gun_01_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MK45 Hammer"  
-				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "AN/MPQ-105 Radar"  
+				class B_Ship_Gun_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 9, 0};};	// "MK45 Hammer"  
+				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 7, 0};};	// "AN/MPQ-105 Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"  
 				class B_SAM_System_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan"  
-				class B_SAM_System_03_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "MIM-145 Defender"  
+				class B_SAM_System_03_F						{cost = 8000;	requirements[]={};	offset[]={0, 6, 0};};	// "MIM-145 Defender"  
 				class B_SAM_System_02_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion"  
-				class B_Ship_MRLS_01_F						{cost = 30000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk41 VLS"
+				class B_Ship_MRLS_01_F						{cost = 30000;	requirements[]={};	offset[]={0, 7, 0};};	// "Mk41 VLS"
 			};
 		};
 		class EAST
@@ -178,7 +178,7 @@ class CfgWLRequisitionPresets
 				class O_MBT_02_cannon_F						{cost = 8000;	requirements[]={};	};	// "T-100 Varsuk"
 				class O_MBT_04_cannon_F						{cost = 13000;	requirements[]={};	};	// "T-140 Angara"
 				class O_MBT_04_command_F					{cost = 15000;	requirements[]={};	};	// "T-140K Angara"
-				class O_MBT_02_railgun_F					{cost = 15000;	requirements[]={};	};	// "T-100 Futura"
+				class O_MBT_02_railgun_F					{cost = 16000;	requirements[]={};	};	// "T-100 Futura"
 				class O_MBT_02_arty_F						{cost = 20000;	requirements[]={};	};	// "2S9 Sochor"
 				class I_Truck_02_MRL_F						{cost = 18000;	requirements[]={};	};	// "Zamak MRL"  
 			};
@@ -241,12 +241,12 @@ class CfgWLRequisitionPresets
 				class O_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class O_UGV_01_rcws_F						{cost = 400;	requirements[]={};	};	// "UGAV rcws"  
 				class O_UAV_01_F       						{cost = 500;    requirements[]={};  };  // AR-2
-				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "R-750 Cronus Radar"  
+				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 7, 0};};	// "R-750 Cronus Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";  
 				class B_SAM_System_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";  
-				class O_SAM_System_04_F						{cost = 8000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "S-750 Rhea"  
+				class O_SAM_System_04_F						{cost = 8000;	requirements[]={};	offset[]={0, 6, 0};};	// "S-750 Rhea"  
 				class B_SAM_System_02_F						{cost = 15000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk21 Centurion";  
-				class B_Ship_MRLS_01_F						{cost = 30000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk41 VLS";  
+				class B_Ship_MRLS_01_F						{cost = 30000;	requirements[]={};	offset[]={0, 7, 0};};	// "Mk41 VLS";  
 			};
 		};
 	};
