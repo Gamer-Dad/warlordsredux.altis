@@ -17,10 +17,10 @@ if (_lb == "Players") then {
 	};
 	if ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []])) then {
 		ctrlShow [4105, true];
-		ctrlShow [4105, true];
+		ctrlShow [4102, true];
 	} else {
 		ctrlShow [4105, false];
-		ctrlShow [4105, false];
+		ctrlShow [4102, false];
 	};
 } else {
 	if ((lbCurSel 4005) < 0) exitWith {};
