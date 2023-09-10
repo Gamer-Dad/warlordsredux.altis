@@ -51,7 +51,7 @@ addMissionEventHandler ["Draw3D", {
 			"RobotoCondensedBold",
 			"center"
 		];
-	} forEach ((BIS_WL_allWarlords) select {alive _x && {player distanceSqr _x < 10000 && {_x != player} && {side group _x == side group player}}});
+	} forEach ((BIS_WL_allWarlords) select {alive _x && {player distanceSqr _x < 20000 && {_x != player} && {side group _x == side group player}}});
 	{
 		drawIcon3D [
 			"\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa",
