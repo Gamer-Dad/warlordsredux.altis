@@ -29,8 +29,8 @@ BIS_WL_forfeitVoteEH2 = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 	if (_key == 21) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemOK"; player setVariable ["BIS_WL_forfeitVote", 1, [2, clientOwner]]}};
 	if (_key == 49) then {if (BIS_WL_ctrlDown) then {_remove = TRUE; playSound "AddItemFailed"; player setVariable ["BIS_WL_forfeitVote", 0, [2, clientOwner]]}};
 	if (_remove) then {
-		(findDisplay 46) displayRemoveEventHandler ["KeyDown", BIS_WL_forfeitVoteEH1];
-		(findDisplay 46) displayRemoveEventHandler ["KeyUp", BIS_WL_forfeitVoteEH2];
+		(findDisplay 46) displayRemoveEventHandler ["KeyUp", BIS_WL_forfeitVoteEH1];
+		(findDisplay 46) displayRemoveEventHandler ["KeyDown", BIS_WL_forfeitVoteEH2];
 	};
 }];
 
