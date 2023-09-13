@@ -345,8 +345,8 @@ if (_action == "fundsTransfer") exitWith {
 		_uid = getPlayerUID _sender;
 		_recipient = _targetUID call BIS_fnc_getUnitByUID;
 
-		[_targetUID, _pos] call BIS_fnc_WL2_fundsDatabaseWrite;
-		[_uid, -_pos] call BIS_fnc_WL2_fundsDatabaseWrite;
+		[_targetUID, _pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+		[_uid, -_pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 		{
 			[[side _recipient, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost])] remoteExec ["commandChat", (owner _x)];
