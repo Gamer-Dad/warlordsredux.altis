@@ -5,7 +5,11 @@ params ["_unit", "_killer", "_instigator"];
 if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
 if (isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) exitWith {};
 
+[format ["%1, %2", !(_unit isKindOf "Man"), ((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0])]] remoteExec ["systemChat", 0];
+[format ["%1", isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)]] remoteExec ["systemChat", 0];
+
 _instigator = ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
+[format ["%1", ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)]] remoteExec ["systemChat", 0];
 if !(isNull _instigator) then {
 	_responsibleLeader = _instigator;
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
@@ -24,6 +28,7 @@ if !(isNull _instigator) then {
 				});
 			};
 		};
+		[format ["%1, %2", _killerSide, _unitSide]] remoteExec ["systemChat", 0];
 		if ((_killerSide != _unitSide) && {(_unitSide in [west, east, independent])}) then {
 			_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 			_killReward = 0;
@@ -39,11 +44,11 @@ if !(isNull _instigator) then {
 				_killReward = _killReward * 1.3; //Bonus for defending sector or attacking sector.
 			};
 			_uid = getPlayerUID _responsibleLeader;
-			[_uid, (round _killReward)] call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_uid, (round _killReward)] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			[_unit, (round _killReward)] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 			{
 				_uid = getPlayerUID _x;
-				[_uid, (round _killReward)] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, (round _killReward)] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 				[_unit, (round _killReward)] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 			} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
 		};
