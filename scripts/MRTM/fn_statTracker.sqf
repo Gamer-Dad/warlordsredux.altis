@@ -27,7 +27,7 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 			_dist = player distance _info;
 			_distanceKill = profileNamespace getVariable ["WL2_longestDistanceKill", 0];
 			if (_dist > _distanceKill) then {
-				profileNamespace setVariable ["WL2_longestDistanceKill", _dist];
+				profileNamespace setVariable ["WL2_longestDistanceKill", round _dist];
 			};
 		};
 	};
