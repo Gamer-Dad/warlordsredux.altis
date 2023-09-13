@@ -12,6 +12,12 @@ disableSerialization;
 
 private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019],profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862],profilenamespace getvariable ['GUI_BCG_RGB_A',0.7]] call BIS_fnc_colorRGBAtoHTML;
 ((findDisplay 6000) displayCtrl 6102) ctrlSetStructuredText composeText [
+	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8.1 Update:" splitString " " joinString toString [160]], lineBreak,
+	"-Fixed wipeout display price.", lineBreak,
+	"-Fixed total earned CP not logging.", lineBreak,
+	"-Fixed group wrong group icon.", lineBreak,
+	"-Fixed empty crates when using 'spawn vehicles with empty inventory' option.", lineBreak,
+	"-Fixed win/loss ratio not logging.", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8 Update:" splitString " " joinString toString [160]], lineBreak,
 	"-Performance improved.", lineBreak,
 	"-Group system added.", lineBreak,
