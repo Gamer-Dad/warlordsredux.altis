@@ -19,6 +19,7 @@ private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilen
 	"-Fixed empty crates when using 'spawn vehicles with empty inventory' option.", lineBreak,
 	"-Fixed win/loss ratio not logging.", lineBreak,
 	"-Kill rewards fixed.", lineBreak,
+	"-Funds transfer fixed.", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8 Update:" splitString " " joinString toString [160]], lineBreak,
 	"-Performance improved.", lineBreak,
 	"-Group system added.", lineBreak,
