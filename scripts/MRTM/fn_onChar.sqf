@@ -24,30 +24,30 @@ _varName = switch (_slider) do {
 };
 switch (_varName) do {
 	case "MRTM_rwr1": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {[] call MRTM_fnc_openMenu;};
+		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
 		missionNamespace setVariable [_varName, _value];
-		[] call MRTM_fnc_openMenu;
+		0 spawn MRTM_fnc_openMenu;
 	};
 	case "MRTM_rwr2": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {[] call MRTM_fnc_openMenu;};
+		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
 		missionNamespace setVariable [_varName, _value];
-		[] call MRTM_fnc_openMenu;
+		0 spawn MRTM_fnc_openMenu;
 	};
 	case "MRTM_rwr3": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {[] call MRTM_fnc_openMenu;};
+		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
 		missionNamespace setVariable [_varName, _value];
-		[] call MRTM_fnc_openMenu;
+		0 spawn MRTM_fnc_openMenu;
 	};
 	case "MRTM_rwr4": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {[] call MRTM_fnc_openMenu;};
+		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
 		missionNamespace setVariable [_varName, _value];
-		[] call MRTM_fnc_openMenu;
+		0 spawn MRTM_fnc_openMenu;
 	};
 	default {
 		_maxRange = 4000;
-		if(_value > _maxRange || {_value < 100}) exitwith {[] call MRTM_fnc_openMenu;};
+		if(_value > _maxRange || {_value < 100}) exitwith {0 spawn MRTM_fnc_openMenu;};
 		missionNamespace setVariable [_varName, _value];
-		[] call MRTM_fnc_updateViewDistance;
-		[] call MRTM_fnc_openMenu;
+		0 spawn MRTM_fnc_updateViewDistance;
+		0 spawn MRTM_fnc_openMenu;
 	};
 };

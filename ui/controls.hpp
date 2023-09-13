@@ -565,7 +565,7 @@ class MRTM_settingsMenu
 		class MRTMObjectsButton: RscCheckboxMRTM
 		{
 			idc = 2800;
-			action = "if (profileNamespace getVariable 'MRTM_syncObjects') then {(profileNamespace setVariable ['MRTM_syncObjects', false])} else {(profileNamespace setVariable ['MRTM_syncObjects', true])}; [] call MRTM_fnc_openMenu;";
+			action = "if (profileNamespace getVariable 'MRTM_syncObjects') then {(profileNamespace setVariable ['MRTM_syncObjects', false])} else {(profileNamespace setVariable ['MRTM_syncObjects', true])}; 0 spawn MRTM_fnc_openMenu;";
 			x = 0.273125 * safezoneW + safezoneX;
 			y = 0.5044 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
