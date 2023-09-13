@@ -445,7 +445,7 @@ switch (_displayClass) do {
 					_targetFunds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _target));
 					_maxTransfer = (getMissionConfigValue ["BIS_WL_maxCP", 50000]) - _targetFunds;
 					_finalTransfer = (_amount min _maxTransfer) max 0;
-					[player, "fundsTransfer", _finalTransfer, [], _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+					[player, "fundsTransfer", _finalTransfer, _target] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 					_i = 100;
 					for "_i" from 100 to 114 do {
 						(_display displayCtrl _i) ctrlEnable true;
