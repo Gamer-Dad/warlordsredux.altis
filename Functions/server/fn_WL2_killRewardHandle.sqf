@@ -5,11 +5,7 @@ params ["_unit", "_killer", "_instigator"];
 if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
 if (isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) exitWith {};
 
-[format ["%1, %2", !(_unit isKindOf "Man"), ((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0])]] remoteExec ["systemChat", 0];
-[format ["%1", isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)]] remoteExec ["systemChat", 0];
-
 _instigator = ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
-[format ["%1", ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)]] remoteExec ["systemChat", 0];
 if !(isNull _instigator) then {
 	_responsibleLeader = _instigator;
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
@@ -28,7 +24,6 @@ if !(isNull _instigator) then {
 				});
 			};
 		};
-		[format ["%1, %2", _killerSide, _unitSide]] remoteExec ["systemChat", 0];
 		if ((_killerSide != _unitSide) && {(_unitSide in [west, east, independent])}) then {
 			_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 			_killReward = 0;
