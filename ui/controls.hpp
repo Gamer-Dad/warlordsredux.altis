@@ -1809,7 +1809,7 @@ class MRTM_changesMenu
 					type = CT_STRUCTURED_TEXT;
 					style = ST_LEFT;
 					w = 0.355937 * safezoneW;
-					h = 1.7 * safezoneH;
+					h = 1.9 * safezoneH;
 				};
 			};
 			type = CT_CONTROLS_GROUP;
