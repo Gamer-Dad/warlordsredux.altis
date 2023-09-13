@@ -71,7 +71,7 @@ class CfgWLRequisitionPresets
 				class B_T_VTOL_01_infantry_F				{cost = 2000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Inf)"
 				class B_T_VTOL_01_vehicle_F					{cost = 2000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)"
 				class B_T_VTOL_01_armed_F					{cost = 8000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
-				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 14000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
+				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 30000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II"
 				class B_Plane_Fighter_01_Stealth_F			{cost = 30000;	requirements[]={"A"};	};  //"F/A-181 Black Wasp II (Stealth)"
 			};
