@@ -341,20 +341,23 @@ if (_action == "orderAI") exitWith {
 if (_action == "fundsTransfer") exitWith {
 	["Order incomming"] remoteExec ["systemChat", 0];
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
-	[format ["%1", _playerFunds]] remoteExec ["systemChat", 0];
+	[format ["Sender money: %1", _playerFunds]] remoteExec ["systemChat", 0];
+	[format ["amount: %1", _pos]] remoteExec ["systemChat", 0];
 	[format ["%1", (_playerFunds >= _pos)]] remoteExec ["systemChat", 0];
 	if (_playerFunds >= _pos) then {
 		_targetUID = getPlayerUID _target;
+		[format ["%1", _targetUID]] remoteExec ["systemChat", 0];
 		_uid = getPlayerUID _sender;
+		[format ["%1", _uid]] remoteExec ["systemChat", 0];
+		
 		_recipient = _targetUID call BIS_fnc_getUnitByUID;
-
 		[format ["%1", _recipient]] remoteExec ["systemChat", 0];
 
 		[_targetUID, _pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		[_uid, -_pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 		{
-			[[side _recipient, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost])] remoteExec ["commandChat", (owner _x)];
+			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _recipient, _cost])] remoteExec ["commandChat", (owner _x)];
 		} forEach (allPlayers select {side group _x == side group _sender});
 	};
 };
