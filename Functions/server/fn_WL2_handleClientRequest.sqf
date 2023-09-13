@@ -339,11 +339,16 @@ if (_action == "orderAI") exitWith {
 };
 
 if (_action == "fundsTransfer") exitWith {
+	["Order incomming"] remoteExec ["systemChat", 0];
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
+	[format ["%1", _playerFunds]] remoteExec ["systemChat", 0];
+	[format ["%1", (_playerFunds >= _pos)]] remoteExec ["systemChat", 0];
 	if (_playerFunds >= _pos) then {
 		_targetUID = getPlayerUID _target;
 		_uid = getPlayerUID _sender;
 		_recipient = _targetUID call BIS_fnc_getUnitByUID;
+
+		[format ["%1", _recipient]] remoteExec ["systemChat", 0];
 
 		[_targetUID, _pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		[_uid, -_pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
