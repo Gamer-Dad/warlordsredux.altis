@@ -18,7 +18,6 @@ private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilen
 	"-Fixed group wrong group icon.", lineBreak,
 	"-Fixed empty crates when using 'spawn vehicles with empty inventory' option.", lineBreak,
 	"-Fixed win/loss ratio not logging.", lineBreak,
-	"-Added a player's CP to funds transfer list.", lineBreak,
 	"-Kill rewards fixed.", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8 Update:" splitString " " joinString toString [160]], lineBreak,
 	"-Performance improved.", lineBreak,
