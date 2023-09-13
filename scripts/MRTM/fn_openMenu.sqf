@@ -31,7 +31,7 @@ ctrlSetText [1136, format ["Win ratio: %1/%2", (profileNamespace getVariable ["W
 ctrlSetText [1138, format ["Sectors seized: %1", (profileNamespace getVariable ["WL2_sectorsSeized", 0])]];
 ctrlSetText [1141, format ["Longest distance kill: %1meters", (profileNamespace getVariable ["WL2_longestDistanceKill", 0])]];
 _kills = (profileNamespace getVariable ["WL2_totalKills", 0]);
-_kd = ((profileNamespace getVariable ["WL2_totalKills", 0])/((profileNamespace getVariable ["WL2_totalDeaths", 0]) max 1));
+_kd = round ((profileNamespace getVariable ["WL2_totalKills", 0])/((profileNamespace getVariable ["WL2_totalDeaths", 0]) max 1));
 ((findDisplay 8000) displayCtrl 1143) ctrlSetStructuredText parseText format ["<t size='1'><t size='1' valign='middle' align='left'>Kills:%1</t> <t size='1' valign='middle' align='right'>K/D:%2</t></t>", _kills, _kd];
 
 if (profileNamespace getVariable ["MRTM_syncObjects", true]) then {
