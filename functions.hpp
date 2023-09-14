@@ -58,7 +58,6 @@ class CfgFunctions {
 			class WL2_welcome {};
 			class WL2_betty {};
 			class WL2_rita {};
-			class WL2_mapIcons {};
 			class WL2_vehicleRearm {};
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
@@ -171,6 +170,20 @@ class CfgFunctions {
 			class WL2_sectorCaptureHandle {};
 			class WL2_getVehicles {};
 			class WL2_getInfantry {};
+		};
+		class mapIcons
+		{
+			file = "Functions\client\map";
+			class WL2_mapIcons {};
+			class getDir {};
+			class getPos {};
+			class iconColor {};
+			class iconDrawGPS {};
+			class iconDrawMap {};
+			class iconSize {};
+			class iconText {};
+			class iconTextSectorScan {};
+			class iconType {};
 		};
 	};
 
