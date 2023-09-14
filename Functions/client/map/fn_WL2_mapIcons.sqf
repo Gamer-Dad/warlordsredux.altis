@@ -1,13 +1,9 @@
 waituntil {uiSleep 0.1; !isnull (findDisplay 46)};
 
-["map"] remoteExec ["systemChat", 0];
-
 waitUntil {
 	uiSleep 0.1;
 	!(isNull ((findDisplay 12) displayCtrl 51));
 };
-
-["gps"] remoteExec ["systemChat", 0];
 
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw",(format ['_this call %1',(BIS_fnc_iconDrawMap)])];
 
