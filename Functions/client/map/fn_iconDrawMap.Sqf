@@ -2,13 +2,13 @@ params ["_m"];
 
 {
 	_m drawIcon [
-		[_x] call BIS_fnc_iconType,
+		_x call BIS_fnc_iconType,
 		if (side group _x == west) then {[0,0.3,0.6,1]} else {[0.5,0,0,1]},
-		[_x] call BIS_fnc_getPos,
-		[_x] call BIS_fnc_iconSize,
-		[_x] call BIS_fnc_iconSize,
-		[_x] call BIS_fnc_getDir,
-		[_x] call BIS_fnc_iconText,
+		_x call BIS_fnc_getPos,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_getDir,
+		_x call BIS_fnc_iconText,
 		1,
 		0.025,
 		"TahomaB",
@@ -51,11 +51,11 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 	_m drawIcon [
 		"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
 		[1, 0, 0, 1],
-		[_x] call BIS_fnc_getPos,
+		_x call BIS_fnc_getPos,
 		20,
 		20,
 		0,
-		[_x] call BIS_fnc_iconText,
+		_x call BIS_fnc_iconText,
 		1,
 		0.025,
 		"TahomaB",
@@ -67,13 +67,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 	{
 		if (!isNull _x) then {
 			_m drawIcon [
-				[_x] call BIS_fnc_iconType,
+				_x call BIS_fnc_iconType,
 				if (side group _x == Independent) then {[0,0.6,0,1]} else {if (side group _x == west) then {[0,0.3,0.6,1]} else {[0.5,0,0,1]}},
-				[_x] call BIS_fnc_getPos,
-				[_x] call BIS_fnc_iconSize,
-				[_x] call BIS_fnc_iconSize,
-				[_x] call BIS_fnc_getDir,
-				[_x] call BIS_fnc_iconTextSectorScan,
+				_x call BIS_fnc_getPos,
+				_x call BIS_fnc_iconSize,
+				_x call BIS_fnc_iconSize,
+				_x call BIS_fnc_getDir,
+				_x call BIS_fnc_iconTextSectorScan,
 				1,
 				0.025,
 				"TahomaB",
@@ -84,13 +84,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 } forEach BIS_WL_currentlyScannedSectors;
 {
 	_m drawIcon [
-		[_x] call BIS_fnc_iconType,
-		[_x] call BIS_fnc_iconColor,
-		[_x] call BIS_fnc_getPos,
-		[_x] call BIS_fnc_iconSize,
-		[_x] call BIS_fnc_iconSize,
-		[_x] call BIS_fnc_getDir,
-		[_x] call BIS_fnc_iconText,
+		_x call BIS_fnc_iconType,
+		_x call BIS_fnc_iconColor,
+		_x call BIS_fnc_getPos,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_getDir,
+		_x call BIS_fnc_iconText,
 		1,
 		0.025,
 		"TahomaB",
@@ -100,13 +100,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 {
 	if (!isNull _x) then {
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
-			[_x] call BIS_fnc_iconText,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
+			_x call BIS_fnc_iconText,
 			1,
 			0.025,
 			"TahomaB",
@@ -116,13 +116,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 } forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
 {
 	_m drawIcon [
-		[_x] call BIS_fnc_iconType,
-		[_x] call BIS_fnc_iconColor,
-		[_x] call BIS_fnc_getPos,
-		[_x] call BIS_fnc_iconSize,
-		[_x] call BIS_fnc_iconSize,
-		[_x] call BIS_fnc_getDir,
-		[_x] call BIS_fnc_iconText,
+		_x call BIS_fnc_iconType,
+		_x call BIS_fnc_iconColor,
+		_x call BIS_fnc_getPos,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_getDir,
+		_x call BIS_fnc_iconText,
 		1,
 		0.025,
 		"TahomaB",
@@ -132,13 +132,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 {
 	if (!isNull _x) then {
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
-			[_x] call BIS_fnc_iconText,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
+			_x call BIS_fnc_iconText,
 			1,
 			0.025,
 			"TahomaB",
@@ -149,13 +149,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 {
 	if (!isNull _x) then {
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
-			[_x] call BIS_fnc_iconText,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
+			_x call BIS_fnc_iconText,
 			1,
 			0.025,
 			"TahomaB",
@@ -166,29 +166,29 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 {
 	if (!isNull _x) then {
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
-			[_x] call BIS_fnc_iconText,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
+			_x call BIS_fnc_iconText,
 			1,
 			0.025,
 			"TahomaB",
 			"right"
 		];
-	};	
+	};
 } forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 if (side group player == west) then {
 	{
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
 			"Spawn truck",
 			1,
 			0.025,
@@ -199,12 +199,12 @@ if (side group player == west) then {
 
 	{
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
 			"Medical container",
 			1,
 			0.025,
@@ -216,12 +216,12 @@ if (side group player == west) then {
 if (side group player == east) then {
 	{
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
 			"Spawn truck",
 			1,
 			0.025,
@@ -232,12 +232,12 @@ if (side group player == east) then {
 
 	{
 		_m drawIcon [
-			[_x] call BIS_fnc_iconType,
-			[_x] call BIS_fnc_iconColor,
-			[_x] call BIS_fnc_getPos,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_iconSize,
-			[_x] call BIS_fnc_getDir,
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
 			"Medical pod",
 			1,
 			0.025,
