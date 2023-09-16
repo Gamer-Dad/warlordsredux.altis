@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_sender", "_action", "_pos", "_target", "_isStatic", "_direction"];
 
 if (isNull _sender) exitWith {};
@@ -11,181 +9,21 @@ if (_action == "orderAsset") exitWith {
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-
-		private _class = _target;
-		private _asset = objNull;
 		
-		if (_class isKindOf "Ship") then {
-			_asset = createVehicle [_class, (_pos vectorAdd [0,0,3]), [], 0, "CAN_COLLIDE"];
-			_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
-		} else {
-			if (_class isKindOf "Air") then {
-				if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
-					if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
-						_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);
-						_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
-						_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
-						_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-						_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
-						_asset setDir (direction _sender);
-					} else {
-						private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
-						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
-						private _taxiNodesCnt = count _taxiNodes;
-						private _spawnPos = [];
-						private _dir = 0;
-						private _checks = 0;
-						while {count _spawnPos == 0 && _checks < 100} do {
-							_checks = _checks + 1;
-							private _i = (floor random _taxiNodesCnt) max 1;
-							private _pointB = _taxiNodes # _i;
-							private _pointA = _taxiNodes # (_i - 1);
-							_dir = _pointA getDir _pointB;
-							private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-							if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-								_spawnPos = _pos;
-							};
-						};
-
-						_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
-						_asset setDir _dir;
-					};
-
-					createVehicleCrew _asset;
-					(group effectiveCommander _asset) deleteGroupWhenEmpty true;
-				} else {
-					_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && {!(_class isKindOf "VTOL_Base_F")};
-					if (_isPlane) then {
-						private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
-						private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
-						private _taxiNodesCnt = count _taxiNodes;
-						private _spawnPos = [];
-						private _dir = 0;
-						private _checks = 0;
-						while {count _spawnPos == 0 && _checks < 100} do {
-							_checks = _checks + 1;
-							private _i = (floor random _taxiNodesCnt) max 1;
-							private _pointB = _taxiNodes # _i;
-							private _pointA = _taxiNodes # (_i - 1);
-							_dir = _pointA getDir _pointB;
-							private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-							if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-								_spawnPos = _pos;
-							};
-						};
-
-						_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
-						_asset setDir _dir;
-					} else {
-						if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
-							_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;
-						} else {
-							if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
-								_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);
-								_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
-								_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
-								_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-								_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
-								_asset setDir 0;
-								_pos2 = getPosATL _asset;
-								_asset setVehiclePosition [[_pos2 # 0, _pos2 # 1, ((_pos2 # 2) + 0.5)], [], 0, "CAN_COLLIDE"];
-							} else {
-								private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
-								private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
-								private _taxiNodesCnt = count _taxiNodes;
-								private _spawnPos = [];
-								private _dir = 0;
-								private _checks = 0;
-								while {count _spawnPos == 0 && _checks < 100} do {
-									_checks = _checks + 1;
-									private _i = (floor random _taxiNodesCnt) max 1;
-									private _pointB = _taxiNodes # _i;
-									private _pointA = _taxiNodes # (_i - 1);
-									_dir = _pointA getDir _pointB;
-									private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-									if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
-										_spawnPos = _pos;
-									};
-								};
-
-								_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
-								_asset setDir _dir;
-							};
-						};
-					};
-				};
-			} else {
-				if (_isStatic) then {
-					if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-						if (_class == "B_AAA_System_01_F" || {_class == "B_SAM_System_01_F" || {_class == "B_SAM_System_02_F" || {_class == "B_Ship_MRLS_01_F"}}}) then {
-							_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;	
-
-							//Livery change
-							if (typeOf _asset == "B_AAA_System_01_F") then {
-								private _side = side _sender;
-								if (_side == east) then {
-									_asset setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
-									_asset setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
-								};
-							} else {
-								if (typeOf _asset == "B_SAM_System_01_F") then {
-									private _side = side _sender;
-									if (_side == east) then {
-										_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
-									};
-								} else {
-									if (typeOf _asset == "B_SAM_System_02_F") then {
-										private _side = side _sender;
-										if (_side == east) then {
-											_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
-										};
-									};
-								};
-							};
-						} else {
-							_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;
-						};
-
-						if (_asset call DIS_fnc_IsSam) then {
-							_asset spawn DIS_fnc_RegisterSam;
-						};
-					} else {
-						_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-					};
-					_asset setDir _direction;
-				} else {
-					_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-					_asset setDir _direction;
-					_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
-					
-					//Livery change
-					if (typeOf _asset == "I_Truck_02_MRL_F") then {
-						_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"];
-						_asset setObjectTextureGlobal [2, "a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa"];
-					};
-
-					if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
-						_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
-						_asset setObjectTextureGlobal [1, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa"];
-						_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa"];
-						_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
-					};
-				};
-			};
+		if (_class isKindOf "Ship") exitWith {
+			[_sender, _pos, _target] spawn BIS_fnc_WL2_orderNaval;
 		};
 
-		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {unitIsUAV _asset}}}) then {
-			[_asset, 2] remoteExec ["lock", (owner _asset)];
-		} else {
-			[_asset, 0] remoteExec ["lock", (owner _asset)];
+		if (_class isKindOf "Air") exitWith {
+			[_sender, _pos, _target] spawn BIS_fnc_WL2_orderAir;
 		};
 
-		[_asset, _sender, _isStatic] call BIS_fnc_WL2_setOwner;
-		[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
+		if (_isStatic) exitWith {
+			[_sender, _pos, _target, _direction] spawn BIS_fnc_WL2_orderDefence;
+		};
 
-		waitUntil {sleep 0.01; !(isNull _asset)};
+		[_sender, _pos, _target, _direction] spawn BIS_fnc_WL2_orderGround;
 	};
-	_sender setVariable ["BIS_WL_isOrdering", false, [2, remoteExecutedOwner]];
 };
 
 if (_action == "lastLoadout") exitWith {
@@ -250,7 +88,7 @@ if (_action == "scan") exitWith {
 		_revealTrigger setTriggerActivation ["ANY", "PRESENT", false];
 		_target setVariable ["BIS_WL_revealTrigger", _revealTrigger, true];
 		[_target, side group _sender] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
-		waitUntil {sleep WL_TIMEOUT_SHORT; BIS_WL_competingSides findIf {(_target getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
+		waitUntil {sleep 0.25; BIS_WL_competingSides findIf {(_target getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
 		deleteVehicle _revealTrigger;
 		_target setVariable ["BIS_WL_revealTrigger", nil, true];
 	};

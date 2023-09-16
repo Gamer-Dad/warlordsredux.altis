@@ -185,6 +185,14 @@ class CfgFunctions {
 			class iconTextSectorScan {};
 			class iconType {};
 		};
+		class ClientRequests
+		{
+			file = "Functions\server\clientRequests";
+			class WL2_orderAir {};
+			class WL2_orderDefence {};
+			class WL2_orderGround {};
+			class WL2_orderNaval {};
+		};
 	};
 
 	/*******************************START OF CUSTOM CONTENT HERE****************************/
