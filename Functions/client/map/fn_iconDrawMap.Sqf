@@ -80,7 +80,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 				"right"
 			];
 		};
-	} forEach (((list _revealTrigger) - WL_PLAYER_VEHS) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
+	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
 {
 	_m drawIcon [
