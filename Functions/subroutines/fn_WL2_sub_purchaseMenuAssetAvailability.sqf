@@ -17,7 +17,7 @@ if (_ret) then {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FTConflict": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_conflict"};
@@ -25,7 +25,7 @@ if (_ret) then {
 			if !(WL_TARGET_FRIENDLY in (BIS_WL_sectorsArray # 1)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr5"};
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "LastLoadout": {
 			if (count BIS_WL_lastLoadout == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
@@ -34,14 +34,14 @@ if (_ret) then {
 			_possibleSectors = (BIS_WL_sectorsArray # 0);
 			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "SavedLoadout": {
 			if (count BIS_WL_savedLoadout == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
 			_possibleSectors = (BIS_WL_sectorsArray # 0);
 			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FundsTransfer": {
 			if (count (BIS_WL_allWarlords select {side group _x == side group player}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
@@ -65,13 +65,13 @@ if (_ret) then {
 			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr1"};
 			if !(isNull (findDisplay 602)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_arsenal_restr2"};
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "RemoveUnits": {
 			if (count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}}) == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
 		};
 		case "RespawnVic": {
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			private _sideP = side group player;
@@ -79,7 +79,7 @@ if (_ret) then {
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			private _sideP = side group player;
 			if (_sideP == west) then {
 				private _ftBlu = (((entities "B_Truck_01_medical_F") select {alive _x}) # 0);
@@ -102,7 +102,7 @@ if (_ret) then {
 			}; 
 		};
 		case "RespawnPod": {
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			private _sideP = side group player;
@@ -110,7 +110,7 @@ if (_ret) then {
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnPodFT" : {
-			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			private _sideP = side group player;
 			if (_sideP == west) then {
 				private _ftBlu = ((entities "B_Slingload_01_Medevac_F") # 0);
@@ -141,7 +141,7 @@ if (_ret) then {
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr1"};
 			if (_category == "Infantry" && {(count _units) >= BIS_WL_matesAvailable}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_vehiclesCnt >= (getMissionConfigValue ["BIS_WL_assetLimit", 10])}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
-			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0)}) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_tooltip_deploy_enemies_nearby"};
+			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0)}) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_tooltip_deploy_enemies_nearby"};
 			if (_category in ["Vehicles", "Infantry", "Gear"] && {(_visitedSectorID == -1)}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {((player getVariable ["BIS_WL_isOrdering", false]) == true)}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 			if (_category == "Aircraft") exitWith {
@@ -158,7 +158,7 @@ if (_ret) then {
 					_ret = false;
 					_tooltip = localize "STR_A3_WL_defence_restr1"
 				} else {
-					if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) then {
+					if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) then {
 						_ret = false;
 						_tooltip = localize "STR_A3_WL_tooltip_deploy_enemies_nearby";
 					} else {

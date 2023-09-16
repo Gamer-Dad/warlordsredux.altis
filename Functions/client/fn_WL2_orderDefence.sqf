@@ -53,7 +53,7 @@ uiNamespace setVariable ["BIS_WL_deployKeyHandle", _deployKeyHandle];
 		{vehicle player != player || 
 		{!alive player || 
 		{lifeState player == "INCAPACITATED" || 
-		{((count (allPlayers select {alive _x && {(_x distanceSqr player < 1000) && {side group _x != side group player}}})) > 0) || 
+		{((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) || 
 		{(getPosATL player) select 2 > 1 || 
 		{(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
 	}}}}}}}};
