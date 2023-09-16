@@ -13,18 +13,21 @@ private _crewCount = {
 private _myArray = [0];
 _myArray resize _crewCount;
 
-if (_side == west) then {
-	private _grp = createGroup west;
-	{
-		private _unit = _grp createUnit ["B_UAV_AI", _pos, [], 0, "NONE"];
-		_unit moveInAny _asset;
-	} forEach _myArray;
-} else {
-	private _grp = createGroup east;
-	{
-		private _unit = _grp createUnit ["O_UAV_AI", _pos, [], 0, "NONE"];
-		_unit moveInAny _asset;
-	} forEach _myArray;
+[_side, _myArray, _asset, _pos] spawn {
+	params ["_side", "_myArray", "_asset", "_pos"];
+	if (_side == west) then {
+		private _grp = createGroup _side;
+		{
+			private _unit = _grp createUnit ["B_UAV_AI", _pos, [], 1, "NONE"];
+			_unit moveInAny _asset;
+		} forEach _myArray;
+	} else {
+		private _grp = createGroup _side;
+		{
+			private _unit = _grp createUnit ["O_UAV_AI", _pos, [], 1, "NONE"];
+			_unit moveInAny _asset;
+		} forEach _myArray;
+	};
 };
 
 _asset;
