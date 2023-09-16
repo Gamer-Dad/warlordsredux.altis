@@ -19,7 +19,6 @@ waitUntil {
 		} else {
 			if (isNull ((findDisplay 160) displayCtrl 51)) then {
 				_display1Opened = false;
-				((findDisplay 160) displayCtrl 51) ctrlRemoveAllEventHandlers "Draw";
 			};		
 		};
 		if (!(_display2opened)) then {
@@ -30,7 +29,6 @@ waitUntil {
 		} else {
 			if (isNull ((findDisplay -1) displayCtrl 500)) then {
 				_display2opened = false;
-				((findDisplay -1) displayCtrl 500) ctrlRemoveAllEventHandlers "Draw";
 			};
 		};
 		uiSleep 0.2;
