@@ -4,6 +4,9 @@ params ["_owner", "_asset"];
 
 if (isNull _owner && isServer) then {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
+	if !((_asset isKindOf "Man")) then {
+		_asset spawn DAPS_fnc_RegisterVehicle;
+	};
 	_asset setSkill (0.2 + random 0.3);
 };
 

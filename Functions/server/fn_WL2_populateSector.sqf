@@ -13,9 +13,6 @@ if (_side == RESISTANCE) then {
 			private _road = selectRandom _roads;
 			_vehicleArray = [position _road, _road getDir selectRandom (roadsConnectedTo _road), selectRandomWeighted BIS_WL_factionVehicleClasses, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
-			if !(_vehicle isKindOf "Man") then {
-				_vehicle spawn DAPS_fnc_RegisterVehicle;
-			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
@@ -45,10 +42,6 @@ if (_side == RESISTANCE) then {
 			_vehicleInfo params ["_type", "_pos", "_dir", "_lock", "_waypoints"];
 			_vehicleArray = [_pos, _dir, _type, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
-
-			if !(_vehicle isKindOf "Man") then {
-				_vehicle spawn DAPS_fnc_RegisterVehicle;
-			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
@@ -79,9 +72,6 @@ if (_side == RESISTANCE) then {
 		if (count _neighbors > 0) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandomWeighted BIS_WL_factionAircraftClasses, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
-			if !(_vehicle isKindOf "Man") then {
-				_vehicle spawn DAPS_fnc_RegisterVehicle;
-			};
 			
 			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			[objNull, _vehicle] spawn BIS_fnc_WL2_newAssetHandle;
