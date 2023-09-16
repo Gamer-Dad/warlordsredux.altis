@@ -5,6 +5,7 @@
 */
 
 if (isNull (findDisplay 4000)) then {
+    closeDialog 1;
     createDialog "MRTM_groupsMenu";
 
 	0 spawn {

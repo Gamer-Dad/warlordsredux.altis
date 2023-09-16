@@ -5,6 +5,7 @@
 */
 
 if (isNull (findDisplay 5000)) then {
+	closeDialog 1;
 	createDialog "MRTM_emotesMenu";
 
 	((findDisplay 5000) displayCtrl 5004) ctrlAddEventHandler ["LBSelChanged", {

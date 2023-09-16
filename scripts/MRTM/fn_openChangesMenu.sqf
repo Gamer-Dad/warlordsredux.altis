@@ -5,6 +5,7 @@
 */
 
 if (isNull (findDisplay 6000)) then {
+	closeDialog 1;
 	createDialog "MRTM_changesMenu";
 };
 disableSerialization;

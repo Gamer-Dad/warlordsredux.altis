@@ -1402,6 +1402,18 @@ class MRTM_settingsMenu
 			font = "PuristaMedium";
 			action =  "closeDialog 1; 0 spawn MRTM_fnc_openChangesMenu;";
 		};
+		class MRTMInfoButton: RscButtonMRTM
+		{
+			idc = 1608;
+			text = "INFO";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.507969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action =  "closeDialog 1; 0 spawn MRTM_fnc_openInfoMenu;";
+		};
 	};
 };
 
@@ -1814,6 +1826,103 @@ class MRTM_changesMenu
 			};
 			type = CT_CONTROLS_GROUP;
 			idc = 6101;
+			x = 0.31236 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.365937 * safezoneW;
+			h = 0.508 * safezoneH;
+			shadow = 0;
+			style = ST_MULTI;
+		};
+	};
+};
+
+class MRTM_infoMenu
+{
+	idd = 7000;
+
+	class controls
+	{
+		class MRTMinfoBackground: IGUIBackMRTM
+		{
+			idc = 7001;
+			colorBackground[] = {0,0,0,0.75};
+			x = 0.31236 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.36675 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class MRTMinfoHeaderBackground: IGUIBackMRTM
+		{
+			idc = 7002;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.31236 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.36675 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMinfoHeaderTextLeft: RscStructuredTextMRTM
+		{
+			idc = 7003;
+			text = "Info";
+			sizeEx = "0.021 / (getResolution select 5)";
+			colorBackground[] = {0,0,0,0};
+			x = 0.31236 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.274687 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMinfoCloseButton: RscButtonMRTM
+		{
+			idc = 7100;
+			text = "CLOSE";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.31236 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+		};
+		class MRTMinfoControlGroup: RscControlsGroupMRTM
+		{
+			deletable = 0;
+			fade = 0;
+			class VScrollbar: ScrollBar
+			{
+				color[] = {1,1,1,1};
+				height = 0.528;
+				width = 0.021;
+				autoScrollEnabled = 1;
+			};
+			class HScrollbar: ScrollBar
+			{
+				color[] = {1,1,1,1};
+				height = 0;
+				width = 0;
+			};
+			class Controls
+			{
+				class infoTextBlock: RscStructuredTextMRTM
+				{
+					idc = 7102;
+					deletable = 0;
+					sizeEx = "0.021 / (getResolution select 5)";
+					type = CT_STRUCTURED_TEXT;
+					style = ST_LEFT;
+					w = 0.355937 * safezoneW;
+					h = 1.9 * safezoneH;
+				};
+			};
+			type = CT_CONTROLS_GROUP;
+			idc = 7101;
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.365937 * safezoneW;

@@ -222,6 +222,7 @@ class CfgFunctions {
 			class settingsinit {};
 			class openChangesMenu {};
 			class leaveGroup {};
+			class openInfoMenu {};
 		};
 	};
 	class GOM {
