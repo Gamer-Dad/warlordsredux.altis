@@ -30,6 +30,7 @@ private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilen
 	"-Debug messages removed.", lineBreak,
 	"-AFK code improved.", lineBreak,
 	"-Possible perf drop issue found.", lineBreak,
+	"-Capturing values and other info added to new info tab.", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8 Update:" splitString " " joinString toString [160]], lineBreak,
 	"-Performance improved.", lineBreak,
 	"-Group system added.", lineBreak,
