@@ -1,8 +1,7 @@
-params ["_sender", "_pos", "_target"];
+params ["_sender", "_pos", "_class"];
 
 if !(isServer) exitWith {};
 
-private _class = _target;
 _asset = createVehicle [_class, (_pos vectorAdd [0,0,3]), [], 0, "CAN_COLLIDE"];
 _asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
 

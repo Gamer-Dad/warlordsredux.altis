@@ -1,8 +1,7 @@
-params ["_sender", "_pos", "_target", "_direction"];
+params ["_sender", "_pos", "_class", "_direction"];
 
 if !(isServer) exitWith {};
 
-private _class = _target;
 if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 	if (_class == "B_AAA_System_01_F" || {_class == "B_SAM_System_01_F" || {_class == "B_SAM_System_02_F" || {_class == "B_Ship_MRLS_01_F"}}}) then {
 		_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;	

@@ -1,8 +1,7 @@
-params ["_sender", "_pos", "_target", "_direction"];
+params ["_sender", "_pos", "_class", "_direction"];
 
 if !(isServer) exitWith {};
 
-private _class = _target;
 _asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 _asset setDir _direction;
 _asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];

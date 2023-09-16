@@ -195,3 +195,10 @@ call _fncEarPlugs;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;
+
+if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
+	player addAction [
+		"10K CP",
+		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];};
+	];
+};

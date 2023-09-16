@@ -10,19 +10,20 @@ if (_action == "orderAsset") exitWith {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		
+		_class = _target;
 		if (_class isKindOf "Ship") exitWith {
-			[_sender, _pos, _target] spawn BIS_fnc_WL2_orderNaval;
+			[_sender, _pos, _class] spawn BIS_fnc_WL2_orderNaval;
 		};
 
 		if (_class isKindOf "Air") exitWith {
-			[_sender, _pos, _target] spawn BIS_fnc_WL2_orderAir;
+			[_sender, _pos, _class] spawn BIS_fnc_WL2_orderAir;
 		};
 
 		if (_isStatic) exitWith {
-			[_sender, _pos, _target, _direction] spawn BIS_fnc_WL2_orderDefence;
+			[_sender, _pos, _class, _direction] spawn BIS_fnc_WL2_orderDefence;
 		};
 
-		[_sender, _pos, _target, _direction] spawn BIS_fnc_WL2_orderGround;
+		[_sender, _pos, _class, _direction] spawn BIS_fnc_WL2_orderGround;
 	};
 };
 
@@ -201,4 +202,9 @@ if (_action == "kill") exitWith {
 	if (remoteExecutedOwner == _pos) then {
 		_sender setDamage 1;
 	};
+};
+
+if (_action == "10K" && {!(["(EU) #11", serverName] call BIS_fnc_inString)}) exitWith {
+	private _uid = getPlayerUID _sender;
+	[_uid, 10000] spawn BIS_fnc_WL2_fundsDatabaseWrite;	
 };

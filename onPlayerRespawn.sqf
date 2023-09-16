@@ -15,3 +15,10 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) <
 } forEach (missionNamespace getVariable (format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]));
 
 ["Died"] spawn MRTM_fnc_statTracker;
+
+if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
+	player addAction [
+		"10K CP",
+		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];};
+	];
+};
