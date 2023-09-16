@@ -97,7 +97,7 @@ serverNamespace setVariable ["BIS_WL2_cappingValues",
 		["O_APC_Wheeled_02_rcws_v2_F", 3], ["O_APC_Tracked_02_cannon_F", 3],
 		["O_APC_Tracked_02_AA_F", 4],
 		["O_MBT_02_cannon_F", 4], ["O_MBT_04_cannon_F", 4], ["O_MBT_04_command_F", 4],
-		["O_MBT_02_arty_F", 4], ["I_Truck_02_MRL_F", 4],
+		["O_MBT_02_arty_F", 4], ["I_Truck_02_MRL_F", 4], ["O_MBT_02_railgun_F", 4],
 		//AAF
 		["I_MRAP_03_hmg_F", 3], ["I_MRAP_03_gmg_F", 3],
 		["I_LT_01_scout_F", 4], ["I_LT_01_AA_F", 4], ["I_LT_01_AT_F", 4], ["I_LT_01_cannon_F", 4],
