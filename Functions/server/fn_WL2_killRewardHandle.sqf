@@ -8,7 +8,7 @@ if (isNull _instigator) then {_instigator = (if (!isNil {((_killer getVariable [
 if (isNull _instigator) then {_instigator = (vehicle _killer)};
 
 if !(isNull _instigator) then {
-	_responsibleLeader = _instigator;
+	_responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
 	if (_responsibleLeader in BIS_WL_allWarlords) then {
 		_killerSide = side group _responsibleLeader;
 		_unitSide = if (_unit isKindOf "Man") then {
