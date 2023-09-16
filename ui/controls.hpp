@@ -133,7 +133,7 @@ class welcomeScreen
 					type = CT_STRUCTURED_TEXT;
 					style = ST_LEFT;
 					w = 0.245937 * safezoneW;
-					h = 4.5 * safezoneH;
+					h = 4.6 * safezoneH;
 				};
 			};
 
