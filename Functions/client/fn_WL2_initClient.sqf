@@ -199,6 +199,6 @@ call _fncEarPlugs;
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
 		"10K CP",
-		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];};
+		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
