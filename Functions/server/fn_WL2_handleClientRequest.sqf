@@ -12,18 +12,18 @@ if (_action == "orderAsset") exitWith {
 		
 		_class = _target;
 		if (_class isKindOf "Ship") exitWith {
-			[_sender, _pos, _class] spawn BIS_fnc_WL2_orderNaval;
+			[_sender, _pos, _class] spawn BIS_fnc_orderNaval;
 		};
 
 		if (_class isKindOf "Air") exitWith {
-			[_sender, _pos, _class] spawn BIS_fnc_WL2_orderAir;
+			[_sender, _pos, _class] spawn BIS_fnc_orderAir;
 		};
 
 		if (_isStatic) exitWith {
-			[_sender, _pos, _class, _direction] spawn BIS_fnc_WL2_orderDefence;
+			[_sender, _pos, _class, _direction] spawn BIS_fnc_orderDefence;
 		};
 
-		[_sender, _pos, _class, _direction] spawn BIS_fnc_WL2_orderGround;
+		[_sender, _pos, _class, _direction] spawn BIS_fnc_orderGround;
 	};
 };
 

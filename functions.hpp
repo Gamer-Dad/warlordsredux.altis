@@ -188,10 +188,10 @@ class CfgFunctions {
 		class ClientRequests
 		{
 			file = "Functions\server\clientRequests";
-			class WL2_orderAir {};
-			class WL2_orderDefence {};
-			class WL2_orderGround {};
-			class WL2_orderNaval {};
+			class orderAir {};
+			class orderDefence {};
+			class orderGround {};
+			class orderNaval {};
 		};
 	};
 
