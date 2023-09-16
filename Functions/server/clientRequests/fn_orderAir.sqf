@@ -2,6 +2,7 @@ params ["_sender", "_pos", "_class"];
 
 if !(isServer) exitWith {};
 
+_asset = objNull;
 if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
 	if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 		_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);
