@@ -7,14 +7,6 @@
 if (isNull (findDisplay 4000)) then {
     closeDialog 1;
     createDialog "MRTM_groupsMenu";
-
-	0 spawn {
-		while {!(isNull (findDisplay 4000))} do {
-			["Players"] spawn MRTM_fnc_onLBSelChanged;
-			[""] spawn MRTM_fnc_onLBSelChanged;
-			sleep 0.3;
-		};
-	};
 };
 disableSerialization;
 
@@ -42,3 +34,6 @@ lbClear 4006;
     lbSetData [4006, _index, (getPlayerUID _x)];
     lbSetPicture [4006, _index, ([_x] call MRTM_fnc_getLBPicture)];
 } forEach (allPlayers select {_x != player && {!(_x in (units player)) && {(side (group _x)) == (side (group player))}}});
+
+["Players"] spawn MRTM_fnc_onLBSelChanged;
+[""] spawn MRTM_fnc_onLBSelChanged;
