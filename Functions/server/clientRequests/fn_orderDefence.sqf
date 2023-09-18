@@ -5,7 +5,8 @@ if !(isServer) exitWith {};
 _asset = objNull;
 if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 	if (_class == "B_AAA_System_01_F" || {_class == "B_SAM_System_01_F" || {_class == "B_SAM_System_02_F" || {_class == "B_Ship_MRLS_01_F"}}}) then {
-		_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;	
+		_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+		[_asset, _pos, _class] remoteExec ["BIS_fnc_WL2_createUAVCrew", (owner _sender)];
 
 		//Livery change
 		if (typeOf _asset == "B_AAA_System_01_F") then {
@@ -30,7 +31,8 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 			};
 		};
 	} else {
-		_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;
+		_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+		[_asset, _pos, _class] remoteExec ["BIS_fnc_WL2_createUAVCrew", (owner _sender)];
 	};
 
 	if (_asset call DIS_fnc_IsSam) then {

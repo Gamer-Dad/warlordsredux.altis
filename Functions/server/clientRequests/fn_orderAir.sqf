@@ -61,7 +61,8 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset setDir _dir;
 	} else {
 		if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
-			_asset = [_pos, _class, (side group _sender)] call BIS_fnc_WL2_createUAVCrew;
+			_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+			[_asset, _pos, _class] remoteExec ["BIS_fnc_WL2_createUAVCrew", (owner _sender)];
 		} else {
 			if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 				_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);

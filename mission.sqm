@@ -9044,7 +9044,7 @@ class Mission
 					};
 					id=1376;
 					type="B_Soldier_TL_F";
-					atlOffset=5.7220459e-006;
+					atlOffset=9.9182129e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9081,7 +9081,7 @@ class Mission
 			{
 			};
 			id=1375;
-			atlOffset=5.7220459e-006;
+			atlOffset=9.9182129e-005;
 		};
 	};
 	class Connections
