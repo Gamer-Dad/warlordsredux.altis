@@ -130,12 +130,8 @@ addMissionEventHandler ["MarkerCreated", {
 		private _zeusKey = actionKeysNames "curatorInterface";
 		private _viewKey = actionKeysNames "tacticalView";
 		private _e = false;
-		if (_keyName == _zeusKey && {!((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs")))}) then {
-			_e = true;
-		};
-		if (_keyName == _viewKey) then {
-			_e = true;
-		};
+		_e = (_keyName == _zeusKey && {!((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs")))});
+		_e = (_keyName == _viewKey);
 		_e;
 	}];
 };
