@@ -565,7 +565,7 @@ class MRTM_settingsMenu
 		class MRTMObjectsButton: RscCheckboxMRTM
 		{
 			idc = 2800;
-			action = "if (profileNamespace getVariable 'MRTM_syncObjects') then {(profileNamespace setVariable ['MRTM_syncObjects', false])} else {(profileNamespace setVariable ['MRTM_syncObjects', true])}; 0 spawn MRTM_fnc_openMenu;";
+			action = "profileNamespace setVariable ['MRTM_syncObjects', !(profileNamespace getVariable 'MRTM_syncObjects')]; 0 spawn MRTM_fnc_openMenu;";
 			x = 0.273125 * safezoneW + safezoneX;
 			y = 0.5044 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -958,7 +958,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton1: RscCheckboxMRTM
 		{
 			idc = 2801;
-			action = "if (profileNamespace getVariable ['MRTM_3rdPersonDisabled', false]) then {player setVariable ['MRTM_3rdPersonDisabled', false, [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', false];} else {player setVariable ['MRTM_3rdPersonDisabled', true, [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', true];}";
+			action = "player setVariable ['MRTM_3rdPersonDisabled', !(profileNamespace getVariable ['MRTM_3rdPersonDisabled', false]), [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', !(profileNamespace getVariable ['MRTM_3rdPersonDisabled', false])];";
 			toolTip = "Recieve a 100% CP bonus.";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
@@ -978,7 +978,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton2: RscCheckboxMRTM
 		{
 			idc = 2802;
-			action = "if (profileNamespace getVariable ['MRTM_muteVoiceInformer', false]) then {(profileNamespace setVariable ['MRTM_muteVoiceInformer', false])} else {(profileNamespace setVariable ['MRTM_muteVoiceInformer', true])}";
+			action = "profileNamespace setVariable ['MRTM_muteVoiceInformer', !(profileNamespace getVariable ['MRTM_muteVoiceInformer', false])];";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.533 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -997,7 +997,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton3: RscCheckboxMRTM
 		{
 			idc = 2803;
-			action = "if (profileNamespace getVariable ['MRTM_playKillSound', true]) then {(profileNamespace setVariable ['MRTM_playKillSound', false])} else {(profileNamespace setVariable ['MRTM_playKillSound', true])}";
+			action = "profileNamespace setVariable ['MRTM_playKillSound', !(profileNamespace getVariable ['MRTM_playKillSound', true])];";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.566 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -1016,7 +1016,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton4: RscCheckboxMRTM
 		{
 			idc = 2804;
-			action = "if (profileNamespace getVariable ['MRTM_EnableRWR', true]) then {(profileNamespace setVariable ['MRTM_EnableRWR', false])} else {(profileNamespace setVariable ['MRTM_EnableRWR', true])}";
+			action = "profileNamespace setVariable ['MRTM_EnableRWR', !(profileNamespace getVariable ['MRTM_EnableRWR', true])];";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -1055,7 +1055,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton6: RscCheckboxMRTM
 		{
 			idc = 2806;
-			action = "if (profileNamespace getVariable ['MRTM_smallAnnouncerText', false]) then {(profileNamespace setVariable ['MRTM_smallAnnouncerText', false])} else {(profileNamespace setVariable ['MRTM_smallAnnouncerText', true])}";
+			action = "profileNamespace setVariable ['MRTM_smallAnnouncerText', !(profileNamespace getVariable ['MRTM_smallAnnouncerText', false])];";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.665 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -1074,7 +1074,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton7: RscCheckboxMRTM
 		{
 			idc = 2807;
-			action = "if (profileNamespace getVariable ['MRTM_spawnEmpty', false]) then {(profileNamespace setVariable ['MRTM_spawnEmpty', false])} else {(profileNamespace setVariable ['MRTM_spawnEmpty', true])}";
+			action = "profileNamespace setVariable ['MRTM_spawnEmpty', !(profileNamespace getVariable ['MRTM_spawnEmpty', false])];";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.698 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
