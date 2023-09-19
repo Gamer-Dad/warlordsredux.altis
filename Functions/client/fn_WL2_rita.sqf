@@ -10,11 +10,7 @@ _v setVariable ["landingGear", true];
 _v setVariable ["Incomming", []];
 _v addEventHandler ["Gear", {
 	params ["_vehicle", "_gearState"];
-	if (_gearState == true) then {
-		_vehicle setVariable ["landingGear", true];
-	} else {
-		_vehicle setVariable ["landingGear", false];
-	};
+	_vehicle setVariable ["landingGear", _gearState];
 }];
 _v addEventHandler ["IncomingMissile", {
 	params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
