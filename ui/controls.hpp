@@ -1364,7 +1364,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1;";
+			action =  "(findDisplay 8000) closeDisplay 1;";
 		};		
 		class MRTMGroupsButton: RscButtonMRTM
 		{
@@ -1376,7 +1376,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1; 0 spawn MRTM_fnc_openGroupMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openGroupMenu;";
 		};
 		class MRTMEmotesButton: RscButtonMRTM
 		{
@@ -1388,7 +1388,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1; 0 spawn MRTM_fnc_openEmoteMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openEmoteMenu;";
 		};
 		class MRTMChangesButton: RscButtonMRTM
 		{
@@ -1400,7 +1400,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1; 0 spawn MRTM_fnc_openChangesMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openChangesMenu;";
 		};
 		class MRTMInfoButton: RscButtonMRTM
 		{
@@ -1412,7 +1412,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "closeDialog 1; 0 spawn MRTM_fnc_openInfoMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openInfoMenu;";
 		};
 	};
 };
@@ -1575,7 +1575,7 @@ class MRTM_groupsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+			action = "(findDisplay 4000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
 		};
 		class MRTMGroupsInviteButton: RscButtonMRTM
 		{
@@ -1734,7 +1734,7 @@ class MRTM_emotesMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+			action = "(findDisplay 5000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
 		};
 	};
 };
@@ -1792,7 +1792,7 @@ class MRTM_changesMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+			action = "(findDisplay 6000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
 		};
 		class MRTMChangesControlGroup: RscControlsGroupMRTM
 		{
@@ -1889,7 +1889,7 @@ class MRTM_infoMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "closeDialog 1; 0 spawn MRTM_fnc_openMenu;";
+			action = "(findDisplay 7000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
 		};
 		class MRTMinfoControlGroup: RscControlsGroupMRTM
 		{

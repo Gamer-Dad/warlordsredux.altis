@@ -5,11 +5,15 @@
 */
 
 if (isNull (findDisplay 6000)) then {
-	closeDialog 1;
+	private _d = [4000, 5000, 6000, 7000, 8000];
+	{
+		if !(isNull (findDisplay _x)) then {
+			(findDisplay _x) closeDisplay 1;
+		};
+	} forEach _d;
 	createDialog "MRTM_changesMenu";
 };
 disableSerialization;
-
 
 private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019],profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862],profilenamespace getvariable ['GUI_BCG_RGB_A',0.7]] call BIS_fnc_colorRGBAtoHTML;
 ((findDisplay 6000) displayCtrl 6102) ctrlSetStructuredText composeText [

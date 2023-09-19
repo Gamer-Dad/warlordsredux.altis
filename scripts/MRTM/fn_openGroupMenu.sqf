@@ -4,8 +4,15 @@
     Description: Opens the group menu.
 */
 
+params ["_debug"];
+
 if (isNull (findDisplay 4000)) then {
-    closeDialog 1;
+	private _d = [4000, 5000, 6000, 7000, 8000];
+	{
+		if !(isNull (findDisplay _x)) then {
+			(findDisplay _x) closeDisplay 1;
+		};
+	} forEach _d;
     createDialog "MRTM_groupsMenu";
 };
 disableSerialization;

@@ -100,15 +100,30 @@ addMissionEventHandler ["MarkerCreated", {
 		private _keyName = (keyName _key);
 		
 		if (_keyName == _settingsKey) exitWith {
-			closeDialog 1;
+			private _d = [4000, 5000, 6000, 7000, 8000];
+			{
+				if !(isNull (findDisplay _x)) then {
+					(findDisplay _x) closeDisplay 1;
+				};
+			} forEach _d;
 			0 spawn MRTM_fnc_openMenu;
 		};
 		if (_keyName == _groupKey) exitWith {
-			closeDialog 1;
+			private _d = [4000, 5000, 6000, 7000, 8000];
+			{
+				if !(isNull (findDisplay _x)) then {
+					(findDisplay _x) closeDisplay 1;
+				};
+			} forEach _d;
 			0 spawn MRTM_fnc_openGroupMenu;
 		};
 		if (_keyName == _emotesKey) exitWith {
-			closeDialog 1;
+			private _d = [4000, 5000, 6000, 7000, 8000];
+			{
+				if !(isNull (findDisplay _x)) then {
+					(findDisplay _x) closeDisplay 1;
+				};
+			} forEach _d;
 			0 spawn MRTM_fnc_openEmoteMenu;
 		};
 
