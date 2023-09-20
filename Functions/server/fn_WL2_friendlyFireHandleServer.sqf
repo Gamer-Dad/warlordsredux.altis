@@ -2,7 +2,7 @@
 
 params ["_unit", "_killer", "_instigator"];
 
-if (!isPlayer _unit || {(group _unit) == (group _killer)}) exitWith { false };
+if (!isPlayer _unit || {(group _unit) == (group _killer)}) exitWith {};
 
 if (_unit isKindOf "Man") then {
 	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
