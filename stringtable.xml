@@ -35,40 +35,6 @@
             <Chinesesimp>选择合适的部门。</Chinesesimp>
             <Chinese>選擇合適的部門。</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_owned_sector">
-            <Original>You need to be inside an owned sector.</Original>
-            <English>You need to be inside an owned sector.</English>
-            <Czech>Musíte být uvnitř vlastněného sektoru.</Czech>
-            <French>Vous devez être à l'intérieur d'un secteur détenu.</French>
-            <German>Du musst dich in einem von deiner Fraktion kontrollierten Sektor befinden.</German>
-            <Italian>Devi essere all'interno di un settore di proprietà.</Italian>
-            <Polish>Musisz znajdować się w posiadanym sektorze.</Polish>
-            <Portuguese>Você precisa estar dentro de um setor próprio.</Portuguese>
-            <Russian>Вы должны быть внутри контролируемого сектора.</Russian>
-            <Spanish>Necesitas estar dentro de un sector propio.</Spanish>
-            <Turkish>Sahip olunan bir sektörün içinde olmanız gerekiyor.</Turkish> 
-            <Korean>소유 섹터 안에 있어야 합니다.</Korean>
-            <Japanese>所有セクター内にいる必要があります。</Japanese>
-            <Chinesesimp>您需要在拥有的部门内。</Chinesesimp>
-            <Chinese>您需要在擁有的部門內。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_get_out_of_vehicle">
-            <Original>You have to get out of your vehicle.</Original>
-            <English>You have to get out of your vehicle.</English>
-            <Czech>Musíte vystoupit ze svého vozidla.</Czech>
-            <French>Vous devez sortir de votre véhicule.</French>
-            <German>Du musst dein Fahrzeug zuerst verlassen.</German>
-            <Italian>Devi uscire dal tuo veicolo.</Italian>
-            <Polish>Musisz wysiąść z pojazdu.</Polish>
-            <Portuguese>Você tem que sair do seu veículo.</Portuguese>
-            <Russian>Вы должны выйти из своей техники.</Russian>
-            <Spanish>Tienes que salir de tu vehículo.</Spanish>
-            <Turkish>Aracınızdan inmeniz gerekiyor.</Turkish>
-            <Korean>차량에서 내려야 합니다.</Korean>
-            <Japanese>車から降りなければなりません。</Japanese>
-            <Chinesesimp>你必须离开你的车。</Chinesesimp>
-            <Chinese>你必须离开你的车。</Chinese>
-        </Key>
         <Key ID="STR_A3_WL_popup_asset_limit_reached">
             <Original>Assets limit reached.</Original>
             <English>Assets limit reached.</English>
@@ -85,23 +51,6 @@
             <Japanese>アセットの上限に達しました。</Japanese>
             <Chinesesimp>已达到资产限额。</Chinesesimp>
             <Chinese>已達到資產限額。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_info_vehs_in_basket">
-            <Original>Only infantry and ammoboxes can be airdropped on your coordinates.</Original>
-            <English>Only infantry and ammoboxes can be airdropped on your coordinates.</English>
-            <Czech>Na vašich souřadnicích lze vysadit pouze pěchotu a munice.</Czech>
-            <French>Seuls l'infanterie et les caisses de munitions peuvent être larguées sur vos coordonnées.</French>
-            <German>Lediglich Infanterie und Nachschubkisten können per Luftabwurf an deine Koordinaten geliefert werden.</German>
-            <Italian>Solo fanteria e casse di munizioni possono essere lanciate alle tue coordinate.</Italian>
-            <Polish>Tylko piechota i skrzynki z amunicją mogą być zrzucane na twoje współrzędne.</Polish>
-            <Portuguese>Apenas infantaria e caixas de munição podem ser lançadas em suas coordenadas.</Portuguese>
-            <Russian>По вашим координатам можно сбрасывать только пехоту и ящики с боеприпасами.</Russian>
-            <Spanish>Solo la infantería y las cajas de munición pueden lanzarse desde el aire en tus coordenadas.</Spanish>
-            <Turkish>Koordinatlarınıza yalnızca piyade ve cephane kutuları havadan atılabilir.</Turkish>
-            <Korean>보병과 탄약 상자만 좌표에 투하할 수 있습니다.</Korean>
-            <Japanese>座標にエアドロップできるのは歩兵と弾薬箱のみです。</Japanese>
-            <Chinesesimp>只有步兵和弹药箱可以空投到您的坐标上。</Chinesesimp>
-            <Chinese>只有步兵和彈藥箱可以空投到您的坐標上。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_info_no_units_selected">
             <Original>No units selected.</Original>
@@ -393,108 +342,6 @@
             <Chinesesimp>重置目标选择？</Chinesesimp>
             <Chinese>重置目标选择？</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_target_reset_votes_needed">
-            <Original>Votes needed.</Original>
-            <English>Votes needed.</English>
-            <Czech>Potřebné hlasy.</Czech>
-            <French>Nombre de votes nécessaires.</French>
-            <German>Benötigte Stimmen.</German>
-            <Italian>Voti necessari.</Italian>
-            <Polish>Potrzebne głosy.</Polish>
-            <Portuguese>Votos necessários.</Portuguese>
-            <Russian>Требуется голосов.</Russian>
-            <Spanish>Votos necesarios.</Spanish>
-            <Turkish>Oy gerekli.</Turkish>
-            <Korean>필요한 투표 수.</Korean>
-            <Japanese>必要な投票数。</Japanese>
-            <Chinesesimp>需要的投票数。</Chinesesimp>
-            <Chinese>需要的投票數。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_param_saving">
-            <Original>Saving.</Original>
-            <English>Saving.</English>
-            <Czech>Ukládání.</Czech>
-            <French>Enregistrement en cours.</French>
-            <German>Speichern.</German>
-            <Italian>Salvataggio in corso.</Italian>
-            <Polish>Zapisywanie.</Polish>
-            <Portuguese>Salvando.</Portuguese>
-            <Russian>Сохранение.</Russian>
-            <Spanish>Guardando.</Spanish>
-            <Turkish>Kaydediliyor.</Turkish>
-            <Korean>저장 중.</Korean>
-            <Japanese>保存中。</Japanese>
-            <Chinesesimp>正在保存。</Chinesesimp>
-            <Chinese>正在存储。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_param_saving_info">
-            <Original>Possibility to save game in the pause menu.</Original>
-            <English>Possibility to save game in the pause menu.</English>
-            <Czech>Možnost uložit hru v menu pozastavení.</Czech>
-            <French>Possibilité de sauvegarder le jeu dans le menu pause.</French>
-            <German>Die Möglichkeit, das Spiel im Pause-Menü zu speichern.</German>
-            <Italian>Possibilità di salvare il gioco nel menu di pausa.</Italian>
-            <Polish>Możliwość zapisania gry w menu pauzy.</Polish>
-            <Portuguese>Possibilidade de salvar o jogo no menu de pausa.</Portuguese>
-            <Russian>Возможность сохранить игру в меню паузы.</Russian>
-            <Spanish>Posibilidad de guardar el juego en el menú de pausa.</Spanish>
-            <Turkish>Duraklatma menüsünde oyunu kaydetme imkanı.</Turkish>
-            <Korean>일시 정지 메뉴에서 게임을 저장할 수 있는 가능성.</Korean>
-            <Japanese>ポーズメニューでゲームを保存する可能性。</Japanese>
-            <Chinesesimp>在暂停菜单保存游戏的可能性。</Chinesesimp>
-            <Chinese>在暫停選單保存遊戲的可能性。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_param_fog_of_war">
-            <Original>Fog of war.</Original>
-            <English>Fog of war.</English>
-            <Czech>Mlha války.</Czech>
-            <French>Brouillard de guerre.</French>
-            <German>Nebel des Krieges.</German>
-            <Italian>Nebbia della guerra.</Italian>
-            <Polish>Mgła wojny.</Polish>
-            <Portuguese>Neblina de guerra.</Portuguese>
-            <Russian>Туман войны.</Russian>
-            <Spanish>Niebla de la guerra.</Spanish>
-            <Turkish>Savaş sisi.</Turkish>
-            <Korean>전쟁의 안개.</Korean>
-            <Japanese>戦争の霧.</Japanese>
-            <Chinesesimp>战争迷雾.</Chinesesimp>
-            <Chinese>战争迷雾.</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_param_fog_of_war_value1">
-            <Original>Show enemy base location.</Original>
-            <English>Show enemy base location.</English>
-            <Czech>Ukázat umístění nepřátelské základny.</Czech>
-            <French>Afficher l'emplacement de la base ennemie.</French>
-            <German>Zeige die Basis des Gegners.</German>
-            <Italian>Mostra la posizione della base nemica.</Italian>
-            <Polish>Pokaż lokalizację bazy wroga.</Polish>
-            <Portuguese>Mostrar localização da base inimiga.</Portuguese>
-            <Russian>Показать местоположение вражеской базы.</Russian>
-            <Spanish>Mostrar ubicación de la base enemiga.</Spanish>
-            <Turkish>Düşman üssünün yerini göster.</Turkish>
-            <Korean>적 기지 위치 표시</Korean>
-            <Japanese>敵の基地の位置を示す</Japanese>
-            <Chinesesimp>显示敌方基地位置。</Chinesesimp>
-            <Chinese>显示敌方基地位置。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_param_fog_of_war_value2">
-            <Original>Show nothing.</Original>
-            <English>Show nothing.</English>
-            <Czech>Ukázat nic.</Czech>
-            <French>Ne montrer rien.</French>
-            <German>Zeige nichts.</German>
-            <Italian>Non mostrare nulla.</Italian>
-            <Polish>Pokaż nic.</Polish>
-            <Portuguese>Mostrar nada.</Portuguese>
-            <Russian>Ничего не показывать.</Russian>
-            <Spanish>No mostrar nada.</Spanish>
-            <Turkish>Hiçbir şey gösterme.</Turkish>
-            <Korean>아무것도 보여주지 않음.</Korean>
-            <Japanese>何も表示しない。</Japanese>
-            <Chinesesimp>不显示任何内容。</Chinesesimp>
-            <Chinese>不显示任何东西。</Chinese>
-        </Key>
         <Key ID="STR_A3_WL_asset_dispatched_TODO_REWRITE">
             <Original>Asset dispatched.</Original>
             <English>Asset dispatched.</English>
@@ -631,57 +478,6 @@
             <Chinesesimp>正在快速旅行到快速旅行车辆。</Chinesesimp>
             <Chinese>正在快速旅行到快速旅行车辆。</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_cp_saved">
-            <Original>Your current CP has been saved.</Original>
-            <English>Your current CP has been saved.</English>
-            <Czech>vaše aktuální příkazové body (CP) byly uloženy.</Czech>
-            <French>vos points de commande actuels (CP) ont été enregistrés.</French>
-            <German>Deine aktuellen Kommandopunkte (CP) wurden gespeichert.</German>
-            <Italian>i tuoi punti comando attuali (CP) sono stati salvati.</Italian>
-            <Polish>Twoje bieżące punkty komendy (CP) zostały zapisane.</Polish>
-            <Portuguese>seus pontos de comando atuais (CP) foram salvos.</Portuguese>
-            <Russian>ваши текущие командные очки (CP) были сохранены.</Russian>
-            <Spanish>sus puntos de comando actuales (CP) han sido guardados.</Spanish>
-            <Turkish>Mevcut komuta puanınız (CP) kaydedildi.</Turkish>
-            <Korean>현재의 커맨드 포인트 (CP)가 저장되었습니다.</Korean>
-            <Japanese>現在のコマンドポイント (CP) が保存されました。</Japanese>
-            <Chinesesimp>您当前的命令点 (CP) 已被保存。</Chinesesimp>
-            <Chinese>您目前的指令點數 (CP) 已被儲存。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_cp_recieved">
-            <Original>Your prior CP has been restored.</Original>
-            <English>Your prior CP has been restored.</English>
-            <Czech>vaše předchozí příkazové body (CP) byly přijaty.</Czech>
-            <French>vos points de commande (CP) précédents ont été reçus.</French>
-            <German>Deine vorherigen Kommandopunkte (CP) wurden wiederhergestellt.</German>
-            <Italian>i tuoi punti di comando (CP) precedententi sono stati ricevuti.</Italian>
-            <Polish>twoje poprzednie punkty poleceń (CP) zostały odebrane.</Polish>
-            <Portuguese>seus pontos de comando anteriores (CP) foram recebidos.</Portuguese>
-            <Russian>ваши предыдущие командные очки (CP) были получены.</Russian>
-            <Spanish>sus puntos de comando anteriores (CP) han sido recibidos.</Spanish>
-            <Turkish>Kaydedilen komuta puanınız (CP) geri yüklendi.</Turkish>
-            <Korean>이전 명령 포인트 (CP)가 수신되었습니다.</Korean>
-            <Japanese>以前のコマンドポイント (CP) が受信されました。</Japanese>
-            <Chinesesimp>您以前的命令点 (CP) 已收到。</Chinesesimp>
-            <Chinese>您以前的命令点 (CP) 已收到。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_cp_failed">
-            <Original>You had no prior CP.</Original>
-            <English>You had no prior CP.</English>
-            <Czech>Nemáte žádné předchozí příkazní body (CP).</Czech>
-            <French>Vous n'aviez pas de points de commande (CP) précédents.</French>
-            <German>Du hattest keine vorherigen Kommandopunkte (CP).</German>
-            <Italian>Non avevi punti di comando (CP) precedenti.</Italian>
-            <Polish>Nie miałeś wcześniejszych punktów poleceń (CP).</Polish>
-            <Portuguese>Você não tinha pontos de comando (CP) anteriores.</Portuguese>
-            <Russian>у вас не было предыдущих командных очков (CP).</Russian>
-            <Spanish>No tenías puntos de comando (CP) previos.</Spanish>
-            <Turkish>Önceden komuta puanınız (CP) yoktu.</Turkish>
-            <Korean>전에는 명령 포인트(CP)가 없었습니다.</Korean>
-            <Japanese>以前はコマンドポイント(CP)がありませんでした。</Japanese>
-            <Chinesesimp>您以前没有指挥点(CP)。</Chinesesimp>
-            <Chinese>您以前没有指挥点(CP)。</Chinese>
-        </Key>
         <Key ID="STR_A3_WL_infoScreen">
             <Original>Open the info menu</Original>
             <English>Open the info menu</English>
@@ -732,24 +528,7 @@
             <Japanese>%1は%2に%3CPを寄付しました。</Japanese>
             <Chinesesimp>%1捐赠了%3CP给%2。</Chinesesimp>
             <Chinese>%1捐贈了%3CP給%2。</Chinese>
-        </Key>   
-        <Key ID="STR_A3_WL_info_unavailable">
-            <Original>Unavailable.</Original>
-            <English>Unavailable</English>
-            <Czech>Není k dispozici.</Czech>
-            <French>Indisponible.</French>
-            <German>Nicht verfügbar.</German>
-            <Italian>Non disponibile.</Italian>
-            <Polish>Niedostępne.</Polish>
-            <Portuguese>Indisponível.</Portuguese>
-            <Russian>Недоступен.</Russian>
-            <Spanish>Indisponible.</Spanish>
-            <Turkish>Ulaşılabilir değil.</Turkish>
-            <Korean>없는.</Korean>
-            <Japanese>利用できません。</Japanese>
-            <Chinesesimp>不可用。</Chinesesimp>
-            <Chinese>不可用。</Chinese>
-        </Key> 
+        </Key>
         <Key ID="STR_A3_dazzler_enable">
             <Original>Enable dazzler</Original>
             <English>Enable dazzler</English>
@@ -818,57 +597,6 @@
             <Chinesesimp>关闭自动雷达</Chinesesimp>
             <Chinese>關閉自動雷達</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_surrender">
-            <Original>Surrender</Original>
-            <English>Surrender</English>
-            <Czech>Kapitulace</Czech>
-            <French>Se rendre</French>
-            <German>Aufgeben</German>
-            <Italian>Resa</Italian>
-            <Polish>Poddać się</Polish>
-            <Portuguese>Render</Portuguese>
-            <Russian>Сдаваться</Russian>
-            <Spanish>Rendirse</Spanish>
-            <Turkish>Teslim ol</Turkish>
-            <Korean>항복</Korean>
-            <Japanese>降伏</Japanese>
-            <Chinesesimp>投降</Chinesesimp>
-            <Chinese>投降</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_surrender_info">
-            <Original>Start a vote on whether or not to surrender.</Original>
-            <English>Start a vote on whether or not to surrender.</English>
-            <Czech>Hlasujte, abyste se vzdali.</Czech>
-            <French>Votez pour vous rendre.</French>
-            <German>Starte eine Abstimmung, ob dein Team aufgeben soll.</German>
-            <Italian>Vota per arrendersi.</Italian>
-            <Polish>Głosuj za poddaniem się.</Polish>
-            <Portuguese>Vote para se render.</Portuguese>
-            <Russian>Начать голосование за сдачу.</Russian>
-            <Spanish>Voto para rendirse.</Spanish>
-            <Turkish>Teslim olma oylaması başlatın.</Turkish>
-            <Korean>항복에 투표하십시오.</Korean>
-            <Japanese>降伏に投票してください。</Japanese>
-            <Chinesesimp>投票投降。</Chinesesimp>
-            <Chinese>投票投降。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_surrender_restr">
-            <Original>Need atleast 4 team members in your team.</Original>
-            <English>Need atleast 4 team members in your team.</English>
-            <Czech>Ve svém týmu potřebujete alespoň 4 členy týmu.</Czech>
-            <French>Besoin d'au moins 4 membres d'équipe dans votre équipe.</French>
-            <German>Für diese Abstimmung benötigst du mindestens 4 Mitglieder in deinem Team.</German>
-            <Italian>Hai bisogno di almeno 4 membri del team nella tua squadra.</Italian>
-            <Polish>Potrzebujesz co najmniej 4 członków zespołu w swoim zespole.</Polish>
-            <Portuguese>Precisa de pelo menos 4 membros da equipe em sua equipe.</Portuguese>
-            <Russian>В вашей команде должно быть не менее 4 человек.</Russian>
-            <Spanish>Necesita al menos 4 miembros del equipo en su equipo.</Spanish>
-            <Turkish>Takımınızda en az 4 takım üyesi olması gerekiyor.</Turkish>
-            <Korean>팀에 최소 4명의 팀원이 필요합니다.</Korean>
-            <Japanese>チームには少なくとも 4 人のチーム メンバーが必要です。</Japanese>
-            <Chinesesimp>您的团队中至少需要 4 名团队成员。</Chinesesimp>
-            <Chinese>您的團隊中至少需要 4 名團隊成員。</Chinese>
-        </Key>
         <Key ID="STR_A3_WL_OSD_rearm_possible">
             <Original>Repair / Rearm possible</Original>
             <English>Repair / Rearm possible</English>
@@ -902,176 +630,6 @@
             <Japanese>在庫を閉じます。</Japanese>
             <Chinesesimp>关闭您的库存。</Chinesesimp>
             <Chinese>關閉您的庫存。</Chinese>
-        </Key>
-        <Key ID="STR_A3_betty_enable">
-            <Original>Enable betty</Original>
-            <English>Enable betty</English>
-            <Czech>Povolit Betty</Czech>
-            <French>Activer Betty</French>
-            <German>Betty aktivieren</German>
-            <Italian>Abilita betty</Italian>
-            <Polish>Włącz betty</Polish>
-            <Portuguese>ativar betty</Portuguese>
-            <Russian>Включить Бетти</Russian>
-            <Spanish>Habilitar betty</Spanish>
-            <Turkish>Betty'yi etkinleştir.</Turkish>
-            <Korean>베티 활성화</Korean>
-            <Japanese>ベティを有効にする</Japanese>
-            <Chinesesimp>启用贝蒂</Chinesesimp>
-            <Chinese>啟用貝蒂</Chinese>
-        </Key>
-        <Key ID="STR_A3_betty_disable">
-            <Original>Disable betty</Original>
-            <English>Disable betty</English>
-            <Czech>Zakázat betty</Czech>
-            <French>Désactiver Betty</French>
-            <German>Betty deaktivieren</German>
-            <Italian>Disabilita betty</Italian>
-            <Polish>Wyłącz Betty</Polish>
-            <Portuguese>desativar betty</Portuguese>
-            <Russian>Отключить Бетти</Russian>
-            <Spanish>Deshabilitar betty</Spanish>
-            <Turkish>Betty'yi kapat</Turkish>
-            <Korean>베티 비활성화</Korean>
-            <Japanese>ベティを無効にする</Japanese>
-            <Chinesesimp>禁用贝蒂</Chinesesimp>
-            <Chinese>禁用貝蒂</Chinese>
-        </Key>
-        <Key ID="STR_A3_debriefing_imbalance_title">
-            <Original>Teams are imbalanced</Original>
-            <English>Teams are imbalanced</English>
-            <Czech>Týmy jsou nevyrovnané</Czech>
-            <French>Les équipes sont déséquilibrées</French>
-            <German>Teams sind unausgewogen</German>
-            <Italian>Le squadre sono squilibrate</Italian>
-            <Polish>Drużyny są nierówne</Polish>
-            <Portuguese>As equipes estão desequilibradas</Portuguese>
-            <Russian>Команды не сбалансированы</Russian>
-            <Spanish>Los equipos están desequilibrados</Spanish>
-            <Turkish>Takımlar dengesiz</Turkish>
-            <Korean>팀의 불균형</Korean>
-            <Japanese>チームのバランスが悪い</Japanese>
-            <Chinesesimp>团队不平衡</Chinesesimp>
-            <Chinese>團隊不平衡</Chinese>
-        </Key>
-        <Key ID="STR_A3_debriefing_imbalance_desription">
-            <Original>Please switch teams. This team is full.</Original>
-            <English>Please switch teams. This team is full.</English>
-            <Czech>Prosím vyměňte týmy. Tento tým je plný.</Czech>
-            <French>Veuillez changer d'équipe. Cette équipe est complète.</French>
-            <German>Bitte wechseln Sie das Team. Dieses Team ist voll.</German>
-            <Italian>Si prega di cambiare squadra. Questa squadra è piena.</Italian>
-            <Polish>Proszę o zmianę drużyn. Ten zespół jest pełny.</Polish>
-            <Portuguese>Por favor, troque de equipe. Este time está completo.</Portuguese>
-            <Russian>Пожалуйста, поменяйтесь командами. Эта команда полная.</Russian>
-            <Spanish>Por favor, cambie de equipo. Este equipo está lleno.</Spanish>
-            <Turkish>Lütfen takım değiştiriniz. Bu takım dolu.</Turkish>
-            <Korean>팀을 바꿔주세요. 이 팀은 꽉 찼습니다.</Korean>
-            <Japanese>チームを切り替えてください。このチームは満員です。</Japanese>
-            <Chinesesimp>请换队。这个团队已经满员了。</Chinesesimp>
-            <Chinese>請換隊。這個團隊已經滿員了。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_button_bounty">
-            <Original>Set bounty</Original>
-            <English>Set bounty</English>
-            <Czech>Nastavte odměnu</Czech>
-            <French>Définir la prime</French>
-            <German>Prämie festlegen</German>
-            <Italian>Imposta la taglia</Italian>
-            <Polish>Ustaw nagrodę</Polish>
-            <Portuguese>Definir recompensa</Portuguese>
-            <Russian>Установить награду</Russian>
-            <Spanish>Establecer recompensa</Spanish>
-            <Turkish>Ödül belirle</Turkish>
-            <Korean>현상금 설정</Korean>
-            <Japanese>報奨金を設定する</Japanese>
-            <Chinesesimp>设置赏金</Chinesesimp>
-            <Chinese>設置賞金</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_bounty_restr">
-            <Original>Not enough players</Original>
-            <English>Not enough players</English>
-            <Czech>Nedostatek hráčů</Czech>
-            <French>Pas assez de joueurs</French>
-            <German>Nicht genügend Spieler</German>
-            <Italian>Non ci sono abbastanza giocatori</Italian>
-            <Polish>Za mało graczy</Polish>
-            <Portuguese>Não há jogadores suficientes</Portuguese>
-            <Russian>Недостаточно игроков</Russian>
-            <Spanish>No hay suficientes jugadores</Spanish>
-            <Turkish>Yeterli sayıda oyuncu yok</Turkish>
-            <Korean>플레이어가 충분하지 않습니다.</Korean>
-            <Japanese>プレイヤーが足りません</Japanese>
-            <Chinesesimp>玩家不足</Chinesesimp>
-            <Chinese>玩家不足</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_menu_bounty">
-            <Original>Designate a high value target</Original>
-            <English>Designate a high value target</English>
-            <Czech>Označte cíl s vysokou hodnotou</Czech>
-            <French>Désigner une cible à haute valeur</French>
-            <German>Einen hochwertigen Zielort bestimmen</German>
-            <Italian>Designare un bersaglio di alto valore</Italian>
-            <Polish>Wyznacz wysoko wartościowy cel</Polish>
-            <Portuguese>Designar um alvo de alto valor</Portuguese>
-            <Russian>Назначить цель c высокой ценностью</Russian>
-            <Spanish>Designar un objetivo de alto valor</Spanish>
-            <Turkish>Yüksek değerli bir hedef atayın</Turkish>
-            <Korean>고가치 대상 지정</Korean>
-            <Japanese>高い価値の目標を指定する</Japanese>
-            <Chinesesimp>指定高价值目标</Chinesesimp>
-            <Chinese>指定高價值目標</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_menu_bounty_info">
-            <Original>Set a bounty on someone for players to collect.</Original>
-            <English>Set a bounty on someone for players to collect.</English>
-            <Czech>Nastavte odměnu na někoho, aby ji mohli hráči vyzvednout.</Czech>
-            <French>Mettre une prime sur quelqu'un pour que les joueurs la collectent.</French>
-            <German>Setzen Sie ein Kopfgeld auf jemanden aus, damit Spieler es einsammeln können.</German>
-            <Italian>Metti una taglia su qualcuno perché i giocatori la raccolgano.</Italian>
-            <Polish>Wystaw nagrodę za głowę kogoś, którą gracze mogą zdobyć.</Polish>
-            <Portuguese>Coloque uma recompensa em alguém para que os jogadores possam coletá-la.</Portuguese>
-            <Russian>Установите награду на кого-то, чтобы игроки могли ee собрать.</Russian>
-            <Spanish>Coloca una recompensa sobre alguien para que los jugadores la recolecten.</Spanish>
-            <Turkish>Oyuncuların toplaması için birine ödül koyun.</Turkish>
-            <Korean>플레이어가 모아들일 수 있는 누군가에게 보상을 지급하세요.</Korean>
-            <Japanese>プレイヤーが集めるために誰かに懸賞金を設定します。</Japanese>
-            <Chinesesimp>对某个人设置赏金，供玩家收集。</Chinesesimp>
-            <Chinese>對某人設置賞金，供玩家收集。</Chinese>
-        </Key>
-        <Key ID="STR_A3_cram_enable">
-            <Original>Enable CIWS</Original>
-            <English>Enable CIWS</English>
-            <Czech>Povolit CIWS</Czech>
-            <French>Activer CIWS</French>
-            <German>CIWS aktivieren</German>
-            <Italian>Abilita CIWS</Italian>
-            <Polish>Włącz CIWS</Polish>
-            <Portuguese>Ativar CIWS</Portuguese>
-            <Russian>Включить CIWS</Russian>
-            <Spanish>Habilitar CIWS</Spanish>
-            <Turkish>CIWS'yi etkinleştir</Turkish>
-            <Korean>CIWS 활성화</Korean>
-            <Japanese>CIWSを有効にする</Japanese>
-            <Chinesesimp>启用CIWS</Chinesesimp>
-            <Chinese>啟用CIWS</Chinese>
-        </Key>
-        <Key ID="STR_A3_cram_disable">
-            <Original>Disable CIWS</Original>
-            <English>Disable CIWS</English>
-            <Czech>Vypnout CIWS</Czech>
-            <French>Désactiver CIWS</French>
-            <German>CIWS deaktivieren</German>
-            <Italian>Disabilita CIWS</Italian>
-            <Polish>Wyłącz CIWS</Polish>
-            <Portuguese>Desativar CIWS</Portuguese>
-            <Russian>Отключить CIWS</Russian>
-            <Spanish>Deshabilitar CIWS</Spanish>
-            <Turkish>CIWS'yi kapat</Turkish>
-            <Korean>CIWS 비활성화</Korean>
-            <Japanese>CIWSを無効にする</Japanese>
-            <Chinesesimp>禁用CIWS</Chinesesimp>
-            <Chinese>禁用CIWS</Chinese>
         </Key>
         <Key ID="STR_A3_WL_Menu_Hint_Name">
             <Original>Open Warlords Menu</Original>
