@@ -6,6 +6,7 @@ _owner = _sector getVariable "BIS_WL_owner";
 if (_owner == BIS_WL_enemySide) then {
 	if (_sector in WL_BASES) then {
 		"Defeat" call BIS_fnc_WL2_announcer;
+		["Lost"] spawn MRTM_fnc_statTracker;
 	} else {
 		if (BIS_WL_playerSide in (_sector getVariable "BIS_WL_revealedBy")) then {
 			"Lost" call BIS_fnc_WL2_announcer;
@@ -15,6 +16,7 @@ if (_owner == BIS_WL_enemySide) then {
 if (_owner == BIS_WL_playerSide) then {
 	if (_sector in WL_BASES) then {
 		"Victory" call BIS_fnc_WL2_announcer;
+		["Won"] spawn MRTM_fnc_statTracker;
 	} else {
 		"Seized" call BIS_fnc_WL2_announcer;
 		if (count ([player] inAreaArray (_sector getVariable "objectAreaComplete")) > 0) then {

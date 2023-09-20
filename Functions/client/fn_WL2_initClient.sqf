@@ -101,9 +101,9 @@ if !(isServer) then {
 0 spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
 0 spawn BIS_fnc_WL2_mapControlHandle;
 
-BIS_WL_groupIconClickHandler = addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
-BIS_WL_groupIconEnterHandler = addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
-BIS_WL_groupIconLeaveHandler = addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
+addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
+addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
+addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
 _mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enemyBase];
 _mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;

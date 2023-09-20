@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
+addMissionEventHandler ["MapSingleClick", {
 	params ["_units", "_pos", "_alt", "_shift"];
 	if (_alt && _shift) then {
 		if !(isNull BIS_WL_mapAssetTarget) then {
@@ -24,7 +24,7 @@ BIS_WL_assetMapClickHandler = addMissionEventHandler ["MapSingleClick", {
 
 BIS_WL_assetInfoActive = false;
 
-BIS_WL_assetMapHandler = addMissionEventHandler ["EachFrame", {
+addMissionEventHandler ["EachFrame", {
 	_shown = false;
 	
 	if (visibleMap) then {
