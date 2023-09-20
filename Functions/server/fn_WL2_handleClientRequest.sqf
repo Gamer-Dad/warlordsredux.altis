@@ -4,7 +4,7 @@ if (isNull _sender) exitWith {};
 
 if (_action == "orderAsset") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_target, 50002]);
+	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_target, 50001]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;

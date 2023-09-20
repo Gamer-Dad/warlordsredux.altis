@@ -151,7 +151,7 @@ serverNamespace setVariable ["BIS_WL2_costs",
 		["O_supplyCrate_F", 300], ["Box_East_AmmoVeh_F", 250], ["Land_Pod_Heli_Transport_04_ammo_F", 500], ["Land_Pod_Heli_Transport_04_repair_F", 500], ["Land_Pod_Heli_Transport_04_fuel_F", 300],
 		
 		//Defences
-		["Land_BagFence_Round_F", 50], ["Land_Razorwire_F", 50], ["Land_DragonsTeeth_01_1x1_new_F", 50], ["CamoNet_BLUFOR_big_F", 100], ["Land_IRMaskingCover_01_F", 200],
+		["Land_BagFence_Round_F", 50], ["Land_Razorwire_F", 50], ["Land_DragonsTeeth_01_1x1_new_F", 50], ["CamoNet_OPFOR_big_F", 100], ["CamoNet_BLUFOR_big_F", 100], ["Land_IRMaskingCover_01_F", 200],
 		["B_HMG_01_F", 150], ["B_HMG_01_high_F", 4200], ["B_GMG_01_F", 200], ["B_GMG_01_high_F", 250], ["B_HMG_01_A_F", 500], ["B_GMG_01_A_F", 650], ["B_static_AT_F", 300], ["B_static_AA_F", 300], ["B_Mortar_01_F", 3000],
 		["B_UGV_02_Demining_F", 100], ["B_UGV_01_F", 150], ["B_UGV_01_rcws_F", 400], ["B_UAV_01_F", 500], ["B_Ship_Gun_01_F", 10000], ["B_Radar_System_01_F", 1000],
 		["B_AAA_System_01_F", 3500], ["B_SAM_System_01_F", 10000], ["B_SAM_System_03_F", 8000], ["B_SAM_System_02_F", 15000], ["B_Ship_MRLS_01_F", 30000],
