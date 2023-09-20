@@ -36,10 +36,6 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
-		class BIS_fnc_WL2_publicHint {
-			allowedTargets = 1;
-		};
-
 		class BIS_fnc_WL2_forfeitHandle {
 			allowedTargets = 0;
 		};

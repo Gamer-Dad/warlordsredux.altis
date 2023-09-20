@@ -66,7 +66,6 @@ class CfgFunctions {
 			class WL2_mrtmAction {};
 			class WL2_targetResetHandleVote {};
 			class WL2_reportCheater {};
-			class WL2_publicHint {};
 			class WL2_wasMain {};
 			class WL2_updateEarnedCP {};
 			class WL2_askForgiveness {};
