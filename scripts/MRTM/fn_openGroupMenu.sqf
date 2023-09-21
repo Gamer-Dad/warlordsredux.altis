@@ -4,8 +4,6 @@
     Description: Opens the group menu.
 */
 
-params ["_debug"];
-
 if (isNull (findDisplay 4000)) then {
 	private _d = [4000, 5000, 6000, 7000, 8000];
 	{
