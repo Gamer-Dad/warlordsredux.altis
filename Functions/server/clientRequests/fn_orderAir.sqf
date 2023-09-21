@@ -64,9 +64,11 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset setDir _dir;
 	} else {
 		if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
+			"uav" remoteExec ["systemChat", 0];
 			_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 			createVehicleCrew _asset;
 			(group _asset) deleteGroupWhenEmpty true;
+			(str (group _asset)) remoteExec ["systemChat", 0];
 		} else {
 			if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 				_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);
@@ -105,8 +107,10 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 
 _asset enableWeaponDisassembly false;
 if (unitIsUAV _asset) then {
+	"is uav" remoteExec ["systemChat", 0];
 	[_asset, 0] remoteExec ["lock", (owner _asset)];
 } else {
+	"is not uav" remoteExec ["systemChat", 0];
 	[_asset, 2] remoteExec ["lock", (owner _asset)];
 };
 

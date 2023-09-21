@@ -13,9 +13,8 @@ serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _w
 //CP database
 private _uid = getPlayerUID _warlord;
 private _fundsDB = (serverNamespace getVariable "fundsDatabase");
-private _pFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, 1000]);
-_fundsDB set [_uid, _pFunds];
-[(serverNamespace getVariable "fundsDatabase"), _uid] call BIS_fnc_WL2_fundsDatabaseUpdate;
+private _pFunds = (_fundsDB getOrDefault [_uid, 1000]);
+[_uid, _pFunds] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 
 _boundToAnotherTeam = FALSE;
