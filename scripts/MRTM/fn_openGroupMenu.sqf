@@ -42,5 +42,4 @@ lbClear 4006;
     lbSetPicture [4006, _index, ([_x] call MRTM_fnc_getLBPicture)];
 } forEach (allPlayers select {_x != player && {!(_x in (units player)) && {(side (group _x)) == (side (group player))}}});
 
-["Players"] spawn MRTM_fnc_onLBSelChanged;
-[""] spawn MRTM_fnc_onLBSelChanged;
+0 spawn MRTM_fnc_onLBSelChanged;
