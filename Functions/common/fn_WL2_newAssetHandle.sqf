@@ -34,9 +34,6 @@ if (isPlayer _owner) then {
 		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
-			if () then {
-
-			};
 			BIS_WL_recentlyPurchasedAssets pushBack _asset;
 			
 			_asset spawn {
