@@ -1035,8 +1035,7 @@ class MRTM_settingsMenu
 		class MRTMOtherButton5: RscCheckboxMRTM
 		{
 			idc = 2805;
-			action = "";
-			onLoad =  "(_this # 0) ctrlEnable false;";
+			action = "profileNamespace setVariable ['MRTM_enableAuto', !(profileNamespace getVariable ['MRTM_enableAuto', true])]";
 			x = 0.463906 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;
@@ -1185,7 +1184,7 @@ class MRTM_settingsMenu
 		class MRTMOtherText5: RscStructuredTextMRTM
 		{
 			idc = 1121;
-			text = "";
+			text = "Autonomous mode off by default";
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.481437 * safezoneW + safezoneX;
 			y = 0.632 * safezoneH + safezoneY;

@@ -48,6 +48,7 @@ ctrlEnable [1404, !(profileNamespace getVariable ["MRTM_syncObjects", true])];
 ((findDisplay 8000) displayCtrl 2802) cbSetChecked (profileNamespace getVariable ["MRTM_muteVoiceInformer", false]);
 ((findDisplay 8000) displayCtrl 2803) cbSetChecked (profileNamespace getVariable ["MRTM_playKillSound", true]);
 ((findDisplay 8000) displayCtrl 2804) cbSetChecked (profileNamespace getVariable ["MRTM_EnableRWR", true]);
+((findDisplay 8000) displayCtrl 2805) cbSetChecked (profileNamespace getVariable ["MRTM_enableAuto", false]);
 ((findDisplay 8000) displayCtrl 2806) cbSetChecked (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]);
 ((findDisplay 8000) displayCtrl 2807) cbSetChecked (profileNamespace getVariable ["MRTM_spawnEmpty", false]);
 

@@ -115,8 +115,10 @@ if (isPlayer _owner) then {
 		};
 
 		if (isAutonomous _asset) then {
+			if (profileNamespace getVariable ["MRTM_enableAuto", true]) then {
+				_asset setAutonomous false;
+			};
 			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
-			_asset setAutonomous false;
 		};
 
 		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {

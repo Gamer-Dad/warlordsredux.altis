@@ -98,6 +98,7 @@ class CfgFunctions {
 			class WL2_forfeitHandleServer {};
 			class WL2_setOwner {};
 			class WL2_forgiveTeamkill {};
+			class WL2_createUAVCrew {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -119,7 +120,6 @@ class CfgFunctions {
 			class WL2_varsInit {};
 			class WL2_calcImbalance {};
 			class WL2_sectorNameInit {};
-			class WL2_createUAVCrew {};
     	};
 		class Subroutines 
 		{

@@ -29,6 +29,7 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_EnableRWR", true];
 	profileNamespace setVariable ["MRTM_smallAnnouncerText", false];
 	profileNamespace setVariable ["MRTM_spawnEmpty", false];
+	profileNamespace setVariable ["MRTM_enableAuto", true];
 	profileNamespace setVariable ["preferencesInitialzed", true];
 	saveProfileNamespace;
 };
