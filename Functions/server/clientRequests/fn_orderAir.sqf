@@ -65,8 +65,8 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 	} else {
 		if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
 			_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-			private _grp = createVehicleCrew _asset;
-			_grp deleteGroupWhenEmpty true;
+			createVehicleCrew _asset;
+			(group _asset) deleteGroupWhenEmpty true;
 		} else {
 			if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 				_sector = (((BIS_WL_allSectors) select {((_x distance _pos) < 15)}) # 0);
