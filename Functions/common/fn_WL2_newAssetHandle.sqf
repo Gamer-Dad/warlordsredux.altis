@@ -34,6 +34,9 @@ if (isPlayer _owner) then {
 		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
+			if () then {
+
+			};
 			BIS_WL_recentlyPurchasedAssets pushBack _asset;
 			
 			_asset spawn {
@@ -114,7 +117,7 @@ if (isPlayer _owner) then {
 			};
 		};
 
-		if (isAutonomous _asset) then {
+		if (unitIsUAV _asset) then {
 			if (profileNamespace getVariable ["MRTM_enableAuto", true]) then {
 				_asset setAutonomous false;
 			};

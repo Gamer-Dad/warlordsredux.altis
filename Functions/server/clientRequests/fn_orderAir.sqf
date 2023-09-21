@@ -103,6 +103,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 	};
 };
 
+_asset enableWeaponDisassembly false;
 if (unitIsUAV _asset) then {
 	[_asset, 0] remoteExec ["lock", (owner _asset)];
 } else {
