@@ -109,7 +109,6 @@ _mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enem
 _mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;
 _mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position BIS_WL_playerBase];
 _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
-BIS_WL_matesAvailable = 1;
 
 {
 	_x setMarkerAlphaLocal 0;

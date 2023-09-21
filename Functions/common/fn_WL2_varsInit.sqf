@@ -37,7 +37,7 @@ switch (_locality) do {
 		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = 0;
-		BIS_WL_matesAvailable = missionNamespace getVariable [format ["BIS_WL_maxSubordinates_%1", side group player], 1];
+		BIS_WL_matesAvailable = 1;
 		BIS_WL_lastLoadout = [];
 		BIS_WL_savedLoadout = [];
 		BIS_WL_loadoutApplied = FALSE;
