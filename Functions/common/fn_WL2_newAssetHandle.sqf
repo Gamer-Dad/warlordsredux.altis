@@ -10,7 +10,6 @@ if (isNull _owner && isServer) then {
 	_asset setSkill (0.2 + random 0.3);
 };
 
-(str (isPlayer _owner)) remoteExec ["systemChat", 0];
 if (isPlayer _owner) then {
 	WAS_store = true;
 	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner), [2, clientOwner]];
