@@ -13,7 +13,6 @@ serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _w
 //CP database
 private _uid = getPlayerUID _warlord;
 private _pFunds = (serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, -1];
-(str _pFunds) remoteExec ["systemChat", 0];
 if (_pFunds == -1) then {
 	[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 };
