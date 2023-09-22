@@ -15,6 +15,8 @@ private _uid = getPlayerUID _warlord;
 private _pFunds = (serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, -1];
 if (_pFunds == -1) then {
 	[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+} else {
+	[(serverNamespace getVariable "fundsDatabase"), _uid] call BIS_fnc_WL2_fundsDatabaseUpdate;
 };
 
 _boundToAnotherTeam = FALSE;
