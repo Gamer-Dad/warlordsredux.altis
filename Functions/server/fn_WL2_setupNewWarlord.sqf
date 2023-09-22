@@ -13,8 +13,10 @@ serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _w
 //CP database
 private _uid = getPlayerUID _warlord;
 private _fundsDB = (serverNamespace getVariable "fundsDatabase");
-private _pFunds = (_fundsDB getOrDefault [_uid, 1000]);
-[_uid, _pFunds] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+private _pFunds = (_fundsDB getOrDefault [_uid, "Empty"]);
+if (_pFunds == "Empty") then {
+	[_uid, 1000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+};
 
 
 _boundToAnotherTeam = FALSE;
