@@ -70,20 +70,32 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 addMissionEventHandler ["EntityKilled", {
-	_this spawn BIS_fnc_WL2_killRewardHandle;
-	_this spawn BIS_fnc_WL2_friendlyFireHandleServer;
-
-	if ((typeOf (_this # 0)) == "Land_IRMaskingCover_01_F") then {
-		{
-			_asset = _x;
-			if !(alive _x) then {
-				deleteVehicle _asset;
+	params ["_unit", "_killer", "_instigator"];
+	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
+	if (isNull _instigator) then {_instigator = (vehicle _killer)};
+	if !(isNull _instigator) then {
+		private _responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
+		if (isPlayer _responsibleLeader) then {
+			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+			if (_unit isKindOf "Man") then {
+				[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
 			};
-		} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});
+		};
 	};
 
-	if ((typeOf (_this # 0)) == "Land_Pod_Heli_Transport_04_medevac_F" || {(typeOf (_this # 0)) == "B_Slingload_01_Medevac_F"}) then {
-		deleteVehicle (_this # 0);
+	_unit spawn {
+		params ["_unit"];
+		if ((typeOf _unit) == "Land_IRMaskingCover_01_F") then {
+			{
+				_asset = _x;
+				if !(alive _x) then {
+					deleteVehicle _asset;
+				};
+			} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});
+		};
+		if ((typeOf _unit) == "Land_Pod_Heli_Transport_04_medevac_F" || {(typeOf _unit) == "B_Slingload_01_Medevac_F"}) then {
+			deleteVehicle _unit;
+		};
 	};
 }];
 
