@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_unit", "_reward"];
 
 disableSerialization;
@@ -10,7 +8,7 @@ _blockH = safeZoneH / (1000 / (getResolution # 4));
 _displayW = _blockW * 180;
 _displayH = _blockH * 54;
 _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
+_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 
 {
 	_ctrl = (findDisplay 46) displayCtrl _x;
@@ -20,7 +18,6 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule he
 
 _ctrlNmbr = (uiNamespace getVariable "control");
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
-
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
 if (_unit isKindOf "Man") then {

@@ -24,7 +24,7 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 			_kills = profileNamespace getVariable ["WL2_totalKills", 0];
 			profileNamespace setVariable ["WL2_totalKills", (_kills + 1)];
 
-			_dist = player distance _info;
+			_dist = player distanceSqr _info;
 			_distanceKill = profileNamespace getVariable ["WL2_longestDistanceKill", 0];
 			if (_dist > _distanceKill) then {
 				profileNamespace setVariable ["WL2_longestDistanceKill", round _dist];
@@ -36,5 +36,3 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 		profileNamespace setVariable ["WL2_totalDeaths", (_deaths + 1)];
 	};
 };
-
-saveProfileNamespace;

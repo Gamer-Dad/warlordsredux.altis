@@ -576,7 +576,7 @@ GOM_fuelLeak = {
 	params ["_veh"];
 
 	_hitparts = getAllHitPointsDamage _veh;
-	if (_hitparts isEqualTo []) exitWith {diag_log format ["%1 has no hitpoints defined!",typeof _veh];[false,0]};
+	if (_hitparts isEqualTo []) exitWith {};
 	_hitparts params ["_hitpoints","_selections","_damages"];
 	_count = -1;
 
