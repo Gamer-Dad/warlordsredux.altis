@@ -145,7 +145,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			"right"
 		];
 	};
-} forEach ((entities [["Tank", "Car", "Plane", "Helicopter"], ["Logic"], false, true]) select {((side _x) == (side group player)) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
+} forEach ((entities [["Tank", "Car", "Plane", "Helicopter", "Ship"], ["Logic"], false, true]) select {((side _x) == (side group player)) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
 {
 	if (!isNull _x) then {
 		_m drawIcon [
