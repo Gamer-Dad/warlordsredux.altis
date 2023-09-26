@@ -32,7 +32,7 @@ disableSerialization;
 } forEach [[1130, (profileNamespace getVariable ["MRTM_rwr1", 0.3])], [1131, (profileNamespace getVariable ["MRTM_rwr2", 0.3])], [1132, (profileNamespace getVariable ["MRTM_rwr3", 0.2])], [1133, (profileNamespace getVariable ["MRTM_rwr4", 0.3])]];
 
 ctrlSetText [1101, (name player)];
-ctrlSetText [1134, format ["Total CP earned: %1CP", (profileNamespace getVariable ["WL2_TotalEarnedCP", 0])]];
+ctrlSetText [1134, format ["Total CP earned: %1CP", ((profileNamespace getVariable ["WL2_TotalEarnedCP", 0]) toFixed 0)]];
 ctrlSetText [1136, format ["Win ratio: %1/%2", (profileNamespace getVariable ["WL2_gamesWon", 0]), (profileNamespace getVariable ["WL2_gamesLost", 0])]];
 ctrlSetText [1138, format ["Sectors seized: %1", (profileNamespace getVariable ["WL2_sectorsSeized", 0])]];
 ctrlSetText [1141, format ["Longest distance kill: %1meters", round (sqrt (profileNamespace getVariable ["WL2_longestDistanceKill", 0]))]];
@@ -51,11 +51,3 @@ ctrlEnable [1404, !(profileNamespace getVariable ["MRTM_syncObjects", true])];
 ((findDisplay 8000) displayCtrl 2805) cbSetChecked (profileNamespace getVariable ["MRTM_enableAuto", false]);
 ((findDisplay 8000) displayCtrl 2806) cbSetChecked (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]);
 ((findDisplay 8000) displayCtrl 2807) cbSetChecked (profileNamespace getVariable ["MRTM_spawnEmpty", false]);
-
-if ((getMissionConfigValue ["MRTM_enableGroups", 1]) != 1) then {
-	ctrlEnable [1605, false];
-};
-
-if ((getMissionConfigValue ["MRTM_enableEmotes", 1]) != 1) then {
-	ctrlEnable [1606, false];
-};

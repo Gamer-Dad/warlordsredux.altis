@@ -39,10 +39,6 @@ BIS_WL_autonomous_limit = 2;
 BIS_WL_minAPSDist = 400; //actual range = √x
 BIS_WL_maxAPSDist = 1600; //actual range = √x
 
-//MRTM Settings
-MRTM_enableGroups = 1; //0: Disabled 1: Enabled
-MRTM_enableEmotes = 1; //0: Disabled 1: Enabled
-
 onPauseScript[] = {BIS_fnc_WL2_onPause};
 
 class Header
