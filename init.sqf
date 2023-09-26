@@ -15,4 +15,4 @@ if !(isServer) then {
 ;
 /*******************************END OF SCRIPTS****************************/
 
-[] call BIS_fnc_WL2_initCommon;
+call BIS_fnc_WL2_initCommon;
