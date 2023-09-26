@@ -6,16 +6,16 @@ while {!BIS_WL_missionEnd} do {
 		_uid = getPlayerUID _x;
 
 		if (_side == west) then {
-			if ((missionNamespace getVariable ["actualIncomeBlu", 40]) < 50) then {
+			if ((serverNamespace getVariable ["actualIncomeBlu", 40]) < 50) then {
 				[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;
 			} else {
-				[_uid, (missionNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, (serverNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		} else {
-			if ((missionNamespace getVariable ["actualIncomeOpf", 40]) < 50) then {
+			if ((serverNamespace getVariable ["actualIncomeOpf", 40]) < 50) then {
 				[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;
 			} else {
-				[_uid, (missionNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, (serverNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 	} forEach _notBlocked;

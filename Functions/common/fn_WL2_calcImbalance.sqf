@@ -12,5 +12,5 @@ publicVariable "blanceMultilplierOpf";
 {
 	_incomeStandard = _x call BIS_fnc_WL2_income;
 	_actualIncome = round (_incomeStandard * (if (_x == west) then [{(missionNamespace getVariable "blanceMultilplierBlu")}, {(missionNamespace getVariable "blanceMultilplierOpf")}]));
-	if (_x == west) then [{missionNamespace setVariable ["actualIncomeBlu", _actualIncome]}, {missionNamespace setVariable ["actualIncomeOpf", _actualIncome]}]
+	if (_x == west) then [{serverNamespace setVariable ["actualIncomeBlu", _actualIncome]}, {serverNamespace setVariable ["actualIncomeOpf", _actualIncome]}]
 } forEach BIS_WL_competingSides;
