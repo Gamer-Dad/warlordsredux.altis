@@ -32,13 +32,12 @@ disableSerialization;
 } forEach [[1130, (profileNamespace getVariable ["MRTM_rwr1", 0.3])], [1131, (profileNamespace getVariable ["MRTM_rwr2", 0.3])], [1132, (profileNamespace getVariable ["MRTM_rwr3", 0.2])], [1133, (profileNamespace getVariable ["MRTM_rwr4", 0.3])]];
 
 ctrlSetText [1101, (name player)];
-ctrlSetText [1134, format ["Total CP earned: %1CP", ((profileNamespace getVariable ["WL2_TotalEarnedCP", 0]) toFixed 0)]];
 ctrlSetText [1136, format ["Win ratio: %1/%2", (profileNamespace getVariable ["WL2_gamesWon", 0]), (profileNamespace getVariable ["WL2_gamesLost", 0])]];
 ctrlSetText [1138, format ["Sectors seized: %1", (profileNamespace getVariable ["WL2_sectorsSeized", 0])]];
 ctrlSetText [1141, format ["Longest distance kill: %1meters", round (sqrt (profileNamespace getVariable ["WL2_longestDistanceKill", 0]))]];
 _kills = (profileNamespace getVariable ["WL2_totalKills", 0]);
 _kd = round ((profileNamespace getVariable ["WL2_totalKills", 0])/((profileNamespace getVariable ["WL2_totalDeaths", 0]) max 1));
-((findDisplay 8000) displayCtrl 1143) ctrlSetStructuredText parseText format ["<t size='1'><t size='1' valign='middle' align='left'>Kills:%1</t> <t size='1' valign='middle' align='right'>K/D:%2</t></t>", _kills, _kd];
+((findDisplay 8000) displayCtrl 1134) ctrlSetStructuredText parseText format ["<t size='1'><t size='1' valign='middle' align='left'>Kills:%1</t> <t size='1' valign='middle' align='right'>K/D:%2</t></t>", _kills, _kd];
 
 ((findDisplay 8000) displayCtrl 2800) cbSetChecked (profileNamespace getVariable ["MRTM_syncObjects", true]);
 ctrlEnable [1129, !(profileNamespace getVariable ["MRTM_syncObjects", true])];

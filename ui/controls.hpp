@@ -643,7 +643,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1135;
 			deletable = 0;
-			text = "img\database_ca.paa";
+			text = "a3\ui_f_curator\data\cfgmarkers\kia_ca.paa";
 			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			colorText[] = {1,1,1,1};
@@ -745,38 +745,6 @@ class MRTM_settingsMenu
 			colorText[] = {1,1,1,1};
 			x = 0.270987 * safezoneW + safezoneX;
 			y = 0.6584 * safezoneH + safezoneY;
-			w = 0.015244 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		class MRTMkdRatio: RscStructuredTextMRTM
-		{
-			idc = 1143;
-			text = "";
-			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.285687 * safezoneW + safezoneX;
-			y = 0.6784 * safezoneH + safezoneY;
-			w = 0.159844 * safezoneW;
-			h = 0.022 * safezoneH;
-			class Attributes
-			{
-				font = "PuristaMedium";
-				color = "#ffffff";
-				colorLink = "#D09B43";
-				align = "left";
-				shadow = 1;
-				size = 0.9;
-			};
-		};
-		class MRTMkdRatioImg: RscPictureMRTM
-		{
-			idc = 1144;
-			deletable = 0;
-			text = "a3\ui_f_curator\data\cfgmarkers\kia_ca.paa";
-			sizeEx = "0.021 / (getResolution select 5)";
-			style = ST_MULTI + ST_TITLE_BAR;
-			colorText[] = {1,1,1,1};
-			x = 0.270987 * safezoneW + safezoneX;
-			y = 0.6784 * safezoneH + safezoneY;
 			w = 0.015244 * safezoneW;
 			h = 0.022 * safezoneH;
 		};

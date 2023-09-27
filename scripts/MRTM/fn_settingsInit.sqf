@@ -36,7 +36,6 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 
 //Stats
 if !(profileNamespace getVariable ["statsInitialized", false]) then {
-	profileNamespace setVariable ["WL2_TotalEarnedCP", 0];
 	profileNamespace setVariable ["WL2_gamesWon", 0];
 	profileNamespace setVariable ["WL2_gamesLost", 0];
 	profileNamespace setVariable ["WL2_sectorsSeized", 0];

@@ -1,6 +1,7 @@
 WAS_score = false;
 WAS_store = false;
 WAS_fired = false;
+VIC_ENTERED = false;
 
 private _maxInActScore = 3;
 private _minimumDistance = 25;
@@ -16,7 +17,6 @@ while {!BIS_WL_missionEnd} do {
 	sleep (if (player getVariable ["BIS_WL_incomeBlocked", false]) then {10} else {_sleepDuration});
 	private _inActScore = 5;
 
-	//Moved further than _minimumDistance in the last cycle
 	private _newPos = getPos player;
     private _distanceMoved = _currentPos distance _newPos;
     if (_distanceMoved > _minimumDistance) then {
@@ -28,31 +28,31 @@ while {!BIS_WL_missionEnd} do {
 	};
 	_currentPos = _newPos;
 
-	//Scored recently
 	if (WAS_score) then {
 		_inActScore = _inActScore - 1;
 		WAS_score = false;
 	};
 
-	//Bought something recently
+	if (VIC_ENTERED) then {
+		_inActScore = _inActScore - 4;
+		VIC_ENTERED = false;		
+	};
+
 	if (WAS_store) then {
 		_inActScore = _inActScore - 1;
 		WAS_store = false;
 	};
 
-	//Fired a weapon recently
 	if (WAS_fired) then {
 		_inActScore = _inActScore - 1;
 		WAS_fired = false;
 	};
 
-	//In a vehicle with crew from another group
 	private _crewNotInGroup = (crew vehicle player) select {(group _x != group player) and (isPlayer _x)};
 	if (count _crewNotInGroup > 0) then {
 		_inActScore = _inActScore - 1;
 	};
 
-	//Selected sector
 	private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 	if (((_targets findIf {player inArea (_x getVariable "objectAreaComplete")}) != -1)) then {
 		_inActScore = 0;

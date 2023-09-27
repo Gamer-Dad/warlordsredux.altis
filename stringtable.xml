@@ -1133,6 +1133,23 @@
             <Chinesesimp>请先阅读如何玩</Chinesesimp>
             <Chinese>請先閱讀如何玩</Chinese>
         </Key>
+        <Key ID="STR_MRTM_welcomeInteract_22">
+            <Original>Lead Developer:</Original>
+            <English>Lead Developer:</English>
+            <Czech>Vedoucí vývojář:</Czech>
+            <French>Chef de développement :</French>
+            <German>Leitender Entwickler:</German>
+            <Italian>Responsabile dello sviluppo:</Italian>
+            <Polish>Kierownik programisty:</Polish>
+            <Portuguese>Líder de Desenvolvimento:</Portuguese>
+            <Russian>Главный разработчик:</Russian>
+            <Spanish>Desarrollador Líder:</Spanish>
+            <Turkish>Öncü Geliştirici:</Turkish>
+            <Korean>주요 개발자:</Korean>
+            <Japanese>リードデベロッパー：</Japanese>
+            <Chinesesimp>主要开发人员：</Chinesesimp>
+            <Chinese>主要開發人員：</Chinese>
+        </Key>
         <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
             <Original></Original>
             <English></English>
