@@ -3,8 +3,6 @@
 params ["_warlord"];
 
 private _startingPos = position _warlord;
-private _markers = (side group _warlord) call BIS_fnc_WL2_getRespawnMarkers;
-
 
 _warlord setVariable ["BIS_WL_detectedByServerSince", serverTime];
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", [], [2, (owner _warlord)]];
@@ -41,13 +39,6 @@ if (isPlayer _warlord) then {
 
 if !(_boundToAnotherTeam) then {
 	[_warlord] call BIS_fnc_WL2_respawnHandle;
-	
-	_respawnPos = markerPos selectRandom _markers;
-	while {_warlord distance2D _respawnPos > 300} do {
-		[_warlord, [_respawnPos, [], 10, "NONE"]] remoteExec ["setVehiclePosition", _warlord];
-		sleep 1;
-	};
-
 	sleep 1;
 	_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _warlord];
 	if ((missionNamespace getVariable _friendlyFireVarName) > serverTime) then {

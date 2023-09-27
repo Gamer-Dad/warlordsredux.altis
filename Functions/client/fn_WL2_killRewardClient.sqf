@@ -16,7 +16,7 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 	_ctrl ctrlCommit 0;
 } forEach (uiNamespace getVariable ["activeControls", []]);
 
-_ctrlNmbr = (uiNamespace getVariable "control");
+_ctrlNmbr = (uiNamespace getVariable ["control", 50000]);
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 

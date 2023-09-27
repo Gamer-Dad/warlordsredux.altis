@@ -53,6 +53,15 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 	];
 };
 
+0 spawn {
+	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
+	_respawnPos = markerPos selectRandom _markers;
+	while {player distance2D _respawnPos > 300} do {
+		player setVehiclePosition [_respawnPos, [], 0, "NONE"];
+		sleep 1;
+	};
+};
+
 //init radio after team check 
 enableRadio true;
 enableSentences true;
