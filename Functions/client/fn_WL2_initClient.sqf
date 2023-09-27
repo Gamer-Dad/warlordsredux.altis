@@ -53,15 +53,6 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 	];
 };
 
-0 spawn {
-	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
-	_respawnPos = markerPos selectRandom _markers;
-	while {player distance2D _respawnPos > 300} do {
-		player setVehiclePosition [_respawnPos, [], 0, "NONE"];
-		sleep 1;
-	};
-};
-
 //init radio after team check 
 enableRadio true;
 enableSentences true;
@@ -204,6 +195,18 @@ call _fncEarPlugs;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;
+
+0 spawn {
+	waitUntil {sleep 0.1; !isnull player};
+	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
+	_respawnPos = markerPos selectRandom _markers;
+	while {player distance2D _respawnPos > 300} do {
+		systemChat "repositioning";
+		player setVehiclePosition [_respawnPos, [], 0, "NONE"];
+		sleep 1;
+	};
+	systemChat "done";
+};
 
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
