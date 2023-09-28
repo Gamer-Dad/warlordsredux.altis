@@ -74,11 +74,11 @@ addMissionEventHandler ["EntityKilled", {
 	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
 	if (isNull _instigator) then {_instigator = (vehicle _killer)};
 	if !(isNull _instigator) then {
-		private _responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
+		_responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
 		if (isPlayer _responsibleLeader) then {
-			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
 			if (_unit isKindOf "Man") then {
-				[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
+				[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
 			};
 		};
 	};
