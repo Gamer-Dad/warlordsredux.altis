@@ -47,7 +47,7 @@ lbClear 4006;
     private _index = lbAdd [4006, ([_x] call MRTM_fnc_getLBText)];
     lbSetData [4006, _index, (getPlayerUID _x)];
     lbSetPicture [4006, _index, ([_x] call MRTM_fnc_getLBPicture)];
-    lbSetTooltip [4005, _index, (format ["Group: %1", (group _x)])];
+    lbSetTooltip [4006, _index, (format ["Group: %1", (group _x)])];
 } forEach (allPlayers select {_x != player && {!(_x in (units player)) && {(side (group _x)) == (side (group player))}}});
 
 0 spawn MRTM_fnc_onLBSelChanged;
