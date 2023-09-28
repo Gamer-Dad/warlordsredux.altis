@@ -13,7 +13,7 @@ if (_action == "Invite") exitWith {
 		_unit = _data call BIS_fnc_getUnitByUID;
 		[_unit, player] remoteExec ["MRTM_fnc_invite", 2];
 	};
-	0 spawn MRTM_fnc_openGroupMenu;
+	false spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Decline") exitWith {
@@ -23,7 +23,7 @@ if (_action == "Decline") exitWith {
 		_unit = _data call BIS_fnc_getUnitByUID;
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 	};
-	0 spawn MRTM_fnc_openGroupMenu;
+	false spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Accept") exitWith {
@@ -37,7 +37,7 @@ if (_action == "Accept") exitWith {
 		_units joinSilent _group;
 		[_unit, player] remoteExec ["MRTM_fnc_accept", 2];
 	};
-	0 spawn MRTM_fnc_openGroupMenu;
+	false spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Leave") exitWith {
@@ -48,7 +48,7 @@ if (_action == "Leave") exitWith {
 	};
 	_group = createGroup (side group player);
 	_units joinSilent _group;
-	0 spawn MRTM_fnc_openGroupMenu;
+	false spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Kick") exitWith {
@@ -57,7 +57,7 @@ if (_action == "Kick") exitWith {
 	_unit = _data call BIS_fnc_getUnitByUID;
 	if ((leader player != player) || {group _unit != group player}) exitWith {};
 	0 remoteExec ["MRTM_fnc_leaveGroup", _unit];
-	0 spawn MRTM_fnc_openGroupMenu;
+	false spawn MRTM_fnc_openGroupMenu;
 };
 
 if (_action == "Promote") exitWith {
@@ -66,5 +66,5 @@ if (_action == "Promote") exitWith {
 	_unit = _data call BIS_fnc_getUnitByUID;
 	if ((leader player != player) || {group _unit != group player}) exitWith {};
 	[group _unit, _unit] remoteExec ["selectLeader", (groupOwner group _unit)];
-	0 spawn MRTM_fnc_openGroupMenu;
+	false spawn MRTM_fnc_openGroupMenu;
 };

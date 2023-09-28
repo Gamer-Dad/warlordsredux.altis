@@ -116,7 +116,7 @@ addMissionEventHandler ["MarkerCreated", {
 					(findDisplay _x) closeDisplay 1;
 				};
 			} forEach _d;
-			0 spawn MRTM_fnc_openGroupMenu;
+			true spawn MRTM_fnc_openGroupMenu;
 		};
 		if (_keyName == _emotesKey) exitWith {
 			private _d = [4000, 5000, 6000, 7000, 8000];

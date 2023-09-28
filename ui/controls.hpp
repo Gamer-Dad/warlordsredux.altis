@@ -1343,7 +1343,7 @@ class MRTM_settingsMenu
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openGroupMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; true spawn MRTM_fnc_openGroupMenu;";
 		};
 		class MRTMEmotesButton: RscButtonMRTM
 		{
@@ -1470,7 +1470,7 @@ class MRTM_groupsMenu
 		class MRTMRefreshButton: RscCheckboxMRTM
 		{
 			idc = 4008;
-			action = "0 spawn MRTM_fnc_openGroupMenu;";
+			action = "false spawn MRTM_fnc_openGroupMenu;";
 			x = 0.698969 * safezoneW + safezoneX;
 			y = 0.27 * safezoneH + safezoneY;
 			w = 0.0154688 * safezoneW;

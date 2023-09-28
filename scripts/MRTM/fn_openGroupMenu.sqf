@@ -4,7 +4,9 @@
     Description: Opens the group menu.
 */
 
-if (isNull (findDisplay 4000)) then {
+params ["_open"];
+
+if (isNull (findDisplay 4000) && {_open}) then {
 	private _d = [4000, 5000, 6000, 7000, 8000];
 	{
 		if !(isNull (findDisplay _x)) then {
@@ -12,6 +14,13 @@ if (isNull (findDisplay 4000)) then {
 		};
 	} forEach _d;
     createDialog "MRTM_groupsMenu";
+
+    0 spawn {
+        while {!(isNull (findDisplay 4000))} do {
+            false spawn MRTM_fnc_openGroupMenu;
+            sleep 0.1;
+        };
+    };
 };
 disableSerialization;
 
