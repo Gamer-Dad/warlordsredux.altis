@@ -3,10 +3,11 @@ WAS_store = false;
 WAS_fired = false;
 VIC_ENTERED = false;
 
-private _maxInActScore = 3;
-private _minimumDistance = 25;
-private _sleepDuration = 600;
-private _currentPos = getPos player;
+_maxInActScore = 3;
+_minimumDistance = 25;
+_sleepDuration = 600;
+_currentPos = getPos player;
+_currentDir = getDir player;
 
 player addEventHandler ["Fired", {
 	params ["_unit", "_object", "_score"];
@@ -15,10 +16,16 @@ player addEventHandler ["Fired", {
 
 while {!BIS_WL_missionEnd} do {
 	sleep (if (player getVariable ["BIS_WL_incomeBlocked", false]) then {10} else {_sleepDuration});
-	private _inActScore = 5;
+	_inActScore = 5;
 
-	private _newPos = getPos player;
-    private _distanceMoved = _currentPos distance _newPos;
+	_newDir = getDir player;
+	if (_newDir == _currentDir) then {
+		_inActScore = _inActScore + 100;
+	};
+	_currentDir = _newDir;
+
+	_newPos = getPos player;
+    _distanceMoved = _currentPos distance _newPos;
     if (_distanceMoved > _minimumDistance) then {
 		if (_distanceMoved > 500) then {
 			_inActScore = _inActScore - 2;
@@ -34,7 +41,7 @@ while {!BIS_WL_missionEnd} do {
 	};
 
 	if (VIC_ENTERED) then {
-		_inActScore = _inActScore - 4;
+		_inActScore = _inActScore - 100;
 		VIC_ENTERED = false;		
 	};
 
@@ -48,12 +55,12 @@ while {!BIS_WL_missionEnd} do {
 		WAS_fired = false;
 	};
 
-	private _crewNotInGroup = (crew vehicle player) select {(group _x != group player) and (isPlayer _x)};
+	_crewNotInGroup = (crew vehicle player) select {(group _x != group player) and (isPlayer _x)};
 	if (count _crewNotInGroup > 0) then {
 		_inActScore = _inActScore - 1;
 	};
 
-	private _targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
+	_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 	if (((_targets findIf {player inArea (_x getVariable "objectAreaComplete")}) != -1)) then {
 		_inActScore = 0;
 	};
