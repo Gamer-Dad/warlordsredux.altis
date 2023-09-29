@@ -6,3 +6,4 @@ if (_asset isKindOf "Man") exitWith {};
 
 _assetGrp = group effectiveCommander _asset;
 _asset setOwner (owner _sender);
+_assetGrp setGroupOwner (owner _sender);
