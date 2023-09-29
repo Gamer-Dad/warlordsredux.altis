@@ -189,12 +189,12 @@ if (isPlayer _owner) then {
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
-			_asset setRepairCargo 0; 
+			[_asset, 0] remoteExec ["setRepairCargo", _asset];
 			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportRepair")) min 10000);
 			_asset setvariable ["GOM_fnc_repairCargo", _amount, true];
 		};
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {
-			_asset setAmmoCargo 0; 
+			[_asset, 0] remoteExec ["setAmmoCargo", _asset];
 			_amount = 10000;
 			if (typeOf _asset == "B_Truck_01_ammo_F" || {typeOf _asset == "O_Truck_03_ammo_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || {typeOf _asset == "B_Slingload_01_Ammo_F"}}}) then {
 				_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportAmmo")) min 30000);
