@@ -55,7 +55,7 @@ if (unitIsUAV _asset) then {
 	[_asset, 2] remoteExec ["lock", (owner _asset)];
 };
 
-[_asset, _sender, true] call BIS_fnc_WL2_setOwner;
+[_asset, _sender] spawn BIS_fnc_WL2_setOwner;
 [_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};
