@@ -18,7 +18,7 @@ if (isNull (findDisplay 4000) && {_open}) then {
     0 spawn {
         while {!(isNull (findDisplay 4000))} do {
             false spawn MRTM_fnc_openGroupMenu;
-            sleep 0.1;
+            sleep 0.5;
         };
     };
 };
