@@ -37,8 +37,8 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset setDir _dir;
 	};
 
-	createVehicleCrew _asset;
-	(group effectiveCommander _asset) deleteGroupWhenEmpty true;
+	private _group = createVehicleCrew _asset;
+	_group deleteGroupWhenEmpty true;
 } else {
 	_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && {!(_class isKindOf "VTOL_Base_F")};
 	if (_isPlane) then {
