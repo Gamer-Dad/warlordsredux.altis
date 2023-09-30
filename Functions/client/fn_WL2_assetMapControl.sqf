@@ -24,38 +24,47 @@ addMissionEventHandler ["MapSingleClick", {
 
 BIS_WL_assetInfoActive = false;
 
-addMissionEventHandler ["EachFrame", {
-	_shown = false;
-	
-	if (visibleMap) then {
-		_nearbyAssets = (nearestObjects [(WL_CONTROL_MAP ctrlMapScreenToWorld getMousePosition), ["All"], (((ctrlMapScale WL_CONTROL_MAP) * 500) min 50) max 2, true]) select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", "123"]) && {_x != player && {alive _x}}};
+addMissionEventHandler ["Map", {
+	params ["_mapIsOpened", "_mapIsForced"];
+	systemChat str _mapIsOpened;
+	if (_mapIsOpened) then {
+		MAP_CONTROL = addMissionEventHandler ["EachFrame", {
+			_shown = false;
+			_map = (uiNamespace getVariable ["BIS_WL_mapControl", controlNull]);
+			
+			if (visibleMap) then {
+				_nearbyAssets = ((_map ctrlMapScreenToWorld getMousePosition) nearEntities (((ctrlMapScale _map) * 500) min 30)) select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", "123"]) && {_x != player && {alive _x}}};
 
-		if (count _nearbyAssets > 0) then {
-			BIS_WL_mapAssetTarget = _nearbyAssets # 0;
-			BIS_WL_assetInfoActive = true;
-			_shown = true;
-			((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];
-			((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlCommit 0;
-			((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetStructuredText parseText format [
-				"<t shadow = '2' size = '%1'>%2</t>",
-				(1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
-				format [
-					localize "STR_A3_WL_info_asset_map_deletion",
-					"<t color = '#ff4b4b'>",
-					"</t>",
-					"<br/>",
-					getText (configFile >> "CfgVehicles" >> typeOf BIS_WL_mapAssetTarget >> "displayName")
-				]
-			];
-			((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow true;
-			((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
-		};
-	};
-	
-	if (!_shown && BIS_WL_assetInfoActive) then {
-		BIS_WL_mapAssetTarget = objNull;
-		BIS_WL_assetInfoActive = false;
-		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
-		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable false;
+				if (count _nearbyAssets > 0) then {
+					BIS_WL_mapAssetTarget = _nearbyAssets # 0;
+					BIS_WL_assetInfoActive = true;
+					_shown = true;
+					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];
+					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlCommit 0;
+					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlSetStructuredText parseText format [
+						"<t shadow = '2' size = '%1'>%2</t>",
+						(1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
+						format [
+							localize "STR_A3_WL_info_asset_map_deletion",
+							"<t color = '#ff4b4b'>",
+							"</t>",
+							"<br/>",
+							getText (configFile >> "CfgVehicles" >> typeOf BIS_WL_mapAssetTarget >> "displayName")
+						]
+					];
+					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlShow true;
+					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlEnable true;
+				};
+			};
+			
+			if (!_shown && BIS_WL_assetInfoActive) then {
+				BIS_WL_mapAssetTarget = objNull;
+				BIS_WL_assetInfoActive = false;
+				((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlShow false;
+				((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlEnable false;
+			};
+		}];
+	} else {
+		removeMissionEventHandler ["EachFrame", MAP_CONTROL];
 	};
 }];
