@@ -990,344 +990,256 @@ GOM_fnc_aircraftGetSerialNumber = {
 };
 
 GOM_fnc_aircraftSetSerialNumber = {
-
-
 	params [["_veh",call compile (lbData [1500,lbcursel 1500])],["_number",ctrltext 1400]];
-
-
+	
 	_selections = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "hiddenSelections");
 	_textures = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "hiddenSelectionsTextures");
 	_numberTextures = _textures select {toUpper _x find "NUMBER" > 0};
 
-
-
-	if (lbcursel 1501 >= 0 OR lbcursel 1502 >= 0) exitWith {false};
+	if (lbcursel 1501 >= 0 || lbcursel 1502 >= 0) exitWith {false};
 	if (_numberTextures isequalto []) exitWith {
-		ctrlSetText [1400,"N/A"];
-		systemchat "Aircraft does not support tail numbers.";playsound "Simulation_Fatal"; false};
+		ctrlSetText [1400, "N/A"];
+		systemchat "Aircraft does not support tail numbers.";
+		playsound "Simulation_Fatal";
+		false;
+	};
 	_index = _textures find (_numberTextures select 0);
-
-	if (count _number > 3) then {_number = _number select [0,3];systemchat "Invalid Number, using first 3 digits instead!";ctrlSetText [1400,_number select [0,3]];
-};
+	if (count _number > 3) then {
+		_number = _number select [0,3];
+		systemchat "Invalid Number, using first 3 digits instead!";
+		ctrlSetText [1400, _number select [0,3]];
+	};
 	_numberArray = toarray _number;
-
 	_zeroesneeded = 3 - count _numberarray;
 	_fill = [];
 	_fill resize (3 - count _numberarray);
 	_fill = _fill apply {48};
-
 	_numberarray = _fill + _numberarray;
 	_numberarray = _numberarray apply {parsenumber tostring [_x]};
 	_count = 0;
 	_numberarray apply {
-
 		_oldSuffix = (_textures select _index) select [count (_textures select _index) - 7,7];
 		_oldPrefix = (_textures select _index) select [0,count (_textures select _index) - 9];
 		_newTexture = _oldPrefix + "0" + str _x + _oldsuffix;
 		_veh setObjectTextureGlobal [(_index + _count),_newTexture];
 		_count = _count + 1;
-
 	};
 	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-	systemchat format ["Changed %1 tail number to: %2",_vehDispName,str _number];
-
+	systemchat format ["Changed %1 tail number to: %2", _vehDispName, str _number];
 };
 
-
-//using BIS_fnc_numberDigits for _yeararray: 0.0742 ms
-//replacing BIS_fnc_numberDigits with toarrayapplyparsenumber voodoo: 0.0256 ms
-//simplifying return: 0.0224 ms
-//further simplifying return: 0.0216 ms
-//replacing --toarray str _year apply {parsenumber (tostring [_x])}-- with toarray str _year apply {_x-48}: 0.0204 ms
-//tiny improvement but still
 GOM_fnc_getWeekday = {
-
 	params [["_date",date]];
 
 	_date params ["_year","_m","_q"];
-
 	_yeararray = toarray str _year apply {_x-48};
-
 	_yeararray params ["_y1","_y2","_y3","_y4"];
 	_J = ((_y1) * 10) + (_y2);
 	_K = ((_y3) * 10) + (_y4);
-
 	if (_m < 3) then {_m = _m + 12};
-
-	["","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] select (_q + floor ( ((_m + 1) * 26) / 10 ) + _K + floor (_K / 4) + floor (_J / 4) - (2 * _J)) mod 7
-
+	["","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] select (_q + floor ( ((_m + 1) * 26) / 10 ) + _K + floor (_K / 4) + floor (_J / 4) - (2 * _J)) mod 7;
 };
 
-//1.24 0.265608
-//1.3 added weekday check to only calculate if date changes: 0.216591 ms
-//1.3 added position check to only check if player moves: 0.153993 ms, looks fair enough
 GOM_fnc_titleText = {
-
 	date params ["_year","_month","_day"];
-	_checkdate = [_year,_month,_day];
 
+	_checkdate = [_year,_month,_day];
 	_lastCheck = player getVariable ["GOM_fnc_titleTextCheckDate",[[0,0,0],""]];
 	_lastCheck params ["_lastDate","_weekDay"];
-
 	if !(_checkDate isequalto _lastDate) then {
-
-	_weekday = [] call GOM_fnc_getWeekday;
-	player setvariable ["GOM_fnc_titleTextCheckDate",[_checkdate,_weekday]];
-
+		_weekday = call GOM_fnc_getWeekday;
+		player setvariable ["GOM_fnc_titleTextCheckDate", [_checkdate, _weekday]];
 	};
-	_date = format ["%1, %2.%3.%4",_weekday,_day,_month,_year];//suck it americans
-
+	_date = format ["%1, %2.%3.%4", _weekday, _day, _month, _year];
 	_posCheck = player getvariable ["GOM_fnc_titleTextPosChange",[[0,0,0],"",""]];
 	_posCheck params ["_checkPos","_nearestloc","_coords"];
-
-
 	if (player distance2d _checkPos > 50) then {
-	_playerpos = getposasl player;
-	_coords = mapGridPosition _playerpos;
-	_nearLocs = nearestlocations [_playerpos,["NameMarine","NameVillage","NameCity","NameCityCapital"],5000,_playerpos];
-	_nearlocs apply {text _x != ""};
-	_nearestloc = "";
-	if (_nearlocs isequalto []) then {_nearestloc = ""} else {
-	_nearestloc = text (_nearlocs select 0) + " - ";
+		_playerpos = getposasl player;
+		_coords = mapGridPosition _playerpos;
+		_nearLocs = nearestlocations [_playerpos,["NameMarine","NameVillage","NameCity","NameCityCapital"],5000,_playerpos];
+		_nearlocs apply {text _x != ""};
+		_nearestloc = "";
+		if (_nearlocs isequalto []) then {
+			_nearestloc = "";
+		} else {
+			_nearestloc = text (_nearlocs select 0) + " - ";
+		};
+		player setvariable ["GOM_fnc_titleTextPosChange", [_playerpos, _nearestLoc, _coords]];
 	};
-	player setvariable ["GOM_fnc_titleTextPosChange",[_playerpos,_nearestLoc,_coords]];
-	};
-
 
 	_t = toString [71,114,117,109,112,121,32,79,108,100,32,77,97,110,115,32,65,105,114,99,114,97,102,116,32,76,111,97,100,111,117,116];
-
-	_time = [daytime,"HH:MM:SS"] call BIS_fnc_timeToString;
-	_text = format ["<t align='left' size='0.75'>%1Grid ""%2""<t align='center'>--- %3 ---<t align='right'>%4<br />%5",_nearestloc,_coords,_t,_date,_time];
-
-
+	_time = [daytime, "HH:MM:SS"] call BIS_fnc_timeToString;
+	_text = format ["<t align='left' size='0.75'>%1Grid ""%2""<t align='center'>--- %3 ---<t align='right'>%4<br />%5", _nearestloc, _coords, _t, _date, _time];
 	(finddisplay 66 displayctrl 1101) ctrlSetStructuredText parsetext _text;
-
 };
-
 
 GOM_fnc_pylonSound = {
-
-params ["_veh",["_pylon",-1]];
+	params ["_veh",["_pylon",-1]];
 
 	_soundpos = getPosASL _veh;
-if (_pylon >= 0) then {
-
-_selections = selectionnames _veh;
-_presort = _selections select {(toupper _x find "PYLON") >= 0 AND parsenumber (_x select [count _x - 3,3]) > 0};
-_presort apply {[parsenumber (_x select [count _x - 3,3]),_x]};
-_presort sort true;
-_soundPos = agltoasl (_veh modeltoworld (_veh selectionposition (_presort select _pylon)));
-
-};
-
+	if (_pylon >= 0) then {
+		_selections = selectionnames _veh;
+		_presort = _selections select {(toupper _x find "PYLON") >= 0 && parsenumber (_x select [count _x - 3,3]) > 0};
+		_presort apply {[parsenumber (_x select [count _x - 3,3]),_x]};
+		_presort sort true;
+		_soundPos = agltoasl (_veh modeltoworld (_veh selectionposition (_presort select _pylon)));
+	};
 	_rndSound = selectRandom ['FD_Target_PopDown_Large_F','FD_Target_PopDown_Small_F','FD_Target_PopUp_Small_F'];
 	_getPath = getArray (configfile >> "CfgSounds" >> _rndSound >> "sound");
 	_path = _getPath select 0;
-	playSound3D [_path,_veh,false,_soundpos,random [0.8,1,1.2],random [0.8,1,1.2],180];
-
-true
+	playSound3D [_path, _veh, false, _soundpos, random [0.8,1,1.2], random [0.8,1,1.2], 180];
+	true;
 };
 
 GOM_fnc_CheckComponents = {
-
 	params ["_ctrlParams","_obj"];
+
 	if (lbCursel 1500 < 0) exitWith {false};
-
-	_veh = call compile  lbData [1500,lbcursel 1500];
-
+	_veh = call compile lbData [1500, lbcursel 1500];
 	_vehDispName = getText (configfile >> "CfgVehicles" >> typeOf _veh >> "displayName");
 	_ctrlParams params ["_ctrl","_state"];
-	_set = [false,true] select _state;
-
+	_set = [false, true] select _state;
 	if (_set) then {
-
-		if (str _ctrl find "2800" > -1) then {systemchat format ["%1 will now report remote targets!",_vehDispName];_veh setVehicleReportRemoteTargets _set};
-
-		if (str _ctrl find "2801" > -1) then {systemchat format ["%1 will now receive remote targets!",_vehDispName];_veh setVehicleReceiveRemoteTargets _set};
-
-		if (str _ctrl find "2802" > -1) then {systemchat format ["%1 will now report its own position!",_vehDispName];_veh setVehicleReportOwnPosition _set};
-
-		} else {
-
-		if (str _ctrl find "2800" > -1) then {systemchat format ["%1 will no longer report remote targets!",_vehDispName];_veh setVehicleReportRemoteTargets _set};
-
-		if (str _ctrl find "2801" > -1) then {systemchat format ["%1 will no longer receive remote targets!",_vehDispName];_veh setVehicleReceiveRemoteTargets _set};
-
-		if (str _ctrl find "2802" > -1) then {systemchat format ["%1 will no longer report its own position!",_vehDispName];_veh setVehicleReportOwnPosition _set};
-
-
-
+		if (str _ctrl find "2800" > -1) then {systemchat format ["%1 will now report remote targets!", _vehDispName]; _veh setVehicleReportRemoteTargets _set};
+		if (str _ctrl find "2801" > -1) then {systemchat format ["%1 will now receive remote targets!", _vehDispName]; _veh setVehicleReceiveRemoteTargets _set};
+		if (str _ctrl find "2802" > -1) then {systemchat format ["%1 will now report its own position!", _vehDispName]; _veh setVehicleReportOwnPosition _set};
+	} else {
+		if (str _ctrl find "2800" > -1) then {systemchat format ["%1 will no longer report remote targets!", _vehDispName]; _veh setVehicleReportRemoteTargets _set};
+		if (str _ctrl find "2801" > -1) then {systemchat format ["%1 will no longer receive remote targets!", _vehDispName]; _veh setVehicleReceiveRemoteTargets _set};
+		if (str _ctrl find "2802" > -1) then {systemchat format ["%1 will no longer report its own position!", _vehDispName]; _veh setVehicleReportOwnPosition _set};
 	};
 	playSound "Click";
-true
+	true;
 };
 
 GOM_fnc_setPylonOwner = {
-
 	params ["_obj"];
 
 	if (lbCursel 1500 < 0) exitWith {false};
-
-	_veh = call compile  lbData [1500,lbcursel 1500];
-
+	_veh = call compile lbData [1500, lbcursel 1500];
 	_pylonOwner = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwner",[]];
 	_ownerName = "Pilot";
-	if (_pylonOwner isEqualTo []) then {_pylonOwner = [0];_ownerName = "Gunner"} else {_pylonOwner = []};
-
-	ctrlSetText [1605,format ["%1 control",_ownerName]];
-
-	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwner",_pylonOwner,true];
-	//_update = [_obj] call GOM_fnc_updateDialog;
-true
+	if (_pylonOwner isEqualTo []) then {_pylonOwner = [0]; _ownerName = "Gunner"} else {_pylonOwner = []};
+	ctrlSetText [1605, format ["%1 control", _ownerName]];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwner", _pylonOwner, true];
+	true;
 };
 
 GOM_fnc_setPylonPriority = {
-
 	params ["_obj"];
 
 	if (lbCursel 1501 < 0) exitWith {false};
-
-	_veh = call compile  lbData [1500,lbcursel 1500];
+	_veh = call compile  lbData [1500, lbcursel 1500];
 	_count = 0;
-	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",(GetPylonMagazines _veh) apply {_count = _count + 1;_count}];//I fucking love apply
-
+	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities", (GetPylonMagazines _veh) apply {_count = _count + 1; _count}];
 	_selectedPriority = _priorities select lbcursel 1501;
-if ("NOCOUNT" in _this) exitWith {
+	if ("NOCOUNT" in _this) exitWith {
+		ctrlsettext [1610, format ["Priority: %1", _selectedPriority]];
+		_veh setVariable ["GOM_fnc_pylonPriorities", _priorities, true];
+		[_veh, _priorities] remoteExec ["setPylonsPriority", 0, true];
+	};
 
-	ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
-	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
-	[_veh,_priorities] remoteExec ["setPylonsPriority",0,true];
-};
-
-_keys = finddisplay 66 getVariable ["GOM_fnc_keyDown",["","",false,false,false]];
-_keys params ["","",["_keyshift",false],["_keyctrl",false],["_keyALT",false]];
-
+	_keys = finddisplay 66 getVariable ["GOM_fnc_keyDown", ["", "", false, false, false]];
+	_keys params ["", "", ["_keyshift",false], ["_keyctrl",false], ["_keyALT",false]];
 	if (_keyshift) exitWith {
 		_selectedPriority = _selectedPriority - 1;
-	if (_selectedPriority < 1) then {_selectedPriority = count _priorities};
-
-
-		_priorities set [lbcursel 1501,_selectedPriority];
-
-	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
-	[_veh,_priorities] remoteExec ["setPylonsPriority",0,true];
-	ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
-
-		};
+		if (_selectedPriority < 1) then {_selectedPriority = count _priorities};
+		_priorities set [lbcursel 1501, _selectedPriority];
+		_veh setVariable ["GOM_fnc_pylonPriorities", _priorities, true];
+		[_veh,_priorities] remoteExec ["setPylonsPriority", 0, true];
+		ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
+	};
 	if (_keyALT) exitWith {
 		_priorities = _priorities apply {_selectedPriority};
-		systemchat format ["All pylons priority set to %1",_selectedPriority];
-	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
-	[_veh,_priorities] remoteExec ["setPylonsPriority",0,true];
-	ctrlsettext [1610,format ["Priority: %1",_selectedPriority]];
-
+		systemchat format ["All pylons priority set to %1", _selectedPriority];
+		_veh setVariable ["GOM_fnc_pylonPriorities", _priorities, true];
+		[_veh,_priorities] remoteExec ["setPylonsPriority", 0, true];
+		ctrlsettext [1610, format ["Priority: %1", _selectedPriority]];
 	};
-
 	if (_keyctrl) exitWith {
-systemchat format ["All pylons priority set to 1",""];
+		systemchat format ["All pylons priority set to 1",""];
 		_priorities = _priorities apply {1};
-	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
-	[_veh,_priorities] remoteExec ["setPylonsPriority",0,true];
-	ctrlsettext [1610,format ["Priority: %1", 1]];
-
+		_veh setVariable ["GOM_fnc_pylonPriorities", _priorities, true];
+		[_veh,_priorities] remoteExec ["setPylonsPriority" ,0, true];
+		ctrlsettext [1610,format ["Priority: %1", 1]];
 	};
 
-_selectedPriority = _selectedPriority + 1;
-
+	_selectedPriority = _selectedPriority + 1;
 	if (_selectedPriority > count _priorities) then {_selectedPriority = 1};
-
-		_priorities set [lbcursel 1501,_selectedPriority];
-
+	_priorities set [lbcursel 1501,_selectedPriority];
 	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
 	[_veh,_priorities] remoteExec ["setPylonsPriority",0,true];
 	ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
-
-
 };
 
 GOM_fnc_aircraftLoadoutPaintjob = {
-
-	params ["_obj",["_apply",false]];
+	params ["_obj", ["_apply", false]];
 
 	if (lbCursel 1500 < 0) exitWith {false};
 	lbClear 2100;
-	lbAdd [2100,"Livery"];
+	lbAdd [2100, "Livery"];
 	_veh = call compile  lbData [1500,lbcursel 1500];
-		_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
-		_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-		_colorTextures = [""];
-		if (count _colorConfigs > 0) then {
+	_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
+	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
+	_colorTextures = [""];
 
-			_colorNames = [""];
-			{
+	if (count _colorConfigs > 0) then {
+		_colorNames = [""];
+		{
 			_colorNames pushback (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"));
-			lbAdd [2100,(getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"))];
+			lbAdd [2100, (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"))];
 			_colorTextures pushback (getArray (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "textures"));
 		} foreach _colorConfigs;
 
-		if (_apply AND lbCurSel 2100 > 0) then {
-
-		{
-		_index = (_colorTextures select (lbCurSel 2100)) find _x;
-		_veh setObjectTextureGlobal [_index, (_colorTextures select (lbCurSel 2100)) select _index];
-	} foreach (_colorTextures select (lbCurSel 2100));
-	systemchat format ['%2: Changed color to %1.',(_colorNames select (lbCurSel 2100)),_vehDispName];
-};
-	playSound "Click";
-};
-
-true
+		if (_apply && lbCurSel 2100 > 0) then {
+			{
+				_index = (_colorTextures select (lbCurSel 2100)) find _x;
+				_veh setObjectTextureGlobal [_index, (_colorTextures select (lbCurSel 2100)) select _index];
+			} foreach (_colorTextures select (lbCurSel 2100));
+			systemchat format ['%2: Changed color to %1.', (_colorNames select (lbCurSel 2100)), _vehDispName];
+		};
+		playSound "Click";
+	};
+	true;
 };
 
-//lel 0.0218 ms select owns hard
 GOM_fnc_aircraftLoadoutResourcesCheck = {
 	params ["_obj"];
 
-	_nearbyVehs = (_obj nearEntities ["All", 50]) select {speed _x < 1 AND {alive _x}};
+	_nearbyVehs = (_obj nearEntities ["All", 50]) select {speed _x < 1 && {alive _x}};
 	_rearmVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_ammocargo",-1] >= 0 || getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportAmmo") > 0};
 	_repairVehs = _nearbyVehs select {_x getVariable ["GOM_fnc_repairCargo",-1] >= 0 || getNumber (configfile >> "CfgVehicles" >> typeof _x >> "transportRepair") > 0};
-
 	_flags = [];
-
 	_flags set [0, true];
 	_flags set [1, (count _repairVehs > 0)];
 	_flags set [2, (count _rearmVehs > 0)];
-
-
 	_flags params ["_canRefuel","_canRepair","_canRearm"];
-	_vehs = [_refuelVehs,_repairVehs,_rearmVehs];
+	_vehs = [_refuelVehs, _repairVehs, _rearmVehs];
 	
-	ctrlEnable [1600,_canRearm];
-	ctrlEnable [1602,_canRepair];
+	ctrlEnable [1600, _canRearm];
+	ctrlEnable [1602, _canRepair];
 	ctrlEnable [1603, false];
-	ctrlEnable [1604,_canRearm];
-	[_flags,_vehs]
+	ctrlEnable [1604, _canRearm];
+	[_flags, _vehs];
 };
 
 GOM_fnc_updatePresetLB = {
-
 	params ["_obj"];
 
 	if (lbCursel 1500 < 0) exitWith {false};
-	_veh = call compile  lbData [1500,lbcursel 1500];
+	_veh = call compile  lbData [1500, lbcursel 1500];
 	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
 
-	_validPresets = _presets select {_x#0 isequalTo typeof _veh AND _x#8 isEqualTo GOM_fnc_allowAllPylons};
+	_validPresets = _presets select {_x#0 isequalTo typeof _veh && _x#8 isEqualTo GOM_fnc_allowAllPylons};
 	lbClear 2101;
 	{
-
-		lbAdd [2101,_x select 1];
-
+		lbAdd [2101, _x select 1];
 	} forEach _validPresets;
-true
+	true
 };
 
 GOM_fnc_showResourceDisplay = {
-
-
 	GOM_fnc_aircraftResourceDisplayTimeout = time + 20;
-
-
 
 	_ID = addMissionEventHandler ["Draw3D", {
 		{
@@ -1357,7 +1269,7 @@ GOM_fnc_showResourceDisplay = {
 	}];
 
 	sleep 20;
-	removeMissionEventHandler ["Draw3D",_ID];
+	removeMissionEventHandler ["Draw3D", _ID];
 	true
 };
 
@@ -1368,101 +1280,81 @@ GOM_fnc_aircraftLoadoutSavePreset = {
 	_veh = call compile  lbData [1500,lbcursel 1500];
 	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
 	_index = 0;
-		_pylonOwners = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwners",[]];
+	_pylonOwners = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwners",[]];
 	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
+	_preset = [typeof _veh, ctrlText 1401, GetPylonMagazines _veh, ((GetPylonMagazines _veh) apply {_index = _index + 1; _veh AmmoOnPylon _index}), [lbText [2100, lbCursel 2100], getObjectTextures _veh], _pylonOwners, _priorities, _veh call GOM_fnc_aircraftGetSerialNumber, GOM_fnc_allowAllPylons];
+	if (!(_presets isEqualTo []) && {count (_presets select {ctrlText 1401 isequalTo (_x select 1)}) > 0}) exitWith {systemchat "Preset exists! Chose another name!"; playsound "Simulation_Fatal"};
 
-	_preset = [typeof _veh,ctrlText 1401,GetPylonMagazines _veh,((GetPylonMagazines _veh) apply {_index = _index + 1;_veh AmmoOnPylon _index}),[lbText [2100,lbCursel 2100],getObjectTextures _veh],_pylonOwners,_priorities,[_veh] call GOM_fnc_aircraftGetSerialNumber,GOM_fnc_allowAllPylons];
-
-	if (!(_presets isEqualTo []) AND {count (_presets select {ctrlText 1401 isequalTo (_x select 1)}) > 0}) exitWith {systemchat "Preset exists! Chose another name!";playsound "Simulation_Fatal"};
-
-
-	if (ctrlText 1401 isEqualTo "") exitWith {systemchat "Invalid name! Choose another one!";playSound "Simulation_Fatal"};
+	if (ctrlText 1401 isEqualTo "") exitWith {systemchat "Invalid name! Choose another one!"; playSound "Simulation_Fatal"};
 	_presets pushback _preset;
 	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",_presets];
-			_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-
-	systemchat format ["Saved %1 preset: %2!",_vehDispName,str ctrlText 1401];
-	_updateLB = [_obj] call GOM_fnc_updatePresetLB;
-	lbsetcursel [2101,((lbsize 2101) -1)];
+	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
+	systemchat format ["Saved %1 preset: %2!", _vehDispName, str ctrlText 1401];
+	_updateLB = _obj call GOM_fnc_updatePresetLB;
+	lbsetcursel [2101, ((lbsize 2101) -1)];
 	true
 };
 
 GOM_fnc_aircraftLoadoutDeletePreset = {
-
 	params ["_obj"];
 
 	if (lbCursel 1500 < 0) exitWith {false};
-	_veh = call compile  lbData [1500,lbcursel 1500];
-	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-
-	_toDelete = _presets select {(_x select 1) isEqualTo lbText [2101,lbcursel 2101]};
-	if (count _toDelete isequalto 0)  exitWith {systemchat "Preset not found!";playsound "Simulation_Fatal"};
+	_veh = call compile  lbData [1500, lbcursel 1500];
+	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets", []];
+	_toDelete = _presets select {(_x select 1) isEqualTo lbText [2101, lbcursel 2101]};
+	if (count _toDelete isequalto 0)  exitWith {systemchat "Preset not found!"; playsound "Simulation_Fatal"};
 	_presets = _presets - [_toDelete select 0];
-	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets",_presets];
-		_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
-
-	Systemchat format ["Deleting %1 preset: %2",_vehDispName,str (_todelete select 0 select 1)];
-	_updateLB = [_obj] call GOM_fnc_updatePresetLB;
+	profileNamespace setVariable ["GOM_fnc_aircraftLoadoutPresets", _presets];
+	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
+	Systemchat format ["Deleting %1 preset: %2", _vehDispName, str (_todelete select 0 select 1)];
+	_updateLB = _obj call GOM_fnc_updatePresetLB;
 	true
 };
 
 GOM_fnc_aircraftLoadoutLoadPreset = {
-
 	params ["_obj"];
 
 	if (lbCursel 1500 < 0) exitWith {false};
 	if (lbCursel 2101 < 0) exitWith {systemchat "No preset selected."};
 	_veh = call compile  lbData [1500,lbcursel 1500];
 	_presets = profileNamespace getVariable ["GOM_fnc_aircraftLoadoutPresets",[]];
-	_preset = (_presets select {(_x#0) isEqualTo typeOf _veh AND (_x#1) isEqualTo lbText [2101,lbcursel 2101] AND (_x#8 isEqualTo GOM_fnc_allowAllPylons)}) select 0;
-	_preset params ["_vehType","_presetName","_pylons","_pylonAmmoCounts","_textureParams","_pylonOwners","_pylonPriorities",["_serialNumber","N/A"],["_restrictedLoadout",GOM_fnc_allowAllPylons]];
-
-	[_veh,_serialNumber] call GOM_fnc_aircraftSetSerialNumber;
-	[_obj,true,_pylons,_pylonAmmoCounts] call	GOM_fnc_setPylonsRearm;
-	[_veh,_pylonPriorities] remoteExec ["setPylonsPriority",0,true];
+	_preset = (_presets select {(_x#0) isEqualTo typeOf _veh && (_x#1) isEqualTo lbText [2101,lbcursel 2101] && (_x#8 isEqualTo GOM_fnc_allowAllPylons)}) select 0;
+	_preset params ["_vehType","_presetName","_pylons","_pylonAmmoCounts","_textureParams","_pylonOwners","_pylonPriorities",["_serialNumber","N/A"],["_restrictedLoadout", GOM_fnc_allowAllPylons]];
+	[_veh, _serialNumber] call GOM_fnc_aircraftSetSerialNumber;
+	[_obj, true, _pylons, _pylonAmmoCounts] call GOM_fnc_setPylonsRearm;
+	[_veh, _pylonPriorities] remoteExec ["setPylonsPriority", 0, true];
 	_textureParams params ["_textureName","_textures"];
 	{
-
-		_veh setObjectTextureGlobal [_foreachIndex,_x];
-
+		_veh setObjectTextureGlobal [_foreachIndex, _x];
 	} forEach _textures;
-
-
-true
+	true
 };
 
 GOM_fnc_updateVehiclesLB = {
-
-
 	params ["_obj"];
 
-
-	_vehicles = (_obj nearEntities ["Air",50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player) && {_x == BIS_WL_currentAirRearm}}}}};
-	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles",[]];
+	_vehicles = (_obj nearEntities ["Air", 50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player) && {_x == BIS_WL_currentAirRearm}}}}};
+	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles", []];
 	if (_vehicles isEqualTo []) exitWith {true};
-	if (_vehicles isEqualTo _lastVehs AND !(lbsize 1500 isequalto 0)) exitWith {true};//only update this when really needed, called on each frame
+	if (_vehicles isEqualTo _lastVehs && {!(lbsize 1500 isequalto 0)}) exitWith {true};
 	_obj setVariable ["GOM_fnc_setPylonLoadoutVehicles",_vehicles,true];
 
-
 	(finddisplay 66 displayctrl 1100) ctrlSetStructuredText parsetext "<t align='center'>No aircraft in range (50m)!";
-	_resourceCheck = [_obj] call GOM_fnc_aircraftLoadoutResourcesCheck;
+	_resourceCheck = _obj call GOM_fnc_aircraftLoadoutResourcesCheck;
 	lbclear 1500;
 
-
 	{
-
 		_dispName = gettext (configfile >> "CfgVehicles" >> typeof _x >> "displayName");
 		_form = _dispName;
-		lbAdd [1500,_form];
-		lbSetData [1500,_foreachIndex,_x call BIS_fnc_objectVar];
+		lbAdd [1500, _form];
+		lbSetData [1500, _foreachIndex, _x call BIS_fnc_objectVar];
 	} forEach _vehicles;
-
 };
 
 
 GOM_fnc_aircraftLoadout = {
-
 	params ["_obj"];
+
 	createDialog "GOM_dialog_aircraftLoadout";
 	playSound "Click";
 	(finddisplay 66 displayctrl 1100) ctrlSetStructuredText parsetext "<t align='center'>Select an aircraft!";
@@ -1471,112 +1363,93 @@ GOM_fnc_aircraftLoadout = {
 	lbclear 1501;
 	lbclear 1502;
 
-
 	lbadd [2100,"Livery"];
 	lbSetCurSel [2100,0];
 
-
 	_getvar = _obj call BIS_fnc_objectVar;
-	finddisplay 66 displayCtrl 1500 ctrlAddEventHandler ["LBSelChanged",format ["lbclear 1502;lbsetcursel [1502,-1];lbclear 1501;lbsetcursel [1501,-1];[%1] call GOM_fnc_setPylonLoadoutLBPylonsUpdate;
-;[%1] call GOM_fnc_aircraftLoadoutPaintjob;",_getvar]];//
-	finddisplay 66 displayCtrl 1501 ctrlAddEventHandler ["LBSelChanged",format ["lbclear 1502;[%1] call GOM_fnc_fillPylonsLB;[%1,'NOCOUNT'] call GOM_fnc_setPylonPriority
-",_getvar]];//
-	finddisplay 66 displayCtrl 1502 ctrlAddEventHandler ["LBSelChanged",format ["[%1] call GOM_fnc_updateAmmoCountDisplay;",_getvar]];//
+	finddisplay 66 displayCtrl 1500 ctrlAddEventHandler ["LBSelChanged",format ["lbclear 1502; lbsetcursel [1502,-1]; lbclear 1501; lbsetcursel [1501,-1]; [%1] call GOM_fnc_setPylonLoadoutLBPylonsUpdate; [%1] call GOM_fnc_aircraftLoadoutPaintjob;", _getvar]];
+	finddisplay 66 displayCtrl 1501 ctrlAddEventHandler ["LBSelChanged",format ["lbclear 1502; [%1] call GOM_fnc_fillPylonsLB; [%1,'NOCOUNT'] call GOM_fnc_setPylonPriority;", _getvar]];
+	finddisplay 66 displayCtrl 1502 ctrlAddEventHandler ["LBSelChanged",format ["[%1] call GOM_fnc_updateAmmoCountDisplay;", _getvar]];
+	finddisplay 66 displayCtrl 2100 ctrlAddEventHandler ["LBSelChanged",format ["[%1,true] call GOM_fnc_aircraftLoadoutPaintjob;", _getvar]];
+	finddisplay 66 displayCtrl 2101 ctrlAddEventHandler ["LBSelChanged",format ["", _getvar]];
 
-	finddisplay 66 displayCtrl 2100 ctrlAddEventHandler ["LBSelChanged",format ["[%1,true] call GOM_fnc_aircraftLoadoutPaintjob",_getvar]];
-	finddisplay 66 displayCtrl 2101 ctrlAddEventHandler ["LBSelChanged",format ["",_getvar]];//
-	buttonSetAction [1600, format ["[%1] call GOM_fnc_pylonInstallWeapon;[] call GOM_fnc_aircraftSetSerialNumber",_getvar]];
-	buttonSetAction [1601, format ["[%1] call GOM_fnc_clearAllPylons",_getvar]];
-	buttonSetAction [1602, format ["[%1] call GOM_fnc_setPylonsRepair",_getvar]];
-	buttonSetAction [1603, format ["[%1] call GOM_fnc_setPylonsRefuel",_getvar]];
-	buttonSetAction [1604, format ["[%1] call GOM_fnc_setPylonsReArm",_getvar]];
-	buttonSetAction [1605, format ["[%1] call GOM_fnc_setPylonOwner",_getvar]];
-	buttonSetAction [1606, format ["[%1] call GOM_fnc_aircraftLoadoutSavePreset",_getvar]];
-	buttonSetAction [1607, format ["[%1] call GOM_fnc_aircraftLoadoutDeletePreset",_getvar]];
-	buttonSetAction [1608, format ["[%1] call GOM_fnc_aircraftLoadoutLoadPreset",_getvar]];
+	buttonSetAction [1600, format ["%1 call GOM_fnc_pylonInstallWeapon; call GOM_fnc_aircraftSetSerialNumber;", _getvar]];
+	buttonSetAction [1601, format ["%1 call GOM_fnc_clearAllPylons;", _getvar]];
+	buttonSetAction [1602, format ["%1 call GOM_fnc_setPylonsRepair;", _getvar]];
+	buttonSetAction [1603, format ["%1 call GOM_fnc_setPylonsRefuel;", _getvar]];
+	buttonSetAction [1604, format ["%1 call GOM_fnc_setPylonsReArm;", _getvar]];
+	buttonSetAction [1605, format ["%1 call GOM_fnc_setPylonOwner;", _getvar]];
+	buttonSetAction [1606, format ["%1 call GOM_fnc_aircraftLoadoutSavePreset;", _getvar]];
+	buttonSetAction [1607, format ["%1 call GOM_fnc_aircraftLoadoutDeletePreset;", _getvar]];
+	buttonSetAction [1608, format ["%1 call GOM_fnc_aircraftLoadoutLoadPreset;", _getvar]];
+	buttonSetAction [1609, "lbclear 1502; lbSetCurSel [1502,-1]; lbclear 1501; lbSetCurSel [1501,-1]; lbclear 1500; lbSetCurSel [1500,-1];"];
+	buttonSetAction [1610, format ["%1 call GOM_fnc_setPylonPriority;", _getvar]];
 
-	buttonSetAction [1609, format ["lbclear 1502;lbSetCurSel [1502,-1];lbclear 1501;lbSetCurSel [1501,-1];lbclear 1500;lbSetCurSel [1500,-1]",""]];
-	buttonSetAction [1610, format ["[%1] call GOM_fnc_setPylonPriority",_getvar]];
-
-	findDisplay 66 displayAddEventHandler ["KeyDown",{finddisplay 66 setVariable ["GOM_fnc_keyDown",_this];if (_this select 3) then {ctrlEnable [1607,true];
-		ctrlSetText [1607,"Delete"];
-		ctrlSetText [1610,format ["Set all to 1",""]];
-	};
-	if (_this select 4) then {
-	_veh = call compile lbdata [1500,lbcursel 1500];
-	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
-	if (lbcursel 1501 >= 0) then {
-
-	_selectedPriority = _priorities select lbcursel 1501;
-	ctrlSetText [1610,format ["Set all to %1",_selectedPriority]];
-	}
-	};
-
-
-
+	findDisplay 66 displayAddEventHandler ["KeyDown", {
+		finddisplay 66 setVariable ["GOM_fnc_keyDown", _this]; 
+		if (_this select 3) then {
+			ctrlEnable [1607, true];
+			ctrlSetText [1607, "Delete"];
+			ctrlSetText [1610, "Set all to 1"];
+		};
+		if (_this select 4) then {
+			_veh = call compile lbdata [1500,lbcursel 1500];
+			_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
+			if (lbcursel 1501 >= 0) then {
+				_selectedPriority = _priorities select lbcursel 1501;
+				ctrlSetText [1610, format ["Set all to %1", _selectedPriority]];
+			};
+		};
 	}];
-	findDisplay 66 displayAddEventHandler ["KeyUp",{finddisplay 66 setVariable ["GOM_fnc_keyDown",[]];if (_this select 3) then {ctrlEnable [1607,false];ctrlSetText [1607,"CTRL"];
-
-	_veh = call compile lbdata [1500,lbcursel 1500];
-	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
-		if (lbcursel 1501 >= 0) then {
-
-	_selectedPriority = _priorities select lbcursel 1501;
-	ctrlSetText [1610,format ["Priority: %1",_selectedPriority]];
-};
-	;};
-
-
-if (_this select 4) then {	_veh = call compile lbdata [1500,lbcursel 1500];
-	_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
-		if (lbcursel 1501 >= 0) then {
-
-	_selectedPriority = _priorities select lbcursel 1501;
-	ctrlSetText [1610,format ["Priority: %1",_selectedPriority]];
-};
-;}
+	findDisplay 66 displayAddEventHandler ["KeyUp", {
+		finddisplay 66 setVariable ["GOM_fnc_keyDown", []];
+		if (_this select 3) then {
+			ctrlEnable [1607, false];
+			ctrlSetText [1607, "CTRL"];
+			_veh = call compile lbdata [1500,lbcursel 1500];
+			_priorities = _veh getVariable ["GOM_fnc_pylonPriorities",[]];
+			if (lbcursel 1501 >= 0) then {
+				_selectedPriority = _priorities select lbcursel 1501;
+				ctrlSetText [1610,format ["Priority: %1",_selectedPriority]];
+			};
+		};
 
 
-
+		if (_this select 4) then {
+			_veh = call compile lbdata [1500, lbcursel 1500];
+			_priorities = _veh getVariable ["GOM_fnc_pylonPriorities", []];
+			if (lbcursel 1501 >= 0) then {
+				_selectedPriority = _priorities select lbcursel 1501;
+				ctrlSetText [1610, format ["Priority: %1",_selectedPriority]];
+			};
+		};
 	}];
-	ctrlEnable [1607,false];
-	ctrlSetText [1607,"CTRL"];
 
-	findDisplay 66 displayCtrl 2800 ctrlAddEventHandler ["CheckedChanged",format ["[_this,%1] call GOM_fnc_CheckComponents",_getvar]];
-	findDisplay 66 displayCtrl 2801 ctrlAddEventHandler ["CheckedChanged",format ["[_this,%1] call GOM_fnc_CheckComponents",_getvar]];
-	findDisplay 66 displayCtrl 2802 ctrlAddEventHandler ["CheckedChanged",format ["[_this,%1] call GOM_fnc_CheckComponents",_getvar]];
+	ctrlEnable [1607, false];
+	ctrlSetText [1607, "CTRL"];
+
+	findDisplay 66 displayCtrl 2800 ctrlAddEventHandler ["CheckedChanged", format ["[_this, %1] call GOM_fnc_CheckComponents;", _getvar]];
+	findDisplay 66 displayCtrl 2801 ctrlAddEventHandler ["CheckedChanged", format ["[_this, %1] call GOM_fnc_CheckComponents;", _getvar]];
+	findDisplay 66 displayCtrl 2802 ctrlAddEventHandler ["CheckedChanged", format ["[_this, %1] call GOM_fnc_CheckComponents;", _getvar]];
 	_color = [0,0,0,0.6];
 	_dark = [1100,1103,1104,1105,1109,1101,1102,1103,1104,1105,1400,1401,1500,1501,1800,1801,1802,1803,1804,1805,1806,1807,1808,1809,2100,2101];
 	{
-
 		findDisplay 66 displayCtrl _x ctrlSetBackgroundColor _color;
-
-
 	} forEach _dark;
+
 	GOM_fnc_aircraftLoadoutObject = _obj;
 	_ID = addMissionEventHandler ["EachFrame",{
-
-
-
-		_vehicles = [GOM_fnc_aircraftLoadoutObject] call GOM_fnc_updateVehiclesLB;
-
+		_vehicles = GOM_fnc_aircraftLoadoutObject call GOM_fnc_updateVehiclesLB;
 		if (displayNull isEqualTo findDisplay 66) exitWith {
-
-			removeMissionEventHandler ["EachFrame",_thisEventHandler];
+			removeMissionEventHandler ["EachFrame", _thisEventHandler];
 			_display = 0 spawn GOM_fnc_showResourceDisplay;
 			playSound "Click";
-
 		};
-
-		_check = [_obj] call GOM_fnc_updateDialog;
-		[] call GOM_fnc_titleText;
-
-		true
-
+		_check = _obj call GOM_fnc_updateDialog;
+		call GOM_fnc_titleText;
+		true;
 	}];
-	GOM_fnc_aircraftLoadoutObject setvariable ["GOM_fnc_aircraftloadoutEH",_ID];
-
-	true
+	true;
 };
 
 //handle global variables and stuff that won't change during mission runtime
