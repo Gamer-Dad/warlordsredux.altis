@@ -112,9 +112,5 @@ class CfgRemoteExec {
 		class setAmmoCargo {
 			allowedTargets = 0;
 		};
-
-		class removeWeaponGlobal {
-			allowedTargets = 0;
-		};
 	};
 };

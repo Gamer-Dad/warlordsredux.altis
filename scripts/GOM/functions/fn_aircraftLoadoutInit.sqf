@@ -393,7 +393,7 @@ GOM_fnc_clearAllPylons = {
 	};
 	_pylonWeapons = [];
 	{ _pylonWeapons append getArray (_x >> "weapons") } forEach ([_veh, configNull] call BIS_fnc_getTurrets);
-	{ [_veh,_x] remoteexec ["removeWeaponGlobal",0] } forEach ((weapons _veh) - _pylonWeapons);
+	{_veh removeWeaponGlobal _x} forEach ((weapons _veh) - _pylonWeapons);
 
 	systemchat "All pylons cleared!";
 	true;
