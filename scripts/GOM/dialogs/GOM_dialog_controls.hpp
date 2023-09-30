@@ -336,6 +336,7 @@ class GOMRscCombo_2101: GOMRscCombo
 	idc = 2101;
 
 	text = "Preset"; //--- ToDo: Localize;
+	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 16 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -355,7 +356,8 @@ class GOMRscEdit_1401: GOMRscEdit
 {
 	idc = 1401;
 
-	text = "Your Preset"; //--- ToDo: Localize;
+	text = ""; //--- ToDo: Localize;
+	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 19.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -366,6 +368,7 @@ class GOMRscButton_1606: GOMRscButton
 	idc = 1606;
 
 	text = "Save"; //--- ToDo: Localize;
+	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 21 * GUI_GRID_H + GUI_GRID_Y;
 	w = 3 * GUI_GRID_W;
@@ -376,6 +379,7 @@ class GOMRscButton_1607: GOMRscButton
 	idc = 1607;
 
 	text = "Delete"; //--- ToDo: Localize;
+	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 36 * GUI_GRID_W + GUI_GRID_X;
 	y = 21 * GUI_GRID_H + GUI_GRID_Y;
 	w = 3 * GUI_GRID_W;
@@ -393,8 +397,8 @@ class GOMRscFrame_1809: GOMRscFrame
 class GOMRscButton_1608: GOMRscButton
 {
 	idc = 1608;
-
 	text = "Load Preset"; //--- ToDo: Localize;
+	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 17.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
