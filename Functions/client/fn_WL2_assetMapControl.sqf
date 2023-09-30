@@ -1,32 +1,7 @@
-#include "..\warlords_constants.inc"
-
-addMissionEventHandler ["MapSingleClick", {
-	params ["_units", "_pos", "_alt", "_shift"];
-	if (_alt && _shift) then {
-		if !(isNull BIS_WL_mapAssetTarget) then {
-			if ((BIS_WL_mapAssetTarget in WL_PLAYER_VEHS) && count crew BIS_WL_mapAssetTarget > 0) then {
-				if (getNumber (configFile >> "CfgVehicles" >> (typeOf BIS_WL_mapAssetTarget) >> "isUav") == 1) then {
-					[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
-				} else {
-					if ((crew BIS_WL_mapAssetTarget) findIf {alive _x} != -1) then {
-						playSound "AddItemFailed";
-						[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;				
-					} else {
-						[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
-					};
-				};
-			} else {
-				[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
-			};
-		};
-	};
-}];
-
 BIS_WL_assetInfoActive = false;
 
 addMissionEventHandler ["Map", {
 	params ["_mapIsOpened", "_mapIsForced"];
-	systemChat str _mapIsOpened;
 	if (_mapIsOpened) then {
 		MAP_CONTROL = addMissionEventHandler ["EachFrame", {
 			_shown = false;
@@ -64,7 +39,31 @@ addMissionEventHandler ["Map", {
 				((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlEnable false;
 			};
 		}];
+
+		MAP_CONTROL_CLICK = addMissionEventHandler ["MapSingleClick", {
+			params ["_units", "_pos", "_alt", "_shift"];
+			if (_alt && _shift) then {
+				if !(isNull BIS_WL_mapAssetTarget) then {
+					_vehicles = (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]);
+					if ((BIS_WL_mapAssetTarget in _vehicles) && count crew BIS_WL_mapAssetTarget > 0) then {
+						if (getNumber (configFile >> "CfgVehicles" >> (typeOf BIS_WL_mapAssetTarget) >> "isUav") == 1) then {
+							[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
+						} else {
+							if ((crew BIS_WL_mapAssetTarget) findIf {alive _x} != -1) then {
+								playSound "AddItemFailed";
+								[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;				
+							} else {
+								[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
+							};
+						};
+					} else {
+						[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
+					};
+				};
+			};
+		}];
 	} else {
 		removeMissionEventHandler ["EachFrame", MAP_CONTROL];
+		removeMissionEventHandler ["MapSingleClick", MAP_CONTROL_CLICK];
 	};
 }];
