@@ -1,29 +1,29 @@
-params ["_sender", "_action", "_pos", "_target", "_isStatic", "_direction"];
+params ["_sender", "_action", "_param1", "_param2", "_param3", "_param4"];
 
 if (isNull _sender) exitWith {};
 
 if (_action == "orderAsset") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_target, 50001]);
+	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param2, 50001]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		
-		_class = _target;
+		_class = _param2;
 		if (_class isKindOf "Ship") exitWith {
-			[_sender, _pos, _class] spawn BIS_fnc_orderNaval;
+			[_sender, _param1, _class] spawn BIS_fnc_orderNaval;
 		};
 
 		if (_class isKindOf "Air") exitWith {
-			[_sender, _pos, _class] spawn BIS_fnc_orderAir;
+			[_sender, _param1, _class] spawn BIS_fnc_orderAir;
 		};
 
-		if (_isStatic) exitWith {
-			[_sender, _pos, _class, _direction] spawn BIS_fnc_orderDefence;
+		if (_param3) exitWith {
+			[_sender, _param1, _class, _param4] spawn BIS_fnc_orderDefence;
 		};
 
-		[_sender, _pos, _class, _direction] spawn BIS_fnc_orderGround;
+		[_sender, _param1, _class, _param4] spawn BIS_fnc_orderGround;
 	};
 };
 
@@ -71,7 +71,7 @@ if (_action == "fastTravelContested") exitWith {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
-		_sender setVehiclePosition [_pos, [], 2, "NONE"];
+		_sender setVehiclePosition [_param1, [], 2, "NONE"];
 	};
 };
 
@@ -83,15 +83,15 @@ if (_action == "scan") exitWith {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
-		_target setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], (serverTime + 30), true];
-		_revealTrigger = createTrigger ["EmptyDetector", position _target];
-		_revealTrigger setTriggerArea (_target getVariable "objectArea");
+		_param2 setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], (serverTime + 30), true];
+		_revealTrigger = createTrigger ["EmptyDetector", position _param2];
+		_revealTrigger setTriggerArea (_param2 getVariable "objectArea");
 		_revealTrigger setTriggerActivation ["ANY", "PRESENT", false];
-		_target setVariable ["BIS_WL_revealTrigger", _revealTrigger, true];
-		[_target, side group _sender] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
-		waitUntil {sleep 0.25; BIS_WL_competingSides findIf {(_target getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
+		_param2 setVariable ["BIS_WL_revealTrigger", _revealTrigger, true];
+		[_param2, side group _sender] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
+		waitUntil {sleep 0.25; BIS_WL_competingSides findIf {(_param2 getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
 		deleteVehicle _revealTrigger;
-		_target setVariable ["BIS_WL_revealTrigger", nil, true];
+		_param2 setVariable ["BIS_WL_revealTrigger", nil, true];
 	};
 };
 
@@ -103,7 +103,7 @@ if (_action == "orderFTVehicle") exitWith {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
-		if (_target == west) then {
+		if (_param2 == west) then {
 			if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) then {
 				_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
 				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
@@ -125,7 +125,7 @@ if (_action == "orderFTPod") exitWith {
 		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
-		if (_target == west) then {
+		if (_param2 == west) then {
 			if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
 				_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
 				[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
@@ -157,22 +157,22 @@ if (_action == "targetReset") exitWith {
 };
 
 if (_action == "orderAI") exitWith {
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_pos, 150]);
+	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param1, 150]);
 	private _uid = getPlayerUID _sender;
 	[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 };
 
 if (_action == "fundsTransfer") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
-	if (_playerFunds >= _pos) then {
-		_targetUID = getPlayerUID _target;
+	if (_playerFunds >= _param1) then {
+		_targetUID = getPlayerUID _param2;
 		_uid = getPlayerUID _sender;
 
-		[_targetUID, _pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
-		[_uid, -_pos] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+		[_targetUID, _param1] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+		[_uid, -_param1] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 		{
-			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _target, _pos])] remoteExec ["commandChat", (owner _x)];
+			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1])] remoteExec ["commandChat", (owner _x)];
 		} forEach (allPlayers select {side group _x == side group _sender});
 	};
 };
@@ -193,13 +193,13 @@ if (_action == "fundsTransferBill") exitWith {
 };
 
 if (_action == "repair") exitWith {
-	if ((!isNil {_pos}) && {_pos <= serverTime}) then {
-		_isStatic setDamage _target;
+	if ((!isNil {_param1}) && {_param1 <= serverTime}) then {
+		_param3 setDamage _param2;
 	};
 };
 
 if (_action == "kill") exitWith {
-	if (remoteExecutedOwner == _pos) then {
+	if (remoteExecutedOwner == _param1) then {
 		_sender setDamage 1;
 	};
 };
