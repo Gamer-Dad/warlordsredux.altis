@@ -107,7 +107,7 @@ addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
 _mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enemyBase];
 _mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;
-_mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position BIS_WL_playerBase];
+_mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position ((side group player) call BIS_fnc_WL2_getSideBase)];
 _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 
 {
@@ -123,9 +123,9 @@ player spawn DAPS_fnc_SetupProjectiles;
 call BIS_fnc_WL2_sub_arsenalSetup;
 
 0 spawn {
-	waitUntil {uiSleep WL_TIMEOUT_SHORT; !isNull WL_CONTROL_MAP};
-	WL_CONTROL_MAP ctrlMapAnimAdd [0, 0.35, BIS_WL_playerBase];
-	ctrlMapAnimCommit WL_CONTROL_MAP;
+	waitUntil {uiSleep 0.1; !isNull (uiNamespace getVariable ["BIS_WL_mapControl", controlNull])};
+	(uiNamespace getVariable ["BIS_WL_mapControl", controlNull]) ctrlMapAnimAdd [0, 0.35, ((side group player) call BIS_fnc_WL2_getSideBase)];
+	ctrlMapAnimCommit (uiNamespace getVariable ["BIS_WL_mapControl", controlNull]);
 };
 
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
@@ -142,9 +142,9 @@ call BIS_fnc_WL2_targetResetHandle;
 
 
 0 spawn {
-	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
+	waitUntil {sleep 1; isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])};
 	_t = serverTime + 10;
-	waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {visibleMap}};
+	waitUntil {sleep 0.25; serverTime > _t || {visibleMap}};
 	if !(visibleMap) then {
 		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
 	};
@@ -161,7 +161,7 @@ call BIS_fnc_WL2_targetResetHandle;
 
 0 spawn {
 	_t = serverTime + 10;
-	waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t && !isNull WL_TARGET_FRIENDLY};
+	waitUntil {sleep 1; serverTime > _t && !isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])};
 	sleep WL_TIMEOUT_LONG;
 	while {!BIS_WL_purchaseMenuDiscovered} do {
 		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;

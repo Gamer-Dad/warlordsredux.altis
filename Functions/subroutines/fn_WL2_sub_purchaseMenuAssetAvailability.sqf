@@ -182,4 +182,4 @@ if (_ret) then {
 	};
 };
 
-[_ret, _tooltip, _DLCOwned, _DLCTooltip]
+[_ret, _tooltip, _DLCOwned, _DLCTooltip];
