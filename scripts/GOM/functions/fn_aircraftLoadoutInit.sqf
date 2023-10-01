@@ -342,21 +342,27 @@ GOM_fnc_installPylons = {
 
 	sleep random [0.5,1,2.5];
 
-	[_veh,[_pylonNum,"",true,_pylonOwner]] remoteexec ["setPylonLoadOut",0];
-	[_veh,[_pylonNum,_mag,true,_pylonOwner]] remoteexec ["setPylonLoadOut",0];
-	[_veh,[_pylonNum,0]] remoteexec ["SetAmmoOnPylon",0];
+	_arr1 = [_pylonNum,"",true,_pylonOwner];
+	_arr2 = [_pylonNum,_mag,true,_pylonOwner];
+	if (typeName _arr1 == "ARRAY") then {
+		[_veh, _arr1] remoteExec ["setPylonLoadOut", 0];
+	};
+	if (typeName _arr2 == "ARRAY") then {
+		[_veh, _arr2] remoteExec ["setPylonLoadOut", 0];
+	};
+	[_veh, [_pylonNum, 0]] remoteExec ["SetAmmoOnPylon", 0];
 
 	sleep random [0.5,1,2.5];
 		
 	[_ammosource,_mag,_veh] call GOM_fnc_handleAmmoCost;
 	if (_finalamount <= 24) then {
 		for "_i" from 1 to _finalamount do {
-			[_veh, [_pylonNum,_i]] remoteexec ["SetAmmoOnPylon",0];
+			[_veh, [_pylonNum,_i]] remoteExec ["SetAmmoOnPylon",0];
 			_sound = [_veh,_pylonNum-1] call GOM_fnc_pylonSound;
 			sleep random [0.5,1,2.5];
 		};
 	} else {
-		[_veh,[_pylonNum,_finalamount]] remoteexec ["SetAmmoOnPylon",0];
+		[_veh,[_pylonNum,_finalamount]] remoteExec ["SetAmmoOnPylon",0];
 		_sound = [_veh,_pylonNum-1] call GOM_fnc_pylonSound;
 		sleep random [0.5,1,2.5];
 	};
@@ -381,8 +387,11 @@ GOM_fnc_clearAllPylons = {
 	};
 	_activePylonMags = GetPylonMagazines _veh;
 	{
-		[_veh,[_foreachIndex + 1,"",true]] remoteexec ["setPylonLoadOut",0];
-		[_veh,[_foreachIndex + 1,0]] remoteexec ["SetAmmoOnPylon",0];
+		_arr = [_foreachIndex + 1, "", true];
+		if (typeName _arr == "ARRAY") then {
+			[_veh, _arr] remoteExec ["setPylonLoadOut", 0];
+		};
+		[_veh, [_foreachIndex + 1,0]] remoteExec ["SetAmmoOnPylon", 0];
 		if (!_nosound) then {
 			_sound = [_veh,_foreachindex] call GOM_fnc_pylonSound;
 		};
@@ -472,13 +481,15 @@ GOM_fnc_setPylonsRearm = {
 
 	if (_rearm) exitWith {
 
-		[_obj] call GOM_fnc_clearAllPylons;
+		_obj call GOM_fnc_clearAllPylons;
 			_pylonOwners = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwners",[]];
 
 		{
 			_pylonOwner = if (_pylonOwners isequalto []) then {[]} else {_pylonOwners select (_foreachindex + 1)};
-
-			[_veh,[_foreachindex+1,_x,true,_pylonOwner]] remoteexec ["setPylonLoadOut",0] ;
+			_arr = [_foreachindex + 1, _x, true, _pylonOwner];
+			if (typeName _arr == "ARRAY") then {
+				[_veh, _arr] remoteExec ["setPylonLoadOut", 0];
+			};
 			[_veh,[_foreachIndex + 1,0]] remoteexec ["SetAmmoOnPylon",0] ;
 		} foreach _pylons;
 
