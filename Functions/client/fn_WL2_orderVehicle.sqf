@@ -17,7 +17,6 @@ if (_class isKindOf "Man") then {
 
 	_asset setDir direction player;
 	_asset lock 2;
-	_asset allowDamage false;
 	_asset attachTo [player, _offset];
 	_h = (position _asset) # 2;
 	detach _asset;

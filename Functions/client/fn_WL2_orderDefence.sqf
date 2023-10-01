@@ -18,7 +18,6 @@ _asset = createSimpleObject [_class, (AGLToASL (player modelToWorld _offset)), t
 _asset setDir direction player;
 _asset lock 2;
 _asset enableWeaponDisassembly false;
-_asset allowDamage false;
 _asset attachTo [player, _offset];
 _h = (position _asset) # 2;
 detach _asset;

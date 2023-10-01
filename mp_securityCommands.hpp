@@ -1,5 +1,13 @@
 class CfgDisabledCommands
 {
+    class ALLOWDAMAGE 
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{"OBJECT"},{"BOOL"}};
+        };
+    };
     class CREATE3DENENTITY
     {
         class SYNTAX1
