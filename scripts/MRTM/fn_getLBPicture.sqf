@@ -11,6 +11,6 @@ if ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invite
 
 if ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []])) exitWith {"Img\red_arrow_ca.paa"};
 
-if (!(_unit in (units player)) && {count ((units _unit) select {isPlayer _x}) > 1}) exitwith {"\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa"};
+if (count ((units _unit) select {isPlayer _x}) > 1) exitwith {"\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa"};
 
 "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_toolbox_units_ca.paa";

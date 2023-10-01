@@ -6,7 +6,7 @@
 
 _data = lbData [4006, (lbCurSel 4006)];
 _unit = _data call BIS_fnc_getUnitByUID;
-ctrlEnable [4101, (!((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), []])) && {(leader player == player)})];
+ctrlEnable [4101, (!((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), []])) && {(leader player == player) && {(count ((units _unit) select {isPlayer _x}) == 1)}})];
 ctrlShow [4105, ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []]))];
 ctrlShow [4102, ((getPlayerUID _unit) in (missionNamespace getVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), []]))];
 

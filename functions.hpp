@@ -214,7 +214,6 @@ class CfgFunctions {
 			class invite {};
 			class accept {};
 			class onButtonClick {};
-			class onLBSelChangedTraits {};
 			class openEmoteMenu {};
 			class emote {};
 			class settingsinit {};
