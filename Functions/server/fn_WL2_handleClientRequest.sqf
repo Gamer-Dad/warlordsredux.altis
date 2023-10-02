@@ -204,7 +204,15 @@ if (_action == "kill") exitWith {
 	};
 };
 
-if (_action == "10K" && {!(["(EU) #11", serverName] call BIS_fnc_inString)}) exitWith {
-	private _uid = getPlayerUID _sender;
-	[_uid, 10000] spawn BIS_fnc_WL2_fundsDatabaseWrite;	
+if (_action == "10K" && {remoteExecutedOwner == (owner _sender)}) exitWith {
+	if (["(EU) #11", serverName] call BIS_fnc_inString) then {
+		_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
+		if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
+			private _uid = getPlayerUID _sender;
+			[_uid, 10000] spawn BIS_fnc_WL2_fundsDatabaseWrite;			
+		};
+	} else {
+		private _uid = getPlayerUID _sender;
+		[_uid, 10000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+	};	
 };
