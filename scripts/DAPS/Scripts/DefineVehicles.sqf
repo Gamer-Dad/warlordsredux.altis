@@ -80,6 +80,11 @@ _mediumBlockList = [
 	"Missile_AGM_02_F", 		// Macer II
 	"M_120mm_cannon_ATGM_LG", 	// Rhino ATGM LG
 	"M_127mm_Firefist_AT", 		// Nyx AT
+	"R_80mm_HE", 				// Skyfire
+	"Rocket_03_AP_F",			// Tratnyr 
+	"Rocket_03_HE_F",
+	"Rocket_04_AP_F", 			// Shrieker
+	"Rocket_04_HE_F",
 	"M_AT", 					// DAR
 	"M_PG_AT", 					// DAGR
 	"M_Scalpel_AT", 			// Skalpel
