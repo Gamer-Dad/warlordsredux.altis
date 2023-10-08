@@ -12,7 +12,7 @@ if (_cost > _funds) then {_ret = false; _tooltip = localize "STR_A3_WL_low_funds
 if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr6"};
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
-if (_ret) then {
+if (_ret && {!isNil _class}) then {
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};

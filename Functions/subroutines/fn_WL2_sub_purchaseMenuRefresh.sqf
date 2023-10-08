@@ -32,8 +32,8 @@ for "_i" from 0 to ((lbSize _purchase_items) - 1) do {
 		"_text",
 		"_offset"
 	];
-	
-	_requirements = call compile _requirements;
+
+	_requirements = if (isNil _requirements) then {[]} else {call compile _requirements};
 	_category = WL_REQUISITION_CATEGORIES # ((lbCurSel _purchase_category) max 0);
 	_availability = call BIS_fnc_WL2_sub_purchaseMenuAssetAvailability;
 	if (!(_availability # 0)) then {
