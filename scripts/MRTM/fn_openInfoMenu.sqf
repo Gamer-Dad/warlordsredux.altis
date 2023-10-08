@@ -22,7 +22,7 @@ private _groups = actionKeysNames "user3";
 private _emotes = actionKeysNames "user4";
 ((findDisplay 7000) displayCtrl 7102) ctrlSetStructuredText composeText [
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Feedback:" splitString " " joinString toString [160]], lineBreak,
-	parseText format ["<a href='https://forms.gle/eV5D2JgVyuL5MQfo6'>%1</a>", "Let us know how you feel about the game." splitString " " joinString toString [160]], lineBreak,
+	parseText format ["<a href='https://forms.gle/1VH74anTdRMvwJSG9'>%1</a>", "Let us know how you feel about the game." splitString " " joinString toString [160]], lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Report bugs:" splitString " " joinString toString [160]], lineBreak,
 	parseText format ["<a href='https://forms.gle/p2tqr52wdgXtvMs56'>%1</a>", "Report bugs here or in our discord." splitString " " joinString toString [160]], lineBreak,
 	"", lineBreak,
