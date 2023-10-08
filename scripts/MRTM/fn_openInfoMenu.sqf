@@ -24,7 +24,7 @@ private _emotes = actionKeysNames "user4";
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Feedback:" splitString " " joinString toString [160]], lineBreak,
 	parseText format ["<a href='https://forms.gle/eV5D2JgVyuL5MQfo6'>%1</a>", "Let us know how you feel about the game." splitString " " joinString toString [160]], lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Report bugs:" splitString " " joinString toString [160]], lineBreak,
-	parseText format ["<a href='https://forms.gle/vjjaD9huetpoF1ka8'>%1</a>", "Report bugs here or in our discord." splitString " " joinString toString [160]], lineBreak,
+	parseText format ["<a href='https://forms.gle/p2tqr52wdgXtvMs56'>%1</a>", "Report bugs here or in our discord." splitString " " joinString toString [160]], lineBreak,
 	"", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Capturing values:" splitString " " joinString toString [160]], lineBreak,
 	"If the asset isn't mentioned it has 0 capturing power. The crew of a vehicle does not add up to the vehicle's capping power.", lineBreak,
