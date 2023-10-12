@@ -36,7 +36,7 @@ BIS_WL_lastLoadoutCost = 100;
 BIS_WL_savedLoadoutCost = 500;
 BIS_WL_baseValue = 50;
 BIS_WL_autonomous_limit = 2;
-BIS_WL_minAPSDist = 400; //actual range = √x
+BIS_WL_minAPSDist = 1500; //actual range = √x
 BIS_WL_maxAPSDist = 1600; //actual range = √x
 
 onPauseScript[] = {BIS_fnc_WL2_onPause};
