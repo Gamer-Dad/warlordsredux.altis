@@ -144,13 +144,11 @@ switch (_displayClass) do {
 		
 		_myDisplay displayAddEventHandler ["KeyDown", {
 			_key = _this # 1;
-			_key1 = actionKeysNames "curatorInterface";
-			_keyName = (keyName (_this select 1));
 			if (_key in actionKeys "Gear" && !BIS_WL_gearKeyPressed) then {
 				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 				true;
 			};
-			if (_keyName == _key1) then {
+			if (_key in actionKeys "curatorInterface") then {
 				if !((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
 					true;
 				};
