@@ -95,12 +95,65 @@ addMissionEventHandler ["MarkerCreated", {
 	waituntil {sleep 0.1; !isnull (findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
 		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
-		private _settingsKey = actionKeysNames "user2";
-		private _groupKey = actionKeysNames "user3";
-		private _emotesKey = actionKeysNames "user4";
-		private _keyName = (keyName _key);
+		private _e = false;
+		private _settingsKey = actionKeys "user2";
+		private _groupKey = actionKeys "user3";
+		private _emotesKey = actionKeys "user4";
+		private _zeusKey = actionKeys "curatorInterface";
+		private _viewKey = actionKeys "tacticalView";
+		_e = ((_key in _viewKey || {_key in _zeusKey}) && {!((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs")))});
+
+		if (inputAction "cycleThrownItems" > 0.01) exitWith {
+			[vehicle player, 0, false] spawn DAPS_fnc_Report;
+		};
+
+		if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
+			if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
+				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+			} else {
+				BIS_WL_gearKeyPressed = TRUE;
+				0 spawn {
+					_t = time + 0.5;
+					waitUntil {!BIS_WL_gearKeyPressed || {time >= _t}};
+					if (time < _t) then {
+						if (isNull findDisplay 602) then {
+							if (vehicle player == player) then {
+								if (cursorTarget distanceSqr player <= 25 && {!(cursorTarget isKindOf "House") && {(!alive cursorTarget || {!(cursorTarget isKindOf "Man")})}}) then {
+									player action ["Gear", cursorTarget];
+								} else {
+									player action ["Gear", objNull];
+								};
+							} else {
+								vehicle player action ["Gear", vehicle player];
+							};
+						} else {
+							closeDialog 602;
+						};
+					} else {
+						if (BIS_WL_gearKeyPressed && {!(player getVariable ["BIS_WL_menuLocked", false])}) then {
+							if (BIS_WL_currentSelection in [0, 2]) then {
+								["RequestMenu_open"] call BIS_fnc_WL2_setupUI;
+							} else {
+								playSound "AddItemFailed";
+								_action = switch (BIS_WL_currentSelection) do {
+									case 1: {localize "STR_A3_WL_popup_voting"};
+									case 3;
+									case 8: {localize "STR_A3_WL_action_destination_select"};
+									case 4;
+									case 5;
+									case 7: {localize "STR_A3_WL_action_scan_select"};
+									default {""};
+								};
+								[toUpper format [(localize "STR_A3_WL_another_action") + (if (_action == "") then {"."} else {" (%1)."}), _action]] spawn BIS_fnc_WL2_smoothText;
+							};
+						};
+					};
+				};
+			};
+			_e = true;
+		};
 		
-		if (_keyName == _settingsKey) exitWith {
+		if (_key in _settingsKey) exitWith {
 			private _d = [4000, 5000, 6000, 7000, 8000];
 			{
 				if !(isNull (findDisplay _x)) then {
@@ -109,7 +162,7 @@ addMissionEventHandler ["MarkerCreated", {
 			} forEach _d;
 			0 spawn MRTM_fnc_openMenu;
 		};
-		if (_keyName == _groupKey) exitWith {
+		if (_key in _groupKey) exitWith {
 			private _d = [4000, 5000, 6000, 7000, 8000];
 			{
 				if !(isNull (findDisplay _x)) then {
@@ -118,7 +171,7 @@ addMissionEventHandler ["MarkerCreated", {
 			} forEach _d;
 			true spawn MRTM_fnc_openGroupMenu;
 		};
-		if (_keyName == _emotesKey) exitWith {
+		if (_key in _emotesKey) exitWith {
 			private _d = [4000, 5000, 6000, 7000, 8000];
 			{
 				if !(isNull (findDisplay _x)) then {
@@ -127,12 +180,6 @@ addMissionEventHandler ["MarkerCreated", {
 			} forEach _d;
 			0 spawn MRTM_fnc_openEmoteMenu;
 		};
-
-		private _zeusKey = actionKeysNames "curatorInterface";
-		private _viewKey = actionKeysNames "tacticalView";
-		private _e = false;
-		_e = (_keyName == _zeusKey && {!((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs")))});
-		_e = (_keyName == _viewKey);
 		_e;
 	}];
 };

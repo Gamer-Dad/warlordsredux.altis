@@ -29,14 +29,6 @@ dapsAPSAll = dapsAPStypes + dapsDazzler;
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 sleep 1;
 
-waituntil {sleep 0.1; !isnull (findDisplay 46)};
-(findDisplay 46) displayAddEventHandler ["KeyDown", {
-    if (inputAction "cycleThrownItems" > 0.01) then {
-        [vehicle player, 0, false] spawn DAPS_fnc_Report;
-    };
-}];
-
-
 dapsReady=TRUE;
 if(isServer)then{
 	sleep 5;
