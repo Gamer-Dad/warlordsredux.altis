@@ -122,7 +122,7 @@ serverNamespace setVariable ["BIS_WL2_costs",
 		["B_Quadbike_01_F", 20], ["B_LSV_01_unarmed_F", 100], ["B_MRAP_01_F", 300], ["B_LSV_01_armed_F", 300], ["B_G_Offroad_01_armed_F", 150], ["B_LSV_01_AT_F", 750], ["B_G_Offroad_01_AT_F", 500],
 		["B_MRAP_01_hmg_F", 1000], ["B_MRAP_01_gmg_F", 1250], ["B_Truck_01_ammo_F", 1000], ["B_Truck_01_Repair_F", 1000], ["B_Truck_01_fuel_F", 1000], ["O_T_Truck_03_device_ghex_F", 1500],
 		["B_Truck_01_transport_F", 200], ["B_Truck_01_flatbed_F", 500], ["B_APC_Wheeled_03_cannon_F", 2500], ["B_APC_Wheeled_01_cannon_F", 3200], ["B_APC_Tracked_01_rcws_F", 1800], ["B_APC_Tracked_01_AA_F", 5000],
-		["B_AFV_Wheeled_01_cannon_F", 4000], ["B_AFV_Wheeled_01_up_cannon_F", 4500], ["B_MBT_01_cannon_F", 6000], ["B_MBT_01_TUSK_F", 7000], ["B_MBT_01_arty_F", 20000], ["B_MBT_01_mlrs_F", 20000], 
+		["B_AFV_Wheeled_01_cannon_F", 4500], ["B_AFV_Wheeled_01_up_cannon_F", 5000], ["B_MBT_01_cannon_F", 6000], ["B_MBT_01_TUSK_F", 7000], ["B_MBT_01_arty_F", 20000], ["B_MBT_01_mlrs_F", 20000], 
 		
 		["O_Quadbike_01_F", 20], ["O_LSV_02_unarmed_F", 100], ["O_MRAP_02_F", 300], ["O_LSV_02_armed_F", 300], ["O_G_Offroad_01_armed_F", 150], ["O_LSV_02_AT_F", 750], ["O_G_Offroad_01_AT_F", 500],
 		["O_MRAP_02_hmg_F", 1000], ["O_MRAP_02_gmg_F", 1250], ["O_Truck_03_ammo_F", 1000], ["O_Truck_03_Repair_F", 1000], ["O_Truck_03_Fuel_F", 1000],  ["O_Truck_03_device_F", 1500],
@@ -130,12 +130,12 @@ serverNamespace setVariable ["BIS_WL2_costs",
 		["O_MBT_04_cannon_F", 13000], ["O_MBT_04_command_F", 15000], ["O_MBT_02_railgun_F", 16000],["O_MBT_02_arty_F", 20000], ["I_Truck_02_MRL_F", 18000], 
 		
 		//Aircraft
-		["B_Heli_Light_01_F", 300], ["B_Heli_Transport_01_F", 800], ["B_Heli_Transport_03_F", 1000], ["B_Heli_Light_01_dynamicLoadout_F", 4000],
-		["B_UAV_02_dynamicLoadout_F", 12000], ["B_Heli_Attack_01_dynamicLoadout_F", 13000], ["B_T_UAV_03_dynamicLoadout_F", 16000], ["B_UAV_05_F", 18000],
+		["B_Heli_Light_01_F", 300], ["B_Heli_Transport_01_F", 800], ["B_Heli_Transport_03_F", 1000], ["B_Heli_Light_01_dynamicLoadout_F", 2500],
+		["B_UAV_02_dynamicLoadout_F", 12000], ["B_Heli_Attack_01_dynamicLoadout_F", 13000], ["B_T_UAV_03_dynamicLoadout_F", 13000], ["B_UAV_05_F", 15000],
 		["B_T_VTOL_01_infantry_F", 2000], ["B_T_VTOL_01_vehicle_F", 2000], ["B_T_VTOL_01_armed_F", 8000], ["B_Plane_CAS_01_dynamicLoadout_F", 15000], ["B_Plane_Fighter_01_F", 30000], ["B_Plane_Fighter_01_Stealth_F", 30000],
 		
-		["O_Heli_Light_02_unarmed_F", 500], ["O_Heli_Transport_04_F", 500], ["O_Heli_Transport_04_covered_F", 400], ["O_Heli_Transport_04_medevac_F", 500], ["O_Heli_Light_02_dynamicLoadout_F", 6500], 
-		["O_T_UAV_04_CAS_F", 8000], ["O_Heli_Attack_02_dynamicLoadout_F", 10000], ["O_UAV_02_dynamicLoadout_F", 12000], ["O_T_VTOL_02_vehicle_dynamicLoadout_F", 15000],
+		["O_Heli_Light_02_unarmed_F", 500], ["O_Heli_Transport_04_F", 500], ["O_Heli_Transport_04_covered_F", 400], ["O_Heli_Transport_04_medevac_F", 500], ["O_Heli_Light_02_dynamicLoadout_F", 4000], 
+		["O_T_UAV_04_CAS_F", 8000], ["O_Heli_Attack_02_dynamicLoadout_F", 10000], ["O_UAV_02_dynamicLoadout_F", 10000], ["O_T_VTOL_02_vehicle_dynamicLoadout_F", 14000],
 		["O_Plane_CAS_02_dynamicLoadout_F", 20000], ["O_Plane_Fighter_02_F", 32000], ["O_Plane_Fighter_02_Stealth_F", 32000],
 		
 		//Naval
