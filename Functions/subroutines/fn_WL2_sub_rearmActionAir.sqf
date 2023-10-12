@@ -20,11 +20,7 @@ while {alive _asset} do {
 						_asset selectWeapon _curWeapon;
 
 						[player] spawn GOM_fnc_aircraftLoadout;
-						_rearmTime = switch true do {
-							case (_asset isKindOf "Helicopter"): { WL_MAINTENANCE_COOLDOWN_REARM_Helicopter };
-							case (_asset isKindOf "Plane"): { WL_MAINTENANCE_COOLDOWN_REARM_Jets };
-							default { WL_MAINTENANCE_COOLDOWN_REARM };
-						};
+						_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
 						_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
 						
 						playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
