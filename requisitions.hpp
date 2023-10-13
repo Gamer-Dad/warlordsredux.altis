@@ -33,9 +33,9 @@ class CfgWLRequisitionPresets
 			class Vehicles
 			{
 				class B_Quadbike_01_F						{cost =  20;	requirements[]={};	};	// "Quad Bike"
-				class B_LSV_01_unarmed_F					{cost = 100;	requirements[]={};	};	// "Prowler (Unarmed)"
+				//class B_LSV_01_unarmed_F					{cost = 100;	requirements[]={};	};	// "Prowler (Unarmed)"
 				class B_MRAP_01_F							{cost = 300;	requirements[]={};	};	// "Hunter"
-				class B_LSV_01_armed_F						{cost = 300;	requirements[]={};	};	// "Prowler (HMG)"
+				class B_LSV_01_armed_F						{cost = 200;	requirements[]={};	};	// "Prowler (HMG)"
 				class B_G_Offroad_01_armed_F				{cost = 150;	requirements[]={};	};	// "Offroad (HMG)"
 				class B_LSV_01_AT_F							{cost = 750;	requirements[]={};	};	// "Prowler (AT)"
 				class B_G_Offroad_01_AT_F					{cost = 500;	requirements[]={};	};	// "Offroad (AT)"
@@ -158,9 +158,9 @@ class CfgWLRequisitionPresets
 			class Vehicles
 			{
 				class O_Quadbike_01_F						{cost = 20;		requirements[]={};	};	// "Quad Bike"
-				class O_LSV_02_unarmed_F					{cost = 100;	requirements[]={};	};	// "Qilin (Unarmed)"
+				//class O_LSV_02_unarmed_F					{cost = 100;	requirements[]={};	};	// "Qilin (Unarmed)"
 				class O_MRAP_02_F							{cost = 300;	requirements[]={};	};	// "Ifrit"
-				class O_LSV_02_armed_F						{cost = 300;	requirements[]={};	};	// "Qilin (Minigun)"
+				class O_LSV_02_armed_F						{cost = 200;	requirements[]={};	};	// "Qilin (Minigun)"
 				class O_G_Offroad_01_armed_F				{cost = 150;	requirements[]={};	};	// "Offroad (HMG)"
 				class O_LSV_02_AT_F							{cost = 750;	requirements[]={};	};	// "Qilin (AT)"
 				class O_G_Offroad_01_AT_F					{cost = 500;	requirements[]={};	};	// "Offroad (AT)"
