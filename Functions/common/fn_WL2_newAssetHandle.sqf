@@ -45,7 +45,7 @@ if (isPlayer _owner) then {
 			_rearmTime = switch true do {
 				case (_asset isKindOf "Helicopter"): {30};
 				case (_asset isKindOf "Plane"): {30};
-				default {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])}
+				default {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
 			};
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
