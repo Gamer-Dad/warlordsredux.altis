@@ -42,15 +42,7 @@ if (isPlayer _owner) then {
 				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
 			};
 
-			_rearmTime = switch true do {
-				case (_asset isKindOf "Helicopter"): { 30 };
-				case (_asset isKindOf "Plane"): { 30 };
-				case (_asset isKindOf "B_MBT_01_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-				case (_asset isKindOf "O_MBT_02_arty_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-				case (_asset isKindOf "B_MBT_01_mlrs_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-				case (_asset isKindOf "I_Truck_02_MRL_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Artillery };
-				default { WL_MAINTENANCE_COOLDOWN_REARM };
-			};
+			_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
 			if (_asset isKindOf "Air") then {
@@ -72,17 +64,7 @@ if (isPlayer _owner) then {
 				};
 			};
 		} else {
-			_rearmTime = switch true do {
-				case (_asset isKindOf "B_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
-				case (_asset isKindOf "O_Mortar_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Mortar };
-				case (_asset isKindOf "B_AAA_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Preatorian };
-				case (_asset isKindOf "B_SAM_System_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Spartan };
-				case (_asset isKindOf "B_SAM_System_03_F"): { WL_MAINTENANCE_COOLDOWN_REARM_DefenderRhea };
-				case (_asset isKindOf "O_SAM_System_04_F"): { WL_MAINTENANCE_COOLDOWN_REARM_Centurion };
-				case (_asset isKindOf "B_Ship_MRLS_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
-				case (_asset isKindOf "B_Ship_Gun_01_F"): { WL_MAINTENANCE_COOLDOWN_REARM_VLS };
-				default {WL_MAINTENANCE_COOLDOWN_REARM};
-			};
+			_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 			_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
