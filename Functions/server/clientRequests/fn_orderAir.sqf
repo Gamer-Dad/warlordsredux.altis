@@ -37,7 +37,20 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset setDir _dir;
 	};
 
-	private _group = createVehicleCrew _asset;
+	private _vehCfg = configFile >> "CfgVehicles" >> _class; 
+	private _crewCount = { 
+		round getNumber (_x >> "dontCreateAI") < 1 && 
+		((_x == _vehCfg && { round getNumber (_x >> "hasDriver") > 0 }) || 
+		(_x != _vehCfg && { round getNumber (_x >> "hasGunner") > 0 })) 
+	} count ([_class, configNull] call BIS_fnc_getTurrets);
+	private _myArray = [0];
+	_myArray resize _crewCount;
+	private _group = createGroup (side group _sender);
+	private _ai = if (side group _sender == west) then {"B_UAV_AI"} else {"O_UAV_AI"};
+	{
+		private _unit = _group createUnit [_ai, _pos, [], 0, "NONE"];
+		_unit moveInAny _asset;
+	} forEach _myArray;
 	_group deleteGroupWhenEmpty true;
 } else {
 	_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && {!(_class isKindOf "VTOL_Base_F")};
