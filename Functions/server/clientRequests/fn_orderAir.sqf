@@ -12,7 +12,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		if (count _posFinal == 0) then {
 			_posFinal = _pos1;
 		};
-		_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
+		_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
 		_grp = createVehicleCrew _asset;
 		_grp deleteGroupWhenEmpty true;
 		_asset setDir (direction _sender);
