@@ -69,14 +69,6 @@ addMissionEventHandler ["HandleDisconnect", {
 	0 spawn BIS_fnc_WL2_calcImbalance;
 }];
 
-serverNamespace setVariable ["wordsFilter", ["n1gg","nigg","n3g3r","neger","niger","nigger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape"]];
-addMissionEventHandler ["HandleChatMessage", {
-	params ["_channel", "_owner", "_from", "_text"];
-	_text = toLower _text;
-	_list = serverNamespace getVariable ["wordsFilter", []];
-	((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
-}];
-
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator"];
 	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
