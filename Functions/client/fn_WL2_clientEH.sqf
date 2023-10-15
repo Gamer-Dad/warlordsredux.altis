@@ -90,11 +90,10 @@ addMissionEventHandler ["MarkerCreated", {
 	};
 }];
 
-missionNamespace setVariable ["wordsFilter", ["n1gg","nigg","n3g3r","neger","niger","nigger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape"]];
 addMissionEventHandler ["HandleChatMessage", {
 	params ["_channel", "_owner", "_from", "_text"];
 	_text = toLower _text;
-	_list = missionNamespace getVariable ["wordsFilter", []];
+	_list = ["n1gg","nigg","n3g3r","neger","niger","nigger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape"];
 	((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
 }];
 
