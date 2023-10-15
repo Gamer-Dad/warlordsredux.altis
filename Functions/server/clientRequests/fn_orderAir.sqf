@@ -43,10 +43,10 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		while {(count (crew _asset)) != 2 && {_checks < 100}} do {
 			_checks = _checks + 1;
 			deleteVehicleCrew _asset;
-			sleep 0.2;
+			sleep 0.5;
 			_grp = createVehicleCrew _asset;
 			_grp deleteGroupWhenEmpty true;			
-			sleep 0.2;
+			sleep 0.5;
 		};
 	};
 } else {
