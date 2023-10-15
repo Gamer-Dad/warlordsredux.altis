@@ -1,5 +1,7 @@
 #include "..\warlords_constants.inc"
 
+call BIS_fnc_WL2_sectorNameInit;
+
 BIS_WL_sectorLinks = [];
 _i = 0;
 
@@ -88,5 +90,3 @@ _i = 0;
 	_agentGrp addGroupIcon ["selector_selectable", [0, 0]];
 	_agentGrp setGroupIconParams [[0,0,0,0], "", 1, FALSE];
 } forEach BIS_WL_allSectors;
-
-call BIS_fnc_WL2_sectorNameInit;
