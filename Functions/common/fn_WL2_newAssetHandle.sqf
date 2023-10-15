@@ -114,7 +114,7 @@ if (isPlayer _owner) then {
 
 		if (profileNamespace getVariable ["MRTM_spawnEmpty", false]) then {
 			if !(typeOf _asset == "B_supplyCrate_F" || typeOf _asset == "O_supplyCrate_F") then {
-				if !(_asset in (getArray (missionConfigFile >> "logisticsConfig" >> "cargoTypes" >> "Cargo"))) then {
+				if !((typeOf _asset) in (getArray (missionConfigFile >> "logisticsConfig" >> "cargoTypes" >> "Cargo"))) then {
 					clearMagazineCargoGlobal _asset;
 					clearItemCargoGlobal _asset;
 					clearWeaponCargoGlobal _asset;
