@@ -74,7 +74,6 @@ addMissionEventHandler ["HandleChatMessage", {
 	params ["_channel", "_owner", "_from", "_text", "_person", "_name", "_strID", "_forcedDisplay", "_isPlayerMessage", "_sentenceType", "_chatMessageType"];
 	_text = toLower _text;
 	_list = serverNamespace getVariable ["wordsFilter", []];
-	[format ["%1, %2, %3", _text, _list, ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1)]] remoteExec ["hint", 0];
 	((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
 }];
 
