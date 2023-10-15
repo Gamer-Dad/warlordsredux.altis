@@ -13,6 +13,8 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 			_posFinal = _pos1;
 		};
 		_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
+		_grp = createVehicleCrew _asset;
+		_grp deleteGroupWhenEmpty true;
 		_asset setDir (direction _sender);
 	} else {
 		private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
@@ -34,11 +36,10 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		};
 
 		_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
+		_grp = createVehicleCrew _asset;
+		_grp deleteGroupWhenEmpty true;
 		_asset setDir _dir;
 	};
-
-	_grp = createVehicleCrew _asset;
-	_grp deleteGroupWhenEmpty true;
 } else {
 	_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && {!(_class isKindOf "VTOL_Base_F")};
 	if (_isPlane) then {
