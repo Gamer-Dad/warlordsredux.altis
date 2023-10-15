@@ -95,7 +95,6 @@ class CfgFunctions {
 			class WL2_tablesSetUp {};
 			class WL2_handleClientRequest {};
 			class WL2_forfeitHandleServer {};
-			class WL2_setOwner {};
 			class WL2_forgiveTeamkill {};
 			class WL2_createUAVCrew {};
     	};
