@@ -25,6 +25,7 @@ _penalty spawn {
 	((findDisplay 46) displayCtrl 994000) ctrlSetPosition [safeZoneX + 0.1, safeZoneY + (safeZoneH * 0.5), safeZoneW, safeZoneH];
 	((findDisplay 46) displayCtrl 994000) ctrlCommit 0;
 	
+	player setVariable ["BIS_WL_incomeBlocked", true, [clientOwner, 2]];
 	while {_penaltyEnd > serverTime} do {
 		((findDisplay 46) displayCtrl 994000) ctrlSetStructuredText parseText format [
 			"<t shadow = '0'><t size = '%1' color = '#ff4b4b'>%2</t><br/><t size = '%3'>%4</t></t>",
@@ -33,8 +34,9 @@ _penalty spawn {
 			(1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
 			localize "STR_A3_mission_failed_friendly_fire"
 		];
-		sleep WL_TIMEOUT_SHORT;
+		sleep 1;
 	};
+	player setVariable ["BIS_WL_incomeBlocked", false, [clientOwner, 2]];
 	
 	ctrlDelete ((findDisplay 46) displayCtrl 994001);
 	ctrlDelete ((findDisplay 46) displayCtrl 994000);
