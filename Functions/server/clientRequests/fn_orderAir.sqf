@@ -37,18 +37,8 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset setDir _dir;
 	};
 
-	_asset spawn {
-		params ["_asset"];
-		private _checks = 0;
-		while {(count (crew _asset)) != 2 && {_checks < 100}} do {
-			_checks = _checks + 1;
-			deleteVehicleCrew _asset;
-			sleep 0.5;
-			_grp = createVehicleCrew _asset;
-			_grp deleteGroupWhenEmpty true;			
-			sleep 0.5;
-		};
-	};
+	_grp = createVehicleCrew _asset;
+	_grp deleteGroupWhenEmpty true;
 } else {
 	_isPlane = (toLower getText (configFile >> "CfgVehicles" >> _class >> "simulation")) in ["airplanex", "airplane"] && {!(_class isKindOf "VTOL_Base_F")};
 	if (_isPlane) then {
