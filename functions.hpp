@@ -143,23 +143,23 @@ class CfgFunctions {
 		class MineCleanup 
 		{
 			file = "Functions\server\mineCleanup";
-			class WL2_handleApersMine {};
-			class WL2_handleApersBoundingMineMag {};
-			class WL2_HandleApersDispenserAmmo {};
-			class WL2_HandleATMineAmmo {};
-			class WL2_handleM6SlamMineMag {};
-			class WL2_handleM6SlamMineAmmo {};
-			class WL2_handleClaymoreChargeAmmo {};
-			class WL2_HandleExplosiveSatchel {};
-			class WL2_handleExplosiveCharge {};
-			class WL2_handleLargeIEDUrban {};
-			class WL2_handleLargeIED {};
-			class WL2_handleSmallIEDUrban {};
-			class WL2_handleSmallIED {};
-			class WL2_handleApersTripWireAmmo {};
-			class WL2_handleApersTripWireMag {};
-			class WL2_handleSatchelCharge {};
-			class WL2_handleDemoCharge {};
+			class HandleAPERSMine_Range_Ammo {};
+			class handleApersBoundingMineMag {};
+			class HandleAPERSMineDispenser_Mine_Ammo {};
+			class HandleATMine_Range_Ammo {};
+			class HandleSLAMDirectionalMine_Wire_Mag {};
+			class HandleSLAMDirectionalMine_Wire_Ammo {};
+			class HandleClaymoreDirectionalMine_Remote_Ammo {};
+			class HandleSatchelCharge_Remote_Mag {};
+			class HandleDemoCharge_Remote_Mag {};
+			class HandleIEDUrbanBig_Remote_Mag {};
+			class HandleIEDLandBig_Remote_Mag {};
+			class HandleIEDUrbanSmall_Remote_Mag {};
+			class HandleIEDLandSmall_Remote_Mag {};
+			class HandleAPERSTripMine_Wire_Ammo {};
+			class HandleAPERSTripMine_Wire_Mag {};
+			class HandleSatchelCharge_Remote_Ammo {};
+			class HandleDemoCharge_Remote_Ammo {};
 		};
 		class Sectors
 		{
