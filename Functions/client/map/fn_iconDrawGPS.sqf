@@ -8,7 +8,7 @@ if (
 {
 	_m drawIcon [
 		"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
-		[1, 0, 0, 1],
+		[1, 0, 0, 0.8],
 		_x call BIS_fnc_getPos,
 		20,
 		20,
