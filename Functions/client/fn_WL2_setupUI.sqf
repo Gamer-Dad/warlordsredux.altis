@@ -6,109 +6,107 @@ waitUntil {!isNull (findDisplay 46)};
 
 // OSD equals the lower right hand HUD stuff for the most part
 
-switch (_displayClass) do {
-	case "OSD": {
-		{
-			_x params ["_var", "_type"];
-			uiNamespace setVariable [_var, (findDisplay 46) ctrlCreate [_type, -1]];
-		} forEach [
-			["BIS_WL_osd_cp_current", "RscStructuredText"],
-			["BIS_WL_osd_icon_side_1", "RscPictureKeepAspect"],
-			["BIS_WL_osd_sectors_side_1", "RscStructuredText"],
-			["BIS_WL_osd_income_side_1", "RscStructuredText"],
-			["BIS_WL_osd_icon_side_2", "RscPictureKeepAspect"],
-			["BIS_WL_osd_sectors_side_2", "RscStructuredText"],
-			["BIS_WL_osd_income_side_2", "RscStructuredText"],
-			["BIS_WL_osd_progress_background", "RscText"],
-			["BIS_WL_osd_progress", "RscProgress"],
-			["BIS_WL_osd_action_title", "RscStructuredText"],
-			["BIS_WL_osd_progress_voting_background", "RscText"],
-			["BIS_WL_osd_progress_voting", "RscProgress"],
-			["BIS_WL_osd_action_voting_title", "RscStructuredText"],
-			["BIS_WL_osd_sl_nearby", "RscStructuredText"],
-			["BIS_WL_osd_rearm_possible", "RscStructuredText"]
-		];
+if (_displayClass == "OSD") then {
+	{
+		_x params ["_var", "_type"];
+		uiNamespace setVariable [_var, (findDisplay 46) ctrlCreate [_type, -1]];
+	} forEach [
+		["BIS_WL_osd_cp_current", "RscStructuredText"],
+		["BIS_WL_osd_icon_side_1", "RscPictureKeepAspect"],
+		["BIS_WL_osd_sectors_side_1", "RscStructuredText"],
+		["BIS_WL_osd_income_side_1", "RscStructuredText"],
+		["BIS_WL_osd_icon_side_2", "RscPictureKeepAspect"],
+		["BIS_WL_osd_sectors_side_2", "RscStructuredText"],
+		["BIS_WL_osd_income_side_2", "RscStructuredText"],
+		["BIS_WL_osd_progress_background", "RscText"],
+		["BIS_WL_osd_progress", "RscProgress"],
+		["BIS_WL_osd_action_title", "RscStructuredText"],
+		["BIS_WL_osd_progress_voting_background", "RscText"],
+		["BIS_WL_osd_progress_voting", "RscProgress"],
+		["BIS_WL_osd_action_voting_title", "RscStructuredText"],
+		["BIS_WL_osd_sl_nearby", "RscStructuredText"],
+		["BIS_WL_osd_rearm_possible", "RscStructuredText"]
+	];
 
-		_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
-		_osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
-		_osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
-		_osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
-		_osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
-		_osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
-		_osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
-		_osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
-		_osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
-		_osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
-		_osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
-		_osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
-		_osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
-		_osd_action_sl_nearby = uiNamespace getVariable "BIS_WL_osd_sl_nearby";
-		_osd_rearm_possible = uiNamespace getVariable "BIS_WL_osd_rearm_possible";
+	_osd_cp_current = uiNamespace getVariable "BIS_WL_osd_cp_current";
+	_osd_icon_side_1 = uiNamespace getVariable "BIS_WL_osd_icon_side_1";
+	_osd_sectors_side_1 = uiNamespace getVariable "BIS_WL_osd_sectors_side_1";
+	_osd_income_side_1 = uiNamespace getVariable "BIS_WL_osd_income_side_1";
+	_osd_icon_side_2 = uiNamespace getVariable "BIS_WL_osd_icon_side_2";
+	_osd_sectors_side_2 = uiNamespace getVariable "BIS_WL_osd_sectors_side_2";
+	_osd_income_side_2 = uiNamespace getVariable "BIS_WL_osd_income_side_2";
+	_osd_progress_background = uiNamespace getVariable "BIS_WL_osd_progress_background";
+	_osd_progress = uiNamespace getVariable "BIS_WL_osd_progress";
+	_osd_action_title = uiNamespace getVariable "BIS_WL_osd_action_title";
+	_osd_progress_voting_background = uiNamespace getVariable "BIS_WL_osd_progress_voting_background";
+	_osd_progress_voting = uiNamespace getVariable "BIS_WL_osd_progress_voting";
+	_osd_action_voting_title = uiNamespace getVariable "BIS_WL_osd_action_voting_title";
+	_osd_action_sl_nearby = uiNamespace getVariable "BIS_WL_osd_sl_nearby";
+	_osd_rearm_possible = uiNamespace getVariable "BIS_WL_osd_rearm_possible";
 
-		_blockW = safeZoneW / 1000;
-		_blockH = safeZoneH / (1000 / (getResolution # 4));
+	_blockW = safeZoneW / 1000;
+	_blockH = safeZoneH / (1000 / (getResolution # 4));
 
-		_displayW = _blockW * 180;
-		_displayH = _blockH * 54;
-		_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
-		_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
+	_displayW = _blockW * 180;
+	_displayH = _blockH * 54;
+	_displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+	_displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50); //lower vaule here is lower on screen, default valute is 100
 
-		_osd_cp_current ctrlSetPosition [_displayX, _displayY - (_blockH * 16), _blockW * 75, _blockH * 16];
+	_osd_cp_current ctrlSetPosition [_displayX, _displayY - (_blockH * 16), _blockW * 75, _blockH * 16];
 
-		_osd_icon_side_1 ctrlSetPosition [_displayX + (_blockW * 75), _displayY - (_blockH * 16), _blockW * 16, _blockH * 16];
-		_osd_icon_side_1 ctrlSetText (BIS_WL_sectorIconsArray # (BIS_WL_sidesArray find BIS_WL_playerSide));
-		_osd_icon_side_1 ctrlSetTextColor BIS_WL_colorFriendly;
+	_osd_icon_side_1 ctrlSetPosition [_displayX + (_blockW * 75), _displayY - (_blockH * 16), _blockW * 16, _blockH * 16];
+	_osd_icon_side_1 ctrlSetText (BIS_WL_sectorIconsArray # (BIS_WL_sidesArray find BIS_WL_playerSide));
+	_osd_icon_side_1 ctrlSetTextColor BIS_WL_colorFriendly;
 
-		_osd_sectors_side_1 ctrlSetPosition [_displayX + (_blockW * 73), _displayY - (_blockH * 13), _blockW * 20, _blockH * 16];
+	_osd_sectors_side_1 ctrlSetPosition [_displayX + (_blockW * 73), _displayY - (_blockH * 13), _blockW * 20, _blockH * 16];
 
-		_osd_income_side_1 ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
+	_osd_income_side_1 ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
 
-		_osd_icon_side_2 ctrlSetPosition [_displayX + (_blockW * 124), _displayY - (_blockH * 16), _blockW * 16, _blockH * 16];
+	_osd_icon_side_2 ctrlSetPosition [_displayX + (_blockW * 124), _displayY - (_blockH * 16), _blockW * 16, _blockH * 16];
 
-		_osd_income_side_2 ctrlSetPosition [_displayX + (_blockW * 137), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
-		
-		_osd_action_sl_nearby ctrlSetPosition [_displayX + (_blockW * 55), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
-
-		_osd_rearm_possible ctrlSetPosition [_displayX + (_blockW * 73), _displayY + (_blockH * 8), _blockW * 120, _blockH * 16];
-
-		_osd_icon_side_2 ctrlSetText "\A3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
-
-		{
-			_x ctrlSetPosition [_displayX, _displayY + (_blockH * 19), _displayW, _blockH * 16];
-		} forEach [_osd_progress_background, _osd_progress, _osd_action_title];
-
-		{
-			_x ctrlSetPosition [_displayX, _displayY + (_blockH * 38), _displayW, _blockH * 16];
-		} forEach [_osd_progress_voting_background, _osd_progress_voting, _osd_action_voting_title];
-
-		{_x ctrlCommit 0} forEach [
-			_osd_cp_current,
-			_osd_icon_side_1,
-			_osd_sectors_side_1,
-			_osd_income_side_1,
-			_osd_icon_side_2,
-			_osd_sectors_side_2,
-			_osd_income_side_2,
-			_osd_progress_background,
-			_osd_progress,
-			_osd_action_title,
-			_osd_progress_voting_background,
-			_osd_progress_voting,
-			_osd_action_voting_title,
-			_osd_action_sl_nearby,
-			_osd_rearm_possible
-		];
-
-		BIS_WL_OSDEventArr = [[], [], []];
-
-		addMissionEventHandler ["Loaded", {
-			{
-				[_x, BIS_WL_OSDEventArr # _forEachIndex] spawn BIS_fnc_WL2_setOSDEvent;
-			} forEach ["voting", "seizing", "trespassing"];
-		}];
-	};
+	_osd_income_side_2 ctrlSetPosition [_displayX + (_blockW * 137), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
 	
-	case "RequestMenu_open": {
+	_osd_action_sl_nearby ctrlSetPosition [_displayX + (_blockW * 55), _displayY - (_blockH * 13), _blockW * 40, _blockH * 16];
+
+	_osd_rearm_possible ctrlSetPosition [_displayX + (_blockW * 73), _displayY + (_blockH * 8), _blockW * 120, _blockH * 16];
+
+	_osd_icon_side_2 ctrlSetText "\A3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
+
+	{
+		_x ctrlSetPosition [_displayX, _displayY + (_blockH * 19), _displayW, _blockH * 16];
+	} forEach [_osd_progress_background, _osd_progress, _osd_action_title];
+
+	{
+		_x ctrlSetPosition [_displayX, _displayY + (_blockH * 38), _displayW, _blockH * 16];
+	} forEach [_osd_progress_voting_background, _osd_progress_voting, _osd_action_voting_title];
+
+	{_x ctrlCommit 0} forEach [
+		_osd_cp_current,
+		_osd_icon_side_1,
+		_osd_sectors_side_1,
+		_osd_income_side_1,
+		_osd_icon_side_2,
+		_osd_sectors_side_2,
+		_osd_income_side_2,
+		_osd_progress_background,
+		_osd_progress,
+		_osd_action_title,
+		_osd_progress_voting_background,
+		_osd_progress_voting,
+		_osd_action_voting_title,
+		_osd_action_sl_nearby,
+		_osd_rearm_possible
+	];
+
+	BIS_WL_OSDEventArr = [[], [], []];
+
+	addMissionEventHandler ["Loaded", {
+		{
+			[_x, BIS_WL_OSDEventArr # _forEachIndex] spawn BIS_fnc_WL2_setOSDEvent;
+		} forEach ["voting", "seizing", "trespassing"];
+	}];
+} else {
+	if (_displayClass == "RequestMenu_open") then {
 		BIS_WL_purchaseMenuDiscovered = TRUE;
 		
 		if (BIS_WL_purchaseMenuVisible) exitWith {};
@@ -496,9 +494,9 @@ switch (_displayClass) do {
 			playSound "AddItemFailed";
 		}];
 		((uiNamespace getVariable ["BIS_WL_purchaseMenuLastSelection", [0, 0, 0]]) # 0) call BIS_fnc_WL2_sub_purchaseMenuSetItemsList;
-	};
-	
-	case "RequestMenu_close": {
-		(uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull]) closeDisplay 1;
+	} else {
+		if (_displayClass == "RequestMenu_close") then {
+			(uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull]) closeDisplay 1;
+		};
 	};
 };

@@ -14,20 +14,14 @@ if (_event == "save") then {
 	private _text = format [localize "STR_A3_WL_saved_loadout_info", "<br/>"];
 	_text = _text + "<br/><br/>";
 	{
-		switch (_forEachIndex) do {
-			case 0;
-			case 1;
-			case 2;
-			case 3;
-			case 4: {
-				if (count _x > 0) then {
-					_text = _text + (getText (configFile >> "CfgWeapons" >> _x # 0 >> "displayName")) + "<br/>";
-				};
+		if (_forEachIndex in [0,1,2,3,4]) then {
+			if (count _x > 0) then {
+				_text = _text + (getText (configFile >> "CfgWeapons" >> _x # 0 >> "displayName")) + "<br/>";
 			};
-			case 5: {
-				if (count _x > 0) then {
-					_text = _text + (getText (configFile >> "CfgVehicles" >> _x # 0 >> "displayName")) + "<br/>";
-				};
+		};
+		if (_forEachIndex == 5) then {
+			if (count _x > 0) then {
+				_text = _text + (getText (configFile >> "CfgVehicles" >> _x # 0 >> "displayName")) + "<br/>";
 			};
 		};
 	} forEach BIS_WL_savedLoadout;

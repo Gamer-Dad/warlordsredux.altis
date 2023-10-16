@@ -6,11 +6,10 @@ hRead = false;
 (findDisplay 6969) displayAddEventhandler ["KeyDown",{
 	if (dialog) then {
 		_button = (_this select 1);
-		switch (_button) do {
-			case 1: {true};
-			case 15: {true};
-			case 56: {true};
-			default {false};
+		if (_button in [1, 15, 56]) then {
+			true
+		} else {
+			false
 		};
 	};
 }];

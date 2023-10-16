@@ -43,20 +43,14 @@ player addEventHandler ["Killed", {
 	private _text = localize "STR_A3_WL_last_loadout_info";
 	_text = _text + "<br/><br/>";
 	{
-		switch (_forEachIndex) do {
-			case 0;
-			case 1;
-			case 2;
-			case 3;
-			case 4: {
-				if (count _x > 0) then {
-					_text = _text + (getText (configFile >> "CfgWeapons" >> _x # 0 >> "displayName")) + "<br/>";
-				};
+		if (_forEachIndex in [0,1,2,3,4]) then {
+			if (count _x > 0) then {
+				_text = _text + (getText (configFile >> "CfgWeapons" >> _x # 0 >> "displayName")) + "<br/>";
 			};
-			case 5: {
-				if (count _x > 0) then {
-					_text = _text + (getText (configFile >> "CfgVehicles" >> _x # 0 >> "displayName")) + "<br/>";
-				};
+		};
+		if (_forEachIndex == 5) then {
+			if (count _x > 0) then {
+				_text = _text + (getText (configFile >> "CfgVehicles" >> _x # 0 >> "displayName")) + "<br/>";
 			};
 		};
 	} forEach BIS_WL_lastLoadout;
@@ -133,14 +127,18 @@ addMissionEventHandler ["HandleChatMessage", {
 								["RequestMenu_open"] call BIS_fnc_WL2_setupUI;
 							} else {
 								playSound "AddItemFailed";
-								_action = switch (BIS_WL_currentSelection) do {
-									case 1: {localize "STR_A3_WL_popup_voting"};
-									case 3;
-									case 8: {localize "STR_A3_WL_action_destination_select"};
-									case 4;
-									case 5;
-									case 7: {localize "STR_A3_WL_action_scan_select"};
-									default {""};
+								_action = if (BIS_WL_currentSelection == 1) then {
+									localize "STR_A3_WL_popup_voting";
+								} else {
+									if (BIS_WL_currentSelection in [3,8]) then {
+										localize "STR_A3_WL_action_destination_select";
+									} else {
+										if (BIS_WL_currentSelection in [4,5,7]) then {
+											localize "STR_A3_WL_action_scan_select";
+										} else {
+											"";
+										};
+									};
 								};
 								[toUpper format [(localize "STR_A3_WL_another_action") + (if (_action == "") then {"."} else {" (%1)."}), _action]] spawn BIS_fnc_WL2_smoothText;
 							};

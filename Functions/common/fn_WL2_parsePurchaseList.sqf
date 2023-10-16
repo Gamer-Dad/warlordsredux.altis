@@ -59,40 +59,36 @@ private _savedLoadoutHandled = FALSE;
 				_picture = getText (_class >> "editorPreview");
 				_text = "";
 				
-				switch (_category) do {
-					case "Infantry": {
-						_wpns = getArray (_class >> "weapons");
-						_wpnArrPrimary = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 1};
-						_wpnArrSecondary = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 4};
-						_wpnArrHandgun = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 2};
-						_wpn = if (count _wpnArrSecondary > 0) then {
-							_wpnArrSecondary # 0;
+				if (_category == "Infantry") then {
+					_wpns = getArray (_class >> "weapons");
+					_wpnArrPrimary = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 1};
+					_wpnArrSecondary = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 4};
+					_wpnArrHandgun = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 2};
+					_wpn = if (count _wpnArrSecondary > 0) then {
+						_wpnArrSecondary # 0;
+					} else {
+						if (count _wpnArrPrimary > 0) then {
+							_wpnArrPrimary # 0;
 						} else {
-							if (count _wpnArrPrimary > 0) then {
+							if (count _wpnArrHandgun > 0) then {
 								_wpnArrPrimary # 0;
 							} else {
-								if (count _wpnArrHandgun > 0) then {
-									_wpnArrPrimary # 0;
-								} else {
-									""
-								};
+								""
 							};
 						};
-						{
-							_text = _text + (getText (configFile >> "CfgWeapons" >> _x >> "displayName")) + "<br/>";
-						} forEach (_wpnArrPrimary + _wpnArrSecondary + _wpnArrHandgun);
-						_text = _text + "<br/>";
-						_linked = getArray (_class >> "linkedItems");
-						if (count _linked > 0) then {
-							_text = _text + (getText (configFile >> "CfgWeapons" >> _linked # 0 >> "displayName")) + "<br/>";
-						};
-						_backpack = getText (_class >> "backpack");
-						if (_backpack != "") then {_text = _text + (getText (configFile >> "CfgVehicles" >> _backpack >> "displayName"))};
 					};
-					case "Vehicles";
-					case "Aircraft";
-					case "Naval";
-					case "Defences": {
+					{
+						_text = _text + (getText (configFile >> "CfgWeapons" >> _x >> "displayName")) + "<br/>";
+					} forEach (_wpnArrPrimary + _wpnArrSecondary + _wpnArrHandgun);
+					_text = _text + "<br/>";
+					_linked = getArray (_class >> "linkedItems");
+					if (count _linked > 0) then {
+						_text = _text + (getText (configFile >> "CfgWeapons" >> _linked # 0 >> "displayName")) + "<br/>";
+					};
+					_backpack = getText (_class >> "backpack");
+					if (_backpack != "") then {_text = _text + (getText (configFile >> "CfgVehicles" >> _backpack >> "displayName"))};
+				} else {
+					if (_category in ["Vehicles", "Aircraft", "Naval", "Defences"]) then {
 						_text = getText (_class >> "Library" >> "LibTextDesc");
 						if (_text == "") then {_text = getText (_class >> "Armory" >> "description")};
 						if (_text == "") then {
@@ -107,38 +103,39 @@ private _savedLoadoutHandled = FALSE;
 								};
 							};
 						};
-					};
-					case "Gear": {
-						_transportWeapons = _class >> "TransportWeapons";
-						_weaponsCnt = count _transportWeapons;
-						_i = 0;
-						for "_i" from 0 to (_weaponsCnt - 1) do {
-							_item = getText ((_transportWeapons select _i) >> "weapon");
-							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgWeapons" >> _item >> "displayName"), getNumber ((_transportWeapons select _i) >> "count"), if (_text == "") then {""} else {", "}];
-						};
+					} else {
+						if (_category == "Gear") then {
+							_transportWeapons = _class >> "TransportWeapons";
+							_weaponsCnt = count _transportWeapons;
+							_i = 0;
+							for "_i" from 0 to (_weaponsCnt - 1) do {
+								_item = getText ((_transportWeapons select _i) >> "weapon");
+								_text = _text + format ["%3%2x %1", getText (configFile >> "CfgWeapons" >> _item >> "displayName"), getNumber ((_transportWeapons select _i) >> "count"), if (_text == "") then {""} else {", "}];
+							};
 
-						_transportItems = _class >> "TransportItems";
-						_itemsCnt = count _transportItems;
-						_i = 0;
-						for "_i" from 0 to (_itemsCnt - 1) do {
-							_item = getText ((_transportItems select _i) >> "name");
-							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgWeapons" >> _item >> "displayName"), getNumber ((_transportItems select _i) >> "count"), if (_text == "") then {""} else {", "}];
-						};
+							_transportItems = _class >> "TransportItems";
+							_itemsCnt = count _transportItems;
+							_i = 0;
+							for "_i" from 0 to (_itemsCnt - 1) do {
+								_item = getText ((_transportItems select _i) >> "name");
+								_text = _text + format ["%3%2x %1", getText (configFile >> "CfgWeapons" >> _item >> "displayName"), getNumber ((_transportItems select _i) >> "count"), if (_text == "") then {""} else {", "}];
+							};
 
-						_transportMags = _class >> "TransportMagazines";
-						_magsCnt = count _transportMags;
-						_i = 0;
-						for "_i" from 0 to (_magsCnt - 1) do {
-							_item = getText ((_transportMags select _i) >> "magazine");
-							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgMagazines" >> _item >> "displayName"), getNumber ((_transportMags select _i) >> "count"), if (_text == "") then {""} else {", "}];
-						};
+							_transportMags = _class >> "TransportMagazines";
+							_magsCnt = count _transportMags;
+							_i = 0;
+							for "_i" from 0 to (_magsCnt - 1) do {
+								_item = getText ((_transportMags select _i) >> "magazine");
+								_text = _text + format ["%3%2x %1", getText (configFile >> "CfgMagazines" >> _item >> "displayName"), getNumber ((_transportMags select _i) >> "count"), if (_text == "") then {""} else {", "}];
+							};
 
-						_transportBPacks = _class >> "TransportBackpacks";
-						_bPacksCnt = count _transportBPacks;
-						_i = 0;
-						for "_i" from 0 to (_bPacksCnt - 1) do {
-							_item = getText ((_transportBPacks select _i) >> "backpack");
-							_text = _text + format ["%3%2x %1", getText (configFile >> "CfgVehicles" >> _item >> "displayName"), getNumber ((_transportBPacks select _i) >> "count"), if (_text == "") then {""} else {", "}];
+							_transportBPacks = _class >> "TransportBackpacks";
+							_bPacksCnt = count _transportBPacks;
+							_i = 0;
+							for "_i" from 0 to (_bPacksCnt - 1) do {
+								_item = getText ((_transportBPacks select _i) >> "backpack");
+								_text = _text + format ["%3%2x %1", getText (configFile >> "CfgVehicles" >> _item >> "displayName"), getNumber ((_transportBPacks select _i) >> "count"), if (_text == "") then {""} else {", "}];
+							};
 						};
 					};
 				};

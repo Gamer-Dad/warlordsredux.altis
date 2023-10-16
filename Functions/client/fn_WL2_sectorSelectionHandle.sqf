@@ -3,26 +3,28 @@
 params ["_event", ["_state", "start"]];
 
 if (_state == "start") then {
-	switch (_event) do {
-		case "voting": {
-			BIS_WL_selection_availableSectors = BIS_WL_sectorsArray # 1;
-			BIS_WL_selection_showLinks = TRUE;
-		};
-		case "dropping": {
+	if (_event == "voting") then {
+		BIS_WL_selection_availableSectors = BIS_WL_sectorsArray # 1;
+		BIS_WL_selection_showLinks = TRUE;
+	} else {
+		if (_event == "dropping") then {
 			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 0) select {BIS_WL_orderedAssetRequirements isEqualTo (BIS_WL_orderedAssetRequirements arrayIntersect (_x getVariable "BIS_WL_services"))};
 			BIS_WL_selection_showLinks = FALSE;
-		};
-		case "travelling": {
-			BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {(_x getVariable ["BIS_WL_owner", independent]) == (side (group player))};
-			BIS_WL_selection_showLinks = FALSE;
-		};
-		case "travelling_contested": {
-			BIS_WL_selection_availableSectors = [WL_TARGET_FRIENDLY];
-			BIS_WL_selection_showLinks = FALSE;
-		};
-		case "scan": {
-			BIS_WL_selection_availableSectors = BIS_WL_sectorsArray # 3;
-			BIS_WL_selection_showLinks = FALSE;
+		} else {
+			if (_event == "travelling") then {
+				BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {(_x getVariable ["BIS_WL_owner", independent]) == (side (group player))};
+				BIS_WL_selection_showLinks = FALSE;
+			} else {
+				if (_event == "travelling_contested") then {
+					BIS_WL_selection_availableSectors = [WL_TARGET_FRIENDLY];
+					BIS_WL_selection_showLinks = FALSE;
+				} else {
+					if (_event == "scan") then {
+						BIS_WL_selection_availableSectors = BIS_WL_sectorsArray # 3;
+						BIS_WL_selection_showLinks = FALSE;
+					};
+				};
+			};
 		};
 	};
 	
