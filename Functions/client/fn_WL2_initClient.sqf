@@ -20,37 +20,31 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 		} forEach allMapMarkers;
 	}];
 	sleep 0.1;
-	// This section controls the "you can't switch teams" display
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	player removeItem "ItemMap";
 	player removeItem "ItemRadio";
 	[player] joinSilent BIS_WL_wrongTeamGroup;
-	enableRadio FALSE;
-	enableSentences FALSE;
+	enableRadio false;
+	enableSentences false;
 	0 fadeSpeech 0;
 	0 fadeRadio 0;
-	{_x enableChannel [FALSE, FALSE]} forEach [0,1,2,3,4,5];
-	showCinemaBorder FALSE;
-	private _camera = "Camera" camCreate position player;
-	_camera camSetPos [0, 0, 10];
-	_camera camSetTarget [-1000, -1000, 10];
-	_camera camCommit 0;
-	_camera cameraEffect ["Internal", "Back"];
-	waitUntil {!isNull (findDisplay 46)};
-	(findDisplay 46) ctrlCreate ["RscStructuredText", 994001];
-	((findDisplay 46) displayCtrl 994001) ctrlSetPosition [safeZoneX, safeZoneY, safeZoneW, safeZoneH];
-	((findDisplay 46) displayCtrl 994001) ctrlSetBackgroundColor [0, 0, 0, 0.75];
-	((findDisplay 46) displayCtrl 994001) ctrlCommit 0;
-	(findDisplay 46) ctrlCreate ["RscStructuredText", 994000];
-	((findDisplay 46) displayCtrl 994000) ctrlSetPosition [safeZoneX + 0.1, safeZoneY + (safeZoneH * 0.5), safeZoneW, safeZoneH];
-	((findDisplay 46) displayCtrl 994000) ctrlCommit 0;
-	((findDisplay 46) displayCtrl 994000) ctrlSetStructuredText parseText format [
-		"<t shadow = '0'><t size = '%1' color = '#ff4b4b'>%2</t><br/><t size = '%3'>%4</t></t>",
-		(2.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
-		localize "STR_A3_WL_switch_teams",
-		(1.5 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
-		localize "STR_A3_WL_switch_teams_info"
-	];
+	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+	[localize "STR_A3_WL_switch_teams", localize "STR_A3_WL_switch_teams_info"] call BIS_fnc_WL2_blockScreen;
+};
+
+_text = toLower (name player);
+_list = getArray (missionConfigFile >> "adminFilter");
+if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
+	["client_init"] call BIS_fnc_endLoadingScreen;
+	player removeItem "ItemMap";
+	player removeItem "ItemRadio";
+	[player] joinSilent BIS_WL_wrongTeamGroup;
+	enableRadio false;
+	enableSentences false;
+	0 fadeSpeech 0;
+	0 fadeRadio 0;
+	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+	[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;	
 };
 
 //init radio after team check 

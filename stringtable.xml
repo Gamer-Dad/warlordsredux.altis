@@ -733,6 +733,40 @@
             <Chinesesimp>了解敌人穿着的颜色，这会有所帮助。 在您入狱之前，您还剩下 %13 次友军射击击杀。</Chinesesimp>
             <Chinese>了解敵人穿著的顏色，這會有所幫助。 在您入獄之前，您還剩下 %13 次友軍射擊擊殺。</Chinese>
         </Key>
+        <Key ID="STR_A3_nameFilter">
+            <Original>Inappropriate Username!</Original>
+            <English>Inappropriate Username!</English>
+            <Czech>Nepřiměřené uživatelské jméno!</Czech>
+            <French>Nom d'utilisateur inapproprié !</French>
+            <German>Unangemessener Benutzername!</German>
+            <Italian>Nome utente inappropriato!</Italian>
+            <Polish>Nieodpowiednia nazwa użytkownika!</Polish>
+            <Portuguese>Nome de usuário inadequado!</Portuguese>
+            <Russian>Неподходящее имя пользователя!</Russian>
+            <Spanish>Nombre de usuario inapropiado.</Spanish>
+            <Turkish>Uygunsuz Kullanıcı Adı!</Turkish>
+            <Korean>부적절한 사용자 이름!</Korean>
+            <Japanese>不適切なユーザー名！</Japanese>
+            <Chinesesimp>不当用户名！</Chinesesimp>
+            <Chinese>不當用戶名！</Chinese>
+        </Key>
+        <Key ID="STR_A3_nameFilter_info">
+            <Original>We're committed to fostering a friendly and respectful gaming community. Your chosen username contains content that goes against our guidelines. Please change your username to something more appropriate to join the game and ensure a positive gaming experience for all. Thank you for your cooperation.</Original>
+            <English>We're committed to fostering a friendly and respectful gaming community. Your chosen username contains content that goes against our guidelines. Please change your username to something more appropriate to join the game and ensure a positive gaming experience for all. Thank you for your cooperation.</English>
+            <Czech>Jsme zavázáni k vytváření přátelského a respektujícího herního prostředí. Váš zvolený uživatelský název obsahuje obsah, který nesplňuje naše směrnice. Pro prosím změňte svůj uživatelský název na něco vhodnějšího, abyste se mohli připojit k hře a zajistili pozitivní herní zážitek pro všechny. Děkujeme za spolupráci.</Czech>
+            <French>Nous nous engageons à promouvoir une communauté de jeu conviviale et respectueuse. Votre nom d'utilisateur choisi contient du contenu contraire à nos directives. Veuillez changer votre nom d'utilisateur pour quelque chose de plus approprié afin de participer au jeu et garantir une expérience de jeu positive pour tous. Merci de votre coopération.</French>
+            <German>Wir sind bestrebt, eine freundliche und respektvolle Spieler-Community zu fördern. Dein gewählter Benutzername enthält Inhalte, die gegen unsere Richtlinien verstoßen. Bitte ändere deinen Benutzernamen in etwas Angemesseneres, um am Spiel teilzunehmen und ein positives Spielerlebnis für alle sicherzustellen. Vielen Dank für deine Kooperation.</German>
+            <Italian>Siamo impegnati a promuovere una comunità di gioco amichevole e rispettosa. Il tuo nome utente scelto contiene contenuti che violano le nostre linee guida. Ti preghiamo di cambiare il tuo nome utente in qualcosa di più appropriato per poter partecipare al gioco e garantire un'esperienza di gioco positiva per tutti. Grazie per la tua cooperazione.</Italian>
+            <Polish>Zobowiązujemy się do tworzenia przyjaznej i szanującej społeczności graczy. Twój wybrany pseudonim zawiera treści niezgodne z naszymi wytycznymi. Prosimy o zmianę pseudonimu na coś bardziej odpowiedniego, aby dołączyć do gry i zapewnić pozytywne doświadczenia wszystkim graczom. Dziękujemy za współpracę.</Polish>
+            <Portuguese>Estamos comprometidos em promover uma comunidade de jogos amigável e respeitosa. Seu nome de usuário escolhido contém conteúdo que vai contra nossas diretrizes. Por favor, altere seu nome de usuário para algo mais apropriado para participar do jogo e garantir uma experiência de jogo positiva para todos. Obrigado por sua cooperação.</Portuguese>
+            <Russian>Мы стремимся к созданию дружелюбного и уважительного игрового сообщества. Ваш выбранный никнейм содержит контент, нарушающий наши правила. Пожалуйста, измените свой никнейм на более подходящий, чтобы присоединиться к игре и обеспечить положительный игровой опыт для всех. Спасибо за сотрудничество.</Russian>
+            <Spanish>Estamos comprometidos en fomentar una comunidad de juego amigable y respetuosa. Tu nombre de usuario elegido contiene contenido que va en contra de nuestras pautas. Por favor, cambia tu nombre de usuario a algo más apropiado para unirte al juego y asegurar una experiencia de juego positiva para todos. Gracias por tu cooperación.</Spanish>
+            <Turkish>Dostça ve saygılı bir oyun topluluğu oluşturma konusundaki taahhüdümüzün farkındayız. Seçtiğiniz kullanıcı adı, kurallarımıza aykırı içerik içeriyor. Oyunun keyifli ve pozitif bir deneyim sunması için lütfen kullanıcı adınızı daha uygun bir şey olarak değiştirin. İşbirliğiniz için teşekkür ederiz.</Turkish>
+            <Korean>우리는 친근하고 존중받는 게임 커뮤니티를 육성하기 위해 노력하고 있습니다. 선택한 사용자 이름에는 가이드라인을 어긴 내용이 포함되어 있습니다. 게임에 참가하고 모두에게 긍정적인 게임 경험을 보장하기 위해 사용자 이름을 적절한 것으로 바꿔주십시오. 협조해 주셔서 감사합니다.</Korean>
+            <Japanese>私たちは友好的で尊重されるゲームコミュニティの育成に取り組んでいます。お選びいただいたユーザー名には、ガイドラインに反するコンテンツが含まれています。ゲームに参加し、すべてのプレイヤーにポジティブなゲーム体験を提供するために、ユーザー名を適切なものに変更していただくようお願い申し上げます。ご協力いただきありがとうございます。</Japanese>
+            <Chinesesimp>我们致力于培养友好、尊重的游戏社区。您选择的用户名包含违反我们准则的内容。请将您的用户名更改为更合适的内容以参加游戏，并确保为所有人提供积极的游戏体验。感谢您的合作。</Chinesesimp>
+            <Chinese>我們致力於培養友好、尊重的遊戲社區。您選擇的用戶名包含違反我們準則的內容。請將您的用戶名更改為更合適的內容以</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>
