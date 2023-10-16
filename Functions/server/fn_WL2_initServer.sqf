@@ -99,6 +99,14 @@ addMissionEventHandler ["EntityKilled", {
 	};
 }];
 
+addMissionEventHandler ["MarkerCreated", {
+	params ["_marker", "_channelNumber", "_owner", "_local"];
+	
+	if ((isPlayer _owner) && {(_channelNumber == 0)}) then {
+		deleteMarker _marker;
+	};
+}];
+
 missionNamespace setVariable ["BIS_WL_missionStart", serverTime, true];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
