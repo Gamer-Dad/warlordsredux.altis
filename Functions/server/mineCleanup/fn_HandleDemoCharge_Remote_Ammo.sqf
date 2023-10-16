@@ -1,4 +1,5 @@
 params ["_entity"];
+[typeOf _entity] remoteExec ["systemChat", 0];
 if (count MRTM_spawnedDemoCharge >= 5) then {
   private _mines = MRTM_spawnedDemoCharge;
   // to get rid of destroyed mines without messing up the order
