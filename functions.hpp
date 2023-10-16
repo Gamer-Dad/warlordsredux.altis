@@ -144,7 +144,6 @@ class CfgFunctions {
 		{
 			file = "Functions\server\mineCleanup";
 			class HandleAPERSMine_Range_Ammo {};
-			class handleApersBoundingMineMag {};
 			class HandleAPERSMineDispenser_Mine_Ammo {};
 			class HandleATMine_Range_Ammo {};
 			class HandleSLAMDirectionalMine_Wire_Mag {};
