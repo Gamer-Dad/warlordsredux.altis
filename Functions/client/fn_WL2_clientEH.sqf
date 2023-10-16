@@ -93,7 +93,7 @@ addMissionEventHandler ["MarkerCreated", {
 addMissionEventHandler ["HandleChatMessage", {
 	params ["_channel", "_owner", "_from", "_text"];
 	_text = toLower _text;
-	_list = ["n1gg","nigg","n3g3r","neger","niger","nigger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape"];
+	_list = ["n1gg","nigg","n3g3r","neger","niger","nigger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"];
 	((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
 }];
 
