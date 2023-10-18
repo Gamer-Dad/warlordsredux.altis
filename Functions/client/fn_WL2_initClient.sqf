@@ -128,7 +128,6 @@ call BIS_fnc_WL2_refreshCurrentTargetData;
 call BIS_fnc_WL2_sceneDrawHandle;
 call BIS_fnc_WL2_targetResetHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
-0 spawn BIS_fnc_WL2_underWaterCheck;
 
 ["OSD"] spawn BIS_fnc_WL2_setupUI;
 0 spawn BIS_fnc_WL2_timer;
