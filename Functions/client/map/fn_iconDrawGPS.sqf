@@ -89,3 +89,20 @@ if (
 		};
 	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
+{
+	if (!isNull _x) then {
+		_m drawIcon [
+			_x call BIS_fnc_iconType,
+			_x call BIS_fnc_iconColor,
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_getDir,
+			getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'),
+			1,
+			0.025,
+			"TahomaB",
+			"right"
+		];
+	};
+} forEach ((entities [["Tank", "Car", "Plane", "Helicopter", "Ship"], ["Logic"], false, true]) select {((side _x) == (side group player)) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
