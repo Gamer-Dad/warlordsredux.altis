@@ -16,8 +16,15 @@ if (isNull (findDisplay 4000) && {_open}) then {
     createDialog "MRTM_groupsMenu";
 
     0 spawn {
+        private _players = 0;
+        private _cycles = 0;
         while {!(isNull (findDisplay 4000))} do {
-            false spawn MRTM_fnc_openGroupMenu;
+            if (((count (allPlayers select {side group _x == side group player})) != _players) || {_cycles == 20}) then {
+                _cycles = 0;
+                _players = count (allPlayers select {side group _x == side group player});
+                false spawn MRTM_fnc_openGroupMenu;
+            };
+            _cycles = _cycles + 1;
             sleep 0.5;
         };
     };
