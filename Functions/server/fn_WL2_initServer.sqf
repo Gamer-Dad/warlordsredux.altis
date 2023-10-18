@@ -1,30 +1,9 @@
 #include "..\warlords_constants.inc"
 
-// Mine Array's
-MRTM_spawnedAPERS = [];
-MRTM_spawnedAPERSDispenser = [];
-MRTM_spawnedAPERSDispenserAmmo = [];
-MRTM_spawnedAPERSBounding = [];
-MRTM_spawnedAT = [];
-MRTM_spawnedSLAMs = [];
-MRTM_spawnedTripwires = [];
-MRTM_spawnedClaymores = [];
-MRTM_spawnedClaymoresAmmo = [];
-MRTM_spawnedSatchels = [];
-MRTM_spawnedCharges = [];
-MRTM_spawnedLIEDU = [];
-MRTM_spawnedLIEDDI = [];
-MRTM_spawnedSIEDU = [];
-MRTM_spawnedSIEDDI = [];
-MRTM_spawnedTripWires = [];
-MRTM_spawnedSLAMs_Ammo = [];
-MRTM_spawnedDemoCharge = [];
-MRTM_spawnedSatchel = [];
+["server_init"] call BIS_fnc_startLoadingScreen;
 
 [36000] call BIS_fnc_countdown;
 call BIS_fnc_WL2_tablesSetUp;
-
-["server_init"] call BIS_fnc_startLoadingScreen;
 
 {createCenter _x} forEach [WEST, EAST, RESISTANCE, CIVILIAN];
 

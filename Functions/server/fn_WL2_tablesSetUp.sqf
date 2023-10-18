@@ -3,6 +3,17 @@
 //CP databse
 serverNamespace setVariable ["fundsDatabase", createHashMap];
 
+//Mines
+serverNamespace setVariable ["BIS_WL2_mineLimits",
+	createHashMapFromArray [
+		["spawnedAPERS", []], ["spawnedAPERSDispenser", []], ["spawnedAPERSDispenserAmmo", []], 
+		["spawnedAPERSBounding", []], ["spawnedAT", []], ["spawnedSLAMs", []], ["spawnedTripwiresAmmo", []], 
+		["spawnedClaymores", []], ["spawnedClaymoresAmmo", []], ["spawnedSatchelsMag", []], ["spawnedCharges", []], 
+		["spawnedLIEDU", []], ["spawnedLIEDDI", []], ["spawnedSIEDU", []], ["spawnedSIEDDI", []], 
+		["spawnedSLAMs_Ammo", []], ["spawnedDemoCharge", []], ["spawnedSatchelAmmo", []], ["spawnedTripwiresMag", []]
+	]
+];
+
 // Rewards
 serverNamespace setVariable ["BIS_WL2_killRewards", 
 	createHashMapFromArray [
