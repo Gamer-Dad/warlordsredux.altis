@@ -58,7 +58,6 @@ class CfgFunctions {
 			class WL2_welcome {};
 			class WL2_betty {};
 			class WL2_rita {};
-			class WL2_vehicleRearm {};
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
@@ -188,6 +187,16 @@ class CfgFunctions {
 			class orderDefence {};
 			class orderGround {};
 			class orderNaval {};
+		};
+		class RearmMenu
+		{
+			file = "Functions\client\rearming";
+			class getHulls {};
+			class getCamos {};
+			class getExtras {};
+			class rearm {};
+			class animate {};
+			class WL2_vehicleRearm {};
 		};
 	};
 
