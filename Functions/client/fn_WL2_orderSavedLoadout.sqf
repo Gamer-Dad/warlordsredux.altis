@@ -9,7 +9,7 @@ if (_event == "save") then {
 	[toUpper localize "STR_A3_WL_loadout_saved"] spawn BIS_fnc_WL2_smoothText;
 	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
 	private _gearArr = (missionNamespace getVariable _varName) # 5;
-	private _savedLoadoutArr = _gearArr # 1;
+	private _savedLoadoutArr = _gearArr # 2;
 	private _text = _savedLoadoutArr # 5;
 	private _text = format [localize "STR_A3_WL_saved_loadout_info", "<br/>"];
 	_text = _text + "<br/><br/>";
@@ -26,7 +26,7 @@ if (_event == "save") then {
 		};
 	} forEach BIS_WL_savedLoadout;
 	_savedLoadoutArr set [5, _text];
-	_gearArr set [1, _savedLoadoutArr];
+	_gearArr set [2, _savedLoadoutArr];
 	(missionNamespace getVariable _varName) set [5, _gearArr];
 } else {
 	player setUnitLoadout BIS_WL_savedLoadout;

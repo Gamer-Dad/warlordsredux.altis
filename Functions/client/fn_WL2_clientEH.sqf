@@ -38,8 +38,7 @@ player addEventHandler ["Killed", {
 	BIS_WL_lastLoadout = +getUnitLoadout player;
 	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
 	private _gearArr = (missionNamespace getVariable _varName) # 5;
-	private _lastLoadoutArr = _gearArr # 0;
-	private _text = _savedLoadoutArr # 5;
+	private _lastLoadoutArr = _gearArr # 1;
 	private _text = localize "STR_A3_WL_last_loadout_info";
 	_text = _text + "<br/><br/>";
 	{
@@ -55,7 +54,7 @@ player addEventHandler ["Killed", {
 		};
 	} forEach BIS_WL_lastLoadout;
 	_lastLoadoutArr set [5, _text];
-	_gearArr set [0, _lastLoadoutArr];
+	_gearArr set [1, _lastLoadoutArr];
 	(missionNamespace getVariable _varName) set [5, _gearArr];
 
 	_connectedUAV = getConnectedUAV player;
