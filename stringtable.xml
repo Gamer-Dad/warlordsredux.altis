@@ -10,7 +10,7 @@
             <Italian>Stai attento a dove stai sparando! Hai attivato il sistema di protezione attiva su un veicolo alleato nelle vicinanze.</Italian>
             <Polish>Uważaj, gdzie strzelasz! Wywołałeś aktywny system ochrony na pobliskim sojuszniczym pojazdzie.</Polish>
             <Portuguese>Cuidado onde está a disparar! Ativaste o Sistema de Proteção Ativa num veículo aliado próximo.</Portuguese>
-            <Russian>Осторожно, куда стреляешь! Ты активировал систему активной защиты на ближайшем дружественном транспортном средстве.</Russian>
+            <Russian>Смотри куда стреляешь! Ты активировал Комплекс Активной Защиты на ближайшей дружественной технике.</Russian>
             <Spanish>¡Cuidado dónde disparas! Has activado el Sistema de Protección Activa en un vehículo aliado cercano.</Spanish>
             <Turkish>Nereye ateş ettiğine dikkat et! Yakındaki bir dost aracındaki Aktif Koruma Sistemini tetikledin.</Turkish>
             <Korean>조심해, 쏘는 곳을 확인하세요! 근처 우호적인 차량의 능동 보호 시스템을 작동시켰습니다.</Korean>
@@ -44,7 +44,7 @@
             <Italian>Limite di risorse raggiunto.</Italian>
             <Polish>Osiągnięto limit zasobów.</Polish>
             <Portuguese>Limite de ativos atingido.</Portuguese>
-            <Russian>Достигнут предел объектов.</Russian>
+            <Russian>Достигнут лимит объектов.</Russian>
             <Spanish>Límite de activos alcanzado.</Spanish>
             <Turkish>Varlık sınırına ulaşıldı.</Turkish>
             <Korean>자산 한도에 도달했습니다.</Korean>
@@ -112,7 +112,7 @@
             <Italian>Asset bloccato.</Italian>
             <Polish>Zasób zablokowany.</Polish>
             <Portuguese>Ativo bloqueado.</Portuguese>
-            <Russian>Актив заблокирован.</Russian>
+            <Russian>Объект закрыт.</Russian>
             <Spanish>Activo bloqueado.</Spanish>
             <Turkish>Varlık kilitli.</Turkish>
             <Korean>자산 잠금됨.</Korean>
@@ -129,7 +129,7 @@
             <Italian>Asset sbloccato.</Italian>
             <Polish>Odblokowany zasób.</Polish>
             <Portuguese>Ativo desbloqueado.</Portuguese>
-            <Russian>Актив разблокирован.</Russian>
+            <Russian>Объект открыт.</Russian>
             <Spanish>Activo desbloqueado.</Spanish>
             <Turkish>Varlık kilidi açıldı.</Turkish>
             <Korean>자산 잠금 해제됨.</Korean>
@@ -163,7 +163,7 @@
             <Italian>L'elemento selezionato non è vuoto.</Italian>
             <Polish>Wybrany element nie jest pusty.</Polish>
             <Portuguese>O elemento selecionado não está vazio.</Portuguese>
-            <Russian>Выбранный элемент не пуст.</Russian>
+            <Russian>Выбранный объект не пуст.</Russian>
             <Spanish>El elemento seleccionado no está vacío.</Spanish>
             <Turkish>Seçilen varlık boş değil.</Turkish>
             <Korean>선택된 자산이 비어 있지 않습니다.</Korean>
@@ -180,7 +180,7 @@
             <Italian>%1 è stato eliminato.</Italian>
             <Polish>%1 usunięte.</Polish>
             <Portuguese>%1 excluído.</Portuguese>
-            <Russian>%1 удалено.</Russian>
+            <Russian>%1 удален.</Russian>
             <Spanish>%1 eliminado.</Spanish>
             <Turkish>%1 silindi.</Turkish>
             <Korean>%1 삭제됨.</Korean>
@@ -198,7 +198,7 @@
             <Italian>Alt-Shift-clicca per %1eliminare%2%3%4.</Italian>
             <Polish>Alt-Shift-kliknij, aby %1usunąć%2%3%4.</Polish>
             <Portuguese>Alt-Shift-clique para %1apagar%2%3%4.</Portuguese>
-            <Russian>Alt-Shift-щелкните, чтобы %1удалить%2%3%4.</Russian>
+            <Russian>Alt-Shift-клик чтобы %1удалить%2%3%4.</Russian>
             <Spanish>Alt-Shift-clic para %1borrar%2%3%4.</Spanish>
             <Turkish>Alt-Shift-tıkla bunu %1sil%2%3%4.</Turkish>
             <Korean>Alt-Shift-클릭하여 %1삭제%2%3%4.</Korean>
@@ -215,7 +215,7 @@
             <Italian>Salva configurazione.</Italian>
             <Polish>Zapisz wyposażenie.</Polish>
             <Portuguese>Salvar configuração.</Portuguese>
-            <Russian>Сохранить экипировку.</Russian>
+            <Russian>Сохранить снаряжение.</Russian>
             <Spanish>Guardar configuración.</Spanish>
             <Turkish>Ekipman kaydet.</Turkish>
             <Korean>장비 저장.</Korean>
@@ -232,7 +232,7 @@
             <Italian>Salva il tuo loadout attuale per una successiva applicazione.</Italian>
             <Polish>Zapisz swój obecny wyposażenie na później.</Polish>
             <Portuguese>Salve sua configuração atual para uma reaplicação posterior.</Portuguese>
-            <Russian>Сохраните текущую экипировку для повторного использования.</Russian>
+            <Russian>Сохраните текущее снаряжение для повторного использования.</Russian>
             <Spanish>Guarda tu loadout actual para su reaplicación posterior.</Spanish>
             <Turkish>Mevcut ekipmanınızı daha sonraki uygulamalar için kaydedin.</Turkish>
             <Korean>나중에 다시 적용할 수 있도록 현재 로드아웃을 저장하십시오.</Korean>
@@ -249,7 +249,7 @@
             <Italian>Il tuo equipaggiamento salvato.</Italian>
             <Polish>Twój zapisany wybór wyposażenia.</Polish>
             <Portuguese>Seu equipamento salvo.</Portuguese>
-            <Russian>Ваш сохраненный набор вооружения.</Russian>
+            <Russian>Ваше сохраненное снаряжение.</Russian>
             <Spanish>Tu equipación guardada.</Spanish>
             <Turkish>Kaydedilen ekipmanınız.</Turkish>
             <Korean>저장된 로드아웃.</Korean>
@@ -266,7 +266,7 @@
             <Italian>Applica la tua configurazione salvata.%1Puoi salvare la tua configurazione corrente richiedendo "Salva configurazione" alla fine di questo elenco.</Italian>
             <Polish>Zastosuj swoją zapisaną konfigurację.%1Możesz zapisać swoją bieżącą konfigurację poprzez żądanie "Zapisz konfigurację" na końcu tej listy.</Polish>
             <Portuguese>Aplique sua configuração salva.%1Você pode salvar sua configuração atual solicitando "Salvar configuração" no final desta lista.</Portuguese>
-            <Russian>Примените сохраненный набор.%1Вы можете сохранить текущий набор, запросив 'Сохранить экипировку' в конце этого списка.</Russian>
+            <Russian>Применить сохраненное снаряжение.%1Вы можете сохранить текущий набор, запросив 'Сохранить снаряжение' в конце этого списка.</Russian>
             <Spanish>Aplica tu configuración guardada.%1Puedes guardar tu configuración actual solicitando "Guardar configuración" al final de esta lista.</Spanish>
             <Turkish>Kayıtlı ekipmanınızı uygulayın.%1Bu listenin sonundaki 'Ekipman kaydet' seçeneğine tıklayarak mevcut ekipmanınızı kaydedebilirsiniz.</Turkish>
             <Korean>저장된 로드아웃을 적용하세요.%1이 목록의 끝에서 'Save loadout'을 요청하여 현재 로드아웃을 저장할 수 있습니다.</Korean>
@@ -283,7 +283,7 @@
             <Italian>Configurazione salvata.</Italian>
             <Polish>Zapisano wyposażenie.</Polish>
             <Portuguese>Configuração de equipamento salva.</Portuguese>
-            <Russian>Экипировка сохранена.</Russian>
+            <Russian>Снаряжение сохранено.</Russian>
             <Spanish>Equipación guardada.</Spanish>
             <Turkish>Ekipmanınız kaydedildi.</Turkish>
             <Korean>저장된 로드아웃</Korean>
@@ -385,7 +385,7 @@
             <Italian>Ordina un camion medico per viaggi veloci</Italian>
             <Polish>Zamów szybką ciężarówkę medyczną</Polish>
             <Portuguese>Encomendar caminhão médico de viagem rápida</Portuguese>
-            <Russian>Заказать быстроходный медицинский грузовик</Russian>
+            <Russian>Заказать медицинский грузовик быстрого перемещения</Russian>
             <Spanish>Solicite un camión médico de viaje rápido</Spanish>
             <Turkish>Hızlı seyahat aracı sipariş edin</Turkish>
             <Korean>빠른 여행 의료 트럭 주문</Korean>
@@ -402,7 +402,7 @@
             <Italian>Viaggio veloce al camion medico</Italian>
             <Polish>Szybka podróż do ciężarówki medycznej</Polish>
             <Portuguese>Viagem rápida para caminhão médico</Portuguese>
-            <Russian>Быстрое путешествие в медицинский грузовик</Russian>
+            <Russian>Быстрое перемещение в медицинский грузовик (Бесплатно)</Russian>
             <Spanish>Viaje rápido a camión médico</Spanish>
             <Turkish>Tıbbi araca hızlı seyahat</Turkish>
             <Korean>의료 트럭으로 빠른 이동</Korean>
@@ -419,7 +419,7 @@
             <Italian>Il veicolo di viaggio veloce esiste già.</Italian>
             <Polish>Szybki pojazd podróżny już istnieje.</Polish>
             <Portuguese>Veículo de viagem rápida já existe.</Portuguese>
-            <Russian>Передвижной спавн уже существует.</Russian>
+            <Russian>Медицинский грузовик уже существует.</Russian>
             <Spanish>El vehículo de viaje rápido ya existe.</Spanish>
             <Turkish>Hızlı seyahat aracı zaten mevcüt.</Turkish>
             <Korean>빠른 여행 차량이 이미 존재합니다.</Korean>
@@ -436,7 +436,7 @@
             <Italian>Devi essere in un settore posseduto.</Italian>
             <Polish>Musisz być w posiadanym sektorze.</Polish>
             <Portuguese>Você precisa estar em um setor de propriedade.</Portuguese>
-            <Russian>Вы должны быть в собственном секторе.</Russian>
+            <Russian>Вы должны быть в захваченном секторе.</Russian>
             <Spanish>Necesitas estar en un sector propiedad.</Spanish>
             <Turkish>Sahip olunan bir sektörde olmanız gerekiyor.</Turkish>
             <Korean>소유한 섹터에 있어야 합니다.</Korean>
@@ -453,7 +453,7 @@
             <Italian>Nessun veicolo di viaggio rapido disponibile.</Italian>
             <Polish>Brak dostępnego pojazdu do szybkiej podróży.</Polish>
             <Portuguese>Nenhum veículo de viagem rápida disponível.</Portuguese>
-            <Russian>Нет доступного передвижного спавна.</Russian>
+            <Russian>Нет доступного медицинского грузовика.</Russian>
             <Spanish>No hay ningún vehículo de viaje rápido disponible.</Spanish>
             <Turkish>Hızlı seyahat aracı mevcut değildir.</Turkish>
             <Korean>속도 여행 용 차량이 없습니다.</Korean>
@@ -470,7 +470,7 @@
             <Italian>Viaggiando rapidamente al veicolo di viaggio rapido.</Italian>
             <Polish>Szybko podróżuję do pojazdu szybkiego przemieszczania się.</Polish>
             <Portuguese>Viajando rápido para o veículo de viagem rápida.</Portuguese>
-            <Russian>Быстрое перемещение к передвижному спавну.</Russian>
+            <Russian>Быстрое перемещение к медицинскому грузовику.</Russian>
             <Spanish>Viajando rápidamente al vehículo de viaje rápido.</Spanish>
             <Turkish>Hızlı seyahat aracına hızlı seyahat ediliyor.</Turkish>
             <Korean>빠른 여행 차량으로 빠른 여행 중입니다.</Korean>
@@ -487,7 +487,7 @@
             <Italian>Apri il menu informazioni</Italian>
             <Polish>Otwórz menu informacji</Polish>
             <Portuguese>Abra o menu de informações</Portuguese>
-            <Russian>Открыть меню "Информация"</Russian>
+            <Russian>Открыть информационное меню</Russian>
             <Spanish>Abrir el menú de información</Spanish>
             <Turkish>Bilgi menüsünü açın.</Turkish>
             <Korean>정보 메뉴 열기</Korean>
@@ -504,7 +504,7 @@
             <Italian>Reset del voto settoriale richiesto da %1.</Italian>
             <Polish>Reset głosowania sektora zażądany przez %1.</Polish>
             <Portuguese>Reset de votação por setor solicitado por %1.</Portuguese>
-            <Russian>Запрос на сброс голосования по секторам от %1.</Russian>
+            <Russian>Запрос на сброс голосования по выбору цели от %1.</Russian>
             <Spanish>Reinicio de la votación por sector solicitado por %1.</Spanish>
             <Turkish>Sektör oylamasının sıfırlanması %1 tarafından talep edildi.</Turkish>
             <Korean>%1에 의해 섹터 투표 재설정이 요청되었습니다.</Korean>
@@ -606,7 +606,7 @@
             <Italian>Riparazione / Riarmo possibile</Italian>
             <Polish>Możliwa naprawa / ponowne uzbrojenie</Polish>
             <Portuguese>Consertar / Rearmar possível</Portuguese>
-            <Russian>Перевооружение / Ремонт доступны</Russian>
+            <Russian>Доступно Перевооружение / Ремонт</Russian>
             <Spanish>Reparación / Rearme posible</Spanish>
             <Turkish>Onarım / Yeniden silahlandırma mümkün</Turkish>
             <Korean>수리/재장 가능</Korean>
@@ -657,7 +657,7 @@
             <Italian>%3%12%4 %1%2 Ordina veicoli, velivoli, difese, SAMS, AAA ...%1%2 Ti darà anche accesso alle scansioni del settore, al ripristino del settore e ad altre cose strategiche.%1%2 Ecco a te può anche trasferire CP.</Italian>
             <Polish>%3%12%4 %1%2 Zamów pojazdy, samoloty, obronę, SAMS, AAA ...%1%2 Daje to również dostęp do skanowania sektorów, resetowania sektorów i innych strategicznych rzeczy.%1%2 Tutaj może również przenosić CP.</Polish>
             <Portuguese>%3%12%4 %1%2 Encomendar veículos, aeronaves, defesas, SAMS, AAA...%1%2 Também lhe dará acesso a varreduras de setor, reinicialização de setor e outras coisas estratégicas.%1%2 Aqui você também pode transferir CP.</Portuguese>
-            <Russian>%3%12%4 %1%2 Заказ транспортных средств, самолетов, средств защиты, BPK, ПВО...%1%2 Это также даст вам доступ к сканированию секторов, сбросу секторов и другим стратегическим вещам.%1%2 Здесь вы также может передавать CP.</Russian>
+            <Russian>%3%12%4 %1%2 Заказывайте наземный и воздушный транспорт, средства защиты, ЗРК, ЗСУ...%1%2 Получите доступ к сканированию секторов, сбросу секторов и другим стратегическим функциям.%1%2 Также вы можете передавать CP.</Russian>
             <Spanish>%3%12%4 %1%2 Solicite vehículos, aeronaves, defensas, SAMS, AAA ...%1%2 También le dará acceso a escaneos de sector, restablecimiento de sector y otras cosas estratégicas.%1%2 Aquí usted también puede transferir CP.</Spanish>
             <Turkish>%3%12%4 %1%2 Araçlar, uçaklar, savunmalar, hava savunma sistemi, uçaksavar topçusu ... sipariş edin %1%2 Ayrıca sektör taramalarına, sektör sıfırlamaya ve diğer stratejik şeylere erişmenizi sağlar.%1%2 Burda ayrıca diğer oyunculara CP aktarılabilir.</Turkish>
             <Korean>%3%12%4 %1%2 차량, 항공기, 방어, SAMS, AAA ...%1%2 또한 섹터 스캔, 섹터 재설정 및 기타 전략적 요소에 대한 액세스 권한을 제공합니다.%1%2 여기 있습니다 CP도 양도할 수 있습니다.</Korean>
@@ -691,7 +691,7 @@
             <Italian>Avviso colpo fraterno</Italian>
             <Polish>Ostrzeżenie o przyjacielskim ogniu</Polish>
             <Portuguese>Aviso de fogo amigo</Portuguese>
-            <Russian>Предупреждение o братском выстреле</Russian>
+            <Russian>Предупреждение oб огне по своим</Russian>
             <Spanish>Advertencia de disparo fraternal</Spanish>
             <Turkish>Dost ateşi uyarısı</Turkish>
             <Korean>형제 총격 경고</Korean>
@@ -708,7 +708,7 @@
             <Italian>%3%12%4, L'uccisione di molti amici comporterà il carcere. Assicurati di identificare i tuoi bersagli prima di sparare.%1%2 Quando identifichi i bersagli puoi usare %11 e chiedere se quel bersaglio è amichevole.%1</Italian>
             <Polish>%3%12%4, Zabicie wielu sojuszników spowoduje karę więzienia. Przed oddaniem strzału upewnij się, że zidentyfikowałeś swoje cele.%1%2 Podczas identyfikowania celów możesz skorzystać z %11 i zapytać, czy ten cel jest przyjazny.%1</Polish>
             <Portuguese>%3%12%4, Matar muitos amigos resultará em prisão. Certifique-se de identificar seus alvos antes de atirar.%1%2 Ao identificar os alvos, você pode usar %11 e perguntar se esse alvo é amigável.%1</Portuguese>
-            <Russian>%3%12%4, Убийство многих товарищей приведет к тюремному заключению. Убедитесь, что вы определили свои цели, прежде чем стрелять.%1%2 При определении целей вы можете использовать %11 и спросить, является ли эта цель дружественной.%1</Russian>
+            <Russian>%3%12%4, Убийство большого количества союзников приведет к тюремному заключению. Убедитесь, что вы идентифицировали цель, прежде чем стрелять.%1%2 При идентификации целей вы можете использовать %11 и спросить, является ли эта цель дружественной.%1</Russian>
             <Spanish>%3%12%4, Matar a muchos amigos te llevará a la cárcel. Asegúrate de identificar tus objetivos antes de disparar.%1%2 Al identificar objetivos, puedes utilizar %11 y preguntar si ese objetivo es amistoso.%1</Spanish>
             <Turkish>%3%12%4, Çok sayıda dost öldürmek hapis cezasıyla sonuçlanacak. Ateş etmeden önce hedeflerinizi belirlediğinizden emin olun.%1%2 Hedefleri belirlerken, %11 kullanıp ve bu hedefin dost olup olmadığını sorabilirsiniz.%1</Turkish>
             <Korean>%3%12%4, 많은 아군을 죽이면 감옥에 가게 됩니다. 쏘기 전에 목표물을 확인하십시오.%1%2 목표물을 식별할 때 %11을(를) 활용하고 목표물이 우호적인지 물어볼 수 있습니다.%1</Korean>
@@ -725,7 +725,7 @@
             <Italian>Impara a conoscere il colore di ciò che indossano i tuoi nemici, questo può aiutarti. Ti rimangono %13 uccisioni con il fuoco amico prima di essere imprigionato.</Italian>
             <Polish>Poznaj kolor tego, co noszą twoi wrogowie, to może pomóc. Pozostało ci %13 zabitych ogniem sojuszniczym, zanim trafisz do więzienia.</Polish>
             <Portuguese>Conheça a cor do que seus inimigos vestem, isso pode ajudar. Você tem %13 mortes por fogo amigo antes de ser preso.</Portuguese>
-            <Russian>Узнайте цвет одежды ваших врагов, это может помочь. У вас осталось %13 убийств дружественным огнем до того, как вас посадят в тюрьму.</Russian>
+            <Russian>Узнайте цвет формы ваших противников, это может помочь. У вас осталось %13 убийств союзников до того, как вас посадят в тюрьму.</Russian>
             <Spanish>Conozca el color de lo que usan sus enemigos, esto puede ayudar. Te quedan %13 muertes por fuego amigo antes de que te encarcelen.</Spanish>
             <Turkish>Düşmanlarınızın giydiği renkleri öğrenmek önemlidir, bu size yardımcı olabilir. Hapsedilmeden önce yapabileceğiniz %13 dost ateşi öldürme hakkınız bulunmaktadır.</Turkish>
             <Korean>적의 옷 색깔을 파악하면 도움이 될 수 있습니다. 투옥되기 전에 %13 아군 사살이 남았습니다.</Korean>
@@ -887,7 +887,7 @@
             <Italian>Registro delle modifiche.</Italian>
             <Polish>Dziennik zmian.</Polish>
             <Portuguese>Registro de mudanças.</Portuguese>
-            <Russian>Журнал изменений.</Russian>
+            <Russian>Список изменений.</Russian>
             <Spanish>Registro de cambios.</Spanish>
             <Turkish>Değişiklik Günlüğü.</Turkish>
             <Korean>변경 사항 기록.</Korean>
@@ -921,7 +921,7 @@
             <Italian>Benvenuti in Warlords Redux!</Italian>
             <Polish>Witaj w Warlords Redux!</Polish>
             <Portuguese>Bem-vindo ao Warlords Redux!</Portuguese>
-            <Russian>Добро пожаловать в Warlords Redux!</Russian>
+            <Russian>Добро пожаловать на Warlords Redux!</Russian>
             <Spanish>Bienvenido a Warlords Redux!</Spanish>
             <Turkish>Warlords Redux'a hoş geldiniz!</Turkish>    
             <Korean>Warlords Redux에 오신 것을 환영합니다!</Korean>
@@ -938,7 +938,7 @@
             <Italian>Warlords Redux 2.5 è un progetto di upgrade comunitario per l'originale Warlords Redux. Il suo obiettivo è migliorare la visione di BI di Warlords con correzioni di bug e un'esperienza utente più equilibrata mantenendo la compatibilità con i server ufficiali per il miglior numero di giocatori.</Italian>
             <Polish>Warlords Redux 2.5 jest projektem aktualizacji społeczności dla oryginalnego Warlords Redux. Celem projektu jest poprawa wizji BI w Warlords z poprawkami błędów i bardziej wyrównaną jakością doświadczenia użytkownika, przy jednoczesnej zgodności z oficjalnymi serwerami dla najlepszej liczby graczy.</Polish>
             <Portuguese>Warlords Redux 2.5 é um projeto de atualização da comunidade para o Warlords Redux original. O objetivo do projeto é melhorar a visão do BI de warlords com correções de bugs e uma experiência de usuário mais equilibrada, mantendo a compatibilidade com os servidores oficiais para o melhor número de jogadores.</Portuguese>
-            <Russian>Warlords Redux 2.5 – это проект обновления оригинального Warlords от сообщества War Sim Vets. Цель проекта – представить наилучшие решения для Warlords с исправлением ошибок и более сбалансированным пользовательским опытом, оставаясь при этом совместимым с официальными серверами для привлечения большего количества игроков.</Russian>
+            <Russian>Warlords Redux 2.5 - это коммьюнити-проект по улучшению оригинального Warlords Redux. Целью проекта является улучшение видения BI о Warlords путем исправления ошибок и создания более сбалансированного пользовательского опыта, при этом сохраняя совместимость с официальными серверами для привлечения наибольшего числа игроков.</Russian>
             <Spanish>Warlords Redux 2.5 es un proyecto de actualización de la comunidad para Warlords Redux original. Su objetivo de proyecto es mejorar la visión de BI de warlords con correcciones de errores y una experiencia de usuario más equilibrada, manteniendo la compatibilidad con los servidores oficiales para el mejor número de jugadores.</Spanish>
             <Turkish>Warlords Redux 2.5 Orijinal Warlords Redux için bir topluluk yükseltme projesidir. Projenin amacı, warlords'un Bi vizyonunu hataları düzelterek ve daha dengeli bir kullanıcı deneyimi sunarak geliştirmektir. Aynı zamanda en iyi oyuncu sayısı için resmi sunucularla uyumlu olmayı hedefler.</Turkish>
             <Korean>Warlords Redux 2.5는 원래 Warlords Redux의 커뮤니티 업그레이드 프로젝트입니다. 그것의 프로젝트 목표는 버그 수정과 더 밸런스 있는 사용자 경험을 통해 Warlords의 BI 비전을 개선하면서도 공식 서버와 호환 가능한 최고 플레이어 수를 유지하는 것입니다.</Korean>
@@ -955,7 +955,7 @@
             <Italian>Warlords Redux introduce molte nuove funzionalità come la Nebbia di Guerra e le posizioni di base casuali. Ha molte altre nuove funzionalità rispetto ai Warlord originali, come posizioni di base casuali, pattini per aerei personalizzati e l'introduzione di tutti i droni/SAM/AAA...</Italian>
             <Polish>Warlords Redux wprowadza wiele nowych funkcji, takich jak Mgła Wojny i losowe lokalizacje baz. Ma wiele innych nowych funkcji w porównaniu z warlordami vanilla, takich jak losowe lokalizacje baz, niestandardowe pylony samolotów i wprowadzenie wszystkich bezzałogowych samolotów/SAM/AAA...</Polish>
             <Portuguese>Warlords Redux apresenta muitos novos recursos, como a Névoa da Guerra e localizações de base aleatórias. Possui muitos outros recursos novos em comparação com o Warlords original, como localizações de base aleatórias, pás de aeronaves personalizadas e a introdução de todos os drones/SAMs/AAA...</Portuguese>
-            <Russian>Warlords Redux внедряет множество новых функций, таких как Туман Войны и случайное расположение баз команд. Также представлены и другие особенности: настраиваемые подвесы для авиации и введение всех оригинальных БПА/ЗРК/ПВО…</Russian>
+            <Russian>Warlords Redux вводит множество новых функций, таких как Туман Войны и случайное местоположения баз. Он полон других новых возможностей по сравнению с ванильным Warlords, таких как: случайное местоположение баз, настраиваемые пилоны для авиации, возможность использования всех БПА/ЗРК/ЗСУ...</Russian>
             <Spanish>Warlords Redux introduce muchas nuevas funciones como la Niebla de Guerra y ubicaciones de base aleatorias. Tiene muchas otras funciones nuevas en comparación con Warlords clásico, como ubicaciones de base aleatorias, pórticos de aeronaves personalizados y la introducción de todos los drones/SAMs/AAA...</Spanish>
             <Turkish>Warlords Redux, Savaş Sisi ve rastgele üs konumları gibi birçok yeni özellik sunar. Rastgele üs konumları, özel uçak pylonları, tüm dronların/Hava Savunma Sistemlerinin (SAM)/Uçaksavar Topçuları (AAA) tanıtımı gibi vanilla warlords'a kıyasla diğer birçok yeni özelliği bulunmaktadır.</Turkish>
             <Korean>Warlords Redux은 흐림의 전장과 무작위 기지 위치 등 많은 새로운 기능을 소개합니다. 베이니실 워로드와 비교했을 때 무작위 기지 위치, 사용자 정의 항공기 피렌, 모든 드론/SAM/AAA 소개 등의 많은 다른 새로운 기능이 있습니다.</Korean>
@@ -972,7 +972,7 @@
             <Italian>In questi video puoi vedere una guida dettagliata su come giocare a Warlords Redux.</Italian>
             <Polish>W tych filmach można zobaczyć szczegółowy przewodnik dotyczący gry w Warlords Redux.</Polish>
             <Portuguese>Nesses vídeos você pode ver um guia detalhado de como jogar Warlords Redux.</Portuguese>
-            <Russian>В этих видео вы можете посмотреть подробное руководство по игре Warlords Redux.</Russian>
+            <Russian>В этих видео вы можете увидеть подробное руководство по игре на Warlords Redux.</Russian>
             <Spanish>En estos videos puedes ver una guía detallada de cómo jugar a Warlords Redux.</Spanish>
             <Turkish>Bu videolarda Warlords Redux nasıl oynanacağına dair detaylı bir rehber bulabilirsiniz.</Turkish>
             <Korean>이 비디오에서는 Warlords Redux를 어떻게 하는지에 대한 상세한 안내를 볼 수 있습니다.</Korean>
@@ -1023,7 +1023,7 @@
             <Italian>Premere %1 - Per inserire i tappi per le orecchie.</Italian>
             <Polish>Naciśnij %1 - Aby włożyć wkładki do uszu.</Polish>
             <Portuguese>Pressione %1 - Para inserir seus protetores de ouvido.</Portuguese>
-            <Russian>Нажатие %1 - использовать беруши.</Russian>
+            <Russian>Нажать %1 - использовать беруши.</Russian>
             <Spanish>Presiona %1 - Para insertar tus tapones para los oídos.</Spanish>
             <Turkish>%1 tuşuna basın - Kulak tıkacınızı takın.</Turkish>
             <Korean> %1을(를) 눌러 이어플러그를 삽입하세요.</Korean>
@@ -1040,7 +1040,7 @@
             <Italian>%1 - Mostra il tuo APS nella chat.</Italian>
             <Polish>%1 - Pokazuje twoje APS na czacie.</Polish>
             <Portuguese>%1 - Mostra sua APS no chat.</Portuguese>
-            <Russian>%1 - показать состояние вашего КАЗ в чате.</Russian>
+            <Russian>%1 - показать статус вашего КАЗ в чате.</Russian>
             <Spanish>%1 - Muestra tu APS en el chat.</Spanish>
             <Turkish>%1 - Aktif koruma sistemi'nizi (APS) sohbette gösterir.</Turkish>
             <Korean>%1 - 채팅에서 APS를 표시합니다.</Korean>
@@ -1057,7 +1057,7 @@
             <Italian>La comunità War Sim Vets organizza eventi di Arma 3 e lavora sul progetto Warlords Redux conosciuto come EU#11.</Italian>
             <Polish>Społeczność War Sim Vets organizuje wydarzenia Arma 3 i pracuje nad projektem Warlords Redux znanym jako EU#11.</Polish>
             <Portuguese>A comunidade War Sim Vets organiza eventos Arma 3 e trabalha no projeto Warlords Redux conhecido como EU#11.</Portuguese>
-            <Russian>Сообщество War Sim Vets организует события в Arma 3 и работает над проектом Warlords Redux, известным как EU#11.</Russian>
+            <Russian>Сообщество War Sim Vets организует мероприятия в Arma 3 и работает над проектом Warlords Redux, известным как EU#11.</Russian>
             <Spanish>La comunidad War Sim Vets organiza eventos de Arma 3 y trabaja en el proyecto Warlords Redux conocido como EU#11.</Spanish>
             <Turkish>War Sim Vets topluluğu, Arma 3 etkinlikleri düzenlemekte ve EU#11 olarak bilinen Warlords Redux projesi üzerinde çalışmaktadır.</Turkish>
             <Korean>War Sim Vets 커뮤니티는 Arma 3 이벤트를 조직하고 EU#11으로 알려진 Warlords Redux 프로젝트에 참여합니다.</Korean>
@@ -1125,7 +1125,7 @@
             <Italian>Unisciti al nostro discord per rimanere informato sulle aggiornamenti e gli eventi di Warlords Redux.</Italian>
             <Polish>Dołącz do naszego discorda, aby być powiadomionym o aktualizacjach i wydarzeniach Warlords Redux.</Polish>
             <Portuguese>Junte-se ao nosso discord para ficar informado sobre atualizações e eventos do Warlords Redux.</Portuguese>
-            <Russian>Присоединяйтесь к нашему discord, чтобы быть в курсе обновлений и событий Warlords Redux.</Russian>
+            <Russian>Присоединяйтесь к нашему discord, чтобы быть в курсе обновлений и мероприятий Warlords Redux.</Russian>
             <Spanish>Únete a nuestro discord para estar informado de las actualizaciones y eventos de Warlords Redux.</Spanish>
             <Turkish>Warlords Redux güncellemeleri ve etkinliklerinden haberdar olmak için discord sunucumuza katılın.</Turkish>
             <Korean>Warlords Redux 업데이트와 이벤트에 대한 알림을 받으려면 discord에 가입하세요.</Korean>
@@ -1142,7 +1142,7 @@
             <Italian>Nel nostro discord puoi anche suggerire nuove cose o segnalare bug.</Italian>
             <Polish>W naszym discordzie możesz również sugerować nowe rzeczy lub zgłaszać błędy.</Polish>
             <Portuguese>No nosso discord, você também pode sugerir novas coisas ou relatar bugs.</Portuguese>
-            <Russian>В нашем discord вы также можете предложить новые вещи или сообщить об ошибках.</Russian>
+            <Russian>В нашем discord вы также можете оставлять предложения или сообщать об ошибках.</Russian>
             <Spanish>En nuestro discord también puedes sugerir nuevas cosas o informar sobre errores.</Spanish>
             <Turkish>Discord sunucumuzda ayrıca yeni şeyler önermek veya hataları bildirmek için yer alabilirsiniz.</Turkish>
             <Korean>우리의 디스코드에서는 새로운 것을 제안하거나 버그를 보고할 수 있습니다.</Korean>
@@ -1159,7 +1159,7 @@
             <Italian>Si prega di leggere prima come giocare</Italian>
             <Polish>Najpierw przeczytaj, jak grać</Polish>
             <Portuguese>Por favor, leia como jogar primeiro</Portuguese>
-            <Russian>Сначала прочитайте раздел "как играть"</Russian>
+            <Russian>Для закрытия пожалуйста прочитайте раздел "Как Играть"</Russian>
             <Spanish>Por favor, lea cómo jugar primero</Spanish>
             <Turkish>Lütfen önce nasıl oynanacağını okuyun.</Turkish>
             <Korean>먼저 플레이 방법을 읽어주세요</Korean>
