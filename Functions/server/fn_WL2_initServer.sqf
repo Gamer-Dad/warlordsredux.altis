@@ -94,6 +94,9 @@ if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
+if !(isDedicated) then {
+	{_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
+};
 0 spawn BIS_fnc_WL2_detectNewPlayers;
 ["server", true] call BIS_fnc_WL2_updateSectorArrays;
 0 spawn BIS_fnc_WL2_targetSelectionHandleServer;
