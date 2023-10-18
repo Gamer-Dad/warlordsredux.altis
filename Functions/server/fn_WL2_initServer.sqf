@@ -86,7 +86,6 @@ addMissionEventHandler ["MarkerCreated", {
 	};
 }];
 
-missionNamespace setVariable ["BIS_WL_missionStart", serverTime, true];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
 
@@ -95,7 +94,6 @@ if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
-{_x call BIS_fnc_WL2_parsePurchaseList} forEach BIS_WL_competingSides;
 0 spawn BIS_fnc_WL2_detectNewPlayers;
 ["server", true] call BIS_fnc_WL2_updateSectorArrays;
 0 spawn BIS_fnc_WL2_targetSelectionHandleServer;

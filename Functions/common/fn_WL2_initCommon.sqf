@@ -35,7 +35,6 @@ if (isServer) then {
 		"BIS_WL_base2",
 		format ["BIS_WL_currentTarget_%1", BIS_WL_competingSides # 0],
 		format ["BIS_WL_currentTarget_%1", BIS_WL_competingSides # 1],
-		"BIS_WL_missionStart",
 		"BIS_WL_wrongTeamGroup"
 	] == 0};
 	
