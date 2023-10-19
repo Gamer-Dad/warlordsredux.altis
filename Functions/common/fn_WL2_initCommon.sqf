@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 BIS_WL_allSectors = (entities "Logic") select {count synchronizedObjects _x > 0};
 
 call compile preprocessFileLineNumbers "TEMP.sqf";
@@ -38,7 +36,7 @@ if (isServer) then {
 		"BIS_WL_wrongTeamGroup"
 	] == 0};
 	
-	waitUntil {{isNil {_x getVariable "BIS_WL_originalOwner"}} count WL_BASES == 0};
+	waitUntil {{isNil {_x getVariable "BIS_WL_originalOwner"}} count [BIS_WL_base1, BIS_WL_base2] == 0};
 
 	{
 		_sector = _x;

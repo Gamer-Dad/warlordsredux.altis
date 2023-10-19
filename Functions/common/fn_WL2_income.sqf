@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_side"];
 
 if (isServer) then {
