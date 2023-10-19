@@ -227,6 +227,8 @@ class CfgFunctions {
 			class openChangesMenu {};
 			class leaveGroup {};
 			class openInfoMenu {};
+			class systemChat {};
+			class orderSystemChat {};
 		};
 	};
 	class GOM {
