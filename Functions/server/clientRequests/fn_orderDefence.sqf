@@ -49,12 +49,6 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 _asset setDir _direction;
 _asset enableWeaponDisassembly false;
 
-if (unitIsUAV _asset) then {
-	[_asset, 0] remoteExec ["lock", (owner _asset)];
-} else {
-	[_asset, 2] remoteExec ["lock", (owner _asset)];
-};
-
 [_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};

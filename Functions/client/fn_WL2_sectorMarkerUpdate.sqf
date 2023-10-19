@@ -2,7 +2,7 @@
 
 params ["_sector", "_owner", ["_specialStateArray", []]];
 
-private _ownerIndex = BIS_WL_sidesArray find _owner;
+private _ownerIndex = [WEST, EAST, RESISTANCE] find _owner;
 private _area = _sector getVariable "objectArea";
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 private _mrkrMain = (_sector getVariable "BIS_WL_markers") # 0;
