@@ -1,6 +1,7 @@
 params ["_sender", "_action", "_param1", "_param2", "_param3", "_param4"];
 
 if (isNull _sender) exitWith {};
+if (remoteExecutedOwner != (owner _sender)) exitWith {};
 
 if (_action == "orderAsset") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
@@ -199,12 +200,10 @@ if (_action == "repair") exitWith {
 };
 
 if (_action == "kill") exitWith {
-	if (remoteExecutedOwner == _param1) then {
-		_sender setDamage 1;
-	};
+	_sender setDamage 1;
 };
 
-if (_action == "10K" && {remoteExecutedOwner == (owner _sender)}) exitWith {
+if (_action == "10K") exitWith {
 	if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 		_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
 		if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
