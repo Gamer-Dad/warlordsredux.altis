@@ -37,3 +37,5 @@ if ((player getVariable ["BIS_WL_targetResetVote", -1]) == -1) then {
 
 	[player, "targetResetVoting", FALSE] call BIS_fnc_WL2_hintHandle;
 };
+
+4 spawn BIS_fnc_WL2_knockknock;

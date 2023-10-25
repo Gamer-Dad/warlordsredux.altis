@@ -118,6 +118,7 @@ while {_i < _garrisonSize} do {
 	for "_i2" from 0 to _grpSize do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
+		_newUnit addGoggles "G_Balaclava_Skull1";
 		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
 		_newUnit spawn DAPS_fnc_SetupProjectiles;
 

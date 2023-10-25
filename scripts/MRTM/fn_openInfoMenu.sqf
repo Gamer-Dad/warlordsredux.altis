@@ -21,9 +21,6 @@ private _settings = actionKeysNames "user2";
 private _groups = actionKeysNames "user3";
 private _emotes = actionKeysNames "user4";
 ((findDisplay 7000) displayCtrl 7102) ctrlSetStructuredText composeText [
-	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Feedback:" splitString " " joinString toString [160]], lineBreak,
-	parseText format ["<a href='https://forms.gle/1VH74anTdRMvwJSG9'>%1</a>", "Let us know how you feel about the game." splitString " " joinString toString [160]], lineBreak,
-	"", lineBreak,
 	parseText format ["<t color='%1' underline='1'>%2</t>", _color, "Capturing values:" splitString " " joinString toString [160]], lineBreak,
 	"If the asset isn't mentioned it has 0 capturing power. The crew of a vehicle does not add up to the vehicle's capping power.", lineBreak,
 	parseText format ["<t underline='1'>%1</t>", "A prowler with 4 people inside still only counts for 1 Point (Not for 4 or 5)." splitString " " joinString toString [160]], lineBreak,

@@ -3,7 +3,7 @@
 createDialog ["welcomeScreen", true];
 hRead = false;
 
-(findDisplay 6969) displayAddEventhandler ["KeyDown",{
+(findDisplay 9000) displayAddEventhandler ["KeyDown",{
 	if (dialog) then {
 		_button = (_this select 1);
 		if (_button in [1, 15, 56]) then {
@@ -28,66 +28,63 @@ hRead = false;
 };
 
 if (side player == west) then {
-	private _control1 = findDisplay 6969 displayCtrl 69692;
-	_control1 ctrlSetTextColor [0,0.3,0.5,1];
+	private _control1 = findDisplay 9000 displayCtrl 9005;
+	_control1 ctrlSetTextColor [0.85, 0.35, 0, 1];
 
-	private _control2 = findDisplay 6969 displayCtrl 69697;
-	_control2 ctrlSetBackgroundColor [0,0.3,0.5,1];
+	private _control2 = findDisplay 9000 displayCtrl 9001;
+	_control2 ctrlSetBackgroundColor [0.8, 0.3, 0, 1];
 } else {
-	private _control1 = findDisplay 6969 displayCtrl 69692;
-	_control1 ctrlSetTextColor [0.5,0,0,1];
+	private _control1 = findDisplay 9000 displayCtrl 9005;
+	_control1 ctrlSetTextColor [0.85, 0.35, 0, 1];
 
-	private _control2 = findDisplay 6969 displayCtrl 69697;
-	_control2 ctrlSetBackgroundColor [0.5,0,0,1];	
+	private _control2 = findDisplay 9000 displayCtrl 9001;
+	_control2 ctrlSetBackgroundColor [0.8, 0.3, 0, 1];
 };
 
 //List Menu + Scripts
-_pageAbt = lbAdd [69695, localize "STR_MRTM_welcomeInteract_01"];
-_pageHow = lbAdd [69695, localize "STR_MRTM_welcomeInteract_02"];
-_theTeam = lbAdd [69695, localize "STR_MRTM_welcomeInteract_03"];
-_dc = lbAdd [69695, localize "STR_MRTM_welcomeInteract_04"];
-_changelog = lbAdd [69695, localize "STR_MRTM_welcomeInteract_05"];
-_scripts = lbAdd [69695, localize "STR_MRTM_welcomeInteract_06"];
-
+_pageAbt = lbAdd [9011, localize "STR_MRTM_welcomeInteract_01"];
+_pageHow = lbAdd [9011, localize "STR_MRTM_welcomeInteract_02"];
+_theTeam = lbAdd [9011, localize "STR_MRTM_welcomeInteract_03"];
+_dc = lbAdd [9011, localize "STR_MRTM_welcomeInteract_04"];
+_changelog = lbAdd [9011, localize "STR_MRTM_welcomeInteract_05"];
+_scripts = lbAdd [9011, localize "STR_MRTM_welcomeInteract_06"];
 
 //List Menu Data + Scrips
-lbSetData[69695, _pageAbt, "pageAbt"];
-lbSetData[69695, _pageHow, "pageHow"];
-lbSetData[69695, _theTeam, "theCom"];
-lbSetData[69695, _dc, "discord"];
-lbSetData[69695, _changelog, "changelog"];
-lbSetData[69695, _scripts, "scripts"];
+lbSetData[9011, _pageAbt, "pageAbt"];
+lbSetData[9011, _pageHow, "pageHow"];
+lbSetData[9011, _theTeam, "theCom"];
+lbSetData[9011, _dc, "discord"];
+lbSetData[9011, _changelog, "changelog"];
+lbSetData[9011, _scripts, "scripts"];
 
-lbSetCurSel [69695, _pageAbt];
+lbSetCurSel [9011, _pageAbt];
+{
+	_number = _forEachIndex + 1;
+	lbSetText [9011, _x, localize (format ["STR_MRTM_welcomeInteract_0%1", _number])];
+	lbSetColor [9011, _x, [0.85, 0.35, 0, 1]];
+} forEach [_pageAbt, _pageHow, _theTeam, _dc, _changelog, _scripts];
 
-lbSetText[69695, _pageAbt, localize "STR_MRTM_welcomeInteract_01"];
-lbSetPicture [69695, _pageAbt, 'img\star_ca.paa'];
-lbSetText[69695, _pageHow, localize "STR_MRTM_welcomeInteract_02"];
-lbSetPicture [69695, _pageHow, 'img\icon_important_ca.paa'];
-lbSetText[69695, _theTeam, localize "STR_MRTM_welcomeInteract_03"];
-lbSetPicture [69695, _theTeam, 'img\icon-user_ca.paa'];
-lbSetText[69695, _dc, localize "STR_MRTM_welcomeInteract_04"];
-lbSetPicture [69695, _dc, 'img\link_out_white_ca.paa'];
-lbSetText[69695, _changelog, localize "STR_MRTM_welcomeInteract_05"];
-lbSetPicture [69695, _changelog, 'img\icon_update_ca.paa'];
-lbSetText[69695, _scripts, localize "STR_MRTM_welcomeInteract_06"];
-lbSetPicture [69695, _scripts, 'img\icon-file_ca.paa'];
-ctrlSetText [69694, "img\wl_logo_ca.paa"];
+lbSetPicture [9011, _pageAbt, 'img\star_ca.paa'];
+lbSetPicture [9011, _pageHow, 'img\icon_important_ca.paa'];
+lbSetPicture [9011, _theTeam, 'img\icon-user_ca.paa'];
+lbSetPicture [9011, _dc, 'img\link_out_white_ca.paa'];
+lbSetPicture [9011, _changelog, 'img\icon_update_ca.paa'];
+lbSetPicture [9011, _scripts, 'img\icon-file_ca.paa'];
 
 while {dialog} do {
-	_index = lbCurSel 69695;
-	_curSel = lbData [69695, _index];
+	_index = lbCurSel 9011;
+	_curSel = lbData [9011, _index];
 
 	if (hRead == false) then {
-		ctrlShow [6969691, true];
-		ctrlSetText [6969691, localize "STR_MRTM_welcomeInteract_21"];
+		ctrlShow [9006, true];
+		ctrlSetText [9006, localize "STR_MRTM_welcomeInteract_21"];
 	} else {
-		ctrlShow [6969691, false];
+		ctrlShow [9006, false];
 	};
 
 	switch (_curSel) do {
 		case "pageAbt": {
-			private _control = findDisplay 6969 displayCtrl 69696;
+			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_07", lineBreak,
 			"", lineBreak,
@@ -107,7 +104,7 @@ while {dialog} do {
 			_groupKey = actionKeysNames "user3";
 			_emotesKey = actionKeysNames "user4";
 
-			private _control = findDisplay 6969 displayCtrl 69696;
+			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_02", lineBreak, 
 			"", lineBreak,
@@ -129,7 +126,7 @@ while {dialog} do {
 		};
 
 		case "theCom": { 
-			private _control = findDisplay 6969 displayCtrl 69696;
+			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_03", lineBreak, 
 			"", lineBreak,
@@ -146,8 +143,7 @@ while {dialog} do {
 			"- MrThomasM", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
-			"- Rook", lineBreak,
-			"- Weasley Wells", lineBreak,
+			"- ", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_18", lineBreak,
 			"- Coffee", lineBreak,
@@ -160,7 +156,7 @@ while {dialog} do {
 		};
 
 		case "discord": { 
-			private _control = findDisplay 6969 displayCtrl 69696;
+			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_04", lineBreak,
 			"", lineBreak, 
@@ -172,7 +168,7 @@ while {dialog} do {
 		};
 
 		case "changelog": {
-			private _control = findDisplay 6969 displayCtrl 69696;
+			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			"2.5.8", lineBreak,
 			"-Performance improved.", lineBreak,
@@ -248,7 +244,7 @@ while {dialog} do {
 
 		//Scripts
 		case "scripts": { 
-			private _control = findDisplay 6969 displayCtrl 69696;
+			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			"Aircraft Loadout", lineBreak,
 			"", lineBreak,

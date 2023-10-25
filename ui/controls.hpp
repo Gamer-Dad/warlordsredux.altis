@@ -1,12 +1,12 @@
 class welcomeScreen
 {
-	idd = 6969;
+	idd = 9000;
 
 	class controls
 	{
 		class welcomeFrame: IGUIBackMRTM
 		{
-			idc = 69697;
+			idc = 9001;
 			deletable = 0;
 			x = 0.250656 * safezoneW + safezoneX;
 			y = 0.171 * safezoneH + safezoneY;
@@ -17,7 +17,7 @@ class welcomeScreen
 
 		class welcomeMain: IGUIBackMRTM
 		{
-			idc = 69690;
+			idc = -1;
 			deletable = 0;
 			x = 0.257656 * safezoneW + safezoneX;
 			y = 0.181 * safezoneH + safezoneY;
@@ -29,9 +29,21 @@ class welcomeScreen
 
 		class welcomeMainImg: RscPictureMRTM
 		{
-			idc = 69691;
+			idc = -1;
 			deletable = 0;
 			text = "a3\map_altis\data\picturemap_ca.paa";
+			sizeEx = "0.021 / (getResolution select 5)";
+			style = ST_MULTI + ST_TITLE_BAR;
+			x = 0.257656 * safezoneW + safezoneX;
+			y = 0.181 * safezoneH + safezoneY;
+			w = 0.484688 * safezoneW;
+			h = 0.649 * safezoneH;
+		};
+		class welcomeMain2Img: RscPictureMRTM
+		{
+			idc = -1;
+			deletable = 0;
+			text = "img\altis_ca.paa";
 			sizeEx = "0.021 / (getResolution select 5)";
 			style = ST_MULTI + ST_TITLE_BAR;
 			x = 0.257656 * safezoneW + safezoneX;
@@ -42,7 +54,7 @@ class welcomeScreen
 
 		class welcomeText: RscStructuredTextMRTM
 		{
-			idc = 69692;
+			idc = 9005;
 			deletable = 0;
 			text = "Warlords Redux v2.5";
 			sizeEx = "0.021 / (getResolution select 5)";
@@ -54,7 +66,7 @@ class welcomeScreen
 
 		class welcomeTextToRead: RscStructuredTextMRTM
 		{
-			idc = 6969691;
+			idc = 9006;
 			deletable = 0;
 			text = "";
 			sizeEx = "0.021 / (getResolution select 5)";
@@ -67,7 +79,7 @@ class welcomeScreen
 
 		class welcomeSlidePic: RscPictureMRTM
 		{
-			idc = 69694;
+			idc = 9007;
 			deletable = 0;
 			text = "";
 			style = ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
@@ -80,10 +92,11 @@ class welcomeScreen
 		class welcomeListFrame: RscFrameMRTM
 		{
 			type = CT_STATIC;
-			idc = 69698;
+			idc = -1;
 			deletable = 0;
 			style = ST_FRAME;
 			colorBackground[] = {0,0,0,0};
+			colorText[] = {"0.9", "0.4", "0", "1"};
 			x = 0.288594 * safezoneW + safezoneX;
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
@@ -94,10 +107,11 @@ class welcomeScreen
 		{
 			type = CT_STATIC;
 			sizeEx = "0.021 / (getResolution select 5)";
-			idc = 69699;
+			idc = -1;
 			deletable = 0;
 			style = ST_FRAME;
 			colorBackground[] = {0,0,0,0};
+			colorText[] = {"0.9", "0.4", "0", "1"};
 			x = 0.485469 * safezoneW + safezoneX;
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.245937 * safezoneW;
@@ -127,7 +141,7 @@ class welcomeScreen
 			{
 				class welcomeTextBlock: RscStructuredTextMRTM
 				{
-					idc = 69696;
+					idc = 9010;
 					deletable = 0;
 					sizeEx = "0.021 / (getResolution select 5)";
 					type = CT_STRUCTURED_TEXT;
@@ -149,7 +163,7 @@ class welcomeScreen
 
 		class welcomeList: RscListboxMRTM
 		{
-			idc = 69695;
+			idc = 9011;
 			deletable = 0;
 			x = 0.288594 * safezoneW + safezoneX;
 			y = 0.269 * safezoneH + safezoneY;
@@ -377,7 +391,7 @@ class MRTM_settingsMenu
 		class MRTMHeaderBackground: IGUIBackMRTM
 		{
 			idc = 2200;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.45375 * safezoneW;
@@ -1358,6 +1372,7 @@ class MRTM_settingsMenu
 			idc = 1604;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1370,6 +1385,7 @@ class MRTM_settingsMenu
 			idc = 1605;
 			text = "GROUPS";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1382,6 +1398,7 @@ class MRTM_settingsMenu
 			idc = 1606;
 			text = "EMOTES";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.387969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1394,6 +1411,7 @@ class MRTM_settingsMenu
 			idc = 1607;
 			text = "CHANGES";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.447969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1406,6 +1424,7 @@ class MRTM_settingsMenu
 			idc = 1608;
 			text = "INFO";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.507969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1434,7 +1453,7 @@ class MRTM_groupsMenu
 		class MRTMGroupsHeaderBackground: IGUIBackMRTM
 		{
 			idc = 4002;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.45375 * safezoneW;
@@ -1569,6 +1588,7 @@ class MRTM_groupsMenu
 			idc = 4100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1581,6 +1601,7 @@ class MRTM_groupsMenu
 			idc = 4101;
 			text = "INVITE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlEnable false;";
 			action = "['Invite'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.652969 * safezoneW + safezoneX;
@@ -1594,6 +1615,7 @@ class MRTM_groupsMenu
 			idc = 4102;
 			text = "DECLINE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Decline'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.487969 * safezoneW + safezoneX;
@@ -1607,6 +1629,7 @@ class MRTM_groupsMenu
 			idc = 4103;
 			text = "LEAVE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Leave'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
@@ -1620,6 +1643,7 @@ class MRTM_groupsMenu
 			idc = 4104;
 			text = "PROMOTE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Promote'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.327969 * safezoneW + safezoneX;
@@ -1633,6 +1657,7 @@ class MRTM_groupsMenu
 			idc = 4105;
 			text = "ACCEPT";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Accept'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.550969 * safezoneW + safezoneX;
@@ -1646,6 +1671,7 @@ class MRTM_groupsMenu
 			idc = 4106;
 			text = "KICK";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Kick'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
@@ -1675,7 +1701,7 @@ class MRTM_emotesMenu
 		class MRTMEmotesHeaderBackground: IGUIBackMRTM
 		{
 			idc = 5002;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.38836 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.20375 * safezoneW;
@@ -1728,6 +1754,7 @@ class MRTM_emotesMenu
 			idc = 5100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.38836 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1756,7 +1783,7 @@ class MRTM_changesMenu
 		class MRTMChangesHeaderBackground: IGUIBackMRTM
 		{
 			idc = 6002;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.36675 * safezoneW;
@@ -1786,6 +1813,7 @@ class MRTM_changesMenu
 			idc = 6100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1853,7 +1881,7 @@ class MRTM_infoMenu
 		class MRTMinfoHeaderBackground: IGUIBackMRTM
 		{
 			idc = 7002;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.36675 * safezoneW;
@@ -1883,6 +1911,7 @@ class MRTM_infoMenu
 			idc = 7100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;

@@ -19,9 +19,9 @@ _ctrlTimer ctrlSetPosition [_displayX + (_blockW * 105), _displayY + (_blockH * 
 
 while {[0] call BIS_fnc_countdown > 0} do {
 	private _timeLeft = [0] call BIS_fnc_countdown;
-	_ctrlTimer ctrlSetStructuredText parseText format ["<t size = '%2' color = '#ffffff'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString, (0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+	_ctrlTimer ctrlSetStructuredText parseText format ["<t size = '%2' color = '#d85900'>%1</t>", [ _timeLeft, "HH:MM:SS"] call BIS_fnc_secondsToString, (0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 	_ctrlTimer ctrlCommit 0;
-	_ctrlBackgroundTimer ctrlSetStructuredText parseText format ["<img size = '%1' color = '#ffffff' image='img\timer_ca.paa'></img>", (0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
+	_ctrlBackgroundTimer ctrlSetStructuredText parseText format ["<img size = '%1' image='img\pumpkin_ca.paa'></img>", (1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)];
 	_ctrlBackgroundTimer ctrlCommit 0;
-	sleep 0.2;
+	sleep 0.5;
 };

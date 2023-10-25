@@ -19,6 +19,7 @@ if (_owner == BIS_WL_playerSide) then {
 		["Won"] spawn MRTM_fnc_statTracker;
 	} else {
 		"Seized" call BIS_fnc_WL2_announcer;
+		8 spawn BIS_fnc_WL2_knockknock;
 		if (count ([player] inAreaArray (_sector getVariable "objectAreaComplete")) > 0) then {
 			["Seized"] spawn MRTM_fnc_statTracker;
 		};

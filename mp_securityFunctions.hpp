@@ -24,16 +24,16 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
+		class BIS_fnc_WL2_collectReward {
+			allowedTargets = 2;
+		};
+
 		class MRTM_fnc_invite {
 			allowedTargets = 2;
 		};
 
 		class MRTM_fnc_accept {
 			allowedTargets = 2;
-		};
-
-		class BIS_fnc_WL2_reportCheater {
-			allowedTargets = 1;
 		};
 
 		class BIS_fnc_WL2_forfeitHandle {

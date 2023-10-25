@@ -767,6 +767,23 @@
             <Chinesesimp>我们致力于培养友好、尊重的游戏社区。您选择的用户名包含违反我们准则的内容。请将您的用户名更改为更合适的内容以参加游戏，并确保为所有人提供积极的游戏体验。感谢您的合作。</Chinesesimp>
             <Chinese>我們致力於培養友好、尊重的遊戲社區。您選擇的用戶名包含違反我們準則的內容。請將您的用戶名更改為更合適的內容以</Chinese>
         </Key>
+        <Key ID="STR_A3_collectPumpkins">
+            <Original>Collect as many pumpkins as possible!</Original>
+            <English>Collect as many pumpkins as possible!</English>
+            <Czech>Sbírej co nejvíce dýní!</Czech>
+            <French>Collectez autant de citrouilles que possible !</French>
+            <German>Sammle so viele Kürbisse wie möglich!</German>
+            <Italian>Raccogli più zucche possibile!</Italian>
+            <Polish>Zbieraj jak najwięcej dyni!</Polish>
+            <Portuguese>Colete o máximo de abóboras possível!</Portuguese>
+            <Russian>Собери как можно больше тыкв!</Russian>
+            <Spanish>¡Recolecta tantas calabazas como sea posible!</Spanish>
+            <Turkish>Mümkün olan kadar çok kabak topla!</Turkish>
+            <Korean>가능한 한 많은 호박을 수집하세요!</Korean>
+            <Japanese>できるだけ多くのかぼちゃを集めてください！</Japanese>
+            <Chinesesimp>尽量收集更多南瓜！</Chinesesimp>
+            <Chinese>盡量收集更多南瓜！</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>

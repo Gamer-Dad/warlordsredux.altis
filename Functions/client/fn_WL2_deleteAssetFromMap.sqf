@@ -12,7 +12,6 @@ if (_result) then {
 	missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target]];
 	publicVariableServer _ownedVehiclesVarName;
 
-	// addresses lag-related game freeze issue
 	if (_target == (getConnectedUAV player)) then {
 		player connectTerminalToUAV objNull;
 	};
@@ -27,4 +26,3 @@ if (_result) then {
 } else {
 	playSound "AddItemFailed";
 };
-						

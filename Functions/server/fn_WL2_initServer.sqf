@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
 [36000] call BIS_fnc_countdown;
@@ -106,21 +104,13 @@ if !(isDedicated) then {
 0 spawn BIS_fnc_WL2_mineLimit;
 0 spawn BIS_fnc_WL2_processRunways;
 
-setTimeMultiplier 3;
+setTimeMultiplier 4;
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep WL_TIMEOUT_LONG; daytime > 20 || {daytime < 5}};
-		setTimeMultiplier 9;
-		waitUntil {sleep WL_TIMEOUT_LONG; daytime < 20 && {daytime > 5}};
+		waitUntil {sleep 5; daytime > 20 || {daytime < 5}};
+		setTimeMultiplier 7;
+		waitUntil {sleep 5; daytime < 20 && {daytime > 5}};
 		setTimeMultiplier 3;
-	};
-};
-
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		_overcastPreset = random 1;
-		(7200 * timeMultiplier) setOvercast _overcastPreset;
-		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
 	};
 };
 
@@ -128,8 +118,8 @@ setTimeMultiplier 3;
 	_x spawn {
 		_side = _this;
 		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep WL_TIMEOUT_LONG; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};
-			sleep WL_TIMEOUT_LONG;
+			waitUntil {sleep 5; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};
+			sleep 5;
 			if (((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side) then {
 				[_side, objNull] call BIS_fnc_WL2_selectTarget;
 			};

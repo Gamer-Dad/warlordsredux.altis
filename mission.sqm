@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1391;
+		nextID=1392;
 	};
 	class MarkerIDProvider
 	{
@@ -279,6 +279,7 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
 			id=11;
 			type="Logic";
+			atlOffset=7.6293945e-006;
 		};
 		class Item11
 		{

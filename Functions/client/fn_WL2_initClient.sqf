@@ -186,6 +186,7 @@ call _fncEarPlugs;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;
+7 spawn BIS_fnc_WL2_knockknock;
 
 0 spawn {
 	waitUntil {sleep 0.1; !isnull player};

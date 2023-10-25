@@ -63,11 +63,11 @@ class CfgFunctions {
 			class WL2_killRewardClient {};
 			class WL2_mrtmAction {};
 			class WL2_targetResetHandleVote {};
-			class WL2_reportCheater {};
 			class WL2_wasMain {};
 			class WL2_askForgiveness {};
 			class WL2_clientEH {};
 			class WL2_blockScreen {};
+			class WL2_knockknock {};
     	};
 		class Server 
 		{
@@ -96,6 +96,8 @@ class CfgFunctions {
 			class WL2_forfeitHandleServer {};
 			class WL2_forgiveTeamkill {};
 			class WL2_createUAVCrew {};
+			class WL2_collectReward {};
+			class WL2_pumpkinHunt {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -197,6 +199,12 @@ class CfgFunctions {
 			class rearm {};
 			class animate {};
 			class WL2_vehicleRearm {};
+		};
+		class HalloweenEvent
+		{
+			file = "Functions\client\event";
+			class WL2_cPumpkinHunt {};
+			class WL2_pumpkinTimer {};
 		};
 	};
 
