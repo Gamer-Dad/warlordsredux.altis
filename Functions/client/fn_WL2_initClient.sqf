@@ -29,27 +29,6 @@ if (missionNamespace getVariable _switch) exitWith {
 };
 missionNamespace setVariable [(format ["BIS_WL_forceOtherTeam_%1", _uid]), nil, [2, clientOwner]];
 
-private _imbalance = format ["BIS_WL_imbalance_%1", _uid];
-waitUntil {!isNil {missionNamespace getVariable _imbalance}};
-if (missionNamespace getVariable _imbalance) exitWith {
-	addMissionEventHandler ["EachFrame", {
-		clearRadio;
-	}];
-	sleep 0.1;
-	["client_init"] call BIS_fnc_endLoadingScreen;
-	player removeItem "ItemMap";
-	player removeItem "ItemRadio";
-	[player] joinSilent BIS_WL_wrongTeamGroup;
-	enableRadio false;
-	enableSentences false;
-	0 fadeSpeech 0;
-	0 fadeRadio 0;
-	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
-	missionNamespace setVariable [(format ["BIS_WL_imbalance_%1", _uid]), nil, [2, clientOwner]];
-	["Imbalance", "We want to balance out the games, please join the other team."] call BIS_fnc_WL2_blockScreen;
-};
-missionNamespace setVariable [(format ["BIS_WL_imbalance_%1", _uid]), nil, [2, clientOwner]];
-
 _text = toLower (name player);
 _list = getArray (missionConfigFile >> "adminFilter");
 if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
