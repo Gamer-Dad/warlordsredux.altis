@@ -22,7 +22,7 @@ if (isPlayer _warlord) then {
 		_imbalanced = false;
 		_west = count (allPlayers select {side group _x == west && {_x != _warlord}});
 		_east = count (allPlayers select {side group _x == east && {_x != _warlord}});
-		if (!(_checkedIn) && {(serverTime > 300) && {abs (_west - _east) > 3}}) then {
+		if (!(_checkedIn) && {(serverTime > 300) && {abs (_west - _east) > 2}}) then {
 			_balanceCheck = ([[_west, _east], [], {_x}, "ASCEND"] call BIS_fnc_sortBy) # 0; //Low -> High
 			_imbalanced = (side group _warlord) != _balanceCheck;
 		};

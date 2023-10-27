@@ -1,4 +1,4 @@
-adminFilter[] = {"n i g g a", "nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
+adminFilter[] = {"kill yourself","commit suicide","n i g g a", "nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
 
 class arsenalConfig
 {
