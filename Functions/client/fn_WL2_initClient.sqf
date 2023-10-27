@@ -7,14 +7,12 @@ waitUntil {!isNull player && isPlayer player};
 "client" call BIS_fnc_WL2_varsInit;
 
 
-private _teamCheckOKVarID = format ["BIS_WL_teamCheckOK_%1", getPlayerUID player];
-waitUntil {!isNil {missionNamespace getVariable _teamCheckOKVarID}};
-if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
+private _uid = getPlayerUID player;
+private _switch = format ["BIS_WL_forceOtherTeam_%1", _uid];
+waitUntil {!isNil {missionNamespace getVariable _switch}};
+if (missionNamespace getVariable _switch) exitWith {
 	addMissionEventHandler ["EachFrame", {
 		clearRadio;
-		{
-			deleteMarkerLocal _x;
-		} forEach allMapMarkers;
 	}];
 	sleep 0.1;
 	["client_init"] call BIS_fnc_endLoadingScreen;
@@ -26,8 +24,31 @@ if !(missionNamespace getVariable _teamCheckOKVarID) exitWith {
 	0 fadeSpeech 0;
 	0 fadeRadio 0;
 	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+	missionNamespace setVariable [(format ["BIS_WL_forceOtherTeam_%1", _uid]), nil, [2, clientOwner]];
 	[localize "STR_A3_WL_switch_teams", localize "STR_A3_WL_switch_teams_info"] call BIS_fnc_WL2_blockScreen;
 };
+missionNamespace setVariable [(format ["BIS_WL_forceOtherTeam_%1", _uid]), nil, [2, clientOwner]];
+
+private _imbalance = format ["BIS_WL_imbalance_%1", _uid];
+waitUntil {!isNil {missionNamespace getVariable _imbalance}};
+if (missionNamespace getVariable _imbalance) exitWith {
+	addMissionEventHandler ["EachFrame", {
+		clearRadio;
+	}];
+	sleep 0.1;
+	["client_init"] call BIS_fnc_endLoadingScreen;
+	player removeItem "ItemMap";
+	player removeItem "ItemRadio";
+	[player] joinSilent BIS_WL_wrongTeamGroup;
+	enableRadio false;
+	enableSentences false;
+	0 fadeSpeech 0;
+	0 fadeRadio 0;
+	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+	missionNamespace setVariable [(format ["BIS_WL_imbalance_%1", _uid]), nil, [2, clientOwner]];
+	["Imbalance", "We want to balance out the games, please join the other team."] call BIS_fnc_WL2_blockScreen;
+};
+missionNamespace setVariable [(format ["BIS_WL_imbalance_%1", _uid]), nil, [2, clientOwner]];
 
 _text = toLower (name player);
 _list = getArray (missionConfigFile >> "adminFilter");
@@ -57,9 +78,8 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 
 call MRTM_fnc_settingsInit;
 
-private _uidPlayer = getPlayerUID player;
-missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uidPlayer], []];
-player setVariable ["BIS_WL_ownerAsset", (getPlayerUID player), [2, clientOwner]];
+missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
+player setVariable ["BIS_WL_ownerAsset", _uid, [2, clientOwner]];
 
 //UI
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
@@ -67,7 +87,7 @@ uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 50000];
 
 //WAS system
-if !((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
+if !(_uid in (getArray (missionConfigFile >> "adminIDs"))) then {
 	0 spawn BIS_fnc_WL2_wasMain;
 };
 
@@ -76,7 +96,7 @@ if !(isServer) then {
 };
 call BIS_fnc_WL2_sectorsInitClient;
 
-["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
+["client", true] call BIS_fnc_WL2_updateSectorArrays;
 
 private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 7);
 {
@@ -141,10 +161,11 @@ call BIS_fnc_WL2_targetResetHandle;
 };
 
 0 spawn {
-	_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}});
+	_uid = getPlayerUID player;
+	_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == _uid}});
 	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep 1; count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}}) != _selectedCnt};
-		_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}});
+		waitUntil {sleep 1; count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == _uid}}) != _selectedCnt};
+		_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == _uid}});
 		call BIS_fnc_WL2_sub_purchaseMenuRefresh;
 	};
 };
@@ -160,7 +181,7 @@ call BIS_fnc_WL2_targetResetHandle;
 	BIS_WL_purchaseMenuDiscovered = nil;
 };
 
-[player, "maintenance", {(player nearObjects ["All", WL_MAINTENANCE_RADIUS]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)}} != -1}] call BIS_fnc_WL2_hintHandle;
+[player, "maintenance", {(player nearObjects ["All", 30]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)}} != -1}] call BIS_fnc_WL2_hintHandle;
 [player, "nearSL", {(player distance2D (leader group player) <= 200) && {player != (leader group player)}}] call BIS_fnc_WL2_hintHandle;
 
 0 spawn BIS_fnc_WL2_selectedTargetsHandle;

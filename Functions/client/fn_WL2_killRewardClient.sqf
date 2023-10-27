@@ -1,4 +1,4 @@
-params ["_unit", "_reward"];
+params ["_unit", "_reward", ["_pumpkin", false, [false]]];
 
 disableSerialization;
 
@@ -20,7 +20,7 @@ _ctrlNmbr = (uiNamespace getVariable ["control", 50000]);
 _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
-if (_unit == "pumpkin") then {
+if (_pumpkin) then {
 	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Pumpkin collected +%1CP</t>", _reward];
 } else {
 	if (_unit isKindOf "Man") then {

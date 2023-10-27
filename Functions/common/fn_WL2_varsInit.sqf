@@ -14,7 +14,7 @@ switch (_locality) do {
 		BIS_WL_playerIDArr = [[], []];
 		{
 			missionNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
-		} forEach BIS_WL_competingSides;
+		} forEach [WEST, EAST];
 	};
 	case "client": {
 		BIS_WL_playerSide = side group player;

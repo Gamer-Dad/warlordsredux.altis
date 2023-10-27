@@ -20,8 +20,6 @@ while {serverTime < _time} do {
 
 			}];
 			_pumpkinArr pushBackUnique _pumpkin;
-		} else {
-			[localize "STR_A3_collectPumpkins"] spawn BIS_fnc_WL2_smoothText;
 		};
 	};
 	sleep 3;

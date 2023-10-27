@@ -52,7 +52,7 @@ if (
 			"TahomaB",
 			"right"
 		];
-	};		
+	};
 } forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
 {
 	_m drawIcon [
