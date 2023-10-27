@@ -1,20 +1,5 @@
 params ["_m"];
-
-{
-	_m drawIcon [
-		_x call BIS_fnc_iconType,
-		if (side group _x == west) then {[0,0.3,0.6,1]} else {[0.5,0,0,1]},
-		_x call BIS_fnc_getPos,
-		_x call BIS_fnc_iconSize,
-		_x call BIS_fnc_iconSize,
-		_x call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
-		1,
-		0.025,
-		"TahomaB",
-		"right"
-	];
-} forEach ((allUnits) select {(player getVariable ["reward_active", false]) && {(side group _x == BIS_WL_enemySide) && {(isNull objectParent _x) && {(alive _x)}}}});		
+		
 if !(isNull BIS_WL_highlightedSector) then {
 	_m drawIcon [
 		"A3\ui_f\data\map\groupicons\selector_selectedMission_ca.paa",

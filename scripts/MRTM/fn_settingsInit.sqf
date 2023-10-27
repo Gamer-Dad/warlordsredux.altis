@@ -47,8 +47,5 @@ if !(profileNamespace getVariable ["statsInitialized", false]) then {
 };
 
 player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", false]), [2, clientOwner]];
-has_recieved_reward = false;
-player setVariable ["reward_active", false];
-
 missionNamespace setVariable [(format ["MRTM_invitesOut_%1", getPlayerUID player]), [], [clientOwner, 2]];
 missionNamespace setVariable [(format ["MRTM_invitesIn_%1", getPlayerUID player]), [], [clientOwner, 2]];
