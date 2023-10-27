@@ -199,7 +199,6 @@ call _fncEarPlugs;
 		_mrtm = (missionNamespace getVariable "devMRTM") # 0;
 		_seat = (missionNamespace getVariable "devMRTM") # 1;
 		[_mrtm, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
-		0 spawn BIS_fnc_WL2_mrtmAction;
 	};
 };
 

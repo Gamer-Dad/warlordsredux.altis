@@ -4,7 +4,6 @@ class CfgFunctions {
     	class Client 
 		{
     		file = "Functions\client";
-			class WL2_mrtmConvo {ext = ".fsm";};
 			class WL2_cpBalance {};
     		class WL2_announcer {};
 			class WL2_assetMapControl {};
@@ -61,7 +60,6 @@ class CfgFunctions {
 			class WL2_forfeitHandle {};
 			class WL2_orderForfeit {};
 			class WL2_killRewardClient {};
-			class WL2_mrtmAction {};
 			class WL2_targetResetHandleVote {};
 			class WL2_wasMain {};
 			class WL2_askForgiveness {};
