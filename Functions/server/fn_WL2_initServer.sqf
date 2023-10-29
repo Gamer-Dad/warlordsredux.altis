@@ -103,6 +103,7 @@ if !(isDedicated) then {
 0 spawn BIS_fnc_WL2_garbageCollector;
 0 spawn BIS_fnc_WL2_mineLimit;
 0 spawn BIS_fnc_WL2_processRunways;
+0 spawn BIS_fnc_WL2_pumpkinHunt;
 
 setTimeMultiplier 4;
 0 spawn {
