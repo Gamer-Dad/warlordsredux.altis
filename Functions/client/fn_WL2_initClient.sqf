@@ -6,7 +6,6 @@ waitUntil {!isNull player && isPlayer player};
 
 "client" call BIS_fnc_WL2_varsInit;
 
-
 private _uid = getPlayerUID player;
 private _switch = format ["BIS_WL_forceOtherTeam_%1", _uid];
 waitUntil {!isNil {missionNamespace getVariable _switch}};
@@ -48,23 +47,20 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
-
-//init radio after team check 
+ 
 enableRadio true;
 enableSentences true;
 {_x enableChannel [true, true]} forEach [1,2,3,4,5];
-{_x enableChannel [true, false]} forEach [0]; //no global chat
+{_x enableChannel [true, false]} forEach [0];
 
 call MRTM_fnc_settingsInit;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 player setVariable ["BIS_WL_ownerAsset", _uid, [2, clientOwner]];
 
-//UI
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 50000];
 
-//WAS system
 if !(_uid in (getArray (missionConfigFile >> "adminIDs"))) then {
 	0 spawn BIS_fnc_WL2_wasMain;
 };
@@ -90,10 +86,6 @@ if !(isServer) then {
 setGroupIconsSelectable true;
 setGroupIconsVisible [true, false];
 0 spawn BIS_fnc_WL2_mapControlHandle;
-
-addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
-addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
-addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
 _mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enemyBase];
 _mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;
@@ -187,7 +179,6 @@ call _fncEarPlugs;
 0 spawn BIS_fnc_WL2_welcome;
 
 0 spawn {
-	waitUntil {sleep 0.1; !isnull player};
 	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
 	_respawnPos = markerPos selectRandom _markers;
 	while {player distance2D _respawnPos > 300} do {

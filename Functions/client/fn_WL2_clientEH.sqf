@@ -3,6 +3,10 @@
 	[] spawn BIS_fnc_WL2_refreshOSD;
 };
 
+addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
+addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
+addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
+
 //Voice system EH
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
