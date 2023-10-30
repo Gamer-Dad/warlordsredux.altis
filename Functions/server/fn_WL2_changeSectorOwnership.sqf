@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_sector", "_owner"];
 
 _sector setVariable ["BIS_WL_owner", _owner, true];
@@ -10,9 +8,10 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 if !(_owner in _previousOwners) then {
 	_previousOwners pushBack _owner;
 	if (serverTime > 0 && count _previousOwners == 1) then {
+		_rewardMultiplier = 30;
 		{
 			private _uid = getPlayerUID _x;
-			[_uid, (_sector getVariable "BIS_WL_value") * WL_SECTOR_CAPTURE_REWARD_MULTIPLIER] call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_uid, (_sector getVariable "BIS_WL_value") * _rewardMultiplier] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		} forEach (BIS_WL_allWarlords select {side group _x == _owner});
 	};
 };
@@ -43,7 +42,7 @@ if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _ene
 	} forEach (BIS_WL_allWarlords select {side group _x == _enemySide});
 	if !(isDedicated) then {
 		if (BIS_WL_playerSide != _enemySide) then {
-			BIS_WL_resetTargetSelection_client = FALSE;
+			BIS_WL_resetTargetSelection_client = false;
 		};
 	};
 };

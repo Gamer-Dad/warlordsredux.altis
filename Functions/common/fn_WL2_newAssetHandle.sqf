@@ -37,7 +37,7 @@ if (isPlayer _owner) then {
 			BIS_WL_recentlyPurchasedAssets pushBack _asset;
 			
 			_asset spawn {
-				_t = serverTime + WL_ASSET_SCENE_ICON_DURATION;
+				_t = serverTime + 30;
 				waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t || {!alive _this || {vehicle player == _this}}};
 				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
 			};

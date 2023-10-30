@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 waituntil {!isnull (findDisplay 46)};
 
 _blockW = safeZoneW / 1000;
@@ -29,5 +27,5 @@ while {!BIS_WL_missionEnd} do {
 		_cpBalanceCtrl ctrlSetTextColor (if(_sidePercentageFinal > 0) then {[0,1,0,1]} else {if (_sidePercentageFinal < 0) then [{[1,0,0,1]}, {[1,1,1,1]}]});
 	};
 	_cpBalanceCtrl ctrlCommit 0;
-	sleep WL_TIMEOUT_LONG;
+	sleep 5;
 };

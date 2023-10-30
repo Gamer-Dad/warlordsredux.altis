@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_class", "_cost"];
 
 player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
@@ -10,7 +8,7 @@ if (_class isKindOf "Man") then {
 	[player, _asset] spawn BIS_fnc_WL2_newAssetHandle;
 	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 } else {
-	BIS_WL_currentSelection = WL_ID_SELECTION_DEPLOYING_DEFENCE;
+	BIS_WL_currentSelection = 9;
 
 	_offset = [0, 8, 0];
 	_asset = createSimpleObject [_class, (AGLToASL (player modelToWorld _offset)), true];
@@ -45,7 +43,7 @@ if (_class isKindOf "Man") then {
 
 	0 spawn {
 		waitUntil {
-			sleep WL_TIMEOUT_STANDARD; 
+			sleep 0.1; 
 			BIS_WL_spacePressed || 
 			{BIS_WL_backspacePressed || 
 			{vehicle player != player || 
@@ -61,7 +59,7 @@ if (_class isKindOf "Man") then {
 		};
 	};
 
-	waitUntil {sleep WL_TIMEOUT_MIN; BIS_WL_spacePressed || {BIS_WL_backspacePressed}};
+	waitUntil {sleep 0.1; BIS_WL_spacePressed || {BIS_WL_backspacePressed}};
 
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "BIS_WL_deployKeyHandle"];
 	uiNamespace setVariable ['BIS_WL_deployKeyHandle', nil];
@@ -81,8 +79,8 @@ if (_class isKindOf "Man") then {
 		player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 	};
 
-	if (BIS_WL_currentSelection == WL_ID_SELECTION_DEPLOYING_DEFENCE) then {
-		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	if (BIS_WL_currentSelection == 9) then {
+		BIS_WL_currentSelection = 0;
 	};
 };
 

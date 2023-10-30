@@ -20,7 +20,7 @@ while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1
 		["server", true] call BIS_fnc_WL2_updateSectorArrays;
 		_side spawn {
 			params ["_side"];
-			sleep (WL_TARGET_RESET_ZONE_RESTRICTION_TOLERANCE min (getMissionConfigValue ["BIS_WL_sectorResetTimeout", 300]));
+			sleep (30 min (getMissionConfigValue ["BIS_WL_sectorResetTimeout", 300]));
 			missionNamespace setVariable [format ["BIS_WL_recentTargetReset_%1", _side], false];
 		};
 	} else {

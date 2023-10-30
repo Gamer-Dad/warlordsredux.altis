@@ -70,7 +70,7 @@ _maxAxis = (if (!(isNil {_area # 4}) && {(_area # 4)}) then {
 
 private _areaStart = _center vectorDiff [_maxAxis, _maxAxis, 0];
 private _areaEnd = _center vectorAdd [_maxAxis, _maxAxis, 0];
-private _axisStep = if (_infantryOnly) then {5} else {WL_SPAWN_GRID_SIZE / 2};
+private _axisStep = if (_infantryOnly) then {5} else {20};
 
 private _areaCheck = if (_rimWidth == 0) then {
 	{_this inArea _area}

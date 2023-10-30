@@ -10,7 +10,7 @@ if (isNil "BIS_WL_soundMsgBuffer") then {
 			if (_length == 0) then {_length = 2};
 			playSound (BIS_WL_soundMsgBuffer # 0);
 			BIS_WL_soundMsgBuffer deleteAt 0;
-			sleep (_length + WL_ANNOUNCER_PAUSE);
+			sleep (_length + 0.5);
 		};
 	};
 };

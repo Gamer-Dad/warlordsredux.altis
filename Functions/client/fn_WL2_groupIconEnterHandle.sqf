@@ -12,15 +12,17 @@ private _harbor = "W" in _services;
 
 _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]);
 _scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
-if (_scanCD == 0) then {_scanCD = -1};
+_capturing = count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1;
+_percentage = if (_capturing) then {linearConversion [((_sector getVariable ["BIS_WL_seizingInfo", []]) # 1), ((_sector getVariable ["BIS_WL_seizingInfo", []]) # 2), serverTime, 0, 1]};
+_color = (['#004d99', '#7f0400'] # ([west, east] find ((_sector getVariable ["BIS_WL_seizingInfo", []]) # 0)));
 
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlCommit 0;
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetStructuredText parseText format [
-	if (_scanCD == -1) then {
-		"<t shadow = '2' size = '%1'>%2<br/>+%3 %4/%5%6%7%8%9%10%11</t>"
+	if (_scanCD == 0) then {
+		"<t shadow = '2' size = '%1'>%2<br/>+%3 %4/%5%6%7%8%9%10%11<br/> <t color = '%15'>%12</t></t>"
 	} else {
-		"<t shadow = '2' size = '%1'>%2<br/>+%3 %4/%5%6%7%8%9%10%11<br/>%12: <t color = '#ff4b4b'>%13</t></t>"
+		"<t shadow = '2' size = '%1'>%2<br/>+%3 %4/%5%6%7%8%9%10%11<br/>%12<br/>%13: <t color = '#ff4b4b'>%14</t></t>"
 	},
 	(1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
 	_sector getVariable "BIS_WL_name",
@@ -33,8 +35,10 @@ if (_scanCD == 0) then {_scanCD = -1};
 	if (_helipad) then {localize "STR_A3_WL_module_service_helipad"} else {""},
 	if ((_airstrip || {_helipad}) && {_harbor}) then {", "} else {""},
 	if (_harbor) then {localize "STR_A3_WL_param30_title"} else {""},
+	if (count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
 	localize "STR_A3_WL_param_scan_timeout",
-	[(ceil _scanCD), "MM:SS"] call BIS_fnc_secondsToString
+	[(ceil _scanCD), "MM:SS"] call BIS_fnc_secondsToString,
+	_color
 ];
 
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow TRUE;

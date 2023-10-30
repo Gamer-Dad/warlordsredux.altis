@@ -87,7 +87,8 @@ if !(isServer) then {
 
 0 spawn BIS_fnc_WL2_sectorCaptureStatus;
 0 spawn BIS_fnc_WL2_teammatesAvailability;
-0 spawn BIS_fnc_WL2_forceGroupIconsFunctionality;
+setGroupIconsSelectable true;
+setGroupIconsVisible [true, false];
 0 spawn BIS_fnc_WL2_mapControlHandle;
 
 addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
