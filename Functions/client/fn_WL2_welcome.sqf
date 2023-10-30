@@ -29,16 +29,16 @@ hRead = false;
 
 if (side player == west) then {
 	private _control1 = findDisplay 9000 displayCtrl 9005;
-	_control1 ctrlSetTextColor [0.85, 0.35, 0, 1];
+	_control1 ctrlSetTextColor [0, 0.3, 0.5, 1];
 
 	private _control2 = findDisplay 9000 displayCtrl 9001;
-	_control2 ctrlSetBackgroundColor [0.8, 0.3, 0, 1];
+	_control2 ctrlSetBackgroundColor [0, 0.3, 0.5, 1];
 } else {
 	private _control1 = findDisplay 9000 displayCtrl 9005;
-	_control1 ctrlSetTextColor [0.85, 0.35, 0, 1];
+	_control1 ctrlSetTextColor [0.5, 0, 0, 1];
 
 	private _control2 = findDisplay 9000 displayCtrl 9001;
-	_control2 ctrlSetBackgroundColor [0.8, 0.3, 0, 1];
+	_control2 ctrlSetBackgroundColor [0.5, 0, 0, 1];
 };
 
 //List Menu + Scripts
@@ -61,7 +61,6 @@ lbSetCurSel [9011, _pageAbt];
 {
 	_number = _forEachIndex + 1;
 	lbSetText [9011, _x, localize (format ["STR_MRTM_welcomeInteract_0%1", _number])];
-	lbSetColor [9011, _x, [0.85, 0.35, 0, 1]];
 } forEach [_pageAbt, _pageHow, _theTeam, _dc, _changelog, _scripts];
 
 lbSetPicture [9011, _pageAbt, 'img\star_ca.paa'];

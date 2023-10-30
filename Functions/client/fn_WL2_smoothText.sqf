@@ -6,7 +6,7 @@ params [
 	["_text", "", [""]],
 	["_maxLines", 3, [0]],
 	["_onScreenDuration", 5, [0]],
-	["_color", [0.85, 0.35, 0, 1], [[]], 4],
+	["_color", [1, 1, 1, 1], [[]], 4],
 	["_shadow", TRUE, [FALSE]]
 ];
 

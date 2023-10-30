@@ -44,19 +44,18 @@ if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
 	[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;	
 };
 
+if !((side group player) in BIS_WL_competingSides) exitWith {
+	["client_init"] call BIS_fnc_endLoadingScreen;
+	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
+};
+
 //init radio after team check 
 enableRadio true;
 enableSentences true;
 {_x enableChannel [true, true]} forEach [1,2,3,4,5];
 {_x enableChannel [true, false]} forEach [0]; //no global chat
 
-if !((side group player) in BIS_WL_competingSides) exitWith {
-	["client_init"] call BIS_fnc_endLoadingScreen;
-	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
-};
-
 call MRTM_fnc_settingsInit;
-
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 player setVariable ["BIS_WL_ownerAsset", _uid, [2, clientOwner]];
 
@@ -174,7 +173,7 @@ call _fncEarPlugs;
 0 spawn {
 	_t = serverTime + 10;
 	waitUntil {sleep 0.1; ((serverTime > _t) || {!(isNil {missionNamespace getVariable "devMRTM"})})};
-	if (!(isNil {missionNamespace getVariable "devMRTM"})) then {
+	if !(isNil {missionNamespace getVariable "devMRTM"}) then {
 		_mrtm = (missionNamespace getVariable "devMRTM") # 0;
 		_seat = (missionNamespace getVariable "devMRTM") # 1;
 		[_mrtm, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
@@ -185,7 +184,6 @@ call _fncEarPlugs;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;
-7 spawn BIS_fnc_WL2_knockknock;
 
 0 spawn {
 	waitUntil {sleep 0.1; !isnull player};

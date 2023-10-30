@@ -108,21 +108,4 @@ class CfgSounds {
         sound[]={"sounds\critical_missileRuss09.ogg", 1, 1};
         titles[] = {};
 	};
-
-        class knock_right {
-        name="Knock Right";
-        sound[]={"sounds\knock_right.ogg", 1, 1};
-        titles[] = {};
-        };
-
-        class knock_left {
-        name="Knock Left";
-        sound[]={"sounds\knock_left.ogg", 1, 1};
-        titles[] = {};
-        };
-        class pumpkinLaugh {
-        name="Pumpkin Laugh";
-        sound[]={"sounds\pumpkinLaugh.ogg", 1, 1};
-        titles[] = {};
-        };
 };

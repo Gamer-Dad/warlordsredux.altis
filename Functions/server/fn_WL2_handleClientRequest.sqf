@@ -2,13 +2,13 @@ params ["_sender", "_action", "_param1", "_param2", "_param3", "_param4"];
 
 if (isNull _sender) exitWith {};
 if (remoteExecutedOwner != (owner _sender)) exitWith {};
+_uid = getPlayerUID _sender;
 
 if (_action == "orderAsset") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param2, 50001]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		
 		_class = _param2;
@@ -33,7 +33,6 @@ if (_action == "lastLoadout") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
@@ -45,7 +44,6 @@ if (_action == "savedLoadout") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
@@ -57,7 +55,6 @@ if (_action == "orderArsenal") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;	
 
 		0 remoteExec ["BIS_fnc_WL2_orderArsenal", remoteExecutedOwner];
@@ -69,7 +66,6 @@ if (_action == "fastTravelContested") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_fastTravelCostContested", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		_sender setVehiclePosition [_param1, [], 2, "NONE"];
@@ -81,7 +77,6 @@ if (_action == "scan") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_scanCost", 750]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		_param2 setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], (serverTime + 30), true];
@@ -101,7 +96,6 @@ if (_action == "orderFTVehicle") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		if (_param2 == west) then {
@@ -123,7 +117,6 @@ if (_action == "orderFTPod") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		if (_param2 == west) then {
@@ -145,7 +138,6 @@ if (_action == "targetReset") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_targetResetCost", 500]);
 	_hasFunds = (_playerFunds >= _cost);
 	if (_hasFunds) then {
-		private _uid = getPlayerUID _sender;
 		[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 
 		missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], serverTime, true];
@@ -159,7 +151,6 @@ if (_action == "targetReset") exitWith {
 
 if (_action == "orderAI") exitWith {
 	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param1, 150]);
-	private _uid = getPlayerUID _sender;
 	[_uid, -_cost] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 };
 
@@ -179,7 +170,6 @@ if (_action == "fundsTransfer") exitWith {
 };
 
 if (_action == "fundsTransferCancel") exitWith {
-	private _uid = getPlayerUID _sender;
 	if (serverNamespace getVariable (format ["BIS_WL_isTransferring_%1", _uid])) then {
 		[_uid, (getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000])] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
@@ -187,7 +177,6 @@ if (_action == "fundsTransferCancel") exitWith {
 };
 
 if (_action == "fundsTransferBill") exitWith {
-	private _uid = getPlayerUID _sender;
 	[_uid, -(getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000])] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 	
 	serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], true];
@@ -207,11 +196,16 @@ if (_action == "10K") exitWith {
 	if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 		_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
 		if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
-			private _uid = getPlayerUID _sender;
 			[_uid, 10000] spawn BIS_fnc_WL2_fundsDatabaseWrite;			
 		};
 	} else {
-		private _uid = getPlayerUID _sender;
 		[_uid, 10000] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 	};	
+};
+
+if (_action == "devCP") exitWith {
+	_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
+	if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
+		[_uid, _param1] spawn BIS_fnc_WL2_fundsDatabaseWrite;			
+	};
 };

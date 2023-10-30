@@ -24,10 +24,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class BIS_fnc_WL2_collectReward {
-			allowedTargets = 2;
-		};
-
 		class MRTM_fnc_invite {
 			allowedTargets = 2;
 		};
@@ -57,6 +53,10 @@ class CfgRemoteExec {
 		};
 
 		class MRTM_fnc_orderSystemChat {
+			allowedTargets = 0;
+		};
+
+		class MRTM_fnc_kickUser {
 			allowedTargets = 0;
 		};
 

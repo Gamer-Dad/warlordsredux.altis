@@ -64,10 +64,10 @@ class CfgUnitInsignia
 {
 	class InsigniaMrThomasM
 	{
-		displayName = "MrThomasM's Development";								// Name displayed in Arsenal
-		author = "MrThomasM";													// Author displayed in Arsenal
-		texture = "img\insignia_ca.paa";										// Image path
-		material = "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\default_insignia.rvmat";	// .rvmat path
-		textureVehicle = "";													// Does nothing, reserved for future use
+		displayName = "MrThomasM's Development";
+		author = "MrThomasM";
+		texture = "img\insignia_ca.paa";
+		material = "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\default_insignia.rvmat";
+		textureVehicle = "";
 	};
 };

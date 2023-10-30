@@ -65,7 +65,6 @@ class CfgFunctions {
 			class WL2_askForgiveness {};
 			class WL2_clientEH {};
 			class WL2_blockScreen {};
-			class WL2_knockknock {};
     	};
 		class Server 
 		{
@@ -78,7 +77,6 @@ class CfgFunctions {
 			class WL2_changeSectorOwnership {};
 			class WL2_initServer {};
 			class WL2_loadFactionClasses {};
-			class WL2_mineLimit {};
 			class WL2_populateSector {};
 			class WL2_processRunways {};
 			class WL2_selectTarget {};
@@ -94,8 +92,7 @@ class CfgFunctions {
 			class WL2_forfeitHandleServer {};
 			class WL2_forgiveTeamkill {};
 			class WL2_createUAVCrew {};
-			class WL2_collectReward {};
-			class WL2_pumpkinHunt {};
+			class WL2_serverEHs {};
     	};
     	class Common {
     		file = "Functions\common";
@@ -198,12 +195,6 @@ class CfgFunctions {
 			class animate {};
 			class WL2_vehicleRearm {};
 		};
-		class HalloweenEvent
-		{
-			file = "Functions\client\event";
-			class WL2_cPumpkinHunt {};
-			class WL2_pumpkinTimer {};
-		};
 	};
 
 	/*******************************START OF CUSTOM CONTENT HERE****************************/
@@ -235,6 +226,8 @@ class CfgFunctions {
 			class openInfoMenu {};
 			class systemChat {};
 			class orderSystemChat {};
+			class kickUser {};
+			class openDevMenu {};
 		};
 	};
 	class GOM {

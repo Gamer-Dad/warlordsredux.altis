@@ -19,70 +19,7 @@ EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
 "server" call BIS_fnc_WL2_varsInit;
-
-addMissionEventHandler ["HandleDisconnect", {
-	params ["_unit", "_id", "_uid", "_name"];
-	BIS_WL_allWarlords = BIS_WL_allWarlords - [_unit];
-	_sideID = BIS_WL_competingSides find (side group _unit);
-	if (_sideID != -1) then {
-		_playerSideArr = BIS_WL_playerIDArr # _sideID;
-		_playerSideArr = _playerSideArr - [_uid];
-		BIS_WL_playerIDArr set [_sideID, _playerSideArr];
-	};
-
-	{
-		_x spawn BIS_fnc_WL2_sub_deleteAsset;
-	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
-	{
-		if !(isPlayer _x) then {deleteVehicle _x;};
-	} forEach ((allUnits) select {(_x getVariable ["BIS_WL_ownerAsset", "132"] == _uid)});
-	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
-
-	{
-		_player = _x call BIS_fnc_getUnitByUID;
-		[_player, _unit] spawn MRTM_fnc_accept;
-	} forEach (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", _uid]), []]);
-	
-	0 spawn BIS_fnc_WL2_calcImbalance;
-}];
-
-addMissionEventHandler ["EntityKilled", {
-	params ["_unit", "_killer", "_instigator"];
-	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
-	if (isNull _instigator) then {_instigator = (vehicle _killer)};
-	if !(isNull _instigator) then {
-		_responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
-		if (isPlayer _responsibleLeader) then {
-			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
-			if (_unit isKindOf "Man") then {
-				[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
-			};
-		};
-	};
-
-	_unit spawn {
-		params ["_unit"];
-		if ((typeOf _unit) == "Land_IRMaskingCover_01_F") then {
-			{
-				_asset = _x;
-				if !(alive _x) then {
-					deleteVehicle _asset;
-				};
-			} forEach ((allMissionObjects "") select {(["BIS_WL_", str _x, false] call BIS_fnc_inString) && {!(["BIS_WL_init", str _x, false] call BIS_fnc_inString)}});
-		};
-		if ((typeOf _unit) == "Land_Pod_Heli_Transport_04_medevac_F" || {(typeOf _unit) == "B_Slingload_01_Medevac_F"}) then {
-			deleteVehicle _unit;
-		};
-	};
-}];
-
-addMissionEventHandler ["MarkerCreated", {
-	params ["_marker", "_channelNumber", "_owner", "_local"];
-	
-	if ((isPlayer _owner) && {(_channelNumber == 0)}) then {
-		deleteMarker _marker;
-	};
-}];
+call BIS_fnc_WL2_serverEHs;
 
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
@@ -101,9 +38,7 @@ if !(isDedicated) then {
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_garbageCollector;
-0 spawn BIS_fnc_WL2_mineLimit;
 0 spawn BIS_fnc_WL2_processRunways;
-0 spawn BIS_fnc_WL2_pumpkinHunt;
 
 setTimeMultiplier 4;
 0 spawn {
@@ -168,21 +103,19 @@ setTimeMultiplier 4;
 		[_car, "InsigniaMrThomasM"] call BIS_fnc_setUnitInsignia;
 	};
 	waitUntil { sleep 0.1; !isNil {_seat}};
-	if ((floor (random 1)) < 0.3) then {
-		_group = createGroup civilian;
-		_devMRTM = _group createUnit ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
-		missionNamespace setVariable ["devMRTM", [_devMRTM, _seat], true];
-		_devMRTM forceAddUniform "U_O_R_Gorka_01_black_F";
-		_devMRTM addHeadgear "H_PilotHelmetHeli_B"; 
-		_devMRTM addVest "V_PlateCarrier1_blk"; 
-		_devMRTM addGoggles "G_bandanna_beast"; 
-		_devMRTM addItem "NVGoggles";  
-		_devMRTM assignItem "NVGoggles"; 
-		removeBackpack _devMRTM;
-		[_devMRTM, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
-		_devMRTM allowDamage false;
-		[_devMRTM, "InsigniaMrThomasM"] call BIS_fnc_setUnitInsignia;
-	};
+	_group = createGroup civilian;
+	_devMRTM = _group createUnit ["C_Man_casual_1_F", [4189.28,20095.9,316.912], [], 0, "NONE"];
+	_devMRTM forceAddUniform "U_O_R_Gorka_01_black_F";
+	_devMRTM addHeadgear "H_PilotHelmetHeli_B"; 
+	_devMRTM addVest "V_PlateCarrier1_blk"; 
+	_devMRTM addGoggles "G_bandanna_beast"; 
+	_devMRTM addItem "NVGoggles";  
+	_devMRTM assignItem "NVGoggles"; 
+	removeBackpack _devMRTM;
+	[_devMRTM, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
+	[_devMRTM, "InsigniaMrThomasM"] call BIS_fnc_setUnitInsignia;
+	_devMRTM allowDamage false;
+	missionNamespace setVariable ["devMRTM", [_devMRTM, _seat], true];
 };
 
 ["server_init"] call BIS_fnc_endLoadingScreen;

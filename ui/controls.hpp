@@ -39,18 +39,6 @@ class welcomeScreen
 			w = 0.484688 * safezoneW;
 			h = 0.649 * safezoneH;
 		};
-		class welcomeMain2Img: RscPictureMRTM
-		{
-			idc = -1;
-			deletable = 0;
-			text = "img\altis_ca.paa";
-			sizeEx = "0.021 / (getResolution select 5)";
-			style = ST_MULTI + ST_TITLE_BAR;
-			x = 0.257656 * safezoneW + safezoneX;
-			y = 0.181 * safezoneH + safezoneY;
-			w = 0.484688 * safezoneW;
-			h = 0.649 * safezoneH;
-		};
 
 		class welcomeText: RscStructuredTextMRTM
 		{
@@ -96,7 +84,6 @@ class welcomeScreen
 			deletable = 0;
 			style = ST_FRAME;
 			colorBackground[] = {0,0,0,0};
-			colorText[] = {"0.9", "0.4", "0", "1"};
 			x = 0.288594 * safezoneW + safezoneX;
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
@@ -111,7 +98,6 @@ class welcomeScreen
 			deletable = 0;
 			style = ST_FRAME;
 			colorBackground[] = {0,0,0,0};
-			colorText[] = {"0.9", "0.4", "0", "1"};
 			x = 0.485469 * safezoneW + safezoneX;
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.245937 * safezoneW;
@@ -391,7 +377,7 @@ class MRTM_settingsMenu
 		class MRTMHeaderBackground: IGUIBackMRTM
 		{
 			idc = 2200;
-			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.45375 * safezoneW;
@@ -1372,7 +1358,6 @@ class MRTM_settingsMenu
 			idc = 1604;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1385,7 +1370,6 @@ class MRTM_settingsMenu
 			idc = 1605;
 			text = "GROUPS";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1398,7 +1382,6 @@ class MRTM_settingsMenu
 			idc = 1606;
 			text = "EMOTES";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.387969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1411,7 +1394,6 @@ class MRTM_settingsMenu
 			idc = 1607;
 			text = "CHANGES";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.447969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1424,13 +1406,27 @@ class MRTM_settingsMenu
 			idc = 1608;
 			text = "INFO";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.507969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
 			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openInfoMenu;";
+		};
+
+		class MRTMDevButton: RscButtonMRTM
+		{
+			idc = 1609;
+			text = "Dev Tools";
+			sizeEx = "0.021 / (getResolution select 5)";
+			colorText[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.665969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action =  "(findDisplay 8000) closeDisplay 1; true spawn MRTM_fnc_openDevMenu;";
+			onLoad =  "(_this # 0) ctrlEnable ((getPlayerUID player) in (getArray (missionConfigFile >> 'adminIDs')));";
 		};
 	};
 };
@@ -1453,7 +1449,7 @@ class MRTM_groupsMenu
 		class MRTMGroupsHeaderBackground: IGUIBackMRTM
 		{
 			idc = 4002;
-			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.45375 * safezoneW;
@@ -1588,7 +1584,6 @@ class MRTM_groupsMenu
 			idc = 4100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1601,7 +1596,6 @@ class MRTM_groupsMenu
 			idc = 4101;
 			text = "INVITE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlEnable false;";
 			action = "['Invite'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.652969 * safezoneW + safezoneX;
@@ -1615,7 +1609,6 @@ class MRTM_groupsMenu
 			idc = 4102;
 			text = "DECLINE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Decline'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.487969 * safezoneW + safezoneX;
@@ -1629,7 +1622,6 @@ class MRTM_groupsMenu
 			idc = 4103;
 			text = "LEAVE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Leave'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
@@ -1643,7 +1635,6 @@ class MRTM_groupsMenu
 			idc = 4104;
 			text = "PROMOTE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Promote'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.327969 * safezoneW + safezoneX;
@@ -1657,7 +1648,6 @@ class MRTM_groupsMenu
 			idc = 4105;
 			text = "ACCEPT";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Accept'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.550969 * safezoneW + safezoneX;
@@ -1671,7 +1661,6 @@ class MRTM_groupsMenu
 			idc = 4106;
 			text = "KICK";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			onLoad = "(_this # 0) ctrlShow false;";
 			action = "['Kick'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
@@ -1701,7 +1690,7 @@ class MRTM_emotesMenu
 		class MRTMEmotesHeaderBackground: IGUIBackMRTM
 		{
 			idc = 5002;
-			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.38836 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.20375 * safezoneW;
@@ -1754,7 +1743,6 @@ class MRTM_emotesMenu
 			idc = 5100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.38836 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1783,7 +1771,7 @@ class MRTM_changesMenu
 		class MRTMChangesHeaderBackground: IGUIBackMRTM
 		{
 			idc = 6002;
-			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.36675 * safezoneW;
@@ -1813,7 +1801,6 @@ class MRTM_changesMenu
 			idc = 6100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1881,7 +1868,7 @@ class MRTM_infoMenu
 		class MRTMinfoHeaderBackground: IGUIBackMRTM
 		{
 			idc = 7002;
-			colorBackground[] = {"0.85", "0.35", "0", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.36675 * safezoneW;
@@ -1911,7 +1898,6 @@ class MRTM_infoMenu
 			idc = 7100;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			colorText[] = {0.9, 0.4, 0, 1};
 			x = 0.31236 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1957,6 +1943,233 @@ class MRTM_infoMenu
 			h = 0.508 * safezoneH;
 			shadow = 0;
 			style = ST_MULTI;
+		};
+	};
+};
+
+class MRTM_devTools
+{
+	idd = 3000;
+
+	class controls
+	{
+		class MRTMdevBackground: IGUIBackMRTM
+		{
+			idc = -1;
+			colorBackground[] = {0,0,0,0.75};
+			x = 0.26836 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class MRTMdevHeaderBackground: IGUIBackMRTM
+		{
+			idc = -1;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.45375 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMdevHeader: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "Developer menu";
+			sizeEx = "0.021 / (getResolution select 5)";
+			colorBackground[] = {0,0,0,0};
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMdevClose: RscButtonMRTM
+		{
+			idc = -1;
+			text = "CLOSE";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.267969 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action = "(findDisplay 3000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
+		};
+		class MRTMGetCPText: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "Get CP:";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.2712 * safezoneH + safezoneY;
+			w = 0.04125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMgCPAmount: RscEditMRTM
+		{
+			idc = 3001;
+			onKeyUp = "";
+			x = 0.311271 * safezoneW + safezoneX;
+			y = 0.2672 * safezoneH + safezoneY;
+			w = 0.04525 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		class MRTMgetCP: RscButtonMRTM
+		{
+			idc = -1;
+			type = CT_BUTTON;
+			text = "Get";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.371063 * safezoneW + safezoneX;
+			y = 0.2672 * safezoneH + safezoneY;
+			w = 0.0600312 * safezoneW;
+			h = 0.033 * safezoneH;
+			font = "PuristaMedium";
+			onLoad =  "(_this # 0) ctrlAddEventHandler ['buttonClick', {_amount = parseNumber (ctrlText ((findDisplay 3000) displayCtrl 3001)); if (_amount > 0) then {[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];};}];";
+		};
+		class MRTMKickUser: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "Kick User:";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3100 * safezoneH + safezoneY;
+			w = 0.08125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMpw: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "Password:";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3350 * safezoneH + safezoneY;
+			w = 0.05125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMpassword: RscEditMRTM
+		{
+			idc = 3002;
+			onKeyUp = "";
+			x = 0.315271 * safezoneW + safezoneX;
+			y = 0.3350 * safezoneH + safezoneY;
+			w = 0.09125 * safezoneW;
+			h = 0.030 * safezoneH;
+		};
+		class MRTMmsg: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "Reason:";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3650 * safezoneH + safezoneY;
+			w = 0.05125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMmessage: RscEditMRTM
+		{
+			idc = 3003;
+			onKeyUp = "";
+			x = 0.315271 * safezoneW + safezoneX;
+			y = 0.3650 * safezoneH + safezoneY;
+			w = 0.11125 * safezoneW;
+			h = 0.030 * safezoneH;
+		};
+		class MRTMuser: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "User:";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3950 * safezoneH + safezoneY;
+			w = 0.05125 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+				size = 0.9;
+			};
+		};
+		class MRTMUserList: RscComboMRTM
+		{
+			idc = 3004;
+			onKeyUp = "";
+			x = 0.315271 * safezoneW + safezoneX;
+			y = 0.3950 * safezoneH + safezoneY;
+			w = 0.11125 * safezoneW;
+			h = 0.030 * safezoneH;
+		};
+		class MRTMkick: RscButtonMRTM
+		{
+			idc = 3005;
+			type = CT_BUTTON;
+			text = "Kick User";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.371063 * safezoneW + safezoneX;
+			y = 0.4800 * safezoneH + safezoneY;
+			w = 0.0600312 * safezoneW;
+			h = 0.033 * safezoneH;
+			font = "PuristaMedium";
+			onLoad =  "(_this # 0) ctrlAddEventHandler ['buttonClick', {_pw = ctrlText ((findDisplay 3000) displayCtrl 3002); _reason = ctrlText ((findDisplay 3000) displayCtrl 3003); if ((_pw != '') && {(lbCurSel 3004) != -1}) then {[_pw, ((lbData [3004, (lbCurSel 3004)]) call BIS_fnc_getUnitByUID), _reason, player] remoteExec ['MRTM_fnc_kickUser', 2];} else {playSound 'AddItemFailed';};}];";
+		};
+		class MRTMKickFrame: RscFrameMRTM
+		{
+			type = CT_STATIC;
+			idc = -1;
+			deletable = 0;
+			style = ST_FRAME;
+			colorBackground[] = {0,0,0,0};
+			x = 0.271063 * safezoneW + safezoneX;
+			y = 0.3100 * safezoneH + safezoneY;
+			w = 0.160781 * safezoneW;
+			h = 0.206 * safezoneH;
 		};
 	};
 };

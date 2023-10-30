@@ -1,10 +1,8 @@
 private _potBases = BIS_WL_allSectors select {(if !(["(EU) #11", serverName] call BIS_fnc_inString) then {"A" in (_x getVariable ["BIS_WL_services", []])} else {(_x getVariable ["BIS_WL_canBeBase", true])}) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
 private _firstBase = selectRandom _potBases;
-
 private _baseDistanceMin = 64000000;
 _potBases = _potBases - [_firstBase];
 _potBases = (_potBases select {(_x distanceSqr _firstBase) > _baseDistanceMin});
-
 private _secondBase = selectRandom _potBases;
 
 missionNamespace setVariable ["BIS_WL_base1", _firstBase, true];
@@ -12,7 +10,7 @@ missionNamespace setVariable ["BIS_WL_base2", _secondBase, true];
 profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 
 {
-	_side = BIS_WL_competingSides # _forEachIndex;
+	_side = [west, east] # _forEachIndex;
 	_base = _x;
 	_base setVariable ["BIS_WL_owner", _side, true];
 	_base setVariable ["BIS_WL_originalOwner", _side, true];

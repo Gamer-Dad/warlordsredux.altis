@@ -11,7 +11,6 @@ if !(isServer) then {
 	//Vehicle unflip 
 	waitUntil { !isNull player };
 	0 spawn KS_fnc_unflipVehicleAddAction;
-	player addGoggles "G_Balaclava_Halloween_01";
 }
 ;
 /*******************************END OF SCRIPTS****************************/

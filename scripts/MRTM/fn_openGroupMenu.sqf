@@ -7,7 +7,7 @@
 params ["_open"];
 
 if (isNull (findDisplay 4000) && {_open}) then {
-	private _d = [4000, 5000, 6000, 7000, 8000];
+	private _d = [3000, 4000, 5000, 6000, 7000, 8000];
 	{
 		if !(isNull (findDisplay _x)) then {
 			(findDisplay _x) closeDisplay 1;
@@ -51,9 +51,9 @@ lbClear 4006;
 } forEach (units player);
 
 {
-    private _index = lbAdd [4006, ([_x] call MRTM_fnc_getLBText)];
+    private _index = lbAdd [4006, (_x call MRTM_fnc_getLBText)];
     lbSetData [4006, _index, (getPlayerUID _x)];
-    lbSetPicture [4006, _index, ([_x] call MRTM_fnc_getLBPicture)];
+    lbSetPicture [4006, _index, (_x call MRTM_fnc_getLBPicture)];
     lbSetTooltip [4006, _index, (format ["Group: %1", (group _x)])];
 } forEach (allPlayers select {_x != player && {!(_x in (units player)) && {(side (group _x)) == (side (group player))}}});
 

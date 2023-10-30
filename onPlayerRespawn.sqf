@@ -16,8 +16,6 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) <
 
 ["Died"] spawn MRTM_fnc_statTracker;
 
-_newUnit addGoggles "G_Balaclava_Halloween_01";
-
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
 		"10K CP",

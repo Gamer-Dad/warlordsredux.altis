@@ -64,6 +64,7 @@ if (_side == RESISTANCE) then {
 
 			_vehicle allowCrewInImmobile [true, true];
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
+		_sector setVariable ["BIS_WL_vehiclesToSpawn", nil];
 	}; 
 	//below is heli/jet spawn code 
 	if (!_connectedToBase && {"H" in (_sector getVariable "BIS_WL_services")}) then {
@@ -81,8 +82,6 @@ if (_side == RESISTANCE) then {
 				[objNull, _x] spawn BIS_fnc_WL2_newAssetHandle;
 			} forEach _crew;
 			
-			
-
 			[_group, 0] setWaypointPosition [position _vehicle, 300];
 			_group setBehaviour "COMBAT";
 			_group deleteGroupWhenEmpty TRUE;
@@ -102,12 +101,10 @@ if (_side == RESISTANCE) then {
 };
 
 if (count _spawnPosArr == 0) exitWith {};
-// Adjust GROUP_SIZE_MIN up to help smaller sectors without turning telos in to 1 FPS hell
 private _garrisonSize = (_sector getVariable "BIS_WL_value") * 2.3; // * x: the bigger x the more ai
-private _unitsPool = BIS_WL_factionUnitClasses # (BIS_WL_sidesArray find _side);
+private _unitsPool = BIS_WL_factionUnitClasses # ([west, east, resistance] find _side);
 
 _i = 0;
-
 while {_i < _garrisonSize} do {
 	private _pos = selectRandom _spawnPosArr;
 	private _newGrp = createGroup _side;
@@ -118,7 +115,6 @@ while {_i < _garrisonSize} do {
 	for "_i2" from 0 to _grpSize do {
 		_newUnit = _newGrp createUnit [selectRandomWeighted _unitsPool, _pos, [], 5, "NONE"];
 		_newUnit setVariable ["BIS_WL_parentSector", _sector];
-		_newUnit addGoggles "G_Balaclava_Skull1";
 		[objNull, _newUnit] spawn BIS_fnc_WL2_newAssetHandle;
 		_newUnit spawn DAPS_fnc_SetupProjectiles;
 
