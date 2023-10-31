@@ -42,7 +42,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		0,
 		_x call BIS_fnc_iconText,
 		1,
-		0.04,
+		0.035,
 		"TahomaB",
 		"right"
 	];
@@ -60,7 +60,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 				_x call BIS_fnc_getDir,
 				_x call BIS_fnc_iconTextSectorScan,
 				1,
-				0.04,
+				0.035,
 				"TahomaB",
 				"right"
 			];
@@ -77,7 +77,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_x call BIS_fnc_getDir,
 		_x call BIS_fnc_iconText,
 		1,
-		0.04,
+		0.035,
 		"TahomaB",
 		"right"
 	];
@@ -93,7 +93,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -109,7 +109,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_x call BIS_fnc_getDir,
 		_x call BIS_fnc_iconText,
 		1,
-		0.04,
+		0.035,
 		"TahomaB",
 		"right"
 	];		
@@ -125,7 +125,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -142,7 +142,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -159,7 +159,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -176,7 +176,7 @@ if (side group player == west) then {
 			_x call BIS_fnc_getDir,
 			"Spawn truck",
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -192,7 +192,7 @@ if (side group player == west) then {
 			_x call BIS_fnc_getDir,
 			"Medical container",
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -209,7 +209,7 @@ if (side group player == east) then {
 			_x call BIS_fnc_getDir,
 			"Spawn truck",
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];
@@ -225,7 +225,7 @@ if (side group player == east) then {
 			_x call BIS_fnc_getDir,
 			"Medical pod",
 			1,
-			0.04,
+			0.035,
 			"TahomaB",
 			"right"
 		];

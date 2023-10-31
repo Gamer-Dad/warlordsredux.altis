@@ -4,7 +4,7 @@ _vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
 _text = "";
 _control = (findDisplay 12) displayCtrl 51;
 _name = (name _t);
-if ((ctrlMapScale _control) < 0.4) then {
+if ((ctrlMapScale _control) < 0.3) then {
 	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
 		_text = format ["%1 [K.I.A.]", _name];
 	} else {
