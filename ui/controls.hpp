@@ -2027,7 +2027,7 @@ class MRTM_devTools
 			onKeyUp = "";
 			x = 0.311271 * safezoneW + safezoneX;
 			y = 0.2672 * safezoneH + safezoneY;
-			w = 0.04525 * safezoneW;
+			w = 0.05325 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 		class MRTMgetCP: RscButtonMRTM

@@ -5,26 +5,30 @@
 */
 
 _dist = 0;
-switch (true) do {
-	case (!((UAVControl getConnectedUAV player # 1) isEqualTo "")): {
-		setViewDistance (profileNamespace getVariable ["MRTM_drones", 4000]);
-		_dist = (profileNamespace getVariable ["MRTM_drones", 4000]);
-	};
+_exit = false;
 
-	case ((vehicle player) isKindOf "Man"): {
-		setViewDistance (profileNamespace getVariable ["MRTM_inf", 2000]);
-		_dist = (profileNamespace getVariable ["MRTM_inf", 2000]);
-	};
+if (!_exit && {!((UAVControl getConnectedUAV player # 1) isEqualTo "")}) then {
+	setViewDistance (profileNamespace getVariable ["MRTM_drones", 4000]);
+	_dist = (profileNamespace getVariable ["MRTM_drones", 4000]);
+	_exit = true;
+};
 
-	case (((vehicle player) isKindOf "LandVehicle") || {((vehicle player) isKindOf "Ship")}): {
-		setViewDistance (profileNamespace getVariable ["MRTM_ground", 3000]);
-		_dist = (profileNamespace getVariable ["MRTM_ground", 3000]);
-	};
+if (!_exit && {(vehicle player) isKindOf "Man"}) then {
+	setViewDistance (profileNamespace getVariable ["MRTM_inf", 2000]);
+	_dist = (profileNamespace getVariable ["MRTM_inf", 2000]);
+	_exit = true;
+};
 
-	case ((vehicle player) isKindOf "Air"): {
-		setViewDistance (profileNamespace getVariable ["MRTM_air", 4000]);
-		_dist = (profileNamespace getVariable ["MRTM_air", 4000]);
-	};
+if (!_exit && {((vehicle player) isKindOf "LandVehicle") || {((vehicle player) isKindOf "Ship")}}) then {
+	setViewDistance (profileNamespace getVariable ["MRTM_ground", 3000]);
+	_dist = (profileNamespace getVariable ["MRTM_ground", 3000]);
+	_exit = true;
+};
+
+if (!_exit && {(vehicle player) isKindOf "Air"}) then {
+	setViewDistance (profileNamespace getVariable ["MRTM_air", 4000]);
+	_dist = (profileNamespace getVariable ["MRTM_air", 4000]);
+	_exit = true;
 };
 
 if (profileNamespace getVariable ["MRTM_syncObjects", true]) then {

@@ -1,4 +1,3 @@
-//View distance
 if !(profileNamespace getVariable ["viewSettingsInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_inf", 2000];
 	profileNamespace setVariable ["MRTM_ground", 3000];
@@ -11,7 +10,6 @@ if !(profileNamespace getVariable ["viewSettingsInitialzed", false]) then {
 };
 setTerrainGrid 3.125;
 
-//Radar warning system
 if !(profileNamespace getVariable ["warningSettingsInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_rwr1", 0.3];
 	profileNamespace setVariable ["MRTM_rwr2", 0.3];
@@ -21,7 +19,6 @@ if !(profileNamespace getVariable ["warningSettingsInitialzed", false]) then {
 	saveProfileNamespace;
 };
 
-//Options
 if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_3rdPersonDisabled", false];
 	profileNamespace setVariable ["MRTM_playKillSound", true];
@@ -34,7 +31,6 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	saveProfileNamespace;
 };
 
-//Stats
 if !(profileNamespace getVariable ["statsInitialized", false]) then {
 	profileNamespace setVariable ["WL2_gamesWon", 0];
 	profileNamespace setVariable ["WL2_gamesLost", 0];
