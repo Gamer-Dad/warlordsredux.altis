@@ -32,10 +32,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class MRTM_fnc_orderSystemChat {
-			allowedTargets = 2;
-		};
-
 		class MRTM_fnc_kickUser {
 			allowedTargets = 2;
 		};
@@ -70,10 +66,6 @@ class CfgRemoteExec {
 		mode = 1;
 
 		class setVehicleAmmoDef {
-			allowedTargets = 0;
-		};
-
-		class systemChat {
 			allowedTargets = 0;
 		};
 

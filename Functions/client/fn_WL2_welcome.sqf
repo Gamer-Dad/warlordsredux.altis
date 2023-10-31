@@ -142,7 +142,7 @@ while {dialog} do {
 			"- MrThomasM", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
-			"- ", lineBreak,
+			"", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_18", lineBreak,
 			"- Coffee", lineBreak,
