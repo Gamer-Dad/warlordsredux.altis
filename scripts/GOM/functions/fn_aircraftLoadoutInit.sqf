@@ -3,39 +3,6 @@
 feel free to use as you like, as long as I'm credited as the original author
 */
 
-GOM_fnc_addAircraftLoadout = {
-	params [["_unit",objnull]];
-
-	if (_unit isequalto objnull) exitWith {systemchat "You need to enter a player as parameter"};
-
-	waitUntil {sleep 0.1; _unit isequalto _unit};
-	sleep 1;
-	_support = [_unit,"GOM_aircraftLoadoutMenu"] call BIS_fnc_addCommMenuItem;
-	_unit setvariable ["GOM_fnc_aircraftLoadoutCommID",_support];
-	true;
-};
-
-GOM_fnc_removeAircraftLoadout = {
-	params [["_unit",player]];
-
-	_ID = _unit getvariable ["GOM_fnc_aircraftLoadoutCommID",-1];
-	[_unit, _ID] call BIS_fnc_removeCommMenuItem;
-	true;
-};
-
-GOM_fnc_addAircraftLoadoutArea = {
-	params ["_thislist"];
-
-	if !(vehicle player in _thislist) exitWith {false};
-	if (player isequalto vehicle player) exitWith {false};
-	_support = [player, "GOM_aircraftLoadoutMenu"] call BIS_fnc_addCommMenuItem;
-	player setvariable ["GOM_fnc_aircraftLoadoutCommID", _support];
-	_initpos = getposasl player;
-	waituntil {!alive player || player distance2d _initPos > 30};
-	_remove = player spawn GOM_fnc_removeAircraftLoadout;
-	true;
-};
-
 GOM_fnc_roundByDecimals = {
 	params ["_num",["_digits",2]];
 
@@ -673,7 +640,7 @@ GOM_fnc_fillPylonsLB = {
 	_validDispNames = GOM_list_validDispNames;
 	lbClear 1502;
 
-	_validPylonMags = GOM_list_allPylonMags;
+	_validPylonMags = GOM_list_allPylonMags select {!((getArray (configFile >> "CfgMagazines" >> _x >> "hardpoints") arrayIntersect _getCompatibles) isEqualTo [])};
 	_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
 
 	{
