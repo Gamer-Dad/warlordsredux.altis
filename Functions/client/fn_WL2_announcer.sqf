@@ -1,10 +1,8 @@
-#include "..\warlords_constants.inc"
-
 if (isNil "BIS_WL_soundMsgBuffer") then {
 	BIS_WL_soundMsgBuffer = [];
 	0 spawn {
 		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep WL_TIMEOUT_SHORT; count BIS_WL_soundMsgBuffer > 0};
+			waitUntil {sleep 0.1; count BIS_WL_soundMsgBuffer > 0};
 			_msg = BIS_WL_soundMsgBuffer # 0;
 			_length = getNumber (configFile >> "CfgSounds" >> _msg >> "duration");
 			if (_length == 0) then {_length = 2};

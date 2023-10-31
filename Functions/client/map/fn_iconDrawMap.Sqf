@@ -68,6 +68,21 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
 {
+	if (_x == player) then {
+		_m drawIcon [
+			'a3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa',
+			[1,0,0,1],
+			_x call BIS_fnc_getPos,
+			_x call BIS_fnc_iconSize,
+			_x call BIS_fnc_iconSize,
+			0,
+			"",
+			1,
+			0.035,
+			"TahomaB",
+			"right"
+		];
+	};
 	_m drawIcon [
 		_x call BIS_fnc_iconType,
 		_x call BIS_fnc_iconColor,

@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_penalty"];
 
 if (isNil "BIS_WL_penalized" || {BIS_WL_penalized}) exitWith {};
@@ -28,7 +26,7 @@ _penalty spawn {
 	ctrlDelete ((findDisplay 46) displayCtrl 994001);
 	ctrlDelete ((findDisplay 46) displayCtrl 994000);
 	forceRespawn player;
-	waitUntil {sleep WL_TIMEOUT_MIN; alive player};
+	waitUntil {sleep 0.1; alive player};
 
 	titleCut ["", "BLACK IN", 1];
 	_camera cameraEffect ["Terminate", "Back"];
