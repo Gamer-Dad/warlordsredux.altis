@@ -12,7 +12,7 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class DAPS_fnc_Generic {
+		class APS_fnc_Generic {
 			allowedTargets = 2;
 		};
 

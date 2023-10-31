@@ -1,7 +1,7 @@
 /*******************************START OF SCRIPTS****************************/
 // Trophy
-DAPS_fnc_start = compile preprocessFile "scripts\DAPS\Scripts\Start.sqf";
-0 spawn DAPS_fnc_start;
+APS_fnc_start = compile preprocessFile "scripts\APS\Scripts\Start.sqf";
+0 spawn APS_fnc_start;
 
 if !(isServer) then {
 	//Earplugs

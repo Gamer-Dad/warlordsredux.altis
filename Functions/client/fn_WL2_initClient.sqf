@@ -101,7 +101,7 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 //Evenhandlers
 0 spawn BIS_fnc_WL2_clientEH;
 
-player spawn DAPS_fnc_SetupProjectiles;
+player spawn APS_fnc_SetupProjectiles;
 call BIS_fnc_WL2_sub_arsenalSetup;
 
 0 spawn {

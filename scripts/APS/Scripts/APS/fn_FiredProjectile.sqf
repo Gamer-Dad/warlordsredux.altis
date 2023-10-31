@@ -1,8 +1,8 @@
 params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
-_dazzleable = _projectile call DAPS_fnc_IsLaserGuided || {
-	_projectile call DAPS_fnc_IsIRguided || {
-	_projectile call DAPS_fnc_IsVisualGuided || {
+_dazzleable = _projectile call APS_fnc_IsLaserGuided || {
+	_projectile call APS_fnc_IsIRguided || {
+	_projectile call APS_fnc_IsVisualGuided || {
 	typeOf _projectile == "M_Vorona_HEAT" || {
 	typeOf _projectile == "M_Vorona_HE"}}}
 };
@@ -14,7 +14,7 @@ _continue = alive _projectile;
 while { _continue } do {
 	_eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _radius]) select { 
 		_x != _unit &&
-		_x call DAPS_fnc_active
+		_x call APS_fnc_active
 	};
 
 	_sortedEligibleList = [_eligibleNearbyVehicles, [_projectile], { _input0 distance _x }, "ASCEND"] call BIS_fnc_sortBy;
@@ -24,12 +24,12 @@ while { _continue } do {
 			_continue = false;
 		};
 
-		_vehicleAPSType = _x getVariable ["dapsType", -1];
-		_projectileAPSType = dapsEligibleProjectiles get (typeOf _projectile);
+		_vehicleAPSType = _x getVariable ["apsType", -1];
+		_projectileAPSType = apsEligibleProjectiles get (typeOf _projectile);
 
 		if (_vehicleAPSType == 3) then {
 			if (_dazzleable) exitWith {
-				[_projectile] spawn DAPS_fnc_MisguideMissile;
+				[_projectile] spawn APS_fnc_MisguideMissile;
 			};
 		} else {
 			if (_vehicleAPSType >= _projectileAPSType && {
@@ -43,13 +43,13 @@ while { _continue } do {
 				}) exitWith {
 				_continue = false;
 
-				_ammo = _x getVariable "dapsAmmo";
-				_x setVariable ["dapsAmmo", _ammo - 1, true];
+				_ammo = _x getVariable "apsAmmo";
+				_x setVariable ["apsAmmo", _ammo - 1, true];
 
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = getDir _projectile;
-				private _relativeDirection = [_projectileDirection, _x] call DAPS_fnc_RelDir2;
-				[_x, _relativeDirection, true] remoteExec ["DAPS_fnc_Report", owner _x];
+				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
+				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", owner _x];
 
 				triggerAmmo _projectile;
 

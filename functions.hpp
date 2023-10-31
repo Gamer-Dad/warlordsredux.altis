@@ -231,7 +231,6 @@ class CfgFunctions {
 		class init
 		{
 			file = "scripts\GOM\functions";
-			class aircraftLoadoutParameters {preInit = 1;};
 			class aircraftLoadoutInit {preInit = 1;};
 		};
 	};
@@ -245,25 +244,24 @@ class CfgFunctions {
 			class isFlipped {};
 		};
 	};
-	class DAPS
+	class APS
 	{
 		class APS 
 		{
-			file = "scripts\DAPS\Scripts\APS";
+			file = "scripts\APS\Scripts\APS";
 			class SetupProjectiles {};
 			class FiredProjectile {};
 		};
 		class Management
 		{
-			file = "scripts\DAPS\Scripts\Management";
-			class AssignAPS {};
+			file = "scripts\APS\Scripts\Management";
 			class BroadcastTypes {};
 			class RearmAPS {};
 			class RegisterVehicle {};
 		};
 		class MISC
 		{
-			file = "scripts\DAPS\Scripts\Misc";
+			file = "scripts\APS\Scripts\Misc";
 			class Active {};
 			class CountAmmo {};
 			class GetDirection {};
@@ -277,7 +275,7 @@ class CfgFunctions {
 		};
 		class Report
 		{
-			file = "scripts\DAPS\Scripts\Report";
+			file = "scripts\APS\Scripts\Report";
 			class Report {};
 		};
 	};

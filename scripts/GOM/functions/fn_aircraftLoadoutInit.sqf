@@ -673,13 +673,8 @@ GOM_fnc_fillPylonsLB = {
 	_validDispNames = GOM_list_validDispNames;
 	lbClear 1502;
 
-	if (GOM_fnc_allowAllPylons) then {
-		_validPylonMags = GOM_list_allPylonMags;
-		_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
-	} else {
-		_validPylonMags = GOM_list_allPylonMags select {!((getarray (configfile >> "CfgMagazines" >> _x >> "hardpoints") arrayIntersect _getCompatibles) isEqualTo [])};
-		_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
-	};
+	_validPylonMags = GOM_list_allPylonMags;
+	_validDispNames = _validPylonMags apply {getText (configfile >> "CfgMagazines" >> _x >> "displayName")};
 
 	{
 		lbAdd [1502, _validDispNames select _foreachIndex];
