@@ -2090,41 +2090,13 @@ class MRTM_devTools
 			w = 0.09125 * safezoneW;
 			h = 0.030 * safezoneH;
 		};
-		class MRTMmsg: RscStructuredTextMRTM
-		{
-			idc = -1;
-			text = "Reason:";
-			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.271063 * safezoneW + safezoneX;
-			y = 0.3650 * safezoneH + safezoneY;
-			w = 0.05125 * safezoneW;
-			h = 0.033 * safezoneH;
-			class Attributes
-			{
-				font = "PuristaMedium";
-				color = "#ffffff";
-				colorLink = "#D09B43";
-				align = "left";
-				shadow = 1;
-				size = 0.9;
-			};
-		};
-		class MRTMmessage: RscEditMRTM
-		{
-			idc = 3003;
-			onKeyUp = "";
-			x = 0.315271 * safezoneW + safezoneX;
-			y = 0.3650 * safezoneH + safezoneY;
-			w = 0.11125 * safezoneW;
-			h = 0.030 * safezoneH;
-		};
 		class MRTMuser: RscStructuredTextMRTM
 		{
 			idc = -1;
 			text = "User:";
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.271063 * safezoneW + safezoneX;
-			y = 0.3950 * safezoneH + safezoneY;
+			y = 0.365 * safezoneH + safezoneY;
 			w = 0.05125 * safezoneW;
 			h = 0.033 * safezoneH;
 			class Attributes
@@ -2142,7 +2114,7 @@ class MRTM_devTools
 			idc = 3004;
 			onKeyUp = "";
 			x = 0.315271 * safezoneW + safezoneX;
-			y = 0.3950 * safezoneH + safezoneY;
+			y = 0.365 * safezoneH + safezoneY;
 			w = 0.11125 * safezoneW;
 			h = 0.030 * safezoneH;
 		};
@@ -2153,11 +2125,11 @@ class MRTM_devTools
 			text = "Kick User";
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.371063 * safezoneW + safezoneX;
-			y = 0.4800 * safezoneH + safezoneY;
+			y = 0.4 * safezoneH + safezoneY;
 			w = 0.0600312 * safezoneW;
 			h = 0.033 * safezoneH;
 			font = "PuristaMedium";
-			onLoad =  "(_this # 0) ctrlAddEventHandler ['buttonClick', {_pw = ctrlText ((findDisplay 3000) displayCtrl 3002); _reason = ctrlText ((findDisplay 3000) displayCtrl 3003); if ((_pw != '') && {(lbCurSel 3004) != -1}) then {[_pw, ((lbData [3004, (lbCurSel 3004)]) call BIS_fnc_getUnitByUID), _reason, player] remoteExec ['MRTM_fnc_kickUser', 2];} else {playSound 'AddItemFailed';};}];";
+			onLoad =  "(_this # 0) ctrlAddEventHandler ['buttonClick', {_pw = ctrlText ((findDisplay 3000) displayCtrl 3002); if ((_pw != '') && {(lbCurSel 3004) != -1}) then {[_pw, ((lbData [3004, (lbCurSel 3004)]) call BIS_fnc_getUnitByUID), player] remoteExec ['MRTM_fnc_kickUser', 2];} else {playSound 'AddItemFailed';};}];";
 		};
 		class MRTMKickFrame: RscFrameMRTM
 		{
@@ -2169,7 +2141,7 @@ class MRTM_devTools
 			x = 0.271063 * safezoneW + safezoneX;
 			y = 0.3100 * safezoneH + safezoneY;
 			w = 0.160781 * safezoneW;
-			h = 0.206 * safezoneH;
+			h = 0.136 * safezoneH;
 		};
 	};
 };

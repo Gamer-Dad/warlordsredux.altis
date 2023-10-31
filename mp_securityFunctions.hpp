@@ -32,6 +32,18 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
+		class MRTM_fnc_orderSystemChat {
+			allowedTargets = 2;
+		};
+
+		class MRTM_fnc_kickUser {
+			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_forgiveTeamkill {
+			allowedTargets = 2;
+		};
+
 		class BIS_fnc_WL2_forfeitHandle {
 			allowedTargets = 0;
 		};
@@ -40,23 +52,7 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class BIS_fnc_fire {
-			allowedTargets = 0;
-		};
-
-		class BIS_fnc_WL2_forgiveTeamkill {
-			allowedTargets = 0;
-		};
-
 		class MRTM_fnc_leaveGroup {
-			allowedTargets = 0;
-		};
-
-		class MRTM_fnc_orderSystemChat {
-			allowedTargets = 0;
-		};
-
-		class MRTM_fnc_kickUser {
 			allowedTargets = 0;
 		};
 
