@@ -35,17 +35,17 @@ private _savedLoadoutHandled = FALSE;
 			};
 			
 			if (_category == "Gear") then {
-				_data pushBack ["Arsenal", (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]), [], "< " + (localize "STR_A3_Arsenal") + " >", "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
+				_data pushBack ["Arsenal", (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]), [], (localize "STR_A3_Arsenal"), "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
 			
 			if (_category == "Gear" && !_lastLoadoutHandled) then {
 				_lastLoadoutHandled = TRUE;
-				_data pushBack ["LastLoadout", (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]), [], "< " + (localize "STR_A3_WL_last_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
+				_data pushBack ["LastLoadout", (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]), [], (localize "STR_A3_WL_last_loadout"), "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
 			};
 			
 			if (_category == "Gear" && !_savedLoadoutHandled) then {
 				_savedLoadoutHandled = TRUE;
-				_data pushBack ["SavedLoadout", (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]), [], "< " + (localize "STR_A3_WL_saved_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
+				_data pushBack ["SavedLoadout", (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]), [], (localize "STR_A3_WL_saved_loadout"), "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
 			};
 			
 			{
@@ -167,7 +167,7 @@ private _savedLoadoutHandled = FALSE;
 			
 			if (_category == "Gear" && !_saveLoadoutHandled) then {
 				_saveLoadoutHandled = TRUE;
-				_data pushBack ["SaveLoadout", 0, [], "< " + (localize "STR_A3_WL_save_loadout") + " >", "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_save_loadout_info"];
+				_data pushBack ["SaveLoadout", 0, [], (localize "STR_A3_WL_save_loadout"), "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_save_loadout_info"];
 			};
 			
 			_sortedArray set [_index, _data];

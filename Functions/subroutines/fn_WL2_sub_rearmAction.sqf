@@ -5,7 +5,6 @@ _index = _asset addAction [
 	{
 		params ["_asset"];
 		if (_asset isKindOf "LandVehicle") then {_asset spawn BIS_fnc_WL2_vehicleRearm;};
-		if (_asset isKindOf "Air") then {[player] spawn GOM_fnc_aircraftLoadout;}; 
 	},
 	[],
 	5,

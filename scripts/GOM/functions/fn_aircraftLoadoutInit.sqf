@@ -943,7 +943,7 @@ GOM_fnc_showResourceDisplay = {
 GOM_fnc_updateVehiclesLB = {
 	params ["_obj"];
 
-	_vehicles = (_obj nearEntities ["Air", 50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player) && {_x == BIS_WL_currentAirRearm}}}}};
+	_vehicles = (_obj nearEntities ["Air", 50]) select {(speed _x < 5) && {(alive _x) && {(isTouchingGround _x) && {(((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == player) && {_x == (player getVariable ["BIS_WL_currentAirRearm", objNull])}}}}};
 	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles", []];
 	if (_vehicles isEqualTo []) exitWith {true};
 	if (_vehicles isEqualTo _lastVehs && {!(lbsize 1500 isequalto 0)}) exitWith {true};
@@ -981,7 +981,6 @@ GOM_fnc_aircraftLoadout = {
 	finddisplay 66 displayCtrl 1501 ctrlAddEventHandler ["LBSelChanged",format ["lbclear 1502; [%1] call GOM_fnc_fillPylonsLB; [%1,'NOCOUNT'] call GOM_fnc_setPylonPriority;", _getvar]];
 	finddisplay 66 displayCtrl 1502 ctrlAddEventHandler ["LBSelChanged",format ["[%1] call GOM_fnc_updateAmmoCountDisplay;", _getvar]];
 	finddisplay 66 displayCtrl 2100 ctrlAddEventHandler ["LBSelChanged",format ["[%1,true] call GOM_fnc_aircraftLoadoutPaintjob;", _getvar]];
-	finddisplay 66 displayCtrl 2101 ctrlAddEventHandler ["LBSelChanged",format ["", _getvar]];
 
 	buttonSetAction [1600, format ["%1 call GOM_fnc_pylonInstallWeapon;[] call GOM_fnc_aircraftSetSerialNumber;", _getvar]];
 	buttonSetAction [1601, format ["%1 call GOM_fnc_clearAllPylons;", _getvar]];
@@ -989,9 +988,6 @@ GOM_fnc_aircraftLoadout = {
 	buttonSetAction [1603, ""];
 	buttonSetAction [1604, format ["%1 call GOM_fnc_setPylonsReArm;", _getvar]];
 	buttonSetAction [1605, format ["%1 call GOM_fnc_setPylonOwner;", _getvar]];
-	buttonSetAction [1606, ""];
-	buttonSetAction [1607, ""];
-	buttonSetAction [1608, ""];
 	buttonSetAction [1609, "lbclear 1502; lbSetCurSel [1502,-1]; lbclear 1501; lbSetCurSel [1501,-1]; lbclear 1500; lbSetCurSel [1500,-1];"];
 	buttonSetAction [1610, format ["%1 call GOM_fnc_setPylonPriority;", _getvar]];
 
@@ -1037,7 +1033,7 @@ GOM_fnc_aircraftLoadout = {
 	} forEach _dark;
 
 	GOM_fnc_aircraftLoadoutObject = _obj;
-	_ID = addMissionEventHandler ["EachFrame",{
+	_ID = addMissionEventHandler ["EachFrame", {
 		_vehicles = GOM_fnc_aircraftLoadoutObject call GOM_fnc_updateVehiclesLB;
 		if (displayNull isEqualTo findDisplay 66) exitWith {
 			removeMissionEventHandler ["EachFrame", _thisEventHandler];

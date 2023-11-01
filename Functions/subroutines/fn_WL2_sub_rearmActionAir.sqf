@@ -15,7 +15,7 @@ while {alive _asset} do {
 				{
 					params ["_asset"];
 					if ((_asset getVariable "BIS_WL_nextRearm") <= serverTime) then {
-						BIS_WL_currentAirRearm = _asset;
+						player setVariable ["BIS_WL_currentAirRearm", _asset];
 						_curWeapon = currentWeapon _asset;
 						_asset selectWeapon _curWeapon;
 

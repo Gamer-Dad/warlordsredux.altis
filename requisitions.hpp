@@ -222,7 +222,6 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				
 				class Land_BagFence_Round_F					{cost = 50;	requirements[]={};		offset[]={0, 2, 0};};	// "Semi Circle Sand bags"  
 				class Land_Razorwire_F						{cost = 50;	requirements[]={};		offset[]={0, 5, 0};};	// "Razor Wire Fence"  
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 50;	requirements[]={};		offset[]={0, 2, 0};};	// "Tank barrier"    	 	
