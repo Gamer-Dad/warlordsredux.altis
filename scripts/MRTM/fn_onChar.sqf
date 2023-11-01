@@ -4,7 +4,7 @@
 	Description: Updates the slider pos rel to input.
 */
 
-params ["_control","_code","_slider"];
+params ["_control", "_slider"];
 
 if(isNull _control) exitWith {};
 disableSerialization;

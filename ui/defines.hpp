@@ -172,10 +172,10 @@ class RscTextMRTM
 	shadow = 1;
 	colorShadow[] = 
 	{
-		0,
-		0,
-		0,
-		0.5
+		1,
+		1,
+		1,
+		1
 	};
 	font = "RobotoCondensed";
 	SizeEx = "0.021 / (getResolution select 5)";
@@ -196,10 +196,10 @@ class RscTextMRTM
 	};
 	tooltipColorShade[] = 
 	{
-		0,
-		0,
-		0,
-		0.65
+		1,
+		1,
+		1,
+		1
 	};
 };
 class RscStructuredTextMRTM
@@ -1252,16 +1252,16 @@ class RscCheckBoxMRTM
 		0,
 		0
 	};
-	textureChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
-	textureUnchecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
-	textureFocusedChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
-	textureFocusedUnchecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
-	textureHoverChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
-	textureHoverUnchecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
-	texturePressedChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
-	texturePressedUnchecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
-	textureDisabledChecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
-	textureDisabledUnchecked = "A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	textureChecked = "Img\toggle-right_ca.paa";
+	textureUnChecked = "Img\toggle-left_ca.paa";
+	textureFocusedChecked = "Img\toggle-right_ca.paa";
+	textureFocusedUnchecked = "Img\toggle-left_ca.paa";
+	textureHoverChecked = "Img\toggle-right_ca.paa";
+	textureHoverUnchecked = "Img\toggle-left_ca.paa";
+	texturePressedChecked = "Img\toggle-right_ca.paa";
+	texturePressedUnchecked = "Img\toggle-left_ca.paa";
+	textureDisabledChecked = "Img\toggle-right_ca.paa";
+	textureDisabledUnchecked = "Img\toggle-left_ca.paa";
 	tooltipColorText[] = 
 	{
 		1,
@@ -1612,6 +1612,8 @@ class RscButtonMenuCancelMRTM
 	text = "Cancel";
 };
 class RscControlsGroupMRTM {
+	deletable = 0;
+	fade = 0;
 	type = 15;
 	idc = -1;
 	x = 0;
@@ -1643,12 +1645,10 @@ class RscControlsGroupMRTM {
 	};
 	
 	class HScrollbar:ScrollBar {
-		height = 0.028;
+		height = 0;
 		shadow = 0;
 		color[] = {1, 1, 1, 0.6};
 	};
-	
-	//class ListScrollBar : ScrollBar {};
 	
 	class Controls {};
 };
