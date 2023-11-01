@@ -88,6 +88,13 @@ addMissionEventHandler ["HandleChatMessage", {
 //Key press EH
 0 spawn {
 	waituntil {sleep 0.1; !isnull (findDisplay 46)};
+	(findDisplay 46) displayAddEventHandler ["KeyUp", {
+		_key = _this # 1;
+		if (_key in actionKeys "Gear") then {
+			BIS_WL_gearKeyPressed = false;
+		};
+	}];
+
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
 		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
 		private _e = false;
@@ -106,7 +113,7 @@ addMissionEventHandler ["HandleChatMessage", {
 			if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
 			} else {
-				BIS_WL_gearKeyPressed = TRUE;
+				BIS_WL_gearKeyPressed = true;
 				0 spawn {
 					_t = time + 0.5;
 					waitUntil {!BIS_WL_gearKeyPressed || {time >= _t}};

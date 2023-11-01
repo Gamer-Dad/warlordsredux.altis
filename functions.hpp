@@ -27,7 +27,6 @@ class CfgFunctions {
 			class WL2_orderNaval {};
 			class WL2_orderSavedLoadout {};
 			class WL2_orderSectorScan {};
-			class WL2_purchaseMenuOpeningHandle {};
 			class WL2_refreshCurrentTargetData {};
 			class WL2_refreshOSD {};
 			class WL2_requestPurchase {};
