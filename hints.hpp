@@ -3,21 +3,6 @@ class CfgHints
 	class common
 	{
 		displayName = "Common Controls";
-
-		class warlordsMenu
-		{
-			displayName = $STR_A3_WL_Menu_Hint_Name;
-			displayNameShort = "";
-			description = $STR_A3_WL_Menu_Hint;
-			tip = $STR_A3_WL_Menu_Hint_01;
-			arguments[] =
-			{
-				{{"Gear"}},
-				"format [localize 'STR_A3_WL_tip_menu', (actionKeysNamesArray 'Gear') # 0]"
-			};
-			image = "img\wl_logo_ca.paa";
-			noImage = false;
-		};
 		class friendlyFire
 		{
 			displayName = $STR_A3_WL_FF_Hint_Name;

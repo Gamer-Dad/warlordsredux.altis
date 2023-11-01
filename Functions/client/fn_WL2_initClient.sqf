@@ -50,8 +50,8 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
  
 enableRadio true;
 enableSentences true;
-{_x enableChannel [true, true]} forEach [1,2,3,4,5];
-{_x enableChannel [true, false]} forEach [0];
+{_x enableChannel [true, true]} forEach [1,3,4,5];
+{_x enableChannel [true, false]} forEach [0,2];
 
 call MRTM_fnc_settingsInit;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
@@ -100,7 +100,6 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 
 //Evenhandlers
 0 spawn BIS_fnc_WL2_clientEH;
-
 player spawn APS_fnc_SetupProjectiles;
 call BIS_fnc_WL2_sub_arsenalSetup;
 
@@ -139,17 +138,6 @@ call BIS_fnc_WL2_targetResetHandle;
 		_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == _uid}});
 		call BIS_fnc_WL2_sub_purchaseMenuRefresh;
 	};
-};
-
-0 spawn {
-	_t = serverTime + 10;
-	waitUntil {sleep 1; serverTime > _t && !isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])};
-	sleep WL_TIMEOUT_LONG;
-	while {!BIS_WL_purchaseMenuDiscovered} do {
-		[["Common", "warlordsMenu"], 0, "", 10, "", false, true, false, true] call BIS_fnc_advHint;
-		sleep 13;
-	};
-	BIS_WL_purchaseMenuDiscovered = nil;
 };
 
 [player, "maintenance", {(player nearObjects ["All", 30]) findIf {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0) || {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0)}} != -1}] call BIS_fnc_WL2_hintHandle;

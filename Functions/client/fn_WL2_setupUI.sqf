@@ -107,8 +107,6 @@ if (_displayClass == "OSD") then {
 	}];
 } else {
 	if (_displayClass == "RequestMenu_open") then {
-		BIS_WL_purchaseMenuDiscovered = TRUE;
-		
 		if (BIS_WL_purchaseMenuVisible) exitWith {};
 		
 		disableSerialization;

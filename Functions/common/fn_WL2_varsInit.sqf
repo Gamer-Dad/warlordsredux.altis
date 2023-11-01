@@ -33,7 +33,6 @@ switch (_locality) do {
 		BIS_WL_localized_m = localize "STR_A3_rscdisplayarcademap_meters";
 		BIS_WL_localized_km = localize "STR_A3_WL_unit_km";
 		BIS_WL_purchaseMenuVisible = FALSE;
-		BIS_WL_purchaseMenuDiscovered = FALSE;
 		BIS_WL_gearKeyPressed = FALSE;
 		BIS_WL_currentSelection = 0;
 		BIS_WL_matesAvailable = 1;
