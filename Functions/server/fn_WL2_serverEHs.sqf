@@ -31,9 +31,7 @@ addMissionEventHandler ["EntityKilled", {
 		_responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
 		if (isPlayer _responsibleLeader) then {
 			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
-			if (_unit isKindOf "Man") then {
-				[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
-			};
+			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
 		};
 	};
 
