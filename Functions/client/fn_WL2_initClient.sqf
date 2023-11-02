@@ -47,7 +47,7 @@ if !((side group player) in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
- 
+
 enableRadio true;
 enableSentences true;
 {_x enableChannel [true, true]} forEach [1,3,4,5];

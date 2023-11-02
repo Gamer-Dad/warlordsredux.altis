@@ -22,16 +22,16 @@ disableSerialization;
 {
 	slidersetRange [(_x select 0), 100, 4000];
 	sliderSetPosition [(_x select 0), (_x select 1)];
-	((findDisplay 8000) displayCtrl (_x select 0)) sliderSetSpeed [(_x select 0), 100, 100];
+	((findDisplay 8000) displayCtrl (_x select 0)) sliderSetSpeed [100, 4000, 50];
 } forEach [[8003, (profileNamespace getVariable ["MRTM_inf", 2000])], [8005, (profileNamespace getVariable ["MRTM_ground", 3000])], [8007, (profileNamespace getVariable ["MRTM_air", 4000])], [8009, (profileNamespace getVariable ["MRTM_drones", 4000])], [8012, (profileNamespace getVariable ["MRTM_objects", 2000])]];
 ((findDisplay 8000) displayCtrl 8013) cbSetChecked (profileNamespace getVariable ["MRTM_syncObjects", true]);
 ctrlEnable [8012, !(profileNamespace getVariable ["MRTM_syncObjects", true])];
 ctrlEnable [8014, !(profileNamespace getVariable ["MRTM_syncObjects", true])];
 
 {
-	slidersetRange [(_x select 0), 0.05, 2];
+	slidersetRange [(_x select 0), 0.05, 0.4];
 	sliderSetPosition [(_x select 0), (_x select 1)];
-	((findDisplay 8000) displayCtrl (_x select 0)) sliderSetSpeed [(_x select 0), 0.05, 0.01];
+	((findDisplay 8000) displayCtrl (_x select 0)) sliderSetSpeed [0.05, 0.4, 0.01];
 } forEach [[8015, (profileNamespace getVariable ["MRTM_rwr1", 0.3])], [8017, (profileNamespace getVariable ["MRTM_rwr2", 0.3])], [8019, (profileNamespace getVariable ["MRTM_rwr3", 0.2])], [8021, (profileNamespace getVariable ["MRTM_rwr4", 0.3])]];
 
 ((findDisplay 8000) displayCtrl 8023) cbSetChecked (profileNamespace getVariable ["MRTM_EnableRWR", true]);

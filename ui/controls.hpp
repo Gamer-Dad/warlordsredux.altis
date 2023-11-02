@@ -653,7 +653,7 @@ class MRTM_settingsMenu
 				class MRTMRWRHeaderText: RscStructuredTextMRTM
 				{
 					idc = -1;
-					text = "Radar Warning Reciever Settings:";
+					text = "Radar Warning Reciever:";
 					colorBackground[] = {0.3,0.3,0.3,0.7};
 					x = 0.327969 * safezoneW + safezoneX;
 					y = 0.44;

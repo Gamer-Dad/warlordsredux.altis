@@ -6,19 +6,16 @@ _dazzleable = _projectile call APS_fnc_IsLaserGuided || {
 	typeOf _projectile == "M_Vorona_HEAT" || {
 	typeOf _projectile == "M_Vorona_HE"}}}
 };
-
-_radius = if (_dazzleable) then { 125 } else { sqrt (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600]) };
+_radius = if (_dazzleable) then {125} else {sqrt (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600])};
 
 _continue = alive _projectile;
-
-while { _continue } do {
+while {_continue} do {
 	_eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _radius]) select { 
 		_x != _unit &&
 		_x call APS_fnc_active
 	};
 
 	_sortedEligibleList = [_eligibleNearbyVehicles, [_projectile], { _input0 distance _x }, "ASCEND"] call BIS_fnc_sortBy;
-
 	{
 		if (!alive _projectile || {!_continue}) exitWith {
 			_continue = false;
@@ -26,7 +23,6 @@ while { _continue } do {
 
 		_vehicleAPSType = _x getVariable ["apsType", -1];
 		_projectileAPSType = apsEligibleProjectiles get (typeOf _projectile);
-
 		if (_vehicleAPSType == 3) then {
 			if (_dazzleable) exitWith {
 				[_projectile] spawn APS_fnc_MisguideMissile;
