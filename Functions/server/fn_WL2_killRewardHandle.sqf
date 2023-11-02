@@ -7,7 +7,12 @@ _unitSide = if (_unit isKindOf "Man") then {
 	side group _unit;
 } else {
 	if !(isNull ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then {
-		(side group ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID));
+		_sideOwner = side group ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
+		if (count crew _unit > 0) then {
+			side group (crew _unit # 0);
+		} else {
+			_sideOwner;
+		};
 	} else {
 		(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
 			case 0: {east};
