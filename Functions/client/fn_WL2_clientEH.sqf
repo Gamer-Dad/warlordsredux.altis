@@ -1,4 +1,3 @@
-//db EH
 "fundsDatabaseClients" addPublicVariableEventHandler {
 	[] spawn BIS_fnc_WL2_refreshOSD;
 };
@@ -7,7 +6,6 @@ addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
 addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
 addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
-//Voice system EH
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	VIC_ENTERED = true;
@@ -21,7 +19,6 @@ player addEventHandler ["GetInMan", {
 	};
 }];
 
-//Inv block EH
 player addEventHandler ["InventoryOpened",{
 	params ["_unit","_container"];
 	_override = false;
@@ -34,7 +31,6 @@ player addEventHandler ["InventoryOpened",{
 	_override;
 }];
 
-//Last loadout EH
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
@@ -67,7 +63,6 @@ player addEventHandler ["Killed", {
 	};
 }];
 
-//Safezone EH
 player addEventHandler ["HandleDamage", {
 	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
 	_base = (([BIS_WL_base1, BIS_WL_base2] select {(_x getVariable "BIS_WL_owner") == (side group _unit)}) # 0);
@@ -87,15 +82,23 @@ addMissionEventHandler ["HandleChatMessage", {
 	_admin = (getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"));
 	if (_admin && {_owner == clientOwner}) then {
 		_input = _text splitString " ";
-		if (count _input == 2 && {_input # 0 == "!getCP"}) then {
+		_valid = _input # 0 == "!getCP";
+		if (count _input == 2 && {_valid}) then {
 			_amount = parseNumber (_input # 1);
 			[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
+		} else {
+			if (_valid) then {
+				systemChat "Unexpected arguments!";
+			};
+		};
+	} else {
+		if (_owner == clientOwner && {!_admin}) then {
+			systemChat "You don't have access to this command!";
 		};
 	};
 	_return;
 }];
 
-//Key press EH
 0 spawn {
 	waituntil {sleep 0.1; !isnull (findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["KeyUp", {

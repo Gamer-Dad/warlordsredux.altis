@@ -52,6 +52,7 @@ enableRadio true;
 enableSentences true;
 {_x enableChannel [true, true]} forEach [1,3,4,5];
 {_x enableChannel [true, false]} forEach [0,2];
+enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
