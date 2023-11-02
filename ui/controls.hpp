@@ -391,10 +391,10 @@ class MRTM_settingsMenu
 		{
 			idc = 8001;
 			colorBackground[] = {0,0,0,0};
-			x = 0.577344 * safezoneW + safezoneX;
+			x = 0.502344 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
-			w = 0.144375 * safezoneW;
-			h = 0.033 * safezoneH;
+			w = 0.219 * safezoneW;
+			h = 0.025 * safezoneH;
 			class Attributes
 			{
 				font = "PuristaMedium";
@@ -409,7 +409,7 @@ class MRTM_settingsMenu
 			idc = -1;
 			text = "img\discord_ca.paa";
 			style = ST_MULTI + ST_TITLE_BAR;
-			x = 0.567344 * safezoneW + safezoneX;
+			x = 0.493344 * safezoneW + safezoneX;
 			y = 0.236 * safezoneH + safezoneY;
 			w = 0.014244 * safezoneW;
 			h = 0.022 * safezoneH;
