@@ -21,22 +21,20 @@ if (
 	];
 } forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
 {
-	if !(_x isEqualTo player) then {
-		_m drawIcon [
-			_x call BIS_fnc_iconType,
-			_x call BIS_fnc_iconColor,
-			_x call BIS_fnc_getPos,
-			_x call BIS_fnc_iconSize,
-			_x call BIS_fnc_iconSize,
-			_x call BIS_fnc_getDir,
-			[_x, true] call BIS_fnc_iconText,
-			1,
-			0.025,
-			"PuristaBold",
-			"right"
-		];
-	};
-} forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
+	_m drawIcon [
+		_x call BIS_fnc_iconType,
+		_x call BIS_fnc_iconColor,
+		_x call BIS_fnc_getPos,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_iconSize,
+		_x call BIS_fnc_getDir,
+		[_x, true] call BIS_fnc_iconText,
+		1,
+		0.025,
+		"PuristaBold",
+		"right"
+	];
+} forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x) && {_x != player}}}});
 {
 	if (!isNull _x) then {
 		_m drawIcon [
@@ -53,7 +51,7 @@ if (
 			"right"
 		];
 	};
-} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
+} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {(typeOf _x != "Logic") && {_x != player}}}}});
 {
 	_m drawIcon [
 		_x call BIS_fnc_iconType,

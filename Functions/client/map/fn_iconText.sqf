@@ -2,7 +2,9 @@ params ["_t", ["_gps", false]];
 
 _text = "";
 _control = (findDisplay 12) displayCtrl 51;
-if ((ctrlMapScale _control) < 0.55 && {!_gps}) then {
+_continue = if (_gps) then {true} else {(ctrlMapScale _control) < 0.55};
+
+if (_continue) then {
 	_name = (name _t);
 
 	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
