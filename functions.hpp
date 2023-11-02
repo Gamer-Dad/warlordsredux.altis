@@ -223,7 +223,6 @@ class CfgFunctions {
 			class leaveGroup {};
 			class openInfoMenu {};
 			class kickUser {};
-			class openDevMenu {};
 		};
 	};
 	class GOM {

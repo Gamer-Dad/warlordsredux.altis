@@ -82,7 +82,17 @@ addMissionEventHandler ["HandleChatMessage", {
 	params ["_channel", "_owner", "_from", "_text"];
 	_text = toLower _text;
 	_list = getArray (missionConfigFile >> "adminFilter");
-	((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
+	_return = ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
+
+	_admin = (getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"));
+	if (_admin && {_owner == clientOwner}) then {
+		_input = _text splitString " ";
+		if (count _input == 2 && {_input # 0 == "!getCP"}) then {
+			_amount = parseNumber (_input # 1);
+			[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
+		};
+	};
+	_return;
 }];
 
 //Key press EH
