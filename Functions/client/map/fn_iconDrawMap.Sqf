@@ -42,8 +42,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		0,
 		_x call BIS_fnc_iconText,
 		1,
-		0.035,
-		"TahomaB",
+		0.043,
+		"PuristaBold",
 		"right"
 	];
 } forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player)}});
@@ -60,8 +60,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 				_x call BIS_fnc_getDir,
 				_x call BIS_fnc_iconTextSectorScan,
 				1,
-				0.035,
-				"TahomaB",
+				0.043,
+				"PuristaBold",
 				"right"
 			];
 		};
@@ -78,8 +78,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			0,
 			"",
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	};
@@ -92,8 +92,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_x call BIS_fnc_getDir,
 		_x call BIS_fnc_iconText,
 		1,
-		0.035,
-		"TahomaB",
+		0.043,
+		"PuristaBold",
 		"right"
 	];
 } forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
@@ -108,8 +108,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	};		
@@ -124,8 +124,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_x call BIS_fnc_getDir,
 		_x call BIS_fnc_iconText,
 		1,
-		0.035,
-		"TahomaB",
+		0.043,
+		"PuristaBold",
 		"right"
 	];		
 } forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});
@@ -140,8 +140,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	};
@@ -157,8 +157,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	};		
@@ -174,8 +174,8 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			_x call BIS_fnc_getDir,
 			_x call BIS_fnc_iconText,
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	};
@@ -191,8 +191,8 @@ if (side group player == west) then {
 			_x call BIS_fnc_getDir,
 			"Spawn truck",
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	} forEach (vehicles select {(typeOf _x == "B_Truck_01_medical_F") && {alive _x}});
@@ -207,8 +207,8 @@ if (side group player == west) then {
 			_x call BIS_fnc_getDir,
 			"Medical container",
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	} forEach (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
@@ -224,8 +224,8 @@ if (side group player == east) then {
 			_x call BIS_fnc_getDir,
 			"Spawn truck",
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	} forEach (vehicles select {(typeOf _x == "O_Truck_03_medical_F") && {alive _x}});
@@ -240,8 +240,8 @@ if (side group player == east) then {
 			_x call BIS_fnc_getDir,
 			"Medical pod",
 			1,
-			0.035,
-			"TahomaB",
+			0.043,
+			"PuristaBold",
 			"right"
 		];
 	} forEach (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});

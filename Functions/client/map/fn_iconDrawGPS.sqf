@@ -13,10 +13,10 @@ if (
 		20,
 		20,
 		0,
-		_x call BIS_fnc_iconText,
+		[_x, true] call BIS_fnc_iconText,
 		1,
 		0.025,
-		"TahomaB",
+		"PuristaBold",
 		"right"
 	];
 } forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
@@ -29,10 +29,10 @@ if (
 			_x call BIS_fnc_iconSize,
 			_x call BIS_fnc_iconSize,
 			_x call BIS_fnc_getDir,
-			_x call BIS_fnc_iconText,
+			[_x, true] call BIS_fnc_iconText,
 			1,
 			0.025,
-			"TahomaB",
+			"PuristaBold",
 			"right"
 		];
 	};
@@ -46,10 +46,10 @@ if (
 			_x call BIS_fnc_iconSize,
 			_x call BIS_fnc_iconSize,
 			_x call BIS_fnc_getDir,
-			_x call BIS_fnc_iconText,
+			[_x, true] call BIS_fnc_iconText,
 			1,
 			0.025,
-			"TahomaB",
+			"PuristaBold",
 			"right"
 		];
 	};
@@ -62,10 +62,10 @@ if (
 		_x call BIS_fnc_iconSize,
 		_x call BIS_fnc_iconSize,
 		_x call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
+		[_x, true] call BIS_fnc_iconText,
 		1,
 		0.025,
-		"TahomaB",
+		"PuristaBold",
 		"right"
 	];		
 } forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});	
@@ -83,7 +83,7 @@ if (
 				"",
 				1,
 				0.025,
-				"TahomaB",
+				"PuristaBold",
 				"right"
 			];
 		};
@@ -101,7 +101,7 @@ if (
 			getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'),
 			1,
 			0.025,
-			"TahomaB",
+			"PuristaBold",
 			"right"
 		];
 	};
