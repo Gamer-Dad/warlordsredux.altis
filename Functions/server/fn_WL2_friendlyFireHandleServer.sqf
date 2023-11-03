@@ -21,7 +21,7 @@ if (_unit isKindOf "Man") then {
 } else {
 	if (_unit getVariable ["BIS_WL_ownerAsset", "123"] == "123") exitWith {};
 	_sideOwner = side group ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
-	_sideCrew = if (count crew _unit > 0) then {side group (crew _unit # 0)} else {_sideOwner};
+	_sideCrew = if (count crew _unit > 0) then {side group (crew _unit # 0)} else {independent};
 	if (_sideOwner != _sideCrew) exitWith {};
 	if (_sideOwner == (side (group _responsibleLeader))) then {
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [[serverTime, owner _unit]], [2, (owner _responsibleLeader)]];
