@@ -2,7 +2,7 @@ params ["_t", ["_gps", false]];
 
 _text = "";
 _control = (findDisplay 12) displayCtrl 51;
-_continue = if (_gps) then {true} else {(ctrlMapScale _control) < 0.35};
+_continue = if (_gps) then {true} else {(ctrlMapScale _control) < 0.3};
 
 if (_continue) then {
 	_name = (name _t);
