@@ -21,13 +21,13 @@ if (_unit isKindOf "Man") then {
 } else {
 	if (_unit getVariable ["BIS_WL_ownerAsset", "123"] == "123") exitWith {};
 	_sideOwner = side group ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
-	_sideCrew = if (count crew _unit > 0) then {side group (crew _unit # 0)} else {independent};
+	_sideCrew = if (count crew _unit > 0) then {side group ((crew _unit select {alive _x}) # 0)} else {_sideOwner};
 	if (_sideOwner != _sideCrew) exitWith {};
 	if (_sideOwner == (side (group _responsibleLeader))) then {
-		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [[serverTime, owner _unit]], [2, (owner _responsibleLeader)]];
+		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, owner _unit]]), [2, (owner _responsibleLeader)]];
 		[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", (owner _responsibleLeader)];
 
-		if ((count (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps")) >= 3) then {
+		if ((count (_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []])) >= 3) then {
 			_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
 			missionNamespace setVariable [_varName, serverTime + 1800];
 			[(missionNamespace getVariable _varName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", (owner _responsibleLeader)];
