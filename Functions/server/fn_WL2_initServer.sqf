@@ -44,9 +44,17 @@ setTimeMultiplier 4;
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
 		waitUntil {sleep 5; daytime > 20 || {daytime < 5}};
-		setTimeMultiplier 7;
+		setTimeMultiplier 8;
 		waitUntil {sleep 5; daytime < 20 && {daytime > 5}};
 		setTimeMultiplier 3;
+	};
+};
+
+0 spawn {
+	while {!BIS_WL_missionEnd} do {
+		_overcastPreset = random 1;
+		(7200 * timeMultiplier) setOvercast _overcastPreset;
+		waitUntil {sleep 600; 0 setFog 0; 10e10 setFog 0; 0 setRain 0; 10e10 setRain 0; simulWeatherSync; abs (overcast - _overcastPreset) < 0.2};
 	};
 };
 
