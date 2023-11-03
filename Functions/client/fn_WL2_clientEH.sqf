@@ -93,7 +93,11 @@ addMissionEventHandler ["HandleChatMessage", {
 		};
 	} else {
 		if (_owner == clientOwner && {!_admin}) then {
-			systemChat "You don't have access to this command!";
+			_input = _text splitString " ";
+			_valid = _input # 0 == "!getCP";
+			if (count _input == 2 && {_valid}) then {
+				systemChat "You don't have access to this command!";
+			};
 		};
 	};
 	_return;
