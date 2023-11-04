@@ -27,7 +27,6 @@ if (isNull (findDisplay 4000) && {_open}) then {
                 _cycles = _cycles + 1;
             };
             sleep 0.5;
-            systemChat format ["refreshed: %1", random 50];
         };
     };
 };
