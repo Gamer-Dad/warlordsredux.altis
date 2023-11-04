@@ -142,7 +142,7 @@ switch (_class) do {
 		if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_vehiclesCnt >= (getMissionConfigValue ["BIS_WL_assetLimit", 10])}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
 		if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0)}) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_tooltip_deploy_enemies_nearby"};
 		if (_category in ["Vehicles", "Infantry", "Gear"] && {(_visitedSectorID == -1)}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
-		if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {((player getVariable ["BIS_WL_isOrdering", false]) == true)}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
+		if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {(player getVariable ["BIS_WL_isOrdering", false])}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 		if (_category == "Aircraft") exitWith {
 			if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 				if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1 && {alive _x}} count WL_PLAYER_VEHS) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
