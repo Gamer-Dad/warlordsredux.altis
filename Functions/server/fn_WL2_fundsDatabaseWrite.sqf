@@ -12,4 +12,4 @@ _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [_uid
 _dbAmount = (_playerFunds + _amount) min 50000;
 _fundsDB set [_uid, _dbAmount];
 
-[_dbAmount, _uid] spawn BIS_fnc_WL2_fundsDatabaseUpdate;
+[_dbAmount, _uid] call BIS_fnc_WL2_fundsDatabaseUpdate;

@@ -4,4 +4,5 @@ if !(isServer) exitWith {};
 
 params ["_amount", "_uid"];
 
-missionNamespace setVariable ["fundsClient", _amount, (owner (_uid call BIS_fnc_getUnitByUID))];
+_owner = owner (_uid call BIS_fnc_getUnitByUID);
+missionNamespace setVariable ["fundsClient", _amount, _owner];

@@ -7,15 +7,15 @@ while {!BIS_WL_missionEnd} do {
 
 		if (_side == west) then {
 			if ((serverNamespace getVariable ["actualIncomeBlu", 40]) < 50) then {
-				[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, 50] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			} else {
-				[_uid, (serverNamespace getVariable "actualIncomeBlu")] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, (serverNamespace getVariable "actualIncomeBlu")] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		} else {
 			if ((serverNamespace getVariable ["actualIncomeOpf", 40]) < 50) then {
-				[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, 50] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			} else {
-				[_uid, (serverNamespace getVariable "actualIncomeOpf")] call BIS_fnc_WL2_fundsDatabaseWrite;
+				[_uid, (serverNamespace getVariable "actualIncomeOpf")] spawn BIS_fnc_WL2_fundsDatabaseWrite;
 			};
 		};
 	} forEach _notBlocked;
