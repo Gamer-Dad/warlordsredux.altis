@@ -11,10 +11,8 @@ if (count _mines >= 5) then {
   } else {
     _mines pushBack _entity;
     _minesDB set ["spawnedSatchelAmmo", _mines];
-    createVehicle ["Land_Pumpkin_01_halloween_F", (getPosATL _entity), [], 0, "CAN_COLLIDE"];
   };
 } else {
   _mines pushBack _entity;
   _minesDB set ["spawnedSatchelAmmo", _mines];
-  createVehicle ["Land_Pumpkin_01_halloween_F", (getPosATL _entity), [], 0, "CAN_COLLIDE"];
 };
