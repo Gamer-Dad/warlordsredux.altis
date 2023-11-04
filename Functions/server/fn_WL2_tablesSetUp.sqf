@@ -72,7 +72,8 @@ serverNamespace setVariable ["BIS_WL2_killRewards",
 		["I_MRAP_03_hmg_F", 130], ["I_MRAP_03_gmg_F", 130],
 		["I_LT_01_scout_F", 240], ["I_LT_01_AA_F", 240], ["I_LT_01_AT_F", 240], ["I_LT_01_cannon_F", 240],
 		["I_MBT_03_cannon_F", 400], ["I_APC_Wheeled_03_cannon_F", 400], ["I_APC_tracked_03_cannon_F", 400],
-		["I_Heli_light_03_dynamicLoadout_F", 300], ["I_Heli_light_03_F", 300], ["I_Plane_Fighter_03_dynamicLoadout_F", 600], ["I_Plane_Fighter_03_CAS_F", 500], ["I_Plane_Fighter_04_F", 600]
+		["I_Heli_light_03_dynamicLoadout_F", 300], ["I_Heli_light_03_F", 300], ["I_Plane_Fighter_03_dynamicLoadout_F", 600], ["I_Plane_Fighter_03_CAS_F", 500], ["I_Plane_Fighter_04_F", 600],
+		["C_Offroad_02_unarmed_F", -150], ["C_Plane_Civil_01_F", -250], ["C_Plane_Civil_01_racing_F", -250], ["C_Heli_Light_01_civil_F", -200], ["C_Van_02_medevac_F", -250]
 	]
 ];
 
