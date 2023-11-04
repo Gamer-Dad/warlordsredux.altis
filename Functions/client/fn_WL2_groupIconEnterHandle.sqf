@@ -13,7 +13,7 @@ private _harbor = "W" in _services;
 _side = side group player;
 _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _side], -9999]);
 _scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
-_capturing = ((count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1) && {(_side in (_sector getVariable ["BIS_WL_previousOwners", []])) || {_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side])}});
+_capturing = (count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1);
 _percentage = if (_capturing) then {linearConversion [((_sector getVariable ["BIS_WL_seizingInfo", []]) # 1), ((_sector getVariable ["BIS_WL_seizingInfo", []]) # 2), serverTime, 0, 1]};
 _color = (['#004d99', '#7f0400'] # ([west, east] find ((_sector getVariable ["BIS_WL_seizingInfo", []]) # 0)));
 
@@ -38,7 +38,7 @@ _color = (['#004d99', '#7f0400'] # ([west, east] find ((_sector getVariable ["BI
 	if (_harbor) then {localize "STR_A3_WL_param30_title"} else {""},
 	localize "STR_A3_WL_param_scan_timeout",
 	[(ceil _scanCD), "MM:SS"] call BIS_fnc_secondsToString,
-	if (count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
+	if (_capturing && {(_side in (_sector getVariable ["BIS_WL_previousOwners", []])) || {_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side])}}) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
 	_color
 ];
 
