@@ -19,13 +19,15 @@ if (isNull (findDisplay 4000) && {_open}) then {
         private _players = 0;
         private _cycles = 0;
         while {!(isNull (findDisplay 4000))} do {
-            if (((count (allPlayers select {side group _x == side group player})) != _players) || {_cycles == 20}) then {
+            if ((count (allPlayers select {side group _x == side group player})) != _players || {_cycles >= 20}) then {
                 _cycles = 0;
                 _players = count (allPlayers select {side group _x == side group player});
                 false spawn MRTM_fnc_openGroupMenu;
+            } else {
+                _cycles = _cycles + 1;
             };
-            _cycles = _cycles + 1;
             sleep 0.5;
+            systemChat format ["refreshed: %1", random 50];
         };
     };
 };
@@ -44,9 +46,6 @@ lbClear 4006;
     } else {
         lbSetPictureColor [4005, _index, [0,0.4,0,1]];
         lbSetPictureColorSelected [4005, _index, [0,0.4,0,1]];
-    };
-    if (isPlayer _x) then {
-        lbSetTooltip [4005, _index, (format ["%1: %2CP", (name _x), ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID _x))])];
     };
 } forEach (units player);
 

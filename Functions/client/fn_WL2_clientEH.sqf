@@ -1,4 +1,4 @@
-"fundsDatabaseClients" addPublicVariableEventHandler {
+"fundsClient" addPublicVariableEventHandler {
 	[] spawn BIS_fnc_WL2_refreshOSD;
 };
 

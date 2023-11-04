@@ -23,7 +23,7 @@ _purchase_transfer_amount ctrlSetFade 0;
 _purchase_transfer_amount ctrlEnable TRUE;
 _purchase_transfer_amount ctrlCommit 0;
 
-_purchase_transfer_amount ctrlSetText str (ceil ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)));
+_purchase_transfer_amount ctrlSetText str (ceil (missionNamespace getVariable ["fundsClient", 0]));
 
 _purchase_transfer_cp_title ctrlSetFade 0;
 _purchase_transfer_cp_title ctrlEnable TRUE;
@@ -58,7 +58,7 @@ _purchase_transfer_units lbSetCurSel 0;
 		_valueText = toString _valueArr;
 		(_this # 2) ctrlSetText _valueText;
 		_value = (if (_valueText != "") then {parseNumber _valueText} else {0});
-		if (_value <= ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player)) && _value > 0) then {
+		if (_value <= (missionNamespace getVariable ["fundsClient", 0]) && {_value > 0}) then {
 			uiNamespace setVariable ["BIS_WL_fundsTransferPossible", TRUE];
 			(_this # 1) ctrlSetBackgroundColor _color;
 			(_this # 1) ctrlSetTextColor [1, 1, 1, 1];

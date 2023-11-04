@@ -9,6 +9,7 @@ if (isNil {_uid}) exitWith {};
 _fundsDB = (serverNamespace getVariable "fundsDatabase");
 _playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, 0]);
 
-_fundsDB set [_uid, ((_playerFunds + _amount) min 50000)];
+_dbAmount = (_playerFunds + _amount) min 50000;
+_fundsDB set [_uid, _dbAmount];
 
-[(serverNamespace getVariable "fundsDatabase"), _uid] call BIS_fnc_WL2_fundsDatabaseUpdate;
+[_dbAmount, _uid] spawn BIS_fnc_WL2_fundsDatabaseUpdate;
