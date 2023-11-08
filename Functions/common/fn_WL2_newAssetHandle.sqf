@@ -17,7 +17,7 @@ if (isPlayer _owner) then {
 
 	if (_asset isKindOf "Man") then {
 		_asset addEventHandler ["Killed", {
-			[] spawn BIS_fnc_WL2_refreshOSD;
+			false spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];

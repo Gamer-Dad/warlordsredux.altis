@@ -1,6 +1,6 @@
 "fundsClient" addPublicVariableEventHandler {
 	systemChat "CP changed";
-	0 spawn BIS_fnc_WL2_refreshOSD;
+	false spawn BIS_fnc_WL2_refreshOSD;
 };
 
 addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];

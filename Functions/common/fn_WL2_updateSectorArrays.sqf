@@ -12,5 +12,5 @@ if (_caller == "server") then {
 		BIS_WL_sectorsArray = [(side group player), _fullRecalc] call BIS_fnc_WL2_sortSectorArrays;
 		BIS_WL_sectorsArrayEnemy = [(([west, east] select {_x != (side group player)}) # 0), _fullRecalc] call BIS_fnc_WL2_sortSectorArrays;
 	};
-	[true] spawn BIS_fnc_WL2_refreshOSD;
+	true spawn BIS_fnc_WL2_refreshOSD;
 };

@@ -5,7 +5,7 @@ params ["_asset"];
 private _groupUnit = local _asset && {_asset isKindOf "Man"};
 if (_groupUnit) then {
 	0 spawn {
-		[] spawn BIS_fnc_WL2_refreshOSD;
+		false spawn BIS_fnc_WL2_refreshOSD;
 	};
 };
 

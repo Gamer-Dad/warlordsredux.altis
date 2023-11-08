@@ -75,10 +75,10 @@ if (_event == "init") then {
 			while {!BIS_WL_missionEnd} do {
 				missionNamespace setVariable [_varName, call _show];
 				if (_varName == "BIS_WL_showHint_maintenance") then {
-					[false] call BIS_fnc_WL2_refreshOSD;
+					false spawn BIS_fnc_WL2_refreshOSD;
 				};
 				if (_varName == "BIS_WL_showHint_nearSL") then {
-					[false] call BIS_fnc_WL2_refreshOSD;
+					false spawn BIS_fnc_WL2_refreshOSD;
 				};
 				sleep WL_TIMEOUT_STANDARD;
 			};

@@ -385,7 +385,7 @@ if (_displayClass == "OSD") then {
 						{
 							deleteVehicle _x;
 						} forEach ((groupSelectedUnits player) select {_x != player && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}});
-						[] spawn BIS_fnc_WL2_refreshOSD;
+						false spawn BIS_fnc_WL2_refreshOSD;
 					};
 					case "RespawnVic": {0 spawn BIS_fnc_WL2_orderFTVehicle};
 					case "RespawnVicFT": {0 spawn BIS_fnc_WL2_orderFTVehicleFT};
