@@ -22,4 +22,4 @@ private _actionID = _asset addAction [
 	true
 ];
 
-_asset setUserActionText [_actionID, format ["<t color = '%1'>%2</t>", if (_asset getVariable "radarOperation" == false) then {"#4bff58"} else {"#ff4b4b"}, if (_asset getVariable "radarOperation" == false) then {localize "STR_A3_radar_operation_enable"} else {localize "STR_A3_radar_operation_disable"}]];
+_asset setUserActionText [_actionID, format ["<t color = '%1'>%2</t>", if !(_asset getVariable "radarOperation") then {"#4bff58"} else {"#ff4b4b"}, if !(_asset getVariable "radarOperation") then {localize "STR_A3_radar_operation_enable"} else {localize "STR_A3_radar_operation_disable"}]];

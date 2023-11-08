@@ -17,7 +17,7 @@ hRead = false;
 0 spawn {
 	if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 		while {dialog} do {
-			waitUntil {sleep 0.1; hRead == true};
+			waitUntil {sleep 0.1; hRead};
 			_time = serverTime + 5;
 			waitUntil {sleep 0.1; serverTime > _time};
 			ctrlEnable [1, true];
@@ -74,7 +74,7 @@ while {dialog} do {
 	_index = lbCurSel 9011;
 	_curSel = lbData [9011, _index];
 
-	if (hRead == false) then {
+	if !(hRead) then {
 		ctrlShow [9006, true];
 		ctrlSetText [9006, localize "STR_MRTM_welcomeInteract_21"];
 	} else {

@@ -33,7 +33,7 @@ if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
 	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) && {alive player})} do {
 		_v = objectParent player;
 		if ((profileNamespace getVariable ["MRTM_EnableRWR", true]) && {!(_v getVariable "isBettyBitching")}) then {
-			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
+			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {!(_v getVariable "landingGear")}}) then {
 				if (asin (vectorDir _v select 2) < - (((getPosATL player select 2) * 40) / speed _v)) then {
 					playSoundUI ["pullUpRita", (profileNamespace getVariable ["MRTM_rwr1", 0.3]), 1];
 					_v setVariable ["isBettyBitching", true];
@@ -53,7 +53,7 @@ if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
 	while {((typeOf (objectParent player) ==  "O_Plane_Fighter_02_F" || {typeOf (objectParent player) ==  "O_Plane_CAS_02_dynamicLoadout_F" || {typeOf (objectParent player) ==  "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) && {alive player})} do {
 		_v = objectParent player;
 		if ((profileNamespace getVariable ["MRTM_EnableRWR", true]) && {!(_v getVariable "isBettyBitching")}) then {
-			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
+			if ((getPosATL player select 2) < 100 && {!(_v getVariable "landingGear")}) then {
 				playSoundUI ["altRita", (profileNamespace getVariable ["MRTM_rwr2", 0.3]), 1];
 				_v setVariable ["isBettyBitching", true];
 				private _startTime = serverTime + 1.7;

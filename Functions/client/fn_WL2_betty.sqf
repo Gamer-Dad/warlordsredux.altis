@@ -30,7 +30,7 @@ _v addEventHandler ["Killed", {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}) && {alive player})} do {
 		_v = (objectParent player);
 		if ((profileNamespace getVariable ["MRTM_EnableRWR", true]) && {!(_v getVariable "isBettyBitching")}) then {
-			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {_v getVariable "landingGear" == false}}) then {
+			if (getPosATL player select 2 <= _v getVariable "altCeiling" && {getPosATL player select 2 > 100 && {!(_v getVariable "landingGear")}}) then {
 				if (asin (vectorDir _v select 2) < - (((getPosATL player select 2) * 40) / speed _v)) then {
 					playSoundUI ["pullUp", (profileNamespace getVariable ["MRTM_rwr1", 0.3]), 1];
 					_v setVariable ["isBettyBitching", true];
@@ -50,7 +50,7 @@ _v addEventHandler ["Killed", {
 	while {((typeOf (objectParent player) == "B_Plane_Fighter_01_F" || {typeOf (objectParent player) == "B_Plane_CAS_01_dynamicLoadout_F" || {typeOf (objectParent player) == "B_T_VTOL_01_armed_F" || {typeOf (objectParent player) == "B_T_VTOL_01_vehicle_F" || {typeOf (objectParent player) == "B_T_VTOL_01_infantry_F"}}}}) && {alive player})} do {
 		_v = (objectParent player);
 		if ((profileNamespace getVariable ["MRTM_EnableRWR", true]) && {!(_v getVariable "isBettyBitching")}) then {
-			if ((getPosATL player select 2) < 100 && {_v getVariable "landingGear" == false}) then {
+			if ((getPosATL player select 2) < 100 && {!(_v getVariable "landingGear")}) then {
 				playSoundUI ["altWarning", (profileNamespace getVariable ["MRTM_rwr2", 0.3]), 1];
 				_v setVariable ["isBettyBitching", true];
 				private _startTime = serverTime + 3; 
