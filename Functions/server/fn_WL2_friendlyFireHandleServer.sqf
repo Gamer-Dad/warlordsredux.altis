@@ -13,7 +13,7 @@ if (_unit isKindOf "Man") then {
 			params ["_responsibleLeader"];
 			sleep 30;
 			_owner = owner _responsibleLeader;
-			if ((count (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps")) >= 2) then {
+			if ((count (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps")) >= 3) then {
 				_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
 				missionNamespace setVariable [_varName, serverTime + 1800];
 				[(missionNamespace getVariable _varName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", _owner];
