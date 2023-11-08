@@ -102,9 +102,6 @@ setTimeMultiplier 4;
 	_cabinet setDir 86.365;
 	private _router = createSimpleObject ["Land_Router_01_sand_F", [4191.07,20097.8,317.647]];
 	_router setDir 97.622;
-	private _phone = createSimpleObject ["Land_IPPhone_01_sand_F", [4190.71,20097.5,317.647]];
-	_phone setDir 40.497;
-	_phone setObjectTextureGlobal [1, "img\rick_ca.paa"];
 	if ((random 1) < 0.4) then {
 		private _car = createVehicle ["C_Offroad_01_comms_F", [4200.52,20100.4,-0.0614624], [], 0, "NONE"];
 		_car setDir 145;
