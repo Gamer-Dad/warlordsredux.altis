@@ -2,7 +2,8 @@
 
 if !(isServer) exitWith {};
 
-params ["_amount", "_uid"];
+params ["_database", "_uid"];
 
+missionNamespace setVariable ["fundsDatabaseClients", _database];
 _owner = owner (_uid call BIS_fnc_getUnitByUID);
-missionNamespace setVariable ["fundsClient", _amount, _owner];
+_owner publicVariableClient "fundsDatabaseClients";

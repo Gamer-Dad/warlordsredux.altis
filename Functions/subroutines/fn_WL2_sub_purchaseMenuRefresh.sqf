@@ -13,7 +13,7 @@ _purchase_info_asset = _display displayCtrl 105;
 _purchase_title_cost = _display displayCtrl 106;
 _purchase_request = _display displayCtrl 107;
 
-_funds = (missionNamespace getVariable ["fundsClient", 0]);
+_funds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
 _matesAvail = ((BIS_WL_matesAvailable + 1) - count ((units group player) select {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == getPlayerUID player})) max 0;
 _servicesAvailable = BIS_WL_sectorsArray # 5;
 

@@ -11,7 +11,7 @@ if !(_owner in _previousOwners) then {
 		_rewardMultiplier = 30;
 		{
 			private _uid = getPlayerUID _x;
-			[_uid, (_sector getVariable "BIS_WL_value") * _rewardMultiplier] spawn BIS_fnc_WL2_fundsDatabaseWrite;
+			[_uid, (_sector getVariable "BIS_WL_value") * _rewardMultiplier] call BIS_fnc_WL2_fundsDatabaseWrite;
 		} forEach (BIS_WL_allWarlords select {side group _x == _owner});
 	};
 };
