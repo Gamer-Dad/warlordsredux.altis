@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 if !(isNil "BIS_WL_disableSmoothTextEffects") exitWith {};
 
 params [
@@ -7,7 +5,7 @@ params [
 	["_maxLines", 3, [0]],
 	["_onScreenDuration", 5, [0]],
 	["_color", [1, 1, 1, 1], [[]], 4],
-	["_shadow", TRUE, [FALSE]]
+	["_shadow", true, [true]]
 ];
 
 addMissionEventHandler ["Loaded", {
@@ -62,7 +60,7 @@ if (count BIS_onScreenMessagesVisible > 1) then {
 };
 
 _announcerPositionRatio = if (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]) then { 8 } else { 4 };
-_announcerSizeRatio = if (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]) then { 50 } else { 25 };
+_announcerSizeRatio = if (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]) then {(30 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)} else {(23 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale)};
 
 _box ctrlSetPosition [_xDef, _yDef + (_hDef / _announcerPositionRatio), _wDef, _hDef / _announcerSizeRatio];
 _box ctrlSetBackgroundColor [0, 0, 0, 0];
