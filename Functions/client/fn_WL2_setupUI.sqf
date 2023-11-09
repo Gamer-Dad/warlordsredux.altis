@@ -111,7 +111,7 @@ if (_displayClass == "OSD") then {
 		
 		disableSerialization;
 		
-		BIS_WL_purchaseMenuVisible = TRUE;
+		BIS_WL_purchaseMenuVisible = true;
 		
 		if (random 10 > 7) then {
 			playSound selectRandom ["RadioAmbient6", "UAV_01", "UAV_03"];
@@ -126,7 +126,7 @@ if (_displayClass == "OSD") then {
 		
 		_myDisplay = (findDisplay 46) createDisplay "RscDisplayEmpty";
 		
-		WL_CONTROL_MAP ctrlEnable FALSE;
+		WL_CONTROL_MAP ctrlEnable false;
 		
 		_myDisplay displayAddEventHandler ["Unload", {
 			_display = _this # 0;
@@ -134,14 +134,14 @@ if (_displayClass == "OSD") then {
 			if (ctrlEnabled (_display displayCtrl 120)) then {
 				playSound "AddItemFailed";
 			};
-			BIS_WL_purchaseMenuVisible = FALSE;
-			WL_CONTROL_MAP ctrlEnable TRUE;
+			BIS_WL_purchaseMenuVisible = false;
+			WL_CONTROL_MAP ctrlEnable true;
 		}];
 		
 		_myDisplay displayAddEventHandler ["KeyDown", {
 			_key = _this # 1;
 			if (_key in actionKeys "Gear" && !BIS_WL_gearKeyPressed) then {
-				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+				"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 				true;
 			};
 			if (_key in actionKeys "curatorInterface") then {
@@ -154,13 +154,13 @@ if (_displayClass == "OSD") then {
 		_myDisplay spawn {
 			disableSerialization;
 			waitUntil {sleep WL_TIMEOUT_SHORT; lifeState player == "INCAPACITATED" || {isNull _this}};
-			["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+			"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 		};
 		
 		_myDisplay displayAddEventHandler ["KeyUp", {
 			_key = _this # 1;
 			if (_key in actionKeys "Gear") then {
-				BIS_WL_gearKeyPressed = FALSE;
+				BIS_WL_gearKeyPressed = false;
 			};
 		}];
 		
@@ -210,7 +210,7 @@ if (_displayClass == "OSD") then {
 		_purchase_transfer_ok ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.5502), _wDef / 6, _hDef * 0.035];
 		_purchase_transfer_cancel ctrlSetPosition [_xDef + (_wDef / 3) + (_wDef / 6), _yDef + (_hDef * 0.59), _wDef / 6, _hDef * 0.035];
 		
-		{_x ctrlSetFade 1; _x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
+		{_x ctrlSetFade 1; _x ctrlEnable false; _x ctrlCommit 0} forEach [
 			_purchase_transfer_background,
 			_purchase_transfer_units,
 			_purchase_transfer_amount,
@@ -219,7 +219,7 @@ if (_displayClass == "OSD") then {
 			_purchase_transfer_cancel
 		];
 		
-		{_x ctrlEnable FALSE; _x ctrlCommit 0} forEach [
+		{_x ctrlEnable false; _x ctrlCommit 0} forEach [
 			_purchase_background,
 			_purchase_title_assets,
 			_purchase_title_details,
@@ -299,39 +299,39 @@ if (_displayClass == "OSD") then {
 		
 		_purchase_request ctrlAddEventHandler ["MouseEnter", {
 			_button = _this # 0;
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", false]) then {
 				_color = BIS_WL_colorFriendly;
 				_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
-				uiNamespace setVariable ["BIS_WL_purchaseMenuButtonHover", TRUE];
+				uiNamespace setVariable ["BIS_WL_purchaseMenuButtonHover", true];
 				playSound "click";
 			};
 		}];
 		_purchase_request ctrlAddEventHandler ["MouseExit", {
 			_button = _this # 0;
 			_color = BIS_WL_colorFriendly;
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", false]) then {
 				_button ctrlSetTextColor [1, 1, 1, 1];
 				_button ctrlSetBackgroundColor _color;
 			} else {
 				_button ctrlSetTextColor [0.5, 0.5, 0.5, 1];
 				_button ctrlSetBackgroundColor [(_color # 0) * 0.5, (_color # 1) * 0.5, (_color # 2) * 0.5, _color # 3];
 			};
-			uiNamespace setVariable ["BIS_WL_purchaseMenuButtonHover", FALSE];
+			uiNamespace setVariable ["BIS_WL_purchaseMenuButtonHover", false];
 		}];
 		_purchase_request ctrlAddEventHandler ["MouseButtonDown", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", false]) then {
 				_button = _this # 0;
 				_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
 			};
 		}];
 		_purchase_request ctrlAddEventHandler ["MouseButtonUp", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", false]) then {
 				_button = _this # 0;
 				_button ctrlSetTextColor [1, 1, 1, 1];
 			};
 		}];
 		_purchase_request ctrlAddEventHandler ["ButtonClick", {
-			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_purchaseMenuItemAffordable", false]) then {
 				playSound "AddItemOK";
 				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 				_purchase_category = _display displayCtrl 100;
@@ -353,16 +353,16 @@ if (_displayClass == "OSD") then {
 				_offset = call compile _offset;
 				_requirements = call compile _requirements;
 				switch (_className) do {
-					case "Arsenal": {if (isNull (findDisplay 602)) then {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "orderArsenal", [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
-					case "LastLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "lastLoadout", [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "Arsenal": {if (isNull (findDisplay 602)) then {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "orderArsenal", [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]} else {playSound "AddItemFailed"}};
+					case "LastLoadout": {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "lastLoadout", [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "SaveLoadout": {"save" call BIS_fnc_WL2_orderSavedLoadout};
-					case "SavedLoadout": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "savedLoadout", [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "SavedLoadout": {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "savedLoadout", [], player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
-					case "FTSeized": {FALSE spawn BIS_fnc_WL2_orderFastTravel};
-					case "FTConflict": {TRUE spawn BIS_fnc_WL2_orderFastTravel};
+					case "FTSeized": {false spawn BIS_fnc_WL2_orderFastTravel};
+					case "FTConflict": {true spawn BIS_fnc_WL2_orderFastTravel};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
-					case "TargetReset": {["RequestMenu_close"] call BIS_fnc_WL2_setupUI; [player, "targetReset", [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
-					case "forfeitVote": {0 spawn BIS_fnc_WL2_orderForfeit};
+					case "TargetReset": {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "targetReset", [0,0,0], 0, false] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
+					case "forfeitVote": {call BIS_fnc_WL2_orderForfeit};
 					case "LockVehicles": {
 						{
 							[_x, 2] remoteExec ["lock", (owner _x)];
@@ -387,9 +387,9 @@ if (_displayClass == "OSD") then {
 						} forEach ((groupSelectedUnits player) select {_x != player && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}});
 						false spawn BIS_fnc_WL2_refreshOSD;
 					};
-					case "RespawnVic": {0 spawn BIS_fnc_WL2_orderFTVehicle};
+					case "RespawnVic": {call BIS_fnc_WL2_orderFTVehicle};
 					case "RespawnVicFT": {0 spawn BIS_fnc_WL2_orderFTVehicleFT};
-					case "RespawnPod" : {0 spawn BIS_fnc_WL2_orderFTPod};
+					case "RespawnPod" : {call BIS_fnc_WL2_orderFTPod};
 					case "RespawnPodFT" : {0 spawn BIS_fnc_WL2_orderFTPodFT};
 					case "welcomeScreen": {0 spawn BIS_fnc_WL2_welcome};
 					default {[_className, _cost, _category, _requirements, _offset] call BIS_fnc_WL2_requestPurchase};
@@ -400,7 +400,7 @@ if (_displayClass == "OSD") then {
 		}];
 		
 		_purchase_transfer_ok ctrlAddEventHandler ["MouseEnter", {
-			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", false]) then {
 				_button = _this # 0;
 				_color = BIS_WL_colorFriendly;
 				_button ctrlSetBackgroundColor [(_color # 0) * 1.25, (_color # 1) * 1.25, (_color # 2) * 1.25, _color # 3];
@@ -408,7 +408,7 @@ if (_displayClass == "OSD") then {
 			};
 		}];
 		_purchase_transfer_ok ctrlAddEventHandler ["MouseExit", {
-			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", false]) then {
 				_button = _this # 0;
 				_color = BIS_WL_colorFriendly;
 				_button ctrlSetTextColor [1, 1, 1, 1];
@@ -416,19 +416,19 @@ if (_displayClass == "OSD") then {
 			};
 		}];
 		_purchase_transfer_ok ctrlAddEventHandler ["MouseButtonDown", {
-			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", false]) then {
 				_button = _this # 0;
 				_button ctrlSetTextColor [0.75, 0.75, 0.75, 1];
 			};
 		}];
 		_purchase_transfer_ok ctrlAddEventHandler ["MouseButtonUp", {
-			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", false]) then {
 				_button = _this # 0;
 				_button ctrlSetTextColor [1, 1, 1, 1];
 			};
 		}];
 		_purchase_transfer_ok ctrlAddEventHandler ["ButtonClick", {
-			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", FALSE]) then {
+			if (uiNamespace getVariable ["BIS_WL_fundsTransferPossible", false]) then {
 				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 				_targetName = (_display displayCtrl 116) lbText lbCurSel (_display displayCtrl 116);
 				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));

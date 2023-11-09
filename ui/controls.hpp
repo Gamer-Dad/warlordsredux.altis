@@ -435,7 +435,6 @@ class MRTM_settingsMenu
 
 			class Controls
 			{
-				//View settings
 				class MRTMViewHeaderText: RscStructuredTextMRTM
 				{
 					idc = -1;
@@ -649,7 +648,6 @@ class MRTM_settingsMenu
 					w = 0.03525 * safezoneW;
 					h = 0.025 * safezoneH;
 				};
-				//RWR settings
 				class MRTMRWRHeaderText: RscStructuredTextMRTM
 				{
 					idc = -1;
@@ -833,7 +831,6 @@ class MRTM_settingsMenu
 					w = 0.03525 * safezoneW;
 					h = 0.025 * safezoneH;
 				};
-				//settings
 				class MRTMGeneralSettingsHeaderText: RscStructuredTextMRTM
 				{
 					idc = -1;

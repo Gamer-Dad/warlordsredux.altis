@@ -4,7 +4,7 @@ params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 _leader = (leader group _newUnit);
 if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) < 200) && {isPlayer _leader}}}) then {
 	deleteVehicle _oldUnit;
-	0 spawn BIS_fnc_WL2_orderLastLoadout;
+	call BIS_fnc_WL2_orderLastLoadout;
 	_newUnit setVehiclePosition [getPosASL _leader, [], 2, "NONE"];
 };
 
@@ -14,7 +14,7 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) <
 	};
 } forEach (missionNamespace getVariable (format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]));
 
-["Died"] spawn MRTM_fnc_statTracker;
+"Died" call MRTM_fnc_statTracker;
 
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [

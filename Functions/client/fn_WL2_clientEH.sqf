@@ -33,7 +33,7 @@ player addEventHandler ["InventoryOpened",{
 
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
-	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+	"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 	
 	BIS_WL_lastLoadout = +getUnitLoadout player;
 	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
@@ -128,7 +128,7 @@ addMissionEventHandler ["HandleChatMessage", {
 
 		if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
 			if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
-				["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+				"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 			} else {
 				BIS_WL_gearKeyPressed = true;
 				0 spawn {
@@ -151,7 +151,7 @@ addMissionEventHandler ["HandleChatMessage", {
 					} else {
 						if (BIS_WL_gearKeyPressed && {!(player getVariable ["BIS_WL_menuLocked", false])}) then {
 							if (BIS_WL_currentSelection in [0, 2]) then {
-								["RequestMenu_open"] call BIS_fnc_WL2_setupUI;
+								"RequestMenu_open" call BIS_fnc_WL2_setupUI;
 							} else {
 								playSound "AddItemFailed";
 								_action = if (BIS_WL_currentSelection == 1) then {
@@ -209,21 +209,17 @@ addMissionEventHandler ["HandleChatMessage", {
 
 missionNamespace setVariable ["BIS_WL2_rearmTimers", 
 	createHashMapFromArray [
-		//Artillary
 		["B_Mortar_01_F", 900], ["O_Mortar_01_F", 900], ["B_MBT_01_arty_F", 1800], 
 		["O_MBT_02_arty_F", 1800], ["B_MBT_01_mlrs_F", 1800], ["I_Truck_02_MRL_F", 1800], 
 		["B_Ship_Gun_01_F", 2700], ["B_Ship_MRLS_01_F", 2700],
-		//AAA & SAM
 		["B_AAA_System_01_F", 300], ["B_SAM_System_03_F", 450], ["O_SAM_System_04_F", 450], 
 		["B_SAM_System_01_F", 600], ["B_SAM_System_02_F", 900],
-		//Armed Vehicles
 		["B_LSV_01_armed_F", 120], ["B_G_Offroad_01_armed_F", 120], ["B_LSV_01_AT_F", 200], ["B_G_Offroad_01_AT_F", 180],
 		["B_MRAP_01_hmg_F", 300], ["B_MRAP_01_gmg_F", 300], ["B_APC_Wheeled_03_cannon_F", 500], ["B_APC_Wheeled_01_cannon_F", 600], ["B_APC_Tracked_01_rcws_F", 400], ["B_APC_Tracked_01_AA_F", 500],
 		["B_AFV_Wheeled_01_cannon_F", 550], ["B_AFV_Wheeled_01_up_cannon_F", 600], ["B_MBT_01_cannon_F", 600], ["B_MBT_01_TUSK_F", 650],
 		["O_LSV_02_armed_F", 120], ["O_G_Offroad_01_armed_F", 120], ["O_LSV_02_AT_F", 200], ["O_G_Offroad_01_AT_F", 180],
 		["O_MRAP_02_hmg_F", 300], ["O_MRAP_02_gmg_F", 300], ["O_APC_Wheeled_02_rcws_v2_F", 400], ["O_APC_Tracked_02_cannon_F", 500], ["O_APC_Tracked_02_AA_F", 500], ["O_MBT_02_cannon_F", 600],
 		["O_MBT_04_cannon_F", 650], ["O_MBT_04_command_F", 700], ["O_MBT_02_railgun_F", 700],
-		//Aircraft	
 		["B_Heli_Light_01_dynamicLoadout_F", 300], ["B_UAV_02_dynamicLoadout_F", 500], ["B_Heli_Attack_01_dynamicLoadout_F", 700], ["B_T_UAV_03_dynamicLoadout_F", 600], ["B_UAV_05_F", 500],
 		["B_T_VTOL_01_armed_F", 600], ["B_Plane_CAS_01_dynamicLoadout_F", 900], ["B_Plane_Fighter_01_F", 900], ["B_Plane_Fighter_01_Stealth_F", 900],
 		["O_Heli_Light_02_dynamicLoadout_F", 300], ["O_T_UAV_04_CAS_F", 500], ["O_Heli_Attack_02_dynamicLoadout_F", 700], ["O_UAV_02_dynamicLoadout_F", 330], ["O_T_VTOL_02_vehicle_dynamicLoadout_F", 700],

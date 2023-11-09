@@ -6,7 +6,7 @@ _penalty spawn {
 	params ["_penaltyEnd"];
 	
 	BIS_WL_penalized = true;
-	["RequestMenu_close"] call BIS_fnc_WL2_setupUI;
+	"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 	titleCut ["", "BLACK IN", 1];
 
 	showCinemaBorder true;
