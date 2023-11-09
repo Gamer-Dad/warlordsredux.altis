@@ -9,14 +9,8 @@ _ammo = switch (_type) do {
 	default { -1 };	// None
 };
 
+_vehicle setVariable ["apsType", _type, true];
 if (_ammo > 0) then {
-	_vehicle setVariable ["apsType", _type, true];
 	_vehicle setVariable ["apsAmmo", _ammo, true];
 	_vehicle setVariable ["apsAmmoMax", _ammo, true];
 };
-
-if (_ammo == 0) then {
-	_vehicle setVariable ["apsType", _type, true];
-};
-
-_vehicle call APS_fnc_SetupProjectiles;

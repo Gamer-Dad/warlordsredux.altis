@@ -4,8 +4,9 @@ params ["_asset", "_owner"];
 
 if (isServer) exitWith {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
-	if !((_asset isKindOf "Man")) then {
+	if !(_asset isKindOf "Man") then {
 		_asset call APS_fnc_RegisterVehicle;
+		_asset call APS_fnc_SetupProjectiles;
 	};
 	_asset setSkill (0.2 + random 0.3);
 };
@@ -20,6 +21,7 @@ if (isPlayer _owner) then {
 		}];
 	} else {
 		_asset call APS_fnc_RegisterVehicle;
+		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 		_asset enableWeaponDisassembly false;
