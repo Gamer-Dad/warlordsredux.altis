@@ -44,7 +44,7 @@ if (_killerSide != _unitSide) then {
 	{
 		_uid = getPlayerUID _x;
 		_reward = round (_killReward * 0.5);
-		[_uid,_reward] call BIS_fnc_WL2_fundsDatabaseWrite;
+		[_uid, _reward] call BIS_fnc_WL2_fundsDatabaseWrite;
 		[_unit, _reward] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 	} forEach ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
 };
