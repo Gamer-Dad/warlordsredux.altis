@@ -25,7 +25,7 @@ if (_unit isKindOf "Man") then {
 	if (_uid == "123" || {_uid == (getPlayerUID _responsibleLeader)}) exitWith {};
 	_sideOwner = side (group (_uid call BIS_fnc_getUnitByUID));
 	_crew = ((crew _unit) select {alive _x});
-	_sideCrew = (if (_crew > 0) then {side (group (_crew # 0))} else {_sideOwner});
+	_sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
 	if (_sideOwner != _sideCrew) exitWith {};
 	if (_sideOwner == side (group _responsibleLeader)) then {
 		_owner = owner _responsibleLeader;

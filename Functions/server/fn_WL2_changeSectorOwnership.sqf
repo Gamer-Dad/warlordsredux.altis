@@ -7,7 +7,7 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
 	_previousOwners pushBack _owner;
-	if (serverTime > 0 && count _previousOwners == 1) then {
+	if (serverTime > 0 && {count _previousOwners == 1}) then {
 		_rewardMultiplier = 30;
 		{
 			private _uid = getPlayerUID _x;
@@ -20,18 +20,16 @@ _previousOwners pushBackUnique _owner;
 _sector setVariable ["BIS_WL_previousOwners", _previousOwners, true];
 
 _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
-
 {
 	if ((_x getVariable "BIS_WL_handledSide") == _owner) then {
 		deleteVehicle _x;
 	};
 } forEach _detectionTrgs;
-
 if (_detectionTrgs findIf {!isNull _x} == -1) then {_detectionTrgs = []};
 
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
 
-["server"] call BIS_fnc_WL2_updateSectorArrays;
+"server" call BIS_fnc_WL2_updateSectorArrays;
 
 private _enemySide = (BIS_WL_competingSides - [_owner]) # 0;
 if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _enemySide])) then {
