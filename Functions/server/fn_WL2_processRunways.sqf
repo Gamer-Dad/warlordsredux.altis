@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 private _sectorsWithRunways = BIS_WL_allSectors select {"A" in (_x getVariable "BIS_WL_services")};
 
 if (count _sectorsWithRunways > 0) then {

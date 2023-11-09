@@ -21,7 +21,7 @@ addMissionEventHandler ["HandleDisconnect", {
 		[_player, _unit] spawn MRTM_fnc_accept;
 	} forEach (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", _uid]), []]);
 	
-	0 spawn BIS_fnc_WL2_calcImbalance;
+	call BIS_fnc_WL2_calcImbalance;
 }];
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator"];

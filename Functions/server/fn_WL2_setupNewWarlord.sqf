@@ -37,5 +37,5 @@ if (isPlayer _warlord) then {
 		BIS_WL_allWarlords = BIS_WL_allWarlords - [_warlord];
 	};
 
-	0 spawn BIS_fnc_WL2_calcImbalance;
+	call BIS_fnc_WL2_calcImbalance;
 };

@@ -19,4 +19,4 @@ if (_ammo == 0) then {
 	_vehicle setVariable ["apsType", _type, true];
 };
 
-_vehicle spawn APS_fnc_SetupProjectiles;
+_vehicle call APS_fnc_SetupProjectiles;

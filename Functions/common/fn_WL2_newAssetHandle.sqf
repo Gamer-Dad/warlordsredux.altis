@@ -1,11 +1,11 @@
 #include "..\warlords_constants.inc"
 
-params ["_owner", "_asset"];
+params ["_asset", "_owner"];
 
-if (isNull _owner && isServer) then {
+if (isServer) exitWith {
 	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
 	if !((_asset isKindOf "Man")) then {
-		_asset spawn APS_fnc_RegisterVehicle;
+		_asset call APS_fnc_RegisterVehicle;
 	};
 	_asset setSkill (0.2 + random 0.3);
 };
@@ -13,13 +13,13 @@ if (isNull _owner && isServer) then {
 if (isPlayer _owner) then {
 	WAS_store = true;
 	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner), [2, clientOwner]];
-	_asset spawn APS_fnc_RegisterVehicle;
 
 	if (_asset isKindOf "Man") then {
 		_asset addEventHandler ["Killed", {
 			false spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
+		_asset call APS_fnc_RegisterVehicle;
 		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 		_asset enableWeaponDisassembly false;

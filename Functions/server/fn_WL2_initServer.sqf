@@ -38,7 +38,7 @@ if !(isDedicated) then {
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_garbageCollector;
-0 spawn BIS_fnc_WL2_processRunways;
+call BIS_fnc_WL2_processRunways;
 
 setTimeMultiplier 4;
 0 spawn {
