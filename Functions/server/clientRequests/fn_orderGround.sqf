@@ -19,7 +19,7 @@ if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
 	_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
 };
 
-[_sender, _asset] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};
 

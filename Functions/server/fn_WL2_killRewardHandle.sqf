@@ -32,10 +32,10 @@ if (_killerSide != _unitSide) then {
 		_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") get (typeOf _unit);
 	};
 	if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
-		_killReward = _killReward * 2; //1st person bonus
+		_killReward = _killReward * 2;
 	};
 	if ((_targets findIf {_unit inArea (_x getVariable "objectAreaComplete")}) != -1) then {
-		_killReward = _killReward * 1.2; //Bonus for defending sector or attacking sector.
+		_killReward = _killReward * 1.2;
 	};
 	_uid = getPlayerUID _responsibleLeader;
 	_killReward = round _killReward;

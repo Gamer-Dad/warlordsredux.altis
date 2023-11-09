@@ -1,8 +1,6 @@
-#include "..\warlords_constants.inc"
-
 if !(isServer) exitWith {};
 
-params ["_database", "_uid"];
+params ["_database", "_playerUID"];
 
 missionNamespace setVariable ["fundsDatabaseClients", _database];
-(owner (_uid call BIS_fnc_getUnitByUID)) publicVariableClient "fundsDatabaseClients";
+(owner (_playerUID call BIS_fnc_getUnitByUID)) publicVariableClient "fundsDatabaseClients";
