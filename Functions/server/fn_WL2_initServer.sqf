@@ -18,6 +18,7 @@ WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
 RESISTANCE setFriend [CIVILIAN, 1];
 
+call BIS_fnc_WL2_playersListHandle;
 "server" call BIS_fnc_WL2_varsInit;
 call BIS_fnc_WL2_serverEHs;
 

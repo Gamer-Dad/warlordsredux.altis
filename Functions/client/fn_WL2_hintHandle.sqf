@@ -28,7 +28,7 @@ if (_event == "init") then {
 		
 		if (BIS_WL_showHint_targetResetVoting) then {
 			_varNameVoting = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
-			_warlords = BIS_WL_allWarlords select {side group _x == BIS_WL_playerSide};
+			_warlords = allPlayers select {side group _x == BIS_WL_playerSide};
 			_hintText = _hintText + format [
 				"%10<t shadow = '0'><t align = 'center' size = '1.3'>%1</t><br/><t size = '1.2'><t align = 'left'>[ %2 + %3 ]</t><t align = 'right' color = '#4bff58'>%4</t><br/><t align = 'left'>[ %2 + %5 ]</t><t align = 'right' color = '#ff4b4b'>%6</t></t><t size = '1'><br/><br/><t align = 'center'>- %9 -</t></t></t>",
 				toUpper localize "STR_A3_WL_target_reset_info",
@@ -44,7 +44,7 @@ if (_event == "init") then {
 
 		if (BIS_WL_showHint_forfeitVoting) then {
 			_varNameVoting = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
-			_warlords = BIS_WL_allWarlords select {side group _x == BIS_WL_playerSide};
+			_warlords = allPlayers select {side group _x == BIS_WL_playerSide};
 			_hintText = _hintText + format [
 				"%10<t shadow = '0'><t align = 'center' size = '1.3'>%1</t><br/><t size = '1.2'><t align = 'left'>[ %2 + %3 ]</t><t align = 'right' color = '#4bff58'>%4</t><br/><t align = 'left'>[ %2 + %5 ]</t><t align = 'right' color = '#ff4b4b'>%6</t></t><t size = '1'><br/><br/><t align = 'center'>- %9 -</t></t></t>",
 				toUpper "Surrender vote activated",

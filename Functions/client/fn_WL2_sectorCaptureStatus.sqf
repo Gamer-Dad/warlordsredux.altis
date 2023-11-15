@@ -2,7 +2,6 @@ _previousSeizingInfo = [];
 _visitedSector = objNull;
 
 while {!BIS_WL_missionEnd} do {
-	
 	sleep (if (count _previousSeizingInfo == 0) then {1} else {0.25});
 	
 	_sectorsToCheck = +(BIS_WL_sectorsArray # 3);

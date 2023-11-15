@@ -16,6 +16,7 @@ while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1
 	if ((_votedYes >= _limit) && {(serverTime >= 180)}) then {
 		missionNamespace setVariable ["BIS_WL_ffTeam", _side, true];
 		missionNamespace setVariable ["BIS_WL_missionEnd", true, true];
+		0 remoteExec ["BIS_fnc_WL2_missionEndHandle", [0, -2] select isDedicated];
 		_terminate = true;
 	};
 };

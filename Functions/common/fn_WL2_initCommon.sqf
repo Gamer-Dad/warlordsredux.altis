@@ -6,8 +6,6 @@ call compile preprocessFileLineNumbers "TEMP.sqf";
 
 enableSaving [false, false];
 
-call BIS_fnc_WL2_playersListHandle;
-
 addMissionEventHandler ["EntityRespawned", {
 	_this call BIS_fnc_WL2_respawnHandle;
 }];
@@ -50,5 +48,3 @@ if (isServer) then {
 };
 
 if (!isDedicated && hasInterface) then {call BIS_fnc_WL2_initClient};
-
-0 spawn BIS_fnc_WL2_missionEndHandle;

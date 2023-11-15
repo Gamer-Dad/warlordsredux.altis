@@ -432,7 +432,7 @@ if (_displayClass == "OSD") then {
 				_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];
 				_targetName = (_display displayCtrl 116) lbText lbCurSel (_display displayCtrl 116);
 				_amount = (parseNumber ctrlText (_display displayCtrl 117)) min ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
-				_targetArr = BIS_WL_allWarlords select {name _x == _targetName};
+				_targetArr = allPlayers select {name _x == _targetName};
 				if (count _targetArr > 0) then {
 					playSound "AddItemOK";
 					_target = _targetArr # 0;
