@@ -19,6 +19,6 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance _leader) <
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
 		"10K CP",
-		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
+		{[player, "10K"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };

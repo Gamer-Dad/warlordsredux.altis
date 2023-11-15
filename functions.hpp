@@ -6,7 +6,6 @@ class CfgFunctions {
     		file = "Functions\client";
 			class WL2_cpBalance {};
     		class WL2_announcer {};
-			class WL2_assetMapControl {};
 			class WL2_deleteAssetFromMap {};
 			class WL2_friendlyFireHandleClient {};
 			class WL2_groupIconClickHandle {};

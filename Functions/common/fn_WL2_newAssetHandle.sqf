@@ -138,7 +138,7 @@ if (isPlayer _owner) then {
 							{
 								params ["_asset"];
 								if ((_asset getVariable "BIS_WL_nextRepair") <= serverTime) then {
-									[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+									[player, "repair", (_asset getVariable "BIS_WL_nextRepair"), 0, _asset] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 									playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Repair.wss", _asset, FALSE, getPosASL _asset, 2, 1, 75];
 									[toUpper localize "STR_A3_WL_popup_asset_repaired"] spawn BIS_fnc_WL2_smoothText;
 									_asset setVariable ["BIS_WL_nextRepair", serverTime + WL_MAINTENANCE_COOLDOWN_REPAIR];
@@ -177,12 +177,12 @@ if (isPlayer _owner) then {
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
-			[_asset, 0] remoteExec ["setRepairCargo", 0];
+			[_asset, 0] remoteExecCall ["setRepairCargo", 0];
 			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportRepair")) min 10000);
 			_asset setvariable ["GOM_fnc_repairCargo", _amount, true];
 		};
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {
-			[_asset, 0] remoteExec ["setAmmoCargo", 0];
+			[_asset, 0] remoteExecCall ["setAmmoCargo", 0];
 			_amount = 10000;
 			if (typeOf _asset == "B_Truck_01_ammo_F" || {typeOf _asset == "O_Truck_03_ammo_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || {typeOf _asset == "B_Slingload_01_Ammo_F"}}}) then {
 				_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportAmmo")) min 30000);

@@ -45,7 +45,7 @@ while {_continue} do {
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = getDir _projectile;
 				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
-				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", owner _x];
+				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", _x];
 
 				triggerAmmo _projectile;
 

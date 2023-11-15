@@ -9,7 +9,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	};
 
 	{
-		_x spawn BIS_fnc_WL2_sub_deleteAsset;
+		_x call BIS_fnc_WL2_sub_deleteAsset;
 	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
 	{
 		if !(isPlayer _x) then {deleteVehicle _x;};
@@ -18,11 +18,12 @@ addMissionEventHandler ["HandleDisconnect", {
 
 	{
 		_player = _x call BIS_fnc_getUnitByUID;
-		[_player, _unit] spawn MRTM_fnc_accept;
+		[_player, _unit] call MRTM_fnc_accept;
 	} forEach (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", _uid]), []]);
 	
 	call BIS_fnc_WL2_calcImbalance;
 }];
+
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator"];
 	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
@@ -30,8 +31,8 @@ addMissionEventHandler ["EntityKilled", {
 	if !(isNull _instigator) then {
 		_responsibleLeader = if !(isPlayer _instigator) then {((_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)} else {_instigator};
 		if (isPlayer _responsibleLeader) then {
-			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
-			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+			[_unit, _responsibleLeader] call BIS_fnc_WL2_killRewardHandle;
+			[_unit, _responsibleLeader] call BIS_fnc_WL2_friendlyFireHandleServer;
 		};
 	};
 
@@ -50,6 +51,7 @@ addMissionEventHandler ["EntityKilled", {
 		};
 	};
 }];
+
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	
@@ -57,6 +59,7 @@ addMissionEventHandler ["MarkerCreated", {
 		deleteMarker _marker;
 	};
 }];
+
 addMissionEventHandler ["EntityCreated", {
   params ["_entity"];
   if (isClass (configFile >> "CfgAmmo" >> (typeOf _entity))) then {

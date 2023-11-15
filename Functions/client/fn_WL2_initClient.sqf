@@ -2,7 +2,7 @@
 
 ["client_init"] call BIS_fnc_startLoadingScreen;
 
-waitUntil {!isNull player && isPlayer player};
+waitUntil {!isNull player && {isPlayer player}};
 
 "client" call BIS_fnc_WL2_varsInit;
 
@@ -43,9 +43,18 @@ if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
 	[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;	
 };
 
-if !((side group player) in BIS_WL_competingSides) exitWith {
+if !((side group player) in [west, east]) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
+};
+
+0 spawn {
+	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
+	_respawnPos = markerPos selectRandom _markers;
+	while {player distance2D _respawnPos > 300} do {
+		player setVehiclePosition [_respawnPos, [], 0, "NONE"];
+		sleep 1;
+	};
 };
 
 enableRadio true;
@@ -57,7 +66,6 @@ enableEnvironment [false, true];
 call MRTM_fnc_settingsInit;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
 player setVariable ["BIS_WL_ownerAsset", _uid, [2, clientOwner]];
-
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 50000];
@@ -79,7 +87,7 @@ private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 
 } forEach BIS_WL_allSectors;
 
 if !(isServer) then {
-	BIS_WL_playerSide call BIS_fnc_WL2_parsePurchaseList;
+	(side group player) call BIS_fnc_WL2_parsePurchaseList;
 };
 
 0 spawn BIS_fnc_WL2_sectorCaptureStatus;
@@ -101,7 +109,7 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 
 //Evenhandlers
 0 spawn BIS_fnc_WL2_clientEH;
-player spawn APS_fnc_SetupProjectiles;
+player call APS_fnc_SetupProjectiles;
 call BIS_fnc_WL2_sub_arsenalSetup;
 
 0 spawn {
@@ -117,7 +125,7 @@ call BIS_fnc_WL2_sceneDrawHandle;
 call BIS_fnc_WL2_targetResetHandle;
 [player, "init"] spawn BIS_fnc_WL2_hintHandle;
 
-["OSD"] spawn BIS_fnc_WL2_setupUI;
+["OSD"] call BIS_fnc_WL2_setupUI;
 0 spawn BIS_fnc_WL2_timer;
 0 spawn BIS_fnc_WL2_cpBalance;
 
@@ -146,7 +154,6 @@ call BIS_fnc_WL2_targetResetHandle;
 
 0 spawn BIS_fnc_WL2_selectedTargetsHandle;
 0 spawn BIS_fnc_WL2_targetSelectionHandleClient;
-0 spawn BIS_fnc_WL2_assetMapControl;
 0 spawn BIS_fnc_WL2_mapIcons;
 private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF_Earplugs.sqf";
 call _fncEarPlugs;
@@ -166,18 +173,9 @@ call _fncEarPlugs;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
 0 spawn BIS_fnc_WL2_welcome;
 
-0 spawn {
-	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
-	_respawnPos = markerPos selectRandom _markers;
-	while {player distance2D _respawnPos > 300} do {
-		player setVehiclePosition [_respawnPos, [], 0, "NONE"];
-		sleep 1;
-	};
-};
-
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
 		"10K CP",
-		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
+		{[player, "10K"] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };

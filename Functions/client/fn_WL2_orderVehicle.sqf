@@ -4,7 +4,7 @@ player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
 
 if (_class isKindOf "Man") then {
 	_asset = (group player) createUnit [_class, (getPosATL player), [], 2, "NONE"];
-	[player, "orderAI", _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+	[player, "orderAI", _class] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 	[_asset, player] spawn BIS_fnc_WL2_newAssetHandle;
 	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 } else {
@@ -72,7 +72,7 @@ if (_class isKindOf "Man") then {
 
 	if (BIS_WL_spacePressed) then {
 		playSound "assemble_target";
-		[player, "orderAsset", [(_p # 0), (_p # 1), 0], _class, false, (direction player)] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+		[player, "orderAsset", [(_p # 0), (_p # 1), 0], _class, false, (direction player)] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
 	} else {
 		"Canceled" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
