@@ -85,7 +85,7 @@ addMissionEventHandler ["HandleChatMessage", {
 		_valid = _input # 0 == "!getCP";
 		if (count _input == 2 && {_valid}) then {
 			_amount = parseNumber (_input # 1);
-			[player, 'devCP', _amount] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+			[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
 		} else {
 			if (_valid) then {
 				systemChat "Unexpected arguments!";
@@ -226,72 +226,3 @@ missionNamespace setVariable ["BIS_WL2_rearmTimers",
 		["O_Plane_CAS_02_dynamicLoadout_F", 900], ["O_Plane_Fighter_02_F", 900], ["O_Plane_Fighter_02_Stealth_F", 900]
 	]
 ];
-
-BIS_WL_assetInfoActive = false;
-addMissionEventHandler ["Map", {
-	params ["_mapIsOpened", "_mapIsForced"];
-	if (_mapIsOpened) then {
-		MAP_CONTROL = addMissionEventHandler ["EachFrame", {
-			_shown = false;
-			_map = (uiNamespace getVariable ["BIS_WL_mapControl", controlNull]);
-			
-			if (visibleMap) then {
-				_nearbyAssets = ((_map ctrlMapScreenToWorld getMousePosition) nearEntities (((ctrlMapScale _map) * 500) min 30)) select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", "123"]) && {_x != player && {alive _x}}};
-
-				if (count _nearbyAssets > 0) then {
-					BIS_WL_mapAssetTarget = _nearbyAssets # 0;
-					BIS_WL_assetInfoActive = true;
-					_shown = true;
-					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];
-					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlCommit 0;
-					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlSetStructuredText parseText format [
-						"<t shadow = '2' size = '%1'>%2</t>",
-						(1 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale),
-						format [
-							localize "STR_A3_WL_info_asset_map_deletion",
-							"<t color = '#ff4b4b'>",
-							"</t>",
-							"<br/>",
-							getText (configFile >> "CfgVehicles" >> typeOf BIS_WL_mapAssetTarget >> "displayName")
-						]
-					];
-					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlShow true;
-					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlEnable true;
-				};
-			};
-			
-			if (!_shown && BIS_WL_assetInfoActive) then {
-				BIS_WL_mapAssetTarget = objNull;
-				BIS_WL_assetInfoActive = false;
-				((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlShow false;
-				((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlEnable false;
-			};
-		}];
-
-		MAP_CONTROL_CLICK = addMissionEventHandler ["MapSingleClick", {
-			params ["_units", "_pos", "_alt", "_shift"];
-			if (_alt && _shift) then {
-				if !(isNull BIS_WL_mapAssetTarget) then {
-					_vehicles = (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]);
-					if ((BIS_WL_mapAssetTarget in _vehicles) && count crew BIS_WL_mapAssetTarget > 0) then {
-						if (getNumber (configFile >> "CfgVehicles" >> (typeOf BIS_WL_mapAssetTarget) >> "isUav") == 1) then {
-							[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
-						} else {
-							if ((crew BIS_WL_mapAssetTarget) findIf {alive _x} != -1) then {
-								playSound "AddItemFailed";
-								[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;				
-							} else {
-								[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
-							};
-						};
-					} else {
-						[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
-					};
-				};
-			};
-		}];
-	} else {
-		removeMissionEventHandler ["EachFrame", MAP_CONTROL];
-		removeMissionEventHandler ["MapSingleClick", MAP_CONTROL_CLICK];
-	};
-}];

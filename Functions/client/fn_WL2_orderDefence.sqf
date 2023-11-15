@@ -75,7 +75,7 @@ deleteVehicle _asset;
 
 if (BIS_WL_spacePressed) then {
 	playSound "assemble_target";
-	[player, "orderAsset", [(_p # 0), (_p # 1), 0], _class, true, (direction player)] remoteExecCall ["BIS_fnc_WL2_handleClientRequest", 2];
+	[player, "orderAsset", [(_p # 0), (_p # 1), 0], _class, true, (direction player)] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 } else {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;

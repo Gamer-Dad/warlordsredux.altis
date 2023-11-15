@@ -1347,7 +1347,7 @@ class MRTM_groupsMenu
 			text = "INVITE";
 			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlEnable false;";
-			action = "['Invite'] call MRTM_fnc_onButtonClick;";
+			action = "['Invite'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.652969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1360,7 +1360,7 @@ class MRTM_groupsMenu
 			text = "DECLINE";
 			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
-			action = "['Decline'] call MRTM_fnc_onButtonClick;";
+			action = "['Decline'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.487969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1373,7 +1373,7 @@ class MRTM_groupsMenu
 			text = "LEAVE";
 			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
-			action = "['Leave'] call MRTM_fnc_onButtonClick;";
+			action = "['Leave'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1386,7 +1386,7 @@ class MRTM_groupsMenu
 			text = "PROMOTE";
 			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
-			action = "['Promote'] call MRTM_fnc_onButtonClick;";
+			action = "['Promote'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1399,7 +1399,7 @@ class MRTM_groupsMenu
 			text = "ACCEPT";
 			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
-			action = "['Accept'] call MRTM_fnc_onButtonClick;";
+			action = "['Accept'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.550969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
@@ -1412,7 +1412,7 @@ class MRTM_groupsMenu
 			text = "KICK";
 			sizeEx = "0.021 / (getResolution select 5)";
 			onLoad = "(_this # 0) ctrlShow false;";
-			action = "['Kick'] call MRTM_fnc_onButtonClick;";
+			action = "['Kick'] spawn MRTM_fnc_onButtonClick;";
 			x = 0.427969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;

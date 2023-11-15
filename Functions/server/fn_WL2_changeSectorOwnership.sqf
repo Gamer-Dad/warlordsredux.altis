@@ -1,7 +1,7 @@
 params ["_sector", "_owner"];
 
 _sector setVariable ["BIS_WL_owner", _owner, true];
-[_sector] remoteExecCall ["BIS_fnc_WL2_sectorOwnershipHandleClient", [0, -2] select isDedicated];
+[_sector] remoteExec ["BIS_fnc_WL2_sectorOwnershipHandleClient", [0, -2] select isDedicated];
 
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 

@@ -35,7 +35,7 @@ if (_action == "lastLoadout") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		0 remoteExecCall ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
+		0 remoteExec ["BIS_fnc_WL2_orderLastLoadout", remoteExecutedOwner];
 	};
 };
 
@@ -46,7 +46,7 @@ if (_action == "savedLoadout") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		["apply"] remoteExecCall ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
+		["apply"] remoteExec ["BIS_fnc_WL2_orderSavedLoadout", remoteExecutedOwner];
 	};
 };
 
@@ -57,7 +57,7 @@ if (_action == "orderArsenal") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;	
 
-		0 remoteExecCall ["BIS_fnc_WL2_orderArsenal", remoteExecutedOwner];
+		0 remoteExec ["BIS_fnc_WL2_orderArsenal", remoteExecutedOwner];
 	};
 };
 
@@ -84,7 +84,7 @@ if (_action == "scan") exitWith {
 		_revealTrigger setTriggerArea (_param2 getVariable "objectArea");
 		_revealTrigger setTriggerActivation ["ANY", "PRESENT", false];
 		_param2 setVariable ["BIS_WL_revealTrigger", _revealTrigger, true];
-		[_param2, side group _sender] remoteExecCall ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
+		[_param2, side group _sender] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
 		waitUntil {sleep 0.25; BIS_WL_competingSides findIf {(_param2 getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
 		deleteVehicle _revealTrigger;
 		_param2 setVariable ["BIS_WL_revealTrigger", nil, true];
@@ -164,7 +164,7 @@ if (_action == "fundsTransfer") exitWith {
 		[_uid, -_param1] call BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 		{
-			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1])] remoteExecCall ["commandChat", (owner _x)];
+			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1])] remoteExec ["commandChat", (owner _x)];
 		} forEach (allPlayers select {side group _x == side group _sender});
 	};
 };

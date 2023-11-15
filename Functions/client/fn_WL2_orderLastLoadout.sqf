@@ -1,3 +1,5 @@
+#include "..\warlords_constants.inc"
+
 "RequestMenu_close" call BIS_fnc_WL2_setupUI;
 
 player setUnitLoadout BIS_WL_lastLoadout;

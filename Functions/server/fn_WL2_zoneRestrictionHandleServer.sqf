@@ -38,7 +38,7 @@ while {!BIS_WL_missionEnd} do {
 			};
 			_timeout = (serverTime + _timeout);
 			_x setVariable ["BIS_WL_zoneRestrictionKillTime", _timeout, [2, (owner _x)]];
-			0 remoteExec ["BIS_fnc_WL2_zoneRestrictionHandleClient", (owner _x)];
+			[] remoteExec ["BIS_fnc_WL2_zoneRestrictionHandleClient", (owner _x)];
 			[_x, _timeout] spawn {
 				params ["_player", "_timeout"];
 				waitUntil {(_timeout < serverTime) || {((_player getVariable ["BIS_WL_zoneRestrictionKillTime", 0]) < serverTime)}};
