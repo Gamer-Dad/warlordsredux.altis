@@ -30,7 +30,7 @@
 				_warlords = BIS_WL_allWarlords select {side group _x == _side};
 				_players = _warlords select {isPlayer _x};
 				_npcs = _warlords select {!isPlayer _x};
-				_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
+				_noPlayers = count (allPlayers select {(side group _x) == ([west, east] # _sideIndex)}) == 0;
 				_playerVotingVariableNames = _players apply {format ["BIS_WL_targetVote_%1", getPlayerUID _x]};
 				(missionNamespace getVariable [_votingResetVar, false]) || {((_playerVotingVariableNames findIf {!isNull (missionNamespace getVariable [_x, objNull])} != -1) || {(if (count _npcs > 0) then {if (_noPlayers) then {serverTime > _tNoPlayers} else {false}} else {false})})}
 			};
@@ -42,7 +42,7 @@
 				while {serverTime < _votingEnd && {!(missionNamespace getVariable [_votingResetVar, false])}} do {
 					_warlords = BIS_WL_allWarlords select {side group _x == _side};
 					_players = _warlords select {isPlayer _x};
-					_noPlayers = count (BIS_WL_playerIDArr # _sideIndex) == 0;
+					_noPlayers = count (allPlayers select {(side group _x) == ([west, east] # _sideIndex)}) == 0;
 					
 					if (!_npcsVoted && (_noPlayers)) then {
 						_npcsVoted = TRUE;

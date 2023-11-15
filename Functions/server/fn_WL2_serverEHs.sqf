@@ -1,12 +1,6 @@
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
 	BIS_WL_allWarlords = BIS_WL_allWarlords - [_unit];
-	_sideID = BIS_WL_competingSides find (side group _unit);
-	if (_sideID != -1) then {
-		_playerSideArr = BIS_WL_playerIDArr # _sideID;
-		_playerSideArr = _playerSideArr - [_uid];
-		BIS_WL_playerIDArr set [_sideID, _playerSideArr];
-	};
 
 	{
 		_x spawn BIS_fnc_WL2_sub_deleteAsset;

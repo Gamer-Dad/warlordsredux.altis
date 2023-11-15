@@ -11,9 +11,8 @@ switch (_locality) do {
 		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
 	};
 	case "server": {
-		BIS_WL_playerIDArr = [[], []];
 		{
-			missionNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
+			serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
 		} forEach [WEST, EAST];
 	};
 	case "client": {

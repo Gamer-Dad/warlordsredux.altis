@@ -17,14 +17,12 @@ if (_pFunds == -1) then {
 
 _boundToAnotherTeam = false;
 if (isPlayer _warlord) then {
-	_boundToAnotherTeam = _uid in (missionNamespace getVariable format ["BIS_WL_boundTo%1", ([west, east] select {_x != side group _warlord}) # 0]);
+	_boundToAnotherTeam = _uid in (serverNamespace getVariable format ["BIS_WL_boundTo%1", ([west, east] select {_x != side group _warlord}) # 0]);
 	_playerVarID = format ["BIS_WL_forceOtherTeam_%1", _uid];
 	missionNamespace setVariable [_playerVarID, _boundToAnotherTeam, [2, (owner _warlord)]];
 
 	if !(_boundToAnotherTeam) then {
-		(missionNamespace getVariable format ["BIS_WL_boundTo%1", side group _warlord]) pushBackUnique _uid;
-		_playerSideArr = BIS_WL_playerIDArr # (BIS_WL_competingSides find side group _warlord);
-		_playerSideArr pushBackUnique _uid;
+		(serverNamespace getVariable format ["BIS_WL_boundTo%1", side group _warlord]) pushBackUnique _uid;
 
 		_warlord spawn BIS_fnc_WL2_respawnHandle;
 		sleep 1;
