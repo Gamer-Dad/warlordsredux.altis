@@ -22,7 +22,6 @@ if (isPlayer _owner) then {
 	} else {
 		_asset call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
-		_asset setVariable ["BIS_WL_icon", getText (configFile >> "CfgVehicles" >> typeOf _asset >> "Icon")];
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 		_asset enableWeaponDisassembly false;
 		
@@ -44,11 +43,7 @@ if (isPlayer _owner) then {
 				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
 			};
 
-			_rearmTime = switch true do {
-				case (_asset isKindOf "Helicopter"): {30};
-				case (_asset isKindOf "Plane"): {30};
-				default {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
-			};
+			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
 			if (_asset isKindOf "Air") then {

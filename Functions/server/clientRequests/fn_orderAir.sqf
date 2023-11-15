@@ -106,7 +106,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 
 _asset enableWeaponDisassembly false;
 
-[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};
 
