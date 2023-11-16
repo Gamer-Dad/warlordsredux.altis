@@ -74,7 +74,6 @@ class CfgFunctions {
 			class WL2_friendlyFireHandleServer {};
 			class WL2_changeSectorOwnership {};
 			class WL2_initServer {};
-			class WL2_loadFactionClasses {};
 			class WL2_populateSector {};
 			class WL2_processRunways {};
 			class WL2_selectTarget {};

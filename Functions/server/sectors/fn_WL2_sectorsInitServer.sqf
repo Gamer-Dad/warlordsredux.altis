@@ -5,8 +5,8 @@ _potBases = _potBases - [_firstBase];
 _potBases = (_potBases select {(_x distanceSqr _firstBase) > _baseDistanceMin});
 private _secondBase = selectRandom _potBases;
 
-missionNamespace setVariable ["BIS_WL_base1", _firstBase, true];
-missionNamespace setVariable ["BIS_WL_base2", _secondBase, true];
+missionNamespace setVariable ["BIS_WL_base1", _firstBase, -2];
+missionNamespace setVariable ["BIS_WL_base2", _secondBase, -2];
 profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 
 {
@@ -27,7 +27,7 @@ profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 		_flag setFlagTexture "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
 	};
 	_flag setFlagSide _side;
-} forEach [BIS_WL_base1, BIS_WL_base2];
+} forEach [_firstBase, _secondBase];
 
 {
 	_sector = _x;
@@ -57,7 +57,7 @@ profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 	_area params ["_a", "_b", "_angle", "_isRectangle"];
 	_size = _a * _b * (if (_isRectangle) then {4} else {pi});
 	
-	if (_sector in [BIS_WL_base1, BIS_WL_base2]) then {
+	if (_sector in [_firstBase, _secondBase]) then {
 		_sector setVariable ["BIS_WL_value", (getMissionConfigValue ["BIS_WL_baseValue", 50])];
 	} else {
 		_sector setVariable ["BIS_WL_value", round (_size / 13000)];

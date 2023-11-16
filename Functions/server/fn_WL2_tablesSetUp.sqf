@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 //CP databse
 serverNamespace setVariable ["fundsDatabase", createHashMap];
 
@@ -150,3 +148,95 @@ serverNamespace setVariable ["BIS_WL2_costs",
 		["O_UGV_02_Demining_F", 100], ["O_UGV_01_F", 150], ["O_UGV_01_rcws_F", 400], ["O_UAV_01_F", 500], ["O_Radar_System_02_F", 1000], ["O_SAM_System_04_F", 8000]
 	]
 ];
+
+serverNamespace setVariable ["WL2_factionUnitClasses", [
+	[
+		"B_Soldier_F",
+		"B_Soldier_GL_F",
+		"B_soldier_AR_F",
+		"B_soldier_AAR_F",
+		"B_Soldier_TL_F",
+		"B_soldier_M_F",
+		"B_soldier_LAT_F",
+		"B_soldier_LAT2_F",
+		"B_Soldier_A_F",
+		"B_Soldier_SL_F",
+		"B_medic_F",
+		"B_soldier_repair_F",
+		"B_soldier_AT_F",
+		"B_soldier_AA_F",
+		"B_engineer_F",
+		"B_soldier_AAT_F",
+		"B_soldier_AAA_F",
+		"B_Sharpshooter_F",
+		"B_HeavyGunner_F",
+		"B_soldier_exp_F",
+		"B_officer_F",
+		"B_spotter_F",
+		"B_sniper_F"
+	],
+	[
+		"O_Soldier_F",
+		"O_Soldier_GL_F",
+		"O_Soldier_AR_F",
+		"O_Soldier_AAR_F",
+		"O_Soldier_TL_F",
+		"O_officer_F",
+		"O_soldier_M_F",
+		"O_Soldier_LAT_F",
+		"O_Soldier_A_F",
+		"O_Soldier_SL_F",
+		"O_Soldier_AAT_F",
+		"O_Soldier_AAA_F",
+		"O_Sharpshooter_F",
+		"O_HeavyGunner_F",
+		"O_Soldier_AT_F",
+		"O_Soldier_AA_F",
+		"O_engineer_F",
+		"O_medic_F",
+		"O_soldier_repair_F",
+		"O_soldier_exp_F",
+		"O_spotter_F",
+		"O_sniper_F"
+	],
+	[
+		"I_soldier_F",
+		"I_Soldier_GL_F",
+		"I_Soldier_AR_F",
+		"I_Soldier_AAR_F",
+		"I_Soldier_TL_F",
+		"I_Soldier_A_F",
+		"I_Soldier_M_F",
+		"I_Soldier_LAT_F",
+		"I_Soldier_LAT2_F",
+		"I_Soldier_SL_F",
+		"I_Soldier_AAT_F",
+		"I_Soldier_AAA_F",
+		"I_Soldier_AT_F",
+		"I_Soldier_AA_F",
+		"I_medic_F",
+		"I_Soldier_repair_F",
+		"I_engineer_F",
+		"I_Soldier_exp_F",
+		"I_officer_F",
+		"I_Spotter_F",
+		"I_Sniper_F"
+	]
+]];
+
+serverNamespace setVariable ["WL2_factionVehicleClasses", [
+	"I_LT_01_AA_F",
+	"I_APC_Wheeled_03_cannon_F",
+	"I_APC_tracked_03_cannon_F",
+	"I_LT_01_AT_F",
+	"I_LT_01_cannon_F",
+	"I_MRAP_03_gmg_F",
+	"I_MRAP_03_hmg_F",
+	"I_MBT_03_cannon_F"
+]];
+
+serverNamespace setVariable ["WL2_factionAircraftClasses", [
+	"I_Plane_Fighter_03_CAS_F",
+	"I_Heli_light_03_F",
+	"I_Plane_Fighter_04_F"
+]];

@@ -1,33 +1,32 @@
 ["server_init"] call BIS_fnc_startLoadingScreen;
 
-[36000] call BIS_fnc_countdown;
+{createCenter _x} forEach [west, east, resistance, civilian];
+west setFriend [east, 0];
+east setFriend [west, 0];
+resistance setFriend [west, 0];
+west setFriend [resistance, 0];
+resistance setFriend [east, 0];
+east setFriend [resistance, 0];
+civilian setFriend [west, 1];
+civilian setFriend [east, 1];
+civilian setFriend [resistance, 1];
+west setFriend [civilian, 1];
+east setFriend [civilian, 1];
+resistance setFriend [civilian, 1];
+
 call BIS_fnc_WL2_tablesSetUp;
-
-{createCenter _x} forEach [WEST, EAST, RESISTANCE, CIVILIAN];
-
-WEST setFriend [EAST, 0];
-EAST setFriend [WEST, 0];
-RESISTANCE setFriend [WEST, 0];
-WEST setFriend [RESISTANCE, 0];
-RESISTANCE setFriend [EAST, 0];
-EAST setFriend [RESISTANCE, 0];
-CIVILIAN setFriend [WEST, 1];
-CIVILIAN setFriend [EAST, 1];
-CIVILIAN setFriend [RESISTANCE, 1];
-WEST setFriend [CIVILIAN, 1];
-EAST setFriend [CIVILIAN, 1];
-RESISTANCE setFriend [CIVILIAN, 1];
-
 call BIS_fnc_WL2_playersListHandle;
-"server" call BIS_fnc_WL2_varsInit;
 call BIS_fnc_WL2_serverEHs;
 
+missionNamespace setVariable ["WL2_gameStart", serverTime, true];
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
+{
+	serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
+} forEach [west, east];
 
 if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 
-call BIS_fnc_WL2_loadFactionClasses;
 call BIS_fnc_WL2_sectorsInitServer;
 "setup" call BIS_fnc_WL2_handleRespawnMarkers;
 if !(isDedicated) then {

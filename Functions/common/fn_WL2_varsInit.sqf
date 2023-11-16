@@ -2,18 +2,13 @@ params ["_locality"];
 
 switch (_locality) do {
 	case "common": {
-		BIS_WL_sidesArray = [WEST, EAST, RESISTANCE];
-		BIS_WL_competingSides = [WEST, EAST];
+		BIS_WL_sidesArray = [west, east, resistance];
+		BIS_WL_competingSides = [west, east];
 		BIS_WL_missionEnd = FALSE;
 		BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "mapSize");
 		if (BIS_WL_mapSize == 0) then {BIS_WL_mapSize = getNumber (configFile >> "cfgWorlds" >> worldName >> "Grid" >> "OffsetY")};
 		BIS_WL_mapAreaArray = [[BIS_WL_mapSize / 2, BIS_WL_mapSize / 2], BIS_WL_mapSize / 2, BIS_WL_mapSize / 2, 0, TRUE];
 		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
-	};
-	case "server": {
-		{
-			serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
-		} forEach [WEST, EAST];
 	};
 	case "client": {
 		BIS_WL_playerSide = side group player;
