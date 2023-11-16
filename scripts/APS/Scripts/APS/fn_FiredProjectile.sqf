@@ -25,7 +25,7 @@ while {_continue} do {
 		_projectileAPSType = apsEligibleProjectiles get (typeOf _projectile);
 		if (_vehicleAPSType == 3) then {
 			if (_dazzleable) exitWith {
-				[_projectile] spawn APS_fnc_MisguideMissile;
+				_projectile spawn APS_fnc_MisguideMissile;
 			};
 		} else {
 			if (_vehicleAPSType >= _projectileAPSType && {

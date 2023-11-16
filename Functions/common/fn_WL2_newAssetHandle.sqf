@@ -106,7 +106,6 @@ if (isPlayer _owner) then {
 
 		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
-			_asset call BIS_fnc_WL2_sub_vehicleKickAction;
 		};
 
 		if (profileNamespace getVariable ["MRTM_spawnEmpty", false]) then {

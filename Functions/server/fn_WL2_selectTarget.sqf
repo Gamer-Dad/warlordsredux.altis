@@ -11,7 +11,7 @@ if (!isNull _sector) then {
 	missionNamespace setVariable [format ["BIS_WL_currentTarget_%1", _side], _sector, true];
 	missionNamespace setVariable [format ["BIS_WL_sectorSelectedTimestamp_%1", _side], serverTime, true];
 	if (_sector in WL_BASES) then {
-		_sector setVariable ["BIS_WL_baseUnderAttack", true, true];
+		_sector setVariable ["BIS_WL_baseUnderAttack", true, [0, -2] select isDedicated];
 		["base_vulnerable", _sector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
 	} else {
 		private _owner = _sector getVariable "BIS_WL_owner";
@@ -21,7 +21,7 @@ if (!isNull _sector) then {
 	_prevSector = missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side];
 	missionNamespace setVariable [format ["BIS_WL_currentTarget_%1", _side], objNull, true];
 	if (_prevSector in WL_BASES) then {
-		_sector setVariable ["BIS_WL_baseUnderAttack", false, true];
+		_sector setVariable ["BIS_WL_baseUnderAttack", false, [0, -2] select isDedicated];
 		["base_safe", _prevSector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
 	};
 };
