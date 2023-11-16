@@ -40,16 +40,7 @@ if !(isDedicated) then {
 0 spawn BIS_fnc_WL2_garbageCollector;
 call BIS_fnc_WL2_processRunways;
 
-setTimeMultiplier 4;
-0 spawn {
-	while {!BIS_WL_missionEnd} do {
-		waitUntil {sleep 5; daytime > 20 || {daytime < 5}};
-		setTimeMultiplier 8;
-		waitUntil {sleep 5; daytime < 20 && {daytime > 5}};
-		setTimeMultiplier 3;
-	};
-};
-
+setTimeMultiplier 7;
 0 spawn {
 	while {!BIS_WL_missionEnd} do {
 		_overcastPreset = random 1;

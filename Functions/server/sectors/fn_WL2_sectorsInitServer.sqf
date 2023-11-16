@@ -5,8 +5,8 @@ _potBases = _potBases - [_firstBase];
 _potBases = (_potBases select {(_x distanceSqr _firstBase) > _baseDistanceMin});
 private _secondBase = selectRandom _potBases;
 
-missionNamespace setVariable ["BIS_WL_base1", _firstBase, -2];
-missionNamespace setVariable ["BIS_WL_base2", _secondBase, -2];
+missionNamespace setVariable ["BIS_WL_base1", _firstBase, [0, -2] select isDedicated];
+missionNamespace setVariable ["BIS_WL_base2", _secondBase, [0, -2] select isDedicated];
 profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 
 {
