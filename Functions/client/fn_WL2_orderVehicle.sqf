@@ -63,7 +63,7 @@ if (_class isKindOf "Man") then {
 
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", uiNamespace getVariable "BIS_WL_deployKeyHandle"];
 	uiNamespace setVariable ['BIS_WL_deployKeyHandle', nil];
-	_offset set [1, _asset distance player];
+	_offset set [1, _asset distance2D player];
 	detach _asset;
 	_p = getPosATL _asset;
 	deleteVehicle _asset;

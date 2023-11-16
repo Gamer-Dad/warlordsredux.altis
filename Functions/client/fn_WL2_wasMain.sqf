@@ -25,7 +25,7 @@ while {!BIS_WL_missionEnd} do {
 	_currentDir = _newDir;
 
 	_newPos = getPos player;
-    _distanceMoved = _currentPos distance _newPos;
+    _distanceMoved = _currentPos distance2D _newPos;
     if (_distanceMoved > _minimumDistance) then {
 		if (_distanceMoved > 500) then {
 			_inActScore = _inActScore - 2;
