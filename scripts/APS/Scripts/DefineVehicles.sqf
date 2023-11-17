@@ -43,77 +43,79 @@ apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"];
 
 // APS projectile block lists
 _heavyBlockList = [
-	"M_120mm_cannon_ATGM_LG", 	// Rhino ATGM LG
-	"M_127mm_Firefist_AT", 		// Nyx AT
-	"Missile_AGM_01_F", 		// Sharur
-	"Missile_AGM_02_F", 		// Macer II
-	"R_80mm_HE", 				// Skyfire
-	"Rocket_03_AP_F",			// Tratnyr 
+	"M_120mm_cannon_ATGM_LG",
+	"M_127mm_Firefist_AT",
+	"Missile_AGM_01_F",
+	"Missile_AGM_02_F",
+	"R_80mm_HE",
+	"Rocket_03_AP_F",
 	"Rocket_03_HE_F",
-	"Rocket_04_AP_F", 			// Shrieker
+	"Rocket_04_AP_F",
 	"Rocket_04_HE_F",
-	"M_AT", 					// DAR
-	"M_PG_AT", 					// DAGR
-	"M_Scalpel_AT", 			// Skalpel
+	"M_AT",
+	"M_PG_AT",
+	"M_Scalpel_AT",
 	"M_Scalpel_AT_hidden",
-	"M_SPG9_HE", 				// SPG-9
-	"M_SPG9_HEAT", 
-	"M_Titan_AP",				// Titan
-	"M_Titan_AT", 
-	"M_Titan_AT_long", 
-	"M_Titan_AT_static", 
-	"M_Vorona_HE", 				// Vorona
-	"M_Vorona_HEAT", 
-	"R_MRAAWS_HE_F", 			// MAAWS
+	"M_SPG9_HE",
+	"M_SPG9_HEAT",
+	"M_Titan_AP",
+	"M_Titan_AT",
+	"M_Titan_AT_long",
+	"M_Titan_AT_static",
+	"M_Vorona_HE",
+	"M_Vorona_HEAT",
+	"R_MRAAWS_HE_F",
 	"R_MRAAWS_HEAT_F", 
 	"R_MRAAWS_HEAT55_F",
-	"R_TBG32V_F", 				// RPG-42
+	"R_TBG32V_F",
 	"R_PG32V_F",
-	"R_PG7_F",					// RPG-7
-	"M_NLAW_AT_F" 				// PCML
+	"R_PG7_F",
+	"M_NLAW_AT_F",
+	"M_Jian_AT"
 ];
 
 _mediumBlockList = [
-	"ammo_Missile_KH58",		// KH-58 
-	"ammo_Missile_HARM",		// HARM
-	"Missile_AGM_01_F", 		// Sharur
-	"Missile_AGM_02_F", 		// Macer II
-	"M_120mm_cannon_ATGM_LG", 	// Rhino ATGM LG
-	"M_127mm_Firefist_AT", 		// Nyx AT
-	"R_80mm_HE", 				// Skyfire
-	"Rocket_03_AP_F",			// Tratnyr 
+	"ammo_Missile_KH58",
+	"ammo_Missile_HARM",
+	"Missile_AGM_01_F",
+	"Missile_AGM_02_F",
+	"M_120mm_cannon_ATGM_LG",
+	"M_127mm_Firefist_AT",
+	"R_80mm_HE",
+	"Rocket_03_AP_F",
 	"Rocket_03_HE_F",
-	"Rocket_04_AP_F", 			// Shrieker
+	"Rocket_04_AP_F",
 	"Rocket_04_HE_F",
-	"M_AT", 					// DAR
-	"M_PG_AT", 					// DAGR
-	"M_Scalpel_AT", 			// Skalpel
+	"M_AT",
+	"M_PG_AT",
+	"M_Scalpel_AT",
 	"M_Scalpel_AT_hidden",
-	"M_SPG9_HE", 				// SPG-9
-	"M_SPG9_HEAT", 
-	"M_Titan_AP",				// Titan
-	"M_Titan_AT", 
-	"M_Titan_AT_long", 
-	"M_Titan_AT_static", 
-	"M_Vorona_HE", 				// Vorona
-	"M_Vorona_HEAT", 
-	"M_NLAW_AT_F", 				// PCML
-	"R_MRAAWS_HE_F", 			// MAAWS
-	"R_MRAAWS_HEAT_F", 
+	"M_SPG9_HE",
+	"M_SPG9_HEAT",
+	"M_Titan_AP",
+	"M_Titan_AT",
+	"M_Titan_AT_long",
+	"M_Titan_AT_static",
+	"M_Vorona_HE",
+	"M_Vorona_HEAT",
+	"M_NLAW_AT_F",
+	"R_MRAAWS_HE_F",
+	"R_MRAAWS_HEAT_F",
 	"R_MRAAWS_HEAT55_F",
-	"R_TBG32V_F", 				// RPG-42
+	"R_TBG32V_F",
 	"R_PG32V_F",
-	"R_PG7_F"					// RPG-7
+	"R_PG7_F",
+	"M_Jian_AT"
 ];
 
 _lightBlockList = [
-	"M_NLAW_AT_F",				// PCML
-	"R_MRAAWS_HE_F", 			// MAAWS
-	"R_MRAAWS_HEAT_F", 
-	"R_MRAAWS_HEAT55_F", 
-	"R_TBG32V_F", 				// RPG-42
-	"R_PG32V_F", 
-	"R_PG7_F"					// RPG-7
+	"M_NLAW_AT_F",
+	"R_MRAAWS_HE_F",
+	"R_MRAAWS_HEAT_F",
+	"R_MRAAWS_HEAT55_F",
+	"R_TBG32V_F",
+	"R_PG32V_F",
+	"R_PG7_F"
 ];
 
 // assumption: APS types are straight upgrades
