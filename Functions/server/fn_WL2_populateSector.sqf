@@ -16,12 +16,10 @@ if (_side == resistance) then {
 			_vehicleArray = [_posRoad, _road getDir selectRandom (roadsConnectedTo _road), selectRandom (serverNamespace getVariable "WL2_factionVehicleClasses"), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			
-			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			_vehicle call BIS_fnc_WL2_newAssetHandle;
 			_units pushBack _vehicle;
 			
 			{
-				_x setVariable ["BIS_WL_parentSector", _sector];
 				_x call BIS_fnc_WL2_newAssetHandle;
 				_units pushBack _x;
 			} forEach _crew;
@@ -44,13 +42,11 @@ if (_side == resistance) then {
 			_vehicleInfo params ["_type", "_pos", "_dir", "_lock", "_waypoints"];
 			_vehicleArray = [_pos, _dir, _type, _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
-			
-			_vehicle setVariable ["BIS_WL_parentSector", _sector];
+
 			_vehicle call BIS_fnc_WL2_newAssetHandle;
 			_units pushBack _vehicle;
 			
 			{
-				_x setVariable ["BIS_WL_parentSector", _sector];
 				_x call BIS_fnc_WL2_newAssetHandle;
 				_units pushBack _x;
 			} forEach _crew;
@@ -78,12 +74,10 @@ if (_side == resistance) then {
 			_vehicleArray = [position selectRandom _neighbors, 0, selectRandom (serverNamespace getVariable "WL2_factionAircraftClasses"), _side] call BIS_fnc_spawnVehicle;
 			_vehicleArray params ["_vehicle", "_crew", "_group"];
 			
-			_vehicle setVariable ["BIS_WL_parentSector", _sector];
 			_vehicle call BIS_fnc_WL2_newAssetHandle;
 			_units pushBack _vehicle;
 			
 			{
-				_x setVariable ["BIS_WL_parentSector", _sector];
 				_x call BIS_fnc_WL2_newAssetHandle;
 				_units pushBack _x;
 			} forEach _crew;
@@ -105,7 +99,7 @@ if (_side == resistance) then {
 		};
 	};
 };
-[_units] spawn BIS_fnc_WL2_assetRelevanceCheck;
+[_units, _sector] spawn BIS_fnc_WL2_assetRelevanceCheck;
 
 if (count _spawnPosArr == 0) exitWith {};
 
@@ -122,7 +116,6 @@ while {_i < _garrisonSize} do {
 	private _i2 = 0;
 	for "_i2" from 0 to _grpSize do {
 		_newUnit = _newGrp createUnit [(selectRandom _unitsPool), _pos, [], 5, "NONE"];
-		_newUnit setVariable ["BIS_WL_parentSector", _sector];
 		_newUnit call BIS_fnc_WL2_newAssetHandle;
 		_units pushBack _newUnit;
 
@@ -144,4 +137,4 @@ while {_i < _garrisonSize} do {
 	_newWP setWaypointType "CYCLE";
 };
 
-[_units] spawn BIS_fnc_WL2_assetRelevanceCheck;
+[_units, _sector] spawn BIS_fnc_WL2_assetRelevanceCheck;
