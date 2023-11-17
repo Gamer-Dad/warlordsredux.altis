@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 _trespassersOld = [];
 
 while {!BIS_WL_missionEnd} do {

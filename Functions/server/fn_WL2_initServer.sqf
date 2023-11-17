@@ -19,7 +19,7 @@ call BIS_fnc_WL2_playersListHandle;
 call BIS_fnc_WL2_serverEHs;
 
 missionNamespace setVariable ["WL2_gameStart", serverTime, true];
-missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup CIVILIAN, true];
+missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup civilian, true];
 BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
 {
 	serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];

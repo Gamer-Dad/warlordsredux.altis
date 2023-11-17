@@ -14,10 +14,6 @@ addMissionEventHandler ["EntityRespawned", {
 	private _sector = _x;
 	_sector setVariable ["BIS_WL_connectedSectors", (synchronizedObjects _sector) select {typeOf _x == "Logic"}];
 	_sector setVariable ["objectAreaComplete", [position _sector] + (_sector getVariable "objectArea")];
-	private _otherSectors = BIS_WL_allSectors - [_sector];
-	_otherSectors = _otherSectors apply {[_x distance2D _sector, _x]};
-	_otherSectors sort TRUE;
-	_sector setVariable ["BIS_WL_distanceToNearestSector", _sector distance2D ((_otherSectors # 0) # 1)];
 	private _axisA = (_sector getVariable "objectArea") # 0;
 	private _axisB = (_sector getVariable "objectArea") # 1;
 	_sector setVariable ["BIS_WL_maxAxis", if ((_sector getVariable "objectArea") # 3) then {sqrt ((_axisA ^ 2) + (_axisB ^ 2))} else {_axisA max _axisB}];

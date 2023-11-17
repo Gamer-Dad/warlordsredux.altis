@@ -762,8 +762,7 @@ GOM_fnc_pylonSound = {
 	if (_pylon >= 0) then {
 		_selections = selectionnames _veh;
 		_presort = _selections select {(toupper _x find "PYLON") >= 0 && parsenumber (_x select [count _x - 3,3]) > 0};
-		_presort apply {[parsenumber (_x select [count _x - 3,3]),_x]};
-		_presort sort true;
+		_presort = [_presort, [], {[parsenumber (_x select [count _x - 3,3]),_x]}, "ASCEND"] call BIS_fnc_sortBy;
 		_soundPos = agltoasl (_veh modeltoworld (_veh selectionposition (_presort select _pylon)));
 	};
 	_rndSound = selectRandom ['FD_Target_PopDown_Large_F','FD_Target_PopDown_Small_F','FD_Target_PopUp_Small_F'];

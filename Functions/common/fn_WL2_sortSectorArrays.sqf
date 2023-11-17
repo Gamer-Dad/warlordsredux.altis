@@ -50,7 +50,7 @@ if (_fullRecalc) then {
 	
 	{
 		private _sector = _x;
-		private _zoneRestrictionAxis = ((_sector getVariable ["BIS_WL_distanceToNearestSector", 0]) / 3) max (_sector getVariable ["BIS_WL_maxAxis", 0]);
+		private _zoneRestrictionAxis = (_sector getVariable ["BIS_WL_maxAxis", 0]);
 		if (isServer) then {
 			_zoneRestrictionTrigger = ((_sector getVariable ["BIS_WL_zoneRestrictionTrgs", []]) select {(_x getVariable ["BIS_WL_handledSide", independent]) == _side}) # 0;
 			_zoneRestrictionTrigger setTriggerArea [_zoneRestrictionAxis, _zoneRestrictionAxis, 0, false];
