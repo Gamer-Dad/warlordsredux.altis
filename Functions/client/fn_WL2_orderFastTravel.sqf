@@ -23,7 +23,8 @@ private _markerText = "";
 
 if (_toContested) then {
 	private _startArr = (synchronizedObjects WL_TARGET_FRIENDLY) select {(_x getVariable "BIS_WL_owner") == BIS_WL_playerSide};
-	_startArr = [_startArr, [], {_x distance2D player}, "ASCEND"] call BIS_fnc_sortBy;
+	_startArr = _startArr apply {[_x distance2D player, _x]};
+	_startArr sort true;
 	private _start = (_startArr # 0) # 1;
 	private _area = WL_TARGET_FRIENDLY getVariable "objectArea";
 	private _size = (if (_area # 3) then {

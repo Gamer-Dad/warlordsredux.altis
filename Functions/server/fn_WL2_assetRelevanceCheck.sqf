@@ -18,6 +18,5 @@ while {count _list > 0} do {
 	{
 		deleteVehicle _x;
 	} forEach (_assets select {!(_x in _list)});
-	"Running" remoteExec ["systemChat", 0];
 	sleep 1;
 };
