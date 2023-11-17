@@ -19,9 +19,4 @@ while {!BIS_WL_missionEnd} do {
 			};
 		};
 	} forEach _notBlocked;
-	
-	{
-		_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && {(alive _x) && {side group _x != civilian}}};
-		_x addCuratorEditableObjects [_l, true];
-	} forEach allCurators;	
 };

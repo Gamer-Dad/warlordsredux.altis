@@ -3,7 +3,6 @@
 params ["_asset", ["_owner", objNull]];
 
 if (isServer && {isNull _owner}) exitWith {
-	_asset spawn BIS_fnc_WL2_assetRelevanceCheck;
 	if !(_asset isKindOf "Man") then {
 		_asset call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;

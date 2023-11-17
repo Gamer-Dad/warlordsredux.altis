@@ -193,12 +193,7 @@ if (_action == "kill") exitWith {
 };
 
 if (_action == "10K") exitWith {
-	if (["(EU) #11", serverName] call BIS_fnc_inString) then {
-		_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
-		if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
-			[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;			
-		};
-	} else {
+	if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		[_uid, 10000] call BIS_fnc_WL2_fundsDatabaseWrite;
 	};	
 };
@@ -207,5 +202,14 @@ if (_action == "devCP") exitWith {
 	_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
 	if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
 		[_uid, _param1] call BIS_fnc_WL2_fundsDatabaseWrite;			
+	};
+};
+
+if (_action == "updateZeus") exitWith {
+	if (getPlayerUID _sender in (getArray (missionConfigFile >> "adminIDs"))) then {
+		{
+			_l = (vehicles + allUnits) select {(typeOf _x != "Logic") && {(alive _x) && {side group _x != civilian}}};
+			_x addCuratorEditableObjects [_l, true];
+		} forEach allCurators;		
 	};
 };
