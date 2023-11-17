@@ -40,7 +40,7 @@ _i = 0;
 	_sector = _x;
 	
 	_owner = _sector getVariable "BIS_WL_owner";
-	_revealedBy = _sector getVariable "BIS_WL_revealedBy";
+	_revealedBy = _sector getVariable ["BIS_WL_revealedBy", []];
 	_sectorPos = position _sector;
 	
 	_mrkrAreaBig = format ["BIS_WL_sectorMarker_%1_areaBig", _forEachIndex];

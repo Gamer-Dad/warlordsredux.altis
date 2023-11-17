@@ -22,7 +22,7 @@ if (_side != BIS_WL_playerSide) exitWith {
 		_sector spawn {
 			params ["_sector"];
 			
-			waitUntil {sleep WL_TIMEOUT_STANDARD; BIS_WL_playerSide in (_sector getVariable "BIS_WL_revealedBy") || {WL_TARGET_ENEMY != _sector}};
+			waitUntil {sleep WL_TIMEOUT_STANDARD; BIS_WL_playerSide in (_sector getVariable ["BIS_WL_revealedBy", []]) || {WL_TARGET_ENEMY != _sector}};
 			
 			if (WL_TARGET_ENEMY == _sector) then {
 				"BIS_WL_targetEnemy" setMarkerAlphaLocal 1;
@@ -47,7 +47,7 @@ if (_selected) then {
 	_sector spawn {
 		params ["_sector"];
 		
-		waitUntil {sleep WL_TIMEOUT_STANDARD; BIS_WL_playerSide in (_sector getVariable "BIS_WL_revealedBy") || {WL_TARGET_ENEMY != _sector}};
+		waitUntil {sleep WL_TIMEOUT_STANDARD; BIS_WL_playerSide in (_sector getVariable ["BIS_WL_revealedBy", []]) || {WL_TARGET_ENEMY != _sector}};
 		
 		if (WL_TARGET_ENEMY == _sector) then {
 			if (_sector == WL_TARGET_ENEMY) then {"BIS_WL_targetEnemy" setMarkerDirLocal 45};

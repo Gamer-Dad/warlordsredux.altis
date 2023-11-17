@@ -33,9 +33,8 @@ profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 	_sector = _x;
 	_sectorPos = position _sector;
 	if ((_sector getVariable ["BIS_WL_owner", sideUnknown]) == sideUnknown) then {
-		_sector setVariable ["BIS_WL_owner", RESISTANCE, true];
+		_sector setVariable ["BIS_WL_owner", resistance, true];
 		_sector setVariable ["BIS_WL_previousOwners", [], true];
-		_sector setVariable ["BIS_WL_revealedBy", [], true];
 		[_sector] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated];
 	};
 	
@@ -72,7 +71,7 @@ profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
 		_x setVariable ["BIS_WL_sector", _sector];
 		_x setTriggerArea _area;
 		_x setTriggerActivation [["WEST", "EAST", "GUER"] # (BIS_WL_sidesArray find _handledSide), "PRESENT", false];
-		_x setTriggerStatements [format ["this && ((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %1) # 3))", _forEachIndex], format ["[(thisTrigger getVariable 'BIS_WL_sector')] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated]; (thisTrigger getVariable 'BIS_WL_sector') setVariable ['BIS_WL_revealedBy', ((thisTrigger getVariable 'BIS_WL_sector') getVariable 'BIS_WL_revealedBy') + [%1], true]", _handledSide], ""];
+		_x setTriggerStatements [format ["this && ((thisTrigger getVariable 'BIS_WL_sector') in ((BIS_WL_sectorsArrays # %1) # 3))", _forEachIndex], format ["[(thisTrigger getVariable 'BIS_WL_sector')] remoteExec ['BIS_fnc_WL2_sectorRevealHandle', [0, -2] select isDedicated]; (thisTrigger getVariable 'BIS_WL_sector') setVariable ['BIS_WL_revealedBy', ((thisTrigger getVariable 'BIS_WL_sector') getVariable ['BIS_WL_revealedBy', []]) + [%1], true]", _handledSide], ""];
 	} forEach [_detectionTrg1, _detectionTrg2];
 
 	private _sectorVehicles = vehicles inAreaArray (_sector getVariable "objectAreaComplete");
