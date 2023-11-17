@@ -1,7 +1,7 @@
 _trespassersOld = [];
 
 while {!BIS_WL_missionEnd} do {
-	sleep (if (count _trespassersOld == 0) then {WL_TIMEOUT_STANDARD} else {WL_TIMEOUT_SHORT});
+	sleep (if (count _trespassersOld == 0) then {1} else {0.25});
 	
 	_trespassers = [];
 	

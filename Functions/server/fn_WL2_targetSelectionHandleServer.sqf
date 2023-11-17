@@ -12,7 +12,8 @@
 			{
 				_allSectorsVotedFor pushBackUnique _x;
 			} forEach _votesPool;
-			_allSectorsVotedFor = [_allSectorsVotedFor, [], {_sector = _x; [{_x == _sector} count _votesPool, _sector]}, "DESCEND"] call BIS_fnc_sortBy;
+			_allSectorsVotedFor = _allSectorsVotedFor apply {_sector = _x; [{_x == _sector} count _votesPool, _sector]};
+			_allSectorsVotedFor sort false;
 			(_allSectorsVotedFor # 0) # 1;
 		};
 		
