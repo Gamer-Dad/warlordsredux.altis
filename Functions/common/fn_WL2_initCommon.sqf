@@ -38,7 +38,6 @@ if (isServer) then {
 			"BIS_WL_owner",
 			"BIS_WL_previousOwners",
 			"BIS_WL_agentGrp",
-			"BIS_WL_revealedBy"
 		] == 0};
 	} forEach BIS_WL_allSectors;
 };

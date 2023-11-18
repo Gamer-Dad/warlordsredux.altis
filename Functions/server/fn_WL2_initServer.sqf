@@ -15,12 +15,13 @@ east setFriend [civilian, 1];
 resistance setFriend [civilian, 1];
 
 call BIS_fnc_WL2_tablesSetUp;
-call BIS_fnc_WL2_playersListHandle;
+0 spawn BIS_fnc_WL2_playersListHandle;
 call BIS_fnc_WL2_serverEHs;
 
-missionNamespace setVariable ["WL2_gameStart", serverTime, true];
-missionNamespace setVariable ["BIS_WL_wrongTeamGroup", createGroup civilian, true];
-BIS_WL_wrongTeamGroup deleteGroupWhenEmpty false;
+_group = createGroup civilian;
+missionNamespace setVariable ["BIS_WL_wrongTeamGroup", _group, true];
+_group deleteGroupWhenEmpty false;
+
 {
 	serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
 } forEach [west, east];
