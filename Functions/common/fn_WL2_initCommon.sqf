@@ -37,7 +37,7 @@ if (isServer) then {
 		waitUntil {{isNil {_sector getVariable _x}} count [
 			"BIS_WL_owner",
 			"BIS_WL_previousOwners",
-			"BIS_WL_agentGrp",
+			"BIS_WL_agentGrp"
 		] == 0};
 	} forEach BIS_WL_allSectors;
 };
