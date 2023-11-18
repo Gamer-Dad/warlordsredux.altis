@@ -8,6 +8,7 @@ private _secondBase = selectRandom _potBases;
 missionNamespace setVariable ["BIS_WL_base1", _firstBase, true];
 missionNamespace setVariable ["BIS_WL_base2", _secondBase, true];
 profileNamespace setVariable ["BIS_WL_lastBases", [_firstBase, _secondBase]];
+waitUntil {!isNil "BIS_WL_base1" && {!isNil "BIS_WL_base2"}};
 
 {
 	_side = [west, east] # _forEachIndex;
