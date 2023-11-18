@@ -17,6 +17,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	
 	call BIS_fnc_WL2_calcImbalance;
 }];
+
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator"];
 	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
@@ -44,6 +45,7 @@ addMissionEventHandler ["EntityKilled", {
 		};
 	};
 }];
+
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	
@@ -51,6 +53,7 @@ addMissionEventHandler ["MarkerCreated", {
 		deleteMarker _marker;
 	};
 }];
+
 addMissionEventHandler ["EntityCreated", {
   params ["_entity"];
   if (isClass (configFile >> "CfgAmmo" >> (typeOf _entity))) then {

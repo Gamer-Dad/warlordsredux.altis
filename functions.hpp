@@ -63,6 +63,7 @@ class CfgFunctions {
 			class WL2_askForgiveness {};
 			class WL2_clientEH {};
 			class WL2_blockScreen {};
+			class WL2_logFF {};
     	};
 		class Server 
 		{

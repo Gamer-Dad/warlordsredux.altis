@@ -26,8 +26,9 @@ if (_unit isKindOf "Man") then {
 	_sideOwner = side (group (_uid call BIS_fnc_getUnitByUID));
 	_crew = ((crew _unit) select {alive _x});
 	_sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
-	if (_sideOwner != _sideCrew) exitWith {};
-	if (_sideOwner == side (group _responsibleLeader)) then {
+	[_sideOwner, _sideCrew, _uid, _crew, ((count _crew) > 0), (if ((count _crew) > 0) then {(side (group (_crew # 0)))} else {"empty"}), (_sideOwner == side (group _responsibleLeader))] remoteExec ["BIS_fnc_WL2_logFF", (owner _responsibleLeader)];
+	
+	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
 		_owner = owner _responsibleLeader;
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, owner _unit]]), [2, _owner]];
 		[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", _owner];
