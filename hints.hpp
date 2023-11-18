@@ -13,7 +13,7 @@ class CfgHints
 			{
 				{{"TacticalPing"}},
 				"name player",
-				"format ['%1', (2 - (count (player getVariable ['BIS_WL_friendlyKillTimestamps', []])))]"
+				"format ['%1', (3 - (count (player getVariable ['BIS_WL_friendlyKillTimestamps', []])))]"
 			};
 			image = ;
 			noImage = true;
