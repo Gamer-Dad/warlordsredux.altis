@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_side", ["_fullRecalc", FALSE]];
+params ["_side", ["_fullRecalc", false]];
 
 private _base = objNull;
 private _pool = BIS_WL_allSectors;
