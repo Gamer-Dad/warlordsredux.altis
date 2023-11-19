@@ -55,7 +55,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		if (!isNull _x) then {
 			_m drawIcon [
 				_x call BIS_fnc_iconType,
-				if (side group _x == Independent) then {[0,0.6,0,1]} else {if (side group _x == west) then {[0,0.3,0.6,1]} else {[0.5,0,0,1]}},
+				if (side group _x == Independent) then {[0,0.6,0,0.9]} else {([[0.5,0,0,1], [0,0.3,0.6,1]] # _sideN)},
 				_x call BIS_fnc_getPos,
 				_x call BIS_fnc_iconSize,
 				_x call BIS_fnc_iconSize,
