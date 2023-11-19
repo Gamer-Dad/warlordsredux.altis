@@ -46,5 +46,5 @@ if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _ene
 
 waitUntil {sleep 0.01; (_sector getVariable ["BIS_WL_owner", civilian]) == _owner};
 if ((((profileNamespace getVariable "BIS_WL_lastBases") # 0) getVariable ["BIS_WL_owner", civilian]) == (((profileNamespace getVariable "BIS_WL_lastBases") # 1) getVariable ["BIS_WL_owner", independent])) then {
-	0 remoteExec ["BIS_fnc_WL2_missionEndHandle", [0, -2] select isDedicated];
+	0 remoteExec ["BIS_fnc_WL2_missionEndHandle", 0];
 };
