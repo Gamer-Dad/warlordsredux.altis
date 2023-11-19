@@ -27,7 +27,7 @@
 			
 			waitUntil {
 				sleep WL_TIMEOUT_SHORT;
-				_warlords = BIS_WL_allWarlords select {side group _x == _side};
+				_warlords = allPlayers select {side group _x == _side};
 				_players = _warlords select {isPlayer _x};
 				_npcs = _warlords select {!isPlayer _x};
 				_noPlayers = count (allPlayers select {(side group _x) == ([west, east] # _sideIndex)}) == 0;
@@ -40,7 +40,7 @@
 				_nextUpdate = serverTime;
 				
 				while {serverTime < _votingEnd && {!(missionNamespace getVariable [_votingResetVar, false])}} do {
-					_warlords = BIS_WL_allWarlords select {side group _x == _side};
+					_warlords = allPlayers select {side group _x == _side};
 					_players = _warlords select {isPlayer _x};
 					_noPlayers = count (allPlayers select {(side group _x) == ([west, east] # _sideIndex)}) == 0;
 					

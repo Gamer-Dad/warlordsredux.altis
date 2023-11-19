@@ -6,10 +6,6 @@ call compile preprocessFileLineNumbers "TEMP.sqf";
 
 enableSaving [false, false];
 
-addMissionEventHandler ["EntityRespawned", {
-	_this call BIS_fnc_WL2_respawnHandle;
-}];
-
 {
 	private _sector = _x;
 	_sector setVariable ["BIS_WL_connectedSectors", (synchronizedObjects _sector) select {typeOf _x == "Logic"}];

@@ -1,6 +1,5 @@
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-	BIS_WL_allWarlords = BIS_WL_allWarlords - [_unit];
 
 	{
 		_x spawn BIS_fnc_WL2_sub_deleteAsset;

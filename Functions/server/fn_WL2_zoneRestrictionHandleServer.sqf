@@ -8,7 +8,7 @@ while {!BIS_WL_missionEnd} do {
 	{
 		_side = _x;
 		_sideID = _forEachIndex;
-		_warlords = BIS_WL_allWarlords select {alive _x && {side group _x == _side && {serverTime > ((_x getVariable ["BIS_WL_detectedByServerSince", 10e10]) + 3)}}};
+		_warlords = allPlayers select {alive _x && {side group _x == _side && {serverTime > ((_x getVariable ["BIS_WL_detectedByServerSince", 10e10]) + 3)}}};
 		_restrictedSectors = BIS_WL_allSectors - ((BIS_WL_sectorsArrays # _sideID) # 3);
 		
 		{
@@ -17,7 +17,7 @@ while {!BIS_WL_missionEnd} do {
 		} forEach _restrictedSectors;
 	} forEach BIS_WL_competingSides;
 	
-	{_trespassers pushBackUnique _x} forEach (BIS_WL_allWarlords select {_pos = position _x; (alive _x) && {(_pos # 0) < 0 || {(_pos # 1) < 0 || {(_pos # 0) > BIS_WL_mapSize || {(_pos # 1) > BIS_WL_mapSize}}}}});
+	{_trespassers pushBackUnique _x} forEach (allPlayers select {_pos = position _x; (alive _x) && {(_pos # 0) < 0 || {(_pos # 1) < 0 || {(_pos # 0) > BIS_WL_mapSize || {(_pos # 1) > BIS_WL_mapSize}}}}});
 	
 	_trespassersNew = _trespassers - _trespassersOld;
 	_trespassersGone = _trespassersOld - _trespassers;

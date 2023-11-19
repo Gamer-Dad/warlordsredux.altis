@@ -1,5 +1,7 @@
 params ["_m"];
-		
+
+_side = side group player;
+_sideN = [east, west] find _side;
 if !(isNull BIS_WL_highlightedSector) then {
 	_m drawIcon [
 		"A3\ui_f\data\map\groupicons\selector_selectedMission_ca.paa",
@@ -46,7 +48,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		"PuristaBold",
 		"right"
 	];
-} forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player)}});
+} forEach (allPlayers select {(!alive _x) && {(side group _x == _side)}});
 {
 	private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 	{
@@ -65,7 +67,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 				"right"
 			];
 		};
-	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
+	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != _side) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
 {
 	if (_x == player) then {
@@ -96,7 +98,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		"PuristaBold",
 		"right"
 	];
-} forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x)}}});
+} forEach (allPlayers select {(side group _x == _side) && {(isNull objectParent _x) && {(alive _x)}}});
 {
 	if (!isNull _x) then {
 		_m drawIcon [
@@ -113,7 +115,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			"right"
 		];
 	};		
-} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
+} forEach ((allUnits) select {(side group (crew _x select 0) == _side) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
 {
 	_m drawIcon [
 		_x call BIS_fnc_iconType,
@@ -145,24 +147,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 			"right"
 		];
 	};
-} forEach ((entities [["Tank", "Car", "Plane", "Helicopter", "Ship"], ["Logic"], false, true]) select {((side _x) == (side group player)) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
-{
-	if (!isNull _x) then {
-		_m drawIcon [
-			_x call BIS_fnc_iconType,
-			_x call BIS_fnc_iconColor,
-			_x call BIS_fnc_getPos,
-			_x call BIS_fnc_iconSize,
-			_x call BIS_fnc_iconSize,
-			_x call BIS_fnc_getDir,
-			_x call BIS_fnc_iconText,
-			1,
-			0.043,
-			"PuristaBold",
-			"right"
-		];
-	};		
-} forEach ((allUnitsUAV) select {(side group (crew _x select 0) == side group player) && {(alive _x)}});
+} forEach ((entities [["LandVehicle", "Air", "Ship"], ["Logic"], false, true]) select {alive _x && {([((getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "side")) == _sideN), (side group ((crew _x) # 0) == _side)] select (count (crew _x) > 0)) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
 {
 	if (!isNull _x) then {
 		_m drawIcon [
@@ -180,7 +165,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		];
 	};
 } forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
-if (side group player == west) then {
+if (_side == west) then {
 	{
 		_m drawIcon [
 			_x call BIS_fnc_iconType,
@@ -213,7 +198,7 @@ if (side group player == west) then {
 		];
 	} forEach (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
 };
-if (side group player == east) then {
+if (_side == east) then {
 	{
 		_m drawIcon [
 			_x call BIS_fnc_iconType,

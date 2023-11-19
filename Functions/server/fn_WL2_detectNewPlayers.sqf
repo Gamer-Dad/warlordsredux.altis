@@ -1,10 +1,10 @@
 while {!BIS_WL_missionEnd} do {
-	_newPlayers = BIS_WL_allWarlords select {(!isNull _x) && {((_x getVariable ["BIS_WL_detectedByServerSince", -1]) == -1) || {(isPlayer _x) && {isNil {missionNamespace getVariable format ["BIS_WL_forceOtherTeam_%1", getPlayerUID _x]}}}}};
+	_newPlayers = allPlayers select {(!isNull _x) && {((_x getVariable ["BIS_WL_detectedByServerSince", -1]) == -1) || {(isPlayer _x) && {isNil {missionNamespace getVariable format ["BIS_WL_forceOtherTeam_%1", getPlayerUID _x]}}}}};
 	{
-		_x spawn BIS_fnc_WL2_setupNewWarlord;
+		_x call BIS_fnc_WL2_setupNewWarlord;
 		{
 			private _side = _x;
-			_players = count (BIS_WL_allWarlords select {side group _x == _side});
+			_players = count (allPlayers select {side group _x == _side});
 			if (_players >= 20) then {
 				missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 1, true];
 			} Else {

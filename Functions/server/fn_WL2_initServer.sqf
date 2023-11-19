@@ -15,7 +15,6 @@ east setFriend [civilian, 1];
 resistance setFriend [civilian, 1];
 
 call BIS_fnc_WL2_tablesSetUp;
-0 spawn BIS_fnc_WL2_playersListHandle;
 call BIS_fnc_WL2_serverEHs;
 
 _group = createGroup civilian;

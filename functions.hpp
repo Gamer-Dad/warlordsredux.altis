@@ -104,8 +104,6 @@ class CfgFunctions {
 			class WL2_missionEndHandle {};
 			class WL2_newAssetHandle {};
 			class WL2_parsePurchaseList {};
-			class WL2_playersListHandle {};
-			class WL2_respawnHandle {};
 			class WL2_sectorScanHandle {};
 			class WL2_sortSectorArrays {};
 			class WL2_updateSectorArrays {};

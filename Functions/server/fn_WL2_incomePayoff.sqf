@@ -1,6 +1,6 @@
 while {!BIS_WL_missionEnd} do {
 	sleep 60;
-	private _notBlocked = BIS_WL_allWarlords select {!(_x getVariable ["BIS_WL_incomeBlocked", false])};
+	private _notBlocked = allPlayers select {!(_x getVariable ["BIS_WL_incomeBlocked", false])};
 	{
 		_side = (side group _x);
 		_uid = getPlayerUID _x;

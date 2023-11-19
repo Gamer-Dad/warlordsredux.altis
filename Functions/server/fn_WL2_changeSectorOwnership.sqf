@@ -12,7 +12,7 @@ if !(_owner in _previousOwners) then {
 		{
 			private _uid = getPlayerUID _x;
 			[_uid, (_sector getVariable "BIS_WL_value") * _rewardMultiplier] call BIS_fnc_WL2_fundsDatabaseWrite;
-		} forEach (BIS_WL_allWarlords select {side group _x == _owner});
+		} forEach (allPlayers select {side group _x == _owner});
 	};
 };
 
@@ -36,7 +36,7 @@ if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _ene
 	BIS_WL_resetTargetSelection_client = true;
 	{
 		(owner _x) publicVariableClient "BIS_WL_resetTargetSelection_client";
-	} forEach (BIS_WL_allWarlords select {side group _x == _enemySide});
+	} forEach (allPlayers select {side group _x == _enemySide});
 	if !(isDedicated) then {
 		if (BIS_WL_playerSide != _enemySide) then {
 			BIS_WL_resetTargetSelection_client = false;

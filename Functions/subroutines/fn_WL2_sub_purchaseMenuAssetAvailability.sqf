@@ -43,7 +43,7 @@ switch (_class) do {
 		if ((count (allPlayers select {alive _x && {(_x distanceSqr player < 2000) && {side group _x != side group player}}})) > 0) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 	};
 	case "FundsTransfer": {
-		if (count (BIS_WL_allWarlords select {side group _x == side group player}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
+		if (count (allPlayers select {side group _x == side group player}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
 	};
 	case "TargetReset": {
 		if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_conflict"};
