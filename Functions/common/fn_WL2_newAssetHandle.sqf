@@ -103,6 +103,61 @@ if (isPlayer _owner) then {
 			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
 		};
 
+		if (typeOf _asset == "B_UAV_06_F" || {typeOf _asset == "O_UAV_06_F"}) then {
+			_asset spawn {
+					params ["_asset"];
+					
+				[
+						driver _asset,
+						format["<t color='#E5E500' shadow='2'>&#160;%1</t>", "*Arm Drone*"],
+						"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",
+						"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",
+						"true",
+						"true",
+						{ 
+							playSound3D ["a3\sounds_f\sfx\objects\upload_terminal\terminal_antena_close.wss", getConnectedUAVUnit player, false, getPosASL getConnectedUAVUnit player, 1, 1, 0];
+						},
+						{},
+						{(
+							[
+								getConnectedUAVUnit player,
+								format["<t color='#f80e1a' shadow='2'>&#160;%1</t>", "*Detonate*"],
+								"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa",
+								"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa",
+								"true",
+								"true",
+								{},
+								{},
+								{ _expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos getConnectedUAVUnit player), [], 0, "FLY"]; 
+									getConnectedUAVUnit player removeAllEventHandlers "Killed"; 
+									_expl setOwner (owner getConnectedUAV player); 
+									triggerAmmo _expl; 
+									deleteVehicle getConnectedUAV player; 
+								},
+								{},
+								[],
+								1,
+								1002,
+								true,
+								false,
+								true
+							] call BIS_fnc_holdActionAdd), getConnectedUAVUnit player addEventHandler ["Killed", { params ["_unit", "_killer", "_instigator", "_useEffects"]; 
+								_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos _unit), [], 0, "FLY"]; 
+								triggerAmmo _expl; 
+								deleteVehicle getConnectedUAV player;}]
+						},
+						{},
+						[], 
+						2,
+						1001,
+						true,
+						false,
+						true
+				] call BIS_fnc_holdActionAdd;
+			
+			};
+		};
+
 		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 		};
