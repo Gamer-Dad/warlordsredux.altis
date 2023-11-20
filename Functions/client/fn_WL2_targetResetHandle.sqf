@@ -11,7 +11,7 @@ BIS_WL_playerSide spawn {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
 		
 		_t = serverTime + 3;
-		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {(_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || {(missionNamespace getVariable [_varName, FALSE])}}};
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {(_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || {(missionNamespace getVariable [_varName, false])}}};
 		
 		if (missionNamespace getVariable [_varName, FALSE]) then {
 			"Reset" call BIS_fnc_WL2_announcer;
