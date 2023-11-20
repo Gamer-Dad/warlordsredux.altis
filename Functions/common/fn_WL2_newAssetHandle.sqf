@@ -16,6 +16,8 @@ if (isPlayer _owner) then {
 
 	if (_asset isKindOf "Man") then {
 		_asset addEventHandler ["Killed", {
+			missionNamespace setVariable ["WL2_manLost", true];
+			BIS_WL_matesAvailable = (BIS_WL_matesAvailable - 1) max 0;
 			false spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
