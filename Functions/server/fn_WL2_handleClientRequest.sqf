@@ -94,16 +94,9 @@ if (_action == "orderFTVehicle") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		if (_side == west) then {
-			if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) then {
-				_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
-				[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
-			};
-		} else {
-			if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) == 0) then {
-				_asset = createVehicle ["O_Truck_03_medical_F", _sender, [], 0, "NONE"];
-				[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
-			};
+		if ((count ((entities getFTVehicle) select {alive _x})) == 0) then {
+			_asset = createVehicle [getFTVehicle, _sender, [], 0, "NONE"];
+			[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
 };
@@ -114,16 +107,9 @@ if (_action == "orderFTPod") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		if (_side == west) then {
-			if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
-				_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
-				[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
-			};
-		} else {
-			if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) == 0) then {
-				_asset = createVehicle ["Land_Pod_Heli_Transport_04_medevac_F", _sender, [], 0, "NONE"];
-				[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
-			};
+		if ((count (entities getFTPod)) == 0) then {
+			_asset = createVehicle [getFTPod, _sender, [], 0, "NONE"];
+			[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
 };
