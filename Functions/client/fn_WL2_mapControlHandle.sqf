@@ -41,7 +41,7 @@ while {!BIS_WL_missionEnd} do {
 		(ctrlParent WL_CONTROL_MAP) setVariable ["BIS_sectorInfoBox", (ctrlParent WL_CONTROL_MAP) ctrlCreate ["RscStructuredText", 9999000]];
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetBackgroundColor [0, 0, 0, 0];
 		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetTextColor [1,1,1,1];
-		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable FALSE;
+		((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable false;
 	};
 	uiSleep WL_TIMEOUT_STANDARD;
 };

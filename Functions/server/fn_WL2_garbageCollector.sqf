@@ -1,3 +1,5 @@
+#include "..\server_macros.inc"
+
 while {!BIS_WL_missionEnd} do {
 	{
 		if (_x isKindOf "Man") then {
@@ -12,10 +14,8 @@ while {!BIS_WL_missionEnd} do {
 		};
 	} forEach allDead;
 
-	private _canopy = getArray (missionConfigFile >> "garbageConfig" >> "garbage" >> "Canopys");
-	private _garbageList = getArray (missionConfigFile >> "garbageConfig" >> "garbage" >> "List");
 	{
 		deleteVehicle _x;
-	} forEach((allMissionObjects "") select {(_x isKindOf "WeaponHolder" || {_x isKindOf "WeaponHolderSimulated" || {typeOf _x in _canopy || {typeOf _x in _garbageList && {_x getVariable ["BIS_WL_delete", (serverTime + 10)] < serverTime && {(count (crew _x)) == 0}}}}})});
+	} forEach((allMissionObjects "") select {(_x isKindOf "WeaponHolder" || {_x isKindOf "WeaponHolderSimulated" || {typeOf _x in canopys || {typeOf _x in garbageList && {_x getVariable ["BIS_WL_delete", (serverTime + 10)] < serverTime && {(count (crew _x)) == 0}}}}})});
 	sleep 300;
 };

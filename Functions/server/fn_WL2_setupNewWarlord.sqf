@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_warlord"];
 
 _warlord setVariable ["BIS_WL_detectedByServerSince", serverTime];
