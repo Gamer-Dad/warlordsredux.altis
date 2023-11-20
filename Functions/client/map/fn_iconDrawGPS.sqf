@@ -5,6 +5,8 @@ if (
 	{(visibleMap)}
 ) exitWith {};
 
+_side = side group player;
+_sideN = [east, west] find _side;
 {
 	_m drawIcon [
 		"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
@@ -96,11 +98,11 @@ if (
 			_x call BIS_fnc_iconSize,
 			_x call BIS_fnc_iconSize,
 			_x call BIS_fnc_getDir,
-			getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'),
+			_x call BIS_fnc_iconText,
 			1,
 			0.025,
 			"PuristaBold",
 			"right"
 		];
 	};
-} forEach ((entities [["Tank", "Car", "Plane", "Helicopter", "Ship"], ["Logic"], false, true]) select {((side _x) == (side group player)) && {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
+} forEach ((entities [["LandVehicle", "Air", "Ship"], ["Logic"], false, true]) select {alive _x && {([((getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "side")) == _sideN), (side group ((crew _x) # 0) == _side)] select (count (crew _x) > 0)) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
