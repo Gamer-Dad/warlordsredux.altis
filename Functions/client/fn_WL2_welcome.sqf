@@ -27,19 +27,13 @@ hRead = false;
 	};
 };
 
-if (side player == west) then {
-	private _control1 = findDisplay 9000 displayCtrl 9005;
-	_control1 ctrlSetTextColor [0, 0.3, 0.5, 1];
+_side = [west, east] find (side group player);
+_color = [[0, 0.3, 0.5, 1], [0.5, 0, 0, 1]] select _side;
 
-	private _control2 = findDisplay 9000 displayCtrl 9001;
-	_control2 ctrlSetBackgroundColor [0, 0.3, 0.5, 1];
-} else {
-	private _control1 = findDisplay 9000 displayCtrl 9005;
-	_control1 ctrlSetTextColor [0.5, 0, 0, 1];
-
-	private _control2 = findDisplay 9000 displayCtrl 9001;
-	_control2 ctrlSetBackgroundColor [0.5, 0, 0, 1];
-};
+private _control1 = findDisplay 9000 displayCtrl 9005;
+_control1 ctrlSetTextColor _color;
+private _control2 = findDisplay 9000 displayCtrl 9001;
+_control2 ctrlSetBackgroundColor _color;
 
 //List Menu + Scripts
 _pageAbt = lbAdd [9011, localize "STR_MRTM_welcomeInteract_01"];

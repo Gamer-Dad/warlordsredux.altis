@@ -72,6 +72,7 @@ if (_action == "fastTravelContested") exitWith {
 	};
 };
 
+private _side = side group _sender;
 if (_action == "scan") exitWith {
 	_playerFunds = ((serverNamespace getVariable "fundsDatabase") getOrDefault [(getPlayerUID _sender), 0]);
 	_cost = (getMissionConfigValue ["BIS_WL_scanCost", 750]);
@@ -79,12 +80,12 @@ if (_action == "scan") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		_param2 setVariable [format ["BIS_WL_lastScanEnd_%1", side _sender], (serverTime + 30), true];
+		_param2 setVariable [format ["BIS_WL_lastScanEnd_%1", _side], (serverTime + 30), true];
 		_revealTrigger = createTrigger ["EmptyDetector", position _param2];
 		_revealTrigger setTriggerArea (_param2 getVariable "objectArea");
 		_revealTrigger setTriggerActivation ["ANY", "PRESENT", false];
 		_param2 setVariable ["BIS_WL_revealTrigger", _revealTrigger, true];
-		[_param2, side group _sender] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
+		[_param2, _side] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
 		waitUntil {sleep 0.25; BIS_WL_competingSides findIf {(_param2 getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
 		deleteVehicle _revealTrigger;
 		_param2 setVariable ["BIS_WL_revealTrigger", nil, true];
@@ -98,7 +99,7 @@ if (_action == "orderFTVehicle") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		if (_param2 == west) then {
+		if (_side == west) then {
 			if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) == 0) then {
 				_asset = createVehicle ["B_Truck_01_medical_F", _sender, [], 0, "NONE"];
 				[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
@@ -119,7 +120,7 @@ if (_action == "orderFTPod") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		if (_param2 == west) then {
+		if (_side == west) then {
 			if ((count (entities "B_Slingload_01_Medevac_F")) == 0) then {
 				_asset = createVehicle ["B_Slingload_01_Medevac_F", _sender, [], 0, "NONE"];
 				[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
@@ -140,12 +141,12 @@ if (_action == "targetReset") exitWith {
 	if (_hasFunds) then {
 		[_uid, -_cost] call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", side _sender], serverTime, true];
-		missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", side _sender], name _sender, true];
+		missionNamespace setVariable [format ["BIS_WL_targetResetVotingSince_%1", _side], serverTime, true];
+		missionNamespace setVariable [format ["BIS_WL_targetResetOrderedBy_%1", _side], name _sender, true];
 		_sender setVariable ["BIS_WL_targetResetVote", 1, [2, remoteExecutedOwner]];
 
-		[side _sender] spawn BIS_fnc_WL2_targetResetHandleServer;
-		[side _sender] remoteExec ["BIS_fnc_WL2_targetResetHandleVote", [0, -2] select isDedicated];
+		_side spawn BIS_fnc_WL2_targetResetHandleServer;
+		[_side] remoteExec ["BIS_fnc_WL2_targetResetHandleVote", [0, -2] select isDedicated];
 	};
 };
 
@@ -165,7 +166,7 @@ if (_action == "fundsTransfer") exitWith {
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 		{
 			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1])] remoteExec ["commandChat", (owner _x)];
-		} forEach (allPlayers select {side group _x == side group _sender});
+		} forEach (allPlayers select {side group _x == _side});
 	};
 };
 

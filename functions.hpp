@@ -49,9 +49,7 @@ class CfgFunctions {
 			class WL2_zoneRestrictionHandleClient {};
 			class WL2_timer {};
 			class WL2_orderFTVehicleFT {};
-			class WL2_orderFTVehicle {};
 			class WL2_orderFTPodFT {};
-			class WL2_orderFTPod {};
 			class WL2_welcome {};
 			class WL2_betty {};
 			class WL2_rita {};
