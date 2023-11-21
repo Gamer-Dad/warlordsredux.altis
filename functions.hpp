@@ -231,7 +231,7 @@ class CfgFunctions {
 	{	
 		class normalFunctions
 		{
-			file = "scripts\VUnflip\functions";	// Folder where all functions are.
+			file = "scripts\VUnflip\functions";
 			class unflipVehicle {};
 			class unflipVehicleAddAction {};
 			class isFlipped {};
@@ -264,7 +264,7 @@ class CfgFunctions {
 			class IsVisualGuided {};
 			class MisguideMissile {};
 			class RelDir2 {};
-			class getMaxAmmmo {};
+			class getMaxAmmo {};
 		};
 		class Report
 		{
