@@ -1,3 +1,5 @@
+params ["_killer", "_obj"];
+
 if (isNil "WL2_ffBuffer") then {
 	WL2_ffBuffer = [];
 	0 spawn {
@@ -14,6 +16,7 @@ if (isNil "WL2_ffBuffer") then {
 					[_killer, player] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
 				};
 				missionNamespace setVariable ["WL2_ffBuffer_busy", false];
+				WL2_ffBuffer deleteAt 0;
 			} else {
 				_text = getText (configFile >> 'CfgVehicles' >> (typeOf _obj) >> 'displayName');
 				_askForgivenessResult = [format ["Choose to forgive %1 for killing: %2?", name _killer, _text], "Forgive Friendly Fire", "Forgive", "Don't forgive"] call BIS_fnc_guiMessage;
@@ -21,6 +24,7 @@ if (isNil "WL2_ffBuffer") then {
 					[_killer, player] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
 				};
 				missionNamespace setVariable ["WL2_ffBuffer_busy", false];
+				WL2_ffBuffer deleteAt 0;
 			};
 		};
 	};
