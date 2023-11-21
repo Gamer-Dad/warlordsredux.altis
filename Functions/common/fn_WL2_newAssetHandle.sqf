@@ -59,9 +59,8 @@ if (isPlayer _owner) then {
 				if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
 					_asset call BIS_fnc_WL2_sub_logisticsAddAction;
 					if (side _owner == east) then {
-						_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"]; //Truck Cabin
-						_asset setObjectTextureGlobal [1, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ext02_CO.paa"]; //Does nothing but keep for reminder
-						_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"]; //Truck Bed
+						_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
+						_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
 					};
 				};
 			};
@@ -114,10 +113,10 @@ if (isPlayer _owner) then {
 					format["<t color='#E5E500' shadow='2'>&#160;%1</t>", "*Arm Drone*"],
 					"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",
 					"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",
-					"true",
-					"true",
+					"!(isNull (getConnectedUAVUnit player))",
+					"!(isNull (getConnectedUAVUnit player))",
 					{ 
-						playSound3D ["a3\sounds_f\sfx\objects\upload_terminal\terminal_antena_close.wss", getConnectedUAVUnit player, false, getPosASL getConnectedUAVUnit player, 1, 1, 0];
+						playSound3D ["a3\sounds_f\sfx\objects\upload_terminal\terminal_antena_close.wss", (getConnectedUAVUnit player), false, getPosASL (getConnectedUAVUnit player), 1, 1, 0];
 					},
 					{},
 					{
@@ -131,13 +130,13 @@ if (isPlayer _owner) then {
 							format["<t color='#f80e1a' shadow='2'>&#160;%1</t>", "*Detonate*"],
 							"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa",
 							"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa",
-							"true",
-							"true",
+							"!(isNull (getConnectedUAVUnit player))",
+							"!(isNull (getConnectedUAVUnit player))",
 							{},
 							{},
 							{ 
 								_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos (getConnectedUAVUnit player)), [], 0, "FLY"]; 
-								getConnectedUAVUnit player removeAllEventHandlers "Killed";
+								(getConnectedUAVUnit player) removeAllEventHandlers "Killed";
 								deleteVehicle (getConnectedUAV player);
 							},
 							{},
