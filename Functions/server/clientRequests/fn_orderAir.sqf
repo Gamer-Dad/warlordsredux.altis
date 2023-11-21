@@ -64,7 +64,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 		_asset setDir _dir;
 	} else {
-		if (_class == "B_UAV_01_F" || {_class == "O_UAV_01_F"}) then {
+		if (_class == "B_UAV_01_F" || {(_class == "O_UAV_01_F") || {(_class ==  "B_UAV_06_F") || {_class ==  "O_UAV_06_F"}}}) then {
 			_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 			createVehicleCrew _asset;
 			(group _asset) deleteGroupWhenEmpty true;
