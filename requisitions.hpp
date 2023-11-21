@@ -118,7 +118,8 @@ class CfgWLRequisitionPresets
 				class B_UGV_02_Demining_F					{cost = 100;	requirements[]={};	};	// "UGAS demining"  
 				class B_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class B_UGV_01_rcws_F 						{cost = 400;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAS" 				
-				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2  
+				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2
+				class B_UAV_06_F							{cost = 1000;	requirements[]={};  };  // "AR-6"
 				class B_Ship_Gun_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 9, 0};};	// "MK45 Hammer"  
 				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 7, 0};};	// "AN/MPQ-105 Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"  
@@ -240,6 +241,7 @@ class CfgWLRequisitionPresets
 				class O_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class O_UGV_01_rcws_F						{cost = 400;	requirements[]={};	};	// "UGAV rcws"  
 				class O_UAV_01_F       						{cost = 500;    requirements[]={};  };  // AR-2
+				class O_UAV_06_F						{cost = 1000;	requirements[]={};  };  // "AR-6"
 				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 7, 0};};	// "R-750 Cronus Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";  
 				class B_SAM_System_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";  
