@@ -4,7 +4,7 @@ params ["_asset", ["_owner", objNull]];
 
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
-		_asset call APS_fnc_RegisterVehicle;
+		call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
 	};
 	_asset setSkill (0.2 + random 0.3);
@@ -21,7 +21,7 @@ if (isPlayer _owner) then {
 			false spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
-		_asset call APS_fnc_RegisterVehicle;
+		call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 		_asset enableWeaponDisassembly false;
@@ -59,7 +59,7 @@ if (isPlayer _owner) then {
 
 					if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
 						_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-						if (side _owner == east) then {
+						if (side _owner == east && {typeOf _asset == "B_Truck_01_flatbed_F"}) then {
 							_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
 							_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
 						};

@@ -10,44 +10,16 @@ if(isNull _control) exitWith {};
 disableSerialization;
 
 _value = parseNumber (ctrlText _control);
-_varName = switch (_slider) do {
-	case "inf": {"MRTM_inf"};
-	case "ground": {"MRTM_ground"};
-	case "air": {"MRTM_air"};
-	case "objects": {"MRTM_objects"};
-	case "drones": {"MRTM_drones"};
-	case "RWR1": {"MRTM_rwr1"};
-	case "RWR2": {"MRTM_rwr2"};
-	case "RWR3": {"MRTM_rwr3"};
-	case "RWR4": {"MRTM_rwr4"};
-	default {"MRTM_inf"};
-};
-switch (_varName) do {
-	case "MRTM_rwr1": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
-		missionNamespace setVariable [_varName, _value];
-		0 spawn MRTM_fnc_openMenu;
-	};
-	case "MRTM_rwr2": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
-		missionNamespace setVariable [_varName, _value];
-		0 spawn MRTM_fnc_openMenu;
-	};
-	case "MRTM_rwr3": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
-		missionNamespace setVariable [_varName, _value];
-		0 spawn MRTM_fnc_openMenu;
-	};
-	case "MRTM_rwr4": { 
-		if(_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
-		missionNamespace setVariable [_varName, _value];
-		0 spawn MRTM_fnc_openMenu;
-	};
-	default {
-		_maxRange = 4000;
-		if(_value > _maxRange || {_value < 100}) exitwith {0 spawn MRTM_fnc_openMenu;};
-		missionNamespace setVariable [_varName, _value];
-		0 spawn MRTM_fnc_updateViewDistance;
-		0 spawn MRTM_fnc_openMenu;
-	};
+_varName = format ["MRTM_%1", _slider];
+
+if (["rwr", _varName] call BIS_fnc_inString) then {
+	if (_value > 2 || {_value < 0.05}) exitwith {0 spawn MRTM_fnc_openMenu;};
+	missionNamespace setVariable [_varName, _value];
+	0 spawn MRTM_fnc_openMenu;
+} else {
+	_maxRange = 4000;
+	if(_value > _maxRange || {_value < 100}) exitwith {0 spawn MRTM_fnc_openMenu;};
+	missionNamespace setVariable [_varName, _value];
+	0 spawn MRTM_fnc_updateViewDistance;
+	0 spawn MRTM_fnc_openMenu;
 };

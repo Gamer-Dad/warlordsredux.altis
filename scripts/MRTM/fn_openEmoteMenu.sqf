@@ -23,7 +23,6 @@ lbClear 5004;
 
 private _names = getArray (missionConfigFile >> "emoteConfig" >> "emotes" >> "Names");
 private _emotes = getArray (missionConfigFile >> "emoteConfig" >> "emotes" >> "Emotes");
-
 {
 	_index = lbAdd [5004, _x];
 	lbSetData [5004, _index, (_emotes # _forEachIndex)];

@@ -1,5 +1,5 @@
 // Vehicles that use each type of APS
-apsLight = [
+_apsLight = [
 	"O_MRAP_02_hmg_F",	// Ifrit
 	"O_MRAP_02_gmg_F",
 	"B_MRAP_01_hmg_F",	// Hunter
@@ -11,7 +11,7 @@ apsLight = [
 	"I_MRAP_03_hmg_F"
 ];
 
-apsMedium = [
+_apsMedium = [
 	"O_APC_Wheeled_02_rcws_v2_F",	// Marid
 	"O_APC_Tracked_02_cannon_F",	// BTR
 	"O_APC_Tracked_02_AA_F",		// Tigris
@@ -24,7 +24,7 @@ apsMedium = [
 	"I_APC_Wheeled_03_cannon_F"		// Gorgon
 ];
 
-apsHeavy = [
+_apsHeavy = [
 	"O_MBT_02_cannon_F",			// T-100
 	"O_MBT_04_cannon_F",			// T-140
 	"O_MBT_04_command_F",
@@ -39,7 +39,7 @@ apsHeavy = [
 	"I_MBT_03_cannon_F"				// Kuma
 ];
 
-apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"];
+_apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"];
 
 // APS projectile block lists
 _heavyBlockList = [
@@ -133,14 +133,17 @@ apsEligibleProjectiles = createHashMap;
 apsVehiclesMap = createHashMap;
 {
 	apsVehiclesMap set [_x, 2];
-} forEach apsHeavy;
+} forEach _apsHeavy;
 {
 	apsVehiclesMap set [_x, 1];
-} forEach apsMedium;
+} forEach _apsMedium;
 {
 	apsVehiclesMap set [_x, 0];
-} forEach apsLight;
+} forEach _apsLight;
 
 {
 	apsVehiclesMap set [_x, 3];
-} forEach apsDazzler;
+} forEach _apsDazzler;
+
+apsAPStypes = _apsLight + _apsMedium + _apsHeavy;
+apsAPSAll = apsAPStypes + _apsDazzler;

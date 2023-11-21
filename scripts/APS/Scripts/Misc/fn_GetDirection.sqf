@@ -1,5 +1,5 @@
 private _v = _this;
-private _t = allTurrets[_v,FALSE];
+private _t = allTurrets [_v, false];
 private _d = 0;
 private _w = "";
 private _wd = [];

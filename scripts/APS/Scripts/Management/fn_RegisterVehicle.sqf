@@ -1,6 +1,4 @@
-params ["_vehicle"];
-
-_type = apsVehiclesMap getOrDefault [(typeOf _vehicle), -1];
+_type = apsVehiclesMap getOrDefault [(typeOf _asset), -1];
 _ammo = switch (_type) do {
 	case 3: { 0 };	// Dazzler
 	case 2: { 6 };	// Heavy
@@ -9,8 +7,7 @@ _ammo = switch (_type) do {
 	default { -1 };	// None
 };
 
-_vehicle setVariable ["apsType", _type, true];
+_asset setVariable ["apsType", _type, true];
 if (_ammo > 0) then {
-	_vehicle setVariable ["apsAmmo", _ammo, true];
-	_vehicle setVariable ["apsAmmoMax", _ammo, true];
+	_asset setVariable ["apsAmmo", _ammo, true];
 };

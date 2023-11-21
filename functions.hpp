@@ -248,7 +248,6 @@ class CfgFunctions {
 		class Management
 		{
 			file = "scripts\APS\Scripts\Management";
-			class BroadcastTypes {};
 			class RearmAPS {};
 			class RegisterVehicle {};
 		};
@@ -265,6 +264,7 @@ class CfgFunctions {
 			class IsVisualGuided {};
 			class MisguideMissile {};
 			class RelDir2 {};
+			class getMaxAmmmo {};
 		};
 		class Report
 		{
