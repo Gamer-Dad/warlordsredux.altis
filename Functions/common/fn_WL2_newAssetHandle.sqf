@@ -47,20 +47,22 @@ if (isPlayer _owner) then {
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
-			if (_asset isKindOf "Air") then {
-				_asset spawn BIS_fnc_WL2_sub_rearmActionAir;
-			} else {
-				_asset spawn BIS_fnc_WL2_sub_rearmAction;
-				if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
-					_asset setVariable ["dazzlerActivated", false];
-					_asset call BIS_fnc_WL2_sub_dazzlerAction;
-				};
+			if (typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}) then {
+				if (_asset isKindOf "Air" && {typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}}) then {
+					_asset spawn BIS_fnc_WL2_sub_rearmActionAir;
+				} else {
+					_asset spawn BIS_fnc_WL2_sub_rearmAction;
+					if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
+						_asset setVariable ["dazzlerActivated", false];
+						_asset call BIS_fnc_WL2_sub_dazzlerAction;
+					};
 
-				if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
-					_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-					if (side _owner == east) then {
-						_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
-						_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
+					if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
+						_asset call BIS_fnc_WL2_sub_logisticsAddAction;
+						if (side _owner == east) then {
+							_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
+							_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
+						};
 					};
 				};
 			};
