@@ -7,9 +7,9 @@ while {!BIS_WL_missionEnd} do {
 		_uid = getPlayerUID _x;
 
 		if ((serverNamespace getVariable [variable, 40]) < 50) then {
-			[_uid, 50] call BIS_fnc_WL2_fundsDatabaseWrite;
+			50 call BIS_fnc_WL2_fundsDatabaseWrite;
 		} else {
-			[_uid, (serverNamespace getVariable variable)] call BIS_fnc_WL2_fundsDatabaseWrite;
+			(serverNamespace getVariable variable) call BIS_fnc_WL2_fundsDatabaseWrite;
 		};
 	} forEach _notBlocked;
 };

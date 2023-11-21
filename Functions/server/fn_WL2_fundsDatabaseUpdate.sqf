@@ -1,6 +1,6 @@
 if !(isServer) exitWith {};
 
-params ["_database", "_playerUID"];
+params ["_database"];
 
 missionNamespace setVariable ["fundsDatabaseClients", _database];
-(owner (_playerUID call BIS_fnc_getUnitByUID)) publicVariableClient "fundsDatabaseClients";
+(owner (_uid call BIS_fnc_getUnitByUID)) publicVariableClient "fundsDatabaseClients";

@@ -8,9 +8,9 @@ serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _w
 private _uid = getPlayerUID _warlord;
 private _pFunds = (serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, -1];
 if (_pFunds == -1) then {
-	[_uid, 1000] call BIS_fnc_WL2_fundsDatabaseWrite;
+	1000 call BIS_fnc_WL2_fundsDatabaseWrite;
 } else {
-	[_uid, 0] call BIS_fnc_WL2_fundsDatabaseWrite;
+	0 call BIS_fnc_WL2_fundsDatabaseWrite;
 };
 
 _boundToAnotherTeam = false;

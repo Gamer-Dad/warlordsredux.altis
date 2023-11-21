@@ -1,4 +1,2 @@
-params ["_t"];
-
-_dir = getDirVisual _t;
+_dir = getDirVisual _x;
 _dir;
