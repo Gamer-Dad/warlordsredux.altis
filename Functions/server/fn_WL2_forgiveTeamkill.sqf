@@ -2,13 +2,11 @@
 
 params ["_teamkiller", "_forgiver"];
 
-// check to make sure script executor is forgiver
 if !(isServer) exitWith {};
 if ((owner _forgiver) != remoteExecutedOwner) exitWith {};
 
 _timestamps = _teamkiller getVariable ["BIS_WL_friendlyKillTimestamps", []];
 
-// find latest TK entry
 _newestTeamkillOnForgiver = 0;
 _newestTeamkillTime = 0;
 {
@@ -19,7 +17,6 @@ _newestTeamkillTime = 0;
 	};
 } forEach _timestamps;
 
-// delete it
 _timestamps deleteAt _newestTeamkillOnForgiver;
 _teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, owner _teamkiller]];
 
