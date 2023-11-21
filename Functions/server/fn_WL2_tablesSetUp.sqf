@@ -142,10 +142,10 @@ serverNamespace setVariable ["BIS_WL2_costs",
 		
 		["Land_BagFence_Round_F", 50], ["Land_Razorwire_F", 50], ["Land_DragonsTeeth_01_1x1_new_F", 50], ["CamoNet_OPFOR_big_F", 100], ["CamoNet_BLUFOR_big_F", 100], ["Land_IRMaskingCover_01_F", 200],
 		["B_HMG_01_F", 150], ["B_HMG_01_high_F", 420], ["B_GMG_01_F", 200], ["B_GMG_01_high_F", 250], ["B_HMG_01_A_F", 500], ["B_GMG_01_A_F", 650], ["B_static_AT_F", 300], ["B_static_AA_F", 300], ["B_Mortar_01_F", 3000],
-		["B_UGV_02_Demining_F", 100], ["B_UGV_01_F", 150], ["B_UGV_01_rcws_F", 400], ["B_UAV_01_F", 500], ["B_Ship_Gun_01_F", 10000], ["B_Radar_System_01_F", 1000],
+		["B_UGV_02_Demining_F", 100], ["B_UGV_01_F", 150], ["B_UGV_01_rcws_F", 400], ["B_UAV_01_F", 500], ["B_UAV_06_F", 1000], ["B_Ship_Gun_01_F", 10000], ["B_Radar_System_01_F", 1000],
 		["B_AAA_System_01_F", 3500], ["B_SAM_System_01_F", 10000], ["B_SAM_System_03_F", 8000], ["B_SAM_System_02_F", 15000], ["B_Ship_MRLS_01_F", 30000],
 		["O_HMG_01_F", 150], ["O_HMG_01_high_F", 200], ["O_GMG_01_F", 200], ["O_GMG_01_high_F", 250], ["O_HMG_01_A_F", 500], ["O_GMG_01_A_F", 650], ["O_static_AT_F", 300], ["O_static_AA_F", 300], ["O_Mortar_01_F", 3000],
-		["O_UGV_02_Demining_F", 100], ["O_UGV_01_F", 150], ["O_UGV_01_rcws_F", 400], ["O_UAV_01_F", 500], ["O_Radar_System_02_F", 1000], ["O_SAM_System_04_F", 8000]
+		["O_UGV_02_Demining_F", 100], ["O_UGV_01_F", 150], ["O_UGV_01_rcws_F", 400], ["O_UAV_01_F", 500], ["O_UAV_06_F", 1000], ["O_Radar_System_02_F", 1000], ["O_SAM_System_04_F", 8000]
 	]
 ];
 
