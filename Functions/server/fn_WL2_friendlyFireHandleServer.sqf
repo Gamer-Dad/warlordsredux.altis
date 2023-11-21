@@ -7,7 +7,6 @@ if (_unit isKindOf "Man") then {
 		_owner = owner _responsibleLeader;
 
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [[serverTime, getPlayerUID _unit]], [2, _owner]];
-		[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", _owner];
 		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", owner _unit];
 
 		_responsibleLeader spawn {
@@ -32,7 +31,6 @@ if (_unit isKindOf "Man") then {
 	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
 		_owner = owner _responsibleLeader;
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, getPlayerUID _unit]]), [2, _owner]];
-		[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", _owner];
 		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", owner _unit];
 
 		_responsibleLeader spawn {

@@ -1,25 +1,5 @@
 class CfgHints
 {
-	class common
-	{
-		displayName = "Common Controls";
-		class friendlyFire
-		{
-			displayName = $STR_A3_WL_FF_Hint_Name;
-			displayNameShort = "";
-			description = $STR_A3_WL_FF_Hint;
-			tip = $STR_A3_WL_FF_Hint_01;
-			arguments[] =
-			{
-				{{"TacticalPing"}},
-				"name player",
-				"format ['%1', (3 - (count (player getVariable ['BIS_WL_friendlyKillTimestamps', []])))]"
-			};
-			image = ;
-			noImage = true;
-		};
-	};
-
 	class voiceWarningSystem
 	{
 		displayName = "Controls";
