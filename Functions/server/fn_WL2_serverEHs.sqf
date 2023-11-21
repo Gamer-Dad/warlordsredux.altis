@@ -48,7 +48,9 @@ addMissionEventHandler ["EntityKilled", {
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
 	
-	if ((isPlayer _owner) && {(_channelNumber == 0)}) then {
+	_list = getArray (missionConfigFile >> "adminFilter");
+	_return = ((_list findIf {[_x, (markerText _marker)] call BIS_fnc_inString}) != -1);
+	if (((isPlayer _owner) && {(_channelNumber == 0)}) || {_return}) then {
 		deleteMarker _marker;
 	};
 }];
