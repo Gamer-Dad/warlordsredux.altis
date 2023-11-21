@@ -23,8 +23,8 @@ if (isPlayer _warlord) then {
 		(serverNamespace getVariable format ["BIS_WL_boundTo%1", side group _warlord]) pushBackUnique _uid;
 
 		_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", _uid];
-		if ((missionNamespace getVariable _friendlyFireVarName) > serverTime) then {
-			[(missionNamespace getVariable _friendlyFireVarName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", (owner _warlord)];
+		if ((serverNamespace getVariable _friendlyFireVarName) > serverTime) then {
+			[(serverNamespace getVariable _friendlyFireVarName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", (owner _warlord)];
 		};
 	} else {
 		_warlord setVariable ["BIS_WL_ignore", true, true];

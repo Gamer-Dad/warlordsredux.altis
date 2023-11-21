@@ -5,9 +5,10 @@ if ((group _unit) == (group _responsibleLeader)) exitWith {};
 if (_unit isKindOf "Man") then {
 	if (side (group _unit) == side (group _responsibleLeader)) then {
 		_owner = owner _responsibleLeader;
-		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [[serverTime, owner _unit]], [2, _owner]];
+
+		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [[serverTime, getPlayerUID _unit]], [2, _owner]];
 		[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", _owner];
-		[_responsibleLeader] remoteExec ["BIS_fnc_WL2_askForgiveness", owner _unit];
+		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", owner _unit];
 
 		_responsibleLeader spawn {
 			params ["_responsibleLeader"];
@@ -15,8 +16,8 @@ if (_unit isKindOf "Man") then {
 			_owner = owner _responsibleLeader;
 			if ((count (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps")) >= 3) then {
 				_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
-				missionNamespace setVariable [_varName, serverTime + 1800];
-				[(missionNamespace getVariable _varName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", _owner];
+				serverNamespace setVariable [_varName, serverTime + 1800];
+				[(serverNamespace getVariable _varName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", _owner];
 			};
 		};
 	};
@@ -30,13 +31,19 @@ if (_unit isKindOf "Man") then {
 	
 	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
 		_owner = owner _responsibleLeader;
-		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, owner _unit]]), [2, _owner]];
+		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, getPlayerUID _unit]]), [2, _owner]];
 		[["Common", "friendlyFire"], 0, "", 20, "", false, true, false, true] remoteExec ["BIS_fnc_advHint", _owner];
+		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", owner _unit];
 
-		if ((count (_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []])) >= 3) then {
-			_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
-			missionNamespace setVariable [_varName, serverTime + 1800];
-			[(missionNamespace getVariable _varName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", _owner];
+		_responsibleLeader spawn {
+			params ["_responsibleLeader"];
+			sleep 30;
+			_owner = owner _responsibleLeader;
+			if ((count (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps")) >= 3) then {
+				_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _responsibleLeader];
+				serverNamespace setVariable [_varName, serverTime + 1800];
+				[(serverNamespace getVariable _varName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", _owner];
+			};
 		};
 	};
 };

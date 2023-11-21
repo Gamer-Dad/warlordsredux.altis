@@ -12,7 +12,7 @@ _timestamps = _teamkiller getVariable ["BIS_WL_friendlyKillTimestamps", []];
 _newestTeamkillOnForgiver = 0;
 _newestTeamkillTime = 0;
 {
-	if ((_x # 1) != (owner _forgiver)) then { continue };
+	if ((_x # 1) != (getPlayerUID _forgiver)) then { continue };
 	if (_newestTeamkillTime < _x # 0) then {
 		_newestTeamkillTime = _x # 0;
 		_newestTeamkillOnForgiver = _forEachIndex;

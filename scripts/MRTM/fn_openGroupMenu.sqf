@@ -19,7 +19,7 @@ if (isNull (findDisplay 4000) && {_open}) then {
         private _players = 0;
         private _cycles = 0;
         while {!(isNull (findDisplay 4000))} do {
-            if ((count (allPlayers select {side group _x == side group player})) != _players || {_cycles >= 20}) then {
+            if ((count (allPlayers select {side group _x == side group player})) != _players || {_cycles >= 10}) then {
                 _cycles = 0;
                 _players = count (allPlayers select {side group _x == side group player});
                 false spawn MRTM_fnc_openGroupMenu;
