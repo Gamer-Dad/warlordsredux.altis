@@ -151,16 +151,6 @@ call BIS_fnc_WL2_targetResetHandle;
 private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF_Earplugs.sqf";
 0 spawn _fncEarPlugs;
 
-0 spawn {
-	_t = serverTime + 10;
-	waitUntil {sleep 0.1; ((serverTime > _t) || {!(isNil {missionNamespace getVariable "devMRTM"})})};
-	if !(isNil {missionNamespace getVariable "devMRTM"}) then {
-		_mrtm = (missionNamespace getVariable "devMRTM") # 0;
-		_seat = (missionNamespace getVariable "devMRTM") # 1;
-		[_mrtm, "SIT_AT_TABLE", "ASIS", _seat] call BIS_fnc_ambientAnim;
-	};
-};
-
 ["client_init"] call BIS_fnc_endLoadingScreen;
 "Initialized" call BIS_fnc_WL2_announcer;
 [toUpper localize "STR_A3_WL_popup_init"] spawn BIS_fnc_WL2_smoothText;
