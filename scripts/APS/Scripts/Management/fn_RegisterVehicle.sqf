@@ -1,10 +1,10 @@
 _type = apsVehiclesMap getOrDefault [(typeOf _asset), -1];
 _ammo = switch (_type) do {
-	case 3: { 0 };	// Dazzler
-	case 2: { 6 };	// Heavy
-	case 1: { 4 };	// Medium
-	case 0: { 2 };	// Light
-	default { -1 };	// None
+	case 3: { 0 };
+	case 2: { 6 };
+	case 1: { 4 };
+	case 0: { 2 };
+	default { -1 };
 };
 
 _asset setVariable ["apsType", _type, true];

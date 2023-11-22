@@ -102,22 +102,20 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 	];
 } forEach (allPlayers select {(side group _x == _side) && {(isNull objectParent _x) && {(alive _x)}}});
 {
-	if (!isNull _x) then {
-		_size = call BIS_fnc_iconSize;
-		_m drawIcon [
-			call BIS_fnc_iconType,
-			call BIS_fnc_iconColor,
-			call BIS_fnc_getPos,
-			_size,
-			_size,
-			call BIS_fnc_getDir,
-			_x call BIS_fnc_iconText,
-			1,
-			0.043,
-			"PuristaBold",
-			"right"
-		];
-	};		
+	_size = call BIS_fnc_iconSize;
+	_m drawIcon [
+		call BIS_fnc_iconType,
+		call BIS_fnc_iconColor,
+		call BIS_fnc_getPos,
+		_size,
+		_size,
+		call BIS_fnc_getDir,
+		_x call BIS_fnc_iconText,
+		1,
+		0.043,
+		"PuristaBold",
+		"right"
+	];
 } forEach ((allUnits) select {(side group (crew _x select 0) == _side) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
 {
 	_size = call BIS_fnc_iconSize;
@@ -136,40 +134,36 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 	];		
 } forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});
 {
-	if (!isNull _x) then {
-		_size = call BIS_fnc_iconSize;
-		_m drawIcon [
-			call BIS_fnc_iconType,
-			call BIS_fnc_iconColor,
-			call BIS_fnc_getPos,
-			_size,
-			_size,
-			call BIS_fnc_getDir,
-			_x call BIS_fnc_iconText,
-			1,
-			0.043,
-			"PuristaBold",
-			"right"
-		];
-	};
-} forEach ((entities [["LandVehicle", "Air", "Ship"], ["Logic"], false, true]) select {alive _x && {([((getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "side")) == _sideN), (side group ((crew _x) # 0) == _side)] select (count (crew _x) > 0)) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F")}}}});
+	_size = call BIS_fnc_iconSize;
+	_m drawIcon [
+		call BIS_fnc_iconType,
+		call BIS_fnc_iconColor,
+		call BIS_fnc_getPos,
+		_size,
+		_size,
+		call BIS_fnc_getDir,
+		_x call BIS_fnc_iconText,
+		1,
+		0.043,
+		"PuristaBold",
+		"right"
+	];
+} forEach ((entities [["LandVehicle", "Air", "Ship"], ["Logic"], false, true]) select {alive _x && {([((getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "side")) == _sideN), (side group ((crew _x) # 0) == _side)] select (count (crew _x) > 0)) && {!((typeOf _x) in ["B_Truck_01_medical_F", "O_Truck_03_medical_F", "O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"])}}});
 {
-	if (!isNull _x) then {
-		_size = call BIS_fnc_iconSize;
-		_m drawIcon [
-			call BIS_fnc_iconType,
-			call BIS_fnc_iconColor,
-			call BIS_fnc_getPos,
-			_size,
-			_size,
-			call BIS_fnc_getDir,
-			_x call BIS_fnc_iconText,
-			1,
-			0.043,
-			"PuristaBold",
-			"right"
-		];
-	};
+	_size = call BIS_fnc_iconSize;
+	_m drawIcon [
+		call BIS_fnc_iconType,
+		call BIS_fnc_iconColor,
+		call BIS_fnc_getPos,
+		_size,
+		_size,
+		call BIS_fnc_getDir,
+		_x call BIS_fnc_iconText,
+		1,
+		0.043,
+		"PuristaBold",
+		"right"
+	];
 } forEach ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 if (_side == west) then {
 	{
