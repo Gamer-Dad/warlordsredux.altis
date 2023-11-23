@@ -1,3 +1,13 @@
+BIS_fnc_getDir = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_getDir.sqf";
+BIS_fnc_getPos = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_getPos.sqf";
+BIS_fnc_iconColor = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconColor.sqf";
+BIS_fnc_iconDrawGPS = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconDrawGPS.sqf";
+BIS_fnc_iconDrawMap = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconDrawMap.sqf";
+BIS_fnc_iconSize = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconSize.sqf";
+BIS_fnc_iconText = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconText.sqf";
+BIS_fnc_iconTextSectorScan = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconTextSectorScan.sqf";
+BIS_fnc_iconType = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconType.sqf";
+
 waituntil {uiSleep 0.1; !isnull (findDisplay 46)};
 
 waitUntil {

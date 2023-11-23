@@ -213,7 +213,7 @@ addMissionEventHandler ["HandleChatMessage", {
 };
 
 missionNamespace setVariable ["BIS_WL2_rearmTimers", 
-	createHashMapFromArray [
+	compileFinal createHashMapFromArray [
 		["B_Mortar_01_F", 900], ["O_Mortar_01_F", 900], ["B_MBT_01_arty_F", 1800], 
 		["O_MBT_02_arty_F", 1800], ["B_MBT_01_mlrs_F", 1800], ["I_Truck_02_MRL_F", 1800], 
 		["B_Ship_Gun_01_F", 2700], ["B_Ship_MRLS_01_F", 2700],

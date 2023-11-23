@@ -14,6 +14,40 @@ west setFriend [civilian, 1];
 east setFriend [civilian, 1];
 resistance setFriend [civilian, 1];
 
+BIS_fnc_WL2_assetRelevanceCheck = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_assetRelevanceCheck.sqf";
+BIS_fnc_WL2_calcImbalance = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_calcImbalance.sqf";
+BIS_fnc_WL2_changeSectorOwnership = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_changeSectorOwnerShip.sqf";
+BIS_fnc_WL2_createUAVCrew = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_createUAVCrew.sqf";
+BIS_fnc_WL2_detectNewPlayers = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_detectNewPlayers.sqf";
+BIS_fnc_WL2_forfeitHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_forfeitHandleServer.sqf";
+BIS_fnc_WL2_friendlyFireHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_friendlyFireHandleServer.sqf";
+BIS_fnc_WL2_fundsDatabaseUpdate = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_fundsDatabaseUpdate.sqf";
+BIS_fnc_WL2_fundsDatabaseWrite = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_fundsDatabaseWrite.sqf";
+BIS_fnc_WL2_garbageCollector = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_garbageCollector.sqf";
+BIS_fnc_WL2_handleClientRequest = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_handleClientRequest.sqf";
+BIS_fnc_WL2_income = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_income.sqf";
+BIS_fnc_WL2_incomePayoff = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_incomePayoff.sqf";
+BIS_fnc_WL2_killRewardHandle = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_killRewardHandle.sqf";
+BIS_fnc_WL2_populateSector = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_populateSector.sqf";
+BIS_fnc_WL2_processRunways = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_processRunways.sqf";
+BIS_fnc_WL2_selectTarget = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_selectTarget.sqf";
+BIS_fnc_WL2_serverEHs = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_serverEHs.sqf";
+BIS_fnc_WL2_setupNewWarlord = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_setupNewWarlord.sqf";
+BIS_fnc_WL2_tablesSetUp = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_tablesSetUp.sqf";
+BIS_fnc_WL2_targetResetHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_targetResetHandleServer.sqf";
+BIS_fnc_WL2_targetSelectionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_targetSelectionHandleServer.sqf";
+BIS_fnc_WL2_zoneRestrictionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_zoneRestrictionHandleServer.sqf";
+
+BIS_fnc_WL2_getInfantry = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getInfantry.sqf";
+BIS_fnc_WL2_getVehicles = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getVehicles.sqf";
+BIS_fnc_WL2_sectorCaptureHandle = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorCaptureHandle.sqf";
+BIS_fnc_WL2_sectorsInitServer = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorsInitServer.sqf";
+
+BIS_fnc_orderAir = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderAir.sqf";
+BIS_fnc_orderDefence = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderDefence.sqf";
+BIS_fnc_orderGround = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderGround.sqf";
+BIS_fnc_orderNaval = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderNaval.sqf";
+
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;
 

@@ -1,6 +1,13 @@
 BIS_WL_allSectors = (entities "Logic") select {count synchronizedObjects _x > 0};
 
-call compile preprocessFileLineNumbers "TEMP.sqf";
+{
+	_x setVariable ["objectArea", triggerArea ((_x nearObjects ["EmptyDetector", 100]) # 0)];
+	if (isNil {_x getVariable "BIS_WL_services"}) then {
+		_x setVariable ["BIS_WL_services", []];
+	};
+} forEach BIS_WL_allSectors;
+
+{_x enableSimulation false} forEach allMissionObjects "EmptyDetector";
 
 "common" call BIS_fnc_WL2_varsInit;
 
@@ -16,6 +23,7 @@ enableSaving [false, false];
 } forEach BIS_WL_allSectors;
 
 if (isServer) then {
+	BIS_fnc_WL2_initServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_initServer.sqf";
 	call BIS_fnc_WL2_initServer;
 } else {
 	waitUntil {{isNil _x} count [
@@ -38,4 +46,7 @@ if (isServer) then {
 	} forEach BIS_WL_allSectors;
 };
 
-if (!isDedicated && hasInterface) then {call BIS_fnc_WL2_initClient};
+if (!isDedicated && hasInterface) then {
+	BIS_fnc_WL2_initClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_initClient.sqf";
+	call BIS_fnc_WL2_initClient
+};

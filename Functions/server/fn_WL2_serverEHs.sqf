@@ -61,6 +61,25 @@ addMissionEventHandler ["MarkerCreated", {
 	};
 }];
 
+//Mine stuff
+BIS_fnc_HandleAPERSBoundingMine_Range_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleAPERSBoundingMine_Range_Mag.sqf";
+BIS_fnc_HandleAPERSMine_Range_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleAPERSMine_Range_Ammo.sqf";
+BIS_fnc_HandleAPERSMineDispenser_Mine_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleAPERSMineDispenser_Mine_Ammo.sqf";
+BIS_fnc_HandleAPERSTripMine_Wire_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleAPERSTripMine_Wire_Ammo.sqf";
+BIS_fnc_HandleAPERSTripMine_Wire_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleAPERSTripMine_Wire_Mag.sqf";
+BIS_fnc_HandleATMine_Range_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleATMine_Range_Ammo.sqf";
+BIS_fnc_HandleClaymoreDirectionalMine_Remote_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleClaymoreDirectionalMine_Remote_Ammo.sqf";
+BIS_fnc_HandleDemoCharge_Remote_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleDemoCharge_Remote_Ammo.sqf";
+BIS_fnc_HandleDemoCharge_Remote_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleDemoCharge_Remote_Mag.sqf";
+BIS_fnc_HandleIEDLandBig_Remote_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleIEDLandBig_Remote_Mag.sqf";
+BIS_fnc_HandleIEDLandSmall_Remote_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleIEDLandSmall_Remote_Mag.sqf";
+BIS_fnc_HandleIEDUrbanBig_Remote_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleIEDUrbanBig_Remote_Mag.sqf";
+BIS_fnc_HandleIEDUrbanSmall_Remote_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleIEDUrbanSmall_Remote_Mag.sqf";
+BIS_fnc_HandleSatchelCharge_Remote_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleSatchelCharge_Remote_Ammo.sqf";
+BIS_fnc_HandleSatchelCharge_Remote_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleSatchelCharge_Remote_Mag.sqf";
+BIS_fnc_HandleSLAMDirectionalMine_Wire_Ammo = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleSLAMDirectionalMine_Wire_Ammo.sqf";
+BIS_fnc_HandleSLAMDirectionalMine_Wire_Mag = compileFinal preprocessFileLineNumbers "Functions\server\mineCleanup\fn_HandleSLAMDirectionalMine_Wire_Mag.sqf";
+
 addMissionEventHandler ["EntityCreated", {
   params ["_entity"];
   if (isClass (configFile >> "CfgAmmo" >> (typeOf _entity))) then {

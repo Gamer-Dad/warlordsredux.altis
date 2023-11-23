@@ -26,7 +26,6 @@ if (_unit isKindOf "Man") then {
 	_sideOwner = side (group (_uid call BIS_fnc_getUnitByUID));
 	_crew = ((crew _unit) select {alive _x});
 	_sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
-	[_sideOwner, _sideCrew, _uid, _crew, ((count _crew) > 0), (if ((count _crew) > 0) then {(side (group (_crew # 0)))} else {"empty"}), (_sideOwner == side (group _responsibleLeader))] remoteExec ["BIS_fnc_WL2_logFF", (owner _responsibleLeader)];
 	
 	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
 		_owner = owner _responsibleLeader;
