@@ -64,6 +64,7 @@ class CfgRemoteExec {
 		class BIS_fnc_debugConsoleExec {allowedTargets = 0; jip = 0;};
 		class BIS_fnc_setIdentity {allowedTargets = 0; jip = 0;};
 		class BIS_fnc_curatorRespawn {allowedTargets = 0; jip = 0;};
+		class BIs_fnc_fire {allowedTargets = 0; jip = 0;};
 	};
 
 	class Commands {

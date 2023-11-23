@@ -167,7 +167,7 @@ switch (_class) do {
 						_tooltip = localize "STR_A3_WL_defence_restr1";
 					};
 					if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-						if ((count (WL_PLAYER_VEHS select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1) && {alive _x}})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
+						if ((count (WL_PLAYER_VEHS select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 							_ret = false;
 							_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 						};
