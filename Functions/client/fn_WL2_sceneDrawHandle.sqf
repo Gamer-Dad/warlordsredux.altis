@@ -51,7 +51,7 @@ addMissionEventHandler ["Draw3D", {
 			"RobotoCondensedBold",
 			"center"
 		];
-	} forEach ((allPlayers) select {alive _x && {player distanceSqr _x < 20000 && {_x != player} && {side group _x == side group player}}});
+	} forEach ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {side group player == side group _x && {alive _x}}});
 	{
 		drawIcon3D [
 			"\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa",
