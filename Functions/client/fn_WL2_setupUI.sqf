@@ -381,7 +381,7 @@ if (_displayClass == "OSD") then {
 						{		
 							{
 								moveOut _x;
-							} forEach ((crew _x) select {(_x != player) && {player != ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}});
+							} forEach ((crew _x) select {(_x != player) && {(getPlayerUID player) != (_x getVariable ["BIS_WL_ownerAsset", "123"])}});
 						} forEach (WL_PLAYER_VEHS select {alive _x});
 					};
 					case "RemoveUnits": {
