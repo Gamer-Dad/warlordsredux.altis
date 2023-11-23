@@ -8,16 +8,13 @@ private _removeActionID = _asset addAction [
 		_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
 
 		if (_result) exitWith {
-			if (!isServer) then {
-				_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-				missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_this # 0]];
-				publicVariableServer _ownedVehiclesVarName;
+			if (unitIsUAV (_this # 0)) then {
+				private _grp = group effectiveCommander (_this # 0);
+				{(_this # 0) deleteVehicleCrew _x} forEach crew (_this # 0);
+				deleteGroup _grp;
 			};
-			if ((_this # 0) isKindOf "Man") then {
-				deleteVehicle (_this # 0);
-			} else {
-				(_this # 0) spawn BIS_fnc_WL2_sub_deleteAsset;
-			};
+			
+			deleteVehicle (_this # 0);
 		};
 	},
 	[],

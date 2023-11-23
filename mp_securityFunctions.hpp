@@ -8,10 +8,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class BIS_fnc_WL2_sub_deleteAsset {
-			allowedTargets = 2;
-		};
-
 		class APS_fnc_Generic {
 			allowedTargets = 2;
 		};

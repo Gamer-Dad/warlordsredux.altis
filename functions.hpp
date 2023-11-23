@@ -113,7 +113,6 @@ class CfgFunctions {
 		{
     		file = "Functions\subroutines";
     		class WL2_sub_arsenalSetup {};
-			class WL2_sub_deleteAsset {};
 			class WL2_sub_purchaseMenuAssetAvailability {};
 			class WL2_sub_purchaseMenuGetUIScale {};
 			class WL2_sub_purchaseMenuHandleDLC {};

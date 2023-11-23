@@ -45,22 +45,23 @@ addMissionEventHandler ["Map", {
 
 		MAP_CONTROL_CLICK = addMissionEventHandler ["MapSingleClick", {
 			params ["_units", "_pos", "_alt", "_shift"];
+			_asset = BIS_WL_mapAssetTarget;
 			if (_alt && _shift) then {
-				if !(isNull BIS_WL_mapAssetTarget) then {
+				if !(isNull _asset) then {
 					_vehicles = (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]);
-					if ((BIS_WL_mapAssetTarget in _vehicles) && count crew BIS_WL_mapAssetTarget > 0) then {
-						if (getNumber (configFile >> "CfgVehicles" >> (typeOf BIS_WL_mapAssetTarget) >> "isUav") == 1) then {
-							[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
+					if ((_asset in _vehicles) && count crew _asset > 0) then {
+						if (unitIsUAV _asset) then {
+							_asset spawn BIS_fnc_WL2_deleteAssetFromMap;
 						} else {
-							if ((crew BIS_WL_mapAssetTarget) findIf {alive _x} != -1) then {
+							if ((crew _asset) findIf {alive _x} != -1) then {
 								playSound "AddItemFailed";
 								[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;				
 							} else {
-								[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
+								_asset spawn BIS_fnc_WL2_deleteAssetFromMap;
 							};
 						};
 					} else {
-						[BIS_WL_mapAssetTarget] spawn BIS_fnc_WL2_deleteAssetFromMap;
+						_asset spawn BIS_fnc_WL2_deleteAssetFromMap;
 					};
 				};
 			};

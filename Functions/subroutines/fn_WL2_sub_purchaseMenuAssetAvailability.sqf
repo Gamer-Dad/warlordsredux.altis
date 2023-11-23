@@ -145,7 +145,7 @@ switch (_class) do {
 		if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {(player getVariable ["BIS_WL_isOrdering", false])}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 		if (_category == "Aircraft") exitWith {
 			if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-				if (({getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1 && {alive _x}} count WL_PLAYER_VEHS) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
+				if (({(unitIsUAV _x) && {alive _x}} count WL_PLAYER_VEHS) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 					_ret = false;
 					_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 				};

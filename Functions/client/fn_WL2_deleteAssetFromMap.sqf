@@ -16,11 +16,13 @@ if (_result) then {
 		player connectTerminalToUAV objNull;
 	};
 
-	if (_target isKindOf "Man") then {
-		deleteVehicle _target;
-	} else {
-		_target spawn BIS_fnc_WL2_sub_deleteAsset;
+	if (unitIsUAV _target) then {
+		private _grp = group effectiveCommander _target;
+		{_target deleteVehicleCrew _x} forEach crew _target;
+		deleteGroup _grp;
 	};
+	
+	deleteVehicle _target;
 	((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlShow false;
 	((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
 } else {
