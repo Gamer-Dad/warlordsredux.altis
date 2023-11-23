@@ -27,7 +27,6 @@ private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilen
 	"-Empty friendly vehicles show up on map.", lineBreak,
 	"-Map markers are now filtered for slurs.", lineBreak,
 	"-AI regeneration is reworked. No instant ai refreshing anymore.", lineBreak,
-	"-", lineBreak,
 	"-Fixed not beeing able to kick people out of vehicle.", lineBreak,
 	"-Fixed T-100x not beeing able to fire the main cannon.", lineBreak,
 	"-Fixed enemy device truck showing up on map.", lineBreak,
