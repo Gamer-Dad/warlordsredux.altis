@@ -93,7 +93,6 @@ class CfgFunctions {
     	class Common {
     		file = "Functions\common";
     		class WL2_findSpawnPositions {};
-			class WL2_generateVariableName {};
 			class WL2_getRespawnMarkers {};
 			class WL2_getSideBase {};
 			class WL2_handleRespawnMarkers {};

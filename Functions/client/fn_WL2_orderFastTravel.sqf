@@ -32,12 +32,12 @@ if (_toContested) then {
 	} else {
 		(_area # 0) max (_area # 1);
 	});
-	_marker = createMarkerLocal [call BIS_fnc_WL2_generateVariableName, [WL_TARGET_FRIENDLY, _size + WL_FAST_TRAVEL_OFFSET, WL_TARGET_FRIENDLY getDir _start] call BIS_fnc_relPos];
+	_marker = createMarkerLocal ["localMarker", [WL_TARGET_FRIENDLY, _size + WL_FAST_TRAVEL_OFFSET, WL_TARGET_FRIENDLY getDir _start] call BIS_fnc_relPos];
 	_marker setMarkerShapeLocal "RECTANGLE";
 	_marker setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 	_marker setMarkerDirLocal (WL_TARGET_FRIENDLY getDir _start);
 	_marker setMarkerSizeLocal [_size, WL_FAST_TRAVEL_RANGE_AXIS];
-	_markerText = createMarkerLocal [call BIS_fnc_WL2_generateVariableName, markerPos _marker];
+	_markerText = createMarkerLocal ["localMarkerText", markerPos _marker];
 	_markerText setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 	_markerText setMarkerSizeLocal [0, 0];
 	_markerText setMarkerTypeLocal "mil_dot";
@@ -64,7 +64,7 @@ if (isNull BIS_WL_targetSector) exitWith {
 
 if (_toContested) then {
 	titleCut ["", "BLACK OUT", 1];
-	openMap [FALSE, FALSE];
+	openMap [false, false];
 	private _destination = (_marker call BIS_fnc_WL2_findSpawnPositions) select {private _pos = _x; BIS_WL_allSectors findIf {_pos inArea ((_x getVariable "BIS_WL_markers") # 2)} == -1};
 	
 	if (count _destination > 0) then {
@@ -98,7 +98,7 @@ if (_toContested) then {
 
 } else {
 	titleCut ["", "BLACK OUT", 1];
-	openMap [FALSE, FALSE];
+	openMap [false, false];
 
 	private _destination = BIS_WL_targetSector call BIS_fnc_WL2_findSpawnPositions;
 	if (count _destination > 0) then {_destination = selectRandom _destination} else {position BIS_WL_targetSector};
