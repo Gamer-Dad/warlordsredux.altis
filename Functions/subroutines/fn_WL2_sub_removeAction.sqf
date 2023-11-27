@@ -22,7 +22,7 @@ private _removeActionID = _asset addAction [
 	false,
 	true,
 	"",
-	"vehicle _this != _target && {_this == (_target getVariable ['BIS_WL_ownerAsset', '123'])}",
+	"vehicle _this != _target && {getPlayerUID _this == (_target getVariable ['BIS_WL_ownerAsset', '123'])}",
 	30,
 	false
 ];
