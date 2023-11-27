@@ -140,6 +140,7 @@ if (isPlayer _owner) then {
 								_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos (getConnectedUAVUnit player)), [], 0, "FLY"]; 
 								(getConnectedUAVUnit player) removeAllEventHandlers "Killed";
 								deleteVehicle (getConnectedUAV player);
+								triggerAmmo _expl;
 							},
 							{},
 							[],
