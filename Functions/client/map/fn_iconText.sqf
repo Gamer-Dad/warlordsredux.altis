@@ -5,16 +5,15 @@ _control = (findDisplay 12) displayCtrl 51;
 _continue = if (_gps) then {true} else {(ctrlMapScale _control) < 0.3};
 
 if (_continue) then {
-	_name = (name _t);
-
 	if ((!(alive _t)) && {_t isKindOf 'CAManBase'}) then {
-		_text = format ["%1 [K.I.A.]", _name];
+		_name = (name _t);
+		_text = format ["%1 [K.I.A.]", (name _t)];
 	} else {
-		if (vehicle _t isKindOf 'CAManBase') then {
+		if ((vehicle _t) isKindOf 'CAManBase') then {
 			if (isPlayer _t) then {
-				_text = _name;
+				_text = (name _t);
 			} else {
-				_text = format ["%1 [AI]", _name];
+				_text = format ["%1 [AI]", (name _t)];
 			};
 		} else {
 			_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
