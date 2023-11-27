@@ -125,7 +125,7 @@ if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
 	[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;	
 };
 
-if !((side group player) in BIS_WL_competingSides) exitWith {
+if !(playerSide in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
@@ -161,7 +161,7 @@ private _specialStateArray = (BIS_WL_sectorsArray # 6) + (BIS_WL_sectorsArray # 
 } forEach BIS_WL_allSectors;
 
 if !(isServer) then {
-	BIS_WL_playerSide call BIS_fnc_WL2_parsePurchaseList;
+	playerSide call BIS_fnc_WL2_parsePurchaseList;
 };
 
 0 spawn BIS_fnc_WL2_sectorCaptureStatus;
@@ -172,7 +172,7 @@ setGroupIconsVisible [true, false];
 
 _mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enemyBase];
 _mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;
-_mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position ((side group player) call BIS_fnc_WL2_getSideBase)];
+_mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position (playerSide call BIS_fnc_WL2_getSideBase)];
 _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 
 {
@@ -188,7 +188,7 @@ call BIS_fnc_WL2_sub_arsenalSetup;
 
 0 spawn {
 	waitUntil {uiSleep 0.1; !isNull (uiNamespace getVariable ["BIS_WL_mapControl", controlNull])};
-	(uiNamespace getVariable ["BIS_WL_mapControl", controlNull]) ctrlMapAnimAdd [0, 0.35, ((side group player) call BIS_fnc_WL2_getSideBase)];
+	(uiNamespace getVariable ["BIS_WL_mapControl", controlNull]) ctrlMapAnimAdd [0, 0.35, (playerSide call BIS_fnc_WL2_getSideBase)];
 	ctrlMapAnimCommit (uiNamespace getVariable ["BIS_WL_mapControl", controlNull]);
 };
 
@@ -205,7 +205,7 @@ call BIS_fnc_WL2_targetResetHandle;
 
 
 0 spawn {
-	waitUntil {sleep 1; isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])};
+	waitUntil {sleep 1; isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", playerSide])};
 	_t = serverTime + 10;
 	waitUntil {sleep 0.25; serverTime > _t || {visibleMap}};
 	if !(visibleMap) then {
@@ -239,7 +239,7 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 0 spawn BIS_fnc_WL2_welcome;
 
 0 spawn {
-	_markers = (side group player) call BIS_fnc_WL2_getRespawnMarkers;
+	_markers = playerSide call BIS_fnc_WL2_getRespawnMarkers;
 	_respawnPos = markerPos selectRandom _markers;
 	while {player distance2D _respawnPos > 300} do {
 		player setVehiclePosition [_respawnPos, [], 0, "NONE"];

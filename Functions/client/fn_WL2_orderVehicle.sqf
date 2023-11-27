@@ -49,7 +49,7 @@ if (_class isKindOf "Man") then {
 			{vehicle player != player || 
 			{!alive player || 
 			{lifeState player == "INCAPACITATED" || 
-			{(count ((allPlayers inAreaArray [player, 100, 100]) select {(_x != player) && {(side group player != side group _x) && {alive _x}}}) > 0) || 
+			{(count ((allPlayers inAreaArray [player, 100, 100]) select {(_x != player) && {(playerSide != side group _x) && {alive _x}}}) > 0) || 
 			{(getPosATL player) select 2 > 1 || 
 			{(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
 		}}}}}}}};

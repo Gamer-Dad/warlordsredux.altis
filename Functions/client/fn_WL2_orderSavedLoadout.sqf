@@ -7,7 +7,7 @@ params ["_event"];
 if (_event == "save") then {
 	BIS_WL_savedLoadout = +getUnitLoadout player;
 	[toUpper localize "STR_A3_WL_loadout_saved"] spawn BIS_fnc_WL2_smoothText;
-	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
+	private _varName = format ["BIS_WL_purchasable_%1", playerSide];
 	private _gearArr = (missionNamespace getVariable _varName) # 5;
 	private _savedLoadoutArr = _gearArr # 2;
 	private _text = _savedLoadoutArr # 5;

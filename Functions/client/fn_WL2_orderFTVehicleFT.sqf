@@ -1,6 +1,6 @@
 "RequestMenu_close" call BIS_fnc_WL2_setupUI;
 
-private _side = [west, east] find (side group player);
+private _side = [west, east] find playerSide;
 private _vic = ["B_Truck_01_medical_F", "O_Truck_03_medical_F"] select _side;
 
 {

@@ -5,7 +5,7 @@ if (
 	{(visibleMap)}
 ) exitWith {};
 
-_side = side group player;
+_side = playerSide;
 _sideN = [east, west] find _side;
 {
 	_m drawIcon [
@@ -21,7 +21,7 @@ _sideN = [east, west] find _side;
 		"PuristaBold",
 		"right"
 	];
-} forEach ((allPlayers) select {(!alive _x) && {(side group _x == side group player) && {(isNull objectParent _x)}}});
+} forEach ((allPlayers) select {(!alive _x) && {(side group _x == playerSide) && {(isNull objectParent _x)}}});
 {
 	_size = call BIS_fnc_iconSize;
 	_m drawIcon [
@@ -37,7 +37,7 @@ _sideN = [east, west] find _side;
 		"PuristaBold",
 		"right"
 	];
-} forEach ((allPlayers) select {(side group _x == side group player) && {(isNull objectParent _x) && {(alive _x) && {_x != player}}}});
+} forEach ((allPlayers) select {(side group _x == playerSide) && {(isNull objectParent _x) && {(alive _x) && {_x != player}}}});
 {
 	_size = call BIS_fnc_iconSize;
 	if (!isNull _x) then {
@@ -55,7 +55,7 @@ _sideN = [east, west] find _side;
 			"right"
 		];
 	};
-} forEach ((allUnits) select {(side group (crew _x select 0) == side group player) && {(alive _x) && {(isNull objectParent _x) && {(typeOf _x != "Logic") && {_x != player}}}}});
+} forEach ((allUnits) select {(side group (crew _x select 0) == playerSide) && {(alive _x) && {(isNull objectParent _x) && {(typeOf _x != "Logic") && {_x != player}}}}});
 {
 	_size = call BIS_fnc_iconSize;
 	_m drawIcon [
@@ -91,7 +91,7 @@ _sideN = [east, west] find _side;
 				"right"
 			];
 		};
-	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != side group player) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
+	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != playerSide) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
 {
 	_size = call BIS_fnc_iconSize;

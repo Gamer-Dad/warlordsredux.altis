@@ -1,6 +1,6 @@
 params ["_m"];
 
-_side = side group player;
+_side = playerSide;
 _sideN = [east, west] find _side;
 if !(isNull BIS_WL_highlightedSector) then {
 	_m drawIcon [

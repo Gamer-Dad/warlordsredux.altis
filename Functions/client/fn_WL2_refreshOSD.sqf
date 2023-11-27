@@ -11,7 +11,7 @@ waitUntil {!isNull (uiNamespace getVariable ["BIS_WL_osd_action_voting_title", c
 
 if (_fullRefresh) then {
 	(uiNamespace getVariable "BIS_WL_osd_sectors_side_1") ctrlSetStructuredText parseText format ["<t size = '%2' align = 'center' shadow = '2'>%1</t>", count (BIS_WL_sectorsArray # 0), 0.6 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
-	(uiNamespace getVariable "BIS_WL_osd_income_side_1") ctrlSetStructuredText parseText format ["<t size = '%2' shadow = '2'>+%1</t>", BIS_WL_playerSide call BIS_fnc_WL2_income, 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
+	(uiNamespace getVariable "BIS_WL_osd_income_side_1") ctrlSetStructuredText parseText format ["<t size = '%2' shadow = '2'>+%1</t>", playerSide call BIS_fnc_WL2_income, 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 };
 
 if (BIS_WL_showHint_maintenance) then {

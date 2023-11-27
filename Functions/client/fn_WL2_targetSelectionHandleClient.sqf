@@ -1,7 +1,7 @@
 #include "..\warlords_constants.inc"
 
 {_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
-_mostVotedVar = format ["BIS_WL_mostVoted_%1", BIS_WL_playerSide];
+_mostVotedVar = format ["BIS_WL_mostVoted_%1", playerSide];
 
 while {!BIS_WL_missionEnd} do {
 	_lastTarget = WL_TARGET_FRIENDLY;
@@ -26,7 +26,7 @@ while {!BIS_WL_missionEnd} do {
 	};
 	if !(isNull _lastTarget) then {
 		_t = serverTime + 3;
-		waitUntil {(_lastTarget getVariable "BIS_WL_owner") == BIS_WL_playerSide || {serverTime > _t}};
+		waitUntil {(_lastTarget getVariable "BIS_WL_owner") == playerSide || {serverTime > _t}};
 	};
 	["client"] call BIS_fnc_WL2_updateSectorArrays;
 	_mostVotedVar spawn {

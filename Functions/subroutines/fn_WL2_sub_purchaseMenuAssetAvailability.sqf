@@ -11,7 +11,7 @@ if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
 if (_ret) then {
-	private _nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {side group player != side group _x && {alive _x}}}) > 0);
+	private _nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {playerSide != side group _x && {alive _x}}}) > 0);
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -43,18 +43,18 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FundsTransfer": {
-			if (count (allPlayers select {side group _x == side group player}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
+			if (count (allPlayers select {side group _x == playerSide}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
 		};
 		case "TargetReset": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_conflict"};
-			_sectorSelectedTimestampVarID = format ["BIS_WL_sectorSelectedTimestamp_%1", BIS_WL_playerSide];
-			_targetResetVotingVarID = format ["BIS_WL_targetResetVotingSince_%1", BIS_WL_playerSide];
+			_sectorSelectedTimestampVarID = format ["BIS_WL_sectorSelectedTimestamp_%1", playerSide];
+			_targetResetVotingVarID = format ["BIS_WL_targetResetVotingSince_%1", playerSide];
 			if (serverTime < ((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + (getMissionConfigValue ["BIS_WL_sectorResetTimeout", 300]))) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_sectorSelectedTimestampVarID, 0]) + (getMissionConfigValue ["BIS_WL_sectorResetTimeout", 300])) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "forfeitVote": {
 			_countSide = (playersNumber (side (group player)));
-			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
+			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", playerSide];
 			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
 			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
@@ -73,13 +73,13 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
-			private _sideP = side group player;
+			private _sideP = playerSide;
 			private _ftVehicle = if (_sideP == west) then {((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0)} else {((count ((entities "O_Truck_03_medical_F") select {alive _x})) > 0)};
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
-			private _sideP = side group player;
+			private _sideP = playerSide;
 			if (_sideP == west) then {
 				private _ftBlu = (((entities "B_Truck_01_medical_F") select {alive _x}) # 0);
 				if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0) then {
@@ -104,13 +104,13 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
-			private _sideP = side group player;
+			private _sideP = playerSide;
 			private _ftVehicle = if (_sideP == west) then {((count (entities "B_Slingload_01_Medevac_F")) > 0)} else {((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) > 0)};
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnPodFT" : {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
-			private _sideP = side group player;
+			private _sideP = playerSide;
 			if (_sideP == west) then {
 				private _ftBlu = ((entities "B_Slingload_01_Medevac_F") # 0);
 				if ((count (entities "B_Slingload_01_Medevac_F")) > 0) then {
