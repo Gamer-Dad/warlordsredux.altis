@@ -18,7 +18,7 @@ private _actionID = _asset addAction [
 	false,
 	false,
 	"",
-	"alive _target && {_this == ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID)}",
+	"alive _target && {getPlayerUID _this == (_target getVariable ['BIS_WL_ownerAsset', '123'])}",
 	30,
 	true
 ];

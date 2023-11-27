@@ -13,7 +13,7 @@ ctrlShow [4102, _cond];
 
 _data = lbData [4005, (lbCurSel 4005)];
 _unit = _data call BIS_fnc_getUnitByUID;
-_cond = (_unit == player && {(count ((units player) select {isPlayer _x})) > 1});
+_cond = (_data == (getPlayerUID player) && {(count ((units player) select {isPlayer _x})) > 1});
 if (_cond) then {
 	ctrlShow [4104, !_cond];
 	ctrlShow [4106, !_cond];

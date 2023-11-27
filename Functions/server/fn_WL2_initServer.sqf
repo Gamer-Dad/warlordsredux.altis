@@ -25,7 +25,6 @@ BIS_fnc_WL2_fundsDatabaseUpdate = compileFinal preprocessFileLineNumbers "Functi
 BIS_fnc_WL2_fundsDatabaseWrite = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_fundsDatabaseWrite.sqf";
 BIS_fnc_WL2_garbageCollector = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_garbageCollector.sqf";
 BIS_fnc_WL2_handleClientRequest = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_handleClientRequest.sqf";
-BIS_fnc_WL2_income = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_income.sqf";
 BIS_fnc_WL2_incomePayoff = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_incomePayoff.sqf";
 BIS_fnc_WL2_killRewardHandle = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_killRewardHandle.sqf";
 BIS_fnc_WL2_populateSector = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_populateSector.sqf";

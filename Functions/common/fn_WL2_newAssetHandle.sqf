@@ -195,7 +195,7 @@ if (isPlayer _owner) then {
 							TRUE,
 							FALSE,
 							"",
-							"alive _target && {_this == ((_target getVariable ['BIS_WL_ownerAsset', '123']) call BIS_fnc_getUnitByUID) && {vehicle _this == _this}}",
+							"alive _target && {getPlayerUID _this == (_target getVariable ['BIS_WL_ownerAsset', '123']) && {vehicle _this == _this}}",
 							WL_MAINTENANCE_RADIUS,
 							FALSE
 						];
