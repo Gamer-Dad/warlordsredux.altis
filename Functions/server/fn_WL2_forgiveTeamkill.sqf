@@ -8,17 +8,7 @@ if ((owner _forgiver) != remoteExecutedOwner) exitWith {};
 if (_forgive) then {
 	_timestamps = _teamkiller getVariable ["BIS_WL_friendlyKillTimestamps", []];
 
-	_newestTeamkillOnForgiver = 0;
-	_newestTeamkillTime = 0;
-	{
-		if ((_x # 1) != (getPlayerUID _forgiver)) then { continue };
-		if (_newestTeamkillTime < _x # 0) then {
-			_newestTeamkillTime = _x # 0;
-			_newestTeamkillOnForgiver = _forEachIndex;
-		};
-	} forEach _timestamps;
-
-	_timestamps deleteAt _newestTeamkillOnForgiver;
+	_timestamps deleteAt ((count _timestamps) - 1);
 	_teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, owner _teamkiller]];
 
 	_teamKiller spawn {
