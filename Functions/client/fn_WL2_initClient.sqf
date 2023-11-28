@@ -84,9 +84,10 @@ BIS_fnc_getExtras = compileFinal preprocessFileLineNumbers "Functions\client\rea
 BIS_fnc_getHulls = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getHulls.sqf";
 BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
-waitUntil {!isNull player && isPlayer player};
+waitUntil {!isNull player && {isPlayer player}};
 
 "client" call BIS_fnc_WL2_varsInit;
+waitUntil {!(isNil "BIS_WL_playerSide")};
 
 private _uid = getPlayerUID player;
 private _switch = format ["BIS_WL_forceOtherTeam_%1", _uid];

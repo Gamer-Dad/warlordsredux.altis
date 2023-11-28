@@ -32,8 +32,7 @@ if (isServer) then {
 		"gameStart",
 		"BIS_WL_currentTarget_west",
 		"BIS_WL_currentTarget_east",
-		"BIS_WL_wrongTeamGroup",
-		"BIS_WL_playerSide"
+		"BIS_WL_wrongTeamGroup"
 	] == 0};
 	
 	waitUntil {{isNil {_x getVariable "BIS_WL_originalOwner"}} count [BIS_WL_base1, BIS_WL_base2] == 0};
