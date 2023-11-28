@@ -7,7 +7,8 @@ if (isNil "WL2_ffBuffer") then {
 			waitUntil {sleep 1; count WL2_ffBuffer > 0; !(missionNamespace getVariable ["WL2_ffBuffer_busy", false])};
 			missionNamespace setVariable ["WL2_ffBuffer_busy", true];
 			_params = WL2_ffBuffer # 0;
-			[format ["%1, %2", WL2_ffBuffer, _params]] remoteExec ["systemChat", 0];
+			[format ["%1", WL2_ffBuffer]] remoteExec ["systemChat", 0];
+			[format ["%1", _params]] remoteExec ["systemChat", 0];
 			_killer = (_params # 0);
 			_obj = (_params # 1);
 			
