@@ -28,7 +28,9 @@ _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 	};
 } forEach _detectionTrgs;
 
+[format ["%1: %2", serverTime, "line 31"]] remoteExec ["systemChat", 0];
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
+[format ["%1: %2", serverTime, "line 33"]] remoteExec ["systemChat", 0];
 
 "server" call BIS_fnc_WL2_updateSectorArrays;
 
