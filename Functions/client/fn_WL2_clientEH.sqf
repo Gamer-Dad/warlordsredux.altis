@@ -73,40 +73,42 @@ player addEventHandler ["HandleDamage", {
 	};
 }];
 
-addMissionEventHandler ["HandleChatMessage", {
-	params ["_channel", "_owner", "_from", "_text"];
-	_text = toLower _text;
-	_list = getArray (missionConfigFile >> "adminFilter");
-	_return = ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
+if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
+	addMissionEventHandler ["HandleChatMessage", {
+		params ["_channel", "_owner", "_from", "_text"];
+		_text = toLower _text;
+		_list = getArray (missionConfigFile >> "adminFilter");
+		_return = ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
 
-	_admin = (getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"));
-	if (_admin && {_owner == clientOwner}) then {
-		_input = _text splitString " ";
-		_command = _input # 0;
-		_count = count _input;
-		_valid = _command == "!getCP";
-		if (_count == 2 && {_valid}) then {
-			_amount = parseNumber (_input # 1);
-			[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
-		} else {
-			if (_valid) then {
-				systemChat "Unexpected arguments!";
-			};
-		};
-		if (_count == 1 && {_command == "!updateZeus"}) then {
-			[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
-		};
-	} else {
-		if (_owner == clientOwner && {!_admin}) then {
+		if (_owner == clientOwner) then {
 			_input = _text splitString " ";
-			_valid = _input # 0 == "!getCP";
-			if (count _input == 2 && {_valid}) then {
-				systemChat "You don't have access to this command!";
+			_command = _input # 0;
+			_count = count _input;
+			_valid = _command == "!getCP";
+			if (_count == 2 && {_valid}) then {
+				_amount = parseNumber (_input # 1);
+				[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
+			} else {
+				if (_valid) then {
+					systemChat "Unexpected arguments!";
+				};
+			};
+			if (_count == 1 && {_command == "!updateZeus"}) then {
+				[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
 			};
 		};
-	};
-	_return;
-}];
+		_return;
+	}];
+} else {
+	addMissionEventHandler ["HandleChatMessage", {
+		params ["_channel", "_owner", "_from", "_text"];
+		_text = toLower _text;
+		_list = getArray (missionConfigFile >> "adminFilter");
+		_return = ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
+
+		_return;
+	}];
+};
 
 0 spawn {
 	waituntil {sleep 0.1; !isnull (findDisplay 46)};
