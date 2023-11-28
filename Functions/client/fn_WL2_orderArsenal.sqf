@@ -8,17 +8,17 @@ if (isNull (findDisplay 602)) then {
 	_uniform spawn {
 		waitUntil {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])};
 		while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
-			if !((backpack player) in (getArray (missionConfigFile >> "arsenalConfig" >> str playerSide >> "Backpacks"))) then {
+			if !((backpack player) in (getArray (missionConfigFile >> "arsenalConfig" >> str BIS_WL_playerSide >> "Backpacks"))) then {
 				removeBackpack player;
 			};
-			if !(uniform player in (getArray (missionConfigFile >> "arsenalConfig" >> str playerSide >> "Uniforms"))) then {
+			if !(uniform player in (getArray (missionConfigFile >> "arsenalConfig" >> str BIS_WL_playerSide >> "Uniforms"))) then {
 				player forceAddUniform _this;
 			};
-			if !(vest player in (getArray (missionConfigFile >> "arsenalConfig" >> str playerSide >> "Vests"))) then {
+			if !(vest player in (getArray (missionConfigFile >> "arsenalConfig" >> str BIS_WL_playerSide >> "Vests"))) then {
 				removeVest player;
 			};
-			if !(headgear player in (getArray (missionConfigFile >> "arsenalConfig" >> str playerSide >> "Helmets"))) then {
-				if (playerSide == west) then {
+			if !(headgear player in (getArray (missionConfigFile >> "arsenalConfig" >> str BIS_WL_playerSide >> "Helmets"))) then {
+				if (side player == west) then {
 					player addHeadgear "H_HelmetB";
 				} else {
 					player addHeadgear "H_HelmetO_ocamo";

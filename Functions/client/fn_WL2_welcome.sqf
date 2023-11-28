@@ -27,7 +27,7 @@ hRead = false;
 	};
 };
 
-_side = [west, east] find playerSide;
+_side = [west, east] find BIS_WL_playerSide;
 _color = [[0, 0.3, 0.5, 1], [0.5, 0, 0, 1]] select _side;
 
 private _control1 = findDisplay 9000 displayCtrl 9005;

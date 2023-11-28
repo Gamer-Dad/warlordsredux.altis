@@ -1,4 +1,4 @@
-_side = playerSide;
+_side = side group player;
 while {!BIS_WL_missionEnd} do {
 	private _sideCnt = count (allPlayers select {side group _x == _side});
 	private _timeout = (120 * (_sideCnt/8)) max 120;

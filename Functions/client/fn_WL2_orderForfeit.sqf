@@ -1,5 +1,5 @@
 "RequestMenu_close" call BIS_fnc_WL2_setupUI;
-private _side = playerSide;
+private _side = side group player;
 
 missionNamespace setVariable [format ["BIS_WL_forfeitVotingSince_%1", _side], serverTime, true];
 missionNamespace setVariable [format ["BIS_WL_forfeitOrderedBy_%1", _side], name player, true];

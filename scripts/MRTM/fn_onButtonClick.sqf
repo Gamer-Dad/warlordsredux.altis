@@ -46,7 +46,7 @@ if (_action == "Leave") exitWith {
 		_unit = (selectRandom ((units player) select {isPlayer _x}));
 		[group _unit, _unit] remoteExec ["selectLeader", (group player)];
 	};
-	_group = createGroup playerSide;
+	_group = createGroup BIS_WL_playerSide;
 	_units joinSilent _group;
 	false spawn MRTM_fnc_openGroupMenu;
 };

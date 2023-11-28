@@ -36,7 +36,7 @@ player addEventHandler ["Killed", {
 	"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 	
 	BIS_WL_lastLoadout = +getUnitLoadout player;
-	private _varName = format ["BIS_WL_purchasable_%1", playerSide];
+	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
 	private _gearArr = (missionNamespace getVariable _varName) # 5;
 	private _lastLoadoutArr = _gearArr # 1;
 	private _text = localize "STR_A3_WL_last_loadout_info";

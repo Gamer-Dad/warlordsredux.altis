@@ -11,7 +11,7 @@ _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
 _cpBalanceCtrl = findDisplay 46 ctrlCreate ["RscStructuredText", 9876];
 _cpBalanceCtrl ctrlSetPosition [_displayX + (_blockW * 88), _displayY - (_blockH * 6), _blockW * 60, _blockH * 16];
 
-_side = [west, east] find playerSide;
+_side = [west, east] find BIS_WL_playerSide;
 _var = ["blanceMultilplierBlu", "blanceMultilplierOpf"] select _side;
 
 while {!BIS_WL_missionEnd} do {

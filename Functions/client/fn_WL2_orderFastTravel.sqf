@@ -22,7 +22,7 @@ private _marker = "";
 private _markerText = "";
 
 if (_toContested) then {
-	private _startArr = (synchronizedObjects WL_TARGET_FRIENDLY) select {(_x getVariable "BIS_WL_owner") == playerSide};
+	private _startArr = (synchronizedObjects WL_TARGET_FRIENDLY) select {(_x getVariable "BIS_WL_owner") == BIS_WL_playerSide};
 	_startArr = _startArr apply {[_x distance2D player, _x]};
 	_startArr sort true;
 	private _start = (_startArr # 0) # 1;

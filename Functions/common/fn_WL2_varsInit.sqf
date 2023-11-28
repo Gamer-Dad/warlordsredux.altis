@@ -11,11 +11,12 @@ switch (_locality) do {
 		BIS_WL_purchaseListTeplateArr = call compile "['A3ReduxAll']";
 	};
 	case "client": {
-		BIS_WL_enemySide = (BIS_WL_competingSides - [playerSide]) # 0;
-		BIS_WL_playerBase = playerSide call BIS_fnc_WL2_getSideBase;
+		BIS_WL_playerSide = side group player;
+		BIS_WL_enemySide = (BIS_WL_competingSides - [BIS_WL_playerSide]) # 0;
+		BIS_WL_playerBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_enemyBase = BIS_WL_enemySide call BIS_fnc_WL2_getSideBase;
 		BIS_WL_mapSizeIndex = BIS_WL_mapSize / 8192;
-		BIS_WL_colorMarkerFriendly = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find playerSide);
+		BIS_WL_colorMarkerFriendly = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_playerSide);
 		BIS_WL_colorMarkerEnemy = ["colorBLUFOR", "colorOPFOR", "colorIndependent"] # (BIS_WL_sidesArray find BIS_WL_enemySide);
 		BIS_WL_targetVote = objNull;
 		BIS_WL_terminateOSDEvent_voting = FALSE;
@@ -50,7 +51,7 @@ switch (_locality) do {
 			"\A3\ui_f\data\map\markers\nato\o_installation.paa",
 			"\A3\ui_f\data\map\markers\nato\n_installation.paa"
 		];
-		BIS_WL_colorFriendly = BIS_WL_colorsArray # (BIS_WL_sidesArray find playerSide);
+		BIS_WL_colorFriendly = BIS_WL_colorsArray # (BIS_WL_sidesArray find BIS_WL_playerSide);
 		BIS_WL_recentlyPurchasedAssets = [];
 		BIS_WL_penalized = false;
 		BIS_WL_mapAssetTarget = objNull;

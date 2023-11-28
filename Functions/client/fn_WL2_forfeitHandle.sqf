@@ -2,10 +2,10 @@
 
 params ["_side"];
 
-if (playerSide != _side) exitWith {};
+if (BIS_WL_playerSide != _side) exitWith {};
 
-_varNameVoting = format ["BIS_WL_forfeitVotingSince_%1", playerSide];
-_varNameVotingBy = format ["BIS_WL_forfeitOrderedBy_%1", playerSide];
+_varNameVoting = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
+_varNameVotingBy = format ["BIS_WL_forfeitOrderedBy_%1", BIS_WL_playerSide];
 
 [toUpper format ["Surrender ordered by %1", missionNamespace getVariable _varNameVotingBy]] spawn BIS_fnc_WLSmoothText;
 missionNamespace setVariable [_varNameVotingBy, ""];

@@ -66,7 +66,7 @@ if (_state == "start") then {
 	{
 		_mrkrMain = (_x getVariable "BIS_WL_markers") # 0;
 		_mrkrMain setMarkerAlphaLocal 1;
-		_mrkrMain setMarkerSizeLocal (if !(_x in WL_BASES && playerSide in (_x getVariable ["BIS_WL_revealedBy", []])) then {[1, 1]} else {[WL_BASE_ICON_SIZE, WL_BASE_ICON_SIZE]});
+		_mrkrMain setMarkerSizeLocal (if !(_x in WL_BASES && BIS_WL_playerSide in (_x getVariable ["BIS_WL_revealedBy", []])) then {[1, 1]} else {[WL_BASE_ICON_SIZE, WL_BASE_ICON_SIZE]});
 		((_x getVariable "BIS_WL_markers") # 1) setMarkerAlphaLocal 1;
 	} forEach BIS_WL_allSectors;
 	

@@ -2,7 +2,7 @@
 
 params ["_side"];
 
-if (playerSide != _side) exitWith {};
+if (BIS_WL_playerSide != _side) exitWith {};
 
 _varNameVoting = format ["BIS_WL_targetResetVotingSince_%1", _side];
 _varNameReset = format ["BIS_WL_targetResetOrderedBy_%1", _side];

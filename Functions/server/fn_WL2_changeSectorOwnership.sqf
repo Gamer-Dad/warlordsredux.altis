@@ -38,7 +38,7 @@ if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _ene
 		(owner _x) publicVariableClient "BIS_WL_resetTargetSelection_client";
 	} forEach (allPlayers select {side group _x == _enemySide});
 	if !(isDedicated) then {
-		if (playerSide != _enemySide) then {
+		if (BIS_WL_playerSide != _enemySide) then {
 			BIS_WL_resetTargetSelection_client = false;
 		};
 	};

@@ -10,7 +10,7 @@ private _airstrip = "A" in _services;
 private _helipad = "H" in _services;
 private _harbor = "W" in _services;
 
-_side = playerSide;
+_side = side group player;
 _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _side], -9999]);
 _scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
 _capturing = (count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1);
@@ -46,7 +46,7 @@ _color = (['#004d99', '#7f0400'] # ([west, east] find ((_sector getVariable ["BI
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlEnable true;
 
 if (!_selectionActive) exitWith {
-	if ((_sector getVariable "BIS_WL_owner") == playerSide) then {
+	if ((_sector getVariable "BIS_WL_owner") == BIS_WL_playerSide) then {
 		WL_CONTROL_MAP ctrlMapCursor ["Track", "HC_overFriendly"];
 	} else {
 		WL_CONTROL_MAP ctrlMapCursor ["Track", "HC_overEnemy"];

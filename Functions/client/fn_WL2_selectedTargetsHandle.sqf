@@ -3,7 +3,7 @@
 _prevSector1 = objNull;
 _prevSector2 = objNull;
 
-_side1 = playerSide;
+_side1 = BIS_WL_playerSide;
 _side2 = BIS_WL_enemySide;
 
 while {!BIS_WL_missionEnd} do {

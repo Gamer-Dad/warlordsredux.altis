@@ -31,7 +31,7 @@ if (_sector in _availableSectors) then {
 			playSound "AddItemOK";
 		} else {
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_SCAN) then {
-				if ((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", playerSide], -9999]) < (serverTime) - (getMissionConfigValue ["BIS_WL_scanCooldown", 300])) then {
+				if ((_sector getVariable [format ["BIS_WL_lastScanEnd_%1", side group player], -9999]) < (serverTime) - (getMissionConfigValue ["BIS_WL_scanCooldown", 300])) then {
 					BIS_WL_targetSector = _sector;
 					playSound "AddItemOK";
 				} else {

@@ -37,7 +37,7 @@ _purchase_transfer_cancel ctrlSetFade 0;
 _purchase_transfer_cancel ctrlEnable TRUE;
 _purchase_transfer_cancel ctrlCommit 0;
 
-{_purchase_transfer_units lbAdd name _x} forEach ((allPlayers select {isPlayer _x && {side group _x == playerSide}}) - [player]);
+{_purchase_transfer_units lbAdd name _x} forEach ((allPlayers select {isPlayer _x && {side group _x == side group player}}) - [player]);
 _purchase_transfer_units lbSetCurSel 0;
 
 [_purchase_transfer_units, _purchase_transfer_ok, _purchase_transfer_amount] spawn {
@@ -71,7 +71,7 @@ _purchase_transfer_units lbSetCurSel 0;
 		};
 		_set = (_this # 0) lbText lbCurSel (_this # 0);
 		lbClear (_this # 0);
-		{(_this # 0) lbAdd name _x} forEach ((allPlayers select {isPlayer _x && {side group _x == playerSide}}) - [player]);
+		{(_this # 0) lbAdd name _x} forEach ((allPlayers select {isPlayer _x && {side group _x == side group player}}) - [player]);
 		lbSort (_this # 0);
 		if (lbSize (_this # 0) == 0) exitWith {
 			_display = uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull];

@@ -1,5 +1,5 @@
 addMissionEventHandler ["Draw3D", {
-	if !(isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", playerSide])) then {
+	if !(isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])) then {
 		drawIcon3D [
 			BIS_WL_currentTargetData # 0,
 			BIS_WL_currentTargetData # 1,
@@ -16,7 +16,7 @@ addMissionEventHandler ["Draw3D", {
 		];
 		_droneView = getConnectedUAVUnit player;
 		_pos = getPosVisual (if (isNull(_droneView)) then { player } else { _droneView });
-		_dist = _pos distance (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", playerSide]);
+		_dist = _pos distance (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide]);
 		_units = "m";
 		_dist = ceil _dist;
 		if (_dist > 1000) then {_dist = _dist / 100; _dist = round _dist; _dist = _dist / 10; _units = "km"};
@@ -51,7 +51,7 @@ addMissionEventHandler ["Draw3D", {
 			"RobotoCondensedBold",
 			"center"
 		];
-	} forEach ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {playerSide == side group _x && {alive _x}}});
+	} forEach ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {side group player == side group _x && {alive _x}}});
 	{
 		drawIcon3D [
 			"\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa",

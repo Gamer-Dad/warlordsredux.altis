@@ -1,6 +1,6 @@
 "RequestMenu_close" call BIS_fnc_WL2_setupUI;
 
-if (playerSide == west) exitWith {
+if (side player == west) exitWith {
 	{
 		private _ambuPosBlu = getPosATL _x;
 		private _center = _ambuPosBlu;
@@ -21,7 +21,7 @@ if (playerSide == west) exitWith {
 	} forEach entities "B_Slingload_01_Medevac_F";
 };
 
-if (playerSide == east) exitWith {
+if (side player == east) exitWith {
 	{
 		titleCut ["", "BLACK OUT", 1];
 		openMap false;

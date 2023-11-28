@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-playerSide spawn {
+BIS_WL_playerSide spawn {
 	_varName = format ["BIS_WL_recentTargetReset_%1", _this];
 	_target = objNull;
 	
@@ -11,7 +11,7 @@ playerSide spawn {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
 		
 		_t = serverTime + 3;
-		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {(_target getVariable "BIS_WL_owner") == playerSide || {(missionNamespace getVariable [_varName, false])}}};
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {(_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || {(missionNamespace getVariable [_varName, false])}}};
 		
 		if (missionNamespace getVariable [_varName, FALSE]) then {
 			"Reset" call BIS_fnc_WL2_announcer;
@@ -38,7 +38,7 @@ BIS_WL_enemySide spawn {
 		waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_ENEMY};
 		
 		_t = serverTime + 3;
-		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {(_target getVariable "BIS_WL_owner") == playerSide || {((missionNamespace getVariable [_varName, ""]) != "")}}};
+		waitUntil {sleep WL_TIMEOUT_SHORT; serverTime > _t || {(_target getVariable "BIS_WL_owner") == BIS_WL_playerSide || {((missionNamespace getVariable [_varName, ""]) != "")}}};
 		
 		if ((missionNamespace getVariable [_varName, ""]) != "") then {
 			missionNamespace setVariable [_varName, ""];

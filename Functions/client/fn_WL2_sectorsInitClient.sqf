@@ -20,7 +20,7 @@ _i = 0;
 	_sectorPos = position _sector;
 	_area = _sector getVariable "objectArea";
 	
-	if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == playerSide)) then {
+	if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == (side player))) then {
 		_sector setVariable ["BIS_WL_value", (getMissionConfigValue ["BIS_WL_baseValue", 50])];
 	} else {
 		_area params ["_a", "_b", "_angle", "_isRectangle"];
@@ -52,7 +52,7 @@ _i = 0;
 	
 	_sector setVariable ["BIS_WL_markers", [_mrkrMain, _mrkrArea, _mrkrAreaBig]];
 	
-	if !(playerSide in _revealedBy) then {
+	if !(BIS_WL_playerSide in _revealedBy) then {
 		_mrkrMain setMarkerTypeLocal "u_installation";
 		_mrkrMain setMarkerColorLocal "ColorUNKNOWN";
 		_mrkrArea setMarkerColorLocal "ColorUNKNOWN";
