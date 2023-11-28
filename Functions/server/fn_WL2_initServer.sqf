@@ -20,6 +20,7 @@ BIS_fnc_WL2_changeSectorOwnership = compileFinal preprocessFileLineNumbers "Func
 BIS_fnc_WL2_createUAVCrew = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_createUAVCrew.sqf";
 BIS_fnc_WL2_detectNewPlayers = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_detectNewPlayers.sqf";
 BIS_fnc_WL2_forfeitHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_forfeitHandleServer.sqf";
+BIS_fnc_WL2_forgiveTeamkill = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_forgiveTeamkill.sqf";
 BIS_fnc_WL2_friendlyFireHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_friendlyFireHandleServer.sqf";
 BIS_fnc_WL2_fundsDatabaseUpdate = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_fundsDatabaseUpdate.sqf";
 BIS_fnc_WL2_fundsDatabaseWrite = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_fundsDatabaseWrite.sqf";
