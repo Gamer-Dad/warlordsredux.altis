@@ -11,7 +11,7 @@ if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
 if (_ret) then {
-	private _nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {side group player != side group _x && {alive _x}}}) > 0);
+	private _nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0);
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -45,7 +45,7 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FundsTransfer": {
-			if (count (allPlayers select {side group _x == side group player}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
+			if (count (allPlayers select {side group _x == BIS_WL_playerSide}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
 		};
 		case "TargetReset": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_conflict"};
@@ -76,15 +76,13 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
-			private _sideP = side group player;
-			private _ftVehicle = if (_sideP == west) then {((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0)} else {((count ((entities "O_Truck_03_medical_F") select {alive _x})) > 0)};
+			private _ftVehicle = if (BIS_WL_playerSide == west) then {((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0)} else {((count ((entities "O_Truck_03_medical_F") select {alive _x})) > 0)};
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
-			private _sideP = side group player;
-			if (_sideP == west) then {
+			if (BIS_WL_playerSide == west) then {
 				private _ftBlu = (((entities "B_Truck_01_medical_F") select {alive _x}) # 0);
 				if ((count ((entities "B_Truck_01_medical_F") select {alive _x})) > 0) then {
 					if (((getPosATL _ftBlu) select 2) > 5) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
@@ -109,15 +107,13 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
-			private _sideP = side group player;
-			private _ftVehicle = if (_sideP == west) then {((count (entities "B_Slingload_01_Medevac_F")) > 0)} else {((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) > 0)};
+			private _ftVehicle = if (BIS_WL_playerSide == west) then {((count (entities "B_Slingload_01_Medevac_F")) > 0)} else {((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) > 0)};
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnPodFT" : {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
-			private _sideP = side group player;
-			if (_sideP == west) then {
+			if (BIS_WL_playerSide == west) then {
 				private _ftBlu = ((entities "B_Slingload_01_Medevac_F") # 0);
 				if ((count (entities "B_Slingload_01_Medevac_F")) > 0) then {
 					if (((getPosATL _ftBlu) select 2) > 5) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};

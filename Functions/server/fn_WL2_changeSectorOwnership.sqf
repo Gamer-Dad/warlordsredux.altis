@@ -3,6 +3,8 @@ params ["_sector", "_owner"];
 _sector setVariable ["BIS_WL_owner", _owner, true];
 [_sector] remoteExec ["BIS_fnc_WL2_sectorOwnershipHandleClient", [0, -2] select isDedicated];
 
+[format ["%1: %2", serverTime, "change ownership"]] remoteExec ["systemChat", 0];
+
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
 if !(_owner in _previousOwners) then {
@@ -30,6 +32,8 @@ if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", 
 
 "server" call BIS_fnc_WL2_updateSectorArrays;
 
+[format ["%1: %2", serverTime, "updated arrays"]] remoteExec ["systemChat", 0];
+
 private _enemySide = (BIS_WL_competingSides - [_owner]) # 0;
 if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _enemySide])) then {
 	missionNamespace setVariable [format ["BIS_WL_resetTargetSelection_server_%1", _enemySide], true];
@@ -44,7 +48,11 @@ if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _ene
 	};
 };
 
+[format ["%1: %2", serverTime, "line 51"]] remoteExec ["systemChat", 0];
+
 waitUntil {sleep 0.01; (_sector getVariable ["BIS_WL_owner", civilian]) == _owner};
 if ((((profileNamespace getVariable "BIS_WL_lastBases") # 0) getVariable ["BIS_WL_owner", civilian]) == (((profileNamespace getVariable "BIS_WL_lastBases") # 1) getVariable ["BIS_WL_owner", independent])) then {
 	0 remoteExec ["BIS_fnc_WL2_missionEndHandle", 0];
 };
+
+[format ["%1: %2", serverTime, "end of change ownership"]] remoteExec ["systemChat", 0];

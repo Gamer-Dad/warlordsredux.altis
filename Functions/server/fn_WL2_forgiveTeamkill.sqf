@@ -4,12 +4,14 @@ params ["_teamkiller", "_forgiver", "_forgive"];
 if !(isServer) exitWith {};
 if ((owner _forgiver) != remoteExecutedOwner) exitWith {};
 
+[format ["%1: %2", serverTime, "forgive teamkill"]] remoteExec ["systemChat", 0];
+[format ["%1: %2", serverTime, _forgive]] remoteExec ["systemChat", 0];
 
 if (_forgive) then {
 	_timestamps = _teamkiller getVariable ["BIS_WL_friendlyKillTimestamps", []];
 
 	_timestamps deleteAt ((count _timestamps) - 1);
-	_teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, owner _teamkiller]];
+	_teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, (owner _teamkiller)]];
 
 	_teamKiller spawn {
 		params ["_teamKiller"];

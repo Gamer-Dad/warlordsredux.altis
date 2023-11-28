@@ -13,6 +13,7 @@ _sector spawn {
 		waitUntil {sleep 0.2; serverTime > _time || {((count (_sector getVariable ["BIS_WL_seizingInfo", []])) == 0)}};
 		if (serverTime > _time) then {
 			[_sector, _owner] call BIS_fnc_WL2_changeSectorOwnership;
+			[format ["%1: %2", serverTime, "sector captured"]] remoteExec ["systemChat", 0];
 			_sector setVariable ["BIS_WL_seizingInfo", [], true];
 		};
 	};

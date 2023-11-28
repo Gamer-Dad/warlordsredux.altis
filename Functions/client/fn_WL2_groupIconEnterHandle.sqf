@@ -10,7 +10,7 @@ private _airstrip = "A" in _services;
 private _helipad = "H" in _services;
 private _harbor = "W" in _services;
 
-_side = side group player;
+_side = BIS_WL_playerSide;
 _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _side], -9999]);
 _scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
 _capturing = (count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1);
