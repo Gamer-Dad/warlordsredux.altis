@@ -53,6 +53,7 @@ call BIS_fnc_WL2_serverEHs;
 _group = createGroup civilian;
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", _group, true];
 _group deleteGroupWhenEmpty false;
+missionNamespace setVariable ["gameStart", serverTime, true];
 
 {
 	serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];

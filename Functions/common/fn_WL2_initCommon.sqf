@@ -29,6 +29,7 @@ if (isServer) then {
 	waitUntil {{isNil _x} count [
 		"BIS_WL_base1",
 		"BIS_WL_base2",
+		"gameStart",
 		"BIS_WL_currentTarget_west",
 		"BIS_WL_currentTarget_east",
 		"BIS_WL_wrongTeamGroup"
