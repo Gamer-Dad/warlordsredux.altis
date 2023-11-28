@@ -19,14 +19,15 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FTConflict": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_conflict"};
 			if (WL_TARGET_FRIENDLY in WL_BASES) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr1"};
 			if !(WL_TARGET_FRIENDLY in (BIS_WL_sectorsArray # 1)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr5"};
-			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "LastLoadout": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (count BIS_WL_lastLoadout == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
 			if (BIS_WL_loadoutApplied) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_loadout_reapply_info"};
 			if (BIS_WL_lastLoadout isEqualTo (getUnitLoadout player)) exitWith {_ret = false; _tooltip = "You have the same gear as last time."};
@@ -36,6 +37,7 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "SavedLoadout": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (count BIS_WL_savedLoadout == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_loadout_saved"};
 			_possibleSectors = (BIS_WL_sectorsArray # 0);
 			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
@@ -70,6 +72,7 @@ if (_ret) then {
 			if (count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == (getPlayerUID player)}}) == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_info_no_units_selected"};
 		};
 		case "RespawnVic": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
@@ -78,6 +81,7 @@ if (_ret) then {
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnVicFT": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			private _sideP = playerSide;
 			if (_sideP == west) then {
@@ -101,6 +105,7 @@ if (_ret) then {
 			}; 
 		};
 		case "RespawnPod": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
 			if (_visitedSectorID == -1) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
@@ -109,6 +114,7 @@ if (_ret) then {
 			if (_ftVehicle) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr"};
 		};
 		case "RespawnPodFT" : {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 			private _sideP = playerSide;
 			if (_sideP == west) then {
@@ -141,7 +147,8 @@ if (_ret) then {
 			if (_category == "Infantry" && {(count _units) >= BIS_WL_matesAvailable}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_vehiclesCnt >= (getMissionConfigValue ["BIS_WL_assetLimit", 10])}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_nearbyEnemies}) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_tooltip_deploy_enemies_nearby"};
-			if (_category in ["Vehicles", "Infantry", "Gear"] && {(_visitedSectorID == -1)}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
+			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {vehicle player != player}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
+			if (_category in ["Vehicles", "Infantry", "Gear", "Defences"] && {(_visitedSectorID == -1)}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {(player getVariable ["BIS_WL_isOrdering", false])}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 			if (_category == "Aircraft") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
@@ -151,27 +158,11 @@ if (_ret) then {
 					};
 				};
 			};
-
 			if (_category == "Defences") exitWith {
-				if (vehicle player != player) then {
-					_ret = false;
-					_tooltip = localize "STR_A3_WL_defence_restr1"
-				} else {
-					if (_nearbyEnemies) then {
+				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
+					if ((count (WL_PLAYER_VEHS select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 						_ret = false;
-						_tooltip = localize "STR_A3_WL_tooltip_deploy_enemies_nearby";
-					} else {
-						_visitedSectorID = (BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")};
-						if (_visitedSectorID == -1) then {
-							_ret = false;
-							_tooltip = localize "STR_A3_WL_defence_restr1";
-						};
-						if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-							if ((count (WL_PLAYER_VEHS select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
-								_ret = false;
-								_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
-							};
-						};
+						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};
 				};
 			};
