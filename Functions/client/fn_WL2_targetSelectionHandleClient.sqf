@@ -5,7 +5,7 @@ _mostVotedVar = format ["BIS_WL_mostVoted_%1", BIS_WL_playerSide];
 
 while {!BIS_WL_missionEnd} do {
 	_lastTarget = WL_TARGET_FRIENDLY;
-	waitUntil {sleep WL_TIMEOUT_STANDARD; isNull WL_TARGET_FRIENDLY};
+	waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
 	if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 		[player, "fundsTransferCancel"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 		playSound "AddItemFailed";
@@ -13,13 +13,12 @@ while {!BIS_WL_missionEnd} do {
 	"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 	BIS_WL_currentSelection = WL_ID_SELECTION_VOTING;
 	0 spawn {
-		sleep WL_TIMEOUT_STANDARD;
+		sleep 0.1;
 		if (BIS_WL_missionEnd) exitWith {};
 		"Voting" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_popup_voting"] spawn BIS_fnc_WL2_smoothText;
-		sleep WL_TIMEOUT_STANDARD;
 		waitUntil {visibleMap || {!isNull WL_TARGET_FRIENDLY}};
-		if (visibleMap && isNull BIS_WL_targetVote) then {
+		if (visibleMap && {isNull BIS_WL_targetVote}) then {
 			"Sector" call BIS_fnc_WL2_announcer;
 			[toUpper localize "STR_A3_WL_info_voting_click"] spawn BIS_fnc_WL2_smoothText;
 		};

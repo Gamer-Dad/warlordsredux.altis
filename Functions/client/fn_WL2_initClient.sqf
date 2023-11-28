@@ -204,16 +204,6 @@ call BIS_fnc_WL2_targetResetHandle;
 0 spawn BIS_fnc_WL2_timer;
 0 spawn BIS_fnc_WL2_cpBalance;
 
-
-0 spawn {
-	waitUntil {sleep 1; isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide])};
-	_t = serverTime + 10;
-	waitUntil {sleep 0.25; serverTime > _t || {visibleMap}};
-	if !(visibleMap) then {
-		[toUpper localize "STR_A3_WL_tip_voting", 5] spawn BIS_fnc_WL2_smoothText;
-	};
-};
-
 0 spawn {
 	_uid = getPlayerUID player;
 	_selectedCnt = count ((groupSelectedUnits player) select {_x != player && {(_x getVariable ["BIS_WL_ownerAsset", "123"]) == _uid}});
