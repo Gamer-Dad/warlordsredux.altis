@@ -7,19 +7,25 @@ _sector setVariable ["BIS_WL_owner", _owner, true];
 
 private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 
+[format ["%1: %2", serverTime, "co, line 10"]] remoteExec ["systemChat", 0];
 if !(_owner in _previousOwners) then {
+	[format ["%1: %2", serverTime, "co, line 12"]] remoteExec ["systemChat", 0];
 	_previousOwners pushBack _owner;
+	[format ["%1: %2", serverTime, "co, line 14"]] remoteExec ["systemChat", 0];
 	if (serverTime > 0 && {count _previousOwners == 1}) then {
-		_rewardMultiplier = 30;
+		[format ["%1: %2", serverTime, "co, line 16"]] remoteExec ["systemChat", 0];
 		{
 			private _uid = getPlayerUID _x;
-			[_uid, (_sector getVariable "BIS_WL_value") * _rewardMultiplier] call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_uid, (_sector getVariable "BIS_WL_value") * 30] call BIS_fnc_WL2_fundsDatabaseWrite;
 		} forEach (allPlayers select {side group _x == _owner});
+		[format ["%1: %2", serverTime, "co, line 21"]] remoteExec ["systemChat", 0];
 	};
 };
 
+[format ["%1: %2", serverTime, "co, line 25"]] remoteExec ["systemChat", 0];
 _previousOwners pushBackUnique _owner;
 _sector setVariable ["BIS_WL_previousOwners", _previousOwners, true];
+[format ["%1: %2", serverTime, "co, line 28"]] remoteExec ["systemChat", 0];
 
 _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 {
@@ -27,6 +33,7 @@ _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 		deleteVehicle _x;
 	};
 } forEach _detectionTrgs;
+[format ["%1: %2", serverTime, "co, line 36"]] remoteExec ["systemChat", 0];
 
 [format ["%1: %2", serverTime, "line 31"]] remoteExec ["systemChat", 0];
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
