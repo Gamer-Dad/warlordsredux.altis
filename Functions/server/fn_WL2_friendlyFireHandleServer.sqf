@@ -8,7 +8,6 @@ if (_unit isKindOf "Man") then {
 
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", (_responsibleLeader getVariable "BIS_WL_friendlyKillTimestamps") + [[serverTime, getPlayerUID _unit]], [2, _owner]];
 		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unit)];
-		[format ["%1: %2", serverTime, "forgive req send"]] remoteExec ["systemChat", 0];
 	};
 } else {
 	_uid = _unit getVariable ["BIS_WL_ownerAsset", "123"];
@@ -21,6 +20,5 @@ if (_unit isKindOf "Man") then {
 		_owner = owner _responsibleLeader;
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, getPlayerUID _unit]]), [2, _owner]];
 		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unit)];
-		[format ["%1: %2", serverTime, "forgive req send"]] remoteExec ["systemChat", 0];
 	};
 };

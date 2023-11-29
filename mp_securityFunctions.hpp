@@ -62,10 +62,6 @@ class CfgRemoteExec {
 	class Commands {
 		mode = 1;
 
-		class systemChat {
-			allowedTargets = 0;
-		};
-
 		class setVehicleAmmoDef {
 			allowedTargets = 0;
 		};
