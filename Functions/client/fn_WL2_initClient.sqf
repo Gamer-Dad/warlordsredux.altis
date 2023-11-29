@@ -171,7 +171,7 @@ setGroupIconsSelectable true;
 setGroupIconsVisible [true, false];
 0 spawn BIS_fnc_WL2_mapControlHandle;
 
-_mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position BIS_WL_enemyBase];
+_mrkrTargetEnemy = createMarkerLocal ["BIS_WL_targetEnemy", position (BIS_WL_enemySide call BIS_fnc_WL2_getSideBase)];
 _mrkrTargetEnemy setMarkerColorLocal BIS_WL_colorMarkerEnemy;
 _mrkrTargetFriendly = createMarkerLocal ["BIS_WL_targetFriendly", position (BIS_WL_playerSide call BIS_fnc_WL2_getSideBase)];
 _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;

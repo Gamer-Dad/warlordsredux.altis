@@ -11,7 +11,7 @@ if (_side != BIS_WL_playerSide) exitWith {
 			[toUpper format [localize "STR_A3_WL_incoming", _sector getVariable "BIS_WL_name", BIS_WL_enemySide call BIS_fnc_WL2_sideToFaction]] spawn BIS_fnc_WL2_smoothText;
 		};
 		
-		if (_sector == BIS_WL_playerBase) then {
+		if (_sector == (BIS_WL_playerSide call BIS_fnc_WL2_getSideBase)) then {
 			playSound "air_raid";
 			[toUpper localize "STR_A3_WL_popup_base_vulnerable"] spawn BIS_fnc_WL2_smoothText;
 			if !(isServer) then {
@@ -32,7 +32,7 @@ if (_side != BIS_WL_playerSide) exitWith {
 	} else {
 		"BIS_WL_targetEnemy" setMarkerAlphaLocal 0;
 		"BIS_WL_targetEnemy" setMarkerDirLocal 0;
-		if ((markerPos "BIS_WL_targetEnemy") distance2D BIS_WL_playerBase < 1 && {!isServer}) then {
+		if ((markerPos "BIS_WL_targetEnemy") distance2D (BIS_WL_playerSide call BIS_fnc_WL2_getSideBase) < 1 && {!isServer}) then {
 			["base_safe", BIS_WL_playerSide] call BIS_fnc_WL2_handleRespawnMarkers;
 		};
 	};
