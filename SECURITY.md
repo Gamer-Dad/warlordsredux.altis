@@ -7,7 +7,8 @@ Supported versions are versions that don't have any game braking bugs, it is sti
 
 |  Version |       Supported        |
 | -------- | ---------------------- |
-| > 2.5.8  | :small_orange_diamond: |
+| > 2.5.8.1| :small_orange_diamond: |
+| 2.5.8.1  | :white_check_mark:     |
 | 2.5.8    | :white_check_mark:     |
 | 2.5.7.1  | :white_check_mark:     |
 | 2.5.7    | :white_check_mark:     |
