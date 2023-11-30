@@ -15,6 +15,10 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
 		_grp = createVehicleCrew _asset;
 		_grp deleteGroupWhenEmpty true;
+		{
+			_member = _x;
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID player), [2, clientOwner]];
+		} forEach units _grp;
 		_asset setDir (direction _sender);
 	} else {
 		private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
@@ -38,6 +42,10 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 		_grp = createVehicleCrew _asset;
 		_grp deleteGroupWhenEmpty true;
+		{
+			_member = _x;
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID player), [2, clientOwner]];
+		} forEach units _grp;
 		_asset setDir _dir;
 	};
 } else {
