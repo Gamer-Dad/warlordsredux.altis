@@ -1,12 +1,10 @@
-#include "..\warlords_constants.inc"
-
 params ["_side"];
 
 _varName = format ["BIS_WL_forfeitVotingSince_%1", _side];
 _terminate = false;
 
 while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1]) + 30)}} do {
-	sleep WL_TIMEOUT_SHORT;
+	sleep 0.25;
 	
 	_warlords = allPlayers select {side group _x == _side};
 	_limit = ceil ((count _warlords) / 2);

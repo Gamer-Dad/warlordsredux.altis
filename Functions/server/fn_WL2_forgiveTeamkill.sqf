@@ -1,4 +1,3 @@
-
 params ["_teamkiller", "_forgiver", "_forgive"];
 
 if !(isServer) exitWith {};
