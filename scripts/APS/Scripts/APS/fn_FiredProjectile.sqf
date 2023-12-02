@@ -49,7 +49,7 @@ while {_continue} do {
 
 				triggerAmmo _projectile;
 
-				if ((side _unit == side _x) || {(side _x == civilian) && {side ((_x getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID) == side _unit}}) then {
+				if (side _unit == side _x) then {
 					0 spawn {
 						sleep 0.5;
 						
