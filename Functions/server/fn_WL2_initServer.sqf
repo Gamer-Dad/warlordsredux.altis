@@ -37,7 +37,6 @@ BIS_fnc_WL2_tablesSetUp = compileFinal preprocessFileLineNumbers "Functions\serv
 BIS_fnc_WL2_targetResetHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_targetResetHandleServer.sqf";
 BIS_fnc_WL2_targetSelectionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_targetSelectionHandleServer.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_zoneRestrictionHandleServer.sqf";
-
 BIS_fnc_WL2_getInfantry = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getInfantry.sqf";
 BIS_fnc_WL2_getVehicles = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getVehicles.sqf";
 BIS_fnc_WL2_sectorCaptureHandle = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorCaptureHandle.sqf";
@@ -47,6 +46,7 @@ BIS_fnc_orderAir = compileFinal preprocessFileLineNumbers "Functions\server\clie
 BIS_fnc_orderDefence = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderDefence.sqf";
 BIS_fnc_orderGround = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderGround.sqf";
 BIS_fnc_orderNaval = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderNaval.sqf";
+BIS_fnc_WL2_setAssist = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_setAssist.sqf";
 
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;

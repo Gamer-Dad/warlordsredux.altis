@@ -49,8 +49,12 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 _asset setDir _direction;
 _asset enableWeaponDisassembly false;
 
+_asset addEventHandler ["HandleDamage", {
+	params ["_unit", "_selection", "_damage", "_source"];
+	call BIS_fnc_WL2_setAssist;
+}];
+
 [_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};
-
 _sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];

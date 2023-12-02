@@ -1,4 +1,4 @@
-params ["_unit", "_reward"];
+params ["_unit", "_reward", ["_assist", false]];
 
 disableSerialization;
 
@@ -21,10 +21,18 @@ _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
 if (_unit isKindOf "Man") then {
-	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
+	if (_assist) then {
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Kill assist +%1CP</t>", _reward];
+	} else {
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward];
+	};
 } else {
 	_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-	_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>%1 destroyed %3%2CP</t>", _displayName, _reward, (if (_reward > 0) then {"+"} else {""})];
+	if (_assist) then {
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>Assist:%1 +%2CP</t>", _displayName, _reward];
+	} else {
+		_ctrl ctrlSetStructuredText parseText format ["<t size='0.8' align='right' shadow = '1' color='#228b22'>%1 destroyed %3%2CP</t>", _displayName, _reward, (if (_reward > 0) then {"+"} else {""})];
+	};
 };
 
 WAS_score = true;

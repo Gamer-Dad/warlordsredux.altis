@@ -19,8 +19,12 @@ if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
 	_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
 };
 
+_asset addEventHandler ["HandleDamage", {
+	params ["_unit", "_selection", "_damage", "_source"];
+	call BIS_fnc_WL2_setAssist;
+}];
+
 [_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};
-
 _sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
