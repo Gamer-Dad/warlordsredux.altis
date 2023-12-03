@@ -2,7 +2,6 @@ params ["_warlord"];
 
 _warlord setVariable ["BIS_WL_detectedByServer", true];
 _owner = owner _warlord;
-_warlord setVariable ["BIS_WL_friendlyKillTimestamps", [], [2, _owner]];
 
 private _uid = getPlayerUID _warlord;
 private _pFunds = (serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, -1];
