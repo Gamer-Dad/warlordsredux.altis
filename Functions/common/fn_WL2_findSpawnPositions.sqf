@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_area", ["_rimWidth", 0], ["_infantryOnly", TRUE], ["_sortCenter", objNull]];
+params ["_area", ["_rimWidth", 0], ["_infantryOnly", true], ["_sortCenter", objNull]];
 if !(_area isEqualType []) then {_area = [_area]};
 
 private _center = _area # 0;
@@ -95,7 +95,7 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 				if !(_finalPos isEqualTo []) then {
 					_finalPos = ASLToATL _finalPos;
 					_nearObjs = _finalPos nearObjects ["AllVehicles", 5];
-					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 6];
+					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 10, true, true];
 					if (count _nearObjs == 0 && count _nearMapObjs == 0) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
