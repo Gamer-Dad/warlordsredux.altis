@@ -1,8 +1,7 @@
 params ["_unit", "_responsibleLeader"];
 
-if ((group _unit) == (group _responsibleLeader)) exitWith {};
-
-if (_unit isKindOf "Man") then {
+_inf = _unit isKindOf "Man";
+if (_inf && {(group _unit) != (group _responsibleLeader)}) then {
 	if (side (group _unit) == side (group _responsibleLeader)) then {
 		_owner = owner _responsibleLeader;
 
@@ -10,6 +9,7 @@ if (_unit isKindOf "Man") then {
 		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unit)];
 	};
 } else {
+	if (_inf) exitwith {};
 	_uid = _unit getVariable ["BIS_WL_ownerAsset", "123"];
 	if (_uid == "123" || {_uid == (getPlayerUID _responsibleLeader)}) exitWith {};
 	_sideOwner = side (group (_uid call BIS_fnc_getUnitByUID));
