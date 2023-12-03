@@ -8,7 +8,7 @@ while {!BIS_WL_missionEnd} do {
 	{
 		_side = _x;
 		_sideID = _forEachIndex;
-		_warlords = allPlayers select {alive _x && {side group _x == _side && {serverTime > ((_x getVariable ["BIS_WL_detectedByServerSince", 10e10]) + 3)}}};
+		_warlords = allPlayers select {alive _x && {side group _x == _side}};
 		_restrictedSectors = BIS_WL_allSectors - ((BIS_WL_sectorsArrays # _sideID) # 3);
 		
 		{

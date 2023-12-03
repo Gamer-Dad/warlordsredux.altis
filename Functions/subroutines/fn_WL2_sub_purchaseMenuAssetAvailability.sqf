@@ -45,7 +45,7 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FundsTransfer": {
-			if (count (allPlayers select {side group _x == BIS_WL_playerSide}) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
+			if ((playersNumber BIS_WL_playerSide) < 2) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_transfer_restr1_TODO_REWRITE"};
 		};
 		case "TargetReset": {
 			if (isNull WL_TARGET_FRIENDLY) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_conflict"};

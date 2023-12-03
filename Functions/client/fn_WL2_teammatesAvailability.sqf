@@ -1,6 +1,6 @@
 _side = BIS_WL_playerSide;
 while {!BIS_WL_missionEnd} do {
-	private _sideCnt = count (allPlayers select {side group _x == _side});
+	private _sideCnt = playersNumber _side;
 	private _timeout = (120 * (_sideCnt/8)) max 120;
 	sleep _timeout;
 	if (missionNamespace getVariable ["WL2_manLost", false]) then {

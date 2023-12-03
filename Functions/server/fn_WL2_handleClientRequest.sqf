@@ -177,8 +177,7 @@ if (_action == "10K") exitWith {
 };
 
 if (_action == "devCP") exitWith {
-	_arr = (allPlayers apply {getPlayerUID _x}) select {_x == "76561198865298977"};
-	if (count _arr == 1 && {getPlayerUID _sender == "76561198865298977"}) then {
+	if (getPlayerUID _sender in (getArray (missionConfigFile >> "adminIDs"))) then {
 		_param1 call BIS_fnc_WL2_fundsDatabaseWrite;			
 	};
 };
