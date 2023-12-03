@@ -5,8 +5,8 @@ params ["_asset", ["_owner", objNull]];
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
 		call APS_fnc_RegisterVehicle;
-		_asset call APS_fnc_SetupProjectiles;
 	};
+	_asset call APS_fnc_SetupProjectiles;
 	_asset setSkill (0.2 + random 0.3);
 };
 
