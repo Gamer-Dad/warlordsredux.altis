@@ -35,21 +35,6 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 	];
 };
 {
-	_m drawIcon [
-		"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
-		[1, 0, 0, 0.8],
-		call BIS_fnc_getPos,
-		20,
-		20,
-		0,
-		_x call BIS_fnc_iconText,
-		1,
-		0.043,
-		"PuristaBold",
-		"right"
-	];
-} forEach (allPlayers select {(!alive _x) && {(side group _x == _side)}});
-{
 	private _revealTrigger = _x getVariable "BIS_WL_revealTrigger";
 	{
 		if (!isNull _x) then {
@@ -70,6 +55,24 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		};
 	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])) select {(side group _x != _side) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
+
+_control = (findDisplay 12) displayCtrl 51;
+_draw = (ctrlMapScale _control) < 0.3;
+{
+	_m drawIcon [
+		"\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa",
+		[1, 0, 0, 0.8],
+		call BIS_fnc_getPos,
+		20,
+		20,
+		0,
+		if (_draw) then {format ["%1 [K.I.A.]", (name _x)]} else {""},
+		1,
+		0.043,
+		"PuristaBold",
+		"right"
+	];
+} forEach (allPlayers select {(!alive _x) && {(side group _x == _side)}});
 {
 	_size = call BIS_fnc_iconSize;
 	if (_x == player) then {
@@ -94,7 +97,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_size,
 		_size,
 		call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
+		if (_draw) then {name _x} else {""},
 		1,
 		0.043,
 		"PuristaBold",
@@ -110,13 +113,13 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_size,
 		_size,
 		call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
+		if (_draw) then {format ["%1 [AI]", (name _x)]} else {""},
 		1,
 		0.043,
 		"PuristaBold",
 		"right"
 	];
-} forEach ((allUnits) select {(side group (crew _x select 0) == _side) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic"}}}});
+} forEach ((allUnits) select {(side group (crew _x select 0) == _side) && {(alive _x) && {(isNull objectParent _x) && {typeOf _x != "Logic" && {!(isPlayer _x)}}}}});
 {
 	_size = call BIS_fnc_iconSize;
 	_m drawIcon [
@@ -126,12 +129,12 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 		_size,
 		_size,
 		call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
+		if (_draw) then {if (isPlayer _x) then {name _x} else {format ["%1 [AI]", (name _x)]}} else {""},
 		1,
 		0.043,
 		"PuristaBold",
 		"right"
-	];		
+	];
 } forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});
 {
 	_size = call BIS_fnc_iconSize;
@@ -199,8 +202,7 @@ if (_side == west) then {
 			"right"
 		];
 	} forEach (vehicles select {(typeOf _x == "B_Slingload_01_Medevac_F") && {alive _x}});
-};
-if (_side == east) then {
+} else {
 	{
 		_size = call BIS_fnc_iconSize;
 		_m drawIcon [
@@ -233,5 +235,5 @@ if (_side == east) then {
 			"PuristaBold",
 			"right"
 		];
-	} forEach (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});
+	} forEach (vehicles select {(typeOf _x == "Land_Pod_Heli_Transport_04_medevac_F") && {alive _x}});	
 };
