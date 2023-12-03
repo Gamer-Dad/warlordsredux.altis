@@ -20,6 +20,7 @@ addMissionEventHandler ["HandleDisconnect", {
 		[_player, _unit] spawn MRTM_fnc_accept;
 	} forEach (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", _uid]), []]);
 	
+	serverNamespace setVariable [format ["assistList_%1", _unit], nil];
 	call BIS_fnc_WL2_calcImbalance;
 }];
 
