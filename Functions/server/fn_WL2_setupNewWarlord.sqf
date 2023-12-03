@@ -26,8 +26,6 @@ if (isPlayer _warlord) then {
 		if ((serverNamespace getVariable _friendlyFireVarName) > serverTime) then {
 			[(serverNamespace getVariable _friendlyFireVarName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", (owner _warlord)];
 		};
-	} else {
-		_warlord setVariable ["BIS_WL_ignore", true, true];
 	};
 
 	call BIS_fnc_WL2_calcImbalance;
