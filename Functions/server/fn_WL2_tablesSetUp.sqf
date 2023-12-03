@@ -1,5 +1,8 @@
-//CP databse
+//CP database
 serverNamespace setVariable ["fundsDatabase", createHashMap];
+
+//Player database
+serverNamespace setVariable ["playerList", createHashMap];
 
 //Mines
 serverNamespace setVariable ["BIS_WL2_mineLimits",

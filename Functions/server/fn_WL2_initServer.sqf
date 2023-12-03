@@ -55,10 +55,6 @@ missionNamespace setVariable ["BIS_WL_wrongTeamGroup", _group, true];
 _group deleteGroupWhenEmpty false;
 missionNamespace setVariable ["gameStart", serverTime, true];
 
-{
-	serverNamespace setVariable [format ["BIS_WL_boundTo%1", _x], []];
-} forEach [west, east];
-
 if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 
 call BIS_fnc_WL2_sectorsInitServer;
