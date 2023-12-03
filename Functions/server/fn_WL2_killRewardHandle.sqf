@@ -22,7 +22,6 @@ _unitSide = if (_unit isKindOf "Man") then {
 	};
 };
 
-_crew = [];
 if (_killerSide != _unitSide) then {
 	_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
 	_killReward = 0;
@@ -50,25 +49,3 @@ if (_killerSide != _unitSide) then {
 		[_unit, _reward] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
 	} forEach _crew;
 };
-
-_assistList = ((serverNamespace getVariable [format ["assistList_%1", _unit], []]) select {_x != _responsibleLeader});
-if (count _assistList > 0) then {
-	_reward = if (_unit isKindOf "Man") then {
-		if (isPlayer _unit) then {
-			60;
-		} else {
-			30;
-		};
-	} else {
-		(serverNamespace getVariable "BIS_WL2_killRewards") get (typeOf _unit);
-	};
-
-	_reward = round (_reward / 5);
-	{
-		_uid = getPlayerUID _x;
-		_reward call BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _reward, true] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _x)];
-	} forEach (_assistList select {!(_x in _crew)});
-};
-
-serverNamespace setVariable [format ["assistList_%1", _unit], nil];

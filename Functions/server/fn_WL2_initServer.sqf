@@ -46,7 +46,6 @@ BIS_fnc_orderAir = compileFinal preprocessFileLineNumbers "Functions\server\clie
 BIS_fnc_orderDefence = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderDefence.sqf";
 BIS_fnc_orderGround = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderGround.sqf";
 BIS_fnc_orderNaval = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderNaval.sqf";
-BIS_fnc_WL2_setAssist = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_setAssist.sqf";
 
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;

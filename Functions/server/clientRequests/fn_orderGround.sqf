@@ -22,9 +22,4 @@ if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
 [_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
 
 waitUntil {sleep 0.01; !(isNull _asset)};
-
-_asset addEventHandler ["HandleDamage", {
-	params ["_unit", "_selection", "_damage", "_source"];
-	call BIS_fnc_WL2_setAssist;
-}];
 _sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];

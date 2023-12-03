@@ -18,10 +18,6 @@ if (_side == resistance) then {
 			
 			_vehicle call BIS_fnc_WL2_newAssetHandle;
 			_units pushBack _vehicle;
-			_vehicle addEventHandler ["HandleDamage", {
-				params ["_unit", "_selection", "_damage", "_source"];
-				call BIS_fnc_WL2_setAssist;
-			}];
 			
 			{
 				_x call BIS_fnc_WL2_newAssetHandle;
@@ -49,11 +45,6 @@ if (_side == resistance) then {
 
 			_vehicle call BIS_fnc_WL2_newAssetHandle;
 			_units pushBack _vehicle;
-
-			_vehicle addEventHandler ["HandleDamage", {
-				params ["_unit", "_selection", "_damage", "_source"];
-				call BIS_fnc_WL2_setAssist;
-			}];
 			
 			{
 				_x call BIS_fnc_WL2_newAssetHandle;
@@ -85,10 +76,6 @@ if (_side == resistance) then {
 			
 			_vehicle call BIS_fnc_WL2_newAssetHandle;
 			_units pushBack _vehicle;
-			_vehicle addEventHandler ["HandleDamage", {
-				params ["_unit", "_selection", "_damage", "_source"];
-				call BIS_fnc_WL2_setAssist;
-			}];
 			
 			{
 				_x call BIS_fnc_WL2_newAssetHandle;
