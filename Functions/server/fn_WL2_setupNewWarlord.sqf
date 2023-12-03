@@ -36,9 +36,11 @@ if (_boundToTeam) then {
 	_imb = ((_friendlyCnt - _enemyCnt) > 3);
 	if (_imb) then {
 		_pList set [_uid, [true, _enemyside]];
+		serverNamespace setVariable ["playerList", _pList];
 		missionNamespace setVariable [_varImb, _imb, _owner];
 	} else {
 		_pList set [_uid, [true, _sideW]];
+		serverNamespace setVariable ["playerList", _pList];
 		missionNamespace setVariable [_varImb, _imb, _owner];
 	};
 };
