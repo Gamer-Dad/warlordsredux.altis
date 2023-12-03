@@ -3,9 +3,7 @@ params ["_warlord"];
 _warlord setVariable ["BIS_WL_detectedByServer", true];
 _owner = owner _warlord;
 _warlord setVariable ["BIS_WL_friendlyKillTimestamps", [], [2, _owner]];
-serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", getPlayerUID _warlord], false];
 
-//CP database
 private _uid = getPlayerUID _warlord;
 private _pFunds = (serverNamespace getVariable "fundsDatabase") getOrDefault [_uid, -1];
 if (_pFunds == -1) then {
