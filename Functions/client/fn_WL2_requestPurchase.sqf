@@ -1,5 +1,3 @@
-#include "..\warlords_constants.inc"
-
 params ["_class", "_cost", "_category", "_requirements", "_offset"];
 
 if (_category == "Defences") exitWith {

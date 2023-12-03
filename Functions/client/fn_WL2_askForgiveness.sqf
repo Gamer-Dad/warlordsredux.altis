@@ -4,7 +4,7 @@ if (isNil "WL2_ffBuffer") then {
 	WL2_ffBuffer = [];
 	0 spawn {
 		_busy = false;
-		while {!BIS_WL_missionEnd} do {
+		while {!BIS_WL_missionEnd && {(count WL2_ffBuffer) > 0}} do {
 			waitUntil {sleep 1; (count WL2_ffBuffer > 0) && {!_busy}};
 			_busy = true;
 			_params = WL2_ffBuffer # 0;
@@ -32,6 +32,7 @@ if (isNil "WL2_ffBuffer") then {
 				_busy = false;
 			};
 		};
+		WL2_ffBuffer = nil;
 	};
 };
 

@@ -9,13 +9,12 @@ if (_forgive) then {
 	_timestamps deleteAt ((count _timestamps) - 1);
 	_teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, (owner _teamkiller)]];
 
-	_teamKiller spawn {
-		params ["_teamKiller"];
-		while {rating _teamKiller < 0} do {
-			_teamkiller addRating 500;
+	{
+		while {rating player < 0} do {
+			player addRating 200;
 			sleep 0.1;
 		};
-	};
+	} remoteExec ["spawn", (owner _teamkiller)];
 } else {
 	if ((count (_teamKiller getVariable "BIS_WL_friendlyKillTimestamps")) >= 3) then {
 		_varName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", getPlayerUID _teamKiller];
