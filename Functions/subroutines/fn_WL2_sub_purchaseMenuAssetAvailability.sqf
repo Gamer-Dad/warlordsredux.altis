@@ -143,7 +143,7 @@ if (_ret) then {
 			if (_category == "Infantry" && {(count _units) >= BIS_WL_matesAvailable}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_vehiclesCnt >= (getMissionConfigValue ["BIS_WL_assetLimit", 10])}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_nearbyEnemies}) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_tooltip_deploy_enemies_nearby"};
-			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {vehicle player != player}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
+			if (_category in ["Infantry", "Vehicles", "Gear", "Defences"] && {vehicle player != player}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (_category in ["Vehicles", "Infantry", "Gear", "Defences"] && {(_visitedSectorID == -1)}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_restr1"};
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {(player getVariable ["BIS_WL_isOrdering", false])}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 			if (_category == "Aircraft") exitWith {
