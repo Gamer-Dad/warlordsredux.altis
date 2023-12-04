@@ -14,15 +14,12 @@ if (_pFunds == -1) then {
 _varSwitch = format ["teamBlocked_%1", _uid];
 _varImb = format ["balanceBlocked_%1", _uid];
 _sideW = side group _warlord;
-["Server L17"] remoteExec ["diag_log", _owner];
+
 _pList = serverNamespace getVariable "playerList";
-[format ["Server L19: %1", _pList]] remoteExec ["diag_log", _owner];
 _boundToTeam = (_pList getOrDefault [_uid, [false]]) # 0;
-[format ["Server L21: %1", _boundToTeam]] remoteExec ["diag_log", _owner];
 if (_boundToTeam) then {
 	_correctSide = ((_pList get _uid) # 1) == _sideW;
-	[format ["Server L24: %1", _correctSide]] remoteExec ["diag_log", _owner];
-	missionNamespace setVariable [_varSwitch, _correctSide, _owner];
+	missionNamespace setVariable [_varSwitch, (!_correctSide), _owner];
 
 	if (_correctSide) then {
 		_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", _uid];
