@@ -22,6 +22,7 @@ if (_boundToTeam) then {
 	missionNamespace setVariable [_varSwitch, (!_correctSide), _owner];
 
 	if (_correctSide) then {
+		missionNamespace setVariable [_varImb, false, _owner];
 		_friendlyFireVarName = format ["BIS_WL_%1_friendlyKillPenaltyEnd", _uid];
 		if ((serverNamespace getVariable _friendlyFireVarName) > serverTime) then {
 			[(serverNamespace getVariable _friendlyFireVarName)] remoteExec ["BIS_fnc_WL2_friendlyFireHandleClient", _owner];
