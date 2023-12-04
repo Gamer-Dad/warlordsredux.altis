@@ -2,6 +2,17 @@
 
 params ["_asset", ["_owner", objNull]];
 
+_asset addEventHandler ["Explosion", {
+			params ["_vehicle", "_damage", "_source"];
+			if !(alive _vehicle) then {
+				_responsibleLeader = (_source getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID;
+				if (isPlayer _responsibleLeader) then {
+					[_vehicle, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
+					[_vehicle, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+				}
+			}
+		}];
+
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
 		call APS_fnc_RegisterVehicle;
@@ -124,6 +135,7 @@ if (isPlayer _owner) then {
 					{
 						(getConnectedUAVUnit player) addEventHandler ["Killed", { params ["_unit", "_killer", "_instigator", "_useEffects"]; 
 							_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos _unit), [], 0, "FLY"]; 
+							_expl setVariable ["BIS_WL_ownerAsset", (getPlayerUID player), [2, clientOwner]];
 							triggerAmmo _expl; 
 							deleteVehicle (getConnectedUAV player);
 						}];

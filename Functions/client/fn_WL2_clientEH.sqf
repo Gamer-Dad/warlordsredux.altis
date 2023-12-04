@@ -73,6 +73,17 @@ player addEventHandler ["HandleDamage", {
 	};
 }];
 
+player addEventHandler ["Explosion", {
+			params ["_vehicle", "_damage", "_source"];
+			if !(alive _vehicle) then {
+				_responsibleLeader = (_source getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID;
+				if (isPlayer _responsibleLeader) then {
+					[_vehicle, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
+					[_vehicle, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+				}
+			}
+		}];
+
 if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
 	addMissionEventHandler ["HandleChatMessage", {
 		params ["_channel", "_owner", "_from", "_text"];
