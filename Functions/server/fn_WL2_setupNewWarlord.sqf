@@ -35,7 +35,6 @@ if (_boundToTeam) then {
 	_enemyside = ([west, east] select {_x != _sideW}) # 0;
 	_enemyCnt = playersNumber _enemyside;
 	_imb = ((_friendlyCnt - _enemyCnt) > 3);
-	[format ["Server L40: %1|%2|%3|%4", _friendlyCnt, _enemyside, _enemyCnt, _imb]] remoteExec ["diag_log", _owner];
 	if (_imb) then {
 		_pList set [_uid, [true, _enemyside]];
 		serverNamespace setVariable ["playerList", _pList];
