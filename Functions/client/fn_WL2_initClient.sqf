@@ -90,8 +90,10 @@ waitUntil {!isNull player && {isPlayer player}};
 waitUntil {!(isNil "BIS_WL_playerSide")};
 
 private _uid = getPlayerUID player;
+diag_log "L93: Ran";
 private _switch = format ["teamBlocked_%1", _uid];
 waitUntil {!isNil {missionNamespace getVariable _switch}};
+diag_log "L96: !isNil _switch";
 if (missionNamespace getVariable _switch) exitWith {
 	addMissionEventHandler ["EachFrame", {
 		clearRadio;
@@ -110,9 +112,11 @@ if (missionNamespace getVariable _switch) exitWith {
 	[localize "STR_A3_WL_switch_teams", localize "STR_A3_WL_switch_teams_info"] call BIS_fnc_WL2_blockScreen;
 };
 missionNamespace setVariable [_switch, nil];
+diag_log "L115: don't switch";
 
 private _imb = format ["balanceBlocked_%1", _uid];
 waitUntil {!isNil {missionNamespace getVariable _imb}};
+diag_log "L119: !isNil _imb";
 if (missionNamespace getVariable _imb) exitWith {
 	addMissionEventHandler ["EachFrame", {
 		clearRadio;
