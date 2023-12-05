@@ -1,5 +1,3 @@
-if !(isNil "BIS_WL_disableSmoothTextEffects") exitWith {};
-
 params [
 	["_text", "", [""]],
 	["_maxLines", 3, [0]],
