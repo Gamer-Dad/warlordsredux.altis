@@ -10,21 +10,15 @@ if (_inf && {(group _unit) != (group _responsibleLeader)}) then {
 } else {
 	if (_inf) exitwith {};
 	_uid = _unit getVariable ["BIS_WL_ownerAsset", "123"];
-	[format ["L13 %1", _uid]] remoteExec ["systemChat", 0];
-	[format ["L14 %1", _uid == (getPlayerUID _responsibleLeader)]] remoteExec ["systemChat", 0];
 	if (_uid == "123" || {_uid == (getPlayerUID _responsibleLeader)}) exitWith {};
-	_sideOwner = side (group (_uid call BIS_fnc_getUnitByUID));
-	[format ["L17 %1", _sideOwner]] remoteExec ["systemChat", 0];
+	_unitOwner = _uid call BIS_fnc_getUnitByUID;
+	_sideOwner = side (group _unitOwner);
 	_crew = ((crew _unit) select {alive _x});
-	[format ["L19 %1", _crew]] remoteExec ["systemChat", 0];
 	_sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
-	[format ["L21 %1", _sideCrew]] remoteExec ["systemChat", 0];
 	
 	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
 		_owner = owner _responsibleLeader;
-		[format ["L25 %1", _owner]] remoteExec ["systemChat", 0];
 		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, getPlayerUID _unit]]), [2, _owner]];
-		[format ["L27 %1", (owner _unit)]] remoteExec ["systemChat", 0];
-		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unit)];
+		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unitOwner)];
 	};
 };

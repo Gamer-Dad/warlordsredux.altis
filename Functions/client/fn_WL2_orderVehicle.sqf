@@ -4,6 +4,7 @@ player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
 
 if (_class isKindOf "Man") then {
 	_asset = (group player) createUnit [_class, (getPosATL player), [], 2, "NONE"];
+	_asset setVariable ["BIS_WL_ownerAsset", getPlayerUID player, [2, clientOwner]];
 	[player, "orderAI", _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	[_asset, player] spawn BIS_fnc_WL2_newAssetHandle;
 	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
