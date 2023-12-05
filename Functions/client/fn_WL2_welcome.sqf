@@ -238,27 +238,28 @@ while {dialog} do {
 		//Scripts
 		case "scripts": { 
 			private _control = findDisplay 9000 displayCtrl 9010;
+			_size = 4 call BIS_fnc_WL2_sub_purchaseMenugetUIScale;
 			_control ctrlSetStructuredText composeText [
 			"Aircraft Loadout", lineBreak,
 			"", lineBreak,
 			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
 			"You can order vehicle ammo box close to your aircraft and then look at the aircraft and press 'Rearm' to change you  loadout.", lineBreak,
 			"", lineBreak,
-			parseText "<img  size='5' image='a3\data_f_jets\images\dlcbrowser_jets_loadouts_ca.paa'/>", lineBreak,
+			parseText format ["<img  size='%1' image='a3\data_f_jets\images\dlcbrowser_jets_loadouts_ca.paa'/>", _size], lineBreak,
 			"", lineBreak,
 			"GF Earplugs", lineBreak,
 			"", lineBreak,
 			"We use George Floros's earplug script wich allows you to lower your volume by the press of 1 button.", lineBreak,
 			"You can press the INSERT key to lower your volume.", lineBreak,
 			"", lineBreak,
-			parseText "<img  size='5' image='img\earPlugs_ca.paa'/>", lineBreak,
+			parseText format ["<img  size='%1' image='img\earPlugs_ca.paa'/>", _size], lineBreak,
 			"", lineBreak,
 			"Vehicle Unflip", lineBreak,
 			"", lineBreak,
 			"Oh no did your vehicle flip over? Simply walk up to it and use your scroll wheel to unflip the vehicle.", lineBreak,
 			"Note: Static defenses may experience difficulty flipping over.", lineBreak,
 			"", lineBreak,
-			parseText "<img  size='5' image='a3\missions_f\data\img\showcase_vehicles_overview_ca.paa'/>", lineBreak,
+			parseText format ["<img  size='%1' image='a3\missions_f\data\img\showcase_vehicles_overview_ca.paa'/>", _size], lineBreak,
 			""
 			];
 		};
