@@ -1,6 +1,7 @@
 params [["_sender", objNull, [objNull]], ["_action", "", [""]], "_param1", "_param2", "_param3", "_param4"];
 
 if (isNull _sender) exitWith {};
+if !(isServer) exitWith {};
 if (remoteExecutedOwner != (owner _sender)) exitWith {};
 
 #include "..\server_macros.inc"

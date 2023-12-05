@@ -112,8 +112,9 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 	};
 };
 
-_asset enableWeaponDisassembly false;
-[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+waitUntil {sleep 0.1; !(isNull _asset)};
 
-waitUntil {sleep 0.01; !(isNull _asset)};
-_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
+_owner = owner _sender;
+_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
+[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", _owner];
+_sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];

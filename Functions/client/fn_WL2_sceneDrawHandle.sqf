@@ -52,20 +52,4 @@ addMissionEventHandler ["Draw3D", {
 			"center"
 		];
 	} forEach ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide == side group _x && {alive _x}}});
-	{
-		drawIcon3D [
-			"\A3\ui_f\data\map\groupicons\selector_selectable_ca.paa",
-			[1, 1, 1, 0.5],
-			(getPosATLVisual _x) vectorAdd [0,0,1],
-			1,
-			1,
-			0,
-			getText (configFile >> "CfgVehicles" >> typeOf _x >> "displayName"),
-			2,
-			0.03,
-			"RobotoCondensedBold",
-			"center",
-			FALSE
-		];
-	} forEach BIS_WL_recentlyPurchasedAssets;
 }];

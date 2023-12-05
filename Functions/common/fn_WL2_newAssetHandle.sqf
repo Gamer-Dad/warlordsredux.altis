@@ -12,7 +12,6 @@ if (isServer && {isNull _owner}) exitWith {
 
 if (isPlayer _owner) then {
 	WAS_store = true;
-	_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _owner), [2, clientOwner]];
 
 	if (_asset isKindOf "Man") then {
 		_asset addEventHandler ["Killed", {
@@ -24,7 +23,6 @@ if (isPlayer _owner) then {
 		call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		_asset enableWeaponDisassembly false;
 		
 		private _defaultMags = [];
 		{
@@ -36,19 +34,11 @@ if (isPlayer _owner) then {
 		publicVariableServer _ownedVehiclesVarName;
 		
 		if !(_asset isKindOf "StaticWeapon") then {
-			BIS_WL_recentlyPurchasedAssets pushBack _asset;
-			
-			_asset spawn {
-				_t = serverTime + 30;
-				waitUntil {sleep WL_TIMEOUT_STANDARD; serverTime > _t || {!alive _this || {vehicle player == _this}}};
-				BIS_WL_recentlyPurchasedAssets = BIS_WL_recentlyPurchasedAssets - [_this];
-			};
-
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
 			if (typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}) then {
-				if (_asset isKindOf "Air" && {typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}}) then {
+				if (_asset isKindOf "Air") then {
 					_asset spawn BIS_fnc_WL2_sub_rearmActionAir;
 				} else {
 					_asset spawn BIS_fnc_WL2_sub_rearmAction;
@@ -160,7 +150,7 @@ if (isPlayer _owner) then {
 		};
 
 		if (profileNamespace getVariable ["MRTM_spawnEmpty", false]) then {
-			if !(typeOf _asset == "B_supplyCrate_F" || typeOf _asset == "O_supplyCrate_F") then {
+			if (typeOf _asset != "B_supplyCrate_F" && {typeOf _asset != "O_supplyCrate_F"}) then {
 				if !((typeOf _asset) in (getArray (missionConfigFile >> "logisticsConfig" >> "cargoTypes" >> "Cargo"))) then {
 					clearMagazineCargoGlobal _asset;
 					clearItemCargoGlobal _asset;

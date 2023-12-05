@@ -46,9 +46,10 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 	_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 };
 
-_asset setDir _direction;
-_asset enableWeaponDisassembly false;
-[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", (owner _sender)];
+waitUntil {sleep 0.1; !(isNull _asset)};
 
-waitUntil {sleep 0.01; !(isNull _asset)};
-_sender setVariable ["BIS_WL_isOrdering", false, [2, (owner _sender)]];
+_asset enableWeaponDisassembly false;
+_owner = owner _sender;
+_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
+[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", _owner];
+_sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];

@@ -160,7 +160,6 @@ enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
 missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
-player setVariable ["BIS_WL_ownerAsset", _uid, [2, clientOwner]];
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
