@@ -30,8 +30,9 @@ if (isPlayer _owner) then {
 		} forEach allTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID _owner];
-		missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS + [_asset]];
-		publicVariableServer _ownedVehiclesVarName;
+		_vehicles = WL_PLAYER_VEHS;
+		_vehicles pushBack _asset;
+		missionNamespace setVariable [_ownedVehiclesVarName, _vehicles, [2, clientOwner]];
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};

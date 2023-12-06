@@ -16,8 +16,6 @@ if (_unit isKindOf "Man") then {
 	_sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
 	
 	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
-		_owner = owner _responsibleLeader;
-		_responsibleLeader setVariable ["BIS_WL_friendlyKillTimestamps", ((_responsibleLeader getVariable ["BIS_WL_friendlyKillTimestamps", []]) + [[serverTime, getPlayerUID _unit]]), [2, _owner]];
 		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unitOwner)];
 	};
 };

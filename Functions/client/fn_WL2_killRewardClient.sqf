@@ -56,7 +56,8 @@ _ctrlNmbr spawn {
 	uiNamespace setVariable ["activeControls", _var];
 };
 
-_var = ((uiNamespace getVariable ["activeControls", []]) + [_ctrlNmbr]);
-uiNamespace setVariable ["activeControls", _var];
+_controls = uiNamespace getVariable ["activeControls", []];
+_controls pushBack _ctrlNmbr;
+uiNamespace setVariable ["activeControls", _controls];
 _c = _ctrlNmbr + 1;
 uiNamespace setVariable ["control", _c];

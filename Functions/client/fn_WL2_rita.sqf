@@ -14,7 +14,9 @@ _v addEventHandler ["Gear", {
 }];
 _v addEventHandler ["IncomingMissile", {
 	params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
-	_target setVariable ["Incomming", ((_target getVariable "Incomming") + [_missile])];
+	_inc = _target getVariable "Incomming";
+	_inc pushBack _missile;
+	_target setVariable ["Incomming", _inc];
 }];
 
 _v addEventHandler ["Killed", {
