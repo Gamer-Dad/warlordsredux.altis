@@ -159,7 +159,6 @@ enableSentences true;
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
-missionNamespace setVariable [format ["BIS_WL_ownedVehicles", _uid], []];
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 10000];

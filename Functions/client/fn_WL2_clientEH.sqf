@@ -18,7 +18,7 @@ addMissionEventHandler ["HandleDisconnect", {
 			};
 
 			deleteVehicle _x;
-		} forEach (missionNamespace getVariable "BIS_WL_ownedVehicles");
+		} forEach (missionNamespace getVariable ["BIS_WL_ownedVehicles", []]);
 
 		{
 			if !(isPlayer _x) then {deleteVehicle _x;};

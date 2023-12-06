@@ -136,7 +136,7 @@ if (_ret) then {
 			_possibleSectors = (BIS_WL_sectorsArray # 0);
 			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			_servicesAvailable = BIS_WL_sectorsArray # 5;
-			_vehiclesCnt = count WL_PLAYER_VEHS;
+			_vehiclesCnt = count (missionNamespace getVariable ["BIS_WL_ownedVehicles", []]);
 			_units = ((units group player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) == getPlayerUID player) && {_x != player}});
 			
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr1"};
@@ -148,7 +148,7 @@ if (_ret) then {
 			if (_category in ["Infantry", "Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {(player getVariable ["BIS_WL_isOrdering", false])}) exitWith {_ret = false; _tooltip =  "Another order is in progress!"};
 			if (_category == "Aircraft") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-					if (({(unitIsUAV _x) && {alive _x}} count WL_PLAYER_VEHS) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
+					if (({(unitIsUAV _x) && {alive _x}} count (missionNamespace getVariable ["BIS_WL_ownedVehicles", []])) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 						_ret = false;
 						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};
@@ -156,7 +156,7 @@ if (_ret) then {
 			};
 			if (_category == "Defences") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-					if ((count (WL_PLAYER_VEHS select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
+					if ((count ((missionNamespace getVariable ["BIS_WL_ownedVehicles", []]) select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 						_ret = false;
 						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};

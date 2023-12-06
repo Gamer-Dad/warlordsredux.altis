@@ -8,7 +8,7 @@ _result = [format ["Are you sure you would like to delete: %1", _displayName], "
 if (_result) then {
 	playSound "AddItemOK";
 	[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (getText (configFile >> "CfgVehicles" >> typeOf _target >> "displayName"))], 2] spawn BIS_fnc_WL2_smoothText;
-	_vehicles = WL_PLAYER_VEHS;
+	_vehicles = missionNamespace getVariable ["BIS_WL_ownedVehicles", []];
 	_vehicles deleteAt (_vehicles find _target);
 	missionNamespace setVariable ["BIS_WL_ownedVehicles", _vehicles];
 
