@@ -17,7 +17,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_grp deleteGroupWhenEmpty true;
 		{
 			_member = _x;
-			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, (owner _sender)]];
 		} forEach units _grp;
 		_asset setDir (direction _sender);
 	} else {
@@ -44,7 +44,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_grp deleteGroupWhenEmpty true;
 		{
 			_member = _x;
-			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, (owner _sender)]];
 		} forEach units _grp;
 		_asset setDir _dir;
 	};
