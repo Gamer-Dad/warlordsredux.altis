@@ -102,7 +102,7 @@ _sideN = [east, west] find _side;
 		_size,
 		_size,
 		call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
+		[_x, true] call BIS_fnc_iconText,
 		1,
 		0.043,
 		"PuristaBold",
