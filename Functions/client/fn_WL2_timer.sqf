@@ -13,7 +13,7 @@ _start = missionNamespace getVariable "gameStart";
 
 private _ctrlBackgroundTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 4567];
 _ctrlBackgroundTimer ctrlSetPosition [_displayX + (_blockW * 88), _displayY + (_blockH * - 30), _blockW * 40, _blockH * 16];
-_ctrlBackgroundTimer ctrlSetStructuredText parseText format ["<img size = '%1' color='#ffffff' image='img\timer_ca.paa'></img>", _scale];
+_ctrlBackgroundTimer ctrlSetStructuredText parseText format ["<img size = '%1' color='#ffffff' image='a3\ui_f\data\igui\cfg\actions\settimer_ca.paa'></img>", _scale];
 _ctrlBackgroundTimer ctrlCommit 0;
 
 private _ctrlTimer = findDisplay 46 ctrlCreate ["RscStructuredText", 45671];
