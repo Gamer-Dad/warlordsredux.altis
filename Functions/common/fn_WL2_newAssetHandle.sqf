@@ -206,9 +206,9 @@ if (isPlayer _owner) then {
 		
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
-			_vis = WL_PLAYER_VEHS;
-			_vis deleteAt _asset;
-			missionNamespace setVariable ["BIS_WL_ownedVehicles", _vis];
+			_vics = WL_PLAYER_VEHS;
+			_vics deleteAt (_vics find _asset);
+			missionNamespace setVariable ["BIS_WL_ownedVehicles", _vics];
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
