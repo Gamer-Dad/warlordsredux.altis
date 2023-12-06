@@ -174,7 +174,7 @@ if (_action == "kill") exitWith {
 if (_action == "10K") exitWith {
 	if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		10000 call BIS_fnc_WL2_fundsDatabaseWrite;
-	};	
+	};
 };
 
 if (_action == "devCP") exitWith {

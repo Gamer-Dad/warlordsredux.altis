@@ -88,7 +88,6 @@ while {dialog} do {
 			""
 			];
 		};
-
 		case "pageHow": {
 			hRead = true;
 			_inventoryKey = actionKeysNames "gear";
@@ -117,7 +116,6 @@ while {dialog} do {
 			""
 			];
 		};
-
 		case "theCom": { 
 			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
@@ -147,7 +145,6 @@ while {dialog} do {
 			""
 			];
 		};
-
 		case "discord": { 
 			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
@@ -159,7 +156,6 @@ while {dialog} do {
 			parseText "<a href='https://discord.gg/grmzsZE4ua'>Discord.</a>"
 			];
 		};
-
 		case "changelog": {
 			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
@@ -185,9 +181,6 @@ while {dialog} do {
 			"- Baseline version number"
 			];
 		};
-
-
-		//Scripts
 		case "scripts": { 
 			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
