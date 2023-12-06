@@ -44,7 +44,7 @@ ctrlEnable [8014, !(profileNamespace getVariable ["MRTM_syncObjects", true])];
 
 _kills = (profileNamespace getVariable ["WL2_totalKills", 0]);
 _kd = ((profileNamespace getVariable ["WL2_totalKills", 0])/((profileNamespace getVariable ["WL2_totalDeaths", 0]) max 1)) toFixed 1;
-((findDisplay 8000) displayCtrl 8030) ctrlSetStructuredText parseText format ["<t size='%3'><t size='%3' valign='middle' align='left'>Kills: %1</t> <t size='%3' valign='middle' align='right'>K/D:%2</t></t>", _kills, _kd, 0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
+((findDisplay 8000) displayCtrl 8030) ctrlSetStructuredText parseText format ["<t size='%3'><t size='%3' valign='middle' align='left'>Kills: %1</t> <t size='%3' valign='middle' align='right'>K/D: %2</t></t>", _kills, _kd, 0.8 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale];
 ctrlSetText [8031, format ["Win ratio: %1/%2", (profileNamespace getVariable ["WL2_gamesWon", 0]), (profileNamespace getVariable ["WL2_gamesLost", 0])]];
 ctrlSetText [8032, format ["Sectors seized: %1", (profileNamespace getVariable ["WL2_sectorsSeized", 0])]];
 ctrlSetText [8033, format ["Longest distance kill: %1meters", round (sqrt (profileNamespace getVariable ["WL2_longestDistanceKill", 0]))]];
