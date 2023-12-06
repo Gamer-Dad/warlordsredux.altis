@@ -159,11 +159,10 @@ enableSentences true;
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
-missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
-
+missionNamespace setVariable [format ["BIS_WL_ownedVehicles", _uid], []];
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
-uiNamespace setVariable ["control", 50000];
+uiNamespace setVariable ["control", 10000];
 
 if !(_uid in (getArray (missionConfigFile >> "adminIDs"))) then {
 	0 spawn BIS_fnc_WL2_wasMain;

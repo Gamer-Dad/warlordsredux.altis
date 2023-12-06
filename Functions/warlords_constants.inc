@@ -41,5 +41,5 @@
 #define WL_CONTROL_MAP (uiNamespace getVariable ["BIS_WL_mapControl", controlNull])
 #define WL_PLAYER_REQUISITION_LIST (missionNamespace getVariable format ["BIS_WL_purchasable_%1", BIS_WL_playerSide])
 #define WL_REQUISITION_CATEGORIES ["Infantry", "Vehicles", "Aircraft", "Naval", "Defences", "Gear", "Strategy"]
-#define WL_PLAYER_VEHS (missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []])
+#define WL_PLAYER_VEHS (missionNamespace getVariable ["BIS_WL_ownedVehicles", []])
 #define WL_BASES [BIS_WL_base1, BIS_WL_base2]

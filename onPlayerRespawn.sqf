@@ -8,11 +8,12 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance2D _leader)
 	_newUnit setVehiclePosition [getPosASL _leader, [], 2, "NONE"];
 };
 
+_vics = missionNamespace getVariable "BIS_WL_ownedVehicles";
 {
-	if (isNull _x) then {
-		missionNamespace setVariable [(format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]), ((missionNamespace getVariable [format ["BIS_WL_%1_ownedVehicles", getPlayerUID player], []]) - [_x])];
-	};
-} forEach (missionNamespace getVariable (format ["BIS_WL_%1_ownedVehicles", getPlayerUID player]));
+	_list = missionNamespace getVariable "BIS_WL_ownedVehicles";
+	_list deleteAt _x;
+	missionNamespace setVariable ["BIS_WL_ownedVehicles", _list];
+} forEach (_vics select {isNull _x});
 
 "Died" call MRTM_fnc_statTracker;
 

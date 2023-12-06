@@ -8,9 +8,9 @@ _result = [format ["Are you sure you would like to delete: %1", _displayName], "
 if (_result) then {
 	playSound "AddItemOK";
 	[format [toUpper localize "STR_A3_WL_popup_asset_deleted", toUpper (getText (configFile >> "CfgVehicles" >> typeOf _target >> "displayName"))], 2] spawn BIS_fnc_WL2_smoothText;
-	_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-	missionNamespace setVariable [_ownedVehiclesVarName, WL_PLAYER_VEHS - [_target]];
-	publicVariableServer _ownedVehiclesVarName;
+	_vehicles = WL_PLAYER_VEHS;
+	_vehicles deleteAt _target;
+	missionNamespace setVariable ["BIS_WL_ownedVehicles", _vehicles];
 
 	if (_target == (getConnectedUAV player)) then {
 		player connectTerminalToUAV objNull;

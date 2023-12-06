@@ -1,20 +1,5 @@
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-
-	{
-		if (unitIsUAV _x) then {
-			private _grp = group effectiveCommander _x;
-			{_x deleteVehicleCrew _x} forEach crew _x;
-			deleteGroup _grp;
-		};
-
-		deleteVehicle _x;
-	} forEach (missionNamespace getVariable format ["BIS_WL_%1_ownedVehicles", _uid]);
-	{
-		if !(isPlayer _x) then {deleteVehicle _x;};
-	} forEach ((allUnits) select {(_x getVariable ["BIS_WL_ownerAsset", "132"] == _uid)});
-	missionNamespace setVariable [format ["BIS_WL_%1_ownedVehicles", _uid], []];
-
 	{
 		_player = _x call BIS_fnc_getUnitByUID;
 		[_player, _unit] spawn MRTM_fnc_accept;

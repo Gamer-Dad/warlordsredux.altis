@@ -336,7 +336,7 @@ GOM_fnc_installPylons = {
 		
 	_ammosource setvariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	_checkOut = _veh getVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[]];
-	_checkOut = _checkOut - [_pylonNum];
+	_checkOut deleteAt _pylonNum;
 	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut, [2, clientOwner]];
 	systemchat format ["Successfully installed %1 %2 on %3!",_finalAmount,_magDispName,_pylonName];
 	true;

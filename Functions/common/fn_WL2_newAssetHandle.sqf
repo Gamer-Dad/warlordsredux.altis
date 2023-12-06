@@ -29,10 +29,9 @@ if (isPlayer _owner) then {
 			_defaultMags pushBack (_asset magazinesTurret _x);
 		} forEach allTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
-		_ownedVehiclesVarName = format ["BIS_WL_%1_ownedVehicles", getPlayerUID _owner];
 		_vehicles = WL_PLAYER_VEHS;
 		_vehicles pushBack _asset;
-		missionNamespace setVariable [_ownedVehiclesVarName, _vehicles, [2, clientOwner]];
+		missionNamespace setVariable ["BIS_WL_ownedVehicles", _vehicles];
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
@@ -207,9 +206,9 @@ if (isPlayer _owner) then {
 		
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
-			_ownedVehiclesVarID = format ["BIS_WL_%1_ownedVehicles", getPlayerUID player];
-			missionNamespace setVariable [_ownedVehiclesVarID, WL_PLAYER_VEHS - [_asset]];
-			publicVariableServer _ownedVehiclesVarID;
+			_vis = WL_PLAYER_VEHS;
+			_vis deleteAt _asset;
+			missionNamespace setVariable ["BIS_WL_ownedVehicles", _vis];
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {

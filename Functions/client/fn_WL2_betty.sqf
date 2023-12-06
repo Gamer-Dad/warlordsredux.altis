@@ -138,7 +138,9 @@ _v addEventHandler ["Killed", {
 		};
 
 		{
-			_v setVariable ["Incomming", ((_v getVariable "Incomming") - [_x])];
+			_inc = _v getVariable "Incomming";
+			_inc deleteAt _x;
+			_v setVariable ["Incomming", _inc];
 		} forEach ((_v getVariable "Incomming") select {!alive _x});
 		sleep 1;
 	};

@@ -52,8 +52,9 @@ _ctrlNmbr spawn {
 	UISleep 10;
 	ctrlDelete _ctrl;
 	
-	_var = ((uiNamespace getVariable ["activeControls", []]) - [_this]);
-	uiNamespace setVariable ["activeControls", _var];
+	_controls = uiNamespace getVariable ["activeControls", []];
+	_controls deleteAt _this;
+	uiNamespace setVariable ["activeControls", _controls];
 };
 
 _controls = uiNamespace getVariable ["activeControls", []];

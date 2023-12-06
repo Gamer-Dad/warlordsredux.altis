@@ -120,7 +120,9 @@ if (typeOf (vehicle player) == "O_Heli_Attack_02_dynamicLoadout_F") then {
 		};
 
 		{
-			_v setVariable ["Incomming", ((_v getVariable "Incomming") - [_x])];
+			_inc = _v getVariable "Incomming";
+			_inc deleteAt _x;
+			_v setVariable ["Incomming", _inc];
 		} forEach ((_v getVariable "Incomming") select {!alive _x});
 		sleep 1;
 	};
