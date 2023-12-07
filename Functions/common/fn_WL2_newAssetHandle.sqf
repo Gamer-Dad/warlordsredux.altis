@@ -2,6 +2,8 @@
 
 params ["_asset", ["_owner", objNull]];
 
+[format ["%1", _asset]] remoteExec ["systemChat", 0];
+
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
 		call APS_fnc_RegisterVehicle;
