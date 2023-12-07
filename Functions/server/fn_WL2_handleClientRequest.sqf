@@ -97,7 +97,7 @@ if (_action == "orderFTVehicle") exitWith {
 
 		if ((count ((entities getFTVehicle) select {alive _x})) == 0) then {
 			_asset = createVehicle [getFTVehicle, _sender, [], 0, "NONE"];
-			[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
+			[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
 };
@@ -110,7 +110,7 @@ if (_action == "orderFTPod") exitWith {
 
 		if ((count (entities getFTPod)) == 0) then {
 			_asset = createVehicle [getFTPod, _sender, [], 0, "NONE"];
-			[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
+			[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
 };

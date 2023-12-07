@@ -101,5 +101,9 @@ class CfgRemoteExec {
 		class removeWeaponGlobal {
 			allowedTargets = 0;
 		};
+
+		class systemChat {
+			allowedTargets = 0;
+		};
 	};
 };
