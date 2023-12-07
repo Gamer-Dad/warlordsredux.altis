@@ -208,7 +208,6 @@ if (isPlayer _owner) then {
 			_vics = missionNamespace getVariable [_var, []];
 			_vics deleteAt (_vics find _asset);
 			missionNamespace setVariable [_var, _vics];
-			[format ["%1, %2 Killed", isServer, _asset]] remoteExec ["systemChat", 0];
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
