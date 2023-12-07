@@ -137,7 +137,7 @@ if (_ret) then {
 			_visitedSectorID = _possibleSectors findIf {player inArea (_x getVariable "objectAreaComplete")};
 			_servicesAvailable = BIS_WL_sectorsArray # 5;
 			_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
-			_vehiclesCnt = count (missionNamespace getVariable [_var, []]);
+			_vehiclesCnt = count ((missionNamespace getVariable [_var, []]) select {alive _x});
 			_units = ((units group player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) == getPlayerUID player) && {_x != player}});
 			
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr1"};

@@ -30,7 +30,7 @@ if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", 
 "server" call BIS_fnc_WL2_updateSectorArrays;
 
 _side = BIS_WL_competingSides;
-_side deleteAt _owner;
+_side deleteAt (_side find _owner);
 private _enemySide = _side # 0;
 if (isNull (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _enemySide])) then {
 	missionNamespace setVariable [format ["BIS_WL_resetTargetSelection_server_%1", _enemySide], true];
