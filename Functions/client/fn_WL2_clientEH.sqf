@@ -149,7 +149,7 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			[vehicle player, 0, false] spawn APS_fnc_Report;
 		};
 
-		if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
+		if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {!BIS_WL_penalized}}}) then {
 			if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 				"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 			} else {
