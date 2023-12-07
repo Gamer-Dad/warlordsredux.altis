@@ -75,9 +75,9 @@ while {dialog} do {
 		ctrlShow [9006, false];
 	};
 
+	_control = findDisplay 9000 displayCtrl 9010;
 	switch (_curSel) do {
 		case "pageAbt": {
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_07", lineBreak,
 			"", lineBreak,
@@ -94,9 +94,7 @@ while {dialog} do {
 			_gearKey = actionKeysNames "cycleThrownItems";
 			_settingsKey = actionKeysNames "user2";
 			_groupKey = actionKeysNames "user3";
-			_emotesKey = actionKeysNames "user4";
 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_02", lineBreak, 
 			"", lineBreak,
@@ -112,12 +110,10 @@ while {dialog} do {
 			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
 			format ["Open your settings: %1", _settingsKey], lineBreak,
 			format ["Open the group menu: %1", _groupKey], lineBreak,
-			format ["Open the emote menu: %1", _emotesKey], lineBreak,
 			""
 			];
 		};
 		case "theCom": { 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_03", lineBreak, 
 			"", lineBreak,
@@ -146,7 +142,6 @@ while {dialog} do {
 			];
 		};
 		case "discord": { 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_04", lineBreak,
 			"", lineBreak, 
@@ -158,7 +153,6 @@ while {dialog} do {
 		};
 		case "changelog": {
 			private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019],profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862],profilenamespace getvariable ['GUI_BCG_RGB_A',0.7]] call BIS_fnc_colorRGBAtoHTML;
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 				parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8.1 Update:" splitString " " joinString toString [160]], lineBreak,
 				"-Server Performance improved.", lineBreak,
@@ -181,7 +175,6 @@ while {dialog} do {
 			];
 		};
 		case "scripts": { 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			"Aircraft Loadout:", lineBreak,
 			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
