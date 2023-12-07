@@ -1,5 +1,4 @@
 class CfgFunctions {
-	/*******************************START OF CUSTOM CONTENT HERE****************************/
 	class MRTM {
 		class Init {
 			file = "scripts\MRTM";
@@ -20,13 +19,15 @@ class CfgFunctions {
 			class invite {};
 			class accept {};
 			class onButtonClick {};
-			class openEmoteMenu {};
-			class emote {};
 			class settingsinit {};
-			class openChangesMenu {};
 			class leaveGroup {};
-			class openInfoMenu {};
-			class kickUser {};
+		};
+
+		class Debug {
+			file = "scripts\MRTMDebug";
+			class openDebugMenu {};
+			class setReturnValue {};
+			class execCode {};
 		};
 	};
 	class GOM {

@@ -1145,41 +1145,18 @@ class MRTM_settingsMenu
 			font = "PuristaMedium";
 			action =  "(findDisplay 8000) closeDisplay 1; true spawn MRTM_fnc_openGroupMenu;";
 		};
-		class MRTMEmotesButton: RscButtonMRTM
+		class MRTMDebugButton: RscButtonMRTM
 		{
-			idc = 1606;
-			text = "EMOTES";
+			idc = 1609;
+			text = "Debug";
+			onLoad = "(_this # 0) ctrlEnable (getPlayerUID player == '76561198865298977');";
 			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.387969 * safezoneW + safezoneX;
+			x = 0.664969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openEmoteMenu;";
-		};
-		class MRTMChangesButton: RscButtonMRTM
-		{
-			idc = 1607;
-			text = "CHANGES";
-			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.447969 * safezoneW + safezoneX;
-			y = 0.786 * safezoneH + safezoneY;
-			w = 0.0567187 * safezoneW;
-			h = 0.022 * safezoneH;
-			font = "PuristaMedium";
-			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openChangesMenu;";
-		};
-		class MRTMInfoButton: RscButtonMRTM
-		{
-			idc = 1608;
-			text = "INFO";
-			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.507969 * safezoneW + safezoneX;
-			y = 0.786 * safezoneH + safezoneY;
-			w = 0.0567187 * safezoneW;
-			h = 0.022 * safezoneH;
-			font = "PuristaMedium";
-			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openInfoMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openDebugMenu;";
 		};
 	};
 };
@@ -1422,272 +1399,137 @@ class MRTM_groupsMenu
 	};
 };
 
-class MRTM_emotesMenu
+class MRTM_debugMenu
 {
-	idd = 5000;
+	idd = 2000
 
-	class Controls
+	class controls
 	{
-		class MRTMEmotesBackground: IGUIBackMRTM
+		class MRTMBackground: IGUIBackMRTM
 		{
-			idc = 5001;
-			colorBackground[] = {0,0,0,0.75};
-			x = 0.38836 * safezoneW + safezoneX;
+			idc = -1;
+			colorBackground[] = {0,0,0,0.9};
+			x = 0.26836 * safezoneW + safezoneX;
 			y = 0.2646 * safezoneH + safezoneY;
-			w = 0.20375 * safezoneW;
+			w = 0.45375 * safezoneW;
 			h = 0.517 * safezoneH;
 		};
-		class MRTMEmotesHeaderBackground: IGUIBackMRTM
+		class MRTMHeaderBackground: IGUIBackMRTM
 		{
-			idc = 5002;
+			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.38836 * safezoneW + safezoneX;
+			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
-			w = 0.20375 * safezoneW;
+			w = 0.45375 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		class MRTMEmotesHeaderTextLeft: RscStructuredTextMRTM
+		class MRTMHeaderTextLeft: RscStructuredTextMRTM
 		{
-			idc = 5003;
-			text = "Emote menu";
+			idc = -1;
+			text = "Debug console:";
 			colorBackground[] = {0,0,0,0};
-			x = 0.38836 * safezoneW + safezoneX;
+			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;
 			w = 0.154687 * safezoneW;
 			h = 0.033 * safezoneH;
 			class Attributes
 			{
 				font = "PuristaMedium";
-				color = "#ffffff";
-				colorLink = "#D09B43";
-				align = "left";
-				shadow = 1;
 			};
 		};
-		class MRTMEmotesList: RscListboxMRTM
+		class MRTMCloseButton: RscButtonMRTM
 		{
-			idc = 5004;
-			deletable = 0;
-			canDrag = 0;
-			color[] = {0,1,0,1};
-			type = CT_LISTBOX;
-			x = 0.38836 * safezoneW + safezoneX;
-			y = 0.265 * safezoneH + safezoneY;
-			w = 0.203981 * safezoneW;
-			h = 0.496 * safezoneH;
-			autoScrollSpeed = -1;
-			autoScrollDelay = 5;
-			autoScrollRewind = 0;
-			class ListScrollBar{
-				color[] = {1,1,1,1};
-				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-			};
-			style = LB_TEXTURES;
-		};
-		class MRTMEmotesCloseButton: RscButtonMRTM
-		{
-			idc = 5100;
+			idc = 2001;
 			text = "CLOSE";
 			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.38836 * safezoneW + safezoneX;
+			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "(findDisplay 5000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
+			action =  "(findDisplay 2000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
 		};
-	};
-};
-
-class MRTM_changesMenu
-{
-	idd = 6000;
-
-	class controls
-	{
-		class MRTMChangesBackground: IGUIBackMRTM
+		class MRTMExec: RscStructuredTextMRTM
 		{
-			idc = 6001;
-			colorBackground[] = {0,0,0,0.75};
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.2646 * safezoneH + safezoneY;
-			w = 0.36675 * safezoneW;
-			h = 0.517 * safezoneH;
-		};
-		class MRTMChangesHeaderBackground: IGUIBackMRTM
-		{
-			idc = 6002;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.235 * safezoneH + safezoneY;
-			w = 0.36675 * safezoneW;
-			h = 0.025 * safezoneH;
-		};
-		class MRTMChangesHeaderTextLeft: RscStructuredTextMRTM
-		{
-			idc = 6003;
-			text = "Changelogs";
+			idc = -1;
+			text = "Execute";
 			colorBackground[] = {0,0,0,0};
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.235 * safezoneH + safezoneY;
-			w = 0.274687 * safezoneW;
+			x = 0.268969 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
 			h = 0.033 * safezoneH;
 			class Attributes
 			{
 				font = "PuristaMedium";
-				color = "#ffffff";
-				colorLink = "#D09B43";
-				align = "left";
-				shadow = 1;
 			};
 		};
-		class MRTMChangesCloseButton: RscButtonMRTM
+		class MRTMExecEdit: RscEditMRTM
 		{
-			idc = 6100;
-			text = "CLOSE";
-			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.786 * safezoneH + safezoneY;
-			w = 0.0567187 * safezoneW;
-			h = 0.022 * safezoneH;
+			idc = 2002;
 			font = "PuristaMedium";
-			action = "(findDisplay 6000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
-		};
-		class MRTMChangesControlGroup: RscControlsGroupMRTM
-		{
-			deletable = 0;
-			fade = 0;
-			class VScrollbar: ScrollBar
-			{
-				color[] = {1,1,1,1};
-				height = 0.528;
-				width = 0.021;
-				autoScrollEnabled = 1;
-			};
-			class HScrollbar: ScrollBar
-			{
-				color[] = {1,1,1,1};
-				height = 0;
-				width = 0;
-			};
-			class Controls
-			{
-				class changesTextBlock: RscStructuredTextMRTM
-				{
-					idc = 6102;
-					deletable = 0;
-					type = CT_STRUCTURED_TEXT;
-					style = ST_LEFT;
-					w = 0.355937 * safezoneW;
-					h = 1.9 * safezoneH;
-				};
-			};
-			type = CT_CONTROLS_GROUP;
-			idc = 6101;
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.269 * safezoneH + safezoneY;
-			w = 0.365937 * safezoneW;
-			h = 0.508 * safezoneH;
-			shadow = 0;
-			style = ST_MULTI;
-		};
-	};
-};
-
-class MRTM_infoMenu
-{
-	idd = 7000;
-
-	class controls
-	{
-		class MRTMinfoBackground: IGUIBackMRTM
-		{
-			idc = 7001;
-			colorBackground[] = {0,0,0,0.75};
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.2646 * safezoneH + safezoneY;
-			w = 0.36675 * safezoneW;
-			h = 0.517 * safezoneH;
-		};
-		class MRTMinfoHeaderBackground: IGUIBackMRTM
-		{
-			idc = 7002;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.235 * safezoneH + safezoneY;
-			w = 0.36675 * safezoneW;
-			h = 0.025 * safezoneH;
-		};
-		class MRTMinfoHeaderTextLeft: RscStructuredTextMRTM
-		{
-			idc = 7003;
-			text = "Info";
 			colorBackground[] = {0,0,0,0};
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.235 * safezoneH + safezoneY;
+			autocomplete = "scripting";
+			type = CT_EDIT;
+			style = ST_MULTI;
+			canModify = 1;
+			x = 0.268969 * safezoneW + safezoneX;
+			y = 0.2876 * safezoneH + safezoneY;
 			w = 0.274687 * safezoneW;
+			h = 0.15 * safezoneH;
+		};
+		class MRTMReturn: RscStructuredTextMRTM
+		{
+			idc = -1;
+			text = "Return value";
+			colorBackground[] = {0,0,0,0};
+			x = 0.268969 * safezoneW + safezoneX;
+			y = 0.4416 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
 			h = 0.033 * safezoneH;
 			class Attributes
 			{
 				font = "PuristaMedium";
-				color = "#ffffff";
-				colorLink = "#D09B43";
-				align = "left";
-				shadow = 1;
 			};
 		};
-		class MRTMinfoCloseButton: RscButtonMRTM
+		class MRTMReturnReadOnly: RscEditMRTM
 		{
-			idc = 7100;
-			text = "CLOSE";
+			idc = 2003;
+			font = "PuristaMedium";
+			canModify = 0;
+			colorBackground[] = {0,0,0,0};
+			autocomplete = "";
+			type = CT_EDIT;
+			style = ST_MULTI;
+			x = 0.268969 * safezoneW + safezoneX;
+			y = 0.4646 * safezoneH + safezoneY;
+			w = 0.274687 * safezoneW;
+			h = 0.05 * safezoneH;
+		};
+		class MRTMServerExec: RscButtonMRTM
+		{
+			idc = -1;
+			text = "Server Exec";
 			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.786 * safezoneH + safezoneY;
+			colorBackground[] = {1,0,0,1};
+			x = 0.268969 * safezoneW + safezoneX;
+			y = 0.5196 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action = "(findDisplay 7000) closeDisplay 1; 0 spawn MRTM_fnc_openMenu;";
+			action = "[player, (ctrlText 2002)] remoteExec ['MRTM_fnc_execCode', 2];";
 		};
-		class MRTMinfoControlGroup: RscControlsGroupMRTM
+		class MRTMLocalExec: RscButtonMRTM
 		{
-			deletable = 0;
-			fade = 0;
-			class VScrollbar: ScrollBar
-			{
-				color[] = {1,1,1,1};
-				height = 0.528;
-				width = 0.021;
-				autoScrollEnabled = 1;
-			};
-			class HScrollbar: ScrollBar
-			{
-				color[] = {1,1,1,1};
-				height = 0;
-				width = 0;
-			};
-			class Controls
-			{
-				class infoTextBlock: RscStructuredTextMRTM
-				{
-					idc = 7102;
-					deletable = 0;
-					type = CT_STRUCTURED_TEXT;
-					style = ST_LEFT;
-					w = 0.355937 * safezoneW;
-					h = 1.9 * safezoneH;
-				};
-			};
-			type = CT_CONTROLS_GROUP;
-			idc = 7101;
-			x = 0.31236 * safezoneW + safezoneX;
-			y = 0.269 * safezoneH + safezoneY;
-			w = 0.365937 * safezoneW;
-			h = 0.508 * safezoneH;
-			shadow = 0;
-			style = ST_MULTI;
+			idc = -1;
+			text = "Local Exec";
+			sizeEx = "0.021 / (getResolution select 5)";
+			colorBackground[] = {0,1,0,1};
+			x = 0.485969 * safezoneW + safezoneX;
+			y = 0.5196 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action = "[player, (ctrlText 2002)] spawn MRTM_fnc_execCode;";
 		};
 	};
 };

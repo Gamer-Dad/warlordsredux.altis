@@ -218,15 +218,6 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			} forEach _d;
 			true spawn MRTM_fnc_openGroupMenu;
 		};
-		if (_key in _emotesKey) exitWith {
-			private _d = [4000, 5000, 6000, 7000, 8000];
-			{
-				if !(isNull (findDisplay _x)) then {
-					(findDisplay _x) closeDisplay 1;
-				};
-			} forEach _d;
-			0 spawn MRTM_fnc_openEmoteMenu;
-		};
 		_e;
 	}];
 };

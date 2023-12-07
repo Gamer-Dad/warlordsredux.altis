@@ -177,12 +177,6 @@ if (_action == "10K") exitWith {
 	};
 };
 
-if (_action == "devCP") exitWith {
-	if (getPlayerUID _sender in (getArray (missionConfigFile >> "adminIDs"))) then {
-		_param1 call BIS_fnc_WL2_fundsDatabaseWrite;			
-	};
-};
-
 if (_action == "updateZeus") exitWith {
 	if (getPlayerUID _sender in (getArray (missionConfigFile >> "adminIDs"))) then {
 		{

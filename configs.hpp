@@ -28,15 +28,6 @@ class logisticsConfig
 	};
 };
 
-class emoteConfig
-{
-	class emotes
-	{
-		Emotes[] = {"Acts_Ambient_Facepalm_1","Acts_Ambient_Facepalm_1","Acts_Ambient_Gestures_Yawn","AmovPercMstpSnonWnonDnon_exercisePushup","AmovPercMstpSnonWnonDnon_exerciseKata","AmovPercMstpSnonWnonDnon_exercisekneeBendA","AmovPercMstpSnonWnonDnon_exercisekneeBendB"};
-		Names[] = {"Facepalm 1","Facepalm 2","Yawn","Push ups","Namaste","Knee bend A","Knee bend B"};
-	};
-};
-
 class garbageConfig
 {
 	class garbage

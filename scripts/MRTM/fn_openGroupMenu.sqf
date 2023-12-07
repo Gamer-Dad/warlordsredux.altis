@@ -7,7 +7,7 @@
 params ["_open"];
 
 if (isNull (findDisplay 4000) && {_open}) then {
-	private _d = [4000, 5000, 6000, 7000, 8000];
+	private _d = [4000, 8000, 2000];
 	{
 		if !(isNull (findDisplay _x)) then {
 			(findDisplay _x) closeDisplay 1;
