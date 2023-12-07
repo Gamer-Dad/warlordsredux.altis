@@ -2,8 +2,6 @@
 
 params ["_asset", ["_owner", objNull]];
 
-[format ["%1", _asset]] remoteExec ["systemChat", 0];
-
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
 		call APS_fnc_RegisterVehicle;
@@ -203,14 +201,6 @@ if (isPlayer _owner) then {
 			
 			_asset removeAction _repairActionID;
 		};
-		
-		_asset addEventHandler ["Killed", {
-			params ["_asset"];
-			_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
-			_vics = missionNamespace getVariable [_var, []];
-			_vics deleteAt (_vics find _asset);
-			missionNamespace setVariable [_var, _vics];
-		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
 			[_asset, 0] remoteExec ["setRepairCargo", 0];
