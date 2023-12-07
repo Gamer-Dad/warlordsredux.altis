@@ -1426,7 +1426,7 @@ class MRTM_debugMenu
 		class MRTMHeaderTextLeft: RscStructuredTextMRTM
 		{
 			idc = -1;
-			text = "Debug console:";
+			text = "Debug console";
 			colorBackground[] = {0,0,0,0};
 			x = 0.267969 * safezoneW + safezoneX;
 			y = 0.235 * safezoneH + safezoneY;

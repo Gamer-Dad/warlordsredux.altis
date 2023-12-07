@@ -104,14 +104,8 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			_input = _text splitString " ";
 			_command = _input # 0;
 			_count = count _input;
-			_valid = _command == "!getCP";
-			if (_count == 2 && {_valid}) then {
-				_amount = parseNumber (_input # 1);
-				[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
-			} else {
-				if (_count == 1 && {_command == "!updateZeus"}) then {
-					[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
-				};
+			if (_count == 1 && {_command == "!updateZeus"}) then {
+				[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
 			};
 		};
 		_return;
