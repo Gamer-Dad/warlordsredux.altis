@@ -6,26 +6,6 @@ addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
 addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
 addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
-addMissionEventHandler ["HandleDisconnect", {
-	params ["_unit", "_id", "_uid", "_name"];
-
-	if (_uid == (getPlayerUID player)) then {
-		{
-			if (unitIsUAV _x) then {
-				private _grp = group effectiveCommander _x;
-				{_x deleteVehicleCrew _x} forEach crew _x;
-				deleteGroup _grp;
-			};
-
-			deleteVehicle _x;
-		} forEach (missionNamespace getVariable ["BIS_WL_ownedVehicles", []]);
-
-		{
-			if !(isPlayer _x) then {deleteVehicle _x;};
-		} forEach ((allUnits) select {(_x getVariable ["BIS_WL_ownerAsset", "132"] == _uid)});
-	};
-}];
-
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	VIC_ENTERED = true;

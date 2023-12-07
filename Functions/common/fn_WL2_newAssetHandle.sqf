@@ -29,9 +29,10 @@ if (isPlayer _owner) then {
 			_defaultMags pushBack (_asset magazinesTurret _x);
 		} forEach allTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
-		_vehicles = missionNamespace getVariable ["BIS_WL_ownedVehicles", []];
+		_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
+		_vehicles = missionNamespace getVariable [_var, []];
 		_vehicles pushBack _asset;
-		missionNamespace setVariable ["BIS_WL_ownedVehicles", _vehicles];
+		missionNamespace setVariable [_var, _vehicles, [2, clientOwner]];
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
@@ -203,9 +204,11 @@ if (isPlayer _owner) then {
 		
 		_asset addEventHandler ["Killed", {
 			params ["_asset"];
-			_vics = missionNamespace getVariable ["BIS_WL_ownedVehicles", []];
+			_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
+			_vics = missionNamespace getVariable [_var, []];
 			_vics deleteAt (_vics find _asset);
-			missionNamespace setVariable ["BIS_WL_ownedVehicles", _vics];
+			missionNamespace setVariable [_var, _vics];
+			[format ["%1, %2 Killed", isServer, _asset]] remoteExec ["systemChat", 0];
 		}];
 		
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
