@@ -8,7 +8,7 @@ if (remoteExecutedOwner != (owner _sender)) exitWith {};
 _uid = getPlayerUID _sender;
 
 if (_action == "orderAsset") exitWith {
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param2, 50001]);
+	_cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param2, 50001]);
 	_hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -131,7 +131,7 @@ if (_action == "targetReset") exitWith {
 };
 
 if (_action == "orderAI") exitWith {
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param1, 150]);
+	_cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param1, 150]);
 	(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
 };
 

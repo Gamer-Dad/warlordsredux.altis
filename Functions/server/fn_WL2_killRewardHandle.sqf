@@ -1,6 +1,6 @@
 params ["_unit", "_responsibleLeader"];
 
-if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "BIS_WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
+if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
 
 _killerSide = side group _responsibleLeader;
 _unitSide = if (_unit isKindOf "Man") then {
@@ -28,7 +28,7 @@ if (_killerSide != _unitSide) then {
 	if (_unit isKindOf "Man") then {
 		_killReward = (if (isPlayer _unit) then {60} else {30});
 	} else {
-		_killReward = (serverNamespace getVariable "BIS_WL2_killRewards") get (typeOf _unit);
+		_killReward = (serverNamespace getVariable "WL2_killRewards") get (typeOf _unit);
 	};
 	if (_responsibleLeader getVariable ["MRTM_3rdPersonDisabled", false]) then {
 		_killReward = _killReward * 2;

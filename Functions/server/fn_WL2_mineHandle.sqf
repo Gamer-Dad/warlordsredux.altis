@@ -1,6 +1,6 @@
 params ["_entity"];
 
-_minesDB = serverNamespace getVariable "BIS_WL2_mineLimits";
+_minesDB = serverNamespace getVariable "WL2_mineLimits";
 _mines = (_minesDB get (typeOf _entity)) # 1;
 _limit = (_minesDB get (typeOf _entity)) # 0;
 

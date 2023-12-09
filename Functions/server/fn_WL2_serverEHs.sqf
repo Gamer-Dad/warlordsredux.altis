@@ -67,7 +67,7 @@ addMissionEventHandler ["EntityCreated", {
   params ["_entity"];
   if (isClass (configFile >> "CfgAmmo" >> (typeOf _entity))) then {
     
-	if (((serverNamespace getVariable "BIS_WL2_mineLimits") getOrdefault [(typeOf _entity), 0]) isEqualType []) then {
+	if (((serverNamespace getVariable "WL2_mineLimits") getOrdefault [(typeOf _entity), 0]) isEqualType []) then {
 		_entity spawn BIS_fnc_WL2_mineHandle;
 	};
   };
