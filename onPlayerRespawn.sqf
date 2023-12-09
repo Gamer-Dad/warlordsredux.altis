@@ -13,8 +13,8 @@ _vics = missionNamespace getVariable [_var, []];
 {
 	_list = missionNamespace getVariable [_var, []];
 	_list deleteAt (_list find _x);
-	missionNamespace setVariable [_var, _list];
-} forEach (_vics select {isNull _x});
+	missionNamespace setVariable [_var, _list, [2, clientOwner]];
+} forEach (_vics select {!(alive _x)});
 
 "Died" call MRTM_fnc_statTracker;
 
