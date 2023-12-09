@@ -113,8 +113,6 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
 		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
 		private _e = false;
-		private _settingsKey = actionKeys "user2";
-		private _groupKey = actionKeys "user3";
 		private _zeusKey = actionKeys "curatorInterface";
 		private _viewKey = actionKeys "tacticalView";
 		_e = ((_key in _viewKey || {_key in _zeusKey}) && {!((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs")))});
@@ -173,24 +171,6 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			_e = true;
 		};
 		
-		if (_key in _settingsKey) exitWith {
-			private _d = [4000, 8000, 2000];
-			{
-				if !(isNull (findDisplay _x)) then {
-					(findDisplay _x) closeDisplay 1;
-				};
-			} forEach _d;
-			0 spawn MRTM_fnc_openMenu;
-		};
-		if (_key in _groupKey) exitWith {
-			private _d = [4000, 8000, 2000];
-			{
-				if !(isNull (findDisplay _x)) then {
-					(findDisplay _x) closeDisplay 1;
-				};
-			} forEach _d;
-			true spawn MRTM_fnc_openGroupMenu;
-		};
 		_e;
 	}];
 };
