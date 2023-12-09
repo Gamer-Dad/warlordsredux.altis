@@ -1,11 +1,16 @@
-adminFilter[] = {"!updatezeus","!getcp","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
+adminFilter[] = {"nique","!updatezeus","!getcp","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
 
 class arsenalConfig
 {
 	class west
 	{
 		Rifles[] = {};
-		Launchers[] = {};
+		Launchers[] = {
+			//*BOTH*//
+			"launch_RPG7_F", "launch_RPG32_F", "launch_RPG32_ghex_F", "launch_RPG32_green_F", "launch_RPG32_camo_F", "launch_B_Titan_F", "launch_I_Titan_F", "launch_O_Titan_F", "launch_Titan_F", "launch_B_Titan_short_F", "launch_I_Titan_short_F", "launch_O_Titan_short_F", "launch_Titan_short_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_ghex_F", "launch_O_Titan_short_ghex_F", "launch_I_Titan_eaf_F", "launch_B_Titan_olive_F",
+			//*BLUEFOR*//
+			"launch_MRAWS_olive_F","launch_MRAWS_olive_rail_F","launch_MRAWS_green_F","launch_MRAWS_green_rail_F","launch_MRAWS_sand_F","launch_MRAWS_sand_rail_F","launch_MRAWS_green_broken_F","launch_NLAW_F",
+		};
 		Handguns[] = {
 			//*BOTH*//
 			"hgun_P07_F","hgun_P07_khk_F","hgun_P07_blk_F","hgun_Pistol_01_F","hgun_esd_01_F","hgun_Pistol_Signal_F","hgun_Pistol_heavy_02_F",
@@ -23,7 +28,12 @@ class arsenalConfig
 	class east
 	{
 		Rifles[] = {};
-		Launchers[] = {};
+		Launchers[] = {
+			//*BOTH*//
+			"launch_RPG7_F", "launch_RPG32_F", "launch_RPG32_ghex_F", "launch_RPG32_green_F", "launch_RPG32_camo_F", "launch_B_Titan_F", "launch_I_Titan_F", "launch_O_Titan_F", "launch_Titan_F", "launch_B_Titan_short_F", "launch_I_Titan_short_F", "launch_O_Titan_short_F", "launch_Titan_short_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_ghex_F", "launch_O_Titan_short_ghex_F", "launch_I_Titan_eaf_F", "launch_B_Titan_olive_F",
+			//*REDFOR*//
+			"launch_O_Vorona_brown_F","launch_O_Vorona_green_F"
+		};
 		Handguns[] = {
 		//*BOTH*//
 			"hgun_P07_F","hgun_P07_khk_F","hgun_P07_blk_F","hgun_Pistol_01_F","hgun_esd_01_F","hgun_Pistol_Signal_F","hgun_Pistol_heavy_02_F",
