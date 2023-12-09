@@ -16,7 +16,7 @@ serverNamespace setVariable ["BIS_WL2_mineLimits",
 ];
 
 // Rewards
-serverNamespace setVariable ["BIS_WL2_killRewards", 
+serverNamespace setVariable ["BIS_WL2_killRewards",
 	createHashMapFromArray [
 		["B_Quadbike_01_F", 20], ["B_LSV_01_unarmed_F", 50], ["B_MRAP_01_F", 70],
 		["B_Truck_01_transport_F", 80], ["B_Truck_01_fuel_F", 80],
