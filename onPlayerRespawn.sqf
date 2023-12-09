@@ -8,12 +8,13 @@ if ((_newUnit != _leader) && {(alive _leader) && {((_oldUnit distance2D _leader)
 	_newUnit setVehiclePosition [getPosASL _leader, [], 2, "NONE"];
 };
 
-_vics = missionNamespace getVariable "BIS_WL_ownedVehicles";
+_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID _newUnit];
+_vics = missionNamespace getVariable [_var, []];
 {
-	_list = missionNamespace getVariable "BIS_WL_ownedVehicles";
-	_list deleteAt _x;
-	missionNamespace setVariable ["BIS_WL_ownedVehicles", _list];
-} forEach (_vics select {isNull _x});
+	_list = missionNamespace getVariable [_var, []];
+	_list deleteAt (_list find _x);
+	missionNamespace setVariable [_var, _list, [2, clientOwner]];
+} forEach (_vics select {!(alive _x)});
 
 "Died" call MRTM_fnc_statTracker;
 
@@ -23,3 +24,4 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
+player linkItem"Integrated_NVG_TI_0_F";

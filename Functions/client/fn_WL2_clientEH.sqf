@@ -6,26 +6,6 @@ addMissionEventHandler ["GroupIconClick", BIS_fnc_WL2_groupIconClickHandle];
 addMissionEventHandler ["GroupIconOverEnter", BIS_fnc_WL2_groupIconEnterHandle];
 addMissionEventHandler ["GroupIconOverLeave", BIS_fnc_WL2_groupIconLeaveHandle];
 
-addMissionEventHandler ["HandleDisconnect", {
-	params ["_unit", "_id", "_uid", "_name"];
-
-	if (_uid == (getPlayerUID player)) then {
-		{
-			if (unitIsUAV _x) then {
-				private _grp = group effectiveCommander _x;
-				{_x deleteVehicleCrew _x} forEach crew _x;
-				deleteGroup _grp;
-			};
-
-			deleteVehicle _x;
-		} forEach (missionNamespace getVariable "BIS_WL_ownedVehicles");
-
-		{
-			if !(isPlayer _x) then {deleteVehicle _x;};
-		} forEach ((allUnits) select {(_x getVariable ["BIS_WL_ownerAsset", "132"] == _uid)});
-	};
-}];
-
 player addEventHandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 	VIC_ENTERED = true;
@@ -104,14 +84,8 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			_input = _text splitString " ";
 			_command = _input # 0;
 			_count = count _input;
-			_valid = _command == "!getCP";
-			if (_count == 2 && {_valid}) then {
-				_amount = parseNumber (_input # 1);
-				[player, 'devCP', _amount] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
-			} else {
-				if (_count == 1 && {_command == "!updateZeus"}) then {
-					[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
-				};
+			if (_count == 1 && {_command == "!updateZeus"}) then {
+				[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
 			};
 		};
 		_return;
@@ -139,9 +113,6 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {
 		params ["_displayorcontrol", "_key", "_shift", "_ctrl", "_alt"];
 		private _e = false;
-		private _settingsKey = actionKeys "user2";
-		private _groupKey = actionKeys "user3";
-		private _emotesKey = actionKeys "user4";
 		private _zeusKey = actionKeys "curatorInterface";
 		private _viewKey = actionKeys "tacticalView";
 		_e = ((_key in _viewKey || {_key in _zeusKey}) && {!((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs")))});
@@ -150,7 +121,7 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			[vehicle player, 0, false] spawn APS_fnc_Report;
 		};
 
-		if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {lifeState player != "INCAPACITATED" && {!BIS_WL_penalized}}}}) then {
+		if (_key in actionKeys "Gear" && {!(missionNamespace getVariable ["BIS_WL_gearKeyPressed", false]) && {alive player && {!BIS_WL_penalized}}}) then {
 			if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 				"RequestMenu_close" call BIS_fnc_WL2_setupUI;
 			} else {
@@ -200,33 +171,6 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			_e = true;
 		};
 		
-		if (_key in _settingsKey) exitWith {
-			private _d = [4000, 5000, 6000, 7000, 8000];
-			{
-				if !(isNull (findDisplay _x)) then {
-					(findDisplay _x) closeDisplay 1;
-				};
-			} forEach _d;
-			0 spawn MRTM_fnc_openMenu;
-		};
-		if (_key in _groupKey) exitWith {
-			private _d = [4000, 5000, 6000, 7000, 8000];
-			{
-				if !(isNull (findDisplay _x)) then {
-					(findDisplay _x) closeDisplay 1;
-				};
-			} forEach _d;
-			true spawn MRTM_fnc_openGroupMenu;
-		};
-		if (_key in _emotesKey) exitWith {
-			private _d = [4000, 5000, 6000, 7000, 8000];
-			{
-				if !(isNull (findDisplay _x)) then {
-					(findDisplay _x) closeDisplay 1;
-				};
-			} forEach _d;
-			0 spawn MRTM_fnc_openEmoteMenu;
-		};
 		_e;
 	}];
 };

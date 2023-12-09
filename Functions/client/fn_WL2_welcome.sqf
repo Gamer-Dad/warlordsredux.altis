@@ -57,12 +57,12 @@ lbSetCurSel [9011, _pageAbt];
 	lbSetText [9011, _x, localize (format ["STR_MRTM_welcomeInteract_0%1", _number])];
 } forEach [_pageAbt, _pageHow, _theTeam, _dc, _changelog, _scripts];
 
-lbSetPicture [9011, _pageAbt, 'img\star_ca.paa'];
-lbSetPicture [9011, _pageHow, 'img\icon_important_ca.paa'];
-lbSetPicture [9011, _theTeam, 'img\icon-user_ca.paa'];
-lbSetPicture [9011, _dc, 'img\link_out_white_ca.paa'];
-lbSetPicture [9011, _changelog, 'img\icon_update_ca.paa'];
-lbSetPicture [9011, _scripts, 'img\icon-file_ca.paa'];
+lbSetPicture [9011, _pageAbt, "a3\ui_f\data\gui\rsc\rscdisplaymultiplayer\favouritecolumntitle_ca.paa"];
+lbSetPicture [9011, _pageHow, "a3\ui_f\data\igui\cfg\simpletasks\types\danger_ca.paa"];
+lbSetPicture [9011, _theTeam, "a3\ui_f_curator\data\displays\rscdisplaycurator\modegroups_ca.paa"];
+lbSetPicture [9011, _dc, "a3\3den\data\controls\ctrlmenu\link_ca.paa"];
+lbSetPicture [9011, _changelog, "a3\3den\data\displays\display3den\toolbar\help_updates_new_ca.paa"];
+lbSetPicture [9011, _scripts, "a3\ui_f\data\gui\rsc\rscdisplayarcademap\icon_saveas_2_ca.paa"];
 
 while {dialog} do {
 	_index = lbCurSel 9011;
@@ -75,9 +75,9 @@ while {dialog} do {
 		ctrlShow [9006, false];
 	};
 
+	_control = findDisplay 9000 displayCtrl 9010;
 	switch (_curSel) do {
 		case "pageAbt": {
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_07", lineBreak,
 			"", lineBreak,
@@ -88,16 +88,13 @@ while {dialog} do {
 			""
 			];
 		};
-
 		case "pageHow": {
 			hRead = true;
 			_inventoryKey = actionKeysNames "gear";
 			_gearKey = actionKeysNames "cycleThrownItems";
 			_settingsKey = actionKeysNames "user2";
 			_groupKey = actionKeysNames "user3";
-			_emotesKey = actionKeysNames "user4";
 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_02", lineBreak, 
 			"", lineBreak,
@@ -113,13 +110,10 @@ while {dialog} do {
 			format [localize "STR_MRTM_welcomeInteract_14", _gearKey], lineBreak,
 			format ["Open your settings: %1", _settingsKey], lineBreak,
 			format ["Open the group menu: %1", _groupKey], lineBreak,
-			format ["Open the emote menu: %1", _emotesKey], lineBreak,
 			""
 			];
 		};
-
 		case "theCom": { 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_03", lineBreak, 
 			"", lineBreak,
@@ -147,9 +141,7 @@ while {dialog} do {
 			""
 			];
 		};
-
 		case "discord": { 
-			private _control = findDisplay 9000 displayCtrl 9010;
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_04", lineBreak,
 			"", lineBreak, 
@@ -159,107 +151,42 @@ while {dialog} do {
 			parseText "<a href='https://discord.gg/grmzsZE4ua'>Discord.</a>"
 			];
 		};
-
 		case "changelog": {
-			private _control = findDisplay 9000 displayCtrl 9010;
+			private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019],profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862],profilenamespace getvariable ['GUI_BCG_RGB_A',0.7]] call BIS_fnc_colorRGBAtoHTML;
 			_control ctrlSetStructuredText composeText [
-			"2.5.8", lineBreak,
-			"-Performance improved.", lineBreak,
-			"-Group system added.", lineBreak,
-			"-APS Improved. 120m -> 40m interception range.", lineBreak,
-			"-User settings are saved across games.", lineBreak,
-			"-Player stats added: Total kills, K/D, Sectors seized, Total CP earned, Longest kill distance.", lineBreak,
-			"-Last loadout unavailable if it's the same as your current.", lineBreak,
-			"-Option to spawn vehicles with empty inventory added.", lineBreak,
-			"-Dynamic sector population. More players means less AI spawns.", lineBreak,
-			"-Kill bonus if the unit you killed was in the AO.", lineBreak,
-			"-Emotes added.", lineBreak,
-			"-AI availability UI enhanced. *available*/*Total*", lineBreak,
-			"-Cheaters can't spawn vehicles anymore.", lineBreak,
-			"-Cheaters can't get free vehicles.", lineBreak,
-			"-Cheaters can't get sector scans for free or target resets.", lineBreak,
-			"-Can't bypass rearm timer anymore.", lineBreak,
-			"-New base location code. Bases are now a lot more random and never the same as the game before.", lineBreak,
-			"-Friendly fire between group members is disabled.", lineBreak,
-			"-By default autonomous mode is turned off on vehicles with this option.", lineBreak,
-			"-Auto smokes for vehicles when APS is triggered is disabled.", lineBreak,
-			"-AAF can capture sectors.", lineBreak,
-			"", lineBreak,
-			"2.5.7.1", lineBreak,
-			"-New capping values.", lineBreak,
-			"-Easter egg reward fixed.", lineBreak,
-			"-Initial spawn position on game start fixed.", lineBreak,
-			"-Vehicle garbage clean up enhanced.", lineBreak,
-			"-AAF spawning at sectors when enemy team already targeted it fixed.", lineBreak,
-			"-Spawn pod doesn't work when slightly crooked, fixed.", lineBreak,
-			"-Dazzler fixed. And when enabled it auto turns on the engine so people don't forget.", lineBreak,
-			"-APS and Dazzler intercept missiles faster, missiles that are shot fast after eachother should all still get intercepted.", lineBreak,
-			"-Attack helicopters don't play altitude or pull-up warnings anymore as they didn't work very well and would play constantly.", lineBreak,
-			"-.5 CP Won't happen anymore.", lineBreak,
-			"-AI Regeneration speed is back to normal.", lineBreak,
-			"-Map icons fixed. (Some stuff not showing up).", lineBreak,
-			"-Mine limit updated to more types.", lineBreak,
-			"-Refuelling fixed.", lineBreak,
-			"-Vehicles pop smoke when APS is triggered and there is a commander in the vehicle.", lineBreak,
-			"-HARM and ARM Missil added to medium APS.", lineBreak,
-			"-Sharurs added to heavy APS", lineBreak,
-			"", lineBreak,
-			"2.5.7", lineBreak,
-			"-Alot of code improvement, wich leads to better gameplay experience.", lineBreak,
-			"-Teleporting issue when joining late game is should be fixed.", lineBreak,
-			"-Alot less network traffick.", lineBreak,
-			"-Code security improved.", lineBreak,
-			"-Zone restriction not killing a person after bar is filled fixed.", lineBreak,
-			"-GPS icons are better. you see alot more now then just infantry.", lineBreak,
-			"-UAV issue fixed.", lineBreak,
-			"-Double spawn truck icon fixed.", lineBreak,
-			"-Spawn truck lock action fixed.", lineBreak,
-			"-Free AI Fixed.", lineBreak,
-			"-Starting a game with less then 1000CP (due to imbalance) fixed.", lineBreak,
-			"-Dazzler should work again like intented.", lineBreak,
-			"-Friendly fire penalty fixed", lineBreak,
-			"-All huron containers and Taru Pods are added as refuel, rearm, repair possibility.", lineBreak,
-			"-All Containers, pods, boxes are loadable onto the flatbed and can be loaded into the Y-32 and Blackfish Vehicle transport.", lineBreak,
-			"-New fast travel option added. The huron medical container and taru medical pod.", lineBreak,
-			"-You now get a CP refund if you where transfering CP and it canceled because of sector voting.", lineBreak,
-			"-Rearm resources shows on rearm action's text.", lineBreak,
-			"-APS improved, Added Rhino ATGM (Heavy + Medium) + Nyx AT's missile to the list. (Heavy)", lineBreak,
-			"-Newly bought assets have FF protection in base.", lineBreak,
-			"-Divers added", lineBreak,
-			"", lineBreak,
-			"Visit our github to view the earlier changes.", lineBreak,
-			"", lineBreak,
-			"2.1.0001", lineBreak,
-			"- Baseline version number"
+				parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.5.8.1 Update:" splitString " " joinString toString [160]], lineBreak,
+				"-Server Performance improved.", lineBreak,
+				"-Client Performance improved.", lineBreak,
+				"-Pelican drones added, acts as suicide drones.", lineBreak,
+				"-Group menu should work more smooth.", lineBreak,
+				"-Forgive option for friendly fire added to vehicles and ai, not just players.", lineBreak,
+				"-Spawn protection is enabled again if enemy team stops attacking the base.", lineBreak,
+				"-Empty friendly vehicles show up on map.", lineBreak,
+				"-Map markers are now filtered for slurs.", lineBreak,
+				"-AI regeneration is reworked. No instant ai refreshing anymore.", lineBreak,
+				"-Fixed not beeing able to kick people out of vehicle.", lineBreak,
+				"-Fixed T-100x not beeing able to fire the main cannon.", lineBreak,
+				"-Fixed enemy device truck showing up on map.", lineBreak,
+				"-Fixed sector scan units's color.", lineBreak,
+				"-Fixed destroyed autonomous assets still counting.", lineBreak,
+				"", lineBreak,
+				parseText format ["<a href='https://github.com/Gamer-Dad/warlordsredux.altis'>%1</a>", "Visit our github to view the earlier changes." splitString " " joinString toString [160]], lineBreak,
+				parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.1.0001 Update:" splitString " " joinString toString [160]], lineBreak
 			];
 		};
-
-
-		//Scripts
 		case "scripts": { 
-			private _control = findDisplay 9000 displayCtrl 9010;
-			_size = 4 call BIS_fnc_WL2_sub_purchaseMenugetUIScale;
 			_control ctrlSetStructuredText composeText [
-			"Aircraft Loadout", lineBreak,
-			"", lineBreak,
+			"Aircraft Loadout:", lineBreak,
 			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
 			"You can order vehicle ammo box close to your aircraft and then look at the aircraft and press 'Rearm' to change you  loadout.", lineBreak,
 			"", lineBreak,
-			parseText format ["<img  size='%1' image='a3\data_f_jets\images\dlcbrowser_jets_loadouts_ca.paa'/>", _size], lineBreak,
-			"", lineBreak,
-			"GF Earplugs", lineBreak,
-			"", lineBreak,
+			"GF Earplugs:", lineBreak,
 			"We use George Floros's earplug script wich allows you to lower your volume by the press of 1 button.", lineBreak,
 			"You can press the INSERT key to lower your volume.", lineBreak,
 			"", lineBreak,
-			parseText format ["<img  size='%1' image='img\earPlugs_ca.paa'/>", _size], lineBreak,
-			"", lineBreak,
-			"Vehicle Unflip", lineBreak,
-			"", lineBreak,
+			"Vehicle Unflip:", lineBreak,
 			"Oh no did your vehicle flip over? Simply walk up to it and use your scroll wheel to unflip the vehicle.", lineBreak,
 			"Note: Static defenses may experience difficulty flipping over.", lineBreak,
-			"", lineBreak,
-			parseText format ["<img  size='%1' image='a3\missions_f\data\img\showcase_vehicles_overview_ca.paa'/>", _size], lineBreak,
 			""
 			];
 		};

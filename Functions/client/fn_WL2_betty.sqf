@@ -16,7 +16,7 @@ _v addEventHandler ["Gear", {
 _v addEventHandler ["IncomingMissile", {
 	params ["_target", "_ammo", "_vehicle", "_instigator", "_missile"];
 	_inc = _target getVariable "Incomming";
-	_inc pushBack _missile;
+	_inc deleteAt (_inc find _missile);
 	_target setVariable ["Incomming", _inc];
 }];
 
@@ -139,7 +139,7 @@ _v addEventHandler ["Killed", {
 
 		{
 			_inc = _v getVariable "Incomming";
-			_inc deleteAt _x;
+			_inc deleteAt (_inc find _x);
 			_v setVariable ["Incomming", _inc];
 		} forEach ((_v getVariable "Incomming") select {!alive _x});
 		sleep 1;

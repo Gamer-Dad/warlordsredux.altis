@@ -1,7 +1,7 @@
 private _potBases = BIS_WL_allSectors select {(if !(["(EU) #11", serverName] call BIS_fnc_inString) then {"A" in (_x getVariable ["BIS_WL_services", []])} else {(_x getVariable ["BIS_WL_canBeBase", true])}) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
 private _firstBase = selectRandom _potBases;
 private _baseDistanceMin = 64000000;
-_potBases = _potBases - [_firstBase];
+_potBases deleteAt (_potBases find _firstBase);
 _potBases = (_potBases select {(_x distanceSqr _firstBase) > _baseDistanceMin});
 private _secondBase = selectRandom _potBases;
 

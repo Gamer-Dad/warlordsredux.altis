@@ -1,4 +1,4 @@
-adminFilter[] = {"!updatezeus","!getcp","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
+adminFilter[] = {"nique","!updatezeus","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
 
 class arsenalConfig
 {
@@ -72,15 +72,6 @@ class logisticsConfig
 	class cargoTypes
 	{
 		Cargo[] = {"B_Slingload_01_Medevac_F","Box_CSAT_Equip_F","Box_CSAT_Uniforms_F","Box_NATO_Uniforms_F","Box_NATO_Equip_F","B_Slingload_01_Fuel_F","B_Slingload_01_Repair_F","B_Slingload_01_Ammo_F","Land_Pod_Heli_Transport_04_repair_F","Land_Pod_Heli_Transport_04_fuel_F","Land_Pod_Heli_Transport_04_ammo_F","Box_East_AmmoVeh_F","Box_NATO_AmmoVeh_F","Box_NATO_Ammo_F","Box_NATO_Grenades_F","Box_NATO_Wps_F","Box_NATO_AmmoOrd_F","Box_NATO_WpsLaunch_F","Box_NATO_WpsSpecial_F","B_supplyCrate_F","Box_East_Ammo_F","Box_East_Grenades_F","Box_East_Wps_F","Box_East_AmmoOrd_F","Box_East_WpsLaunch_F","Box_East_WpsSpecial_F","O_supplyCrate_F"};
-	};
-};
-
-class emoteConfig
-{
-	class emotes
-	{
-		Emotes[] = {"Acts_Ambient_Facepalm_1","Acts_Ambient_Facepalm_1","Acts_Ambient_Gestures_Yawn","AmovPercMstpSnonWnonDnon_exercisePushup","AmovPercMstpSnonWnonDnon_exerciseKata","AmovPercMstpSnonWnonDnon_exercisekneeBendA","AmovPercMstpSnonWnonDnon_exercisekneeBendB"};
-		Names[] = {"Facepalm 1","Facepalm 2","Yawn","Push ups","Namaste","Knee bend A","Knee bend B"};
 	};
 };
 

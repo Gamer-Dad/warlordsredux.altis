@@ -4,7 +4,7 @@ _marker = (_sector getVariable "BIS_WL_markers") # 1;
 _nextPossibleWarn = 0;
 _playerSide = BIS_WL_playerSide;
 _enemySide = [west, east];
-_enemySide deleteAt _playerSide;
+_enemySide deleteAt (_enemySide find _playerSide);
 _enemySide = _enemySide # 0;
 
 if !((_sector getVariable "BIS_WL_owner") == _playerSide) exitWith {};

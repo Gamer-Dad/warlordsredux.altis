@@ -53,7 +53,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 				"right"
 			];
 		};
-	} forEach (((list _revealTrigger) - (missionNamespace getVariable ["BIS_WL_ownedVehicles", []])) select {(side group _x != _side) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
+	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []])) select {(side group _x != _side) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
 
 _control = (findDisplay 12) displayCtrl 51;
@@ -167,7 +167,7 @@ _draw = (ctrlMapScale _control) < 0.3;
 		"PuristaBold",
 		"right"
 	];
-} forEach ((missionNamespace getVariable ["BIS_WL_ownedVehicles", []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
+} forEach ((missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []]) select {(alive _x) && {(typeOf _x != "B_Truck_01_medical_F") && {(typeOf _x != "O_Truck_03_medical_F") && {(typeOf _x != "B_Slingload_01_Medevac_F") && {(typeOf _x != "Land_Pod_Heli_Transport_04_medevac_F")}}}}});
 if (_side == west) then {
 	{
 		_size = call BIS_fnc_iconSize;

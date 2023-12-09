@@ -328,7 +328,7 @@ class RscEditMRTM
 	};
 	autocomplete = "";
 	text = "";
-	size = 0.2;
+	size = "0.021 / (getResolution select 5)";
 	style = "0x00 + 0x40";
 	font = "RobotoCondensed";
 	shadow = 2;

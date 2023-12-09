@@ -8,10 +8,6 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class APS_fnc_Generic {
-			allowedTargets = 2;
-		};
-
 		class KS_fnc_unflipVehicle {
 			allowedTargets = 2;
 		};
@@ -28,11 +24,11 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class MRTM_fnc_kickUser {
+		class BIS_fnc_WL2_forgiveTeamkill {
 			allowedTargets = 2;
 		};
 
-		class BIS_fnc_WL2_forgiveTeamkill {
+		class MRTM_fnc_execCode {
 			allowedTargets = 2;
 		};
 
@@ -103,6 +99,10 @@ class CfgRemoteExec {
 		};
 
 		class removeWeaponGlobal {
+			allowedTargets = 0;
+		};
+
+		class systemChat {
 			allowedTargets = 0;
 		};
 	};

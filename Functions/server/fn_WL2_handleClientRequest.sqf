@@ -8,7 +8,7 @@ if (remoteExecutedOwner != (owner _sender)) exitWith {};
 _uid = getPlayerUID _sender;
 
 if (_action == "orderAsset") exitWith {
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param2, 50001]);
+	_cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param2, 50001]);
 	_hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
@@ -97,7 +97,7 @@ if (_action == "orderFTVehicle") exitWith {
 
 		if ((count ((entities getFTVehicle) select {alive _x})) == 0) then {
 			_asset = createVehicle [getFTVehicle, _sender, [], 0, "NONE"];
-			[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
+			[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
 };
@@ -110,7 +110,7 @@ if (_action == "orderFTPod") exitWith {
 
 		if ((count (entities getFTPod)) == 0) then {
 			_asset = createVehicle [getFTPod, _sender, [], 0, "NONE"];
-			[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
+			[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
 };
@@ -131,7 +131,7 @@ if (_action == "targetReset") exitWith {
 };
 
 if (_action == "orderAI") exitWith {
-	_cost = ((serverNamespace getVariable "BIS_WL2_costs") getOrDefault [_param1, 150]);
+	_cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param1, 150]);
 	(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
 };
 
@@ -174,12 +174,6 @@ if (_action == "kill") exitWith {
 if (_action == "10K") exitWith {
 	if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		10000 call BIS_fnc_WL2_fundsDatabaseWrite;
-	};	
-};
-
-if (_action == "devCP") exitWith {
-	if (getPlayerUID _sender in (getArray (missionConfigFile >> "adminIDs"))) then {
-		_param1 call BIS_fnc_WL2_fundsDatabaseWrite;			
 	};
 };
 

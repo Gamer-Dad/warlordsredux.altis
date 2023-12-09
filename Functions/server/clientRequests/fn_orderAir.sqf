@@ -17,7 +17,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_grp deleteGroupWhenEmpty true;
 		{
 			_member = _x;
-			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, (owner _sender)]];
 		} forEach units _grp;
 		_asset setDir (direction _sender);
 	} else {
@@ -44,7 +44,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_grp deleteGroupWhenEmpty true;
 		{
 			_member = _x;
-			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, (owner _sender)]];
 		} forEach units _grp;
 		_asset setDir _dir;
 	};
@@ -116,5 +116,5 @@ waitUntil {sleep 0.1; !(isNull _asset)};
 
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
-[_asset, _sender] remoteExecCall ["BIS_fnc_WL2_newAssetHandle", _owner];
+[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];
 _sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];

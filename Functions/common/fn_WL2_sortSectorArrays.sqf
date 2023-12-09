@@ -56,10 +56,12 @@ if (_fullRecalc) then {
 			_zoneRestrictionTrigger setTriggerArea [_zoneRestrictionAxis, _zoneRestrictionAxis, 0, false];
 		};
 		
-		if (_side == BIS_WL_playerSide) then {
-			_sector setVariable ["BIS_WL_borderWidth", _zoneRestrictionAxis];
-			((_sector getVariable ["BIS_WL_markers", []]) # 2) setMarkerSizeLocal [_zoneRestrictionAxis, _zoneRestrictionAxis];
-			((_sector getVariable ["BIS_WL_markers", []]) # 1) setMarkerBrushLocal "Solid";
+		if !(isNil "BIS_WL_playerSide") then {
+			if (_side == BIS_WL_playerSide) then {
+				_sector setVariable ["BIS_WL_borderWidth", _zoneRestrictionAxis];
+				((_sector getVariable ["BIS_WL_markers", []]) # 2) setMarkerSizeLocal [_zoneRestrictionAxis, _zoneRestrictionAxis];
+				((_sector getVariable ["BIS_WL_markers", []]) # 1) setMarkerBrushLocal "Solid";
+			};
 		};
 	} forEach _enemySectors;
 };

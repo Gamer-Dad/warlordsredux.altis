@@ -159,7 +159,6 @@ enableSentences true;
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
-missionNamespace setVariable [format ["BIS_WL_ownedVehicles", _uid], []];
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 10000];
@@ -263,3 +262,4 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
+player linkItem"Integrated_NVG_TI_0_F";

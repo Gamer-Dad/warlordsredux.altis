@@ -48,7 +48,7 @@ addMissionEventHandler ["Map", {
 			_asset = BIS_WL_mapAssetTarget;
 			if (_alt && _shift) then {
 				if !(isNull _asset) then {
-					_vehicles = (missionNamespace getVariable ["BIS_WL_ownedVehicles", []]);
+					_vehicles = (missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []]);
 					if ((_asset in _vehicles) && count crew _asset > 0) then {
 						if (unitIsUAV _asset) then {
 							_asset spawn BIS_fnc_WL2_deleteAssetFromMap;

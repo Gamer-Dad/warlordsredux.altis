@@ -26,7 +26,7 @@ _sideN = [east, west] find _side;
 				"right"
 			];
 		};
-	} forEach (((list _revealTrigger) - (missionNamespace getVariable ["BIS_WL_ownedVehicles", []])) select {(side group _x != _side) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
+	} forEach (((list _revealTrigger) - (missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []])) select {(side group _x != _side) && {(alive _x) && {((side group _x) in BIS_WL_sidesArray)}}});
 } forEach BIS_WL_currentlyScannedSectors;
 {
 	_m drawIcon [
@@ -102,7 +102,7 @@ _sideN = [east, west] find _side;
 		_size,
 		_size,
 		call BIS_fnc_getDir,
-		_x call BIS_fnc_iconText,
+		[_x, true] call BIS_fnc_iconText,
 		1,
 		0.043,
 		"PuristaBold",

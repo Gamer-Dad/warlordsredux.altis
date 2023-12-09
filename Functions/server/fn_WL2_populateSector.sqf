@@ -2,10 +2,7 @@ params ["_sector", "_side"];
 
 if (_side == resistance && {_sector getVariable ["BIS_WL_aiSpawnedAAF", false]}) exitWith {};
 
-private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
-private _connectedToBase = count ([((profileNamespace getVariable "BIS_WL_lastBases") # 0), ((profileNamespace getVariable "BIS_WL_lastBases") # 1)] arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 private _units = [];
-
 if (_side == resistance) then {
 	_sector setVariable ["BIS_WL_aiSpawnedAAF", true];
 	if (count (_sector getVariable "BIS_WL_vehiclesToSpawn") == 0) then {
@@ -67,6 +64,8 @@ if (_side == resistance) then {
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 		_sector setVariable ["BIS_WL_vehiclesToSpawn", nil];
 	}; 
+
+	_connectedToBase = count ((profileNamespace getVariable "BIS_WL_lastBases") arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 	if (!_connectedToBase && {"H" in (_sector getVariable "BIS_WL_services")}) then {
 		private _neighbors = (_sector getVariable "BIS_WL_connectedSectors") select {(_x getVariable "BIS_WL_owner") == _side};
 		
@@ -101,6 +100,7 @@ if (_side == resistance) then {
 };
 [_units, _sector] spawn BIS_fnc_WL2_assetRelevanceCheck;
 
+private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
 if (count _spawnPosArr == 0) exitWith {};
 
 private _garrisonSize = (_sector getVariable "BIS_WL_value") * 2.3; // * x: the bigger x the more ai
