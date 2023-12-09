@@ -23,7 +23,13 @@ if (isPlayer _owner) then {
 		call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		
+		if (typeOf _asset == "B_APC_Tracked_01_AA_F" || {typeOf _asset == "O_APC_Tracked_02_AA_F"}) then {
+			_asset removeMagazinesTurret ["4Rnd_Titan_long_missiles",[0]];
+			_asset removeMagazinesTurret ["4Rnd_Titan_long_missiles_O",[0]];
+			_asset removeWeaponTurret ["missiles_titan_AA",[0]];
+			{_asset addMagazineTurret ["4Rnd_GAA_missiles",[0]];} forEach [1,2];
+			_asset addWeaponTurret ["missiles_titan_AA",[0]];
+		};
 		private _defaultMags = [];
 		{
 			_defaultMags pushBack (_asset magazinesTurret _x);
