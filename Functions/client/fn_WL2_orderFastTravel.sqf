@@ -65,9 +65,6 @@ if (isNull BIS_WL_targetSector) exitWith {
 titleCut ["", "BLACK OUT", 1];
 openMap [false, false];
 
-deleteMarkerLocal _marker;
-deleteMarkerLocal _markerText;
-
 "Fast_travel" call BIS_fnc_WL2_announcer;
 [toUpper format [localize "STR_A3_WL_popup_travelling", BIS_WL_targetSector getVariable "BIS_WL_name"], nil, 3] spawn BIS_fnc_WL2_smoothText;
 
@@ -83,6 +80,9 @@ if (_toContested) then {
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
 	[player, "fastTravelContested", _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+
+	deleteMarkerLocal _marker;
+	deleteMarkerLocal _markerText;
 } else {
 	_destination = selectRandom (BIS_WL_targetSector call BIS_fnc_WL2_findSpawnPositions);
 	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
