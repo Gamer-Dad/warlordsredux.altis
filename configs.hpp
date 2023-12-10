@@ -2,8 +2,7 @@ adminFilter[] = {"!updatezeus","kanker","cancer","n3gro","negro","kill yourself"
 
 class arsenalConfig
 {
-	class west
-	{
+	class west{
 		riflesBlacklist[] = {"SMG_05_F","SMG_02_F","arifle_ARX_blk_F","arifle_ARX_ghex_F","arifle_ARX_hex_F","arifle_AK12U_F","arifle_AK12U_lush_F","arifle_AK12U_arid_F","arifle_Katiba_C_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_07_blk_F","srifle_DMR_07_hex_F","srifle_DMR_07_ghex_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_01_F",	"srifle_GM6_F","srifle_GM6_camo_F","srifle_GM6_ghex_F","arifle_CTARS_blk_F","arifle_CTARS_hex_F","arifle_CTARS_ghex_F","arifle_RPK12_F","arifle_RPK12_lush_F","arifle_RPK12_arid_F","LMG_Zafir_F",	"MMG_01_hex_F","MMG_01_tan_F","MMG_01_hex_ARCO_LP_F",};
 		launchersBlacklist[] = {"launch_O_Vorona_brown_F","launch_O_Vorona_green_F"};
 		handgunsBlacklist[] = {"hgun_Rook40_F",};
@@ -14,8 +13,7 @@ class arsenalConfig
 		HMD[] = {"Integrated_NVG_F","Integrated_NVG_TI_0_F","Integrated_NVG_TI_1_F"};
 		Terminals[] = {"B_UavTerminal","ItemGPS"};
 	};
-	class east
-	{
+	class east{
 		riflesBlacklist[] = {"SMG_01_F","arifle_Mk20_F","arifle_Mk20_plain_F","arifle_Mk20_GL_F","arifle_Mk20_GL_plain_F","arifle_Mk20_MRCO_plain_F","arifle_Mk20_MRCO_pointer_F","arifle_Mk20_GL_MRCO_pointer_F","arifle_MX_F","arifle_MX_GL_F","arifle_MX_Black_F","arifle_MX_GL_Black_F","arifle_MX_khk_F","arifle_MX_GL_khk_F","arifle_SPAR_01_blk_F","arifle_SPAR_01_khk_F","arifle_SPAR_01_snd_F","arifle_SPAR_01_GL_blk_F","arifle_SPAR_01_GL_khk_F","arifle_SPAR_01_GL_snd_F","arifle_TRG21_F","arifle_TRG21_GL_F","arifle_Mk20C_F","arifle_Mk20C_plain_F","arifle_MXC_F","arifle_MXC_khk_F","arifle_MXC_Black_Holo_Pointer_F","arifle_TRG20_F","srifle_DMR_02_F","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_tan_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_DMR_06_camo_khs_F","srifle_EBR_F","arifle_MXM_F","arifle_MXM_Black_F","arifle_MXM_khk_F","arifle_SPAR_03_blk_F","arifle_SPAR_03_khk_F","arifle_SPAR_03_snd_F","srifle_LRR_F","srifle_LRR_camo_F","srifle_LRR_tna_F","LMG_Mk200_F","LMG_Mk200_black_F","arifle_MX_SW_F","arifle_MX_SW_Black_F","arifle_MX_SW_khk_F","arifle_MX_SW_Black_Pointer_F","arifle_SPAR_02_blk_F","arifle_SPAR_02_khk_F","arifle_SPAR_02_snd_F","MMG_02_camo_F","MMG_02_black_F","MMG_02_sand_F",};
 		launchersBlacklist[] = {"launch_MRAWS_olive_F","launch_MRAWS_olive_rail_F","launch_MRAWS_green_F","launch_MRAWS_green_rail_F","launch_MRAWS_sand_F","launch_MRAWS_sand_rail_F","launch_NLAW_F",};
 		handgunsBlacklist[] = {"hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_01_green_F","hgun_ACPC2_F",};
