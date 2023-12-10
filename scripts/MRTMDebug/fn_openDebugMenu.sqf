@@ -14,4 +14,3 @@ if (isNull (findDisplay 2000)) then {
 	} forEach _d;
 	createDialog "MRTM_debugMenu";
 };
-disableSerialization;

@@ -1401,7 +1401,7 @@ class MRTM_groupsMenu
 
 class MRTM_debugMenu
 {
-	idd = 2000
+	idd = 2000;
 
 	class controls
 	{
