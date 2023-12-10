@@ -1,10 +1,9 @@
 params ["_sector", "_side"];
 
-if (_side == resistance && {_sector getVariable ["BIS_WL_aiSpawnedAAF", false]}) exitWith {};
+if (_side == resistance && {_sector in [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"]}) exitWith {};
 
 private _units = [];
 if (_side == resistance) then {
-	_sector setVariable ["BIS_WL_aiSpawnedAAF", true];
 	if (count (_sector getVariable ["BIS_WL_vehiclesToSpawn", []]) == 0) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
