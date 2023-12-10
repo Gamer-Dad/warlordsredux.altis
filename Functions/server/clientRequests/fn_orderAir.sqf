@@ -113,6 +113,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 };
 
 waitUntil {sleep 0.1; !(isNull _asset)};
+_asset enableWeaponDisassembly false;
 
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];

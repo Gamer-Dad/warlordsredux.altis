@@ -49,6 +49,8 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 waitUntil {sleep 0.1; !(isNull _asset)};
 
 _asset enableWeaponDisassembly false;
+_asset setDir _direction;
+
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
 [_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];
