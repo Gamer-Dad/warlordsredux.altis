@@ -2,6 +2,7 @@ params ["_rocket", "_speed"];
 
 _target = missileTarget _rocket;
 while {!isNull _rocket && {!isNull _target}} do{
+    sleep 0.5;
     private _currentPos = getPosASLVisual _rocket;
     private _targetPos = aimPos _target;
     private _forwardVector = vectorNormalized (_targetPos vectorDiff _currentPos);
