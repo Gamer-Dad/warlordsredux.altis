@@ -65,9 +65,6 @@ if (isNull BIS_WL_targetSector) exitWith {
 titleCut ["", "BLACK OUT", 1];
 openMap [false, false];
 
-deleteMarkerLocal _marker;
-deleteMarkerLocal _markerText;
-
 "Fast_travel" call BIS_fnc_WL2_announcer;
 [toUpper format [localize "STR_A3_WL_popup_travelling", BIS_WL_targetSector getVariable "BIS_WL_name"], nil, 3] spawn BIS_fnc_WL2_smoothText;
 
@@ -91,6 +88,9 @@ if (_toContested) then {
 	} forEach _tagAlong;
 	player setVehiclePosition [_destination, [], 0, "NONE"];
 };
+
+deleteMarkerLocal _marker;
+deleteMarkerLocal _markerText;
 
 sleep 1;
 
