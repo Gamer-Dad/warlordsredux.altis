@@ -1,5 +1,4 @@
-#include "..\server_macros.inc"
-
+_list = serverNamespace getVariable "garbageCollector";
 while {!BIS_WL_missionEnd} do {
 	{
 		if (_x isKindOf "Man") then {
@@ -16,6 +15,6 @@ while {!BIS_WL_missionEnd} do {
 
 	{
 		deleteVehicle _x;
-	} forEach((allMissionObjects "") select {(_x isKindOf "WeaponHolder" || {_x isKindOf "WeaponHolderSimulated" || {typeOf _x in canopys || {typeOf _x in garbageList && {_x getVariable ["BIS_WL_delete", (serverTime + 10)] < serverTime && {(count (crew _x)) == 0}}}}})});
+	} forEach ((allMissionObjects "") select {_x isKindOf "WeaponHolder" || {_x isKindOf "WeaponHolderSimulated" || {_list getOrDefault [typeOf _x, false]}}});
 	sleep 300;
 };

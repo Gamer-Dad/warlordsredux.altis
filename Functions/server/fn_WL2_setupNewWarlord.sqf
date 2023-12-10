@@ -30,21 +30,28 @@ if (_boundToTeam) then {
 		};
 	};
 } else {
-	missionNamespace setVariable [_varSwitch, false, _owner];
+	missionNamespace setVariable [_varSwitch, _boundToTeam, _owner];
 
-	_friendlyCnt = playersNumber _sideW;
-	_enemyside = ([west, east] select {_x != _sideW}) # 0;
-	_enemyCnt = playersNumber _enemyside;
-	_imb = ((_friendlyCnt - _enemyCnt) > 3);
-	if (_imb) then {
-		_pList set [_uid, [true, _enemyside]];
-		serverNamespace setVariable ["playerList", _pList];
-		missionNamespace setVariable [_varImb, _imb, _owner];
+	if (((missionNamespace getVariable "gameStart") + 300) < serverTime) then {
+		_friendlyCnt = playersNumber _sideW;
+		_enemyside = ([west, east] select {_x != _sideW}) # 0;
+		_enemyCnt = playersNumber _enemyside;
+		_imb = ((_friendlyCnt - _enemyCnt) > 3);
+		if (_imb) then {
+			_pList set [_uid, [true, _enemyside]];
+			serverNamespace setVariable ["playerList", _pList];
+			missionNamespace setVariable [_varImb, _imb, _owner];
+		} else {
+			_warlord setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];
+			_pList set [_uid, [true, _sideW]];
+			serverNamespace setVariable ["playerList", _pList];
+			missionNamespace setVariable [_varImb, _imb, _owner];
+		};
 	} else {
 		_warlord setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];
 		_pList set [_uid, [true, _sideW]];
 		serverNamespace setVariable ["playerList", _pList];
-		missionNamespace setVariable [_varImb, _imb, _owner];
+		missionNamespace setVariable [_varImb, false, _owner];
 	};
 };
 

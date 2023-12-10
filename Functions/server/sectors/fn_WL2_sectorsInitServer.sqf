@@ -93,7 +93,9 @@ waitUntil {!isNil "BIS_WL_base1" && {!isNil "BIS_WL_base2"}};
 		deleteVehicle _vehicle;
 	} forEach _sectorVehicles;
 	
-	_sector setVariable ["BIS_WL_vehiclesToSpawn", _sectorVehiclesArray];
+	if (count _sectorVehiclesArray > 0) then {
+		_sector setVariable ["BIS_WL_vehiclesToSpawn", _sectorVehiclesArray];
+	};
 	
 	_agentGrp = createGroup CIVILIAN;
 	_agent = _agentGrp createUnit ["Logic", _sectorPos, [], 0, "CAN_COLLIDE"];

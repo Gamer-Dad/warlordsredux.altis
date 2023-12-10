@@ -13,6 +13,7 @@ if (_side != BIS_WL_playerSide) exitWith {
 		
 		if (_sector == (BIS_WL_playerSide call BIS_fnc_WL2_getSideBase)) then {
 			playSound "air_raid";
+			playSound "air_raid";
 			[toUpper localize "STR_A3_WL_popup_base_vulnerable"] spawn BIS_fnc_WL2_smoothText;
 			if !(isServer) then {
 				["base_vulnerable", BIS_WL_playerSide] call BIS_fnc_WL2_handleRespawnMarkers;

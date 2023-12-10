@@ -33,11 +33,3 @@ class logisticsConfig
 		Cargo[] = {"B_Slingload_01_Medevac_F","Box_CSAT_Equip_F","Box_CSAT_Uniforms_F","Box_NATO_Uniforms_F","Box_NATO_Equip_F","B_Slingload_01_Fuel_F","B_Slingload_01_Repair_F","B_Slingload_01_Ammo_F","Land_Pod_Heli_Transport_04_repair_F","Land_Pod_Heli_Transport_04_fuel_F","Land_Pod_Heli_Transport_04_ammo_F","Box_East_AmmoVeh_F","Box_NATO_AmmoVeh_F","Box_NATO_Ammo_F","Box_NATO_Grenades_F","Box_NATO_Wps_F","Box_NATO_AmmoOrd_F","Box_NATO_WpsLaunch_F","Box_NATO_WpsSpecial_F","B_supplyCrate_F","Box_East_Ammo_F","Box_East_Grenades_F","Box_East_Wps_F","Box_East_AmmoOrd_F","Box_East_WpsLaunch_F","Box_East_WpsSpecial_F","O_supplyCrate_F"};
 	};
 };
-class garbageConfig
-{
-	class garbage
-	{
-		List[] = {"O_SDV_01_F","O_Boat_Armed_01_hmg_F","O_Boat_Transport_01_F","C_Scooter_Transport_01_F","B_Boat_Armed_01_minigun_F","B_Boat_Transport_01_F","B_SDV_01_F","O_Quadbike_01_F","B_Quadbike_01_F","Box_NATO_Ammo_F","Box_NATO_Grenades_F","Box_NATO_Wps_F","Box_NATO_Uniforms_F","Box_NATO_Equip_F","Box_NATO_AmmoOrd_F","Box_NATO_WpsLaunch_F","Box_NATO_WpsSpecial_F","B_supplyCrate_F","Box_East_Ammo_F","Box_East_Grenades_F","Box_East_Wps_F","Box_CSAT_Uniforms_F","Box_CSAT_Equip_F","Box_East_WpsLaunch_F","Box_East_AmmoOrd_F","Box_East_WpsSpecial_F","O_supplyCrate_F"};
-		Canopys[] = {"Plane_Fighter_03_Canopy_F","Plane_CAS_02_Canopy_F","Plane_CAS_01_Canopy_F","Plane_Fighter_01_Canopy_F","Plane_Fighter_02_Canopy_F","Plane_Fighter_04_Canopy_F"};
-	};
-};

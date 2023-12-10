@@ -4,7 +4,6 @@ if !(isServer) exitWith {};
 
 _asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 _asset setDir _direction;
-_asset setVariable ["BIS_WL_delete", (serverTime + 600), 2];
 
 //Livery change
 if (typeOf _asset == "I_Truck_02_MRL_F") then {

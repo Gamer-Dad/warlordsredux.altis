@@ -36,12 +36,12 @@ while {!BIS_WL_missionEnd} do {
 	_currentPos = _newPos;
 
 	if (WAS_score) then {
-		_inActScore = _inActScore - 1;
+		_inActScore = _inActScore - 5;
 		WAS_score = false;
 	};
 
 	if (VIC_ENTERED) then {
-		_inActScore = _inActScore - 100;
+		_inActScore = _inActScore - 5;
 		VIC_ENTERED = false;		
 	};
 

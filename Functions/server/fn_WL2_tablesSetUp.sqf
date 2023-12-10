@@ -6,7 +6,7 @@ serverNamespace setVariable ["WL2_mineLimits",
 		["APERSMine_Range_Ammo", [20, []]], ["APERSMineDispenser_Mine_Ammo", [20, []]], ["APERSTripMine_Wire_Ammo", [5, []]],
 		["APERSBoundingMine_Range_Mag", [20, []]], ["ATMine_Range_Ammo", [25, []]], ["SLAMDirectionalMine_Wire_Mag", [10, []]], 
 		["ClaymoreDirectionalMine_Remote_Ammo", [6, []]], ["spawnedClaymoresAmmo", []], ["SatchelCharge_Remote_Mag", [7, []]], ["DemoCharge_Remote_Mag", [7, []]], 
-		["IEDUrbanBig_Remote_Mag", [5, 0]], ["IEDLandBig_Remote_Mag", [5, []]], ["IEDUrbanSmall_Remote_Mag", [5, []]], ["IEDLandSmall_Remote_Mag", [5, []]], 
+		["IEDUrbanBig_Remote_Mag", [5, []]], ["IEDLandBig_Remote_Mag", [5, []]], ["IEDUrbanSmall_Remote_Mag", [5, []]], ["IEDLandSmall_Remote_Mag", [5, []]], 
 		["SLAMDirectionalMine_Wire_Ammo", [10, []]], ["DemoCharge_Remote_Ammo", [5, []]], ["SatchelCharge_Remote_Ammo", [5, []]], ["APERSTripMine_Wire_Mag", [10, []]]
 	]
 ];
@@ -232,3 +232,10 @@ serverNamespace setVariable ["WL2_factionAircraftClasses", [
 	"I_Heli_light_03_F",
 	"I_Plane_Fighter_04_F"
 ]];
+
+serverNamespace setVariable ["garbageCollector", 
+	createHashMapFromArray [
+		["Plane_Fighter_03_Canopy_F", true],["Plane_CAS_02_Canopy_F", true],["Plane_CAS_01_Canopy_F", true],["Plane_Fighter_01_Canopy_F", true],
+		["Plane_Fighter_02_Canopy_F", true],["Plane_Fighter_04_Canopy_F", true]
+	]
+];
