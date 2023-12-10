@@ -80,6 +80,9 @@ if (_toContested) then {
 		_x setVehiclePosition [_destination, [], 3, "NONE"];
 	} forEach _tagAlong;
 	[player, "fastTravelContested", _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+
+	deleteMarkerLocal _marker;
+	deleteMarkerLocal _markerText;
 } else {
 	_destination = selectRandom (BIS_WL_targetSector call BIS_fnc_WL2_findSpawnPositions);
 	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
@@ -88,9 +91,6 @@ if (_toContested) then {
 	} forEach _tagAlong;
 	player setVehiclePosition [_destination, [], 0, "NONE"];
 };
-
-deleteMarkerLocal _marker;
-deleteMarkerLocal _markerText;
 
 sleep 1;
 
