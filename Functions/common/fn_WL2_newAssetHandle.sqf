@@ -14,6 +14,7 @@ if (isPlayer _owner) then {
 	WAS_store = true;
 
 	if (_asset isKindOf "Man") then {
+		_asset call APS_fnc_SetupProjectiles;
 		_asset addEventHandler ["Killed", {
 			missionNamespace setVariable ["WL2_manLost", true];
 			BIS_WL_matesAvailable = (BIS_WL_matesAvailable - 1) max 0;
