@@ -5,7 +5,7 @@ if (_side == resistance && {_sector getVariable ["BIS_WL_aiSpawnedAAF", false]})
 private _units = [];
 if (_side == resistance) then {
 	_sector setVariable ["BIS_WL_aiSpawnedAAF", true];
-	if (count (_sector getVariable "BIS_WL_vehiclesToSpawn") == 0) then {
+	if (count (_sector getVariable ["BIS_WL_vehiclesToSpawn", []]) == 0) then {
 		private _roads = ((_sector nearRoads 400) select {count roadsConnectedTo _x > 0}) inAreaArray (_sector getVariable "objectAreaComplete");
 		if (count _roads > 0) then {
 			private _road = selectRandom _roads;
@@ -48,7 +48,6 @@ if (_side == resistance) then {
 				_units pushBack _x;
 			} forEach _crew;
 			
-			_vehicle lock _lock;
 			_posVic = position _vehicle;
 			[_group, 0] setWaypointPosition [_posVic, 100];
 			_group setBehaviour "COMBAT";
@@ -63,7 +62,7 @@ if (_side == resistance) then {
 			_vehicle allowCrewInImmobile [true, true];
 		} forEach (_sector getVariable "BIS_WL_vehiclesToSpawn");
 		_sector setVariable ["BIS_WL_vehiclesToSpawn", nil];
-	}; 
+	};
 
 	_connectedToBase = count ((profileNamespace getVariable "BIS_WL_lastBases") arrayIntersect (_sector getVariable "BIS_WL_connectedSectors")) > 0;
 	if (!_connectedToBase && {"H" in (_sector getVariable "BIS_WL_services")}) then {
