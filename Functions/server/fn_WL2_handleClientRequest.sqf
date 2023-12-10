@@ -66,7 +66,7 @@ if (_action == "fastTravelContested") exitWith {
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
 
-		_sender setVehiclePosition [_param1, [], 2, "NONE"];
+		_sender setVehiclePosition [_param1, [], 0, "NONE"];
 	};
 };
 

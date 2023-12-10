@@ -65,20 +65,6 @@ if (isNull BIS_WL_targetSector) exitWith {
 titleCut ["", "BLACK OUT", 1];
 openMap [false, false];
 
-_destination = [];
-if (_toContested) then {
-	_destination = (_marker call BIS_fnc_WL2_findSpawnPositions) select {private _pos = _x; BIS_WL_allSectors findIf {_pos inArea ((_x getVariable "BIS_WL_markers") # 2)} == -1};
-
-	if (count _destination > 0) then {
-		_destination = selectRandom _destination
-	} else {
-		_destination = markerPos _marker
-	};
-} else {
-	private _destination = BIS_WL_targetSector call BIS_fnc_WL2_findSpawnPositions;
-	if (count _destination > 0) then {_destination = selectRandom _destination} else {position BIS_WL_targetSector};
-};
-
 deleteMarkerLocal _marker;
 deleteMarkerLocal _markerText;
 
@@ -87,15 +73,23 @@ deleteMarkerLocal _markerText;
 
 sleep 1;
 
-player setDir (player getDir BIS_WL_targetSector);
-_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
-{
-	_x setVehiclePosition [_destination, [], 3, "NONE"];
-} forEach _tagAlong;
+_destination = [];
 if (_toContested) then {
+	_destination = (_marker call BIS_fnc_WL2_findSpawnPositions) select {private _pos = _x; BIS_WL_allSectors findIf {_pos inArea ((_x getVariable "BIS_WL_markers") # 2)} == -1};
+	if (count _destination > 0) then {_destination = selectRandom _destination;} else {_destination = markerPos _marker;};
+	player setDir (player getDir BIS_WL_targetSector);
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
+	{
+		_x setVehiclePosition [_destination, [], 3, "NONE"];
+	} forEach _tagAlong;
 	[player, "fastTravelContested", _destination] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 } else {
-	player setVehiclePosition [_destination, [], 3, "NONE"];
+	private _destination = selectRandom (BIS_WL_targetSector call BIS_fnc_WL2_findSpawnPositions);
+	_tagAlong = (units player) select {(_x distance2D player <= 100) && {(isNull objectParent _x) && {(alive _x) && {(_x != player) && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}}}}};
+	{
+		_x setVehiclePosition [_destination, [], 3, "NONE"];
+	} forEach _tagAlong;
+	player setVehiclePosition [_destination, [], 0, "NONE"];
 };
 
 sleep 1;
