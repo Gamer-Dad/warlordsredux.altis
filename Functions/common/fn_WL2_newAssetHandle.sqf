@@ -108,10 +108,6 @@ if (isPlayer _owner) then {
 			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 			_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
-			if (direction _asset != (direction player)) then {
-				_asset setDir (direction player);
-			};
-
 			if (typeOf _asset == "B_Radar_System_01_F" || {typeOf _asset == "O_Radar_System_02_F"}) then {
 				_asset spawn {
 					params ["_asset"];
