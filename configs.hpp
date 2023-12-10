@@ -17,15 +17,11 @@ class arsenalConfig
 			"srifle_DMR_02_F","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_tan_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_DMR_06_camo_khs_F","srifle_EBR_F","arifle_MXM_F","arifle_MXM_Black_F","arifle_MXM_khk_F","arifle_SPAR_03_blk_F","arifle_SPAR_03_khk_F","arifle_SPAR_03_snd_F",
 			"srifle_LRR_F","srifle_LRR_camo_F","srifle_LRR_tna_F",
 			"LMG_Mk200_F","LMG_Mk200_black_F","arifle_MX_SW_F","arifle_MX_SW_Black_F","arifle_MX_SW_khk_F","arifle_MX_SW_Black_Pointer_F","arifle_SPAR_02_blk_F","arifle_SPAR_02_khk_F","arifle_SPAR_02_snd_F",
-			"MMG_02_camo_F","MMG_02_black_F","MMG_02_sand_F",
+			"MMG_02_camo_F","MMG_02_black_F","MMG_02_sand_F"
 		};
 		Launchers[] = {
 			"launch_RPG7_F", "launch_RPG32_F", "launch_RPG32_ghex_F", "launch_RPG32_green_F", "launch_RPG32_camo_F", "launch_B_Titan_F", "launch_I_Titan_F", "launch_O_Titan_F", "launch_Titan_F", "launch_B_Titan_short_F", "launch_I_Titan_short_F", "launch_O_Titan_short_F", "launch_Titan_short_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_ghex_F", "launch_O_Titan_short_ghex_F", "launch_I_Titan_eaf_F", "launch_B_Titan_olive_F",
 			"launch_MRAWS_olive_F","launch_MRAWS_olive_rail_F","launch_MRAWS_green_F","launch_MRAWS_green_rail_F","launch_MRAWS_sand_F","launch_MRAWS_sand_rail_F","launch_NLAW_F",
-		};
-		Handguns[] = {
-			"hgun_P07_F","hgun_P07_khk_F","hgun_P07_blk_F","hgun_Pistol_01_F","hgun_esd_01_F","hgun_Pistol_Signal_F","hgun_Pistol_heavy_02_F",
-			"hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_01_green_F","hgun_ACPC2_F",
 		};
 		Uniforms[] = {"U_C_Journalist","U_B_GEN_Commander_F","U_C_Paramedic_01_F","U_O_R_Gorka_01_black_F","U_B_HeliPilotCoveralls","U_B_GhillieSuit","U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_Wetsuit","U_B_PilotCoveralls","U_B_SpecopsUniform_sgg","U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3","U_B_survival_uniform","U_B_FullGhillie_lsh","U_B_FullGhillie_sard","U_B_FullGhillie_ard","U_B_T_Soldier_F","U_B_T_Soldier_AR_F","U_B_T_Soldier_SL_F","U_B_T_Sniper_F","U_B_T_FullGhillie_tna_F","U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_2_F","U_B_CTRG_Soldier_3_F","U_B_CTRG_Soldier_Arid_F","U_B_CTRG_Soldier_2_Arid_F","U_B_CTRG_Soldier_3_Arid_F","U_B_CombatUniform_mcam_wdl_f","U_B_CombatUniform_tshirt_mcam_wdL_f","U_B_CombatUniform_vest_mcam_wdl_f"};
 		Vests[] = {"V_TacVest_gen_F","V_Press_F","V_Chestrig_khk","V_Chestrig_rgr","V_Chestrig_blk","V_Chestrig_oli","V_TacVest_khk","V_TacVest_brn","V_TacVest_oli","V_TacVest_blk","V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F","V_PlateCarrier1_rgr_noflag_F","V_PlateCarrier2_rgr_noflag_F","V_LegStrapBag_black_F","V_LegStrapBag_coyote_F","V_LegStrapBag_olive_F","V_CarrierRigKBT_01_EAF_F","V_CarrierRigKBT_01_light_EAF_F","V_BandollierB_oli","V_BandollierB_blk","V_BandollierB_rgr","V_BandollierB_cbr","V_BandollierB_khk","V_TacVest_camo","V_TacVestIR_blk","V_I_G_resistanceLeader_F","V_Rangemaster_belt","V_PlateCarrierGL_rgr","V_PlateCarrierGL_mtp","V_PlateCarrierSpec_rgr","V_PlateCarrierSpec_blk","V_PlateCarrierSpec_mtp","V_RebreatherB","V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG","V_PlateCarrier_Kerry","V_PlateCarrierSpec_tna_F","V_PlateCarrierGL_tna_F","V_PlateCarrier1_wdl","V_PlateCarrier2_wdl","V_PlateCarrierGL_wdl","V_PlateCarrierSpec_wdl","V_PlateCarrier1_blk","V_PlateCarrier2_blk","V_PlateCarrierGL_blk"};	
@@ -50,16 +46,12 @@ class arsenalConfig
 			"srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_07_blk_F","srifle_DMR_07_hex_F","srifle_DMR_07_ghex_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_01_F",
 			"srifle_GM6_F","srifle_GM6_camo_F","srifle_GM6_ghex_F",
 			"arifle_CTARS_blk_F","arifle_CTARS_hex_F","arifle_CTARS_ghex_F","arifle_RPK12_F","arifle_RPK12_lush_F","arifle_RPK12_arid_F","LMG_Zafir_F",
-			"MMG_01_hex_F","MMG_01_tan_F","MMG_01_hex_ARCO_LP_F",
+			"MMG_01_hex_F","MMG_01_tan_F","MMG_01_hex_ARCO_LP_F"
 		};
 
 		Launchers[] = {
 			"launch_RPG7_F", "launch_RPG32_F", "launch_RPG32_ghex_F", "launch_RPG32_green_F", "launch_RPG32_camo_F", "launch_B_Titan_F", "launch_I_Titan_F", "launch_O_Titan_F", "launch_Titan_F", "launch_B_Titan_short_F", "launch_I_Titan_short_F", "launch_O_Titan_short_F", "launch_Titan_short_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_ghex_F", "launch_O_Titan_short_ghex_F", "launch_I_Titan_eaf_F", "launch_B_Titan_olive_F",
 			"launch_O_Vorona_brown_F","launch_O_Vorona_green_F"
-		};
-		Handguns[] = {
-			"hgun_P07_F","hgun_P07_khk_F","hgun_P07_blk_F","hgun_Pistol_01_F","hgun_esd_01_F","hgun_Pistol_Signal_F","hgun_Pistol_heavy_02_F",
-			"hgun_Rook40_F",
 		};
 		Uniforms[] = {"U_C_Journalist","U_B_GEN_Commander_F","U_C_Paramedic_01_F","U_O_SpecopsUniform_ocamo","U_O_SpecopsUniform_blk","U_O_OfficerUniform_ocamo","U_O_Wetsuit","U_O_GhillieSuit","U_O_FullGhillie_lsh","U_O_FullGhillie_sard","U_O_FullGhillie_ard","U_O_officer_noInsignia_hex_F","U_O_V_Soldier_Viper_hex_F","U_O_V_Soldier_Viper_F","U_O_T_FullGhillie_tna_F","U_O_T_Soldier_F","U_O_T_Officer_F","U_O_T_Sniper_F","U_O_CombatUniform_oucamo","U_O_PilotCoveralls","U_O_R_Gorka_01_F","U_O_R_Gorka_01_brown_F","U_O_R_Gorka_01_camo_F","U_O_R_Gorka_01_black_F"};
 		Vests[] = {"V_TacVest_gen_F","V_Press_F","V_CarrierRigKBT_01_Olive_F","V_CarrierRigKBT_01_light_Olive_F","V_CarrierRigKBT_01_heavy_Olive_F","V_Chestrig_khk","V_Chestrig_rgr","V_Chestrig_blk","V_Chestrig_oli","V_TacVest_khk","V_TacVest_brn","V_TacVest_oli","V_TacVest_blk","V_HarnessO_brn","V_HarnessOGL_brn","V_HarnessO_gry","V_HarnessOGL_gry","V_HarnessOSpec_brn","V_HarnessOSpec_gry","V_RebreatherIR","V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F","V_HarnessO_ghex_F","V_HarnessOGL_ghex_F","V_BandollierB_ghex_F","V_PlateCarrier1_rgr_noflag_F","V_PlateCarrier2_rgr_noflag_F","V_LegStrapBag_black_F","V_LegStrapBag_coyote_F","V_LegStrapBag_olive_F","V_CarrierRigKBT_01_EAF_F","V_CarrierRigKBT_01_light_EAF_F","V_SmershVest_01_F","V_SmershVest_01_radio_F","V_BandollierB_oli","V_BandollierB_blk","V_BandollierB_rgr","V_BandollierB_cbr","V_BandollierB_khk","V_TacVest_camo","V_TacVestIR_blk","V_I_G_resistanceLeader_F","V_Rangemaster_belt","V_PlateCarrier2_blk","V_PlateCarrier1_blk"};
