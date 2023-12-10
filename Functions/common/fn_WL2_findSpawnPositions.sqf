@@ -105,9 +105,8 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 		};
 	};
 };
-
 _ret = _ret apply {[_x distance2D _sortCenter, [_x]]};
 _ret sort true;
 _ret = _ret apply {(_x # 1) # 0};
 
-_ret
+_ret;
