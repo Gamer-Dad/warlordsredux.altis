@@ -157,7 +157,7 @@ if (_ret) then {
 			};
 			if (_category == "Defences") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
-					if ((count ((missionNamespace getVariable [_var, []]) select {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
+					if ((count ((missionNamespace getVariable [_var, []]) select {alive _x && {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)}})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {
 						_ret = false;
 						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};
