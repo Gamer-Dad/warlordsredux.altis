@@ -1,49 +1,30 @@
-adminFilter[] = {"nique","!updatezeus","!getcp","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
+adminFilter[] = {"!updatezeus","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
 
 class arsenalConfig
 {
 	class west
 	{
 		Rifles[] = {
-		//*BOTH*//
-			//SMG
 			"SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki","SMG_03C_TR_hex","SMG_03_black","SMG_03_camo","SMG_03_khaki","SMG_03_hex","SMG_03C_black","SMG_03C_camo","SMG_03C_khaki","SMG_03C_hex","hgun_PDW2000_F",
-			//Rifles
 			"arifle_AK12_F","arifle_AK12_GL_F","arifle_AK12_lush_F","arifle_AK12_arid_F","arifle_AK12_GL_lush_F","arifle_AK12_GL_arid_F","arifle_MSBS65_F","arifle_MSBS65_GL_F","arifle_MSBS65_UBS_F","arifle_MSBS65_black_F","arifle_MSBS65_GL_black_F","arifle_MSBS65_UBS_black_F","arifle_MSBS65_sand_F","arifle_MSBS65_GL_sand_F","arifle_MSBS65_UBS_sand_F","arifle_MSBS65_camo_F","arifle_MSBS65_GL_camo_F","arifle_MSBS65_UBS_camo_F","arifle_SDAR_F",
-			//Carbines
 			"arifle_AKS_F",
-			//DMR
 			"srifle_DMR_06_hunter_F","arifle_MSBS65_Mark_F","arifle_MSBS65_Mark_black_F","arifle_MSBS65_Mark_sand_F","arifle_MSBS65_Mark_camo_F",
-			//SAW
 			"LMG_03_F",
-			//Shotgun
 			"sgun_HunterShotgun_01_F","sgun_HunterShotgun_01_sawedoff_F",
-		//*BLUEFOR*//
-			//SMG
 			"SMG_01_F",
-			//Rifles
 			"arifle_Mk20_F","arifle_Mk20_plain_F","arifle_Mk20_GL_F","arifle_Mk20_GL_plain_F","arifle_Mk20_MRCO_plain_F","arifle_Mk20_MRCO_pointer_F","arifle_Mk20_GL_MRCO_pointer_F","arifle_MX_F","arifle_MX_GL_F","arifle_MX_Black_F","arifle_MX_GL_Black_F","arifle_MX_khk_F","arifle_MX_GL_khk_F","arifle_SPAR_01_blk_F","arifle_SPAR_01_khk_F","arifle_SPAR_01_snd_F","arifle_SPAR_01_GL_blk_F","arifle_SPAR_01_GL_khk_F","arifle_SPAR_01_GL_snd_F","arifle_TRG21_F","arifle_TRG21_GL_F",
-			//Carbines
 			"arifle_Mk20C_F","arifle_Mk20C_plain_F","arifle_MXC_F","arifle_MXC_khk_F","arifle_MXC_Black_Holo_Pointer_F","arifle_TRG20_F",
-			//DMR
 			"srifle_DMR_02_F","srifle_DMR_02_camo_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_tan_F","srifle_DMR_03_multicam_F","srifle_DMR_03_woodland_F","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_DMR_06_camo_khs_F","srifle_EBR_F","arifle_MXM_F","arifle_MXM_Black_F","arifle_MXM_khk_F","arifle_SPAR_03_blk_F","arifle_SPAR_03_khk_F","arifle_SPAR_03_snd_F",
-			//Sniper
 			"srifle_LRR_F","srifle_LRR_camo_F","srifle_LRR_tna_F",
-			//SAW
 			"LMG_Mk200_F","LMG_Mk200_black_F","arifle_MX_SW_F","arifle_MX_SW_Black_F","arifle_MX_SW_khk_F","arifle_MX_SW_Black_Pointer_F","arifle_SPAR_02_blk_F","arifle_SPAR_02_khk_F","arifle_SPAR_02_snd_F",
-			//MG
 			"MMG_02_camo_F","MMG_02_black_F","MMG_02_sand_F",
 		};
 		Launchers[] = {
-			//*BOTH*//
 			"launch_RPG7_F", "launch_RPG32_F", "launch_RPG32_ghex_F", "launch_RPG32_green_F", "launch_RPG32_camo_F", "launch_B_Titan_F", "launch_I_Titan_F", "launch_O_Titan_F", "launch_Titan_F", "launch_B_Titan_short_F", "launch_I_Titan_short_F", "launch_O_Titan_short_F", "launch_Titan_short_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_ghex_F", "launch_O_Titan_short_ghex_F", "launch_I_Titan_eaf_F", "launch_B_Titan_olive_F",
-			//*BLUEFOR*//
 			"launch_MRAWS_olive_F","launch_MRAWS_olive_rail_F","launch_MRAWS_green_F","launch_MRAWS_green_rail_F","launch_MRAWS_sand_F","launch_MRAWS_sand_rail_F","launch_NLAW_F",
 		};
 		Handguns[] = {
-			//*BOTH*//
 			"hgun_P07_F","hgun_P07_khk_F","hgun_P07_blk_F","hgun_Pistol_01_F","hgun_esd_01_F","hgun_Pistol_Signal_F","hgun_Pistol_heavy_02_F",
-			//*BLUEFOR*//
 			"hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_01_green_F","hgun_ACPC2_F",
 		};
 		Uniforms[] = {"U_C_Journalist","U_B_GEN_Commander_F","U_C_Paramedic_01_F","U_O_R_Gorka_01_black_F","U_B_HeliPilotCoveralls","U_B_GhillieSuit","U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_Wetsuit","U_B_PilotCoveralls","U_B_SpecopsUniform_sgg","U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3","U_B_survival_uniform","U_B_FullGhillie_lsh","U_B_FullGhillie_sard","U_B_FullGhillie_ard","U_B_T_Soldier_F","U_B_T_Soldier_AR_F","U_B_T_Soldier_SL_F","U_B_T_Sniper_F","U_B_T_FullGhillie_tna_F","U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_2_F","U_B_CTRG_Soldier_3_F","U_B_CTRG_Soldier_Arid_F","U_B_CTRG_Soldier_2_Arid_F","U_B_CTRG_Soldier_3_Arid_F","U_B_CombatUniform_mcam_wdl_f","U_B_CombatUniform_tshirt_mcam_wdL_f","U_B_CombatUniform_vest_mcam_wdl_f"};
@@ -57,46 +38,27 @@ class arsenalConfig
 	class east
 	{
 		Rifles[] = {
-		//*BOTH*//
-			//SMG
 			"SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki","SMG_03C_TR_hex","SMG_03_black","SMG_03_camo","SMG_03_khaki","SMG_03_hex","SMG_03C_black","SMG_03C_camo","SMG_03C_khaki","SMG_03C_hex","hgun_PDW2000_F",
-			//Rifles
 			"arifle_AK12_F","arifle_AK12_GL_F","arifle_AK12_lush_F","arifle_AK12_arid_F","arifle_AK12_GL_lush_F","arifle_AK12_GL_arid_F","arifle_MSBS65_F","arifle_MSBS65_GL_F","arifle_MSBS65_UBS_F","arifle_MSBS65_black_F","arifle_MSBS65_GL_black_F","arifle_MSBS65_UBS_black_F","arifle_MSBS65_sand_F","arifle_MSBS65_GL_sand_F","arifle_MSBS65_UBS_sand_F","arifle_MSBS65_camo_F","arifle_MSBS65_GL_camo_F","arifle_MSBS65_UBS_camo_F","arifle_SDAR_F",
-			//Carbines
 			"arifle_AKS_F",
-			//DMR
 			"srifle_DMR_06_hunter_F","arifle_MSBS65_Mark_F","arifle_MSBS65_Mark_black_F","arifle_MSBS65_Mark_sand_F","arifle_MSBS65_Mark_camo_F",
-			//SAW
 			"LMG_03_F",
-			//Shotgun
 			"sgun_HunterShotgun_01_F","sgun_HunterShotgun_01_sawedoff_F",
-		//*REDFOR*//
-			//SMG
 			"SMG_05_F","SMG_02_F",
-			//Rifles
 			"arifle_ARX_blk_F","arifle_ARX_ghex_F","arifle_ARX_hex_F",
-			//Carbines
 			"arifle_AK12U_F","arifle_AK12U_lush_F","arifle_AK12U_arid_F","arifle_Katiba_C_F",
-			//DMR
 			"srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_07_blk_F","srifle_DMR_07_hex_F","srifle_DMR_07_ghex_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_01_F",
-			//Sniper
 			"srifle_GM6_F","srifle_GM6_camo_F","srifle_GM6_ghex_F",
-			//SAW
 			"arifle_CTARS_blk_F","arifle_CTARS_hex_F","arifle_CTARS_ghex_F","arifle_RPK12_F","arifle_RPK12_lush_F","arifle_RPK12_arid_F","LMG_Zafir_F",
-			//MG
 			"MMG_01_hex_F","MMG_01_tan_F","MMG_01_hex_ARCO_LP_F",
 		};
 
 		Launchers[] = {
-			//*BOTH*//
 			"launch_RPG7_F", "launch_RPG32_F", "launch_RPG32_ghex_F", "launch_RPG32_green_F", "launch_RPG32_camo_F", "launch_B_Titan_F", "launch_I_Titan_F", "launch_O_Titan_F", "launch_Titan_F", "launch_B_Titan_short_F", "launch_I_Titan_short_F", "launch_O_Titan_short_F", "launch_Titan_short_F", "launch_B_Titan_tna_F", "launch_B_Titan_short_tna_F", "launch_O_Titan_ghex_F", "launch_O_Titan_short_ghex_F", "launch_I_Titan_eaf_F", "launch_B_Titan_olive_F",
-			//*REDFOR*//
 			"launch_O_Vorona_brown_F","launch_O_Vorona_green_F"
 		};
 		Handguns[] = {
-		//*BOTH*//
 			"hgun_P07_F","hgun_P07_khk_F","hgun_P07_blk_F","hgun_Pistol_01_F","hgun_esd_01_F","hgun_Pistol_Signal_F","hgun_Pistol_heavy_02_F",
-		//*REDFOR*//
 			"hgun_Rook40_F",
 		};
 		Uniforms[] = {"U_C_Journalist","U_B_GEN_Commander_F","U_C_Paramedic_01_F","U_O_SpecopsUniform_ocamo","U_O_SpecopsUniform_blk","U_O_OfficerUniform_ocamo","U_O_Wetsuit","U_O_GhillieSuit","U_O_FullGhillie_lsh","U_O_FullGhillie_sard","U_O_FullGhillie_ard","U_O_officer_noInsignia_hex_F","U_O_V_Soldier_Viper_hex_F","U_O_V_Soldier_Viper_F","U_O_T_FullGhillie_tna_F","U_O_T_Soldier_F","U_O_T_Officer_F","U_O_T_Sniper_F","U_O_CombatUniform_oucamo","U_O_PilotCoveralls","U_O_R_Gorka_01_F","U_O_R_Gorka_01_brown_F","U_O_R_Gorka_01_camo_F","U_O_R_Gorka_01_black_F"};
@@ -113,15 +75,6 @@ class logisticsConfig
 	class cargoTypes
 	{
 		Cargo[] = {"B_Slingload_01_Medevac_F","Box_CSAT_Equip_F","Box_CSAT_Uniforms_F","Box_NATO_Uniforms_F","Box_NATO_Equip_F","B_Slingload_01_Fuel_F","B_Slingload_01_Repair_F","B_Slingload_01_Ammo_F","Land_Pod_Heli_Transport_04_repair_F","Land_Pod_Heli_Transport_04_fuel_F","Land_Pod_Heli_Transport_04_ammo_F","Box_East_AmmoVeh_F","Box_NATO_AmmoVeh_F","Box_NATO_Ammo_F","Box_NATO_Grenades_F","Box_NATO_Wps_F","Box_NATO_AmmoOrd_F","Box_NATO_WpsLaunch_F","Box_NATO_WpsSpecial_F","B_supplyCrate_F","Box_East_Ammo_F","Box_East_Grenades_F","Box_East_Wps_F","Box_East_AmmoOrd_F","Box_East_WpsLaunch_F","Box_East_WpsSpecial_F","O_supplyCrate_F"};
-	};
-};
-
-class emoteConfig
-{
-	class emotes
-	{
-		Emotes[] = {"Acts_Ambient_Facepalm_1","Acts_Ambient_Facepalm_1","Acts_Ambient_Gestures_Yawn","AmovPercMstpSnonWnonDnon_exercisePushup","AmovPercMstpSnonWnonDnon_exerciseKata","AmovPercMstpSnonWnonDnon_exercisekneeBendA","AmovPercMstpSnonWnonDnon_exercisekneeBendB"};
-		Names[] = {"Facepalm 1","Facepalm 2","Yawn","Push ups","Namaste","Knee bend A","Knee bend B"};
 	};
 };
 
