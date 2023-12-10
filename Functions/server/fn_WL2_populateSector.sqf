@@ -1,6 +1,6 @@
 params ["_sector", "_side"];
 
-if (_side == resistance && {_sector in [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"]}) exitWith {};
+if (_side == resistance && {_sector in [missionNamespace getVariable ["BIS_WL_currentTarget_west", objNull], missionNamespace getVariable ["BIS_WL_currentTarget_east", objNull]]}) exitWith {};
 
 private _units = [];
 if (_side == resistance) then {

@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=641;
+	toggles=513;
 	class ItemIDProvider
 	{
 		nextID=1456;
@@ -284,6 +284,7 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Skopos Base""];";
 			id=11;
 			type="Logic";
+			atlOffset=7.6293945e-006;
 		};
 		class Item11
 		{
@@ -305,7 +306,7 @@ class Mission
 				position[]={14282.075,4.7112117,13018.305};
 				angles[]={6.2605309,0,0.047961645};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W"",""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W"",""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"",  ""Sagonisi Base""];";
 			id=13;
 			type="Logic";
 			atlOffset=-4.7683716e-007;
@@ -794,6 +795,7 @@ class Mission
 				position[]={26990.121,20.18708,23216.311};
 				angles[]={0.033318337,0,0.0066671576};
 			};
+			init="this setVariable [""BIS_WL_name"",  ""Molos""];";
 			id=53;
 			type="Logic";
 		};
@@ -2319,9 +2321,10 @@ class Mission
 				position[]={13593.765,15.469748,12199.801};
 				angles[]={0.0053232545,0,0.022654373};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; ";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Makrynisi""];";
 			id=511;
 			type="Logic";
+			atlOffset=9.5367432e-007;
 		};
 		class Item143
 		{
@@ -8958,7 +8961,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23715.822,5.3025584,16242.208};
-			angle=3.9814088;
+			angle=3.9814081;
 			class Attributes
 			{
 				sizeA=160;
@@ -8984,7 +8987,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={24084.146,8.065012,15513.553};
-			angle=3.9814086;
+			angle=3.9814079;
 			class Attributes
 			{
 				sizeA=140;
@@ -9047,7 +9050,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20100.211,18.242836,20049.061};
-			angle=3.9814088;
+			angle=3.9814081;
 			class Attributes
 			{
 				sizeA=140;
@@ -9071,7 +9074,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22891.91,3.18417,17096.871};
-			angle=2.5747085;
+			angle=2.5747082;
 			class Attributes
 			{
 				sizeA=160;
@@ -9096,7 +9099,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={17066.727,23.887089,11332.563};
-			angle=3.9814088;
+			angle=3.9814081;
 			class Attributes
 			{
 				sizeA=140;
@@ -9172,7 +9175,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.05529,7274.6084};
-			angle=3.9814086;
+			angle=3.9814079;
 			class Attributes
 			{
 				sizeA=140;
@@ -9223,7 +9226,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814088;
+			angle=3.9814081;
 			class Attributes
 			{
 				sizeA=110;
@@ -9236,7 +9239,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20896.932,2.5875392,14628.845};
-			angle=3.9814088;
+			angle=3.9814081;
 			class Attributes
 			{
 				sizeA=180;
