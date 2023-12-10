@@ -1,7 +1,5 @@
 #include "..\warlords_constants.inc"
 
-call BIS_fnc_WL2_sectorNameInit;
-
 BIS_WL_sectorLinks = [];
 _i = 0;
 

@@ -102,5 +102,3 @@ waitUntil {!isNil "BIS_WL_base1" && {!isNil "BIS_WL_base2"}};
 	_agent enableSimulationGlobal false;
 	_sector setVariable ["BIS_WL_agentGrp", _agentGrp, true];
 } forEach BIS_WL_allSectors;
-
-call BIS_fnc_WL2_sectorNameInit;

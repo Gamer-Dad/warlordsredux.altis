@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=641;
 	class ItemIDProvider
 	{
 		nextID=1456;
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={28070.961,25.038679,23647.496};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={27962,128.66869,23474.105};
+		dir[]={-0.24651372,-0.63479543,0.73230171};
+		up[]={-0.20252335,0.77268028,0.60162246};
+		aside[]={0.94774234,1.4901161e-008,0.3190372};
 	};
 };
 binarizationWanted=0;
@@ -154,10 +154,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5083.9106,51.132236,11270.282};
+				position[]={5083.9111,51.132217,11270.282};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Panochori""];";
 			id=0;
 			type="Logic";
+			atlOffset=3.8146973e-006;
 		};
 		class Item1
 		{
@@ -167,7 +169,7 @@ class Mission
 				position[]={4131.7949,51.669838,11741.281};
 				angles[]={6.2565165,0,0.043964844};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Neri""];";
 			id=1;
 			type="Logic";
 		};
@@ -179,7 +181,7 @@ class Mission
 				position[]={3552.104,8.5744362,12993.334};
 				angles[]={6.2645278,0,0.078504913};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Kavala""];";
 			id=2;
 			type="Logic";
 			atlOffset=-9.5367432e-007;
@@ -192,7 +194,7 @@ class Mission
 				position[]={3825.5271,16.502842,13693.865};
 				angles[]={6.251193,0,0.01733112};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Aggelochori""];";
 			id=3;
 			type="Logic";
 		};
@@ -204,7 +206,7 @@ class Mission
 				position[]={4219.5581,18.062389,15044.077};
 				angles[]={6.2791882,0,0.0013439035};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Diesel Power Plant""];";
 			id=4;
 			type="Logic";
 			atlOffset=-1.9073486e-006;
@@ -214,12 +216,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4890.8296,73.395264,16187.271};
-				angles[]={0.34201068,0,6.2152901};
+				position[]={4890.8301,73.394585,16187.271};
+				angles[]={0.34201473,0,6.2152915};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Negades""];";
 			id=5;
 			type="Logic";
-			atlOffset=0.00064849854;
 		};
 		class Item6
 		{
@@ -228,7 +230,7 @@ class Mission
 			{
 				position[]={6181.9321,43,16230.176};
 			};
-			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Kore Factory""];";
 			id=6;
 			type="Logic";
 		};
@@ -237,9 +239,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7116.6377,112.62183,16442.639};
-				angles[]={6.0704536,0,0.10230894};
+				position[]={7116.6382,112.62188,16442.639};
+				angles[]={6.070447,0,0.1023112};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Kore""];";
 			id=7;
 			type="Logic";
 			atlOffset=7.6293945e-006;
@@ -249,12 +252,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9004.793,27.260326,12038.134};
-				angles[]={6.2157836,0,6.2435856};
+				position[]={9004.793,27.260702,12038.134};
+				angles[]={6.2157807,0,6.2435837};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Zaros""];";
 			id=9;
 			type="Logic";
-			atlOffset=2.4795532e-005;
+			atlOffset=0.00040054321;
 		};
 		class Item9
 		{
@@ -264,6 +268,7 @@ class Mission
 				position[]={10672.049,16.682983,12295.274};
 				angles[]={0.062709682,0,0.020315632};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Therisa""];";
 			id=10;
 			type="Logic";
 			atlOffset=0.00041770935;
@@ -276,10 +281,9 @@ class Mission
 				position[]={12293.028,123.9893,8891.3174};
 				angles[]={0,0,6.2818937};
 			};
-			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Skopos Base""];";
 			id=11;
 			type="Logic";
-			atlOffset=7.6293945e-006;
 		};
 		class Item11
 		{
@@ -287,9 +291,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={11522.561,22.918913,11725.693};
-				angles[]={0.0013372133,0,6.2805333};
+				angles[]={0.0013439035,0,6.2805324};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W"", ""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W"", ""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""AAC Airfield""];";
 			id=12;
 			type="Logic";
 		};
@@ -314,6 +318,7 @@ class Mission
 				position[]={11006.454,26.126286,13402.525};
 				angles[]={0.0093375118,0,6.2418733};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Poliakko""];";
 			id=14;
 			type="Logic";
 		};
@@ -325,7 +330,7 @@ class Mission
 				position[]={12476.665,12.331226,14387.065};
 				angles[]={6.1967392,0,0.077178456};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Neochori""];";
 			id=15;
 			type="Logic";
 		};
@@ -337,7 +342,7 @@ class Mission
 				position[]={12376.45,23.900795,15658.202};
 				angles[]={0.035988688,0,6.2805324};
 			};
-			init="this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Lakka""];";
 			id=16;
 			type="Logic";
 		};
@@ -346,11 +351,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9329.0654,116.46704,15919.493};
-				angles[]={0.20123939,0,6.2685208};
+				position[]={9329.0654,116.46705,15919.493};
+				angles[]={0.20123646,0,6.2685246};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Agios Dionysios""];";
 			id=17;
 			type="Logic";
+			atlOffset=7.6293945e-006;
 		};
 		class Item17
 		{
@@ -384,7 +391,7 @@ class Mission
 				position[]={9200.1963,16.565969,21567.363};
 				angles[]={0.0039968039,0,0.010663962};
 			};
-			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Ammolofi Airfield""];";
 			id=20;
 			type="Logic";
 		};
@@ -396,6 +403,7 @@ class Mission
 				position[]={9433.498,120.47212,20237.236};
 				angles[]={5.8958092,0,0.50028116};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Abdera""];";
 			id=21;
 			type="Logic";
 			atlOffset=7.6293945e-006;
@@ -407,6 +415,7 @@ class Mission
 			{
 				position[]={10326.67,127.16041,19068.893};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Galati""];";
 			id=22;
 			type="Logic";
 			atlOffset=-7.6293945e-006;
@@ -416,8 +425,9 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={10447.701,84.586197,17247.959};
+				position[]={10447.701,84.586273,17247.961};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Orino""];";
 			id=23;
 			type="Logic";
 		};
@@ -426,11 +436,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11764.598,53.188423,18314.574};
-				angles[]={6.2631893,0,6.1914439};
+				position[]={11764.598,53.188419,18314.574};
+				angles[]={6.2631841,0,6.1914506};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Koroni""];";
 			id=24;
 			type="Logic";
+			atlOffset=-3.8146973e-006;
 		};
 		class Item24
 		{
@@ -440,7 +452,7 @@ class Mission
 				position[]={14324.871,22.367197,16178.705};
 				angles[]={6.2471962,0,6.2538638};
 			};
-			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Airbase""];";
 			id=25;
 			type="Logic";
 			atlOffset=-1.9073486e-006;
@@ -453,7 +465,7 @@ class Mission
 				position[]={15152.537,17.892778,17272.613};
 				angles[]={0.0053232545,0,0.0013439035};
 			};
-			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Airbase Compound""];";
 			id=26;
 			type="Logic";
 		};
@@ -464,7 +476,7 @@ class Mission
 			{
 				position[]={14484.275,21.438036,17647.764};
 			};
-			init="this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Gravia""];";
 			id=27;
 			type="Logic";
 			atlOffset=0.00012397766;
@@ -474,11 +486,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13983.81,25.63763,18732.607};
-				angles[]={6.2525291,0,0.015998369};
+				position[]={13983.81,25.637632,18732.607};
+				angles[]={6.2525201,0,0.016004669};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Athira""];";
 			id=28;
 			type="Logic";
+			atlOffset=1.9073486e-006;
 		};
 		class Item28
 		{
@@ -486,8 +500,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12847.154,42.471638,19633.813};
-				angles[]={6.253861,0,6.2645216};
+				angles[]={6.2538638,0,6.2645278};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Ifestonia""];";
 			id=29;
 			type="Logic";
 		};
@@ -497,8 +512,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={14610.182,47.831848,20794.988};
-				angles[]={6.1258307,0,0.11021814};
+				angles[]={6.1258264,0,0.11021754};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Frini""];";
 			id=30;
 			type="Logic";
 		};
@@ -510,6 +526,7 @@ class Mission
 				position[]={16247.463,14.306445,17095.254};
 				angles[]={6.2152915,0,0.11679743};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Telos""];";
 			id=31;
 			type="Logic";
 		};
@@ -521,7 +538,7 @@ class Mission
 				position[]={15388.95,4.2736301,16053.537};
 				angles[]={6.2805324,0,6.2791882};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; ";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Main Power Plant""];";
 			id=32;
 			type="Logic";
 			atlOffset=-4.7683716e-007;
@@ -534,7 +551,7 @@ class Mission
 				position[]={16667.688,18.274412,16126.132};
 				angles[]={0,0,6.2826962};
 			};
-			init="this setVariable [""BIS_WL_services"", [""M""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""M""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Anthrakia""];";
 			id=33;
 			type="Logic";
 			atlOffset=0.0004234314;
@@ -547,6 +564,7 @@ class Mission
 				position[]={20796.314,36.943661,6731.4282};
 				angles[]={0.10890854,0,6.2299004};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Selekano""];";
 			id=34;
 			type="Logic";
 			atlOffset=-3.8146973e-006;
@@ -559,6 +577,7 @@ class Mission
 				position[]={21679.631,15.001963,7580.2642};
 				angles[]={0.0066671576,0,0.0079936078};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Feres""];";
 			id=35;
 			type="Logic";
 		};
@@ -570,6 +589,7 @@ class Mission
 				position[]={20419.414,35.69397,8847.7607};
 				angles[]={6.2805324,0,6.2605309};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Panagia""];";
 			id=36;
 			type="Logic";
 			atlOffset=3.8146973e-006;
@@ -580,8 +600,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={20233.916,53.304272,11672.099};
-				angles[]={0.086450629,0,0.086450629};
+				angles[]={0.086446159,0,0.086446159};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Chalkeia""];";
 			id=37;
 			type="Logic";
 		};
@@ -591,9 +612,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={16824.635,22.375416,12714.331};
-				angles[]={0.062584557,0,6.2551923};
+				angles[]={0.062587507,0,6.2551899};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; ";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Pyrgos""];";
 			id=38;
 			type="Logic";
 		};
@@ -602,19 +623,22 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={19392.426,38.712746,13248.269};
+				position[]={19392.426,38.712742,13248.269};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Dorida""];";
 			id=39;
 			type="Logic";
+			atlOffset=-3.8146973e-006;
 		};
 		class Item39
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={18117.791,23.569832,15218.111};
-				angles[]={6.2432065,0,6.2671871};
+				position[]={18117.789,23.56986,15218.111};
+				angles[]={6.2431998,0,6.2671809};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Charkia""];";
 			id=40;
 			type="Logic";
 		};
@@ -624,8 +648,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={18818.906,30.38661,16597.934};
-				angles[]={6.2765174,0,6.2645216};
+				angles[]={6.2765183,0,6.2645278};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Rodopoli""];";
 			id=41;
 			type="Logic";
 		};
@@ -635,8 +660,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={19240.473,34.166977,17542.736};
-				angles[]={0.0039967569,0,0.0026520467};
+				angles[]={0.0039968039,0,0.0026529003};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Agios Petros""];";
 			id=42;
 			type="Logic";
 		};
@@ -648,6 +674,7 @@ class Mission
 				position[]={20976.17,41.166363,16972.529};
 				angles[]={0.029321531,0,6.2551899};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Paros""];";
 			id=43;
 			type="Logic";
 		};
@@ -659,6 +686,7 @@ class Mission
 				position[]={21380.605,19.885954,16355.863};
 				angles[]={6.2578607,0,0.0066671576};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Kalochori""];";
 			id=44;
 			type="Logic";
 		};
@@ -670,7 +698,7 @@ class Mission
 				position[]={20957.363,15.561685,19267.66};
 				angles[]={6.1506276,0,0.071872659};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Georgios Base""];";
 			id=45;
 			type="Logic";
 		};
@@ -682,6 +710,7 @@ class Mission
 				position[]={23221.617,13.93457,19972.199};
 				angles[]={6.2631841,0,6.2711778};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Ioannina""];";
 			id=46;
 			type="Logic";
 		};
@@ -692,6 +721,7 @@ class Mission
 			{
 				position[]={23946.115,14.777498,20168.236};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Delfinaki""];";
 			id=47;
 			type="Logic";
 		};
@@ -703,7 +733,7 @@ class Mission
 				position[]={21837.842,28.187908,20997.906};
 				angles[]={5.8832955,0,6.1076751};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Ghost Hotel""];";
 			id=48;
 			type="Logic";
 		};
@@ -715,7 +745,7 @@ class Mission
 				position[]={23582.084,94.155403,21097.721};
 				angles[]={0.24183282,0,0.023998277};
 			};
-			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Nidasos Base""];";
 			id=49;
 			type="Logic";
 		};
@@ -737,8 +767,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={25639.107,20.888086,21354.748};
-				angles[]={0,0,6.2778587};
+				angles[]={0,0,6.2778621};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Sofia""];";
 			id=51;
 			type="Logic";
 		};
@@ -771,12 +802,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={26960.195,20.755873,24745.133};
-				angles[]={6.2818484,0,0.012000273};
+				position[]={26960.195,20.755875,24745.133};
+				angles[]={6.2818413,0,0.012007865};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W"", ""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W"", ""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Molos Airfield""];";
 			id=54;
 			type="Logic";
+			atlOffset=1.9073486e-006;
 		};
 		class Item54
 		{
@@ -786,7 +818,7 @@ class Mission
 				position[]={11741.672,12.791423,13692.854};
 				angles[]={6.2605309,0,0.011990411};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Katalaki""];";
 			id=55;
 			type="Logic";
 		};
@@ -796,8 +828,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={11121.194,41.27129,14557.566};
-				angles[]={6.2445378,0,6.2458687};
+				angles[]={6.244544,0,6.2458701};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Alikampos""];";
 			id=56;
 			type="Logic";
 		};
@@ -806,12 +839,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7109.8086,3.5631504,11081.518};
-				angles[]={0.0053377044,0,6.2591896};
+				position[]={7109.8091,3.5631397,11081.518};
+				angles[]={0.0053407075,0,6.2591867};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", TRUE]";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", TRUE]; this setVariable [""BIS_WL_name"", ""Edessa""];";
 			id=58;
 			type="Logic";
+			atlOffset=2.3841858e-007;
 		};
 		class Item57
 		{
@@ -819,8 +853,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8235.2236,14.180413,10885.329};
-				angles[]={0.0013372133,0,0.018663859};
+				angles[]={0.0013439035,0,0.018657569};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Zaros Solar""];";
 			id=59;
 			type="Logic";
 		};
@@ -832,7 +867,7 @@ class Mission
 				position[]={17428.473,14.562295,13158.01};
 				angles[]={0.034644786,0,6.2591867};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Pyrgos Base""];";
 			id=60;
 			type="Logic";
 		};
@@ -844,7 +879,7 @@ class Mission
 				position[]={12927.684,29.854511,15032.35};
 				angles[]={6.2325706,0,6.2765183};
 			};
-			init="this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Stavros""];";
 			id=61;
 			type="Logic";
 		};
@@ -856,7 +891,7 @@ class Mission
 				position[]={12738.562,67.257988,16532.025};
 				angles[]={6.028821,0,0.15344934};
 			};
-			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Lakka Factory""];";
 			id=62;
 			type="Logic";
 		};
@@ -868,7 +903,7 @@ class Mission
 				position[]={17873.383,2.6348314,18092.125};
 				angles[]={0.066566855,0,0.041311946};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Kalithea""];";
 			id=63;
 			type="Logic";
 		};
@@ -878,8 +913,9 @@ class Mission
 			class PositionInfo
 			{
 				position[]={20646.211,16.584248,15649.828};
-				angles[]={0.0053265258,0,0};
+				angles[]={0.0053232545,0,0};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Nifi Solar""];";
 			id=64;
 			type="Logic";
 		};
@@ -890,7 +926,7 @@ class Mission
 			{
 				position[]={23128.773,3.1900001,18690.762};
 			};
-			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Salt Flats""];";
 			id=65;
 			type="Logic";
 		};
@@ -1239,9 +1275,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7396.1494,55.771473,15400.591};
-				angles[]={0.022662206,0,0.0013372133};
+				position[]={7396.1489,55.771473,15400.59};
+				angles[]={0.022654373,0,0.0013439035};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Topolia""];";
 			id=94;
 			type="Logic";
 		};
@@ -1600,7 +1637,7 @@ class Mission
 				position[]={20977.199,24.445518,7358.355};
 				angles[]={0.0066671576,0,6.2126393};
 			};
-			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""A"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Selekano Airbase""];";
 			id=124;
 			type="Logic";
 		};
@@ -1828,7 +1865,7 @@ class Mission
 				position[]={14999.512,5.8212986,11157.252};
 				angles[]={0,0,6.2805324};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Faronaki""];";
 			id=209;
 			type="Logic";
 			atlOffset=-4.7683716e-007;
@@ -2321,6 +2358,7 @@ class Mission
 				position[]={23870.736,23.199215,23747.406};
 				angles[]={0.0053232545,0,0.022654373};
 			};
+			init="this setVariable [""BIS_WL_name"", ""Sideras""];";
 			id=515;
 			type="Logic";
 		};
@@ -2358,7 +2396,7 @@ class Mission
 				position[]={3363.043,1.9447364,12619.016};
 				angles[]={0.021327924,0,0.055937801};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]";
+			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Kavala Beach""];";
 			id=657;
 			type="Logic";
 		};
@@ -8489,7 +8527,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={13808.517,60.496784,6393.5117};
-			angle=2.2371624;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=125;
@@ -8514,7 +8552,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8945.8779,61.728947,7546.1299};
-			angle=2.2371624;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=100;
@@ -8608,6 +8646,7 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"",  ""Kavala Dump""];";
 			id=1406;
 			type="Logic";
+			atlOffset=7.6293945e-006;
 		};
 		class Item301
 		{
@@ -8639,7 +8678,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={21418.842,14.325654,10913.835};
-			angle=5.4110427;
+			angle=5.4110422;
 			class Attributes
 			{
 				sizeA=160;
@@ -8742,7 +8781,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7476.3931,171.83037,21562.053};
-			angle=2.2371624;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=120;
@@ -8894,7 +8933,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={19457.668,19.445322,15402.843};
-			angle=3.858207;
+			angle=3.8582065;
 			class Attributes
 			{
 				sizeA=150;
@@ -8919,7 +8958,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23715.822,5.3025584,16242.208};
-			angle=3.9814095;
+			angle=3.9814088;
 			class Attributes
 			{
 				sizeA=160;
@@ -8945,7 +8984,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={24084.146,8.065012,15513.553};
-			angle=3.9814093;
+			angle=3.9814086;
 			class Attributes
 			{
 				sizeA=140;
@@ -8983,7 +9022,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={18834.248,215.1933,10223.886};
-			angle=2.2371624;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=140;
@@ -9008,7 +9047,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20100.211,18.242836,20049.061};
-			angle=3.9814095;
+			angle=3.9814088;
 			class Attributes
 			{
 				sizeA=140;
@@ -9032,7 +9071,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22891.91,3.18417,17096.871};
-			angle=2.5747092;
+			angle=2.5747085;
 			class Attributes
 			{
 				sizeA=160;
@@ -9057,7 +9096,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={17066.727,23.887089,11332.563};
-			angle=3.9814095;
+			angle=3.9814088;
 			class Attributes
 			{
 				sizeA=140;
@@ -9102,6 +9141,7 @@ class Mission
 			init="this setVariable [""BIS_WL_name"",  ""Selakano Outpost""];";
 			id=1448;
 			type="Logic";
+			atlOffset=7.6293945e-006;
 		};
 		class Item340
 		{
@@ -9132,7 +9172,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.05529,7274.6084};
-			angle=3.9814093;
+			angle=3.9814086;
 			class Attributes
 			{
 				sizeA=140;
@@ -9157,7 +9197,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={21772.818,12.224751,6276.4912};
-			angle=3.6683321;
+			angle=3.6683314;
 			class Attributes
 			{
 				sizeA=110;
@@ -9183,7 +9223,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814095;
+			angle=3.9814088;
 			class Attributes
 			{
 				sizeA=110;
@@ -9196,7 +9236,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20896.932,2.5875392,14628.845};
-			angle=3.9814095;
+			angle=3.9814088;
 			class Attributes
 			{
 				sizeA=180;
