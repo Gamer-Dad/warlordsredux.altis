@@ -10,4 +10,3 @@ BIS_fnc_arsenal_data set [5, (getArray (missionConfigFile >> "arsenalConfig" >> 
 BIS_fnc_arsenal_data set [6, (getArray (missionConfigFile >> "arsenalConfig" >> _playerSide >> "Helmets"))];
 BIS_fnc_arsenal_data set [8, ((BIS_fnc_arsenal_data select 8) + ["Integrated_NVG_TI_0_F"])];
 BIS_fnc_arsenal_data set [11, (getArray (missionConfigFile >> "arsenalConfig" >> _playerSide >> "Terminals"))];
-BIS_fnc_arsenal_data set [23, []];
