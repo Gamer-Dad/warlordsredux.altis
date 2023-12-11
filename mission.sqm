@@ -2324,7 +2324,6 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Makrynisi""];";
 			id=511;
 			type="Logic";
-			atlOffset=9.5367432e-007;
 		};
 		class Item143
 		{
@@ -8961,7 +8960,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23715.822,5.3025584,16242.208};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=160;
@@ -8987,7 +8986,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={24084.146,8.065012,15513.553};
-			angle=3.9814074;
+			angle=3.9814069;
 			class Attributes
 			{
 				sizeA=140;
@@ -9050,7 +9049,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20100.211,18.242836,20049.061};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=140;
@@ -9099,7 +9098,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={17066.727,23.887089,11332.563};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=140;
@@ -9175,7 +9174,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.05529,7274.6084};
-			angle=3.9814074;
+			angle=3.9814069;
 			class Attributes
 			{
 				sizeA=140;
@@ -9226,7 +9225,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=110;
@@ -9239,7 +9238,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20896.932,2.5875392,14628.845};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=180;
