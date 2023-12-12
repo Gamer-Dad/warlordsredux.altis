@@ -24,4 +24,4 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
-call fn_WL2_respawnloadout;
+0 spawn BIS_fnc_WL2_respawnloadout;
