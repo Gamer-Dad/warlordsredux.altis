@@ -33,7 +33,7 @@ if (isNull (findDisplay 602)) then {
 			if !(isNull (findDisplay 602)) then {
 				(findDisplay 602) closeDisplay 1;
 			};
-			sleep 0.01;
+			sleep 0.1;
 		};
 	};
 	_weapons spawn{
@@ -41,15 +41,15 @@ if (isNull (findDisplay 602)) then {
 		_side = str BIS_WL_playerSide;
 		while {!isNull (uiNamespace getVariable ["BIS_fnc_arsenal_cam", objNull])} do {
 			if (primaryWeapon player in (getArray (missionConfigFile >> "arsenalConfig" >> _side >> "riflesBlacklist"))) then {
-				{player removeItem _x} forEach (getArray (missionConfigFile >> "arsenalConfig" >> _side >> "riflesBlacklist"));
+					removeAllWeapons player;
 			};
 			if (secondaryWeapon player in (getArray (missionConfigFile >> "arsenalConfig" >> _side >> "launchersBlacklist"))) then {
-				{player removeItem _x} forEach (getArray (missionConfigFile >> "arsenalConfig" >> _side >> "launchersBlacklist"));
+					removeAllWeapons player;
 				};
 			if !(isNull (findDisplay 602)) then {
 				(findDisplay 602) closeDisplay 1;
 			};
-			sleep 0.01;
+			sleep 0.1;
 		};
 	};
 };
