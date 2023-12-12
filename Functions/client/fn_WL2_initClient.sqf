@@ -264,3 +264,4 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 };
 player linkItem"Integrated_NVG_TI_0_F";
 player addPrimaryWeaponItem "muzzle_snds_H";
+
