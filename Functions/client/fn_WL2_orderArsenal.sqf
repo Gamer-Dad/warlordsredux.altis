@@ -33,6 +33,10 @@ if (isNull (findDisplay 602)) then {
 					player addHeadgear "H_HelmetO_ocamo";
 				};
 			};
+
+			if ((getArray (missionConfigFile >> "arsenalConfig" >> _side >> "minesBlaclisted")) in ((vestItems player) + (uniformItems player) + (backpackItems player))) then {
+				{player removeItem _x} forEach (getArray (missionConfigFile >> "arsenalConfig" >> _side >> "minesBlaclisted"));
+			};
 			if !(isNull (findDisplay 602)) then {
 				(findDisplay 602) closeDisplay 1;
 			};
