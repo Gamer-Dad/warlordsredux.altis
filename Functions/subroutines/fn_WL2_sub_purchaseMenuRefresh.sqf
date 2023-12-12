@@ -26,7 +26,7 @@ for "_i" from 0 to ((lbSize _purchase_items) - 1) do {
 	
 	_assetDetails params [
 		"_className",
-		["_requirements", []],
+		"_requirements",
 		"_displayName",
 		"_picture",
 		"_text",

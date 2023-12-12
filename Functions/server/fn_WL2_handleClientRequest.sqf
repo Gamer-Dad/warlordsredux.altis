@@ -65,8 +65,6 @@ if (_action == "fastTravelContested") exitWith {
 	_hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
-
-		_sender setVehiclePosition [_param1, [], 0, "NONE"];
 	};
 };
 

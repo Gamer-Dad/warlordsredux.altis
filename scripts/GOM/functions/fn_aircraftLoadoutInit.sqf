@@ -20,20 +20,6 @@ GOM_fnc_kgToTon = {
 	_out;
 };
 
-GOM_fnc_setRepairCargo = {
-	params ["_veh","_amount"];
-
-	_veh setvariable ["GOM_fnc_repairCargo", _amount max 0, true];
-	true;
-};
-
-GOM_fnc_setAmmoCargo = {
-	params ["_veh","_amount"];
-
-	_veh setvariable ["GOM_fnc_ammoCargo",_amount max 0,true];
-	true;
-};
-
 GOM_fnc_updateDialog = {
 	params ["_obj",["_preset",false]];
 
@@ -302,7 +288,7 @@ GOM_fnc_installPylons = {
 	_initArray apply {_init pushback []};//should solve r3vos bug, might be because undefined pylon owner
 	_storePylonOwners = _veh getVariable ["GOM_fnc_aircraftLoadoutPylonOwners",_init];//maybe r3vos bug
 	_storePylonOwners set [_pylonNum,_pylonOwner];
-	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwners",_storePylonOwners,true];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutPylonOwners",_storePylonOwners];
 	systemchat format ["Installing %1 %2 on %3, operated by %4!",_finalAmount,_magDispName,_pylonName,_pylonOwnerName];
 	_check pushback _pylonNum;
 	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_check, [2, clientOwner]];
@@ -443,7 +429,7 @@ GOM_fnc_setPylonsRearm = {
 
 	if (!alive _veh) exitWith {systemchat "Aircraft is destroyed!"};
 	if (_veh getVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false]) exitWith {systemchat "Aircraft is currently being rearmed!"};
-	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true,[2, clientOwner]];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",true];
 	_activePylonMags = GetPylonMagazines _veh;
 
 	if (_rearm) exitWith {
@@ -496,12 +482,12 @@ GOM_fnc_setPylonsRearm = {
 
 		playSound "Click";
 		_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
-		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,[2, clientOwner]];
+		_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false];
 		if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
 
-		_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
+		_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _veh), 600]);
 		_veh setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 		
 		true
@@ -548,16 +534,16 @@ GOM_fnc_setPylonsRearm = {
 	waituntil {!alive _veh OR {scriptdone _x} count _mounts isequalto count _mounts};
 	_ammosource setVariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	playSound "Click";
-	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false,true];
+	_veh setVariable ["GOM_fnc_aircraftLoadoutRearmingInProgress",false];
 
-	_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
+	_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _veh), 600]);
 	_veh setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
 	if (_abort) exitWith {true};
 		_veh setVehicleAmmo 1;
 		systemchat "All pylons, counter measures and board guns rearmed!";
 
-		_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
+		_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _veh), 600]);
 		_veh setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 	};
 	true;
@@ -632,7 +618,6 @@ GOM_fnc_fillPylonsLB = {
 	_getCompatibles = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons" >> _pylon >> "hardpoints");
 
 	if (_getCompatibles isEqualTo []) then {
-		//darn BI for using "Pylons" and "pylons" all over the place as if it doesnt fucking matter ffs honeybadger
 		_getCompatibles = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "Components" >> "TransportPylonsComponent" >> "pylons" >> _pylon >> "hardpoints");
 	};
 
@@ -848,8 +833,8 @@ GOM_fnc_setPylonPriority = {
 	_selectedPriority = _selectedPriority + 1;
 	if (_selectedPriority > count _priorities) then {_selectedPriority = 1};
 	_priorities set [lbcursel 1501,_selectedPriority];
-	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities,true];
-	[_veh,_priorities] remoteExec ["setPylonsPriority",0,true];
+	_veh setVariable ["GOM_fnc_pylonPriorities",_priorities];
+	[_veh,_priorities] remoteExec ["setPylonsPriority", 0];
 	ctrlsettext [1610,format ["Priority: %1", _selectedPriority]];
 };
 
@@ -946,7 +931,7 @@ GOM_fnc_updateVehiclesLB = {
 	_lastVehs = _obj getVariable ["GOM_fnc_setPylonLoadoutVehicles", []];
 	if (_vehicles isEqualTo []) exitWith {true};
 	if (_vehicles isEqualTo _lastVehs && {!(lbsize 1500 isequalto 0)}) exitWith {true};
-	_obj setVariable ["GOM_fnc_setPylonLoadoutVehicles",_vehicles,true];
+	_obj setVariable ["GOM_fnc_setPylonLoadoutVehicles",_vehicles];
 
 	(finddisplay 66 displayctrl 1100) ctrlSetStructuredText parsetext "<t align='center'>No aircraft in range (50m)!";
 	_resourceCheck = _obj call GOM_fnc_aircraftLoadoutResourcesCheck;
