@@ -18,6 +18,10 @@ if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
 	_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
 };
 
+if (typeOf _asset == "O_T_Truck_03_device_ghex_F") then {
+	{_asset setObjectTextureGlobal [_x,"a3\armor_f\data\cage_sand_co.paa"];} forEach [0,1,3]
+};
+
 waitUntil {sleep 0.1; !(isNull _asset)};
 
 if (typeOf _asset == "B_APC_Tracked_01_AA_F" || {typeOf _asset == "O_APC_Tracked_02_AA_F"}) then {
