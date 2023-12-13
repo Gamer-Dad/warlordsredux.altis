@@ -3,14 +3,12 @@
 #define GUI_GRID_Y      (0)
 #define GUI_GRID_W      (0.025)
 #define GUI_GRID_H      (0.04)
-#define GUI_GRID_WAbs   (1)
-#define GUI_GRID_HAbs   (1)
 
 class GOM_dialog_aircraftLoadout {
 idd = 66;
 movingEnable = 0;
 class controls {
-	////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT START (by Grumpy Old Man, v1.063, #Jebyli)
 ////////////////////////////////////////////////////////
 
@@ -18,7 +16,7 @@ class GOMRscStructuredText_1100: GOMRscStructuredText
 {
 	idc = 1100;
 
-	text = "<t align='center'>"; //--- ToDo: Localize;
+	text = "<t align='center'>";
 	x = 1 * GUI_GRID_W + GUI_GRID_X;
 	y = 2 * GUI_GRID_H + GUI_GRID_Y;
 	w = 38 * GUI_GRID_W;
@@ -29,7 +27,7 @@ class GOMRscStructuredText_1101: GOMRscStructuredText
 {
 	idc = 1101;
 
-	text = "<t align='center'>--- Grumpy Old Mans Aircraft Loadout ---"; //--- ToDo: Localize;
+	text = "<t align='center'>--- Grumpy Old Mans Aircraft Loadout ---";
 	x = 1 * GUI_GRID_W + GUI_GRID_X;
 	y = 0 * GUI_GRID_H + GUI_GRID_Y;
 	w = 38 * GUI_GRID_W;
@@ -70,7 +68,7 @@ class GOMRscStructuredText_1102: GOMRscStructuredText
 {
 	idc = 1102;
 
-	text = "<t align='center'>Select Vehicle"; //--- ToDo: Localize;
+	text = "<t align='center'>Select Vehicle";
 	x = 1 * GUI_GRID_W + GUI_GRID_X;
 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6 * GUI_GRID_W;
@@ -81,7 +79,7 @@ class GOMRscStructuredText_1103: GOMRscStructuredText
 {
 	idc = 1103;
 
-	text = "<t align='center'>Select Pylon"; //--- ToDo: Localize;
+	text = "<t align='center'>Select Pylon";
 	x = 8 * GUI_GRID_W + GUI_GRID_X;
 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6 * GUI_GRID_W;
@@ -92,7 +90,7 @@ class GOMRscStructuredText_1104: GOMRscStructuredText
 {
 	idc = 1104;
 
-	text = "<t align='center'>Select Weapon"; //--- ToDo: Localize;
+	text = "<t align='center'>Select Weapon";
 	x = 15 * GUI_GRID_W + GUI_GRID_X;
 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6 * GUI_GRID_W;
@@ -103,7 +101,7 @@ class GOMRscButton_1600: GOMRscButton
 {
 	idc = 1600;
 
-	text = "Install Weapon"; //--- ToDo: Localize;
+	text = "Install Weapon";
 	x = 22 * GUI_GRID_W + GUI_GRID_X;
 	y = 12.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -113,7 +111,7 @@ class GOMRscButton_1601: GOMRscButton
 {
 	idc = 1601;
 
-	text = "Clear all pylons"; //--- ToDo: Localize;
+	text = "Clear all pylons";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 23 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -123,7 +121,7 @@ class GOMRscStructuredText_1105: GOMRscStructuredText
 {
 	idc = 1105;
 
-	text = "<t align='center'>Amount:"; //--- ToDo: Localize;
+	text = "<t align='center'>Amount:";
 	x = 22 * GUI_GRID_W + GUI_GRID_X;
 	y = 9.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6 * GUI_GRID_W;
@@ -143,7 +141,7 @@ class GOMRscButton_1602: GOMRscButton
 {
 	idc = 1602;
 
-	text = "Repair"; //--- ToDo: Localize;
+	text = "Repair";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 10 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -153,7 +151,7 @@ class GOMRscButton_1603: GOMRscButton
 {
 	idc = 1603;
 
-	text = "Refuel"; //--- ToDo: Localize;
+	text = "Refuel";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 11.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -163,7 +161,7 @@ class GOMRscButton_1604: GOMRscButton
 {
 	idc = 1604;
 
-	text = "Rearm"; //--- ToDo: Localize;
+	text = "Rearm";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 13 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -200,7 +198,7 @@ class GOMRscText_1003: GOMRscText
 {
 	idc = 1003;
 
-	text = "Report Remote Targets"; //--- ToDo: Localize;
+	text = "Report Remote Targets";
 	x = 23 * GUI_GRID_W + GUI_GRID_X;
 	y = 17 * GUI_GRID_H + GUI_GRID_Y;
 	w = 8.5 * GUI_GRID_W;
@@ -210,7 +208,7 @@ class GOMRscText_1004: GOMRscText
 {
 	idc = 1004;
 
-	text = "Receive Remote Targets"; //--- ToDo: Localize;
+	text = "Receive Remote Targets";
 	x = 23 * GUI_GRID_W + GUI_GRID_X;
 	y = 18.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 8.5 * GUI_GRID_W;
@@ -220,7 +218,7 @@ class GOMRscText_1005: GOMRscText
 {
 	idc = 1005;
 
-	text = "Report Own Position"; //--- ToDo: Localize;
+	text = "Report Own Position";
 	x = 23 * GUI_GRID_W + GUI_GRID_X;
 	y = 20 * GUI_GRID_H + GUI_GRID_Y;
 	w = 9 * GUI_GRID_W;
@@ -241,7 +239,7 @@ class GOMRscButton_1610: GOMRscButton
 {
 	idc = 1610;
 
-	text = "Priority: 1"; //--- ToDo: Localize;
+	text = "Priority: 1";
 	x = 22 * GUI_GRID_W + GUI_GRID_X;
 	y = 14 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -251,7 +249,7 @@ class GOMRscButton_1605: GOMRscButton
 {
 	idc = 1605;
 
-	text = "Pilot control"; //--- ToDo: Localize;
+	text = "Pilot control";
 	x = 22 * GUI_GRID_W + GUI_GRID_X;
 	y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -261,7 +259,7 @@ class GOMRscCombo_2100: GOMRscCombo
 {
 	idc = 2100;
 
-	text = "Livery"; //--- ToDo: Localize;
+	text = "Livery";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 14.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;
@@ -335,7 +333,7 @@ class GOMRscCombo_2101: GOMRscCombo
 {
 	idc = 2101;
 
-	text = "Preset"; //--- ToDo: Localize;
+	text = "Preset";
 	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 16 * GUI_GRID_H + GUI_GRID_Y;
@@ -356,7 +354,7 @@ class GOMRscEdit_1401: GOMRscEdit
 {
 	idc = 1401;
 
-	text = ""; //--- ToDo: Localize;
+	text = "";
 	onLoad =  "(_this # 0) ctrlEnable false;";
 	x = 32.5 * GUI_GRID_W + GUI_GRID_X;
 	y = 19.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -376,7 +374,7 @@ class GOMRscButton_1609: GOMRscButton
 {
 	idc = 1609;
 
-	text = "Show Resources"; //--- ToDo: Localize;
+	text = "Show Resources";
 	x = 22 * GUI_GRID_W + GUI_GRID_X;
 	y = 22 * GUI_GRID_H + GUI_GRID_Y;
 	w = 6.5 * GUI_GRID_W;

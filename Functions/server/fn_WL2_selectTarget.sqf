@@ -17,7 +17,7 @@ if (!isNull _sector) then {
 		["base_vulnerable", _sector getVariable "BIS_WL_originalOwner"] call BIS_fnc_WL2_handleRespawnMarkers;
 	} else {
 		private _owner = _sector getVariable "BIS_WL_owner";
-		[_sector, _owner] spawn BIS_fnc_WL2_populateSector;
+		[_sector, _owner, _side] spawn BIS_fnc_WL2_populateSector;
 	};
 } else {
 	_prevSector = missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side];

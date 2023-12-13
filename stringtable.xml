@@ -103,40 +103,6 @@
             <Chinesesimp>资产修复。</Chinesesimp>
             <Chinese>資產修復。</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_popup_asset_locked">
-            <Original>Asset locked.</Original>
-            <English>Asset locked.</English>
-            <Czech>Prostředek uzamčený.</Czech>
-            <French>Actif verrouillé.</French>
-            <German>Asset gesperrt.</German>
-            <Italian>Asset bloccato.</Italian>
-            <Polish>Zasób zablokowany.</Polish>
-            <Portuguese>Ativo bloqueado.</Portuguese>
-            <Russian>Объект закрыт.</Russian>
-            <Spanish>Activo bloqueado.</Spanish>
-            <Turkish>Varlık kilitli.</Turkish>
-            <Korean>자산 잠금됨.</Korean>
-            <Japanese>アセットがロックされました。</Japanese>
-            <Chinesesimp>资产已锁定。</Chinesesimp>
-            <Chinese>資產已鎖定。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_popup_asset_unlocked">
-            <Original>Asset unlocked.</Original>
-            <English>Asset unlocked.</English>
-            <Czech>Prostředek odemčen.</Czech>
-            <French>Actif débloqué.</French>
-            <German>Asset freigeschaltet.</German>
-            <Italian>Asset sbloccato.</Italian>
-            <Polish>Odblokowany zasób.</Polish>
-            <Portuguese>Ativo desbloqueado.</Portuguese>
-            <Russian>Объект открыт.</Russian>
-            <Spanish>Activo desbloqueado.</Spanish>
-            <Turkish>Varlık kilidi açıldı.</Turkish>
-            <Korean>자산 잠금 해제됨.</Korean>
-            <Japanese>アセットのロックが解除されました。</Japanese>
-            <Chinesesimp>资产已解锁。</Chinesesimp>
-            <Chinese>資產已解鎖。</Chinese>
-        </Key>
         <Key ID="STR_A3_WL_popup_losing_sector">
             <Original>%1 is capturing %2!</Original>
             <English>%1 is capturing %2!</English>
@@ -631,108 +597,6 @@
             <Chinesesimp>关闭您的库存。</Chinesesimp>
             <Chinese>關閉您的庫存。</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_Menu_Hint_Name">
-            <Original>Open Warlords Menu</Original>
-            <English>Open Warlords Menu</English>
-            <Czech>Otevřít Menu Warlords</Czech>
-            <French>Ouvrir le Menu Warlords</French>
-            <German>Öffnen Sie das Warlords-Menü</German>
-            <Italian>Apri il Menu Warlords</Italian>
-            <Polish>Otwórz Menu Warlords</Polish>
-            <Portuguese>Abra o Menu Warlords</Portuguese>
-            <Russian>Откройте Меню Warlords</Russian>
-            <Spanish>Abre el Menú Warlords</Spanish>
-            <Turkish>Warlords Menüsünü Aç</Turkish>
-            <Korean>Warlords 메뉴 열기</Korean>
-            <Japanese>Warlords メニューを開く</Japanese>
-            <Chinesesimp>打开Warlords菜单</Chinesesimp>
-            <Chinese>打開Warlords菜單</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_Menu_Hint">
-            <Original>%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.</Original>
-            <English>%3%12%4 %1%2 Order vehicles, aircrafts, defences, SAMS, AAA ...%1%2 It will also give you acces to sector scans, sector reset and other strategical stuff.%1%2 Here you can also transfer CP.</English>
-            <Czech>%3%12%4 %1%2 Objednejte si vozidla, letadla, obranu, SAMS, AAA ...%1%2 Poskytne vám také přístup ke skenování sektorů, resetování sektorů a dalším strategickým věcem.%1%2 Zde může také přenášet CP.</Czech>
-            <French>%3%12%4 %1%2 Commandez des véhicules, des avions, des défenses, des SAMS, des AAA ...%1%2 Cela vous donnera également accès aux analyses de secteur, à la réinitialisation du secteur et à d'autres éléments stratégiques.%1%2 Ici, vous peut également transférer CP.</French>
-            <German>%3%12%4 %1%2 Bestellen Sie Fahrzeuge, Flugzeuge, Verteidigungsanlagen, SAMS, AAA ...%1%2 Sie erhalten außerdem Zugriff auf Sektorscans, Sektor-Resets und andere strategische Dinge.%1%2 Hier sind Sie kann auch CP übertragen.</German>
-            <Italian>%3%12%4 %1%2 Ordina veicoli, velivoli, difese, SAMS, AAA ...%1%2 Ti darà anche accesso alle scansioni del settore, al ripristino del settore e ad altre cose strategiche.%1%2 Ecco a te può anche trasferire CP.</Italian>
-            <Polish>%3%12%4 %1%2 Zamów pojazdy, samoloty, obronę, SAMS, AAA ...%1%2 Daje to również dostęp do skanowania sektorów, resetowania sektorów i innych strategicznych rzeczy.%1%2 Tutaj może również przenosić CP.</Polish>
-            <Portuguese>%3%12%4 %1%2 Encomendar veículos, aeronaves, defesas, SAMS, AAA...%1%2 Também lhe dará acesso a varreduras de setor, reinicialização de setor e outras coisas estratégicas.%1%2 Aqui você também pode transferir CP.</Portuguese>
-            <Russian>%3%12%4 %1%2 Заказывайте наземный и воздушный транспорт, средства защиты, ЗРК, ЗСУ...%1%2 Получите доступ к сканированию секторов, сбросу секторов и другим стратегическим функциям.%1%2 Также вы можете передавать CP.</Russian>
-            <Spanish>%3%12%4 %1%2 Solicite vehículos, aeronaves, defensas, SAMS, AAA ...%1%2 También le dará acceso a escaneos de sector, restablecimiento de sector y otras cosas estratégicas.%1%2 Aquí usted también puede transferir CP.</Spanish>
-            <Turkish>%3%12%4 %1%2 Araçlar, uçaklar, savunmalar, hava savunma sistemi, uçaksavar topçusu ... sipariş edin %1%2 Ayrıca sektör taramalarına, sektör sıfırlamaya ve diğer stratejik şeylere erişmenizi sağlar.%1%2 Burda ayrıca diğer oyunculara CP aktarılabilir.</Turkish>
-            <Korean>%3%12%4 %1%2 차량, 항공기, 방어, SAMS, AAA ...%1%2 또한 섹터 스캔, 섹터 재설정 및 기타 전략적 요소에 대한 액세스 권한을 제공합니다.%1%2 여기 있습니다 CP도 양도할 수 있습니다.</Korean>
-            <Japanese>%3%12%4 %1%2 車両、航空機、防衛、SAMS、AAA ...%1%2 セクター スキャン、セクター リセット、その他の戦略的な機能にもアクセスできます。%1%2 ここで CPも移行できる。</Japanese>
-            <Chinesesimp>%3%12%4 %1%2 订购车辆、飞机、防御系统、SAMS、AAA ...%1%2 它还会让您访问扇区扫描、扇区重置和其他战略内容。%1%2 给您 还能转CP。</Chinesesimp>
-            <Chinese>%3%12%4 %1%2 訂購車輛、飛機、防禦系統、SAMS、AAA ...%1%2 它還會讓您訪問扇區掃描、扇區重置和其他戰略內容。%1%2 給您 還能轉CP。</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_Menu_Hint_01">
-            <Original>Hold %11</Original>
-            <English>Hold %11</English>
-            <Czech>Podržte %11</Czech>
-            <French>Maintenez %11</French>
-            <German>Halten Sie %11 gedrückt</German>
-            <Italian>Mantieni %11</Italian>
-            <Polish>Przytrzymaj %11</Polish>
-            <Portuguese>Segure % 11</Portuguese>
-            <Russian>Удерживать %11</Russian>
-            <Spanish>Mantener %11</Spanish>
-            <Turkish>%11 tuşunu basılı tutun</Turkish>
-            <Korean>%11 보류</Korean>
-            <Japanese>%11を押し続ける</Japanese>
-            <Chinesesimp>按住 %11</Chinesesimp>
-            <Chinese>按住 %11</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_FF_Hint_Name">
-            <Original>Friendly fire warning</Original>
-            <English>Friendly fire warning</English>
-            <Czech>Přátelské varování před požárem</Czech>
-            <French>Avertissement tir ami</French>
-            <German>Warnung vor freundlichem Feuer</German>
-            <Italian>Avviso colpo fraterno</Italian>
-            <Polish>Ostrzeżenie o przyjacielskim ogniu</Polish>
-            <Portuguese>Aviso de fogo amigo</Portuguese>
-            <Russian>Предупреждение oб огне по своим</Russian>
-            <Spanish>Advertencia de disparo fraternal</Spanish>
-            <Turkish>Dost ateşi uyarısı</Turkish>
-            <Korean>형제 총격 경고</Korean>
-            <Japanese>兄弟銃撃警告</Japanese>
-            <Chinesesimp>兄弟出手警告</Chinesesimp>
-            <Chinese>兄弟出手警告</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_FF_Hint">
-            <Original>%3%12%4, Killing to many friendlies will result in jail time. Make sure you identify your targets before you shoot.%1%2 When identifying targets you can make use of %11 and ask if that target is friendly.%1</Original>
-            <English>%3%12%4, Killing to many friendlies will result in jail time. Make sure you identify your targets before you shoot.%1%2 When identifying targets you can make use of %11 and ask if that target is friendly.%1</English>
-            <Czech>%3%12%4, Zabití mnoha přátel bude mít za následek vězení. Před střelbou se ujistěte, že jste identifikovali své cíle.%1%2 Při identifikaci cílů můžete použít %11 a zeptat se, zda je tento cíl přátelský.%1</Czech>
-            <French>%3%12%4, Tuer trop d'alliés vous entrainera en prison. Veillez à bien identifier vos cibles avant de tirer.%1%2 Vous pouvez utiliser %11 et demander si cette cible est alliée.%1</French>
-            <German>%3%12%4, Das Töten vieler Freundschaftsspiele führt zu einer Gefängnisstrafe. Stellen Sie sicher, dass Sie Ihre Ziele identifizieren, bevor Sie schießen.%1%2 Bei der Identifizierung von Zielen können Sie %11 verwenden und fragen, ob das Ziel befreundet ist.%1</German>
-            <Italian>%3%12%4, L'uccisione di molti amici comporterà il carcere. Assicurati di identificare i tuoi bersagli prima di sparare.%1%2 Quando identifichi i bersagli puoi usare %11 e chiedere se quel bersaglio è amichevole.%1</Italian>
-            <Polish>%3%12%4, Zabicie wielu sojuszników spowoduje karę więzienia. Przed oddaniem strzału upewnij się, że zidentyfikowałeś swoje cele.%1%2 Podczas identyfikowania celów możesz skorzystać z %11 i zapytać, czy ten cel jest przyjazny.%1</Polish>
-            <Portuguese>%3%12%4, Matar muitos amigos resultará em prisão. Certifique-se de identificar seus alvos antes de atirar.%1%2 Ao identificar os alvos, você pode usar %11 e perguntar se esse alvo é amigável.%1</Portuguese>
-            <Russian>%3%12%4, Убийство большого количества союзников приведет к тюремному заключению. Убедитесь, что вы идентифицировали цель, прежде чем стрелять.%1%2 При идентификации целей вы можете использовать %11 и спросить, является ли эта цель дружественной.%1</Russian>
-            <Spanish>%3%12%4, Matar a muchos amigos te llevará a la cárcel. Asegúrate de identificar tus objetivos antes de disparar.%1%2 Al identificar objetivos, puedes utilizar %11 y preguntar si ese objetivo es amistoso.%1</Spanish>
-            <Turkish>%3%12%4, Çok sayıda dost öldürmek hapis cezasıyla sonuçlanacak. Ateş etmeden önce hedeflerinizi belirlediğinizden emin olun.%1%2 Hedefleri belirlerken, %11 kullanıp ve bu hedefin dost olup olmadığını sorabilirsiniz.%1</Turkish>
-            <Korean>%3%12%4, 많은 아군을 죽이면 감옥에 가게 됩니다. 쏘기 전에 목표물을 확인하십시오.%1%2 목표물을 식별할 때 %11을(를) 활용하고 목표물이 우호적인지 물어볼 수 있습니다.%1</Korean>
-            <Japanese>%3%12%4, 多くの味方を殺害すると懲役刑が科せられます。 射撃する前に必ずターゲットを特定してください。%1%2 ターゲットを特定するときは、%11 を利用して、そのターゲットが友好的かどうかを尋ねることができます。%1</Japanese>
-            <Chinesesimp>%3%12%4, 杀死许多友军将导致入狱。 确保在射击前识别目标。%1%2 在识别目标时，您可以使用 %11 并询问该目标是否友好。%1</Chinesesimp>
-            <Chinese>%3%12%4, 殺死許多友軍將導致入獄。 確保在射擊前識別目標。%1%2 在識別目標時，您可以使用 %11 並詢問該目標是否友好。%1</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_FF_Hint_01">
-            <Original>Get to know the color of what your enemies wear, this can help. You have %13 friendly fire kills left before you get jailed.</Original>
-            <English>Get to know the color of what your enemies wear, this can help. You have %13 friendly fire kills left before you get jailed.</English>
-            <Czech>Poznejte barvu toho, co nosí vaši nepřátelé, to vám může pomoci. Než budete uvězněni, zbývá vám %13 přátelských zabití.</Czech>
-            <French>Apprenez à connaître la couleur des vêtements que portent vos ennemis, cela peut grandement vous aider. Attention, si vous commettez un tir ami encore %13 fois, vous allez purger une peine de prison.</French>
-            <German>Machen Sie sich mit der Farbe vertraut, die Ihre Feinde tragen. Das kann hilfreich sein. Du hast noch %13 Friendly Fire-Kills übrig, bevor du eingesperrt wirst.</German>
-            <Italian>Impara a conoscere il colore di ciò che indossano i tuoi nemici, questo può aiutarti. Ti rimangono %13 uccisioni con il fuoco amico prima di essere imprigionato.</Italian>
-            <Polish>Poznaj kolor tego, co noszą twoi wrogowie, to może pomóc. Pozostało ci %13 zabitych ogniem sojuszniczym, zanim trafisz do więzienia.</Polish>
-            <Portuguese>Conheça a cor do que seus inimigos vestem, isso pode ajudar. Você tem %13 mortes por fogo amigo antes de ser preso.</Portuguese>
-            <Russian>Узнайте цвет формы ваших противников, это может помочь. У вас осталось %13 убийств союзников до того, как вас посадят в тюрьму.</Russian>
-            <Spanish>Conozca el color de lo que usan sus enemigos, esto puede ayudar. Te quedan %13 muertes por fuego amigo antes de que te encarcelen.</Spanish>
-            <Turkish>Düşmanlarınızın giydiği renkleri öğrenmek önemlidir, bu size yardımcı olabilir. Hapsedilmeden önce yapabileceğiniz %13 dost ateşi öldürme hakkınız bulunmaktadır.</Turkish>
-            <Korean>적의 옷 색깔을 파악하면 도움이 될 수 있습니다. 투옥되기 전에 %13 아군 사살이 남았습니다.</Korean>
-            <Japanese>敵が着ている服の色を知ると役に立ちます。 投獄されるまでに残り %13 の味方射撃キルが残っています。</Japanese>
-            <Chinesesimp>了解敌人穿着的颜色，这会有所帮助。 在您入狱之前，您还剩下 %13 次友军射击击杀。</Chinesesimp>
-            <Chinese>了解敵人穿著的顏色，這會有所幫助。 在您入獄之前，您還剩下 %13 次友軍射擊擊殺。</Chinese>
-        </Key>
         <Key ID="STR_A3_nameFilter">
             <Original>Inappropriate Username!</Original>
             <English>Inappropriate Username!</English>
@@ -785,43 +649,6 @@
             <Chinese></Chinese>
         </Key>
     </Container>
-    </Container name="MRTM_easterEggs">
-        <Key ID="STR_MRTM_easterEgg_interact_1">
-            <Original>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</Original>
-            <English>Welcome, weary traveler, to the realm overseen by the wise villager on the hill. It is not by chance that our paths have converged, for it is your determination that has led you to this moment.</English>
-            <Turkish>Yorgun yolcu, tepedeki bilge köylünün denetimindeki krallığa hoş geldin. Yollarımızın kesişmesi tesadüf değildir, çünkü sizi bu an için yönlendiren azminizdir.</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_interact_2">
-            <Original>Know that the home you seek is not merely a shelter, but a privilege bestowed upon those who prove their worth. The decision lies in my hands, as the wise villager entrusted with the harmony of this village.</Original>
-            <English>Know that the home you seek is not merely a shelter, but a privilege bestowed upon those who prove their worth. The decision lies in my hands, as the wise villager entrusted with the harmony of this village.</English>
-            <Turkish>Bilin ki aradığınız ev sadece bir sığınak değil, değerlerini kanıtlayanlara bahşedilen bir ayrıcalıktır. Karar, bu köyün uyumuna güvenilen bilge köylünün elindedir.</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_interact_3">
-            <Original>To be granted a place among us, you must prove your dedication to the well-being of this community. Embark on quests, aid the villagers, and let your actions speak louder than words. It is through your deeds that you shall find your true belonging.</Original>
-            <English>To be granted a place among us, you must prove your dedication to the well-being of this community. Embark on quests, aid the villagers, and let your actions speak louder than words. It is through your deeds that you shall find your true belonging.</English>
-            <Turkish>Aramızda yer almak için, bu toplumun refahına olan bağlılığınızı kanıtlamanız gerekmektedir. Görevlere katılın, köylülere yardım edin ve eylemleriniz sözlerinizden daha fazla konuşsun. Gerçek aidiyetinizi eylemlerinizle bulacaksınız.</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_interact_4">
-            <Original>Remember, the fate of your residency rests upon the choices you make. The village flourishes when each resident contributes selflessly and respects the balance of nature that surrounds us.</Original>
-            <English>Remember, the fate of your residency rests upon the choices you make. The village flourishes when each resident contributes selflessly and respects the balance of nature that surrounds us.</English>
-            <Turkish>Unutmayın, ikamet yerinizin kaderi yaptığınız seçimlere bağlıdır. Köy, her sakinin özverili katkılarıyla ve etrafımızı saran doğanın dengesine saygı göstererek gelişir.</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_interact_5">
-            <Original>Should you prove yourself, the embrace of this cherished community shall be yours to claim. But tread carefully, for the wise villager's judgment is fair but discerning.</Original>
-            <English>Should you prove yourself, the embrace of this cherished community shall be yours to claim. But tread carefully, for the wise villager's judgment is fair but discerning.</English>
-            <Turkish>Eğer kendinizi kanıtlarsanız, bu sevgi dolu topluluğun kucaklaması size ait olacak. Ancak dikkatli adımlar atın, çünkü bilge köylünün hükmü adildir ancak seçicidir.</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_interact_6">
-            <Original>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</Original>
-            <English>May your path be guided by integrity, and may your presence bring harmony to our humble village. The choice now lies in your hands. Proceed with purpose, and may fortune favor the worthy.</English>
-            <Turkish>Yolunuz dürüstlükle yönlendirilsin ve varlığınız alçakgönüllü köyümüzde uyumu sağlasın. Seçim şimdi sizin elinizde. Kararlılıkla ilerleyin ve talihin layık olanları korusun.</Turkish>
-        </Key>
-        <Key ID="STR_MRTM_easterEgg_interact_reward">
-            <Original>Ah, young traveler, before you continue your journey, take a moment to consult your map. As a token of gratitude for your presence and determination, I have bestowed upon you a small gift. May it serve as a guiding light amidst the challenges that lie ahead. Remember, with each step you take, you carry the wisdom of this village within you. Safe travels, and may our paths cross again in serendipitous harmony.</Original>
-            <English>Ah, young traveler, before you continue your journey, take a moment to consult your map. As a token of gratitude for your presence and determination, I have bestowed upon you a small gift. May it serve as a guiding light amidst the challenges that lie ahead. Remember, with each step you take, you carry the wisdom of this village within you. Safe travels, and may our paths cross again in serendipitous harmony.</English>
-            <Turkish>Ah, genç yolcu, yolculuğunuza devam etmeden önce haritanıza bir göz atma zamanı. Varlığınız ve azminiz için bir teşekkür olarak size küçük bir hediye sundum. İleriye yönelik zorluklar karşısında size yol gösteren bir ışık olsun. Unutmayın, attığınız her adımda bu köyün bilgeliğini taşıyorsunuz. Güvenli seyahatler ve umarım yollarımız yeniden serendipitik bir uyumla kesişir.</Turkish>
-        </Key>
-    </Container>
     <Container name="MRTM_welcomeScreen">
          <Key ID="STR_MRTM_welcomeInteract_01">
             <Original>About Warlords Redux.</Original>
@@ -856,11 +683,7 @@
             <Japanese>どのようにプレイするか.</Japanese>
             <Chinesesimp>如何玩耍。</Chinesesimp>
             <Chinese>如何玩耍。</Chinese>
-        </Key> 
-         <Key ID="STR_MRTM_welcomeInteract_03">
-            <Original>WarSim Vets.</Original>
-            <English>WarSim Vets.</English>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_04">
             <Original>Our Discord.</Original>
             <English>Our Discord.</English>
