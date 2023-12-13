@@ -7,7 +7,8 @@ _asset setDir _direction;
 
 //Livery change
 if (typeOf _asset == "I_Truck_02_MRL_F") then {
-	_asset setObjectTexture [0, "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)"];
+	_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"];
+	_asset setObjectTextureGlobal [2, "a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa"];
 };
 
 if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
@@ -18,7 +19,7 @@ if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
 };
 
 if (typeOf _asset == "O_T_Truck_03_device_ghex_F") then {
-	{_asset setObjectTextureGlobal [_x,"a3\armor_f\data\cage_sand_co.paa"];} forEach [0,1,3]
+	_asset setObjectTextureGlobal [0, "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)"];
 };
 
 waitUntil {sleep 0.1; !(isNull _asset)};
