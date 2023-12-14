@@ -84,6 +84,8 @@ BIS_fnc_getExtras = compileFinal preprocessFileLineNumbers "Functions\client\rea
 BIS_fnc_getHulls = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getHulls.sqf";
 BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
+MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
+
 waitUntil {!isNull player && {isPlayer player}};
 
 "client" call BIS_fnc_WL2_varsInit;

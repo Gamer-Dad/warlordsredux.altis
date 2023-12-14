@@ -7,27 +7,6 @@ class CfgFunctions {
 				postInit = 1;
 				headerType = -1;
 			};
-			class onSliderChanged {};
-			class updateViewDistance {};
-			class openMenu {};
-			class onChar {};
-			class statTracker {};
-			class openGroupMenu {};
-			class getLBPicture {};
-			class getLBText {};
-			class onLBSelChanged {};
-			class invite {};
-			class accept {};
-			class onButtonClick {};
-			class settingsinit {};
-			class leaveGroup {};
-		};
-
-		class Debug {
-			file = "scripts\MRTMDebug";
-			class openDebugMenu {};
-			class setReturnValue {};
-			class execCode {};
 		};
 	};
 	class GOM {

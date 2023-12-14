@@ -47,6 +47,10 @@ BIS_fnc_orderDefence = compileFinal preprocessFileLineNumbers "Functions\server\
 BIS_fnc_orderGround = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderGround.sqf";
 BIS_fnc_orderNaval = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderNaval.sqf";
 
+MRTM_fnc_leaveGroup = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_leaveGroup.sqf";
+MRTM_fnc_accept = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_accept.sqf";
+MRTM_fnc_invite = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_invite.sqf";
+
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;
 
@@ -91,11 +95,5 @@ setTimeMultiplier 8;
 		};
 	};
 } forEach BIS_WL_competingSides;
-
-if ((random 1) < 0.4) then {
-	private _car = createVehicle ["C_Offroad_01_comms_F", [4200.52,20100.4,-0.0614624], [], 0, "NONE"];
-	_car setDir 145;
-	[_car, "InsigniaMrThomasM"] call BIS_fnc_setUnitInsignia;
-};
 
 ["server_init"] call BIS_fnc_endLoadingScreen;
