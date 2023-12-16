@@ -45,7 +45,6 @@ player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MR
 
 MRTM_fnc_onSliderChanged = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_onSliderChanged.sqf";
 MRTM_fnc_updateViewDistance = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_updateViewDistance.sqf";
-MRTM_fnc_openMenu = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_openMenu.sqf";
 MRTM_fnc_onChar = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_onChar.sqf";
 MRTM_fnc_statTracker = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_statTracker.sqf";
 MRTM_fnc_openGroupMenu = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_openGroupMenu.sqf";

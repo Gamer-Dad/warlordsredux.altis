@@ -7,6 +7,7 @@ class CfgFunctions {
 				postInit = 1;
 				headerType = -1;
 			};
+			class openMenu {};
 		};
 	};
 	class GOM {

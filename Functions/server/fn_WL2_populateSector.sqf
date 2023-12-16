@@ -100,7 +100,7 @@ if (_owner == resistance) then {
 };
 [_units, _sector] spawn BIS_fnc_WL2_assetRelevanceCheck;
 
-private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
+private _spawnPosArr = [_sector, 0, true] call BIS_fnc_WL2_findSpawnPositions;
 if (count _spawnPosArr == 0) exitWith {};
 
 private _garrisonSize = (_sector getVariable "BIS_WL_value") * 2.3; // * x: the bigger x the more ai
