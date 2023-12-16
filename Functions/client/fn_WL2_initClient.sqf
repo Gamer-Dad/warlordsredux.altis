@@ -202,7 +202,6 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 	_x setMarkerTypeLocal "selector_selectedMission";
 } forEach [_mrkrTargetEnemy, _mrkrTargetFriendly];
 
-//Evenhandlers
 0 spawn BIS_fnc_WL2_clientEH;
 player spawn APS_fnc_SetupProjectiles;
 call BIS_fnc_WL2_sub_arsenalSetup;

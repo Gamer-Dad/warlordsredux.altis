@@ -6,16 +6,6 @@ _i = 0;
 {
 	_sector = _x;
 	_sectorPos = position _sector;
-	
-	_mrkrAreaBig = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_areaBig", _forEachIndex], _sectorPos];
-	_mrkrAreaBig setMarkerShapeLocal "ELLIPSE";
-	_mrkrAreaBig setMarkerBrushLocal "SolidBorder";
-	_mrkrAreaBig setMarkerAlphaLocal 1;
-} forEach BIS_WL_allSectors;
-
-{
-	_sector = _x;
-	_sectorPos = position _sector;
 	_area = _sector getVariable "objectArea";
 	
 	if (_sector in WL_BASES && ((_sector getVariable "BIS_WL_owner") == (side player))) then {
@@ -32,6 +22,11 @@ _i = 0;
 	_mrkrArea setMarkerBrushLocal "Solid";
 	_mrkrArea setMarkerAlphaLocal 1;
 	_mrkrArea setMarkerSizeLocal [(_area # 0), (_area # 1)];
+
+	_mrkrAreaBig = createMarkerLocal [format ["BIS_WL_sectorMarker_%1_areaBig", _forEachIndex], _sectorPos];
+	_mrkrAreaBig setMarkerShapeLocal "ELLIPSE";
+	_mrkrAreaBig setMarkerBrushLocal "SolidBorder";
+	_mrkrAreaBig setMarkerAlphaLocal 1;
 } forEach BIS_WL_allSectors;
 
 {
