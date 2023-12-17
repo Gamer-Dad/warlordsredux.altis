@@ -1888,7 +1888,6 @@ class Mission
 		class Item135
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -1900,7 +1899,6 @@ class Mission
 					{
 						position[]={15554.771,29.212654,19826.859};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -1950,7 +1948,6 @@ class Mission
 		class Item136
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -1962,7 +1959,6 @@ class Mission
 					{
 						position[]={15556.74,29.173016,19826.988};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -2012,7 +2008,6 @@ class Mission
 		class Item137
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -2024,7 +2019,6 @@ class Mission
 					{
 						position[]={15559.296,29.132296,19827.09};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -2142,7 +2136,6 @@ class Mission
 		class Item139
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2154,7 +2147,6 @@ class Mission
 					{
 						position[]={15990.808,30.653923,19568.104};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2204,7 +2196,6 @@ class Mission
 		class Item140
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2216,7 +2207,6 @@ class Mission
 					{
 						position[]={15987.052,30.561909,19568.395};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2266,7 +2256,6 @@ class Mission
 		class Item141
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2278,7 +2267,6 @@ class Mission
 					{
 						position[]={15989.021,30.59738,19568.238};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2583,7 +2571,6 @@ class Mission
 		class Item156
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2595,7 +2582,6 @@ class Mission
 					{
 						position[]={15990.909,30.560825,19569.99};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2645,7 +2631,6 @@ class Mission
 		class Item157
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2657,7 +2642,6 @@ class Mission
 					{
 						position[]={15987.153,30.419666,19570.281};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2707,7 +2691,6 @@ class Mission
 		class Item158
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2719,7 +2702,6 @@ class Mission
 					{
 						position[]={15989.123,30.498322,19570.125};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2769,7 +2751,6 @@ class Mission
 		class Item159
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2781,7 +2762,6 @@ class Mission
 					{
 						position[]={15990.961,30.485216,19571.508};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2831,7 +2811,6 @@ class Mission
 		class Item160
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2843,7 +2822,6 @@ class Mission
 					{
 						position[]={15987.205,30.341795,19571.799};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2893,7 +2871,6 @@ class Mission
 		class Item161
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2905,7 +2882,6 @@ class Mission
 					{
 						position[]={15989.175,30.423328,19571.643};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -2955,7 +2931,6 @@ class Mission
 		class Item162
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -2967,7 +2942,6 @@ class Mission
 					{
 						position[]={15991.063,30.392256,19573.395};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3017,7 +2991,6 @@ class Mission
 		class Item163
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3029,7 +3002,6 @@ class Mission
 					{
 						position[]={15987.307,30.250067,19573.686};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3079,7 +3051,6 @@ class Mission
 		class Item164
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3091,7 +3062,6 @@ class Mission
 					{
 						position[]={15989.276,30.331438,19573.529};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3141,7 +3111,6 @@ class Mission
 		class Item165
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3153,7 +3122,6 @@ class Mission
 					{
 						position[]={15991.213,30.291519,19575.266};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3203,7 +3171,6 @@ class Mission
 		class Item166
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3215,7 +3182,6 @@ class Mission
 					{
 						position[]={15987.457,30.129749,19575.557};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3265,7 +3231,6 @@ class Mission
 		class Item167
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3277,7 +3242,6 @@ class Mission
 					{
 						position[]={15989.427,30.220873,19575.4};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3327,7 +3291,6 @@ class Mission
 		class Item168
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3339,7 +3302,6 @@ class Mission
 					{
 						position[]={15998.436,30.883236,19567.928};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3389,7 +3351,6 @@ class Mission
 		class Item169
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3401,7 +3362,6 @@ class Mission
 					{
 						position[]={15994.68,30.74614,19568.219};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3451,7 +3411,6 @@ class Mission
 		class Item170
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3463,7 +3422,6 @@ class Mission
 					{
 						position[]={15996.649,30.803938,19568.063};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3513,7 +3471,6 @@ class Mission
 		class Item171
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3525,7 +3482,6 @@ class Mission
 					{
 						position[]={15992.518,30.701006,19568.027};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3575,7 +3531,6 @@ class Mission
 		class Item172
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3587,7 +3542,6 @@ class Mission
 					{
 						position[]={15998.537,30.798088,19569.814};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3637,7 +3591,6 @@ class Mission
 		class Item173
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3649,7 +3602,6 @@ class Mission
 					{
 						position[]={15994.781,30.65309,19570.105};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3699,7 +3651,6 @@ class Mission
 		class Item174
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3711,7 +3662,6 @@ class Mission
 					{
 						position[]={15996.751,30.715332,19569.949};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3761,7 +3711,6 @@ class Mission
 		class Item175
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3773,7 +3722,6 @@ class Mission
 					{
 						position[]={15992.619,30.608047,19569.914};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3823,7 +3771,6 @@ class Mission
 		class Item176
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3835,7 +3782,6 @@ class Mission
 					{
 						position[]={15998.589,30.727962,19571.332};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3885,7 +3831,6 @@ class Mission
 		class Item177
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3897,7 +3842,6 @@ class Mission
 					{
 						position[]={15994.833,30.581234,19571.623};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -3947,7 +3891,6 @@ class Mission
 		class Item178
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -3959,7 +3902,6 @@ class Mission
 					{
 						position[]={15996.803,30.643959,19571.467};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4009,7 +3951,6 @@ class Mission
 		class Item179
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4021,7 +3962,6 @@ class Mission
 					{
 						position[]={15992.671,30.532436,19571.432};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4071,7 +4011,6 @@ class Mission
 		class Item180
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4083,7 +4022,6 @@ class Mission
 					{
 						position[]={15998.69,30.642902,19573.219};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4133,7 +4071,6 @@ class Mission
 		class Item181
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4145,7 +4082,6 @@ class Mission
 					{
 						position[]={15994.935,30.493525,19573.51};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4195,7 +4131,6 @@ class Mission
 		class Item182
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4207,7 +4142,6 @@ class Mission
 					{
 						position[]={15996.904,30.556162,19573.354};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4257,7 +4191,6 @@ class Mission
 		class Item183
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4269,7 +4202,6 @@ class Mission
 					{
 						position[]={15992.772,30.442257,19573.318};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4319,7 +4251,6 @@ class Mission
 		class Item184
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4331,7 +4262,6 @@ class Mission
 					{
 						position[]={15998.841,30.555342,19575.09};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4381,7 +4311,6 @@ class Mission
 		class Item185
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4393,7 +4322,6 @@ class Mission
 					{
 						position[]={15995.085,30.387188,19575.381};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4443,7 +4371,6 @@ class Mission
 		class Item186
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4455,7 +4382,6 @@ class Mission
 					{
 						position[]={15997.055,30.459728,19575.225};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4505,7 +4431,6 @@ class Mission
 		class Item187
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -4517,7 +4442,6 @@ class Mission
 					{
 						position[]={15992.923,30.347916,19575.189};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -4567,7 +4491,6 @@ class Mission
 		class Item188
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4579,7 +4502,6 @@ class Mission
 					{
 						position[]={15554.85,29.207256,19829.141};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -4629,7 +4551,6 @@ class Mission
 		class Item189
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4641,7 +4562,6 @@ class Mission
 					{
 						position[]={15556.818,29.174051,19829.27};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -4691,7 +4611,6 @@ class Mission
 		class Item190
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4703,7 +4622,6 @@ class Mission
 					{
 						position[]={15559.374,29.140396,19829.371};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -4753,7 +4671,6 @@ class Mission
 		class Item191
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4765,7 +4682,6 @@ class Mission
 					{
 						position[]={15562.137,29.105106,19829.758};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -4815,7 +4731,6 @@ class Mission
 		class Item192
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4827,7 +4742,6 @@ class Mission
 					{
 						position[]={15555.028,29.251839,19831.41};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -4877,7 +4791,6 @@ class Mission
 		class Item193
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4889,7 +4802,6 @@ class Mission
 					{
 						position[]={15556.997,29.230379,19831.539};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -4939,7 +4851,6 @@ class Mission
 		class Item194
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -4951,7 +4862,6 @@ class Mission
 					{
 						position[]={15559.553,29.200125,19831.641};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5001,7 +4911,6 @@ class Mission
 		class Item195
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5013,7 +4922,6 @@ class Mission
 					{
 						position[]={15562.315,29.160961,19832.027};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5065,7 +4973,6 @@ class Mission
 		class Item196
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5077,7 +4984,6 @@ class Mission
 					{
 						position[]={15555.106,29.335964,19833.691};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5127,7 +5033,6 @@ class Mission
 		class Item197
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5139,7 +5044,6 @@ class Mission
 					{
 						position[]={15557.075,29.314505,19833.82};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5189,7 +5093,6 @@ class Mission
 		class Item198
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5201,7 +5104,6 @@ class Mission
 					{
 						position[]={15559.631,29.27487,19833.922};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5253,7 +5155,6 @@ class Mission
 		class Item199
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5265,7 +5166,6 @@ class Mission
 					{
 						position[]={15562.394,29.223101,19834.309};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5317,7 +5217,6 @@ class Mission
 		class Item200
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5329,7 +5228,6 @@ class Mission
 					{
 						position[]={15555.401,29.412563,19835.85};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5381,7 +5279,6 @@ class Mission
 		class Item201
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5393,7 +5290,6 @@ class Mission
 					{
 						position[]={15557.37,29.383705,19835.979};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5445,7 +5341,6 @@ class Mission
 		class Item202
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5457,7 +5352,6 @@ class Mission
 					{
 						position[]={15559.926,29.328585,19836.08};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5509,7 +5403,6 @@ class Mission
 		class Item203
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5521,7 +5414,6 @@ class Mission
 					{
 						position[]={15562.688,29.274599,19836.467};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5571,7 +5463,6 @@ class Mission
 		class Item204
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5583,7 +5474,6 @@ class Mission
 					{
 						position[]={15545.649,29.401762,19825.969};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5633,7 +5523,6 @@ class Mission
 		class Item205
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5645,7 +5534,6 @@ class Mission
 					{
 						position[]={15547.618,29.402397,19826.098};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5695,7 +5583,6 @@ class Mission
 		class Item206
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5707,7 +5594,6 @@ class Mission
 					{
 						position[]={15550.174,29.345129,19826.199};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5757,7 +5643,6 @@ class Mission
 		class Item207
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5769,7 +5654,6 @@ class Mission
 					{
 						position[]={15552.937,29.269283,19826.586};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5819,7 +5703,6 @@ class Mission
 		class Item208
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5831,7 +5714,6 @@ class Mission
 					{
 						position[]={15545.728,29.417076,19828.25};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5881,7 +5763,6 @@ class Mission
 		class Item209
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5893,7 +5774,6 @@ class Mission
 					{
 						position[]={15547.696,29.415812,19828.379};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -5943,7 +5823,6 @@ class Mission
 		class Item210
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -5955,7 +5834,6 @@ class Mission
 					{
 						position[]={15550.252,29.349134,19828.48};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6005,7 +5883,6 @@ class Mission
 		class Item211
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6017,7 +5894,6 @@ class Mission
 					{
 						position[]={15553.015,29.263885,19828.867};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6067,7 +5943,6 @@ class Mission
 		class Item212
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6079,7 +5954,6 @@ class Mission
 					{
 						position[]={15545.906,29.433079,19830.52};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6129,7 +6003,6 @@ class Mission
 		class Item213
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6141,7 +6014,6 @@ class Mission
 					{
 						position[]={15547.875,29.429508,19830.648};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6191,7 +6063,6 @@ class Mission
 		class Item214
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6203,7 +6074,6 @@ class Mission
 					{
 						position[]={15550.431,29.35273,19830.75};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6253,7 +6123,6 @@ class Mission
 		class Item215
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6265,7 +6134,6 @@ class Mission
 					{
 						position[]={15553.193,29.274208,19831.137};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6315,7 +6183,6 @@ class Mission
 		class Item216
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6327,7 +6194,6 @@ class Mission
 					{
 						position[]={15545.984,29.461309,19832.801};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6377,7 +6243,6 @@ class Mission
 		class Item217
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6389,7 +6254,6 @@ class Mission
 					{
 						position[]={15547.953,29.463596,19832.93};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6439,7 +6303,6 @@ class Mission
 		class Item218
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6451,7 +6314,6 @@ class Mission
 					{
 						position[]={15550.509,29.386822,19833.031};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6503,7 +6365,6 @@ class Mission
 		class Item219
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6515,7 +6376,6 @@ class Mission
 					{
 						position[]={15553.271,29.343283,19833.418};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6565,7 +6425,6 @@ class Mission
 		class Item220
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6577,7 +6436,6 @@ class Mission
 					{
 						position[]={15546.279,29.498604,19834.959};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6629,7 +6487,6 @@ class Mission
 		class Item221
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6641,7 +6498,6 @@ class Mission
 					{
 						position[]={15548.248,29.489071,19835.088};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6693,7 +6549,6 @@ class Mission
 		class Item222
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6705,7 +6560,6 @@ class Mission
 					{
 						position[]={15550.804,29.432476,19835.189};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6757,7 +6611,6 @@ class Mission
 		class Item223
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -6769,7 +6622,6 @@ class Mission
 					{
 						position[]={15553.566,29.421112,19835.576};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -6819,7 +6671,6 @@ class Mission
 		class Item224
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -6831,7 +6682,6 @@ class Mission
 					{
 						position[]={16000.066,30.991009,19567.52};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -6881,7 +6731,6 @@ class Mission
 		class Item225
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -6893,7 +6742,6 @@ class Mission
 					{
 						position[]={16000.168,30.904705,19569.406};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -6945,7 +6793,6 @@ class Mission
 		class Item226
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -6957,7 +6804,6 @@ class Mission
 					{
 						position[]={16000.22,30.834576,19570.924};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -7009,7 +6855,6 @@ class Mission
 		class Item227
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -7021,7 +6866,6 @@ class Mission
 					{
 						position[]={16000.321,30.747089,19572.811};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -7073,7 +6917,6 @@ class Mission
 		class Item228
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -7085,7 +6928,6 @@ class Mission
 					{
 						position[]={16000.472,30.657185,19574.682};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -7135,7 +6977,6 @@ class Mission
 		class Item229
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -7147,7 +6988,6 @@ class Mission
 					{
 						position[]={15562.069,29.095844,19827.217};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -7202,7 +7042,6 @@ class Mission
 				position[]={26864.893,27.27659,24527.355};
 				angles[]={0.02666023,3.6751244,0.0013372133};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7220,7 +7059,6 @@ class Mission
 				position[]={26834.68,18.015804,24733.648};
 				angles[]={0.021328852,3.1521626,0.050623242};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7238,7 +7076,6 @@ class Mission
 				position[]={26764.021,25.205851,24582.711};
 				angles[]={0.02399601,1.8618478,0.061256282};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7256,7 +7093,6 @@ class Mission
 				position[]={27119.912,25.229784,24808.748};
 				angles[]={6.2751846,4.1421084,0.0013372133};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7274,7 +7110,6 @@ class Mission
 				position[]={14305.341,21.769846,16330.245};
 				angles[]={0.0080009829,1.8327835,6.2631893};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7292,7 +7127,6 @@ class Mission
 				position[]={14434.816,21.184574,16262.167};
 				angles[]={6.2791886,1.0148875,6.2738566};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7310,7 +7144,6 @@ class Mission
 				position[]={14187.448,20.868635,16358.429};
 				angles[]={0.010664274,1.0387331,0};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7330,7 +7163,6 @@ class Mission
 				position[]={14165.622,22.724064,16190.555};
 				angles[]={0.010664274,2.7019835,0.0026520467};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7348,7 +7180,6 @@ class Mission
 				position[]={11570.935,25.590078,11830.733};
 				angles[]={6.2671871,0,6.2645216};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7366,7 +7197,6 @@ class Mission
 				position[]={11376.671,29.970703,11736.525};
 				angles[]={6.2685208,0,6.2338929};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7384,7 +7214,6 @@ class Mission
 				position[]={11524.75,25.565645,11608.534};
 				angles[]={6.2418756,4.9164066,6.253861};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7402,7 +7231,6 @@ class Mission
 				position[]={11603.823,25.864655,11943.011};
 				angles[]={0.0039967569,2.2040498,6.2818484};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7422,7 +7250,6 @@ class Mission
 				position[]={12827.297,89.199348,16735.83};
 				angles[]={6.2099833,0,6.2791886};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7440,7 +7267,6 @@ class Mission
 				position[]={12877.713,87.227066,16734.383};
 				angles[]={0.018667053,0,6.2272429};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7458,7 +7284,6 @@ class Mission
 				position[]={12681.874,36.527626,16343.664};
 				angles[]={0,0,0.0012918708};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7477,7 +7302,6 @@ class Mission
 				position[]={14122.228,13.05036,12975.522};
 				angles[]={0.010664274,5.419529,6.247201};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7495,7 +7319,6 @@ class Mission
 				position[]={17406.559,15.878784,13201.476};
 				angles[]={0.022662206,0,6.259192};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7515,7 +7338,6 @@ class Mission
 				position[]={17532.428,16.216648,13215.051};
 				angles[]={0.019996032,0,0.031988446};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7533,7 +7355,6 @@ class Mission
 				position[]={20741.455,33.505569,7113.0161};
 				angles[]={0.0053265258,0,0.0013372133};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7551,7 +7372,6 @@ class Mission
 				position[]={21224.693,19.837919,7499.9941};
 				angles[]={0.038647637,0,6.2605233};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7571,7 +7391,6 @@ class Mission
 				position[]={20960.035,25.889084,7287.082};
 				angles[]={0.027993103,0,6.1795578};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7589,7 +7408,6 @@ class Mission
 				position[]={20783.342,31.767929,7228.2017};
 				angles[]={0.0026520467,4.5747547,6.2818484};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7607,7 +7425,6 @@ class Mission
 				position[]={12275.22,126.02168,8903.1777};
 				angles[]={0.042640556,0,6.2578578};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7625,7 +7442,6 @@ class Mission
 				position[]={12169.282,93.140053,8983.6143};
 				angles[]={0.010664274,0,0.36314669};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7643,7 +7459,6 @@ class Mission
 				position[]={3411.3982,6.7196693,12600.588};
 				angles[]={6.2751846,4.67314,0.085126832};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7660,7 +7475,6 @@ class Mission
 			{
 				position[]={6175.5122,45.168457,16246.487};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7679,7 +7493,6 @@ class Mission
 				position[]={5980.2778,45.702053,16158.415};
 				angles[]={0.029326396,0,6.2711854};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7697,7 +7510,6 @@ class Mission
 				position[]={6372.626,46.33646,16165.731};
 				angles[]={0.0093286335,3.1293318,6.2765174};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7715,7 +7527,6 @@ class Mission
 				position[]={9174.7275,16.455023,21690.178};
 				angles[]={0.0026520467,0,6.2818484};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7735,7 +7546,6 @@ class Mission
 				position[]={9186.7539,19.660591,21442.537};
 				angles[]={0.0053265258,0,6.2778587};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7756,7 +7566,6 @@ class Mission
 				position[]={9131.2129,18.047287,21528.707};
 				angles[]={6.2033553,2.0603719,0.058599081};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7774,7 +7583,6 @@ class Mission
 				position[]={9309.665,19.333107,21535.498};
 				angles[]={0,3.1479652,0.0066592805};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7792,7 +7600,6 @@ class Mission
 				position[]={22929.459,7.6512012,18888.352};
 				angles[]={6.2578578,0,6.251195};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7812,7 +7619,6 @@ class Mission
 				position[]={22970.918,6.7232881,18921.805};
 				angles[]={0.039979152,0,6.161129};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7829,7 +7635,6 @@ class Mission
 				position[]={23169.934,5.8042889,18921.771};
 				angles[]={0,4.8613825,0};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7846,7 +7651,6 @@ class Mission
 			{
 				position[]={23015.623,5.3583655,18589.348};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7862,7 +7666,6 @@ class Mission
 			{
 				position[]={23204.598,5.3583655,18552.361};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7879,7 +7682,6 @@ class Mission
 				position[]={23652.945,68.769127,21222.215};
 				angles[]={0.22923201,0,6.0781102};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7899,7 +7701,6 @@ class Mission
 				position[]={23712.51,99.90271,21060.715};
 				angles[]={6.0832262,0,6.1914449};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7917,7 +7718,6 @@ class Mission
 				position[]={23461.908,93.61274,21156.148};
 				angles[]={6.272521,0,6.1980586};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7935,7 +7735,6 @@ class Mission
 				position[]={15069.696,20.420795,17181.801};
 				angles[]={0,1.967526,0};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7952,7 +7751,6 @@ class Mission
 				position[]={15283.158,19.977873,17412.816};
 				angles[]={0.0066682254,2.4341576,6.2751846};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7972,7 +7770,6 @@ class Mission
 				position[]={15124.302,20.439142,17291.635};
 				angles[]={6.2765174,2.1975045,0.0039967569};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -7990,7 +7787,6 @@ class Mission
 				position[]={16205.05,26.492455,17285.158};
 				angles[]={6.2671871,0,6.2791886};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8008,7 +7804,6 @@ class Mission
 				position[]={16438.863,26.680521,17231.98};
 				angles[]={0,0,6.2738566};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8025,7 +7820,6 @@ class Mission
 				position[]={16126.629,15.680232,17000.098};
 				angles[]={6.2605233,0,6.2805333};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8045,7 +7839,6 @@ class Mission
 				position[]={15941.071,17.926411,17185.75};
 				angles[]={6.2698536,0,6.272521};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8063,7 +7856,6 @@ class Mission
 				position[]={16128.146,16.616032,16824.604};
 				angles[]={0.0039967569,0.80893213,6.2818484};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8081,7 +7873,6 @@ class Mission
 				position[]={20963.947,23.413105,7448.0352};
 				angles[]={0.031988446,0,6.2498641};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8099,7 +7890,6 @@ class Mission
 				position[]={14295.961,21.986979,16238.173};
 				angles[]={6.2738566,0,0.0039967569};
 			};
-			InEditorATL=-0;
 			side="Empty";
 			flags=4;
 			class Attributes
@@ -8115,7 +7905,6 @@ class Mission
 		class Item280
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -8127,7 +7916,6 @@ class Mission
 					{
 						position[]={16001.812,31.131731,19566.961};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -8177,7 +7965,6 @@ class Mission
 		class Item281
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -8189,7 +7976,6 @@ class Mission
 					{
 						position[]={16001.913,31.024576,19568.848};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -8241,7 +8027,6 @@ class Mission
 		class Item282
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -8253,7 +8038,6 @@ class Mission
 					{
 						position[]={16001.965,30.954453,19570.365};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -8305,7 +8089,6 @@ class Mission
 		class Item283
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -8317,7 +8100,6 @@ class Mission
 					{
 						position[]={16002.066,30.862217,19572.252};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -8369,7 +8151,6 @@ class Mission
 		class Item284
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="East";
 			class Entities
 			{
@@ -8381,7 +8162,6 @@ class Mission
 					{
 						position[]={16002.217,30.772312,19574.123};
 					};
-					InEditorATL=-0;
 					side="East";
 					flags=7;
 					class Attributes
@@ -8431,7 +8211,6 @@ class Mission
 		class Item285
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -8443,7 +8222,6 @@ class Mission
 					{
 						position[]={15564.089,29.039909,19826.854};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -8493,7 +8271,6 @@ class Mission
 		class Item286
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -8505,7 +8282,6 @@ class Mission
 					{
 						position[]={15564.167,29.043613,19829.135};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -8557,7 +8333,6 @@ class Mission
 		class Item287
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -8569,7 +8344,6 @@ class Mission
 					{
 						position[]={15564.346,29.075394,19831.404};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -8619,7 +8393,6 @@ class Mission
 		class Item288
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -8631,7 +8404,6 @@ class Mission
 					{
 						position[]={15564.424,29.136545,19833.686};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -8681,7 +8453,6 @@ class Mission
 		class Item289
 		{
 			dataType="Group";
-			InEditorATL=-0;
 			side="West";
 			class Entities
 			{
@@ -8693,7 +8464,6 @@ class Mission
 					{
 						position[]={15564.719,29.17852,19835.844};
 					};
-					InEditorATL=-0;
 					side="West";
 					flags=7;
 					class Attributes
@@ -9190,7 +8960,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23715.822,5.3025584,16242.208};
-			angle=3.9814034;
+			angle=3.9814031;
 			class Attributes
 			{
 				sizeA=160;
@@ -9216,7 +8986,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={24084.146,8.065012,15513.553};
-			angle=3.9814031;
+			angle=3.9814029;
 			class Attributes
 			{
 				sizeA=140;
@@ -9279,7 +9049,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20100.211,18.242836,20049.061};
-			angle=3.9814034;
+			angle=3.9814031;
 			class Attributes
 			{
 				sizeA=140;
@@ -9328,7 +9098,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={17066.727,23.887089,11332.563};
-			angle=3.9814034;
+			angle=3.9814031;
 			class Attributes
 			{
 				sizeA=140;
@@ -9404,7 +9174,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.05529,7274.6084};
-			angle=3.9814031;
+			angle=3.9814029;
 			class Attributes
 			{
 				sizeA=140;
@@ -9455,7 +9225,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814034;
+			angle=3.9814031;
 			class Attributes
 			{
 				sizeA=110;
@@ -9468,7 +9238,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20896.932,2.5875392,14628.845};
-			angle=3.9814034;
+			angle=3.9814031;
 			class Attributes
 			{
 				sizeA=180;
