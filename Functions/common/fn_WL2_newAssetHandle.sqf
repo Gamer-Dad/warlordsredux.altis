@@ -73,9 +73,7 @@ if (isPlayer _owner) then {
 						{},
 						{
 							(getConnectedUAVUnit player) addEventHandler ["Killed", { params ["_unit", "_killer", "_instigator", "_useEffects"]; 
-								_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos _unit), [], 0, "FLY"]; 
-								triggerAmmo _expl; 
-								deleteVehicle (getConnectedUAV player);
+								[player, "droneExplode"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 							}];
 							[
 								getConnectedUAVUnit player,
@@ -87,10 +85,7 @@ if (isPlayer _owner) then {
 								{},
 								{},
 								{ 
-									_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos (getConnectedUAVUnit player)), [], 0, "FLY"]; 
-									(getConnectedUAVUnit player) removeAllEventHandlers "Killed";
-									deleteVehicle (getConnectedUAV player);
-									triggerAmmo _expl;
+									[player, "droneExplode"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 								},
 								{},
 								[],
