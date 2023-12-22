@@ -1,7 +1,4 @@
-params ["_sector", "_owner", "_side"];
-
-_enemySector = missionNamespace getVariable format ["BIS_WL_currentTarget_%1", (([west, east] select {_x != _side}) # 0)];
-if (_owner == resistance && {_sector == _enemySector}) exitWith {};
+params ["_sector", "_owner"];
 
 private _units = [];
 if (_owner == resistance) then {
