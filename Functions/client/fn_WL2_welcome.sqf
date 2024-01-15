@@ -115,7 +115,7 @@ while {dialog} do {
 		};
 		case "theCom": { 
 			_control ctrlSetStructuredText composeText [
-			"WarSim Vets.", lineBreak,
+			localize "STR_MRTM_welcomeInteract_03", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_15", lineBreak,
 			"", lineBreak,
