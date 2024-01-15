@@ -24,4 +24,6 @@ BIS_fnc_WL2_sortSectorArrays = compileFinal preprocessFileLineNumbers "Functions
 BIS_fnc_WL2_updateSectorArrays = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_updateSectorArrays.sqf";
 BIS_fnc_WL2_varsInit = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_varsInit.sqf";
 
+MRTM_fnc_execCode = compileFinal preprocessFileLineNumbers "Scripts\MRTMDebug\fn_execCode.sqf";
+
 call BIS_fnc_WL2_initCommon;

@@ -85,6 +85,8 @@ BIS_fnc_getHulls = compileFinal preprocessFileLineNumbers "Functions\client\rear
 BIS_fnc_getLiveries = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getLiveries.sqf";
 BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
+MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
+
 waitUntil {!isNull player && {isPlayer player}};
 
 "client" call BIS_fnc_WL2_varsInit;
@@ -201,7 +203,6 @@ _mrkrTargetFriendly setMarkerColorLocal BIS_WL_colorMarkerFriendly;
 	_x setMarkerTypeLocal "selector_selectedMission";
 } forEach [_mrkrTargetEnemy, _mrkrTargetFriendly];
 
-//Evenhandlers
 0 spawn BIS_fnc_WL2_clientEH;
 player spawn APS_fnc_SetupProjectiles;
 call BIS_fnc_WL2_sub_arsenalSetup;

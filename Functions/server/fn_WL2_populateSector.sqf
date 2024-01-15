@@ -1,7 +1,4 @@
-params ["_sector", "_owner", "_side"];
-
-_enemySector = missionNamespace getVariable format ["BIS_WL_currentTarget_%1", (([west, east] select {_x != _side}) # 0)];
-if (_owner == resistance && {_sector == _enemySector}) exitWith {};
+params ["_sector", "_owner"];
 
 private _units = [];
 if (_owner == resistance) then {
@@ -100,7 +97,7 @@ if (_owner == resistance) then {
 };
 [_units, _sector] spawn BIS_fnc_WL2_assetRelevanceCheck;
 
-private _spawnPosArr = _sector call BIS_fnc_WL2_findSpawnPositions;
+private _spawnPosArr = [_sector, 0, true] call BIS_fnc_WL2_findSpawnPositions;
 if (count _spawnPosArr == 0) exitWith {};
 
 private _garrisonSize = (_sector getVariable "BIS_WL_value") * 2.3; // * x: the bigger x the more ai

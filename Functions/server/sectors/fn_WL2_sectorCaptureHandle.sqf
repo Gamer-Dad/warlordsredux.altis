@@ -19,8 +19,7 @@ _sector spawn {
 };
 
 while {!BIS_WL_missionEnd} do {
-	_info = _sector call BIS_fnc_WL2_getInfantry;
-	_info = [_sector, _info] call BIS_fnc_WL2_getVehicles;
+	_info = _sector call BIS_fnc_WL2_getVehicles;
 	_highestPoints = (([_info, [], {(_x # 1)}, "DESCEND"] call BIS_fnc_sortBy) # 0);
 	_winner = (_highestPoints # 0);
 	if ((_highestPoints # 1) == 0) then {

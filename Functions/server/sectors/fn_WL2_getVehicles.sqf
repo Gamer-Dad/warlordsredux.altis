@@ -1,6 +1,6 @@
-params ["_sector", "_info"];
+params ["_sector"];
 
-private _return = _info;
+private _return = _sector call BIS_fnc_WL2_getInfantry;
 private _sideArr = [west, east, independent];
 
 {

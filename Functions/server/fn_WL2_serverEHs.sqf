@@ -10,7 +10,7 @@ addMissionEventHandler ["HandleDisconnect", {
 
 		deleteVehicle _x;
 	} forEach ((missionNamespace getVariable [_var, []]) select {!(isNull _x)});
-	missionNamespace setVariable [_var, []];
+	missionNamespace setVariable [_var, nil];
 
 	{
 		if !(isPlayer _x) then {deleteVehicle _x;};

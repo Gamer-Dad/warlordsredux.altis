@@ -1,6 +1,6 @@
 #include "..\warlords_constants.inc"
 
-params ["_area", ["_rimWidth", 0], ["_infantryOnly", true], ["_sortCenter", objNull]];
+params ["_area", ["_rimWidth", 0], ["_infantryOnly", true]];
 if !(_area isEqualType []) then {_area = [_area]};
 
 private _center = _area # 0;
@@ -37,8 +37,6 @@ switch (typeName _center) do {
 	};
 };
 
-if (isNull _sortCenter) then {_sortCenter = _center};
-
 _rimArea = [];
 if !(isNil {_area}) then {
 	_rimArea = _area;
@@ -70,16 +68,16 @@ _maxAxis = (if (!(isNil {_area # 4}) && {(_area # 4)}) then {
 
 private _areaStart = _center vectorDiff [_maxAxis, _maxAxis, 0];
 private _areaEnd = _center vectorAdd [_maxAxis, _maxAxis, 0];
-private _axisStep = if (_infantryOnly) then {5} else {20};
+private _axisStep = if (_infantryOnly) then {20} else {40};
 
 private _areaCheck = if (_rimWidth == 0) then {
-	{_this inArea _area}
+	{_this inArea _area};
 } else {
 	if (_rimWidth > 0) then {
-		{_this inArea _rimArea && !(_this inArea _area)}
+		{_this inArea _rimArea && !(_this inArea _area)};
 	} else {
-		{_this inArea _area && !(_this inArea _rimArea)}
-	}
+		{_this inArea _area && !(_this inArea _rimArea)};
+	};
 };
 
 private _ret = [];
@@ -96,7 +94,7 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 					_finalPos = ASLToATL _finalPos;
 					_nearObjs = _finalPos nearObjects ["AllVehicles", 5];
 					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 10, true, true];
-					if (count _nearObjs == 0 && count _nearMapObjs == 0) then {
+					if (count _nearObjs == 0 && {count _nearMapObjs == 0}) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
 					};
@@ -105,7 +103,7 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 		};
 	};
 };
-_ret = _ret apply {[_x distance2D _sortCenter, [_x]]};
+_ret = _ret apply {[_x distance2D _center, [_x]]};
 _ret sort true;
 _ret = _ret apply {(_x # 1) # 0};
 

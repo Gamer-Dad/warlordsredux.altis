@@ -16,8 +16,6 @@ _vics = missionNamespace getVariable [_var, []];
 	missionNamespace setVariable [_var, _list, [2, clientOwner]];
 } forEach (_vics select {!(alive _x)});
 
-"Died" call MRTM_fnc_statTracker;
-
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
 		"10K CP",

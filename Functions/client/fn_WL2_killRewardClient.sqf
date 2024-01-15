@@ -37,7 +37,6 @@ if (_unit isKindOf "Man") then {
 };
 
 WAS_score = true;
-["Kill", _unit] spawn MRTM_fnc_statTracker;
 
 if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
 	playSoundUI ["AddItemOK", 0.1, 1];

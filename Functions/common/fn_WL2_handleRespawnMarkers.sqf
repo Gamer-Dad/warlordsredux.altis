@@ -8,7 +8,7 @@ switch (_mode) do {
 			_sideID = ["west", "east", "guerrila"] select (BIS_WL_sidesArray find _this);
 			_respawnMarkerFormat = format ["respawn_%1_", _sideID];
 			_base = _this call BIS_fnc_WL2_getSideBase;
-			_baseSpots = _base call BIS_fnc_WL2_findSpawnPositions;
+			_baseSpots = [_base, 0, true] call BIS_fnc_WL2_findSpawnPositions;
 			_baseSpotsCnt = count _baseSpots;
 			if (_baseSpotsCnt > WL_RESPAWN_MARKERS_CNT) then {
 				_baseSpots resize WL_RESPAWN_MARKERS_CNT;
@@ -42,7 +42,7 @@ switch (_mode) do {
 		_sideID = ["west", "east", "guerrila"] select (BIS_WL_sidesArray find _side);
 		_respawnMarkerFormat = format ["respawn_%1_", _sideID];
 		_base = _side call BIS_fnc_WL2_getSideBase;
-		_baseSpots = _base call BIS_fnc_WL2_findSpawnPositions;
+		_baseSpots = [_base, 0, true] call BIS_fnc_WL2_findSpawnPositions;
 		
 		_i = 1;
 		for "_i" from 1 to WL_RESPAWN_MARKERS_CNT do {
