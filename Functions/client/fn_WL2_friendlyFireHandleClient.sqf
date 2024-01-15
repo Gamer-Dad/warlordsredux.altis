@@ -1,6 +1,6 @@
 params ["_penalty"];
 
-if (isNil "BIS_WL_penalized" || {BIS_WL_penalized}) exitWith {};
+if (!(isNil "BIS_WL_penalized") && {BIS_WL_penalized}) exitWith {};
 
 _penalty spawn {
 	params ["_penaltyEnd"];

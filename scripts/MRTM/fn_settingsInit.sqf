@@ -18,7 +18,7 @@ if !(profileNamespace getVariable ["warningSettingsInitialzed", false]) then {
 };
 
 if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
-	profileNamespace setVariable ["MRTM_3rdPersonDisabled", false];
+	profileNamespace setVariable ["MRTM_3rdPersonDisabled", true];
 	profileNamespace setVariable ["MRTM_playKillSound", true];
 	profileNamespace setVariable ["MRTM_muteVoiceInformer", false];
 	profileNamespace setVariable ["MRTM_EnableRWR", true];
@@ -27,7 +27,7 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_enableAuto", true];
 	profileNamespace setVariable ["preferencesInitialzed", true];
 };
-player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", false]), [2, clientOwner]];
+player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", true]), [2, clientOwner]];
 
 MRTM_fnc_onSliderChanged = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_onSliderChanged.sqf";
 MRTM_fnc_updateViewDistance = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_updateViewDistance.sqf";
