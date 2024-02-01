@@ -1,6 +1,5 @@
 /*
 	Author: MrThomasM
-
 	Description: Displays a return value.
 */
 params ["_return"];

@@ -1,9 +1,8 @@
 /*
 	Author: MrThomasM
-
 	Description: Opens a debug console.
 */
-if !(getPlayerUID player == "76561198865298977") exitWith {};
+if !(getPlayerUID player == "xxxxx") exitWith {}; //Replace With Admins UID
 
 if (isNull (findDisplay 2000)) then {
 	private _d = [4000, 8000, 2000];
