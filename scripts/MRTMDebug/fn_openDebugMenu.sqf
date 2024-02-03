@@ -3,7 +3,7 @@
 
 	Description: Opens a debug console.
 */
-if !(getPlayerUID player == "76561198865298977") exitWith {};
+if !(getPlayerUID player == "XXXXXXXXXXXXXXXXX") exitWith {}; // Replace with Admin UID
 
 if (isNull (findDisplay 2000)) then {
 	private _d = [4000, 8000, 2000];

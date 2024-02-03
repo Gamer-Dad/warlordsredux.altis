@@ -1032,7 +1032,7 @@ class MRTM_settingsMenu
 		{
 			idc = 1609;
 			text = "Debug";
-			onLoad = "(_this # 0) ctrlEnable (getPlayerUID player == '76561198865298977');";
+			onLoad = "(_this # 0) ctrlEnable (getPlayerUID player == 'XXXXXXXXXXX');"; // Replace with Admin UID
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.664969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;

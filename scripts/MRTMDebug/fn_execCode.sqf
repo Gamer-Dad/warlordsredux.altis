@@ -6,7 +6,7 @@
 params [["_sender", objNull , [objNull]], ["_code", "", [""]]];
 
 if (isNull _sender) exitWith {};
-_serverCheck = isDedicated && {remoteExecutedOwner != (owner _sender) && {count (allPlayers select {getPlayerUID _x == "76561198865298977"}) > 0}};
+_serverCheck = isDedicated && {remoteExecutedOwner != (owner _sender) && {count (allPlayers select {getPlayerUID _x == "XXXXXXXXX"}) > 0}}; // Replace "XXXXXXXXX" with Admin UID
 if (_serverCheck) exitWith {};
 if (_code == "") exitWith {};
 
