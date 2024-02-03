@@ -6,7 +6,7 @@
 params [["_sender", objNull , [objNull]], ["_code", "", [""]]];
 
 if (isNull _sender) exitWith {};
-_serverCheck = isDedicated && {remoteExecutedOwner != (owner _sender) && {count (allPlayers select {getPlayerUID _x == "76561198865298977"}) > 0}};
+_serverCheck = isDedicated && {remoteExecutedOwner != (owner _sender) && {count (allPlayers select {getPlayerUID _x == "76561198034106257"}) > 0}};
 if (_serverCheck) exitWith {};
 if (_code == "") exitWith {};
 
