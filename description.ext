@@ -9,7 +9,7 @@ dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
 zeusCompositionScriptLevel = 2;
-adminIDs[] = {"76561198034106257", "76561198865298977"};
+adminIDs[] = {"76561198034106257"};
 
 //Settings
 respawn = 3;
