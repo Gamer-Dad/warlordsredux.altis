@@ -38,7 +38,7 @@ _control2 ctrlSetBackgroundColor _color;
 //List Menu + Scripts
 _pageAbt = lbAdd [9011, localize "STR_MRTM_welcomeInteract_01"];
 _pageHow = lbAdd [9011, localize "STR_MRTM_welcomeInteract_02"];
-_theTeam = lbAdd [9011, "WarSim Vets."];
+_theTeam = lbAdd [9011, localize "STR_MRTM_welcomeInteract_03"];
 _dc = lbAdd [9011, localize "STR_MRTM_welcomeInteract_04"];
 _changelog = lbAdd [9011, localize "STR_MRTM_welcomeInteract_05"];
 _scripts = lbAdd [9011, localize "STR_MRTM_welcomeInteract_06"];
@@ -115,7 +115,7 @@ while {dialog} do {
 		};
 		case "theCom": { 
 			_control ctrlSetStructuredText composeText [
-			"WarSim Vets.", lineBreak,
+			localize "STR_MRTM_welcomeInteract_03", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_15", lineBreak,
 			"", lineBreak,

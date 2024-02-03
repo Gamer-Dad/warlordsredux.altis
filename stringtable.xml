@@ -684,6 +684,23 @@
             <Chinesesimp>如何玩耍。</Chinesesimp>
             <Chinese>如何玩耍。</Chinese>
         </Key>
+         <Key ID="STR_MRTM_welcomeInteract_03">
+            <Original>Our Team.</Original>
+            <English>Our Team.</English>
+            <Czech>Náš tým.</Czech>
+            <French>Notre équipe.</French>
+            <German>Unser Team.</German>
+            <Italian>La nostra squadra.</Italian>
+            <Polish>Nasz zespół.</Polish>
+            <Portuguese>Nosso time.</Portuguese>
+            <Russian>Наша команда.</Russian>
+            <Spanish>Nuestro equipo.</Spanish>
+            <Turkish>Bizim takım.</Turkish>
+            <Korean>우리 팀.</Korean>
+            <Japanese>私たちのチーム。</Japanese>
+            <Chinesesimp>我们的队伍。</Chinesesimp>
+            <Chinese>我們的隊伍。</Chinese>
+        </Key> 
          <Key ID="STR_MRTM_welcomeInteract_04">
             <Original>Our Discord.</Original>
             <English>Our Discord.</English>
