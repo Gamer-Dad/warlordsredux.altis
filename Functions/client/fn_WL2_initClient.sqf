@@ -61,6 +61,7 @@ BIS_fnc_WL2_timer = compileFinal preprocessFileLineNumbers "Functions\client\fn_
 BIS_fnc_WL2_wasMain = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_wasMain.sqf";
 BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_welcome.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
+BIS_fnc_WL2_factionBasedPlayerInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedPlayerInit.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
@@ -263,5 +264,5 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
-player linkItem"Integrated_NVG_TI_0_F";
-player addPrimaryWeaponItem "muzzle_snds_H";
+
+0 spawn BIS_fnc_WL2_factionBasedPlayerInit;

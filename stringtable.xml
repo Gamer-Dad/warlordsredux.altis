@@ -1008,21 +1008,21 @@
             <Chinese>請先閱讀如何玩</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_22">
-            <Original>Lead Developer:</Original>
-            <English>Lead Developer:</English>
-            <Czech>Vedoucí vývojář:</Czech>
-            <French>Chef de développement :</French>
-            <German>Leitender Entwickler:</German>
-            <Italian>Responsabile dello sviluppo:</Italian>
-            <Polish>Kierownik programisty:</Polish>
-            <Portuguese>Líder de Desenvolvimento:</Portuguese>
-            <Russian>Главный разработчик:</Russian>
-            <Spanish>Desarrollador Líder:</Spanish>
-            <Turkish>Öncü Geliştirici:</Turkish>
-            <Korean>주요 개발자:</Korean>
-            <Japanese>リードデベロッパー：</Japanese>
-            <Chinesesimp>主要开发人员：</Chinesesimp>
-            <Chinese>主要開發人員：</Chinese>
+            <Original>Contributors to Development:</Original>
+            <English>Contributors to Development:</English>
+            <Czech>VPřispěvatelé k rozvoji:</Czech>
+            <French>Contributeurs au développement:</French>
+            <German>Mitwirkende an der Entwicklung:</German>
+            <Italian>Contributori allo sviluppo:</Italian>
+            <Polish>Współautorzy Rozwoju:</Polish>
+            <Portuguese>Contribuintes para o Desenvolvimento:</Portuguese>
+            <Russian>Вклад в развитие:</Russian>
+            <Spanish>Contribuyentes al desarrollo:</Spanish>
+            <Turkish>Gelişime Katkıda Bulunanlar:</Turkish>
+            <Korean>개발에 기여한 사람들:</Korean>
+            <Japanese>開発への貢献者：</Japanese>
+            <Chinesesimp>发展贡献者：</Chinesesimp>
+            <Chinese>發展貢獻者：</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
             <Original></Original>
