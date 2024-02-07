@@ -22,4 +22,5 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
-0 spawn BIS_fnc_WL2_factionBasedPlayerInit;
+player linkItem"Integrated_NVG_TI_0_F";
+player addPrimaryWeaponItem "muzzle_snds_H";

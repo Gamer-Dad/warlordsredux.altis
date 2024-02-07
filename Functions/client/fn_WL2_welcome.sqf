@@ -94,6 +94,7 @@ while {dialog} do {
 			_gearKey = actionKeysNames "cycleThrownItems";
 			_settingsKey = actionKeysNames "user2";
 			_groupKey = actionKeysNames "user3";
+
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_02", lineBreak, 
 			"", lineBreak,
@@ -115,22 +116,21 @@ while {dialog} do {
 		case "theCom": { 
 			_control ctrlSetStructuredText composeText [
 			localize "STR_MRTM_welcomeInteract_03", lineBreak,
-			localize "STR_MRTM_welcomeInteract_15", lineBreak,
 			"", lineBreak,
-			"Special thanks to:", lineBreak,
-			"- Dwarden", lineBreak,
-			"From Bohemia Interactive", lineBreak,
+			localize "STR_MRTM_welcomeInteract_15", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_16", lineBreak,
 			"- Gamerdad", lineBreak,
+			"- TenPenny", lineBreak,
+			"- Dwarden", lineBreak,
 			"- Witch Doctor", lineBreak,
 			"- JWalker08", lineBreak,
 			"", lineBreak,
-			localize "STR_MRTM_welcomeInteract_17", lineBreak,
-			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_22", lineBreak,
 			"- MrThomasM", lineBreak,
-			"- Korbelz", lineBreak,
+			"", lineBreak,
+			localize "STR_MRTM_welcomeInteract_17", lineBreak,
+			"", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_18", lineBreak,
 			"- Coffee", lineBreak,
