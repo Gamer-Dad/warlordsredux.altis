@@ -1,13 +1,18 @@
 params ["_class", "_cost"];
 
-player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
+/*
+Removed all refs to BIS_WL_isOrdering in this file because it was causing an error on the server "Order in progress"
+See Line 149 in purchaseMenuAssetAvailability func.
+Leaving the code as a ref if its needed again in the future. 
+*/
+//player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
 
 if (_class isKindOf "Man") then {
 	_asset = (group player) createUnit [_class, (getPosATL player), [], 2, "NONE"];
 	_asset setVariable ["BIS_WL_ownerAsset", getPlayerUID player, [2, clientOwner]];
 	[player, "orderAI", _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	[_asset, player] spawn BIS_fnc_WL2_newAssetHandle;
-	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
+	//player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 } else {
 	BIS_WL_currentSelection = 9;
 
@@ -77,7 +82,7 @@ if (_class isKindOf "Man") then {
 	} else {
 		"Canceled" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
-		player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
+		//player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 	};
 
 	if (BIS_WL_currentSelection == 9) then {

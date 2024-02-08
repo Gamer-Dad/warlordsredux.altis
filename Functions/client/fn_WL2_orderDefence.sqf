@@ -2,7 +2,13 @@
 
 params ["_class", "_cost", "_offset"];
 
-player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
+/*
+Removed all refs to BIS_WL_isOrdering in this file because it was causing an error on the server "Order in progress"
+See Line 149 in purchaseMenuAssetAvailability func.
+Leaving the code as a ref if its needed again in the future. 
+*/
+//player setVariable ["BIS_WL_isOrdering", true, [2, clientOwner]];
+
 if (count _offset != 3) then {
 	_offset = [0, 1.5, 0];
 };
@@ -79,7 +85,7 @@ if (BIS_WL_spacePressed) then {
 } else {
 	"Canceled" call BIS_fnc_WL2_announcer;
 	[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
-	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
+	//player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 };
 
 if (BIS_WL_currentSelection == WL_ID_SELECTION_DEPLOYING_DEFENCE) then {
