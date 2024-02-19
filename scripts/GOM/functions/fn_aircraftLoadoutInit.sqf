@@ -188,11 +188,9 @@ GOM_fnc_setPylonLoadoutLBPylonsUpdate = {
 
 	lbClear 1501;
 	{
-		if !(["dummy", _x] call BIS_fnc_inString) then {
-			lbAdd [1501,_x];
-			lbsetData [1501,_foreachIndex,_x];
-		};
-	} forEach _validPylons;
+		lbAdd [1501,_x];
+		lbsetData [1501,_foreachIndex,_x];
+	} forEach (_validPylons select {!(["dummy", _x] call BIS_fnc_inString)});
 
 	_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
 	if (_colorConfigs isequalto []) then {
@@ -268,7 +266,7 @@ GOM_fnc_properWeaponRemoval = {
 	systemchat format ["2Checking for %1",_weaponToCheck];
 	if (count (_pylonweapons select {_x isEqualTo _weaponToCheck}) isEqualTo 1) then {
 		_veh removeWeaponGlobal _weaponToCheck;
-		Systemchat ("Removed " + _weaponToCheck)
+		Systemchat ("Removed " + _weaponToCheck);
 	};
 };
 
