@@ -973,7 +973,7 @@ GOM_fnc_aircraftLoadout = {
 	buttonSetAction [1604, format ["%1 call GOM_fnc_setPylonsReArm;", _getvar]];
 	buttonSetAction [1605, format ["%1 call GOM_fnc_setPylonOwner;", _getvar]];
 	buttonSetAction [1609, "lbclear 1502; lbSetCurSel [1502,-1]; lbclear 1501; lbSetCurSel [1501,-1]; lbclear 1500; lbSetCurSel [1500,-1];"];
-	buttonSetAction [1610, format ["%1 call GOM_fnc_setPylonPriority;", _getvar]];
+	buttonSetAction [1610, format ["[%1] call GOM_fnc_setPylonPriority",_getvar]];
 
 	findDisplay 66 displayAddEventHandler ["KeyDown", {
 		finddisplay 66 setVariable ["GOM_fnc_keyDown", _this]; 
