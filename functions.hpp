@@ -73,4 +73,12 @@ class CfgFunctions {
 			class SAMmaneuver {};
 		};
 	};
+	class Fxr {
+		class init
+		{
+			file = "scripts\Fxr";
+			class openReportMenu {};
+			class closeReportMenu {};
+		};
+	}
 };

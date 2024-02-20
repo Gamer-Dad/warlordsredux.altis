@@ -1041,6 +1041,18 @@ class MRTM_settingsMenu
 			font = "PuristaMedium";
 			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn MRTM_fnc_openDebugMenu;";
 		};
+		class MRTMReportButton: RscButtonMRTM
+		{
+			idc = 1609;
+			text = "REPORT";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.6 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action =  "(findDisplay 8000) closeDisplay 1; 0 spawn Fxr_fnc_openReportMenu;";
+		};
 	};
 };
 
@@ -1413,6 +1425,85 @@ class MRTM_debugMenu
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
 			action = "[player, (ctrlText 2002)] spawn MRTM_fnc_execCode;";
+		};
+	};
+};
+class Fxr_ReportDialog
+{
+	idd = 73000;//Idd & idc's should be replaced, temporary only until proper range is assigned.
+
+	class Controls
+	{
+		class MRTMReportBackground: IGUIBackMRTM
+		{
+			idc = 73001;
+			colorBackground[] = {0,0,0,0.75};
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.2646 * safezoneH + safezoneY;
+			w = 0.20375 * safezoneW;
+			h = 0.517 * safezoneH;
+		};
+		class MRTMReportHeaderBackground: IGUIBackMRTM
+		{
+			idc = 73002;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.20375 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+		class MRTMReportHeaderTextLeft: RscStructuredTextMRTM
+		{
+			idc = 73003;
+			text = "Report menu";
+			colorBackground[] = {0,0,0,0};
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.235 * safezoneH + safezoneY;
+			w = 0.154687 * safezoneW;
+			h = 0.033 * safezoneH;
+			class Attributes
+			{
+				font = "PuristaMedium";
+				color = "#ffffff";
+				colorLink = "#D09B43";
+				align = "left";
+				shadow = 1;
+			};
+		};
+		class MRTMReportList: RscListBoxMRTM
+		{
+			idc = 73004;
+			deletable = 0;
+			canDrag = 0;
+			color[] = {0,1,0,1};
+			type = CT_LISTBOX;
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.265 * safezoneH + safezoneY;
+			w = 0.203981 * safezoneW;
+			h = 0.496 * safezoneH;
+			autoScrollSpeed = -1;
+			autoScrollDelay = 5;
+			autoScrollRewind = 0;
+			class ListScrollBar{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+			};
+			style = LB_TEXTURES;
+		};
+		class MRTMReportCloseButton: RscButtonMRTM
+		{
+			idc = 73005;
+			text = "CLOSE";
+			sizeEx = "0.021 / (getResolution select 5)";
+			x = 0.38836 * safezoneW + safezoneX;
+			y = 0.786 * safezoneH + safezoneY;
+			w = 0.0567187 * safezoneW;
+			h = 0.022 * safezoneH;
+			font = "PuristaMedium";
+			action = "0 spawn Fxr_fnc_closeReportMenu;0 spawn MRTM_fnc_openMenu;";
 		};
 	};
 };
