@@ -12,6 +12,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		if (count _posFinal == 0) then {
 			_posFinal = _pos1;
 		};
+		//systemchat format ["Code block #1 run, Spawned: %1", _class];
 		_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
 		_grp = createVehicleCrew _asset;
 		_grp deleteGroupWhenEmpty true;
@@ -38,7 +39,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 				_spawnPos = _pos;
 			};
 		};
-
+		//systemchat format ["Code block #2 run, Spawned: %1", _class];
 		_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 		_grp = createVehicleCrew _asset;
 		_grp deleteGroupWhenEmpty true;
@@ -68,7 +69,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 				_spawnPos = _pos;
 			};
 		};
-
+		//systemchat format ["Code block #3 run, Spawned: %1", _class];
 		_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 		_asset setDir _dir;
 	} else {
@@ -82,10 +83,10 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 				_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
 				_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 				_posFinal = _pos1 findEmptyPosition [0, 20, _class];
-				_asset = createVehicle [_class, _posFinal, [], 5, "NONE"];
+				//systemchat format ["Code block #4 run, Spawned: %1", _class]; //Heli spawn code
+				_asset = createVehicle [_class, _posFinal, [], 1, "NONE"];
 				_asset setDir 0;
-				_pos2 = getPosATL _asset;
-				_asset setVehiclePosition [[_pos2 # 0, _pos2 # 1, ((_pos2 # 2) + 0.5)], [], 0, "CAN_COLLIDE"];
+								
 			} else {
 				private _sector = ((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0;
 				private _taxiNodes = _sector getVariable "BIS_WL_runwaySpawnPosArr";
@@ -104,7 +105,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 						_spawnPos = _pos;
 					};
 				};
-
+				//systemchat format ["Code block #5 run, Spawned: %1", _class];
 				_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 				_asset setDir _dir;
 			};
