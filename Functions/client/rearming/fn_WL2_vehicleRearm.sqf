@@ -61,7 +61,7 @@ liveryTimeout = time;
 		{
 			_asset setObjectTextureGlobal [_forEachIndex, _x];
 		} forEach getArray (configfile >> "CfgVehicles" >> (typeOf _asset) >> "TextureSources" >> _texture >> "textures");
-		liveryTimeout = liveryTimeout + 10;
+		liveryTimeout = liveryTimeout + 1;
 	};
 }];
 

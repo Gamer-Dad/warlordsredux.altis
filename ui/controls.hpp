@@ -214,7 +214,7 @@ class rearmMenu
 		class MRTMRearmCamoText: RscStructuredTextMRTM
 		{
 			idc = 1100;
-			text = "Cammo Netting:";
+			text = "Camo Netting:";
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
@@ -274,11 +274,19 @@ class rearmMenu
 		class MRTMRearmLiveryText: RscStructuredTextMRTM
 		{
 			idc = 1102;
-			text = "Liveries: Soon™";
+			text = "Liveries:";
 			x = 0.577344 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
 			h = 0.033 * safezoneH;
+		};
+		class MRTMRearmLiveryList: RscListboxMRTM
+		{
+			idc = 1502;
+			x = 0.577344 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
+			h = 0.187 * safezoneH;
 		};
 		class RscFrame_1800: RscFrameMRTM
 		{
@@ -331,7 +339,7 @@ class rearmMenu
 			w = 0.139219 * safezoneW;
 			h = 0.187 * safezoneH;
 		};
-		class MRTMRearmLiveryClassified: RscPictureMRTM
+		/*class MRTMRearmLiveryClassified: RscPictureMRTM
 		{
 			idc = 69691;
 			text = "img\classified_ca.paa";
@@ -341,7 +349,7 @@ class rearmMenu
 			y = 0.302 * safezoneH + safezoneY;
 			w = 0.139219 * safezoneW;
 			h = 0.187 * safezoneH;
-		};
+		};*/
 	};
 };
 
