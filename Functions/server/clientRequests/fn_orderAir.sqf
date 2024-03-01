@@ -84,7 +84,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 				_pos1 = (_array # (_array findIf {(((abs ([_x, 0] call BIS_fnc_terrainGradAngle)) < 5) && ((abs ([_x, 90] call BIS_fnc_terrainGradAngle)) < 5))}));
 				_posFinal = _pos1 findEmptyPosition [0, 20, _class];
 				//systemchat format ["Code block #4 run, Spawned: %1", _class]; //Heli spawn code
-				_asset = createVehicle [_class, _posFinal, [], 1, "NONE"];
+				_asset = createVehicle [_class, _posFinal, [], 0, "NONE"];
 				_asset setDir 0;
 								
 			} else {
