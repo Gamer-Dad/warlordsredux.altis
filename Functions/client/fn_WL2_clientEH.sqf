@@ -59,6 +59,7 @@ player addEventHandler ["Killed", {
 	if (_connectedUAV != objNull) exitWith {
 		player connectTerminalToUAV objNull;
 	};
+	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 }];
 
 player addEventHandler ["HandleDamage", {
