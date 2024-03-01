@@ -889,21 +889,21 @@
             <Chinese>%1 - 在聊天中显示你的APS。</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_15">
-            <Original>The War Sim Vets community organizes arma 3 events and works on the Warlords Redux project know as EU#11.</Original>
-            <English>The War Sim Vets community organizes arma 3 events and works on the Warlords Redux project know as EU#11.</English>
-            <Czech>Komunita War Sim Vets organizuje akce v rámci hry Arma 3 a pracuje na projektu Warlords Redux známém jako EU#11.</Czech>
-            <French>La communauté War Sim Vets organise des événements Arma 3 et travaille sur le projet Warlords Redux connu sous le nom de EU#11.</French>
-            <German>Die War Sim Vets Community organisiert Arma 3-Events und arbeitet an dem Warlords Redux-Projekt, das als EU#11 bekannt ist.</German>
-            <Italian>La comunità War Sim Vets organizza eventi di Arma 3 e lavora sul progetto Warlords Redux conosciuto come EU#11.</Italian>
-            <Polish>Społeczność War Sim Vets organizuje wydarzenia Arma 3 i pracuje nad projektem Warlords Redux znanym jako EU#11.</Polish>
-            <Portuguese>A comunidade War Sim Vets organiza eventos Arma 3 e trabalha no projeto Warlords Redux conhecido como EU#11.</Portuguese>
-            <Russian>Сообщество War Sim Vets организует мероприятия в Arma 3 и работает над проектом Warlords Redux, известным как EU#11.</Russian>
-            <Spanish>La comunidad War Sim Vets organiza eventos de Arma 3 y trabaja en el proyecto Warlords Redux conocido como EU#11.</Spanish>
-            <Turkish>War Sim Vets topluluğu, Arma 3 etkinlikleri düzenlemekte ve EU#11 olarak bilinen Warlords Redux projesi üzerinde çalışmaktadır.</Turkish>
-            <Korean>War Sim Vets 커뮤니티는 Arma 3 이벤트를 조직하고 EU#11으로 알려진 Warlords Redux 프로젝트에 참여합니다.</Korean>
-            <Japanese>War Sim VetsコミュニティはArma 3のイベントを開催し、EU#11として知られるWarlords Reduxプロジェクトに取り組んでいます。</Japanese>
-            <Chinesesimp>War Sim Vets社区组织Arma 3活动，并参与以EU＃11为代号的Warlords Redux项目。</Chinesesimp>
-            <Chinese>War Sim Vets社区组织Arma 3活动，并参与以EU＃11为代号的Warlords Redux项目。</Chinese>
+            <Original>The Warlord Redux Project also known as EU#11 is actively being worked on by the WarSim Vets Community. They also Organize different Arma 3 Events.</Original>
+            <English>The Warlord Redux Project also known as EU#11 is actively being worked on by the WarSim Vets Community. They also Organize different Arma 3 Events.</English>
+            <Czech>Warlord Redux Project známý také jako EU#11 aktivně pracuje na WarSim Vets Community. Také organizují různé akce Arma 3.</Czech>
+            <French>Le projet Warlord Redux, également connu sous le nom d'EU#11, est activement travaillé par la communauté WarSim Vets. Ils organisent également différents événements Arma 3.</French>
+            <German>Das Warlord Redux-Projekt, auch bekannt als EU#11, wird von der WarSim Vets Community aktiv bearbeitet. Sie organisieren auch verschiedene Arma 3-Events.</German>
+            <Italian>Il progetto Warlord Redux, noto anche come EU#11, è stato attivamente sviluppato dalla community di WarSim Vets. Organizzano anche diversi eventi Arma 3.</Italian>
+            <Polish>Społeczność weteranów WarSim aktywnie pracuje nad projektem Warlord Redux, znanym również jako EU#11. Organizują także różne wydarzenia związane z Arma 3.</Polish>
+            <Portuguese>O Projeto Warlord Redux, também conhecido como EU#11, está sendo trabalhado ativamente pela comunidade WarSim Vets. Eles também organizam diferentes eventos do Arma 3.</Portuguese>
+            <Russian>Проект Warlord Redux, также известный как EU#11, активно разрабатывается сообществом WarSim Vets. Они также организуют различные мероприятия по Arma 3.</Russian>
+            <Spanish>La comunidad WarSim Vets está trabajando activamente en el proyecto Warlord Redux, también conocido como EU#11. También organizan diferentes eventos de Arma 3.</Spanish>
+            <Turkish>EU#11 olarak da bilinen Warlord Redux Projesi üzerinde WarSim Vets Topluluğu tarafından aktif olarak çalışılıyor. Ayrıca farklı Arma 3 Etkinlikleri de düzenliyorlar.</Turkish>
+            <Korean>EU#11로도 알려진 Warlord Redux 프로젝트는 WarSim Vets 커뮤니티에서 활발히 진행되고 있습니다. 그들은 또한 다양한 Arma 3 이벤트를 조직합니다.</Korean>
+            <Japanese>EU#11 としても知られる Warlord Redux プロジェクトは、WarSim Vets Community によって積極的に取り組んでいます。また、さまざまな Arma 3 イベントも主催しています。</Japanese>
+            <Chinesesimp>Warlord Redux 项目（也称为 EU#11）正在由 WarSim Vets 社区积极开展。他们还组织不同的 Arma 3 活动。</Chinesesimp>
+            <Chinese>Warlord Redux 計畫（也稱為 EU#11）正在由 WarSim Vets 社群積極進行。他們也組織不同的 Arma 3 活動。</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_16">
             <Original>Project Managers:</Original>
@@ -1008,21 +1008,21 @@
             <Chinese>請先閱讀如何玩</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_22">
-            <Original>Contributors to Development:</Original>
-            <English>Contributors to Development:</English>
-            <Czech>VPřispěvatelé k rozvoji:</Czech>
-            <French>Contributeurs au développement:</French>
-            <German>Mitwirkende an der Entwicklung:</German>
-            <Italian>Contributori allo sviluppo:</Italian>
-            <Polish>Współautorzy Rozwoju:</Polish>
-            <Portuguese>Contribuintes para o Desenvolvimento:</Portuguese>
-            <Russian>Вклад в развитие:</Russian>
-            <Spanish>Contribuyentes al desarrollo:</Spanish>
-            <Turkish>Gelişime Katkıda Bulunanlar:</Turkish>
-            <Korean>개발에 기여한 사람들:</Korean>
-            <Japanese>開発への貢献者：</Japanese>
-            <Chinesesimp>发展贡献者：</Chinesesimp>
-            <Chinese>發展貢獻者：</Chinese>
+            <Original>Project Contributors:</Original>
+            <English>Project Contributors:</English>
+            <Czech>Přispěvatelé projektu:</Czech>
+            <French>Contributeurs du projet:</French>
+            <German>Mitwirkende am Projekt:</German>
+            <Italian>Collaboratori del progetto:</Italian>
+            <Polish>Udział w projekcie:</Polish>
+            <Portuguese>Colaboradores do Projeto:</Portuguese>
+            <Russian>Участники проекта:</Russian>
+            <Spanish>Colaboradores del proyecto:</Spanish>
+            <Turkish>Projeye Katkıda Bulunanlar:</Turkish>
+            <Korean>프로젝트 참여자:</Korean>
+            <Japanese>プロジェクトの貢献者：</Japanese>
+            <Chinesesimp>项目贡献者：</Chinesesimp>
+            <Chinese>專案貢獻者：</Chinese>
         </Key>
         <Key ID="STR_MRTM_welcomeInteract_Scripts_01">
             <Original></Original>
