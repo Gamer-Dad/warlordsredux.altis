@@ -178,13 +178,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3552.104,8.5744362,12993.334};
-				angles[]={6.2645278,0,0.078504913};
+				position[]={3609.9597,11.929087,13023.638};
+				angles[]={0.046633169,0,0.027993103};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Kavala""];";
 			id=2;
 			type="Logic";
-			atlOffset=-9.5367432e-007;
 		};
 		class Item3
 		{
@@ -303,13 +302,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14282.075,4.7112117,13018.305};
-				angles[]={6.2605309,0,0.047961645};
+				position[]={14219.649,7.7074194,12993.695};
+				angles[]={0.10626491,0,6.249866};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W"",""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"",  ""Sagonisi Base""];";
 			id=13;
 			type="Logic";
-			atlOffset=-4.7683716e-007;
 		};
 		class Item13
 		{
@@ -731,8 +729,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={21837.842,28.187908,20997.906};
-				angles[]={5.8832955,0,6.1076751};
+				position[]={21868.98,46.340832,21101.896};
+				angles[]={5.9212041,0,6.1703343};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Ghost Hotel""];";
 			id=48;
@@ -817,8 +815,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11741.672,12.791423,13692.854};
-				angles[]={6.2605309,0,0.011990411};
+				position[]={11718.306,13.224345,13747.712};
+				angles[]={6.2698536,0,6.2685208};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Katalaki""];";
 			id=55;
@@ -841,13 +839,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7109.8091,3.5631397,11081.518};
-				angles[]={0.0053407075,0,6.2591867};
+				position[]={7095.2627,4.0355291,11113.123};
+				angles[]={0.0026520467,0,6.247201};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", TRUE]; this setVariable [""BIS_WL_name"", ""Edessa""];";
 			id=58;
 			type="Logic";
-			atlOffset=2.3841858e-007;
 		};
 		class Item57
 		{
@@ -902,8 +899,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={17873.383,2.6348314,18092.125};
-				angles[]={0.066566855,0,0.041311946};
+				position[]={17893.037,4.9055591,18070.725};
+				angles[]={0.037316564,0,0.017332481};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Kalithea""];";
 			id=63;
@@ -962,16 +959,15 @@ class Mission
 		class Item66
 		{
 			dataType="Trigger";
-			position[]={3554.01,8.7109518,12992.615};
-			angle=4.8350835;
+			position[]={3611.866,12.016004,13022.919};
+			angle=4.8350844;
 			class Attributes
 			{
-				sizeA=300;
-				sizeB=300;
+				sizeA=280;
+				sizeB=280;
 			};
 			id=68;
 			type="EmptyDetector";
-			atlOffset=-9.5367432e-007;
 		};
 		class Item67
 		{
@@ -1030,7 +1026,7 @@ class Mission
 		class Item71
 		{
 			dataType="Trigger";
-			position[]={7109.0718,3.9039803,11098.631};
+			position[]={7094.5254,5.158741,11130.236};
 			angle=3.3264744;
 			class Attributes
 			{
@@ -1039,7 +1035,7 @@ class Mission
 			};
 			id=75;
 			type="EmptyDetector";
-			atlOffset=0.36099982;
+			atlOffset=0.36100006;
 		};
 		class Item72
 		{
@@ -1125,12 +1121,12 @@ class Mission
 		class Item78
 		{
 			dataType="Trigger";
-			position[]={11740.949,12.755133,13691.635};
+			position[]={11717.583,13.186495,13746.493};
 			angle=2.1149371;
 			class Attributes
 			{
-				sizeA=225;
-				sizeB=225;
+				sizeA=215;
+				sizeB=215;
 			};
 			id=82;
 			type="EmptyDetector";
@@ -1287,11 +1283,11 @@ class Mission
 		class Item90
 		{
 			dataType="Trigger";
-			position[]={14281.4,4.795608,13014.252};
+			position[]={14217.416,8.1626253,12990.243};
 			class Attributes
 			{
-				sizeA=175;
-				sizeB=175;
+				sizeA=110;
+				sizeB=80;
 				isRectangle=1;
 			};
 			id=96;
@@ -1300,11 +1296,11 @@ class Mission
 		class Item91
 		{
 			dataType="Trigger";
-			position[]={12475.557,12.286667,14387.541};
-			angle=1.1467375;
+			position[]={12475.557,12.286588,14387.54};
+			angle=1.1467338;
 			class Attributes
 			{
-				sizeA=250;
+				sizeA=245;
 				sizeB=300;
 				isRectangle=1;
 			};
@@ -1487,12 +1483,12 @@ class Mission
 		class Item105
 		{
 			dataType="Trigger";
-			position[]={17873.383,2.8533301,18088.85};
-			angle=5.4449768;
+			position[]={17894.668,5.0654225,18066.947};
+			angle=5.444973;
 			class Attributes
 			{
-				sizeA=175;
-				sizeB=125;
+				sizeA=165;
+				sizeB=115;
 			};
 			id=113;
 			type="EmptyDetectorAreaR250";
@@ -1740,7 +1736,7 @@ class Mission
 		class Item124
 		{
 			dataType="Trigger";
-			position[]={21835.104,25.028345,20987.486};
+			position[]={21866.242,43.941792,21091.477};
 			angle=3.0318987;
 			class Attributes
 			{
@@ -1749,7 +1745,7 @@ class Mission
 			};
 			id=134;
 			type="EmptyDetectorAreaR50";
-			atlOffset=0.16545486;
+			atlOffset=0.16545868;
 		};
 		class Item125
 		{
@@ -1864,23 +1860,22 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14999.512,5.8212986,11157.252};
-				angles[]={0,0,6.2805324};
+				position[]={14992.151,5.7471995,11161.648};
+				angles[]={0.055941612,0,0.0013372133};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"", ""Faronaki""];";
 			id=209;
 			type="Logic";
-			atlOffset=-4.7683716e-007;
 		};
 		class Item134
 		{
 			dataType="Trigger";
-			position[]={14999.145,5.8222804,11156.754};
+			position[]={14991.784,5.774601,11161.15};
 			angle=1.1467338;
 			class Attributes
 			{
-				sizeA=150;
-				sizeB=150;
+				sizeA=140;
+				sizeB=140;
 			};
 			id=210;
 			type="EmptyDetectorAreaR250";
@@ -2395,8 +2390,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3363.043,1.9447364,12619.016};
-				angles[]={0.021327924,0,0.055937801};
+				position[]={3447.1458,7.9502325,12598.907};
+				angles[]={0.06656827,0,0.091741994};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Kavala Beach""];";
 			id=657;
@@ -2405,7 +2400,7 @@ class Mission
 		class Item149
 		{
 			dataType="Trigger";
-			position[]={3357.645,1.7057458,12616.854};
+			position[]={3441.7478,7.706882,12596.745};
 			angle=2.1149371;
 			class Attributes
 			{
@@ -2414,6 +2409,7 @@ class Mission
 			};
 			id=658;
 			type="EmptyDetector";
+			atlOffset=9.5367432e-007;
 		};
 		class Item150
 		{
@@ -2522,7 +2518,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="76561198034106257";
+							value="76561198865298977";
 						};
 					};
 				};
@@ -7456,8 +7452,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3411.3982,6.7196693,12600.588};
-				angles[]={6.2751846,4.67314,0.085126832};
+				position[]={3495.501,15.810869,12580.479};
+				angles[]={0.022662206,4.67314,0.087773547};
 			};
 			side="Empty";
 			flags=4;
@@ -7466,7 +7462,7 @@ class Mission
 			};
 			id=1037;
 			type="I_LT_01_cannon_F";
-			atlOffset=-0.0055298805;
+			atlOffset=-0.001168251;
 		};
 		class Item255
 		{
@@ -8668,18 +8664,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={21411.619,13.884154,10908.675};
-				angles[]={6.2791882,0,0.012007865};
+				position[]={21402.406,14.201535,10922.126};
+				angles[]={6.215291,0,6.2805333};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]];this setVariable [""BIS_WL_name"",  ""Aktinarki Ruins""];";
 			id=1408;
 			type="Logic";
-			atlOffset=9.5367432e-007;
 		};
 		class Item303
 		{
 			dataType="Trigger";
-			position[]={21418.842,14.325654,10913.835};
+			position[]={21409.629,14.50912,10927.286};
 			angle=5.4110422;
 			class Attributes
 			{
@@ -8689,6 +8684,7 @@ class Mission
 			};
 			id=1409;
 			type="EmptyDetector";
+			atlOffset=9.5367432e-007;
 		};
 		class Item304
 		{
@@ -8848,23 +8844,22 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={28261.391,21.724054,25717.078};
-				angles[]={0.033318337,0,6.154572};
+				position[]={28245.98,23.415997,25686.795};
+				angles[]={6.2525272,0,6.1993828};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Cape Strigla""];";
 			id=1424;
 			type="Logic";
-			atlOffset=-1.9073486e-006;
 		};
 		class Item317
 		{
 			dataType="Trigger";
-			position[]={28281.4,19.440104,25709.576};
+			position[]={28256.432,22.457172,25683.475};
 			angle=2.1149371;
 			class Attributes
 			{
-				sizeA=150;
-				sizeB=150;
+				sizeA=145;
+				sizeB=145;
 			};
 			id=1425;
 			type="EmptyDetector";
@@ -8874,8 +8869,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={27857.205,2.1448901,23685.689};
-				angles[]={0.055937801,0,0.033318337};
+				position[]={27776.461,5.7297363,23655.65};
+				angles[]={0.073199101,0,6.224577};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Polemistia""];";
 			id=1426;
@@ -8884,12 +8879,12 @@ class Mission
 		class Item319
 		{
 			dataType="Trigger";
-			position[]={27877.215,2.9531982,23678.188};
+			position[]={27796.471,5.0424905,23648.148};
 			angle=2.1149371;
 			class Attributes
 			{
-				sizeA=120;
-				sizeB=120;
+				sizeA=100;
+				sizeB=100;
 			};
 			id=1427;
 			type="EmptyDetector";
@@ -8960,7 +8955,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23715.822,5.3025584,16242.208};
-			angle=3.9814026;
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=160;
@@ -8974,19 +8969,18 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={24093.43,8.5661631,15508.136};
-				angles[]={6.244544,0,0.083810709};
+				position[]={24094.779,12.139956,15562.837};
+				angles[]={0.0053265258,0,6.2751846};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Cape Thelos""];";
 			id=1434;
 			type="Logic";
-			atlOffset=9.5367432e-007;
 		};
 		class Item327
 		{
 			dataType="Trigger";
-			position[]={24084.146,8.065012,15513.553};
-			angle=3.9814024;
+			position[]={24085.496,12.197335,15568.254};
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=140;
@@ -8995,6 +8989,7 @@ class Mission
 			};
 			id=1435;
 			type="EmptyDetectorAreaR250";
+			atlOffset=9.5367432e-007;
 		};
 		class Item328
 		{
@@ -9049,7 +9044,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20100.211,18.242836,20049.061};
-			angle=3.9814026;
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=140;
@@ -9098,7 +9093,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={17066.727,23.887089,11332.563};
-			angle=3.9814026;
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=140;
@@ -9112,8 +9107,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={18432.156,4.1594582,8110.9121};
-				angles[]={6.2725215,0,6.2299004};
+				position[]={18507.322,12.65907,8136.8154};
+				angles[]={0.0080009829,0,0.017332481};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Livadi""];";
 			id=1446;
@@ -9122,7 +9117,7 @@ class Mission
 		class Item338
 		{
 			dataType="Trigger";
-			position[]={18432.229,4.0721951,8108.1309};
+			position[]={18507.395,12.68259,8134.0342};
 			angle=2.2371621;
 			class Attributes
 			{
@@ -9131,6 +9126,7 @@ class Mission
 			};
 			id=1447;
 			type="EmptyDetector";
+			atlOffset=-9.5367432e-007;
 		};
 		class Item339
 		{
@@ -9174,7 +9170,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.05529,7274.6084};
-			angle=3.9814024;
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=140;
@@ -9188,8 +9184,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={21796.664,6.1150885,6277.0752};
-				angles[]={6.2605309,0,6.166388};
+				position[]={21761.957,15.817354,6313.2988};
+				angles[]={6.2805333,0,0.0026520467};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]];this setVariable [""BIS_WL_name"",  ""The Mazi Bouys""];";
 			id=1452;
@@ -9198,7 +9194,7 @@ class Mission
 		class Item344
 		{
 			dataType="Trigger";
-			position[]={21772.818,12.224751,6276.4912};
+			position[]={21738.111,15.608647,6312.7148};
 			angle=3.6683314;
 			class Attributes
 			{
@@ -9208,6 +9204,7 @@ class Mission
 			};
 			id=1453;
 			type="EmptyDetector";
+			atlOffset=9.5367432e-007;
 		};
 		class Item345
 		{
@@ -9225,7 +9222,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814026;
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=110;
@@ -9238,7 +9235,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={20896.932,2.5875392,14628.845};
-			angle=3.9814026;
+			angle=3.9814017;
 			class Attributes
 			{
 				sizeA=180;

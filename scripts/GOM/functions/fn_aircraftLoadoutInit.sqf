@@ -188,11 +188,9 @@ GOM_fnc_setPylonLoadoutLBPylonsUpdate = {
 
 	lbClear 1501;
 	{
-		if !(["dummy", _x] call BIS_fnc_inString) then {
-			lbAdd [1501,_x];
-			lbsetData [1501,_foreachIndex,_x];
-		};
-	} forEach _validPylons;
+		lbAdd [1501,_x];
+		lbsetData [1501,_foreachIndex,_x];
+	} forEach (_validPylons select {!(["dummy", _x] call BIS_fnc_inString)});
 
 	_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
 	if (_colorConfigs isequalto []) then {
@@ -268,7 +266,7 @@ GOM_fnc_properWeaponRemoval = {
 	systemchat format ["2Checking for %1",_weaponToCheck];
 	if (count (_pylonweapons select {_x isEqualTo _weaponToCheck}) isEqualTo 1) then {
 		_veh removeWeaponGlobal _weaponToCheck;
-		Systemchat ("Removed " + _weaponToCheck)
+		Systemchat ("Removed " + _weaponToCheck);
 	};
 };
 
@@ -973,7 +971,7 @@ GOM_fnc_aircraftLoadout = {
 	buttonSetAction [1604, format ["%1 call GOM_fnc_setPylonsReArm;", _getvar]];
 	buttonSetAction [1605, format ["%1 call GOM_fnc_setPylonOwner;", _getvar]];
 	buttonSetAction [1609, "lbclear 1502; lbSetCurSel [1502,-1]; lbclear 1501; lbSetCurSel [1501,-1]; lbclear 1500; lbSetCurSel [1500,-1];"];
-	buttonSetAction [1610, format ["%1 call GOM_fnc_setPylonPriority;", _getvar]];
+	buttonSetAction [1610, format ["[%1] call GOM_fnc_setPylonPriority",_getvar]];
 
 	findDisplay 66 displayAddEventHandler ["KeyDown", {
 		finddisplay 66 setVariable ["GOM_fnc_keyDown", _this]; 
