@@ -19,6 +19,7 @@ _asset spawn {
 _asset call BIS_fnc_getCamos;
 _asset call BIS_fnc_getHulls;
 _asset call BIS_fnc_getExtras;
+_asset call BIS_fnc_getLiveries;
 
 ((findDisplay 1000) displayCtrl 1501) ctrlAddEventHandler ["LBSelChanged", {
 	params ["_control", "_lbCurSel", "_lbSelection"];
@@ -48,6 +49,20 @@ _asset call BIS_fnc_getExtras;
 		_state = 1;
 	};
 	[_asset, _anim, _state, _lbCurSel, 1500] spawn BIS_fnc_animate;
+}];
+
+liveryTimeout = time;
+
+((findDisplay 1000) displayCtrl 1502) ctrlAddEventHandler ["LBSelChanged", {
+	params ["_control", "_lbCurSel", "_lbSelection"];
+	if (liveryTimeout < time) then {
+		_asset = assetGlbl;
+		_texture = ((parseSimpleArray (lbData [1502, _lbCurSel])) # 0);
+		{
+			_asset setObjectTextureGlobal [_forEachIndex, _x];
+		} forEach getArray (configfile >> "CfgVehicles" >> (typeOf _asset) >> "TextureSources" >> _texture >> "textures");
+		liveryTimeout = liveryTimeout + 1;
+	};
 }];
 
 ((findDisplay 1000) displayCtrl 1503) ctrlAddEventHandler ["LBSelChanged", {

@@ -61,6 +61,7 @@ BIS_fnc_WL2_timer = compileFinal preprocessFileLineNumbers "Functions\client\fn_
 BIS_fnc_WL2_wasMain = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_wasMain.sqf";
 BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_welcome.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
+BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
@@ -82,6 +83,7 @@ BIS_fnc_animate = compileFinal preprocessFileLineNumbers "Functions\client\rearm
 BIS_fnc_getCamos = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getCamos.sqf";
 BIS_fnc_getExtras = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getExtras.sqf";
 BIS_fnc_getHulls = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getHulls.sqf";
+BIS_fnc_getLiveries = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getLiveries.sqf";
 BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
@@ -263,5 +265,6 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		{[player, "10K"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];}
 	];
 };
-player linkItem"Integrated_NVG_TI_0_F";
-player addPrimaryWeaponItem "muzzle_snds_H";
+
+0 spawn BIS_fnc_WL2_factionBasedClientInit;
+
