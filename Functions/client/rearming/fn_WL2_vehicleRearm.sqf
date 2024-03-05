@@ -58,9 +58,19 @@ liveryTimeout = time;
 	if (liveryTimeout < time) then {
 		_asset = assetGlbl;
 		_texture = ((parseSimpleArray (lbData [1502, _lbCurSel])) # 0);
-		{
-			_asset setObjectTextureGlobal [_forEachIndex, _x];
-		} forEach getArray (configfile >> "CfgVehicles" >> (typeOf _asset) >> "TextureSources" >> _texture >> "textures");
+		_array = getArray (configfile >> "CfgVehicles" >> (typeOf _asset) >> "TextureSources" >> _texture >> "textures");
+		if ((count _array) > 0) then {
+			{
+				_asset setObjectTextureGlobal [_forEachIndex, _x];
+			} forEach _array;
+		} else {
+			if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
+				_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
+				_asset setObjectTextureGlobal [1, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa"];
+				_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa"];
+				_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
+			};
+		};
 		liveryTimeout = liveryTimeout + 1;
 	};
 }];
