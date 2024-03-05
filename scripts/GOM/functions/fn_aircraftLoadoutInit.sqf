@@ -180,7 +180,9 @@ GOM_fnc_updateDialog = {
 };
 
 GOM_fnc_setPylonLoadoutLBPylonsUpdate = {
-	params ["_obj"];
+	params ["_obj", "_index"];
+	_index = 0;
+	pylonTable = [];
 	if (lbCursel 1500 < 0) exitWith {false};
 
 	_veh = call compile  lbData [1500,lbcursel 1500];
@@ -188,9 +190,13 @@ GOM_fnc_setPylonLoadoutLBPylonsUpdate = {
 
 	lbClear 1501;
 	{
-		lbAdd [1501,_x];
-		lbsetData [1501,_foreachIndex,_x];
-	} forEach (_validPylons select {!(["dummy", _x] call BIS_fnc_inString)});
+		pylonTable set [_forEachIndex, _x];
+		if !(["dummy", _x] call BIS_fnc_inString) then {
+			lbAdd [1501,_x];
+			lbsetData [1501,_index, str _forEachIndex];
+			_index = _index + 1;
+		};
+	} forEach _validPylons;
 
 	_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
 	if (_colorConfigs isequalto []) then {
@@ -241,8 +247,8 @@ GOM_fnc_pylonInstallWeapon = {
 		playsound "Simulation_Fatal";
 		ctrlsetText [1400,str _maxAmount]
 	};
-	_pylonNum = lbCurSel 1501 + 1;
-	_pylonName = lbdata [1501,lbCurSel 1501];
+	_pylonNum = (parseNumber (lbdata [1501,lbCurSel 1501])) + 1;
+	_pylonName = pylonTable select (parseNumber (lbdata [1501,lbCurSel 1501]));
 	_check = _veh call GOM_fnc_rearmCheck;
 	_check params ["_abort","_text","_ammosource"];
 	if (_abort) exitWith {true};
@@ -320,7 +326,7 @@ GOM_fnc_installPylons = {
 		
 	_ammosource setvariable ["GOM_fnc_aircraftLoadoutBusyAmmoSource",false,true];
 	_checkOut = _veh getVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[]];
-	_checkOut deleteAt _pylonNum;
+	_checkOut deleteAt (_checkOut find _pylonNum);
 	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",_checkOut, [2, clientOwner]];
 	systemchat format ["Successfully installed %1 %2 on %3!",_finalAmount,_magDispName,_pylonName];
 	true;
@@ -354,7 +360,7 @@ GOM_fnc_clearAllPylons = {
 	_pylonWeapons = [];
 	{ _pylonWeapons append getArray (_x >> "weapons") } forEach ([_veh, configNull] call BIS_fnc_getTurrets);
 	{_veh removeWeaponGlobal _x} forEach ((weapons _veh) - _pylonWeapons);
-
+	_veh setVariable ["GOM_fnc_airCraftLoadoutPylonInstall",[], [2, clientOwner]];
 	systemchat "All pylons cleared!";
 	true;
 };
@@ -612,7 +618,7 @@ GOM_fnc_fillPylonsLB = {
 	if (lbCursel 1500 < 0) exitWith {false};
 
 	_veh = call compile  lbData [1500,lbcursel 1500];
-	_pylon = lbData [1501,lbcursel 1501];
+	_pylon = pylonTable select (parseNumber (lbdata [1501,lbCurSel 1501]));
 	_getCompatibles = getArray (configfile >> "CfgVehicles" >> typeof _veh >> "Components" >> "TransportPylonsComponent" >> "Pylons" >> _pylon >> "hardpoints");
 
 	if (_getCompatibles isEqualTo []) then {
