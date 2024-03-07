@@ -19,6 +19,7 @@ _asset spawn {
 _asset call BIS_fnc_getCamos;
 _asset call BIS_fnc_getHulls;
 _asset call BIS_fnc_getExtras;
+_asset call BIS_fnc_getLiveries;
 
 ((findDisplay 1000) displayCtrl 1501) ctrlAddEventHandler ["LBSelChanged", {
 	params ["_control", "_lbCurSel", "_lbSelection"];
@@ -48,6 +49,30 @@ _asset call BIS_fnc_getExtras;
 		_state = 1;
 	};
 	[_asset, _anim, _state, _lbCurSel, 1500] spawn BIS_fnc_animate;
+}];
+
+liveryTimeout = time;
+
+((findDisplay 1000) displayCtrl 1502) ctrlAddEventHandler ["LBSelChanged", {
+	params ["_control", "_lbCurSel", "_lbSelection"];
+	if (liveryTimeout < time) then {
+		_asset = assetGlbl;
+		_texture = ((parseSimpleArray (lbData [1502, _lbCurSel])) # 0);
+		_array = getArray (configfile >> "CfgVehicles" >> (typeOf _asset) >> "TextureSources" >> _texture >> "textures");
+		if ((count _array) > 0) then {
+			{
+				_asset setObjectTextureGlobal [_forEachIndex, _x];
+			} forEach _array;
+		} else {
+			if (typeOf _asset == "B_APC_Wheeled_03_cannon_F") then {
+				_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
+				_asset setObjectTextureGlobal [1, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa"];
+				_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa"];
+				_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
+			};
+		};
+		liveryTimeout = liveryTimeout + 1;
+	};
 }];
 
 ((findDisplay 1000) displayCtrl 1503) ctrlAddEventHandler ["LBSelChanged", {
