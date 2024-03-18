@@ -246,3 +246,19 @@
   - New base location code. Bases are now alot more random and never the same as the game before.
   - Option to toggle APS on/off. by default: keybind to dwitch grenades.
   - Option to see APS status added: Custom Controls > Use Action 1
+
+2.5.8.4
+  -Report generator added to settings menu for easier getting of BEID for reports
+  -Livery option in ground vehicle rearm menu
+  -Tigris & Cheetah now use the Zephyr missile instead of the Titan AA
+  -Multiple sector sizes adjusted
+  -Pylon priority now works again
+  -Changing armaments on air vehicles after first rearm now possible
+  -Rearming Stealth jets now possible
+  -Various changes to "Welcome Menu"
+  -Al-6 FPV drone now properly awards for kills
+  -Helicopters will no longer clip objects on spawn
+  -SAM missiles now function more realistically and self destruct after 5 seconds of not having a target
+  -Fast Travel to contested is now more random
+  -Added temporary textures to NATO Tempest Device(will be changed to more proper ones next update)
+  -Potentially fixed issue where people could put vehicles underwater

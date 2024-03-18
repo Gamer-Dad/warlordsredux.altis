@@ -1,6 +1,22 @@
+//Use this line to simulate base locations on EU#11, while on test servers. FOR TESTING ONLY.
+//private _potBases = BIS_WL_allSectors select {(if (["(EU) #11", serverName] call BIS_fnc_inString) then {"A" in (_x getVariable ["BIS_WL_services", []])} else {(_x getVariable ["BIS_WL_canBeBase", true])}) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
+//Use this line to have "only" helipad zones not just airports. FOR TESTING ONLY.
+//private _potBases = BIS_WL_allSectors select {(if !(["(EU) #11", serverName] call BIS_fnc_inString) then {"H" in (_x getVariable ["BIS_WL_services", []]) && !("A" in (_x getVariable ["BIS_WL_services", []]))} else {(_x getVariable ["BIS_WL_canBeBase", true])}) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
+
+//Use this line to set starting base based on sector service or default EU#11 ***This is the code for MAIN branch!!!***
 private _potBases = BIS_WL_allSectors select {(if !(["(EU) #11", serverName] call BIS_fnc_inString) then {"A" in (_x getVariable ["BIS_WL_services", []])} else {(_x getVariable ["BIS_WL_canBeBase", true])}) && {!(_x in (profileNamespace getVariable ["BIS_WL_lastBases", []]))}};
+
+
 private _firstBase = selectRandom _potBases;
-private _baseDistanceMin = 64000000;
+
+//_baseDistanceMin is hard coded for altis 
+//For cross map dynamic scaling see pull request #204, worldsize for scaling
+//random but weighted towards _baseDistanceMid, the orginial hard coded value
+private _baseDistanceLow = (64000000 * 1);
+private _baseDistanceHigh = (64000000 * 1.4);
+private _baseDistanceMid = 64000000;
+private _baseDistanceMin = random [_baseDistanceLow, _baseDistanceMid, _baseDistanceHigh];
+
 _potBases deleteAt (_potBases find _firstBase);
 _potBases = (_potBases select {(_x distanceSqr _firstBase) > _baseDistanceMin});
 private _secondBase = selectRandom _potBases;
