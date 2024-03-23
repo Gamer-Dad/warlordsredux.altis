@@ -89,11 +89,11 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 		_spawnCheckPos = [_axisXSpawnCheck, _axisYSpawnCheck, 0];
 		if (_spawnCheckPos call _areaCheck) then {
 			if !(isOnRoad _spawnCheckPos || surfaceIsWater _spawnCheckPos || !(_spawnCheckPos inArea BIS_WL_mapAreaArray)) then {
-				_finalPos = _spawnCheckPos isFlatEmpty [3, -1, 0.45, 5, 0, FALSE, objNull];
+				_finalPos = _spawnCheckPos isFlatEmpty [6, -1, 0.35, 6, 0, FALSE, objNull];
 				if !(_finalPos isEqualTo []) then {
 					_finalPos = ASLToATL _finalPos;
-					_nearObjs = _finalPos nearObjects ["AllVehicles", 5];
-					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 10, true, true];
+					_nearObjs = _finalPos nearObjects ["AllVehicles", 6];
+					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 10, false, true];
 					if (count _nearObjs == 0 && {count _nearMapObjs == 0}) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
