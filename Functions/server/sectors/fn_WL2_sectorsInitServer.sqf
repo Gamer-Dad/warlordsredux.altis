@@ -12,8 +12,8 @@ private _firstBase = selectRandom _potBases;
 //_baseDistanceMin is hard coded for altis 
 //For cross map dynamic scaling see pull request #204, worldsize for scaling
 //random but weighted towards _baseDistanceMid, the orginial hard coded value
-private _baseDistanceLow = (64000000 * 1);
-private _baseDistanceHigh = (64000000 * 1.4);
+private _baseDistanceLow = (64000000 * 1); //8000 m^2
+private _baseDistanceHigh = (64000000 * 1.4); //max = 11200 m^2
 private _baseDistanceMid = 64000000;
 private _baseDistanceMin = random [_baseDistanceLow, _baseDistanceMid, _baseDistanceHigh];
 
