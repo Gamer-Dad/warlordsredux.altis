@@ -9269,8 +9269,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9106.8389,17.174456,21476.928};
-				angles[]={6.2805324,0,6.2791882};
+				position[]={9092.5264,17.035215,21469.086};
+				angles[]={0.019996032,0,0.010664274};
 			};
 			init="_dynamicAirport1 = ""DynamicAirport_01_F"" createVehicle position this;" \n "_dynamicAirport1 setdir 60;" \n "";
 			id=1456;
