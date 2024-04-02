@@ -322,8 +322,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14219.649,7.7074194,12993.695};
-				angles[]={0.10626491,0,6.249866};
+				position[]={14219.65,7.7073889,12993.695};
+				angles[]={0.1062731,0,6.249867};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W"",""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"",  ""Sagonisi Base""];";
 			id=13;
@@ -1237,11 +1237,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9198.4805,16.548729,21565.646};
-			angle=0.93117243;
+			angle=0.93116802;
 			class Attributes
 			{
-				sizeA=125;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 				isRectangle=1;
 			};
 			id=90;
@@ -1826,15 +1826,16 @@ class Mission
 		class Item129
 		{
 			dataType="Trigger";
-			position[]={27051.426,21.240307,21485.328};
-			angle=3.8582065;
+			position[]={27051.426,21.240305,21485.328};
+			angle=3.8582072;
 			class Attributes
 			{
-				sizeA=125;
-				sizeB=125;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=139;
 			type="EmptyDetectorAreaR50";
+			atlOffset=-1.9073486e-006;
 		};
 		class Item130
 		{
@@ -2336,9 +2337,10 @@ class Mission
 				position[]={13593.765,15.469748,12199.801};
 				angles[]={0.0053232545,0,0.022654373};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Makrynisi""];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Makrynisi""]; this setVariable [""BIS_WL_canBeBase"", FALSE];";
 			id=511;
 			type="Logic";
+			atlOffset=9.5367432e-007;
 		};
 		class Item143
 		{
@@ -2356,16 +2358,16 @@ class Mission
 		class Item144
 		{
 			dataType="Trigger";
-			position[]={23867.141,23.343863,23740.809};
-			angle=2.1149371;
+			position[]={23867.141,23.343433,23740.811};
+			angle=2.1149373;
 			class Attributes
 			{
-				sizeA=100;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=513;
 			type="EmptyDetector";
-			atlOffset=0.16545486;
+			atlOffset=0.16500092;
 		};
 		class Item145
 		{
@@ -2395,12 +2397,12 @@ class Mission
 		class Item147
 		{
 			dataType="Trigger";
-			position[]={2298.595,92.318993,22203.332};
-			angle=2.1149371;
+			position[]={2298.595,92.319366,22203.33};
+			angle=2.1149373;
 			class Attributes
 			{
-				sizeA=120;
-				sizeB=120;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=650;
 			type="EmptyDetector";
@@ -2410,8 +2412,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3447.1458,7.9502325,12598.907};
-				angles[]={0.06656827,0,0.091741994};
+				position[]={3447.146,7.9502535,12598.907};
+				angles[]={0.066566855,0,0.091734506};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Kavala Beach""];";
 			id=657;
@@ -8544,12 +8546,12 @@ class Mission
 		class Item291
 		{
 			dataType="Trigger";
-			position[]={13808.517,60.496784,6393.5117};
-			angle=2.2371621;
+			position[]={13808.517,60.496784,6393.5122};
+			angle=2.2371626;
 			class Attributes
 			{
-				sizeA=125;
-				sizeB=125;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1393;
 			type="EmptyDetector";
@@ -8570,11 +8572,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8945.8779,61.728947,7546.1299};
-			angle=2.2371621;
+			angle=2.2371626;
 			class Attributes
 			{
-				sizeA=100;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1395;
 			type="EmptyDetector";
@@ -8595,11 +8597,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9572.7842,23.698641,9249.584};
-			angle=2.2371621;
+			angle=2.2371626;
 			class Attributes
 			{
-				sizeA=100;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1401;
 			type="EmptyDetector";
@@ -8618,12 +8620,12 @@ class Mission
 		class Item297
 		{
 			dataType="Trigger";
-			position[]={11211.145,182.41,8719.999};
-			angle=2.2371621;
+			position[]={11211.145,182.41,8720};
+			angle=2.2371626;
 			class Attributes
 			{
-				sizeA=100;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1403;
 			type="EmptyDetector";
@@ -8664,17 +8666,16 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"",  ""Kavala Dump""];";
 			id=1406;
 			type="Logic";
-			atlOffset=7.6293945e-006;
 		};
 		class Item301
 		{
 			dataType="Trigger";
 			position[]={5952.1211,102.97023,12481.301};
-			angle=2.1149371;
+			angle=2.1149373;
 			class Attributes
 			{
-				sizeA=100;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1407;
 			type="EmptyDetector";
@@ -8799,11 +8800,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7476.3931,171.83037,21562.053};
-			angle=2.2371621;
+			angle=2.2371626;
 			class Attributes
 			{
-				sizeA=120;
-				sizeB=120;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1417;
 			type="EmptyDetector";
@@ -8825,11 +8826,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3585.917,257.18567,20004.797};
-			angle=2.2371621;
+			angle=2.2371626;
 			class Attributes
 			{
-				sizeA=110;
-				sizeB=110;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1419;
 			type="EmptyDetector";
@@ -8924,12 +8925,12 @@ class Mission
 		class Item321
 		{
 			dataType="Trigger";
-			position[]={25418.064,30.795534,19302.291};
-			angle=3.8582065;
+			position[]={25418.064,30.795435,19302.289};
+			angle=3.8582072;
 			class Attributes
 			{
-				sizeA=125;
-				sizeB=125;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1429;
 			type="EmptyDetectorAreaR50";
@@ -9127,8 +9128,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={18507.322,12.65907,8136.8154};
-				angles[]={0.0080009829,0,0.017332481};
+				position[]={18507.322,12.659078,8136.8149};
+				angles[]={0.0079936078,0,0.01733112};
 			};
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Livadi""];";
 			id=1446;
@@ -9189,15 +9190,16 @@ class Mission
 		class Item342
 		{
 			dataType="Trigger";
-			position[]={23059.529,49.05529,7274.6084};
-			angle=3.9814017;
+			position[]={23059.529,49.055279,7274.6079};
+			angle=3.9814098;
 			class Attributes
 			{
-				sizeA=140;
-				sizeB=130;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1451;
 			type="EmptyDetectorAreaR250";
+			atlOffset=-3.8146973e-006;
 		};
 		class Item343
 		{
@@ -9242,11 +9244,11 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814017;
+			angle=3.9814098;
 			class Attributes
 			{
-				sizeA=110;
-				sizeB=100;
+				sizeA=150;
+				sizeB=150;
 			};
 			id=1455;
 			type="EmptyDetectorAreaR250";
