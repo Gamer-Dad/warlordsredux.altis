@@ -1,3 +1,7 @@
+/*
+See Functions\server\fn_WL2_tablesSetUp.sqf for actual CP cost
+*/
+
 class CfgWLRequisitionPresets
 {
 	class A3ReduxAll
@@ -57,6 +61,7 @@ class CfgWLRequisitionPresets
 				class B_MBT_01_TUSK_F						{cost = 7000;	requirements[]={};	};	// "M2A1 Slammer UP"				
 				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher"
 				class B_MBT_01_mlrs_F						{cost = 20000;	requirements[]={};	};	// "M5 Sandstorm MLRS" 
+				class I_MBT_03_cannon_F						{cost = 7000;	requirements[]={};	};	// "Indy Kuma for test only"
 			};
 			class Aircraft
 			{
