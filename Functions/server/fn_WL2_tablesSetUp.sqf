@@ -405,6 +405,9 @@ serverNamespace setVariable ["WL2_costs",
 		["O_Plane_CAS_02_dynamicLoadout_F", 20000], 
 		["O_Plane_Fighter_02_F", 32000], 
 		["O_Plane_Fighter_02_Stealth_F", 45000],
+		//***Indy Air***/
+		["I_Plane_Fighter_03_CAS_F", 15000], 
+		["I_Plane_Fighter_04_F", 30000],
 		//***Civ Water***/
 		["C_Scooter_Transport_01_F", 50], 
 		//***Blufor Water***/
