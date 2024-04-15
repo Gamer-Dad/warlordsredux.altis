@@ -14,6 +14,15 @@ player addEventHandler ["Fired", {
 	WAS_fired = true;
 }];
 
+//Dwarden wanted this for EU#11
+player addEventHandler ["Killed", {
+    params ["_unit", "_killer", "_instigator", "_useEffects"];
+
+	if (isPlayer _unit && isPlayer _killer) then {
+    	diag_log format["PvP kill: %1 was killed by %2", name _unit, name _killer];
+	};
+}];
+
 while {!BIS_WL_missionEnd} do {
 	sleep (if (player getVariable ["BIS_WL_incomeBlocked", false]) then {10} else {_sleepDuration});
 	_inActScore = 5;
