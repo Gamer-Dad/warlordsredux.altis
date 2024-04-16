@@ -11,6 +11,10 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 			_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 			_grp = createVehicleCrew _asset;
 			_grp deleteGroupWhenEmpty true;
+			{
+				_member = _x;
+				_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
+			} forEach units _grp;
 		};
 
 		//Livery change
@@ -37,6 +41,10 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 		_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 		private _group = createVehicleCrew _asset;
 		_group deleteGroupWhenEmpty true;
+		{
+			_member = _x;
+			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
+		} forEach units _group;
 	};
 
 	if (_asset call DIS_fnc_IsSam) then {

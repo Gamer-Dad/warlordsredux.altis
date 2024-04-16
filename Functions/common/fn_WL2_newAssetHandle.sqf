@@ -58,6 +58,7 @@ if (isPlayer _owner) then {
 					};
 				};
 			} else {
+				waitUntil {sleep 0.1; !(isNull group _asset)};
 				_asset spawn {
 					params ["_asset"];
 					[
