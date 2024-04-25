@@ -1,13 +1,12 @@
 params ["_asset"];
 
 {
-	private _turret = _x;
-	private _mags = (_asset getVariable "BIS_WL_defaultMagazines") # _forEachIndex;
-	{											
-		_asset removeMagazineTurret [_x, _turret];
-		[_asset, 1] remoteExec ["setVehicleAmmoDef", 0];
-	} forEach _mags;
-} forEach allTurrets _asset;
+	_x params ["_className", "_turretPath", "_ammoCount", "_id", "_creator"];
+
+	_asset removeMagazineTurret [_className, _turretPath];
+	_asset addMagazineTurret [_className, _turretPath, _ammoCount];
+} forEach (_asset getVariable "BIS_WL_defaultMagazines");
+
 
 _rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
 

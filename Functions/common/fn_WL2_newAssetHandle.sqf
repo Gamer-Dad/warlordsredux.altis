@@ -25,10 +25,7 @@ if (isPlayer _owner) then {
 		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 		
-		private _defaultMags = [];
-		{
-			_defaultMags pushBack (_asset magazinesTurret _x);
-		} forEach allTurrets _asset;
+		private _defaultMags = magazinesAllTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 		_vehicles = missionNamespace getVariable [_var, []];

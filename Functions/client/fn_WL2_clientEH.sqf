@@ -176,20 +176,83 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 
 missionNamespace setVariable ["BIS_WL2_rearmTimers", 
 	compileFinal createHashMapFromArray [
-		["B_Mortar_01_F", 900], ["O_Mortar_01_F", 900], ["B_MBT_01_arty_F", 1800], 
-		["O_MBT_02_arty_F", 1800], ["B_MBT_01_mlrs_F", 1800], ["I_Truck_02_MRL_F", 1800], 
-		["B_Ship_Gun_01_F", 2700], ["B_Ship_MRLS_01_F", 2700],
-		["B_AAA_System_01_F", 300], ["B_SAM_System_03_F", 450], ["O_SAM_System_04_F", 450], 
-		["B_SAM_System_01_F", 600], ["B_SAM_System_02_F", 900],
-		["B_LSV_01_armed_F", 120], ["B_G_Offroad_01_armed_F", 120], ["B_LSV_01_AT_F", 200], ["B_G_Offroad_01_AT_F", 180],
-		["B_MRAP_01_hmg_F", 300], ["B_MRAP_01_gmg_F", 300], ["B_APC_Wheeled_03_cannon_F", 500], ["B_APC_Wheeled_01_cannon_F", 600], ["B_APC_Tracked_01_rcws_F", 400], ["B_APC_Tracked_01_AA_F", 500],
-		["B_AFV_Wheeled_01_cannon_F", 550], ["B_AFV_Wheeled_01_up_cannon_F", 600], ["B_MBT_01_cannon_F", 600], ["B_MBT_01_TUSK_F", 650],
-		["O_LSV_02_armed_F", 120], ["O_G_Offroad_01_armed_F", 120], ["O_LSV_02_AT_F", 200], ["O_G_Offroad_01_AT_F", 180],
-		["O_MRAP_02_hmg_F", 300], ["O_MRAP_02_gmg_F", 300], ["O_APC_Wheeled_02_rcws_v2_F", 400], ["O_APC_Tracked_02_cannon_F", 500], ["O_APC_Tracked_02_AA_F", 500], ["O_MBT_02_cannon_F", 600],
-		["O_MBT_04_cannon_F", 650], ["O_MBT_04_command_F", 700], ["O_MBT_02_railgun_F", 700],
-		["B_Heli_Light_01_dynamicLoadout_F", 300], ["B_UAV_02_dynamicLoadout_F", 500], ["B_Heli_Attack_01_dynamicLoadout_F", 700], ["B_T_UAV_03_dynamicLoadout_F", 600], ["B_UAV_05_F", 500],
-		["B_T_VTOL_01_armed_F", 600], ["B_Plane_CAS_01_dynamicLoadout_F", 900], ["B_Plane_Fighter_01_F", 900], ["B_Plane_Fighter_01_Stealth_F", 900],
-		["O_Heli_Light_02_dynamicLoadout_F", 300], ["O_T_UAV_04_CAS_F", 500], ["O_Heli_Attack_02_dynamicLoadout_F", 700], ["O_UAV_02_dynamicLoadout_F", 330], ["O_T_VTOL_02_vehicle_dynamicLoadout_F", 700],
-		["O_Plane_CAS_02_dynamicLoadout_F", 900], ["O_Plane_Fighter_02_F", 900], ["O_Plane_Fighter_02_Stealth_F", 900]
+//***Blufor***/
+	//***Light***/
+		["B_G_Offroad_01_armed_F", 120], //Offroad Armed
+		["B_G_Offroad_01_AT_F", 180], //Offroad AT
+		["B_LSV_01_armed_F", 120], //Prowler HMG
+		["B_LSV_01_AT_F", 200], //Prowler AT
+		["B_MRAP_01_gmg_F", 300], //Hunter GMG
+		["B_MRAP_01_hmg_F", 300], //Hunter HMG
+	//***APC/IFV***/
+		["B_APC_Wheeled_01_cannon_F", 500], //Marshall
+		["B_APC_Wheeled_03_cannon_F", 500], //Gorgon
+		["B_APC_Tracked_01_rcws_F", 400], //Panther
+		["B_APC_Tracked_01_AA_F", 500], //Cheetah
+	//***Tanks/TDs***/
+		["B_AFV_Wheeled_01_cannon_F", 500], //Rhino
+		["B_AFV_Wheeled_01_up_cannon_F", 500], //Rhino UP
+		["B_MBT_01_cannon_F", 600], //Slammer
+		["B_MBT_01_TUSK_F", 600], //Slammer UP
+	//***Helicopters/VTOLs***/
+		["B_Heli_Light_01_dynamicLoadout_F", 300], //Pawnee
+		["B_Heli_Attack_01_dynamicLoadout_F", 700], //Blackfoot
+		["B_T_UAV_03_dynamicLoadout_F", 600], //Falcon
+		["B_T_VTOL_01_armed_F", 500], //Blackfish Armed
+	//***Planes***/
+		["B_UAV_02_dynamicLoadout_F", 500], //Greyhawk
+		["B_UAV_05_F", 500], //Sentinel
+		["B_Plane_CAS_01_dynamicLoadout_F", 900], //Wipeout
+		["I_Plane_Fighter_04_F", 900], //Gryphon
+		["B_Plane_Fighter_01_F", 900], //Black Wasp
+		["B_Plane_Fighter_01_Stealth_F", 900], //Black Wasp Stealth
+	//***Artillery***/
+		["B_MBT_01_arty_F", 1800], //Scorcher
+		["B_MBT_01_mlrs_F", 1800], //Sandstorm
+	//***Statics***/
+		["B_Mortar_01_F", 900], //Mortar
+		["B_Ship_Gun_01_F", 2700], //Hammer
+		["B_SAM_System_03_F", 450], //Defender
+
+//***Shared***/
+		["B_AAA_System_01_F", 300], //Praetorian
+		["B_SAM_System_01_F", 600], //Spartan
+		["B_SAM_System_02_F", 600], //Centurion
+		["B_Ship_MRLS_01_F", 2700], //VLS
+
+//***Opfor***/
+	//***Light***/
+		["O_G_Offroad_01_armed_F", 120], //Offroad Armed
+		["O_G_Offroad_01_AT_F", 180], //Offroad AT
+		["O_LSV_02_armed_F", 120], //Quilin
+		["O_LSV_02_AT_F", 200], //Quilin AT
+		["O_MRAP_02_hmg_F", 300], //Ifrit HMG
+		["O_MRAP_02_gmg_F", 300], //Ifrit GMG
+	//***APC/IFV***/
+		["O_APC_Wheeled_02_rcws_v2_F", 400], //Marid
+		["O_APC_Tracked_02_cannon_F", 500], //Kamysh
+		["O_APC_Tracked_02_AA_F", 500], //Tigris
+	//***Tanks/TDs***/
+		["O_MBT_02_cannon_F", 600], //T-100
+		["O_MBT_02_railgun_F", 600], //T-100X
+		["O_MBT_04_cannon_F", 600], //T-140
+		["O_MBT_04_command_F", 600], // T-140K
+	//***Helicopters/VTOLs***/
+		["O_Heli_Light_02_dynamicLoadout_F", 300], //Orca Armed
+		["O_Heli_Attack_02_dynamicLoadout_F", 700], //Kajman
+		["O_T_VTOL_02_vehicle_dynamicLoadout_F", 700], //Xi'an
+	//***Planes***/
+		["O_UAV_02_dynamicLoadout_F", 330], //Ababil-3
+		["O_T_UAV_04_CAS_F", 500], //Fenghuang
+		["I_Plane_Fighter_03_dynamicLoadout_F", 900], //Buzzard
+		["O_Plane_CAS_02_dynamicLoadout_F", 900], //Neophron
+		["O_Plane_Fighter_02_F", 900], //Shikra
+		["O_Plane_Fighter_02_Stealth_F", 900], //Shikra Stealth
+	//***Artillery***/
+		["O_MBT_02_arty_F", 1800], //Sorcher
+		["I_Truck_02_MRL_F", 1800], //Zamak MLRS
+	//***Statics***/
+		["O_Mortar_01_F", 900], //Mortar
+		["O_SAM_System_04_F", 450] //Rhea
 	]
 ];
