@@ -61,7 +61,6 @@ class CfgWLRequisitionPresets
 				class B_MBT_01_TUSK_F						{cost = 7000;	requirements[]={};	};	// "M2A1 Slammer UP"				
 				class B_MBT_01_arty_F						{cost = 20000;	requirements[]={};	};	// "M4 Scorcher"
 				class B_MBT_01_mlrs_F						{cost = 20000;	requirements[]={};	};	// "M5 Sandstorm MLRS" 
-				class I_MBT_03_cannon_F						{cost = 7000;	requirements[]={};	};	// "Indy Kuma for test only"
 			};
 			class Aircraft
 			{
@@ -78,9 +77,8 @@ class CfgWLRequisitionPresets
 				class B_T_VTOL_01_armed_F					{cost = 8000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
 				class B_Plane_Fighter_01_F					{cost = 30000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II"
-				class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};  //"F/A-181 Black Wasp II (Stealth)"
-				class I_Plane_Fighter_04_F					{cost = 30000;	requirements[]={"A"};	};  // "A-149 Gryphon Test Only"
-				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};  // "A-143 Buzzard Test Only"
+				class B_Plane_Fighter_01_Stealth_F			{cost = 35000;	requirements[]={"A"};	};  //"F/A-181 Black Wasp II (Stealth)"
+				class I_Plane_Fighter_04_F					{cost = 23000;	requirements[]={"A"};	};  // "A-149 Gryphon"
 			};
 			class Naval
 			{
@@ -121,7 +119,7 @@ class CfgWLRequisitionPresets
 				class B_GMG_01_A_F							{cost = 650;	requirements[]={};	};	// "Mk30 GMG Auto Turret"
 				class B_static_AT_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AT) [NATO]"  
 				class B_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [NATO]"  
-				class B_Mortar_01_F							{cost = 3000;	requirements[]={};	};	// "Mortar"
+				class B_Mortar_01_F							{cost = 4000;	requirements[]={};	};	// "Mortar"
 				class B_UGV_02_Demining_F					{cost = 100;	requirements[]={};	};	// "UGAS demining"  
 				class B_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class B_UGV_01_rcws_F 						{cost = 400;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAS" 				
@@ -203,9 +201,8 @@ class CfgWLRequisitionPresets
 				class O_T_VTOL_02_vehicle_dynamicLoadout_F	{cost = 14000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"  
 				class O_Plane_Fighter_02_F					{cost = 32000;	requirements[]={"A"};	};	// "To-201 Shikra"
-				class O_Plane_Fighter_02_Stealth_F			{cost = 45000;	requirements[]={"A"};	};	// "To-201 Shikra (Stealth)"
-				class I_Plane_Fighter_04_F					{cost = 30000;	requirements[]={"A"};	};  // "A-149 Gryphon Test Only"
-				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};  // "A-143 Buzzard Test Only"
+				class O_Plane_Fighter_02_Stealth_F			{cost = 30000;	requirements[]={"A"};	};	// "To-201 Shikra (Stealth)"
+				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 17000;	requirements[]={"A"};	};  // "A-143 Buzzard"
 			};
 			class Naval
 			{
@@ -245,7 +242,7 @@ class CfgWLRequisitionPresets
 				class O_static_AA_F							{cost = 300;	requirements[]={};	};	// "Static Titan Launcher (AA) [CSAT]"  
 				class O_HMG_01_A_F							{cost = 500;	requirements[]={};	};	// "Mk30 HMG Auto Turret"
 				class O_GMG_01_A_F							{cost = 650;	requirements[]={};	};	// "Mk30 GMG Auto Turret"
-				class O_Mortar_01_F							{cost = 3000;	requirements[]={};	};	// "Mortar"  
+				class O_Mortar_01_F							{cost = 4000;	requirements[]={};	};	// "Mortar"  
 				class O_UGV_02_Demining_F					{cost = 100;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAV demining"  
 				class O_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class O_UGV_01_rcws_F						{cost = 400;	requirements[]={};	};	// "UGAV rcws"  
