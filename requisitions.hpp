@@ -80,7 +80,7 @@ class CfgWLRequisitionPresets
 				class B_Plane_Fighter_01_F					{cost = 30000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II"
 				class B_Plane_Fighter_01_Stealth_F			{cost = 40000;	requirements[]={"A"};	};  //"F/A-181 Black Wasp II (Stealth)"
 				class I_Plane_Fighter_04_F					{cost = 30000;	requirements[]={"A"};	};  // "A-149 Gryphon Test Only"
-				class I_Plane_Fighter_03_CAS_F				{cost = 15000;	requirements[]={"A"};	};  // "A-143 Buzzard Test Only"
+				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};  // "A-143 Buzzard Test Only"
 			};
 			class Naval
 			{
@@ -205,7 +205,7 @@ class CfgWLRequisitionPresets
 				class O_Plane_Fighter_02_F					{cost = 32000;	requirements[]={"A"};	};	// "To-201 Shikra"
 				class O_Plane_Fighter_02_Stealth_F			{cost = 45000;	requirements[]={"A"};	};	// "To-201 Shikra (Stealth)"
 				class I_Plane_Fighter_04_F					{cost = 30000;	requirements[]={"A"};	};  // "A-149 Gryphon Test Only"
-				class I_Plane_Fighter_03_CAS_F				{cost = 15000;	requirements[]={"A"};	};  // "A-143 Buzzard Test Only"
+				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 15000;	requirements[]={"A"};	};  // "A-143 Buzzard Test Only"
 			};
 			class Naval
 			{
