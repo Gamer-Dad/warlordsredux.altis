@@ -589,6 +589,11 @@ serverNamespace setVariable ["WL2_factionAircraftClasses", [
 
 serverNamespace setVariable ["garbageCollector", 
 	createHashMapFromArray [
+		["B_Ejection_Seat_Plane_Fighter_01_F", true],
+		["O_Ejection_Seat_Plane_Fighter_02_F", true],
+		["I_Ejection_Seat_Plane_Fighter_03_F", true],
+		["B_Ejection_Seat_Plane_CAS_01_F", true],
+		["O_Ejection_Seat_Plane_CAS_02_F", true],
 		["Plane_Fighter_03_Canopy_F", true],
 		["Plane_CAS_02_Canopy_F", true],
 		["Plane_CAS_01_Canopy_F", true],
