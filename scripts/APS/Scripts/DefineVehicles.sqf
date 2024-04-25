@@ -8,7 +8,11 @@ _apsLight = [
 	"I_LT_01_AT_F",
 	"I_LT_01_cannon_F",
 	"I_MRAP_03_gmg_F",	// Strider
-	"I_MRAP_03_hmg_F"
+	"I_MRAP_03_hmg_F",
+	"B_MBT_01_arty_F",				// Scorcher
+	"B_MBT_01_mlrs_F",				// Sandstorm MLRS
+	"O_MBT_02_arty_F",				// Sochor
+	"I_Truck_02_MRL_F"				// Zamak MRL
 ];
 
 _apsMedium = [
@@ -31,10 +35,6 @@ _apsHeavy = [
 	"O_MBT_02_railgun_F",			//T-100 Futura
 	"B_MBT_01_cannon_F",			// Slammer
 	"B_MBT_01_TUSK_F",
-	"B_MBT_01_arty_F",				// Scorcher
-	"B_MBT_01_mlrs_F",				// Sandstorm MLRS
-	"O_MBT_02_arty_F",				// Sochor
-	"I_Truck_02_MRL_F",				// Zamak MRL
 	"I_APC_tracked_03_cannon_F",	// Mora
 	"I_MBT_03_cannon_F"				// Kuma
 ];
@@ -109,7 +109,6 @@ _mediumBlockList = [
 ];
 
 _lightBlockList = [
-	"M_NLAW_AT_F",
 	"R_MRAAWS_HE_F",
 	"R_MRAAWS_HEAT_F",
 	"R_MRAAWS_HEAT55_F",
