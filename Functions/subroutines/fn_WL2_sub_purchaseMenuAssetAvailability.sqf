@@ -11,7 +11,22 @@ if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
 if (_ret) then {
-	private _nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0);
+	//Added this check to stop a "rouge" friendly player or a cheater placing an enemy at the main base blocking fast travel 
+	//These distance checks appear to be running every frame. I think this is a client side UI script but in general thats a really bad idea.
+	private _flagPole = nearestObjects [player, ["FlagPole_F"], 100];
+	private _nearbyEnemies = false;
+	if (count _flagPole > 0) then 
+	{
+		//do nothing because _nearbyEnemies is already false;
+		//systemChat "Flag nearby";
+	}
+	else 
+	{
+		//systemChat "Normal";
+		_nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0);
+	};
+	
+	 	
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
