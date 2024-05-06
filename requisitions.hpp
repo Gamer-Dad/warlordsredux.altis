@@ -76,9 +76,9 @@ class CfgWLRequisitionPresets
 				class B_T_VTOL_01_vehicle_F					{cost = 2000;	requirements[]={"A"};	};	// "V-44 X Blackfish(Vic)"
 				class B_T_VTOL_01_armed_F					{cost = 8000;	requirements[]={"A"};	};	// "V-44 X Blackfish (Armed)"
 				class B_Plane_CAS_01_dynamicLoadout_F		{cost = 15000;	requirements[]={"A"};	};	// "A-164 Wipeout (CAS)"
+				class I_Plane_Fighter_04_F					{cost = 23000;	requirements[]={"A"};	};  // "A-149 Gryphon"
 				class B_Plane_Fighter_01_F					{cost = 30000;	requirements[]={"A"};	};	// "F/A-181 Black Wasp II"
 				class B_Plane_Fighter_01_Stealth_F			{cost = 35000;	requirements[]={"A"};	};  //"F/A-181 Black Wasp II (Stealth)"
-				class I_Plane_Fighter_04_F					{cost = 23000;	requirements[]={"A"};	};  // "A-149 Gryphon"
 			};
 			class Naval
 			{
@@ -199,10 +199,10 @@ class CfgWLRequisitionPresets
 				class O_Heli_Attack_02_dynamicLoadout_F		{cost = 10000;	requirements[]={"H"};	};	// "Mi-48 Kajman"   
 				class O_UAV_02_dynamicLoadout_F	  			{cost = 10000;	requirements[]={"A"};	};	// "K40 Ababil-3"				    
 				class O_T_VTOL_02_vehicle_dynamicLoadout_F	{cost = 14000;	requirements[]={"A"};	};	// "Y-32 Xi'an (Infantry Transport)"
+				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 17000;	requirements[]={"A"};	};  // "A-143 Buzzard"
 				class O_Plane_CAS_02_dynamicLoadout_F		{cost = 20000;	requirements[]={"A"};	};	// "To-199 Neophron (CAS)"  
 				class O_Plane_Fighter_02_F					{cost = 32000;	requirements[]={"A"};	};	// "To-201 Shikra"
 				class O_Plane_Fighter_02_Stealth_F			{cost = 30000;	requirements[]={"A"};	};	// "To-201 Shikra (Stealth)"
-				class I_Plane_Fighter_03_dynamicLoadout_F	{cost = 17000;	requirements[]={"A"};	};  // "A-143 Buzzard"
 			};
 			class Naval
 			{
