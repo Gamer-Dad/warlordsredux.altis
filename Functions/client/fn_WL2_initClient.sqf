@@ -266,5 +266,10 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
+player addEventHandler ["Killed", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	closeDialog 2;
+}];
+
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
 
