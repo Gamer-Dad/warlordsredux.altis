@@ -120,6 +120,20 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 waitUntil {sleep 0.1; !(isNull _asset)};
 _asset enableWeaponDisassembly false;
 
+//Buzzard CSAT Hex Camo
+if (typeOf _asset == "I_Plane_Fighter_03_dynamicLoadout_F") then {
+	{
+		_asset setObjectTextureGlobal [_forEachIndex, _x];
+	} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Hex" >> "textures"));
+};
+
+//Gryphon Digital Grey Camo
+if (typeOf _asset == "I_Plane_Fighter_04_F") then {
+	{
+		_asset setObjectTextureGlobal [_forEachIndex, _x];
+	} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "DigitalCamoGrey" >> "textures"));
+};
+
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
 [_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];

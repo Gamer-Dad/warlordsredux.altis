@@ -851,15 +851,27 @@ GOM_fnc_aircraftLoadoutPaintjob = {
 	_veh = call compile  lbData [1500,lbcursel 1500];
 	_colorConfigs = "true" configClasses (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources");
 	_vehDispName = getText (configfile >> "CfgVehicles" >> typeof _veh >> "displayName");
+	_blackList = getArray (missionConfigFile >> "liveryBlacklist" >> str (side player));
 	_colorTextures = [""];
 
 	if (count _colorConfigs > 0) then {
 		_colorNames = [""];
 		{
-			_colorNames pushback (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"));
-			lbAdd [2100, (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"))];
-			_colorTextures pushback (getArray (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "textures"));
+			if (!(typeof _veh == "I_Plane_Fighter_03_dynamicLoadout_F" && configName _x == "Green") && !((configName _x) in _blackList)) then {
+				_colorNames pushback (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"));
+				lbAdd [2100, (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "displayName"))];
+				_colorTextures pushback (getArray (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> configName _x >> "textures"));
+			};
 		} foreach _colorConfigs;
+
+		_customTextures = [missionConfigFile >> "liveryBlacklist", (typeOf _veh), objNull] call BIS_fnc_returnConfigEntry;
+		if (_customTextures isEqualType []) then {
+			{
+				_colorNames pushback (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> _x >> "displayName"));
+				lbAdd [2100, (getText (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> _x >> "displayName"))];
+				_colorTextures pushback (getArray (configfile >> "CfgVehicles" >> typeof _veh >> "textureSources" >> _x >> "textures"));
+			} forEach _customTextures;
+		};
 
 		if (_apply && lbCurSel 2100 > 0) then {
 			{
