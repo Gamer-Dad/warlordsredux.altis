@@ -18,6 +18,7 @@ BIS_fnc_WL2_assetRelevanceCheck = compileFinal preprocessFileLineNumbers "Functi
 BIS_fnc_WL2_calcImbalance = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_calcImbalance.sqf";
 BIS_fnc_WL2_changeSectorOwnership = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_changeSectorOwnerShip.sqf";
 BIS_fnc_WL2_createUAVCrew = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_createUAVCrew.sqf";
+BIS_fnc_WL2_createVehicleCorrectly = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_createVehicleCorrectly.sqf";
 BIS_fnc_WL2_detectNewPlayers = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_detectNewPlayers.sqf";
 BIS_fnc_WL2_forfeitHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_forfeitHandleServer.sqf";
 BIS_fnc_WL2_forgiveTeamkill = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_forgiveTeamkill.sqf";

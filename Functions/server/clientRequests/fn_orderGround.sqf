@@ -2,8 +2,7 @@ params ["_sender", "_pos", "_class", "_direction"];
 
 if !(isServer) exitWith {};
 
-_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-_asset setDir _direction;
+_asset = [_class, _pos, _direction] call BIS_fnc_WL2_createVehicleCorrectly;
 
 //Livery change
 if (typeOf _asset == "I_Truck_02_MRL_F") then {
