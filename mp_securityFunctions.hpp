@@ -105,5 +105,9 @@ class CfgRemoteExec {
 		class systemChat {
 			allowedTargets = 0;
 		};
+
+		class diag_log {
+			allowedTargets = 2;
+		};
 	};
 };

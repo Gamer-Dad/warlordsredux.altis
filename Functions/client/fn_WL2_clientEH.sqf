@@ -60,6 +60,11 @@ player addEventHandler ["Killed", {
 		player connectTerminalToUAV objNull;
 	};
 	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
+	_canUse = player isUniformAllowed (uniform player);
+	if !(_canUse) then {
+		[format ["Player:%1, player's UID:%2: Uses a uniform from another faction: %3", player, getPlayerUID player, uniform player]] remoteExec ["diag_log", 2];
+	};
+	closeDialog 2;
 }];
 
 player addEventHandler ["HandleDamage", {
