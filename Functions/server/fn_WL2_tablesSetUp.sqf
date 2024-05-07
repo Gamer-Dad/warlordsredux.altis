@@ -606,3 +606,11 @@ serverNamespace setVariable ["garbageCollector",
 		["Plane_Fighter_04_Canopy_F", true] //<--no comma on last item
 	]
 ];
+
+serverNamespace setVariable ["camoGarbageCollector", 
+	createHashMapFromArray [
+		["CamoNet_BLUFOR_big_F", true],
+		["CamoNet_OPFOR_big_F", true],
+		["Land_IRMaskingCover_01_F", true]
+	]
+];
