@@ -1,4 +1,4 @@
-params ["_pos", "_class"];
+params ["_pos", "_class", "_direction"];
 
 private _vehCfg = configFile >> "CfgVehicles" >> _class; 
 private _crewCount = { 
@@ -9,7 +9,7 @@ private _crewCount = {
 private _myArray = [0];
 _myArray resize _crewCount;
 
-_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+_asset = [_class, _pos, _direction] call BIS_fnc_WL2_createVehicleCorrectly;
 private _assetGrp = createGroup east;
 {
 	private _unit = _assetGrp createUnit ["O_UAV_AI", _pos, [], 0, "NONE"];
