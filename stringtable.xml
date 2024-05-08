@@ -529,39 +529,73 @@
             <Chinesesimp>禁用 dazzler</Chinesesimp>
             <Chinese>禁用 dazzler</Chinese>
         </Key>
+        <Key ID="STR_A3_radar_rotation_enable">
+            <Original>Enable Automatic Rotation</Original>
+            <English>Enable Automatic Rotation</English>
+            <Czech>Povolit automatické otáčení</Czech>
+            <French>Activer la rotation automatique</French>
+            <German>Automatische Rotation aktivieren</German>
+            <Italian>Abilita rotazione automatica</Italian>
+            <Polish>Włącz automatyczną rotację</Polish>
+            <Portuguese>Ativar rotação automática</Portuguese>
+            <Russian>Включить автоматическое вращение</Russian>
+            <Spanish>Activar rotación automática</Spanish>
+            <Turkish>Otomatik Dönüşü Etkinleştir</Turkish>
+            <Korean>자동 회전 활성화</Korean>
+            <Japanese>自動回転を有効にする</Japanese>
+            <Chinesesimp>启用自动旋转</Chinesesimp>
+            <Chinese>啟用自動旋轉</Chinese>
+        </Key>
+        <Key ID="STR_A3_radar_rotation_disable">
+            <Original>Disable Automatic Rotation</Original>
+            <English>Disable Automatic Rotation</English>
+            <Czech>Vypnout automatické otáčení</Czech>
+            <French>Désactiver la rotation automatique</French>
+            <German>Automatische Rotation deaktivieren</German>
+            <Italian>Disabilita rotazione automatica</Italian>
+            <Polish>Wyłącz automatyczną rotację</Polish>
+            <Portuguese>Desativar rotação automática</Portuguese>
+            <Russian>Отключить автоматическое вращение</Russian>
+            <Spanish>Desactivar rotación automática</Spanish>
+            <Turkish>Otomatik Dönüşü Devre Dışı Bırak</Turkish>
+            <Korean>자동 회전 비활성화</Korean>
+            <Japanese>自動回転を無効にする</Japanese>
+            <Chinesesimp>禁用自动旋转</Chinesesimp>
+            <Chinese>禁用自动旋转</Chinese>
+        </Key>
         <Key ID="STR_A3_radar_operation_enable">
-            <Original>Turn on Automatic Radar</Original>
-            <English>Turn on Automatic Radar</English>
-            <Czech>Zapnout automatický radar</Czech>
-            <French>Allumer le radar automatique</French>
-            <German>Aktiviere automatische Radarfunktion</German>
-            <Italian>Attiva radar automatico</Italian>
-            <Polish>Włącz automatyczny radar</Polish>
-            <Portuguese>Ligar radar automático</Portuguese>
-            <Russian>Включить автоматический радар</Russian>
-            <Spanish>Encender radar automático</Spanish>
-            <Turkish>Otomatik Radarı Aç</Turkish>
-            <Korean>자동 레이더 켜기</Korean>
-            <Japanese>自動レーダーをオンにする</Japanese>
-            <Chinesesimp>启用自动雷达</Chinesesimp>
-            <Chinese>啟用自動雷達</Chinese>
+            <Original>Enable AI Radar</Original>
+            <English>Enable AI Radar</English>
+            <Czech>Povolit AI radar</Czech>
+            <French>Activer le radar IA</French>
+            <German>AI Radar aktivieren</German>
+            <Italian>Abilita radar IA</Italian>
+            <Polish>Włącz radar AI</Polish>
+            <Portuguese>Ativar radar de IA</Portuguese>
+            <Russian>Включить ИИ радар</Russian>
+            <Spanish>Activar radar de IA</Spanish>
+            <Turkish>AI Radarını Etkinleştir</Turkish>
+            <Korean>AI 레이더 활성화</Korean>
+            <Japanese>AIレーダーを有効にする</Japanese>
+            <Chinesesimp>启用AI雷达</Chinesesimp>
+            <Chinese>啟用AI雷達</Chinese>
         </Key>
         <Key ID="STR_A3_radar_operation_disable">
-            <Original>Shutdown Automatic Radar</Original>
-            <English>Shutdown Automatic Radar</English>
-            <Czech>Vypnout automatický radar</Czech>
-            <French>Arrêter le radar automatique</French>
-            <German>Automatische Radarabschaltung</German>
-            <Italian>Spegni radar automatico</Italian>
-            <Polish>Wyłączanie automatycznego radaru</Polish>
-            <Portuguese>Desligar radar automático</Portuguese>
-            <Russian>Отключение автоматического радара</Russian>
-            <Spanish>Apagar radar automático</Spanish>
-            <Turkish>Otomatik Radar Kapat</Turkish>
-            <Korean>자동 레이더 종료</Korean>
-            <Japanese>自動レーダーをシャットダウン</Japanese>
-            <Chinesesimp>关闭自动雷达</Chinesesimp>
-            <Chinese>關閉自動雷達</Chinese>
+            <Original>Disable AI Radar</Original>
+            <English>Disable AI Radar</English>
+            <Czech>Vypnout AI radar</Czech>
+            <French>Désactiver le radar IA</French>
+            <German>AI Radar deaktivieren</German>
+            <Italian>Disabilita radar IA</Italian>
+            <Polish>Wyłącz radar AI</Polish>
+            <Portuguese>Desativar radar de IA</Portuguese>
+            <Russian>Отключить ИИ радар</Russian>
+            <Spanish>Desactivar radar de IA</Spanish>
+            <Turkish>AI Radarını Devre Dışı Bırak</Turkish>
+            <Korean>AI 레이더 비활성화</Korean>
+            <Japanese>AIレーダーを無効にする</Japanese>
+            <Chinesesimp>禁用AI雷达</Chinesesimp>
+            <Chinese>禁用AI雷達</Chinese>
         </Key>
         <Key ID="STR_A3_WL_OSD_rearm_possible">
             <Original>Repair / Rearm possible</Original>
