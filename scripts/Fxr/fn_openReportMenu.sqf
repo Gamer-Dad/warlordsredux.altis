@@ -8,10 +8,20 @@ if (isNull (findDisplay 73000)) then {
 	_display = createDialog "Fxr_ReportDialog";
 	_playerList = ((findDisplay 73000) displayCtrl 73004);
 	disableSerialization;	
+	
 	private _players = allPlayers - entities "HeadlessClient_F"; 
 	{
-		_playerList lbAdd name _x;
+		//for coloring
+		_side = ([west, east, civilian] find (side group _x));
+		//_color = [[0, 0.3, 0.5, 1], [0.5, 0, 0, 1]] select _side;,
+		//https://community.bistudio.com/wiki/Arma_3:_CfgMarkerColors
+		_color = [[0, 0.3, 0.5, 1], [0.5, 0, 0, 1],	[0.4,0,0.5,1] ] select _side;
+		
+		_idx = _playerList lbAdd name _x;
+		_playerList lbSetColor [_idx, _color];
 	} forEach _players;	
+
+	lbSort _playerList; //so its not in the order of people joining..
 
 	waituntil {!isNull ((findDisplay 73000) displayCtrl 73004) };
 	((findDisplay 73000) displayCtrl 73004) ctrlAddEventHandler ["LBSelChanged", {
@@ -35,8 +45,8 @@ if (isNull (findDisplay 73000)) then {
 							if(count _r > 0) then {
 								private _beId   = _r select 0 select 1 select 0;
 								private _UKTime = systemTimeUTC;
-								diag_log _lsText;
 								private _lsText = format["Name[%1] beId[%2] at %3 UTC", _passedname, _beId, _UKTime];
+								diag_log _lsText;
 								systemChat _lsText;
 								_editCtrl = ((findDisplay 73000) displayCtrl 73006);
 								if (isNull _editCtrl) then {
@@ -54,7 +64,7 @@ if (isNull (findDisplay 73000)) then {
 							};
 						};
 					};
-					false; // /let message results show up in chat
+					true; // /don't let message results show up in chat
 				}, 
 				[]//[_name]
 				];
