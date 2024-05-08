@@ -106,19 +106,15 @@ if (isPlayer _owner) then {
 				_asset spawn {
 					params ["_asset"];
 
-					_asset setVariable ["radarOperation", false];
-					_asset call BIS_fnc_WL2_sub_radarOperate;
-
+					_asset setVariable ["radarRotation", false];
+					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
 					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
 					_radarIter = 0;
 
 					while {alive _asset} do {
-						if (_asset getVariable "radarOperation") then {
-							_asset setVehicleRadar 1;
+						if (_asset getVariable "radarRotation") then {
 							_asset lookAt (_lookAtPositions # _radarIter);
 							_radarIter = (_radarIter + 1) % 8;
-						} else {
-							_asset setVehicleRadar 0;
 						};
 						sleep 1.2;
 					};				
@@ -208,4 +204,11 @@ if (isPlayer _owner) then {
 	};
 
 	_asset call BIS_fnc_WL2_sub_removeAction;
+	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
+	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
+	if ((count _radarSensor > 0) && (count _crewPosition > 1 || (unitIsUAV _asset))) then {
+		_asset setVariable ["radarOperation", false];
+		_asset setVehicleRadar 2;
+		[_asset, "toggle"] call BIS_fnc_WL2_sub_radarOperate;
+	};
 };
