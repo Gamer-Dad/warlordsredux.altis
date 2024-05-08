@@ -119,6 +119,9 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 
 waitUntil {sleep 0.1; !(isNull _asset)};
 _asset enableWeaponDisassembly false;
+_asset setVehicleReportRemoteTargets true;
+_asset setVehicleReceiveRemoteTargets true;
+_asset setVehicleReportOwnPosition true;
 
 //Buzzard CSAT Hex Camo
 if (typeOf _asset == "I_Plane_Fighter_03_dynamicLoadout_F") then {
