@@ -33,6 +33,9 @@ addMissionEventHandler ["EntityKilled", {
 		if (isPlayer _responsibleLeader) then {
 			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
 			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+			if (isPlayer _unit) then {
+				diag_log format["PvP kill: %1_%2 was killed by %3_%4 from %5m", name _unit, getPlayerUID _unit, name _responsibleLeader, getPlayerUID _responsibleLeader, _unit distance _responsibleLeader];
+			};
 		};
 	};
 
