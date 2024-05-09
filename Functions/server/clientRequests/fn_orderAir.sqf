@@ -137,6 +137,10 @@ if (typeOf _asset == "I_Plane_Fighter_04_F") then {
 	} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "DigitalCamoGrey" >> "textures"));
 };
 
+if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
+		_asset addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1], 120]
+};
+
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
 [_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];
