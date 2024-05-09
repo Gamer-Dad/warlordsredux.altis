@@ -109,6 +109,9 @@ if (missionNamespace getVariable _switch) exitWith {
 	enableSentences false;
 	0 fadeSpeech 0;
 	0 fadeRadio 0;
+	{
+		_x setPlayerVoNVolume 1;
+	} forEach allPlayers select {side _x == side player};
 	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
 	missionNamespace setVariable [_switch, nil];
 	[localize "STR_A3_WL_switch_teams", localize "STR_A3_WL_switch_teams_info"] call BIS_fnc_WL2_blockScreen;
@@ -130,6 +133,9 @@ if (missionNamespace getVariable _imb) exitWith {
 	enableSentences false;
 	0 fadeSpeech 0;
 	0 fadeRadio 0;
+	{
+		_x setPlayerVoNVolume 1;
+	} forEach allPlayers select {side _x == side player};
 	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
 	missionNamespace setVariable [_imb, nil];
 	["Teams are imbalanced!", "It seems that the teams are not balanced, please head back to the lobby and join the other team, Thank you."] call BIS_fnc_WL2_blockScreen;

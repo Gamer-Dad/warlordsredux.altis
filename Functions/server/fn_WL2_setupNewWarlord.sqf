@@ -38,8 +38,6 @@ if (_boundToTeam) then {
 		_enemyCnt = playersNumber _enemyside;
 		_imb = ((_friendlyCnt - _enemyCnt) > 3);
 		if (_imb) then {
-			_pList set [_uid, [true, _enemyside]];
-			serverNamespace setVariable ["playerList", _pList];
 			missionNamespace setVariable [_varImb, _imb, _owner];
 		} else {
 			_warlord setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];
