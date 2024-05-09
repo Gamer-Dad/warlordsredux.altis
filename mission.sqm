@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14351.273,38.680988,15633.146};
-		dir[]={-1.2363449e-007,-0.70710683,0.70710683};
-		up[]={-1.2363449e-007,0.70710671,0.70710683};
-		aside[]={1,0,1.7484557e-007};
+		pos[]={14309.652,158.01472,15815.062};
+		dir[]={0.14310242,-0.54427063,0.82661676};
+		up[]={0.092842467,0.83890939,0.53629404};
+		aside[]={0.98534501,3.5041012e-008,-0.1705817};
 	};
 };
 binarizationWanted=0;
@@ -1237,7 +1237,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9198.4805,16.548729,21565.646};
-			angle=0.93116802;
+			angle=0.9311679;
 			class Attributes
 			{
 				sizeA=150;
@@ -1827,7 +1827,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={27051.426,21.240305,21485.328};
-			angle=3.8582072;
+			angle=3.8582067;
 			class Attributes
 			{
 				sizeA=150;
@@ -2340,7 +2340,6 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Makrynisi""]; this setVariable [""BIS_WL_canBeBase"", FALSE];";
 			id=511;
 			type="Logic";
-			atlOffset=9.5367432e-007;
 		};
 		class Item143
 		{
@@ -2359,7 +2358,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23867.141,23.343433,23740.811};
-			angle=2.1149373;
+			angle=2.1149371;
 			class Attributes
 			{
 				sizeA=150;
@@ -2398,7 +2397,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={2298.595,92.319366,22203.33};
-			angle=2.1149373;
+			angle=2.1149371;
 			class Attributes
 			{
 				sizeA=150;
@@ -2540,7 +2539,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="76561198865298977";
+							value="76561198049721952";
 						};
 					};
 				};
@@ -8547,7 +8546,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={13808.517,60.496784,6393.5122};
-			angle=2.2371626;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=150;
@@ -8572,7 +8571,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={8945.8779,61.728947,7546.1299};
-			angle=2.2371626;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=150;
@@ -8597,7 +8596,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9572.7842,23.698641,9249.584};
-			angle=2.2371626;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=150;
@@ -8621,7 +8620,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={11211.145,182.41,8720};
-			angle=2.2371626;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=150;
@@ -8666,12 +8665,13 @@ class Mission
 			init="this setVariable [""BIS_WL_services"", [""W"", ""H""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"",  ""Kavala Dump""];";
 			id=1406;
 			type="Logic";
+			atlOffset=7.6293945e-006;
 		};
 		class Item301
 		{
 			dataType="Trigger";
 			position[]={5952.1211,102.97023,12481.301};
-			angle=2.1149373;
+			angle=2.1149371;
 			class Attributes
 			{
 				sizeA=150;
@@ -8800,7 +8800,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7476.3931,171.83037,21562.053};
-			angle=2.2371626;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=150;
@@ -8826,7 +8826,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3585.917,257.18567,20004.797};
-			angle=2.2371626;
+			angle=2.2371621;
 			class Attributes
 			{
 				sizeA=150;
@@ -8926,7 +8926,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={25418.064,30.795435,19302.289};
-			angle=3.8582072;
+			angle=3.8582067;
 			class Attributes
 			{
 				sizeA=150;
@@ -9191,7 +9191,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.055279,7274.6079};
-			angle=3.9814098;
+			angle=3.9814093;
 			class Attributes
 			{
 				sizeA=150;
@@ -9244,7 +9244,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814098;
+			angle=3.9814093;
 			class Attributes
 			{
 				sizeA=150;
