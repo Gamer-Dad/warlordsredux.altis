@@ -106,7 +106,7 @@ if (isPlayer _owner) then {
 				_asset spawn {
 					params ["_asset"];
 
-					_asset setVariable ["radarRotation", false, true];
+					_asset setVariable ["radarRotation", false];
 					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
 					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
 					_radarIter = 0;
@@ -199,19 +199,15 @@ if (isPlayer _owner) then {
 			if (typeOf _asset == "B_Truck_01_ammo_F" || {typeOf _asset == "O_Truck_03_ammo_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || {typeOf _asset == "B_Slingload_01_Ammo_F"}}}) then {
 				_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportAmmo")) min 30000);
 			};
-			_asset setvariable ["GOM_fnc_ammoCargo",_amount, true];
+			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];
 		};
-	};
-
-	if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
-		_asset addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1], 120]
 	};
 
 	_asset call BIS_fnc_WL2_sub_removeAction;
 	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
 	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
 	if ((count _radarSensor > 0) && (count _crewPosition > 1 || (unitIsUAV _asset))) then {
-		_asset setVariable ["radarOperation", false, true];
+		_asset setVariable ["radarOperation", false];
 		_asset setVehicleRadar 2;
 		[_asset, "toggle"] call BIS_fnc_WL2_sub_radarOperate;
 	};
