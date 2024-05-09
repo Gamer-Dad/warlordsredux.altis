@@ -77,6 +77,20 @@ player addEventHandler ["HandleDamage", {
 	};
 }];
 
+player addEventHandler ["GetInMan", {
+	params ["_unit", "_role", "_vehicle", "_turret"];
+	if ((_vehicle getVariable "BIS_WL_ownerAsset") == (getPlayerUID player)) then {
+		_vehicle setVariable ["BIS_WL_lastActive", 0];
+	};
+}];
+
+player addEventHandler ["GetOutMan", {
+	params ["_unit", "_role", "_vehicle", "_turret", "_isEject"];
+	if (((_vehicle getVariable "BIS_WL_ownerAsset") == (getPlayerUID player)) && (pricehash getOrDefault [typeOf _vehicle, 300] <= 200)) then {
+		_vehicle setVariable ["BIS_WL_lastActive", serverTime + 600];
+	};
+}];
+
 if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
 	addMissionEventHandler ["HandleChatMessage", {
 		params ["_channel", "_owner", "_from", "_text"];
@@ -178,6 +192,19 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 		_e;
 	}];
 };
+
+//***Fetch price from requisitions.hpp using "priceHash getOrDefault [typeOf _asset, 200]"***/
+priceHash = createHashMap;
+_fullList = (missionNamespace getVariable (format ["BIS_WL_purchasable_%1", side player]));
+{
+	if (_forEachIndex < 7) then {
+		_category = _x;
+		{
+			_x params["_name", "_cost"];
+			priceHash set [_name, _cost]
+		}forEach _category;
+	};
+}forEach _fullList;
 
 missionNamespace setVariable ["BIS_WL2_rearmTimers", 
 	compileFinal createHashMapFromArray [

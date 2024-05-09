@@ -33,5 +33,6 @@ if (typeOf _asset == "B_APC_Tracked_01_AA_F" || {typeOf _asset == "O_APC_Tracked
 
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
+_asset setVariable ["BIS_WL_lastActive", 0, _owner];
 [_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];
 _sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
