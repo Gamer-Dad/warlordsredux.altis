@@ -265,6 +265,23 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 	};
 };
 
+0 spawn {
+	_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
+	while {!BIS_WL_missionEnd} do {
+		_vehicles = missionNamespace getVariable [_var, []];
+		{
+			_time = _x getVariable ["BIS_WL_lastActive", 0];
+			if (_time > serverTime) then {
+				_wlVehicles = missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []];
+				_wlVehicles deleteAt (_wlVehicles find _x);
+				missionNamespace setVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], _vehicles, [2, clientOwner]];
+				deleteVehicle _x;
+			};
+		}forEach _vehicles;
+		sleep 10;
+	};
+};
+
 if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	player addAction [
 		"10K CP",
