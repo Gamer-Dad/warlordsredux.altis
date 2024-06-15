@@ -20,7 +20,11 @@ _apsMedium = [
 	"B_APC_Tracked_01_rcws_F",		// Panther
 	"B_APC_Tracked_01_AA_F",		// Cheetah
 	"B_AFV_Wheeled_01_cannon_F",	// Rhino
-	"B_AFV_Wheeled_01_up_cannon_F",
+	"B_AFV_Wheeled_01_up_cannon_F", // Rhino UP
+	"B_MBT_01_arty_F",				// Scorcher
+	"B_MBT_01_mlrs_F",				// Sandstorm MLRS
+	"O_MBT_02_arty_F",				// Sochor
+	"I_Truck_02_MRL_F",				// Zamak MRL
 	"I_APC_Wheeled_03_cannon_F"		// Gorgon
 ];
 
@@ -31,10 +35,6 @@ _apsHeavy = [
 	"O_MBT_02_railgun_F",			//T-100 Futura
 	"B_MBT_01_cannon_F",			// Slammer
 	"B_MBT_01_TUSK_F",
-	"B_MBT_01_arty_F",				// Scorcher
-	"B_MBT_01_mlrs_F",				// Sandstorm MLRS
-	"O_MBT_02_arty_F",				// Sochor
-	"I_Truck_02_MRL_F",				// Zamak MRL
 	"I_APC_tracked_03_cannon_F",	// Mora
 	"I_MBT_03_cannon_F"				// Kuma
 ];
