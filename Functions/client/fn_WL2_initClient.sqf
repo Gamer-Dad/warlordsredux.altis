@@ -271,7 +271,7 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 		_vehicles = missionNamespace getVariable [_var, []];
 		{
 			_time = _x getVariable ["BIS_WL_lastActive", 0];
-			if (_time < serverTime) then {
+			if ((_time < serverTime) && (_time > 1)) then {
 				_wlVehicles = missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []];
 				_wlVehicles deleteAt (_wlVehicles find _x);
 				missionNamespace setVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], _vehicles, [2, clientOwner]];
