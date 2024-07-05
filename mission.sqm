@@ -20,10 +20,9 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14309.652,158.01472,15815.062};
-		dir[]={0.14310242,-0.54427063,0.82661676};
-		up[]={0.092842467,0.83890939,0.53629404};
-		aside[]={0.98534501,3.5041012e-008,-0.1705817};
+		pos[]={14424.509,31.777714,15632.765};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710671,0.70710683};
 	};
 };
 binarizationWanted=0;
@@ -1237,7 +1236,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9198.4805,16.548729,21565.646};
-			angle=0.9311679;
+			angle=0.93116748;
 			class Attributes
 			{
 				sizeA=150;
@@ -1827,7 +1826,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={27051.426,21.240305,21485.328};
-			angle=3.8582067;
+			angle=3.8582065;
 			class Attributes
 			{
 				sizeA=150;
@@ -2385,23 +2384,22 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2276.353,95.523193,22197.17};
-				angles[]={0.066566855,0,5.9966373};
+				position[]={2318.2996,67.833397,22312.252};
+				angles[]={0.28778321,0,5.9578395};
 			};
 			init="this setVariable [""BIS_WL_name"",  ""Bomos""];";
 			id=649;
 			type="Logic";
-			atlOffset=7.6293945e-006;
 		};
 		class Item147
 		{
 			dataType="Trigger";
-			position[]={2298.595,92.319366,22203.33};
+			position[]={2336.3169,64.273109,22317.553};
 			angle=2.1149371;
 			class Attributes
 			{
-				sizeA=150;
-				sizeB=150;
+				sizeA=175;
+				sizeB=175;
 			};
 			id=650;
 			type="EmptyDetector";
@@ -8763,8 +8761,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5410.1831,76.146355,17891.043};
-				angles[]={0.050614551,0,6.2778621};
+				position[]={5430.0947,76.50106,17907.738};
+				angles[]={6.2578578,0,6.2658529};
 			};
 			init="this setVariable [""BIS_WL_name"",  ""Gori Factory""];";
 			id=1414;
@@ -8773,12 +8771,13 @@ class Mission
 		class Item309
 		{
 			dataType="Trigger";
-			position[]={5410.4731,76.656906,17903.549};
-			angle=2.2371621;
+			position[]={5438.8491,76.33004,17913.574};
+			angle=1.3089966;
 			class Attributes
 			{
-				sizeA=170;
-				sizeB=170;
+				sizeA=125;
+				sizeB=200;
+				isRectangle=1;
 			};
 			id=1415;
 			type="EmptyDetector";
@@ -8788,27 +8787,26 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7476.1021,171.92378,21549.547};
-				angles[]={0.014660765,0,6.1453919};
+				position[]={7354.501,195.08806,21560.395};
+				angles[]={0.28410164,0,6.05269};
 			};
 			init="this setVariable [""BIS_WL_name"",  ""Synneforos Windmill""];";
 			id=1416;
 			type="Logic";
-			atlOffset=1.5258789e-005;
 		};
 		class Item311
 		{
 			dataType="Trigger";
-			position[]={7476.3931,171.83037,21562.053};
+			position[]={7341.2529,196.66168,21568.871};
 			angle=2.2371621;
 			class Attributes
 			{
-				sizeA=150;
-				sizeB=150;
+				sizeA=100;
+				sizeB=250;
+				isRectangle=1;
 			};
 			id=1417;
 			type="EmptyDetector";
-			atlOffset=1.5258789e-005;
 		};
 		class Item312
 		{
@@ -8926,7 +8924,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={25418.064,30.795435,19302.289};
-			angle=3.8582067;
+			angle=3.8582065;
 			class Attributes
 			{
 				sizeA=150;
@@ -9191,7 +9189,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.055279,7274.6079};
-			angle=3.9814093;
+			angle=3.9814076;
 			class Attributes
 			{
 				sizeA=150;
@@ -9244,7 +9242,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814093;
+			angle=3.9814076;
 			class Attributes
 			{
 				sizeA=150;
