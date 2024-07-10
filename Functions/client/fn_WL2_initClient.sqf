@@ -87,6 +87,7 @@ BIS_fnc_getLiveries = compileFinal preprocessFileLineNumbers "Functions\client\r
 BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
+BIS_fnc_squadsInitClient = compileFinal preprocessFileLineNumbers "scripts\Squads\fn_squadsInitClient.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
 
@@ -169,6 +170,8 @@ enableSentences true;
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
+call BIS_fnc_squadsInitClient;
+
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 10000];
@@ -289,6 +292,9 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
+private _squadActionText = format ["<t color='#0000FF'>%1</t>", localize "STR_SQUADS_squads"];
+private _squadActionId = player addAction[_squadActionText, { [true] call BIS_fnc_squadsMenu }, [], -100, false, false, "", ""];
+player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa'/>"];
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
 

@@ -23,5 +23,9 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
+private _squadActionText = format ["<t color='#0000FF'>%1</t>", localize "STR_SQUADS_squads"];
+private _squadActionId = player addAction[_squadActionText, { [true] call BIS_fnc_squadsMenu }, [], -100, false, false, "", ""];
+player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa'/>"];
+
 player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 0 spawn BIS_fnc_WL2_factionBasedClientInit;

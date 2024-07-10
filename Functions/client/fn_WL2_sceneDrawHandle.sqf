@@ -34,9 +34,13 @@ addMissionEventHandler ["Draw3D", {
 		];
 	};
 	{
+		_isInMySquad = ["isInMySquad", [getPlayerID _x]] call BIS_fnc_squadsClient;
+		_color = if (_isInMySquad) then { [0.5, 0.5, 1, 1] } else { [1, 1, 1, 1] };
+		_size = if (_isInMySquad) then { 0.05 } else { 0.03 };
+
 		drawIcon3D [
 			"A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
-			[1, 1, 1, 1],
+			_color,
 			if (vehicle _x == _x) then {
 				(_x modelToWorldVisual (_x selectionPosition "head")) vectorAdd [0,0,0.6];
 			} else {
@@ -47,7 +51,7 @@ addMissionEventHandler ["Draw3D", {
 			0,
 			name _x,
 			2,
-			0.03,
+			_size,
 			"RobotoCondensedBold",
 			"center"
 		];

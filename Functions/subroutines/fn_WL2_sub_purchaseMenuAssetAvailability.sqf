@@ -41,6 +41,15 @@ if (_ret) then {
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
+		case "FTSquadLeader": {
+			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
+			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			private _sl = ['getMySquadLeader'] call BIS_fnc_squadsClient;
+			if (_sl == getPlayerID player) exitWith {_ret = false; _tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInvalid"};
+			if (_sl == "-1") exitWith {_ret = false; _tooltip = localize "STR_SQUADS_fastTravelSquadInvalidNoSquad"};
+			private _squadLeader = allPlayers select {getPlayerID _x == _sl} select 0;
+			if (!alive _squadLeader) exitWith {_ret = false; _tooltip = localize "STR_SQUADS_fastTravelSquadLeaderUnavailable"};
+		};
 		case "LastLoadout": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
 			if (count BIS_WL_lastLoadout == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_no_loadout_saved"};

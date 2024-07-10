@@ -52,6 +52,9 @@ MRTM_fnc_leaveGroup = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_le
 MRTM_fnc_accept = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_accept.sqf";
 MRTM_fnc_invite = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_invite.sqf";
 
+BIS_fnc_squadsInitServer = compileFinal preprocessFileLineNumbers "scripts\Squads\fn_squadsInitServer.sqf";
+call BIS_fnc_squadsInitServer;
+
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;
 

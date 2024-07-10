@@ -1,6 +1,7 @@
 #include "Functions\warlords_constants.inc"
 #include "ui\defines.hpp"
 #include "ui\controls.hpp"
+#include "ui\squadMenu.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
 
@@ -25,6 +26,7 @@ BIS_WL_sectorResetTimeout = 300;
 BIS_WL_sectorVotingDuration = 15;
 BIS_WL_scanCost = 750;
 BIS_WL_fastTravelCostContested = 200;
+BIS_WL_fastTravelCostSquadLeader = 10;
 BIS_WL_orderFTVehicleCost = 200;
 BIS_WL_fundsTransferCost = 2000;
 BIS_WL_targetResetCost = 500;
