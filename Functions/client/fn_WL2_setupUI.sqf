@@ -360,6 +360,7 @@ if (_displayClass == "OSD") then {
 					case "Scan": {0 spawn BIS_fnc_WL2_orderSectorScan};
 					case "FTSeized": {false spawn BIS_fnc_WL2_orderFastTravel};
 					case "FTConflict": {true spawn BIS_fnc_WL2_orderFastTravel};
+					case "FTSquadLeader": {["ftSquadLeader"] spawn SQD_fnc_client};
 					case "FundsTransfer": {call BIS_fnc_WL2_orderFundsTransfer; [player, "fundsTransferBill"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "TargetReset": {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "targetReset"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "forfeitVote": {call BIS_fnc_WL2_orderForfeit};

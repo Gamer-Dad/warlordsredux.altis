@@ -33,10 +33,29 @@ addMissionEventHandler ["Draw3D", {
 			"RobotoCondensedBold"
 		];
 	};
+
+	private _displayedPlayers = allPlayers select {
+		private _eligible = _x != player && BIS_WL_playerSide == side group _x && alive _x;
+		if (_eligible) then {
+			private _isInMySquad = ["isInMySquad", [getPlayerID _x]] call SQD_fnc_client;
+			private _distance = _x distanceSqr player;
+			if (_isInMySquad) then {
+				_distance < (1000 * 1000);
+			} else {
+				_distance < (100 * 100);
+			};
+		} else {
+			false;
+		};
+	};
 	{
+		private _isInMySquad = ["isInMySquad", [getPlayerID _x]] call SQD_fnc_client;
+		_color = if (_isInMySquad) then { [0.5, 0.5, 1, 1] } else { [1, 1, 1, 1] };
+		_size = if (_isInMySquad) then { 0.05 } else { 0.03 };
+
 		drawIcon3D [
 			"A3\ui_f\data\igui\cfg\islandmap\iconplayer_ca.paa",
-			[1, 1, 1, 1],
+			_color,
 			if (vehicle _x == _x) then {
 				(_x modelToWorldVisual (_x selectionPosition "head")) vectorAdd [0,0,0.6];
 			} else {
@@ -47,9 +66,9 @@ addMissionEventHandler ["Draw3D", {
 			0,
 			name _x,
 			2,
-			0.03,
+			_size,
 			"RobotoCondensedBold",
 			"center"
 		];
-	} forEach ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide == side group _x && {alive _x}}});
+	} forEach _displayedPlayers;
 }];

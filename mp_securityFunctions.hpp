@@ -76,6 +76,10 @@ class CfgRemoteExec {
 		class WLM_fnc_changeHornServer {
 			allowedTargets = 2;
 		};
+		
+		class SQD_fnc_server {
+			allowedTargets = 2;
+		};
 
 		//Don't touch
 		class BIS_fnc_effectKilledAirDestruction {allowedTargets = 0; jip = 0;};

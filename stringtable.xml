@@ -1840,5 +1840,485 @@
             <Chinesesimp>--- 纯色 ---</Chinesesimp>
             <Chinese>--- 純色 ---</Chinese>
         </Key>
+        <Key ID="STR_SQUADS_fastTravelToSquadLeader">
+            <Original>Fast Travel to Squad Leader</Original>
+            <English>Fast Travel to Squad Leader</English>
+            <Czech>Rychlé cestování k veliteli jednotky</Czech>
+            <French>Voyage rapide vers le chef d'escouade</French>
+            <German>Schnellreise zum Truppführer</German>
+            <Italian>Viaggio veloce al capo squadra</Italian>
+            <Polish>Szybka podróż do dowódcy drużyny</Polish>
+            <Portuguese>Viagem rápida para o líder do esquadrão</Portuguese>
+            <Russian>Быстрое перемещение к лидеру отряда</Russian>
+            <Spanish>Viaje rápido al líder del escuadrón</Spanish>
+            <Turkish>Takım Liderine Hızlı Seyahat</Turkish>
+            <Korean>분대장에게 빠른 이동</Korean>
+            <Japanese>分隊長への高速移動</Japanese>
+            <Chinesesimp>快速旅行到小队队长</Chinesesimp>
+            <Chinese>快速旅行到小隊隊長</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadLeaderInvalid">
+            <Original>You are the squad leader.</Original>
+            <English>You are the squad leader.</English>
+            <Czech>Jste velitel jednotky.</Czech>
+            <French>Vous êtes le chef d'escouade.</French>
+            <German>Du bist der Truppführer.</German>
+            <Italian>Sei il capo squadra.</Italian>
+            <Polish>Jesteś dowódcą drużyny.</Polish>
+            <Portuguese>Você é o líder do esquadrão.</Portuguese>
+            <Russian>Вы лидер отряда.</Russian>
+            <Spanish>Eres el líder del escuadrón.</Spanish>
+            <Turkish>Takım liderisin.</Turkish>
+            <Korean>당신이 분대장입니다.</Korean>
+            <Japanese>あなたは分隊長です。</Japanese>
+            <Chinesesimp>你是小队队长。</Chinesesimp>
+            <Chinese>你是小隊隊長。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadLeaderUnavailable">
+            <Original>Your squad leader is unavailable.</Original>
+            <English>Your squad leader is unavailable.</English>
+            <Czech>Váš velitel jednotky není k dispozici.</Czech>
+            <French>Votre chef d'escouade n'est pas disponible.</French>
+            <German>Ihr Truppführer ist nicht verfügbar.</German>
+            <Italian>Il tuo capo squadra non è disponibile.</Italian>
+            <Polish>Twój dowódca drużyny jest niedostępny.</Polish>
+            <Portuguese>Seu líder do esquadrão está indisponível.</Portuguese>
+            <Russian>Ваш лидер отряда недоступен.</Russian>
+            <Spanish>Tu líder del escuadrón no está disponible.</Spanish>
+            <Turkish>Takım lideriniz mevcut değil.</Turkish>
+            <Korean>분대장이 사용할 수 없습니다.</Korean>
+            <Japanese>分隊長は利用できません。</Japanese>
+            <Chinesesimp>你的小队队长不可用。</Chinesesimp>
+            <Chinese>你的小隊隊長不可用。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadInvalidNoSquad">
+            <Original>You are not in a squad.</Original>
+            <English>You are not in a squad.</English>
+            <Czech>Nejste v jednotce.</Czech>
+            <French>Vous n'êtes pas dans une escouade.</French>
+            <German>Du bist in keinem Trupp.</German>
+            <Italian>Non sei in una squadra.</Italian>
+            <Polish>Nie jesteś w drużynie.</Polish>
+            <Portuguese>Você não está em um esquadrão.</Portuguese>
+            <Russian>Вы не в отряде.</Russian>
+            <Spanish>No estás en un escuadrón.</Spanish>
+            <Turkish>Bir takımda değilsiniz.</Turkish>
+            <Korean>당신은 분대에 속해 있지 않습니다.</Korean>
+            <Japanese>あなたは分隊に所属していません。</Japanese>
+            <Chinesesimp>你不在小队里。</Chinesesimp>
+            <Chinese>你不在小隊裡。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_sendInvitationSuccessText">
+            <Original>You've sent a squad join invitation to %1.</Original>
+            <English>You've sent a squad join invitation to %1.</English>
+            <Czech>Poslali jste pozvánku k připojení do družstva uživateli %1.</Czech>
+            <French>Vous avez envoyé une invitation à rejoindre l'escouade à %1.</French>
+            <German>Sie haben eine Einladung zum Beitritt zur Truppe an %1 gesendet.</German>
+            <Italian>Hai inviato un invito a unirti alla squadra a %1.</Italian>
+            <Polish>Wysłałeś zaproszenie do drużyny do %1.</Polish>
+            <Portuguese>Você enviou um convite para entrar na equipe para %1.</Portuguese>
+            <Russian>Вы отправили приглашение присоединиться к отряду %1.</Russian>
+            <Spanish>Has enviado una invitación para unirte al escuadrón a %1.</Spanish>
+            <Turkish>%1'e ekip katılma daveti gönderdiniz.</Turkish>
+            <Korean>%1에게 팀 합류 초대를 보냈습니다.</Korean>
+            <Japanese>%1に隊への参加招待を送りました。</Japanese>
+            <Chinesesimp>您已向%1发送了加入小队的邀请。</Chinesesimp>
+            <Chinese>您已向%1发送了加入小队的邀请。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_receiveInvitationText">
+            <Original>%1 invited you to join %2.</Original>
+            <English>%1 invited you to join %2.</English>
+            <Czech>%1 vás pozval(a) do %2.</Czech>
+            <French>%1 vous a invité à rejoindre %2.</French>
+            <German>%1 hat Sie eingeladen, %2 beizutreten.</German>
+            <Italian>%1 ti ha invitato a unirti a %2.</Italian>
+            <Polish>%1 zaprosił(a) Cię do dołączenia do %2.</Polish>
+            <Portuguese>%1 convidou você para entrar no %2.</Portuguese>
+            <Russian>%1 пригласил(а) вас присоединиться к %2.</Russian>
+            <Spanish>%1 te ha invitado a unirte a %2.</Spanish>
+            <Turkish>%1 seni %2'ye katılmaya davet etti.</Turkish>
+            <Korean>%1님이 %2에 초대했습니다.</Korean>
+            <Japanese>%1が%2に招待しました。</Japanese>
+            <Chinesesimp>%1邀请您加入%2。</Chinesesimp>
+            <Chinese>%1邀请您加入%2。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_joinSquadTitle">
+            <Original>Join Squad</Original>
+            <English>Join Squad</English>
+            <Czech>Připojit se k družstvu</Czech>
+            <French>Rejoindre l'escouade</French>
+            <German>Truppe beitreten</German>
+            <Italian>Unisciti alla squadra</Italian>
+            <Polish>Dołącz do drużyny</Polish>
+            <Portuguese>Entrar na equipe</Portuguese>
+            <Russian>Присоединиться к отряду</Russian>
+            <Spanish>Unirse al escuadrón</Spanish>
+            <Turkish>Takıma Katıl</Turkish>
+            <Korean>팀 합류</Korean>
+            <Japanese>隊に参加する</Japanese>
+            <Chinesesimp>加入小队</Chinesesimp>
+            <Chinese>加入小队</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_joinSquadAccept">
+            <Original>Accept</Original>
+            <English>Accept</English>
+            <Czech>Přijmout</Czech>
+            <French>Accepter</French>
+            <German>Annehmen</German>
+            <Italian>Accetta</Italian>
+            <Polish>Zaakceptuj</Polish>
+            <Portuguese>Aceitar</Portuguese>
+            <Russian>Принять</Russian>
+            <Spanish>Aceptar</Spanish>
+            <Turkish>Kabul Et</Turkish>
+            <Korean>수락</Korean>
+            <Japanese>承認</Japanese>
+            <Chinesesimp>接受</Chinesesimp>
+            <Chinese>接受</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_joinSquadDecline">
+            <Original>Decline</Original>
+            <English>Decline</English>
+            <Czech>Odmítnout</Czech>
+            <French>Refuser</French>
+            <German>Ablehnen</German>
+            <Italian>Rifiuta</Italian>
+            <Polish>Odrzuć</Polish>
+            <Portuguese>Recusar</Portuguese>
+            <Russian>Отклонить</Russian>
+            <Spanish>Rechazar</Spanish>
+            <Turkish>Reddet</Turkish>
+            <Korean>거절</Korean>
+            <Japanese>拒否</Japanese>
+            <Chinesesimp>拒绝</Chinesesimp>
+            <Chinese>拒绝</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_noPlayerSelection">
+            <Original>Select a player to invite.</Original>
+            <English>Select a player to invite.</English>
+            <Czech>Vyberte hráče, kterého chcete pozvat.</Czech>
+            <French>Sélectionnez un joueur à inviter.</French>
+            <German>Wählen Sie einen Spieler zum Einladen aus.</German>
+            <Italian>Seleziona un giocatore da invitare.</Italian>
+            <Polish>Wybierz gracza do zaproszenia.</Polish>
+            <Portuguese>Selecione um jogador para convidar.</Portuguese>
+            <Russian>Выберите игрока для приглашения.</Russian>
+            <Spanish>Selecciona un jugador para invitar.</Spanish>
+            <Turkish>Davet etmek için bir oyuncu seçin.</Turkish>
+            <Korean>초대할 플레이어를 선택하세요.</Korean>
+            <Japanese>招待するプレイヤーを選択してください。</Japanese>
+            <Chinesesimp>选择一个玩家邀请。</Chinesesimp>
+            <Chinese>选择一个玩家邀请。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_inviteSelectedPlayer">
+            <Original>Invite selected player to your squad.</Original>
+            <English>Invite selected player to your squad.</English>
+            <Czech>Pozvěte vybraného hráče do svého družstva.</Czech>
+            <French>Invitez le joueur sélectionné dans votre escouade.</French>
+            <German>Laden Sie den ausgewählten Spieler in Ihre Truppe ein.</German>
+            <Italian>Invita il giocatore selezionato nella tua squadra.</Italian>
+            <Polish>Zaproś wybranego gracza do swojej drużyny.</Polish>
+            <Portuguese>Convide o jogador selecionado para sua equipe.</Portuguese>
+            <Russian>Пригласите выбранного игрока в свой отряд.</Russian>
+            <Spanish>Invita al jugador seleccionado a tu escuadrón.</Spanish>
+            <Turkish>Seçilen oyuncuyu ekibine davet et.</Turkish>
+            <Korean>선택한 플레이어를 팀에 초대하세요.</Korean>
+            <Japanese>選択したプレイヤーを隊に招待します。</Japanese>
+            <Chinesesimp>邀请选定的玩家加入你的小队。</Chinesesimp>
+            <Chinese>邀请选定的玩家加入你的小队。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_welcomeText">
+            <Original>Welcome to the squad system. Squads confer a variety of benefits, including sharing points/votes and the ability to spawn on your squad leader.</Original>
+            <English>Welcome to the squad system. Squads confer a variety of benefits, including sharing points/votes and the ability to spawn on your squad leader.</English>
+            <Czech>Vítejte v systému družstev. Družstva poskytují řadu výhod, včetně sdílení bodů/hlasů a možnosti znovu se objevit u svého vedoucího družstva.</Czech>
+            <French>Bienvenue dans le système d'escouades. Les escouades offrent une variété d'avantages, y compris le partage de points/votes et la possibilité d'apparaître près de votre chef d'escouade.</French>
+            <German>Willkommen im Truppensystem. Truppen bieten eine Vielzahl von Vorteilen, einschließlich des Teilens von Punkten/Stimmen und der Möglichkeit, bei Ihrem Truppenführer zu spawnen.</German>
+            <Italian>Benvenuto nel sistema delle squadre. Le squadre offrono una varietà di vantaggi, tra cui la condivisione di punti/voti e la possibilità di apparire vicino al tuo capo squadra.</Italian>
+            <Polish>Witamy w systemie drużyn. Drużyny oferują wiele korzyści, w tym dzielenie się punktami/głosami oraz możliwość odrodzenia się u lidera drużyny.</Polish>
+            <Portuguese>Bem-vindo ao sistema de esquadrões. Os esquadrões oferecem uma variedade de benefícios, incluindo o compartilhamento de pontos/votos e a capacidade de nascer no seu líder de esquadrão.</Portuguese>
+            <Russian>Добро пожаловать в систему отрядов. Отряды предоставляют множество преимуществ, включая совместное использование очков/голосов и возможность возрождения рядом с вашим командиром отряда.</Russian>
+            <Spanish>Bienvenido al sistema de escuadrones. Los escuadrones confieren una variedad de beneficios, incluidos compartir puntos/votos y la capacidad de aparecer cerca de tu líder de escuadrón.</Spanish>
+            <Turkish>Takım sistemine hoş geldiniz. Takımlar, puanları/oyları paylaşma ve takım liderinizin yanında doğma yeteneği de dahil olmak üzere çeşitli avantajlar sağlar.</Turkish>
+            <Korean>팀 시스템에 오신 것을 환영합니다. 팀은 점수/투표 공유 및 팀 리더에게서 스폰할 수 있는 능력 등 다양한 혜택을 제공합니다.</Korean>
+            <Japanese>隊システムへようこそ。隊は、ポイント/投票の共有や隊長の近くでリスポーンする能力など、さまざまな利点をもたらします。</Japanese>
+            <Chinesesimp>欢迎使用小队系统。小队提供多种好处，包括共享积分/投票以及在小队队长旁重生的能力。</Chinesesimp>
+            <Chinese>欢迎使用小队系统。小队提供多种好处，包括共享积分/投票以及在小队队长旁重生的能力。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadLeaderTooltip">
+            <Original>Leader: %1</Original>
+            <English>Leader: %1</English>
+            <Czech>Vedoucí: %1</Czech>
+            <French>Chef : %1</French>
+            <German>Führer: %1</German>
+            <Italian>Capo: %1</Italian>
+            <Polish>Leader: %1</Polish>
+            <Portuguese>Líder: %1</Portuguese>
+            <Russian>Лидер: %1</Russian>
+            <Spanish>Líder: %1</Spanish>
+            <Turkish>Lider: %1</Turkish>
+            <Korean>리더: %1</Korean>
+            <Japanese>リーダー: %1</Japanese>
+            <Chinesesimp>队长：%1</Chinesesimp>
+            <Chinese>队长：%1</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadMemberTooltip">
+            <Original>%1 (%2 points)</Original>
+            <English>%1 (%2 points)</English>
+            <Czech>%1 (%2 bodů)</Czech>
+            <French>%1 (%2 points)</French>
+            <German>%1 (%2 Punkte)</German>
+            <Italian>%1 (%2 punti)</Italian>
+            <Polish>%1 (%2 punkty)</Polish>
+            <Portuguese>%1 (%2 pontos)</Portuguese>
+            <Russian>%1 (%2 очков)</Russian>
+            <Spanish>%1 (%2 puntos)</Spanish>
+            <Turkish>%1 (%2 puan)</Turkish>
+            <Korean>%1 (%2 포인트)</Korean>
+            <Japanese>%1 (%2 ポイント)</Japanese>
+            <Chinesesimp>%1（%2分）</Chinesesimp>
+            <Chinese>%1（%2分）</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadMenuText">
+            <Original>Squads Menu</Original>
+            <English>Squads Menu</English>
+            <Czech>Nabídka družstev</Czech>
+            <French>Menu des escouades</French>
+            <German>Truppenmenü</German>
+            <Italian>Menu delle squadre</Italian>
+            <Polish>Menu drużyn</Polish>
+            <Portuguese>Menu de Esquadrões</Portuguese>
+            <Russian>Меню отрядов</Russian>
+            <Spanish>Menú de escuadrones</Spanish>
+            <Turkish>Takımlar Menüsü</Turkish>
+            <Korean>팀 메뉴</Korean>
+            <Japanese>隊メニュー</Japanese>
+            <Chinesesimp>小队菜单</Chinesesimp>
+            <Chinese>小队菜单</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadInviteMenuText">
+            <Original>Adopt a squad-less teammate:</Original>
+            <English>Adopt a squad-less teammate:</English>
+            <Czech>Adoptujte spoluhráče bez družstva:</Czech>
+            <French>Adopter un coéquipier sans escouade :</French>
+            <German>Nehmen Sie ein teamloses Mitglied auf:</German>
+            <Italian>Adotta un compagno di squadra senza squadra:</Italian>
+            <Polish>Przygarnij gracza bez drużyny:</Polish>
+            <Portuguese>Adotar um colega de equipe sem esquadrão:</Portuguese>
+            <Russian>Примите товарища по команде без отряда:</Russian>
+            <Spanish>Adopta un compañero de equipo sin escuadrón:</Spanish>
+            <Turkish>Takımsız bir takım arkadaşını al:</Turkish>
+            <Korean>팀이 없는 팀원을 받아들이세요:</Korean>
+            <Japanese>隊のないチームメイトを採用する：</Japanese>
+            <Chinesesimp>收编没有小队的队友：</Chinesesimp>
+            <Chinese>收编没有小队的队友：</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_buttonsLeave">
+            <Original>LEAVE</Original>
+            <English>LEAVE</English>
+            <Czech>OPUSTIT</Czech>
+            <French>QUITTER</French>
+            <German>VERLASSEN</German>
+            <Italian>LASCIARE</Italian>
+            <Polish>OPUŚCIĆ</Polish>
+            <Portuguese>SAIR</Portuguese>
+            <Russian>ПОКИНУТЬ</Russian>
+            <Spanish>DEJAR</Spanish>
+            <Turkish>AYRIL</Turkish>
+            <Korean>떠나다</Korean>
+            <Japanese>離れる</Japanese>
+            <Chinesesimp>离开</Chinesesimp>
+            <Chinese>离开</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsPromote">
+            <Original>PROMOTE</Original>
+            <English>PROMOTE</English>
+            <Czech>POVÝŠIT</Czech>
+            <French>PROMOUVOIR</French>
+            <German>BEFÖRDERN</German>
+            <Italian>PROMUOVERE</Italian>
+            <Polish>AWANSOWAĆ</Polish>
+            <Portuguese>PROMOVER</Portuguese>
+            <Russian>ПОВЫСИТЬ</Russian>
+            <Spanish>PROMOVER</Spanish>
+            <Turkish>TERFİ</Turkish>
+            <Korean>승진</Korean>
+            <Japanese>昇進</Japanese>
+            <Chinesesimp>晋升</Chinesesimp>
+            <Chinese>晋升</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsKick">
+            <Original>KICK</Original>
+            <English>KICK</English>
+            <Czech>VYKOPNOUT</Czech>
+            <French>EXCLURE</French>
+            <German>RAUSWERFEN</German>
+            <Italian>ESPULSARE</Italian>
+            <Polish>WYRZUCIĆ</Polish>
+            <Portuguese>EXPULSAR</Portuguese>
+            <Russian>ВЫГНАТЬ</Russian>
+            <Spanish>EXPULSAR</Spanish>
+            <Turkish>ATMAK</Turkish>
+            <Korean>내보내다</Korean>
+            <Japanese>キック</Japanese>
+            <Chinesesimp>踢出</Chinesesimp>
+            <Chinese>踢出</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsRename">
+            <Original>RENAME</Original>
+            <English>RENAME</English>
+            <Czech>PŘEJMENOVAT</Czech>
+            <French>RENOMMER</French>
+            <German>UMBENENNEN</German>
+            <Italian>RINOMINARE</Italian>
+            <Polish>PRZENAME</Polish>
+            <Portuguese>RENOMEAR</Portuguese>
+            <Russian>ПЕРЕИМЕНОВАТЬ</Russian>
+            <Spanish>RENOMBRAR</Spanish>
+            <Turkish>YENİDEN ADLANDIRMAK</Turkish>
+            <Korean>이름 변경</Korean>
+            <Japanese>名前を変更する</Japanese>
+            <Chinesesimp>重命名</Chinesesimp>
+            <Chinese>重命名</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsCreate">
+            <Original>CREATE</Original>
+            <English>CREATE</English>
+            <Czech>VYTVOŘIT</Czech>
+            <French>CRÉER</French>
+            <German>ERSTELLEN</German>
+            <Italian>CREARE</Italian>
+            <Polish>UTWÓRZ</Polish>
+            <Portuguese>CRIAR</Portuguese>
+            <Russian>СОЗДАТЬ</Russian>
+            <Spanish>CREAR</Spanish>
+            <Turkish>OLUŞTUR</Turkish>
+            <Korean>만들다</Korean>
+            <Japanese>作成</Japanese>
+            <Chinesesimp>创建</Chinesesimp>
+            <Chinese>创建</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_buttonsInvite">
+            <Original>INVITE</Original>
+            <English>INVITE</English>
+            <Czech>POZVAT</Czech>
+            <French>INVITER</French>
+            <German>EINLADEN</German>
+            <Italian>INVITARE</Italian>
+            <Polish>ZAPROSIĆ</Polish>
+            <Portuguese>CONVIDAR</Portuguese>
+            <Russian>ПРИГЛАСИТЬ</Russian>
+            <Spanish>INVITAR</Spanish>
+            <Turkish>DAVET ET</Turkish>
+            <Korean>초대</Korean>
+            <Japanese>招待</Japanese>
+            <Chinesesimp>邀请</Chinesesimp>
+            <Chinese>邀请</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_newSquadName">
+            <Original>NEW SQUAD NAME</Original>
+            <English>NEW SQUAD NAME</English>
+            <Czech>NOVÝ NÁZEV DRUŽSTVA</Czech>
+            <French>NOM DE LA NOUVELLE ESCADRON</French>
+            <German>NEUER TRUPPENNAME</German>
+            <Italian>NUOVO NOME DELLA SQUADRA</Italian>
+            <Polish>NOWA NAZWA DRUŻYNY</Polish>
+            <Portuguese>NOME DA NOVA EQUIPE</Portuguese>
+            <Russian>НОВОЕ НАЗВАНИЕ ОТРЯДА</Russian>
+            <Spanish>NUEVO NOMBRE DEL ESCUADRÓN</Spanish>
+            <Turkish>YENİ TAKIM ADI</Turkish>
+            <Korean>새로운 팀 이름</Korean>
+            <Japanese>新しい隊の名前</Japanese>
+            <Chinesesimp>新的小队名称</Chinesesimp>
+            <Chinese>新的小队名称</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_enterNewSquadName">
+            <Original>Enter the new squad name.</Original>
+            <English>Enter the new squad name.</English>
+            <Czech>Zadejte nový název družstva.</Czech>
+            <French>Entrez le nom de la nouvelle escouade.</French>
+            <German>Geben Sie den neuen Truppennamen ein.</German>
+            <Italian>Inserisci il nuovo nome della squadra.</Italian>
+            <Polish>Wprowadź nową nazwę drużyny.</Polish>
+            <Portuguese>Digite o nome da nova equipe.</Portuguese>
+            <Russian>Введите новое название отряда.</Russian>
+            <Spanish>Ingrese el nuevo nombre del escuadrón.</Spanish>
+            <Turkish>Yeni takım adını girin.</Turkish>
+            <Korean>새 팀 이름을 입력하세요.</Korean>
+            <Japanese>新しい隊の名前を入力してください。</Japanese>
+            <Chinesesimp>输入新的小队名称。</Chinesesimp>
+            <Chinese>输入新的小队名称。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_buttonsSave">
+            <Original>SAVE</Original>
+            <English>SAVE</English>
+            <Czech>ULOŽIT</Czech>
+            <French>ENREGISTRER</French>
+            <German>SPEICHERN</German>
+            <Italian>SALVA</Italian>
+            <Polish>ZAPISZ</Polish>
+            <Portuguese>SALVAR</Portuguese>
+            <Russian>СОХРАНИТЬ</Russian>
+            <Spanish>GUARDAR</Spanish>
+            <Turkish>KAYDET</Turkish>
+            <Korean>저장</Korean>
+            <Japanese>保存</Japanese>
+            <Chinesesimp>保存</Chinesesimp>
+            <Chinese>保存</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_saveNewSquadName">
+            <Original>Save the new squad name.</Original>
+            <English>Save the new squad name.</English>
+            <Czech>Uložit nový název družstva.</Czech>
+            <French>Enregistrez le nom de la nouvelle escouade.</French>
+            <German>Speichern Sie den neuen Truppennamen.</German>
+            <Italian>Salva il nuovo nome della squadra.</Italian>
+            <Polish>Zapisz nową nazwę drużyny.</Polish>
+            <Portuguese>Salve o novo nome da equipe.</Portuguese>
+            <Russian>Сохраните новое название отряда.</Russian>
+            <Spanish>Guarda el nuevo nombre del escuadrón.</Spanish>
+            <Turkish>Yeni takım adını kaydet.</Turkish>
+            <Korean>새 팀 이름을 저장하세요.</Korean>
+            <Japanese>新しい隊の名前を保存します。</Japanese>
+            <Chinesesimp>保存新的小队名称。</Chinesesimp>
+            <Chinese>保存新的小队名称。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_refreshSquads">
+            <Original>REFRESH</Original>
+            <English>REFRESH</English>
+            <Czech>OBNOVIT</Czech>
+            <French>ACTUALISER</French>
+            <German>AKTUALISIEREN</German>
+            <Italian>AGGIORNA</Italian>
+            <Polish>ODŚWIEŻ</Polish>
+            <Portuguese>ATUALIZAR</Portuguese>
+            <Russian>ОБНОВИТЬ</Russian>
+            <Spanish>ACTUALIZAR</Spanish>
+            <Turkish>YENİLE</Turkish>
+            <Korean>새로 고침</Korean>
+            <Japanese>更新</Japanese>
+            <Chinesesimp>刷新</Chinesesimp>
+            <Chinese>刷新</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squads">
+            <Original>Squads</Original>
+            <English>Squads</English>
+            <Czech>Družstva</Czech>
+            <French>Escouades</French>
+            <German>Truppen</German>
+            <Italian>Squadre</Italian>
+            <Polish>Drużyny</Polish>
+            <Portuguese>Esquadrões</Portuguese>
+            <Russian>Отряды</Russian>
+            <Spanish>Escuadrones</Spanish>
+            <Turkish>Takımlar</Turkish>
+            <Korean>팀</Korean>
+            <Japanese>隊</Japanese>
+            <Chinesesimp>小队</Chinesesimp>
+            <Chinese>小队</Chinese>
+        </Key>
     </Container>
 </Project>
