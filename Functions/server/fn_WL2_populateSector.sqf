@@ -106,6 +106,22 @@ _units = [];
 _i = 0;
 while {_i < _garrisonSize} do {
 	private _pos = selectRandom _spawnPosArr;
+	/*
+	//***Spawning Diag code, visual tool for spawn points***
+	{
+       	private _posNumber = str _x;
+    	_mrkr = createMarkerLocal [_posNumber, _x];
+		_mrkr setMarkerColorLocal "ColorRed";
+    	_mrkr setMarkerTypeLocal "loc_LetterX";
+    	_mrkr setMarkerSizeLocal [1, 1];
+    } forEach _spawnPosArr;
+	
+    private _posNumber = str _i;
+    _mrkr = createMarkerLocal [_posNumber, _pos];
+    _mrkr setMarkerTypeLocal "mil_dot_noShadow";
+    _mrkr setMarkerSizeLocal [1.5, 1.5];
+	//***end diag code block***
+	*/
 	private _newGrp = createGroup _owner;
 	private _grpSize = floor (3 + random (5 - 3));
 	private _cnt = (count allPlayers) max 1;
