@@ -4,6 +4,10 @@ class CfgRemoteExec {
 		mode = 1;
 		jip = 1;
 
+		class APS_fnc_Report {
+			allowedTargets = 2;
+		};
+
 		class BIS_fnc_WL2_handleClientRequest {
 			allowedTargets = 2;
 		};
