@@ -1075,5 +1075,328 @@
             <Chinesesimp></Chinesesimp>
             <Chinese></Chinese>
         </Key>
+        <Key ID="STR_WLM_TITLE">
+            <Original>WARLORDS REDUX VEHICLE MANAGER</Original>
+            <English>WARLORDS REDUX VEHICLE MANAGER</English>
+            <Czech>SPRÁVCE VOZIDEL WARLORDS REDUX</Czech>
+            <French>GESTIONNAIRE DE VÉHICULES WARLORDS REDUX</French>
+            <German>WARLORDS REDUX FAHRZEUGMANAGER</German>
+            <Italian>GESTORE VEICOLI WARLORDS REDUX</Italian>
+            <Polish>MENEDŻER POJAZDÓW WARLORDS REDUX</Polish>
+            <Portuguese>GERENCIADOR DE VEÍCULOS WARLORDS REDUX</Portuguese>
+            <Russian>МЕНЕДЖЕР ТРАНСПОРТНЫХ СРЕДСТВ WARLORDS REDUX</Russian>
+            <Spanish>GESTOR DE VEHÍCULOS WARLORDS REDUX</Spanish>
+            <Turkish>WARLORDS REDUX ARAÇ YÖNETİCİSİ</Turkish>
+            <Korean>WARLORDS REDUX 차량 관리자</Korean>
+            <Japanese>WARLORDS REDUX 車両マネージャー</Japanese>
+            <Chinesesimp>WARLORDS REDUX 车辆管理器</Chinesesimp>
+            <Chinese>WARLORDS REDUX 车辆管理器</Chinese>
+        </Key>
+        <Key ID="STR_WLM_AIRCRAFT_NAME">
+            <Original>Aircraft Name</Original>
+            <English>Aircraft Name</English>
+            <Czech>Název letadla</Czech>
+            <French>Nom de l'avion</French>
+            <German>Flugzeugname</German>
+            <Italian>Nome dell'aeromobile</Italian>
+            <Polish>Nazwa samolotu</Polish>
+            <Portuguese>Nome da aeronave</Portuguese>
+            <Russian>Название самолета</Russian>
+            <Spanish>Nombre del avión</Spanish>
+            <Turkish>Uçak Adı</Turkish>
+            <Korean>항공기 이름</Korean>
+            <Japanese>航空機名</Japanese>
+            <Chinesesimp>飞机名称</Chinesesimp>
+            <Chinese>飛機名稱</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY_PYLONS">
+            <Original>Apply Pylons</Original>
+            <English>Apply Pylons</English>
+            <Czech>Použít pylony</Czech>
+            <French>Appliquer pylônes</French>
+            <German>Pylonen anwenden</German>
+            <Italian>Applica i piloni</Italian>
+            <Polish>Zastosuj pylony</Polish>
+            <Portuguese>Aplicar Pylons</Portuguese>
+            <Russian>Применить пилоны</Russian>
+            <Spanish>Aplicar pilones</Spanish>
+            <Turkish>Pilonları Uygula</Turkish>
+            <Korean>파일론 적용</Korean>
+            <Japanese>パイロンを適用</Japanese>
+            <Chinesesimp>应用挂架</Chinesesimp>
+            <Chinese>應用掛架</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY_PYLONS_DESC">
+            <Original>Apply the selected pylons to the aircraft. WARNING: THIS WILL REMOVE ALL PYLON AMMO.</Original>
+            <English>Apply the selected pylons to the aircraft. WARNING: THIS WILL REMOVE ALL PYLON AMMO.</English>
+            <Czech>Použijte vybrané pylony na letadlo. VAROVÁNÍ: TÍMTO BUDOU ODSTRANĚNY VŠECHNY NÁBOJE Z PYLONŮ.</Czech>
+            <French>Appliquez les pylônes sélectionnés à l'avion. ATTENTION : CELA SUPPRIMERA TOUTES LES MUNITIONS DES PYLÔNES.</French>
+            <German>Wenden Sie die ausgewählten Pylonen auf das Flugzeug an. WARNUNG: DIES ENTFERNT ALLE PYLONEN-MUNITION.</German>
+            <Italian>Applica i piloni selezionati all'aereo. ATTENZIONE: QUESTO RIMUOVERÀ TUTTE LE MUNIZIONI DEI PILONI.</Italian>
+            <Polish>Zastosuj wybrane pylony do samolotu. OSTRZEŻENIE: TO USUNIE WSZYSTKIE AMUNICJE PYLONÓW.</Polish>
+            <Portuguese>Aplicar os pylons selecionados à aeronave. AVISO: ISSO REMOVERÁ TODAS AS MUNIÇÕES DOS PYLONS.</Portuguese>
+            <Russian>Примените выбранные пилоны к самолету. ВНИМАНИЕ: ЭТО УДАЛИТ ВСЕ БОЕПРИПАСЫ НА ПИЛОНАХ.</Russian>
+            <Spanish>Aplica los pilones seleccionados al avión. ADVERTENCIA: ESTO ELIMINARÁ TODAS LAS MUNICIONES DE LOS PILONES.</Spanish>
+            <Turkish>Seçilen pilonları uçağa uygulayın. UYARI: BU TÜM PİLON MÜHİMMATINI KALDIRIR.</Turkish>
+            <Korean>선택한 파일론을 항공기에 적용하십시오. 경고: 이 작업은 모든 파일론 탄약을 제거합니다.</Korean>
+            <Japanese>選択したパイロンを航空機に適用します。警告：これにより、すべてのパイロン弾薬が削除されます。</Japanese>
+            <Chinesesimp>将选定的挂架应用到飞机上。警告：这将删除所有挂架弹药。</Chinesesimp>
+            <Chinese>將選定的掛架應用到飛機上。警告：這將刪除所有掛架彈藥。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SAVE">
+            <Original>Save</Original>
+            <English>Save</English>
+            <Czech>Uložit</Czech>
+            <French>Enregistrer</French>
+            <German>Speichern</German>
+            <Italian>Salva</Italian>
+            <Polish>Zapisz</Polish>
+            <Portuguese>Salvar</Portuguese>
+            <Russian>Сохранить</Russian>
+            <Spanish>Guardar</Spanish>
+            <Turkish>Kaydet</Turkish>
+            <Korean>저장</Korean>
+            <Japanese>保存</Japanese>
+            <Chinesesimp>保存</Chinesesimp>
+            <Chinese>保存</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SAVE_DESC">
+            <Original>Save loadout to custom slot.</Original>
+            <English>Save loadout to custom slot.</English>
+            <Czech>Uložit výzbroj do vlastního slotu.</Czech>
+            <French>Enregistrer la configuration dans un emplacement personnalisé.</French>
+            <German>Speichern Sie die Ausrüstung in einem benutzerdefinierten Slot.</German>
+            <Italian>Salva il loadout nello slot personalizzato.</Italian>
+            <Polish>Zapisz konfigurację do niestandardowego gniazda.</Polish>
+            <Portuguese>Salvar configuração no slot personalizado.</Portuguese>
+            <Russian>Сохранить загрузку в пользовательский слот.</Russian>
+            <Spanish>Guardar configuración en una ranura personalizada.</Spanish>
+            <Turkish>Yüklemeyi özel yuvaya kaydet.</Turkish>
+            <Korean>맞춤 슬롯에 로드아웃 저장.</Korean>
+            <Japanese>カスタムスロットにロードアウトを保存します。</Japanese>
+            <Chinesesimp>将负载保存到自定义插槽。</Chinesesimp>
+            <Chinese>將負載保存到自定義插槽。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_LOADOUT">
+            <Original>Loadout</Original>
+            <English>Loadout</English>
+            <Czech>Výzbroj</Czech>
+            <French>Charge utile</French>
+            <German>Ladung</German>
+            <Italian>Carico</Italian>
+            <Polish>Ładunek</Polish>
+            <Portuguese>Configuração</Portuguese>
+            <Russian>Снаряжение</Russian>
+            <Spanish>Configuración</Spanish>
+            <Turkish>Yükleme</Turkish>
+            <Korean>장비</Korean>
+            <Japanese>ロードアウト</Japanese>
+            <Chinesesimp>配置</Chinesesimp>
+            <Chinese>配置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SELECT_LOADOUT">
+            <Original>Select a loadout.</Original>
+            <English>Select a loadout.</English>
+            <Czech>Vyberte výzbroj.</Czech>
+            <French>Sélectionnez une configuration.</French>
+            <German>Wählen Sie eine Ausrüstung.</German>
+            <Italian>Seleziona un carico.</Italian>
+            <Polish>Wybierz konfigurację.</Polish>
+            <Portuguese>Selecione uma configuração.</Portuguese>
+            <Russian>Выберите снаряжение.</Russian>
+            <Spanish>Seleccione una configuración.</Spanish>
+            <Turkish>Bir yükleme seçin.</Turkish>
+            <Korean>장비를 선택하십시오.</Korean>
+            <Japanese>ロードアウトを選択します。</Japanese>
+            <Chinesesimp>选择一个配置。</Chinesesimp>
+            <Chinese>選擇一個配置。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_WIPE_ALL">
+            <Original>Wipe All</Original>
+            <English>Wipe All</English>
+            <Czech>Smazat vše</Czech>
+            <French>Effacer tout</French>
+            <German>Alles löschen</German>
+            <Italian>Cancella tutto</Italian>
+            <Polish>Usuń wszystko</Polish>
+            <Portuguese>Limpar tudo</Portuguese>
+            <Russian>Удалить все</Russian>
+            <Spanish>Borrar todo</Spanish>
+            <Turkish>Hepsini Sil</Turkish>
+            <Korean>모두 삭제</Korean>
+            <Japanese>すべて消去</Japanese>
+            <Chinesesimp>清除所有</Chinesesimp>
+            <Chinese>清除所有</Chinese>
+        </Key>
+        <Key ID="STR_WLM_WIPE_ALL_DESC">
+            <Original>Clear all saved user loadouts. This will preserve default presets.</Original>
+            <English>Clear all saved user loadouts. This will preserve default presets.</English>
+            <Czech>Vymažte všechny uložené výzbroje uživatele. Tímto budou zachovány výchozí předvolby.</Czech>
+            <French>Effacez toutes les configurations utilisateur enregistrées. Cela préservera les préréglages par défaut.</French>
+            <German>Löschen Sie alle gespeicherten Benutzer-Ausrüstungen. Dies bewahrt die Standardeinstellungen.</German>
+            <Italian>Cancella tutti i carichi utente salvati. Questo manterrà i preset predefiniti.</Italian>
+            <Polish>Wyczyść wszystkie zapisane konfiguracje użytkownika. Zachowane zostaną domyślne ustawienia.</Polish>
+            <Portuguese>Limpe todas as configurações salvas do usuário. Isso preservará os predefinidos padrão.</Portuguese>
+            <Russian>Очистите все сохраненные загрузки пользователя. Это сохранит настройки по умолчанию.</Russian>
+            <Spanish>Borre todas las configuraciones de usuario guardadas. Esto preservará los preajustes predeterminados.</Spanish>
+            <Turkish>Tüm kaydedilmiş kullanıcı yüklemelerini silin. Bu, varsayılan ön ayarları koruyacaktır.</Turkish>
+            <Korean>저장된 모든 사용자 장비를 지웁니다. 기본 사전 설정은 그대로 유지됩니다.</Korean>
+            <Japanese>保存されたすべてのユーザーのロードアウトをクリアします。これにより、デフォルトのプリセットが保持されます。</Japanese>
+            <Chinesesimp>清除所有已保存的用户配置。这将保留默认预设。</Chinesesimp>
+            <Chinese>清除所有已保存的用戶配置。這將保留默認預設。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_REARM">
+            <Original>Rearm</Original>
+            <English>Rearm</English>
+            <Czech>Přezbrojit</Czech>
+            <French>Réarmer</French>
+            <German>Nachrüsten</German>
+            <Italian>Riarmare</Italian>
+            <Polish>Przezbrojenie</Polish>
+            <Portuguese>Rearmar</Portuguese>
+            <Russian>Перевооружение</Russian>
+            <Spanish>Rearmar</Spanish>
+            <Turkish>Yeniden Silahlandır</Turkish>
+            <Korean>재무장</Korean>
+            <Japanese>再武装する</Japanese>
+            <Chinesesimp>重新武装</Chinesesimp>
+            <Chinese>重新武裝</Chinese>
+        </Key>
+        <Key ID="STR_WLM_DEFAULT_SKIN">
+            <Original>Default Skin</Original>
+            <English>Default Skin</English>
+            <Czech>Výchozí skin</Czech>
+            <French>Peau par défaut</French>
+            <German>Standard-Skin</German>
+            <Italian>Pelle predefinita</Italian>
+            <Polish>Domyślna skóra</Polish>
+            <Portuguese>Skin padrão</Portuguese>
+            <Russian>Стандартная оболочка</Russian>
+            <Spanish>Piel predeterminada</Spanish>
+            <Turkish>Varsayılan Cilt</Turkish>
+            <Korean>기본 스킨</Korean>
+            <Japanese>デフォルトスキン</Japanese>
+            <Chinesesimp>默认皮肤</Chinesesimp>
+            <Chinese>默認皮膚</Chinese>
+        </Key>
+        <Key ID="STR_WLM_REARM_DESC">
+            <Original>Rearm vehicle. Make sure you've selected the correct pylons before rearming.</Original>
+            <English>Rearm vehicle. Make sure you've selected the correct pylons before rearming.</English>
+            <Czech>Přezbrojte vozidlo. Ujistěte se, že jste vybrali správné pylony před přezbrojením.</Czech>
+            <French>Réarmez le véhicule. Assurez-vous d'avoir sélectionné les pylônes corrects avant de réarmer.</French>
+            <German>Rüsten Sie das Fahrzeug nach. Stellen Sie sicher, dass Sie die richtigen Pylonen ausgewählt haben, bevor Sie nachrüsten.</German>
+            <Italian>Riarmare il veicolo. Assicurati di aver selezionato i piloni corretti prima di riarmare.</Italian>
+            <Polish>Przezbroj pojazd. Upewnij się, że wybrałeś odpowiednie pylony przed przezbrojeniem.</Polish>
+            <Portuguese>Rearmar veículo. Certifique-se de selecionar os pylons corretos antes de rearmar.</Portuguese>
+            <Russian>Перевооружить транспортное средство. Убедитесь, что выбрали правильные пилоны перед перевооружением.</Russian>
+            <Spanish>Rearme el vehículo. Asegúrese de haber seleccionado los pilones correctos antes de rearmar.</Spanish>
+            <Turkish>Aracı yeniden silahlandırın. Yeniden silahlandırmadan önce doğru pilonları seçtiğinizden emin olun.</Turkish>
+            <Korean>차량을 재무장하십시오. 재무장하기 전에 올바른 파일론을 선택했는지 확인하십시오.</Korean>
+            <Japanese>車両を再武装します。再武装する前に、正しいパイロンが選択されていることを確認してください。</Japanese>
+            <Chinesesimp>重新武装车辆。重新武装前，请确保选择了正确的挂架。</Chinesesimp>
+            <Chinese>重新武裝車輛。重新武裝前，請確保選擇了正確的掛架。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SELECT_TEXTURE">
+            <Original>Select a vehicle texture.</Original>
+            <English>Select a vehicle texture.</English>
+            <Czech>Vyberte texturu vozidla.</Czech>
+            <French>Sélectionnez une texture de véhicule.</French>
+            <German>Wählen Sie eine Fahrzeugtextur aus.</German>
+            <Italian>Seleziona una texture per il veicolo.</Italian>
+            <Polish>Wybierz teksturę pojazdu.</Polish>
+            <Portuguese>Selecione uma textura de veículo.</Portuguese>
+            <Russian>Выберите текстуру транспортного средства.</Russian>
+            <Spanish>Seleccione una textura de vehículo.</Spanish>
+            <Turkish>Bir araç dokusu seçin.</Turkish>
+            <Korean>차량 텍스처를 선택하십시오.</Korean>
+            <Japanese>車両のテクスチャを選択します。</Japanese>
+            <Chinesesimp>选择车辆纹理。</Chinesesimp>
+            <Chinese>選擇車輛紋理。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_PYLON_MISMATCH_WARNING">
+            <Original>PYLON MISMATCH WARNING</Original>
+            <English>PYLON MISMATCH WARNING</English>
+            <Czech>UPOZORNĚNÍ NA NESOULAD PYLONŮ</Czech>
+            <French>AVERTISSEMENT DE DÉCALAGE DE PYLÔNE</French>
+            <German>PYLONEN-MISMATCH-WARNUNG</German>
+            <Italian>AVVERTENZA DI DISALLINEAMENTO DEI PILONI</Italian>
+            <Polish>OSTRZEŻENIE O NIEDOPASOWANIU PYLONÓW</Polish>
+            <Portuguese>AVISO DE DESALINHAMENTO DE PYLON</Portuguese>
+            <Russian>ПРЕДУПРЕЖДЕНИЕ О НЕСООТВЕТСТВИИ ПИЛОНОВ</Russian>
+            <Spanish>ADVERTENCIA DE DESALINEACIÓN DE PYLON</Spanish>
+            <Turkish>PİLON EŞLEŞME UYARISI</Turkish>
+            <Korean>파일론 불일치 경고</Korean>
+            <Japanese>パイロン不一致警告</Japanese>
+            <Chinesesimp>挂架不匹配警告</Chinesesimp>
+            <Chinese>掛架不匹配警告</Chinese>
+        </Key>
+        <Key ID="STR_WLM_PYLON_OLD_SETTINGS">
+            <Original>Your pylons will be reloaded with their old settings.</Original>
+            <English>Your pylons will be reloaded with their old settings.</English>
+            <Czech>Vaše pylony budou znovu načteny s jejich starými nastaveními.</Czech>
+            <French>Vos pylônes seront rechargés avec leurs anciens réglages.</French>
+            <German>Ihre Pylonen werden mit ihren alten Einstellungen neu geladen.</German>
+            <Italian>I tuoi piloni verranno ricaricati con le loro vecchie impostazioni.</Italian>
+            <Polish>Twoje pylony zostaną przeładowane ze starymi ustawieniami.</Polish>
+            <Portuguese>Seus pylons serão recarregados com suas configurações antigas.</Portuguese>
+            <Russian>Ваши пилоны будут перезагружены со старыми настройками.</Russian>
+            <Spanish>Sus pilones se recargarán con sus configuraciones anteriores.</Spanish>
+            <Turkish>Pilonlarınız eski ayarlarıyla yeniden yüklenecek.</Turkish>
+            <Korean>파일론이 이전 설정으로 다시 로드됩니다.</Korean>
+            <Japanese>パイロンは以前の設定で再読み込みされます。</Japanese>
+            <Chinesesimp>您的挂架将按其旧设置重新加载。</Chinesesimp>
+            <Chinese>您的掛架將按其舊設置重新加載。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_GO_BACK">
+            <Original>Go Back</Original>
+            <English>Go Back</English>
+            <Czech>Vrátit Se</Czech>
+            <French>Retourner</French>
+            <German>Zurück</German>
+            <Italian>Torna Indietro</Italian>
+            <Polish>Wróć</Polish>
+            <Portuguese>Voltar</Portuguese>
+            <Russian>Назад</Russian>
+            <Spanish>Volver</Spanish>
+            <Turkish>Gerî Dön</Turkish>
+            <Korean>돌아가기</Korean>
+            <Japanese>戻る</Japanese>
+            <Chinesesimp>返回</Chinesesimp>
+            <Chinese>返回</Chinese>
+        </Key>
+        <Key ID="STR_WLM_PYLON_SELECTION_SCREEN">
+            <Original>Return to the pylon selection screen to apply your new pylon settings.</Original>
+            <English>Return to the pylon selection screen to apply your new pylon settings.</English>
+            <Czech>Vraťte se na obrazovku výběru pylonů a aplikujte nová nastavení pylonů.</Czech>
+            <French>Retournez à l'écran de sélection des pylônes pour appliquer vos nouveaux réglages.</French>
+            <German>Kehren Sie zum Pylonenauswahlbildschirm zurück, um Ihre neuen Pyloneneinstellungen anzuwenden.</German>
+            <Italian>Torna alla schermata di selezione dei piloni per applicare le nuove impostazioni dei piloni.</Italian>
+            <Polish>Wróć do ekranu wyboru pylonów, aby zastosować nowe ustawienia pylonów.</Polish>
+            <Portuguese>Volte para a tela de seleção de pylons para aplicar suas novas configurações de pylons.</Portuguese>
+            <Russian>Вернитесь на экран выбора пилонов, чтобы применить новые настройки пилонов.</Russian>
+            <Spanish>Vuelva a la pantalla de selección de pilones para aplicar sus nuevas configuraciones de pilones.</Spanish>
+            <Turkish>Yeni pilon ayarlarınızı uygulamak için pilon seçim ekranına geri dönün.</Turkish>
+            <Korean>새 파일론 설정을 적용하려면 파일론 선택 화면으로 돌아가십시오.</Korean>
+            <Japanese>新しいパイロン設定を適用するには、パイロン選択画面に戻ります。</Japanese>
+            <Chinesesimp>返回挂架选择屏幕以应用新的挂架设置。</Chinesesimp>
+            <Chinese>返回掛架選擇屏幕以應用新的掛架設置。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_PYLON_MISMATCH_MESSAGE">
+            <Original>It looks like your pylon settings don't match your current pylons. You need to press 'Apply Pylons' before you hit 'Rearm' for your pylon configuration to be used. Are you sure you want to continue?</Original>
+            <English>It looks like your pylon settings don't match your current pylons. You need to press 'Apply Pylons' before you hit 'Rearm' for your pylon configuration to be used. Are you sure you want to continue?</English>
+            <Czech>Vypadá to, že nastavení vašich pylonů neodpovídá aktuálním pylony. Před stisknutím tlačítka 'Přezbrojit' musíte stisknout 'Použít pylony', aby se použilo nastavení pylonů. Opravdu chcete pokračovat?</Czech>
+            <French>Il semble que vos paramètres de pylônes ne correspondent pas à vos pylônes actuels. Vous devez appuyer sur 'Appliquer les pylônes' avant d'appuyer sur 'Réarmer' pour que votre configuration de pylônes soit utilisée. Voulez-vous vraiment continuer ?</French>
+            <German>Es sieht so aus, als ob Ihre Pyloneneinstellungen nicht zu Ihren aktuellen Pylonen passen. Sie müssen 'Pylonen anwenden' drücken, bevor Sie 'Nachrüsten' drücken, damit Ihre Pylonenkonfiguration verwendet wird. Sind Sie sicher, dass Sie fortfahren möchten?</German>
+            <Italian>Sembra che le impostazioni dei tuoi piloni non corrispondano ai tuoi piloni attuali. È necessario premere 'Applica i piloni' prima di premere 'Riarmare' affinché la configurazione del pilone venga utilizzata. Sei sicuro di voler continuare?</Italian>
+            <Polish>Wygląda na to, że ustawienia pylonów nie pasują do bieżących pylonów. Musisz nacisnąć 'Zastosuj pylony', zanim naciśniesz 'Przezbrojenie', aby użyć konfiguracji pylonów. Czy na pewno chcesz kontynuować?</Polish>
+            <Portuguese>Parece que as configurações de pylons não correspondem aos pylons atuais. Você precisa pressionar 'Aplicar Pylons' antes de pressionar 'Rearmar' para que sua configuração de pylons seja usada. Tem certeza de que deseja continuar?</Portuguese>
+            <Russian>Похоже, что настройки ваших пилонов не соответствуют текущим пилонам. Вам нужно нажать 'Применить пилоны' перед нажатием 'Перевооружение', чтобы использовать вашу конфигурацию пилонов. Вы уверены, что хотите продолжить?</Russian>
+            <Spanish>Parece que las configuraciones de sus pilones no coinciden con sus pilones actuales. Debe presionar 'Aplicar pilones' antes de presionar 'Rearmar' para que se utilice su configuración de pilones. ¿Seguro que quieres continuar?</Spanish>
+            <Turkish>Pilon ayarlarınızın mevcut pilonlarınızla eşleşmediği anlaşılıyor. Pilon yapılandırmanızın kullanılabilmesi için 'Yeniden Silahlandır'ı tıklamadan önce 'Pilonları Uygula'ya basmanız gerekir. Devam etmek istediğinizden emin misiniz?</Turkish>
+            <Korean>파일론 설정이 현재 파일론과 일치하지 않는 것 같습니다. 파일론 구성을 사용하려면 '재무장'을 누르기 전에 '파일론 적용'을 눌러야 합니다. 계속하시겠습니까?</Korean>
+            <Japanese>パイロン設定が現在のパイロンと一致しないようです。パイロン構成を使用するには、「再武装」を押す前に「パイロンを適用」を押す必要があります。本当に続行しますか？</Japanese>
+            <Chinesesimp>看起来您的挂架设置与当前挂架不匹配。您需要在按“重新武装”之前按“应用挂架”，以便使用挂架配置。您确定要继续吗？</Chinesesimp>
+            <Chinese>看起來您的掛架設置與當前掛架不匹配。您需要在按“重新武裝”之前按“應用掛架”，以便使用掛架配置。您確定要繼續嗎？</Chinese>
+        </Key>
     </Container>
 </Project>
