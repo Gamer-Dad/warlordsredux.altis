@@ -192,7 +192,7 @@ if (side player == west) then {
     _customTexturesList pushBack ["Tropical Green", "#(rgb,8,8,3)color(0,0.84,0.16,0.03)", "Solid Color"];
 };
 
-private _ignoreTextureSlots = ["aiming_dot", "CamoNet", "CamoSlat"];
+private _ignoreTextureSlots = ["aiming_dot", "CamoNet", "CamoSlat", "insignia", "number_01", "number_02", "number_03"];
 private _customTexturesMap = createHashMap;
 {
     private _textureName = _x # 0;

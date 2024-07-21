@@ -181,7 +181,7 @@ class WLM_PylonSelectUser: RscButton {
 	x = 0;
 	y = 0;
 	w = 0.035;
-	h = 0.035
+	h = 0.035;
 	font = "PuristaMedium";
 	style = ST_CENTER + ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 };
