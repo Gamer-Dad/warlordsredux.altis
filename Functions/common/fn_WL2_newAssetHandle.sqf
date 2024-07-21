@@ -38,7 +38,7 @@ if (isPlayer _owner) then {
 
 			if (typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}) then {
 				if (_asset isKindOf "Air") then {
-					_asset spawn BIS_fnc_WL2_sub_rearmActionAir;
+					_asset spawn BIS_fnc_WL2_sub_rearmAction;
 				} else {
 					_asset spawn BIS_fnc_WL2_sub_rearmAction;
 					if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
