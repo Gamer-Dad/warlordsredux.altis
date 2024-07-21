@@ -183,7 +183,6 @@ class WLM_PylonSelectUser: RscButton {
 	w = 0.035;
 	h = 0.035
 	font = "PuristaMedium";
-	action = "['select'] spawn BIS_fnc_squadsClient;";
 	style = ST_CENTER + ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 };
 
