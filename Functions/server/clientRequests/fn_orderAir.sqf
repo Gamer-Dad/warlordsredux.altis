@@ -65,7 +65,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 			private _pointA = _taxiNodes # (_i - 1);
 			_dir = _pointA getDir _pointB;
 			private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-			if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+			if (count (_pos nearObjects ["AllVehicles", 10]) == 0) then {
 				_spawnPos = _pos;
 			};
 		};
@@ -105,7 +105,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 					private _pointA = _taxiNodes # (_i - 1);
 					_dir = _pointA getDir _pointB;
 					private _pos = [_pointA, random (_pointA distance2D _pointB), _dir] call BIS_fnc_relPos;
-					if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
+					if (count (_pos nearObjects ["AllVehicles", 10]) == 0) then {
 						_spawnPos = _pos;
 					};
 				};
