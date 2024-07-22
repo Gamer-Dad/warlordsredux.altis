@@ -114,15 +114,12 @@ _SAVE_BUTTON ctrlAddEventHandler ["ButtonClick", {
 
 private _CLEAR_SAVED_BUTTON = _DISPLAY displayCtrl 5307;
 _CLEAR_SAVED_BUTTON ctrlAddEventHandler ["ButtonClick", {
-    private _asset = uiNamespace getVariable "WLM_asset";
-    private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
-    profileNamespace setVariable [_variableName, []];
-    call WLM_fnc_constructPresetMenu; 
+    [true] call WLM_fnc_wipePylonSaves;
 }];
 
 private _APPLY_BUTTON = _DISPLAY displayCtrl 5304;
 _APPLY_BUTTON ctrlAddEventHandler ["ButtonClick", {
-    _this call WLM_fnc_applyLoadout;
+    [true] call WLM_fnc_applyLoadout;
 }];
 
 private _REARM_BUTTON = _DISPLAY displayCtrl 5308;

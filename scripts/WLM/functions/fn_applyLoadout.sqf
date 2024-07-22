@@ -1,9 +1,37 @@
+params ["_showWarning"];
+
 private _asset = uiNamespace getVariable "WLM_asset";
 private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
 private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
 private _DISPLAY = findDisplay 5300;
 private _PYLON_IDC_START = 5501;
 private _PYLON_USER_IDC_START = 5601;
+
+if (_showWarning) exitWith {
+    private _confirmDialog = _DISPLAY createDisplay "WLM_ConfirmationDialog";
+
+    private _TITLE = _confirmDialog displayCtrl 5702;
+    _TITLE ctrlSetText "PYLON APPLY WARNING";
+
+    private _TEXT = _confirmDialog displayCtrl 5706;
+    _TEXT ctrlSetText "Applying pylons will remove all ammo from your pylons until you rearm! Continue?";
+
+    private _CONFIRM_BUTTON = _confirmDialog displayCtrl 5704;
+    private _CANCEL_BUTTON = _confirmDialog displayCtrl 5705;
+
+    _CONFIRM_BUTTON ctrlSetText "Apply";
+    _CONFIRM_BUTTON ctrlSetTooltip "Apply the selected pylons to the aircraft.";
+
+    _CANCEL_BUTTON ctrlSetTooltip "Return to the previous screen.";
+
+    _CANCEL_BUTTON ctrlAddEventHandler ["ButtonClick", {
+        (findDisplay 5700) closeDisplay 1;
+    }];
+    _CONFIRM_BUTTON ctrlAddEventHandler ["ButtonClick", {
+        (findDisplay 5700) closeDisplay 1;
+        [false] call WLM_fnc_applyLoadout;
+    }];
+};
 
 private _attachments = [];
 {
