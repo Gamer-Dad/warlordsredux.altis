@@ -96,6 +96,7 @@ WLM_fnc_constructPresetMenu = compileFinal preprocessFileLineNumbers "scripts\WL
 WLM_fnc_applyLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadout.sqf";
 WLM_fnc_rearmAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmAircraft.sqf";
 WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
+WLM_fnc_textureLists = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureLists.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
 

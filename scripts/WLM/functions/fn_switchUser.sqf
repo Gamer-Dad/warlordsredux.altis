@@ -2,9 +2,9 @@ params ["_control"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private isSolo = count (allTurrets _asset) == 0;
+private _isSolo = count (allTurrets _asset) == 0;
 
-if (isSolo) exitWith {
+if (_isSolo) exitWith {
     _control ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageDriver_ca.paa";
     _control ctrlSetTooltip "Control: Pilot";
 };

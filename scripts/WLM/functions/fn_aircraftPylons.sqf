@@ -137,30 +137,27 @@ private _textureSlots = getArray (_assetConfig >> "hiddenSelections");
 
 private _customTexturesList = [];
 
-private _defaultTextureList = getArray (_assetConfig >> "hiddenSelectionsTextures");
+private _defaultTextureList = [];
+
+switch (typeOf _asset) do {
+    case "I_Plane_Fighter_03_dynamicLoadout_F": {
+        _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "Hex" >> "textures");
+    };
+    case "I_Plane_Fighter_04_F": {
+        _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "DigitalCamoGrey" >> "textures");
+    };
+    default { 
+        _defaultTextureList = getArray (_assetConfig >> "hiddenSelectionsTextures") 
+    };
+};
+
 _customTexturesList pushBack ["Default Skin", _defaultTextureList, "Official"];
 
-private _additionalTextureSources = configProperties [_assetConfig >> "TextureSources"];
-
-private _playerAllowableFactions = if (side player == west) then {
-    ["BLU_F", "BLU_G_F", "BLU_T_F", "BLU_CTRG_F", "BLU_GEN_F", "BLU_W_F", "BLU_F_F"];
-} else {
-    ["OPF_F", "OPF_G_F", "OPF_T_F", "OPF_R_F"];
-};
+private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
 
 {
     private _textureSource = _x;
-    private _textureSourceName = getText (_textureSource >> "displayName");
-    private _textureSourceTextures = getArray (_textureSource >> "textures");
-
-    private _textureFaction1 = getArray (_textureSource >> "faction");
-    private _textureFaction2 = getArray (_textureSource >> "factions");
-    private _textureFactions = _textureFaction1 + _textureFaction2;
-    private _playerIsInTexture = count (_textureFactions arrayIntersect _playerAllowableFactions) > 0;
-
-    if (_playerIsInTexture) then {
-        _customTexturesList pushBack [_textureSourceName, _textureSourceTextures, "Official"];
-    };
+    _customTexturesList pushBack [_textureSource # 0, _textureSource # 1, "Official"];
 } forEach _additionalTextureSources;
 
 // Image textures
