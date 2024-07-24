@@ -1,27 +1,29 @@
+#include "..\WLM_constants.inc";
+
 params ["_showWarning"];
 
 if (_showWarning) exitWith {
-    private _confirmDialog = findDisplay 5300 createDisplay "WLM_ConfirmationDialog";
+    private _confirmDialog = findDisplay WLM_DISPLAY createDisplay "WLM_Modal_Dialog";
 
-    private _TITLE = _confirmDialog displayCtrl 5702;
-    _TITLE ctrlSetText "WIPE SAVE WARNING";
+    private _titleControl = _confirmDialog displayCtrl WLM_MODAL_TITLE;
+    _titleControl ctrlSetText "WIPE SAVE WARNING";
 
-    private _TEXT = _confirmDialog displayCtrl 5706;
-    _TEXT ctrlSetText "This will remove all saved loadouts for this aircraft. Continue?";
+    private _textControl = _confirmDialog displayCtrl WLM_MODAL_TEXT;
+    _textControl ctrlSetText "This will remove all saved loadouts for this aircraft. Continue?";
 
-    private _CONFIRM_BUTTON = _confirmDialog displayCtrl 5704;
-    private _CANCEL_BUTTON = _confirmDialog displayCtrl 5705;
+    private _confirmButtonControl = _confirmDialog displayCtrl WLM_MODAL_CONFIRM_BUTTON;
+    private _cancelButtonControl = _confirmDialog displayCtrl WLM_MODAL_EXIT_BUTTON;
 
-    _CONFIRM_BUTTON ctrlSetText "Wipe";
-    _CONFIRM_BUTTON ctrlSetTooltip "Wipe all saved loadouts for this aircraft.";
+    _confirmButtonControl ctrlSetText "Wipe";
+    _confirmButtonControl ctrlSetTooltip "Wipe all saved loadouts for this aircraft.";
 
-    _CANCEL_BUTTON ctrlSetTooltip "Return to the previous screen.";
+    _cancelButtonControl ctrlSetTooltip "Return to the previous screen.";
 
-    _CANCEL_BUTTON ctrlAddEventHandler ["ButtonClick", {
-        (findDisplay 5700) closeDisplay 1;
+    _cancelButtonControl ctrlAddEventHandler ["ButtonClick", {
+        (findDisplay WLM_MODAL) closeDisplay 1;
     }];
-    _CONFIRM_BUTTON ctrlAddEventHandler ["ButtonClick", {
-        (findDisplay 5700) closeDisplay 1;
+    _confirmButtonControl ctrlAddEventHandler ["ButtonClick", {
+        (findDisplay WLM_MODAL) closeDisplay 1;
         [false] call WLM_fnc_wipePylonSaves;
     }];
 };

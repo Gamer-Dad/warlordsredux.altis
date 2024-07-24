@@ -1,21 +1,20 @@
+#include "..\WLM_constants.inc";
+
 params ["_control"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
 private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
-private _DISPLAY = findDisplay 5300;
-
-private _PYLON_IDC_START = 5501;
-private _PYLON_USER_IDC_START = 5601;
+private _display = findDisplay WLM_DISPLAY;
 
 private _attachments = [];
 {
-    private _pylonCtrl = _DISPLAY displayCtrl (_PYLON_IDC_START + _forEachIndex);
-    private _currentSelection = lbCurSel _pylonCtrl;
-    private _attachment = _pylonCtrl lbData _currentSelection;
+    private _pylonControl = _display displayCtrl (WLM_PYLON_START + _forEachIndex);
+    private _currentSelection = lbCurSel _pylonControl;
+    private _attachment = _pylonControl lbData _currentSelection;
 
-    private _pylonUserCtrl = _DISPLAY displayCtrl (_PYLON_USER_IDC_START + _forEachIndex);
-    private _userIsPilot = ctrlTooltip _pylonUserCtrl == "Control: Pilot";
+    private _pylonUserControl = _display displayCtrl (WLM_PYLON_USER_START + _forEachIndex);
+    private _userIsPilot = ctrlTooltip _pylonUserControl == "Control: Pilot";
     private _turret = if (_userIsPilot) then {
         []
     } else {
