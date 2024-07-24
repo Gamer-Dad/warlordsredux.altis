@@ -15,8 +15,9 @@ private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
 private _savedLoadouts = profileNamespace getVariable [_variableName, []];
 
 {
-    private _loadoutName = format ["Custom: Slot %1", _forEachIndex + 1];
-    private _presetItem = _loadSelectControl lbAdd _loadoutName;
+    private _loadoutName = _x # 0;
+    private _loadoutNameDisplay = format ["Custom: %1", _loadoutName];
+    private _presetItem = _loadSelectControl lbAdd _loadoutNameDisplay;
     _loadSelectControl lbSetData [_presetItem, ""];
 } forEach _savedLoadouts;
 

@@ -1,6 +1,6 @@
 #include "..\WLM_constants.inc";
 
-params ["_control"];
+params ["_loadoutName"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
@@ -26,5 +26,43 @@ private _attachments = [];
 
 private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
 private _loadoutSave = profileNamespace getVariable [_variableName, []];
-_loadoutSave pushBack _attachments;
+
+if (_loadoutName == "") exitWith {
+    private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";
+
+    private _titleControl = _confirmDialog displayCtrl WLM_MODAL_TITLE;
+    _titleControl ctrlSetText "SAVE LOADOUT";
+
+    private _confirmTextControl = _confirmDialog displayCtrl WLM_MODAL_TEXT;
+    _confirmTextControl ctrlSetText "Enter Loadout Name:";
+
+    private _loadoutInputControl = (findDisplay WLM_MODAL) displayCtrl WLM_MODAL_INPUT;
+    private _defaultLoadoutName = format ["Loadout %1", count _loadoutSave + 1];
+    _loadoutInputControl ctrlSetText _defaultLoadoutName;
+
+    _loadoutInputControl ctrlShow true;
+    ctrlSetFocus _loadoutInputControl;
+    _loadoutInputControl ctrlSetTextSelection [0, count _defaultLoadoutName];
+
+    private _confirmButtonControl = _confirmDialog displayCtrl WLM_MODAL_CONFIRM_BUTTON;
+    private _cancelButtonControl = _confirmDialog displayCtrl WLM_MODAL_EXIT_BUTTON;
+
+    _confirmButtonControl ctrlSetText "Save Loadout";
+    _confirmButtonControl ctrlSetTooltip "Save the current loadout with the entered name.";
+
+    _cancelButtonControl ctrlSetText "Cancel";
+    _cancelButtonControl ctrlSetTooltip "Return to the previous screen.";
+
+    _cancelButtonControl ctrlAddEventHandler ["ButtonClick", {
+        (findDisplay WLM_MODAL) closeDisplay 1;
+    }];
+    _confirmButtonControl ctrlAddEventHandler ["ButtonClick", {
+        (findDisplay WLM_MODAL) closeDisplay 1;
+        [ctrlText WLM_MODAL_INPUT] call WLM_fnc_saveLoadout;
+    }];
+};
+
+_loadoutSave pushBack [_loadoutName, _attachments];
 profileNamespace setVariable [_variableName, _loadoutSave];
+
+call WLM_fnc_constructPresetMenu;

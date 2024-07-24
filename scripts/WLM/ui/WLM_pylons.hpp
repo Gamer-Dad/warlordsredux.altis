@@ -265,5 +265,19 @@ class WLM_Modal_Dialog {
 			h = 0.03 * safeZoneH;
 			colorBackground[] = {0, 0, 0, 1};
 		};
+		class WLM_Modal_InputEdit: RscEditMRTM {
+			idc = 5708;
+			text = "";
+			sizeEx = 0.06;
+			x = 0.3 * safeZoneW + safeZoneX + 0.25;
+			y = 0.4 * safeZoneH + safeZoneY + 0.01;
+			w = 0.4 * safeZoneW - 0.26;
+			h = 0.06 * safeZoneH;
+			font = "PuristaMedium";
+			colorText[] = {1, 1, 1, 1};
+			tooltip = "Enter new loadout name";
+			onLoad = "(_this # 0) ctrlShow false;";
+			maxChars = 30;
+		};
     };
 };

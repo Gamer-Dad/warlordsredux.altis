@@ -37,8 +37,7 @@ call WLM_fnc_constructPresetMenu;
 
 private _saveButtonControl = _display displayCtrl WLM_SAVE_BUTTON;
 _saveButtonControl ctrlAddEventHandler ["ButtonClick", {
-    _this call WLM_fnc_saveLoadout;
-    call WLM_fnc_constructPresetMenu;
+    [""] call WLM_fnc_saveLoadout;
 }];
 
 private _wipeButtonControl = _display displayCtrl WLM_WIPE_BUTTON;

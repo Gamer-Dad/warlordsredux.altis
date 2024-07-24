@@ -15,7 +15,8 @@ private _myPreset = if (_loadoutName != "") then {
 } else  {
     private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
     private _savedLoadouts = profileNamespace getVariable [_variableName, []];
-    _savedLoadouts select (_lbCurSel - 1);
+    private _selectedLoadout = _savedLoadouts select (_lbCurSel - 1);
+    _selectedLoadout # 1;
 };
 
 private _display = findDisplay WLM_DISPLAY;
