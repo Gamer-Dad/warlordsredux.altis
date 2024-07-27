@@ -1,8 +1,11 @@
-params ["_sender", "_pos", "_class"];
+params ["_sender", "_pos", "_class", "_cost"];
 
 if !(isServer) exitWith {};
 
 _asset = objNull;
+private _owner = owner _sender;
+_uid = getPlayerUID _sender;
+
 if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
 	if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 		_sector = (((BIS_WL_allSectors) select {((_x distance2D _pos) < 15)}) # 0);
@@ -18,7 +21,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_grp deleteGroupWhenEmpty true;
 		{
 			_member = _x;
-			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, (owner _sender)]];
+			_member setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];
 		} forEach units _grp;
 		_asset setDir (direction _sender);
 	} else {
@@ -45,7 +48,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_grp deleteGroupWhenEmpty true;
 		{
 			_member = _x;
-			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, (owner _sender)]];
+			_member setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];
 		} forEach units _grp;
 		_asset setDir _dir;
 	};
@@ -109,7 +112,15 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 						_spawnPos = _pos;
 					};
 				};
-				//systemchat format ["Code block #5 run, Spawned: %1", _class];
+
+				if (count _spawnPos == 0) exitWith {
+					"No suitable spawn position found. Clear the runways." remoteExec ["systemChat", _owner];
+					_sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
+					
+					// refund if nothing spawned
+					(_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
+				};
+
 				_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 				_asset setDir _dir;
 			};
@@ -141,7 +152,6 @@ if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
 		_asset addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1], 120]
 };
 
-_owner = owner _sender;
-_asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
+_asset setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];
 [_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];
 _sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
