@@ -19,7 +19,7 @@ if (_action == "orderAsset") exitWith {
 		};
 
 		if (_class isKindOf "Air") exitWith {
-			[_sender, _param1, _class] spawn BIS_fnc_orderAir;
+			[_sender, _param1, _class, _cost] spawn BIS_fnc_orderAir;
 		};
 
 		if (_param3) exitWith {
