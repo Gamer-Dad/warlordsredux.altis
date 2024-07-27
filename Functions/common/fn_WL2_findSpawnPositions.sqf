@@ -107,4 +107,8 @@ _ret = _ret apply {[_x distance2D _center, [_x]]};
 _ret sort true;
 _ret = _ret apply {(_x # 1) # 0};
 
+if (count _ret == 0) then {
+	_ret = [_center];
+};
+
 _ret;
