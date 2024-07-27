@@ -114,6 +114,7 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 				};
 
 				if (count _spawnPos == 0) exitWith {
+					diag_log format ["Ordering aircraft failed. Spawn position not found in sector %1.", _sector getVariable "BIS_WL_name"];
 					"No suitable spawn position found. Clear the runways." remoteExec ["systemChat", _owner];
 					_sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
 					
