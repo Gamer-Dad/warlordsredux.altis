@@ -10,6 +10,8 @@ private _vic = ["B_Truck_01_medical_F", "O_Truck_03_medical_F"] select _side;
 	[toUpper localize "STR_A3_WL_popup_travelling_FTVehicle"] spawn BIS_fnc_WL2_smoothText;
 	sleep 1;
 	player moveInCargo _x;
+
+	[player, "ftSupportPoints", _x] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	sleep 1;
 	titleCut ["", "BLACK IN", 1];
 } forEach ((entities _vic) select {alive _x});
