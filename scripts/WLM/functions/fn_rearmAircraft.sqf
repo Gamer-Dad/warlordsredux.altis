@@ -68,7 +68,7 @@ _massTally = _massTally min 3000;
 private _newAmmo = _amount - _massTally;
 if (_newAmmo < 0) exitWith {
     playSound "AddItemFailed";
-    hint format ["%1 kg of ammo is required to rearm this vehicle.", _massTally];
+    hint format [localize "STR_WLM_KG_AMMO_REQUIRED", _massTally];
 };
 
 _rearmSource setVariable ["GOM_fnc_ammocargo", _newAmmo, true];

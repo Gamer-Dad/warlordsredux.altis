@@ -6,18 +6,18 @@ if (_showWarning) exitWith {
     private _confirmDialog = findDisplay WLM_DISPLAY createDisplay "WLM_Modal_Dialog";
 
     private _titleControl = _confirmDialog displayCtrl WLM_MODAL_TITLE;
-    _titleControl ctrlSetText "WIPE SAVE WARNING";
+    _titleControl ctrlSetText (localize "STR_WLM_WIPE_SAVE_WARNING");
 
     private _textControl = _confirmDialog displayCtrl WLM_MODAL_TEXT;
-    _textControl ctrlSetText "This will remove all saved loadouts for this aircraft. Continue?";
+    _textControl ctrlSetText (localize "STR_WLM_REMOVE_ALL_SAVED_LOADOUTS_WARNING");
 
     private _confirmButtonControl = _confirmDialog displayCtrl WLM_MODAL_CONFIRM_BUTTON;
     private _cancelButtonControl = _confirmDialog displayCtrl WLM_MODAL_EXIT_BUTTON;
 
-    _confirmButtonControl ctrlSetText "Wipe";
-    _confirmButtonControl ctrlSetTooltip "Wipe all saved loadouts for this aircraft.";
+    _confirmButtonControl ctrlSetText (localize "STR_WLM_WIPE");
+    _confirmButtonControl ctrlSetTooltip (localize "STR_WLM_WIPE_ALL_SAVED_LOADOUTS");
 
-    _cancelButtonControl ctrlSetTooltip "Return to the previous screen.";
+    _cancelButtonControl ctrlSetTooltip (localize "STR_WLM_RETURN_PREVIOUS_SCREEN");
 
     _cancelButtonControl ctrlAddEventHandler ["ButtonClick", {
         (findDisplay WLM_MODAL) closeDisplay 1;

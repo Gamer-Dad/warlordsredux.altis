@@ -11,18 +11,18 @@ if (_showWarning) exitWith {
     private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";
 
     private _titleControl = _confirmDialog displayCtrl WLM_MODAL_TITLE;
-    _titleControl ctrlSetText "PYLON APPLY WARNING";
+    _titleControl ctrlSetText (localize "STR_WLM_PYLON_APPLY_WARNING");
 
     private _textControl = _confirmDialog displayCtrl WLM_MODAL_TEXT;
-    _textControl ctrlSetText "Applying pylons will remove all ammo from your pylons until you rearm! Continue?";
+    _textControl ctrlSetText (localize "STR_WLM_APPLY_PYLONS_AMMO_WARNING");
 
     private _confirmButtonControl = _confirmDialog displayCtrl WLM_MODAL_CONFIRM_BUTTON;
     private _cancelButtonContrl = _confirmDialog displayCtrl WLM_MODAL_EXIT_BUTTON;
 
-    _confirmButtonControl ctrlSetText "Apply";
-    _confirmButtonControl ctrlSetTooltip "Apply the selected pylons to the aircraft.";
+    _confirmButtonControl ctrlSetText (localize "STR_WLM_APPLY");
+    _confirmButtonControl ctrlSetTooltip (localize "STR_WLM_APPLY_SELECTED_PYLONS");
 
-    _cancelButtonContrl ctrlSetTooltip "Return to the previous screen.";
+    _cancelButtonContrl ctrlSetTooltip (localize "STR_WLM_RETURN_PREVIOUS_SCREEN");
 
     _cancelButtonContrl ctrlAddEventHandler ["ButtonClick", {
         (findDisplay WLM_MODAL) closeDisplay 1;

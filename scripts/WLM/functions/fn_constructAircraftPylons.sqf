@@ -28,7 +28,7 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
     private _pylonConfigName = configName _x;
     private _currentPylonInfo = _currentAssetPylonInfo select { _pylonConfigName == (_x # 1) } select 0;
 
-    _selectBox lbAdd "- EMPTY -";
+    _selectBox lbAdd (localize "STR_WLM_EMPTY");
     _selectBox lbSetCurSel 0;
 
     {

@@ -75,23 +75,23 @@ switch (typeOf _asset) do {
     };
 };
 
-_customTexturesList pushBack ["Default Skin", _defaultTextureList, "Official"];
+_customTexturesList pushBack [localize "STR_WLM_DEFAULT_SKIN", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
 
 private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
 
 {
     private _textureSource = _x;
-    _customTexturesList pushBack [_textureSource # 0, _textureSource # 1, "Official"];
+    _customTexturesList pushBack [_textureSource # 0, _textureSource # 1, localize "STR_WLM_OFFICIAL"];
 } forEach _additionalTextureSources;
 
 // Image textures
-_customTexturesList pushBack ["--- Custom ---", "", ""];
+_customTexturesList pushBack [localize "STR_WLM_CUSTOM", "", ""];
 
 private _pushCustomTexture = {
     params ["_textureName", "_customTexturesList"];
     private _texturePath = format ["Img\camo\%1\%2.paa", (toLower format ["%1", side player]), toLower _textureName];
     if !(fileExists _texturePath) exitWith {};
-    _customTexturesList pushBack [_textureName, _texturePath, "Custom"];
+    _customTexturesList pushBack [_textureName, _texturePath, localize "STR_WLM_CUSTOM"];
 };
 
 private _dir = "Img\camo\" + (toLower format ["%1", side player]) + "\";
@@ -102,7 +102,7 @@ private _dir = "Img\camo\" + (toLower format ["%1", side player]) + "\";
 
 
 // Color textures
-_customTexturesList pushBack ["--- Solid Colors ---", "", ""];
+_customTexturesList pushBack [localize "STR_WLM_SOLID_COLORS", "", ""];
 if (side player == west) then {
     _customTexturesList pushBack ["Stealth Black", "#(rgb,8,8,3)color(0.23,0.23,0.24,0.05)", "Solid Color"];
     _customTexturesList pushBack ["NATO Blue", "#(rgb,8,8,3)color(0.01,0.24,0.76,0.05)", "Solid Color"];
@@ -133,7 +133,7 @@ private _customTexturesMap = createHashMap;
     if (_singleTexture == "") then {
         private _camoItem = _camoSelectControl lbAdd _textureName;
         _camoSelectControl lbSetData [_camoItem, "-1"];
-        _camoSelectControl lbSetTooltip [_camoItem, "Category"];
+        _camoSelectControl lbSetTooltip [_camoItem, localize "STR_WLM_CATEGORY"];
         
         continue;
     };

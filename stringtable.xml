@@ -1398,5 +1398,379 @@
             <Chinesesimp>看起来您的挂架设置与当前挂架不匹配。您需要在按“重新武装”之前按“应用挂架”，以便使用挂架配置。您确定要继续吗？</Chinesesimp>
             <Chinese>看起來您的掛架設置與當前掛架不匹配。您需要在按“重新武裝”之前按“應用掛架”，以便使用掛架配置。您確定要繼續嗎？</Chinese>
         </Key>
+        <Key ID="STR_WLM_CATEGORY">
+            <Original>Category</Original>
+            <English>Category</English>
+            <Czech>Kategorie</Czech>
+            <French>Catégorie</French>
+            <German>Kategorie</German>
+            <Italian>Categoria</Italian>
+            <Polish>Kategoria</Polish>
+            <Portuguese>Categoria</Portuguese>
+            <Russian>Категория</Russian>
+            <Spanish>Categoría</Spanish>
+            <Turkish>Kategori</Turkish>
+            <Korean>카테고리</Korean>
+            <Japanese>カテゴリ</Japanese>
+            <Chinesesimp>类别</Chinesesimp>
+            <Chinese>類別</Chinese>
+        </Key>
+        <Key ID="STR_WLM_PYLON_APPLY_WARNING">
+            <Original>PYLON APPLY WARNING</Original>
+            <English>PYLON APPLY WARNING</English>
+            <Czech>UPOZORNĚNÍ NA POUŽITÍ PILONŮ</Czech>
+            <French>AVERTISSEMENT D'APPLICATION DE PILON</French>
+            <German>PYLON ANWENDUNG WARNUNG</German>
+            <Italian>AVVISO DI APPLICAZIONE DEL PILONE</Italian>
+            <Polish>OSTRZEŻENIE O ZASTOSOWANIU PYLONU</Polish>
+            <Portuguese>AVISO DE APLICAÇÃO DE PILONAS</Portuguese>
+            <Russian>ПРЕДУПРЕЖДЕНИЕ О ПРИМЕНЕНИИ ПИЛОНОВ</Russian>
+            <Spanish>ADVERTENCIA DE APLICACIÓN DE PILÓN</Spanish>
+            <Turkish>PİLON UYGULAMA UYARISI</Turkish>
+            <Korean>파일런 적용 경고</Korean>
+            <Japanese>パイロン適用警告</Japanese>
+            <Chinesesimp>挂架应用警告</Chinesesimp>
+            <Chinese>掛架應用警告</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY_PYLONS_AMMO_WARNING">
+            <Original>Applying pylons will remove all ammo from your pylons until you rearm! Continue?</Original>
+            <English>Applying pylons will remove all ammo from your pylons until you rearm! Continue?</English>
+            <Czech>Nasazení pilonů odstraní veškerou munici z vašich pilonů, dokud je znovu nevyzbrojíte! Pokračovat?</Czech>
+            <French>L'application des pylônes retirera toutes les munitions de vos pylônes jusqu'à ce que vous réarmiez! Continuer?</French>
+            <German>Das Anbringen von Pylonen entfernt alle Munition von Ihren Pylonen, bis Sie wieder bewaffnen! Fortsetzen?</German>
+            <Italian>L'applicazione dei piloni rimuoverà tutte le munizioni dai tuoi piloni fino a quando non riarmarerai! Continuare?</Italian>
+            <Polish>Zastosowanie pylonów usunie całą amunicję z twoich pylonów, dopóki nie uzbroisz ponownie! Kontynuować?</Polish>
+            <Portuguese>Aplicar pilones removerá toda a munição de seus pilones até que você rearme! Continuar?</Portuguese>
+            <Russian>Применение пилонов удалит все боеприпасы с ваших пилонов до повторного вооружения! Продолжить?</Russian>
+            <Spanish>Aplicar pilones eliminará toda la munición de tus pilones hasta que vuelvas a armar! ¿Continuar?</Spanish>
+            <Turkish>Pilonları uygulamak, yeniden silahlanana kadar pilonlarınızdaki tüm mühimmatı kaldıracaktır! Devam edilsin mi?</Turkish>
+            <Korean>파일런을 적용하면 재장전할 때까지 파일런의 모든 탄약이 제거됩니다! 계속하시겠습니까?</Korean>
+            <Japanese>パイロンを適用すると、再武装するまでパイロンの弾薬がすべて取り除かれます! 続けますか?</Japanese>
+            <Chinesesimp>应用挂架将移除所有挂架上的弹药，直到重新装填！继续吗？</Chinesesimp>
+            <Chinese>應用掛架將移除所有掛架上的彈藥，直到重新裝填！繼續嗎？</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY">
+            <Original>Apply</Original>
+            <English>Apply</English>
+            <Czech>Použít</Czech>
+            <French>Appliquer</French>
+            <German>Anwenden</German>
+            <Italian>Applica</Italian>
+            <Polish>Zastosuj</Polish>
+            <Portuguese>Aplicar</Portuguese>
+            <Russian>Применить</Russian>
+            <Spanish>Aplicar</Spanish>
+            <Turkish>Uygula</Turkish>
+            <Korean>적용</Korean>
+            <Japanese>適用</Japanese>
+            <Chinesesimp>应用</Chinesesimp>
+            <Chinese>應用</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY_SELECTED_PYLONS">
+            <Original>Apply the selected pylons to the aircraft.</Original>
+            <English>Apply the selected pylons to the aircraft.</English>
+            <Czech>Použít vybrané pilony na letadlo.</Czech>
+            <French>Appliquer les pylônes sélectionnés à l'avion.</French>
+            <German>Die ausgewählten Pylonen an das Flugzeug anbringen.</German>
+            <Italian>Applica i piloni selezionati all'aereo.</Italian>
+            <Polish>Zastosuj wybrane pylony do samolotu.</Polish>
+            <Portuguese>Aplicar os pilones selecionados à aeronave.</Portuguese>
+            <Russian>Применить выбранные пилоны к самолету.</Russian>
+            <Spanish>Aplicar los pilones seleccionados al avión.</Spanish>
+            <Turkish>Seçilen pilonları uçağa uygulayın.</Turkish>
+            <Korean>선택한 파일런을 항공기에 적용합니다.</Korean>
+            <Japanese>選択したパイロンを航空機に適用します。</Japanese>
+            <Chinesesimp>将选定的挂架应用于飞机。</Chinesesimp>
+            <Chinese>將選定的掛架應用於飛機。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_RETURN_PREVIOUS_SCREEN">
+            <Original>Return to the previous screen.</Original>
+            <English>Return to the previous screen.</English>
+            <Czech>Vrátit se na předchozí obrazovku.</Czech>
+            <French>Retourner à l'écran précédent.</French>
+            <German>Zurück zum vorherigen Bildschirm.</German>
+            <Italian>Torna alla schermata precedente.</Italian>
+            <Polish>Wróć do poprzedniego ekranu.</Polish>
+            <Portuguese>Voltar à tela anterior.</Portuguese>
+            <Russian>Вернуться к предыдущему экрану.</Russian>
+            <Spanish>Volver a la pantalla anterior.</Spanish>
+            <Turkish>Önceki ekrana dön.</Turkish>
+            <Korean>이전 화면으로 돌아갑니다.</Korean>
+            <Japanese>前の画面に戻る。</Japanese>
+            <Chinesesimp>返回到前一个屏幕。</Chinesesimp>
+            <Chinese>返回到前一個螢幕。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_KG_AMMO_REQUIRED">
+            <Original>%1 kg of ammo is required to rearm this vehicle.</Original>
+            <English>%1 kg of ammo is required to rearm this vehicle.</English>
+            <Czech>K opětovnému vyzbrojení tohoto vozidla je potřeba %1 kg munice.</Czech>
+            <French>%1 kg de munitions est nécessaire pour réarmer ce véhicule.</French>
+            <German>%1 kg Munition wird benötigt, um dieses Fahrzeug wieder zu bewaffnen.</German>
+            <Italian>È necessario %1 kg di munizioni per riarmare questo veicolo.</Italian>
+            <Polish>%1 kg amunicji jest wymagane do ponownego uzbrojenia tego pojazdu.</Polish>
+            <Portuguese>É necessário %1 kg de munição para rearmar este veículo.</Portuguese>
+            <Russian>Для повторного вооружения этого транспортного средства требуется %1 кг боеприпасов.</Russian>
+            <Spanish>Se requiere %1 kg de munición para rearmar este vehículo.</Spanish>
+            <Turkish>Bu aracı yeniden silahlandırmak için %1 kg mühimmat gereklidir.</Turkish>
+            <Korean>이 차량을 재장전하려면 %1kg의 탄약이 필요합니다.</Korean>
+            <Japanese>この車両を再武装するには、%1 kg の弾薬が必要です。</Japanese>
+            <Chinesesimp>重新装备此车辆需要%1千克弹药。</Chinesesimp>
+            <Chinese>重新裝備此車輛需要%1千克彈藥。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SAVE_LOADOUT">
+            <Original>SAVE LOADOUT</Original>
+            <English>SAVE LOADOUT</English>
+            <Czech>ULOŽIT VYBAVENÍ</Czech>
+            <French>ENREGISTRER L'ARMEMENT</French>
+            <German>LADUNG SPEICHERN</German>
+            <Italian>SALVA CONFIGURAZIONE</Italian>
+            <Polish>ZAPISZ WYPOSAŻENIE</Polish>
+            <Portuguese>SALVAR CARREGAMENTO</Portuguese>
+            <Russian>СОХРАНИТЬ НАГРУЗКУ</Russian>
+            <Spanish>GUARDAR CONFIGURACIÓN</Spanish>
+            <Turkish>YÜKLEMEYİ KAYDET</Turkish>
+            <Korean>장비 저장</Korean>
+            <Japanese>装備を保存</Japanese>
+            <Chinesesimp>保存配置</Chinesesimp>
+            <Chinese>保存配置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SAVE_LOADOUT_BUTTON">
+            <Original>Save Loadout</Original>
+            <English>Save Loadout</English>
+            <Czech>Uložit Vybavení</Czech>
+            <French>Enregistrer l'Armement</French>
+            <German>Ladung Speichern</German>
+            <Italian>Salva Configurazione</Italian>
+            <Polish>Zapisz Wyposażenie</Polish>
+            <Portuguese>Salvar Carregamento</Portuguese>
+            <Russian>Сохранить Нагрузку</Russian>
+            <Spanish>Guardar Configuración</Spanish>
+            <Turkish>Yüklemeyi Kaydet</Turkish>
+            <Korean>장비 저장</Korean>
+            <Japanese>装備を保存</Japanese>
+            <Chinesesimp>保存配置</Chinesesimp>
+            <Chinese>保存配置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_ENTER_LOADOUT_NAME">
+            <Original>Enter Loadout Name:</Original>
+            <English>Enter Loadout Name:</English>
+            <Czech>Zadejte název vybavení:</Czech>
+            <French>Entrez le nom de l'armement :</French>
+            <German>Ladungsname eingeben:</German>
+            <Italian>Inserisci il nome della configurazione:</Italian>
+            <Polish>Wprowadź nazwę wyposażenia:</Polish>
+            <Portuguese>Insira o nome do carregamento:</Portuguese>
+            <Russian>Введите название нагрузки:</Russian>
+            <Spanish>Ingrese el nombre de la configuración:</Spanish>
+            <Turkish>Yükleme adını girin:</Turkish>
+            <Korean>장비 이름 입력:</Korean>
+            <Japanese>装備名を入力してください:</Japanese>
+            <Chinesesimp>输入配置名称：</Chinesesimp>
+            <Chinese>輸入配置名稱：</Chinese>
+        </Key>
+        <Key ID="STR_WLM_LOADOUT_NAME">
+            <Original>Loadout %1</Original>
+            <English>Loadout %1</English>
+            <Czech>Vybavení %1</Czech>
+            <French>Armement %1</French>
+            <German>Ladung %1</German>
+            <Italian>Configurazione %1</Italian>
+            <Polish>Wyposażenie %1</Polish>
+            <Portuguese>Carregamento %1</Portuguese>
+            <Russian>Нагрузка %1</Russian>
+            <Spanish>Configuración %1</Spanish>
+            <Turkish>Yükleme %1</Turkish>
+            <Korean>장비 %1</Korean>
+            <Japanese>装備 %1</Japanese>
+            <Chinesesimp>配置%1</Chinesesimp>
+            <Chinese>配置%1</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SAVE_CURRENT_LOADOUT">
+            <Original>Save the current loadout with the entered name.</Original>
+            <English>Save the current loadout with the entered name.</English>
+            <Czech>Uložit aktuální vybavení se zadaným názvem.</Czech>
+            <French>Enregistrer l'armement actuel avec le nom entré.</French>
+            <German>Speichern Sie die aktuelle Ladung mit dem eingegebenen Namen.</German>
+            <Italian>Salva la configurazione corrente con il nome inserito.</Italian>
+            <Polish>Zapisz bieżące wyposażenie pod wprowadzoną nazwą.</Polish>
+            <Portuguese>Salvar o carregamento atual com o nome inserido.</Portuguese>
+            <Russian>Сохраните текущую нагрузку с введенным названием.</Russian>
+            <Spanish>Guardar la configuración actual con el nombre ingresado.</Spanish>
+            <Turkish>Mevcut yüklemeyi girilen ad ile kaydedin.</Turkish>
+            <Korean>입력한 이름으로 현재 장비를 저장합니다.</Korean>
+            <Japanese>入力した名前で現在の装備を保存します。</Japanese>
+            <Chinesesimp>用输入的名称保存当前配置。</Chinesesimp>
+            <Chinese>用輸入的名稱保存當前配置。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_CANCEL">
+            <Original>Cancel</Original>
+            <English>Cancel</English>
+            <Czech>Zrušit</Czech>
+            <French>Annuler</French>
+            <German>Abbrechen</German>
+            <Italian>Annulla</Italian>
+            <Polish>Anuluj</Polish>
+            <Portuguese>Cancelar</Portuguese>
+            <Russian>Отмена</Russian>
+            <Spanish>Cancelar</Spanish>
+            <Turkish>İptal</Turkish>
+            <Korean>취소</Korean>
+            <Japanese>キャンセル</Japanese>
+            <Chinesesimp>取消</Chinesesimp>
+            <Chinese>取消</Chinese>
+        </Key>
+        <Key ID="STR_WLM_WIPE_SAVE_WARNING">
+            <Original>WIPE SAVE WARNING</Original>
+            <English>WIPE SAVE WARNING</English>
+            <Czech>VAROVÁNÍ O VYMAZÁNÍ ULOŽENÍ</Czech>
+            <French>AVERTISSEMENT D'EFFACEMENT DE SAUVEGARDE</French>
+            <German>SPEICHERLÖSCHUNGSWARNUNG</German>
+            <Italian>AVVISO DI CANCELLAZIONE DEL SALVATAGGIO</Italian>
+            <Polish>OSTRZEŻENIE O WYCZYŚCIENIU ZAPISU</Polish>
+            <Portuguese>AVISO DE LIMPEZA DE SALVAMENTO</Portuguese>
+            <Russian>ПРЕДУПРЕЖДЕНИЕ О СТИРАНИИ СОХРАНЕНИЯ</Russian>
+            <Spanish>ADVERTENCIA DE BORRADO DE GUARDADO</Spanish>
+            <Turkish>KAYDI SİLME UYARISI</Turkish>
+            <Korean>저장 삭제 경고</Korean>
+            <Japanese>セーブデータ削除警告</Japanese>
+            <Chinesesimp>清除保存警告</Chinesesimp>
+            <Chinese>清除保存警告</Chinese>
+        </Key>
+        <Key ID="STR_WLM_REMOVE_ALL_SAVED_LOADOUTS_WARNING">
+            <Original>This will remove all saved loadouts for this aircraft. Continue?</Original>
+            <English>This will remove all saved loadouts for this aircraft. Continue?</English>
+            <Czech>Tímto odstraníte všechna uložená vybavení pro tento letoun. Pokračovat?</Czech>
+            <French>Cela supprimera tous les armements sauvegardés pour cet avion. Continuer?</French>
+            <German>Dadurch werden alle gespeicherten Ladungen für dieses Flugzeug entfernt. Fortsetzen?</German>
+            <Italian>Questo rimuoverà tutte le configurazioni salvate per questo aereo. Continuare?</Italian>
+            <Polish>Spowoduje to usunięcie wszystkich zapisanych konfiguracji dla tego samolotu. Kontynuować?</Polish>
+            <Portuguese>Isso removerá todos os carregamentos salvos para esta aeronave. Continuar?</Portuguese>
+            <Russian>Это удалит все сохраненные нагрузки для этого самолета. Продолжить?</Russian>
+            <Spanish>Esto eliminará todas las configuraciones guardadas para este avión. ¿Continuar?</Spanish>
+            <Turkish>Bu, bu uçak için kaydedilen tüm yüklemeleri kaldıracaktır. Devam edilsin mi?</Turkish>
+            <Korean>이 항공기에 대한 모든 저장된 장비가 제거됩니다. 계속하시겠습니까?</Korean>
+            <Japanese>これにより、この航空機のすべての保存された装備が削除されます。続けますか?</Japanese>
+            <Chinesesimp>这将删除该飞机的所有保存配置。继续吗？</Chinesesimp>
+            <Chinese>這將刪除該飛機的所有保存配置。繼續嗎？</Chinese>
+        </Key>
+        <Key ID="STR_WLM_WIPE">
+            <Original>Wipe</Original>
+            <English>Wipe</English>
+            <Czech>Vymazat</Czech>
+            <French>Effacer</French>
+            <German>Löschen</German>
+            <Italian>Cancella</Italian>
+            <Polish>Wyczyść</Polish>
+            <Portuguese>Limpar</Portuguese>
+            <Russian>Стереть</Russian>
+            <Spanish>Borrar</Spanish>
+            <Turkish>Sil</Turkish>
+            <Korean>삭제</Korean>
+            <Japanese>消去</Japanese>
+            <Chinesesimp>清除</Chinesesimp>
+            <Chinese>清除</Chinese>
+        </Key>
+        <Key ID="STR_WLM_WIPE_ALL_SAVED_LOADOUTS">
+            <Original>Wipe all saved loadouts for this aircraft.</Original>
+            <English>Wipe all saved loadouts for this aircraft.</English>
+            <Czech>Vymazat všechna uložená vybavení pro tento letoun.</Czech>
+            <French>Effacer tous les armements sauvegardés pour cet avion.</French>
+            <German>Alle gespeicherten Ladungen für dieses Flugzeug löschen.</German>
+            <Italian>Cancella tutte le configurazioni salvate per questo aereo.</Italian>
+            <Polish>Wyczyść wszystkie zapisane konfiguracje dla tego samolotu.</Polish>
+            <Portuguese>Limpar todos os carregamentos salvos para esta aeronave.</Portuguese>
+            <Russian>Стереть все сохраненные нагрузки для этого самолета.</Russian>
+            <Spanish>Borrar todas las configuraciones guardadas para este avión.</Spanish>
+            <Turkish>Bu uçak için kaydedilen tüm yüklemeleri silin.</Turkish>
+            <Korean>이 항공기에 대한 모든 저장된 장비를 삭제합니다.</Korean>
+            <Japanese>この航空機のすべての保存された装備を消去します。</Japanese>
+            <Chinesesimp>清除该飞机的所有保存配置。</Chinesesimp>
+            <Chinese>清除該飛機的所有保存配置。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_EMPTY">
+            <Original>- EMPTY -</Original>
+            <English>- EMPTY -</English>
+            <Czech>- PRÁZDNÉ -</Czech>
+            <French>- VIDE -</French>
+            <German>- LEER -</German>
+            <Italian>- VUOTO -</Italian>
+            <Polish>- PUSTE -</Polish>
+            <Portuguese>- VAZIO -</Portuguese>
+            <Russian>- ПУСТО -</Russian>
+            <Spanish>- VACÍO -</Spanish>
+            <Turkish>- BOŞ -</Turkish>
+            <Korean>- 비어 있음 -</Korean>
+            <Japanese>- 空 -</Japanese>
+            <Chinesesimp>- 空 -</Chinesesimp>
+            <Chinese>- 空 -</Chinese>
+        </Key>
+        <Key ID="STR_WLM_CUSTOM">
+            <Original>--- Custom ---</Original>
+            <English>--- Custom ---</English>
+            <Czech>--- Vlastní ---</Czech>
+            <French>--- Personnalisé ---</French>
+            <German>--- Benutzerdefiniert ---</German>
+            <Italian>--- Personalizzato ---</Italian>
+            <Polish>--- Własne ---</Polish>
+            <Portuguese>--- Personalizado ---</Portuguese>
+            <Russian>--- Пользовательский ---</Russian>
+            <Spanish>--- Personalizado ---</Spanish>
+            <Turkish>--- Özel ---</Turkish>
+            <Korean>--- 사용자 정의 ---</Korean>
+            <Japanese>--- カスタム ---</Japanese>
+            <Chinesesimp>--- 自定义 ---</Chinesesimp>
+            <Chinese>--- 自訂 ---</Chinese>
+        </Key>
+        <Key ID="STR_WLM_OFFICIAL">
+            <Original>Official</Original>
+            <English>Official</English>
+            <Czech>Oficiální</Czech>
+            <French>Officiel</French>
+            <German>Offiziell</German>
+            <Italian>Ufficiale</Italian>
+            <Polish>Oficjalny</Polish>
+            <Portuguese>Oficial</Portuguese>
+            <Russian>Официальный</Russian>
+            <Spanish>Oficial</Spanish>
+            <Turkish>Resmi</Turkish>
+            <Korean>공식적인</Korean>
+            <Japanese>公式</Japanese>
+            <Chinesesimp>官方</Chinesesimp>
+            <Chinese>官方</Chinese>
+        </Key>
+        <Key ID="STR_WLM_DEFAULT_SKIN">
+            <Original>Default Skin</Original>
+            <English>Default Skin</English>
+            <Czech>Výchozí Skin</Czech>
+            <French>Apparence par défaut</French>
+            <German>Standard-Skin</German>
+            <Italian>Skin predefinito</Italian>
+            <Polish>Domyślny Skin</Polish>
+            <Portuguese>Aparência Padrão</Portuguese>
+            <Russian>Стандартный скин</Russian>
+            <Spanish>Apariencia predeterminada</Spanish>
+            <Turkish>Varsayılan Görünüm</Turkish>
+            <Korean>기본 스킨</Korean>
+            <Japanese>デフォルトのスキン</Japanese>
+            <Chinesesimp>默认皮肤</Chinesesimp>
+            <Chinese>默認皮膚</Chinese>
+        </Key>
+        <Key ID="STR_WLM_SOLID_COLORS">
+            <Original>--- Solid Colors ---</Original>
+            <English>--- Solid Colors ---</English>
+            <Czech>--- Plné Barvy ---</Czech>
+            <French>--- Couleurs Unies ---</French>
+            <German>--- Einfarbige Farben ---</German>
+            <Italian>--- Colori Solidi ---</Italian>
+            <Polish>--- Kolory Pełne ---</Polish>
+            <Portuguese>--- Cores Sólidas ---</Portuguese>
+            <Russian>--- Сплошные Цвета ---</Russian>
+            <Spanish>--- Colores Sólidos ---</Spanish>
+            <Turkish>--- Düz Renkler ---</Turkish>
+            <Korean>--- 단색 ---</Korean>
+            <Japanese>--- 単色 ---</Japanese>
+            <Chinesesimp>--- 纯色 ---</Chinesesimp>
+            <Chinese>--- 純色 ---</Chinese>
+        </Key>
     </Container>
 </Project>

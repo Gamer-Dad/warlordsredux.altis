@@ -31,13 +31,13 @@ if (_loadoutName == "") exitWith {
     private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";
 
     private _titleControl = _confirmDialog displayCtrl WLM_MODAL_TITLE;
-    _titleControl ctrlSetText "SAVE LOADOUT";
+    _titleControl ctrlSetText (localize "STR_WLM_SAVE_LOADOUT");
 
     private _confirmTextControl = _confirmDialog displayCtrl WLM_MODAL_TEXT;
-    _confirmTextControl ctrlSetText "Enter Loadout Name:";
+    _confirmTextControl ctrlSetText (localize "STR_WLM_ENTER_LOADOUT_NAME");
 
     private _loadoutInputControl = (findDisplay WLM_MODAL) displayCtrl WLM_MODAL_INPUT;
-    private _defaultLoadoutName = format ["Loadout %1", count _loadoutSave + 1];
+    private _defaultLoadoutName = format [localize "STR_WLM_LOADOUT_NAME", count _loadoutSave + 1];
     _loadoutInputControl ctrlSetText _defaultLoadoutName;
 
     _loadoutInputControl ctrlShow true;
@@ -47,11 +47,11 @@ if (_loadoutName == "") exitWith {
     private _confirmButtonControl = _confirmDialog displayCtrl WLM_MODAL_CONFIRM_BUTTON;
     private _cancelButtonControl = _confirmDialog displayCtrl WLM_MODAL_EXIT_BUTTON;
 
-    _confirmButtonControl ctrlSetText "Save Loadout";
-    _confirmButtonControl ctrlSetTooltip "Save the current loadout with the entered name.";
+    _confirmButtonControl ctrlSetText (localize "STR_WLM_SAVE_LOADOUT_BUTTON");
+    _confirmButtonControl ctrlSetTooltip (localize "STR_WLM_SAVE_CURRENT_LOADOUT");
 
-    _cancelButtonControl ctrlSetText "Cancel";
-    _cancelButtonControl ctrlSetTooltip "Return to the previous screen.";
+    _cancelButtonControl ctrlSetText (localize "STR_WLM_CANCEL");
+    _cancelButtonControl ctrlSetTooltip (localize "STR_WLM_RETURN_PREVIOUS_SCREEN");
 
     _cancelButtonControl ctrlAddEventHandler ["ButtonClick", {
         (findDisplay WLM_MODAL) closeDisplay 1;
