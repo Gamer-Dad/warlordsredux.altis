@@ -181,16 +181,16 @@ class WLM_PylonSelectUser: RscButton {
 	x = 0;
 	y = 0;
 	w = 0.035;
-	h = 0.035
+	h = 0.035;
 	font = "PuristaMedium";
 	style = ST_CENTER + ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 };
 
-class WLM_ConfirmationDialog {
+class WLM_Modal_Dialog {
     idd = 5700;
     movingEnable = true;
     class controls {
-        class WLM_Draggable: IGUIBackMRTM {
+        class WLM_Modal_Draggable: IGUIBackMRTM {
             idc = 5701;
             x = 0.3 * safeZoneW + safeZoneX;
             y = 0.4 * safeZoneH - 0.05 + safeZoneY - 0.005;
@@ -199,7 +199,7 @@ class WLM_ConfirmationDialog {
             colorBackground[] = {1, 0.5, 0, 1};
             moving = 1;
         };
-		class WLM_Title : RscTextMRTM {
+		class WLM_Modal_Title : RscTextMRTM {
 			idc = 5702;
 			text = $STR_WLM_PYLON_MISMATCH_WARNING;
 			sizeEx = 0.04;
@@ -212,7 +212,7 @@ class WLM_ConfirmationDialog {
 			shadow = 0;
 			style = ST_LEFT;
 		};
-        class WLM_Background: IGUIBackMRTM {
+        class WLM_Modal_Background: IGUIBackMRTM {
             idc = 5703;
             x = 0.3 * safeZoneW + safeZoneX;
             y = 0.4 * safeZoneH + safeZoneY;
@@ -220,7 +220,7 @@ class WLM_ConfirmationDialog {
             h = 0.08 * safeZoneH;
             colorBackground[] = {0, 0, 0, 1};
         };
-		class WLM_ConfirmButton: RscButtonMRTM {
+		class WLM_Modal_ConfirmButton: RscButtonMRTM {
 			idc = 5704;
 			text = $STR_WLM_REARM;
 			tooltip = $STR_WLM_PYLON_OLD_SETTINGS;
@@ -232,7 +232,7 @@ class WLM_ConfirmationDialog {
 			h = 0.03 * safeZoneH;
 			font = "PuristaMedium";
 		};
-		class WLM_ExitButton: RscButtonMRTM {
+		class WLM_Modal_ExitButton: RscButtonMRTM {
 			idc = 5705;
 			text = $STR_WLM_GO_BACK;
 			tooltip = $STR_WLM_PYLON_SELECTION_SCREEN;
@@ -244,7 +244,7 @@ class WLM_ConfirmationDialog {
 			h = 0.03 * safeZoneH;
 			font = "PuristaMedium";
 		};
-		class WLM_ConfirmText: RscTextMRTM {
+		class WLM_Modal_Text: RscTextMRTM {
 			idc = 5706;
 			text = $STR_WLM_PYLON_MISMATCH_MESSAGE;
 			sizeEx = 0.035;
@@ -257,13 +257,27 @@ class WLM_ConfirmationDialog {
 			shadow = 0;
 			style = ST_MULTI;
 		};
-		class WLM_MiddleBar: IGUIBackMRTM {
+		class WLM_Modal_MiddleBar: IGUIBackMRTM {
 			idc = 5707;
 			x = 0.36 * safeZoneW + safeZoneX + 0.005;
 			y = 0.48 * safeZoneH + safeZoneY + 0.005;
 			w = 0.276 * safeZoneW;
 			h = 0.03 * safeZoneH;
 			colorBackground[] = {0, 0, 0, 1};
+		};
+		class WLM_Modal_InputEdit: RscEditMRTM {
+			idc = 5708;
+			text = "";
+			sizeEx = 0.06;
+			x = 0.3 * safeZoneW + safeZoneX + 0.25;
+			y = 0.4 * safeZoneH + safeZoneY + 0.01;
+			w = 0.4 * safeZoneW - 0.26;
+			h = 0.06 * safeZoneH;
+			font = "PuristaMedium";
+			colorText[] = {1, 1, 1, 1};
+			tooltip = "Enter new loadout name";
+			onLoad = "(_this # 0) ctrlShow false;";
+			maxChars = 30;
 		};
     };
 };

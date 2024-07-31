@@ -1,3 +1,5 @@
+#include "..\WLM_constants.inc";
+
 params ["_control", "_lbCurSel", "_lbSelection"];
 
 if (_lbCurSel == 0) exitWith {};    // careful
@@ -13,33 +15,32 @@ private _myPreset = if (_loadoutName != "") then {
 } else  {
     private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
     private _savedLoadouts = profileNamespace getVariable [_variableName, []];
-    _savedLoadouts select (_lbCurSel - 1);
+    private _selectedLoadout = _savedLoadouts select (_lbCurSel - 1);
+    _selectedLoadout # 1;
 };
 
-private _PYLON_IDC_START = 5501;
-private _PYLON_USER_IDC_START = 5601;
-private _DISPLAY = findDisplay 5300;
+private _display = findDisplay WLM_DISPLAY;
 
 {
-    private _pylonCtrl = _DISPLAY displayCtrl (_PYLON_IDC_START + _forEachIndex);
-    private _pylonUserCtrl = _DISPLAY displayCtrl (_PYLON_USER_IDC_START + _forEachIndex);
+    private _pylonControl = _display displayCtrl (WLM_PYLON_START + _forEachIndex);
+    private _pylonUserControl = _display displayCtrl (WLM_PYLON_USER_START + _forEachIndex);
 
-    _pylonCtrl lbSetCurSel 0;
+    _pylonControl lbSetCurSel 0;
 
-    for "_i" from 1 to (lbSize _pylonCtrl - 1) do { 
+    for "_i" from 1 to (lbSize _pylonControl - 1) do { 
         if (count _myPreset <= _forEachIndex) exitWith {};
         
         private _presetItem = _myPreset select _forEachIndex;
 
-        if ((_pylonCtrl lbData _i) == _presetItem # 0) exitWith { 
-            _pylonCtrl lbSetCurSel _i; 
+        if ((_pylonControl lbData _i) == _presetItem # 0) exitWith { 
+            _pylonControl lbSetCurSel _i; 
 
             if (_presetItem # 1 isEqualTo [0]) then {
-                _pylonUserCtrl ctrlSetTooltip "Control: Gunner";
-                _pylonUserCtrl ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageGunner_ca.paa";
+                _pylonUserControl ctrlSetTooltip "Control: Gunner";
+                _pylonUserControl ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageGunner_ca.paa";
             } else {
-                _pylonUserCtrl ctrlSetTooltip "Control: Pilot";
-                _pylonUserCtrl ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageDriver_ca.paa";
+                _pylonUserControl ctrlSetTooltip "Control: Pilot";
+                _pylonUserControl ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageDriver_ca.paa";
             };
         };
     };
