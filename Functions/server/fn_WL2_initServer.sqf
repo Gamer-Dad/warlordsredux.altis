@@ -53,6 +53,7 @@ MRTM_fnc_accept = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_accept
 MRTM_fnc_invite = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_invite.sqf";
 
 WLM_fnc_serverPylonManager = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_serverPylonManager.sqf";
+WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
 
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;

@@ -92,9 +92,13 @@ WLM_fnc_aircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\fun
 WLM_fnc_switchUser = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_switchUser.sqf";
 WLM_fnc_selectLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_selectLoadout.sqf";
 WLM_fnc_saveLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_saveLoadout.sqf";
+WLM_fnc_constructAircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructAircraftPylons.sqf";
 WLM_fnc_constructPresetMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructPresetMenu.sqf";
 WLM_fnc_applyLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadout.sqf";
 WLM_fnc_rearmAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmAircraft.sqf";
+WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
+WLM_fnc_textureLists = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureLists.sqf";
+WLM_fnc_wipePylonSaves = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_wipePylonSaves.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
 
