@@ -2,6 +2,15 @@
 
 params ["_asset", ["_owner", objNull]];
 
+_asset addEventHandler ["Hit", {
+	params ["_unit", "_source", "_damage", "_instigator"];
+	
+	private _responsiblePlayer = [_source, _instigator] call BIS_fnc_WL2_handleInstigator;
+	if (!(isNull _responsiblePlayer) && _damage > 0 && alive _unit) then {
+		_unit setVariable ["BIS_WL_lastHitter", _responsiblePlayer, true];
+	};
+}];
+
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
 		call APS_fnc_RegisterVehicle;
