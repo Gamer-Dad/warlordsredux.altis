@@ -62,6 +62,7 @@ BIS_fnc_WL2_wasMain = compileFinal preprocessFileLineNumbers "Functions\client\f
 BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_welcome.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
 BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
+BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFix.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
@@ -300,3 +301,17 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
 
+(findDisplay 46) displayAddEventHandler ["KeyDown", {
+	if (inputAction "TacticalPing" > 0 && {isRemoteControlling  player}) then {
+		private _distance = viewDistance;
+		private _origin = AGLToASL positionCameraToWorld [0, 0, 0];
+		private _target = AGLToASL positionCameraToWorld [0, 0, _distance];
+
+		private _default = _origin vectorAdd (_origin vectorFromTo _target vectorMultiply _distance);
+		private _pos = lineIntersectsSurfaces [_origin, _target, cameraOn] param [0, [_default]] select 0;
+
+		private _targets = allPlayers select {side _x == side player && _x != player};
+		
+		[ASLToAGL _pos] remoteExec ["BIS_fnc_WL2_pingFix", _targets, true];
+	};
+}];
