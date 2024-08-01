@@ -21,8 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={14424.509,31.777714,15632.765};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710671,0.70710683};
+		dir[]={-1.2363449e-007,-0.70710683,0.70710683};
+		up[]={-1.2363449e-007,0.70710671,0.70710683};
+		aside[]={1,0,1.7484557e-007};
 	};
 };
 binarizationWanted=0;
@@ -1236,7 +1237,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9198.4805,16.548729,21565.646};
-			angle=0.93116748;
+			angle=0.93116736;
 			class Attributes
 			{
 				sizeA=150;
@@ -8873,12 +8874,13 @@ class Mission
 		class Item317
 		{
 			dataType="Trigger";
-			position[]={28256.432,22.457172,25683.475};
-			angle=2.1149371;
+			position[]={28256.43,22.457317,25683.475};
+			angle=2.1149375;
 			class Attributes
 			{
-				sizeA=145;
-				sizeB=145;
+				sizeA=200;
+				sizeB=100;
+				isRectangle=1;
 			};
 			id=1425;
 			type="EmptyDetector";
@@ -9189,7 +9191,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={23059.529,49.055279,7274.6079};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=150;
@@ -9242,7 +9244,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={22753.467,18.265915,13577.189};
-			angle=3.9814076;
+			angle=3.9814072;
 			class Attributes
 			{
 				sizeA=150;
