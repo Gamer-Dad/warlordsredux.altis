@@ -8,14 +8,49 @@ if (remoteExecutedOwner != (owner _sender)) exitWith {};
 _uid = getPlayerUID _sender;
 
 if (_action == "orderAsset") exitWith {
-	_cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param2, 50001]);
-	_hasFunds = (playerFunds >= _cost);
+	private _position = _param1;
+	private _class = _param2;
+
+	// Griefer check
+	private _nearbyEntities = [];
+	if (!(_class isKindOf "Air") && !(isNil "_param4")) then {
+		private _simulatedObject = [_class, ATLToASL _position, _param4, true, false, true] call BIS_fnc_createSimpleObject;
+
+		private _circleA = boundingBoxReal [_simulatedObject, "FireGeometry"];
+		private _radiusA = _circleA select 2;
+
+		private _BUFFER = 1;
+		_nearbyEntities = _simulatedObject nearEntities 30 select {
+			private _circleB = boundingBoxReal [_x, "FireGeometry"];
+			private _radiusB = _circleB select 2;
+
+			(_x distance _simulatedObject) < (_radiusA + _radiusB + _BUFFER)
+			&& !(_x isKindOf "Man") 
+			&& _x getVariable ["BIS_WL_nextRepair", -1] != -1
+			// && _uid != (_x getVariable ["BIS_WL_ownerAsset", "123"])
+		};
+
+		deleteVehicle _simulatedObject;
+	};
+
+	if (count _nearbyEntities > 0) exitWith {
+		private _owner = owner _sender;
+		_sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
+
+		private _nearbyObject = _nearbyEntities # 0;
+		private _nearbyObjectName = getText (configFile >> "CfgVehicles" >> typeOf _nearbyObject >> "displayName");
+		private _nearbyObjectPosition = getPosASL _nearbyObject;
+
+		playSound3D ["a3\3den\data\sound\cfgsound\notificationwarning.wss", objNull, false, _nearbyObjectPosition, 5];
+		[format ["Too close to another %1!", _nearbyObjectName]] remoteExec ["systemChat", _owner];
+	};
+
+	private _cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param2, 50001]);
+	private _hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
-		
-		_class = _param2;
 		if (_class isKindOf "Ship") exitWith {
-			[_sender, _param1, _class] spawn BIS_fnc_orderNaval;
+			[_sender, _position, _class] spawn BIS_fnc_orderNaval;
 		};
 
 		if (_class isKindOf "Air") exitWith {
@@ -23,10 +58,10 @@ if (_action == "orderAsset") exitWith {
 		};
 
 		if (_param3) exitWith {
-			[_sender, _param1, _class, _param4] spawn BIS_fnc_orderDefence;
+			[_sender, _position, _class, _param4] spawn BIS_fnc_orderDefence;
 		};
 
-		[_sender, _param1, _class, _param4] spawn BIS_fnc_orderGround;
+		[_sender, _position, _class, _param4] spawn BIS_fnc_orderGround;
 	};
 };
 
