@@ -54,7 +54,7 @@ if (_action == "orderAsset") exitWith {
 		};
 
 		if (_class isKindOf "Air") exitWith {
-			[_sender, _position, _class] spawn BIS_fnc_orderAir;
+			[_sender, _param1, _class, _cost] spawn BIS_fnc_orderAir;
 		};
 
 		if (_param3) exitWith {
@@ -131,6 +131,17 @@ if (_action == "orderFTVehicle") exitWith {
 		if ((count ((entities getFTVehicle) select {alive _x})) == 0) then {
 			_asset = createVehicle [getFTVehicle, _sender, [], 0, "NONE"];
 			_asset setVariable ["BIS_WL_ownerAsset", _uid, [2, (owner _sender)]];
+			_asset setVariable ["BIS_WL_rewardedStack", createHashMap];
+			
+			_asset spawn {
+				_asset = _this;
+				while {alive _asset} do {
+					// wipe the reward stack every 2 minutes
+					sleep 120;
+					_asset setVariable ["BIS_WL_rewardedStack", createHashMap];
+				};
+			};
+
 			[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
 	};
@@ -145,8 +156,48 @@ if (_action == "orderFTPod") exitWith {
 		if ((count (entities getFTPod)) == 0) then {
 			_asset = createVehicle [getFTPod, _sender, [], 0, "NONE"];
 			_asset setVariable ["BIS_WL_ownerAsset", _uid, [2, (owner _sender)]];
+			_asset setVariable ["BIS_WL_rewardedStack", createHashMap];
+
+			_asset spawn {
+				_asset = _this;
+				while {alive _asset} do {
+					sleep 120;
+					_asset setVariable ["BIS_WL_rewardedStack", createHashMap];
+				};
+			};
+
 			[_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", remoteExecutedOwner];
 		};
+	};
+};
+
+if (_action == "ftSupportPoints") exitWith {
+	private _ftVehicle = _param1;
+	private _reward = 5;
+
+	private _targets = [
+		missionNamespace getVariable "BIS_WL_currentTarget_west", 
+		missionNamespace getVariable "BIS_WL_currentTarget_east"
+	] select {
+		!(isNull _x)
+	};
+
+	if ((_targets findIf {_sender inArea (_x getVariable "objectAreaComplete")}) != -1) then {	
+		_reward = 10;
+	};
+
+	private _ftVehicleOwner = _ftVehicle getVariable ["BIS_WL_ownerAsset", "123"];
+	private _rewardStack = _ftVehicle getVariable ["BIS_WL_rewardedStack", createHashMap];
+
+	private _eligible = !(_rewardStack getOrDefault [getPlayerUID _sender, false]) && _ftVehicleOwner != _uid;
+	if (_eligible) then {
+		_uid = _ftVehicleOwner;
+		_reward call BIS_fnc_WL2_fundsDatabaseWrite;
+
+		_rewardStack set [getPlayerUID _sender, true];
+		_ftVehicle setVariable ["BIS_WL_rewardedStack", _rewardStack];
+
+		[objNull, _reward, false, "Spawn reward"] remoteExec ["BIS_fnc_WL2_killRewardClient", owner _sender];
 	};
 };
 

@@ -11,6 +11,7 @@ if !(_owner in _previousOwners) then {
 		{
 			private _uid = getPlayerUID _x;
 			_reward call BIS_fnc_WL2_fundsDatabaseWrite;
+			[objNull, _reward, false, "Sector captured"] remoteExec ["BIS_fnc_WL2_killRewardClient", _x];
 		} forEach (allPlayers select {side group _x == _owner});
 	};
 };

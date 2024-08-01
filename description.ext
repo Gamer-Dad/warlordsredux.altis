@@ -3,6 +3,7 @@
 #include "ui\controls.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
 #include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
+#include "scripts\WLM\ui\WLM_pylons.hpp"
 
 onLoadName = "Warlords Redux 2.5.8";
 dev = "Jezuro + WSV";

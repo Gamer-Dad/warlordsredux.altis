@@ -4,6 +4,10 @@ class CfgRemoteExec {
 		mode = 1;
 		jip = 1;
 
+		class APS_fnc_Report {
+			allowedTargets = 2;
+		};
+
 		class BIS_fnc_WL2_handleClientRequest {
 			allowedTargets = 2;
 		};
@@ -14,6 +18,10 @@ class CfgRemoteExec {
 
 		class BIS_fnc_WL2_forfeitHandleServer {
 			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_pingFix {
+			allowedTargets = 0;
 		};
 
 		class MRTM_fnc_invite {
@@ -41,6 +49,14 @@ class CfgRemoteExec {
 		};
 
 		class MRTM_fnc_leaveGroup {
+			allowedTargets = 0;
+		};
+
+		class WLM_fnc_serverPylonManager {
+			allowedTargets = 2;
+		};
+
+		class WLM_fnc_applyPylonFinal {
 			allowedTargets = 0;
 		};
 

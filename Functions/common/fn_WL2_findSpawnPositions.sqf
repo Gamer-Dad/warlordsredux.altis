@@ -68,7 +68,7 @@ _maxAxis = (if (!(isNil {_area # 4}) && {(_area # 4)}) then {
 
 private _areaStart = _center vectorDiff [_maxAxis, _maxAxis, 0];
 private _areaEnd = _center vectorAdd [_maxAxis, _maxAxis, 0];
-private _axisStep = if (_infantryOnly) then {20} else {40};
+private _axisStep = if (_infantryOnly) then {10} else {20};
 
 private _areaCheck = if (_rimWidth == 0) then {
 	{_this inArea _area};
@@ -89,11 +89,11 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 		_spawnCheckPos = [_axisXSpawnCheck, _axisYSpawnCheck, 0];
 		if (_spawnCheckPos call _areaCheck) then {
 			if !(isOnRoad _spawnCheckPos || surfaceIsWater _spawnCheckPos || !(_spawnCheckPos inArea BIS_WL_mapAreaArray)) then {
-				_finalPos = _spawnCheckPos isFlatEmpty [6, -1, 0.35, 6, 0, FALSE, objNull];
+				_finalPos = _spawnCheckPos isFlatEmpty [3, -1, 0.35, 6, 0, FALSE, objNull];
 				if !(_finalPos isEqualTo []) then {
 					_finalPos = ASLToATL _finalPos;
 					_nearObjs = _finalPos nearObjects ["AllVehicles", 6];
-					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 10, false, true];
+					_nearMapObjs = nearestTerrainObjects [_finalPos, _blacklistedMapObjects, 6, false, true];
 					if (count _nearObjs == 0 && {count _nearMapObjs == 0}) then {
 						_finalPos set [2, 0];
 						_ret pushBack _finalPos;
@@ -106,5 +106,9 @@ for [{_axisYSpawnCheck = _areaStart # 1}, {_axisYSpawnCheck < (_areaEnd # 1)}, {
 _ret = _ret apply {[_x distance2D _center, [_x]]};
 _ret sort true;
 _ret = _ret apply {(_x # 1) # 0};
+
+if (count _ret == 0) then {
+	_ret = [_center];
+};
 
 _ret;

@@ -62,6 +62,7 @@ BIS_fnc_WL2_wasMain = compileFinal preprocessFileLineNumbers "Functions\client\f
 BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_welcome.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
 BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
+BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFix.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
@@ -87,6 +88,18 @@ BIS_fnc_getLiveries = compileFinal preprocessFileLineNumbers "Functions\client\r
 BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
+
+WLM_fnc_aircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_aircraftPylons.sqf";
+WLM_fnc_switchUser = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_switchUser.sqf";
+WLM_fnc_selectLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_selectLoadout.sqf";
+WLM_fnc_saveLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_saveLoadout.sqf";
+WLM_fnc_constructAircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructAircraftPylons.sqf";
+WLM_fnc_constructPresetMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructPresetMenu.sqf";
+WLM_fnc_applyLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadout.sqf";
+WLM_fnc_rearmAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmAircraft.sqf";
+WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
+WLM_fnc_textureLists = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureLists.sqf";
+WLM_fnc_wipePylonSaves = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_wipePylonSaves.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
 
@@ -292,3 +305,17 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
 
+(findDisplay 46) displayAddEventHandler ["KeyDown", {
+	if (inputAction "TacticalPing" > 0 && {isRemoteControlling  player}) then {
+		private _distance = viewDistance;
+		private _origin = AGLToASL positionCameraToWorld [0, 0, 0];
+		private _target = AGLToASL positionCameraToWorld [0, 0, _distance];
+
+		private _default = _origin vectorAdd (_origin vectorFromTo _target vectorMultiply _distance);
+		private _pos = lineIntersectsSurfaces [_origin, _target, cameraOn] param [0, [_default]] select 0;
+
+		private _targets = allPlayers select {side _x == side player && _x != player};
+		
+		[ASLToAGL _pos] remoteExec ["BIS_fnc_WL2_pingFix", _targets, true];
+	};
+}];
