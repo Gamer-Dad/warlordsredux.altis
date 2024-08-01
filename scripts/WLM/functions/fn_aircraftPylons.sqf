@@ -1,30 +1,29 @@
+#include "..\WLM_constants.inc"
+
 params ["_asset"];
 
-private _DISPLAY = findDisplay 5300;
+private _display = findDisplay WLM_DISPLAY;
 
-if (isNull _DISPLAY) then {
-    _DISPLAY = createDialog ["WLM_PylonUI", true];
+if (isNull _display) then {
+    _display = createDialog ["WLM_PylonUI", true];
 };
 
 uiNamespace setVariable ["WLM_asset", _asset];
 
 disableSerialization;
 
-private _BACKGROUND_PIC = 5303;
-
 private _assetConfig = configFile >> "CfgVehicles" >> typeOf _asset;
-
 private _pylonConfig = _assetConfig >> "Components" >> "TransportPylonsComponent";
 
 private _assetTypeName = getText (_assetConfig >> "displayName");
 
-private _VEHICLE_NAME = _DISPLAY displayCtrl 5310;
-_VEHICLE_NAME ctrlSetText _assetTypeName;
+private _vehicleNameControl = _display displayCtrl WLM_VEHICLE_NAME;
+_vehicleNameControl ctrlSetText _assetTypeName;
 
 private _assetUiPicture = getText (_pylonConfig >> "UIPicture");
 private _assetRegularPicture = getText (_assetConfig >> "picture");
 
-private _backgroundPic = _DISPLAY displayCtrl _BACKGROUND_PIC;
+private _backgroundPic = _display displayCtrl WLM_BACKGROUND_PIC;
 if (_assetUiPicture != "") then {
     _backgroundPic ctrlSetText _assetUiPicture;
 } else {
@@ -33,144 +32,66 @@ if (_assetUiPicture != "") then {
     };
 };
 
-private _PYLON_IDC_START = 5501;
-private _PYLON_USER_IDC_START = 5601;
-
-private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
-{
-    private _uiPosition = getArray (_x >> "uiPosition");
-    private _selectBox = _DISPLAY ctrlCreate ["WLM_PylonSelect", _PYLON_IDC_START + _forEachIndex];
-    private _xPos = _uiPosition # 0;
-    private _yPos = _uiPosition # 1;
-
-    // transformation from pylon system (magic)
-    _xPos = _xPos + 0.167;
-    _yPos = _yPos + 0.225;
-
-    // transformation to grid system
-    _xPos = _xPos * 0.745; //+ 0.125;
-
-    private _textWidth = "- EMPTY -" getTextWidth ["PuristaMedium", 0.035];
-
-    // adjust for size
-    _xPos = _xPos - _textWidth / 2;
-    // _yPos = _yPos - (ctrlTextHeight _selectBox / 2);
-
-    private _pylonConfigName = configName _x;
-    private _currentPylonInfo = (getAllPylonsInfo _asset) select { _pylonConfigName == (_x # 1) } select 0;
-
-    _selectBox lbAdd "- EMPTY -";
-    _selectBox lbSetCurSel 0;
-
-    {
-        private _magazine = configfile >> "CfgMagazines" >> _x;
-        private _magazineName = getText (_magazine >> "displayName");
-        private _description = getText (_magazine >> "descriptionShort");
-        private _magSize = getNumber (_magazine >> "count");
-
-        private _magSizeInName = [format["%1x", _magSize], _magazineName] call BIS_fnc_inString;
-
-        private _displayName = if (_magSizeInName || _magSize <= 1) then {
-            _magazineName;
-        } else {
-            format ["%1 %2x", _magazineName, _magSize];
-        };
-
-        private _selectBoxItem = _selectBox lbAdd _displayName;
-        _selectBox lbSetTooltip [_selectBoxItem, _description];
-        _selectBox lbSetData [_selectBoxItem, _x];
-
-        if (_currentPylonInfo # 3 == (configName _magazine)) then {
-            _selectBox lbSetCurSel _selectBoxItem;
-        };
-    } forEach (_asset getCompatiblePylonMagazines _pylonConfigName);
-
-    _selectBox ctrlSetPosition [_xPos, _yPos, _textWidth + 0.04, 0.035];
-
-    _selectBox ctrlCommit 0;
-
-    private _selectUserBox = _DISPLAY ctrlCreate ["WLM_PylonSelectUser", _PYLON_USER_IDC_START + _forEachIndex];
-    _selectUserBox ctrlSetPosition [_xPos - 0.035, _yPos];
-
-    if (_currentPylonInfo # 2 isEqualTo [0]) then {
-        _selectUserBox ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageGunner_ca.paa";
-        _selectUserBox ctrlSetTooltip "Control: Gunner";
-    } else {
-        _selectUserBox ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageDriver_ca.paa";
-        _selectUserBox ctrlSetTooltip "Control: Pilot";
-    };
-    
-    _selectUserBox ctrlAddEventHandler ["ButtonClick", "_this call WLM_fnc_switchUser"];
-    _selectUserBox ctrlCommit 0;
-} forEach _pylonsInfo;
-
+_asset call WLM_fnc_constructAircraftPylons;
 call WLM_fnc_constructPresetMenu;
 
-private _SAVE_BUTTON = _DISPLAY displayCtrl 5305;
-_SAVE_BUTTON ctrlAddEventHandler ["ButtonClick", {
-    _this call WLM_fnc_saveLoadout;
-    call WLM_fnc_constructPresetMenu; 
+private _saveButtonControl = _display displayCtrl WLM_SAVE_BUTTON;
+_saveButtonControl ctrlAddEventHandler ["ButtonClick", {
+    [""] call WLM_fnc_saveLoadout;
 }];
 
-private _CLEAR_SAVED_BUTTON = _DISPLAY displayCtrl 5307;
-_CLEAR_SAVED_BUTTON ctrlAddEventHandler ["ButtonClick", {
-    private _asset = uiNamespace getVariable "WLM_asset";
-    private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
-    profileNamespace setVariable [_variableName, []];
-    call WLM_fnc_constructPresetMenu; 
+private _wipeButtonControl = _display displayCtrl WLM_WIPE_BUTTON;
+_wipeButtonControl ctrlAddEventHandler ["ButtonClick", {
+    [true] call WLM_fnc_wipePylonSaves;
 }];
 
-private _APPLY_BUTTON = _DISPLAY displayCtrl 5304;
-_APPLY_BUTTON ctrlAddEventHandler ["ButtonClick", {
-    _this call WLM_fnc_applyLoadout;
+private _applyButtonControl = _display displayCtrl WLM_APPLY_BUTTON;
+_applyButtonControl ctrlAddEventHandler ["ButtonClick", {
+    [true] call WLM_fnc_applyLoadout;
 }];
 
-private _REARM_BUTTON = _DISPLAY displayCtrl 5308;
-_REARM_BUTTON ctrlSetText "Rearm";
-_REARM_BUTTON ctrlAddEventHandler ["ButtonClick", {
+private _rearmButtonControl = _display displayCtrl WLM_REARM_BUTTON;
+_rearmButtonControl ctrlSetText "Rearm";
+_rearmButtonControl ctrlAddEventHandler ["ButtonClick", {
     [true] call WLM_fnc_rearmAircraft;
 }];
 
-private _CAMO_COMBO = _DISPLAY displayCtrl 5311;
+private _camoSelectControl = _display displayCtrl WLM_CAMO_SELECT;
 
 private _textureSlots = getArray (_assetConfig >> "hiddenSelections");
 
 private _customTexturesList = [];
+private _defaultTextureList = [];
 
-private _defaultTextureList = getArray (_assetConfig >> "hiddenSelectionsTextures");
-_customTexturesList pushBack ["Default Skin", _defaultTextureList, "Official"];
-
-private _additionalTextureSources = configProperties [_assetConfig >> "TextureSources"];
-
-private _playerAllowableFactions = if (side player == west) then {
-    ["BLU_F", "BLU_G_F", "BLU_T_F", "BLU_CTRG_F", "BLU_GEN_F", "BLU_W_F", "BLU_F_F"];
-} else {
-    ["OPF_F", "OPF_G_F", "OPF_T_F", "OPF_R_F"];
+switch (typeOf _asset) do {
+    case "I_Plane_Fighter_03_dynamicLoadout_F": {
+        _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "Hex" >> "textures");
+    };
+    case "I_Plane_Fighter_04_F": {
+        _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "DigitalCamoGrey" >> "textures");
+    };
+    default { 
+        _defaultTextureList = getArray (_assetConfig >> "hiddenSelectionsTextures") 
+    };
 };
+
+_customTexturesList pushBack [localize "STR_WLM_DEFAULT_SKIN", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
+
+private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
 
 {
     private _textureSource = _x;
-    private _textureSourceName = getText (_textureSource >> "displayName");
-    private _textureSourceTextures = getArray (_textureSource >> "textures");
-
-    private _textureFaction1 = getArray (_textureSource >> "faction");
-    private _textureFaction2 = getArray (_textureSource >> "factions");
-    private _textureFactions = _textureFaction1 + _textureFaction2;
-    private _playerIsInTexture = count (_textureFactions arrayIntersect _playerAllowableFactions) > 0;
-
-    if (_playerIsInTexture) then {
-        _customTexturesList pushBack [_textureSourceName, _textureSourceTextures, "Official"];
-    };
+    _customTexturesList pushBack [_textureSource # 0, _textureSource # 1, localize "STR_WLM_OFFICIAL"];
 } forEach _additionalTextureSources;
 
 // Image textures
-_customTexturesList pushBack ["--- Custom ---", "", ""];
+_customTexturesList pushBack [localize "STR_WLM_CUSTOM", "", ""];
 
 private _pushCustomTexture = {
     params ["_textureName", "_customTexturesList"];
     private _texturePath = format ["Img\camo\%1\%2.paa", (toLower format ["%1", side player]), toLower _textureName];
     if !(fileExists _texturePath) exitWith {};
-    _customTexturesList pushBack [_textureName, _texturePath, "Custom"];
+    _customTexturesList pushBack [_textureName, _texturePath, localize "STR_WLM_CUSTOM"];
 };
 
 private _dir = "Img\camo\" + (toLower format ["%1", side player]) + "\";
@@ -181,7 +102,7 @@ private _dir = "Img\camo\" + (toLower format ["%1", side player]) + "\";
 
 
 // Color textures
-_customTexturesList pushBack ["--- Solid Colors ---", "", ""];
+_customTexturesList pushBack [localize "STR_WLM_SOLID_COLORS", "", ""];
 if (side player == west) then {
     _customTexturesList pushBack ["Stealth Black", "#(rgb,8,8,3)color(0.23,0.23,0.24,0.05)", "Solid Color"];
     _customTexturesList pushBack ["NATO Blue", "#(rgb,8,8,3)color(0.01,0.24,0.76,0.05)", "Solid Color"];
@@ -192,7 +113,7 @@ if (side player == west) then {
     _customTexturesList pushBack ["Tropical Green", "#(rgb,8,8,3)color(0,0.84,0.16,0.03)", "Solid Color"];
 };
 
-private _ignoreTextureSlots = ["aiming_dot", "CamoNet", "CamoSlat"];
+private _ignoreTextureSlots = ["aiming_dot", "CamoNet", "CamoSlat", "insignia", "number_01", "number_02", "number_03"];
 private _customTexturesMap = createHashMap;
 {
     private _textureName = _x # 0;
@@ -202,17 +123,17 @@ private _customTexturesMap = createHashMap;
     if (typeName _singleTexture == "ARRAY") then {
         _customTexturesMap set [_textureName, _singleTexture];
 
-        private _camoItem = _CAMO_COMBO lbAdd _textureName;
-        _CAMO_COMBO lbSetData [_camoItem, _textureName];
-        _CAMO_COMBO lbSetTooltip [_camoItem, _category];
+        private _camoItem = _camoSelectControl lbAdd _textureName;
+        _camoSelectControl lbSetData [_camoItem, _textureName];
+        _camoSelectControl lbSetTooltip [_camoItem, _category];
 
         continue;
     };
 
     if (_singleTexture == "") then {
-        private _camoItem = _CAMO_COMBO lbAdd _textureName;
-        _CAMO_COMBO lbSetData [_camoItem, "-1"];
-        _CAMO_COMBO lbSetTooltip [_camoItem, "Category"];
+        private _camoItem = _camoSelectControl lbAdd _textureName;
+        _camoSelectControl lbSetData [_camoItem, "-1"];
+        _camoSelectControl lbSetTooltip [_camoItem, localize "STR_WLM_CATEGORY"];
         
         continue;
     };
@@ -228,16 +149,16 @@ private _customTexturesMap = createHashMap;
     };
     _customTexturesMap set [_textureName, _textureArray];
 
-    private _camoItem = _CAMO_COMBO lbAdd _textureName;
-    _CAMO_COMBO lbSetData [_camoItem, _textureName];
-    _CAMO_COMBO lbSetTooltip [_camoItem, _category];
+    private _camoItem = _camoSelectControl lbAdd _textureName;
+    _camoSelectControl lbSetData [_camoItem, _textureName];
+    _camoSelectControl lbSetTooltip [_camoItem, _category];
 } forEach _customTexturesList;
 
 uiNamespace setVariable ["WLM_assetTexturesMap", _customTexturesMap];
 uiNamespace setVariable ["WLM_assetTextureSlots", _textureSlots];
 
-_CAMO_COMBO lbSetCurSel 0;
-_CAMO_COMBO ctrlAddEventHandler ["LBSelChanged", {
+_camoSelectControl lbSetCurSel 0;
+_camoSelectControl ctrlAddEventHandler ["LBSelChanged", {
     params ["_control", "_lbCurSel", "_lbSelection"];
     private _asset = uiNamespace getVariable "WLM_asset";
     private _texturesMap = uiNamespace getVariable "WLM_assetTexturesMap";
@@ -259,14 +180,14 @@ _CAMO_COMBO ctrlAddEventHandler ["LBSelChanged", {
 
 _asset spawn {
 	params ["_asset"];
-    private _DISPLAY = findDisplay 5300;
-    private _REARM_BUTTON = _DISPLAY displayCtrl 5308;
-	while {!isNull _DISPLAY} do {
+    private _display = findDisplay WLM_DISPLAY;
+    private _rearmButtonControl = _display displayCtrl WLM_REARM_BUTTON;
+	while {!isNull _display} do {
 		private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
-		private _nearbyVehicles = (_asset nearObjects ["All", 30]) select {alive _x};
-		private _rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
+		private _nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select { alive _x };
+		private _rearmVehicleIndex = _nearbyVehicles findIf { getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0 };
 		private _amount = (_nearbyVehicles # _rearmVehicleIndex) getVariable ["GOM_fnc_ammocargo", 0];
-		private _amountText = format ["(%1)", (_amount call GOM_fnc_kgToTon)];
+		private _amountText = format ["(%1)", _amount call GOM_fnc_kgToTon];
 
         private _rearmText = if (_cooldown == 0) then {
             format ["%1 %2", localize "STR_WLM_REARM", _amountText];
@@ -274,7 +195,7 @@ _asset spawn {
             [_cooldown, "MM:SS"] call BIS_fnc_secondsToString;
         };
 
-		_REARM_BUTTON ctrlSetText _rearmText;
+		_rearmButtonControl ctrlSetText _rearmText;
 		sleep 1;
 	};
 };
