@@ -6,7 +6,7 @@ params ["_asset", "_pylonsToSet", "_vehicleAmmo"];
     private _turret = _x select 2;
     private _ammoToSet = _x select 3;
 
-    _asset setPylonLoadout [_pylonName, _magazineName, false, _turret];
+    _asset setPylonLoadout [_pylonName, _magazineName, true, _turret];
     _asset setAmmoOnPylon [_pylonName, _ammoToSet];
 } forEach _pylonsToSet;
 
