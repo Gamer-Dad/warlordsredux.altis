@@ -3,6 +3,7 @@ import RscPicture;
 import RscCombo;
 import RscControlsGroup;
 import RscButton;
+import ScrollBar;
 
 class WLM_PylonUI {
     idd = 5300;
@@ -12,16 +13,16 @@ class WLM_PylonUI {
             idc = 5301;
             x = 0;
             y = -0.05;
-            w = 0.95;
+            w = 1;
             h = 0.05;
-            colorBackground[] = {0.2, 0.4, 1, 1};
+            colorBackground[] = {0, 0, 0, 1};
             moving = 1;
         };
 		class WLM_TitleBar: RscText {
             idc = -1;
             x = 0;
             y = -0.05;
-            w = 0.95;
+            w = 1;
             h = 0.05;
 			text = $STR_WLM_TITLE;
 			style = ST_LEFT;
@@ -30,9 +31,9 @@ class WLM_PylonUI {
             idc = 5302;
             x = 0;
             y = 0;
-            w = 0.95;
+            w = 1;
             h = 1;
-            colorBackground[] = {0.4, 0.6, 1, 0.95};
+            colorBackground[] = {0.2, 0.2, 0.2, 1};
         };
         class WLM_AircraftPicture: RscPicture {
             idc = 5303;
@@ -41,9 +42,45 @@ class WLM_PylonUI {
             w = 0.75;
             h = 1;
             style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
-			colorText[] = {0, 0, 0, 1};
+			colorText[] = {1, 1, 1, 0.8};
 			text = "\A3\ui_f\data\map\markers\handdrawn\unknown_CA.paa";
         };
+		class WLM_MagazinesGroup: RscControlsGroup {
+			deletable = 0;
+			fade = 0;
+			class VScrollbar : ScrollBar
+			{
+				color[] = {1,1,1,1};
+				width = 0.021;
+				autoScrollEnabled = 1;
+			};
+			class HScrollbar : ScrollBar
+			{
+				height = 0;
+			};
+			class Controls {
+				class WLM_VehicleName: RscText {
+					idc = 5313;
+					x = 0;
+					y = 0;
+					w = 0.8;
+					h = 0.04 * safeZoneH;
+					sizeEx = 0.08;
+					text = "";
+					colorText[] = {1, 1, 1, 0.8};
+					font = "PuristaMedium";
+					shadow = 0;
+				};
+			};
+			type = CT_CONTROLS_GROUP;
+			idc = 5312;
+            x = 0;
+            y = 0;
+            w = 0.8;
+            h = 1;
+			shadow = 0;
+			style = ST_MULTI;
+		};
 		class WLM_AircraftName: RscText {
 			idc = 5310;
 			x = 0;
@@ -51,34 +88,45 @@ class WLM_PylonUI {
             w = 0.8;
             h = 0.04 * safeZoneH;
 			sizeEx = 0.08;
-			text = $STR_WLM_AIRCRAFT_NAME;
-			colorText[] = {0, 0, 0, 0.8};
+			text = "";
+			colorText[] = {1, 1, 1, 0.8};
 			font = "PuristaMedium";
 			shadow = 0;
 		};
         class WLM_ApplyButton: RscButtonMRTM {
 			idc = 5304;
-			text = $STR_WLM_APPLY_PYLONS;
-			tooltip = $STR_WLM_APPLY_PYLONS_DESC;
+			text = $STR_WLM_APPLY;
+			tooltip = $STR_WLM_APPLY_DESC;
 			sizeEx = 0.035;
-			colorBackground[] = {0, 0, 0, 0.9};
+			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.05;
-			w = 0.06 * safezoneW;
+			w = 0.08 * safezoneW;
 			h = 0.03 * safezoneH;
 			font = "PuristaMedium";
 			style = ST_LEFT;
 		};
-
+		class WLM_LoadoutText: RscText {
+			idc = -1;
+			x = 0.8;
+			y = 0.12;
+			w = 0.08 * safezoneW;
+			h = 0.03 * safezoneH;
+			sizeEx = 0.05;
+			text = $STR_WLM_LOADOUT;
+			colorText[] = {1, 1, 1, 1};
+			font = "PuristaMedium";
+			shadow = 0;
+		};
         class WLM_SaveButton: RscButtonMRTM {
 			idc = 5305;
 			text = $STR_WLM_SAVE;
 			tooltip = $STR_WLM_SAVE_DESC;
 			sizeEx = 0.035;
-			colorBackground[] = {0, 0, 0, 0.9};
+			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.28;
-			w = 0.06 * safezoneW;
+			w = 0.08 * safezoneW;
 			h = 0.03 * safezoneH;
 			font = "PuristaMedium";
 			style = ST_LEFT;
@@ -89,10 +137,10 @@ class WLM_PylonUI {
 			text = $STR_WLM_LOADOUT;
 			tooltip = $STR_WLM_SELECT_LOADOUT;
 			sizeEx = 0.035;
-			colorBackground[] = {0, 0, 0, 0.9};
+			colorBackground[] = {0, 0, 0, 1};
 			x = 0.8;
 			y = 0.20;
-			w = 0.06 * safezoneW;
+			w = 0.08 * safezoneW;
 			h = 0.03 * safezoneH;
 			font = "PuristaMedium";
 			style = ST_BACKGROUND;
@@ -104,37 +152,61 @@ class WLM_PylonUI {
 			text = $STR_WLM_WIPE_ALL;
 			tooltip = $STR_WLM_WIPE_ALL_DESC;
 			sizeEx = 0.035;
-			colorBackground[] = {0, 0, 0, 0.9};
+			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.36;
-			w = 0.06 * safezoneW;
+			w = 0.08 * safezoneW;
 			h = 0.03 * safezoneH;
 			font = "PuristaMedium";
 			style = ST_LEFT;
 		};
-
 		class WLM_RearmButton: RscButtonMRTM {
 			idc = 5308;
 			text = $STR_WLM_REARM;
 			tooltip = $STR_WLM_REARM_DESC;
 			sizeEx = 0.035;
-			colorBackground[] = {0, 0, 0, 0.9};
+			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.8;
-			w = 0.06 * safezoneW;
+			w = 0.08 * safezoneW;
 			h = 0.03 * safezoneH;
 			font = "PuristaMedium";
 			style = ST_LEFT;
+		};
+		class WLM_AppearanceText: RscText {
+			idc = -1;
+			x = 0.8;
+			y = 0.44;
+			w = 0.08 * safezoneW;
+			h = 0.03 * safezoneH;
+			sizeEx = 0.05;
+			text = $STR_WLM_APPEARANCE;
+			colorText[] = {1, 1, 1, 1};
+			font = "PuristaMedium";
+			shadow = 0;
 		};
 		class WLM_CamoSelect: RscCombo {
 			idc = 5311;
 			text = "Camo";
 			tooltip = $STR_WLM_SELECT_TEXTURE;
 			sizeEx = 0.035;
-			colorBackground[] = {0, 0, 0, 0.9};
+			colorBackground[] = {0, 0, 0, 1};
 			x = 0.8;
 			y = 0.51;
-			w = 0.06 * safezoneW;
+			w = 0.08 * safezoneW;
+			h = 0.03 * safezoneH;
+			font = "PuristaMedium";
+			style = ST_BACKGROUND;
+			arrowFull = "";
+		};
+		class WLM_CustomizationSelect: RscCombo {
+			idc = 5314;
+			text = $STR_WLM_CUSTOMIZATION;
+			sizeEx = 0.035;
+			colorBackground[] = {0, 0, 0, 1};
+			x = 0.8;
+			y = 0.59;
+			w = 0.08 * safezoneW;
 			h = 0.03 * safezoneH;
 			font = "PuristaMedium";
 			style = ST_BACKGROUND;
@@ -143,7 +215,7 @@ class WLM_PylonUI {
         class WLM_CloseButton: RscCheckboxMRTM {
 			idc = 5309;
 			sizeEx = "0.021 / (getResolution select 5)";
-			x = 0.95 - 0.0375;
+			x = 1 - 0.0375;
 			y = -0.05;
 			w = 0.0375;
 			h = 0.05;
@@ -161,6 +233,17 @@ class WLM_PylonUI {
 			textureDisabledChecked = "\A3\ui_f\data\map\groupicons\waypoint.paa";
 			textureDisabledUnchecked = "\A3\ui_f\data\map\groupicons\waypoint.paa";
 		};
+
+		class WLM_Frame: RscPicture {
+            idc = -1;
+            x = 0;
+            y = 0;
+            w = 1;
+            h = 1;
+            style = ST_PICTURE;
+			colorText[] = {1, 1, 1, 1};
+			text = "a3\ui_f\data\igui\rsctitles\interlacing\interlacing_ca.paa";
+        };
     };
 };
 
@@ -172,6 +255,11 @@ class WLM_PylonSelect: RscCombo {
     y = 0;
     w = 0.17;
     h = 0.035;
+	colorActive[] = {1, 1, 1, 1};
+	colorSelect[] = {1, 1, 1, 1};
+	colorText[] = {1, 1, 1, 1};
+	shadow = 0;
+	colorShadow[] = {1, 1, 1, 0};
     style = ST_BACKGROUND;
 };
 class WLM_PylonSelectUser: RscButton {

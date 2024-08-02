@@ -1109,39 +1109,22 @@
             <Chinesesimp>飞机名称</Chinesesimp>
             <Chinese>飛機名稱</Chinese>
         </Key>
-        <Key ID="STR_WLM_APPLY_PYLONS">
-            <Original>Apply Pylons</Original>
-            <English>Apply Pylons</English>
-            <Czech>Použít pylony</Czech>
-            <French>Appliquer pylônes</French>
-            <German>Pylonen anwenden</German>
-            <Italian>Applica i piloni</Italian>
-            <Polish>Zastosuj pylony</Polish>
-            <Portuguese>Aplicar Pylons</Portuguese>
-            <Russian>Применить пилоны</Russian>
-            <Spanish>Aplicar pilones</Spanish>
-            <Turkish>Pilonları Uygula</Turkish>
-            <Korean>파일론 적용</Korean>
-            <Japanese>パイロンを適用</Japanese>
-            <Chinesesimp>应用挂架</Chinesesimp>
-            <Chinese>應用掛架</Chinese>
-        </Key>
-        <Key ID="STR_WLM_APPLY_PYLONS_DESC">
-            <Original>Apply the selected pylons to the aircraft. WARNING: THIS WILL REMOVE ALL PYLON AMMO.</Original>
-            <English>Apply the selected pylons to the aircraft. WARNING: THIS WILL REMOVE ALL PYLON AMMO.</English>
-            <Czech>Použijte vybrané pylony na letadlo. VAROVÁNÍ: TÍMTO BUDOU ODSTRANĚNY VŠECHNY NÁBOJE Z PYLONŮ.</Czech>
-            <French>Appliquez les pylônes sélectionnés à l'avion. ATTENTION : CELA SUPPRIMERA TOUTES LES MUNITIONS DES PYLÔNES.</French>
-            <German>Wenden Sie die ausgewählten Pylonen auf das Flugzeug an. WARNUNG: DIES ENTFERNT ALLE PYLONEN-MUNITION.</German>
-            <Italian>Applica i piloni selezionati all'aereo. ATTENZIONE: QUESTO RIMUOVERÀ TUTTE LE MUNIZIONI DEI PILONI.</Italian>
-            <Polish>Zastosuj wybrane pylony do samolotu. OSTRZEŻENIE: TO USUNIE WSZYSTKIE AMUNICJE PYLONÓW.</Polish>
-            <Portuguese>Aplicar os pylons selecionados à aeronave. AVISO: ISSO REMOVERÁ TODAS AS MUNIÇÕES DOS PYLONS.</Portuguese>
-            <Russian>Примените выбранные пилоны к самолету. ВНИМАНИЕ: ЭТО УДАЛИТ ВСЕ БОЕПРИПАСЫ НА ПИЛОНАХ.</Russian>
-            <Spanish>Aplica los pilones seleccionados al avión. ADVERTENCIA: ESTO ELIMINARÁ TODAS LAS MUNICIONES DE LOS PILONES.</Spanish>
-            <Turkish>Seçilen pilonları uçağa uygulayın. UYARI: BU TÜM PİLON MÜHİMMATINI KALDIRIR.</Turkish>
-            <Korean>선택한 파일론을 항공기에 적용하십시오. 경고: 이 작업은 모든 파일론 탄약을 제거합니다.</Korean>
-            <Japanese>選択したパイロンを航空機に適用します。警告：これにより、すべてのパイロン弾薬が削除されます。</Japanese>
-            <Chinesesimp>将选定的挂架应用到飞机上。警告：这将删除所有挂架弹药。</Chinesesimp>
-            <Chinese>將選定的掛架應用到飛機上。警告：這將刪除所有掛架彈藥。</Chinese>
+        <Key ID="STR_WLM_APPLY_DESC">
+            <Original>Apply the selected configuration to the vehicle. WARNING: THIS MIGHT REMOVE ALL AMMO.</Original>
+            <English>Apply the selected configuration to the vehicle. WARNING: THIS MIGHT REMOVE ALL AMMO.</English>
+            <Czech>Použijte vybranou konfiguraci na vozidlo. VAROVÁNÍ: TOTO MŮŽE ODSTRANIT VEŠKEROU AMUNICI.</Czech>
+            <French>Appliquez la configuration sélectionnée au véhicule. ATTENTION : CELA PEUT SUPPRIMER TOUTES LES MUNITIONS.</French>
+            <German>Wenden Sie die ausgewählte Konfiguration auf das Fahrzeug an. WARNUNG: DIES KÖNNTE ALLE MUNITION ENTFERNEN.</German>
+            <Italian>Applica la configurazione selezionata al veicolo. AVVERTENZA: QUESTO POTREBBE RIMUOVERE TUTTE LE MUNIZIONI.</Italian>
+            <Polish>Zastosuj wybraną konfigurację do pojazdu. OSTRZEŻENIE: MOŻE TO USUNĄĆ WSZYSTKĄ AMUNICJĘ.</Polish>
+            <Portuguese>Aplicar a configuração selecionada no veículo. AVISO: ISTO PODE REMOVER TODA A MUNIÇÃO.</Portuguese>
+            <Russian>Примените выбранную конфигурацию к транспортному средству. ВНИМАНИЕ: ЭТО МОЖЕТ УДАЛИТЬ ВСЕ БОЕПРИПАСЫ.</Russian>
+            <Spanish>Aplica la configuración seleccionada al vehículo. ADVERTENCIA: ESTO PUEDE ELIMINAR TODA LA MUNICI&Oacute;N.</Spanish>
+            <Turkish>Seçilen yapılandırmayı araca uygulayın. UYARI: TÜM MÜHİMMATI KALDIRABİLİR.</Turkish>
+            <Korean>선택한 구성을 차량에 적용하십시오. 경고: 이 작업은 모든 탄약을 제거할 수 있습니다.</Korean>
+            <Japanese>選択した設定を車両に適用します。 警告： これにより、すべての弾薬が削除される可能性があります。</Japanese>
+            <Chinesesimp>将所选配置应用于车辆。 警告： 这可能会删除所有弹药。</Chinesesimp>
+            <Chinese>將所選配置應用於車輛。 警告： 這可能會刪除所有彈藥。</Chinese>
         </Key>
         <Key ID="STR_WLM_SAVE">
             <Original>Save</Original>
@@ -1193,6 +1176,57 @@
             <Japanese>ロードアウト</Japanese>
             <Chinesesimp>配置</Chinesesimp>
             <Chinese>配置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPEARANCE">
+            <Original>Appearance</Original>
+            <English>Appearance</English>
+            <Czech>Vzhled</Czech>
+            <French>Apparence</French>
+            <German>Aussehen</German>
+            <Italian>Aspetto</Italian>
+            <Polish>Wygląd</Polish>
+            <Portuguese>Aparência</Portuguese>
+            <Russian>Внешний вид</Russian>
+            <Spanish>Apariencia</Spanish>
+            <Turkish>Görünüm</Turkish>
+            <Korean>외관</Korean>
+            <Japanese>外観</Japanese>
+            <Chinesesimp>外观</Chinesesimp>
+            <Chinese>外观</Chinese>
+        </Key>
+        <Key ID="STR_WLM_CUSTOMIZATION">
+            <Original>Customization</Original>
+            <English>Customization</English>
+            <Czech>Přizpůsobení</Czech>
+            <French>Personnalisation</French>
+            <German>Anpassung</German>
+            <Italian>Personalizzazione</Italian>
+            <Polish>Dostosowanie</Polish>
+            <Portuguese>Personalização</Portuguese>
+            <Russian>Настройка</Russian>
+            <Spanish>Personalización</Spanish>
+            <Turkish>Özelleştirme</Turkish>
+            <Korean>사용자 지정</Korean>
+            <Japanese>カスタマイズ</Japanese>
+            <Chinesesimp>自定义</Chinesesimp>
+            <Chinese>自訂</Chinese>
+        </Key>
+        <Key ID="STR_WLM_EVERYTHING">
+            <Original>Everything</Original>
+            <English>Everything</English>
+            <Czech>Všechno</Czech>
+            <French>Tout</French>
+            <German>Alles</German>
+            <Italian>Tutto</Italian>
+            <Polish>Wszystko</Polish>
+            <Portuguese>Tudo</Portuguese>
+            <Russian>Все</Russian>
+            <Spanish>Todo</Spanish>
+            <Turkish>Her şey</Turkish>
+            <Korean>모든 것</Korean>
+            <Japanese>すべて</Japanese>
+            <Chinesesimp>一切</Chinesesimp>
+            <Chinese>所有</Chinese>
         </Key>
         <Key ID="STR_WLM_SELECT_LOADOUT">
             <Original>Select a loadout.</Original>
@@ -1262,22 +1296,39 @@
             <Chinesesimp>重新武装</Chinesesimp>
             <Chinese>重新武裝</Chinese>
         </Key>
-        <Key ID="STR_WLM_DEFAULT_SKIN">
-            <Original>Default Skin</Original>
-            <English>Default Skin</English>
-            <Czech>Výchozí skin</Czech>
-            <French>Peau par défaut</French>
-            <German>Standard-Skin</German>
-            <Italian>Pelle predefinita</Italian>
-            <Polish>Domyślna skóra</Polish>
-            <Portuguese>Skin padrão</Portuguese>
-            <Russian>Стандартная оболочка</Russian>
-            <Spanish>Piel predeterminada</Spanish>
-            <Turkish>Varsayılan Cilt</Turkish>
-            <Korean>기본 스킨</Korean>
-            <Japanese>デフォルトスキン</Japanese>
-            <Chinesesimp>默认皮肤</Chinesesimp>
-            <Chinese>默認皮膚</Chinese>
+        <Key ID="STR_WLM_DEFAULT">
+            <Original>Default</Original>
+            <English>Default</English>
+            <Czech>Výchozí</Czech>
+            <French>Défaut</French>
+            <German>Standard</German>
+            <Italian>Predefinito</Italian>
+            <Polish>Domyślny</Polish>
+            <Portuguese>Padrão</Portuguese>
+            <Russian>По умолчанию</Russian>
+            <Spanish>Predeterminado</Spanish>
+            <Turkish>Varsayılan</Turkish>
+            <Korean>기본값</Korean>
+            <Japanese>デフォルト</Japanese>
+            <Chinesesimp>默认</Chinesesimp>
+            <Chinese>默認</Chinese>
+        </Key>
+        <Key ID="STR_WLM_RESET">
+            <Original>Reset</Original>
+            <English>Reset</English>
+            <Czech>Reset</Czech>
+            <French>Réinitialiser</French>
+            <German>Zurücksetzen</German>
+            <Italian>Reset</Italian>
+            <Polish>Reset</Polish>
+            <Portuguese>Redefinir</Portuguese>
+            <Russian>Сброс</Russian>
+            <Spanish>Reiniciar</Spanish>
+            <Turkish>Sıfırla</Turkish>
+            <Korean>재설정</Korean>
+            <Japanese>リセット</Japanese>
+            <Chinesesimp>重置</Chinesesimp>
+            <Chinese>重置</Chinese>
         </Key>
         <Key ID="STR_WLM_REARM_DESC">
             <Original>Rearm vehicle. Make sure you've selected the correct pylons before rearming.</Original>
@@ -1737,23 +1788,6 @@
             <Japanese>公式</Japanese>
             <Chinesesimp>官方</Chinesesimp>
             <Chinese>官方</Chinese>
-        </Key>
-        <Key ID="STR_WLM_DEFAULT_SKIN">
-            <Original>Default Skin</Original>
-            <English>Default Skin</English>
-            <Czech>Výchozí Skin</Czech>
-            <French>Apparence par défaut</French>
-            <German>Standard-Skin</German>
-            <Italian>Skin predefinito</Italian>
-            <Polish>Domyślny Skin</Polish>
-            <Portuguese>Aparência Padrão</Portuguese>
-            <Russian>Стандартный скин</Russian>
-            <Spanish>Apariencia predeterminada</Spanish>
-            <Turkish>Varsayılan Görünüm</Turkish>
-            <Korean>기본 스킨</Korean>
-            <Japanese>デフォルトのスキン</Japanese>
-            <Chinesesimp>默认皮肤</Chinesesimp>
-            <Chinese>默認皮膚</Chinese>
         </Key>
         <Key ID="STR_WLM_SOLID_COLORS">
             <Original>--- Solid Colors ---</Original>

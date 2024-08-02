@@ -7,7 +7,30 @@ private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Componen
 private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
 private _display = findDisplay WLM_DISPLAY;
 
-if (_showWarning) exitWith {
+private _currentPylonInfo = getAllPylonsInfo _asset;
+private _eligibleFreeRearm = true;
+{
+    private _pylonName = _x # 3;
+    if (_pylonName != "") then {
+        private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _pylonName >> "count");
+        private _currentAmmo = _x # 4;
+
+        if (_maxAmmo > _currentAmmo) then {
+            _eligibleFreeRearm = false;
+        };
+    };
+} forEach _currentPylonInfo;
+
+{
+    private _currentAmmo = _x # 2;
+    private _magName = _x # 0;
+    private _magMaxAmmo = getNumber (configFile >> "CfgMagazines" >> _magName >> "count");
+    if (_magMaxAmmo > _currentAmmo) then {
+        _eligibleFreeRearm = false;
+    };
+} forEach (magazinesAllTurrets _asset);
+
+if (_showWarning && !_eligibleFreeRearm) exitWith {
     private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";
 
     private _titleControl = _confirmDialog displayCtrl WLM_MODAL_TITLE;
@@ -29,7 +52,7 @@ if (_showWarning) exitWith {
     }];
     _confirmButtonControl ctrlAddEventHandler ["ButtonClick", {
         (findDisplay WLM_MODAL) closeDisplay 1;
-        [false] call WLM_fnc_applyLoadout;
+        [false] call WLM_fnc_applyLoadoutAircraft;
     }];
 };
 
@@ -54,7 +77,10 @@ _asset setVehicleReceiveRemoteTargets true;
 _asset setVehicleReportRemoteTargets true;
 _asset setVehicleReportOwnPosition true;
 
-[_asset, _attachments] remoteExec ["WLM_fnc_serverPylonManager", 2];
+_asset setVariable ["WLM_assetAttachments", _attachments, true];
+
+
+[_asset, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyPylonServer", 2];
 
 [_attachments, _asset] spawn {
     params ["_attachments", "_asset"];

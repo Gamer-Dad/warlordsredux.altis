@@ -10,7 +10,7 @@ addMissionEventHandler ["Map", {
 			if (visibleMap) then {
 				_radius = (((ctrlMapScale _map) * 500) min 30);
 				_pos = (_map ctrlMapScreenToWorld getMousePosition);
-				_nearbyAssets = (_pos nearEntities _radius) select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", "123"]) && {_x != player && {alive _x}}};
+				_nearbyAssets = (_pos nearObjects _radius) select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", "123"]) && {_x != player && {alive _x}}};
 				_nearbyAssets append (allUnitsUAV select {(getPlayerUID player) == (_x getVariable ["BIS_WL_ownerAsset", "123"]) && {alive _x && {(_x distance2D _pos) < _radius && {!(_x in _nearbyAssets)}}}});
 
 				if (count _nearbyAssets > 0) then {
