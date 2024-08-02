@@ -360,7 +360,7 @@ class Mission
 				position[]={12376.45,23.900795,15658.202};
 				angles[]={0.035988688,0,6.2805324};
 			};
-			init="this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Lakka""];";
+			init="this setVariable [""BIS_WL_name"", ""Lakka""];";
 			id=16;
 			type="Logic";
 		};
@@ -494,7 +494,7 @@ class Mission
 			{
 				position[]={14484.275,21.438036,17647.764};
 			};
-			init="this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Gravia""];";
+			init="this setVariable [""BIS_WL_name"", ""Gravia""];";
 			id=27;
 			type="Logic";
 			atlOffset=0.00012397766;
@@ -569,7 +569,7 @@ class Mission
 				position[]={16667.688,18.274412,16126.132};
 				angles[]={0,0,6.2826962};
 			};
-			init="this setVariable [""BIS_WL_services"", [""M""]]; this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Anthrakia""];";
+			init="this setVariable [""BIS_WL_services"", [""M""]]; this setVariable [""BIS_WL_name"", ""Anthrakia""];";
 			id=33;
 			type="Logic";
 			atlOffset=0.0004234314;
@@ -897,7 +897,7 @@ class Mission
 				position[]={12927.684,29.854511,15032.35};
 				angles[]={6.2325706,0,6.2765183};
 			};
-			init="this setVariable [""BIS_WL_canBeBase"", FALSE]; this setVariable [""BIS_WL_name"", ""Stavros""];";
+			init="this setVariable [""BIS_WL_name"", ""Stavros""];";
 			id=61;
 			type="Logic";
 		};
@@ -8866,7 +8866,7 @@ class Mission
 				position[]={28245.98,23.415997,25686.795};
 				angles[]={6.2525272,0,6.1993828};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Cape Strigla""];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Cape Strigla""];";
 			id=1424;
 			type="Logic";
 		};
@@ -8891,7 +8891,7 @@ class Mission
 				position[]={27776.461,5.7297363,23655.65};
 				angles[]={0.073199101,0,6.224577};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Polemistia""];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Polemistia""];";
 			id=1426;
 			type="Logic";
 		};
@@ -8991,7 +8991,7 @@ class Mission
 				position[]={24094.779,12.139956,15562.837};
 				angles[]={0.0053265258,0,6.2751846};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Cape Thelos""];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Cape Thelos""];";
 			id=1434;
 			type="Logic";
 		};
@@ -9129,7 +9129,7 @@ class Mission
 				position[]={18507.322,12.659078,8136.8149};
 				angles[]={0.0079936078,0,0.01733112};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Livadi""];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Livadi""];";
 			id=1446;
 			type="Logic";
 		};
@@ -9234,7 +9234,7 @@ class Mission
 				position[]={22745.533,18.372545,13573.162};
 				angles[]={0.030647982,0,6.2698507};
 			};
-			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_canBeBase"", FALSE];this setVariable [""BIS_WL_name"",  ""Cape Kategidis""];";
+			init="this setVariable [""BIS_WL_services"", [""W""]]; this setVariable [""BIS_WL_name"",  ""Cape Kategidis""];";
 			id=1454;
 			type="Logic";
 		};
