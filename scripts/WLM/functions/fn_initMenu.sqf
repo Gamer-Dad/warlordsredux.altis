@@ -6,9 +6,13 @@ private _display = findDisplay WLM_DISPLAY;
 
 if (isNull _display) then {
     _display = createDialog ["WLM_PylonUI", true];
+    cutRsc ["RscStatic", "PLAIN"];
 };
 
+private _isAircraft = _asset isKindOf "Air";
+
 uiNamespace setVariable ["WLM_asset", _asset];
+uiNamespace setVariable ["WLM_assetIsAircraft", _isAircraft];
 
 disableSerialization;
 
@@ -17,22 +21,32 @@ private _pylonConfig = _assetConfig >> "Components" >> "TransportPylonsComponent
 
 private _assetTypeName = getText (_assetConfig >> "displayName");
 
-private _vehicleNameControl = _display displayCtrl WLM_VEHICLE_NAME;
-_vehicleNameControl ctrlSetText _assetTypeName;
-
-private _assetUiPicture = getText (_pylonConfig >> "UIPicture");
-private _assetRegularPicture = getText (_assetConfig >> "picture");
+if (_isAircraft) then {
+    private _aircraftNameControl = _display displayCtrl WLM_VEHICLE_NAME;
+    _aircraftNameControl ctrlSetText _assetTypeName;
+} else {
+    private _vehicleNameControl = _display displayCtrl 5313;
+    _vehicleNameControl ctrlSetText _assetTypeName;
+};
 
 private _backgroundPic = _display displayCtrl WLM_BACKGROUND_PIC;
-if (_assetUiPicture != "") then {
+
+private _assetUiPicture = getText (_pylonConfig >> "UIPicture");
+if (_assetUiPicture != "" && fileExists _assetUiPicture) then {
     _backgroundPic ctrlSetText _assetUiPicture;
 } else {
-    if (_assetRegularPicture != "") then {
+    private _assetRegularPicture = getText (_assetConfig >> "picture");
+    if (_assetRegularPicture != "" && fileExists _assetRegularPicture) then {
         _backgroundPic ctrlSetText _assetRegularPicture;
     };
 };
 
-_asset call WLM_fnc_constructAircraftPylons;
+if (_isAircraft) then {
+    _asset call WLM_fnc_constructAircraftPylons;
+} else {
+    0 spawn WLM_fnc_constructVehicleMagazine;
+};
+
 call WLM_fnc_constructPresetMenu;
 
 private _saveButtonControl = _display displayCtrl WLM_SAVE_BUTTON;
@@ -47,13 +61,23 @@ _wipeButtonControl ctrlAddEventHandler ["ButtonClick", {
 
 private _applyButtonControl = _display displayCtrl WLM_APPLY_BUTTON;
 _applyButtonControl ctrlAddEventHandler ["ButtonClick", {
-    [true] call WLM_fnc_applyLoadout;
+    private _isAircraft = uiNamespace getVariable "WLM_assetIsAircraft";
+    if (_isAircraft) then {
+        [true] call WLM_fnc_applyLoadoutAircraft;
+    } else {
+        [true] call WLM_fnc_applyLoadoutVehicle;
+    };
 }];
 
 private _rearmButtonControl = _display displayCtrl WLM_REARM_BUTTON;
 _rearmButtonControl ctrlSetText "Rearm";
 _rearmButtonControl ctrlAddEventHandler ["ButtonClick", {
-    [true] call WLM_fnc_rearmAircraft;
+    private _isAircraft = uiNamespace getVariable "WLM_assetIsAircraft";
+    if (_isAircraft) then {
+        [true] call WLM_fnc_rearmAircraft;
+    } else {
+        [true, false] call WLM_fnc_rearmVehicle;
+    };
 }];
 
 private _camoSelectControl = _display displayCtrl WLM_CAMO_SELECT;
@@ -75,7 +99,7 @@ switch (typeOf _asset) do {
     };
 };
 
-_customTexturesList pushBack [localize "STR_WLM_DEFAULT_SKIN", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
+_customTexturesList pushBack [localize "STR_WLM_DEFAULT", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
 
 private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
 
@@ -176,6 +200,63 @@ _camoSelectControl ctrlAddEventHandler ["LBSelChanged", {
         private _texture = _textureList select _forEachIndex;
         _asset setObjectTextureGlobal [_forEachIndex, _texture];
     } forEach _textureSlots;
+}];
+
+private _customizationSelectControl = _display displayCtrl WLM_CUSTOMIZATION_SELECT;
+
+private _customizationAllowList = [
+    "showbag",
+    "showtools",
+    "showlog",
+    "showslat"
+];
+
+private _availableCustomizations = [];
+{
+    private _currentAnimationName = _x;
+    {
+        if ([_x, _currentAnimationName, false] call BIS_fnc_inString) then {
+            _availableCustomizations pushBack _currentAnimationName;
+        };
+    } forEach _customizationAllowList;
+} forEach (animationNames _asset);
+
+uiNamespace setVariable ["WLM_assetAvailableCustomizations", _availableCustomizations];
+
+_customizationSelectControl lbAdd (localize "STR_WLM_CUSTOMIZATION");
+_customizationSelectControl lbAdd (localize "STR_WLM_EVERYTHING");
+{
+    private _customization = _x;
+    private _customizationItem = _customizationSelectControl lbAdd _customization;
+    _customizationSelectControl lbSetData [_customizationItem, _customization];
+    _customizationSelectControl lbSetTooltip [_customizationItem, _customization];
+} forEach _availableCustomizations;
+
+_customizationSelectControl lbSetCurSel 0;
+
+_customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
+    params ["_control", "_lbCurSel", "_lbSelection"];
+    if (_lbCurSel == 0) exitWith {}; // careful
+
+    private _asset = uiNamespace getVariable "WLM_asset";
+    private _availableCustomizations = uiNamespace getVariable "WLM_assetAvailableCustomizations";
+    
+    if (_lbCurSel == 1) then {
+        {
+            private _customization = _x;
+            _asset animateSource [_customization, 1];
+        } forEach (_availableCustomizations);
+    } else {
+        private _customization = _control lbData _lbCurSel;
+        private _currentValue = _asset animationPhase _customization;
+        if (_currentValue == 1) then {
+            _asset animateSource [_customization, 0];
+        } else {
+            _asset animateSource [_customization, 1];
+        };
+    };
+    
+    _control lbSetCurSel 0;
 }];
 
 _asset spawn {

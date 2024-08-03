@@ -89,17 +89,24 @@ BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearmin
 
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
 
-WLM_fnc_aircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_aircraftPylons.sqf";
+WLM_fnc_initMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_initMenu.sqf";
 WLM_fnc_switchUser = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_switchUser.sqf";
 WLM_fnc_selectLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_selectLoadout.sqf";
 WLM_fnc_saveLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_saveLoadout.sqf";
 WLM_fnc_constructAircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructAircraftPylons.sqf";
 WLM_fnc_constructPresetMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructPresetMenu.sqf";
-WLM_fnc_applyLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadout.sqf";
+WLM_fnc_applyLoadoutAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadoutAircraft.sqf";
+WLM_fnc_applyLoadoutVehicle = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadoutVehicle.sqf";
 WLM_fnc_rearmAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmAircraft.sqf";
-WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
+WLM_fnc_rearmVehicle = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmVehicle.sqf";
 WLM_fnc_textureLists = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureLists.sqf";
 WLM_fnc_wipePylonSaves = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_wipePylonSaves.sqf";
+WLM_fnc_constructVehicleMagazine = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructVehicleMagazine.sqf";
+WLM_fnc_textureSlots = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureSlots.sqf";
+WLM_fnc_loadoutList = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_loadoutList.sqf";
+WLM_fnc_applyPylonOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonOwner.sqf";
+WLM_fnc_applyVehicleOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyVehicleOwner.sqf";
+WLM_fnc_rearmVehicleOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmVehicleOwner.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
 

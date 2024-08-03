@@ -36,6 +36,7 @@ if (isPlayer _owner) then {
 		
 		private _defaultMags = magazinesAllTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
+		_asset setVariable ["WLM_savedDefaultMags", _defaultMags, true];
 		_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 		_vehicles = missionNamespace getVariable [_var, []];
 		_vehicles pushBack _asset;
@@ -43,7 +44,7 @@ if (isPlayer _owner) then {
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
-			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+			_asset setVariable ["BIS_WL_nextRearm", serverTime];
 
 			if (typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}) then {
 				if (_asset isKindOf "Air") then {
@@ -211,6 +212,8 @@ if (isPlayer _owner) then {
 			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];
 		};
 	};
+
+	_asset setVariable ["BIS_WL_nextRearm", serverTime];
 
 	_asset call BIS_fnc_WL2_sub_removeAction;
 	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
