@@ -52,12 +52,16 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class WLM_fnc_serverPylonManager {
+		class WLM_fnc_applyPylonServer {
+			allowedTargets = 2;
+		};
+		
+		class WLM_fnc_applyVehicleServer {
 			allowedTargets = 2;
 		};
 
-		class WLM_fnc_applyPylonFinal {
-			allowedTargets = 0;
+		class WLM_fnc_rearmVehicleServer {
+			allowedTargets = 2;
 		};
 
 		//Don't touch

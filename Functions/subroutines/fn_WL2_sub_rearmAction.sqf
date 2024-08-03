@@ -6,13 +6,15 @@ _index = _asset addAction [
 	format ["Modify/%1", localize "STR_rearm"],
 	{
 		params ["_asset"];
-		if (_asset isKindOf "LandVehicle") then {
-			_asset spawn BIS_fnc_WL2_vehicleRearm;
-		} else {
-			if (_asset isKindOf "Air") then {
-				_asset spawn WLM_fnc_aircraftPylons;
-			};	
-		};
+		_asset spawn WLM_fnc_initMenu;
+
+		// if (_asset isKindOf "LandVehicle") then {
+		// 	_asset spawn BIS_fnc_WL2_vehicleRearm;
+		// } else {
+		// 	if (_asset isKindOf "Air") then {
+		// 		_asset spawn WLM_fnc_aircraftPylons;
+		// 	};
+		// };
 	},
 	[],
 	5,

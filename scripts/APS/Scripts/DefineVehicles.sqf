@@ -109,7 +109,6 @@ _mediumBlockList = [
 ];
 
 _lightBlockList = [
-	"M_NLAW_AT_F",
 	"R_MRAAWS_HE_F",
 	"R_MRAAWS_HEAT_F",
 	"R_MRAAWS_HEAT55_F",

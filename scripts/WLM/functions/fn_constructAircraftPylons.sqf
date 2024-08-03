@@ -31,6 +31,17 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
     _selectBox lbAdd (localize "STR_WLM_EMPTY");
     _selectBox lbSetCurSel 0;
 
+    private _allowedMagazines = _asset getCompatiblePylonMagazines _pylonConfigName;
+
+    private _loadoutList = call WLM_fnc_loadoutList;
+    private _allowListForPylon = _loadoutList # 2;
+
+    {
+        if (_asset isKindOf _x # 0) then {
+            _allowedMagazines pushBack (_x # 1);
+        };
+    } forEach _allowListForPylon;
+
     {
         private _magazine = configfile >> "CfgMagazines" >> _x;
         private _magazineName = getText (_magazine >> "displayName");
@@ -52,7 +63,7 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
         if (_currentPylonInfo # 3 == (configName _magazine)) then {
             _selectBox lbSetCurSel _selectBoxItem;
         };
-    } forEach (_asset getCompatiblePylonMagazines _pylonConfigName);
+    } forEach _allowedMagazines;
 
     _selectBox ctrlSetPosition [_xPos, _yPos, _textWidth + 0.04, 0.035];
 

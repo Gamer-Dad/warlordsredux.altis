@@ -36,6 +36,7 @@ if (isPlayer _owner) then {
 		
 		private _defaultMags = magazinesAllTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
+		_asset setVariable ["WLM_savedDefaultMags", _defaultMags, true];
 		_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 		_vehicles = missionNamespace getVariable [_var, []];
 		_vehicles pushBack _asset;
@@ -43,7 +44,7 @@ if (isPlayer _owner) then {
 		
 		if !(_asset isKindOf "StaticWeapon") then {
 			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
-			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+			_asset setVariable ["BIS_WL_nextRearm", serverTime];
 
 			if (typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}) then {
 				if (_asset isKindOf "Air") then {
@@ -115,7 +116,7 @@ if (isPlayer _owner) then {
 				_asset spawn {
 					params ["_asset"];
 
-					_asset setVariable ["radarRotation", false];
+					_asset setVariable ["radarRotation", false, true];
 					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
 					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
 					_radarIter = 0;
@@ -212,12 +213,27 @@ if (isPlayer _owner) then {
 		};
 	};
 
+	_asset setVariable ["BIS_WL_nextRearm", serverTime];
+
 	_asset call BIS_fnc_WL2_sub_removeAction;
 	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
 	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
 	if ((count _radarSensor > 0) && (count _crewPosition > 1 || (unitIsUAV _asset))) then {
-		_asset setVariable ["radarOperation", false];
+		_asset setVariable ["radarOperation", false, true];
 		_asset setVehicleRadar 2;
 		[_asset, "toggle"] call BIS_fnc_WL2_sub_radarOperate;
+
+		_asset spawn {
+			params ["_asset"];
+			
+			while {alive _asset} do {
+				if (_asset getVariable "radarOperation") then {
+					_asset setVehicleRadar 1;
+				} else {
+					_asset setVehicleRadar 2;
+				};
+				sleep 10;
+			};
+		};
 	};
 };
