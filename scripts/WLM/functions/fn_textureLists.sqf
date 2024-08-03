@@ -51,6 +51,9 @@ private _sideBlacklist = switch (_side) do {
     case east: {
         _blacklistEast
     };
+    default {
+        _blacklistWest + _blacklistEast
+    };
 };
 
 private _sideWhitelist = switch (_side) do {
@@ -59,6 +62,9 @@ private _sideWhitelist = switch (_side) do {
     };
     case east: {
         _whitelistEast
+    };
+    default {
+        []
     };
 };
 

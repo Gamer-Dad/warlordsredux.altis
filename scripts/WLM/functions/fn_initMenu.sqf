@@ -9,15 +9,15 @@ if (isNull _display) then {
     cutRsc ["RscStatic", "PLAIN"];
 };
 
-private _isAircraft = _asset isKindOf "Air";
+private _assetConfig = configFile >> "CfgVehicles" >> typeOf _asset;
+private _pylonConfig = _assetConfig >> "Components" >> "TransportPylonsComponent";
+
+private _isAircraft = !(isNull _pylonConfig);
 
 uiNamespace setVariable ["WLM_asset", _asset];
 uiNamespace setVariable ["WLM_assetIsAircraft", _isAircraft];
 
 disableSerialization;
-
-private _assetConfig = configFile >> "CfgVehicles" >> typeOf _asset;
-private _pylonConfig = _assetConfig >> "Components" >> "TransportPylonsComponent";
 
 private _assetTypeName = getText (_assetConfig >> "displayName");
 
@@ -131,7 +131,8 @@ if (side player == west) then {
     _customTexturesList pushBack ["Stealth Black", "#(rgb,8,8,3)color(0.23,0.23,0.24,0.05)", "Solid Color"];
     _customTexturesList pushBack ["NATO Blue", "#(rgb,8,8,3)color(0.01,0.24,0.76,0.05)", "Solid Color"];
     _customTexturesList pushBack ["Tactical Tan", "#(rgb,8,8,3)color(0.40,0.34,0.27,0.4)", "Solid Color"];
-} else {
+};
+if (side player == east) then {
     _customTexturesList pushBack ["Cockpit Turquoise", "#(rgb,8,8,3)color(0,0.44,0.56,0.1)", "Solid Color"];
     _customTexturesList pushBack ["CSAT Red", "#(rgb,8,8,3)color(0.49,0.26,0.26,0.05)", "Solid Color"];
     _customTexturesList pushBack ["Tropical Green", "#(rgb,8,8,3)color(0,0.84,0.16,0.03)", "Solid Color"];
