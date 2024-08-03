@@ -15,7 +15,7 @@ if (_action == "rotation") then {
 				[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
 			},
 			[],
-			99,
+			0,
 			false,
 			false,
 			"",
@@ -34,15 +34,13 @@ if (_action == "rotation") then {
 			_asset removeAction _actionID;
 			if (_asset getVariable "radarOperation") then {
 				_asset setVariable ["radarOperation", false, true];
-				_asset setVehicleRadar 2;
 			} else {
 				_asset setVariable ["radarOperation", true, true];
-				_asset setVehicleRadar 1;
 			};
 			[_asset, "toggle"] call BIS_fnc_WL2_sub_radarOperate;
 		},
 		[],
-		99,
+		0,
 		false,
 		false,
 		"",
