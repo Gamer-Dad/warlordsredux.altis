@@ -103,6 +103,7 @@ private _getMagazineTooltip = {
     } forEach _weaponsInTurret;
 
     // Calculate points per weapon in turret from default
+    private _pointsInTurret = 0;
     private _defaultMagazinesByWeapon = [];
     private _defaultMagazinesInTurret = _assetDefaultMagazines select {_x # 1 isEqualTo _turretPath};
     {
@@ -110,6 +111,7 @@ private _getMagazineTooltip = {
         private _defaultMagazinesForWeapon = [];
         {
             if (_compatibleMagazines find (_x # 0) != -1) then {
+                _pointsInTurret = _pointsInTurret + (_x # 2);
                 _defaultMagazinesForWeapon pushBack _x;
             };
         } forEach _defaultMagazinesInTurret;
@@ -117,7 +119,7 @@ private _getMagazineTooltip = {
         _defaultMagazinesByWeapon pushBack [_defaultMagazinesForWeapon, _x];
     } forEach _weaponsInTurret;
 
-    if (count _weaponsInTurret == 0) then {
+    if (count _weaponsInTurret == 0 || _pointsInTurret == 0) then {
         continue;
     };
 
@@ -161,6 +163,10 @@ private _getMagazineTooltip = {
                 _defaultAmmoCount = _x # 3;
             };
         } forEach _loadoutListAmmo;
+
+        if (_defaultAmmoCount == 0) then {
+            continue;
+        };
         
         if (_magazinesInWeapon find "EMPTY" == -1) then {
             _magazinesInWeapon pushBack "EMPTY";
