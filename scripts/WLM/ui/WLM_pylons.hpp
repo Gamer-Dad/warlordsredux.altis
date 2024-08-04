@@ -74,7 +74,7 @@ class WLM_PylonUI {
 					x = 0;
 					y = 0;
 					w = 0.8;
-					h = 0.04 * safeZoneH;
+					h = 0.073;
 					sizeEx = 0.08;
 					text = "";
 					colorText[] = {1, 1, 1, 0.8};
@@ -96,7 +96,7 @@ class WLM_PylonUI {
 			x = 0;
             y = 0;
             w = 0.8;
-            h = 0.04 * safeZoneH;
+            h = 0.073;
 			sizeEx = 0.08;
 			text = "";
 			colorText[] = {1, 1, 1, 0.8};
@@ -111,8 +111,8 @@ class WLM_PylonUI {
 			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.05;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_LEFT;
 		};
@@ -120,8 +120,8 @@ class WLM_PylonUI {
 			idc = -1;
 			x = 0.8;
 			y = 0.12;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			sizeEx = 0.05;
 			text = $STR_WLM_LOADOUT;
 			colorText[] = {1, 1, 1, 1};
@@ -136,8 +136,8 @@ class WLM_PylonUI {
 			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.28;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_LEFT;
 		};
@@ -150,8 +150,8 @@ class WLM_PylonUI {
 			colorBackground[] = {0, 0, 0, 1};
 			x = 0.8;
 			y = 0.20;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_BACKGROUND;
 			arrowFull = "";
@@ -165,8 +165,8 @@ class WLM_PylonUI {
 			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.36;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_LEFT;
 		};
@@ -178,8 +178,8 @@ class WLM_PylonUI {
 			colorBackground[] = {1, 1, 1, 0.1};
 			x = 0.8;
 			y = 0.8;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_LEFT;
 		};
@@ -187,8 +187,8 @@ class WLM_PylonUI {
 			idc = -1;
 			x = 0.8;
 			y = 0.44;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			sizeEx = 0.05;
 			text = $STR_WLM_APPEARANCE;
 			colorText[] = {1, 1, 1, 1};
@@ -203,8 +203,8 @@ class WLM_PylonUI {
 			colorBackground[] = {0, 0, 0, 1};
 			x = 0.8;
 			y = 0.51;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_BACKGROUND;
 			arrowFull = "";
@@ -217,8 +217,8 @@ class WLM_PylonUI {
 			colorBackground[] = {0, 0, 0, 1};
 			x = 0.8;
 			y = 0.59;
-			w = 0.08 * safezoneW;
-			h = 0.03 * safezoneH;
+			w = 0.194;
+			h = 0.055;
 			font = "PuristaMedium";
 			style = ST_BACKGROUND;
 			arrowFull = "";
@@ -361,9 +361,9 @@ class WLM_Modal_Dialog {
     class controls {
         class WLM_Modal_Draggable: IGUIBackMRTM {
             idc = 5701;
-            x = 0.3 * safeZoneW + safeZoneX;
-            y = 0.4 * safeZoneH - 0.05 + safeZoneY - 0.005;
-            w = 0.4 * safeZoneW;
+            x = 0.015;
+            y = 0.263;
+            w = 0.97;
             h = 0.05;
             colorBackground[] = {1, 0.5, 0, 1};
             moving = 1;
@@ -372,9 +372,9 @@ class WLM_Modal_Dialog {
 			idc = 5702;
 			text = $STR_WLM_PYLON_MISMATCH_WARNING;
 			sizeEx = 0.04;
-			x = 0.3 * safeZoneW + safeZoneX;
-            y = 0.4 * safeZoneH - 0.05 + safeZoneY - 0.005;
-			w = 0.4 * safeZoneW;
+			x = 0.015;
+            y = 0.263;
+            w = 0.97;
 			h = 0.05;
 			font = "PuristaMedium";
 			colorText[] = {1, 1, 1, 1};
@@ -383,10 +383,10 @@ class WLM_Modal_Dialog {
 		};
         class WLM_Modal_Background: IGUIBackMRTM {
             idc = 5703;
-            x = 0.3 * safeZoneW + safeZoneX;
-            y = 0.4 * safeZoneH + safeZoneY;
-            w = 0.4 * safeZoneW;
-            h = 0.08 * safeZoneH;
+            x = 0.015;
+            y = 0.318;
+            w = 0.97;
+            h = 0.145;
             colorBackground[] = {0, 0, 0, 1};
         };
 		class WLM_Modal_ConfirmButton: RscButtonMRTM {
@@ -395,10 +395,10 @@ class WLM_Modal_Dialog {
 			tooltip = $STR_WLM_PYLON_OLD_SETTINGS;
 			sizeEx = 0.035;
 			colorBackground[] = {0, 0, 0, 0.9};
-			x = 0.3 * safeZoneW + safeZoneX;
-			y = 0.48 * safeZoneH + safeZoneY + 0.005;
-			w = 0.06 * safeZoneW;
-			h = 0.03 * safeZoneH;
+			x = 0.015;
+			y = 0.468;
+			w = 0.145;
+			h = 0.055;
 			font = "PuristaMedium";
 		};
 		class WLM_Modal_ExitButton: RscButtonMRTM {
@@ -407,20 +407,20 @@ class WLM_Modal_Dialog {
 			tooltip = $STR_WLM_PYLON_SELECTION_SCREEN;
 			sizeEx = 0.035;
 			colorBackground[] = {0, 0, 0, 0.9};
-			x = 0.7 * safeZoneW - 0.06 * safezoneW + safeZoneX;
-			y = 0.48 * safeZoneH + safeZoneY + 0.005;
-			w = 0.06 * safeZoneW;
-			h = 0.03 * safeZoneH;
+			x = 0.839;
+			y = 0.469;
+			w = 0.145;
+			h = 0.055;
 			font = "PuristaMedium";
 		};
 		class WLM_Modal_Text: RscTextMRTM {
 			idc = 5706;
 			text = $STR_WLM_PYLON_MISMATCH_MESSAGE;
 			sizeEx = 0.035;
-			x = 0.3 * safeZoneW + safeZoneX + 0.005;
-			y = 0.4 * safeZoneH + safeZoneY + 0.01;
-			w = 0.4 * safeZoneW - 0.01;
-			h = 0.08 * safeZoneH;
+			x = 0.020;
+			y = 0.328;
+			w = 0.960;
+			h = 0.145;
 			font = "PuristaMedium";
 			colorText[] = {1, 1, 1, 1};
 			shadow = 0;
@@ -428,20 +428,20 @@ class WLM_Modal_Dialog {
 		};
 		class WLM_Modal_MiddleBar: IGUIBackMRTM {
 			idc = 5707;
-			x = 0.36 * safeZoneW + safeZoneX + 0.005;
-			y = 0.48 * safeZoneH + safeZoneY + 0.005;
-			w = 0.276 * safeZoneW;
-			h = 0.03 * safeZoneH;
+			x = 0.165;
+			y = 0.469;
+			w = 0.669;
+			h = 0.0545;
 			colorBackground[] = {0, 0, 0, 1};
 		};
 		class WLM_Modal_InputEdit: RscEditMRTM {
 			idc = 5708;
 			text = "";
 			sizeEx = 0.06;
-			x = 0.3 * safeZoneW + safeZoneX + 0.25;
-			y = 0.4 * safeZoneH + safeZoneY + 0.01;
-			w = 0.4 * safeZoneW - 0.26;
-			h = 0.06 * safeZoneH;
+			x = 0.265;
+			y = 0.328;
+			w = 0.710;
+			h = 0.109;
 			font = "PuristaMedium";
 			colorText[] = {1, 1, 1, 1};
 			tooltip = "Enter new loadout name";
