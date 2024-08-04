@@ -79,7 +79,6 @@ _asset setVehicleReportOwnPosition true;
 
 _asset setVariable ["WLM_assetAttachments", _attachments, true];
 
-
 [_asset, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyPylonServer", 2];
 
 [_attachments, _asset] spawn {

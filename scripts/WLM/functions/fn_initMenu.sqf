@@ -76,7 +76,7 @@ _rearmButtonControl ctrlAddEventHandler ["ButtonClick", {
     if (_isAircraft) then {
         [true] call WLM_fnc_rearmAircraft;
     } else {
-        [true, false] call WLM_fnc_rearmVehicle;
+        [true] call WLM_fnc_rearmVehicle;
     };
 }];
 
@@ -225,13 +225,53 @@ private _availableCustomizations = [];
 uiNamespace setVariable ["WLM_assetAvailableCustomizations", _availableCustomizations];
 
 _customizationSelectControl lbAdd (localize "STR_WLM_CUSTOMIZATION");
-_customizationSelectControl lbAdd (localize "STR_WLM_EVERYTHING");
+
+if (count _availableCustomizations > 0) then {
+    private _everythingItem = _customizationSelectControl lbAdd (localize "STR_WLM_EVERYTHING");
+    _customizationSelectControl lbSetData [_everythingItem, "everything"];
+};
+
 {
     private _customization = _x;
-    private _customizationItem = _customizationSelectControl lbAdd _customization;
+    private _customizationDisplayName = getText (_assetConfig >> "animationSources" >> _customization >> "displayName");
+    if (_customizationDisplayName == "") then {
+        _customizationDisplayName = _customization;
+    };
+    private _customizationItem = _customizationSelectControl lbAdd _customizationDisplayName;
     _customizationSelectControl lbSetData [_customizationItem, _customization];
     _customizationSelectControl lbSetTooltip [_customizationItem, _customization];
 } forEach _availableCustomizations;
+
+
+private _assetTurrets = [[-1]] + allTurrets _asset;
+private _hasSmoke = false;
+{
+    private _turretWeapons = _asset weaponsTurret _x;
+    if ("SmokeLauncher" in _turretWeapons) exitWith {
+        _hasSmoke = true;
+    };
+} forEach _assetTurrets;
+if (_hasSmoke) then {
+    if ([0] in _assetTurrets) then {
+        private _smokeGunnerItem = _customizationSelectControl lbAdd "Give Smoke to Gunner";
+        _customizationSelectControl lbSetData [_smokeGunnerItem, "setSmokeToGunner"];
+    };
+    if ([0, 0] in _assetTurrets) then {
+        private _smokeCommanderItem = _customizationSelectControl lbAdd "Give Smoke to Commander";
+        _customizationSelectControl lbSetData [_smokeCommanderItem, "setSmokeToCommander"];
+    };
+    private _smokeDriverItem = _customizationSelectControl lbAdd "Give Smoke to Driver";
+    _customizationSelectControl lbSetData [_smokeDriverItem, "setSmokeToDriver"];
+};
+
+private _hornWeapons = ["CarHorn", "TruckHorn", "TruckHorn2", "TruckHorn3", "SportCarHorn", "MiniCarHorn"];
+private _turretWeapons = _asset weaponsTurret [-1];
+if (count (_hornWeapons arrayIntersect _turretWeapons) > 0) then {
+    {
+        private _hornItem = _customizationSelectControl lbAdd (format ["Set Horn to %1", _x]);
+        _customizationSelectControl lbSetData [_hornItem, format ["setHornTo%1", _x]];
+    } forEach _hornWeapons;
+};
 
 _customizationSelectControl lbSetCurSel 0;
 
@@ -241,19 +281,47 @@ _customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
 
     private _asset = uiNamespace getVariable "WLM_asset";
     private _availableCustomizations = uiNamespace getVariable "WLM_assetAvailableCustomizations";
-    
-    if (_lbCurSel == 1) then {
+
+    private _customization = _control lbData _lbCurSel;
+
+    if (_customization == "everything") then {
         {
             private _customization = _x;
             _asset animateSource [_customization, 1];
         } forEach (_availableCustomizations);
     } else {
-        private _customization = _control lbData _lbCurSel;
-        private _currentValue = _asset animationPhase _customization;
-        if (_currentValue == 1) then {
-            _asset animateSource [_customization, 0];
+        private _finalizeCustomization = {
+            params ["_asset"];
+            sleep 0.5;
+            0 spawn WLM_fnc_constructVehicleMagazine;
+        };
+
+        if (["setHornTo", _customization] call BIS_fnc_inString) then {
+            private _hornName = _customization regexReplace ["setHornTo", ""];
+            [_asset, _hornName] remoteExec ["WLM_fnc_changeHornServer", 2];
         } else {
-            _asset animateSource [_customization, 1];
+            switch (_customization) do {
+                case "setSmokeToGunner": {
+                    [_asset, [0]] remoteExec ["WLM_fnc_moveSmokesServer", 2];
+                    _asset spawn _finalizeCustomization;
+                };
+                case "setSmokeToCommander": {
+                    [_asset, [0, 0]] remoteExec ["WLM_fnc_moveSmokesServer", 2];
+                    _asset spawn _finalizeCustomization;
+                };
+                case "setSmokeToDriver": {
+                    [_asset, [-1]] remoteExec ["WLM_fnc_moveSmokesServer", 2];
+                    _asset spawn _finalizeCustomization;
+                };
+                default {
+                    private _currentValue = _asset animationPhase _customization;
+                    if (_currentValue == 1) then {
+                        _asset animateSource [_customization, 0];
+                    } else {
+                        _asset animateSource [_customization, 1];
+                    };
+                };
+            };
         };
     };
     

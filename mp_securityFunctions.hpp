@@ -4,7 +4,7 @@ class CfgRemoteExec {
 		mode = 1;
 		jip = 1;
 
-		class APS_fnc_Report {
+		class APS_fnc_ReportServer {
 			allowedTargets = 2;
 		};
 
@@ -21,7 +21,7 @@ class CfgRemoteExec {
 		};
 
 		class BIS_fnc_WL2_pingFix {
-			allowedTargets = 0;
+			allowedTargets = 2;
 		};
 
 		class MRTM_fnc_invite {
@@ -44,6 +44,10 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
+		class BIS_fnc_WL2_killRewardHandle {
+			allowedTargets = 2;
+		};
+
 		class DIS_fnc_SAMFired {
 			allowedTargets = 0;
 		};
@@ -61,6 +65,14 @@ class CfgRemoteExec {
 		};
 
 		class WLM_fnc_rearmVehicleServer {
+			allowedTargets = 2;
+		};
+
+		class WLM_fnc_moveSmokesServer {
+			allowedTargets = 2;
+		};
+
+		class WLM_fnc_changeHornServer {
 			allowedTargets = 2;
 		};
 

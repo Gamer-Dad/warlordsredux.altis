@@ -1,18 +1,21 @@
-params ["_asset", "_pylonsToSet", "_vehicleAmmo"];
+params ["_asset", "_pylonsToSet", "_rearm"];
+
+private _ammoToSet = if (_rearm) then {
+    1
+} else {
+    0
+};
 
 {
     private _pylonName = _x select 0;
     private _magazineName = _x select 1;
     private _turret = _x select 2;
-    private _ammoToSet = _x select 3;
 
     _asset setPylonLoadout [_pylonName, _magazineName, true, _turret];
     _asset setAmmoOnPylon [_pylonName, _ammoToSet];
 } forEach _pylonsToSet;
 
-if (_vehicleAmmo == 1) then {
-    _asset setVehicleAmmo 1;
-};
+_asset setVehicleAmmo _ammoToSet;
 
 private _assetTurrets = (allTurrets _asset) + [[-1]];
 {
@@ -40,8 +43,10 @@ _asset setVehicleReceiveRemoteTargets true;
 _asset setVehicleReportRemoteTargets true;
 _asset setVehicleReportOwnPosition true;
 
-_rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
+if (_rearm) then {
+    _rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
 
-_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
-playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
-[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
+    _asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
+    playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
+    [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
+};

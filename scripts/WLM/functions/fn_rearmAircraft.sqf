@@ -73,18 +73,4 @@ if (_newAmmo < 0) exitWith {
 
 _rearmSource setVariable ["GOM_fnc_ammocargo", _newAmmo, true];
 
-private _ammoToSet = [];
-{
-    private _pylonMagazine = _x # 3;
-    private _turret = _x # 2;
-    private _pylonName = _x # 1;
-
-    private _magConfig = configFile >> "CfgMagazines" >> _pylonMagazine;
-    private _maxAmmo = getNumber (_magConfig >> "count");
-
-    if (_maxAmmo > 0) then {
-        _ammoToSet pushBack [_pylonName, _pylonMagazine, _turret, _maxAmmo];
-    };
-} forEach _pylonsInfo;
-
-[_asset, [], _ammoToSet, 1] remoteExec ["WLM_fnc_applyPylonServer", 0];
+[_asset, true] remoteExec ["WLM_fnc_applyPylonServer", 0];
