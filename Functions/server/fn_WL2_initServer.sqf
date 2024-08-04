@@ -105,4 +105,16 @@ setTimeMultiplier 8;
 	};
 } forEach BIS_WL_competingSides;
 
+if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
+	0 spawn {
+		while {!BIS_WL_missionEnd} do {
+			_allEntities = entities [[], ["Logic"], true]; 
+			{ 
+				_x addCuratorEditableObjects [_allEntities, true];
+			} forEach allCurators;
+			sleep 30;
+		};
+	};
+};
+
 ["server_init"] call BIS_fnc_endLoadingScreen;
