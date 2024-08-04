@@ -10,6 +10,9 @@ _defaultMags sort true;
 _currentMags sort true;
 private _eligibleFreeRearm = true;
 {
+    if (_forEachIndex >= count _defaultMags) exitWith {
+        _eligibleFreeRearm = false;
+    };
     private _defaultMag = _defaultMags # _forEachIndex;
     private _currentMag = _x;
 
