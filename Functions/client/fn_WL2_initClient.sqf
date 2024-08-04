@@ -324,8 +324,9 @@ addMissionEventHandler ["Map", {
 					count (_x getVariable ["BIS_WL_seizingInfo", []]) > 0 && _statusVisible;
 				});
 
-				if (count _sectorsBeingCaptured == 0) exitWith { 
-					hintSilent ""; 
+				if (count _sectorsBeingCaptured == 0) then { 
+					hintSilent "";
+					continue;
 				};
 
 				private _hintString = "<t size='1.8'>Capture Progress</t><br/>";
