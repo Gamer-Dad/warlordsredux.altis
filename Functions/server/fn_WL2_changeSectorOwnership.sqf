@@ -7,7 +7,11 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 if !(_owner in _previousOwners) then {
 	_previousOwners pushBack _owner;
 	if (serverTime > 0 && {count _previousOwners == 1}) then {
-		_reward = (_sector getVariable "BIS_WL_value") * 30;
+		private _relevantNeighbors = (synchronizedObjects _sector) select {(_x getVariable "BIS_WL_owner") == _owner};
+		private _neighborList = _relevantNeighbors apply {[_x distance2D _sector, _x]};
+		_neighborList sort true;
+		private _closestNeighborDistance = (_neighborList # 0) # 0;
+		private _reward = ((round (_closestNeighborDistance / 3)) min 1000) max 100;
 		{
 			private _uid = getPlayerUID _x;
 			_reward call BIS_fnc_WL2_fundsDatabaseWrite;
