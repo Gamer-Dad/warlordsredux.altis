@@ -6,6 +6,7 @@ private _display = findDisplay WLM_DISPLAY;
 
 if (isNull _display) then {
     _display = createDialog ["WLM_PylonUI", true];
+    // _display = findDisplay 46 createDisplay "WLM_PylonUI";
     cutRsc ["RscStatic", "PLAIN"];
 };
 
@@ -100,6 +101,7 @@ switch (typeOf _asset) do {
 };
 
 _customTexturesList pushBack [localize "STR_WLM_DEFAULT", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
+_customTexturesList pushBack [format ["--- %1 ---", localize "STR_WLM_OFFICIAL"], "", ""];
 
 private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
 
@@ -109,7 +111,7 @@ private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
 } forEach _additionalTextureSources;
 
 // Image textures
-_customTexturesList pushBack [localize "STR_WLM_CUSTOM", "", ""];
+_customTexturesList pushBack [format ["--- %1 ---", localize "STR_WLM_CUSTOM"], "", ""];
 
 private _pushCustomTexture = {
     params ["_textureName", "_customTexturesList"];
@@ -227,7 +229,7 @@ uiNamespace setVariable ["WLM_assetAvailableCustomizations", _availableCustomiza
 _customizationSelectControl lbAdd (localize "STR_WLM_CUSTOMIZATION");
 
 if (count _availableCustomizations > 0) then {
-    private _everythingItem = _customizationSelectControl lbAdd (localize "STR_WLM_EVERYTHING");
+    private _everythingItem = _customizationSelectControl lbAdd (localize "STR_WLM_APPLY_ALL_EXTRAS");
     _customizationSelectControl lbSetData [_everythingItem, "everything"];
 };
 

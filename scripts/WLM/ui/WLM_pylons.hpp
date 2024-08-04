@@ -25,7 +25,7 @@ class WLM_PylonUI {
             w = 1;
             h = 0.05;
 			text = $STR_WLM_TITLE;
-			style = ST_LEFT;
+			style = ST_CENTER;
         };
         class WLM_Background: IGUIBackMRTM {
             idc = 5302;
@@ -44,6 +44,16 @@ class WLM_PylonUI {
             style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 			colorText[] = {1, 1, 1, 0.8};
 			text = "\A3\ui_f\data\map\markers\handdrawn\unknown_CA.paa";
+		};
+		class WLM_Frame: RscPicture {
+            idc = -1;
+            x = 0;
+            y = -0.05;
+            w = 1;
+            h = 1.05;
+            style = ST_PICTURE;
+			colorText[] = {1, 1, 1, 1};
+			text = "a3\ui_f\data\igui\rsctitles\interlacing\interlacing_ca.paa";
         };
 		class WLM_MagazinesGroup: RscControlsGroup {
 			deletable = 0;
@@ -202,6 +212,7 @@ class WLM_PylonUI {
 		class WLM_CustomizationSelect: RscCombo {
 			idc = 5314;
 			text = $STR_WLM_CUSTOMIZATION;
+			tooltip = $STR_WLM_CUSTOMIZATION_TOOLTIP;
 			sizeEx = 0.035;
 			colorBackground[] = {0, 0, 0, 1};
 			x = 0.8;
@@ -234,16 +245,86 @@ class WLM_PylonUI {
 			textureDisabledUnchecked = "\A3\ui_f\data\map\groupicons\waypoint.paa";
 		};
 
-		class WLM_Frame: RscPicture {
-            idc = -1;
-            x = 0;
-            y = 0;
-            w = 1;
-            h = 1;
-            style = ST_PICTURE;
-			colorText[] = {1, 1, 1, 1};
-			text = "a3\ui_f\data\igui\rsctitles\interlacing\interlacing_ca.paa";
-        };
+		class WLM_Frame_T: RscPicture {
+			idc = -1;
+			x = 0;
+			y = -0.1;
+			w = 1;
+			h = 0.08;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_T_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_B: RscPicture {
+			idc = -1;
+			x = 0;
+			y = 0.97;
+			w = 1;
+			h = 0.08;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_B_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_L: RscPicture {
+			idc = -1;
+			x = -0.05;
+			y = -0.05;
+			w = 0.08;
+			h = 1.05;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_L_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_R: RscPicture {
+			idc = -1;
+			x = 0.975;
+			y = -0.05;
+			w = 0.08;
+			h = 1.05;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_R_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_TL: RscPicture {
+			idc = -1;
+			x = -0.05;
+			y = -0.1;
+			w = 0.08;
+			h = 0.08;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_TL_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_TR: RscPicture {
+			idc = -1;
+			x = 0.975;
+			y = -0.1;
+			w = 0.08;
+			h = 0.08;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_TR_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_BL: RscPicture {
+			idc = -1;
+			x = -0.05;
+			y = 0.97;
+			w = 0.08;
+			h = 0.08;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_BL_ca.paa";
+			moving = 1;
+		};
+		class WLM_Frame_BR: RscPicture {
+			idc = -1;
+			x = 0.975;
+			y = 0.97;
+			w = 0.08;
+			h = 0.08;
+			style = ST_PICTURE;
+			text = "A3\ui_f\data\GUI\Rsc\RscMiniMapSmall\GPS_BR_ca.paa";
+			moving = 1;
+		};
     };
 };
 
