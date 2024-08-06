@@ -1,16 +1,28 @@
 #include "SAM.inc"
 
-params ["_rocket"];
+params ["_projectile"];
 
-private _startManeuveringTime = time;
+[_projectile] spawn {
+    params ["_projectile"];
+    private _startTime = time;
 
-waitUntil {
-    (alive missileTarget _rocket) || 
-    (_startManeuveringTime + 5) < time
+    sleep 3;
+    while { alive _projectile } do {
+        // Ghost missile relocking check.
+        if (!(alive missileTarget _projectile)) exitWith {
+            triggerAmmo _projectile;
+        };        
+        if (time > (_startTime + WL_SAM_TIMEOUT)) exitWith {
+            triggerAmmo _projectile;
+        };
+
+        sleep 1;
+    };
 };
 
-while { alive _rocket } do {
-    private _currentVector = velocityModelSpace _rocket;
+sleep 5;
+while { alive _projectile } do {
+    private _currentVector = velocityModelSpace _projectile;
 
     private _currentSpeed = _currentVector # 1;
     if ((_currentSpeed + WL_SAM_ACCELERATION) < WL_SAM_MAX_SPEED) then {
@@ -24,11 +36,7 @@ while { alive _rocket } do {
         _currentSpeed,
         _currentVector # 2
     ];
-    _rocket setVelocityModelSpace _newVector;
+    _projectile setVelocityModelSpace _newVector;
 
     sleep 0.1;
-
-    if (time > (_startManeuveringTime + WL_SAM_TIMEOUT)) exitWith {
-        triggerAmmo _rocket;
-    };
 };
