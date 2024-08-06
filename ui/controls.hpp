@@ -948,6 +948,20 @@ class MRTM_settingsMenu
 						shadow = 0;
 					};
 				};
+				class MRTMOtherText7: RscStructuredTextMRTM
+				{
+					idc = -1;
+					text = "Disable missile cameras:";
+					x = 0.327969 * safezoneW + safezoneX;
+					y = 0.908 * safezoneH + safezoneY;
+					w = 0.23 * safezoneW;
+					h = 0.033 * safezoneH;
+					class Attributes
+					{
+						align = "right";
+						shadow = 0;
+					};
+				};
 				class MRTMOtherButton1: RscCheckboxMRTM
 				{
 					idc = 8024;
@@ -999,6 +1013,15 @@ class MRTM_settingsMenu
 					action = "profileNamespace setVariable ['MRTM_spawnEmpty', !(profileNamespace getVariable ['MRTM_spawnEmpty', false])];";
 					x = 0.560969 * safezoneW + safezoneX;
 					y = 0.872 * safezoneH + safezoneY;
+					w = 0.0204688 * safezoneW;
+					h = 0.028 * safezoneH;
+				};
+				class MRTMOtherButton7: RscCheckboxMRTM
+				{
+					idc = 8030;
+					action = "profileNamespace setVariable ['MRTM_disableMissileCameras', !(profileNamespace getVariable ['MRTM_disableMissileCameras', false])];";
+					x = 0.560969 * safezoneW + safezoneX;
+					y = 0.907 * safezoneH + safezoneY;
 					w = 0.0204688 * safezoneW;
 					h = 0.028 * safezoneH;
 				};

@@ -46,10 +46,6 @@ if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 			_member setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, clientOwner]];
 		} forEach units _group;
 	};
-
-	if (_asset call DIS_fnc_IsSam) then {
-		_asset spawn DIS_fnc_RegisterSam;
-	};
 } else {
 	_asset = [_class, _pos, _direction] call BIS_fnc_WL2_createVehicleCorrectly;
 };

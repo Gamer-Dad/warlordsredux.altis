@@ -42,3 +42,4 @@ ctrlEnable [8014, !(profileNamespace getVariable ["MRTM_syncObjects", true])];
 (_display displayCtrl 8027) cbSetChecked (profileNamespace getVariable ["MRTM_enableAuto", false]);
 (_display displayCtrl 8028) cbSetChecked (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]);
 (_display displayCtrl 8029) cbSetChecked (profileNamespace getVariable ["MRTM_spawnEmpty", false]);
+(_display displayCtrl 8030) cbSetChecked (profileNamespace getVariable ["MRTM_disableMissileCameras", false]);

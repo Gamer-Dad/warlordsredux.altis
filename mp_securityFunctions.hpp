@@ -44,8 +44,8 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class DIS_fnc_SAMFired {
-			allowedTargets = 0;
+		class BIS_fnc_WL2_killRewardHandle {
+			allowedTargets = 2;
 		};
 
 		class MRTM_fnc_leaveGroup {

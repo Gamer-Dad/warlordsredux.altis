@@ -194,6 +194,7 @@ uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 10000];
 
+private _uid = getPlayerUID player;
 if !(_uid in (getArray (missionConfigFile >> "adminIDs"))) then {
 	0 spawn BIS_fnc_WL2_wasMain;
 };
