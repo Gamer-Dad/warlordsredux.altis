@@ -7,6 +7,13 @@ if (remoteExecutedOwner != (owner _sender)) exitWith {};
 #include "..\server_macros.inc"
 _uid = getPlayerUID _sender;
 
+private _broadcastActionToSide = {
+	params ["_side", "_message"];
+	{
+		[[_side, "Base"], _message] remoteExec ["commandChat", owner _x];
+	} forEach (allPlayers select {side group _x == _side});
+};
+
 if (_action == "orderAsset") exitWith {
 	private _position = _param1;
 	private _class = _param2;
@@ -109,6 +116,10 @@ if (_action == "scan") exitWith {
 	_hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
+
+		private _sectorName = _param2 getVariable ["BIS_WL_name", "???"];
+		private _message = format ["%1 has initiated sector scan on %2.", name _sender, _sectorName];
+		[_side, _message] call _broadcastActionToSide;
 
 		_param2 setVariable [format ["BIS_WL_lastScanEnd_%1", _side], (serverTime + 30), true];
 		_revealTrigger = createTrigger ["EmptyDetector", position _param2];
@@ -213,6 +224,9 @@ if (_action == "targetReset") exitWith {
 
 		_side spawn BIS_fnc_WL2_targetResetHandleServer;
 		[_side] remoteExec ["BIS_fnc_WL2_targetResetHandleVote", [0, -2] select isDedicated];
+
+		private _message = format ["%1 has initiated a vote to reset the target sector.", name _sender];
+		[_side, _message] call _broadcastActionToSide;
 	};
 };
 
@@ -228,9 +242,9 @@ if (_action == "fundsTransfer") exitWith {
 		_uid = getPlayerUID _sender;
 		(-_param1) call BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
-		{
-			[[side group _x, "Base"], (format [ localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1])] remoteExec ["commandChat", (owner _x)];
-		} forEach (allPlayers select {side group _x == _side});
+
+		private _message = format [localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1];
+		[_side, _message] call _broadcastActionToSide;
 	};
 };
 

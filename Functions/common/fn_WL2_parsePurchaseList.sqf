@@ -192,6 +192,7 @@ _strategyArr pushBack ["forfeitVote", 0, [], "Order forfeit", "\A3\Data_F_Warlor
 _strategyArr pushBack ["LockVehicles", 0, [], localize "STR_A3_WL_feature_lock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", ""];
 _strategyArr pushBack ["UnlockVehicles", 0, [], localize "STR_A3_WL_feature_unlock_all", "\A3\Data_F_Warlords\Data\preview_empty.jpg", ""];
 _strategyArr pushBack ["clearVehicles", 0, [], "Kick players from all vehicles", "\A3\Data_F_Warlords\Data\preview_empty.jpg", "This doesn't include you or your AI."];
+_strategyArr pushBack ["wipeMap", 0, [], "Wipe Map", "\A3\Data_F_Warlords\Data\preview_empty.jpg", "Wipes all user-defined markers from your own map locally. This includes your own."];
 _strategyArr pushBack ["RemoveUnits", 0, [], localize "STR_A3_WL_feature_dismiss_selected", "\A3\Data_F_Warlords\Data\preview_empty.jpg", ""];
 _strategyArr pushBack ["welcomeScreen", 0, [], localize "STR_A3_WL_infoScreen", "img\wl_logo_ca.paa", ""];
 _sortedArray pushBack _strategyArr;
