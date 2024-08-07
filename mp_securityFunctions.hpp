@@ -50,6 +50,7 @@ class CfgRemoteExec {
 
 		class DIS_fnc_SAMFired {
 			allowedTargets = 0;
+
 		};
 
 		class MRTM_fnc_leaveGroup {

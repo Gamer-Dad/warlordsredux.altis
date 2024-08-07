@@ -8,6 +8,13 @@ _asset addEventHandler ["Hit", {
 	private _responsiblePlayer = [_source, _instigator] call BIS_fnc_WL2_handleInstigator;
 	if (!(isNull _responsiblePlayer) && _damage > 0 && alive _unit) then {
 		_unit setVariable ["BIS_WL_lastHitter", _responsiblePlayer, true];
+
+		private _crew = crew _unit;
+		if (count _crew == 0) exitWith {};
+		if (count _crew == 1 && _crew # 0 == _unit) exitWith {};
+		{
+			_x setVariable ["BIS_WL_lastHitter", _responsiblePlayer, true];
+		} forEach _crew;
 	};
 }];
 
@@ -215,6 +222,18 @@ if (isPlayer _owner) then {
 
 	_asset setVariable ["BIS_WL_nextRearm", serverTime];
 
+	if (_asset call DIS_fnc_Check) then {
+		_asset spawn DIS_fnc_RegisterLauncher;
+	};
+	if (typeOf _asset == "B_Ship_MRLS_01_F") then {
+		_asset addEventHandler ["Fired", {
+			params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+			if (local _projectile) then {
+				[_projectile, _unit] call DIS_fnc_StartMissileCamera;
+			};
+		}];
+	};
+	
 	_asset call BIS_fnc_WL2_sub_removeAction;
 	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
 	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
