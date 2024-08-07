@@ -17,7 +17,7 @@ private _removeActionID = _asset addAction [
 
 			private _lastHitter = _unit getVariable ["BIS_WL_lastHitter", objNull];
 			if !(isNull _lastHitter) then {
-				[_unit, _lastHitter] spawn BIS_fnc_WL2_killRewardHandle;
+				[_unit, _lastHitter] remoteExec ["BIS_fnc_WL2_killRewardHandle", 2];
 			};
 			
 			deleteVehicle _unit;

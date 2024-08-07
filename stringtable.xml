@@ -1211,22 +1211,39 @@
             <Chinesesimp>自定义</Chinesesimp>
             <Chinese>自訂</Chinese>
         </Key>
-        <Key ID="STR_WLM_EVERYTHING">
-            <Original>Everything</Original>
-            <English>Everything</English>
-            <Czech>Všechno</Czech>
-            <French>Tout</French>
-            <German>Alles</German>
-            <Italian>Tutto</Italian>
-            <Polish>Wszystko</Polish>
-            <Portuguese>Tudo</Portuguese>
-            <Russian>Все</Russian>
-            <Spanish>Todo</Spanish>
-            <Turkish>Her şey</Turkish>
-            <Korean>모든 것</Korean>
-            <Japanese>すべて</Japanese>
-            <Chinesesimp>一切</Chinesesimp>
-            <Chinese>所有</Chinese>
+        <Key ID="STR_WLM_CUSTOMIZATION_TOOLTIP">
+            <Original>Select and apply vehicle customization.</Original>
+            <English>Select and apply vehicle customization.</English>
+            <Czech>Vyberte a aplikujte úpravy vozidla.</Czech>
+            <French>Sélectionnez et appliquez la personnalisation du véhicule.</French>
+            <German>Fahrzeuganpassungen auswählen und anwenden.</German>
+            <Italian>Seleziona e applica la personalizzazione del veicolo.</Italian>
+            <Polish>Wybierz i zastosuj dostosowanie pojazdu.</Polish>
+            <Portuguese>Selecione e aplique a personalização do veículo.</Portuguese>
+            <Russian>Выбрать и применить настройку транспортного средства.</Russian>
+            <Spanish>Seleccionar y aplicar la personalización del vehículo.</Spanish>
+            <Turkish>Araç kişiselleştirmesini seçin ve uygulayın.</Turkish>
+            <Korean>차량 맞춤 설정을 선택하고 적용합니다.</Korean>
+            <Japanese>車両のカスタマイズを選択して適用します。</Japanese>
+            <Chinesesimp>选择并应用车辆定制。</Chinesesimp>
+            <Chinese>選擇並應用車輛定制。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY_ALL_EXTRAS">
+            <Original>Apply All Extras</Original>
+            <English>Apply All Extras</English>
+            <Czech>Použít všechny doplňky</Czech>
+            <French>Appliquer tous les extras</French>
+            <German>Alle Extras anwenden</German>
+            <Italian>Applica tutti gli extra</Italian>
+            <Polish>Zastosuj wszystkie dodatki</Polish>
+            <Portuguese>Aplicar todos os extras</Portuguese>
+            <Russian>Применить все дополнения</Russian>
+            <Spanish>Aplicar todos los extras</Spanish>
+            <Turkish>Tüm ekstraları uygula</Turkish>
+            <Korean>모든 추가 기능 적용</Korean>
+            <Japanese>すべてのエクストラを適用</Japanese>
+            <Chinesesimp>应用所有额外</Chinesesimp>
+            <Chinese>應用所有額外</Chinese>
         </Key>
         <Key ID="STR_WLM_SELECT_LOADOUT">
             <Original>Select a loadout.</Original>
@@ -1329,6 +1346,23 @@
             <Japanese>リセット</Japanese>
             <Chinesesimp>重置</Chinesesimp>
             <Chinese>重置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_RESET_TOOLTIP">
+            <Original>Reset loadout selections to vehicle current loadout.</Original>
+            <English>Reset loadout selections to vehicle current loadout.</English>
+            <Czech>Obnovit výběr výzbroje na aktuální výzbroj vozidla.</Czech>
+            <French>Réinitialiser les sélections d'équipement au chargement actuel du véhicule.</French>
+            <German>Die Ausrüstungsauswahl auf die aktuelle Fahrzeugbeladung zurücksetzen.</German>
+            <Italian>Reimposta le selezioni di equipaggiamento all'attrezzatura corrente del veicolo.</Italian>
+            <Polish>Przywróć wybór wyposażenia do bieżącego wyposażenia pojazdu.</Polish>
+            <Portuguese>Reiniciar seleções de equipamento para o equipamento atual do veículo.</Portuguese>
+            <Russian>Сбросить выбор снаряжения к текущему снаряжению транспортного средства.</Russian>
+            <Spanish>Restablecer las selecciones de equipamiento al equipamiento actual del vehículo.</Spanish>
+            <Turkish>Araçtaki mevcut donanım seçimlerini sıfırla.</Turkish>
+            <Korean>차량의 현재 장비 구성으로 장비 선택을 재설정합니다.</Korean>
+            <Japanese>装備の選択を現在の車両の装備にリセットします。</Japanese>
+            <Chinesesimp>将装备选择重置为车辆当前装备。</Chinesesimp>
+            <Chinese>將裝備選擇重置為車輛當前裝備。</Chinese>
         </Key>
         <Key ID="STR_WLM_REARM_DESC">
             <Original>Rearm vehicle. Make sure you've selected the correct pylons before rearming.</Original>
@@ -1484,21 +1518,21 @@
             <Chinese>掛架應用警告</Chinese>
         </Key>
         <Key ID="STR_WLM_APPLY_PYLONS_AMMO_WARNING">
-            <Original>Applying pylons will remove all ammo from your pylons until you rearm! Continue?</Original>
-            <English>Applying pylons will remove all ammo from your pylons until you rearm! Continue?</English>
-            <Czech>Nasazení pilonů odstraní veškerou munici z vašich pilonů, dokud je znovu nevyzbrojíte! Pokračovat?</Czech>
-            <French>L'application des pylônes retirera toutes les munitions de vos pylônes jusqu'à ce que vous réarmiez! Continuer?</French>
-            <German>Das Anbringen von Pylonen entfernt alle Munition von Ihren Pylonen, bis Sie wieder bewaffnen! Fortsetzen?</German>
-            <Italian>L'applicazione dei piloni rimuoverà tutte le munizioni dai tuoi piloni fino a quando non riarmarerai! Continuare?</Italian>
-            <Polish>Zastosowanie pylonów usunie całą amunicję z twoich pylonów, dopóki nie uzbroisz ponownie! Kontynuować?</Polish>
-            <Portuguese>Aplicar pilones removerá toda a munição de seus pilones até que você rearme! Continuar?</Portuguese>
-            <Russian>Применение пилонов удалит все боеприпасы с ваших пилонов до повторного вооружения! Продолжить?</Russian>
-            <Spanish>Aplicar pilones eliminará toda la munición de tus pilones hasta que vuelvas a armar! ¿Continuar?</Spanish>
-            <Turkish>Pilonları uygulamak, yeniden silahlanana kadar pilonlarınızdaki tüm mühimmatı kaldıracaktır! Devam edilsin mi?</Turkish>
-            <Korean>파일런을 적용하면 재장전할 때까지 파일런의 모든 탄약이 제거됩니다! 계속하시겠습니까?</Korean>
-            <Japanese>パイロンを適用すると、再武装するまでパイロンの弾薬がすべて取り除かれます! 続けますか?</Japanese>
-            <Chinesesimp>应用挂架将移除所有挂架上的弹药，直到重新装填！继续吗？</Chinesesimp>
-            <Chinese>應用掛架將移除所有掛架上的彈藥，直到重新裝填！繼續嗎？</Chinese>
+            <Original>Applying magazines will remove all ammo from your magazines until you rearm! Continue?</Original>
+            <English>Applying magazines will remove all ammo from your magazines until you rearm! Continue?</English>
+            <Czech>Nasazení zásobníků odstraní veškerou munici z vašich zásobníků, dokud je znovu nevyzbrojíte! Pokračovat?</Czech>
+            <French>L'application des magasins retirera toutes les munitions de vos magasins jusqu'à ce que vous réarmiez! Continuer?</French>
+            <German>Das Anbringen von Magazinen entfernt alle Munition von Ihren Magazinen, bis Sie wieder bewaffnen! Fortsetzen?</German>
+            <Italian>L'applicazione dei caricatori rimuoverà tutte le munizioni dai tuoi caricatori fino a quando non riarmarerai! Continuare?</Italian>
+            <Polish>Zastosowanie magazynków usunie całą amunicję z twoich magazynków, dopóki nie uzbroisz ponownie! Kontynuować?</Polish>
+            <Portuguese>Aplicar carregadores removerá toda a munição de seus carregadores até que você rearme! Continuar?</Portuguese>
+            <Russian>Применение магазинов удалит все боеприпасы с ваших магазинов до повторного вооружения! Продолжить?</Russian>
+            <Spanish>Aplicar cargadores eliminará toda la munición de tus cargadores hasta que vuelvas a armar! ¿Continuar?</Spanish>
+            <Turkish>Şarjörleri uygulamak, yeniden silahlanana kadar şarjörlerinizdeki tüm mühimmatı kaldıracaktır! Devam edilsin mi?</Turkish>
+            <Korean>탄창을 적용하면 재장전할 때까지 탄창의 모든 탄약이 제거됩니다! 계속하시겠습니까?</Korean>
+            <Japanese>マガジンを適用すると、再武装するまでマガジンの弾薬がすべて取り除かれます! 続けますか?</Japanese>
+            <Chinesesimp>应用弹匣将移除所有弹匣上的弹药，直到重新装填！继续吗？</Chinesesimp>
+            <Chinese>應用彈匣將移除所有彈匣上的彈藥，直到重新裝填！繼續嗎？</Chinese>
         </Key>
         <Key ID="STR_WLM_APPLY">
             <Original>Apply</Original>
@@ -1518,21 +1552,21 @@
             <Chinese>應用</Chinese>
         </Key>
         <Key ID="STR_WLM_APPLY_SELECTED_PYLONS">
-            <Original>Apply the selected pylons to the aircraft.</Original>
-            <English>Apply the selected pylons to the aircraft.</English>
-            <Czech>Použít vybrané pilony na letadlo.</Czech>
-            <French>Appliquer les pylônes sélectionnés à l'avion.</French>
-            <German>Die ausgewählten Pylonen an das Flugzeug anbringen.</German>
-            <Italian>Applica i piloni selezionati all'aereo.</Italian>
-            <Polish>Zastosuj wybrane pylony do samolotu.</Polish>
-            <Portuguese>Aplicar os pilones selecionados à aeronave.</Portuguese>
-            <Russian>Применить выбранные пилоны к самолету.</Russian>
-            <Spanish>Aplicar los pilones seleccionados al avión.</Spanish>
-            <Turkish>Seçilen pilonları uçağa uygulayın.</Turkish>
-            <Korean>선택한 파일런을 항공기에 적용합니다.</Korean>
-            <Japanese>選択したパイロンを航空機に適用します。</Japanese>
-            <Chinesesimp>将选定的挂架应用于飞机。</Chinesesimp>
-            <Chinese>將選定的掛架應用於飛機。</Chinese>
+            <Original>Apply the selected magazines to the vehicle.</Original>
+            <English>Apply the selected magazines to the vehicle.</English>
+            <Czech>Použít vybrané zásobníky na vozidlo.</Czech>
+            <French>Appliquer les magasins sélectionnés au véhicule.</French>
+            <German>Die ausgewählten Magazine an das Fahrzeug anbringen.</German>
+            <Italian>Applica i caricatori selezionati al veicolo.</Italian>
+            <Polish>Zastosuj wybrane magazynki do pojazdu.</Polish>
+            <Portuguese>Aplicar os carregadores selecionados ao veículo.</Portuguese>
+            <Russian>Применить выбранные магазины к транспортному средству.</Russian>
+            <Spanish>Aplicar los cargadores seleccionados al vehículo.</Spanish>
+            <Turkish>Seçilen şarjörleri araca uygulayın.</Turkish>
+            <Korean>선택한 탄창을 차량에 적용합니다.</Korean>
+            <Japanese>選択したマガジンを車両に適用します。</Japanese>
+            <Chinesesimp>将选定的弹匣应用于车辆。</Chinesesimp>
+            <Chinese>將選定的彈匣應用於車輛。</Chinese>
         </Key>
         <Key ID="STR_WLM_RETURN_PREVIOUS_SCREEN">
             <Original>Return to the previous screen.</Original>
@@ -1688,21 +1722,21 @@
             <Chinese>清除保存警告</Chinese>
         </Key>
         <Key ID="STR_WLM_REMOVE_ALL_SAVED_LOADOUTS_WARNING">
-            <Original>This will remove all saved loadouts for this aircraft. Continue?</Original>
-            <English>This will remove all saved loadouts for this aircraft. Continue?</English>
-            <Czech>Tímto odstraníte všechna uložená vybavení pro tento letoun. Pokračovat?</Czech>
-            <French>Cela supprimera tous les armements sauvegardés pour cet avion. Continuer?</French>
-            <German>Dadurch werden alle gespeicherten Ladungen für dieses Flugzeug entfernt. Fortsetzen?</German>
-            <Italian>Questo rimuoverà tutte le configurazioni salvate per questo aereo. Continuare?</Italian>
-            <Polish>Spowoduje to usunięcie wszystkich zapisanych konfiguracji dla tego samolotu. Kontynuować?</Polish>
-            <Portuguese>Isso removerá todos os carregamentos salvos para esta aeronave. Continuar?</Portuguese>
-            <Russian>Это удалит все сохраненные нагрузки для этого самолета. Продолжить?</Russian>
-            <Spanish>Esto eliminará todas las configuraciones guardadas para este avión. ¿Continuar?</Spanish>
-            <Turkish>Bu, bu uçak için kaydedilen tüm yüklemeleri kaldıracaktır. Devam edilsin mi?</Turkish>
-            <Korean>이 항공기에 대한 모든 저장된 장비가 제거됩니다. 계속하시겠습니까?</Korean>
-            <Japanese>これにより、この航空機のすべての保存された装備が削除されます。続けますか?</Japanese>
-            <Chinesesimp>这将删除该飞机的所有保存配置。继续吗？</Chinesesimp>
-            <Chinese>這將刪除該飛機的所有保存配置。繼續嗎？</Chinese>
+            <Original>This will remove all saved loadouts for this vehicle. Continue?</Original>
+            <English>This will remove all saved loadouts for this vehicle. Continue?</English>
+            <Czech>Tímto odstraníte všechna uložená vybavení pro toto vozidlo. Pokračovat?</Czech>
+            <French>Cela supprimera tous les armements sauvegardés pour ce véhicule. Continuer?</French>
+            <German>Dadurch werden alle gespeicherten Ladungen für dieses Fahrzeug entfernt. Fortsetzen?</German>
+            <Italian>Questo rimuoverà tutte le configurazioni salvate per questo veicolo. Continuare?</Italian>
+            <Polish>Spowoduje to usunięcie wszystkich zapisanych konfiguracji dla tego pojazdu. Kontynuować?</Polish>
+            <Portuguese>Isso removerá todos os carregamentos salvos para este veículo. Continuar?</Portuguese>
+            <Russian>Это удалит все сохраненные нагрузки для этого транспортного средства. Продолжить?</Russian>
+            <Spanish>Esto eliminará todas las configuraciones guardadas para este vehículo. ¿Continuar?</Spanish>
+            <Turkish>Bu, bu araç için kaydedilen tüm yüklemeleri kaldıracaktır. Devam edilsin mi?</Turkish>
+            <Korean>이 차량에 대한 모든 저장된 장비가 제거됩니다. 계속하시겠습니까?</Korean>
+            <Japanese>これにより、この車両のすべての保存された装備が削除されます。続けますか?</Japanese>
+            <Chinesesimp>这将删除该车辆的所有保存配置。继续吗？</Chinesesimp>
+            <Chinese>這將刪除該車輛的所有保存配置。繼續嗎？</Chinese>
         </Key>
         <Key ID="STR_WLM_WIPE">
             <Original>Wipe</Original>
@@ -1722,21 +1756,21 @@
             <Chinese>清除</Chinese>
         </Key>
         <Key ID="STR_WLM_WIPE_ALL_SAVED_LOADOUTS">
-            <Original>Wipe all saved loadouts for this aircraft.</Original>
-            <English>Wipe all saved loadouts for this aircraft.</English>
-            <Czech>Vymazat všechna uložená vybavení pro tento letoun.</Czech>
-            <French>Effacer tous les armements sauvegardés pour cet avion.</French>
-            <German>Alle gespeicherten Ladungen für dieses Flugzeug löschen.</German>
-            <Italian>Cancella tutte le configurazioni salvate per questo aereo.</Italian>
-            <Polish>Wyczyść wszystkie zapisane konfiguracje dla tego samolotu.</Polish>
-            <Portuguese>Limpar todos os carregamentos salvos para esta aeronave.</Portuguese>
-            <Russian>Стереть все сохраненные нагрузки для этого самолета.</Russian>
-            <Spanish>Borrar todas las configuraciones guardadas para este avión.</Spanish>
-            <Turkish>Bu uçak için kaydedilen tüm yüklemeleri silin.</Turkish>
-            <Korean>이 항공기에 대한 모든 저장된 장비를 삭제합니다.</Korean>
-            <Japanese>この航空機のすべての保存された装備を消去します。</Japanese>
-            <Chinesesimp>清除该飞机的所有保存配置。</Chinesesimp>
-            <Chinese>清除該飛機的所有保存配置。</Chinese>
+            <Original>Wipe all saved loadouts for this vehicle.</Original>
+            <English>Wipe all saved loadouts for this vehicle.</English>
+            <Czech>Vymazat všechna uložená vybavení pro toto vozidlo.</Czech>
+            <French>Effacer tous les armements sauvegardés pour ce véhicule.</French>
+            <German>Alle gespeicherten Ladungen für dieses Fahrzeug löschen.</German>
+            <Italian>Cancella tutte le configurazioni salvate per questo veicolo.</Italian>
+            <Polish>Wyczyść wszystkie zapisane konfiguracje dla tego pojazdu.</Polish>
+            <Portuguese>Limpar todos os carregamentos salvos para este veículo.</Portuguese>
+            <Russian>Стереть все сохраненные нагрузки для этого транспортного средства.</Russian>
+            <Spanish>Borrar todas las configuraciones guardadas para este vehículo.</Spanish>
+            <Turkish>Bu araç için kaydedilen tüm yüklemeleri silin.</Turkish>
+            <Korean>이 차량에 대한 모든 저장된 장비를 삭제합니다.</Korean>
+            <Japanese>この車両のすべての保存された装備を消去します。</Japanese>
+            <Chinesesimp>清除该车辆的所有保存配置。</Chinesesimp>
+            <Chinese>清除該車輛的所有保存配置。</Chinese>
         </Key>
         <Key ID="STR_WLM_EMPTY">
             <Original>- EMPTY -</Original>
@@ -1756,21 +1790,21 @@
             <Chinese>- 空 -</Chinese>
         </Key>
         <Key ID="STR_WLM_CUSTOM">
-            <Original>--- Custom ---</Original>
-            <English>--- Custom ---</English>
-            <Czech>--- Vlastní ---</Czech>
-            <French>--- Personnalisé ---</French>
-            <German>--- Benutzerdefiniert ---</German>
-            <Italian>--- Personalizzato ---</Italian>
-            <Polish>--- Własne ---</Polish>
-            <Portuguese>--- Personalizado ---</Portuguese>
-            <Russian>--- Пользовательский ---</Russian>
-            <Spanish>--- Personalizado ---</Spanish>
-            <Turkish>--- Özel ---</Turkish>
-            <Korean>--- 사용자 정의 ---</Korean>
-            <Japanese>--- カスタム ---</Japanese>
-            <Chinesesimp>--- 自定义 ---</Chinesesimp>
-            <Chinese>--- 自訂 ---</Chinese>
+            <Original>Custom</Original>
+            <English>Custom</English>
+            <Czech>Vlastní</Czech>
+            <French>Personnalisé</French>
+            <German>Benutzerdefiniert</German>
+            <Italian>Personalizzato</Italian>
+            <Polish>Własne</Polish>
+            <Portuguese>Personalizado</Portuguese>
+            <Russian>Пользовательский</Russian>
+            <Spanish>Personalizado</Spanish>
+            <Turkish>Özel</Turkish>
+            <Korean>사용자 정의</Korean>
+            <Japanese>カスタム</Japanese>
+            <Chinesesimp>自定义</Chinesesimp>
+            <Chinese>自訂</Chinese>
         </Key>
         <Key ID="STR_WLM_OFFICIAL">
             <Original>Official</Original>

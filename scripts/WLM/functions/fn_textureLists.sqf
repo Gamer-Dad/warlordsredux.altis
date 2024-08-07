@@ -2,8 +2,8 @@ params ["_side"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private _blacklistWest = ["CamoGreen", "AAF", "Opfor", "Hex"];
-private _blacklistEast = ["CamoGreen", "AAF", "Blufor"];
+private _blacklistWest = ["Digital Green", "AAF", "Opfor", "Hex"];
+private _blacklistEast = ["Digital Green", "AAF", "Blufor"];
 
 private _whitelistWest = [];
 private _whitelistEast = [];

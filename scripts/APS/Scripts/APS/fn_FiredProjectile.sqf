@@ -45,11 +45,11 @@ while {_continue} do {
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = getDir _projectile;
 				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
-				
+
 				private _ownerUID = _x getVariable ["BIS_WL_ownerAsset", "123"];
 				private _assetOwner = _ownerUID call BIS_fnc_getUnitByUID;
-				
-				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", owner _assetOwner];
+								
+				[_x, _relativeDirection, _assetOwner] remoteExec ["APS_fnc_ReportServer", 2];
 
 				deleteVehicle _projectile;
 				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];

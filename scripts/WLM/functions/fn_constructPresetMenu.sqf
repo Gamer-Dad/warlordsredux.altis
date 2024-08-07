@@ -16,6 +16,7 @@ _loadSelectControl lbAdd "Loadouts";
 if (!_isAircraft) then {
     private _defaultSelection = _loadSelectControl lbAdd (localize "STR_WLM_RESET");
     _loadSelectControl lbSetData [_defaultSelection, "Reset"];
+    _loadSelectControl lbSetTooltip [_defaultSelection, localize "STR_WLM_RESET_TOOLTIP"];
 };
 
 private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];

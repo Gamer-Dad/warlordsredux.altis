@@ -23,11 +23,12 @@ if (_action == "orderAsset") exitWith {
 		_nearbyEntities = _simulatedObject nearEntities 30 select {
 			private _circleB = boundingBoxReal [_x, "FireGeometry"];
 			private _radiusB = _circleB select 2;
+			private _assetOwner = _x getVariable ["BIS_WL_ownerAsset", "notAsset"];
 
 			(_x distance _simulatedObject) < (_radiusA + _radiusB + _BUFFER)
 			&& !(_x isKindOf "Man") 
-			&& _x getVariable ["BIS_WL_nextRepair", -1] != -1
-			// && _uid != (_x getVariable ["BIS_WL_ownerAsset", "123"])
+			&& _assetOwner != "notAsset"
+			&& _uid != (_x getVariable ["BIS_WL_ownerAsset", "123"])
 		};
 
 		deleteVehicle _simulatedObject;

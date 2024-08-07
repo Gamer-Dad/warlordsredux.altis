@@ -89,25 +89,6 @@ BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearmin
 
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
 
-WLM_fnc_initMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_initMenu.sqf";
-WLM_fnc_switchUser = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_switchUser.sqf";
-WLM_fnc_selectLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_selectLoadout.sqf";
-WLM_fnc_saveLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_saveLoadout.sqf";
-WLM_fnc_constructAircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructAircraftPylons.sqf";
-WLM_fnc_constructPresetMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructPresetMenu.sqf";
-WLM_fnc_applyLoadoutAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadoutAircraft.sqf";
-WLM_fnc_applyLoadoutVehicle = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadoutVehicle.sqf";
-WLM_fnc_rearmAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmAircraft.sqf";
-WLM_fnc_rearmVehicle = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmVehicle.sqf";
-WLM_fnc_textureLists = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureLists.sqf";
-WLM_fnc_wipePylonSaves = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_wipePylonSaves.sqf";
-WLM_fnc_constructVehicleMagazine = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructVehicleMagazine.sqf";
-WLM_fnc_textureSlots = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureSlots.sqf";
-WLM_fnc_loadoutList = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_loadoutList.sqf";
-WLM_fnc_applyPylonOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonOwner.sqf";
-WLM_fnc_applyVehicleOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyVehicleOwner.sqf";
-WLM_fnc_rearmVehicleOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmVehicleOwner.sqf";
-
 waitUntil {!isNull player && {isPlayer player}};
 
 "client" call BIS_fnc_WL2_varsInit;
@@ -327,4 +308,50 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 		
 		[ASLToAGL _pos] remoteExec ["BIS_fnc_WL2_pingFix", _targets, true];
 	};
+}];
+
+BIS_WL_DisplayCaptureProgress = false;
+addMissionEventHandler ["Map", {
+	params ["_mapIsOpened", "_mapIsForced"];
+	if (_mapIsOpened) then {
+		BIS_WL_DisplayCaptureProgress = true;
+		0 spawn {
+			while {visibleMap && BIS_WL_DisplayCaptureProgress && !BIS_WL_missionEnd} do {
+				private _side = BIS_WL_playerSide;
+				private _sectorsBeingCaptured = (BIS_WL_allSectors select {
+					private _statusVisible = _side in (_x getVariable ["BIS_WL_previousOwners", []]) || 
+						_x == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]);
+					count (_x getVariable ["BIS_WL_seizingInfo", []]) > 0 && _statusVisible;
+				});
+
+				if (count _sectorsBeingCaptured == 0) then { 
+					hintSilent "";
+					continue;
+				};
+
+				private _hintString = "<t size='1.8'>Capture Progress</t><br/>";
+				{
+					private _seizingInfo = _x getVariable ["BIS_WL_seizingInfo", []];
+					private _sectorName = _x getVariable "BIS_WL_name";
+					private _captureProgress = linearConversion [_seizingInfo # 1, _seizingInfo # 2, serverTime, 0, 100];
+					private _displayPercent = _captureProgress toFixed 1;
+					_hintString = if (_seizingInfo # 0 == west) then {
+						_hintString + format ["<t size='1.5' shadow='2' color='#004d99'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
+					} else {
+						_hintString + format ["<t size='1.5' shadow='2' color='#ff4b4b'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
+					};
+				} forEach _sectorsBeingCaptured;
+				hintSilent parseText _hintString;
+				sleep 0.25;
+			};
+			hintSilent "";
+		};
+	} else {
+		BIS_WL_DisplayCaptureProgress = false;
+	};
+}];
+
+player addEventHandler ["HandleRating", {
+	params ["_unit", "_rating"];
+	0;
 }];

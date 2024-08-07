@@ -53,13 +53,6 @@ MRTM_fnc_leaveGroup = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_le
 MRTM_fnc_accept = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_accept.sqf";
 MRTM_fnc_invite = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_invite.sqf";
 
-WLM_fnc_applyPylonServer = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonServer.sqf";
-WLM_fnc_applyPylonOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonOwner.sqf";
-WLM_fnc_applyVehicleServer = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyVehicleServer.sqf";
-WLM_fnc_applyVehicleOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyVehicleOwner.sqf";
-WLM_fnc_rearmVehicleServer = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmVehicleServer.sqf";
-WLM_fnc_rearmVehicleOwner = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmVehicleOwner.sqf";
-
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;
 
