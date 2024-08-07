@@ -1,15 +1,9 @@
-params ["_asset", "_eligibleFreeRearm"];
+params ["_asset", "_rearm"];
 
 private _attachments = _asset getVariable ["WLM_assetAttachments", []];
 
 private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
 private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
-
-private _ammoToSet = if (_eligibleFreeRearm) then {
-    1
-} else {
-    0
-};
 
 private _pylonsToSet = [];
 {
@@ -19,7 +13,7 @@ private _pylonsToSet = [];
 
     private _pylonName = configName _x;
 
-    _pylonsToSet pushBack [_pylonName, _mag, _turret, _ammoToSet];
+    _pylonsToSet pushBack [_pylonName, _mag, _turret];
 } forEach _pylonsInfo;
 
-[_asset, _pylonsToSet, _ammoToSet] remoteExec ["WLM_fnc_applyPylonOwner", _asset, true];
+[_asset, _pylonsToSet, _rearm] remoteExec ["WLM_fnc_applyPylonOwner", _asset, true];

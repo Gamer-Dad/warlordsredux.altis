@@ -2,7 +2,7 @@
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private _allTurrets = allTurrets _asset;
+private _allTurrets = [[-1]] + allTurrets _asset;
 private _display = findDisplay WLM_DISPLAY;
 private _ctrlGroup = _display displayCtrl WLM_PYLON_CONTROL_GROUP;
 
@@ -26,13 +26,15 @@ private _savedMagazines = _asset getVariable ["WLM_savedMagazines", []];
 if (_savedMagazines isEqualTo []) then {
     {
         private _turretPath = _x;
-        private _magazinesInTurret = _asset magazinesTurret _turretPath;
+        private _magazinesInTurret = _asset magazinesTurret [_turretPath, true];
         _savedMagazines pushBack _magazinesInTurret;
     } forEach _allTurrets;
 };
 _asset setVariable ["WLM_savedMagazines", _savedMagazines];
 
 private _assetDefaultMagazines = _asset getVariable ["BIS_WL_defaultMagazines", []];
+
+private _loadoutList = call WLM_fnc_loadoutList;
 
 private _getMagazineName = {
     params ["_magazine"];
@@ -43,6 +45,11 @@ private _getMagazineName = {
     private _magazineName = getText (configFile >> "CfgMagazines" >> _magazine >> "displayName");
     if (_magazineName == "") then {
         _magazineName = _magazine;
+    };
+
+    private _overrideMagazineName = (_loadoutList # 3) getOrDefault [_magazine, "No Override"];
+    if (_overrideMagazineName != "No Override") then {
+        _magazineName = _overrideMagazineName;
     };
 
     private _magSize = getNumber (configFile >> "CfgMagazines" >> _magazine >> "count");
@@ -57,6 +64,11 @@ private _getMagazineTooltip = {
     private _magazineName = [_magazine] call _getMagazineName;
     private _magazineDescription = getText (configFile >> "CfgMagazines" >> _magazine >> "descriptionShort");
 
+    private _overrideMagazineDescription = (_loadoutList # 4) getOrDefault [_magazine, "No Override"];
+    if (_overrideMagazineDescription != "No Override") then {
+        _magazineDescription = _overrideMagazineDescription;
+    };
+
     if (_magazineDescription == "") then {
         _magazineDescription = "";
     } else {
@@ -67,7 +79,6 @@ private _getMagazineTooltip = {
     format ["%1 | %2%3", _magazineName, _magazine, _magazineDescription];
 };
 
-private _loadoutList = call WLM_fnc_loadoutList;
 {
     private _turretPath = _x;
 
@@ -92,6 +103,7 @@ private _loadoutList = call WLM_fnc_loadoutList;
     } forEach _weaponsInTurret;
 
     // Calculate points per weapon in turret from default
+    private _pointsInTurret = 0;
     private _defaultMagazinesByWeapon = [];
     private _defaultMagazinesInTurret = _assetDefaultMagazines select {_x # 1 isEqualTo _turretPath};
     {
@@ -99,6 +111,7 @@ private _loadoutList = call WLM_fnc_loadoutList;
         private _defaultMagazinesForWeapon = [];
         {
             if (_compatibleMagazines find (_x # 0) != -1) then {
+                _pointsInTurret = _pointsInTurret + (_x # 2);
                 _defaultMagazinesForWeapon pushBack _x;
             };
         } forEach _defaultMagazinesInTurret;
@@ -106,10 +119,19 @@ private _loadoutList = call WLM_fnc_loadoutList;
         _defaultMagazinesByWeapon pushBack [_defaultMagazinesForWeapon, _x];
     } forEach _weaponsInTurret;
 
+    if (count _weaponsInTurret == 0 || _pointsInTurret == 0) then {
+        continue;
+    };
+
     // Label
     private _turretLabel = _display ctrlCreate ["RscText", -1, _ctrlGroup];
     private _turretConfig = [_asset, _turretPath] call BIS_fnc_turretConfig;
     private _turretName = getText (_turretConfig >> "gunnerName");
+
+    if (_turretName == "") then {
+        _turretName = "Driver";
+    };
+
     _turretLabel ctrlSetText format ["%1", _turretName];
     _turretLabel ctrlSetFontHeight 0.06;
     _turretLabel ctrlSetFont "PuristaMedium";
@@ -141,6 +163,10 @@ private _loadoutList = call WLM_fnc_loadoutList;
                 _defaultAmmoCount = _x # 3;
             };
         } forEach _loadoutListAmmo;
+
+        if (_defaultAmmoCount == 0) then {
+            continue;
+        };
         
         if (_magazinesInWeapon find "EMPTY" == -1) then {
             _magazinesInWeapon pushBack "EMPTY";
@@ -219,6 +245,7 @@ private _loadoutList = call WLM_fnc_loadoutList;
                 private _savedMagazines = [];
                 private _magazineSelectBoxes = uiNamespace getVariable "WLM_magazineSelectBoxes";
 
+                private _allTurrets = [[-1]] + allTurrets _asset;
                 {
                     private _referenceTurretPath = _x;
                     private _turretIndex = _forEachIndex;
@@ -245,9 +272,16 @@ private _loadoutList = call WLM_fnc_loadoutList;
                             };
 
                             _savedMagazines set [_turretIndex, _dataInSave];
-                        };                        
+                        };
                     } forEach _magazineSelectBoxes;
-                } forEach (allTurrets _asset);
+                } forEach _allTurrets;
+
+                {
+                    private _emptyChecker = _savedMagazines # _forEachIndex;
+                    if (isNil "_emptyChecker") then {
+                        _savedMagazines set [_forEachIndex, []];
+                    };
+                } forEach _allTurrets;
 
                 _asset setVariable ["WLM_savedMagazines", _savedMagazines];
 
