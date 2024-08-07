@@ -25,3 +25,8 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 
 player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
+
+player addEventHandler ["HandleRating", {
+	params ["_unit", "_rating"];
+	0;
+}];

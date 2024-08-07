@@ -390,6 +390,13 @@ if (_displayClass == "OSD") then {
 						} forEach ((groupSelectedUnits player) select {_x != player && {_x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player}});
 						false spawn BIS_fnc_WL2_refreshOSD;
 					};
+					case "wipeMap": {
+						{
+							if ("_USER_DEFINED #" in _x) then {
+								deleteMarkerLocal _x;
+							};
+						} forEach allMapMarkers;
+					};
 					case "RespawnVic": {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "orderFTVehicle"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};
 					case "RespawnVicFT": {0 spawn BIS_fnc_WL2_orderFTVehicleFT};
 					case "RespawnPod" : {"RequestMenu_close" call BIS_fnc_WL2_setupUI; [player, "orderFTPod"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2]};

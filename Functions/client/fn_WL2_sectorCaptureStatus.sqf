@@ -1,27 +1,32 @@
 _previousSeizingInfo = [];
 _visitedSector = objNull;
 
-while {!BIS_WL_missionEnd} do {
-	sleep (if (count _previousSeizingInfo == 0) then {1} else {0.25});
+while { !BIS_WL_missionEnd } do {
+	private _sleepTimer = if (count _previousSeizingInfo == 0) then { 1 } else { 0.25 };
+	sleep _sleepTimer;
 	
-	_sectorsToCheck = +(BIS_WL_sectorsArray # 3);
-	_visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable "objectAreaComplete")};
+	private _sectorsToCheck = +(BIS_WL_sectorsArray # 3);
+	private _visitedSectorID = _sectorsToCheck findIf {player inArea (_x getVariable "objectAreaComplete")};
 	
 	if (_visitedSectorID != -1) then {
-		_visitedSector = _sectorsToCheck # _visitedSectorID;
-		_info = _visitedSector getVariable ["BIS_WL_seizingInfo", []];
-		if !(_previousSeizingInfo isEqualTo _info) then {
-			if (count _info > 1) then {
-				["seizing", [_visitedSector, _info # 0, _info # 1, _info # 2]] spawn BIS_fnc_WL2_setOSDEvent;
-			} else {
-				["seizing", []] spawn BIS_fnc_WL2_setOSDEvent;
-			};
-			_previousSeizingInfo = _info;
+		private _sector = _sectorsToCheck # _visitedSectorID;
+
+		private _captureProgress = _sector getVariable ["BIS_WL_captureProgress", 0];
+		private _capturingTeam = _sector getVariable ["BIS_WL_capturingTeam", independent];
+
+		private _seizingInfo = [_sector, _capturingTeam, _captureProgress];
+
+		if !(_previousSeizingInfo isEqualTo _seizingInfo) then {
+			["seizing", _seizingInfo] spawn BIS_fnc_WL2_setOSDEvent;
+			_previousSeizingInfo = _seizingInfo;
 		} else {
-			if (((_visitedSector getVariable "BIS_WL_owner") != BIS_WL_playerSide) && {(count _info == 0) && {(_visitedSector in (BIS_WL_sectorsArray # 7)) && {(_visitedSector != (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide]))}}}) then {
-				["seizingDisabled", [_visitedSector getVariable "BIS_WL_owner"]] spawn BIS_fnc_WL2_setOSDEvent;
-				_visitedSector setVariable ["BIS_WL_seizingInfo", ["seizingDisabled"]];
-				_previousSeizingInfo = ["seizingDisabled"];
+			private _isNotOwned = (_sector getVariable "BIS_WL_owner") != BIS_WL_playerSide;
+			private _notSeizing = _captureProgress == 0;
+			private _notCapturedBefore = _sector in (BIS_WL_sectorsArray # 7);
+			private _notCurrentTarget = _sector != (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", BIS_WL_playerSide]);
+
+			if (_isNotOwned && _notSeizing && _notCapturedBefore && _notCurrentTarget) then {
+				["seizingDisabled", [_sector getVariable "BIS_WL_owner"]] spawn BIS_fnc_WL2_setOSDEvent;
 			};
 		};
 	} else {

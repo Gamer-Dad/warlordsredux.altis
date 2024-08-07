@@ -59,18 +59,21 @@ class CfgFunctions {
 		class Report
 		{
 			file = "scripts\APS\Scripts\Report";
-			class Report {};
+			class ReportOwner {};
+			class ReportServer {};
 		};
 	};
 	class DIS {
 		class SAM
 		{
 			file = "scripts\DIS";
+			class Check {};
 			class Frag {};
-			class SAMFired {};
-			class RegisterSAM {};
-			class IsSam {};
-			class SAMmaneuver {};
+			class Maneuver {};
+			class MissileCamera {};
+			class OnSamFired {};
+			class RegisterLauncher {};
+			class StartMissileCamera {};
 		};
 	};
 	class Fxr {
@@ -80,5 +83,35 @@ class CfgFunctions {
 			class openReportMenu {};
 			class closeReportMenu {};
 		};
-	}
+	};
+	class WLM {
+		class WLM {
+			file = "Scripts\WLM\functions";
+			class applyLoadoutAircraft {};
+			class applyLoadoutVehicle {};
+			class applyPylonOwner {};
+			class applyPylonServer {};
+			class applyVehicleOwner {};
+			class applyVehicleServer {};
+			class changeHornOwner {};
+			class changeHornServer {};
+			class constructAircraftPylons {};
+			class constructPresetMenu {};
+			class constructVehicleMagazine {};
+			class initMenu {};
+			class loadoutList {};
+			class moveSmokesOwner {};
+			class moveSmokesServer {};
+			class rearmAircraft {};
+			class rearmVehicle {};
+			class rearmVehicleOwner {};
+			class rearmVehicleServer {};
+			class saveLoadout {};
+			class selectLoadout {};
+			class switchUser {};
+			class textureLists {};
+			class textureSlots {};
+			class wipePylonSaves {};
+		};
+	};
 };

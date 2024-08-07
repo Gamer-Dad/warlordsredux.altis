@@ -19,6 +19,6 @@ _asset setVehicleReportOwnPosition true;
 
 _rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
 
-_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
+_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 1, 1, 75];
 [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;

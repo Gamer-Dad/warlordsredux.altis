@@ -31,91 +31,68 @@ _apsMedium = [
 
 _apsHeavy = [
 	"O_MBT_02_cannon_F",			// T-100
-	"O_MBT_04_cannon_F",			// T-140
-	"O_MBT_04_command_F",
-	"O_MBT_02_railgun_F",			//T-100 Futura
+	"O_MBT_04_cannon_F",			// T-140 Angara
+	"O_MBT_04_command_F",			// T-140K Angara
+	"O_MBT_02_railgun_F",			// T-100 Futura
 	"B_MBT_01_cannon_F",			// Slammer
-	"B_MBT_01_TUSK_F",
+	"B_MBT_01_TUSK_F",				// Slammer UP
 	"I_APC_tracked_03_cannon_F",	// Mora
 	"I_MBT_03_cannon_F"				// Kuma
 ];
 
 _apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"];
 
-// APS projectile block lists
-_heavyBlockList = [
-	"M_120mm_cannon_ATGM_LG",
-	"M_127mm_Firefist_AT",
-	"Missile_AGM_01_F",
-	"Missile_AGM_02_F",
-	"R_80mm_HE",
-	"Rocket_03_AP_F",
-	"Rocket_03_HE_F",
-	"Rocket_04_AP_F",
-	"Rocket_04_HE_F",
-	"M_AT",
-	"M_PG_AT",
-	"M_Scalpel_AT",
-	"M_Scalpel_AT_hidden",
-	"M_SPG9_HE",
-	"M_SPG9_HEAT",
-	"M_Titan_AP",
-	"M_Titan_AT",
-	"M_Titan_AT_long",
-	"M_Titan_AT_static",
-	"M_Vorona_HE",
-	"M_Vorona_HEAT",
-	"R_MRAAWS_HE_F",
-	"R_MRAAWS_HEAT_F", 
-	"R_MRAAWS_HEAT55_F",
-	"R_TBG32V_F",
-	"R_PG32V_F",
-	"R_PG7_F",
-	"M_NLAW_AT_F",
-	"M_Jian_AT"
-];
+// APS projectile block lists (heavy contains everything medium, medium contains everything light)
+_heavyBlockList = [];				// For now, heavy doesn't block anything extra
 
 _mediumBlockList = [
-	"ammo_Missile_KH58",
-	"ammo_Missile_HARM",
-	"Missile_AGM_01_F",
-	"Missile_AGM_02_F",
-	"M_120mm_cannon_ATGM_LG",
-	"M_127mm_Firefist_AT",
-	"R_80mm_HE",
-	"Rocket_03_AP_F",
-	"Rocket_03_HE_F",
-	"Rocket_04_AP_F",
-	"Rocket_04_HE_F",
-	"M_AT",
-	"M_PG_AT",
-	"M_Scalpel_AT",
-	"M_Scalpel_AT_hidden",
-	"M_SPG9_HE",
-	"M_SPG9_HEAT",
-	"M_Titan_AP",
-	"M_Titan_AT",
-	"M_Titan_AT_long",
-	"M_Titan_AT_static",
-	"M_Vorona_HE",
-	"M_Vorona_HEAT",
-	"M_NLAW_AT_F",
-	"R_MRAAWS_HE_F",
-	"R_MRAAWS_HEAT_F",
-	"R_MRAAWS_HEAT55_F",
-	"R_TBG32V_F",
-	"R_PG32V_F",
-	"R_PG7_F",
-	"M_Jian_AT"
+	// Tank ATGM
+    "M_120mm_cannon_ATGM",			// 120mm Cannon ATGM
+    "M_120mm_cannon_ATGM_LG",		// 120mm Cannon ATGM (Laser Guided)
+    "M_125mm_cannon_ATGM",			// 125mm Cannon ATGM
+
+	// Ground Vehicle AT
+    "M_127mm_Firefist_AT",			// Nyx Firefist AT
+	"M_Titan_AT_long",				// Titan AT (Vehicle)
+	"M_SPG9_HE",					// SPG-9 HE
+    "M_SPG9_HEAT",					// SPG-9 HEAT
+
+	// Air Vehicle SEAD
+    "ammo_Missile_HARM",			// AGM-88 HARM
+    "ammo_Missile_KH58",			// KH-58 ARM
+
+	// Air Vehicle Guided
+	"M_AT",							// DAR
+    "M_Jian_AT",					// Jian
+    "M_PG_AT",						// DAGR
+    "M_Scalpel_AT",					// Scalpel
+    "M_Scalpel_AT_hidden",			// Scalpel (x2)
+    "Missile_AGM_01_F",				// Sharur
+    "Missile_AGM_02_F",				// Macer II
+
+	// Air Vehicle Unguided
+	"R_80mm_HE",					// Skyfire
+    "Rocket_03_AP_F",				// Tratnyr AP 
+    "Rocket_03_HE_F",				// Tratnyr HE
+    "Rocket_04_AP_F",				// Shrieker AP
+    "Rocket_04_HE_F",				// Shrieker HE
+
+	// Infantry
+    "M_NLAW_AT_F",					// PCML
+    "M_Titan_AP",					// Titan AP
+    "M_Titan_AT",					// Titan AT
+    "M_Titan_AT_static",			// Titan AT (Static)
+    "M_Vorona_HE",					// Vorona HE
+    "M_Vorona_HEAT"					// Vorona HEAT
 ];
 
 _lightBlockList = [
-	"R_MRAAWS_HE_F",
-	"R_MRAAWS_HEAT_F",
-	"R_MRAAWS_HEAT55_F",
-	"R_TBG32V_F",
-	"R_PG32V_F",
-	"R_PG7_F"
+    "R_MRAAWS_HE_F",				// MAAWS HE
+    "R_MRAAWS_HEAT_F",				// MAAWS HEAT
+    "R_MRAAWS_HEAT55_F",			// MAAWS HEAT55
+    "R_PG32V_F",					// RPG-42 AT
+    "R_PG7_F",						// RPG-7 HEAT
+    "R_TBG32V_F"					// RPG-42 HE
 ];
 
 // assumption: APS types are straight upgrades

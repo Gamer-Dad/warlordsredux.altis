@@ -10,12 +10,14 @@ private _airstrip = "A" in _services;
 private _helipad = "H" in _services;
 private _harbor = "W" in _services;
 
-_side = BIS_WL_playerSide;
-_lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _side], -9999]);
-_scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
-_capturing = (count (_sector getVariable ["BIS_WL_seizingInfo", []]) > 1);
-_percentage = if (_capturing) then {linearConversion [((_sector getVariable ["BIS_WL_seizingInfo", []]) # 1), ((_sector getVariable ["BIS_WL_seizingInfo", []]) # 2), serverTime, 0, 1]};
-_color = (['#004d99', '#7f0400'] # ([west, east] find ((_sector getVariable ["BIS_WL_seizingInfo", []]) # 0)));
+private _side = BIS_WL_playerSide;
+
+private _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _side], -9999]);
+private _scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
+
+private _percentage = _sector getVariable ["BIS_WL_captureProgress", 0];
+private _capturingTeam = _sector getVariable ["BIS_WL_capturingTeam", independent];
+private _color = ['#004d99', '#7f0400', '#007f04'] # ([west, east, independent] find _capturingTeam);
 
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlSetPosition [(getMousePosition # 0) + safeZoneW / 100, (getMousePosition # 1) + safeZoneH / 50, safeZoneW, safeZoneH];
 ((ctrlParent WL_CONTROL_MAP) getVariable "BIS_sectorInfoBox") ctrlCommit 0;
@@ -38,7 +40,7 @@ _color = (['#004d99', '#7f0400'] # ([west, east] find ((_sector getVariable ["BI
 	if (_harbor) then {localize "STR_A3_WL_param30_title"} else {""},
 	localize "STR_A3_WL_param_scan_timeout",
 	[(ceil _scanCD), "MM:SS"] call BIS_fnc_secondsToString,
-	if (_capturing && {(_side in (_sector getVariable ["BIS_WL_previousOwners", []])) || {_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side])}}) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
+	if (_percentage > 0 && {(_side in (_sector getVariable ["BIS_WL_previousOwners", []])) || {_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side])}}) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
 	_color
 ];
 

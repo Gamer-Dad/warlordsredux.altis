@@ -6,8 +6,13 @@ private _asset = uiNamespace getVariable "WLM_asset";
 
 private _defaultMags = _asset getVariable ["WLM_savedDefaultMags", []];
 private _currentMags = magazinesAllTurrets _asset;
+_defaultMags sort true;
+_currentMags sort true;
 private _eligibleFreeRearm = true;
 {
+    if (_forEachIndex >= count _defaultMags) exitWith {
+        _eligibleFreeRearm = false;
+    };
     private _defaultMag = _defaultMags # _forEachIndex;
     private _currentMag = _x;
 
@@ -51,7 +56,7 @@ if (_showWarning && !_eligibleFreeRearm) exitWith {
 };
 
 private _magTurretsToRemove = [];
-private _turrets = allTurrets _asset;
+private _turrets = [[-1]] + allTurrets _asset;
 {
     private _turretPath = _x;
     private _magazinesTurret = _asset magazinesTurret _turretPath;
@@ -76,3 +81,13 @@ private _magazineSelectBoxes = uiNamespace getVariable "WLM_magazineSelectBoxes"
 } forEach _magazineSelectBoxes;
 
 [_asset, _magTurretsToRemove, _magTurretsToAdd, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyVehicleServer", 2];
+
+[_magazineSelectBoxes, _asset] spawn {
+    params ["_magazineSelectBoxes", "_asset"];
+    {
+        private _successSound = selectRandom ['FD_Target_PopDown_Large_F','FD_Target_PopDown_Small_F','FD_Target_PopUp_Small_F'];
+        private _soundPath = getArray (configfile >> "CfgSounds" >> _successSound >> "sound");
+        playSound3D [_soundPath # 0, _asset, false, getPosASL _asset, random [1.8, 2.0, 2.2], random [1.8, 2.0, 2.2], 50];
+        sleep 0.1;
+    } forEach _magazineSelectBoxes;
+};

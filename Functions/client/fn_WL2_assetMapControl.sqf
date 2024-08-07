@@ -2,6 +2,18 @@ BIS_WL_assetInfoActive = false;
 
 addMissionEventHandler ["Map", {
 	params ["_mapIsOpened", "_mapIsForced"];
+
+	private _userMarkerAlpha = if (profileNamespace getVariable ["MRTM_showMarkers", true]) then {
+		1;
+	} else {
+		0;
+	};
+	{
+		if ("_USER_DEFINED #" in _x) then {
+			_x setMarkerAlphaLocal _userMarkerAlpha;
+		};
+	} forEach allMapMarkers;
+
 	if (_mapIsOpened) then {
 		MAP_CONTROL = addMissionEventHandler ["EachFrame", {
 			_shown = false;
