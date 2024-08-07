@@ -18,6 +18,7 @@ _apsMedium = [
 	"B_APC_Wheeled_03_cannon_F",	// Gorgon
 	"B_APC_Wheeled_01_cannon_F",	// Marshall
 	"B_APC_Tracked_01_rcws_F",		// Panther
+	"B_APC_Tracked_01_CRV_F",		// Bobcat
 	"B_APC_Tracked_01_AA_F",		// Cheetah
 	"B_AFV_Wheeled_01_cannon_F",	// Rhino
 	"B_AFV_Wheeled_01_up_cannon_F", // Rhino UP
