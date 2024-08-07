@@ -1,4 +1,4 @@
-params ["_pos", "_class", "_direction"];
+params ["_pos", "_class", "_direction", "_side"];
 
 private _vehCfg = configFile >> "CfgVehicles" >> _class; 
 private _crewCount = { 
@@ -10,9 +10,16 @@ private _myArray = [0];
 _myArray resize _crewCount;
 
 _asset = [_class, _pos, _direction] call BIS_fnc_WL2_createVehicleCorrectly;
-private _assetGrp = createGroup east;
+
+private _assetGrp = createGroup _side;
+private _aiUnit = if (_side == west) then {
+	"B_UAV_AI"
+} else {
+	"O_UAV_AI"
+};
+
 {
-	private _unit = _assetGrp createUnit ["O_UAV_AI", _pos, [], 0, "NONE"];
+	private _unit = _assetGrp createUnit [_aiUnit, _pos, [], 0, "NONE"];
 	_unit moveInAny _asset;
 } forEach _myArray;
 _assetGrp deleteGroupWhenEmpty true;

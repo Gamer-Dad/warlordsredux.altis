@@ -209,7 +209,9 @@ private _customizationAllowList = [
     "showbag",
     "showtools",
     "showlog",
-    "showslat"
+    "showslat",
+    "moveplow",
+    "showcamo"
 ];
 
 private _availableCustomizations = [];

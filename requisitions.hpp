@@ -50,7 +50,8 @@ class CfgWLRequisitionPresets
 				class B_Truck_01_fuel_F						{cost = 1000;	requirements[]={};	};	// "HEMTT Fuel"
 				class O_T_Truck_03_device_ghex_F            {cost = 1500;	requirements[]={};	};	// "Tempest Device"
 				class B_Truck_01_transport_F				{cost = 200;	requirements[]={};	};	// "HEMTT Transport"
-				class B_Truck_01_flatbed_F					{cost = 500;	requirements[]={};	};	// "HEMTT Flatbed"	
+				class B_Truck_01_flatbed_F					{cost = 500;	requirements[]={};	};	// "HEMTT Flatbed"
+				class B_APC_Tracked_01_CRV_F				{cost = 1700;	requirements[]={};	};	// "CRV-6e Bobcat"
 				class B_APC_Wheeled_03_cannon_F				{cost = 2500;	requirements[]={};	};	// "BLUFOR Gorgon"
 				class B_APC_Wheeled_01_cannon_F				{cost = 3200;	requirements[]={};	};	// "AMV-7 Marshall"
 				class B_APC_Tracked_01_rcws_F				{cost = 1800;	requirements[]={};	};	// "IFV-6c Panther"
@@ -68,6 +69,7 @@ class CfgWLRequisitionPresets
 				class B_Heli_Transport_01_F					{cost = 800;	requirements[]={"H"};	};	// "UH-80 Ghost Hawk"
 				class B_Heli_Transport_03_F					{cost = 1000;	requirements[]={"H"};	};	// "CH-67 Huron"
 				class B_Heli_Light_01_dynamicLoadout_F		{cost = 2500;	requirements[]={"H"};	};	// "AH-9 Pawnee"
+				class I_Heli_light_03_dynamicLoadout_F		{cost = 7500;	requirements[]={"H"};	};	// "WY-55 Hellcat"
 				class B_UAV_02_dynamicLoadout_F         	{cost = 12000;  requirements[]={"A"};   };  // "Greyhawk"
 				class B_Heli_Attack_01_dynamicLoadout_F		{cost = 13000;	requirements[]={"H"};	};	// "AH-99 Blackfoot"
 				class B_T_UAV_03_dynamicLoadout_F			{cost = 12000;  requirements[]={"H"};   };  // "Falcon"
@@ -125,6 +127,7 @@ class CfgWLRequisitionPresets
 				class B_UGV_01_rcws_F 						{cost = 400;	requirements[]={};	offset[]={0, 3, 0};};	// "UGAS" 				
 				class B_UAV_01_F							{cost = 500;    requirements[]={};	};  // AR-2
 				class B_UAV_06_F							{cost = 1000;	requirements[]={};  };  // "AR-6"
+				class C_IDAP_UAV_06_antimine_F				{cost = 3500;	requirements[]={};  };  // "AR-6 (Demining)"
 				class B_Ship_Gun_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 9, 0};};	// "MK45 Hammer"  
 				class B_Radar_System_01_F					{cost = 1000;	requirements[]={};	offset[]={0, 7, 0};};	// "AN/MPQ-105 Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C"  
@@ -247,7 +250,8 @@ class CfgWLRequisitionPresets
 				class O_UGV_01_F							{cost = 150;	requirements[]={};	offset[]={0, 3, 0};};	// "UGV Stomper"   
 				class O_UGV_01_rcws_F						{cost = 400;	requirements[]={};	};	// "UGAV rcws"  
 				class O_UAV_01_F       						{cost = 500;    requirements[]={};  };  // AR-2
-				class O_UAV_06_F						{cost = 1000;	requirements[]={};  };  // "AR-6"
+				class O_UAV_06_F							{cost = 1000;	requirements[]={};  };  // "AR-6"
+				class C_IDAP_UAV_06_antimine_F				{cost = 3500;	requirements[]={};  };  // "AR-6 (Demining)"
 				class O_Radar_System_02_F					{cost = 1000;	requirements[]={};	offset[]={0, 7, 0};};	// "R-750 Cronus Radar"  
 				class B_AAA_System_01_F 					{cost = 3500;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Praetorian 1C";  
 				class B_SAM_System_01_F						{cost = 10000;	requirements[]={};	offset[]={0, 5.3, 0};};	// "Mk49 Spartan";  

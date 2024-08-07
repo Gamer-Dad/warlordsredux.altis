@@ -42,29 +42,97 @@ if (isPlayer _owner) then {
 		_vehicles pushBack _asset;
 		missionNamespace setVariable [_var, _vehicles, [2, clientOwner]];
 		
-		if !(_asset isKindOf "StaticWeapon") then {
-			_rearmTime = if (_asset isKindOf "Helicopter" || {_asset isKindOf "Plane"}) then {30} else {((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600])};
-			_asset setVariable ["BIS_WL_nextRearm", serverTime];
+		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
-			if (typeOf _asset != "B_UAV_06_F" && {typeOf _asset != "O_UAV_06_F"}) then {
-				if (_asset isKindOf "Air") then {
-					_asset spawn BIS_fnc_WL2_sub_rearmAction;
-				} else {
-					_asset spawn BIS_fnc_WL2_sub_rearmAction;
-					if (typeOf _asset == "O_T_Truck_03_device_ghex_F" || {typeOf _asset == "O_Truck_03_device_F"}) then {
-						_asset setVariable ["dazzlerActivated", false];
-						_asset call BIS_fnc_WL2_sub_dazzlerAction;
-					};
+		switch (typeOf _asset) do {
+			// Dazzlers
+			case "O_T_Truck_03_device_ghex_F";
+			case "O_Truck_03_device_F": {
+				_asset setVariable ["dazzlerActivated", false];
+				_asset call BIS_fnc_WL2_sub_dazzlerAction;
+				_asset setObjectTextureGlobal [0, "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)"];
+			};
 
-					if (typeOf _asset == "B_Truck_01_flatbed_F" || {typeOf _asset == "B_T_VTOL_01_vehicle_F" || {typeOf _asset == "O_T_VTOL_02_vehicle_dynamicLoadout_F"}}) then {
-						_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-						if (side _owner == east && {typeOf _asset == "B_Truck_01_flatbed_F"}) then {
-							_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
-							_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
-						};
-					};
+			// Logistics
+			case "B_Truck_01_flatbed_F": {
+				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
+				if (side _owner == east) then {
+					_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
+					_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
 				};
-			} else {
+			};
+			case "B_T_VTOL_01_vehicle_F";
+			case "O_T_VTOL_02_vehicle_dynamicLoadout_F": {
+				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
+			};
+
+			// Livery changes
+			case "I_Plane_Fighter_03_dynamicLoadout_F": {
+				{
+					_asset setObjectTextureGlobal [_forEachIndex, _x];
+				} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Hex" >> "textures"));
+			};
+			case "I_Plane_Fighter_04_F": {
+				{
+					_asset setObjectTextureGlobal [_forEachIndex, _x];
+				} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "DigitalCamoGrey" >> "textures"));
+			};
+			case "I_Truck_02_MRL_F": {
+				_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"];
+				_asset setObjectTextureGlobal [2, "a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa"];
+			};
+			case "B_APC_Wheeled_03_cannon_F": {
+				_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
+				_asset setObjectTextureGlobal [1, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa"];
+				_asset setObjectTextureGlobal [2, "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa"];
+				_asset setObjectTextureGlobal [3, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"];
+			};
+			case "I_Heli_light_03_dynamicLoadout_F": {
+				{
+					_asset setObjectTextureGlobal [_forEachIndex, _x];
+				} forEach getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "EAF" >> "textures");
+			};
+			case "B_AAA_System_01_F": {
+				if (side _owner == east) then {
+					_asset setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
+					_asset setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
+				};
+			};
+			case "B_SAM_System_01_F": {
+				if (side _owner == east) then {
+					_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
+				};
+			};
+			case "B_SAM_System_02_F": {
+				if (side _owner == east) then {
+					_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
+				};
+			};
+			
+			// Radars
+			case "B_Radar_System_01_F";
+			case "O_Radar_System_02_F": {
+				_asset spawn {
+					params ["_asset"];
+
+					_asset setVariable ["radarRotation", false, true];
+					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
+					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
+					_radarIter = 0;
+
+					while {alive _asset} do {
+						if (_asset getVariable "radarRotation") then {
+							_asset lookAt (_lookAtPositions # _radarIter);
+							_radarIter = (_radarIter + 1) % 8;
+						};
+						sleep 1.2;
+					};				
+				};
+			};
+
+			// Suicide drones
+			case "B_UAV_06_F";
+			case "O_UAV_06_F": {
 				waitUntil {sleep 0.1; !(isNull group _asset)};
 				_asset spawn {
 					params ["_asset"];
@@ -104,33 +172,24 @@ if (isPlayer _owner) then {
 						[],
 						2
 					] call BIS_fnc_holdActionAdd;
-				
 				};
 			};
-		} else {
-			_rearmTime = ((missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600]);
-			_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
-			_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
-			if (typeOf _asset == "B_Radar_System_01_F" || {typeOf _asset == "O_Radar_System_02_F"}) then {
-				_asset spawn {
-					params ["_asset"];
-
-					_asset setVariable ["radarRotation", false, true];
-					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
-					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
-					_radarIter = 0;
-
-					while {alive _asset} do {
-						if (_asset getVariable "radarRotation") then {
-							_asset lookAt (_lookAtPositions # _radarIter);
-							_radarIter = (_radarIter + 1) % 8;
-						};
-						sleep 1.2;
-					};				
-				};
+			case "C_IDAP_UAV_06_antimine_F": {
+				waitUntil {sleep 0.1; !(isNull group _asset)};
 			};
 		};
+
+		private _rearmTime = if !(_asset isKindOf "StaticWeapon") then {
+			if (_asset isKindOf "Helicopter" || _asset isKindOf "Plane") then {
+				30;
+			} else {
+				(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
+			};
+		} else {
+			(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
+		};
+		_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
 		if (unitIsUAV _asset) then {
 			if (profileNamespace getVariable ["MRTM_enableAuto", true]) then {
@@ -139,7 +198,13 @@ if (isPlayer _owner) then {
 			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
 		};
 
-		if !(typeOf _asset == "B_Truck_01_medical_F" || {typeOf _asset == "O_Truck_03_medical_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_medevac_F" || {typeOf _asset == "B_Slingload_01_Medevac_F"}}}) then {
+		private _notLockableVehicles = createHashMapFromArray [
+			["B_Truck_01_medical_F", true],
+			["O_Truck_03_medical_F", true],
+			["Land_Pod_Heli_Transport_04_medevac_F", true],
+			["B_Slingload_01_Medevac_F", true]
+		];
+		if !(_notLockableVehicles getOrDefault [typeOf _asset, false]) then {
 			_asset call BIS_fnc_WL2_sub_vehicleLockAction;
 		};
 
@@ -213,9 +278,8 @@ if (isPlayer _owner) then {
 		};
 	};
 
-	_asset setVariable ["BIS_WL_nextRearm", serverTime];
-
 	_asset call BIS_fnc_WL2_sub_removeAction;
+
 	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
 	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
 	if ((count _radarSensor > 0) && (count _crewPosition > 1 || (unitIsUAV _asset))) then {

@@ -6,7 +6,23 @@ _asset = objNull;
 private _owner = owner _sender;
 _uid = getPlayerUID _sender;
 
-if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadout_F" || _class == "B_UAV_05_F" || _class == "O_UAV_02_dynamicLoadout_F" || _class == "O_T_UAV_04_CAS_F") then {
+private _dronePlanes = createHashMapFromArray [
+	["B_UAV_02_dynamicLoadout_F", true],
+	["B_T_UAV_03_dynamicLoadout_F", true],
+	["B_UAV_05_F", true],
+	["O_UAV_02_dynamicLoadout_F", true],
+	["O_T_UAV_04_CAS_F", true]
+];
+
+private _smallDrones = createHashMapFromArray [
+	["B_UAV_01_F", true],
+	["O_UAV_01_F", true],
+	["B_UAV_06_F", true],
+	["O_UAV_06_F", true],
+	["C_IDAP_UAV_06_antimine_F", true]
+];
+
+if (_dronePlanes getOrDefault [_class, false]) then {
 	if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 		_sector = (((BIS_WL_allSectors) select {((_x distance2D _pos) < 15)}) # 0);
 		_array = (_sector call BIS_fnc_WL2_findSpawnPositions);
@@ -76,10 +92,14 @@ if (_class == "B_UAV_02_dynamicLoadout_F" || _class == "B_T_UAV_03_dynamicLoadou
 		_asset = createVehicle [_class, _spawnPos, [], 0, "NONE"];
 		_asset setDir _dir;
 	} else {
-		if (_class == "B_UAV_01_F" || {(_class == "O_UAV_01_F") || {(_class ==  "B_UAV_06_F") || {_class ==  "O_UAV_06_F"}}}) then {
-			_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
-			createVehicleCrew _asset;
-			(group _asset) deleteGroupWhenEmpty true;
+		if (_smallDrones getOrDefault [_class, false]) then {
+			if (_class == "C_IDAP_UAV_06_antimine_F") then {
+				_asset = [_pos, _class, 0, side group _sender] call BIS_fnc_WL2_createUAVCrew;
+			} else {
+				_asset = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
+				createVehicleCrew _asset;
+				(group _asset) deleteGroupWhenEmpty true;
+			};
 		} else {
 			if (isNil {((_pos nearObjects ["Logic", 10]) select {count (_x getVariable ["BIS_WL_runwaySpawnPosArr", []]) > 0}) # 0}) then {
 				_sector = (((BIS_WL_allSectors) select {((_x distance2D _pos) < 15)}) # 0);
@@ -134,20 +154,6 @@ _asset enableWeaponDisassembly false;
 _asset setVehicleReportRemoteTargets true;
 _asset setVehicleReceiveRemoteTargets true;
 _asset setVehicleReportOwnPosition true;
-
-//Buzzard CSAT Hex Camo
-if (typeOf _asset == "I_Plane_Fighter_03_dynamicLoadout_F") then {
-	{
-		_asset setObjectTextureGlobal [_forEachIndex, _x];
-	} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Hex" >> "textures"));
-};
-
-//Gryphon Digital Grey Camo
-if (typeOf _asset == "I_Plane_Fighter_04_F") then {
-	{
-		_asset setObjectTextureGlobal [_forEachIndex, _x];
-	} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "DigitalCamoGrey" >> "textures"));
-};
 
 if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
 		_asset addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1], 120]
