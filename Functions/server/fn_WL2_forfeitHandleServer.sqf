@@ -24,3 +24,8 @@ while {!_terminate && {serverTime < ((missionNamespace getVariable [_varName, -1
 		_x setVariable ["BIS_WL_forfeitVote", nil, [2, (owner _x)]];
 	};
 } forEach (allPlayers select {side group _x == _side});
+
+private _message = format ["%1 has initiated a vote to forfeit the game.", name player];
+{
+	[[_side, "Base"], _message] remoteExec ["commandChat", owner _x];
+} forEach (allPlayers select {side group _x == _side});

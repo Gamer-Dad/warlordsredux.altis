@@ -123,7 +123,7 @@ while {_i < _garrisonSize} do {
 	//***end diag code block***
 	*/
 	private _newGrp = createGroup _owner;
-	private _grpSize = floor (3 + random (5 - 3));
+	private _grpSize = floor (10 + random 3);
 	private _cnt = (count allPlayers) max 1;
 	
 	private _i2 = 0;

@@ -70,9 +70,10 @@ if (_ret) then {
 			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "forfeitVote": {
-			_countSide = (playersNumber (side (group player)));
+			private _countSide = playersNumber BIS_WL_playerSide;
+			private _enemySide = playersNumber BIS_WL_enemySide;
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
-			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
+			if (_countSide < 10 && _countSide > (_enemySide - 5)) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
 			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "Arsenal": {
