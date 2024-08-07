@@ -211,14 +211,20 @@ private _customizationAllowList = [
     "showbag",
     "showtools",
     "showlog",
-    "showslat"
+    "showslat",
+    "moveplow",
+    "showcamo",
+    "showammobox",
+    "wing_fold_l"
 ];
 
 private _availableCustomizations = [];
 {
     private _currentAnimationName = _x;
     {
-        if ([_x, _currentAnimationName, false] call BIS_fnc_inString) then {
+        private _nameMatch = [_x, _currentAnimationName, false] call BIS_fnc_inString;
+        private _hasDisplayName = getText (_assetConfig >> "animationSources" >> _currentAnimationName >> "displayName") != "";
+        if (_nameMatch && _hasDisplayName) then {
             _availableCustomizations pushBack _currentAnimationName;
         };
     } forEach _customizationAllowList;
@@ -282,6 +288,7 @@ _customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
     if (_lbCurSel == 0) exitWith {}; // careful
 
     private _asset = uiNamespace getVariable "WLM_asset";
+    private _assetConfig = configFile >> "CfgVehicles" >> typeOf _asset;
     private _availableCustomizations = uiNamespace getVariable "WLM_assetAvailableCustomizations";
 
     private _customization = _control lbData _lbCurSel;
@@ -318,8 +325,20 @@ _customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
                 default {
                     private _currentValue = _asset animationPhase _customization;
                     if (_currentValue == 1) then {
+                        private _forceAnimations = getArray (_assetConfig >> "animationSources" >> _customization >> "forceAnimate2");
+                        for "_i" from 0 to ((count _forceAnimations - 1) / 2) do {
+                            private _forceAnimationName = _forceAnimations # (_i * 2);
+                            private _forceAnimationValue = _forceAnimations # (_i * 2 + 1);
+                            _asset animateSource [_forceAnimationName, _forceAnimationValue];
+                        };
                         _asset animateSource [_customization, 0];
                     } else {
+                        private _forceAnimations = getArray (_assetConfig >> "animationSources" >> _customization >> "forceAnimate");
+                        for "_i" from 0 to ((count _forceAnimations - 1) / 2) do {
+                            private _forceAnimationName = _forceAnimations # (_i * 2);
+                            private _forceAnimationValue = _forceAnimations # (_i * 2 + 1);
+                            _asset animateSource [_forceAnimationName, _forceAnimationValue];
+                        };
                         _asset animateSource [_customization, 1];
                     };
                 };
