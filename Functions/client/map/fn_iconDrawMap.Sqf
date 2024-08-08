@@ -46,7 +46,7 @@ if (!isNull BIS_WL_mapAssetTarget) then {
 				_size,
 				_size,
 				call BIS_fnc_getDir,
-				call BIS_fnc_iconTextSectorScan,
+				_x call BIS_fnc_iconTextSectorScan,
 				1,
 				0.043,
 				"PuristaBold",
