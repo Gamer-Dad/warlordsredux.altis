@@ -105,11 +105,11 @@ private _side = side _owner;
         _filmGrain ppEffectCommit 0;
 
         private _thermalDisabled = equipmentDisabled _asset # 1;
-        if (_jammerStrength > 0.2 && !_thermalDisabled) then {
+        if (_jammerStrength > WL_JAMMER_SENSOR_THRESHOLD && !_thermalDisabled) then {
             _asset disableTIEquipment true;
             _sensorsDisabled = true;
         } else {
-            if (_jammerStrength <= 0.2 && _thermalDisabled) then {
+            if (_jammerStrength <= WL_JAMMER_SENSOR_THRESHOLD && _thermalDisabled) then {
                 _asset disableTIEquipment false;
                 _sensorsDisabled = false;
             };
