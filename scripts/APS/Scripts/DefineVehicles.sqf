@@ -40,7 +40,7 @@ _apsHeavy = [
 	"I_MBT_03_cannon_F"				// Kuma
 ];
 
-_apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"];
+_apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F", "Land_Device_assembled_F"];
 
 // APS projectile block lists (heavy contains everything medium, medium contains everything light)
 _heavyBlockList = [];				// For now, heavy doesn't block anything extra
@@ -122,5 +122,6 @@ apsVehiclesMap = createHashMap;
 	apsVehiclesMap set [_x, 3];
 } forEach _apsDazzler;
 
+apsDazzler = _apsDazzler;
 apsAPStypes = _apsLight + _apsMedium + _apsHeavy;
 apsAPSAll = apsAPStypes + _apsDazzler;

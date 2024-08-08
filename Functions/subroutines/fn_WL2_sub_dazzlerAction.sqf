@@ -9,7 +9,9 @@ private _actionID = _asset addAction [
 			_asset setVariable ["dazzlerActivated", false, true];
 		} else {
 			_asset setVariable ["dazzlerActivated", true, true];
-			[_asset] remoteExec ["BIS_fnc_WL2_dazzlerOn", 2];
+			if (!isEngineOn _asset) then {
+				[_asset] remoteExec ["BIS_fnc_WL2_dazzlerOn", 2];
+			};
 		};
 		_asset call BIS_fnc_WL2_sub_dazzlerAction;
 	},

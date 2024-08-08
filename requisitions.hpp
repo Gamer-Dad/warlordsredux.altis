@@ -107,12 +107,12 @@ class CfgWLRequisitionPresets
 			};
 			class Defences
 			{
-				
 				class Land_BagFence_Round_F					{cost = 50;		requirements[]={};	offset[]={0, 2, 0};};	// "Semi Circle Sand bags"  
 				class Land_Razorwire_F						{cost = 50;		requirements[]={};	offset[]={0, 5, 0};};	// "Razor Wire Fence"  
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 50;		requirements[]={};	offset[]={0, 2, 0};};	// "Tank barrier"    	  	
 				class CamoNet_BLUFOR_big_F					{cost = 100;	requirements[]={};	offset[]={0, 6, 0};};	// "Camouflage Vehicle Cover (Green)"    	
 				class Land_IRMaskingCover_01_F				{cost = 200;	requirements[]={};	offset[]={0, 8, 0};};	// "IR Masking Tent (Large)"
+				class Land_Device_assembled_F				{cost = 1500;	requirements[]={};	offset[]={0, 4, 0};};	// "Device (Stationary)" 
 				class B_HMG_01_F							{cost = 150;	requirements[]={};	};	// "Mk30 HMG .50"  
 				class B_HMG_01_high_F						{cost = 200;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)" 
 				class B_GMG_01_F							{cost = 200;	requirements[]={};	};	// "Mk32 GMG 20mm"  
@@ -236,7 +236,8 @@ class CfgWLRequisitionPresets
 				class Land_Razorwire_F						{cost = 50;	requirements[]={};		offset[]={0, 5, 0};};	// "Razor Wire Fence"  
 				class Land_DragonsTeeth_01_1x1_new_F		{cost = 50;	requirements[]={};		offset[]={0, 2, 0};};	// "Tank barrier"    	 	
 				class CamoNet_OPFOR_big_F					{cost = 100;	requirements[]={};	offset[]={0, 6, 0};};	// "Camouflage Vehicle Cover (Hex)"    	
-				class Land_IRMaskingCover_01_F				{cost = 200;	requirements[]={};	offset[]={0, 8, 0};};	// "IR Masking Tent (Large)" 
+				class Land_IRMaskingCover_01_F				{cost = 200;	requirements[]={};	offset[]={0, 8, 0};};	// "IR Masking Tent (Large)"
+				class Land_Device_assembled_F				{cost = 1500;	requirements[]={};	offset[]={0, 4, 0};};	// "Device (Stationary)" 
 				class O_HMG_01_F							{cost = 150;	requirements[]={};	};	// "Mk30 HMG .50"  
 				class O_HMG_01_high_F						{cost = 200;	requirements[]={};	};	// "Mk30 HMG .50 (Raised)"
 				class O_GMG_01_F							{cost = 200;	requirements[]={};	};	// "Mk32 GMG 20 mm"

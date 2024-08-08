@@ -16,7 +16,7 @@ _text = "";
 if (!_indicator) then {
 	_text = format["%1 is now %2<br/>", _type, (if (_v call APS_fnc_active) then {"active"} else {"inactive"})];
 };
-if !((typeOf _v) in ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"]) then {
+if !((typeOf _v) in apsDazzler) then {
 	_text = _text + format["Charges: %1/%2", (_v getVariable"apsAmmo"), (_v call APS_fnc_getMaxAmmo)];
 };
 

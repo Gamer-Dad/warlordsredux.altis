@@ -37,6 +37,7 @@ serverNamespace setVariable ["WL2_killRewards",
 		["B_G_Offroad_01_AT_F", 180],
 		["B_Truck_01_flatbed_F", 80], 
 		["B_Truck_01_medical_F", 100],
+		["B_APC_Tracked_01_CRV_F", 300],
 		["B_MRAP_01_hmg_F", 250], 
 		["B_MRAP_01_gmg_F", 250],
 		["B_Truck_01_Repair_F", 80], 
@@ -92,6 +93,7 @@ serverNamespace setVariable ["WL2_killRewards",
 		["Land_BagFence_Round_F", 30], 
 		["Land_Razorwire_F", 30], 
 		["Land_DragonsTeeth_01_1x1_new_F", 30],
+		["Land_Device_assembled_F", 100],
 		["B_HMG_01_F", 100], 
 		["B_HMG_01_high_F", 100], 
 		["B_GMG_01_F", 100], 
@@ -154,7 +156,7 @@ serverNamespace setVariable ["WL2_killRewards",
 		["O_Boat_Transport_01_F", 20], 
 		["O_Boat_Armed_01_hmg_F", 80], 
 		["O_SDV_01_F", 20],
-		//***Blufor crates and defense kill value***/
+		//***OPFOR crates and defense kill value***/
 		["Box_East_Ammo_F", 40], 
 		["Box_East_Grenades_F", 40], 
 		["Box_East_Wps_F", 40], 
@@ -202,6 +204,7 @@ serverNamespace setVariable ["WL2_killRewards",
 		["I_Plane_Fighter_03_dynamicLoadout_F", 600], 
 		["I_Plane_Fighter_03_CAS_F", 500], 
 		["I_Plane_Fighter_04_F", 600],
+		["C_IDAP_UAV_06_antimine_F", 400],
 		//***random Civ stuff?***/
 		["C_Offroad_02_unarmed_F", -150], //why do these have negative values?
 		["C_Plane_Civil_01_F", -250], 
@@ -230,6 +233,7 @@ serverNamespace setVariable ["WL2_cappingValues",
 		["B_Truck_01_Repair_F", 1], 
 		["O_T_Truck_03_device_ghex_F", 1], //<---this thing is blufor?
 		["B_Truck_01_ammo_F", 1],
+		["B_APC_Tracked_01_CRV_F", 1],
 		["B_APC_Wheeled_03_cannon_F", 3], 
 		["B_APC_Wheeled_01_cannon_F", 3], 
 		["B_APC_Tracked_01_rcws_F", 3],
@@ -409,10 +413,11 @@ serverNamespace setVariable ["garbageCollector",
 	]
 ];
 
-serverNamespace setVariable ["camoGarbageCollector", 
+serverNamespace setVariable ["staticsGarbageCollector", 
 	createHashMapFromArray [
 		["CamoNet_BLUFOR_big_F", true],
 		["CamoNet_OPFOR_big_F", true],
-		["Land_IRMaskingCover_01_F", true]
+		["Land_IRMaskingCover_01_F", true],
+		["Land_Device_assembled_F", true]
 	]
 ];

@@ -65,6 +65,10 @@ if (isPlayer _owner) then {
 					_asset setObjectTextureGlobal [3, "#(argb,8,8,3)color(0.6,0.6,0.4,0.15)"];
 				};
 			};
+			case "Land_Device_assembled_F": {
+				_asset setVariable ["dazzlerActivated", true, true];
+				_asset call BIS_fnc_WL2_sub_dazzlerAction;
+			};
 
 			// Logistics
 			case "B_Truck_01_flatbed_F": {
