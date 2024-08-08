@@ -10,7 +10,7 @@ private _side = side _owner;
     while { alive _asset } do {
         private _allAliveEnemyAssets = [];
         {
-            if (side _x != _side || true) then {
+            if (side _x != _side) then {
                 private _assetVar = format ["BIS_WL_ownedVehicles_%1", getPlayerUID _x];
                 _allAliveEnemyAssets append (missionNamespace getVariable [_assetVar, []]) select { alive _x };
             };
