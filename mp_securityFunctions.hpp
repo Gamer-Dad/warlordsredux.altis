@@ -53,6 +53,10 @@ class CfgRemoteExec {
 
 		};
 
+		class BIS_fnc_WL2_updateVehicleList {
+			allowedTargets = 2;
+		};
+
 		class MRTM_fnc_leaveGroup {
 			allowedTargets = 0;
 		};

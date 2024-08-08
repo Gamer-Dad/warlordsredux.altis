@@ -4,8 +4,15 @@ _text = "";
 _control = (findDisplay 12) displayCtrl 51;
 _continue = if (_gps) then {true} else {(ctrlMapScale _control) < 0.3};
 
+private _nameOverrides = createHashMapFromArray [
+	["B_Truck_01_medical_F", "Spawn Truck"],
+	["B_Slingload_01_Medevac_F", "Medical Container"],
+	["O_Truck_03_medical_F", "Spawn Truck"],
+	["Land_Pod_Heli_Transport_04_medevac_F", "Medical Pod"]
+];
+
 if (_continue) then {
-	_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName');
+	private _vd = _nameOverrides getOrDefault [typeOf _t, getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName')];
 	if (unitIsUAV _t) then {
 		if (isUAVConnected _t) then {
 			_op = (UAVControl _t) select 0;

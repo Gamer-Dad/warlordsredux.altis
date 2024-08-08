@@ -48,6 +48,7 @@ if (isPlayer _owner) then {
 		_vehicles = missionNamespace getVariable [_var, []];
 		_vehicles pushBack _asset;
 		missionNamespace setVariable [_var, _vehicles, [2, clientOwner]];
+		0 remoteExec ["BIS_fnc_WL2_updateVehicleList", 2];
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
