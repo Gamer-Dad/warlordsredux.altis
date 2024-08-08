@@ -47,20 +47,24 @@ private _side = side _owner;
             continue;
         };
 
-        private _closestJammer = WL_JAMMER_RANGE_OUTER * WL_JAMMER_RANGE_OUTER;
+        private _closestJammerDistance = WL_JAMMER_RANGE_OUTER * WL_JAMMER_RANGE_OUTER;
+        private _closestJammer = objNull;
         {
             private _distanceToJammer = _asset distanceSqr _x;
-            _closestJammer = _closestJammer min _distanceToJammer;
+            if (_distanceToJammer < _closestJammerDistance) then {
+                _closestJammerDistance = _distanceToJammer;
+                _closestJammer = _x;
+            };
         } forEach _relevantJammers;
-        _closestJammer = sqrt _closestJammer;
+        _closestJammerDistance = sqrt _closestJammerDistance;
 
-        private _jammerStrength = linearConversion [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_INNER, _closestJammer, 0, 1, true];
+        private _jammerStrength = linearConversion [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_INNER, _closestJammerDistance, 0, 1, true];
         _asset setVariable ["BIS_WL_jammerStrength", _jammerStrength];
         
-        if (_closestJammer < WL_JAMMER_RANGE_INNER) then {
+        if (_closestJammerDistance < WL_JAMMER_RANGE_INNER) then {
             if (getPosATL _asset # 2 > 1) then {	
                 // flyers take damage
-                _asset setDamage (damage _asset + 0.1);
+                _asset setDamage [(damage _asset + 0.1), true, _closestJammer];
             } else {
                 // all others, disable control
                 _asset setAutonomous false;
