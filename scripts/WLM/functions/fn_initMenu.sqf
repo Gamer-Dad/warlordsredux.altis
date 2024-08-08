@@ -86,24 +86,64 @@ private _camoSelectControl = _display displayCtrl WLM_CAMO_SELECT;
 private _textureSlots = getArray (_assetConfig >> "hiddenSelections");
 
 private _customTexturesList = [];
-private _defaultTextureList = [];
+private _defaultTextureList = getArray (_assetConfig >> "hiddenSelectionsTextures");
 
+private _side = side player;
 switch (typeOf _asset) do {
+    case "O_T_Truck_03_device_ghex_F";
+    case "O_Truck_03_device_F": {
+        if (_side == west) then {
+            _defaultTextureList = [
+                "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)",
+                "#(argb,8,8,3)color(0.2,0.25,0.25,0.15)",
+                "#(argb,8,8,3)color(0.2,0.25,0.3,0.15)",
+                "#(argb,8,8,3)color(0.6,0.6,0.4,0.15)",
+                "\A3\Structures_F_EPC\Items\Electronics\Data\The_Device_02_CO.paa",
+                "\A3\Structures_F_EPC\Items\Electronics\Data\The_Device_03_CO.paa"
+            ];
+        };
+    };
+    case "B_Truck_01_flatbed_F": {
+        if (_side == east) then {
+            _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "Olive" >> "textures");
+        };
+    };
     case "I_Plane_Fighter_03_dynamicLoadout_F": {
         _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "Hex" >> "textures");
     };
     case "I_Plane_Fighter_04_F": {
         _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "DigitalCamoGrey" >> "textures");
     };
-    default { 
-        _defaultTextureList = getArray (_assetConfig >> "hiddenSelectionsTextures") 
+    case "I_Truck_02_MRL_F": {
+        _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "Opfor" >> "textures");
+    };
+    case "B_APC_Wheeled_03_cannon_F": {
+        _defaultTextureList = [
+            "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa",
+            "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa",
+            "A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa",
+            "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa",
+            "A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
+            "A3\armor_f\data\cage_G3_co.paa"
+        ];
+        
+    };
+    case "I_Heli_light_03_dynamicLoadout_F": {
+        _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "EAF" >> "textures");
+    };
+    case "B_AAA_System_01_F";
+    case "B_SAM_System_01_F";
+    case "B_SAM_System_02_F": {
+        if (_side == east) then {
+            _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "Green" >> "textures");
+        };
     };
 };
 
 _customTexturesList pushBack [localize "STR_WLM_DEFAULT", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
 _customTexturesList pushBack [format ["--- %1 ---", localize "STR_WLM_OFFICIAL"], "", ""];
 
-private _additionalTextureSources = [side player] call WLM_fnc_textureLists;
+private _additionalTextureSources = [_side] call WLM_fnc_textureLists;
 
 {
     private _textureSource = _x;
@@ -115,12 +155,12 @@ _customTexturesList pushBack [format ["--- %1 ---", localize "STR_WLM_CUSTOM"], 
 
 private _pushCustomTexture = {
     params ["_textureName", "_customTexturesList"];
-    private _texturePath = format ["Img\camo\%1\%2.paa", (toLower format ["%1", side player]), toLower _textureName];
+    private _texturePath = format ["Img\camo\%1\%2.paa", (toLower format ["%1", _side]), toLower _textureName];
     if !(fileExists _texturePath) exitWith {};
     _customTexturesList pushBack [_textureName, _texturePath, localize "STR_WLM_CUSTOM"];
 };
 
-private _dir = "Img\camo\" + (toLower format ["%1", side player]) + "\";
+private _dir = "Img\camo\" + (toLower format ["%1", _side]) + "\";
 {
     private _textureName = _x;
     [_textureName, _customTexturesList] call _pushCustomTexture;
@@ -129,12 +169,12 @@ private _dir = "Img\camo\" + (toLower format ["%1", side player]) + "\";
 
 // Color textures
 _customTexturesList pushBack [localize "STR_WLM_SOLID_COLORS", "", ""];
-if (side player == west) then {
+if (_side == west) then {
     _customTexturesList pushBack ["Stealth Black", "#(rgb,8,8,3)color(0.23,0.23,0.24,0.05)", "Solid Color"];
     _customTexturesList pushBack ["NATO Blue", "#(rgb,8,8,3)color(0.01,0.24,0.76,0.05)", "Solid Color"];
     _customTexturesList pushBack ["Tactical Tan", "#(rgb,8,8,3)color(0.40,0.34,0.27,0.4)", "Solid Color"];
 };
-if (side player == east) then {
+if (_side == east) then {
     _customTexturesList pushBack ["Cockpit Turquoise", "#(rgb,8,8,3)color(0,0.44,0.56,0.1)", "Solid Color"];
     _customTexturesList pushBack ["CSAT Red", "#(rgb,8,8,3)color(0.49,0.26,0.26,0.05)", "Solid Color"];
     _customTexturesList pushBack ["Tropical Green", "#(rgb,8,8,3)color(0,0.84,0.16,0.03)", "Solid Color"];
@@ -224,7 +264,7 @@ private _availableCustomizations = [];
     {
         private _nameMatch = [_x, _currentAnimationName, false] call BIS_fnc_inString;
         private _hasDisplayName = getText (_assetConfig >> "animationSources" >> _currentAnimationName >> "displayName") != "";
-        if (_nameMatch && _hasDisplayName) then {
+        if (_nameMatch && (_hasDisplayName || _currentAnimationName == "MovePlow")) then {
             _availableCustomizations pushBack _currentAnimationName;
         };
     } forEach _customizationAllowList;

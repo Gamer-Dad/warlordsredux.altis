@@ -6,10 +6,10 @@ private _actionID = _asset addAction [
 		_this params ["_asset", "_caller", "_actionID"];
 		_asset removeAction _actionID;
 		if (_asset getVariable "dazzlerActivated") then {
-			_asset setVariable ["dazzlerActivated", false];
+			_asset setVariable ["dazzlerActivated", false, true];
 		} else {
-			_asset setVariable ["dazzlerActivated", true];
-			_asset engineOn true;
+			_asset setVariable ["dazzlerActivated", true, true];
+			[_asset] remoteExec ["BIS_fnc_WL2_dazzlerOn", 2];
 		};
 		_asset call BIS_fnc_WL2_sub_dazzlerAction;
 	},
