@@ -4,18 +4,17 @@ params ["_asset", "_owner"];
 
 private _side = side _owner;
 
+private _allUavs = missionNamespace getVariable ["BIS_WL_uavs", []];
+_allUavs pushBack _asset;
+missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
+
 // Jammer checker (5s loop)
 [_asset, _side] spawn {
     params ["_asset", "_side"];
     while { alive _asset } do {
-        private _allAliveEnemyAssets = [];
-        {
-            if (side _x != _side) then {
-                private _assetVar = format ["BIS_WL_ownedVehicles_%1", getPlayerUID _x];
-                _allAliveEnemyAssets append (missionNamespace getVariable [_assetVar, []]) select { alive _x };
-            };
-        } forEach allPlayers;
-        private _allJammers = _allAliveEnemyAssets select { _x getVariable ["BIS_WL_jammerActivated", false] };
+        private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
+        private _allJammers = _jammerMarkers apply { _x # 0 };
+        private _enemyJammers = _allJammers select { side _x != _side };
 
         private _jammersInRange = _allJammers select {
             private _distanceToJammer = _asset distanceSqr _x;
@@ -41,8 +40,10 @@ private _side = side _owner;
             continue;
         };
 
+        private _spectrumJammed = _asset getVariable ["BIS_WL_spectrumJammed", false];
+
         private _relevantJammers = _asset getVariable ["BIS_WL_relevantJammers", []];
-        if (count _relevantJammers == 0) then {
+        if (count _relevantJammers == 0 && !_spectrumJammed) then {
             _asset setVariable ["BIS_WL_jammerStrength", 0];
             continue;
         };
@@ -59,9 +60,16 @@ private _side = side _owner;
         _closestJammerDistance = sqrt _closestJammerDistance;
 
         private _jammerStrength = linearConversion [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_INNER, _closestJammerDistance, 0, 1, true];
+        if (_spectrumJammed) then {
+            _jammerStrength = 1;
+            playSoundUI ["a3\sounds_f\vehicles\air\CAS_01\noise.wss", 1, 1, false, 3.6];
+            systemChat format ["UAV hit with jamming signal!"];
+        };
         _asset setVariable ["BIS_WL_jammerStrength", _jammerStrength];
         
-        if (_closestJammerDistance < WL_JAMMER_RANGE_INNER) then {
+        if (_jammerStrength >= 1) then {
+            _asset setVariable ["BIS_WL_spectrumJammed", false, true];
+
             if (getPosATL _asset # 2 > 1) then {	
                 // flyers take damage
                 _asset setDamage [(damage _asset + 0.1), true, _closestJammer];

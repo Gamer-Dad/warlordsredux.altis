@@ -30,3 +30,5 @@ player addEventHandler ["HandleRating", {
 	params ["_unit", "_rating"];
 	0;
 }];
+
+call BIS_fnc_WL2_spectrumAction;

@@ -111,4 +111,24 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	};
 };
 
+0 spawn {
+	while { !BIS_WL_missionEnd } do {
+		private _jammerMarkerPairs = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
+		private _newJammerMarkerPairs = [];
+		{
+			private _jammer = _x select 0;
+			private _outerMarker = _x select 1;
+			private _jammerAlive = alive _jammer;
+			if (!_jammerAlive) then {
+				deleteMarker _outerMarker;
+			} else {
+				_outerMarker setMarkerPos _jammer;
+				_newJammerMarkerPairs pushBack _x;
+			};
+		} forEach _jammerMarkerPairs;
+		missionNamespace setVariable ["BIS_WL_jammerMarkers", _newJammerMarkerPairs, true];
+		sleep 5;
+	};
+};
+
 ["server_init"] call BIS_fnc_endLoadingScreen;

@@ -64,9 +64,11 @@ BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers
 BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
 BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFix.sqf";
 BIS_fnc_WL2_uavJammer = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_uavJammer.sqf";
+BIS_fnc_WL2_spectrumAction = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_spectrumAction.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
+BIS_fnc_WL2_sub_jammerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_jammerAction.sqf";
 BIS_fnc_WL2_sub_logisticsAddAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_logisticsAddAction.sqf";
 BIS_fnc_WL2_sub_purchaseMenuAssetAvailability = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_purchaseMenuAssetAvailability.sqf";
 BIS_fnc_WL2_sub_purchaseMenuGetUIScale = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_purchaseMenuGetUIScale.sqf";
@@ -351,6 +353,8 @@ addMissionEventHandler ["Map", {
 		BIS_WL_DisplayCaptureProgress = false;
 	};
 }];
+
+call BIS_fnc_WL2_spectrumAction;
 
 player addEventHandler ["HandleRating", {
 	params ["_unit", "_rating"];

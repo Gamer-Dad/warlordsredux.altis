@@ -7,10 +7,8 @@ private _actionID = _asset addAction [
 		_asset removeAction _actionID;
 		if (_asset getVariable "BIS_WL_dazzlerActivated") then {
 			_asset setVariable ["BIS_WL_dazzlerActivated", false, true];
-			_asset setVariable ["BIS_WL_jammerActivated", false, true];
 		} else {
 			_asset setVariable ["BIS_WL_dazzlerActivated", true, true];
-			_asset setVariable ["BIS_WL_jammerActivated", true, true];
 			if (!isEngineOn _asset) then {
 				[_asset] remoteExec ["BIS_fnc_WL2_dazzlerOn", 2];
 			};

@@ -529,6 +529,40 @@
             <Chinesesimp>禁用 dazzler</Chinesesimp>
             <Chinese>禁用 dazzler</Chinese>
         </Key>
+        <Key ID="STR_A3_jammer_enable">
+            <Original>Enable jammer</Original>
+            <English>Enable jammer</English>
+            <Czech>Povolit rušičku</Czech>
+            <French>Activer le brouilleur</French>
+            <German>Jammer aktivieren</German>
+            <Italian>Attiva il disturbatore</Italian>
+            <Polish>Włącz zakłócacz</Polish>
+            <Portuguese>Ativar o jammer</Portuguese>
+            <Russian>Включить глушилку</Russian>
+            <Spanish>Activar el jammer</Spanish>
+            <Turkish>Jammer'ı etkinleştir</Turkish>
+            <Korean>방해기 활성화</Korean>
+            <Japanese>ジャマーを有効にする</Japanese>
+            <Chinesesimp>启用干扰器</Chinesesimp>
+            <Chinese>啟用干擾器</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_disable">
+            <Original>Disable jammer</Original>
+            <English>Disable jammer</English>
+            <Czech>Zakázat rušičku</Czech>
+            <French>Désactiver le brouilleur</French>
+            <German>Jammer deaktivieren</German>
+            <Italian>Disattiva il disturbatore</Italian>
+            <Polish>Wyłącz zakłócacz</Polish>
+            <Portuguese>Desativar o jammer</Portuguese>
+            <Russian>Отключить глушилку</Russian>
+            <Spanish>Desactivar el jammer</Spanish>
+            <Turkish>Jammer'ı devre dışı bırak</Turkish>
+            <Korean>방해기 비활성화</Korean>
+            <Japanese>ジャマーを無効にする</Japanese>
+            <Chinesesimp>禁用干扰器</Chinesesimp>
+            <Chinese>禁用干擾器</Chinese>
+        </Key>
         <Key ID="STR_A3_radar_rotation_enable">
             <Original>Enable Automatic Rotation</Original>
             <English>Enable Automatic Rotation</English>

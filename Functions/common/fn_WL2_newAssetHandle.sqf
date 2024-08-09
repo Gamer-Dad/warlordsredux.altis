@@ -51,6 +51,7 @@ if (isPlayer _owner) then {
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
+		private _side = side _owner;
 		switch (typeOf _asset) do {
 			// Dazzlers
 			case "O_T_Truck_03_device_ghex_F";
@@ -58,8 +59,11 @@ if (isPlayer _owner) then {
 				_asset setVariable ["BIS_WL_dazzlerActivated", false, true];
 				_asset setVariable ["BIS_WL_jammerActivated", false, true];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
+				_asset call BIS_fnc_WL2_sub_jammerAction;
 
-				if (side _owner == west) then {
+				[_asset, _side] call BIS_fnc_drawJammerCircle;
+
+				if (_side == west) then {
 					_asset setObjectTextureGlobal [0, "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)"];
 					_asset setObjectTextureGlobal [1, "#(argb,8,8,3)color(0.2,0.25,0.25,0.15)"];
 					_asset setObjectTextureGlobal [2, "#(argb,8,8,3)color(0.2,0.25,0.3,0.15)"];
@@ -67,31 +71,18 @@ if (isPlayer _owner) then {
 				};
 			};
 			case "Land_Communication_F": {
-				_asset setVariable ["BIS_WL_jammerActivated", true, true];
-				// too hardy otherwise, start off at 10% health
-				_asset setDamage 0.9;
+				_asset setVariable ["BIS_WL_jammerActivated", true];
+				// too hardy otherwise, start off at 20% health
+				_asset setDamage 0.8;
+				_asset call BIS_fnc_WL2_sub_jammerAction;
 
-				private _outerMarkerName = format ["BIS_WL_jammerMarkerOuter_%1", netId _asset];
-				private _jamColor = if (side _owner == west) then { "ColorWEST" } else { "ColorPink" };
-
-				createMarkerLocal [_outerMarkerName, _asset, 1, _owner];
-				_outerMarkerName setMarkerShapeLocal "ELLIPSE";
-				_outerMarkerName setMarkerBrushLocal "Cross";
-				_outerMarkerName setMarkerColorLocal _jamColor;
-				_outerMarkerName setMarkerSizeLocal [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_OUTER];
-				_outerMarkerName setMarkerAlpha 1;
-
-				[_asset, _outerMarkerName] spawn {
-					params ["_asset", "_outerMarkerName"];
-					waitUntil { sleep 1; !(alive _asset) };
-					deleteMarker _outerMarkerName;
-				};
+				[_asset, _side] call BIS_fnc_drawJammerCircle;
 			};
 
 			// Logistics
 			case "B_Truck_01_flatbed_F": {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-				if (side _owner == east) then {
+				if (_side == east) then {
 					{
 						_asset setObjectTextureGlobal [_forEachIndex, _x];
 					} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Olive" >> "textures"));
@@ -132,7 +123,7 @@ if (isPlayer _owner) then {
 			case "B_AAA_System_01_F";
 			case "B_SAM_System_01_F";
 			case "B_SAM_System_02_F": {
-				if (side _owner == east) then {
+				if (_side == east) then {
 					{
 						_asset setObjectTextureGlobal [_forEachIndex, _x];
 					} forEach getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Green" >> "textures");
