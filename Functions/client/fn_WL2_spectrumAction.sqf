@@ -2,7 +2,7 @@
 
 [
     player,
-    "Send jamming signal",
+    localize "STR_A3_jammer_send",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
     "currentWeapon player == 'hgun_esd_01_F'",
@@ -24,7 +24,7 @@
                 private _distanceToPlayer = player distanceSqr _x;
                 if (_distanceToPlayer > (WL_JAMMER_SPECTRUM_RANGE * WL_JAMMER_SPECTRUM_RANGE)) then { continue; };
 
-                systemChat format ["Jamming signal sent!"];
+                systemChat (localize "STR_A3_jammer_sent");
                 _x setVariable ["BIS_WL_spectrumJammed", true, true];
             } forEach _allEnemyUavs;
         };

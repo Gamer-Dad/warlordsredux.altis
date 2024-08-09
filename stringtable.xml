@@ -563,6 +563,74 @@
             <Chinesesimp>禁用干扰器</Chinesesimp>
             <Chinese>禁用干擾器</Chinese>
         </Key>
+        <Key ID="STR_A3_jammer_send">
+            <Original>Send jamming signal</Original>
+            <English>Send jamming signal</English>
+            <Czech>Odeslat rušící signál</Czech>
+            <French>Envoyer un signal de brouillage</French>
+            <German>Störsignal senden</German>
+            <Italian>Inviare segnale di disturbo</Italian>
+            <Polish>Wysłać sygnał zakłócający</Polish>
+            <Portuguese>Enviar sinal de interferência</Portuguese>
+            <Russian>Послать помеховый сигнал</Russian>
+            <Spanish>Enviar señal de interferencia</Spanish>
+            <Turkish>Jam sinyali gönder</Turkish>
+            <Korean>교란 신호 보내기</Korean>
+            <Japanese>ジャミング信号を送信する</Japanese>
+            <Chinesesimp>发送干扰信号</Chinesesimp>
+            <Chinese>發送干擾信號</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_sent">
+            <Original>Jamming signal sent!</Original>
+            <English>Jamming signal sent!</English>
+            <Czech>Rušící signál odeslán!</Czech>
+            <French>Signal de brouillage envoyé!</French>
+            <German>Störsignal gesendet!</German>
+            <Italian>Segnale di disturbo inviato!</Italian>
+            <Polish>Sygnał zakłócający wysłany!</Polish>
+            <Portuguese>Sinal de interferência enviado!</Portuguese>
+            <Russian>Помеховый сигнал послан!</Russian>
+            <Spanish>Señal de interferencia enviada!</Spanish>
+            <Turkish>Jam sinyali gönderildi!</Turkish>
+            <Korean>교란 신호 발신됨!</Korean>
+            <Japanese>ジャミング信号を送信しました!</Japanese>
+            <Chinesesimp>干扰信号已发送!</Chinesesimp>
+            <Chinese>干擾信號已發送!</Chinese>
+        </Key>
+        <Key ID="STR_A3_UAV_jammed">
+            <Original>UAV hit with jamming signal!</Original>
+            <English>UAV hit with jamming signal!</English>
+            <Czech>UAV zasažen rušícím signálem!</Czech>
+            <French>Le drone a été touché par un signal de brouillage!</French>
+            <German>UAV von Störsignal getroffen!</German>
+            <Italian>UAV colpito da segnale di disturbo!</Italian>
+            <Polish>UAV trafiony sygnałem zakłócającym!</Polish>
+            <Portuguese>UAV atingido por sinal de interferência!</Portuguese>
+            <Russian>БПЛА поражен помеховым сигналом!</Russian>
+            <Spanish>Dron impactado con señal de interferencia!</Spanish>
+            <Turkish>İHA jam sinyali ile vuruldu!</Turkish>
+            <Korean>무인 항공기가 교란 신호를 받았습니다!</Korean>
+            <Japanese>UAVがジャミング信号で撃たれました!</Japanese>
+            <Chinesesimp>无人机被干扰信号击中!</Chinesesimp>
+            <Chinese>無人機被干擾信號擊中!</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_strength">
+            <Original>Jamming signal strength: %1</Original>
+            <English>Jamming signal strength: %1</English>
+            <Czech>Síla rušícího signálu: %1</Czech>
+            <French>Intensité du signal de brouillage : %1</French>
+            <German>Stärke des Störsignals: %1</German>
+            <Italian>Intensità del segnale di disturbo: %1</Italian>
+            <Polish>Siła sygnału zakłócającego: %1</Polish>
+            <Portuguese>Intensidade do sinal de interferência: %1</Portuguese>
+            <Russian>Мощность помехового сигнала: %1</Russian>
+            <Spanish>Intensidad de la señal de interferencia: %1</Spanish>
+            <Turkish>Jam sinyali gücü: %1</Turkish>
+            <Korean>교란 신호 강도: %1</Korean>
+            <Japanese>ジャミング信号の強度: %1</Japanese>
+            <Chinesesimp>干扰信号强度: %1</Chinesesimp>
+            <Chinese>干擾信號強度: %1</Chinese>
+        </Key>
         <Key ID="STR_A3_radar_rotation_enable">
             <Original>Enable Automatic Rotation</Original>
             <English>Enable Automatic Rotation</English>

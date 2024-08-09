@@ -63,7 +63,7 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
         if (_spectrumJammed) then {
             _jammerStrength = 1;
             playSoundUI ["a3\sounds_f\vehicles\air\CAS_01\noise.wss", 1, 1, false, 3.6];
-            systemChat format ["UAV hit with jamming signal!"];
+            systemChat (localize "STR_A3_UAV_jammed");
         };
         _asset setVariable ["BIS_WL_jammerStrength", _jammerStrength];
         
@@ -87,11 +87,24 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
 // Jammer screen effect (1s loop)
 [_asset] spawn {
     params ["_asset"];
-    private _filmGrain = ppEffectCreate ["filmGrain", 2000];
+    
+    private _priority = missionNamespace getVariable ["BIS_WL_filmGrainPriority", 2000];    
+    private _filmGrain = ppEffectCreate ["filmGrain", _priority];
     _filmGrain ppEffectAdjust [1, 0];
     _filmGrain ppEffectEnable false;
     _filmGrain ppEffectForceInNVG true;
     _filmGrain ppEffectCommit 0;
+    missionNamespace setVariable ["BIS_WL_filmGrainPriority", _priority + 1];
+
+    private _display = uiNamespace getVariable ["RscJammingIndicator", objNull];
+    if (isNull _display) then {
+        "Jamming" cutRsc ["RscJammingIndicator", "PLAIN", -1, false, true];
+        _display = uiNamespace getVariable "RscJammingIndicator";
+    };
+    private _indicator = _display displayCtrl 7001;
+    private _indicatorWidth = (localize "STR_A3_jammer_strength") getTextWidth ["PuristaMedium", 0.04];
+    _indicator ctrlSetPosition [1, 0, _indicatorWidth + 0.05, 0.1];
+    _indicator ctrlCommit 0;
 
     private _sensors = (listVehicleSensors _asset) apply { _x # 0 };
     private _sensorsDisabled = false;
@@ -100,17 +113,24 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
         
         if (!isRemoteControlling player) then {
             _filmGrain ppEffectEnable false;
-            hintSilent "";
+
+            _indicator ctrlSetText "";
+            _indicator ctrlSetBackgroundColor [0, 0, 0, 0];
         } else {
             private _isControllingThisAsset = (UAVControl _asset) # 1 != "";
             if (_isControllingThisAsset) then {
                 if (_jammerStrength > 0) then {
-                    hintSilent format ["Jamming signal strength: %1", round (_jammerStrength * 100)];
+                    private _indicatorText = format [localize "STR_A3_jammer_strength", round (_jammerStrength * 100)];
+                    _indicator ctrlSetText _indicatorText;
+                    _indicator ctrlSetBackgroundColor [0, 0, 0, 0.5];
+
                     _filmGrain ppEffectEnable true;
                     _filmGrain ppEffectAdjust [1, (1 - _jammerStrength)];
                 } else {
                     _filmGrain ppEffectEnable false;
-                    hintSilent "";
+
+                    _indicator ctrlSetText "";
+                    _indicator ctrlSetBackgroundColor [0, 0, 0, 0];
                 };
             };
         };
