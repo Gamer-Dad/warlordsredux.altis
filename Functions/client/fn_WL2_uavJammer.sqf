@@ -15,7 +15,7 @@ private _side = side _owner;
                 _allAliveEnemyAssets append (missionNamespace getVariable [_assetVar, []]) select { alive _x };
             };
         } forEach allPlayers;
-        private _allJammers = _allAliveEnemyAssets select { _x getVariable ["dazzlerActivated", false] };
+        private _allJammers = _allAliveEnemyAssets select { _x getVariable ["BIS_WL_jammerActivated", false] };
 
         private _jammersInRange = _allJammers select {
             private _distanceToJammer = _asset distanceSqr _x;

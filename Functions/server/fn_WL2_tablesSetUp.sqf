@@ -93,7 +93,7 @@ serverNamespace setVariable ["WL2_killRewards",
 		["Land_BagFence_Round_F", 30], 
 		["Land_Razorwire_F", 30], 
 		["Land_DragonsTeeth_01_1x1_new_F", 30],
-		["Land_Device_assembled_F", 100],
+		["Land_Communication_F", 100],
 		["B_HMG_01_F", 100], 
 		["B_HMG_01_high_F", 100], 
 		["B_GMG_01_F", 100], 
@@ -418,6 +418,6 @@ serverNamespace setVariable ["staticsGarbageCollector",
 		["CamoNet_BLUFOR_big_F", true],
 		["CamoNet_OPFOR_big_F", true],
 		["Land_IRMaskingCover_01_F", true],
-		["Land_Device_assembled_F", true]
+		["Land_Communication_F", true]
 	]
 ];

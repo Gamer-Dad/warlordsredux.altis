@@ -10,7 +10,7 @@ _radius = if (_dazzleable) then {125} else {sqrt (getMissionConfigValue ["BIS_WL
 
 _continue = alive _projectile;
 while {_continue} do {
-	_eligibleNearbyVehicles = ((_projectile nearEntities [["LandVehicle"], _radius]) + (_projectile nearObjects ["Land_Device_assembled_F", _radius])) select { 
+	_eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _radius]) select { 
 		_x != _unit &&
 		_x call APS_fnc_active
 	};

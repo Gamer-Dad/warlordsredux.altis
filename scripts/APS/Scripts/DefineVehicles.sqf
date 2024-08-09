@@ -40,7 +40,7 @@ _apsHeavy = [
 	"I_MBT_03_cannon_F"				// Kuma
 ];
 
-_apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F", "Land_Device_assembled_F"];
+_apsDazzler = ["O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"];
 
 // APS projectile block lists (heavy contains everything medium, medium contains everything light)
 _heavyBlockList = [];				// For now, heavy doesn't block anything extra

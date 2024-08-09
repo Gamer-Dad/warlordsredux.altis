@@ -55,7 +55,8 @@ if (isPlayer _owner) then {
 			// Dazzlers
 			case "O_T_Truck_03_device_ghex_F";
 			case "O_Truck_03_device_F": {
-				_asset setVariable ["dazzlerActivated", false, true];
+				_asset setVariable ["BIS_WL_dazzlerActivated", false, true];
+				_asset setVariable ["BIS_WL_jammerActivated", false, true];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
 
 				if (side _owner == west) then {
@@ -65,9 +66,26 @@ if (isPlayer _owner) then {
 					_asset setObjectTextureGlobal [3, "#(argb,8,8,3)color(0.6,0.6,0.4,0.15)"];
 				};
 			};
-			case "Land_Device_assembled_F": {
-				_asset setVariable ["dazzlerActivated", true, true];
-				_asset call BIS_fnc_WL2_sub_dazzlerAction;
+			case "Land_Communication_F": {
+				_asset setVariable ["BIS_WL_jammerActivated", true, true];
+				// too hardy otherwise, start off at 10% health
+				_asset setDamage 0.9;
+
+				private _outerMarkerName = format ["BIS_WL_jammerMarkerOuter_%1", netId _asset];
+				private _jamColor = if (side _owner == west) then { "ColorWEST" } else { "ColorPink" };
+
+				createMarkerLocal [_outerMarkerName, _asset, 1, _owner];
+				_outerMarkerName setMarkerShapeLocal "ELLIPSE";
+				_outerMarkerName setMarkerBrushLocal "Cross";
+				_outerMarkerName setMarkerColorLocal _jamColor;
+				_outerMarkerName setMarkerSizeLocal [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_OUTER];
+				_outerMarkerName setMarkerAlpha 1;
+
+				[_asset, _outerMarkerName] spawn {
+					params ["_asset", "_outerMarkerName"];
+					waitUntil { sleep 1; !(alive _asset) };
+					deleteMarker _outerMarkerName;
+				};
 			};
 
 			// Logistics
