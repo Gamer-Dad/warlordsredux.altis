@@ -173,21 +173,21 @@
             <Chinese>Alt-Shift-點擊以%1刪除%2%3%4。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_save_loadout">
-            <Original>Save loadout.</Original>
-            <English>Save loadout.</English>
-            <Czech>Uložit výbavu.</Czech>
-            <French>Enregistrer la configuration.</French>
-            <German>Ausrüstung speichern.</German>
-            <Italian>Salva configurazione.</Italian>
-            <Polish>Zapisz wyposażenie.</Polish>
-            <Portuguese>Salvar configuração.</Portuguese>
-            <Russian>Сохранить снаряжение.</Russian>
-            <Spanish>Guardar configuración.</Spanish>
-            <Turkish>Ekipman kaydet.</Turkish>
-            <Korean>장비 저장.</Korean>
-            <Japanese>装備を保存。</Japanese>
-            <Chinesesimp>保存装备。</Chinesesimp>
-            <Chinese>保存裝備。</Chinese>
+            <Original>Save loadout</Original>
+            <English>Save loadout</English>
+            <Czech>Uložit výbavu</Czech>
+            <French>Enregistrer la configuration</French>
+            <German>Ausrüstung speichern</German>
+            <Italian>Salva configurazione</Italian>
+            <Polish>Zapisz wyposażenie</Polish>
+            <Portuguese>Salvar configuração</Portuguese>
+            <Russian>Сохранить снаряжение</Russian>
+            <Spanish>Guardar configuración</Spanish>
+            <Turkish>Ekipman kaydet</Turkish>
+            <Korean>장비 저장</Korean>
+            <Japanese>装備を保存</Japanese>
+            <Chinesesimp>保存装备</Chinesesimp>
+            <Chinese>保存裝備</Chinese>
         </Key>
         <Key ID="STR_A3_WL_save_loadout_info">
             <Original>Save your current loadout for later reapplication.</Original>
@@ -207,21 +207,21 @@
             <Chinese>保存您当前的装载方案，以便后续使用。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_saved_loadout">
-            <Original>Your saved loadout.</Original>
-            <English>Your saved loadout.</English>
-            <Czech>Tvůj uložený výběr výzbroje.</Czech>
-            <French>Votre équipement enregistré.</French>
-            <German>Deine gespeicherte Ausrüstung.</German>
-            <Italian>Il tuo equipaggiamento salvato.</Italian>
-            <Polish>Twój zapisany wybór wyposażenia.</Polish>
-            <Portuguese>Seu equipamento salvo.</Portuguese>
-            <Russian>Ваше сохраненное снаряжение.</Russian>
-            <Spanish>Tu equipación guardada.</Spanish>
-            <Turkish>Kaydedilen ekipmanınız.</Turkish>
-            <Korean>저장된 로드아웃.</Korean>
-            <Japanese>保存された装備。</Japanese>
-            <Chinesesimp>你保存的装备。</Chinesesimp>
-            <Chinese>您保存的装备。</Chinese>
+            <Original>Your saved loadout</Original>
+            <English>Your saved loadout</English>
+            <Czech>Tvůj uložený výběr výzbroje</Czech>
+            <French>Votre équipement enregistré</French>
+            <German>Deine gespeicherte Ausrüstung</German>
+            <Italian>Il tuo equipaggiamento salvato</Italian>
+            <Polish>Twój zapisany wybór wyposażenia</Polish>
+            <Portuguese>Seu equipamento salvo</Portuguese>
+            <Russian>Ваше сохраненное снаряжение</Russian>
+            <Spanish>Tu equipación guardada</Spanish>
+            <Turkish>Kaydedilen ekipmanınız</Turkish>
+            <Korean>저장된 로드아웃</Korean>
+            <Japanese>保存された装備</Japanese>
+            <Chinesesimp>你保存的装备</Chinesesimp>
+            <Chinese>您保存的装备</Chinese>
         </Key>
         <Key ID="STR_A3_WL_saved_loadout_info">
             <Original>Apply your saved loadout.%1You can save your current loadout by requesting 'Save loadout' at the end of this list.</Original>
