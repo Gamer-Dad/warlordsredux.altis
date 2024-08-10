@@ -51,21 +51,41 @@ if (isPlayer _owner) then {
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
+		private _side = side _owner;
 		switch (typeOf _asset) do {
 			// Dazzlers
 			case "O_T_Truck_03_device_ghex_F";
 			case "O_Truck_03_device_F": {
-				_asset setVariable ["dazzlerActivated", false];
+				_asset setVariable ["BIS_WL_dazzlerActivated", false, true];
+				_asset setVariable ["BIS_WL_jammerActivated", false, true];
 				_asset call BIS_fnc_WL2_sub_dazzlerAction;
-				_asset setObjectTextureGlobal [0, "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)"];
+				_asset call BIS_fnc_WL2_sub_jammerAction;
+
+				[_asset, _side] call BIS_fnc_drawJammerCircle;
+
+				if (_side == west) then {
+					_asset setObjectTextureGlobal [0, "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)"];
+					_asset setObjectTextureGlobal [1, "#(argb,8,8,3)color(0.2,0.25,0.25,0.15)"];
+					_asset setObjectTextureGlobal [2, "#(argb,8,8,3)color(0.2,0.25,0.3,0.15)"];
+					_asset setObjectTextureGlobal [3, "#(argb,8,8,3)color(0.6,0.6,0.4,0.15)"];
+				};
+			};
+			case "Land_Communication_F": {
+				_asset setVariable ["BIS_WL_jammerActivated", true];
+				// too hardy otherwise, start off at 20% health
+				_asset setDamage 0.8;
+				_asset call BIS_fnc_WL2_sub_jammerAction;
+
+				[_asset, _side] call BIS_fnc_drawJammerCircle;
 			};
 
 			// Logistics
 			case "B_Truck_01_flatbed_F": {
 				_asset call BIS_fnc_WL2_sub_logisticsAddAction;
-				if (side _owner == east) then {
-					_asset setObjectTextureGlobal [0, "A3\Soft_F_Exp\Truck_01\Data\Truck_01_ext_01_olive_CO.paa"];
-					_asset setObjectTextureGlobal [2, "A3\Soft_F_EPC\Truck_03\Data\Truck_03_ammo_CO.paa"];
+				if (_side == east) then {
+					{
+						_asset setObjectTextureGlobal [_forEachIndex, _x];
+					} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Olive" >> "textures"));
 				};
 			};
 			case "B_T_VTOL_01_vehicle_F";
@@ -85,8 +105,9 @@ if (isPlayer _owner) then {
 				} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "DigitalCamoGrey" >> "textures"));
 			};
 			case "I_Truck_02_MRL_F": {
-				_asset setObjectTextureGlobal [0, "a3\soft_f_beta\truck_02\data\truck_02_kab_opfor_co.paa"];
-				_asset setObjectTextureGlobal [2, "a3\soft_f_gamma\truck_02\data\truck_02_mrl_opfor_co.paa"];
+				{
+					_asset setObjectTextureGlobal [_forEachIndex, _x];
+				} forEach (getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Opfor" >> "textures"));
 			};
 			case "B_APC_Wheeled_03_cannon_F": {
 				_asset setObjectTextureGlobal [0, "A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa"];
@@ -99,20 +120,13 @@ if (isPlayer _owner) then {
 					_asset setObjectTextureGlobal [_forEachIndex, _x];
 				} forEach getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "EAF" >> "textures");
 			};
-			case "B_AAA_System_01_F": {
-				if (side _owner == east) then {
-					_asset setObjectTextureGlobal [0, "A3\static_f_jets\AAA_System_01\data\AAA_system_01_olive_co.paa"];
-					_asset setObjectTextureGlobal [1, "A3\static_f_jets\AAA_System_01\data\AAA_system_02_olive_co.paa"];
-				};
-			};
-			case "B_SAM_System_01_F": {
-				if (side _owner == east) then {
-					_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_01\data\SAM_system_01_olive_co.paa"];
-				};
-			};
+			case "B_AAA_System_01_F";
+			case "B_SAM_System_01_F";
 			case "B_SAM_System_02_F": {
-				if (side _owner == east) then {
-					_asset setObjectTextureGlobal [0, "A3\static_f_jets\SAM_System_02\data\SAM_system_02_olive_co.paa"];
+				if (_side == east) then {
+					{
+						_asset setObjectTextureGlobal [_forEachIndex, _x];
+					} forEach getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Green" >> "textures");
 				};
 			};
 			
@@ -133,7 +147,7 @@ if (isPlayer _owner) then {
 							_radarIter = (_radarIter + 1) % 8;
 						};
 						sleep 1.2;
-					};				
+					};
 				};
 			};
 
@@ -203,6 +217,7 @@ if (isPlayer _owner) then {
 				_asset setAutonomous false;
 			};
 			_asset setVariable ["BIS_WL_ownerUavAsset", getPlayerUID player, true];
+			[_asset, _owner] spawn BIS_fnc_WL2_uavJammer;
 		};
 
 		private _notLockableVehicles = createHashMapFromArray [

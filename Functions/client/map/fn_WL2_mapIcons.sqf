@@ -7,6 +7,7 @@ BIS_fnc_iconSize = compileFinal preprocessFileLineNumbers "Functions\client\map\
 BIS_fnc_iconText = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconText.sqf";
 BIS_fnc_iconTextSectorScan = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconTextSectorScan.sqf";
 BIS_fnc_iconType = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_iconType.sqf";
+BIS_fnc_drawJammerCircle = compileFinal preprocessFileLineNumbers "Functions\client\map\fn_drawJammerCircle.sqf";
 
 waituntil {uiSleep 0.1; !isnull (findDisplay 46)};
 
