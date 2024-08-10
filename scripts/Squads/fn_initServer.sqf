@@ -16,6 +16,11 @@ addMissionEventHandler ["PlayerDisconnected", {
     ["remove", [_playerId]] call SQD_fnc_server;
 }];
 
+WEST_VOICE_CHANNEL = radioChannelCreate [[0.56, 0.93, 0.56, 1], "Squads channel", "%UNIT_NAME", []];
+EAST_VOICE_CHANNEL = radioChannelCreate [[0.56, 0.93, 0.56, 1], "Squads channel", "%UNIT_NAME", []];
+
+missionNamespace setVariable ["SQD_VoiceChannels", [WEST_VOICE_CHANNEL, EAST_VOICE_CHANNEL], true];
+
 // Clean up the squad manager
 0 spawn {
     while { !BIS_WL_missionEnd } do {

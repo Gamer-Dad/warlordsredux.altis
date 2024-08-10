@@ -62,6 +62,9 @@
 			missionNamespace setVariable [_votingResetVar, FALSE];
 			call _wipeVotes;
 
+			_calculation = call _calculateMostVotedSector;
+			missionNamespace setVariable [format ["BIS_WL_sectorVoteTallyDisplay_%1", _side], _calculation # 1, true];
+
 			waitUntil {
 				sleep WL_TIMEOUT_SHORT;
 				_warlords = allPlayers select {side group _x == _side};

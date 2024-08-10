@@ -169,12 +169,11 @@ if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 
 enableRadio true;
 enableSentences true;
-{_x enableChannel [true, true]} forEach [1,3,4,5];
-{_x enableChannel [true, false]} forEach [0,2];
+{_x enableChannel [true, true]} forEach [3,4,5];
+{_x enableChannel [true, false]} forEach [0,1,2];
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
-call SQD_fnc_initClient;
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
@@ -367,3 +366,7 @@ player addEventHandler ["HandleRating", {
 	params ["_unit", "_rating"];
 	0;
 }];
+
+call SQD_fnc_initClient;
+
+0 spawn  MRTM_fnc_settingsMenu;

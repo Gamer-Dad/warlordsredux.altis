@@ -65,6 +65,13 @@ SQD_SOUND_CHANGES = [];
     private _playerChannelVar = format ["SQD_Channel_%1", _myPlayerId];
     missionNamespace setVariable [_playerChannelVar, currentChannel, true];
 
+    private _customChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
+    private _customSideChannel = if (side player == west) then {
+        _customChannels # 0
+    } else {
+        _customChannels # 1
+    };
+
     // Fast loop
     while { !BIS_WL_missionEnd } do {
         private _currentChannel = currentChannel;
@@ -96,6 +103,9 @@ SQD_SOUND_CHANGES = [];
                 case 5: {
                     [_player, _playerID] call _handleDirectChat;
                 };
+                case (_customSideChannel + 5): {
+                    [_player, _playerID] call _handleSideChat;
+                };
                 default {
                     [_player, _playerID] call _handleSideChat;
                 };
@@ -124,5 +134,5 @@ while { !BIS_WL_missionEnd } do {
         2 enableChannel [false, false];
     };
 
-    sleep 5;
+    sleep 1;
 };
