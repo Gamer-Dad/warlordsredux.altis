@@ -111,6 +111,14 @@ if (_action == "fastTravelContested") exitWith {
 	};
 };
 
+if (_action == "fastTravelSquadLeader") exitWith {
+	_cost = (getMissionConfigValue ["BIS_WL_fastTravelCostSquadLeader", 10]);
+	_hasFunds = (playerFunds >= _cost);
+	if (_hasFunds) then {
+		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
+	};
+};
+
 private _side = side group _sender;
 if (_action == "scan") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_scanCost", 750]);

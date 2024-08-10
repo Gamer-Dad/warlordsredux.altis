@@ -1073,14 +1073,14 @@ class MRTM_settingsMenu
 		class MRTMGroupsButton: RscButtonMRTM
 		{
 			idc = 1605;
-			text = "GROUPS";
+			text = "SQUADS";
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "(findDisplay 8000) closeDisplay 1; true spawn MRTM_fnc_openGroupMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; [true] call SQD_fnc_menu;";
 		};
 		class MRTMDebugButton: RscButtonMRTM
 		{

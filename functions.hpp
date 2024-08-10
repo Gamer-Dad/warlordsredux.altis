@@ -84,6 +84,19 @@ class CfgFunctions {
 			class closeReportMenu {};
 		};
 	};
+	class SQD {
+		class Squads {
+			file = "scripts\Squads";
+			class client {};
+			class initClient {};
+			class initServer {};
+			class menu {};
+			class playerSelectionChanged {};
+			class server {};
+			class treeSelectionChanged {};
+			class voice {};
+		};
+	};
 	class WLM {
 		class WLM {
 			file = "Scripts\WLM\functions";
