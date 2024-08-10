@@ -28,11 +28,11 @@
 			private _sortedVoteList = (toArray _votesByPlayers) # 1; // discard keys
 			_sortedVoteList = [_sortedVoteList, [], { _x # 1  }, "DESCEND"] call BIS_fnc_sortBy;
 
-			private _display = "";
+			private _display = "<t size='1.8'>Vote in Progress</t><br/>";
 			{
 				private _vote = _x # 0;
 				private _voteCount = _x # 1;
-				_display = _display + format ["%1: %2\n", _vote getVariable "BIS_WL_name", _voteCount];
+				_display = _display + format ["<t size='1.5' color='#0074e6'>%1: %2</t><br/>", _vote getVariable "BIS_WL_name", _voteCount];
 			} forEach _sortedVoteList;
 
 			private _maxVotedSector = if (count _sortedVoteList > 0) then {
