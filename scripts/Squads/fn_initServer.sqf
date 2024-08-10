@@ -10,15 +10,15 @@ if (isNil "WL_PlayerSquadContribution") then {
 };
 missionNamespace setVariable ["WL_PlayerSquadContribution", WL_PlayerSquadContribution, true];
 
+addMissionEventHandler ["PlayerDisconnected", {
+    params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+    private _playerId = format ["%1", _id];
+    ["remove", [_playerId]] call SQD_fnc_server;
+}];
+
 // Clean up the squad manager
 0 spawn {
-    addMissionEventHandler ["PlayerDisconnected", {
-        params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
-        private _playerId = format ["%1", _id];
-        ["remove", [_playerId]] call SQD_fnc_server;
-    }];
-
-    while {true} do {
+    while { !BIS_WL_missionEnd } do {
         // clean up squads when everyone goes to the lobby
         private _squadManager = SQUAD_MANAGER;
         {

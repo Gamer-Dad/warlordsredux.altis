@@ -9,6 +9,7 @@ params ["_firstStart"];
 if (_firstStart && isNull (findDisplay MENU)) then {
     createDialog "SquadsMenu";
 };
+SQD_MENU_REFRESH = false;
 
 disableSerialization;
 
@@ -269,7 +270,7 @@ disableSerialization;
         // only update if the squad manager has changed
         // or else the updates would change UI settings
         private _dirty = [_oldSquadManager, _newSquadManager] call _dirtySquadManager;
-        if (_dirty) then {
+        if (_dirty || SQD_MENU_REFRESH) then {
             _squadManager = _newSquadManager;
             _squadList = call _getSquadlist;
             _squaddedPlayers = [];
@@ -279,6 +280,7 @@ disableSerialization;
             call _constructButtons;
 
             [_treeEntries, _listEntries] spawn _updatePictures;
+            SQD_MENU_REFRESH = false;
         };
 
         if (_updateLoop > 5) then {

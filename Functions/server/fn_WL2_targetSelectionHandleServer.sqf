@@ -18,8 +18,9 @@
 				private _vote = missionNamespace getVariable [_variableName, objNull];
 				private _voteName = format ["%1", _vote];
 				if !(isNull _vote) then {
-					_voteCount = ["getSquadSizeOfSquadLeader", [getPlayerID _x]] call SQD_fnc_server;
-					_voteCount = _voteCount + (_votesByPlayers getOrDefault [_voteName, [objNull, 0]] select 1);
+					private _squadSize = ["getSquadSizeOfSquadLeader", [getPlayerID _x]] call SQD_fnc_server;
+					private _squadPower = ceil ((_squadSize * _squadSize) / 2);
+					private _voteCount = _squadPower + (_votesByPlayers getOrDefault [_voteName, [objNull, 0]] select 1);
 					_votesByPlayers set [_voteName, [_vote, _voteCount]];
 				};
 			} forEach (_players select { !(["isRegularSquadMember", [getPlayerID _x]] call SQD_fnc_server) });

@@ -10,8 +10,8 @@ while {!BIS_WL_missionEnd} do {
 	sleep WL_TIMEOUT_SHORT;
 	_isRegularSquadMember = ["isRegularSquadMember", [getPlayerID player]] call SQD_fnc_client;
 
+	waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
 	if (!_isRegularSquadMember) then {
-		waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
 		if !(isNull (uiNamespace getVariable ["BIS_WL_purchaseMenuDisplay", displayNull])) then {
 			[player, "fundsTransferCancel"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 			playSound "AddItemFailed";
@@ -86,30 +86,30 @@ while {!BIS_WL_missionEnd} do {
 				};
 			};
 		};
-		
-		BIS_WL_targetVote = objNull;
-		
-		if (BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) then {
-			BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
-		};
+	};
 
-		missionNamespace setVariable [_mostVotedVar, []];
-		missionNamespace setVariable [format ["BIS_WL_targetVote_%1", getPlayerID player], objNull];
+	BIS_WL_targetVote = objNull;
 		
-		if (BIS_WL_resetTargetSelection_client) then {
-			BIS_WL_resetTargetSelection_client = FALSE;
-			"Reset" call BIS_fnc_WL2_announcer;
-			["voting", []] spawn BIS_fnc_WL2_setOSDEvent;
-			[toUpper localize "STR_A3_WL_voting_reset"] spawn BIS_fnc_WL2_smoothText;
-			sleep 2;
-		} else {
-			call BIS_fnc_WL2_refreshCurrentTargetData;
-			if !(BIS_WL_missionEnd) then {
-				waitUntil {sleep WL_TIMEOUT_MIN; !isNull WL_TARGET_FRIENDLY};
-				"Selected" call BIS_fnc_WL2_announcer;
-				[toUpper format [localize "STR_A3_WL_popup_voting_done", WL_TARGET_FRIENDLY getVariable "BIS_WL_name"]] spawn BIS_fnc_WL2_smoothText;
-				["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
-			};
+	if (BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) then {
+		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	};
+
+	missionNamespace setVariable [_mostVotedVar, []];
+	missionNamespace setVariable [format ["BIS_WL_targetVote_%1", getPlayerID player], objNull];
+	
+	if (BIS_WL_resetTargetSelection_client) then {
+		BIS_WL_resetTargetSelection_client = FALSE;
+		"Reset" call BIS_fnc_WL2_announcer;
+		["voting", []] spawn BIS_fnc_WL2_setOSDEvent;
+		[toUpper localize "STR_A3_WL_voting_reset"] spawn BIS_fnc_WL2_smoothText;
+		sleep 2;
+	} else {
+		call BIS_fnc_WL2_refreshCurrentTargetData;
+		if !(BIS_WL_missionEnd) then {
+			waitUntil {sleep WL_TIMEOUT_MIN; !isNull WL_TARGET_FRIENDLY};
+			"Selected" call BIS_fnc_WL2_announcer;
+			[toUpper format [localize "STR_A3_WL_popup_voting_done", WL_TARGET_FRIENDLY getVariable "BIS_WL_name"]] spawn BIS_fnc_WL2_smoothText;
+			["client", TRUE] call BIS_fnc_WL2_updateSectorArrays;
 		};
 	};
 };

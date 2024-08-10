@@ -9,7 +9,11 @@ _outerMarkerName setMarkerShapeLocal "ELLIPSE";
 _outerMarkerName setMarkerBrushLocal "Cross";
 _outerMarkerName setMarkerColorLocal _jamColor;
 _outerMarkerName setMarkerSizeLocal [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_OUTER];
-_outerMarkerName setMarkerAlpha 1;
+if (_asset getVariable "BIS_WL_jammerActivated") then {
+    _outerMarkerName setMarkerAlpha 1;
+} else {
+    _outerMarkerName setMarkerAlpha 0;
+};
 
 private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
 _jammerMarkers pushBack [_asset, _outerMarkerName];

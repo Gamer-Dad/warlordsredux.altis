@@ -42,8 +42,16 @@ if (_ret) then {
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
 		};
 		case "FTSquadLeader": {
-			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
-			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+			if (vehicle player != player) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_A3_WL_fasttravel_restr3"
+			};
+			if (_nearbyEnemies) exitWith {
+				_ret = false; 
+				_tooltip =  localize "STR_A3_WL_fasttravel_restr4"
+			};
+
+			// Cooldown check
 			private _ftNextUseVar = format ["BIS_WL_FTSLNextUse_%1", getPlayerUID player];
 			private _ftNextUse = missionNamespace getVariable [_ftNextUseVar, 0];
 			if (serverTime < _ftNextUse) exitWith {
@@ -52,11 +60,30 @@ if (_ret) then {
 				private _timeoutDisplay = [_ftNextUse - serverTime, "MM:SS"] call BIS_fnc_secondsToString;
 				_tooltip = format [_cooldownText, _timeoutDisplay];
 			};
-			private _sl = ['getMySquadLeader'] call SQD_fnc_client;
-			if (_sl == getPlayerID player) exitWith {_ret = false; _tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInvalid"};
-			if (_sl == "-1") exitWith {_ret = false; _tooltip = localize "STR_SQUADS_fastTravelSquadInvalidNoSquad"};
-			private _squadLeader = allPlayers select {getPlayerID _x == _sl} select 0;
-			if (!alive _squadLeader) exitWith {_ret = false; _tooltip = localize "STR_SQUADS_fastTravelSquadLeaderUnavailable"};
+
+			// Squad leader checks
+			private _squadLeaderID = ['getMySquadLeader'] call SQD_fnc_client;
+			if (_squadLeaderID == getPlayerID player) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInvalid";
+			};
+			if (_squadLeaderID == "-1") exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_SQUADS_fastTravelSquadInvalidNoSquad";
+			};
+			
+			private _squadLeader = allPlayers select {
+				getPlayerID _x == _squadLeaderID
+			} select 0;
+			
+			if !(isNull objectParent _squadLeader) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInVehicle";
+			};
+			if (!alive _squadLeader) exitWith {
+				_ret = false; 
+				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderUnavailable";
+			};
 		};
 		case "LastLoadout": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};

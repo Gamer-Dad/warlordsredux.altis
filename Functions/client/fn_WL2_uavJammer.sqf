@@ -14,9 +14,13 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
     while { alive _asset } do {
         private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
         private _allJammers = _jammerMarkers apply { _x # 0 };
-        private _enemyJammers = _allJammers select { side _x != _side };
+        private _enemyJammers = _allJammers select {
+            private _jammerActive = _x getVariable ["BIS_WL_jammerActivated", false];
+            private _jammerOwner = _x getVariable ["BIS_WL_ownerAssetSide", "123"];
+            true || (_jammerOwner != _side && _jammerActive);
+        };
 
-        private _jammersInRange = _allJammers select {
+        private _jammersInRange = _enemyJammers select {
             private _distanceToJammer = _asset distanceSqr _x;
             _distanceToJammer < (WL_JAMMER_RANGE_OUTER * WL_JAMMER_RANGE_OUTER);
         };
@@ -165,6 +169,9 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
 
         sleep 1;
     };
+
+    _indicator ctrlSetText "";
+    _indicator ctrlSetBackgroundColor [0, 0, 0, 0];
 
     _filmGrain ppEffectEnable false;
     _filmGrain ppEffectCommit 0;

@@ -37,10 +37,13 @@ if (isPlayer _owner) then {
 			false spawn BIS_fnc_WL2_refreshOSD;
 		}];
 	} else {
+		private _side = side _owner;
+
 		call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_nextRepair", 0];
-		
+		_asset setVariable ["BIS_WL_ownerAssetSide", _side, true];
+
 		private _defaultMags = magazinesAllTurrets _asset;
 		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
 		_asset setVariable ["WLM_savedDefaultMags", _defaultMags, true];
@@ -52,7 +55,6 @@ if (isPlayer _owner) then {
 		
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
-		private _side = side _owner;
 		switch (typeOf _asset) do {
 			// Dazzlers
 			case "O_T_Truck_03_device_ghex_F";
@@ -73,8 +75,9 @@ if (isPlayer _owner) then {
 			};
 			case "Land_Communication_F": {
 				_asset setVariable ["BIS_WL_jammerActivated", true];
-				// too hardy otherwise, start off at 20% health
-				_asset setDamage 0.8;
+
+				// too hardy otherwise, start off at 10% health
+				_asset setDamage 0.9;
 				_asset call BIS_fnc_WL2_sub_jammerAction;
 
 				[_asset, _side] call BIS_fnc_drawJammerCircle;

@@ -1,3 +1,6 @@
+#define SQD_MIN_COMMAND_CHAT 3
+
+// UI Menu
 #define MENU 5000
 #define TREE 5005
 #define PLAYER_LIST 5006
