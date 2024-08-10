@@ -13,7 +13,10 @@
         0 spawn {
             private _side = side player;
             private _allUavs = missionNamespace getVariable ["BIS_WL_uavs", []];
-            private _allEnemyUavs = _allUavs select { side _x != _side };
+            private _allEnemyUavs = _allUavs select {
+                private _uavOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
+                _uavOwnerSide != _side && alive _x;
+            };
 
             {
                 private _screenPosition = worldToScreen (ASLToAGL getPosASL _x);
@@ -26,6 +29,7 @@
 
                 systemChat (localize "STR_A3_jammer_sent");
                 _x setVariable ["BIS_WL_spectrumJammed", true, true];
+                _x setVariable ["BIS_WL_lastHitter", player, true];
             } forEach _allEnemyUavs;
         };
     },

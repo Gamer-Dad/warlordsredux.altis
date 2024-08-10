@@ -16,8 +16,8 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
         private _allJammers = _jammerMarkers apply { _x # 0 };
         private _enemyJammers = _allJammers select {
             private _jammerActive = _x getVariable ["BIS_WL_jammerActivated", false];
-            private _jammerOwner = _x getVariable ["BIS_WL_ownerAssetSide", "123"];
-            true || (_jammerOwner != _side && _jammerActive);
+            private _jammerOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
+            _jammerOwnerSide != _side && _jammerActive;
         };
 
         private _jammersInRange = _enemyJammers select {
@@ -45,9 +45,24 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
         };
 
         private _spectrumJammed = _asset getVariable ["BIS_WL_spectrumJammed", false];
+        if (_spectrumJammed) then {
+            _asset setVariable ["BIS_WL_spectrumJammed", false, true];
+            playSoundUI ["a3\sounds_f\vehicles\air\CAS_01\noise.wss", 1, 1, false, 3.6];
+            systemChat (localize "STR_A3_UAV_jammed");
+
+            // Effect
+            if (getPosATL _asset # 2 > 1) then {
+                _asset setDamage (damage _asset + 0.1);
+            } else {
+                _asset setAutonomous false;
+                if (!isNull _controller) then {
+                    _controller connectTerminalToUAV objNull;
+                };
+            };
+        };
 
         private _relevantJammers = _asset getVariable ["BIS_WL_relevantJammers", []];
-        if (count _relevantJammers == 0 && !_spectrumJammed) then {
+        if (count _relevantJammers == 0) then {
             _asset setVariable ["BIS_WL_jammerStrength", 0];
             continue;
         };
@@ -64,16 +79,9 @@ missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
         _closestJammerDistance = sqrt _closestJammerDistance;
 
         private _jammerStrength = linearConversion [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_INNER, _closestJammerDistance, 0, 1, true];
-        if (_spectrumJammed) then {
-            _jammerStrength = 1;
-            playSoundUI ["a3\sounds_f\vehicles\air\CAS_01\noise.wss", 1, 1, false, 3.6];
-            systemChat (localize "STR_A3_UAV_jammed");
-        };
         _asset setVariable ["BIS_WL_jammerStrength", _jammerStrength];
         
         if (_jammerStrength >= 1) then {
-            _asset setVariable ["BIS_WL_spectrumJammed", false, true];
-
             if (getPosATL _asset # 2 > 1) then {	
                 // flyers take damage
                 _asset setDamage [(damage _asset + 0.1), true, _closestJammer];
