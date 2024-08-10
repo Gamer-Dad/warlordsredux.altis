@@ -3,8 +3,6 @@ SQD_AUDIBLE_PLAYERS = createHashMap;
 SQD_SOUND_CHANGES = [];
 
 0 spawn {
-    private _myPlayerId = getPlayerID player;
-
     private _deltaVoice = {
         params ["_player", "_playerId", "_newValue"];
         private _oldPlayerInfo = SQD_AUDIBLE_PLAYERS getOrDefault [_playerId, []];
@@ -28,6 +26,64 @@ SQD_SOUND_CHANGES = [];
         SQD_AUDIBLE_PLAYERS set [_playerId, [_player, _newValue]];
     };
 
+    private _handleSideChat = {
+        params ["_player", "_playerId"];
+        
+        private _isInMySquad = ["isInMySquad", [_playerID]] call SQD_fnc_client;
+        private _isSpeakingInCommand = getPlayerChannel _player == 2;
+
+        if (_isInMySquad) then {
+            private _isSquadLeader = ["isSquadLeader", [_playerID]] call SQD_fnc_client;
+            if (!_isSquadLeader) then {
+                [_player, _playerID, true] call _deltaVoice;
+            } else {
+                if (_isSpeakingInCommand) then {
+                    [_player, _playerID, false] call _deltaVoice;
+                } else {
+                    [_player, _playerID, true] call _deltaVoice;
+                };
+            };
+        } else {
+            [_player, _playerID, false] call _deltaVoice;
+        };
+    };
+
+    private _handleCommandChat = {
+        params ["_player", "_playerId"];
+
+        private _myPlayerId = getPlayerID player;
+        private _amSquadLeader = ["isSquadLeader", [_myPlayerId]] call SQD_fnc_client;
+        if (_amSquadLeader) then {
+            [_player, _playerID, true] call _deltaVoice;
+        } else {
+            [_player, _playerID, false] call _deltaVoice;
+        };
+    };
+
+    private _handleDirectChat = {
+        params ["_player", "_playerId"];
+
+        private _distance = player distanceSqr _player;
+        if (_distance < (40 * 40)) then {
+            [_player, _playerID, true] call _deltaVoice;
+        } else {
+            [_player, _playerID, false] call _deltaVoice;
+        };
+    };
+
+    private _handleVehicleChat = {
+        params ["_player", "_playerId"];
+
+        private _myVehicle = vehicle player;
+        private _playerVehicle = vehicle _player;
+        if (_myVehicle == _playerVehicle) then {
+            [_player, _playerID, true] call _deltaVoice;
+        } else {
+            [_player, _playerID, false] call _deltaVoice;
+        };
+    };
+
+    private _myPlayerId = getPlayerID player;
     // Fast loop
     while { !BIS_WL_missionEnd } do {
         {
@@ -35,27 +91,24 @@ SQD_SOUND_CHANGES = [];
             private _playerID = getPlayerID _player;
 
             if (_playerID == _myPlayerId) then { continue; };
-            if (side _player != side player) then { continue; };
-            
-            private _isInMySquad = ["isInMySquad", [_playerID]] call SQD_fnc_client;
-            private _isSpeakingInCommand = getPlayerChannel _player == 2;
-            private _amSquadLeader = ["isSquadLeader", [_myPlayerId]] call SQD_fnc_client;
-            if (_isInMySquad) then {
-                private _isSquadLeader = ["isSquadLeader", [_playerID]] call SQD_fnc_client;
-                if (!_isSquadLeader) then {
-                    [_player, _playerID, true] call _deltaVoice;
-                } else {
-                    if (_isSpeakingInCommand) then {
-                        [_player, _playerID, false] call _deltaVoice;
-                    } else {
-                        [_player, _playerID, true] call _deltaVoice;
-                    };
+            // if (side _player != side player) then { continue; };
+
+            private _playerChannel = getPlayerChannel _player;
+            switch (_playerChannel) do {
+                case 1: {
+                    [_player, _playerID] call _handleSideChat;
                 };
-            } else {
-                if (_isSpeakingInCommand && _amSquadLeader) then {
-                    [_player, _playerID, true] call _deltaVoice;
-                } else {
-                    [_player, _playerID, false] call _deltaVoice;
+                case 2: {
+                    [_player, _playerID] call _handleCommandChat;
+                };
+                case 4: {
+                    [_player, _playerID] call _handleVehicleChat;
+                };
+                case 5: {
+                    [_player, _playerID] call _handleDirectChat;
+                };
+                default {
+                    [_player, _playerID] call _handleSideChat;
                 };
             };
         } forEach allPlayers;
