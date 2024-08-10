@@ -309,7 +309,7 @@ class SquadsMenu_Rename
 			font = "PuristaMedium";
 			sizeEx = 0.04;
 			tooltip = $STR_SQUADS_enterNewSquadName;
-			maxChars = 20;
+			maxChars = 25;
 		};
 		class SquadsRenameOkButton: RscButtonMRTM
 		{

@@ -185,6 +185,13 @@ switch (_action) do {
     };
     case "renamed": {
         private _newName = ctrlText RENAME_EDIT;
+
+        private _disallowList = getArray (missionConfigFile >> "adminFilter");
+        private _findInDisallowList = _disallowList findIf { [_x, _newName] call BIS_fnc_inString };
+        if (_findInDisallowList > -1) then {
+            _newName = selectRandom ["AIRHEAD ARMADA", "BORING BATTALION", "CLOWN COMPANY", "DUMMY DETACHMENT"];
+        };
+
         ["rename", [getPlayerID player, _newName]] remoteExec ["SQD_fnc_server", 2];
         (findDisplay RENAME_WINDOW) closeDisplay 1;
     };
