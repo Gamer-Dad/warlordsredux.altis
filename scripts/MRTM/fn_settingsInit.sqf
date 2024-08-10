@@ -41,3 +41,4 @@ MRTM_fnc_onLBSelChanged = compileFinal preprocessFileLineNumbers "scripts\MRTM\f
 MRTM_fnc_onButtonClick = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_onButtonClick.sqf";
 MRTM_fnc_openDebugMenu = compileFinal preprocessFileLineNumbers "Scripts\MRTMDebug\fn_openDebugMenu.sqf";
 MRTM_fnc_setReturnValue = compileFinal preprocessFileLineNumbers "Scripts\MRTMDebug\fn_setReturnValue.sqf";
+MRTM_fnc_updateSettings = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_updateSettings.sqf";

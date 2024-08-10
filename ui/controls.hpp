@@ -979,7 +979,7 @@ class MRTM_settingsMenu
 				class MRTMOtherButton1: RscCheckboxMRTM
 				{
 					idc = 8024;
-					action = "player setVariable ['MRTM_3rdPersonDisabled', !(profileNamespace getVariable ['MRTM_3rdPersonDisabled', false]), [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', !(profileNamespace getVariable ['MRTM_3rdPersonDisabled', false])];";
+					action = "['MRTM_3rdPersonDisabled', 300] call MRTM_fnc_updateSettings;";
 					x = 0.560969 * safezoneW + safezoneX;
 					y = 0.701 * safezoneH + safezoneY;
 					w = 0.0204688 * safezoneW;
