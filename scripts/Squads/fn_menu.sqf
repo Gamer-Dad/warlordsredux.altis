@@ -1,5 +1,5 @@
 /*
-    Author: Rook
+    Author: Rook, MrThomasM
     Description: Opens the squad menu.
 */
 
@@ -38,6 +38,7 @@ disableSerialization;
     private _constructSquadTree = {
         tvClear TREE;
         _treeEntries = createHashMap;
+        private _treeControl = displayCtrl TREE;
 
         {
             private _squad = _x;
@@ -61,19 +62,32 @@ disableSerialization;
                 _points = WL_PlayerSquadContribution getOrDefault [_playerId, 0];
                 tvSetTooltip [TREE, [_squadItem, _playerItem], format [localize "STR_SQUADS_squadMemberTooltip", _playerName, _points]];
 
-                _tvColor = if (_playerId == (getPlayerID player)) then { [0.4, 0.6, 1.0, 1] } else { [1, 1, 1, 1] };
+                _tvColor = if (_playerId == (getPlayerID player)) then { 
+                    [0.4, 0.6, 1.0, 1];
+                } else {
+                    if (!alive _player) then {
+                        [1, 0, 0, 1];
+                    } else {
+                        [1, 1, 1, 1];
+                    };
+                };
 
-                private _treeControl = displayCtrl TREE;
                 _treeControl tvSetColor [[_squadItem, _playerItem], _tvColor];
                 _treeControl tvSetSelectColor [[_squadItem, _playerItem], _tvColor];
-                _treeControl tvSetColor [[_squadItem], _tvColor];
-                _treeControl tvSetSelectColor [[_squadItem], _tvColor];
 
                 _treeEntries set [format ["%1", _playerId], [_squadItem, _playerItem]];
             } forEach (_squad select 2);
 
+            private _squadColor = if ((_squad select 1) == (getPlayerID player)) then {
+                [0.4, 0.6, 1.0, 1];
+            } else {
+                [1, 1, 1, 1];
+            };
+            _treeControl tvSetColor [[_squadItem], _squadColor];
+            _treeControl tvSetSelectColor [[_squadItem], _squadColor];
+
             _squaddedPlayers append (_x select 2);
-        } forEach (_squadList);
+        } forEach _squadList;
 
         tvExpandAll TREE;
         tvSetCurSel [TREE, _selectedSquad];
@@ -151,6 +165,7 @@ disableSerialization;
             };
         };
 
+        private _treeControl = displayCtrl TREE;
         {
             private _treePath = [_y select 0, _y select 1];
             private _playerId = _x;
@@ -160,6 +175,20 @@ disableSerialization;
 
             private _points = WL_PlayerSquadContribution getOrDefault [_playerId, 0];
             tvSetTooltip [TREE, _treePath, format [localize "STR_SQUADS_squadMemberTooltip", name (allPlayers select {getPlayerID _x == _playerId} select 0), _points]];
+
+            private _player = allPlayers select {getPlayerID _x == _playerId} select 0;
+            private _tvColor = if (_playerId == (getPlayerID player)) then { 
+                    [0.4, 0.6, 1.0, 1];
+                } else {
+                    if (!alive _player) then {
+                        [1, 0, 0, 1];
+                    } else {
+                        [1, 1, 1, 1];
+                    };
+                };
+
+            _treeControl tvSetColor [_treePath, _tvColor];
+            _treeControl tvSetSelectColor [_treePath, _tvColor];
         } forEach _treeEntries;
 
         {
