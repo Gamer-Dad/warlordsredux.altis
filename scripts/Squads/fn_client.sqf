@@ -43,6 +43,8 @@ switch (_action) do {
 
         private _playerName = lbText [PLAYER_LIST, _selection];
         systemChat format [localize "STR_SQUADS_sendInvitationSuccessText", _playerName];
+
+        playSoundUI ["a3\ui_f\data\sound\cfgnotifications\tasksucceeded.wss"];
     };
     case "invited": {
         // input: inviter id
@@ -58,6 +60,8 @@ switch (_action) do {
             _return = 1;
         };
         private _inviterName = name (allPlayers select {getPlayerID _x == _inviter} select 0);
+
+        playSoundUI ["a3\sounds_f\sfx\blip1.wss"];
 
         _acceptInvite = [
             format [localize "STR_SQUADS_receiveInvitationText", _inviterName, _squad select 0], 

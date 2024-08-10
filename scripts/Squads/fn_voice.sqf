@@ -83,17 +83,27 @@ SQD_SOUND_CHANGES = [];
         };
     };
 
+    private _previousChannel = currentChannel;
     private _myPlayerId = getPlayerID player;
     // Fast loop
     while { !BIS_WL_missionEnd } do {
+        private _currentChannel = currentChannel;
+        if (currentChannel != _previousChannel) then {
+            private _playerChannelVar = format ["SQD_Channel_%1", _myPlayerId];
+            missionNamespace setVariable [_playerChannelVar, currentChannel, true];
+            _previousChannel = currentChannel;
+        };
+
         {
             private _player = _x;
             private _playerID = getPlayerID _player;
 
             if (_playerID == _myPlayerId) then { continue; };
-            // if (side _player != side player) then { continue; };
 
-            private _playerChannel = getPlayerChannel _player;
+            private _playerChannelVar = format ["SQD_Channel_%1", _playerID];
+            private _playerChannel = missionNamespace getVariable [_playerChannelVar, 1];
+
+            // private _playerChannel = getPlayerChannel _player;
             switch (_playerChannel) do {
                 case 1: {
                     [_player, _playerID] call _handleSideChat;
@@ -129,10 +139,13 @@ while { !BIS_WL_missionEnd } do {
     private _myPlayerId = getPlayerID player;
 
     private _isSquadLeader = ["isSquadLeader", [_myPlayerId]] call SQD_fnc_client;
-    if (_isSquadLeader) then {
+    private _wasSquadLeader = (channelEnabled 2) # 1;
+    if (_isSquadLeader && !_wasSquadLeader) then {
         2 enableChannel [true, true];
     } else {
-        2 enableChannel [false, false];
+        if (!_isSquadLeader && _wasSquadLeader) then {
+            2 enableChannel [false, false];
+        };
     };
 
     sleep 5;

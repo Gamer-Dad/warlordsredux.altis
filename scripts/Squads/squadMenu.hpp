@@ -59,7 +59,7 @@ class SquadsMenu
 				size = 0.88;
 			};
 		};
-        class SquadsSquadList:RscTreeWL
+        class SquadsSquadList: RscTreeWL
 		{
 			idc = 5005;
 			deletable = 0;
