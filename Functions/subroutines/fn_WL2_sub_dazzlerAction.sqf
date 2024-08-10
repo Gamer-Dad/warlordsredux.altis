@@ -5,11 +5,13 @@ private _actionID = _asset addAction [
 	{
 		_this params ["_asset", "_caller", "_actionID"];
 		_asset removeAction _actionID;
-		if (_asset getVariable "dazzlerActivated") then {
-			_asset setVariable ["dazzlerActivated", false];
+		if (_asset getVariable "BIS_WL_dazzlerActivated") then {
+			_asset setVariable ["BIS_WL_dazzlerActivated", false, true];
 		} else {
-			_asset setVariable ["dazzlerActivated", true];
-			_asset engineOn true;
+			_asset setVariable ["BIS_WL_dazzlerActivated", true, true];
+			if (!isEngineOn _asset) then {
+				[_asset] remoteExec ["BIS_fnc_WL2_dazzlerOn", 2];
+			};
 		};
 		_asset call BIS_fnc_WL2_sub_dazzlerAction;
 	},
@@ -23,4 +25,4 @@ private _actionID = _asset addAction [
 	true
 ];
 
-_asset setUserActionText [_actionID, format ["<t color = '%1'>%2</t>", if !(_asset getVariable "dazzlerActivated") then {"#4bff58"} else {"#ff4b4b"}, if !(_asset getVariable "dazzlerActivated") then {localize "STR_A3_dazzler_enable"} else {localize "STR_A3_dazzler_disable"}]];
+_asset setUserActionText [_actionID, format ["<t color = '%1'>%2</t>", if !(_asset getVariable "BIS_WL_dazzlerActivated") then {"#4bff58"} else {"#ff4b4b"}, if !(_asset getVariable "BIS_WL_dazzlerActivated") then {localize "STR_A3_dazzler_enable"} else {localize "STR_A3_dazzler_disable"}]];

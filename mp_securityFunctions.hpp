@@ -48,9 +48,8 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
-		class DIS_fnc_SAMFired {
-			allowedTargets = 0;
-
+		class BIS_fnc_WL2_dazzlerOn {
+			allowedTargets = 2;
 		};
 
 		class BIS_fnc_WL2_updateVehicleList {

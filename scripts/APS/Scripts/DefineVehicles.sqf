@@ -122,5 +122,6 @@ apsVehiclesMap = createHashMap;
 	apsVehiclesMap set [_x, 3];
 } forEach _apsDazzler;
 
+apsDazzler = _apsDazzler;
 apsAPStypes = _apsLight + _apsMedium + _apsHeavy;
 apsAPSAll = apsAPStypes + _apsDazzler;
