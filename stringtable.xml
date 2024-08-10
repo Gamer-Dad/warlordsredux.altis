@@ -2027,6 +2027,23 @@
             <Chinesesimp>邀请选定的玩家加入你的小队。</Chinesesimp>
             <Chinese>邀请选定的玩家加入你的小队。</Chinese>
         </Key>
+        <Key ID="STR_SQUADS_cooldown">
+            <Original>Cooldown: %1</Original>
+            <English>Cooldown: %1</English>
+            <Czech>Čas na ochlazení: %1</Czech>
+            <French>Temps de refroidissement : %1</French>
+            <German>Abkühlzeit: %1</German>
+            <Italian>Raffreddamento: %1</Italian>
+            <Polish>Okres oczekiwania: %1</Polish>
+            <Portuguese>Tempo de resfriamento: %1</Portuguese>
+            <Russian>Время охлаждения: %1</Russian>
+            <Spanish>Tiempo de enfriamiento: %1</Spanish>
+            <Turkish>Serinleme süresi: %1</Turkish>
+            <Korean>재사용 대기시간: %1</Korean>
+            <Japanese>クールダウン: %1</Japanese>
+            <Chinesesimp>冷却时间: %1</Chinesesimp>
+            <Chinese>冷卻時間: %1</Chinese>
+        </Key>
         <Key ID="STR_SQUADS_welcomeText">
             <Original>Welcome to the squad system. Squads confer a variety of benefits, including sharing points/votes and the ability to spawn on your squad leader.</Original>
             <English>Welcome to the squad system. Squads confer a variety of benefits, including sharing points/votes and the ability to spawn on your squad leader.</English>

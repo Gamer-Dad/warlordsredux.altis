@@ -182,7 +182,7 @@ _strategyArr = [];
 _strategyArr pushBack ["Scan", (getMissionConfigValue ["BIS_WL_scanCost", 750]), [], localize "STR_A3_WL_param4_title", "\A3\Data_F_Warlords\Data\preview_scan.jpg", localize "STR_A3_WL_menu_scan_info"];
 _strategyArr pushBack ["FTSeized", 0, [], localize "STR_A3_WL_menu_fasttravel_seized", "\A3\Data_F_Warlords\Data\preview_ft_owned.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
 _strategyArr pushBack ["FTConflict", (getMissionConfigValue ["BIS_WL_fastTravelCostContested", 200]), [], localize "STR_A3_WL_menu_fasttravel_conflict", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
-_strategyArr pushBack ["FTSquadLeader", (getMissionConfigValue ["BIS_WL_fastTravelCostSquadLeader", 10]), [], localize "STR_SQUADS_fastTravelToSquadLeader", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_A3_WL_menu_fasttravel_info"];
+_strategyArr pushBack ["FTSquadLeader", (getMissionConfigValue ["BIS_WL_fastTravelCostSquadLeader", 10]), [], localize "STR_SQUADS_fastTravelToSquadLeader", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", localize "STR_SQUADS_fastTravelToSquadLeader"];
 _strategyArr pushBack ["RespawnVicFT", 0, [], localize "STR_A3_WL_respawn_vicFT_ft", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", ""];
 _strategyArr pushBack ["RespawnPodFT", 0, [], "Fast Travel to Medical Pod (Free)", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", ""];
 _strategyArr pushBack ["RespawnVic", (getMissionConfigValue ["BIS_WL_orderFTVehicleCost", 200]), [], localize "STR_A3_WL_respawn_vicFT_order", "\A3\Data_F_Warlords\Data\preview_ft_conflict.jpg", ""];
