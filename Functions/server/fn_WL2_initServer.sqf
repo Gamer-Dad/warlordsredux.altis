@@ -43,6 +43,7 @@ BIS_fnc_WL2_getVehicles = compileFinal preprocessFileLineNumbers "Functions\serv
 BIS_fnc_WL2_sectorCaptureHandle = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorCaptureHandle.sqf";
 BIS_fnc_WL2_sectorsInitServer = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorsInitServer.sqf";
 BIS_fnc_WL2_handleInstigator = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_handleInstigator.sqf";
+BIS_fnc_WL2_updateVehicleList = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_updateVehicleList.sqf";
 BIS_fnc_WL2_dazzlerOn = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_dazzlerOn.sqf";
 
 BIS_fnc_orderAir = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderAir.sqf";

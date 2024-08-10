@@ -282,6 +282,7 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 				_wlVehicles deleteAt (_wlVehicles find _x);
 				missionNamespace setVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], _vehicles, [2, clientOwner]];
 				deleteVehicle _x;
+				0 remoteExec ["BIS_fnc_WL2_updateVehicleList", 2];
 			};
 		}forEach _vehicles;
 		sleep 10;
