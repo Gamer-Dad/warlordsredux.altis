@@ -56,16 +56,19 @@ switch (_action) do {
             _return = 1;
         };
 
-        private _squadSize = count (_squad select 2);
+        private _playersInSquad = _squad select 2;
+        private _squadSize = count _playersInSquad;
         if (_squadSize >= SQD_MAX_SQUAD_SIZE) exitWith {
             _message = format ["Squad ""%1"" is full: %2/%3", _squad select 0, _squadSize, SQD_MAX_SQUAD_SIZE];
             private _player = allPlayers select { getPlayerID _x == _playerId } select 0;
             [_message] remoteExec ["systemChat", _player];
             _return = 1;
         };
-        
-        (_squad select 2) pushBack _playerId;
-        
+
+        private _targets = allPlayers select { getPlayerID _x in _playersInSquad };
+        ["newjoin", [_playerId]] remoteExec ["SQD_fnc_client", _targets];
+        _playersInSquad pushBack _playerId;
+
         _message = format ["Player %1 joined Squad %2", _playerId, (_squad select 0)];
         _return = 0;
     };

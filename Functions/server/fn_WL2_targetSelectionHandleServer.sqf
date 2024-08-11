@@ -32,7 +32,17 @@
 			{
 				private _vote = _x # 0;
 				private _voteCount = _x # 1;
-				_display = _display + format ["<t size='1.2' align='center'>%1: %2</t><br/>", _vote getVariable "BIS_WL_name", _voteCount];
+
+				private _sectorName = _vote getVariable ["BIS_WL_name", "???"];
+				private _isSectorRevealed = _side in (_vote getVariable ["BIS_WL_revealedBy", []]);
+
+				private _color = if (_isSectorRevealed) then {
+					private _sectorOwner = _vote getVariable ["BIS_WL_owner", independent];
+					['#004d99', '#7f0400', '#007f04'] # ([west, east, independent] find _sectorOwner);
+				} else {
+					'#ffff00';
+				};
+				_display = _display + format ["<t size='1.2' align='center' color='%1'>%2: %3</t><br/>", _color, _vote getVariable "BIS_WL_name", _voteCount];
 			} forEach _sortedVoteList;
 
 			private _maxVotedSector = if (count _sortedVoteList > 0) then {

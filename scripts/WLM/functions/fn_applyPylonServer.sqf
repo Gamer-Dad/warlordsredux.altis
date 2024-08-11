@@ -16,4 +16,4 @@ private _pylonsToSet = [];
     _pylonsToSet pushBack [_pylonName, _mag, _turret];
 } forEach _pylonsInfo;
 
-[_asset, _pylonsToSet, _rearm] remoteExec ["WLM_fnc_applyPylonOwner", _asset, true];
+[_asset, _pylonsToSet, _rearm] remoteExec ["WLM_fnc_applyPylonOwner", _asset];

@@ -354,4 +354,4 @@ player addEventHandler ["HandleRating", {
 
 call SQD_fnc_initClient;
 
-0 spawn  MRTM_fnc_settingsMenu;
+0 spawn MRTM_fnc_settingsMenu;
