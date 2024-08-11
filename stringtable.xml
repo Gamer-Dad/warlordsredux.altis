@@ -1942,6 +1942,23 @@
             <Chinesesimp>--- 纯色 ---</Chinesesimp>
             <Chinese>--- 純色 ---</Chinese>
         </Key>
+        <Key ID="STR_A3_spawn_reward">
+            <Original>Spawn reward</Original>
+            <English>Spawn reward</English>
+            <Czech>Odměna za spawn</Czech>
+            <French>Récompense d'apparition</French>
+            <German>Spawn-Belohnung</German>
+            <Italian>Ricompensa di spawn</Italian>
+            <Polish>Nagroda za spawn</Polish>
+            <Portuguese>Recompensa de spawn</Portuguese>
+            <Russian>Награда за появление</Russian>
+            <Spanish>Recompensa de aparición</Spanish>
+            <Turkish>Spawn ödülü</Turkish>
+            <Korean>스폰 보상</Korean>
+            <Japanese>スポーン報酬</Japanese>
+            <Chinesesimp>生成奖励</Chinesesimp>
+            <Chinese>生成獎勵</Chinese>
+        </Key>
         <Key ID="STR_SQUADS_fastTravelToSquadLeader">
             <Original>Fast Travel to Squad Leader</Original>
             <English>Fast Travel to Squad Leader</English>
@@ -2009,6 +2026,23 @@
             <Japanese>あなたは分隊に所属していません。</Japanese>
             <Chinesesimp>你不在小队里。</Chinesesimp>
             <Chinese>你不在小隊裡。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadLeaderInVehicle">
+            <Original>Your squad leader is in a vehicle.</Original>
+            <English>Your squad leader is in a vehicle.</English>
+            <Czech>Váš velitel čety je ve vozidle.</Czech>
+            <French>Votre chef d'escouade est dans un véhicule.</French>
+            <German>Dein Truppführer befindet sich in einem Fahrzeug.</German>
+            <Italian>Il caposquadra è in un veicolo.</Italian>
+            <Polish>Twój dowódca oddziału jest w pojeździe.</Polish>
+            <Portuguese>Seu líder de esquadrão está em um veículo.</Portuguese>
+            <Russian>Ваш командир отряда находится в транспортном средстве.</Russian>
+            <Spanish>Tu líder de escuadrón está en un vehículo.</Spanish>
+            <Turkish>Takım lideriniz bir araçta.</Turkish>
+            <Korean>소대장이 차량에 탑승했습니다.</Korean>
+            <Japanese>あなたの分隊長は車両にいます。</Japanese>
+            <Chinesesimp>你的小队长在车辆中。</Chinesesimp>
+            <Chinese>你的小隊長在車輛中。</Chinese>
         </Key>
         <Key ID="STR_SQUADS_sendInvitationSuccessText">
             <Original>You've sent a squad join invitation to %1.</Original>

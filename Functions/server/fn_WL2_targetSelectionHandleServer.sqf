@@ -18,8 +18,9 @@
 				private _vote = missionNamespace getVariable [_variableName, objNull];
 				private _voteName = format ["%1", _vote];
 				if !(isNull _vote) then {
-					_voteCount = ["getSquadSizeOfSquadLeader", [getPlayerID _x]] call SQD_fnc_server;
-					_voteCount = _voteCount + (_votesByPlayers getOrDefault [_voteName, [objNull, 0]] select 1);
+					private _squadSize = ["getSquadSizeOfSquadLeader", [getPlayerID _x]] call SQD_fnc_server;
+					private _squadPower = ceil ((_squadSize * _squadSize) / 2);
+					private _voteCount = _squadPower + (_votesByPlayers getOrDefault [_voteName, [objNull, 0]] select 1);
 					_votesByPlayers set [_voteName, [_vote, _voteCount]];
 				};
 			} forEach (_players select { !(["isRegularSquadMember", [getPlayerID _x]] call SQD_fnc_server) });
@@ -27,11 +28,11 @@
 			private _sortedVoteList = (toArray _votesByPlayers) # 1; // discard keys
 			_sortedVoteList = [_sortedVoteList, [], { _x # 1  }, "DESCEND"] call BIS_fnc_sortBy;
 
-			private _display = "";
+			private _display = "<t size='1.8'>Vote in Progress</t><br/>";
 			{
 				private _vote = _x # 0;
 				private _voteCount = _x # 1;
-				_display = _display + format ["%1: %2\n", _vote getVariable "BIS_WL_name", _voteCount];
+				_display = _display + format ["<t size='1.5' color='#0074e6'>%1: %2</t><br/>", _vote getVariable "BIS_WL_name", _voteCount];
 			} forEach _sortedVoteList;
 
 			private _maxVotedSector = if (count _sortedVoteList > 0) then {
@@ -60,6 +61,9 @@
 			_npcsVoted = FALSE;
 			missionNamespace setVariable [_votingResetVar, FALSE];
 			call _wipeVotes;
+
+			_calculation = call _calculateMostVotedSector;
+			missionNamespace setVariable [format ["BIS_WL_sectorVoteTallyDisplay_%1", _side], _calculation # 1, true];
 
 			waitUntil {
 				sleep WL_TIMEOUT_SHORT;

@@ -131,7 +131,7 @@ class SquadsMenu
 		class SquadsRefreshButton: RscCheckboxMRTM
 		{
 			idc = 5008;
-			action = "[false] spawn SQD_fnc_menu";
+			action = "SQD_MENU_REFRESH = true;";
 			colorBackgroundHover[] = {1, 1, 1, 0.3};
 			x = 0.69 * safezoneW + safezoneX;
 			y = 0.237 * safezoneH + safezoneY;
@@ -309,7 +309,7 @@ class SquadsMenu_Rename
 			font = "PuristaMedium";
 			sizeEx = 0.04;
 			tooltip = $STR_SQUADS_enterNewSquadName;
-			maxChars = 20;
+			maxChars = 25;
 		};
 		class SquadsRenameOkButton: RscButtonMRTM
 		{

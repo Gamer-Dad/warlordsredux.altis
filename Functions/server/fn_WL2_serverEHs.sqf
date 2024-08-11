@@ -34,6 +34,7 @@ addMissionEventHandler ["EntityKilled", {
 		// only use last hit if no direct killer is found
 		_responsiblePlayer = _unit getVariable ["BIS_WL_lastHitter", objNull];
 	};
+	diag_log format["_responsiblePlayer: %1", _responsiblePlayer];
 
 	if !(isNull _responsiblePlayer) then {
 		[_unit, _responsiblePlayer] spawn BIS_fnc_WL2_killRewardHandle;

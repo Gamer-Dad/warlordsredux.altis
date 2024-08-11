@@ -37,14 +37,14 @@ if (_killerSide != _unitSide) then {
 		_killReward = _killReward * 1.2;
 	};
 
-	_squadmatesIDs = ["getSquadmates", [getPlayerID _responsibleLeader]] call SQD_fnc_server;
+	private _squadmatesIDs = ["getSquadmates", [getPlayerID _responsibleLeader]] call SQD_fnc_server;
 	if (count _squadmatesIDs > 1) then {
 		_squadReward = round (_killReward * 1.5 / (count _squadmatesIDs));
 		{
 			_uid = getUserInfo _x # 2;
 			_squadReward call BIS_fnc_WL2_fundsDatabaseWrite;
-			[_unit, _squadReward] remoteExec ["BIS_fnc_WL2_killRewardClient", (getUserInfo _x # 1)];
-		} forEach (_squadmatesIDs);
+			[_unit, _squadReward] remoteExec ["BIS_fnc_WL2_killRewardClient", (getUserInfo _x) # 1];
+		} forEach _squadmatesIDs;
 	} else {
 		_uid = getPlayerUID _responsibleLeader;
 		_killReward = round _killReward;

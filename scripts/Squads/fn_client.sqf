@@ -185,6 +185,13 @@ switch (_action) do {
     };
     case "renamed": {
         private _newName = ctrlText RENAME_EDIT;
+
+        private _disallowList = getArray (missionConfigFile >> "adminFilter");
+        private _findInDisallowList = _disallowList findIf { [_x, _newName] call BIS_fnc_inString };
+        if (_findInDisallowList > -1) then {
+            _newName = selectRandom ["AIRHEAD ARMADA", "BORING BATTALION", "CLOWN COMPANY", "DUMMY DETACHMENT"];
+        };
+
         ["rename", [getPlayerID player, _newName]] remoteExec ["SQD_fnc_server", 2];
         (findDisplay RENAME_WINDOW) closeDisplay 1;
     };
@@ -211,13 +218,19 @@ switch (_action) do {
             _return = (_squadLeaderID == _playerId);
         };
     };
+    case "isSquadLeaderOfSize": {
+        // Check if player is squad leader of a squad of a certain size or greater
+        private _playerId = _params select 0;
+        private _size = _params select 1;
+
+        private _squad = _squadManager select { (_x select 1) == _playerId } select 0;
+        private _isLeader = !isNil "_squad";
+        private _squadSize = if (isNil "_squad") then { 1 } else {count (_squad select 2)};
+
+        _return = _isLeader && (_squadSize >= _size);
+    };
 };
 
-if (isNil "_return") exitWith {
-//     0 spawn {
-//         sleep 0.5;
-//         [false] call SQD_fnc_menu;
-//     };
-};
+if (isNil "_return") exitWith { };
 
 _return;

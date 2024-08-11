@@ -169,12 +169,11 @@ if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 
 enableRadio true;
 enableSentences true;
-{_x enableChannel [true, true]} forEach [1,3,4,5];
-{_x enableChannel [true, false]} forEach [0,2];
+{_x enableChannel [true, true]} forEach [3,4,5];
+{_x enableChannel [true, false]} forEach [0,1,2];
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
-call SQD_fnc_initClient;
 
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
@@ -325,13 +324,14 @@ addMissionEventHandler ["Map", {
 	if (_mapIsOpened) then {
 		BIS_WL_DisplayCaptureProgress = true;
 		0 spawn {
-			while {visibleMap && BIS_WL_DisplayCaptureProgress && !BIS_WL_missionEnd} do {
+			while { visibleMap && BIS_WL_DisplayCaptureProgress && !BIS_WL_missionEnd } do {
 				private _side = BIS_WL_playerSide;
-				private _sectorsBeingCaptured = (BIS_WL_allSectors select {
+				private _sectorsBeingCaptured = BIS_WL_allSectors select {
 					private _statusVisible = _side in (_x getVariable ["BIS_WL_previousOwners", []]) || 
 						_x == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]);
-					count (_x getVariable ["BIS_WL_seizingInfo", []]) > 0 && _statusVisible;
-				});
+					private _isBeingCaptured = _x getVariable ["BIS_WL_captureProgress", 0] > 0;
+					_isBeingCaptured && _statusVisible;
+				};
 
 				if (count _sectorsBeingCaptured == 0) then { 
 					hintSilent "";
@@ -340,11 +340,11 @@ addMissionEventHandler ["Map", {
 
 				private _hintString = "<t size='1.8'>Capture Progress</t><br/>";
 				{
-					private _seizingInfo = _x getVariable ["BIS_WL_seizingInfo", []];
 					private _sectorName = _x getVariable "BIS_WL_name";
-					private _captureProgress = linearConversion [_seizingInfo # 1, _seizingInfo # 2, serverTime, 0, 100];
+					private _capturingTeam = _x getVariable ["BIS_WL_capturingTeam", independent];
+					private _captureProgress = (_x getVariable ["BIS_WL_captureProgress", 0]) * 100;
 					private _displayPercent = _captureProgress toFixed 1;
-					_hintString = if (_seizingInfo # 0 == west) then {
+					_hintString = if (_capturingTeam == west) then {
 						_hintString + format ["<t size='1.5' shadow='2' color='#004d99'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
 					} else {
 						_hintString + format ["<t size='1.5' shadow='2' color='#ff4b4b'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
@@ -366,3 +366,7 @@ player addEventHandler ["HandleRating", {
 	params ["_unit", "_rating"];
 	0;
 }];
+
+call SQD_fnc_initClient;
+
+0 spawn  MRTM_fnc_settingsMenu;

@@ -1,3 +1,5 @@
+#include "squad_constants.inc"
+
 // Global variables
 SQD_AUDIBLE_PLAYERS = createHashMap;
 SQD_SOUND_CHANGES = [];
@@ -7,8 +9,9 @@ SQD_SOUND_CHANGES = [];
         params ["_player", "_playerId", "_newValue"];
         private _oldPlayerInfo = SQD_AUDIBLE_PLAYERS getOrDefault [_playerId, []];
         if (count _oldPlayerInfo == 2) then { 
+            private _oldPlayer = _oldPlayerInfo # 0;
             private _oldValue = _oldPlayerInfo # 1;
-            if (_oldValue != _newValue) then {
+            if (_oldValue != _newValue || _oldPlayer != _player) then {
                 if (_newValue) then {
                     SQD_SOUND_CHANGES pushBack [_player, 1];
                 } else {
@@ -30,22 +33,7 @@ SQD_SOUND_CHANGES = [];
         params ["_player", "_playerId"];
         
         private _isInMySquad = ["isInMySquad", [_playerID]] call SQD_fnc_client;
-        private _isSpeakingInCommand = getPlayerChannel _player == 2;
-
-        if (_isInMySquad) then {
-            private _isSquadLeader = ["isSquadLeader", [_playerID]] call SQD_fnc_client;
-            if (!_isSquadLeader) then {
-                [_player, _playerID, true] call _deltaVoice;
-            } else {
-                if (_isSpeakingInCommand) then {
-                    [_player, _playerID, false] call _deltaVoice;
-                } else {
-                    [_player, _playerID, true] call _deltaVoice;
-                };
-            };
-        } else {
-            [_player, _playerID, false] call _deltaVoice;
-        };
+        [_player, _playerID, _isInMySquad] call _deltaVoice;
     };
 
     private _handleCommandChat = {
@@ -53,22 +41,14 @@ SQD_SOUND_CHANGES = [];
 
         private _myPlayerId = getPlayerID player;
         private _amSquadLeader = ["isSquadLeader", [_myPlayerId]] call SQD_fnc_client;
-        if (_amSquadLeader) then {
-            [_player, _playerID, true] call _deltaVoice;
-        } else {
-            [_player, _playerID, false] call _deltaVoice;
-        };
+        [_player, _playerID, _amSquadLeader] call _deltaVoice;
     };
 
     private _handleDirectChat = {
         params ["_player", "_playerId"];
 
         private _distance = player distanceSqr _player;
-        if (_distance < (40 * 40)) then {
-            [_player, _playerID, true] call _deltaVoice;
-        } else {
-            [_player, _playerID, false] call _deltaVoice;
-        };
+        [_player, _playerID, _distance < (40 * 40)] call _deltaVoice;
     };
 
     private _handleVehicleChat = {
@@ -76,20 +56,26 @@ SQD_SOUND_CHANGES = [];
 
         private _myVehicle = vehicle player;
         private _playerVehicle = vehicle _player;
-        if (_myVehicle == _playerVehicle) then {
-            [_player, _playerID, true] call _deltaVoice;
-        } else {
-            [_player, _playerID, false] call _deltaVoice;
-        };
+        [_player, _playerID, _myVehicle == _playerVehicle] call _deltaVoice;
     };
 
-    private _previousChannel = currentChannel;
     private _myPlayerId = getPlayerID player;
+    
+    private _previousChannel = currentChannel;
+    private _playerChannelVar = format ["SQD_Channel_%1", _myPlayerId];
+    missionNamespace setVariable [_playerChannelVar, currentChannel, true];
+
+    private _customChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
+    private _customSideChannel = if (side player == west) then {
+        _customChannels # 0
+    } else {
+        _customChannels # 1
+    };
+
     // Fast loop
     while { !BIS_WL_missionEnd } do {
         private _currentChannel = currentChannel;
         if (currentChannel != _previousChannel) then {
-            private _playerChannelVar = format ["SQD_Channel_%1", _myPlayerId];
             missionNamespace setVariable [_playerChannelVar, currentChannel, true];
             _previousChannel = currentChannel;
         };
@@ -117,6 +103,9 @@ SQD_SOUND_CHANGES = [];
                 case 5: {
                     [_player, _playerID] call _handleDirectChat;
                 };
+                case (_customSideChannel + 5): {
+                    [_player, _playerID] call _handleSideChat;
+                };
                 default {
                     [_player, _playerID] call _handleSideChat;
                 };
@@ -138,15 +127,12 @@ SQD_SOUND_CHANGES = [];
 while { !BIS_WL_missionEnd } do {
     private _myPlayerId = getPlayerID player;
 
-    private _isSquadLeader = ["isSquadLeader", [_myPlayerId]] call SQD_fnc_client;
-    private _wasSquadLeader = (channelEnabled 2) # 1;
-    if (_isSquadLeader && !_wasSquadLeader) then {
+    private _isSquadLeaderOfSize = ["isSquadLeaderOfSize", [_myPlayerId, SQD_MIN_COMMAND_CHAT]] call SQD_fnc_client;
+    if (_isSquadLeaderOfSize) then {
         2 enableChannel [true, true];
     } else {
-        if (!_isSquadLeader && _wasSquadLeader) then {
-            2 enableChannel [false, false];
-        };
+        2 enableChannel [false, false];
     };
 
-    sleep 5;
+    sleep 1;
 };

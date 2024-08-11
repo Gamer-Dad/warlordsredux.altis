@@ -1,3 +1,5 @@
+#include "squad_constants.inc"
+
 params ["_action", "_params"];
 
 _message = nil;
@@ -53,11 +55,19 @@ switch (_action) do {
             _message = format ["Inviter squad for %1 not found", _inviter];
             _return = 1;
         };
+
+        private _squadSize = count (_squad select 2);
+        if (_squadSize >= SQD_MAX_SQUAD_SIZE) exitWith {
+            _message = format ["Squad ""%1"" is full: %2/%3", _squad select 0, _squadSize, SQD_MAX_SQUAD_SIZE];
+            private _player = allPlayers select { getPlayerID _x == _playerId } select 0;
+            [_message] remoteExec ["systemChat", _player];
+            _return = 1;
+        };
         
         (_squad select 2) pushBack _playerId;
         
         _message = format ["Player %1 joined Squad %2", _playerId, (_squad select 0)];
-        _return = _squadNumber;
+        _return = 0;
     };
     case "remove": {
         // Remove player from squad
@@ -72,9 +82,15 @@ switch (_action) do {
             _squad set [2, _members];
 
             if (_playerId == (_squad select 1)) then {
-                _squad set [1, _squad select 2 select 0];
+                private _hasAnyRemaining = count _members > 0;
+                if (_hasAnyRemaining) then {
+                    _squad set [1, _members select 0];
+                };
             };
         } forEach _squads;
+
+        // Clean up empty squads
+        SQUAD_MANAGER = SQUAD_MANAGER select { !isNil { _x # 1 } && count (_x # 2) > 0 };
 
         _message = format ["Player %1 removed from all squads.", _playerId];
         _return = 0;

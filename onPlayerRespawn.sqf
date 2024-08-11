@@ -36,3 +36,4 @@ player addEventHandler ["HandleRating", {
 }];
 
 call BIS_fnc_WL2_spectrumAction;
+0 spawn MRTM_fnc_settingsMenu;

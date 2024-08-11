@@ -46,15 +46,14 @@ while {_continue} do {
 				private _projectileDirection = getDir _projectile;
 				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
 
-				private _ownerUID = _x getVariable ["BIS_WL_ownerAsset", "123"];
-				private _assetOwner = _ownerUID call BIS_fnc_getUnitByUID;
-								
-				[_x, _relativeDirection, _assetOwner] remoteExec ["APS_fnc_ReportServer", 2];
+				private _ownerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
+				[_x, _relativeDirection] remoteExec ["APS_fnc_ReportServer", 2];
 
 				deleteVehicle _projectile;
 				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];
 
-				if (side _unit == side _assetOwner) then {
+				systemChat format ["%1 %2", side _unit, _ownerSide];
+				if (side _unit == _ownerSide) then {
 					0 spawn {
 						sleep 0.5;
 						

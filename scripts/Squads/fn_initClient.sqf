@@ -2,13 +2,37 @@ SQD_HAS_INVITE = false;
 
 0 spawn {
     private _playerID = getPlayerID player;
+    
+    private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
+    private _sideCustomChannel = if (side player == WEST) then {
+        _voiceChannels # 0
+    } else {
+        _voiceChannels # 1
+    };
+    _sideCustomChannel radioChannelAdd [player];
+    setCurrentChannel (_sideCustomChannel + 5);
+
+    player addEventHandler ["Respawn", {
+        params ["_unit", "_corpse"];
+
+        private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
+        private _sideCustomChannel = if (side _unit == WEST) then {
+            _voiceChannels # 0
+        } else {
+            _voiceChannels # 1
+        };
+
+        _sideCustomChannel radioChannelAdd [_unit];
+        setCurrentChannel (_sideCustomChannel + 5);
+    }];
 
     0 spawn SQD_fnc_voice;
+
     while { !BIS_WL_missionEnd } do {
-        if (getPlayerChannel player == 1 && !(["isInSquad", [_playerID]] call SQD_fnc_client)) then {
+        if (getPlayerChannel player > 5 && !(["isInSquad", [_playerID]] call SQD_fnc_client)) then {
             [true] call SQD_fnc_menu;
         };
     
-        sleep 1;
+        sleep 0.5;
     };
 };
