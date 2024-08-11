@@ -1,3 +1,5 @@
+#include "squad_constants.inc"
+
 params ["_action", "_params"];
 
 _message = nil;
@@ -51,6 +53,14 @@ switch (_action) do {
         private _squad = SQUAD_MANAGER select {(_x select 2) find _inviter > -1} select 0;
         if (isNil "_squad") exitWith {
             _message = format ["Inviter squad for %1 not found", _inviter];
+            _return = 1;
+        };
+
+        private _squadSize = count (_squad select 2);
+        if (_squadSize >= SQD_MAX_SQUAD_SIZE) exitWith {
+            _message = format ["Squad ""%1"" is full: %2/%3", _squad select 0, _squadSize, SQD_MAX_SQUAD_SIZE];
+            private _player = allPlayers select { getPlayerID _x == _playerId } select 0;
+            [_message] remoteExec ["systemChat", _player];
             _return = 1;
         };
         
