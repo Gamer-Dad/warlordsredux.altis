@@ -1,3 +1,5 @@
+import RscStructuredText;
+
 class RscTitles
 {
 	#include "scripts\GF_Earplugs\GF_Earplugs_HPP.hpp"
@@ -33,28 +35,28 @@ class RscTitles
 		name = "RscWLVoteDisplay";
 		onLoad = "uiNamespace setVariable ['RscWLVoteDisplay', _this select 0];";
 		class controls {
-			class RscWLVoteDisplayText {
-				idc = 7002;
-				type = CT_STRUCTURED_TEXT;
-				style = ST_CENTER;
-				x = 1;
-				y = 0.3;
-				w = 0.35;
-				h = 0.1;
-				size = 0.025;
-				colorBackground[] = {0, 0, 0, 0};
-				colorText[] = {1, 1, 1, 1};
-				font = "PuristaSemibold";
+			class Background: RscText {
+				idc = 7003;
+				style = 128;
+				x = 1 - safeZoneX - 0.3;
+				y = 0;
+				w = 0.28;
+				h = 0.35;
 				text = "";
-				class Attributes{
-					font = "PuristaSemibold";
-					color = "#ffffff";
-					align = "center";
-					valign = "top";
-					shadow = false;
-					shadowColor = "#ff0000";
-					size = "1";
-				};
+				colorBackground[] = { 0, 0, 0, 0.7 };
+				shadow=1;
+			};
+			class RscWLVoteDisplayText: RscStructuredText {
+				idc = 7002;
+				x = 1 - safeZoneX - 0.3;
+				y = 0.015;
+				w = 0.28;
+				h = 0.35;
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.032;
+				class Attributes: Attributes {};
 			};
 		};
 	};

@@ -34,8 +34,10 @@ while { !BIS_WL_missionEnd } do {
 		if (_captureProgress > 0) then {
 			_captureProgress = _captureProgress - _progressMovement;
 		} else {
-			_captureProgress = 0;
-			_capturingTeam = _winner;
+			if (_winner != independent) then {
+				_captureProgress = 0;
+				_capturingTeam = _winner;
+			};
 		};
 	};
 

@@ -63,6 +63,7 @@ BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\f
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
 BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
 BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFix.sqf";
+BIS_fnc_WL2_pingFixInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFixInit.sqf";
 BIS_fnc_WL2_uavJammer = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_uavJammer.sqf";
 BIS_fnc_WL2_spectrumAction = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_spectrumAction.sqf";
 
@@ -303,21 +304,6 @@ player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
 
-(findDisplay 46) displayAddEventHandler ["KeyDown", {
-	if (inputAction "TacticalPing" > 0 && {isRemoteControlling  player}) then {
-		private _distance = viewDistance;
-		private _origin = AGLToASL positionCameraToWorld [0, 0, 0];
-		private _target = AGLToASL positionCameraToWorld [0, 0, _distance];
-
-		private _default = _origin vectorAdd (_origin vectorFromTo _target vectorMultiply _distance);
-		private _pos = lineIntersectsSurfaces [_origin, _target, cameraOn] param [0, [_default]] select 0;
-
-		private _targets = allPlayers select {side _x == side player && _x != player};
-		
-		[ASLToAGL _pos] remoteExec ["BIS_fnc_WL2_pingFix", _targets, true];
-	};
-}];
-
 BIS_WL_DisplayCaptureProgress = false;
 addMissionEventHandler ["Map", {
 	params ["_mapIsOpened", "_mapIsForced"];
@@ -327,10 +313,9 @@ addMissionEventHandler ["Map", {
 			while { visibleMap && BIS_WL_DisplayCaptureProgress && !BIS_WL_missionEnd } do {
 				private _side = BIS_WL_playerSide;
 				private _sectorsBeingCaptured = BIS_WL_allSectors select {
-					private _statusVisible = _side in (_x getVariable ["BIS_WL_previousOwners", []]) || 
-						_x == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]);
 					private _isBeingCaptured = _x getVariable ["BIS_WL_captureProgress", 0] > 0;
-					_isBeingCaptured && _statusVisible;
+					private _revealed = _side in (_x getVariable ["BIS_WL_revealedBy", []]);
+					_isBeingCaptured && _revealed;
 				};
 
 				if (count _sectorsBeingCaptured == 0) then { 

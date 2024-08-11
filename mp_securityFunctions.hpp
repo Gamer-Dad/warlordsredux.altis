@@ -21,7 +21,7 @@ class CfgRemoteExec {
 		};
 
 		class BIS_fnc_WL2_pingFix {
-			allowedTargets = 2;
+			allowedTargets = 1;
 		};
 
 		class MRTM_fnc_invite {

@@ -52,7 +52,6 @@ while {_continue} do {
 				deleteVehicle _projectile;
 				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];
 
-				systemChat format ["%1 %2", side _unit, _ownerSide];
 				if (side _unit == _ownerSide) then {
 					0 spawn {
 						sleep 0.5;

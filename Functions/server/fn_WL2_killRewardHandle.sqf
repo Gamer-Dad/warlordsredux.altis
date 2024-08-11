@@ -6,20 +6,13 @@ _killerSide = side group _responsibleLeader;
 _unitSide = if (_unit isKindOf "Man") then {
 	side group _unit;
 } else {
-	if ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) != "123") then {
-		if (count crew _unit > 0) then {
-			side group (crew _unit # 0);
-		} else {
-			side group ((_unit getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID);
-		};
-	} else {
-		(switch ((getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side"))) do {
-			case 0: {east};
-			case 1: {west};
-			case 2: {Independent};
-			default {Independent};
-		});
+	private _typeSide = switch (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) do {
+		case 0: { east };
+		case 1: { west };
+		case 2: { independent };
+		default { independent };
 	};
+	private _assetSide = _unit getVariable ["BIS_WL_ownerAssetSide", _typeSide];
 };
 
 if (_killerSide != _unitSide) then {
