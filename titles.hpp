@@ -1,5 +1,4 @@
 import RscStructuredText;
-import Attributes;
 
 class RscTitles
 {
@@ -42,7 +41,7 @@ class RscTitles
 				x = 1 - safeZoneX - 0.3;
 				y = 0;
 				w = 0.28;
-				h = 0.35;
+				h = 0.3;
 				text = "";
 				colorBackground[] = { 0, 0, 0, 0.7 };
 				shadow=1;
@@ -52,12 +51,53 @@ class RscTitles
 				x = 1 - safeZoneX - 0.3;
 				y = 0.015;
 				w = 0.28;
+				h = 0.3;
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.032;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
+			};
+		};
+	};
+
+	class RscWLCaptureDisplay {
+		idd = -1;
+		movingEnable = 0;
+		duration = 1e+011;
+		name = "RscWLCaptureDisplay";
+		onLoad = "uiNamespace setVariable ['RscWLCaptureDisplay', _this select 0];";
+		class controls {
+			class Background: RscText {
+				idc = 7004;
+				style = 128;
+				x = 1 - safeZoneX - 0.3;
+				y = 0.3;
+				w = 0.28;
+				h = 0.35;
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0.7 };
+				shadow=1;
+			};
+			class RscWLCaptureDisplayText: RscStructuredText {
+				idc = 7005;
+				x = 1 - safeZoneX - 0.3;
+				y = 0.315;
+				w = 0.28;
 				h = 0.35;
 				text = "";
 				style = ST_MULTI;
 				shadow = 1;
 				size = 0.032;
-				class Attributes: Attributes {};
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
 			};
 		};
 	};

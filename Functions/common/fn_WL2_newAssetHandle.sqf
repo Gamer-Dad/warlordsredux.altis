@@ -45,7 +45,7 @@ if (isPlayer _owner) then {
 		_asset setVariable ["BIS_WL_ownerAssetSide", _side, true];
 
 		private _defaultMags = magazinesAllTurrets _asset;
-		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
+		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags, true];
 		_asset setVariable ["WLM_savedDefaultMags", _defaultMags, true];
 		_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 		_vehicles = missionNamespace getVariable [_var, []];
@@ -205,17 +205,6 @@ if (isPlayer _owner) then {
 			};
 		};
 
-		private _rearmTime = if !(_asset isKindOf "StaticWeapon") then {
-			if (_asset isKindOf "Helicopter" || _asset isKindOf "Plane") then {
-				30;
-			} else {
-				(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
-			};
-		} else {
-			(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
-		};
-		_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
-
 		if (unitIsUAV _asset) then {
 			if (profileNamespace getVariable ["MRTM_enableAuto", true]) then {
 				_asset setAutonomous false;
@@ -304,8 +293,17 @@ if (isPlayer _owner) then {
 		};
 	};
 
-	_asset setVariable ["BIS_WL_nextRearm", serverTime];
-
+	private _rearmTime = if !(_asset isKindOf "StaticWeapon") then {
+		if (_asset isKindOf "Helicopter" || _asset isKindOf "Plane") then {
+			30;
+		} else {
+			(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
+		};
+	} else {
+		(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
+	};
+	_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+	
 	if (_asset call DIS_fnc_Check) then {
 		_asset spawn DIS_fnc_RegisterLauncher;
 	};

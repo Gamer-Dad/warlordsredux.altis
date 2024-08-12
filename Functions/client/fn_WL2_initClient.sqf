@@ -66,6 +66,7 @@ BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\f
 BIS_fnc_WL2_pingFixInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFixInit.sqf";
 BIS_fnc_WL2_uavJammer = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_uavJammer.sqf";
 BIS_fnc_WL2_spectrumAction = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_spectrumAction.sqf";
+BIS_fnc_WL2_captureList = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_captureList.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
@@ -298,52 +299,12 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
-private _squadActionText = format ["<t color='#0000FF'>%1</t>", localize "STR_SQUADS_squads"];
+private _squadActionText = format ["<t color='#00FFFF'>%1</t>", localize "STR_SQUADS_squads"];
 private _squadActionId = player addAction[_squadActionText, { [true] call SQD_fnc_menu }, [], -100, false, false, "", ""];
 player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa'/>"];
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
-
-BIS_WL_DisplayCaptureProgress = false;
-addMissionEventHandler ["Map", {
-	params ["_mapIsOpened", "_mapIsForced"];
-	if (_mapIsOpened) then {
-		BIS_WL_DisplayCaptureProgress = true;
-		0 spawn {
-			while { visibleMap && BIS_WL_DisplayCaptureProgress && !BIS_WL_missionEnd } do {
-				private _side = BIS_WL_playerSide;
-				private _sectorsBeingCaptured = BIS_WL_allSectors select {
-					private _isBeingCaptured = _x getVariable ["BIS_WL_captureProgress", 0] > 0;
-					private _revealed = _side in (_x getVariable ["BIS_WL_revealedBy", []]);
-					_isBeingCaptured && _revealed;
-				};
-
-				if (count _sectorsBeingCaptured == 0) then { 
-					hintSilent "";
-					continue;
-				};
-
-				private _hintString = "<t size='1.8'>Capture Progress</t><br/>";
-				{
-					private _sectorName = _x getVariable "BIS_WL_name";
-					private _capturingTeam = _x getVariable ["BIS_WL_capturingTeam", independent];
-					private _captureProgress = (_x getVariable ["BIS_WL_captureProgress", 0]) * 100;
-					private _displayPercent = _captureProgress toFixed 1;
-					_hintString = if (_capturingTeam == west) then {
-						_hintString + format ["<t size='1.5' shadow='2' color='#004d99'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
-					} else {
-						_hintString + format ["<t size='1.5' shadow='2' color='#ff4b4b'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
-					};
-				} forEach _sectorsBeingCaptured;
-				hintSilent parseText _hintString;
-				sleep 0.25;
-			};
-			hintSilent "";
-		};
-	} else {
-		BIS_WL_DisplayCaptureProgress = false;
-	};
-}];
+0 spawn BIS_fnc_WL2_captureList;
 
 call BIS_fnc_WL2_spectrumAction;
 

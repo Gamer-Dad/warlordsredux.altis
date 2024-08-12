@@ -64,7 +64,7 @@ while {!BIS_WL_missionEnd} do {
 	_voteTallyDisplayVar spawn {
 		private _voteDisplay = uiNamespace getVariable ["RscWLVoteDisplay", objNull];
 		if (isNull _voteDisplay) then {
-			"VoteDisplay" cutRsc ["RscWLVoteDisplay", "PLAIN", -1, false, true];
+			"VoteDisplay" cutRsc ["RscWLVoteDisplay", "PLAIN", -1, true, false];
 			_voteDisplay = uiNamespace getVariable "RscWLVoteDisplay";
 		};
 
@@ -73,9 +73,11 @@ while {!BIS_WL_missionEnd} do {
 		_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
 
 		while { isNull WL_TARGET_FRIENDLY && !BIS_WL_missionEnd && !BIS_WL_resetTargetSelection_client } do {
-			private _voteText = missionNamespace getVariable [_this, ""];
-			_indicator ctrlSetStructuredText (parseText _voteText);
-
+			private _voteText = missionNamespace getVariable [_this, ["", 0]];
+			_indicator ctrlSetStructuredText (parseText (_voteText # 0));
+			_indicatorBackground ctrlSetPositionH (0.09 + (_voteText # 1) * 0.04);
+			_indicatorBackground ctrlCommit 0;
+			
 			sleep WL_TIMEOUT_STANDARD;
 		};
 

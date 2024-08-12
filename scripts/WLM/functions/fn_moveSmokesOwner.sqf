@@ -26,7 +26,15 @@ private _turretsWithSmoke = [];
 
 _asset addWeaponTurret ["SmokeLauncher", _targetTurret];
 
-private _defaultMags = magazinesAllTurrets _asset;
+private _defaultMags = _asset getVariable ["BIS_WL_defaultMagazines", []];
+
+{
+    private _mag = _x;
+    private _magName = _mag # 0;
+    if ((_mag # 0) in _compatibleSmokeMags) then {
+        _mag set [1, _targetTurret];
+    };
+} forEach _defaultMags;
 
 _asset setVariable ["BIS_WL_defaultMagazines", _defaultMags, true];
 _asset setVariable ["WLM_savedMagazines", [], true];

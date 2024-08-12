@@ -9,7 +9,7 @@ _return = nil;
 
 switch (_action) do {
     case "create": {
-        private _squadName = format ["%1 SQUAD", toUpper (name player)];
+        private _squadName = profileNamespace getVariable ["SQD_nameDefault", format ["%1 SQUAD", toUpper (name player)]];
         private _leader = getPlayerID player;
         private _side = side player;
 
@@ -198,6 +198,8 @@ switch (_action) do {
         if (_findInDisallowList > -1) then {
             _newName = selectRandom ["AIRHEAD ARMADA", "BORING BATTALION", "CLOWN COMPANY", "DUMMY DETACHMENT"];
         };
+
+        profileNamespace setVariable ["SQD_nameDefault", _newName];
 
         ["rename", [getPlayerID player, _newName]] remoteExec ["SQD_fnc_server", 2];
         (findDisplay RENAME_WINDOW) closeDisplay 1;
