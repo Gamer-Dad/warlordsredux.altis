@@ -5,7 +5,6 @@ class GOMRscText
 	colorInActive[] = {1, 1, 1, 1};
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 0;
 	idc = -1;
 	colorBackground[] =
@@ -66,7 +65,6 @@ class GOMRscStructuredText
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 13;
 	idc = -1;
 	style = 0;
@@ -101,7 +99,6 @@ class GOMRscPicture
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 0;
 	idc = -1;
 	style = 48;
@@ -155,7 +152,6 @@ class GOMRscEdit
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 2;
 	x = 0;
 	y = 0;
@@ -220,7 +216,6 @@ class GOMRscCombo
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 4;
 	colorSelect[] =
 	{
@@ -400,7 +395,6 @@ class GOMRscListBox
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 5;
 	rowHeight = 0;
 		colorDisabled[] = { 1, 1, 1, 1 };
@@ -585,7 +579,6 @@ class GOMRscButton
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 1;
 	text = "";
 	colorText[] =
@@ -955,7 +948,6 @@ class GOMRscSlider
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 3;
 	style = 1024;
 	color[] =

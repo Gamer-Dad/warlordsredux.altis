@@ -1,4 +1,5 @@
 import RscStructuredText;
+import Attributes;
 
 class RscTitles
 {

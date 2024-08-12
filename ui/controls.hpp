@@ -152,7 +152,6 @@ class welcomeScreen
 		class welcomeCloseButton: RscButtonMRTM
 		{
 			idc = 1;
-			access = 0;
 			type = CT_BUTTON;
 			text = "Close";
 			sizeEx = "0.021 / (getResolution select 5)";
