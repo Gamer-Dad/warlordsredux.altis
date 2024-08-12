@@ -5,10 +5,11 @@
 
 	[_x, _forEachIndex] spawn {
 		params ["_side", "_sideIndex"];
-		_votingResetVar = format ["BIS_WL_resetTargetSelection_server_%1", _side];
+		private _votingResetVar = format ["BIS_WL_resetTargetSelection_server_%1", _side];
 
 		private _calculateMostVotedSector = {
-			private _warlords = allPlayers select {side group _x == _side};
+			private _allPlayers = call BIS_fnc_listPlayers;
+			private _warlords = _allPlayers select {side group _x == _side};
 			private _players = _warlords select {isPlayer _x};
 
 			private _votesByPlayers = createHashMap;
@@ -56,19 +57,16 @@
 		};
 
 		private _wipeVotes = {
-			_players = allPlayers select {side group _x == _side} select {isPlayer _x};
-			_voterVariables = _players apply {format ["BIS_WL_targetVote_%1", getPlayerID _x]};
+			private _allPlayers = call BIS_fnc_listPlayers;
+			private _players = _allPlayers select {side group _x == _side} select {isPlayer _x};
+			private _voterVariables = _players apply {format ["BIS_WL_targetVote_%1", getPlayerID _x]};
 			{
 				missionNamespace setVariable [_x, objNull];
-			} forEach (_voterVariables);
+			} forEach _voterVariables;
 		};
 		
 		while {!BIS_WL_missionEnd} do {
 			_t = serverTime + 10 + random 10;
-			_tNoPlayers = serverTime + 2 + random 5;
-			_variablesPool = [];
-			_votesPool = [];
-			_npcsVoted = FALSE;
 			missionNamespace setVariable [_votingResetVar, FALSE];
 			call _wipeVotes;
 
@@ -77,24 +75,16 @@
 
 			waitUntil {
 				sleep WL_TIMEOUT_SHORT;
-				_warlords = allPlayers select {side group _x == _side};
+				private _allPlayers = call BIS_fnc_listPlayers;
+				_warlords = _allPlayers select {side group _x == _side};
 				_players = _warlords select {isPlayer _x};
-				_npcs = _warlords select {!isPlayer _x};
-				_noPlayers = count (allPlayers select {(side group _x) == ([west, east] # _sideIndex)}) == 0;
 				_playerVotingVariableNames = _players apply {format ["BIS_WL_targetVote_%1", getPlayerID _x]};
 
 				_votingReset = missionNamespace getVariable [_votingResetVar, false];
 				_playerHasVote = _playerVotingVariableNames findIf {!isNull (missionNamespace getVariable [_x, objNull])} != -1;
-				_serverTimeCondition = serverTime > _tNoPlayers;
-
-				_conditionNpcsAndNoPlayers = if (count _npcs > 0) then {
-					if (_noPlayers) then {_serverTimeCondition} else {false}
-				} else {
-					false
-				};
 
 				// Final condition
-				_votingReset || _playerHasVote || _conditionNpcsAndNoPlayers
+				_votingReset || _playerHasVote
 			};
 			
 			if !(missionNamespace getVariable [_votingResetVar, false]) then {
@@ -102,9 +92,9 @@
 				_nextUpdate = serverTime;
 				
 				while {serverTime < _votingEnd && {!(missionNamespace getVariable [_votingResetVar, false])}} do {
-					_warlords = allPlayers select {side group _x == _side};
+					private _allPlayers = call BIS_fnc_listPlayers;
+					_warlords = _allPlayers select {side group _x == _side};
 					_players = _warlords select {isPlayer _x};
-					_noPlayers = count (allPlayers select {(side group _x) == ([west, east] # _sideIndex)}) == 0;
 					
 					if (serverTime >= _nextUpdate) then {
 						_calculation = call _calculateMostVotedSector;

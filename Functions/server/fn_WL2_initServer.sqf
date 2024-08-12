@@ -93,9 +93,18 @@ setTimeMultiplier 8;
 	_x spawn {
 		_side = _this;
 		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep 5; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};
+			private _currentSideTargetVar = format ["BIS_WL_currentTarget_%1", _side];
+			private _currentSideTarget = missionNamespace getVariable [_currentSideTargetVar, objNull];
+			private _currentSideTargetOwner = objNull;
+			waitUntil {
+				sleep 5; 
+				_currentSideTarget = missionNamespace getVariable [_currentSideTargetVar, objNull];
+				_currentSideTargetOwner = _currentSideTarget getVariable ["BIS_WL_owner", sideUnknown];
+				_currentSideTargetOwner != _side;
+			};
+
 			sleep 5;
-			if (((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side) then {
+			if (_currentSideTargetOwner == _side) then {
 				[_side, objNull] call BIS_fnc_WL2_selectTarget;
 			};
 		};
