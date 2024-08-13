@@ -1,7 +1,7 @@
 params ["_unit", "_responsibleLeader"];
 
 _uid = _unit getVariable ["BIS_WL_ownerAsset", "123"];
-// if (_uid == "123" || {_uid == (getPlayerUID _responsibleLeader)}) exitWith {};
+if (_uid == "123" || {_uid == (getPlayerUID _responsibleLeader)}) exitWith {};
 
 if (_unit isKindOf "Man") then {
 	if ((group _unit) != (group _responsibleLeader)) then {
