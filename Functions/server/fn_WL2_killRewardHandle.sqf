@@ -12,7 +12,7 @@ _unitSide = if (_unit isKindOf "Man") then {
 		case 2: { independent };
 		default { independent };
 	};
-	private _assetSide = _unit getVariable ["BIS_WL_ownerAssetSide", _typeSide];
+	_unit getVariable ["BIS_WL_ownerAssetSide", _typeSide];
 };
 
 if (_killerSide != _unitSide) then {

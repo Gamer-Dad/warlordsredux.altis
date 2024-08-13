@@ -15,8 +15,8 @@ while { !BIS_WL_missionEnd } do {
 	_lastTime = serverTime;
 	private _progressMovement = _actualTimeElapsed / _seizingTime;
 
-	private _info = _sector call BIS_fnc_WL2_getVehicles;
-	private _sortedInfo = [_info, [], { (_x # 1) }, "DESCEND"] call BIS_fnc_sortBy;
+	private _info = _sector call BIS_fnc_WL2_getCapValues;
+	private _sortedInfo = [_info, [], { _x # 1 }, "DESCEND"] call BIS_fnc_sortBy;
 	
 	private _topEntry = _sortedInfo # 0;
 	private _winner = _topEntry # 0;

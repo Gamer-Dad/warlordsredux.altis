@@ -40,6 +40,7 @@ BIS_fnc_WL2_targetSelectionHandleServer = compileFinal preprocessFileLineNumbers
 BIS_fnc_WL2_zoneRestrictionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_zoneRestrictionHandleServer.sqf";
 BIS_fnc_WL2_getInfantry = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getInfantry.sqf";
 BIS_fnc_WL2_getVehicles = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getVehicles.sqf";
+BIS_fnc_WL2_getCapValues = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getCapValues.sqf";
 BIS_fnc_WL2_sectorCaptureHandle = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorCaptureHandle.sqf";
 BIS_fnc_WL2_sectorsInitServer = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorsInitServer.sqf";
 BIS_fnc_WL2_handleInstigator = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_handleInstigator.sqf";
