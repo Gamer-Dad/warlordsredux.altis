@@ -1,50 +1,24 @@
-#include "..\WLM_constants.inc";
+params ["_asset"];
 
-params ["_showWarning"];
+private _defaultMags = _asset getVariable ["WLM_savedDefaultMags", []];
+{
+    _x params ["_className", "_turretPath", "_ammoCount", "_id", "_creator"];
+    _asset removeMagazinesTurret [_className, _turretPath];
+} forEach _defaultMags;
 
-private _asset = uiNamespace getVariable "WLM_asset";
+{
+    _x params ["_className", "_turretPath", "_ammoCount", "_id", "_creator"];
+    _asset addMagazineTurret [_className, _turretPath, _ammoCount];
+} forEach _defaultMags;
 
-private _cooldown = ((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0;
-private _nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select { alive _x };
-private _rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
+_asset spawn APS_fnc_RearmAPS;
 
-if (_rearmVehicleIndex == -1) exitWith {
-    playSound "AddItemFailed";
-};
+_asset setVehicleReceiveRemoteTargets true;
+_asset setVehicleReportRemoteTargets true;
+_asset setVehicleReportOwnPosition true;
 
-private _rearmSource = _nearbyVehicles # _rearmVehicleIndex;
-private _amount = _rearmSource getVariable ["GOM_fnc_ammocargo", 0];
+_rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
 
-if (_cooldown > 0 || _amount <= 0) exitWith {
-    playSound "AddItemFailed";
-};
-
-private _pylonMismatch = false;
-
-// disabled for now
-if (_showWarning && _pylonMismatch) exitWith {
-    private _display = findDisplay WLM_DISPLAY;
-
-    private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";
-    private _confirmButtonControl = _confirmDialog displayCtrl WLM_MODAL_CONFIRM_BUTTON;
-    private _cancelButtonControl = _confirmDialog displayCtrl WLM_MODAL_EXIT_BUTTON;
-    _cancelButtonControl ctrlAddEventHandler ["ButtonClick", {
-        (findDisplay WLM_MODAL) closeDisplay 1;
-    }];
-    _confirmButtonControl ctrlAddEventHandler ["ButtonClick", {
-        (findDisplay WLM_MODAL) closeDisplay 1;
-        [false, false] call WLM_fnc_rearmVehicle;
-    }];
-};
-
-private _massTally = 250;
-private _newAmmo = _amount - _massTally;
-
-if (_newAmmo < 0) exitWith {
-    playSound "AddItemFailed";
-    hint format [localize "STR_WLM_KG_AMMO_REQUIRED", _massTally];
-};
-
-_rearmSource setVariable ["GOM_fnc_ammocargo", _newAmmo, true];
-
-[_asset] remoteExec ["WLM_fnc_rearmVehicleServer", 2];
+_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 1, 1, 75, 0, true];
+[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;

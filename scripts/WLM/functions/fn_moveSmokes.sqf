@@ -2,10 +2,6 @@
 
 params ["_asset", "_targetTurret"];
 
-// if (!local _asset) exitWith {};
-
-diag_log format ["Asset: %1, Owner: %2", _asset, owner _asset];
-
 private _compatibleSmokeMags = compatibleMagazines "SmokeLauncher";
 private _smokeMags = (magazinesAllTurrets _asset) select { (_x # 0) in _compatibleSmokeMags };
 

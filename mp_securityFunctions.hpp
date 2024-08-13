@@ -4,8 +4,8 @@ class CfgRemoteExec {
 		mode = 1;
 		jip = 1;
 
-		class APS_fnc_ReportServer {
-			allowedTargets = 2;
+		class APS_fnc_Report {
+			allowedTargets = 1;
 		};
 
 		class BIS_fnc_WL2_handleClientRequest {
@@ -60,24 +60,24 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class WLM_fnc_applyPylonServer {
-			allowedTargets = 2;
+		class WLM_fnc_applyPylon {
+			allowedTargets = 0;
 		};
 		
-		class WLM_fnc_applyVehicleServer {
-			allowedTargets = 2;
+		class WLM_fnc_applyVehicle {
+			allowedTargets = 0;
 		};
 
-		class WLM_fnc_rearmVehicleServer {
-			allowedTargets = 2;
+		class WLM_fnc_rearmVehicle {
+			allowedTargets = 0;
 		};
 
-		class WLM_fnc_moveSmokesServer {
-			allowedTargets = 2;
+		class WLM_fnc_moveSmokes {
+			allowedTargets = 0;
 		};
 
-		class WLM_fnc_changeHornServer {
-			allowedTargets = 2;
+		class WLM_fnc_changeHorn {
+			allowedTargets = 0;
 		};
 		
 		class SQD_fnc_server {

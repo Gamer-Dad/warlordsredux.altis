@@ -80,7 +80,7 @@ private _magazineSelectBoxes = uiNamespace getVariable "WLM_magazineSelectBoxes"
     };
 } forEach _magazineSelectBoxes;
 
-[_asset, _magTurretsToRemove, _magTurretsToAdd, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyVehicleServer", 2];
+[_asset, _magTurretsToRemove, _magTurretsToAdd, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyVehicle", 0];
 
 [_magazineSelectBoxes, _asset] spawn {
     params ["_magazineSelectBoxes", "_asset"];
