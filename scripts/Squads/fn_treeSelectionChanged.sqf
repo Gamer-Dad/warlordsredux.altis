@@ -6,7 +6,7 @@ private _squadManager = missionNamespace getVariable ["SQUAD_MANAGER", []];
 private _squadList = _squadManager select {count (_x select 2) > 0};
 private _mySquad = _squadList select {(_x select 2) find (getPlayerID player) > -1} select 0;
 
-playSoundUI ["a3\ui_f\data\sound\rsclistbox\soundselect.wss"];
+playSoundUI ["a3\ui_f\data\sound\rsclistbox\soundselect.wss", 0.5];
 
 if (isNil "_mySquad") exitWith {
     ctrlEnable [PROMOTE_BUTTON, false];
