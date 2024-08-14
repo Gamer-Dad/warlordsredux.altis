@@ -101,4 +101,48 @@ class RscTitles
 			};
 		};
 	};
+
+	class RscWLAPSDisplay {
+		idd = -1;
+		movingEnable = 0;
+		duration = 1e+011;
+		name = "RscWLAPSDisplay";
+		onLoad = "uiNamespace setVariable ['RscWLAPSDisplay', _this select 0];";
+		class controls {
+			class Background: RscText {
+				idc = 7006;
+				style = 128;
+				x = 1 - safeZoneX - 0.32;
+				y = 0;
+				w = 0.3;
+				h = 0.3 * 4 / 3;
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0.7 };
+				shadow=1;
+			};
+			class RscWLAPSDisplayText: RscPicture {
+				idc = 7007;
+				x = 1 - safeZoneX - 0.32;
+				y = 0;
+				w = 0.3;
+				h = 0.3 * 4 / 3;
+				text = "\a3\ui_f\data\IGUI\Cfg\Radar\danger_ca.paa";
+				style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
+				shadow = 1;
+				colorText[] = {1, 0, 0, 1};
+				size = 0.032;
+			};
+			class RscWLAPSDisplayRadar: RscPicture {
+				idc = 7008;
+				x = 1 - safeZoneX - 0.32;
+				y = 0;
+				w = 0.3;
+				h = 0.3 * 4 / 3;
+				text = "\a3\ui_f\data\IGUI\Cfg\Radar\radar_ca.paa";
+				style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
+				shadow = 1;
+				size = 0.032;
+			};
+		};
+	};
 };

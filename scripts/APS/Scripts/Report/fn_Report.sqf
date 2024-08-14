@@ -20,17 +20,30 @@ if !((typeOf _v) in apsDazzler) then {
 	_text = _text + format["Charges: %1/%2", (_v getVariable"apsAmmo"), (_v call APS_fnc_getMaxAmmo)];
 };
 
-if (!_indicator) exitWith {
-	hintSilent(parseText format["%1",_text]);
-	sleep 5;
-	hintSilent "";
-};
+if (!_indicator) exitWith {};
 
 if(_d<1)then{_d=1};
-_d=ceil(_d/22.5);
-_colour="#999999";
-_pic=format["scripts\APS\Pics\dir%1.paa",_d];
+
 playSound"Alarm";
-hintSilent(parseText format["<img size='7' color='%1' img image='%2'/><br/><br/>%3",_colour,_pic,_text]);
-sleep 3;
-hintSilent "";
+
+private _apsDisplay = uiNamespace getVariable ["RscWLAPSDisplay", objNull];
+if (isNull _apsDisplay) then {
+	"APSDisplay" cutRsc ["RscWLAPSDisplay", "PLAIN", -1, true, true];
+	_apsDisplay = uiNamespace getVariable "RscWLAPSDisplay";
+};
+
+private _indicatorBackground = _apsDisplay displayCtrl 7006;
+private _indicatorDanger = _apsDisplay displayCtrl 7007;
+private _indicatorRadar = _apsDisplay displayCtrl 7008;
+
+_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
+_indicatorDanger ctrlShow true;
+_indicatorRadar ctrlShow true;
+
+_indicatorDanger ctrlSetAngle [_d + 22.5, 0.5, 0.5];
+
+sleep 5;
+
+_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0];
+_indicatorDanger ctrlShow false;
+_indicatorRadar ctrlShow false;

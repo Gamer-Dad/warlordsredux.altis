@@ -5,7 +5,7 @@ class CfgRemoteExec {
 		jip = 1;
 
 		class APS_fnc_Report {
-			allowedTargets = 1;
+			allowedTargets = 0;
 		};
 
 		class BIS_fnc_WL2_handleClientRequest {
