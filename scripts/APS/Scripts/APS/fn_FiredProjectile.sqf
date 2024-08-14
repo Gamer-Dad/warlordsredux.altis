@@ -1,5 +1,7 @@
 params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
+private _firedPosition = getPosATL _gunner;
+
 _dazzleable = _projectile call APS_fnc_IsLaserGuided || {
 	_projectile call APS_fnc_IsIRguided || {
 	_projectile call APS_fnc_IsVisualGuided || {
@@ -43,16 +45,15 @@ while {_continue} do {
 				_x setVariable ["apsAmmo", _ammo - 1, true];
 
 				private _projectilePosition = getPosATL _projectile;
-				private _projectileDirection = getDir _projectile;
+				private _projectileDirection = _firedPosition getDir _x;
 				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
 
-				private _ownerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
-				[_x, _relativeDirection] remoteExec ["APS_fnc_ReportServer", 2];
+				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", _x];
 
 				deleteVehicle _projectile;
 				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];
 
-				systemChat format ["%1 %2", side _unit, _ownerSide];
+				private _ownerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
 				if (side _unit == _ownerSide) then {
 					0 spawn {
 						sleep 0.5;

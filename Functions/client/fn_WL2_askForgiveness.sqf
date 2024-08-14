@@ -12,22 +12,15 @@ if (isNil "WL2_ffBuffer") then {
 			_obj = (_params # 1);
 			
 			if (isPlayer _obj) then {
-				_askForgiveness = [format ["Choose to forgive: %1?", name _killer], "Forgive Friendly Fire", "Forgive", "Don't forgive"] call BIS_fnc_guiMessage;
-				if (_askForgiveness) then {
-					[_killer, player, true] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
-				} else {
-					[_killer, player, false] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
-				};
+				private _askForgiveness = [format ["Choose to forgive: %1?", name _killer], "Forgive Friendly Fire", "Forgive", "Don't forgive"] call BIS_fnc_guiMessage;
+				[_killer, player, _askForgiveness, name player] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
 				WL2_ffBuffer deleteAt 0;
 				_busy = false;
 			} else {
-				_text = getText (configFile >> 'CfgVehicles' >> (typeOf _obj) >> 'displayName');
-				_askForgiveness = [format ["Choose to forgive %1 for killing: %2?", name _killer, _text], "Forgive Friendly Fire", "Forgive", "Don't forgive"] call BIS_fnc_guiMessage;
-				if (_askForgiveness) then {
-					[_killer, player, true] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
-				} else {
-					[_killer, player, false] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
-				};
+				private _text = getText (configFile >> 'CfgVehicles' >> (typeOf _obj) >> 'displayName');
+				private _askForgiveness = [format ["Choose to forgive %1 for killing: %2?", name _killer, _text], "Forgive Friendly Fire", "Forgive", "Don't forgive"] call BIS_fnc_guiMessage;
+				[_killer, player, _askForgiveness, _text] remoteExec ["BIS_fnc_WL2_forgiveTeamkill", 2];
+
 				WL2_ffBuffer deleteAt 0;
 				_busy = false;
 			};

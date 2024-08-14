@@ -2473,5 +2473,39 @@
             <Chinesesimp>小队</Chinesesimp>
             <Chinese>小队</Chinese>
         </Key>
+        <Key ID="STR_WL2_VOTE_IN_PROGRESS">
+            <Original>Vote in Progress</Original>
+            <English>Vote in Progress</English>
+            <Czech>Hlasování probíhá</Czech>
+            <French>Vote en cours</French>
+            <German>Abstimmung läuft</German>
+            <Italian>Votazione in corso</Italian>
+            <Polish>Głosowanie w toku</Polish>
+            <Portuguese>Votação em andamento</Portuguese>
+            <Russian>Идет голосование</Russian>
+            <Spanish>Votación en curso</Spanish>
+            <Turkish>Oylama devam ediyor</Turkish>
+            <Korean>투표 진행 중</Korean>
+            <Japanese>投票中</Japanese>
+            <Chinesesimp>投票进行中</Chinesesimp>
+            <Chinese>投票進行中</Chinese>
+        </Key>
+        <Key ID="STR_WL2_CAPTURE_PROGRESS">
+            <Original>Capture Progress</Original>
+            <English>Capture Progress</English>
+            <Czech>Průběh dobývání</Czech>
+            <French>Progression de la capture</French>
+            <German>Eroberungsfortschritt</German>
+            <Italian>Progresso della cattura</Italian>
+            <Polish>Postęp w zdobyciu</Polish>
+            <Portuguese>Progresso da captura</Portuguese>
+            <Russian>Прогресс захвата</Russian>
+            <Spanish>Progreso de captura</Spanish>
+            <Turkish>Yakalama ilerlemesi</Turkish>
+            <Korean>점령 진행 상황</Korean>
+            <Japanese>キャプチャ進行中</Japanese>
+            <Chinesesimp>捕获进度</Chinesesimp>
+            <Chinese>捕獲進度</Chinese>
+        </Key>
     </Container>
 </Project>

@@ -79,7 +79,7 @@ _asset setVehicleReportOwnPosition true;
 
 _asset setVariable ["WLM_assetAttachments", _attachments, true];
 
-[_asset, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyPylonServer", 2];
+[_asset, _eligibleFreeRearm] remoteExec ["WLM_fnc_applyPylon", _asset];
 
 [_attachments, _asset] spawn {
     params ["_attachments", "_asset"];

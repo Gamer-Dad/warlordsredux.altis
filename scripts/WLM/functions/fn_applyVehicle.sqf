@@ -14,5 +14,5 @@ _asset setVariable ["WLM_savedDefaultMags", _defaultMags, true];
 _asset setVehicleAmmo 0;
 
 if (_eligibleFreeRearm) then {
-    _asset call WLM_fnc_rearmVehicleOwner;
+    _asset call WLM_fnc_rearmVehicle;
 };

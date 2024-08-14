@@ -6,13 +6,6 @@ class CfgFunctions {
 			class openMenu {};
 		};
 	};
-	class GOM {
-		class init
-		{
-			file = "scripts\GOM\functions";
-			class aircraftLoadoutInit {preInit = 1;};
-		};
-	};
 	class KS
 	{	
 		class normalFunctions
@@ -55,8 +48,7 @@ class CfgFunctions {
 		class Report
 		{
 			file = "scripts\APS\Scripts\Report";
-			class ReportOwner {};
-			class ReportServer {};
+			class Report {};
 		};
 	};
 	class DIS {
@@ -98,25 +90,20 @@ class CfgFunctions {
 			file = "Scripts\WLM\functions";
 			class applyLoadoutAircraft {};
 			class applyLoadoutVehicle {};
-			class applyPylonOwner {};
-			class applyPylonServer {};
-			class applyVehicleOwner {};
-			class applyVehicleServer {};
-			class changeHornOwner {};
-			class changeHornServer {};
+			class applyPylon {};
+			class applyVehicle {};
+			class changeHorn {};
 			class constructAircraftPylons {};
 			class constructPresetMenu {};
 			class constructVehicleMagazine {};
 			class initMenu {};
 			class loadoutList {};
-			class moveSmokesOwner {};
-			class moveSmokesServer {};
+			class moveSmokes {};
 			class rearmAircraft {};
 			class rearmVehicle {};
-			class rearmVehicleOwner {};
-			class rearmVehicleServer {};
 			class saveLoadout {};
 			class selectLoadout {};
+			class startRearmVehicle {};
 			class switchUser {};
 			class textureLists {};
 			class textureSlots {};

@@ -6,5 +6,5 @@ private _existingHorns = _hornWeapons arrayIntersect _turretWeapons;
 {
     _asset removeWeaponTurret [_x, [-1]];
 } forEach _existingHorns;
-diag_log format ["%1", _horn];
+
 _asset addWeaponTurret [_horn, [-1]];

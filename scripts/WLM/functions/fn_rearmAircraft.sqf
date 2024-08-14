@@ -4,12 +4,12 @@ params ["_showWarning"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
+private _cooldown = ((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0;
 private _nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select { alive _x };
 private _rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
 private _rearmSource = _nearbyVehicles # _rearmVehicleIndex;
 
-private _amount = _rearmSource getVariable ["GOM_fnc_ammocargo", 0];
+private _amount = _rearmSource getVariable ["WLM_ammoCargo", 0];
 
 if (_cooldown > 0 || _amount <= 0) exitWith {
     playSound "AddItemFailed";
@@ -71,6 +71,6 @@ if (_newAmmo < 0) exitWith {
     hint format [localize "STR_WLM_KG_AMMO_REQUIRED", _massTally];
 };
 
-_rearmSource setVariable ["GOM_fnc_ammocargo", _newAmmo, true];
+_rearmSource setVariable ["WLM_ammoCargo", _newAmmo, true];
 
-[_asset, true] remoteExec ["WLM_fnc_applyPylonServer", 0];
+[_asset, true] remoteExec ["WLM_fnc_applyPylon", _asset];

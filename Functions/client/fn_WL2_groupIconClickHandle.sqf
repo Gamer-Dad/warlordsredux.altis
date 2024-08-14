@@ -16,7 +16,7 @@ private _availableSectors = (switch (BIS_WL_currentSelection) do {
 });
 
 if (_sector in _availableSectors) then {
-	if(BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) then {
+	if (BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) then {
 		BIS_WL_targetVote = _sector;
 		_variableFormat = format ["BIS_WL_targetVote_%1", getPlayerID player];
 		missionNamespace setVariable [_variableFormat, _sector];

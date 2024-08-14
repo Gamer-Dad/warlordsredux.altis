@@ -77,7 +77,7 @@ _rearmButtonControl ctrlAddEventHandler ["ButtonClick", {
     if (_isAircraft) then {
         [true] call WLM_fnc_rearmAircraft;
     } else {
-        [true] call WLM_fnc_rearmVehicle;
+        [true] call WLM_fnc_startRearmVehicle;
     };
 }];
 
@@ -347,19 +347,19 @@ _customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
 
         if (["setHornTo", _customization] call BIS_fnc_inString) then {
             private _hornName = _customization regexReplace ["setHornTo", ""];
-            [_asset, _hornName] remoteExec ["WLM_fnc_changeHornServer", 2];
+            [_asset, _hornName] remoteExec ["WLM_fnc_changeHorn", _asset];
         } else {
             switch (_customization) do {
                 case "setSmokeToGunner": {
-                    [_asset, [0]] remoteExec ["WLM_fnc_moveSmokesServer", 2];
+                    [_asset, [0]] remoteExec ["WLM_fnc_moveSmokes", _asset];
                     _asset spawn _finalizeCustomization;
                 };
                 case "setSmokeToCommander": {
-                    [_asset, [0, 0]] remoteExec ["WLM_fnc_moveSmokesServer", 2];
+                    [_asset, [0, 0]] remoteExec ["WLM_fnc_moveSmokes", _asset];
                     _asset spawn _finalizeCustomization;
                 };
                 case "setSmokeToDriver": {
-                    [_asset, [-1]] remoteExec ["WLM_fnc_moveSmokesServer", 2];
+                    [_asset, [-1]] remoteExec ["WLM_fnc_moveSmokes", _asset];
                     _asset spawn _finalizeCustomization;
                 };
                 default {
@@ -397,13 +397,13 @@ _asset spawn {
 		private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
 		private _nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select { alive _x };
 		private _rearmVehicleIndex = _nearbyVehicles findIf { getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0 };
-		private _amount = (_nearbyVehicles # _rearmVehicleIndex) getVariable ["GOM_fnc_ammocargo", 0];
-		private _amountText = format ["(%1)", _amount call GOM_fnc_kgToTon];
+		private _amount = (_nearbyVehicles # _rearmVehicleIndex) getVariable ["WLM_ammoCargo", 0];
 
         private _rearmText = if (_cooldown == 0) then {
-            format ["%1 %2", localize "STR_WLM_REARM", _amountText];
+            format ["%1 (%2 kg)", localize "STR_WLM_REARM", round _amount];
         } else {
-            [_cooldown, "MM:SS"] call BIS_fnc_secondsToString;
+            private _cooldownTimer = [_cooldown, "MM:SS"] call BIS_fnc_secondsToString;
+            format ["%1 (%2)", localize "STR_WLM_REARM", _cooldownTimer];
         };
 
 		_rearmButtonControl ctrlSetText _rearmText;

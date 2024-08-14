@@ -1,32 +1,36 @@
-while {!BIS_WL_missionEnd} do {
-	_newPlayers = allPlayers select {(!isNull _x) && {!(_x getVariable ["BIS_WL_detectedByServer", false])}};
+while { !BIS_WL_missionEnd } do {
+	private _allPlayers = call BIS_fnc_listPlayers;
+	private _newPlayers = _allPlayers select {
+		(!isNull _x) && !(_x getVariable ["BIS_WL_detectedByServer", false])
+	};
+
 	{
 		_x call BIS_fnc_WL2_setupNewWarlord;
-		{
-			private _side = _x;
-			_players = playersNumber _side;
-			if (_players >= 20) then {
-				missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 1, true];
-			} Else {
-				if (_players >= 15) then {
-					missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 2, true];
-				} Else {
-					if (_players >= 10) then {
-						missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 3, true];
-					} Else {
-						if (_players >= 7) then {
-							missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 4, true];
-						} Else {
-							if (_players >= 4) then {
-								missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 5, true];
-							} Else {
-								missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], 6, true];
-							};
-						};
-					};
-				};
-			};		
-		} forEach [west, east];
 	} forEach _newPlayers;
+	
+	private _thresholds = [
+		[20, 1],
+		[15, 2],
+		[10, 3],
+		[7, 4],
+		[4, 5]
+	];
+
+	{
+		private _side = _x;
+		private _players = playersNumber _side;
+		private _value = 6;
+
+		scopeName "mainSideLoop";
+		{
+			if (_players >= (_x # 0)) then {
+				_value = _x # 1;
+				breakTo "mainSideLoop";
+			};
+		} forEach _thresholds;
+
+		missionNamespace setVariable [format ["BIS_WL_maxSubordinates_%1", _side], _value, true];
+	} forEach [west, east];
+
 	uiSleep 1;
 };

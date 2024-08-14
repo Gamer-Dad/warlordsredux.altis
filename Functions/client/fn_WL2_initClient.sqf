@@ -63,8 +63,10 @@ BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\f
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
 BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
 BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFix.sqf";
+BIS_fnc_WL2_pingFixInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFixInit.sqf";
 BIS_fnc_WL2_uavJammer = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_uavJammer.sqf";
 BIS_fnc_WL2_spectrumAction = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_spectrumAction.sqf";
+BIS_fnc_WL2_captureList = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_captureList.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
@@ -78,17 +80,8 @@ BIS_fnc_WL2_sub_purchaseMenuSetAssetDetails = compileFinal preprocessFileLineNum
 BIS_fnc_WL2_sub_purchaseMenuSetItemsList = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_purchaseMenuSetItemsList.sqf";
 BIS_fnc_WL2_sub_radarOperate = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_radarOperate.sqf";
 BIS_fnc_WL2_sub_rearmAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_rearmAction.sqf";
-BIS_fnc_WL2_sub_rearmActionAir = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_rearmActionAir.sqf";
 BIS_fnc_WL2_sub_removeAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_removeAction.sqf";
 BIS_fnc_WL2_sub_vehicleLockAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_vehicleLockAction.sqf";
-
-BIS_fnc_WL2_vehicleRearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_WL2_vehicleRearm.sqf";
-BIS_fnc_animate = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_animate.sqf";
-BIS_fnc_getCamos = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getCamos.sqf";
-BIS_fnc_getExtras = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getExtras.sqf";
-BIS_fnc_getHulls = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getHulls.sqf";
-BIS_fnc_getLiveries = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getLiveries.sqf";
-BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
 
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
 
@@ -297,68 +290,12 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
-private _squadActionText = format ["<t color='#0000FF'>%1</t>", localize "STR_SQUADS_squads"];
+private _squadActionText = format ["<t color='#00FFFF'>%1</t>", localize "STR_SQUADS_squads"];
 private _squadActionId = player addAction[_squadActionText, { [true] call SQD_fnc_menu }, [], -100, false, false, "", ""];
 player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa'/>"];
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
-
-(findDisplay 46) displayAddEventHandler ["KeyDown", {
-	if (inputAction "TacticalPing" > 0 && {isRemoteControlling  player}) then {
-		private _distance = viewDistance;
-		private _origin = AGLToASL positionCameraToWorld [0, 0, 0];
-		private _target = AGLToASL positionCameraToWorld [0, 0, _distance];
-
-		private _default = _origin vectorAdd (_origin vectorFromTo _target vectorMultiply _distance);
-		private _pos = lineIntersectsSurfaces [_origin, _target, cameraOn] param [0, [_default]] select 0;
-
-		private _targets = allPlayers select {side _x == side player && _x != player};
-		
-		[ASLToAGL _pos] remoteExec ["BIS_fnc_WL2_pingFix", _targets, true];
-	};
-}];
-
-BIS_WL_DisplayCaptureProgress = false;
-addMissionEventHandler ["Map", {
-	params ["_mapIsOpened", "_mapIsForced"];
-	if (_mapIsOpened) then {
-		BIS_WL_DisplayCaptureProgress = true;
-		0 spawn {
-			while { visibleMap && BIS_WL_DisplayCaptureProgress && !BIS_WL_missionEnd } do {
-				private _side = BIS_WL_playerSide;
-				private _sectorsBeingCaptured = BIS_WL_allSectors select {
-					private _statusVisible = _side in (_x getVariable ["BIS_WL_previousOwners", []]) || 
-						_x == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]);
-					private _isBeingCaptured = _x getVariable ["BIS_WL_captureProgress", 0] > 0;
-					_isBeingCaptured && _statusVisible;
-				};
-
-				if (count _sectorsBeingCaptured == 0) then { 
-					hintSilent "";
-					continue;
-				};
-
-				private _hintString = "<t size='1.8'>Capture Progress</t><br/>";
-				{
-					private _sectorName = _x getVariable "BIS_WL_name";
-					private _capturingTeam = _x getVariable ["BIS_WL_capturingTeam", independent];
-					private _captureProgress = (_x getVariable ["BIS_WL_captureProgress", 0]) * 100;
-					private _displayPercent = _captureProgress toFixed 1;
-					_hintString = if (_capturingTeam == west) then {
-						_hintString + format ["<t size='1.5' shadow='2' color='#004d99'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
-					} else {
-						_hintString + format ["<t size='1.5' shadow='2' color='#ff4b4b'>%1: %2%3</t><br/>", _sectorName, _displayPercent, "%"];
-					};
-				} forEach _sectorsBeingCaptured;
-				hintSilent parseText _hintString;
-				sleep 0.25;
-			};
-			hintSilent "";
-		};
-	} else {
-		BIS_WL_DisplayCaptureProgress = false;
-	};
-}];
+0 spawn BIS_fnc_WL2_captureList;
 
 call BIS_fnc_WL2_spectrumAction;
 
@@ -369,4 +306,4 @@ player addEventHandler ["HandleRating", {
 
 call SQD_fnc_initClient;
 
-0 spawn  MRTM_fnc_settingsMenu;
+0 spawn MRTM_fnc_settingsMenu;

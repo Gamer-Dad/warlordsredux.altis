@@ -75,9 +75,9 @@ SQD_SOUND_CHANGES = [];
     // Fast loop
     while { !BIS_WL_missionEnd } do {
         private _currentChannel = currentChannel;
-        if (currentChannel != _previousChannel) then {
-            missionNamespace setVariable [_playerChannelVar, currentChannel, true];
-            _previousChannel = currentChannel;
+        if (_currentChannel != _previousChannel) then {
+            missionNamespace setVariable [_playerChannelVar, _currentChannel, true];
+            _previousChannel = _currentChannel;
         };
 
         {

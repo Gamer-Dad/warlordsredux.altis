@@ -9,7 +9,7 @@ _return = nil;
 
 switch (_action) do {
     case "create": {
-        private _squadName = format ["%1 SQUAD", toUpper (name player)];
+        private _squadName = profileNamespace getVariable ["SQD_nameDefault", format ["%1 SQUAD", toUpper (name player)]];
         private _leader = getPlayerID player;
         private _side = side player;
 
@@ -75,6 +75,13 @@ switch (_action) do {
         if (_acceptInvite) then {
             ["add", [_inviter, getPlayerID player]] remoteExec ["SQD_fnc_server", 2];
         };
+    };
+    case "newjoin": {
+        private _joinerId = _params select 0;
+        private _joiner = allPlayers select { getPlayerID _x == _joinerId } select 0;
+
+        playSoundUI ["a3\animals_f_beta\sheep\data\sound\sheep3.wss"];
+        systemChat format ["%1 has joined your squad.", name _joiner];
     };
     case "promote": {
         private _selection = tvCurSel TREE;
@@ -192,6 +199,8 @@ switch (_action) do {
             _newName = selectRandom ["AIRHEAD ARMADA", "BORING BATTALION", "CLOWN COMPANY", "DUMMY DETACHMENT"];
         };
 
+        profileNamespace setVariable ["SQD_nameDefault", _newName];
+
         ["rename", [getPlayerID player, _newName]] remoteExec ["SQD_fnc_server", 2];
         (findDisplay RENAME_WINDOW) closeDisplay 1;
     };
@@ -228,6 +237,16 @@ switch (_action) do {
         private _squadSize = if (isNil "_squad") then { 1 } else {count (_squad select 2)};
 
         _return = _isLeader && (_squadSize >= _size);
+    };
+    case "getSquadNameOfPlayer": {
+        private _playerId = _params select 0;
+
+        private _squad = _squadManager select { (_x select 2) find _playerId > -1 } select 0;
+        if (isNil "_squad") then {
+            _return = "No Squad";
+        } else {
+            _return = _squad select 0;
+        };
     };
 };
 

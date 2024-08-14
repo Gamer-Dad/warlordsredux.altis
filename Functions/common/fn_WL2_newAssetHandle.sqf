@@ -45,7 +45,7 @@ if (isPlayer _owner) then {
 		_asset setVariable ["BIS_WL_ownerAssetSide", _side, true];
 
 		private _defaultMags = magazinesAllTurrets _asset;
-		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags];
+		_asset setVariable ["BIS_WL_defaultMagazines", _defaultMags, true];
 		_asset setVariable ["WLM_savedDefaultMags", _defaultMags, true];
 		_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 		_vehicles = missionNamespace getVariable [_var, []];
@@ -205,17 +205,6 @@ if (isPlayer _owner) then {
 			};
 		};
 
-		private _rearmTime = if !(_asset isKindOf "StaticWeapon") then {
-			if (_asset isKindOf "Helicopter" || _asset isKindOf "Plane") then {
-				30;
-			} else {
-				(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
-			};
-		} else {
-			(missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
-		};
-		_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
-
 		if (unitIsUAV _asset) then {
 			if (profileNamespace getVariable ["MRTM_enableAuto", true]) then {
 				_asset setAutonomous false;
@@ -289,23 +278,19 @@ if (isPlayer _owner) then {
 			_asset removeAction _repairActionID;
 		};
 		
-		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportRepair") > 0) then {
-			[_asset, 0] remoteExec ["setRepairCargo", 0];
-			_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportRepair")) min 10000);
-			_asset setvariable ["GOM_fnc_repairCargo", _amount, true];
-		};
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {
 			[_asset, 0] remoteExec ["setAmmoCargo", 0];
 			_amount = 10000;
 			if (typeOf _asset == "B_Truck_01_ammo_F" || {typeOf _asset == "O_Truck_03_ammo_F" || {typeOf _asset == "Land_Pod_Heli_Transport_04_ammo_F" || {typeOf _asset == "B_Slingload_01_Ammo_F"}}}) then {
 				_amount = ((getNumber (configfile >> "CfgVehicles" >> typeof _asset >> "transportAmmo")) min 30000);
 			};
-			_asset setvariable ["GOM_fnc_ammoCargo",_amount,true];
+			_asset setVariable ["WLM_ammoCargo", _amount, true];
 		};
 	};
 
-	_asset setVariable ["BIS_WL_nextRearm", serverTime];
-
+	private _rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
+	_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+	
 	if (_asset call DIS_fnc_Check) then {
 		_asset spawn DIS_fnc_RegisterLauncher;
 	};

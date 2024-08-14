@@ -1,8 +1,6 @@
 #include "Functions\warlords_constants.inc"
 #include "ui\defines.hpp"
 #include "ui\controls.hpp"
-#include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
-#include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
 #include "scripts\WLM\ui\WLM_pylons.hpp"
 #include "scripts\Squads\squadMenu.hpp"
 
@@ -56,7 +54,6 @@ class Header
 #include "functions.hpp"
 
 #include "configs.hpp"
-#include "communicationMenu.hpp"
 #include "titles.hpp"
 #include "requisitions.hpp"
 #include "sounds.hpp"

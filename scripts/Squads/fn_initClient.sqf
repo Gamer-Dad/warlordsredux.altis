@@ -26,6 +26,31 @@ SQD_HAS_INVITE = false;
         setCurrentChannel (_sideCustomChannel + 5);
     }];
 
+    addMissionEventHandler ["HandleChatMessage", {
+        params ["_channel", "_owner", "_from", "_text", "_person", "_name", "_strID", "_forcedDisplay", "_isPlayerMessage", "_sentenceType", "_chatMessageType", "_params"];
+        
+        private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
+        private _sideCustomChannel = if (side _person == WEST) then {
+            _voiceChannels # 0
+        } else {
+            _voiceChannels # 1
+        };
+
+        if (_channel == (_sideCustomChannel + 5)) then {
+            private _playerId = getPlayerID _person;
+            private _isInMySquad = ["isInMySquad", [_playerId]] call SQD_fnc_client;
+            if (_isInMySquad) then {
+                private _squadName = ["getSquadNameOfPlayer", [_playerId]] call SQD_fnc_client;
+                private _newFrom = format ["[%1] %2", _squadName, _from];
+                [_newFrom, _text];
+            } else {
+                true;   // block
+            };
+        } else {
+            false;
+        };
+    }];
+
     0 spawn SQD_fnc_voice;
 
     while { !BIS_WL_missionEnd } do {

@@ -16,6 +16,11 @@ private _lastScan = (_sector getVariable [format ["BIS_WL_lastScanEnd_%1", _side
 private _scanCD = (_lastScan + (getMissionConfigValue ["BIS_WL_scanCooldown", 300]) - serverTime) max 0;
 
 private _percentage = _sector getVariable ["BIS_WL_captureProgress", 0];
+private _revealed = _side in (_sector getVariable ["BIS_WL_revealedBy", []]);
+if (!_revealed) then {
+	_percentage = 0;
+};
+
 private _capturingTeam = _sector getVariable ["BIS_WL_capturingTeam", independent];
 private _color = ['#004d99', '#7f0400', '#007f04'] # ([west, east, independent] find _capturingTeam);
 
@@ -40,7 +45,7 @@ private _color = ['#004d99', '#7f0400', '#007f04'] # ([west, east, independent] 
 	if (_harbor) then {localize "STR_A3_WL_param30_title"} else {""},
 	localize "STR_A3_WL_param_scan_timeout",
 	[(ceil _scanCD), "MM:SS"] call BIS_fnc_secondsToString,
-	if (_percentage > 0 && {(_side in (_sector getVariable ["BIS_WL_previousOwners", []])) || {_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side])}}) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
+	if (_percentage > 0) then {format ["%1%2", floor (_percentage * 100), "%"]} else {""},
 	_color
 ];
 

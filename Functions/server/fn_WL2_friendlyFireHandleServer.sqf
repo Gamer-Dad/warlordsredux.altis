@@ -10,12 +10,18 @@ if (_unit isKindOf "Man") then {
 		};
 	};
 } else {
-	_unitOwner = _uid call BIS_fnc_getUnitByUID;
-	_sideOwner = side (group _unitOwner);
-	_crew = ((crew _unit) select {alive _x});
-	_sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
+	private _typeSide = switch (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) do {
+		case 0: { east };
+		case 1: { west };
+		case 2: { independent };
+		default { independent };
+	};
+	private _sideOwner = _unit getVariable ["BIS_WL_ownerAssetSide", _typeSide];
+
+	private _crew = (crew _unit) select { alive _x };
+	private _sideCrew = (if ((count _crew) > 0) then {side (group (_crew # 0))} else {_sideOwner});
 	
 	if (_sideOwner == side (group _responsibleLeader) && {_sideOwner == _sideCrew}) then {
-		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", (owner _unitOwner)];
+		[_responsibleLeader, _unit] remoteExec ["BIS_fnc_WL2_askForgiveness", owner _unit];
 	};
 };
