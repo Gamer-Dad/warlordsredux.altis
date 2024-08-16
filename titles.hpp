@@ -145,4 +145,41 @@ class RscTitles
 			};
 		};
 	};
+
+	class RscWLMineDisplay {
+		idd = -1;
+		movingEnable = 0;
+		duration = 1e+011;
+		name = "RscWLMineDisplay";
+		onLoad = "uiNamespace setVariable ['RscWLMineDisplay', _this select 0];";
+		class controls {
+			class Background: RscText {
+				idc = 7009;
+				style = 128;
+				x = 1 - safeZoneX - 0.3125;
+				y = 0.45;
+				w = 0.30;
+				h = 0.5;
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0.7 };
+				shadow=1;
+			};
+			class RscWLMineDisplayText: RscStructuredText {
+				idc = 7010;
+				x = 1 - safeZoneX - 0.3125;
+				y = 0.465;
+				w = 0.30;
+				h = 0.5;
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.032;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
+			};
+		};
+	};
 };

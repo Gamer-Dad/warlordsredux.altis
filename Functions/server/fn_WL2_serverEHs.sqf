@@ -1,6 +1,7 @@
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-	_var = format ["BIS_WL_ownedVehicles_%1", _uid];
+	_ownedVehicles = format ["BIS_WL_ownedVehicles_%1", _uid];
+	_minesDB = format ["BIS_WL2_minesDB_%1", _uid];
 	{
 		if (unitIsUAV _x) then {
 			private _grp = group effectiveCommander _x;
@@ -9,8 +10,17 @@ addMissionEventHandler ["HandleDisconnect", {
 		};
 
 		deleteVehicle _x;
-	} forEach ((missionNamespace getVariable [_var, []]) select {!(isNull _x)});
-	missionNamespace setVariable [_var, nil];
+	} forEach ((missionNamespace getVariable [_ownedVehicles, []]) select {!(isNull _x)});
+	missionNamespace setVariable [_ownedVehicles, nil];
+
+	{
+		_mineData = (missionNamespace getVariable _minesDB) getOrDefault [_x, [0, []]];
+		_mines = (_mineData select 1);
+		{
+			if (!(isNull _x)) then {deleteVehicle _x};
+		} forEach _mines;
+	} forEach (missionNamespace getVariable _minesDB);
+	missionNamespace setVariable [_minesDB, nil];
 
 	{
 		if !(isPlayer _x) then {deleteVehicle _x;};
@@ -68,15 +78,4 @@ addMissionEventHandler ["MarkerCreated", {
 	if (((isPlayer _owner) && {(_channelNumber == 0)}) || {_return}) then {
 		deleteMarker _marker;
 	};
-}];
-
-BIS_fnc_WL2_mineHandle = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_mineHandle.sqf";
-addMissionEventHandler ["EntityCreated", {
-  params ["_entity"];
-  if (isClass (configFile >> "CfgAmmo" >> (typeOf _entity))) then {
-    
-	if (((serverNamespace getVariable "WL2_mineLimits") getOrdefault [(typeOf _entity), 0]) isEqualType []) then {
-		_entity spawn BIS_fnc_WL2_mineHandle;
-	};
-  };
 }];
