@@ -2507,5 +2507,22 @@
             <Chinesesimp>捕获进度</Chinesesimp>
             <Chinese>捕獲進度</Chinese>
         </Key>
+        <Key ID="STR_WL2_MINE_LIMIT">
+            <Original>Mine Limit</Original>
+            <English>Mine Limit</English>
+            <Czech>Limit výbušných dolů</Czech>
+            <French>Limite des mines explosives</French>
+            <German>Begrenzung der Sprengstoffminen</German>
+            <Italian>Limite di mine esplosive</Italian>
+            <Polish>Limit min wybuchowych</Polish>
+            <Portuguese>Limite de minas explosivas</Portuguese>
+            <Russian>Предел взрывоопасных мин</Russian>
+            <Spanish>Límite de minas explosivas</Spanish>
+            <Turkish>Patlayıcı Mayın Limiti</Turkish>
+            <Korean>폭발성 지뢰 제한</Korean>
+            <Japanese>爆発性地雷の制限</Japanese>
+            <Chinesesimp>爆炸地雷限制</Chinesesimp>
+            <Chinese>地雷爆炸限制</Chinese>
+        </Key>
     </Container>
 </Project>
