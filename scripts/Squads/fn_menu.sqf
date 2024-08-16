@@ -96,10 +96,10 @@ disableSerialization;
         private _treeDisplay = displayCtrl TREE;
         _treeDisplay ctrlAddEventHandler ["TreeSelChanged", "_this call SQD_fnc_treeSelectionChanged"];
         _treeDisplay ctrlAddEventHandler ["TreeExpanded", {
-            playSoundUI ["a3\ui_f\data\sound\rsccombo\soundexpand.wss"];
+            playSoundUI ["a3\ui_f\data\sound\rsccombo\soundexpand.wss", 0.5];
         }];
         _treeDisplay ctrlAddEventHandler ["TreeCollapsed", {
-            playSoundUI ["a3\ui_f\data\sound\rsccombo\soundexpand.wss"];
+            playSoundUI ["a3\ui_f\data\sound\rsccombo\soundexpand.wss", 0.5];
         }];
     };
 
