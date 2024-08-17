@@ -15,13 +15,15 @@ private _broadcastActionToSide = {
 };
 
 if (_action == "orderAsset") exitWith {
-	private _position = _param1;
-	private _class = _param2;
+	private _orderType = _param1;
+	private _position = _param2;
+	private _class = _param3;
 
 	// Griefer check
 	private _nearbyEntities = [];
-	if (!(_class isKindOf "Air") && !(isNil "_param4")) then {
-		private _simulatedObject = [_class, ATLToASL _position, _param4, true, false, true] call BIS_fnc_createSimpleObject;
+	if !(_orderType in ["air", "naval"]) then {
+		private _direction = _param4;
+		private _simulatedObject = [_class, ATLToASL _position, _direction, true, false, true] call BIS_fnc_createSimpleObject;
 
 		private _circleA = boundingBoxReal [_simulatedObject, "FireGeometry"];
 		private _radiusA = _circleA select 2;
@@ -53,24 +55,26 @@ if (_action == "orderAsset") exitWith {
 		[format ["Too close to another %1!", _nearbyObjectName]] remoteExec ["systemChat", _owner];
 	};
 
-	private _cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_param2, 50001]);
+	private _cost = ((serverNamespace getVariable "WL2_costs") getOrDefault [_class, 50001]);
 	private _hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
 		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
-		if (_class isKindOf "Ship") exitWith {
-			[_sender, _position, _class] spawn BIS_fnc_orderNaval;
-		};
 
-		if (_class isKindOf "Air") exitWith {
-			[_sender, _param1, _class, _cost] spawn BIS_fnc_orderAir;
+		switch (_orderType) do {
+			case "air" : {
+				[_sender, _position, _class, _cost] spawn BIS_fnc_orderAir;
+			};
+			case "naval" : {
+				[_sender, _position, _class] spawn BIS_fnc_orderNaval;
+			};
+			default {
+				private _direction = _param4;
+				[_sender, _position, _class, _direction] spawn BIS_fnc_orderGround;
+			};
 		};
-
-		if (_param3) exitWith {
-			[_sender, _position, _class, _param4] spawn BIS_fnc_orderDefence;
-		};
-
-		[_sender, _position, _class, _param4] spawn BIS_fnc_orderGround;
 	};
+
+
 };
 
 if (_action == "lastLoadout") exitWith {
