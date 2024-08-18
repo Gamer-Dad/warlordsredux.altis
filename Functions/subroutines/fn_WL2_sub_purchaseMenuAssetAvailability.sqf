@@ -214,6 +214,10 @@ if (_ret) then {
 						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};
 				};
+				if (!("A" in _requirements) && _visitedSectorID == -1) then {
+					_ret = false;
+					_tooltip = localize "STR_A3_WL_ftVehicle_restr1";
+				};
 			};
 			if (_category == "Defences") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
