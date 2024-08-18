@@ -34,4 +34,4 @@ if (isNull BIS_WL_targetSector) exitWith {
 
 [toUpper localize "STR_A3_WL_asset_dispatched_TODO_REWRITE"] spawn BIS_fnc_WL2_smoothText;
 
-[player, "orderAsset", BIS_WL_targetSector, _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+[player, "orderAsset", "air", BIS_WL_targetSector, _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];

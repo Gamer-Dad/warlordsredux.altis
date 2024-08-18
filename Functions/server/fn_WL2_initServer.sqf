@@ -46,7 +46,6 @@ BIS_fnc_WL2_updateVehicleList = compileFinal preprocessFileLineNumbers "Function
 BIS_fnc_WL2_dazzlerOn = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_dazzlerOn.sqf";
 
 BIS_fnc_orderAir = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderAir.sqf";
-BIS_fnc_orderDefence = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderDefence.sqf";
 BIS_fnc_orderGround = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderGround.sqf";
 BIS_fnc_orderNaval = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderNaval.sqf";
 
