@@ -36,7 +36,15 @@ private _lastKnownPosition = position _unit;
 private _lastKnownDirection = _projectile modelToWorld [0, 1000, 0];
 private _startTime = time;
 
+_camera camSetTarget _projectile;
+_camera camSetRelPos [0, -3, 0.4];
+_camera camCommit 0;
+
+_camera attachTo [_projectile];
+
 while { !_stop } do {
+    sleep 0.5;
+
     private _projectilePosition = position _projectile;
     private _projectileDirection = _projectile modelToWorld [0, 1000, 0];
     private _isDestroyed = _projectilePosition isEqualTo [0, 0, 0] || _projectileDirection isEqualTo [0, 0, 0];
@@ -44,20 +52,16 @@ while { !_stop } do {
     private _disconnected = unitIsUAV _unit && isNull (getConnectedUAV player);
 
     _stop = isNull _projectile || !alive _projectile || _isDestroyed || _expired || _disconnected;
-    
+
     if (!_stop) then {
         _lastKnownPosition = _projectilePosition;
         _lastKnownDirection = _projectileDirection;
-
-        _camera camSetTarget _projectile;
-        _camera camSetRelPos [0, -3, 0.4];
-        _camera camCommit 0;
-    } else {
-        _camera camSetPos _lastKnownPosition;
-        _camera camSetTarget _lastKnownDirection;
-        _camera camCommit 0;
     };
 };
+
+_camera camSetPos _lastKnownPosition;
+_camera camSetTarget _lastKnownDirection;
+_camera camCommit 0;
 
 sleep 1.5;
 
