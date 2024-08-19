@@ -5,11 +5,12 @@ params ["_projectile"];
 [_projectile] spawn {
     params ["_projectile"];
     private _startTime = time;
+    private _isLOAL = getNumber (configfile >> "CfgAmmo" >> typeOf _projectile >> "autoSeekTarget") == 1;
 
     sleep 3;
     while { alive _projectile } do {
         // Ghost missile relocking check.
-        if (!(alive missileTarget _projectile)) exitWith {
+        if (_isLOAL && !(alive missileTarget _projectile)) exitWith {
             triggerAmmo _projectile;
         };        
         if (time > (_startTime + WL_SAM_TIMEOUT)) exitWith {
