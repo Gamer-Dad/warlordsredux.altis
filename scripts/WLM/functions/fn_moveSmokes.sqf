@@ -9,16 +9,22 @@ private _turretsWithSmoke = [];
 {
     private _smokeMagazine = _x # 0;
     private _turret = _x # 1;
-    private _ammo = _x # 2;
-    _asset removeMagazinesTurret [_smokeMagazine, _turret];
-    _asset addMagazineTurret [_smokeMagazine, _targetTurret, _ammo];
-
-    _turretsWithSmoke pushBack _turret;
+    _turretsWithSmoke pushBack [_turret, _smokeMagazine];
 } forEach _smokeMags;
 
 {
-    _asset removeWeaponTurret ["SmokeLauncher", _x];
+    private _turret = _x # 0;
+    private _smokeMagazine = _x # 1;
+    _asset removeMagazinesTurret [_smokeMagazine, _turret];
+    _asset removeWeaponTurret ["SmokeLauncher", _turret];
 } forEach _turretsWithSmoke;
+
+{
+    private _smokeMagazine = _x # 0;
+    private _ammo = _x # 2;
+
+    _asset addMagazineTurret [_smokeMagazine, _targetTurret, _ammo];
+} forEach _smokeMags;
 
 _asset addWeaponTurret ["SmokeLauncher", _targetTurret];
 
