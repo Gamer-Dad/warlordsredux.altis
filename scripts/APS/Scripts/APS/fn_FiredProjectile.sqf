@@ -11,7 +11,7 @@ _dazzleable = _projectile call APS_fnc_IsLaserGuided || {
 _radius = if (_dazzleable) then {125} else {sqrt (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600])};
 
 _continue = alive _projectile;
-while {_continue} do {
+while {_continue && {alive _projectile}} do {
 	_eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _radius]) select { 
 		_x != _unit &&
 		_x call APS_fnc_active
