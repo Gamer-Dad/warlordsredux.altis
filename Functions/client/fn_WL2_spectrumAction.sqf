@@ -29,7 +29,7 @@
 
                 systemChat (localize "STR_A3_jammer_sent");
                 _x setVariable ["BIS_WL_spectrumJammed", true, true];
-                _x setVariable ["BIS_WL_lastHitter", player, true];
+                _x setVariable ["BIS_WL_lastHitter", player, 2];
             } forEach _allEnemyUavs;
         };
     },

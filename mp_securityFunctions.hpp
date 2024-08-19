@@ -52,6 +52,10 @@ class CfgRemoteExec {
 			allowedTargets = 2;
 		};
 
+		class BIS_fnc_WL2_removeAsset {
+			allowedTargets = 2;
+		};
+
 		class BIS_fnc_WL2_updateVehicleList {
 			allowedTargets = 2;
 		};
