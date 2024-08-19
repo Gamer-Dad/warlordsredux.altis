@@ -35,15 +35,24 @@ if (isNull _apsDisplay) then {
 private _indicatorBackground = _apsDisplay displayCtrl 7006;
 private _indicatorDanger = _apsDisplay displayCtrl 7007;
 private _indicatorRadar = _apsDisplay displayCtrl 7008;
+private _indicatorText = _apsDisplay displayCtrl 7100;
 
 _indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
+_indicatorDanger ctrlSetAngle [_d + 22.5, 0.5, 0.5];
+_indicatorText ctrlSetText _text;
+
 _indicatorDanger ctrlShow true;
 _indicatorRadar ctrlShow true;
 
-_indicatorDanger ctrlSetAngle [_d + 22.5, 0.5, 0.5];
+uiNamespace setVariable ["WL_APS_showScreenExpire", time + 7];
 
-sleep 5;
+waitUntil {
+	sleep 0.5;
+	time > uiNamespace getVariable ["WL_APS_showScreenExpire", 0]
+};
 
 _indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0];
+_indicatorText ctrlSetText "";
+
 _indicatorDanger ctrlShow false;
 _indicatorRadar ctrlShow false;

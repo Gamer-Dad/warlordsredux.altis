@@ -312,7 +312,7 @@ if (_hasSmoke) then {
     _customizationSelectControl lbSetData [_smokeDriverItem, "setSmokeToDriver"];
 };
 
-private _hornWeapons = ["CarHorn", "TruckHorn", "TruckHorn2", "TruckHorn3", "SportCarHorn", "MiniCarHorn"];
+private _hornWeapons = ["AmbulanceHorn", "CarHorn", "TruckHorn", "TruckHorn2", "TruckHorn3", "SportCarHorn", "MiniCarHorn"];
 private _turretWeapons = _asset weaponsTurret [-1];
 if (count (_hornWeapons arrayIntersect _turretWeapons) > 0) then {
     {
@@ -388,6 +388,17 @@ _customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
     
     _control lbSetCurSel 0;
 }];
+
+private _nonHornWeapons = [];
+{
+    private _currentTurretWeapons = _asset weaponsTurret _x;
+    _nonHornWeapons append (_currentTurretWeapons select { !(_x in _hornWeapons) });
+} forEach _assetTurrets;
+if (count _nonHornWeapons == 0) exitWith {
+    private _rearmButtonControl = _display displayCtrl WLM_REARM_BUTTON;
+    _rearmButtonControl ctrlSetText "No weapons";
+    _rearmButtonControl ctrlEnable false;
+};
 
 _asset spawn {
 	params ["_asset"];

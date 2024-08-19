@@ -1,14 +1,20 @@
 // Override the number of ammo "points" for a specific vehicle turret
 // Format: Vehicle type, turret path, weapon index, new ammo count
 private _ammoForVehicleTurretOverride = [
-    ["APC_Wheeled_03_base_F", [0], 2, 10]
+    ["APC_Wheeled_03_base_F", [0], 2, 10],
+    ["APC_Tracked_02_base_F", [0], 2, 10],
+    ["LSV_01_AT_base_F", [0], 0, 10],
+    ["LSV_02_AT_base_F", [0], 0, 10],
+    ["AT_01_base_F", [0], 0, 10],
+    ["AA_01_base_F", [0], 0, 10]
 ];
 
 // Disallow specific magazines for specific vehicles
 // Format: Vehicle type, mag type
 private _disallowListForVehicle = [
     // ["LSV_01_AT_base_F", "1Rnd_GAA_missiles"]
-    ["APC_Wheeled_03_base_F", "4Rnd_GAA_missiles"]
+    ["APC_Wheeled_03_base_F", "4Rnd_GAA_missiles"],
+    ["APC_Tracked_02_base_F", "4Rnd_GAA_missiles"]
 ];
 
 // Add specific pylon weapons for specific aircraft

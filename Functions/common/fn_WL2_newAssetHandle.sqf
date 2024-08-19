@@ -293,6 +293,28 @@ if (isPlayer _owner) then {
 	
 	if (_asset call DIS_fnc_Check) then {
 		_asset spawn DIS_fnc_RegisterLauncher;
+
+		// Warning for turret ownership change
+		[_asset] spawn {
+			params ["_asset"];
+			private _weaponSafe = -1;
+			private _warned = false;
+			while { alive _asset && !_warned } do {
+				private _uavControl = UAVControl _asset;
+				private _isTurretTransferring = _uavControl # 1 != "" && !(_asset turretLocal [0]);
+				if (_isTurretTransferring && _weaponSafe == -1) then {
+					_weaponSafe = _asset addAction ["Weapon Safety", { 
+						systemChat "Changing turret ownership (arma bug). Wait a few seconds before firing.";
+					}, [], 0, false, false, "DefaultAction", ""];
+				};
+				if (!_isTurretTransferring && _weaponSafe != -1) then {
+					_asset removeAction _weaponSafe;
+					_weaponSafe = -1;
+					_warned = true;
+				};
+				sleep 0.1;
+			};
+		};
 	};
 	if (typeOf _asset == "B_Ship_MRLS_01_F") then {
 		_asset addEventHandler ["Fired", {

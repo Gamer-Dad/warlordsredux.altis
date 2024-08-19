@@ -73,8 +73,6 @@ if (_action == "orderAsset") exitWith {
 			};
 		};
 	};
-
-
 };
 
 if (_action == "lastLoadout") exitWith {

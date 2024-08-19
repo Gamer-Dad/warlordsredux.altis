@@ -115,17 +115,17 @@ class RscTitles
 				x = 1 - safeZoneX - 0.32;
 				y = 0;
 				w = 0.3;
-				h = 0.3 * 4 / 3;
+				h = 0.3 * 4 / 3 + 0.1;
 				text = "";
 				colorBackground[] = { 0, 0, 0, 0.7 };
 				shadow=1;
 			};
-			class RscWLAPSDisplayText: RscPicture {
+			class RscWLAPSDisplayIndicator: RscPicture {
 				idc = 7007;
-				x = 1 - safeZoneX - 0.32;
-				y = 0;
-				w = 0.3;
-				h = 0.3 * 4 / 3;
+				x = 1 - safeZoneX - 0.3;
+				y = 0.02;
+				w = 0.26;
+				h = 0.26 * 4 / 3;
 				text = "\a3\ui_f\data\IGUI\Cfg\Radar\danger_ca.paa";
 				style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 				shadow = 1;
@@ -134,14 +134,30 @@ class RscTitles
 			};
 			class RscWLAPSDisplayRadar: RscPicture {
 				idc = 7008;
-				x = 1 - safeZoneX - 0.32;
-				y = 0;
-				w = 0.3;
-				h = 0.3 * 4 / 3;
+				x = 1 - safeZoneX - 0.3;
+				y = 0.02;
+				w = 0.26;
+				h = 0.26 * 4 / 3;
 				text = "\a3\ui_f\data\IGUI\Cfg\Radar\radar_ca.paa";
 				style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
 				shadow = 1;
 				size = 0.032;
+			};
+			class RscWLAPSDisplayText: RscText {
+				idc = 7100;
+				x = 1 - safeZoneX - 0.32;
+				y = 0.3 * 4 / 3;
+				w = 0.3;
+				h = 0.1;
+				text = "";
+				style = ST_CENTER;
+				shadow = 1;
+				size = 0.032;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
 			};
 		};
 	};
