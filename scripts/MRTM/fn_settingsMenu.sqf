@@ -16,13 +16,9 @@ while { alive player } do {
         _previousVehicle = _currentVehicle;
         _previousDroneState = _uavControl # 1;
     };
-
-    private _ownerUavAsset = _connectedUAV getVariable ["BIS_WL_ownerUavAsset", "123"];
-    private _ownerUnit = _ownerUavAsset call BIS_fnc_getUnitByUID;
-    private _ownerID = getPlayerID _ownerUnit;
-    private _isInMySquad = ["isInMySquad", [_ownerID]] call SQD_fnc_client;
-
-    if (_connectedUAV != objNull && !_isInMySquad && _ownerUnit != player) then {
+    
+    private _isConnectable = _connectedUAV getVariable ["WL_canConnectUav", false];
+    if (!_isConnectable) then {
         player connectTerminalToUAV objNull;
     };
 
