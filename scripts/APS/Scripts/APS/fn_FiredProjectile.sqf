@@ -62,6 +62,8 @@ while {_continue && {alive _projectile}} do {
 						playSound "alarm";
 						hint localize "STR_A3_WL_aps_friendly_warning";
 					};
+				} else {
+					[_unit] remoteExec ["APS_fnc_ServerHandleAPS", 2];
 				};
 			};
 		};

@@ -23,6 +23,7 @@ class CfgFunctions {
 			file = "scripts\APS\Scripts\APS";
 			class SetupProjectiles {};
 			class FiredProjectile {};
+			class ServerHandleAPS {};
 		};
 		class Management
 		{

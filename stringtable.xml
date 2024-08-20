@@ -2524,5 +2524,39 @@
             <Chinesesimp>爆炸地雷限制</Chinesesimp>
             <Chinese>地雷爆炸限制</Chinese>
         </Key>
+        <Key ID="STR_A3_sector_captured">
+            <Original>Sector captured</Original>
+            <English>Sector captured</English>
+            <Czech>Sektor dobyt</Czech>
+            <French>Secteur capturé</French>
+            <German>Sektor erobert</German>
+            <Italian>Settore catturato</Italian>
+            <Polish>Sektor zdobyty</Polish>
+            <Portuguese>Setor capturado</Portuguese>
+            <Russian>Сектор захвачен</Russian>
+            <Spanish>Sector capturado</Spanish>
+            <Turkish>Sektör ele geçirildi</Turkish>
+            <Korean>구역 확보</Korean>
+            <Japanese>セクターを確保した</Japanese>
+            <Chinesesimp>区域已夺取</Chinesesimp>
+            <Chinese>區域已奪取</Chinese>
+        </Key>
+        <Key ID="STR_A3_active_protection_system">
+            <Original>Active protection system</Original>
+            <English>Active protection system</English>
+            <Czech>Aktivní ochranný systém</Czech>
+            <French>Système de protection active</French>
+            <German>Aktives Schutzsystem</German>
+            <Italian>Sistema di protezione attivo</Italian>
+            <Polish>Aktywny system ochrony</Polish>
+            <Portuguese>Sistema de proteção ativa</Portuguese>
+            <Russian>Активная система защиты</Russian>
+            <Spanish>Sistema de protección activa</Spanish>
+            <Turkish>Aktif koruma sistemi</Turkish>
+            <Korean>능동 방어 시스템</Korean>
+            <Japanese>アクティブ防護システム</Japanese>
+            <Chinesesimp>主动防护系统</Chinesesimp>
+            <Chinese>主動防護系統</Chinese>
+        </Key>
     </Container>
 </Project>
