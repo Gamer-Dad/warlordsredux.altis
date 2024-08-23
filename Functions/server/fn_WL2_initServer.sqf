@@ -31,6 +31,7 @@ BIS_fnc_WL2_incomePayoff = compileFinal preprocessFileLineNumbers "Functions\ser
 BIS_fnc_WL2_killRewardHandle = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_killRewardHandle.sqf";
 BIS_fnc_WL2_populateSector = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_populateSector.sqf";
 BIS_fnc_WL2_processRunways = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_processRunways.sqf";
+BIS_fnc_WL2_removeAsset = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_removeAsset.sqf";
 BIS_fnc_WL2_selectTarget = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_selectTarget.sqf";
 BIS_fnc_WL2_serverEHs = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_serverEHs.sqf";
 BIS_fnc_WL2_setupNewWarlord = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_setupNewWarlord.sqf";
@@ -41,7 +42,6 @@ BIS_fnc_WL2_zoneRestrictionHandleServer = compileFinal preprocessFileLineNumbers
 BIS_fnc_WL2_getCapValues = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getCapValues.sqf";
 BIS_fnc_WL2_sectorCaptureHandle = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorCaptureHandle.sqf";
 BIS_fnc_WL2_sectorsInitServer = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorsInitServer.sqf";
-BIS_fnc_WL2_handleInstigator = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_handleInstigator.sqf";
 BIS_fnc_WL2_updateVehicleList = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_updateVehicleList.sqf";
 BIS_fnc_WL2_dazzlerOn = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_dazzlerOn.sqf";
 

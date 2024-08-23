@@ -8,6 +8,10 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
+		class APS_fnc_ServerHandleAPS {
+			allowedTargets = 2;
+		};
+
 		class BIS_fnc_WL2_handleClientRequest {
 			allowedTargets = 2;
 		};
@@ -49,6 +53,10 @@ class CfgRemoteExec {
 		};
 
 		class BIS_fnc_WL2_dazzlerOn {
+			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_removeAsset {
 			allowedTargets = 2;
 		};
 

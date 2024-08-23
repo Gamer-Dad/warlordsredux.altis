@@ -1,22 +1,44 @@
 params ["_assets", "_parentSector"];
-if ((count _assets) == 0) exitWith {};
 
-private _list = [];
-_list append _assets;
-private _originalOwner = (_parentSector getVariable "BIS_WL_owner");
+if (count _assets == 0) exitWith {};
 
-while {count (_list select {alive _x}) > 0} do {
-	_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};
-	if (((_parentSector getVariable "BIS_WL_owner") != _originalOwner) || {!(_parentSector in _targets)}) then {
+private _soldierList = _assets select {
+	_x isKindOf "Man"
+};
+private _vehicleList = _assets select {
+	!(_x isKindOf "Man")
+};
+
+private _assetsRemain = true;
+
+while {_assetsRemain} do {
+	private _targetedSectors = [
+		missionNamespace getVariable "BIS_WL_currentTarget_west", 
+		missionNamespace getVariable "BIS_WL_currentTarget_east"
+	] select {!isNull _x};
+	private _sectorIsTargeted = _parentSector in _targetedSectors;
+
+	private _currentOwner = _parentSector getVariable ["BIS_WL_owner", sideUnknown];
+	if (_currentOwner != independent || !_sectorIsTargeted) then {
 		{
-			if !(isNull _x) then {
-				deleteVehicle _x;
+			private _soldier = _x;
+			if (!isNull _soldier) then {
+				deleteVehicle _soldier;
 			};
-		} forEach (_list select {_asset = _x; (alive _x) && {((allPlayers findIf {_x distance2D _asset < 500}) == -1) && {(if (_x isKindOf 'Man') then {true} else {(count ((crew _x) select {alive _x})) == 0})}}});
+		} forEach _soldierList;
+
+		{
+			private _vehicle = _x;
+			private _isVehicleAlone = allPlayers findIf {_x distanceSqr _vehicle < 250000} == -1;
+			if (!isNull _vehicle && _isVehicleAlone) then {
+				deleteVehicle _vehicle;
+			};
+		} forEach _vehicleList;
 	};
 
-	{
-		_list deleteAt (_list find _x);
-	} forEach (_list select {isNull _x || {!(alive _x)}});
-	sleep 1;
+	sleep 30;
+	
+	_soldierList = _soldierList select {alive _x};
+	_vehicleList = _vehicleList select {alive _x};
+	_assetsRemain = count _soldierList > 0 || count _vehicleList > 0;
 };

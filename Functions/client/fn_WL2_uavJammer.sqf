@@ -4,10 +4,6 @@ params ["_asset", "_owner"];
 
 private _side = side _owner;
 
-private _allUavs = missionNamespace getVariable ["BIS_WL_uavs", []];
-_allUavs pushBack _asset;
-missionNamespace setVariable ["BIS_WL_uavs", _allUavs, true];
-
 // Jammer checker (5s loop)
 [_asset, _side] spawn {
     params ["_asset", "_side"];

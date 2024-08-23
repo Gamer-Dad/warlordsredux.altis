@@ -28,5 +28,6 @@ if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
 _owner = owner _sender;
 _asset setVariable ["BIS_WL_ownerAsset", (getPlayerUID _sender), [2, _owner]];
 _asset setVariable ["BIS_WL_lastActive", 0, _owner];
+[_asset] call BIS_fnc_WL2_lastHitHandler;
 [_asset, _sender] remoteExec ["BIS_fnc_WL2_newAssetHandle", _owner];
 _sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
