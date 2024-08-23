@@ -335,11 +335,15 @@ if (isPlayer _owner) then {
 		};
 	};
 
-	if (typeOf _asset == "B_APC_Tracked_01_AA_F" || {typeOf _asset == "O_APC_Tracked_02_AA_F"}) then {
-		_asset addEventHandler ["GetIn", {
-			params ["_vehicle", "_role", "_unit", "_turret"];
-			_vehicle setVariable ["WL2_airburstActive", true];
-			_vehicle spawn BIS_fnc_WL2_airburst;
+	if (typeOf _asset == "B_APC_Tracked_01_AA_F" || typeOf _asset == "O_APC_Tracked_02_AA_F") then {
+		_asset addEventHandler ["Fired", {
+			params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+			if (_muzzle == "autocannon_35mm") then {		
+				private _ammoCount = _unit ammo "autocannon_35mm";
+				if (_ammoCount % 5 == 0) then {
+					_projectile spawn BIS_fnc_WL2_airburst;
+				};
+			};
 		}];
 	};
 };

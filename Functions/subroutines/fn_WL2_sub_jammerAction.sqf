@@ -12,7 +12,7 @@ private _actionID = _asset addAction [
             _outerMarkerName setMarkerAlpha 0;
 		} else {
 			_asset setVariable ["BIS_WL_jammerActivated", true, true];
-            _outerMarkerName setMarkerAlpha 1;
+            _outerMarkerName setMarkerAlpha 0.4;
 		};
 		_asset call BIS_fnc_WL2_sub_jammerAction;
 	},

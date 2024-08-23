@@ -10,7 +10,7 @@ _outerMarkerName setMarkerBrushLocal "Cross";
 _outerMarkerName setMarkerColorLocal _jamColor;
 _outerMarkerName setMarkerSizeLocal [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_OUTER];
 if (_asset getVariable "BIS_WL_jammerActivated") then {
-    _outerMarkerName setMarkerAlpha 1;
+    _outerMarkerName setMarkerAlpha 0.4;
 } else {
     _outerMarkerName setMarkerAlpha 0;
 };
