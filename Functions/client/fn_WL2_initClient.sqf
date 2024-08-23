@@ -68,6 +68,7 @@ BIS_fnc_WL2_uavJammer = compileFinal preprocessFileLineNumbers "Functions\client
 BIS_fnc_WL2_spectrumAction = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_spectrumAction.sqf";
 BIS_fnc_WL2_captureList = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_captureList.sqf";
 BIS_fnc_WL2_MineLimitHint = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_MineLimitHint.sqf";
+BIS_fnc_WL2_airburst = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_airburst.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";

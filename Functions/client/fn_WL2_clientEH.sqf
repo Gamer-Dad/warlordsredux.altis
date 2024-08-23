@@ -15,6 +15,9 @@ player addEventHandler ["GetInMan", {
 	if ((typeOf _vehicle == "O_Plane_Fighter_02_F") || {(typeOf _vehicle == "O_Plane_CAS_02_dynamicLoadout_F") || {(typeOf _vehicle == "O_Heli_Attack_02_dynamicLoadout_F") || {(typeOf _vehicle == "O_T_VTOL_02_vehicle_dynamicLoadout_F")}}}) then {
 		0 spawn BIS_fnc_WL2_rita;
 	};
+	if ((_vehicle getVariable "BIS_WL_ownerAsset") == (getPlayerUID player)) then {
+		_vehicle setVariable ["BIS_WL_lastActive", 0];
+	};
 }];
 
 player addEventHandler ["InventoryOpened",{
@@ -74,13 +77,6 @@ player addEventHandler ["HandleDamage", {
 		0;
 	} else {
 		_damage;
-	};
-}];
-
-player addEventHandler ["GetInMan", {
-	params ["_unit", "_role", "_vehicle", "_turret"];
-	if ((_vehicle getVariable "BIS_WL_ownerAsset") == (getPlayerUID player)) then {
-		_vehicle setVariable ["BIS_WL_lastActive", 0];
 	};
 }];
 

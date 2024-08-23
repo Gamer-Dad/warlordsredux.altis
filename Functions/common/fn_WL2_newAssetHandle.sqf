@@ -334,4 +334,12 @@ if (isPlayer _owner) then {
 			};
 		};
 	};
+
+	if (typeOf _asset == "B_APC_Tracked_01_AA_F" || {typeOf _asset == "O_APC_Tracked_02_AA_F"}) then {
+		_asset addEventHandler ["GetIn", {
+			params ["_vehicle", "_role", "_unit", "_turret"];
+			_vehicle setVariable ["WL2_airburstActive", true];
+			_vehicle spawn BIS_fnc_WL2_airburst;
+		}];
+	};
 };
