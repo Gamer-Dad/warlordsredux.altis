@@ -12,7 +12,7 @@
     {
         0 spawn {
             private _side = side player;
-            private _allEnemyUavs = allUavs select {
+            private _allEnemyUavs = allUnitsUAV select {
                 private _uavOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
                 _uavOwnerSide != _side && alive _x;
             };
