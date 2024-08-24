@@ -48,10 +48,12 @@ while {_continue && {alive _projectile}} do {
 				private _projectileDirection = _firedPosition getDir _x;
 				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
 
-				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", _x];
-
+				_projectile setPos [0, 0, 0];
+				triggerAmmo _projectile;
 				deleteVehicle _projectile;
 				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];
+
+				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", _x];
 
 				private _ownerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
 				if (side _unit == _ownerSide) then {
