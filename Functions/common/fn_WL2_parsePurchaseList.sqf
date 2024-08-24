@@ -55,7 +55,10 @@ private _savedLoadoutHandled = FALSE;
 				_requirements = getArray (_x >> "requirements");
 				_offset = getArray (_x >> "offset");
 				_notForAIUse = getNumber (_x >> "blacklistAI");
-				_displayName = getText (_class >> "displayName");
+				_displayName = getText (_x >> "name");
+				if (_displayName == "") then {
+					_displayName = getText (_class >> "displayName");
+				};
 				_picture = getText (_class >> "editorPreview");
 				_text = "";
 				

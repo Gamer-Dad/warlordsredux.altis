@@ -219,6 +219,23 @@ if (_ret) then {
 					_tooltip = localize "STR_A3_WL_ftVehicle_restr1";
 				};
 			};
+
+			if (_class == "Land_Communication_F") then {
+				private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
+				private _allJammers = _jammerMarkers apply { _x # 0 };
+				private _currentSector = _possibleSectors # _visitedSectorID;
+				private _currentSectorArea = _currentSector getVariable "objectAreaComplete";
+				private _jammersInSector = _allJammers select {
+					private _jammerOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
+					private _jammerInSector = _x inArea _currentSectorArea;
+					_jammerOwnerSide == side player && _jammerInSector;
+				};
+
+				if (count _jammersInSector > 0) exitWith {
+					_ret = false;
+					_tooltip = localize "STR_A3_WL_jammer_restr";
+				};
+			};
 			if (_category == "Defences") exitWith {
 				if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") == 1) then {
 					if ((count ((missionNamespace getVariable [_var, []]) select {alive _x && {(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "isUav") == 1)}})) >= (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])) then {

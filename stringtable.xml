@@ -410,6 +410,23 @@
             <Chinesesimp>您需要在拥有的扇区中。</Chinesesimp>
             <Chinese>您需要在拥有的扇区中。</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_jammer_restr">
+            <Original>Only one jammer allowed per sector!</Original>
+            <English>Only one jammer allowed per sector!</English>
+            <Czech>V sektoru povolen pouze jeden rušič!</Czech>
+            <French>Un seul brouilleur autorisé par secteur !</French>
+            <German>Nur ein Jammer pro Sektor erlaubt!</German>
+            <Italian>Solo un disturbatore consentito per settore!</Italian>
+            <Polish>Tylko jeden zakłócacz na sektor!</Polish>
+            <Portuguese>Apenas um jammer permitido por setor!</Portuguese>
+            <Russian>Только одна глушилка на сектор!</Russian>
+            <Spanish>Solo se permite un jammer por sector!</Spanish>
+            <Turkish>Sektör başına sadece bir jammer izinli!</Turkish>
+            <Korean>구역당 하나의 방해기만 허용됩니다!</Korean>
+            <Japanese>セクターごとにジャマーは1台のみ許可されます!</Japanese>
+            <Chinesesimp>每个区域只允许一个干扰器！</Chinesesimp>
+            <Chinese>每個區域只允許一個干擾器！</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_ftVehicle_ft_restr">
             <Original>No fast travel vehicle available.</Original>
             <English>No fast travel vehicle available.</English>

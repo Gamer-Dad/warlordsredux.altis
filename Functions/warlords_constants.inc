@@ -44,7 +44,7 @@
 #define WL_REQUISITION_CATEGORIES ["Infantry", "Vehicles", "Aircraft", "Naval", "Defences", "Gear", "Strategy"]
 #define WL_BASES [BIS_WL_base1, BIS_WL_base2]
 #define WL_JAMMER_RANGE_OUTER 3000
-#define WL_JAMMER_RANGE_INNER 1000
+#define WL_JAMMER_RANGE_INNER 500
 #define WL_JAMMER_SPECTRUM_RANGE 1500
 #define WL_JAMMER_SENSOR_THRESHOLD 0.2
 #define WL_JAMMER_HARDLINE_RANGE 20

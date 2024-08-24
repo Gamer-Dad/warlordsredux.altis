@@ -8,7 +8,8 @@ private _nameOverrides = createHashMapFromArray [
 	["B_Truck_01_medical_F", "Spawn Truck"],
 	["B_Slingload_01_Medevac_F", "Medical Container"],
 	["O_Truck_03_medical_F", "Spawn Truck"],
-	["Land_Pod_Heli_Transport_04_medevac_F", "Medical Pod"]
+	["Land_Pod_Heli_Transport_04_medevac_F", "Medical Pod"],
+	["Land_Communication_F", "Jammer Tower"]
 ];
 
 if (_continue) then {
