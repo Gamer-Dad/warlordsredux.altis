@@ -268,19 +268,19 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 };
 
 0 spawn {
-	_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
+	private _ownedVehicleVar = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 	while {!BIS_WL_missionEnd} do {
-		_vehicles = missionNamespace getVariable [_var, []];
+		private _vehicles = missionNamespace getVariable [_ownedVehicleVar, []];
 		{
-			_time = _x getVariable ["BIS_WL_lastActive", 0];
-			if ((_time < serverTime) && (_time > 1)) then {
-				_wlVehicles = missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []];
-				_wlVehicles deleteAt (_wlVehicles find _x);
-				missionNamespace setVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], _vehicles, [2, clientOwner]];
+			private _lastActiveTime = _x getVariable ["BIS_WL_lastActive", 0];
+			if (_lastActiveTime < serverTime && _lastActiveTime > 1 && count (crew _x) == 0) then {
 				deleteVehicle _x;
 				0 remoteExec ["BIS_fnc_WL2_updateVehicleList", 2];
 			};
-		}forEach _vehicles;
+		} forEach _vehicles;
+
+		_vehicles = _vehicles select {alive _x};
+		missionNamespace setVariable [_ownedVehicleVar, _vehicles, [2, clientOwner]];
 		sleep 10;
 	};
 };
