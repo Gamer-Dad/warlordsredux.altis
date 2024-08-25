@@ -12,14 +12,14 @@ private _display = uiNamespace getVariable "RscTitleDisplayEmpty";
 private _pictureSize = 1.5;
 
 private _titleBar = _display ctrlCreate ["RscText", -1];
-_titleBar ctrlSetPosition [safezoneX + 0.2, safezoneY + 0.1, 0.3 * _pictureSize, 0.05];
+_titleBar ctrlSetPosition [safezoneX + 0.2, safezoneY + 0.1, 0.4 * _pictureSize, 0.05];
 _titleBar ctrlSetBackgroundColor [0, 0, 0, 0.9];
 _titleBar ctrlSetTextColor [1, 1, 1, 1];
 _titleBar ctrlSetText "Missile Camera";
 _titleBar ctrlCommit 0;
 
 private _pictureControl = _display ctrlCreate ["RscPicture", -1];
-_pictureControl ctrlSetPosition [safezoneX + 0.2, safeZoneY + 0.15, 0.3 * _pictureSize, 0.4 * _pictureSize];
+_pictureControl ctrlSetPosition [safezoneX + 0.2, safeZoneY + 0.15, 0.4 * _pictureSize, 0.4 * _pictureSize];
 _pictureControl ctrlSetText "#(argb,512,512,1)r2t(rtt1,1.0)";
 _pictureControl ctrlCommit 0;
 
