@@ -14,7 +14,7 @@ private _ammoForVehicleTurretOverride = [
 private _disallowListForVehicle = [
     // ["LSV_01_AT_base_F", "1Rnd_GAA_missiles"]
     ["APC_Wheeled_03_base_F", "4Rnd_GAA_missiles"],
-    ["APC_Tracked_02_base_F", "4Rnd_GAA_missiles"]
+    ["O_APC_Tracked_02_cannon_F", "4Rnd_GAA_missiles"]
 ];
 
 // Add specific pylon weapons for specific aircraft
