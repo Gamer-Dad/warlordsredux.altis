@@ -28,7 +28,7 @@ private _turretsWithSmoke = [];
 
 _asset addWeaponTurret ["SmokeLauncher", _targetTurret];
 
-private _defaultMags = _asset getVariable ["BIS_WL_defaultMagazines", []];
+private _defaultMags = _asset getVariable ["WLM_savedDefaultMags", []];
 
 {
     private _mag = _x;
