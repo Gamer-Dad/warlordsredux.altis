@@ -405,34 +405,34 @@ class CfgWLRequisitionPresets {
                     capValue = 4;
                 }; // "M2A1 Slammer UP"
 
-                class B_T_MBT_01_TUSK_F {
-                    cost = 13000;
-                    requirements[] = {};
-                    rearm = 600;
-                    killReward = 550;
-                    capValue = 4;
-                    name = "M2X Slammer (Railgun)";
+                // class B_T_MBT_01_TUSK_F {
+                //     cost = 13000;
+                //     requirements[] = {};
+                //     rearm = 600;
+                //     killReward = 550;
+                //     capValue = 4;
+                //     name = "M2X Slammer (Railgun)";
 
-                    class Gunner: TurretDefaults {
-                        turret[] = { 0 };
-                        removeMagazines[] = {
-                            "24Rnd_120mm_APFSDS_shells_Tracer_Red",
-                            "12Rnd_120mm_HE_shells_Tracer_Red",
-                            "12Rnd_120mm_HEAT_MP_T_Red"
-                        };
-                        removeWeapons[] = {
-                            "cannon_120mm"
-                        };
-                        addMagazines[] = {
-                            "RailGun_01_DummyMagazine",
-                            "60Rnd_75mm_RailGun_APFSDS_mag"
-                        };
-                        addWeapons[] = {
-                            "cannon_railgun",
-                            "cannon_railgun_fake"
-                        };
-                    };
-                };
+                //     class Gunner: TurretDefaults {
+                //         turret[] = { 0 };
+                //         removeMagazines[] = {
+                //             "24Rnd_120mm_APFSDS_shells_Tracer_Red",
+                //             "12Rnd_120mm_HE_shells_Tracer_Red",
+                //             "12Rnd_120mm_HEAT_MP_T_Red"
+                //         };
+                //         removeWeapons[] = {
+                //             "cannon_120mm"
+                //         };
+                //         addMagazines[] = {
+                //             "RailGun_01_DummyMagazine",
+                //             "60Rnd_75mm_RailGun_APFSDS_mag"
+                //         };
+                //         addWeapons[] = {
+                //             "cannon_railgun",
+                //             "cannon_railgun_fake"
+                //         };
+                //     };
+                // };
 
                 class B_MBT_01_arty_F {
                     cost = 20000;
