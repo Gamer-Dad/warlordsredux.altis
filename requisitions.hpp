@@ -9,6 +9,8 @@
 //     name = string;           // Name override for vehicle in buy menu.
 // };
 
+class TurretDefaults {};
+
 class CfgWLRequisitionPresets {
     class A3ReduxAll {
         class WEST {
@@ -150,6 +152,22 @@ class CfgWLRequisitionPresets {
                     rearm = 120;
                     killReward = 150;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_127_LSV_01"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red"
+                        };
+                        addWeapons[] = {
+                            "HMG_127_LSV_01"
+                        };
+                    };
                 }; // "Prowler (HMG)"
 
                 class B_G_Offroad_01_armed_F {
@@ -158,6 +176,23 @@ class CfgWLRequisitionPresets {
                     rearm = 120;
                     killReward = 150;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_M2_Mounted"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Yellow",
+                            "100Rnd_127x99_mag_Tracer_Yellow",
+                            "100Rnd_127x99_mag_Tracer_Yellow",
+                            "100Rnd_127x99_mag_Tracer_Yellow"
+                        };
+                        addWeapons[] = {
+                            "HMG_M2_Mounted"
+                        };
+                    };
                 }; // "Offroad (HMG)"
 
                 class B_LSV_01_AT_F {
@@ -166,6 +201,23 @@ class CfgWLRequisitionPresets {
                     rearm = 200;
                     killReward = 200;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                        addMagazines[] = {
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                    };
                 }; // "Prowler (AT)"
 
                 class B_G_Offroad_01_AT_F {
@@ -174,6 +226,20 @@ class CfgWLRequisitionPresets {
                     rearm = 180;
                     killReward = 180;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "launcher_SPG9"
+                        };
+                        addMagazines[] = {
+                            "12Rnd_SPG9_HEAT"
+                        };
+                        addWeapons[] = {
+                            "launcher_SPG9"
+                        };
+                    };
                 }; // "Offroad (AT)"
 
                 class B_MRAP_01_hmg_F {
@@ -247,6 +313,23 @@ class CfgWLRequisitionPresets {
                     rearm = 500;
                     killReward = 300;
                     capValue = 3;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {
+                            "2Rnd_GAT_missiles"
+                        };
+                        removeWeapons[] = {
+                            "missiles_titan"
+                        };
+                        addMagazines[] = {
+                            "5Rnd_GAT_missiles",
+                            "5Rnd_GAT_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan"
+                        };
+                    };
                 }; // "BLUFOR Gorgon"
 
                 class B_APC_Wheeled_01_cannon_F {
@@ -271,6 +354,23 @@ class CfgWLRequisitionPresets {
                     rearm = 500;
                     killReward = 350;
                     capValue = 4;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {
+                            "4Rnd_Titan_long_missiles"
+                        };
+                        removeWeapons[] = {
+                            "missiles_titan_AA"
+                        };
+                        addMagazines[] = {
+                            "4Rnd_GAA_missiles",
+                            "4Rnd_GAA_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_AA"
+                        };
+                    };
                 }; // "IFV-6a Cheetah"
 
                 class B_AFV_Wheeled_01_cannon_F {
@@ -304,6 +404,35 @@ class CfgWLRequisitionPresets {
                     killReward = 500;
                     capValue = 4;
                 }; // "M2A1 Slammer UP"
+
+                class B_T_MBT_01_TUSK_F {
+                    cost = 13000;
+                    requirements[] = {};
+                    rearm = 600;
+                    killReward = 550;
+                    capValue = 4;
+                    name = "M2X Slammer (Railgun)";
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {
+                            "24Rnd_120mm_APFSDS_shells_Tracer_Red",
+                            "12Rnd_120mm_HE_shells_Tracer_Red",
+                            "12Rnd_120mm_HEAT_MP_T_Red"
+                        };
+                        removeWeapons[] = {
+                            "cannon_120mm"
+                        };
+                        addMagazines[] = {
+                            "RailGun_01_DummyMagazine",
+                            "60Rnd_75mm_RailGun_APFSDS_mag"
+                        };
+                        addWeapons[] = {
+                            "cannon_railgun",
+                            "cannon_railgun_fake"
+                        };
+                    };
+                };
 
                 class B_MBT_01_arty_F {
                     cost = 20000;
@@ -562,10 +691,10 @@ class CfgWLRequisitionPresets {
                     killReward = 30;
                 }; // "Razor Wire Fence"
 
-                class Land_DragonsTeeth_01_1x1_new_F {
+                class Land_DragonsTeeth_01_4x2_new_F {
                     cost = 50;
                     requirements[] = {};
-                    offset[] = {0, 2, 0};
+                    offset[] = {0, 5, 0};
                     killReward = 30;
                 }; // "Tank barrier"
 
@@ -596,6 +725,23 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_static"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red"
+                        };
+                        addWeapons[] = {
+                            "HMG_static"
+                        };
+                    };
                 }; // "Mk30 HMG .50"
 
                 class B_HMG_01_high_F {
@@ -603,6 +749,23 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_static"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red"
+                        };
+                        addWeapons[] = {
+                            "HMG_static"
+                        };
+                    };
                 }; // "Mk30 HMG .50 (Raised)"
 
                 class B_GMG_01_F {
@@ -625,6 +788,23 @@ class CfgWLRequisitionPresets {
                     rearm = 300;
                     name = "Mk30 HMG Auto Turret";
                     killReward = 150;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_static"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red",
+                            "100Rnd_127x99_mag_Tracer_Red"
+                        };
+                        addWeapons[] = {
+                            "HMG_static"
+                        };
+                    };
                 };
 
                 class B_GMG_01_A_F {
@@ -640,6 +820,25 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                        addMagazines[] = {
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                    };
                 }; // "Static Titan Launcher (AT) [NATO]"
 
                 class B_static_AA_F {
@@ -647,6 +846,25 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                        addMagazines[] = {
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                    };
                 }; // "Static Titan Launcher (AA) [NATO]"
 
                 class B_Mortar_01_F {
@@ -904,6 +1122,22 @@ class CfgWLRequisitionPresets {
                     rearm = 120;
                     killReward = 150;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "LMG_Minigun_Transport"
+                        };
+                        addMagazines[] = {
+                            "500Rnd_65x39_Belt_Tracer_Green_Splash",
+                            "500Rnd_65x39_Belt_Tracer_Green_Splash",
+                            "500Rnd_65x39_Belt_Tracer_Green_Splash"
+                        };
+                        addWeapons[] = {
+                            "LMG_Minigun_Transport"
+                        };
+                    };
                 }; // "Qilin (Minigun)"
 
                 class O_G_Offroad_01_armed_F {
@@ -912,6 +1146,23 @@ class CfgWLRequisitionPresets {
                     rearm = 120;
                     killReward = 150;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_M2_Mounted"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Yellow",
+                            "100Rnd_127x99_mag_Tracer_Yellow",
+                            "100Rnd_127x99_mag_Tracer_Yellow",
+                            "100Rnd_127x99_mag_Tracer_Yellow"
+                        };
+                        addWeapons[] = {
+                            "HMG_M2_Mounted"
+                        };
+                    };
                 }; // "Offroad (HMG)"
 
                 class O_LSV_02_AT_F {
@@ -920,6 +1171,23 @@ class CfgWLRequisitionPresets {
                     rearm = 200;
                     killReward = 200;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "missiles_Vorona"
+                        };
+                        addMagazines[] = {
+                            "Vorona_HEAT",
+                            "Vorona_HEAT",
+                            "Vorona_HEAT",
+                            "Vorona_HEAT"
+                        };
+                        addWeapons[] = {
+                            "missiles_Vorona"
+                        };
+                    };
                 }; // "Qilin (AT)"
 
                 class O_G_Offroad_01_AT_F {
@@ -928,6 +1196,20 @@ class CfgWLRequisitionPresets {
                     rearm = 180;
                     killReward = 180;
                     capValue = 1;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "launcher_SPG9"
+                        };
+                        addMagazines[] = {
+                            "12Rnd_SPG9_HEAT"
+                        };
+                        addWeapons[] = {
+                            "launcher_SPG9"
+                        };
+                    };
                 }; // "Offroad (AT)"
 
                 class B_Truck_01_flatbed_F {
@@ -988,6 +1270,23 @@ class CfgWLRequisitionPresets {
                     rearm = 500;
                     killReward = 350;
                     capValue = 3;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {
+                            "2Rnd_GAT_missiles_O"
+                        };
+                        removeWeapons[] = {
+                            "missiles_titan"
+                        };
+                        addMagazines[] = {
+                            "5Rnd_GAT_missiles",
+                            "5Rnd_GAT_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan"
+                        };
+                    };
                 }; // "BTR-K Kamysh"
 
                 class O_APC_Tracked_02_AA_F {
@@ -996,6 +1295,23 @@ class CfgWLRequisitionPresets {
                     rearm = 500;
                     killReward = 350;
                     capValue = 4;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {
+                            "4Rnd_Titan_long_missiles_O"
+                        };
+                        removeWeapons[] = {
+                            "missiles_titan_AA"
+                        };
+                        addMagazines[] = {
+                            "4Rnd_GAA_missiles",
+                            "4Rnd_GAA_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_AA"
+                        };
+                    };
                 }; // "ZSU-39 Tigris"
 
                 class O_MBT_02_cannon_F {
@@ -1104,7 +1420,7 @@ class CfgWLRequisitionPresets {
                     killReward = 600;
                 }; // "K40 Ababil-3"
 
-                class O_T_VTOL_02_vehicle_dynamicLoadout_F {
+                class O_T_VTOL_02_infantry_dynamicLoadout_F {
                     cost = 14000;
                     requirements[] = {"A"};
                     rearm = 700;
@@ -1266,10 +1582,10 @@ class CfgWLRequisitionPresets {
                     killReward = 30;
                 };  // "Razor Wire Fence"
 
-                class Land_DragonsTeeth_01_1x1_new_F {
+                class Land_DragonsTeeth_01_4x2_new_F {
                     cost = 50;
                     requirements[] = {};
-                    offset[] = {0, 2, 0};
+                    offset[] = {0, 5, 0};
                     killReward = 30;
                 };  // "Tank barrier"
 
@@ -1298,6 +1614,23 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_static"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green"
+                        };
+                        addWeapons[] = {
+                            "HMG_static"
+                        };
+                    };
                 };  // "Mk30 HMG .50"
 
                 class O_HMG_01_high_F {
@@ -1305,6 +1638,23 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_static"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green"
+                        };
+                        addWeapons[] = {
+                            "HMG_static"
+                        };
+                    };
                 };  // "Mk30 HMG .50 (Raised)"
 
                 class O_GMG_01_F {
@@ -1327,6 +1677,23 @@ class CfgWLRequisitionPresets {
                     rearm = 300;
                     killReward = 150;
                     name = "Mk30 HMG Auto Turret";
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "HMG_static"
+                        };
+                        addMagazines[] = {
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green",
+                            "100Rnd_127x99_mag_Tracer_Green"
+                        };
+                        addWeapons[] = {
+                            "HMG_static"
+                        };
+                    };
                 };
 
                 class O_GMG_01_A_F {
@@ -1342,6 +1709,25 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                        addMagazines[] = {
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles",
+                            "1Rnd_GAT_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                    };
                 };  // "Static Titan Launcher (AT) [CSAT]"
 
                 class O_static_AA_F {
@@ -1349,6 +1735,25 @@ class CfgWLRequisitionPresets {
                     requirements[] = {};
                     rearm = 300;
                     killReward = 100;
+
+                    class Gunner: TurretDefaults {
+                        turret[] = { 0 };
+                        removeMagazines[] = {};
+                        removeWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                        addMagazines[] = {
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles",
+                            "1Rnd_GAA_missiles"
+                        };
+                        addWeapons[] = {
+                            "missiles_titan_static"
+                        };
+                    };
                 };  // "Static Titan Launcher (AA) [CSAT]"
 
                 class O_Mortar_01_F {

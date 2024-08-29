@@ -11,109 +11,33 @@ private _asset = if (_isUav) then {
 
 waitUntil {sleep 0.1; !(isNull _asset)};
 
-switch (typeOf _asset) do {
-	case "B_APC_Tracked_01_AA_F";
-	case "O_APC_Tracked_02_AA_F": {
-		_asset removeMagazinesTurret ["4Rnd_Titan_long_missiles", [0]];
-		_asset removeMagazinesTurret ["4Rnd_Titan_long_missiles_O", [0]];
-		_asset removeWeaponTurret ["missiles_titan_AA", [0]];
-		{
-			_asset addMagazineTurret ["4Rnd_GAA_missiles", [0]];
-		} forEach [1, 2];
-		_asset addWeaponTurret ["missiles_titan_AA", [0]];
-	};
+private _turretOverrides = missionNamespace getVariable ["WL2_turretOverrides", createHashMap];
+private _turretOverridesForVehicle = _turretOverrides getOrDefault [_class, []];
 
-	case "B_APC_Wheeled_03_cannon_F";
-	case "O_APC_Tracked_02_cannon_F": {
-		_asset removeMagazinesTurret ["2Rnd_GAT_missiles", [0]];
-		_asset removeMagazinesTurret ["2Rnd_GAT_missiles_O", [0]];
+{
+	private _turretOverride = _x;
+	private _turret = getArray (_turretOverride >> "turret");
+	private _removeMagazines = getArray (_turretOverride >> "removeMagazines");
+	private _removeWeapons = getArray (_turretOverride >> "removeWeapons");
+	private _addMagazines = getArray (_turretOverride >> "addMagazines");
+	private _addWeapons = getArray (_turretOverride >> "addWeapons");
 
-		_asset removeWeaponTurret ["missiles_titan", [0]];
-		{
-			_asset addMagazineTurret ["5Rnd_GAT_missiles", [0]];
-		} forEach [1, 2];
-		_asset addWeaponTurret ["missiles_titan", [0]];
-	};
+	{
+		_asset removeMagazinesTurret [_x, _turret];
+	} forEach _removeMagazines;
 
-	case "B_static_AT_F";
-	case "O_static_AT_F": {
-		_asset removeWeaponTurret ["missiles_titan_static", [0]];
-		{
-			_asset addMagazineTurret ["1Rnd_GAT_missiles", [0]];
-		} forEach [1, 2, 3, 4, 5, 6];
-		_asset addWeaponTurret ["missiles_titan_static", [0]];
-	};
+	{
+		_asset removeWeaponTurret [_x, _turret];
+	} forEach _removeWeapons;
 
-	case "B_static_AA_F";
-	case "O_static_AA_F": {
-		_asset removeWeaponTurret ["missiles_titan_static", [0]];
-		{
-			_asset addMagazineTurret ["1Rnd_GAA_missiles", [0]];
-		} forEach [1, 2, 3, 4, 5, 6];
-		_asset addWeaponTurret ["missiles_titan_static", [0]];
-	};
+	{
+		_asset addMagazineTurret [_x, _turret];
+	} forEach _addMagazines;
 
-	case "B_LSV_01_AT_F": {
-		_asset removeWeaponTurret ["missiles_titan_static", [0]];
-		{
-			_asset addMagazineTurret ["1Rnd_GAT_missiles", [0]];
-		} forEach [1, 2, 3, 4];
-		_asset addWeaponTurret ["missiles_titan_static", [0]];
-	};
-
-	case "O_LSV_02_AT_F": {
-		_asset removeWeaponTurret ["missiles_Vorona", [0]];
-		{
-			_asset addMagazineTurret ["Vorona_HEAT", [0]];
-		} forEach [1, 2, 3, 4];
-		_asset addWeaponTurret ["missiles_Vorona", [0]];
-	};
-
-	case "B_G_Offroad_01_AT_F";
-	case "O_G_Offroad_01_AT_F": {
-		_asset removeWeaponTurret ["launcher_SPG9", [0]];
-		_asset addMagazineTurret ["12Rnd_SPG9_HEAT", [0]];
-		_asset addWeaponTurret ["launcher_SPG9", [0]];
-	};
-
-	case "B_LSV_01_armed_F": {
-		_asset removeWeaponTurret ["HMG_127_LSV_01", [0]];
-		{
-			_asset addMagazineTurret ["100Rnd_127x99_mag_Tracer_Red", [0]];
-		} forEach [1, 2, 3];
-		_asset addWeaponTurret ["HMG_127_LSV_01", [0]];
-	};
-
-	case "O_LSV_02_armed_F": {
-		_asset removeWeaponTurret ["LMG_Minigun_Transport", [0]];
-		{
-			_asset addMagazineTurret ["500Rnd_65x39_Belt_Tracer_Green_Splash", [0]];
-		} forEach [1, 2, 3];
-		_asset addWeaponTurret ["LMG_Minigun_Transport", [0]];
-	};
-
-	case "B_G_Offroad_01_armed_F";
-	case "O_G_Offroad_01_armed_F": {
-		_asset removeWeaponTurret ["HMG_M2_Mounted", [0]];
-		{
-			_asset addMagazineTurret ["100Rnd_127x99_mag_Tracer_Yellow", [0]];
-		} forEach [1, 2, 3, 4];
-		_asset addWeaponTurret ["HMG_M2_Mounted", [0]];
-	};
-
-	case "B_HMG_01_F";
-	case "B_HMG_01_high_F";
-	case "B_HMG_01_A_F";
-	case "O_HMG_01_F";
-	case "O_HMG_01_high_F";
-	case "O_HMG_01_A_F": {
-		_asset removeWeaponTurret ["HMG_static", [0]];
-		{
-			_asset addMagazineTurret ["100Rnd_127x99_mag_Tracer_Yellow", [0]];
-		} forEach [1, 2, 3, 4];
-		_asset addWeaponTurret ["HMG_static", [0]];
-	};
-};
+	{
+		_asset addWeaponTurret [_x, _turret];
+	} forEach _addWeapons;
+} forEach _turretOverridesForVehicle;
 
 _asset enableWeaponDisassembly false;
 

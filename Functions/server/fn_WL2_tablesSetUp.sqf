@@ -7,6 +7,7 @@ private _costHashMap = createHashMap;
 private _rearmTimerHashMap = createHashMap;
 private _killRewardHashMap = createHashMap;
 private _capValueHashMap = createHashMap;
+private _turretOverridesHashMap = createHashMap;
 
 private _requisitionPresets = BIS_WL_purchaseListTemplate;
 {
@@ -22,6 +23,7 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 				private _requisitionRearmTime = getNumber (_x >> "rearm");
 				private _requisitionKillReward = getNumber (_x >> "killReward");
 				private _requisitionCapValue = getNumber (_x >> "capValue");
+				private _requisitionTurretOverrides = "inheritsFrom _x == (missionConfigFile >> 'TurretDefaults')" configClasses _x;
 
 				if (_requisitionCost != 0) then {
 					_costHashMap set [_requistitonName, _requisitionCost];
@@ -38,6 +40,10 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 				if (_requisitionCapValue != 0) then {
 					_capValueHashMap set [_requistitonName, _requisitionCapValue];
 				};
+
+				if (count _requisitionTurretOverrides > 0) then {
+					_turretOverridesHashMap set [_requistitonName, _requisitionTurretOverrides];
+				};
 			} forEach _requisitionClasses;
 		} forEach _requisitionCategories;
 	} forEach _requisitionSides;
@@ -47,6 +53,7 @@ serverNamespace setVariable ["WL2_costs", _costHashMap];
 serverNamespace setVariable ["WL2_killRewards", _killRewardHashMap];
 serverNamespace setVariable ["WL2_cappingValues", _capValueHashMap];
 missionNamespace setVariable ["WL2_rearmTimers", _rearmTimerHashMap, true];
+missionNamespace setVariable ["WL2_turretOverrides", _turretOverridesHashMap, true];
 
 serverNamespace setVariable ["WL2_factionUnitClasses", [
 	[
