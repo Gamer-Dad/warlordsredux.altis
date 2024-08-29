@@ -1,20 +1,33 @@
 params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 
 private _firedPosition = getPosATL _gunner;
+private _minDistSqr = getMissionConfigValue ["BIS_WL_minAPSDist", 400];
+private _maxDistSqr = getMissionConfigValue ["BIS_WL_maxAPSDist", 1600];
 
-_dazzleable = _projectile call APS_fnc_IsLaserGuided || {
+private _dazzleable = _projectile call APS_fnc_IsLaserGuided || {
 	_projectile call APS_fnc_IsIRguided || {
 	_projectile call APS_fnc_IsVisualGuided || {
 	typeOf _projectile == "M_Vorona_HEAT" || {
 	typeOf _projectile == "M_Vorona_HE"}}}
 };
-_radius = if (_dazzleable) then {125} else {sqrt (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600])};
+private _radius = if (_dazzleable) then {125} else {sqrt _maxDistSqr};
 
-_continue = alive _projectile;
-while {_continue && {alive _projectile}} do {
-	_eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _radius]) select { 
+private _previousPos = getPosWorld _projectile;
+private _maxDisplacement = 0;
+private _continue = alive _projectile;
+while {_continue && alive _projectile} do {
+	private _currentPos = getPosWorld _projectile;
+	private _displacement = _currentPos distance _previousPos;
+	if (_displacement > _maxDisplacement) then {
+		_maxDisplacement = _displacement;
+	};
+	_previousPos = _currentPos;
+
+	private _safeRadius = _radius max _maxDisplacement;
+
+	private _eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _safeRadius]) select { 
 		_x != _unit &&
-		_x call APS_fnc_active
+		_x call APS_fnc_Active
 	};
 
 	_sortedEligibleList = [_eligibleNearbyVehicles, [_projectile], { _input0 distance _x }, "ASCEND"] call BIS_fnc_sortBy;
@@ -31,25 +44,26 @@ while {_continue && {alive _projectile}} do {
 			};
 		} else {
 			if (_vehicleAPSType >= _projectileAPSType && {
-					_distance =_x distanceSqr _projectile;
-					_distance < (getMissionConfigValue ["BIS_WL_maxAPSDist", 1600]) && _distance > (getMissionConfigValue ["BIS_WL_minAPSDist", 400])
+					private _distanceSqr =_x distanceSqr _projectile;
+					private _firedFromDeadzone = _firedPosition distanceSqr _x < _minDistSqr;
+					private _safeMaxDistSqr = _maxDistSqr max (_maxDisplacement * _maxDisplacement);
+					!_firedFromDeadzone && _distanceSqr < _safeMaxDistSqr;
 				} && {
-					_projectileVector = vectorNormalized (velocity _projectile);
-					_vectorToVehicle = (getPosASL _projectile) vectorFromTo (getPosASL _x);
-					_incomingAngle = acos (_projectileVector vectorDotProduct _vectorToVehicle);
-					_incomingAngle < 30
+					private _projectileVector = vectorNormalized (velocity _projectile);
+					private _vectorToVehicle = (getPosASL _projectile) vectorFromTo (getPosASL _x);
+					private _incomingAngle = acos (_projectileVector vectorDotProduct _vectorToVehicle);
+					_incomingAngle < 30;
 				}) exitWith {
 				_continue = false;
 
-				_ammo = _x getVariable "apsAmmo";
+				private _ammo = _x getVariable "apsAmmo";
 				_x setVariable ["apsAmmo", _ammo - 1, true];
 
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = _firedPosition getDir _x;
 				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
 
-				_projectile setPos [0, 0, 0];
-				triggerAmmo _projectile;
+				_projectile setPosWorld [0, 0, 0];
 				deleteVehicle _projectile;
 				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];
 

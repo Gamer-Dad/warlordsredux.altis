@@ -10,7 +10,7 @@ private _savedLoadoutHandled = FALSE;
 {
 	_presetName = _x;
 	_preset = configNull;
-	
+
 	if (isClass (missionConfigFile >> "CfgWLRequisitionPresets" >> _presetName)) then {
 		_preset = missionConfigFile >> "CfgWLRequisitionPresets" >> _presetName;
 	} else {
@@ -20,9 +20,9 @@ private _savedLoadoutHandled = FALSE;
 			[format ["Warlords error: Input preset class '%1' not found in any configs.", _presetName]] call BIS_fnc_error;
 		};
 	};
-	
+
 	if (isNull _preset) exitWith {};
-	
+
 	if (isClass (_preset >> str _side)) then {
 		{
 			if (_x == "Strategy") exitWith {};
@@ -33,21 +33,21 @@ private _savedLoadoutHandled = FALSE;
 			if (count _sortedArray >= (_index + 1)) then {
 				_data = _sortedArray # _index
 			};
-			
+
 			if (_category == "Gear") then {
 				_data pushBack ["Arsenal", (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]), [], (localize "STR_A3_Arsenal"), "\A3\Data_F_Warlords\Data\preview_arsenal.jpg", localize "STR_A3_WL_arsenal_open"];
 			};
-			
+
 			if (_category == "Gear" && !_lastLoadoutHandled) then {
 				_lastLoadoutHandled = TRUE;
 				_data pushBack ["LastLoadout", (getMissionConfigValue ["BIS_WL_lastLoadoutCost", 100]), [], (localize "STR_A3_WL_last_loadout"), "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_last_loadout_info"];
 			};
-			
+
 			if (_category == "Gear" && !_savedLoadoutHandled) then {
 				_savedLoadoutHandled = TRUE;
 				_data pushBack ["SavedLoadout", (getMissionConfigValue ["BIS_WL_savedLoadoutCost", 500]), [], (localize "STR_A3_WL_saved_loadout"), "\A3\Data_F_Warlords\Data\preview_loadout.jpg", format [localize "STR_A3_WL_saved_loadout_info", "<br/>"]];
 			};
-			
+
 			{
 				_className = configName _x;
 				_class = configFile >> "CfgVehicles" >> _className;
@@ -61,7 +61,11 @@ private _savedLoadoutHandled = FALSE;
 				};
 				_picture = getText (_class >> "editorPreview");
 				_text = "";
-				
+
+				if (_cost == 0) then {
+					continue;
+				};
+
 				if (_category == "Infantry") then {
 					_wpns = getArray (_class >> "weapons");
 					_wpnArrPrimary = _wpns select {getNumber (configFile >> "CfgWeapons" >> _x >> "type") == 1};
@@ -142,15 +146,15 @@ private _savedLoadoutHandled = FALSE;
 						};
 					};
 				};
-				
+
 				if (_text != "") then {
 					_textNew = (_text splitString "$") # 0;
 					if (_textNew != _text) then {_text = localize _textNew} else {_text = _textNew};
 				};
-				
+
 				_textSize = count _text;
 				_textLimit = if (_category != "Gear") then {500} else {750};
-				
+
 				if (_textSize > _textLimit) then {
 					_textArr = toArray _text;
 					_textArr deleteRange [_textLimit, _textSize - _textLimit];
@@ -161,24 +165,24 @@ private _savedLoadoutHandled = FALSE;
 						_text = _text + "..."
 					};
 				};
-				
+
 				if (_text == "") then {_text = " "};
 				if (_picture == "") then {_picture = " "};
-				
+
 				_data pushBack [_className, _cost, _requirements, _displayName, _picture, _text, _offset, _notForAIUse];
 			} forEach (configProperties [_preset >> str _side >> _x, "isClass _x"]);
-			
+
 			if (_category == "Gear" && !_saveLoadoutHandled) then {
 				_saveLoadoutHandled = TRUE;
 				_data pushBack ["SaveLoadout", 0, [], (localize "STR_A3_WL_save_loadout"), "\A3\Data_F_Warlords\Data\preview_loadout.jpg", localize "STR_A3_WL_save_loadout_info"];
 			};
-			
+
 			_sortedArray set [_index, _data];
 		} forEach WL_REQUISITION_CATEGORIES;
 	} else {
 		[format ["Warlords warning: Input preset class '%1' does not contain any data for side '%2'", _presetName, _side]] call BIS_fnc_error;
 	};
-} forEach BIS_WL_purchaseListTeplateArr;
+} forEach BIS_WL_purchaseListTemplate;
 
 _strategyArr = [];
 
