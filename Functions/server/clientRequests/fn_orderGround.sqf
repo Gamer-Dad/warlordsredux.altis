@@ -11,13 +11,33 @@ private _asset = if (_isUav) then {
 
 waitUntil {sleep 0.1; !(isNull _asset)};
 
-if (typeOf _asset == "B_APC_Tracked_01_AA_F" || {typeOf _asset == "O_APC_Tracked_02_AA_F"}) then {
-	_asset removeMagazinesTurret ["4Rnd_Titan_long_missiles",[0]];
-	_asset removeMagazinesTurret ["4Rnd_Titan_long_missiles_O",[0]];
-	_asset removeWeaponTurret ["missiles_titan_AA",[0]];
-	{_asset addMagazineTurret ["4Rnd_GAA_missiles",[0]];} forEach [1,2];
-	_asset addWeaponTurret ["missiles_titan_AA",[0]];
-};
+private _turretOverrides = missionNamespace getVariable ["WL2_turretOverrides", createHashMap];
+private _turretOverridesForVehicle = _turretOverrides getOrDefault [_class, []];
+
+{
+	private _turretOverride = _x;
+	private _turret = getArray (_turretOverride >> "turret");
+	private _removeMagazines = getArray (_turretOverride >> "removeMagazines");
+	private _removeWeapons = getArray (_turretOverride >> "removeWeapons");
+	private _addMagazines = getArray (_turretOverride >> "addMagazines");
+	private _addWeapons = getArray (_turretOverride >> "addWeapons");
+
+	{
+		_asset removeMagazinesTurret [_x, _turret];
+	} forEach _removeMagazines;
+
+	{
+		_asset removeWeaponTurret [_x, _turret];
+	} forEach _removeWeapons;
+
+	{
+		_asset addMagazineTurret [_x, _turret];
+	} forEach _addMagazines;
+
+	{
+		_asset addWeaponTurret [_x, _turret];
+	} forEach _addWeapons;
+} forEach _turretOverridesForVehicle;
 
 _asset enableWeaponDisassembly false;
 

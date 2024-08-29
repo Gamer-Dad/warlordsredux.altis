@@ -38,7 +38,7 @@ if (isPlayer _owner) then {
 		_vehicles pushBack _asset;
 		missionNamespace setVariable [_var, _vehicles, [2, clientOwner]];
 		0 remoteExec ["BIS_fnc_WL2_updateVehicleList", 2];
-		
+
 		_asset spawn BIS_fnc_WL2_sub_rearmAction;
 
 		switch (typeOf _asset) do {
@@ -119,24 +119,27 @@ if (isPlayer _owner) then {
 					} forEach getArray (configfile >> "CfgVehicles" >> typeof _asset >> "textureSources" >> "Green" >> "textures");
 				};
 			};
-			
+
 			// Radars
 			case "B_Radar_System_01_F";
 			case "O_Radar_System_02_F": {
-				_asset spawn {
+				_asset setVariable ["radarRotation", false, true];
+				[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
+				[_asset] spawn {
 					params ["_asset"];
-
-					_asset setVariable ["radarRotation", false, true];
-					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
-					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
-					_radarIter = 0;
-
+					private _lookAtPositions = [0, 90, 180, 270] apply { _asset getRelPos [100, _x] };
+					private _radarIter = 0;
 					while {alive _asset} do {
 						if (_asset getVariable "radarRotation") then {
-							_asset lookAt (_lookAtPositions # _radarIter);
-							_radarIter = (_radarIter + 1) % 8;
+							private _lookAtPos = _lookAtPositions # _radarIter;
+							if (local _asset) then {
+								_asset lookAt _lookAtPos;
+							} else {
+								[_asset, _lookAtPos] remoteExec ["lookAt", _asset];
+							};
+							_radarIter = (_radarIter + 1) % 4;
 						};
-						sleep 1.2;
+						sleep 2.4;
 					};
 				};
 			};
@@ -154,12 +157,12 @@ if (isPlayer _owner) then {
 						"\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",
 						"!(isNull (getConnectedUAVUnit player))",
 						"!(isNull (getConnectedUAVUnit player))",
-						{ 
+						{
 							playSound3D ["a3\sounds_f\sfx\objects\upload_terminal\terminal_antena_close.wss", (getConnectedUAVUnit player), false, getPosASL (getConnectedUAVUnit player), 1, 1, 0];
 						},
 						{},
 						{
-							(getConnectedUAVUnit player) addEventHandler ["Killed", { params ["_unit", "_killer", "_instigator", "_useEffects"]; 
+							(getConnectedUAVUnit player) addEventHandler ["Killed", { params ["_unit", "_killer", "_instigator", "_useEffects"];
 								[player, "droneExplode"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 							}];
 							[
@@ -171,7 +174,7 @@ if (isPlayer _owner) then {
 								"!(isNull (getConnectedUAVUnit player))",
 								{},
 								{},
-								{ 
+								{
 									[player, "droneExplode"] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 								},
 								{},
@@ -219,14 +222,14 @@ if (isPlayer _owner) then {
 				};
 			};
 		};
-		
+
 		_asset spawn {
 			params ["_asset"];
 			_repairActionID = -1;
 			while {alive _asset} do {
 				_nearbyVehicles = (_asset nearEntities ["All", WL_MAINTENANCE_RADIUS]) select {alive _x};
 				_repairCooldown = ((_asset getVariable "BIS_WL_nextRepair") - serverTime) max 0;
-				
+
 				if (_nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportRepair") > 0} != -1) then {
 					if (_repairActionID == -1) then {
 						_repairActionID = _asset addAction [
@@ -261,10 +264,10 @@ if (isPlayer _owner) then {
 				};
 				sleep WL_TIMEOUT_STANDARD;
 			};
-			
+
 			_asset removeAction _repairActionID;
 		};
-		
+
 		if (getNumber (configFile >> "CfgVehicles" >> typeOf _asset >> "transportAmmo") > 0) then {
 			[_asset, 0] remoteExec ["setAmmoCargo", 0];
 			_amount = 10000;
@@ -275,9 +278,9 @@ if (isPlayer _owner) then {
 		};
 	};
 
-	private _rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
+	private _rearmTime = (missionNamespace getVariable "WL2_rearmTimers") getOrDefault [(typeOf _asset), 600];
 	_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
-	
+
 	if (_asset call DIS_fnc_Check) then {
 		_asset spawn DIS_fnc_RegisterLauncher;
 
@@ -290,7 +293,7 @@ if (isPlayer _owner) then {
 				private _uavControl = UAVControl _asset;
 				private _isTurretTransferring = _uavControl # 1 != "" && !(_asset turretLocal [0]);
 				if (_isTurretTransferring && _weaponSafe == -1) then {
-					_weaponSafe = _asset addAction ["Weapon Safety", { 
+					_weaponSafe = _asset addAction ["Weapon Safety", {
 						systemChat "Changing turret ownership (arma bug). Wait a few seconds before firing.";
 					}, [], 0, false, false, "DefaultAction", ""];
 				};
@@ -311,11 +314,11 @@ if (isPlayer _owner) then {
 			};
 		}];
 	};
-	
+
 	_asset call BIS_fnc_WL2_sub_removeAction;
 
-	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
-	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
+	private _crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
+	private _radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x} forEach _x};
 	if ((count _radarSensor > 0) && (count _crewPosition > 1 || (unitIsUAV _asset))) then {
 		_asset setVariable ["radarOperation", false, true];
 		_asset setVehicleRadar 2;
@@ -323,12 +326,18 @@ if (isPlayer _owner) then {
 
 		_asset spawn {
 			params ["_asset"];
-			
+
 			while {alive _asset} do {
-				if (_asset getVariable "radarOperation") then {
-					_asset setVehicleRadar 1;
+				private _radarValue = if (_asset getVariable "radarOperation") then {
+					1;
 				} else {
-					_asset setVehicleRadar 2;
+					2;
+				};
+
+				if (local _asset) then {
+					_asset setVehicleRadar _radarValue;
+				} else {
+					[_asset, _radarValue] remoteExec ["setVehicleRadar", _asset];
 				};
 				sleep 10;
 			};
@@ -338,7 +347,7 @@ if (isPlayer _owner) then {
 	if (typeOf _asset == "B_APC_Tracked_01_AA_F" || typeOf _asset == "O_APC_Tracked_02_AA_F") then {
 		_asset addEventHandler ["Fired", {
 			params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-			if (_muzzle == "autocannon_35mm") then {		
+			if (_muzzle == "autocannon_35mm") then {
 				private _ammoCount = _unit ammo "autocannon_35mm";
 				if (_ammoCount % 5 == 0) then {
 					_projectile spawn BIS_fnc_WL2_airburst;
