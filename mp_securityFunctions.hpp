@@ -71,7 +71,7 @@ class CfgRemoteExec {
 		class WLM_fnc_applyPylon {
 			allowedTargets = 0;
 		};
-		
+
 		class WLM_fnc_applyVehicle {
 			allowedTargets = 0;
 		};
@@ -87,7 +87,7 @@ class CfgRemoteExec {
 		class WLM_fnc_changeHorn {
 			allowedTargets = 0;
 		};
-		
+
 		class SQD_fnc_server {
 			allowedTargets = 2;
 		};
@@ -156,6 +156,14 @@ class CfgRemoteExec {
 
 		class diag_log {
 			allowedTargets = 2;
+		};
+
+		class lookAt {
+			allowedTargets = 0;
+		};
+
+		class setVehicleRadar {
+			allowedTargets = 0;
 		};
 	};
 };

@@ -123,20 +123,23 @@ if (isPlayer _owner) then {
 			// Radars
 			case "B_Radar_System_01_F";
 			case "O_Radar_System_02_F": {
-				_asset spawn {
+				_asset setVariable ["radarRotation", false, true];
+				[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
+				[_asset] spawn {
 					params ["_asset"];
-
-					_asset setVariable ["radarRotation", false, true];
-					[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
-					_lookAtPositions = [0, 45, 90, 135, 180, 225, 270, 315] apply { _asset getRelPos [100, _x] };
-					_radarIter = 0;
-
+					private _lookAtPositions = [0, 90, 180, 270] apply { _asset getRelPos [100, _x] };
+					private _radarIter = 0;
 					while {alive _asset} do {
 						if (_asset getVariable "radarRotation") then {
-							_asset lookAt (_lookAtPositions # _radarIter);
-							_radarIter = (_radarIter + 1) % 8;
+							private _lookAtPos = _lookAtPositions # _radarIter;
+							if (local _asset) then {
+								_asset lookAt _lookAtPos;
+							} else {
+								[_asset, _lookAtPos] remoteExec ["lookAt", _asset];
+							};
+							_radarIter = (_radarIter + 1) % 4;
 						};
-						sleep 1.2;
+						sleep 2.4;
 					};
 				};
 			};
@@ -314,8 +317,8 @@ if (isPlayer _owner) then {
 
 	_asset call BIS_fnc_WL2_sub_removeAction;
 
-	_crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
-	_radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x}forEach _x};
+	private _crewPosition = (fullCrew [_asset, "", true]) select {!("cargo" in _x)};
+	private _radarSensor = (listVehicleSensors _asset) select {{"ActiveRadarSensorComponent" in _x} forEach _x};
 	if ((count _radarSensor > 0) && (count _crewPosition > 1 || (unitIsUAV _asset))) then {
 		_asset setVariable ["radarOperation", false, true];
 		_asset setVehicleRadar 2;
@@ -325,10 +328,16 @@ if (isPlayer _owner) then {
 			params ["_asset"];
 
 			while {alive _asset} do {
-				if (_asset getVariable "radarOperation") then {
-					_asset setVehicleRadar 1;
+				private _radarValue = if (_asset getVariable "radarOperation") then {
+					1;
 				} else {
-					_asset setVehicleRadar 2;
+					2;
+				};
+
+				if (local _asset) then {
+					_asset setVehicleRadar _radarValue;
+				} else {
+					[_asset, _radarValue] remoteExec ["setVehicleRadar", _asset];
 				};
 				sleep 10;
 			};

@@ -11,22 +11,22 @@ if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
 if (_ret) then {
-	//Added this check to stop a "rouge" friendly player or a cheater placing an enemy at the main base blocking fast travel 
+	//Added this check to stop a "rouge" friendly player or a cheater placing an enemy at the main base blocking fast travel
 	//These distance checks appear to be running every frame. I think this is a client side UI script but in general thats a really bad idea.
 	private _flagPole = nearestObjects [player, ["FlagPole_F"], 100];
 	private _nearbyEnemies = false;
-	if (count _flagPole > 0) then 
+	if (count _flagPole > 0) then
 	{
 		//do nothing because _nearbyEnemies is already false;
 		//systemChat "Flag nearby";
 	}
-	else 
+	else
 	{
 		//systemChat "Normal";
 		_nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0);
 	};
-	
-	 	
+
+
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -43,11 +43,11 @@ if (_ret) then {
 		};
 		case "FTSquadLeader": {
 			if (vehicle player != player) exitWith {
-				_ret = false; 
+				_ret = false;
 				_tooltip = localize "STR_A3_WL_fasttravel_restr3"
 			};
 			if (_nearbyEnemies) exitWith {
-				_ret = false; 
+				_ret = false;
 				_tooltip =  localize "STR_A3_WL_fasttravel_restr4"
 			};
 
@@ -64,24 +64,24 @@ if (_ret) then {
 			// Squad leader checks
 			private _squadLeaderID = ['getMySquadLeader'] call SQD_fnc_client;
 			if (_squadLeaderID == getPlayerID player) exitWith {
-				_ret = false; 
+				_ret = false;
 				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInvalid";
 			};
 			if (_squadLeaderID == "-1") exitWith {
-				_ret = false; 
+				_ret = false;
 				_tooltip = localize "STR_SQUADS_fastTravelSquadInvalidNoSquad";
 			};
-			
+
 			private _squadLeader = allPlayers select {
 				getPlayerID _x == _squadLeaderID
 			} select 0;
-			
+
 			if !(isNull objectParent _squadLeader) exitWith {
-				_ret = false; 
+				_ret = false;
 				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInVehicle";
 			};
 			if (!alive _squadLeader) exitWith {
-				_ret = false; 
+				_ret = false;
 				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderUnavailable";
 			};
 		};
@@ -160,7 +160,7 @@ if (_ret) then {
 				} else {
 					if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
-			}; 
+			};
 		};
 		case "RespawnPod": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -190,7 +190,7 @@ if (_ret) then {
 				} else {
 					if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
-			}; 			
+			};
 		};
 		default {
 			_possibleSectors = (BIS_WL_sectorsArray # 0);
@@ -199,7 +199,7 @@ if (_ret) then {
 			_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 			_vehiclesCnt = count ((missionNamespace getVariable [_var, []]) select {alive _x});
 			_units = ((units group player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) == getPlayerUID player) && {_x != player && {alive _x}}});
-			
+
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr1"};
 			if (_category == "Infantry" && {(count _units) >= BIS_WL_matesAvailable}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_vehiclesCnt >= (getMissionConfigValue ["BIS_WL_assetLimit", 10])}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
@@ -228,7 +228,7 @@ if (_ret) then {
 				private _jammersInSector = _allJammers select {
 					private _jammerOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
 					private _jammerInSector = _x inArea _currentSectorArea;
-					_jammerOwnerSide == side player && _jammerInSector;
+					_jammerOwnerSide == side player && _jammerInSector && typeOf _x == "Land_Communication_F";
 				};
 
 				if (count _jammersInSector > 0) exitWith {

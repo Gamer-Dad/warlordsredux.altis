@@ -25,7 +25,7 @@ while {_continue && alive _projectile} do {
 
 	private _safeRadius = _radius max _maxDisplacement;
 
-	private _eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _safeRadius]) select { 
+	private _eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _safeRadius]) select {
 		_x != _unit &&
 		_x call APS_fnc_Active
 	};
@@ -40,7 +40,13 @@ while {_continue && alive _projectile} do {
 		_projectileAPSType = apsEligibleProjectiles get (typeOf _projectile);
 		if (_vehicleAPSType == 3) then {
 			if (_dazzleable) exitWith {
+				private _projectilePosition = getPosATL _projectile;
+				private _projectileDirection = _firedPosition getDir _x;
+				private _relativeDirection = [_projectileDirection, _x] call APS_fnc_RelDir2;
+
 				_projectile spawn APS_fnc_MisguideMissile;
+
+				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", _x];
 			};
 		} else {
 			if (_vehicleAPSType >= _projectileAPSType && {
@@ -73,7 +79,7 @@ while {_continue && alive _projectile} do {
 				if (side _unit == _ownerSide) then {
 					0 spawn {
 						sleep 0.5;
-						
+
 						playSound "alarm";
 						playSound "alarm";
 						hint localize "STR_A3_WL_aps_friendly_warning";
