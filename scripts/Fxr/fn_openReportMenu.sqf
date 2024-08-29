@@ -44,7 +44,8 @@ if (isNull (findDisplay 73000)) then {
 							private _r = _text regexFind ["([\w]{32})[\s]{1}(.*)$",10];
 							if(count _r > 0) then {
 								private _beId   = _r select 0 select 1 select 0;
-								private _UKTime = systemTimeUTC;
+								systemTimeUTC params ["_year", "_month", "_day", "_hour", "_minute", "_second"];
+								private _UKTime = format["%1/%2/%3 -%4:%5:%6", _day, _month, _year, _hour, _minute, _second];
 								private _lsText = format["Name[%1] beId[%2] at %3 UTC", _passedname, _beId, _UKTime];
 								diag_log _lsText;
 								systemChat _lsText;
