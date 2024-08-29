@@ -659,6 +659,7 @@ class CfgWLRequisitionPresets {
                 class B_UGV_02_Demining_F {
                     cost = 100;
                     requirements[] = {};
+                    offset[] = {0, 3, 0};
                     rearm = 200;
                     killReward = 100;
                 }; // "UGAS demining"
@@ -1356,6 +1357,14 @@ class CfgWLRequisitionPresets {
                     rearm = 900;
                     killReward = 125;
                 };  // "Mortar"
+
+                class O_UGV_02_Demining_F {
+                    cost = 100;
+                    requirements[] = {};
+                    offset[] = {0, 3, 0};
+                    rearm = 200;
+                    killReward = 100;
+                };  // "UGAS demining"
 
                 class O_UGV_01_F {
                     cost = 150;
