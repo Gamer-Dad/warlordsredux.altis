@@ -8,7 +8,7 @@ SQD_SOUND_CHANGES = [];
     private _deltaVoice = {
         params ["_player", "_playerId", "_newValue"];
         private _oldPlayerInfo = SQD_AUDIBLE_PLAYERS getOrDefault [_playerId, []];
-        if (count _oldPlayerInfo == 2) then { 
+        if (count _oldPlayerInfo == 2) then {
             private _oldPlayer = _oldPlayerInfo # 0;
             private _oldValue = _oldPlayerInfo # 1;
             if (_oldValue != _newValue || _oldPlayer != _player) then {
@@ -31,7 +31,7 @@ SQD_SOUND_CHANGES = [];
 
     private _handleSideChat = {
         params ["_player", "_playerId"];
-        
+
         private _isInMySquad = ["isInMySquad", [_playerID]] call SQD_fnc_client;
         [_player, _playerID, _isInMySquad] call _deltaVoice;
     };
@@ -60,7 +60,7 @@ SQD_SOUND_CHANGES = [];
     };
 
     private _myPlayerId = getPlayerID player;
-    
+
     private _previousChannel = currentChannel;
     private _playerChannelVar = format ["SQD_Channel_%1", _myPlayerId];
     missionNamespace setVariable [_playerChannelVar, currentChannel, true];
@@ -72,6 +72,17 @@ SQD_SOUND_CHANGES = [];
         _customChannels # 1
     };
 
+    private _chatters = [];
+
+    private _voiceDisplay = uiNamespace getVariable ["RscWLVoiceDisplay", objNull];
+    if (isNull _voiceDisplay) then {
+        "VoiceDisplay" cutRsc ["RscWLVoiceDisplay", "PLAIN", -1, true, false];
+        _voiceDisplay = uiNamespace getVariable "RscWLVoiceDisplay";
+    };
+
+    private _voiceDisplayBackground = _voiceDisplay displayCtrl 7200;
+    private _voiceDisplayText = _voiceDisplay displayCtrl 7201;
+
     // Fast loop
     while { !BIS_WL_missionEnd } do {
         private _currentChannel = currentChannel;
@@ -79,10 +90,14 @@ SQD_SOUND_CHANGES = [];
             missionNamespace setVariable [_playerChannelVar, _currentChannel, true];
             _previousChannel = _currentChannel;
         };
-
+        _chatters = [];
         {
             private _player = _x;
             private _playerID = getPlayerID _player;
+
+            if (getPlayerChannel _player > 5) then {
+                _chatters pushBack _player;
+            };
 
             if (_playerID == _myPlayerId) then { continue; };
 
@@ -111,6 +126,18 @@ SQD_SOUND_CHANGES = [];
                 };
             };
         } forEach allPlayers;
+
+        private _chatterNames = (_chatters select { getPlayerVoNVolume _x > 0.01; }) apply { name _x; };
+        if (count _chatterNames > 0) then {
+            _voiceDisplayBackground ctrlShow true;
+            private _chattersText = format ["%1: %2", localize "STR_SQUADS_talking", _chatterNames joinString ", "];
+            _voiceDisplayText ctrlSetText _chattersText;
+            _voiceDisplayBackground ctrlSetPositionW ((_chattersText getTextWidth ["RobotoCondensed", 0.032]) + 0.016);
+            _voiceDisplayBackground ctrlCommit 0;
+        } else {
+            _voiceDisplayBackground ctrlShow false;
+            _voiceDisplayText ctrlSetText "";
+        };
 
         {
             private _playerInfo = _x;

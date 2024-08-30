@@ -528,7 +528,7 @@
             <Japanese>Dazzler を有効にする</Japanese>
             <Chinesesimp>启用 dazzler</Chinesesimp>
             <Chinese>啟用 dazzler</Chinese>
-        </Key> 
+        </Key>
         <Key ID="STR_A3_dazzler_disable">
             <Original>Disable dazzler</Original>
             <English>Disable dazzler</English>
@@ -819,7 +819,7 @@
             <Japanese>Warlords Reduxについて。</Japanese>
             <Chinesesimp>关于 Warlords Redux。</Chinesesimp>
             <Chinese>关于 Warlords Redux。</Chinese>
-        </Key>  
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_02">
             <Original>How To Play.</Original>
             <English>How To Play.</English>
@@ -853,7 +853,7 @@
             <Japanese>私たちのチーム。</Japanese>
             <Chinesesimp>我们的队伍。</Chinesesimp>
             <Chinese>我們的隊伍。</Chinese>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_04">
             <Original>Our Discord.</Original>
             <English>Our Discord.</English>
@@ -870,7 +870,7 @@
             <Japanese>私たちのDiscord.</Japanese>
             <Chinesesimp>我们的Discord.</Chinesesimp>
             <Chinese>我们的Discord.</Chinese>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_05">
             <Original>Changelog.</Original>
             <English>Changelog.</English>
@@ -887,7 +887,7 @@
             <Japanese>変更履歴。</Japanese>
             <Chinesesimp>更改日志。</Chinesesimp>
             <Chinese>更改日志。</Chinese>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_06">
             <Original>Third Party Scripts.</Original>
             <English>Third Party Scripts.</English>
@@ -904,7 +904,7 @@
             <Japanese>サードパーティースクリプト。</Japanese>
             <Chinesesimp>第三方脚本。</Chinesesimp>
             <Chinese>第三方脚本。</Chinese>
-        </Key>  
+        </Key>
         <Key ID="STR_MRTM_welcomeInteract_07">
             <Original>Welcome to Warlords Redux!</Original>
             <English>Welcome to Warlords Redux!</English>
@@ -916,7 +916,7 @@
             <Portuguese>Bem-vindo ao Warlords Redux!</Portuguese>
             <Russian>Добро пожаловать на Warlords Redux!</Russian>
             <Spanish>Bienvenido a Warlords Redux!</Spanish>
-            <Turkish>Warlords Redux'a hoş geldiniz!</Turkish>    
+            <Turkish>Warlords Redux'a hoş geldiniz!</Turkish>
             <Korean>Warlords Redux에 오신 것을 환영합니다!</Korean>
             <Japanese>Warlords Reduxへようこそ！</Japanese>
             <Chinesesimp>欢迎来到Warlords Redux！</Chinesesimp>
@@ -2145,6 +2145,23 @@
             <Japanese>拒否</Japanese>
             <Chinesesimp>拒绝</Chinesesimp>
             <Chinese>拒绝</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_talking">
+            <Original>Talking</Original>
+            <English>Talking</English>
+            <Czech>Mluvení</Czech>
+            <French>Parler</French>
+            <German>Sprechen</German>
+            <Italian>Parlando</Italian>
+            <Polish>Rozmawianie</Polish>
+            <Portuguese>Falando</Portuguese>
+            <Russian>Разговаривает</Russian>
+            <Spanish>Hablando</Spanish>
+            <Turkish>Konuşma</Turkish>
+            <Korean>말하는 중</Korean>
+            <Japanese>話している</Japanese>
+            <Chinesesimp>正在说话</Chinesesimp>
+            <Chinese>正在說話</Chinese>
         </Key>
         <Key ID="STR_SQUADS_noPlayerSelection">
             <Original>Select a player to invite.</Original>

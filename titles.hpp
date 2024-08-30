@@ -198,4 +198,41 @@ class RscTitles
 			};
 		};
 	};
+
+	class RscWLVoiceDisplay {
+		idd = -1;
+		movingEnable = 0;
+		duration = 1e+011;
+		name = "RscWLVoiceDisplay";
+		onLoad = "uiNamespace setVariable ['RscWLVoiceDisplay', _this select 0];";
+		class controls {
+			class Background: RscText {
+				idc = 7200;
+				style = 128;
+				x="(profilenamespace getvariable [""IGUI_GRID_CHAT_X"",	(safezoneX + 1 * (((safezoneW / safezoneH) min 1.2) / 40))])";
+				y="(profilenamespace getvariable [""IGUI_GRID_CHAT_Y"",	(safezoneY + safezoneH - 10.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25))]) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+				w="(profilenamespace getvariable [""IGUI_GRID_CHAT_W"",	(20 * (((safezoneW / safezoneH) min 1.2) / 40))])";
+				h="(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0.8 };
+				shadow=1;
+			};
+			class RscWLVoiceDisplayText: RscStructuredText {
+				idc = 7201;
+				x="(profilenamespace getvariable [""IGUI_GRID_CHAT_X"",	(safezoneX + 1 * (((safezoneW / safezoneH) min 1.2) / 40))])";
+				y="(profilenamespace getvariable [""IGUI_GRID_CHAT_Y"",	(safezoneY + safezoneH - 10.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25))]) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+				w="(profilenamespace getvariable [""IGUI_GRID_CHAT_W"",	(20 * (((safezoneW / safezoneH) min 1.2) / 40))])";
+				h="(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.032;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#8fed8f";
+					align = "left";
+				};
+			};
+		};
+	};
 };

@@ -2,7 +2,7 @@ SQD_HAS_INVITE = false;
 
 0 spawn {
     private _playerID = getPlayerID player;
-    
+
     private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
     private _sideCustomChannel = if (side player == WEST) then {
         _voiceChannels # 0
@@ -28,7 +28,7 @@ SQD_HAS_INVITE = false;
 
     addMissionEventHandler ["HandleChatMessage", {
         params ["_channel", "_owner", "_from", "_text", "_person", "_name", "_strID", "_forcedDisplay", "_isPlayerMessage", "_sentenceType", "_chatMessageType", "_params"];
-        
+
         private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
         private _sideCustomChannel = if (side _person == WEST) then {
             _voiceChannels # 0
@@ -57,7 +57,7 @@ SQD_HAS_INVITE = false;
         if (getPlayerChannel player > 5 && !(["isInSquad", [_playerID]] call SQD_fnc_client)) then {
             [true] call SQD_fnc_menu;
         };
-    
+
         sleep 0.5;
     };
 };
