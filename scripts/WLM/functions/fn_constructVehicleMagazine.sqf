@@ -103,6 +103,7 @@ private _getMagazineTooltip = {
     private _isIRGuided = [_magDescWeaponLockSystem, 2] call BIS_fnc_bitflagsCheck;
     private _isVisualGuided = [_magDescWeaponLockSystem, 1] call BIS_fnc_bitflagsCheck;
     private _magDescManualControl = getNumber (_ammoConfig >> "manualControl");
+    private _magDescAutoSeek = getNumber (_ammoConfig >> "autoSeekTarget");
 
     if (_isMissile) then {
         _magDesc pushBack ["Missile", "Yes"];
@@ -121,6 +122,9 @@ private _getMagazineTooltip = {
     if (_isVisualGuided) then {
         _magDescGuidance pushBack "Visual";
     };
+    if (_magDescAutoSeek != 0) then {
+        _magDescGuidance pushBack "Auto-Seek";
+    };
     private _magDescMaxControlRange = 0;
     if (_magDescManualControl != 0) then {
         _magDescGuidance pushBack "Manual Guidance";
@@ -132,6 +136,21 @@ private _getMagazineTooltip = {
 
     if (_magDescMaxControlRange != 0) then {
         _magDesc pushBack ["Max Control Range", format ["%1 m", _magDescMaxControlRange]];
+    };
+
+    private _magDescMissileLockMaxDistance = getNumber (_ammoConfig >> "missileLockMaxDistance");
+    if (_magDescMissileLockMaxDistance != 0) then {
+        _magDesc pushBack ["Lock Max Distance", format ["%1 m", _magDescMissileLockMaxDistance]];
+    };
+
+    private _magDescMissileLockMaxSpeed = getNumber (_ammoConfig >> "missileLockMaxSpeed");
+    if (_magDescMissileLockMaxSpeed != 0) then {
+        _magDesc pushBack ["Lock Max Speed", format ["%1 m/s", _magDescMissileLockMaxSpeed]];
+    };
+
+    private _magDescMissileLockMinDistance = getNumber (_ammoConfig >> "missileLockMinDistance");
+    if (_magDescMissileLockMinDistance != 0) then {
+        _magDesc pushBack ["Lock Min Distance", format ["%1 m", _magDescMissileLockMinDistance]];
     };
 
     private _magDescCmImmunity = getNumber (_ammoConfig >> "cmImmunity");
@@ -149,6 +168,11 @@ private _getMagazineTooltip = {
     private _magDescMaxSpeed = getNumber (_ammoConfig >> "maxSpeed");
     if (_magDescMaxSpeed != 0) then {
         _magDesc pushBack ["Max Speed", format ["%1 m/s", _magDescMaxSpeed]];
+    };
+
+    private _magDescManeuverability = getNumber (_ammoConfig >> "maneuvrability"); // Yes, it's spelled wrong on purpose
+    if (_magDescManeuverability != 0) then {
+        _magDesc pushBack ["Maneuverability", format ["%1", _magDescManeuverability]];
     };
 
     _magDesc pushBack ["break"];
@@ -202,17 +226,17 @@ private _getMagazineTooltip = {
             _magDesc pushBack ["Submunition Penetration (RHA)", format ["%1 mm", _submunitionPenetrationRHA]];
         };
 
+        private _submunitionAutoSeek = getNumber (_submunitionConfig >> "autoSeekTarget");
+        if (_submunitionAutoSeek != 0) then {
+            _magDesc pushBack ["Submunition Auto-Seek", "Yes"];
+        };
+
         _magDesc pushBack ["break"];
     };
 
     private _magDescTracersEvery = getNumber (_magazineConfig >> "tracersEvery");
     if (_magDescTracersEvery != 0) then {
         _magDesc pushBack ["Tracers Every", format ["%1", _magDescTracersEvery]];
-    };
-
-    private _magDescFuseDistance = getNumber (_ammoConfig >> "fuseDistance");
-    if (_magDescFuseDistance != 0) then {
-        _magDesc pushBack ["Fuse Distance", format ["%1 m", _magDescFuseDistance]];
     };
 
     private _magDescFinal = [];
