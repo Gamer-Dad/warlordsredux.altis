@@ -34,7 +34,8 @@ _asset setVariable ["WLM_savedMagazines", _savedMagazines];
 
 private _assetDefaultMagazines = _asset getVariable ["BIS_WL_defaultMagazines", []];
 
-private _loadoutList = call WLM_fnc_loadoutList;
+private _menuTextOverrides = call WLM_fnc_menuTextOverrides;
+private _disallowListForVehicle = missionNamespace getVariable ["WL2_disallowMagazinesForVehicle", createHashMap];
 
 private _getMagazineName = {
     params ["_magazine"];
@@ -47,36 +48,223 @@ private _getMagazineName = {
         _magazineName = _magazine;
     };
 
-    private _overrideMagazineName = (_loadoutList # 3) getOrDefault [_magazine, "No Override"];
+    private _overrideMagazineName = (_menuTextOverrides # 0) getOrDefault [_magazine, "No Override"];
     if (_overrideMagazineName != "No Override") then {
         _magazineName = _overrideMagazineName;
     };
 
     private _magSize = getNumber (configFile >> "CfgMagazines" >> _magazine >> "count");
     _magazineName = format ["%1 (%2)", _magazineName, _magSize];
-    
+
     _magazineName;
 };
 
 private _getMagazineTooltip = {
     params ["_magazine"];
 
+    private _magazineTooltipCache = uiNamespace getVariable ["WLM_magazineTooltipCache", createHashMap];
+    private _cacheResponse = _magazineTooltipCache getOrDefault [_magazine, ""];
+    if (_cacheResponse != "") exitWith {
+        _cacheResponse;
+    };
+
     private _magazineName = [_magazine] call _getMagazineName;
-    private _magazineDescription = getText (configFile >> "CfgMagazines" >> _magazine >> "descriptionShort");
+    private _magazineConfig = configFile >> "CfgMagazines" >> _magazine;
+    private _magazineDescription = "";
 
-    private _overrideMagazineDescription = (_loadoutList # 4) getOrDefault [_magazine, "No Override"];
-    if (_overrideMagazineDescription != "No Override") then {
-        _magazineDescription = _overrideMagazineDescription;
+    private _magAmmoType = getText (_magazineConfig >> "ammo");
+    private _ammoConfig = configFile >> "CfgAmmo" >> _magAmmoType;
+
+    _magazineDescription = _magazineDescription + "\n---";
+
+    private _magDesc = [];
+
+    private _magDescCount = getNumber (_magazineConfig >> "count");
+    _magDesc pushBack ["Magazine Size", format ["%1", _magDescCount]];
+
+    _magDesc pushBack ["Ammo", _magAmmoType];
+
+    private _magDescWarheadName = getText (_ammoConfig >> "warheadName");
+    if (_magDescWarheadName != "") then {
+        _magDesc pushBack ["Warhead Type", _magDescWarheadName];
     };
 
-    if (_magazineDescription == "") then {
-        _magazineDescription = "";
-    } else {
-        _magazineDescription = _magazineDescription regexReplace ["<br */?>", "\n"];
-        _magazineDescription = format ["\n---\n%1", _magazineDescription];
+    private _magDescCartridge = getText (_ammoConfig >> "cartridge");
+    if (_magDescCartridge != "") then {
+        _magDesc pushBack ["Cartridge", _magDescCartridge];
     };
 
-    format ["%1 | %2%3", _magazineName, _magazine, _magazineDescription];
+    _magDesc pushBack ["break"];
+
+    private _magDescWeaponLockSystem = getNumber (_ammoConfig >> "weaponLockSystem");
+    private _isMissile = [_magDescWeaponLockSystem, 16] call BIS_fnc_bitflagsCheck;
+    private _isRadarGuided = [_magDescWeaponLockSystem, 8] call BIS_fnc_bitflagsCheck;
+    private _isLaserGuided = [_magDescWeaponLockSystem, 4] call BIS_fnc_bitflagsCheck;
+    private _isIRGuided = [_magDescWeaponLockSystem, 2] call BIS_fnc_bitflagsCheck;
+    private _isVisualGuided = [_magDescWeaponLockSystem, 1] call BIS_fnc_bitflagsCheck;
+    private _magDescManualControl = getNumber (_ammoConfig >> "manualControl");
+    private _magDescAutoSeek = getNumber (_ammoConfig >> "autoSeekTarget");
+
+    if (_isMissile) then {
+        _magDesc pushBack ["Missile", "Yes"];
+    };
+
+    private _magDescGuidance = [];
+    if (_isRadarGuided) then {
+        _magDescGuidance pushBack "Radar";
+    };
+    if (_isLaserGuided) then {
+        _magDescGuidance pushBack "Laser";
+    };
+    if (_isIRGuided) then {
+        _magDescGuidance pushBack "IR";
+    };
+    if (_isVisualGuided) then {
+        _magDescGuidance pushBack "Visual";
+    };
+    if (_magDescAutoSeek != 0) then {
+        _magDescGuidance pushBack "Auto-Seek";
+    };
+    private _magDescMaxControlRange = 0;
+    if (_magDescManualControl != 0) then {
+        _magDescGuidance pushBack "Manual Guidance";
+        _magDescMaxControlRange = getNumber (_ammoConfig >> "maxControlRange");
+    };
+    if (count _magDescGuidance > 0) then {
+        _magDesc pushBack ["Spectrum", _magDescGuidance joinString ", "];
+    };
+
+    if (_magDescMaxControlRange != 0) then {
+        _magDesc pushBack ["Max Control Range", format ["%1 m", _magDescMaxControlRange]];
+    };
+
+    private _magDescMissileLockMaxDistance = getNumber (_ammoConfig >> "missileLockMaxDistance");
+    if (_magDescMissileLockMaxDistance != 0) then {
+        _magDesc pushBack ["Lock Max Distance", format ["%1 m", _magDescMissileLockMaxDistance]];
+    };
+
+    private _magDescMissileLockMaxSpeed = getNumber (_ammoConfig >> "missileLockMaxSpeed");
+    if (_magDescMissileLockMaxSpeed != 0) then {
+        _magDesc pushBack ["Lock Max Speed", format ["%1 m/s", _magDescMissileLockMaxSpeed]];
+    };
+
+    private _magDescMissileLockMinDistance = getNumber (_ammoConfig >> "missileLockMinDistance");
+    if (_magDescMissileLockMinDistance != 0) then {
+        _magDesc pushBack ["Lock Min Distance", format ["%1 m", _magDescMissileLockMinDistance]];
+    };
+
+    private _magDescCmImmunity = getNumber (_ammoConfig >> "cmImmunity");
+    if (_magDescCmImmunity != 0 && _magDescCmImmunity != 1) then {
+        _magDesc pushBack ["Countermeasure Immunity", format ["%1%2", round (_magDescCmImmunity * 100), "%"]];
+    };
+
+    _magDesc pushBack ["break"];
+
+    private _magDescInitSpeed = getNumber (_magazineConfig >> "initSpeed");
+    if (_magDescInitSpeed != 0) then {
+        _magDesc pushBack ["Muzzle Velocity", format ["%1 m/s", _magDescInitSpeed]];
+    };
+
+    private _magDescMaxSpeed = getNumber (_ammoConfig >> "maxSpeed");
+    if (_magDescMaxSpeed != 0) then {
+        _magDesc pushBack ["Max Speed", format ["%1 m/s", _magDescMaxSpeed]];
+    };
+
+    private _magDescManeuverability = getNumber (_ammoConfig >> "maneuvrability"); // Yes, it's spelled wrong on purpose
+    if (_magDescManeuverability != 0) then {
+        _magDesc pushBack ["Maneuverability", format ["%1", _magDescManeuverability]];
+    };
+
+    _magDesc pushBack ["break"];
+
+    private _magDescHit = getNumber (_ammoConfig >> "hit");
+    if (_magDescHit != 0) then {
+        _magDesc pushBack ["Damage (Direct)", format ["%1", _magDescHit]];
+    };
+
+    private _magDescIndirectHit = getNumber (_ammoConfig >> "indirectHit");
+    if (_magDescIndirectHit != 0) then {
+        _magDesc pushBack ["Damage (Splash)", format ["%1", _magDescIndirectHit]];
+    };
+
+    private _magDescIndirectHitRange = getNumber (_ammoConfig >> "indirectHitRange");
+    if (_magDescIndirectHitRange != 0) then {
+        _magDesc pushBack ["Splash Radius", format ["%1-%2 m", _magDescIndirectHitRange, _magDescIndirectHitRange * 4]];
+    };
+
+    private _magDescCaliber = getNumber (_ammoConfig >> "caliber");
+    private _penetrationRHA = _magDescInitSpeed * _magDescCaliber * 15 / 1000;
+    if (_penetrationRHA != 0) then {
+        _magDesc pushBack ["Penetration (RHA)", format ["%1 mm", _penetrationRHA]];
+    };
+
+    _magDesc pushBack ["break"];
+
+    private _magSubmunitionAmmo = getText (_ammoConfig >> "submunitionAmmo");
+    if (_magSubmunitionAmmo != "") then {
+        private _submunitionConfig = configFile >> "CfgAmmo" >> _magSubmunitionAmmo;
+
+        private _submunitionHit = getNumber (_submunitionConfig >> "hit");
+        if (_submunitionHit != 0) then {
+            _magDesc pushBack ["Submunition Damage (Direct)", format ["%1", _submunitionHit]];
+        };
+
+        private _submunitionIndirectHit = getNumber (_submunitionConfig >> "indirectHit");
+        if (_submunitionIndirectHit != 0) then {
+            _magDesc pushBack ["Submunition Damage (Splash)", format ["%1", _submunitionIndirectHit]];
+        };
+
+        private _submunitionIndirectHitRange = getNumber (_submunitionConfig >> "indirectHitRange");
+        if (_submunitionIndirectHitRange != 0) then {
+            _magDesc pushBack ["Submunition Splash Radius", format ["%1-%2 m", _submunitionIndirectHitRange, _submunitionIndirectHitRange * 4]];
+        };
+
+        private _submunitionCaliber = getNumber (_submunitionConfig >> "caliber");
+        private _submunitionInitSpeed = getNumber (_ammoConfig >> "submunitionInitSpeed");
+        private _submunitionPenetrationRHA = _submunitionInitSpeed * _submunitionCaliber * 15 / 1000;
+        if (_submunitionPenetrationRHA != 0) then {
+            _magDesc pushBack ["Submunition Penetration (RHA)", format ["%1 mm", _submunitionPenetrationRHA]];
+        };
+
+        private _submunitionAutoSeek = getNumber (_submunitionConfig >> "autoSeekTarget");
+        if (_submunitionAutoSeek != 0) then {
+            _magDesc pushBack ["Submunition Auto-Seek", "Yes"];
+        };
+
+        _magDesc pushBack ["break"];
+    };
+
+    private _magDescTracersEvery = getNumber (_magazineConfig >> "tracersEvery");
+    if (_magDescTracersEvery != 0) then {
+        _magDesc pushBack ["Tracers Every", format ["%1", _magDescTracersEvery]];
+    };
+
+    private _magDescFinal = [];
+    {
+        if (_x # 0 == "break") then {
+            if (count _magDesc != (_forEachIndex + 1)) then {
+                private _nextItem = _magDesc # (_forEachIndex + 1);
+                if (_nextItem # 0 != "break") then {
+                    _magDescFinal pushBack _x;
+                };
+            };
+        } else {
+            _magDescFinal pushBack _x;
+        }
+    } forEach _magDesc;
+
+    {
+        if (_x # 0 == "break") then {
+            _magazineDescription = _magazineDescription + "\n---";
+        } else {
+            _magazineDescription = _magazineDescription + format ["\n%1: %2", _x # 0, _x # 1];
+        };
+    } forEach _magDescFinal;
+
+    private _return = format ["%1 | %2%3", _magazineName, _magazine, _magazineDescription];
+    _magazineTooltipCache set [_magazine, _return];
+    uiNamespace setVariable ["WLM_magazineTooltipCache", _magazineTooltipCache];
+    _return;
 };
 
 {
@@ -89,7 +277,7 @@ private _getMagazineTooltip = {
     private _allowedMagazinesByWeapon = [];
     {
         private _magazinesForWeapon = [];
-        private _incompatibleMagazines = ((_loadoutList # 1) select { _asset isKindOf (_x # 0) }) apply { _x # 1 };
+        private _incompatibleMagazines = _disallowListForVehicle getOrDefault [typeOf _asset, []];
         private _compatibleMagazines = compatibleMagazines _x - _incompatibleMagazines;
 
         {
@@ -157,17 +345,10 @@ private _getMagazineTooltip = {
             } forEach _x # 0;
         } forEach (_defaultMagazinesByWeapon select {_x # 1 isEqualTo _weaponClass});
 
-        private _loadoutListAmmo = _loadoutList # 0;
-        {
-            if (_asset isKindOf (_x # 0) && _turretPath isEqualTo (_x # 1) && _weaponNumber == (_x # 2)) then {
-                _defaultAmmoCount = _x # 3;
-            };
-        } forEach _loadoutListAmmo;
-
         if (_defaultAmmoCount == 0) then {
             continue;
         };
-        
+
         if (_magazinesInWeapon find "EMPTY" == -1) then {
             _magazinesInWeapon pushBack "EMPTY";
         };
@@ -194,7 +375,7 @@ private _getMagazineTooltip = {
             if (_magazineClass == "EMPTY") then {
                 _selectBox lbSetCurSel _firstSelectBoxItem;
             };
-            
+
             {
                 private _magSize = getNumber (configFile >> "CfgMagazines" >> _x >> "count");
                 if (_magSize <= _ammoRemaining) then {
@@ -300,7 +481,7 @@ private _getMagazineTooltip = {
         } else {
             _weaponLabel ctrlSetTextColor [1, 1, 1, 1];
         };
-        
+
         _yPos = _yPos + 0.1;
     } forEach _magazinesByWeapon;
 
