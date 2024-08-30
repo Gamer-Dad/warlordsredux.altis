@@ -31,7 +31,7 @@ switch (_locality) do {
 		BIS_WL_lastLoadout = [];
 		BIS_WL_savedLoadout = [];
 		BIS_WL_loadoutApplied = FALSE;
-		BIS_WL_selectionMapManager = -1;
+		BIS_WL_selectionMapManager = [];
 		BIS_WL_currentlyScannedSectors = [];
 		BIS_WL_currentTargetData = [
 			"\A3\ui_f\data\map\markers\nato\b_hq.paa",
