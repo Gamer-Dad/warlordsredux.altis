@@ -1,5 +1,5 @@
-private _list = serverNamespace getVariable "garbageCollector";
-private _staticsList = serverNamespace getVariable "staticsGarbageCollector";
+private _list = serverNamespace getVariable ["garbageCollector", createHashMap];
+private _staticsList = serverNamespace getVariable ["WL2_staticsGarbageCollector", createHashMap];
 while {!BIS_WL_missionEnd} do {
 	{
 		if (_x isKindOf "Man") then {
