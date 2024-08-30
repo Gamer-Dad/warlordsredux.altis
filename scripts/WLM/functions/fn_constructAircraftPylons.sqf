@@ -33,14 +33,8 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
 
     private _allowedMagazines = _asset getCompatiblePylonMagazines _pylonConfigName;
 
-    private _loadoutList = call WLM_fnc_loadoutList;
-    private _allowListForPylon = _loadoutList # 2;
-
-    {
-        if (_asset isKindOf _x # 0) then {
-            _allowedMagazines pushBack (_x # 1);
-        };
-    } forEach _allowListForPylon;
+    private _allowListForPylon = missionNamespace getVariable ["WL2_allowPylonMagazines", createHashMap];
+    _allowedMagazines append (_allowListForPylon getOrDefault [typeOf _asset, []]);
 
     {
         private _magazine = configfile >> "CfgMagazines" >> _x;
@@ -79,7 +73,7 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
         _selectUserBox ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageDriver_ca.paa";
         _selectUserBox ctrlSetTooltip "Control: Pilot";
     };
-    
+
     _selectUserBox ctrlAddEventHandler ["ButtonClick", "_this call WLM_fnc_switchUser"];
     _selectUserBox ctrlCommit 0;
 } forEach _pylonsInfo;

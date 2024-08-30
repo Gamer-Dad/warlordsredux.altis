@@ -17,6 +17,9 @@ class CfgVehicleClassName {
     aircraftSpawn = number (0|1);    // For populating independent sectors, aircraft units.
     garbageCollect = number (0|1);   // Whether we manually delete the vehicle when it's destroyed. For buildables.
 
+    disallowMagazines[] = array;      // CfgMagazine classes to disallow in the vehicle.
+    allowPylonMagazines[] = array;    // CfgMagazine classes to allow on pylons of aircraft.
+
     turretDefaults[] = array;        // Turret defaults allows replacing weapons/ammo from a turret of a vehicle.
 };
 

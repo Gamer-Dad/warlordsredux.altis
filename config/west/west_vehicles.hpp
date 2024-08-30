@@ -181,6 +181,10 @@ class Vehicles {
         killReward = 300;
         capValue = 3;
 
+        disallowMagazines[] = {
+            "4Rnd_GAA_missiles"
+        };
+
         class Gunner: WLTurretDefaults {
             turret[] = { 0 };
             removeMagazines[] = {
@@ -262,6 +266,10 @@ class Vehicles {
         rearm = 600;
         killReward = 450;
         capValue = 4;
+
+        disallowMagazines[] = {
+            "4Rnd_120mm_LG_cannon_missiles"
+        };
     }; // "M2A1 Slammer"
 
     class B_MBT_01_TUSK_F {
@@ -270,6 +278,10 @@ class Vehicles {
         rearm = 600;
         killReward = 500;
         capValue = 4;
+
+        disallowMagazines[] = {
+            "4Rnd_120mm_LG_cannon_missiles"
+        };
     }; // "M2A1 Slammer UP"
 
     // class B_T_MBT_01_TUSK_F {

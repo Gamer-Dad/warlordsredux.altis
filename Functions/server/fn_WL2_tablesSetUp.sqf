@@ -13,6 +13,9 @@ private _populateUnitPoolList = [];
 private _populateVehiclePoolList = [];
 private _populateAircraftPoolList = [];
 
+private _disallowMagazinesForVehicle = createHashMap;
+private _allowPylonMagazines = createHashMap;
+
 private _turretOverridesHashMap = createHashMap;
 
 private _requisitionPresets = BIS_WL_purchaseListTemplate;
@@ -30,6 +33,9 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 				private _requisitionKillReward = getNumber (_x >> "killReward");
 				private _requisitionCapValue = getNumber (_x >> "capValue");
 				private _requisitionGarbageCollect = getNumber (_x >> "garbageCollect");
+
+				private _requisitionDisallowMagazines = getArray (_x >> "disallowMagazines");
+				private _requisitionAllowPylonMagazines = getArray (_x >> "allowPylonMagazines");
 
 				private _requisitionUnitSpawn = getNumber (_x >> "unitSpawn");
 				private _requisitionVehicleSpawn = getNumber (_x >> "vehicleSpawn");
@@ -69,6 +75,22 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 					_populateAircraftPoolList pushBack _requistitonName;
 				};
 
+				if (count _requisitionDisallowMagazines > 0) then {
+					private _disallowListForVehicle = [];
+					{
+						_disallowListForVehicle pushBack _x;
+					} forEach _requisitionDisallowMagazines;
+					_disallowMagazinesForVehicle set [_requistitonName, _disallowListForVehicle];
+				};
+
+				if (count _requisitionAllowPylonMagazines > 0) then {
+					private _allowListForAircraft = [];
+					{
+						_allowListForAircraft pushBack _x;
+					} forEach _requisitionAllowPylonMagazines;
+					_allowPylonMagazines set [_requistitonName, _allowListForAircraft];
+				};
+
 				if (count _requisitionTurretOverrides > 0) then {
 					_turretOverridesHashMap set [_requistitonName, _requisitionTurretOverrides];
 				};
@@ -86,6 +108,8 @@ serverNamespace setVariable ["WL2_populateUnitPoolList", _populateUnitPoolList];
 serverNamespace setVariable ["WL2_populateVehiclePoolList", _populateVehiclePoolList];
 serverNamespace setVariable ["WL2_populateAircraftPoolList", _populateAircraftPoolList];
 
+missionNamespace setVariable ["WL2_disallowMagazinesForVehicle", _disallowMagazinesForVehicle, true];
+missionNamespace setVariable ["WL2_allowPylonMagazines", _allowPylonMagazines, true];
 missionNamespace setVariable ["WL2_rearmTimers", _rearmTimerHashMap, true];
 missionNamespace setVariable ["WL2_turretOverrides", _turretOverridesHashMap, true];
 

@@ -41,6 +41,10 @@ class Aircraft {
         requirements[] = {"H"};
         rearm = 700;
         killReward = 550;
+
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PG_missiles"
+        };
     }; // "Mi-48 Kajman"
 
     class O_UAV_02_dynamicLoadout_F {

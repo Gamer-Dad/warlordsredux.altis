@@ -189,6 +189,10 @@ class Vehicles {
         killReward = 350;
         capValue = 3;
 
+        disallowMagazines[] = {
+            "4Rnd_GAA_missiles"
+        };
+
         class Gunner: WLTurretDefaults {
             turret[] = { 0 };
             removeMagazines[] = {

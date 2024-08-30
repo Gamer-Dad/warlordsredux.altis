@@ -7,7 +7,7 @@ class CfgFunctions {
 		};
 	};
 	class KS
-	{	
+	{
 		class normalFunctions
 		{
 			file = "scripts\VUnflip\functions";
@@ -18,7 +18,7 @@ class CfgFunctions {
 	};
 	class APS
 	{
-		class APS 
+		class APS
 		{
 			file = "scripts\APS\Scripts\APS";
 			class SetupProjectiles {};
@@ -98,7 +98,7 @@ class CfgFunctions {
 			class constructPresetMenu {};
 			class constructVehicleMagazine {};
 			class initMenu {};
-			class loadoutList {};
+			class menuTextOverrides {};
 			class moveSmokes {};
 			class rearmAircraft {};
 			class rearmVehicle {};
