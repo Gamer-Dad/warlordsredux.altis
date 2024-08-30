@@ -12,18 +12,22 @@ private _dazzleable = _projectile call APS_fnc_IsLaserGuided || {
 };
 private _radius = if (_dazzleable) then {125} else {sqrt _maxDistSqr};
 
+private _maxSpeed = getNumber (configFile >> "CfgAmmo" >> typeof _projectile >> "maxSpeed");
+private _maxAllowedDisplacement = (sqrt _maxDistSqr) / 2;
 private _previousPos = getPosWorld _projectile;
-private _maxDisplacement = 0;
+private _safeMaxDistSqr = _maxDistSqr;
+
 private _continue = alive _projectile;
 while {_continue && alive _projectile} do {
 	private _currentPos = getPosWorld _projectile;
 	private _displacement = _currentPos distance _previousPos;
-	if (_displacement > _maxDisplacement) then {
-		_maxDisplacement = _displacement;
+	if (_displacement > _maxAllowedDisplacement) then {
+		_safeMaxDistSqr = _maxSpeed * _maxSpeed;
+		_maxAllowedDisplacement = _maxSpeed;
 	};
 	_previousPos = _currentPos;
 
-	private _safeRadius = _radius max _maxDisplacement;
+	private _safeRadius = _radius max (sqrt _safeMaxDistSqr);
 
 	private _eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _safeRadius]) select {
 		_x != _unit &&
@@ -52,7 +56,6 @@ while {_continue && alive _projectile} do {
 			if (_vehicleAPSType >= _projectileAPSType && {
 					private _distanceSqr =_x distanceSqr _projectile;
 					private _firedFromDeadzone = _firedPosition distanceSqr _x < _minDistSqr;
-					private _safeMaxDistSqr = _maxDistSqr max (_maxDisplacement * _maxDisplacement);
 					!_firedFromDeadzone && _distanceSqr < _safeMaxDistSqr;
 				} && {
 					private _projectileVector = vectorNormalized (velocity _projectile);
