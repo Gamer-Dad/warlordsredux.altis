@@ -110,7 +110,7 @@ class Vehicles {
     }; // "Offroad (AT)"
 
     class B_MRAP_01_hmg_F {
-        cost = 1000;
+        cost = 900;
         requirements[] = {};
         rearm = 300;
         killReward = 250;
@@ -175,7 +175,7 @@ class Vehicles {
     }; // "CRV-6e Bobcat"
 
     class B_APC_Wheeled_03_cannon_F {
-        cost = 2500;
+        cost = 2900;
         requirements[] = {};
         rearm = 500;
         killReward = 300;
@@ -261,7 +261,7 @@ class Vehicles {
     }; // "Rhino MGS UP"
 
     class B_MBT_01_cannon_F {
-        cost = 6000;
+        cost = 5800;
         requirements[] = {};
         rearm = 600;
         killReward = 450;
@@ -273,7 +273,7 @@ class Vehicles {
     }; // "M2A1 Slammer"
 
     class B_MBT_01_TUSK_F {
-        cost = 7000;
+        cost = 6500;
         requirements[] = {};
         rearm = 600;
         killReward = 500;
