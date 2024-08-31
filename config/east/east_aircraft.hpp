@@ -32,7 +32,7 @@ class Aircraft {
     class O_T_UAV_04_CAS_F {
         cost = 6000;
         requirements[] = {"A"};
-        rearm = 500;
+        rearm = 300;
         killReward = 600;
     }; // "KH-3A Fenghuang"
 
@@ -50,7 +50,7 @@ class Aircraft {
     class O_UAV_02_dynamicLoadout_F {
         cost = 8000;
         requirements[] = {"A"};
-        rearm = 330;
+        rearm = 300;
         killReward = 600;
 
         allowPylonMagazines[] = {

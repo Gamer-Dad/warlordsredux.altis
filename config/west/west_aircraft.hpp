@@ -34,7 +34,7 @@ class Aircraft {
     class B_UAV_02_dynamicLoadout_F {
         cost = 8000;
         requirements[] = {"A"};
-        rearm = 500;
+        rearm = 300;
         killReward = 600;
     }; // "Greyhawk"
 
