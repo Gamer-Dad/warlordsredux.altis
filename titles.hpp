@@ -235,4 +235,191 @@ class RscTitles
 			};
 		};
 	};
+
+	class RscWLDeathDisplay {
+		idd = -1;
+		movingEnable = 0;
+		duration = 1e+011;
+		name = "RscWLDeathDisplay";
+		onLoad = "uiNamespace setVariable ['RscWLDeathDisplay', _this select 0];";
+		class controls {
+			class KilledByTitle: RscStructuredText {
+				idc = 7220;
+				x = 0.2;
+				y = safezoneY + 0.3;
+				w = 0.6;
+				h = 0.4;
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+					shadow = 1;
+					shadowColor = "#000000";
+					shadowOffset = -0.05;
+				};
+			};
+			class DisplayTitle: RscStructuredText {
+				idc = 7210;
+				x = 0.2;
+				y = safezoneY + 0.37;
+				w = 0.6;
+				h = 0.4;
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensedBold";
+					color = "#ff2222";
+					align = "center";
+					shadow = 1;
+					shadowColor = "#ffffff";
+					shadowOffset = -0.2;
+				};
+			};
+			class SensorDisplayTitle: RscStructuredText {
+				idc = 7221;
+				x = 0.2;
+				y = safezoneY + 0.45;
+				w = 0.6;
+				h = 0.4;
+				text = "";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ff0000";
+					align = "center";
+					shadow = 1;
+					shadowColor = "#000000";
+					shadowOffset = -0.05;
+				};
+			};
+			class Background1: RscText {
+				idc = 7211;
+				style = 128;
+				x = 0;
+				y = safezoneY + 0.6;
+				w = 0.3;
+				h = 0.3 * 4 / 3;
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0 };
+				shadow=1;
+			};
+			class Background2: RscText {
+				idc = 7212;
+				style =128;
+				x = 0.35;
+				y = safezoneY + 0.6;
+				w = 0.3;
+				h = 0.3 * 4 / 3;
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0 };
+				shadow=1;
+			};
+			class Background3: RscText {
+				idc = 7213;
+				style = 128;
+				x = 0.7;
+				y = safezoneY + 0.6;
+				w = 0.3;
+				h = 0.3 * 4 / 3;
+				text = "";
+				colorBackground[] = { 0, 0, 0, 0 };
+				shadow=1;
+			};
+			class CenterDisplayIcon: RscPicture {
+				idc = 7214;
+				x = 0.35 + 0.03;
+				y = safezoneY + 0.6 + 0.05;
+				w = 0.3 - 0.03 * 2;
+				h = 0.3 * 4 / 3 - 0.05;
+				text = "\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa";
+				style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
+				colorShadow[] = { 1, 1, 1, 1 };
+				shadow = 1;
+				size = 0.032;
+			};
+			class CenterDisplayText: RscStructuredText {
+				idc = 7215;
+				x = 0.35 + 0.01;
+				y = safezoneY + 0.6 + 0.01;
+				w = 0.3 - 0.01 * 2;
+				h = 0.3 * 4 / 3 - 0.01 * 2;
+				text = "DEATH";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
+			};
+			class LeftDisplayIcon: RscPicture {
+				idc = 7216;
+				x = 0 + 0.05;
+				y = safezoneY + 0.6 + 0.05;
+				w = 0.3 - 0.05 * 2;
+				h = 0.3 * 4 / 3 - 0.05;
+				text = "\A3\ui_f\data\IGUI\RscIngameUI\RscUnitInfo\icon_cross_ca.paa";
+				style = ST_PICTURE + ST_KEEP_ASPECT_RATIO;
+				shadow = 1;
+				size = 0.032;
+			};
+			class LeftDisplayText: RscStructuredText {
+				idc = 7217;
+				x = 0 + 0.01;
+				y = safezoneY + 0.6 + 0.01;
+				w = 0.3 - 0.01 * 2;
+				h = 0.3 * 4 / 3 - 0.01 * 2;
+				text = "Death";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
+			};
+			class RightDisplayText: RscStructuredText {
+				idc = 7218;
+				x = 0.7 + 0.01;
+				y = safezoneY + 0.6 + 0.03;
+				w = 0.3 - 0.01 * 2;
+				h = 0.15 * 4 / 3;
+				text = "DISTANCE";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
+			};
+			class RightDisplayText2: RscStructuredText {
+				idc = 7219;
+				x = 0.7 + 0.01;
+				y = safezoneY + 0.6 + 0.23;
+				w = 0.3 - 0.01 * 2;
+				h = 0.15 * 4 / 3;
+				text = "SCORE SINCE LAST";
+				style = ST_MULTI;
+				shadow = 1;
+				size = 0.05;
+				class Attributes {
+					font = "RobotoCondensed";
+					color = "#ffffff";
+					align = "center";
+				};
+			};
+		};
+	};
 };

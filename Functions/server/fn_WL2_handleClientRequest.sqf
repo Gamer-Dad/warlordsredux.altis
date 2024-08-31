@@ -35,7 +35,7 @@ if (_action == "orderAsset") exitWith {
 			private _assetOwner = _x getVariable ["BIS_WL_ownerAsset", "notAsset"];
 
 			(_x distance _simulatedObject) < (_radiusA + _radiusB + _BUFFER)
-			&& !(_x isKindOf "Man") 
+			&& !(_x isKindOf "Man")
 			&& _assetOwner != "notAsset"
 			&& _uid != (_x getVariable ["BIS_WL_ownerAsset", "123"])
 		};
@@ -99,7 +99,7 @@ if (_action == "orderArsenal") exitWith {
 	_cost = (getMissionConfigValue ["BIS_WL_arsenalCost", 1000]);
 	_hasFunds = (playerFunds >= _cost);
 	if (_hasFunds) then {
-		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;	
+		(-_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
 
 		0 remoteExec ["BIS_fnc_WL2_orderArsenal", remoteExecutedOwner];
 	};
@@ -138,6 +138,20 @@ if (_action == "scan") exitWith {
 		_revealTrigger setTriggerActivation ["ANY", "PRESENT", false];
 		_param2 setVariable ["BIS_WL_revealTrigger", _revealTrigger, true];
 		[_param2, _side] remoteExec ["BIS_fnc_WL2_sectorScanHandle", [0, -2] select isDedicated];
+
+		[_revealTrigger, _side] spawn {
+			params ["_revealTrigger", "_side"];
+			while {alive _revealTrigger} do {
+				private _allDetected = list _revealTrigger;
+				{
+					if (side group _x != _side) then {
+						_side reportRemoteTarget [_x, 5];
+					};
+				} forEach _allDetected;
+				sleep 5;
+			};
+		};
+
 		waitUntil {sleep 0.25; BIS_WL_competingSides findIf {(_param2 getVariable [format ["BIS_WL_lastScanEnd_%1", _x], -9999]) > serverTime} == -1};
 		deleteVehicle _revealTrigger;
 		_param2 setVariable ["BIS_WL_revealTrigger", nil, true];
@@ -154,7 +168,7 @@ if (_action == "orderFTVehicle") exitWith {
 			_asset = createVehicle [getFTVehicle, _sender, [], 0, "NONE"];
 			_asset setVariable ["BIS_WL_ownerAsset", _uid, [2, (owner _sender)]];
 			_asset setVariable ["BIS_WL_rewardedStack", createHashMap];
-			
+
 			_asset spawn {
 				_asset = _this;
 				while {alive _asset} do {
@@ -198,13 +212,13 @@ if (_action == "ftSupportPoints") exitWith {
 	private _reward = 5;
 
 	private _targets = [
-		missionNamespace getVariable "BIS_WL_currentTarget_west", 
+		missionNamespace getVariable "BIS_WL_currentTarget_west",
 		missionNamespace getVariable "BIS_WL_currentTarget_east"
 	] select {
 		!(isNull _x)
 	};
 
-	if ((_targets findIf {_sender inArea (_x getVariable "objectAreaComplete")}) != -1) then {	
+	if ((_targets findIf {_sender inArea (_x getVariable "objectAreaComplete")}) != -1) then {
 		_reward = 10;
 	};
 
@@ -268,7 +282,7 @@ if (_action == "fundsTransferCancel") exitWith {
 
 if (_action == "fundsTransferBill") exitWith {
 	(-(getMissionConfigValue ["BIS_WL_fundsTransferCost", 2000])) call BIS_fnc_WL2_fundsDatabaseWrite;
-	
+
 	serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], true];
 };
 
@@ -298,8 +312,8 @@ if (_action == "updateZeus") exitWith {
 };
 
 if (_action == "droneExplode") then {
-	_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos getConnectedUAV _sender), [], 0, "FLY"]; 
+	_expl = createVehicle ["IEDUrbanBig_Remote_Ammo", (getPos getConnectedUAV _sender), [], 0, "FLY"];
 	_expl setShotParents [getConnectedUAV _sender, _sender];
-	triggerAmmo _expl; 
+	triggerAmmo _expl;
 	deleteVehicle (getConnectedUAV player);
 }

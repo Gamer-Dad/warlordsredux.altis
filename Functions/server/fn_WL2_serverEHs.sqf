@@ -30,8 +30,8 @@ addMissionEventHandler ["HandleDisconnect", {
 		_player = _x call BIS_fnc_getUnitByUID;
 		[_player, _unit] spawn MRTM_fnc_accept;
 	} forEach (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", _uid]), []]);
-	
-	
+
+
 	call BIS_fnc_WL2_updateVehicleList;
 	call BIS_fnc_WL2_calcImbalance;
 }];
@@ -53,6 +53,10 @@ addMissionEventHandler ["EntityKilled", {
 		};
 	};
 
+	if (isPlayer [_unit]) then {	// use alt syntax to exclude vehicle kills
+		[_unit, _responsiblePlayer, _killer] remoteExec ["BIS_fnc_WL2_deathInfo", _unit];
+	};
+
 	_unit spawn {
 		params ["_unit"];
 		if ((typeOf _unit) == "Land_IRMaskingCover_01_F") then {
@@ -71,7 +75,7 @@ addMissionEventHandler ["EntityKilled", {
 
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
-	
+
 	_list = getArray (missionConfigFile >> "adminFilter");
 	_return = ((_list findIf {[_x, (markerText _marker)] call BIS_fnc_inString}) != -1);
 	if (((isPlayer _owner) && {(_channelNumber == 0)}) || {_return}) then {

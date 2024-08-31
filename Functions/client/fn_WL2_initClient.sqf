@@ -9,6 +9,7 @@ BIS_fnc_WL2_betty = compileFinal preprocessFileLineNumbers "Functions\client\fn_
 BIS_fnc_WL2_blockScreen = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_blockScreen.sqf";
 BIS_fnc_WL2_clientEH = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_clientEH.sqf";
 BIS_fnc_WL2_cpBalance = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_cpBalance.sqf";
+BIS_fnc_WL2_deathInfo = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_deathInfo.sqf";
 BIS_fnc_WL2_deleteAssetFromMap = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_deleteAssetFromMap.sqf";
 BIS_fnc_WL2_forfeitHandle = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_forfeitHandle.sqf";
 BIS_fnc_WL2_friendlyFireHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_friendlyFireHandleClient.sqf";
