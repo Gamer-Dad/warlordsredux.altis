@@ -14,6 +14,7 @@ private _unitSide = if (_unit isKindOf "Man") then {
 			case 2: { independent };
 			default { independent };
 		};
+		typeSide;
 	} else {
 		_groupSide;
 	};
