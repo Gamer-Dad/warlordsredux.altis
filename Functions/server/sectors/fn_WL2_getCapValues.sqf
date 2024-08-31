@@ -11,7 +11,7 @@ private _sidesEligibleForCapture = createHashMap;
 	};
 
 	private _neighboringSectors = synchronizedObjects _sector;
-	private _connectedNeighboringSectors = _neighboringSectors select { 
+	private _connectedNeighboringSectors = _neighboringSectors select {
 		typeof _x == "Logic" && _side == _x getVariable "BIS_WL_owner"
 	};
 	private _hasConnection = count _connectedNeighboringSectors > 0;
@@ -66,19 +66,20 @@ private _eligibleEntitiesInArea = _allInArea select {
 };
 
 private _vehicleCapValueList = serverNamespace getVariable "WL2_cappingValues";
+private _disallowManList = ["B_UAV_AI", "O_UAV_AI"];
 private _sideCapValues = createHashMap;
 {
 	private _unit = _x;
 	private _side = side group _unit;
 
-	private _points = if (_unit isKindOf "Man") then {
+	private _points = if (_unit isKindOf "Man" && !(typeOf _unit in _disallowManList)) then {
 		if (_side == independent) then {
 			2;
 		} else {
 			1;
 		};
 	} else {
-		private _aliveCrew = (crew _unit) select { alive _x };
+		private _aliveCrew = (crew _unit) select { alive _x && !(typeOf _x in _disallowManList) };
 		private _crewCount = count _aliveCrew;
 		if (_crewCount > 0) then {
 			_vehicleCapValueList getOrDefault [typeOf _unit, 0];
@@ -97,9 +98,9 @@ _sideArr apply {
 	private _side = _x;
 
     private _originalOwner = _sector getVariable ["BIS_WL_owner", independent];
-    private _tiebreaker = if (_side == _originalOwner) then { 
+    private _tiebreaker = if (_side == _originalOwner) then {
         0.5;    // half point defender advantage
-    } else { 
+    } else {
         0;
     };
     private _sideScore = _sideCapValues getOrDefault [_side, 0];
