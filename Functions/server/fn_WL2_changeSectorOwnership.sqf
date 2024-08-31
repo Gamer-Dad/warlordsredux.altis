@@ -32,7 +32,7 @@ _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
 
-"server" call BIS_fnc_WL2_updateSectorArrays;
+["server", true] call BIS_fnc_WL2_updateSectorArrays;
 
 _side = [west, east];
 _side deleteAt (_side find _owner);
