@@ -4,7 +4,7 @@
 #include "scripts\WLM\ui\WLM_pylons.hpp"
 #include "scripts\Squads\squadMenu.hpp"
 
-onLoadName = "Warlords Redux 2.5.8";
+onLoadName = "Warlords Redux 2.6";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
