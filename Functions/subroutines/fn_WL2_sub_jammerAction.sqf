@@ -4,17 +4,15 @@ private _actionID = _asset addAction [
 	"",
 	{
 		_this params ["_asset", "_caller", "_actionID"];
-		_asset removeAction _actionID;
-
-        private _outerMarkerName = format ["BIS_WL_jammerMarkerOuter_%1", netId _asset];
-		if (_asset getVariable "BIS_WL_jammerActivated") then {
+		if (_asset getVariable ["BIS_WL_jammerActivated", false] && isEngineOn _asset) then {
 			_asset setVariable ["BIS_WL_jammerActivated", false, true];
-            _outerMarkerName setMarkerAlpha 0;
 		} else {
 			_asset setVariable ["BIS_WL_jammerActivated", true, true];
-            _outerMarkerName setMarkerAlpha 0.4;
+
+			if (!isEngineOn _asset) then {
+				[_asset] remoteExec ["BIS_fnc_WL2_dazzlerOn", 2];
+			};
 		};
-		_asset call BIS_fnc_WL2_sub_jammerAction;
 	},
 	[],
 	99,
@@ -26,16 +24,33 @@ private _actionID = _asset addAction [
 	true
 ];
 
-private _actionColor = if (_asset getVariable "BIS_WL_jammerActivated") then {
-    "#ff4b4b";
-} else {
-    "#4b51ff";
-};
+[_asset, _actionID] spawn {
+	params ["_asset", "_actionID"];
+	while { alive _asset } do {
+		private _isActive = _asset getVariable ["BIS_WL_jammerActivated", false] && isEngineOn _asset;
+		private _actionColor = if (_isActive) then {
+			"#ff4b4b";
+		} else {
+			"#4b51ff";
+		};
 
-private _actionText = if (_asset getVariable "BIS_WL_jammerActivated") then {
-    localize "STR_A3_jammer_disable";
-} else {
-    localize "STR_A3_jammer_enable";
-};
+		private _actionText = if (_isActive) then {
+			localize "STR_A3_jammer_disable";
+		} else {
+			localize "STR_A3_jammer_enable";
+		};
 
-_asset setUserActionText [_actionID, format ["<t color = '%1'>%2</t>", _actionColor, _actionText]];
+        private _outerMarkerName = format ["BIS_WL_jammerMarkerOuter_%1", netId _asset];
+		if (_isActive) then {
+			_asset setFuelConsumptionCoef 5;
+			_outerMarkerName setMarkerAlpha 0.3;
+		} else {
+			_asset setFuelConsumptionCoef 1;
+			_outerMarkerName setMarkerAlpha 0;
+		};
+
+		_asset setUserActionText [_actionID, format ["<t color = '%1'>%2</t>", _actionColor, _actionText]];
+
+		sleep 1;
+	};
+};

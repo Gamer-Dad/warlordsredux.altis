@@ -40,7 +40,7 @@ class Defences {
 
     class Land_Communication_F {
         name = "Jamming Tower";
-        cost = 1500;
+        cost = 4000;
         requirements[] = {};
         offset[] = {0, 6, 0};
         killReward = 400;
