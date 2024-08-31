@@ -25,14 +25,14 @@ class Aircraft {
     }; // "AH-9 Pawnee"
 
     class I_Heli_light_03_dynamicLoadout_F {
-        cost = 7500;
+        cost = 6000;
         requirements[] = {"H"};
         rearm = 300;
         killReward = 300;
     }; // "WY-55 Hellcat"
 
     class B_UAV_02_dynamicLoadout_F {
-        cost = 12000;
+        cost = 8000;
         requirements[] = {"A"};
         rearm = 500;
         killReward = 600;
@@ -46,7 +46,7 @@ class Aircraft {
     }; // "AH-99 Blackfoot"
 
     class B_T_UAV_03_dynamicLoadout_F {
-        cost = 12000;
+        cost = 11000;
         requirements[] = {"H"};
         rearm = 600;
         killReward = 600;

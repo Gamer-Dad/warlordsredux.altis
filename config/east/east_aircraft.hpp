@@ -30,7 +30,7 @@ class Aircraft {
     }; // "PO-30 Orca"
 
     class O_T_UAV_04_CAS_F {
-        cost = 8000;
+        cost = 6000;
         requirements[] = {"A"};
         rearm = 500;
         killReward = 600;
@@ -48,10 +48,14 @@ class Aircraft {
     }; // "Mi-48 Kajman"
 
     class O_UAV_02_dynamicLoadout_F {
-        cost = 10000;
+        cost = 8000;
         requirements[] = {"A"};
         rearm = 330;
         killReward = 600;
+
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PG_missiles"
+        };
     }; // "K40 Ababil-3"
 
     class O_T_VTOL_02_infantry_dynamicLoadout_F {

@@ -138,7 +138,7 @@ class Vehicles {
     }; // "HEMTT Flatbed"
 
     class O_MRAP_02_hmg_F {
-        cost = 1000;
+        cost = 900;
         requirements[] = {};
         rearm = 300;
         killReward = 250;
@@ -183,7 +183,7 @@ class Vehicles {
     }; // "MSE-3 Marid"
 
     class O_APC_Tracked_02_cannon_F {
-        cost = 2800;
+        cost = 3200;
         requirements[] = {};
         rearm = 500;
         killReward = 350;
@@ -237,7 +237,7 @@ class Vehicles {
     }; // "ZSU-39 Tigris"
 
     class O_MBT_02_cannon_F {
-        cost = 8000;
+        cost = 7500;
         requirements[] = {};
         rearm = 600;
         killReward = 500;
@@ -245,7 +245,7 @@ class Vehicles {
     }; // "T-100 Varsuk"
 
     class O_MBT_04_cannon_F {
-        cost = 13000;
+        cost = 11000;
         requirements[] = {};
         rearm = 600;
         killReward = 550;
@@ -253,7 +253,7 @@ class Vehicles {
     }; // "T-140 Angara"
 
     class O_MBT_04_command_F {
-        cost = 15000;
+        cost = 13000;
         requirements[] = {};
         rearm = 600;
         killReward = 600;
@@ -261,7 +261,7 @@ class Vehicles {
     }; // "T-140K Angara"
 
     class O_MBT_02_railgun_F {
-        cost = 16000;
+        cost = 15000;
         requirements[] = {};
         rearm = 600;
         killReward = 500;

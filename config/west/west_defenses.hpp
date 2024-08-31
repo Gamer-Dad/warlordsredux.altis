@@ -218,7 +218,7 @@ class Defences {
     }; // "UGV Stomper"
 
     class B_UGV_01_rcws_F {
-        cost = 400;
+        cost = 500;
         requirements[] = {};
         offset[] = {0, 3, 0};
         rearm = 300;
