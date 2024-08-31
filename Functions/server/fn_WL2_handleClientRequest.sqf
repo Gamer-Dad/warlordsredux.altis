@@ -235,7 +235,7 @@ if (_action == "ftSupportPoints") exitWith {
 		_ftVehicle setVariable ["BIS_WL_rewardedStack", _rewardStack];
 
 
-		[objNull, _reward, false, localize "STR_A3_spawn_reward"] remoteExec ["BIS_fnc_WL2_killRewardClient", _ftOwnerPlayer];
+		[objNull, _reward, localize "STR_A3_spawn_reward"] remoteExec ["BIS_fnc_WL2_killRewardClient", _ftOwnerPlayer];
 	};
 };
 

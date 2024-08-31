@@ -14,7 +14,7 @@ switch (_action) do {
 
         private _newSquad = [_squadName, _leader, [_leader], _side];
         SQUAD_MANAGER pushBack _newSquad;
-        
+
         _message = format ["Squad %1 created by %2 on %3", _squadName, _leader, _side];
         _return = count SQUAD_MANAGER - 1;
     };
@@ -75,10 +75,10 @@ switch (_action) do {
     case "remove": {
         // Remove player from squad
         private _playerId = _params select 0;
-        
+
         private _squads = SQUAD_MANAGER select {(_x select 2) find _playerId > -1};
 
-        { 
+        {
             private _squad = _x;
             private _members = _squad select 2;
             _members = _members - [_playerId];
@@ -116,7 +116,7 @@ switch (_action) do {
         private _squadmates = if (isNil "_squad") then {[]} else {_squad select 2};
 
         _message = format ["Squadmates of %1: %2", _playerId, _squadmates];
-        _return = _squadmates;
+        _return = _squadmates - [_playerId];
     };
     case "rename": {
         // Rename squad

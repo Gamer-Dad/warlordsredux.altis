@@ -37,22 +37,23 @@ if (_killerSide != _unitSide) then {
 		_killReward = _killReward * 1.2;
 	};
 
-	private _squadmatesIDs = ["getSquadmates", [getPlayerID _responsibleLeader]] call SQD_fnc_server;
+	private _playerId = getPlayerID _responsibleLeader;
+	private _squadmatesIDs = ["getSquadmates", [_playerId]] call SQD_fnc_server;
 	if (count _squadmatesIDs > 1) then {
-		_squadReward = round (_killReward * 1.5 / (count _squadmatesIDs));
+		private _squadReward = round (_killReward * 0.75 / (count _squadmatesIDs));
 		{
 			_uid = getUserInfo _x # 2;
 			_squadReward call BIS_fnc_WL2_fundsDatabaseWrite;
-			[_unit, _squadReward] remoteExec ["BIS_fnc_WL2_killRewardClient", (getUserInfo _x) # 1];
+			[_unit, _squadReward, "Squad assist", "#7a7ab9"] remoteExec ["BIS_fnc_WL2_killRewardClient", (getUserInfo _x) # 1];
 		} forEach _squadmatesIDs;
-	} else {
-		_uid = getPlayerUID _responsibleLeader;
-		_killReward = round _killReward;
-		_killReward call BIS_fnc_WL2_fundsDatabaseWrite;
-		[_unit, _killReward] remoteExec ["BIS_fnc_WL2_killRewardClient", (owner _responsibleLeader)];
 	};
 
-	["earnPoints", [getPlayerID _responsibleLeader, _killReward]] call SQD_fnc_server;
+	_uid = getPlayerUID _responsibleLeader;
+	_killReward = round _killReward;
+	_killReward call BIS_fnc_WL2_fundsDatabaseWrite;
+	[_unit, _killReward] remoteExec ["BIS_fnc_WL2_killRewardClient", owner _responsibleLeader];
+
+	["earnPoints", [_playerId, _killReward]] call SQD_fnc_server;
 
 	_reward = round (_killReward / 4);
 	_crew = ((crew (objectParent _responsibleLeader)) select {((_x isEqualTo (gunner (objectParent _responsibleLeader))) || {(_x isEqualTo (commander (objectParent _responsibleLeader))) || {(_x isEqualTo (driver (objectParent _responsibleLeader)))}}) && {_x != _responsibleLeader && {isPlayer _x}}});
