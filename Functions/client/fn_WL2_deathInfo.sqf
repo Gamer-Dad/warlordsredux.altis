@@ -174,21 +174,16 @@ _leftDisplayIcon ctrlShow true;
 private _distance = round (_killer distance _unit);
 private _distanceText = switch (true) do {
     case (_distance < 100): {
-        "Under 100 M";
-    };
-    case (_distance < 500): {
-        "Under 500 M";
+        "CLOSE QUARTERS";
     };
     case (_distance < 1000): {
-        "Under 1 KM";
+        "NEAR";
     };
-    case (_distance > 10000): {
-        "Over 10 KM";
+    case (_distance < 10000): {
+        "FAR";
     };
     default {
-        private _upper = ceil (_distance / 1000);
-        private _lower = _upper - 1;
-        format ["%1 ~ %2 KM", _lower, _upper];
+        "DISTANT";
     };
 };
 private _distanceItemText = format ["<t size='1' color='#ffffff'>%1</t><br/><t size='1.5' color='#00ff00' shadow='0' font='RobotoCondensedBold'>%2</t>", localize "STR_A3_WL_distance", _distanceText];
