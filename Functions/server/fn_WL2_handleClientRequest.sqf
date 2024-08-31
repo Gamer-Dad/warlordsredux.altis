@@ -224,6 +224,7 @@ if (_action == "ftSupportPoints") exitWith {
 
 	private _ftVehicleOwner = _ftVehicle getVariable ["BIS_WL_ownerAsset", "123"];
 	private _rewardStack = _ftVehicle getVariable ["BIS_WL_rewardedStack", createHashMap];
+	private _ftOwnerPlayer = (allPlayers select {getPlayerUID _x == _ftVehicleOwner}) # 0;
 
 	private _eligible = !(_rewardStack getOrDefault [getPlayerUID _sender, false]) && _ftVehicleOwner != _uid;
 	if (_eligible) then {
@@ -233,7 +234,8 @@ if (_action == "ftSupportPoints") exitWith {
 		_rewardStack set [getPlayerUID _sender, true];
 		_ftVehicle setVariable ["BIS_WL_rewardedStack", _rewardStack];
 
-		[objNull, _reward, false, localize "STR_A3_spawn_reward"] remoteExec ["BIS_fnc_WL2_killRewardClient", _ftVehicleOwner];
+
+		[objNull, _reward, localize "STR_A3_spawn_reward"] remoteExec ["BIS_fnc_WL2_killRewardClient", _ftOwnerPlayer];
 	};
 };
 

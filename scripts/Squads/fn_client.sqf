@@ -14,7 +14,7 @@ switch (_action) do {
         private _side = side player;
 
         ctrlShow [CREATE_BUTTON, false];
-    
+
         ["create", [_squadName, _leader, _side]] remoteExec ["SQD_fnc_server", 2];
     };
     case "leave": {
@@ -49,7 +49,7 @@ switch (_action) do {
     case "invited": {
         // input: inviter id
         private _inviter = _params select 0;
-        
+
         if (SQD_HAS_INVITE) exitWith {
             _return = 1;
         };
@@ -63,17 +63,24 @@ switch (_action) do {
 
         playSoundUI ["a3\sounds_f\sfx\blip1.wss"];
 
+        private _squadsMenuDialog = createDialog ["SquadsMenu", true];
+
         _acceptInvite = [
-            format [localize "STR_SQUADS_receiveInvitationText", _inviterName, _squad select 0], 
-            localize "STR_SQUADS_joinSquadTitle", 
-            localize "STR_SQUADS_joinSquadAccept", 
-            localize "STR_SQUADS_joinSquadDecline"
+            format [localize "STR_SQUADS_receiveInvitationText", _inviterName, _squad select 0],
+            localize "STR_SQUADS_joinSquadTitle",
+            localize "STR_SQUADS_joinSquadAccept",
+            localize "STR_SQUADS_joinSquadDecline",
+            _squadsMenuDialog
         ] call BIS_fnc_guiMessage;
 
         SQD_HAS_INVITE = false;
-        
+
         if (_acceptInvite) then {
             ["add", [_inviter, getPlayerID player]] remoteExec ["SQD_fnc_server", 2];
+        };
+
+        if (!isNull _squadsMenuDialog) exitWith {
+            _squadsMenuDialog closeDisplay 0;
         };
     };
     case "newjoin": {
@@ -158,13 +165,13 @@ switch (_action) do {
         sleep 1;
 
         _tagAlong = (units player) select {
-            (_x distance2D player <= 100) && 
-            (isNull objectParent _x) && 
-            alive _x && 
-            _x != player && 
+            (_x distance2D player <= 100) &&
+            (isNull objectParent _x) &&
+            alive _x &&
+            _x != player &&
             _x getVariable ["BIS_WL_ownerAsset", "123"] == getPlayerUID player
         };
-        
+
         {
             _x setVehiclePosition [_destination, [], 5, "NONE"];
         } forEach _tagAlong;

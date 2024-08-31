@@ -76,7 +76,7 @@ SQD_SOUND_CHANGES = [];
 
     private _voiceDisplay = uiNamespace getVariable ["RscWLVoiceDisplay", objNull];
     if (isNull _voiceDisplay) then {
-        "VoiceDisplay" cutRsc ["RscWLVoiceDisplay", "PLAIN", -1, true, false];
+        "VoiceDisplay" cutRsc ["RscWLVoiceDisplay", "PLAIN", -1, true, true];
         _voiceDisplay = uiNamespace getVariable "RscWLVoiceDisplay";
     };
 

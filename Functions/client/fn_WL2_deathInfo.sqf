@@ -174,7 +174,7 @@ _leftDisplayIcon ctrlShow true;
 private _distance = round (_killer distance _unit);
 private _distanceText = switch (true) do {
     case (_distance < 100): {
-        "CLOSE QUARTERS";
+        "CQB";
     };
     case (_distance < 1000): {
         "NEAR";

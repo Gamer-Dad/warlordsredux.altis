@@ -143,6 +143,9 @@ private _teamVariable = if (_sideN == 0) then {
 	"BIS_WL_westOwnedVehicles"
 };
 private _sideVehicles = missionNamespace getVariable [_teamVariable, []];
+private _vehiclesOnSide = vehicles select { count crew _x > 0 && side _x == _side };
+_sideVehicles = _sideVehicles + _vehiclesOnSide;
+_sideVehicles = _sideVehicles arrayIntersect _sideVehicles;
 {
 	_size = call BIS_fnc_iconSize;
 	_m drawIcon [

@@ -35,7 +35,7 @@ player addEventHandler ["InventoryOpened",{
 player addEventHandler ["Killed", {
 	BIS_WL_loadoutApplied = FALSE;
 	"RequestMenu_close" call BIS_fnc_WL2_setupUI;
-	
+
 	BIS_WL_lastLoadout = +getUnitLoadout player;
 	private _varName = format ["BIS_WL_purchasable_%1", BIS_WL_playerSide];
 	private _gearArr = (missionNamespace getVariable _varName) # 5;
@@ -184,7 +184,7 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 			};
 			_e = true;
 		};
-		
+
 		_e;
 	}];
 };
@@ -204,6 +204,7 @@ _fullList = (missionNamespace getVariable (format ["BIS_WL_purchasable_%1", side
 
 addMissionEventHandler ["EntityCreated", {
 	params ["_entity"];
+	if (!local _entity) exitWith {};
 	_entityType = (typeOf _entity);
 	if (isClass (configFile >> "CfgAmmo" >> _entityType)) then {
 		_minesDB = (missionNamespace getVariable [format ["BIS_WL2_minesDB_%1", getPlayerUID player], []]);

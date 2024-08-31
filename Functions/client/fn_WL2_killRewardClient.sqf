@@ -1,4 +1,4 @@
-params ["_unit", "_reward", ["_assist", false], ["_customText", ""]];
+params ["_unit", "_reward", ["_customText", ""], ["_customColor", "#228b22"]];
 
 disableSerialization;
 
@@ -29,22 +29,14 @@ if (_customText != "") then {
 	_displayText = format ["%1 +%2CP", _customText, _reward];
 } else {
 	if (_unit isKindOf "Man") then {
-		if (_assist) then {
-			_displayText = "Kill assist %2CP";
-		} else {
-			_displayText = "Enemy killed %2CP";
-		};
+		_displayText = "Enemy killed %2CP";
 	} else {
 		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-		if (_assist) then {
-			_displayText = "Assist: %1 %2CP";
-		} else {
-			_displayText = "%1 destroyed %2CP";
-		};
+		_displayText = "%1 destroyed %2CP";
 	};
 	_displayText = format [_displayText, _displayName, if (_reward > 0) then {format ["+%1", _reward]} else {format ["%1", _reward]}];
 };
-_ctrl ctrlSetStructuredText parseText format ["<t size='%1' align='right' color='#228b22'>%2</t>", _scale, _displayText];
+_ctrl ctrlSetStructuredText parseText format ["<t size='%1' align='right' color='%2'>%3</t>", _scale, _customColor, _displayText];
 
 WAS_score = true;
 
@@ -60,7 +52,7 @@ _ctrlNmbr spawn {
 	_ctrl ctrlCommit 0;
 	UISleep 10;
 	ctrlDelete _ctrl;
-	
+
 	_controls = uiNamespace getVariable ["activeControls", []];
 	_controls deleteAt _this;
 	uiNamespace setVariable ["activeControls", _controls];

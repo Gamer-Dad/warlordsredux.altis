@@ -15,7 +15,7 @@ if !(_owner in _previousOwners) then {
 		{
 			private _uid = getPlayerUID _x;
 			_reward call BIS_fnc_WL2_fundsDatabaseWrite;
-			[objNull, _reward, false, localize "STR_A3_sector_captured"] remoteExec ["BIS_fnc_WL2_killRewardClient", _x];
+			[objNull, _reward, localize "STR_A3_sector_captured"] remoteExec ["BIS_fnc_WL2_killRewardClient", _x];
 		} forEach (allPlayers select {side group _x == _owner});
 	};
 };
@@ -32,7 +32,7 @@ _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
 
-"server" call BIS_fnc_WL2_updateSectorArrays;
+["server", true] call BIS_fnc_WL2_updateSectorArrays;
 
 _side = [west, east];
 _side deleteAt (_side find _owner);
