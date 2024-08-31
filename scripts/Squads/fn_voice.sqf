@@ -127,11 +127,18 @@ SQD_SOUND_CHANGES = [];
             };
         } forEach allPlayers;
 
-        private _chatterNames = (_chatters select { getPlayerVoNVolume _x > 0.01; }) apply { name _x; };
+        private _chatterNames = (_chatters select { getPlayerVoNVolume _x > 0.01; }) apply {
+            private _isSL = ["isSquadLeader", [getPlayerID _x]] call SQD_fnc_client;
+            if (_isSL) then {
+                format ["<t color='#ff0000'>%1 (SL)</t>", name _x];
+            } else {
+                name _x;
+            };
+        };
         if (count _chatterNames > 0) then {
             _voiceDisplayBackground ctrlShow true;
             private _chattersText = format ["%1: %2", localize "STR_SQUADS_talking", _chatterNames joinString ", "];
-            _voiceDisplayText ctrlSetText _chattersText;
+            _voiceDisplayText ctrlSetStructuredText parseText _chattersText;
             _voiceDisplayBackground ctrlSetPositionW ((_chattersText getTextWidth ["RobotoCondensed", 0.032]) + 0.016);
             _voiceDisplayBackground ctrlCommit 0;
         } else {
