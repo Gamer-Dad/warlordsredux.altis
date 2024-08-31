@@ -13,7 +13,7 @@ private _dazzleable = _projectile call APS_fnc_IsLaserGuided || {
 private _radius = if (_dazzleable) then {125} else {sqrt _maxDistSqr};
 
 private _maxSpeed = getNumber (configFile >> "CfgAmmo" >> typeof _projectile >> "maxSpeed");
-private _maxAllowedDisplacement = (sqrt _maxDistSqr) / 2;
+private _maxAllowedDisplacement = (sqrt _maxDistSqr) / 4 * 3;
 private _previousPos = getPosWorld _projectile;
 private _safeMaxDistSqr = _maxDistSqr;
 
@@ -22,6 +22,7 @@ while {_continue && alive _projectile} do {
 	private _currentPos = getPosWorld _projectile;
 	private _displacement = _currentPos distance _previousPos;
 	if (_displacement > _maxAllowedDisplacement) then {
+		// systemChat "Safety case triggered.";
 		_safeMaxDistSqr = _maxSpeed * _maxSpeed;
 		_maxAllowedDisplacement = _maxSpeed;
 	};
@@ -74,7 +75,12 @@ while {_continue && alive _projectile} do {
 
 				_projectile setPosWorld [0, 0, 0];
 				deleteVehicle _projectile;
-				createVehicle ["SmallSecondary", _projectilePosition, [], 0, "FLY"];
+
+				private _projectileRelDir = _x getRelDir _firedPosition;
+				private _explosionPosition = _x getRelPos [sqrt _maxDistSqr, _projectileRelDir];
+				private _explosionHeight = (_projectilePosition # 2) min (sqrt _maxDistSqr);
+				_explosionPosition set [2, _explosionHeight];
+				createVehicle ["SmallSecondary", _explosionPosition, [], 0, "FLY"];
 
 				[_x, _relativeDirection, true] remoteExec ["APS_fnc_Report", _x];
 

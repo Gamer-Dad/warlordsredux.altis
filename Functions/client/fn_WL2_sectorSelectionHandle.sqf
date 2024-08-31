@@ -27,19 +27,22 @@ if (_state == "start") then {
 			};
 		};
 	};
-	
-	waitUntil {BIS_WL_selectionMapManager == -1};
-	
+
+	private _startWaitingTime = serverTime;
+	waitUntil {
+		count BIS_WL_selectionMapManager == 0 || serverTime > (_startWaitingTime + 5);
+	};
+
 	{
 		((_x getVariable "BIS_WL_markers") # 0) setMarkerAlphaLocal WL_CONNECTING_LINE_ALPHA_MIN;
 		((_x getVariable "BIS_WL_markers") # 1) setMarkerAlphaLocal WL_CONNECTING_LINE_ALPHA_MIN;
 	} forEach (BIS_WL_allSectors - BIS_WL_selection_availableSectors);
-	
+
 	if (BIS_WL_selection_showLinks) then {
 		{_x setMarkerAlphaLocal WL_CONNECTING_LINE_ALPHA_MAX} forEach BIS_WL_sectorLinks;
 	};
 
-	BIS_WL_selectionMapManager = addMissionEventHandler ["EachFrame", {
+	private _addedEventHandler = addMissionEventHandler ["EachFrame", {
 		if (visibleMap && isNull (findDisplay 160 displayCtrl 51)) then {
 			_mapScale = ctrlMapScale WL_CONTROL_MAP;
 			_timer = (serverTime % WL_MAP_PULSE_FREQ);
@@ -60,18 +63,21 @@ if (_state == "start") then {
 			} forEach BIS_WL_selection_availableSectors;
 		};
 	}];
+	BIS_WL_selectionMapManager pushBack _addedEventHandler;
 } else {
-	removeMissionEventHandler ["EachFrame", BIS_WL_selectionMapManager];
-		
+	{
+		removeMissionEventHandler ["EachFrame", _x];
+	} forEach BIS_WL_selectionMapManager;
+
 	{
 		_mrkrMain = (_x getVariable "BIS_WL_markers") # 0;
 		_mrkrMain setMarkerAlphaLocal 1;
 		_mrkrMain setMarkerSizeLocal (if !(_x in WL_BASES && BIS_WL_playerSide in (_x getVariable ["BIS_WL_revealedBy", []])) then {[1, 1]} else {[WL_BASE_ICON_SIZE, WL_BASE_ICON_SIZE]});
 		((_x getVariable "BIS_WL_markers") # 1) setMarkerAlphaLocal 1;
 	} forEach BIS_WL_allSectors;
-	
+
 	if (BIS_WL_selection_showLinks) then {
 		{_x setMarkerAlphaLocal 0} forEach BIS_WL_sectorLinks;
 	};
-	BIS_WL_selectionMapManager = -1;
+	BIS_WL_selectionMapManager = [];
 };

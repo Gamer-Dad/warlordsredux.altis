@@ -4,6 +4,10 @@ _asset addEventHandler ["Hit", {
 	params ["_unit", "_source", "_damage", "_instigator"];
 
 	private _responsiblePlayer = [_source, _instigator] call BIS_fnc_WL2_handleInstigator;
+	private _ownerSide = _unit getVariable ["BIS_WL_ownerAssetSide", side group _unit];
+	private _responsibleSide = side group _responsiblePlayer;
+	if (_ownerSide == _responsibleSide) exitWith {};
+
 	if (!(isNull _responsiblePlayer) && alive _unit) then {
 		_unit setVariable ["BIS_WL_lastHitter", _responsiblePlayer, 2];
 
