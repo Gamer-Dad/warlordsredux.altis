@@ -68,7 +68,7 @@ private _detectedBySensors = switch (_killerSide) do {
 };
 private _findDetection = _detectedBySensors select { _x # 0 == vehicle _unit || _x # 0 == _unit };
 private _detectSensorText = if (count _findDetection > 0) then {
-    "Detected by Sensors";
+    localize "STR_A3_WL_detected_by_sensors";
 } else {
     private _detectedByAI = switch (_killerSide) do {
         case (west): {
@@ -86,7 +86,7 @@ private _detectSensorText = if (count _findDetection > 0) then {
     };
 
     if (_detectedByAI >= 1.5 && _killerSide != _side && !_isKillerAI) then {
-        "Detected by AI";
+        localize "STR_A3_WL_detected_by_AI";
     } else {
         "";
     };
@@ -122,7 +122,7 @@ private _leftDisplayText = _deathDisplay displayCtrl 7217;
 private _rightDisplayText = _deathDisplay displayCtrl 7218;
 private _rightDisplayText2 = _deathDisplay displayCtrl 7219;
 
-private _killedByText = "<t size='1.4'>KILLED BY</t>";
+private _killedByText = format ["<t size='1.4'>%1</t>", localize "STR_A3_WL_killed_by"];
 _killedByTitle ctrlSetStructuredText parseText _killedByText;
 _killedByTitle ctrlShow true;
 
@@ -165,7 +165,7 @@ private _damageDone = if (vehicle _killer isKindOf "Man") then {
 };
 private _health = round ((1 - _damageDone) * 100);
 
-_leftDisplayText ctrlSetText format ["HEALTH %1%2", _health, "%"];
+_leftDisplayText ctrlSetText format ["%1 %2%3", localize "STR_A3_WL_health", _health, "%"];
 _leftDisplayText ctrlShow true;
 
 _leftDisplayIcon ctrlSetTextColor [1, 1 - _damageDone, 1 - _damageDone, 1];
@@ -191,7 +191,7 @@ private _distanceText = switch (true) do {
         format ["%1 ~ %2 KM", _lower, _upper];
     };
 };
-private _distanceItemText = format ["<t size='1' color='#ffffff'>DISTANCE</t><br/><t size='1.5' color='#00ff00' shadow='0' font='RobotoCondensedBold'>%1</t>", _distanceText];
+private _distanceItemText = format ["<t size='1' color='#ffffff'>%1</t><br/><t size='1.5' color='#00ff00' shadow='0' font='RobotoCondensedBold'>%2</t>", localize "STR_A3_WL_distance", _distanceText];
 
 _rightDisplayText ctrlSetStructuredText parseText _distanceItemText;
 _rightDisplayText ctrlShow true;
@@ -201,7 +201,7 @@ private _score = score player;
 private _scoreChange = _score - _lastScore;
 missionNamespace setVariable ["WL_lastScore", _score];
 
-private _scoreText = format ["<t size='1' color='#ffffff'>SCORE IN LIFE</t><br/><t size='1.8' color='#00ff00' shadow='0' font='RobotoCondensedBold'>%1</t>", _scoreChange];
+private _scoreText = format ["<t size='1' color='#ffffff'>%1</t><br/><t size='1.8' color='#00ff00' shadow='0' font='RobotoCondensedBold'>%2</t>", localize "STR_A3_WL_score_in_life", _scoreChange];
 _rightDisplayText2 ctrlSetStructuredText parseText _scoreText;
 _rightDisplayText2 ctrlShow true;
 

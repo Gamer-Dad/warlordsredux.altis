@@ -2592,5 +2592,107 @@
             <Chinesesimp>主动防护系统</Chinesesimp>
             <Chinese>主動防護系統</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_detected_by_sensors">
+            <Original>Detected by Sensors</Original>
+            <English>Detected by Sensors</English>
+            <Czech>Zjištěno senzory</Czech>
+            <French>Détecté par les capteurs</French>
+            <German>Von Sensoren erkannt</German>
+            <Italian>Rilevato dai sensori</Italian>
+            <Polish>Wykryto przez czujniki</Polish>
+            <Portuguese>Detetado por sensores</Portuguese>
+            <Russian>Обнаружено сенсорами</Russian>
+            <Spanish>Detectado por sensores</Spanish>
+            <Turkish>Sensörler tarafından algılandı</Turkish>
+            <Korean>센서에 의해 감지됨</Korean>
+            <Japanese>センサーによって検出されました</Japanese>
+            <Chinesesimp>由传感器检测</Chinesesimp>
+            <Chinese>由傳感器檢測</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_detected_by_AI">
+            <Original>Detected by AI</Original>
+            <English>Detected by AI</English>
+            <Czech>Zjištěno AI</Czech>
+            <French>Détecté par l'IA</French>
+            <German>Von KI erkannt</German>
+            <Italian>Rilevato dall'IA</Italian>
+            <Polish>Wykryto przez AI</Polish>
+            <Portuguese>Detetado pela IA</Portuguese>
+            <Russian>Обнаружено ИИ</Russian>
+            <Spanish>Detectado por IA</Spanish>
+            <Turkish>Yapay Zeka tarafından algılandı</Turkish>
+            <Korean>AI에 의해 감지됨</Korean>
+            <Japanese>AIによって検出されました</Japanese>
+            <Chinesesimp>由人工智能检测</Chinesesimp>
+            <Chinese>由人工智慧檢測</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_killed_by">
+            <Original>KILLED BY</Original>
+            <English>KILLED BY</English>
+            <Czech>ZABIT</Czech>
+            <French>TUÉ PAR</French>
+            <German>GETÖTET VON</German>
+            <Italian>UCCISO DA</Italian>
+            <Polish>ZABITY PRZEZ</Polish>
+            <Portuguese>MORTO POR</Portuguese>
+            <Russian>УБИТ</Russian>
+            <Spanish>MATADO POR</Spanish>
+            <Turkish>ÖLDÜRÜLDÜ</Turkish>
+            <Korean>에 의해 살해됨</Korean>
+            <Japanese>によって殺された</Japanese>
+            <Chinesesimp>被杀死</Chinesesimp>
+            <Chinese>被殺死</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_health">
+            <Original>HEALTH</Original>
+            <English>HEALTH</English>
+            <Czech>ZDRAVÍ</Czech>
+            <French>SANTÉ</French>
+            <German>GESUNDHEIT</German>
+            <Italian>SALUTE</Italian>
+            <Polish>ZDROWIE</Polish>
+            <Portuguese>SAÚDE</Portuguese>
+            <Russian>ЗДОРОВЬЕ</Russian>
+            <Spanish>SALUD</Spanish>
+            <Turkish>SAĞLIK</Turkish>
+            <Korean>건강</Korean>
+            <Japanese>健康</Japanese>
+            <Chinesesimp>健康</Chinesesimp>
+            <Chinese>健康</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_distance">
+            <Original>DISTANCE</Original>
+            <English>DISTANCE</English>
+            <Czech>VZDÁLENOST</Czech>
+            <French>DISTANCE</French>
+            <German>ENTFERNUNG</German>
+            <Italian>DISTANZA</Italian>
+            <Polish>ODLEGŁOŚĆ</Polish>
+            <Portuguese>DISTÂNCIA</Portuguese>
+            <Russian>ДИСТАНЦИЯ</Russian>
+            <Spanish>DISTANCIA</Spanish>
+            <Turkish>MESAFE</Turkish>
+            <Korean>거리</Korean>
+            <Japanese>距離</Japanese>
+            <Chinesesimp>距离</Chinesesimp>
+            <Chinese>距離</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_score_in_life">
+            <Original>SCORE IN LIFE</Original>
+            <English>SCORE IN LIFE</English>
+            <Czech>SKÓRE VE ŽIVOTĚ</Czech>
+            <French>SCORE DANS LA VIE</French>
+            <German>PUNKTSTAND IM LEBEN</German>
+            <Italian>PUNTEGGIO NELLA VITA</Italian>
+            <Polish>WYNIK W ŻYCIU</Polish>
+            <Portuguese>PONTUAÇÃO NA VIDA</Portuguese>
+            <Russian>ОЧКИ В ЖИЗНИ</Russian>
+            <Spanish>PUNTUACIÓN EN LA VIDA</Spanish>
+            <Turkish>HAYATTA SKOR</Turkish>
+            <Korean>인생 점수</Korean>
+            <Japanese>人生のスコア</Japanese>
+            <Chinesesimp>生活得分</Chinesesimp>
+            <Chinese>生活得分</Chinese>
+        </Key>
     </Container>
 </Project>
