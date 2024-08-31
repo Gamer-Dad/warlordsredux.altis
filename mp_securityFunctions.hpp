@@ -28,6 +28,10 @@ class CfgRemoteExec {
 			allowedTargets = 1;
 		};
 
+		class BIS_fnc_WL2_sub_demolish {
+			allowedTargets = 0;
+		};
+
 		class MRTM_fnc_invite {
 			allowedTargets = 2;
 		};

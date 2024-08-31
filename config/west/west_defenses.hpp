@@ -4,6 +4,7 @@ class Defences {
         requirements[] = {};
         offset[] = {0, 2, 0};
         killReward = 30;
+        demolishable = 1;
     }; // "Semi Circle Sand bags"
 
     class Land_Razorwire_F {
@@ -18,6 +19,7 @@ class Defences {
         requirements[] = {};
         offset[] = {0, 5, 0};
         killReward = 30;
+        demolishable = 1;
     }; // "Tank barrier"
 
     class CamoNet_BLUFOR_big_F {
@@ -43,6 +45,7 @@ class Defences {
         offset[] = {0, 6, 0};
         killReward = 400;
         garbageCollect = 1;
+        demolishable = 1;
     };
 
     class B_HMG_01_F {

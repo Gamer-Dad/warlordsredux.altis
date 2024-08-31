@@ -8,6 +8,7 @@ private _rearmTimerHashMap = createHashMap;
 private _killRewardHashMap = createHashMap;
 private _capValueHashMap = createHashMap;
 private _garbageCollectHashMap = createHashMap;
+private _demolishableHashMap = createHashMap;
 
 private _populateUnitPoolList = [];
 private _populateVehiclePoolList = [];
@@ -33,6 +34,7 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 				private _requisitionKillReward = getNumber (_x >> "killReward");
 				private _requisitionCapValue = getNumber (_x >> "capValue");
 				private _requisitionGarbageCollect = getNumber (_x >> "garbageCollect");
+				private _requisitionDemolishable = getNumber (_x >> "demolishable");
 
 				private _requisitionDisallowMagazines = getArray (_x >> "disallowMagazines");
 				private _requisitionAllowPylonMagazines = getArray (_x >> "allowPylonMagazines");
@@ -61,6 +63,10 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 
 				if (_requisitionGarbageCollect != 0) then {
 					_garbageCollectHashMap set [_requistitonName, true];
+				};
+
+				if (_requisitionDemolishable != 0) then {
+					_demolishableHashMap set [_requistitonName, true];
 				};
 
 				if (_requisitionUnitSpawn != 0) then {
@@ -103,6 +109,7 @@ serverNamespace setVariable ["WL2_costs", _costHashMap];
 serverNamespace setVariable ["WL2_killRewards", _killRewardHashMap];
 serverNamespace setVariable ["WL2_cappingValues", _capValueHashMap];
 serverNamespace setVariable ["WL2_staticsGarbageCollector", _garbageCollectHashMap];
+missionNamespace setVariable ["WL2_demolishable", _demolishableHashMap, true];
 
 serverNamespace setVariable ["WL2_populateUnitPoolList", _populateUnitPoolList];
 serverNamespace setVariable ["WL2_populateVehiclePoolList", _populateVehiclePoolList];

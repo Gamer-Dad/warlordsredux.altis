@@ -165,15 +165,6 @@ class CfgDisabledCommands
         };
     };
 
-    class SETDAMAGE
-    {
-        class SYNTAX1
-        {
-            targets[] = {1,0,0};
-            args[] = {{"OBJECT"},{"SCALAR","ARRAY"}};
-        };
-    };
-
     class SETDAMMAGE
     {
         class SYNTAX1
