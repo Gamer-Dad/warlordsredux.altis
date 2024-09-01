@@ -115,6 +115,7 @@ class Vehicles {
         rearm = 300;
         killReward = 250;
         capValue = 2;
+        aps = 1;
     }; // "Hunter HMG"
 
     class B_MRAP_01_gmg_F {
@@ -123,6 +124,7 @@ class Vehicles {
         rearm = 300;
         killReward = 250;
         capValue = 2;
+        aps = 1;
     }; // "Hunter GMG"
 
     class B_Truck_01_ammo_F {
@@ -151,6 +153,7 @@ class Vehicles {
         requirements[] = {};
         killReward = 200;
         capValue = 1;
+        aps = 4;
     }; // "Tempest Device"
 
     class B_Truck_01_transport_F {
@@ -172,6 +175,7 @@ class Vehicles {
         requirements[] = {};
         killReward = 300;
         capValue = 2;
+        aps = 2;
     }; // "CRV-6e Bobcat"
 
     class B_APC_Wheeled_03_cannon_F {
@@ -180,6 +184,7 @@ class Vehicles {
         rearm = 500;
         killReward = 300;
         capValue = 3;
+        aps = 2;
 
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
@@ -209,6 +214,7 @@ class Vehicles {
         rearm = 500;
         killReward = 300;
         capValue = 3;
+        aps = 2;
     }; // "AMV-7 Marshall"
 
     class B_APC_Tracked_01_rcws_F {
@@ -217,6 +223,7 @@ class Vehicles {
         rearm = 400;
         killReward = 300;
         capValue = 3;
+        aps = 2;
     }; // "IFV-6c Panther"
 
     class B_APC_Tracked_01_AA_F {
@@ -225,6 +232,7 @@ class Vehicles {
         rearm = 500;
         killReward = 350;
         capValue = 4;
+        aps = 2;
 
         class Gunner: WLTurretDefaults {
             turret[] = { 0 };
@@ -250,6 +258,7 @@ class Vehicles {
         rearm = 500;
         killReward = 450;
         capValue = 4;
+        aps = 2;
     }; // "Rhino MGS"
 
     class B_AFV_Wheeled_01_up_cannon_F {
@@ -258,6 +267,7 @@ class Vehicles {
         rearm = 500;
         killReward = 500;
         capValue = 4;
+        aps = 2;
     }; // "Rhino MGS UP"
 
     class B_MBT_01_cannon_F {
@@ -266,6 +276,7 @@ class Vehicles {
         rearm = 600;
         killReward = 450;
         capValue = 4;
+        aps = 3;
 
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
@@ -278,6 +289,7 @@ class Vehicles {
         rearm = 600;
         killReward = 500;
         capValue = 4;
+        aps = 3;
 
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
@@ -319,6 +331,7 @@ class Vehicles {
         rearm = 1800;
         killReward = 600;
         capValue = 4;
+        aps = 2;
     }; // "M4 Scorcher"
 
     class B_MBT_01_mlrs_F {
@@ -327,6 +340,7 @@ class Vehicles {
         rearm = 1800;
         killReward = 600;
         capValue = 4;
+        aps = 2;
     }; // "M5 Sandstorm MLRS"
 
     class B_Truck_01_medical_F {

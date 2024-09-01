@@ -143,6 +143,7 @@ class Vehicles {
         rearm = 300;
         killReward = 250;
         capValue = 2;
+        aps = 1;
     }; // "Ifrit HMG"
 
     class O_MRAP_02_gmg_F {
@@ -151,6 +152,7 @@ class Vehicles {
         rearm = 300;
         killReward = 250;
         capValue = 2;
+        aps = 1;
     }; // "Ifrit GMG"
 
     class O_Truck_03_Repair_F {
@@ -165,6 +167,7 @@ class Vehicles {
         requirements[] = {};
         killReward = 200;
         capValue = 1;
+        aps = 4;
     }; // "Tempest Device"
 
     class O_Truck_03_ammo_F {
@@ -180,6 +183,7 @@ class Vehicles {
         rearm = 400;
         killReward = 300;
         capValue = 2;
+        aps = 2;
     }; // "MSE-3 Marid"
 
     class O_APC_Tracked_02_cannon_F {
@@ -188,6 +192,7 @@ class Vehicles {
         rearm = 500;
         killReward = 350;
         capValue = 3;
+        aps = 2;
 
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
@@ -217,6 +222,7 @@ class Vehicles {
         rearm = 500;
         killReward = 350;
         capValue = 4;
+        aps = 2;
 
         class Gunner: WLTurretDefaults {
             turret[] = { 0 };
@@ -242,6 +248,7 @@ class Vehicles {
         rearm = 600;
         killReward = 500;
         capValue = 4;
+        aps = 3;
     }; // "T-100 Varsuk"
 
     class O_MBT_04_cannon_F {
@@ -250,6 +257,7 @@ class Vehicles {
         rearm = 600;
         killReward = 550;
         capValue = 4;
+        aps = 3;
     }; // "T-140 Angara"
 
     class O_MBT_04_command_F {
@@ -258,6 +266,7 @@ class Vehicles {
         rearm = 600;
         killReward = 600;
         capValue = 4;
+        aps = 3;
     }; // "T-140K Angara"
 
     class O_MBT_02_railgun_F {
@@ -266,6 +275,7 @@ class Vehicles {
         rearm = 600;
         killReward = 500;
         capValue = 4;
+        aps = 3;
     }; // "T-100 Futura"
 
     class O_MBT_02_arty_F {
@@ -274,6 +284,7 @@ class Vehicles {
         rearm = 1800;
         killReward = 600;
         capValue = 4;
+        aps = 2;
     }; // "2S9 Sochor"
 
     class I_Truck_02_MRL_F {
@@ -282,6 +293,7 @@ class Vehicles {
         rearm = 1800;
         killReward = 600;
         capValue = 4;
+        aps = 2;
     }; // "Zamak MRL"
 
     class O_Truck_03_medical_F {

@@ -90,12 +90,14 @@ class INDEPENDENT {
             killReward = 130;
             capValue = 3;
             vehicleSpawn = 1;
+            aps = 1;
         };
 
         class I_MRAP_03_gmg_F {
             killReward = 130;
             capValue = 3;
             vehicleSpawn = 1;
+            aps = 1;
         };
 
         class I_LT_01_scout_F {
@@ -107,36 +109,42 @@ class INDEPENDENT {
             killReward = 240;
             capValue = 4;
             vehicleSpawn = 1;
+            aps = 1;
         };
 
         class I_LT_01_AT_F {
             killReward = 240;
             capValue = 4;
             vehicleSpawn = 1;
+            aps = 1;
         };
 
         class I_LT_01_cannon_F {
             killReward = 240;
             capValue = 4;
             vehicleSpawn = 1;
+            aps = 1;
         };
 
         class I_MBT_03_cannon_F {
             killReward = 400;
             capValue = 5;
             vehicleSpawn = 1;
+            aps = 3;
         };
 
         class I_APC_Wheeled_03_cannon_F {
             killReward = 400;
             capValue = 5;
             vehicleSpawn = 1;
+            aps = 2;
         };
 
         class I_APC_tracked_03_cannon_F {
             killReward = 400;
             capValue = 5;
             vehicleSpawn = 1;
+            aps = 3;
         };
     };
 
