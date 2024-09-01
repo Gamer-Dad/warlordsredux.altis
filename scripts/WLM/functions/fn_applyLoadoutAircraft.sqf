@@ -90,3 +90,7 @@ _asset setVariable ["WLM_assetAttachments", _attachments, true];
         sleep 0.1;
     } forEach _attachments;
 };
+
+if (_eligibleFreeRearm) then {
+    [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
+};

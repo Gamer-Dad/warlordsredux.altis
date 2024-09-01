@@ -40,8 +40,8 @@ addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator"];
 
 	private _responsiblePlayer = [_killer, _instigator] call BIS_fnc_WL2_handleInstigator;
-	if (isNull _responsiblePlayer) then {
-		// only use last hit if no direct killer is found
+	if (isNull _responsiblePlayer || _unit == _responsiblePlayer) then {
+		// only use last hit if no direct killer is found OR if responsible player is the unit
 		_responsiblePlayer = _unit getVariable ["BIS_WL_lastHitter", objNull];
 	};
 

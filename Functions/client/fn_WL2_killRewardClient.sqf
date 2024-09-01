@@ -40,8 +40,8 @@ _ctrl ctrlSetStructuredText parseText format ["<t size='%1' align='right' color=
 
 WAS_score = true;
 
-if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
-	playSoundUI ["AddItemOK", 0.1, 1];
+if (profileNamespace getVariable ["MRTM_playKillSound", true] && _customColor == "#228b22") then {
+	playSoundUI ["AddItemOK", 1, 1];
 };
 
 _ctrl ctrlCommit 0;

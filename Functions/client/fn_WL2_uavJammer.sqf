@@ -11,17 +11,29 @@ private _side = side _owner;
         private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
         private _allJammers = _jammerMarkers apply { _x # 0 };
         private _enemyJammers = _allJammers select {
-            private _jammerActive = _x getVariable ["BIS_WL_jammerActivated", false];
             private _jammerOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
-            _jammerOwnerSide != _side && _jammerActive;
+            _jammerOwnerSide != _side;
+        };
+        private _enemyJammersActive = _enemyJammers select {
+            _x getVariable ["BIS_WL_jammerActivated", false];
         };
 
-        private _jammersInRange = _enemyJammers select {
+        private _enemyJammersActivating = _enemyJammers select {
+            _x getVariable ["BIS_WL_jammerActivating", false];
+        };
+
+        private _jammersInRange = _enemyJammersActive select {
+            private _distanceToJammer = _asset distanceSqr _x;
+            _distanceToJammer < (WL_JAMMER_RANGE_OUTER * WL_JAMMER_RANGE_OUTER);
+        };
+
+        private _activatingInRange = _enemyJammersActivating select {
             private _distanceToJammer = _asset distanceSqr _x;
             _distanceToJammer < (WL_JAMMER_RANGE_OUTER * WL_JAMMER_RANGE_OUTER);
         };
 
         _asset setVariable ["BIS_WL_relevantJammers", _jammersInRange];
+        _asset setVariable ["BIS_WL_relevantJammersActivating", _activatingInRange];
         sleep 5;
     };
 };
@@ -32,7 +44,7 @@ private _side = side _owner;
     private _hardlineDistanceSqr = WL_JAMMER_HARDLINE_RANGE * WL_JAMMER_HARDLINE_RANGE;
     while { alive _asset } do {
         sleep 1;
-        
+
         private _controller = (UAVControl _asset) # 0;
         private _controllerDistanceToAsset = _controller distanceSqr _asset;
         if (_controllerDistanceToAsset < _hardlineDistanceSqr) then {
@@ -58,8 +70,13 @@ private _side = side _owner;
         };
 
         private _relevantJammers = _asset getVariable ["BIS_WL_relevantJammers", []];
+        private _activatingJammers = _asset getVariable ["BIS_WL_relevantJammersActivating", []];
         if (count _relevantJammers == 0) then {
-            _asset setVariable ["BIS_WL_jammerStrength", 0];
+            if (count _activatingJammers == 0) then {
+                _asset setVariable ["BIS_WL_jammerStrength", 0];
+            } else {
+                _asset setVariable ["BIS_WL_jammerStrength", 0.15];
+            };
             continue;
         };
 
@@ -76,9 +93,9 @@ private _side = side _owner;
 
         private _jammerStrength = linearConversion [WL_JAMMER_RANGE_OUTER, WL_JAMMER_RANGE_INNER, _closestJammerDistance, 0, 1, true];
         _asset setVariable ["BIS_WL_jammerStrength", _jammerStrength];
-        
+
         if (_jammerStrength >= 1) then {
-            if (getPosATL _asset # 2 > 1) then {	
+            if (getPosATL _asset # 2 > 1) then {
                 // flyers take damage
                 _asset setDamage [(damage _asset + 0.1), true, _closestJammer];
             } else {
@@ -95,8 +112,8 @@ private _side = side _owner;
 // Jammer screen effect (1s loop)
 [_asset] spawn {
     params ["_asset"];
-    
-    private _priority = missionNamespace getVariable ["BIS_WL_filmGrainPriority", 2000];    
+
+    private _priority = missionNamespace getVariable ["BIS_WL_filmGrainPriority", 2000];
     private _filmGrain = ppEffectCreate ["filmGrain", _priority];
     _filmGrain ppEffectAdjust [1, 0];
     _filmGrain ppEffectEnable false;
@@ -118,7 +135,7 @@ private _side = side _owner;
     private _sensorsDisabled = false;
     while { alive _asset } do {
         private _jammerStrength = _asset getVariable ["BIS_WL_jammerStrength", 0];
-        
+
         if (!isRemoteControlling player) then {
             _filmGrain ppEffectEnable false;
 

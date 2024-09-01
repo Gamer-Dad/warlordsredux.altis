@@ -1,6 +1,9 @@
 params ["_unit", "_responsiblePlayer", "_killer"];
 
 if (_unit != player || alive player) exitWith {};
+if ((_killer == _unit || isNull _killer) && !isNull _responsiblePlayer) then {
+    _killer = _responsiblePlayer;
+};
 
 private _responsiblePlayerName = if (!isNull _responsiblePlayer) then {
     name _responsiblePlayer;

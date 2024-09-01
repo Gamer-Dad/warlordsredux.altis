@@ -91,3 +91,10 @@ private _magazineSelectBoxes = uiNamespace getVariable "WLM_magazineSelectBoxes"
         sleep 0.1;
     } forEach _magazineSelectBoxes;
 };
+
+if (_eligibleFreeRearm) then {
+    private _rearmTime = (missionNamespace getVariable "WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
+    _asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
+
+    [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
+};
