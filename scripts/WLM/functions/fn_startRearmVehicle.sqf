@@ -48,3 +48,5 @@ if (_newAmmo < 0) exitWith {
 _rearmSource setVariable ["WLM_ammoCargo", _newAmmo, true];
 
 [_asset] remoteExec ["WLM_fnc_rearmVehicle", _asset];
+
+[toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;

@@ -42,9 +42,7 @@ _hDef = safezoneH;
 if (count BIS_onScreenMessagesVisible >= _maxLines) then {
 	BIS_onScreenMessagesBuffer pushBack _messageID;
 	waitUntil {count BIS_onScreenMessagesVisible < _maxLines && (BIS_onScreenMessagesBuffer find _messageID) == 0};
-	_msgBuffer = BIS_onScreenMessagesBuffer;
-	_msgBuffer deleteAt _messageID;
-	BIS_onScreenMessagesBuffer = _msgBuffer;
+	BIS_onScreenMessagesBuffer = BIS_onScreenMessagesBuffer - [_messageID];
 };
 
 BIS_onScreenMessagesVisible pushBack _messageID;
@@ -56,7 +54,7 @@ if (count BIS_onScreenMessagesVisible > 1) then {
 		waitUntil {ctrlCommitted _ctrl || {ctrlFade _ctrl > 0}};
 		_ctrl ctrlSetPosition [_xDef, ((ctrlPosition _ctrl) # 1) + (_hDef / 25), _wDef, _hDef / 25];
 		_ctrl ctrlCommit 0.25;
-	} forEach (BIS_onScreenMessagesVisible select {_x != _messageID});
+	} forEach (BIS_onScreenMessagesVisible - [_messageID]);
 };
 
 _announcerPositionRatio = if (profileNamespace getVariable ["MRTM_smallAnnouncerText", false]) then { 8 } else { 4 };
@@ -93,10 +91,10 @@ _startTime = time;
 while {!_done} do {
 	_oldTick = time;
 	waitUntil {time > _oldTick + 0.04};
-	
+
 	_done = TRUE;
 	_newLetterColor = [];
-	
+
 	{
 		_letterFadeInStart = _startTime + (_forEachIndex * _popupDelay);
 		if (time >= _letterFadeInStart && time <= (_letterFadeInStart + _fadeDuration)) then {
@@ -115,7 +113,7 @@ while {!_done} do {
 			};
 		};
 	} forEach _colorArr;
-	
+
 	_textStructuredFormat = [_textStructured];
 
 	{
@@ -132,7 +130,5 @@ _box ctrlCommit 1;
 
 waitUntil {ctrlCommitted _box};
 
-_vis = BIS_onScreenMessagesVisible;
-_vis deleteAt _messageID;
-BIS_onScreenMessagesVisible = _vis;
+BIS_onScreenMessagesVisible = BIS_onScreenMessagesVisible - [_messageID];
 ctrlDelete _box;

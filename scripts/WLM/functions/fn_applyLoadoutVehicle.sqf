@@ -91,3 +91,7 @@ private _magazineSelectBoxes = uiNamespace getVariable "WLM_magazineSelectBoxes"
         sleep 0.1;
     } forEach _magazineSelectBoxes;
 };
+
+if (_eligibleFreeRearm) then {
+    [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
+};
