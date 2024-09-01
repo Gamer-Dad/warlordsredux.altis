@@ -73,4 +73,17 @@ if (_newAmmo < 0) exitWith {
 
 _rearmSource setVariable ["WLM_ammoCargo", _newAmmo, true];
 
+private _attachments = _asset getVariable ["WLM_assetAttachments", [["default"]]];
+
+if (count _attachments > 0 && (_attachments # 0 # 0 == "default")) then {
+    private _defaultAttachments = [];
+    {
+        _defaultAttachments pushBack [_x # 3, _x # 2];
+    } forEach _pylonsInfo;
+    _asset setVariable ["WLM_assetAttachments", _defaultAttachments, true];
+};
+
 [_asset, true] remoteExec ["WLM_fnc_applyPylon", _asset];
+
+private _rearmTime = (missionNamespace getVariable "WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
+_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
