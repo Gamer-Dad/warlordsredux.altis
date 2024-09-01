@@ -411,21 +411,38 @@
             <Chinese>您需要在拥有的扇区中。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_jammer_restr">
-            <Original>Only one jammer allowed per sector!</Original>
-            <English>Only one jammer allowed per sector!</English>
-            <Czech>V sektoru povolen pouze jeden rušič!</Czech>
-            <French>Un seul brouilleur autorisé par secteur !</French>
-            <German>Nur ein Jammer pro Sektor erlaubt!</German>
-            <Italian>Solo un disturbatore consentito per settore!</Italian>
-            <Polish>Tylko jeden zakłócacz na sektor!</Polish>
-            <Portuguese>Apenas um jammer permitido por setor!</Portuguese>
-            <Russian>Только одна глушилка на сектор!</Russian>
-            <Spanish>Solo se permite un jammer por sector!</Spanish>
-            <Turkish>Sektör başına sadece bir jammer izinli!</Turkish>
-            <Korean>구역당 하나의 방해기만 허용됩니다!</Korean>
-            <Japanese>セクターごとにジャマーは1台のみ許可されます!</Japanese>
-            <Chinesesimp>每个区域只允许一个干扰器！</Chinesesimp>
-            <Chinese>每個區域只允許一個干擾器！</Chinese>
+            <Original>Jammer tower ranges may not overlap!</Original>
+            <English>Jammer tower ranges may not overlap!</English>
+            <Czech>Rozsahy věží s rušičkami se nesmí překrývat!</Czech>
+            <French>Les portées des tours de brouilleurs ne doivent pas se chevaucher!</French>
+            <German>Die Reichweiten der Jammer-Türme dürfen sich nicht überlappen!</German>
+            <Italian>Le aree di copertura delle torri jammer non possono sovrapporsi!</Italian>
+            <Polish>Zasięgi wieżyczek zakłócających nie mogą na siebie nachodzić!</Polish>
+            <Portuguese>Os alcances das torres de jammer não podem se sobrepor!</Portuguese>
+            <Russian>Зоны действия башен глушилок не должны перекрываться!</Russian>
+            <Spanish>¡Los rangos de las torres jammer no pueden superponerse!</Spanish>
+            <Turkish>Jammer kulelerinin menzilleri üst üste gelmemeli!</Turkish>
+            <Korean>방해 탑의 범위가 겹쳐질 수 없습니다!</Korean>
+            <Japanese>ジャマータワーの範囲は重なってはいけません！</Japanese>
+            <Chinesesimp>干扰塔的范围不得重叠！</Chinesesimp>
+            <Chinese>干擾塔的範圍不得重疊！</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_jammer_home_restr">
+            <Original>Jammer towers may not be placed in home base!</Original>
+            <English>Jammer towers may not be placed in home base!</English>
+            <Czech>Rušící věže nesmí být umístěny v domovské základně!</Czech>
+            <French>Les tours de brouilleurs ne peuvent pas être placées dans la base principale!</French>
+            <German>Jammer-Türme dürfen nicht in der Heimatbasis aufgestellt werden!</German>
+            <Italian>Le torri jammer non possono essere posizionate nella base principale!</Italian>
+            <Polish>Wieżyczki zakłócające nie mogą być umieszczone w bazie domowej!</Polish>
+            <Portuguese>As torres de jammer não podem ser colocadas na base principal!</Portuguese>
+            <Russian>Башни глушилок не могут быть размещены на домашней базе!</Russian>
+            <Spanish>¡Las torres de jammer no pueden colocarse en la base principal!</Spanish>
+            <Turkish>Jammer kuleleri ana üste yerleştirilemez!</Turkish>
+            <Korean>방해 탑을 본진에 배치할 수 없습니다!</Korean>
+            <Japanese>ジャマータワーを本拠地に設置することはできません！</Japanese>
+            <Chinesesimp>干扰塔不得放置在主基地中！</Chinesesimp>
+            <Chinese>干擾塔不得放置在主基地中！</Chinese>
         </Key>
         <Key ID="STR_A3_WL_ftVehicle_ft_restr">
             <Original>No fast travel vehicle available.</Original>

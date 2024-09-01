@@ -223,17 +223,18 @@ if (_ret) then {
 			if (_class == "Land_Communication_F") then {
 				private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
 				private _allJammers = _jammerMarkers apply { _x # 0 };
-				private _currentSector = _possibleSectors # _visitedSectorID;
-				private _currentSectorArea = _currentSector getVariable "objectAreaComplete";
-				private _jammersInSector = _allJammers select {
-					private _jammerOwnerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
-					private _jammerInSector = _x inArea _currentSectorArea;
-					_jammerOwnerSide == side player && _jammerInSector && typeOf _x == "Land_Communication_F";
-				};
+				private _allTowers = _allJammers select { typeOf _x == "Land_Communication_F" };
+				private _jammersNear = _allTowers select { player distance _x < (WL_JAMMER_RANGE_OUTER * 2) };
 
-				if (count _jammersInSector > 0) exitWith {
+				if (count _jammersNear > 0) exitWith {
 					_ret = false;
 					_tooltip = localize "STR_A3_WL_jammer_restr";
+				};
+
+				private _homeBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
+				if (player inArea (_homeBase getVariable "objectAreaComplete")) exitWith {
+					_ret = false;
+					_tooltip = localize "STR_A3_WL_jammer_home_restr";
 				};
 			};
 			if (_category == "Defences") exitWith {
