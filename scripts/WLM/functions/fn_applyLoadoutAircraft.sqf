@@ -8,27 +8,7 @@ private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
 private _display = findDisplay WLM_DISPLAY;
 
 private _currentPylonInfo = getAllPylonsInfo _asset;
-private _eligibleFreeRearm = true;
-{
-    private _pylonName = _x # 3;
-    if (_pylonName != "") then {
-        private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _pylonName >> "count");
-        private _currentAmmo = _x # 4;
-
-        if (_maxAmmo > _currentAmmo) then {
-            _eligibleFreeRearm = false;
-        };
-    };
-} forEach _currentPylonInfo;
-
-{
-    private _currentAmmo = _x # 2;
-    private _magName = _x # 0;
-    private _magMaxAmmo = getNumber (configFile >> "CfgMagazines" >> _magName >> "count");
-    if (_magMaxAmmo > _currentAmmo) then {
-        _eligibleFreeRearm = false;
-    };
-} forEach (magazinesAllTurrets _asset);
+private _eligibleFreeRearm = (uiNamespace getVariable ["WLM_eligibleFreeRearm", false]);
 
 if (_showWarning && !_eligibleFreeRearm) exitWith {
     private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";

@@ -275,7 +275,7 @@ class Defences {
         rearm = 600;
         killReward = 600;
     };  // "Mk21 Centurion"
-
+/*
     class B_Ship_MRLS_01_F {
         cost = 30000;
         requirements[] = {};
@@ -283,4 +283,5 @@ class Defences {
         rearm = 2700;
         killReward = 700;
     };  // "Mk41 VLS"
+*/
 };

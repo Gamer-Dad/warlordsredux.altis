@@ -1704,6 +1704,23 @@
             <Chinesesimp>应用</Chinesesimp>
             <Chinese>應用</Chinese>
         </Key>
+		<Key ID="STR_WLM_APPLY_FREE">
+            <Original>Apply/Rearm</Original>
+            <English>Apply/Rearm</English>
+            <Czech>Přiložit a znovu zapnout</Czech>
+            <French>Appliquer et réarmer</French>
+            <German>Anwenden und erneut aktivieren</German>
+            <Italian>Applica e riarma</Italian>
+            <Polish>Zastosuj i uzbroić</Polish>
+            <Portuguese>Aplicar e rearmar</Portuguese>
+            <Russian>Применить и перевооружить</Russian>
+            <Spanish>Aplicar y rearmar</Spanish>
+            <Turkish>Uygula ve Yeniden Silahlandır</Turkish>
+            <Korean>적용 및 재설정</Korean>
+            <Japanese>適用と再準備</Japanese>
+            <Chinesesimp>应用并重新装备</Chinesesimp>
+            <Chinese>應用並重新裝備</Chinese>
+        </Key>
         <Key ID="STR_WLM_APPLY_SELECTED_PYLONS">
             <Original>Apply the selected magazines to the vehicle.</Original>
             <English>Apply the selected magazines to the vehicle.</English>

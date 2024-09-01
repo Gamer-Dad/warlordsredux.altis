@@ -8,25 +8,7 @@ private _defaultMags = _asset getVariable ["WLM_savedDefaultMags", []];
 private _currentMags = magazinesAllTurrets _asset;
 _defaultMags sort true;
 _currentMags sort true;
-private _eligibleFreeRearm = true;
-{
-    if (_forEachIndex >= count _defaultMags) exitWith {
-        _eligibleFreeRearm = false;
-    };
-    private _defaultMag = _defaultMags # _forEachIndex;
-    private _currentMag = _x;
-
-    if (_defaultMag # 0 != _currentMag # 0) then {
-        _eligibleFreeRearm = false;
-    };
-    if (_defaultMag # 2 != _currentMag # 2) then {
-        _eligibleFreeRearm = false;
-    };
-} forEach _currentMags;
-
-if (_asset call APS_fnc_getMaxAmmo > _asset getVariable ["apsAmmo", 0]) then {
-    _eligibleFreeRearm = false;
-};
+private _eligibleFreeRearm = (uiNamespace getVariable ["WLM_eligibleFreeRearm", false]);
 
 if (_showWarning && !_eligibleFreeRearm) exitWith {
     private _display = findDisplay WLM_DISPLAY;

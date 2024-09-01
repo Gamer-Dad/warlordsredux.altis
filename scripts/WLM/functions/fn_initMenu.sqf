@@ -50,6 +50,30 @@ if (_isAircraft) then {
 
 call WLM_fnc_constructPresetMenu;
 
+private _currentPylonInfo = getAllPylonsInfo _asset;
+private _eligibleFreeRearm = true;
+{
+    private _pylonName = _x # 3;
+    if (_pylonName != "") then {
+        private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _pylonName >> "count");
+        private _currentAmmo = _x # 4;
+
+        if (_maxAmmo > _currentAmmo) then {
+            _eligibleFreeRearm = false;
+        };
+    };
+} forEach _currentPylonInfo;
+
+{
+    private _currentAmmo = _x # 2;
+    private _magName = _x # 0;
+    private _magMaxAmmo = getNumber (configFile >> "CfgMagazines" >> _magName >> "count");
+    if (_magMaxAmmo > _currentAmmo) then {
+        _eligibleFreeRearm = false;
+    };
+} forEach (magazinesAllTurrets _asset);
+uiNamespace setVariable ["WLM_eligibleFreeRearm", _eligibleFreeRearm];
+
 private _saveButtonControl = _display displayCtrl WLM_SAVE_BUTTON;
 _saveButtonControl ctrlAddEventHandler ["ButtonClick", {
     [""] call WLM_fnc_saveLoadout;
@@ -61,6 +85,11 @@ _wipeButtonControl ctrlAddEventHandler ["ButtonClick", {
 }];
 
 private _applyButtonControl = _display displayCtrl WLM_APPLY_BUTTON;
+if (_eligibleFreeRearm) then {
+    _applyButtonControl ctrlSetText (localize "STR_WLM_APPLY_FREE");
+} else {
+    _applyButtonControl ctrlSetText (localize "STR_WLM_APPLY");
+};
 _applyButtonControl ctrlAddEventHandler ["ButtonClick", {
     private _isAircraft = uiNamespace getVariable "WLM_assetIsAircraft";
     if (_isAircraft) then {
