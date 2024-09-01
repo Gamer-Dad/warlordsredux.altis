@@ -10,7 +10,13 @@ while {!BIS_WL_missionEnd} do {
 	sleep WL_TIMEOUT_SHORT;
 	_isRegularSquadMember = ["isRegularSquadMember", [getPlayerID player]] call SQD_fnc_client;
 
-	waitUntil {sleep 1; isNull WL_TARGET_FRIENDLY};
+	waitUntil {
+		sleep 1;
+		if (BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) then {
+			BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+		};
+		isNull WL_TARGET_FRIENDLY
+	};
 
 	BIS_WL_currentSelection = WL_ID_SELECTION_VOTING;
 
@@ -20,7 +26,7 @@ while {!BIS_WL_missionEnd} do {
 			playSound "AddItemFailed";
 		};
 		"RequestMenu_close" call BIS_fnc_WL2_setupUI;
-	
+
 		0 spawn {
 			sleep 0.1;
 			if (BIS_WL_missionEnd) exitWith {};
@@ -37,28 +43,13 @@ while {!BIS_WL_missionEnd} do {
 			waitUntil {(_lastTarget getVariable "BIS_WL_owner") == BIS_WL_playerSide || {serverTime > _t}};
 		};
 	};
-	
+
 	["client"] call BIS_fnc_WL2_updateSectorArrays;
-	
+
 	_mostVotedVar spawn {
 		waitUntil {count (missionNamespace getVariable [_this, []]) > 0};
 		_data = (missionNamespace getVariable _this);
 		["voting", [(_data # 1) - (getMissionConfigValue ["BIS_WL_sectorVotingDuration", 15]), _data # 1, _this]] spawn BIS_fnc_WL2_setOSDEvent;
-	};
-	
-	if (!_isRegularSquadMember) then {
-		"voting" spawn BIS_fnc_WL2_sectorSelectionHandle;
-	};
-
-	0 spawn {
-		waitUntil {
-			private _selectedTarget = !(BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]);
-			private _joinedSquad = ["isRegularSquadMember", [getPlayerID player]] call SQD_fnc_client;
-
-			_selectedTarget || BIS_WL_missionEnd || BIS_WL_resetTargetSelection_client || _joinedSquad
-		};
-		
-		["voting", "end"] spawn BIS_fnc_WL2_sectorSelectionHandle;
 	};
 
 	_voteTallyDisplayVar spawn {
@@ -77,14 +68,14 @@ while {!BIS_WL_missionEnd} do {
 			_indicator ctrlSetStructuredText (parseText (_voteText # 0));
 			_indicatorBackground ctrlSetPositionH (0.09 + (_voteText # 1) * 0.04);
 			_indicatorBackground ctrlCommit 0;
-			
+
 			sleep WL_TIMEOUT_STANDARD;
 		};
 
 		_indicator ctrlSetText "";
 		_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0];
 	};
-		
+
 	if !(isServer) then {
 		waitUntil {
 			private _selectedTarget = !isNull WL_TARGET_FRIENDLY;
@@ -96,7 +87,7 @@ while {!BIS_WL_missionEnd} do {
 		_pass = FALSE;
 		while {!_pass} do {
 			waitUntil {!isNull WL_TARGET_FRIENDLY || {BIS_WL_missionEnd || {BIS_WL_resetTargetSelection_client}}};
-			
+
 			if (BIS_WL_resetTargetSelection_client) then {
 				sleep WL_TIMEOUT_STANDARD;
 				if (BIS_WL_resetTargetSelection_client) then {
@@ -107,17 +98,16 @@ while {!BIS_WL_missionEnd} do {
 			};
 		};
 	};
-	
 
 	BIS_WL_targetVote = objNull;
-		
+
 	if (BIS_WL_currentSelection in [WL_ID_SELECTION_VOTING, WL_ID_SELECTION_VOTED]) then {
 		BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
 	};
 
 	missionNamespace setVariable [_mostVotedVar, []];
 	missionNamespace setVariable [format ["BIS_WL_targetVote_%1", getPlayerID player], objNull];
-	
+
 	if (BIS_WL_resetTargetSelection_client) then {
 		BIS_WL_resetTargetSelection_client = FALSE;
 		"Reset" call BIS_fnc_WL2_announcer;

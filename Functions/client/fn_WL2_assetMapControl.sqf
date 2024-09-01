@@ -1,3 +1,5 @@
+#include "..\warlords_constants.inc"
+
 BIS_WL_assetInfoActive = false;
 
 addMissionEventHandler ["Map", {
@@ -18,7 +20,7 @@ addMissionEventHandler ["Map", {
 		MAP_CONTROL = addMissionEventHandler ["EachFrame", {
 			_shown = false;
 			_map = (uiNamespace getVariable ["BIS_WL_mapControl", controlNull]);
-			
+
 			if (visibleMap) then {
 				_radius = (((ctrlMapScale _map) * 500) min 30);
 				_pos = (_map ctrlMapScreenToWorld getMousePosition);
@@ -45,8 +47,28 @@ addMissionEventHandler ["Map", {
 					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlShow true;
 					((ctrlParent _map) getVariable "BIS_sectorInfoBox") ctrlEnable true;
 				};
+
+				if (isNull (findDisplay 160 displayCtrl 51)) then {
+					_mapScale = ctrlMapScale WL_CONTROL_MAP;
+					_timer = (serverTime % WL_MAP_PULSE_FREQ);
+					_timer = if (_timer <= (WL_MAP_PULSE_FREQ / 2)) then {_timer} else {WL_MAP_PULSE_FREQ - _timer};
+					_markerSize = linearConversion [0, WL_MAP_PULSE_FREQ / 2, _timer, 1, WL_MAP_PULSE_ICON_SIZE];
+					_markerSizeArr = [_markerSize, _markerSize];
+
+					{
+						_x setMarkerSizeLocal [WL_CONNECTING_LINE_AXIS * _mapScale * BIS_WL_mapSizeIndex, (markerSize _x) # 1];
+					} forEach BIS_WL_sectorLinks;
+
+					{
+						if (_x == BIS_WL_targetVote) then {
+							((_x getVariable "BIS_WL_markers") # 0) setMarkerSizeLocal [WL_MAP_PULSE_ICON_SIZE, WL_MAP_PULSE_ICON_SIZE];
+						} else {
+							((_x getVariable "BIS_WL_markers") # 0) setMarkerSizeLocal _markerSizeArr;
+						};
+					} forEach BIS_WL_selection_availableSectors;
+				};
 			};
-			
+
 			if (!_shown && BIS_WL_assetInfoActive) then {
 				BIS_WL_mapAssetTarget = objNull;
 				BIS_WL_assetInfoActive = false;
@@ -67,7 +89,7 @@ addMissionEventHandler ["Map", {
 						} else {
 							if ((crew _asset) findIf {alive _x} != -1) then {
 								playSound "AddItemFailed";
-								[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;				
+								[toUpper localize "STR_A3_WL_popup_asset_not_empty"] spawn BIS_fnc_WL2_smoothText;
 							} else {
 								_asset spawn BIS_fnc_WL2_deleteAssetFromMap;
 							};

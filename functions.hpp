@@ -93,6 +93,7 @@ class CfgFunctions {
 			class applyLoadoutVehicle {};
 			class applyPylon {};
 			class applyVehicle {};
+			class calculateFreeRearmEligibility {};
 			class changeHorn {};
 			class constructAircraftPylons {};
 			class constructPresetMenu {};

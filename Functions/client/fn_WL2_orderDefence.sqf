@@ -7,6 +7,7 @@ if (count _offset != 3) then {
 	_offset = [0, 1.5, 0];
 };
 
+private _selectionBefore = BIS_WL_currentSelection;
 BIS_WL_currentSelection = WL_ID_SELECTION_DEPLOYING_DEFENCE;
 
 if (visibleMap) then {
@@ -46,14 +47,14 @@ uiNamespace setVariable ["BIS_WL_deployKeyHandle", _deployKeyHandle];
 
 0 spawn {
 	waitUntil {
-		sleep WL_TIMEOUT_STANDARD; 
-		BIS_WL_spacePressed || 
-		{BIS_WL_backspacePressed || 
-		{vehicle player != player || 
-		{!alive player || 
-		{lifeState player == "INCAPACITATED" || 
-		{(count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0) || 
-		{(getPosATL player) select 2 > 1 || 
+		sleep WL_TIMEOUT_STANDARD;
+		BIS_WL_spacePressed ||
+		{BIS_WL_backspacePressed ||
+		{vehicle player != player ||
+		{!alive player ||
+		{lifeState player == "INCAPACITATED" ||
+		{(count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0) ||
+		{(getPosATL player) select 2 > 1 ||
 		{(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
 	}}}}}}}};
 
@@ -83,7 +84,7 @@ if (BIS_WL_spacePressed) then {
 };
 
 if (BIS_WL_currentSelection == WL_ID_SELECTION_DEPLOYING_DEFENCE) then {
-	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	BIS_WL_currentSelection = _selectionBefore;
 };
 
 sleep 0.1;
