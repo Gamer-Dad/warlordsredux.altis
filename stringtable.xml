@@ -597,6 +597,23 @@
             <Chinesesimp>禁用干扰器</Chinesesimp>
             <Chinese>禁用干擾器</Chinese>
         </Key>
+        <Key ID="STR_A3_jammer_activating">
+            <Original>Jammer activating...</Original>
+            <English>Jammer activating...</English>
+            <Czech>Rušička se aktivuje...</Czech>
+            <French>Jammer en activation...</French>
+            <German>Jammer wird aktiviert...</German>
+            <Italian>Disturbatore in attivazione...</Italian>
+            <Polish>Zakłócacz aktywuje się...</Polish>
+            <Portuguese>Jammer ativando...</Portuguese>
+            <Russian>Глушилка активируется...</Russian>
+            <Spanish>Activando el jammer...</Spanish>
+            <Turkish>Jammer aktifleştiriliyor...</Turkish>
+            <Korean>방해기가 활성화 중...</Korean>
+            <Japanese>ジャマーを活性化中...</Japanese>
+            <Chinesesimp>干扰器正在启动...</Chinesesimp>
+            <Chinese>干擾器正在啟動...</Chinese>
+        </Key>
         <Key ID="STR_A3_jammer_send">
             <Original>Send jamming signal</Original>
             <English>Send jamming signal</English>

@@ -60,7 +60,7 @@ if (isPlayer _owner) then {
 				};
 			};
 			case "Land_Communication_F": {
-				_asset setVariable ["BIS_WL_jammerActivated", true, true];
+				_asset setVariable ["BIS_WL_jammerActivated", false, true];
 
 				// too hardy otherwise, start off at 10% health
 				_asset setDamage 0.9;
