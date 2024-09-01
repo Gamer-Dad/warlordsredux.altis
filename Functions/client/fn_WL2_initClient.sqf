@@ -385,7 +385,7 @@ missionNamespace setVariable [format ["BIS_WL2_minesDB_%1", getPlayerUID player]
 			case WL_ID_SELECTION_VOTED: {
 				BIS_WL_selection_availableSectors = BIS_WL_sectorsArray # 1;
 				BIS_WL_selection_showLinks = true;
-				BIS_WL_selection_dimSectors = false;
+				BIS_WL_selection_dimSectors = true;
 			};
 			case WL_ID_SELECTION_FAST_TRAVEL: {
 				BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {(_x getVariable ["BIS_WL_owner", independent]) == (side (group player))};
