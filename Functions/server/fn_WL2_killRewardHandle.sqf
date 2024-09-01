@@ -40,7 +40,7 @@ if (_killerSide != _unitSide) then {
 	private _playerId = getPlayerID _responsibleLeader;
 	private _squadmatesIDs = ["getSquadmates", [_playerId]] call SQD_fnc_server;
 	if (count _squadmatesIDs > 1) then {
-		private _squadReward = round (_killReward * 0.75 / (count _squadmatesIDs));
+		private _squadReward = round (_killReward * 0.5 / (sqrt (count _squadmatesIDs)));
 		{
 			_uid = getUserInfo _x # 2;
 			_squadReward call BIS_fnc_WL2_fundsDatabaseWrite;
