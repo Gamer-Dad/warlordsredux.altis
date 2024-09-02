@@ -169,5 +169,9 @@ class CfgRemoteExec {
 		class setVehicleRadar {
 			allowedTargets = 0;
 		};
+
+		class setVelocityModelSpace {
+			allowedTargets = 2;
+		};
 	};
 };
