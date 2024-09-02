@@ -15,23 +15,23 @@ _mediumBlockList = [
     ["M_125mm_cannon_ATGM", 1],			// 125mm Cannon ATGM
 
     // Ground Vehicle AT
-    ["M_127mm_Firefist_AT",	1],		    // Nyx Firefist AT
+    ["M_127mm_Firefist_AT",	2],		    // Nyx Firefist AT - Max loadout: 6
     ["M_Titan_AT_long",	1],			    // Titan AT (Vehicle)
     ["M_SPG9_HE", 1],				    // SPG-9 HE
     ["M_SPG9_HEAT",	1],				    // SPG-9 HEAT
 
     // Air Vehicle SEAD
-    ["ammo_Missile_HARM", 1],		    // AGM-88 HARM
-    ["ammo_Missile_KH58", 1],		    // KH-58 ARM
+    ["ammo_Missile_HARM", 3],		    // AGM-88 HARM - Max loadout: 2
+    ["ammo_Missile_KH58", 2],		    // KH-58 ARM - Max loadout: 3
 
     // Air Vehicle Guided
     ["M_AT", 1],						// DAR
-    ["M_Jian_AT", 1],				    // Jian
+    ["M_Jian_AT", 2],				    // Jian - Max loadout: 4
     ["M_PG_AT", 1],					    // DAGR
     ["M_Scalpel_AT", 1],				// Scalpel
     ["M_Scalpel_AT_hidden",	1],		    // Scalpel (x2)
-    ["Missile_AGM_01_F", 3],			// Sharur
-    ["Missile_AGM_02_F", 2],			// Macer I && II (same mag)
+    ["Missile_AGM_01_F", 3],			// Sharur && KH25 - Max loadout: 8
+    ["Missile_AGM_02_F", 2],			// Macer I && II (same mag) - Max loadout: 20
 
     // Air Vehicle Unguided
     ["R_80mm_HE", 1],					// Skyfire

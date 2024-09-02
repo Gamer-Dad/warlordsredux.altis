@@ -331,7 +331,7 @@ class Vehicles {
         rearm = 1800;
         killReward = 600;
         capValue = 4;
-        aps = 2;
+        aps = 1;
     }; // "M4 Scorcher"
 
     class B_MBT_01_mlrs_F {
@@ -340,7 +340,7 @@ class Vehicles {
         rearm = 1800;
         killReward = 600;
         capValue = 4;
-        aps = 2;
+        aps = 1;
     }; // "M5 Sandstorm MLRS"
 
     class B_Truck_01_medical_F {
