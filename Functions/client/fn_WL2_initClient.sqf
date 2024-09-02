@@ -323,6 +323,8 @@ player addEventHandler ["HandleRating", {
 
 call SQD_fnc_initClient;
 
+call BIS_fnc_WL2_pingFixInit;
+
 0 spawn MRTM_fnc_settingsMenu;
 missionNamespace setVariable [format ["BIS_WL2_minesDB_%1", getPlayerUID player],
 	createHashMapFromArray [

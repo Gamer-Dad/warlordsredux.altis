@@ -14,6 +14,7 @@ if !(isDedicated) then {
 
 BIS_fnc_WL2_findSpawnPositions = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_findSpawnPositions.sqf";
 BIS_fnc_WL2_getSideBase = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_getSideBase.sqf";
+BIS_fnc_WL2_getAssetSide = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_getAssetSide.sqf";
 BIS_fnc_WL2_handleRespawnMarkers = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_handleRespawnMarkers.sqf";
 BIS_fnc_WL2_handleInstigator = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_handleInstigator.sqf";
 BIS_fnc_WL2_income = compileFinal preprocessFileLineNumbers "Functions\common\fn_WL2_income.sqf";
