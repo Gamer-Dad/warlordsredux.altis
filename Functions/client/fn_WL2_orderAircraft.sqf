@@ -12,18 +12,15 @@ if !(visibleMap) then {
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_targetSector = objNull;
+private _selectionBefore = BIS_WL_currentSelection;
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_AIRCRAFT;
 BIS_WL_orderedAssetRequirements = _requirements;
 sleep 0.25;
 
-"dropping" spawn BIS_fnc_WL2_sectorSelectionHandle;
-
 waitUntil {sleep 0.05; !isNull BIS_WL_targetSector || {!visibleMap || {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING}}};
 
-["dropping", "end"] call BIS_fnc_WL2_sectorSelectionHandle;
-
 if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_AIRCRAFT) then {
-	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	BIS_WL_currentSelection = _selectionBefore;
 };
 
 if (isNull BIS_WL_targetSector) exitWith {
@@ -34,4 +31,4 @@ if (isNull BIS_WL_targetSector) exitWith {
 
 [toUpper localize "STR_A3_WL_asset_dispatched_TODO_REWRITE"] spawn BIS_fnc_WL2_smoothText;
 
-[player, "orderAsset", BIS_WL_targetSector, _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+[player, "orderAsset", "air", BIS_WL_targetSector, _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];

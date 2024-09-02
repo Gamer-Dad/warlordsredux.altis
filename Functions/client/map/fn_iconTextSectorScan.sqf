@@ -1,6 +1,7 @@
-_vd = getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName');
-_text = "";
-if !(vehicle _t isKindOf "CAManBase") then {
-	_text = _vd;
+params ["_unit"];
+
+if !(vehicle _unit isKindOf "CAManBase") then {
+	getText (configFile >> 'CfgVehicles' >> (typeOf _unit) >> 'displayName');
+} else {
+	"";
 };
-_text;

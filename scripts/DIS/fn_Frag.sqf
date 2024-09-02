@@ -1,28 +1,50 @@
-params ["_m", "_unit"];
+params ["_projectile", "_unit"];
+
+private _target = objNull;
+private _frag = false;
+private _projectileClass = typeOf _projectile;
+private _range = getNumber (configfile >> "CfgAmmo" >> _projectileClass >> "indirectHitRange");
 
 private _targets = [];
-private _target = objNull;
-private _tPos = [];
-private _frag = false;
-private _range = (getNumber (configfile>>"CfgAmmo">>(typeOf _m)>>"indirectHitRange") * 1.5);
-_type = (typeOf _m);
+private _lastDistance = 10000;
 
-while {alive _m} do{
-	_targets = _m nearEntities ["AIR", _range];
-	if ((count _targets) > 0) exitWith {_frag = true; _target = (_targets select 0)};
+scopeName "main";
+while { alive _projectile } do {
+	_targets = _projectile nearEntities ["AIR", _range * 1.5];
+	if (count _targets > 0) then {
+		_target = _targets # 0;
+		private _distanceToTarget = _projectile distance _target;
+
+		if (_distanceToTarget < _range) then {
+			_frag = true;
+			_lastDistance = _distanceToTarget;
+			breakTo "main";
+		};
+
+		// Don't detonate prematurely if we're still approaching target
+		if (_distanceToTarget > _lastDistance) then {
+			_frag = true;
+			_lastDistance = _distanceToTarget;
+			breakTo "main";
+		};
+
+		_lastDistance = _distanceToTarget;
+	};
+
 	sleep .01;
 };
 
-if !(_frag) exitWith {};
-if ((count _targets) < 1) exitWith {};
+if (!_frag) exitWith {};
+if (count _targets < 1) exitWith {};
 
-//Vanilla explo
-_tPos = getPos _target;
-_pos = getPos _m;
-triggerAmmo _m;
-_d = _pos distance _tPos;
-systemChat format ["SAM detonated %1 meters from target", round _d];
+// Vanilla explosion
+private _projectilePosition = getPos _projectile;
+private _targetPosition = getPos _target;
+private _distanceToTarget = _projectile distance _target;
 
-//Burst Explo
-_m2 = createVehicle [_type, _pos, [], 50, "FLY"];
-triggerAmmo _m2;
+triggerAmmo _projectile;
+systemChat format ["SAM detonated %1 meters from target.", round _distanceToTarget];
+
+// Burst Explosion
+private _burst = createVehicle [_projectileClass, _projectilePosition, [], 50, "FLY"];
+triggerAmmo _burst;

@@ -16,6 +16,8 @@ if (side player == west) exitWith {
 		[toUpper localize "STR_A3_WL_popup_travelling_FTVehicle"] spawn BIS_fnc_WL2_smoothText;
 		sleep 1;
 		player setPos _positionFT;
+
+		[player, "ftSupportPoints", _x] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 		sleep 1;
 		titleCut ["", "BLACK IN", 1];
 	} forEach entities "B_Slingload_01_Medevac_F";
@@ -29,6 +31,8 @@ if (side player == east) exitWith {
 		[toUpper localize "STR_A3_WL_popup_travelling_FTVehicle"] spawn BIS_fnc_WL2_smoothText;
 		sleep 1;
 		player moveInCargo _x;
+
+		[player, "ftSupportPoints", _x] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 		sleep 1;
 		titleCut ["", "BLACK IN", 1];
 	} forEach entities "Land_Pod_Heli_Transport_04_medevac_F";

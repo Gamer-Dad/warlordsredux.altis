@@ -173,21 +173,21 @@
             <Chinese>Alt-Shift-點擊以%1刪除%2%3%4。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_save_loadout">
-            <Original>Save loadout.</Original>
-            <English>Save loadout.</English>
-            <Czech>Uložit výbavu.</Czech>
-            <French>Enregistrer la configuration.</French>
-            <German>Ausrüstung speichern.</German>
-            <Italian>Salva configurazione.</Italian>
-            <Polish>Zapisz wyposażenie.</Polish>
-            <Portuguese>Salvar configuração.</Portuguese>
-            <Russian>Сохранить снаряжение.</Russian>
-            <Spanish>Guardar configuración.</Spanish>
-            <Turkish>Ekipman kaydet.</Turkish>
-            <Korean>장비 저장.</Korean>
-            <Japanese>装備を保存。</Japanese>
-            <Chinesesimp>保存装备。</Chinesesimp>
-            <Chinese>保存裝備。</Chinese>
+            <Original>Save loadout</Original>
+            <English>Save loadout</English>
+            <Czech>Uložit výbavu</Czech>
+            <French>Enregistrer la configuration</French>
+            <German>Ausrüstung speichern</German>
+            <Italian>Salva configurazione</Italian>
+            <Polish>Zapisz wyposażenie</Polish>
+            <Portuguese>Salvar configuração</Portuguese>
+            <Russian>Сохранить снаряжение</Russian>
+            <Spanish>Guardar configuración</Spanish>
+            <Turkish>Ekipman kaydet</Turkish>
+            <Korean>장비 저장</Korean>
+            <Japanese>装備を保存</Japanese>
+            <Chinesesimp>保存装备</Chinesesimp>
+            <Chinese>保存裝備</Chinese>
         </Key>
         <Key ID="STR_A3_WL_save_loadout_info">
             <Original>Save your current loadout for later reapplication.</Original>
@@ -207,21 +207,21 @@
             <Chinese>保存您当前的装载方案，以便后续使用。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_saved_loadout">
-            <Original>Your saved loadout.</Original>
-            <English>Your saved loadout.</English>
-            <Czech>Tvůj uložený výběr výzbroje.</Czech>
-            <French>Votre équipement enregistré.</French>
-            <German>Deine gespeicherte Ausrüstung.</German>
-            <Italian>Il tuo equipaggiamento salvato.</Italian>
-            <Polish>Twój zapisany wybór wyposażenia.</Polish>
-            <Portuguese>Seu equipamento salvo.</Portuguese>
-            <Russian>Ваше сохраненное снаряжение.</Russian>
-            <Spanish>Tu equipación guardada.</Spanish>
-            <Turkish>Kaydedilen ekipmanınız.</Turkish>
-            <Korean>저장된 로드아웃.</Korean>
-            <Japanese>保存された装備。</Japanese>
-            <Chinesesimp>你保存的装备。</Chinesesimp>
-            <Chinese>您保存的装备。</Chinese>
+            <Original>Your saved loadout</Original>
+            <English>Your saved loadout</English>
+            <Czech>Tvůj uložený výběr výzbroje</Czech>
+            <French>Votre équipement enregistré</French>
+            <German>Deine gespeicherte Ausrüstung</German>
+            <Italian>Il tuo equipaggiamento salvato</Italian>
+            <Polish>Twój zapisany wybór wyposażenia</Polish>
+            <Portuguese>Seu equipamento salvo</Portuguese>
+            <Russian>Ваше сохраненное снаряжение</Russian>
+            <Spanish>Tu equipación guardada</Spanish>
+            <Turkish>Kaydedilen ekipmanınız</Turkish>
+            <Korean>저장된 로드아웃</Korean>
+            <Japanese>保存された装備</Japanese>
+            <Chinesesimp>你保存的装备</Chinesesimp>
+            <Chinese>您保存的装备</Chinese>
         </Key>
         <Key ID="STR_A3_WL_saved_loadout_info">
             <Original>Apply your saved loadout.%1You can save your current loadout by requesting 'Save loadout' at the end of this list.</Original>
@@ -410,6 +410,40 @@
             <Chinesesimp>您需要在拥有的扇区中。</Chinesesimp>
             <Chinese>您需要在拥有的扇区中。</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_jammer_restr">
+            <Original>Jammer tower ranges may not overlap!</Original>
+            <English>Jammer tower ranges may not overlap!</English>
+            <Czech>Rozsahy věží s rušičkami se nesmí překrývat!</Czech>
+            <French>Les portées des tours de brouilleurs ne doivent pas se chevaucher!</French>
+            <German>Die Reichweiten der Jammer-Türme dürfen sich nicht überlappen!</German>
+            <Italian>Le aree di copertura delle torri jammer non possono sovrapporsi!</Italian>
+            <Polish>Zasięgi wieżyczek zakłócających nie mogą na siebie nachodzić!</Polish>
+            <Portuguese>Os alcances das torres de jammer não podem se sobrepor!</Portuguese>
+            <Russian>Зоны действия башен глушилок не должны перекрываться!</Russian>
+            <Spanish>¡Los rangos de las torres jammer no pueden superponerse!</Spanish>
+            <Turkish>Jammer kulelerinin menzilleri üst üste gelmemeli!</Turkish>
+            <Korean>방해 탑의 범위가 겹쳐질 수 없습니다!</Korean>
+            <Japanese>ジャマータワーの範囲は重なってはいけません！</Japanese>
+            <Chinesesimp>干扰塔的范围不得重叠！</Chinesesimp>
+            <Chinese>干擾塔的範圍不得重疊！</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_jammer_home_restr">
+            <Original>Jammer towers may not be placed in home base!</Original>
+            <English>Jammer towers may not be placed in home base!</English>
+            <Czech>Rušící věže nesmí být umístěny v domovské základně!</Czech>
+            <French>Les tours de brouilleurs ne peuvent pas être placées dans la base principale!</French>
+            <German>Jammer-Türme dürfen nicht in der Heimatbasis aufgestellt werden!</German>
+            <Italian>Le torri jammer non possono essere posizionate nella base principale!</Italian>
+            <Polish>Wieżyczki zakłócające nie mogą być umieszczone w bazie domowej!</Polish>
+            <Portuguese>As torres de jammer não podem ser colocadas na base principal!</Portuguese>
+            <Russian>Башни глушилок не могут быть размещены на домашней базе!</Russian>
+            <Spanish>¡Las torres de jammer no pueden colocarse en la base principal!</Spanish>
+            <Turkish>Jammer kuleleri ana üste yerleştirilemez!</Turkish>
+            <Korean>방해 탑을 본진에 배치할 수 없습니다!</Korean>
+            <Japanese>ジャマータワーを本拠地に設置することはできません！</Japanese>
+            <Chinesesimp>干扰塔不得放置在主基地中！</Chinesesimp>
+            <Chinese>干擾塔不得放置在主基地中！</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_ftVehicle_ft_restr">
             <Original>No fast travel vehicle available.</Original>
             <English>No fast travel vehicle available.</English>
@@ -511,7 +545,7 @@
             <Japanese>Dazzler を有効にする</Japanese>
             <Chinesesimp>启用 dazzler</Chinesesimp>
             <Chinese>啟用 dazzler</Chinese>
-        </Key> 
+        </Key>
         <Key ID="STR_A3_dazzler_disable">
             <Original>Disable dazzler</Original>
             <English>Disable dazzler</English>
@@ -528,6 +562,125 @@
             <Japanese>Dazzler を無効にする</Japanese>
             <Chinesesimp>禁用 dazzler</Chinesesimp>
             <Chinese>禁用 dazzler</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_enable">
+            <Original>Enable jammer</Original>
+            <English>Enable jammer</English>
+            <Czech>Povolit rušičku</Czech>
+            <French>Activer le brouilleur</French>
+            <German>Jammer aktivieren</German>
+            <Italian>Attiva il disturbatore</Italian>
+            <Polish>Włącz zakłócacz</Polish>
+            <Portuguese>Ativar o jammer</Portuguese>
+            <Russian>Включить глушилку</Russian>
+            <Spanish>Activar el jammer</Spanish>
+            <Turkish>Jammer'ı etkinleştir</Turkish>
+            <Korean>방해기 활성화</Korean>
+            <Japanese>ジャマーを有効にする</Japanese>
+            <Chinesesimp>启用干扰器</Chinesesimp>
+            <Chinese>啟用干擾器</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_disable">
+            <Original>Disable jammer</Original>
+            <English>Disable jammer</English>
+            <Czech>Zakázat rušičku</Czech>
+            <French>Désactiver le brouilleur</French>
+            <German>Jammer deaktivieren</German>
+            <Italian>Disattiva il disturbatore</Italian>
+            <Polish>Wyłącz zakłócacz</Polish>
+            <Portuguese>Desativar o jammer</Portuguese>
+            <Russian>Отключить глушилку</Russian>
+            <Spanish>Desactivar el jammer</Spanish>
+            <Turkish>Jammer'ı devre dışı bırak</Turkish>
+            <Korean>방해기 비활성화</Korean>
+            <Japanese>ジャマーを無効にする</Japanese>
+            <Chinesesimp>禁用干扰器</Chinesesimp>
+            <Chinese>禁用干擾器</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_activating">
+            <Original>Jammer activating...</Original>
+            <English>Jammer activating...</English>
+            <Czech>Rušička se aktivuje...</Czech>
+            <French>Jammer en activation...</French>
+            <German>Jammer wird aktiviert...</German>
+            <Italian>Disturbatore in attivazione...</Italian>
+            <Polish>Zakłócacz aktywuje się...</Polish>
+            <Portuguese>Jammer ativando...</Portuguese>
+            <Russian>Глушилка активируется...</Russian>
+            <Spanish>Activando el jammer...</Spanish>
+            <Turkish>Jammer aktifleştiriliyor...</Turkish>
+            <Korean>방해기가 활성화 중...</Korean>
+            <Japanese>ジャマーを活性化中...</Japanese>
+            <Chinesesimp>干扰器正在启动...</Chinesesimp>
+            <Chinese>干擾器正在啟動...</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_send">
+            <Original>Send jamming signal</Original>
+            <English>Send jamming signal</English>
+            <Czech>Odeslat rušící signál</Czech>
+            <French>Envoyer un signal de brouillage</French>
+            <German>Störsignal senden</German>
+            <Italian>Inviare segnale di disturbo</Italian>
+            <Polish>Wysłać sygnał zakłócający</Polish>
+            <Portuguese>Enviar sinal de interferência</Portuguese>
+            <Russian>Послать помеховый сигнал</Russian>
+            <Spanish>Enviar señal de interferencia</Spanish>
+            <Turkish>Jam sinyali gönder</Turkish>
+            <Korean>교란 신호 보내기</Korean>
+            <Japanese>ジャミング信号を送信する</Japanese>
+            <Chinesesimp>发送干扰信号</Chinesesimp>
+            <Chinese>發送干擾信號</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_sent">
+            <Original>Jamming signal sent!</Original>
+            <English>Jamming signal sent!</English>
+            <Czech>Rušící signál odeslán!</Czech>
+            <French>Signal de brouillage envoyé!</French>
+            <German>Störsignal gesendet!</German>
+            <Italian>Segnale di disturbo inviato!</Italian>
+            <Polish>Sygnał zakłócający wysłany!</Polish>
+            <Portuguese>Sinal de interferência enviado!</Portuguese>
+            <Russian>Помеховый сигнал послан!</Russian>
+            <Spanish>Señal de interferencia enviada!</Spanish>
+            <Turkish>Jam sinyali gönderildi!</Turkish>
+            <Korean>교란 신호 발신됨!</Korean>
+            <Japanese>ジャミング信号を送信しました!</Japanese>
+            <Chinesesimp>干扰信号已发送!</Chinesesimp>
+            <Chinese>干擾信號已發送!</Chinese>
+        </Key>
+        <Key ID="STR_A3_UAV_jammed">
+            <Original>UAV hit with jamming signal!</Original>
+            <English>UAV hit with jamming signal!</English>
+            <Czech>UAV zasažen rušícím signálem!</Czech>
+            <French>Le drone a été touché par un signal de brouillage!</French>
+            <German>UAV von Störsignal getroffen!</German>
+            <Italian>UAV colpito da segnale di disturbo!</Italian>
+            <Polish>UAV trafiony sygnałem zakłócającym!</Polish>
+            <Portuguese>UAV atingido por sinal de interferência!</Portuguese>
+            <Russian>БПЛА поражен помеховым сигналом!</Russian>
+            <Spanish>Dron impactado con señal de interferencia!</Spanish>
+            <Turkish>İHA jam sinyali ile vuruldu!</Turkish>
+            <Korean>무인 항공기가 교란 신호를 받았습니다!</Korean>
+            <Japanese>UAVがジャミング信号で撃たれました!</Japanese>
+            <Chinesesimp>无人机被干扰信号击中!</Chinesesimp>
+            <Chinese>無人機被干擾信號擊中!</Chinese>
+        </Key>
+        <Key ID="STR_A3_jammer_strength">
+            <Original>Jamming signal strength: %1</Original>
+            <English>Jamming signal strength: %1</English>
+            <Czech>Síla rušícího signálu: %1</Czech>
+            <French>Intensité du signal de brouillage : %1</French>
+            <German>Stärke des Störsignals: %1</German>
+            <Italian>Intensità del segnale di disturbo: %1</Italian>
+            <Polish>Siła sygnału zakłócającego: %1</Polish>
+            <Portuguese>Intensidade do sinal de interferência: %1</Portuguese>
+            <Russian>Мощность помехового сигнала: %1</Russian>
+            <Spanish>Intensidad de la señal de interferencia: %1</Spanish>
+            <Turkish>Jam sinyali gücü: %1</Turkish>
+            <Korean>교란 신호 강도: %1</Korean>
+            <Japanese>ジャミング信号の強度: %1</Japanese>
+            <Chinesesimp>干扰信号强度: %1</Chinesesimp>
+            <Chinese>干擾信號強度: %1</Chinese>
         </Key>
         <Key ID="STR_A3_radar_rotation_enable">
             <Original>Enable Automatic Rotation</Original>
@@ -700,7 +853,7 @@
             <Japanese>Warlords Reduxについて。</Japanese>
             <Chinesesimp>关于 Warlords Redux。</Chinesesimp>
             <Chinese>关于 Warlords Redux。</Chinese>
-        </Key>  
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_02">
             <Original>How To Play.</Original>
             <English>How To Play.</English>
@@ -734,7 +887,7 @@
             <Japanese>私たちのチーム。</Japanese>
             <Chinesesimp>我们的队伍。</Chinesesimp>
             <Chinese>我們的隊伍。</Chinese>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_04">
             <Original>Our Discord.</Original>
             <English>Our Discord.</English>
@@ -751,7 +904,7 @@
             <Japanese>私たちのDiscord.</Japanese>
             <Chinesesimp>我们的Discord.</Chinesesimp>
             <Chinese>我们的Discord.</Chinese>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_05">
             <Original>Changelog.</Original>
             <English>Changelog.</English>
@@ -768,7 +921,7 @@
             <Japanese>変更履歴。</Japanese>
             <Chinesesimp>更改日志。</Chinesesimp>
             <Chinese>更改日志。</Chinese>
-        </Key> 
+        </Key>
          <Key ID="STR_MRTM_welcomeInteract_06">
             <Original>Third Party Scripts.</Original>
             <English>Third Party Scripts.</English>
@@ -785,7 +938,7 @@
             <Japanese>サードパーティースクリプト。</Japanese>
             <Chinesesimp>第三方脚本。</Chinesesimp>
             <Chinese>第三方脚本。</Chinese>
-        </Key>  
+        </Key>
         <Key ID="STR_MRTM_welcomeInteract_07">
             <Original>Welcome to Warlords Redux!</Original>
             <English>Welcome to Warlords Redux!</English>
@@ -797,7 +950,7 @@
             <Portuguese>Bem-vindo ao Warlords Redux!</Portuguese>
             <Russian>Добро пожаловать на Warlords Redux!</Russian>
             <Spanish>Bienvenido a Warlords Redux!</Spanish>
-            <Turkish>Warlords Redux'a hoş geldiniz!</Turkish>    
+            <Turkish>Warlords Redux'a hoş geldiniz!</Turkish>
             <Korean>Warlords Redux에 오신 것을 환영합니다!</Korean>
             <Japanese>Warlords Reduxへようこそ！</Japanese>
             <Chinesesimp>欢迎来到Warlords Redux！</Chinesesimp>
@@ -1109,39 +1262,22 @@
             <Chinesesimp>飞机名称</Chinesesimp>
             <Chinese>飛機名稱</Chinese>
         </Key>
-        <Key ID="STR_WLM_APPLY_PYLONS">
-            <Original>Apply Pylons</Original>
-            <English>Apply Pylons</English>
-            <Czech>Použít pylony</Czech>
-            <French>Appliquer pylônes</French>
-            <German>Pylonen anwenden</German>
-            <Italian>Applica i piloni</Italian>
-            <Polish>Zastosuj pylony</Polish>
-            <Portuguese>Aplicar Pylons</Portuguese>
-            <Russian>Применить пилоны</Russian>
-            <Spanish>Aplicar pilones</Spanish>
-            <Turkish>Pilonları Uygula</Turkish>
-            <Korean>파일론 적용</Korean>
-            <Japanese>パイロンを適用</Japanese>
-            <Chinesesimp>应用挂架</Chinesesimp>
-            <Chinese>應用掛架</Chinese>
-        </Key>
-        <Key ID="STR_WLM_APPLY_PYLONS_DESC">
-            <Original>Apply the selected pylons to the aircraft. WARNING: THIS WILL REMOVE ALL PYLON AMMO.</Original>
-            <English>Apply the selected pylons to the aircraft. WARNING: THIS WILL REMOVE ALL PYLON AMMO.</English>
-            <Czech>Použijte vybrané pylony na letadlo. VAROVÁNÍ: TÍMTO BUDOU ODSTRANĚNY VŠECHNY NÁBOJE Z PYLONŮ.</Czech>
-            <French>Appliquez les pylônes sélectionnés à l'avion. ATTENTION : CELA SUPPRIMERA TOUTES LES MUNITIONS DES PYLÔNES.</French>
-            <German>Wenden Sie die ausgewählten Pylonen auf das Flugzeug an. WARNUNG: DIES ENTFERNT ALLE PYLONEN-MUNITION.</German>
-            <Italian>Applica i piloni selezionati all'aereo. ATTENZIONE: QUESTO RIMUOVERÀ TUTTE LE MUNIZIONI DEI PILONI.</Italian>
-            <Polish>Zastosuj wybrane pylony do samolotu. OSTRZEŻENIE: TO USUNIE WSZYSTKIE AMUNICJE PYLONÓW.</Polish>
-            <Portuguese>Aplicar os pylons selecionados à aeronave. AVISO: ISSO REMOVERÁ TODAS AS MUNIÇÕES DOS PYLONS.</Portuguese>
-            <Russian>Примените выбранные пилоны к самолету. ВНИМАНИЕ: ЭТО УДАЛИТ ВСЕ БОЕПРИПАСЫ НА ПИЛОНАХ.</Russian>
-            <Spanish>Aplica los pilones seleccionados al avión. ADVERTENCIA: ESTO ELIMINARÁ TODAS LAS MUNICIONES DE LOS PILONES.</Spanish>
-            <Turkish>Seçilen pilonları uçağa uygulayın. UYARI: BU TÜM PİLON MÜHİMMATINI KALDIRIR.</Turkish>
-            <Korean>선택한 파일론을 항공기에 적용하십시오. 경고: 이 작업은 모든 파일론 탄약을 제거합니다.</Korean>
-            <Japanese>選択したパイロンを航空機に適用します。警告：これにより、すべてのパイロン弾薬が削除されます。</Japanese>
-            <Chinesesimp>将选定的挂架应用到飞机上。警告：这将删除所有挂架弹药。</Chinesesimp>
-            <Chinese>將選定的掛架應用到飛機上。警告：這將刪除所有掛架彈藥。</Chinese>
+        <Key ID="STR_WLM_APPLY_DESC">
+            <Original>Apply the selected configuration to the vehicle. WARNING: THIS MIGHT REMOVE ALL AMMO.</Original>
+            <English>Apply the selected configuration to the vehicle. WARNING: THIS MIGHT REMOVE ALL AMMO.</English>
+            <Czech>Použijte vybranou konfiguraci na vozidlo. VAROVÁNÍ: TOTO MŮŽE ODSTRANIT VEŠKEROU AMUNICI.</Czech>
+            <French>Appliquez la configuration sélectionnée au véhicule. ATTENTION : CELA PEUT SUPPRIMER TOUTES LES MUNITIONS.</French>
+            <German>Wenden Sie die ausgewählte Konfiguration auf das Fahrzeug an. WARNUNG: DIES KÖNNTE ALLE MUNITION ENTFERNEN.</German>
+            <Italian>Applica la configurazione selezionata al veicolo. AVVERTENZA: QUESTO POTREBBE RIMUOVERE TUTTE LE MUNIZIONI.</Italian>
+            <Polish>Zastosuj wybraną konfigurację do pojazdu. OSTRZEŻENIE: MOŻE TO USUNĄĆ WSZYSTKĄ AMUNICJĘ.</Polish>
+            <Portuguese>Aplicar a configuração selecionada no veículo. AVISO: ISTO PODE REMOVER TODA A MUNIÇÃO.</Portuguese>
+            <Russian>Примените выбранную конфигурацию к транспортному средству. ВНИМАНИЕ: ЭТО МОЖЕТ УДАЛИТЬ ВСЕ БОЕПРИПАСЫ.</Russian>
+            <Spanish>Aplica la configuración seleccionada al vehículo. ADVERTENCIA: ESTO PUEDE ELIMINAR TODA LA MUNICI&Oacute;N.</Spanish>
+            <Turkish>Seçilen yapılandırmayı araca uygulayın. UYARI: TÜM MÜHİMMATI KALDIRABİLİR.</Turkish>
+            <Korean>선택한 구성을 차량에 적용하십시오. 경고: 이 작업은 모든 탄약을 제거할 수 있습니다.</Korean>
+            <Japanese>選択した設定を車両に適用します。 警告： これにより、すべての弾薬が削除される可能性があります。</Japanese>
+            <Chinesesimp>将所选配置应用于车辆。 警告： 这可能会删除所有弹药。</Chinesesimp>
+            <Chinese>將所選配置應用於車輛。 警告： 這可能會刪除所有彈藥。</Chinese>
         </Key>
         <Key ID="STR_WLM_SAVE">
             <Original>Save</Original>
@@ -1193,6 +1329,74 @@
             <Japanese>ロードアウト</Japanese>
             <Chinesesimp>配置</Chinesesimp>
             <Chinese>配置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPEARANCE">
+            <Original>Appearance</Original>
+            <English>Appearance</English>
+            <Czech>Vzhled</Czech>
+            <French>Apparence</French>
+            <German>Aussehen</German>
+            <Italian>Aspetto</Italian>
+            <Polish>Wygląd</Polish>
+            <Portuguese>Aparência</Portuguese>
+            <Russian>Внешний вид</Russian>
+            <Spanish>Apariencia</Spanish>
+            <Turkish>Görünüm</Turkish>
+            <Korean>외관</Korean>
+            <Japanese>外観</Japanese>
+            <Chinesesimp>外观</Chinesesimp>
+            <Chinese>外观</Chinese>
+        </Key>
+        <Key ID="STR_WLM_CUSTOMIZATION">
+            <Original>Customization</Original>
+            <English>Customization</English>
+            <Czech>Přizpůsobení</Czech>
+            <French>Personnalisation</French>
+            <German>Anpassung</German>
+            <Italian>Personalizzazione</Italian>
+            <Polish>Dostosowanie</Polish>
+            <Portuguese>Personalização</Portuguese>
+            <Russian>Настройка</Russian>
+            <Spanish>Personalización</Spanish>
+            <Turkish>Özelleştirme</Turkish>
+            <Korean>사용자 지정</Korean>
+            <Japanese>カスタマイズ</Japanese>
+            <Chinesesimp>自定义</Chinesesimp>
+            <Chinese>自訂</Chinese>
+        </Key>
+        <Key ID="STR_WLM_CUSTOMIZATION_TOOLTIP">
+            <Original>Select and apply vehicle customization.</Original>
+            <English>Select and apply vehicle customization.</English>
+            <Czech>Vyberte a aplikujte úpravy vozidla.</Czech>
+            <French>Sélectionnez et appliquez la personnalisation du véhicule.</French>
+            <German>Fahrzeuganpassungen auswählen und anwenden.</German>
+            <Italian>Seleziona e applica la personalizzazione del veicolo.</Italian>
+            <Polish>Wybierz i zastosuj dostosowanie pojazdu.</Polish>
+            <Portuguese>Selecione e aplique a personalização do veículo.</Portuguese>
+            <Russian>Выбрать и применить настройку транспортного средства.</Russian>
+            <Spanish>Seleccionar y aplicar la personalización del vehículo.</Spanish>
+            <Turkish>Araç kişiselleştirmesini seçin ve uygulayın.</Turkish>
+            <Korean>차량 맞춤 설정을 선택하고 적용합니다.</Korean>
+            <Japanese>車両のカスタマイズを選択して適用します。</Japanese>
+            <Chinesesimp>选择并应用车辆定制。</Chinesesimp>
+            <Chinese>選擇並應用車輛定制。</Chinese>
+        </Key>
+        <Key ID="STR_WLM_APPLY_ALL_EXTRAS">
+            <Original>Apply All Extras</Original>
+            <English>Apply All Extras</English>
+            <Czech>Použít všechny doplňky</Czech>
+            <French>Appliquer tous les extras</French>
+            <German>Alle Extras anwenden</German>
+            <Italian>Applica tutti gli extra</Italian>
+            <Polish>Zastosuj wszystkie dodatki</Polish>
+            <Portuguese>Aplicar todos os extras</Portuguese>
+            <Russian>Применить все дополнения</Russian>
+            <Spanish>Aplicar todos los extras</Spanish>
+            <Turkish>Tüm ekstraları uygula</Turkish>
+            <Korean>모든 추가 기능 적용</Korean>
+            <Japanese>すべてのエクストラを適用</Japanese>
+            <Chinesesimp>应用所有额外</Chinesesimp>
+            <Chinese>應用所有額外</Chinese>
         </Key>
         <Key ID="STR_WLM_SELECT_LOADOUT">
             <Original>Select a loadout.</Original>
@@ -1262,22 +1466,56 @@
             <Chinesesimp>重新武装</Chinesesimp>
             <Chinese>重新武裝</Chinese>
         </Key>
-        <Key ID="STR_WLM_DEFAULT_SKIN">
-            <Original>Default Skin</Original>
-            <English>Default Skin</English>
-            <Czech>Výchozí skin</Czech>
-            <French>Peau par défaut</French>
-            <German>Standard-Skin</German>
-            <Italian>Pelle predefinita</Italian>
-            <Polish>Domyślna skóra</Polish>
-            <Portuguese>Skin padrão</Portuguese>
-            <Russian>Стандартная оболочка</Russian>
-            <Spanish>Piel predeterminada</Spanish>
-            <Turkish>Varsayılan Cilt</Turkish>
-            <Korean>기본 스킨</Korean>
-            <Japanese>デフォルトスキン</Japanese>
-            <Chinesesimp>默认皮肤</Chinesesimp>
-            <Chinese>默認皮膚</Chinese>
+        <Key ID="STR_WLM_DEFAULT">
+            <Original>Default</Original>
+            <English>Default</English>
+            <Czech>Výchozí</Czech>
+            <French>Défaut</French>
+            <German>Standard</German>
+            <Italian>Predefinito</Italian>
+            <Polish>Domyślny</Polish>
+            <Portuguese>Padrão</Portuguese>
+            <Russian>По умолчанию</Russian>
+            <Spanish>Predeterminado</Spanish>
+            <Turkish>Varsayılan</Turkish>
+            <Korean>기본값</Korean>
+            <Japanese>デフォルト</Japanese>
+            <Chinesesimp>默认</Chinesesimp>
+            <Chinese>默認</Chinese>
+        </Key>
+        <Key ID="STR_WLM_RESET">
+            <Original>Reset</Original>
+            <English>Reset</English>
+            <Czech>Reset</Czech>
+            <French>Réinitialiser</French>
+            <German>Zurücksetzen</German>
+            <Italian>Reset</Italian>
+            <Polish>Reset</Polish>
+            <Portuguese>Redefinir</Portuguese>
+            <Russian>Сброс</Russian>
+            <Spanish>Reiniciar</Spanish>
+            <Turkish>Sıfırla</Turkish>
+            <Korean>재설정</Korean>
+            <Japanese>リセット</Japanese>
+            <Chinesesimp>重置</Chinesesimp>
+            <Chinese>重置</Chinese>
+        </Key>
+        <Key ID="STR_WLM_RESET_TOOLTIP">
+            <Original>Reset loadout selections to vehicle current loadout.</Original>
+            <English>Reset loadout selections to vehicle current loadout.</English>
+            <Czech>Obnovit výběr výzbroje na aktuální výzbroj vozidla.</Czech>
+            <French>Réinitialiser les sélections d'équipement au chargement actuel du véhicule.</French>
+            <German>Die Ausrüstungsauswahl auf die aktuelle Fahrzeugbeladung zurücksetzen.</German>
+            <Italian>Reimposta le selezioni di equipaggiamento all'attrezzatura corrente del veicolo.</Italian>
+            <Polish>Przywróć wybór wyposażenia do bieżącego wyposażenia pojazdu.</Polish>
+            <Portuguese>Reiniciar seleções de equipamento para o equipamento atual do veículo.</Portuguese>
+            <Russian>Сбросить выбор снаряжения к текущему снаряжению транспортного средства.</Russian>
+            <Spanish>Restablecer las selecciones de equipamiento al equipamiento actual del vehículo.</Spanish>
+            <Turkish>Araçtaki mevcut donanım seçimlerini sıfırla.</Turkish>
+            <Korean>차량의 현재 장비 구성으로 장비 선택을 재설정합니다.</Korean>
+            <Japanese>装備の選択を現在の車両の装備にリセットします。</Japanese>
+            <Chinesesimp>将装备选择重置为车辆当前装备。</Chinesesimp>
+            <Chinese>將裝備選擇重置為車輛當前裝備。</Chinese>
         </Key>
         <Key ID="STR_WLM_REARM_DESC">
             <Original>Rearm vehicle. Make sure you've selected the correct pylons before rearming.</Original>
@@ -1433,21 +1671,21 @@
             <Chinese>掛架應用警告</Chinese>
         </Key>
         <Key ID="STR_WLM_APPLY_PYLONS_AMMO_WARNING">
-            <Original>Applying pylons will remove all ammo from your pylons until you rearm! Continue?</Original>
-            <English>Applying pylons will remove all ammo from your pylons until you rearm! Continue?</English>
-            <Czech>Nasazení pilonů odstraní veškerou munici z vašich pilonů, dokud je znovu nevyzbrojíte! Pokračovat?</Czech>
-            <French>L'application des pylônes retirera toutes les munitions de vos pylônes jusqu'à ce que vous réarmiez! Continuer?</French>
-            <German>Das Anbringen von Pylonen entfernt alle Munition von Ihren Pylonen, bis Sie wieder bewaffnen! Fortsetzen?</German>
-            <Italian>L'applicazione dei piloni rimuoverà tutte le munizioni dai tuoi piloni fino a quando non riarmarerai! Continuare?</Italian>
-            <Polish>Zastosowanie pylonów usunie całą amunicję z twoich pylonów, dopóki nie uzbroisz ponownie! Kontynuować?</Polish>
-            <Portuguese>Aplicar pilones removerá toda a munição de seus pilones até que você rearme! Continuar?</Portuguese>
-            <Russian>Применение пилонов удалит все боеприпасы с ваших пилонов до повторного вооружения! Продолжить?</Russian>
-            <Spanish>Aplicar pilones eliminará toda la munición de tus pilones hasta que vuelvas a armar! ¿Continuar?</Spanish>
-            <Turkish>Pilonları uygulamak, yeniden silahlanana kadar pilonlarınızdaki tüm mühimmatı kaldıracaktır! Devam edilsin mi?</Turkish>
-            <Korean>파일런을 적용하면 재장전할 때까지 파일런의 모든 탄약이 제거됩니다! 계속하시겠습니까?</Korean>
-            <Japanese>パイロンを適用すると、再武装するまでパイロンの弾薬がすべて取り除かれます! 続けますか?</Japanese>
-            <Chinesesimp>应用挂架将移除所有挂架上的弹药，直到重新装填！继续吗？</Chinesesimp>
-            <Chinese>應用掛架將移除所有掛架上的彈藥，直到重新裝填！繼續嗎？</Chinese>
+            <Original>Applying magazines will remove all ammo from your magazines until you rearm! Continue?</Original>
+            <English>Applying magazines will remove all ammo from your magazines until you rearm! Continue?</English>
+            <Czech>Nasazení zásobníků odstraní veškerou munici z vašich zásobníků, dokud je znovu nevyzbrojíte! Pokračovat?</Czech>
+            <French>L'application des magasins retirera toutes les munitions de vos magasins jusqu'à ce que vous réarmiez! Continuer?</French>
+            <German>Das Anbringen von Magazinen entfernt alle Munition von Ihren Magazinen, bis Sie wieder bewaffnen! Fortsetzen?</German>
+            <Italian>L'applicazione dei caricatori rimuoverà tutte le munizioni dai tuoi caricatori fino a quando non riarmarerai! Continuare?</Italian>
+            <Polish>Zastosowanie magazynków usunie całą amunicję z twoich magazynków, dopóki nie uzbroisz ponownie! Kontynuować?</Polish>
+            <Portuguese>Aplicar carregadores removerá toda a munição de seus carregadores até que você rearme! Continuar?</Portuguese>
+            <Russian>Применение магазинов удалит все боеприпасы с ваших магазинов до повторного вооружения! Продолжить?</Russian>
+            <Spanish>Aplicar cargadores eliminará toda la munición de tus cargadores hasta que vuelvas a armar! ¿Continuar?</Spanish>
+            <Turkish>Şarjörleri uygulamak, yeniden silahlanana kadar şarjörlerinizdeki tüm mühimmatı kaldıracaktır! Devam edilsin mi?</Turkish>
+            <Korean>탄창을 적용하면 재장전할 때까지 탄창의 모든 탄약이 제거됩니다! 계속하시겠습니까?</Korean>
+            <Japanese>マガジンを適用すると、再武装するまでマガジンの弾薬がすべて取り除かれます! 続けますか?</Japanese>
+            <Chinesesimp>应用弹匣将移除所有弹匣上的弹药，直到重新装填！继续吗？</Chinesesimp>
+            <Chinese>應用彈匣將移除所有彈匣上的彈藥，直到重新裝填！繼續嗎？</Chinese>
         </Key>
         <Key ID="STR_WLM_APPLY">
             <Original>Apply</Original>
@@ -1466,22 +1704,39 @@
             <Chinesesimp>应用</Chinesesimp>
             <Chinese>應用</Chinese>
         </Key>
+		<Key ID="STR_WLM_APPLY_FREE">
+            <Original>Apply/Rearm</Original>
+            <English>Apply/Rearm</English>
+            <Czech>Přiložit a znovu zapnout</Czech>
+            <French>Appliquer et réarmer</French>
+            <German>Anwenden und erneut aktivieren</German>
+            <Italian>Applica e riarma</Italian>
+            <Polish>Zastosuj i uzbroić</Polish>
+            <Portuguese>Aplicar e rearmar</Portuguese>
+            <Russian>Применить и перевооружить</Russian>
+            <Spanish>Aplicar y rearmar</Spanish>
+            <Turkish>Uygula ve Yeniden Silahlandır</Turkish>
+            <Korean>적용 및 재설정</Korean>
+            <Japanese>適用と再準備</Japanese>
+            <Chinesesimp>应用并重新装备</Chinesesimp>
+            <Chinese>應用並重新裝備</Chinese>
+        </Key>
         <Key ID="STR_WLM_APPLY_SELECTED_PYLONS">
-            <Original>Apply the selected pylons to the aircraft.</Original>
-            <English>Apply the selected pylons to the aircraft.</English>
-            <Czech>Použít vybrané pilony na letadlo.</Czech>
-            <French>Appliquer les pylônes sélectionnés à l'avion.</French>
-            <German>Die ausgewählten Pylonen an das Flugzeug anbringen.</German>
-            <Italian>Applica i piloni selezionati all'aereo.</Italian>
-            <Polish>Zastosuj wybrane pylony do samolotu.</Polish>
-            <Portuguese>Aplicar os pilones selecionados à aeronave.</Portuguese>
-            <Russian>Применить выбранные пилоны к самолету.</Russian>
-            <Spanish>Aplicar los pilones seleccionados al avión.</Spanish>
-            <Turkish>Seçilen pilonları uçağa uygulayın.</Turkish>
-            <Korean>선택한 파일런을 항공기에 적용합니다.</Korean>
-            <Japanese>選択したパイロンを航空機に適用します。</Japanese>
-            <Chinesesimp>将选定的挂架应用于飞机。</Chinesesimp>
-            <Chinese>將選定的掛架應用於飛機。</Chinese>
+            <Original>Apply the selected magazines to the vehicle.</Original>
+            <English>Apply the selected magazines to the vehicle.</English>
+            <Czech>Použít vybrané zásobníky na vozidlo.</Czech>
+            <French>Appliquer les magasins sélectionnés au véhicule.</French>
+            <German>Die ausgewählten Magazine an das Fahrzeug anbringen.</German>
+            <Italian>Applica i caricatori selezionati al veicolo.</Italian>
+            <Polish>Zastosuj wybrane magazynki do pojazdu.</Polish>
+            <Portuguese>Aplicar os carregadores selecionados ao veículo.</Portuguese>
+            <Russian>Применить выбранные магазины к транспортному средству.</Russian>
+            <Spanish>Aplicar los cargadores seleccionados al vehículo.</Spanish>
+            <Turkish>Seçilen şarjörleri araca uygulayın.</Turkish>
+            <Korean>선택한 탄창을 차량에 적용합니다.</Korean>
+            <Japanese>選択したマガジンを車両に適用します。</Japanese>
+            <Chinesesimp>将选定的弹匣应用于车辆。</Chinesesimp>
+            <Chinese>將選定的彈匣應用於車輛。</Chinese>
         </Key>
         <Key ID="STR_WLM_RETURN_PREVIOUS_SCREEN">
             <Original>Return to the previous screen.</Original>
@@ -1637,21 +1892,21 @@
             <Chinese>清除保存警告</Chinese>
         </Key>
         <Key ID="STR_WLM_REMOVE_ALL_SAVED_LOADOUTS_WARNING">
-            <Original>This will remove all saved loadouts for this aircraft. Continue?</Original>
-            <English>This will remove all saved loadouts for this aircraft. Continue?</English>
-            <Czech>Tímto odstraníte všechna uložená vybavení pro tento letoun. Pokračovat?</Czech>
-            <French>Cela supprimera tous les armements sauvegardés pour cet avion. Continuer?</French>
-            <German>Dadurch werden alle gespeicherten Ladungen für dieses Flugzeug entfernt. Fortsetzen?</German>
-            <Italian>Questo rimuoverà tutte le configurazioni salvate per questo aereo. Continuare?</Italian>
-            <Polish>Spowoduje to usunięcie wszystkich zapisanych konfiguracji dla tego samolotu. Kontynuować?</Polish>
-            <Portuguese>Isso removerá todos os carregamentos salvos para esta aeronave. Continuar?</Portuguese>
-            <Russian>Это удалит все сохраненные нагрузки для этого самолета. Продолжить?</Russian>
-            <Spanish>Esto eliminará todas las configuraciones guardadas para este avión. ¿Continuar?</Spanish>
-            <Turkish>Bu, bu uçak için kaydedilen tüm yüklemeleri kaldıracaktır. Devam edilsin mi?</Turkish>
-            <Korean>이 항공기에 대한 모든 저장된 장비가 제거됩니다. 계속하시겠습니까?</Korean>
-            <Japanese>これにより、この航空機のすべての保存された装備が削除されます。続けますか?</Japanese>
-            <Chinesesimp>这将删除该飞机的所有保存配置。继续吗？</Chinesesimp>
-            <Chinese>這將刪除該飛機的所有保存配置。繼續嗎？</Chinese>
+            <Original>This will remove all saved loadouts for this vehicle. Continue?</Original>
+            <English>This will remove all saved loadouts for this vehicle. Continue?</English>
+            <Czech>Tímto odstraníte všechna uložená vybavení pro toto vozidlo. Pokračovat?</Czech>
+            <French>Cela supprimera tous les armements sauvegardés pour ce véhicule. Continuer?</French>
+            <German>Dadurch werden alle gespeicherten Ladungen für dieses Fahrzeug entfernt. Fortsetzen?</German>
+            <Italian>Questo rimuoverà tutte le configurazioni salvate per questo veicolo. Continuare?</Italian>
+            <Polish>Spowoduje to usunięcie wszystkich zapisanych konfiguracji dla tego pojazdu. Kontynuować?</Polish>
+            <Portuguese>Isso removerá todos os carregamentos salvos para este veículo. Continuar?</Portuguese>
+            <Russian>Это удалит все сохраненные нагрузки для этого транспортного средства. Продолжить?</Russian>
+            <Spanish>Esto eliminará todas las configuraciones guardadas para este vehículo. ¿Continuar?</Spanish>
+            <Turkish>Bu, bu araç için kaydedilen tüm yüklemeleri kaldıracaktır. Devam edilsin mi?</Turkish>
+            <Korean>이 차량에 대한 모든 저장된 장비가 제거됩니다. 계속하시겠습니까?</Korean>
+            <Japanese>これにより、この車両のすべての保存された装備が削除されます。続けますか?</Japanese>
+            <Chinesesimp>这将删除该车辆的所有保存配置。继续吗？</Chinesesimp>
+            <Chinese>這將刪除該車輛的所有保存配置。繼續嗎？</Chinese>
         </Key>
         <Key ID="STR_WLM_WIPE">
             <Original>Wipe</Original>
@@ -1671,21 +1926,21 @@
             <Chinese>清除</Chinese>
         </Key>
         <Key ID="STR_WLM_WIPE_ALL_SAVED_LOADOUTS">
-            <Original>Wipe all saved loadouts for this aircraft.</Original>
-            <English>Wipe all saved loadouts for this aircraft.</English>
-            <Czech>Vymazat všechna uložená vybavení pro tento letoun.</Czech>
-            <French>Effacer tous les armements sauvegardés pour cet avion.</French>
-            <German>Alle gespeicherten Ladungen für dieses Flugzeug löschen.</German>
-            <Italian>Cancella tutte le configurazioni salvate per questo aereo.</Italian>
-            <Polish>Wyczyść wszystkie zapisane konfiguracje dla tego samolotu.</Polish>
-            <Portuguese>Limpar todos os carregamentos salvos para esta aeronave.</Portuguese>
-            <Russian>Стереть все сохраненные нагрузки для этого самолета.</Russian>
-            <Spanish>Borrar todas las configuraciones guardadas para este avión.</Spanish>
-            <Turkish>Bu uçak için kaydedilen tüm yüklemeleri silin.</Turkish>
-            <Korean>이 항공기에 대한 모든 저장된 장비를 삭제합니다.</Korean>
-            <Japanese>この航空機のすべての保存された装備を消去します。</Japanese>
-            <Chinesesimp>清除该飞机的所有保存配置。</Chinesesimp>
-            <Chinese>清除該飛機的所有保存配置。</Chinese>
+            <Original>Wipe all saved loadouts for this vehicle.</Original>
+            <English>Wipe all saved loadouts for this vehicle.</English>
+            <Czech>Vymazat všechna uložená vybavení pro toto vozidlo.</Czech>
+            <French>Effacer tous les armements sauvegardés pour ce véhicule.</French>
+            <German>Alle gespeicherten Ladungen für dieses Fahrzeug löschen.</German>
+            <Italian>Cancella tutte le configurazioni salvate per questo veicolo.</Italian>
+            <Polish>Wyczyść wszystkie zapisane konfiguracje dla tego pojazdu.</Polish>
+            <Portuguese>Limpar todos os carregamentos salvos para este veículo.</Portuguese>
+            <Russian>Стереть все сохраненные нагрузки для этого транспортного средства.</Russian>
+            <Spanish>Borrar todas las configuraciones guardadas para este vehículo.</Spanish>
+            <Turkish>Bu araç için kaydedilen tüm yüklemeleri silin.</Turkish>
+            <Korean>이 차량에 대한 모든 저장된 장비를 삭제합니다.</Korean>
+            <Japanese>この車両のすべての保存された装備を消去します。</Japanese>
+            <Chinesesimp>清除该车辆的所有保存配置。</Chinesesimp>
+            <Chinese>清除該車輛的所有保存配置。</Chinese>
         </Key>
         <Key ID="STR_WLM_EMPTY">
             <Original>- EMPTY -</Original>
@@ -1705,21 +1960,21 @@
             <Chinese>- 空 -</Chinese>
         </Key>
         <Key ID="STR_WLM_CUSTOM">
-            <Original>--- Custom ---</Original>
-            <English>--- Custom ---</English>
-            <Czech>--- Vlastní ---</Czech>
-            <French>--- Personnalisé ---</French>
-            <German>--- Benutzerdefiniert ---</German>
-            <Italian>--- Personalizzato ---</Italian>
-            <Polish>--- Własne ---</Polish>
-            <Portuguese>--- Personalizado ---</Portuguese>
-            <Russian>--- Пользовательский ---</Russian>
-            <Spanish>--- Personalizado ---</Spanish>
-            <Turkish>--- Özel ---</Turkish>
-            <Korean>--- 사용자 정의 ---</Korean>
-            <Japanese>--- カスタム ---</Japanese>
-            <Chinesesimp>--- 自定义 ---</Chinesesimp>
-            <Chinese>--- 自訂 ---</Chinese>
+            <Original>Custom</Original>
+            <English>Custom</English>
+            <Czech>Vlastní</Czech>
+            <French>Personnalisé</French>
+            <German>Benutzerdefiniert</German>
+            <Italian>Personalizzato</Italian>
+            <Polish>Własne</Polish>
+            <Portuguese>Personalizado</Portuguese>
+            <Russian>Пользовательский</Russian>
+            <Spanish>Personalizado</Spanish>
+            <Turkish>Özel</Turkish>
+            <Korean>사용자 정의</Korean>
+            <Japanese>カスタム</Japanese>
+            <Chinesesimp>自定义</Chinesesimp>
+            <Chinese>自訂</Chinese>
         </Key>
         <Key ID="STR_WLM_OFFICIAL">
             <Original>Official</Original>
@@ -1738,23 +1993,6 @@
             <Chinesesimp>官方</Chinesesimp>
             <Chinese>官方</Chinese>
         </Key>
-        <Key ID="STR_WLM_DEFAULT_SKIN">
-            <Original>Default Skin</Original>
-            <English>Default Skin</English>
-            <Czech>Výchozí Skin</Czech>
-            <French>Apparence par défaut</French>
-            <German>Standard-Skin</German>
-            <Italian>Skin predefinito</Italian>
-            <Polish>Domyślny Skin</Polish>
-            <Portuguese>Aparência Padrão</Portuguese>
-            <Russian>Стандартный скин</Russian>
-            <Spanish>Apariencia predeterminada</Spanish>
-            <Turkish>Varsayılan Görünüm</Turkish>
-            <Korean>기본 스킨</Korean>
-            <Japanese>デフォルトのスキン</Japanese>
-            <Chinesesimp>默认皮肤</Chinesesimp>
-            <Chinese>默認皮膚</Chinese>
-        </Key>
         <Key ID="STR_WLM_SOLID_COLORS">
             <Original>--- Solid Colors ---</Original>
             <English>--- Solid Colors ---</English>
@@ -1771,6 +2009,741 @@
             <Japanese>--- 単色 ---</Japanese>
             <Chinesesimp>--- 纯色 ---</Chinesesimp>
             <Chinese>--- 純色 ---</Chinese>
+        </Key>
+        <Key ID="STR_A3_spawn_reward">
+            <Original>Spawn reward</Original>
+            <English>Spawn reward</English>
+            <Czech>Odměna za spawn</Czech>
+            <French>Récompense d'apparition</French>
+            <German>Spawn-Belohnung</German>
+            <Italian>Ricompensa di spawn</Italian>
+            <Polish>Nagroda za spawn</Polish>
+            <Portuguese>Recompensa de spawn</Portuguese>
+            <Russian>Награда за появление</Russian>
+            <Spanish>Recompensa de aparición</Spanish>
+            <Turkish>Spawn ödülü</Turkish>
+            <Korean>스폰 보상</Korean>
+            <Japanese>スポーン報酬</Japanese>
+            <Chinesesimp>生成奖励</Chinesesimp>
+            <Chinese>生成獎勵</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelToSquadLeader">
+            <Original>Fast Travel to Squad Leader</Original>
+            <English>Fast Travel to Squad Leader</English>
+            <Czech>Rychlé cestování k veliteli jednotky</Czech>
+            <French>Voyage rapide vers le chef d'escouade</French>
+            <German>Schnellreise zum Truppführer</German>
+            <Italian>Viaggio veloce al capo squadra</Italian>
+            <Polish>Szybka podróż do dowódcy drużyny</Polish>
+            <Portuguese>Viagem rápida para o líder do esquadrão</Portuguese>
+            <Russian>Быстрое перемещение к лидеру отряда</Russian>
+            <Spanish>Viaje rápido al líder del escuadrón</Spanish>
+            <Turkish>Takım Liderine Hızlı Seyahat</Turkish>
+            <Korean>분대장에게 빠른 이동</Korean>
+            <Japanese>分隊長への高速移動</Japanese>
+            <Chinesesimp>快速旅行到小队队长</Chinesesimp>
+            <Chinese>快速旅行到小隊隊長</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadLeaderInvalid">
+            <Original>You are the squad leader.</Original>
+            <English>You are the squad leader.</English>
+            <Czech>Jste velitel jednotky.</Czech>
+            <French>Vous êtes le chef d'escouade.</French>
+            <German>Du bist der Truppführer.</German>
+            <Italian>Sei il capo squadra.</Italian>
+            <Polish>Jesteś dowódcą drużyny.</Polish>
+            <Portuguese>Você é o líder do esquadrão.</Portuguese>
+            <Russian>Вы лидер отряда.</Russian>
+            <Spanish>Eres el líder del escuadrón.</Spanish>
+            <Turkish>Takım liderisin.</Turkish>
+            <Korean>당신이 분대장입니다.</Korean>
+            <Japanese>あなたは分隊長です。</Japanese>
+            <Chinesesimp>你是小队队长。</Chinesesimp>
+            <Chinese>你是小隊隊長。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadLeaderUnavailable">
+            <Original>Your squad leader is unavailable.</Original>
+            <English>Your squad leader is unavailable.</English>
+            <Czech>Váš velitel jednotky není k dispozici.</Czech>
+            <French>Votre chef d'escouade n'est pas disponible.</French>
+            <German>Ihr Truppführer ist nicht verfügbar.</German>
+            <Italian>Il tuo capo squadra non è disponibile.</Italian>
+            <Polish>Twój dowódca drużyny jest niedostępny.</Polish>
+            <Portuguese>Seu líder do esquadrão está indisponível.</Portuguese>
+            <Russian>Ваш лидер отряда недоступен.</Russian>
+            <Spanish>Tu líder del escuadrón no está disponible.</Spanish>
+            <Turkish>Takım lideriniz mevcut değil.</Turkish>
+            <Korean>분대장이 사용할 수 없습니다.</Korean>
+            <Japanese>分隊長は利用できません。</Japanese>
+            <Chinesesimp>你的小队队长不可用。</Chinesesimp>
+            <Chinese>你的小隊隊長不可用。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadInvalidNoSquad">
+            <Original>You are not in a squad.</Original>
+            <English>You are not in a squad.</English>
+            <Czech>Nejste v jednotce.</Czech>
+            <French>Vous n'êtes pas dans une escouade.</French>
+            <German>Du bist in keinem Trupp.</German>
+            <Italian>Non sei in una squadra.</Italian>
+            <Polish>Nie jesteś w drużynie.</Polish>
+            <Portuguese>Você não está em um esquadrão.</Portuguese>
+            <Russian>Вы не в отряде.</Russian>
+            <Spanish>No estás en un escuadrón.</Spanish>
+            <Turkish>Bir takımda değilsiniz.</Turkish>
+            <Korean>당신은 분대에 속해 있지 않습니다.</Korean>
+            <Japanese>あなたは分隊に所属していません。</Japanese>
+            <Chinesesimp>你不在小队里。</Chinesesimp>
+            <Chinese>你不在小隊裡。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_fastTravelSquadLeaderInVehicle">
+            <Original>Your squad leader is in a vehicle.</Original>
+            <English>Your squad leader is in a vehicle.</English>
+            <Czech>Váš velitel čety je ve vozidle.</Czech>
+            <French>Votre chef d'escouade est dans un véhicule.</French>
+            <German>Dein Truppführer befindet sich in einem Fahrzeug.</German>
+            <Italian>Il caposquadra è in un veicolo.</Italian>
+            <Polish>Twój dowódca oddziału jest w pojeździe.</Polish>
+            <Portuguese>Seu líder de esquadrão está em um veículo.</Portuguese>
+            <Russian>Ваш командир отряда находится в транспортном средстве.</Russian>
+            <Spanish>Tu líder de escuadrón está en un vehículo.</Spanish>
+            <Turkish>Takım lideriniz bir araçta.</Turkish>
+            <Korean>소대장이 차량에 탑승했습니다.</Korean>
+            <Japanese>あなたの分隊長は車両にいます。</Japanese>
+            <Chinesesimp>你的小队长在车辆中。</Chinesesimp>
+            <Chinese>你的小隊長在車輛中。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_sendInvitationSuccessText">
+            <Original>You've sent a squad join invitation to %1.</Original>
+            <English>You've sent a squad join invitation to %1.</English>
+            <Czech>Poslali jste pozvánku k připojení do družstva uživateli %1.</Czech>
+            <French>Vous avez envoyé une invitation à rejoindre l'escouade à %1.</French>
+            <German>Sie haben eine Einladung zum Beitritt zur Truppe an %1 gesendet.</German>
+            <Italian>Hai inviato un invito a unirti alla squadra a %1.</Italian>
+            <Polish>Wysłałeś zaproszenie do drużyny do %1.</Polish>
+            <Portuguese>Você enviou um convite para entrar na equipe para %1.</Portuguese>
+            <Russian>Вы отправили приглашение присоединиться к отряду %1.</Russian>
+            <Spanish>Has enviado una invitación para unirte al escuadrón a %1.</Spanish>
+            <Turkish>%1'e ekip katılma daveti gönderdiniz.</Turkish>
+            <Korean>%1에게 팀 합류 초대를 보냈습니다.</Korean>
+            <Japanese>%1に隊への参加招待を送りました。</Japanese>
+            <Chinesesimp>您已向%1发送了加入小队的邀请。</Chinesesimp>
+            <Chinese>您已向%1发送了加入小队的邀请。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_receiveInvitationText">
+            <Original>%1 invited you to join %2.</Original>
+            <English>%1 invited you to join %2.</English>
+            <Czech>%1 vás pozval(a) do %2.</Czech>
+            <French>%1 vous a invité à rejoindre %2.</French>
+            <German>%1 hat Sie eingeladen, %2 beizutreten.</German>
+            <Italian>%1 ti ha invitato a unirti a %2.</Italian>
+            <Polish>%1 zaprosił(a) Cię do dołączenia do %2.</Polish>
+            <Portuguese>%1 convidou você para entrar no %2.</Portuguese>
+            <Russian>%1 пригласил(а) вас присоединиться к %2.</Russian>
+            <Spanish>%1 te ha invitado a unirte a %2.</Spanish>
+            <Turkish>%1 seni %2'ye katılmaya davet etti.</Turkish>
+            <Korean>%1님이 %2에 초대했습니다.</Korean>
+            <Japanese>%1が%2に招待しました。</Japanese>
+            <Chinesesimp>%1邀请您加入%2。</Chinesesimp>
+            <Chinese>%1邀请您加入%2。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_joinSquadTitle">
+            <Original>Join Squad</Original>
+            <English>Join Squad</English>
+            <Czech>Připojit se k družstvu</Czech>
+            <French>Rejoindre l'escouade</French>
+            <German>Truppe beitreten</German>
+            <Italian>Unisciti alla squadra</Italian>
+            <Polish>Dołącz do drużyny</Polish>
+            <Portuguese>Entrar na equipe</Portuguese>
+            <Russian>Присоединиться к отряду</Russian>
+            <Spanish>Unirse al escuadrón</Spanish>
+            <Turkish>Takıma Katıl</Turkish>
+            <Korean>팀 합류</Korean>
+            <Japanese>隊に参加する</Japanese>
+            <Chinesesimp>加入小队</Chinesesimp>
+            <Chinese>加入小队</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_joinSquadAccept">
+            <Original>Accept</Original>
+            <English>Accept</English>
+            <Czech>Přijmout</Czech>
+            <French>Accepter</French>
+            <German>Annehmen</German>
+            <Italian>Accetta</Italian>
+            <Polish>Zaakceptuj</Polish>
+            <Portuguese>Aceitar</Portuguese>
+            <Russian>Принять</Russian>
+            <Spanish>Aceptar</Spanish>
+            <Turkish>Kabul Et</Turkish>
+            <Korean>수락</Korean>
+            <Japanese>承認</Japanese>
+            <Chinesesimp>接受</Chinesesimp>
+            <Chinese>接受</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_joinSquadDecline">
+            <Original>Decline</Original>
+            <English>Decline</English>
+            <Czech>Odmítnout</Czech>
+            <French>Refuser</French>
+            <German>Ablehnen</German>
+            <Italian>Rifiuta</Italian>
+            <Polish>Odrzuć</Polish>
+            <Portuguese>Recusar</Portuguese>
+            <Russian>Отклонить</Russian>
+            <Spanish>Rechazar</Spanish>
+            <Turkish>Reddet</Turkish>
+            <Korean>거절</Korean>
+            <Japanese>拒否</Japanese>
+            <Chinesesimp>拒绝</Chinesesimp>
+            <Chinese>拒绝</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_talking">
+            <Original>Talking</Original>
+            <English>Talking</English>
+            <Czech>Mluvení</Czech>
+            <French>Parler</French>
+            <German>Sprechen</German>
+            <Italian>Parlando</Italian>
+            <Polish>Rozmawianie</Polish>
+            <Portuguese>Falando</Portuguese>
+            <Russian>Разговаривает</Russian>
+            <Spanish>Hablando</Spanish>
+            <Turkish>Konuşma</Turkish>
+            <Korean>말하는 중</Korean>
+            <Japanese>話している</Japanese>
+            <Chinesesimp>正在说话</Chinesesimp>
+            <Chinese>正在說話</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_noPlayerSelection">
+            <Original>Select a player to invite.</Original>
+            <English>Select a player to invite.</English>
+            <Czech>Vyberte hráče, kterého chcete pozvat.</Czech>
+            <French>Sélectionnez un joueur à inviter.</French>
+            <German>Wählen Sie einen Spieler zum Einladen aus.</German>
+            <Italian>Seleziona un giocatore da invitare.</Italian>
+            <Polish>Wybierz gracza do zaproszenia.</Polish>
+            <Portuguese>Selecione um jogador para convidar.</Portuguese>
+            <Russian>Выберите игрока для приглашения.</Russian>
+            <Spanish>Selecciona un jugador para invitar.</Spanish>
+            <Turkish>Davet etmek için bir oyuncu seçin.</Turkish>
+            <Korean>초대할 플레이어를 선택하세요.</Korean>
+            <Japanese>招待するプレイヤーを選択してください。</Japanese>
+            <Chinesesimp>选择一个玩家邀请。</Chinesesimp>
+            <Chinese>选择一个玩家邀请。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_inviteSelectedPlayer">
+            <Original>Invite selected player to your squad.</Original>
+            <English>Invite selected player to your squad.</English>
+            <Czech>Pozvěte vybraného hráče do svého družstva.</Czech>
+            <French>Invitez le joueur sélectionné dans votre escouade.</French>
+            <German>Laden Sie den ausgewählten Spieler in Ihre Truppe ein.</German>
+            <Italian>Invita il giocatore selezionato nella tua squadra.</Italian>
+            <Polish>Zaproś wybranego gracza do swojej drużyny.</Polish>
+            <Portuguese>Convide o jogador selecionado para sua equipe.</Portuguese>
+            <Russian>Пригласите выбранного игрока в свой отряд.</Russian>
+            <Spanish>Invita al jugador seleccionado a tu escuadrón.</Spanish>
+            <Turkish>Seçilen oyuncuyu ekibine davet et.</Turkish>
+            <Korean>선택한 플레이어를 팀에 초대하세요.</Korean>
+            <Japanese>選択したプレイヤーを隊に招待します。</Japanese>
+            <Chinesesimp>邀请选定的玩家加入你的小队。</Chinesesimp>
+            <Chinese>邀请选定的玩家加入你的小队。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_cooldown">
+            <Original>Cooldown: %1</Original>
+            <English>Cooldown: %1</English>
+            <Czech>Čas na ochlazení: %1</Czech>
+            <French>Temps de refroidissement : %1</French>
+            <German>Abkühlzeit: %1</German>
+            <Italian>Raffreddamento: %1</Italian>
+            <Polish>Okres oczekiwania: %1</Polish>
+            <Portuguese>Tempo de resfriamento: %1</Portuguese>
+            <Russian>Время охлаждения: %1</Russian>
+            <Spanish>Tiempo de enfriamiento: %1</Spanish>
+            <Turkish>Serinleme süresi: %1</Turkish>
+            <Korean>재사용 대기시간: %1</Korean>
+            <Japanese>クールダウン: %1</Japanese>
+            <Chinesesimp>冷却时间: %1</Chinesesimp>
+            <Chinese>冷卻時間: %1</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_welcomeText">
+            <Original>Welcome to the squad system. Squads confer a variety of benefits, including sharing points/votes and the ability to spawn on your squad leader.</Original>
+            <English>Welcome to the squad system. Squads confer a variety of benefits, including sharing points/votes and the ability to spawn on your squad leader.</English>
+            <Czech>Vítejte v systému družstev. Družstva poskytují řadu výhod, včetně sdílení bodů/hlasů a možnosti znovu se objevit u svého vedoucího družstva.</Czech>
+            <French>Bienvenue dans le système d'escouades. Les escouades offrent une variété d'avantages, y compris le partage de points/votes et la possibilité d'apparaître près de votre chef d'escouade.</French>
+            <German>Willkommen im Truppensystem. Truppen bieten eine Vielzahl von Vorteilen, einschließlich des Teilens von Punkten/Stimmen und der Möglichkeit, bei Ihrem Truppenführer zu spawnen.</German>
+            <Italian>Benvenuto nel sistema delle squadre. Le squadre offrono una varietà di vantaggi, tra cui la condivisione di punti/voti e la possibilità di apparire vicino al tuo capo squadra.</Italian>
+            <Polish>Witamy w systemie drużyn. Drużyny oferują wiele korzyści, w tym dzielenie się punktami/głosami oraz możliwość odrodzenia się u lidera drużyny.</Polish>
+            <Portuguese>Bem-vindo ao sistema de esquadrões. Os esquadrões oferecem uma variedade de benefícios, incluindo o compartilhamento de pontos/votos e a capacidade de nascer no seu líder de esquadrão.</Portuguese>
+            <Russian>Добро пожаловать в систему отрядов. Отряды предоставляют множество преимуществ, включая совместное использование очков/голосов и возможность возрождения рядом с вашим командиром отряда.</Russian>
+            <Spanish>Bienvenido al sistema de escuadrones. Los escuadrones confieren una variedad de beneficios, incluidos compartir puntos/votos y la capacidad de aparecer cerca de tu líder de escuadrón.</Spanish>
+            <Turkish>Takım sistemine hoş geldiniz. Takımlar, puanları/oyları paylaşma ve takım liderinizin yanında doğma yeteneği de dahil olmak üzere çeşitli avantajlar sağlar.</Turkish>
+            <Korean>팀 시스템에 오신 것을 환영합니다. 팀은 점수/투표 공유 및 팀 리더에게서 스폰할 수 있는 능력 등 다양한 혜택을 제공합니다.</Korean>
+            <Japanese>隊システムへようこそ。隊は、ポイント/投票の共有や隊長の近くでリスポーンする能力など、さまざまな利点をもたらします。</Japanese>
+            <Chinesesimp>欢迎使用小队系统。小队提供多种好处，包括共享积分/投票以及在小队队长旁重生的能力。</Chinesesimp>
+            <Chinese>欢迎使用小队系统。小队提供多种好处，包括共享积分/投票以及在小队队长旁重生的能力。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadLeaderTooltip">
+            <Original>Leader: %1</Original>
+            <English>Leader: %1</English>
+            <Czech>Vedoucí: %1</Czech>
+            <French>Chef : %1</French>
+            <German>Führer: %1</German>
+            <Italian>Capo: %1</Italian>
+            <Polish>Leader: %1</Polish>
+            <Portuguese>Líder: %1</Portuguese>
+            <Russian>Лидер: %1</Russian>
+            <Spanish>Líder: %1</Spanish>
+            <Turkish>Lider: %1</Turkish>
+            <Korean>리더: %1</Korean>
+            <Japanese>リーダー: %1</Japanese>
+            <Chinesesimp>队长：%1</Chinesesimp>
+            <Chinese>队长：%1</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadMemberTooltip">
+            <Original>%1 (%2 points)</Original>
+            <English>%1 (%2 points)</English>
+            <Czech>%1 (%2 bodů)</Czech>
+            <French>%1 (%2 points)</French>
+            <German>%1 (%2 Punkte)</German>
+            <Italian>%1 (%2 punti)</Italian>
+            <Polish>%1 (%2 punkty)</Polish>
+            <Portuguese>%1 (%2 pontos)</Portuguese>
+            <Russian>%1 (%2 очков)</Russian>
+            <Spanish>%1 (%2 puntos)</Spanish>
+            <Turkish>%1 (%2 puan)</Turkish>
+            <Korean>%1 (%2 포인트)</Korean>
+            <Japanese>%1 (%2 ポイント)</Japanese>
+            <Chinesesimp>%1（%2分）</Chinesesimp>
+            <Chinese>%1（%2分）</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadMenuText">
+            <Original>Squads Menu</Original>
+            <English>Squads Menu</English>
+            <Czech>Nabídka družstev</Czech>
+            <French>Menu des escouades</French>
+            <German>Truppenmenü</German>
+            <Italian>Menu delle squadre</Italian>
+            <Polish>Menu drużyn</Polish>
+            <Portuguese>Menu de Esquadrões</Portuguese>
+            <Russian>Меню отрядов</Russian>
+            <Spanish>Menú de escuadrones</Spanish>
+            <Turkish>Takımlar Menüsü</Turkish>
+            <Korean>팀 메뉴</Korean>
+            <Japanese>隊メニュー</Japanese>
+            <Chinesesimp>小队菜单</Chinesesimp>
+            <Chinese>小队菜单</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squadInviteMenuText">
+            <Original>Adopt a squad-less teammate:</Original>
+            <English>Adopt a squad-less teammate:</English>
+            <Czech>Adoptujte spoluhráče bez družstva:</Czech>
+            <French>Adopter un coéquipier sans escouade :</French>
+            <German>Nehmen Sie ein teamloses Mitglied auf:</German>
+            <Italian>Adotta un compagno di squadra senza squadra:</Italian>
+            <Polish>Przygarnij gracza bez drużyny:</Polish>
+            <Portuguese>Adotar um colega de equipe sem esquadrão:</Portuguese>
+            <Russian>Примите товарища по команде без отряда:</Russian>
+            <Spanish>Adopta un compañero de equipo sin escuadrón:</Spanish>
+            <Turkish>Takımsız bir takım arkadaşını al:</Turkish>
+            <Korean>팀이 없는 팀원을 받아들이세요:</Korean>
+            <Japanese>隊のないチームメイトを採用する：</Japanese>
+            <Chinesesimp>收编没有小队的队友：</Chinesesimp>
+            <Chinese>收编没有小队的队友：</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_buttonsLeave">
+            <Original>LEAVE</Original>
+            <English>LEAVE</English>
+            <Czech>OPUSTIT</Czech>
+            <French>QUITTER</French>
+            <German>VERLASSEN</German>
+            <Italian>LASCIARE</Italian>
+            <Polish>OPUŚCIĆ</Polish>
+            <Portuguese>SAIR</Portuguese>
+            <Russian>ПОКИНУТЬ</Russian>
+            <Spanish>DEJAR</Spanish>
+            <Turkish>AYRIL</Turkish>
+            <Korean>떠나다</Korean>
+            <Japanese>離れる</Japanese>
+            <Chinesesimp>离开</Chinesesimp>
+            <Chinese>离开</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsPromote">
+            <Original>PROMOTE</Original>
+            <English>PROMOTE</English>
+            <Czech>POVÝŠIT</Czech>
+            <French>PROMOUVOIR</French>
+            <German>BEFÖRDERN</German>
+            <Italian>PROMUOVERE</Italian>
+            <Polish>AWANSOWAĆ</Polish>
+            <Portuguese>PROMOVER</Portuguese>
+            <Russian>ПОВЫСИТЬ</Russian>
+            <Spanish>PROMOVER</Spanish>
+            <Turkish>TERFİ</Turkish>
+            <Korean>승진</Korean>
+            <Japanese>昇進</Japanese>
+            <Chinesesimp>晋升</Chinesesimp>
+            <Chinese>晋升</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsKick">
+            <Original>KICK</Original>
+            <English>KICK</English>
+            <Czech>VYKOPNOUT</Czech>
+            <French>EXCLURE</French>
+            <German>RAUSWERFEN</German>
+            <Italian>ESPULSARE</Italian>
+            <Polish>WYRZUCIĆ</Polish>
+            <Portuguese>EXPULSAR</Portuguese>
+            <Russian>ВЫГНАТЬ</Russian>
+            <Spanish>EXPULSAR</Spanish>
+            <Turkish>ATMAK</Turkish>
+            <Korean>내보내다</Korean>
+            <Japanese>キック</Japanese>
+            <Chinesesimp>踢出</Chinesesimp>
+            <Chinese>踢出</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsRename">
+            <Original>RENAME</Original>
+            <English>RENAME</English>
+            <Czech>PŘEJMENOVAT</Czech>
+            <French>RENOMMER</French>
+            <German>UMBENENNEN</German>
+            <Italian>RINOMINARE</Italian>
+            <Polish>PRZENAME</Polish>
+            <Portuguese>RENOMEAR</Portuguese>
+            <Russian>ПЕРЕИМЕНОВАТЬ</Russian>
+            <Spanish>RENOMBRAR</Spanish>
+            <Turkish>YENİDEN ADLANDIRMAK</Turkish>
+            <Korean>이름 변경</Korean>
+            <Japanese>名前を変更する</Japanese>
+            <Chinesesimp>重命名</Chinesesimp>
+            <Chinese>重命名</Chinese>
+        </Key>
+
+        <Key ID="STR_SQUADS_buttonsCreate">
+            <Original>CREATE</Original>
+            <English>CREATE</English>
+            <Czech>VYTVOŘIT</Czech>
+            <French>CRÉER</French>
+            <German>ERSTELLEN</German>
+            <Italian>CREARE</Italian>
+            <Polish>UTWÓRZ</Polish>
+            <Portuguese>CRIAR</Portuguese>
+            <Russian>СОЗДАТЬ</Russian>
+            <Spanish>CREAR</Spanish>
+            <Turkish>OLUŞTUR</Turkish>
+            <Korean>만들다</Korean>
+            <Japanese>作成</Japanese>
+            <Chinesesimp>创建</Chinesesimp>
+            <Chinese>创建</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_buttonsInvite">
+            <Original>INVITE</Original>
+            <English>INVITE</English>
+            <Czech>POZVAT</Czech>
+            <French>INVITER</French>
+            <German>EINLADEN</German>
+            <Italian>INVITARE</Italian>
+            <Polish>ZAPROSIĆ</Polish>
+            <Portuguese>CONVIDAR</Portuguese>
+            <Russian>ПРИГЛАСИТЬ</Russian>
+            <Spanish>INVITAR</Spanish>
+            <Turkish>DAVET ET</Turkish>
+            <Korean>초대</Korean>
+            <Japanese>招待</Japanese>
+            <Chinesesimp>邀请</Chinesesimp>
+            <Chinese>邀请</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_newSquadName">
+            <Original>NEW SQUAD NAME</Original>
+            <English>NEW SQUAD NAME</English>
+            <Czech>NOVÝ NÁZEV DRUŽSTVA</Czech>
+            <French>NOM DE LA NOUVELLE ESCADRON</French>
+            <German>NEUER TRUPPENNAME</German>
+            <Italian>NUOVO NOME DELLA SQUADRA</Italian>
+            <Polish>NOWA NAZWA DRUŻYNY</Polish>
+            <Portuguese>NOME DA NOVA EQUIPE</Portuguese>
+            <Russian>НОВОЕ НАЗВАНИЕ ОТРЯДА</Russian>
+            <Spanish>NUEVO NOMBRE DEL ESCUADRÓN</Spanish>
+            <Turkish>YENİ TAKIM ADI</Turkish>
+            <Korean>새로운 팀 이름</Korean>
+            <Japanese>新しい隊の名前</Japanese>
+            <Chinesesimp>新的小队名称</Chinesesimp>
+            <Chinese>新的小队名称</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_enterNewSquadName">
+            <Original>Enter the new squad name.</Original>
+            <English>Enter the new squad name.</English>
+            <Czech>Zadejte nový název družstva.</Czech>
+            <French>Entrez le nom de la nouvelle escouade.</French>
+            <German>Geben Sie den neuen Truppennamen ein.</German>
+            <Italian>Inserisci il nuovo nome della squadra.</Italian>
+            <Polish>Wprowadź nową nazwę drużyny.</Polish>
+            <Portuguese>Digite o nome da nova equipe.</Portuguese>
+            <Russian>Введите новое название отряда.</Russian>
+            <Spanish>Ingrese el nuevo nombre del escuadrón.</Spanish>
+            <Turkish>Yeni takım adını girin.</Turkish>
+            <Korean>새 팀 이름을 입력하세요.</Korean>
+            <Japanese>新しい隊の名前を入力してください。</Japanese>
+            <Chinesesimp>输入新的小队名称。</Chinesesimp>
+            <Chinese>输入新的小队名称。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_buttonsSave">
+            <Original>SAVE</Original>
+            <English>SAVE</English>
+            <Czech>ULOŽIT</Czech>
+            <French>ENREGISTRER</French>
+            <German>SPEICHERN</German>
+            <Italian>SALVA</Italian>
+            <Polish>ZAPISZ</Polish>
+            <Portuguese>SALVAR</Portuguese>
+            <Russian>СОХРАНИТЬ</Russian>
+            <Spanish>GUARDAR</Spanish>
+            <Turkish>KAYDET</Turkish>
+            <Korean>저장</Korean>
+            <Japanese>保存</Japanese>
+            <Chinesesimp>保存</Chinesesimp>
+            <Chinese>保存</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_saveNewSquadName">
+            <Original>Save the new squad name.</Original>
+            <English>Save the new squad name.</English>
+            <Czech>Uložit nový název družstva.</Czech>
+            <French>Enregistrez le nom de la nouvelle escouade.</French>
+            <German>Speichern Sie den neuen Truppennamen.</German>
+            <Italian>Salva il nuovo nome della squadra.</Italian>
+            <Polish>Zapisz nową nazwę drużyny.</Polish>
+            <Portuguese>Salve o novo nome da equipe.</Portuguese>
+            <Russian>Сохраните новое название отряда.</Russian>
+            <Spanish>Guarda el nuevo nombre del escuadrón.</Spanish>
+            <Turkish>Yeni takım adını kaydet.</Turkish>
+            <Korean>새 팀 이름을 저장하세요.</Korean>
+            <Japanese>新しい隊の名前を保存します。</Japanese>
+            <Chinesesimp>保存新的小队名称。</Chinesesimp>
+            <Chinese>保存新的小队名称。</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_refreshSquads">
+            <Original>REFRESH</Original>
+            <English>REFRESH</English>
+            <Czech>OBNOVIT</Czech>
+            <French>ACTUALISER</French>
+            <German>AKTUALISIEREN</German>
+            <Italian>AGGIORNA</Italian>
+            <Polish>ODŚWIEŻ</Polish>
+            <Portuguese>ATUALIZAR</Portuguese>
+            <Russian>ОБНОВИТЬ</Russian>
+            <Spanish>ACTUALIZAR</Spanish>
+            <Turkish>YENİLE</Turkish>
+            <Korean>새로 고침</Korean>
+            <Japanese>更新</Japanese>
+            <Chinesesimp>刷新</Chinesesimp>
+            <Chinese>刷新</Chinese>
+        </Key>
+        <Key ID="STR_SQUADS_squads">
+            <Original>Squads</Original>
+            <English>Squads</English>
+            <Czech>Družstva</Czech>
+            <French>Escouades</French>
+            <German>Truppen</German>
+            <Italian>Squadre</Italian>
+            <Polish>Drużyny</Polish>
+            <Portuguese>Esquadrões</Portuguese>
+            <Russian>Отряды</Russian>
+            <Spanish>Escuadrones</Spanish>
+            <Turkish>Takımlar</Turkish>
+            <Korean>팀</Korean>
+            <Japanese>隊</Japanese>
+            <Chinesesimp>小队</Chinesesimp>
+            <Chinese>小队</Chinese>
+        </Key>
+        <Key ID="STR_WL2_VOTE_IN_PROGRESS">
+            <Original>Vote in Progress</Original>
+            <English>Vote in Progress</English>
+            <Czech>Hlasování probíhá</Czech>
+            <French>Vote en cours</French>
+            <German>Abstimmung läuft</German>
+            <Italian>Votazione in corso</Italian>
+            <Polish>Głosowanie w toku</Polish>
+            <Portuguese>Votação em andamento</Portuguese>
+            <Russian>Идет голосование</Russian>
+            <Spanish>Votación en curso</Spanish>
+            <Turkish>Oylama devam ediyor</Turkish>
+            <Korean>투표 진행 중</Korean>
+            <Japanese>投票中</Japanese>
+            <Chinesesimp>投票进行中</Chinesesimp>
+            <Chinese>投票進行中</Chinese>
+        </Key>
+        <Key ID="STR_WL2_CAPTURE_PROGRESS">
+            <Original>Capture Progress</Original>
+            <English>Capture Progress</English>
+            <Czech>Průběh dobývání</Czech>
+            <French>Progression de la capture</French>
+            <German>Eroberungsfortschritt</German>
+            <Italian>Progresso della cattura</Italian>
+            <Polish>Postęp w zdobyciu</Polish>
+            <Portuguese>Progresso da captura</Portuguese>
+            <Russian>Прогресс захвата</Russian>
+            <Spanish>Progreso de captura</Spanish>
+            <Turkish>Yakalama ilerlemesi</Turkish>
+            <Korean>점령 진행 상황</Korean>
+            <Japanese>キャプチャ進行中</Japanese>
+            <Chinesesimp>捕获进度</Chinesesimp>
+            <Chinese>捕獲進度</Chinese>
+        </Key>
+        <Key ID="STR_WL2_MINE_LIMIT">
+            <Original>Mine Limit</Original>
+            <English>Mine Limit</English>
+            <Czech>Limit výbušných dolů</Czech>
+            <French>Limite des mines explosives</French>
+            <German>Begrenzung der Sprengstoffminen</German>
+            <Italian>Limite di mine esplosive</Italian>
+            <Polish>Limit min wybuchowych</Polish>
+            <Portuguese>Limite de minas explosivas</Portuguese>
+            <Russian>Предел взрывоопасных мин</Russian>
+            <Spanish>Límite de minas explosivas</Spanish>
+            <Turkish>Patlayıcı Mayın Limiti</Turkish>
+            <Korean>폭발성 지뢰 제한</Korean>
+            <Japanese>爆発性地雷の制限</Japanese>
+            <Chinesesimp>爆炸地雷限制</Chinesesimp>
+            <Chinese>地雷爆炸限制</Chinese>
+        </Key>
+        <Key ID="STR_A3_sector_captured">
+            <Original>Sector captured</Original>
+            <English>Sector captured</English>
+            <Czech>Sektor dobyt</Czech>
+            <French>Secteur capturé</French>
+            <German>Sektor erobert</German>
+            <Italian>Settore catturato</Italian>
+            <Polish>Sektor zdobyty</Polish>
+            <Portuguese>Setor capturado</Portuguese>
+            <Russian>Сектор захвачен</Russian>
+            <Spanish>Sector capturado</Spanish>
+            <Turkish>Sektör ele geçirildi</Turkish>
+            <Korean>구역 확보</Korean>
+            <Japanese>セクターを確保した</Japanese>
+            <Chinesesimp>区域已夺取</Chinesesimp>
+            <Chinese>區域已奪取</Chinese>
+        </Key>
+        <Key ID="STR_A3_active_protection_system">
+            <Original>Active protection system</Original>
+            <English>Active protection system</English>
+            <Czech>Aktivní ochranný systém</Czech>
+            <French>Système de protection active</French>
+            <German>Aktives Schutzsystem</German>
+            <Italian>Sistema di protezione attivo</Italian>
+            <Polish>Aktywny system ochrony</Polish>
+            <Portuguese>Sistema de proteção ativa</Portuguese>
+            <Russian>Активная система защиты</Russian>
+            <Spanish>Sistema de protección activa</Spanish>
+            <Turkish>Aktif koruma sistemi</Turkish>
+            <Korean>능동 방어 시스템</Korean>
+            <Japanese>アクティブ防護システム</Japanese>
+            <Chinesesimp>主动防护系统</Chinesesimp>
+            <Chinese>主動防護系統</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_detected_by_sensors">
+            <Original>Detected by Sensors</Original>
+            <English>Detected by Sensors</English>
+            <Czech>Zjištěno senzory</Czech>
+            <French>Détecté par les capteurs</French>
+            <German>Von Sensoren erkannt</German>
+            <Italian>Rilevato dai sensori</Italian>
+            <Polish>Wykryto przez czujniki</Polish>
+            <Portuguese>Detetado por sensores</Portuguese>
+            <Russian>Обнаружено сенсорами</Russian>
+            <Spanish>Detectado por sensores</Spanish>
+            <Turkish>Sensörler tarafından algılandı</Turkish>
+            <Korean>센서에 의해 감지됨</Korean>
+            <Japanese>センサーによって検出されました</Japanese>
+            <Chinesesimp>由传感器检测</Chinesesimp>
+            <Chinese>由傳感器檢測</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_detected_by_AI">
+            <Original>Detected by AI</Original>
+            <English>Detected by AI</English>
+            <Czech>Zjištěno AI</Czech>
+            <French>Détecté par l'IA</French>
+            <German>Von KI erkannt</German>
+            <Italian>Rilevato dall'IA</Italian>
+            <Polish>Wykryto przez AI</Polish>
+            <Portuguese>Detetado pela IA</Portuguese>
+            <Russian>Обнаружено ИИ</Russian>
+            <Spanish>Detectado por IA</Spanish>
+            <Turkish>Yapay Zeka tarafından algılandı</Turkish>
+            <Korean>AI에 의해 감지됨</Korean>
+            <Japanese>AIによって検出されました</Japanese>
+            <Chinesesimp>由人工智能检测</Chinesesimp>
+            <Chinese>由人工智慧檢測</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_killed_by">
+            <Original>KILLED BY</Original>
+            <English>KILLED BY</English>
+            <Czech>ZABIT</Czech>
+            <French>TUÉ PAR</French>
+            <German>GETÖTET VON</German>
+            <Italian>UCCISO DA</Italian>
+            <Polish>ZABITY PRZEZ</Polish>
+            <Portuguese>MORTO POR</Portuguese>
+            <Russian>УБИТ</Russian>
+            <Spanish>MATADO POR</Spanish>
+            <Turkish>ÖLDÜRÜLDÜ</Turkish>
+            <Korean>에 의해 살해됨</Korean>
+            <Japanese>によって殺された</Japanese>
+            <Chinesesimp>被杀死</Chinesesimp>
+            <Chinese>被殺死</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_health">
+            <Original>HEALTH</Original>
+            <English>HEALTH</English>
+            <Czech>ZDRAVÍ</Czech>
+            <French>SANTÉ</French>
+            <German>GESUNDHEIT</German>
+            <Italian>SALUTE</Italian>
+            <Polish>ZDROWIE</Polish>
+            <Portuguese>SAÚDE</Portuguese>
+            <Russian>ЗДОРОВЬЕ</Russian>
+            <Spanish>SALUD</Spanish>
+            <Turkish>SAĞLIK</Turkish>
+            <Korean>건강</Korean>
+            <Japanese>健康</Japanese>
+            <Chinesesimp>健康</Chinesesimp>
+            <Chinese>健康</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_distance">
+            <Original>DISTANCE</Original>
+            <English>DISTANCE</English>
+            <Czech>VZDÁLENOST</Czech>
+            <French>DISTANCE</French>
+            <German>ENTFERNUNG</German>
+            <Italian>DISTANZA</Italian>
+            <Polish>ODLEGŁOŚĆ</Polish>
+            <Portuguese>DISTÂNCIA</Portuguese>
+            <Russian>ДИСТАНЦИЯ</Russian>
+            <Spanish>DISTANCIA</Spanish>
+            <Turkish>MESAFE</Turkish>
+            <Korean>거리</Korean>
+            <Japanese>距離</Japanese>
+            <Chinesesimp>距离</Chinesesimp>
+            <Chinese>距離</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_score_in_life">
+            <Original>SCORE IN LIFE</Original>
+            <English>SCORE IN LIFE</English>
+            <Czech>SKÓRE VE ŽIVOTĚ</Czech>
+            <French>SCORE DANS LA VIE</French>
+            <German>PUNKTSTAND IM LEBEN</German>
+            <Italian>PUNTEGGIO NELLA VITA</Italian>
+            <Polish>WYNIK W ŻYCIU</Polish>
+            <Portuguese>PONTUAÇÃO NA VIDA</Portuguese>
+            <Russian>ОЧКИ В ЖИЗНИ</Russian>
+            <Spanish>PUNTUACIÓN EN LA VIDA</Spanish>
+            <Turkish>HAYATTA SKOR</Turkish>
+            <Korean>인생 점수</Korean>
+            <Japanese>人生のスコア</Japanese>
+            <Chinesesimp>生活得分</Chinesesimp>
+            <Chinese>生活得分</Chinese>
         </Key>
     </Container>
 </Project>

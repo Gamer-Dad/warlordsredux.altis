@@ -31,6 +31,7 @@ BIS_fnc_WL2_incomePayoff = compileFinal preprocessFileLineNumbers "Functions\ser
 BIS_fnc_WL2_killRewardHandle = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_killRewardHandle.sqf";
 BIS_fnc_WL2_populateSector = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_populateSector.sqf";
 BIS_fnc_WL2_processRunways = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_processRunways.sqf";
+BIS_fnc_WL2_removeAsset = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_removeAsset.sqf";
 BIS_fnc_WL2_selectTarget = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_selectTarget.sqf";
 BIS_fnc_WL2_serverEHs = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_serverEHs.sqf";
 BIS_fnc_WL2_setupNewWarlord = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_setupNewWarlord.sqf";
@@ -38,13 +39,13 @@ BIS_fnc_WL2_tablesSetUp = compileFinal preprocessFileLineNumbers "Functions\serv
 BIS_fnc_WL2_targetResetHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_targetResetHandleServer.sqf";
 BIS_fnc_WL2_targetSelectionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_targetSelectionHandleServer.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleServer = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_zoneRestrictionHandleServer.sqf";
-BIS_fnc_WL2_getInfantry = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getInfantry.sqf";
-BIS_fnc_WL2_getVehicles = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getVehicles.sqf";
+BIS_fnc_WL2_getCapValues = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_getCapValues.sqf";
 BIS_fnc_WL2_sectorCaptureHandle = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorCaptureHandle.sqf";
 BIS_fnc_WL2_sectorsInitServer = compileFinal preprocessFileLineNumbers "Functions\server\sectors\fn_WL2_sectorsInitServer.sqf";
+BIS_fnc_WL2_updateVehicleList = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_updateVehicleList.sqf";
+BIS_fnc_WL2_dazzlerOn = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_dazzlerOn.sqf";
 
 BIS_fnc_orderAir = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderAir.sqf";
-BIS_fnc_orderDefence = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderDefence.sqf";
 BIS_fnc_orderGround = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderGround.sqf";
 BIS_fnc_orderNaval = compileFinal preprocessFileLineNumbers "Functions\server\clientRequests\fn_orderNaval.sqf";
 
@@ -52,8 +53,7 @@ MRTM_fnc_leaveGroup = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_le
 MRTM_fnc_accept = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_accept.sqf";
 MRTM_fnc_invite = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_invite.sqf";
 
-WLM_fnc_serverPylonManager = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_serverPylonManager.sqf";
-WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
+call SQD_fnc_initServer;
 
 call BIS_fnc_WL2_tablesSetUp;
 call BIS_fnc_WL2_serverEHs;
@@ -91,13 +91,54 @@ setTimeMultiplier 8;
 	_x spawn {
 		_side = _this;
 		while {!BIS_WL_missionEnd} do {
-			waitUntil {sleep 5; ((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side};
+			private _currentSideTargetVar = format ["BIS_WL_currentTarget_%1", _side];
+			private _currentSideTarget = missionNamespace getVariable [_currentSideTargetVar, objNull];
+			private _currentSideTargetOwner = objNull;
+			waitUntil {
+				sleep 5; 
+				_currentSideTarget = missionNamespace getVariable [_currentSideTargetVar, objNull];
+				_currentSideTargetOwner = _currentSideTarget getVariable ["BIS_WL_owner", sideUnknown];
+				_currentSideTargetOwner != _side;
+			};
+
 			sleep 5;
-			if (((missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _side]) getVariable ["BIS_WL_owner", sideUnknown]) == _side) then {
+			if (_currentSideTargetOwner == _side) then {
 				[_side, objNull] call BIS_fnc_WL2_selectTarget;
 			};
 		};
 	};
 } forEach BIS_WL_competingSides;
+
+if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
+	0 spawn {
+		while {!BIS_WL_missionEnd} do {
+			_allEntities = entities [[], ["Logic"], true]; 
+			{ 
+				_x addCuratorEditableObjects [_allEntities, true];
+			} forEach allCurators;
+			sleep 30;
+		};
+	};
+};
+
+0 spawn {
+	while { !BIS_WL_missionEnd } do {
+		private _jammerMarkerPairs = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
+		private _newJammerMarkerPairs = [];
+		{
+			private _jammer = _x select 0;
+			private _outerMarker = _x select 1;
+			private _jammerAlive = alive _jammer;
+			if (!_jammerAlive) then {
+				deleteMarker _outerMarker;
+			} else {
+				_outerMarker setMarkerPos _jammer;
+				_newJammerMarkerPairs pushBack _x;
+			};
+		} forEach _jammerMarkerPairs;
+		missionNamespace setVariable ["BIS_WL_jammerMarkers", _newJammerMarkerPairs, true];
+		sleep 5;
+	};
+};
 
 ["server_init"] call BIS_fnc_endLoadingScreen;

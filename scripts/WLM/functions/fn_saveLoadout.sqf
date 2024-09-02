@@ -3,26 +3,35 @@
 params ["_loadoutName"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
-private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
-private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
+private _isAircraft = uiNamespace getVariable "WLM_assetIsAircraft";
 private _display = findDisplay WLM_DISPLAY;
 
-private _attachments = [];
-{
-    private _pylonControl = _display displayCtrl (WLM_PYLON_START + _forEachIndex);
-    private _currentSelection = lbCurSel _pylonControl;
-    private _attachment = _pylonControl lbData _currentSelection;
+private _saveData = if (_isAircraft) then {
+    private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
+    private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
 
-    private _pylonUserControl = _display displayCtrl (WLM_PYLON_USER_START + _forEachIndex);
-    private _userIsPilot = ctrlTooltip _pylonUserControl == "Control: Pilot";
-    private _turret = if (_userIsPilot) then {
-        []
-    } else {
-        [0]
-    };
+    private _attachments = [];
+    {
+        private _pylonControl = _display displayCtrl (WLM_PYLON_START + _forEachIndex);
+        private _currentSelection = lbCurSel _pylonControl;
+        private _attachment = _pylonControl lbData _currentSelection;
 
-    _attachments pushBack [_attachment, _turret];
-} forEach _pylonsInfo;
+        private _pylonUserControl = _display displayCtrl (WLM_PYLON_USER_START + _forEachIndex);
+        private _userIsPilot = ctrlTooltip _pylonUserControl == "Control: Pilot";
+        private _turret = if (_userIsPilot) then {
+            []
+        } else {
+            [0]
+        };
+
+        _attachments pushBack [_attachment, _turret];
+    } forEach _pylonsInfo;
+
+    _attachments;
+} else {
+    private _savedMagazines = _asset getVariable ["WLM_savedMagazines", []];
+    _savedMagazines;
+};
 
 private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
 private _loadoutSave = profileNamespace getVariable [_variableName, []];
@@ -62,7 +71,7 @@ if (_loadoutName == "") exitWith {
     }];
 };
 
-_loadoutSave pushBack [_loadoutName, _attachments];
+_loadoutSave pushBack [_loadoutName, _saveData];
 profileNamespace setVariable [_variableName, _loadoutSave];
 
 call WLM_fnc_constructPresetMenu;

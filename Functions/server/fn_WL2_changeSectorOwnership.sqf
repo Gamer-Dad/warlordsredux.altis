@@ -7,10 +7,15 @@ private _previousOwners = _sector getVariable "BIS_WL_previousOwners";
 if !(_owner in _previousOwners) then {
 	_previousOwners pushBack _owner;
 	if (serverTime > 0 && {count _previousOwners == 1}) then {
-		_reward = (_sector getVariable "BIS_WL_value") * 30;
+		private _relevantNeighbors = (synchronizedObjects _sector) select {(_x getVariable "BIS_WL_owner") == _owner};
+		private _neighborList = _relevantNeighbors apply {[_x distance2D _sector, _x]};
+		_neighborList sort true;
+		private _closestNeighborDistance = (_neighborList # 0) # 0;
+		private _reward = ((round (_closestNeighborDistance / 3)) min 1000) max 100;
 		{
 			private _uid = getPlayerUID _x;
 			_reward call BIS_fnc_WL2_fundsDatabaseWrite;
+			[objNull, _reward, localize "STR_A3_sector_captured"] remoteExec ["BIS_fnc_WL2_killRewardClient", _x];
 		} forEach (allPlayers select {side group _x == _owner});
 	};
 };
@@ -27,7 +32,7 @@ _detectionTrgs = (_sector getVariable "BIS_WL_detectionTrgs");
 
 if (_sector == (missionNamespace getVariable format ["BIS_WL_currentTarget_%1", _owner])) then {[_owner, objNull] call BIS_fnc_WL2_selectTarget};
 
-"server" call BIS_fnc_WL2_updateSectorArrays;
+["server", true] call BIS_fnc_WL2_updateSectorArrays;
 
 _side = [west, east];
 _side deleteAt (_side find _owner);

@@ -23,5 +23,17 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
+private _squadActionText = format ["<t color='#00FFFF'>%1</t>", localize "STR_SQUADS_squads"];
+private _squadActionId = player addAction[_squadActionText, { [true] call SQD_fnc_menu }, [], -100, false, false, "", ""];
+player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa'/>"];
+
 player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
+
+player addEventHandler ["HandleRating", {
+	params ["_unit", "_rating"];
+	0;
+}];
+
+call BIS_fnc_WL2_spectrumAction;
+0 spawn MRTM_fnc_settingsMenu;

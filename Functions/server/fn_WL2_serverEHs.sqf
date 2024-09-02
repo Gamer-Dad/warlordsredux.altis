@@ -1,6 +1,7 @@
 addMissionEventHandler ["HandleDisconnect", {
 	params ["_unit", "_id", "_uid", "_name"];
-	_var = format ["BIS_WL_ownedVehicles_%1", _uid];
+	_ownedVehicles = format ["BIS_WL_ownedVehicles_%1", _uid];
+	_minesDB = format ["BIS_WL2_minesDB_%1", _uid];
 	{
 		if (unitIsUAV _x) then {
 			private _grp = group effectiveCommander _x;
@@ -9,8 +10,17 @@ addMissionEventHandler ["HandleDisconnect", {
 		};
 
 		deleteVehicle _x;
-	} forEach ((missionNamespace getVariable [_var, []]) select {!(isNull _x)});
-	missionNamespace setVariable [_var, nil];
+	} forEach ((missionNamespace getVariable [_ownedVehicles, []]) select {!(isNull _x)});
+	missionNamespace setVariable [_ownedVehicles, nil];
+
+	{
+		_mineData = (missionNamespace getVariable _minesDB) getOrDefault [_x, [0, []]];
+		_mines = (_mineData select 1);
+		{
+			if (!(isNull _x)) then {deleteVehicle _x};
+		} forEach _mines;
+	} forEach (missionNamespace getVariable _minesDB);
+	missionNamespace setVariable [_minesDB, nil];
 
 	{
 		if !(isPlayer _x) then {deleteVehicle _x;};
@@ -20,23 +30,40 @@ addMissionEventHandler ["HandleDisconnect", {
 		_player = _x call BIS_fnc_getUnitByUID;
 		[_player, _unit] spawn MRTM_fnc_accept;
 	} forEach (missionNamespace getVariable [(format ["MRTM_invitesOut_%1", _uid]), []]);
-	
+
+
+	call BIS_fnc_WL2_updateVehicleList;
 	call BIS_fnc_WL2_calcImbalance;
 }];
 
 addMissionEventHandler ["EntityKilled", {
 	params ["_unit", "_killer", "_instigator"];
-	if (isNull _instigator) then {_instigator = (if !(isNull ((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)) then [{((_killer getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID)}, {((UAVControl vehicle _killer) # 0)}])};
-	if (isNull _instigator) then {_instigator = (vehicle _killer)};
-	if !(isNull _instigator) then {
-		_responsibleLeader = (_instigator getVariable ["BIS_WL_ownerAsset", "123"]) call BIS_fnc_getUnitByUID;
-		if (isPlayer _responsibleLeader) then {
-			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_killRewardHandle;
-			[_unit, _responsibleLeader] spawn BIS_fnc_WL2_friendlyFireHandleServer;
-			if (isPlayer _unit) then {
-				diag_log format["PvP kill: %1_%2 was killed by %3_%4 from %5m", name _unit, getPlayerUID _unit, name _responsibleLeader, getPlayerUID _responsibleLeader, _unit distance _responsibleLeader];
-			};
+
+	private _responsiblePlayer = [_killer, _instigator] call BIS_fnc_WL2_handleInstigator;
+	if (isNull _responsiblePlayer || _unit == _responsiblePlayer) then {
+		// only use last hit if no direct killer is found OR if responsible player is the unit
+		_responsiblePlayer = _unit getVariable ["BIS_WL_lastHitter", objNull];
+	};
+
+	if !(isNull _responsiblePlayer) then {
+		[_unit, _responsiblePlayer] spawn BIS_fnc_WL2_killRewardHandle;
+		[_unit, _responsiblePlayer] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+
+		if (isPlayer _unit) then {
+			diag_log format["PvP kill: %1_%2 was killed by %3_%4 from %5m", name _unit, getPlayerUID _unit, name _responsiblePlayer, getPlayerUID _responsiblePlayer, _unit distance _responsiblePlayer];
 		};
+
+		private _lastSpotted = _unit getVariable ["WL_lastSpotted", objNull];
+		if (!isNull _lastSpotted && {_lastSpotted != _responsiblePlayer}) then {
+			private _spotReward = 5;
+			_uid = getPlayerUID _lastSpotted;
+			_spotReward call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_unit, _spotReward, "Spot assist", "#7a7ab9"] remoteExec ["BIS_fnc_WL2_killRewardClient", _lastSpotted];
+		};
+	};
+
+	if (isPlayer [_unit]) then {	// use alt syntax to exclude vehicle kills
+		[_unit, _responsiblePlayer, _killer] remoteExec ["BIS_fnc_WL2_deathInfo", _unit];
 	};
 
 	_unit spawn {
@@ -57,21 +84,10 @@ addMissionEventHandler ["EntityKilled", {
 
 addMissionEventHandler ["MarkerCreated", {
 	params ["_marker", "_channelNumber", "_owner", "_local"];
-	
+
 	_list = getArray (missionConfigFile >> "adminFilter");
 	_return = ((_list findIf {[_x, (markerText _marker)] call BIS_fnc_inString}) != -1);
 	if (((isPlayer _owner) && {(_channelNumber == 0)}) || {_return}) then {
 		deleteMarker _marker;
 	};
-}];
-
-BIS_fnc_WL2_mineHandle = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_mineHandle.sqf";
-addMissionEventHandler ["EntityCreated", {
-  params ["_entity"];
-  if (isClass (configFile >> "CfgAmmo" >> (typeOf _entity))) then {
-    
-	if (((serverNamespace getVariable "WL2_mineLimits") getOrdefault [(typeOf _entity), 0]) isEqualType []) then {
-		_entity spawn BIS_fnc_WL2_mineHandle;
-	};
-  };
 }];

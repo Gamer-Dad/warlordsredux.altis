@@ -4,17 +4,18 @@ params ["_asset"];
 private _removeActionID = _asset addAction [
 	"",
 	{
-		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf (_this # 0)) >> "displayName");
+		private _unit = _this # 0;
+		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
 		_result = [format ["Are you sure you would like to delete: %1", _displayName], "Delete asset", true, true] call BIS_fnc_guiMessage;
 
 		if (_result) exitWith {
-			if (unitIsUAV (_this # 0)) then {
-				private _grp = group effectiveCommander (_this # 0);
-				{(_this # 0) deleteVehicleCrew _x} forEach crew (_this # 0);
+			if (unitIsUAV _unit) then {
+				private _grp = group effectiveCommander _unit;
+				{_unit deleteVehicleCrew _x} forEach crew _unit;
 				deleteGroup _grp;
 			};
-			
-			deleteVehicle (_this # 0);
+
+			[_unit] remoteExec ["BIS_fnc_WL2_removeAsset", 2];
 		};
 	},
 	[],

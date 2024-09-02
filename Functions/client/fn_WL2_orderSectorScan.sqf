@@ -12,18 +12,23 @@ if !(visibleMap) then {
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_targetSector = objNull;
+private _selectionBefore = BIS_WL_currentSelection;
 BIS_WL_currentSelection = WL_ID_SELECTION_SCAN;
 
 sleep WL_TIMEOUT_SHORT;
 
-"scan" spawn BIS_fnc_WL2_sectorSelectionHandle;
+waitUntil {
+	sleep WL_TIMEOUT_MIN;
 
-waitUntil {sleep WL_TIMEOUT_MIN; !isNull BIS_WL_targetSector || {!visibleMap || {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING || {!alive player || {lifeState player == "INCAPACITATED"}}}}};
-
-["scan", "end"] call BIS_fnc_WL2_sectorSelectionHandle;
+	!isNull BIS_WL_targetSector ||
+	!visibleMap ||
+	BIS_WL_currentSelection == WL_ID_SELECTION_VOTING ||
+	!alive player ||
+	lifeState player == "INCAPACITATED";
+};
 
 if (BIS_WL_currentSelection == WL_ID_SELECTION_SCAN) then {
-	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	BIS_WL_currentSelection = _selectionBefore;
 };
 
 if (isNull BIS_WL_targetSector) exitWith {

@@ -9,6 +9,7 @@ BIS_fnc_WL2_betty = compileFinal preprocessFileLineNumbers "Functions\client\fn_
 BIS_fnc_WL2_blockScreen = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_blockScreen.sqf";
 BIS_fnc_WL2_clientEH = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_clientEH.sqf";
 BIS_fnc_WL2_cpBalance = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_cpBalance.sqf";
+BIS_fnc_WL2_deathInfo = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_deathInfo.sqf";
 BIS_fnc_WL2_deleteAssetFromMap = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_deleteAssetFromMap.sqf";
 BIS_fnc_WL2_forfeitHandle = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_forfeitHandle.sqf";
 BIS_fnc_WL2_friendlyFireHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_friendlyFireHandleClient.sqf";
@@ -45,7 +46,6 @@ BIS_fnc_WL2_sectorMarkerUpdate = compileFinal preprocessFileLineNumbers "Functio
 BIS_fnc_WL2_sectorOwnershipHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_sectorOwnershipHandleClient.sqf";
 BIS_fnc_WL2_sectorRevealHandle = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_sectorRevealHandle.sqf";
 BIS_fnc_WL2_sectorScanHandle = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_sectorScanHandle.sqf";
-BIS_fnc_WL2_sectorSelectionHandle = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_sectorSelectionHandle.sqf";
 BIS_fnc_WL2_sectorsInitClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_sectorsInitClient.sqf";
 BIS_fnc_WL2_selectedTargetsHandle = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_selectedTargetsHandle.sqf";
 BIS_fnc_WL2_setOSDEvent = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_setOSDEvent.sqf";
@@ -62,9 +62,18 @@ BIS_fnc_WL2_wasMain = compileFinal preprocessFileLineNumbers "Functions\client\f
 BIS_fnc_WL2_welcome = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_welcome.sqf";
 BIS_fnc_WL2_zoneRestrictionHandleClient = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_zoneRestrictionHandleClient.sqf";
 BIS_fnc_WL2_factionBasedClientInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_factionBasedClientInit.sqf";
+BIS_fnc_WL2_pingFix = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFix.sqf";
+BIS_fnc_WL2_pingFixInit = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_pingFixInit.sqf";
+BIS_fnc_WL2_uavJammer = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_uavJammer.sqf";
+BIS_fnc_WL2_spectrumAction = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_spectrumAction.sqf";
+BIS_fnc_WL2_captureList = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_captureList.sqf";
+BIS_fnc_WL2_MineLimitHint = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_MineLimitHint.sqf";
+BIS_fnc_WL2_airburst = compileFinal preprocessFileLineNumbers "Functions\client\fn_WL2_airburst.sqf";
 
 BIS_fnc_WL2_sub_arsenalSetup = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_arsenalSetup.sqf";
 BIS_fnc_WL2_sub_dazzlerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_dazzlerAction.sqf";
+BIS_fnc_WL2_sub_demolish = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_demolish.sqf";
+BIS_fnc_WL2_sub_jammerAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_jammerAction.sqf";
 BIS_fnc_WL2_sub_logisticsAddAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_logisticsAddAction.sqf";
 BIS_fnc_WL2_sub_purchaseMenuAssetAvailability = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_purchaseMenuAssetAvailability.sqf";
 BIS_fnc_WL2_sub_purchaseMenuGetUIScale = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_purchaseMenuGetUIScale.sqf";
@@ -74,99 +83,79 @@ BIS_fnc_WL2_sub_purchaseMenuSetAssetDetails = compileFinal preprocessFileLineNum
 BIS_fnc_WL2_sub_purchaseMenuSetItemsList = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_purchaseMenuSetItemsList.sqf";
 BIS_fnc_WL2_sub_radarOperate = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_radarOperate.sqf";
 BIS_fnc_WL2_sub_rearmAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_rearmAction.sqf";
-BIS_fnc_WL2_sub_rearmActionAir = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_rearmActionAir.sqf";
 BIS_fnc_WL2_sub_removeAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_removeAction.sqf";
 BIS_fnc_WL2_sub_vehicleLockAction = compileFinal preprocessFileLineNumbers "Functions\subroutines\fn_WL2_sub_vehicleLockAction.sqf";
 
-BIS_fnc_WL2_vehicleRearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_WL2_vehicleRearm.sqf";
-BIS_fnc_animate = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_animate.sqf";
-BIS_fnc_getCamos = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getCamos.sqf";
-BIS_fnc_getExtras = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getExtras.sqf";
-BIS_fnc_getHulls = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getHulls.sqf";
-BIS_fnc_getLiveries = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_getLiveries.sqf";
-BIS_fnc_rearm = compileFinal preprocessFileLineNumbers "Functions\client\rearming\fn_rearm.sqf";
-
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
-
-WLM_fnc_aircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_aircraftPylons.sqf";
-WLM_fnc_switchUser = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_switchUser.sqf";
-WLM_fnc_selectLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_selectLoadout.sqf";
-WLM_fnc_saveLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_saveLoadout.sqf";
-WLM_fnc_constructAircraftPylons = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructAircraftPylons.sqf";
-WLM_fnc_constructPresetMenu = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_constructPresetMenu.sqf";
-WLM_fnc_applyLoadout = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyLoadout.sqf";
-WLM_fnc_rearmAircraft = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_rearmAircraft.sqf";
-WLM_fnc_applyPylonFinal = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_applyPylonFinal.sqf";
-WLM_fnc_textureLists = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_textureLists.sqf";
-WLM_fnc_wipePylonSaves = compileFinal preprocessFileLineNumbers "scripts\WLM\functions\fn_wipePylonSaves.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
 
 "client" call BIS_fnc_WL2_varsInit;
 waitUntil {!(isNil "BIS_WL_playerSide")};
-
-private _uid = getPlayerUID player;
-private _switch = format ["teamBlocked_%1", _uid];
-waitUntil {!isNil {missionNamespace getVariable _switch}};
-if (missionNamespace getVariable _switch) exitWith {
-	addMissionEventHandler ["EachFrame", {
-		clearRadio;
-	}];
-	sleep 0.1;
-	["client_init"] call BIS_fnc_endLoadingScreen;
-	player removeItem "ItemMap";
-	player removeItem "ItemRadio";
-	[player] joinSilent BIS_WL_wrongTeamGroup;
-	enableRadio false;
-	enableSentences false;
-	0 fadeSpeech 0;
-	0 fadeRadio 0;
-	{
-		_x setPlayerVoNVolume 1;
-	} forEach allPlayers select {side _x == side player};
-	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+if (["(EU) #11", serverName] call BIS_fnc_inString) then {
+	private _uid = getPlayerUID player;
+	private _switch = format ["teamBlocked_%1", _uid];
+	waitUntil {!isNil {missionNamespace getVariable _switch}};
+	if (missionNamespace getVariable _switch) exitWith {
+		addMissionEventHandler ["EachFrame", {
+			clearRadio;
+		}];
+		sleep 0.1;
+		["client_init"] call BIS_fnc_endLoadingScreen;
+		player removeItem "ItemMap";
+		player removeItem "ItemRadio";
+		[player] joinSilent BIS_WL_wrongTeamGroup;
+		enableRadio false;
+		enableSentences false;
+		0 fadeSpeech 0;
+		0 fadeRadio 0;
+		{
+			_x setPlayerVoNVolume 1;
+		} forEach allPlayers select {side _x == side player};
+		{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+		missionNamespace setVariable [_switch, nil];
+		[localize "STR_A3_WL_switch_teams", localize "STR_A3_WL_switch_teams_info"] call BIS_fnc_WL2_blockScreen;
+	};
 	missionNamespace setVariable [_switch, nil];
-	[localize "STR_A3_WL_switch_teams", localize "STR_A3_WL_switch_teams_info"] call BIS_fnc_WL2_blockScreen;
-};
-missionNamespace setVariable [_switch, nil];
 
-private _imb = format ["balanceBlocked_%1", _uid];
-waitUntil {!isNil {missionNamespace getVariable _imb}};
-if (missionNamespace getVariable _imb) exitWith {
-	addMissionEventHandler ["EachFrame", {
-		clearRadio;
-	}];
-	sleep 0.1;
-	["client_init"] call BIS_fnc_endLoadingScreen;
-	player removeItem "ItemMap";
-	player removeItem "ItemRadio";
-	[player] joinSilent BIS_WL_wrongTeamGroup;
-	enableRadio false;
-	enableSentences false;
-	0 fadeSpeech 0;
-	0 fadeRadio 0;
-	{
-		_x setPlayerVoNVolume 1;
-	} forEach allPlayers select {side _x == side player};
-	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+	private _imb = format ["balanceBlocked_%1", _uid];
+	waitUntil {!isNil {missionNamespace getVariable _imb}};
+	if (missionNamespace getVariable _imb) exitWith {
+		addMissionEventHandler ["EachFrame", {
+			clearRadio;
+		}];
+		sleep 0.1;
+		["client_init"] call BIS_fnc_endLoadingScreen;
+		player removeItem "ItemMap";
+		player removeItem "ItemRadio";
+		[player] joinSilent BIS_WL_wrongTeamGroup;
+		enableRadio false;
+		enableSentences false;
+		0 fadeSpeech 0;
+		0 fadeRadio 0;
+		{
+			_x setPlayerVoNVolume 1;
+		} forEach allPlayers select {side _x == side player};
+		{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+		missionNamespace setVariable [_imb, nil];
+		["Teams are imbalanced!", "It seems that the teams are not balanced, please head back to the lobby and join the other team, Thank you."] call BIS_fnc_WL2_blockScreen;
+	};
 	missionNamespace setVariable [_imb, nil];
-	["Teams are imbalanced!", "It seems that the teams are not balanced, please head back to the lobby and join the other team, Thank you."] call BIS_fnc_WL2_blockScreen;
-};
-missionNamespace setVariable [_imb, nil];
 
-_text = toLower (name player);
-_list = getArray (missionConfigFile >> "adminFilter");
-if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
-	["client_init"] call BIS_fnc_endLoadingScreen;
-	player removeItem "ItemMap";
-	player removeItem "ItemRadio";
-	[player] joinSilent BIS_WL_wrongTeamGroup;
-	enableRadio false;
-	enableSentences false;
-	0 fadeSpeech 0;
-	0 fadeRadio 0;
-	{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
-	[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;	
+	_text = toLower (name player);
+	_list = getArray (missionConfigFile >> "adminFilter");
+	if ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1) exitWith {
+		["client_init"] call BIS_fnc_endLoadingScreen;
+		player removeItem "ItemMap";
+		player removeItem "ItemRadio";
+		[player] joinSilent BIS_WL_wrongTeamGroup;
+		enableRadio false;
+		enableSentences false;
+		0 fadeSpeech 0;
+		0 fadeRadio 0;
+		{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
+		[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;
+	};
 };
 
 if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
@@ -176,15 +165,17 @@ if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 
 enableRadio true;
 enableSentences true;
-{_x enableChannel [true, true]} forEach [1,3,4,5];
-{_x enableChannel [true, false]} forEach [0,2];
+{_x enableChannel [true, true]} forEach [3,4,5];
+{_x enableChannel [true, false]} forEach [0,1,2];
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
+
 uiNamespace setVariable ["BIS_WL_purchaseMenuLastSelection", [0,0,0]];
 uiNamespace setVariable ["activeControls", []];
 uiNamespace setVariable ["control", 10000];
 
+private _uid = getPlayerUID player;
 if !(_uid in (getArray (missionConfigFile >> "adminIDs"))) then {
 	0 spawn BIS_fnc_WL2_wasMain;
 };
@@ -278,18 +269,32 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 };
 
 0 spawn {
-	_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
+	WL_ORIGINAL_SPEAKER = speaker player;
 	while {!BIS_WL_missionEnd} do {
-		_vehicles = missionNamespace getVariable [_var, []];
+		sleep 5;
+		private _noVoice = profileNamespace getVariable ["MRTM_noVoiceSpeaker", false];
+		if (_noVoice) then {
+			player setSpeaker "NoVoice";
+		} else {
+			player setSpeaker WL_ORIGINAL_SPEAKER;
+		};
+	};
+};
+
+0 spawn {
+	private _ownedVehicleVar = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
+	while {!BIS_WL_missionEnd} do {
+		private _vehicles = missionNamespace getVariable [_ownedVehicleVar, []];
 		{
-			_time = _x getVariable ["BIS_WL_lastActive", 0];
-			if ((_time < serverTime) && (_time > 1)) then {
-				_wlVehicles = missionNamespace getVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], []];
-				_wlVehicles deleteAt (_wlVehicles find _x);
-				missionNamespace setVariable [format ["BIS_WL_ownedVehicles_%1", getPlayerUID player], _vehicles, [2, clientOwner]];
+			private _lastActiveTime = _x getVariable ["BIS_WL_lastActive", 0];
+			if (_lastActiveTime < serverTime && _lastActiveTime > 1 && count (crew _x) == 0) then {
 				deleteVehicle _x;
+				0 remoteExec ["BIS_fnc_WL2_updateVehicleList", 2];
 			};
-		}forEach _vehicles;
+		} forEach _vehicles;
+
+		_vehicles = _vehicles select {alive _x};
+		missionNamespace setVariable [_ownedVehicleVar, _vehicles, [2, clientOwner]];
 		sleep 10;
 	};
 };
@@ -301,6 +306,145 @@ if !(["(EU) #11", serverName] call BIS_fnc_inString) then {
 	];
 };
 
+private _squadActionText = format ["<t color='#00FFFF'>%1</t>", localize "STR_SQUADS_squads"];
+private _squadActionId = player addAction[_squadActionText, { [true] call SQD_fnc_menu }, [], -100, false, false, "", ""];
+player setUserActionText [_squadActionId, _squadActionText, "<img size='2' image='\a3\ui_f\data\igui\cfg\simpletasks\types\meet_ca.paa'/>"];
 
 0 spawn BIS_fnc_WL2_factionBasedClientInit;
+0 spawn BIS_fnc_WL2_captureList;
+0 spawn BIS_fnc_WL2_MineLimitHint;
 
+call BIS_fnc_WL2_spectrumAction;
+
+player addEventHandler ["HandleRating", {
+	params ["_unit", "_rating"];
+	0;
+}];
+
+call SQD_fnc_initClient;
+
+call BIS_fnc_WL2_pingFixInit;
+
+0 spawn MRTM_fnc_settingsMenu;
+missionNamespace setVariable [format ["BIS_WL2_minesDB_%1", getPlayerUID player],
+	createHashMapFromArray [
+		//***Automatic mines***/
+		["APERSMine_Range_Ammo", 				[10, []]],
+		["APERSTripMine_Wire_Ammo", 			[10, []]],
+		["APERSBoundingMine_Range_Ammo", 		[10, []]],
+		["ATMine_Range_Ammo", 					[10, []]],
+		["SLAMDirectionalMine_Wire_Ammo", 		[10, []]],
+		//***Manually Detonated***/
+		["ClaymoreDirectionalMine_Remote_Ammo",	[5,  []]],
+		["SatchelCharge_Remote_Ammo", 			[5,  []]],
+		["DemoCharge_Remote_Ammo", 				[5,  []]]
+		//***Blacklisted***/
+		/*
+		["APERSMineDispenser_Mine_Ammo", 		[0,  []]],
+		["IEDUrbanSmall_Remote_Ammo", 			[0,  []]],
+		["IEDLandSmall_Remote_Ammo", 			[0,  []]],
+		["IEDUrbanBig_Remote_Ammo", 			[0,  []]],
+		["IEDLandBig_Remote_Ammo",				[0,  []]]
+		*/
+	],
+	[2, clientOwner]
+];
+
+0 spawn {
+	while {!BIS_WL_missionEnd} do {
+		{
+			private _uav = _x;
+			private _ownerUavAsset = _uav getVariable ["BIS_WL_ownerUavAsset", "123"];
+			private _ownerUnit = _ownerUavAsset call BIS_fnc_getUnitByUID;
+			private _ownerID = getPlayerID _ownerUnit;
+			private _isInMySquad = ["isInMySquad", [_ownerID]] call SQD_fnc_client;
+
+			private _isConnectable = player isUAVConnectable [_uav, true];
+
+			if (!_isInMySquad && _ownerUnit != player) then {
+				_uav setVariable ["WL_canConnectUav", false];
+				if (_isConnectable) then {
+					player disableUAVConnectability [_uav, true];
+				};
+			} else {
+				_uav setVariable ["WL_canConnectUav", true];
+				if (!_isConnectable) then {
+					player enableUAVConnectability [_uav, true];
+				};
+			};
+		} forEach allUnitsUAV;
+		sleep 5;
+	};
+};
+
+0 spawn {
+	private _previousState = BIS_WL_currentSelection;
+	private _lastFullUpdate = -1;
+	while {!BIS_WL_missionEnd} do {
+		sleep 0.1;
+		if (_previousState == BIS_WL_currentSelection && _lastFullUpdate + 2 > serverTime) then {
+			continue;
+		};
+
+		// state changed or full update every 2s
+		_previousState = BIS_WL_currentSelection;
+		_lastFullUpdate = serverTime;
+		switch (BIS_WL_currentSelection) do {
+			case WL_ID_SELECTION_NONE;
+			case WL_ID_SELECTION_ORDERING_NAVAL: {
+				BIS_WL_selection_availableSectors = [];
+				BIS_WL_selection_showLinks = false;
+				BIS_WL_selection_dimSectors = false;
+			};
+			case WL_ID_SELECTION_VOTING;
+			case WL_ID_SELECTION_VOTED: {
+				BIS_WL_selection_availableSectors = BIS_WL_sectorsArray # 1;
+				BIS_WL_selection_showLinks = true;
+				BIS_WL_selection_dimSectors = true;
+			};
+			case WL_ID_SELECTION_FAST_TRAVEL: {
+				BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 2) select {(_x getVariable ["BIS_WL_owner", independent]) == (side (group player))};
+				BIS_WL_selection_showLinks = false;
+				BIS_WL_selection_dimSectors = true;
+			};
+			case WL_ID_SELECTION_FAST_TRAVEL_CONTESTED: {
+				BIS_WL_selection_availableSectors = [WL_TARGET_FRIENDLY];
+				BIS_WL_selection_showLinks = false;
+				BIS_WL_selection_dimSectors = true;
+			};
+			case WL_ID_SELECTION_ORDERING_AIRCRAFT: {
+				BIS_WL_selection_availableSectors = (BIS_WL_sectorsArray # 0) select {BIS_WL_orderedAssetRequirements isEqualTo (BIS_WL_orderedAssetRequirements arrayIntersect (_x getVariable "BIS_WL_services"))};
+				BIS_WL_selection_showLinks = false;
+				BIS_WL_selection_dimSectors = true;
+			};
+			case WL_ID_SELECTION_SCAN: {
+				private _allScannableSectors = BIS_WL_sectorsArray # 3;
+				private _lastScanEligible = serverTime - (getMissionConfigValue ["BIS_WL_scanCooldown", 300]);
+				private _availableSectors = _allScannableSectors select {_x getVariable [format ["BIS_WL_lastScanEnd_%1", BIS_WL_playerSide], -9999] < _lastScanEligible};
+				BIS_WL_selection_availableSectors = _availableSectors;
+				BIS_WL_selection_showLinks = false;
+				BIS_WL_selection_dimSectors = true;
+			};
+		};
+
+		if (BIS_WL_selection_showLinks) then {
+			{
+				_x setMarkerAlphaLocal WL_CONNECTING_LINE_ALPHA_MAX;
+			} forEach BIS_WL_sectorLinks;
+		} else {
+			{
+				_x setMarkerAlphaLocal 0;
+			} forEach BIS_WL_sectorLinks;
+		};
+
+		{
+			private _alpha = if (BIS_WL_selection_dimSectors && !(_x in BIS_WL_selection_availableSectors)) then {
+				WL_CONNECTING_LINE_ALPHA_MIN;
+			} else {
+				1;
+			};
+			((_x getVariable "BIS_WL_markers") # 0) setMarkerAlphaLocal _alpha;
+			((_x getVariable "BIS_WL_markers") # 1) setMarkerAlphaLocal _alpha;
+		} forEach BIS_WL_allSectors;
+	};
+};

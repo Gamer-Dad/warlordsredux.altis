@@ -1,4 +1,4 @@
-params ["_unit", "_reward", ["_assist", false]];
+params ["_unit", "_reward", ["_customText", ""], ["_customColor", "#228b22"]];
 
 disableSerialization;
 
@@ -21,25 +21,27 @@ _ctrl = (findDisplay 46) ctrlCreate ["RscStructuredText", _ctrlNmbr];
 _ctrl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 30), _blockW * 160, _blockH * 16];
 
 _scale = 0.65 call BIS_fnc_WL2_sub_purchaseMenuGetUIScale;
-if (_unit isKindOf "Man") then {
-	if (_assist) then {
-		_ctrl ctrlSetStructuredText parseText format ["<t size='%2' align='right' color='#228b22'>Kill assist +%1CP</t>", _reward, _scale];
-	} else {
-		_ctrl ctrlSetStructuredText parseText format ["<t size='%2' align='right' color='#228b22'>Enemy killed +%1CP</t>", _reward, _scale];
-	};
+
+private _displayText = "";
+private _displayName = "";
+
+if (_customText != "") then {
+	_displayText = format ["%1 +%2CP", _customText, _reward];
 } else {
-	_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
-	if (_assist) then {
-		_ctrl ctrlSetStructuredText parseText format ["<t size='%3' align='right' shadow = '1' color='#228b22'>Assist:%1 +%2CP</t>", _displayName, _reward, _scale];
+	if (_unit isKindOf "Man") then {
+		_displayText = "Enemy killed %2CP";
 	} else {
-		_ctrl ctrlSetStructuredText parseText format ["<t size='%4' align='right' shadow = '1' color='#228b22'>%1 destroyed %3%2CP</t>", _displayName, _reward, (if (_reward > 0) then {"+"} else {""}), _scale];
+		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
+		_displayText = "%1 destroyed %2CP";
 	};
+	_displayText = format [_displayText, _displayName, if (_reward > 0) then {format ["+%1", _reward]} else {format ["%1", _reward]}];
 };
+_ctrl ctrlSetStructuredText parseText format ["<t size='%1' align='right' color='%2'>%3</t>", _scale, _customColor, _displayText];
 
 WAS_score = true;
 
-if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
-	playSoundUI ["AddItemOK", 0.1, 1];
+if (profileNamespace getVariable ["MRTM_playKillSound", true] && _customColor == "#228b22") then {
+	playSoundUI ["AddItemOK", 1, 1];
 };
 
 _ctrl ctrlCommit 0;
@@ -50,7 +52,7 @@ _ctrlNmbr spawn {
 	_ctrl ctrlCommit 0;
 	UISleep 10;
 	ctrlDelete _ctrl;
-	
+
 	_controls = uiNamespace getVariable ["activeControls", []];
 	_controls deleteAt _this;
 	uiNamespace setVariable ["activeControls", _controls];

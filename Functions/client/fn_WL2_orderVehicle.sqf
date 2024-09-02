@@ -9,8 +9,6 @@ if (_class isKindOf "Man") then {
 	[_asset, player] spawn BIS_fnc_WL2_newAssetHandle;
 	player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
 } else {
-	BIS_WL_currentSelection = 9;
-
 	_offset = [0, 8, 0];
 	_asset = createSimpleObject [_class, (AGLToASL (player modelToWorld _offset)), true];
 
@@ -44,14 +42,14 @@ if (_class isKindOf "Man") then {
 
 	0 spawn {
 		waitUntil {
-			sleep 0.1; 
-			BIS_WL_spacePressed || 
-			{BIS_WL_backspacePressed || 
-			{vehicle player != player || 
-			{!alive player || 
-			{lifeState player == "INCAPACITATED" || 
-			{(count ((allPlayers inAreaArray [player, 100, 100]) select {(_x != player) && {(BIS_WL_playerSide != side group _x) && {alive _x}}}) > 0) || 
-			{(getPosATL player) select 2 > 1 || 
+			sleep 0.1;
+			BIS_WL_spacePressed ||
+			{BIS_WL_backspacePressed ||
+			{vehicle player != player ||
+			{!alive player ||
+			{lifeState player == "INCAPACITATED" ||
+			{(count ((allPlayers inAreaArray [player, 100, 100]) select {(_x != player) && {(BIS_WL_playerSide != side group _x) && {alive _x}}}) > 0) ||
+			{(getPosATL player) select 2 > 1 ||
 			{(BIS_WL_sectorsArray # 0) findIf {player inArea (_x getVariable "objectAreaComplete")} == -1
 		}}}}}}}};
 
@@ -73,15 +71,11 @@ if (_class isKindOf "Man") then {
 
 	if (BIS_WL_spacePressed) then {
 		playSound "assemble_target";
-		[player, "orderAsset", [(_p # 0), (_p # 1), 0], _class, false, (direction player)] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+		[player, "orderAsset", "vehicle", [(_p # 0), (_p # 1), 0], _class, direction player] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
 	} else {
 		"Canceled" call BIS_fnc_WL2_announcer;
 		[toUpper localize "STR_A3_WL_deploy_canceled"] spawn BIS_fnc_WL2_smoothText;
 		player setVariable ["BIS_WL_isOrdering", false, [2, clientOwner]];
-	};
-
-	if (BIS_WL_currentSelection == 9) then {
-		BIS_WL_currentSelection = 0;
 	};
 };
 

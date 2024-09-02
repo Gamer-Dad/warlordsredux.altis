@@ -2,8 +2,8 @@ params ["_side"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private _blacklistWest = ["CamoGreen", "AAF", "Opfor"];
-private _blacklistEast = ["CamoGreen", "AAF", "Blufor"];
+private _blacklistWest = ["Digital Green", "AAF", "Opfor", "Hex"];
+private _blacklistEast = ["Digital Green", "AAF", "Blufor"];
 
 private _whitelistWest = [];
 private _whitelistEast = [];
@@ -51,6 +51,9 @@ private _sideBlacklist = switch (_side) do {
     case east: {
         _blacklistEast
     };
+    default {
+        _blacklistWest + _blacklistEast
+    };
 };
 
 private _sideWhitelist = switch (_side) do {
@@ -59,6 +62,9 @@ private _sideWhitelist = switch (_side) do {
     };
     case east: {
         _whitelistEast
+    };
+    default {
+        []
     };
 };
 

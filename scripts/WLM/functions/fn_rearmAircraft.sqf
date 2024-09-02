@@ -4,12 +4,12 @@ params ["_showWarning"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private _cooldown = (((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0);
+private _cooldown = ((_asset getVariable "BIS_WL_nextRearm") - serverTime) max 0;
 private _nearbyVehicles = (_asset nearObjects ["All", WL_MAINTENANCE_RADIUS]) select { alive _x };
 private _rearmVehicleIndex = _nearbyVehicles findIf {getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "transportAmmo") > 0};
 private _rearmSource = _nearbyVehicles # _rearmVehicleIndex;
 
-private _amount = _rearmSource getVariable ["GOM_fnc_ammocargo", 0];
+private _amount = _rearmSource getVariable ["WLM_ammoCargo", 0];
 
 if (_cooldown > 0 || _amount <= 0) exitWith {
     playSound "AddItemFailed";
@@ -71,30 +71,22 @@ if (_newAmmo < 0) exitWith {
     hint format [localize "STR_WLM_KG_AMMO_REQUIRED", _massTally];
 };
 
-_rearmSource setVariable ["GOM_fnc_ammocargo", _newAmmo, true];
+_rearmSource setVariable ["WLM_ammoCargo", _newAmmo, true];
 
-private _ammoToSet = [];
-{
-    private _pylonMagazine = _x # 3;
-    private _turret = _x # 2;
-    private _pylonName = _x # 1;
+private _attachments = _asset getVariable ["WLM_assetAttachments", [["default"]]];
 
-    private _magConfig = configFile >> "CfgMagazines" >> _pylonMagazine;
-    private _maxAmmo = getNumber (_magConfig >> "count");
+if (count _attachments > 0 && (_attachments # 0 # 0 == "default")) then {
+    private _defaultAttachments = [];
+    {
+        _defaultAttachments pushBack [_x # 3, _x # 2];
+    } forEach _pylonsInfo;
+    _asset setVariable ["WLM_assetAttachments", _defaultAttachments, true];
+};
 
-    if (_maxAmmo > 0) then {
-        _ammoToSet pushBack [_pylonName, _pylonMagazine, _turret, _maxAmmo];
-    };
-} forEach _pylonsInfo;
+[_asset, true] remoteExec ["WLM_fnc_applyPylon", _asset];
 
-[_asset, [], _ammoToSet, 1] remoteExec ["WLM_fnc_applyPylonFinal", _asset];
+private _rearmTime = (missionNamespace getVariable "WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
+_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
-_asset setVehicleReceiveRemoteTargets true;
-_asset setVehicleReportRemoteTargets true;
-_asset setVehicleReportOwnPosition true;
-
-_rearmTime = (missionNamespace getVariable "BIS_WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
-
-_asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime]; 
 playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
 [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;

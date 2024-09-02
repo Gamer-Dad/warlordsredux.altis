@@ -15,7 +15,7 @@ if (_action == "rotation") then {
 				[_asset, "rotation"] call BIS_fnc_WL2_sub_radarOperate;
 			},
 			[],
-			99,
+			-1,
 			false,
 			false,
 			"",
@@ -23,7 +23,7 @@ if (_action == "rotation") then {
 			30,
 			true
 		];
-		
+
 		_asset setUserActionText [_radarActionID, format ["<t color = '%1'>%2</t>", if !(_asset getVariable "radarRotation") then {"#4bff58"} else {"#ff4b4b"}, if !(_asset getVariable "radarRotation") then {localize "STR_A3_radar_rotation_enable"} else {localize "STR_A3_radar_rotation_disable"}]];
 	};
 } else {
@@ -34,15 +34,13 @@ if (_action == "rotation") then {
 			_asset removeAction _actionID;
 			if (_asset getVariable "radarOperation") then {
 				_asset setVariable ["radarOperation", false, true];
-				_asset setVehicleRadar 2;
 			} else {
 				_asset setVariable ["radarOperation", true, true];
-				_asset setVehicleRadar 1;
 			};
 			[_asset, "toggle"] call BIS_fnc_WL2_sub_radarOperate;
 		},
 		[],
-		99,
+		-1,
 		false,
 		false,
 		"",

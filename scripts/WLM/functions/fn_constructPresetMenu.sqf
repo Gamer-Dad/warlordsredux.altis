@@ -1,6 +1,8 @@
 #include "..\WLM_constants.inc";
 
 private _asset = uiNamespace getVariable "WLM_asset";
+private _isAircraft = uiNamespace getVariable "WLM_assetIsAircraft";
+
 private _pylonConfig = configFile >> "CfgVehicles" >> typeOf _asset >> "Components" >> "TransportPylonsComponent";
 private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
 private _display = findDisplay WLM_DISPLAY;
@@ -10,6 +12,12 @@ lbClear _loadSelectControl;
 
 private _presets = configProperties [_pylonConfig >> "Presets"];
 _loadSelectControl lbAdd "Loadouts";
+
+if (!_isAircraft) then {
+    private _defaultSelection = _loadSelectControl lbAdd (localize "STR_WLM_RESET");
+    _loadSelectControl lbSetData [_defaultSelection, "Reset"];
+    _loadSelectControl lbSetTooltip [_defaultSelection, localize "STR_WLM_RESET_TOOLTIP"];
+};
 
 private _variableName = format ["WLM_savedLoadout_%1", typeOf _asset];
 private _savedLoadouts = profileNamespace getVariable [_variableName, []];

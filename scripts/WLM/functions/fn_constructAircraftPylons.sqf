@@ -31,6 +31,11 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
     _selectBox lbAdd (localize "STR_WLM_EMPTY");
     _selectBox lbSetCurSel 0;
 
+    private _allowedMagazines = _asset getCompatiblePylonMagazines _pylonConfigName;
+
+    private _allowListForPylon = missionNamespace getVariable ["WL2_allowPylonMagazines", createHashMap];
+    _allowedMagazines append (_allowListForPylon getOrDefault [typeOf _asset, []]);
+
     {
         private _magazine = configfile >> "CfgMagazines" >> _x;
         private _magazineName = getText (_magazine >> "displayName");
@@ -52,7 +57,7 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
         if (_currentPylonInfo # 3 == (configName _magazine)) then {
             _selectBox lbSetCurSel _selectBoxItem;
         };
-    } forEach (_asset getCompatiblePylonMagazines _pylonConfigName);
+    } forEach _allowedMagazines;
 
     _selectBox ctrlSetPosition [_xPos, _yPos, _textWidth + 0.04, 0.035];
 
@@ -68,7 +73,7 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
         _selectUserBox ctrlSetText "a3\ui_f\data\IGUI\Cfg\CommandBar\imageDriver_ca.paa";
         _selectUserBox ctrlSetTooltip "Control: Pilot";
     };
-    
+
     _selectUserBox ctrlAddEventHandler ["ButtonClick", "_this call WLM_fnc_switchUser"];
     _selectUserBox ctrlCommit 0;
 } forEach _pylonsInfo;

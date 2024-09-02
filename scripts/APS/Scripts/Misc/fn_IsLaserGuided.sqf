@@ -4,4 +4,6 @@ private _g = getNumber (configFile>>"CfgAmmo">>_type>>"Components">>"SensorsMana
 if (_g > 0) exitWith {true};
 private _g = getNumber (configFile>>"CfgAmmo">>_type>>"Components">>"SensorsManagerComponent">>"Components">>"NVSensorComponent">>"GroundTarget">>"maxRange");
 if (_g > 0) exitWith {true};
+private _g = getNumber (configFile>>"CfgAmmo">>_type>>"Components">>"SensorsManagerComponent">>"Components">>"LaserSensorComponent">>"GroundTarget">>"maxRange");
+if (_g > 0) exitWith {true};
 false;

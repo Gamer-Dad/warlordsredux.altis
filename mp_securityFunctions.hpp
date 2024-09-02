@@ -5,6 +5,10 @@ class CfgRemoteExec {
 		jip = 1;
 
 		class APS_fnc_Report {
+			allowedTargets = 0;
+		};
+
+		class APS_fnc_ServerHandleAPS {
 			allowedTargets = 2;
 		};
 
@@ -18,6 +22,14 @@ class CfgRemoteExec {
 
 		class BIS_fnc_WL2_forfeitHandleServer {
 			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_pingFix {
+			allowedTargets = 1;
+		};
+
+		class BIS_fnc_WL2_sub_demolish {
+			allowedTargets = 0;
 		};
 
 		class MRTM_fnc_invite {
@@ -40,20 +52,48 @@ class CfgRemoteExec {
 			allowedTargets = 0;
 		};
 
-		class DIS_fnc_SAMFired {
-			allowedTargets = 0;
+		class BIS_fnc_WL2_killRewardHandle {
+			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_dazzlerOn {
+			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_removeAsset {
+			allowedTargets = 2;
+		};
+
+		class BIS_fnc_WL2_updateVehicleList {
+			allowedTargets = 2;
 		};
 
 		class MRTM_fnc_leaveGroup {
 			allowedTargets = 0;
 		};
 
-		class WLM_fnc_serverPylonManager {
-			allowedTargets = 2;
+		class WLM_fnc_applyPylon {
+			allowedTargets = 0;
 		};
 
-		class WLM_fnc_applyPylonFinal {
+		class WLM_fnc_applyVehicle {
 			allowedTargets = 0;
+		};
+
+		class WLM_fnc_rearmVehicle {
+			allowedTargets = 0;
+		};
+
+		class WLM_fnc_moveSmokes {
+			allowedTargets = 0;
+		};
+
+		class WLM_fnc_changeHorn {
+			allowedTargets = 0;
+		};
+
+		class SQD_fnc_server {
+			allowedTargets = 2;
 		};
 
 		//Don't touch
@@ -119,6 +159,18 @@ class CfgRemoteExec {
 		};
 
 		class diag_log {
+			allowedTargets = 2;
+		};
+
+		class lookAt {
+			allowedTargets = 0;
+		};
+
+		class setVehicleRadar {
+			allowedTargets = 0;
+		};
+
+		class setVelocityModelSpace {
 			allowedTargets = 2;
 		};
 	};

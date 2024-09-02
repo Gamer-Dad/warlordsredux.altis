@@ -25,6 +25,9 @@ if !(profileNamespace getVariable ["preferencesInitialzed", false]) then {
 	profileNamespace setVariable ["MRTM_smallAnnouncerText", false];
 	profileNamespace setVariable ["MRTM_spawnEmpty", false];
 	profileNamespace setVariable ["MRTM_enableAuto", true];
+	profileNamespace setVariable ["MRTM_disableMissileCameras", true];
+	profileNamespace setVariable ["MRTM_showMarkers", true];
+	profileNamespace setVariable ["MRTM_noVoiceSpeaker", false];
 	profileNamespace setVariable ["preferencesInitialzed", true];
 };
 player setVariable ["MRTM_3rdPersonDisabled", (profileNamespace getVariable ["MRTM_3rdPersonDisabled", true]), [2, clientOwner]];
@@ -39,3 +42,4 @@ MRTM_fnc_onLBSelChanged = compileFinal preprocessFileLineNumbers "scripts\MRTM\f
 MRTM_fnc_onButtonClick = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_onButtonClick.sqf";
 MRTM_fnc_openDebugMenu = compileFinal preprocessFileLineNumbers "Scripts\MRTMDebug\fn_openDebugMenu.sqf";
 MRTM_fnc_setReturnValue = compileFinal preprocessFileLineNumbers "Scripts\MRTMDebug\fn_setReturnValue.sqf";
+MRTM_fnc_updateSettings = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_updateSettings.sqf";

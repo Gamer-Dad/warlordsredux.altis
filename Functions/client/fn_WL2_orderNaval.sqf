@@ -10,6 +10,7 @@ if !(visibleMap) then {
 	ctrlMapAnimCommit WL_CONTROL_MAP;
 };
 BIS_WL_waterDropPos = [];
+private _selectionBefore = BIS_WL_currentSelection;
 BIS_WL_currentSelection = WL_ID_SELECTION_ORDERING_NAVAL;
 sleep WL_TIMEOUT_SHORT;
 
@@ -25,7 +26,7 @@ _mapClickEH = addMissionEventHandler ["MapSingleClick", {
 waitUntil {sleep WL_TIMEOUT_MIN; count BIS_WL_waterDropPos > 0 || {!visibleMap || {BIS_WL_currentSelection == WL_ID_SELECTION_VOTING}}};
 
 if (BIS_WL_currentSelection == WL_ID_SELECTION_ORDERING_NAVAL) then {
-	BIS_WL_currentSelection = WL_ID_SELECTION_NONE;
+	BIS_WL_currentSelection = _selectionBefore;
 };
 
 removeMissionEventHandler ["MapSingleClick", _mapClickEH];
@@ -44,4 +45,4 @@ BIS_WL_waterDropPos set [2, 0];
 [toUpper localize "STR_A3_WL_airdrop_underway"] spawn BIS_fnc_WL2_smoothText;
 playSound "AddItemOK";
 
-[player, "orderAsset", BIS_WL_waterDropPos, _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];
+[player, "orderAsset", "naval", BIS_WL_waterDropPos, _class] remoteExec ["BIS_fnc_WL2_handleClientRequest", 2];

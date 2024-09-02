@@ -1,8 +1,8 @@
-params ["_v"];
+params ["_asset"];
 
-if !(local _v) exitWith {};
-_type = typeOf _v;
-if !(_type in apsAPStypes) exitWith {};
+if !(local _asset) exitWith {};
+private _type = typeOf _asset;
+private _apsType = missionNamespace getVariable ["WL2_aps", createHashMap];
+if !(_type in _apsType) exitWith {};
 
-
-_v setVariable ["apsAmmo", (_v call APS_fnc_getMaxAmmo), true];
+_asset setVariable ["apsAmmo", _asset call APS_fnc_getMaxAmmo, true];

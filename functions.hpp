@@ -2,23 +2,12 @@ class CfgFunctions {
 	class MRTM {
 		class Init {
 			file = "scripts\MRTM";
-			class settingsMenu {
-				ext = ".fsm";
-				postInit = 1;
-				headerType = -1;
-			};
+			class settingsMenu {};
 			class openMenu {};
 		};
 	};
-	class GOM {
-		class init
-		{
-			file = "scripts\GOM\functions";
-			class aircraftLoadoutInit {preInit = 1;};
-		};
-	};
 	class KS
-	{	
+	{
 		class normalFunctions
 		{
 			file = "scripts\VUnflip\functions";
@@ -29,11 +18,12 @@ class CfgFunctions {
 	};
 	class APS
 	{
-		class APS 
+		class APS
 		{
 			file = "scripts\APS\Scripts\APS";
 			class SetupProjectiles {};
 			class FiredProjectile {};
+			class ServerHandleAPS {};
 		};
 		class Management
 		{
@@ -66,11 +56,13 @@ class CfgFunctions {
 		class SAM
 		{
 			file = "scripts\DIS";
+			class Check {};
 			class Frag {};
-			class SAMFired {};
-			class RegisterSAM {};
-			class IsSam {};
-			class SAMmaneuver {};
+			class Maneuver {};
+			class MissileCamera {};
+			class OnSamFired {};
+			class RegisterLauncher {};
+			class StartMissileCamera {};
 		};
 	};
 	class Fxr {
@@ -80,5 +72,44 @@ class CfgFunctions {
 			class openReportMenu {};
 			class closeReportMenu {};
 		};
-	}
+	};
+	class SQD {
+		class Squads {
+			file = "scripts\Squads";
+			class client {};
+			class initClient {};
+			class initServer {};
+			class menu {};
+			class playerSelectionChanged {};
+			class server {};
+			class treeSelectionChanged {};
+			class voice {};
+		};
+	};
+	class WLM {
+		class WLM {
+			file = "Scripts\WLM\functions";
+			class applyLoadoutAircraft {};
+			class applyLoadoutVehicle {};
+			class applyPylon {};
+			class applyVehicle {};
+			class calculateFreeRearmEligibility {};
+			class changeHorn {};
+			class constructAircraftPylons {};
+			class constructPresetMenu {};
+			class constructVehicleMagazine {};
+			class initMenu {};
+			class menuTextOverrides {};
+			class moveSmokes {};
+			class rearmAircraft {};
+			class rearmVehicle {};
+			class saveLoadout {};
+			class selectLoadout {};
+			class startRearmVehicle {};
+			class switchUser {};
+			class textureLists {};
+			class textureSlots {};
+			class wipePylonSaves {};
+		};
+	};
 };

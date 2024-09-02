@@ -145,7 +145,6 @@ class RscTextMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 0;
 	idc = -1;
 	colorBackground[] = 
@@ -206,7 +205,6 @@ class RscStructuredTextMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 13;
 	idc = -1;
 	style = 0;
@@ -238,7 +236,6 @@ class RscPictureMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 0;
 	idc = -1;
 	style = 48;
@@ -292,7 +289,6 @@ class RscEditMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 2;
 	x = 0;
 	y = 0;
@@ -360,7 +356,6 @@ class RscComboMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 4;
 	colorSelect[] = 
 	{
@@ -540,7 +535,6 @@ class RscListBoxMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 5;
 	rowHeight = 0;
 	colorText[] = 
@@ -727,7 +721,6 @@ class RscButtonMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 1;
 	text = "";
 	colorText[] = 
@@ -1098,7 +1091,6 @@ class RscSliderMRTM
 {
 	deletable = 0;
 	fade = 0;
-	access = 0;
 	type = 3;
 	style = 1024;
 	color[] = 
@@ -1651,4 +1643,81 @@ class RscControlsGroupMRTM {
 	};
 	
 	class Controls {};
+};
+
+class RscTreeWL
+{
+	deletable = 0;
+	fade = 0;
+	type = 5;
+	rowHeight = 0;
+	colorText[] = {1, 1, 1, 1};
+	colorDisabled[] = {1, 1, 1, 1};
+	colorScrollbar[] = {1, 0, 0, 0};
+	colorSelect2[] = {0, 0, 0, 1};
+	colorBackground[] = {0, 0, 0, 0.3};
+	soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect", 0.09, 1};
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
+	arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
+	colorPicture[] = {1, 1, 1, 1};
+	colorPictureSelected[] = {1, 1, 1, 1};
+	colorPictureDisabled[] = {1, 1, 1, 0.25};
+	colorPictureRight[] = {1, 1, 1, 1};
+	colorPictureRightSelected[] = {1, 1, 1, 1};
+	colorPictureRightDisabled[] = {1, 1, 1, 0.25};
+	colorTextRight[] = {1, 1, 1, 1};
+	colorSelectRight[] = {0, 0, 0, 1};
+	colorSelect2Right[] = {0, 0, 0, 1};
+	tooltipColorText[] = {1, 1, 1, 1};
+	tooltipColorBox[] = {1, 1, 1, 1};
+	tooltipColorShade[] = {0, 0, 0, 0.65};
+	class ListScrollBar
+	{
+		color[] = {1, 1, 1, 1};
+		autoScrollEnabled = 1;
+	};
+	x = 0;
+	y = 0;
+	w = 0.3;
+	h = 0.3;
+	style = 16;
+	font = "RobotoCondensed";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	shadow = 0;
+	colorShadow[] = {0, 0, 0, 0};
+	period = 1.2;
+	maxHistoryDelay = 1;
+	expandedTexture = "A3\ui_f\data\gui\rsccommon\rsctree\expandedTexture_ca.paa";
+	hiddenTexture = "A3\ui_f\data\gui\rsccommon\rsctree\hiddenTexture_ca.paa";
+	expandOnDoubleclick = 0;
+	colorSelectText[] = {1, 1, 1, 1};
+	colorBorder[] = {0, 0, 0, 0};
+	colorSearch[] =
+	{
+		"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.13])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_G',0.54])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.21])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_A',0.8])"
+	};
+	colorSelect[] = {1, 1, 1, 0.3};
+	colorMarked[] = {0.2, 0.3, 0.7, 0.5};
+	colorMarkedText[] = {1, 1, 1, 0.5};
+	colorMarkedSelected[] = {0, 0.5, 0.5, 1};
+	colorSelectBackground[] = {0, 0, 0, 0.5};
+	multiselectEnabled = 0;
+	colorArrow[] = {1, 1, 1, 1};
+	class ScrollBar {
+		color[] = {1, 1, 1, 0.6};
+		colorActive[] = {1, 1, 1, 1};
+		colorDisabled[] = {1, 1, 1, 0.3};
+		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+		shadow = 0;
+		scrollSpeed = 0.05;
+	};
 };

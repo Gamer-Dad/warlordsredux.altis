@@ -11,22 +11,22 @@ if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
 
 if (_ret) then {
-	//Added this check to stop a "rouge" friendly player or a cheater placing an enemy at the main base blocking fast travel 
+	//Added this check to stop a "rouge" friendly player or a cheater placing an enemy at the main base blocking fast travel
 	//These distance checks appear to be running every frame. I think this is a client side UI script but in general thats a really bad idea.
 	private _flagPole = nearestObjects [player, ["FlagPole_F"], 100];
 	private _nearbyEnemies = false;
-	if (count _flagPole > 0) then 
+	if (count _flagPole > 0) then
 	{
 		//do nothing because _nearbyEnemies is already false;
 		//systemChat "Flag nearby";
 	}
-	else 
+	else
 	{
 		//systemChat "Normal";
 		_nearbyEnemies = (count ((allPlayers inAreaArray [player, 100, 100]) select {_x != player && {BIS_WL_playerSide != side group _x && {alive _x}}}) > 0);
 	};
-	
-	 	
+
+
 	switch (_class) do {
 		case "FTSeized": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -40,6 +40,50 @@ if (_ret) then {
 			if !(WL_TARGET_FRIENDLY in (BIS_WL_sectorsArray # 1)) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr5"};
 			if (BIS_WL_currentSelection == WL_ID_SELECTION_FAST_TRAVEL) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_menu_resetvoting_restr1"};
 			if (_nearbyEnemies) exitWith {_ret = false; _tooltip =  localize "STR_A3_WL_fasttravel_restr4"};
+		};
+		case "FTSquadLeader": {
+			if (vehicle player != player) exitWith {
+				_ret = false;
+				_tooltip = localize "STR_A3_WL_fasttravel_restr3"
+			};
+			if (_nearbyEnemies) exitWith {
+				_ret = false;
+				_tooltip =  localize "STR_A3_WL_fasttravel_restr4"
+			};
+
+			// Cooldown check
+			private _ftNextUseVar = format ["BIS_WL_FTSLNextUse_%1", getPlayerUID player];
+			private _ftNextUse = missionNamespace getVariable [_ftNextUseVar, 0];
+			if (serverTime < _ftNextUse) exitWith {
+				_ret = false;
+				private _cooldownText = localize "STR_SQUADS_cooldown";
+				private _timeoutDisplay = [_ftNextUse - serverTime, "MM:SS"] call BIS_fnc_secondsToString;
+				_tooltip = format [_cooldownText, _timeoutDisplay];
+			};
+
+			// Squad leader checks
+			private _squadLeaderID = ['getMySquadLeader'] call SQD_fnc_client;
+			if (_squadLeaderID == getPlayerID player) exitWith {
+				_ret = false;
+				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInvalid";
+			};
+			if (_squadLeaderID == "-1") exitWith {
+				_ret = false;
+				_tooltip = localize "STR_SQUADS_fastTravelSquadInvalidNoSquad";
+			};
+
+			private _squadLeader = allPlayers select {
+				getPlayerID _x == _squadLeaderID
+			} select 0;
+
+			if !(isNull objectParent _squadLeader) exitWith {
+				_ret = false;
+				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderInVehicle";
+			};
+			if (!alive _squadLeader) exitWith {
+				_ret = false;
+				_tooltip = localize "STR_SQUADS_fastTravelSquadLeaderUnavailable";
+			};
 		};
 		case "LastLoadout": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -70,9 +114,10 @@ if (_ret) then {
 			if (serverTime < ((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_targetResetVotingVarID, 0]) + WL_TARGET_RESET_VOTING_TIME + 60) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "forfeitVote": {
-			_countSide = (playersNumber (side (group player)));
+			private _countSide = playersNumber BIS_WL_playerSide;
+			private _enemySide = playersNumber BIS_WL_enemySide;
 			_forfeitVotingVarID = format ["BIS_WL_forfeitVotingSince_%1", BIS_WL_playerSide];
-			if (_countSide < 10) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
+			if (_countSide < 10 && _countSide > (_enemySide - 5)) exitWith {_ret = false; _tooltip = format ["%1/10 Players", _countSide]};
 			if (serverTime < ((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200)) exitWith {_ret = false; _tooltip = ([(((missionNamespace getVariable [_forfeitVotingVarID, 0]) + 1200) - serverTime), "MM:SS"] call BIS_fnc_secondsToString)};
 		};
 		case "Arsenal": {
@@ -115,7 +160,7 @@ if (_ret) then {
 				} else {
 					if ((count ((entities "O_Truck_03_medical_F") select {alive _x})) == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
-			}; 
+			};
 		};
 		case "RespawnPod": {
 			if (vehicle player != player) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr3"};
@@ -145,7 +190,7 @@ if (_ret) then {
 				} else {
 					if ((count (entities "Land_Pod_Heli_Transport_04_medevac_F")) == 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_ftVehicle_ft_restr"};
 				};
-			}; 			
+			};
 		};
 		default {
 			_possibleSectors = (BIS_WL_sectorsArray # 0);
@@ -154,7 +199,7 @@ if (_ret) then {
 			_var = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 			_vehiclesCnt = count ((missionNamespace getVariable [_var, []]) select {alive _x});
 			_units = ((units group player) select {((_x getVariable ["BIS_WL_ownerAsset", "123"]) == getPlayerUID player) && {_x != player && {alive _x}}});
-			
+
 			if (_requirements findIf {!(_x in _servicesAvailable)} >= 0) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr1"};
 			if (_category == "Infantry" && {(count _units) >= BIS_WL_matesAvailable}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_airdrop_restr2"};
 			if (_category in ["Vehicles", "Gear", "Defences", "Aircraft", "Naval"] && {_vehiclesCnt >= (getMissionConfigValue ["BIS_WL_assetLimit", 10])}) exitWith {_ret = false; _tooltip = localize "STR_A3_WL_popup_asset_limit_reached"};
@@ -168,6 +213,28 @@ if (_ret) then {
 						_ret = false;
 						_tooltip = format [localize "STR_A3_WL_tip_max_autonomous", (getMissionConfigValue ["BIS_WL_autonomous_limit", 2])];
 					};
+				};
+				if (!("A" in _requirements) && _visitedSectorID == -1) then {
+					_ret = false;
+					_tooltip = localize "STR_A3_WL_ftVehicle_restr1";
+				};
+			};
+
+			if (_class == "Land_Communication_F") then {
+				private _jammerMarkers = missionNamespace getVariable ["BIS_WL_jammerMarkers", []];
+				private _allJammers = _jammerMarkers apply { _x # 0 };
+				private _allTowers = _allJammers select { typeOf _x == "Land_Communication_F" };
+				private _jammersNear = _allTowers select { player distance _x < (WL_JAMMER_RANGE_OUTER * 2) };
+
+				if (count _jammersNear > 0) exitWith {
+					_ret = false;
+					_tooltip = localize "STR_A3_WL_jammer_restr";
+				};
+
+				private _homeBase = BIS_WL_playerSide call BIS_fnc_WL2_getSideBase;
+				if (player inArea (_homeBase getVariable "objectAreaComplete")) exitWith {
+					_ret = false;
+					_tooltip = localize "STR_A3_WL_jammer_home_restr";
 				};
 			};
 			if (_category == "Defences") exitWith {

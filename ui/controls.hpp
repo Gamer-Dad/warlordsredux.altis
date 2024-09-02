@@ -152,7 +152,6 @@ class welcomeScreen
 		class welcomeCloseButton: RscButtonMRTM
 		{
 			idc = 1;
-			access = 0;
 			type = CT_BUTTON;
 			text = "Close";
 			sizeEx = "0.021 / (getResolution select 5)";
@@ -948,10 +947,52 @@ class MRTM_settingsMenu
 						shadow = 0;
 					};
 				};
+				class MRTMOtherText7: RscStructuredTextMRTM
+				{
+					idc = -1;
+					text = "Disable missile cameras:";
+					x = 0.327969 * safezoneW + safezoneX;
+					y = 0.908 * safezoneH + safezoneY;
+					w = 0.23 * safezoneW;
+					h = 0.033 * safezoneH;
+					class Attributes
+					{
+						align = "right";
+						shadow = 0;
+					};
+				};
+				class MRTMOtherText8: RscStructuredTextMRTM
+				{
+					idc = -1;
+					text = "Show user-defined markers:";
+					x = 0.327969 * safezoneW + safezoneX;
+					y = 0.943 * safezoneH + safezoneY;
+					w = 0.23 * safezoneW;
+					h = 0.033 * safezoneH;
+					class Attributes
+					{
+						align = "right";
+						shadow = 0;
+					};
+				};
+				class MRTMOtherText9: RscStructuredTextMRTM
+				{
+					idc = -1;
+					text = "No voice speaker:";
+					x = 0.327969 * safezoneW + safezoneX;
+					y = 0.978 * safezoneH + safezoneY;
+					w = 0.23 * safezoneW;
+					h = 0.033 * safezoneH;
+					class Attributes
+					{
+						align = "right";
+						shadow = 0;
+					};
+				};
 				class MRTMOtherButton1: RscCheckboxMRTM
 				{
 					idc = 8024;
-					action = "player setVariable ['MRTM_3rdPersonDisabled', !(profileNamespace getVariable ['MRTM_3rdPersonDisabled', false]), [2, clientOwner]]; profileNamespace setVariable ['MRTM_3rdPersonDisabled', !(profileNamespace getVariable ['MRTM_3rdPersonDisabled', false])];";
+					action = "['MRTM_3rdPersonDisabled', 300] call MRTM_fnc_updateSettings;";
 					x = 0.560969 * safezoneW + safezoneX;
 					y = 0.701 * safezoneH + safezoneY;
 					w = 0.0204688 * safezoneW;
@@ -1002,6 +1043,33 @@ class MRTM_settingsMenu
 					w = 0.0204688 * safezoneW;
 					h = 0.028 * safezoneH;
 				};
+				class MRTMOtherButton7: RscCheckboxMRTM
+				{
+					idc = 8030;
+					action = "profileNamespace setVariable ['MRTM_disableMissileCameras', !(profileNamespace getVariable ['MRTM_disableMissileCameras', false])];";
+					x = 0.560969 * safezoneW + safezoneX;
+					y = 0.907 * safezoneH + safezoneY;
+					w = 0.0204688 * safezoneW;
+					h = 0.028 * safezoneH;
+				};
+				class MRTMOtherButton8: RscCheckboxMRTM
+				{
+					idc = 8031;
+					action = "profileNamespace setVariable ['MRTM_showMarkers', !(profileNamespace getVariable ['MRTM_showMarkers', true])];";
+					x = 0.560969 * safezoneW + safezoneX;
+					y = 0.942 * safezoneH + safezoneY;
+					w = 0.0204688 * safezoneW;
+					h = 0.028 * safezoneH;
+				};
+				class MRTMOtherButton9: RscCheckboxMRTM
+				{
+					idc = 8032;
+					action = "profileNamespace setVariable ['MRTM_noVoiceSpeaker', !(profileNamespace getVariable ['MRTM_noVoiceSpeaker', false])];";
+					x = 0.560969 * safezoneW + safezoneX;
+					y = 0.977 * safezoneH + safezoneY;
+					w = 0.0204688 * safezoneW;
+					h = 0.028 * safezoneH;
+				};
 			};
 
 			type = CT_CONTROLS_GROUP;
@@ -1023,24 +1091,24 @@ class MRTM_settingsMenu
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
 			action =  "(findDisplay 8000) closeDisplay 1;";
-		};		
+		};
 		class MRTMGroupsButton: RscButtonMRTM
 		{
 			idc = 1605;
-			text = "GROUPS";
+			text = "SQUADS";
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.327969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;
 			w = 0.0567187 * safezoneW;
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
-			action =  "(findDisplay 8000) closeDisplay 1; true spawn MRTM_fnc_openGroupMenu;";
+			action =  "(findDisplay 8000) closeDisplay 1; [true] call SQD_fnc_menu;";
 		};
 		class MRTMDebugButton: RscButtonMRTM
 		{
 			idc = 1609;
 			text = "Debug";
-			onLoad = "(_this # 0) ctrlEnable (getPlayerUID player == '76561198034106257');";
+			onLoad = "(_this # 0) ctrlEnable (getPlayerUID player in getArray (missionConfigFile >> 'adminIDs'));";
 			sizeEx = "0.021 / (getResolution select 5)";
 			x = 0.664969 * safezoneW + safezoneX;
 			y = 0.786 * safezoneH + safezoneY;

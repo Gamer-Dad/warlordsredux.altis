@@ -1,16 +1,15 @@
 #include "Functions\warlords_constants.inc"
 #include "ui\defines.hpp"
 #include "ui\controls.hpp"
-#include "scripts\GOM\dialogs\GOM_dialog_parents.hpp"
-#include "scripts\GOM\dialogs\GOM_dialog_controls.hpp"
 #include "scripts\WLM\ui\WLM_pylons.hpp"
+#include "scripts\Squads\squadMenu.hpp"
 
-onLoadName = "Warlords Redux 2.5.8";
+onLoadName = "Warlords Redux 2.6";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
 zeusCompositionScriptLevel = 2;
-adminIDs[] = {"76561198034106257", "76561198049721952"};
+adminIDs[] = {"76561198034106257", "76561198049721952", "76561197960667971"};
 
 //Settings
 respawn = 3;
@@ -26,6 +25,7 @@ BIS_WL_sectorResetTimeout = 300;
 BIS_WL_sectorVotingDuration = 15;
 BIS_WL_scanCost = 750;
 BIS_WL_fastTravelCostContested = 200;
+BIS_WL_fastTravelCostSquadLeader = 10;
 BIS_WL_orderFTVehicleCost = 200;
 BIS_WL_fundsTransferCost = 2000;
 BIS_WL_targetResetCost = 500;
@@ -54,7 +54,6 @@ class Header
 #include "functions.hpp"
 
 #include "configs.hpp"
-#include "communicationMenu.hpp"
 #include "titles.hpp"
 #include "requisitions.hpp"
 #include "sounds.hpp"
