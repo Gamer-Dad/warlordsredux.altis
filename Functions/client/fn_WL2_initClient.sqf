@@ -269,6 +269,19 @@ private _fncEarPlugs = compile preprocessFileLineNumbers "scripts\GF_Earplugs\GF
 };
 
 0 spawn {
+	WL_ORIGINAL_SPEAKER = speaker player;
+	while {!BIS_WL_missionEnd} do {
+		sleep 5;
+		private _noVoice = profileNamespace getVariable ["MRTM_noVoiceSpeaker", false];
+		if (_noVoice) then {
+			player setSpeaker "NoVoice";
+		} else {
+			player setSpeaker WL_ORIGINAL_SPEAKER;
+		};
+	};
+};
+
+0 spawn {
 	private _ownedVehicleVar = format ["BIS_WL_ownedVehicles_%1", getPlayerUID player];
 	while {!BIS_WL_missionEnd} do {
 		private _vehicles = missionNamespace getVariable [_ownedVehicleVar, []];
