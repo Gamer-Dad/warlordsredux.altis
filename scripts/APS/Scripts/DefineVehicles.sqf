@@ -30,7 +30,7 @@ _mediumBlockList = [
     ["M_PG_AT", 1],					    // DAGR
     ["M_Scalpel_AT", 1],				// Scalpel
     ["M_Scalpel_AT_hidden",	1],		    // Scalpel (x2)
-    ["Missile_AGM_01_F", 2],			// Sharur
+    ["Missile_AGM_01_F", 3],			// Sharur
     ["Missile_AGM_02_F", 2],			// Macer I && II (same mag)
 
     // Air Vehicle Unguided
