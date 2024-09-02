@@ -418,7 +418,7 @@ missionNamespace setVariable [format ["BIS_WL2_minesDB_%1", getPlayerUID player]
 			case WL_ID_SELECTION_SCAN: {
 				private _allScannableSectors = BIS_WL_sectorsArray # 3;
 				private _lastScanEligible = serverTime - (getMissionConfigValue ["BIS_WL_scanCooldown", 300]);
-				private _availableSectors = _allScannableSectors select {_x getVariable [format ["BIS_WL_lastScanEnd_%1", BIS_WL_playerSide], -1] < _lastScanEligible};
+				private _availableSectors = _allScannableSectors select {_x getVariable [format ["BIS_WL_lastScanEnd_%1", BIS_WL_playerSide], -9999] < _lastScanEligible};
 				BIS_WL_selection_availableSectors = _availableSectors;
 				BIS_WL_selection_showLinks = false;
 				BIS_WL_selection_dimSectors = true;
