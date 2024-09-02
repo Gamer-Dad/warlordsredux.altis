@@ -283,6 +283,26 @@ class Defences {
         killReward = 100;
     }; // AR-2
 
+    class I_UAV_01_F {
+        name = "AR-2 Darter UP";
+        cost = 1200;
+        requirements[] = {};
+        killReward = 200;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            addMagazines[] = {
+                "200Rnd_65x39_cased_Box_Tracer",
+                "200Rnd_65x39_cased_Box_Tracer"
+            };
+            addWeapons[] = {
+                "LMG_Mk200_F"
+            };
+        };
+    };
+
     class B_UAV_06_F {
         cost = 1000;
         requirements[] = {};

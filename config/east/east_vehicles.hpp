@@ -239,6 +239,32 @@ class Vehicles {
         capValue = 2;
     }; // "MSE-3 Marid"
 
+    class O_T_APC_Wheeled_02_rcws_v2_ghex_F {
+        name = "MSE-3M Marid Autocannon";
+        cost = 3700;
+        requirements[] = {};
+        rearm = 500;
+        killReward = 300;
+        capValue = 3;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            addMagazines[] = {
+                "250Rnd_30mm_HE_shells_Tracer_Red",
+                "250Rnd_30mm_APDS_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "gatling_30mm"
+            };
+        };
+    };
+
     class O_APC_Tracked_02_cannon_F {
         cost = 3200;
         requirements[] = {};

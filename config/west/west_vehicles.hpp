@@ -266,6 +266,33 @@ class Vehicles {
         capValue = 3;
     }; // "AMV-7 Marshall"
 
+    class B_T_APC_Wheeled_01_cannon_F {
+        name = "AMV-7 Marshall UP";
+        cost = 3500;
+        requirements[] = {};
+        rearm = 500;
+        killReward = 300;
+        capValue = 3;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "60Rnd_40mm_GPR_Tracer_Red_shells",
+                "40Rnd_40mm_APFSDS_Tracer_Red_shells"
+            };
+            removeWeapons[] = {
+                "autocannon_40mm_CTWS"
+            };
+            addMagazines[] = {
+                "1000Rnd_20mm_shells",
+                "1000Rnd_20mm_shells"
+            };
+            addWeapons[] = {
+                "gatling_20mm"
+            };
+        };
+    };
+
     class B_APC_Tracked_01_rcws_F {
         cost = 1800;
         requirements[] = {};
