@@ -8,7 +8,7 @@ private _pylonsInfo = configProperties [_pylonConfig >> "pylons"];
 private _display = findDisplay WLM_DISPLAY;
 
 private _currentPylonInfo = getAllPylonsInfo _asset;
-private _eligibleFreeRearm = (uiNamespace getVariable ["WLM_eligibleFreeRearm", false]);
+private _eligibleFreeRearm = [_asset, true] call WLM_fnc_calculateFreeRearmEligibility;
 
 if (_showWarning && !_eligibleFreeRearm) exitWith {
     private _confirmDialog = _display createDisplay "WLM_Modal_Dialog";
@@ -72,5 +72,6 @@ _asset setVariable ["WLM_assetAttachments", _attachments, true];
 };
 
 if (_eligibleFreeRearm) then {
+    playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
     [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
 };

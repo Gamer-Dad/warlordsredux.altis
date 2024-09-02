@@ -1,10 +1,11 @@
-params ["_v"];
+params ["_asset"];
 
-private _index = apsVehiclesMap getOrDefault [(typeOf _v), -1];
+private _vehicleApsMap = missionNamespace getVariable ["WL2_aps", createHashMap];
+private _index = _vehicleApsMap getOrDefault [(typeOf _asset), -1];
 private _ammo = switch (_index) do {
 	case 3: { 0 };
 	case 2: { 6 };
-	case 1: { 4 };	
+	case 1: { 4 };
 	case 0: { 2 };
 	default { -1 };
 };

@@ -6,7 +6,7 @@ params ["_asset", ["_owner", objNull]];
 
 if (isServer && {isNull _owner}) exitWith {
 	if !(_asset isKindOf "Man") then {
-		call APS_fnc_RegisterVehicle;
+		[_asset] call APS_fnc_RegisterVehicle;
 	};
 	_asset call APS_fnc_SetupProjectiles;
 	_asset setSkill (0.2 + random 0.3);
@@ -25,7 +25,7 @@ if (isPlayer _owner) then {
 	} else {
 		private _side = side _owner;
 
-		call APS_fnc_RegisterVehicle;
+		[_asset] call APS_fnc_RegisterVehicle;
 		_asset call APS_fnc_SetupProjectiles;
 		_asset setVariable ["BIS_WL_nextRepair", 0];
 		_asset setVariable ["BIS_WL_ownerAssetSide", _side, true];

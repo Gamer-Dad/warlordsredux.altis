@@ -58,7 +58,3 @@ private _assetTurrets = (allTurrets _asset) + [[-1]];
 _asset setVehicleReceiveRemoteTargets true;
 _asset setVehicleReportRemoteTargets true;
 _asset setVehicleReportOwnPosition true;
-
-if (_rearm) then {
-    playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
-};

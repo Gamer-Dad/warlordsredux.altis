@@ -17,6 +17,8 @@ private _maxAllowedDisplacement = (sqrt _maxDistSqr) / 4 * 3;
 private _previousPos = getPosWorld _projectile;
 private _safeMaxDistSqr = _maxDistSqr;
 
+private _apsType = missionNamespace getVariable ["WL2_aps", createHashMap];
+
 private _continue = alive _projectile;
 while {_continue && alive _projectile} do {
 	private _currentPos = getPosWorld _projectile;
@@ -32,7 +34,7 @@ while {_continue && alive _projectile} do {
 
 	private _eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _safeRadius]) select {
 		_x != _unit &&
-		_x call APS_fnc_Active
+		[_x] call APS_fnc_Active
 	};
 
 	_sortedEligibleList = [_eligibleNearbyVehicles, [_projectile], { _input0 distance _x }, "ASCEND"] call BIS_fnc_sortBy;
@@ -42,7 +44,9 @@ while {_continue && alive _projectile} do {
 		};
 
 		_vehicleAPSType = _x getVariable ["apsType", -1];
-		_projectileAPSType = apsEligibleProjectiles get (typeOf _projectile);
+		private _apsProjectileConfig = apsEligibleProjectiles get (typeOf _projectile);
+		private _projectileAPSType = _apsProjectileConfig # 0;
+		private _projectileAPSConsumption = _apsProjectileConfig # 1;
 		if (_vehicleAPSType == 3) then {
 			if (_dazzleable) exitWith {
 				private _projectilePosition = getPosATL _projectile;
@@ -67,7 +71,7 @@ while {_continue && alive _projectile} do {
 				_continue = false;
 
 				private _ammo = _x getVariable "apsAmmo";
-				_x setVariable ["apsAmmo", _ammo - 1, true];
+				_x setVariable ["apsAmmo", _ammo - _projectileAPSConsumption, true];
 
 				private _projectilePosition = getPosATL _projectile;
 				private _projectileDirection = _firedPosition getDir _x;

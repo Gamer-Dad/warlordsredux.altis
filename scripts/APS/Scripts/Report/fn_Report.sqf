@@ -1,7 +1,9 @@
 params ["_vehicle", "_angle", "_indicator"];
 
 if (vehicle player != _vehicle) exitWith {};
-if !((typeOf _vehicle) in apsAPSAll) exitWith {};
+
+private _assetApsType = _vehicle getVariable ["apsType", -1];
+if (_assetApsType == -1) exitWith {};
 
 private _type = switch (_vehicle getVariable "apsType") do {
 	case 2: { "Heavy APS" };
@@ -11,8 +13,8 @@ private _type = switch (_vehicle getVariable "apsType") do {
 };
 
 private _text = _type;
-if ((typeOf _vehicle) in apsDazzler) then {
-	_text = _text + (if (_vehicle call APS_fnc_active) then {
+if (_assetApsType == 3) then {
+	_text = _text + (if ([_vehicle] call APS_fnc_Active) then {
 		" is active.";
 	} else {
 		" is inactive.";

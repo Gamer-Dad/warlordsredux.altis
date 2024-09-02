@@ -3,24 +3,7 @@ params ["_unit", "_responsibleLeader"];
 if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "WL2_killRewards") getOrDefault [(typeOf _unit), 0]) == 0)}) exitWith {};
 
 private _killerSide = side group _responsibleLeader;
-private _unitSide = if (_unit isKindOf "Man") then {
-	side group _unit;
-} else {
-	private _groupSide = side group _unit;
-	private _backupSide = if (_groupSide == sideUnknown || _groupSide == civilian) then {
-		private _typeSide = switch (getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "side")) do {
-			case 0: { east };
-			case 1: { west };
-			case 2: { independent };
-			default { independent };
-		};
-		_typeSide;
-	} else {
-		_groupSide;
-	};
-
-	_unit getVariable ["BIS_WL_ownerAssetSide", _backupSide];
-};
+private _unitSide = [_unit] call BIS_fnc_WL2_getAssetSide;
 
 if (_killerSide != _unitSide) then {
 	_targets = [missionNamespace getVariable "BIS_WL_currentTarget_west", missionNamespace getVariable "BIS_WL_currentTarget_east"] select {!(isNull _x)};

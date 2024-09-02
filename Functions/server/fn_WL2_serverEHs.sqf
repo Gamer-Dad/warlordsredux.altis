@@ -48,8 +48,17 @@ addMissionEventHandler ["EntityKilled", {
 	if !(isNull _responsiblePlayer) then {
 		[_unit, _responsiblePlayer] spawn BIS_fnc_WL2_killRewardHandle;
 		[_unit, _responsiblePlayer] spawn BIS_fnc_WL2_friendlyFireHandleServer;
+
 		if (isPlayer _unit) then {
 			diag_log format["PvP kill: %1_%2 was killed by %3_%4 from %5m", name _unit, getPlayerUID _unit, name _responsiblePlayer, getPlayerUID _responsiblePlayer, _unit distance _responsiblePlayer];
+		};
+
+		private _lastSpotted = _unit getVariable ["WL_lastSpotted", objNull];
+		if (!isNull _lastSpotted && {_lastSpotted != _responsiblePlayer}) then {
+			private _spotReward = 5;
+			_uid = getPlayerUID _lastSpotted;
+			_spotReward call BIS_fnc_WL2_fundsDatabaseWrite;
+			[_unit, _spotReward, "Spot assist", "#7a7ab9"] remoteExec ["BIS_fnc_WL2_killRewardClient", _lastSpotted];
 		};
 	};
 

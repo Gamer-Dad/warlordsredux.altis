@@ -1,12 +1,11 @@
-private _v=_this;
+params ["_asset"];
 
-if !(_v call APS_fnc_HasCharges) exitWith {false};
-if !(_v getVariable ["BIS_WL_dazzlerActivated", true]) exitWith {false};
-if (_v getHitPointDamage "hitEngine" > 0.5) exitWith {
-	if ((typeOf _v in apsDazzler)) then [{false}, {true}];
+private _apsType = missionNamespace getVariable ["WL2_aps", createHashMap];
+if (_apsType getOrDefault [(typeOf _asset), -1] == 3) then {		// is dazzler
+	private _isDazzlerActivated = _asset getVariable ["BIS_WL_dazzlerActivated", false];
+	private _isEngineOn = isEngineOn _asset;
+	private _isEngineHealthy = (_asset getHitPointDamage "hitEngine") < 0.5;
+	_isDazzlerActivated && _isEngineOn && _isEngineHealthy
+} else {
+	[_asset] call APS_fnc_HasCharges;
 };
-if !( isEngineOn _v) exitWith {
-	if ((typeOf _v in apsDazzler)) then [{false}, {true}];
-};
-
-true

@@ -39,5 +39,3 @@ _asset spawn APS_fnc_RearmAPS;
 _asset setVehicleReceiveRemoteTargets true;
 _asset setVehicleReportRemoteTargets true;
 _asset setVehicleReportOwnPosition true;
-
-playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 1, 1, 75, 0, true];

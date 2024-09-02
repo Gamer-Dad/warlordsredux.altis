@@ -20,7 +20,14 @@ uiNamespace setVariable ["WLM_assetIsAircraft", _isAircraft];
 
 disableSerialization;
 
-private _assetTypeName = getText (_assetConfig >> "displayName");
+private _nameOverrides = missionNamespace getVariable ["WL2_nameOverrides", createHashMap];
+private _nameOverride = _nameOverrides getOrDefault [typeof _asset, ""];
+private _assetTypeName = if (_nameOverride != "") then {
+    _nameOverride
+} else {
+    getText (_assetConfig >> "displayName");
+};
+
 
 if (_isAircraft) then {
     private _aircraftNameControl = _display displayCtrl WLM_VEHICLE_NAME;
@@ -50,30 +57,6 @@ if (_isAircraft) then {
 
 call WLM_fnc_constructPresetMenu;
 
-private _currentPylonInfo = getAllPylonsInfo _asset;
-private _eligibleFreeRearm = true;
-{
-    private _pylonName = _x # 3;
-    if (_pylonName != "") then {
-        private _maxAmmo = getNumber (configFile >> "CfgMagazines" >> _pylonName >> "count");
-        private _currentAmmo = _x # 4;
-
-        if (_maxAmmo > _currentAmmo) then {
-            _eligibleFreeRearm = false;
-        };
-    };
-} forEach _currentPylonInfo;
-
-{
-    private _currentAmmo = _x # 2;
-    private _magName = _x # 0;
-    private _magMaxAmmo = getNumber (configFile >> "CfgMagazines" >> _magName >> "count");
-    if (_magMaxAmmo > _currentAmmo) then {
-        _eligibleFreeRearm = false;
-    };
-} forEach (magazinesAllTurrets _asset);
-uiNamespace setVariable ["WLM_eligibleFreeRearm", _eligibleFreeRearm];
-
 private _saveButtonControl = _display displayCtrl WLM_SAVE_BUTTON;
 _saveButtonControl ctrlAddEventHandler ["ButtonClick", {
     [""] call WLM_fnc_saveLoadout;
@@ -85,11 +68,6 @@ _wipeButtonControl ctrlAddEventHandler ["ButtonClick", {
 }];
 
 private _applyButtonControl = _display displayCtrl WLM_APPLY_BUTTON;
-if (_eligibleFreeRearm) then {
-    _applyButtonControl ctrlSetText (localize "STR_WLM_APPLY_FREE");
-} else {
-    _applyButtonControl ctrlSetText (localize "STR_WLM_APPLY");
-};
 _applyButtonControl ctrlAddEventHandler ["ButtonClick", {
     private _isAircraft = uiNamespace getVariable "WLM_assetIsAircraft";
     if (_isAircraft) then {
@@ -155,7 +133,6 @@ switch (typeOf _asset) do {
             "A3\Armor_F\Data\camonet_AAF_FIA_green_CO.paa",
             "A3\armor_f\data\cage_G3_co.paa"
         ];
-        
     };
     case "I_Heli_light_03_dynamicLoadout_F": {
         _defaultTextureList = getArray (_assetConfig >> "textureSources" >> "EAF" >> "textures");
@@ -230,7 +207,6 @@ private _customTexturesMap = createHashMap;
         private _camoItem = _camoSelectControl lbAdd _textureName;
         _camoSelectControl lbSetData [_camoItem, "-1"];
         _camoSelectControl lbSetTooltip [_camoItem, localize "STR_WLM_CATEGORY"];
-        
         continue;
     };
 
@@ -414,7 +390,7 @@ _customizationSelectControl ctrlAddEventHandler ["LBSelChanged", {
             };
         };
     };
-    
+
     _control lbSetCurSel 0;
 }];
 
@@ -447,6 +423,16 @@ _asset spawn {
         };
 
 		_rearmButtonControl ctrlSetText _rearmText;
+
+        private _applyButtonControl = _display displayCtrl WLM_APPLY_BUTTON;
+        private _isAircraft = uiNamespace getVariable ["WLM_assetIsAircraft", false];
+        private _eligibleFreeRearm = [_asset, _isAircraft] call WLM_fnc_calculateFreeRearmEligibility;
+        if (_eligibleFreeRearm) then {
+            _applyButtonControl ctrlSetText (localize "STR_WLM_APPLY_FREE");
+        } else {
+            _applyButtonControl ctrlSetText (localize "STR_WLM_APPLY");
+        };
+
 		sleep 1;
 	};
 };

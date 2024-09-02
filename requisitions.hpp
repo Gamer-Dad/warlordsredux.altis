@@ -11,6 +11,7 @@ class CfgVehicleClassName {
     rearm = number;                  // Rearm timer in seconds.
     killReward = number;             // CP reward for destroying the vehicle.
     capValue = number;               // Value of the vehicle for calculating team's sector capture strength.
+    aps = number;                    // Active Protection System, 0 = none, 1 = light, 2 = medium, 3 = heavy, 4 = dazzler
 
     unitSpawn = number (0|1);        // For populating independent sectors, soldier units.
     vehicleSpawn = number (0|1);     // For populating independent sectors, vehicle units.
@@ -20,7 +21,7 @@ class CfgVehicleClassName {
     disallowMagazines[] = array;      // CfgMagazine classes to disallow in the vehicle.
     allowPylonMagazines[] = array;    // CfgMagazine classes to allow on pylons of aircraft.
 
-    turretDefaults[] = array;        // Turret defaults allows replacing weapons/ammo from a turret of a vehicle.
+    WLTurretDefaults[] = classes;     // Turret defaults allows replacing weapons/ammo from a turret of a vehicle.
 };
 
 Turret defaults allows replacing weapons/ammo from a turret of a vehicle.

@@ -1,12 +1,7 @@
 params ["_position"];
 
 uiNamespace setVariable ["WL2_pingPosition", _position];
-
-private _existingPing = uiNamespace getVariable ["WL2_isPinging", false];
-if (!_existingPing) then {
-    playSound ["TacticalPing4", false];
-    uiNamespace setVariable ["WL2_isPinging", true];
-};
+playSound ["TacticalPing4", false];
 
 private _r = profileNamespace getVariable ['IGUI_TACTPING_RGB_R', 1.0];
 private _g = profileNamespace getVariable ['IGUI_TACTPING_RGB_G', 0.8];
@@ -16,7 +11,7 @@ private _a = profileNamespace getVariable ['IGUI_TACTPING_RGB_A', 1.0];
 uiNamespace setVariable ["WL2_pingColor", [_r, _g, _b, _a]];
 
 private _ping = addMissionEventHandler ["draw3D", {
-    private _alpha = abs ((diag_tickTime * 180 % 100 - 50) / 50.0); 
+    private _alpha = abs ((diag_tickTime * 180 % 100 - 50) / 50.0);
     private _scale = [1.8, 2.2, _alpha] call BIS_fnc_lerp;
     drawIcon3D [
         "\a3\Ui_f\data\IGUI\Cfg\TacticalPing\TacticalPingDefault_ca",
@@ -25,7 +20,7 @@ private _ping = addMissionEventHandler ["draw3D", {
         _scale,
         _scale,
         0,
-        "",  
+        "",
         true,
         0.03,
         "TahomaB",
@@ -39,4 +34,3 @@ private _ping = addMissionEventHandler ["draw3D", {
 sleep 9;
 
 removeMissionEventHandler ["draw3D", _ping];
-uiNamespace setVariable ["WL2_isPinging", false];

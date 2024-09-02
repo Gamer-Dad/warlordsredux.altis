@@ -4,11 +4,7 @@ params ["_showWarning"];
 
 private _asset = uiNamespace getVariable "WLM_asset";
 
-private _defaultMags = _asset getVariable ["WLM_savedDefaultMags", []];
-private _currentMags = magazinesAllTurrets _asset;
-_defaultMags sort true;
-_currentMags sort true;
-private _eligibleFreeRearm = (uiNamespace getVariable ["WLM_eligibleFreeRearm", false]);
+private _eligibleFreeRearm = [_asset, false] call WLM_fnc_calculateFreeRearmEligibility;
 
 if (_showWarning && !_eligibleFreeRearm) exitWith {
     private _display = findDisplay WLM_DISPLAY;
@@ -78,5 +74,6 @@ if (_eligibleFreeRearm) then {
     private _rearmTime = (missionNamespace getVariable "WL2_rearmTimers") getOrDefault [typeOf _asset, 600];
     _asset setVariable ["BIS_WL_nextRearm", serverTime + _rearmTime];
 
+    playSound3D ["A3\Sounds_F\sfx\UI\vehicles\Vehicle_Rearm.wss", _asset, false, getPosASL _asset, 2, 1, 75];
     [toUpper localize "STR_A3_WL_popup_asset_rearmed"] spawn BIS_fnc_WL2_smoothText;
 };

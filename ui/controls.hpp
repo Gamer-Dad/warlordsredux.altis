@@ -975,6 +975,20 @@ class MRTM_settingsMenu
 						shadow = 0;
 					};
 				};
+				class MRTMOtherText9: RscStructuredTextMRTM
+				{
+					idc = -1;
+					text = "No voice speaker:";
+					x = 0.327969 * safezoneW + safezoneX;
+					y = 0.978 * safezoneH + safezoneY;
+					w = 0.23 * safezoneW;
+					h = 0.033 * safezoneH;
+					class Attributes
+					{
+						align = "right";
+						shadow = 0;
+					};
+				};
 				class MRTMOtherButton1: RscCheckboxMRTM
 				{
 					idc = 8024;
@@ -1047,6 +1061,15 @@ class MRTM_settingsMenu
 					w = 0.0204688 * safezoneW;
 					h = 0.028 * safezoneH;
 				};
+				class MRTMOtherButton9: RscCheckboxMRTM
+				{
+					idc = 8032;
+					action = "profileNamespace setVariable ['MRTM_noVoiceSpeaker', !(profileNamespace getVariable ['MRTM_noVoiceSpeaker', false])];";
+					x = 0.560969 * safezoneW + safezoneX;
+					y = 0.977 * safezoneH + safezoneY;
+					w = 0.0204688 * safezoneW;
+					h = 0.028 * safezoneH;
+				};
 			};
 
 			type = CT_CONTROLS_GROUP;
@@ -1068,7 +1091,7 @@ class MRTM_settingsMenu
 			h = 0.022 * safezoneH;
 			font = "PuristaMedium";
 			action =  "(findDisplay 8000) closeDisplay 1;";
-		};		
+		};
 		class MRTMGroupsButton: RscButtonMRTM
 		{
 			idc = 1605;
