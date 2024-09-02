@@ -87,6 +87,32 @@ class Vehicles {
         };
     }; // "Prowler (AT)"
 
+    class B_T_LSV_01_AT_F {
+        name = "Prowler (AT UP)";
+        cost = 1000;
+        requirements[] = {};
+        rearm = 200;
+        killReward = 250;
+        capValue = 1;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "1Rnd_GAT_missiles"
+            };
+            removeWeapons[] = {
+                "missiles_titan_static"
+            };
+            addMagazines[] = {
+                "5Rnd_GAT_missiles",
+                "5Rnd_GAT_missiles"
+            };
+            addWeapons[] = {
+                "missiles_titan"
+            };
+        };
+    }; // "Prowler (AT UP)"
+
     class B_G_Offroad_01_AT_F {
         cost = 500;
         requirements[] = {};
@@ -124,6 +150,35 @@ class Vehicles {
         killReward = 250;
         capValue = 2;
     }; // "Hunter GMG"
+
+    class B_T_MRAP_01_gmg_F {
+        name = "Hunter UP Autocannon";
+        cost = 1700;
+        requirements[] = {};
+        rearm = 300;
+        killReward = 300;
+        capValue = 2;
+        aps = 2;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            addMagazines[] = {
+                "140Rnd_30mm_MP_shells_Tracer_Red",
+                "140Rnd_30mm_MP_shells_Tracer_Red",
+                "60Rnd_30mm_APFSDS_shells_Tracer_Red",
+                "60Rnd_30mm_APFSDS_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_CTWS"
+            };
+        };
+    };
 
     class B_Truck_01_ammo_F {
         cost = 1000;
@@ -284,34 +339,35 @@ class Vehicles {
         };
     }; // "M2A1 Slammer UP"
 
-    // class B_T_MBT_01_TUSK_F {
-    //     name = "M2X Slammer (Railgun)";
-    //     cost = 13000;
-    //     requirements[] = {};
-    //     rearm = 600;
-    //     killReward = 550;
-    //     capValue = 4;
+    class B_T_MBT_01_TUSK_F {
+        name = "M2X Slammer (Railgun)";
+        cost = 13000;
+        requirements[] = {};
+        rearm = 600;
+        killReward = 550;
+        capValue = 4;
+        aps = 3;
 
-    //     class Gunner: WLTurretDefaults {
-    //         turret[] = { 0 };
-    //         removeMagazines[] = {
-    //             "24Rnd_120mm_APFSDS_shells_Tracer_Red",
-    //             "12Rnd_120mm_HE_shells_Tracer_Red",
-    //             "12Rnd_120mm_HEAT_MP_T_Red"
-    //         };
-    //         removeWeapons[] = {
-    //             "cannon_120mm"
-    //         };
-    //         addMagazines[] = {
-    //             "RailGun_01_DummyMagazine",
-    //             "60Rnd_75mm_RailGun_APFSDS_mag"
-    //         };
-    //         addWeapons[] = {
-    //             "cannon_railgun",
-    //             "cannon_railgun_fake"
-    //         };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "24Rnd_120mm_APFSDS_shells_Tracer_Red",
+                "12Rnd_120mm_HE_shells_Tracer_Red",
+                "12Rnd_120mm_HEAT_MP_T_Red"
+            };
+            removeWeapons[] = {
+                "cannon_120mm"
+            };
+            addMagazines[] = {
+                "RailGun_01_DummyMagazine",
+                "60Rnd_75mm_RailGun_APFSDS_mag"
+            };
+            addWeapons[] = {
+                "cannon_railgun",
+                "cannon_railgun_fake"
+            };
+        };
+    };
 
     class B_MBT_01_arty_F {
         cost = 20000;

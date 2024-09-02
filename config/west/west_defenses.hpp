@@ -195,6 +195,32 @@ class Defences {
         };
     }; // "Static Titan Launcher (AA) [NATO]"
 
+    class B_T_Static_AA_F {
+        name = "Static AA Launcher (UP)";
+        cost = 600;
+        requirements[] = {};
+        rearm = 300;
+        killReward = 200;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "1Rnd_GAA_missiles"
+            };
+            removeWeapons[] = {
+                "missiles_titan_static"
+            };
+            addMagazines[] = {
+                "4Rnd_70mm_SAAMI_missiles",
+                "4Rnd_70mm_SAAMI_missiles",
+                "4Rnd_70mm_SAAMI_missiles"
+            };
+            addWeapons[] = {
+                "missiles_SAAMI"
+            };
+        };
+    };
+
     class B_Mortar_01_F {
         cost = 4000;
         requirements[] = {};
@@ -224,6 +250,32 @@ class Defences {
         rearm = 300;
         killReward = 100;
     }; // "UGAS"
+
+    class B_T_UGV_01_rcws_olive_F {
+        name = "UGV Stomper UP";
+        cost = 1500;
+        requirements[] = {};
+        offset[] = {0, 3, 0};
+        rearm = 300;
+        killReward = 300;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            addMagazines[] = {
+                "140Rnd_30mm_MP_shells_Tracer_Red",
+                "60Rnd_30mm_APFSDS_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_CTWS"
+            };
+        };
+    };
 
     class B_UAV_01_F {
         cost = 500;
