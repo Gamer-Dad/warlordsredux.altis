@@ -115,7 +115,7 @@ class CfgDisabledCommands
     {
         class SYNTAX1
         {
-            targets[] = {1,0,0};
+            targets[] = {1,1,0};
             args[] = {{"OBJECT"},{"ARRAY"}};
         };
     };
@@ -184,6 +184,15 @@ class CfgDisabledCommands
     };
 
     class SETPOSATL
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,0};
+            args[] = {{"OBJECT"},{"ARRAY"}};
+        };
+    };
+
+    class SETWEAPONRELOADINGTIME
     {
         class SYNTAX1
         {

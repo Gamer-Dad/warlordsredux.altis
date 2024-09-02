@@ -262,3 +262,173 @@
   -Fast Travel to contested is now more random
   -Added temporary textures to NATO Tempest Device(will be changed to more proper ones next update)
   -Potentially fixed issue where people could put vehicles underwater
+
+2.6.0
+  Price changes (NATO)
+	Bobcat: 1700 (NEW)
+	Hellcat: 6000 (NEW)
+	UGV RCWS: 400->500
+	Hunter HMG: 1000->900
+	Gorgon: 2500->2900
+	M2A1 Slammer: 6000->5800
+	M2A1 Slammer UP: 7000->6500
+	Greyhawk: 12000->8000
+	Falcon: 12000->11000
+
+	Price changes (CSAT)
+	UGV RCWS: 400->500
+	Ifrit HMG: 1000->900
+	BTR-K Kamysh: 2800->3200
+	T-100 Varsuk: 8000->7500
+	KH-3A Fenghuang: 8000->6000
+	K40 Ababil-3: 10000->8000
+	T-140 Angara: 13000->11000
+	T-140K Angara: 15000->13000
+	T-100 Futura: 16000->15000
+
+  Squad System
+	Coordinate with the new squad system.
+	Voice: Side chat voice has been disabled. Use squad chat to communicate with squadmates.
+	Squad leaders can talk to each other exclusively in command chat. Limit: squad size must be > 3.
+	Kills reward squadmates with assists. Formular for each squadmate: reward * 0.5 / sqrt (# of squadmates).
+	Squad leaders vote for the squad. Larger squads have exponentially higher voting power. Formula is (squad members) ^ 2 / 2.
+	Ongoing votes are now shown on screen.
+	Squad size limit: 9.
+	Fast travel to squad leader. Cost: 10 CP. Cooldown: 4 minutes.
+	Squadmates show up as different color/size on HUD and at greater distance (1 km), and squadmates can share drones.
+
+  Jamming
+	Added static communication towers to jam autonomous assets. Cost: 2,500 CP. Limit: jammer tower ranges may not overlap, may not be placed in home.
+	Similarly, device truck dazzlers jam drones. (Uses 5x fuel when jammer active.)
+	Jammers spawn inert and take 20 seconds to activate, during which time enemies are warned of their presence.
+	Jamming Ranges:
+	Effect range: 3 km. Fuzzy visual effect gets progressively worse as drone approaches jamming source.
+	Degrade range: 2.5 km. Thermal optics and all sensors are disabled.
+	Dead zone: 500 m. In this zone, air drones quickly take damage and ground drones are inoperable.
+	Hardline zone: 20 m. The range around the operator in which drones are immune to jamming.
+	Jamming approximate outer radii are shown on the map.
+	Spectrum devices have a jamming signal function: damages flying UAVs and temporarily disconnects ground UAVs. Range: 1.5 km.
+	Device trucks now properly turn on engines when dazzler activated whether you've gotten in the driver seat or not.
+	Device dazzler action now correctly indicates next state (allows turning on dazzler when engine off).
+	Device truck reports when projectiles are misguided.
+
+  Vehicle mod menu
+	Unified modify/rearm system with aircraft.
+	Select custom ammo loadout for vehicle.
+	User-friendly names for add-on customizations.
+	Move smoke launcher controls between driver/gunner/commander.
+	Custom camo, horn options.
+	Disable rearm button for vehicles without weapons.
+	Increased AT ammo for certain vehicles to compensate for APS.
+	BTR Kamysh: 4 -> 10 (5-mag)
+	Gorgon: 4 -> 10 (5-mag)
+	Prowler (AT): 6 -> 10
+	Quilin (AT): 6 -> 10
+	Static AT: 4 -> 10
+	Static AA: 4 -> 10
+	Offroad (AT): 12 -> 24
+	Increased machine gun ammo for infantry transports, defenses: Prowler (MG), Qilin (minigun), Offroad (MG), Static MGs
+	Add kill reward for MK45: 600 CP.
+
+  Sector capture mechanics
+	Tug of war: sector capture progress is gradually reduced rather than instantly reset.
+	Displays all sectors being captured in the HUD.
+	Adjusted some sector capture rewards.
+
+ Death info
+	You can now more reliably see who/what killed you.
+	Information displayed:
+	Killer name, side, health, score you earned during that life
+	Distance band from killer (eg. cqb, near, far, distant)
+	Detected by sensors (datalink etc) or AI
+
+  Support points
+	5-10 CP for spawn vehicle/pod owner for everyone who spawns on it (limits to prevent exploiting).
+	Add UI indication when you earn points from capturing sector.
+	Last hitter mechanic for destroying vehicles (to prevent nobody getting points from destroying green jet).
+	Removing your vehicle manually will reward last enemy who damages it as if they killed it.
+
+  Map changes
+	Players no longer spawn in water at [0, 0].
+	More available spawn points for each sector.
+	More starting base possibilities.
+	Updated some sector connections.
+	Adjusted numerous sectors for better fast travel.
+
+  Air defense
+	Surface to air missiles and VLS now contain a PiP camera to follow the missiles (can disable in settings).
+	Fixed SAM proximity fuse to not detonate prematurely.
+	Reduce instances of ghost missile re-locking bug.
+	Added weapon safe for SAM sites when turret is experiencing turret ownership transfer bug.
+	SPAA (Tigris/Cheetah) autocannon now airburst near air targets every 5 rounds.
+
+  APS
+	Fixed APS to work reliably.
+	Submunitions no longer escape APS destruction effect.
+	APS now reports incoming rockets again with new interface.
+	Removed PCML from light APS list (for real this time).
+	120mm/125mm tank-fired missiles added to APS medium/heavy and dazzler.
+	Triggering enemy APS rewards the shooter +50 CP.
+	Macer, KH-58, Jian and Firefist consume 2 APS charges.
+	Sharur, KH-25 and AGM-88 consume 3 APS charges.
+
+  Misc features
+	Helicopters now spawn where you place them.
+	UAV tactical pings now show up for everyone on the team (custom icon color).
+	Griefers no longer be able to spawn vehicles inside/close to teammates' vehicles.
+	Static defenses (camo nets, barbed wires, sandbags etc) can now be deleted directly from the map.
+	Dragon teeth upgraded to row variant.
+	You can now demolish enemy sandbags and dragon teeth by interacting directly with them.
+	Notify team of originator when someone activates sector scan, target reset, or forfeit.
+	Forfeit vote is enabled if team imbalance exceeds 5 players.
+	Add "List/Prune assets" strategic option. This allows you to go through and delete some of your unused assets.
+	Added Wipe Map strategic option to wipe the map of user-defined markers (only applies locally).
+	Added option in settings to hide user-defined markers.
+	Map should show names for scanned vehicles again.
+	Deployed mine and explosive counts / limits displayed when placing a new one.
+	Changed some names in buy assets menu to be more user-friendly.
+	Rate limit changing 3rd person setting (5 minutes).
+	Punished players are now notified.
+	UAVs you can't control are now hidden in the UAV list to prevent clutter.
+	Added setting to go voiceless for less sluggish AI commands.
+
+  Misc bugfixes
+	Planes now spawn in safe-ish runway positions with 20m clearance (multiple Blackfish on runway beware).
+	Ordering aircraft on busy/filled airfield no longer break player ordering menu.
+	Fixed some cheaper vehicles/crates not having custom rearm timers or kill rewards.
+	Fixed CSAT (and only CSAT) armed UGV spawning right inside player without offset.
+	Moved automatic radar operation/rotation actions down the list.
+	AI radar and radar rotation correctly executes regardless of locality.
+	Ordering assets now costs exactly what it says in the menu (mismatches fixed).
+	Fixed map bug with invisible vehicles, vehicles showing for the opposite team, double icons...etc.
+	Fixed issue with mine limits not being correctly applied.
+	Fixed typos in strategy menu.
+	Better date readability for report menu.
+	Fixed UAVs not allowing connection to driver seat.
+	Aircraft get a second countermeasure mag if they only started with 120.
+	Garbage collection should only clean up unoccupied vehicles.
+	Replaced CSAT Xi'an with infantry transport variant to combat lock-on bug (oh arma...).
+	Fixed map bug where sector capture progress by real enemy team may be shown before sector is fully revealed.
+	Fixed initialization bug where sometimes new players on a freshly restarted server will join without the full 1000 starting CP.
+	Fixed capture count bug where vehicle crews were not counted for capture values.
+	Fixed capture count bug where CSAT almost always had an advantage when both sides had equivalent capture values.
+	Fixed capture count bug where dead crews may sometimes retain the capture value of the vehicle.
+	Fixed exploit where vehicles loaded into blackfish (or Xian) can capture sectors from very high up.
+	Fixed ejection seat in aircraft.
+
+  Misc performance enhancements
+	Performance: AI groups are larger while total AI garrison remains the same.
+	Performance: APS script expires when projectile does.
+	Performance: AI is now deleted aggressively when a green sector is taken or abandoned.
+	Performance: Map draw should be more performant.
+	Performance: Sector selection rewritten, should be more performant.
+
+  Known Issues
+	Rarely, big airplanes (Blackfish) can glitch into each other when spawned on a runway.
+	Applying saved loadout with different smoke position from vehicle, then rearming, may cause smoke launcher to disappear.
+	Bad translations in the new UIs. Please report any inappropriate translations to the bug channel.
+	SAM site locality switch safety does not work if ownership is swapped to a fellow squad member.
+	Missile camera may not work properly when battery is used by fellow squad member.
+	Non-squad members talking show up in the default speaking indicator. Ignore that best as you can.
+
+Note to play testers: if you participated in the pre-release playtesting and saved loadouts in the new vehicle loadout manager, you will need to clear your loadout saves by using the wipe button in the vehicle pylon manager. 
