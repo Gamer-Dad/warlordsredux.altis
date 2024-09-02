@@ -295,6 +295,9 @@ class Defences {
             removeWeapons[] = {};
             addMagazines[] = {
                 "200Rnd_65x39_cased_Box_Tracer",
+                "200Rnd_65x39_cased_Box_Tracer",
+                "200Rnd_65x39_cased_Box_Tracer",
+                "200Rnd_65x39_cased_Box_Tracer",
                 "200Rnd_65x39_cased_Box_Tracer"
             };
             addWeapons[] = {
