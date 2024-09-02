@@ -3,6 +3,7 @@ serverNamespace setVariable ["playerList", createHashMap];
 
 // Read mission config file for requisition costs
 // Hierarchy: CfgWLRequisitionPresets >> preset >> side >> category >> class
+private _nameHashMap = createHashMap;
 private _costHashMap = createHashMap;
 private _rearmTimerHashMap = createHashMap;
 private _killRewardHashMap = createHashMap;
@@ -30,6 +31,7 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 			private _requisitionClasses = configProperties [_x];
 			{
 				private _requistitonName = configName _x;
+				private _requisitionNameOverride = getText (_x >> "name");
 				private _requisitionCost = getNumber (_x >> "cost");
 				private _requisitionRearmTime = getNumber (_x >> "rearm");
 				private _requisitionKillReward = getNumber (_x >> "killReward");
@@ -47,6 +49,10 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 				private _requisitionAircraftSpawn = getNumber (_x >> "aircraftSpawn");
 
 				private _requisitionTurretOverrides = "inheritsFrom _x == (missionConfigFile >> 'WLTurretDefaults')" configClasses _x;
+
+				if (_requisitionNameOverride != "") then {
+					_nameHashMap set [_requistitonName, _requisitionNameOverride];
+				};
 
 				if (_requisitionCost != 0) then {
 					_costHashMap set [_requistitonName, _requisitionCost];
@@ -112,6 +118,7 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 	} forEach _requisitionSides;
 } forEach _requisitionPresets;
 
+missionNamespace setVariable ["WL2_nameOverrides", _nameHashMap, true];
 serverNamespace setVariable ["WL2_costs", _costHashMap];
 serverNamespace setVariable ["WL2_killRewards", _killRewardHashMap];
 serverNamespace setVariable ["WL2_cappingValues", _capValueHashMap];

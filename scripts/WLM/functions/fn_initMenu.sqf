@@ -20,7 +20,14 @@ uiNamespace setVariable ["WLM_assetIsAircraft", _isAircraft];
 
 disableSerialization;
 
-private _assetTypeName = getText (_assetConfig >> "displayName");
+private _nameOverrides = missionNamespace getVariable ["WL2_nameOverrides", createHashMap];
+private _nameOverride = _nameOverrides getOrDefault [typeof _asset, ""];
+private _assetTypeName = if (_nameOverride != "") then {
+    _nameOverride
+} else {
+    getText (_assetConfig >> "displayName");
+};
+
 
 if (_isAircraft) then {
     private _aircraftNameControl = _display displayCtrl WLM_VEHICLE_NAME;
