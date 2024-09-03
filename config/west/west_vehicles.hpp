@@ -334,6 +334,36 @@ class Vehicles {
         };
     }; // "IFV-6a Cheetah"
 
+    class B_T_APC_Tracked_01_AA_F {
+        name = "IFV-6X Puma";
+        cost = 9000;
+        requirements[] = {};
+        rearm = 450;
+        killReward = 600;
+        capValue = 4;
+        aps = 2;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            addMagazines[] = {
+                "magazine_Missile_mim145_x4",
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            addWeapons[] = {
+                "weapon_mim145Launcher",
+                "weapon_Cannon_Phalanx"
+            };
+        };
+    };
+
     class B_AFV_Wheeled_01_cannon_F {
         cost = 4500;
         requirements[] = {};

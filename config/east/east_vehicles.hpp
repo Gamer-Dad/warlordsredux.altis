@@ -325,6 +325,36 @@ class Vehicles {
         };
     }; // "ZSU-39 Tigris"
 
+    class O_T_APC_Tracked_02_AA_ghex_F {
+        name = "ZSU-49 Euphrates";
+        cost = 9000;
+        requirements[] = {};
+        rearm = 450;
+        killReward = 600;
+        capValue = 4;
+        aps = 2;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            addMagazines[] = {
+                "magazine_Missile_s750_x4",
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            addWeapons[] = {
+                "weapon_s750Launcher",
+                "weapon_Cannon_Phalanx"
+            };
+        };
+    };
+
     class O_MBT_02_cannon_F {
         cost = 7500;
         requirements[] = {};
