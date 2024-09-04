@@ -279,6 +279,7 @@ class Vehicles {
         rearm = 500;
         killReward = 300;
         capValue = 3;
+        aps = 2;
 
         class Gunner: WLTurretDefaults {
             turret[] = { 0 };
