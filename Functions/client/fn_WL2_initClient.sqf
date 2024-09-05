@@ -448,3 +448,29 @@ missionNamespace setVariable [format ["BIS_WL2_minesDB_%1", getPlayerUID player]
 		} forEach BIS_WL_allSectors;
 	};
 };
+
+0 spawn {
+	private _scoreControl = (findDisplay 46) ctrlCreate ["RscStructuredText", -1];
+
+	private _blockW = safeZoneW / 1000;
+	private _blockH = safeZoneH / (1000 / (getResolution # 4));
+
+	private _displayW = _blockW * 180;
+	private _displayH = _blockH * 54;
+	private _displayX = safeZoneW + safeZoneX - _displayW - (_blockW * 10);
+	private _displayY = safeZoneH + safeZoneY - _displayH - (_blockH * 50);
+
+	_scoreControl ctrlSetPosition [_displayX - (_blockW * 110), _displayY - (_blockH * 16 * 3 + _blockH * 30), _blockW * 160, _blockH * 16 * 4];
+	_scoreControl ctrlCommit 0;
+
+	while {!BIS_WL_missionEnd} do {
+		private _killRewards = missionNamespace getVariable ["WL_killReward", []];
+		_killRewards = _killRewards select { ((_x # 1) + 10) > serverTime };
+		missionNamespace setVariable ["WL_killReward", _killRewards];
+
+		private _killText = (_killRewards apply { _x # 0 }) joinString "<br />";
+		_scoreControl ctrlSetStructuredText parseText _killText;
+
+		sleep 0.5;
+	};
+};
