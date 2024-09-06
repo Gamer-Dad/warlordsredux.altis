@@ -16,7 +16,7 @@ SQD_HAS_INVITE = false;
         params ["_unit", "_corpse"];
 
         private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
-        private _sideCustomChannel = if (side _unit == WEST) then {
+        private _sideCustomChannel = if (side group _unit == WEST) then {
             _voiceChannels # 0
         } else {
             _voiceChannels # 1
@@ -30,7 +30,7 @@ SQD_HAS_INVITE = false;
         params ["_channel", "_owner", "_from", "_text", "_person", "_name", "_strID", "_forcedDisplay", "_isPlayerMessage", "_sentenceType", "_chatMessageType", "_params"];
 
         private _voiceChannels = missionNamespace getVariable ["SQD_VoiceChannels", [-1, -1]];
-        private _sideCustomChannel = if (side _person == WEST) then {
+        private _sideCustomChannel = if (side group _person == WEST) then {
             _voiceChannels # 0
         } else {
             _voiceChannels # 1
