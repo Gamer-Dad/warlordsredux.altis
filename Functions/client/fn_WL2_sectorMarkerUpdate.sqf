@@ -9,7 +9,9 @@ private _mrkrMain = (_sector getVariable "BIS_WL_markers") # 0;
 private _mrkrArea = (_sector getVariable "BIS_WL_markers") # 1;
 private _mrkrAreaBig = (_sector getVariable "BIS_WL_markers") # 2;
 
-if (_owner == BIS_WL_playerSide || {(BIS_WL_playerSide) in _previousOwners}) then {
+if (isNil "_mrkrAreaBig" || isNil "_mrkrArea") exitWith {};
+
+if (_owner == BIS_WL_playerSide || {BIS_WL_playerSide in _previousOwners}) then {
 	_mrkrAreaBig setMarkerSizeLocal [0, 0];
 	_mrkrArea setMarkerBrushLocal "Border";
 };
