@@ -63,11 +63,11 @@ private _actionID = _asset addAction [
         private _outerMarkerName = format ["BIS_WL_jammerMarkerOuter_%1", netId _asset];
 		if (_isActive) then {
 			_asset setFuelConsumptionCoef 5;
-			_outerMarkerName setMarkerAlpha 0.5;
+			_outerMarkerName setMarkerAlpha 1;
 		} else {
 			if (_isActivating) then {
 				_asset setFuelConsumptionCoef 5;
-				_outerMarkerName setMarkerAlpha 0.5;
+				_outerMarkerName setMarkerAlpha 1;
 			} else {
 				_asset setFuelConsumptionCoef 1;
 				_outerMarkerName setMarkerAlpha 0;
