@@ -19,7 +19,7 @@ disableSerialization;
 
     private _squadManager = missionNamespace getVariable ["SQUAD_MANAGER", []];
     private _getSquadlist = {
-        _squadListUnordered = _squadManager select { 
+        _squadListUnordered = _squadManager select {
             private _squad = _x;
             private _isNotEmpty = count (_squad select 2) > 0;
             private _isSameSide =  _squad select 3 == side player;
@@ -63,7 +63,7 @@ disableSerialization;
                 _points = WL_PlayerSquadContribution getOrDefault [_playerId, 0];
                 tvSetTooltip [TREE, [_squadItem, _playerItem], format [localize "STR_SQUADS_squadMemberTooltip", _playerName, _points]];
 
-                _tvColor = if (_playerId == (getPlayerID player)) then { 
+                _tvColor = if (_playerId == (getPlayerID player)) then {
                     [0.4, 0.6, 1.0, 1];
                 } else {
                     if (!alive _player) then {
@@ -184,15 +184,15 @@ disableSerialization;
             tvSetTooltip [TREE, _treePath, format [localize "STR_SQUADS_squadMemberTooltip", name (allPlayers select {getPlayerID _x == _playerId} select 0), _points]];
 
             private _player = allPlayers select {getPlayerID _x == _playerId} select 0;
-            private _tvColor = if (_playerId == (getPlayerID player)) then { 
-                    [0.4, 0.6, 1.0, 1];
+            private _tvColor = if (_playerId == (getPlayerID player)) then {
+                [0.4, 0.6, 1.0, 1];
+            } else {
+                if (isNull _player || {!alive _player}) then {
+                    [1, 0, 0, 1];
                 } else {
-                    if (!alive _player) then {
-                        [1, 0, 0, 1];
-                    } else {
-                        [1, 1, 1, 1];
-                    };
+                    [1, 1, 1, 1];
                 };
+            };
 
             _treeControl tvSetColor [_treePath, _tvColor];
             _treeControl tvSetSelectColor [_treePath, _tvColor];
@@ -200,7 +200,7 @@ disableSerialization;
 
         {
             private _playerId = _x;
-            
+
             private _picture = [_playerId] call _getPictureForPlayerId;
             lbSetPicture [PLAYER_LIST, _y, _picture];
 
@@ -213,11 +213,11 @@ disableSerialization;
     call _constructPlayerList;
     call _constructButtons;
     [_treeEntries, _listEntries] spawn _updatePictures;
-    
+
     private _dirtySquadManager = {
         scopeName "checkFunction";
         params ["_oldSquadManager", "_newSquadManager"];
-        
+
         // check if the sizes are the same
         if (count _oldSquadManager != count _newSquadManager) then {
             true breakOut "checkFunction";

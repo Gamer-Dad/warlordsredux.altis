@@ -27,7 +27,7 @@ if (count _spawnPos == 0) exitWith {
 	diag_log format ["Ordering aircraft failed. Spawn position not found in sector %1.", _sector getVariable "BIS_WL_name"];
 	"No suitable spawn position found. Clear the runways." remoteExec ["systemChat", _owner];
 	_sender setVariable ["BIS_WL_isOrdering", false, [2, _owner]];
-	
+
 	// refund if nothing spawned
 	(_cost) call BIS_fnc_WL2_fundsDatabaseWrite;
 };
@@ -47,8 +47,10 @@ _asset setVehicleReportRemoteTargets true;
 _asset setVehicleReceiveRemoteTargets true;
 _asset setVehicleReportOwnPosition true;
 
-if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
-	_asset addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1], 120]
+private _smallFlareMags = (_asset magazinesTurret [-1]) select {_x == "120Rnd_CMFlare_Chaff_Magazine"};
+if (count _smallFlareMags == 1) then {
+	_asset removeMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
+	_asset addMagazineTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]]
 };
 
 _asset setVariable ["BIS_WL_ownerAsset", _uid, [2, _owner]];

@@ -41,8 +41,10 @@ private _turretOverridesForVehicle = _turretOverrides getOrDefault [_class, []];
 
 _asset enableWeaponDisassembly false;
 
-if ("120Rnd_CMFlare_Chaff_Magazine" in (_asset magazinesTurret [-1])) then {
-	_asset addMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1], 120]
+private _smallFlareMags = (_asset magazinesTurret [-1]) select {_x == "120Rnd_CMFlare_Chaff_Magazine"};
+if (count _smallFlareMags == 1) then {
+	_asset removeMagazineTurret ["120Rnd_CMFlare_Chaff_Magazine", [-1]];
+	_asset addMagazineTurret ["240Rnd_CMFlare_Chaff_Magazine", [-1]]
 };
 
 _owner = owner _sender;

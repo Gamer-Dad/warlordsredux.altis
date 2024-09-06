@@ -2,7 +2,7 @@
 
 private _captureDisplay = uiNamespace getVariable ["RscWLCaptureDisplay", objNull];
 if (isNull _captureDisplay) then {
-	"CaptureDisplay" cutRsc ["RscWLCaptureDisplay", "PLAIN", -1, true, false];
+	"CaptureDisplay" cutRsc ["RscWLCaptureDisplay", "PLAIN", -1, true, true];
 	_captureDisplay = uiNamespace getVariable "RscWLCaptureDisplay";
 };
 
@@ -18,7 +18,7 @@ while { !BIS_WL_missionEnd } do {
 		_isBeingCaptured && _revealed;
 	};
 
-	if (count _sectorsBeingCaptured == 0) then { 
+	if (count _sectorsBeingCaptured == 0) then {
 		_indicator ctrlSetText "";
 		_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0];
 		continue;

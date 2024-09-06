@@ -102,21 +102,32 @@ switch (_action) do {
         // Promote player to squad leader
         private _playerId = _params select 0;
 
-        private _squad = SQUAD_MANAGER select {(_x select 2) find _playerId > -1} select 0;
-        _squad set [1, _playerId];
-
-        _message = format ["Player %1 promoted to Squad Leader of %2", _playerId, (_squad select 0)];
-        _return = 0;
+        private _squads = SQUAD_MANAGER select {(_x select 2) find _playerId > -1};
+        if  (count _squads == 0) then {
+            _message = format ["Player %1 not in any squad", _playerId];
+            _return = 1;
+        } else {
+            private _squad = _squads select 0;
+            _squad set [1, _playerId];
+            _message = format ["Player %1 promoted to Squad Leader of %2", _playerId, (_squad select 0)];
+            _return = 0;
+        };
     };
     case "getSquadmates": {
         // Get squadmates of player
         private _playerId = _params select 0;
 
-        private _squad = SQUAD_MANAGER select {(_x select 2) find _playerId > -1} select 0;
-        private _squadmates = if (isNil "_squad") then {[]} else {_squad select 2};
+        private _squads = SQUAD_MANAGER select {(_x select 2) find _playerId > -1};
+        if (count _squads == 0) then {
+            _message = format ["Player %1 not in any squad", _playerId];
+            _return = [];
+        } else {
+            private _squad = _squads select 0;
+            private _squadmates = _squad select 2;
 
-        _message = format ["Squadmates of %1: %2", _playerId, _squadmates];
-        _return = _squadmates - [_playerId];
+            _message = format ["Squadmates of %1: %2", _playerId, _squadmates];
+            _return = _squadmates - [_playerId];
+        };
     };
     case "rename": {
         // Rename squad
