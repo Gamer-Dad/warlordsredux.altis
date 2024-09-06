@@ -50,7 +50,7 @@ switch (_action) do {
         // input: inviter id
         private _inviter = _params select 0;
 
-        if (!isNil "SQD_HAS_INVITE" || {SQD_HAS_INVITE}) exitWith {
+        if (isNil "SQD_HAS_INVITE" || {SQD_HAS_INVITE}) exitWith {
             _return = 1;
         };
         SQD_HAS_INVITE = true;
