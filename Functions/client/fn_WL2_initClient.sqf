@@ -153,7 +153,7 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 		enableSentences false;
 		0 fadeSpeech 0;
 		0 fadeRadio 0;
-		{_x enableChannel [false, false]} forEach [0,2,3,4,5];
+		{_x enableChannel [false, false]} forEach [0,1,2,3,4,5];
 		[localize "STR_A3_nameFilter", localize "STR_A3_nameFilter_info"] call BIS_fnc_WL2_blockScreen;
 	};
 };
@@ -165,8 +165,8 @@ if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 
 enableRadio true;
 enableSentences true;
-{_x enableChannel [true, true]} forEach [1,3,4,5];
-{_x enableChannel [true, false]} forEach [0,2];
+{_x enableChannel [true, true]} forEach [3,4,5];
+{_x enableChannel [true, false]} forEach [0,1,2];
 enableEnvironment [false, true];
 
 call MRTM_fnc_settingsInit;
