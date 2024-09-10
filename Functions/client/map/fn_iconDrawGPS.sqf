@@ -91,8 +91,18 @@ _sideN = [east, west] find _side;
 		0.025,
 		"PuristaBold",
 		"right"
-	];		
-} forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});	
+	];
+} forEach ((units player) select {(alive _x) && {(isNull objectParent _x) && {_x != player}}});
+
+private _teamVariable = if (_sideN == 0) then {
+	"BIS_WL_eastOwnedVehicles"
+} else {
+	"BIS_WL_westOwnedVehicles"
+};
+private _sideVehicles = missionNamespace getVariable [_teamVariable, []];
+private _vehiclesOnSide = vehicles select { count crew _x > 0 && side _x == _side };
+_sideVehicles = _sideVehicles + _vehiclesOnSide;
+_sideVehicles = _sideVehicles arrayIntersect _sideVehicles;
 {
 	_size = call BIS_fnc_iconSize;
 	_m drawIcon [
@@ -102,10 +112,10 @@ _sideN = [east, west] find _side;
 		_size,
 		_size,
 		call BIS_fnc_getDir,
-		[_x, true] call BIS_fnc_iconText,
+		_x call BIS_fnc_iconText,
 		1,
 		0.043,
 		"PuristaBold",
 		"right"
 	];
-} forEach ((entities [["LandVehicle", "Air", "Ship"], ["Logic"], false, true]) select {alive _x && {([((getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "side")) == _sideN), (side group ((crew _x) # 0) == _side)] select (count (crew _x) > 0)) && {!((typeOf _x) in ["B_Truck_01_medical_F", "O_Truck_03_medical_F", "O_T_Truck_03_device_ghex_F", "O_Truck_03_device_F"])}}});
+} forEach (_sideVehicles select { alive _x });

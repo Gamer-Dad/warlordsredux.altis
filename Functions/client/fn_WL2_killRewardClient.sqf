@@ -25,3 +25,7 @@ _killRewardExisting pushBack [_rewardText, serverTime];
 missionNamespace setVariable ["WL_killReward", _killRewardExisting];
 
 WAS_score = true;
+
+if (profileNamespace getVariable ["MRTM_playKillSound", true]) then {
+	playSoundUI ["AddItemOK", 1, 1];
+};
