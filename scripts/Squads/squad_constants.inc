@@ -1,6 +1,5 @@
 #define SQD_MIN_COMMAND_CHAT 3
 #define SQD_MAX_SQUAD_SIZE 9
-#define SQD_DISABLE_SIDE true
 
 // UI Menu
 #define MENU 5000

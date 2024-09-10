@@ -32,7 +32,7 @@ SQD_SOUND_CHANGES = [];
     private _handleSideChat = {
         params ["_player", "_playerId"];
 
-        private _isInMySquad = !SQD_DISABLE_SIDE || {["isInMySquad", [_playerID]] call SQD_fnc_client};
+        private _isInMySquad = ["isInMySquad", [_playerID]] call SQD_fnc_client;
         [_player, _playerID, _isInMySquad] call _deltaVoice;
     };
 
@@ -57,13 +57,6 @@ SQD_SOUND_CHANGES = [];
         private _myVehicle = vehicle player;
         private _playerVehicle = vehicle _player;
         [_player, _playerID, _myVehicle == _playerVehicle] call _deltaVoice;
-    };
-
-    private _handleSquadChat = {
-        params ["_player", "_playerId"];
-
-        private _isInMySquad = ["isInMySquad", [_playerID]] call SQD_fnc_client;
-        [_player, _playerID, _isInMySquad] call _deltaVoice;
     };
 
     private _myPlayerId = getPlayerID player;
@@ -126,7 +119,7 @@ SQD_SOUND_CHANGES = [];
                     [_player, _playerID] call _handleDirectChat;
                 };
                 case (_customSideChannel + 5): {
-                    [_player, _playerID] call _handleSquadChat;
+                    [_player, _playerID] call _handleSideChat;
                 };
                 default {
                     [_player, _playerID] call _handleSideChat;
@@ -173,10 +166,6 @@ while { !BIS_WL_missionEnd } do {
         2 enableChannel [true, true];
     } else {
         2 enableChannel [false, false];
-    };
-
-    if (!SQD_DISABLE_SIDE) then {
-        1 enableChannel [true, true];
     };
 
     sleep 1;
