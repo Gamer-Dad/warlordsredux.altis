@@ -6,6 +6,9 @@ private _class = _assetDetails # 0;
 private _DLCOwned = true;
 private _DLCTooltip = "";
 
+_funds = ((missionNamespace getVariable "fundsDatabaseClients") get (getPlayerUID player));
+
+if (isNil "_class") exitWith {};
 if (_cost > _funds) then {_ret = false; _tooltip = localize "STR_A3_WL_low_funds"};
 if (!alive player) then {_ret = false; _tooltip = localize "STR_A3_WL_fasttravel_restr6"};
 if (lifeState player == "INCAPACITATED") then {_ret = false; _tooltip = format [localize "STR_A3_Revive_MSG_INCAPACITATED", name player]};
