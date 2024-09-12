@@ -268,7 +268,7 @@ class Vehicles {
         capValue = 4;
         aps = 3;
     }; // "T-140K Angara"
-
+/* Disabled as it is broken since disabling SETWEAPONRELOADINGTIME
     class O_MBT_02_railgun_F {
         cost = 15000;
         requirements[] = {};
@@ -277,7 +277,7 @@ class Vehicles {
         capValue = 4;
         aps = 3;
     }; // "T-100 Futura"
-
+*/
     class O_MBT_02_arty_F {
         cost = 20000;
         requirements[] = {};
