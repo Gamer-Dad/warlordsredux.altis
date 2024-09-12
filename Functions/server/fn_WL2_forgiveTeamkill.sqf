@@ -5,6 +5,7 @@ if ((owner _forgiver) != remoteExecutedOwner) exitWith {};
 
 if !(_forgive) then {
 	private _teamkillerOwner = owner _teamkiller;
+	if (_teamkillerOwner < 3) exitwith {};
 	_timestamps = _teamkiller getVariable ["BIS_WL_friendlyKillTimestamps", []];
 	_timestamps pushBack serverTime;
 	_teamkiller setVariable ["BIS_WL_friendlyKillTimestamps", _timestamps, [2, _teamkillerOwner]];

@@ -17,6 +17,7 @@ private _maxAllowedDisplacement = (sqrt _maxDistSqr) / 4 * 3;
 private _previousPos = getPosWorld _projectile;
 private _safeMaxDistSqr = _maxDistSqr;
 
+private _unitSide = side group _unit;
 private _apsType = missionNamespace getVariable ["WL2_aps", createHashMap];
 
 private _continue = alive _projectile;
@@ -24,7 +25,6 @@ while {_continue && alive _projectile} do {
 	private _currentPos = getPosWorld _projectile;
 	private _displacement = _currentPos distance _previousPos;
 	if (_displacement > _maxAllowedDisplacement) then {
-		// systemChat "Safety case triggered.";
 		_safeMaxDistSqr = _maxSpeed * _maxSpeed;
 		_maxAllowedDisplacement = _maxSpeed;
 	};
@@ -34,7 +34,16 @@ while {_continue && alive _projectile} do {
 
 	private _eligibleNearbyVehicles = (_projectile nearEntities [["LandVehicle"], _safeRadius]) select {
 		_x != _unit &&
-		[_x] call APS_fnc_Active
+		[_x] call APS_fnc_Active;
+	};
+	_eligibleNearbyVehicles = _eligibleNearbyVehicles select {
+		private _ownerSide = _x getVariable ["BIS_WL_ownerAssetSide", sideUnknown];
+		private _isFriendly = _unitSide == _ownerSide;
+		if (_isFriendly) then {	// if friendly, disable insurance measures
+			(_x distance _firedPosition) < _radius;
+		} else {
+			true;
+		};
 	};
 
 	_sortedEligibleList = [_eligibleNearbyVehicles, [_projectile], { _input0 distance _x }, "ASCEND"] call BIS_fnc_sortBy;

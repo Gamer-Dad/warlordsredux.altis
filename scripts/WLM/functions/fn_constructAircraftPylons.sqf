@@ -36,6 +36,16 @@ private _currentAssetPylonInfo = getAllPylonsInfo _asset;
     private _allowListForPylon = missionNamespace getVariable ["WL2_allowPylonMagazines", createHashMap];
     _allowedMagazines append (_allowListForPylon getOrDefault [typeOf _asset, []]);
 
+    private _bannedWords = ["leaflet", "bombcluster"];
+    _allowedMagazines = _allowedMagazines select {
+        private _mag = _x;
+        private _isBanned = false;
+        {
+            _isBanned = _isBanned || [_x, _mag] call BIS_fnc_inString;
+        } forEach _bannedWords;
+        !_isBanned;
+    };
+
     {
         private _magazine = configfile >> "CfgMagazines" >> _x;
         private _magazineName = getText (_magazine >> "displayName");
