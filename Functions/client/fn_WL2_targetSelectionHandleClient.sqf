@@ -52,28 +52,33 @@ while {!BIS_WL_missionEnd} do {
 		["voting", [(_data # 1) - (getMissionConfigValue ["BIS_WL_sectorVotingDuration", 15]), _data # 1, _this]] spawn BIS_fnc_WL2_setOSDEvent;
 	};
 
-	_voteTallyDisplayVar spawn {
-		private _voteDisplay = uiNamespace getVariable ["RscWLVoteDisplay", objNull];
-		if (isNull _voteDisplay) then {
-			"VoteDisplay" cutRsc ["RscWLVoteDisplay", "PLAIN", -1, true, false];
-			_voteDisplay = uiNamespace getVariable "RscWLVoteDisplay";
+	private _voteLocked = missionNamespace getVariable ["voteLocked", true];
+	if !(_voteLocked) then {
+		_voteTallyDisplayVar spawn {
+			private _voteDisplay = uiNamespace getVariable ["RscWLVoteDisplay", objNull];
+			if (isNull _voteDisplay) then {
+				"VoteDisplay" cutRsc ["RscWLVoteDisplay", "PLAIN", -1, true, false];
+				_voteDisplay = uiNamespace getVariable "RscWLVoteDisplay";
+			};
+
+			private _indicator = _voteDisplay displayCtrl 7002;
+			private _indicatorBackground = _voteDisplay displayCtrl 7003;
+			_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
+
+			while { isNull WL_TARGET_FRIENDLY && !BIS_WL_missionEnd && !BIS_WL_resetTargetSelection_client } do {
+				_voteLocked = missionNamespace getVariable ["voteLocked", true];
+				if (_voteLocked) then {break};
+				private _voteText = missionNamespace getVariable [_this, ["", 0]];
+				_indicator ctrlSetStructuredText (parseText (_voteText # 0));
+				_indicatorBackground ctrlSetPositionH (0.09 + (_voteText # 1) * 0.04);
+				_indicatorBackground ctrlCommit 0;
+
+				sleep WL_TIMEOUT_STANDARD;
+			};
+
+			_indicator ctrlSetText "";
+			_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0];
 		};
-
-		private _indicator = _voteDisplay displayCtrl 7002;
-		private _indicatorBackground = _voteDisplay displayCtrl 7003;
-		_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
-
-		while { isNull WL_TARGET_FRIENDLY && !BIS_WL_missionEnd && !BIS_WL_resetTargetSelection_client } do {
-			private _voteText = missionNamespace getVariable [_this, ["", 0]];
-			_indicator ctrlSetStructuredText (parseText (_voteText # 0));
-			_indicatorBackground ctrlSetPositionH (0.09 + (_voteText # 1) * 0.04);
-			_indicatorBackground ctrlCommit 0;
-
-			sleep WL_TIMEOUT_STANDARD;
-		};
-
-		_indicator ctrlSetText "";
-		_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0];
 	};
 
 	if !(isServer) then {
