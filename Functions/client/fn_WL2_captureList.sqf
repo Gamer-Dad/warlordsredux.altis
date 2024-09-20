@@ -11,6 +11,10 @@ private _indicatorBackground = _captureDisplay displayCtrl 7004;
 _indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
 
 while { !BIS_WL_missionEnd } do {
+	sleep WL_TIMEOUT_STANDARD;
+	
+	private _voteLocked = missionNamespace getVariable ["voteLocked", true];
+	if (_voteLocked) then {continue;};
 	private _side = BIS_WL_playerSide;
 	private _sectorsBeingCaptured = BIS_WL_allSectors select {
 		private _isBeingCaptured = _x getVariable ["BIS_WL_captureProgress", 0] > 0;
@@ -41,6 +45,4 @@ while { !BIS_WL_missionEnd } do {
 	_indicatorBackground ctrlSetBackgroundColor [0, 0, 0, 0.7];
 	_indicatorBackground ctrlSetPositionH (0.09 + (count _sectorsBeingCaptured) * 0.04);
 	_indicatorBackground ctrlCommit 0;
-
-	sleep WL_TIMEOUT_STANDARD;
 };
