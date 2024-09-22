@@ -129,17 +129,15 @@ while {dialog} do {
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
 			"- Weasley Wells", lineBreak,
-			"- Coffee Maker", lineBreak,
-			"- Korbelz", lineBreak,
+			"- Rook", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_22", lineBreak,
-			"- TenPenny", lineBreak,
 			"- MrThomasM", lineBreak,
-			"", lineBreak,
-			localize "STR_MRTM_welcomeInteract_18", lineBreak,
-			"- [E Z] N.Jabo", lineBreak,
-			"- Dagon", lineBreak,
-			""
+			"- TenPenny", lineBreak,
+			"- Coffee Maker", lineBreak,
+			"- Korbelz", lineBreak,
+			"- Bo", lineBreak,
+			"", lineBreak
 			];
 		};
 		case "discord": { 
@@ -163,10 +161,6 @@ while {dialog} do {
 		};
 		case "scripts": { 
 			_control ctrlSetStructuredText composeText [
-			"Aircraft Loadout:", lineBreak,
-			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
-			"You can order vehicle ammo box close to your aircraft and then look at the aircraft and press 'Rearm' to change you  loadout.", lineBreak,
-			"", lineBreak,
 			"GF Earplugs:", lineBreak,
 			"We use George Floros's earplug script wich allows you to lower your volume by the press of 1 button.", lineBreak,
 			"You can press the INSERT key to lower your volume.", lineBreak,
