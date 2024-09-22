@@ -145,10 +145,10 @@ switch (typeOf _asset) do {
         };
     };
 };
-
+/*
 _customTexturesList pushBack [localize "STR_WLM_DEFAULT", _defaultTextureList, localize "STR_WLM_OFFICIAL"];
 _customTexturesList pushBack [format ["--- %1 ---", localize "STR_WLM_OFFICIAL"], "", ""];
-
+*/
 private _additionalTextureSources = [_side] call WLM_fnc_textureLists;
 
 {
@@ -156,6 +156,7 @@ private _additionalTextureSources = [_side] call WLM_fnc_textureLists;
     _customTexturesList pushBack [_textureSource # 0, _textureSource # 1, localize "STR_WLM_OFFICIAL"];
 } forEach _additionalTextureSources;
 
+/* Disabled as it doesn't fit into Warlords
 // Image textures
 _customTexturesList pushBack [format ["--- %1 ---", localize "STR_WLM_CUSTOM"], "", ""];
 
@@ -185,6 +186,7 @@ if (_side == east) then {
     _customTexturesList pushBack ["CSAT Red", "#(rgb,8,8,3)color(0.49,0.26,0.26,0.05)", "Solid Color"];
     _customTexturesList pushBack ["Tropical Green", "#(rgb,8,8,3)color(0,0.84,0.16,0.03)", "Solid Color"];
 };
+*/
 
 private _ignoreTextureSlots = ["aiming_dot", "CamoNet", "CamoSlat", "insignia", "number_01", "number_02", "number_03"];
 private _customTexturesMap = createHashMap;

@@ -269,6 +269,7 @@ if (_action == "fundsTransfer") exitWith {
 		_uid = getPlayerUID _sender;
 		(-_param1) call BIS_fnc_WL2_fundsDatabaseWrite;
 		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
+		serverNamespace setVariable [format ["BIS_WL_WLAC_%1", _uid], _param1];
 
 		private _message = format [localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1];
 		[_side, _message] call _broadcastActionToSide;
