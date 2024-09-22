@@ -1,13 +1,5 @@
 adminFilter[] = {"!updatezeus","kanker","cancer","n3gro","negro","kill yourself","commit suicide","n i g g a","nickga","n1gg","nigg","n3g3r","neger","niger","n1ger","n1gger","ukro","jew","j3w","negg","n3gg","fuck","bitch","b1tch","slut","retard","kys","nazi","n4z1","rape","cunt","prick","pussy","maga","queer","shit","sh!t","scrotum","whore","slut","whore","f u c k","kunt","keelyersalf"};
 
-//Individual vehicles can be added below that work as a whitelist for default textures and/or for custom textures
-class liveryBlacklist
-{
-	east[] = {"Sand", "LightGrey", "Blufor", "EAF", "Indep", "Indep_02", "Indep_03", "AAF", "DigitalCamoGreen"};
-	west[] = {"Indep", "Indep_02", "Indep_03", "Hex", "GreenHex", "Opfor", "AAF", "DigitalCamoGreen"};
-	B_APC_Wheeled_03_cannon_F[] = {"Sand"};
-};
-
 class arsenalConfig
 {
 	class west{
