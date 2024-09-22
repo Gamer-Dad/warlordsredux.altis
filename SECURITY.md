@@ -7,13 +7,13 @@ Supported versions are versions that don't have any game braking bugs, it is sti
 
 |  Version |       Supported        |
 | -------- | ---------------------- |
+| 2.6.1    | :white_check_mark:     |
 | 2.6      | :white_check_mark:     |
 | 2.5.8.3  | :white_check_mark:     |
 | 2.5.8.2  | :white_check_mark:     |
 | 2.5.8.1  | :white_check_mark:     |
 | 2.5.8    | :white_check_mark:     |
 | 2.5.7.1  | :white_check_mark:     |
-| 2.5.7    | :white_check_mark:     |
 | < 2.5.6  | :x:                    |
 
 ## Reporting a Vulnerability
