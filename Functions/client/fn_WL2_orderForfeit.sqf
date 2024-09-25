@@ -17,6 +17,7 @@ if (_result) then {
     [_side] remoteExec ["BIS_fnc_WL2_forfeitHandleServer", 2];
 } else {
 	playSound "AddItemFailed";
-	BIS_WL_purchaseMenuVisible = false;
-	(uiNamespace getVariable ["BIS_WL_mapControl", controlNull]) ctrlEnable true;
 };
+
+BIS_WL_purchaseMenuVisible = false;
+(uiNamespace getVariable ["BIS_WL_mapControl", controlNull]) ctrlEnable true;

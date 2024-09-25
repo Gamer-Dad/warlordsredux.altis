@@ -89,7 +89,6 @@ BIS_fnc_WL2_sub_vehicleLockAction = compileFinal preprocessFileLineNumbers "Func
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
-missionNamespace setVariable ["voteLocked", true];
 
 "client" call BIS_fnc_WL2_varsInit;
 waitUntil {!(isNil "BIS_WL_playerSide")};
@@ -164,7 +163,6 @@ if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
 
-missionNamespace setVariable ["voteLocked", false];
 enableRadio true;
 enableSentences true;
 {_x enableChannel [true, true]} forEach [1,3,4,5];
