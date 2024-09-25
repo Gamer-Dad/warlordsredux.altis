@@ -6,6 +6,9 @@ params [
 	["_shadow", true, [true]]
 ];
 
+private _voteLocked = missionNamespace getVariable ["voteLocked", true];
+if (_voteLocked) exitWith {false};
+
 addMissionEventHandler ["Loaded", {
 	BIS_onScreenMessageID = 0;
 	BIS_onScreenMessagesBuffer = [];

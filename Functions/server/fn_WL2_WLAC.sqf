@@ -2,7 +2,7 @@ private _oldFundsDB = (serverNamespace getVariable "fundsDatabase");
 private _serverCheck = (["(EU) #11", serverName] call BIS_fnc_inString);
 
 while {!BIS_WL_missionEnd && _serverCheck} do {
-	private _sleep = 30;
+	private _sleep = 10;
 	sleep _sleep;
 	private _fundsDB = (serverNamespace getVariable "fundsDatabase");
 	{

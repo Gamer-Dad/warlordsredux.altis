@@ -89,6 +89,7 @@ BIS_fnc_WL2_sub_vehicleLockAction = compileFinal preprocessFileLineNumbers "Func
 MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_settingsinit.sqf";
 
 waitUntil {!isNull player && {isPlayer player}};
+missionNamespace setVariable ["voteLocked", false];
 
 "client" call BIS_fnc_WL2_varsInit;
 waitUntil {!(isNil "BIS_WL_playerSide")};
