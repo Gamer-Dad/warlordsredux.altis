@@ -46,7 +46,7 @@ class Header
 {
 	gameType = Warlords;
 	minPlayers = 1;
-	maxPlayers = 90;
+	maxPlayers = 128;
 };
 
 #include "mp_securityCommands.hpp"
