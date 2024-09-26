@@ -29,7 +29,7 @@ if (isNull (findDisplay 73000)) then {
 		_playerList = ((findDisplay 73000) displayCtrl 73004);
 		_name = _playerList lbText (lbCurSel _playerList);
 		localNamespace setVariable ["_REPORT_NAME", _name];
-		private _ChatEHId = missionNamespace getVariable "ChatEHId";
+		private _ChatEHId = localNamespace getVariable "ChatEHId";
 
 			if (isNil "_ChatEHId") then {
 				_ChatEHId = addMissionEventHandler ["HandleChatMessage", {
@@ -48,7 +48,6 @@ if (isNull (findDisplay 73000)) then {
 								private _UKTime = format["%1/%2/%3 -%4:%5:%6", _day, _month, _year, _hour, _minute, _second];
 								private _lsText = format["Name[%1] beId[%2] at %3 UTC", _passedname, _beId, _UKTime];
 								diag_log _lsText;
-								systemChat _lsText;
 								_editCtrl = ((findDisplay 73000) displayCtrl 73006);
 								if (isNull _editCtrl) then {
 									w = (0.20375 * safezoneW)+(pixelW * pixelGrid*30);
@@ -62,14 +61,21 @@ if (isNull (findDisplay 73000)) then {
 								_editCtrl ctrlSetBackgroundColor [1, 1, 1, 0.8];
 								_editCtrl ctrlSetTextColor		 [.9, 0, 0.0353, 1];
 								_editCtrl ctrlCommit 0;
-							};
-						};
+								_lsText;
+							}else{
+								_text;
+							};							
+						}else{
+							_text;
+						};						
+					}else{
+						_text;
 					};
-					true; // /don't let message results show up in chat
+					//true; // /don't let message results show up in chat					
 				}, 
 				[]//[_name]
 				];
-				missionNamespace setVariable ["ChatEHId", _ChatEHId];
+				localNamespace setVariable ["ChatEHId", _ChatEHId];
 			}; // /_ChatEHId
 		diag_log "serverCommand #beclient players";
 		serverCommand "#beclient players";

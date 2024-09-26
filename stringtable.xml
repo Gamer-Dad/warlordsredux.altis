@@ -2745,5 +2745,74 @@
             <Chinesesimp>生活得分</Chinesesimp>
             <Chinese>生活得分</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_Confirm_Teamwide_Action">
+            <Original>Confirm teamwide action: [ %1 ] </Original>
+            <English>Confirm teamwide action: [ %1 ]</English>
+            <Czech>Potvrďte akci celého týmu: [ %1 ] </Czech>
+            <French>Confirmer l'action à l'échelle de l'équipe : [ %1 ]</French>
+            <German>Teamweite Aktion bestätigen: [ %1 ]</German>
+            <Italian>Conferma azione a livello di team: [ %1 ]</Italian>
+            <Polish>Potwierdź działanie dla całego zespołu: [ %1 ]</Polish>
+            <Portuguese>Confirme a ação de toda a equipa: [ %1 ] </Portuguese>
+            <Russian>Подтвердите действие всей команды: [ %1 ]</Russian>
+            <Spanish>Confirmar acción de todo el equipo: [ %1 ]</Spanish>
+            <Turkish>Takım çapında eylemi onayla: [ %1 ]</Turkish>
+            <Korean>팀 전체 작업 확인: [ %1 ]</Korean>
+            <Japanese>諦める投票を始める</Japanese>
+            <Chinesesimp>确认团队行动：[ %1 ]</Chinesesimp>
+            <Chinese>確認團隊範圍內的操作：[ %1 ]</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_Confirm_Teamwide_Action_text">
+            <Original>This action [ &lt;t  size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] has teamwide effects and your team is not going to be able to use it again for considerable amount of time. Only press OK if your team has consensus on this action.</Original>
+            <English>This action [ &lt;t  size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] has teamwide effects and your team is not going to be able to use it again for considerable amount of time. Only press OK if your team has consensus on this action.</English>
+            <Czech>Tato akce [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] má účinky pro celý tým a váš tým jej nebude moci znovu používat po značnou dobu. Stiskněte OK pouze v případě, že se váš tým shodne na této akci.</Czech>
+            <French>Cette action [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] a des effets sur toute l'équipe et votre équipe ne pourra plus l'utiliser avant un temps considérable. Appuyez sur OK uniquement si votre équipe a un consensus sur cette action.</French>
+            <German>Diese Aktion [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] hat Auswirkungen auf das gesamte Team und Ihr Team wird sie für einen beträchtlichen Zeitraum nicht erneut verwenden können. Drücken Sie nur dann auf OK, wenn Ihr Team über diese Aktion Einigkeit erzielt hat.</German>
+            <Italian>Questa azione [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] ha effetti su tutto il team e il tuo team non potrà più utilizzarla per un periodo di tempo considerevole. Premi OK solo se il tuo team ha raggiunto il consenso su questa azione.</Italian>
+            <Polish>Ta akcja [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] ma wpływ na cały zespół i twój zespół nie będzie mógł jej użyć ponownie przez znaczny okres czasu. Naciśnij OK tylko wtedy, gdy twój zespół ma konsensus co do tej akcji.</Polish>
+            <Portuguese>Esta ação [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] tem efeitos em toda a equipa e a sua equipa não poderá voltar a utilizá-lo durante um período de tempo considerável. Prima OK apenas se a sua equipa tiver consenso sobre esta ação.</Portuguese>
+            <Russian>Это действие [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] имеет общекомандные эффекты, и ваша команда не сможет использовать его снова в течение значительного периода времени. Нажимайте OK только в том случае, если ваша команда достигла консенсуса по этому действию.</Russian>
+            <Spanish>Esta acción [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] tiene efectos en todo el equipo y este no podrá volver a usarla durante un tiempo considerable. Solo presione Aceptar si su equipo está de acuerdo con esta acción.</Spanish>
+            <Turkish>Bu eylem [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] tüm takım üzerinde etkilere sahiptir ve takımınız bunu uzun bir süre tekrar kullanamayacaktır. Yalnızca takımınız bu eylem konusunda fikir birliğine varırsa Tamam'a basın.</Turkish>
+            <Korean>이 동작 [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ]은 팀 전체에 영향을 미치며, 팀은 상당한 시간 동안 이 동작을 다시 사용할 수 없습니다. 팀에서 이 동작에 대한 합의가 있는 경우에만 확인을 누르세요.</Korean>
+            <Japanese>このアクション [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] はチーム全体に影響を及ぼし、チームはしばらくの間このアクションを再度使用できなくなります。チームでこのアクションに合意した場合にのみ [OK] を押してください。</Japanese>
+            <Chinesesimp>此操作 [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] 具有全队效果，您的团队在相当长的一段时间内将无法再次使用它。仅当您的团队对此操作达成共识时才按“确定”。</Chinesesimp>
+            <Chinese>此操作 [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] 具有團隊範圍的影響，並且您的團隊在相當長的時間內將無法再次使用它。僅當您的團隊對此操作達成共識時才按「確定」。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_feature_OrderForfeit">
+            <Original>Start vote to give up</Original>
+            <English>Start vote to give up</English>
+            <Czech>Začněte hlasovat, abyste se vzdali</Czech>
+            <French>Lancer le vote pour abandonner</French>
+            <German>Beginnen Sie mit der Abstimmung, um aufzugeben</German>
+            <Italian>Inizia a votare per rinunciare</Italian>
+            <Polish>Rozpocznij głosowanie, aby się poddać</Polish>
+            <Portuguese>Comece a votar para desistir</Portuguese>
+            <Russian>Начать голосование, чтобы отказаться</Russian>
+            <Spanish>Comienza a votar para renunciar</Spanish>
+            <Turkish>Vazgeçmek için oy kullanmaya başla</Turkish>
+            <Korean>포기 투표를 시작하세요</Korean>
+            <Japanese>諦める投票を始める</Japanese>
+            <Chinesesimp>开始投票放弃</Chinesesimp>
+            <Chinese>開始投票放棄</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_feature_OrderForfeit_info">
+            <Original>Start vote to give up the game. This ends the match and restarts the mission.</Original>
+            <English>Start vote to give up the game. This ends the match and restarts the mission.</English>
+            <Czech>Začněte hlasovat, abyste hru vzdali. Tím se zápas ukončí a mise se restartuje.</Czech>
+            <French>Lancez le vote pour abandonner le jeu. Cela met fin au match et redémarre la mission.</French>
+            <German>Starten Sie eine Abstimmung, um das Spiel aufzugeben. Dadurch wird das Spiel beendet und die Mission neu gestartet.</German>
+            <Italian>Inizia il voto per abbandonare la partita. Questo termina la partita e riavvia la missione.</Italian>
+            <Polish>Rozpocznij głosowanie, aby zrezygnować z gry. To kończy mecz i ponownie uruchamia misję.</Polish>
+            <Portuguese>Comece a votar para desistir do jogo. Isto termina a partida e reinicia a missão.</Portuguese>
+            <Russian>Начать голосование, чтобы выйти из игры. Это завершит матч и перезапустит миссию.</Russian>
+            <Spanish>Comienza a votar para abandonar el juego. Esto finaliza la partida y reinicia la misión.</Spanish>
+            <Turkish>Oyunu bırakmak için oylama başlat. Bu maçı sonlandırır ve görevi yeniden başlatır.</Turkish>
+            <Korean>게임을 포기하기 위한 투표를 시작합니다. 이렇게 하면 매치가 종료되고 미션이 다시 시작됩니다.</Korean>
+            <Japanese>ゲームを放棄する投票を開始します。これにより試合が終了し、ミッションが再開されます。</Japanese>
+            <Chinesesimp>开始投票放弃游戏。这将结束比赛并重新开始任务。</Chinesesimp>
+            <Chinese>開始投票放棄比賽。這將結束比賽並重新開始任務。</Chinese>
+        </Key>
+        
     </Container>
 </Project>

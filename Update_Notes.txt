@@ -431,4 +431,15 @@
 	Missile camera may not work properly when battery is used by fellow squad member.
 	Non-squad members talking show up in the default speaking indicator. Ignore that best as you can.
 
-Note to play testers: if you participated in the pre-release playtesting and saved loadouts in the new vehicle loadout manager, you will need to clear your loadout saves by using the wipe button in the vehicle pylon manager. 
+Note to play testers: if you participated in the pre-release playtesting and saved loadouts in the new vehicle loadout manager, you will need to clear your loadout saves by using the wipe button in the vehicle pylon manager.
+
+2.6.1
+	Changes:
+		Qilin unarmed removed from Opfor
+		Welcome screen updated to reflect current team
+		Removed custom textures for vehicles
+
+	Bugsfixes:
+		Civilian communication towers gave CP
+		Sector vote and target selection hidden in inbalance or team switch screen
+		Some more minor bugfixes

@@ -53,6 +53,8 @@ MRTM_fnc_leaveGroup = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_le
 MRTM_fnc_accept = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_accept.sqf";
 MRTM_fnc_invite = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_invite.sqf";
 
+BIS_fnc_WL2_WLAC = compileFinal preprocessFileLineNumbers "Functions\server\fn_WL2_WLAC.sqf";
+
 call SQD_fnc_initServer;
 
 call BIS_fnc_WL2_tablesSetUp;
@@ -76,6 +78,7 @@ if !(isDedicated) then {
 0 spawn BIS_fnc_WL2_zoneRestrictionHandleServer;
 0 spawn BIS_fnc_WL2_incomePayoff;
 0 spawn BIS_fnc_WL2_garbageCollector;
+0 spawn BIS_fnc_WL2_WLAC;
 call BIS_fnc_WL2_processRunways;
 
 setTimeMultiplier 8;

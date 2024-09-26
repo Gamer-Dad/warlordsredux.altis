@@ -129,17 +129,15 @@ while {dialog} do {
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_17", lineBreak,
 			"- Weasley Wells", lineBreak,
-			"- Coffee Maker", lineBreak,
-			"- Korbelz", lineBreak,
+			"- Rook", lineBreak,
 			"", lineBreak,
 			localize "STR_MRTM_welcomeInteract_22", lineBreak,
-			"- TenPenny", lineBreak,
 			"- MrThomasM", lineBreak,
-			"", lineBreak,
-			localize "STR_MRTM_welcomeInteract_18", lineBreak,
-			"- [E Z] N.Jabo", lineBreak,
-			"- Dagon", lineBreak,
-			""
+			"- TenPenny", lineBreak,
+			"- Coffee Maker", lineBreak,
+			"- Korbelz", lineBreak,
+			"- Bo", lineBreak,
+			"", lineBreak
 			];
 		};
 		case "discord": { 
@@ -155,7 +153,7 @@ while {dialog} do {
 		case "changelog": {
 			private _color = [profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843],profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019],profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862],profilenamespace getvariable ['GUI_BCG_RGB_A',0.7]] call BIS_fnc_colorRGBAtoHTML;
 			_control ctrlSetStructuredText composeText [
-				parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.6 Update:" splitString " " joinString toString [160]], lineBreak,
+				parseText format ["<t color='%1' underline='1'>%2</t>", _color, "2.6.1 Update:" splitString " " joinString toString [160]], lineBreak,
 				"The changelog for this update is about 250 lines too long for this page, just go to the github", lineBreak,
 				"", lineBreak,
 				parseText format ["<a href='https://github.com/Gamer-Dad/warlordsredux.altis/blob/master-altis/Update_Notes.txt'>%1</a>", "Visit our github to view the complete changelog." splitString " " joinString toString [160]], lineBreak
@@ -163,10 +161,6 @@ while {dialog} do {
 		};
 		case "scripts": { 
 			_control ctrlSetStructuredText composeText [
-			"Aircraft Loadout:", lineBreak,
-			"For the custom aircraft loadout we use Grumpy Old Man's mod.", lineBreak,
-			"You can order vehicle ammo box close to your aircraft and then look at the aircraft and press 'Rearm' to change you  loadout.", lineBreak,
-			"", lineBreak,
 			"GF Earplugs:", lineBreak,
 			"We use George Floros's earplug script wich allows you to lower your volume by the press of 1 button.", lineBreak,
 			"You can press the INSERT key to lower your volume.", lineBreak,

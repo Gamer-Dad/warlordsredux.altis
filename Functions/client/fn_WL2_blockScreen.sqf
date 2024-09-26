@@ -1,5 +1,6 @@
 params ["_largeText", "_smallText"];
 
+missionNamespace setVariable ["voteLocked", true];
 showCinemaBorder true;
 private _camera = "Camera" camCreate position player;
 _camera camSetPos [0, 0, 10];

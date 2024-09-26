@@ -53,6 +53,7 @@ _purchase_transfer_units lbSetCurSel 0;
 			else {
 				_i = _i + 1;
 			};
+			sleep 0.0001;
 		};
 		_i = nil;
 		_valueText = toString _valueArr;

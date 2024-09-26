@@ -4,6 +4,7 @@ if (!(_unit isKindOf "Man") && {(((serverNamespace getVariable "WL2_killRewards"
 
 // One last sanity check
 if (!isPlayer _responsibleLeader) exitWith {};
+if ((_unit isKindOf "Building") && !(_unit getVariable ["WL_structure", false])) exitWith {false};
 
 private _killerSide = side group _responsibleLeader;
 private _unitSide = [_unit] call BIS_fnc_WL2_getAssetSide;

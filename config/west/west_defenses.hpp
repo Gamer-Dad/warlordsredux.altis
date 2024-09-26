@@ -5,6 +5,7 @@ class Defences {
         offset[] = {0, 2, 0};
         killReward = 30;
         demolishable = 1;
+        structure = 1;
     }; // "Semi Circle Sand bags"
 
     class Land_Razorwire_F {
@@ -12,6 +13,7 @@ class Defences {
         requirements[] = {};
         offset[] = {0, 5, 0};
         killReward = 30;
+        structure = 1;
     }; // "Razor Wire Fence"
 
     class Land_DragonsTeeth_01_4x2_new_F {
@@ -20,6 +22,7 @@ class Defences {
         offset[] = {0, 5, 0};
         killReward = 30;
         demolishable = 1;
+        structure = 1;
     }; // "Tank barrier"
 
     class CamoNet_BLUFOR_big_F {
@@ -28,6 +31,7 @@ class Defences {
         offset[] = {0, 6, 0};
         killReward = 30;
         garbageCollect = 1;
+        structure = 1;
     }; // "Camouflage Vehicle Cover (Green)"
 
     class Land_IRMaskingCover_01_F {
@@ -36,6 +40,7 @@ class Defences {
         offset[] = {0, 8, 0};
         killReward = 30;
         garbageCollect = 1;
+        structure = 1;
     }; // "IR Masking Tent (Large)"
 
     class Land_Communication_F {
@@ -46,6 +51,7 @@ class Defences {
         killReward = 400;
         garbageCollect = 1;
         demolishable = 1;
+        structure = 1;
     };
 
     class B_HMG_01_F {

@@ -6,13 +6,6 @@ class Vehicles {
         capValue = 1;
     }; // "Quad Bike"
 
-    class O_LSV_02_unarmed_F {
-        cost = 50;
-        requirements[] = {};
-        killReward = 50;
-        capValue = 1;
-    }; // "Qilin (Unarmed)"
-
     class O_MRAP_02_F {
         cost = 300;
         requirements[] = {};

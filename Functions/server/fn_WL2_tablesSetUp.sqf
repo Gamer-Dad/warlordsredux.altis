@@ -7,6 +7,7 @@ private _nameHashMap = createHashMap;
 private _costHashMap = createHashMap;
 private _rearmTimerHashMap = createHashMap;
 private _killRewardHashMap = createHashMap;
+private _structureHashMap = createHashMap;
 private _capValueHashMap = createHashMap;
 private _apsHashMap = createHashMap;
 private _garbageCollectHashMap = createHashMap;
@@ -35,6 +36,7 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 				private _requisitionCost = getNumber (_x >> "cost");
 				private _requisitionRearmTime = getNumber (_x >> "rearm");
 				private _requisitionKillReward = getNumber (_x >> "killReward");
+				private _requisitionStructure = getNumber (_x >> "killReward");
 				private _requisitionCapValue = getNumber (_x >> "capValue");
 				private _requisitionAps = getNumber (_x >> "aps");
 
@@ -64,6 +66,10 @@ private _requisitionPresets = BIS_WL_purchaseListTemplate;
 
 				if (_requisitionKillReward != 0) then {
 					_killRewardHashMap set [_requistitonName, _requisitionKillReward];
+				};
+
+				if (_requisitionStructure != 0) then {
+					_structureHashMap set [_requistitonName, true];
 				};
 
 				if (_requisitionCapValue != 0) then {
@@ -126,6 +132,7 @@ missionNamespace setVariable ["WL2_aps", _apsHashMap, true];
 
 serverNamespace setVariable ["WL2_staticsGarbageCollector", _garbageCollectHashMap];
 missionNamespace setVariable ["WL2_demolishable", _demolishableHashMap, true];
+missionNamespace setVariable ["WL2_structure", _structureHashMap, true];
 
 serverNamespace setVariable ["WL2_populateUnitPoolList", _populateUnitPoolList];
 serverNamespace setVariable ["WL2_populateVehiclePoolList", _populateVehiclePoolList];
