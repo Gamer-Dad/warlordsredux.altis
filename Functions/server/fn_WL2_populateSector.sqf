@@ -148,6 +148,7 @@ while {_i < _garrisonSize} do {
 
 	_newWP = _newGrp addWaypoint [_pos, 0];
 	_newWP setWaypointType "CYCLE";
+	sleep 0.001;
 };
 
 [_units, _sector] spawn BIS_fnc_WL2_assetRelevanceCheck;

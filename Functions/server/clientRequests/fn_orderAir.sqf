@@ -21,6 +21,7 @@ while {count _spawnPos == 0 && _checks < 100} do {
 	if (count (_pos nearObjects ["AllVehicles", 20]) == 0) then {
 		_spawnPos = _pos;
 	};
+	sleep 0.001;
 };
 
 if (count _spawnPos == 0) exitWith {
