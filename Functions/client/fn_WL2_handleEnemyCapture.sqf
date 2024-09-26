@@ -13,6 +13,11 @@ while {(_sector getVariable "BIS_WL_owner") == _playerSide} do {
 	private _captureProgress = _sector getVariable ["BIS_WL_captureProgress", 0];
 	private _capturingTeam = _sector getVariable ["BIS_WL_capturingTeam", independent];
 	
+	if (_capturingTeam == independent) then {
+		sleep 2;
+		continue;
+	};
+
 	if (_capturingTeam == _enemySide) then {
 		if (serverTime > _nextPossibleWarn) then {
 			_nextPossibleWarn = serverTime + 30;
@@ -34,4 +39,5 @@ while {(_sector getVariable "BIS_WL_owner") == _playerSide} do {
 			_captureProgress = _sector getVariable ["BIS_WL_captureProgress", 0];
 		};
 	};
+	sleep 5;
 };

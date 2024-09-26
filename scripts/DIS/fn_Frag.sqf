@@ -31,7 +31,7 @@ while { alive _projectile } do {
 		_lastDistance = _distanceToTarget;
 	};
 
-	sleep .01;
+	sleep 0.01;
 };
 
 if (!_frag) exitWith {};

@@ -36,6 +36,7 @@ while {count _knots > 0} do {
 			if (!(_link in _linked) && (_link in _owned)) then {_linked pushBack _link; _knots pushBack _link}
 		} forEach (_x getVariable ["BIS_WL_connectedSectors", []]);
 	} forEach _knotsCurrent;
+	sleep 0.0001;
 };
 
 {
