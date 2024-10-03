@@ -10,7 +10,7 @@ while {!BIS_WL_missionEnd && _serverCheck} do {
 		private _newPlayerFunds = _y;
 		private _transferFunds = (serverNamespace getVariable [format ["BIS_WL_WLAC_%1", _uid], 0]);
 		private _oldPlayerFunds = (_oldFundsDB getOrDefault [_uid, 0]);
-		private _diff = _newPlayerFunds - _oldPlayerFunds + _transferFunds;
+		private _diff = _newPlayerFunds - (_oldPlayerFunds + _transferFunds);
 
 		if (_diff >= 10000) then {
 			private _player = _uid call BIS_fnc_getUnitByUid;
