@@ -64,6 +64,8 @@ _group = createGroup civilian;
 missionNamespace setVariable ["BIS_WL_wrongTeamGroup", _group, true];
 _group deleteGroupWhenEmpty false;
 missionNamespace setVariable ["gameStart", serverTime, true];
+private _sessionID = random(10000000);
+missionNamespace setVariable ["sessionID", _sessionID, true];
 
 if !(isDedicated) then {waitUntil {!isNull player && {isPlayer player}}};
 

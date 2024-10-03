@@ -90,6 +90,7 @@ MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_
 
 waitUntil {!isNull player && {isPlayer player}};
 missionNamespace setVariable ["voteLocked", false];
+player setVariable ["voteLocked", false, true];
 
 "client" call BIS_fnc_WL2_varsInit;
 waitUntil {!(isNil "BIS_WL_playerSide")};
@@ -162,6 +163,21 @@ if (["(EU) #11", serverName] call BIS_fnc_inString) then {
 if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 	["client_init"] call BIS_fnc_endLoadingScreen;
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
+};
+
+private _penaltyCheck = profileNameSpace getVariable ["teamkill_penalty", createHashMap];
+private _sessionID = missionNamespace getVariable ["sessionID", -1];
+
+if !((count _penaltyCheck) == 0) then {
+	private _penaltyEnd = _penaltyCheck getorDefault ["penaltyEndTime", 0];
+	private _penaltySessionID = _penaltyCheck getorDefault ["sessionID", 0];
+	if (_penaltySessionID != _sessionID) then {
+		profileNameSpace setVariable ["teamkill_penalty", nil];
+		saveProfileNamespace;
+	};
+	if ((_penaltySessionID == _sessionID ) && (_penaltyEnd > 0)) exitwith {
+		_penaltyEnd spawn BIS_fnc_WL2_friendlyFireHandleClient;
+	};
 };
 
 enableRadio true;

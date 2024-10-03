@@ -12,4 +12,12 @@ while {!BIS_WL_missionEnd} do {
 			(serverNamespace getVariable variable) call BIS_fnc_WL2_fundsDatabaseWrite;
 		};
 	} forEach _notBlocked;
+
+	private _blocked = allPlayers select {(_x getVariable ["BIS_WL_incomeBlocked", false])};
+	private _list = [];
+	{
+		private _playerUID = getPlayerUID _x;
+		_list pushBackUnique _playerUID;
+	} foreach _blocked;
+	serverNamespace setVariable ["BIS_WL_incomeBlockedList", _list];
 };

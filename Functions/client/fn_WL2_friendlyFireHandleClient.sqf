@@ -1,5 +1,18 @@
 params ["_penalty"];
 
+private _penaltyCheck = profileNameSpace getVariable ["teamkill_penalty", createHashMap];
+if ((count _penaltyCheck) == 0) then {
+	private _sessionID = missionNamespace getVariable ["sessionID", -1];
+	if (_sessionID > 0) then {
+		private _penaltyHash = createHashMapFromArray [
+			["sessionID", _sessionID],
+			["penaltyEndTime", _penalty]
+		];
+		profileNameSpace setVariable ["teamkill_penalty", _penaltyHash];
+		saveProfileNamespace;
+	};
+};
+
 if (!(isNil "BIS_WL_penalized") && {BIS_WL_penalized}) exitWith {};
 
 _penalty spawn {
@@ -54,4 +67,6 @@ _penalty spawn {
 	camDestroy _camera;
 	BIS_WL_penalized = false;
 	player setVariable ["BIS_WL_friendlyKillTimestamps", [], [2, clientOwner]];
+	profileNameSpace setVariable ["teamkill_penalty", nil];
+	saveProfileNamespace;
 };

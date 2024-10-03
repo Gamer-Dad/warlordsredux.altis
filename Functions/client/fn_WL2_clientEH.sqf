@@ -1,3 +1,9 @@
+
+private _voteLocked = missionNamespace getVariable ["voteLocked", true];
+private _start = serverTime + 10;
+waitUntil {sleep 0.1; !_voteLocked || (_start < serverTime);};
+if (_voteLocked) exitwith {};
+
 "fundsDatabaseClients" addPublicVariableEventHandler {
 	false spawn BIS_fnc_WL2_refreshOSD;
 };
@@ -89,7 +95,7 @@ player addEventHandler ["GetOutMan", {
 
 if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then {
 	addMissionEventHandler ["HandleChatMessage", {
-		params ["_channel", "_owner", "_from", "_text"];
+		params ["_channel", "_owner", "_from", "_text", "_person"];
 		_text = toLower _text;
 		_list = getArray (missionConfigFile >> "adminFilter");
 		_return = ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
@@ -102,7 +108,12 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 				[player, 'updateZeus'] remoteExec ['BIS_fnc_WL2_handleClientRequest', 2];
 			};
 		};
-		_return;
+		_senderLocked = _person getVariable ["voteLocked", false];
+		if (_senderLocked) then {
+			_senderLocked;
+		} else {
+			_return;
+		};
 	}];
 } else {
 	addMissionEventHandler ["HandleChatMessage", {
@@ -110,8 +121,13 @@ if ((getPlayerUID player) in (getArray (missionConfigFile >> "adminIDs"))) then 
 		_text = toLower _text;
 		_list = getArray (missionConfigFile >> "adminFilter");
 		_return = ((_list findIf {[_x, _text] call BIS_fnc_inString}) != -1);
-
-		_return;
+		
+		_senderLocked = _person getVariable ["voteLocked", false];
+		if (_senderLocked) then {
+			_senderLocked;
+		} else {
+			_return;
+		};
 	}];
 };
 

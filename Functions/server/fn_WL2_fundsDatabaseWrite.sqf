@@ -2,6 +2,9 @@ if !(isServer) exitWith {};
 
 params ["_amount"];
 
+private _incomeBlocked = serverNamespace getVariable ["BIS_WL_incomeBlockedList", []];
+if (_uid in _incomeBlocked) exitWith {};
+
 if (isNil {_uid}) exitWith {};
 
 _fundsDB = (serverNamespace getVariable "fundsDatabase");
