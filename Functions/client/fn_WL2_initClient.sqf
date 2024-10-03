@@ -165,6 +165,21 @@ if !(BIS_WL_playerSide in BIS_WL_competingSides) exitWith {
 	["Warlords error: Your unit is not a Warlords competitor"] call BIS_fnc_error;
 };
 
+private _penaltyCheck = profileNameSpace getVariable ["teamkill_penalty", createHashMap];
+private _sessionID = missionNamespace getVariable ["sessionID", -1];
+
+if !((count _penaltyCheck) == 0) then {
+	private _penaltyEnd = _penaltyCheck getorDefault ["penaltyEndTime", 0];
+	private _penaltySessionID = _penaltyCheck getorDefault ["sessionID", 0];
+	if (_penaltySessionID != _sessionID) then {
+		profileNameSpace setVariable ["teamkill_penalty", nil];
+		saveProfileNamespace;
+	};
+	if ((_penaltySessionID == _sessionID ) && (_penaltyEnd > 0)) exitwith {
+		_penaltyEnd spawn BIS_fnc_WL2_friendlyFireHandleClient;
+	};
+};
+
 enableRadio true;
 enableSentences true;
 {_x enableChannel [true, true]} forEach [1,3,4,5];

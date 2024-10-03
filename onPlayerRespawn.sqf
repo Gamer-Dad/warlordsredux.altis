@@ -35,5 +35,20 @@ player addEventHandler ["HandleRating", {
 	0;
 }];
 
+private _penaltyCheck = profileNameSpace getVariable ["teamkill_penalty", createHashMap];
+private _sessionID = missionNamespace getVariable ["sessionID", -1];
+
+if !((count _penaltyCheck) == 0) then {
+	_penaltyEnd = _penaltyCheck getorDefault ["penaltyEndTime", 0];
+	_penaltySessionID = _penaltyCheck getorDefault ["sessionID", 0];
+	if (_penaltySessionID != _sessionID) then {
+		profileNameSpace setVariable ["teamkill_penalty", nil];
+		saveProfileNamespace;
+	};
+	if ((_penaltySessionID == _sessionID ) && (_penaltyEnd > 0)) then {
+		_penaltyEnd spawn BIS_fnc_WL2_friendlyFireHandleClient;
+	};
+};
+
 call BIS_fnc_WL2_spectrumAction;
 0 spawn MRTM_fnc_settingsMenu;
