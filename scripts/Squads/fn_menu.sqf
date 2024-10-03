@@ -107,7 +107,7 @@ disableSerialization;
         lbClear PLAYER_LIST;
         _listEntries = createHashMap;
 
-        private _unsquaddedPlayers = allPlayers select {!(getPlayerID _x in _squaddedPlayers) && side _x == side player && _x != player};
+        private _unsquaddedPlayers = allPlayers select {!(getPlayerID _x in _squaddedPlayers) && side _x == side player && _x != player && !(_x getVariable ["voteLocked", true])};
         {
             private _player = _x;
             private _playerName = name _player;

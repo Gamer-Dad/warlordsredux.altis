@@ -90,6 +90,7 @@ MRTM_fnc_settingsinit = compileFinal preprocessFileLineNumbers "scripts\MRTM\fn_
 
 waitUntil {!isNull player && {isPlayer player}};
 missionNamespace setVariable ["voteLocked", false];
+player setVariable ["voteLocked", false, true];
 
 "client" call BIS_fnc_WL2_varsInit;
 waitUntil {!(isNil "BIS_WL_playerSide")};

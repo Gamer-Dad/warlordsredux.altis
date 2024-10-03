@@ -5,6 +5,8 @@ params ["_displayClass"];
 waitUntil {!isNull (findDisplay 46)};
 
 // OSD equals the lower right hand HUD stuff for the most part
+_voteLocked = missionNamespace getVariable ["voteLocked", false];
+if (_voteLocked) exitWith {};
 
 if (_displayClass == "OSD") then {
 	{

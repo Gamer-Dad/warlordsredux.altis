@@ -1,6 +1,9 @@
 params ["_largeText", "_smallText"];
 
+closeDialog 1;
+player setVariable ["BIS_WL_incomeBlocked", true, [clientOwner, 2]];
 missionNamespace setVariable ["voteLocked", true];
+player setVariable ["voteLocked", true, true];
 showCinemaBorder true;
 private _camera = "Camera" camCreate position player;
 _camera camSetPos [0, 0, 10];
