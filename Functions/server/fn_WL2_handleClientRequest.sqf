@@ -263,16 +263,19 @@ if (_action == "orderAI") exitWith {
 };
 
 if (_action == "fundsTransfer") exitWith {
+	private _incomeBlocked = serverNamespace getVariable ["BIS_WL_incomeBlockedList", []];
 	if (playerFunds >= _param1) then {
 		_uid = getPlayerUID _param2;
-		_param1 call BIS_fnc_WL2_fundsDatabaseWrite;
-		serverNamespace setVariable [format ["BIS_WL_WLAC_%1", _uid], _param1];
-		_uid = getPlayerUID _sender;
-		(-_param1) call BIS_fnc_WL2_fundsDatabaseWrite;
-		serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
+		if !(_uid in _incomeBlocked) then {
+			_param1 call BIS_fnc_WL2_fundsDatabaseWrite;
+			serverNamespace setVariable [format ["BIS_WL_WLAC_%1", _uid], _param1];
+			_uid = getPlayerUID _sender;
+			(-_param1) call BIS_fnc_WL2_fundsDatabaseWrite;
+			serverNamespace setVariable [format ["BIS_WL_isTransferring_%1", _uid], false];
 
-		private _message = format [localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1];
-		[_side, _message] call _broadcastActionToSide;
+			private _message = format [localize "STR_A3_WL_donate_cp", name _sender, name _param2, _param1];
+			[_side, _message] call _broadcastActionToSide;
+		};
 	};
 };
 
