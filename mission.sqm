@@ -135,14 +135,6 @@ class ScenarioData
 	author="Jezuro+WSV";
 	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
 	overViewPicture="img\wl_logo_ca.paa";
-	wreckManagerMode=1;
-	wreckLimit=10;
-	wreckRemovalMaxTime=300;
-	corpseManagerMode=2;
-	corpseLimit=60;
-	corpseRemovalMinTime=300;
-	corpseRemovalMaxTime=1800;
-	minPlayerDistance=1000;
 };
 class Mission
 {

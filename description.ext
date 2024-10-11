@@ -18,8 +18,23 @@ respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;
 ReviveMode = 0;
-corpseManagerMode = 0;
-wreckManagerMode = 0;
+
+corpseManagerMode = 1;
+corpseLimit = 50;        //72
+corpseRemovalMinTime = 30;    //300
+corpseRemovalMaxTime = 300;    //1800
+wreckManagerMode = 1;
+wreckLimit = 32;        //16
+wreckRemovalMinTime = 30;    //300
+wreckRemovalMaxTime = 300;    //600
+
+disposalCheckPeriod = 15; //5
+minPlayerDistance[] = {240, 360, 120};    //0,0,0
+
+weaponholderManagerMode = 1; //2
+weaponholderLimit = 50; //50
+weaponholderRemovalMinTime = 30; //3600
+weaponholderRemovalMaxTime = 180; //36000
 
 BIS_WL_sectorResetTimeout = 300;
 BIS_WL_sectorVotingDuration = 15;
