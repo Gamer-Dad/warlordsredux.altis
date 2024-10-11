@@ -11,6 +11,48 @@ class Aircraft {
         killReward = 100;
     }; // "UH-80 Ghost Hawk"
 
+    class B_CTRG_Heli_Transport_01_tropic_F {
+        name = "UH-80 Ghost Hawk UP";
+        cost = 2000;
+        requirements[] = {"H"};
+        killReward = 200;
+        rearm = 300;
+
+        class LeftGunner: WLTurretDefaults {
+            turret[] = { 1 };
+            removeMagazines[] = {
+                "2000Rnd_65x39_Belt_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "LMG_Minigun_Transport"
+            };
+            addMagazines[] = {
+                "1000Rnd_20mm_shells",
+                "1000Rnd_20mm_shells"
+            };
+            addWeapons[] = {
+                "gatling_20mm"
+            };
+        };
+
+        class RightGunner: WLTurretDefaults {
+            turret[] = { 2 };
+            removeMagazines[] = {
+                "2000Rnd_65x39_Belt_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "LMG_Minigun_Transport2"
+            };
+            addMagazines[] = {
+                "1000Rnd_20mm_shells",
+                "1000Rnd_20mm_shells"
+            };
+            addWeapons[] = {
+                "gatling_20mm"
+            };
+        };
+    };
+
     class B_Heli_Transport_03_F {
         cost = 1000;
         requirements[] = {"H"};

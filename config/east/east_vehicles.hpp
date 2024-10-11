@@ -101,6 +101,34 @@ class Vehicles {
         };
     }; // "Qilin (AT)"
 
+    class O_T_LSV_02_AT_F {
+        name = "Qilin (AT-M)";
+        cost = 750;
+        requirements[] = {};
+        rearm = 200;
+        killReward = 220;
+        capValue = 1;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "Vorona_HEAT"
+            };
+            removeWeapons[] = {
+                "missiles_Vorona"
+            };
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles"
+            };
+            addWeapons[] = {
+                "missiles_Firefist"
+            };
+        };
+    };
+
     class O_G_Offroad_01_AT_F {
         cost = 500;
         requirements[] = {};
@@ -148,6 +176,35 @@ class Vehicles {
         aps = 1;
     }; // "Ifrit GMG"
 
+    class O_T_MRAP_02_gmg_ghex_F {
+        name = "Ifrit-M Autocannon";
+        cost = 1700;
+        requirements[] = {};
+        rearm = 300;
+        killReward = 300;
+        capValue = 2;
+        aps = 2;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            addMagazines[] = {
+                "140Rnd_30mm_MP_shells_Tracer_Red",
+                "140Rnd_30mm_MP_shells_Tracer_Red",
+                "60Rnd_30mm_APFSDS_shells_Tracer_Red",
+                "60Rnd_30mm_APFSDS_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_CTWS"
+            };
+        };
+    };
+
     class O_Truck_03_Repair_F {
         cost = 1000;
         requirements[] = {};
@@ -178,6 +235,33 @@ class Vehicles {
         capValue = 2;
         aps = 2;
     }; // "MSE-3 Marid"
+
+    class O_T_APC_Wheeled_02_rcws_v2_ghex_F {
+        name = "MSE-3M Marid Autocannon";
+        cost = 3700;
+        requirements[] = {};
+        rearm = 500;
+        killReward = 300;
+        capValue = 3;
+        aps = 2;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            addMagazines[] = {
+                "250Rnd_30mm_HE_shells_Tracer_Red",
+                "250Rnd_30mm_APDS_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "gatling_30mm"
+            };
+        };
+    };
 
     class O_APC_Tracked_02_cannon_F {
         cost = 3200;
@@ -234,6 +318,36 @@ class Vehicles {
             };
         };
     }; // "ZSU-39 Tigris"
+
+    class O_T_APC_Tracked_02_AA_ghex_F {
+        name = "ZSU-49 Euphrates";
+        cost = 9000;
+        requirements[] = {};
+        rearm = 450;
+        killReward = 600;
+        capValue = 4;
+        aps = 2;
+
+        class Gunner: WLTurretDefaults {
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            addMagazines[] = {
+                "magazine_Missile_s750_x4",
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            addWeapons[] = {
+                "weapon_s750Launcher",
+                "weapon_Cannon_Phalanx"
+            };
+        };
+    };
 
     class O_MBT_02_cannon_F {
         cost = 7500;
