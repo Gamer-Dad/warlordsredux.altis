@@ -29,7 +29,7 @@ wreckRemovalMinTime = 30;    //300
 wreckRemovalMaxTime = 300;    //600
 
 disposalCheckPeriod = 15; //5
-minPlayerDistance[] = {240, 360, 120};    //0,0,0
+minPlayerDistance[] = {0, 0, 0};    //0,0,0
 
 weaponholderManagerMode = 1; //2
 weaponholderLimit = 50; //50
