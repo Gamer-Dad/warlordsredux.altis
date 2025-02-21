@@ -1,0 +1,98 @@
+#include "core\warlords_constants.inc"
+#include "ui\defines.hpp"
+#include "ui\controls.hpp"
+#include "scripts\WLM\ui\WLM_pylons.hpp"
+#include "scripts\SQD\squadMenu.hpp"
+
+onLoadName = "Warlords Redux 2.6.9";
+dev = "Jezuro + WSV";
+author = "Jezuro + WSV";
+allowFunctionsLog = 1;
+zeusCompositionScriptLevel = 2;
+adminIDs[] = {"76561198034106257", "76561198049721952", "76561197960667971"};
+pollstersIDs[] = {"76561198025492474"};
+
+//Settings
+respawn = 3;
+respawnDelay = 30;
+respawnOnStart = -1;
+disabledAI = 1;
+enableDebugConsole = 1;
+ReviveMode = 0;
+
+corpseManagerMode = 1;
+corpseLimit = 50;        //72
+corpseRemovalMinTime = 30;    //300
+corpseRemovalMaxTime = 300;    //1800
+
+wreckManagerMode = 1;
+wreckLimit = 32;        //16
+wreckRemovalMinTime = 30;    //300
+wreckRemovalMaxTime = 300;    //600
+
+weaponholderManagerMode = 1; //2
+weaponholderLimit = 50; //50
+weaponholderRemovalMinTime = 30; //3600
+weaponholderRemovalMaxTime = 180; //36000
+
+disposalCheckPeriod = 20;
+minPlayerDistance[] = {150, 300, 075, 0600, 1800, 0300};
+
+BIS_WL_sectorResetTimeout = 300;
+BIS_WL_sectorVotingDuration = 30;
+
+BIS_WL_scanCost = 750;
+BIS_WL_fastTravelCostContested = 200;
+WL_airAssaultCost = 100;
+WL_vehicleParadropCost = 1000;
+BIS_WL_fastTravelCostSquadLeader = 10;
+BIS_WL_orderFTVehicleCost = 200;
+BIS_WL_fundsTransferCost = 2000;
+BIS_WL_targetResetCost = 500;
+BIS_WL_maxCP = 50000;
+BIS_WL_arsenalCost = 1000;
+BIS_WL_assetLimit = 10;
+BIS_WL_scanCooldown = 300;
+BIS_WL_lastLoadoutCost = 100;
+BIS_WL_savedLoadoutCost = 500;
+BIS_WL_baseValue = 50;
+BIS_WL_autonomous_limit = 2;
+BIS_WL_minAPSDist = 1000; //actual range = √x
+BIS_WL_maxAPSDist = 1600; //actual range = √x
+
+onPauseScript[] = {WL2_fnc_onPause};
+
+class Header
+{
+	gameType = Warlords;
+	minPlayers = 1;
+	maxPlayers = 128;
+};
+
+#include "mp_securityCommands.hpp"
+#include "mp_securityFunctions.hpp"
+#include "functions.hpp"
+
+#include "configs.hpp"
+#include "titles.hpp"
+#include "requisitions.hpp"
+#include "sounds.hpp"
+#include "briefings.hpp"
+
+#include "scripts\POLL\ui.hpp"
+#include "scripts\WLC\ui.hpp"
+#include "config\customization.hpp"
+#include "config\tasks.hpp"
+#include "config\projectiles.hpp"
+
+class CfgUnitInsignia
+{
+	class InsigniaMrThomasM
+	{
+		displayName = "MrThomasM's Development";
+		author = "MrThomasM";
+		texture = "img\insignia_ca.paa";
+		material = "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\default_insignia.rvmat";
+		textureVehicle = "";
+	};
+};
