@@ -212,15 +212,26 @@ class SectorDefense {
         };
     };
 
+    class B_GMG_01_A_F {
+        cost = 650;
+        killReward = 150;
+        loadable[] = {0, -2.5, 0.4};
+        name = "Mk32 GMG Auto Turret";
+        offset[] = {0, 3, 0};
+        rearm = 300;
+        requirements[] = {};
+    };
+
     class B_static_AT_UP_F {
-        cost = 590;
-        description = "Static AT Launcher (UP) is an upgraded variant of the Static AT Launcher.";
+        cost = 700;
+        description = "Static AT/AA Launcher (UP) is an upgraded variant of the stationary launchers.";
         disallowMagazines[] = {
-            "4Rnd_GAA_missiles"
+            "4Rnd_GAA_missiles",
+            "5Rnd_GAT_missiles"
         };
         killReward = 200;
         loadable[] = {0, -2.5, 0.2};
-        name = "Static AT Launcher (UP)";
+        name = "Static AT/AA Launcher (UP)";
         offset[] = {0, 3, 0};
         rearm = 300;
         requirements[] = {};
@@ -252,16 +263,6 @@ class SectorDefense {
             };
             turret[] = { 0 };
         };
-    };
-
-    class B_GMG_01_A_F {
-        cost = 650;
-        killReward = 150;
-        loadable[] = {0, -2.5, 0.4};
-        name = "Mk32 GMG Auto Turret";
-        offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
     };
 
     class Land_Communication_F {
