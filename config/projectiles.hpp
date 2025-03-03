@@ -52,6 +52,15 @@ class WLProjectilesConfig {
         sead = 1;
     };
 
+    // class WLProjectile_TVGuided: WLProjectile {
+    //     ammo[] = {
+    //         "M_127mm_Firefist_ATTV"
+    //     };
+    //     aps = 0;
+    //     tv = 1;
+    //     consumption = 1;
+    // };
+
     class WLProjectile_MediumGuided: WLProjectile {
         ammo[] = {
             "M_Titan_AT_long",                  // Titan AT (Vehicle)

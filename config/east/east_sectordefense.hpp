@@ -254,4 +254,41 @@ class SectorDefense {
         rearm = 900;
         requirements[] = {};
     };  // "Mortar"
+
+    // class O_Mortar_01_TV_F {
+    //     cost = 4000;
+    //     description = "Switchblade Mortar is a remote controlled mortar system. It can be used to provide indirect fire support to friendly forces.";
+    //     killReward = 125;
+    //     loadable[] = {0, -2.5, 0};
+    //     name = "Switchblade Mortar";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 900;
+    //     requirements[] = {};
+    //     spawn = "O_Mortar_01_F";
+    //     variant = 1;
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "8Rnd_82mm_Mo_shells",
+    //             "8Rnd_82mm_Mo_Flare_white",
+    //             "8Rnd_82mm_Mo_Smoke_white",
+    //             "8Rnd_82mm_Mo_guided",
+    //             "8Rnd_82mm_Mo_LG"
+    //         };
+    //         removeWeapons[] = {
+    //             "mortar_82mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 };
