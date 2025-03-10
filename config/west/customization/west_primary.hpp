@@ -641,6 +641,13 @@ class Primary {
 
         #include "west_optics.hpp"
 
+        class OpticARCOAK: WLCAttachment {
+            name = "ARCO AK";
+            attachments[] = {
+                "optic_Arco_AK_arid_F"
+            };
+        };
+
         attachments[] = {
             "acc_pointer_IR",
             "muzzle_snds_B"
@@ -851,6 +858,13 @@ class Primary {
         };
 
         #include "west_optics.hpp"
+
+        class OpticARCOAK: WLCAttachment {
+            name = "ARCO AK";
+            attachments[] = {
+                "optic_Arco_AK_arid_F"
+            };
+        };
 
         attachments[] = {
             "acc_pointer_IR",

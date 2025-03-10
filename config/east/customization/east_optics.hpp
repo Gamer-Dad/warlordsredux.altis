@@ -13,3 +13,10 @@ class OpticKahlia: WLCAttachment {
         "optic_KHS_blk"
     };
 };
+
+class OpticERCO: WLCAttachment {
+    name = "ERCO";
+    attachments[] = {
+        "optic_ERCO_khk_F"
+    };
+};

@@ -40,7 +40,8 @@ class HeavyVehicles {
                 "100Rnd_127x99_mag_Tracer_Red"
             };
             removeWeapons[] = {
-                "HMG_127"
+                "HMG_127",
+                "missiles_Firefist"
             };
             turret[] = { 0 };
         };
