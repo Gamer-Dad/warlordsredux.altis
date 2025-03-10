@@ -13,3 +13,10 @@ class OpticAMS: WLCAttachment {
         "optic_AMS_snd"
     };
 };
+
+class OpticERCO: WLCAttachment {
+    name = "ERCO";
+    attachments[] = {
+        "optic_ERCO_snd_F"
+    };
+};
