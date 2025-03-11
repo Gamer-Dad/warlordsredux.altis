@@ -37,70 +37,70 @@ class RemoteControl {
         requirements[] = {};
     };  // "AR-6"
 
-    class O_UAV_01_UP_F {
-        cost = 1200;
-        description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
-        hasHMD = 1;
-        killReward = 200;
-        name = "AR-2 Darter UP";
-        offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "O_UAV_01_F";
-        variant = 1;
+    // class O_UAV_01_UP_F {
+    //     cost = 1200;
+    //     description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
+    //     hasHMD = 1;
+    //     killReward = 200;
+    //     name = "AR-2 Darter UP";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "O_UAV_01_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
-            };
-            addWeapons[] = {
-                "SMG_01_F"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
+    //         };
+    //         addWeapons[] = {
+    //             "SMG_01_F"
+    //         };
+    //         removeMagazines[] = {};
+    //         removeWeapons[] = {};
+    //         turret[] = { 0 };
+    //     };
+    // };
 
-    class O_UGV_01_rcws_up_F {
-        cost = 1200;
-        description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
-        killReward = 300;
-        name = "UGV Stomper UP";
-        offset[] = {0, 5, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "O_UGV_01_rcws_F";
-        variant = 1;
+    // class O_UGV_01_rcws_up_F {
+    //     cost = 1200;
+    //     description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
+    //     killReward = 300;
+    //     name = "UGV Stomper UP";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "O_UGV_01_rcws_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells"
-            };
-            addWeapons[] = {
-                "cannon_20mm"
-            };
-            removeMagazines[] = {
-                "96Rnd_40mm_G_belt"
-            };
-            removeWeapons[] = {
-                "GMG_40mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "60Rnd_20mm_AP_shells"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_20mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "96Rnd_40mm_G_belt"
+    //         };
+    //         removeWeapons[] = {
+    //             "GMG_40mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_UAV_02_recon_F {
         cost = 2000;

@@ -62,6 +62,16 @@ class WLProjectilesConfig {
         consumption = 1;
     };
 
+    class WLProjectile_TVGuidedHeavy: WLProjectile {
+        ammo[] = {
+            "M_Spike"
+        };
+        aps = 1;
+        tv = 1;
+        consumption = 3;
+        dazzleable = 1;
+    };
+
     class WLProjectile_MediumGuided: WLProjectile {
         ammo[] = {
             "M_Titan_AT_long",                  // Titan AT (Vehicle)

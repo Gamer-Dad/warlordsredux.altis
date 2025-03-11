@@ -1,4 +1,12 @@
 class SectorDefense {
+    class Land_Scaffolding_New_F {
+        cost = 10;
+        demolishable = 1;
+        killReward = 5;
+        offset[] = {0, 2, 0};
+        requirements[] = {};
+    };  // "Scaffolding"
+
     class Land_Razorwire_F {
         cost = 50;
         demolishable = 1;
@@ -235,13 +243,13 @@ class SectorDefense {
         };
     };
 
-    class Land_Communication_F {
+    class Land_MobileRadar_01_radar_F {
         cost = 2500;
         demolishable = 1;
-        description = "Jamming Tower can be used to jam enemy autonomous assets. It must be placed outside the home base in an owned sector.";
+        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. It must be placed outside the home base in an owned sector.";
         garbageCollect = 1;
         killReward = 400;
-        name = "Jamming Tower";
+        name = "EW Tower";
         offset[] = {0, 6, 0};
         requirements[] = {};
     };
@@ -259,8 +267,8 @@ class SectorDefense {
         ammoOverrides[] = {
             {"M_127mm_Firefist_AT", "M_Lancet"}
         };
-        cost = 4000;
-        description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy vehicles.";
+        cost = 6000;
+        description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         killReward = 125;
         loadable[] = {0, -2.5, 0};
         name = "Lancet Launcher";
