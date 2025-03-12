@@ -255,11 +255,15 @@ class LightVehicles {
 
     class B_LSV_01_AT_TV_F {
         ammoOverrides[] = {
-            {"M_Titan_AT_static", "M_Spike"}
+            {"M_Titan_AT_long", "M_Spike"}
         };
         capValue = 1;
         cost = 2000;
         description = "Prowler (Spike AT) is a variant of the Prowler AT.";
+        disallowMagazines[] = {
+            "4Rnd_GAA_missiles",
+            "5Rnd_GAT_missiles"
+        };
         killReward = 250;
         name = "Prowler (Spike AT)";
         offset[] = {0, 5, 0};
@@ -269,10 +273,20 @@ class LightVehicles {
         variant = 1;
 
         class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
+            addMagazines[] = {
+                "2Rnd_GAT_missiles",
+                "2Rnd_GAT_missiles",
+                "2Rnd_GAT_missiles"
+            };
+            addWeapons[] = {
+                "missiles_titan"
+            };
+            removeMagazines[] = {
+                "1Rnd_GAT_missiles"
+            };
+            removeWeapons[] = {
+                "missiles_titan_static"
+            };
             turret[] = { 0 };
         };
     };

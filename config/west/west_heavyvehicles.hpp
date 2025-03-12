@@ -359,7 +359,21 @@ class HeavyVehicles {
         capValue = 4;
         cost = 30000;
         disallowMagazines[] = {
-            "2Rnd_155mm_Mo_Cluster"
+            "2Rnd_155mm_Mo_guided",
+            "4Rnd_155mm_Mo_guided",
+            "2Rnd_155mm_Mo_LG",
+            "4Rnd_155mm_Mo_LG",
+            "6Rnd_155mm_Mo_mine",
+            "6Rnd_155mm_Mo_AT_mine",
+            "2Rnd_155mm_Mo_Cluster",
+            "6Rnd_155mm_Mo_smoke",
+            "2Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_LG_O",
+            "6Rnd_155mm_Mo_mine_O",
+            "6Rnd_155mm_Mo_AT_mine_O",
+            "2Rnd_155mm_Mo_Cluster_O",
+            "6Rnd_155mm_Mo_smoke_O"
         };
         killReward = 600;
         name = "M4 Scorcher UP";
