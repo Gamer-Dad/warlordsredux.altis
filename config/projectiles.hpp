@@ -72,6 +72,15 @@ class WLProjectilesConfig {
         dazzleable = 1;
     };
 
+    class WLProjectile_TVGuidedArtillery: WLProjectile {
+        ammo[] = {
+            "M_Excalibur",
+            "M_Krasnopol"
+        };
+        aps = 3;
+        tv = 1;
+    };
+
     class WLProjectile_MediumGuided: WLProjectile {
         ammo[] = {
             "M_Titan_AT_long",                  // Titan AT (Vehicle)

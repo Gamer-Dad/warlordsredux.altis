@@ -312,4 +312,39 @@ class HeavyVehicles {
         rearm = 1800;
         requirements[] = {};
     }; // "2S9 Sochor"
+
+    class O_MBT_02_arty_tv_F {
+        ammoOverrides[] = {
+            {"Sh_155mm_AMOS", "M_Krasnopol"}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 30000;
+        disallowMagazines[] = {
+            "2Rnd_155mm_Mo_Cluster",
+            "2Rnd_155mm_Mo_Cluster_O"
+        };
+        killReward = 600;
+        name = "2S9M Sochor II";
+        rearm = 1800;
+        requirements[] = {};
+        spawn = "O_MBT_02_arty_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "6Rnd_155mm_Mo_smoke_O",
+                "2Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_LG_O",
+                "6Rnd_155mm_Mo_mine_O",
+                "6Rnd_155mm_Mo_AT_mine_O",
+                "2Rnd_155mm_Mo_Cluster_O"
+            };
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
 };

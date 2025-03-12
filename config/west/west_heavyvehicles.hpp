@@ -350,4 +350,38 @@ class HeavyVehicles {
         rearm = 1800;
         requirements[] = {};
     }; // "M5 Sandstorm MLRS"
+
+    class B_MBT_01_arty_tv_F {
+        ammoOverrides[] = {
+            {"Sh_155mm_AMOS", "M_Excalibur"}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 30000;
+        disallowMagazines[] = {
+            "2Rnd_155mm_Mo_Cluster"
+        };
+        killReward = 600;
+        name = "M4 Scorcher UP";
+        rearm = 1800;
+        requirements[] = {};
+        spawn = "B_MBT_01_arty_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "6Rnd_155mm_Mo_smoke",
+                "2Rnd_155mm_Mo_guided",
+                "4Rnd_155mm_Mo_guided",
+                "2Rnd_155mm_Mo_LG",
+                "6Rnd_155mm_Mo_mine",
+                "6Rnd_155mm_Mo_AT_mine",
+                "2Rnd_155mm_Mo_Cluster"
+            };
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
 };
