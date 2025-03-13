@@ -3,7 +3,7 @@ class SectorDefense {
         cost = 10;
         demolishable = 1;
         killReward = 5;
-        offset[] = {0, 2, 0};
+        offset[] = {0, 7, 0};
         requirements[] = {};
     };  // "Scaffolding"
 
@@ -58,6 +58,7 @@ class SectorDefense {
 
     class O_HMG_01_F {
         cost = 150;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
@@ -93,6 +94,7 @@ class SectorDefense {
 
     class O_HMG_01_high_F {
         cost = 200;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
@@ -119,6 +121,7 @@ class SectorDefense {
 
     class O_GMG_01_F {
         cost = 200;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
@@ -128,6 +131,7 @@ class SectorDefense {
 
     class O_GMG_01_high_F {
         cost = 250;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
@@ -137,6 +141,7 @@ class SectorDefense {
 
     class O_static_AT_F {
         cost = 300;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
@@ -165,6 +170,7 @@ class SectorDefense {
 
     class O_HMG_01_A_F {
         cost = 500;
+        demolishable = 1;
         killReward = 150;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk30 HMG Auto Turret";
@@ -192,6 +198,7 @@ class SectorDefense {
 
     class O_GMG_01_A_F {
         cost = 650;
+        demolishable = 1;
         killReward = 150;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk32 GMG Auto Turret";
@@ -202,6 +209,7 @@ class SectorDefense {
 
     class O_static_AT_UP_F {
         cost = 700;
+        demolishable = 1;
         description = "Static AT/AA Launcher (UP) is an upgraded variant of the stationary launchers.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
@@ -256,6 +264,7 @@ class SectorDefense {
 
     class O_Mortar_01_F {
         cost = 4000;
+        demolishable = 1;
         killReward = 125;
         loadable[] = {0, -2.5, 0};
         offset[] = {0, 3, 0};
@@ -268,6 +277,7 @@ class SectorDefense {
             {"M_127mm_Firefist_AT", "M_Lancet"}
         };
         cost = 6000;
+        demolishable = 1;
         description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         killReward = 125;
         loadable[] = {0, -2.5, 0};

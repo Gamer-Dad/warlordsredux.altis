@@ -3,7 +3,7 @@ class SectorDefense {
         cost = 10;
         demolishable = 1;
         killReward = 5;
-        offset[] = {0, 2, 4};
+        offset[] = {0, 7, 0};
         requirements[] = {};
     };  // "Scaffolding"
 
@@ -58,6 +58,7 @@ class SectorDefense {
 
     class B_HMG_01_F {
         cost = 150;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
@@ -93,6 +94,7 @@ class SectorDefense {
 
     class B_HMG_01_high_F {
         cost = 200;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
@@ -119,6 +121,7 @@ class SectorDefense {
 
     class B_GMG_01_F {
         cost = 200;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
@@ -128,6 +131,7 @@ class SectorDefense {
 
     class B_GMG_01_high_F {
         cost = 250;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
@@ -167,6 +171,7 @@ class SectorDefense {
 
     class B_static_AT_F {
         cost = 300;
+        demolishable = 1;
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
@@ -195,6 +200,7 @@ class SectorDefense {
 
     class B_HMG_01_A_F {
         cost = 500;
+        demolishable = 1;
         killReward = 150;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk30 HMG Auto Turret";
@@ -222,6 +228,7 @@ class SectorDefense {
 
     class B_GMG_01_A_F {
         cost = 650;
+        demolishable = 1;
         killReward = 150;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk32 GMG Auto Turret";
@@ -232,6 +239,7 @@ class SectorDefense {
 
     class B_static_AT_UP_F {
         cost = 700;
+        demolishable = 1;
         description = "Static AT/AA Launcher (UP) is an upgraded variant of the stationary launchers.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
@@ -287,6 +295,7 @@ class SectorDefense {
 
     class B_Mortar_01_F {
         cost = 4000;
+        demolishable = 1;
         killReward = 125;
         loadable[] = {0, -2.5, 0};
         offset[] = {0, 3, 0};
@@ -299,6 +308,7 @@ class SectorDefense {
             {"M_127mm_Firefist_AT", "M_Switchblade"}
         };
         cost = 6000;
+        demolishable = 1;
         description = "Switchblade Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         killReward = 125;
         loadable[] = {0, -2.5, 0};
@@ -336,6 +346,7 @@ class SectorDefense {
 
     class B_Ship_Gun_01_F {
         cost = 10000;
+        demolishable = 1;
         disallowMagazines[] = {
             "magazine_ShipCannon_120mm_HE_cluster_shells_x2",
             "magazine_ShipCannon_120mm_mine_shells_x6",

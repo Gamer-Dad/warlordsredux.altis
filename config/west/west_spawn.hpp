@@ -25,6 +25,7 @@ class Spawn {
     };
 
     class RuggedTerminal_01_communications_hub_F {
+        killReward = 500;
         name = "Forward Base";
     };
 };
