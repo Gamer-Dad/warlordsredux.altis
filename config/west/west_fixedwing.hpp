@@ -102,7 +102,7 @@ class FixedWing {
 
     class B_T_VTOL_01_recon_F {
         cost = 3800;
-        description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar.";
+        description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
         hasAWACS = 1;
         hasHMD = 1;
         killReward = 300;
@@ -111,17 +111,22 @@ class FixedWing {
         spawn = "B_T_VTOL_01_infantry_F";
 
         class Pilot: WLTurretDefaults {
-            turret[] = { -1 };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher_Triples"
-            };
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher_Triples"
+            };
+            turret[] = { -1 };
+        };
+
+        class Copilot: WLTurretDefaults {
+            deviceJammer = 1;
+            turret[] = { 0 };
         };
     };
 

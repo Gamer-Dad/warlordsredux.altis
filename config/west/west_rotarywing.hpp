@@ -163,48 +163,39 @@ class RotaryWing {
         };
     }; // "AH-99 Blackfoot"
 
-    // class B_Heli_Attack_01_sead_F {
-    //     allowPylonMagazines[] = {
-    //         "PylonMissile_1Rnd_AAA_missiles",
-    //         "PylonMissile_1Rnd_LG_scalpel",
-    //         "PylonRack_12Rnd_PG_missiles",
-    //         "PylonRack_12Rnd_missiles"
-    //     };
-    //     cost = 14000;
-    //     description = "AH-99 Blackfoot (SEAD)";
-    //     hasHMD = 1;
-    //     killReward = 550;
-    //     offset[] = {0, 10, 0};
-    //     rearm = 700;
-    //     requirements[] = {"H"};
-    //     spawn = "B_Heli_Attack_01_dynamicLoadout_F";
-    //     variant = 1;
-    //
-    //     class Pilot: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "192Rnd_CMFlare_Chaff_Magazine",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1"
-    //         };
-    //         addWeapons[] = {
-    //             "CMFlareLauncher_Singles",
-    //             "weapon_HARMLauncher"
-    //         };
-    //         removeMagazines[] = {};
-    //         removeWeapons[] = {
-    //             "CMFlareLauncher"
-    //         };
-    //         turret[] = { -1 };
-    //     };
-    // };
+    class B_Heli_Attack_01_sead_F: B_Heli_Attack_01_dynamicLoadout_F {
+        cost = 18000;
+        description = "AH-99 Blackfoot Block II is a variant of the AH-99 Blackfoot with a powerful device jammer. Gunner seat must be player-operated.";
+        killReward = 650;
+        name = "AH-99 Blackfoot Block II";
+        spawn = "B_Heli_Attack_01_dynamicLoadout_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "192Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            deviceJammer = 1;
+            removeMagazines[] = {
+                "1000Rnd_20mm_shells"
+            };
+            removeWeapons[] = {
+                "gatling_20mm"
+            };
+            turret[] = { 0 };
+        };
+    };
 };

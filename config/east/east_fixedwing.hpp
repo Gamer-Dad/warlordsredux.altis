@@ -91,42 +91,6 @@ class FixedWing {
     class O_T_VTOL_02_recon_F {
         cost = 3800;
         description = "Y-32 Xi'an (AWACS) is a variant of the Y-32 Xi'an with a powerful air radar.";
-        hasAWACS = 1;
-        hasHMD = 1;
-        killReward = 500;
-        name = "Y-32 Xi'an (AWACS)";
-        requirements[] = {"A"};
-        spawn = "O_T_VTOL_02_infantry_dynamicLoadout_F";
-
-        class Pilot: WLTurretDefaults {
-            turret[] = { -1 };
-            removeMagazines[] = {
-                "168Rnd_CMFlare_Chaff_Magazine"
-            };
-            removeWeapons[] = {
-                "CMFlareLauncher_Triples"
-            };
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-        };
-
-        class Gunner: WLTurretDefaults {
-            turret[] = { 0 };
-            removeMagazines[] = {
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green"
-            };
-            removeWeapons[] = {
-                "gatling_30mm_VTOL_02"
-            };
-            addMagazines[] = {};
-            addWeapons[] = {};
-        };
-
         disallowMagazines[] = {
             "PylonMissile_1Rnd_LG_scalpel",
             "PylonRack_3Rnd_LG_scalpel",
@@ -139,6 +103,46 @@ class FixedWing {
             "PylonRack_1Rnd_Missile_AGM_01_F",
             "PylonMissile_1Rnd_Bomb_03_F",
             "PylonMissile_1Rnd_BombCluster_02_F"
+        };
+        hasAWACS = 1;
+        hasHMD = 1;
+        killReward = 500;
+        name = "Y-32 Xi'an (AWACS)";
+        requirements[] = {"A"};
+        spawn = "O_T_VTOL_02_infantry_dynamicLoadout_F";
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "Laserbatteries"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles",
+                "Laserdesignator_mounted"
+            };
+            deviceJammer = 1;
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher_Triples"
+            };
+            turret[] = { -1 };
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_APDS_shells_Tracer_Green",
+                "Laserbatteries"
+            };
+            removeWeapons[] = {
+                "gatling_30mm_VTOL_02",
+                "Laserdesignator_mounted"
+            };
+            turret[] = { 0 };
         };
     };
 
