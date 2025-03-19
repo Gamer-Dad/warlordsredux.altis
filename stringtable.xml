@@ -5043,4 +5043,193 @@
             <Chinese>摧毁一个%1以完成此任务。</Chinese>
         </Key>
     </Container>
+    <Container name="WL2_InfoText">
+        <Key ID="WL2_InfoText_1">
+            <Original>Warlords Redux was edited by the WarSimVets community.</Original>
+            <English>Warlords Redux was edited by the WarSimVets community.</English>
+            <Czech>Warlords Redux upravila komunita WarSimVets.</Czech>
+            <French>Warlords Redux a été édité par la communauté WarSimVets.</French>
+            <German>Warlords Redux wurde von der WarSimVets-Community bearbeitet.</German>
+            <Italian>Warlords Redux è stato modificato dalla comunità WarSimVets.</Italian>
+            <Polish>Warlords Redux został edytowany przez społeczność WarSimVets.</Polish>
+            <Portuguese>Warlords Redux foi editado pela comunidade WarSimVets.</Portuguese>
+            <Russian>Warlords Redux был отредактирован сообществом WarSimVets.</Russian>
+            <Spanish>Warlords Redux fue editado por la comunidad WarSimVets.</Spanish>
+            <Turkish>Warlords Redux, WarSimVets topluluğu tarafından düzenlendi.</Turkish>
+            <Korean>Warlords Redux는 WarSimVets 커뮤니티에 의해 편집되었습니다.</Korean>
+            <Japanese>Warlords ReduxはWarSimVetsコミュニティによって編集されました。</Japanese>
+            <Chinesesimp>Warlords Redux 由 WarSimVets 社区编辑。</Chinesesimp>
+            <Chinese>Warlords Redux 由 WarSimVets 社区编辑。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_2">
+            <Original>Join our Discord for access to admins, news, and scheduled events.</Original>
+            <English>Join our Discord for access to admins, news, and scheduled events.</English>
+            <Czech>Připojte se k našemu Discordu pro přístup k adminům, novinkám a plánovaným akcím.</Czech>
+            <French>Rejoignez notre Discord pour accéder aux administrateurs, aux actualités et aux événements programmés.</French>
+            <German>Tritt unserem Discord bei, um Zugang zu Admins, Nachrichten und geplanten Events zu erhalten.</German>
+            <Italian>Unisciti al nostro Discord per accedere agli amministratori, alle notizie e agli eventi programmati.</Italian>
+            <Polish>Dołącz do naszego Discorda, aby uzyskać dostęp do administratorów, wiadomości i zaplanowanych wydarzeń.</Polish>
+            <Portuguese>Junte-se ao nosso Discord para ter acesso a administradores, notícias e eventos programados.</Portuguese>
+            <Russian>Присоединяйтесь к нашему Discord для доступа к администраторам, новостям и запланированным событиям.</Russian>
+            <Spanish>Únete a nuestro Discord para acceder a los administradores, noticias y eventos programados.</Spanish>
+            <Turkish>Yöneticilere, haberlere ve planlanmış etkinliklere erişim için Discord'umuza katılın.</Turkish>
+            <Korean>관리자, 소식 및 예정된 이벤트에 접근하려면 Discord에 참여하세요.</Korean>
+            <Japanese>管理者、ニュース、予定されたイベントにアクセスするためにDiscordに参加してください。</Japanese>
+            <Chinesesimp>加入我们的 Discord，获取管理员、新闻和预定活动的访问权限。</Chinesesimp>
+            <Chinese>加入我们的 Discord，获取管理员、新闻和预定活动的访问权限。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_3">
+            <Original>HOW TO PLAY</Original>
+            <English>HOW TO PLAY</English>
+            <Czech>JAK HRÁT</Czech>
+            <French>COMMENT JOUER</French>
+            <German>SO SPIELT MAN</German>
+            <Italian>COME GIOCARE</Italian>
+            <Polish>JAK GRAĆ</Polish>
+            <Portuguese>COMO JOGAR</Portuguese>
+            <Russian>КАК ИГРАТЬ</Russian>
+            <Spanish>CÓMO JUGAR</Spanish>
+            <Turkish>NASIL OYNANIR</Turkish>
+            <Korean>게임 방법</Korean>
+            <Japanese>遊び方</Japanese>
+            <Chinesesimp>如何游玩</Chinesesimp>
+            <Chinese>如何遊玩</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_4">
+            <Original>To teleport, press and hold %1, select &quot;Fast Travel&quot; on the left</Original>
+            <English>To teleport, press and hold %1, select &quot;Fast Travel&quot; on the left</English>
+            <Czech>Chcete-li se teleportovat, podržte %1 a vyberte „Rychlý přesun“ vlevo.</Czech>
+            <French>Pour vous téléporter, appuyez longuement sur %1, puis sélectionnez « Voyage rapide » à gauche.</French>
+            <German>Zum Teleportieren halten Sie %1 gedrückt und wählen links „Schnellreise“ aus.</German>
+            <Italian>Per teletrasportarti, tieni premuto %1, seleziona «Viaggio Veloce» a sinistra.</Italian>
+            <Polish>Aby się teleportować, przytrzymaj %1, wybierz „Szybka podróż” po levé straně.</Polish>
+            <Portuguese>Para teletransportar, pressione e segure %1, selecione 'Viagem Rápida' à esquerda.</Portuguese>
+            <Russian>Чтобы телепортироваться, нажмите и удерживайте %1, затем выберите «Быстрое перемещение» слева.</Russian>
+            <Spanish>Para teletransportarte, mantén presionado %1 y selecciona 'Viaje Rápido' a la izquierda.</Spanish>
+            <Turkish>Işınlanmak için, %1 tuşuna basılı tutun, sol taraftan 'Hızlı Seyahat'i seçin.</Turkish>
+            <Korean>텔레포트하려면, %1을(를) 길게 누르고 왼쪽에서 '빠른 이동'을 선택하세요.</Korean>
+            <Japanese>テレポートするには、%1を長押しし、左側で「高速移動」を選択してください。</Japanese>
+            <Chinesesimp>要传送，按住 %1，然后在左侧选择“快速旅行”。</Chinesesimp>
+            <Chinese>要傳送，按住 %1，然後在左側選擇「快速旅行」。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_5">
+            <Original>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</Original>
+            <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</English>
+            <Czech>Chcete-li upravit výbavu, podržte %1, vyberte vlevo „Výbava“ a poté zvolte „Přizpůsobení“.</Czech>
+            <French>Pour personnaliser votre équipement, appuyez longuement sur %1, sélectionnez « Équipement » à gauche, puis choisissez « Personnalisation ».</French>
+            <German>Um deine Ausrüstung anzupassen, halte %1 gedrückt, wähle links „Ausrüstung“ und dann „Anpassung“.</German>
+            <Italian>Per personalizzare il tuo equipaggiamento, tieni premuto %1, seleziona «Equipaggiamento» a sinistra, quindi scegli «Personalizzazione».</Italian>
+            <Polish>Aby dostosować zestaw, przytrzymaj %1, wybierz po levé straně „Wyposażenie” i następnie „Dostosowanie”.</Polish>
+            <Portuguese>Para personalizar seu equipamento, pressione e segure %1, selecione 'Equipamento' à esquerda, e depois 'Personalização'.</Portuguese>
+            <Russian>Чтобы настроить снаряжение, нажмите и удерживайте %1, выберите слева «Снаряжение», затем «Настройка».</Russian>
+            <Spanish>Para personalizar tu equipo, mantén presionado %1, selecciona 'Equipo' a la izquierda y luego 'Personalización'.</Spanish>
+            <Turkish>Yüklemenizi özelleştirmek için, %1 tuşuna basılı tutun, sol taraftan 'Ekipman'ı seçin ve ardından 'Özelleştirme'yi seçin.</Turkish>
+            <Korean>장비를 사용자 지정하려면, %1을(를) 길게 누르고 왼쪽에서 '장비'를 선택한 후 '사용자 지정'을 선택하세요.</Korean>
+            <Japanese>ロードアウトをカスタマイズするには、%1を長押しし、左側で「ギア」を選択し、その後「カスタマイズ」を選んでください。</Japanese>
+            <Chinesesimp>要自定义装备，按住 %1，然后在左侧选择“装备”，再选择“自定义”。</Chinesesimp>
+            <Chinese>要自定義裝備，按住 %1，然後在左側選擇「裝備」，再選擇「自訂」。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_6">
+            <Original>To ping the map, look at your target and press %1.</Original>
+            <English>To ping the map, look at your target and press %1.</English>
+            <Czech>Pro označení na mapě se podívejte na cíl a stiskněte %1.</Czech>
+            <French>Pour marquer sur la carte, regardez votre cible et appuyez sur %1.</French>
+            <German>Um die Karte zu markieren, schaue auf dein Ziel und drücke %1.</German>
+            <Italian>Per segnare sulla mappa, guarda il tuo obiettivo e premi %1.</Italian>
+            <Polish>Aby zaznaczyć cel na mapie, spójrz na niego i naciśnij %1.</Polish>
+            <Portuguese>Para marcar no mapa, olhe para o seu alvo e pressione %1.</Portuguese>
+            <Russian>Чтобы отметить на карте, посмотрите на цель и нажмите %1.</Russian>
+            <Spanish>Para marcar en el mapa, mira a tu objetivo y presiona %1.</Spanish>
+            <Turkish>Haritada işaretleme yapmak için, hedefine bak ve %1'e bas.</Turkish>
+            <Korean>지도에 핑을 표시하려면, 목표물을 바라보고 %1을(를) 누르세요.</Korean>
+            <Japanese>マップにピンを立てるには、ターゲットを見て %1 を押してください。</Japanese>
+            <Chinesesimp>要在地图上标记，注视目标并按 %1。</Chinesesimp>
+            <Chinese>要在地圖上標記，注視目標並按 %1。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_7">
+            <Original>To communicate, press %1 for push-to-talk and %2 for text chat.</Original>
+            <English>To communicate, press %1 for push-to-talk and %2 for text chat.</English>
+            <Czech>Pro komunikaci stiskněte %1 pro funkci push-to-talk a %2 pro textový chat.</Czech>
+            <French>Pour communiquer, appuyez sur %1 pour le push-to-talk et sur %2 pour le chat textuel.</French>
+            <German>Um zu kommunizieren, drücke %1 für Push-to-Talk und %2 für den Textchat.</German>
+            <Italian>Per comunicare, premi %1 per il push-to-talk e %2 per la chat testuale.</Italian>
+            <Polish>Aby komunikować się, naciśnij %1 dla funkcji push-to-talk oraz %2 dla czatu tekstowego.</Polish>
+            <Portuguese>Para comunicar, pressione %1 para push-to-talk e %2 para chat de texto.</Portuguese>
+            <Russian>Для общения нажмите %1 для функции push-to-talk и %2 для текстового чата.</Russian>
+            <Spanish>Para comunicarte, presiona %1 para push-to-talk y %2 para el chat de texto.</Spanish>
+            <Turkish>İletişim kurmak için, push-to-talk için %1 ve metin sohbeti için %2 tuşuna basın.</Turkish>
+            <Korean>소통하려면, 푸시 투 토크는 %1, 텍스트 채팅은 %2를 누르세요.</Korean>
+            <Japanese>コミュニケーションするには、プッシュ・トゥ・トークは %1、テキストチャットは %2 を押してください。</Japanese>
+            <Chinesesimp>要交流，按 %1 进行对讲，按 %2 进行文字聊天。</Chinesesimp>
+            <Chinese>要交流，按 %1 进行对讲，按 %2 进行文字聊天。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_8">
+            <Original>RECOMMENDATIONS FOR BEGINNERS</Original>
+            <English>RECOMMENDATIONS FOR BEGINNERS</English>
+            <Czech>DOPORUČENÍ PRO ZAČÁTEČNÍKY</Czech>
+            <French>RECOMMANDATIONS POUR DÉBUTANTS</French>
+            <German>EMPFEHLUNGEN FÜR ANFÄNGER</German>
+            <Italian>RACCOMANDAZIONI PER PRINCIPIANTI</Italian>
+            <Polish>REKOMENDACJE DLA POCZĄTKUJĄCYCH</Polish>
+            <Portuguese>RECOMENDAÇÕES PARA INICIANTES</Portuguese>
+            <Russian>РЕКОМЕНДАЦИИ ДЛЯ НАЧИНАЮЩИХ</Russian>
+            <Spanish>RECOMENDACIONES PARA PRINCIPIANTES</Spanish>
+            <Turkish>YENİ BAŞLAYANLAR İÇİN ÖNERİLER</Turkish>
+            <Korean>초보자를 위한 추천</Korean>
+            <Japanese>初心者向けの推奨事項</Japanese>
+            <Chinesesimp>初学者推荐</Chinesesimp>
+            <Chinese>初學者推薦</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_9">
+            <Original>To get 2 times more money for kills, scroll with the mouse, open &quot;Setting&quot;, and toggle on &quot;Disable 3rd person view&quot;.</Original>
+            <English>To get 2 times more money for kills, scroll with the mouse, open &quot;Setting&quot;, and toggle on &quot;Disable 3rd person view&quot;.</English>
+            <Czech>Chcete-li získat dvakrát více peněz za zabití, posuňte kolečkem myši, otevřete „Nastavení“ a zapněte „Zakázat pohled ze 3. osoby“.</Czech>
+            <French>Pour obtenir 2 fois plus d'argent par élimination, faites défiler avec la souris, ouvrez « Paramètres » et activez « Désactiver la vue à la troisième personne ».</French>
+            <German>Um 2-mal mehr Geld für Kills zu erhalten, scrolle mit der Maus, öffne die „Einstellungen“ und aktiviere „Dritte-Person-Ansicht deaktivieren“.</German>
+            <Italian>Per ottenere il doppio dei soldi per ogni uccisione, scorri con il mouse, apri «Impostazioni» e attiva «Disabilita vista in terza persona».</Italian>
+            <Polish>Aby otrzymać 2 razy więcej pieniędzy za zabójstwa, przewiń myszą, otwórz „Ustawienia” i włącz „Wyłącz widok z trzeciej osoby”.</Polish>
+            <Portuguese>Para obter o dobro de dinheiro por abates, role com o mouse, abra 'Configurações' e ative 'Desativar visão em terceira pessoa'.</Portuguese>
+            <Russian>Осторожно с огнем по своим. Если сомневаетесь, проверьте карту или нажмите %1 на вашей цели, чтобы убедиться, что это не ваш товарищ по команде.</Russian>
+            <Spanish>Para obtener el doble de dinero por bajas, desplaza el ratón, abre 'Configuración' y activa 'Desactivar vista en tercera persona'.</Spanish>
+            <Turkish>Öldürmelerde 2 kat daha fazla para kazanmak için, fare ile kaydırın, 'Ayarlar'ı açın ve '3. kişi görünümünü devre dışı bırak'ı etkinleştirin.</Turkish>
+            <Korean>킬 시 두 배의 돈을 얻으려면, 마우스를 스크롤하고 '설정'을 열어 '3인칭 시점 비활성화'를 켜세요.</Korean>
+            <Japanese>キルで2倍の報酬を得るには、マウスホイールを回し、『設定』を開いて『3人称視点の無効化』をオンにしてください。</Japanese>
+            <Chinesesimp>要获得击杀奖励的2倍金钱，滚动鼠标，打开“设置”，并启用“禁用第三人称视角”。</Chinesesimp>
+            <Chinese>要獲得擊殺獎勵的2倍金錢，滾動滑鼠，打開「設定」，並啟用「禁用第三人稱視角」。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_10">
+            <Original>Join a squad or create your own for maximum teamwork.</Original>
+            <English>Join a squad or create your own for maximum teamwork.</English>
+            <Czech>Připojte se k družině nebo si vytvořte vlastní pro maximální týmovou práci.</Czech>
+            <French>Rejoignez une escouade ou créez la vôtre pour un travail d'équipe optimal.</French>
+            <German>Schließe dich einem Team an oder erstelle dein eigenes für maximale Teamarbeit.</German>
+            <Italian>Unisciti a uno squad o creane uno tuo per un lavoro di squadra ottimale.</Italian>
+            <Polish>Dołącz do drużyny lub stwórz własną dla maksymalnej współpracy zespołowej.</Polish>
+            <Portuguese>Junte-se a um esquadrão ou crie o seu para uma cooperação máxima.</Portuguese>
+            <Russian>Присоединяйтесь к отряду или создайте свой для максимальной командной работы.</Russian>
+            <Spanish>Únete a un escuadrón o crea el tuyo para lograr el máximo trabajo en equipo.</Spanish>
+            <Turkish>Maksimum takım çalışması için bir ekibe katılın veya kendi ekibinizi oluşturun.</Turkish>
+            <Korean>최대 팀워크를 위해 분대에 가입하거나 직접 분대를 만드세요.</Korean>
+            <Japanese>最大限のチームワークを発揮するために、分隊に参加するか、自分で作成してください。</Japanese>
+            <Chinesesimp>加入小队或创建自己的小队以实现最佳团队合作。</Chinesesimp>
+            <Chinese>加入小隊或創建自己的小隊以實現最佳團隊合作。</Chinese>
+        </Key>
+        <Key ID="WL2_InfoText_11">
+            <Original>Beware of friendly fire. When in doubt, check the map or press %1 on your target to ensure they are not a teammate.</Original>
+            <English>Beware of friendly fire. When in doubt, check the map or press %1 on your target to ensure they are not a teammate.</English>
+            <Czech>Dejte si pozor na palbu přátel. Pokud máte pochybnosti, zkontrolujte mapu nebo stiskněte %1 u cíle, abyste se ujistili, že to není váš spoluhráč.</Czech>
+            <French>Méfiez-vous du tir ami. En cas de doute, vérifiez la carte ou appuyez sur %1 sur votre cible pour vous assurer qu'il ne s'agit pas d'un coéquipier.</French>
+            <German>Achte auf Friendly Fire. Im Zweifel überprüfe die Karte oder drücke %1 an deinem Ziel, um sicherzustellen, dass es sich nicht um einen Teamkameraden handelt.</German>
+            <Italian>Attento al fuoco amico. In caso di dubbio, controlla la mappa o premi %1 sul tuo bersaglio per assicurarti che non sia un compagno di squadra.</Italian>
+            <Polish>Uważaj na strzelanie do sojuszników. W razie wątpliwości sprawdź mapę lub naciśnij %1 przy celu, aby upewnić się, że to nie twój kolega z drużyny.</Polish>
+            <Portuguese>Cuidado com o fogo amigo. Em caso de dúvida, verifique o mapa ou pressione %1 em seu alvo para garantir que não é um companheiro de equipe.</Portuguese>
+            <Russian>Осторожно с огнем по своим. Если сомневаетесь, проверьте карту или нажмите %1 на вашей цели, чтобы убедиться, что это не ваш товарищ по команде.</Russian>
+            <Spanish>Cuidado con el fuego amigo. Si tienes dudas, revisa el mapa o presiona %1 en tu objetivo para asegurarte de que no es un compañero.</Spanish>
+            <Turkish>Dost ateşine dikkat edin. Şüphedeyseniz, haritayı kontrol edin veya hedefinize %1 tuşuna basarak takım arkadaşınız olmadığından emin olun.</Turkish>
+            <Korean>아군 사격에 주의하세요. 의심스러우면 지도를 확인하거나 대상에게 %1을 눌러 팀원이 아닌지 확인하세요.</Korean>
+            <Japanese>味方への攻撃に注意してください。疑わしい場合は、マップを確認するか、対象に %1 を押して、味方でないことを確認してください。</Japanese>
+            <Chinesesimp>注意友军伤害。如有疑问，请查看地图或按 %1 确认目标不是队友。</Chinesesimp>
+            <Chinese>注意友軍傷害。如有疑問，請查看地圖或按 %1 確認目標不是隊友。</Chinese>
+        </Key>
+    </Container>
 </Project>
