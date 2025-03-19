@@ -5053,7 +5053,7 @@
             <Italian>Warlords Redux è stato modificato dalla comunità WarSimVets.</Italian>
             <Polish>Warlords Redux został edytowany przez społeczność WarSimVets.</Polish>
             <Portuguese>Warlords Redux foi editado pela comunidade WarSimVets.</Portuguese>
-            <Russian>Warlords Redux был отредактирован сообществом WarSimVets.</Russian>
+            <Russian> Режим "Warlords Redux" разработан командой WarSimVets.</Russian>
             <Spanish>Warlords Redux fue editado por la comunidad WarSimVets.</Spanish>
             <Turkish>Warlords Redux, WarSimVets topluluğu tarafından düzenlendi.</Turkish>
             <Korean>Warlords Redux는 WarSimVets 커뮤니티에 의해 편집되었습니다.</Korean>
@@ -5070,7 +5070,7 @@
             <Italian>Unisciti al nostro Discord per accedere agli amministratori, alle notizie e agli eventi programmati.</Italian>
             <Polish>Dołącz do naszego Discorda, aby uzyskać dostęp do administratorów, wiadomości i zaplanowanych wydarzeń.</Polish>
             <Portuguese>Junte-se ao nosso Discord para ter acesso a administradores, notícias e eventos programados.</Portuguese>
-            <Russian>Присоединяйтесь к нашему Discord для доступа к администраторам, новостям и запланированным событиям.</Russian>
+            <Russian>Вступай в наш Discord-канал, чтобы узнать новости, расписание мероприятий или стать администратором.</Russian>
             <Spanish>Únete a nuestro Discord para acceder a los administradores, noticias y eventos programados.</Spanish>
             <Turkish>Yöneticilere, haberlere ve planlanmış etkinliklere erişim için Discord'umuza katılın.</Turkish>
             <Korean>관리자, 소식 및 예정된 이벤트에 접근하려면 Discord에 참여하세요.</Korean>
@@ -5104,7 +5104,7 @@
             <Italian>Per teletrasportarti, tieni premuto %1, seleziona «Viaggio Veloce» a sinistra.</Italian>
             <Polish>Aby się teleportować, przytrzymaj %1, wybierz „Szybka podróż” po levé straně.</Polish>
             <Portuguese>Para teletransportar, pressione e segure %1, selecione 'Viagem Rápida' à esquerda.</Portuguese>
-            <Russian>Чтобы телепортироваться, нажмите и удерживайте %1, затем выберите «Быстрое перемещение» слева.</Russian>
+            <Russian>Чтобы телепортироваться, нажми и удерживай %1, затем выбери «Быстрое перемещение» слева.</Russian>
             <Spanish>Para teletransportarte, mantén presionado %1 y selecciona 'Viaje Rápido' a la izquierda.</Spanish>
             <Turkish>Işınlanmak için, %1 tuşuna basılı tutun, sol taraftan 'Hızlı Seyahat'i seçin.</Turkish>
             <Korean>텔레포트하려면, %1을(를) 길게 누르고 왼쪽에서 '빠른 이동'을 선택하세요.</Korean>
@@ -5121,7 +5121,7 @@
             <Italian>Per personalizzare il tuo equipaggiamento, tieni premuto %1, seleziona «Equipaggiamento» a sinistra, quindi scegli «Personalizzazione».</Italian>
             <Polish>Aby dostosować zestaw, przytrzymaj %1, wybierz po levé straně „Wyposażenie” i następnie „Dostosowanie”.</Polish>
             <Portuguese>Para personalizar seu equipamento, pressione e segure %1, selecione 'Equipamento' à esquerda, e depois 'Personalização'.</Portuguese>
-            <Russian>Чтобы настроить снаряжение, нажмите и удерживайте %1, выберите слева «Снаряжение», затем «Настройка».</Russian>
+            <Russian>Чтобы изменить снаряжение, нажми и удерживай %1, выбери слева «Снаряжение», затем «Кастомизация».</Russian>
             <Spanish>Para personalizar tu equipo, mantén presionado %1, selecciona 'Equipo' a la izquierda y luego 'Personalización'.</Spanish>
             <Turkish>Yüklemenizi özelleştirmek için, %1 tuşuna basılı tutun, sol taraftan 'Ekipman'ı seçin ve ardından 'Özelleştirme'yi seçin.</Turkish>
             <Korean>장비를 사용자 지정하려면, %1을(를) 길게 누르고 왼쪽에서 '장비'를 선택한 후 '사용자 지정'을 선택하세요.</Korean>
@@ -5130,15 +5130,15 @@
             <Chinese>要自定義裝備，按住 %1，然後在左側選擇「裝備」，再選擇「自訂」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_6">
-            <Original>To ping the map, look at your target and press %1.</Original>
-            <English>To ping the map, look at your target and press %1.</English>
+            <Original>To ping the enemy, look at your target and press %1.</Original>
+            <English>To ping the enemy, look at your target and press %1.</English>
             <Czech>Pro označení na mapě se podívejte na cíl a stiskněte %1.</Czech>
             <French>Pour marquer sur la carte, regardez votre cible et appuyez sur %1.</French>
             <German>Um die Karte zu markieren, schaue auf dein Ziel und drücke %1.</German>
             <Italian>Per segnare sulla mappa, guarda il tuo obiettivo e premi %1.</Italian>
             <Polish>Aby zaznaczyć cel na mapie, spójrz na niego i naciśnij %1.</Polish>
             <Portuguese>Para marcar no mapa, olhe para o seu alvo e pressione %1.</Portuguese>
-            <Russian>Чтобы отметить на карте, посмотрите на цель и нажмите %1.</Russian>
+            <Russian>Чтобы указать вашей команде на врага, посмотри на цель и нажми %1.</Russian>
             <Spanish>Para marcar en el mapa, mira a tu objetivo y presiona %1.</Spanish>
             <Turkish>Haritada işaretleme yapmak için, hedefine bak ve %1'e bas.</Turkish>
             <Korean>지도에 핑을 표시하려면, 목표물을 바라보고 %1을(를) 누르세요.</Korean>
@@ -5155,7 +5155,7 @@
             <Italian>Per comunicare, premi %1 per il push-to-talk e %2 per la chat testuale.</Italian>
             <Polish>Aby komunikować się, naciśnij %1 dla funkcji push-to-talk oraz %2 dla czatu tekstowego.</Polish>
             <Portuguese>Para comunicar, pressione %1 para push-to-talk e %2 para chat de texto.</Portuguese>
-            <Russian>Для общения нажмите %1 для функции push-to-talk и %2 для текстового чата.</Russian>
+            <Russian>Чтобы использовать микрофон, зажми %1; чтобы использовать чат, нажми %2.</Russian>
             <Spanish>Para comunicarte, presiona %1 para push-to-talk y %2 para el chat de texto.</Spanish>
             <Turkish>İletişim kurmak için, push-to-talk için %1 ve metin sohbeti için %2 tuşuna basın.</Turkish>
             <Korean>소통하려면, 푸시 투 토크는 %1, 텍스트 채팅은 %2를 누르세요.</Korean>
@@ -5172,7 +5172,7 @@
             <Italian>RACCOMANDAZIONI PER PRINCIPIANTI</Italian>
             <Polish>REKOMENDACJE DLA POCZĄTKUJĄCYCH</Polish>
             <Portuguese>RECOMENDAÇÕES PARA INICIANTES</Portuguese>
-            <Russian>РЕКОМЕНДАЦИИ ДЛЯ НАЧИНАЮЩИХ</Russian>
+            <Russian>РЕКОМЕНДАЦИИ ДЛЯ НОВИЧКОВ</Russian>
             <Spanish>RECOMENDACIONES PARA PRINCIPIANTES</Spanish>
             <Turkish>YENİ BAŞLAYANLAR İÇİN ÖNERİLER</Turkish>
             <Korean>초보자를 위한 추천</Korean>
@@ -5189,7 +5189,7 @@
             <Italian>Per ottenere il doppio dei soldi per ogni uccisione, scorri con il mouse, apri «Impostazioni» e attiva «Disabilita vista in terza persona».</Italian>
             <Polish>Aby otrzymać 2 razy więcej pieniędzy za zabójstwa, przewiń myszą, otwórz „Ustawienia” i włącz „Wyłącz widok z trzeciej osoby”.</Polish>
             <Portuguese>Para obter o dobro de dinheiro por abates, role com o mouse, abra 'Configurações' e ative 'Desativar visão em terceira pessoa'.</Portuguese>
-            <Russian>Осторожно с огнем по своим. Если сомневаетесь, проверьте карту или нажмите %1 на вашей цели, чтобы убедиться, что это не ваш товарищ по команде.</Russian>
+            <Russian>Чтобы получать в 2 раза больше денег за убийства, прокрути колёсиком мышки, открой «Настройки», переключи тумблер «Disable 3rd person view»</Russian>
             <Spanish>Para obtener el doble de dinero por bajas, desplaza el ratón, abre 'Configuración' y activa 'Desactivar vista en tercera persona'.</Spanish>
             <Turkish>Öldürmelerde 2 kat daha fazla para kazanmak için, fare ile kaydırın, 'Ayarlar'ı açın ve '3. kişi görünümünü devre dışı bırak'ı etkinleştirin.</Turkish>
             <Korean>킬 시 두 배의 돈을 얻으려면, 마우스를 스크롤하고 '설정'을 열어 '3인칭 시점 비활성화'를 켜세요.</Korean>
@@ -5206,7 +5206,7 @@
             <Italian>Unisciti a uno squad o creane uno tuo per un lavoro di squadra ottimale.</Italian>
             <Polish>Dołącz do drużyny lub stwórz własną dla maksymalnej współpracy zespołowej.</Polish>
             <Portuguese>Junte-se a um esquadrão ou crie o seu para uma cooperação máxima.</Portuguese>
-            <Russian>Присоединяйтесь к отряду или создайте свой для максимальной командной работы.</Russian>
+            <Russian>Присоединись к отряду или создай свой для максимальной командной работы.</Russian>
             <Spanish>Únete a un escuadrón o crea el tuyo para lograr el máximo trabajo en equipo.</Spanish>
             <Turkish>Maksimum takım çalışması için bir ekibe katılın veya kendi ekibinizi oluşturun.</Turkish>
             <Korean>최대 팀워크를 위해 분대에 가입하거나 직접 분대를 만드세요.</Korean>
@@ -5223,7 +5223,7 @@
             <Italian>Attento al fuoco amico. In caso di dubbio, controlla la mappa o premi %1 sul tuo bersaglio per assicurarti che non sia un compagno di squadra.</Italian>
             <Polish>Uważaj na strzelanie do sojuszników. W razie wątpliwości sprawdź mapę lub naciśnij %1 przy celu, aby upewnić się, że to nie twój kolega z drużyny.</Polish>
             <Portuguese>Cuidado com o fogo amigo. Em caso de dúvida, verifique o mapa ou pressione %1 em seu alvo para garantir que não é um companheiro de equipe.</Portuguese>
-            <Russian>Осторожно с огнем по своим. Если сомневаетесь, проверьте карту или нажмите %1 на вашей цели, чтобы убедиться, что это не ваш товарищ по команде.</Russian>
+            <Russian>Чтобы избежать огня по своим, проверь карту или нажми %1, глядя на цель, чтобы убедиться, что это не союзник по команде.</Russian>
             <Spanish>Cuidado con el fuego amigo. Si tienes dudas, revisa el mapa o presiona %1 en tu objetivo para asegurarte de que no es un compañero.</Spanish>
             <Turkish>Dost ateşine dikkat edin. Şüphedeyseniz, haritayı kontrol edin veya hedefinize %1 tuşuna basarak takım arkadaşınız olmadığından emin olun.</Turkish>
             <Korean>아군 사격에 주의하세요. 의심스러우면 지도를 확인하거나 대상에게 %1을 눌러 팀원이 아닌지 확인하세요.</Korean>

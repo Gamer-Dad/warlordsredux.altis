@@ -58,8 +58,9 @@ class WLProjectilesConfig {
             "M_Switchblade"
         };
         aps = 0;
-        tv = 1;
         consumption = 1;
+        speed = 200;
+        tv = 1;
     };
 
     class WLProjectile_TVGuidedHeavy: WLProjectile {
@@ -67,9 +68,20 @@ class WLProjectilesConfig {
             "M_Spike"
         };
         aps = 1;
-        tv = 1;
         consumption = 3;
         dazzleable = 1;
+        speed = 180;
+        tv = 1;
+    };
+
+    class WLProjectile_TVGuidedBomb: WLProjectile {
+        ammo[] = {
+            "ammo_kab250kr"
+        };
+        aps = 3;
+        dazzleable = 1;
+        tv = 1;
+        speed = 250;
     };
 
     class WLProjectile_TVGuidedArtillery: WLProjectile {

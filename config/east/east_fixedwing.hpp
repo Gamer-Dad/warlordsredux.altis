@@ -223,4 +223,20 @@ class FixedWing {
         rearm = 900;
         requirements[] = {"A"};
     }; // "To-201 Shikra"
+
+    class O_Plane_Fighter_02_Standoff_F {
+        ammoOverrides[] = {
+            {"Bomb_03_F", "ammo_kab250kr"}
+        };
+        allowPylonMagazines[] = {
+            "PylonMissile_Bomb_KAB250_x1"
+        };
+        cost = 35000;
+        disallowMagazines[] = {};
+        killReward = 1100;
+        name = "To-201 Shikra (Standoff)";
+        rearm = 1200;
+        requirements[] = {"A"};
+        spawn = "O_Plane_Fighter_02_F";
+    };
 };
