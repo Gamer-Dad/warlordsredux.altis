@@ -149,9 +149,7 @@ class RotaryWing {
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "192Rnd_CMFlare_Chaff_Magazine"
-            };
+            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
@@ -172,9 +170,7 @@ class RotaryWing {
         variant = 1;
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "192Rnd_CMFlare_Chaff_Magazine"
-            };
+            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };

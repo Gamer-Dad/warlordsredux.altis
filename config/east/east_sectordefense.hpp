@@ -1,12 +1,4 @@
 class SectorDefense {
-    class Land_Scaffolding_New_F {
-        cost = 10;
-        demolishable = 1;
-        killReward = 5;
-        offset[] = {0, 7, 0};
-        requirements[] = {};
-    };  // "Scaffolding"
-
     class Land_Razorwire_F {
         cost = 50;
         demolishable = 1;

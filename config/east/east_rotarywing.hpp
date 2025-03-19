@@ -101,7 +101,9 @@ class RotaryWing {
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = { };
+            removeMagazines[] = {
+                "192Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -124,7 +126,9 @@ class RotaryWing {
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = { };
+            removeMagazines[] = {
+                "192Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
