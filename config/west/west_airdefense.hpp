@@ -141,7 +141,7 @@ class AirDefense {
     class B_APC_Tracked_01_AA_E_F {
         aps = 2;
         capValue = 4;
-        cost = 18000;
+        cost = 17000;
         description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
         killReward = 600;
         name = "IFV-6C Jaguar";

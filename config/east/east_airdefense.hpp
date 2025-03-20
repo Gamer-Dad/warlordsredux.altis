@@ -157,7 +157,7 @@ class AirDefense {
     class O_APC_Tracked_02_AA_E_F {
         aps = 2;
         capValue = 4;
-        cost = 18000;
+        cost = 17000;
         description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with Mk21 Centurion missiles.";
         killReward = 600;
         name = "ZSU-59 Yangtze";
