@@ -79,9 +79,7 @@ class WLProjectilesConfig {
             "ammo_kab250kr"
         };
         aps = 3;
-        dazzleable = 1;
-        tv = 1;
-        speed = 250;
+        remote = 1;
     };
 
     class WLProjectile_TVGuidedArtillery: WLProjectile {

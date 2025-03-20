@@ -25,7 +25,7 @@ class Naval {
     };	// "Speedboat Minigun"
 
     class B_Boat_Armed_01_autocannon_F {
-        cost = 1500;
+        cost = 1000;
         description = "Riverine Command Boat is an upgraded, heavily-armed variant of the Speedboat.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"

@@ -155,7 +155,7 @@ class RemoteControl {
     }; // "Falcon"
 
     class B_UAV_05_F {
-        cost = 22500;
+        cost = 20000;
         killReward = 650;
         rearm = 500;
         requirements[] = {"A"};

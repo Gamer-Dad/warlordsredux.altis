@@ -35,7 +35,7 @@ class HeavyVehicles {
             addWeapons[] = {
                 "missiles_Firefist"
             };
-            reloadOverride = 6;
+            reloadOverride = 10;
             removeMagazines[] = {
                 "100Rnd_127x99_mag_Tracer_Red"
             };
@@ -139,74 +139,75 @@ class HeavyVehicles {
         };
     }; // "BTR-K Kamysh"
 
-    // class O_APC_Tracked_02_heavy_F {
-    //     aps = 2;
-    //     capValue = 3;
-    //     cost = 5500;
-    //     description = "BMP-K Kamysh is a variant of the BTR-K Kamysh armed with a 105mm cannon.";
-    //     disallowMagazines[] = {
-    //         "4Rnd_GAA_missiles"
-    //     };
-    //     killReward = 350;
-    //     name = "BMP-K Kamysh";
-    //     rearm = 500;
-    //     requirements[] = {};
-    //     spawn = "O_APC_Tracked_02_cannon_F";
-    //     variant = 1;
-    //
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "5Rnd_GAT_missiles",
-    //             "5Rnd_GAT_missiles",
-    //             "40Rnd_105mm_APFSDS_T_Red"
-    //         };
-    //         addWeapons[] = {
-    //             "missiles_titan",
-    //             "cannon_105mm_VTOL_01"
-    //         };
-    //         removeMagazines[] = {
-    //             "2Rnd_GAT_missiles_O",
-    //             "60Rnd_30mm_APFSDS_shells_Tracer_Green",
-    //             "140Rnd_30mm_MP_shells_Tracer_Green"
-    //         };
-    //         removeWeapons[] = {
-    //             "missiles_titan",
-    //             "autocannon_30mm_CTWS"
-    //         };
-    //         turret[] = { 0 };
-    //     };
-    // };
-
-    class O_MBT_02_cannon_export_F {
-        aps = 3;
-        capValue = 4;
-        cost = 5500;
-        description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
-        killReward = 500;
-        name = "T-100E Badger";
-        rearm = 600;
+    class O_APC_Tracked_02_heavy_F {
+        aps = 2;
+        capValue = 3;
+        cost = 4000;
+        description = "BTR-KM Kamysh is a variant of the BTR-K Kamysh armed with a 40mm cannon.";
+        disallowMagazines[] = {
+            "4Rnd_GAA_missiles"
+        };
+        killReward = 350;
+        name = "BTR-KM Kamysh";
+        rearm = 500;
         requirements[] = {};
-        spawn = "O_MBT_02_cannon_F";
+        spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "40Rnd_105mm_APFSDS"
+                "5Rnd_GAT_missiles",
+                "5Rnd_GAT_missiles",
+                "240Rnd_40mm_GPR_Tracer_Red_shells",
+                "160Rnd_40mm_APFSDS_Tracer_Red_shells"
             };
             addWeapons[] = {
-                "cannon_105mm"
+                "autocannon_40mm_VTOL_01",
+                "missiles_titan"
             };
             removeMagazines[] = {
-                "16Rnd_125mm_APFSDS_T_Green",
-                "12Rnd_125mm_HE_T_Green",
-                "12Rnd_125mm_HEAT_T_Green"
+                "2Rnd_GAT_missiles_O",
+                "60Rnd_30mm_APFSDS_shells_Tracer_Green",
+                "140Rnd_30mm_MP_shells_Tracer_Green"
             };
             removeWeapons[] = {
-                "cannon_125mm"
+                "missiles_titan",
+                "autocannon_30mm_CTWS"
             };
             turret[] = { 0 };
         };
     };
+
+    // class O_MBT_02_cannon_export_F {
+    //     aps = 3;
+    //     capValue = 4;
+    //     cost = 5500;
+    //     description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
+    //     killReward = 500;
+    //     name = "T-100E Badger";
+    //     rearm = 600;
+    //     requirements[] = {};
+    //     spawn = "O_MBT_02_cannon_F";
+    //     variant = 1;
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "40Rnd_105mm_APFSDS"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_105mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "16Rnd_125mm_APFSDS_T_Green",
+    //             "12Rnd_125mm_HE_T_Green",
+    //             "12Rnd_125mm_HEAT_T_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "cannon_125mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_MBT_02_cannon_F {
         aps = 3;
@@ -235,44 +236,44 @@ class HeavyVehicles {
         requirements[] = {};
     }; // "T-140K Angara"
 
-    class O_MBT_04_nato_F {
-        aps = 3;
-        capValue = 4;
-        cost = 13500;
-        description = "T-140N Yukon is a variant of the T-140 Angara armed with a NATO 120mm cannon.";
-        flagOffset[] = {-0.69, -3.1, 1.8};
-        killReward = 800;
-        name = "T-140N Yukon";
-        rearm = 600;
-        requirements[] = {};
-        spawn = "O_MBT_04_command_F";
-        variant = 1;
+    // class O_MBT_04_nato_F {
+    //     aps = 3;
+    //     capValue = 4;
+    //     cost = 13500;
+    //     description = "T-140N Yukon is a variant of the T-140 Angara armed with a NATO 120mm cannon.";
+    //     flagOffset[] = {-0.69, -3.1, 1.8};
+    //     killReward = 800;
+    //     name = "T-140N Yukon";
+    //     rearm = 600;
+    //     requirements[] = {};
+    //     spawn = "O_MBT_04_command_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles",
-                "4Rnd_120mm_LG_cannon_missiles"
-            };
-            addWeapons[] = {
-                "cannon_120mm"
-            };
-            removeMagazines[] = {
-                "20Rnd_125mm_APFSDS_T_Green",
-                "12Rnd_125mm_HEAT_T_Green",
-                "12Rnd_125mm_HE_T_Green"
-            };
-            removeWeapons[] = {
-                "cannon_125mm_advanced"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles",
+    //             "4Rnd_120mm_LG_cannon_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_120mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "20Rnd_125mm_APFSDS_T_Green",
+    //             "12Rnd_125mm_HEAT_T_Green",
+    //             "12Rnd_125mm_HE_T_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "cannon_125mm_advanced"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class O_MBT_02_railgun_F {
     //     aps = 3;

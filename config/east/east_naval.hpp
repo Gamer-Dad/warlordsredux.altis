@@ -25,7 +25,7 @@ class Naval {
     };	// "Speedboat HMG"
 
     class O_Boat_Armed_01_autocannon_F {
-        cost = 1500;
+        cost = 1000;
         description = "Alligator Attack Boat is an upgraded, heavily-armed variant of the Speedboat.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"

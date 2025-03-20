@@ -46,42 +46,6 @@ class AirDefense {
         requirements[] = {};
     }; // "Praetorian 1C"
 
-    class B_APC_Tracked_01_AA_E_F {
-        aps = 2;
-        capValue = 4;
-        cost = 4500;
-        description = "IFV-SAAMI Jaguar is a variant of the IFV-6a Cheetah armed with SAAMI missiles.";
-        killReward = 300;
-        name = "IFV-SAAMI Jaguar";
-        rearm = 450;
-        requirements[] = {};
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "missiles_SAAMI"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
-
     class B_APC_Tracked_01_AA_F {
         aps = 2;
         capValue = 4;
@@ -125,7 +89,7 @@ class AirDefense {
     class B_APC_Tracked_01_AA_UP_F {
         aps = 2;
         capValue = 4;
-        cost = 9000;
+        cost = 10000;
         description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
         killReward = 600;
         name = "IFV-6X Puma";
@@ -173,4 +137,37 @@ class AirDefense {
         rearm = 600;
         requirements[] = {};
     }; // "Mk21 Centurion"
+
+    class B_APC_Tracked_01_AA_E_F {
+        aps = 2;
+        capValue = 4;
+        cost = 18000;
+        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
+        killReward = 600;
+        name = "IFV-6C Jaguar";
+        rearm = 600;
+        requirements[] = {};
+        spawn = "B_APC_Tracked_01_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "magazine_Missile_rim162_x8",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "weapon_rim162Launcher"
+            };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            turret[] = { 0 };
+        };
+    };
 };

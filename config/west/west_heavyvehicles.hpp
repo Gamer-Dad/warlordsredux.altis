@@ -54,7 +54,7 @@ class HeavyVehicles {
             addWeapons[] = {
                 "missiles_Firefist"
             };
-            reloadOverride = 6;
+            reloadOverride = 10;
             removeMagazines[] = {
                 "100Rnd_127x99_mag_Tracer_Red"
             };
@@ -199,37 +199,37 @@ class HeavyVehicles {
         };
     };
 
-    class B_AFV_Wheeled_01_export_cannon_F {
-        aps = 2;
-        capValue = 4;
-        cost = 3700;
-        description = "Rhino MGS-E is a variant of the Rhino MGS armed with a weaker 105mm cannon.";
-        killReward = 400;
-        name = "Rhino MGS-E";
-        rearm = 500;
-        requirements[] = {};
-        spawn = "B_AFV_Wheeled_01_up_cannon_F";
-        variant = 1;
+    // class B_AFV_Wheeled_01_export_cannon_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 3700;
+    //     description = "Rhino MGS-E is a variant of the Rhino MGS armed with a weaker 105mm cannon.";
+    //     killReward = 400;
+    //     name = "Rhino MGS-E";
+    //     rearm = 500;
+    //     requirements[] = {};
+    //     spawn = "B_AFV_Wheeled_01_up_cannon_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "40Rnd_105mm_APFSDS_T_Red"
-            };
-            addWeapons[] = {
-                "cannon_105mm"
-            };
-            removeMagazines[] = {
-                "12Rnd_120mm_APFSDS_shells_Tracer_Red",
-                "8Rnd_120mm_HE_shells_Tracer_Red",
-                "8Rnd_120mm_HEAT_MP_T_Red",
-                "4Rnd_120mm_LG_cannon_missiles"
-            };
-            removeWeapons[] = {
-                "cannon_120mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "40Rnd_105mm_APFSDS_T_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_105mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "12Rnd_120mm_APFSDS_shells_Tracer_Red",
+    //             "8Rnd_120mm_HE_shells_Tracer_Red",
+    //             "8Rnd_120mm_HEAT_MP_T_Red",
+    //             "4Rnd_120mm_LG_cannon_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "cannon_120mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_AFV_Wheeled_01_cannon_F {
         aps = 2;
