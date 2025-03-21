@@ -78,6 +78,7 @@ class Header
 #include "src\sounds.hpp"
 #include "src\briefings.hpp"
 
+#include "src\scripts\DIS\ui.hpp"
 #include "src\scripts\POLL\ui.hpp"
 #include "src\scripts\WLC\ui.hpp"
 

@@ -234,7 +234,7 @@ class FixedWing {
         cost = 35000;
         description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release.";
         disallowMagazines[] = {};
-        killReward = 1100;
+        killReward = 1200;
         name = "To-201 Shikra (Standoff)";
         rearm = 1200;
         requirements[] = {"A"};

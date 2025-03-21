@@ -92,6 +92,15 @@ class WLProjectilesConfig {
         remote = 1;
     };
 
+    class WLProjectile_GPSGuidedBomb: WLProjectile {
+        ammo[] = {
+            "Bomb_04_F_gps"
+        };
+        aps = 3;
+        camera = 1;
+        gps = 1;
+    };
+
     class WLProjectile_TVGuidedArtillery: WLProjectile {
         ammo[] = {
             "M_Excalibur",
