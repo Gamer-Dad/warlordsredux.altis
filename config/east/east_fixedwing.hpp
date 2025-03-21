@@ -148,6 +148,7 @@ class FixedWing {
 
     class O_T_VTOL_02_infantry_dynamicLoadout_F {
         cost = 14000;
+        hasHMD = 1;
         killReward = 600;
         rearm = 700;
         requirements[] = {"A"};
@@ -156,6 +157,7 @@ class FixedWing {
     class O_Plane_Fighter_03_dynamicLoadout_F {
         cost = 15000;
         description = "A-143 Buzzard is a light CAS aircraft.";
+        hasHMD = 1;
         killReward = 600;
         name = "A-143 Buzzard";
         rearm = 900;
@@ -181,6 +183,7 @@ class FixedWing {
 
     class O_Plane_CAS_02_dynamicLoadout_F {
         cost = 20000;
+        hasHMD = 1;
         killReward = 900;
         rearm = 900;
         requirements[] = {"A"};
@@ -206,6 +209,7 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
+        hasHMD = 1;
         killReward = 1100;
         rearm = 900;
         requirements[] = {"A"};
@@ -219,6 +223,7 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
+        hasHMD = 1;
         killReward = 1100;
         rearm = 900;
         requirements[] = {"A"};
@@ -234,6 +239,7 @@ class FixedWing {
         cost = 35000;
         description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release.";
         disallowMagazines[] = {};
+        hasHMD = 1;
         killReward = 1200;
         name = "To-201 Shikra (Standoff)";
         rearm = 1200;

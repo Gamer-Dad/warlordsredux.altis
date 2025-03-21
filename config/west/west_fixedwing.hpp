@@ -132,6 +132,7 @@ class FixedWing {
 
     class B_T_VTOL_01_armed_F {
         cost = 8000;
+        hasHMD = 1;
         killReward = 350;
         rearm = 500;
         requirements[] = {"A"};
@@ -139,6 +140,7 @@ class FixedWing {
 
     class B_Plane_CAS_01_dynamicLoadout_F {
         cost = 15000;
+        hasHMD = 1;
         killReward = 800;
         rearm = 900;
         requirements[] = {"A"};
@@ -163,6 +165,7 @@ class FixedWing {
         };
         cost = 23000;
         description = "A-149 Gryphon is a light multirole aircraft.";
+        hasHMD = 1;
         killReward = 600;
         name = "A-149 Gryphon";
         rearm = 900;
@@ -183,6 +186,7 @@ class FixedWing {
             "PylonRack_Missile_HARM_x1"
         };
         cost = 30000;
+        hasHMD = 1;
         killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
@@ -193,6 +197,7 @@ class FixedWing {
             "PylonRack_Missile_HARM_x1"
         };
         cost = 35000;
+        hasHMD = 1;
         killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
@@ -208,6 +213,7 @@ class FixedWing {
         };
         cost = 35000;
         description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher.";
+        hasHMD = 1;
         killReward = 1200;
         name = "F/A-181 Black Wasp II (Standoff)";
         rearm = 1200;
