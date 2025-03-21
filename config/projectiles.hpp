@@ -40,6 +40,16 @@ class WLProjectilesConfig {
         sam = 1;
     };
 
+    class WLProjectile_A2A: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_AMRAAM_C",
+            "ammo_Missile_AMRAAM_D",
+            "ammo_Missile_AA_R77"
+        };
+        aps = 3;
+        camera = 1;
+    };
+
     class WLProjectile_SEAD: WLProjectile {
         ammo[] = {
             "ammo_Missile_HARM",                // AGM-88 HARM
