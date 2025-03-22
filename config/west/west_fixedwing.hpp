@@ -212,12 +212,13 @@ class FixedWing {
             {"Bomb_04_F", "Bomb_04_F_gps"}
         };
         cost = 35000;
-        description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher.";
+        description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
         hasHMD = 1;
         killReward = 1200;
         name = "F/A-181 Black Wasp II (Standoff)";
         rearm = 1200;
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
+        variant = 1;
     };
 };

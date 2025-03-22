@@ -236,8 +236,8 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonMissile_Bomb_KAB250_x1"
         };
-        cost = 35000;
-        description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release.";
+        cost = 32000;
+        description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. How to use remote bombs:<br/>1. Have a teammate (player 2) build a ground support terminal.<br/>2. Player 2: Click on map, link to asset.<br/>3. Player 2: Control asset from terminal.<br/>4. Player 1: Drop KABs.";
         disallowMagazines[] = {};
         hasHMD = 1;
         killReward = 1200;
@@ -245,5 +245,6 @@ class FixedWing {
         rearm = 1200;
         requirements[] = {"A"};
         spawn = "O_Plane_Fighter_02_F";
+        variant = 1;
     };
 };
