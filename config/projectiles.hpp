@@ -106,7 +106,8 @@ class WLProjectilesConfig {
             "M_Excalibur",
             "M_Krasnopol"
         };
-        aps = 3;
+        aps = 2;
+        consumption = 1;
         tv = 1;
     };
 
