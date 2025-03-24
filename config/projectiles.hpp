@@ -23,6 +23,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
+        consumption = 3;
         dazzleable = 1;
     };
 
@@ -80,7 +81,7 @@ class WLProjectilesConfig {
         aps = 1;
         consumption = 3;
         dazzleable = 1;
-        speed = 180;
+        speed = 125;
         tv = 1;
     };
 

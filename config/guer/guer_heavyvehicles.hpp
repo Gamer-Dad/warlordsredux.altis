@@ -38,6 +38,24 @@ class HeavyVehicles {
         rearm = 300;
         requirements[] = {};
         vehicleSpawn = 1;
+        // class Gunner: WLTurretDefaults {
+        //     addMagazines[] = {
+        //         "140Rnd_30mm_MP_shells",
+        //         "60Rnd_30mm_APFSDS_shells"
+        //     };
+        //     addWeapons[] = {
+        //         "autocannon_30mm_CTWS"
+        //     };
+        //     reloadOverride = 10;
+        //     removeMagazines[] = {
+        //         "60Rnd_20mm_HE_shells",
+        //         "60Rnd_20mm_AP_shells"
+        //     };
+        //     removeWeapons[] = {
+        //         "cannon_20mm"
+        //     };
+        //     turret[] = { 0 };
+        // };
     };  // "AWC Nyx (Autocannon)"
 
     class I_MBT_03_cannon_F {
