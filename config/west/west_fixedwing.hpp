@@ -190,6 +190,16 @@ class FixedWing {
         killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
     }; // "F/A-181 Black Wasp II"
 
     class B_Plane_Fighter_01_Stealth_F {
@@ -201,6 +211,16 @@ class FixedWing {
         killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
     }; // "F/A-181 Black Wasp II (Stealth)"
 
     class B_Plane_Fighter_01_standoff_F {
@@ -220,5 +240,15 @@ class FixedWing {
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
         variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
     };
 };

@@ -213,6 +213,19 @@ class FixedWing {
         killReward = 1100;
         rearm = 900;
         requirements[] = {"A"};
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
     }; // "To-201 Shikra (Stealth)"
 
     class O_Plane_Fighter_02_F {
@@ -227,6 +240,20 @@ class FixedWing {
         killReward = 1100;
         rearm = 900;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
     }; // "To-201 Shikra"
 
     class O_Plane_Fighter_02_Standoff_F {
@@ -249,5 +276,55 @@ class FixedWing {
         requirements[] = {"A"};
         spawn = "O_Plane_Fighter_02_F";
         variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
+
+    class O_Plane_Fighter_02_GPS_F {
+        allowPylonMagazines[] = {
+            "PylonMissile_Missile_KH58_INT_x1",
+            "PylonMissile_Bomb_GBU12_x1"
+        };
+        ammoOverrides[] = {
+            {"Bomb_04_F", "Bomb_04_F_gps"}
+        };
+        cost = 34000;
+        description = "To-201 Shikra (GPS Standoff) is a variant of the To-201 Shikra armed with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        disallowMagazines[] = {
+            "PylonMissile_Missile_KH58_x1"
+        };
+        hasHMD = 1;
+        killReward = 1200;
+        name = "To-201 Shikra (GPS Standoff)";
+        rearm = 1200;
+        requirements[] = {"A"};
+        spawn = "O_Plane_Fighter_02_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
     };
 };
