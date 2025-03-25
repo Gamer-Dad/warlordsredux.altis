@@ -124,10 +124,10 @@ class RemoteControl {
         rearm = 300;
         requirements[] = {"H"};
         spawn = "B_UAV_02_dynamicLoadout_F";
-    }; // "Greyhawk"
+    };
 
     class B_UAV_02_dynamicLoadout_F {
-        cost = 8000;
+        cost = 6000;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
@@ -135,7 +135,7 @@ class RemoteControl {
     }; // "Greyhawk"
 
     class B_T_UAV_03_dynamicLoadout_F {
-        cost = 11000;
+        cost = 8000;
         hasHMD = 1;
         killReward = 600;
         rearm = 600;
@@ -155,7 +155,7 @@ class RemoteControl {
     }; // "Falcon"
 
     class B_UAV_05_F {
-        cost = 20000;
+        cost = 15000;
         killReward = 650;
         rearm = 500;
         requirements[] = {"A"};

@@ -143,7 +143,7 @@ class RemoteControl {
     };
 
     class O_T_UAV_04_CAS_F {
-        cost = 6000;
+        cost = 5000;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
@@ -166,7 +166,7 @@ class RemoteControl {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles"
         };
-        cost = 8000;
+        cost = 6000;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
