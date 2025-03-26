@@ -256,7 +256,7 @@ class FixedWing {
         };
     }; // "To-201 Shikra"
 
-    class O_Plane_Fighter_02_Standoff_F {
+    class O_Plane_Fighter_02_Remote_F {
         ammoOverrides[] = {
             {"Bomb_03_F", "ammo_kab250kr"}
         };
@@ -265,13 +265,14 @@ class FixedWing {
             "PylonMissile_Missile_KH58_INT_x1"
         };
         cost = 32000;
-        description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        description = "To-201 Shikra (Land Attack) is a variant of the To-201 Shikra armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
         hasHMD = 1;
+        hasRemoteBomb = 1;
         killReward = 1200;
-        name = "To-201 Shikra (Standoff)";
+        name = "To-201 Shikra (Land Attack)";
         rearm = 1200;
         requirements[] = {"A"};
         spawn = "O_Plane_Fighter_02_F";
@@ -294,20 +295,21 @@ class FixedWing {
 
     class O_Plane_Fighter_02_GPS_F {
         allowPylonMagazines[] = {
-            "PylonMissile_Missile_KH58_INT_x1",
-            "PylonMissile_Bomb_GBU12_x1"
+            "PylonMissile_Bomb_KAB250_x1",
+            "PylonMissile_Missile_KH58_INT_x1"
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", "Bomb_04_F_gps"}
+            {"Bomb_03_F", "ammo_kab250se"}
         };
         cost = 34000;
-        description = "To-201 Shikra (GPS Standoff) is a variant of the To-201 Shikra armed with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
+        hasGPSMunition = 1;
         hasHMD = 1;
         killReward = 1200;
-        name = "To-201 Shikra (GPS Standoff)";
+        name = "To-201 Shikra (Standoff)";
         rearm = 1200;
         requirements[] = {"A"};
         spawn = "O_Plane_Fighter_02_F";

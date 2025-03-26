@@ -12,7 +12,9 @@ class CfgVehicleClassName {
     disallowMagazines[] = array;     // CfgMagazine classes to disallow in the vehicle.
     flagOffset = array;              // when set, if the vehicle spawns a flag, its offset will use this.
     garbageCollect = number (0|1);   // Whether we manually delete the vehicle when it's destroyed. For buildables.
+    hasGPSMunition = number (0|1);   // Whether the vehicle has GPS munitions.
     hasHMD = number (0|1);           // Whether the vehicle supports the helmet mounted display system.
+    hasRemoteBomb = number (0|1);    // Whether the vehicle has remote munitions.
     hasScanner = number (0|1);       // Whether the vehicle has a scanner.
     killReward = number;             // CP reward for destroying the vehicle.
     loadable = array;                // when set, the vehicle can be loaded into a flatbed. The array is the offset.

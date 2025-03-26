@@ -87,6 +87,7 @@ class WLProjectilesConfig {
 
     class WLProjectile_TVGuidedBomb: WLProjectile {
         ammo[] = {
+            "ammo_gbu15",
             "ammo_kab250kr"
         };
         aps = 3;
@@ -95,7 +96,8 @@ class WLProjectilesConfig {
 
     class WLProjectile_GPSGuidedBomb: WLProjectile {
         ammo[] = {
-            "Bomb_04_F_gps"
+            "ammo_gbu12_gps",
+            "ammo_kab250se"
         };
         aps = 3;
         camera = 1;
