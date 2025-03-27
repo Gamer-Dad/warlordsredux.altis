@@ -86,15 +86,3 @@ class Header
 #include "config\customization.hpp"
 #include "config\tasks.hpp"
 #include "config\projectiles.hpp"
-
-class CfgUnitInsignia
-{
-	class InsigniaMrThomasM
-	{
-		displayName = "MrThomasM's Development";
-		author = "MrThomasM";
-		texture = "img\insignia_ca.paa";
-		material = "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\default_insignia.rvmat";
-		textureVehicle = "";
-	};
-};

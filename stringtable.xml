@@ -5113,7 +5113,7 @@
             <Chinese>要傳送，按住 %1，然後在左側選擇「快速旅行」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_5">
-            <Original>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</Original>
+            <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</English>
             <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</English>
             <Czech>Chcete-li upravit výbavu, podržte %1, vyberte vlevo „Výbava“ a poté zvolte „Přizpůsobení“.</Czech>
             <French>Pour personnaliser votre équipement, appuyez longuement sur %1, sélectionnez « Équipement » à gauche, puis choisissez « Personnalisation ».</French>
@@ -5121,7 +5121,7 @@
             <Italian>Per personalizzare il tuo equipaggiamento, tieni premuto %1, seleziona «Equipaggiamento» a sinistra, quindi scegli «Personalizzazione».</Italian>
             <Polish>Aby dostosować zestaw, przytrzymaj %1, wybierz po levé straně „Wyposażenie” i następnie „Dostosowanie”.</Polish>
             <Portuguese>Para personalizar seu equipamento, pressione e segure %1, selecione 'Equipamento' à esquerda, e depois 'Personalização'.</Portuguese>
-            <Russian>Чтобы изменить снаряжение, нажми и удерживай %1, выбери слева «Снаряжение», затем «Кастомизация».</Russian>
+            <Russian>Чтобы изменить снаряжение, нажми и удерживай %1, выбери слева «Снаряжение», затем «Арсенал» или «Кастомизация».</Russian>
             <Spanish>Para personalizar tu equipo, mantén presionado %1, selecciona 'Equipo' a la izquierda y luego 'Personalización'.</Spanish>
             <Turkish>Yüklemenizi özelleştirmek için, %1 tuşuna basılı tutun, sol taraftan 'Ekipman'ı seçin ve ardından 'Özelleştirme'yi seçin.</Turkish>
             <Korean>장비를 사용자 지정하려면, %1을(를) 길게 누르고 왼쪽에서 '장비'를 선택한 후 '사용자 지정'을 선택하세요.</Korean>
@@ -5198,15 +5198,15 @@
             <Chinese>要獲得擊殺獎勵的2倍金錢，滾動滑鼠，打開「設定」，並啟用「禁用第三人稱視角」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_10">
-            <Original>Join a squad or create your own for maximum teamwork.</Original>
-            <English>Join a squad or create your own for maximum teamwork.</English>
+            <Original>Join a squad or create your own for maximum teamwork. Scroll with mouse to access Squad menu.</Original>
+            <English>Join a squad or create your own for maximum teamwork. Scroll with mouse to access Squad menu.</English>
             <Czech>Připojte se k družině nebo si vytvořte vlastní pro maximální týmovou práci.</Czech>
             <French>Rejoignez une escouade ou créez la vôtre pour un travail d'équipe optimal.</French>
             <German>Schließe dich einem Team an oder erstelle dein eigenes für maximale Teamarbeit.</German>
             <Italian>Unisciti a uno squad o creane uno tuo per un lavoro di squadra ottimale.</Italian>
             <Polish>Dołącz do drużyny lub stwórz własną dla maksymalnej współpracy zespołowej.</Polish>
             <Portuguese>Junte-se a um esquadrão ou crie o seu para uma cooperação máxima.</Portuguese>
-            <Russian>Присоединись к отряду или создай свой для максимальной командной работы.</Russian>
+            <Russian>Присоедининись к отряду или создай свой, прокрутив колёсиком мышки и нажав на "Отряды", для максимальной командной работы.</Russian>
             <Spanish>Únete a un escuadrón o crea el tuyo para lograr el máximo trabajo en equipo.</Spanish>
             <Turkish>Maksimum takım çalışması için bir ekibe katılın veya kendi ekibinizi oluşturun.</Turkish>
             <Korean>최대 팀워크를 위해 분대에 가입하거나 직접 분대를 만드세요.</Korean>
