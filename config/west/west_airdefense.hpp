@@ -4,7 +4,7 @@ class AirDefense {
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -42,7 +42,7 @@ class AirDefense {
         killReward = 400;
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
     }; // "Praetorian 1C"
 
@@ -52,7 +52,7 @@ class AirDefense {
         cost = 5000;
         hasHMD = 1;
         killReward = 350;
-        rearm = 500;
+        rearm = 300;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -84,7 +84,7 @@ class AirDefense {
         killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
     }; // "MIM-145 Defender"
 
@@ -96,7 +96,7 @@ class AirDefense {
         hasHMD = 1;
         killReward = 600;
         name = "IFV-6X Puma";
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
         spawn = "B_APC_Tracked_01_AA_F";
         variant = 1;
@@ -128,7 +128,7 @@ class AirDefense {
         killReward = 500;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
     }; // "Mk49 Spartan"
 
@@ -139,7 +139,7 @@ class AirDefense {
         killReward = 600;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
     }; // "Mk21 Centurion"
 
@@ -151,7 +151,7 @@ class AirDefense {
         hasHMD = 1;
         killReward = 600;
         name = "IFV-6C Jaguar";
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
         spawn = "B_APC_Tracked_01_AA_F";
         variant = 1;

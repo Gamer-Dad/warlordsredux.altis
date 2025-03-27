@@ -4,7 +4,7 @@ class AirDefense {
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -43,7 +43,7 @@ class AirDefense {
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
         spawn = "B_AAA_System_01_F";
         textures[] = {
@@ -58,7 +58,7 @@ class AirDefense {
         cost = 5000;
         hasHMD = 1;
         killReward = 350;
-        rearm = 500;
+        rearm = 300;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -90,7 +90,7 @@ class AirDefense {
         killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
     };  // "S-750 Rhea"
 
@@ -102,7 +102,7 @@ class AirDefense {
         hasHMD = 1;
         killReward = 600;
         name = "ZSU-49 Euphrates";
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
         spawn = "O_APC_Tracked_02_AA_F";
         variant = 1;
@@ -135,7 +135,7 @@ class AirDefense {
         loadable[] = {0, -2, 0.8};
         name = "Mk49 Spartan";
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
         spawn = "B_SAM_System_01_F";
         textures[] = {
@@ -151,7 +151,7 @@ class AirDefense {
         loadable[] = {0, -2, 1};
         name = "Mk21 Centurion";
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
         spawn = "B_SAM_System_02_F";
         textures[] = {
@@ -167,7 +167,7 @@ class AirDefense {
         hasHMD = 1;
         killReward = 600;
         name = "ZSU-59 Yangtze";
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
         spawn = "O_APC_Tracked_02_AA_F";
         variant = 1;
