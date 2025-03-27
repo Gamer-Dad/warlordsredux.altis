@@ -147,19 +147,40 @@ class FixedWing {
     };
 
     class O_T_VTOL_02_infantry_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PG_missiles",
+            "PylonMissile_Missile_KH58_INT_x1"
+        };
+
         cost = 14000;
         hasHMD = 1;
         killReward = 600;
         rearm = 700;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher_Triples"
+            };
+            turret[] = { -1 };
+        };
     }; // "Y-32 Xi'an (Infantry Transport)"
 
     class O_Plane_Fighter_03_dynamicLoadout_F {
         cost = 15000;
-        description = "A-143 Buzzard is a light CAS aircraft.";
+        description = "A-143 Buzzard (CAS) is a light CAS aircraft.";
         hasHMD = 1;
         killReward = 600;
-        name = "A-143 Buzzard";
+        name = "A-143 Buzzard (CAS)";
         rearm = 900;
         requirements[] = {"A"};
         spawn = "I_Plane_Fighter_03_dynamicLoadout_F";
@@ -179,7 +200,7 @@ class FixedWing {
             removeWeapons[] = {};
             turret[] = { -1 };
         };
-    }; // "A-143 Buzzard"
+    };
 
     class O_Plane_CAS_02_dynamicLoadout_F {
         cost = 20000;

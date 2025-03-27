@@ -202,27 +202,6 @@ class FixedWing {
         };
     }; // "F/A-181 Black Wasp II"
 
-    class B_Plane_Fighter_01_Stealth_F {
-        allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1"
-        };
-        cost = 35000;
-        hasHMD = 1;
-        killReward = 1000;
-        rearm = 900;
-        requirements[] = {"A"};
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
-    }; // "F/A-181 Black Wasp II (Stealth)"
-
     class B_Plane_Fighter_01_Remote_F {
         ammoOverrides[] = {
             {"Bomb_04_F", "ammo_gbu15"}
@@ -255,6 +234,27 @@ class FixedWing {
         };
     };
 
+    class B_Plane_Fighter_01_Stealth_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_HARM_x1"
+        };
+        cost = 35000;
+        hasHMD = 1;
+        killReward = 1000;
+        rearm = 900;
+        requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
+    }; // "F/A-181 Black Wasp II (Stealth)"
+
     class B_Plane_Fighter_01_GPS_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
@@ -265,6 +265,7 @@ class FixedWing {
         };
         cost = 35000;
         description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        hasGPSMunition = 1;
         hasHMD = 1;
         killReward = 1200;
         name = "F/A-181 Black Wasp II (Standoff)";

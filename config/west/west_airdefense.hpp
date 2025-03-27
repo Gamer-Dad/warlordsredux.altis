@@ -50,6 +50,7 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        hasHMD = 1;
         killReward = 350;
         rearm = 500;
         requirements[] = {};
@@ -79,6 +80,7 @@ class AirDefense {
     class B_SAM_System_03_F {
         cost = 8000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
@@ -91,6 +93,7 @@ class AirDefense {
         capValue = 4;
         cost = 10000;
         description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
+        hasHMD = 1;
         killReward = 600;
         name = "IFV-6X Puma";
         rearm = 450;
@@ -121,6 +124,7 @@ class AirDefense {
     class B_SAM_System_01_F {
         cost = 10000;
         description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
@@ -131,6 +135,7 @@ class AirDefense {
     class B_SAM_System_02_F {
         cost = 15000;
         description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        hasHMD = 1;
         killReward = 600;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
@@ -143,6 +148,7 @@ class AirDefense {
         capValue = 4;
         cost = 17000;
         description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
+        hasHMD = 1;
         killReward = 600;
         name = "IFV-6C Jaguar";
         rearm = 600;

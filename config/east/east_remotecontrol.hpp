@@ -160,6 +160,15 @@ class RemoteControl {
             removeWeapons[] = {};
             turret[] = { -1 };
         };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "4Rnd_LG_Jian"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
     }; // "KH-3A Fenghuang"
 
     class O_UAV_02_dynamicLoadout_F {

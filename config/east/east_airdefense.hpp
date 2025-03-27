@@ -56,6 +56,7 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        hasHMD = 1;
         killReward = 350;
         rearm = 500;
         requirements[] = {};
@@ -85,6 +86,7 @@ class AirDefense {
     class O_SAM_System_04_F {
         cost = 8000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
@@ -97,6 +99,7 @@ class AirDefense {
         capValue = 4;
         cost = 10000;
         description = "ZSU-49 Euphrates is a variant of the ZSU-39 Tigris armed with Rhea missiles.";
+        hasHMD = 1;
         killReward = 600;
         name = "ZSU-49 Euphrates";
         rearm = 450;
@@ -127,6 +130,7 @@ class AirDefense {
     class O_SAM_System_01_F {
         cost = 10000;
         description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, -2, 0.8};
         name = "Mk49 Spartan";
@@ -142,6 +146,7 @@ class AirDefense {
     class O_SAM_System_02_F {
         cost = 15000;
         description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        hasHMD = 1;
         killReward = 600;
         loadable[] = {0, -2, 1};
         name = "Mk21 Centurion";
@@ -159,6 +164,7 @@ class AirDefense {
         capValue = 4;
         cost = 17000;
         description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with Mk21 Centurion missiles.";
+        hasHMD = 1;
         killReward = 600;
         name = "ZSU-59 Yangtze";
         rearm = 600;
