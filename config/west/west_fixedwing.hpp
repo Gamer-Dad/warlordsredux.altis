@@ -203,16 +203,17 @@ class FixedWing {
     }; // "F/A-181 Black Wasp II"
 
     class B_Plane_Fighter_01_Remote_F {
-        ammoOverrides[] = {
-            {"Bomb_04_F", "ammo_gbu15"}
-        };
         allowPylonMagazines[] = {
-            "PylonMissile_Bomb_GBU12_x1"
+            "PylonRack_Missile_HARM_x1",
+            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
         };
         cost = 32000;
         description = "F/A-181 Black Wasp II (Land Attack) is a variant of the F/A-181 Black Wasp II with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         disallowMagazines[] = {
-            "PylonMissile_Missile_KH58_x1"
+            "PylonMissile_Bomb_GBU12_x1"
         };
         hasHMD = 1;
         hasRemoteBomb = 1;
@@ -258,13 +259,16 @@ class FixedWing {
     class B_Plane_Fighter_01_GPS_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
-            "PylonMissile_Bomb_GBU12_x1"
+            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", "ammo_gbu12_gps"}
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
         };
         cost = 35000;
         description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        disallowMagazines[] = {
+            "PylonMissile_Bomb_GBU12_x1"
+        };
         hasGPSMunition = 1;
         hasHMD = 1;
         killReward = 1200;

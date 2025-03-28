@@ -255,7 +255,7 @@ class LightVehicles {
 
     class B_LSV_01_AT_TV_F {
         ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", "M_Spike"}
+            {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
         };
         capValue = 1;
         cost = 2000;

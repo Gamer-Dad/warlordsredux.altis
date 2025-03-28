@@ -266,7 +266,7 @@ class SectorDefense {
 
     class O_Mortar_01_TV_F {
         ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", "M_Lancet"}
+            {"M_127mm_Firefist_AT", {"M_Lancet", "Lancet (Loitering Munition)"}}
         };
         cost = 6000;
         demolishable = 1;

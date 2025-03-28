@@ -278,12 +278,12 @@ class FixedWing {
     }; // "To-201 Shikra"
 
     class O_Plane_Fighter_02_Remote_F {
-        ammoOverrides[] = {
-            {"Bomb_03_F", "ammo_kab250kr"}
-        };
         allowPylonMagazines[] = {
-            "PylonMissile_Bomb_KAB250_x1",
+            {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1"
+        };
+        ammoOverrides[] = {
+            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
         };
         cost = 32000;
         description = "To-201 Shikra (Land Attack) is a variant of the To-201 Shikra armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
@@ -316,11 +316,11 @@ class FixedWing {
 
     class O_Plane_Fighter_02_GPS_F {
         allowPylonMagazines[] = {
-            "PylonMissile_Bomb_KAB250_x1",
+            {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1"
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", "ammo_kab250se"}
+            {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
         };
         cost = 34000;
         description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";

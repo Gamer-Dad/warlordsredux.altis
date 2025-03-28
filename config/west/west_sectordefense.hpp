@@ -297,7 +297,7 @@ class SectorDefense {
 
     class B_Mortar_01_TV_F {
         ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", "M_Switchblade"}
+            {"M_127mm_Firefist_AT", {"M_Switchblade", "Switchblade (Loitering Munition)"}}
         };
         cost = 6000;
         demolishable = 1;

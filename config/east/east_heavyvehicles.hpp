@@ -316,7 +316,7 @@ class HeavyVehicles {
 
     class O_MBT_02_arty_tv_F {
         ammoOverrides[] = {
-            {"Sh_155mm_AMOS", "M_Krasnopol"}
+            {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (TV-Guided)"}}
         };
         aps = 1;
         capValue = 4;

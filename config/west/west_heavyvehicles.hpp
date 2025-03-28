@@ -353,7 +353,7 @@ class HeavyVehicles {
 
     class B_MBT_01_arty_tv_F {
         ammoOverrides[] = {
-            {"Sh_155mm_AMOS", "M_Excalibur"}
+            {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
         };
         aps = 1;
         capValue = 4;

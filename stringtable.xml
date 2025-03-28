@@ -5113,7 +5113,7 @@
             <Chinese>要傳送，按住 %1，然後在左側選擇「快速旅行」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_5">
-            <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</English>
+            <Original>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</Original>
             <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</English>
             <Czech>Chcete-li upravit výbavu, podržte %1, vyberte vlevo „Výbava“ a poté zvolte „Přizpůsobení“.</Czech>
             <French>Pour personnaliser votre équipement, appuyez longuement sur %1, sélectionnez « Équipement » à gauche, puis choisissez « Personnalisation ».</French>
