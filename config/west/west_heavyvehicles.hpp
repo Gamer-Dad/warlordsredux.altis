@@ -27,6 +27,44 @@ class HeavyVehicles {
         // };
     }; // "IFV-6c Panther"
 
+    class B_LT_01_AT_F {
+        aps = 1;
+        capValue = 3;
+        cost = 1500;
+        killReward = 240;
+        name = "AWC Nyx (AT)";
+        rearm = 300;
+        requirements[] = {};
+        spawn = "I_LT_01_AT_F";
+        textures[] = {
+            "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
+            "A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
+            "a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+            "A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_sand_CO.paa"
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles"
+            };
+            addWeapons[] = {
+                "missiles_Firefist"
+            };
+            reloadOverride = 10;
+            removeMagazines[] = {
+                "100Rnd_127x99_mag_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "HMG_127"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_APC_Tracked_01_CRV_F {
         aps = 2;
         capValue = 2;
@@ -161,37 +199,37 @@ class HeavyVehicles {
         };
     };
 
-    class B_AFV_Wheeled_01_export_cannon_F {
-        aps = 2;
-        capValue = 4;
-        cost = 3700;
-        description = "Rhino MGS-E is a variant of the Rhino MGS armed with a weaker 105mm cannon.";
-        killReward = 400;
-        name = "Rhino MGS-E";
-        rearm = 500;
-        requirements[] = {};
-        spawn = "B_AFV_Wheeled_01_up_cannon_F";
-        variant = 1;
+    // class B_AFV_Wheeled_01_export_cannon_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 3700;
+    //     description = "Rhino MGS-E is a variant of the Rhino MGS armed with a weaker 105mm cannon.";
+    //     killReward = 400;
+    //     name = "Rhino MGS-E";
+    //     rearm = 500;
+    //     requirements[] = {};
+    //     spawn = "B_AFV_Wheeled_01_up_cannon_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "40Rnd_105mm_APFSDS_T_Red"
-            };
-            addWeapons[] = {
-                "cannon_105mm"
-            };
-            removeMagazines[] = {
-                "12Rnd_120mm_APFSDS_shells_Tracer_Red",
-                "8Rnd_120mm_HE_shells_Tracer_Red",
-                "8Rnd_120mm_HEAT_MP_T_Red",
-                "4Rnd_120mm_LG_cannon_missiles"
-            };
-            removeWeapons[] = {
-                "cannon_120mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "40Rnd_105mm_APFSDS_T_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_105mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "12Rnd_120mm_APFSDS_shells_Tracer_Red",
+    //             "8Rnd_120mm_HE_shells_Tracer_Red",
+    //             "8Rnd_120mm_HEAT_MP_T_Red",
+    //             "4Rnd_120mm_LG_cannon_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "cannon_120mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_AFV_Wheeled_01_cannon_F {
         aps = 2;
@@ -248,9 +286,9 @@ class HeavyVehicles {
         requirements[] = {};
         spawn = "I_MBT_03_cannon_F";
         textures[] = {
-            "Img\camo\kuma01.jpg",
-            "Img\camo\kuma02.jpg",
-            "Img\camo\kuma03.jpg",
+            "src\img\camo\kuma01.jpg",
+            "src\img\camo\kuma02.jpg",
+            "src\img\camo\kuma03.jpg",
             "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
         };
     };
@@ -312,4 +350,52 @@ class HeavyVehicles {
         rearm = 1800;
         requirements[] = {};
     }; // "M5 Sandstorm MLRS"
+
+    class B_MBT_01_arty_tv_F {
+        ammoOverrides[] = {
+            {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 30000;
+        disallowMagazines[] = {
+            "2Rnd_155mm_Mo_guided",
+            "4Rnd_155mm_Mo_guided",
+            "2Rnd_155mm_Mo_LG",
+            "4Rnd_155mm_Mo_LG",
+            "6Rnd_155mm_Mo_mine",
+            "6Rnd_155mm_Mo_AT_mine",
+            "2Rnd_155mm_Mo_Cluster",
+            "6Rnd_155mm_Mo_smoke",
+            "2Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_LG_O",
+            "6Rnd_155mm_Mo_mine_O",
+            "6Rnd_155mm_Mo_AT_mine_O",
+            "2Rnd_155mm_Mo_Cluster_O",
+            "6Rnd_155mm_Mo_smoke_O"
+        };
+        killReward = 600;
+        name = "M4 Scorcher UP";
+        rearm = 1800;
+        requirements[] = {};
+        spawn = "B_MBT_01_arty_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "6Rnd_155mm_Mo_smoke",
+                "2Rnd_155mm_Mo_guided",
+                "4Rnd_155mm_Mo_guided",
+                "2Rnd_155mm_Mo_LG",
+                "6Rnd_155mm_Mo_mine",
+                "6Rnd_155mm_Mo_AT_mine",
+                "2Rnd_155mm_Mo_Cluster"
+            };
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
 };

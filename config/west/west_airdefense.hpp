@@ -4,7 +4,7 @@ class AirDefense {
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -42,52 +42,17 @@ class AirDefense {
         killReward = 400;
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
     }; // "Praetorian 1C"
-
-    class B_APC_Tracked_01_AA_E_F {
-        aps = 2;
-        capValue = 4;
-        cost = 4500;
-        description = "IFV-SAAMI Jaguar is a variant of the IFV-6a Cheetah armed with SAAMI missiles.";
-        killReward = 300;
-        name = "IFV-SAAMI Jaguar";
-        rearm = 450;
-        requirements[] = {};
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "missiles_SAAMI"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
 
     class B_APC_Tracked_01_AA_F {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        hasHMD = 1;
         killReward = 350;
-        rearm = 500;
+        rearm = 300;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -115,21 +80,23 @@ class AirDefense {
     class B_SAM_System_03_F {
         cost = 8000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
     }; // "MIM-145 Defender"
 
     class B_APC_Tracked_01_AA_UP_F {
         aps = 2;
         capValue = 4;
-        cost = 9000;
+        cost = 10000;
         description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
+        hasHMD = 1;
         killReward = 600;
         name = "IFV-6X Puma";
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
         spawn = "B_APC_Tracked_01_AA_F";
         variant = 1;
@@ -157,20 +124,56 @@ class AirDefense {
     class B_SAM_System_01_F {
         cost = 10000;
         description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
     }; // "Mk49 Spartan"
 
     class B_SAM_System_02_F {
         cost = 15000;
         description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        hasHMD = 1;
         killReward = 600;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
     }; // "Mk21 Centurion"
+
+    class B_APC_Tracked_01_AA_E_F {
+        aps = 2;
+        capValue = 4;
+        cost = 17000;
+        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
+        hasHMD = 1;
+        killReward = 600;
+        name = "IFV-6C Jaguar";
+        rearm = 360;
+        requirements[] = {};
+        spawn = "B_APC_Tracked_01_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "magazine_Missile_rim162_x8",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "weapon_rim162Launcher"
+            };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            turret[] = { 0 };
+        };
+    };
 };

@@ -102,7 +102,7 @@ class FixedWing {
 
     class B_T_VTOL_01_recon_F {
         cost = 3800;
-        description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar.";
+        description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
         hasAWACS = 1;
         hasHMD = 1;
         killReward = 300;
@@ -111,22 +111,28 @@ class FixedWing {
         spawn = "B_T_VTOL_01_infantry_F";
 
         class Pilot: WLTurretDefaults {
-            turret[] = { -1 };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher_Triples"
-            };
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher_Triples"
+            };
+            turret[] = { -1 };
+        };
+
+        class Copilot: WLTurretDefaults {
+            deviceJammer = 1;
+            turret[] = { 0 };
         };
     };
 
     class B_T_VTOL_01_armed_F {
         cost = 8000;
+        hasHMD = 1;
         killReward = 350;
         rearm = 500;
         requirements[] = {"A"};
@@ -134,6 +140,7 @@ class FixedWing {
 
     class B_Plane_CAS_01_dynamicLoadout_F {
         cost = 15000;
+        hasHMD = 1;
         killReward = 800;
         rearm = 900;
         requirements[] = {"A"};
@@ -158,6 +165,7 @@ class FixedWing {
         };
         cost = 23000;
         description = "A-149 Gryphon is a light multirole aircraft.";
+        hasHMD = 1;
         killReward = 600;
         name = "A-149 Gryphon";
         rearm = 900;
@@ -178,18 +186,86 @@ class FixedWing {
             "PylonRack_Missile_HARM_x1"
         };
         cost = 30000;
+        hasHMD = 1;
         killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
     }; // "F/A-181 Black Wasp II"
+
+    class B_Plane_Fighter_01_Remote_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_HARM_x1",
+            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+        };
+        cost = 32000;
+        description = "F/A-181 Black Wasp II (Land Attack) is a variant of the F/A-181 Black Wasp II with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        disallowMagazines[] = {
+            "PylonMissile_Bomb_GBU12_x1"
+        };
+        hasHMD = 1;
+        hasRemoteBomb = 1;
+        killReward = 1200;
+        name = "F/A-181 Black Wasp II (Land Attack)";
+        rearm = 1200;
+        requirements[] = {"A"};
+        spawn = "B_Plane_Fighter_01_F";
+        variant = 1;
+    };
 
     class B_Plane_Fighter_01_Stealth_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1"
         };
         cost = 35000;
+        hasHMD = 1;
         killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
     }; // "F/A-181 Black Wasp II (Stealth)"
+
+    class B_Plane_Fighter_01_GPS_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_HARM_x1",
+            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
+        };
+        cost = 35000;
+        description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        disallowMagazines[] = {
+            "PylonMissile_Bomb_GBU12_x1"
+        };
+        hasGPSMunition = 1;
+        hasHMD = 1;
+        killReward = 1200;
+        name = "F/A-181 Black Wasp II (Standoff)";
+        rearm = 1200;
+        requirements[] = {"A"};
+        spawn = "B_Plane_Fighter_01_F";
+        variant = 1;
+    };
 };

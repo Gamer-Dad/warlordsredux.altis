@@ -49,25 +49,9 @@ class Primary {
             };
         };
 
-        class ExtraAmmo: WLCAmmo {
-            name = "Extra Ammo";
-            magazines[] = {
-                { "30Rnd_65x39_caseless_mag", 9 },
-                { "1Rnd_HE_Grenade_shell", 3 }
-            };
-        };
-
-        class TracersExtraAmmo: WLCAmmo {
-            name = "Tracers, Extra Ammo";
-            magazines[] = {
-                { "30Rnd_65x39_caseless_mag_Tracer", 9 },
-                { "1Rnd_HE_Grenade_shell", 3 }
-            };
-        };
-
         class Grenadier: WLCAmmo {
-            name = "Extra Grenades";
-            level = 30;
+            name = "Grenadier";
+            level = 20;
             magazines[] = {
                 { "30Rnd_65x39_caseless_mag", 6 },
                 { "3Rnd_HE_Grenade_shell", 6 }
@@ -75,10 +59,46 @@ class Primary {
         };
 
         class TracersGrenadier: WLCAmmo {
-            name = "Tracers, Extra Grenades";
-            level = 31;
+            name = "Tracers, Grenadier";
+            level = 21;
             magazines[] = {
                 { "30Rnd_65x39_caseless_mag_Tracer", 6 },
+                { "3Rnd_HE_Grenade_shell", 6 }
+            };
+        };
+
+        class LargeMag: WLCAmmo {
+            name = "Large Magazine";
+            level = 22;
+            magazines[] = {
+                { "100Rnd_65x39_caseless_mag", 4 },
+                { "3Rnd_HE_Grenade_shell", 3 }
+            };
+        };
+
+        class TracersLargeMag: WLCAmmo {
+            name = "Tracers, Large Magazine";
+            level = 23;
+            magazines[] = {
+                { "100Rnd_65x39_caseless_mag", 4 },
+                { "3Rnd_HE_Grenade_shell", 3 }
+            };
+        };
+
+        class LargeMagGrenadier : WLCAmmo {
+            name = "Large Magazine, Grenadier";
+            level = 24;
+            magazines[] = {
+                { "100Rnd_65x39_caseless_mag", 2 },
+                { "3Rnd_HE_Grenade_shell", 6 }
+            };
+        };
+
+        class TracersLargeMagGrenadier : WLCAmmo {
+            name = "Tracers, Large Magazine, Grenadier";
+            level = 25;
+            magazines[] = {
+                { "100Rnd_65x39_caseless_mag", 2 },
                 { "3Rnd_HE_Grenade_shell", 6 }
             };
         };
@@ -621,6 +641,13 @@ class Primary {
 
         #include "west_optics.hpp"
 
+        class OpticARCOAK: WLCAttachment {
+            name = "ARCO AK";
+            attachments[] = {
+                "optic_Arco_AK_arid_F"
+            };
+        };
+
         attachments[] = {
             "acc_pointer_IR",
             "muzzle_snds_B"
@@ -743,10 +770,10 @@ class Primary {
         };
     };
 
-    // MX SW
-    class MX_SW {
-        name = "MX SW";
-        item = "arifle_MX_SW_F";
+    // Mk200
+    class Mk200 {
+        name = "Mk200";
+        item = "LMG_Mk200_black_F";
         level = 26;
         cost = 50;
 
@@ -754,7 +781,7 @@ class Primary {
             level = 26;
             name = "Standard";
             magazines[] = {
-                { "100Rnd_65x39_caseless_mag", 3 }
+                { "200Rnd_65x39_cased_Box", 3 }
             };
         };
 
@@ -762,7 +789,7 @@ class Primary {
             level = 27;
             name = "Tracers";
             magazines[] = {
-                { "100Rnd_65x39_caseless_mag_Tracer", 3 }
+                { "200Rnd_65x39_cased_Box_Tracer_Red", 3 }
             };
         };
 
@@ -770,7 +797,7 @@ class Primary {
             level = 28;
             name = "Extra Ammo";
             magazines[] = {
-                { "100Rnd_65x39_caseless_mag", 6 }
+                { "200Rnd_65x39_cased_Box", 6 }
             };
         };
 
@@ -778,7 +805,7 @@ class Primary {
             level = 29;
             name = "Tracers, Extra Ammo";
             magazines[] = {
-                { "100Rnd_65x39_caseless_mag_Tracer", 6 }
+                { "200Rnd_65x39_cased_Box_Tracer_Red", 6 }
             };
         };
 
@@ -786,7 +813,8 @@ class Primary {
 
         attachments[] = {
             "acc_pointer_IR",
-            "muzzle_snds_H"
+            "muzzle_snds_H",
+            "bipod_01_F_khk"
         };
     };
 
@@ -830,6 +858,13 @@ class Primary {
         };
 
         #include "west_optics.hpp"
+
+        class OpticARCOAK: WLCAttachment {
+            name = "ARCO AK";
+            attachments[] = {
+                "optic_Arco_AK_arid_F"
+            };
+        };
 
         attachments[] = {
             "acc_pointer_IR",

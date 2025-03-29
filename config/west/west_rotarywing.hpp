@@ -21,56 +21,56 @@ class RotaryWing {
         requirements[] = {"H"};
     }; // "CH-67 Huron"
 
-    class B_Heli_Transport_01_UP_F {
-        cost = 2000;
-        description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with 20mm autocannons.";
-        hasHMD = 1;
-        killReward = 200;
-        name = "UH-80 Ghost Hawk UP";
-        offset[] = {0, 11, 0};
-        rearm = 300;
-        requirements[] = {"H"};
-        spawn = "B_Heli_Transport_01_F";
-        variant = 1;
+    // class B_Heli_Transport_01_UP_F {
+    //     cost = 2000;
+    //     description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with 20mm autocannons.";
+    //     hasHMD = 1;
+    //     killReward = 200;
+    //     name = "UH-80 Ghost Hawk UP";
+    //     offset[] = {0, 11, 0};
+    //     rearm = 300;
+    //     requirements[] = {"H"};
+    //     spawn = "B_Heli_Transport_01_F";
+    //     variant = 1;
 
-        class LeftGunner: WLTurretDefaults {
-            addMagazines[] = {
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "gatling_30mm"
-            };
-            removeMagazines[] = {
-                "2000Rnd_65x39_Belt_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "LMG_Minigun_Transport"
-            };
-            turret[] = { 1 };
-        };
+    //     class LeftGunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "gatling_30mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "2000Rnd_65x39_Belt_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "LMG_Minigun_Transport"
+    //         };
+    //         turret[] = { 1 };
+    //     };
 
-        class RightGunner: WLTurretDefaults {
-            addMagazines[] = {
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "gatling_30mm"
-            };
-            removeMagazines[] = {
-                "2000Rnd_65x39_Belt_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "LMG_Minigun_Transport2"
-            };
-            turret[] = { 2 };
-        };
-    };
+    //     class RightGunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "gatling_30mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "2000Rnd_65x39_Belt_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "LMG_Minigun_Transport2"
+    //         };
+    //         turret[] = { 2 };
+    //     };
+    // };
 
     class B_Heli_Light_01_dynamicLoadout_F {
         cost = 2500;
@@ -149,9 +149,7 @@ class RotaryWing {
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "192Rnd_CMFlare_Chaff_Magazine"
-            };
+            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
@@ -163,48 +161,37 @@ class RotaryWing {
         };
     }; // "AH-99 Blackfoot"
 
-    // class B_Heli_Attack_01_sead_F {
-    //     allowPylonMagazines[] = {
-    //         "PylonMissile_1Rnd_AAA_missiles",
-    //         "PylonMissile_1Rnd_LG_scalpel",
-    //         "PylonRack_12Rnd_PG_missiles",
-    //         "PylonRack_12Rnd_missiles"
-    //     };
-    //     cost = 14000;
-    //     description = "AH-99 Blackfoot (SEAD)";
-    //     hasHMD = 1;
-    //     killReward = 550;
-    //     offset[] = {0, 10, 0};
-    //     rearm = 700;
-    //     requirements[] = {"H"};
-    //     spawn = "B_Heli_Attack_01_dynamicLoadout_F";
-    //     variant = 1;
-    //
-    //     class Pilot: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "192Rnd_CMFlare_Chaff_Magazine",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1",
-    //             "magazine_Missile_HARM_x1"
-    //         };
-    //         addWeapons[] = {
-    //             "CMFlareLauncher_Singles",
-    //             "weapon_HARMLauncher"
-    //         };
-    //         removeMagazines[] = {};
-    //         removeWeapons[] = {
-    //             "CMFlareLauncher"
-    //         };
-    //         turret[] = { -1 };
-    //     };
-    // };
+    class B_Heli_Attack_01_sead_F: B_Heli_Attack_01_dynamicLoadout_F {
+        cost = 18000;
+        description = "AH-99 Blackfoot Block II is a variant of the AH-99 Blackfoot with a powerful device jammer. Gunner seat must be player-operated.";
+        killReward = 650;
+        name = "AH-99 Blackfoot Block II";
+        spawn = "B_Heli_Attack_01_dynamicLoadout_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            deviceJammer = 1;
+            removeMagazines[] = {
+                "1000Rnd_20mm_shells"
+            };
+            removeWeapons[] = {
+                "gatling_20mm"
+            };
+            turret[] = { 0 };
+        };
+    };
 };

@@ -1,4 +1,14 @@
 class RemoteControl {
+    class RuggedTerminal_01_communications_F {
+        cost = 50;
+        demolishable = 1;
+        killReward = 25;
+        loadable[] = { 0, 0, 0 };
+        name = "Ground Support Terminal";
+        offset[] = {0, 3, 0};
+        requirements[] = {};
+    };
+
     class B_UGV_02_Demining_F {
         cost = 100;
         killReward = 100;
@@ -37,70 +47,70 @@ class RemoteControl {
         requirements[] = {};
     }; // "AR-6"
 
-    class B_UAV_01_UP_F {
-        cost = 1200;
-        description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
-        hasHMD = 1;
-        killReward = 200;
-        name = "AR-2 Darter UP";
-        offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "B_UAV_01_F";
-        variant = 1;
+    // class B_UAV_01_UP_F {
+    //     cost = 1200;
+    //     description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
+    //     hasHMD = 1;
+    //     killReward = 200;
+    //     name = "AR-2 Darter UP";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "B_UAV_01_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            turret[] = { 0 };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            addMagazines[] = {
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
-            };
-            addWeapons[] = {
-                "SMG_01_F"
-            };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         turret[] = { 0 };
+    //         removeMagazines[] = {};
+    //         removeWeapons[] = {};
+    //         addMagazines[] = {
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
+    //         };
+    //         addWeapons[] = {
+    //             "SMG_01_F"
+    //         };
+    //     };
+    // };
 
-    class B_UGV_01_rcws_UP_F {
-        cost = 1200;
-        description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
-        killReward = 300;
-        name = "UGV Stomper UP";
-        offset[] = {0, 5, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "B_UGV_01_rcws_F";
-        variant = 1;
+    // class B_UGV_01_rcws_UP_F {
+    //     cost = 1200;
+    //     description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
+    //     killReward = 300;
+    //     name = "UGV Stomper UP";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "B_UGV_01_rcws_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            turret[] = { 0 };
-            removeMagazines[] = {
-                "96Rnd_40mm_G_belt"
-            };
-            removeWeapons[] = {
-                "GMG_40mm"
-            };
-            addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells"
-            };
-            addWeapons[] = {
-                "cannon_20mm"
-            };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         turret[] = { 0 };
+    //         removeMagazines[] = {
+    //             "96Rnd_40mm_G_belt"
+    //         };
+    //         removeWeapons[] = {
+    //             "GMG_40mm"
+    //         };
+    //         addMagazines[] = {
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "60Rnd_20mm_AP_shells"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_20mm"
+    //         };
+    //     };
+    // };
 
     class B_UAV_02_recon_F {
         cost = 2000;
@@ -122,20 +132,20 @@ class RemoteControl {
         killReward = 400;
         name = "MQ-4R Greyhawk (Recon)";
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
         spawn = "B_UAV_02_dynamicLoadout_F";
-    }; // "Greyhawk"
+    };
 
     class B_UAV_02_dynamicLoadout_F {
-        cost = 8000;
+        cost = 6000;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
     }; // "Greyhawk"
 
     class B_T_UAV_03_dynamicLoadout_F {
-        cost = 11000;
+        cost = 8000;
         hasHMD = 1;
         killReward = 600;
         rearm = 600;
@@ -155,7 +165,7 @@ class RemoteControl {
     }; // "Falcon"
 
     class B_UAV_05_F {
-        cost = 22500;
+        cost = 15000;
         killReward = 650;
         rearm = 500;
         requirements[] = {"A"};

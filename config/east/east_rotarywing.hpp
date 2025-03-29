@@ -56,23 +56,23 @@ class RotaryWing {
     //     };
     // };
 
-    class O_Heli_Transport_02_AWACS_F {
-        cost = 3800;
-        description = "CH-49 Mohawk (AWACS) is a variant of the CH-49 Mohawk with a powerful air radar.";
-        hasAWACS = 1;
-        hasHMD = 1;
-        killReward = 300;
-        name = "CH-49 Mohawk (AWACS)";
-        offset[] = {0, 10, 0};
-        requirements[] = {"H"};
-        spawn = "I_Heli_Transport_02_F";
-        textures[] = {
-            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
-            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
-            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
-            "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
-        };
-    };
+    // class O_Heli_Transport_02_AWACS_F {
+    //     cost = 3800;
+    //     description = "CH-49 Mohawk (AWACS) is a variant of the CH-49 Mohawk with a powerful air radar.";
+    //     hasAWACS = 1;
+    //     hasHMD = 1;
+    //     killReward = 300;
+    //     name = "CH-49 Mohawk (AWACS)";
+    //     offset[] = {0, 10, 0};
+    //     requirements[] = {"H"};
+    //     spawn = "I_Heli_Transport_02_F";
+    //     textures[] = {
+    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
+    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
+    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
+    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
+    //     };
+    // };
 
     class O_Heli_Light_02_dynamicLoadout_F {
         cost = 4000;
@@ -101,7 +101,9 @@ class RotaryWing {
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = { };
+            removeMagazines[] = {
+                "192Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -109,58 +111,42 @@ class RotaryWing {
         };
     }; // "Mi-48 Kajman"
 
-    // class O_Heli_Attack_02_sead_F {
-    //     cost = 12000;
-    //     disallowMagazines[] = {
-    //         "PylonMissile_1Rnd_LG_scalpel",
-    //         "PylonRack_3Rnd_LG_scalpel",
-    //         "PylonRack_4Rnd_LG_scalpel",
-    //         "PylonWeapon_300Rnd_20mm_shells",
-    //         "PylonRack_20Rnd_Rocket_03_HE_F",
-    //         "PylonRack_20Rnd_Rocket_03_AP_F",
-    //         "PylonRack_19Rnd_Rocket_Skyfire",
-    //         "PylonRack_1Rnd_Missile_AA_03_F",
-    //         "PylonRack_1Rnd_Missile_AGM_01_F",
-    //         "PylonMissile_1Rnd_Bomb_03_F",
-    //         "PylonMissile_1Rnd_BombCluster_02_F"
-    //     };
-    //     hasHMD = 1;
-    //     killReward = 550;
-    //     name = "Mi-48 Kajman (SEAD)";
-    //     offset[] = {0, 11, 0};
-    //     rearm = 700;
-    //     requirements[] = {"H"};
-    //     spawn = "O_Heli_Attack_02_dynamicLoadout_F";
-    //     variant = 1;
-    //
-    //     class Pilot: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "240Rnd_CMFlare_Chaff_Magazine",
-    //             "240Rnd_CMFlare_Chaff_Magazine",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1",
-    //             "magazine_Missile_KH58_x1"
-    //         };
-    //         addWeapons[] = {
-    //             "CMFlareLauncher_Singles",
-    //             "weapon_KH58Launcher"
-    //         };
-    //         removeMagazines[] = {
-    //             "192Rnd_CMFlare_Chaff_Magazine"
-    //         };
-    //         removeWeapons[] = {
-    //             "CMFlareLauncher"
-    //         };
-    //         turret[] = { -1 };
-    //     };
-    // };
+    class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
+        cost = 15000;
+        description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with a powerful device jammer. Gunner seat must be player-operated.";
+        killReward = 650;
+        name = "Mi-55 Kajman-M";
+        spawn = "O_Heli_Attack_02_dynamicLoadout_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "192Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            deviceJammer = 1;
+            removeMagazines[] = {
+                "250Rnd_30mm_APDS_shells_Tracer_Green",
+                "250Rnd_30mm_HE_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "gatling_30mm"
+            };
+            turret[] = { 0 };
+        };
+    };
 };

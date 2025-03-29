@@ -6,7 +6,7 @@ class Launcher {
         cost = 15;
 
         class Double: WLCAmmo {
-            name = "1x RPG";
+            name = "2x RPG";
             level = 3;
             cost = 15;
             magazines[] = {

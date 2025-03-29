@@ -4,7 +4,7 @@ class AirDefense {
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -43,7 +43,7 @@ class AirDefense {
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};
-        rearm = 300;
+        rearm = 180;
         requirements[] = {};
         spawn = "B_AAA_System_01_F";
         textures[] = {
@@ -52,48 +52,13 @@ class AirDefense {
         };
     };
 
-    class O_APC_Tracked_02_AA_E_F {
-        aps = 2;
-        capValue = 4;
-        cost = 4500;
-        description = "ZSU-38 Yangtze is a variant of the ZSU-39 Tigris armed with SAAMI missiles.";
-        killReward = 600;
-        name = "ZSU-38 Yangtze";
-        rearm = 450;
-        requirements[] = {};
-        spawn = "O_APC_Tracked_02_AA_F";
-        variant = 1;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "missiles_SAAMI"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles_O",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
-
     class O_APC_Tracked_02_AA_F {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        hasHMD = 1;
         killReward = 350;
-        rearm = 500;
+        rearm = 300;
         requirements[] = {};
 
         class Gunner: WLTurretDefaults {
@@ -121,21 +86,23 @@ class AirDefense {
     class O_SAM_System_04_F {
         cost = 8000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
     };  // "S-750 Rhea"
 
     class O_APC_Tracked_02_AA_M_F {
         aps = 2;
         capValue = 4;
-        cost = 9000;
+        cost = 10000;
         description = "ZSU-49 Euphrates is a variant of the ZSU-39 Tigris armed with Rhea missiles.";
+        hasHMD = 1;
         killReward = 600;
         name = "ZSU-49 Euphrates";
-        rearm = 450;
+        rearm = 270;
         requirements[] = {};
         spawn = "O_APC_Tracked_02_AA_F";
         variant = 1;
@@ -163,11 +130,12 @@ class AirDefense {
     class O_SAM_System_01_F {
         cost = 10000;
         description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        hasHMD = 1;
         killReward = 500;
         loadable[] = {0, -2, 0.8};
         name = "Mk49 Spartan";
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
         spawn = "B_SAM_System_01_F";
         textures[] = {
@@ -178,15 +146,50 @@ class AirDefense {
     class O_SAM_System_02_F {
         cost = 15000;
         description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        hasHMD = 1;
         killReward = 600;
         loadable[] = {0, -2, 1};
         name = "Mk21 Centurion";
         offset[] = {0, 5.3, 0};
-        rearm = 600;
+        rearm = 360;
         requirements[] = {};
         spawn = "B_SAM_System_02_F";
         textures[] = {
             "A3\Static_F_Jets\SAM_System_02\Data\SAM_system_02_olive_co.paa"
+        };
+    };
+
+    class O_APC_Tracked_02_AA_E_F {
+        aps = 2;
+        capValue = 4;
+        cost = 17000;
+        description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with Mk21 Centurion missiles.";
+        hasHMD = 1;
+        killReward = 600;
+        name = "ZSU-59 Yangtze";
+        rearm = 360;
+        requirements[] = {};
+        spawn = "O_APC_Tracked_02_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "magazine_Missile_rim162_x8",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "weapon_rim162Launcher"
+            };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            turret[] = { 0 };
         };
     };
 };

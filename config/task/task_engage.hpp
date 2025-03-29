@@ -26,6 +26,20 @@ class TaskEngageFive: WLTaskEngage {
     };
 };
 
+class TaskEngageRevive: WLTaskEngage {
+    name = $STR_WLT_taskEngageReviveName;
+    description = $STR_WLT_taskEngageReviveDesc;
+    prerequisites[] = {
+        "TaskEngageFive"
+    };
+    reward = 10000;
+
+    class ReviveTracker: WLProgressTracker {
+        id = "Revives";
+        threshold = 10;
+    };
+};
+
 class TaskEngageThirty: WLTaskEngage {
     name = $STR_WLT_taskEngageThirtyName;
     description = $STR_WLT_taskEngageThirtyDesc;

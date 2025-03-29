@@ -1,16 +1,17 @@
-#include "core\warlords_constants.inc"
-#include "ui\defines.hpp"
-#include "ui\controls.hpp"
-#include "scripts\WLM\ui\WLM_pylons.hpp"
-#include "scripts\SQD\squadMenu.hpp"
+#include "src\core\warlords_constants.inc"
+#include "src\ui\defines.hpp"
+#include "src\ui\controls.hpp"
+#include "src\scripts\WLM\ui\WLM_pylons.hpp"
+#include "src\scripts\SQD\squadMenu.hpp"
 
-onLoadName = "Warlords Redux 2.6.9";
+onLoadName = "Warlords Redux 2.6.10";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
 zeusCompositionScriptLevel = 2;
-adminIDs[] = {"76561198034106257", "76561198049721952", "76561197960667971"};
+adminIDs[] = {"76561198034106257", "76561198049721952", "76561197960667971", "76561198025492474"};
 pollstersIDs[] = {"76561198025492474"};
+spectatorIDs[] = {"76561198034106257"};
 
 //Settings
 respawn = 3;
@@ -69,30 +70,20 @@ class Header
 	maxPlayers = 128;
 };
 
-#include "mp_securityCommands.hpp"
-#include "mp_securityFunctions.hpp"
-#include "functions.hpp"
+#include "src\mp_securityCommands.hpp"
+#include "src\mp_securityFunctions.hpp"
+#include "src\functions.hpp"
 
-#include "configs.hpp"
-#include "titles.hpp"
+#include "src\configs.hpp"
+#include "src\titles.hpp"
+#include "src\sounds.hpp"
+#include "src\briefings.hpp"
+
+#include "src\scripts\DIS\ui.hpp"
+#include "src\scripts\POLL\ui.hpp"
+#include "src\scripts\WLC\ui.hpp"
+
 #include "requisitions.hpp"
-#include "sounds.hpp"
-#include "briefings.hpp"
-
-#include "scripts\POLL\ui.hpp"
-#include "scripts\WLC\ui.hpp"
 #include "config\customization.hpp"
 #include "config\tasks.hpp"
 #include "config\projectiles.hpp"
-
-class CfgUnitInsignia
-{
-	class InsigniaMrThomasM
-	{
-		displayName = "MrThomasM's Development";
-		author = "MrThomasM";
-		texture = "img\insignia_ca.paa";
-		material = "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\default_insignia.rvmat";
-		textureVehicle = "";
-	};
-};

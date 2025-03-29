@@ -1,4 +1,14 @@
 class RemoteControl {
+    class RuggedTerminal_01_communications_F {
+        cost = 50;
+        demolishable = 1;
+        killReward = 25;
+        loadable[] = { 0, 0, 0 };
+        name = "Ground Support Terminal";
+        offset[] = {0, 3, 0};
+        requirements[] = {};
+    };
+
     class O_UGV_02_Demining_F {
         cost = 100;
         killReward = 100;
@@ -37,70 +47,70 @@ class RemoteControl {
         requirements[] = {};
     };  // "AR-6"
 
-    class O_UAV_01_UP_F {
-        cost = 1200;
-        description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
-        hasHMD = 1;
-        killReward = 200;
-        name = "AR-2 Darter UP";
-        offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "O_UAV_01_F";
-        variant = 1;
+    // class O_UAV_01_UP_F {
+    //     cost = 1200;
+    //     description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
+    //     hasHMD = 1;
+    //     killReward = 200;
+    //     name = "AR-2 Darter UP";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "O_UAV_01_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
-                "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
-            };
-            addWeapons[] = {
-                "SMG_01_F"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow",
+    //             "30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow"
+    //         };
+    //         addWeapons[] = {
+    //             "SMG_01_F"
+    //         };
+    //         removeMagazines[] = {};
+    //         removeWeapons[] = {};
+    //         turret[] = { 0 };
+    //     };
+    // };
 
-    class O_UGV_01_rcws_up_F {
-        cost = 1200;
-        description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
-        killReward = 300;
-        name = "UGV Stomper UP";
-        offset[] = {0, 5, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "O_UGV_01_rcws_F";
-        variant = 1;
+    // class O_UGV_01_rcws_up_F {
+    //     cost = 1200;
+    //     description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
+    //     killReward = 300;
+    //     name = "UGV Stomper UP";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "O_UGV_01_rcws_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells"
-            };
-            addWeapons[] = {
-                "cannon_20mm"
-            };
-            removeMagazines[] = {
-                "96Rnd_40mm_G_belt"
-            };
-            removeWeapons[] = {
-                "GMG_40mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "60Rnd_20mm_AP_shells"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_20mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "96Rnd_40mm_G_belt"
+    //         };
+    //         removeWeapons[] = {
+    //             "GMG_40mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_UAV_02_recon_F {
         cost = 2000;
@@ -128,16 +138,16 @@ class RemoteControl {
         killReward = 400;
         name = "K40R (Recon)";
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
         spawn = "O_UAV_02_dynamicLoadout_F";
     };
 
     class O_T_UAV_04_CAS_F {
-        cost = 6000;
+        cost = 5000;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -150,17 +160,26 @@ class RemoteControl {
             removeWeapons[] = {};
             turret[] = { -1 };
         };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "4Rnd_LG_Jian"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
     }; // "KH-3A Fenghuang"
 
     class O_UAV_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles"
         };
-        cost = 8000;
+        cost = 6000;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
     }; // "K40 Ababil-3"
 
     // class B_Ship_MRLS_01_F {
