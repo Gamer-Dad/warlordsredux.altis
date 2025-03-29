@@ -223,16 +223,6 @@ class FixedWing {
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
         variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
     };
 
     class B_Plane_Fighter_01_Stealth_F {
@@ -277,15 +267,5 @@ class FixedWing {
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
         variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
     };
 };

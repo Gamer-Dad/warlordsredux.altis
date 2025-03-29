@@ -300,9 +300,7 @@ class FixedWing {
         variant = 1;
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
+            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
@@ -337,9 +335,7 @@ class FixedWing {
         variant = 1;
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
+            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
