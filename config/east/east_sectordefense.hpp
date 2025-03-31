@@ -23,6 +23,14 @@ class SectorDefense {
         requirements[] = {};
     };  // "Tank barrier"
 
+    class Land_GuardTower_01_F {
+        cost = 50;
+        demolishable = 1;
+        killReward = 30;
+        offset[] = {0, 3, 0};
+        requirements[] = {};
+    };  // "Guard Tower"
+
     class Land_HBarrier_5_F {
         cost = 50;
         demolishable = 1;
