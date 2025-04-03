@@ -36,7 +36,7 @@ class WLProjectilesConfig {
             "M_70mm_SAAMI",                     // SAAMI
             "M_Zephyr",                         // Zephyr
             "M_Titan_AA",                       // Titan AA
-            "M_Titan_AA_static"                 // Titan AA (Static)
+            "M_Titan_AA_static",                // Titan AA (Static)
             "M_Titan_AA_long"                   // Titan AA (Long)
         };
         aps = 3;
