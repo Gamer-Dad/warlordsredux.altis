@@ -34,7 +34,10 @@ class WLProjectilesConfig {
             "ammo_Missile_s750",                // Rhea
             "ammo_Missile_mim145",              // Defender
             "M_70mm_SAAMI",                     // SAAMI
-            "M_Zephyr"                          // Zephyr
+            "M_Zephyr",                         // Zephyr
+            "M_Titan_AA",                       // Titan AA
+            "M_Titan_AA_static"                 // Titan AA (Static)
+            "M_Titan_AA_long"                   // Titan AA (Long)
         };
         aps = 3;
         camera = 1;
@@ -112,6 +115,16 @@ class WLProjectilesConfig {
         aps = 2;
         consumption = 1;
         tv = 1;
+    };
+
+    class WLProjectile_ExtendedSAM: WLProjectile {
+        ammo[] = {
+            "M_SM6",
+            "M_HHQ9"
+        };
+        aps = 3;
+        camera = 1;
+        esam = 1;
     };
 
     class WLProjectile_MediumGuided: WLProjectile {

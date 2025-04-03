@@ -4346,8 +4346,8 @@
             <Chinese>为车辆加油</Chinese>
         </Key>
         <Key ID="STR_WLT_taskRefuelVehicleDesc">
-            <Original>Find a refuel point (refuel vehicle/pod/crate or a gas station) and refuel a vehicle.</Original>
-            <English>Find a refuel point (refuel vehicle/pod/crate or a gas station) and refuel a vehicle.</English>
+            <Original>Find a refuel point (refuel vehicle/pod/crate) and refuel a vehicle.</Original>
+            <English>Find a refuel point (refuel vehicle/pod/crate) and refuel a vehicle.</English>
             <Czech>Najděte bod pro doplnění paliva (doplnění vozidla/podu/krabice nebo čerpací stanici) a doplňte palivo do vozidla.</Czech>
             <French>Trouvez un point de ravitaillement (ravitailler le véhicule/pod/caisson ou une station-service) et ravitaillez un véhicule.</French>
             <German>Finden Sie einen Tankpunkt (Fahrzeug/pod/Truhe auftanken oder eine Tankstelle) und tanken Sie das Fahrzeug auf.</German>

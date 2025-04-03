@@ -49,7 +49,6 @@ class TaskResetVehicle: WLTaskTutorialServicing {
 class TaskRefuelVehicle: WLTaskTutorialServicing {
     name = $STR_WLT_taskRefuelVehicleName;
     description = $STR_WLT_taskRefuelVehicleDesc;
-    onStart = "addMissionEventHandler ['Service', {['TaskRefuelVehicle'] call WLT_fnc_taskComplete;}];";
     prerequisites[] = {
         "TaskResetVehicle"
     };

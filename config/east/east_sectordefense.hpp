@@ -47,6 +47,14 @@ class SectorDefense {
         requirements[] = {};
     }; // "H-barrier wall"
 
+    class Land_HBarrierTower_F {
+        cost = 70;
+        demolishable = 1;
+        killReward = 30;
+        offset[] = {0, 5, 0};
+        requirements[] = {};
+    }; // "Guard Tower (H-barrier)"
+
     class CamoNet_OPFOR_big_F {
         cost = 100;
         demolishable = 1;
