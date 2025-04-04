@@ -81,7 +81,8 @@ class RotaryWing {
 
     class B_Heli_Light_01_hmd_F {
         allowPylonMagazines[] = {
-            "PylonRack_3Rnd_LG_scalpel"
+            "PylonRack_3Rnd_LG_scalpel",
+            "PylonRack_19Rnd_Rocket_Skyfire"
         };
         cost = 4000;
         description = "AH-9 Pawnee Block II is a variant of the AH-9 Pawnee with advanced avionics.";

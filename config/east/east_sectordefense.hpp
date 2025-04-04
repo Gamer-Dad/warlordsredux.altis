@@ -27,7 +27,7 @@ class SectorDefense {
         cost = 50;
         demolishable = 1;
         killReward = 30;
-        offset[] = {0, 3, 0};
+        offset[] = {0, 8, 0};
         requirements[] = {};
     };  // "Guard Tower"
 
@@ -51,7 +51,7 @@ class SectorDefense {
         cost = 70;
         demolishable = 1;
         killReward = 30;
-        offset[] = {0, 5, 0};
+        offset[] = {0, 7, 0};
         requirements[] = {};
     }; // "Guard Tower (H-barrier)"
 
