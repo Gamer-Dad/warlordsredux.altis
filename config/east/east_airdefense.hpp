@@ -83,6 +83,22 @@ class AirDefense {
         };
     }; // "ZSU-39 Tigris"
 
+    class O_SAM_System_01_F {
+        cost = 6500;
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        hasHMD = 1;
+        killReward = 500;
+        loadable[] = {0, -2, 0.8};
+        name = "Mk49 Spartan";
+        offset[] = {0, 5.3, 0};
+        rearm = 360;
+        requirements[] = {};
+        spawn = "B_SAM_System_01_F";
+        textures[] = {
+            "A3\Static_F_Jets\SAM_System_01\Data\SAM_system_01_olive_co.paa"
+        };
+    };
+
     class O_SAM_System_04_F {
         cost = 8000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
@@ -124,22 +140,6 @@ class AirDefense {
                 "autocannon_35mm"
             };
             turret[] = { 0 };
-        };
-    };
-
-    class O_SAM_System_01_F {
-        cost = 10000;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
-        hasHMD = 1;
-        killReward = 500;
-        loadable[] = {0, -2, 0.8};
-        name = "Mk49 Spartan";
-        offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
-        spawn = "B_SAM_System_01_F";
-        textures[] = {
-            "A3\Static_F_Jets\SAM_System_01\Data\SAM_system_01_olive_co.paa"
         };
     };
 

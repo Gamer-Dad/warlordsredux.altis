@@ -77,6 +77,17 @@ class AirDefense {
         };
     }; // "IFV-6a Cheetah"
 
+    class B_SAM_System_01_F {
+        cost = 6500;
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        hasHMD = 1;
+        killReward = 500;
+        loadable[] = {0, -2, 0.8};
+        offset[] = {0, 5.3, 0};
+        rearm = 360;
+        requirements[] = {};
+    }; // "Mk49 Spartan"
+
     class B_SAM_System_03_F {
         cost = 8000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
@@ -120,17 +131,6 @@ class AirDefense {
             turret[] = { 0 };
         };
     };
-
-    class B_SAM_System_01_F {
-        cost = 10000;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
-        hasHMD = 1;
-        killReward = 500;
-        loadable[] = {0, -2, 0.8};
-        offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
-    }; // "Mk49 Spartan"
 
     class B_SAM_System_02_F {
         cost = 15000;
