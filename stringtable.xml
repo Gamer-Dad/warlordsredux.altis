@@ -392,7 +392,6 @@
             <Chinesesimp>%1已删除。</Chinesesimp>
             <Chinese>%1已删除。</Chinese>
         </Key>
-        </Key>
         <Key ID="STR_A3_WL_info_asset_map_deletion">
             <Original>Alt-Shift-click to %1delete%2%3%4.</Original>
             <English>Alt-Shift-click to %1delete%2%3%4.</English>
@@ -1510,7 +1509,7 @@
             <Polish>Zastosuj wybraną konfigurację do pojazdu. OSTRZEŻENIE: MOŻE TO USUNĄĆ WSZYSTKĄ AMUNICJĘ.</Polish>
             <Portuguese>Aplicar a configuração selecionada no veículo. AVISO: ISTO PODE REMOVER TODA A MUNIÇÃO.</Portuguese>
             <Russian>Примените выбранную конфигурацию к транспортному средству. ВНИМАНИЕ: ЭТО МОЖЕТ УДАЛИТЬ ВСЕ БОЕПРИПАСЫ.</Russian>
-            <Spanish>Aplica la configuración seleccionada al vehículo. ADVERTENCIA: ESTO PUEDE ELIMINAR TODA LA MUNICI&Oacute;N.</Spanish>
+            <Spanish>Aplica la configuración seleccionada al vehículo. ADVERTENCIA: ESTO PUEDE ELIMINAR TODA LA MUNICIÓN.</Spanish>
             <Turkish>Seçilen yapılandırmayı araca uygulayın. UYARI: TÜM MÜHİMMATI KALDIRABİLİR.</Turkish>
             <Korean>선택한 구성을 차량에 적용하십시오. 경고: 이 작업은 모든 탄약을 제거할 수 있습니다.</Korean>
             <Japanese>選択した設定を車両に適用します。 警告： これにより、すべての弾薬が削除される可能性があります。</Japanese>
