@@ -52,6 +52,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
+        sam = 1;
     };
 
     class WLProjectile_SEAD: WLProjectile {
