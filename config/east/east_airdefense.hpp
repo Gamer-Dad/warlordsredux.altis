@@ -50,6 +50,22 @@ class AirDefense {
             "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
             "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
         };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "5000Rnd_762x51_Yellow_Belt"
+            };
+            addWeapons[] = {
+                "M134_minigun"
+            };
+            removeMagazines[] = {
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            removeWeapons[] = {
+                "weapon_Cannon_Phalanx"
+            };
+            turret[] = { 0 };
+        };
     };
 
     class O_APC_Tracked_02_AA_F {
@@ -190,6 +206,34 @@ class AirDefense {
                 "autocannon_35mm"
             };
             turret[] = { 0 };
+        };
+    };
+
+    class O_SAM_System_LRAA_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_Cruise_01", {"M_HHQ9", "HHQ-9 Surface-to-Air Missile"}}
+        };
+        cost = 42000;
+        description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.";
+        disallowMagazines[] = {
+            "magazine_Missiles_Cruise_01_Cluster_x18"
+        };
+        hasESAM = 1;
+        hasHMD = 1;
+        killReward = 1200;
+        name = "HHQ-9 Vertical Launch System";
+        rearm = 2700;
+        requirements[] = {};
+        spawn = "B_Ship_MRLS_01_F";
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "magazine_Missiles_Cruise_01_Cluster_x18"
+            };
+            removeWeapons[] = {};
         };
     };
 };

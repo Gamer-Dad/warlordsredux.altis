@@ -44,6 +44,22 @@ class AirDefense {
         offset[] = {0, 5.3, 0};
         rearm = 180;
         requirements[] = {};
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "5000Rnd_762x51_Yellow_Belt"
+            };
+            addWeapons[] = {
+                "M134_minigun"
+            };
+            removeMagazines[] = {
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            removeWeapons[] = {
+                "weapon_Cannon_Phalanx"
+            };
+            turret[] = { 0 };
+        };
     }; // "Praetorian 1C"
 
     class B_APC_Tracked_01_AA_F {
@@ -174,6 +190,34 @@ class AirDefense {
                 "autocannon_35mm"
             };
             turret[] = { 0 };
+        };
+    };
+
+    class B_SAM_System_LRAA_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_Cruise_01", {"M_SM6", "Standard Missile 6 Block II"}}
+        };
+        cost = 42000;
+        description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.";
+        disallowMagazines[] = {
+            "magazine_Missiles_Cruise_01_Cluster_x18"
+        };
+        hasESAM = 1;
+        hasHMD = 1;
+        killReward = 1200;
+        name = "RIM-174 Standard ERAM";
+        rearm = 2700;
+        requirements[] = {};
+        spawn = "B_Ship_MRLS_01_F";
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            turret[] = { 0 };
+            removeMagazines[] = {
+                "magazine_Missiles_Cruise_01_Cluster_x18"
+            };
+            removeWeapons[] = {};
         };
     };
 };

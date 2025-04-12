@@ -260,7 +260,7 @@ class LightVehicles {
         capValue = 1;
         cost = 2000;
         description = "Prowler (Spike AT) is a variant of the Prowler AT.";
-        killReward = 250;
+        killReward = 480;
         name = "Prowler (Spike AT)";
         offset[] = {0, 5, 0};
         rearm = 200;
