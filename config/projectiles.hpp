@@ -62,7 +62,7 @@ class WLProjectilesConfig {
         };
         aps = 1;
         camera = 1;
-        consumption = 3;
+        consumption = 4;
         dazzleable = 1;
         sead = 1;
     };
@@ -73,7 +73,7 @@ class WLProjectilesConfig {
             "M_Switchblade"
         };
         aps = 0;
-        consumption = 1;
+        consumption = 3;
         speed = 200;
         tv = 1;
     };
