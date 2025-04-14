@@ -27,6 +27,47 @@ class AirDefense {
         };
     }; // "Static Titan Launcher (AA) [NATO]"
 
+    class B_static_AA_UP_F {
+        cost = 800;
+        demolishable = 1;
+        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
+        disallowMagazines[] = {
+            "4Rnd_GAA_missiles",
+            "5Rnd_GAT_missiles",
+            "2Rnd_GAT_missiles",
+            "2Rnd_GAT_missiles_O"
+        };
+        killReward = 200;
+        loadable[] = {0, -2.5, 0.2};
+        name = "Static AA Launcher (UP)";
+        offset[] = {0, 3, 0};
+        rearm = 300;
+        requirements[] = {};
+        spawn = "B_static_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O"
+            };
+            addWeapons[] = {
+                "missiles_titan"
+            };
+            reloadOverride = 6;
+            removeMagazines[] = {
+                "1Rnd_GAT_missiles"
+            };
+            removeWeapons[] = {
+                "missiles_titan_static"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_Radar_System_01_F {
         cost = 1000;
         description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
@@ -35,32 +76,6 @@ class AirDefense {
         offset[] = {0, 7, 0};
         requirements[] = {};
     }; // "AN/MPQ-105 Radar"
-
-    class B_AAA_System_01_F {
-        cost = 3500;
-        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
-        killReward = 400;
-        loadable[] = {0, -1, 1.7};
-        offset[] = {0, 5.3, 0};
-        rearm = 180;
-        requirements[] = {};
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "5000Rnd_762x51_Yellow_Belt"
-            };
-            addWeapons[] = {
-                "M134_minigun"
-            };
-            removeMagazines[] = {
-                "magazine_Cannon_Phalanx_x1550"
-            };
-            removeWeapons[] = {
-                "weapon_Cannon_Phalanx"
-            };
-            turret[] = { 0 };
-        };
-    }; // "Praetorian 1C"
 
     class B_APC_Tracked_01_AA_F {
         aps = 2;
