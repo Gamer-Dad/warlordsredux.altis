@@ -80,7 +80,7 @@ class HeavyVehicles {
     class O_APC_Tracked_02_recon_F {
         aps = 2;
         capValue = 1;
-        cost = 2700;
+        cost = 2200;
         description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
         hasHMD = 1;
         hasScanner = 1;

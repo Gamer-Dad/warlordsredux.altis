@@ -74,36 +74,10 @@ class HeavyVehicles {
         requirements[] = {};
     }; // "CRV-6e Bobcat"
 
-    class B_APC_tracked_03_cannon_F {
-        aps = 2;
-        capValue = 4;
-        cost = 2500;
-        killReward = 400;
-        name = "FV-720 Mora";
-        rearm = 500;
-        requirements[] = {};
-        spawn = "I_APC_tracked_03_cannon_F";
-        textures[] = {
-            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
-            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
-            "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
-            "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
-        };
-    };
-
-    class B_APC_Wheeled_01_cannon_F {
-        aps = 2;
-        capValue = 3;
-        cost = 2700;
-        killReward = 300;
-        rearm = 500;
-        requirements[] = {};
-    }; // "AMV-7 Marshall"
-
     class B_APC_Wheeled_01_recon_F {
         aps = 2;
         capValue = 1;
-        cost = 2700;
+        cost = 2200;
         description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
         hasHMD = 1;
         hasScanner = 1;
@@ -130,6 +104,32 @@ class HeavyVehicles {
             turret[] = { 0 };
         };
     };
+
+    class B_APC_tracked_03_cannon_F {
+        aps = 2;
+        capValue = 4;
+        cost = 2500;
+        killReward = 400;
+        name = "FV-720 Mora";
+        rearm = 500;
+        requirements[] = {};
+        spawn = "I_APC_tracked_03_cannon_F";
+        textures[] = {
+            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
+            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
+            "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+            "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
+        };
+    };
+
+    class B_APC_Wheeled_01_cannon_F {
+        aps = 2;
+        capValue = 3;
+        cost = 2700;
+        killReward = 300;
+        rearm = 500;
+        requirements[] = {};
+    }; // "AMV-7 Marshall"
 
     class B_APC_Wheeled_03_cannon_F {
         aps = 2;
