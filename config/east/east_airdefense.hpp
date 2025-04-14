@@ -27,6 +27,47 @@ class AirDefense {
         };
     };  // "Static Titan Launcher (AA) [CSAT]"
 
+    class O_static_AA_UP_F {
+        cost = 800;
+        demolishable = 1;
+        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
+        disallowMagazines[] = {
+            "4Rnd_GAA_missiles",
+            "5Rnd_GAT_missiles",
+            "2Rnd_GAT_missiles",
+            "2Rnd_GAT_missiles_O"
+        };
+        killReward = 200;
+        loadable[] = {0, -2.5, 0.2};
+        name = "Static AA Launcher (UP)";
+        offset[] = {0, 3, 0};
+        rearm = 300;
+        requirements[] = {};
+        spawn = "O_static_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O"
+            };
+            addWeapons[] = {
+                "missiles_titan"
+            };
+            reloadOverride = 6;
+            removeMagazines[] = {
+                "1Rnd_GAT_missiles"
+            };
+            removeWeapons[] = {
+                "missiles_titan_static"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class O_Radar_System_02_F {
         cost = 1000;
         description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
@@ -35,38 +76,6 @@ class AirDefense {
         offset[] = {0, 7, 0};
         requirements[] = {};
     };  // "R-750 Cronus Radar"
-
-    class O_AAA_System_01_F {
-        cost = 3500;
-        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
-        killReward = 400;
-        loadable[] = {0, -1, 1.7};
-        name = "Praetorian 1C";
-        offset[] = {0, 5.3, 0};
-        rearm = 180;
-        requirements[] = {};
-        spawn = "B_AAA_System_01_F";
-        textures[] = {
-            "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
-            "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
-        };
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "5000Rnd_762x51_Yellow_Belt"
-            };
-            addWeapons[] = {
-                "M134_minigun"
-            };
-            removeMagazines[] = {
-                "magazine_Cannon_Phalanx_x1550"
-            };
-            removeWeapons[] = {
-                "weapon_Cannon_Phalanx"
-            };
-            turret[] = { 0 };
-        };
-    };
 
     class O_APC_Tracked_02_AA_F {
         aps = 2;

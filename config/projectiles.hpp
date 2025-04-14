@@ -33,26 +33,46 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162",              // Centurion
             "ammo_Missile_s750",                // Rhea
             "ammo_Missile_mim145",              // Defender
-            "M_70mm_SAAMI",                     // SAAMI
-            "M_Zephyr",                         // Zephyr
-            "M_Titan_AA",                       // Titan AA
-            "M_Titan_AA_static",                // Titan AA (Static)
-            "M_Titan_AA_long"                   // Titan AA (Long)
+            "M_70mm_SAAMI"                      // SAAMI
         };
         aps = 3;
         camera = 1;
         sam = 1;
     };
 
-    class WLProjectile_A2A: WLProjectile {
+    class WLProjectile_MANPAD: WLProjectile {
         ammo[] = {
-            "ammo_Missile_AMRAAM_C",
-            "ammo_Missile_AMRAAM_D",
-            "ammo_Missile_AA_R77"
+            "M_Titan_AA",                       // Titan AA
+            "M_Titan_AA_static"                 // Titan AA (Static)
         };
         aps = 3;
         camera = 1;
         sam = 1;
+        speed = 1.5;
+    };
+
+
+    class WLProjectile_MANPAD_Heavy: WLProjectile {
+        ammo[] = {
+            "M_Titan_AA_long"                   // Titan AA (Long)
+        };
+        aps = 3;
+        camera = 1;
+        sam = 1;
+        speed = 2.5;
+    };
+
+    class WLProjectile_A2A: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_AMRAAM_C",            // AMRAAM C
+            "ammo_Missile_AMRAAM_D",            // AMRAAM D
+            "ammo_Missile_AA_R77",              // R-77
+            "M_Zephyr"                          // Zephyr
+        };
+        aps = 3;
+        camera = 1;
+        sam = 1;
+        speed = 3;
     };
 
     class WLProjectile_SEAD: WLProjectile {
