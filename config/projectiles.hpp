@@ -27,6 +27,22 @@ class WLProjectilesConfig {
         dazzleable = 1;
     };
 
+    // class WLProjectiles_Arty: WLProjectile {
+    //     ammo[] = {
+    //         "Sh_82mm_AMOS",                     // 82mm HE
+    //         "Sh_82mm_AMOS_guided",              // 82mm Guided
+    //         "Sh_82mm_AMOS_LG",                  // 82mm Laser Guided
+    //         "Sh_155mm_AMOS",                    // 155mm HE
+    //         "Sh_155mm_AMOS_guided",             // 155mm Guided
+    //         "Sh_155mm_AMOS_LG",                 // 155mm Laser Guided
+    //         "ammo_ShipCannon_120mm_HE",         // 120mm HE
+    //         "ammo_ShipCannon_120mm_HE_guided",  // 120mm Guided
+    //         "ammo_ShipCannon_120mm_HE_LG"       // 120mm Laser Guided
+    //     };
+    //     aps = 3;
+    //     cram = 1;
+    // };
+
     class WLProjectile_SAM: WLProjectile {
         ammo[] = {
             "ammo_Missile_rim116",              // Spartan
