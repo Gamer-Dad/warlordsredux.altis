@@ -77,6 +77,22 @@ class AirDefense {
         requirements[] = {};
     };  // "R-750 Cronus Radar"
 
+    class O_AAA_System_01_F {
+        cost = 3500;
+        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
+        killReward = 400;
+        loadable[] = {0, -1, 1.7};
+        name = "Praetorian 1C";
+        offset[] = {0, 5.3, 0};
+        rearm = 180;
+        requirements[] = {};
+        spawn = "B_AAA_System_01_F";
+        textures[] = {
+            "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
+            "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
+        };
+    };
+
     class O_APC_Tracked_02_AA_F {
         aps = 2;
         capValue = 4;

@@ -272,38 +272,38 @@ class SectorDefense {
         requirements[] = {};
     };
 
-    class O_AAA_System_01_F {
-        cost = 3500;
-        description = "Short range anti-mortar defense, capable of automatically engaging incoming ballistic shells. Effective range: 3km.";
-        killReward = 400;
-        loadable[] = {0, -1, 1.7};
-        name = "Praetorian 1C";
-        offset[] = {0, 5.3, 0};
-        rearm = 180;
-        requirements[] = {};
-        spawn = "B_AAA_System_01_F";
-        textures[] = {
-            "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
-            "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
-        };
-        variant = 1;
+    // class O_AAA_System_01_F {
+    //     cost = 3500;
+    //     description = "Short range anti-mortar defense, capable of automatically engaging incoming ballistic shells. Effective range: 3km.";
+    //     killReward = 400;
+    //     loadable[] = {0, -1, 1.7};
+    //     name = "Praetorian 1C";
+    //     offset[] = {0, 5.3, 0};
+    //     rearm = 180;
+    //     requirements[] = {};
+    //     spawn = "B_AAA_System_01_F";
+    //     textures[] = {
+    //         "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
+    //         "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
+    //     };
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "5000Rnd_762x51_Yellow_Belt"
-            };
-            addWeapons[] = {
-                "M134_minigun"
-            };
-            removeMagazines[] = {
-                "magazine_Cannon_Phalanx_x1550"
-            };
-            removeWeapons[] = {
-                "weapon_Cannon_Phalanx"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "5000Rnd_762x51_Yellow_Belt"
+    //         };
+    //         addWeapons[] = {
+    //             "M134_minigun"
+    //         };
+    //         removeMagazines[] = {
+    //             "magazine_Cannon_Phalanx_x1550"
+    //         };
+    //         removeWeapons[] = {
+    //             "weapon_Cannon_Phalanx"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_Mortar_01_F {
         cost = 4000;

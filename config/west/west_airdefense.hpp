@@ -77,6 +77,16 @@ class AirDefense {
         requirements[] = {};
     }; // "AN/MPQ-105 Radar"
 
+    class B_AAA_System_01_F {
+        cost = 3500;
+        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
+        killReward = 400;
+        loadable[] = {0, -1, 1.7};
+        offset[] = {0, 5.3, 0};
+        rearm = 180;
+        requirements[] = {};
+    }; // "Praetorian 1C"
+
     class B_APC_Tracked_01_AA_F {
         aps = 2;
         capValue = 4;
