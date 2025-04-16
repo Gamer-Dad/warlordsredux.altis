@@ -284,7 +284,7 @@ class HeavyVehicles {
     //     requirements[] = {};
     // }; // "T-100 Futura"
 
-    class I_Truck_02_MRL_F {
+    class O_Truck_02_MRL_F {
         aps = 1;
         capValue = 4;
         cost = 18000;
@@ -292,14 +292,16 @@ class HeavyVehicles {
             "12Rnd_230mm_rockets_cluster"
         };
         killReward = 600;
+        name = "Zamak MRL";
         rearm = 1800;
         requirements[] = {};
+        spawn = "I_Truck_02_MRL_F";
         textures[] = {
             "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
             "\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
             "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
         };
-    }; // "Zamak MRL"
+    };
 
     class O_MBT_02_arty_F {
         aps = 1;
