@@ -1,67 +1,30 @@
 class Gear {
-    class Box_NATO_Ammo_F {
-        cost = 50;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Basic Ammo [NATO]"
+    class B_supplyCrate_launchers_F {
+        container[] = {
+            { "launch_O_Vorona_brown_F", 2 },
+            { "launch_MRAWS_olive_F", 2 },
+            { "launch_O_Titan_F", 2 },
+            { "launch_O_Titan_short_F", 2 },
 
-    class Box_NATO_Grenades_F {
-        cost = 50;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Grenades [NATO]"
+            { "MRAWS_HEAT_F", 8 },
+            { "MRAWS_HE_F", 2 },
+            { "Titan_AA", 8 },
+            { "Titan_AP", 2 },
+            { "Titan_AT", 8 },
+            { "Vorona_HE", 2 },
+            { "Vorona_HEAT", 8 },
 
-    class Box_NATO_Wps_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Basic Weapons [NATO]"
-
-    class Box_NATO_Equip_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Equipment [NATO]"
-
-    class Box_NATO_Uniforms_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Uniforms [NATO]"
-
-    class Box_NATO_AmmoOrd_F {
-        cost = 150;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Explosives [NATO]"
-
-    class Box_NATO_WpsLaunch_F {
+            { "B_FieldPack_ocamo", 5 }
+        };
         cost = 200;
-        killReward = 40;
+        demolishable = 1;
+        killReward = 200;
         loadable[] = { 0, 0, 0 };
+        name = "NATO Supply Crate";
         offset[] = { 0, 3, 0};
+        spawn = "CargoNet_01_box_F";
         requirements[] = {};
-    }; // "Launchers [NATO]"
-
-    class Box_NATO_WpsSpecial_F {
-        cost = 250;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Special Weapons [NATO]"
+    };
 
     class Box_NATO_AmmoVeh_F {
         cost = 250;
@@ -77,14 +40,6 @@ class Gear {
         loadable[] = { 0, 0, 0 };
         requirements[] = {};
     }; // "Huron Fuel Container"
-
-    class B_supplyCrate_F {
-        cost = 300;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Supply Box [NATO]"
 
     class B_Slingload_01_Ammo_F {
         cost = 500;
