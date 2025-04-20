@@ -1,4 +1,43 @@
 class HeavyVehicles {
+    class O_APC_Wheeled_02_spandrel_F {
+        aps = 2;
+        capValue = 2;
+        cost = 900;
+        killReward = 300;
+        name = "MSE-3 Marid (ATGM)";
+        spawn = "O_APC_Wheeled_02_rcws_v2_F";
+        rearm = 180;
+        requirements[] = {};
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "SmokeLauncherMag"
+            };
+            addWeapons[] = {
+                "missiles_Vorona"
+            };
+            reloadOverride = 0.5;
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt",
+                "200Rnd_127x99_mag_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "HMG_127_APC",
+                "GMG_40mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class O_APC_Wheeled_02_rcws_v2_F {
         aps = 2;
         capValue = 2;
@@ -8,44 +47,44 @@ class HeavyVehicles {
         requirements[] = {};
     }; // "MSE-3 Marid"
 
-    class O_LT_01_AT_F {
-        aps = 1;
-        capValue = 3;
-        cost = 1500;
-        killReward = 240;
-        name = "AWC Nyx (AT)";
-        rearm = 300;
-        requirements[] = {};
-        spawn = "I_LT_01_AT_F";
-        textures[] = {
-            "src\img\camo\nyx01.jpg",
-            "src\img\camo\nyx02.jpg",
-            "a3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
-            "A3\Armor_F\Data\cage_csat_green_CO.paa"
-        };
+    // class O_LT_01_AT_F {
+    //     aps = 1;
+    //     capValue = 3;
+    //     cost = 1500;
+    //     killReward = 240;
+    //     name = "AWC Nyx (AT)";
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "I_LT_01_AT_F";
+    //     textures[] = {
+    //         "src\img\camo\nyx01.jpg",
+    //         "src\img\camo\nyx02.jpg",
+    //         "a3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+    //         "A3\Armor_F\Data\cage_csat_green_CO.paa"
+    //     };
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            reloadOverride = 10;
-            removeMagazines[] = {
-                "100Rnd_127x99_mag_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "HMG_127",
-                "missiles_Firefist"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         reloadOverride = 10;
+    //         removeMagazines[] = {
+    //             "100Rnd_127x99_mag_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "HMG_127",
+    //             "missiles_Firefist"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class O_APC_Wheeled_02_rcws_v2_m_F {
     //     aps = 2;
@@ -178,36 +217,36 @@ class HeavyVehicles {
         };
     };
 
-    // class O_MBT_02_cannon_export_F {
-    //     aps = 3;
-    //     capValue = 4;
-    //     cost = 5500;
-    //     description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
-    //     killReward = 500;
-    //     name = "T-100E Badger";
-    //     rearm = 600;
-    //     requirements[] = {};
-    //     spawn = "O_MBT_02_cannon_F";
-    //     variant = 1;
+    class O_MBT_02_cannon_export_F {
+        aps = 3;
+        capValue = 4;
+        cost = 5500;
+        description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
+        killReward = 500;
+        name = "T-100E Badger";
+        rearm = 600;
+        requirements[] = {};
+        spawn = "O_MBT_02_cannon_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "40Rnd_105mm_APFSDS"
-    //         };
-    //         addWeapons[] = {
-    //             "cannon_105mm"
-    //         };
-    //         removeMagazines[] = {
-    //             "16Rnd_125mm_APFSDS_T_Green",
-    //             "12Rnd_125mm_HE_T_Green",
-    //             "12Rnd_125mm_HEAT_T_Green"
-    //         };
-    //         removeWeapons[] = {
-    //             "cannon_125mm"
-    //         };
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "40Rnd_105mm_APFSDS"
+            };
+            addWeapons[] = {
+                "cannon_105mm"
+            };
+            removeMagazines[] = {
+                "16Rnd_125mm_APFSDS_T_Green",
+                "12Rnd_125mm_HE_T_Green",
+                "12Rnd_125mm_HEAT_T_Green"
+            };
+            removeWeapons[] = {
+                "cannon_125mm"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     class O_MBT_02_cannon_F {
         aps = 3;

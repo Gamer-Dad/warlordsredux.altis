@@ -166,39 +166,39 @@ class LightVehicles {
         requirements[] = {};
     }; // "Tempest Repair"
 
-    class O_LSV_02_AT_M_F {
-        capValue = 1;
-        cost = 1100;
-        description = "Qilin (AT-M) is a variant of the Qilin armed with a Firefist AT missile launcher.";
-        killReward = 220;
-        name = "Qilin (AT-M)";
-        offset[] = {0, 5, 0};
-        rearm = 200;
-        requirements[] = {};
-        spawn = "O_LSV_02_AT_F";
-        variant = 1;
+    // class O_LSV_02_AT_M_F {
+    //     capValue = 1;
+    //     cost = 1100;
+    //     description = "Qilin (AT-M) is a variant of the Qilin armed with a Firefist AT missile launcher.";
+    //     killReward = 220;
+    //     name = "Qilin (AT-M)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 200;
+    //     requirements[] = {};
+    //     spawn = "O_LSV_02_AT_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            reloadOverride = 6;
-            removeMagazines[] = {
-                "Vorona_HEAT"
-            };
-            removeWeapons[] = {
-                "missiles_Vorona"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         reloadOverride = 6;
+    //         removeMagazines[] = {
+    //             "Vorona_HEAT"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_Vorona"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_MRAP_02_gmg_F {
         aps = 1;
@@ -209,41 +209,41 @@ class LightVehicles {
         requirements[] = {};
     }; // "Ifrit GMG"
 
-    class O_MRAP_02_gmg_m_F {
-        aps = 2;
-        capValue = 2;
-        cost = 1500;
-        description = "Ifrit-M is a variant of the Ifrit armed with a 20mm autocannon.";
-        killReward = 300;
-        name = "Ifrit-M Autocannon";
-        rearm = 300;
-        requirements[] = {};
-        spawn = "O_MRAP_02_gmg_F";
-        variant = 1;
+    // class O_MRAP_02_gmg_m_F {
+    //     aps = 2;
+    //     capValue = 2;
+    //     cost = 1500;
+    //     description = "Ifrit-M is a variant of the Ifrit armed with a 20mm autocannon.";
+    //     killReward = 300;
+    //     name = "Ifrit-M Autocannon";
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "O_MRAP_02_gmg_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells",
-                "200Rnd_338_Mag",
-                "200Rnd_338_Mag"
-            };
-            addWeapons[] = {
-                "cannon_20mm",
-                "MMG_02_coax"
-            };
-            removeMagazines[] = {
-                "96Rnd_40mm_G_belt"
-            };
-            removeWeapons[] = {
-                "GMG_40mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "200Rnd_338_Mag",
+    //             "200Rnd_338_Mag"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_20mm",
+    //             "MMG_02_coax"
+    //         };
+    //         removeMagazines[] = {
+    //             "96Rnd_40mm_G_belt"
+    //         };
+    //         removeWeapons[] = {
+    //             "GMG_40mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_Truck_03_device_F {
         aps = 4;

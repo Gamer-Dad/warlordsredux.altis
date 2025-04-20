@@ -109,7 +109,7 @@ class WLProjectilesConfig {
             "M_Switchblade"
         };
         aps = 0;
-        consumption = 3;
+        consumption = 2;
         speed = 200;
         tv = 1;
     };
@@ -119,7 +119,7 @@ class WLProjectilesConfig {
             "M_Spike"
         };
         aps = 1;
-        consumption = 3;
+        consumption = 2;
         dazzleable = 1;
         speed = 125;
         tv = 1;

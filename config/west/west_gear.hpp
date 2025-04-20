@@ -1,5 +1,5 @@
 class Gear {
-    class B_supplyCrate_launchers_F {
+    class B_crate_F {
         container[] = {
             { "launch_O_Vorona_brown_F", 2 },
             { "launch_MRAWS_olive_F", 2 },
@@ -22,7 +22,7 @@ class Gear {
         loadable[] = { 0, 0, 0 };
         name = "NATO Supply Crate";
         offset[] = { 0, 3, 0};
-        spawn = "CargoNet_01_box_F";
+        spawn = "VirtualReammoBox_camonet_F";
         requirements[] = {};
     };
 

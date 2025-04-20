@@ -258,7 +258,7 @@ class LightVehicles {
             {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
         };
         capValue = 1;
-        cost = 2000;
+        cost = 3000;
         description = "Prowler (Spike AT) is a variant of the Prowler AT.";
         killReward = 480;
         name = "Prowler (Spike AT)";
