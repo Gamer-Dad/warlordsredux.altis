@@ -28,6 +28,37 @@ class RotaryWing {
         requirements[] = {"H"};
     }; // "PO-30 Orca (Unarmed)"
 
+    class O_Heli_Transport_02_F {
+        cost = 500;
+        hasHMD = 1;
+        killReward = 120;
+        name = "CH-49 Mohawk";
+        offset[] = {0, 10, 0};
+        requirements[] = {"H"};
+        spawn = "I_Heli_Transport_02_F";
+        textures[] = {
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
+        };
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
+
     // class O_Heli_Transport_04_recon_F {
     //     cost = 2500;
     //     description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a powerful scanner.";
@@ -53,24 +84,6 @@ class RotaryWing {
     //             "CMFlareLauncher"
     //         };
     //         turret[] = { -1 };
-    //     };
-    // };
-
-    // class O_Heli_Transport_02_AWACS_F {
-    //     cost = 3800;
-    //     description = "CH-49 Mohawk (AWACS) is a variant of the CH-49 Mohawk with a powerful air radar.";
-    //     hasAWACS = 1;
-    //     hasHMD = 1;
-    //     killReward = 300;
-    //     name = "CH-49 Mohawk (AWACS)";
-    //     offset[] = {0, 10, 0};
-    //     requirements[] = {"H"};
-    //     spawn = "I_Heli_Transport_02_F";
-    //     textures[] = {
-    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
-    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
-    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
-    //         "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
     //     };
     // };
 
@@ -109,44 +122,48 @@ class RotaryWing {
             };
             turret[] = { -1 };
         };
-    }; // "Mi-48 Kajman"
-
-    class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
-        cost = 15000;
-        description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with a powerful device jammer. Gunner seat must be player-operated.";
-        killReward = 650;
-        name = "Mi-55 Kajman-M";
-        spawn = "O_Heli_Attack_02_dynamicLoadout_F";
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {
-                "192Rnd_CMFlare_Chaff_Magazine"
-            };
-            removeWeapons[] = {
-                "CMFlareLauncher"
-            };
-            turret[] = { -1 };
-        };
-
         class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {};
             deviceJammer = 1;
-            removeMagazines[] = {
-                "250Rnd_30mm_APDS_shells_Tracer_Green",
-                "250Rnd_30mm_HE_shells_Tracer_Green"
-            };
-            removeWeapons[] = {
-                "gatling_30mm"
-            };
             turret[] = { 0 };
         };
-    };
+    }; // "Mi-48 Kajman"
+
+    // class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
+    //     cost = 15000;
+    //     description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with a powerful device jammer. Gunner seat must be player-operated.";
+    //     killReward = 650;
+    //     name = "Mi-55 Kajman-M";
+    //     spawn = "O_Heli_Attack_02_dynamicLoadout_F";
+    //     variant = 1;
+
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "240Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         addWeapons[] = {
+    //             "CMFlareLauncher_Singles"
+    //         };
+    //         removeMagazines[] = {
+    //             "192Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         removeWeapons[] = {
+    //             "CMFlareLauncher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {};
+    //         addWeapons[] = {};
+    //         deviceJammer = 1;
+    //         removeMagazines[] = {
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green",
+    //             "250Rnd_30mm_HE_shells_Tracer_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "gatling_30mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 };

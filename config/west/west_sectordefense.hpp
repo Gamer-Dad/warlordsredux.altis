@@ -331,7 +331,7 @@ class SectorDefense {
     // }; // "Praetorian 1C"
 
     class B_Mortar_01_F {
-        cost = 4000;
+        cost = 5000;
         demolishable = 1;
         killReward = 125;
         loadable[] = {0, -2.5, 0};

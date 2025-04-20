@@ -151,7 +151,6 @@ class FixedWing {
             "PylonRack_12Rnd_PG_missiles",
             "PylonMissile_Missile_KH58_INT_x1"
         };
-
         cost = 14000;
         hasHMD = 1;
         killReward = 600;

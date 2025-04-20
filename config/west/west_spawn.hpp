@@ -20,9 +20,9 @@ class Spawn {
         cost = 500;
         demolishable = 1;
         killReward = 1000;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = { 0, -2, 0 };
         name = "Forward Base Supplies";
-        spawn = "VirtualReammoBox_camonet_F";
+        spawn = "RuggedTerminal_01_F";
     };
 
     class RuggedTerminal_01_communications_hub_F {

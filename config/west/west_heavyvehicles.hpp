@@ -271,12 +271,31 @@ class HeavyVehicles {
         killReward = 500;
         rearm = 600;
         requirements[] = {};
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball"
+            };
+            addWeapons[] = {
+                "HMG_NSVT"
+            };
+            removeMagazines[] = {
+                "200Rnd_762x51_Belt_Red"
+            };
+            removeWeapons[] = {
+                "LMG_coax"
+            };
+            turret[] = { 0 };
+        };
     }; // "M2A1 Slammer UP"
 
     class B_MBT_03_cannon_F {
         aps = 3;
         capValue = 4;
-        cost = 8000;
+        cost = 10000;
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
