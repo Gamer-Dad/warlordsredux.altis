@@ -64,7 +64,7 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         sam = 1;
-        speed = 1.5;
+        speed = 1.25;
     };
 
 
@@ -75,7 +75,7 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         sam = 1;
-        speed = 2;
+        speed = 1.5;
     };
 
     class WLProjectile_A2A: WLProjectile {
