@@ -110,7 +110,7 @@ class WLProjectilesConfig {
         };
         aps = 0;
         consumption = 2;
-        speed = 200;
+        speed = 150;
         tv = 1;
     };
 
