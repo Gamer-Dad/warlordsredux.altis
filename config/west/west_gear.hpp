@@ -14,7 +14,17 @@ class Gear {
             { "Vorona_HE", 2 },
             { "Vorona_HEAT", 8 },
 
-            { "B_FieldPack_ocamo", 5 }
+            { "APERSBoundingMine_Range_Mag", 3},
+            { "APERSMine_Range_Mag", 3},
+            { "APERSTripMine_Wire_Mag", 3},
+            { "ATMine_Range_Mag", 3},
+            { "ClaymoreDirectionalMine_Remote_Mag", 3},
+            { "DemoCharge_Remote_Mag", 3},
+            { "SatchelCharge_Remote_Mag", 3},
+            { "SLAMDirectionalMine_Wire_Mag", 3},
+
+            { "B_FieldPack_cbr", 5 },
+            { "B_Carryall_mcamo", 5 }
         };
         cost = 200;
         demolishable = 1;
