@@ -81,6 +81,7 @@ class Header
 
 #include "src\scripts\DIS\ui.hpp"
 #include "src\scripts\MENU\ui.hpp"
+#include "src\scripts\PERF\ui.hpp"
 #include "src\scripts\POLL\ui.hpp"
 #include "src\scripts\WLC\ui.hpp"
 

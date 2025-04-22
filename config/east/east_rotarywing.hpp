@@ -59,33 +59,35 @@ class RotaryWing {
         };
     };
 
-    // class O_Heli_Transport_04_recon_F {
-    //     cost = 2500;
-    //     description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a powerful scanner.";
-    //     hasHMD = 1;
-    //     hasScanner = 1;
-    //     killReward = 125;
-    //     name = "Mi-290 Taru (Recon)";
-    //     offset[] = {0, 10, 0};
-    //     requirements[] = {"H"};
-    //     spawn = "O_Heli_Transport_04_box_F";
-    //
-    //     class Pilot: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "240Rnd_CMFlare_Chaff_Magazine"
-    //         };
-    //         addWeapons[] = {
-    //             "CMFlareLauncher_Singles"
-    //         };
-    //         removeMagazines[] = {
-    //             "168Rnd_CMFlare_Chaff_Magazine"
-    //         };
-    //         removeWeapons[] = {
-    //             "CMFlareLauncher"
-    //         };
-    //         turret[] = { -1 };
-    //     };
-    // };
+    class O_Heli_Transport_04_recon_F {
+        cost = 2500;
+        description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a recon scanner.";
+        hasHMD = 1;
+        // hasScanner = 1;
+        hasReconOptics = 1;
+        killReward = 200;
+        name = "Mi-290 Taru (Recon)";
+        offset[] = {0, 10, 0};
+        requirements[] = {"H"};
+        spawn = "O_Heli_Transport_04_box_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
 
     class O_Heli_Light_02_dynamicLoadout_F {
         cost = 4000;

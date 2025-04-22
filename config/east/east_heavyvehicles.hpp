@@ -234,7 +234,8 @@ class HeavyVehicles {
                 "40Rnd_105mm_APFSDS"
             };
             addWeapons[] = {
-                "cannon_105mm"
+                "cannon_105mm",
+                "LMG_coax"
             };
             removeMagazines[] = {
                 "16Rnd_125mm_APFSDS_T_Green",
@@ -242,7 +243,8 @@ class HeavyVehicles {
                 "12Rnd_125mm_HEAT_T_Green"
             };
             removeWeapons[] = {
-                "cannon_125mm"
+                "cannon_125mm",
+                "LMG_coax"
             };
             turret[] = { 0 };
         };
