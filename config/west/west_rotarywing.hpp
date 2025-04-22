@@ -21,17 +21,38 @@ class RotaryWing {
         requirements[] = {"H"};
     }; // "CH-67 Huron"
 
-    class B_Heli_Transport_01_UP_F {
-        cost = 2000;
-        description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with 20mm autocannons.";
-        hasHMD = 1;
+    class B_Heli_Light_01_dynamicLoadout_F {
+        cost = 2500;
         killReward = 200;
+        rearm = 300;
+        requirements[] = {"H"};
+    }; // "AH-9 Pawnee"
+
+    class B_Heli_Transport_01_UP_F {
+        ammoOverrides[] = {
+            {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
+        };
+        cost = 3200;
+        description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with 20mm autocannons (gunners) and Spike missiles (copilot).";
+        hasHMD = 1;
+        killReward = 300;
         name = "UH-80 Ghost Hawk UP";
         offset[] = {0, 11, 0};
         rearm = 300;
         requirements[] = {"H"};
         spawn = "B_Heli_Transport_01_F";
         variant = 1;
+
+        class Copilot: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles"
+            };
+            addWeapons[] = {
+                "missiles_Firefist"
+            };
+            turret[] = { 0 };
+        };
 
         class LeftGunner: WLTurretDefaults {
             addMagazines[] = {
@@ -71,13 +92,6 @@ class RotaryWing {
             turret[] = { 2 };
         };
     };
-
-    class B_Heli_Light_01_dynamicLoadout_F {
-        cost = 2500;
-        killReward = 200;
-        rearm = 300;
-        requirements[] = {"H"};
-    }; // "AH-9 Pawnee"
 
     class B_Heli_Light_01_hmd_F {
         allowPylonMagazines[] = {
