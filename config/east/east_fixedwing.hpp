@@ -175,9 +175,16 @@ class FixedWing {
     }; // "Y-32 Xi'an (Infantry Transport)"
 
     class O_Plane_Fighter_03_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons5", "Pylons6"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+        };
         cost = 15000;
-        description = "A-143 Buzzard (CAS) is a light CAS aircraft.";
+        description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
+        hasRemoteBomb = 1;
         killReward = 600;
         name = "A-143 Buzzard (CAS)";
         rearm = 900;
@@ -230,9 +237,13 @@ class FixedWing {
             "PylonMissile_Missile_KH58_x1"
         };
         hasHMD = 1;
+        hasReconOptics = 1
         killReward = 1100;
+        name = "To-201 Shikra (Stealth/Recon)";
         rearm = 900;
         requirements[] = {"A"};
+        variant = 1;
+
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
@@ -246,7 +257,7 @@ class FixedWing {
             };
             turret[] = { -1 };
         };
-    }; // "To-201 Shikra (Stealth)"
+    };
 
     class O_Plane_Fighter_02_F {
         allowPylonMagazines[] = {
@@ -276,40 +287,40 @@ class FixedWing {
         };
     }; // "To-201 Shikra"
 
-    class O_Plane_Fighter_02_Remote_F {
-        allowPylonMagazines[] = {
-            {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
-            "PylonMissile_Missile_KH58_INT_x1"
-        };
-        ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
-        };
-        cost = 32000;
-        description = "To-201 Shikra (Land Attack) is a variant of the To-201 Shikra armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
-        disallowMagazines[] = {
-            "PylonMissile_Missile_KH58_x1"
-        };
-        hasHMD = 1;
-        hasRemoteBomb = 1;
-        killReward = 1200;
-        name = "To-201 Shikra (Land Attack)";
-        rearm = 1200;
-        requirements[] = {"A"};
-        spawn = "O_Plane_Fighter_02_F";
-        variant = 1;
+    // class O_Plane_Fighter_02_Remote_F {
+    //     allowPylonMagazines[] = {
+    //         {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
+    //         "PylonMissile_Missile_KH58_INT_x1"
+    //     };
+    //     ammoOverrides[] = {
+    //         {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+    //     };
+    //     cost = 32000;
+    //     description = "To-201 Shikra (Land Attack) is a variant of the To-201 Shikra armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+    //     disallowMagazines[] = {
+    //         "PylonMissile_Missile_KH58_x1"
+    //     };
+    //     hasHMD = 1;
+    //     hasRemoteBomb = 1;
+    //     killReward = 1200;
+    //     name = "To-201 Shikra (Land Attack)";
+    //     rearm = 1200;
+    //     requirements[] = {"A"};
+    //     spawn = "O_Plane_Fighter_02_F";
+    //     variant = 1;
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher"
-            };
-            turret[] = { -1 };
-        };
-    };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {};
+    //         addWeapons[] = {
+    //             "CMFlareLauncher_Singles"
+    //         };
+    //         removeMagazines[] = {};
+    //         removeWeapons[] = {
+    //             "CMFlareLauncher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     class O_Plane_Fighter_02_GPS_F {
         allowPylonMagazines[] = {

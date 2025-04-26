@@ -161,11 +161,16 @@ class FixedWing {
     class B_Plane_Fighter_04_F {
         allowPylonMagazines[] = {
             "PylonRack_3Rnd_LG_scalpel",
-            "PylonRack_Missile_AMRAAM_C_x2"
+            "PylonRack_Missile_AMRAAM_C_x2",
+            "PylonMissile_Bomb_GBU12_x1"
+        };
+        ammoOverrides[] = {
+            {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
         };
         cost = 23000;
-        description = "A-149 Gryphon is a light multirole aircraft.";
+        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
+        hasRemoteBomb = 1;
         killReward = 600;
         name = "A-149 Gryphon";
         rearm = 900;
@@ -179,7 +184,7 @@ class FixedWing {
             "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
             "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
         };
-    }; // "A-149 Gryphon"
+    };
 
     class B_Plane_Fighter_01_F {
         allowPylonMagazines[] = {
@@ -202,28 +207,28 @@ class FixedWing {
         };
     }; // "F/A-181 Black Wasp II"
 
-    class B_Plane_Fighter_01_Remote_F {
-        allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1",
-            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
-        };
-        ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
-        };
-        cost = 32000;
-        description = "F/A-181 Black Wasp II (Land Attack) is a variant of the F/A-181 Black Wasp II with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
-        disallowMagazines[] = {
-            "PylonMissile_Bomb_GBU12_x1"
-        };
-        hasHMD = 1;
-        hasRemoteBomb = 1;
-        killReward = 1200;
-        name = "F/A-181 Black Wasp II (Land Attack)";
-        rearm = 1200;
-        requirements[] = {"A"};
-        spawn = "B_Plane_Fighter_01_F";
-        variant = 1;
-    };
+    // class B_Plane_Fighter_01_Remote_F {
+    //     allowPylonMagazines[] = {
+    //         "PylonRack_Missile_HARM_x1",
+    //         {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+    //     };
+    //     ammoOverrides[] = {
+    //         {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+    //     };
+    //     cost = 32000;
+    //     description = "F/A-181 Black Wasp II (Land Attack) is a variant of the F/A-181 Black Wasp II with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+    //     disallowMagazines[] = {
+    //         "PylonMissile_Bomb_GBU12_x1"
+    //     };
+    //     hasHMD = 1;
+    //     hasRemoteBomb = 1;
+    //     killReward = 1200;
+    //     name = "F/A-181 Black Wasp II (Land Attack)";
+    //     rearm = 1200;
+    //     requirements[] = {"A"};
+    //     spawn = "B_Plane_Fighter_01_F";
+    //     variant = 1;
+    // };
 
     class B_Plane_Fighter_01_Stealth_F {
         allowPylonMagazines[] = {
@@ -231,9 +236,12 @@ class FixedWing {
         };
         cost = 35000;
         hasHMD = 1;
+        hasReconOptics = 1;
         killReward = 1000;
+        name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 900;
         requirements[] = {"A"};
+        variant = 1;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -244,7 +252,7 @@ class FixedWing {
             removeWeapons[] = {};
             turret[] = { -1 };
         };
-    }; // "F/A-181 Black Wasp II (Stealth)"
+    };
 
     class B_Plane_Fighter_01_GPS_F {
         allowPylonMagazines[] = {

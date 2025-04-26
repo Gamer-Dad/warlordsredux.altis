@@ -61,7 +61,7 @@ class RotaryWing {
 
     class O_Heli_Transport_04_recon_F {
         cost = 2500;
-        description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a recon scanner.";
+        description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a recon scanner. Use the copilot camera to look for targets and use the fire (LMB) or lock target (T) buttons to mark them for your team.";
         hasHMD = 1;
         // hasScanner = 1;
         hasReconOptics = 1;
