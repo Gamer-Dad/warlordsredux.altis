@@ -65,6 +65,31 @@ class LightVehicles {
         };
     }; // "Prowler (HMG)"
 
+
+    class B_Scoutbike_01_F {
+        capValue = 1;
+        cost = 250;
+        killReward = 150;
+        name = "Republic Scout Bike";
+        offset[] = {0, 5, 0};
+        requirements[] = {};
+        spawn = "B_LSV_01_armed_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "60Rnd_20mm_HE_shells"
+            };
+            addWeapons[] = {
+                "cannon_20mm"
+            };
+            removeWeapons[] = {
+                "HMG_127_LSV_01"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_MRAP_01_F {
         capValue = 1;
         cost = 300;

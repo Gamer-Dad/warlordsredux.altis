@@ -33,7 +33,7 @@ class RotaryWing {
             {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
         };
         cost = 3200;
-        description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with 20mm autocannons (gunners) and Spike missiles (copilot).";
+        description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with autocannons (gunners) and Spike missiles (copilot).";
         hasHMD = 1;
         killReward = 300;
         name = "UH-80 Ghost Hawk UP";
