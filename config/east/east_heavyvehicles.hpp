@@ -217,39 +217,6 @@ class HeavyVehicles {
         };
     };
 
-    class O_MBT_02_imperial_F {
-        aps = 4;
-        capValue = 4;
-        cost = 4500;
-        killReward = 500;
-        name = "T-2A Imperial Tank";
-        rearm = 600;
-        requirements[] = {};
-        spawn = "O_MBT_02_railgun_F";
-        variant = 1;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "60Rnd_40mm_GPR_Tracer_Red_shells",
-                "40Rnd_40mm_APFSDS_Tracer_Red_shells",
-                "20Rnd_105mm_HEAT_MP_T_Red"
-            };
-            addWeapons[] = {
-                "cannon_105mm_VTOL_01",
-                "autocannon_40mm_VTOL_01"
-            };
-            removeMagazines[] = {
-                "60Rnd_75mm_RailGun_APFSDS_mag",
-                "RailGun_01_DummyMagazine"
-            };
-            removeWeapons[] = {
-                "cannon_railgun",
-                "cannon_railgun_fake"
-            };
-            turret[] = { 0 };
-        };
-    };
-
     class O_MBT_02_cannon_export_F {
         aps = 3;
         capValue = 4;
@@ -407,7 +374,7 @@ class HeavyVehicles {
         };
         killReward = 600;
         name = "2S9M Sochor II";
-        rearm = 1800;
+        rearm = 1200;
         requirements[] = {};
         spawn = "O_MBT_02_arty_F";
         variant = 1;

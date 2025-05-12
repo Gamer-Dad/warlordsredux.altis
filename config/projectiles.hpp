@@ -150,7 +150,7 @@ class WLProjectilesConfig {
             "M_Krasnopol"
         };
         aps = 2;
-        consumption = 1;
+        consumption = 3;
         tv = 1;
     };
 

@@ -11,18 +11,17 @@ class Spawn {
         name = "NATO Medical Pod";
     }; // Huron Spawn
 
-    class Land_TentA_F {
-        garbageCollector = 1;
-        name = "Deployed Tent";
-    };
-
-    class ForwardBaseSupplies {
+    class Land_Cargo10_blue_F {
         cost = 500;
         demolishable = 1;
         killReward = 1000;
-        loadable[] = { 0, -2, 0 };
-        name = "Forward Base Supplies";
-        spawn = "RuggedTerminal_01_F";
+        loadable[] = { 0, -2, 0.5 };
+        name = "Forward Base Supplies (NATO)";
+    };
+
+    class Land_TentA_F {
+        garbageCollector = 1;
+        name = "Deployed Tent";
     };
 
     class RuggedTerminal_01_communications_hub_F {
