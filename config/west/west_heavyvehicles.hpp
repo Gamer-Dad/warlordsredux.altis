@@ -186,14 +186,16 @@ class HeavyVehicles {
                 "160Rnd_40mm_APFSDS_Tracer_Red_shells"
             };
             addWeapons[] = {
-                "autocannon_40mm_VTOL_01"
+                "autocannon_40mm_VTOL_01",
+                "LMG_coax"
             };
             removeMagazines[] = {
                 "60Rnd_40mm_GPR_Tracer_Red_shells",
                 "40Rnd_40mm_APFSDS_Tracer_Red_shells"
             };
             removeWeapons[] = {
-                "autocannon_40mm_CTWS"
+                "autocannon_40mm_CTWS",
+                "LMG_coax"
             };
             turret[] = { 0 };
         };
@@ -312,6 +314,54 @@ class HeavyVehicles {
         };
     };
 
+    class B_MBT_01_TUSK2_F {
+        aps = 3;
+        capValue = 4;
+        cost = 14000;
+        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
+        disallowMagazines[] = {
+            "4Rnd_120mm_LG_cannon_missiles"
+        };
+        hasHMD = 1;
+        hasReconOptics = 1;
+        killReward = 600;
+        name = "M2A2 Slammer II";
+        rearm = 600;
+        requirements[] = {};
+        spawn = "B_MBT_01_TUSK_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "24Rnd_125mm_APFSDS_T_Red",
+                "8Rnd_125mm_HE_T_Red",
+                "8Rnd_125mm_HE_T_Red",
+                "8Rnd_125mm_HE_T_Red",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball"
+            };
+            addWeapons[] = {
+                "cannon_125mm_advanced",
+                "HMG_NSVT"
+            };
+            removeMagazines[] = {
+                "200Rnd_762x51_Belt_Red",
+                "24Rnd_120mm_APFSDS_shells_Tracer_Red",
+                "12Rnd_120mm_HE_shells_Tracer_Red",
+                "12Rnd_120mm_HEAT_MP_T_Red"
+            };
+            removeWeapons[] = {
+                "cannon_120mm",
+                "LMG_coax"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     // class B_MBT_01_TUSK_Railgun_F {
     //     aps = 3;
     //     capValue = 4;
@@ -396,7 +446,7 @@ class HeavyVehicles {
         };
         killReward = 600;
         name = "M4 Scorcher UP";
-        rearm = 1800;
+        rearm = 1200;
         requirements[] = {};
         spawn = "B_MBT_01_arty_F";
         variant = 1;

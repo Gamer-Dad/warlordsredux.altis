@@ -145,6 +145,15 @@ class LightVehicles {
         requirements[] = {};
     }; // "Ifrit HMG"
 
+    class O_MRAP_02_gmg_F {
+        aps = 1;
+        capValue = 2;
+        cost = 950;
+        killReward = 250;
+        rearm = 300;
+        requirements[] = {};
+    }; // "Ifrit GMG"
+
     class O_Truck_03_ammo_F {
         capValue = 1;
         cost = 1000;
@@ -200,14 +209,36 @@ class LightVehicles {
     //     };
     // };
 
-    class O_MRAP_02_gmg_F {
-        aps = 1;
-        capValue = 2;
-        cost = 1250;
-        killReward = 250;
-        rearm = 300;
-        requirements[] = {};
-    }; // "Ifrit GMG"
+    // class O_MRAP_02_mini_F {
+    //     aps = 2;
+    //     capValue = 1;
+    //     cost = 1100;
+    //     description = "Ifrit is a variant of the Ifrit armed with a Minigun.";
+    //     killReward = 300;
+    //     name = "Ifrit Minigun";
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "O_MRAP_02_hmg_F";
+    //     variant = 1;
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2000Rnd_65x39_Belt_Tracer_Red",
+    //             "2000Rnd_65x39_Belt_Tracer_Red",
+    //             "2000Rnd_65x39_Belt_Tracer_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "LMG_Minigun"
+    //         };
+    //         removeMagazines[] = {
+    //             "200Rnd_127x99_mag_Tracer_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "HMG_127"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class O_MRAP_02_gmg_m_F {
     //     aps = 2;
