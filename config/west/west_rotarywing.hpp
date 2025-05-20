@@ -38,7 +38,7 @@ class RotaryWing {
         killReward = 300;
         name = "UH-80 Ghost Hawk UP";
         offset[] = {0, 11, 0};
-        rearm = 300;
+        rearm = 400;
         requirements[] = {"H"};
         spawn = "B_Heli_Transport_01_F";
         variant = 1;
