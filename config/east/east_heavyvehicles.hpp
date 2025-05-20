@@ -1,9 +1,11 @@
 class HeavyVehicles {
     class O_APC_Wheeled_02_spandrel_F {
-        aps = 2;
+        ammoOverrides[] = {
+            {"M_Vorona_HEAT", {"M_Vorona_HEAT_Tandem", "9M135 Tandem Missile"}}
+        };
         capValue = 2;
-        cost = 900;
-        killReward = 300;
+        cost = 1200;
+        killReward = 200;
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
         rearm = 180;
@@ -15,12 +17,7 @@ class HeavyVehicles {
                 "Vorona_HEAT",
                 "Vorona_HEAT",
                 "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "SmokeLauncherMag"
+                "Vorona_HEAT"
             };
             addWeapons[] = {
                 "missiles_Vorona"

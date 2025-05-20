@@ -121,7 +121,7 @@ class WLProjectilesConfig {
         aps = 1;
         consumption = 2;
         dazzleable = 1;
-        speed = 125;
+        speed = 100;
         tv = 1;
     };
 
@@ -199,6 +199,7 @@ class WLProjectilesConfig {
     class WLProjectile_DoubleGuided: WLProjectile {
         ammo[] = {
             "M_127mm_Firefist_AT",              // Firefist AT
+            "M_Vorona_HEAT_Tandem",             // Vorona HEAT Tandem
 
             "M_Jian_AT",                        // Jian - Max loadout: 4
             "Missile_AGM_02_F"                  // Macer I && II (same mag) - Max loadout: 20

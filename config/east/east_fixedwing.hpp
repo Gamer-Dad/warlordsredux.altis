@@ -37,49 +37,24 @@ class FixedWing {
     //     };
     // };
 
-    class O_Plane_Caesar_rocket_01_F {
-        cost = 1800;
-        description = "Caesar BTT (Rocket) is a variant of the Caesar BTT armed with rockets.";
-        killReward = 300;
-        name = "Caesar BTT (Rocket)";
-        rearm = 400;
-        requirements[] = {"A"};
-        spawn = "C_Plane_Civil_01_F";
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "14Rnd_80mm_rockets",
-                "14Rnd_80mm_rockets",
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "rockets_Skyfire",
-                "CMFlareLauncher"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
-    };
-
-    // class O_Plane_Caesar_bomb_01_F {
-    //     cost = 2000;
-    //     description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of Mk82 bombs.";
+    // class O_Plane_Caesar_rocket_01_F {
+    //     cost = 1800;
+    //     description = "Caesar BTT (Rocket) is a variant of the Caesar BTT armed with rockets.";
     //     killReward = 300;
-    //     name = "Caesar BTT (Bomb)";
+    //     name = "Caesar BTT (Rocket)";
     //     rearm = 400;
     //     requirements[] = {"A"};
     //     spawn = "C_Plane_Civil_01_F";
     //     variant = 1;
-    //
+
     //     class Pilot: WLTurretDefaults {
     //         addMagazines[] = {
-    //             "2Rnd_Mk82",
+    //             "14Rnd_80mm_rockets",
+    //             "14Rnd_80mm_rockets",
     //             "240Rnd_CMFlare_Chaff_Magazine"
     //         };
     //         addWeapons[] = {
-    //             "Mk82BombLauncher",
+    //             "rockets_Skyfire",
     //             "CMFlareLauncher"
     //         };
     //         removeMagazines[] = {};
@@ -87,6 +62,31 @@ class FixedWing {
     //         turret[] = { -1 };
     //     };
     // };
+
+    class O_Plane_Caesar_bomb_01_F {
+        cost = 2000;
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of Mk82 bombs.";
+        killReward = 300;
+        name = "Caesar BTT (Bomb)";
+        rearm = 400;
+        requirements[] = {"A"};
+        spawn = "C_Plane_Civil_01_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_Mk82",
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "Mk82BombLauncher",
+                "CMFlareLauncher"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
+    };
 
     class O_T_VTOL_02_recon_F {
         cost = 3800;
