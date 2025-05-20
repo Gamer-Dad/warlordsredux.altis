@@ -237,7 +237,7 @@ class FixedWing {
             "PylonMissile_Missile_KH58_x1"
         };
         hasHMD = 1;
-        hasReconOptics = 1
+        hasReconOptics = 1;
         killReward = 1100;
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 900;
