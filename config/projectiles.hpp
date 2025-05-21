@@ -116,7 +116,8 @@ class WLProjectilesConfig {
 
     class WLProjectile_TVGuidedHeavy: WLProjectile {
         ammo[] = {
-            "M_Spike"
+            "M_Spike",
+            "M_HJ12"
         };
         aps = 1;
         consumption = 2;
@@ -131,6 +132,7 @@ class WLProjectilesConfig {
             "ammo_kab250kr"
         };
         aps = 3;
+        camera = 1;
         remote = 1;
     };
 

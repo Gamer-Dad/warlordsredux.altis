@@ -64,8 +64,12 @@ class FixedWing {
     // };
 
     class O_Plane_Caesar_bomb_01_F {
+        ammoOverrides[] = {
+            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+        };
         cost = 2000;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of Mk82 bombs.";
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        hasRemoteBomb = 1;
         killReward = 300;
         name = "Caesar BTT (Bomb)";
         rearm = 400;
@@ -75,11 +79,11 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_Mk82",
+                "2Rnd_Bomb_03_F",
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
-                "Mk82BombLauncher",
+                "Bomb_03_Plane_CAS_02_F",
                 "CMFlareLauncher"
             };
             removeMagazines[] = {};
@@ -151,7 +155,7 @@ class FixedWing {
             "PylonRack_12Rnd_PG_missiles",
             "PylonMissile_Missile_KH58_INT_x1"
         };
-        cost = 14000;
+        cost = 12000;
         hasHMD = 1;
         killReward = 600;
         rearm = 700;
@@ -181,7 +185,7 @@ class FixedWing {
         ammoOverrides[] = {
             {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
         };
-        cost = 15000;
+        cost = 13000;
         description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
         hasRemoteBomb = 1;
@@ -209,7 +213,7 @@ class FixedWing {
     };
 
     class O_Plane_CAS_02_dynamicLoadout_F {
-        cost = 20000;
+        cost = 17000;
         hasHMD = 1;
         killReward = 900;
         rearm = 900;
@@ -232,7 +236,7 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_INT_x1"
         };
-        cost = 28000;
+        cost = 24000;
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
@@ -263,7 +267,7 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_INT_x1"
         };
-        cost = 32000;
+        cost = 28000;
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
@@ -330,7 +334,7 @@ class FixedWing {
         ammoOverrides[] = {
             {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
         };
-        cost = 34000;
+        cost = 30000;
         description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"

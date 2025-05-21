@@ -64,8 +64,12 @@ class FixedWing {
     // };
 
     class B_Plane_Caesar_bomb_01_F {
+        ammoOverrides[] = {
+            {"Bo_GBU12_LGB", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+        };
         cost = 2000;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of Mk82 bombs.";
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        hasRemoteBomb = 1;
         killReward = 300;
         name = "Caesar BTT (Bomb)";
         rearm = 400;
@@ -78,11 +82,11 @@ class FixedWing {
             removeMagazines[] = {};
             removeWeapons[] = {};
             addMagazines[] = {
-                "2Rnd_Mk82",
+                "2Rnd_GBU12_LGB",
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
-                "Mk82BombLauncher",
+                "GBU12BombLauncher",
                 "CMFlareLauncher"
             };
         };
@@ -139,7 +143,7 @@ class FixedWing {
     }; // "V-44 X Blackfish (Armed)"
 
     class B_Plane_CAS_01_dynamicLoadout_F {
-        cost = 15000;
+        cost = 13000;
         hasHMD = 1;
         killReward = 800;
         rearm = 900;
@@ -167,7 +171,7 @@ class FixedWing {
         ammoOverrides[] = {
             {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
         };
-        cost = 23000;
+        cost = 19000;
         description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
         hasRemoteBomb = 1;
@@ -186,11 +190,35 @@ class FixedWing {
         };
     };
 
+    class B_Plane_Fighter_01_Stealth_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_HARM_x1"
+        };
+        cost = 23000;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        killReward = 1000;
+        name = "F/A-181 Black Wasp II (Stealth/Recon)";
+        rearm = 900;
+        requirements[] = {"A"};
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
+    };
+
     class B_Plane_Fighter_01_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1"
         };
-        cost = 30000;
+        cost = 26000;
         hasHMD = 1;
         killReward = 1000;
         rearm = 900;
@@ -230,30 +258,6 @@ class FixedWing {
     //     variant = 1;
     // };
 
-    class B_Plane_Fighter_01_Stealth_F {
-        allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1"
-        };
-        cost = 35000;
-        hasHMD = 1;
-        hasReconOptics = 1;
-        killReward = 1000;
-        name = "F/A-181 Black Wasp II (Stealth/Recon)";
-        rearm = 900;
-        requirements[] = {"A"};
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
-    };
-
     class B_Plane_Fighter_01_GPS_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
@@ -262,7 +266,7 @@ class FixedWing {
         ammoOverrides[] = {
             {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
         };
-        cost = 35000;
+        cost = 31000;
         description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
         disallowMagazines[] = {
             "PylonMissile_Bomb_GBU12_x1"
