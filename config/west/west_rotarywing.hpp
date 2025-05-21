@@ -156,7 +156,7 @@ class RotaryWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1"
         };
-        cost = 13000;
+        cost = 12000;
         hasHMD = 1;
         killReward = 550;
         offset[] = {0, 10, 0};

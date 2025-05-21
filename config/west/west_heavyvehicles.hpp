@@ -317,7 +317,7 @@ class HeavyVehicles {
     class B_MBT_01_TUSK2_F {
         aps = 3;
         capValue = 4;
-        cost = 14000;
+        cost = 12000;
         description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
