@@ -61,6 +61,7 @@ BIS_WL_baseValue = 50;
 BIS_WL_autonomous_limit = 2;
 BIS_WL_minAPSDist = 1000; //actual range = √x
 BIS_WL_maxAPSDist = 1600; //actual range = √x
+WL2_MinBaseDistance = 5;
 
 onPauseScript[] = {WL2_fnc_onPause};
 
