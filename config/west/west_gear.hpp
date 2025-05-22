@@ -29,7 +29,7 @@ class Gear {
         cost = 200;
         demolishable = 1;
         killReward = 200;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = { 0, -1, 0.5 };
         name = "NATO Supply Crate";
         offset[] = { 0, 3, 0};
         spawn = "VirtualReammoBox_camonet_F";

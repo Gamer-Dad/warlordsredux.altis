@@ -75,7 +75,7 @@ class HeavyVehicles {
     }; // "CRV-6e Bobcat"
 
     class B_APC_Wheeled_01_recon_F {
-        aps = 2;
+        aps = 4;
         capValue = 1;
         cost = 2200;
         description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
