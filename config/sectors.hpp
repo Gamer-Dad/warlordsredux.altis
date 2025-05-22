@@ -4,17 +4,17 @@ class CfgWarlordSectors {
         {"ZeloranBase", "Frini"},
         {"ZeloranBase", "Athira"},
         {"ZeloranBase", "Telos"},
-        {"Frini", "Ifestonia"},
+        {"Frini", "Ifestiona"},
         {"Frini", "Athira"},
         {"Frini", "FriniWoodlands"},
-        {"Panochori", "Neri"},
+        {"Panochori", "Athanos"},
         {"Panochori", "Edessa"},
         {"Neri", "Kavala"},
-        {"Neri", "KavalaBeach"},
+        {"Neri", "Athanos"},
         {"Kavala", "Aggelochori"},
-        {"Kavala", "KavalaBeach"},
-        {"Kavala", "KavalaDump"},
-        {"Kavala", "USSFreedom"},
+        {"Kavala", "KavalaCastle"},
+        {"Kavala", "KaviridaCaves"},
+        {"KavalaCastle", "USSFreedom"},
         {"Aggelochori", "DieselPowerPlant"},
         {"Aggelochori", "MagosFactory"},
         {"Aggelochori", "USSFreedom"},
@@ -34,9 +34,8 @@ class CfgWarlordSectors {
         {"Zaros", "XirolimniDam"},
         {"Zaros", "Drimea"},
         {"Zaros", "Poliakko"},
-        {"Zaros", "Kavirida"},
+        {"Zaros", "KaviridaCaves"},
         {"Therisa", "AACAirfield"},
-        {"Therisa", "SkoposBase"},
         {"Therisa", "Poliakko"},
         {"Therisa", "Drimea"},
         {"SkoposBase", "Makrynisi"},
@@ -69,36 +68,39 @@ class CfgWarlordSectors {
         {"Syrta", "TheDump"},
         {"Oreokastro", "Bomos"},
         {"Oreokastro", "TheDump"},
-        {"Oreokastro", "SynneforosWindmill"},
+        {"Oreokastro", "ThronosCastle"},
         {"Oreokastro", "Hill275"},
+        {"SynneforosWindmill", "ThronosCastle"},
         {"AmmolofiAirfield", "Abdera"},
         {"AmmolofiAirfield", "SynneforosWindmill"},
         {"AmmolofiAirfield", "FriniWoodlands"},
         {"Abdera", "Galati"},
         {"Galati", "Orino"},
         {"Galati", "Koroni"},
-        {"Galati", "Ifestonia"},
-        {"Galati", "FriniWoodlands"},
+        {"Galati", "Ifestiona"},
         {"Orino", "Koroni"},
         {"Orino", "LakkaFactory"},
-        {"Koroni", "Ifestonia"},
+        {"Koroni", "Ifestiona"},
         {"Koroni", "Athira"},
         {"Koroni", "LakkaFactory"},
         {"Airbase", "Stavros"},
         {"Airbase", "Gravia"},
-        {"Airbase", "AirbaseCompound"},
+        {"Airbase", "CentralTerminal"},
         {"Airbase", "MainPowerPlant"},
         {"Airbase", "LakkaFactory"},
         {"AirbaseCompound", "Gravia"},
         {"AirbaseCompound", "MainPowerPlant"},
         {"AirbaseCompound", "Telos"},
+        {"AirbaseCompound", "CentralTerminal"},
         {"Gravia", "Athira"},
         {"Gravia", "LakkaFactory"},
-        {"Athira", "Ifestonia"},
+        {"Gravia", "CentralTerminal"},
+        {"Athira", "Ifestiona"},
         {"Telos", "Anthrakia"},
         {"Telos", "Kalithea"},
         {"Telos", "MainPowerPlant"},
         {"MainPowerPlant", "Anthrakia"},
+        {"MainPowerPlant", "CentralTerminal"},
         {"Anthrakia", "Rodopoli"},
         {"Anthrakia", "Charkia"},
         {"Selekano", "SelekanoAirbase"},
@@ -110,7 +112,6 @@ class CfgWarlordSectors {
         {"Feres", "TheMaziBouys"},
         {"Feres", "FeresHelipadHill"},
         {"Panagia", "Chalkeia"},
-        {"Panagia", "Ekali"},
         {"Panagia", "DidymosTurbines"},
         {"Panagia", "AktinarkiRuins"},
         {"Panagia", "Livadi"},
@@ -177,8 +178,7 @@ class CfgWarlordSectors {
         {"MolosAirfield", "CapeStrigla"},
         {"Katalaki", "Alikampos"},
         {"Edessa", "ZarosSolar"},
-        {"Edessa", "KavalaDump"},
-        {"Edessa", "Kavirida"},
+        {"Edessa", "KaviridaCaves"},
         {"ZarosSolar", "AgelaCompound"},
         {"Kalithea", "TheaterRuins"},
         {"NifiSolar", "Nifi"},
@@ -196,11 +196,12 @@ class CfgWarlordSectors {
         {"CapeMakrinos", "SkoposCastleRuins"},
         {"CapeMakrinos", "Livadi"},
         {"AgiosKosmas", "AgelaCompound"},
+        {"AgiosKosmas", "Athanos"},
         {"AgelaCompound", "SkoposCastleRuins"},
         {"SkoposCastleRuins", "Drimea"},
         {"Ekali", "DidymosTurbines"},
-        {"KavalaDump", "MagosFactory"},
-        {"KavalaDump", "Kavirida"},
+        {"Ekali", "Livadi"},
+        {"Ekali", "TheQuarry"},
         {"AktinarkiRuins", "CapeKategidis"},
         {"AgiosKonstantinos", "GoriFactory"},
         {"AgiosKonstantinos", "Hill275"},
@@ -246,11 +247,25 @@ class CfgWarlordSectors {
         area[] = {225, 225, 146.602, 0};
     };
 
+    class Athanos {
+        name = "Athanos";
+        services[] = {"W"};
+        location[] = {3613.0, 10236.0, 0};
+        area[] = {150, 100, 320.142, 0};
+    };
+
     class Kavala {
         name = "Kavala";
         services[] = {"W", "H"};
         location[] = {3609.96, 13023.6, 0};
         area[] = {280, 280, 277.03, 0};
+    };
+
+    class KavalaCastle {
+        name = "Kavala Castle";
+        services[] = {"W"};
+        location[] = {3079.5, 13188.9, 0};
+        area[] = {175, 120, 25.39, 0};
     };
 
     class Aggelochori {
@@ -360,18 +375,24 @@ class CfgWarlordSectors {
         area[] = {275, 275, 128.18, 0};
     };
 
+    class ThronosCastle {
+        name = "Thronos Castle";
+        location[] = {4864.5, 21926.2, 0};
+        area[] = {150, 100, 30.257, 0};
+    };
+
     class AmmolofiAirfield {
         name = "Ammolofi Airfield";
         disableHome = 1;
         services[] = {"A", "H"};
-        location[] = {9200.2, 21567.4, 0};
-        area[] = {150, 150, 53.352, 1};
+        location[] = {9126.7, 21516.0, 0};
+        area[] = {150, 200, 53.352, 1};
     };
 
     class Abdera {
         name = "Abdera";
-        location[] = {9433.5, 20237.2, 0};
-        area[] = {275, 275, 121.177, 0};
+        location[] = {9439.2, 20249.5, 0};
+        area[] = {100, 110, 77.82, 1};
     };
 
     class Galati {
@@ -400,6 +421,12 @@ class CfgWarlordSectors {
         area[] = {300, 400, 46.718, 0};
     };
 
+    class CentralTerminal {
+        name = "Central Terminal";
+        location[] = {14558.9, 16807.7, 0};
+        area[] = {75, 90, 45.818, 1};
+    };
+
     class AirbaseCompound {
         name = "Airbase Compound";
         disableHome = 1;
@@ -420,8 +447,8 @@ class CfgWarlordSectors {
         area[] = {250, 350, 340.303, 0};
     };
 
-    class Ifestonia {
-        name = "Ifestonia";
+    class Ifestiona {
+        name = "Ifestiona";
         location[] = {12847.2, 19633.8, 0};
         area[] = {150, 150, 65.703, 0};
     };
@@ -435,8 +462,8 @@ class CfgWarlordSectors {
     class MainPowerPlant {
         name = "Main Power Plant";
         services[] = {"W"};
-        location[] = {15389, 16053.5, 0};
-        area[] = {200, 100, 254.53, 1};
+        location[] = {15394.6, 16076.6, 0};
+        area[] = {220, 150, 88.583, 1};
     };
 
     class Anthrakia {
@@ -534,7 +561,6 @@ class CfgWarlordSectors {
 
     class GhostHotel {
         name = "Ghost Hotel";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {21869, 21101.9, 0};
         area[] = {300, 250, 173.715, 0};
@@ -672,7 +698,6 @@ class CfgWarlordSectors {
 
     class Makrynisi {
         name = "Makrynisi";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {13593.8, 12199.8, 0};
         area[] = {100, 100, 121.177, 0};
@@ -680,30 +705,19 @@ class CfgWarlordSectors {
 
     class Sideras {
         name = "Sideras";
-        disableHome = 1;
         location[] = {23870.7, 23747.4, 0};
         area[] = {150, 150, 121.177, 0};
     };
 
     class Bomos {
         name = "Bomos";
-        disableHome = 1;
         services[] = {"W"};
-        location[] = {2318.3, 22312.3, 0};
-        area[] = {175, 175, 121.177, 0};
-    };
-
-    class KavalaBeach {
-        name = "Kavala Beach";
-        disableHome = 1;
-        services[] = {"W", "H"};
-        location[] = {3447.15, 12598.9, 0};
-        area[] = {100, 100, 121.177, 0};
+        location[] = {2678.4, 22116.8, 0};
+        area[] = {150, 100, 40.029, 1};
     };
 
     class CapeMakrinos {
         name = "Cape Makrinos";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {13811.1, 6394.95, 0};
         area[] = {150, 150, 128.18, 0};
@@ -733,14 +747,6 @@ class CfgWarlordSectors {
         name = "Ekali";
         location[] = {17103.8, 9983.65, 0};
         area[] = {150, 150, 65.703, 0};
-    };
-
-    class KavalaDump {
-        name = "Kavala Dump";
-        disableHome = 1;
-        services[] = {"W", "H"};
-        location[] = {5957.52, 12483.5, 0};
-        area[] = {150, 150, 121.177, 0};
     };
 
     class AktinarkiRuins {
@@ -783,14 +789,12 @@ class CfgWarlordSectors {
 
     class FriniWoodlands {
         name = "Frini Woodlands";
-        disableHome = 1;
         location[] = {14249.8, 22205, 0};
         area[] = {170, 170, 128.18, 0};
     };
 
     class CapeStrigla {
         name = "Cape Strigla";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {28246, 25686.8, 0};
         area[] = {200, 100, 121.177, 1};
@@ -798,7 +802,6 @@ class CfgWarlordSectors {
 
     class Polemistia {
         name = "Polemistia";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {27727.6, 23588.4, 0};
         area[] = {50, 150, 75, 1};
@@ -827,7 +830,6 @@ class CfgWarlordSectors {
 
     class CapeThelos {
         name = "Cape Thelos";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {24120.9, 15669.6, 0};
         area[] = {140, 130, 228.118, 1};
@@ -867,7 +869,6 @@ class CfgWarlordSectors {
 
     class Livadi {
         name = "Livadi";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {18588.2, 8172.53, 0};
         area[] = {125, 125, 128.18, 0};
@@ -896,7 +897,6 @@ class CfgWarlordSectors {
 
     class CapeKategidis {
         name = "Cape Kategidis";
-        disableHome = 1;
         services[] = {"W"};
         location[] = {22745.5, 13573.2, 0};
         area[] = {150, 150, 228.118, 0};
@@ -929,10 +929,10 @@ class CfgWarlordSectors {
         area[] = {250, 100, 150, 1};
     };
 
-    class Kavirida {
-        name = "Kavirida";
-        location[] = {7395.99, 12188, 0};
-        area[] = {200, 150, 150, 0};
+    class KaviridaCaves {
+        name = "Kavirida Caves";
+        location[] = {6451.2, 12244.6, 0};
+        area[] = {300, 300, 0, 1};
     };
 
     class Wait {
