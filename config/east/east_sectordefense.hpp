@@ -23,14 +23,6 @@ class SectorDefense {
         requirements[] = {};
     };  // "Tank barrier"
 
-    class Land_GuardTower_01_F {
-        cost = 50;
-        demolishable = 1;
-        killReward = 30;
-        offset[] = {0, 8, 0};
-        requirements[] = {};
-    };  // "Guard Tower"
-
     class Land_HBarrier_5_F {
         cost = 50;
         demolishable = 1;
@@ -175,6 +167,14 @@ class SectorDefense {
             turret[] = { 0 };
         };
     };  // "Static Titan Launcher (AT) [CSAT]"
+
+    class Land_Cargo_Tower_V4_F {
+        cost = 450;
+        demolishable = 1;
+        killReward = 30;
+        offset[] = {0, 8, 0};
+        requirements[] = {};
+    };  // "Cargo Tower"
 
     class O_HMG_01_A_F {
         cost = 500;
