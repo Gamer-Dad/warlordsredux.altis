@@ -8,7 +8,7 @@ class HeavyVehicles {
         killReward = 200;
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
-        rearm = 180;
+        rearm = 120;
         requirements[] = {};
         variant = 1;
 

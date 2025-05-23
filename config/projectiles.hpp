@@ -207,6 +207,7 @@ class WLProjectilesConfig {
             "Missile_AGM_02_F"                  // Macer I && II (same mag) - Max loadout: 20
         };
         aps = 1;
+        camera = 1;
         consumption = 2;
         dazzleable = 1;
     };
