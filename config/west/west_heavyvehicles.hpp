@@ -74,6 +74,37 @@ class HeavyVehicles {
         requirements[] = {};
     }; // "CRV-6e Bobcat"
 
+    class B_APC_Wheeled_01_light_F {
+        aps = 2;
+        capValue = 2;
+        cost = 1700;
+        description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
+        killReward = 300;
+        name = "AMV-7 Marshall Light";
+        rearm = 500;
+        requirements[] = {};
+        spawn = "B_APC_Wheeled_01_cannon_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "5000Rnd_762x51_Yellow_Belt"
+            };
+            addWeapons[] = {
+                "M134_minigun"
+            };
+            removeMagazines[] = {
+                "40Rnd_40mm_APFSDS_Tracer_Red_shells",
+                "60Rnd_40mm_GPR_Tracer_Red_shells"
+            };
+            removeWeapons[] = {
+                "LMG_coax",
+                "autocannon_40mm_CTWS"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_APC_Wheeled_01_recon_F {
         aps = 4;
         capValue = 1;
@@ -106,7 +137,7 @@ class HeavyVehicles {
     };
 
     class B_APC_tracked_03_cannon_F {
-        aps = 2;
+        aps = 3;
         capValue = 4;
         cost = 2500;
         killReward = 400;

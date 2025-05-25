@@ -10,7 +10,7 @@ class LightVehicles {
     class O_G_Offroad_01_armed_F {
         capValue = 1;
         cost = 150;
-        killReward = 150;
+        killReward = 50;
         offset[] = {0, 5, 0};
         rearm = 120;
         requirements[] = {};
@@ -36,7 +36,7 @@ class LightVehicles {
     class O_LSV_02_armed_F {
         capValue = 1;
         cost = 200;
-        killReward = 150;
+        killReward = 50;
         offset[] = {0, 5, 0};
         rearm = 120;
         requirements[] = {};
@@ -64,6 +64,14 @@ class LightVehicles {
         killReward = 80;
         requirements[] = {};
     }; // "Tempest Transport"
+
+    class O_Truck_03_medical_F {
+        capValue = 1;
+        cost = 250;
+        killReward = 100;
+        rearm = 120;
+        requirements[] = {};
+    }; // "Tempest Medical"
 
     class O_MRAP_02_F {
         capValue = 1;

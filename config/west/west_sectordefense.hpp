@@ -246,7 +246,7 @@ class SectorDefense {
     };
 
     class B_static_AT_UP_F {
-        cost = 1200;
+        cost = 1400;
         demolishable = 1;
         description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
         disallowMagazines[] = {

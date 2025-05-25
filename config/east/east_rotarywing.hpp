@@ -126,7 +126,6 @@ class RotaryWing {
                 "Vorona_HEAT",
                 "Vorona_HEAT",
                 "Vorona_HEAT",
-                "Vorona_HEAT",
                 "Vorona_HEAT"
             };
             addWeapons[] = {

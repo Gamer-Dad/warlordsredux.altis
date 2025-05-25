@@ -216,15 +216,9 @@ class SectorDefense {
     };
 
     class O_static_AT_UP_F {
-        cost = 1200;
+        cost = 1400;
         demolishable = 1;
         description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
-        disallowMagazines[] = {
-            "4Rnd_GAA_missiles",
-            "5Rnd_GAT_missiles",
-            "4Rnd_Titan_long_missiles",
-            "4Rnd_Titan_long_missiles_O"
-        };
         killReward = 200;
         loadable[] = {0, -2.5, 0.2};
         name = "Static AT Launcher (UP)";
@@ -236,21 +230,19 @@ class SectorDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles"
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT"
             };
             addWeapons[] = {
-                "missiles_titan"
+                "missiles_Vorona"
             };
-            reloadOverride = 6;
+            reloadOverride = 0.5;
             removeMagazines[] = {
                 "1Rnd_GAT_missiles"
             };
