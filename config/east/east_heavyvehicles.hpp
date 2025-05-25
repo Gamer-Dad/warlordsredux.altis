@@ -38,7 +38,7 @@ class HeavyVehicles {
     class O_APC_Wheeled_02_rcws_v2_F {
         aps = 2;
         capValue = 2;
-        cost = 1500;
+        cost = 1700;
         killReward = 300;
         rearm = 400;
         requirements[] = {};
@@ -199,6 +199,7 @@ class HeavyVehicles {
             };
             addWeapons[] = {
                 "autocannon_40mm_VTOL_01",
+                "LMG_coax_ext",
                 "missiles_titan"
             };
             removeMagazines[] = {
@@ -208,7 +209,8 @@ class HeavyVehicles {
             };
             removeWeapons[] = {
                 "missiles_titan",
-                "autocannon_30mm_CTWS"
+                "autocannon_30mm_CTWS",
+                "LMG_coax_ext"
             };
             turret[] = { 0 };
         };

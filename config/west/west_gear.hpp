@@ -64,4 +64,11 @@ class Gear {
         loadable[] = { 0, 0, 0 };
         requirements[] = {};
     }; // "Huron Repair Container"
+
+    class B_Slingload_01_Medevac_F {
+        cost = 500;
+        killReward = 200;
+        loadable[] = { 0, 0, 0 };
+        requirements[] = {};
+    }; // "Huron Medical Pod"
 };

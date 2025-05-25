@@ -64,4 +64,11 @@ class Gear {
         loadable[] = { 0, 0, 0 };
         requirements[] = {};
     }; // "Taru Repair Pod"
+
+    class Land_Pod_Heli_Transport_04_medevac_F {
+        cost = 500;
+        killReward = 200;
+        loadable[] = { 0, 0, 0 };
+        requirements[] = {};
+    }; // "Taru Medical Pod"
 };
