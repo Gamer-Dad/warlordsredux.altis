@@ -191,7 +191,9 @@ class CfgWarlordSectors {
         {"Faronaki", "TheQuarry"},
         {"Faronaki", "Makrynisi"},
         {"Bomos", "Hill275"},
-        {"Bomos", "Atsalis"},
+        {"Bomos", "USSIndependence"},
+        {"Atsalis", "ThronosCastle"},
+        {"Atsalis", "Sideras"},
         {"CapeMakrinos", "AgiosKosmas"},
         {"CapeMakrinos", "SkoposCastleRuins"},
         {"CapeMakrinos", "Livadi"},
@@ -210,7 +212,7 @@ class CfgWarlordSectors {
         {"TheDump", "SynneforosWindmill"},
         {"TheDump", "Hill275"},
         {"CapeStrigla", "Polemistia"},
-        {"CapeStrigla", "Atsalis"},
+        {"CapeStrigla", "USSIndependence"},
         {"Ochrolimni", "CapeThelos"},
         {"Ochrolimni", "AlmyraOutskirts"},
         {"CapeThelos", "CapeKategidis"},
@@ -946,8 +948,17 @@ class CfgWarlordSectors {
         name = "USS Freedom";
         disableHome = 1;
         services[] = {"W", "H", "A"};
-        location[] = {1742.19, 15566.5, 1.812};
+        location[] = {1742.19, 15566.5, 0};
         area[] = {350, 200, 63.455, 1};
-        carrier = "[[Carrier1Spawn1, Carrier1Spawn2, Carrier1Spawn3, Carrier1Spawn4], [Carrier1Inf1, Carrier1Inf2, Carrier1Inf3, Carrier1Inf4, Carrier1Inf5, Carrier1Inf6, Carrier1Inf7, Carrier1Inf8, Carrier1Inf9, Carrier1Inf10, Carrier1Inf11], ['Carrier1Corner1', 'Carrier1Corner2', 'Carrier1Corner3', 'Carrier1Corner4', 'Carrier1Corner5', 'Carrier1Corner6', 'Carrier1Corner7','Carrier1Corner8', 'Carrier1Corner9'], [['Carrier1Rappel1Marker', Carrier1Rope1], ['Carrier1Rappel2Marker', Carrier1Rope2], ['Carrier1Rappel3Marker', Carrier1Rope3], ['Carrier1Rappel4Marker', Carrier1Rope4]]]";
+        carrier = 1;
+    };
+
+    class USSIndependence {
+        name = "USS Independence";
+        disableHome = 1;
+        services[] = {"W", "H", "A"};
+        location[] = {8856.14, 28796.06, 0};
+        area[] = {350, 200, 0, 1};
+        carrier = 1;
     };
 };
