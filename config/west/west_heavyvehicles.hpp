@@ -79,6 +79,7 @@ class HeavyVehicles {
         capValue = 2;
         cost = 1700;
         description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
+        isLight = 1;
         killReward = 300;
         name = "AMV-7 Marshall Light";
         rearm = 500;
@@ -110,6 +111,7 @@ class HeavyVehicles {
         capValue = 1;
         cost = 2200;
         description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
+        isLight = 1;
         hasHMD = 1;
         hasScanner = 1;
         killReward = 300;
@@ -268,6 +270,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 4500;
+        isLight = 1;
         killReward = 450;
         rearm = 500;
         requirements[] = {};
@@ -289,6 +292,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        isLight = 1;
         killReward = 450;
         rearm = 600;
         requirements[] = {};
@@ -297,7 +301,7 @@ class HeavyVehicles {
     class B_MBT_01_TUSK_F {
         aps = 3;
         capValue = 4;
-        cost = 6500;
+        cost = 6200;
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
@@ -328,7 +332,7 @@ class HeavyVehicles {
     class B_MBT_03_cannon_F {
         aps = 3;
         capValue = 4;
-        cost = 10000;
+        cost = 8000;
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
@@ -348,7 +352,7 @@ class HeavyVehicles {
     class B_MBT_01_TUSK2_F {
         aps = 3;
         capValue = 4;
-        cost = 12000;
+        cost = 9000;
         description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"

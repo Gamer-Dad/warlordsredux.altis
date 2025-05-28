@@ -49,24 +49,15 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162",              // Centurion
             "ammo_Missile_s750",                // Rhea
             "ammo_Missile_mim145",              // Defender
-            "M_70mm_SAAMI"                      // SAAMI
-        };
-        aps = 3;
-        camera = 1;
-        sam = 1;
-    };
-
-    class WLProjectile_MANPAD: WLProjectile {
-        ammo[] = {
+            "M_70mm_SAAMI",                      // SAAMI
             "M_Titan_AA",                       // Titan AA
             "M_Titan_AA_static"                 // Titan AA (Static)
         };
         aps = 3;
         camera = 1;
         sam = 1;
-        speed = 1.25;
+        speed = 1.1;
     };
-
 
     class WLProjectile_MANPAD_Heavy: WLProjectile {
         ammo[] = {
@@ -75,7 +66,7 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         sam = 1;
-        speed = 1.5;
+        speed = 1.3;
     };
 
     class WLProjectile_A2A: WLProjectile {
