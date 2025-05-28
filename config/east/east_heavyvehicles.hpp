@@ -261,7 +261,7 @@ class HeavyVehicles {
     class O_MBT_04_cannon_F {
         aps = 3;
         capValue = 4;
-        cost = 11000;
+        cost = 8500;
         killReward = 550;
         rearm = 600;
         requirements[] = {};
@@ -270,7 +270,7 @@ class HeavyVehicles {
     class O_MBT_04_command_F {
         aps = 3;
         capValue = 4;
-        cost = 13000;
+        cost = 9500;
         killReward = 600;
         rearm = 600;
         requirements[] = {};

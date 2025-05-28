@@ -147,7 +147,7 @@ class RotaryWing {
             "PylonRack_12Rnd_PG_missiles",
             "PylonMissile_Missile_KH58_INT_x1"
         };
-        cost = 9000;
+        cost = 8500;
         hasHMD = 1;
         killReward = 550;
         offset[] = {0, 11, 0};

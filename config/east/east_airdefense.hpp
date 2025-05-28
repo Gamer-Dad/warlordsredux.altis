@@ -141,7 +141,7 @@ class AirDefense {
     };
 
     class O_SAM_System_04_F {
-        cost = 8000;
+        cost = 7000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
         hasHMD = 1;
         killReward = 500;
@@ -154,7 +154,7 @@ class AirDefense {
     class O_APC_Tracked_02_AA_M_F {
         aps = 2;
         capValue = 4;
-        cost = 10000;
+        cost = 7500;
         description = "ZSU-49 Euphrates is a variant of the ZSU-39 Tigris armed with Rhea missiles.";
         hasHMD = 1;
         killReward = 600;
@@ -185,7 +185,7 @@ class AirDefense {
     };
 
     class O_SAM_System_02_F {
-        cost = 15000;
+        cost = 8000;
         description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
         hasHMD = 1;
         killReward = 600;
@@ -203,7 +203,7 @@ class AirDefense {
     class O_APC_Tracked_02_AA_E_F {
         aps = 2;
         capValue = 4;
-        cost = 17000;
+        cost = 8500;
         description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with Mk21 Centurion missiles.";
         hasHMD = 1;
         killReward = 600;

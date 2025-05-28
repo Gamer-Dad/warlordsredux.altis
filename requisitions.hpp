@@ -16,6 +16,9 @@ class CfgVehicleClassName {
     hasHMD = number (0|1);           // Whether the vehicle supports the helmet mounted display system.
     hasRemoteBomb = number (0|1);    // Whether the vehicle has remote munitions.
     hasScanner = number (0|1);       // Whether the vehicle has a scanner.
+    hasReconOptics = number (0|1);   // Whether the vehicle has recon optics.
+    hasAWACS = number (0|1);         // Whether the vehicle has an AWACS system.
+    isLight = number (0|1);          // Whether the vehicle is considered lightweight.
     killReward = number;             // CP reward for destroying the vehicle.
     loadable = array;                // when set, the vehicle can be loaded into a flatbed. The array is the offset.
     name = string;                   // Name override for vehicle in buy menu.
