@@ -7,6 +7,7 @@ class RotaryWing {
 
     class B_Heli_Transport_01_F {
         cost = 800;
+        hasHMD = 1;
         killReward = 100;
         offset[] = {0, 11, 0};
         rearm = 300;
