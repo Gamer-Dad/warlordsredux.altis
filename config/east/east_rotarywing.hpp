@@ -91,6 +91,7 @@ class RotaryWing {
 
     class O_Heli_Light_02_dynamicLoadout_F {
         cost = 4000;
+        hasHMD = 1;
         killReward = 300;
         offset[] = {0, 10, 0};
         rearm = 300;
