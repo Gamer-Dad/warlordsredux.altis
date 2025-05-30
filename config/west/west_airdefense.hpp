@@ -88,6 +88,9 @@ class AirDefense {
     }; // "Praetorian 1C"
 
     class B_APC_Tracked_01_AA_F {
+        ammoOverrides[] = {
+            {"M_Zephyr", {"M_Zephyr_SAM", "Zephyr (SAM)"}}
+        };
         aps = 2;
         capValue = 4;
         cost = 5000;

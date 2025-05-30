@@ -49,7 +49,8 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162",              // Centurion
             "ammo_Missile_s750",                // Rhea
             "ammo_Missile_mim145",              // Defender
-            "M_70mm_SAAMI",                      // SAAMI
+            "M_Zephyr_SAM",                     // Zephyr (SAM)
+            "M_70mm_SAAMI",                     // SAAMI
             "M_Titan_AA",                       // Titan AA
             "M_Titan_AA_static"                 // Titan AA (Static)
         };
@@ -66,7 +67,7 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         sam = 1;
-        speed = 1.3;
+        speed = 1.2;
     };
 
     class WLProjectile_A2A: WLProjectile {
@@ -89,7 +90,7 @@ class WLProjectilesConfig {
         };
         aps = 1;
         camera = 1;
-        consumption = 4;
+        consumption = 12;
         dazzleable = 1;
         sead = 1;
     };

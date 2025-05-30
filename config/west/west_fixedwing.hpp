@@ -190,30 +190,6 @@ class FixedWing {
         };
     };
 
-    class B_Plane_Fighter_01_Stealth_F {
-        allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1"
-        };
-        cost = 23000;
-        hasHMD = 1;
-        hasReconOptics = 1;
-        killReward = 1000;
-        name = "F/A-181 Black Wasp II (Stealth/Recon)";
-        rearm = 900;
-        requirements[] = {"A"};
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
-    };
-
     class B_Plane_Fighter_01_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1"
@@ -234,6 +210,35 @@ class FixedWing {
             turret[] = { -1 };
         };
     }; // "F/A-181 Black Wasp II"
+
+    class B_Plane_Fighter_01_Stealth_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_HARM_x1",
+            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
+        };
+        cost = 26000;
+        hasGPSMunition = 1;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        killReward = 1000;
+        name = "F/A-181 Black Wasp II (Stealth/Recon)";
+        rearm = 720;
+        requirements[] = {"A"};
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
+    };
 
     // class B_Plane_Fighter_01_Remote_F {
     //     allowPylonMagazines[] = {
@@ -258,26 +263,26 @@ class FixedWing {
     //     variant = 1;
     // };
 
-    class B_Plane_Fighter_01_GPS_F {
-        allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1",
-            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
-        };
-        ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
-        };
-        cost = 31000;
-        description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
-        disallowMagazines[] = {
-            "PylonMissile_Bomb_GBU12_x1"
-        };
-        hasGPSMunition = 1;
-        hasHMD = 1;
-        killReward = 1200;
-        name = "F/A-181 Black Wasp II (Standoff)";
-        rearm = 1200;
-        requirements[] = {"A"};
-        spawn = "B_Plane_Fighter_01_F";
-        variant = 1;
-    };
+    // class B_Plane_Fighter_01_GPS_F {
+    //     allowPylonMagazines[] = {
+    //         "PylonRack_Missile_HARM_x1",
+    //         {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+    //     };
+    //     ammoOverrides[] = {
+    //         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
+    //     };
+    //     cost = 31000;
+    //     description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+    //     disallowMagazines[] = {
+    //         "PylonMissile_Bomb_GBU12_x1"
+    //     };
+    //     hasGPSMunition = 1;
+    //     hasHMD = 1;
+    //     killReward = 1200;
+    //     name = "F/A-181 Black Wasp II (Standoff)";
+    //     rearm = 1200;
+    //     requirements[] = {"A"};
+    //     spawn = "B_Plane_Fighter_01_F";
+    //     variant = 1;
+    // };
 };
