@@ -28,6 +28,7 @@ class Gear {
         };
         cost = 200;
         demolishable = 1;
+        description = "CSAT gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
         killReward = 200;
         loadable[] = { 0, -1, 0.5 };
         name = "CSAT Supply Crate";

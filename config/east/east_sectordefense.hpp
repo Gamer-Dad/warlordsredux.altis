@@ -216,7 +216,7 @@ class SectorDefense {
     };
 
     class O_static_AT_UP_F {
-        cost = 1400;
+        cost = 800;
         demolishable = 1;
         description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
         killReward = 200;
@@ -237,12 +237,18 @@ class SectorDefense {
                 "Vorona_HEAT",
                 "Vorona_HEAT",
                 "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
                 "Vorona_HEAT"
             };
             addWeapons[] = {
                 "missiles_Vorona"
             };
-            reloadOverride = 0.5;
             removeMagazines[] = {
                 "1Rnd_GAT_missiles"
             };
@@ -256,7 +262,7 @@ class SectorDefense {
     class Land_MobileRadar_01_radar_F {
         cost = 2500;
         demolishable = 1;
-        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. It must be placed outside the home base in an owned sector.";
+        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. Its position is revealed to the enemy when it is active.";
         garbageCollect = 1;
         killReward = 400;
         name = "EW Tower";

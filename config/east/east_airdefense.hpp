@@ -94,6 +94,9 @@ class AirDefense {
     };
 
     class O_APC_Tracked_02_AA_F {
+        ammoOverrides[] = {
+            {"M_Zephyr", {"M_Zephyr_SAM", "Zephyr (SAM)"}}
+        };
         aps = 2;
         capValue = 4;
         cost = 5000;
