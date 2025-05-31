@@ -32,6 +32,7 @@ class HeavyVehicles {
         capValue = 3;
         cost = 1500;
         killReward = 240;
+        loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (AT)";
         rearm = 300;
         requirements[] = {};
@@ -81,6 +82,7 @@ class HeavyVehicles {
         description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
         isLight = 1;
         killReward = 300;
+        loadable[] = {0, -0.8, 1.7};
         name = "AMV-7 Marshall Light";
         rearm = 500;
         requirements[] = {};

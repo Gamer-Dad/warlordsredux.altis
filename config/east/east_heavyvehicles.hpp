@@ -6,6 +6,7 @@ class HeavyVehicles {
         capValue = 2;
         cost = 1200;
         killReward = 200;
+        loadable[] = {0, -0.8, 1.65};
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
         rearm = 120;
@@ -40,6 +41,7 @@ class HeavyVehicles {
         capValue = 2;
         cost = 1700;
         killReward = 300;
+        loadable[] = {0, -0.8, 1.65};
         rearm = 400;
         requirements[] = {};
     }; // "MSE-3 Marid"
