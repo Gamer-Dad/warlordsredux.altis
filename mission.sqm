@@ -184,38 +184,6 @@ class ScenarioData
 	overViewPicture="src\img\wl_logo_ca.paa";
 	joinUnassigned=0;
 };
-class CustomAttributes
-{
-	class Category0
-	{
-		name="Multiplayer";
-		class Attribute0
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					singleType="ARRAY";
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								singleType="STRING";
-								value="None";
-							};
-						};
-					};
-				};
-			};
-		};
-		nAttributes=1;
-	};
-};
 class Mission
 {
 	class Intel
