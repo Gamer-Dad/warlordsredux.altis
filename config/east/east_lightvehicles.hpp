@@ -3,6 +3,7 @@ class LightVehicles {
         capValue = 1;
         cost = 20;
         killReward = 20;
+        loadable[] = {0, -1, 0.6};
         offset[] = {0, 3, 0};
         requirements[] = {};
     }; // "Quad Bike"
@@ -11,6 +12,7 @@ class LightVehicles {
         capValue = 1;
         cost = 150;
         killReward = 50;
+        loadable[] = {0, -1.7, 1.3};
         offset[] = {0, 5, 0};
         rearm = 120;
         requirements[] = {};
@@ -37,6 +39,7 @@ class LightVehicles {
         capValue = 1;
         cost = 200;
         killReward = 50;
+        loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 120;
         requirements[] = {};
@@ -77,6 +80,7 @@ class LightVehicles {
         capValue = 1;
         cost = 300;
         killReward = 70;
+        loadable[] = {0, -0.8, 1.5};
         requirements[] = {};
     }; // "Ifrit"
 
@@ -99,6 +103,7 @@ class LightVehicles {
         capValue = 1;
         cost = 500;
         killReward = 180;
+        loadable[] = {0, -1.7, 0.7};
         offset[] = {0, 5, 0};
         rearm = 180;
         requirements[] = {};
@@ -122,6 +127,7 @@ class LightVehicles {
         capValue = 1;
         cost = 750;
         killReward = 200;
+        loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 200;
         requirements[] = {};
@@ -149,6 +155,7 @@ class LightVehicles {
         capValue = 2;
         cost = 900;
         killReward = 250;
+        loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
     }; // "Ifrit HMG"
@@ -158,6 +165,7 @@ class LightVehicles {
         capValue = 2;
         cost = 950;
         killReward = 250;
+        loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
     }; // "Ifrit GMG"

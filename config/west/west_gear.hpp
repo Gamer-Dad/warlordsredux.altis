@@ -48,28 +48,28 @@ class Gear {
     class B_Slingload_01_Fuel_F {
         cost = 300;
         killReward = 150;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Fuel Container"
 
     class B_Slingload_01_Ammo_F {
         cost = 500;
         killReward = 150;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Ammo Container"
 
     class B_Slingload_01_Repair_F {
         cost = 500;
         killReward = 150;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Repair Container"
 
     class B_Slingload_01_Medevac_F {
         cost = 500;
         killReward = 200;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Medical Pod"
 };

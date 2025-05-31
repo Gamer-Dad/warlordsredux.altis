@@ -48,28 +48,28 @@ class Gear {
     class Land_Pod_Heli_Transport_04_fuel_F {
         cost = 300;
         killReward = 150;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.8, 0.5};
         requirements[] = {};
     }; // "Taru Fuel Pod"
 
     class Land_Pod_Heli_Transport_04_ammo_F {
         cost = 500;
         killReward = 150;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.8, 0.4};
         requirements[] = {};
     }; // "Taru Ammo Pod"
 
     class Land_Pod_Heli_Transport_04_repair_F {
         cost = 500;
         killReward = 150;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.8, 0.4};
         requirements[] = {};
     }; // "Taru Repair Pod"
 
     class Land_Pod_Heli_Transport_04_medevac_F {
         cost = 500;
         killReward = 200;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, -1.8, 0.5};
         requirements[] = {};
     }; // "Taru Medical Pod"
 };

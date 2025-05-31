@@ -3,7 +3,7 @@ class RemoteControl {
         cost = 50;
         demolishable = 1;
         killReward = 25;
-        loadable[] = { 0, 0, 0 };
+        loadable[] = {0, 0, 0};
         name = "Ground Support Terminal";
         offset[] = {0, 3, 0};
         requirements[] = {};
@@ -12,6 +12,7 @@ class RemoteControl {
     class B_UGV_02_Demining_F {
         cost = 100;
         killReward = 100;
+        loadable[] = {0, -1, -0.5};
         offset[] = {0, 3, 0};
         rearm = 200;
         requirements[] = {};
@@ -20,6 +21,7 @@ class RemoteControl {
     class B_UGV_01_F {
         cost = 150;
         killReward = 50;
+        loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
         requirements[] = {};
     }; // "UGV Stomper"
@@ -35,6 +37,7 @@ class RemoteControl {
     class B_UGV_01_rcws_F {
         cost = 500;
         killReward = 100;
+        loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
         rearm = 300;
         requirements[] = {};
