@@ -112,38 +112,38 @@ class RemoteControl {
     //     };
     // };
 
-    class O_UAV_02_recon_F {
-        cost = 2000;
-        description = "K40R (Recon) is an unarmed variant of the K40 Ababil-3 with a powerful scanner.";
-        disallowMagazines[] = {
-            "PylonRack_12Rnd_PG_missiles",
-            "PylonRack_1Rnd_Missile_AA_04_F",
-            "PylonRack_1Rnd_AAA_missiles",
-            "PylonRack_1Rnd_LG_scalpel",
-            "PylonRack_3Rnd_LG_scalpel",
-            "PylonRack_7Rnd_Rocket_04_HE_F",
-            "PylonRack_7Rnd_Rocket_04_AP_F",
-            "PylonRack_12Rnd_missiles",
-            "PylonMissile_1Rnd_Bomb_04_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonRack_20Rnd_Rocket_03_HE_F",
-            "PylonRack_20Rnd_Rocket_03_AP_F",
-            "PylonMissile_1Rnd_LG_scalpel",
-            "PylonRack_19Rnd_Rocket_Skyfire",
-            "PylonMissile_1Rnd_Bomb_03_F",
-            "PylonRack_1Rnd_Missile_AA_03_F"
-        };
-        hasHMD = 1;
-        hasScanner = 1;
-        killReward = 400;
-        name = "K40R (Recon)";
-        rearm = 300;
-        requirements[] = {"H"};
-        spawn = "O_UAV_02_dynamicLoadout_F";
-    };
+    // class O_UAV_02_recon_F {
+    //     cost = 2000;
+    //     description = "K40R (Recon) is an unarmed variant of the K40 Ababil-3 with a powerful scanner.";
+    //     disallowMagazines[] = {
+    //         "PylonRack_12Rnd_PG_missiles",
+    //         "PylonRack_1Rnd_Missile_AA_04_F",
+    //         "PylonRack_1Rnd_AAA_missiles",
+    //         "PylonRack_1Rnd_LG_scalpel",
+    //         "PylonRack_3Rnd_LG_scalpel",
+    //         "PylonRack_7Rnd_Rocket_04_HE_F",
+    //         "PylonRack_7Rnd_Rocket_04_AP_F",
+    //         "PylonRack_12Rnd_missiles",
+    //         "PylonMissile_1Rnd_Bomb_04_F",
+    //         "PylonMissile_1Rnd_Mk82_F",
+    //         "PylonRack_20Rnd_Rocket_03_HE_F",
+    //         "PylonRack_20Rnd_Rocket_03_AP_F",
+    //         "PylonMissile_1Rnd_LG_scalpel",
+    //         "PylonRack_19Rnd_Rocket_Skyfire",
+    //         "PylonMissile_1Rnd_Bomb_03_F",
+    //         "PylonRack_1Rnd_Missile_AA_03_F"
+    //     };
+    //     hasHMD = 1;
+    //     hasScanner = 1;
+    //     killReward = 400;
+    //     name = "K40R (Recon)";
+    //     rearm = 300;
+    //     requirements[] = {"H"};
+    //     spawn = "O_UAV_02_dynamicLoadout_F";
+    // };
 
     class O_T_UAV_04_CAS_F {
-        cost = 5000;
+        cost = 5500;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;
@@ -175,7 +175,7 @@ class RemoteControl {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles"
         };
-        cost = 6000;
+        cost = 6500;
         hasHMD = 1;
         killReward = 600;
         rearm = 300;

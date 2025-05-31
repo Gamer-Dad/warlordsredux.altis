@@ -10,7 +10,7 @@ class LightVehicles {
     class B_G_Offroad_01_armed_F {
         capValue = 1;
         cost = 150;
-        killReward = 150;
+        killReward = 50;
         offset[] = {0, 5, 0};
         rearm = 120;
         requirements[] = {};
@@ -33,17 +33,10 @@ class LightVehicles {
         };
     }; // "Offroad (HMG)"
 
-    class B_Truck_01_transport_F {
-        capValue = 1;
-        cost = 200;
-        killReward = 80;
-        requirements[] = {};
-    }; // "HEMTT Transport"
-
     class B_LSV_01_armed_F {
         capValue = 1;
         cost = 200;
-        killReward = 150;
+        killReward = 80;
         offset[] = {0, 5, 0};
         rearm = 120;
         requirements[] = {};
@@ -64,6 +57,21 @@ class LightVehicles {
             turret[] = { 0 };
         };
     }; // "Prowler (HMG)"
+
+    class B_Truck_01_transport_F {
+        capValue = 1;
+        cost = 200;
+        killReward = 80;
+        requirements[] = {};
+    }; // "HEMTT Transport"
+
+    class B_Truck_01_medical_F {
+        capValue = 1;
+        cost = 250;
+        killReward = 100;
+        rearm = 120;
+        requirements[] = {};
+    }; // "HEMMT Medical"
 
     class B_MRAP_01_F {
         capValue = 1;
@@ -137,6 +145,15 @@ class LightVehicles {
         requirements[] = {};
     }; // "Hunter HMG"
 
+    class B_MRAP_01_gmg_F {
+        aps = 1;
+        capValue = 2;
+        cost = 950;
+        killReward = 250;
+        rearm = 300;
+        requirements[] = {};
+    }; // "Hunter GMG"
+
     class B_Truck_01_ammo_F {
         capValue = 1;
         cost = 1000;
@@ -192,50 +209,41 @@ class LightVehicles {
     //     };
     // };
 
-    class B_MRAP_01_gmg_F {
-        aps = 1;
-        capValue = 2;
-        cost = 1250;
-        killReward = 250;
-        rearm = 300;
-        requirements[] = {};
-    }; // "Hunter GMG"
+    // class B_MRAP_01_gmg_up_F {
+    //     aps = 2;
+    //     capValue = 2;
+    //     cost = 1500;
+    //     description = "Hunter UP is a variant of the Hunter armed with a 20mm autocannon.";
+    //     killReward = 300;
+    //     name = "Hunter UP Autocannon";
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "B_MRAP_01_gmg_F";
+    //     variant = 1;
 
-    class B_MRAP_01_gmg_up_F {
-        aps = 2;
-        capValue = 2;
-        cost = 1500;
-        description = "Hunter UP is a variant of the Hunter armed with a 20mm autocannon.";
-        killReward = 300;
-        name = "Hunter UP Autocannon";
-        rearm = 300;
-        requirements[] = {};
-        spawn = "B_MRAP_01_gmg_F";
-        variant = 1;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells",
-                "200Rnd_338_Mag",
-                "200Rnd_338_Mag"
-            };
-            addWeapons[] = {
-                "cannon_20mm",
-                "MMG_02_coax"
-            };
-            removeMagazines[] = {
-                "96Rnd_40mm_G_belt"
-            };
-            removeWeapons[] = {
-                "GMG_40mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_HE_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "60Rnd_20mm_AP_shells",
+    //             "200Rnd_338_Mag",
+    //             "200Rnd_338_Mag"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_20mm",
+    //             "MMG_02_coax"
+    //         };
+    //         removeMagazines[] = {
+    //             "96Rnd_40mm_G_belt"
+    //         };
+    //         removeWeapons[] = {
+    //             "GMG_40mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_T_Truck_03_device_F {
         aps = 4;
@@ -258,9 +266,9 @@ class LightVehicles {
             {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
         };
         capValue = 1;
-        cost = 2000;
+        cost = 3000;
         description = "Prowler (Spike AT) is a variant of the Prowler AT.";
-        killReward = 250;
+        killReward = 480;
         name = "Prowler (Spike AT)";
         offset[] = {0, 5, 0};
         rearm = 200;

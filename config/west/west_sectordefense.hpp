@@ -23,14 +23,6 @@ class SectorDefense {
         requirements[] = {};
     }; // "Tank barrier"
 
-    class Land_GuardTower_01_F {
-        cost = 50;
-        demolishable = 1;
-        killReward = 30;
-        offset[] = {0, 8, 0};
-        requirements[] = {};
-    };  // "Guard Tower"
-
     class Land_HBarrier_5_F {
         cost = 50;
         demolishable = 1;
@@ -206,6 +198,14 @@ class SectorDefense {
         };
     }; // "Static Titan Launcher (AT) [NATO]"
 
+    class Land_Cargo_Tower_V4_F {
+        cost = 450;
+        demolishable = 1;
+        killReward = 30;
+        offset[] = {0, 8, 0};
+        requirements[] = {};
+    };  // "Cargo Tower"
+
     class B_HMG_01_A_F {
         cost = 500;
         demolishable = 1;
@@ -246,16 +246,18 @@ class SectorDefense {
     };
 
     class B_static_AT_UP_F {
-        cost = 700;
+        cost = 1400;
         demolishable = 1;
-        description = "Static AT/AA Launcher (UP) is an upgraded variant of the stationary launchers.";
+        description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
-            "5Rnd_GAT_missiles"
+            "5Rnd_GAT_missiles",
+            "4Rnd_Titan_long_missiles",
+            "4Rnd_Titan_long_missiles_O"
         };
         killReward = 200;
         loadable[] = {0, -2.5, 0.2};
-        name = "Static AT/AA Launcher (UP)";
+        name = "Static AT Launcher (UP)";
         offset[] = {0, 3, 0};
         rearm = 300;
         requirements[] = {};
@@ -292,7 +294,7 @@ class SectorDefense {
     class Land_MobileRadar_01_radar_F {
         cost = 2500;
         demolishable = 1;
-        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. It must be placed outside the home base in an owned sector.";
+        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. Its position is revealed to the enemy when it is active.";
         garbageCollect = 1;
         killReward = 400;
         name = "EW Tower";
@@ -301,8 +303,35 @@ class SectorDefense {
         // This is not loadable. It will break initialization code to load this.
     };
 
+    // class B_AAA_System_01_F {
+    //     cost = 3500;
+    //     description = "Short range anti-mortar defense, capable of automatically engaging incoming ballistic shells. Effective range: 3km.";
+    //     killReward = 400;
+    //     loadable[] = {0, -1, 1.7};
+    //     offset[] = {0, 5.3, 0};
+    //     rearm = 180;
+    //     requirements[] = {};
+    //     variant = 1;
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "5000Rnd_762x51_Yellow_Belt"
+    //         };
+    //         addWeapons[] = {
+    //             "M134_minigun"
+    //         };
+    //         removeMagazines[] = {
+    //             "magazine_Cannon_Phalanx_x1550"
+    //         };
+    //         removeWeapons[] = {
+    //             "weapon_Cannon_Phalanx"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // }; // "Praetorian 1C"
+
     class B_Mortar_01_F {
-        cost = 4000;
+        cost = 5000;
         demolishable = 1;
         killReward = 125;
         loadable[] = {0, -2.5, 0};

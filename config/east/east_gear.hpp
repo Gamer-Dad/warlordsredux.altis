@@ -1,67 +1,41 @@
 class Gear {
-    class Box_East_Ammo_F {
-        cost = 50;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Basic Ammo [CSAT]"
+    class O_crate_F {
+        container[] = {
+            { "launch_O_Vorona_brown_F", 2 },
+            { "launch_RPG32_F", 2 },
+            { "launch_O_Titan_F", 2 },
+            { "launch_O_Titan_short_F", 2 },
 
-    class Box_East_Grenades_F {
-        cost = 50;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Grenades [CSAT]"
+            { "RPG32_F", 8 },
+            { "RPG32_HE_F", 2 },
+            { "Titan_AA", 8 },
+            { "Titan_AP", 2 },
+            { "Titan_AT", 8 },
+            { "Vorona_HE", 2 },
+            { "Vorona_HEAT", 8 },
 
-    class Box_East_Wps_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Basic Weapons [CSAT]"
+            { "APERSBoundingMine_Range_Mag", 3},
+            { "APERSMine_Range_Mag", 3},
+            { "APERSTripMine_Wire_Mag", 3},
+            { "ATMine_Range_Mag", 3},
+            { "ClaymoreDirectionalMine_Remote_Mag", 3},
+            { "DemoCharge_Remote_Mag", 3},
+            { "SatchelCharge_Remote_Mag", 3},
+            { "SLAMDirectionalMine_Wire_Mag", 3},
 
-    class Box_CSAT_Equip_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Equipment [NATO]"
-
-    class Box_CSAT_Uniforms_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Uniforms [NATO]"
-
-    class Box_East_AmmoOrd_F {
-        cost = 150;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Explosives [CSAT]"
-
-    class Box_East_WpsLaunch_F {
+            { "B_FieldPack_ocamo", 5 },
+            { "B_Carryall_ocamo", 5 }
+        };
         cost = 200;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
+        demolishable = 1;
+        description = "CSAT gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
+        killReward = 200;
+        loadable[] = { 0, -1, 0.5 };
+        name = "CSAT Supply Crate";
         offset[] = { 0, 3, 0};
+        spawn = "VirtualReammoBox_camonet_F";
         requirements[] = {};
-    }; // "Launchers [CSAT]"
-
-    class Box_East_WpsSpecial_F {
-        cost = 250;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Special Weapons [CSAT]"
+    };
 
     class Box_East_AmmoVeh_F {
         cost = 250;
@@ -70,14 +44,6 @@ class Gear {
         offset[] = { 0, 3, 0};
         requirements[] = {};
     }; // "Vehicle Ammo [CSAT]"
-
-    class O_supplyCrate_F {
-        cost = 300;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0};
-        requirements[] = {};
-    }; // "Supply Box [CSAT]"
 
     class Land_Pod_Heli_Transport_04_fuel_F {
         cost = 300;
@@ -99,4 +65,11 @@ class Gear {
         loadable[] = { 0, 0, 0 };
         requirements[] = {};
     }; // "Taru Repair Pod"
+
+    class Land_Pod_Heli_Transport_04_medevac_F {
+        cost = 500;
+        killReward = 200;
+        loadable[] = { 0, 0, 0 };
+        requirements[] = {};
+    }; // "Taru Medical Pod"
 };

@@ -74,37 +74,44 @@ class HeavyVehicles {
         requirements[] = {};
     }; // "CRV-6e Bobcat"
 
-    class B_APC_tracked_03_cannon_F {
+    class B_APC_Wheeled_01_light_F {
         aps = 2;
-        capValue = 4;
-        cost = 2500;
-        killReward = 400;
-        name = "FV-720 Mora";
+        capValue = 2;
+        cost = 1700;
+        description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
+        isLight = 1;
+        killReward = 300;
+        name = "AMV-7 Marshall Light";
         rearm = 500;
         requirements[] = {};
-        spawn = "I_APC_tracked_03_cannon_F";
-        textures[] = {
-            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
-            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
-            "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
-            "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
+        spawn = "B_APC_Wheeled_01_cannon_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "5000Rnd_762x51_Yellow_Belt"
+            };
+            addWeapons[] = {
+                "M134_minigun"
+            };
+            removeMagazines[] = {
+                "40Rnd_40mm_APFSDS_Tracer_Red_shells",
+                "60Rnd_40mm_GPR_Tracer_Red_shells"
+            };
+            removeWeapons[] = {
+                "LMG_coax",
+                "autocannon_40mm_CTWS"
+            };
+            turret[] = { 0 };
         };
     };
 
-    class B_APC_Wheeled_01_cannon_F {
-        aps = 2;
-        capValue = 3;
-        cost = 2700;
-        killReward = 300;
-        rearm = 500;
-        requirements[] = {};
-    }; // "AMV-7 Marshall"
-
     class B_APC_Wheeled_01_recon_F {
-        aps = 2;
+        aps = 4;
         capValue = 1;
-        cost = 2700;
+        cost = 2200;
         description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
+        isLight = 1;
         hasHMD = 1;
         hasScanner = 1;
         killReward = 300;
@@ -130,6 +137,32 @@ class HeavyVehicles {
             turret[] = { 0 };
         };
     };
+
+    class B_APC_tracked_03_cannon_F {
+        aps = 3;
+        capValue = 4;
+        cost = 2500;
+        killReward = 400;
+        name = "FV-720 Mora";
+        rearm = 500;
+        requirements[] = {};
+        spawn = "I_APC_tracked_03_cannon_F";
+        textures[] = {
+            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
+            "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
+            "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+            "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
+        };
+    };
+
+    class B_APC_Wheeled_01_cannon_F {
+        aps = 2;
+        capValue = 3;
+        cost = 2700;
+        killReward = 300;
+        rearm = 500;
+        requirements[] = {};
+    }; // "AMV-7 Marshall"
 
     class B_APC_Wheeled_03_cannon_F {
         aps = 2;
@@ -186,14 +219,16 @@ class HeavyVehicles {
                 "160Rnd_40mm_APFSDS_Tracer_Red_shells"
             };
             addWeapons[] = {
-                "autocannon_40mm_VTOL_01"
+                "autocannon_40mm_VTOL_01",
+                "LMG_coax"
             };
             removeMagazines[] = {
                 "60Rnd_40mm_GPR_Tracer_Red_shells",
                 "40Rnd_40mm_APFSDS_Tracer_Red_shells"
             };
             removeWeapons[] = {
-                "autocannon_40mm_CTWS"
+                "autocannon_40mm_CTWS",
+                "LMG_coax"
             };
             turret[] = { 0 };
         };
@@ -235,6 +270,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 4500;
+        isLight = 1;
         killReward = 450;
         rearm = 500;
         requirements[] = {};
@@ -256,6 +292,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        isLight = 1;
         killReward = 450;
         rearm = 600;
         requirements[] = {};
@@ -264,13 +301,32 @@ class HeavyVehicles {
     class B_MBT_01_TUSK_F {
         aps = 3;
         capValue = 4;
-        cost = 6500;
+        cost = 6200;
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         killReward = 500;
         rearm = 600;
         requirements[] = {};
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball"
+            };
+            addWeapons[] = {
+                "HMG_NSVT"
+            };
+            removeMagazines[] = {
+                "200Rnd_762x51_Belt_Red"
+            };
+            removeWeapons[] = {
+                "LMG_coax"
+            };
+            turret[] = { 0 };
+        };
     }; // "M2A1 Slammer UP"
 
     class B_MBT_03_cannon_F {
@@ -290,6 +346,54 @@ class HeavyVehicles {
             "src\img\camo\kuma02.jpg",
             "src\img\camo\kuma03.jpg",
             "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+        };
+    };
+
+    class B_MBT_01_TUSK2_F {
+        aps = 3;
+        capValue = 4;
+        cost = 9000;
+        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
+        disallowMagazines[] = {
+            "4Rnd_120mm_LG_cannon_missiles"
+        };
+        hasHMD = 1;
+        hasReconOptics = 1;
+        killReward = 600;
+        name = "M2A2 Slammer II";
+        rearm = 600;
+        requirements[] = {};
+        spawn = "B_MBT_01_TUSK_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "24Rnd_125mm_APFSDS_T_Red",
+                "8Rnd_125mm_HE_T_Red",
+                "8Rnd_125mm_HE_T_Red",
+                "8Rnd_125mm_HE_T_Red",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball"
+            };
+            addWeapons[] = {
+                "cannon_125mm_advanced",
+                "HMG_NSVT"
+            };
+            removeMagazines[] = {
+                "200Rnd_762x51_Belt_Red",
+                "24Rnd_120mm_APFSDS_shells_Tracer_Red",
+                "12Rnd_120mm_HE_shells_Tracer_Red",
+                "12Rnd_120mm_HEAT_MP_T_Red"
+            };
+            removeWeapons[] = {
+                "cannon_120mm",
+                "LMG_coax"
+            };
+            turret[] = { 0 };
         };
     };
 
@@ -377,7 +481,7 @@ class HeavyVehicles {
         };
         killReward = 600;
         name = "M4 Scorcher UP";
-        rearm = 1800;
+        rearm = 1200;
         requirements[] = {};
         spawn = "B_MBT_01_arty_F";
         variant = 1;

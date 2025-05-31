@@ -1,51 +1,87 @@
 class HeavyVehicles {
+    class O_APC_Wheeled_02_spandrel_F {
+        ammoOverrides[] = {
+            {"M_Vorona_HEAT", {"M_Vorona_HEAT_Tandem", "9M135 Tandem Missile"}}
+        };
+        capValue = 2;
+        cost = 1200;
+        killReward = 200;
+        name = "MSE-3 Marid (ATGM)";
+        spawn = "O_APC_Wheeled_02_rcws_v2_F";
+        rearm = 120;
+        requirements[] = {};
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT"
+            };
+            addWeapons[] = {
+                "missiles_Vorona"
+            };
+            reloadOverride = 0.5;
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt",
+                "200Rnd_127x99_mag_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "HMG_127_APC",
+                "GMG_40mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class O_APC_Wheeled_02_rcws_v2_F {
         aps = 2;
         capValue = 2;
-        cost = 1500;
+        cost = 1700;
         killReward = 300;
         rearm = 400;
         requirements[] = {};
     }; // "MSE-3 Marid"
 
-    class O_LT_01_AT_F {
-        aps = 1;
-        capValue = 3;
-        cost = 1500;
-        killReward = 240;
-        name = "AWC Nyx (AT)";
-        rearm = 300;
-        requirements[] = {};
-        spawn = "I_LT_01_AT_F";
-        textures[] = {
-            "src\img\camo\nyx01.jpg",
-            "src\img\camo\nyx02.jpg",
-            "a3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
-            "A3\Armor_F\Data\cage_csat_green_CO.paa"
-        };
+    // class O_LT_01_AT_F {
+    //     aps = 1;
+    //     capValue = 3;
+    //     cost = 1500;
+    //     killReward = 240;
+    //     name = "AWC Nyx (AT)";
+    //     rearm = 300;
+    //     requirements[] = {};
+    //     spawn = "I_LT_01_AT_F";
+    //     textures[] = {
+    //         "src\img\camo\nyx01.jpg",
+    //         "src\img\camo\nyx02.jpg",
+    //         "a3\Armor_F\Data\camonet_CSAT_HEX_Green_CO.paa",
+    //         "A3\Armor_F\Data\cage_csat_green_CO.paa"
+    //     };
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            reloadOverride = 10;
-            removeMagazines[] = {
-                "100Rnd_127x99_mag_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "HMG_127",
-                "missiles_Firefist"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         reloadOverride = 10;
+    //         removeMagazines[] = {
+    //             "100Rnd_127x99_mag_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "HMG_127",
+    //             "missiles_Firefist"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class O_APC_Wheeled_02_rcws_v2_m_F {
     //     aps = 2;
@@ -78,9 +114,9 @@ class HeavyVehicles {
     // };
 
     class O_APC_Tracked_02_recon_F {
-        aps = 2;
+        aps = 4;
         capValue = 1;
-        cost = 2700;
+        cost = 2200;
         description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
         hasHMD = 1;
         hasScanner = 1;
@@ -163,6 +199,7 @@ class HeavyVehicles {
             };
             addWeapons[] = {
                 "autocannon_40mm_VTOL_01",
+                "LMG_coax_ext",
                 "missiles_titan"
             };
             removeMagazines[] = {
@@ -172,42 +209,45 @@ class HeavyVehicles {
             };
             removeWeapons[] = {
                 "missiles_titan",
-                "autocannon_30mm_CTWS"
+                "autocannon_30mm_CTWS",
+                "LMG_coax_ext"
             };
             turret[] = { 0 };
         };
     };
 
-    // class O_MBT_02_cannon_export_F {
-    //     aps = 3;
-    //     capValue = 4;
-    //     cost = 5500;
-    //     description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
-    //     killReward = 500;
-    //     name = "T-100E Badger";
-    //     rearm = 600;
-    //     requirements[] = {};
-    //     spawn = "O_MBT_02_cannon_F";
-    //     variant = 1;
+    class O_MBT_02_cannon_export_F {
+        aps = 3;
+        capValue = 4;
+        cost = 5500;
+        description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
+        killReward = 500;
+        name = "T-100E Badger";
+        rearm = 600;
+        requirements[] = {};
+        spawn = "O_MBT_02_cannon_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "40Rnd_105mm_APFSDS"
-    //         };
-    //         addWeapons[] = {
-    //             "cannon_105mm"
-    //         };
-    //         removeMagazines[] = {
-    //             "16Rnd_125mm_APFSDS_T_Green",
-    //             "12Rnd_125mm_HE_T_Green",
-    //             "12Rnd_125mm_HEAT_T_Green"
-    //         };
-    //         removeWeapons[] = {
-    //             "cannon_125mm"
-    //         };
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "40Rnd_105mm_APFSDS"
+            };
+            addWeapons[] = {
+                "cannon_105mm",
+                "LMG_coax"
+            };
+            removeMagazines[] = {
+                "16Rnd_125mm_APFSDS_T_Green",
+                "12Rnd_125mm_HE_T_Green",
+                "12Rnd_125mm_HEAT_T_Green"
+            };
+            removeWeapons[] = {
+                "cannon_125mm",
+                "LMG_coax"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     class O_MBT_02_cannon_F {
         aps = 3;
@@ -221,7 +261,7 @@ class HeavyVehicles {
     class O_MBT_04_cannon_F {
         aps = 3;
         capValue = 4;
-        cost = 11000;
+        cost = 8500;
         killReward = 550;
         rearm = 600;
         requirements[] = {};
@@ -230,7 +270,7 @@ class HeavyVehicles {
     class O_MBT_04_command_F {
         aps = 3;
         capValue = 4;
-        cost = 13000;
+        cost = 9500;
         killReward = 600;
         rearm = 600;
         requirements[] = {};
@@ -275,16 +315,7 @@ class HeavyVehicles {
     //     };
     // };
 
-    // class O_MBT_02_railgun_F {
-    //     aps = 3;
-    //     capValue = 4;
-    //     cost = 15000;
-    //     killReward = 500;
-    //     rearm = 600;
-    //     requirements[] = {};
-    // }; // "T-100 Futura"
-
-    class I_Truck_02_MRL_F {
+    class O_Truck_02_MRL_F {
         aps = 1;
         capValue = 4;
         cost = 18000;
@@ -292,14 +323,16 @@ class HeavyVehicles {
             "12Rnd_230mm_rockets_cluster"
         };
         killReward = 600;
+        name = "Zamak MRL";
         rearm = 1800;
         requirements[] = {};
+        spawn = "I_Truck_02_MRL_F";
         textures[] = {
             "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
             "\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
             "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
         };
-    }; // "Zamak MRL"
+    };
 
     class O_MBT_02_arty_F {
         aps = 1;
@@ -340,7 +373,7 @@ class HeavyVehicles {
         };
         killReward = 600;
         name = "2S9M Sochor II";
-        rearm = 1800;
+        rearm = 1200;
         requirements[] = {};
         spawn = "O_MBT_02_arty_F";
         variant = 1;

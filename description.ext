@@ -1,10 +1,11 @@
-#include "src\core\warlords_constants.inc"
-#include "src\ui\defines.hpp"
-#include "src\ui\controls.hpp"
-#include "src\scripts\WLM\ui\WLM_pylons.hpp"
-#include "src\scripts\SQD\squadMenu.hpp"
+#include "src\includes.hpp"
+#include "requisitions.hpp"
+#include "config\customization.hpp"
+#include "config\tasks.hpp"
+#include "config\projectiles.hpp"
+#include "config\sectors.hpp"
 
-onLoadName = "Warlords Redux 2.6.10";
+onLoadName = "Warlords Redux 2.6.11";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
@@ -47,7 +48,6 @@ BIS_WL_fastTravelCostContested = 200;
 WL_airAssaultCost = 100;
 WL_vehicleParadropCost = 1000;
 BIS_WL_fastTravelCostSquadLeader = 10;
-BIS_WL_orderFTVehicleCost = 200;
 BIS_WL_fundsTransferCost = 2000;
 BIS_WL_targetResetCost = 500;
 BIS_WL_maxCP = 50000;
@@ -60,6 +60,7 @@ BIS_WL_baseValue = 50;
 BIS_WL_autonomous_limit = 2;
 BIS_WL_minAPSDist = 1000; //actual range = √x
 BIS_WL_maxAPSDist = 1600; //actual range = √x
+WL2_MinBaseDistance = 5;
 
 onPauseScript[] = {WL2_fnc_onPause};
 
@@ -69,22 +70,3 @@ class Header
 	minPlayers = 1;
 	maxPlayers = 128;
 };
-
-#include "src\mp_securityCommands.hpp"
-#include "src\mp_securityFunctions.hpp"
-#include "src\functions.hpp"
-
-#include "src\configs.hpp"
-#include "src\titles.hpp"
-#include "src\sounds.hpp"
-#include "src\briefings.hpp"
-
-#include "src\scripts\DIS\ui.hpp"
-#include "src\scripts\MENU\ui.hpp"
-#include "src\scripts\POLL\ui.hpp"
-#include "src\scripts\WLC\ui.hpp"
-
-#include "requisitions.hpp"
-#include "config\customization.hpp"
-#include "config\tasks.hpp"
-#include "config\projectiles.hpp"
