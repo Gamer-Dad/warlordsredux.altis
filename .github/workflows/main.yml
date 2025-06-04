@@ -18,6 +18,11 @@ jobs:
           Invoke-WebRequest -Uri https://github.com/winseros/pboman3/releases/download/v1.9.1/PBOManager-binaries-1.9.1-200.39e75de.zip -OutFile pbomanager.zip
           Expand-Archive -Path pbomanager.zip -DestinationPath pbomanager
 
+      - name: Remove .github and .git folders
+        run: |
+          Remove-Item "$env:GITHUB_WORKSPACE\.github" -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\.git" -Recurse -Force -ErrorAction SilentlyContinue
+
       - name: Build PBO (entire repo)
         run: |
           $pboc = "$env:GITHUB_WORKSPACE\pbomanager\PBO Manager\pboc.exe"
