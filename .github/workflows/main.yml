@@ -13,15 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Download PBO Manager
+      - name: Download and unzip PBO Manager
         run: |
           Invoke-WebRequest -Uri https://github.com/winseros/pboman3/releases/download/v1.9.1/PBOManager-binaries-1.9.1-200.39e75de.zip -OutFile pbomanager.zip
           Expand-Archive -Path pbomanager.zip -DestinationPath pbomanager
-
+          Rename-Item "pbomanager\PBOManager-binaries-1.9.1-200.39e75de\PBO Manager" "PBOManager"
+          
       - name: Build PBO
         run: |
-          .\pbomanager\PBOManager-binaries-1.9.1-200.39e75de\PBO\ Manager\pboc.exe pack warlordsredux.altis --output-directory .
-
+          .\pbomanager\PBOManager-binaries-1.9.1-200.39e75de\PBOManager\pboc.exe pack warlordsredux.altis --output-directory .
+          
       - name: Upload PBO to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
