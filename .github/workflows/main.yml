@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master-altis
-      
+
 jobs:
   build:
     runs-on: windows-latest
@@ -18,13 +18,13 @@ jobs:
           Invoke-WebRequest -Uri https://github.com/winseros/pboman3/releases/download/v1.9.1/PBOManager-binaries-1.9.1-200.39e75de.zip -OutFile pbomanager.zip
           Expand-Archive -Path pbomanager.zip -DestinationPath pbomanager
 
-      - name: Build PBO
+      - name: Build PBO (entire repo)
         run: |
-          & ".\pbomanager\PBO Manager\pboc.exe" pack warlordsredux.altis --output-directory .
+          $pboc = "$env:GITHUB_WORKSPACE\pbomanager\PBO Manager\pboc.exe"
+          & $pboc pack "$env:GITHUB_WORKSPACE" --output-directory "$env:GITHUB_WORKSPACE"
 
-      - name: Upload PBO to GitHub Release
-        uses: softprops/action-gh-release@v2
+      - name: Upload PBO to GitHub Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          files: warlordsredux.altis.pbo
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: packed-pbo
+          path: '*.pbo'
