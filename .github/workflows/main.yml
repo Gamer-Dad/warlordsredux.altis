@@ -15,11 +15,11 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Move source files to 'pbo_src'
+      - name: Move source files to 'warlordsredux.altis' subfolder
         run: |
-          New-Item -ItemType Directory -Path pbo_src
-          Get-ChildItem -Path $env:GITHUB_WORKSPACE -Exclude pbo_src | ForEach-Object {
-            Move-Item $_.FullName -Destination "$env:GITHUB_WORKSPACE\pbo_src"
+          New-Item -ItemType Directory -Path warlordsredux.altis
+          Get-ChildItem -Path $env:GITHUB_WORKSPACE -Exclude warlordsredux.altis | ForEach-Object {
+            Move-Item $_.FullName -Destination "$env:GITHUB_WORKSPACE\warlordsredux.altis"
           }
 
       - name: Download and unzip PBO Manager
@@ -27,16 +27,18 @@ jobs:
           Invoke-WebRequest -Uri https://github.com/winseros/pboman3/releases/download/v1.9.1/PBOManager-binaries-1.9.1-200.39e75de.zip -OutFile pbomanager.zip
           Expand-Archive -Path pbomanager.zip -DestinationPath pbomanager
 
-      - name: Clean up unwanted files from pbo_src
+      - name: Clean up unwanted files from warlordsredux.altis
         run: |
-          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.git" -Recurse -Force -ErrorAction SilentlyContinue
-          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.github" -Recurse -Force -ErrorAction SilentlyContinue
-          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitmodules" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.git" -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.github" -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.gitmodules" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.gitattributes" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.gitattributes" -Force -ErrorAction SilentlyContinue
 
-      - name: Build PBO from pbo_src
+      - name: Build PBO from warlordsredux.altis
         run: |
           $pboc = "$env:GITHUB_WORKSPACE\pbomanager\PBO Manager\pboc.exe"
-          & $pboc pack "$env:GITHUB_WORKSPACE\pbo_src" --output-directory "$env:GITHUB_WORKSPACE"
+          & $pboc pack "$env:GITHUB_WORKSPACE\warlordsredux.altis" --output-directory "$env:GITHUB_WORKSPACE"
 
       - name: Upload PBO to GitHub Artifacts
         uses: actions/upload-artifact@v4
