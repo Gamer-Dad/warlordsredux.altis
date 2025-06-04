@@ -268,6 +268,43 @@ class HeavyVehicles {
     //     };
     // };
 
+    class B_APC_Tracked_01_AT_F {
+        aps = 2;
+        capValue = 4;
+        cost = 4500;
+        description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
+        hasHMD = 1;
+        killReward = 340;
+        name = "IFV-6d Ocelot";
+        rearm = 280;
+        requirements[] = {};
+        spawn = "B_APC_Tracked_01_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "missiles_Firefist"
+            };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Red"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_AFV_Wheeled_01_cannon_F {
         aps = 2;
         capValue = 4;

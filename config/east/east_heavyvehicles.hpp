@@ -218,6 +218,43 @@ class HeavyVehicles {
         };
     };
 
+    class O_APC_Tracked_01_AT_F {
+        aps = 2;
+        capValue = 4;
+        cost = 4500;
+        description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis";
+        hasHMD = 1;
+        killReward = 340;
+        name = "BMP-39 Shir";
+        rearm = 280;
+        requirements[] = {};
+        spawn = "O_APC_Tracked_02_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "missiles_Firefist"
+            };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class O_MBT_02_cannon_export_F {
         aps = 3;
         capValue = 4;
