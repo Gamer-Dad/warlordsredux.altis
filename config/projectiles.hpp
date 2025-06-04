@@ -101,7 +101,7 @@ class WLProjectilesConfig {
             "M_Switchblade"
         };
         aps = 0;
-        consumption = 2;
+        consumption = 1;
         speed = 150;
         tv = 1;
     };
