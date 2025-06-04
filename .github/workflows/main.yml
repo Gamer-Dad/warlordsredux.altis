@@ -10,8 +10,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository with submodules
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Move source files to 'pbo_src'
         run: |
@@ -29,8 +31,7 @@ jobs:
         run: |
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.git" -Recurse -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.github" -Recurse -Force -ErrorAction SilentlyContinue
-          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitignore" -Force -ErrorAction SilentlyContinue
-          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitattributes" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitmodules" -Force -ErrorAction SilentlyContinue
 
       - name: Build PBO from pbo_src
         run: |
