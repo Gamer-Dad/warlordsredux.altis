@@ -20,7 +20,7 @@ jobs:
 
       - name: Build PBO
         run: |
-          & ".\pbomanager\PBOManager-binaries-1.9.1-200.39e75de\PBO Manager\pboc.exe" pack warlordsredux.altis --output-directory .
+          & ".\pbomanager\PBO Manager\pboc.exe" pack warlordsredux.altis --output-directory .
 
       - name: Upload PBO to GitHub Release
         uses: softprops/action-gh-release@v2
