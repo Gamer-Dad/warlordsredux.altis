@@ -15,10 +15,13 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Move source files to 'warlordsredux.altis' subfolder
+      - name: Prepare warlordsredux.altis folder
         run: |
+          if (Test-Path "$env:GITHUB_WORKSPACE\warlordsredux.altis") {
+            Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis" -Recurse -Force
+          }
           New-Item -ItemType Directory -Path warlordsredux.altis
-          Get-ChildItem -Path $env:GITHUB_WORKSPACE -Exclude warlordsredux.altis | ForEach-Object {
+          Get-ChildItem -Path $env:GITHUB_WORKSPACE -Exclude warlordsredux.altis, pbomanager, pbomanager.zip | ForEach-Object {
             Move-Item $_.FullName -Destination "$env:GITHUB_WORKSPACE\warlordsredux.altis"
           }
 
@@ -33,15 +36,17 @@ jobs:
           Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.github" -Recurse -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.gitmodules" -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.gitattributes" -Force -ErrorAction SilentlyContinue
-          Remove-Item "$env:GITHUB_WORKSPACE\warlordsredux.altis\.gitattributes" -Force -ErrorAction SilentlyContinue
 
       - name: Build PBO from warlordsredux.altis
         run: |
           $pboc = "$env:GITHUB_WORKSPACE\pbomanager\PBO Manager\pboc.exe"
           & $pboc pack "$env:GITHUB_WORKSPACE\warlordsredux.altis" --output-directory "$env:GITHUB_WORKSPACE"
 
+      - name: Verify output
+        run: Get-ChildItem "$env:GITHUB_WORKSPACE"
+
       - name: Upload PBO to GitHub Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: packed-pbo
-          path: '*.pbo'
+          path: warlordsredux.altis.pbo
