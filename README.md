@@ -1,6 +1,5 @@
-
 # Warlords Redux
-Warlords Redux is a community upgrade project for the Original Warlords Redux. 
+Warlords Redux is a community upgrade project for the Original Warlords Redux.
 
 Original Warlords Redux by Bohemia Interactive and Jezuro can be found here:
 https://steamcommunity.com/sharedfiles/filedetails/?id=1834482266&searchtext=Warlords+redux
@@ -17,7 +16,7 @@ Warlord Redux discord: https://discord.gg/grmzsZE4ua
 
 Warlords Redux Server info: https://www.battlemetrics.com/servers/arma3/5449720
 
-## Want to get involed  
+## Want to get involed
 
 Github page: you are already here :)
 
