@@ -274,7 +274,7 @@ class LightVehicles {
             {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
         };
         capValue = 1;
-        cost = 3000;
+        cost = 6000;
         description = "Prowler (Spike AT) is a variant of the Prowler AT.";
         killReward = 480;
         loadable[] = {0, -1.3, 0.95};
@@ -287,7 +287,6 @@ class LightVehicles {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles"
             };
