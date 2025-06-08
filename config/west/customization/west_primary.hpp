@@ -781,7 +781,7 @@ class Primary {
             level = 26;
             name = "Standard";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box", 3 }
+                { "200Rnd_65x39_cased_Box", 2 }
             };
         };
 
@@ -789,7 +789,7 @@ class Primary {
             level = 27;
             name = "Tracers";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box_Tracer_Red", 3 }
+                { "200Rnd_65x39_cased_Box_Tracer_Red", 2 }
             };
         };
 
@@ -797,7 +797,7 @@ class Primary {
             level = 28;
             name = "Extra Ammo";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box", 6 }
+                { "200Rnd_65x39_cased_Box", 4 }
             };
         };
 
@@ -805,7 +805,7 @@ class Primary {
             level = 29;
             name = "Tracers, Extra Ammo";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box_Tracer_Red", 6 }
+                { "200Rnd_65x39_cased_Box_Tracer_Red", 4 }
             };
         };
 
@@ -829,7 +829,7 @@ class Primary {
             level = 28;
             name = "Standard";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_F", 3 }
+                { "75rnd_762x39_AK12_Mag_F", 2 }
             };
         };
 
@@ -837,7 +837,7 @@ class Primary {
             level = 29;
             name = "Tracers";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_Tracer_F", 3 }
+                { "75rnd_762x39_AK12_Mag_Tracer_F", 2 }
             };
         };
 
@@ -845,7 +845,7 @@ class Primary {
             level = 30;
             name = "Extra Ammo";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_F", 6 }
+                { "75rnd_762x39_AK12_Mag_F", 4 }
             };
         };
 
@@ -853,7 +853,7 @@ class Primary {
             level = 31;
             name = "Tracers, Extra Ammo";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_Tracer_F", 6 }
+                { "75rnd_762x39_AK12_Mag_Tracer_F", 4 }
             };
         };
 

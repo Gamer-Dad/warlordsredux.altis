@@ -20,30 +20,6 @@ class TaskFastTravelConflict: WLTaskTutorialFastTravel {
     reward = 100;
 };
 
-class TaskFastTravelFTVehicle: WLTaskTutorialFastTravel {
-    name = $STR_WLT_taskFastTravelFTVehicleName;
-    description = $STR_WLT_taskFastTravelFTVehicleDesc;
-    descArgs[] = {
-        "actionKeysNames 'gear'"
-    };
-    prerequisites[] = {
-        "TaskFastTravelConflict"
-    };
-    reward = 100;
-};
-
-class TaskFastTravelFTPod: WLTaskTutorialFastTravel {
-    name = $STR_WLT_taskFastTravelFTPodName;
-    description = $STR_WLT_taskFastTravelFTPodDesc;
-    descArgs[] = {
-        "actionKeysNames 'gear'"
-    };
-    prerequisites[] = {
-        "TaskFastTravelFTVehicle"
-    };
-    reward = 100;
-};
-
 class TaskBuyTent: WLTaskTutorialFastTravel {
     name = $STR_WLT_taskBuyTentName;
     description = $STR_WLT_taskBuyTentDesc;
@@ -51,7 +27,7 @@ class TaskBuyTent: WLTaskTutorialFastTravel {
         "actionKeysNames 'gear'"
     };
     prerequisites[] = {
-        "TaskFastTravelFTPod"
+        "TaskFastTravelConflict"
     };
     reward = 50;
 };
