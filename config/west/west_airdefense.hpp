@@ -1,6 +1,7 @@
 class AirDefense {
     class B_static_AA_F {
         cost = 300;
+        description = "The Titan Multi-Purpose Rocket Launcher is a shoulder system for launching guided rockets against aerial targets.<br /><br />Basic Controls:<br />Press T to lock onto target.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
@@ -30,7 +31,7 @@ class AirDefense {
     class B_static_AA_UP_F {
         cost = 800;
         demolishable = 1;
-        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
+        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.<br /><br />Basic Controls:<br />Press T to lock onto target.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
             "5Rnd_GAT_missiles",
@@ -70,7 +71,7 @@ class AirDefense {
 
     class B_Radar_System_01_F {
         cost = 1000;
-        description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
+        description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target and measure distance.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         killReward = 350;
         loadable[] = {0, 0, 1};
         offset[] = {0, 7, 0};
@@ -79,7 +80,7 @@ class AirDefense {
 
     class B_AAA_System_01_F {
         cost = 3500;
-        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
+        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target, measure distance and adjust fire control system.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         killReward = 400;
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
@@ -94,6 +95,7 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        description = "While both IFV-6c Panther and IFV-6a Cheetah are based on the Israeli armored personnel carrier chassis, they serve different roles in combat.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target and measure distance.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         hasHMD = 1;
         killReward = 350;
         rearm = 300;
@@ -123,7 +125,7 @@ class AirDefense {
 
     class B_SAM_System_01_F {
         cost = 6500;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target and measure distance.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         hasHMD = 1;
         killReward = 500;
         loadable[] = {0, -2, 0.8};
@@ -134,7 +136,7 @@ class AirDefense {
 
     class B_SAM_System_03_F {
         cost = 7000;
-        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target and measure distance.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         hasHMD = 1;
         killReward = 500;
         loadable[] = {0, 0, 1};
@@ -147,7 +149,7 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 7500;
-        description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
+        description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target, measure distance and adjust fire control system.<br />Press F to cycle between weapons.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         hasHMD = 1;
         killReward = 600;
         name = "IFV-6X Puma";
@@ -178,7 +180,7 @@ class AirDefense {
 
     class B_SAM_System_02_F {
         cost = 8000;
-        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target and measure distance.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         hasHMD = 1;
         killReward = 600;
         loadable[] = {0, -2, 1};
@@ -191,7 +193,7 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 8500;
-        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
+        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target, measure distance and adjust fire control system.<br />Press F to cycle between weapons.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         hasHMD = 1;
         killReward = 600;
         name = "IFV-6C Jaguar";
@@ -226,7 +228,7 @@ class AirDefense {
             {"ammo_Missile_Cruise_01", {"M_SM6", "Standard Missile 6 Block II"}}
         };
         cost = 42000;
-        description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.";
+        description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.<br /><br />Basic Controls:<br />Press Ctrl + R to toggle the radar on/off.<br />Press R to cycle between targets on sensors.<br />Press T to lock onto target and measure distance.<br />Press [ or ] to adjust system panels for the left or right side of your screen.<br />Press Right Ctrl + [ or Right Ctrl + ] to adjust modes (if available) for system panels.<br />(Keybinds may vary between players, the controls shown are based on the default controls for ArmA 3.)";
         disallowMagazines[] = {
             "magazine_Missiles_Cruise_01_Cluster_x18"
         };
