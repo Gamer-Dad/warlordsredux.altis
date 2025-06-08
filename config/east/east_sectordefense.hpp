@@ -317,7 +317,7 @@ class SectorDefense {
         ammoOverrides[] = {
             {"M_127mm_Firefist_AT", {"M_Lancet", "Lancet (Loitering Munition)"}}
         };
-        cost = 6000;
+        cost = 8000;
         demolishable = 1;
         description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         killReward = 125;

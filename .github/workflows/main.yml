@@ -1,0 +1,50 @@
+name: Build and Release PBO
+
+on:
+  push:
+    branches:
+      - master-altis
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Move source files to 'pbo_src'
+        run: |
+          New-Item -ItemType Directory -Path pbo_src
+          Get-ChildItem -Path $env:GITHUB_WORKSPACE -Exclude pbo_src | ForEach-Object {
+            Move-Item $_.FullName -Destination "$env:GITHUB_WORKSPACE\pbo_src"
+          }
+
+      - name: Download and unzip PBO Manager
+        run: |
+          Invoke-WebRequest -Uri https://github.com/winseros/pboman3/releases/download/v1.9.1/PBOManager-binaries-1.9.1-200.39e75de.zip -OutFile pbomanager.zip
+          Expand-Archive -Path pbomanager.zip -DestinationPath pbomanager
+
+      - name: Clean up unwanted files from pbo_src
+        run: |
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.git" -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.github" -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitmodules" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitattributes" -Force -ErrorAction SilentlyContinue
+
+      - name: Build PBO from pbo_src
+        run: |
+          $pboc = "$env:GITHUB_WORKSPACE\pbomanager\PBO Manager\pboc.exe"
+          & $pboc pack "$env:GITHUB_WORKSPACE\pbo_src" --output-directory "$env:GITHUB_WORKSPACE"
+
+      - name: Rename PBO to warlordsredux.altis.pbo
+        run: |
+          Rename-Item "$env:GITHUB_WORKSPACE\pbo_src.pbo" "$env:GITHUB_WORKSPACE\warlordsredux.altis.pbo"
+
+      - name: Upload PBO to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: packed-pbo
+          path: warlordsredux.altis.pbo
