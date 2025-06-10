@@ -1,7 +1,6 @@
 class RemoteControl {
     class I_UGV_02_Demining_F {
         cost = 100;
-        killReward = 100;
         offset[] = {0, 3, 0};
         rearm = 200;
         requirements[] = {};
@@ -9,21 +8,18 @@ class RemoteControl {
 
     class I_UGV_01_F {
         cost = 150;
-        killReward = 50;
         offset[] = {0, 5, 0};
         requirements[] = {};
     };  // "UGV Stomper"
 
     class I_UAV_01_F {
         cost = 500;
-        killReward = 100;
         offset[] = {0, 3, 0};
         requirements[] = {};
     };  // "AR-2"
 
     class I_UGV_01_rcws_F {
         cost = 500;
-        killReward = 100;
         offset[] = {0, 5, 0};
         rearm = 300;
         requirements[] = {};
@@ -31,7 +27,6 @@ class RemoteControl {
 
     class I_UAV_06_F {
         cost = 1000;
-        killReward = 200;
         offset[] = {0, 3, 0};
         requirements[] = {};
     };  // "AR-6"
@@ -39,7 +34,6 @@ class RemoteControl {
     class I_UAV_01_UP_F {
         cost = 1200;
         description = "AR-2 Darter UP is a variant of the AR-2 Darter armed with a 45ACP SMG.";
-        killReward = 200;
         name = "AR-2 Darter UP";
         offset[] = {0, 3, 0};
         rearm = 300;
@@ -72,7 +66,6 @@ class RemoteControl {
     class I_UGV_01_rcws_up_F {
         cost = 1200;
         description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
-        killReward = 300;
         name = "UGV Stomper UP";
         offset[] = {0, 5, 0};
         rearm = 300;

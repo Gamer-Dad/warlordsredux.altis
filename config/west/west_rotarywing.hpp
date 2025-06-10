@@ -1,14 +1,12 @@
 class RotaryWing {
     class B_Heli_Light_01_F {
         cost = 300;
-        killReward = 100;
         requirements[] = {"H"};
     }; // "MH-9 Hummingbird"
 
     class B_Heli_Transport_01_F {
         cost = 800;
         hasHMD = 1;
-        killReward = 100;
         offset[] = {0, 11, 0};
         rearm = 300;
         requirements[] = {"H"};
@@ -16,7 +14,6 @@ class RotaryWing {
 
     class B_Heli_Transport_03_F {
         cost = 1000;
-        killReward = 100;
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
@@ -24,7 +21,6 @@ class RotaryWing {
 
     class B_Heli_Light_01_dynamicLoadout_F {
         cost = 2500;
-        killReward = 200;
         rearm = 300;
         requirements[] = {"H"};
     }; // "AH-9 Pawnee"
@@ -36,7 +32,6 @@ class RotaryWing {
         cost = 3200;
         description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with autocannons (gunners) and Spike missiles (copilot).";
         hasHMD = 1;
-        killReward = 300;
         name = "UH-80 Ghost Hawk UP";
         offset[] = {0, 11, 0};
         rearm = 400;
@@ -102,7 +97,6 @@ class RotaryWing {
         cost = 4000;
         description = "AH-9 Pawnee Block II is a variant of the AH-9 Pawnee with advanced avionics.";
         hasHMD = 1;
-        killReward = 300;
         name = "AH-9 Pawnee Block II";
         rearm = 300;
         requirements[] = {"H"};
@@ -140,7 +134,6 @@ class RotaryWing {
         cost = 5000;
         description = "WY-55 Hellcat is a light attack helicopter.";
         hasHMD = 1;
-        killReward = 300;
         name = "WY-55 Hellcat";
         offset[] = {0, 9, 0};
         rearm = 300;
@@ -159,7 +152,6 @@ class RotaryWing {
         };
         cost = 11000;
         hasHMD = 1;
-        killReward = 550;
         offset[] = {0, 10, 0};
         rearm = 700;
         requirements[] = {"H"};
@@ -185,7 +177,6 @@ class RotaryWing {
     // class B_Heli_Attack_01_sead_F: B_Heli_Attack_01_dynamicLoadout_F {
     //     cost = 18000;
     //     description = "AH-99 Blackfoot Block II is a variant of the AH-99 Blackfoot with a powerful device jammer. Gunner seat must be player-operated.";
-    //     killReward = 650;
     //     name = "AH-99 Blackfoot Block II";
     //     spawn = "B_Heli_Attack_01_dynamicLoadout_F";
     //     variant = 1;

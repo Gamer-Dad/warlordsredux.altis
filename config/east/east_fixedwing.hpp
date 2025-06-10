@@ -2,7 +2,6 @@ class FixedWing {
     class O_Plane_Civil_01_F {
         cost = 800;
         description = "Caesar BTT is a light unarmed aircraft.";
-        killReward = 200;
         name = "Caesar BTT";
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
@@ -11,7 +10,6 @@ class FixedWing {
     // class O_Plane_Caesar_hmggmg_01_F {
     //     cost = 1500;
     //     description = "Caesar BTT (HMG/GMG) is a variant of the Caesar BTT armed with a HMG and GMG.";
-    //     killReward = 300;
     //     name = "Caesar BTT (HMG/GMG)";
     //     rearm = 300;
     //     requirements[] = {"A"};
@@ -40,7 +38,6 @@ class FixedWing {
     // class O_Plane_Caesar_rocket_01_F {
     //     cost = 1800;
     //     description = "Caesar BTT (Rocket) is a variant of the Caesar BTT armed with rockets.";
-    //     killReward = 300;
     //     name = "Caesar BTT (Rocket)";
     //     rearm = 400;
     //     requirements[] = {"A"};
@@ -70,7 +67,6 @@ class FixedWing {
         cost = 2000;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasRemoteBomb = 1;
-        killReward = 300;
         name = "Caesar BTT (Bomb)";
         rearm = 400;
         requirements[] = {"A"};
@@ -110,7 +106,6 @@ class FixedWing {
         };
         hasAWACS = 1;
         hasHMD = 1;
-        killReward = 500;
         name = "Y-32 Xi'an (AWACS)";
         requirements[] = {"A"};
         spawn = "O_T_VTOL_02_infantry_dynamicLoadout_F";
@@ -157,7 +152,6 @@ class FixedWing {
         };
         cost = 12000;
         hasHMD = 1;
-        killReward = 600;
         rearm = 700;
         requirements[] = {"A"};
 
@@ -180,7 +174,7 @@ class FixedWing {
 
     class O_Plane_Fighter_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons5", "Pylons6"}}
+            {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons4", "Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
             {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
@@ -189,7 +183,6 @@ class FixedWing {
         description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
         hasRemoteBomb = 1;
-        killReward = 600;
         name = "A-143 Buzzard (CAS)";
         rearm = 900;
         requirements[] = {"A"};
@@ -213,9 +206,11 @@ class FixedWing {
     };
 
     class O_Plane_CAS_02_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PG_missiles"
+        };
         cost = 17000;
         hasHMD = 1;
-        killReward = 900;
         rearm = 900;
         requirements[] = {"A"};
 
@@ -234,14 +229,14 @@ class FixedWing {
 
     class O_Plane_Fighter_02_F {
         allowPylonMagazines[] = {
-            "PylonMissile_Missile_KH58_INT_x1"
+            "PylonMissile_Missile_KH58_INT_x1",
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter3"}}
         };
         cost = 28000;
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
         hasHMD = 1;
-        killReward = 1100;
         rearm = 900;
         requirements[] = {"A"};
 
@@ -263,7 +258,8 @@ class FixedWing {
     class O_Plane_Fighter_02_Stealth_F {
         allowPylonMagazines[] = {
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
-            "PylonMissile_Missile_KH58_INT_x1"
+            "PylonMissile_Missile_KH58_INT_x1",
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter3"}}
         };
         ammoOverrides[] = {
             {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
@@ -276,9 +272,44 @@ class FixedWing {
         hasGPSMunition = 1;
         hasHMD = 1;
         hasReconOptics = 1;
-        killReward = 1100;
         rearm = 720;
         requirements[] = {"A"};
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
+
+    class O_Plane_Fighter_02_Gyrfalcon_F {
+        allowPylonMagazines[] = {
+            {"PylonMissile_Missile_KH58_INT_x1", {"pylons1", "pylons2", "pylons3", "pylons4", "pylons5", "pylons6", "pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft1", "pylonBayRight1", "pylonBayLeft2", "pylonBayRight2"}},
+            {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft1", "pylonBayRight1"}}
+        };
+        cost = 28000;
+        disallowMagazines[] = {
+            "PylonMissile_Missile_KH58_x1",
+            "PylonMissile_Missile_AGM_KH25_x1",
+            "PylonMissile_Missile_AGM_KH25_INT_x1",
+            "PylonMissile_Bomb_KAB250_x1"
+        };
+        hasAWACS = 1;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        name = "J-30 Gyrfalcon";
+        rearm = 720;
+        requirements[] = {"A"};
+        spawn = "O_Plane_Fighter_02_F";
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -311,7 +342,6 @@ class FixedWing {
     //     };
     //     hasHMD = 1;
     //     hasRemoteBomb = 1;
-    //     killReward = 1200;
     //     name = "To-201 Shikra (Land Attack)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
@@ -346,7 +376,6 @@ class FixedWing {
     //     };
     //     hasGPSMunition = 1;
     //     hasHMD = 1;
-    //     killReward = 1200;
     //     name = "To-201 Shikra (Standoff)";
     //     rearm = 1200;
     //     requirements[] = {"A"};

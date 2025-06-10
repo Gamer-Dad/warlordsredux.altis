@@ -1,25 +1,21 @@
 class Naval {
     class C_Scooter_Transport_01_F {
         cost = 50;
-        killReward = 20;
         requirements[] = {"W"};
     };	// "Water scooter"
 
     class B_Boat_Transport_01_F {
         cost = 100;
-        killReward = 20;
         requirements[] = {"W"};
     };	// "Assault Boat"
 
     class B_SDV_01_F {
         cost = 250;
-        killReward = 20;
         requirements[] = {"W"};
     };	// "SDV"
 
     class B_Boat_Armed_01_minigun_F {
         cost = 500;
-        killReward = 80;
         rearm = 400;
         requirements[] = {"W"};
     };	// "Speedboat Minigun"
@@ -30,7 +26,6 @@ class Naval {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        killReward = 100;
         name = "Riverine Command Boat";
         rearm = 400;
         requirements[] = {"W"};
@@ -63,7 +58,6 @@ class Naval {
     class B_Boat_Transport_02_F {
         cost = 1500;
         description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
-        killReward = 150;
         name = "Supply RHIB";
         requirements[] = {"W"};
         spawn = "I_C_Boat_Transport_02_F";

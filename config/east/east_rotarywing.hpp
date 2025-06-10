@@ -1,21 +1,18 @@
 class RotaryWing {
     class O_Heli_Transport_04_covered_F {
         cost = 400;
-        killReward = 100;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Transport)"
 
     class O_Heli_Transport_04_F {
         cost = 500;
-        killReward = 100;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru"
 
     class O_Heli_Transport_04_medevac_F {
         cost = 500;
-        killReward = 100;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Medical)"
@@ -23,7 +20,6 @@ class RotaryWing {
     class O_Heli_Light_02_unarmed_F {
         cost = 500;
         hasHMD = 1;
-        killReward = 125;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "PO-30 Orca (Unarmed)"
@@ -31,7 +27,6 @@ class RotaryWing {
     class O_Heli_Transport_02_F {
         cost = 500;
         hasHMD = 1;
-        killReward = 120;
         name = "CH-49 Mohawk";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
@@ -65,7 +60,6 @@ class RotaryWing {
         hasHMD = 1;
         // hasScanner = 1;
         hasReconOptics = 1;
-        killReward = 200;
         name = "Mi-290 Taru (Recon)";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
@@ -92,7 +86,6 @@ class RotaryWing {
     class O_Heli_Light_02_dynamicLoadout_F {
         cost = 4000;
         hasHMD = 1;
-        killReward = 300;
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
@@ -105,7 +98,6 @@ class RotaryWing {
         };
         cost = 5000;
         hasHMD = 1;
-        killReward = 350;
         name = "CH-49 Mohawk (ATGM)";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
@@ -150,7 +142,6 @@ class RotaryWing {
         };
         cost = 8500;
         hasHMD = 1;
-        killReward = 550;
         offset[] = {0, 11, 0};
         rearm = 700;
         requirements[] = {"H"};
@@ -179,7 +170,6 @@ class RotaryWing {
     // class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
     //     cost = 15000;
     //     description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with a powerful device jammer. Gunner seat must be player-operated.";
-    //     killReward = 650;
     //     name = "Mi-55 Kajman-M";
     //     spawn = "O_Heli_Attack_02_dynamicLoadout_F";
     //     variant = 1;
