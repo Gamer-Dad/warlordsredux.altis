@@ -1330,4 +1330,88 @@ class Primary {
 
         attachments[] = {};
     };
+
+    // Kozlice 12G
+    class Kozlice12 {
+        name = "Kozlice 12G";
+        item = "sgun_HunterShotgun_01_F";
+        level = 50;
+        cost = 100;
+
+        class Standard: WLCAmmo {
+            level = 51;
+            name = "Standard";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 10 }
+            };
+        };
+
+        class Slugs: WLCAmmo {
+            level = 52;
+            name = "Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 10 }
+            };
+        };
+
+        class ExtraPellets: WLCAmmo {
+            level = 53;
+            name = "Extra Pellets";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 20 }
+            };
+        };
+
+        class ExtraSlugs: WLCAmmo {
+            level = 54;
+            name = "Extra Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 20 }
+            };
+        };
+
+        attachments[] = {};
+    };
+
+    // Kozlice 12G Sawed-Off
+    class Kozlice12_Sawn {
+        name = "Kozlice 12G Sawed-Off";
+        item = "sgun_HunterShotgun_01_sawedoff_F";
+        level = 55;
+        cost = 100;
+
+        class Standard: WLCAmmo {
+            level = 56;
+            name = "Standard";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 10 }
+            };
+        };
+
+        class Slugs: WLCAmmo {
+            level = 57;
+            name = "Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 10 }
+            };
+        };
+
+        class ExtraPellets: WLCAmmo {
+            level = 58;
+            name = "Extra Pellets";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 20 }
+            };
+        };
+
+        class ExtraSlugs: WLCAmmo {
+            level = 59;
+            name = "Extra Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 20 }
+            };
+        };
+
+        attachments[] = {};
+    };
 };

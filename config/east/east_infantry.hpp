@@ -1,5 +1,4 @@
 class Infantry {
-
     class O_Helipilot_F {
         cost = 10;
         requirements[] = {};

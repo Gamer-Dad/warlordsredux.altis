@@ -29,7 +29,6 @@ class Gear {
         cost = 200;
         demolishable = 1;
         description = "Independent gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
-        killReward = 200;
         loadable[] = { 0, -1, 0.5 };
         name = "Independent Supply Crate";
         offset[] = { 0, 3, 0};
@@ -39,7 +38,6 @@ class Gear {
 
     class Box_IND_AmmoVeh_F {
         cost = 250;
-        killReward = 70;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0 };
         requirements[] = {};

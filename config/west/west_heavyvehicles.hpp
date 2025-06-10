@@ -3,7 +3,6 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 1300;
-        killReward = 300;
         rearm = 400;
         requirements[] = {};
 
@@ -31,7 +30,6 @@ class HeavyVehicles {
         aps = 1;
         capValue = 3;
         cost = 1500;
-        killReward = 240;
         loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (AT)";
         rearm = 300;
@@ -70,7 +68,6 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
-        killReward = 300;
         rearm = 400;
         requirements[] = {};
     }; // "CRV-6e Bobcat"
@@ -81,7 +78,6 @@ class HeavyVehicles {
         cost = 1700;
         description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
         isLight = 1;
-        killReward = 300;
         loadable[] = {0, -0.8, 1.7};
         name = "AMV-7 Marshall Light";
         rearm = 500;
@@ -116,7 +112,6 @@ class HeavyVehicles {
         isLight = 1;
         hasHMD = 1;
         hasScanner = 1;
-        killReward = 300;
         name = "AMV-7 Marshall (Recon)";
         rearm = 500;
         requirements[] = {};
@@ -144,7 +139,6 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 2500;
-        killReward = 400;
         name = "FV-720 Mora";
         rearm = 500;
         requirements[] = {};
@@ -161,7 +155,6 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 2700;
-        killReward = 300;
         rearm = 500;
         requirements[] = {};
     }; // "AMV-7 Marshall"
@@ -173,7 +166,6 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        killReward = 300;
         rearm = 500;
         requirements[] = {};
         textures[] = {
@@ -206,7 +198,6 @@ class HeavyVehicles {
         capValue = 3;
         cost = 3200;
         description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
-        killReward = 300;
         name = "AMV-7 Marshall UP";
         rearm = 500;
         requirements[] = {};
@@ -241,7 +232,6 @@ class HeavyVehicles {
     //     capValue = 4;
     //     cost = 3700;
     //     description = "Rhino MGS-E is a variant of the Rhino MGS armed with a weaker 105mm cannon.";
-    //     killReward = 400;
     //     name = "Rhino MGS-E";
     //     rearm = 500;
     //     requirements[] = {};
@@ -274,7 +264,6 @@ class HeavyVehicles {
         cost = 4500;
         description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
         hasHMD = 1;
-        killReward = 340;
         name = "IFV-6d Ocelot";
         rearm = 280;
         requirements[] = {};
@@ -310,7 +299,6 @@ class HeavyVehicles {
         capValue = 4;
         cost = 4500;
         isLight = 1;
-        killReward = 450;
         rearm = 500;
         requirements[] = {};
     }; // "Rhino MGS"
@@ -319,7 +307,6 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 5000;
-        killReward = 500;
         rearm = 500;
         requirements[] = {};
     }; // "Rhino MGS UP"
@@ -332,7 +319,6 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         isLight = 1;
-        killReward = 450;
         rearm = 600;
         requirements[] = {};
     }; // "M2A1 Slammer"
@@ -344,7 +330,6 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
-        killReward = 500;
         rearm = 600;
         requirements[] = {};
 
@@ -375,7 +360,6 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
-        killReward = 500;
         name = "M52 Kuma";
         rearm = 600;
         requirements[] = {};
@@ -398,7 +382,6 @@ class HeavyVehicles {
         };
         hasHMD = 1;
         hasReconOptics = 1;
-        killReward = 600;
         name = "M2A2 Slammer II";
         rearm = 600;
         requirements[] = {};
@@ -441,7 +424,6 @@ class HeavyVehicles {
     //     capValue = 4;
     //     cost = 13000;
     //     description = "M2X Slammer (Railgun) is a variant of the M2A1 Slammer armed with a railgun.";
-    //     killReward = 550;
     //     name = "M2X Slammer (Railgun)";
     //     rearm = 600;
     //     requirements[] = {};
@@ -477,7 +459,6 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster",
             "2Rnd_155mm_Mo_Cluster_O"
         };
-        killReward = 600;
         rearm = 1800;
         requirements[] = {};
     }; // "M4 Scorcher"
@@ -489,56 +470,54 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "12Rnd_230mm_rockets_cluster"
         };
-        killReward = 600;
         rearm = 1800;
         requirements[] = {};
     }; // "M5 Sandstorm MLRS"
 
-    class B_MBT_01_arty_tv_F {
-        ammoOverrides[] = {
-            {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
-        };
-        aps = 1;
-        capValue = 4;
-        cost = 30000;
-        disallowMagazines[] = {
-            "2Rnd_155mm_Mo_guided",
-            "4Rnd_155mm_Mo_guided",
-            "2Rnd_155mm_Mo_LG",
-            "4Rnd_155mm_Mo_LG",
-            "6Rnd_155mm_Mo_mine",
-            "6Rnd_155mm_Mo_AT_mine",
-            "2Rnd_155mm_Mo_Cluster",
-            "6Rnd_155mm_Mo_smoke",
-            "2Rnd_155mm_Mo_guided_O",
-            "4Rnd_155mm_Mo_guided_O",
-            "4Rnd_155mm_Mo_LG_O",
-            "6Rnd_155mm_Mo_mine_O",
-            "6Rnd_155mm_Mo_AT_mine_O",
-            "2Rnd_155mm_Mo_Cluster_O",
-            "6Rnd_155mm_Mo_smoke_O"
-        };
-        killReward = 600;
-        name = "M4 Scorcher UP";
-        rearm = 1200;
-        requirements[] = {};
-        spawn = "B_MBT_01_arty_F";
-        variant = 1;
+    // class B_MBT_01_arty_tv_F {
+    //     ammoOverrides[] = {
+    //         {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
+    //     };
+    //     aps = 1;
+    //     capValue = 4;
+    //     cost = 30000;
+    //     disallowMagazines[] = {
+    //         "2Rnd_155mm_Mo_guided",
+    //         "4Rnd_155mm_Mo_guided",
+    //         "2Rnd_155mm_Mo_LG",
+    //         "4Rnd_155mm_Mo_LG",
+    //         "6Rnd_155mm_Mo_mine",
+    //         "6Rnd_155mm_Mo_AT_mine",
+    //         "2Rnd_155mm_Mo_Cluster",
+    //         "6Rnd_155mm_Mo_smoke",
+    //         "2Rnd_155mm_Mo_guided_O",
+    //         "4Rnd_155mm_Mo_guided_O",
+    //         "4Rnd_155mm_Mo_LG_O",
+    //         "6Rnd_155mm_Mo_mine_O",
+    //         "6Rnd_155mm_Mo_AT_mine_O",
+    //         "2Rnd_155mm_Mo_Cluster_O",
+    //         "6Rnd_155mm_Mo_smoke_O"
+    //     };
+    //     name = "M4 Scorcher UP";
+    //     rearm = 1200;
+    //     requirements[] = {};
+    //     spawn = "B_MBT_01_arty_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {};
-            removeMagazines[] = {
-                "6Rnd_155mm_Mo_smoke",
-                "2Rnd_155mm_Mo_guided",
-                "4Rnd_155mm_Mo_guided",
-                "2Rnd_155mm_Mo_LG",
-                "6Rnd_155mm_Mo_mine",
-                "6Rnd_155mm_Mo_AT_mine",
-                "2Rnd_155mm_Mo_Cluster"
-            };
-            removeWeapons[] = {};
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {};
+    //         addWeapons[] = {};
+    //         removeMagazines[] = {
+    //             "6Rnd_155mm_Mo_smoke",
+    //             "2Rnd_155mm_Mo_guided",
+    //             "4Rnd_155mm_Mo_guided",
+    //             "2Rnd_155mm_Mo_LG",
+    //             "6Rnd_155mm_Mo_mine",
+    //             "6Rnd_155mm_Mo_AT_mine",
+    //             "2Rnd_155mm_Mo_Cluster"
+    //         };
+    //         removeWeapons[] = {};
+    //         turret[] = { 0 };
+    //     };
+    // };
 };

@@ -29,7 +29,6 @@ class Gear {
         cost = 200;
         demolishable = 1;
         description = "NATO gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
-        killReward = 200;
         loadable[] = { 0, -1, 0.5 };
         name = "NATO Supply Crate";
         offset[] = { 0, 3, 0};
@@ -39,7 +38,6 @@ class Gear {
 
     class Box_NATO_AmmoVeh_F {
         cost = 250;
-        killReward = 70;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
         requirements[] = {};
@@ -47,28 +45,24 @@ class Gear {
 
     class B_Slingload_01_Fuel_F {
         cost = 300;
-        killReward = 150;
         loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Fuel Container"
 
     class B_Slingload_01_Ammo_F {
         cost = 500;
-        killReward = 150;
         loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Ammo Container"
 
     class B_Slingload_01_Repair_F {
         cost = 500;
-        killReward = 150;
         loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Repair Container"
 
     class B_Slingload_01_Medevac_F {
         cost = 500;
-        killReward = 200;
         loadable[] = {0, -1.5, 0.5};
         requirements[] = {};
     }; // "Huron Medical Pod"

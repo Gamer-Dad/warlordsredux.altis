@@ -2,7 +2,6 @@ class FixedWing {
     class B_Plane_Civil_01_F {
         cost = 800;
         description = "Caesar BTT is a light unarmed aircraft.";
-        killReward = 200;
         name = "Caesar BTT";
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
@@ -11,7 +10,6 @@ class FixedWing {
     // class B_Plane_Caesar_hmggmg_01_F {
     //     cost = 1500;
     //     description = "Caesar BTT (HMG/GMG) is a variant of the Caesar BTT armed with a HMG and GMG.";
-    //     killReward = 300;
     //     name = "Caesar BTT (HMG/GMG)";
     //     rearm = 300;
     //     requirements[] = {"A"};
@@ -40,7 +38,6 @@ class FixedWing {
     // class B_Plane_Caesar_rocket_01_F {
     //     cost = 1800;
     //     description = "Caesar BTT (Rocket) is a variant of the Caesar BTT armed with rockets.";
-    //     killReward = 300;
     //     name = "Caesar BTT (Rocket)";
     //     rearm = 400;
     //     requirements[] = {"A"};
@@ -70,7 +67,6 @@ class FixedWing {
         cost = 2000;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasRemoteBomb = 1;
-        killReward = 300;
         name = "Caesar BTT (Bomb)";
         rearm = 400;
         requirements[] = {"A"};
@@ -94,13 +90,11 @@ class FixedWing {
 
     class B_T_VTOL_01_infantry_F {
         cost = 2000;
-        killReward = 300;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Inf)"
 
     class B_T_VTOL_01_vehicle_F {
         cost = 2000;
-        killReward = 300;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Vic)"
 
@@ -109,7 +103,6 @@ class FixedWing {
         description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
         hasAWACS = 1;
         hasHMD = 1;
-        killReward = 300;
         name = "V-44 X Blackfish (AWACS)";
         requirements[] = {"A"};
         spawn = "B_T_VTOL_01_infantry_F";
@@ -137,7 +130,6 @@ class FixedWing {
     class B_T_VTOL_01_armed_F {
         cost = 8000;
         hasHMD = 1;
-        killReward = 350;
         rearm = 500;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Armed)"
@@ -145,7 +137,6 @@ class FixedWing {
     class B_Plane_CAS_01_dynamicLoadout_F {
         cost = 13000;
         hasHMD = 1;
-        killReward = 800;
         rearm = 900;
         requirements[] = {"A"};
 
@@ -166,7 +157,8 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_Missile_AMRAAM_C_x2",
-            "PylonMissile_Bomb_GBU12_x1"
+            "PylonMissile_Bomb_GBU12_x1",
+            {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}}
         };
         ammoOverrides[] = {
             {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
@@ -175,7 +167,6 @@ class FixedWing {
         description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
         hasRemoteBomb = 1;
-        killReward = 600;
         name = "A-149 Gryphon";
         rearm = 900;
         requirements[] = {"A"};
@@ -192,11 +183,11 @@ class FixedWing {
 
     class B_Plane_Fighter_01_F {
         allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1"
+            "PylonRack_Missile_HARM_x1",
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
         };
         cost = 26000;
         hasHMD = 1;
-        killReward = 1000;
         rearm = 900;
         requirements[] = {"A"};
 
@@ -214,7 +205,7 @@ class FixedWing {
     class B_Plane_Fighter_01_Stealth_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
-            {"PylonMissile_Bomb_GBU12_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
         };
         ammoOverrides[] = {
             {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
@@ -223,10 +214,43 @@ class FixedWing {
         hasGPSMunition = 1;
         hasHMD = 1;
         hasReconOptics = 1;
-        killReward = 1000;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 720;
         requirements[] = {"A"};
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { -1 };
+        };
+    };
+
+    class B_Plane_Fighter_01_Growler_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_HARM_x1",
+            "PylonRack_Missile_AMRAAM_D_x2"
+        };
+        cost = 26000;
+        disallowMagazines[] = {
+            "PylonRack_Bomb_SDB_x4",
+            "PylonRack_Bomb_GBU12_x2",
+            "PylonMissile_Missile_BIM9X_x1",
+            "PylonMissile_Bomb_GBU12_x1",
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2"
+        };
+        hasAWACS = 1;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        name = "EF/A-181 Growler";
+        rearm = 720;
+        requirements[] = {"A"};
+        spawn = "B_Plane_Fighter_01_F";
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -255,7 +279,6 @@ class FixedWing {
     //     };
     //     hasHMD = 1;
     //     hasRemoteBomb = 1;
-    //     killReward = 1200;
     //     name = "F/A-181 Black Wasp II (Land Attack)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
@@ -278,7 +301,6 @@ class FixedWing {
     //     };
     //     hasGPSMunition = 1;
     //     hasHMD = 1;
-    //     killReward = 1200;
     //     name = "F/A-181 Black Wasp II (Standoff)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
