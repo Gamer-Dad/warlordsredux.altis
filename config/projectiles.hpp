@@ -90,7 +90,7 @@ class WLProjectilesConfig {
         };
         aps = 1;
         camera = 1;
-        consumption = 12;
+        consumption = 25;
         dazzleable = 1;
         sead = 1;
     };

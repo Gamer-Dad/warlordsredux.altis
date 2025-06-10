@@ -782,7 +782,7 @@ class Primary {
             level = 26;
             name = "Standard";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box", 3 }
+                { "200Rnd_65x39_cased_Box", 2 }
             };
         };
 
@@ -790,7 +790,7 @@ class Primary {
             level = 27;
             name = "Tracers";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box_Tracer_Red", 3 }
+                { "200Rnd_65x39_cased_Box_Tracer_Red", 2 }
             };
         };
 
@@ -798,7 +798,7 @@ class Primary {
             level = 28;
             name = "Extra Ammo";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box", 6 }
+                { "200Rnd_65x39_cased_Box", 4 }
             };
         };
 
@@ -806,7 +806,7 @@ class Primary {
             level = 29;
             name = "Tracers, Extra Ammo";
             magazines[] = {
-                { "200Rnd_65x39_cased_Box_Tracer_Red", 6 }
+                { "200Rnd_65x39_cased_Box_Tracer_Red", 4 }
             };
         };
 
@@ -830,7 +830,7 @@ class Primary {
             level = 28;
             name = "Standard";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_F", 3 }
+                { "75rnd_762x39_AK12_Mag_F", 2 }
             };
         };
 
@@ -838,7 +838,7 @@ class Primary {
             level = 29;
             name = "Tracers";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_Tracer_F", 3 }
+                { "75rnd_762x39_AK12_Mag_Tracer_F", 2 }
             };
         };
 
@@ -846,7 +846,7 @@ class Primary {
             level = 30;
             name = "Extra Ammo";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_F", 6 }
+                { "75rnd_762x39_AK12_Mag_F", 4 }
             };
         };
 
@@ -854,7 +854,7 @@ class Primary {
             level = 31;
             name = "Tracers, Extra Ammo";
             magazines[] = {
-                { "75rnd_762x39_AK12_Mag_Tracer_F", 6 }
+                { "75rnd_762x39_AK12_Mag_Tracer_F", 4 }
             };
         };
 
@@ -1327,6 +1327,90 @@ class Primary {
         };
 
         #include "east_optics_long.hpp"
+
+        attachments[] = {};
+    };
+
+    // Kozlice 12G
+    class Kozlice12 {
+        name = "Kozlice 12G";
+        item = "sgun_HunterShotgun_01_F";
+        level = 50;
+        cost = 100;
+
+        class Standard: WLCAmmo {
+            level = 51;
+            name = "Standard";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 10 }
+            };
+        };
+
+        class Slugs: WLCAmmo {
+            level = 52;
+            name = "Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 10 }
+            };
+        };
+
+        class ExtraPellets: WLCAmmo {
+            level = 53;
+            name = "Extra Pellets";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 20 }
+            };
+        };
+
+        class ExtraSlugs: WLCAmmo {
+            level = 54;
+            name = "Extra Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 20 }
+            };
+        };
+
+        attachments[] = {};
+    };
+
+    // Kozlice 12G Sawed-Off
+    class Kozlice12_Sawn {
+        name = "Kozlice 12G Sawed-Off";
+        item = "sgun_HunterShotgun_01_sawedoff_F";
+        level = 55;
+        cost = 100;
+
+        class Standard: WLCAmmo {
+            level = 56;
+            name = "Standard";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 10 }
+            };
+        };
+
+        class Slugs: WLCAmmo {
+            level = 57;
+            name = "Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 10 }
+            };
+        };
+
+        class ExtraPellets: WLCAmmo {
+            level = 58;
+            name = "Extra Pellets";
+            magazines[] = {
+                { "2Rnd_12Gauge_Pellets", 20 }
+            };
+        };
+
+        class ExtraSlugs: WLCAmmo {
+            level = 59;
+            name = "Extra Slugs";
+            magazines[] = {
+                { "2Rnd_12Gauge_Slug", 20 }
+            };
+        };
 
         attachments[] = {};
     };

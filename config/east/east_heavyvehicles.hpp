@@ -5,7 +5,6 @@ class HeavyVehicles {
         };
         capValue = 2;
         cost = 1200;
-        killReward = 200;
         loadable[] = {0, -0.8, 1.65};
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
@@ -40,7 +39,6 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
-        killReward = 300;
         loadable[] = {0, -0.8, 1.65};
         rearm = 400;
         requirements[] = {};
@@ -50,7 +48,6 @@ class HeavyVehicles {
     //     aps = 1;
     //     capValue = 3;
     //     cost = 1500;
-    //     killReward = 240;
     //     name = "AWC Nyx (AT)";
     //     rearm = 300;
     //     requirements[] = {};
@@ -90,7 +87,6 @@ class HeavyVehicles {
     //     capValue = 3;
     //     cost = 2600;
     //     description = "MSE-3M Marid is a variant of the MSE-3 Marid armed with a 30mm autocannon.";
-    //     killReward = 300;
     //     name = "MSE-3M Marid Autocannon";
     //     rearm = 500;
     //     requirements[] = {};
@@ -122,7 +118,6 @@ class HeavyVehicles {
         description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
         hasHMD = 1;
         hasScanner = 1;
-        killReward = 300;
         name = "BTR-K Kamysh (Recon)";
         rearm = 500;
         requirements[] = {};
@@ -155,7 +150,6 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        killReward = 350;
         rearm = 500;
         requirements[] = {};
 
@@ -185,7 +179,6 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        killReward = 350;
         name = "BTR-KM Kamysh";
         rearm = 500;
         requirements[] = {};
@@ -218,12 +211,47 @@ class HeavyVehicles {
         };
     };
 
+    class O_APC_Tracked_01_AT_F {
+        aps = 2;
+        capValue = 4;
+        cost = 4500;
+        description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis";
+        hasHMD = 1;
+        name = "BMP-39 Shir";
+        rearm = 280;
+        requirements[] = {};
+        spawn = "O_APC_Tracked_02_AA_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "missiles_Firefist"
+            };
+            removeMagazines[] = {
+                "4Rnd_Titan_long_missiles_O",
+                "680Rnd_35mm_AA_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "missiles_titan_AA",
+                "autocannon_35mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class O_MBT_02_cannon_export_F {
         aps = 3;
         capValue = 4;
         cost = 5500;
         description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
-        killReward = 500;
         name = "T-100E Badger";
         rearm = 600;
         requirements[] = {};
@@ -255,7 +283,6 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 7500;
-        killReward = 500;
         rearm = 600;
         requirements[] = {};
     }; // "T-100 Varsuk"
@@ -264,7 +291,6 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 8500;
-        killReward = 550;
         rearm = 600;
         requirements[] = {};
     }; // "T-140 Angara"
@@ -273,7 +299,6 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 9500;
-        killReward = 600;
         rearm = 600;
         requirements[] = {};
     }; // "T-140K Angara"
@@ -284,7 +309,6 @@ class HeavyVehicles {
     //     cost = 13500;
     //     description = "T-140N Yukon is a variant of the T-140 Angara armed with a NATO 120mm cannon.";
     //     flagOffset[] = {-0.69, -3.1, 1.8};
-    //     killReward = 800;
     //     name = "T-140N Yukon";
     //     rearm = 600;
     //     requirements[] = {};
@@ -324,7 +348,6 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "12Rnd_230mm_rockets_cluster"
         };
-        killReward = 600;
         name = "Zamak MRL";
         rearm = 1800;
         requirements[] = {};
@@ -344,56 +367,54 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster",
             "2Rnd_155mm_Mo_Cluster_O"
         };
-        killReward = 600;
         rearm = 1800;
         requirements[] = {};
     }; // "2S9 Sochor"
 
-    class O_MBT_02_arty_tv_F {
-        ammoOverrides[] = {
-            {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (TV-Guided)"}}
-        };
-        aps = 1;
-        capValue = 4;
-        cost = 30000;
-        disallowMagazines[] = {
-            "2Rnd_155mm_Mo_guided",
-            "4Rnd_155mm_Mo_guided",
-            "2Rnd_155mm_Mo_LG",
-            "4Rnd_155mm_Mo_LG",
-            "6Rnd_155mm_Mo_mine",
-            "6Rnd_155mm_Mo_AT_mine",
-            "2Rnd_155mm_Mo_Cluster",
-            "6Rnd_155mm_Mo_smoke",
-            "2Rnd_155mm_Mo_guided_O",
-            "4Rnd_155mm_Mo_guided_O",
-            "4Rnd_155mm_Mo_LG_O",
-            "6Rnd_155mm_Mo_mine_O",
-            "6Rnd_155mm_Mo_AT_mine_O",
-            "2Rnd_155mm_Mo_Cluster_O",
-            "6Rnd_155mm_Mo_smoke_O"
-        };
-        killReward = 600;
-        name = "2S9M Sochor II";
-        rearm = 1200;
-        requirements[] = {};
-        spawn = "O_MBT_02_arty_F";
-        variant = 1;
+    // class O_MBT_02_arty_tv_F {
+    //     ammoOverrides[] = {
+    //         {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (TV-Guided)"}}
+    //     };
+    //     aps = 1;
+    //     capValue = 4;
+    //     cost = 30000;
+    //     disallowMagazines[] = {
+    //         "2Rnd_155mm_Mo_guided",
+    //         "4Rnd_155mm_Mo_guided",
+    //         "2Rnd_155mm_Mo_LG",
+    //         "4Rnd_155mm_Mo_LG",
+    //         "6Rnd_155mm_Mo_mine",
+    //         "6Rnd_155mm_Mo_AT_mine",
+    //         "2Rnd_155mm_Mo_Cluster",
+    //         "6Rnd_155mm_Mo_smoke",
+    //         "2Rnd_155mm_Mo_guided_O",
+    //         "4Rnd_155mm_Mo_guided_O",
+    //         "4Rnd_155mm_Mo_LG_O",
+    //         "6Rnd_155mm_Mo_mine_O",
+    //         "6Rnd_155mm_Mo_AT_mine_O",
+    //         "2Rnd_155mm_Mo_Cluster_O",
+    //         "6Rnd_155mm_Mo_smoke_O"
+    //     };
+    //     name = "2S9M Sochor II";
+    //     rearm = 1200;
+    //     requirements[] = {};
+    //     spawn = "O_MBT_02_arty_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {};
-            removeMagazines[] = {
-                "6Rnd_155mm_Mo_smoke_O",
-                "2Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_LG_O",
-                "6Rnd_155mm_Mo_mine_O",
-                "6Rnd_155mm_Mo_AT_mine_O",
-                "2Rnd_155mm_Mo_Cluster_O"
-            };
-            removeWeapons[] = {};
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {};
+    //         addWeapons[] = {};
+    //         removeMagazines[] = {
+    //             "6Rnd_155mm_Mo_smoke_O",
+    //             "2Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_LG_O",
+    //             "6Rnd_155mm_Mo_mine_O",
+    //             "6Rnd_155mm_Mo_AT_mine_O",
+    //             "2Rnd_155mm_Mo_Cluster_O"
+    //         };
+    //         removeWeapons[] = {};
+    //         turret[] = { 0 };
+    //     };
+    // };
 };

@@ -2,7 +2,6 @@ class LightVehicles {
     class O_Quadbike_01_F {
         capValue = 1;
         cost = 20;
-        killReward = 20;
         loadable[] = {0, -1, 0.6};
         offset[] = {0, 3, 0};
         requirements[] = {};
@@ -11,7 +10,6 @@ class LightVehicles {
     class O_G_Offroad_01_armed_F {
         capValue = 1;
         cost = 150;
-        killReward = 50;
         loadable[] = {0, -1.7, 1.3};
         offset[] = {0, 5, 0};
         rearm = 120;
@@ -38,7 +36,6 @@ class LightVehicles {
     class O_LSV_02_armed_F {
         capValue = 1;
         cost = 200;
-        killReward = 50;
         loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 120;
@@ -64,14 +61,12 @@ class LightVehicles {
     class O_Truck_03_transport_F {
         capValue = 1;
         cost = 200;
-        killReward = 80;
         requirements[] = {};
     }; // "Tempest Transport"
 
     class O_Truck_03_medical_F {
         capValue = 1;
         cost = 250;
-        killReward = 100;
         rearm = 120;
         requirements[] = {};
     }; // "Tempest Medical"
@@ -79,7 +74,6 @@ class LightVehicles {
     class O_MRAP_02_F {
         capValue = 1;
         cost = 300;
-        killReward = 70;
         loadable[] = {0, -0.8, 1.5};
         requirements[] = {};
     }; // "Ifrit"
@@ -87,7 +81,6 @@ class LightVehicles {
     class O_Truck_01_flatbed_F {
         capValue = 1;
         cost = 500;
-        killReward = 80;
         name = "HEMTT Flatbed";
         requirements[] = {};
         spawn = "B_Truck_01_flatbed_F";
@@ -102,7 +95,6 @@ class LightVehicles {
     class O_G_Offroad_01_AT_F {
         capValue = 1;
         cost = 500;
-        killReward = 180;
         loadable[] = {0, -1.7, 0.7};
         offset[] = {0, 5, 0};
         rearm = 180;
@@ -126,7 +118,6 @@ class LightVehicles {
     class O_LSV_02_AT_F {
         capValue = 1;
         cost = 750;
-        killReward = 200;
         loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 200;
@@ -154,7 +145,6 @@ class LightVehicles {
         aps = 1;
         capValue = 2;
         cost = 900;
-        killReward = 250;
         loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
@@ -164,7 +154,6 @@ class LightVehicles {
         aps = 1;
         capValue = 2;
         cost = 950;
-        killReward = 250;
         loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
@@ -173,21 +162,18 @@ class LightVehicles {
     class O_Truck_03_ammo_F {
         capValue = 1;
         cost = 1000;
-        killReward = 80;
         requirements[] = {};
     }; // "Tempest Ammo"
 
     class O_Truck_03_Fuel_F {
         capValue = 1;
         cost = 1000;
-        killReward = 80;
         requirements[] = {};
     }; // "Tempest Fuel"
 
     class O_Truck_03_Repair_F {
         capValue = 1;
         cost = 1000;
-        killReward = 80;
         requirements[] = {};
     }; // "Tempest Repair"
 
@@ -195,7 +181,6 @@ class LightVehicles {
     //     capValue = 1;
     //     cost = 1100;
     //     description = "Qilin (AT-M) is a variant of the Qilin armed with a Firefist AT missile launcher.";
-    //     killReward = 220;
     //     name = "Qilin (AT-M)";
     //     offset[] = {0, 5, 0};
     //     rearm = 200;
@@ -230,7 +215,6 @@ class LightVehicles {
     //     capValue = 1;
     //     cost = 1100;
     //     description = "Ifrit is a variant of the Ifrit armed with a Minigun.";
-    //     killReward = 300;
     //     name = "Ifrit Minigun";
     //     rearm = 300;
     //     requirements[] = {};
@@ -261,7 +245,6 @@ class LightVehicles {
     //     capValue = 2;
     //     cost = 1500;
     //     description = "Ifrit-M is a variant of the Ifrit armed with a 20mm autocannon.";
-    //     killReward = 300;
     //     name = "Ifrit-M Autocannon";
     //     rearm = 300;
     //     requirements[] = {};
@@ -296,7 +279,6 @@ class LightVehicles {
         aps = 4;
         capValue = 1;
         cost = 1500;
-        killReward = 200;
         requirements[] = {};
     }; // "Tempest Device"
 };

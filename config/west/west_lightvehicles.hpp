@@ -2,7 +2,6 @@ class LightVehicles {
     class B_Quadbike_01_F {
         capValue = 1;
         cost = 20;
-        killReward = 20;
         loadable[] = {0, -1, 0.6};
         offset[] = {0, 3, 0};
         requirements[] = {};
@@ -11,7 +10,6 @@ class LightVehicles {
     class B_G_Offroad_01_armed_F {
         capValue = 1;
         cost = 150;
-        killReward = 50;
         loadable[] = {0, -1.7, 1.3};
         offset[] = {0, 5, 0};
         rearm = 120;
@@ -38,7 +36,6 @@ class LightVehicles {
     class B_LSV_01_armed_F {
         capValue = 1;
         cost = 200;
-        killReward = 80;
         loadable[] = {0, -1.3, 1.25};
         offset[] = {0, 5, 0};
         rearm = 120;
@@ -64,14 +61,12 @@ class LightVehicles {
     class B_Truck_01_transport_F {
         capValue = 1;
         cost = 200;
-        killReward = 80;
         requirements[] = {};
     }; // "HEMTT Transport"
 
     class B_Truck_01_medical_F {
         capValue = 1;
         cost = 250;
-        killReward = 100;
         rearm = 120;
         requirements[] = {};
     }; // "HEMMT Medical"
@@ -79,7 +74,6 @@ class LightVehicles {
     class B_MRAP_01_F {
         capValue = 1;
         cost = 300;
-        killReward = 70;
         loadable[] = {0, -0.8, 1.25};
         requirements[] = {};
     }; // "Hunter"
@@ -87,14 +81,12 @@ class LightVehicles {
     class B_Truck_01_flatbed_F {
         capValue = 1;
         cost = 500;
-        killReward = 80;
         requirements[] = {};
     }; // "HEMTT Flatbed"
 
     class B_G_Offroad_01_AT_F {
         capValue = 1;
         cost = 500;
-        killReward = 180;
         loadable[] = {0, -1.7, 0.7};
         offset[] = {0, 5, 0};
         rearm = 180;
@@ -118,7 +110,6 @@ class LightVehicles {
     class B_LSV_01_AT_F {
         capValue = 1;
         cost = 750;
-        killReward = 200;
         loadable[] = {0, -1.3, 0.95};
         offset[] = {0, 5, 0};
         rearm = 200;
@@ -146,7 +137,6 @@ class LightVehicles {
         aps = 1;
         capValue = 2;
         cost = 900;
-        killReward = 250;
         loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
@@ -156,7 +146,6 @@ class LightVehicles {
         aps = 1;
         capValue = 2;
         cost = 950;
-        killReward = 250;
         loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
@@ -165,21 +154,18 @@ class LightVehicles {
     class B_Truck_01_ammo_F {
         capValue = 1;
         cost = 1000;
-        killReward = 80;
         requirements[] = {};
     }; // "HEMTT Ammo"
 
     class B_Truck_01_fuel_F {
         capValue = 1;
         cost = 1000;
-        killReward = 80;
         requirements[] = {};
     }; // "HEMTT Fuel"
 
     class B_Truck_01_Repair_F {
         capValue = 1;
         cost = 1000;
-        killReward = 80;
         requirements[] = {};
     }; // "HEMTT Repair"
 
@@ -187,7 +173,6 @@ class LightVehicles {
     //     capValue = 1;
     //     cost = 1100;
     //     description = "Prowler (AT UP) is a variant of the Prowler AT.";
-    //     killReward = 250;
     //     name = "Prowler (AT UP)";
     //     offset[] = {0, 5, 0};
     //     rearm = 200;
@@ -222,7 +207,6 @@ class LightVehicles {
     //     capValue = 2;
     //     cost = 1500;
     //     description = "Hunter UP is a variant of the Hunter armed with a 20mm autocannon.";
-    //     killReward = 300;
     //     name = "Hunter UP Autocannon";
     //     rearm = 300;
     //     requirements[] = {};
@@ -257,7 +241,6 @@ class LightVehicles {
         aps = 4;
         capValue = 1;
         cost = 1500;
-        killReward = 200;
         name = "Tempest (Device)";
         requirements[] = {};
         spawn = "O_T_Truck_03_device_ghex_F";
@@ -274,9 +257,8 @@ class LightVehicles {
             {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
         };
         capValue = 1;
-        cost = 3000;
+        cost = 6000;
         description = "Prowler (Spike AT) is a variant of the Prowler AT.";
-        killReward = 480;
         loadable[] = {0, -1.3, 0.95};
         name = "Prowler (Spike AT)";
         offset[] = {0, 5, 0};
@@ -287,7 +269,6 @@ class LightVehicles {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles"
             };

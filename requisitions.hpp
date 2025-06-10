@@ -19,7 +19,6 @@ class CfgVehicleClassName {
     hasReconOptics = number (0|1);   // Whether the vehicle has recon optics.
     hasAWACS = number (0|1);         // Whether the vehicle has an AWACS system.
     isLight = number (0|1);          // Whether the vehicle is considered lightweight.
-    killReward = number;             // CP reward for destroying the vehicle.
     loadable = array;                // when set, the vehicle can be loaded into a flatbed. The array is the offset.
     name = string;                   // Name override for vehicle in buy menu.
     offset[] = array;                // Offset for placing the vehicle after buying, only valid for some vehicle types.

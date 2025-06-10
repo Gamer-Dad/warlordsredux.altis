@@ -1,81 +1,45 @@
 class Gear {
-    class Box_IND_Ammo_F {
-        cost = 50;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Basic Ammo [AAF]"
+    class I_crate_F {
+        container[] = {
+            { "launch_O_Vorona_brown_F", 2 },
+            { "launch_MRAWS_olive_F", 2 },
+            { "launch_O_Titan_F", 2 },
+            { "launch_O_Titan_short_F", 2 },
 
-    class Box_IND_Grenades_F {
-        cost = 50;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Grenades [AAF]"
+            { "MRAWS_HEAT_F", 8 },
+            { "MRAWS_HE_F", 2 },
+            { "Titan_AA", 8 },
+            { "Titan_AP", 2 },
+            { "Titan_AT", 8 },
+            { "Vorona_HE", 2 },
+            { "Vorona_HEAT", 8 },
 
-    class Box_IND_Wps_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Basic Weapons [AAF]"
+            { "APERSBoundingMine_Range_Mag", 3},
+            { "APERSMine_Range_Mag", 3},
+            { "APERSTripMine_Wire_Mag", 3},
+            { "ATMine_Range_Mag", 3},
+            { "ClaymoreDirectionalMine_Remote_Mag", 3},
+            { "DemoCharge_Remote_Mag", 3},
+            { "SatchelCharge_Remote_Mag", 3},
+            { "SLAMDirectionalMine_Wire_Mag", 3},
 
-    class Box_AAF_Equip_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Equipment [AAF]"
-
-    class Box_AAF_Uniforms_F {
-        cost = 100;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Uniforms [AAF]"
-
-    class Box_IND_AmmoOrd_F {
-        cost = 150;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Explosives [AAF]"
-
-    class Box_IND_WpsLaunch_F {
+            { "B_FieldPack_cbr", 5 },
+            { "B_Carryall_mcamo", 5 }
+        };
         cost = 200;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
+        demolishable = 1;
+        description = "Independent gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
+        loadable[] = { 0, -1, 0.5 };
+        name = "Independent Supply Crate";
+        offset[] = { 0, 3, 0};
+        spawn = "VirtualReammoBox_camonet_F";
         requirements[] = {};
-    }; // "Launchers [AAF]"
-
-    class Box_IND_WpsSpecial_F {
-        cost = 250;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Special Weapons [AAF]"
+    };
 
     class Box_IND_AmmoVeh_F {
         cost = 250;
-        killReward = 70;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0 };
         requirements[] = {};
     }; // "Vehicle Ammo [AAF]"
-
-    class I_supplyCrate_F {
-        cost = 300;
-        killReward = 40;
-        loadable[] = { 0, 0, 0 };
-        offset[] = { 0, 3, 0 };
-        requirements[] = {};
-    }; // "Supply Box [AAF]"
 };
