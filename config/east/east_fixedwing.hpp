@@ -227,6 +227,42 @@ class FixedWing {
         };
     }; // "To-199 Neophron (CAS)"
 
+    class O_Plane_Fighter_02_Gyrfalcon_F {
+        allowPylonMagazines[] = {
+            {"PylonMissile_Missile_KH58_INT_x1", {"pylons1", "pylons2", "pylons3", "pylons4", "pylons5", "pylons6", "pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft1", "pylonBayRight1", "pylonBayLeft2", "pylonBayRight2"}},
+            {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft1", "pylonBayRight1"}}
+        };
+        cost = 25000;
+        disallowMagazines[] = {
+            "PylonMissile_Missile_KH58_x1",
+            "PylonMissile_Missile_AGM_KH25_x1",
+            "PylonMissile_Missile_AGM_KH25_INT_x1",
+            "PylonMissile_Bomb_KAB250_x1"
+        };
+        hasAWACS = 1;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        name = "J-30 Gyrfalcon";
+        rearm = 720;
+        requirements[] = {"A"};
+        spawn = "O_Plane_Fighter_02_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
+
     class O_Plane_Fighter_02_F {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_INT_x1",
@@ -274,42 +310,6 @@ class FixedWing {
         hasReconOptics = 1;
         rearm = 720;
         requirements[] = {"A"};
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher"
-            };
-            turret[] = { -1 };
-        };
-    };
-
-    class O_Plane_Fighter_02_Gyrfalcon_F {
-        allowPylonMagazines[] = {
-            {"PylonMissile_Missile_KH58_INT_x1", {"pylons1", "pylons2", "pylons3", "pylons4", "pylons5", "pylons6", "pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft1", "pylonBayRight1", "pylonBayLeft2", "pylonBayRight2"}},
-            {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft1", "pylonBayRight1"}}
-        };
-        cost = 28000;
-        disallowMagazines[] = {
-            "PylonMissile_Missile_KH58_x1",
-            "PylonMissile_Missile_AGM_KH25_x1",
-            "PylonMissile_Missile_AGM_KH25_INT_x1",
-            "PylonMissile_Bomb_KAB250_x1"
-        };
-        hasAWACS = 1;
-        hasHMD = 1;
-        hasReconOptics = 1;
-        name = "J-30 Gyrfalcon";
-        rearm = 720;
-        requirements[] = {"A"};
-        spawn = "O_Plane_Fighter_02_F";
         variant = 1;
 
         class Pilot: WLTurretDefaults {
