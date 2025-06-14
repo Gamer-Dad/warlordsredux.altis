@@ -227,30 +227,50 @@ class AirDefense {
         };
     };
 
-    class O_SAM_System_LRAA_F {
+    class O_SAM_System_01_Advanced_F {
         ammoOverrides[] = {
-            {"ammo_Missile_Cruise_01", {"M_HHQ9", "HHQ-9 Surface-to-Air Missile"}}
+            {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
         };
-        cost = 42000;
-        description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.";
-        disallowMagazines[] = {
-            "magazine_Missiles_Cruise_01_Cluster_x18"
-        };
-        hasESAM = 1;
+        cost = 25000;
+        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Effective range: 14km. Use SAM configuration menu to select data-linked targets outside of visual range.";
+        hasASAM = 1;
         hasHMD = 1;
-        name = "HHQ-9 Vertical Launch System";
-        rearm = 2700;
+        loadable[] = {0, -2, 0.8};
+        name = "Mk59 Hercules";
+        offset[] = {0, 5.3, 0};
+        rearm = 360;
         requirements[] = {};
-        spawn = "B_Ship_MRLS_01_F";
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {};
-            turret[] = { 0 };
-            removeMagazines[] = {
-                "magazine_Missiles_Cruise_01_Cluster_x18"
-            };
-            removeWeapons[] = {};
+        spawn = "B_SAM_System_01_F";
+        textures[] = {
+            "A3\Static_F_Jets\SAM_System_01\Data\SAM_system_01_olive_co.paa"
         };
+        variant = 1;
     };
+
+    // class O_SAM_System_LRAA_F {
+    //     ammoOverrides[] = {
+    //         {"ammo_Missile_Cruise_01", {"M_HHQ9", "HHQ-9 Surface-to-Air Missile"}}
+    //     };
+    //     cost = 42000;
+    //     description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.";
+    //     disallowMagazines[] = {
+    //         "magazine_Missiles_Cruise_01_Cluster_x18"
+    //     };
+    //     hasESAM = 1;
+    //     hasHMD = 1;
+    //     name = "HHQ-9 Vertical Launch System";
+    //     rearm = 2700;
+    //     requirements[] = {};
+    //     spawn = "B_Ship_MRLS_01_F";
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {};
+    //         addWeapons[] = {};
+    //         turret[] = { 0 };
+    //         removeMagazines[] = {
+    //             "magazine_Missiles_Cruise_01_Cluster_x18"
+    //         };
+    //         removeWeapons[] = {};
+    //     };
+    // };
 };
