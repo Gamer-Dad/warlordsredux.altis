@@ -98,34 +98,34 @@ class FixedWing {
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Vic)"
 
-    class B_T_VTOL_01_recon_F {
-        cost = 3800;
-        description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
-        hasAWACS = 1;
-        hasHMD = 1;
-        name = "V-44 X Blackfish (AWACS)";
-        requirements[] = {"A"};
-        spawn = "B_T_VTOL_01_infantry_F";
+    // class B_T_VTOL_01_recon_F {
+    //     cost = 3800;
+    //     description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
+    //     hasAWACS = 1;
+    //     hasHMD = 1;
+    //     name = "V-44 X Blackfish (AWACS)";
+    //     requirements[] = {"A"};
+    //     spawn = "B_T_VTOL_01_infantry_F";
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher_Triples"
-            };
-            turret[] = { -1 };
-        };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "240Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         addWeapons[] = {
+    //             "CMFlareLauncher_Singles"
+    //         };
+    //         removeMagazines[] = {};
+    //         removeWeapons[] = {
+    //             "CMFlareLauncher_Triples"
+    //         };
+    //         turret[] = { -1 };
+    //     };
 
-        class Copilot: WLTurretDefaults {
-            deviceJammer = 1;
-            turret[] = { 0 };
-        };
-    };
+    //     class Copilot: WLTurretDefaults {
+    //         deviceJammer = 1;
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_T_VTOL_01_armed_F {
         cost = 8000;
@@ -212,7 +212,6 @@ class FixedWing {
         };
         hasAWACS = 1;
         hasHMD = 1;
-        hasReconOptics = 1;
         name = "EF/A-181 Growler";
         rearm = 720;
         requirements[] = {"A"};
