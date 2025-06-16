@@ -279,6 +279,7 @@ class LightVehicles {
         aps = 4;
         capValue = 1;
         cost = 1500;
+        rearm = 120;
         requirements[] = {};
     }; // "Tempest Device"
 };

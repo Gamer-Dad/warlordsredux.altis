@@ -242,6 +242,7 @@ class LightVehicles {
         capValue = 1;
         cost = 1500;
         name = "Tempest (Device)";
+        rearm = 120;
         requirements[] = {};
         spawn = "O_T_Truck_03_device_ghex_F";
         textures[] = {

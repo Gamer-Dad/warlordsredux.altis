@@ -113,7 +113,7 @@ class HeavyVehicles {
         hasHMD = 1;
         hasScanner = 1;
         name = "AMV-7 Marshall (Recon)";
-        rearm = 500;
+        rearm = 120;
         requirements[] = {};
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
