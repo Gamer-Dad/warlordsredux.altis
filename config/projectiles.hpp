@@ -156,6 +156,7 @@ class WLProjectilesConfig {
         aps = 3;
         asam = 1;
         camera = 1;
+        speed = 1.5;
     };
 
     class WLProjectile_MediumGuided: WLProjectile {
