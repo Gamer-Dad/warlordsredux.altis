@@ -20,79 +20,83 @@ class RotaryWing {
     }; // "CH-67 Huron"
 
     class B_Heli_Light_01_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles"
+        };
         cost = 2500;
         rearm = 300;
         requirements[] = {"H"};
     }; // "AH-9 Pawnee"
 
-    class B_Heli_Transport_01_UP_F {
-        ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
-        };
-        cost = 3200;
-        description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with autocannons (gunners) and Spike missiles (copilot).";
-        hasHMD = 1;
-        name = "UH-80 Ghost Hawk UP";
-        offset[] = {0, 11, 0};
-        rearm = 400;
-        requirements[] = {"H"};
-        spawn = "B_Heli_Transport_01_F";
-        variant = 1;
+    // class B_Heli_Transport_01_UP_F {
+    //     ammoOverrides[] = {
+    //         {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
+    //     };
+    //     cost = 3200;
+    //     description = "UH-80 Ghost Hawk UP is a variant of the UH-80 Ghost Hawk armed with autocannons (gunners) and Spike missiles (copilot).";
+    //     hasHMD = 1;
+    //     name = "UH-80 Ghost Hawk UP";
+    //     offset[] = {0, 11, 0};
+    //     rearm = 400;
+    //     requirements[] = {"H"};
+    //     spawn = "B_Heli_Transport_01_F";
+    //     variant = 1;
 
-        class Copilot: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            turret[] = { 0 };
-        };
+    //     class Copilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         turret[] = { 0 };
+    //     };
 
-        class LeftGunner: WLTurretDefaults {
-            addMagazines[] = {
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "gatling_30mm"
-            };
-            removeMagazines[] = {
-                "2000Rnd_65x39_Belt_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "LMG_Minigun_Transport"
-            };
-            turret[] = { 1 };
-        };
+    //     class LeftGunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "gatling_30mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "2000Rnd_65x39_Belt_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "LMG_Minigun_Transport"
+    //         };
+    //         turret[] = { 1 };
+    //     };
 
-        class RightGunner: WLTurretDefaults {
-            addMagazines[] = {
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_HE_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green",
-                "250Rnd_30mm_APDS_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "gatling_30mm"
-            };
-            removeMagazines[] = {
-                "2000Rnd_65x39_Belt_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "LMG_Minigun_Transport2"
-            };
-            turret[] = { 2 };
-        };
-    };
+    //     class RightGunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_HE_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green",
+    //             "250Rnd_30mm_APDS_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "gatling_30mm"
+    //         };
+    //         removeMagazines[] = {
+    //             "2000Rnd_65x39_Belt_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "LMG_Minigun_Transport2"
+    //         };
+    //         turret[] = { 2 };
+    //     };
+    // };
 
     class B_Heli_Light_01_hmd_F {
         allowPylonMagazines[] = {
             "PylonRack_3Rnd_LG_scalpel",
-            "PylonRack_19Rnd_Rocket_Skyfire"
+            "PylonRack_19Rnd_Rocket_Skyfire",
+            "PylonRack_12Rnd_PGM_missiles"
         };
         cost = 4000;
         description = "AH-9 Pawnee Block II is a variant of the AH-9 Pawnee with advanced avionics.";
@@ -129,7 +133,8 @@ class RotaryWing {
     class B_Heli_light_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
-            "PylonRack_19Rnd_Rocket_Skyfire"
+            "PylonRack_19Rnd_Rocket_Skyfire",
+            "PylonRack_12Rnd_PGM_missiles"
         };
         cost = 5000;
         description = "WY-55 Hellcat is a light attack helicopter.";
@@ -146,14 +151,30 @@ class RotaryWing {
         };
     };
 
+    class B_Heli_Transport_01_pylons_F {
+        // ammoOverrides[] = {  // can use in future
+        //     {"DummyPylonAmmo", {"???", "External Fuel Tank"}}
+        // };
+        ammoOverrides[] = {
+            {"M_PGM_AT", {"M_PGM_AT", "DAGR-M 12x"}}
+        };
+        cost = 5500;
+        hasHMD = 1;
+        name = "UH-80 Ghost Hawk UP";
+        offset[] = {0, 11, 0};
+        rearm = 400;
+        requirements[] = {"H"};
+    };
+
     class B_Heli_Attack_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1"
+            {"PylonRack_Missile_HARM_x1", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
+            {"PylonRack_12Rnd_PGM_missiles", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}}
         };
         cost = 11000;
         hasHMD = 1;
         offset[] = {0, 10, 0};
-        rearm = 700;
+        rearm = 500;
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
@@ -173,6 +194,36 @@ class RotaryWing {
             turret[] = { 0 };
         };
     }; // "AH-99 Blackfoot"
+
+    class B_Heli_Attack_01_pylons_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
+            {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}}
+        };
+        cost = 13000;
+        hasHMD = 1;
+        name = "AH-99 Blackfoot UP";
+        offset[] = {0, 10, 0};
+        rearm = 500;
+        requirements[] = {"H"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+
+        class Gunner: WLTurretDefaults {
+            deviceJammer = 1;
+            turret[] = { 0 };
+        };
+    };
 
     // class B_Heli_Attack_01_sead_F: B_Heli_Attack_01_dynamicLoadout_F {
     //     cost = 18000;

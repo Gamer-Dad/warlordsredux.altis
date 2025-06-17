@@ -135,6 +135,9 @@ class FixedWing {
     }; // "V-44 X Blackfish (Armed)"
 
     class B_Plane_CAS_01_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles"
+        };
         cost = 13000;
         hasHMD = 1;
         rearm = 900;
@@ -155,10 +158,10 @@ class FixedWing {
 
     class B_Plane_Fighter_04_F {
         allowPylonMagazines[] = {
-            "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_Missile_AMRAAM_C_x2",
             "PylonMissile_Bomb_GBU12_x1",
             "PylonRack_Missile_HARM_x1",
+            "PylonRack_3Rnd_LG_scalpel",
             {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}}
         };
         ammoOverrides[] = {
@@ -198,8 +201,8 @@ class FixedWing {
 
     class B_Plane_Fighter_01_Growler_F {
         allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1",
-            "PylonRack_Missile_AMRAAM_D_x2"
+            "PylonRack_Missile_AMRAAM_D_x2",
+            "PylonRack_Missile_HARM_x1"
         };
         cost = 24000;
         disallowMagazines[] = {
