@@ -148,6 +148,7 @@ class FixedWing {
     class O_T_VTOL_02_infantry_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
+            "PylonRack_12Rnd_PGM_missiles",
             "PylonMissile_Missile_KH58_INT_x1"
         };
         cost = 12000;
@@ -174,6 +175,7 @@ class FixedWing {
 
     class O_Plane_Fighter_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles",
             {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons4", "Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
@@ -207,7 +209,8 @@ class FixedWing {
 
     class O_Plane_CAS_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PG_missiles"
+            "PylonRack_12Rnd_PG_missiles",
+            "PylonRack_12Rnd_PGM_missiles"
         };
         cost = 17000;
         hasHMD = 1;

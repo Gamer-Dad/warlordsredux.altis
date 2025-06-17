@@ -84,6 +84,9 @@ class RotaryWing {
     };
 
     class O_Heli_Light_02_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles"
+        };
         cost = 4000;
         hasHMD = 1;
         offset[] = {0, 10, 0};
@@ -138,12 +141,13 @@ class RotaryWing {
     class O_Heli_Attack_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
+            "PylonRack_12Rnd_PGM_missiles",
             "PylonMissile_Missile_KH58_INT_x1"
         };
         cost = 8500;
         hasHMD = 1;
         offset[] = {0, 11, 0};
-        rearm = 700;
+        rearm = 500;
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
