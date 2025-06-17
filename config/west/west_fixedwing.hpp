@@ -98,34 +98,34 @@ class FixedWing {
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Vic)"
 
-    class B_T_VTOL_01_recon_F {
-        cost = 3800;
-        description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
-        hasAWACS = 1;
-        hasHMD = 1;
-        name = "V-44 X Blackfish (AWACS)";
-        requirements[] = {"A"};
-        spawn = "B_T_VTOL_01_infantry_F";
+    // class B_T_VTOL_01_recon_F {
+    //     cost = 3800;
+    //     description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
+    //     hasAWACS = 1;
+    //     hasHMD = 1;
+    //     name = "V-44 X Blackfish (AWACS)";
+    //     requirements[] = {"A"};
+    //     spawn = "B_T_VTOL_01_infantry_F";
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher_Triples"
-            };
-            turret[] = { -1 };
-        };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "240Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         addWeapons[] = {
+    //             "CMFlareLauncher_Singles"
+    //         };
+    //         removeMagazines[] = {};
+    //         removeWeapons[] = {
+    //             "CMFlareLauncher_Triples"
+    //         };
+    //         turret[] = { -1 };
+    //     };
 
-        class Copilot: WLTurretDefaults {
-            deviceJammer = 1;
-            turret[] = { 0 };
-        };
-    };
+    //     class Copilot: WLTurretDefaults {
+    //         deviceJammer = 1;
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_T_VTOL_01_armed_F {
         cost = 8000;
@@ -135,6 +135,9 @@ class FixedWing {
     }; // "V-44 X Blackfish (Armed)"
 
     class B_Plane_CAS_01_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles"
+        };
         cost = 13000;
         hasHMD = 1;
         rearm = 900;
@@ -155,9 +158,10 @@ class FixedWing {
 
     class B_Plane_Fighter_04_F {
         allowPylonMagazines[] = {
-            "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_Missile_AMRAAM_C_x2",
             "PylonMissile_Bomb_GBU12_x1",
+            "PylonRack_Missile_HARM_x1",
+            "PylonRack_3Rnd_LG_scalpel",
             {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}}
         };
         ammoOverrides[] = {
@@ -191,6 +195,39 @@ class FixedWing {
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
+            turret[] = { -1 };
+        };
+    };
+
+    class B_Plane_Fighter_01_Growler_F {
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_AMRAAM_D_x2",
+            "PylonRack_Missile_HARM_x1"
+        };
+        cost = 24000;
+        disallowMagazines[] = {
+            "PylonRack_Bomb_SDB_x4",
+            "PylonRack_Bomb_GBU12_x2",
+            "PylonMissile_Missile_BIM9X_x1",
+            "PylonMissile_Bomb_GBU12_x1",
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2"
+        };
+        hasAWACS = 1;
+        hasHMD = 1;
+        name = "EF/A-181 Growler";
+        rearm = 720;
+        requirements[] = {"A"};
+        spawn = "B_Plane_Fighter_01_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {};
+            removeMagazines[] = {};
+            removeWeapons[] = {};
             turret[] = { -1 };
         };
     };
@@ -231,40 +268,6 @@ class FixedWing {
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 720;
         requirements[] = {"A"};
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
-            turret[] = { -1 };
-        };
-    };
-
-    class B_Plane_Fighter_01_Growler_F {
-        allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1",
-            "PylonRack_Missile_AMRAAM_D_x2"
-        };
-        cost = 26000;
-        disallowMagazines[] = {
-            "PylonRack_Bomb_SDB_x4",
-            "PylonRack_Bomb_GBU12_x2",
-            "PylonMissile_Missile_BIM9X_x1",
-            "PylonMissile_Bomb_GBU12_x1",
-            "PylonRack_Missile_AGM_02_x1",
-            "PylonRack_Missile_AGM_02_x2"
-        };
-        hasAWACS = 1;
-        hasHMD = 1;
-        hasReconOptics = 1;
-        name = "EF/A-181 Growler";
-        rearm = 720;
-        requirements[] = {"A"};
-        spawn = "B_Plane_Fighter_01_F";
         variant = 1;
 
         class Pilot: WLTurretDefaults {

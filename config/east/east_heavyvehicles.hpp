@@ -119,7 +119,7 @@ class HeavyVehicles {
         hasHMD = 1;
         hasScanner = 1;
         name = "BTR-K Kamysh (Recon)";
-        rearm = 500;
+        rearm = 120;
         requirements[] = {};
         spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;

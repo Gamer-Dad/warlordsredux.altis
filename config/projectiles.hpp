@@ -52,22 +52,13 @@ class WLProjectilesConfig {
             "M_Zephyr_SAM",                     // Zephyr (SAM)
             "M_70mm_SAAMI",                     // SAAMI
             "M_Titan_AA",                       // Titan AA
-            "M_Titan_AA_static"                 // Titan AA (Static)
-        };
-        aps = 3;
-        camera = 1;
-        sam = 1;
-        speed = 1.1;
-    };
-
-    class WLProjectile_MANPAD_Heavy: WLProjectile {
-        ammo[] = {
+            "M_Titan_AA_static",                // Titan AA (Static)
             "M_Titan_AA_long"                   // Titan AA (Long)
         };
         aps = 3;
         camera = 1;
         sam = 1;
-        speed = 1.2;
+        speed = 1.1;
     };
 
     class WLProjectile_A2A: WLProjectile {
@@ -156,6 +147,16 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         esam = 1;
+    };
+
+    class WLProjectile_AdvancedSAM: WLProjectile {
+        ammo[] = {
+            "M_RIM116B"
+        };
+        aps = 3;
+        asam = 1;
+        camera = 1;
+        speed = 1.5;
     };
 
     class WLProjectile_MediumGuided: WLProjectile {

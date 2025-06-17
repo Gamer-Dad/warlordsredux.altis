@@ -188,7 +188,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords 2.6.11 (Redux) | WSV";
+		briefingName="Warlords 2.6.12 (Redux) | WSV";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
