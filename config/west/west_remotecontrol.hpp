@@ -131,6 +131,9 @@ class RemoteControl {
     // };
 
     class B_UAV_02_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles"
+        };
         cost = 6500;
         hasHMD = 1;
         rearm = 300;
@@ -138,6 +141,9 @@ class RemoteControl {
     }; // "Greyhawk"
 
     class B_T_UAV_03_dynamicLoadout_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles"
+        };
         cost = 8000;
         hasHMD = 1;
         rearm = 600;
