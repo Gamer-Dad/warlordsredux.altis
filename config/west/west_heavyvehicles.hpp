@@ -110,6 +110,7 @@ class HeavyVehicles {
         cost = 2200;
         description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
         isLight = 1;
+        loadable[] = {0, -0.8, 1.7};
         hasHMD = 1;
         hasScanner = 1;
         name = "AMV-7 Marshall (Recon)";
