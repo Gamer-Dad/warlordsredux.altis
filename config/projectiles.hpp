@@ -164,6 +164,7 @@ class WLProjectilesConfig {
             "M_Titan_AT_long",                  // Titan AT (Vehicle)
 
             "M_PG_AT",                          // DAGR
+            "M_PGM_AT",                         // DAGR-M
             "M_Scalpel_AT",                     // Scalpel
             "M_Scalpel_AT_hidden",              // Scalpel
 
