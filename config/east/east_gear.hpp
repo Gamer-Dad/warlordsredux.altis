@@ -29,6 +29,7 @@ class Gear {
         cost = 200;
         demolishable = 1;
         description = "CSAT gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
+        killReward = 200;
         loadable[] = { 0, -1, 0.5 };
         name = "CSAT Supply Crate";
         offset[] = { 0, 3, 0};
@@ -38,6 +39,8 @@ class Gear {
 
     class Box_East_AmmoVeh_F {
         cost = 250;
+        description = "Vehicle Ammo Crates can be used to rearm and switch out ammunition for various types of vehicles.<br /><br />How To Use:<br /> - Place the crate near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Modify/Rearm"" option.<br /> - Modify the vehicles loadout as you see fit and select ""Apply"" to save your loadout and ""Rearm"" to restock it.<br /> - Reminder: After rearming your vehicle you can only rearm it again after a certain amount of time has elapsed, different vehicles have different rearm timers, only make changes to your vehicle once the rearm timer is done.";
+        killReward = 70;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
         requirements[] = {};
@@ -45,24 +48,32 @@ class Gear {
 
     class Land_Pod_Heli_Transport_04_fuel_F {
         cost = 300;
+        description = "Taru Fuel Pods can be used to refuel various types of vehicles.<br /><br />How To Use:<br /> - Place the pod near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Refuel"" option.";
+        killReward = 150;
         loadable[] = {0, -1.8, 0.5};
         requirements[] = {};
     }; // "Taru Fuel Pod"
 
     class Land_Pod_Heli_Transport_04_ammo_F {
         cost = 500;
+        description = "Taru Ammo Pods can be used to rearm and switch out ammunition for various types of vehicles.<br /><br />How To Use:<br /> - Place the pod near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Modify/Rearm"" option.<br /> - Modify the vehicles loadout as you see fit and select ""Apply"" to save your loadout and ""Rearm"" to restock it.<br /> - Reminder: After rearming your vehicle you can only rearm it again after a certain amount of time has elapsed, different vehicles have different rearm timers, only make changes to your vehicle once the rearm timer is done.";
+        killReward = 150;
         loadable[] = {0, -1.8, 0.4};
         requirements[] = {};
     }; // "Taru Ammo Pod"
 
     class Land_Pod_Heli_Transport_04_repair_F {
         cost = 500;
+        description = "Taru Repair Pods can be used to fully repair damaged vehicles.<br /><br />How To Use:<br /> - Place the pod near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Repair"" option.<br /> - Reminder: After repairing your vehicle you can only repair it again after a certain amount of time has elapsed, different vehicles have different repair timers, only make changes to your vehicle once the repair timer is done.";
+        killReward = 150;
         loadable[] = {0, -1.8, 0.4};
         requirements[] = {};
     }; // "Taru Repair Pod"
 
     class Land_Pod_Heli_Transport_04_medevac_F {
         cost = 500;
+        description = "Taru Medical Pods can be used fully heal infantry and can be teleported to.<br /><br />How To Use:<br /> - Place the pod anywhere or move it to the desired location.<br /> - Press showMap to open the map.<br /> - Find the pod on the map and left click on it, then press ""Fast Travel"" to teleport to the pod.";
+        killReward = 200;
         loadable[] = {0, -1.8, 0.5};
         requirements[] = {};
     }; // "Taru Medical Pod"

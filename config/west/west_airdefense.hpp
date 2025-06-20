@@ -1,6 +1,8 @@
 class AirDefense {
     class B_static_AA_F {
         cost = 300;
+        description = "The Titan Multi-Purpose Rocket Launcher is a shoulder system for launching guided rockets against aerial targets.<br /><br />How To Use:<br />Press lockTarget to lock onto target.<br />Press zoomIn and zoomOut to zoom in or out.";
+        killReward = 100;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
         rearm = 180;
@@ -29,13 +31,14 @@ class AirDefense {
     class B_static_AA_UP_F {
         cost = 800;
         demolishable = 1;
-        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
+        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.<br /><br />How To Use:<br />Press lockTarget to lock onto target.<br />Press zoomIn and zoomOut to zoom in or out.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
             "5Rnd_GAT_missiles",
             "2Rnd_GAT_missiles",
             "2Rnd_GAT_missiles_O"
         };
+        killReward = 200;
         loadable[] = {0, -2.5, 0.2};
         name = "Static AA Launcher (UP)";
         offset[] = {0, 3, 0};
@@ -68,7 +71,8 @@ class AirDefense {
 
     class B_Radar_System_01_F {
         cost = 1000;
-        description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
+        description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 350;
         loadable[] = {0, 0, 1};
         offset[] = {0, 7, 0};
         requirements[] = {};
@@ -76,7 +80,8 @@ class AirDefense {
 
     class B_AAA_System_01_F {
         cost = 3500;
-        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
+        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press lockTarget to lock onto target.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 400;
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
         rearm = 180;
@@ -90,7 +95,9 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        description = "While both IFV-6c Panther and IFV-6a Cheetah are based on the Israeli armored personnel carrier chassis, they serve different roles in combat.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press lockTarget to lock onto target.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 350;
         rearm = 300;
         requirements[] = {};
 
@@ -118,8 +125,9 @@ class AirDefense {
 
     class B_SAM_System_01_F {
         cost = 6500;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 500;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
         rearm = 360;
@@ -128,8 +136,9 @@ class AirDefense {
 
     class B_SAM_System_03_F {
         cost = 7000;
-        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 500;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
         rearm = 270;
@@ -140,8 +149,9 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 7500;
-        description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
+        description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press lockTarget to lock onto target.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press nextWeapon to cycle between weapons.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 600;
         name = "IFV-6X Puma";
         rearm = 270;
         requirements[] = {};
@@ -170,8 +180,9 @@ class AirDefense {
 
     class B_SAM_System_02_F {
         cost = 8000;
-        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 600;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
         rearm = 360;
@@ -182,8 +193,10 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 8500;
-        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
+
+        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press lockTarget to lock onto target.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press nextWeapon to cycle between weapons.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 600;
         name = "IFV-6C Jaguar";
         rearm = 360;
         requirements[] = {};
@@ -233,7 +246,7 @@ class AirDefense {
     //         {"ammo_Missile_Cruise_01", {"M_SM6", "Standard Missile 6 Block II"}}
     //     };
     //     cost = 42000;
-    //     description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.";
+    //     description = "Extended range air-defense system, capable of aggressively engaging aircraft and helicopters. Effective range: >50km.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
     //     disallowMagazines[] = {
     //         "magazine_Missiles_Cruise_01_Cluster_x18"
     //     };

@@ -3,6 +3,8 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 1300;
+        description = "While both IFV-6c Panther and IFV-6a Cheetah are based on the Israeli armored personnel carrier chassis, they serve different roles in combat.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 300;
         rearm = 400;
         requirements[] = {};
 
@@ -30,6 +32,8 @@ class HeavyVehicles {
         aps = 1;
         capValue = 3;
         cost = 1500;
+        description = "The AWC 300 Nyx family consists of a number of light, fast and agile combat vehicles used by the AAF.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press lockTarget to lock onto target.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 240;
         loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (AT)";
         rearm = 300;
@@ -68,6 +72,8 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
+        description = "The CRV-6e Bobcat is a Combat Recovery Vehicle capable of acting mobile repair, refuel and rearm depot for other vehicles on the front lines, making it an ideal support vehicle.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 300;
         rearm = 400;
         requirements[] = {};
     }; // "CRV-6e Bobcat"
@@ -76,8 +82,9 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
-        description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
+        description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         isLight = 1;
+        killReward = 300;
         loadable[] = {0, -0.8, 1.7};
         name = "AMV-7 Marshall Light";
         rearm = 500;
@@ -108,13 +115,13 @@ class HeavyVehicles {
         aps = 4;
         capValue = 1;
         cost = 2200;
-        description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
+        description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.<br /><br />How To Use:<br /> - Enter the vehicle or stand next to it.<br /> - Use your scroll wheel and select the ""Dazzler"" or ""Scanner"" option to enable the projectile dazzler or recon scanner.";
         isLight = 1;
-        loadable[] = {0, -0.8, 1.7};
         hasHMD = 1;
         hasScanner = 1;
+        killReward = 300;
         name = "AMV-7 Marshall (Recon)";
-        rearm = 120;
+        rearm = 500;
         requirements[] = {};
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
@@ -140,6 +147,8 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 2500;
+        description = "The FV-720 Mora is an infantry fighting vehicle used by the AAF.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 400;
         name = "FV-720 Mora";
         rearm = 500;
         requirements[] = {};
@@ -156,6 +165,8 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 2700;
+        description = "APC (Armored Personnel Carrier) vehicles are used to deploy soldiers and exfiltrate them away from a battlezone.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 300;
         rearm = 500;
         requirements[] = {};
     }; // "AMV-7 Marshall"
@@ -164,9 +175,11 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 2900;
+        description = "The AFV-4 Gorgon is an amphibious 8x8 all-wheel-drive armored person carrier vehicle, used to carry soldiers to the battlefield and provide fire support.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press lockTarget to lock onto target.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        killReward = 300;
         rearm = 500;
         requirements[] = {};
         textures[] = {
@@ -198,7 +211,8 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 3200;
-        description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
+        description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 300;
         name = "AMV-7 Marshall UP";
         rearm = 500;
         requirements[] = {};
@@ -233,6 +247,7 @@ class HeavyVehicles {
     //     capValue = 4;
     //     cost = 3700;
     //     description = "Rhino MGS-E is a variant of the Rhino MGS armed with a weaker 105mm cannon.";
+    //     killReward = 400;
     //     name = "Rhino MGS-E";
     //     rearm = 500;
     //     requirements[] = {};
@@ -263,8 +278,9 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 4500;
-        description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
+        description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press lockTarget to lock onto target.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 340;
         name = "IFV-6d Ocelot";
         rearm = 280;
         requirements[] = {};
@@ -299,7 +315,9 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 4500;
+        description = "The Rhino MGS is the latest wheeled tank destroyer in NATO armored forces, designed for easy transportation to crisis regions.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press lockTarget to lock onto target.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         isLight = 1;
+        killReward = 450;
         rearm = 500;
         requirements[] = {};
     }; // "Rhino MGS"
@@ -308,6 +326,8 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 5000;
+        description = "The Rhino MGS is the latest wheeled tank destroyer in NATO armored forces, designed for easy transportation to crisis regions.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press lockTarget to lock onto target.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 500;
         rearm = 500;
         requirements[] = {};
     }; // "Rhino MGS UP"
@@ -316,10 +336,12 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 5800;
+        description = "A licensed copy of an Israeli tank built in Central Europe.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         isLight = 1;
+        killReward = 450;
         rearm = 600;
         requirements[] = {};
     }; // "M2A1 Slammer"
@@ -328,9 +350,11 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 6200;
+        description = "The M2A4 Slammer UP is the urban purpose variant of the M2A1 Slammer.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        killReward = 500;
         rearm = 600;
         requirements[] = {};
 
@@ -358,9 +382,11 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 8000;
+        description = "The MBT-52 Kuma is the main battle tank used by Altian Armed Forces.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        killReward = 500;
         name = "M52 Kuma";
         rearm = 600;
         requirements[] = {};
@@ -377,12 +403,13 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 9000;
-        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
+        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         hasHMD = 1;
         hasReconOptics = 1;
+        killReward = 600;
         name = "M2A2 Slammer II";
         rearm = 600;
         requirements[] = {};
@@ -425,6 +452,7 @@ class HeavyVehicles {
     //     capValue = 4;
     //     cost = 13000;
     //     description = "M2X Slammer (Railgun) is a variant of the M2A1 Slammer armed with a railgun.";
+    //     killReward = 550;
     //     name = "M2X Slammer (Railgun)";
     //     rearm = 600;
     //     requirements[] = {};
@@ -456,10 +484,12 @@ class HeavyVehicles {
         aps = 1;
         capValue = 4;
         cost = 20000;
+        description = "Based on the licensed version of an Israeli tank chassis, The Scorcher M4 is a 155 mm self-propelled artillery at the end of its lifetime cycle.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press gunElevUp and gunElevDown to adjust the elevation of your gun up or down.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "2Rnd_155mm_Mo_Cluster",
             "2Rnd_155mm_Mo_Cluster_O"
         };
+        killReward = 600;
         rearm = 1800;
         requirements[] = {};
     }; // "M4 Scorcher"
@@ -468,57 +498,61 @@ class HeavyVehicles {
         aps = 1;
         capValue = 4;
         cost = 20000;
+        description = "The Swedish Multiple Launch Rocket System is a replacement of the original U.S.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press gunElevUp and gunElevDown to adjust the elevation of your gun up or down.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "12Rnd_230mm_rockets_cluster"
         };
+        killReward = 600;
         rearm = 1800;
         requirements[] = {};
     }; // "M5 Sandstorm MLRS"
 
-    // class B_MBT_01_arty_tv_F {
-    //     ammoOverrides[] = {
-    //         {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
-    //     };
-    //     aps = 1;
-    //     capValue = 4;
-    //     cost = 30000;
-    //     disallowMagazines[] = {
-    //         "2Rnd_155mm_Mo_guided",
-    //         "4Rnd_155mm_Mo_guided",
-    //         "2Rnd_155mm_Mo_LG",
-    //         "4Rnd_155mm_Mo_LG",
-    //         "6Rnd_155mm_Mo_mine",
-    //         "6Rnd_155mm_Mo_AT_mine",
-    //         "2Rnd_155mm_Mo_Cluster",
-    //         "6Rnd_155mm_Mo_smoke",
-    //         "2Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_LG_O",
-    //         "6Rnd_155mm_Mo_mine_O",
-    //         "6Rnd_155mm_Mo_AT_mine_O",
-    //         "2Rnd_155mm_Mo_Cluster_O",
-    //         "6Rnd_155mm_Mo_smoke_O"
-    //     };
-    //     name = "M4 Scorcher UP";
-    //     rearm = 1200;
-    //     requirements[] = {};
-    //     spawn = "B_MBT_01_arty_F";
-    //     variant = 1;
+    class B_MBT_01_arty_tv_F {
+        ammoOverrides[] = {
+            {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 30000;
+        description = "Based on the licensed version of an Israeli tank chassis, The Scorcher M4 is a 155 mm self-propelled artillery at the end of its lifetime cycle.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press gunElevUp and gunElevDown to adjust the elevation of your gun up or down.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        disallowMagazines[] = {
+            "2Rnd_155mm_Mo_guided",
+            "4Rnd_155mm_Mo_guided",
+            "2Rnd_155mm_Mo_LG",
+            "4Rnd_155mm_Mo_LG",
+            "6Rnd_155mm_Mo_mine",
+            "6Rnd_155mm_Mo_AT_mine",
+            "2Rnd_155mm_Mo_Cluster",
+            "6Rnd_155mm_Mo_smoke",
+            "2Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_LG_O",
+            "6Rnd_155mm_Mo_mine_O",
+            "6Rnd_155mm_Mo_AT_mine_O",
+            "2Rnd_155mm_Mo_Cluster_O",
+            "6Rnd_155mm_Mo_smoke_O"
+        };
+        killReward = 600;
+        name = "M4 Scorcher UP";
+        rearm = 1200;
+        requirements[] = {};
+        spawn = "B_MBT_01_arty_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {};
-    //         addWeapons[] = {};
-    //         removeMagazines[] = {
-    //             "6Rnd_155mm_Mo_smoke",
-    //             "2Rnd_155mm_Mo_guided",
-    //             "4Rnd_155mm_Mo_guided",
-    //             "2Rnd_155mm_Mo_LG",
-    //             "6Rnd_155mm_Mo_mine",
-    //             "6Rnd_155mm_Mo_AT_mine",
-    //             "2Rnd_155mm_Mo_Cluster"
-    //         };
-    //         removeWeapons[] = {};
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "6Rnd_155mm_Mo_smoke",
+                "2Rnd_155mm_Mo_guided",
+                "4Rnd_155mm_Mo_guided",
+                "2Rnd_155mm_Mo_LG",
+                "6Rnd_155mm_Mo_mine",
+                "6Rnd_155mm_Mo_AT_mine",
+                "2Rnd_155mm_Mo_Cluster"
+            };
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
 };
