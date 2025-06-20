@@ -7,7 +7,6 @@ class Spawn {
     };
 
     class Land_TentA_F {
-        garbageCollector = 1;
         name = "Deployed Tent";
     };
 
