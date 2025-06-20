@@ -44,7 +44,6 @@ class SectorDefense {
     class CamoNet_OPFOR_big_F {
         cost = 100;
         demolishable = 1;
-        garbageCollect = 1;
         offset[] = {0, 6, 0};
         requirements[] = {};
     };  // "Camouflage Vehicle Cover (Hex)"
@@ -78,7 +77,6 @@ class SectorDefense {
     class Land_IRMaskingCover_01_F {
         cost = 200;
         demolishable = 1;
-        garbageCollect = 1;
         offset[] = {0, 8, 0};
         requirements[] = {};
     };  // "IR Masking Tent (Large)"
@@ -246,7 +244,6 @@ class SectorDefense {
         cost = 2500;
         demolishable = 1;
         description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. Its position is revealed to the enemy when it is active.";
-        garbageCollect = 1;
         name = "EW Tower";
         offset[] = {0, 6, 0};
         requirements[] = {};
