@@ -10,6 +10,7 @@ class LightVehicles {
     class O_G_Offroad_01_armed_F {
         capValue = 1;
         cost = 150;
+        description = "The 4x4 pickup by Generic Motors is a perfect choice for farmers and hunters.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         loadable[] = {0, -1.7, 1.3};
         offset[] = {0, 5, 0};
         rearm = 120;
@@ -36,6 +37,7 @@ class LightVehicles {
     class O_LSV_02_armed_F {
         capValue = 1;
         cost = 200;
+        description = "An agile (maximum speed 160 km/h) light protected vehicle for up to 7 soldiers - depending on the configuration.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 120;
@@ -67,6 +69,7 @@ class LightVehicles {
     class O_Truck_03_medical_F {
         capValue = 1;
         cost = 250;
+        description = "The Tempest Medical can be used fully heal infantry and can be teleported to.<br /><br />How To Use:<br /> - Place the Tempest Medical anywhere or drive it to the desired location.<br /> - Press showMap to open the map.<br /> - Find the container on the map and left click on it, then press ""Fast Travel"" to teleport to the container.";
         rearm = 120;
         requirements[] = {};
     }; // "Tempest Medical"
@@ -95,6 +98,7 @@ class LightVehicles {
     class O_G_Offroad_01_AT_F {
         capValue = 1;
         cost = 500;
+        description = "The 4x4 pickup by Generic Motors is a perfect choice for farmers and hunters.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         loadable[] = {0, -1.7, 0.7};
         offset[] = {0, 5, 0};
         rearm = 180;
@@ -118,6 +122,7 @@ class LightVehicles {
     class O_LSV_02_AT_F {
         capValue = 1;
         cost = 750;
+        description = "An agile (maximum speed 160 km/h) light protected vehicle for up to 7 soldiers - depending on the configuration.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 200;
@@ -145,6 +150,7 @@ class LightVehicles {
         aps = 1;
         capValue = 2;
         cost = 900;
+        description = "The Ifrit is a new Mine-Resistant Ambush Protected (MRAP) vehicle designed and manufactured in Russia.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
@@ -154,6 +160,7 @@ class LightVehicles {
         aps = 1;
         capValue = 2;
         cost = 950;
+        description = "The Ifrit is a new Mine-Resistant Ambush Protected (MRAP) vehicle designed and manufactured in Russia.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         loadable[] = {0, -0.8, 1.8};
         rearm = 300;
         requirements[] = {};
@@ -162,18 +169,21 @@ class LightVehicles {
     class O_Truck_03_ammo_F {
         capValue = 1;
         cost = 1000;
+        description = "The Tempest Ammo can be used to rearm and switch out ammunition for various types of vehicles.<br /><br />How To Use:<br /> - Place the Tempest Ammo near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Modify/Rearm"" option.<br /> - Modify the vehicles loadout as you see fit and select ""Apply"" to save your loadout and ""Rearm"" to restock it.<br /> - Reminder: After rearming your vehicle you can only rearm it again after a certain amount of time has elapsed, different vehicles have different rearm timers, only make changes to your vehicle once the rearm timer is done.";
         requirements[] = {};
     }; // "Tempest Ammo"
 
     class O_Truck_03_Fuel_F {
         capValue = 1;
         cost = 1000;
+        description = "The Tempest Fuel can be used to refuel various types of vehicles.<br /><br />How To Use:<br /> - Drive the Tempest Fuel near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Refuel"" option.";
         requirements[] = {};
     }; // "Tempest Fuel"
 
     class O_Truck_03_Repair_F {
         capValue = 1;
         cost = 1000;
+        description = "The Tempest Repair can be used to fully repair damaged vehicles.<br /><br />How To Use:<br /> - Drive the Tempest Repair near your vehicle.<br /> - Look towards your vehicle and use your scroll wheel to select the ""Repair"" option.<br /> - Reminder: After repairing your vehicle you can only repair it again after a certain amount of time has elapsed, different vehicles have different repair timers, only make changes to your vehicle once the repair timer is done.";
         requirements[] = {};
     }; // "Tempest Repair"
 
@@ -279,6 +289,8 @@ class LightVehicles {
         aps = 4;
         capValue = 1;
         cost = 1500;
+        description = "The Tempest Device can be used to intercept nearby missiles and jam enemy drones.<br /><br />How To Use:<br /> - Place the Tempest Device anywhere or drive it to the desired location.<br /> - Look at the Tempest Device and select the ""EW Network"" option to enable/disable the drone jammer and select the ""Dazzler"" option to enable/disable the intercepting of any nearby enemy rockets and missiles.";
+        name = "Tempest (Device)";
         rearm = 120;
         requirements[] = {};
     }; // "Tempest Device"

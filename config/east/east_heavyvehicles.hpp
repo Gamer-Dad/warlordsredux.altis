@@ -5,10 +5,12 @@ class HeavyVehicles {
         };
         capValue = 2;
         cost = 1200;
+        description = "The MSE-3 Marid is an amphibious 6-wheeled APC used by the OPFOR army.<br /><br />Basic Controls:<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 200;
         loadable[] = {0, -0.8, 1.65};
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
-        rearm = 120;
+        rearm = 500;
         requirements[] = {};
         variant = 1;
 
@@ -39,6 +41,8 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
+        description = "The MSE-3 Marid is an amphibious 6-wheeled APC used by the OPFOR army.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 300;
         loadable[] = {0, -0.8, 1.65};
         rearm = 400;
         requirements[] = {};
@@ -48,6 +52,7 @@ class HeavyVehicles {
     //     aps = 1;
     //     capValue = 3;
     //     cost = 1500;
+    //     killReward = 240;
     //     name = "AWC Nyx (AT)";
     //     rearm = 300;
     //     requirements[] = {};
@@ -87,6 +92,7 @@ class HeavyVehicles {
     //     capValue = 3;
     //     cost = 2600;
     //     description = "MSE-3M Marid is a variant of the MSE-3 Marid armed with a 30mm autocannon.";
+    //     killReward = 300;
     //     name = "MSE-3M Marid Autocannon";
     //     rearm = 500;
     //     requirements[] = {};
@@ -115,11 +121,12 @@ class HeavyVehicles {
         aps = 4;
         capValue = 1;
         cost = 2200;
-        description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
+        description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.<br /><br />How To Use:<br /> - Enter the vehicle or stand next to it.<br /> - Use your scroll wheel and select the ""Dazzler"" or ""Scanner"" option to enable the projectile dazzler or recon scanner.";
         hasHMD = 1;
         hasScanner = 1;
+        killReward = 300;
         name = "BTR-K Kamysh (Recon)";
-        rearm = 120;
+        rearm = 500;
         requirements[] = {};
         spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;
@@ -147,9 +154,11 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 3200;
+        description = "The infantry fighting vehicle BTR-K Kamysh and its anti-aircraft cousin ZSU-39 Tigris share the same vehicle platform.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press lockTarget to lock onto target.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        killReward = 350;
         rearm = 500;
         requirements[] = {};
 
@@ -175,10 +184,11 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 4000;
-        description = "BTR-KM Kamysh is a variant of the BTR-K Kamysh armed with a 40mm cannon.";
+        description = "BTR-KM Kamysh is a variant of the BTR-K Kamysh armed with a 40mm cannon.<br /><br />Basic Controls:<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press lockTarget to lock onto target.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        killReward = 350;
         name = "BTR-KM Kamysh";
         rearm = 500;
         requirements[] = {};
@@ -215,8 +225,9 @@ class HeavyVehicles {
         aps = 2;
         capValue = 4;
         cost = 4500;
-        description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis";
+        description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis.<br /><br />Basic Controls:<br />Press ActiveSensorsToggle to toggle the radar on/off.<br />Press lockTarget to lock onto target.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         hasHMD = 1;
+        killReward = 340;
         name = "BMP-39 Shir";
         rearm = 280;
         requirements[] = {};
@@ -251,7 +262,8 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 5500;
-        description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
+        description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 500;
         name = "T-100E Badger";
         rearm = 600;
         requirements[] = {};
@@ -283,6 +295,8 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 7500;
+        description = "A modernized version of the Russian T-95 MBT.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 500;
         rearm = 600;
         requirements[] = {};
     }; // "T-100 Varsuk"
@@ -291,6 +305,8 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 8500;
+        description = "A licensed variant of the original Russian design operated by the elite of CSAT armored forces.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 550;
         rearm = 600;
         requirements[] = {};
     }; // "T-140 Angara"
@@ -299,6 +315,8 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 9500;
+        description = "A licensed variant of the original Russian design operated by the elite of CSAT armored forces.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press gunElevAuto to measure distance and automatically adjust gun elevation (Fire Control System).<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press lockTarget to lock onto target.<br />Press vehLockTargets to cycle between targets detected on sensors.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        killReward = 600;
         rearm = 600;
         requirements[] = {};
     }; // "T-140K Angara"
@@ -309,6 +327,7 @@ class HeavyVehicles {
     //     cost = 13500;
     //     description = "T-140N Yukon is a variant of the T-140 Angara armed with a NATO 120mm cannon.";
     //     flagOffset[] = {-0.69, -3.1, 1.8};
+    //     killReward = 800;
     //     name = "T-140N Yukon";
     //     rearm = 600;
     //     requirements[] = {};
@@ -345,9 +364,11 @@ class HeavyVehicles {
         aps = 1;
         capValue = 4;
         cost = 18000;
+        description = "The Zamak heavy truck is a 6x6 vehicle used for transport, repair and utility roles.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press gunElevUp and gunElevDown to adjust the elevation of your gun up or down.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "12Rnd_230mm_rockets_cluster"
         };
+        killReward = 600;
         name = "Zamak MRL";
         rearm = 1800;
         requirements[] = {};
@@ -363,58 +384,62 @@ class HeavyVehicles {
         aps = 1;
         capValue = 4;
         cost = 20000;
+        description = "The 2S9 Sochor is a lightly armored self-propelled artillery piece used by the OPFOR army.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press gunElevUp and gunElevDown to adjust the elevation of your gun up or down.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
         disallowMagazines[] = {
             "2Rnd_155mm_Mo_Cluster",
             "2Rnd_155mm_Mo_Cluster_O"
         };
+        killReward = 600;
         rearm = 1800;
         requirements[] = {};
     }; // "2S9 Sochor"
 
-    // class O_MBT_02_arty_tv_F {
-    //     ammoOverrides[] = {
-    //         {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (TV-Guided)"}}
-    //     };
-    //     aps = 1;
-    //     capValue = 4;
-    //     cost = 30000;
-    //     disallowMagazines[] = {
-    //         "2Rnd_155mm_Mo_guided",
-    //         "4Rnd_155mm_Mo_guided",
-    //         "2Rnd_155mm_Mo_LG",
-    //         "4Rnd_155mm_Mo_LG",
-    //         "6Rnd_155mm_Mo_mine",
-    //         "6Rnd_155mm_Mo_AT_mine",
-    //         "2Rnd_155mm_Mo_Cluster",
-    //         "6Rnd_155mm_Mo_smoke",
-    //         "2Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_LG_O",
-    //         "6Rnd_155mm_Mo_mine_O",
-    //         "6Rnd_155mm_Mo_AT_mine_O",
-    //         "2Rnd_155mm_Mo_Cluster_O",
-    //         "6Rnd_155mm_Mo_smoke_O"
-    //     };
-    //     name = "2S9M Sochor II";
-    //     rearm = 1200;
-    //     requirements[] = {};
-    //     spawn = "O_MBT_02_arty_F";
-    //     variant = 1;
+    class O_MBT_02_arty_tv_F {
+        ammoOverrides[] = {
+            {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (TV-Guided)"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 30000;
+        description = "The 2S9 Sochor is a lightly armored self-propelled artillery piece used by the OPFOR army.<br /><br />Basic Controls:<br />Press nextWeapon to cycle between weapons.<br />Press gunElevUp and gunElevDown to adjust the elevation of your gun up or down.<br />Press zoomIn and zoomOut to zoom in or out.<br />Press ListLeftVehicleDisplay and ListRightVehicleDisplay to adjust system panels for the left or right side of your screen.<br />Press NextModeLeftVehicleDisplay or NextModeRightVehicleDisplay to adjust modes (if available) for system panels.";
+        disallowMagazines[] = {
+            "2Rnd_155mm_Mo_guided",
+            "4Rnd_155mm_Mo_guided",
+            "2Rnd_155mm_Mo_LG",
+            "4Rnd_155mm_Mo_LG",
+            "6Rnd_155mm_Mo_mine",
+            "6Rnd_155mm_Mo_AT_mine",
+            "2Rnd_155mm_Mo_Cluster",
+            "6Rnd_155mm_Mo_smoke",
+            "2Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_LG_O",
+            "6Rnd_155mm_Mo_mine_O",
+            "6Rnd_155mm_Mo_AT_mine_O",
+            "2Rnd_155mm_Mo_Cluster_O",
+            "6Rnd_155mm_Mo_smoke_O"
+        };
+        killReward = 600;
+        name = "2S9M Sochor II";
+        rearm = 1200;
+        requirements[] = {};
+        spawn = "O_MBT_02_arty_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {};
-    //         addWeapons[] = {};
-    //         removeMagazines[] = {
-    //             "6Rnd_155mm_Mo_smoke_O",
-    //             "2Rnd_155mm_Mo_guided_O",
-    //             "4Rnd_155mm_Mo_guided_O",
-    //             "4Rnd_155mm_Mo_LG_O",
-    //             "6Rnd_155mm_Mo_mine_O",
-    //             "6Rnd_155mm_Mo_AT_mine_O",
-    //             "2Rnd_155mm_Mo_Cluster_O"
-    //         };
-    //         removeWeapons[] = {};
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "6Rnd_155mm_Mo_smoke_O",
+                "2Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_LG_O",
+                "6Rnd_155mm_Mo_mine_O",
+                "6Rnd_155mm_Mo_AT_mine_O",
+                "2Rnd_155mm_Mo_Cluster_O"
+            };
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
 };
