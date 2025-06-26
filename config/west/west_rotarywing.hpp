@@ -21,11 +21,33 @@ class RotaryWing {
 
     class B_Heli_Light_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
+            "PylonRack_3Rnd_LG_scalpel",
+            "PylonRack_19Rnd_Rocket_Skyfire",
             "PylonRack_12Rnd_PGM_missiles"
         };
         cost = 2500;
+        hasHMD = 1;
         rearm = 300;
         requirements[] = {"H"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine",
+                "PylonWeapon_300Rnd_20mm_shells",
+                "PylonWeapon_300Rnd_20mm_shells"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher",
+                "Twin_Cannon_20mm_gunpod"
+            };
+            removeMagazines[] = {
+                "5000Rnd_762x51_Belt"
+            };
+            removeWeapons[] = {
+                "M134_minigun"
+            };
+            turret[] = { -1 };
+        };
     }; // "AH-9 Pawnee"
 
     // class B_Heli_Transport_01_UP_F {
@@ -92,43 +114,43 @@ class RotaryWing {
     //     };
     // };
 
-    class B_Heli_Light_01_hmd_F {
-        allowPylonMagazines[] = {
-            "PylonRack_3Rnd_LG_scalpel",
-            "PylonRack_19Rnd_Rocket_Skyfire",
-            "PylonRack_12Rnd_PGM_missiles"
-        };
-        cost = 4000;
-        description = "AH-9 Pawnee Block II is a variant of the AH-9 Pawnee with advanced avionics.";
-        hasHMD = 1;
-        name = "AH-9 Pawnee Block II";
-        rearm = 300;
-        requirements[] = {"H"};
-        spawn = "B_Heli_Light_01_dynamicLoadout_F";
-        textures[] = {
-            "A3\air_f\Heli_Light_01\Data\Skins\Heli_Light_01_ext_digital_co.paa"
-        };
-        variant = 1;
+    // class B_Heli_Light_01_hmd_F {
+    //     allowPylonMagazines[] = {
+    //         "PylonRack_3Rnd_LG_scalpel",
+    //         "PylonRack_19Rnd_Rocket_Skyfire",
+    //         "PylonRack_12Rnd_PGM_missiles"
+    //     };
+    //     cost = 4000;
+    //     description = "AH-9 Pawnee Block II is a variant of the AH-9 Pawnee with advanced avionics.";
+    //     hasHMD = 1;
+    //     name = "AH-9 Pawnee Block II";
+    //     rearm = 300;
+    //     requirements[] = {"H"};
+    //     spawn = "B_Heli_Light_01_dynamicLoadout_F";
+    //     textures[] = {
+    //         "A3\air_f\Heli_Light_01\Data\Skins\Heli_Light_01_ext_digital_co.paa"
+    //     };
+    //     variant = 1;
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "168Rnd_CMFlare_Chaff_Magazine",
-                "PylonWeapon_300Rnd_20mm_shells",
-                "PylonWeapon_300Rnd_20mm_shells"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher",
-                "Twin_Cannon_20mm_gunpod"
-            };
-            removeMagazines[] = {
-                "5000Rnd_762x51_Belt"
-            };
-            removeWeapons[] = {
-                "M134_minigun"
-            };
-            turret[] = { -1 };
-        };
-    };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "168Rnd_CMFlare_Chaff_Magazine",
+    //             "PylonWeapon_300Rnd_20mm_shells",
+    //             "PylonWeapon_300Rnd_20mm_shells"
+    //         };
+    //         addWeapons[] = {
+    //             "CMFlareLauncher",
+    //             "Twin_Cannon_20mm_gunpod"
+    //         };
+    //         removeMagazines[] = {
+    //             "5000Rnd_762x51_Belt"
+    //         };
+    //         removeWeapons[] = {
+    //             "M134_minigun"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     class B_Heli_light_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
@@ -152,15 +174,13 @@ class RotaryWing {
     };
 
     class B_Heli_Transport_01_pylons_F {
-        // ammoOverrides[] = {  // can use in future
-        //     {"DummyPylonAmmo", {"???", "External Fuel Tank"}}
-        // };
         ammoOverrides[] = {
-            {"M_PGM_AT", {"M_PGM_AT", "DAGR-M 12x"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 2)"}}
         };
         cost = 5500;
+        ecm[] = {{"MissileCore"}, 2, 10000, 1, 8, 15};
         hasHMD = 1;
-        name = "UH-80 Ghost Hawk UP";
+        name = "UH-80 Ghost Hawk Block II";
         offset[] = {0, 11, 0};
         rearm = 400;
         requirements[] = {"H"};
@@ -198,11 +218,16 @@ class RotaryWing {
     class B_Heli_Attack_01_pylons_dynamicLoadout_F {
         allowPylonMagazines[] = {
             {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
-            {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}}
+            {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
+            {"PylonFuelTank_UH80", {"PylonExternalLeft", "PylonExternalRight"}}
+        };
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
         };
         cost = 13000;
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 60};
         hasHMD = 1;
-        name = "AH-99 Blackfoot UP";
+        name = "AH-99 Blackfoot Block II";
         offset[] = {0, 10, 0};
         rearm = 500;
         requirements[] = {"H"};

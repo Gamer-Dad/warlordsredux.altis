@@ -3033,40 +3033,6 @@
             <Chinesesimp>此操作 [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] 具有全队效果，您的团队在相当长的一段时间内将无法再次使用它。仅当您的团队对此操作达成共识时才按“确定”。</Chinesesimp>
             <Chinese>此操作 [ &lt;t size='2' color='#ff0000'&gt; %1 &lt;/t&gt; ] 具有團隊範圍的影響，並且您的團隊在相當長的時間內將無法再次使用它。僅當您的團隊對此操作達成共識時才按「確定」。</Chinese>
         </Key>
-        <Key ID="STR_A3_WL_feature_OrderForfeit">
-            <Original>Start vote to give up</Original>
-            <English>Start vote to give up</English>
-            <Czech>Začněte hlasovat, abyste se vzdali</Czech>
-            <French>Lancer le vote pour abandonner</French>
-            <German>Beginnen Sie mit der Abstimmung, um aufzugeben</German>
-            <Italian>Inizia a votare per rinunciare</Italian>
-            <Polish>Rozpocznij głosowanie, aby się poddać</Polish>
-            <Portuguese>Comece a votar para desistir</Portuguese>
-            <Russian>Начать голосование, чтобы отказаться</Russian>
-            <Spanish>Comienza a votar para renunciar</Spanish>
-            <Turkish>Vazgeçmek için oy kullanmaya başla</Turkish>
-            <Korean>포기 투표를 시작하세요</Korean>
-            <Japanese>諦める投票を始める</Japanese>
-            <Chinesesimp>开始投票放弃</Chinesesimp>
-            <Chinese>開始投票放棄</Chinese>
-        </Key>
-        <Key ID="STR_A3_WL_feature_OrderForfeit_info">
-            <Original>Start vote to give up the game. This ends the match and restarts the mission.</Original>
-            <English>Start vote to give up the game. This ends the match and restarts the mission.</English>
-            <Czech>Začněte hlasovat, abyste hru vzdali. Tím se zápas ukončí a mise se restartuje.</Czech>
-            <French>Lancez le vote pour abandonner le jeu. Cela met fin au match et redémarre la mission.</French>
-            <German>Starten Sie eine Abstimmung, um das Spiel aufzugeben. Dadurch wird das Spiel beendet und die Mission neu gestartet.</German>
-            <Italian>Inizia il voto per abbandonare la partita. Questo termina la partita e riavvia la missione.</Italian>
-            <Polish>Rozpocznij głosowanie, aby zrezygnować z gry. To kończy mecz i ponownie uruchamia misję.</Polish>
-            <Portuguese>Comece a votar para desistir do jogo. Isto termina a partida e reinicia a missão.</Portuguese>
-            <Russian>Начать голосование, чтобы выйти из игры. Это завершит матч и перезапустит миссию.</Russian>
-            <Spanish>Comienza a votar para abandonar el juego. Esto finaliza la partida y reinicia la misión.</Spanish>
-            <Turkish>Oyunu bırakmak için oylama başlat. Bu maçı sonlandırır ve görevi yeniden başlatır.</Turkish>
-            <Korean>게임을 포기하기 위한 투표를 시작합니다. 이렇게 하면 매치가 종료되고 미션이 다시 시작됩니다.</Korean>
-            <Japanese>ゲームを放棄する投票を開始します。これにより試合が終了し、ミッションが再開されます。</Japanese>
-            <Chinesesimp>开始投票放弃游戏。这将结束比赛并重新开始任务。</Chinesesimp>
-            <Chinese>開始投票放棄比賽。這將結束比賽並重新開始任務。</Chinese>
-        </Key>
     </Container>
     <Container name="WLT">
         <Key ID="Template">
@@ -5043,6 +5009,23 @@
         </Key>
     </Container>
     <Container name="WL2_InfoText">
+        <Key ID="WL2_InfoText_Basic">
+            <Original>HOLD [%1] FOR VEHICLES, GEAR, AND FAST TRAVEL</Original>
+            <English>HOLD [%1] FOR VEHICLES, GEAR, AND FAST TRAVEL</English>
+            <Czech>PODRŽTE [%1] PRO VOZIDLA, VÝBAVU A RYCHLÉ CESTOVÁNÍ</Czech>
+            <French>MAINTENEZ [%1] POUR LES VÉHICULES, L'ÉQUIPEMENT ET LE VOYAGE RAPIDE</French>
+            <German>HALTE [%1], UM FAHRZEUGE, AUSRÜSTUNG UND SCHNELLES REISEN ZU NUTZEN</German>
+            <Italian>TIENI PREMUTO [%1] PER VEICOLI, EQUIPAGGIAMENTO E VIAGGIO RAPIDO</Italian>
+            <Polish>PRZYTRZYMAJ [%1], ABY UZYSKAĆ DOSTĘP DO POJAZDÓW, EKWIPUNKU I SZYBKIEJ PODRÓŻY</Polish>
+            <Portuguese>MANTENHA [%1] PRESSIONADO PARA VEÍCULOS, EQUIPAMENTOS E VIAGEM RÁPIDA</Portuguese>
+            <Russian>УДЕРЖИВАЙТЕ [%1] ДЛЯ ТРАНСПОРТА, СНАРЯЖЕНИЯ И БЫСТРОГО ПЕРЕМЕЩЕНИЯ</Russian>
+            <Spanish>MANTÉN [%1] PARA VEHÍCULOS, EQUIPO Y VIAJE RÁPIDO</Spanish>
+            <Turkish>ARAÇLAR, DONANIM VE HIZLI SEYAHAT İÇİN [%1] TUŞUNU BASILI TUTUN</Turkish>
+            <Korean>차량, 장비 및 빠른 이동을 위해 [%1]을(를) 누르고 있으세요</Korean>
+            <Japanese>車両、装備、ファストトラベルのために [%1] を長押し</Japanese>
+            <Chinesesimp>按住 [%1] 以进入载具、装备和快速旅行</Chinesesimp>
+            <Chinese>按住 [%1] 進入載具、裝備與快速旅行</Chinese>
+        </Key>
         <Key ID="WL2_InfoText_1">
             <Original>Warlords Redux was edited by the WarSimVets community.</Original>
             <English>Warlords Redux was edited by the WarSimVets community.</English>

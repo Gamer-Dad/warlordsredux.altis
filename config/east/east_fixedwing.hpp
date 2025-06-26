@@ -303,13 +303,14 @@ class FixedWing {
             {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
         };
         cost = 25000;
-        description = "To-201 Shikra (Stealth) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
+        description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
         hasGPSMunition = 1;
         hasHMD = 1;
         hasReconOptics = 1;
+        name = "To-201 Shikra (Stealth/Recon)";
         rearm = 720;
         requirements[] = {"A"};
         variant = 1;

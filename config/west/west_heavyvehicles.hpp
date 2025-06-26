@@ -475,50 +475,50 @@ class HeavyVehicles {
         requirements[] = {};
     }; // "M5 Sandstorm MLRS"
 
-    // class B_MBT_01_arty_tv_F {
-    //     ammoOverrides[] = {
-    //         {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
-    //     };
-    //     aps = 1;
-    //     capValue = 4;
-    //     cost = 30000;
-    //     disallowMagazines[] = {
-    //         "2Rnd_155mm_Mo_guided",
-    //         "4Rnd_155mm_Mo_guided",
-    //         "2Rnd_155mm_Mo_LG",
-    //         "4Rnd_155mm_Mo_LG",
-    //         "6Rnd_155mm_Mo_mine",
-    //         "6Rnd_155mm_Mo_AT_mine",
-    //         "2Rnd_155mm_Mo_Cluster",
-    //         "6Rnd_155mm_Mo_smoke",
-    //         "2Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_LG_O",
-    //         "6Rnd_155mm_Mo_mine_O",
-    //         "6Rnd_155mm_Mo_AT_mine_O",
-    //         "2Rnd_155mm_Mo_Cluster_O",
-    //         "6Rnd_155mm_Mo_smoke_O"
-    //     };
-    //     name = "M4 Scorcher UP";
-    //     rearm = 1200;
-    //     requirements[] = {};
-    //     spawn = "B_MBT_01_arty_F";
-    //     variant = 1;
+    class B_MBT_01_arty_tv_F {
+        ammoOverrides[] = {
+            {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (Terminal Guidance)"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 30000;
+        disallowMagazines[] = {
+            "2Rnd_155mm_Mo_guided",
+            "4Rnd_155mm_Mo_guided",
+            "2Rnd_155mm_Mo_LG",
+            "4Rnd_155mm_Mo_LG",
+            "6Rnd_155mm_Mo_mine",
+            "6Rnd_155mm_Mo_AT_mine",
+            "2Rnd_155mm_Mo_Cluster",
+            "6Rnd_155mm_Mo_smoke",
+            "2Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_guided_O",
+            "4Rnd_155mm_Mo_LG_O",
+            "6Rnd_155mm_Mo_mine_O",
+            "6Rnd_155mm_Mo_AT_mine_O",
+            "2Rnd_155mm_Mo_Cluster_O",
+            "6Rnd_155mm_Mo_smoke_O"
+        };
+        name = "M4 Scorcher UP";
+        rearm = 1200;
+        requirements[] = {};
+        spawn = "B_MBT_01_arty_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {};
-    //         addWeapons[] = {};
-    //         removeMagazines[] = {
-    //             "6Rnd_155mm_Mo_smoke",
-    //             "2Rnd_155mm_Mo_guided",
-    //             "4Rnd_155mm_Mo_guided",
-    //             "2Rnd_155mm_Mo_LG",
-    //             "6Rnd_155mm_Mo_mine",
-    //             "6Rnd_155mm_Mo_AT_mine",
-    //             "2Rnd_155mm_Mo_Cluster"
-    //         };
-    //         removeWeapons[] = {};
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {};
+            addWeapons[] = {};
+            removeMagazines[] = {
+                "6Rnd_155mm_Mo_smoke",
+                "2Rnd_155mm_Mo_guided",
+                "4Rnd_155mm_Mo_guided",
+                "2Rnd_155mm_Mo_LG",
+                "6Rnd_155mm_Mo_mine",
+                "6Rnd_155mm_Mo_AT_mine",
+                "2Rnd_155mm_Mo_Cluster"
+            };
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
 };

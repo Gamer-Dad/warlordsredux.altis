@@ -54,82 +54,83 @@ class RotaryWing {
         };
     };
 
-    class O_Heli_Transport_04_recon_F {
-        cost = 2500;
-        description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a recon scanner. Use the copilot camera to look for targets and use the fire (LMB) or lock target (T) buttons to mark them for your team.";
-        hasHMD = 1;
-        // hasScanner = 1;
-        hasReconOptics = 1;
-        name = "Mi-290 Taru (Recon)";
-        offset[] = {0, 10, 0};
-        requirements[] = {"H"};
-        spawn = "O_Heli_Transport_04_box_F";
-        variant = 1;
+    // class O_Heli_Transport_04_recon_F {
+    //     cost = 2500;
+    //     description = "Mi-290 Taru (Recon) is a variant of the Mi-290 Taru with a recon scanner. Use the copilot camera to look for targets and use the fire (LMB) or lock target (T) buttons to mark them for your team.";
+    //     hasHMD = 1;
+    //     // hasScanner = 1;
+    //     hasReconOptics = 1;
+    //     name = "Mi-290 Taru (Recon)";
+    //     offset[] = {0, 10, 0};
+    //     requirements[] = {"H"};
+    //     spawn = "O_Heli_Transport_04_box_F";
+    //     variant = 1;
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {
-                "168Rnd_CMFlare_Chaff_Magazine"
-            };
-            removeWeapons[] = {
-                "CMFlareLauncher"
-            };
-            turret[] = { -1 };
-        };
-    };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "240Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         addWeapons[] = {
+    //             "CMFlareLauncher_Singles"
+    //         };
+    //         removeMagazines[] = {
+    //             "168Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         removeWeapons[] = {
+    //             "CMFlareLauncher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     class O_Heli_Light_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            "PylonFuelTank_UH80"
         };
-        cost = 4000;
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
+        };
+        cost = 3500;
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 20};
         hasHMD = 1;
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
     }; // "PO-30 Orca"
 
-    class O_Heli_Transport_02_ATGM_F {
+    class O_Heli_Light_02_upgrade_F {
+        allowPylonMagazines[] = {
+            "PylonRack_12Rnd_PGM_missiles",
+            "PylonRack_3Rnd_LG_scalpel",
+            "PylonRack_4Rnd_LG_scalpel",
+            "PylonMissile_Missile_AA_R73_x1",
+            "PylonMissile_Missile_KH58_x1",
+            "PylonFuelTank_UH80"
+        };
         ammoOverrides[] = {
-            {"M_Vorona_HEAT", {"M_HJ12", "HJ-12 (TV-Guided)"}},
-            {"M_Vorona_HE", {"M_HJ12", "HJ-12 HE (TV-Guided)"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
         };
-        cost = 5000;
+        cost = 4000;
+        description = "PO-32 Orca-M is an advanced variant of the PO-30 Orca with superior defensive systems and a wider variety of advanced weaponry.";
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 20};
         hasHMD = 1;
-        name = "CH-49 Mohawk (ATGM)";
+        name = "PO-32 Orca-M";
         offset[] = {0, 10, 0};
+        spawn = "O_Heli_Light_02_dynamicLoadout_F";
+        rearm = 300;
         requirements[] = {"H"};
-        spawn = "I_Heli_Transport_02_F";
-        textures[] = {
-            "\A3\Air_F_beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_ion_CO.paa",
-            "\A3\Air_F_beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_ion_CO.paa",
-            "\A3\Air_F_beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_ion_CO.paa",
-            "\A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
-        };
-        rearm = 400;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT"
+                "PylonWeapon_300Rnd_20mm_shells",
+                "PylonWeapon_300Rnd_20mm_shells"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles",
-                "missiles_Vorona"
-            };
-            removeMagazines[] = {
-                "168Rnd_CMFlare_Chaff_Magazine"
+                "Twin_Cannon_20mm_gunpod"
             };
             removeWeapons[] = {
                 "CMFlareLauncher"
@@ -138,13 +139,62 @@ class RotaryWing {
         };
     };
 
+    // class O_Heli_Transport_02_ATGM_F {
+    //     ammoOverrides[] = {
+    //         {"M_Vorona_HEAT", {"M_HJ12", "HJ-12 (TV-Guided)"}},
+    //         {"M_Vorona_HE", {"M_HJ12", "HJ-12 HE (TV-Guided)"}}
+    //     };
+    //     cost = 5000;
+    //     hasHMD = 1;
+    //     name = "CH-49 Mohawk (ATGM)";
+    //     offset[] = {0, 10, 0};
+    //     requirements[] = {"H"};
+    //     spawn = "I_Heli_Transport_02_F";
+    //     textures[] = {
+    //         "\A3\Air_F_beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_ion_CO.paa",
+    //         "\A3\Air_F_beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_ion_CO.paa",
+    //         "\A3\Air_F_beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_ion_CO.paa",
+    //         "\A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
+    //     };
+    //     rearm = 400;
+    //     variant = 1;
+
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "240Rnd_CMFlare_Chaff_Magazine",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT"
+    //         };
+    //         addWeapons[] = {
+    //             "CMFlareLauncher_Singles",
+    //             "missiles_Vorona"
+    //         };
+    //         removeMagazines[] = {
+    //             "168Rnd_CMFlare_Chaff_Magazine"
+    //         };
+    //         removeWeapons[] = {
+    //             "CMFlareLauncher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
+
     class O_Heli_Attack_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
-            "PylonMissile_Missile_KH58_INT_x1"
+            "PylonMissile_Missile_KH58_INT_x1",
+            "PylonFuelTank_UH80"
         };
-        cost = 8500;
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
+        };
+        cost = 8000;
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 60};
         hasHMD = 1;
         offset[] = {0, 11, 0};
         rearm = 500;

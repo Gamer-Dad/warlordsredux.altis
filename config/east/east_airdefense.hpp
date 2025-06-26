@@ -74,9 +74,42 @@ class AirDefense {
         requirements[] = {};
     };  // "R-750 Cronus Radar"
 
+    class O_LT_01_sam_F {
+        aps = 1;
+        capValue = 2;
+        cost = 2000;
+        loadable[] = {0, -1.5, 1.2};
+        name = "AWC Nyx (SAM)";
+        rearm = 300;
+        requirements[] = {};
+        spawn = "I_LT_01_scout_F";
+        textures[] = {
+            "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
+            "A3\armor_f_tank\lt_01\data\lt_01_radar_olive_co.paa",
+            "A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
+            "A3\armor_f\data\cage_olive_co.paa"
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "4Rnd_70mm_SAAMI_missiles",
+                "4Rnd_70mm_SAAMI_missiles",
+                "4Rnd_70mm_SAAMI_missiles",
+                "4Rnd_70mm_SAAMI_missiles"
+            };
+            addWeapons[] = {
+                "missiles_SAAMI"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {};
+            turret[] = { 0 };
+        };
+    };
+
     class O_AAA_System_01_F {
         cost = 3500;
-        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
+        description = "Short range point defense artillery with a high rate of fire. Effective against mortar and artillery shells.";
+        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, -1, 4000, 0.4, 4, 8};
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};
@@ -86,6 +119,22 @@ class AirDefense {
         textures[] = {
             "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
             "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
+        };
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "5000Rnd_762x51_Yellow_Belt"
+            };
+            addWeapons[] = {
+                "M134_minigun"
+            };
+            removeMagazines[] = {
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            removeWeapons[] = {
+                "weapon_Cannon_Phalanx"
+            };
+            turret[] = { 0 };
         };
     };
 
