@@ -855,6 +855,13 @@ class CfgWarlordSectors {
         services[] = {"W"};
     };
 
+    class Surrender {
+        area[] = {0, 0, 0, 0};
+        disableHome = 1;
+        location[] = {29000, 2000, 0};
+        name = "Surrender";
+    };
+
     class SynneforosWindmill {
         area[] = {100, 250, 128.18, 1};
         location[] = {7354.5, 21560.4, 0};

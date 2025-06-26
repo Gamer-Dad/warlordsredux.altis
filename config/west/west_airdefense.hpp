@@ -76,11 +76,28 @@ class AirDefense {
 
     class B_AAA_System_01_F {
         cost = 3500;
-        description = "Short range air defense artillery with a high rate of fire. Effective range: 3km.";
+        description = "Short range point defense artillery with a high rate of fire. Effective against mortar and artillery shells.";
+        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, -1, 4000, 0.4, 4, 8};
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
         rearm = 180;
         requirements[] = {};
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "5000Rnd_762x51_Belt"
+            };
+            addWeapons[] = {
+                "M134_minigun"
+            };
+            removeMagazines[] = {
+                "magazine_Cannon_Phalanx_x1550"
+            };
+            removeWeapons[] = {
+                "weapon_Cannon_Phalanx"
+            };
+            turret[] = { 0 };
+        };
     }; // "Praetorian 1C"
 
     class B_APC_Tracked_01_AA_F {

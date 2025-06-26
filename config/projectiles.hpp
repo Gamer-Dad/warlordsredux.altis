@@ -74,6 +74,18 @@ class WLProjectilesConfig {
         speed = 3;
     };
 
+    class WLProjectile_A2AInfrared: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_AA_R73",              // R-73
+            "ammo_Missile_BIM9X",               // BIM-9X
+            "M_Air_AA",                         // ASRAAM
+            "Missile_AA_03_F"                   // Sahr-3
+        };
+        aps = 3;
+        sam = 1;
+        speed = 2;
+    };
+
     class WLProjectile_SEAD: WLProjectile {
         ammo[] = {
             "ammo_Missile_HARM",                // AGM-88 HARM
@@ -134,9 +146,10 @@ class WLProjectilesConfig {
             "M_Excalibur",
             "M_Krasnopol"
         };
-        aps = 2;
-        consumption = 3;
-        tv = 1;
+        aps = 1;
+        camera = 1;
+        consumption = 6;
+        terminal = 1;
     };
 
     class WLProjectile_ExtendedSAM: WLProjectile {
