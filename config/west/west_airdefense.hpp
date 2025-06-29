@@ -4,7 +4,6 @@ class AirDefense {
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
         rearm = 180;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -39,8 +38,7 @@ class AirDefense {
         loadable[] = {0, -2.5, 0.2};
         name = "Static AA Launcher (UP)";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
         spawn = "B_static_AA_F";
         variant = 1;
 
@@ -71,17 +69,15 @@ class AirDefense {
         description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
         loadable[] = {0, 0, 1};
         offset[] = {0, 7, 0};
-        requirements[] = {};
     }; // "AN/MPQ-105 Radar"
 
     class B_AAA_System_01_F {
         cost = 3500;
         description = "Short range point defense artillery with a high rate of fire. Effective against mortar and artillery shells.";
-        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, -1, 4000, 0.4, 4, 8};
+        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, 0, 4000, 0.4, 8, 4};
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
         rearm = 180;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -108,8 +104,7 @@ class AirDefense {
         capValue = 4;
         cost = 5000;
         hasHMD = 1;
-        rearm = 300;
-        requirements[] = {};
+        rearm = 240;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -139,8 +134,7 @@ class AirDefense {
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
+        rearm = 240;
     }; // "Mk49 Spartan"
 
     class B_SAM_System_03_F {
@@ -149,8 +143,7 @@ class AirDefense {
         hasHMD = 1;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
-        rearm = 270;
-        requirements[] = {};
+        rearm = 240;
     }; // "MIM-145 Defender"
 
     class B_APC_Tracked_01_AA_UP_F {
@@ -160,8 +153,7 @@ class AirDefense {
         description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
         hasHMD = 1;
         name = "IFV-6X Puma";
-        rearm = 270;
-        requirements[] = {};
+        rearm = 240;
         spawn = "B_APC_Tracked_01_AA_F";
         variant = 1;
 
@@ -191,8 +183,7 @@ class AirDefense {
         hasHMD = 1;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
+        rearm = 240;
     }; // "Mk21 Centurion"
 
     class B_APC_Tracked_01_AA_E_F {
@@ -202,8 +193,7 @@ class AirDefense {
         description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with Mk21 Centurion missiles.";
         hasHMD = 1;
         name = "IFV-6C Jaguar";
-        rearm = 360;
-        requirements[] = {};
+        rearm = 240;
         spawn = "B_APC_Tracked_01_AA_F";
         variant = 1;
 
@@ -239,8 +229,7 @@ class AirDefense {
         loadable[] = {0, -2, 0.8};
         name = "Mk59 Hercules";
         offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
+        rearm = 300;
         spawn = "B_SAM_System_01_F";
         variant = 1;
     };

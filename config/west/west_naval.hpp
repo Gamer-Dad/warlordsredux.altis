@@ -16,7 +16,7 @@ class Naval {
 
     class B_Boat_Armed_01_minigun_F {
         cost = 500;
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
     };	// "Speedboat Minigun"
 
@@ -27,7 +27,7 @@ class Naval {
             "4Rnd_GAA_missiles"
         };
         name = "Riverine Command Boat";
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
         spawn = "B_Boat_Armed_01_minigun_F";
         variant = 1;

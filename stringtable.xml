@@ -5009,23 +5009,6 @@
         </Key>
     </Container>
     <Container name="WL2_InfoText">
-        <Key ID="WL2_InfoText_Basic">
-            <Original>HOLD [%1] FOR VEHICLES, GEAR, AND FAST TRAVEL</Original>
-            <English>HOLD [%1] FOR VEHICLES, GEAR, AND FAST TRAVEL</English>
-            <Czech>PODRŽTE [%1] PRO VOZIDLA, VÝBAVU A RYCHLÉ CESTOVÁNÍ</Czech>
-            <French>MAINTENEZ [%1] POUR LES VÉHICULES, L'ÉQUIPEMENT ET LE VOYAGE RAPIDE</French>
-            <German>HALTE [%1], UM FAHRZEUGE, AUSRÜSTUNG UND SCHNELLES REISEN ZU NUTZEN</German>
-            <Italian>TIENI PREMUTO [%1] PER VEICOLI, EQUIPAGGIAMENTO E VIAGGIO RAPIDO</Italian>
-            <Polish>PRZYTRZYMAJ [%1], ABY UZYSKAĆ DOSTĘP DO POJAZDÓW, EKWIPUNKU I SZYBKIEJ PODRÓŻY</Polish>
-            <Portuguese>MANTENHA [%1] PRESSIONADO PARA VEÍCULOS, EQUIPAMENTOS E VIAGEM RÁPIDA</Portuguese>
-            <Russian>УДЕРЖИВАЙТЕ [%1] ДЛЯ ТРАНСПОРТА, СНАРЯЖЕНИЯ И БЫСТРОГО ПЕРЕМЕЩЕНИЯ</Russian>
-            <Spanish>MANTÉN [%1] PARA VEHÍCULOS, EQUIPO Y VIAJE RÁPIDO</Spanish>
-            <Turkish>ARAÇLAR, DONANIM VE HIZLI SEYAHAT İÇİN [%1] TUŞUNU BASILI TUTUN</Turkish>
-            <Korean>차량, 장비 및 빠른 이동을 위해 [%1]을(를) 누르고 있으세요</Korean>
-            <Japanese>車両、装備、ファストトラベルのために [%1] を長押し</Japanese>
-            <Chinesesimp>按住 [%1] 以进入载具、装备和快速旅行</Chinesesimp>
-            <Chinese>按住 [%1] 進入載具、裝備與快速旅行</Chinese>
-        </Key>
         <Key ID="WL2_InfoText_1">
             <Original>Warlords Redux was edited by the WarSimVets community.</Original>
             <English>Warlords Redux was edited by the WarSimVets community.</English>

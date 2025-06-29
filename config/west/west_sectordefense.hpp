@@ -3,49 +3,42 @@ class SectorDefense {
         cost = 50;
         demolishable = 1;
         offset[] = {0, 5, 0};
-        requirements[] = {};
     }; // "Razor Wire Fence"
 
     class Land_BagFence_Round_F {
         cost = 50;
         demolishable = 1;
         offset[] = {0, 2, 0};
-        requirements[] = {};
     }; // "Semi Circle Sand bags"
 
     class Land_DragonsTeeth_01_4x2_new_F {
         cost = 50;
         demolishable = 1;
         offset[] = {0, 5, 0};
-        requirements[] = {};
     }; // "Tank barrier"
 
     class Land_HBarrier_5_F {
         cost = 50;
         demolishable = 1;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     }; // "H-barrier"
 
     class Land_HBarrierWall6_F {
         cost = 60;
         demolishable = 1;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     }; // "H-barrier wall"
 
     class Land_HBarrierTower_F {
         cost = 70;
         demolishable = 1;
         offset[] = {0, 7, 0};
-        requirements[] = {};
     }; // "Guard Tower (H-barrier)"
 
     class CamoNet_BLUFOR_big_F {
         cost = 100;
         demolishable = 1;
         offset[] = {0, 6, 0};
-        requirements[] = {};
     }; // "Camouflage Vehicle Cover (Green)"
 
     class B_HMG_01_F {
@@ -53,8 +46,7 @@ class SectorDefense {
         demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -78,7 +70,6 @@ class SectorDefense {
         cost = 200;
         demolishable = 1;
         offset[] = {0, 8, 0};
-        requirements[] = {};
     }; // "IR Masking Tent (Large)"
 
     class B_HMG_01_high_F {
@@ -86,8 +77,7 @@ class SectorDefense {
         demolishable = 1;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -112,8 +102,7 @@ class SectorDefense {
         demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "Mk32 GMG 20mm"
 
     class B_GMG_01_high_F {
@@ -121,8 +110,7 @@ class SectorDefense {
         demolishable = 1;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "Mk32 GMG 20mm (Raised)"
 
     // class B_Minigun_01_high_F {
@@ -159,8 +147,7 @@ class SectorDefense {
         demolishable = 1;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -186,7 +173,6 @@ class SectorDefense {
         cost = 450;
         demolishable = 1;
         offset[] = {0, 8, 0};
-        requirements[] = {};
     };  // "Cargo Tower"
 
     class B_HMG_01_A_F {
@@ -195,8 +181,7 @@ class SectorDefense {
         loadable[] = {0, -2.5, 0.4};
         name = "Mk30 HMG Auto Turret";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -222,8 +207,7 @@ class SectorDefense {
         loadable[] = {0, -2.5, 0.4};
         name = "Mk32 GMG Auto Turret";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     };
 
     class B_static_AT_UP_F {
@@ -239,8 +223,7 @@ class SectorDefense {
         loadable[] = {0, -2.5, 0.2};
         name = "Static AT Launcher (UP)";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
         spawn = "B_static_AT_F";
         variant = 1;
 
@@ -277,7 +260,6 @@ class SectorDefense {
         description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. Its position is revealed to the enemy when it is active.";
         name = "EW Tower";
         offset[] = {0, 6, 0};
-        requirements[] = {};
         // This is not loadable. It will break initialization code to load this.
     };
 
@@ -313,7 +295,6 @@ class SectorDefense {
         loadable[] = {0, -2.5, 0};
         offset[] = {0, 3, 0};
         rearm = 900;
-        requirements[] = {};
     }; // "Mortar"
 
     class B_Mortar_01_TV_F {
@@ -327,7 +308,6 @@ class SectorDefense {
         name = "Switchblade Launcher";
         offset[] = {0, 3, 0};
         rearm = 900;
-        requirements[] = {};
         spawn = "B_Mortar_01_F";
         variant = 1;
 
@@ -365,8 +345,7 @@ class SectorDefense {
             "magazine_ShipCannon_120mm_AT_mine_shells_x6"
         };
         offset[] = {0, 9, 0};
-        requirements[] = {};
-        rearm = 2700;
+        rearm = 1800;
     }; // "MK45 Hammer"
 
     // class B_Ship_MRLS_01_F {

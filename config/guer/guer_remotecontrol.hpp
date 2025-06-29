@@ -3,32 +3,27 @@ class RemoteControl {
         cost = 100;
         offset[] = {0, 3, 0};
         rearm = 200;
-        requirements[] = {};
     };  // "UGAS demining"
 
     class I_UGV_01_F {
         cost = 150;
         offset[] = {0, 5, 0};
-        requirements[] = {};
     };  // "UGV Stomper"
 
     class I_UAV_01_F {
         cost = 500;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     };  // "AR-2"
 
     class I_UGV_01_rcws_F {
         cost = 500;
         offset[] = {0, 5, 0};
         rearm = 300;
-        requirements[] = {};
     };  // "UGAV rcws"
 
     class I_UAV_06_F {
         cost = 1000;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     };  // "AR-6"
 
     class I_UAV_01_UP_F {
@@ -37,7 +32,6 @@ class RemoteControl {
         name = "AR-2 Darter UP";
         offset[] = {0, 3, 0};
         rearm = 300;
-        requirements[] = {};
         spawn = "I_UAV_01_F";
         variant = 1;
 
@@ -69,7 +63,6 @@ class RemoteControl {
         name = "UGV Stomper UP";
         offset[] = {0, 5, 0};
         rearm = 300;
-        requirements[] = {};
         spawn = "I_UGV_01_rcws_F";
         variant = 1;
 

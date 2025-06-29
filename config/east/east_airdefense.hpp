@@ -4,7 +4,6 @@ class AirDefense {
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
         rearm = 180;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -39,8 +38,7 @@ class AirDefense {
         loadable[] = {0, -2.5, 0.2};
         name = "Static AA Launcher (UP)";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
         spawn = "O_static_AA_F";
         variant = 1;
 
@@ -71,17 +69,17 @@ class AirDefense {
         description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
         loadable[] = {0, 0, 1};
         offset[] = {0, 7, 0};
-        requirements[] = {};
     };  // "R-750 Cronus Radar"
 
     class O_LT_01_sam_F {
         aps = 1;
         capValue = 2;
         cost = 2000;
+        hasHMD = 1;
+        hasReconOptics = 1;
         loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (SAM)";
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
         spawn = "I_LT_01_scout_F";
         textures[] = {
             "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
@@ -109,12 +107,11 @@ class AirDefense {
     class O_AAA_System_01_F {
         cost = 3500;
         description = "Short range point defense artillery with a high rate of fire. Effective against mortar and artillery shells.";
-        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, -1, 4000, 0.4, 4, 8};
+        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, 0, 4000, 0.4, 8, 4};
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};
         rearm = 180;
-        requirements[] = {};
         spawn = "B_AAA_System_01_F";
         textures[] = {
             "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
@@ -146,8 +143,7 @@ class AirDefense {
         capValue = 4;
         cost = 5000;
         hasHMD = 1;
-        rearm = 300;
-        requirements[] = {};
+        rearm = 240;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -178,8 +174,7 @@ class AirDefense {
         loadable[] = {0, -2, 0.8};
         name = "Mk49 Spartan";
         offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
+        rearm = 240;
         spawn = "B_SAM_System_01_F";
         textures[] = {
             "A3\Static_F_Jets\SAM_System_01\Data\SAM_system_01_olive_co.paa"
@@ -192,8 +187,7 @@ class AirDefense {
         hasHMD = 1;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
-        rearm = 270;
-        requirements[] = {};
+        rearm = 240;
     };  // "S-750 Rhea"
 
     class O_APC_Tracked_02_AA_M_F {
@@ -203,8 +197,7 @@ class AirDefense {
         description = "ZSU-49 Euphrates is a variant of the ZSU-39 Tigris armed with Rhea missiles.";
         hasHMD = 1;
         name = "ZSU-49 Euphrates";
-        rearm = 270;
-        requirements[] = {};
+        rearm = 240;
         spawn = "O_APC_Tracked_02_AA_F";
         variant = 1;
 
@@ -235,8 +228,7 @@ class AirDefense {
         loadable[] = {0, -2, 1};
         name = "Mk21 Centurion";
         offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
+        rearm = 240;
         spawn = "B_SAM_System_02_F";
         textures[] = {
             "A3\Static_F_Jets\SAM_System_02\Data\SAM_system_02_olive_co.paa"
@@ -250,8 +242,7 @@ class AirDefense {
         description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with Mk21 Centurion missiles.";
         hasHMD = 1;
         name = "ZSU-59 Yangtze";
-        rearm = 360;
-        requirements[] = {};
+        rearm = 240;
         spawn = "O_APC_Tracked_02_AA_F";
         variant = 1;
 
@@ -287,8 +278,7 @@ class AirDefense {
         loadable[] = {0, -2, 0.8};
         name = "Mk59 Hercules";
         offset[] = {0, 5.3, 0};
-        rearm = 360;
-        requirements[] = {};
+        rearm = 300;
         spawn = "B_SAM_System_01_F";
         textures[] = {
             "A3\Static_F_Jets\SAM_System_01\Data\SAM_system_01_olive_co.paa"

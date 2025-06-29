@@ -89,13 +89,13 @@ class RotaryWing {
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
         };
         cost = 3500;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 20};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
         hasHMD = 1;
         offset[] = {0, 10, 0};
-        rearm = 300;
+        rearm = 240;
         requirements[] = {"H"};
     }; // "PO-30 Orca"
 
@@ -109,16 +109,17 @@ class RotaryWing {
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 4000;
         description = "PO-32 Orca-M is an advanced variant of the PO-30 Orca with superior defensive systems and a wider variety of advanced weaponry.";
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 20};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
         hasHMD = 1;
         name = "PO-32 Orca-M";
         offset[] = {0, 10, 0};
         spawn = "O_Heli_Light_02_dynamicLoadout_F";
-        rearm = 300;
+        rearm = 240;
         requirements[] = {"H"};
         variant = 1;
 
@@ -191,13 +192,13 @@ class RotaryWing {
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod (Requires 1)"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
         };
         cost = 8000;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 60};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
         hasHMD = 1;
         offset[] = {0, 11, 0};
-        rearm = 500;
+        rearm = 300;
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
@@ -221,41 +222,35 @@ class RotaryWing {
         };
     }; // "Mi-48 Kajman"
 
-    // class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
-    //     cost = 15000;
-    //     description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with a powerful device jammer. Gunner seat must be player-operated.";
-    //     name = "Mi-55 Kajman-M";
-    //     spawn = "O_Heli_Attack_02_dynamicLoadout_F";
-    //     variant = 1;
+    class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        };
+        cost = 9000;
+        description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with access to Sidearm anti-radiation missiles.";
+        name = "Mi-55 Kajman-M";
+        spawn = "O_Heli_Attack_02_dynamicLoadout_F";
+        variant = 1;
 
-    //     class Pilot: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "240Rnd_CMFlare_Chaff_Magazine"
-    //         };
-    //         addWeapons[] = {
-    //             "CMFlareLauncher_Singles"
-    //         };
-    //         removeMagazines[] = {
-    //             "192Rnd_CMFlare_Chaff_Magazine"
-    //         };
-    //         removeWeapons[] = {
-    //             "CMFlareLauncher"
-    //         };
-    //         turret[] = { -1 };
-    //     };
-
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {};
-    //         addWeapons[] = {};
-    //         deviceJammer = 1;
-    //         removeMagazines[] = {
-    //             "250Rnd_30mm_APDS_shells_Tracer_Green",
-    //             "250Rnd_30mm_HE_shells_Tracer_Green"
-    //         };
-    //         removeWeapons[] = {
-    //             "gatling_30mm"
-    //         };
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "192Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+        class Gunner: WLTurretDefaults {
+            deviceJammer = 1;
+            turret[] = { 0 };
+        };
+    };
 };

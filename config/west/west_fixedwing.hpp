@@ -68,7 +68,7 @@ class FixedWing {
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasRemoteBomb = 1;
         name = "Caesar BTT (Bomb)";
-        rearm = 400;
+        rearm = 300;
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
         variant = 1;
@@ -130,7 +130,7 @@ class FixedWing {
     class B_T_VTOL_01_armed_F {
         cost = 8000;
         hasHMD = 1;
-        rearm = 500;
+        rearm = 300;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Armed)"
 
@@ -140,7 +140,7 @@ class FixedWing {
         };
         cost = 13000;
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -172,7 +172,7 @@ class FixedWing {
         hasHMD = 1;
         hasRemoteBomb = 1;
         name = "A-149 Gryphon";
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
         spawn = "I_Plane_Fighter_04_F";
         textures[] = {
@@ -204,7 +204,7 @@ class FixedWing {
             "PylonRack_Missile_AMRAAM_D_x2",
             "PylonRack_Missile_HARM_x1"
         };
-        cost = 24000;
+        cost = 19000;
         disallowMagazines[] = {
             "PylonRack_Bomb_SDB_x4",
             "PylonRack_Bomb_GBU12_x2",
@@ -216,7 +216,7 @@ class FixedWing {
         hasAWACS = 1;
         hasHMD = 1;
         name = "EF/A-181 Growler";
-        rearm = 720;
+        rearm = 420;
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
         variant = 1;
@@ -239,7 +239,7 @@ class FixedWing {
         };
         cost = 26000;
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -256,17 +256,20 @@ class FixedWing {
     class B_Plane_Fighter_01_Stealth_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
+            {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 26000;
         hasGPSMunition = 1;
         hasHMD = 1;
         hasReconOptics = 1;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
-        rearm = 720;
+        rearm = 420;
         requirements[] = {"A"};
         variant = 1;
 
