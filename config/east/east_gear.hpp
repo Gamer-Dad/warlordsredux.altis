@@ -33,37 +33,31 @@ class Gear {
         name = "CSAT Supply Crate";
         offset[] = { 0, 3, 0};
         spawn = "VirtualReammoBox_camonet_F";
-        requirements[] = {};
     };
 
     class Box_East_AmmoVeh_F {
         cost = 250;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
-        requirements[] = {};
     }; // "Vehicle Ammo [CSAT]"
 
     class Land_Pod_Heli_Transport_04_fuel_F {
         cost = 300;
         loadable[] = {0, -1.8, 0.5};
-        requirements[] = {};
     }; // "Taru Fuel Pod"
 
     class Land_Pod_Heli_Transport_04_ammo_F {
         cost = 500;
         loadable[] = {0, -1.8, 0.4};
-        requirements[] = {};
     }; // "Taru Ammo Pod"
 
     class Land_Pod_Heli_Transport_04_repair_F {
         cost = 500;
         loadable[] = {0, -1.8, 0.4};
-        requirements[] = {};
     }; // "Taru Repair Pod"
 
     class Land_Pod_Heli_Transport_04_medevac_F {
         cost = 500;
         loadable[] = {0, -1.8, 0.5};
-        requirements[] = {};
     }; // "Taru Medical Pod"
 };

@@ -98,6 +98,17 @@ class WLProjectilesConfig {
         sead = 1;
     };
 
+    class WLProjectile_LightSEAD: WLProjectile {
+        ammo[] = {
+            "M_Sidearm"                         // AGM-122 Sidearm
+        };
+        aps = 1;
+        camera = 1;
+        consumption = 7;
+        dazzleable = 1;
+        sead = 1;
+    };
+
     class WLProjectile_TVGuided: WLProjectile {
         ammo[] = {
             "M_Lancet",
@@ -134,7 +145,9 @@ class WLProjectilesConfig {
     class WLProjectile_GPSGuidedBomb: WLProjectile {
         ammo[] = {
             "ammo_gbu12_gps",
-            "ammo_kab250se"
+            "ammo_kab250se",
+            "ammo_stormbreaker",
+            "ammo_upmk_d30"
         };
         aps = 3;
         camera = 1;

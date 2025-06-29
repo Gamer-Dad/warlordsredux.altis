@@ -4,7 +4,6 @@ class LightVehicles {
         cost = 20;
         loadable[] = {0, -1, 0.6};
         offset[] = {0, 3, 0};
-        requirements[] = {};
     }; // "Quad Bike"
 
     class O_G_Offroad_01_armed_F {
@@ -13,7 +12,6 @@ class LightVehicles {
         loadable[] = {0, -1.7, 1.3};
         offset[] = {0, 5, 0};
         rearm = 120;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -39,7 +37,6 @@ class LightVehicles {
         loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
         rearm = 120;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -61,28 +58,23 @@ class LightVehicles {
     class O_Truck_03_transport_F {
         capValue = 1;
         cost = 200;
-        requirements[] = {};
     }; // "Tempest Transport"
 
     class O_Truck_03_medical_F {
         capValue = 1;
         cost = 250;
-        rearm = 120;
-        requirements[] = {};
     }; // "Tempest Medical"
 
     class O_MRAP_02_F {
         capValue = 1;
         cost = 300;
         loadable[] = {0, -0.8, 1.5};
-        requirements[] = {};
     }; // "Ifrit"
 
     class O_Truck_01_flatbed_F {
         capValue = 1;
         cost = 500;
         name = "HEMTT Flatbed";
-        requirements[] = {};
         spawn = "B_Truck_01_flatbed_F";
         textures[] = {
             "\a3\soft_f_Exp\truck_01\data\truck_01_ext_01_olive_co.paa",
@@ -98,7 +90,6 @@ class LightVehicles {
         loadable[] = {0, -1.7, 0.7};
         offset[] = {0, 5, 0};
         rearm = 180;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -120,8 +111,7 @@ class LightVehicles {
         cost = 750;
         loadable[] = {0, -1.3, 0.8};
         offset[] = {0, 5, 0};
-        rearm = 200;
-        requirements[] = {};
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -146,8 +136,7 @@ class LightVehicles {
         capValue = 2;
         cost = 900;
         loadable[] = {0, -0.8, 1.8};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "Ifrit HMG"
 
     class O_MRAP_02_gmg_F {
@@ -155,26 +144,22 @@ class LightVehicles {
         capValue = 2;
         cost = 950;
         loadable[] = {0, -0.8, 1.8};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "Ifrit GMG"
 
     class O_Truck_03_ammo_F {
         capValue = 1;
         cost = 1000;
-        requirements[] = {};
     }; // "Tempest Ammo"
 
     class O_Truck_03_Fuel_F {
         capValue = 1;
         cost = 1000;
-        requirements[] = {};
     }; // "Tempest Fuel"
 
     class O_Truck_03_Repair_F {
         capValue = 1;
         cost = 1000;
-        requirements[] = {};
     }; // "Tempest Repair"
 
     // class O_LSV_02_AT_M_F {
@@ -280,6 +265,5 @@ class LightVehicles {
         capValue = 1;
         cost = 1500;
         rearm = 120;
-        requirements[] = {};
     }; // "Tempest Device"
 };

@@ -16,7 +16,7 @@ class Naval {
 
     class O_Boat_Armed_01_hmg_F {
         cost = 500;
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
     };	// "Speedboat HMG"
 
@@ -27,7 +27,7 @@ class Naval {
             "4Rnd_GAA_missiles"
         };
         name = "Alligator Attack Boat";
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
         spawn = "O_Boat_Armed_01_hmg_F";
         variant = 1;

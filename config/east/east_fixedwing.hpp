@@ -68,7 +68,7 @@ class FixedWing {
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasRemoteBomb = 1;
         name = "Caesar BTT (Bomb)";
-        rearm = 400;
+        rearm = 300;
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
         variant = 1;
@@ -149,11 +149,16 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
-            "PylonMissile_Missile_KH58_INT_x1"
+            "PylonMissile_Missile_KH58_INT_x1",
+            "PylonFuelTank_UH80"
+        };
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
         };
         cost = 12000;
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
         hasHMD = 1;
-        rearm = 700;
+        rearm = 300;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -186,7 +191,7 @@ class FixedWing {
         hasHMD = 1;
         hasRemoteBomb = 1;
         name = "A-143 Buzzard (CAS)";
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
         spawn = "I_Plane_Fighter_03_dynamicLoadout_F";
         textures[] = {
@@ -214,7 +219,7 @@ class FixedWing {
         };
         cost = 17000;
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -275,7 +280,7 @@ class FixedWing {
             "PylonMissile_Missile_KH58_x1"
         };
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -297,10 +302,13 @@ class FixedWing {
         allowPylonMagazines[] = {
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter3"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2", "pylonBayCenter3"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
+            {"ammo_Bomb_SDB", {"ammo_upmk_d30", "UMPK D-30SN (GPS-Guided)"}},
+            {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 25000;
         description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
@@ -311,7 +319,7 @@ class FixedWing {
         hasHMD = 1;
         hasReconOptics = 1;
         name = "To-201 Shikra (Stealth/Recon)";
-        rearm = 720;
+        rearm = 420;
         requirements[] = {"A"};
         variant = 1;
 

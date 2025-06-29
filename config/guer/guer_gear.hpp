@@ -33,13 +33,11 @@ class Gear {
         name = "Independent Supply Crate";
         offset[] = { 0, 3, 0};
         spawn = "VirtualReammoBox_camonet_F";
-        requirements[] = {};
     };
 
     class Box_IND_AmmoVeh_F {
         cost = 250;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0 };
-        requirements[] = {};
     }; // "Vehicle Ammo [AAF]"
 };

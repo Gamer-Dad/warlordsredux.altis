@@ -3,8 +3,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 1300;
-        rearm = 400;
-        requirements[] = {};
+        rearm = 180;
 
         // class Gunner: WLTurretDefaults {
         //     addMagazines[] = {
@@ -32,8 +31,7 @@ class HeavyVehicles {
         cost = 1500;
         loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (AT)";
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
         spawn = "I_LT_01_AT_F";
         textures[] = {
             "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
@@ -68,8 +66,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
-        rearm = 400;
-        requirements[] = {};
+        rearm = 180;
     }; // "CRV-6e Bobcat"
 
     class B_APC_Wheeled_01_light_F {
@@ -80,8 +77,7 @@ class HeavyVehicles {
         isLight = 1;
         loadable[] = {0, -0.8, 1.7};
         name = "AMV-7 Marshall Light";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
@@ -115,7 +111,6 @@ class HeavyVehicles {
         hasScanner = 1;
         name = "AMV-7 Marshall (Recon)";
         rearm = 120;
-        requirements[] = {};
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
@@ -141,8 +136,7 @@ class HeavyVehicles {
         capValue = 4;
         cost = 2500;
         name = "FV-720 Mora";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "I_APC_tracked_03_cannon_F";
         textures[] = {
             "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
@@ -156,8 +150,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 2700;
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
     }; // "AMV-7 Marshall"
 
     class B_APC_Wheeled_03_cannon_F {
@@ -167,8 +160,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         textures[] = {
             "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa",
             "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa",
@@ -200,8 +192,7 @@ class HeavyVehicles {
         cost = 3200;
         description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
         name = "AMV-7 Marshall UP";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
@@ -266,8 +257,7 @@ class HeavyVehicles {
         description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
         hasHMD = 1;
         name = "IFV-6d Ocelot";
-        rearm = 280;
-        requirements[] = {};
+        rearm = 240;
         spawn = "B_APC_Tracked_01_AA_F";
         variant = 1;
 
@@ -300,16 +290,14 @@ class HeavyVehicles {
         capValue = 4;
         cost = 4500;
         isLight = 1;
-        rearm = 500;
-        requirements[] = {};
+        rearm = 240;
     }; // "Rhino MGS"
 
     class B_AFV_Wheeled_01_up_cannon_F {
         aps = 2;
         capValue = 4;
         cost = 5000;
-        rearm = 500;
-        requirements[] = {};
+        rearm = 240;
     }; // "Rhino MGS UP"
 
     class B_MBT_01_cannon_F {
@@ -320,8 +308,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         isLight = 1;
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
     }; // "M2A1 Slammer"
 
     class B_MBT_01_TUSK_F {
@@ -331,8 +318,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -362,8 +348,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         name = "M52 Kuma";
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
         spawn = "I_MBT_03_cannon_F";
         textures[] = {
             "src\img\camo\kuma01.jpg",
@@ -384,8 +369,7 @@ class HeavyVehicles {
         hasHMD = 1;
         hasReconOptics = 1;
         name = "M2A2 Slammer II";
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
         spawn = "B_MBT_01_TUSK_F";
         variant = 1;
 
@@ -461,7 +445,6 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster_O"
         };
         rearm = 1800;
-        requirements[] = {};
     }; // "M4 Scorcher"
 
     class B_MBT_01_mlrs_F {
@@ -472,7 +455,6 @@ class HeavyVehicles {
             "12Rnd_230mm_rockets_cluster"
         };
         rearm = 1800;
-        requirements[] = {};
     }; // "M5 Sandstorm MLRS"
 
     class B_MBT_01_arty_tv_F {
@@ -500,8 +482,7 @@ class HeavyVehicles {
             "6Rnd_155mm_Mo_smoke_O"
         };
         name = "M4 Scorcher UP";
-        rearm = 1200;
-        requirements[] = {};
+        rearm = 1800;
         spawn = "B_MBT_01_arty_F";
         variant = 1;
 

@@ -9,7 +9,6 @@ class HeavyVehicles {
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
         rearm = 120;
-        requirements[] = {};
         variant = 1;
 
         class Gunner: WLTurretDefaults {
@@ -40,8 +39,7 @@ class HeavyVehicles {
         capValue = 2;
         cost = 1700;
         loadable[] = {0, -0.8, 1.65};
-        rearm = 400;
-        requirements[] = {};
+        rearm = 180;
     }; // "MSE-3 Marid"
 
     // class O_LT_01_AT_F {
@@ -120,7 +118,6 @@ class HeavyVehicles {
         hasScanner = 1;
         name = "BTR-K Kamysh (Recon)";
         rearm = 120;
-        requirements[] = {};
         spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;
 
@@ -150,8 +147,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -180,8 +176,7 @@ class HeavyVehicles {
             "4Rnd_GAA_missiles"
         };
         name = "BTR-KM Kamysh";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;
 
@@ -218,8 +213,7 @@ class HeavyVehicles {
         description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis";
         hasHMD = 1;
         name = "BMP-39 Shir";
-        rearm = 280;
-        requirements[] = {};
+        rearm = 240;
         spawn = "O_APC_Tracked_02_AA_F";
         variant = 1;
 
@@ -253,8 +247,7 @@ class HeavyVehicles {
         cost = 5500;
         description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
         name = "T-100E Badger";
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
         spawn = "O_MBT_02_cannon_F";
         variant = 1;
 
@@ -283,25 +276,32 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 7500;
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
     }; // "T-100 Varsuk"
 
     class O_MBT_04_cannon_F {
         aps = 3;
         capValue = 4;
         cost = 8500;
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
     }; // "T-140 Angara"
 
     class O_MBT_04_command_F {
         aps = 3;
         capValue = 4;
         cost = 9500;
-        rearm = 600;
-        requirements[] = {};
+        hasSmokeCurtain = 1;
+        rearm = 300;
     }; // "T-140K Angara"
+
+    class O_MBT_02_railgun_F {
+        aps = 3;
+        capValue = 4;
+        cost = 11000;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        rearm = 300;
+    }; // "T-100X Futura"
 
     // class O_MBT_04_nato_F {
     //     aps = 3;
@@ -350,7 +350,6 @@ class HeavyVehicles {
         };
         name = "Zamak MRL";
         rearm = 1800;
-        requirements[] = {};
         spawn = "I_Truck_02_MRL_F";
         textures[] = {
             "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
@@ -368,7 +367,6 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster_O"
         };
         rearm = 1800;
-        requirements[] = {};
     }; // "2S9 Sochor"
 
     class O_MBT_02_arty_tv_F {
@@ -396,8 +394,7 @@ class HeavyVehicles {
             "6Rnd_155mm_Mo_smoke_O"
         };
         name = "2S9M Sochor II";
-        rearm = 1200;
-        requirements[] = {};
+        rearm = 1800;
         spawn = "O_MBT_02_arty_F";
         variant = 1;
 
