@@ -48,3 +48,10 @@ class OpticTWSMG: WLCAttachment {
         "optic_tws_mg"
     };
 };
+
+class Bipod: WLCAttachment {
+    name = "Bipod";
+    attachments[] = {
+        "bipod_01_F_snd"
+    };
+};

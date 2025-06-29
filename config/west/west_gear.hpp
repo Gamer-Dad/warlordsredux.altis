@@ -23,6 +23,8 @@ class Gear {
             { "SatchelCharge_Remote_Mag", 3},
             { "SLAMDirectionalMine_Wire_Mag", 3},
 
+            { "bipod_01_F_snd", 5 },
+
             { "B_FieldPack_cbr", 5 },
             { "B_Carryall_mcamo", 5 }
         };
