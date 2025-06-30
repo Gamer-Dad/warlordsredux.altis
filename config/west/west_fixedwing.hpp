@@ -202,7 +202,11 @@ class FixedWing {
     class B_Plane_Fighter_01_Growler_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_AMRAAM_D_x2",
-            "PylonRack_Missile_HARM_x1"
+            "PylonRack_Missile_HARM_x1",
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
+        };
+        ammoOverrides[] = {
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 19000;
         disallowMagazines[] = {
@@ -257,12 +261,10 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
-            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
         };
         ammoOverrides[] = {
             {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
-            {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
-            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+            {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}}
         };
         cost = 26000;
         hasGPSMunition = 1;

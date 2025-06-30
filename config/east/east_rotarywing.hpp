@@ -192,7 +192,8 @@ class RotaryWing {
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 8000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
@@ -221,36 +222,4 @@ class RotaryWing {
             turret[] = { 0 };
         };
     }; // "Mi-48 Kajman"
-
-    class O_Heli_Attack_02_sead_F: O_Heli_Attack_02_dynamicLoadout_F {
-        ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
-            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-        };
-        cost = 9000;
-        description = "Mi-55 Kajman-M is a variant of the Mi-48 Kajman with access to Sidearm anti-radiation missiles.";
-        name = "Mi-55 Kajman-M";
-        spawn = "O_Heli_Attack_02_dynamicLoadout_F";
-        variant = 1;
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {
-                "192Rnd_CMFlare_Chaff_Magazine"
-            };
-            removeWeapons[] = {
-                "CMFlareLauncher"
-            };
-            turret[] = { -1 };
-        };
-        class Gunner: WLTurretDefaults {
-            deviceJammer = 1;
-            turret[] = { 0 };
-        };
-    };
 };

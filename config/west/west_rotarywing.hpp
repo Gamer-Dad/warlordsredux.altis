@@ -219,10 +219,12 @@ class RotaryWing {
         allowPylonMagazines[] = {
             {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
             {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
+            {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
             {"PylonFuelTank_UH80", {"PylonExternalLeft", "PylonExternalRight"}}
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 13000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
@@ -231,45 +233,6 @@ class RotaryWing {
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
-
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {
-                "CMFlareLauncher_Singles"
-            };
-            removeMagazines[] = {};
-            removeWeapons[] = {
-                "CMFlareLauncher"
-            };
-            turret[] = { -1 };
-        };
-
-        class Gunner: WLTurretDefaults {
-            deviceJammer = 1;
-            turret[] = { 0 };
-        };
-    };
-
-    class B_Heli_Attack_01_sead_F {
-        allowPylonMagazines[] = {
-            {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
-            {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
-            {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
-            {"PylonFuelTank_UH80", {"PylonExternalLeft", "PylonExternalRight"}}
-        };
-        ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
-            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-        };
-        cost = 14000;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
-        hasHMD = 1;
-        name = "AH-99 Blackfoot Typhoon";
-        offset[] = {0, 10, 0};
-        rearm = 300;
-        requirements[] = {"H"};
-        spawn = "B_Heli_Attack_01_pylons_dynamicLoadout_F";
-        variant = 1;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {};
