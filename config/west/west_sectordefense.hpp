@@ -43,7 +43,6 @@ class SectorDefense {
 
     class B_HMG_01_F {
         cost = 150;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
         rearm = 120;
@@ -74,7 +73,6 @@ class SectorDefense {
 
     class B_HMG_01_high_F {
         cost = 200;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
         rearm = 120;
@@ -99,7 +97,6 @@ class SectorDefense {
 
     class B_GMG_01_F {
         cost = 200;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
         rearm = 120;
@@ -107,7 +104,6 @@ class SectorDefense {
 
     class B_GMG_01_high_F {
         cost = 250;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
         rearm = 120;
@@ -144,7 +140,6 @@ class SectorDefense {
 
     class B_static_AT_F {
         cost = 300;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
         rearm = 180;
@@ -177,7 +172,6 @@ class SectorDefense {
 
     class B_HMG_01_A_F {
         cost = 500;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk30 HMG Auto Turret";
         offset[] = {0, 3, 0};
@@ -212,7 +206,6 @@ class SectorDefense {
 
     class B_static_AT_UP_F {
         cost = 1400;
-        demolishable = 1;
         description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
@@ -291,7 +284,6 @@ class SectorDefense {
 
     class B_Mortar_01_F {
         cost = 5000;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0};
         offset[] = {0, 3, 0};
         rearm = 900;
@@ -302,7 +294,6 @@ class SectorDefense {
             {"M_127mm_Firefist_AT", {"M_Switchblade", "Switchblade (Loitering Munition)"}}
         };
         cost = 8000;
-        demolishable = 1;
         description = "Switchblade Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         loadable[] = {0, -2.5, 0};
         name = "Switchblade Launcher";

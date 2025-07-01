@@ -299,6 +299,7 @@ class FixedWing {
     }; // "To-201 Shikra"
 
     class O_Plane_Fighter_02_Stealth_F {
+        allowLoal = 1;
         allowPylonMagazines[] = {
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1",

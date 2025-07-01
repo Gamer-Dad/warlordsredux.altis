@@ -200,6 +200,7 @@ class FixedWing {
     };
 
     class B_Plane_Fighter_01_Growler_F {
+        allowLoal = 1;
         allowPylonMagazines[] = {
             "PylonRack_Missile_AMRAAM_D_x2",
             "PylonRack_Missile_HARM_x1",
@@ -258,6 +259,7 @@ class FixedWing {
     }; // "F/A-181 Black Wasp II"
 
     class B_Plane_Fighter_01_Stealth_F {
+        allowLoal = 1;
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
