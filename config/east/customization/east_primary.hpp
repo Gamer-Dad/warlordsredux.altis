@@ -98,7 +98,7 @@ class Primary {
             name = "Tracers, Large Magazine, Grenadier";
             level = 25;
             magazines[] = {
-                { "100Rnd_65x39_caseless_mag", 2 },
+                { "100Rnd_65x39_caseless_mag_Tracer", 2 },
                 { "3Rnd_HE_Grenade_shell", 6 }
             };
         };

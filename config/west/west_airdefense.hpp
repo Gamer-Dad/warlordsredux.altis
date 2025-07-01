@@ -27,7 +27,6 @@ class AirDefense {
 
     class B_static_AA_UP_F {
         cost = 800;
-        demolishable = 1;
         description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles",
