@@ -180,6 +180,41 @@ class AirDefense {
         };
     };
 
+    class O_Truck_02_AA_F {
+        aps = 1;
+        capValue = 4;
+        cost = 6500;
+        description = "Zamak MRL AA is a variant of the Zamak MRL armed with 12x ASRAAM missiles.";
+        hasHMD = 1;
+        name = "Zamak MRL AA";
+        rearm = 240;
+        spawn = "I_Truck_02_MRL_F";
+        textures[] = {
+            "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
+            "\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
+            "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
+        };
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "4Rnd_AAA_missiles",
+                "4Rnd_AAA_missiles",
+                "4Rnd_AAA_missiles"
+            };
+            addWeapons[] = {
+                "missiles_ASRAAM"
+            };
+            removeMagazines[] = {
+                "12Rnd_230mm_rockets"
+            };
+            removeWeapons[] = {
+                "rockets_230mm_GAT"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class O_SAM_System_04_F {
         cost = 7000;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
@@ -189,36 +224,36 @@ class AirDefense {
         rearm = 240;
     };  // "S-750 Rhea"
 
-    class O_APC_Tracked_02_AA_M_F {
-        aps = 2;
-        capValue = 4;
-        cost = 7500;
-        description = "ZSU-49 Euphrates is a variant of the ZSU-39 Tigris armed with Rhea missiles.";
-        hasHMD = 1;
-        name = "ZSU-49 Euphrates";
-        rearm = 240;
-        spawn = "O_APC_Tracked_02_AA_F";
-        variant = 1;
+    // class O_APC_Tracked_02_AA_M_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 7500;
+    //     description = "ZSU-49 Euphrates is a variant of the ZSU-39 Tigris armed with Rhea missiles.";
+    //     hasHMD = 1;
+    //     name = "ZSU-49 Euphrates";
+    //     rearm = 240;
+    //     spawn = "O_APC_Tracked_02_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "magazine_Missile_s750_x4",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "weapon_s750Launcher"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles_O"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "magazine_Missile_s750_x4",
+    //             "680Rnd_35mm_AA_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "weapon_s750Launcher"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles_O"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_SAM_System_02_F {
         cost = 8000;

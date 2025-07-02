@@ -16,12 +16,15 @@ class HeavyVehicles {
                 "Vorona_HEAT",
                 "Vorona_HEAT",
                 "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
                 "Vorona_HEAT"
             };
             addWeapons[] = {
                 "missiles_Vorona"
             };
-            reloadOverride = 0.5;
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt",
                 "200Rnd_127x99_mag_Tracer_Green"

@@ -1,34 +1,4 @@
 class SectorDefense {
-    class Land_Razorwire_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 5, 0};
-    };  // "Razor Wire Fence"
-
-    class Land_BagFence_Round_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 2, 0};
-    };  // "Semi Circle Sand bags"
-
-    class Land_DragonsTeeth_01_4x2_new_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 5, 0};
-    };  // "Tank barrier"
-
-    class Land_HBarrierWall6_F {
-        cost = 60;
-        demolishable = 1;
-        offset[] = {0, 3, 0};
-    }; // "H-barrier wall"
-
-    class CamoNet_INDP_big_F {
-        cost = 100;
-        demolishable = 1;
-        offset[] = {0, 6, 0};
-    };  // "Camouflage Vehicle Cover (Hex)"
-
     class I_HMG_01_F {
         cost = 150;
         loadable[] = {0, -2.5, 0.4};
@@ -249,14 +219,6 @@ class SectorDefense {
         name = "Mk32 GMG Auto Turret";
         offset[] = {0, 3, 0};
         rearm = 300;
-    };
-
-    class Land_MobileRadar_01_radar_F {
-        cost = 2500;
-        demolishable = 1;
-        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. It must be placed outside the home base in an owned sector.";
-        name = "EW Tower";
-        offset[] = {0, 6, 0};
     };
 
     class I_Mortar_01_F {
