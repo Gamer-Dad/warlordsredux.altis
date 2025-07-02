@@ -62,11 +62,12 @@ class FixedWing {
 
     class B_Plane_Caesar_bomb_01_F {
         ammoOverrides[] = {
-            {"Bo_GBU12_LGB", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+            {"Bo_GBU12_LGB", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
         };
-        cost = 2000;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
-        hasRemoteBomb = 1;
+        cost = 1500;
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        hasGPSMunition = 1;
+        hasHMD = 1;
         name = "Caesar BTT (Bomb)";
         rearm = 300;
         requirements[] = {"A"};
@@ -74,9 +75,6 @@ class FixedWing {
         variant = 1;
 
         class Pilot: WLTurretDefaults {
-            turret[] = { -1 };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             addMagazines[] = {
                 "2Rnd_GBU12_LGB",
                 "240Rnd_CMFlare_Chaff_Magazine"
@@ -85,6 +83,7 @@ class FixedWing {
                 "GBU12BombLauncher",
                 "CMFlareLauncher"
             };
+            turret[] = { -1 };
         };
     };
 

@@ -120,6 +120,23 @@
             <Chinesesimp>区域防御</Chinesesimp>
             <Chinese>區域防禦</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_Structures">
+            <Original>Structures</Original>
+            <English>Structures</English>
+            <Czech>Stavby</Czech>
+            <French>Structures</French>
+            <German>Gebäude</German>
+            <Italian>Strutture</Italian>
+            <Polish>Budowle</Polish>
+            <Portuguese>Estruturas</Portuguese>
+            <Russian>Структуры</Russian>
+            <Spanish>Estructuras</Spanish>
+            <Turkish>Yapılar</Turkish>
+            <Korean>구조물</Korean>
+            <Japanese>構造物</Japanese>
+            <Chinesesimp>结构</Chinesesimp>
+            <Chinese>結構</Chinese>
+        </Key>
         <Key ID="STR_A3_WL_LightVehicle_Info">
             <Original>Compact and maneuverable ground vehicles designed for utility and mobility.</Original>
             <English>Compact and maneuverable ground vehicles designed for utility and mobility.</English>
@@ -223,21 +240,38 @@
             <Chinese>設計用於檢測、攔截和消除敵機的系統和發射裝置。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_SectorDefense_Info">
-            <Original>Defensive systems and fortifications designed to protect friendly sectors.</Original>
-            <English>Defensive systems and fortifications designed to protect friendly sectors.</English>
-            <Czech>Obranné systémy a opevnění určené k ochraně spojeneckých sektorů.</Czech>
-            <French>Systèmes de défense et fortifications conçus pour protéger les secteurs amis.</French>
-            <German>Verteidigungssysteme und Befestigungen zum Schutz verbündeter Sektoren.</German>
-            <Italian>Sistemi difensivi e fortificazioni progettati per proteggere i settori alleati.</Italian>
-            <Polish>Systemy obronne i fortyfikacje zaprojektowane do ochrony przyjaznych sektorów.</Polish>
-            <Portuguese>Sistemas defensivos e fortificações projetados para proteger setores aliados.</Portuguese>
-            <Russian>Оборонительные системы и укрепления для защиты дружественных секторов.</Russian>
-            <Spanish>Sistemas defensivos y fortificaciones diseñados para proteger sectores aliados.</Spanish>
-            <Turkish>Dost sektörleri korumak için tasarlanmış savunma sistemleri ve tahkimatlar.</Turkish>
-            <Korean>아군 지역을 보호하기 위해 설계된 방어 시스템 및 요새.</Korean>
-            <Japanese>友軍セクターを保護するために設計された防衛システムと要塞。</Japanese>
-            <Chinesesimp>旨在保护友军区域的防御系统和工事。</Chinesesimp>
-            <Chinese>旨在保護友軍區域的防禦系統和工事。</Chinese>
+            <Original>Defensive weapons designed to protect friendly sectors.</Original>
+            <English>Defensive weapons designed to protect friendly sectors.</English>
+            <Czech>Obranné zbraně určené k ochraně spojeneckých sektorů.</Czech>
+            <French>Armes défensives conçues pour protéger les secteurs amis.</French>
+            <German>Verteidigungswaffen zum Schutz verbündeter Sektoren.</German>
+            <Italian>Armi difensive progettate per proteggere i settori alleati.</Italian>
+            <Polish>Broń obronna zaprojektowana do ochrony przyjaznych sektorów.</Polish>
+            <Portuguese>Armas defensivas projetadas para proteger setores aliados.</Portuguese>
+            <Russian>Оборонительное оружие для защиты дружественных секторов.</Russian>
+            <Spanish>Armas defensivas diseñadas para proteger sectores aliados.</Spanish>
+            <Turkish>Dost sektörleri korumak için tasarlanmış savunma silahları.</Turkish>
+            <Korean>아군 지역을 보호하기 위해 설계된 방어 무기.</Korean>
+            <Japanese>友軍セクターを保護するために設計された防衛兵器。</Japanese>
+            <Chinesesimp>旨在保护友军区域的防御性武器。</Chinesesimp>
+            <Chinese>旨在保護友軍區域的防禦性武器。</Chinese>
+        </Key>
+        <Key ID="STR_A3_WL_Structures_Info">
+            <Original>Fortifications and defensive structures designed to protect friendly sectors.</Original>
+            <English>Fortifications and defensive structures designed to protect friendly sectors.</English>
+            <Czech>Opevnění a obranné stavby určené k ochraně spojeneckých sektorů.</Czech>
+            <French>Fortifications et structures défensives conçues pour protéger les secteurs amis.</French>
+            <German>Befestigungen und Verteidigungsstrukturen zum Schutz verbündeter Sektoren.</German>
+            <Italian>Fortificazioni e strutture difensive progettate per proteggere i settori alleati.</Italian>
+            <Polish>Umocnienia i struktury obronne zaprojektowane do ochrony przyjaznych sektorów.</Polish>
+            <Portuguese>Fortificações e estruturas defensivas projetadas para proteger setores aliados.</Portuguese>
+            <Russian>Фортификационные и оборонительные сооружения для защиты дружественных секторов.</Russian>
+            <Spanish>Fortificaciones y estructuras defensivas diseñadas para proteger sectores aliados.</Spanish>
+            <Turkish>Dost sektörleri korumak için tasarlanmış tahkimatlar ve savunma yapıları.</Turkish>
+            <Korean>아군 지역을 보호하기 위해 설계된 방어 구조물과 요새입니다.</Korean>
+            <Japanese>友軍セクターを保護するために設計された防衛構造物や要塞です。</Japanese>
+            <Chinesesimp>用于保护友军区域的防御工事和防御结构。</Chinesesimp>
+            <Chinese>用於保護友軍區域的防禦工事和防禦結構。</Chinese>
         </Key>
         <Key ID="STR_A3_WL_aps_friendly_warning">
             <Original>Watch where you're shooting! You've triggered the Active Protection System on a nearby friendly vehicle.</Original>

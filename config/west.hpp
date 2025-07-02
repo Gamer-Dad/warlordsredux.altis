@@ -10,4 +10,5 @@ class WEST {
     #include "west\west_rotarywing.hpp"
     #include "west\west_sectordefense.hpp"
     #include "west\west_spawn.hpp"
+    #include "west\west_structures.hpp"
 };

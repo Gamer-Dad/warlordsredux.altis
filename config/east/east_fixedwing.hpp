@@ -62,11 +62,12 @@ class FixedWing {
 
     class O_Plane_Caesar_bomb_01_F {
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+            {"Bomb_03_F", {"ammo_kab250se", "KAB-250SE (GPS-Guided)"}}
         };
-        cost = 2000;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
-        hasRemoteBomb = 1;
+        cost = 1500;
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250SE.";
+        hasGPSMunition = 1;
+        hasHMD = 1;
         name = "Caesar BTT (Bomb)";
         rearm = 300;
         requirements[] = {"A"};
@@ -82,8 +83,6 @@ class FixedWing {
                 "Bomb_03_Plane_CAS_02_F",
                 "CMFlareLauncher"
             };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             turret[] = { -1 };
         };
     };

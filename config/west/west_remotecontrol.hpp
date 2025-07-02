@@ -138,7 +138,7 @@ class RemoteControl {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles"
         };
-        cost = 8000;
+        cost = 7000;
         hasHMD = 1;
         rearm = 300;
         requirements[] = {"H"};

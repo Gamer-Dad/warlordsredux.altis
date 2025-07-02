@@ -10,4 +10,5 @@ class GUER {
     #include "guer\guer_rotarywing.hpp"
     #include "guer\guer_sectordefense.hpp"
     #include "guer\guer_spawn.hpp"
+    #include "guer\guer_structures.hpp"
 };
