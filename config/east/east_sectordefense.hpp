@@ -215,10 +215,6 @@ class SectorDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles"
             };
             addWeapons[] = {
