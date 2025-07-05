@@ -374,22 +374,20 @@ class HeavyVehicles {
 
     class O_MBT_02_arty_tv_F {
         ammoOverrides[] = {
-            {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (Terminal Guidance)"}}
+            {"Sh_155mm_AMOS_guided", {"M_Krasnopol", "Krasnopol (Terminal Guidance)"}}
         };
         aps = 1;
         capValue = 4;
         cost = 30000;
         disallowMagazines[] = {
-            "2Rnd_155mm_Mo_guided",
-            "4Rnd_155mm_Mo_guided",
+            "32Rnd_155mm_Mo_shells",
+            "32Rnd_155mm_Mo_shells_O",
             "2Rnd_155mm_Mo_LG",
             "4Rnd_155mm_Mo_LG",
             "6Rnd_155mm_Mo_mine",
             "6Rnd_155mm_Mo_AT_mine",
             "2Rnd_155mm_Mo_Cluster",
             "6Rnd_155mm_Mo_smoke",
-            "2Rnd_155mm_Mo_guided_O",
-            "4Rnd_155mm_Mo_guided_O",
             "4Rnd_155mm_Mo_LG_O",
             "6Rnd_155mm_Mo_mine_O",
             "6Rnd_155mm_Mo_AT_mine_O",
@@ -402,9 +400,19 @@ class HeavyVehicles {
         variant = 1;
 
         class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
+            addMagazines[] = {
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O",
+                "4Rnd_155mm_Mo_guided_O"
+            };
             addWeapons[] = {};
             removeMagazines[] = {
+                "32Rnd_155mm_Mo_shells_O",
                 "6Rnd_155mm_Mo_smoke_O",
                 "2Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O",

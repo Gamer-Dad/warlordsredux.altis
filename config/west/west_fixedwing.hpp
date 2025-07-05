@@ -199,11 +199,10 @@ class FixedWing {
     };
 
     class B_Plane_Fighter_01_Growler_F {
-        allowLoal = 1;
         allowPylonMagazines[] = {
             "PylonRack_Missile_AMRAAM_D_x2",
             "PylonRack_Missile_HARM_x1",
-            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
         };
         ammoOverrides[] = {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
@@ -219,6 +218,7 @@ class FixedWing {
         };
         hasAWACS = 1;
         hasHMD = 1;
+        hasLoal = 1;
         name = "EF/A-181 Growler";
         rearm = 420;
         requirements[] = {"A"};
@@ -258,18 +258,20 @@ class FixedWing {
     }; // "F/A-181 Black Wasp II"
 
     class B_Plane_Fighter_01_Stealth_F {
-        allowLoal = 1;
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
         };
         ammoOverrides[] = {
             {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
-            {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}}
+            {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 26000;
         hasGPSMunition = 1;
         hasHMD = 1;
+        hasLoal = 1;
         hasReconOptics = 1;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 420;
