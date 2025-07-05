@@ -160,7 +160,6 @@ class WLProjectilesConfig {
             "M_Krasnopol"
         };
         aps = 1;
-        camera = 1;
         consumption = 6;
         terminal = 1;
     };

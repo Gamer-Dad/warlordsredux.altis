@@ -272,7 +272,7 @@ class FixedWing {
     class O_Plane_Fighter_02_F {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_INT_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter3"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2", "pylonBayCenter3"}}
         };
         cost = 25000;
         disallowMagazines[] = {
@@ -298,7 +298,6 @@ class FixedWing {
     }; // "To-201 Shikra"
 
     class O_Plane_Fighter_02_Stealth_F {
-        allowLoal = 1;
         allowPylonMagazines[] = {
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1",
@@ -317,6 +316,7 @@ class FixedWing {
         };
         hasGPSMunition = 1;
         hasHMD = 1;
+        hasLoal = 1;
         hasReconOptics = 1;
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
