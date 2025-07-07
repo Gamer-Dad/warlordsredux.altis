@@ -406,8 +406,6 @@ class HeavyVehicles {
                 "4Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O"
             };
             addWeapons[] = {};
