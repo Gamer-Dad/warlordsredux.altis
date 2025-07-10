@@ -186,11 +186,6 @@ class CfgWLCustomization {
         {"launch_Titan_short_F", "launcher", 0}
     };
 
-    magazines[] = {
-        {"100Rnd_65x39_caseless_mag_Tracer", 20},
-        {"Vorona_HEAT", 50}
-    };
-
     class West {
         outfits[] = {
             {"U_B_CTRG_1", "uniform", 0},
@@ -226,7 +221,6 @@ class CfgWLCustomization {
             {"U_C_Journalist", "uniform", 0},
             {"U_C_Paramedic_01_F", "uniform", 0},
             {"U_O_R_Gorka_01_black_F", "uniform", 0},
-
 
             {"V_BandollierB_blk", "vest", 0},
             {"V_BandollierB_cbr", "vest", 0},
