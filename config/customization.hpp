@@ -471,7 +471,7 @@ class CfgWLCustomization {
             {"B_FieldPack_ghex_F", "backpack", 0},
             {"B_FieldPack_green_RPG_AT_F", "backpack", 0},
             {"B_FieldPack_khk", "backpack", 0},
-            {"B_FieldPack_ociamo", "backpack", 0},
+            {"B_FieldPack_ocamo", "backpack", 0},
             {"B_FieldPack_oli", "backpack", 0},
             {"B_FieldPack_taiga_F", "backpack", 0},
             {"B_Kitbag_cbr", "backpack", 0},
