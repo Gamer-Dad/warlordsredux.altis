@@ -135,7 +135,11 @@ class FixedWing {
 
     class B_Plane_CAS_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            {"PylonMissile_Bomb_KAB250_x1", {"Pylons5", "Pylons6"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}}
         };
         cost = 13000;
         hasHMD = 1;

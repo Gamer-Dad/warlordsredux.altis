@@ -25,43 +25,43 @@ class AirDefense {
         };
     };  // "Static Titan Launcher (AA) [CSAT]"
 
-    class O_static_AA_UP_F {
-        cost = 800;
-        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
-        disallowMagazines[] = {
-            "4Rnd_GAA_missiles",
-            "5Rnd_GAT_missiles",
-            "2Rnd_GAT_missiles",
-            "2Rnd_GAT_missiles_O"
-        };
-        loadable[] = {0, -2.5, 0.2};
-        name = "Static AA Launcher (UP)";
-        offset[] = {0, 3, 0};
-        rearm = 180;
-        spawn = "O_static_AA_F";
-        variant = 1;
+    // class O_static_AA_UP_F {
+    //     cost = 800;
+    //     description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
+    //     disallowMagazines[] = {
+    //         "4Rnd_GAA_missiles",
+    //         "5Rnd_GAT_missiles",
+    //         "2Rnd_GAT_missiles",
+    //         "2Rnd_GAT_missiles_O"
+    //     };
+    //     loadable[] = {0, -2.5, 0.2};
+    //     name = "Static AA Launcher (UP)";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 180;
+    //     spawn = "O_static_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O"
-            };
-            addWeapons[] = {
-                "missiles_titan"
-            };
-            reloadOverride = 6;
-            removeMagazines[] = {
-                "1Rnd_GAT_missiles"
-            };
-            removeWeapons[] = {
-                "missiles_titan_static"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_titan"
+    //         };
+    //         reloadOverride = 6;
+    //         removeMagazines[] = {
+    //             "1Rnd_GAT_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_static"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_Radar_System_02_F {
         cost = 1000;
@@ -89,16 +89,18 @@ class AirDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles",
-                "4Rnd_70mm_SAAMI_missiles"
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O",
+                "4Rnd_Titan_long_missiles_O"
             };
             addWeapons[] = {
-                "missiles_SAAMI"
+                "missiles_titan",
+                "Laserdesignator_vehicle"
             };
             removeMagazines[] = {};
-            removeWeapons[] = {};
+            removeWeapons[] = {
+                "Laserdesignator_vehicle"
+            };
             turret[] = { 0 };
         };
     };
@@ -177,41 +179,6 @@ class AirDefense {
         spawn = "B_SAM_System_01_F";
         textures[] = {
             "A3\Static_F_Jets\SAM_System_01\Data\SAM_system_01_olive_co.paa"
-        };
-    };
-
-    class O_Truck_02_AA_F {
-        aps = 1;
-        capValue = 4;
-        cost = 6500;
-        description = "Zamak MRL AA is a variant of the Zamak MRL armed with 12x ASRAAM missiles.";
-        hasHMD = 1;
-        name = "Zamak MRL AA";
-        rearm = 240;
-        spawn = "I_Truck_02_MRL_F";
-        textures[] = {
-            "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
-            "\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
-            "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
-        };
-        variant = 1;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_AAA_missiles",
-                "4Rnd_AAA_missiles",
-                "4Rnd_AAA_missiles"
-            };
-            addWeapons[] = {
-                "missiles_ASRAAM"
-            };
-            removeMagazines[] = {
-                "12Rnd_230mm_rockets"
-            };
-            removeWeapons[] = {
-                "rockets_230mm_GAT"
-            };
-            turret[] = { 0 };
         };
     };
 

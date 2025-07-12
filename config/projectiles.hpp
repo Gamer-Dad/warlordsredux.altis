@@ -120,6 +120,16 @@ class WLProjectilesConfig {
         tv = 1;
     };
 
+    class WLProjectile_BunkerBuster: WLProjectile {
+        ammo[] = {
+            "Bomb_03_BLU_F",
+            "Bomb_04_PR_F"
+        };
+        aps = 3;
+        camera = 1;
+        bunker = 1;
+    };
+
     class WLProjectile_TVGuidedHeavy: WLProjectile {
         ammo[] = {
             "M_Spike",

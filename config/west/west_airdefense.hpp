@@ -25,43 +25,43 @@ class AirDefense {
         };
     }; // "Static Titan Launcher (AA) [NATO]"
 
-    class B_static_AA_UP_F {
-        cost = 800;
-        description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
-        disallowMagazines[] = {
-            "4Rnd_GAA_missiles",
-            "5Rnd_GAT_missiles",
-            "2Rnd_GAT_missiles",
-            "2Rnd_GAT_missiles_O"
-        };
-        loadable[] = {0, -2.5, 0.2};
-        name = "Static AA Launcher (UP)";
-        offset[] = {0, 3, 0};
-        rearm = 180;
-        spawn = "B_static_AA_F";
-        variant = 1;
+    // class B_static_AA_UP_F {
+    //     cost = 800;
+    //     description = "Static AA Launcher (UP) is an upgraded variant of the Static AA launcher.";
+    //     disallowMagazines[] = {
+    //         "4Rnd_GAA_missiles",
+    //         "5Rnd_GAT_missiles",
+    //         "2Rnd_GAT_missiles",
+    //         "2Rnd_GAT_missiles_O"
+    //     };
+    //     loadable[] = {0, -2.5, 0.2};
+    //     name = "Static AA Launcher (UP)";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 180;
+    //     spawn = "B_static_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O"
-            };
-            addWeapons[] = {
-                "missiles_titan"
-            };
-            reloadOverride = 6;
-            removeMagazines[] = {
-                "1Rnd_GAT_missiles"
-            };
-            removeWeapons[] = {
-                "missiles_titan_static"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "4Rnd_Titan_long_missiles_O"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_titan"
+    //         };
+    //         reloadOverride = 6;
+    //         removeMagazines[] = {
+    //             "1Rnd_GAT_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_static"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_Radar_System_01_F {
         cost = 1000;
@@ -145,36 +145,36 @@ class AirDefense {
         rearm = 240;
     }; // "MIM-145 Defender"
 
-    class B_APC_Tracked_01_AA_UP_F {
-        aps = 2;
-        capValue = 4;
-        cost = 7500;
-        description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
-        hasHMD = 1;
-        name = "IFV-6X Puma";
-        rearm = 240;
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
+    // class B_APC_Tracked_01_AA_UP_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 7500;
+    //     description = "IFV-6X Puma is a variant of the IFV-6a Cheetah armed with Defender missiles.";
+    //     hasHMD = 1;
+    //     name = "IFV-6X Puma";
+    //     rearm = 240;
+    //     spawn = "B_APC_Tracked_01_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "magazine_Missile_mim145_x4",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "weapon_mim145Launcher"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "magazine_Missile_mim145_x4",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "weapon_mim145Launcher"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_SAM_System_02_F {
         cost = 8000;

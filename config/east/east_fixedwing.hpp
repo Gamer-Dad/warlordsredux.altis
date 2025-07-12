@@ -214,9 +214,13 @@ class FixedWing {
     class O_Plane_CAS_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            {"PylonMissile_Bomb_GBU12_x1", {"Pylons5", "Pylons6"}}
         };
-        cost = 17000;
+        ammoOverrides[] = {
+            {"Bomb_04_F", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
+        };
+        cost = 15000;
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
