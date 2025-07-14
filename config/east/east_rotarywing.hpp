@@ -1,18 +1,21 @@
 class RotaryWing {
     class O_Heli_Transport_04_covered_F {
         cost = 400;
+        hasFastTravel = 1;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Transport)"
 
     class O_Heli_Transport_04_F {
         cost = 500;
+        hasFastTravel = 1;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru"
 
     class O_Heli_Transport_04_medevac_F {
         cost = 500;
+        hasFastTravel = 1;
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Medical)"

@@ -60,6 +60,7 @@ class Gear {
 
     class B_Slingload_01_Medevac_F {
         cost = 500;
+        hasFastTravel = 1;
         loadable[] = {0, -1.5, 0.5};
     }; // "Huron Medical Pod"
 };

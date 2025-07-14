@@ -58,11 +58,13 @@ class LightVehicles {
     class O_Truck_03_transport_F {
         capValue = 1;
         cost = 200;
+        hasFastTravel = 1;
     }; // "Tempest Transport"
 
     class O_Truck_03_medical_F {
         capValue = 1;
         cost = 250;
+        hasFastTravel = 1;
     }; // "Tempest Medical"
 
     class O_MRAP_02_F {
@@ -74,6 +76,7 @@ class LightVehicles {
     class O_Truck_01_flatbed_F {
         capValue = 1;
         cost = 500;
+        hasFastTravel = 1;
         name = "HEMTT Flatbed";
         spawn = "B_Truck_01_flatbed_F";
         textures[] = {

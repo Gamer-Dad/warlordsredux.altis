@@ -60,6 +60,7 @@ class Gear {
 
     class Land_Pod_Heli_Transport_04_medevac_F {
         cost = 500;
+        hasFastTravel = 1;
         loadable[] = {0, -1.8, 0.5};
     }; // "Taru Medical Pod"
 };

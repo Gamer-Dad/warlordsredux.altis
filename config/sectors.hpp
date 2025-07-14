@@ -941,6 +941,14 @@ class CfgWarlordSectors {
         services[] = {"W", "H", "A"};
     };
 
+    class USSLiberty {
+        area[] = {100, 100, 288, 1};
+        destroyer = 1;
+        disableHome = 1;
+        location[] = {15393.8, 14197.7, 0};
+        name = "USS Liberty";
+    };
+
     class Wait {
         area[] = {0, 0, 0, 0};
         disableHome = 1;

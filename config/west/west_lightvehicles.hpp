@@ -58,11 +58,13 @@ class LightVehicles {
     class B_Truck_01_transport_F {
         capValue = 1;
         cost = 200;
+        hasFastTravel = 1;
     }; // "HEMTT Transport"
 
     class B_Truck_01_medical_F {
         capValue = 1;
         cost = 250;
+        hasFastTravel = 1;
     }; // "HEMMT Medical"
 
     class B_MRAP_01_F {
@@ -74,6 +76,7 @@ class LightVehicles {
     class B_Truck_01_flatbed_F {
         capValue = 1;
         cost = 500;
+        hasFastTravel = 1;
     }; // "HEMTT Flatbed"
 
     class B_G_Offroad_01_AT_F {
