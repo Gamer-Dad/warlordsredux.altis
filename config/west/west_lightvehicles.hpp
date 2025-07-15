@@ -75,8 +75,9 @@ class LightVehicles {
 
     class B_Truck_01_flatbed_F {
         capValue = 1;
-        cost = 500;
+        cost = 300;
         hasFastTravel = 1;
+        isLight = 1;
     }; // "HEMTT Flatbed"
 
     class B_G_Offroad_01_AT_F {

@@ -65,7 +65,7 @@ class FixedWing {
             {"Bomb_03_F", {"ammo_kab250se", "KAB-250SE (GPS-Guided)"}}
         };
         cost = 1500;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250SE.";
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs.";
         hasGPSMunition = 1;
         hasHMD = 1;
         name = "Caesar BTT (Bomb)";
@@ -314,7 +314,7 @@ class FixedWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 25000;
-        description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
+        description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
@@ -385,7 +385,7 @@ class FixedWing {
     //         {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
     //     };
     //     cost = 30000;
-    //     description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
+    //     description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
     //     disallowMagazines[] = {
     //         "PylonMissile_Missile_KH58_x1"
     //     };

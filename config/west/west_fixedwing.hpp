@@ -65,7 +65,7 @@ class FixedWing {
             {"Bo_GBU12_LGB", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
         };
         cost = 1500;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
         hasGPSMunition = 1;
         hasHMD = 1;
         name = "Caesar BTT (Bomb)";
@@ -324,7 +324,7 @@ class FixedWing {
     //         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
     //     };
     //     cost = 31000;
-    //     description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+    //     description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher.";
     //     disallowMagazines[] = {
     //         "PylonMissile_Bomb_GBU12_x1"
     //     };

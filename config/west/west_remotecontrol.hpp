@@ -136,7 +136,8 @@ class RemoteControl {
 
     class B_T_UAV_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            "PylonRack_1Rnd_AAA_missiles"
         };
         cost = 7000;
         hasHMD = 1;

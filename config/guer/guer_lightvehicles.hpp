@@ -50,10 +50,13 @@ class LightVehicles {
         cost = 300;
     }; // "Strider"
 
-    class B_Truck_01_flatbed_F {
+    class I_Truck_01_flatbed_F {
         capValue = 1;
-        cost = 500;
+        cost = 300;
         hasFastTravel = 1;
+        isLight = 1;
+        name = "HEMTT Flatbed";
+        spawn = "B_Truck_01_flatbed_F";
     }; // "HEMTT Flatbed"
 
     class I_C_Offroad_02_AT_F {

@@ -3,26 +3,30 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 1300;
+        isLight = 1;
+        loadable[] = {0, -1.5, 1.2};
         rearm = 180;
 
-        // class Gunner: WLTurretDefaults {
-        //     addMagazines[] = {
-        //         "60Rnd_30mm_APFSDS_shells_Tracer_Red",
-        //         "60Rnd_30mm_APFSDS_shells_Tracer_Red",
-        //         "140Rnd_30mm_MP_shells_Tracer_Red",
-        //         "140Rnd_30mm_MP_shells_Tracer_Red"
-        //     };
-        //     addWeapons[] = {
-        //         "autocannon_30mm_CTWS"
-        //     };
-        //     removeMagazines[] = {
-        //         "96Rnd_40mm_G_belt"
-        //     };
-        //     removeWeapons[] = {
-        //         "GMG_40mm"
-        //     };
-        //     turret[] = { 0 };
-        // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_RCWS",
+                "HMG_127_APC"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm",
+                "HMG_127_APC"
+            };
+            turret[] = { 0 };
+        };
     }; // "IFV-6c Panther"
 
     class B_LT_01_AT_F {
@@ -83,10 +87,13 @@ class HeavyVehicles {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "5000Rnd_762x51_Yellow_Belt"
+                "500Rnd_127x99_mag",
+                "500Rnd_127x99_mag",
+                "500Rnd_127x99_mag",
+                "500Rnd_127x99_mag"
             };
             addWeapons[] = {
-                "M134_minigun"
+                "HMG_127_MBT"
             };
             removeMagazines[] = {
                 "40Rnd_40mm_APFSDS_Tracer_Red_shells",

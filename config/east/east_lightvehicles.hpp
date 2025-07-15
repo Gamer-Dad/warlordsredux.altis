@@ -75,8 +75,9 @@ class LightVehicles {
 
     class O_Truck_01_flatbed_F {
         capValue = 1;
-        cost = 500;
+        cost = 300;
         hasFastTravel = 1;
+        isLight = 1;
         name = "HEMTT Flatbed";
         spawn = "B_Truck_01_flatbed_F";
         textures[] = {

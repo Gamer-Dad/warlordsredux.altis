@@ -222,7 +222,7 @@ class AirDefense {
             {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
         };
         cost = 20000;
-        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Effective range: 14km. Use SAM configuration menu to select data-linked targets outside of visual range.";
+        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Effective range: 14km.";
         hasASAM = 1;
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};

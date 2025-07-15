@@ -108,6 +108,7 @@ class RotaryWing {
             "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_4Rnd_LG_scalpel",
             "PylonMissile_Missile_AA_R73_x1",
+            "PylonRack_Missile_BIM9X_x2",
             "PylonMissile_Missile_KH58_x1",
             "PylonFuelTank_UH80"
         };
@@ -129,8 +130,7 @@ class RotaryWing {
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine",
-                "PylonWeapon_300Rnd_20mm_shells",
-                "PylonWeapon_300Rnd_20mm_shells"
+                "1000Rnd_20mm_shells"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles",
