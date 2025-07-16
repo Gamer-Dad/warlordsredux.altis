@@ -128,6 +128,7 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         bunker = 1;
+        remote = 1;
     };
 
     class WLProjectile_TVGuidedHeavy: WLProjectile {

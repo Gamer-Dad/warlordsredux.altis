@@ -215,13 +215,14 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
-            {"PylonMissile_Bomb_GBU12_x1", {"Pylons5", "Pylons6"}}
+            {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
+            {"Missile_AGM_02_F", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
         };
         cost = 15000;
         hasHMD = 1;
+        hasRemoteBomb = 1;
         rearm = 420;
         requirements[] = {"A"};
 
