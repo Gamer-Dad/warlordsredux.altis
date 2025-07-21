@@ -89,11 +89,13 @@ class FixedWing {
 
     class B_T_VTOL_01_infantry_F {
         cost = 2000;
+        hasAirRearm = 1;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Inf)"
 
     class B_T_VTOL_01_vehicle_F {
         cost = 2000;
+        hasAirRearm = 1;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Vic)"
 
