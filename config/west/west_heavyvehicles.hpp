@@ -325,6 +325,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        isLight = 1;
         rearm = 300;
 
         class Gunner: WLTurretDefaults {
@@ -368,13 +369,13 @@ class HeavyVehicles {
     class B_MBT_01_TUSK2_F {
         aps = 3;
         capValue = 4;
-        cost = 9000;
-        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
+        cost = 8500;
+        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         hasHMD = 1;
-        hasReconOptics = 1;
+        isLight = 1;
         name = "M2A2 Slammer II";
         rearm = 300;
         spawn = "B_MBT_01_TUSK_F";

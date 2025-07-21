@@ -70,6 +70,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
+        loal = 1;
         sam = 1;
         speed = 3;
     };

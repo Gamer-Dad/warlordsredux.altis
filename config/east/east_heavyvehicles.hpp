@@ -300,7 +300,7 @@ class HeavyVehicles {
     class O_MBT_02_railgun_F {
         aps = 3;
         capValue = 4;
-        cost = 11000;
+        cost = 15000;
         hasHMD = 1;
         hasReconOptics = 1;
         rearm = 300;

@@ -943,7 +943,7 @@ class CfgWarlordSectors {
 
     class USSLiberty {
         area[] = {100, 100, 288, 1};
-        destroyer = 1;
+        destroyer = 0.7;
         disableHome = 1;
         location[] = {15393.8, 14197.7, 0};
         name = "USS Liberty";

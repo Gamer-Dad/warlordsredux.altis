@@ -107,8 +107,8 @@ class AirDefense {
 
     class O_AAA_System_01_F {
         cost = 3500;
-        description = "Short range point defense artillery with a high rate of fire. Effective against mortar and artillery shells.";
-        ecm[] = {{"ShellCore", "MissileCore", "SubmunitionCore"}, 0, 4000, 0.4, 8, 4};
+        description = "Short-range point defense artillery with a high rate of fire. Effective against missiles and bombs.";
+        ecm[] = {{"BombCore", "MissileCore", "SubmunitionCore"}, 0, 4000, 0.4, 8, 4};
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};
@@ -121,10 +121,10 @@ class AirDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "5000Rnd_762x51_Yellow_Belt"
+                "2000Rnd_20mm_shells"
             };
             addWeapons[] = {
-                "M134_minigun"
+                "gatling_20mm_VTOL_01"
             };
             removeMagazines[] = {
                 "magazine_Cannon_Phalanx_x1550"

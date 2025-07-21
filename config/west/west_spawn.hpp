@@ -13,4 +13,8 @@ class Spawn {
     class RuggedTerminal_01_communications_hub_F {
         name = "Forward Base";
     };
+
+    class B_Ship_MRLS_01_F {
+        cost = 10000;
+    };
 };
