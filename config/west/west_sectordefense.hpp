@@ -143,7 +143,7 @@ class SectorDefense {
 
     class B_GMG_01_A_F {
         cost = 650;
-        demolishable = 1;
+        demolishable = 2;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk32 GMG Auto Turret";
         offset[] = {0, 3, 0};
@@ -262,7 +262,7 @@ class SectorDefense {
 
     class B_Ship_Gun_01_F {
         cost = 10000;
-        demolishable = 1;
+        demolishable = 5;
         disallowMagazines[] = {
             "magazine_ShipCannon_120mm_HE_cluster_shells_x2",
             "magazine_ShipCannon_120mm_mine_shells_x6",

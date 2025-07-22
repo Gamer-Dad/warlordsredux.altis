@@ -7,7 +7,7 @@ class CfgVehicleClassName {
     aps = number;                    // Active Protection System, 0 = none, 1 = light, 2 = medium, 3 = heavy, 4 = dazzler
     capValue = number;               // Value of the vehicle for calculating team's sector capture strength.
     cost = number;                   // Cost of the vehicle, not shown in buy menu if 0.
-    demolishable = number (0|1);     // Whether the vehicle can be demolished. For buildables.
+    demolishable = number (#);       // Max demolishable health. For buildables.
     description = string;            // Description override for vehicle in buy menu.
     disallowMagazines[] = array;     // CfgMagazine classes to disallow in the vehicle.
     flagOffset = array;              // when set, if the vehicle spawns a flag, its offset will use this.

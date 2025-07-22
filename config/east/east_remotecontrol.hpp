@@ -1,12 +1,4 @@
 class RemoteControl {
-    // class RuggedTerminal_01_communications_F {
-    //     cost = 50;
-    //     demolishable = 1;
-    //     loadable[] = {0, 0, 0};
-    //     name = "Ground Support Terminal";
-    //     offset[] = {0, 3, 0};
-    // };
-
     class O_UGV_02_Demining_F {
         cost = 100;
         loadable[] = {0, -1, -0.5};

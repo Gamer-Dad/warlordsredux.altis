@@ -25,7 +25,7 @@ class SectorDefense {
 
     class Land_IRMaskingCover_01_F {
         cost = 200;
-        demolishable = 1;
+        demolishable = 2;
         offset[] = {0, 8, 0};
     };  // "IR Masking Tent (Large)"
 

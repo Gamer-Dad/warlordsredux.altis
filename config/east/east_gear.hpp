@@ -29,7 +29,7 @@ class Gear {
             { "B_Carryall_ocamo", 5 }
         };
         cost = 200;
-        demolishable = 1;
+        demolishable = 3;
         description = "CSAT gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
         loadable[] = { 0, -1, 0.5 };
         name = "CSAT Supply Crate";
