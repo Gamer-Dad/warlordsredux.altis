@@ -272,7 +272,7 @@ class AirDefense {
         ammoOverrides[] = {
             {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
         };
-        cost = 20000;
+        cost = 22000;
         description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Effective range: 14km.";
         hasASAM = 1;
         hasHMD = 1;

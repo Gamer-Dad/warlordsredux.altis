@@ -345,7 +345,6 @@ class HeavyVehicles {
     // };
 
     class O_Truck_02_MRL_F {
-        aps = 1;
         capValue = 4;
         cost = 18000;
         disallowMagazines[] = {
@@ -401,9 +400,6 @@ class HeavyVehicles {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O",
                 "4Rnd_155mm_Mo_guided_O"

@@ -496,9 +496,6 @@ class HeavyVehicles {
             addMagazines[] = {
                 "4Rnd_155mm_Mo_guided",
                 "4Rnd_155mm_Mo_guided",
-                "4Rnd_155mm_Mo_guided",
-                "4Rnd_155mm_Mo_guided",
-                "4Rnd_155mm_Mo_guided",
                 "4Rnd_155mm_Mo_guided"
             };
             removeMagazines[] = {
