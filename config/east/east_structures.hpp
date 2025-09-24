@@ -60,5 +60,4 @@ class Structures {
         name = "EW Tower";
         offset[] = {0, 6, 0};
     };
-
 };
