@@ -246,7 +246,9 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_x1",
             "PylonRack_3Rnd_LG_scalpel",
-            "PylonRack_Missile_AMRAAM_D_x2"
+            "PylonRack_Missile_AMRAAM_D_x2",
+            "PylonMissile_Missile_AA_R77_x1",
+            "PylonMissile_Missile_AA_R73_x1"
         };
         ammoOverrides[] = {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
