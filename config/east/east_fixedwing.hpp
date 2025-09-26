@@ -181,10 +181,12 @@ class FixedWing {
     class O_Plane_Fighter_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
+            {"PylonMissile_1Rnd_Mk82_F", {"Pylons4"}},
             {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons4", "Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}},
+            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
         };
         cost = 13000;
         description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
@@ -239,6 +241,54 @@ class FixedWing {
             turret[] = { -1 };
         };
     }; // "To-199 Neophron (CAS)"
+
+    class O_Plane_Fighter_04_F {
+        allowPylonMagazines[] = {
+            "PylonMissile_Missile_KH58_x1",
+            "PylonRack_3Rnd_LG_scalpel",
+            "PylonRack_Missile_AMRAAM_D_x2"
+        };
+        ammoOverrides[] = {
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        };
+        cost = 19000;
+        description = "A-149 Gryphon (Interceptor) is a multirole aircraft designed for air superiority.";
+        disallowMagazines[] = {
+            "PylonRack_Missile_AMRAAM_C_x1",
+            "PylonRack_Missile_AMRAAM_C_x2",
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2",
+            "PylonMissile_Bomb_GBU12_x1"
+        };
+        hasHMD = 1;
+        name = "A-149 Gryphon (Interceptor)";
+        rearm = 420;
+        requirements[] = {"A"};
+        spawn = "I_Plane_Fighter_04_F";
+        textures[] = {
+            "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_co.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_co.paa",
+            "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
+        };
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "120Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
 
     // class O_Plane_Fighter_02_Gyrfalcon_F {
     //     allowPylonMagazines[] = {
