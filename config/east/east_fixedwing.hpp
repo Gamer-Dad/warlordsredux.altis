@@ -375,6 +375,7 @@ class FixedWing {
         hasHMD = 1;
         hasLoal = 1;
         hasReconOptics = 1;
+        hasThreatDetect = 1;
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};

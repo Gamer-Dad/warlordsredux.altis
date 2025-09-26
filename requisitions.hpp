@@ -18,6 +18,7 @@ class CfgVehicleClassName {
     hasScanner = number (0|1);       // Whether the vehicle has a scanner.
     hasReconOptics = number (0|1);   // Whether the vehicle has recon optics.
     hasAWACS = number (0|1);         // Whether the vehicle has an AWACS system.
+    hasThreatDetect = number (0|1);  // Whether the vehicle has threat detection.
     isLight = number (0|1);          // Whether the vehicle is considered lightweight.
     loadable = array;                // when set, the vehicle can be loaded into a flatbed. The array is the offset.
     name = string;                   // Name override for vehicle in buy menu.
