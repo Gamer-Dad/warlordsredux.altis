@@ -66,7 +66,6 @@ class FixedWing {
         };
         cost = 1500;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs.";
-        hasGPSMunition = 1;
         hasHMD = 1;
         name = "Caesar BTT (Bomb)";
         rearm = 300;
@@ -191,7 +190,6 @@ class FixedWing {
         cost = 13000;
         description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
-        hasRemoteBomb = 1;
         name = "A-143 Buzzard (CAS)";
         rearm = 420;
         requirements[] = {"A"};
@@ -225,7 +223,6 @@ class FixedWing {
         };
         cost = 15000;
         hasHMD = 1;
-        hasRemoteBomb = 1;
         rearm = 420;
         requirements[] = {"A"};
 
@@ -253,7 +250,7 @@ class FixedWing {
         ammoOverrides[] = {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
-        cost = 19000;
+        cost = 15500;
         description = "A-149 Gryphon (Interceptor) is a multirole aircraft designed for air superiority.";
         disallowMagazines[] = {
             "PylonRack_Missile_AMRAAM_C_x1",
@@ -263,6 +260,7 @@ class FixedWing {
             "PylonMissile_Bomb_GBU12_x1"
         };
         hasHMD = 1;
+        hasLoal = 1;
         name = "A-149 Gryphon (Interceptor)";
         rearm = 420;
         requirements[] = {"A"};
@@ -373,14 +371,13 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
-        hasGPSMunition = 1;
         hasHMD = 1;
         hasLoal = 1;
         hasReconOptics = 1;
-        hasThreatDetect = 1;
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};
+        threatDetection = 16000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -412,7 +409,6 @@ class FixedWing {
     //         "PylonMissile_Missile_KH58_x1"
     //     };
     //     hasHMD = 1;
-    //     hasRemoteBomb = 1;
     //     name = "To-201 Shikra (Land Attack)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
@@ -445,7 +441,6 @@ class FixedWing {
     //     disallowMagazines[] = {
     //         "PylonMissile_Missile_KH58_x1"
     //     };
-    //     hasGPSMunition = 1;
     //     hasHMD = 1;
     //     name = "To-201 Shikra (Standoff)";
     //     rearm = 1200;

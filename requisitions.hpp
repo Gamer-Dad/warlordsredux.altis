@@ -12,13 +12,11 @@ class CfgVehicleClassName {
     disallowMagazines[] = array;     // CfgMagazine classes to disallow in the vehicle.
     flagOffset = array;              // when set, if the vehicle spawns a flag, its offset will use this.
     garbageCollect = number (0|1);   // Whether we manually delete the vehicle when it's destroyed. For buildables.
-    hasGPSMunition = number (0|1);   // Whether the vehicle has GPS munitions.
     hasHMD = number (0|1);           // Whether the vehicle supports the helmet mounted display system.
-    hasRemoteBomb = number (0|1);    // Whether the vehicle has remote munitions.
     hasScanner = number (0|1);       // Whether the vehicle has a scanner.
     hasReconOptics = number (0|1);   // Whether the vehicle has recon optics.
     hasAWACS = number (0|1);         // Whether the vehicle has an AWACS system.
-    hasThreatDetect = number (0|1);  // Whether the vehicle has threat detection.
+    hasLoal = number (0|1);          // Whether the vehicle has LOAL capability.
     isLight = number (0|1);          // Whether the vehicle is considered lightweight.
     loadable = array;                // when set, the vehicle can be loaded into a flatbed. The array is the offset.
     name = string;                   // Name override for vehicle in buy menu.
@@ -26,6 +24,7 @@ class CfgVehicleClassName {
     rearm = number;                  // Rearm timer in seconds.
     requirements[] = array;          // Requirements for deployment (A = Airport, H = Helipad, W = Harbor).
     spawn = text;                    // If the CfgVehicleClassName is a variant, this is the base class to spawn.
+    threatDetection = number;        // Threat detection radius.
     textures[] = array;              // Skin textures for the vehicle.
     unitSpawn = number (0|1);        // For populating independent sectors, soldier units.
     variant = number (0|1);          // If the vehicle is a variant, set this to 1.

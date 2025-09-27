@@ -66,7 +66,6 @@ class FixedWing {
         };
         cost = 1500;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
-        hasGPSMunition = 1;
         hasHMD = 1;
         name = "Caesar BTT (Bomb)";
         rearm = 300;
@@ -147,7 +146,6 @@ class FixedWing {
         };
         cost = 13000;
         hasHMD = 1;
-        hasRemoteBomb = 1;
         rearm = 420;
         requirements[] = {"A"};
 
@@ -178,7 +176,6 @@ class FixedWing {
         cost = 19000;
         description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
-        hasRemoteBomb = 1;
         name = "A-149 Gryphon";
         rearm = 420;
         requirements[] = {"A"};
@@ -232,6 +229,7 @@ class FixedWing {
         rearm = 420;
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
+        threatDetection = 8000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -279,7 +277,6 @@ class FixedWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 26000;
-        hasGPSMunition = 1;
         hasHMD = 1;
         hasLoal = 1;
         hasReconOptics = 1;
@@ -313,7 +310,6 @@ class FixedWing {
     //         "PylonMissile_Bomb_GBU12_x1"
     //     };
     //     hasHMD = 1;
-    //     hasRemoteBomb = 1;
     //     name = "F/A-181 Black Wasp II (Land Attack)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
@@ -334,7 +330,6 @@ class FixedWing {
     //     disallowMagazines[] = {
     //         "PylonMissile_Bomb_GBU12_x1"
     //     };
-    //     hasGPSMunition = 1;
     //     hasHMD = 1;
     //     name = "F/A-181 Black Wasp II (Standoff)";
     //     rearm = 1200;
