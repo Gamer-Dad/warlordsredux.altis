@@ -7,6 +7,7 @@ class RotaryWing {
     class B_Heli_Transport_01_F {
         cost = 800;
         hasHMD = 1;
+        hasTurretVisualizer = 1;
         offset[] = {0, 11, 0};
         rearm = 240;
         requirements[] = {"H"};
@@ -14,6 +15,7 @@ class RotaryWing {
 
     class B_Heli_Transport_03_F {
         cost = 1000;
+        hasTurretVisualizer = 1;
         offset[] = {0, 10, 0};
         rearm = 240;
         requirements[] = {"H"};
@@ -197,6 +199,7 @@ class RotaryWing {
         };
         cost = 11000;
         hasHMD = 1;
+        hasTurretVisualizer = 1;
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
@@ -233,6 +236,7 @@ class RotaryWing {
         cost = 13000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
         hasHMD = 1;
+        hasTurretVisualizer = 1;
         name = "AH-99 Blackfoot Block II";
         offset[] = {0, 10, 0};
         rearm = 300;

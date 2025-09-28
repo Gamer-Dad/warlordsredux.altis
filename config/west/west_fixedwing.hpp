@@ -132,6 +132,7 @@ class FixedWing {
     class B_T_VTOL_01_armed_F {
         cost = 8000;
         hasHMD = 1;
+        hasTurretVisualizer = 1;
         rearm = 300;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Armed)"

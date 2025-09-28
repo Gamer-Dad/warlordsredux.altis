@@ -157,6 +157,7 @@ class FixedWing {
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
         hasAirRearm = 1;
         hasHMD = 1;
+        hasTurretVisualizer = 1;
         rearm = 300;
         requirements[] = {"A"};
 
