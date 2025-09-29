@@ -137,6 +137,54 @@ class FixedWing {
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Armed)"
 
+    class B_T_VTOL_01_armed_up_F {
+        cost = 10000;
+        hasHMD = 1;
+        hasTurretVisualizer = 1;
+        name = "V-44 J Archerfish";
+        rearm = 300;
+        requirements[] = {"A"};
+        spawn = "B_T_VTOL_01_armed_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "8Rnd_LG_scalpel"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles",
+                "missiles_SCALPEL"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher_Triples"
+            };
+            turret[] = { -1 };
+        };
+
+        class RightGunner: WLTurretDefaults {
+            addMagazines[] = {
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_RCWS"
+            };
+            removeMagazines[] = {
+                "240Rnd_40mm_GPR_Tracer_Red_shells",
+                "160Rnd_40mm_APFSDS_Tracer_Red_shells"
+            };
+            removeWeapons[] = {
+                "autocannon_40mm_VTOL_01"
+            };
+            turret[] = { 2 };
+        };
+    };
+
     class B_Plane_CAS_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
