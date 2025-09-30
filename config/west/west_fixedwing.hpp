@@ -149,17 +149,39 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine",
-                "8Rnd_LG_scalpel"
+                "240Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
-                "CMFlareLauncher_Singles",
-                "missiles_SCALPEL"
+                "CMFlareLauncher_Singles"
             };
             removeWeapons[] = {
                 "CMFlareLauncher_Triples"
             };
             turret[] = { -1 };
+        };
+
+        class Copilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1"
+            };
+            addWeapons[] = {
+                "weapon_SDBLauncher",
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "Laserbatteries"
+            };
+            removeWeapons[] = {
+                "Laserdesignator_mounted"
+            };
+            turret[] = { 0 };
         };
 
         class RightGunner: WLTurretDefaults {
