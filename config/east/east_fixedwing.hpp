@@ -148,6 +148,7 @@ class FixedWing {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
             "PylonMissile_Missile_KH58_INT_x1",
+            "PylonMissile_Missile_AA_R73_x1",
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {
@@ -163,10 +164,15 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1"
             };
             addWeapons[] = {
-                "CMFlareLauncher_Singles"
+                "CMFlareLauncher_Singles",
+                "weapon_SDBLauncher"
             };
             removeMagazines[] = {
                 "168Rnd_CMFlare_Chaff_Magazine"
@@ -175,6 +181,23 @@ class FixedWing {
                 "CMFlareLauncher_Triples"
             };
             turret[] = { -1 };
+        };
+        class Gunner : WLTurretDefaults {
+            addMagazines[] = {
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F",
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F"
+            };
+            addWeapons[] = {
+                "Cannon_30mm_Plane_CAS_02_F"
+            };
+            removeMagazines[] = {
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_APDS_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "gatling_30mm_VTOL_02"
+            };
+            turret[] = { 0 };
         };
     }; // "Y-32 Xi'an (Infantry Transport)"
 
