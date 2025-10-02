@@ -73,26 +73,9 @@ class AirDefense {
     class B_AAA_System_01_F {
         cost = 3500;
         description = "Short-range point defense artillery with a high rate of fire. Effective against missiles and bombs.";
-        ecm[] = {{"BombCore", "MissileCore", "SubmunitionCore"}, 0, 4000, 0.4, 8, 4};
         loadable[] = {0, -1, 1.7};
         offset[] = {0, 5.3, 0};
         rearm = 180;
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2000Rnd_20mm_shells"
-            };
-            addWeapons[] = {
-                "gatling_20mm_VTOL_01"
-            };
-            removeMagazines[] = {
-                "magazine_Cannon_Phalanx_x1550"
-            };
-            removeWeapons[] = {
-                "weapon_Cannon_Phalanx"
-            };
-            turret[] = { 0 };
-        };
     }; // "Praetorian 1C"
 
     class B_APC_Tracked_01_AA_F {

@@ -108,7 +108,6 @@ class AirDefense {
     class O_AAA_System_01_F {
         cost = 3500;
         description = "Short-range point defense artillery with a high rate of fire. Effective against missiles and bombs.";
-        ecm[] = {{"BombCore", "MissileCore", "SubmunitionCore"}, 0, 4000, 0.4, 8, 4};
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};
@@ -117,22 +116,6 @@ class AirDefense {
         textures[] = {
             "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
             "a3\static_f_jets\aaa_system_01\data\aaa_system_02_olive_co.paa"
-        };
-
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2000Rnd_20mm_shells"
-            };
-            addWeapons[] = {
-                "gatling_20mm_VTOL_01"
-            };
-            removeMagazines[] = {
-                "magazine_Cannon_Phalanx_x1550"
-            };
-            removeWeapons[] = {
-                "weapon_Cannon_Phalanx"
-            };
-            turret[] = { 0 };
         };
     };
 
