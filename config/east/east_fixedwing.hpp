@@ -185,6 +185,8 @@ class FixedWing {
         class Gunner : WLTurretDefaults {
             addMagazines[] = {
                 "500Rnd_Cannon_30mm_Plane_CAS_02_F",
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F",
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F",
                 "500Rnd_Cannon_30mm_Plane_CAS_02_F"
             };
             addWeapons[] = {
