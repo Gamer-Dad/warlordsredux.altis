@@ -107,7 +107,7 @@ class AirDefense {
 
     class O_AAA_System_01_F {
         cost = 3500;
-        description = "Short-range point defense artillery with a high rate of fire. Effective against missiles and bombs.";
+        description = "Short-range point defense artillery with a high rate of fire.";
         loadable[] = {0, -1, 1.7};
         name = "Praetorian 1C";
         offset[] = {0, 5.3, 0};

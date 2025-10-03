@@ -371,52 +371,52 @@ class HeavyVehicles {
         rearm = 1800;
     }; // "2S9 Sochor"
 
-    class O_MBT_02_arty_tv_F {
-        ammoOverrides[] = {
-            {"Sh_155mm_AMOS_guided", {"M_Krasnopol", "Krasnopol (Terminal Guidance)"}}
-        };
-        aps = 1;
-        capValue = 4;
-        cost = 30000;
-        disallowMagazines[] = {
-            "32Rnd_155mm_Mo_shells",
-            "32Rnd_155mm_Mo_shells_O",
-            "2Rnd_155mm_Mo_LG",
-            "4Rnd_155mm_Mo_LG",
-            "6Rnd_155mm_Mo_mine",
-            "6Rnd_155mm_Mo_AT_mine",
-            "2Rnd_155mm_Mo_Cluster",
-            "6Rnd_155mm_Mo_smoke",
-            "4Rnd_155mm_Mo_LG_O",
-            "6Rnd_155mm_Mo_mine_O",
-            "6Rnd_155mm_Mo_AT_mine_O",
-            "2Rnd_155mm_Mo_Cluster_O",
-            "6Rnd_155mm_Mo_smoke_O"
-        };
-        name = "2S9M Sochor II";
-        rearm = 1800;
-        spawn = "O_MBT_02_arty_F";
-        variant = 1;
+    // class O_MBT_02_arty_tv_F {
+    //     ammoOverrides[] = {
+    //         {"Sh_155mm_AMOS_guided", {"M_Krasnopol", "Krasnopol (Terminal Guidance)"}}
+    //     };
+    //     aps = 1;
+    //     capValue = 4;
+    //     cost = 30000;
+    //     disallowMagazines[] = {
+    //         "32Rnd_155mm_Mo_shells",
+    //         "32Rnd_155mm_Mo_shells_O",
+    //         "2Rnd_155mm_Mo_LG",
+    //         "4Rnd_155mm_Mo_LG",
+    //         "6Rnd_155mm_Mo_mine",
+    //         "6Rnd_155mm_Mo_AT_mine",
+    //         "2Rnd_155mm_Mo_Cluster",
+    //         "6Rnd_155mm_Mo_smoke",
+    //         "4Rnd_155mm_Mo_LG_O",
+    //         "6Rnd_155mm_Mo_mine_O",
+    //         "6Rnd_155mm_Mo_AT_mine_O",
+    //         "2Rnd_155mm_Mo_Cluster_O",
+    //         "6Rnd_155mm_Mo_smoke_O"
+    //     };
+    //     name = "2S9M Sochor II";
+    //     rearm = 1800;
+    //     spawn = "O_MBT_02_arty_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O"
-            };
-            addWeapons[] = {};
-            removeMagazines[] = {
-                "32Rnd_155mm_Mo_shells_O",
-                "6Rnd_155mm_Mo_smoke_O",
-                "2Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_guided_O",
-                "4Rnd_155mm_Mo_LG_O",
-                "6Rnd_155mm_Mo_mine_O",
-                "6Rnd_155mm_Mo_AT_mine_O",
-                "2Rnd_155mm_Mo_Cluster_O"
-            };
-            removeWeapons[] = {};
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "4Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_guided_O"
+    //         };
+    //         addWeapons[] = {};
+    //         removeMagazines[] = {
+    //             "32Rnd_155mm_Mo_shells_O",
+    //             "6Rnd_155mm_Mo_smoke_O",
+    //             "2Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_LG_O",
+    //             "6Rnd_155mm_Mo_mine_O",
+    //             "6Rnd_155mm_Mo_AT_mine_O",
+    //             "2Rnd_155mm_Mo_Cluster_O"
+    //         };
+    //         removeWeapons[] = {};
+    //         turret[] = { 0 };
+    //     };
+    // };
 };
