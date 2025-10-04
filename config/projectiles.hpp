@@ -176,6 +176,17 @@ class WLProjectilesConfig {
         terminal = 1;
     };
 
+    class WLProjectile_GLSDB: WLProjectile {
+        ammo[] = {
+            "M_GLSDB"
+        };
+        aps = 0;
+        camera = 1;
+        consumption = 1;
+        dazzleable = 1;
+        gps = 1;
+    };  
+
     class WLProjectile_ExtendedSAM: WLProjectile {
         ammo[] = {
             "M_SM6",

@@ -257,40 +257,40 @@ class HeavyVehicles {
     //     };
     // };
 
-    class B_APC_Tracked_01_AT_F {
-        aps = 2;
-        capValue = 4;
-        cost = 4500;
-        description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
-        hasHMD = 1;
-        name = "IFV-6d Ocelot";
-        rearm = 240;
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
+    // class B_APC_Tracked_01_AT_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 4500;
+    //     description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
+    //     hasHMD = 1;
+    //     name = "IFV-6d Ocelot";
+    //     rearm = 240;
+    //     spawn = "B_APC_Tracked_01_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_AFV_Wheeled_01_cannon_F {
         aps = 2;
@@ -464,6 +464,38 @@ class HeavyVehicles {
         };
         rearm = 1800;
     }; // "M5 Sandstorm MLRS"
+
+    class B_MBT_01_mlrs_sdb_F {
+        ammoOverrides[] = {
+            {"ammo_Bomb_SDB", {"M_GLSDB", "Ground Launched SDB II"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 40000;
+        description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
+        name = "M5A2 Sandstorm II";
+        rearm = 1800;
+        spawn = "B_MBT_01_mlrs_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonRack_Bomb_SDB_x4",
+                "PylonRack_Bomb_SDB_x4",
+                "PylonRack_Bomb_SDB_x4"
+            };
+            addWeapons[] = {
+                "weapon_SDBLauncher"  
+            };
+            removeMagazines[] = {
+                "12Rnd_230mm_rockets"
+            };
+            removeWeapons[] = {
+                "rockets_230mm_GAT"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     // class B_MBT_01_arty_tv_F {
     //     ammoOverrides[] = {

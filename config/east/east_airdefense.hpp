@@ -105,6 +105,18 @@ class AirDefense {
         };
     };
 
+    class O_Radar_System_02_ecm_F {
+        cost = 2800;
+        description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km. Mounts ECM pods to jam incoming missiles.";
+        ecm[] = {{"MissileCore", "BombCore"}, 0, 8000, 1, 12, 30};
+        loadable[] = {0, 0, 1};
+        name = "R-750 Cronus (ECM)";
+        offset[] = {0, 7, 0};
+        rearm = 20;
+        spawn = "O_Radar_System_02_F";
+        variant = 1;
+    };
+
     class O_AAA_System_01_F {
         cost = 3500;
         description = "Short-range point defense artillery with a high rate of fire.";
@@ -223,8 +235,9 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 8500;
-        description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with Mk21 Centurion missiles.";
+        description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with LOAL-capable Zephyr missiles.";
         hasHMD = 1;
+        hasLoal = 1;
         name = "ZSU-59 Yangtze";
         rearm = 240;
         spawn = "O_APC_Tracked_02_AA_F";
@@ -232,12 +245,12 @@ class AirDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "magazine_Missile_rim162_x8",
+                "4Rnd_GAA_missiles",
                 "680Rnd_35mm_AA_shells_Tracer_Green"
             };
             addWeapons[] = {
                 "autocannon_35mm",
-                "weapon_rim162Launcher"
+                "missiles_Zephyr"
             };
             removeMagazines[] = {
                 "4Rnd_Titan_long_missiles_O",
