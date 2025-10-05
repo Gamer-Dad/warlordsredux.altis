@@ -172,9 +172,8 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 8500;
-        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with LOAL-capable Zephyr missiles.";
+        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with LOAL-capable AMRAAM missiles.";
         hasHMD = 1;
-        hasLoal = 1;
         name = "IFV-6C Jaguar";
         rearm = 240;
         spawn = "B_APC_Tracked_01_AA_F";
@@ -182,12 +181,15 @@ class AirDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "4Rnd_GAA_missiles",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1",
                 "680Rnd_35mm_AA_shells_Tracer_Red"
             };
             addWeapons[] = {
                 "autocannon_35mm",
-                "missiles_Zephyr"
+                "weapon_AMRAAMLauncher"
             };
             removeMagazines[] = {
                 "4Rnd_Titan_long_missiles",

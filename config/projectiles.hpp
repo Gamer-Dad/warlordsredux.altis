@@ -65,12 +65,21 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Missile_AMRAAM_C",            // AMRAAM C
             "ammo_Missile_AMRAAM_D",            // AMRAAM D
-            "ammo_Missile_AA_R77",              // R-77
-            "M_Zephyr"                          // Zephyr
+            "ammo_Missile_AA_R77"               // R-77
         };
         aps = 3;
         camera = 1;
         loal = 1;
+        sam = 1;
+        speed = 3;
+    };
+
+    class WLProjectile_A2ANoLoal: WLProjectile {
+        ammo[] = {
+            "M_Zephyr"                          // Zephyr
+        };
+        aps = 3;
+        camera = 1;
         sam = 1;
         speed = 3;
     };

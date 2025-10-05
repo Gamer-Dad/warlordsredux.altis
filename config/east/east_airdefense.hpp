@@ -112,7 +112,7 @@ class AirDefense {
         loadable[] = {0, 0, 1};
         name = "R-750 Cronus (ECM)";
         offset[] = {0, 7, 0};
-        rearm = 20;
+        rearm = 240;
         spawn = "O_Radar_System_02_F";
         variant = 1;
     };
@@ -235,9 +235,8 @@ class AirDefense {
         aps = 2;
         capValue = 4;
         cost = 8500;
-        description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with LOAL-capable Zephyr missiles.";
+        description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with LOAL-capable R77 missiles.";
         hasHMD = 1;
-        hasLoal = 1;
         name = "ZSU-59 Yangtze";
         rearm = 240;
         spawn = "O_APC_Tracked_02_AA_F";
@@ -245,12 +244,15 @@ class AirDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "4Rnd_GAA_missiles",
+                "magazine_Missile_AA_R77_x1",
+                "magazine_Missile_AA_R77_x1",
+                "magazine_Missile_AA_R77_x1",
+                "magazine_Missile_AA_R77_x1",
                 "680Rnd_35mm_AA_shells_Tracer_Green"
             };
             addWeapons[] = {
                 "autocannon_35mm",
-                "missiles_Zephyr"
+                "weapon_R77Launcher"
             };
             removeMagazines[] = {
                 "4Rnd_Titan_long_missiles_O",

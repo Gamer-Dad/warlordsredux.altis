@@ -8,6 +8,7 @@ class Spawn {
 
     class Land_TentA_F {
         name = "Deployed Tent";
+        cost = 300;
     };
 
     class RuggedTerminal_01_communications_hub_F {

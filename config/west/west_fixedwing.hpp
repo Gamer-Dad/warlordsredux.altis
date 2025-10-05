@@ -293,9 +293,9 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x1",
             "PylonRack_Missile_AGM_02_x2"
         };
+        ecm[] = {{"MissileCore"}, 0, 16000, 1, 5, 30};
         hasAWACS = 1;
         hasHMD = 1;
-        hasLoal = 1;
         name = "EF/A-181 Growler";
         rearm = 420;
         requirements[] = {"A"};
@@ -349,7 +349,6 @@ class FixedWing {
         };
         cost = 26000;
         hasHMD = 1;
-        hasLoal = 1;
         hasReconOptics = 1;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 420;

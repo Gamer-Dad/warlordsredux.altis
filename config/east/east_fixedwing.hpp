@@ -286,7 +286,6 @@ class FixedWing {
             "PylonMissile_Bomb_GBU12_x1"
         };
         hasHMD = 1;
-        hasLoal = 1;
         name = "A-149 Gryphon (Interceptor)";
         rearm = 420;
         requirements[] = {"A"};
@@ -397,8 +396,8 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
+        ecm[] = {{"MissileCore"}, 0, 10000, 1, 5, 30};
         hasHMD = 1;
-        hasLoal = 1;
         hasReconOptics = 1;
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
