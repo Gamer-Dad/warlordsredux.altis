@@ -396,7 +396,7 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
-        ecm[] = {{"MissileCore"}, 0, 10000, 1, 5, 30};
+        ecm[] = {{"MissileCore"}, 0, 10000, 1, 2, 120};
         hasHMD = 1;
         hasReconOptics = 1;
         name = "To-201 Shikra (Stealth/Recon)";
