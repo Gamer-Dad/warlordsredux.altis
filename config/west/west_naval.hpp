@@ -26,6 +26,7 @@ class Naval {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        hasHMD = 1;
         name = "Riverine Command Boat";
         rearm = 120;
         requirements[] = {"W"};
@@ -34,16 +35,18 @@ class Naval {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
                 "5Rnd_GAT_missiles",
-                "5Rnd_GAT_missiles"
+                "5Rnd_GAT_missiles",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1"
             };
             addWeapons[] = {
-                "cannon_20mm",
-                "missiles_titan"
+                "autocannon_30mm_RCWS",
+                "missiles_titan",
+                "weapon_AMRAAMLauncher"
             };
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt"

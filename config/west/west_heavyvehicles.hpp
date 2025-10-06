@@ -305,6 +305,29 @@ class HeavyVehicles {
         capValue = 4;
         cost = 5000;
         rearm = 240;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "16Rnd_125mm_APFSDS_T_Red",
+                "12Rnd_125mm_HE_T_Red",
+                "4Rnd_125mm_cannon_missiles"
+            };
+            addWeapons[] = {
+                "cannon_125mm_advanced",
+                "MMG_02_coax"
+            };
+            removeMagazines[] = {
+                "12Rnd_120mm_APFSDS_shells_Tracer_Red",
+                "8Rnd_120mm_HE_shells_Tracer_Red",
+                "8Rnd_120mm_HEAT_MP_T_Red",
+                "4Rnd_120mm_LG_cannon_missiles"
+            };
+            removeWeapons[] = {
+                "cannon_120mm",
+                "MMG_02_coax"
+            };
+            turret[] = { 0 };
+        };
     }; // "Rhino MGS UP"
 
     class B_MBT_01_cannon_F {

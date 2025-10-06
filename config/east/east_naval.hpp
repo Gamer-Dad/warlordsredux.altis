@@ -26,6 +26,7 @@ class Naval {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        hasHMD = 1;
         name = "Alligator Attack Boat";
         rearm = 120;
         requirements[] = {"W"};
@@ -34,16 +35,18 @@ class Naval {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
                 "5Rnd_GAT_missiles",
-                "5Rnd_GAT_missiles"
+                "5Rnd_GAT_missiles",
+                "magazine_Missile_AA_R77_x1",
+                "magazine_Missile_AA_R77_x1"
             };
             addWeapons[] = {
-                "cannon_20mm",
-                "missiles_titan"
+                "autocannon_30mm_RCWS",
+                "missiles_titan",
+                "weapon_R77Launcher"
             };
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt"
