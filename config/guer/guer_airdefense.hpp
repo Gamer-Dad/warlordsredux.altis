@@ -4,14 +4,12 @@ class AirDefense {
         description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km.";
         loadable[] = {0, 0, 1};
         offset[] = {0, 7, 0};
-        requirements[] = {};
     };  // "AN/MPQ-105 Radar"
 
     class I_LT_01_scout_F {
         capValue = 4;
         cost = 1200;
         rearm = 300;
-        requirements[] = {};
         // vehicleSpawn = 1;
     };  // "AWC Nyx (Radar)"
 
@@ -20,7 +18,6 @@ class AirDefense {
         capValue = 4;
         cost = 1500;
         rearm = 300;
-        requirements[] = {};
         vehicleSpawn = 1;
     };  // "AWC Nyx (AA)"
 
@@ -30,6 +27,5 @@ class AirDefense {
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
         rearm = 450;
-        requirements[] = {};
     };  // "MIM-145 Defender"
 };

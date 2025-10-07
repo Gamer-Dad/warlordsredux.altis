@@ -1,47 +1,33 @@
 class RemoteControl {
-    class RuggedTerminal_01_communications_F {
-        cost = 50;
-        demolishable = 1;
-        loadable[] = {0, 0, 0};
-        name = "Ground Support Terminal";
-        offset[] = {0, 3, 0};
-        requirements[] = {};
-    };
-
     class B_UGV_02_Demining_F {
         cost = 100;
         loadable[] = {0, -1, -0.5};
         offset[] = {0, 3, 0};
-        rearm = 200;
-        requirements[] = {};
+        rearm = 120;
     }; // "UGAS demining"
 
     class B_UGV_01_F {
         cost = 150;
         loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
-        requirements[] = {};
     }; // "UGV Stomper"
 
     class B_UAV_01_F {
         cost = 500;
         hasHMD = 1;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     }; // AR-2
 
     class B_UGV_01_rcws_F {
         cost = 500;
         loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "UGAS"
 
     class B_UAV_06_F {
         cost = 1000;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     }; // "AR-6"
 
     // class B_UAV_01_UP_F {
@@ -142,11 +128,12 @@ class RemoteControl {
 
     class B_T_UAV_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            "PylonRack_1Rnd_AAA_missiles"
         };
-        cost = 8000;
+        cost = 7000;
         hasHMD = 1;
-        rearm = 600;
+        rearm = 300;
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
@@ -164,7 +151,7 @@ class RemoteControl {
 
     class B_UAV_05_F {
         cost = 15000;
-        rearm = 500;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {

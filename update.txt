@@ -1,0 +1,168 @@
+Warlords Redux 2.7.0
+
+New
+* Nyx SAM
+* Orca-M
+* T-100X Futura
+* Gryphon (Interceptor)
+* V-44 J Archerfish
+* Strider (Recon)
+* M5A2 Sandstorm II (GLSDB)
+* R-750 Cronus (ECM)
+
+Removed
+* Taru Recon
+* Pawnee Block II
+* Static AT UP
+* Titan AA UP
+* Ocelot/Shir
+* Euphrates/Puma
+* T-100E Badger
+* Ground Support Terminal
+
+Prices
+* Flatbed: $500->$300
+* Growler: $24,000->$19,000
+* Orca: $4,000->$3,500
+* BTR-KM: $4,000->$4,800
+* Kajman: $8,500->$8,000
+* Caesar (Bomb): $2,000->$1,500
+* Falcon: $8,000->$7,000
+* Neophron: $17,000->$15,000
+* Slammer II: $9,000->$8,500
+* Hercules: $20,000->$22,000
+
+Munition changes
+* New: AGM-122 Sidearm: anti-radiation missile on Scalpel base, consumes 7 APS charges (only when used in ARM role), can be manually/IR guided as regular Scalpels.
+* New: Bunker busters: remote TV-guided, can do damage to strongholds and FOBs.
+* New: LOAL mode now supported for long-range Fox-3s, can kill enemy aircaft at extreme ranges.
+* Changed: short-range Fox-2 missiles have significantly increased probability of hit.
+* Changed: anti-radiation missiles now attack modes based on the nose pitch of the aircraft (point down for more direct attack, up for top attack).
+* Changed: remote TV-guided munitions no longer require ground support station, controller must be in squad.
+* Changed: switchblade speed and range doubled, can now hit low altitude air targets.
+
+Asset-specific changes
+* Marid (ATGM): added 4 missiles to ammo.
+* Zamak MRL: removed APS.
+* Panther: replaced 40mm with 30mm autocannon.
+* Marshall Light: replaced minigun with .50 cal.
+* BTR-KM Kamysh: replaced 5-mag Titan AT with 8-mag Scalpel AT.
+* Rhino MGS UP: replaced 120mm cannon with 125mm.
+* Slammer II: removed recon optics, retain datalink visuals.
+* Switchblade: ammo reduced from 10 to 2.
+* Hercules: hard lock range reduced from 8->6.5 km.
+* Caesar (Bomb): bombs are now GPS-guided rather than remote TV-guided.
+* Pawnee: added triple-rack Scalpel pylon, added Skyfire pylon, added HMD, replaced minigun with 20mm, added countermeasures.
+* Orca: added DAGR-M pylon.
+* Falcon: added ASRAAM pylon.
+* Kajman: added R73 pylon.
+* Blackfoot: added 4 racks of triple-rack Sidearms.
+* Blackfoot Block II: added 4 racks of triple-rack Sidearms.
+* Xian: added 4 SDBs (pilot) and replaced gun with more effective 30mm.
+* Wipeout: added 2 pylons of bunker buster bombs, added DAGR-M pylon.
+* Buzzard: can now launch remote TV-guided bombs, added one pylon of bunker buster bombs.
+* Neophron: added 2 pylons of bunker buster bombs.
+* Growler: added 4 pylons of Sidearms, added LOAL support, added 8km radius threat detector.
+* Shikra: added 1 pylon of quad-rack SDBs.
+* Shikra (Stealth/Recon): added R77 for 2 pylons, added 2 pylons of quad-rack GPS-enabled SDBs, added Sidearm racks to 5 pylons, enabled GPS guidance on KAB-250, added LOAL support, added 16km radius threat detector.
+* Black Wasp (Stealth/Recon): added quad-rack GPS-enabled SDBs, enabled GPS guidance on GBUs, added Sidearm racks to 4 pylons, added LOAL support.
+* Attack boats: replaced 20mm with 30mm autocannons, added 2 AA missiles.
+
+New interfaces
+* Squad: can now FT to squadmates/squad leader via menu.
+* Killfeed, kill sounds: optional and volume controllable via settings.
+* Loadout menu: allows more weapons and granular ammo controls, rebalanced weapon levels.
+* Badges: can earn and apply badges in place of level.
+* Death info: now shows killer badge.
+* Scoreboard: now shows WL relevant info and scores.
+* Targeting menus: now can be easily controllable in flight.
+* Turret visualizer: added turret visualizer for aircraft that have restrictive gunner turrets.
+* Vehicle menu: can repair/rearm/lock/remove vehicles remotely.
+
+Map
+* Moved Kavirida Caves to Kavirida.
+* Removed some connections around Dorida.
+* Connect Xirolimni Dam to Poliakko.
+
+ECM jammers 
+* For: scout/attack helos, Xian.
+* Allows equipped aircraft to jam and destroy incoming missiles.
+* Limited by ammo, recharged on a timer, more pods = more ammo, faster recharge.
+* Jamming time affected by distance.
+
+Map voting
+* Reduced price of sector reset to $50.
+* Removed sector reset ctrl-y/n voting.
+* Sector reset will no longer unset current attack sector until new sector is selected.
+* Sector reset timer is now personal to prevent griefing.
+* Moved surrender voting to map vote (reduced voting power, individual).
+
+Misc
+* Added destroyers: 30% chance to replace each carrier and a 70% chance to spawn in Pyrgos bay.
+* Added bipods to gear crate / attachment options.
+* Capture bar now thinner.
+* Demolition now requires continuous hold action and occurs in steps. Damage can be repaired. FOB can be repaired on map to full for 10K supplies.
+* Demolition conditions loosened to allow moving around within 10m.
+* Separated buildings (max: 25) vs assets (max: 10) for the purpose of asset limits.
+* Added buy menu scroll wheel action, can be disabled in settings.
+* Player who places FOB can delete it directly from the map.
+* Attacking or defending sector now gives active income.
+* Added reward for recon scanning, only applies if player is in the truck.
+* Allow using recon optics out of gunner camera view.
+* Removed radio sound when opening asset menu.
+* First spawn now buys player customization for free.
+* Flag now allows loadout reload.
+* Enemy target reset is now a system message.
+* Triggering dazzler now gives $10 reward.
+* APS/Dazzler rewards now vary based on consumption.
+* Dazzlers now emit radiation for anti-radiation missiles.
+* Removed demolish eligibility for some static weapons.
+* Removed AR glasses for infantry.
+* Reworked demolition.
+* Added demolition to enemy tents.
+* Level 50 restriction for placing map markers.
+* Adjusted missile camera large mode to not steal focus.
+* Adjusted sector vehicle spawns to depend on sector value/size, sectors spawn double vehicles.
+* Removed last/saved loadout options.
+* Unclaimed green vehicles are deleted when sector is captured.
+* Removed preset spawns from Skopos Base.
+* Replaced respawn tent backpacks with chemlights.
+* Removed range limit for fast travel tag-along AI.
+* Increased "AI get in" range to 150m.
+* Triggering APS will now store hitter for reward, in case vehicle is removed.
+* Removed obstructions on carrier during attack phase, moved AI spawns.
+* Added occasional night, earthquakes.
+* Waypoint now visible on more remote munitions.
+* Aircraft flying off map gets Return to Base scroll wheel option.
+* Disabled ground vehicle scanner over water.
+* Disabled removing aircraft after ejection.
+* Disabled strongholding until 30m into game.
+* Added approx funds for teammates in transfer menu tooltips.
+* Removed recruit tag for more granular level tags.
+* Added rebindable keys for earplugs (buldozer switch camera, default: insert) and cqb mode (zeus delete, default: delete).
+
+Bugfixes
+* Fixed bug where variant names would sometimes not draw correctly.
+* Fixed bug where server messages would show as if they were player.
+* Fixed being able to disarm demolition explosives from far away.
+* Fixed bug where AWACS sometimes will not correctly identify munitions fired by AI/UAVs.
+* Fixed bug where AWACS circle would sometimes bug out.
+* Fixed bugs where gear action sometimes does not properly open vehicle inventory.
+* Fixed bug where paradrop and air assault deduct incorrect amount of money.
+* Fixed bugged nametag display position over water.
+* Fixed bugs where exiting boat would sometimes kill player.
+* Fixed pull up warning for helicopters.
+* Fixed bug where overridden magazines won't show mag size.
+* Fixed memory leak for enemy capture handler.
+* Fixed bug where towed vehicles would become un-drivable on hills.
+* Fixed fast traveling while dead.
+* Fixed some cases where aircraft reward would not be given to correct player.
+* Fixed vote display text cut off.
+* Fixed tent spawn issues.
+* Fixed some initial spawn-in errors.
+* Fixed players re-logging to reset cruise missile cooldown.
+* Fixed carrier fixed wing spawn angle to reduce incidences of wing clipping side.
+* Fixed some cases where AI would become responsive after revive.
+* Fixed bug where roads would not be valid spawn points.
+* Performance improvements to lock, repair actions, uav terminal, map icons, spawn positioning.
+* Removed smoke script due to performance issues.

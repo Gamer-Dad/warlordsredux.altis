@@ -62,13 +62,13 @@ class FixedWing {
 
     class O_Plane_Caesar_bomb_01_F {
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+            {"Bomb_03_F", {"ammo_kab250se", "KAB-250SE (GPS-Guided)"}}
         };
-        cost = 2000;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
-        hasRemoteBomb = 1;
+        cost = 1500;
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs.";
+        hasHMD = 1;
         name = "Caesar BTT (Bomb)";
-        rearm = 400;
+        rearm = 300;
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
         variant = 1;
@@ -82,8 +82,6 @@ class FixedWing {
                 "Bomb_03_Plane_CAS_02_F",
                 "CMFlareLauncher"
             };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             turret[] = { -1 };
         };
     };
@@ -149,19 +147,32 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
-            "PylonMissile_Missile_KH58_INT_x1"
+            "PylonMissile_Missile_KH58_INT_x1",
+            "PylonMissile_Missile_AA_R73_x1",
+            "PylonFuelTank_UH80"
+        };
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
         };
         cost = 12000;
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
+        hasAirRearm = 1;
         hasHMD = 1;
-        rearm = 700;
+        hasTurretVisualizer = 1;
+        rearm = 300;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1"
             };
             addWeapons[] = {
-                "CMFlareLauncher_Singles"
+                "CMFlareLauncher_Singles",
+                "weapon_SDBLauncher"
             };
             removeMagazines[] = {
                 "168Rnd_CMFlare_Chaff_Magazine"
@@ -171,22 +182,42 @@ class FixedWing {
             };
             turret[] = { -1 };
         };
+        class Gunner : WLTurretDefaults {
+            addMagazines[] = {
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F",
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F",
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F",
+                "500Rnd_Cannon_30mm_Plane_CAS_02_F"
+            };
+            addWeapons[] = {
+                "Cannon_30mm_Plane_CAS_02_F"
+            };
+            removeMagazines[] = {
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_APDS_shells_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "gatling_30mm_VTOL_02"
+            };
+            turret[] = { 0 };
+        };
     }; // "Y-32 Xi'an (Infantry Transport)"
 
     class O_Plane_Fighter_03_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
+            {"PylonMissile_1Rnd_Mk82_F", {"Pylons4"}},
             {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons4", "Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}}
+            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}},
+            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
         };
         cost = 13000;
         description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
-        hasRemoteBomb = 1;
         name = "A-143 Buzzard (CAS)";
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
         spawn = "I_Plane_Fighter_03_dynamicLoadout_F";
         textures[] = {
@@ -210,11 +241,15 @@ class FixedWing {
     class O_Plane_CAS_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            {"PylonMissile_1Rnd_Mk82_F", {"Pylons5", "Pylons6"}}
         };
-        cost = 17000;
+        ammoOverrides[] = {
+            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
+        };
+        cost = 15000;
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -229,6 +264,59 @@ class FixedWing {
             turret[] = { -1 };
         };
     }; // "To-199 Neophron (CAS)"
+
+    class O_Plane_Fighter_04_F {
+        allowPylonMagazines[] = {
+            "PylonMissile_Missile_KH58_x1",
+            "PylonRack_1Rnd_LG_scalpel",
+            "PylonRack_3Rnd_LG_scalpel",
+            "PylonRack_4Rnd_LG_scalpel",
+            "PylonRack_Missile_AMRAAM_D_x1",
+            "PylonRack_Missile_AMRAAM_D_x2",
+            "PylonMissile_Missile_AA_R77_x1",
+            "PylonMissile_Missile_AA_R73_x1"
+        };
+        ammoOverrides[] = {
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        };
+        cost = 15500;
+        description = "A-149 Gryphon (Interceptor) is a multirole aircraft designed for air superiority.";
+        disallowMagazines[] = {
+            "PylonRack_Missile_AMRAAM_C_x1",
+            "PylonRack_Missile_AMRAAM_C_x2",
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2",
+            "PylonMissile_Bomb_GBU12_x1"
+        };
+        hasHMD = 1;
+        name = "A-149 Gryphon (Interceptor)";
+        rearm = 420;
+        requirements[] = {"A"};
+        spawn = "I_Plane_Fighter_04_F";
+        textures[] = {
+            "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_co.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_co.paa",
+            "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+            "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
+        };
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "120Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {};
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
 
     // class O_Plane_Fighter_02_Gyrfalcon_F {
     //     allowPylonMagazines[] = {
@@ -268,14 +356,14 @@ class FixedWing {
     class O_Plane_Fighter_02_F {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_INT_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter3"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2", "pylonBayCenter3"}}
         };
         cost = 25000;
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -295,23 +383,29 @@ class FixedWing {
 
     class O_Plane_Fighter_02_Stealth_F {
         allowPylonMagazines[] = {
+            {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayLeft1", "pylonBayRight1"}},
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter3"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2", "pylonBayCenter3"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
+            {"ammo_Bomb_SDB", {"ammo_upmk_d30", "UMPK D-30SN (GPS-Guided)"}},
+            {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 25000;
-        description = "To-201 Shikra (Stealth) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
+        description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
-        hasGPSMunition = 1;
+        ecm[] = {{"MissileCore"}, 0, 10000, 1, 2, 120};
         hasHMD = 1;
         hasReconOptics = 1;
-        rearm = 720;
+        name = "To-201 Shikra (Stealth/Recon)";
+        rearm = 420;
         requirements[] = {"A"};
+        threatDetection = 16000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -343,7 +437,6 @@ class FixedWing {
     //         "PylonMissile_Missile_KH58_x1"
     //     };
     //     hasHMD = 1;
-    //     hasRemoteBomb = 1;
     //     name = "To-201 Shikra (Land Attack)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
@@ -372,11 +465,10 @@ class FixedWing {
     //         {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}}
     //     };
     //     cost = 30000;
-    //     description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch KAB-250.";
+    //     description = "To-201 Shikra (Standoff) is a variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
     //     disallowMagazines[] = {
     //         "PylonMissile_Missile_KH58_x1"
     //     };
-    //     hasGPSMunition = 1;
     //     hasHMD = 1;
     //     name = "To-201 Shikra (Standoff)";
     //     rearm = 1200;

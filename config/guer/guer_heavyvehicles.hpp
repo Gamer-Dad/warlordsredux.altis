@@ -4,7 +4,6 @@ class HeavyVehicles {
         capValue = 4;
         cost = 1500;
         rearm = 300;
-        requirements[] = {};
         vehicleSpawn = 1;
 
         class Gunner: WLTurretDefaults {
@@ -34,7 +33,6 @@ class HeavyVehicles {
         capValue = 4;
         cost = 1500;
         rearm = 300;
-        requirements[] = {};
         vehicleSpawn = 1;
         // class Gunner: WLTurretDefaults {
         //     addMagazines[] = {

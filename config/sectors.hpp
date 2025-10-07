@@ -97,13 +97,11 @@ class CfgWarlordSectors {
         {"DieselPowerPlant", "USSFreedom"},
         {"Dorida", "LimniSwamp"},
         {"Dorida", "Nifi"},
-        {"Dorida", "NifiSolar"},
-        {"Dorida", "Pyrgos"},
         {"Dorida", "PyrgosBase"},
         {"Drimea", "SkoposCastleRuins"},
         {"Drimea", "Therisa"},
         {"Drimea", "Zaros"},
-        {"Edessa", "KaviridaCaves"},
+        {"Edessa", "Kavirida"},
         {"Edessa", "Panochori"},
         {"Edessa", "ZarosSolar"},
         {"Ekali", "Faronaki"},
@@ -158,10 +156,10 @@ class CfgWarlordSectors {
         {"Katalaki", "Poliakko"},
         {"Katalaki", "SagonisiBase"},
         {"Kavala", "KavalaCastle"},
-        {"Kavala", "KaviridaCaves"},
+        {"Kavala", "Kavirida"},
         {"Kavala", "Neri"},
         {"KavalaCastle", "USSFreedom"},
-        {"KaviridaCaves", "Zaros"},
+        {"Kavirida", "Zaros"},
         {"Kore", "KoreFactory"},
         {"Kore", "Syrta"},
         {"Kore", "Topolia"},
@@ -202,6 +200,7 @@ class CfgWarlordSectors {
         {"Paros", "SaltFlats"},
         {"Poliakko", "SagonisiBase"},
         {"Poliakko", "Therisa"},
+        {"Poliakko", "XirolimniDam"},
         {"Poliakko", "Zaros"},
         {"Pyrgos", "PyrgosBase"},
         {"Pyrgos", "SagonisiBase"},
@@ -572,10 +571,10 @@ class CfgWarlordSectors {
         services[] = {"W"};
     };
 
-    class KaviridaCaves {
-        area[] = {300, 300, 0, 1};
-        location[] = {6451.2, 12244.6, 0};
-        name = "Kavirida Caves";
+    class Kavirida {
+        area[] = {150, 150, 0, 1};
+        location[] = {7443.43, 12208.3, 0};
+        name = "Kavirida";
     };
 
     class Kore {
@@ -674,7 +673,7 @@ class CfgWarlordSectors {
     };
 
     class Neri {
-        area[] = {225, 225, 146.602, 0};
+        area[] = {200, 125, 146.602, 1};
         location[] = {4131.79, 11741.3, 0};
         name = "Neri";
         services[] = {"W"};
@@ -855,6 +854,13 @@ class CfgWarlordSectors {
         services[] = {"W"};
     };
 
+    class Surrender {
+        area[] = {0, 0, 0, 0};
+        disableHome = 1;
+        location[] = {29000, 2000, 0};
+        name = "Surrender";
+    };
+
     class SynneforosWindmill {
         area[] = {100, 250, 128.18, 1};
         location[] = {7354.5, 21560.4, 0};
@@ -933,6 +939,14 @@ class CfgWarlordSectors {
         location[] = {8856.14, 28796.06, 0};
         name = "USS Independence";
         services[] = {"W", "H", "A"};
+    };
+
+    class USSLiberty {
+        area[] = {100, 100, 288, 1};
+        destroyer = 0.7;
+        disableHome = 1;
+        location[] = {15393.8, 14197.7, 0};
+        name = "USS Liberty";
     };
 
     class Wait {

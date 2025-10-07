@@ -3,27 +3,30 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 1300;
-        rearm = 400;
-        requirements[] = {};
+        isLight = 1;
+        loadable[] = {0, -1.5, 1.2};
+        rearm = 180;
 
-        // class Gunner: WLTurretDefaults {
-        //     addMagazines[] = {
-        //         "60Rnd_30mm_APFSDS_shells_Tracer_Red",
-        //         "60Rnd_30mm_APFSDS_shells_Tracer_Red",
-        //         "140Rnd_30mm_MP_shells_Tracer_Red",
-        //         "140Rnd_30mm_MP_shells_Tracer_Red"
-        //     };
-        //     addWeapons[] = {
-        //         "autocannon_30mm_CTWS"
-        //     };
-        //     removeMagazines[] = {
-        //         "96Rnd_40mm_G_belt"
-        //     };
-        //     removeWeapons[] = {
-        //         "GMG_40mm"
-        //     };
-        //     turret[] = { 0 };
-        // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_RCWS",
+                "HMG_127_APC"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm",
+                "HMG_127_APC"
+            };
+            turret[] = { 0 };
+        };
     }; // "IFV-6c Panther"
 
     class B_LT_01_AT_F {
@@ -32,8 +35,7 @@ class HeavyVehicles {
         cost = 1500;
         loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (AT)";
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
         spawn = "I_LT_01_AT_F";
         textures[] = {
             "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
@@ -68,8 +70,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
-        rearm = 400;
-        requirements[] = {};
+        rearm = 180;
     }; // "CRV-6e Bobcat"
 
     class B_APC_Wheeled_01_light_F {
@@ -80,17 +81,19 @@ class HeavyVehicles {
         isLight = 1;
         loadable[] = {0, -0.8, 1.7};
         name = "AMV-7 Marshall Light";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "5000Rnd_762x51_Yellow_Belt"
+                "500Rnd_127x99_mag",
+                "500Rnd_127x99_mag",
+                "500Rnd_127x99_mag",
+                "500Rnd_127x99_mag"
             };
             addWeapons[] = {
-                "M134_minigun"
+                "HMG_127_MBT"
             };
             removeMagazines[] = {
                 "40Rnd_40mm_APFSDS_Tracer_Red_shells",
@@ -115,7 +118,6 @@ class HeavyVehicles {
         hasScanner = 1;
         name = "AMV-7 Marshall (Recon)";
         rearm = 120;
-        requirements[] = {};
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
@@ -141,8 +143,7 @@ class HeavyVehicles {
         capValue = 4;
         cost = 2500;
         name = "FV-720 Mora";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "I_APC_tracked_03_cannon_F";
         textures[] = {
             "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
@@ -156,8 +157,7 @@ class HeavyVehicles {
         aps = 2;
         capValue = 3;
         cost = 2700;
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
     }; // "AMV-7 Marshall"
 
     class B_APC_Wheeled_03_cannon_F {
@@ -167,8 +167,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         textures[] = {
             "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa",
             "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa",
@@ -200,8 +199,7 @@ class HeavyVehicles {
         cost = 3200;
         description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
         name = "AMV-7 Marshall UP";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
@@ -259,57 +257,77 @@ class HeavyVehicles {
     //     };
     // };
 
-    class B_APC_Tracked_01_AT_F {
-        aps = 2;
-        capValue = 4;
-        cost = 4500;
-        description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
-        hasHMD = 1;
-        name = "IFV-6d Ocelot";
-        rearm = 280;
-        requirements[] = {};
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
+    // class B_APC_Tracked_01_AT_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 4500;
+    //     description = "IFV-6d Ocelot is an AT capable variant of IFV-6 chassis";
+    //     hasHMD = 1;
+    //     name = "IFV-6d Ocelot";
+    //     rearm = 240;
+    //     spawn = "B_APC_Tracked_01_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_AFV_Wheeled_01_cannon_F {
         aps = 2;
         capValue = 4;
         cost = 4500;
         isLight = 1;
-        rearm = 500;
-        requirements[] = {};
+        rearm = 240;
     }; // "Rhino MGS"
 
     class B_AFV_Wheeled_01_up_cannon_F {
         aps = 2;
         capValue = 4;
         cost = 5000;
-        rearm = 500;
-        requirements[] = {};
+        rearm = 240;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "16Rnd_125mm_APFSDS_T_Red",
+                "12Rnd_125mm_HE_T_Red",
+                "4Rnd_125mm_cannon_missiles"
+            };
+            addWeapons[] = {
+                "cannon_125mm_advanced",
+                "MMG_02_coax"
+            };
+            removeMagazines[] = {
+                "12Rnd_120mm_APFSDS_shells_Tracer_Red",
+                "8Rnd_120mm_HE_shells_Tracer_Red",
+                "8Rnd_120mm_HEAT_MP_T_Red",
+                "4Rnd_120mm_LG_cannon_missiles"
+            };
+            removeWeapons[] = {
+                "cannon_120mm",
+                "MMG_02_coax"
+            };
+            turret[] = { 0 };
+        };
     }; // "Rhino MGS UP"
 
     class B_MBT_01_cannon_F {
@@ -320,8 +338,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         isLight = 1;
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
     }; // "M2A1 Slammer"
 
     class B_MBT_01_TUSK_F {
@@ -331,8 +348,8 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
-        rearm = 600;
-        requirements[] = {};
+        isLight = 1;
+        rearm = 300;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -362,8 +379,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         name = "M52 Kuma";
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
         spawn = "I_MBT_03_cannon_F";
         textures[] = {
             "src\img\camo\kuma01.jpg",
@@ -376,16 +392,15 @@ class HeavyVehicles {
     class B_MBT_01_TUSK2_F {
         aps = 3;
         capValue = 4;
-        cost = 9000;
-        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon and a recon scanner.";
+        cost = 8500;
+        description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         hasHMD = 1;
-        hasReconOptics = 1;
+        isLight = 1;
         name = "M2A2 Slammer II";
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
         spawn = "B_MBT_01_TUSK_F";
         variant = 1;
 
@@ -461,7 +476,6 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster_O"
         };
         rearm = 1800;
-        requirements[] = {};
     }; // "M4 Scorcher"
 
     class B_MBT_01_mlrs_F {
@@ -472,27 +486,56 @@ class HeavyVehicles {
             "12Rnd_230mm_rockets_cluster"
         };
         rearm = 1800;
-        requirements[] = {};
     }; // "M5 Sandstorm MLRS"
+
+    class B_MBT_01_mlrs_sdb_F {
+        ammoOverrides[] = {
+            {"ammo_Bomb_SDB", {"M_GLSDB", "Ground Launched SDB II"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 40000;
+        description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
+        name = "M5A2 Sandstorm II";
+        rearm = 1800;
+        spawn = "B_MBT_01_mlrs_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonRack_Bomb_SDB_x4",
+                "PylonRack_Bomb_SDB_x4",
+                "PylonRack_Bomb_SDB_x4"
+            };
+            addWeapons[] = {
+                "weapon_SDBLauncher"  
+            };
+            removeMagazines[] = {
+                "12Rnd_230mm_rockets"
+            };
+            removeWeapons[] = {
+                "rockets_230mm_GAT"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     // class B_MBT_01_arty_tv_F {
     //     ammoOverrides[] = {
-    //         {"Sh_155mm_AMOS", {"M_Excalibur", "Excalibur (TV-Guided)"}}
+    //         {"Sh_155mm_AMOS_guided", {"M_Excalibur", "Excalibur (Terminal Guidance)"}}
     //     };
     //     aps = 1;
     //     capValue = 4;
     //     cost = 30000;
     //     disallowMagazines[] = {
-    //         "2Rnd_155mm_Mo_guided",
-    //         "4Rnd_155mm_Mo_guided",
+    //         "32Rnd_155mm_Mo_shells",
+    //         "32Rnd_155mm_Mo_shells_O",
     //         "2Rnd_155mm_Mo_LG",
     //         "4Rnd_155mm_Mo_LG",
     //         "6Rnd_155mm_Mo_mine",
     //         "6Rnd_155mm_Mo_AT_mine",
     //         "2Rnd_155mm_Mo_Cluster",
     //         "6Rnd_155mm_Mo_smoke",
-    //         "2Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_guided_O",
     //         "4Rnd_155mm_Mo_LG_O",
     //         "6Rnd_155mm_Mo_mine_O",
     //         "6Rnd_155mm_Mo_AT_mine_O",
@@ -500,15 +543,18 @@ class HeavyVehicles {
     //         "6Rnd_155mm_Mo_smoke_O"
     //     };
     //     name = "M4 Scorcher UP";
-    //     rearm = 1200;
-    //     requirements[] = {};
+    //     rearm = 1800;
     //     spawn = "B_MBT_01_arty_F";
     //     variant = 1;
 
     //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {};
-    //         addWeapons[] = {};
+    //         addMagazines[] = {
+    //             "4Rnd_155mm_Mo_guided",
+    //             "4Rnd_155mm_Mo_guided",
+    //             "4Rnd_155mm_Mo_guided"
+    //         };
     //         removeMagazines[] = {
+    //             "32Rnd_155mm_Mo_shells",
     //             "6Rnd_155mm_Mo_smoke",
     //             "2Rnd_155mm_Mo_guided",
     //             "4Rnd_155mm_Mo_guided",
@@ -517,7 +563,6 @@ class HeavyVehicles {
     //             "6Rnd_155mm_Mo_AT_mine",
     //             "2Rnd_155mm_Mo_Cluster"
     //         };
-    //         removeWeapons[] = {};
     //         turret[] = { 0 };
     //     };
     // };

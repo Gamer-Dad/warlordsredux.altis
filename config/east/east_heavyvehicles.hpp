@@ -9,11 +9,14 @@ class HeavyVehicles {
         name = "MSE-3 Marid (ATGM)";
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
         rearm = 120;
-        requirements[] = {};
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
+                "Vorona_HEAT",
                 "Vorona_HEAT",
                 "Vorona_HEAT",
                 "Vorona_HEAT",
@@ -22,7 +25,6 @@ class HeavyVehicles {
             addWeapons[] = {
                 "missiles_Vorona"
             };
-            reloadOverride = 0.5;
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt",
                 "200Rnd_127x99_mag_Tracer_Green"
@@ -40,8 +42,7 @@ class HeavyVehicles {
         capValue = 2;
         cost = 1700;
         loadable[] = {0, -0.8, 1.65};
-        rearm = 400;
-        requirements[] = {};
+        rearm = 180;
     }; // "MSE-3 Marid"
 
     // class O_LT_01_AT_F {
@@ -120,7 +121,6 @@ class HeavyVehicles {
         hasScanner = 1;
         name = "BTR-K Kamysh (Recon)";
         rearm = 120;
-        requirements[] = {};
         spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;
 
@@ -150,8 +150,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -174,28 +173,26 @@ class HeavyVehicles {
     class O_APC_Tracked_02_heavy_F {
         aps = 2;
         capValue = 3;
-        cost = 4000;
-        description = "BTR-KM Kamysh is a variant of the BTR-K Kamysh armed with a 40mm cannon.";
+        cost = 4800;
+        description = "BTR-KM Kamysh is a heavily-armed variant of the BTR-K Kamysh.";
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
         name = "BTR-KM Kamysh";
-        rearm = 500;
-        requirements[] = {};
+        rearm = 180;
         spawn = "O_APC_Tracked_02_cannon_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "5Rnd_GAT_missiles",
-                "5Rnd_GAT_missiles",
                 "240Rnd_40mm_GPR_Tracer_Red_shells",
-                "160Rnd_40mm_APFSDS_Tracer_Red_shells"
+                "160Rnd_40mm_APFSDS_Tracer_Red_shells",
+                "8Rnd_LG_scalpel"
             };
             addWeapons[] = {
                 "autocannon_40mm_VTOL_01",
                 "LMG_coax_ext",
-                "missiles_titan"
+                "missiles_SCALPEL"
             };
             removeMagazines[] = {
                 "2Rnd_GAT_missiles_O",
@@ -211,97 +208,102 @@ class HeavyVehicles {
         };
     };
 
-    class O_APC_Tracked_01_AT_F {
-        aps = 2;
-        capValue = 4;
-        cost = 4500;
-        description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis";
-        hasHMD = 1;
-        name = "BMP-39 Shir";
-        rearm = 280;
-        requirements[] = {};
-        spawn = "O_APC_Tracked_02_AA_F";
-        variant = 1;
+    // class O_APC_Tracked_01_AT_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 4500;
+    //     description = "BMP-39 Shir is an AT capable variant of ZSU-39 chassis";
+    //     hasHMD = 1;
+    //     name = "BMP-39 Shir";
+    //     rearm = 240;
+    //     spawn = "O_APC_Tracked_02_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles_O",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "680Rnd_35mm_AA_shells_Tracer_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
-    class O_MBT_02_cannon_export_F {
-        aps = 3;
-        capValue = 4;
-        cost = 5500;
-        description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
-        name = "T-100E Badger";
-        rearm = 600;
-        requirements[] = {};
-        spawn = "O_MBT_02_cannon_F";
-        variant = 1;
+    // class O_MBT_02_cannon_export_F {
+    //     aps = 3;
+    //     capValue = 4;
+    //     cost = 5500;
+    //     description = "T-100E Badger is a downgraded export variant of the T-100 Varsuk.";
+    //     name = "T-100E Badger";
+    //     rearm = 300;
+    //     spawn = "O_MBT_02_cannon_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "40Rnd_105mm_APFSDS"
-            };
-            addWeapons[] = {
-                "cannon_105mm",
-                "LMG_coax"
-            };
-            removeMagazines[] = {
-                "16Rnd_125mm_APFSDS_T_Green",
-                "12Rnd_125mm_HE_T_Green",
-                "12Rnd_125mm_HEAT_T_Green"
-            };
-            removeWeapons[] = {
-                "cannon_125mm",
-                "LMG_coax"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "40Rnd_105mm_APFSDS"
+    //         };
+    //         addWeapons[] = {
+    //             "cannon_105mm",
+    //             "LMG_coax"
+    //         };
+    //         removeMagazines[] = {
+    //             "16Rnd_125mm_APFSDS_T_Green",
+    //             "12Rnd_125mm_HE_T_Green",
+    //             "12Rnd_125mm_HEAT_T_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "cannon_125mm",
+    //             "LMG_coax"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_MBT_02_cannon_F {
         aps = 3;
         capValue = 4;
         cost = 7500;
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
     }; // "T-100 Varsuk"
 
     class O_MBT_04_cannon_F {
         aps = 3;
         capValue = 4;
         cost = 8500;
-        rearm = 600;
-        requirements[] = {};
+        rearm = 300;
     }; // "T-140 Angara"
 
     class O_MBT_04_command_F {
         aps = 3;
         capValue = 4;
         cost = 9500;
-        rearm = 600;
-        requirements[] = {};
+        hasSmokeCurtain = 1;
+        rearm = 300;
     }; // "T-140K Angara"
+
+    class O_MBT_02_railgun_F {
+        aps = 3;
+        capValue = 4;
+        cost = 15000;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        rearm = 300;
+    }; // "T-100X Futura"
 
     // class O_MBT_04_nato_F {
     //     aps = 3;
@@ -342,7 +344,6 @@ class HeavyVehicles {
     // };
 
     class O_Truck_02_MRL_F {
-        aps = 1;
         capValue = 4;
         cost = 18000;
         disallowMagazines[] = {
@@ -350,7 +351,6 @@ class HeavyVehicles {
         };
         name = "Zamak MRL";
         rearm = 1800;
-        requirements[] = {};
         spawn = "I_Truck_02_MRL_F";
         textures[] = {
             "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
@@ -368,27 +368,24 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster_O"
         };
         rearm = 1800;
-        requirements[] = {};
     }; // "2S9 Sochor"
 
     // class O_MBT_02_arty_tv_F {
     //     ammoOverrides[] = {
-    //         {"Sh_155mm_AMOS", {"M_Krasnopol", "Krasnopol (TV-Guided)"}}
+    //         {"Sh_155mm_AMOS_guided", {"M_Krasnopol", "Krasnopol (Terminal Guidance)"}}
     //     };
     //     aps = 1;
     //     capValue = 4;
     //     cost = 30000;
     //     disallowMagazines[] = {
-    //         "2Rnd_155mm_Mo_guided",
-    //         "4Rnd_155mm_Mo_guided",
+    //         "32Rnd_155mm_Mo_shells",
+    //         "32Rnd_155mm_Mo_shells_O",
     //         "2Rnd_155mm_Mo_LG",
     //         "4Rnd_155mm_Mo_LG",
     //         "6Rnd_155mm_Mo_mine",
     //         "6Rnd_155mm_Mo_AT_mine",
     //         "2Rnd_155mm_Mo_Cluster",
     //         "6Rnd_155mm_Mo_smoke",
-    //         "2Rnd_155mm_Mo_guided_O",
-    //         "4Rnd_155mm_Mo_guided_O",
     //         "4Rnd_155mm_Mo_LG_O",
     //         "6Rnd_155mm_Mo_mine_O",
     //         "6Rnd_155mm_Mo_AT_mine_O",
@@ -396,15 +393,19 @@ class HeavyVehicles {
     //         "6Rnd_155mm_Mo_smoke_O"
     //     };
     //     name = "2S9M Sochor II";
-    //     rearm = 1200;
-    //     requirements[] = {};
+    //     rearm = 1800;
     //     spawn = "O_MBT_02_arty_F";
     //     variant = 1;
 
     //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {};
+    //         addMagazines[] = {
+    //             "4Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_guided_O",
+    //             "4Rnd_155mm_Mo_guided_O"
+    //         };
     //         addWeapons[] = {};
     //         removeMagazines[] = {
+    //             "32Rnd_155mm_Mo_shells_O",
     //             "6Rnd_155mm_Mo_smoke_O",
     //             "2Rnd_155mm_Mo_guided_O",
     //             "4Rnd_155mm_Mo_guided_O",

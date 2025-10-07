@@ -10,4 +10,5 @@ class EAST {
     #include "east\east_rotarywing.hpp"
     #include "east\east_sectordefense.hpp"
     #include "east\east_spawn.hpp"
+    #include "east\east_structures.hpp"
 };

@@ -4,7 +4,6 @@ class LightVehicles {
         cost = 20;
         loadable[] = {0, -1, 0.6};
         offset[] = {0, 3, 0};
-        requirements[] = {};
     }; // "Quad Bike"
 
     class B_G_Offroad_01_armed_F {
@@ -13,7 +12,6 @@ class LightVehicles {
         loadable[] = {0, -1.7, 1.3};
         offset[] = {0, 5, 0};
         rearm = 120;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -39,7 +37,6 @@ class LightVehicles {
         loadable[] = {0, -1.3, 1.25};
         offset[] = {0, 5, 0};
         rearm = 120;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -61,27 +58,26 @@ class LightVehicles {
     class B_Truck_01_transport_F {
         capValue = 1;
         cost = 200;
-        requirements[] = {};
+        hasFastTravel = 1;
     }; // "HEMTT Transport"
 
     class B_Truck_01_medical_F {
         capValue = 1;
         cost = 250;
-        rearm = 120;
-        requirements[] = {};
+        hasFastTravel = 1;
     }; // "HEMMT Medical"
 
     class B_MRAP_01_F {
         capValue = 1;
         cost = 300;
         loadable[] = {0, -0.8, 1.25};
-        requirements[] = {};
     }; // "Hunter"
 
     class B_Truck_01_flatbed_F {
         capValue = 1;
-        cost = 500;
-        requirements[] = {};
+        cost = 300;
+        hasFastTravel = 1;
+        isLight = 1;
     }; // "HEMTT Flatbed"
 
     class B_G_Offroad_01_AT_F {
@@ -90,7 +86,6 @@ class LightVehicles {
         loadable[] = {0, -1.7, 0.7};
         offset[] = {0, 5, 0};
         rearm = 180;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -112,8 +107,7 @@ class LightVehicles {
         cost = 750;
         loadable[] = {0, -1.3, 0.95};
         offset[] = {0, 5, 0};
-        rearm = 200;
-        requirements[] = {};
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -138,8 +132,7 @@ class LightVehicles {
         capValue = 2;
         cost = 900;
         loadable[] = {0, -0.8, 1.8};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "Hunter HMG"
 
     class B_MRAP_01_gmg_F {
@@ -147,27 +140,40 @@ class LightVehicles {
         capValue = 2;
         cost = 950;
         loadable[] = {0, -0.8, 1.8};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     }; // "Hunter GMG"
 
     class B_Truck_01_ammo_F {
         capValue = 1;
         cost = 1000;
-        requirements[] = {};
     }; // "HEMTT Ammo"
 
     class B_Truck_01_fuel_F {
         capValue = 1;
         cost = 1000;
-        requirements[] = {};
     }; // "HEMTT Fuel"
 
     class B_Truck_01_Repair_F {
         capValue = 1;
         cost = 1000;
-        requirements[] = {};
     }; // "HEMTT Repair"
+
+    class B_MRAP_03_F {
+        aps = 2;
+        capValue = 2;
+        cost = 1100;
+        description = "Strider (Recon) is a variant of the Strider with a recon scanner.";
+        hasHMD = 1;
+        hasReconOptics = 1;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Strider (Recon)";
+        rearm = 120;
+        spawn = "I_MRAP_03_F";
+        textures[] = {
+            "a3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
+            "a3\data_f\vehicles\turret_co.paa"
+        };
+    };
 
     // class B_LSV_01_AT_UP_F {
     //     capValue = 1;
@@ -176,7 +182,6 @@ class LightVehicles {
     //     name = "Prowler (AT UP)";
     //     offset[] = {0, 5, 0};
     //     rearm = 200;
-    //     requirements[] = {};
     //     spawn = "B_LSV_01_AT_F";
     //     variant = 1;
 
@@ -209,7 +214,6 @@ class LightVehicles {
     //     description = "Hunter UP is a variant of the Hunter armed with a 20mm autocannon.";
     //     name = "Hunter UP Autocannon";
     //     rearm = 300;
-    //     requirements[] = {};
     //     spawn = "B_MRAP_01_gmg_F";
     //     variant = 1;
 
@@ -243,7 +247,6 @@ class LightVehicles {
         cost = 1500;
         name = "Tempest (Device)";
         rearm = 120;
-        requirements[] = {};
         spawn = "O_T_Truck_03_device_ghex_F";
         textures[] = {
             "#(argb,8,8,3)color(0.80,0.76,0.66,0.15)",
@@ -263,8 +266,7 @@ class LightVehicles {
         loadable[] = {0, -1.3, 0.95};
         name = "Prowler (Spike AT)";
         offset[] = {0, 5, 0};
-        rearm = 200;
-        requirements[] = {};
+        rearm = 240;
         spawn = "B_LSV_01_AT_F";
         variant = 1;
 

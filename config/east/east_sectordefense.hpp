@@ -1,60 +1,9 @@
 class SectorDefense {
-    class Land_Razorwire_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 5, 0};
-        requirements[] = {};
-    };  // "Razor Wire Fence"
-
-    class Land_BagFence_Round_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 2, 0};
-        requirements[] = {};
-    };  // "Semi Circle Sand bags"
-
-    class Land_DragonsTeeth_01_4x2_new_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 5, 0};
-        requirements[] = {};
-    };  // "Tank barrier"
-
-    class Land_HBarrier_5_F {
-        cost = 50;
-        demolishable = 1;
-        offset[] = {0, 3, 0};
-        requirements[] = {};
-    }; // "H-barrier"
-
-    class Land_HBarrierWall6_F {
-        cost = 60;
-        demolishable = 1;
-        offset[] = {0, 3, 0};
-        requirements[] = {};
-    }; // "H-barrier wall"
-
-    class Land_HBarrierTower_F {
-        cost = 70;
-        demolishable = 1;
-        offset[] = {0, 7, 0};
-        requirements[] = {};
-    }; // "Guard Tower (H-barrier)"
-
-    class CamoNet_OPFOR_big_F {
-        cost = 100;
-        demolishable = 1;
-        offset[] = {0, 6, 0};
-        requirements[] = {};
-    };  // "Camouflage Vehicle Cover (Hex)"
-
     class O_HMG_01_F {
         cost = 150;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -74,20 +23,11 @@ class SectorDefense {
         };
     };  // "Mk30 HMG .50"
 
-    class Land_IRMaskingCover_01_F {
-        cost = 200;
-        demolishable = 1;
-        offset[] = {0, 8, 0};
-        requirements[] = {};
-    };  // "IR Masking Tent (Large)"
-
     class O_HMG_01_high_F {
         cost = 200;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -109,29 +49,23 @@ class SectorDefense {
 
     class O_GMG_01_F {
         cost = 200;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     };  // "Mk32 GMG 20 mm"
 
     class O_GMG_01_high_F {
         cost = 250;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.8};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     };  // "Mk32 GMG 20 mm (Raised)"
 
     class O_static_AT_F {
         cost = 300;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -153,21 +87,12 @@ class SectorDefense {
         };
     };  // "Static Titan Launcher (AT) [CSAT]"
 
-    class Land_Cargo_Tower_V4_F {
-        cost = 450;
-        demolishable = 1;
-        offset[] = {0, 8, 0};
-        requirements[] = {};
-    };  // "Cargo Tower"
-
     class O_HMG_01_A_F {
         cost = 500;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk30 HMG Auto Turret";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -189,65 +114,52 @@ class SectorDefense {
 
     class O_GMG_01_A_F {
         cost = 650;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0.4};
         name = "Mk32 GMG Auto Turret";
         offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     };
 
-    class O_static_AT_UP_F {
-        cost = 800;
-        demolishable = 1;
-        description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
-        loadable[] = {0, -2.5, 0.2};
-        name = "Static AT Launcher (UP)";
-        offset[] = {0, 3, 0};
-        rearm = 300;
-        requirements[] = {};
-        spawn = "O_static_AT_F";
-        variant = 1;
+    // class O_static_AT_UP_F {
+    //     cost = 800;
+    //     description = "Static AT Launcher (UP) is an upgraded variant of the Static AT launcher.";
+    //     loadable[] = {0, -2.5, 0.2};
+    //     name = "Static AT Launcher (UP)";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 180;
+    //     spawn = "O_static_AT_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT",
-                "Vorona_HEAT"
-            };
-            addWeapons[] = {
-                "missiles_Vorona"
-            };
-            removeMagazines[] = {
-                "1Rnd_GAT_missiles"
-            };
-            removeWeapons[] = {
-                "missiles_titan_static"
-            };
-            turret[] = { 0 };
-        };
-    };
-
-    class Land_MobileRadar_01_radar_F {
-        cost = 2500;
-        demolishable = 1;
-        description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. Its position is revealed to the enemy when it is active.";
-        name = "EW Tower";
-        offset[] = {0, 6, 0};
-        requirements[] = {};
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT",
+    //             "Vorona_HEAT"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Vorona"
+    //         };
+    //         removeMagazines[] = {
+    //             "1Rnd_GAT_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_static"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class O_AAA_System_01_F {
     //     cost = 3500;
@@ -283,11 +195,9 @@ class SectorDefense {
 
     class O_Mortar_01_F {
         cost = 5000;
-        demolishable = 1;
         loadable[] = {0, -2.5, 0};
         offset[] = {0, 3, 0};
         rearm = 900;
-        requirements[] = {};
     };  // "Mortar"
 
     class O_Mortar_01_TV_F {
@@ -295,22 +205,16 @@ class SectorDefense {
             {"M_127mm_Firefist_AT", {"M_Lancet", "Lancet (Loitering Munition)"}}
         };
         cost = 8000;
-        demolishable = 1;
         description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         loadable[] = {0, -2.5, 0};
         name = "Lancet Launcher";
         offset[] = {0, 3, 0};
         rearm = 900;
-        requirements[] = {};
         spawn = "O_Mortar_01_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles"
             };
             addWeapons[] = {

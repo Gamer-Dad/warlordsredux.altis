@@ -2,14 +2,12 @@ class LightVehicles {
     class I_Quadbike_01_F {
         capValue = 1;
         cost = 20;
-        requirements[] = {};
     }; // "Quad Bike"
 
     class I_G_Offroad_01_armed_F {
         capValue = 1;
         cost = 150;
         rearm = 120;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -29,7 +27,6 @@ class LightVehicles {
         capValue = 1;
         cost = 200;
         rearm = 120;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -51,20 +48,21 @@ class LightVehicles {
     class I_MRAP_03_F {
         capValue = 1;
         cost = 300;
-        requirements[] = {};
     }; // "Strider"
 
-    class B_Truck_01_flatbed_F {
+    class I_Truck_01_flatbed_F {
         capValue = 1;
-        cost = 500;
-        requirements[] = {};
+        cost = 300;
+        hasFastTravel = 1;
+        isLight = 1;
+        name = "HEMTT Flatbed";
+        spawn = "B_Truck_01_flatbed_F";
     }; // "HEMTT Flatbed"
 
     class I_C_Offroad_02_AT_F {
         capValue = 1;
         cost = 500;
         rearm = 180;
-        requirements[] = {};
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -82,7 +80,6 @@ class LightVehicles {
         capValue = 3;
         cost = 900;
         rearm = 300;
-        requirements[] = {};
         vehicleSpawn = 1;
     };
 
@@ -91,7 +88,6 @@ class LightVehicles {
         capValue = 3;
         cost = 1200;
         rearm = 300;
-        requirements[] = {};
         vehicleSpawn = 1;
     };
 };

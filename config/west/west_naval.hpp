@@ -16,7 +16,7 @@ class Naval {
 
     class B_Boat_Armed_01_minigun_F {
         cost = 500;
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
     };	// "Speedboat Minigun"
 
@@ -26,24 +26,27 @@ class Naval {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        hasHMD = 1;
         name = "Riverine Command Boat";
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
         spawn = "B_Boat_Armed_01_minigun_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
                 "5Rnd_GAT_missiles",
-                "5Rnd_GAT_missiles"
+                "5Rnd_GAT_missiles",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1"
             };
             addWeapons[] = {
-                "cannon_20mm",
-                "missiles_titan"
+                "autocannon_30mm_RCWS",
+                "missiles_titan",
+                "weapon_AMRAAMLauncher"
             };
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt"
@@ -58,6 +61,7 @@ class Naval {
     class B_Boat_Transport_02_F {
         cost = 1500;
         description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
+        hasFastTravel = 1;
         name = "Supply RHIB";
         requirements[] = {"W"};
         spawn = "I_C_Boat_Transport_02_F";

@@ -16,7 +16,7 @@ class Naval {
 
     class O_Boat_Armed_01_hmg_F {
         cost = 500;
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
     };	// "Speedboat HMG"
 
@@ -26,24 +26,27 @@ class Naval {
         disallowMagazines[] = {
             "4Rnd_GAA_missiles"
         };
+        hasHMD = 1;
         name = "Alligator Attack Boat";
-        rearm = 400;
+        rearm = 120;
         requirements[] = {"W"};
         spawn = "O_Boat_Armed_01_hmg_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_HE_shells",
-                "60Rnd_20mm_AP_shells",
-                "60Rnd_20mm_AP_shells",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
                 "5Rnd_GAT_missiles",
-                "5Rnd_GAT_missiles"
+                "5Rnd_GAT_missiles",
+                "magazine_Missile_AA_R77_x1",
+                "magazine_Missile_AA_R77_x1"
             };
             addWeapons[] = {
-                "cannon_20mm",
-                "missiles_titan"
+                "autocannon_30mm_RCWS",
+                "missiles_titan",
+                "weapon_R77Launcher"
             };
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt"
@@ -58,6 +61,7 @@ class Naval {
     class O_Boat_Transport_02_F {
         cost = 1500;
         description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
+        hasFastTravel = 1;
         name = "Supply RHIB";
         requirements[] = {"W"};
         spawn = "I_C_Boat_Transport_02_F";

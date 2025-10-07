@@ -1,48 +1,58 @@
 class RemoteControl {
-    class RuggedTerminal_01_communications_F {
-        cost = 50;
-        demolishable = 1;
-        loadable[] = {0, 0, 0};
-        name = "Ground Support Terminal";
-        offset[] = {0, 3, 0};
-        requirements[] = {};
-    };
-
     class O_UGV_02_Demining_F {
         cost = 100;
         loadable[] = {0, -1, -0.5};
         offset[] = {0, 3, 0};
-        rearm = 200;
-        requirements[] = {};
+        rearm = 120;
     };  // "UGAS demining"
 
     class O_UGV_01_F {
         cost = 150;
         loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
-        requirements[] = {};
     };  // "UGV Stomper"
 
     class O_UAV_01_F {
         cost = 500;
         hasHMD = 1;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     };  // "AR-2"
 
     class O_UGV_01_rcws_F {
         cost = 500;
         loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
-        rearm = 300;
-        requirements[] = {};
+        rearm = 120;
     };  // "UGAV rcws"
 
     class O_UAV_06_F {
         cost = 1000;
         offset[] = {0, 3, 0};
-        requirements[] = {};
     };  // "AR-6"
+
+    // class O_UAV_06_up_F {
+    //     cost = 3500;
+    //     description = "AR-6 Pelican UP is a variant of the AR-6 Pelican armed with demining charges.";
+    //     hasHMD = 1;
+    //     name = "AR-6 Pelican UP";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 300;
+    //     spawn = "O_UAV_06_F";
+    //     variant = 1;
+
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonRack_4Rnd_BombDemine_01_F",
+    //             "PylonRack_4Rnd_BombDemine_01_F",
+    //             "PylonRack_4Rnd_BombDemine_01_F",
+    //             "PylonRack_4Rnd_BombDemine_01_F"
+    //         };
+    //         addWeapons[] = {
+    //             "BombDemine_01_F"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     // class O_UAV_01_UP_F {
     //     cost = 1200;

@@ -23,23 +23,23 @@ class Gear {
             { "SatchelCharge_Remote_Mag", 3},
             { "SLAMDirectionalMine_Wire_Mag", 3},
 
+            { "bipod_03_F_blk", 5 },
+
             { "B_FieldPack_cbr", 5 },
             { "B_Carryall_mcamo", 5 }
         };
         cost = 200;
-        demolishable = 1;
+        demolishable = 3;
         description = "Independent gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
         loadable[] = { 0, -1, 0.5 };
         name = "Independent Supply Crate";
         offset[] = { 0, 3, 0};
         spawn = "VirtualReammoBox_camonet_F";
-        requirements[] = {};
     };
 
     class Box_IND_AmmoVeh_F {
         cost = 250;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0 };
-        requirements[] = {};
     }; // "Vehicle Ammo [AAF]"
 };

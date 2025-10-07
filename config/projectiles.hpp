@@ -65,13 +65,35 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Missile_AMRAAM_C",            // AMRAAM C
             "ammo_Missile_AMRAAM_D",            // AMRAAM D
-            "ammo_Missile_AA_R77",              // R-77
+            "ammo_Missile_AA_R77"               // R-77
+        };
+        aps = 3;
+        camera = 1;
+        loal = 1;
+        sam = 1;
+        speed = 3;
+    };
+
+    class WLProjectile_A2ANoLoal: WLProjectile {
+        ammo[] = {
             "M_Zephyr"                          // Zephyr
         };
         aps = 3;
         camera = 1;
         sam = 1;
         speed = 3;
+    };
+
+    class WLProjectile_A2AInfrared: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_AA_R73",              // R-73
+            "ammo_Missile_BIM9X",               // BIM-9X
+            "M_Air_AA",                         // ASRAAM
+            "Missile_AA_03_F"                   // Sahr-3
+        };
+        aps = 3;
+        sam = 1;
+        speed = 2;
     };
 
     class WLProjectile_SEAD: WLProjectile {
@@ -86,6 +108,17 @@ class WLProjectilesConfig {
         sead = 1;
     };
 
+    class WLProjectile_LightSEAD: WLProjectile {
+        ammo[] = {
+            "M_Sidearm"                         // AGM-122 Sidearm
+        };
+        aps = 1;
+        camera = 1;
+        consumption = 7;
+        dazzleable = 1;
+        sead = 1;
+    };
+
     class WLProjectile_TVGuided: WLProjectile {
         ammo[] = {
             "M_Lancet",
@@ -93,8 +126,19 @@ class WLProjectilesConfig {
         };
         aps = 0;
         consumption = 1;
-        speed = 150;
+        speed = 300;
         tv = 1;
+    };
+
+    class WLProjectile_BunkerBuster: WLProjectile {
+        ammo[] = {
+            "Bomb_03_BLU_F",
+            "Bomb_04_PR_F"
+        };
+        aps = 3;
+        camera = 1;
+        bunker = 1;
+        remote = 1;
     };
 
     class WLProjectile_TVGuidedHeavy: WLProjectile {
@@ -122,7 +166,9 @@ class WLProjectilesConfig {
     class WLProjectile_GPSGuidedBomb: WLProjectile {
         ammo[] = {
             "ammo_gbu12_gps",
-            "ammo_kab250se"
+            "ammo_kab250se",
+            "ammo_stormbreaker",
+            "ammo_upmk_d30"
         };
         aps = 3;
         camera = 1;
@@ -134,10 +180,21 @@ class WLProjectilesConfig {
             "M_Excalibur",
             "M_Krasnopol"
         };
-        aps = 2;
-        consumption = 3;
-        tv = 1;
+        aps = 1;
+        consumption = 6;
+        terminal = 1;
     };
+
+    class WLProjectile_GLSDB: WLProjectile {
+        ammo[] = {
+            "M_GLSDB"
+        };
+        aps = 0;
+        camera = 1;
+        consumption = 1;
+        dazzleable = 1;
+        gps = 1;
+    };  
 
     class WLProjectile_ExtendedSAM: WLProjectile {
         ammo[] = {

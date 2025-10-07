@@ -62,21 +62,18 @@ class FixedWing {
 
     class B_Plane_Caesar_bomb_01_F {
         ammoOverrides[] = {
-            {"Bo_GBU12_LGB", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+            {"Bo_GBU12_LGB", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
         };
-        cost = 2000;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
-        hasRemoteBomb = 1;
+        cost = 1500;
+        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
+        hasHMD = 1;
         name = "Caesar BTT (Bomb)";
-        rearm = 400;
+        rearm = 300;
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
         variant = 1;
 
         class Pilot: WLTurretDefaults {
-            turret[] = { -1 };
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             addMagazines[] = {
                 "2Rnd_GBU12_LGB",
                 "240Rnd_CMFlare_Chaff_Magazine"
@@ -85,16 +82,21 @@ class FixedWing {
                 "GBU12BombLauncher",
                 "CMFlareLauncher"
             };
+            turret[] = { -1 };
         };
     };
 
     class B_T_VTOL_01_infantry_F {
         cost = 2000;
+        hasAirRearm = 1;
+        hasHMD = 1;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Inf)"
 
     class B_T_VTOL_01_vehicle_F {
         cost = 2000;
+        hasAirRearm = 1;
+        hasHMD = 1;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Vic)"
 
@@ -130,17 +132,92 @@ class FixedWing {
     class B_T_VTOL_01_armed_F {
         cost = 8000;
         hasHMD = 1;
-        rearm = 500;
+        hasTurretVisualizer = 1;
+        rearm = 300;
         requirements[] = {"A"};
     }; // "V-44 X Blackfish (Armed)"
 
+    class B_T_VTOL_01_armed_up_F {
+        cost = 10000;
+        hasHMD = 1;
+        hasTurretVisualizer = 1;
+        name = "V-44 J Archerfish";
+        rearm = 300;
+        requirements[] = {"A"};
+        spawn = "B_T_VTOL_01_armed_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher_Triples"
+            };
+            turret[] = { -1 };
+        };
+
+        class Copilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1",
+                "magazine_Bomb_SDB_x1"
+            };
+            addWeapons[] = {
+                "weapon_SDBLauncher",
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "Laserbatteries"
+            };
+            removeWeapons[] = {
+                "Laserdesignator_mounted"
+            };
+            turret[] = { 0 };
+        };
+
+        class RightGunner: WLTurretDefaults {
+            addMagazines[] = {
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green"
+            };
+            addWeapons[] = {
+                "autocannon_30mm_RCWS"
+            };
+            removeMagazines[] = {
+                "240Rnd_40mm_GPR_Tracer_Red_shells",
+                "160Rnd_40mm_APFSDS_Tracer_Red_shells"
+            };
+            removeWeapons[] = {
+                "autocannon_40mm_VTOL_01"
+            };
+            turret[] = { 2 };
+        };
+    };
+
     class B_Plane_CAS_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons5", "Pylons6"}}
+        };
+        ammoOverrides[] = {
+            {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}}
         };
         cost = 13000;
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -170,9 +247,8 @@ class FixedWing {
         cost = 19000;
         description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
         hasHMD = 1;
-        hasRemoteBomb = 1;
         name = "A-149 Gryphon";
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
         spawn = "I_Plane_Fighter_04_F";
         textures[] = {
@@ -202,9 +278,13 @@ class FixedWing {
     class B_Plane_Fighter_01_Growler_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_AMRAAM_D_x2",
-            "PylonRack_Missile_HARM_x1"
+            "PylonRack_Missile_HARM_x1",
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
         };
-        cost = 24000;
+        ammoOverrides[] = {
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        };
+        cost = 19000;
         disallowMagazines[] = {
             "PylonRack_Bomb_SDB_x4",
             "PylonRack_Bomb_GBU12_x2",
@@ -213,12 +293,14 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x1",
             "PylonRack_Missile_AGM_02_x2"
         };
+        ecm[] = {{"MissileCore"}, 0, 16000, 1, 2, 120};
         hasAWACS = 1;
         hasHMD = 1;
         name = "EF/A-181 Growler";
-        rearm = 720;
+        rearm = 420;
         requirements[] = {"A"};
         spawn = "B_Plane_Fighter_01_F";
+        threatDetection = 8000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -239,7 +321,7 @@ class FixedWing {
         };
         cost = 26000;
         hasHMD = 1;
-        rearm = 900;
+        rearm = 420;
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
@@ -256,17 +338,20 @@ class FixedWing {
     class B_Plane_Fighter_01_Stealth_F {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}},
+            {"PylonRack_Missile_AMRAAM_D_x2", {"pylonBayCenter5", "pylonBayCenter6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
+            {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 26000;
-        hasGPSMunition = 1;
         hasHMD = 1;
         hasReconOptics = 1;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
-        rearm = 720;
+        rearm = 420;
         requirements[] = {"A"};
         variant = 1;
 
@@ -295,7 +380,6 @@ class FixedWing {
     //         "PylonMissile_Bomb_GBU12_x1"
     //     };
     //     hasHMD = 1;
-    //     hasRemoteBomb = 1;
     //     name = "F/A-181 Black Wasp II (Land Attack)";
     //     rearm = 1200;
     //     requirements[] = {"A"};
@@ -312,11 +396,10 @@ class FixedWing {
     //         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}}
     //     };
     //     cost = 31000;
-    //     description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher. How to use:<br/>1. Use scroll wheel menu to configure GPS munition target.<br/>2. Launch GBU-12.";
+    //     description = "F/A-181 Black Wasp II (Standoff) is a variant of the F/A-181 Black Wasp II with a GPS-guided GBU-12 launcher.";
     //     disallowMagazines[] = {
     //         "PylonMissile_Bomb_GBU12_x1"
     //     };
-    //     hasGPSMunition = 1;
     //     hasHMD = 1;
     //     name = "F/A-181 Black Wasp II (Standoff)";
     //     rearm = 1200;
