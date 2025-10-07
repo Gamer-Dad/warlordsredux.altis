@@ -268,7 +268,10 @@ class FixedWing {
     class O_Plane_Fighter_04_F {
         allowPylonMagazines[] = {
             "PylonMissile_Missile_KH58_x1",
+            "PylonRack_1Rnd_LG_scalpel",
             "PylonRack_3Rnd_LG_scalpel",
+            "PylonRack_4Rnd_LG_scalpel",
+            "PylonRack_Missile_AMRAAM_D_x1",
             "PylonRack_Missile_AMRAAM_D_x2",
             "PylonMissile_Missile_AA_R77_x1",
             "PylonMissile_Missile_AA_R73_x1"
