@@ -34,6 +34,9 @@ jobs:
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitmodules" -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitattributes" -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\src\ui\source" -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\src\ui\packageui.bat" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\src\ui\build.mjs" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\src\ui\loader.mjs" -Force -ErrorAction SilentlyContinue
 
       - name: Build PBO from pbo_src
         run: |
