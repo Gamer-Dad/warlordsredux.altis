@@ -33,7 +33,7 @@ jobs:
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.github" -Recurse -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitmodules" -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\.gitattributes" -Force -ErrorAction SilentlyContinue
-          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\src\ui\source" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:GITHUB_WORKSPACE\pbo_src\src\ui\source" -Recurse -Force -ErrorAction SilentlyContinue
 
       - name: Build PBO from pbo_src
         run: |
