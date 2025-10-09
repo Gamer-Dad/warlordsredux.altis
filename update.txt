@@ -33,7 +33,7 @@ Prices
 * Hercules: $20,000->$22,000
 
 Munition changes
-* New: AGM-122 Sidearm: anti-radiation missile on Scalpel base, consumes 7 APS charges (only when used in ARM role), can be manually/IR guided as regular Scalpels.
+* New: AGM-122 Sidearm: anti-radiation missile on Scalpel base, consumes 13 APS charges (only when used in ARM role), can be manually/IR guided as regular Scalpels.
 * New: Bunker busters: remote TV-guided, can do damage to strongholds and FOBs.
 * New: LOAL mode now supported for long-range Fox-3s, can kill enemy aircaft at extreme ranges.
 * Changed: short-range Fox-2 missiles have significantly increased probability of hit.
@@ -81,8 +81,12 @@ New interfaces
 
 Map
 * Moved Kavirida Caves to Kavirida.
-* Removed some connections around Dorida.
+* Remove multiple connections around Dorida.
+* Removed connection from Quarry to Chalkeia.
 * Connect Xirolimni Dam to Poliakko.
+* Significantly reduced size of Sfaka.
+* Significantly reduced size/income of carrier sectors.
+* The following sectors have a chance of not spawning: Abdera, Aktinarki Ruins, Central Terminal, Didymos Turbines, Hill 275, Hillside Chapel, Ioannina, Koroni, Lakka, Neri, Paros, Poliakko, Skopos Castle Ruins, Theater Ruins.
 
 ECM jammers 
 * For: scout/attack helos, Xian.
@@ -140,6 +144,7 @@ Misc
 * Added approx funds for teammates in transfer menu tooltips.
 * Removed recruit tag for more granular level tags.
 * Added rebindable keys for earplugs (buldozer switch camera, default: insert) and cqb mode (zeus delete, default: delete).
+* Raised vehicle paradrop height to 150m, limit now per-vehicle, can no longer paradrop to sector targeted by enemy team.
 
 Bugfixes
 * Fixed bug where variant names would sometimes not draw correctly.
@@ -166,3 +171,4 @@ Bugfixes
 * Fixed bug where roads would not be valid spawn points.
 * Performance improvements to lock, repair actions, uav terminal, map icons, spawn positioning.
 * Removed smoke script due to performance issues.
+* Removed code paths for munition scanner.
