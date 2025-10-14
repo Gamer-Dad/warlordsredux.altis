@@ -74,6 +74,7 @@ New interfaces
 * Loadout menu: allows more weapons and granular ammo controls, rebalanced weapon levels.
 * Badges: can earn and apply badges in place of level.
 * Death info: now shows killer badge.
+* Report: refreshed report interface.
 * Scoreboard: now shows WL relevant info and scores.
 * Targeting menus: now can be easily controllable in flight.
 * Turret visualizer: added turret visualizer for aircraft that have restrictive gunner turrets.
@@ -86,7 +87,7 @@ Map
 * Connect Xirolimni Dam to Poliakko.
 * Significantly reduced size of Sfaka.
 * Significantly reduced size/income of carrier sectors.
-* The following sectors have a chance of not spawning: Abdera, Aktinarki Ruins, Central Terminal, Didymos Turbines, Hill 275, Hillside Chapel, Ioannina, Koroni, Lakka, Neri, Paros, Poliakko, Skopos Castle Ruins, Theater Ruins.
+* The following sectors have a small chance of not spawning: Abdera, Aktinarki Ruins, Central Terminal, Didymos Turbines, Hill 275, Hillside Chapel, Ioannina, Koroni, Lakka, Neri, Paros, Poliakko, Skopos Castle Ruins, Theater Ruins.
 
 ECM jammers 
 * For: scout/attack helos, Xian.
@@ -130,7 +131,7 @@ Misc
 * Removed last/saved loadout options.
 * Unclaimed green vehicles are deleted when sector is captured.
 * Removed preset spawns from Skopos Base.
-* Replaced respawn tent backpacks with chemlights.
+* Replaced respawn tents. Thrown chemlights now deploy tents.
 * Removed range limit for fast travel tag-along AI.
 * Increased "AI get in" range to 150m.
 * Triggering APS will now store hitter for reward, in case vehicle is removed.

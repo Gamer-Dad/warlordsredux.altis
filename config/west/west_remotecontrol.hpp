@@ -23,7 +23,7 @@ class RemoteControl {
         loadable[] = {0, -1, 1.1};
         offset[] = {0, 5, 0};
         rearm = 120;
-    }; // "UGAS"
+    }; // "UGV Stomper RCWS"
 
     class B_UAV_06_F {
         cost = 1000;
@@ -63,36 +63,6 @@ class RemoteControl {
     //     };
     // };
 
-    // class B_UGV_01_rcws_UP_F {
-    //     cost = 1200;
-    //     description = "UGV Stomper UP is a variant of the UGV Stomper armed with a 30mm autocannon.";
-    //     name = "UGV Stomper UP";
-    //     offset[] = {0, 5, 0};
-    //     rearm = 300;
-    //     requirements[] = {};
-    //     spawn = "B_UGV_01_rcws_F";
-    //     variant = 1;
-
-    //     class Gunner: WLTurretDefaults {
-    //         turret[] = { 0 };
-    //         removeMagazines[] = {
-    //             "96Rnd_40mm_G_belt"
-    //         };
-    //         removeWeapons[] = {
-    //             "GMG_40mm"
-    //         };
-    //         addMagazines[] = {
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_AP_shells",
-    //             "60Rnd_20mm_AP_shells"
-    //         };
-    //         addWeapons[] = {
-    //             "cannon_20mm"
-    //         };
-    //     };
-    // };
-
     // class B_UAV_02_recon_F {
     //     cost = 2000;
     //     description = "Greyhawk (Recon) is an unarmed variant of the Greyhawk with a powerful scanner.";
@@ -114,6 +84,27 @@ class RemoteControl {
     //     rearm = 300;
     //     requirements[] = {"H"};
     //     spawn = "B_UAV_02_dynamicLoadout_F";
+    // };
+
+    // class B_UGV_01_bomb_F {
+    //     cost = 2500;
+    //     description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+    //     name = "UGV Stomper (Bomb)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 900;
+    //     requirements[] = {};
+    //     spawn = "B_UGV_01_F";
+    //     variant = 1;
+
+    //     class Driver: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonMissile_1Rnd_Mk82_F"
+    //         };
+    //         addWeapons[] = {
+    //             "Mk82BombLauncher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
     // };
 
     class B_UAV_02_dynamicLoadout_F {
