@@ -106,8 +106,10 @@ Misc
 * Added destroyers: 30% chance to replace each carrier and a 70% chance to spawn in Pyrgos bay.
 * Added bipods to gear crate / attachment options.
 * Capture bar now thinner.
-* Demolition now requires continuous hold action and occurs in steps. Damage can be repaired. FOB can be repaired on map to full for 10K supplies.
-* Demolition conditions loosened to allow moving around within 10m.
+* Demolition now requires continuous action and occurs in steps. Damage can be repaired.
+* FOB can be repaired on map to full for 10K supplies.
+* Reworked repair tires/tracks to be locked action.
+* Reworked revive to be locked action.
 * Separated buildings (max: 25) vs assets (max: 10) for the purpose of asset limits.
 * Added buy menu scroll wheel action, can be disabled in settings.
 * Player who places FOB can delete it directly from the map.
@@ -138,14 +140,19 @@ Misc
 * Removed obstructions on carrier during attack phase, moved AI spawns.
 * Added occasional night, earthquakes.
 * Waypoint now visible on more remote munitions.
+* Scanner circles now visible to enemies on map.
 * Aircraft flying off map gets Return to Base scroll wheel option.
 * Disabled ground vehicle scanner over water.
 * Disabled removing aircraft after ejection.
 * Disabled strongholding until 30m into game.
+* Disabled removing strongholds while intruders are present.
+* Respawns into base under attack spawns defender reinforcements in parachutes.
 * Added approx funds for teammates in transfer menu tooltips.
 * Removed recruit tag for more granular level tags.
 * Added rebindable keys for earplugs (buldozer switch camera, default: insert) and cqb mode (zeus delete, default: delete).
 * Raised vehicle paradrop height to 150m, limit now per-vehicle, can no longer paradrop to sector targeted by enemy team.
+* AI may be revived until you die.
+* Increased enemies nearby restriction radius to 175m, added option to Fast Travel Home not subject to restriction.
 
 Bugfixes
 * Fixed bug where variant names would sometimes not draw correctly.
@@ -170,6 +177,8 @@ Bugfixes
 * Fixed carrier fixed wing spawn angle to reduce incidences of wing clipping side.
 * Fixed some cases where AI would become responsive after revive.
 * Fixed bug where roads would not be valid spawn points.
+* Fixed bug where revived player might instantly go down again.
+* Fixed bug where some parachuting players may still block asset spawning.
 * Performance improvements to lock, repair actions, uav terminal, map icons, spawn positioning.
 * Removed smoke script due to performance issues.
 * Removed code paths for munition scanner.
