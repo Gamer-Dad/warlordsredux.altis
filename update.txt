@@ -9,6 +9,7 @@ New
 * Strider (Recon)
 * M5A2 Sandstorm II (GLSDB)
 * R-750 Cronus (ECM)
+* Spawn bunker (FOB-only)
 
 Removed
 * Taru Recon
@@ -33,11 +34,12 @@ Prices
 * Hercules: $20,000->$22,000
 
 Munition changes
-* New: AGM-122 Sidearm: anti-radiation missile on Scalpel base, consumes 13 APS charges (only when used in ARM role), can be manually/IR guided as regular Scalpels.
+* New: AGM-122 Sidearm: anti-radiation missile on Scalpel base, consumes 13 APS charges when used in ARM role.
 * New: Bunker busters: remote TV-guided, can do damage to strongholds and FOBs.
 * New: LOAL mode now supported for long-range Fox-3s, can kill enemy aircaft at extreme ranges.
 * Changed: short-range Fox-2 missiles have significantly increased probability of hit.
 * Changed: anti-radiation missiles now attack modes based on the nose pitch of the aircraft (point down for more direct attack, up for top attack).
+* Changed: HARM and KH58 are no longer dazzleable.
 * Changed: remote TV-guided munitions no longer require ground support station, controller must be in squad.
 * Changed: switchblade speed and range doubled, can now hit low altitude air targets.
 
@@ -55,9 +57,9 @@ Asset-specific changes
 * Pawnee: added triple-rack Scalpel pylon, added Skyfire pylon, added HMD, replaced minigun with 20mm, added countermeasures.
 * Orca: added DAGR-M pylon.
 * Falcon: added ASRAAM pylon.
-* Kajman: added R73 pylon.
-* Blackfoot: added 4 racks of triple-rack Sidearms.
-* Blackfoot Block II: added 4 racks of triple-rack Sidearms.
+* Kajman: added R73 pylon, added 2 mags HE gunner ammo.
+* Blackfoot: added 4 racks of triple-rack Sidearms, added 1 mag HE gunner ammo.
+* Blackfoot Block II: added 4 racks of triple-rack Sidearms, added 1 mag HE gunner ammo.
 * Xian: added 4 SDBs (pilot) and replaced gun with more effective 30mm.
 * Wipeout: added 2 pylons of bunker buster bombs, added DAGR-M pylon.
 * Buzzard: can now launch remote TV-guided bombs, added one pylon of bunker buster bombs.
@@ -107,12 +109,15 @@ Misc
 * Added bipods to gear crate / attachment options.
 * Capture bar now thinner.
 * Demolition now requires continuous action and occurs in steps. Damage can be repaired.
-* FOB can be repaired on map to full for 10K supplies.
+* FOB can be repaired on map to full for 10K supplies, repairs 1 point every minute automatically.
+* Added FOB min range circle on map.
 * Reworked repair tires/tracks to be locked action.
 * Reworked revive to be locked action.
+* Revive now defaults to holding on until 5 second before respawn unless longer incapacitation state (90s) triggered.
 * Separated buildings (max: 25) vs assets (max: 10) for the purpose of asset limits.
 * Added buy menu scroll wheel action, can be disabled in settings.
 * Player who places FOB can delete it directly from the map.
+* Increase FOB sector support range to 2km, decreased circle to 75m.
 * Attacking or defending sector now gives active income.
 * Added reward for recon scanning, only applies if player is in the truck.
 * Allow using recon optics out of gunner camera view.
@@ -122,12 +127,15 @@ Misc
 * Enemy target reset is now a system message.
 * Triggering dazzler now gives $10 reward.
 * APS/Dazzler rewards now vary based on consumption.
+* APS and dazzler can now all be switched on/off with cycle thrown key (default: Ctrl+G).
+* Added APS friendly fire warning.
 * Dazzlers now emit radiation for anti-radiation missiles.
 * Removed demolish eligibility for some static weapons.
 * Removed AR glasses for infantry.
 * Reworked demolition.
 * Added demolition to enemy tents.
 * Level 50 restriction for placing map markers.
+* Attack helo device jammer now APS jammer, no longer requires player gunner.
 * Adjusted missile camera large mode to not steal focus.
 * Adjusted sector vehicle spawns to depend on sector value/size, sectors spawn double vehicles.
 * Removed last/saved loadout options.
@@ -169,6 +177,7 @@ Bugfixes
 * Fixed memory leak for enemy capture handler.
 * Fixed bug where towed vehicles would become un-drivable on hills.
 * Fixed fast traveling while dead.
+* Fixed most instances of bad spawns for stronghold (ie, falling out of tower).
 * Fixed some cases where aircraft reward would not be given to correct player.
 * Fixed vote display text cut off.
 * Fixed tent spawn issues.

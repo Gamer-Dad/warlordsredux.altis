@@ -53,6 +53,15 @@ class Structures {
         offset[] = {0, 8, 0};
     };  // "Cargo Tower"
 
+    class Land_BagBunker_01_large_green_F {
+        cost = 2000;
+        demolishable = 3;
+        hasFastTravel = 1;
+        name = "Spawn Bunker";
+        offset[] = {0, 10, 0};
+        requirements[] = {"F"};
+    }; // "Bunker (Large, Green)"
+
     class Land_MobileRadar_01_radar_F {
         cost = 2500;
         demolishable = 5;

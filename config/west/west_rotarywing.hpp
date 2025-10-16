@@ -198,6 +198,7 @@ class RotaryWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 11000;
+        hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
         offset[] = {0, 10, 0};
@@ -205,7 +206,6 @@ class RotaryWing {
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
@@ -217,6 +217,9 @@ class RotaryWing {
         };
 
         class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "1000Rnd_20mm_shells"
+            };
             deviceJammer = 1;
             turret[] = { 0 };
         };
@@ -235,6 +238,7 @@ class RotaryWing {
         };
         cost = 13000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
+        hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
         name = "AH-99 Blackfoot Block II";
@@ -243,11 +247,9 @@ class RotaryWing {
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
-            addMagazines[] = {};
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = {};
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -255,6 +257,9 @@ class RotaryWing {
         };
 
         class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "1000Rnd_20mm_shells"
+            };
             deviceJammer = 1;
             turret[] = { 0 };
         };
