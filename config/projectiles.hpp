@@ -140,6 +140,14 @@ class WLProjectilesConfig {
         remote = 1;
     };
 
+    class WLProjectile_DumbBunkerBuster: WLProjectile {
+        ammo[] = {
+            "Bo_Mk82_BLU"
+        };
+        aps = 3;
+        bunker = 1;
+    };
+
     class WLProjectile_TVGuidedHeavy: WLProjectile {
         ammo[] = {
             "M_Spike",

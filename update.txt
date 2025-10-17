@@ -10,6 +10,7 @@ New
 * M5A2 Sandstorm II (GLSDB)
 * R-750 Cronus (ECM)
 * Spawn bunker (FOB-only)
+* UGV Stomper (Bomb)
 
 Removed
 * Taru Recon
@@ -159,6 +160,7 @@ Misc
 * Removed recruit tag for more granular level tags.
 * Added rebindable keys for earplugs (buldozer switch camera, default: insert) and cqb mode (zeus delete, default: delete).
 * Raised vehicle paradrop height to 150m, limit now per-vehicle, can no longer paradrop to sector targeted by enemy team.
+* Can no longer paradrop after vehicle is damage, for 30 seconds.
 * AI may be revived until you die.
 * Increased enemies nearby restriction radius to 175m, added option to Fast Travel Home not subject to restriction.
 
@@ -188,6 +190,6 @@ Bugfixes
 * Fixed bug where roads would not be valid spawn points.
 * Fixed bug where revived player might instantly go down again.
 * Fixed bug where some parachuting players may still block asset spawning.
-* Performance improvements to lock, repair actions, uav terminal, map icons, spawn positioning.
+* Performance improvements to lock, repair actions, uav terminal, map icons, spawn positioning, sector attack/defend.
 * Removed smoke script due to performance issues.
 * Removed code paths for munition scanner.

@@ -8,7 +8,7 @@ class RemoteControl {
 
     class B_UGV_01_F {
         cost = 150;
-        loadable[] = {0, -1, 1.1};
+        loadable[] = {-0.4, -1, 1.1};
         offset[] = {0, 5, 0};
     }; // "UGV Stomper"
 
@@ -20,7 +20,7 @@ class RemoteControl {
 
     class B_UGV_01_rcws_F {
         cost = 500;
-        loadable[] = {0, -1, 1.1};
+        loadable[] = {-0.4, -1, 1.1};
         offset[] = {0, 5, 0};
         rearm = 120;
     }; // "UGV Stomper RCWS"
@@ -86,26 +86,30 @@ class RemoteControl {
     //     spawn = "B_UAV_02_dynamicLoadout_F";
     // };
 
-    // class B_UGV_01_bomb_F {
-    //     cost = 2500;
-    //     description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
-    //     name = "UGV Stomper (Bomb)";
-    //     offset[] = {0, 5, 0};
-    //     rearm = 900;
-    //     requirements[] = {};
-    //     spawn = "B_UGV_01_F";
-    //     variant = 1;
+    class B_UGV_01_bomb_F {
+        ammoOverrides[] = {
+            {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
+        };
+        cost = 3500;
+        description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+        loadable[] = {-0.4, -1, 1.1};
+        name = "UGV Stomper (Bomb)";
+        offset[] = {0, 5, 0};
+        rearm = 900;
+        requirements[] = {};
+        spawn = "B_UGV_01_F";
+        variant = 1;
 
-    //     class Driver: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "PylonMissile_1Rnd_Mk82_F"
-    //         };
-    //         addWeapons[] = {
-    //             "Mk82BombLauncher"
-    //         };
-    //         turret[] = { -1 };
-    //     };
-    // };
+        class Driver: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonMissile_1Rnd_Mk82_F"
+            };
+            addWeapons[] = {
+                "Mk82BombLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
 
     class B_UAV_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
