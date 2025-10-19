@@ -13,7 +13,7 @@ class Structures {
 
     class Land_DragonsTeeth_01_4x2_new_F {
         cost = 50;
-        demolishable = 2;
+        demolishable = 3;
         offset[] = {0, 5, 0};
     };  // "Tank barrier"
 

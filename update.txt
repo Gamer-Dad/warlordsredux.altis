@@ -94,7 +94,7 @@ Map
 * All non-runway sectors other than Atsalis can now be home base.
 * The following sectors have a small chance of not spawning: Abdera, Aktinarki Ruins, Central Terminal, Didymos Turbines, Hill 275, Hillside Chapel, Ioannina, Koroni, Lakka, Neri, Paros, Poliakko, Skopos Castle Ruins, Theater Ruins.
 
-ECM jammers 
+ECM jammers
 * For: scout/attack helos, Xian.
 * Allows equipped aircraft to jam and destroy incoming missiles.
 * Limited by ammo, recharged on a timer, more pods = more ammo, faster recharge.
@@ -108,6 +108,8 @@ Map voting
 * Moved surrender voting to map vote (reduced voting power, individual).
 
 Misc
+* Added more granular HMD settings, can now separately adjust view distance for different vehicle types (default key: B).
+* Removed infantry icons from air defense HMD.
 * Added destroyers: 30% chance to replace each carrier and a 70% chance to spawn in Pyrgos bay.
 * Added bipods to gear crate / attachment options.
 * Capture bar now thinner.
