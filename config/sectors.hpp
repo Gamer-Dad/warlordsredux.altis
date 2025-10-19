@@ -226,6 +226,12 @@ class CfgWarlordSectors {
         location[] = {11522.6, 11725.7, 0};
         name = "AAC Airfield";
         services[] = {"W", "A", "H"};
+        vehicles[] = {
+            {"I_MBT_03_cannon_F", {11570.9, 11830.7, 2.54882}, 0.00351501},
+            {"I_APC_tracked_03_cannon_F", {11376.7, 11736.5, 2.30288}, 359.966},
+            {"I_APC_Wheeled_03_cannon_F", {11524.8, 11608.5, 2.52522}, 281.598},
+            {"I_LT_01_AA_F", {11603.8, 11943, 1.98048}, 126.28}
+        };
     };
 
     class Abdera {
@@ -274,14 +280,25 @@ class CfgWarlordSectors {
         location[] = {14324.9, 16178.7, 0};
         name = "Airbase";
         services[] = {"A", "H", "W"};
+        vehicles[] = {
+            {"I_MBT_03_cannon_F", {14305.3, 16330.2, 2.55369}, 105.029},
+            {"I_APC_tracked_03_cannon_F", {14434.8, 16262.2, 2.29628}, 58.1497},
+            {"I_LT_01_AA_F", {14187.4, 16358.4, 1.98146}, 59.5097},
+            {"I_LT_01_AT_F", {14165.6, 16190.6, 1.98273}, 154.81},
+            {"I_LT_01_scout_F", {14296, 16238.2, 1.93782}, 359.982}
+        };
     };
 
     class AirbaseCompound {
         area[] = {150, 300, 43.549, 1};
-        disableHome = 1;
         location[] = {15152.5, 17272.6, 0};
         name = "Airbase Compound";
         services[] = {"H"};
+        vehicles[] = {
+            {"I_APC_tracked_03_cannon_F", {15069.7, 17181.8, 2.29807}, 112.731},
+            {"I_APC_Wheeled_03_cannon_F", {15124.3, 17291.6, 2.53244}, 125.913},
+            {"I_LT_01_AA_F", {15283.2, 17412.8, 1.98067}, 139.463}
+        };
     };
 
     class AktinarkiRuins {
@@ -300,7 +317,6 @@ class CfgWarlordSectors {
 
     class AlmyraOutskirts {
         area[] = {160, 150, 147.52, 0};
-        disableHome = 1;
         location[] = {22898.8, 17108.5, 0};
         name = "Almyra Outskirts";
         services[] = {"H"};
@@ -312,6 +328,12 @@ class CfgWarlordSectors {
         location[] = {9126.7, 21516.0, 0};
         name = "Ammolofi Airfield";
         services[] = {"A", "H"};
+        vehicles[] = {
+            {"I_LT_01_AA_F", {9174.73, 21690.2, 1.98212}, 0.000878698},
+            {"I_LT_01_scout_F", {9186.75, 21442.5, 1.93378}, 359.996},
+            {"I_APC_tracked_03_cannon_F", {9131.28, 21528.8, 2.36784}, 118.213},
+            {"I_MBT_03_cannon_F", {9309.67, 21535.5, 2.55115}, 180.38}
+        };
     };
 
     class Anthrakia {
@@ -458,7 +480,6 @@ class CfgWarlordSectors {
 
     class FeresHill {
         area[] = {150, 150, 228.118, 0};
-        disableHome = 1;
         location[] = {23056.8, 7272.02, 0};
         name = "Feres Hill";
         services[] = {"H", "W"};
@@ -518,6 +539,7 @@ class CfgWarlordSectors {
         area[] = {150, 150, 128.18, 0};
         location[] = {3558.12, 19991.2, 0};
         name = "Hill 275";
+        services[] = {"W"};
         spawn = 0.9;
     };
 
@@ -590,10 +612,14 @@ class CfgWarlordSectors {
 
     class KoreFactory {
         area[] = {225, 100, 180, 1};
-        disableHome = 1;
         location[] = {6181.93, 16230.2, 0};
         name = "Kore Factory";
         services[] = {"H"};
+        vehicles[] = {
+            {"I_LT_01_AA_F", {6175.51, 16246.5, 1.98044}, 360},
+            {"I_APC_Wheeled_03_cannon_F", {5980.28, 16158.4, 2.53535}, 359.967},
+            {"I_APC_tracked_03_cannon_F", {6372.6, 16165.7, 2.27024}, 179.58}
+        };
     };
 
     class Koroni {
@@ -612,10 +638,14 @@ class CfgWarlordSectors {
 
     class LakkaFactory {
         area[] = {300, 225, 128.641, 0};
-        disableHome = 1;
         location[] = {12738.6, 16532, 0};
         name = "Lakka Factory";
         services[] = {"H"};
+        vehicles[] = {
+            {"I_APC_Wheeled_03_cannon_F", {12827.3, 16735.8, 2.52026}, 0.0293038},
+            {"I_APC_tracked_03_cannon_F", {12877.7, 16734.4, 2.30035}, 359.953},
+            {"I_LT_01_AA_F", {12681.9, 16343.7, 1.98142}, 359.999}
+        };
     };
 
     class LimniSwamp {
@@ -663,6 +693,12 @@ class CfgWarlordSectors {
         location[] = {26960.2, 24745.1, 0};
         name = "Molos Airfield";
         services[] = {"A", "H", "W"};
+        vehicles[] = {
+            {"I_MBT_03_cannon_F", {26864.9, 24527.4, 2.56817}, 210.569},
+            {"I_LT_01_cannon_F", {26834.7, 24733.7, 1.93423}, 180.635},
+            {"I_MBT_03_cannon_F", {26764, 24582.7, 2.5563}, 106.592},
+            {"I_APC_Wheeled_03_cannon_F", {27119.9, 24808.7, 2.5245}, 237.328}
+        };
     };
 
     class Negades {
@@ -689,10 +725,14 @@ class CfgWarlordSectors {
 
     class NidasosBase {
         area[] = {200, 250, 110.387, 0};
-        disableHome = 1;
         location[] = {23582.1, 21097.7, 0};
         name = "Nidasos Base";
         services[] = {"H"};
+        vehicles[] = {
+            {"I_LT_01_AA_F", {23652.9, 21222.2, 2.07339}, 0.163848},
+            {"I_MRAP_03_gmg_F", {23712.5, 21060.7, 2.35946}, 0.0493411},
+            {"I_APC_tracked_03_cannon_F", {23461.9, 21156.1, 2.28936}, 0.254168}
+        };
     };
 
     class Nifi {
@@ -709,7 +749,6 @@ class CfgWarlordSectors {
 
     class Ochrolimni {
         area[] = {160, 130, 228.118, 0};
-        disableHome = 1;
         location[] = {23717.8, 16241.3, 0};
         name = "Ochrolimni";
         services[] = {"H"};
@@ -769,10 +808,13 @@ class CfgWarlordSectors {
 
     class PyrgosBase {
         area[] = {150, 125, 228.118, 1};
-        disableHome = 1;
         location[] = {17428.5, 13158, 0};
         name = "Pyrgos Base";
         services[] = {"W", "H"};
+        vehicles[] = {
+            {"I_LT_01_AA_F", {17406.6, 13201.5, 1.98382}, 359.992},
+            {"I_MBT_03_cannon_F", {17532.4, 13215.1, 2.57072}, 0.0363758}
+        };
     };
 
     class Rodopoli {
@@ -783,10 +825,12 @@ class CfgWarlordSectors {
 
     class SagonisiBase {
         area[] = {100, 70, 0, 1};
-        disableHome = 1;
         location[] = {14214.5, 13007.4, 0};
         name = "Sagonisi Base";
         services[] = {"W", "H"};
+        vehicles[] = {
+            {"I_APC_Wheeled_03_cannon_F", {14122.2, 12975.5, 2.52924}, 310.553}
+        };
     };
 
     class SaltFlats {
@@ -795,6 +839,13 @@ class CfgWarlordSectors {
         location[] = {23128.8, 18690.8, 0};
         name = "Salt Flats";
         services[] = {"A", "H"};
+        vehicles[] = {
+            {"I_LT_01_AA_F", {22929.5, 18888.3, 1.98274}, 0.0197255},
+            {"I_APC_tracked_03_cannon_F", {22970.9, 18921.8, 2.32592}, 0.018111},
+            {"I_APC_Wheeled_03_cannon_F", {23169.9, 18921.8, 2.5243}, 278.537},
+            {"I_LT_01_AT_F", {23015.6, 18589.3, 1.98167}, 360},
+            {"I_LT_01_AT_F", {23204.6, 18552.4, 1.98167}, 360}
+        };
     };
 
     class SelakanoOutpost {
@@ -815,6 +866,13 @@ class CfgWarlordSectors {
         location[] = {20977.2, 7358.35, 0};
         name = "Selekano Airbase";
         services[] = {"A", "H"};
+        vehicles[] = {
+            {"I_LT_01_cannon_F", {20741.5, 7113.01, 1.93268}, 359.999},
+            {"I_APC_Wheeled_03_cannon_F", {20783.3, 7228.2, 2.52519}, 262.114},
+            {"I_LT_01_AA_F", {21224.7, 7500, 1.97026}, 0.0814362},
+            {"I_MBT_03_cannon_F", {20960, 7287.06, 2.56593}, 0.149642},
+            {"I_LT_01_cannon_F", {20963.9, 7448.03, 1.9338}, 359.99}
+        };
     };
 
     class Sfaka {
@@ -833,7 +891,6 @@ class CfgWarlordSectors {
 
     class SkoposBase {
         area[] = {250, 250, 128.18, 0};
-        disableHome = 1;
         location[] = {12293, 8891.32, 0};
         name = "Skopos Base";
         services[] = {"H"};
@@ -888,6 +945,13 @@ class CfgWarlordSectors {
         area[] = {350, 350, 65.703, 0};
         location[] = {16247.5, 17095.3, 0};
         name = "Telos";
+        vehicles[] = {
+            {"I_MBT_03_cannon_F", {16128.1, 16824.6, 2.55367}, 46.3471},
+            {"I_MRAP_03_hmg_F", {16205, 17285.2, 2.29964}, 0.0179733},
+            {"I_MRAP_03_hmg_F", {16438.9, 17232, 2.30168}, 0.00167229},
+            {"I_LT_01_AA_F", {16126.6, 17000.1, 1.97961}, 0.0452482},
+            {"I_APC_tracked_03_cannon_F", {15941.1, 17185.8, 2.29295}, 0.0180399}
+        };
     };
 
     class TheaterRuins {
@@ -927,6 +991,7 @@ class CfgWarlordSectors {
         area[] = {150, 100, 30.257, 0};
         location[] = {4864.5, 21926.2, 0};
         name = "Thronos Castle";
+        services[] = {"W"};
     };
 
     class Topolia {
@@ -942,6 +1007,12 @@ class CfgWarlordSectors {
         location[] = {1742.19, 15566.5, 0};
         name = "USS Freedom";
         services[] = {"W", "H", "A"};
+        vehicles[] = {
+            {"I_LT_01_AA_F", {1813.9, 15430.4, 25.8967}, 111.326},
+            {"I_LT_01_AA_F", {1725.2, 15665.3, 25.8783}, 75.3528},
+            {"I_LT_01_AA_F", {1653.01, 15730.2, 25.7847}, 5.12528},
+            {"I_APC_tracked_03_cannon_F", {1716.6, 15569.4, 26.3476}, 44.157}
+        };
     };
 
     class USSIndependence {
@@ -951,6 +1022,10 @@ class CfgWarlordSectors {
         location[] = {8856.14, 28796.06, 0};
         name = "USS Independence";
         services[] = {"W", "H", "A"};
+        vehicles[] = {
+            {"I_APC_tracked_03_cannon_F", {8811.28, 28800.3, 25.7889}, 209.757},
+            {"I_MRAP_03_hmg_F", {9000.59, 28794, 25.8232}, 125.718}
+        };
     };
 
     class USSLiberty {
@@ -990,7 +1065,6 @@ class CfgWarlordSectors {
 
     class ZeloranBase {
         area[] = {165, 115, 311.974, 0};
-        disableHome = 1;
         location[] = {16598, 19013.6, 0};
         name = "Zeloran Base";
         services[] = {"H"};

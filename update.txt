@@ -90,6 +90,8 @@ Map
 * Connect Xirolimni Dam to Poliakko.
 * Significantly reduced size of Sfaka.
 * Significantly reduced size/income of carrier sectors.
+* Added harbors to Hill 275 and Thronos Castle.
+* All non-runway sectors other than Atsalis can now be home base.
 * The following sectors have a small chance of not spawning: Abdera, Aktinarki Ruins, Central Terminal, Didymos Turbines, Hill 275, Hillside Chapel, Ioannina, Koroni, Lakka, Neri, Paros, Poliakko, Skopos Castle Ruins, Theater Ruins.
 
 ECM jammers 
@@ -146,11 +148,11 @@ Misc
 * Removed range limit for fast travel tag-along AI.
 * Increased "AI get in" range to 150m.
 * Triggering APS will now store hitter for reward, in case vehicle is removed.
-* Removed obstructions on carrier during attack phase, moved AI spawns.
+* Removed obstructions on carrier during attack phase, moved AI spawns, added vehicle spawns.
 * Added occasional night, earthquakes.
 * Waypoint now visible on more remote munitions.
 * Scanner circles now visible to enemies on map.
-* Aircraft flying off map gets Return to Base scroll wheel option.
+* Aircraft flying off map gets Return to Base scroll wheel option (cost $2,000), if not damaged too recently.
 * Disabled ground vehicle scanner over water.
 * Disabled removing aircraft after ejection.
 * Disabled strongholding until 30m into game.
