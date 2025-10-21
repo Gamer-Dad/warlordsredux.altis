@@ -1004,7 +1004,7 @@ class CfgWarlordSectors {
         area[] = {250, 100, 63.455, 1};
         carrier = 1;
         disableHome = 1;
-        location[] = {1742.19, 15566.5, 0};
+        location[] = {1742.19, 15566.5, 25};
         name = "USS Freedom";
         services[] = {"W", "H", "A"};
         vehicles[] = {
@@ -1019,7 +1019,7 @@ class CfgWarlordSectors {
         area[] = {250, 100, 0, 1};
         carrier = 1;
         disableHome = 1;
-        location[] = {8856.14, 28796.06, 0};
+        location[] = {8856.14, 28796.06, 25};
         name = "USS Independence";
         services[] = {"W", "H", "A"};
         vehicles[] = {

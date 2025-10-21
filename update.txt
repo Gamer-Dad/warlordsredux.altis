@@ -166,7 +166,9 @@ Misc
 * Raised vehicle paradrop height to 150m, limit now per-vehicle, can no longer paradrop to sector targeted by enemy team.
 * Can no longer paradrop after vehicle is damage, for 30 seconds.
 * AI may be revived until you die.
-* Increased enemies nearby restriction radius to 175m, added option to Fast Travel Home not subject to restriction.
+* Increased enemies nearby restriction radius to 150m, added option to Fast Travel Home not subject to restriction.
+* Enemies not on carrier deck will no longer restrict carrier deck asset spawning.
+* Removed attack/attack2 sector markers.
 
 Bugfixes
 * Fixed bug where variant names would sometimes not draw correctly.
