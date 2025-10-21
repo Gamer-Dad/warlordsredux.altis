@@ -14,16 +14,6 @@ class HeavyVehicles {
                 "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles"
             };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            reloadOverride = 6;
-            removeMagazines[] = {
-                "100Rnd_127x99_mag_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "HMG_127"
-            };
             turret[] = { 0 };
         };
     };  // "AWC Nyx (AT)"

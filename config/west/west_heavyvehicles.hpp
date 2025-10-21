@@ -52,16 +52,6 @@ class HeavyVehicles {
                 "2Rnd_127mm_Firefist_missiles",
                 "2Rnd_127mm_Firefist_missiles"
             };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            reloadOverride = 10;
-            removeMagazines[] = {
-                "100Rnd_127x99_mag_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "HMG_127"
-            };
             turret[] = { 0 };
         };
     };
@@ -508,7 +498,7 @@ class HeavyVehicles {
                 "PylonRack_Bomb_SDB_x4"
             };
             addWeapons[] = {
-                "weapon_SDBLauncher"  
+                "weapon_SDBLauncher"
             };
             removeMagazines[] = {
                 "12Rnd_230mm_rockets"

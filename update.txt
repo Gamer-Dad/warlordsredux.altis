@@ -41,10 +41,12 @@ Munition changes
 * Changed: short-range Fox-2 missiles have significantly increased probability of hit.
 * Changed: anti-radiation missiles now attack modes based on the nose pitch of the aircraft (point down for more direct attack, up for top attack).
 * Changed: HARM and KH58 are no longer dazzleable.
+* Changed: when used in non-LOAL lock modes, anti-radiation missiles only deplete 1 APS.
 * Changed: remote TV-guided munitions no longer require ground support station, controller must be in squad.
 * Changed: switchblade speed and range doubled, can now hit low altitude air targets.
 
 Asset-specific changes
+& Nyx (AT): re-added MG, reverted Firefist reload speed back to vanilla.
 * Marid (ATGM): added 4 missiles to ammo.
 * Zamak MRL: removed APS.
 * Panther: replaced 40mm with 30mm autocannon.
@@ -169,6 +171,7 @@ Misc
 * Increased enemies nearby restriction radius to 150m, added option to Fast Travel Home not subject to restriction.
 * Enemies not on carrier deck will no longer restrict carrier deck asset spawning.
 * Removed attack/attack2 sector markers.
+* Removed Pelican bomb drone arming mechanic; it is now automatically armed and auto-detonates upon destruction.
 
 Bugfixes
 * Fixed bug where variant names would sometimes not draw correctly.
