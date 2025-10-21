@@ -201,7 +201,7 @@ class WLProjectilesConfig {
         consumption = 1;
         dazzleable = 1;
         gps = 1;
-    };  
+    };
 
     class WLProjectile_ExtendedSAM: WLProjectile {
         ammo[] = {
