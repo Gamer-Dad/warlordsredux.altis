@@ -172,6 +172,7 @@ Misc
 * Enemies not on carrier deck will no longer restrict carrier deck asset spawning.
 * Removed attack/attack2 sector markers.
 * Removed Pelican bomb drone arming mechanic; it is now automatically armed and auto-detonates upon destruction.
+* Hercules approximate location will be marked on enemy map after 5 launches, with the approximation closer with every launch.
 
 Bugfixes
 * Fixed bug where variant names would sometimes not draw correctly.
@@ -195,7 +196,7 @@ Bugfixes
 * Fixed some initial spawn-in errors.
 * Fixed players re-logging to reset cruise missile cooldown.
 * Fixed carrier fixed wing spawn angle to reduce incidences of wing clipping side.
-* Fixed some cases where AI would become responsive after revive.
+* Fixed some cases where AI would become unresponsive after revive.
 * Fixed bug where roads would not be valid spawn points.
 * Fixed bug where revived player might instantly go down again.
 * Fixed bug where some parachuting players may still block asset spawning.

@@ -91,13 +91,16 @@ class AirDefense {
             addMagazines[] = {
                 "4Rnd_Titan_long_missiles_O",
                 "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O"
+                "4Rnd_Titan_long_missiles_O",
+                "Laserbatteries"
             };
             addWeapons[] = {
                 "missiles_titan",
                 "Laserdesignator_vehicle"
             };
-            removeMagazines[] = {};
+            removeMagazines[] = {
+                "Laserbatteries"
+            };
             removeWeapons[] = {
                 "Laserdesignator_vehicle"
             };
