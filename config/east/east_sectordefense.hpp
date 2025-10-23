@@ -63,6 +63,7 @@ class SectorDefense {
 
     class O_static_AT_F {
         cost = 300;
+        hasTurretVisualizer = 1;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
         rearm = 180;

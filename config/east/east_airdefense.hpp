@@ -1,6 +1,7 @@
 class AirDefense {
     class O_static_AA_F {
         cost = 300;
+        hasTurretVisualizer = 1;
         loadable[] = {0, -2.5, 0.2};
         offset[] = {0, 3, 0};
         rearm = 180;
