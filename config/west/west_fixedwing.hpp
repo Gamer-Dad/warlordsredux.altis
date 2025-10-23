@@ -76,7 +76,7 @@ class FixedWing {
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "2Rnd_GBU12_LGB",
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "GBU12BombLauncher",
@@ -135,6 +135,16 @@ class FixedWing {
         hasTurretVisualizer = 1;
         rearm = 300;
         requirements[] = {"A"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            turret[] = { -1 };
+        };
     }; // "V-44 X Blackfish (Armed)"
 
     class B_T_VTOL_01_armed_up_F {
@@ -149,10 +159,14 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
             };
             removeWeapons[] = {
                 "CMFlareLauncher_Triples"
@@ -162,8 +176,8 @@ class FixedWing {
 
         class Copilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine",
-                "240Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
                 "magazine_Bomb_SDB_x1",
                 "magazine_Bomb_SDB_x1",
                 "magazine_Bomb_SDB_x1",
@@ -221,15 +235,13 @@ class FixedWing {
         requirements[] = {"A"};
 
         class Pilot: WLTurretDefaults {
-            turret[] = { -1 };
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
             removeMagazines[] = {
                 "120Rnd_CMFlare_Chaff_Magazine"
             };
-            removeWeapons[] = {};
-            addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
-            };
-            addWeapons[] = {};
+            turret[] = { -1 };
         };
     }; // "A-164 Wipeout (CAS)"
 
@@ -262,12 +274,15 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine",
                 "120Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = {};
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -305,11 +320,12 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             turret[] = { -1 };
         };
     };
@@ -326,11 +342,12 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             turret[] = { -1 };
         };
     }; // "F/A-181 Black Wasp II"
@@ -357,11 +374,12 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
             };
-            addWeapons[] = {};
-            removeMagazines[] = {};
-            removeWeapons[] = {};
             turret[] = { -1 };
         };
     };

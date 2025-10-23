@@ -76,7 +76,7 @@ class FixedWing {
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "2Rnd_Bomb_03_F",
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "Bomb_03_Plane_CAS_02_F",
@@ -164,7 +164,7 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
                 "magazine_Bomb_SDB_x1",
                 "magazine_Bomb_SDB_x1",
                 "magazine_Bomb_SDB_x1",
@@ -227,7 +227,7 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {};
             removeMagazines[] = {
@@ -254,7 +254,7 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {};
             removeMagazines[] = {
@@ -305,12 +305,15 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "120Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = {};
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -368,12 +371,15 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = {};
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -410,12 +416,15 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = {};
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };

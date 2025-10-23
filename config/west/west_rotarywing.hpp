@@ -39,7 +39,7 @@ class RotaryWing {
                 "PylonWeapon_300Rnd_20mm_shells"
             };
             addWeapons[] = {
-                "CMFlareLauncher",
+                "CMFlareLauncher_Singles",
                 "Twin_Cannon_20mm_gunpod"
             };
             removeMagazines[] = {
@@ -158,7 +158,12 @@ class RotaryWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
             "PylonRack_19Rnd_Rocket_Skyfire",
-            "PylonRack_12Rnd_PGM_missiles"
+            "PylonRack_12Rnd_PGM_missiles",
+            "PylonFuelTank_UH80"
+        };
+        ammoOverrides[] = {
+            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
+            {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 5000;
         description = "WY-55 Hellcat is a light attack helicopter.";
@@ -173,6 +178,22 @@ class RotaryWing {
             "\a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_EAF_CO.paa",
             "\a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_signs_EAF_CA.paa"
         };
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
     };
 
     class B_Heli_Transport_01_pylons_F {
@@ -186,6 +207,22 @@ class RotaryWing {
         offset[] = {0, 11, 0};
         rearm = 300;
         requirements[] = {"H"};
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
     };
 
     class B_Heli_Attack_01_dynamicLoadout_F {
@@ -206,10 +243,15 @@ class RotaryWing {
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
             };
-            removeMagazines[] = {};
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
@@ -247,8 +289,14 @@ class RotaryWing {
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine"
+            };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
             };
             removeWeapons[] = {
                 "CMFlareLauncher"

@@ -2,7 +2,6 @@ Warlords Redux 2.7.0
 
 New
 * Nyx SAM
-* Orca-M
 * T-100X Futura
 * Gryphon (Interceptor)
 * V-44 J Archerfish
@@ -58,8 +57,10 @@ Asset-specific changes
 * Hercules: hard lock range reduced from 8->6.5 km.
 * Caesar (Bomb): bombs are now GPS-guided rather than remote TV-guided.
 * Pawnee: added triple-rack Scalpel pylon, added Skyfire pylon, added HMD, replaced minigun with 20mm, added countermeasures.
-* Orca: added DAGR-M pylon.
+* Orca: added DAGR-M pylon, added quad-rack Sidearm pylon, added R73 pylon, added BIM-9X pylon, added KH-58 pylon.
 * Falcon: added ASRAAM pylon.
+* Hellcat: added faster and more countermeasures, added Scalpel option.
+* Ghost Hawk Block II: added more countermeasures.
 * Kajman: added R73 pylon, added 2 mags HE gunner ammo.
 * Blackfoot: added 4 racks of triple-rack Sidearms, added 1 mag HE gunner ammo.
 * Blackfoot Block II: added 4 racks of triple-rack Sidearms, added 1 mag HE gunner ammo.
@@ -110,6 +111,7 @@ Map voting
 * Moved surrender voting to map vote (reduced voting power, individual).
 
 Misc
+* Replaced all 240 round chaffs with 300 rounds.
 * Added more granular HMD settings, can now separately adjust view distance for different vehicle types (default key: B).
 * Removed infantry icons from air defense HMD.
 * Added destroyers: 30% chance to replace each carrier and a 70% chance to spawn in Pyrgos bay.
@@ -156,7 +158,7 @@ Misc
 * Added occasional night, earthquakes.
 * Waypoint now visible on more remote munitions.
 * Scanner circles now visible to enemies on map.
-* Aircraft flying off map gets Return to Base scroll wheel option (cost $2,000), if not damaged too recently.
+* Aircraft flying off map gets Return to Base scroll wheel option (cost $1,000), if not damaged too recently.
 * Disabled ground vehicle scanner over water.
 * Disabled removing aircraft after ejection.
 * Disabled strongholding until 30m into game.

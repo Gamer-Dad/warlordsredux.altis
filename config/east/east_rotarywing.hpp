@@ -89,22 +89,6 @@ class RotaryWing {
     class O_Heli_Light_02_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
-            "PylonFuelTank_UH80"
-        };
-        ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
-        };
-        cost = 3500;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
-        hasHMD = 1;
-        offset[] = {0, 10, 0};
-        rearm = 240;
-        requirements[] = {"H"};
-    }; // "PO-30 Orca"
-
-    class O_Heli_Light_02_upgrade_F {
-        allowPylonMagazines[] = {
-            "PylonRack_12Rnd_PGM_missiles",
             "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_4Rnd_LG_scalpel",
             "PylonMissile_Missile_AA_R73_x1",
@@ -116,32 +100,31 @@ class RotaryWing {
             {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
-        cost = 4000;
-        description = "PO-32 Orca-M is an advanced variant of the PO-30 Orca with superior defensive systems and a wider variety of advanced weaponry.";
+        cost = 3500;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
         hasHMD = 1;
-        name = "PO-32 Orca-M";
         offset[] = {0, 10, 0};
-        spawn = "O_Heli_Light_02_dynamicLoadout_F";
         rearm = 240;
         requirements[] = {"H"};
-        variant = 1;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
                 "1000Rnd_20mm_shells"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles",
                 "Twin_Cannon_20mm_gunpod"
             };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
             removeWeapons[] = {
                 "CMFlareLauncher"
             };
             turret[] = { -1 };
         };
-    };
+    }; // "PO-30 Orca"
 
     // class O_Heli_Transport_02_ATGM_F {
     //     ammoOverrides[] = {
@@ -210,7 +193,7 @@ class RotaryWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "240Rnd_CMFlare_Chaff_Magazine"
+                "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {
                 "CMFlareLauncher_Singles"
