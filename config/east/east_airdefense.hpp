@@ -112,7 +112,7 @@ class AirDefense {
     class O_Radar_System_02_ecm_F {
         cost = 2800;
         description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km. Mounts ECM pods to jam incoming missiles.";
-        ecm[] = {{"MissileCore", "BombCore"}, 0, 8000, 1, 12, 30};
+        ecm[] = {{"MissileCore", "BombCore"}, 0, 8000, 1, 4, 240};
         loadable[] = {0, 0, 1};
         name = "R-750 Cronus (ECM)";
         offset[] = {0, 7, 0};
