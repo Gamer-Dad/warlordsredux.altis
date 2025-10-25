@@ -47,6 +47,7 @@ Munition changes
 * Changed: attack helo device jammer now APS jammer, no longer requires player gunner.
 * Changed: waypoint now visible on more remote munitions.
 * Changed: Hercules approximate location will be marked on enemy map after 5 launches, with the approximation closer with every launch.
+* Changed: anti-air missiles auto detonate upon going blind.
 
 Ground vehicles
 * Nyx (AT): re-added MG, reverted Firefist reload speed back to vanilla.

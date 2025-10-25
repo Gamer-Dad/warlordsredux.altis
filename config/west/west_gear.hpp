@@ -24,6 +24,7 @@ class Gear {
             { "SLAMDirectionalMine_Wire_Mag", 3},
 
             { "bipod_01_F_snd", 5 },
+            { "B_UAVTerminal", 5 },
 
             { "B_FieldPack_cbr", 5 },
             { "B_Carryall_mcamo", 5 }
