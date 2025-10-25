@@ -69,6 +69,7 @@ Rotary wing
 * Kajman: added R73 pylon, added 2 mags HE gunner ammo. (rotary wing)
 * Blackfoot: added 4 racks of triple-rack Sidearms, added 1 mag HE gunner ammo. (rotary wing)
 * Blackfoot Block II: added 4 racks of triple-rack Sidearms, added 1 mag HE gunner ammo. (rotary wing)
+* For spawning purposes, non-armed Blackfish are considered helipad spawns now.
 
 Fixed wing
 * Caesar (Bomb): bombs are now GPS-guided rather than remote TV-guided. (fixed wing)

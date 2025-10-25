@@ -90,14 +90,14 @@ class FixedWing {
         cost = 2000;
         hasAirRearm = 1;
         hasHMD = 1;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
     }; // "V-44 X Blackfish (Inf)"
 
     class B_T_VTOL_01_vehicle_F {
         cost = 2000;
         hasAirRearm = 1;
         hasHMD = 1;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
     }; // "V-44 X Blackfish (Vic)"
 
     // class B_T_VTOL_01_recon_F {
