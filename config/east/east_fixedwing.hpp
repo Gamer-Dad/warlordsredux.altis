@@ -365,9 +365,11 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
+        ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
+        threatDetection = 8000;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -390,9 +392,9 @@ class FixedWing {
     class O_Plane_Fighter_02_Stealth_F {
         allowPylonMagazines[] = {
             {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayLeft1", "pylonBayRight1"}},
-            {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
+            {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2", "pylonBayCenter3"}},
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}},
             {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}}
         };
         ammoOverrides[] = {
