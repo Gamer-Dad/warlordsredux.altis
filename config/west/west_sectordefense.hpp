@@ -231,7 +231,7 @@ class SectorDefense {
         ammoOverrides[] = {
             {"M_127mm_Firefist_AT", {"M_Switchblade", "Switchblade (Loitering Munition)"}}
         };
-        cost = 8000;
+        cost = 9000;
         description = "Switchblade Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
         loadable[] = {0, -2.5, 0};
         name = "Switchblade Launcher";

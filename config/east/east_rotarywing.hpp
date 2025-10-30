@@ -93,7 +93,6 @@ class RotaryWing {
             "PylonRack_4Rnd_LG_scalpel",
             "PylonMissile_Missile_AA_R73_x1",
             "PylonRack_Missile_BIM9X_x2",
-            "PylonMissile_Missile_KH58_x1",
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {

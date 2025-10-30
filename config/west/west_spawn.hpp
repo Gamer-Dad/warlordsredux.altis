@@ -17,7 +17,7 @@ class Spawn {
     };
 
     class B_Ship_MRLS_01_F {
-        cost = 10000;
+        cost = 20000;
     };
 
     class B_UAV_02_F {

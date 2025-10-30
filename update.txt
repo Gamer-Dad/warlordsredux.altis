@@ -1,6 +1,46 @@
-Warlords Redux 2.7.1
+Warlords Redux 2.7.0 Hotpatch 2
+
+Balance
+* Centurion, Rhea, Defender now support LOAL modes, notch immunity 3.5km.
+* Increased radar-guided A2A missile notch immunity 3.5->4.0km.
+* Cronus ECM radar no longer jams bombs, increase range from 8,000->16,000.
+* Increased attack/defend sector rewards from 10->50.
+* Decreased kill reward for all assets by 16%.
+* Decreased PvP bonus from 3->2.
+* Decreased first person bonus from 2->1.5x.
+* Decreased squad assist rewards by 66%.
+* Removed HARM from Orca.
+* Decreased destroyer VLS ammo add time 3->2 minutes, respawn time 30->15 minutes, increased kill reward.
+* Decreased Sandstorm II cost from 40,000->35,000.
+* Increased Switchblade/Lancet cost from 8,000->9,000.
+
+Interface
+* Scoreboard: smaller, more transparent interface.
+* Ammo overrides: shows up more reliably.
+* Killfeed: added minimalistic option, fixed some performance issues.
+* Death info: UI elements smaller.
+* Report: report reason now limited to 140 characters.
+* Squad: squad menu now shows number of squad members at a glance.
 
 Gameplay
 * Populated vehicles/aircraft spawn with full heat status.
+* ECM jammer no longer jams team projectiles.
+* When controlling drone, can directly add move/waypoint commands on map without using UAV terminal.
+* Can now fast travel to AI, fast traveling AI grab range decreased to 200m.
+* Air spawns no longer travel from nearest helipad, now spawns anywhere within 2.5km of target sector.
+* For the purpose of the scoreboard, Nyx is now considered a light, not heavy, vehicle.
 
 Fixes
+* Default combat uniform for opfor being blacklisted.
+* Missile camera detonating causes loss of camera, soft-locking game.
+* Some UAVs causing loss of camera, soft-locking game.
+* Scanner radius being shown as only 100m when seen by enemies on map.
+* Non-Latin characters incorrectly showing as gibberish on turret visualizer.
+* Non-Latin characters incorrectly showing as gibberish in killfeed.
+* Ammo detection misfiring when switching turrets too fast in Blackfoot.
+* Incapacitated AI is now correctly thrown out of vehicle, instead of remaining on turret.
+* Toggling APS no longer double-presses sometimes.
+* Dead units no longer considered stronghold/FOB intruders blocking repair/remove.
+* Dead units no longer count as capturing units in some circumstances.
+* Some unwanted double clicking behavior on map buttons removed.
+* Opening player list should not also trigger scoreboard.
