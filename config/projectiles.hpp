@@ -46,9 +46,6 @@ class WLProjectilesConfig {
     class WLProjectile_SAM: WLProjectile {
         ammo[] = {
             "ammo_Missile_rim116",              // Spartan
-            "ammo_Missile_rim162",              // Centurion
-            "ammo_Missile_s750",                // Rhea
-            "ammo_Missile_mim145",              // Defender
             "M_Zephyr_SAM",                     // Zephyr (SAM)
             "M_70mm_SAAMI",                     // SAAMI
             "M_Titan_AA",                       // Titan AA
@@ -61,6 +58,20 @@ class WLProjectilesConfig {
         speed = 1.1;
     };
 
+    class WLProjectile_RadarSAM: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_rim162",              // Centurion
+            "ammo_Missile_s750",                // Rhea
+            "ammo_Missile_mim145",              // Defender
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 3500;
+        loal = 1;
+        sam = 1;
+        speed = 1.1;
+    };
+
     class WLProjectile_A2A: WLProjectile {
         ammo[] = {
             "ammo_Missile_AMRAAM_C",            // AMRAAM C
@@ -69,6 +80,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
+        immunity = 4000;
         loal = 1;
         sam = 1;
         speed = 3;
