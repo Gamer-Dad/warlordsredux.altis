@@ -1996,7 +1996,7 @@
             <Original>Enter Loadout Name:</Original>
             <English>Enter Loadout Name:</English>
             <Czech>Zadejte název vybavení:</Czech>
-            <French>Entrez le nom de l'armement :</French>
+            <French>Entrez le nom de l'armement :</French>
             <German>Ladungsname eingeben:</German>
             <Italian>Inserisci il nome della configurazione:</Italian>
             <Polish>Wprowadź nazwę wyposażenia:</Polish>
@@ -2952,7 +2952,7 @@
             <Original>Confirm teamwide action: [ %1 ] </Original>
             <English>Confirm teamwide action: [ %1 ]</English>
             <Czech>Potvrďte akci celého týmu: [ %1 ] </Czech>
-            <French>Confirmer l'action à l'échelle de l'équipe : [ %1 ]</French>
+            <French>Confirmer l'action à l'échelle de l'équipe : [ %1 ]</French>
             <German>Teamweite Aktion bestätigen: [ %1 ]</German>
             <Italian>Conferma azione a livello di team: [ %1 ]</Italian>
             <Polish>Potwierdź działanie dla całego zespołu: [ %1 ]</Polish>
@@ -3121,21 +3121,21 @@
             <Chinese>初學者推薦</Chinese>
         </Key>
         <Key ID="WL2_InfoText_9">
-            <Original>To get 1.5 times more money for kills, scroll with the mouse, open &quot;Setting&quot;, and toggle on &quot;Disable 3rd person view&quot;.</Original>
-            <English>To get 1.5 times more money for kills, scroll with the mouse, open &quot;Setting&quot;, and toggle on &quot;Disable 3rd person view&quot;.</English>
-            <Czech>Chcete-li získat 1.5krát více peněz za zabití, posuňte kolečkem myši, otevřete „Nastavení“ a zapněte „Zakázat pohled ze 3. osoby“.</Czech>
-            <French>Pour obtenir 1.5 fois plus d'argent par élimination, faites défiler avec la souris, ouvrez « Paramètres » et activez « Désactiver la vue à la troisième personne ».</French>
-            <German>Um 1.5-mal mehr Geld für Kills zu erhalten, scrolle mit der Maus, öffne die „Einstellungen“ und aktiviere „Dritte-Person-Ansicht deaktivieren“.</German>
-            <Italian>Per ottenere 1.5 volte più soldi per ogni uccisione, scorri con il mouse, apri «Impostazioni» e attiva «Disabilita vista in terza persona».</Italian>
-            <Polish>Aby otrzymać 1.5 razy więcej pieniędzy za zabójstwa, przewiń myszą, otwórz „Ustawienia” i włącz „Wyłącz widok z trzeciej osoby”.</Polish>
-            <Portuguese>Para obter 1.5x mais dinheiro por abates, role com o mouse, abra 'Configurações' e ative 'Desativar visão em terceira pessoa'.</Portuguese>
-            <Russian>Чтобы получать в 1.5 раза больше денег за убийства, прокрути колёсиком мышки, открой «Настройки», переключи тумблер «Disable 3rd person view»</Russian>
-            <Spanish>Para obtener 1.5 veces más dinero por bajas, desplaza el ratón, abre 'Configuración' y activa 'Desactivar vista en tercera persona'.</Spanish>
-            <Turkish>Öldürmelerde 1.5 kat daha fazla para kazanmak için, fare ile kaydırın, 'Ayarlar'ı açın ve '3. kişi görünümünü devre dışı bırak'ı etkinleştirin.</Turkish>
-            <Korean>킬 시 1.5배의 돈을 얻으려면, 마우스를 스크롤하고 '설정'을 열어 '3인칭 시점 비활성화'를 켜세요.</Korean>
-            <Japanese>キルで1.5倍の報酬を得るには、マウスホイールを回し、『設定』を開いて『3人称視点の無効化』をオンにしてください。</Japanese>
-            <Chinesesimp>要获得击杀奖励的1.5倍金钱，滚动鼠标，打开“设置”，并启用“禁用第三人称视角”。</Chinesesimp>
-            <Chinese>要獲得擊殺獎勵的1.5倍金錢，滾動滑鼠，打開「設定」，並啟用「禁用第三人稱視角」。</Chinese>
+            <Original>To get 2 times more money for kills, scroll with the mouse, open &quot;Setting&quot;, and toggle on &quot;Disable 3rd person view&quot;.</Original>
+            <English>To get 2 times more money for kills, scroll with the mouse, open &quot;Setting&quot;, and toggle on &quot;Disable 3rd person view&quot;.</English>
+            <Czech>Chcete-li získat dvakrát více peněz za zabití, posuňte kolečkem myši, otevřete „Nastavení“ a zapněte „Zakázat pohled ze 3. osoby“.</Czech>
+            <French>Pour obtenir 2 fois plus d'argent par élimination, faites défiler avec la souris, ouvrez « Paramètres » et activez « Désactiver la vue à la troisième personne ».</French>
+            <German>Um 2-mal mehr Geld für Kills zu erhalten, scrolle mit der Maus, öffne die „Einstellungen“ und aktiviere „Dritte-Person-Ansicht deaktivieren“.</German>
+            <Italian>Per ottenere il doppio dei soldi per ogni uccisione, scorri con il mouse, apri «Impostazioni» e attiva «Disabilita vista in terza persona».</Italian>
+            <Polish>Aby otrzymać 2 razy więcej pieniędzy za zabójstwa, przewiń myszą, otwórz „Ustawienia” i włącz „Wyłącz widok z trzeciej osoby”.</Polish>
+            <Portuguese>Para obter o dobro de dinheiro por abates, role com o mouse, abra 'Configurações' e ative 'Desativar visão em terceira pessoa'.</Portuguese>
+            <Russian>Чтобы получать в 2 раза больше денег за убийства, прокрути колёсиком мышки, открой «Настройки», переключи тумблер «Disable 3rd person view»</Russian>
+            <Spanish>Para obtener el doble de dinero por bajas, desplaza el ratón, abre 'Configuración' y activa 'Desactivar vista en tercera persona'.</Spanish>
+            <Turkish>Öldürmelerde 2 kat daha fazla para kazanmak için, fare ile kaydırın, 'Ayarlar'ı açın ve '3. kişi görünümünü devre dışı bırak'ı etkinleştirin.</Turkish>
+            <Korean>킬 시 두 배의 돈을 얻으려면, 마우스를 스크롤하고 '설정'을 열어 '3인칭 시점 비활성화'를 켜세요.</Korean>
+            <Japanese>キルで2倍の報酬を得るには、マウスホイールを回し、『設定』を開いて『3人称視点の無効化』をオンにしてください。</Japanese>
+            <Chinesesimp>要获得击杀奖励的2倍金钱，滚动鼠标，打开“设置”，并启用“禁用第三人称视角”。</Chinesesimp>
+            <Chinese>要獲得擊殺獎勵的2倍金錢，滾動滑鼠，打開「設定」，並啟用「禁用第三人稱視角」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_10">
             <Original>Join a squad or create your own for maximum teamwork. Scroll with mouse to access Squad menu.</Original>

@@ -7,28 +7,39 @@ Balance
 * Increased attack/defend sector rewards from 10->50.
 * Decreased kill reward for all assets by 16%.
 * Decreased PvP bonus from 3->2.
-* Decreased first person bonus from 2->1.5x.
 * Decreased squad assist rewards by 66%.
 * Removed HARM from Orca.
+* Added BIM-9X to Blackfoot.
 * Decreased destroyer VLS ammo add time 3->2 minutes, respawn time 30->15 minutes, increased kill reward.
 * Decreased Sandstorm II cost from 40,000->35,000.
 * Increased Switchblade/Lancet cost from 8,000->9,000.
+* Combined demolition time/steps for some structures.
+* Lowered claim vehicle time from 8->4s.
+* Increased revive time to 4s, restore health on revive.
 
 Interface
 * Scoreboard: smaller, more transparent interface.
 * Ammo overrides: shows up more reliably.
 * Killfeed: added minimalistic option, fixed some performance issues.
-* Death info: UI elements smaller.
+* Death info: UI elements smaller, not shown in map.
+* Loadouts: added weight info, loadouts info, default to boring theme.
 * Report: report reason now limited to 140 characters.
 * Squad: squad menu now shows number of squad members at a glance.
+* Animations: added hint and timer.
+* End screen: added custom handling for end screen.
 
 Gameplay
+* Holding on will cause player to scream for help.
 * Populated vehicles/aircraft spawn with full heat status.
 * ECM jammer no longer jams team projectiles.
 * When controlling drone, can directly add move/waypoint commands on map without using UAV terminal.
 * Can now fast travel to AI, fast traveling AI grab range decreased to 200m.
 * Air spawns no longer travel from nearest helipad, now spawns anywhere within 2.5km of target sector.
 * For the purpose of the scoreboard, Nyx is now considered a light, not heavy, vehicle.
+* Added different colored tents for different colored chemlights, added hint in loadouts menu.
+* Pyrgos Bay destroyer will now always spawn.
+* Added rappels and easter egg to destroyers.
+* Added FT Near Stronghold option that will place player outside stronghold.
 
 Fixes
 * Default combat uniform for opfor being blacklisted.
@@ -44,3 +55,4 @@ Fixes
 * Dead units no longer count as capturing units in some circumstances.
 * Some unwanted double clicking behavior on map buttons removed.
 * Opening player list should not also trigger scoreboard.
+* Unconscious ragdolling should be a bit more stable.
