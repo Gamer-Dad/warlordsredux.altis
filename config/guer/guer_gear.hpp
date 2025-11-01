@@ -29,7 +29,8 @@ class Gear {
             { "B_Carryall_mcamo", 5 }
         };
         cost = 200;
-        demolishable = 3;
+        demolishable = 2;
+        demolishStepTime = 5;
         description = "Independent gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
         loadable[] = { 0, -1, 0.5 };
         name = "Independent Supply Crate";

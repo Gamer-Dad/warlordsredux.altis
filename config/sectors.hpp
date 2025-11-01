@@ -1034,7 +1034,7 @@ class CfgWarlordSectors {
         disableHome = 1;
         location[] = {15393.8, 14197.7, 0};
         name = "USS Liberty";
-        spawn = 0.7;
+        spawn = 1;
     };
 
     class Wait {

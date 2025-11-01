@@ -1996,7 +1996,7 @@
             <Original>Enter Loadout Name:</Original>
             <English>Enter Loadout Name:</English>
             <Czech>Zadejte název vybavení:</Czech>
-            <French>Entrez le nom de l'armement :</French>
+            <French>Entrez le nom de l'armement :</French>
             <German>Ladungsname eingeben:</German>
             <Italian>Inserisci il nome della configurazione:</Italian>
             <Polish>Wprowadź nazwę wyposażenia:</Polish>
@@ -2952,7 +2952,7 @@
             <Original>Confirm teamwide action: [ %1 ] </Original>
             <English>Confirm teamwide action: [ %1 ]</English>
             <Czech>Potvrďte akci celého týmu: [ %1 ] </Czech>
-            <French>Confirmer l'action à l'échelle de l'équipe : [ %1 ]</French>
+            <French>Confirmer l'action à l'échelle de l'équipe : [ %1 ]</French>
             <German>Teamweite Aktion bestätigen: [ %1 ]</German>
             <Italian>Conferma azione a livello di team: [ %1 ]</Italian>
             <Polish>Potwierdź działanie dla całego zespołu: [ %1 ]</Polish>

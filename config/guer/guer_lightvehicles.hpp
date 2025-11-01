@@ -90,4 +90,31 @@ class LightVehicles {
         rearm = 300;
         vehicleSpawn = 1;
     };
+
+    class I_LT_01_AT_F {
+        aps = 1;
+        capValue = 4;
+        cost = 1500;
+        rearm = 300;
+        vehicleSpawn = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles",
+                "2Rnd_127mm_Firefist_missiles"
+            };
+            turret[] = { 0 };
+        };
+    };  // "AWC Nyx (AT)"
+
+    class I_LT_01_cannon_F {
+        aps = 1;
+        capValue = 4;
+        cost = 1500;
+        rearm = 300;
+        vehicleSpawn = 1;
+    };  // "AWC Nyx (Autocannon)"
 };

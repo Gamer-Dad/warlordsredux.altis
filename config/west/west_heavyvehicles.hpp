@@ -484,7 +484,7 @@ class HeavyVehicles {
         };
         aps = 1;
         capValue = 4;
-        cost = 40000;
+        cost = 35000;
         description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
         name = "M5A2 Sandstorm II";
         rearm = 1800;
