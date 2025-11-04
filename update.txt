@@ -1,58 +1,37 @@
-Warlords Redux 2.7.0 Hotpatch 2
+Warlords Redux 2.7.0 Hotpatch 3
 
 Balance
-* Centurion, Rhea, Defender now support LOAL modes, notch immunity 3.5km.
-* Increased radar-guided A2A missile notch immunity 3.5->4.0km.
-* Cronus ECM radar no longer jams bombs, increase range from 8,000->16,000.
-* Increased attack/defend sector rewards from 10->50.
-* Decreased kill reward for all assets by 16%.
-* Decreased PvP bonus from 3->2.
-* Decreased squad assist rewards by 66%.
-* Removed HARM from Orca.
-* Added BIM-9X to Blackfoot.
-* Decreased destroyer VLS ammo add time 3->2 minutes, respawn time 30->15 minutes, increased kill reward.
-* Decreased Sandstorm II cost from 40,000->35,000.
-* Increased Switchblade/Lancet cost from 8,000->9,000.
-* Combined demolition time/steps for some structures.
-* Lowered claim vehicle time from 8->4s.
-* Increased revive time to 4s, restore health on revive.
+* Nyx AA now mounts 2 R77s instead of 8 Titan AA UPs.
+* Caesar (Bomb) countermeasures removed, only carries 1 bomb.
+* Halved helo-based ECM jammers or doubled recharge cooldowns.
+* Reduced tent demolition time from 3->2s.
+* Added dazzler to bomb drone, increased demolition power from 7->13.
 
 Interface
-* Scoreboard: smaller, more transparent interface.
-* Ammo overrides: shows up more reliably.
-* Killfeed: added minimalistic option, fixed some performance issues.
-* Death info: UI elements smaller, not shown in map.
-* Loadouts: added weight info, loadouts info, default to boring theme.
-* Report: report reason now limited to 140 characters.
-* Squad: squad menu now shows number of squad members at a glance.
-* Animations: added hint and timer.
-* End screen: added custom handling for end screen.
+* FOB circles no longer clog up map, only show if FOB/supply are highlighted by mouse.
+* Add range warning to GPS guided munitions.
+* Munition hints reset for different vehicles.
+* Hints now display much more prominently, with a warning that they can be hidden in settings.
+* Scoreboard auto scrolls to top instead of to player entry.
 
 Gameplay
-* Holding on will cause player to scream for help.
-* Populated vehicles/aircraft spawn with full heat status.
-* ECM jammer no longer jams team projectiles.
-* When controlling drone, can directly add move/waypoint commands on map without using UAV terminal.
-* Can now fast travel to AI, fast traveling AI grab range decreased to 200m.
-* Air spawns no longer travel from nearest helipad, now spawns anywhere within 2.5km of target sector.
-* For the purpose of the scoreboard, Nyx is now considered a light, not heavy, vehicle.
-* Added different colored tents for different colored chemlights, added hint in loadouts menu.
-* Pyrgos Bay destroyer will now always spawn.
-* Added rappels and easter egg to destroyers.
-* Added FT Near Stronghold option that will place player outside stronghold.
+* When base vulnerable, spawn respawned players in neighboring sector, parachute only if completely cut.
+* Drones now visible if being jammed.
+* Vehicle magazine configurations are no longer saved.
 
 Fixes
-* Default combat uniform for opfor being blacklisted.
-* Missile camera detonating causes loss of camera, soft-locking game.
-* Some UAVs causing loss of camera, soft-locking game.
-* Scanner radius being shown as only 100m when seen by enemies on map.
-* Non-Latin characters incorrectly showing as gibberish on turret visualizer.
-* Non-Latin characters incorrectly showing as gibberish in killfeed.
-* Ammo detection misfiring when switching turrets too fast in Blackfoot.
-* Incapacitated AI is now correctly thrown out of vehicle, instead of remaining on turret.
-* Toggling APS no longer double-presses sometimes.
-* Dead units no longer considered stronghold/FOB intruders blocking repair/remove.
-* Dead units no longer count as capturing units in some circumstances.
-* Some unwanted double clicking behavior on map buttons removed.
-* Opening player list should not also trigger scoreboard.
-* Unconscious ragdolling should be a bit more stable.
+* Exploit that allows last version vehicle configs disabled.
+* ECM jammer no longer sees unjammable cruise missiles.
+* Scoreboard scroll up/down now working.
+* Drones no longer visible on map for all players.
+* Incapacitated players glitching over/into the ground.
+* Enemies near player block conditions not correctly being applied.
+* Destroyer ropes being misplaced on spawn.
+* Destroyer VLS non-functional after respawning.
+
+Performance
+* Eliminated some client-side scripts on server.
+* More efficient algorithm for calculating linked sectors.
+* No longer send sector vote status unless changed.
+* Reduced AI group radius while spawning.
+* Increased AI spawn time gap.

@@ -75,12 +75,10 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_Bomb_03_F",
-                "300Rnd_CMFlare_Chaff_Magazine"
+                "magazine_Bomb_KAB250_x1"
             };
             addWeapons[] = {
-                "Bomb_03_Plane_CAS_02_F",
-                "CMFlareLauncher"
+                "weapon_KAB250Launcher"
             };
             turret[] = { -1 };
         };

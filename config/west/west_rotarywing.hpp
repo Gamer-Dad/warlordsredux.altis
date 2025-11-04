@@ -201,7 +201,7 @@ class RotaryWing {
             {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
         };
         cost = 5500;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 30};
         hasHMD = 1;
         name = "UH-80 Ghost Hawk Block II";
         offset[] = {0, 11, 0};
@@ -283,7 +283,7 @@ class RotaryWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 13000;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 30};
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;

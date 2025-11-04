@@ -90,13 +90,12 @@ class AirDefense {
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
-                "4Rnd_Titan_long_missiles_O",
+                "magazine_Missile_AA_R77_x1",
+                "magazine_Missile_AA_R77_x1",
                 "Laserbatteries"
             };
             addWeapons[] = {
-                "missiles_titan",
+                "weapon_R77Launcher",
                 "Laserdesignator_vehicle"
             };
             removeMagazines[] = {

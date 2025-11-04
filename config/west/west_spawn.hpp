@@ -11,25 +11,25 @@ class Spawn {
     class Land_TentA_F {
         name = "Deployed Tent";
         cost = 300;
-        demolishStepTime = 3;
+        demolishStepTime = 2;
     };
 
      class Land_TentDome_F {
         name = "Deployed Tent";
         cost = 300;
-        demolishStepTime = 3;
+        demolishStepTime = 2;
     };
 
     class Land_TentSolar_01_bluewhite_F {
         name = "Deployed Tent";
         cost = 300;
-        demolishStepTime = 3;
+        demolishStepTime = 2;
     };
 
      class Land_TentSolar_01_redwhite_F {
         name = "Deployed Tent";
         cost = 300;
-        demolishStepTime = 3;
+        demolishStepTime = 2;
     };
 
     class RuggedTerminal_01_communications_hub_F {

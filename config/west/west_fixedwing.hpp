@@ -62,7 +62,7 @@ class FixedWing {
 
     class B_Plane_Caesar_bomb_01_F {
         ammoOverrides[] = {
-            {"Bo_GBU12_LGB", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
         };
         cost = 1500;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
@@ -75,12 +75,10 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_GBU12_LGB",
-                "300Rnd_CMFlare_Chaff_Magazine"
+                "magazine_Bomb_GBU12_x1"
             };
             addWeapons[] = {
-                "GBU12BombLauncher",
-                "CMFlareLauncher"
+                "weapon_GBU12Launcher"
             };
             turret[] = { -1 };
         };

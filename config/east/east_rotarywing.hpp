@@ -100,7 +100,7 @@ class RotaryWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 3500;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 15};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 30};
         hasHMD = 1;
         offset[] = {0, 10, 0};
         rearm = 240;
@@ -182,7 +182,7 @@ class RotaryWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 8000;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 16, 15};
+        ecm[] = {{"MissileCore"}, 1, 10000, 1, 8, 30};
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;

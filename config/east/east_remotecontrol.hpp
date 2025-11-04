@@ -150,6 +150,7 @@ class RemoteControl {
         ammoOverrides[] = {
             {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
         };
+        aps = 4;
         cost = 3500;
         description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
         loadable[] = {-0.4, -1, 1.1};

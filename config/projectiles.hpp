@@ -148,7 +148,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
-        bunker = 1;
+        bunker = 7;
         remote = 1;
     };
 
@@ -157,7 +157,7 @@ class WLProjectilesConfig {
             "Bo_Mk82_BLU"
         };
         aps = 3;
-        bunker = 1;
+        bunker = 13;
     };
 
     class WLProjectile_TVGuidedHeavy: WLProjectile {
