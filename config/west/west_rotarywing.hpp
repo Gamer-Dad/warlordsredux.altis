@@ -167,6 +167,7 @@ class RotaryWing {
         };
         cost = 5000;
         description = "WY-55 Hellcat is a light attack helicopter.";
+        ecm[] = {{"MissileCore"}, 1, 5000, 1, 4, 30};
         hasHMD = 1;
         name = "WY-55 Hellcat";
         offset[] = {0, 9, 0};
@@ -201,7 +202,7 @@ class RotaryWing {
             {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
         };
         cost = 5500;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 30};
+        ecm[] = {{"MissileCore"}, 1, 5000, 1, 2, 60};
         hasHMD = 1;
         name = "UH-80 Ghost Hawk Block II";
         offset[] = {0, 11, 0};
@@ -283,7 +284,7 @@ class RotaryWing {
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 13000;
-        ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 30};
+        ecm[] = {{"MissileCore"}, 1, 8000, 1, 4, 30};
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;

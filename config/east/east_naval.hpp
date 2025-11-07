@@ -66,4 +66,15 @@ class Naval {
         requirements[] = {"W"};
         spawn = "I_C_Boat_Transport_02_F";
     };
+
+    class O_Boat_Bomb_01_F {
+        cost = 3000;
+        description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
+        drone = 1;
+        flipLoadable = 180;
+        loadable[] = {0, -2.5, 0.5};
+        name = "Bomb Boat";
+        requirements[] = {"W"};
+        spawn = "C_Boat_Civil_01_F";
+    };
 };

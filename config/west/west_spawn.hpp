@@ -8,26 +8,31 @@ class Spawn {
         name = "Forward Base Supplies (NATO)";
     };
 
+    class Land_Destroyer_01_base_F {
+        cost = 40000;
+        name = "Destroyer";
+    };
+
     class Land_TentA_F {
-        name = "Deployed Tent";
+        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
     };
 
-     class Land_TentDome_F {
-        name = "Deployed Tent";
+    class Land_TentDome_F {
+        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
     };
 
     class Land_TentSolar_01_bluewhite_F {
-        name = "Deployed Tent";
+        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
     };
 
-     class Land_TentSolar_01_redwhite_F {
-        name = "Deployed Tent";
+    class Land_TentSolar_01_redwhite_F {
+        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
     };
