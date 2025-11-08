@@ -8,6 +8,7 @@ Balance
 * Ghost Hawk Block II: reduced range of ECM jammers from 10->5km, reduced charges from 4->2 per pylon, increased base recharge time from 30->60s.
 * Blackfoot Block II: reduced range of ECM jammers from 10->8km.
 * Air-based ECM jammers require 50m altitude to be functional.
+* Reduced projectile jammed reward from $300->100.
 * Increased ECM jam time by ~4x depending on distance.
 * Reduced claim vehicle time from 4->3s.
 * Lock open all doors on destroyers.
@@ -45,6 +46,7 @@ Fixes
 * Script error when failing to deploy FOBs.
 * Script error when clicking on expired map buttons.
 * Some join-in-progress script errors relating to uninitialized variables.
+* Ejection seat hard-locking player input.
 
 Performance
 * Localized all non-base destroyer parts, should no longer sync update status.
