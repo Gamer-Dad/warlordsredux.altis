@@ -68,7 +68,7 @@ class Naval {
     };
 
     class B_Boat_Bomb_01_F {
-        cost = 3000;
+        cost = 1750;
         description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
         drone = 1;
         flipLoadable = 180;

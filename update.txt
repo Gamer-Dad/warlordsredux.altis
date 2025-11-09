@@ -8,11 +8,14 @@ Balance
 * Ghost Hawk Block II: reduced range of ECM jammers from 10->5km, reduced charges from 4->2 per pylon, increased base recharge time from 30->60s.
 * Blackfoot Block II: reduced range of ECM jammers from 10->8km.
 * Air-based ECM jammers require 50m altitude to be functional.
+* Reduced projectile jammed reward from $300->100.
 * Increased ECM jam time by ~4x depending on distance.
 * Reduced claim vehicle time from 4->3s.
 * Lock open all doors on destroyers.
 * Reduced Pelican drone explosion to more realistic damage/power.
 * Spectrum jammer much more effective against Pelican drones.
+* Reduced buy stronghold cost from $500->200.
+* Reduced fortify sector cost from $2,000->$1,000.
 
 Interface
 * Sector capture, vote displays: reworked to show more info, be more performant.
@@ -33,6 +36,9 @@ Gameplay
 * Changed AFK detection logic.
 * Bunker buster logic changed to ignore 3D z-position when calculating nearby destroyables.
 * GPS-guided munitions no longer target enemy assets currently targeted by another GPS-guided munition in flight to allow for multiple, simultaneous attack.
+* Strongholds are now only visible in revealed sectors.
+* Strongholds no longer buyable in contested sectors.
+* Jet RTB now disallowed when enemy air is present.
 
 Fixes
 * Non-functioning ECM jammers on Hellcat.
@@ -44,7 +50,12 @@ Fixes
 * GPS guided munitions not hitting targets in deep water.
 * Script error when failing to deploy FOBs.
 * Script error when clicking on expired map buttons.
+* Script error when fast traveling to null vehicle from squad.
 * Some join-in-progress script errors relating to uninitialized variables.
+* Ejection seat hard-locking player input.
+* Stop being able to rappel up ropes that are supposed to terminate near surface.
+* Fixed some instances of map showing incorrect icons for enemy vehicles.
+* Cruise missile timeout not resetting on new round.
 
 Performance
 * Localized all non-base destroyer parts, should no longer sync update status.
