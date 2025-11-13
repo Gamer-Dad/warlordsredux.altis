@@ -1,66 +1,22 @@
 Warlords Redux 2.7.0 Patch 4
 
-New Asset: Bomb Boat
+New Asset:
 
 Balance
-* Orca: reduced range of ECM jammers from 10->5km.
-* Kajman: reduced range of ECM jammers from 10->6km, reduced charges from 8->6 per pylon.
-* Ghost Hawk Block II: reduced range of ECM jammers from 10->5km, reduced charges from 4->2 per pylon, increased base recharge time from 30->60s.
-* Blackfoot Block II: reduced range of ECM jammers from 10->8km.
-* Air-based ECM jammers require 50m altitude to be functional.
-* Reduced projectile jammed reward from $300->100.
-* Increased ECM jam time by ~4x depending on distance.
-* Reduced claim vehicle time from 4->3s.
-* Lock open all doors on destroyers.
-* Reduced Pelican drone explosion to more realistic damage/power.
-* Spectrum jammer much more effective against Pelican drones.
-* Reduced buy stronghold cost from $500->200.
-* Reduced fortify sector cost from $2,000->$1,000.
 
 Interface
-* Sector capture, vote displays: reworked to show more info, be more performant.
-* Vehicle manager: reworked to stack side-by-side, show icons, sorted by distance to player.
-* Hint: reworked to not stack multiple, shows per vehicle as oppoosed to per mission.
-* Map now shows detected tents.
-* Tracked projectiles (shown on HUD) are now also shown on the map.
-* GPS guided projectiles now save coordinates when launched.
+* Added optional sound for squad chat messages.
+* Added directional arrows to capture indicator.
 
 Gameplay
-* Player point contribution now counts all sources except for squad assists and team income.
-* Destroyers can now be sabotaged/sunk via the demolition mechanism.
-* Added mid-ship side plank and rappels to destroyer.
-* Downed enemy players can now be secured to force respawn.
-* Added new downed animation states.
-* Demolitions now impose 60s block on repairing FOB/strongholds.
-* ECM jammers are automatically added to enemy team data-link for 60s when operational.
-* Changed AFK detection logic.
-* Bunker buster logic changed to ignore 3D z-position when calculating nearby destroyables.
-* GPS-guided munitions no longer target enemy assets currently targeted by another GPS-guided munition in flight to allow for multiple, simultaneous attack.
-* Strongholds are now only visible in revealed sectors.
-* Strongholds no longer buyable in contested sectors.
-* Jet RTB now disallowed when enemy air is present.
+* Removed griefer check against building structures.
+* Added a 2 minute reconnection period before vehicle deletion. Owned vehicles will be deleted after that if player has not fully reconnected, even if teammates are inside.
 
 Fixes
-* Non-functioning ECM jammers on Hellcat.
-* Source of flickering on map icons.
-* Players demolishing while in water, without touching ground.
-* Fast traveling to units in water.
-* Text for team notification for enemy sector change (rather than reset).
-* Removed intermittently non-functioning tv panel on destroyer.
-* GPS guided munitions not hitting targets in deep water.
-* Script error when failing to deploy FOBs.
-* Script error when clicking on expired map buttons.
-* Script error when fast traveling to null vehicle from squad.
-* Some join-in-progress script errors relating to uninitialized variables.
-* Ejection seat hard-locking player input.
-* Stop being able to rappel up ropes that are supposed to terminate near surface.
-* Fixed some instances of map showing incorrect icons for enemy vehicles.
-* Cruise missile timeout not resetting on new round.
+* Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
 
 Performance
-* Localized all non-base destroyer parts, should no longer sync update status.
-* Reduced hint showing mechanism effect on game fps.
-* Reduced vehicle manager impact on game fps.
-* Optimized ECM jammer munition detection.
-* Cache drone waypoints for map rendering.
-* Reduced datalink calls from detecting friendly units.
+* Squad backend reworked, added more squad channels.
+* Fixed sector re-sorting spam during sector selection.
+* Removed extraneous enemy sector calculations for clients.
+* Batched server calls for vehicle spawning.

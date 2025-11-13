@@ -278,4 +278,17 @@ class SectorDefense {
     //     offset[] = {0, 7, 0};
     //     rearm = 2700;
     // }; // "Mk41 VLS"
+
+    class B_ASHM_System_03_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_mim145", {"M_Harpoon", "Harpoon Anti-Ship Missile"}}
+        };
+        cost = 20000;
+        description = "RGM-84 Harpoon launcher that poses a significant threat to enemy naval vessels and fortifications.";
+        loadable[] = {0, 0, 1};
+        name = "RGM-84 Harpoon";
+        offset[] = {0, 6, 0};
+        rearm = 900;
+        spawn = "B_SAM_System_03_F";
+    };
 };

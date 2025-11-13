@@ -108,6 +108,17 @@ class WLProjectilesConfig {
         speed = 2;
     };
 
+    class WLProjectile_AntiShip: WLProjectile {
+        ammo[] = {
+            "M_Harpoon",                        // Harpoon
+            "M_Silkworm"                        // Silkworm
+        };
+        aps = 3;
+        bunker = 8;
+        speed = 600;
+        tv = 1;
+    };
+
     class WLProjectile_SEAD: WLProjectile {
         ammo[] = {
             "ammo_Missile_HARM",                // AGM-88 HARM

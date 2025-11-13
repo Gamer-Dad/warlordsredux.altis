@@ -234,4 +234,17 @@ class SectorDefense {
             turret[] = { 0 };
         };
     };
+
+    class O_ASHM_System_04_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_s750", {"M_Silkworm", "Silkworm Anti-Ship Missile"}}
+        };
+        cost = 20000;
+        description = "HY-1 Silkworm launcher that poses a significant threat to enemy naval vessels and fortifications.";
+        loadable[] = {0, 0, 1};
+        name = "HY-1 Silkworm";
+        offset[] = {0, 6, 0};
+        rearm = 900;
+        spawn = "O_SAM_System_04_F";
+    };
 };
