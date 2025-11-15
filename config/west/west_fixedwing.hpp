@@ -222,7 +222,7 @@ class FixedWing {
     class B_Plane_CAS_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
-            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons5", "Pylons6"}}
+            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}}
         };
         ammoOverrides[] = {
             {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}}

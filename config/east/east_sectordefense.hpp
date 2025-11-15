@@ -237,14 +237,30 @@ class SectorDefense {
 
     class O_ASHM_System_04_F {
         ammoOverrides[] = {
-            {"ammo_Missile_s750", {"M_Silkworm", "Silkworm Anti-Ship Missile"}}
+            {"Missile_AGM_02_F", {"M_Silkworm", "Silkworm Anti-Ship Missile"}}
         };
-        cost = 20000;
+        cost = 25000;
         description = "HY-1 Silkworm launcher that poses a significant threat to enemy naval vessels and fortifications.";
         loadable[] = {0, 0, 1};
         name = "HY-1 Silkworm";
         offset[] = {0, 6, 0};
         rearm = 900;
         spawn = "O_SAM_System_04_F";
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonRack_1Rnd_Missile_AGM_02_F"
+            };
+            addWeapons[] = {
+                "Missile_AGM_02_Plane_CAS_01_F"
+            };
+            removeMagazines[] = {
+                "magazine_Missile_s750_x4"
+            };
+            removeWeapons[] = {
+                "weapon_s750Launcher"
+            };
+            turret[] = { 0 };
+        };
     };
 };

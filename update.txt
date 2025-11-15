@@ -1,19 +1,43 @@
-Warlords Redux 2.7.0 Patch 4
+Warlords Redux 2.7.1
 
 New Asset:
+* Harpoon/Silkworm Launcher
+* Grenade drones
 
 Balance
+* Cheetah: $5,000->$4,750
+* Hercules: $22,000->$18,000
+* Wipeout/Neophron: added 2 more bunker buster pylons
+* Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon
+* Stronghold infantry cap power: 5x->7x
 
 Interface
-* Added optional sound for squad chat messages.
+* Added optional sound for squad chat messages (special notification: @SL, @SQUAD).
 * Added directional arrows to capture indicator.
+* Added marker text indicating ship is sinking.
+* Added notification stack interface for most system notifications.
+* Refactored button menu.
+* Add option to show death info over map.
+* Can now direct control drone boat from map.
 
 Gameplay
 * Removed griefer check against building structures.
 * Added a 2 minute reconnection period before vehicle deletion. Owned vehicles will be deleted after that if player has not fully reconnected, even if teammates are inside.
+* Controlled munition launches at 15 degree up to prevent hitting ground.
+* Notification shows jamming damage status.
+* Coordinates for GPS munitions can be added by clicking on map.
+* Destroyer VLS does not spawn until 20 minutes after match start, shows respawn time on console.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
+* GPS munitions overriding default target lock.
+* Missile camera only showing last munition when multiple launched.
+* Vote display incorrectly showing first time player sees sector capture if JIP.
+* Incapacitated crew somehow brought back into vehicle no longer count for capture value.
+* Wrong sound played when airfield position not found.
+* Can no longer spawn on teammate tents.
+* Double-clicking intentionally in button menu.
+* Modify/rearm should no longer show outside of 180 degree view cone.
 
 Performance
 * Squad backend reworked, added more squad channels.

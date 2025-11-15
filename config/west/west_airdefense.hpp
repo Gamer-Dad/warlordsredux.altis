@@ -85,7 +85,7 @@ class AirDefense {
         };
         aps = 2;
         capValue = 4;
-        cost = 5000;
+        cost = 4750;
         hasHMD = 1;
         rearm = 240;
 
@@ -113,7 +113,7 @@ class AirDefense {
 
     class B_SAM_System_01_F {
         cost = 6500;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
@@ -122,7 +122,7 @@ class AirDefense {
 
     class B_SAM_System_03_F {
         cost = 7000;
-        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
@@ -162,7 +162,7 @@ class AirDefense {
 
     class B_SAM_System_02_F {
         cost = 8000;
-        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
@@ -208,8 +208,8 @@ class AirDefense {
         ammoOverrides[] = {
             {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
         };
-        cost = 22000;
-        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Effective range: 14km.";
+        cost = 18000;
+        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Lethal range: 6.5km.";
         hasASAM = 1;
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};

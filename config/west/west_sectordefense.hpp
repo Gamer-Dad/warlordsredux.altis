@@ -281,14 +281,30 @@ class SectorDefense {
 
     class B_ASHM_System_03_F {
         ammoOverrides[] = {
-            {"ammo_Missile_mim145", {"M_Harpoon", "Harpoon Anti-Ship Missile"}}
+            {"Missile_AGM_02_F", {"M_Harpoon", "Harpoon Anti-Ship Missile"}}
         };
-        cost = 20000;
+        cost = 25000;
         description = "RGM-84 Harpoon launcher that poses a significant threat to enemy naval vessels and fortifications.";
         loadable[] = {0, 0, 1};
         name = "RGM-84 Harpoon";
         offset[] = {0, 6, 0};
         rearm = 900;
         spawn = "B_SAM_System_03_F";
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonRack_1Rnd_Missile_AGM_02_F"
+            };
+            addWeapons[] = {
+                "Missile_AGM_02_Plane_CAS_01_F"
+            };
+            removeMagazines[] = {
+                "magazine_Missile_mim145_x4"
+            };
+            removeWeapons[] = {
+                "weapon_mim145Launcher"
+            };
+            turret[] = { 0 };
+        };
     };
 };

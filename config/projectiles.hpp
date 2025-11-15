@@ -114,8 +114,8 @@ class WLProjectilesConfig {
             "M_Silkworm"                        // Silkworm
         };
         aps = 3;
-        bunker = 8;
-        speed = 600;
+        bunker = 13;
+        speed = 450;
         tv = 1;
     };
 
