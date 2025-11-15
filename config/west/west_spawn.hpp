@@ -13,28 +13,42 @@ class Spawn {
         name = "Destroyer";
     };
 
+    class Land_MedicalTent_01_NATO_generic_open_F {
+        cost = 5000;
+        demolishStepTime = 2;
+        hasFastTravel = 1;
+        name = "Team Rally Point (NATO)";
+    };
+
+    class Land_RallyBuilding {
+        cost = 5000;
+        demolishStepTime = 15;
+        hasFastTravel = 1;
+        name = "Rally Building";
+    };
+
     class Land_TentA_F {
-        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
+        name = "Tent";
     };
 
     class Land_TentDome_F {
-        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
+        name = "Tent";
     };
 
     class Land_TentSolar_01_bluewhite_F {
-        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
+        name = "Tent";
     };
 
     class Land_TentSolar_01_redwhite_F {
-        name = "Tent";
         cost = 300;
         demolishStepTime = 2;
+        name = "Tent";
     };
 
     class RuggedTerminal_01_communications_hub_F {

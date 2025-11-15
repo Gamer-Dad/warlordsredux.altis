@@ -8,6 +8,13 @@ class Spawn {
         name = "Forward Base Supplies (CSAT)";
     };
 
+    class Land_MedicalTent_01_CSAT_brownhex_generic_open_F {
+        cost = 5000;
+        demolishStepTime = 2;
+        hasFastTravel = 1;
+        name = "Team Rally Point (CSAT)";
+    };
+
     class O_UAV_02_F {
         cost = 1000;
     };

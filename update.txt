@@ -19,8 +19,10 @@ Interface
 * Refactored button menu.
 * Add option to show death info over map.
 * Can now direct control drone boat from map.
+* Loiter waypoints for UAV.
 
 Gameplay
+* Rally point: squad leaders can upgrade their tents into team rally points/buildings.
 * Removed griefer check against building structures.
 * Added a 2 minute reconnection period before vehicle deletion. Owned vehicles will be deleted after that if player has not fully reconnected, even if teammates are inside.
 * Controlled munition launches at 15 degree up to prevent hitting ground.
