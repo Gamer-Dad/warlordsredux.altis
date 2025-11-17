@@ -3,13 +3,19 @@ Warlords Redux 2.7.1
 New Asset:
 * Harpoon/Silkworm Launcher
 * Grenade drones
+* IED trucks
+
+Removed:
+* R-750 Cronus (ECM)
 
 Balance
 * Cheetah: $5,000->$4,750
 * Hercules: $22,000->$18,000
 * Wipeout/Neophron: added 2 more bunker buster pylons
 * Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon
+* Stronghold can now be demolished even when enemy infantry are present
 * Stronghold infantry cap power: 5x->7x
+* Stronghold demolition time per step: 4->8s
 
 Interface
 * Added optional sound for squad chat messages (special notification: @SL, @SQUAD).
@@ -18,8 +24,10 @@ Interface
 * Added notification stack interface for most system notifications.
 * Refactored button menu.
 * Add option to show death info over map.
-* Can now direct control drone boat from map.
+* Can now initiate control of drone boat from map and scroll action.
 * Loiter waypoints for UAV.
+* Lighten colors of unknown sectors.
+* Button menu conditional fails now surfaced as notifications.
 
 Gameplay
 * Rally point: squad leaders can upgrade their tents into team rally points/buildings.
@@ -29,20 +37,31 @@ Gameplay
 * Notification shows jamming damage status.
 * Coordinates for GPS munitions can be added by clicking on map.
 * Destroyer VLS does not spawn until 20 minutes after match start, shows respawn time on console.
+* Changed surrender limit to 1 hour from start of match.
+* Drone detonation now triggered by mouse click.
+* Add map item for drone controller.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
+* Various exploits around fast traveling to dead bodies.
 * GPS munitions overriding default target lock.
 * Missile camera only showing last munition when multiple launched.
 * Vote display incorrectly showing first time player sees sector capture if JIP.
 * Incapacitated crew somehow brought back into vehicle no longer count for capture value.
 * Wrong sound played when airfield position not found.
-* Can no longer spawn on teammate tents.
+* Can no longer attempt to spawn on teammate tents.
 * Double-clicking intentionally in button menu.
 * Modify/rearm should no longer show outside of 180 degree view cone.
+* Tether unconscious units to their original position.
+* Air jammer no longer confuses position over water.
 
 Performance
 * Squad backend reworked, added more squad channels.
 * Fixed sector re-sorting spam during sector selection.
 * Removed extraneous enemy sector calculations for clients.
 * Batched server calls for vehicle spawning.
+* Memory leaks with sector/asset info box.
+* Memory leaks in grapple, destroyer respawner.
+* Optimizations for target reset/vote server logic.
+* Removed code paths for old killfeed.
+* Less busy rendering for sector icons.

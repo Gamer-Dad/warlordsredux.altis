@@ -31,7 +31,7 @@ class RemoteControl {
     };  // "AR-6"
 
     class O_UAV_06_grenade_F {
-        cost = 3500;
+        cost = 3200;
         description = "AL-6 Jinaah UP is a variant of the AL-6 Jinaah armed with a grenade dropper.";
         hasHMD = 1;
         name = "AL-6 Jinaah UP";
@@ -155,7 +155,6 @@ class RemoteControl {
         name = "UGV Stomper (Bomb)";
         offset[] = {0, 5, 0};
         rearm = 900;
-        requirements[] = {};
         spawn = "O_UGV_01_F";
         variant = 1;
 
@@ -168,6 +167,20 @@ class RemoteControl {
             };
             turret[] = { -1 };
         };
+    };
+
+    class O_Offroad_01_bomb_F {
+        aps = 4;
+        cost = 4000;
+        description = "Offroad (IED) is a variant of the Offroad that goes boom.";
+        detonate = 13;
+        drone = 1;
+        loadable[] = {0, -1.7, 1.3};
+        name = "Offroad (IED)";
+        offset[] = {0, 5, 0};
+        rearm = 900;
+        spawn = "I_E_Offroad_01_comms_F";
+        variant = 1;
     };
 
     class O_T_UAV_04_CAS_F {

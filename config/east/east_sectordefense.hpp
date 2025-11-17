@@ -244,7 +244,7 @@ class SectorDefense {
         loadable[] = {0, 0, 1};
         name = "HY-1 Silkworm";
         offset[] = {0, 6, 0};
-        rearm = 900;
+        rearm = 1800;
         spawn = "O_SAM_System_04_F";
 
         class Gunner: WLTurretDefaults {

@@ -108,17 +108,17 @@ class AirDefense {
         };
     };
 
-    class O_Radar_System_02_ecm_F {
-        cost = 2800;
-        description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km. Mounts ECM pods to jam incoming missiles.";
-        ecm[] = {{"MissileCore"}, 0, 16000, 1, 4, 240};
-        loadable[] = {0, 0, 1};
-        name = "R-750 Cronus (ECM)";
-        offset[] = {0, 7, 0};
-        rearm = 240;
-        spawn = "O_Radar_System_02_F";
-        variant = 1;
-    };
+    // class O_Radar_System_02_ecm_F {
+    //     cost = 2800;
+    //     description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16km. Mounts ECM pods to jam incoming missiles.";
+    //     ecm[] = {{"MissileCore"}, 0, 16000, 1, 4, 240};
+    //     loadable[] = {0, 0, 1};
+    //     name = "R-750 Cronus (ECM)";
+    //     offset[] = {0, 7, 0};
+    //     rearm = 240;
+    //     spawn = "O_Radar_System_02_F";
+    //     variant = 1;
+    // };
 
     class O_AAA_System_01_F {
         cost = 3500;

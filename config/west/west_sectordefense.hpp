@@ -288,7 +288,7 @@ class SectorDefense {
         loadable[] = {0, 0, 1};
         name = "RGM-84 Harpoon";
         offset[] = {0, 6, 0};
-        rearm = 900;
+        rearm = 1800;
         spawn = "B_SAM_System_03_F";
 
         class Gunner: WLTurretDefaults {
