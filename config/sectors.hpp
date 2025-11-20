@@ -1028,13 +1028,31 @@ class CfgWarlordSectors {
         };
     };
 
+    class USSKheSanh {
+        area[] = {100, 100, 0, 1};
+        destroyer = 1;
+        disableHome = 1;
+        location[] = {4808.5, 8092.8, 0};
+        name = "USS Khe Sanh";
+        spawn = 0.8;
+    };
+
     class USSLiberty {
-        area[] = {100, 100, 288, 1};
+        area[] = {100, 100, 0, 1};
         destroyer = 1;
         disableHome = 1;
         location[] = {15393.8, 14197.7, 0};
         name = "USS Liberty";
-        spawn = 1;
+        spawn = 0.8;
+    };
+
+    class USSTanoa {
+        area[] = {100, 100, 0, 1};
+        destroyer = 1;
+        disableHome = 1;
+        location[] = {4849.9, 25440.7, 0};
+        name = "USS Tanoa";
+        spawn = 0.8;
     };
 
     class Wait {

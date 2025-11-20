@@ -10,7 +10,7 @@ class Spawn {
 
     class Land_MedicalTent_01_CSAT_brownhex_generic_open_F {
         cost = 5000;
-        demolishStepTime = 2;
+        demolishStepTime = 10;
         hasFastTravel = 1;
         name = "Team Rally Point (CSAT)";
     };

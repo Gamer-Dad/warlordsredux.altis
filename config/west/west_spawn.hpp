@@ -1,4 +1,12 @@
 class Spawn {
+    class Land_BagFence_Long_F {
+        cost = 200;
+        demolishable = 1;
+        demolishStepTime = 1;
+        name = "Temporary Sandbag Wall";
+        lifetime = 180;
+    };
+
     class Land_Cargo20_blue_F {
         cost = 500;
         demolishable = 2;
@@ -15,7 +23,7 @@ class Spawn {
 
     class Land_MedicalTent_01_NATO_generic_open_F {
         cost = 5000;
-        demolishStepTime = 2;
+        demolishStepTime = 10;
         hasFastTravel = 1;
         name = "Team Rally Point (NATO)";
     };
@@ -24,7 +32,7 @@ class Spawn {
         cost = 5000;
         demolishStepTime = 15;
         hasFastTravel = 1;
-        name = "Rally Building";
+        name = "Team Rally Building";
     };
 
     class Land_TentA_F {

@@ -41,8 +41,7 @@ minPlayerDistance[] = {150, 300, 075, 0600, 1800, 0300};
 
 onPauseScript[] = {WL2_fnc_onPause};
 
-class Header
-{
+class Header {
 	gameType = Warlords;
 	minPlayers = 1;
 	maxPlayers = 128;
