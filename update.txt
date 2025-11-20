@@ -48,6 +48,7 @@ Gameplay
 * Add map item for drone controller.
 * Added ability for FOB owners to lock it.
 * Removed uav terminals and bipods from gear crates.
+* Lowered action priority of demolition.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
@@ -71,6 +72,7 @@ Fixes
 * Dead tracked projectiles still shown on map.
 * Eliminated exploit where players retain control of destroyer VLS after fast travel.
 * Incorrect error messages when FOB is under construction.
+* Non-Latin characters in loadout names displaying improperly.
 
 Performance
 * Squad backend reworked, added more squad channels.
