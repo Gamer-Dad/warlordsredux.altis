@@ -14,15 +14,6 @@ class Gear {
             { "Vorona_HE", 2 },
             { "Vorona_HEAT", 8 },
 
-            { "APERSBoundingMine_Range_Mag", 3},
-            { "APERSMine_Range_Mag", 3},
-            { "APERSTripMine_Wire_Mag", 3},
-            { "ATMine_Range_Mag", 3},
-            { "ClaymoreDirectionalMine_Remote_Mag", 3},
-            { "DemoCharge_Remote_Mag", 3},
-            { "SatchelCharge_Remote_Mag", 3},
-            { "SLAMDirectionalMine_Wire_Mag", 3},
-
             { "B_FieldPack_cbr", 5 },
             { "B_Carryall_mcamo", 5 }
         };
@@ -38,22 +29,26 @@ class Gear {
 
     class Box_NATO_AmmoVeh_F {
         cost = 250;
+        hasRearm = 1;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
     }; // "Vehicle Ammo [NATO]"
 
     class B_Slingload_01_Fuel_F {
         cost = 300;
+        hasRefuel = 1;
         loadable[] = {0, -1.5, 0.5};
     }; // "Huron Fuel Container"
 
     class B_Slingload_01_Ammo_F {
         cost = 500;
+        hasRearm = 1;
         loadable[] = {0, -1.5, 0.5};
     }; // "Huron Ammo Container"
 
     class B_Slingload_01_Repair_F {
         cost = 500;
+        hasRepair = 1;
         loadable[] = {0, -1.5, 0.5};
     }; // "Huron Repair Container"
 

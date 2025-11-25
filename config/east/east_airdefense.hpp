@@ -75,8 +75,9 @@ class AirDefense {
         aps = 1;
         capValue = 2;
         cost = 2000;
+        description = "Nyx (SAM) is a variant of the Nyx with a surface-to-air missile system. Lethal range: 4km.";
         hasHMD = 1;
-        hasReconOptics = 1;
+        hasReconOptics = 2;
         loadable[] = {0, -1.5, 1.2};
         name = "AWC Nyx (SAM)";
         rearm = 180;
@@ -87,6 +88,7 @@ class AirDefense {
             "A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
             "A3\armor_f\data\cage_olive_co.paa"
         };
+        variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -234,40 +236,40 @@ class AirDefense {
         };
     };
 
-    class O_APC_Tracked_02_AA_E_F {
-        aps = 2;
-        capValue = 4;
-        cost = 8500;
-        description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with LOAL-capable R77 missiles.";
-        hasHMD = 1;
-        name = "ZSU-59 Yangtze";
-        rearm = 240;
-        spawn = "O_APC_Tracked_02_AA_F";
-        variant = 1;
+    // class O_APC_Tracked_02_AA_E_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 8500;
+    //     description = "ZSU-59 Yangtze is a variant of the ZSU-39 Tigris armed with LOAL-capable R77 missiles.";
+    //     hasHMD = 1;
+    //     name = "ZSU-59 Yangtze";
+    //     rearm = 240;
+    //     spawn = "O_APC_Tracked_02_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "magazine_Missile_AA_R77_x1",
-                "magazine_Missile_AA_R77_x1",
-                "magazine_Missile_AA_R77_x1",
-                "magazine_Missile_AA_R77_x1",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "weapon_R77Launcher"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles_O",
-                "680Rnd_35mm_AA_shells_Tracer_Green"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "magazine_Missile_AA_R77_x1",
+    //             "magazine_Missile_AA_R77_x1",
+    //             "magazine_Missile_AA_R77_x1",
+    //             "magazine_Missile_AA_R77_x1",
+    //             "680Rnd_35mm_AA_shells_Tracer_Green"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "weapon_R77Launcher"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles_O",
+    //             "680Rnd_35mm_AA_shells_Tracer_Green"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class O_SAM_System_01_Advanced_F {
         ammoOverrides[] = {

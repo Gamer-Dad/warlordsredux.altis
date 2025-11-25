@@ -28,13 +28,6 @@ class Spawn {
         name = "Team Rally Point (NATO)";
     };
 
-    class Land_RallyBuilding {
-        cost = 5000;
-        demolishStepTime = 15;
-        hasFastTravel = 1;
-        name = "Team Rally Building";
-    };
-
     class Land_TentA_F {
         cost = 300;
         demolishStepTime = 2;
@@ -61,6 +54,11 @@ class Spawn {
 
     class RuggedTerminal_01_communications_hub_F {
         name = "Forward Base";
+    };
+
+    class B_Mortar_01_Integral_F {
+        cost = -1;
+        name = "Integral Mortar System";
     };
 
     class B_Ship_MRLS_01_F {

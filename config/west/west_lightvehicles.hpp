@@ -146,34 +146,20 @@ class LightVehicles {
     class B_Truck_01_ammo_F {
         capValue = 1;
         cost = 1000;
+        hasRearm = 1;
     }; // "HEMTT Ammo"
 
     class B_Truck_01_fuel_F {
         capValue = 1;
         cost = 1000;
+        hasRefuel = 1;
     }; // "HEMTT Fuel"
 
     class B_Truck_01_Repair_F {
         capValue = 1;
         cost = 1000;
+        hasRepair = 1;
     }; // "HEMTT Repair"
-
-    class B_MRAP_03_F {
-        aps = 2;
-        capValue = 2;
-        cost = 1100;
-        description = "Strider (Recon) is a variant of the Strider with a recon scanner.";
-        hasHMD = 1;
-        hasReconOptics = 1;
-        loadable[] = {0, -0.8, 1.8};
-        name = "Strider (Recon)";
-        rearm = 120;
-        spawn = "I_MRAP_03_F";
-        textures[] = {
-            "a3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
-            "a3\data_f\vehicles\turret_co.paa"
-        };
-    };
 
     // class B_LSV_01_AT_UP_F {
     //     capValue = 1;

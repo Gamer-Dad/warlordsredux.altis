@@ -367,7 +367,7 @@ class FixedWing {
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
-        threatDetection = 8000;
+        threatDetection = 16000;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -411,7 +411,7 @@ class FixedWing {
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};
-        threatDetection = 16000;
+        threatDetection = 8000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {

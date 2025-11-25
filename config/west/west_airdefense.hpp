@@ -71,6 +71,42 @@ class AirDefense {
         offset[] = {0, 7, 0};
     }; // "AN/MPQ-105 Radar"
 
+    class B_MRAP_03_AA_F {
+        aps = 1;
+        capValue = 2;
+        cost = 2000;
+        description = "Strider (SAM) is a variant of the Strider with a surface-to-air missile system. Lethal range: 4km.";
+        hasHMD = 1;
+        hasReconOptics = 2;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Strider (SAM)";
+        rearm = 180;
+        spawn = "I_MRAP_03_gmg_F";
+        textures[] = {
+            "a3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
+            "a3\data_f\vehicles\turret_co.paa"
+        };
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1"
+            };
+            addWeapons[] = {
+                "weapon_AMRAAMLauncher"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_AAA_System_01_F {
         cost = 3500;
         description = "Short-range point defense artillery with a high rate of fire.";
@@ -169,40 +205,40 @@ class AirDefense {
         rearm = 240;
     }; // "Mk21 Centurion"
 
-    class B_APC_Tracked_01_AA_E_F {
-        aps = 2;
-        capValue = 4;
-        cost = 8500;
-        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with LOAL-capable AMRAAM missiles.";
-        hasHMD = 1;
-        name = "IFV-6C Jaguar";
-        rearm = 240;
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
+    // class B_APC_Tracked_01_AA_E_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 8500;
+    //     description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with LOAL-capable AMRAAM missiles.";
+    //     hasHMD = 1;
+    //     name = "IFV-6C Jaguar";
+    //     rearm = 240;
+    //     spawn = "B_APC_Tracked_01_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "weapon_AMRAAMLauncher"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "weapon_AMRAAMLauncher"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_SAM_System_01_Advanced_F {
         ammoOverrides[] = {

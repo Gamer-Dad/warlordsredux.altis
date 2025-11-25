@@ -46,7 +46,6 @@ class WLProjectilesConfig {
     class WLProjectile_SAM: WLProjectile {
         ammo[] = {
             "ammo_Missile_rim116",              // Spartan
-            "M_Zephyr_SAM",                     // Zephyr (SAM)
             "M_70mm_SAAMI",                     // SAAMI
             "M_Titan_AA",                       // Titan AA
             "M_Titan_AA_static",                // Titan AA (Static)
@@ -63,11 +62,11 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162",              // Centurion
             "ammo_Missile_s750",                // Rhea
             "ammo_Missile_mim145",              // Defender
+            "M_Zephyr_SAM"                      // Zephyr (SAM)
         };
         aps = 3;
         camera = 1;
         immunity = 3500;
-        loal = 1;
         sam = 1;
         speed = 1.1;
     };
@@ -159,7 +158,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
-        bunker = 7;
+        bunker = 8;
         remote = 1;
     };
 
@@ -331,5 +330,22 @@ class WLProjectilesConfig {
         aps = 1;
         consumption = 1;
         dazzleable = 0;
+    };
+
+    class WLProjectile_Mines: WLProjectile {
+        ammo[] = {
+            "APERSBoundingMine_Range_Ammo",
+            "APERSMine_Range_Ammo",
+            "APERSMineDispenser_Ammo",
+            "APERSMineDispenser_Mine_Ammo",
+            "APERSTripMine_Wire_Ammo",
+            "ATMine_Range_Ammo",
+            "ClaymoreDirectionalMine_Remote_Ammo",
+            "DemoCharge_Remote_Ammo",
+            "SatchelCharge_Remote_Ammo",
+            "SLAMDirectionalMine_Wire_Ammo"
+        };
+        aps = 3;
+        mine = 1;
     };
 };

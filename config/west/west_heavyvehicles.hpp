@@ -60,6 +60,9 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
+        hasRearm = 1;
+        hasRefuel = 1;
+        hasRepair = 1;
         rearm = 180;
     }; // "CRV-6e Bobcat"
 
@@ -328,6 +331,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         isLight = 1;
+        hasMiniMortar = 1;
         rearm = 300;
     }; // "M2A1 Slammer"
 
@@ -338,6 +342,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        hasMiniMortar = 1;
         isLight = 1;
         rearm = 300;
 
@@ -388,6 +393,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         hasHMD = 1;
+        hasMiniMortar = 1;
         isLight = 1;
         name = "M2A2 Slammer II";
         rearm = 300;
