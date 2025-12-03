@@ -3,6 +3,7 @@ class HeavyVehicles {
         ammoOverrides[] = {
             {"M_Vorona_HEAT", {"M_Vorona_HEAT_Tandem", "9M135 Tandem Missile"}}
         };
+        aps = 2;
         capValue = 2;
         cost = 1200;
         loadable[] = {0, -0.8, 1.65};

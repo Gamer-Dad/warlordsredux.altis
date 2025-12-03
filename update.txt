@@ -21,6 +21,7 @@ Balance
 * Defender/Rhea: $7,000->$5,500.
 * Centurion: $8,000->$6,800.
 * Hercules: $22,000->$10,000.
+* Marid (ATGM): added medium APS.
 * Zephyr SAM: notch immunity range 1.5->3.5km.
 * Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons.
 * Bunker buster: demolition damage increased 7->8.
@@ -118,6 +119,8 @@ Fixes
 * Sanitize modded loadouts before spawning.
 * Bug where selecting sector wait would not wait if target selection is active.
 * Sanitized saved badge input.
+* Gear boxes now included in air spawn collision calculation.
+* Exiting quad bike/scooter only despawns it if it belongs to player.
 
 Performance
 * Squad backend reworked, separated squad channels.

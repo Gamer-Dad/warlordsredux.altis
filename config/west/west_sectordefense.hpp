@@ -194,14 +194,19 @@ class SectorDefense {
     // };
 
     class B_SmartMine_01_F {
-        cost = 1500;
-        description = "XM205 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles within 200 meters. Must be placed outside. Mines: 7. Limit 3 deployed.";
-        loadable[] = {0, -1, -0.75};
+        cost = 2500;
+        description = "XM205 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 7. Limit 2 deployed.";
+        empty = 1;
+        loadable[] = {0, -1, -0.4};
         name = "XM205 Smart Mine System";
         offset[] = {0, 3, 0};
         rearm = 900;
+        requirements[] = {"S"};
         smartMine = 7;
-        spawn = "UnderwaterMineAB";
+        spawn = "Box_NATO_Equip_F";
+        textures[] = {
+            "#(rgb,8,8,3)color(1,0,0,1)"
+        };
     };
 
     // class B_AAA_System_01_F {
