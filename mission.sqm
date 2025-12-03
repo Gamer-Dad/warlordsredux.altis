@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=641;
+	toggles=513;
 	class ItemIDProvider
 	{
 		nextID=3811;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=153;
+		nextID=155;
 	};
 	class Camera
 	{
-		pos[]={2288.2085,15.793386,9304.1826};
-		dir[]={0.72978854,-0.54222488,-0.41668892};
-		up[]={0.47090384,0.84020454,-0.26887316};
-		aside[]={-0.49588335,5.7031866e-07,-0.8684926};
+		pos[]={1684.6603,132.39374,15355.845};
+		dir[]={0.44810039,-0.29849488,0.84272671};
+		up[]={0.14015034,0.9543913,0.26357341};
+		aside[]={0.88297743,-1.4028046e-07,-0.46950254};
 	};
 };
 binarizationWanted=0;
@@ -83,7 +83,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords 2.7.0 (Redux) | WSV";
+		briefingName="Warlords 2.7.1 (Redux) | WSV";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
@@ -253,7 +253,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1729.833,0.038604736,15581.902};
-						angles[]={0,5.8209352,0};
+						angles[]={0,2.4783676,0};
 					};
 					side="Empty";
 					class Attributes

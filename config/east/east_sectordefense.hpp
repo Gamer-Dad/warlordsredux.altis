@@ -162,6 +162,17 @@ class SectorDefense {
     //     };
     // };
 
+    class O_SmartMine_01_F {
+        cost = 1500;
+        description = "PTKM-2 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles within 200 meters. Must be placed outside. Mines: 7. Limit 3 deployed.";
+        loadable[] = {0, -1, -0.75};
+        name = "PTKM-2 Smart Mine System";
+        offset[] = {0, 3, 0};
+        rearm = 900;
+        smartMine = 7;
+        spawn = "UnderwaterMineAB";
+    };
+
     // class O_AAA_System_01_F {
     //     cost = 3500;
     //     description = "Short range anti-mortar defense, capable of automatically engaging incoming ballistic shells. Effective range: 3km.";

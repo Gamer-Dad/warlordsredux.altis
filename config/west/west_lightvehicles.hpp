@@ -193,39 +193,31 @@ class LightVehicles {
     //     };
     // };
 
-    // class B_MRAP_01_gmg_up_F {
-    //     aps = 2;
-    //     capValue = 2;
-    //     cost = 1500;
-    //     description = "Hunter UP is a variant of the Hunter armed with a 20mm autocannon.";
-    //     name = "Hunter UP Autocannon";
-    //     rearm = 300;
-    //     spawn = "B_MRAP_01_gmg_F";
-    //     variant = 1;
+    class B_MRAP_01_afv_F {
+        aps = 2;
+        capValue = 2;
+        cost = 1200;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Hunter AFV";
+        rearm = 120;
+        spawn = "B_MRAP_01_gmg_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_AP_shells",
-    //             "60Rnd_20mm_AP_shells",
-    //             "200Rnd_338_Mag",
-    //             "200Rnd_338_Mag"
-    //         };
-    //         addWeapons[] = {
-    //             "cannon_20mm",
-    //             "MMG_02_coax"
-    //         };
-    //         removeMagazines[] = {
-    //             "96Rnd_40mm_G_belt"
-    //         };
-    //         removeWeapons[] = {
-    //             "GMG_40mm"
-    //         };
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "200Rnd_40mm_G_belt"
+            };
+            addWeapons[] = {
+                "HMG_NSVT"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     class B_T_Truck_03_device_F {
         aps = 4;

@@ -1001,17 +1001,17 @@ class CfgWarlordSectors {
     };
 
     class USSFreedom {
-        area[] = {250, 100, 63.455, 1};
+        area[] = {250, 100, 232, 1};
         carrier = 1;
         disableHome = 1;
         location[] = {1742.19, 15566.5, 25};
         name = "USS Freedom";
         services[] = {"W", "H", "A"};
         vehicles[] = {
-            {"I_LT_01_AA_F", {1813.9, 15430.4, 25.8967}, 111.326},
-            {"I_LT_01_AA_F", {1725.2, 15665.3, 25.8783}, 75.3528},
-            {"I_LT_01_AA_F", {1653.01, 15730.2, 25.7847}, 5.12528},
-            {"I_APC_tracked_03_cannon_F", {1716.6, 15569.4, 26.3476}, 44.157}
+            {"I_LT_01_AA_F", {1814.2, 15427.8, 19.8}, 204.7},
+            {"I_LT_01_AA_F", {1791.4, 15470.6, 23.6}, 156},
+            {"I_LT_01_AA_F", {1677.0, 15627.8, 23.6}, 65},
+            {"I_APC_tracked_03_cannon_F", {1769.6, 15560.2, 23.6}, 104}
         };
     };
 
@@ -1032,9 +1032,9 @@ class CfgWarlordSectors {
         area[] = {100, 100, 0, 1};
         destroyer = 1;
         disableHome = 1;
-        location[] = {4808.5, 8092.8, 0};
+        location[] = {1373.0 ,20343.7, 0};
         name = "USS Khe Sanh";
-        spawn = 0.5;
+        spawn = 0.8;
     };
 
     class USSLiberty {
@@ -1043,16 +1043,7 @@ class CfgWarlordSectors {
         disableHome = 1;
         location[] = {15393.8, 14197.7, 0};
         name = "USS Liberty";
-        spawn = 0.5;
-    };
-
-    class USSTanoa {
-        area[] = {100, 100, 0, 1};
-        destroyer = 1;
-        disableHome = 1;
-        location[] = {4849.9, 25440.7, 0};
-        name = "USS Tanoa";
-        spawn = 0.5;
+        spawn = 0.8;
     };
 
     class Wait {
@@ -1086,5 +1077,32 @@ class CfgWarlordSectors {
         location[] = {16598, 19013.6, 0};
         name = "Zeloran Base";
         services[] = {"H"};
+    };
+};
+
+class CfgWarlordRunways {
+    class AAC {
+        area[] = {{11512.2, 11681.6, 0}, 320, 30, 123.9};
+    };
+    class Ammolofi {
+        area[] = {{9140.1, 21479.2, 0}, 180, 30, 143.6};
+    };
+    class MainTakeoff {
+        area[] = {{14739.4, 16291.4, 0}, 690, 30, 134.5};
+    };
+    class MainTaxiway {
+        area[] = {{14675.4, 16372.9, 0}, 700, 20, 134.5};
+    };
+    class Molos {
+        area[] = {{26998.2, 24721.4, 0}, 265, 30, 131.5};
+    };
+    class Selekano {
+        area[] = {{21125.9, 7356.5, 0}, 290, 30, 101.3};
+    };
+    class USSFreedom {
+        area[] = {{1742.2, 15566.5, 0}, 250, 100, 63.5};
+    };
+    class USSIndependence {
+        area[] = {{8856.1, 28796.1, 0}, 250, 100, 0};
     };
 };

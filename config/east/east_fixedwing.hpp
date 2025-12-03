@@ -240,7 +240,8 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
-            {"PylonMissile_1Rnd_Mk82_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}}
+            {"PylonMissile_1Rnd_Mk82_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
+            {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
             {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
@@ -405,7 +406,6 @@ class FixedWing {
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
-        ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasHMD = 1;
         hasReconOptics = 1;
         name = "To-201 Shikra (Stealth/Recon)";

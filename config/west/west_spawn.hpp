@@ -63,6 +63,7 @@ class Spawn {
 
     class B_Ship_MRLS_01_F {
         cost = 20000;
+        hasHMD = 1;
     };
 
     class B_UAV_02_F {

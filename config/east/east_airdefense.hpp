@@ -142,7 +142,7 @@ class AirDefense {
         };
         aps = 2;
         capValue = 4;
-        cost = 5000;
+        cost = 4000;
         hasHMD = 1;
         rearm = 240;
 
@@ -169,7 +169,7 @@ class AirDefense {
     }; // "ZSU-39 Tigris"
 
     class O_SAM_System_01_F {
-        cost = 6500;
+        cost = 4800;
         description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};
@@ -183,7 +183,7 @@ class AirDefense {
     };
 
     class O_SAM_System_04_F {
-        cost = 7000;
+        cost = 5500;
         description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, 0, 1};
@@ -223,7 +223,7 @@ class AirDefense {
     // };
 
     class O_SAM_System_02_F {
-        cost = 8000;
+        cost = 6800;
         description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 1};
@@ -276,7 +276,7 @@ class AirDefense {
             {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
         };
         cost = 10000;
-        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Lethal range: 5km.";
+        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Lethal range: 6.5km.";
         hasASAM = 1;
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};

@@ -484,37 +484,37 @@ class HeavyVehicles {
         rearm = 1800;
     }; // "M5 Sandstorm MLRS"
 
-    class B_MBT_01_mlrs_sdb_F {
-        ammoOverrides[] = {
-            {"ammo_Bomb_SDB", {"M_GLSDB", "Ground Launched SDB II"}}
-        };
-        aps = 1;
-        capValue = 4;
-        cost = 35000;
-        description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
-        name = "M5A2 Sandstorm II";
-        rearm = 1800;
-        spawn = "B_MBT_01_mlrs_F";
-        variant = 1;
+    // class B_MBT_01_mlrs_sdb_F {
+    //     ammoOverrides[] = {
+    //         {"ammo_Bomb_SDB", {"M_GLSDB", "Ground Launched SDB II"}}
+    //     };
+    //     aps = 1;
+    //     capValue = 4;
+    //     cost = 35000;
+    //     description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
+    //     name = "M5A2 Sandstorm II";
+    //     rearm = 1800;
+    //     spawn = "B_MBT_01_mlrs_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonRack_Bomb_SDB_x4",
-                "PylonRack_Bomb_SDB_x4",
-                "PylonRack_Bomb_SDB_x4"
-            };
-            addWeapons[] = {
-                "weapon_SDBLauncher"
-            };
-            removeMagazines[] = {
-                "12Rnd_230mm_rockets"
-            };
-            removeWeapons[] = {
-                "rockets_230mm_GAT"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonRack_Bomb_SDB_x4",
+    //             "PylonRack_Bomb_SDB_x4",
+    //             "PylonRack_Bomb_SDB_x4"
+    //         };
+    //         addWeapons[] = {
+    //             "weapon_SDBLauncher"
+    //         };
+    //         removeMagazines[] = {
+    //             "12Rnd_230mm_rockets"
+    //         };
+    //         removeWeapons[] = {
+    //             "rockets_230mm_GAT"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class B_MBT_01_arty_tv_F {
     //     ammoOverrides[] = {

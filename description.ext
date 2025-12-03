@@ -4,7 +4,7 @@
 #include "config\projectiles.hpp"
 #include "config\sectors.hpp"
 
-onLoadName = "Warlords Redux 2.7.0";
+onLoadName = "Warlords Redux 2.7.1";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;

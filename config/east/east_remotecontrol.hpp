@@ -26,7 +26,8 @@ class RemoteControl {
     };  // "UGV Stomper RCWS"
 
     class O_UAV_06_F {
-        cost = 1000;
+        cost = 2000;
+        detonate = 1;
         offset[] = {0, 3, 0};
     };  // "AR-6"
 
@@ -151,22 +152,13 @@ class RemoteControl {
         aps = 4;
         cost = 3500;
         description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+        detonate = 13;
         loadable[] = {-0.4, -1, 1.1};
         name = "UGV Stomper (Bomb)";
         offset[] = {0, 5, 0};
         rearm = 900;
         spawn = "O_UGV_01_F";
         variant = 1;
-
-        class Driver: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonMissile_1Rnd_Mk82_F"
-            };
-            addWeapons[] = {
-                "Mk82BombLauncher"
-            };
-            turret[] = { -1 };
-        };
     };
 
     class O_Offroad_01_bomb_F {

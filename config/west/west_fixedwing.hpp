@@ -222,7 +222,8 @@ class FixedWing {
     class B_Plane_CAS_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
-            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}}
+            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
+            {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}}
         };
         ammoOverrides[] = {
             {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}}
@@ -255,7 +256,7 @@ class FixedWing {
             {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
         };
         cost = 19000;
-        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs.";
         hasHMD = 1;
         name = "A-149 Gryphon";
         rearm = 420;
@@ -337,6 +338,7 @@ class FixedWing {
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
+        threatDetection = 8000;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -362,7 +364,7 @@ class FixedWing {
             {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
-        cost = 26000;
+        cost = 28000;
         hasHMD = 1;
         hasReconOptics = 1;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
