@@ -99,7 +99,7 @@ Fixes
 * Modify/rearm should no longer show outside of 180 degree view cone.
 * Tether unconscious units to their original position.
 * Air jammer no longer confuses position over water.
-* Nonfunctional ttack helo device jammer now functional.
+* Nonfunctional attack helo device jammer now functional.
 * Disabled scanner UAV sensors' ability to see outside sector.
 * Rare bug with drone ping not working.
 * Map icon/text not being correctly displayed.
