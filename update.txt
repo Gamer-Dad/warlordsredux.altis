@@ -22,7 +22,7 @@ Balance
 * Centurion: $8,000->$6,800.
 * Hercules: $22,000->$10,000.
 * Marid (ATGM): added medium APS.
-* Zephyr SAM: notch immunity range 1.5->3.5km.
+* Zephyr SAM: notch immunity range 1.5->3km.
 * Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons.
 * Bunker buster: demolition damage increased 7->8.
 * Black Wasp: added 8km A2A threat detector.
@@ -32,7 +32,7 @@ Balance
 * Pelican: demolition 0->1, AT warhead, $1,000->$2,000.
 * Stronghold can now be demolished even when enemy infantry are present.
 * Stronghold infantry cap power: 5x->7x.
-* Stronghold demolition time per step: 4->8s.
+* Stronghold demolition time per step: 4->7s.
 * Destroyer ammo reload: 120->180s.
 * Destroyer vls respawn: 15->20 minutes.
 
@@ -61,12 +61,14 @@ Gameplay
 * Slammer integral mortar.
 * Clear personal mines: can be used to clear all deployed mines.
 * GPS munition reveals launcher on map when landed.
+* Removed harbors and unified water spawning conditions. Heavy boats must be spawned within 1.5km of owned sector, all boats must be within 300m of player.
 * Removed griefer check against building structures.
 * Added a 2 minute reconnection period before vehicle deletion. Owned vehicles will be deleted after that if player has not fully reconnected, even if teammates are inside.
 * Controlled munition launches at 15 degree up to prevent hitting ground.
 * Notification shows jamming damage status.
 * Coordinates for GPS munitions can be added by clicking on map.
-* Destroyer VLS does not spawn until 30 minutes after match start, shows respawn time on console.
+* Destroyer does not spawn until 20-30 minutes after match start.
+* Destroyer VLS shows respawn timer on console.
 * Destroyer no longer spawns in place of carriers, now spawn randomly in 3 locations.
 * Changed surrender limit 2->1 hour from start of match.
 * Bomb drone detonations now triggered by mouse click or scroll action.

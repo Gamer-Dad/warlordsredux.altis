@@ -61,12 +61,22 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Missile_rim162",              // Centurion
             "ammo_Missile_s750",                // Rhea
-            "ammo_Missile_mim145",              // Defender
-            "M_Zephyr_SAM"                      // Zephyr (SAM)
+            "ammo_Missile_mim145"               // Defender
         };
         aps = 3;
         camera = 1;
         immunity = 3500;
+        sam = 1;
+        speed = 1.1;
+    };
+
+    class WLProjectile_ZephyrSAM: WLProjectile {
+        ammo[] = {
+            "M_Zephyr_SAM"                      // Zephyr (SAM)
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 3000;
         sam = 1;
         speed = 1.1;
     };
