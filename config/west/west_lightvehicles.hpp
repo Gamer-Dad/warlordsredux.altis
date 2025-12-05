@@ -234,35 +234,73 @@ class LightVehicles {
         };
     }; // "Tempest Device"
 
-    class B_LSV_01_AT_TV_F {
-        ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
-        };
-        capValue = 1;
-        cost = 6000;
-        description = "Prowler (Spike AT) is a variant of the Prowler AT.";
-        loadable[] = {0, -1.3, 0.95};
-        name = "Prowler (Spike AT)";
-        offset[] = {0, 5, 0};
-        rearm = 240;
-        spawn = "B_LSV_01_AT_F";
+    class B_MRAP_01_afv_up_F {
+        aps = 2;
+        capValue = 2;
+        cost = 2500;
+        hasHMD = 1;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Hunter Apex";
+        rearm = 120;
+        spawn = "B_MRAP_01_gmg_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "1Rnd_GAT_missiles",
+                "1Rnd_GAT_missiles",
+                "1Rnd_GAT_missiles",
+                "1Rnd_GAT_missiles",
                 "1Rnd_GAT_missiles"
             };
-            removeWeapons[] = {
+            addWeapons[] = {
+                "autocannon_30mm_RCWS",
+                "HMG_NSVT",
                 "missiles_titan_static"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
             };
             turret[] = { 0 };
         };
     };
+
+    // class B_LSV_01_AT_TV_F {
+    //     ammoOverrides[] = {
+    //         {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
+    //     };
+    //     capValue = 1;
+    //     cost = 6000;
+    //     description = "Prowler (Spike AT) is a variant of the Prowler AT.";
+    //     loadable[] = {0, -1.3, 0.95};
+    //     name = "Prowler (Spike AT)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 240;
+    //     spawn = "B_LSV_01_AT_F";
+    //     variant = 1;
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "1Rnd_GAT_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_static"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 };

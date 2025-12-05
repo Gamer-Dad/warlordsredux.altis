@@ -6,6 +6,7 @@ New Asset:
 * Smart mines
 * Strider (SAM)
 * Hunter AFV
+* Hunter Apex
 * Marid (Utility)
 
 Removed:
@@ -13,6 +14,7 @@ Removed:
 * Strider (Recon)
 * Jaguar/Yangtze
 * Sandstorm II
+* Prowler Spike
 
 Balance
 * Tigris: $5,000->$4,000.
@@ -25,8 +27,8 @@ Balance
 * Zephyr SAM: notch immunity range 1.5->3km.
 * Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons.
 * Bunker buster: demolition damage increased 7->8.
-* Black Wasp: added 8km A2A threat detector.
-* Black Wasp Stealth: $26,000->$28,000.
+* Black Wasp: added 12km A2A threat detector.
+* Black Wasp Stealth: $26,000->$28,000, removed 1 Sidearm pylon.
 * Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon, removed ECM, A2A threat detector: 16->8km.
 * Shikra: A2A threat detector 8->16km.
 * Pelican: demolition 0->1, AT warhead, $1,000->$2,000.
@@ -52,6 +54,7 @@ Interface
 * Consolidated map circles, only show AESA symbols if inside AESA plane.
 * Increased preset loadouts 10->30.
 * Changed target lock hud to use vanilla lock icons.
+* Start welcome interface, can be disabled in settings.
 
 Gameplay
 * Decreased green sector AI infantry spawn, increased vehicle spawn from 2->3, increased green cap ratio 2->2.5.
@@ -61,7 +64,7 @@ Gameplay
 * Slammer integral mortar.
 * Clear personal mines: can be used to clear all deployed mines.
 * GPS munition reveals launcher on map when landed.
-* Removed harbors and unified water spawning conditions. Heavy boats must be spawned within 1.5km of owned sector, all boats must be within 300m of player.
+* Removed harbors and unified water spawning conditions. Heavy boats must be spawned within 1.5km of owned sector/FOB, all boats must be within 300m of player.
 * Removed griefer check against building structures.
 * Added a 2 minute reconnection period before vehicle deletion. Owned vehicles will be deleted after that if player has not fully reconnected, even if teammates are inside.
 * Controlled munition launches at 15 degree up to prevent hitting ground.

@@ -338,7 +338,7 @@ class FixedWing {
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
-        threatDetection = 8000;
+        threatDetection = 12000;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -356,7 +356,7 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
-            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter3", "pylonBayCenter4"}},
             {"PylonRack_Missile_AMRAAM_D_x2", {"pylonBayCenter5", "pylonBayCenter6"}}
         };
         ammoOverrides[] = {

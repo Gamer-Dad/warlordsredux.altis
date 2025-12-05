@@ -3036,8 +3036,8 @@
             <Chinese>如何遊玩</Chinese>
         </Key>
         <Key ID="WL2_InfoText_4">
-            <Original>To teleport, press and hold %1, select &quot;Fast Travel&quot; on the left</Original>
-            <English>To teleport, press and hold %1, select &quot;Fast Travel&quot; on the left</English>
+            <Original>To teleport, press and hold %1, select &quot;Fast Travel&quot;.</Original>
+            <English>To teleport, press and hold %1, select &quot;Fast Travel&quot;.</English>
             <Czech>Chcete-li se teleportovat, podržte %1 a vyberte „Rychlý přesun“ vlevo.</Czech>
             <French>Pour vous téléporter, appuyez longuement sur %1, puis sélectionnez « Voyage rapide » à gauche.</French>
             <German>Zum Teleportieren halten Sie %1 gedrückt und wählen links „Schnellreise“ aus.</German>
@@ -3053,21 +3053,21 @@
             <Chinese>要傳送，按住 %1，然後在左側選擇「快速旅行」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_5">
-            <Original>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</Original>
-            <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Customization&quot;.</English>
-            <Czech>Chcete-li upravit výbavu, podržte %1, vyberte vlevo „Výbava“ a poté zvolte „Přizpůsobení“.</Czech>
-            <French>Pour personnaliser votre équipement, appuyez longuement sur %1, sélectionnez « Équipement » à gauche, puis choisissez « Personnalisation ».</French>
-            <German>Um deine Ausrüstung anzupassen, halte %1 gedrückt, wähle links „Ausrüstung“ und dann „Anpassung“.</German>
-            <Italian>Per personalizzare il tuo equipaggiamento, tieni premuto %1, seleziona «Equipaggiamento» a sinistra, quindi scegli «Personalizzazione».</Italian>
-            <Polish>Aby dostosować zestaw, przytrzymaj %1, wybierz po levé straně „Wyposażenie” i następnie „Dostosowanie”.</Polish>
-            <Portuguese>Para personalizar seu equipamento, pressione e segure %1, selecione 'Equipamento' à esquerda, e depois 'Personalização'.</Portuguese>
-            <Russian>Чтобы изменить снаряжение, нажми и удерживай %1, выбери слева «Снаряжение», затем «Арсенал» или «Кастомизация».</Russian>
-            <Spanish>Para personalizar tu equipo, mantén presionado %1, selecciona 'Equipo' a la izquierda y luego 'Personalización'.</Spanish>
+            <Original>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Loadouts&quot;.</Original>
+            <English>To customize loadout, press and hold %1, select &quot;Gear&quot; on the left, and then select &quot;Loadouts&quot;.</English>
+            <Czech>Chcete-li upravit výbavu, podržte %1, vyberte vlevo „Výbava“ a poté zvolte „Loadouts“.</Czech>
+            <French>Pour personnaliser votre équipement, appuyez longuement sur %1, sélectionnez « Équipement » à gauche, puis choisissez « Loadouts ».</French>
+            <German>Um deine Ausrüstung anzupassen, halte %1 gedrückt, wähle links „Ausrüstung“ und dann „Loadouts“.</German>
+            <Italian>Per personalizzare il tuo equipaggiamento, tieni premuto %1, seleziona «Equipaggiamento» a sinistra, quindi scegli «Loadouts».</Italian>
+            <Polish>Aby dostosować zestaw, przytrzymaj %1, wybierz po levé straně „Wyposażenie” i następnie „Loadouts”.</Polish>
+            <Portuguese>Para personalizar seu equipamento, pressione e segure %1, selecione 'Equipamento' à esquerda, e depois 'Loadouts'.</Portuguese>
+            <Russian>Чтобы изменить снаряжение, нажми и удерживай %1, выбери слева «Снаряжение», затем «Арсенал» или «Loadouts».</Russian>
+            <Spanish>Para personalizar tu equipo, mantén presionado %1, selecciona 'Equipo' a la izquierda y luego 'Loadouts'.</Spanish>
             <Turkish>Yüklemenizi özelleştirmek için, %1 tuşuna basılı tutun, sol taraftan 'Ekipman'ı seçin ve ardından 'Özelleştirme'yi seçin.</Turkish>
-            <Korean>장비를 사용자 지정하려면, %1을(를) 길게 누르고 왼쪽에서 '장비'를 선택한 후 '사용자 지정'을 선택하세요.</Korean>
-            <Japanese>ロードアウトをカスタマイズするには、%1を長押しし、左側で「ギア」を選択し、その後「カスタマイズ」を選んでください。</Japanese>
-            <Chinesesimp>要自定义装备，按住 %1，然后在左侧选择“装备”，再选择“自定义”。</Chinesesimp>
-            <Chinese>要自定義裝備，按住 %1，然後在左側選擇「裝備」，再選擇「自訂」。</Chinese>
+            <Korean>장비를 사용자 지정하려면, %1을(를) 길게 누르고 왼쪽에서 '장비'를 선택한 후 'Loadouts'를 선택하세요.</Korean>
+            <Japanese>ロードアウトをカスタマイズするには、%1を長押しし、左側で「ギア」を選択し、その後「Loadouts」を選んでください。</Japanese>
+            <Chinesesimp>要自定义装备，按住 %1，然后在左侧选择“装备”，再选择“Loadouts”。</Chinesesimp>
+            <Chinese>要自定義裝備，按住 %1，然後在左側選擇「裝備」，再選擇「Loadouts」。</Chinese>
         </Key>
         <Key ID="WL2_InfoText_6">
             <Original>To ping the enemy, look at your target and press %1.</Original>
