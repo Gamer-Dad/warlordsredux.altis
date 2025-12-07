@@ -223,12 +223,19 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
             {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
-            {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}}
+            {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}},
+            {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}},
+            {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}}
+            {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
         };
         cost = 13000;
+        disallowMagazines[] = {
+            "PylonRack_1Rnd_Missile_AGM_02_F",
+            "PylonRack_3Rnd_Missile_AGM_02_F"
+        };
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
@@ -248,15 +255,23 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_AMRAAM_C_x2",
             "PylonMissile_Bomb_GBU12_x1",
+            {"PylonRack_Bomb_GBU12_x2", {"pylon3", "Pylon4", "pylon5", "Pylon6"}},
+            "PylonRack_1Rnd_Missile_AGM_02_F",
+            {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylon5", "Pylon6"}},
             "PylonRack_Missile_HARM_x1",
             "PylonRack_3Rnd_LG_scalpel",
             {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
         };
         cost = 19000;
-        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs.";
+        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with GPS-guided GBU-12 bombs.";
+        disallowMagazines[] = {
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2"
+        };
         hasHMD = 1;
         name = "A-149 Gryphon";
         rearm = 420;

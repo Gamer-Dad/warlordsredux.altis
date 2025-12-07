@@ -25,8 +25,12 @@ Balance
 * Hercules: $22,000->$10,000.
 * Marid (ATGM): added medium APS.
 * Zephyr SAM: notch immunity range 1.5->3km.
-* Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons.
+* Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons, added Maverick/Kh-29.
+* Gryphon: removed TV-guided bombs, added GPS and Maverick.
+* Gryphon Interceptor: added AMRAAM/R77 ECM jammer, 16km A2A threat detector.
+* Buzzard: removed TV-guided bombs, added GPS and Kh-29.
 * Bunker buster: demolition damage increased 7->8.
+* TV-guided bombs: changed munition to Macer for lower fuel.
 * Black Wasp: added 12km A2A threat detector.
 * Black Wasp Stealth: $26,000->$28,000, removed 1 Sidearm pylon.
 * Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon, removed ECM, A2A threat detector: 16->8km.
@@ -91,6 +95,8 @@ Gameplay
 * Added recon capability to Spike/Switchblade.
 * Surrender requires two consecutive votes to go through.
 * Added weather effects.
+* Disabled spawning aircraft while in vehicle to prevent player from dying after TP.
+* Remote guided bombs now give credit to pilot, not guider.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
@@ -142,3 +148,4 @@ Performance
 * Reworked mine limit script to only run/notify when mines are placed.
 * Reduced effect impact of APS activation.
 * AESA radar scanning performance.
+* Removed bunker buster fused delays.

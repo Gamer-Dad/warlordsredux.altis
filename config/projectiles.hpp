@@ -202,6 +202,22 @@ class WLProjectilesConfig {
         remote = 1;
     };
 
+    class WLProjectile_TVGuidedBombRoot: WLProjectile {
+        ammo[] = {
+            "Missile_AGM_02_TV_F"
+        };
+        aps = 3;
+    };
+
+    class WLProjectile_LaserGuidedBomb: WLProjectile {
+        ammo[] = {
+            "Missile_AGM_02_Laser_F"
+        };
+        aps = 3;
+        camera = 1;
+        laser = 1;
+    };
+
     class WLProjectile_GPSGuidedBomb: WLProjectile {
         ammo[] = {
             "ammo_gbu12_gps",
