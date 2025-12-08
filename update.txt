@@ -15,6 +15,7 @@ Removed:
 * Jaguar/Yangtze
 * Sandstorm II
 * Prowler Spike
+* Marshall Light
 
 Balance
 * Tigris: $5,000->$4,000.
@@ -50,7 +51,7 @@ Interface
 * Refactored button menu.
 * Add option to show death info over map.
 * Can now initiate control of drone boat from map and scroll action.
-* Loiter waypoints for UAV.
+* Loiter, cycle waypoints for UAV.
 * Add player scroll wheel action for each spawned UAV.
 * Lighten colors of unknown sectors.
 * Button menu conditional fails now surfaced as notifications.
@@ -97,6 +98,8 @@ Gameplay
 * Added weather effects.
 * Disabled spawning aircraft while in vehicle to prevent player from dying after TP.
 * Remote guided bombs now give credit to pilot, not guider.
+* A2A missile evasion immunity decreases based on angle to target (nose on = best angle).
+* Changed fast travel AI to fast travel AI to you.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.

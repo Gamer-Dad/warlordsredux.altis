@@ -66,39 +66,39 @@ class HeavyVehicles {
         rearm = 180;
     }; // "CRV-6e Bobcat"
 
-    class B_APC_Wheeled_01_light_F {
-        aps = 2;
-        capValue = 2;
-        cost = 1700;
-        description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
-        isLight = 1;
-        loadable[] = {0, -0.8, 1.7};
-        name = "AMV-7 Marshall Light";
-        rearm = 180;
-        spawn = "B_APC_Wheeled_01_cannon_F";
-        variant = 1;
+    // class B_APC_Wheeled_01_light_F {
+    //     aps = 2;
+    //     capValue = 2;
+    //     cost = 1700;
+    //     description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
+    //     isLight = 1;
+    //     loadable[] = {0, -0.8, 1.7};
+    //     name = "AMV-7 Marshall Light";
+    //     rearm = 180;
+    //     spawn = "B_APC_Wheeled_01_cannon_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "500Rnd_127x99_mag",
-                "500Rnd_127x99_mag",
-                "500Rnd_127x99_mag",
-                "500Rnd_127x99_mag"
-            };
-            addWeapons[] = {
-                "HMG_127_MBT"
-            };
-            removeMagazines[] = {
-                "40Rnd_40mm_APFSDS_Tracer_Red_shells",
-                "60Rnd_40mm_GPR_Tracer_Red_shells"
-            };
-            removeWeapons[] = {
-                "LMG_coax",
-                "autocannon_40mm_CTWS"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "500Rnd_127x99_mag",
+    //             "500Rnd_127x99_mag",
+    //             "500Rnd_127x99_mag",
+    //             "500Rnd_127x99_mag"
+    //         };
+    //         addWeapons[] = {
+    //             "HMG_127_MBT"
+    //         };
+    //         removeMagazines[] = {
+    //             "40Rnd_40mm_APFSDS_Tracer_Red_shells",
+    //             "60Rnd_40mm_GPR_Tracer_Red_shells"
+    //         };
+    //         removeWeapons[] = {
+    //             "LMG_coax",
+    //             "autocannon_40mm_CTWS"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_APC_Wheeled_01_recon_F {
         aps = 4;

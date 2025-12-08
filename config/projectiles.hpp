@@ -213,8 +213,9 @@ class WLProjectilesConfig {
         ammo[] = {
             "Missile_AGM_02_Laser_F"
         };
-        aps = 3;
+        aps = 1;
         camera = 1;
+        consumption = 4;
         laser = 1;
     };
 
