@@ -1,7 +1,6 @@
 Warlords Redux 2.7.1
 
 New Asset:
-* Grenade drones
 * IED trucks
 * Smart mines
 * Strider (SAM)

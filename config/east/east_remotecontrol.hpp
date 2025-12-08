@@ -31,27 +31,27 @@ class RemoteControl {
         offset[] = {0, 3, 0};
     };  // "AR-6"
 
-    class O_UAV_06_grenade_F {
-        cost = 3200;
-        description = "AL-6 Jinaah UP is a variant of the AL-6 Jinaah armed with a grenade dropper.";
-        hasHMD = 1;
-        name = "AL-6 Jinaah UP";
-        offset[] = {0, 3, 0};
-        rearm = 300;
-        spawn = "O_UAV_06_F";
-        variant = 1;
+    // class O_UAV_06_grenade_F {
+    //     cost = 3200;
+    //     description = "AL-6 Jinaah UP is a variant of the AL-6 Jinaah armed with a grenade dropper.";
+    //     hasHMD = 1;
+    //     name = "AL-6 Jinaah UP";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 300;
+    //     spawn = "O_UAV_06_F";
+    //     variant = 1;
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonRack_4Rnd_BombDemine_01_F",
-                "PylonRack_4Rnd_BombDemine_01_F"
-            };
-            addWeapons[] = {
-                "BombDemine_01_F"
-            };
-            turret[] = { -1 };
-        };
-    };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonRack_4Rnd_BombDemine_01_F",
+    //             "PylonRack_4Rnd_BombDemine_01_F"
+    //         };
+    //         addWeapons[] = {
+    //             "BombDemine_01_F"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     // class O_UAV_01_UP_F {
     //     cost = 1200;
