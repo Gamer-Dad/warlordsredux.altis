@@ -72,10 +72,14 @@ class AirDefense {
     }; // "AN/MPQ-105 Radar"
 
     class B_MRAP_03_AA_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_AMRAAM_C", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}},
+            {"ammo_Missile_AMRAAM_D", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}}
+        };
         aps = 1;
         capValue = 2;
         cost = 2000;
-        description = "Strider (SAM) is a variant of the Strider with a surface-to-air missile system. Lethal range: 4km.";
+        description = "Strider (SAM) is a variant of the Strider with a surface-to-air missile system. Lethal range: 2.5km.";
         hasHMD = 1;
         hasReconOptics = 2;
         loadable[] = {0, -0.8, 1.8};

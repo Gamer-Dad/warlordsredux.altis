@@ -72,10 +72,13 @@ class AirDefense {
     };  // "R-750 Cronus Radar"
 
     class O_LT_01_sam_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_AA_R77", {"ammo_Missile_AA_R77_ground", "R-77-ZRK"}}
+        };
         aps = 1;
         capValue = 2;
         cost = 2000;
-        description = "Nyx (SAM) is a variant of the Nyx with a surface-to-air missile system. Lethal range: 4km.";
+        description = "Nyx (SAM) is a variant of the Nyx with a surface-to-air missile system. Lethal range: 2.5km.";
         hasHMD = 1;
         hasReconOptics = 2;
         loadable[] = {0, -1.5, 1.2};

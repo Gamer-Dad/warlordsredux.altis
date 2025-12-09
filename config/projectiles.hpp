@@ -95,6 +95,19 @@ class WLProjectilesConfig {
         speed = 3;
     };
 
+    class WLProjectile_A2AGround: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_AMRAAM_ground",
+            "ammo_Missile_AA_R77_ground"
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 2500;
+        loal = 1;
+        sam = 1;
+        speed = 1.1;
+    };
+
     class WLProjectile_A2ANoLoal: WLProjectile {
         ammo[] = {
             "M_Zephyr"                          // Zephyr
@@ -215,8 +228,17 @@ class WLProjectilesConfig {
         };
         aps = 1;
         camera = 1;
-        consumption = 4;
+        consumption = 3;
+        dazzleable = 1;
         laser = 1;
+    };
+
+    class WLProjectile_SmartMine: WLProjectile {
+        ammo[] = {
+            "ammo_SmartMine"
+        };
+        aps = 1;
+        consumption = 1;
     };
 
     class WLProjectile_GPSGuidedBomb: WLProjectile {

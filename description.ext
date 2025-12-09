@@ -15,7 +15,7 @@ spectatorIDs[] = {"76561198159567208", "76561198113095233"};
 
 //Settings
 respawn = 3;
-respawnDelay = 30;
+respawnDelay = WL_DURATION_RESPAWN;
 respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;

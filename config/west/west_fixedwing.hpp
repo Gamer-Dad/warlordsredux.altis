@@ -101,7 +101,7 @@ class FixedWing {
     // class B_T_VTOL_01_recon_F {
     //     cost = 3800;
     //     description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
-    //     hasAWACS = 1;
+    //     hasAirRadar = 20000;
     //     hasHMD = 1;
     //     name = "V-44 X Blackfish (AWACS)";
     //     requirements[] = {"A"};
@@ -323,7 +323,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2"
         };
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
-        hasAWACS = 1;
+        hasAirRadar = 20000;
         hasHMD = 1;
         name = "EF/A-181 Growler";
         rearm = 420;

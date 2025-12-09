@@ -100,7 +100,7 @@ class FixedWing {
     //         "PylonMissile_1Rnd_Bomb_03_F",
     //         "PylonMissile_1Rnd_BombCluster_02_F"
     //     };
-    //     hasAWACS = 1;
+    //     hasAirRadar = 15000;
     //     hasHMD = 1;
     //     name = "Y-32 Xi'an (AWACS)";
     //     requirements[] = {"A"};
@@ -154,11 +154,13 @@ class FixedWing {
         };
         cost = 12000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
+        hasAirRadar = 15000;
         hasAirRearm = 1;
+        hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -342,7 +344,7 @@ class FixedWing {
     //         "PylonMissile_Missile_AGM_KH25_INT_x1",
     //         "PylonMissile_Bomb_KAB250_x1"
     //     };
-    //     hasAWACS = 1;
+    //     hasAirRadar = 15000;
     //     hasHMD = 1;
     //     name = "J-30 Gyrfalcon";
     //     rearm = 720;
