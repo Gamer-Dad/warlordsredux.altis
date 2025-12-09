@@ -297,7 +297,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2",
             "PylonMissile_Bomb_GBU12_x1"
         };
-        ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 8, 15};
+        ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
         hasHMD = 1;
         name = "A-149 Gryphon (Interceptor)";
         rearm = 420;
