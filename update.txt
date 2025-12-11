@@ -38,6 +38,7 @@ Balance
 * Black Wasp Stealth: $26,000->$28,000, removed 1 Sidearm pylon.
 * Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon, removed ECM, A2A threat detector: 16->8km.
 * Shikra: A2A threat detector 8->16km.
+* Maximum A2A LOAL notch immunity distance: 16->12km.
 * Pelican: demolition 0->1, AT warhead, $1,000->$2,000.
 * Stronghold can now be demolished even when enemy infantry are present.
 * Stronghold infantry cap power: 5x->7x.
@@ -137,6 +138,7 @@ Fixes
 * Sanitized saved badge input.
 * Gear boxes now included in air spawn collision calculation.
 * Exiting quad bike/scooter only despawns it if it belongs to player.
+* Bug where player killer would be falsely attributed to enemy player repeatedly.
 
 Performance
 * Squad backend reworked, separated squad channels.
