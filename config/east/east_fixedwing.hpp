@@ -154,7 +154,7 @@ class FixedWing {
         };
         cost = 12000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
-        hasAirRadar = 15000;
+        hasAirRadar = 8000;
         hasAirRearm = 1;
         hasGunnerAction = 1;
         hasHMD = 1;

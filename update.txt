@@ -29,6 +29,7 @@ Balance
 * Nyx (SAM): lowered R73 notch immunity range 4->2.5km, decreased missile speed.
 * Xian: can be spawned in helipad, added air-to-air AESA radar.
 * Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons, added Maverick/Kh-29.
+* Growler: AESA radar reduced range 20->8km.
 * Gryphon: removed TV-guided bombs, added GPS-guided bombs and Maverick.
 * Gryphon Interceptor: added AMRAAM/R77 ECM jammer, 16km A2A threat detector.
 * Buzzard: removed TV-guided bombs, added GPS-guided bombs and Kh-29.
