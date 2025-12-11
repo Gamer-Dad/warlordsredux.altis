@@ -323,7 +323,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2"
         };
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
-        hasAirRadar = 8000;
+        hasAirRadar = 15000;
         hasHMD = 1;
         name = "EF/A-181 Growler";
         rearm = 420;
