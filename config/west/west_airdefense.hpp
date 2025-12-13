@@ -244,21 +244,21 @@ class AirDefense {
     //     };
     // };
 
-    class B_SAM_System_01_Advanced_F {
-        ammoOverrides[] = {
-            {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
-        };
-        cost = 10000;
-        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Lethal range: 6.5km.";
-        hasASAM = 1;
-        hasHMD = 1;
-        loadable[] = {0, -2, 0.8};
-        name = "Mk59 Hercules";
-        offset[] = {0, 5.3, 0};
-        rearm = 300;
-        spawn = "B_SAM_System_01_F";
-        variant = 1;
-    };
+    // class B_SAM_System_01_Advanced_F {
+    //     ammoOverrides[] = {
+    //         {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
+    //     };
+    //     cost = 10000;
+    //     description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Lethal range: 6.5km.";
+    //     hasASAM = 1;
+    //     hasHMD = 1;
+    //     loadable[] = {0, -2, 0.8};
+    //     name = "Mk59 Hercules";
+    //     offset[] = {0, 5.3, 0};
+    //     rearm = 300;
+    //     spawn = "B_SAM_System_01_F";
+    //     variant = 1;
+    // };
 
     // class B_SAM_System_LRAA_F {
     //     ammoOverrides[] = {
