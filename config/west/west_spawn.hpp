@@ -7,12 +7,10 @@ class Spawn {
         lifetime = 180;
     };
 
-    class Land_Cargo20_blue_F {
+    class B_Slingload_01_Cargo_F {
         cost = 500;
-        demolishable = 2;
-        demolishStepTime = 5;
-        flipLoadable = 270;
-        loadable[] = { 0, -2, 0.5 };
+        empty = 1;
+        loadable[] = {0, -1.5, 0.5};
         name = "Forward Base Supplies (NATO)";
     };
 

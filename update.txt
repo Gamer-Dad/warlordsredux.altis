@@ -35,6 +35,7 @@ Balance
 * Buzzard: removed TV-guided bombs, added GPS-guided bombs and Kh-29.
 * Bunker buster: demolition damage increased 7->8.
 * TV-guided bombs: changed munition to Macer for lower fuel.
+* GPS bombs: limited lateral range to 6km.
 * Black Wasp: added 12km A2A threat detector.
 * Black Wasp Stealth: $26,000->$28,000, removed 1 Sidearm pylon.
 * Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon, removed ECM, A2A threat detector: 16->8km.
@@ -63,7 +64,8 @@ Interface
 * Consolidated map circles, only show AESA symbols if inside AESA plane.
 * Increased preset loadouts 10->30.
 * Changed target lock hud to use vanilla lock icons.
-* Start welcome interface, can be disabled in settings.
+* Start welcome interface (can be disabled in settings).
+* Allow using next vehicle key for target menu (default: R, can be disabled).
 
 Gameplay
 * Decreased green sector AI infantry spawn, increased vehicle spawn from 2->3, increased green cap ratio 2->2.5.
@@ -104,6 +106,9 @@ Gameplay
 * Remote guided bombs now give credit to pilot, not guider.
 * A2A missile evasion immunity decreases based on angle to target (nose on = best angle).
 * Changed fast travel AI to fast travel AI to you.
+* Increased FOB setup time: 30->60s, allow adding supplies during setup, show on map for enemies in range while under construction.
+* Changed FOB supplies model.
+* Uncapped effectiveness of countermeasures, disabled AA ground avoidance script.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.

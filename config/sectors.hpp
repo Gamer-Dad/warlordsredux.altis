@@ -997,7 +997,7 @@ class CfgWarlordSectors {
         disableHome = 1;
         location[] = {1373.0 ,20343.7, 0};
         name = "USS Khe Sanh";
-        spawn = 0.8;
+        spawn = 0.7;
     };
 
     class USSLiberty {
@@ -1006,7 +1006,7 @@ class CfgWarlordSectors {
         disableHome = 1;
         location[] = {15393.8, 14197.7, 0};
         name = "USS Liberty";
-        spawn = 0.8;
+        spawn = 0.7;
     };
 
     class Wait {

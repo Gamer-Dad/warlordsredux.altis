@@ -239,6 +239,7 @@ class WLProjectilesConfig {
         };
         aps = 1;
         consumption = 1;
+        dazzleable = 1;
     };
 
     class WLProjectile_GPSGuidedBomb: WLProjectile {
