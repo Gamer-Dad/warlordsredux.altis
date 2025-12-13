@@ -86,7 +86,7 @@ class WLProjectilesConfig {
 
     class WLProjectile_A2AGround: WLProjectile {
         ammo[] = {
-            "M_Zephyr_SAM"                      // Zephyr (SAM)
+            "M_Zephyr_SAM",                     // Zephyr (SAM)
             "ammo_Missile_AMRAAM_ground",
             "ammo_Missile_AA_R77_ground"
         };
