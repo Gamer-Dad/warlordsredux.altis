@@ -76,7 +76,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
-        immunity = 3000;
+        immunity = 2000;
         sam = 1;
         speed = 1.1;
     };
