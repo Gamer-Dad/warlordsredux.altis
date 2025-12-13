@@ -25,8 +25,8 @@ Balance
 * Hercules: $22,000->$10,000.
 * Marid (ATGM): added medium APS.
 * Zephyr SAM: notch immunity range 1.5->3km.
-* Attack boats: lowered AMRAAM/R73 notch immunity range 4->2.5km, decreased missile speed.
-* Nyx (SAM): lowered R73 notch immunity range 4->2.5km, decreased missile speed.
+* Attack boats: lowered AMRAAM/R73 notch immunity range 4->1.5km, decreased missile speed.
+* Nyx (SAM): lowered R73 notch immunity range 4->1.5km, decreased missile speed.
 * Xian: can be spawned in helipad, added air-to-air AESA radar.
 * Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons, added Maverick/Kh-29.
 * Growler: AESA radar reduced range 20->14km.
@@ -108,7 +108,7 @@ Gameplay
 * Changed fast travel AI to fast travel AI to you.
 * Increased FOB setup time: 30->60s, allow adding supplies during setup, show on map for enemies in range while under construction.
 * Changed FOB supplies model.
-* Uncapped effectiveness of countermeasures, disabled AA ground avoidance script.
+* Disabled AA ground avoidance script.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
