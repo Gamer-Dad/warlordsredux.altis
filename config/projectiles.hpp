@@ -70,17 +70,6 @@ class WLProjectilesConfig {
         speed = 1.1;
     };
 
-    class WLProjectile_ZephyrSAM: WLProjectile {
-        ammo[] = {
-            "M_Zephyr_SAM"                      // Zephyr (SAM)
-        };
-        aps = 3;
-        camera = 1;
-        immunity = 2000;
-        sam = 1;
-        speed = 1.1;
-    };
-
     class WLProjectile_A2A: WLProjectile {
         ammo[] = {
             "ammo_Missile_AMRAAM_C",            // AMRAAM C
@@ -97,12 +86,13 @@ class WLProjectilesConfig {
 
     class WLProjectile_A2AGround: WLProjectile {
         ammo[] = {
+            "M_Zephyr_SAM"                      // Zephyr (SAM)
             "ammo_Missile_AMRAAM_ground",
             "ammo_Missile_AA_R77_ground"
         };
         aps = 3;
         camera = 1;
-        immunity = 1500;
+        immunity = 1000;
         sam = 1;
         speed = 1.1;
     };
