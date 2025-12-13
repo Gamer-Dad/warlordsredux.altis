@@ -263,7 +263,6 @@ class FixedWing {
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "300Rnd_CMFlare_Chaff_Magazine",
                 "300Rnd_CMFlare_Chaff_Magazine"
             };
             addWeapons[] = {};

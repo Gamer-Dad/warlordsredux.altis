@@ -103,7 +103,6 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         immunity = 2500;
-        loal = 1;
         sam = 1;
         speed = 1.1;
     };
