@@ -26,7 +26,7 @@ class RemoteControl {
     }; // "UGV Stomper RCWS"
 
     class B_UAV_06_F {
-        cost = 2000;
+        cost = 1000;
         detonate = 1;
         offset[] = {0, 3, 0};
     }; // "AR-6"

@@ -79,7 +79,7 @@ class AirDefense {
         aps = 1;
         capValue = 2;
         cost = 2000;
-        description = "Strider (SAM) is a variant of the Strider with a surface-to-air missile system. Lethal range: 2.5km.";
+        description = "Strider (SAM) is a variant of the Strider with a surface-to-air missile system. Lethal range: 1.5km.";
         hasHMD = 1;
         hasReconOptics = 2;
         loadable[] = {0, -0.8, 1.8};

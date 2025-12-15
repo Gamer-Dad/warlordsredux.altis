@@ -78,7 +78,7 @@ class AirDefense {
         aps = 1;
         capValue = 2;
         cost = 2000;
-        description = "Nyx (SAM) is a variant of the Nyx with a surface-to-air missile system. Lethal range: 2.5km.";
+        description = "Nyx (SAM) is a variant of the Nyx with a surface-to-air missile system. Lethal range: 1.5km.";
         hasHMD = 1;
         hasReconOptics = 2;
         loadable[] = {0, -1.5, 1.2};

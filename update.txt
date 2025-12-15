@@ -43,10 +43,11 @@ Balance
 * Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon, removed ECM, A2A threat detector: 16->8km.
 * Shikra: A2A threat detector 8->16km.
 * Maximum A2A LOAL notch immunity distance: 16->12km.
-* Pelican: demolition 0->1, AT warhead, $1,000->$2,000.
+* Pelican: demolition 0->1, AT warhead.
 * Stronghold can now be demolished even when enemy infantry are present.
 * Stronghold infantry cap power: 5x->7x.
 * Stronghold demolition time per step: 4->7s.
+* FOB demolition time per step: 5->3s.
 * Destroyer ammo reload: 120->180s.
 * Destroyer vls respawn: 15->20 minutes.
 
