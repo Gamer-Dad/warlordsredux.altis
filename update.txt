@@ -25,7 +25,8 @@ Balance
 * Centurion: $8,000->$6,800.
 * Hercules: $22,000->$10,000.
 * Marid (ATGM): added medium APS.
-* Zephyr/Titan SAM: notch immunity range 1.5->1km.
+* Zephyr: notch immunity range 1.5->1km.
+* Titan SAM: reduced missile speed 30%, removed notch immunity.
 * Attack boats: lowered AMRAAM/R73 notch immunity range 4->1km, decreased missile speed, removed loal.
 * Nyx (SAM): lowered R73 notch immunity range 4->1km, decreased missile speed, removed loal.
 * Xian: can be spawned in helipad, added air-to-air AESA radar.
@@ -66,7 +67,6 @@ Interface
 * Increased preset loadouts 10->30.
 * Changed target lock hud to use vanilla lock icons.
 * Start welcome interface (can be disabled in settings).
-* Allow using next vehicle key for target menu (default: R, can be disabled).
 
 Gameplay
 * Decreased green sector AI infantry spawn, increased vehicle spawn from 2->3, increased green cap ratio 2->2.5.
@@ -110,6 +110,8 @@ Gameplay
 * Increased FOB setup time: 30->60s, allow adding supplies during setup, show on map for enemies in range while under construction.
 * Changed FOB supplies model.
 * Disabled AA ground avoidance script.
+* Less frequent earthquakes.
+* Reduced instances of APS killing rocket launching player.
 
 Fixes
 * Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.

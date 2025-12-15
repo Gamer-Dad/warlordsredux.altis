@@ -46,10 +46,7 @@ class WLProjectilesConfig {
     class WLProjectile_SAM: WLProjectile {
         ammo[] = {
             "ammo_Missile_rim116",              // Spartan
-            "M_70mm_SAAMI",                     // SAAMI
-            "M_Titan_AA",                       // Titan AA
-            "M_Titan_AA_static",                // Titan AA (Static)
-            "M_Titan_AA_long"                   // Titan AA (Long)
+            "M_70mm_SAAMI"                      // SAAMI
         };
         aps = 3;
         camera = 1;
@@ -82,6 +79,19 @@ class WLProjectilesConfig {
         loal = 1;
         sam = 1;
         speed = 3;
+    };
+
+    class WLProjectile_MANPADS: WLProjectile {
+        ammo[] = {
+            "M_Titan_AA",                       // Titan AA
+            "M_Titan_AA_static",                // Titan AA (Static)
+            "M_Titan_AA_long"                   // Titan AA (Long)
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 100;
+        sam = 1;
+        speed = 0.7;
     };
 
     class WLProjectile_A2AGround: WLProjectile {
