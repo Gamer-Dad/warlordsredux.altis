@@ -27,8 +27,31 @@ class RemoteControl {
 
     class B_UAV_06_F {
         cost = 1000;
+        detonate = 1;
         offset[] = {0, 3, 0};
     }; // "AR-6"
+
+    // class B_UAV_06_grenade_F {
+    //     cost = 3200;
+    //     description = "AR-6 Pelican UP is a variant of the AR-6 Pelican armed with a grenade dropper.";
+    //     hasHMD = 1;
+    //     name = "AR-6 Pelican UP";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 300;
+    //     spawn = "B_UAV_06_F";
+    //     variant = 1;
+
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonRack_4Rnd_BombDemine_01_F",
+    //             "PylonRack_4Rnd_BombDemine_01_F"
+    //         };
+    //         addWeapons[] = {
+    //             "BombDemine_01_F"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     // class B_UAV_01_UP_F {
     //     cost = 1200;
@@ -93,23 +116,27 @@ class RemoteControl {
         aps = 4;
         cost = 3500;
         description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+        detonate = 13;
         loadable[] = {-0.4, -1, 1.1};
         name = "UGV Stomper (Bomb)";
         offset[] = {0, 5, 0};
         rearm = 900;
-        requirements[] = {};
         spawn = "B_UGV_01_F";
         variant = 1;
+    };
 
-        class Driver: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonMissile_1Rnd_Mk82_F"
-            };
-            addWeapons[] = {
-                "Mk82BombLauncher"
-            };
-            turret[] = { -1 };
-        };
+    class B_Offroad_01_bomb_F {
+        aps = 4;
+        cost = 4000;
+        description = "Offroad (IED) is a variant of the Offroad that goes boom.";
+        detonate = 13;
+        drone = 1;
+        loadable[] = {0, -1.7, 1.3};
+        name = "Offroad (IED)";
+        offset[] = {0, 5, 0};
+        rearm = 900;
+        spawn = "B_GEN_Offroad_01_comms_F";
+        variant = 1;
     };
 
     class B_UAV_02_dynamicLoadout_F {

@@ -27,14 +27,15 @@ class RemoteControl {
 
     class O_UAV_06_F {
         cost = 1000;
+        detonate = 1;
         offset[] = {0, 3, 0};
     };  // "AR-6"
 
-    // class O_UAV_06_up_F {
-    //     cost = 3500;
-    //     description = "AR-6 Pelican UP is a variant of the AR-6 Pelican armed with demining charges.";
+    // class O_UAV_06_grenade_F {
+    //     cost = 3200;
+    //     description = "AL-6 Jinaah UP is a variant of the AL-6 Jinaah armed with a grenade dropper.";
     //     hasHMD = 1;
-    //     name = "AR-6 Pelican UP";
+    //     name = "AL-6 Jinaah UP";
     //     offset[] = {0, 3, 0};
     //     rearm = 300;
     //     spawn = "O_UAV_06_F";
@@ -42,8 +43,6 @@ class RemoteControl {
 
     //     class Pilot: WLTurretDefaults {
     //         addMagazines[] = {
-    //             "PylonRack_4Rnd_BombDemine_01_F",
-    //             "PylonRack_4Rnd_BombDemine_01_F",
     //             "PylonRack_4Rnd_BombDemine_01_F",
     //             "PylonRack_4Rnd_BombDemine_01_F"
     //         };
@@ -153,23 +152,27 @@ class RemoteControl {
         aps = 4;
         cost = 3500;
         description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+        detonate = 13;
         loadable[] = {-0.4, -1, 1.1};
         name = "UGV Stomper (Bomb)";
         offset[] = {0, 5, 0};
         rearm = 900;
-        requirements[] = {};
         spawn = "O_UGV_01_F";
         variant = 1;
+    };
 
-        class Driver: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonMissile_1Rnd_Mk82_F"
-            };
-            addWeapons[] = {
-                "Mk82BombLauncher"
-            };
-            turret[] = { -1 };
-        };
+    class O_Offroad_01_bomb_F {
+        aps = 4;
+        cost = 4000;
+        description = "Offroad (IED) is a variant of the Offroad that goes boom.";
+        detonate = 13;
+        drone = 1;
+        loadable[] = {0, -1.7, 1.3};
+        name = "Offroad (IED)";
+        offset[] = {0, 5, 0};
+        rearm = 900;
+        spawn = "I_E_Offroad_01_comms_F";
+        variant = 1;
     };
 
     class O_T_UAV_04_CAS_F {

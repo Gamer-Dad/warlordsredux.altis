@@ -4,7 +4,7 @@
 #include "config\projectiles.hpp"
 #include "config\sectors.hpp"
 
-onLoadName = "Warlords Redux 2.7.0";
+onLoadName = "Warlords Redux 2.7.1";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
@@ -15,7 +15,7 @@ spectatorIDs[] = {"76561198159567208", "76561198113095233"};
 
 //Settings
 respawn = 3;
-respawnDelay = 30;
+respawnDelay = WL_DURATION_RESPAWN;
 respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;
@@ -41,8 +41,7 @@ minPlayerDistance[] = {150, 300, 075, 0600, 1800, 0300};
 
 onPauseScript[] = {WL2_fnc_onPause};
 
-class Header
-{
+class Header {
 	gameType = Warlords;
 	minPlayers = 1;
 	maxPlayers = 128;

@@ -154,16 +154,19 @@ class LightVehicles {
     class O_Truck_03_ammo_F {
         capValue = 1;
         cost = 1000;
+        hasRearm = 1;
     }; // "Tempest Ammo"
 
     class O_Truck_03_Fuel_F {
         capValue = 1;
         cost = 1000;
+        hasRefuel = 1;
     }; // "Tempest Fuel"
 
     class O_Truck_03_Repair_F {
         capValue = 1;
         cost = 1000;
+        hasRepair = 1;
     }; // "Tempest Repair"
 
     // class O_LSV_02_AT_M_F {

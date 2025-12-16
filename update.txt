@@ -1,66 +1,171 @@
-Warlords Redux 2.7.0 Patch 4
+Warlords Redux 2.7.1
 
-New Asset: Bomb Boat
+New Asset:
+* IED trucks
+* Smart mines
+* Strider (SAM)
+* Hunter AFV
+* Hunter Apex
+* Marid (Utility)
+
+Removed:
+* R-750 Cronus (ECM)
+* Strider (Recon)
+* Jaguar/Yangtze
+* Sandstorm II
+* Prowler Spike
+* Marshall Light
+* Hercules
 
 Balance
-* Orca: reduced range of ECM jammers from 10->5km.
-* Kajman: reduced range of ECM jammers from 10->6km, reduced charges from 8->6 per pylon.
-* Ghost Hawk Block II: reduced range of ECM jammers from 10->5km, reduced charges from 4->2 per pylon, increased base recharge time from 30->60s.
-* Blackfoot Block II: reduced range of ECM jammers from 10->8km.
-* Air-based ECM jammers require 50m altitude to be functional.
-* Reduced projectile jammed reward from $300->100.
-* Increased ECM jam time by ~4x depending on distance.
-* Reduced claim vehicle time from 4->3s.
-* Lock open all doors on destroyers.
-* Reduced Pelican drone explosion to more realistic damage/power.
-* Spectrum jammer much more effective against Pelican drones.
-* Reduced buy stronghold cost from $500->200.
-* Reduced fortify sector cost from $2,000->$1,000.
+* Tigris: $5,000->$4,000.
+* Cheetah: $5,000->$3,750.
+* Spartan: $6,500->$4,800.
+* Defender/Rhea: $7,000->$5,500.
+* Centurion: $8,000->$6,800.
+* Hercules: $22,000->$10,000.
+* Marid (ATGM): added medium APS.
+* Zephyr: notch immunity range 1.5->1km.
+* Titan SAM: reduced missile speed 30%, removed notch immunity.
+* Attack boats: lowered AMRAAM/R73 notch immunity range 4->1km, decreased missile speed, removed loal.
+* Nyx (SAM): lowered R73 notch immunity range 4->1km, decreased missile speed, removed loal.
+* Xian: can be spawned in helipad, added air-to-air AESA radar.
+* Wipeout/Neophron: added 2 more bunker buster pylons, added 2 SDB pylons, added Maverick/Kh-29.
+* Growler: AESA radar reduced range 20->14km.
+* Gryphon: removed TV-guided bombs, added GPS-guided bombs and Maverick.
+* Gryphon Interceptor: added AMRAAM/R77 ECM jammer, 16km A2A threat detector.
+* Buzzard: removed TV-guided bombs, added GPS-guided bombs and Kh-29.
+* Bunker buster: demolition damage increased 7->8.
+* TV-guided bombs: changed munition to Macer for lower fuel.
+* GPS bombs: limited lateral range to 6km.
+* Black Wasp: added 12km A2A threat detector.
+* Black Wasp Stealth: $26,000->$28,000, removed 1 Sidearm pylon.
+* Shikra Stealth: $25,000->$28,000, removed 1 Stormbreaker pylon, removed ECM, A2A threat detector: 16->8km.
+* Shikra: A2A threat detector 8->16km.
+* Maximum A2A LOAL notch immunity distance: 16->12km.
+* Pelican: demolition 0->1, AT warhead.
+* Stronghold can now be demolished even when enemy infantry are present.
+* Stronghold infantry cap power: 5x->7x.
+* Stronghold demolition time per step: 4->7s.
+* FOB demolition time per step: 5->3s.
+* Destroyer ammo reload: 120->180s.
+* Destroyer vls respawn: 15->20 minutes.
 
 Interface
-* Sector capture, vote displays: reworked to show more info, be more performant.
-* Vehicle manager: reworked to stack side-by-side, show icons, sorted by distance to player.
-* Hint: reworked to not stack multiple, shows per vehicle as oppoosed to per mission.
-* Map now shows detected tents.
-* Tracked projectiles (shown on HUD) are now also shown on the map.
-* GPS guided projectiles now save coordinates when launched.
+* Added optional sound for chat messages (special notification: @SL, @SQUAD in squad chat, @TEAM in command chat).
+* Added directional arrows to capture indicator.
+* Added marker text indicating ship is sinking.
+* Added notification stack interface for most system notifications.
+* Refactored button menu.
+* Add option to show death info over map.
+* Can now initiate control of drone boat from map and scroll action.
+* Loiter, cycle waypoints for UAV.
+* Add player scroll wheel action for each spawned UAV.
+* Lighten colors of unknown sectors.
+* Button menu conditional fails now surfaced as notifications.
+* Removed loal interface from Rhea/Defender/Centurion.
+* Consolidated map circles, only show AESA symbols if inside AESA plane.
+* Increased preset loadouts 10->30.
+* Changed target lock hud to use vanilla lock icons.
+* Start welcome interface (can be disabled in settings).
+* Hide structure icons on map unless hovered over.
+* Icon text scale now adjustable in settings.
+* Show side capture modifier on map.
 
 Gameplay
-* Player point contribution now counts all sources except for squad assists and team income.
-* Destroyers can now be sabotaged/sunk via the demolition mechanism.
-* Added mid-ship side plank and rappels to destroyer.
-* Downed enemy players can now be secured to force respawn.
-* Added new downed animation states.
-* Demolitions now impose 60s block on repairing FOB/strongholds.
-* ECM jammers are automatically added to enemy team data-link for 60s when operational.
-* Changed AFK detection logic.
-* Bunker buster logic changed to ignore 3D z-position when calculating nearby destroyables.
-* GPS-guided munitions no longer target enemy assets currently targeted by another GPS-guided munition in flight to allow for multiple, simultaneous attack.
-* Strongholds are now only visible in revealed sectors.
-* Strongholds no longer buyable in contested sectors.
-* Jet RTB now disallowed when enemy air is present.
+* Decreased green sector AI infantry spawn, increased vehicle spawn from 2->3, increased green cap ratio 2->2.5.
+* Side selection: custom interface hides player teams in lobby.
+* Rally point: squad leaders can upgrade their tents into team rally points/buildings.
+* Field fortification: players can construct field sandbags out of their tents.
+* Slammer integral mortar.
+* Clear personal mines: can be used to clear all deployed mines.
+* GPS munition reveals launcher on map when landed.
+* Removed harbors and unified water spawning conditions. Heavy boats must be spawned within 1.5km of owned sector/FOB, all boats must be within 300m of player.
+* Removed griefer check against building structures.
+* Added a 2 minute reconnection period before vehicle deletion. Owned vehicles will be deleted after that if player has not fully reconnected, even if teammates are inside.
+* Controlled munition launches at 15 degree up to prevent hitting ground.
+* Notification shows jamming damage status.
+* Coordinates for GPS munitions can be added by clicking on map.
+* Destroyer does not spawn until 20-30 minutes after match start.
+* Destroyer VLS shows respawn timer on console.
+* Destroyer no longer spawns in place of carriers, now spawn randomly in 3 locations.
+* Changed surrender limit 2->1 hour from start of match.
+* Bomb drone detonations now triggered by mouse click or scroll action.
+* Add map item for drone controller.
+* Added ability for FOB owners to lock it.
+* Removed uav terminals and bipods from gear crates.
+* Lowered action priority of demolition.
+* Moved explosives from gear box to loadouts.
+* Reworked mine system, now allows up to 30 explosives total (no longer restricted by type).
+* Players can now defuse mines with a toolkit.
+* Disabled friendly damage from deployed mines.
+* USS Freedom rotated.
+* Changed mission end screen.
+* Assets left on runway will be unlocked for the team to use/delete.
+* Raised low pop air asset limited cost from $5,000->$10,000.
+* Enemy strongholds now only visible when attacking sector.
+* Added recon capability to Spike/Switchblade.
+* Surrender requires two consecutive votes to go through.
+* Added weather effects.
+* Disabled spawning aircraft while in vehicle to prevent player from dying after TP.
+* Remote guided bombs now give credit to pilot, not guider.
+* A2A missile evasion immunity decreases based on angle to target (nose on = best angle).
+* Changed fast travel AI to fast travel AI to you.
+* Increased FOB setup time: 30->60s, allow adding supplies during setup, show on map for enemies in range while under construction.
+* Changed FOB supplies model.
+* Disabled AA ground avoidance script.
+* Less frequent earthquakes.
+* Reduced instances of APS killing rocket launching player.
 
 Fixes
-* Non-functioning ECM jammers on Hellcat.
-* Source of flickering on map icons.
-* Players demolishing while in water, without touching ground.
-* Fast traveling to units in water.
-* Text for team notification for enemy sector change (rather than reset).
-* Removed intermittently non-functioning tv panel on destroyer.
-* GPS guided munitions not hitting targets in deep water.
-* Script error when failing to deploy FOBs.
-* Script error when clicking on expired map buttons.
-* Script error when fast traveling to null vehicle from squad.
-* Some join-in-progress script errors relating to uninitialized variables.
-* Ejection seat hard-locking player input.
-* Stop being able to rappel up ropes that are supposed to terminate near surface.
-* Fixed some instances of map showing incorrect icons for enemy vehicles.
-* Cruise missile timeout not resetting on new round.
+* Prevent exploit where multiple squad leaders can simultaneously deploy FOBs within range.
+* Various exploits around fast traveling to dead bodies.
+* GPS munitions overriding default target lock.
+* Missile camera only showing last munition when multiple launched.
+* Vote display incorrectly showing first time player sees sector capture if JIP.
+* Incapacitated crew somehow brought back into vehicle no longer count for capture value.
+* Wrong sound played when airfield position not found.
+* Can no longer attempt to spawn on teammate tents.
+* Double-clicking intentionally in button menu.
+* Modify/rearm should no longer show outside of 180 degree view cone.
+* Tether unconscious units to their original position.
+* Air jammer no longer confuses position over water.
+* Nonfunctional attack helo device jammer now functional.
+* Disabled scanner UAV sensors' ability to see outside sector.
+* Rare bug with drone ping not working.
+* Map icon/text not being correctly displayed.
+* Players without kills now show up on leaderboards as well.
+* Removed conditional inconsistencies around stronghold fortification.
+* Dead tracked projectiles still shown on map.
+* Eliminated exploit where players retain control of destroyer VLS after fast travel.
+* Incorrect error messages when FOB is under construction.
+* Non-Latin characters in loadout names displaying improperly.
+* Script error around invalid angle checks.
+* APS near deadzone not working while over water.
+* Exclude squad assists from player score calculations.
+* Exploits around LOAL.
+* Badge breaking minimalistic killfeed.
+* Exploits around fuel explosions.
+* Sanitize modded loadouts before spawning.
+* Bug where selecting sector wait would not wait if target selection is active.
+* Sanitized saved badge input.
+* Gear boxes now included in air spawn collision calculation.
+* Exiting quad bike/scooter only despawns it if it belongs to player.
+* Bug where player killer would be falsely attributed to enemy player repeatedly.
 
 Performance
-* Localized all non-base destroyer parts, should no longer sync update status.
-* Reduced hint showing mechanism effect on game fps.
-* Reduced vehicle manager impact on game fps.
-* Optimized ECM jammer munition detection.
-* Cache drone waypoints for map rendering.
-* Reduced datalink calls from detecting friendly units.
+* Squad backend reworked, separated squad channels.
+* Fixed sector re-sorting spam during sector selection.
+* Removed extraneous enemy sector calculations for clients.
+* Batched server calls for vehicle spawning.
+* Memory leaks with sector/asset info box.
+* Memory leaks in rappel, destroyer respawner.
+* Optimizations for target reset/vote server logic.
+* Removed code paths for old killfeed.
+* Less busy rendering for sector icons.
+* Re-enable cheap vehicle cleanup on 300s cooldown.
+* Reworked projectile creation script to eliminate duplicate script calls.
+* Reworked mine limit script to only run/notify when mines are placed.
+* Reduced effect impact of APS activation.
+* AESA radar scanning performance.
+* Removed bunker buster fused delays.

@@ -46,11 +46,7 @@ class WLProjectilesConfig {
     class WLProjectile_SAM: WLProjectile {
         ammo[] = {
             "ammo_Missile_rim116",              // Spartan
-            "M_Zephyr_SAM",                     // Zephyr (SAM)
-            "M_70mm_SAAMI",                     // SAAMI
-            "M_Titan_AA",                       // Titan AA
-            "M_Titan_AA_static",                // Titan AA (Static)
-            "M_Titan_AA_long"                   // Titan AA (Long)
+            "M_70mm_SAAMI"                      // SAAMI
         };
         aps = 3;
         camera = 1;
@@ -62,12 +58,11 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Missile_rim162",              // Centurion
             "ammo_Missile_s750",                // Rhea
-            "ammo_Missile_mim145",              // Defender
+            "ammo_Missile_mim145"               // Defender
         };
         aps = 3;
         camera = 1;
         immunity = 3500;
-        loal = 1;
         sam = 1;
         speed = 1.1;
     };
@@ -84,6 +79,32 @@ class WLProjectilesConfig {
         loal = 1;
         sam = 1;
         speed = 3;
+    };
+
+    class WLProjectile_MANPADS: WLProjectile {
+        ammo[] = {
+            "M_Titan_AA",                       // Titan AA
+            "M_Titan_AA_static",                // Titan AA (Static)
+            "M_Titan_AA_long"                   // Titan AA (Long)
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 100;
+        sam = 1;
+        speed = 0.7;
+    };
+
+    class WLProjectile_A2AGround: WLProjectile {
+        ammo[] = {
+            "M_Zephyr_SAM",                     // Zephyr (SAM)
+            "ammo_Missile_AMRAAM_ground",
+            "ammo_Missile_AA_R77_ground"
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 1000;
+        sam = 1;
+        speed = 1.1;
     };
 
     class WLProjectile_A2ANoLoal: WLProjectile {
@@ -106,6 +127,17 @@ class WLProjectilesConfig {
         aps = 3;
         sam = 1;
         speed = 2;
+    };
+
+    class WLProjectile_AntiShip: WLProjectile {
+        ammo[] = {
+            "M_Harpoon",                        // Harpoon
+            "M_Silkworm"                        // Silkworm
+        };
+        aps = 3;
+        bunker = 13;
+        speed = 450;
+        tv = 1;
     };
 
     class WLProjectile_SEAD: WLProjectile {
@@ -148,7 +180,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
-        bunker = 7;
+        bunker = 8;
         remote = 1;
     };
 
@@ -180,6 +212,33 @@ class WLProjectilesConfig {
         aps = 3;
         camera = 1;
         remote = 1;
+    };
+
+    class WLProjectile_TVGuidedBombRoot: WLProjectile {
+        ammo[] = {
+            "Missile_AGM_02_TV_F"
+        };
+        aps = 3;
+    };
+
+    class WLProjectile_LaserGuidedBomb: WLProjectile {
+        ammo[] = {
+            "Missile_AGM_02_Laser_F"
+        };
+        aps = 1;
+        camera = 1;
+        consumption = 3;
+        dazzleable = 1;
+        laser = 1;
+    };
+
+    class WLProjectile_SmartMine: WLProjectile {
+        ammo[] = {
+            "ammo_SmartMine"
+        };
+        aps = 1;
+        consumption = 1;
+        dazzleable = 1;
     };
 
     class WLProjectile_GPSGuidedBomb: WLProjectile {
@@ -320,5 +379,22 @@ class WLProjectilesConfig {
         aps = 1;
         consumption = 1;
         dazzleable = 0;
+    };
+
+    class WLProjectile_Mines: WLProjectile {
+        ammo[] = {
+            "APERSBoundingMine_Range_Ammo",
+            "APERSMine_Range_Ammo",
+            "APERSMineDispenser_Ammo",
+            "APERSMineDispenser_Mine_Ammo",
+            "APERSTripMine_Wire_Ammo",
+            "ATMine_Range_Ammo",
+            "ClaymoreDirectionalMine_Remote_Ammo",
+            "DemoCharge_Remote_Ammo",
+            "SatchelCharge_Remote_Ammo",
+            "SLAMDirectionalMine_Wire_Ammo"
+        };
+        aps = 3;
+        mine = 1;
     };
 };

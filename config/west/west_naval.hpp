@@ -21,6 +21,10 @@ class Naval {
     };	// "Speedboat Minigun"
 
     class B_Boat_Armed_01_autocannon_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_AMRAAM_C", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}},
+            {"ammo_Missile_AMRAAM_D", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}}
+        };
         cost = 1000;
         description = "Riverine Command Boat is an upgraded, heavily-armed variant of the Speedboat.";
         disallowMagazines[] = {
@@ -70,6 +74,7 @@ class Naval {
     class B_Boat_Bomb_01_F {
         cost = 1750;
         description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
+        detonate = 7;
         drone = 1;
         flipLoadable = 180;
         loadable[] = {0, -2.5, 0.5};

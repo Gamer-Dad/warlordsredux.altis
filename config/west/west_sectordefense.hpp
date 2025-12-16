@@ -193,6 +193,22 @@ class SectorDefense {
     //     };
     // };
 
+    class B_SmartMine_01_F {
+        cost = 2500;
+        description = "XM205 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 7. Limit 2 deployed.";
+        empty = 1;
+        loadable[] = {0, -1, -0.4};
+        name = "XM205 Smart Mine System";
+        offset[] = {0, 3, 0};
+        rearm = 900;
+        requirements[] = {"S"};
+        smartMine = 7;
+        spawn = "Box_NATO_Equip_F";
+        textures[] = {
+            "#(rgb,8,8,3)color(1,0,0,1)"
+        };
+    };
+
     // class B_AAA_System_01_F {
     //     cost = 3500;
     //     description = "Short range anti-mortar defense, capable of automatically engaging incoming ballistic shells. Effective range: 3km.";
@@ -278,4 +294,33 @@ class SectorDefense {
     //     offset[] = {0, 7, 0};
     //     rearm = 2700;
     // }; // "Mk41 VLS"
+
+    // class B_ASHM_System_03_F {
+    //     ammoOverrides[] = {
+    //         {"Missile_AGM_02_F", {"M_Harpoon", "Harpoon Anti-Ship Missile"}}
+    //     };
+    //     cost = 25000;
+    //     description = "RGM-84 Harpoon launcher that poses a significant threat to enemy naval vessels and fortifications.";
+    //     loadable[] = {0, 0, 1};
+    //     name = "RGM-84 Harpoon";
+    //     offset[] = {0, 6, 0};
+    //     rearm = 1800;
+    //     spawn = "B_SAM_System_03_F";
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonRack_1Rnd_Missile_AGM_02_F"
+    //         };
+    //         addWeapons[] = {
+    //             "Missile_AGM_02_Plane_CAS_01_F"
+    //         };
+    //         removeMagazines[] = {
+    //             "magazine_Missile_mim145_x4"
+    //         };
+    //         removeWeapons[] = {
+    //             "weapon_mim145Launcher"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 };

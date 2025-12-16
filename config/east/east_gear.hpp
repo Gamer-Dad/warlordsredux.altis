@@ -14,18 +14,6 @@ class Gear {
             { "Vorona_HE", 2 },
             { "Vorona_HEAT", 8 },
 
-            { "APERSBoundingMine_Range_Mag", 3},
-            { "APERSMine_Range_Mag", 3},
-            { "APERSTripMine_Wire_Mag", 3},
-            { "ATMine_Range_Mag", 3},
-            { "ClaymoreDirectionalMine_Remote_Mag", 3},
-            { "DemoCharge_Remote_Mag", 3},
-            { "SatchelCharge_Remote_Mag", 3},
-            { "SLAMDirectionalMine_Wire_Mag", 3},
-
-            { "bipod_02_F_tan", 5 },
-            { "O_UAVTerminal", 5 },
-
             { "B_FieldPack_ocamo", 5 },
             { "B_Carryall_ocamo", 5 }
         };
@@ -41,22 +29,26 @@ class Gear {
 
     class Box_East_AmmoVeh_F {
         cost = 250;
+        hasRearm = 1;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
     }; // "Vehicle Ammo [CSAT]"
 
     class Land_Pod_Heli_Transport_04_fuel_F {
         cost = 300;
+        hasRefuel = 1;
         loadable[] = {0, -1.8, 0.5};
     }; // "Taru Fuel Pod"
 
     class Land_Pod_Heli_Transport_04_ammo_F {
         cost = 500;
+        hasRearm = 1;
         loadable[] = {0, -1.8, 0.4};
     }; // "Taru Ammo Pod"
 
     class Land_Pod_Heli_Transport_04_repair_F {
         cost = 500;
+        hasRepair = 1;
         loadable[] = {0, -1.8, 0.4};
     }; // "Taru Repair Pod"
 

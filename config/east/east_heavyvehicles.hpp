@@ -3,6 +3,7 @@ class HeavyVehicles {
         ammoOverrides[] = {
             {"M_Vorona_HEAT", {"M_Vorona_HEAT_Tandem", "9M135 Tandem Missile"}}
         };
+        aps = 2;
         capValue = 2;
         cost = 1200;
         loadable[] = {0, -0.8, 1.65};
@@ -125,8 +126,6 @@ class HeavyVehicles {
         variant = 1;
 
         class Gunner: WLTurretDefaults {
-            addMagazines[] = {};
-            addWeapons[] = {};
             hideTurret = 1;
             removeMagazines[] = {
                 "2Rnd_GAT_missiles_O",
@@ -138,6 +137,33 @@ class HeavyVehicles {
                 "missiles_titan",
                 "autocannon_30mm_CTWS",
                 "LMG_coax_ext"
+            };
+            turret[] = { 0 };
+        };
+    };
+
+    class O_APC_Wheeled_02_utility_F {
+        aps = 2;
+        capValue = 2;
+        cost = 2500;
+        description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
+        hasRearm = 1;
+        hasRefuel = 1;
+        hasRepair = 1;
+        loadable[] = {0, -0.8, 1.65};
+        name = "MSE-3 Marid (Utility)";
+        rearm = 180;
+        spawn = "O_APC_Wheeled_02_rcws_v2_F";
+
+        class Gunner: WLTurretDefaults {
+            hideTurret = 1;
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt",
+                "200Rnd_127x99_mag_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "HMG_127_APC",
+                "GMG_40mm"
             };
             turret[] = { 0 };
         };

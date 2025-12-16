@@ -101,7 +101,7 @@ class FixedWing {
     // class B_T_VTOL_01_recon_F {
     //     cost = 3800;
     //     description = "V-44 X Blackfish (AWACS) is a variant of the V-44 X Blackfish with a powerful air radar and device jammer.";
-    //     hasAWACS = 1;
+    //     hasAirRadar = 20000;
     //     hasHMD = 1;
     //     name = "V-44 X Blackfish (AWACS)";
     //     requirements[] = {"A"};
@@ -222,12 +222,20 @@ class FixedWing {
     class B_Plane_CAS_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
-            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons5", "Pylons6"}}
+            {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
+            {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}},
+            {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}},
+            {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}}
+            {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
         };
         cost = 13000;
+        disallowMagazines[] = {
+            "PylonRack_1Rnd_Missile_AGM_02_F",
+            "PylonRack_3Rnd_Missile_AGM_02_F"
+        };
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
@@ -247,15 +255,23 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_AMRAAM_C_x2",
             "PylonMissile_Bomb_GBU12_x1",
+            {"PylonRack_Bomb_GBU12_x2", {"pylon3", "Pylon4", "pylon5", "Pylon6"}},
+            "PylonRack_1Rnd_Missile_AGM_02_F",
+            {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylon5", "Pylon6"}},
             "PylonRack_Missile_HARM_x1",
             "PylonRack_3Rnd_LG_scalpel",
             {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}}
         };
         ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu15", "GBU-15 (TV-Guided)"}}
+            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
         };
         cost = 19000;
-        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with TV-guided GBU-15 bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with GPS-guided GBU-12 bombs.";
+        disallowMagazines[] = {
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2"
+        };
         hasHMD = 1;
         name = "A-149 Gryphon";
         rearm = 420;
@@ -307,7 +323,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2"
         };
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
-        hasAWACS = 1;
+        hasAirRadar = 14000;
         hasHMD = 1;
         name = "EF/A-181 Growler";
         rearm = 420;
@@ -337,6 +353,7 @@ class FixedWing {
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
+        threatDetection = 12000;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -354,7 +371,7 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_Missile_HARM_x1",
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
-            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}},
+            {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter3", "pylonBayCenter4"}},
             {"PylonRack_Missile_AMRAAM_D_x2", {"pylonBayCenter5", "pylonBayCenter6"}}
         };
         ammoOverrides[] = {
@@ -362,7 +379,7 @@ class FixedWing {
             {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
-        cost = 26000;
+        cost = 28000;
         hasHMD = 1;
         hasReconOptics = 1;
         name = "F/A-181 Black Wasp II (Stealth/Recon)";

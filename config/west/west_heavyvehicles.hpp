@@ -60,42 +60,45 @@ class HeavyVehicles {
         aps = 2;
         capValue = 2;
         cost = 1700;
+        hasRearm = 1;
+        hasRefuel = 1;
+        hasRepair = 1;
         rearm = 180;
     }; // "CRV-6e Bobcat"
 
-    class B_APC_Wheeled_01_light_F {
-        aps = 2;
-        capValue = 2;
-        cost = 1700;
-        description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
-        isLight = 1;
-        loadable[] = {0, -0.8, 1.7};
-        name = "AMV-7 Marshall Light";
-        rearm = 180;
-        spawn = "B_APC_Wheeled_01_cannon_F";
-        variant = 1;
+    // class B_APC_Wheeled_01_light_F {
+    //     aps = 2;
+    //     capValue = 2;
+    //     cost = 1700;
+    //     description = "AMV-7 Marshall Light is a lighter, faster variant of the AMV-7 Marshall with a weaker armament.";
+    //     isLight = 1;
+    //     loadable[] = {0, -0.8, 1.7};
+    //     name = "AMV-7 Marshall Light";
+    //     rearm = 180;
+    //     spawn = "B_APC_Wheeled_01_cannon_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "500Rnd_127x99_mag",
-                "500Rnd_127x99_mag",
-                "500Rnd_127x99_mag",
-                "500Rnd_127x99_mag"
-            };
-            addWeapons[] = {
-                "HMG_127_MBT"
-            };
-            removeMagazines[] = {
-                "40Rnd_40mm_APFSDS_Tracer_Red_shells",
-                "60Rnd_40mm_GPR_Tracer_Red_shells"
-            };
-            removeWeapons[] = {
-                "LMG_coax",
-                "autocannon_40mm_CTWS"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "500Rnd_127x99_mag",
+    //             "500Rnd_127x99_mag",
+    //             "500Rnd_127x99_mag",
+    //             "500Rnd_127x99_mag"
+    //         };
+    //         addWeapons[] = {
+    //             "HMG_127_MBT"
+    //         };
+    //         removeMagazines[] = {
+    //             "40Rnd_40mm_APFSDS_Tracer_Red_shells",
+    //             "60Rnd_40mm_GPR_Tracer_Red_shells"
+    //         };
+    //         removeWeapons[] = {
+    //             "LMG_coax",
+    //             "autocannon_40mm_CTWS"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_APC_Wheeled_01_recon_F {
         aps = 4;
@@ -328,6 +331,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         isLight = 1;
+        hasMiniMortar = 1;
         rearm = 300;
     }; // "M2A1 Slammer"
 
@@ -338,6 +342,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
         };
+        hasMiniMortar = 1;
         isLight = 1;
         rearm = 300;
 
@@ -388,6 +393,7 @@ class HeavyVehicles {
             "4Rnd_120mm_LG_cannon_missiles"
         };
         hasHMD = 1;
+        hasMiniMortar = 1;
         isLight = 1;
         name = "M2A2 Slammer II";
         rearm = 300;
@@ -478,37 +484,37 @@ class HeavyVehicles {
         rearm = 1800;
     }; // "M5 Sandstorm MLRS"
 
-    class B_MBT_01_mlrs_sdb_F {
-        ammoOverrides[] = {
-            {"ammo_Bomb_SDB", {"M_GLSDB", "Ground Launched SDB II"}}
-        };
-        aps = 1;
-        capValue = 4;
-        cost = 35000;
-        description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
-        name = "M5A2 Sandstorm II";
-        rearm = 1800;
-        spawn = "B_MBT_01_mlrs_F";
-        variant = 1;
+    // class B_MBT_01_mlrs_sdb_F {
+    //     ammoOverrides[] = {
+    //         {"ammo_Bomb_SDB", {"M_GLSDB", "Ground Launched SDB II"}}
+    //     };
+    //     aps = 1;
+    //     capValue = 4;
+    //     cost = 35000;
+    //     description = "M5A2 Sandstorm II is a variant of the M5 Sandstorm MLRS armed with a launcher for GPS-guided Small Diameter Bombs.";
+    //     name = "M5A2 Sandstorm II";
+    //     rearm = 1800;
+    //     spawn = "B_MBT_01_mlrs_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonRack_Bomb_SDB_x4",
-                "PylonRack_Bomb_SDB_x4",
-                "PylonRack_Bomb_SDB_x4"
-            };
-            addWeapons[] = {
-                "weapon_SDBLauncher"
-            };
-            removeMagazines[] = {
-                "12Rnd_230mm_rockets"
-            };
-            removeWeapons[] = {
-                "rockets_230mm_GAT"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonRack_Bomb_SDB_x4",
+    //             "PylonRack_Bomb_SDB_x4",
+    //             "PylonRack_Bomb_SDB_x4"
+    //         };
+    //         addWeapons[] = {
+    //             "weapon_SDBLauncher"
+    //         };
+    //         removeMagazines[] = {
+    //             "12Rnd_230mm_rockets"
+    //         };
+    //         removeWeapons[] = {
+    //             "rockets_230mm_GAT"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class B_MBT_01_arty_tv_F {
     //     ammoOverrides[] = {

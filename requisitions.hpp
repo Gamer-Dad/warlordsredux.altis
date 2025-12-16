@@ -14,8 +14,7 @@ class CfgVehicleClassName {
     garbageCollect = number (0|1);      // Whether we manually delete the vehicle when it's destroyed. For buildables.
     hasHMD = number (0|1);              // Whether the vehicle supports the helmet mounted display system.
     hasScanner = number (0|1);          // Whether the vehicle has a scanner.
-    hasReconOptics = number (0|1);      // Whether the vehicle has recon optics.
-    hasAWACS = number (0|1);            // Whether the vehicle has an AWACS system.
+    hasReconOptics = number (0|1|2);    // Whether the vehicle has recon optics.
     hasTurretVisualizer = number (0|1); // Whether the vehicle has a turret visualizer.
     isLight = number (0|1);             // Whether the vehicle is considered lightweight.
     loadable = array;                   // when set, the vehicle can be loaded into a flatbed. The array is the offset.

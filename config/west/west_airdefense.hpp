@@ -71,6 +71,46 @@ class AirDefense {
         offset[] = {0, 7, 0};
     }; // "AN/MPQ-105 Radar"
 
+    class B_MRAP_03_AA_F {
+        ammoOverrides[] = {
+            {"ammo_Missile_AMRAAM_C", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}},
+            {"ammo_Missile_AMRAAM_D", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}}
+        };
+        aps = 1;
+        capValue = 2;
+        cost = 2000;
+        description = "Strider (SAM) is a variant of the Strider with a surface-to-air missile system. Lethal range: 1.5km.";
+        hasHMD = 1;
+        hasReconOptics = 2;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Strider (SAM)";
+        rearm = 180;
+        spawn = "I_MRAP_03_gmg_F";
+        textures[] = {
+            "a3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
+            "a3\data_f\vehicles\turret_co.paa"
+        };
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1",
+                "PylonMissile_Missile_AMRAAM_D_x1"
+            };
+            addWeapons[] = {
+                "weapon_AMRAAMLauncher"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_AAA_System_01_F {
         cost = 3500;
         description = "Short-range point defense artillery with a high rate of fire.";
@@ -85,7 +125,7 @@ class AirDefense {
         };
         aps = 2;
         capValue = 4;
-        cost = 5000;
+        cost = 3750;
         hasHMD = 1;
         rearm = 240;
 
@@ -112,8 +152,8 @@ class AirDefense {
     }; // "IFV-6a Cheetah"
 
     class B_SAM_System_01_F {
-        cost = 6500;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: 4km.";
+        cost = 4800;
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 1.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};
@@ -121,8 +161,8 @@ class AirDefense {
     }; // "Mk49 Spartan"
 
     class B_SAM_System_03_F {
-        cost = 7000;
-        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: >10km.";
+        cost = 5500;
+        description = "Long range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, 0, 1};
         offset[] = {0, 6, 0};
@@ -161,64 +201,64 @@ class AirDefense {
     // };
 
     class B_SAM_System_02_F {
-        cost = 8000;
-        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Effective range: ~10km.";
+        cost = 6800;
+        description = "Medium range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 1};
         offset[] = {0, 5.3, 0};
         rearm = 240;
     }; // "Mk21 Centurion"
 
-    class B_APC_Tracked_01_AA_E_F {
-        aps = 2;
-        capValue = 4;
-        cost = 8500;
-        description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with LOAL-capable AMRAAM missiles.";
-        hasHMD = 1;
-        name = "IFV-6C Jaguar";
-        rearm = 240;
-        spawn = "B_APC_Tracked_01_AA_F";
-        variant = 1;
+    // class B_APC_Tracked_01_AA_E_F {
+    //     aps = 2;
+    //     capValue = 4;
+    //     cost = 8500;
+    //     description = "IFV-6C Jaguar is a variant of the IFV-6a Cheetah armed with LOAL-capable AMRAAM missiles.";
+    //     hasHMD = 1;
+    //     name = "IFV-6C Jaguar";
+    //     rearm = 240;
+    //     spawn = "B_APC_Tracked_01_AA_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "PylonMissile_Missile_AMRAAM_D_x1",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            addWeapons[] = {
-                "autocannon_35mm",
-                "weapon_AMRAAMLauncher"
-            };
-            removeMagazines[] = {
-                "4Rnd_Titan_long_missiles",
-                "680Rnd_35mm_AA_shells_Tracer_Red"
-            };
-            removeWeapons[] = {
-                "missiles_titan_AA",
-                "autocannon_35mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "PylonMissile_Missile_AMRAAM_D_x1",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         addWeapons[] = {
+    //             "autocannon_35mm",
+    //             "weapon_AMRAAMLauncher"
+    //         };
+    //         removeMagazines[] = {
+    //             "4Rnd_Titan_long_missiles",
+    //             "680Rnd_35mm_AA_shells_Tracer_Red"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_AA",
+    //             "autocannon_35mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
-    class B_SAM_System_01_Advanced_F {
-        ammoOverrides[] = {
-            {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
-        };
-        cost = 22000;
-        description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Effective range: 14km.";
-        hasASAM = 1;
-        hasHMD = 1;
-        loadable[] = {0, -2, 0.8};
-        name = "Mk59 Hercules";
-        offset[] = {0, 5.3, 0};
-        rearm = 300;
-        spawn = "B_SAM_System_01_F";
-        variant = 1;
-    };
+    // class B_SAM_System_01_Advanced_F {
+    //     ammoOverrides[] = {
+    //         {"ammo_Missile_rim116", {"M_RIM116B", "Hercules AA"}}
+    //     };
+    //     cost = 10000;
+    //     description = "Advanced surface-to-air missile system, capable of aggressively engaging aircraft and helicopters. Lethal range: 6.5km.";
+    //     hasASAM = 1;
+    //     hasHMD = 1;
+    //     loadable[] = {0, -2, 0.8};
+    //     name = "Mk59 Hercules";
+    //     offset[] = {0, 5.3, 0};
+    //     rearm = 300;
+    //     spawn = "B_SAM_System_01_F";
+    //     variant = 1;
+    // };
 
     // class B_SAM_System_LRAA_F {
     //     ammoOverrides[] = {

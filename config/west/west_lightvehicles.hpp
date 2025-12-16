@@ -146,34 +146,20 @@ class LightVehicles {
     class B_Truck_01_ammo_F {
         capValue = 1;
         cost = 1000;
+        hasRearm = 1;
     }; // "HEMTT Ammo"
 
     class B_Truck_01_fuel_F {
         capValue = 1;
         cost = 1000;
+        hasRefuel = 1;
     }; // "HEMTT Fuel"
 
     class B_Truck_01_Repair_F {
         capValue = 1;
         cost = 1000;
+        hasRepair = 1;
     }; // "HEMTT Repair"
-
-    class B_MRAP_03_F {
-        aps = 2;
-        capValue = 2;
-        cost = 1100;
-        description = "Strider (Recon) is a variant of the Strider with a recon scanner.";
-        hasHMD = 1;
-        hasReconOptics = 1;
-        loadable[] = {0, -0.8, 1.8};
-        name = "Strider (Recon)";
-        rearm = 120;
-        spawn = "I_MRAP_03_F";
-        textures[] = {
-            "a3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
-            "a3\data_f\vehicles\turret_co.paa"
-        };
-    };
 
     // class B_LSV_01_AT_UP_F {
     //     capValue = 1;
@@ -207,39 +193,31 @@ class LightVehicles {
     //     };
     // };
 
-    // class B_MRAP_01_gmg_up_F {
-    //     aps = 2;
-    //     capValue = 2;
-    //     cost = 1500;
-    //     description = "Hunter UP is a variant of the Hunter armed with a 20mm autocannon.";
-    //     name = "Hunter UP Autocannon";
-    //     rearm = 300;
-    //     spawn = "B_MRAP_01_gmg_F";
-    //     variant = 1;
+    class B_MRAP_01_afv_F {
+        aps = 2;
+        capValue = 2;
+        cost = 1200;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Hunter AFV";
+        rearm = 120;
+        spawn = "B_MRAP_01_gmg_F";
+        variant = 1;
 
-    //     class Gunner: WLTurretDefaults {
-    //         addMagazines[] = {
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_HE_shells",
-    //             "60Rnd_20mm_AP_shells",
-    //             "60Rnd_20mm_AP_shells",
-    //             "200Rnd_338_Mag",
-    //             "200Rnd_338_Mag"
-    //         };
-    //         addWeapons[] = {
-    //             "cannon_20mm",
-    //             "MMG_02_coax"
-    //         };
-    //         removeMagazines[] = {
-    //             "96Rnd_40mm_G_belt"
-    //         };
-    //         removeWeapons[] = {
-    //             "GMG_40mm"
-    //         };
-    //         turret[] = { 0 };
-    //     };
-    // };
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "200Rnd_40mm_G_belt"
+            };
+            addWeapons[] = {
+                "HMG_NSVT"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     class B_T_Truck_03_device_F {
         aps = 4;
@@ -256,35 +234,73 @@ class LightVehicles {
         };
     }; // "Tempest Device"
 
-    class B_LSV_01_AT_TV_F {
-        ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
-        };
-        capValue = 1;
-        cost = 6000;
-        description = "Prowler (Spike AT) is a variant of the Prowler AT.";
-        loadable[] = {0, -1.3, 0.95};
-        name = "Prowler (Spike AT)";
-        offset[] = {0, 5, 0};
-        rearm = 240;
-        spawn = "B_LSV_01_AT_F";
+    class B_MRAP_01_afv_up_F {
+        aps = 2;
+        capValue = 2;
+        cost = 2500;
+        hasHMD = 1;
+        loadable[] = {0, -0.8, 1.8};
+        name = "Hunter Apex";
+        rearm = 120;
+        spawn = "B_MRAP_01_gmg_F";
         variant = 1;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles",
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "60Rnd_30mm_MP_shells_Tracer_Green",
+                "450Rnd_127x108_Ball",
+                "450Rnd_127x108_Ball",
+                "1Rnd_GAT_missiles",
+                "1Rnd_GAT_missiles",
+                "1Rnd_GAT_missiles",
+                "1Rnd_GAT_missiles",
                 "1Rnd_GAT_missiles"
             };
-            removeWeapons[] = {
+            addWeapons[] = {
+                "autocannon_30mm_RCWS",
+                "HMG_NSVT",
                 "missiles_titan_static"
+            };
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt"
+            };
+            removeWeapons[] = {
+                "GMG_40mm"
             };
             turret[] = { 0 };
         };
     };
+
+    // class B_LSV_01_AT_TV_F {
+    //     ammoOverrides[] = {
+    //         {"M_127mm_Firefist_AT", {"M_Spike", "Spike (TV-Guided)"}}
+    //     };
+    //     capValue = 1;
+    //     cost = 6000;
+    //     description = "Prowler (Spike AT) is a variant of the Prowler AT.";
+    //     loadable[] = {0, -1.3, 0.95};
+    //     name = "Prowler (Spike AT)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 240;
+    //     spawn = "B_LSV_01_AT_F";
+    //     variant = 1;
+
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles",
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "1Rnd_GAT_missiles"
+    //         };
+    //         removeWeapons[] = {
+    //             "missiles_titan_static"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 };

@@ -100,7 +100,7 @@ class FixedWing {
     //         "PylonMissile_1Rnd_Bomb_03_F",
     //         "PylonMissile_1Rnd_BombCluster_02_F"
     //     };
-    //     hasAWACS = 1;
+    //     hasAirRadar = 15000;
     //     hasHMD = 1;
     //     name = "Y-32 Xi'an (AWACS)";
     //     requirements[] = {"A"};
@@ -154,11 +154,13 @@ class FixedWing {
         };
         cost = 12000;
         ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
+        hasAirRadar = 8000;
         hasAirRearm = 1;
+        hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
         rearm = 300;
-        requirements[] = {"A"};
+        requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -205,14 +207,19 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PGM_missiles",
             {"PylonMissile_1Rnd_Mk82_F", {"Pylons4"}},
-            {"PylonMissile_Bomb_KAB250_x1", {"Pylons2", "Pylons3", "Pylons4", "Pylons5", "Pylons6"}}
+            {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons2", "Pylons3", "Pylons5", "Pylons6"}},
+            {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons3", "Pylons5"}}
         };
         ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250kr", "KAB-250KR (TV-Guided)"}},
-            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
+            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
         };
         cost = 13000;
         description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+        disallowMagazines[] = {
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2"
+        };
         hasHMD = 1;
         name = "A-143 Buzzard (CAS)";
         rearm = 420;
@@ -240,10 +247,14 @@ class FixedWing {
         allowPylonMagazines[] = {
             "PylonRack_12Rnd_PG_missiles",
             "PylonRack_12Rnd_PGM_missiles",
-            {"PylonMissile_1Rnd_Mk82_F", {"Pylons5", "Pylons6"}}
+            {"PylonMissile_1Rnd_Mk82_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
+            {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}},
+            {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}},
+            {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}}
         };
         ammoOverrides[] = {
-            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}}
+            {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
         };
         cost = 15000;
         hasHMD = 1;
@@ -286,6 +297,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2",
             "PylonMissile_Bomb_GBU12_x1"
         };
+        ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
         hasHMD = 1;
         name = "A-149 Gryphon (Interceptor)";
         rearm = 420;
@@ -299,6 +311,7 @@ class FixedWing {
             "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
             "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
         };
+        threatDetection = 16000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
@@ -331,7 +344,7 @@ class FixedWing {
     //         "PylonMissile_Missile_AGM_KH25_INT_x1",
     //         "PylonMissile_Bomb_KAB250_x1"
     //     };
-    //     hasAWACS = 1;
+    //     hasAirRadar = 15000;
     //     hasHMD = 1;
     //     name = "J-30 Gyrfalcon";
     //     rearm = 720;
@@ -367,7 +380,7 @@ class FixedWing {
         hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
-        threatDetection = 8000;
+        threatDetection = 16000;
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
@@ -392,7 +405,7 @@ class FixedWing {
             {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayLeft1", "pylonBayRight1"}},
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}},
             "PylonMissile_Missile_KH58_INT_x1",
-            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}},
+            {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}}
         };
         ammoOverrides[] = {
@@ -400,18 +413,17 @@ class FixedWing {
             {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
-        cost = 25000;
+        cost = 28000;
         description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
         disallowMagazines[] = {
             "PylonMissile_Missile_KH58_x1"
         };
-        ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasHMD = 1;
         hasReconOptics = 1;
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};
-        threatDetection = 16000;
+        threatDetection = 8000;
         variant = 1;
 
         class Pilot: WLTurretDefaults {
