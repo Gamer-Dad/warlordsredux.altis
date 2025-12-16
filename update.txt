@@ -68,6 +68,9 @@ Interface
 * Increased preset loadouts 10->30.
 * Changed target lock hud to use vanilla lock icons.
 * Start welcome interface (can be disabled in settings).
+* Hide structure icons on map unless hovered over.
+* Icon text scale now adjustable in settings.
+* Show side capture modifier on map.
 
 Gameplay
 * Decreased green sector AI infantry spawn, increased vehicle spawn from 2->3, increased green cap ratio 2->2.5.

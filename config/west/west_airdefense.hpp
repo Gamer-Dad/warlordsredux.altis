@@ -153,7 +153,7 @@ class AirDefense {
 
     class B_SAM_System_01_F {
         cost = 4800;
-        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5km.";
+        description = "Short range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 1.5km.";
         hasHMD = 1;
         loadable[] = {0, -2, 0.8};
         offset[] = {0, 5.3, 0};

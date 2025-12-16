@@ -17,6 +17,7 @@ class Structures {
         cost = 50;
         demolishable = 1;
         demolishStepTime = 5;
+        name = "Dragon's Teeth";
         offset[] = {0, 5, 0};
     }; // "Tank barrier"
 
