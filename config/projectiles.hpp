@@ -89,9 +89,9 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
-        immunity = 100;
+        immunity = 1;
         sam = 1;
-        speed = 0.7;
+        speed = 0.4;
     };
 
     class WLProjectile_A2AGround: WLProjectile {

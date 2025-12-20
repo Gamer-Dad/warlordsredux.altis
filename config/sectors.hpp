@@ -238,7 +238,6 @@ class CfgWarlordSectors {
         area[] = {100, 110, 77.82, 1};
         location[] = {9439.2, 20249.5, 0};
         name = "Abdera";
-        spawn = 0.9;
     };
 
     class Aggelochori {
@@ -302,7 +301,6 @@ class CfgWarlordSectors {
         area[] = {160, 160, 310.03, 1};
         location[] = {21402.4, 10922.1, 0};
         name = "Aktinarki Ruins";
-        spawn = 0.9;
     };
 
     class Alikampos {
@@ -392,7 +390,6 @@ class CfgWarlordSectors {
         area[] = {75, 90, 45.818, 1};
         location[] = {14558.9, 16807.7, 0};
         name = "Central Terminal";
-        spawn = 0.9;
     };
 
     class Chalkeia {
@@ -417,7 +414,6 @@ class CfgWarlordSectors {
         area[] = {140, 140, 128.18, 0};
         location[] = {18840.1, 10219.7, 0};
         name = "Didymos Turbines";
-        spawn = 0.9;
     };
 
     class DieselPowerPlant {
@@ -521,14 +517,12 @@ class CfgWarlordSectors {
         area[] = {150, 150, 128.18, 0};
         location[] = {3558.12, 19991.2, 0};
         name = "Hill 275";
-        spawn = 0.9;
     };
 
     class HillsideChapel {
         area[] = {150, 150, 221.059, 0};
         location[] = {25426.6, 19317.7, 0};
         name = "Hillside Chapel";
-        spawn = 0.9;
     };
 
     class Ifestiona {
@@ -541,7 +535,6 @@ class CfgWarlordSectors {
         area[] = {175, 100, 221.059, 0};
         location[] = {23221.6, 19972.2, 0};
         name = "Ioannina";
-        spawn = 0.9;
     };
 
     class Kalithea {
@@ -603,14 +596,12 @@ class CfgWarlordSectors {
         area[] = {225, 225, 65.703, 0};
         location[] = {11764.6, 18314.6, 0};
         name = "Koroni";
-        spawn = 0.9;
     };
 
     class Lakka {
         area[] = {275, 200, 65.703, 0};
         location[] = {12376.5, 15658.2, 0};
         name = "Lakka";
-        spawn = 0.9;
     };
 
     class LakkaFactory {
@@ -691,7 +682,6 @@ class CfgWarlordSectors {
         area[] = {200, 125, 146.602, 1};
         location[] = {4131.79, 11741.3, 0};
         name = "Neri";
-        spawn = 0.9;
     };
 
     class NidasosBase {
@@ -753,7 +743,6 @@ class CfgWarlordSectors {
         area[] = {300, 300, 147.52, 0};
         location[] = {20976.2, 16972.5, 0};
         name = "Paros";
-        spawn = 0.9;
     };
 
     class Polemistia {
@@ -766,7 +755,6 @@ class CfgWarlordSectors {
         area[] = {275, 275, 121.177, 0};
         location[] = {11006.5, 13402.5, 0};
         name = "Poliakko";
-        spawn = 0.9;
     };
 
     class Pyrgos {
@@ -867,7 +855,6 @@ class CfgWarlordSectors {
         area[] = {150, 150, 128.18, 0};
         location[] = {11210.7, 8720.47, 0};
         name = "Skopos Castle Ruins";
-        spawn = 0.9;
     };
 
     class Sofia {
@@ -924,7 +911,6 @@ class CfgWarlordSectors {
         area[] = {140, 140, 228.118, 0};
         location[] = {20101.2, 20046.8, 0};
         name = "Theater Ruins";
-        spawn = 0.9;
     };
 
     class TheDump {

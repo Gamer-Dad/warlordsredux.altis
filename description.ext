@@ -3,6 +3,7 @@
 #include "config\customization.hpp"
 #include "config\projectiles.hpp"
 #include "config\sectors.hpp"
+#include "config\whitelist.hpp"
 
 onLoadName = "Warlords Redux 2.7.1";
 dev = "Jezuro + WSV";

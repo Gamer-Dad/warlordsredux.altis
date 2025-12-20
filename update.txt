@@ -3,10 +3,16 @@ Warlords Redux 2.7.1 Patch 1
 Interface
 * Reverted UAV terminal changes.
 * Reworked map buttons interface to draw on same frame as click.
+* Consistent ordering of map buttons.
+* Rollback to side selection screen.
+* Do not lock player on opposite team if joining while imbalanced.
+* Warn and prompt player when they attempt to spawn aircraft on an airbase sector marked as camped by the team.
 
 Gameplay
 * Slightly reduced fog.
 * Disabled high level asset limits during low server pop.
+* Reduced speed and hard evasion immunity of Titan AA.
+* Removed sector spawn RNG.
 
 Fixes
 * Script errors with legacy loadouts.
@@ -16,7 +22,15 @@ Fixes
 * Fixed some instances of not placing player into naval vessel driver.
 * No longer able to see enemy team markers.
 * Profanity filters now functional on marker text.
+* Disallowed remote execution on APS jammer.
+* Fixed issue causing AA missiles to go faster than intended.
+* Mines are removed upon disconnect to prevent exploits.
+* Players with CBA mod loaded should still be able to customize loadout.
+* Fixed issue with GPS munitions not locking onto destroyer VLS.
+* Fixed issue where players would not be able to remove cleaned up assets on runway.
+* Mod detection script no longer removes goggles/glasses.
 
 Performance
 * Map asset/sector detection optimizations.
 * Map icon pulsing no longer runs on every sector.
+* Reduced smoke effect when APS is triggered.
