@@ -29,6 +29,8 @@ Fixes
 * Fixed issue with GPS munitions not locking onto destroyer VLS.
 * Fixed issue where players would not be able to remove cleaned up assets on runway.
 * Mod detection script no longer removes goggles/glasses.
+* Unified parachute conditions, allow deployment when ejecting >20m off ground.
+* Fixed server errors around initialization.
 
 Performance
 * Map asset/sector detection optimizations.
