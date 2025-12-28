@@ -346,7 +346,7 @@ class FixedWing {
 
     class B_Plane_Fighter_01_F {
         allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1",
+            {"PylonRack_Missile_HARM_x1", {"pylon1", "pylon2"}},
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
         };
         cost = 26000;
@@ -369,7 +369,7 @@ class FixedWing {
 
     class B_Plane_Fighter_01_Stealth_F {
         allowPylonMagazines[] = {
-            "PylonRack_Missile_HARM_x1",
+            {"PylonRack_Missile_HARM_x1", {"pylonBayLeft1", "pylonBayRight1"}},
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}},
             {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter3", "pylonBayCenter4"}},
             {"PylonRack_Missile_AMRAAM_D_x2", {"pylonBayCenter5", "pylonBayCenter6"}}

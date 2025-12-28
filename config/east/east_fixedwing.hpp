@@ -147,6 +147,8 @@ class FixedWing {
             "PylonRack_12Rnd_PGM_missiles",
             "PylonMissile_Missile_KH58_INT_x1",
             "PylonMissile_Missile_AA_R73_x1",
+            "PylonRack_Missile_BIM9X_x1",
+            "PylonRack_Missile_BIM9X_x2",
             "PylonFuelTank_UH80"
         };
         ammoOverrides[] = {
@@ -369,12 +371,12 @@ class FixedWing {
 
     class O_Plane_Fighter_02_F {
         allowPylonMagazines[] = {
-            "PylonMissile_Missile_KH58_INT_x1",
+            {"PylonMissile_Missile_KH58_x1", {"pylons1", "pylons2", "pylons3", "pylons4", "pylons5", "pylons6"}},
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2", "pylonBayCenter3"}}
         };
         cost = 25000;
         disallowMagazines[] = {
-            "PylonMissile_Missile_KH58_x1"
+            "PylonMissile_Missile_KH58_INT_x1"
         };
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasHMD = 1;
@@ -404,7 +406,7 @@ class FixedWing {
         allowPylonMagazines[] = {
             {"PylonMissile_Missile_AA_R77_INT_x1", {"pylonBayLeft1", "pylonBayRight1"}},
             {"PylonMissile_Bomb_KAB250_x1", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}},
-            "PylonMissile_Missile_KH58_INT_x1",
+            {"PylonMissile_Missile_KH58_x1", {"pylonBayLeft1", "pylonBayRight1"}},
             {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayLeft2", "pylonBayRight2"}},
             {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}}
         };
@@ -416,7 +418,7 @@ class FixedWing {
         cost = 28000;
         description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
         disallowMagazines[] = {
-            "PylonMissile_Missile_KH58_x1"
+            "PylonMissile_Missile_KH58_INT_x1"
         };
         hasHMD = 1;
         hasReconOptics = 1;
