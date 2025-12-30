@@ -4,9 +4,9 @@ Warlords Redux is a community upgrade project for the Original Warlords Redux.
 Original Warlords Redux by Bohemia Interactive and Jezuro can be found here:
 https://steamcommunity.com/sharedfiles/filedetails/?id=1834482266&searchtext=Warlords+redux
 
-Offical Arma 3 Website: https://arma3.com/
+Official Arma 3 Website: https://arma3.com/
 
-Offical Arma 3 discord:  https://discord.gg/arma
+Official Arma 3 discord:  https://discord.gg/arma
 
 ## Warlords Redux
 

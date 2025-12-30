@@ -54,8 +54,8 @@ class WLTurretDefaults {};
 
 class CfgWLRequisitionPresets {
     class A3ReduxAll {
-        #include "config\west.hpp"
-        #include "config\east.hpp"
-        #include "config\independent.hpp"
+        #include "config/west.hpp"
+        #include "config/east.hpp"
+        #include "config/independent.hpp"
     };
 };
