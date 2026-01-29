@@ -63,6 +63,7 @@ class HeavyVehicles {
         hasRearm = 1;
         hasRefuel = 1;
         hasRepair = 1;
+        loaded = "Land_BagBunker_Small_F";
         rearm = 180;
     }; // "CRV-6e Bobcat"
 
@@ -105,10 +106,11 @@ class HeavyVehicles {
         capValue = 1;
         cost = 2200;
         description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
-        isLight = 1;
-        loadable[] = {0, -0.8, 1.7};
         hasHMD = 1;
         hasScanner = 1;
+        isLight = 1;
+        loadable[] = {0, -0.8, 1.7};
+        loaded = "Land_IRMaskingCover_01_F";
         name = "AMV-7 Marshall (Recon)";
         rearm = 120;
         spawn = "B_APC_Wheeled_01_cannon_F";
@@ -131,6 +133,13 @@ class HeavyVehicles {
         };
     };
 
+    class B_APC_Wheeled_01_cannon_F {
+        aps = 2;
+        capValue = 3;
+        cost = 2400;
+        rearm = 180;
+    }; // "AMV-7 Marshall"
+
     class B_APC_tracked_03_cannon_F {
         aps = 3;
         capValue = 4;
@@ -145,13 +154,6 @@ class HeavyVehicles {
             "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
         };
     };
-
-    class B_APC_Wheeled_01_cannon_F {
-        aps = 2;
-        capValue = 3;
-        cost = 2700;
-        rearm = 180;
-    }; // "AMV-7 Marshall"
 
     class B_APC_Wheeled_03_cannon_F {
         aps = 2;
@@ -187,9 +189,9 @@ class HeavyVehicles {
     }; // "AFV-4 Gorgon"
 
     class B_APC_Wheeled_01_cannon_up_F {
-        aps = 2;
+        aps = 3;
         capValue = 3;
-        cost = 3200;
+        cost = 3000;
         description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
         name = "AMV-7 Marshall UP";
         rearm = 180;
@@ -288,15 +290,15 @@ class HeavyVehicles {
     class B_AFV_Wheeled_01_cannon_F {
         aps = 2;
         capValue = 4;
-        cost = 4500;
+        cost = 4000;
         isLight = 1;
         rearm = 240;
     }; // "Rhino MGS"
 
     class B_AFV_Wheeled_01_up_cannon_F {
-        aps = 2;
+        aps = 3;
         capValue = 4;
-        cost = 5000;
+        cost = 4500;
         rearm = 240;
 
         class Gunner: WLTurretDefaults {
@@ -368,7 +370,7 @@ class HeavyVehicles {
 
     class B_MBT_03_cannon_F {
         aps = 3;
-        capValue = 4;
+        capValue = 6;
         cost = 8000;
         disallowMagazines[] = {
             "4Rnd_120mm_LG_cannon_missiles"
@@ -386,7 +388,7 @@ class HeavyVehicles {
 
     class B_MBT_01_TUSK2_F {
         aps = 3;
-        capValue = 4;
+        capValue = 6;
         cost = 8500;
         description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
         disallowMagazines[] = {
@@ -471,6 +473,7 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster",
             "2Rnd_155mm_Mo_Cluster_O"
         };
+        loaded = "CamoNet_BLUFOR_big_F";
         rearm = 1800;
     }; // "M4 Scorcher"
 
@@ -481,6 +484,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "12Rnd_230mm_rockets_cluster"
         };
+        loaded = "CamoNet_BLUFOR_big_F";
         rearm = 1800;
     }; // "M5 Sandstorm MLRS"
 

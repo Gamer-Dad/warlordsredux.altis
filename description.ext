@@ -5,7 +5,7 @@
 #include "config\sectors.hpp"
 #include "config\whitelist.hpp"
 
-onLoadName = "Warlords Redux 2.7.1";
+onLoadName = "Warlords Redux 2.7.2";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;

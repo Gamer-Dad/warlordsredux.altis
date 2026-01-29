@@ -1,4 +1,7 @@
-Warlords Redux 2.7.1 Patch 4
+Warlords Redux 2.7.2
+
+Added
+* Fighting position: deployed from select vehicles, allows fast travel.
 
 Balance
 * Xian: added BIM-9X pylon racks.
@@ -6,6 +9,39 @@ Balance
 * Black Wasp Stealth: removed HARM from all internal bay center pylons.
 * Shikra: removed KH58 ARMs from all internal bay pylons.
 * Shikra Stealth: removed KH58 ARMs from all internal bay center pylons.
+* Removed ECM jammers from rotary wing.
+* Pawnee: countermeasure count 168->300, $2,500->3,500.
+* Hellcat: $5,000->4,200, added BIM-9X pylon racks.
+* Ghosthawk Block II: $5,500->5,000, added BIM-9X pylon racks.
+* Kajman: added R-77 pylon racks.
+* Smart mines: separated out munitions with independent ammo pools for AP (4) and AT (3), no longer dazzleable.
+* Hunter Apex: $2,500->2,000, changed AT from 1-mag to 2-mag, cap value 2->3.
+* Bobcat: deploy spawnable fighting position.
+* Marshall: $2,700->2,400.
+* Marshall UP: $3,200->3,000, APS medium->heavy.
+* Rhino: $4,500->4,000.
+* Rhino UP: $5,000->4,500, APS medium->heavy.
+* Kuma, Slammer II: cap value 4->6.
+* Marid Utility: $2,500->1,800, deploy spawnable fighting position.
+* Angara, Angara-K, Futura: cap value 4->6.
+* Recon APCs: deploy IR camo net.
+* UGVs: deploy gear crate.
+* HEMMT/Tempest transport/medical: deploy spawnable fighting position.
+* Huron, Mohawk: deploy spawnable fighting position.
+* Artillery, MLRS: deploy camo net.
+* Team rally point: demolition time 10->3s.
+
+Gameplay
+* Order combat air patrol: calls in temporary A2A over selected airfield sector.
+* Removed winter holiday events.
+* Deployable items now show display name in action menu.
+* Moved demolition action down priority list.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
+* Moved missile state in HMD to top of missile to avoid conflicts with jammer UI.
+* Fixed naval enemies nearby requirement.
+
+Performance
+* Improved sector scanning performance.
+* Improved sector selection performance.

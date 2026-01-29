@@ -9,6 +9,7 @@ class RemoteControl {
     class B_UGV_01_F {
         cost = 150;
         loadable[] = {-0.4, -1, 1.1};
+        loaded = "B_crate_F";
         offset[] = {0, 5, 0};
     }; // "UGV Stomper"
 
@@ -21,6 +22,7 @@ class RemoteControl {
     class B_UGV_01_rcws_F {
         cost = 500;
         loadable[] = {-0.4, -1, 1.1};
+        loaded = "B_crate_F";
         offset[] = {0, 5, 0};
         rearm = 120;
     }; // "UGV Stomper RCWS"

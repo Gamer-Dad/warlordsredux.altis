@@ -30,6 +30,7 @@ class RotaryWing {
     class O_Heli_Transport_02_F {
         cost = 500;
         hasHMD = 1;
+        loaded = "Land_BagBunker_Small_gmg_F";
         name = "CH-49 Mohawk";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
@@ -92,15 +93,12 @@ class RotaryWing {
             "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_4Rnd_LG_scalpel",
             "PylonMissile_Missile_AA_R73_x1",
-            "PylonRack_Missile_BIM9X_x2",
-            "PylonFuelTank_UH80"
+            "PylonRack_Missile_BIM9X_x2"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 3500;
-        ecm[] = {{"MissileCore"}, 1, 5000, 1, 4, 30};
         hasHMD = 1;
         offset[] = {0, 10, 0};
         rearm = 240;
@@ -175,14 +173,12 @@ class RotaryWing {
             "PylonRack_12Rnd_PGM_missiles",
             "PylonMissile_Missile_KH58_INT_x1",
             "PylonMissile_Missile_AA_R73_x1",
-            "PylonFuelTank_UH80"
+            "PylonMissile_Missile_AA_R77_x1"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 8000;
-        ecm[] = {{"MissileCore"}, 1, 6000, 1, 6, 30};
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;

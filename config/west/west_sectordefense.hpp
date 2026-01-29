@@ -202,7 +202,8 @@ class SectorDefense {
         offset[] = {0, 3, 0};
         rearm = 900;
         requirements[] = {"S"};
-        smartMine = 7;
+        smartMineAP = 4;
+        smartMineAT = 3;
         spawn = "Box_NATO_Equip_F";
         textures[] = {
             "#(rgb,8,8,3)color(1,0,0,1)"

@@ -7,6 +7,67 @@ class Spawn {
         lifetime = 180;
     };
 
+    class Land_BagBunker_Small_F {
+        cost = 1500;
+        demolishable = 1;
+        demolishStepTime = 1;
+        hasFastTravel = 1;
+        loaded = "I_HMG_02_high_F";
+        name = "Fighting Position";
+    };
+
+    class Land_BagBunker_Small_gmg_F {
+        cost = 2000;
+        demolishable = 1;
+        demolishStepTime = 1;
+        hasFastTravel = 1;
+        loaded = "I_E_GMG_01_high_F";
+        name = "Fighting Position (GMG)";
+        spawn = "Land_BagBunker_Small_F";
+    };
+
+    class I_HMG_02_high_F {
+        cost = 500;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "500Rnd_127x99_mag_Tracer_Yellow",
+                "500Rnd_127x99_mag_Tracer_Yellow"
+            };
+            addWeapons[] = {
+                "HMG_static"
+            };
+            removeMagazines[] = {
+                "100Rnd_127x99_mag_Tracer_Yellow"
+            };
+            removeWeapons[] = {
+                "HMG_M2_Mounted"
+            };
+            turret[] = { 0 };
+        };
+    };
+
+    class I_E_GMG_01_high_F {
+        cost = 1000;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "200Rnd_40mm_G_belt",
+                "200Rnd_40mm_G_belt"
+            };
+            addWeapons[] = {
+                "GMG_40mm"
+            };
+            removeMagazines[] = {
+                "40Rnd_20mm_g_belt"
+            };
+            removeWeapons[] = {
+                "GMG_20mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     class B_Slingload_01_Cargo_F {
         cost = 500;
         empty = 1;
@@ -21,7 +82,7 @@ class Spawn {
 
     class Land_MedicalTent_01_NATO_generic_open_F {
         cost = 5000;
-        demolishStepTime = 10;
+        demolishStepTime = 3;
         hasFastTravel = 1;
         name = "Team Rally Point (NATO)";
     };

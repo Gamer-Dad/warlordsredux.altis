@@ -59,12 +59,14 @@ class LightVehicles {
         capValue = 1;
         cost = 200;
         hasFastTravel = 1;
+        loaded = "Land_BagBunker_Small_F";
     }; // "HEMTT Transport"
 
     class B_Truck_01_medical_F {
         capValue = 1;
         cost = 250;
         hasFastTravel = 1;
+        loaded = "Land_BagBunker_Small_F";
     }; // "HEMMT Medical"
 
     class B_MRAP_01_F {
@@ -236,8 +238,11 @@ class LightVehicles {
 
     class B_MRAP_01_afv_up_F {
         aps = 2;
-        capValue = 2;
-        cost = 2500;
+        capValue = 3;
+        cost = 2000;
+        disallowMagazines[] = {
+            "5Rnd_GAT_missiles"
+        };
         hasHMD = 1;
         loadable[] = {0, -0.8, 1.8};
         name = "Hunter Apex";
@@ -251,16 +256,14 @@ class LightVehicles {
                 "60Rnd_30mm_MP_shells_Tracer_Green",
                 "450Rnd_127x108_Ball",
                 "450Rnd_127x108_Ball",
-                "1Rnd_GAT_missiles",
-                "1Rnd_GAT_missiles",
-                "1Rnd_GAT_missiles",
-                "1Rnd_GAT_missiles",
-                "1Rnd_GAT_missiles"
+                "2Rnd_GAT_missiles",
+                "2Rnd_GAT_missiles",
+                "2Rnd_GAT_missiles"
             };
             addWeapons[] = {
                 "autocannon_30mm_RCWS",
                 "HMG_NSVT",
-                "missiles_titan_static"
+                "missiles_titan"
             };
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt"
