@@ -66,6 +66,8 @@ Gameplay
 * Atsalis: added tower.
 * Livadi: added beachfront apartment building.
 * Skiptro: added sector, replaced connections near Sideras.
+* Removed anti-heavy vehicle checks on carrier.
+* Enabled deployment of sandbags above ground level.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
@@ -79,6 +81,7 @@ Bugfixes
 * Fixed players respawning on body location.
 * Fixed sector scan cooldowns bleeding through teams.
 * Fixed LOAL/laser lock-on time being tied to game client framerate.
+* Fixed bug where more than 30 mines could be deployed at once.
 
 Performance
 * Improved sector scanning performance.
