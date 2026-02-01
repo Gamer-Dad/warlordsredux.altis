@@ -241,7 +241,8 @@ class LightVehicles {
         capValue = 3;
         cost = 2000;
         disallowMagazines[] = {
-            "5Rnd_GAT_missiles"
+            "5Rnd_GAT_missiles",
+            "4Rnd_GAA_missiles"
         };
         hasHMD = 1;
         loadable[] = {0, -0.8, 1.8};
@@ -256,7 +257,6 @@ class LightVehicles {
                 "60Rnd_30mm_MP_shells_Tracer_Green",
                 "450Rnd_127x108_Ball",
                 "450Rnd_127x108_Ball",
-                "2Rnd_GAT_missiles",
                 "2Rnd_GAT_missiles",
                 "2Rnd_GAT_missiles"
             };

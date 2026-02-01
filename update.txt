@@ -38,17 +38,20 @@ Balance
 * Huron, Mohawk: deploy spawnable fighting position.
 * Artillery, MLRS: deploy camo net.
 * Team rally point: demolition time 10->3s.
-* Removed capture value modifier limit 3->unlimited.
+* Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Sector scan: $750->1500.
+* Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1).
 
 Gameplay
+* Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
+* Green sector stronghold: most green sectors will spawn strongholds, which will instantly deplete reserves when destroyed.
 * Order combat air patrol: calls in temporary A2A over selected airfield sector.
 * Secure aircraft wreck: securing manned aircraft wrecks rewards players with 1/3 the cost of the aircraft.
 * Designate team priority: allows squad leaders to designate a sector, fob, stronghold, or fast travel asset as a team priority.
 * Travel to frontline: FT to team priority, intended to help get new players into the fight.
 * Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold).
 * Fast travel home and respawn now puts player next to flag.
-* Upgrade FOB: can now upgrade FOB to forward airbase, allows deployment of planes.
+* Upgrade FOB: can now upgrade FOB to forward airbase at huge supply cost, allows deployment of planes.
 * Supply boat is now a conversion rather than deployment.
 * FOB supply crates are now less fragile.
 * Removed winter holiday events.
@@ -59,6 +62,10 @@ Gameplay
 * Combined attach/detach for both flatbed and helo slingloader, now shows closest vehicle.
 * All area scanners (sector scan, fob, stronghold, recon optics) will now detect enemy mines.
 * Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
+* Added smart mines to green sector spawn pool.
+* Atsalis: added tower.
+* Livadi: added beachfront apartment building.
+* Skiptro: added sector, replaced connections near Sideras.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
@@ -77,3 +84,4 @@ Performance
 * Improved sector scanning performance.
 * Improved sector selection performance.
 * Improved attach/detach check performance.
+* Overhauled unconsciousness to be reliable through heavy network traffic.

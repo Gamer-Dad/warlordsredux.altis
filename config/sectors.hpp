@@ -178,14 +178,12 @@ class CfgWarlordSectors {
         {"Makrynisi", "SkoposBase"},
         {"Molos", "MolosAirfield"},
         {"Molos", "Polemistia"},
-        {"Molos", "Sideras"},
+        {"Molos", "Skiptro"},
         {"Molos", "Sofia"},
-        {"MolosAirfield", "Sideras"},
         {"Negades", "USSFreedom"},
         {"Neochori", "Stavros"},
         {"Neri", "Panochori"},
-        {"NidasosBase", "Sideras"},
-        {"NidasosBase", "Sofia"},
+        {"NidasosBase", "Skiptro"},
         {"NidasosBase", "SofiaPowerPlant"},
         {"Nifi", "NifiSolar"},
         {"Nifi", "Rodopoli"},
@@ -208,7 +206,8 @@ class CfgWarlordSectors {
         {"Selekano", "TheMaziBouys"},
         {"Sfaka", "SkoposCastleRuins"},
         {"Sfaka", "ZarosSolar"},
-        {"Sideras", "Sofia"},
+        {"Sideras", "Skiptro"},
+        {"Skiptro", "Sofia"},
         {"SkoposBase", "SkoposCastleRuins"},
         {"Sofia", "SofiaPowerPlant"},
         {"SynneforosWindmill", "TheDump"},
@@ -842,6 +841,12 @@ class CfgWarlordSectors {
         area[] = {150, 150, 121.177, 0};
         location[] = {23870.7, 23747.4, 0};
         name = "Sideras";
+    };
+
+    class Skiptro {
+        area[] = {120, 120, 0, 0};
+        location[] = {25270.7, 21810.6, 0};
+        name = "Skiptro";
     };
 
     class SkoposBase {

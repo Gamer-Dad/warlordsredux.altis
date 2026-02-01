@@ -77,8 +77,8 @@ class Naval {
         description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
         detonate = 7;
         drone = 1;
-        flipLoadable = 180;
         loadable[] = {0, -2.5, 0.5};
+        loadableAngle = 180;
         name = "Bomb Boat";
         requirements[] = {"W"};
         spawn = "C_Boat_Civil_01_F";

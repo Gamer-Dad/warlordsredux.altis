@@ -1004,6 +1004,23 @@
             <Chinesesimp>我们致力于培养友好、尊重的游戏社区。您选择的用户名包含违反我们准则的内容。请将您的用户名更改为更合适的内容以参加游戏，并确保为所有人提供积极的游戏体验。感谢您的合作。</Chinesesimp>
             <Chinese>我們致力於培養友好、尊重的遊戲社區。您選擇的用戶名包含違反我們準則的內容。請將您的用戶名更改為更合適的內容以</Chinese>
         </Key>
+        <Key ID="STR_A3_WL_travelFrontline">
+            <Original>Travel to Frontline</Original>
+            <English>Travel to Frontline</English>
+            <Czech>Přesunout se na frontu</Czech>
+            <French>Se rendre sur la ligne de front</French>
+            <German>Zur Front reisen</German>
+            <Italian>Raggiungi il fronte</Italian>
+            <Polish>Udaj się na linię frontu</Polish>
+            <Portuguese>Viajar para a linha da frente</Portuguese>
+            <Russian>Отправиться на линию фронта</Russian>
+            <Spanish>Viajar al frente</Spanish>
+            <Turkish>Cepheye git</Turkish>
+            <Korean>전선으로 이동</Korean>
+            <Japanese>前線へ移動</Japanese>
+            <Chinesesimp>前往前线</Chinesesimp>
+            <Chinese>前往前線</Chinese>
+        </Key>
         <Key ID="keep_empty">
             <Original></Original>
             <English></English>

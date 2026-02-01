@@ -39,10 +39,14 @@ class Spawn {
     };
 
     class I_static_FGS_F {
+        capValue = 2;
         cost = 3000;
         conversion = 1;
         drone = 1;
+        hasRearm = 1;
         immobile = 1;
+        loadable[] = {0, -3.4, 0.8};
+        loadableAngle = 180;
         name = "Fighting Position (Cannon)";
         rearm = 300;
         spawn = "B_AFV_Wheeled_01_cannon_F";
@@ -87,7 +91,7 @@ class Spawn {
         cost = 5000;
         demolishStepTime = 3;
         hasFastTravel = 1;
-        name = "Team Rally Point (NATO)";
+        name = "Team Rally Pont (NATO)";
     };
 
     class Land_TentA_F {
