@@ -176,6 +176,7 @@ class RemoteControl {
 
     class B_UAV_05_F {
         cost = 15000;
+        hasHMD = 1;
         rearm = 420;
         requirements[] = {"A"};
 

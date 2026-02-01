@@ -2,9 +2,16 @@ Warlords Redux 2.7.2
 
 Added
 * Fighting position: deployed from select vehicles, allows fast travel.
+* Fighting position (cannon): converted from select vehicles.
+* Guided MLRS artillery
+* Huron/Mohawk Supply: converts into supply box.
+
+Removed
+* Switchblade/Lancet
 
 Balance
 * Xian: added BIM-9X pylon racks.
+* Gryphon Interceptor: added 10km aesa radar.
 * Black Wasp: removed HARM from all internal bay pylons.
 * Black Wasp Stealth: removed HARM from all internal bay center pylons.
 * Shikra: removed KH58 ARMs from all internal bay pylons.
@@ -14,7 +21,8 @@ Balance
 * Hellcat: $5,000->4,200, added BIM-9X pylon racks.
 * Ghosthawk Block II: $5,500->5,000, added BIM-9X pylon racks.
 * Kajman: added R-77 pylon racks.
-* Smart mines: separated out munitions with independent ammo pools for AP (4) and AT (3), no longer dazzleable.
+* Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->3.
+* Tandem wired missiles: consume APS 2->3, no longer dazzleable.
 * Hunter Apex: $2,500->2,000, changed AT from 1-mag to 2-mag, cap value 2->3.
 * Bobcat: deploy spawnable fighting position.
 * Marshall: $2,700->2,400.
@@ -30,18 +38,42 @@ Balance
 * Huron, Mohawk: deploy spawnable fighting position.
 * Artillery, MLRS: deploy camo net.
 * Team rally point: demolition time 10->3s.
+* Removed capture value modifier limit 3->unlimited.
+* Sector scan: $750->1500.
 
 Gameplay
 * Order combat air patrol: calls in temporary A2A over selected airfield sector.
+* Secure aircraft wreck: securing manned aircraft wrecks rewards players with 1/3 the cost of the aircraft.
+* Designate team priority: allows squad leaders to designate a sector, fob, stronghold, or fast travel asset as a team priority.
+* Travel to frontline: FT to team priority, intended to help get new players into the fight.
+* Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold).
+* Fast travel home and respawn now puts player next to flag.
+* Upgrade FOB: can now upgrade FOB to forward airbase, allows deployment of planes.
+* Supply boat is now a conversion rather than deployment.
+* FOB supply crates are now less fragile.
 * Removed winter holiday events.
 * Deployable items now show display name in action menu.
 * Moved demolition action down priority list.
+* Removed fast travel contested.
+* Firing laser munition in loal mode reveals launcher to enemy for 120s.
+* Combined attach/detach for both flatbed and helo slingloader, now shows closest vehicle.
+* All area scanners (sector scan, fob, stronghold, recon optics) will now detect enemy mines.
+* Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
 * Moved missile state in HMD to top of missile to avoid conflicts with jammer UI.
 * Fixed naval enemies nearby requirement.
+* Fixed exploit where device truck continues to function as EW network when placed underwater.
+* Fixed JIP errors around setting up forward bases.
+* Fixed Sentinel not having countermeasure display.
+* Fixed AGM incorrect display text in map icons.
+* Fixed flatbed attached item destruction not being correctly attributed to flatbed killer.
+* Fixed players respawning on body location.
+* Fixed sector scan cooldowns bleeding through teams.
+* Fixed LOAL/laser lock-on time being tied to game client framerate.
 
 Performance
 * Improved sector scanning performance.
 * Improved sector selection performance.
+* Improved attach/detach check performance.

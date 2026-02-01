@@ -2,6 +2,7 @@ class FixedWing {
     class B_Plane_Civil_01_F {
         cost = 800;
         description = "Caesar BTT is a light unarmed aircraft.";
+        loadable[] = {0, -2.2, 0.9};
         name = "Caesar BTT";
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
@@ -67,6 +68,7 @@ class FixedWing {
         cost = 1500;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.9};
         name = "Caesar BTT (Bomb)";
         rearm = 300;
         requirements[] = {"A"};
@@ -237,6 +239,7 @@ class FixedWing {
             "PylonRack_3Rnd_Missile_AGM_02_F"
         };
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.5};
         rearm = 420;
         requirements[] = {"A"};
 
@@ -273,6 +276,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2"
         };
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.4};
         name = "A-149 Gryphon";
         rearm = 420;
         requirements[] = {"A"};
@@ -325,6 +329,7 @@ class FixedWing {
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasAirRadar = 14000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.6};
         name = "EF/A-181 Growler";
         rearm = 420;
         requirements[] = {"A"};
@@ -351,6 +356,7 @@ class FixedWing {
         };
         cost = 26000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.6};
         rearm = 420;
         requirements[] = {"A"};
         threatDetection = 12000;
@@ -382,6 +388,7 @@ class FixedWing {
         cost = 28000;
         hasHMD = 1;
         hasReconOptics = 1;
+        loadable[] = {0, -2.2, 1.6};
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};

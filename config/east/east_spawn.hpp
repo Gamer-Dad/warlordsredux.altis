@@ -1,5 +1,6 @@
 class Spawn {
     class Land_Pod_Heli_Transport_04_box_F {
+        conversion = 1;
         cost = 500;
         empty = 1;
         loadable[] = {0, -1.9, 0.4};

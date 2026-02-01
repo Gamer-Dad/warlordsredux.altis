@@ -195,17 +195,20 @@ class SectorDefense {
 
     class B_SmartMine_01_F {
         cost = 2500;
-        description = "XM205 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 7. Limit 2 deployed.";
+        description = "XM205 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 3 deployed.";
         empty = 1;
-        loadable[] = {0, -1, -0.4};
+        immobile = 1;
+        loadable[] = {-0.4, -1, 0.9};
         name = "XM205 Smart Mine System";
-        offset[] = {0, 3, 0};
+        offset[] = {0, 5, 0};
         rearm = 900;
         requirements[] = {"S"};
-        smartMineAP = 4;
-        smartMineAT = 3;
-        spawn = "Box_NATO_Equip_F";
+        smartMineAP = 6;
+        smartMineAT = 2;
+        spawn = "B_UGV_01_F";
         textures[] = {
+            "#(rgb,8,8,3)color(1,0,0,1)",
+            "#(rgb,8,8,3)color(1,0,0,1)",
             "#(rgb,8,8,3)color(1,0,0,1)"
         };
     };
@@ -243,39 +246,39 @@ class SectorDefense {
         rearm = 900;
     }; // "Mortar"
 
-    class B_Mortar_01_TV_F {
-        ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", {"M_Switchblade", "Switchblade (Loitering Munition)"}}
-        };
-        cost = 9000;
-        description = "Switchblade Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
-        loadable[] = {0, -2.5, 0};
-        name = "Switchblade Launcher";
-        offset[] = {0, 3, 0};
-        rearm = 900;
-        spawn = "B_Mortar_01_F";
-        variant = 1;
+    // class B_Mortar_01_TV_F {
+    //     ammoOverrides[] = {
+    //         {"M_127mm_Firefist_AT", {"M_Switchblade", "Switchblade (Loitering Munition)"}}
+    //     };
+    //     cost = 9000;
+    //     description = "Switchblade Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
+    //     loadable[] = {0, -2.5, 0};
+    //     name = "Switchblade Launcher";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 900;
+    //     spawn = "B_Mortar_01_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
-                "8Rnd_82mm_Mo_shells",
-                "8Rnd_82mm_Mo_Flare_white",
-                "8Rnd_82mm_Mo_Smoke_white",
-                "8Rnd_82mm_Mo_guided",
-                "8Rnd_82mm_Mo_LG"
-            };
-            removeWeapons[] = {
-                "mortar_82mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "8Rnd_82mm_Mo_shells",
+    //             "8Rnd_82mm_Mo_Flare_white",
+    //             "8Rnd_82mm_Mo_Smoke_white",
+    //             "8Rnd_82mm_Mo_guided",
+    //             "8Rnd_82mm_Mo_LG"
+    //         };
+    //         removeWeapons[] = {
+    //             "mortar_82mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     class B_Ship_Gun_01_F {
         cost = 10000;

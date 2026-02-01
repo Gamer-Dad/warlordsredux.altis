@@ -2,6 +2,7 @@ class RotaryWing {
     class O_Heli_Transport_04_covered_F {
         cost = 400;
         hasFastTravel = 1;
+        loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Transport)"
@@ -9,6 +10,7 @@ class RotaryWing {
     class O_Heli_Transport_04_F {
         cost = 500;
         hasFastTravel = 1;
+        loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru"
@@ -16,6 +18,7 @@ class RotaryWing {
     class O_Heli_Transport_04_medevac_F {
         cost = 500;
         hasFastTravel = 1;
+        loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Medical)"
@@ -23,6 +26,7 @@ class RotaryWing {
     class O_Heli_Light_02_unarmed_F {
         cost = 500;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.3};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "PO-30 Orca (Unarmed)"
@@ -30,8 +34,41 @@ class RotaryWing {
     class O_Heli_Transport_02_F {
         cost = 500;
         hasHMD = 1;
-        loaded = "Land_BagBunker_Small_gmg_F";
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "I_static_FGS_F";
         name = "CH-49 Mohawk";
+        offset[] = {0, 10, 0};
+        requirements[] = {"H"};
+        spawn = "I_Heli_Transport_02_F";
+        textures[] = {
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
+        };
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
+
+    class O_Heli_Transport_02_supply_F {
+        cost = 500;
+        hasHMD = 1;
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "Land_Pod_Heli_Transport_04_box_F";
+        name = "CH-49 Mohawk Supply";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
         spawn = "I_Heli_Transport_02_F";
@@ -100,6 +137,7 @@ class RotaryWing {
         };
         cost = 3500;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.4};
         offset[] = {0, 10, 0};
         rearm = 240;
         requirements[] = {"H"};
@@ -182,6 +220,7 @@ class RotaryWing {
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 2.0};
         offset[] = {0, 11, 0};
         rearm = 300;
         requirements[] = {"H"};

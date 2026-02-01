@@ -55,7 +55,8 @@ class HeavyVehicles {
         hasRefuel = 1;
         hasRepair = 1;
         loadable[] = {0, -0.8, 1.65};
-        loaded = "Land_BagBunker_Small_F";
+        loaded = "I_static_FGS_F";
+        mineClear = 2;
         name = "MSE-3 Marid (Utility)";
         rearm = 180;
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
@@ -400,6 +401,52 @@ class HeavyVehicles {
         loaded = "CamoNet_OPFOR_big_F";
         rearm = 1800;
     }; // "2S9 Sochor"
+
+    class O_Truck_02_MRL_Guided_F {
+        ammoOverrides[] = {
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
+        };
+        capValue = 4;
+        cost = 23000;
+        hasHMD = 1;
+        loaded = "CamoNet_OPFOR_big_F";
+        name = "Zamak MRL (Guided)";
+        rearm = 1800;
+        spawn = "I_Truck_02_MRL_F";
+        textures[] = {
+            "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
+            "\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
+            "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
+        };
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1"
+            };
+            addWeapons[] = {
+                "weapon_AGM_65Launcher"
+            };
+            removeMagazines[] = {
+                "12Rnd_230mm_rockets"
+            };
+            removeWeapons[] = {
+                "rockets_230mm_GAT"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     // class O_MBT_02_arty_tv_F {
     //     ammoOverrides[] = {

@@ -16,18 +16,9 @@ class Spawn {
         name = "Fighting Position";
     };
 
-    class Land_BagBunker_Small_gmg_F {
-        cost = 2000;
-        demolishable = 1;
-        demolishStepTime = 1;
-        hasFastTravel = 1;
-        loaded = "I_E_GMG_01_high_F";
-        name = "Fighting Position (GMG)";
-        spawn = "Land_BagBunker_Small_F";
-    };
-
     class I_HMG_02_high_F {
         cost = 500;
+        rearm = 180;
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
@@ -47,28 +38,40 @@ class Spawn {
         };
     };
 
-    class I_E_GMG_01_high_F {
-        cost = 1000;
+    class I_static_FGS_F {
+        cost = 3000;
+        conversion = 1;
+        drone = 1;
+        immobile = 1;
+        name = "Fighting Position (Cannon)";
+        rearm = 300;
+        spawn = "B_AFV_Wheeled_01_cannon_F";
 
         class Gunner: WLTurretDefaults {
             addMagazines[] = {
-                "200Rnd_40mm_G_belt",
-                "200Rnd_40mm_G_belt"
+                "12Rnd_120mm_APFSDS_shells_Tracer_Yellow",
+                "8Rnd_120mm_HE_shells_Tracer_Yellow"
             };
             addWeapons[] = {
-                "GMG_40mm"
+                "cannon_120mm"
             };
             removeMagazines[] = {
-                "40Rnd_20mm_g_belt"
+                "12Rnd_120mm_APFSDS_shells_Tracer_Red",
+                "8Rnd_120mm_HE_shells_Tracer_Red",
+                "8Rnd_120mm_HEAT_MP_T_Red",
+                "4Rnd_120mm_LG_cannon_missiles",
+                "200Rnd_338_Mag"
             };
             removeWeapons[] = {
-                "GMG_20mm"
+                "cannon_120mm",
+                "MMG_02_coax"
             };
             turret[] = { 0 };
         };
     };
 
     class B_Slingload_01_Cargo_F {
+        conversion = 1;
         cost = 500;
         empty = 1;
         loadable[] = {0, -1.5, 0.5};

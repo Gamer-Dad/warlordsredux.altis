@@ -1,6 +1,7 @@
 class RotaryWing {
     class B_Heli_Light_01_F {
         cost = 300;
+        loadable[] = {0, -2.2, 0.9};
         requirements[] = {"H"};
     }; // "MH-9 Hummingbird"
 
@@ -8,6 +9,7 @@ class RotaryWing {
         cost = 800;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 1.5};
         offset[] = {0, 11, 0};
         rearm = 240;
         requirements[] = {"H"};
@@ -16,11 +18,25 @@ class RotaryWing {
     class B_Heli_Transport_03_F {
         cost = 1000;
         hasTurretVisualizer = 1;
-        loaded = "Land_BagBunker_Small_gmg_F";
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "I_static_FGS_F";
         offset[] = {0, 10, 0};
         rearm = 240;
         requirements[] = {"H"};
     }; // "CH-67 Huron"
+
+    class B_Heli_Transport_03_supply_F {
+        cost = 1000;
+        hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "B_Slingload_01_Cargo_F";
+        name = "CH-67 Huron Supply";
+        offset[] = {0, 10, 0};
+        rearm = 240;
+        requirements[] = {"H"};
+        spawn = "B_Heli_Transport_03_F";
+        variant = 1;
+    };
 
     class B_Heli_Light_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
@@ -30,6 +46,7 @@ class RotaryWing {
         };
         cost = 3500;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.9};
         rearm = 240;
         requirements[] = {"H"};
 
@@ -168,6 +185,7 @@ class RotaryWing {
         cost = 4200;
         description = "WY-55 Hellcat is a light attack helicopter.";
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.3};
         name = "WY-55 Hellcat";
         offset[] = {0, 9, 0};
         rearm = 240;
@@ -202,6 +220,7 @@ class RotaryWing {
         };
         cost = 5000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.5};
         name = "UH-80 Ghost Hawk Block II";
         offset[] = {0, 11, 0};
         rearm = 300;
@@ -239,6 +258,7 @@ class RotaryWing {
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 0.9};
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
@@ -283,6 +303,7 @@ class RotaryWing {
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 0.9};
         name = "AH-99 Blackfoot Block II";
         offset[] = {0, 10, 0};
         rearm = 300;

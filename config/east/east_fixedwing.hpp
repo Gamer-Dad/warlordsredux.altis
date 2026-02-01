@@ -2,6 +2,7 @@ class FixedWing {
     class O_Plane_Civil_01_F {
         cost = 800;
         description = "Caesar BTT is a light unarmed aircraft.";
+        loadable[] = {0, -2.2, 0.9};
         name = "Caesar BTT";
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
@@ -67,6 +68,7 @@ class FixedWing {
         cost = 1500;
         description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs.";
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.9};
         name = "Caesar BTT (Bomb)";
         rearm = 300;
         requirements[] = {"A"};
@@ -161,6 +163,7 @@ class FixedWing {
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 2.4};
         rearm = 300;
         requirements[] = {"H"};
 
@@ -223,6 +226,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2"
         };
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.6};
         name = "A-143 Buzzard (CAS)";
         rearm = 420;
         requirements[] = {"A"};
@@ -260,6 +264,7 @@ class FixedWing {
         };
         cost = 15000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 2.3};
         rearm = 420;
         requirements[] = {"A"};
 
@@ -300,7 +305,9 @@ class FixedWing {
             "PylonMissile_Bomb_GBU12_x1"
         };
         ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
+        hasAirRadar = 10000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.4};
         name = "A-149 Gryphon (Interceptor)";
         rearm = 420;
         requirements[] = {"A"};
@@ -380,6 +387,7 @@ class FixedWing {
         };
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.7};
         rearm = 420;
         requirements[] = {"A"};
         threatDetection = 16000;
@@ -422,6 +430,7 @@ class FixedWing {
         };
         hasHMD = 1;
         hasReconOptics = 1;
+        loadable[] = {0, -2.2, 1.7};
         name = "To-201 Shikra (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};

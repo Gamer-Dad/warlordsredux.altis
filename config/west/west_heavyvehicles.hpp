@@ -63,7 +63,8 @@ class HeavyVehicles {
         hasRearm = 1;
         hasRefuel = 1;
         hasRepair = 1;
-        loaded = "Land_BagBunker_Small_F";
+        loaded = "I_static_FGS_F";
+        mineClear = 2;
         rearm = 180;
     }; // "CRV-6e Bobcat"
 
@@ -487,6 +488,48 @@ class HeavyVehicles {
         loaded = "CamoNet_BLUFOR_big_F";
         rearm = 1800;
     }; // "M5 Sandstorm MLRS"
+
+    class B_MBT_01_mlrs_guided_F {
+        ammoOverrides[] = {
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "GLSDB (Laser-Guided)"}}
+        };
+        aps = 1;
+        capValue = 4;
+        cost = 24000;
+        hasHMD = 1;
+        loaded = "CamoNet_BLUFOR_big_F";
+        name = "M5 Sandstorm II";
+        rearm = 1800;
+        spawn = "B_MBT_01_mlrs_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1"
+            };
+            addWeapons[] = {
+                "weapon_AGM_65Launcher"
+            };
+            removeMagazines[] = {
+                "12Rnd_230mm_rockets"
+            };
+            removeWeapons[] = {
+                "rockets_230mm_GAT"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     // class B_MBT_01_mlrs_sdb_F {
     //     ammoOverrides[] = {
