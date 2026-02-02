@@ -16,6 +16,20 @@ class Spawn {
         name = "Fighting Position";
     };
 
+    class CraterDebris {
+        cost = 200;
+        crater = 1;
+        demolishable = 1;
+        demolishStepTime = 40;
+        name = "Debris";
+    };
+
+    class Land_ShellCrater_02_large_F: CraterDebris {};
+    class Land_ShellCrater_02_small_F: CraterDebris {};
+    class SpaceshipCapsule_01_debris_F: CraterDebris {};
+    class CraterLong: CraterDebris {};
+    class CraterLong_02_F: CraterDebris {};
+
     class I_HMG_02_high_F {
         cost = 500;
         rearm = 180;

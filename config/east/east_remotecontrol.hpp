@@ -180,6 +180,7 @@ class RemoteControl {
     class O_T_UAV_04_CAS_F {
         cost = 5500;
         hasHMD = 1;
+        loadable[] = {0, -1.0, 0};
         rearm = 300;
         requirements[] = {"H"};
 
@@ -212,6 +213,7 @@ class RemoteControl {
         };
         cost = 6500;
         hasHMD = 1;
+        loadable[] = {0, -1.0, 0};
         rearm = 300;
         requirements[] = {"H"};
     }; // "K40 Ababil-3"

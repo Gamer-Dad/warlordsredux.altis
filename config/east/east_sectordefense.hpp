@@ -182,6 +182,18 @@ class SectorDefense {
         };
     };
 
+    class O_Land_Bomb_Trolley_01_F {
+        cost = 3500;
+        demolishable = 3;
+        demolishStepTime = 10;
+        description = "The KAB-1500 Trolley can be used to deploy anti-runway bombs to crater enemy airstrips. Once armed, it will explode after 60 seconds.";
+        drone = 1;
+        loadable[] = {-0.4, -1, -0.1};
+        name = "KAB-1500 Trolley";
+        offset[] = {0, 3, 0};
+        spawn = "Land_Bomb_Trolley_01_F";
+    };
+
     // class O_AAA_System_01_F {
     //     cost = 3500;
     //     description = "Short range anti-mortar defense, capable of automatically engaging incoming ballistic shells. Effective range: 3km.";

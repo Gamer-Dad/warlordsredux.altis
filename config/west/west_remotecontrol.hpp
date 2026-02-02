@@ -147,6 +147,7 @@ class RemoteControl {
         };
         cost = 6500;
         hasHMD = 1;
+        loadable[] = {0, -1.0, 0};
         rearm = 300;
         requirements[] = {"H"};
     }; // "Greyhawk"
@@ -158,6 +159,7 @@ class RemoteControl {
         };
         cost = 7000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.1};
         rearm = 300;
         requirements[] = {"H"};
 
@@ -177,6 +179,7 @@ class RemoteControl {
     class B_UAV_05_F {
         cost = 15000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, -0.4};
         rearm = 420;
         requirements[] = {"A"};
 

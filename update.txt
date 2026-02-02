@@ -3,11 +3,12 @@ Warlords Redux 2.7.2
 Added
 * Fighting position: deployed from select vehicles, allows fast travel.
 * Fighting position (cannon): converted from select vehicles.
-* Guided MLRS artillery
+* Guided MLRS artillery.
+* Runway busters trolleys.
 * Huron/Mohawk Supply: converts into supply box.
 
 Removed
-* Switchblade/Lancet
+* Switchblade/Lancet.
 
 Balance
 * Xian: added BIM-9X pylon racks.
@@ -41,6 +42,7 @@ Balance
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Sector scan: $750->1500.
 * Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1).
+* Destroyer start time max increased from 2->5 hours.
 
 Gameplay
 * Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
@@ -63,11 +65,25 @@ Gameplay
 * All area scanners (sector scan, fob, stronghold, recon optics) will now detect enemy mines.
 * Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
 * Added smart mines to green sector spawn pool.
-* Atsalis: added tower.
-* Livadi: added beachfront apartment building.
-* Skiptro: added sector, replaced connections near Sideras.
 * Removed anti-heavy vehicle checks on carrier.
 * Enabled deployment of sandbags above ground level.
+* Option in settings to not spawn with UAV terminal.
+* Bulk delete: option in strategy to temporarily disable asset removal confirmation.
+* Bobcat can now drag cargo behind it, recommend not to use on anything other than aircraft wrecks.
+
+Map
+* Income now based on regions captured rather than sectors.
+* Region capture, not sector capture, now gives income. Regions with more sectors give more income when captured.
+* Atsalis: added tower.
+* Livadi: added beachfront apartment building.
+* Skiptro: new sector, replaced connections near Sideras.
+* Agia Triada: new sector, replaced connections near map center to funnel push through Telos.
+* Frini Woodlands: removed sector, connections linked to Frini.
+* Synneforos Windmill: removed sector, connections replaced with route from Ammolofi to Atsalis.
+* AAC: added link to Drimea.
+* Quarry: renamed to Pyrgos Quarry.
+* Enlarged sectors: Kalithea, Kalochori, Makrynisi, Ioannina, Rodopoli, Frini.
+* Shrink sector: Atsalis, Agios Konstantinos, Aggelochori.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
@@ -88,3 +104,4 @@ Performance
 * Improved sector selection performance.
 * Improved attach/detach check performance.
 * Overhauled unconsciousness to be reliable through heavy network traffic.
+* Improved sector marker performance/loading time.
