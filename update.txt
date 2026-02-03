@@ -6,9 +6,11 @@ Added
 * Guided MLRS artillery.
 * Runway busters trolleys.
 * Huron/Mohawk Supply: converts into supply box.
+* Czech Hedgehog Kit.
 
 Removed
 * Switchblade/Lancet.
+* UGV bomb drone.
 
 Balance
 * Xian: added BIM-9X pylon racks.
@@ -22,7 +24,8 @@ Balance
 * Hellcat: $5,000->4,200, added BIM-9X pylon racks.
 * Ghosthawk Block II: $5,500->5,000, added BIM-9X pylon racks.
 * Kajman: added R-77 pylon racks.
-* Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->3.
+* Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->4, $2,500->1,500.
+* Dragon's teeth: changed to a kit that allows chain deployment.
 * Tandem wired missiles: consume APS 2->3, no longer dazzleable.
 * Hunter Apex: $2,500->2,000, changed AT from 1-mag to 2-mag, cap value 2->3.
 * Bobcat: deploy spawnable fighting position.
@@ -43,6 +46,7 @@ Balance
 * Sector scan: $750->1500.
 * Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1).
 * Destroyer start time max increased from 2->5 hours.
+* Bunker buster / bomb drone etc range 30->15m.
 
 Gameplay
 * Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
@@ -53,7 +57,7 @@ Gameplay
 * Travel to frontline: FT to team priority, intended to help get new players into the fight.
 * Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold).
 * Fast travel home and respawn now puts player next to flag.
-* Upgrade FOB: can now upgrade FOB to forward airbase at huge supply cost, allows deployment of planes.
+* Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
 * Supply boat is now a conversion rather than deployment.
 * FOB supply crates are now less fragile.
 * Removed winter holiday events.

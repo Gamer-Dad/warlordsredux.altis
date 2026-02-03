@@ -16,6 +16,17 @@ class Spawn {
         name = "Fighting Position";
     };
 
+    class ForwardBaseDome {
+        hideName = 1;
+        name = "Base Dome";
+    };
+
+    class Land_Dome_Small_WIP_F: ForwardBaseDome {};
+    class Land_Dome_Small_WIP2_F: ForwardBaseDome {};
+    class Land_Dome_Small_F: ForwardBaseDome {};
+    class Land_Dome_Big_F: ForwardBaseDome {};
+
+
     class CraterDebris {
         cost = 200;
         crater = 1;

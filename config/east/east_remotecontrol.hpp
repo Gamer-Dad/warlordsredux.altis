@@ -147,21 +147,21 @@ class RemoteControl {
     //     spawn = "O_UAV_02_dynamicLoadout_F";
     // };
 
-    class O_UGV_01_bomb_F {
-        ammoOverrides[] = {
-            {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
-        };
-        aps = 4;
-        cost = 3500;
-        description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
-        detonate = 13;
-        loadable[] = {-0.4, -1, 1.1};
-        name = "UGV Stomper (Bomb)";
-        offset[] = {0, 5, 0};
-        rearm = 900;
-        spawn = "O_UGV_01_F";
-        variant = 1;
-    };
+    // class O_UGV_01_bomb_F {
+    //     ammoOverrides[] = {
+    //         {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
+    //     };
+    //     aps = 4;
+    //     cost = 3500;
+    //     description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+    //     detonate = 13;
+    //     loadable[] = {-0.4, -1, 1.1};
+    //     name = "UGV Stomper (Bomb)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 900;
+    //     spawn = "O_UGV_01_F";
+    //     variant = 1;
+    // };
 
     class O_Offroad_01_bomb_F {
         aps = 4;

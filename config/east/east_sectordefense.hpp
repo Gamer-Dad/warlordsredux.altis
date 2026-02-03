@@ -163,8 +163,8 @@ class SectorDefense {
     // };
 
     class O_SmartMine_01_F {
-        cost = 2500;
-        description = "PTKM-2 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 3 deployed.";
+        cost = 1500;
+        description = "PTKM-2 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 4 deployed.";
         empty = 1;
         immobile = 1;
         loadable[] = {-0.4, -1, 0.9};

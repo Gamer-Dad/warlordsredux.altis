@@ -3,6 +3,7 @@ class Structures {
         cost = 50;
         demolishable = 1;
         demolishStepTime = 3;
+        hideName = 1;
         offset[] = {0, 5, 0};
     }; // "Razor Wire Fence"
 
@@ -10,21 +11,23 @@ class Structures {
         cost = 50;
         demolishable = 1;
         demolishStepTime = 5;
+        hideName = 1;
         offset[] = {0, 2, 0};
     }; // "Semi Circle Sand bags"
 
-    class Land_DragonsTeeth_01_4x2_new_F {
-        cost = 50;
-        demolishable = 1;
-        demolishStepTime = 5;
-        name = "Dragon's Teeth";
-        offset[] = {0, 5, 0};
-    };
+    // class Land_DragonsTeeth_01_4x2_new_F {
+    //     cost = 50;
+    //     demolishable = 1;
+    //     demolishStepTime = 5;
+    //     name = "Dragon's Teeth";
+    //     offset[] = {0, 5, 0};
+    // };
 
     class Land_HBarrier_5_F {
         cost = 50;
         demolishable = 2;
         demolishStepTime = 5;
+        hideName = 1;
         offset[] = {0, 3, 0};
     }; // "H-barrier"
 
@@ -32,6 +35,7 @@ class Structures {
         cost = 60;
         demolishable = 2;
         demolishStepTime = 5;
+        hideName = 1;
         offset[] = {0, 3, 0};
     }; // "H-barrier wall"
 
@@ -39,6 +43,7 @@ class Structures {
         cost = 70;
         demolishable = 2;
         demolishStepTime = 10;
+        hideName = 1;
         offset[] = {0, 7, 0};
     }; // "Guard Tower (H-barrier)"
 
@@ -46,6 +51,7 @@ class Structures {
         cost = 100;
         demolishable = 1;
         demolishStepTime = 3;
+        hideName = 1;
         offset[] = {0, 6, 0};
     };  // "Camouflage Vehicle Cover (Hex)"
 
@@ -53,12 +59,14 @@ class Structures {
         cost = 200;
         demolishable = 1;
         demolishStepTime = 3;
+        hideName = 1;
         offset[] = {0, 8, 0};
     }; // "IR Masking Tent (Large)"
 
     class Land_Cargo_Tower_V4_F {
         cost = 450;
         demolishable = 3;
+        hideName = 1;
         offset[] = {0, 8, 0};
     };  // "Cargo Tower"
 
@@ -78,5 +86,26 @@ class Structures {
         name = "EW Tower";
         offset[] = {0, 6, 0};
         // This is not loadable. It will break initialization code to load this.
+    };
+
+    class Land_DragonsTeeth_01_4x2_new_F {
+        cost = 2800;
+        demolishable = 1;
+        demolishStepTime = 5;
+        hideName = 1;
+        loaded = "Land_DragonsTeeth_01_4x2_new_F";
+        name = "Dragon's Teeth Kit";
+        offset[] = {0, 5, 0};
+    };
+
+    class Land_CzechHedgehog_01_new_F {
+        cost = 3000;
+        crater = 1;
+        demolishable = 1;
+        demolishStepTime = 5;
+        hideName = 1;
+        loaded = "Land_CzechHedgehog_01_new_F";
+        name = "Czech Hedgehog Kit";
+        offset[] = {0, 5, 0};
     };
 };
