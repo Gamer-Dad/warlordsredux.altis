@@ -7,6 +7,7 @@ Added
 * Czech Hedgehog Kit.
 * AT Minefield.
 * Scout fighters.
+* Aircraft Catapult.
 * Fighting position: deployed from select vehicles, allows fast travel.
 * Fighting position (cannon): converted from select vehicles.
 
@@ -28,7 +29,7 @@ Balance
 * Ghosthawk Block II: $5,500->5,000, added BIM-9X pylon racks.
 * Kajman: added R-77 pylon racks.
 * Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->4, $2,500->1,500.
-* Dragon's teeth: changed to a kit that allows chain deployment.
+* Dragon's teeth, razor wire: changed to kits that allows chain deployment.
 * Tandem wired missiles: consume APS 2->3, no longer dazzleable.
 * Hunter Apex: $2,500->2,000, changed AT from 1-mag to 2-mag, cap value 2->3.
 * Bobcat: deploy spawnable fighting position.
@@ -62,7 +63,7 @@ Gameplay
 * Designate team priority: allows squad leaders to designate a sector, fob, stronghold, or fast travel asset as a team priority.
 * Travel to frontline: FT to team priority, intended to help get new players into the fight.
 * Conscription: requests team to get to team priority.
-* Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold).
+* Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold present).
 * Fast travel home and respawn now puts player next to flag.
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
 * Supply boat is now a conversion rather than deployment.
@@ -84,6 +85,7 @@ Gameplay
 * Slammer integral mortar now shows ammunition status.
 * Polls now immediately update players without respawning.
 * Progressively show more map links as hover time increases.
+* Having a Bobcat/Marid utility nearby increases demolition speed by 20%.
 
 Map
 * Income now based on regions captured rather than sectors.

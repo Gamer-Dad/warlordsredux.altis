@@ -57,5 +57,6 @@ class CfgWLRequisitionPresets {
         #include "config\west.hpp"
         #include "config\east.hpp"
         #include "config\independent.hpp"
+        #include "config\all.hpp"
     };
 };

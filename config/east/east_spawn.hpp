@@ -7,6 +7,7 @@ class Spawn {
         loadable[] = {0, -1.9, 0.4};
         loadableAngle = 90;
         name = "Forward Base Supplies (CSAT)";
+        offset[] = {0, 3, 0};
     };
 
     class Land_MedicalTent_01_CSAT_brownhex_generic_open_F {

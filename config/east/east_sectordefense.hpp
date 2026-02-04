@@ -182,6 +182,16 @@ class SectorDefense {
         };
     };
 
+    class Land_Sign_MinesDanger_English_F {
+        cost = 2000;
+        demolishable = 3;
+        demolishStepTime = 3;
+        description = "";
+        dumbMine = 5;
+        name = "AT Minefield";
+        offset[] = {0, 3, 0};
+    };
+
     class O_Land_Bomb_Trolley_01_F {
         cost = 3500;
         demolishable = 3;

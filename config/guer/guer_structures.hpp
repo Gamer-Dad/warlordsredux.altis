@@ -1,12 +1,4 @@
 class Structures {
-    class Land_Razorwire_F {
-        cost = 50;
-        demolishable = 1;
-        demolishStepTime = 3;
-        hideMap = 1;
-        offset[] = {0, 5, 0};
-    }; // "Razor Wire Fence"
-
     class Land_BagFence_Round_F {
         cost = 50;
         demolishable = 1;

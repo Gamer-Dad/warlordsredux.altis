@@ -78,6 +78,8 @@ class RotaryWing {
             "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
             "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
         };
+        variant = 1;
+
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
