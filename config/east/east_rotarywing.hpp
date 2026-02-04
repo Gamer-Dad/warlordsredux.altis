@@ -67,7 +67,7 @@ class RotaryWing {
         cost = 500;
         hasHMD = 1;
         loadable[] = {0, -2.2, 2.1};
-        loaded = "Land_Pod_Heli_Transport_04_box_F";
+        loaded = "Land_Cargo20_brick_red_F";
         name = "CH-49 Mohawk Supply";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};

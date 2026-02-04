@@ -132,6 +132,7 @@ class CfgWarlordSectors {
         {"GhostHotel", "Ioannina"},
         {"GhostHotel", "NidasosBase"},
         {"GhostHotel", "TheaterRuins"},
+        {"GhostHotel", "Sideras"},
         {"GoriFactory", "Kore"},
         {"GoriFactory", "TheDump"},
         {"Gravia", "LakkaFactory"},

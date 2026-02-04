@@ -1,16 +1,19 @@
 Warlords Redux 2.7.2
 
 Added
-* Fighting position: deployed from select vehicles, allows fast travel.
-* Fighting position (cannon): converted from select vehicles.
 * Guided MLRS artillery.
 * Runway busters trolleys.
 * Huron/Mohawk Supply: converts into supply box.
 * Czech Hedgehog Kit.
+* AT Minefield.
+* Scout fighters.
+* Fighting position: deployed from select vehicles, allows fast travel.
+* Fighting position (cannon): converted from select vehicles.
 
 Removed
 * Switchblade/Lancet.
 * UGV bomb drone.
+* Caeser bomb.
 
 Balance
 * Xian: added BIM-9X pylon racks.
@@ -34,6 +37,7 @@ Balance
 * Rhino: $4,500->4,000.
 * Rhino UP: $5,000->4,500, APS medium->heavy.
 * Kuma, Slammer II: cap value 4->6.
+* All Slammers: integral mortar ammo 8->12.
 * Marid Utility: $2,500->1,800, deploy spawnable fighting position.
 * Angara, Angara-K, Futura: cap value 4->6.
 * Recon APCs: deploy IR camo net.
@@ -41,25 +45,28 @@ Balance
 * HEMMT/Tempest transport/medical: deploy spawnable fighting position.
 * Huron, Mohawk: deploy spawnable fighting position.
 * Artillery, MLRS: deploy camo net.
-* Team rally point: demolition time 10->3s.
+* Team rally point: demolition time 10->3s, removed limit.
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Sector scan: $750->1500.
 * Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1).
 * Destroyer start time max increased from 2->5 hours.
 * Bunker buster / bomb drone etc range 30->15m.
+* FOB limit: 3->4.
+* FOB connection multiplier: 1x->1.5x.
 
 Gameplay
 * Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
 * Green sector stronghold: most green sectors will spawn strongholds, which will instantly deplete reserves when destroyed.
-* Order combat air patrol: calls in temporary A2A over selected airfield sector.
+* Order combat air patrol: calls in temporary A2A over selected airfield sector or forward airbases.
 * Secure aircraft wreck: securing manned aircraft wrecks rewards players with 1/3 the cost of the aircraft.
 * Designate team priority: allows squad leaders to designate a sector, fob, stronghold, or fast travel asset as a team priority.
 * Travel to frontline: FT to team priority, intended to help get new players into the fight.
+* Conscription: requests team to get to team priority.
 * Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold).
 * Fast travel home and respawn now puts player next to flag.
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
 * Supply boat is now a conversion rather than deployment.
-* FOB supply crates are now less fragile.
+* FOB supply crates model switched.
 * Removed winter holiday events.
 * Deployable items now show display name in action menu.
 * Moved demolition action down priority list.
@@ -74,6 +81,9 @@ Gameplay
 * Option in settings to not spawn with UAV terminal.
 * Bulk delete: option in strategy to temporarily disable asset removal confirmation.
 * Bobcat can now drag cargo behind it, recommend not to use on anything other than aircraft wrecks.
+* Slammer integral mortar now shows ammunition status.
+* Polls now immediately update players without respawning.
+* Progressively show more map links as hover time increases.
 
 Map
 * Income now based on regions captured rather than sectors.
@@ -102,6 +112,7 @@ Bugfixes
 * Fixed sector scan cooldowns bleeding through teams.
 * Fixed LOAL/laser lock-on time being tied to game client framerate.
 * Fixed bug where more than 30 mines could be deployed at once.
+* Fixed betty script errors when RTB'ing.
 
 Performance
 * Improved sector scanning performance.
@@ -109,3 +120,4 @@ Performance
 * Improved attach/detach check performance.
 * Overhauled unconsciousness to be reliable through heavy network traffic.
 * Improved sector marker performance/loading time.
+* Improved sector sorting performance.

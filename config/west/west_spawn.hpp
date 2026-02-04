@@ -3,8 +3,9 @@ class Spawn {
         cost = 200;
         demolishable = 1;
         demolishStepTime = 1;
-        name = "Temporary Sandbag Wall";
         lifetime = 180;
+        name = "Temporary Sandbag Wall";
+        offset[] = {0, 3, 0};
     };
 
     class Land_BagBunker_Small_F {
@@ -14,17 +15,18 @@ class Spawn {
         hasFastTravel = 1;
         loaded = "I_HMG_02_high_F";
         name = "Fighting Position";
+        offset[] = {0, 5, 0};
     };
 
     class ForwardBaseDome {
-        hideName = 1;
+        hideMap = 2;
         name = "Base Dome";
     };
 
     class Land_Dome_Small_WIP_F: ForwardBaseDome {};
     class Land_Dome_Small_WIP2_F: ForwardBaseDome {};
     class Land_Dome_Small_F: ForwardBaseDome {};
-    class Land_Dome_Big_F: ForwardBaseDome {};
+    class Land_TentHangar_V1_F: ForwardBaseDome {};
 
 
     class CraterDebris {
@@ -43,6 +45,7 @@ class Spawn {
 
     class I_HMG_02_high_F {
         cost = 500;
+        offset[] = {0, 3, 0};
         rearm = 180;
 
         class Gunner: WLTurretDefaults {
@@ -64,15 +67,18 @@ class Spawn {
     };
 
     class I_static_FGS_F {
+        aps = 2;
         capValue = 2;
         cost = 3000;
         conversion = 1;
         drone = 1;
         hasRearm = 1;
         immobile = 1;
+        loaded = "Land_IRMaskingCover_01_F";
         loadable[] = {0, -3.4, 0.8};
         loadableAngle = 180;
         name = "Fighting Position (Cannon)";
+        offset[] = {0, 8, 0};
         rearm = 300;
         spawn = "B_AFV_Wheeled_01_cannon_F";
 
@@ -99,12 +105,15 @@ class Spawn {
         };
     };
 
-    class B_Slingload_01_Cargo_F {
+    class Land_Cargo20_blue_F {
         conversion = 1;
         cost = 500;
-        empty = 1;
+        demolishable = 1;
+        demolishStepTime = 3;
         loadable[] = {0, -1.5, 0.5};
+        loadableAngle = 90;
         name = "Forward Base Supplies (NATO)";
+        offset[] = {0, 3, 0};
     };
 
     class Land_Destroyer_01_base_F {
@@ -114,34 +123,23 @@ class Spawn {
 
     class Land_MedicalTent_01_NATO_generic_open_F {
         cost = 5000;
+        demolishable = 1;
         demolishStepTime = 3;
         hasFastTravel = 1;
         name = "Team Rally Pont (NATO)";
+        offset[] = {0, 8, 0};
     };
 
-    class Land_TentA_F {
+    class SpawnTent {
         cost = 300;
         demolishStepTime = 2;
         name = "Tent";
     };
 
-    class Land_TentDome_F {
-        cost = 300;
-        demolishStepTime = 2;
-        name = "Tent";
-    };
-
-    class Land_TentSolar_01_bluewhite_F {
-        cost = 300;
-        demolishStepTime = 2;
-        name = "Tent";
-    };
-
-    class Land_TentSolar_01_redwhite_F {
-        cost = 300;
-        demolishStepTime = 2;
-        name = "Tent";
-    };
+    class Land_TentA_F: SpawnTent {};
+    class Land_TentDome_F: SpawnTent {};
+    class Land_TentSolar_01_bluewhite_F: SpawnTent {};
+    class Land_TentSolar_01_redwhite_F: SpawnTent {};
 
     class RuggedTerminal_01_communications_hub_F {
         name = "Forward Base";

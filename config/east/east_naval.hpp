@@ -65,7 +65,7 @@ class Naval {
         cost = 1500;
         description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
         hasFastTravel = 1;
-        loaded = "Land_Pod_Heli_Transport_04_box_F";
+        loaded = "Land_Cargo20_brick_red_F";
         name = "Supply RHIB";
         requirements[] = {"W"};
         spawn = "I_C_Boat_Transport_02_F";

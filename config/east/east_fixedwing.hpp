@@ -61,30 +61,30 @@ class FixedWing {
     //     };
     // };
 
-    class O_Plane_Caesar_bomb_01_F {
-        ammoOverrides[] = {
-            {"Bomb_03_F", {"ammo_kab250se", "KAB-250SE (GPS-Guided)"}}
-        };
-        cost = 1500;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs.";
-        hasHMD = 1;
-        loadable[] = {0, -2.2, 0.9};
-        name = "Caesar BTT (Bomb)";
-        rearm = 300;
-        requirements[] = {"A"};
-        spawn = "C_Plane_Civil_01_F";
-        variant = 1;
+    // class O_Plane_Caesar_bomb_01_F {
+    //     ammoOverrides[] = {
+    //         {"Bomb_03_F", {"ammo_kab250se", "KAB-250SE (GPS-Guided)"}}
+    //     };
+    //     cost = 1500;
+    //     description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided KAB-250SE bombs.";
+    //     hasHMD = 1;
+    //     loadable[] = {0, -2.2, 0.9};
+    //     name = "Caesar BTT (Bomb)";
+    //     rearm = 300;
+    //     requirements[] = {"A"};
+    //     spawn = "C_Plane_Civil_01_F";
+    //     variant = 1;
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "magazine_Bomb_KAB250_x1"
-            };
-            addWeapons[] = {
-                "weapon_KAB250Launcher"
-            };
-            turret[] = { -1 };
-        };
-    };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "magazine_Bomb_KAB250_x1"
+    //         };
+    //         addWeapons[] = {
+    //             "weapon_KAB250Launcher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     // class O_T_VTOL_02_recon_F {
     //     cost = 3800;
@@ -142,6 +142,49 @@ class FixedWing {
     //         turret[] = { 0 };
     //     };
     // };
+
+    class O_Plane_Fighter_02_Stealth_Unarmed_F {
+        cost = 5000;
+        disallowMagazines[] = {
+            "PylonMissile_Missile_KH58_x1",
+            "PylonMissile_Missile_AGM_KH25_x1",
+            "PylonMissile_Missile_AGM_KH25_INT_x1",
+            "PylonMissile_Bomb_KAB250_x1",
+            "PylonMissile_Missile_KH58_INT_x1",
+            "PylonMissile_Missile_AA_R77_INT_x1",
+            "PylonMissile_Missile_AA_R73_x1",
+            "PylonMissile_Missile_AA_R77_x1"
+        };
+        hasHMD = 1;
+        hasReconOptics = 1;
+        loadable[] = {0, -2.2, 1.6};
+        name = "Yak-201 Scout Shikra";
+        rearm = 420;
+        requirements[] = {"FA"};
+        spawn = "O_Plane_Fighter_02_Stealth_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "680Rnd_35mm_AA_shells"
+            };
+            addWeapons[] = {
+                "autocannon_35mm",
+                "Laserdesignator_pilotCamera"
+            };
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "magazine_Fighter02_Gun30mm_AA_x180"
+            };
+            removeWeapons[] = {
+                "weapon_Fighter_Gun_30mm",
+                "Laserdesignator_pilotCamera"
+            };
+            turret[] = { -1 };
+        };
+    };
 
     class O_T_VTOL_02_infantry_dynamicLoadout_F {
         allowPylonMagazines[] = {

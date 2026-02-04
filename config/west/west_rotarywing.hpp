@@ -29,7 +29,7 @@ class RotaryWing {
         cost = 1000;
         hasTurretVisualizer = 1;
         loadable[] = {0, -2.2, 2.1};
-        loaded = "B_Slingload_01_Cargo_F";
+        loaded = "Land_Cargo20_blue_F";
         name = "CH-67 Huron Supply";
         offset[] = {0, 10, 0};
         rearm = 240;
