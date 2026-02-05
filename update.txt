@@ -86,6 +86,10 @@ Gameplay
 * Polls now immediately update players without respawning.
 * Progressively show more map links as hover time increases.
 * Having a Bobcat/Marid utility nearby increases demolition speed by 20%.
+* Reward points for revealing sector.
+* Unloading now loops until unloading is complete or cancelled.
+* RTB failure now shows why jet can't RTB.
+* Consolidated Blackfish logistics system under flatbed type.
 
 Map
 * Income now based on regions captured rather than sectors.
@@ -99,7 +103,7 @@ Map
 * AAC: added link to Drimea.
 * Quarry: renamed to Pyrgos Quarry.
 * Enlarged sectors: Kalithea, Kalochori, Makrynisi, Ioannina, Rodopoli, Frini.
-* Shrink sector: Atsalis, Agios Konstantinos, Aggelochori.
+* Shrink sector: Atsalis, Agios Konstantinos, Aggelochori, Oreokastro, Dump, Gori Factory.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
@@ -115,6 +119,10 @@ Bugfixes
 * Fixed LOAL/laser lock-on time being tied to game client framerate.
 * Fixed bug where more than 30 mines could be deployed at once.
 * Fixed betty script errors when RTB'ing.
+* Fixed bug where unconscious players may contribute to capture.
+* Fixed bug where green units/vehicles are detected inside of FOBs.
+* Fixed takeoff damage disabling RTB.
+* Fixed script errors when placing FOB.
 
 Performance
 * Improved sector scanning performance.

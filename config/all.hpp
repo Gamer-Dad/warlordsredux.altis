@@ -35,6 +35,7 @@ class ALL {
             obstacle = 2;
             demolishable = 1;
             demolishStepTime = 40;
+            lifetime = 1200;
             name = "Debris";
         };
 

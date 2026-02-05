@@ -218,14 +218,14 @@ class SectorDefense {
         demolishable = 3;
         demolishStepTime = 3;
         description = "";
-        dumbMine = 5;
+        dumbMine = 15;
         name = "AT Minefield";
         offset[] = {0, 3, 0};
     };
 
     class B_Land_Bomb_Trolley_01_F {
         cost = 3500;
-        demolishable = 3;
+        demolishable = 1;
         demolishStepTime = 10;
         description = "BLU-107 Durandal Trolley can be used to deploy anti-runway bombs to crater enemy airstrips. Once armed, it will explode after 60 seconds.";
         drone = 1;

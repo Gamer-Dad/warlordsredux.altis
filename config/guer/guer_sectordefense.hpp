@@ -226,7 +226,7 @@ class SectorDefense {
         demolishable = 3;
         demolishStepTime = 3;
         description = "";
-        dumbMine = 5;
+        dumbMine = 15;
         name = "AT Minefield";
         offset[] = {0, 3, 0};
     };

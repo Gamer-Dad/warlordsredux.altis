@@ -255,8 +255,8 @@ class CfgWarlordSectors {
     };
 
     class AgiosKonstantinos {
-        area[] = {180, 200, 135, 1};
-        location[] = {4047.67, 17438.6, 0};
+        area[] = {100, 200, 135, 1};
+        location[] = {3992.4, 17385.9, 0};
         name = "Agios Konstantinos";
     };
 
@@ -499,7 +499,7 @@ class CfgWarlordSectors {
     };
 
     class GoriFactory {
-        area[] = {125, 200, 75, 1};
+        area[] = {100, 150, 75, 1};
         location[] = {5430.09, 17907.7, 0};
         name = "Gori Factory";
     };
@@ -713,7 +713,7 @@ class CfgWarlordSectors {
     };
 
     class Oreokastro {
-        area[] = {275, 275, 128.18, 0};
+        area[] = {175, 175, 128.18, 0};
         location[] = {4591.91, 21412.4, 0};
         name = "Oreokastro";
     };
@@ -917,7 +917,7 @@ class CfgWarlordSectors {
     };
 
     class TheDump {
-        area[] = {170, 170, 128.18, 0};
+        area[] = {140, 140, 128.18, 0};
         location[] = {5903.35, 20160.4, 0};
         name = "The Dump";
     };
