@@ -155,10 +155,12 @@ class FixedWing {
             "PylonMissile_Missile_AA_R73_x1",
             "PylonMissile_Missile_AA_R77_x1"
         };
+        hasAirburst = 1;
         hasHMD = 1;
         hasReconOptics = 1;
         loadable[] = {0, -2.2, 1.6};
         name = "Yak-201 Scout Shikra";
+        offset[] = {0, 12, 0};
         rearm = 420;
         requirements[] = {"FA"};
         spawn = "O_Plane_Fighter_02_Stealth_F";
@@ -168,10 +170,12 @@ class FixedWing {
             addMagazines[] = {
                 "300Rnd_CMFlare_Chaff_Magazine",
                 "300Rnd_CMFlare_Chaff_Magazine",
-                "680Rnd_35mm_AA_shells"
+                "680Rnd_35mm_AA_shells",
+                "4Rnd_Titan_long_missiles"
             };
             addWeapons[] = {
                 "autocannon_35mm",
+                "missiles_titan",
                 "Laserdesignator_pilotCamera"
             };
             removeMagazines[] = {

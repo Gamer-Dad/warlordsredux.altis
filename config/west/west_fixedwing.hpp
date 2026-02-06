@@ -158,10 +158,12 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2",
             "PylonMissile_Missile_AMRAAM_D_INT_x1"
         };
+        hasAirburst = 1;
         hasHMD = 1;
         hasReconOptics = 1;
         loadable[] = {0, -2.2, 1.6};
         name = "SR-181 Scout Wasp";
+        offset[] = {0, 12, 0};
         rearm = 420;
         requirements[] = {"FA"};
         spawn = "B_Plane_Fighter_01_Stealth_F";
@@ -171,10 +173,12 @@ class FixedWing {
             addMagazines[] = {
                 "300Rnd_CMFlare_Chaff_Magazine",
                 "300Rnd_CMFlare_Chaff_Magazine",
-                "680Rnd_35mm_AA_shells"
+                "680Rnd_35mm_AA_shells",
+                "4Rnd_Titan_long_missiles"
             };
             addWeapons[] = {
                 "autocannon_35mm",
+                "missiles_titan",
                 "Laserdesignator_pilotCamera"
             };
             removeMagazines[] = {

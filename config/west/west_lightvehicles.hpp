@@ -258,12 +258,14 @@ class LightVehicles {
                 "450Rnd_127x108_Ball",
                 "450Rnd_127x108_Ball",
                 "2Rnd_GAT_missiles",
-                "2Rnd_GAT_missiles"
+                "2Rnd_GAT_missiles",
+                "4Rnd_70mm_SAAMI_missiles"
             };
             addWeapons[] = {
                 "autocannon_30mm_RCWS",
                 "HMG_NSVT",
-                "missiles_titan"
+                "missiles_titan",
+                "missiles_SAAMI"
             };
             removeMagazines[] = {
                 "96Rnd_40mm_G_belt"

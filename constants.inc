@@ -21,6 +21,5 @@
 #define WL_COOLDOWN_GC_CHEAP 30
 #define WL_DESTROYER_START (20 + random 10)
 // #define WL_ECM_TEST 1
-#define WL_CAP_DEBUG 1
 // #define WL_DURATION_AFKTIME 10
 // #define WL_AFK_ADMIN_TEST 1

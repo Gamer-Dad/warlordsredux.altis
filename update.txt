@@ -31,7 +31,7 @@ Balance
 * Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->4, $2,500->1,500.
 * Dragon's teeth, razor wire: changed to kits that allows chain deployment.
 * Tandem wired missiles: consume APS 2->3, no longer dazzleable.
-* Hunter Apex: $2,500->2,000, changed AT from 1-mag to 2-mag, cap value 2->3.
+* Hunter Apex: $2,500->2,000, changed AT from 1-mag to 2-mag, added SAAMI, cap value 2->3.
 * Bobcat: deploy spawnable fighting position.
 * Marshall: $2,700->2,400.
 * Marshall UP: $3,200->3,000, APS medium->heavy.
@@ -49,6 +49,7 @@ Balance
 * Team rally point: demolition time 10->3s, removed limit.
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Sector scan: $750->1500.
+* Recon vehicles: scanner only shown on map for enemies within 2km.
 * Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1).
 * Destroyer start time max increased from 2->5 hours.
 * Bunker buster / bomb drone etc range 30->15m.
@@ -66,6 +67,7 @@ Gameplay
 * Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold present).
 * Fast travel home and respawn now puts player next to flag.
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
+* Secure player: players can be secured even when manually respawned, destroys their tent if within 100m.
 * Supply boat is now a conversion rather than deployment.
 * FOB supply crates model switched.
 * Removed winter holiday events.
