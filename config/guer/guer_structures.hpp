@@ -1,30 +1,25 @@
 class Structures {
-    class Land_Razorwire_F {
-        cost = 50;
-        demolishable = 1;
-        demolishStepTime = 3;
-        offset[] = {0, 5, 0};
-    }; // "Razor Wire Fence"
-
     class Land_BagFence_Round_F {
         cost = 50;
         demolishable = 1;
         demolishStepTime = 5;
+        hideMap = 1;
         offset[] = {0, 2, 0};
     }; // "Semi Circle Sand bags"
 
-    class Land_DragonsTeeth_01_4x2_new_F {
-        cost = 50;
-        demolishable = 1;
-        demolishStepTime = 5;
-        name = "Dragon's Teeth";
-        offset[] = {0, 5, 0};
-    }; // "Tank barrier"
+    // class Land_DragonsTeeth_01_4x2_new_F {
+    //     cost = 50;
+    //     demolishable = 1;
+    //     demolishStepTime = 5;
+    //     name = "Dragon's Teeth";
+    //     offset[] = {0, 5, 0};
+    // }; // "Tank barrier"
 
     class Land_HBarrier_5_F {
         cost = 50;
         demolishable = 2;
         demolishStepTime = 5;
+        hideMap = 1;
         offset[] = {0, 3, 0};
     }; // "H-barrier"
 
@@ -32,6 +27,7 @@ class Structures {
         cost = 60;
         demolishable = 2;
         demolishStepTime = 5;
+        hideMap = 1;
         offset[] = {0, 3, 0};
     }; // "H-barrier wall"
 
@@ -39,12 +35,14 @@ class Structures {
         cost = 70;
         demolishable = 2;
         demolishStepTime = 10;
+        hideMap = 1;
         offset[] = {0, 7, 0};
     }; // "Guard Tower (H-barrier)"
 
     class CamoNet_INDP_big_F {
         cost = 100;
         demolishable = 2;
+        hideMap = 1;
         offset[] = {0, 6, 0};
     }; // "Camouflage Vehicle Cover (Hex)"
 
@@ -52,12 +50,14 @@ class Structures {
         cost = 200;
         demolishable = 1;
         demolishStepTime = 3;
+        hideMap = 1;
         offset[] = {0, 8, 0};
     }; // "IR Masking Tent (Large)"
 
     class Land_Cargo_Tower_V4_F {
         cost = 450;
         demolishable = 3;
+        hideMap = 1;
         offset[] = {0, 8, 0};
     };  // "Cargo Tower"
 

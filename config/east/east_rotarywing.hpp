@@ -2,20 +2,23 @@ class RotaryWing {
     class O_Heli_Transport_04_covered_F {
         cost = 400;
         hasFastTravel = 1;
+        loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Transport)"
 
     class O_Heli_Transport_04_F {
-        cost = 500;
+        cost = 450;
         hasFastTravel = 1;
+        loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru"
 
     class O_Heli_Transport_04_medevac_F {
-        cost = 500;
+        cost = 450;
         hasFastTravel = 1;
+        loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "Mi-290 Taru (Medical)"
@@ -23,6 +26,7 @@ class RotaryWing {
     class O_Heli_Light_02_unarmed_F {
         cost = 500;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.3};
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
     }; // "PO-30 Orca (Unarmed)"
@@ -30,6 +34,8 @@ class RotaryWing {
     class O_Heli_Transport_02_F {
         cost = 500;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "I_static_FGS_F";
         name = "CH-49 Mohawk";
         offset[] = {0, 10, 0};
         requirements[] = {"H"};
@@ -40,6 +46,40 @@ class RotaryWing {
             "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
             "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
         };
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine"
+            };
+            addWeapons[] = {
+                "CMFlareLauncher_Singles"
+            };
+            removeMagazines[] = {
+                "168Rnd_CMFlare_Chaff_Magazine"
+            };
+            removeWeapons[] = {
+                "CMFlareLauncher"
+            };
+            turret[] = { -1 };
+        };
+    };
+
+    class O_Heli_Transport_02_supply_F {
+        cost = 500;
+        hasHMD = 1;
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "Land_Cargo20_brick_red_F";
+        name = "CH-49 Mohawk Supply";
+        offset[] = {0, 10, 0};
+        requirements[] = {"H"};
+        spawn = "I_Heli_Transport_02_F";
+        textures[] = {
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
+            "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
+        };
+        variant = 1;
+
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
                 "240Rnd_CMFlare_Chaff_Magazine"
@@ -92,16 +132,14 @@ class RotaryWing {
             "PylonRack_3Rnd_LG_scalpel",
             "PylonRack_4Rnd_LG_scalpel",
             "PylonMissile_Missile_AA_R73_x1",
-            "PylonRack_Missile_BIM9X_x2",
-            "PylonFuelTank_UH80"
+            "PylonRack_Missile_BIM9X_x2"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 3500;
-        ecm[] = {{"MissileCore"}, 1, 5000, 1, 4, 30};
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.4};
         offset[] = {0, 10, 0};
         rearm = 240;
         requirements[] = {"H"};
@@ -175,17 +213,16 @@ class RotaryWing {
             "PylonRack_12Rnd_PGM_missiles",
             "PylonMissile_Missile_KH58_INT_x1",
             "PylonMissile_Missile_AA_R73_x1",
-            "PylonFuelTank_UH80"
+            "PylonMissile_Missile_AA_R77_x1"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 8000;
-        ecm[] = {{"MissileCore"}, 1, 6000, 1, 6, 30};
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 2.0};
         offset[] = {0, 11, 0};
         rearm = 300;
         requirements[] = {"H"};

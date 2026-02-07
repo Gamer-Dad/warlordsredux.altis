@@ -163,19 +163,46 @@ class SectorDefense {
     // };
 
     class O_SmartMine_01_F {
-        cost = 2500;
-        description = "PTKM-2 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 7. Limit 2 deployed.";
+        cost = 1500;
+        description = "PTKM-2 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 4 deployed.";
         empty = 1;
-        loadable[] = {0, -1, -0.4};
+        immobile = 1;
+        loadable[] = {-0.4, -1, 0.9};
         name = "PTKM-2 Smart Mine System";
-        offset[] = {0, 3, 0};
+        offset[] = {0, 5, 0};
         rearm = 900;
         requirements[] = {"S"};
-        smartMine = 7;
-        spawn = "Box_CSAT_Equip_F";
+        smartMineAP = 6;
+        smartMineAT = 2;
+        spawn = "O_UGV_01_F";
         textures[] = {
+            "#(rgb,8,8,3)color(1,0,0,1)",
+            "#(rgb,8,8,3)color(1,0,0,1)",
             "#(rgb,8,8,3)color(1,0,0,1)"
         };
+    };
+
+    class Land_Sign_MinesDanger_English_F {
+        cost = 2000;
+        demolishable = 3;
+        demolishStepTime = 3;
+        description = "";
+        dumbMine = 50;
+        name = "AT Minefield";
+        offset[] = {0, 3, 0};
+        showToEnemies = 200;
+    };
+
+    class O_Land_Bomb_Trolley_01_F {
+        cost = 3500;
+        demolishable = 1;
+        demolishStepTime = 10;
+        description = "The KAB-1500 Trolley can be used to deploy anti-runway bombs to crater enemy airstrips. Once armed, it will explode after 60 seconds.";
+        drone = 1;
+        loadable[] = {-0.4, -1, -0.1};
+        name = "KAB-1500 Trolley";
+        offset[] = {0, 3, 0};
+        spawn = "Land_Bomb_Trolley_01_F";
     };
 
     // class O_AAA_System_01_F {
@@ -217,39 +244,39 @@ class SectorDefense {
         rearm = 900;
     };  // "Mortar"
 
-    class O_Mortar_01_TV_F {
-        ammoOverrides[] = {
-            {"M_127mm_Firefist_AT", {"M_Lancet", "Lancet (Loitering Munition)"}}
-        };
-        cost = 9000;
-        description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
-        loadable[] = {0, -2.5, 0};
-        name = "Lancet Launcher";
-        offset[] = {0, 3, 0};
-        rearm = 900;
-        spawn = "O_Mortar_01_F";
-        variant = 1;
+    // class O_Mortar_01_TV_F {
+    //     ammoOverrides[] = {
+    //         {"M_127mm_Firefist_AT", {"M_Lancet", "Lancet (Loitering Munition)"}}
+    //     };
+    //     cost = 9000;
+    //     description = "Lancet Launcher is a remote controlled loitering munition launcher. It can be used to effectively engage enemy ground vehicles.";
+    //     loadable[] = {0, -2.5, 0};
+    //     name = "Lancet Launcher";
+    //     offset[] = {0, 3, 0};
+    //     rearm = 900;
+    //     spawn = "O_Mortar_01_F";
+    //     variant = 1;
 
-        class Gunner: WLTurretDefaults {
-            addMagazines[] = {
-                "2Rnd_127mm_Firefist_missiles"
-            };
-            addWeapons[] = {
-                "missiles_Firefist"
-            };
-            removeMagazines[] = {
-                "8Rnd_82mm_Mo_shells",
-                "8Rnd_82mm_Mo_Flare_white",
-                "8Rnd_82mm_Mo_Smoke_white",
-                "8Rnd_82mm_Mo_guided",
-                "8Rnd_82mm_Mo_LG"
-            };
-            removeWeapons[] = {
-                "mortar_82mm"
-            };
-            turret[] = { 0 };
-        };
-    };
+    //     class Gunner: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "2Rnd_127mm_Firefist_missiles"
+    //         };
+    //         addWeapons[] = {
+    //             "missiles_Firefist"
+    //         };
+    //         removeMagazines[] = {
+    //             "8Rnd_82mm_Mo_shells",
+    //             "8Rnd_82mm_Mo_Flare_white",
+    //             "8Rnd_82mm_Mo_Smoke_white",
+    //             "8Rnd_82mm_Mo_guided",
+    //             "8Rnd_82mm_Mo_LG"
+    //         };
+    //         removeWeapons[] = {
+    //             "mortar_82mm"
+    //         };
+    //         turret[] = { 0 };
+    //     };
+    // };
 
     // class O_ASHM_System_04_F {
     //     ammoOverrides[] = {

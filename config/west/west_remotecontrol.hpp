@@ -9,6 +9,7 @@ class RemoteControl {
     class B_UGV_01_F {
         cost = 150;
         loadable[] = {-0.4, -1, 1.1};
+        loaded = "B_crate_F";
         offset[] = {0, 5, 0};
     }; // "UGV Stomper"
 
@@ -21,6 +22,7 @@ class RemoteControl {
     class B_UGV_01_rcws_F {
         cost = 500;
         loadable[] = {-0.4, -1, 1.1};
+        loaded = "B_crate_F";
         offset[] = {0, 5, 0};
         rearm = 120;
     }; // "UGV Stomper RCWS"
@@ -109,21 +111,21 @@ class RemoteControl {
     //     spawn = "B_UAV_02_dynamicLoadout_F";
     // };
 
-    class B_UGV_01_bomb_F {
-        ammoOverrides[] = {
-            {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
-        };
-        aps = 4;
-        cost = 3500;
-        description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
-        detonate = 13;
-        loadable[] = {-0.4, -1, 1.1};
-        name = "UGV Stomper (Bomb)";
-        offset[] = {0, 5, 0};
-        rearm = 900;
-        spawn = "B_UGV_01_F";
-        variant = 1;
-    };
+    // class B_UGV_01_bomb_F {
+    //     ammoOverrides[] = {
+    //         {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
+    //     };
+    //     aps = 4;
+    //     cost = 3500;
+    //     description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+    //     detonate = 13;
+    //     loadable[] = {-0.4, -1, 1.1};
+    //     name = "UGV Stomper (Bomb)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 900;
+    //     spawn = "B_UGV_01_F";
+    //     variant = 1;
+    // };
 
     class B_Offroad_01_bomb_F {
         aps = 4;
@@ -145,6 +147,7 @@ class RemoteControl {
         };
         cost = 6500;
         hasHMD = 1;
+        loadable[] = {0, -1.0, 0};
         rearm = 300;
         requirements[] = {"H"};
     }; // "Greyhawk"
@@ -156,6 +159,7 @@ class RemoteControl {
         };
         cost = 7000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.1};
         rearm = 300;
         requirements[] = {"H"};
 
@@ -174,6 +178,8 @@ class RemoteControl {
 
     class B_UAV_05_F {
         cost = 15000;
+        hasHMD = 1;
+        loadable[] = {0, -2.2, -0.4};
         rearm = 420;
         requirements[] = {"A"};
 

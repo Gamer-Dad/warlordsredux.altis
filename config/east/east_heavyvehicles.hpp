@@ -46,6 +46,37 @@ class HeavyVehicles {
         rearm = 180;
     }; // "MSE-3 Marid"
 
+    class O_APC_Wheeled_02_utility_F {
+        aps = 2;
+        capValue = 2;
+        cost = 1800;
+        description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
+        hasRearm = 1;
+        hasRefuel = 1;
+        hasRepair = 1;
+        loadable[] = {0, -0.8, 1.65};
+        loaded = "I_static_FGS_F";
+        mineClear = 2;
+        name = "MSE-3 Marid (Utility)";
+        rearm = 180;
+        showToEnemies = 2000;
+        spawn = "O_APC_Wheeled_02_rcws_v2_F";
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            hideTurret = 1;
+            removeMagazines[] = {
+                "96Rnd_40mm_G_belt",
+                "200Rnd_127x99_mag_Tracer_Green"
+            };
+            removeWeapons[] = {
+                "HMG_127_APC",
+                "GMG_40mm"
+            };
+            turret[] = { 0 };
+        };
+    };
+
     // class O_LT_01_AT_F {
     //     aps = 1;
     //     capValue = 3;
@@ -120,6 +151,7 @@ class HeavyVehicles {
         description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
         hasHMD = 1;
         hasScanner = 1;
+        loaded = "Land_IRMaskingCover_01_F";
         name = "BTR-K Kamysh (Recon)";
         rearm = 120;
         spawn = "O_APC_Tracked_02_cannon_F";
@@ -137,33 +169,6 @@ class HeavyVehicles {
                 "missiles_titan",
                 "autocannon_30mm_CTWS",
                 "LMG_coax_ext"
-            };
-            turret[] = { 0 };
-        };
-    };
-
-    class O_APC_Wheeled_02_utility_F {
-        aps = 2;
-        capValue = 2;
-        cost = 2500;
-        description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
-        hasRearm = 1;
-        hasRefuel = 1;
-        hasRepair = 1;
-        loadable[] = {0, -0.8, 1.65};
-        name = "MSE-3 Marid (Utility)";
-        rearm = 180;
-        spawn = "O_APC_Wheeled_02_rcws_v2_F";
-
-        class Gunner: WLTurretDefaults {
-            hideTurret = 1;
-            removeMagazines[] = {
-                "96Rnd_40mm_G_belt",
-                "200Rnd_127x99_mag_Tracer_Green"
-            };
-            removeWeapons[] = {
-                "HMG_127_APC",
-                "GMG_40mm"
             };
             turret[] = { 0 };
         };
@@ -309,14 +314,14 @@ class HeavyVehicles {
 
     class O_MBT_04_cannon_F {
         aps = 3;
-        capValue = 4;
+        capValue = 6;
         cost = 8500;
         rearm = 300;
     }; // "T-140 Angara"
 
     class O_MBT_04_command_F {
         aps = 3;
-        capValue = 4;
+        capValue = 6;
         cost = 9500;
         hasSmokeCurtain = 1;
         rearm = 300;
@@ -324,7 +329,7 @@ class HeavyVehicles {
 
     class O_MBT_02_railgun_F {
         aps = 3;
-        capValue = 4;
+        capValue = 6;
         cost = 15000;
         hasHMD = 1;
         hasReconOptics = 1;
@@ -375,6 +380,7 @@ class HeavyVehicles {
         disallowMagazines[] = {
             "12Rnd_230mm_rockets_cluster"
         };
+        loaded = "CamoNet_OPFOR_big_F";
         name = "Zamak MRL";
         rearm = 1800;
         spawn = "I_Truck_02_MRL_F";
@@ -393,8 +399,55 @@ class HeavyVehicles {
             "2Rnd_155mm_Mo_Cluster",
             "2Rnd_155mm_Mo_Cluster_O"
         };
+        loaded = "CamoNet_OPFOR_big_F";
         rearm = 1800;
     }; // "2S9 Sochor"
+
+    class O_Truck_02_MRL_Guided_F {
+        ammoOverrides[] = {
+            {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
+        };
+        capValue = 4;
+        cost = 23000;
+        hasHMD = 1;
+        loaded = "CamoNet_OPFOR_big_F";
+        name = "Zamak MRL (Guided)";
+        rearm = 1800;
+        spawn = "I_Truck_02_MRL_F";
+        textures[] = {
+            "\A3\soft_f_beta\Truck_02\Data\Truck_02_kab_opfor_co.paa",
+            "\a3\soft_f_beta\truck_02\data\truck_02_int_co.paa",
+            "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
+        };
+        variant = 1;
+
+        class Gunner: WLTurretDefaults {
+            addMagazines[] = {
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1",
+                "magazine_Missile_AGM_02_x1"
+            };
+            addWeapons[] = {
+                "weapon_AGM_65Launcher"
+            };
+            removeMagazines[] = {
+                "12Rnd_230mm_rockets"
+            };
+            removeWeapons[] = {
+                "rockets_230mm_GAT"
+            };
+            turret[] = { 0 };
+        };
+    };
 
     // class O_MBT_02_arty_tv_F {
     //     ammoOverrides[] = {

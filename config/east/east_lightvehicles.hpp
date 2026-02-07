@@ -59,12 +59,14 @@ class LightVehicles {
         capValue = 1;
         cost = 200;
         hasFastTravel = 1;
+        loaded = "Land_BagBunker_Small_F";
     }; // "Tempest Transport"
 
     class O_Truck_03_medical_F {
         capValue = 1;
         cost = 250;
         hasFastTravel = 1;
+        loaded = "Land_BagBunker_Small_F";
     }; // "Tempest Medical"
 
     class O_MRAP_02_F {

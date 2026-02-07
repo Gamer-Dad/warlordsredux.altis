@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=4047;
+		nextID=4055;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=161;
+		nextID=169;
 	};
 	class Camera
 	{
-		pos[]={2276.1006,48.063866,9270.3828};
-		dir[]={0.54197633,-0.78737271,0.29377878};
-		up[]={0.69221908,0.61647719,0.375218};
-		aside[]={0.47654432,0,-0.87915045};
+		pos[]={18660.484,25.585497,8248.3828};
+		dir[]={0.98133403,-0.11952589,0.15139155};
+		up[]={0.11819287,0.99276316,0.018229136};
+		aside[]={0.15248689,-4.6400237e-07,-0.98842198};
 	};
 };
 binarizationWanted=0;
@@ -32,13 +32,16 @@ addons[]=
 {
 	"A3_Modules_F_Curator_Curator",
 	"A3_Boat_F_Jets_Carrier_01",
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Structures_F_Mil_Cargo",
+	"A3_Structures_F_Exp_Commercial_MultistoryBuilding_03",
+	"A3_Structures_F_Training"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=6;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -60,6 +63,27 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item3
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Structures_F_Exp_Commercial";
+			name="Arma 3 Apex - Commercial Buildings";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -69,7 +93,8 @@ class DynamicSimulation
 };
 dlcs[]=
 {
-	"Jets"
+	"Jets",
+	"Expansion"
 };
 randomSeed=3694325;
 class ScenarioData
@@ -83,7 +108,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords (Redux 2.7.1 WSV)";
+		briefingName="Warlords (Redux 2.8.0 WSV)";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
@@ -103,7 +128,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=122;
+		items=125;
 		class Item0
 		{
 			dataType="Logic";
@@ -3753,6 +3778,133 @@ class Mission
 			{
 			};
 			id=4045;
+		};
+		class Item122
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8553.7588,125.46218,25038.629};
+				angles[]={0,2.5785019,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=4049;
+			type="Land_Cargo_Tower_V3_F";
+		};
+		class Item123
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={18684.26,43.935081,8256.5234};
+				angles[]={0,5.7641768,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4053;
+			type="Land_MultistoryBuilding_03_F";
+			atlOffset=0.25700188;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="DoorStates";
+					expression="['init',_this,_value] call bis_fnc_3DENAttributeDoorStates;";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=1;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item124
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={18685.816,70.159668,8245.7109};
+				angles[]={0,1.0458362,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4054;
+			type="Land_RampConcrete_F";
+			atlOffset=51.822517;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

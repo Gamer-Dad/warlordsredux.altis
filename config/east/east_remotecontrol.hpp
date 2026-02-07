@@ -9,6 +9,7 @@ class RemoteControl {
     class O_UGV_01_F {
         cost = 150;
         loadable[] = {-0.4, -1, 1.1};
+        loaded = "O_crate_F";
         offset[] = {0, 5, 0};
     };  // "UGV Stomper"
 
@@ -21,6 +22,7 @@ class RemoteControl {
     class O_UGV_01_rcws_F {
         cost = 500;
         loadable[] = {-0.4, -1, 1.1};
+        loaded = "O_crate_F";
         offset[] = {0, 5, 0};
         rearm = 120;
     };  // "UGV Stomper RCWS"
@@ -145,21 +147,21 @@ class RemoteControl {
     //     spawn = "O_UAV_02_dynamicLoadout_F";
     // };
 
-    class O_UGV_01_bomb_F {
-        ammoOverrides[] = {
-            {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
-        };
-        aps = 4;
-        cost = 3500;
-        description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
-        detonate = 13;
-        loadable[] = {-0.4, -1, 1.1};
-        name = "UGV Stomper (Bomb)";
-        offset[] = {0, 5, 0};
-        rearm = 900;
-        spawn = "O_UGV_01_F";
-        variant = 1;
-    };
+    // class O_UGV_01_bomb_F {
+    //     ammoOverrides[] = {
+    //         {"Bo_Mk82", {"Bo_Mk82_BLU", "BLU-116 (Bunker Buster)"}}
+    //     };
+    //     aps = 4;
+    //     cost = 3500;
+    //     description = "UGV Stomper (Bomb) is a variant of the UGV Stomper that goes boom.";
+    //     detonate = 13;
+    //     loadable[] = {-0.4, -1, 1.1};
+    //     name = "UGV Stomper (Bomb)";
+    //     offset[] = {0, 5, 0};
+    //     rearm = 900;
+    //     spawn = "O_UGV_01_F";
+    //     variant = 1;
+    // };
 
     class O_Offroad_01_bomb_F {
         aps = 4;
@@ -178,6 +180,7 @@ class RemoteControl {
     class O_T_UAV_04_CAS_F {
         cost = 5500;
         hasHMD = 1;
+        loadable[] = {0, -1.0, 0};
         rearm = 300;
         requirements[] = {"H"};
 
@@ -210,6 +213,7 @@ class RemoteControl {
         };
         cost = 6500;
         hasHMD = 1;
+        loadable[] = {0, -1.0, 0};
         rearm = 300;
         requirements[] = {"H"};
     }; // "K40 Ababil-3"

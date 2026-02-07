@@ -1,6 +1,7 @@
 class RotaryWing {
     class B_Heli_Light_01_F {
         cost = 300;
+        loadable[] = {0, -2.2, 0.9};
         requirements[] = {"H"};
     }; // "MH-9 Hummingbird"
 
@@ -8,6 +9,7 @@ class RotaryWing {
         cost = 800;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 1.5};
         offset[] = {0, 11, 0};
         rearm = 240;
         requirements[] = {"H"};
@@ -16,10 +18,25 @@ class RotaryWing {
     class B_Heli_Transport_03_F {
         cost = 1000;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "I_static_FGS_F";
         offset[] = {0, 10, 0};
         rearm = 240;
         requirements[] = {"H"};
     }; // "CH-67 Huron"
+
+    class B_Heli_Transport_03_supply_F {
+        cost = 1000;
+        hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 2.1};
+        loaded = "Land_Cargo20_blue_F";
+        name = "CH-67 Huron Supply";
+        offset[] = {0, 10, 0};
+        rearm = 240;
+        requirements[] = {"H"};
+        spawn = "B_Heli_Transport_03_F";
+        variant = 1;
+    };
 
     class B_Heli_Light_01_dynamicLoadout_F {
         allowPylonMagazines[] = {
@@ -27,14 +44,15 @@ class RotaryWing {
             "PylonRack_19Rnd_Rocket_Skyfire",
             "PylonRack_12Rnd_PGM_missiles"
         };
-        cost = 2500;
+        cost = 3500;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.9};
         rearm = 240;
         requirements[] = {"H"};
 
         class Pilot: WLTurretDefaults {
             addMagazines[] = {
-                "168Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
                 "PylonWeapon_300Rnd_20mm_shells",
                 "PylonWeapon_300Rnd_20mm_shells"
             };
@@ -159,16 +177,15 @@ class RotaryWing {
             "PylonRack_Missile_HARM_x1",
             "PylonRack_19Rnd_Rocket_Skyfire",
             "PylonRack_12Rnd_PGM_missiles",
-            "PylonFuelTank_UH80"
+            "PylonRack_Missile_BIM9X_x2"
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
-        cost = 5000;
+        cost = 4200;
         description = "WY-55 Hellcat is a light attack helicopter.";
-        ecm[] = {{"MissileCore"}, 1, 5000, 1, 4, 30};
         hasHMD = 1;
+        loadable[] = {0, -2.2, 0.3};
         name = "WY-55 Hellcat";
         offset[] = {0, 9, 0};
         rearm = 240;
@@ -198,12 +215,12 @@ class RotaryWing {
     };
 
     class B_Heli_Transport_01_pylons_F {
-        ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
+        allowPylonMagazines[] = {
+            "PylonRack_Missile_BIM9X_x2"
         };
-        cost = 5500;
-        ecm[] = {{"MissileCore"}, 1, 5000, 1, 2, 60};
+        cost = 5000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.5};
         name = "UH-80 Ghost Hawk Block II";
         offset[] = {0, 11, 0};
         rearm = 300;
@@ -241,6 +258,7 @@ class RotaryWing {
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 0.9};
         offset[] = {0, 10, 0};
         rearm = 300;
         requirements[] = {"H"};
@@ -276,18 +294,16 @@ class RotaryWing {
             {"PylonRack_Missile_BIM9X_x2", {"PylonExternalLeft", "PylonExternalRight", "PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
             {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
             {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
-            {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
-            {"PylonFuelTank_UH80", {"PylonExternalLeft", "PylonExternalRight"}}
+            {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}}
         };
         ammoOverrides[] = {
-            {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
             {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
         };
         cost = 13000;
-        ecm[] = {{"MissileCore"}, 1, 8000, 1, 4, 30};
         hasGunnerAction = 1;
         hasHMD = 1;
         hasTurretVisualizer = 1;
+        loadable[] = {0, -2.2, 0.9};
         name = "AH-99 Blackfoot Block II";
         offset[] = {0, 10, 0};
         rearm = 300;

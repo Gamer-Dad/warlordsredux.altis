@@ -221,6 +221,37 @@ class SectorDefense {
         rearm = 300;
     };
 
+    class Land_Sign_MinesDanger_English_F {
+        cost = 2000;
+        demolishable = 3;
+        demolishStepTime = 3;
+        description = "";
+        dumbMine = 50;
+        name = "AT Minefield";
+        offset[] = {0, 3, 0};
+        showToEnemies = 200;
+    };
+
+    class I_SmartMine_01_F {
+        cost = 3000;
+        description = "XM205 Smart Mine System is a deployable anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 3 deployed.";
+        empty = 1;
+        immobile = 1;
+        loadable[] = {-0.4, -1, 0.9};
+        name = "XM205 Smart Mine System";
+        offset[] = {0, 5, 0};
+        rearm = 900;
+        requirements[] = {"S"};
+        smartMineAP = 6;
+        smartMineAT = 2;
+        spawn = "I_UGV_01_F";
+        textures[] = {
+            "#(rgb,8,8,3)color(1,0,0,1)",
+            "#(rgb,8,8,3)color(1,0,0,1)",
+            "#(rgb,8,8,3)color(1,0,0,1)"
+        };
+    };
+
     class I_Mortar_01_F {
         cost = 4000;
         loadable[] = {0, -2.5, 0};

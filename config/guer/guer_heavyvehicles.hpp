@@ -33,7 +33,7 @@ class HeavyVehicles {
     class I_APC_tracked_03_cannon_F {
         aps = 3;
         capValue = 5;
-        cost = 3000;
+        cost = 5000;
         vehicleSpawn = 1;
     };  // "FV-720 Mora"
 };

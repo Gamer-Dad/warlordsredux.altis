@@ -2,6 +2,7 @@ class FixedWing {
     class B_Plane_Civil_01_F {
         cost = 800;
         description = "Caesar BTT is a light unarmed aircraft.";
+        loadable[] = {0, -2.2, 0.9};
         name = "Caesar BTT";
         requirements[] = {"A"};
         spawn = "C_Plane_Civil_01_F";
@@ -60,29 +61,30 @@ class FixedWing {
     //     };
     // };
 
-    class B_Plane_Caesar_bomb_01_F {
-        ammoOverrides[] = {
-            {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
-        };
-        cost = 1500;
-        description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
-        hasHMD = 1;
-        name = "Caesar BTT (Bomb)";
-        rearm = 300;
-        requirements[] = {"A"};
-        spawn = "C_Plane_Civil_01_F";
-        variant = 1;
+    // class B_Plane_Caesar_bomb_01_F {
+    //     ammoOverrides[] = {
+    //         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-15 (GPS-Guided)"}}
+    //     };
+    //     cost = 1500;
+    //     description = "Caesar BTT (Bomb) is a variant of the Caesar BTT armed with a pair of GPS-guided GBU-15 bombs.";
+    //     hasHMD = 1;
+    //     loadable[] = {0, -2.2, 0.9};
+    //     name = "Caesar BTT (Bomb)";
+    //     rearm = 300;
+    //     requirements[] = {"A"};
+    //     spawn = "C_Plane_Civil_01_F";
+    //     variant = 1;
 
-        class Pilot: WLTurretDefaults {
-            addMagazines[] = {
-                "magazine_Bomb_GBU12_x1"
-            };
-            addWeapons[] = {
-                "weapon_GBU12Launcher"
-            };
-            turret[] = { -1 };
-        };
-    };
+    //     class Pilot: WLTurretDefaults {
+    //         addMagazines[] = {
+    //             "magazine_Bomb_GBU12_x1"
+    //         };
+    //         addWeapons[] = {
+    //             "weapon_GBU12Launcher"
+    //         };
+    //         turret[] = { -1 };
+    //     };
+    // };
 
     class B_T_VTOL_01_infantry_F {
         cost = 2000;
@@ -144,6 +146,54 @@ class FixedWing {
             turret[] = { -1 };
         };
     }; // "V-44 X Blackfish (Armed)"
+
+    class B_Plane_Fighter_01_Stealth_Unarmed_F {
+        cost = 5000;
+        disallowMagazines[] = {
+            "PylonRack_Bomb_SDB_x4",
+            "PylonRack_Bomb_GBU12_x2",
+            "PylonMissile_Missile_BIM9X_x1",
+            "PylonMissile_Bomb_GBU12_x1",
+            "PylonRack_Missile_AGM_02_x1",
+            "PylonRack_Missile_AGM_02_x2",
+            "PylonMissile_Missile_AMRAAM_D_INT_x1"
+        };
+        hasAirburst = 1;
+        hasHMD = 1;
+        hasReconOptics = 1;
+        loadable[] = {0, -2.2, 1.6};
+        name = "SR-181 Scout Wasp";
+        offset[] = {0, 12, 0};
+        rearm = 420;
+        requirements[] = {"FA"};
+        spawn = "B_Plane_Fighter_01_Stealth_F";
+        variant = 1;
+
+        class Pilot: WLTurretDefaults {
+            addMagazines[] = {
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "300Rnd_CMFlare_Chaff_Magazine",
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "4Rnd_Titan_long_missiles"
+            };
+            addWeapons[] = {
+                "gatling_30mm_VTOL_02",
+                "missiles_titan",
+                "Laserdesignator_pilotCamera"
+            };
+            removeMagazines[] = {
+                "240Rnd_CMFlare_Chaff_Magazine",
+                "magazine_Fighter01_Gun20mm_AA_x450"
+            };
+            removeWeapons[] = {
+                "weapon_Fighter_Gun20mm_AA",
+                "Laserdesignator_pilotCamera"
+            };
+            turret[] = { -1 };
+        };
+    };
 
     class B_T_VTOL_01_armed_up_F {
         cost = 10000;
@@ -237,6 +287,7 @@ class FixedWing {
             "PylonRack_3Rnd_Missile_AGM_02_F"
         };
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.5};
         rearm = 420;
         requirements[] = {"A"};
 
@@ -273,6 +324,7 @@ class FixedWing {
             "PylonRack_Missile_AGM_02_x2"
         };
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.4};
         name = "A-149 Gryphon";
         rearm = 420;
         requirements[] = {"A"};
@@ -325,6 +377,7 @@ class FixedWing {
         ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
         hasAirRadar = 14000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.6};
         name = "EF/A-181 Growler";
         rearm = 420;
         requirements[] = {"A"};
@@ -351,6 +404,7 @@ class FixedWing {
         };
         cost = 26000;
         hasHMD = 1;
+        loadable[] = {0, -2.2, 1.6};
         rearm = 420;
         requirements[] = {"A"};
         threatDetection = 12000;
@@ -382,6 +436,7 @@ class FixedWing {
         cost = 28000;
         hasHMD = 1;
         hasReconOptics = 1;
+        loadable[] = {0, -2.2, 1.6};
         name = "F/A-181 Black Wasp II (Stealth/Recon)";
         rearm = 420;
         requirements[] = {"A"};

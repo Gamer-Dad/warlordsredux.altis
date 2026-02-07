@@ -65,6 +65,7 @@ class Naval {
         cost = 1500;
         description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
         hasFastTravel = 1;
+        loaded = "Land_Cargo20_brick_red_F";
         name = "Supply RHIB";
         requirements[] = {"W"};
         spawn = "I_C_Boat_Transport_02_F";
@@ -75,8 +76,8 @@ class Naval {
         description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
         detonate = 7;
         drone = 1;
-        flipLoadable = 180;
         loadable[] = {0, -2.5, 0.5};
+        loadableAngle = 180;
         name = "Bomb Boat";
         requirements[] = {"W"};
         spawn = "C_Boat_Civil_01_F";
