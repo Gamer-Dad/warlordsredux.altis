@@ -173,11 +173,13 @@ class FixedWing {
             addMagazines[] = {
                 "300Rnd_CMFlare_Chaff_Magazine",
                 "300Rnd_CMFlare_Chaff_Magazine",
-                "680Rnd_35mm_AA_shells",
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_HE_shells_Tracer_Green",
+                "250Rnd_30mm_HE_shells_Tracer_Green",
                 "4Rnd_Titan_long_missiles"
             };
             addWeapons[] = {
-                "autocannon_35mm",
+                "gatling_30mm_VTOL_02",
                 "missiles_titan",
                 "Laserdesignator_pilotCamera"
             };

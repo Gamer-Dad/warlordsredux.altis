@@ -114,6 +114,7 @@ class HeavyVehicles {
         loaded = "Land_IRMaskingCover_01_F";
         name = "AMV-7 Marshall (Recon)";
         rearm = 120;
+        showToEnemies = 2000;
         spawn = "B_APC_Wheeled_01_cannon_F";
         variant = 1;
 
@@ -145,6 +146,7 @@ class HeavyVehicles {
         aps = 3;
         capValue = 4;
         cost = 2500;
+        loaded = "Land_HBarrierWall_corridor_F";
         name = "FV-720 Mora";
         rearm = 180;
         spawn = "I_APC_tracked_03_cannon_F";

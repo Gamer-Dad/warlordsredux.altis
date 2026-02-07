@@ -19,6 +19,15 @@ class ALL {
             offset[] = {0, 5, 0};
         };
 
+        class Land_HBarrierWall_corridor_F {
+            cost = 2000;
+            demolishable = 1;
+            demolishStepTime = 5;
+            loaded = "Mortar_01_F";
+            name = "Mortar Pit";
+            offset[] = {0, 7, 0};
+        };
+
         class ForwardBaseDome {
             hideMap = 2;
             name = "Base Dome";
@@ -63,6 +72,28 @@ class ALL {
                 };
                 removeWeapons[] = {
                     "HMG_M2_Mounted"
+                };
+                turret[] = { 0 };
+            };
+        };
+
+        class Mortar_01_F {
+            cost = 500;
+            name = "Mk6 Mortar";
+            offset[] = {0, 3, 0};
+            rearm = 900;
+            spawn = "I_Mortar_01_F";
+            lifetime = 300;
+
+            class Gunner: WLTurretDefaults {
+                addMagazines[] = {
+                    "8Rnd_82mm_Mo_shells"
+                };
+                removeMagazines[] = {
+                    "8Rnd_82mm_Mo_shells",
+                    "8Rnd_82mm_Mo_Flare_white",
+                    "8Rnd_82mm_Mo_Flare_white_illumination",
+                    "8Rnd_82mm_Mo_Smoke_white"
                 };
                 turret[] = { 0 };
             };

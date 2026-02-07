@@ -12,6 +12,8 @@ class CfgWarlordSectors {
         {"Aggelochori", "MagosFactory"},
         {"Aggelochori", "USSFreedom"},
         {"AgiaTriada", "Frini"},
+        {"AgiaTriada", "GhostHotel"},
+        {"AgiaTriada", "TheaterRuins"},
         {"AgiaTriada", "ZeloranBase"},
         {"AgiosDionysios", "Alikampos"},
         {"AgiosDionysios", "Kore"},
@@ -359,7 +361,7 @@ class CfgWarlordSectors {
     };
 
     class Bomos {
-        area[] = {150, 100, 40.029, 1};
+        area[] = {150, 60, 40.029, 1};
         location[] = {2678.4, 22116.8, 0};
         name = "Bomos";
     };
@@ -449,8 +451,8 @@ class CfgWarlordSectors {
     };
 
     class Faronaki {
-        area[] = {140, 140, 65.703, 0};
-        location[] = {15020.7, 11143.6, 0};
+        area[] = {40, 160, 48.577, 1};
+        location[] = {15089.0, 11338.9, 0};
         name = "Faronaki";
     };
 
@@ -499,8 +501,8 @@ class CfgWarlordSectors {
     };
 
     class GoriFactory {
-        area[] = {100, 150, 75, 1};
-        location[] = {5430.09, 17907.7, 0};
+        area[] = {80, 125, 75, 1};
+        location[] = {5470.4, 17918.7, 0};
         name = "Gori Factory";
     };
 
@@ -511,7 +513,7 @@ class CfgWarlordSectors {
     };
 
     class Hill275 {
-        area[] = {150, 150, 128.18, 0};
+        area[] = {100, 100, 128.18, 0};
         location[] = {3558.12, 19991.2, 0};
         name = "Hill 275";
     };

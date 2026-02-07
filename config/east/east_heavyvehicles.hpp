@@ -59,6 +59,7 @@ class HeavyVehicles {
         mineClear = 2;
         name = "MSE-3 Marid (Utility)";
         rearm = 180;
+        showToEnemies = 2000;
         spawn = "O_APC_Wheeled_02_rcws_v2_F";
         variant = 1;
 

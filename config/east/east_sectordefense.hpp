@@ -187,9 +187,10 @@ class SectorDefense {
         demolishable = 3;
         demolishStepTime = 3;
         description = "";
-        dumbMine = 15;
+        dumbMine = 50;
         name = "AT Minefield";
         offset[] = {0, 3, 0};
+        showToEnemies = 200;
     };
 
     class O_Land_Bomb_Trolley_01_F {

@@ -8,7 +8,7 @@ class RotaryWing {
     }; // "Mi-290 Taru (Transport)"
 
     class O_Heli_Transport_04_F {
-        cost = 500;
+        cost = 450;
         hasFastTravel = 1;
         loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};
@@ -16,7 +16,7 @@ class RotaryWing {
     }; // "Mi-290 Taru"
 
     class O_Heli_Transport_04_medevac_F {
-        cost = 500;
+        cost = 450;
         hasFastTravel = 1;
         loadable[] = {0, -2.2, 2.2};
         offset[] = {0, 10, 0};

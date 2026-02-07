@@ -21,6 +21,7 @@ class Gear {
         demolishable = 2;
         demolishStepTime = 5;
         description = "CSAT gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
+        lifetime = 300;
         loadable[] = { 0, -1, 0.5 };
         name = "CSAT Supply Crate";
         offset[] = { 0, 3, 0};
@@ -30,6 +31,7 @@ class Gear {
     class Box_East_AmmoVeh_F {
         cost = 250;
         hasRearm = 1;
+        lifetime = 300;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
     }; // "Vehicle Ammo [CSAT]"

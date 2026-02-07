@@ -21,6 +21,7 @@ class Gear {
         demolishable = 2;
         demolishStepTime = 5;
         description = "NATO gear crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
+        lifetime = 300;
         loadable[] = { 0, -1, 0.5 };
         name = "NATO Supply Crate";
         offset[] = { 0, 3, 0};
@@ -30,6 +31,7 @@ class Gear {
     class Box_NATO_AmmoVeh_F {
         cost = 250;
         hasRearm = 1;
+        lifetime = 300;
         loadable[] = { 0, 0, 0 };
         offset[] = { 0, 3, 0};
     }; // "Vehicle Ammo [NATO]"

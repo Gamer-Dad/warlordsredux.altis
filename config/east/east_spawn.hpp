@@ -1,7 +1,7 @@
 class Spawn {
     class Land_Cargo20_brick_red_F {
         conversion = 1;
-        cost = 500;
+        cost = 1000;
         demolishable = 1;
         demolishStepTime = 3;
         loadable[] = {0, -1.9, 0.4};
@@ -17,6 +17,7 @@ class Spawn {
         hasFastTravel = 1;
         name = "Team Rally Point (CSAT)";
         offset[] = {0, 8, 0};
+        showToEnemies = 1000;
     };
 
     class O_UAV_02_F {

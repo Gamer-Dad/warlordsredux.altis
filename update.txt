@@ -2,14 +2,13 @@ Warlords Redux 2.7.2
 
 Added
 * Guided MLRS artillery.
-* Runway busters trolleys.
+* Runway busters.
 * Huron/Mohawk Supply: converts into supply box.
 * Czech Hedgehog Kit.
 * AT Minefield.
 * Scout fighters.
 * Aircraft Catapult.
-* Fighting position: deployed from select vehicles, allows fast travel.
-* Fighting position (cannon): converted from select vehicles.
+* Fighting position: deployed from select vehicles.
 
 Removed
 * Switchblade/Lancet.
@@ -27,6 +26,7 @@ Balance
 * Pawnee: countermeasure count 168->300, $2,500->3,500.
 * Hellcat: $5,000->4,200, added BIM-9X pylon racks.
 * Ghosthawk Block II: $5,500->5,000, added BIM-9X pylon racks.
+* Taru: $500->450.
 * Kajman: added R-77 pylon racks.
 * Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->4, $2,500->1,500.
 * Dragon's teeth, razor wire: changed to kits that allows chain deployment.
@@ -35,6 +35,7 @@ Balance
 * Bobcat: deploy spawnable fighting position.
 * Marshall: $2,700->2,400.
 * Marshall UP: $3,200->3,000, APS medium->heavy.
+* Mora: deploy mortar position.
 * Rhino: $4,500->4,000.
 * Rhino UP: $5,000->4,500, APS medium->heavy.
 * Kuma, Slammer II: cap value 4->6.
@@ -50,11 +51,10 @@ Balance
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Sector scan: $750->1500.
 * Recon vehicles: scanner only shown on map for enemies within 2km.
-* Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1).
+* Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1), vehicle spawns harder.
 * Destroyer start time max increased from 2->5 hours.
 * Bunker buster / bomb drone etc range 30->15m.
-* FOB limit: 3->4.
-* FOB connection multiplier: 1x->1.5x.
+* FOB limit: 3->4, connection multiplier: 1x->2x, supply cost $500->1,000.
 
 Gameplay
 * Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
@@ -68,6 +68,7 @@ Gameplay
 * Fast travel home and respawn now puts player next to flag.
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
 * Secure player: players can be secured even when manually respawned, destroys their tent if within 100m.
+* Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
 * Supply boat is now a conversion rather than deployment.
 * FOB supply crates model switched.
 * Removed winter holiday events.
@@ -77,7 +78,6 @@ Gameplay
 * Firing laser munition in loal mode reveals launcher to enemy for 120s.
 * Combined attach/detach for both flatbed and helo slingloader, now shows closest vehicle.
 * All area scanners (sector scan, fob, stronghold, recon optics) will now detect enemy mines.
-* Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
 * Added smart mines to green sector spawn pool.
 * Removed anti-heavy vehicle checks on carrier.
 * Enabled deployment of sandbags above ground level.
@@ -92,6 +92,8 @@ Gameplay
 * Unloading now loops until unloading is complete or cancelled.
 * RTB failure now shows why jet can't RTB.
 * Consolidated Blackfish logistics system under flatbed type.
+* Gear and vehicle ammo crates are despawned after 5 minutes.
+* Show kill asset in feed.
 
 Map
 * Income now based on regions captured rather than sectors.
@@ -105,7 +107,7 @@ Map
 * AAC: added link to Drimea.
 * Quarry: renamed to Pyrgos Quarry.
 * Enlarged sectors: Kalithea, Kalochori, Makrynisi, Ioannina, Rodopoli, Frini.
-* Shrink sector: Atsalis, Agios Konstantinos, Aggelochori, Oreokastro, Dump, Gori Factory.
+* Shrink sector: Atsalis, Agios Konstantinos, Aggelochori, Oreokastro, Dump, Gori Factory, Faronaki, Hill 275, Gori Factory.
 
 Bugfixes
 * Fixed entire lobby getting kicked by bad join.
@@ -125,6 +127,8 @@ Bugfixes
 * Fixed bug where green units/vehicles are detected inside of FOBs.
 * Fixed takeoff damage disabling RTB.
 * Fixed script errors when placing FOB.
+* Fixed rare bug where sector name would continue to show on screen after map is closed.
+* Fixed parachute bug on carrier, ejection seat no longer works under 50m.
 
 Performance
 * Improved sector scanning performance.
@@ -133,3 +137,4 @@ Performance
 * Overhauled unconsciousness to be reliable through heavy network traffic.
 * Improved sector marker performance/loading time.
 * Improved sector sorting performance.
+* Improved map icon performance.

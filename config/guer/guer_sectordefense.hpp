@@ -226,9 +226,10 @@ class SectorDefense {
         demolishable = 3;
         demolishStepTime = 3;
         description = "";
-        dumbMine = 15;
+        dumbMine = 50;
         name = "AT Minefield";
         offset[] = {0, 3, 0};
+        showToEnemies = 200;
     };
 
     class I_SmartMine_01_F {
@@ -249,7 +250,6 @@ class SectorDefense {
             "#(rgb,8,8,3)color(1,0,0,1)",
             "#(rgb,8,8,3)color(1,0,0,1)"
         };
-        vehicleSpawn = 1;
     };
 
     class I_Mortar_01_F {
