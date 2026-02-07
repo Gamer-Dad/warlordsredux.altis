@@ -1,4 +1,4 @@
-Warlords Redux 2.7.2
+Warlords Redux 2.8.0
 
 Added
 * Guided MLRS artillery.
