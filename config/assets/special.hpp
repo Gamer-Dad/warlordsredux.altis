@@ -10,7 +10,7 @@ class FOB_Crate: Special {
     loadable[] = {0, -1.5, 0.5};
     loadableAngle = 90;
     name = "Forward Base Supplies";
-    offset[] = {0, 3, 0};
+    offset[] = {0, 5, 0};
 };
 class Land_Cargo20_blue_F: FOB_Crate {
     side[] = {"west"};

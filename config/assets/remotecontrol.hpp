@@ -61,6 +61,7 @@ class AR6: Remote_Control {
     detonate = 1;
     fragileDrone = 1;
     offset[] = {0, 3, 0};
+    requirements[] = {"S"};
 };
 class B_UAV_06_F: AR6 {
     side[] = {"west"};
@@ -80,6 +81,7 @@ class Offroad_IED: Remote_Control {
     name = "Offroad (IED)";
     offset[] = {0, 5, 0};
     rearm = 900;
+    requirements[] = {"S"};
     variant = 1;
 };
 class B_GEN_Offroad_01_comms_F: Offroad_IED {
