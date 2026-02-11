@@ -36,8 +36,8 @@ Balance
 * Marshall: $2,700->2,400.
 * Marshall UP: $3,200->3,000, APS medium->heavy.
 * Mora: deploy mortar position.
-* Rhino: $4,500->4,000.
-* Rhino UP: $5,000->4,500, APS medium->heavy.
+* Rhino: $4,500->4,000, now loadable.
+* Rhino UP: $5,000->4,500, APS medium->heavy, now loadable.
 * Kuma, Slammer II: cap value 4->6.
 * All Slammers: integral mortar ammo 8->12.
 * Marid Utility: $2,500->1,800, deploy spawnable fighting position.
@@ -69,6 +69,7 @@ Gameplay
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
 * Secure player: players can be secured even when manually respawned, destroys their tent if within 100m.
 * Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
+* Revamped customization system to be more closely tied to Arsenal (now free). Loadouts available in gear menu.
 * Supply boat is now a conversion rather than deployment.
 * FOB supply crates model switched.
 * Removed winter holiday events.
@@ -94,6 +95,7 @@ Gameplay
 * Consolidated Blackfish logistics system under flatbed type.
 * Gear and vehicle ammo crates are despawned after 5 minutes.
 * Show kill asset in feed.
+* Added translations for more menu items.
 
 Map
 * Income now based on regions captured rather than sectors.

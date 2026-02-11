@@ -214,6 +214,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
     aps = 2;
     capValue = 3;
     cost = 2400;
+    loadable[] = {0, -0.8, 1.6};
     rearm = 180;
     side[] = {"west"};
 };
@@ -387,6 +388,8 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
     capValue = 4;
     cost = 4000;
     isLight = 1;
+    loadable[] = {0, -3.4, 1.3};
+    loadableAngle = 180;
     rearm = 240;
     side[] = {"west"};
 };
