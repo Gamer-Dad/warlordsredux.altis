@@ -164,35 +164,11 @@ class O_Mohawk_Supply: O_Mohawk {
 
 // AH-9 Pawnee
 class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
-    allowPylonMagazines[] = {
-        "PylonRack_3Rnd_LG_scalpel",
-        "PylonRack_19Rnd_Rocket_Skyfire",
-        "PylonRack_12Rnd_PGM_missiles"
-    };
-    cost = 3500;
+    cost = 2500;
     hasHMD = 1;
     loadable[] = {0, -2.2, 0.9};
     rearm = 240;
     side[] = {"west"};
-
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "PylonWeapon_300Rnd_20mm_shells",
-            "PylonWeapon_300Rnd_20mm_shells"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles",
-            "Twin_Cannon_20mm_gunpod"
-        };
-        removeMagazines[] = {
-            "5000Rnd_762x51_Belt"
-        };
-        removeWeapons[] = {
-            "M134_minigun"
-        };
-        turret[] = {-1};
-    };
 };
 
 class Hellcat: Rotary_Wing {
@@ -214,30 +190,33 @@ class Hellcat: Rotary_Wing {
     offset[] = {0, 9, 0};
     rearm = 240;
     spawn = "I_Heli_light_03_dynamicLoadout_F";
-};
 
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "2000Rnd_20mm_shells"
+        };
+        addWeapons[] = {
+            "CMFlareLauncher_Singles",
+            "Twin_Cannon_20mm_gunpod"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine",
+            "5000Rnd_762x51_Belt"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher",
+            "M134_minigun"
+        };
+        turret[] = {-1};
+    };
+};
 class B_Hellcat: Hellcat {
     side[] = {"west"};
     textures[] = {
         "\A3\Air_F_Enoch\Heli_Light_03\data\Heli_Light_03_base_EAF_CO.paa",
         "\a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_EAF_CO.paa",
         "\a3\Supplies_F_Enoch\Ammoboxes\Data\AmmoBox_signs_EAF_CA.paa"
-    };
-
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
-        removeMagazines[] = {
-            "168Rnd_CMFlare_Chaff_Magazine"
-        };
-        removeWeapons[] = {
-            "CMFlareLauncher"
-        };
-        turret[] = {-1};
     };
 };
 class I_Hellcat: Hellcat {
@@ -252,7 +231,7 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
         "PylonRack_12Rnd_PGM_missiles",
         "PylonMissile_Missile_KH58_INT_x1",
         "PylonMissile_Missile_AA_R73_x1",
-        "PylonMissile_Missile_AA_R77_x1"
+        {"PylonMissile_Missile_AA_R77_x1", {"PylonLeft1", "PylonRight1"}}
     };
     ammoOverrides[] = {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}

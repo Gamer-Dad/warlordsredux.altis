@@ -20,12 +20,14 @@ class Land_Cargo20_brick_red_F: FOB_Crate {
 };
 
 class Team_Rally_Point: Special {
+    conversion = 1;
     cost = 5000;
     demolishable = 1;
     demolishStepTime = 3;
     hasFastTravel = 1;
     name = "Team Rally Point";
     offset[] = {0, 8, 0};
+    singleton = 1;
     showToEnemies = 1000;
 };
 class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {
@@ -174,7 +176,7 @@ class Land_TentHangar_V1_F: Forward_Base_Dome {};
 
 class Crater_Debris: Special {
     cost = 200;
-    obstacle = 2;
+    obstacle = 3;
     demolishable = 1;
     demolishStepTime = 40;
     lifetime = 1200;

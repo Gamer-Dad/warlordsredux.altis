@@ -231,16 +231,18 @@ class O_T_VTOL_02_infantry_dynamicLoadout_F: Fixed_Wing {
         "PylonRack_12Rnd_PGM_missiles",
         "PylonMissile_Missile_KH58_INT_x1",
         "PylonMissile_Missile_AA_R73_x1",
+        "PylonMissile_Missile_AA_R77_x1",
+        "PylonRack_3Rnd_Missile_AGM_02_F",
         "PylonRack_Missile_BIM9X_x1",
         "PylonRack_Missile_BIM9X_x2",
         "PylonFuelTank_UH80"
     };
     ammoOverrides[] = {
-        {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}}
+        {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
     cost = 12000;
     ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
-    hasAirRadar = 8000;
     hasAirRearm = 1;
     hasGunnerAction = 1;
     hasHMD = 1;

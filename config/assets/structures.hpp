@@ -125,6 +125,7 @@ class Land_CzechHedgehog_01_new_F: Defensive_Kits {
     cost = 3000;
     loaded = "Land_CzechHedgehog_01_new_F";
     name = "Czech Hedgehog Kit";
+    obstacle = 2;
     side[] = {"west", "east", "guer"};
 };
 

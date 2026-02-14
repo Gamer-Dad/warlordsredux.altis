@@ -23,8 +23,6 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
-        consumption = 3;
-        dazzleable = 1;
     };
 
     // class WLProjectiles_Arty: WLProjectile {
@@ -228,7 +226,6 @@ class WLProjectilesConfig {
         aps = 1;
         camera = 1;
         consumption = 3;
-        dazzleable = 1;
         laser = 1;
     };
 

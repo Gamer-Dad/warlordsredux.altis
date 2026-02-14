@@ -16,17 +16,17 @@ Removed
 * Caeser bomb.
 
 Balance
-* Xian: added BIM-9X pylon racks.
+* Xian: added BIM-9X pylon racks, added laser guided munitions, removed aesa radar.
 * Gryphon Interceptor: added 10km aesa radar.
 * Black Wasp: removed HARM from all internal bay pylons.
 * Black Wasp Stealth: removed HARM from all internal bay center pylons.
 * Shikra: removed KH58 ARMs from all internal bay pylons.
 * Shikra Stealth: removed KH58 ARMs from all internal bay center pylons.
 * Removed ECM jammers from rotary wing.
-* Pawnee: countermeasure count 168->300, $2,500->3,500.
-* Hellcat: $5,000->4,200, added BIM-9X pylon racks.
+* Pawnee: removed HMD, removed 20mm cannon, removed countermeasures, removed all additional pylon options.
+* Hellcat: $5,000->4,200, added BIM-9X pylon racks, added 20mm cannon.
 * Ghosthawk Block II: $5,500->5,000, added BIM-9X pylon racks.
-* Taru: $500->450.
+* Taru: $500->400.
 * Kajman: added R-77 pylon racks.
 * Smart mines: separated out munitions with independent ammo pools for AP (6) and AT (2), no longer dazzleable, changed model, added sound, limit 2->4, $2,500->1,500.
 * Dragon's teeth, razor wire: changed to kits that allows chain deployment.
@@ -47,11 +47,12 @@ Balance
 * HEMMT/Tempest transport/medical: deploy spawnable fighting position.
 * Huron, Mohawk: deploy spawnable fighting position.
 * Artillery, MLRS: deploy camo net.
-* Team rally point: demolition time 10->3s, removed limit.
+* Team rally point: demolition time 10->3s.
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
-* Sector scan: $750->1500.
+* Capture speed now scale proportionally, not by points.
+* Sector scan: $750->2000, 10 second delay.
 * Recon vehicles: scanner only shown on map for enemies within 2km.
-* Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 1), vehicle spawns harder.
+* Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 2), vehicle spawns harder.
 * Destroyer start time max increased from 2->5 hours.
 * Bunker buster / bomb drone etc range 30->15m.
 * FOB limit: 3->4, connection multiplier: 1x->2x, supply cost $500->1,000.
@@ -67,7 +68,7 @@ Gameplay
 * Fast travel frontline (for sector): button on map picks closest FT point (tent, vehicle, or SL/squad) to sector stronghold or center (if no stronghold present).
 * Fast travel home and respawn now puts player next to flag.
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
-* Secure player: players can be secured even when manually respawned, destroys their tent if within 100m.
+* Secure player: securing downed player destroys their tent if within 100m, force respawn destroys nearby tent automatically.
 * Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
 * Revamped customization system to be more closely tied to Arsenal (now free). Loadouts available in gear menu.
 * Supply boat is now a conversion rather than deployment.
@@ -76,7 +77,7 @@ Gameplay
 * Deployable items now show display name in action menu.
 * Moved demolition action down priority list.
 * Removed fast travel contested.
-* Firing laser munition in loal mode reveals launcher to enemy for 120s.
+* Firing laser munition in loal mode reveals launcher to enemy for 120s, no longer dazzleable.
 * Combined attach/detach for both flatbed and helo slingloader, now shows closest vehicle.
 * All area scanners (sector scan, fob, stronghold, recon optics) will now detect enemy mines.
 * Added smart mines to green sector spawn pool.
@@ -96,9 +97,11 @@ Gameplay
 * Gear and vehicle ammo crates are despawned after 5 minutes.
 * Show kill asset in feed.
 * Added translations for more menu items.
+* Disabled removing stronghold from map if sector is target selected by enemy team.
 
 Map
 * Income now based on regions captured rather than sectors.
+* Capture power based on regional control difference (max: 2x).
 * Region capture, not sector capture, now gives income. Regions with more sectors give more income when captured.
 * Atsalis: added tower.
 * Livadi: added beachfront apartment building.
@@ -131,6 +134,12 @@ Bugfixes
 * Fixed script errors when placing FOB.
 * Fixed rare bug where sector name would continue to show on screen after map is closed.
 * Fixed parachute bug on carrier, ejection seat no longer works under 50m.
+* Fixed vehicle paradropping issue over water.
+* Fixed imbalance sometimes locking players out.
+* Fixed players not being able to unlock/delete FOB after rejoin.
+* Fixed exploit where jets could be repeatedly spawned from same sector.
+* Fixed boat circle showing up as 200m not 300m.
+* Fixed cluster munitions spawning in Hammer.
 
 Performance
 * Improved sector scanning performance.
@@ -140,3 +149,5 @@ Performance
 * Improved sector marker performance/loading time.
 * Improved sector sorting performance.
 * Improved map icon performance.
+* Auto clean up: supply crate (300s), vehicle ammo crate (300s), tents on runway (60s).
+* Preload large structures.

@@ -17,6 +17,7 @@ class O_Marid_Spandrel: Marid {
     };
     cost = 1200;
     name = "MSE-3 Marid (ATGM)";
+    side[] = {"east"};
     variant = 1;
 
     class Gunner: WLTurretDefaults {
@@ -127,6 +128,7 @@ class O_Marid_Utility: Utility_Vehicle {
     description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
     loadable[] = {0, -0.8, 1.65};
     name = "MSE-3 Marid (Utility)";
+    side[] = {"east"};
     spawn = "O_APC_Wheeled_02_rcws_v2_F";
     variant = 1;
 

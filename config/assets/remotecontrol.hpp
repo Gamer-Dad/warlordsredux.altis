@@ -20,14 +20,15 @@ class O_UGV_02_Demining_F: UAGS_Demining {
 class UGV: Remote_Control {
     cost = 150;
     loadable[] = {-0.4, -1, 1.1};
-    loaded = "B_crate_F";
     offset[] = {0, 5, 0};
     rearm = 120;
 };
 class B_UGV_01_F: UGV {
+    loaded =  "B_Faction_Crate";
     side[] = {"west"};
 };
 class O_UGV_01_F: UGV {
+    loaded =  "O_Faction_Crate";
     side[] = {"east"};
 };
 
