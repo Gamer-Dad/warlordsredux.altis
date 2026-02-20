@@ -50,7 +50,7 @@ class B_Integral_Mortar: Special {
     name = "Integral Mortar System";
 };
 
-class Land_BagFence_Long_F: Special {
+class Land_BagFence_Round_F: Special {
     cost = 200;
     demolishable = 1;
     demolishStepTime = 1;
@@ -69,21 +69,12 @@ class Land_BagBunker_Small_F: Special {
     offset[] = {0, 5, 0};
 };
 
-class Land_HBarrierWall_corridor_F: Special {
-    cost = 2000;
-    demolishable = 1;
-    demolishStepTime = 5;
-    loaded = "Light_Mortar";
-    name = "Mortar Pit";
-    offset[] = {0, 7, 0};
-};
-
 class Static_HMG_Shielded: Special {
     cost = 500;
     name = "M2 HMG .50 (Raised)";
     offset[] = {0, 3, 0};
     rearm = 180;
-    spawn = "I_HMG_02_high_F"
+    spawn = "I_HMG_02_high_F";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -105,7 +96,8 @@ class Static_HMG_Shielded: Special {
 
 class Light_Mortar: Special {
     cost = 500;
-    name = "Mk6 Mortar";
+    loaded = "Land_SandbagBarricade_01_hole_F";
+    name = "Mk6 Mortar (Light Load)";
     offset[] = {0, 3, 0};
     rearm = 900;
     spawn = "I_Mortar_01_F";

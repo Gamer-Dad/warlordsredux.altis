@@ -329,7 +329,6 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
 
 // A-143 Buzzard (CAS)
 class Buzzard_CAS: Fixed_Wing {
-    cost = 13000;
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.6};
     name = "A-143 Buzzard (CAS)";
@@ -357,6 +356,7 @@ class O_Buzzard_CAS: Buzzard_CAS {
         {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
+    cost = 13000;
     description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
     disallowMagazines[] = {
         "PylonRack_Missile_AGM_02_x1",
@@ -371,6 +371,7 @@ class O_Buzzard_CAS: Buzzard_CAS {
 
 class I_Buzzard_CAS: Buzzard_CAS {
     aircraftSpawn = 1;
+    cost = 8000;
     side[] = {"guer"};
 };
 
@@ -472,7 +473,7 @@ class O_Gryphon_Interceptor: Gryphon {
 
 class I_Gryphon: Gryphon {
     aircraftSpawn = 1;
-    cost = 23000;
+    cost = 12000;
 };
 
 class B_Gryphon: Gryphon {

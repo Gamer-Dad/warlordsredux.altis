@@ -3,15 +3,6 @@ class Structures {
     hideMap = 1;
 };
 
-// Semi Circle Sand bags
-class Land_BagFence_Round_F: Structures {
-    cost = 50;
-    demolishable = 1;
-    demolishStepTime = 5;
-    offset[] = {0, 2, 0};
-    side[] = {"west", "east", "guer"};
-};
-
 // H-barrier
 class Land_HBarrier_5_F: Structures {
     cost = 50;
@@ -104,7 +95,22 @@ class Defensive_Kits: Structures {
     offset[] = {0, 5, 0};
 };
 
-// Razor Wire Fence Kit
+class Land_BagFence_Long_F: Defensive_Kits {
+    cost = 500;
+    loaded = "Land_BagFence_Long_F";
+    name = "Sandbag Wall Kit";
+    offset[] = {0, 3, 0};
+    side[] = {"west", "east", "guer"};
+};
+
+class Land_SandbagBarricade_01_hole_F: Defensive_Kits {
+    cost = 750;
+    loaded = "Land_SandbagBarricade_01_hole_F";
+    name = "Sandbag Barricade Kit";
+    offset[] = {0, 4, 0};
+    side[] = {"west", "east", "guer"};
+};
+
 class Land_New_WiredFence_10m_F: Defensive_Kits {
     cost = 2500;
     loaded = "Land_New_WiredFence_10m_F";
@@ -112,7 +118,6 @@ class Land_New_WiredFence_10m_F: Defensive_Kits {
     side[] = {"west", "east", "guer"};
 };
 
-// Dragon's Teeth Kit
 class Land_DragonsTeeth_01_4x2_new_F: Defensive_Kits {
     cost = 2800;
     loaded = "Land_DragonsTeeth_01_4x2_new_F";
@@ -120,7 +125,6 @@ class Land_DragonsTeeth_01_4x2_new_F: Defensive_Kits {
     side[] = {"west", "east", "guer"};
 };
 
-// Czech Hedgehog Kit
 class Land_CzechHedgehog_01_new_F: Defensive_Kits {
     cost = 3000;
     loaded = "Land_CzechHedgehog_01_new_F";
@@ -129,7 +133,6 @@ class Land_CzechHedgehog_01_new_F: Defensive_Kits {
     side[] = {"west", "east", "guer"};
 };
 
-// Aircraft Catapult
 class Land_CraneRail_01_F: Structures {
     cost = 5000;
     demolishable = 3;

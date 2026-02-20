@@ -50,12 +50,13 @@ Balance
 * Team rally point: demolition time 10->3s.
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Capture speed now scale proportionally, not by points.
-* Sector scan: $750->2000, 10 second delay.
+* Sector scan: $750->2000, 10s init delay, 300->480s cooldown.
 * Recon vehicles: scanner only shown on map for enemies within 2km.
-* Green capture modifier 2.5->3, except when reserves depleted (modifier becomes 2), vehicle spawns harder.
+* Green capture modifier 2.5->4, except when reserves depleted (modifier becomes 2), vehicle spawns harder.
 * Destroyer start time max increased from 2->5 hours.
 * Bunker buster / bomb drone etc range 30->15m.
 * FOB limit: 3->4, connection multiplier: 1x->2x, supply cost $500->1,000.
+* Reduced green jet destruction reward.
 
 Gameplay
 * Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
@@ -81,6 +82,7 @@ Gameplay
 * Combined attach/detach for both flatbed and helo slingloader, now shows closest vehicle.
 * All area scanners (sector scan, fob, stronghold, recon optics) will now detect enemy mines.
 * Added smart mines to green sector spawn pool.
+* Jet spawns for air sectors lowered to random 1-3, fly higher.
 * Removed anti-heavy vehicle checks on carrier.
 * Enabled deployment of sandbags above ground level.
 * Option in settings to not spawn with UAV terminal.
@@ -140,6 +142,7 @@ Bugfixes
 * Fixed exploit where jets could be repeatedly spawned from same sector.
 * Fixed boat circle showing up as 200m not 300m.
 * Fixed cluster munitions spawning in Hammer.
+* Fixed rebalanced players keeping vehicles.
 
 Performance
 * Improved sector scanning performance.

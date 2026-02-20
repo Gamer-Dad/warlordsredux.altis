@@ -225,7 +225,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
 class Mora: Heavy_Vehicles {
     aps = 3;
     capValue = 4;
-    loaded = "Land_HBarrierWall_corridor_F";
+    loaded = "Light_Mortar";
     name = "FV-720 Mora";
     rearm = 180;
     spawn = "I_APC_tracked_03_cannon_F";

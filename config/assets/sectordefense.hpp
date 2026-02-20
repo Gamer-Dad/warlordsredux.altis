@@ -212,8 +212,8 @@ class I_Smart_Mine: Smart_Mine {
 
 class AT_Minefield: Sector_Defense {
     cost = 2000;
-    demolishable = 3;
-    demolishStepTime = 3;
+    demolishable = 1;
+    demolishStepTime = 4;
     description = "Anti-tank minefield that contains hidden anti-tank mines.";
     dumbMine = 50;
     loadable[] = {-0.4, -1, 0.8};
