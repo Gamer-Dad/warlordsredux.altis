@@ -370,13 +370,13 @@ class B_Hunter_AFV: Hunter_Upgraded {
     };
 };
 
-// Device truck
 class Device_Truck: Light_Vehicle {
     aps = 4;
     capValue = 1;
-    cost = 1500;
-    ewRange = 1;
-    name = "Dazzler Device Truck";
+    cost = 750;
+    description = "Provides electronic warfare support to friendly units. Signal boosts are 2x stronger.";
+    ewBoost = 1;
+    name = "Electronic Warfare Truck";
     rearm = 120;
     spawn = "O_Truck_03_device_F";
 };

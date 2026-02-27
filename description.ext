@@ -1,6 +1,5 @@
 #include "src\includes.hpp"
 #include "requisitions.hpp"
-#include "config\customization.hpp"
 #include "config\projectiles.hpp"
 #include "config\sectors.hpp"
 #include "config\whitelist.hpp"

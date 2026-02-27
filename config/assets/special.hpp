@@ -40,9 +40,11 @@ class Land_MedicalTent_01_CSAT_brownhex_generic_open_F: Team_Rally_Point {
 // Recon UAV
 class B_UAV_02_F: Special {
     cost = 1000;
+    fragileDrone = 1;
 };
 class O_UAV_02_F: Special {
     cost = 1000;
+    fragileDrone = 1;
 };
 
 class B_Integral_Mortar: Special {
@@ -122,7 +124,6 @@ class Static_Cannon: Special {
     capValue = 2;
     cost = 3000;
     conversion = 1;
-    drone = 1;
     hasRearm = 1;
     immobile = 1;
     loaded = "Land_IRMaskingCover_01_F";

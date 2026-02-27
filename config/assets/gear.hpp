@@ -4,12 +4,13 @@ class Gear {
 
 class Faction_Crate: Gear {
     cost = 200;
-    demolishable = 2;
+    demolishable = 1;
     demolishStepTime = 5;
-    description = "Supply crate that contains various AT weapons, ammo, and explosives. Can be used to restock infantry units for a price.";
+    description = "Supply crate that can be used to restock infantry weapons or rearm vehicles. Automatically cleaned up. Use other gear containers for longer-term purposes.";
+    hasRearm = 1;
     lifetime = 300;
     loadable[] = {0, -1, 0.5};
-    name = "Supply Crate";
+    name = "Resupply Crate";
     offset[] = {0, 3, 0};
     spawn = "VirtualReammoBox_camonet_F";
 };
@@ -56,24 +57,10 @@ class O_Faction_Crate: Faction_Crate {
     side[] = {"east"};
 };
 
-class Vehicle_Ammo: Gear {
-    cost = 250;
-    hasRearm = 1;
-    lifetime = 300;
-    loadable[] = {0, 0, 0};
-    offset[] = {0, 3, 0};
-};
-class Box_NATO_AmmoVeh_F: Vehicle_Ammo {
-    side[] = {"west"};
-};
-class Box_East_AmmoVeh_F: Vehicle_Ammo {
-    side[] = {"east"};
-};
-class Box_IND_AmmoVeh_F: Vehicle_Ammo {
-    side[] = {"guer"};
-};
-
 class Huron_Pod: Gear {
+    container[] = {
+        { "Toolkit", 1 }
+    };
     cost = 500;
     loadable[] = {0, -1.5, 0.5};
     offset[] = {0, 8, 0};
@@ -97,6 +84,9 @@ class B_Slingload_01_Medevac_F: Huron_Pod {
 };
 
 class Taru_Pod: Gear {
+    container[] = {
+        { "Toolkit", 1 }
+    };
     cost = 500;
     loadable[] = {0, -1.8, 0.4};
     offset[] = {0, 8, 0};

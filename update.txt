@@ -14,6 +14,7 @@ Removed
 * Switchblade/Lancet.
 * UGV bomb drone.
 * Caeser bomb.
+* EW tower.
 
 Balance
 * Xian: added BIM-9X pylon racks, added laser guided munitions, removed aesa radar.
@@ -41,12 +42,14 @@ Balance
 * Kuma, Slammer II: cap value 4->6.
 * All Slammers: integral mortar ammo 8->12.
 * Marid Utility: $2,500->1,800, deploy spawnable fighting position.
+* Device truck: $1,500->$750, helps with new EW mechanic.
 * Angara, Angara-K, Futura: cap value 4->6.
 * Recon APCs: deploy IR camo net.
 * UGVs: deploy gear crate.
 * HEMMT/Tempest transport/medical: deploy spawnable fighting position.
 * Huron, Mohawk: deploy spawnable fighting position.
 * Artillery, MLRS: deploy camo net.
+* Spawn bunker: $2,000->500.
 * Team rally point: demolition time 10->3s.
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Capture speed now scale proportionally, not by points.
@@ -57,6 +60,7 @@ Balance
 * Bunker buster / bomb drone etc range 30->15m.
 * FOB limit: 3->4, connection multiplier: 1x->2x, supply cost $500->1,000.
 * Reduced green jet destruction reward.
+* Increased spawn truck driver reward $20->100.
 
 Gameplay
 * Green sector reserves: green infantry will respawn until sector reserve pool (2x original infantry garrison) is depleted.
@@ -71,6 +75,7 @@ Gameplay
 * Upgrade FOB: can now upgrade FOB to forward airbase with high supply cost, allows deployment of planes.
 * Secure player: securing downed player destroys their tent if within 100m, force respawn destroys nearby tent automatically.
 * Mine clear: Bobcat, Utility Marid can now clear mines with a mine clearing charge.
+* Electronic warfare: new electronic warfare minigame, removed EW network and devices, simplified spectrum jammer.
 * Revamped customization system to be more closely tied to Arsenal (now free). Loadouts available in gear menu.
 * Supply boat is now a conversion rather than deployment.
 * FOB supply crates model switched.
@@ -100,6 +105,8 @@ Gameplay
 * Show kill asset in feed.
 * Added translations for more menu items.
 * Disabled removing stronghold from map if sector is target selected by enemy team.
+* Combined vehicle ammo/faction supply crate functionality.
+* Friendly fire timeout decreased 1200->909s.
 
 Map
 * Income now based on regions captured rather than sectors.

@@ -35,6 +35,7 @@ class O_UGV_01_F: UGV {
 // AR-2
 class AR2: Remote_Control {
     cost = 500;
+    fragileDrone = 1;
     hasHMD = 1;
     offset[] = {0, 3, 0};
 };

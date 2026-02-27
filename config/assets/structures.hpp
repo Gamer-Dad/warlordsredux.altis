@@ -66,25 +66,13 @@ class Land_Cargo_Tower_V4_F: Structures {
 
 // Spawn Bunker
 class Land_BagBunker_01_large_green_F: Structures {
-    cost = 2000;
+    cost = 500;
     demolishable = 3;
     hasFastTravel = 1;
     hideMap = 0;
     name = "Spawn Bunker";
     offset[] = {0, 10, 0};
     requirements[] = {"F"};
-    side[] = {"west", "east", "guer"};
-};
-
-class Land_MobileRadar_01_radar_F: Structures {
-    cost = 2500;
-    demolishable = 5;
-    description = "EW Tower can be used to jam enemy autonomous assets and provide EW support to your team. Its position is revealed to the enemy when it is active.";
-    ewRange = 2;
-    hideMap = 0;
-    name = "EW Tower";
-    offset[] = {0, 6, 0};
-    // This is not loadable. It will break initialization code to load this.
     side[] = {"west", "east", "guer"};
 };
 
