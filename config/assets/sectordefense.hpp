@@ -183,31 +183,16 @@ class B_Smart_Mine: Smart_Mine {
     name = "XM205 Smart Mine System";
     side[] = {"west"};
     spawn = "B_UGV_01_F";
-    textures[] = {
-        "#(rgb,8,8,3)color(0,0,1,1)",
-        "#(rgb,8,8,3)color(0,0,1,1)",
-        "#(rgb,8,8,3)color(0,0,1,1)"
-    };
 };
 class O_Smart_Mine: Smart_Mine {
     name = "PTKM-2 Smart Mine System";
     side[] = {"east"};
     spawn = "O_UGV_01_F";
-    textures[] = {
-        "#(rgb,8,8,3)color(1,0,0,1)",
-        "#(rgb,8,8,3)color(1,0,0,1)",
-        "#(rgb,8,8,3)color(1,0,0,1)"
-    };
 };
 class I_Smart_Mine: Smart_Mine {
     name = "XM205 Smart Mine System";
     side[] = {"guer"};
     spawn = "I_UGV_01_F";
-    textures[] = {
-        "#(rgb,8,8,3)color(1,0,0,1)",
-        "#(rgb,8,8,3)color(1,0,0,1)",
-        "#(rgb,8,8,3)color(1,0,0,1)"
-    };
 };
 
 class AT_Minefield: Sector_Defense {
@@ -222,27 +207,6 @@ class AT_Minefield: Sector_Defense {
     side[] = {"west", "east", "guer"};
     showToEnemies = 200;
     spawn = "Land_Sign_MinesDanger_English_F";
-};
-
-class Runway_Bomb_Trolley: Sector_Defense {
-    cost = 3500;
-    demolishable = 1;
-    demolishStepTime = 10;
-    drone = 1;
-    isRunwayBuster = 1;
-    loadable[] = {-0.4, -1, -0.1};
-    offset[] = {0, 3, 0};
-    spawn = "Land_Bomb_Trolley_01_F";
-};
-class B_Runway_Bomb_Trolley: Runway_Bomb_Trolley {
-    description = "BLU-107 Durandal Trolley can be used to deploy anti-runway bombs to crater enemy airstrips. Once armed, it will explode after 60 seconds.";
-    name = "BLU-107 Durandal Trolley";
-    side[] = {"west"};
-};
-class O_Runway_Bomb_Trolley: Runway_Bomb_Trolley {
-    description = "The KAB-1500 Trolley can be used to deploy anti-runway bombs to crater enemy airstrips. Once armed, it will explode after 60 seconds.";
-    name = "KAB-1500 Trolley";
-    side[] = {"east"};
 };
 
 class Mortar: Sector_Defense {

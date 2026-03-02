@@ -48,6 +48,7 @@ class WLProjectilesConfig {
         };
         aps = 3;
         camera = 1;
+        immunity = 2500;
         sam = 1;
         speed = 1.1;
     };
@@ -184,10 +185,31 @@ class WLProjectilesConfig {
 
     class WLProjectile_DumbBunkerBuster: WLProjectile {
         ammo[] = {
-            "Bo_Mk82_BLU"
+            "Bomb_03_BLU_F",
+            "Bomb_04_PR_F"
         };
         aps = 3;
-        bunker = 13;
+        camera = 1;
+        bunker = 8;
+        remote = 1;
+    };
+
+    class WLProjectile_RunwayBomb: WLProjectile {
+        ammo[] = {
+            "Bo_Mk82"
+        };
+        aps = 3;
+        camera = 1;
+        runway = 8;
+    };
+
+    class WLProjectile_RunwayRocket: WLProjectile {
+        ammo[] = {
+            "Rocket_03_HE_F",                   // Tratnyr HE
+            "Rocket_04_HE_F"                    // Shrieker HE
+        };
+        aps = 3;
+        runway = 1;
     };
 
     class WLProjectile_TVGuidedHeavy: WLProjectile {
@@ -375,9 +397,7 @@ class WLProjectilesConfig {
             "M_AT",                             // DAR
             "R_80mm_HE",                        // Skyfire
             "Rocket_03_AP_F",                   // Tratnyr AP
-            "Rocket_03_HE_F",                   // Tratnyr HE
-            "Rocket_04_AP_F",                   // Shrieker AP
-            "Rocket_04_HE_F"                    // Shrieker HE
+            "Rocket_04_AP_F"                    // Shrieker AP
         };
         aps = 1;
         consumption = 1;

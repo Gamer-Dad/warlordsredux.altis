@@ -2,7 +2,6 @@ Warlords Redux 2.8.0
 
 Added
 * Guided MLRS artillery.
-* Runway busters.
 * Huron/Mohawk Supply: converts into supply box.
 * Czech Hedgehog Kit.
 * AT Minefield.
@@ -15,6 +14,7 @@ Removed
 * UGV bomb drone.
 * Caeser bomb.
 * EW tower.
+* Strider (SAM).
 
 Balance
 * Xian: added BIM-9X pylon racks, added laser guided munitions, removed aesa radar.
@@ -50,6 +50,7 @@ Balance
 * Huron, Mohawk: deploy spawnable fighting position.
 * Artillery, MLRS: deploy camo net.
 * Spawn bunker: $2,000->500.
+* Cargo tower: $450->3,500.
 * Team rally point: demolition time 10->3s.
 * Removed capture value modifier limit 3->unlimited, now applied to vehicle cap power.
 * Capture speed now scale proportionally, not by points.
@@ -58,6 +59,8 @@ Balance
 * Green capture modifier 2.5->4, except when reserves depleted (modifier becomes 2), vehicle spawns harder.
 * Destroyer start time max increased from 2->5 hours.
 * Bunker buster / bomb drone etc range 30->15m.
+* MK82, Tratnyr HE, and Shrieker HE are now runway busters, can be used to crater enemy airfields.
+* Spartan/SAAMI notch immunity: 1500->2500m.
 * FOB limit: 3->4, connection multiplier: 1x->2x, supply cost $500->1,000.
 * Reduced green jet destruction reward.
 * Increased spawn truck driver reward $20->100.
@@ -107,6 +110,8 @@ Gameplay
 * Disabled removing stronghold from map if sector is target selected by enemy team.
 * Combined vehicle ammo/faction supply crate functionality.
 * Friendly fire timeout decreased 1200->909s.
+* Re-enabled FOB paradrop.
+* Some obstacles that were previously invincible can now be run over by vehicles.
 
 Map
 * Income now based on regions captured rather than sectors.

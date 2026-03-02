@@ -37,11 +37,14 @@ class B_T_VTOL_01_vehicle_F: Blackfish {
 
 // Scout Superiority Fighter
 class Scout_Stealth: Fixed_Wing {
+    allowPylonMagazines[] = {
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonMissile_1Rnd_Mk82_F"
+    };
     cost = 5000;
     disallowMagazines[] = {
         "PylonRack_Bomb_SDB_x4",
         "PylonRack_Bomb_GBU12_x2",
-        "PylonMissile_Missile_BIM9X_x1",
         "PylonMissile_Bomb_GBU12_x1",
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2",
@@ -52,10 +55,9 @@ class Scout_Stealth: Fixed_Wing {
         "PylonMissile_Bomb_KAB250_x1",
         "PylonMissile_Missile_KH58_INT_x1",
         "PylonMissile_Missile_AA_R77_INT_x1",
-        "PylonMissile_Missile_AA_R73_x1",
         "PylonMissile_Missile_AA_R77_x1"
     };
-    hasAirburst = 1;
+    hasAirRadar = 8000;
     hasHMD = 1;
     hasReconOptics = 1;
     offset[] = {0, 12, 0};
@@ -74,14 +76,10 @@ class B_Scout_Wasp: Scout_Stealth {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
             "300Rnd_CMFlare_Chaff_Magazine",
-            "250Rnd_30mm_HE_shells_Tracer_Green",
-            "250Rnd_30mm_HE_shells_Tracer_Green",
-            "250Rnd_30mm_HE_shells_Tracer_Green",
-            "4Rnd_Titan_long_missiles"
+            "4Rnd_70mm_SAAMI_missiles"
         };
         addWeapons[] = {
-            "gatling_30mm_VTOL_02",
-            "missiles_titan",
+            "missiles_SAAMI",
             "Laserdesignator_pilotCamera"
         };
         removeMagazines[] = {
@@ -106,14 +104,10 @@ class O_Scout_Shikra: Scout_Stealth {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
             "300Rnd_CMFlare_Chaff_Magazine",
-            "250Rnd_30mm_HE_shells_Tracer_Green",
-            "250Rnd_30mm_HE_shells_Tracer_Green",
-            "250Rnd_30mm_HE_shells_Tracer_Green",
-            "4Rnd_Titan_long_missiles"
+            "4Rnd_70mm_SAAMI_missiles"
         };
         addWeapons[] = {
-            "gatling_30mm_VTOL_02",
-            "missiles_titan",
+            "missiles_SAAMI",
             "Laserdesignator_pilotCamera",
             "CMFlareLauncher_Singles"
         };

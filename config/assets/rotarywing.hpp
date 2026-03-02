@@ -165,6 +165,9 @@ class O_Mohawk_Supply: O_Mohawk {
 // AH-9 Pawnee
 class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
     cost = 2500;
+    disallowMagazines[] = {
+        "PylonRack_7Rnd_Rocket_04_HE_F"
+    };
     hasHMD = 1;
     loadable[] = {0, -2.2, 0.9};
     rearm = 240;

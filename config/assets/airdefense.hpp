@@ -67,46 +67,9 @@ class Light_SAM: Air_Defense {
     variant = 1;
 };
 
-class B_Strider_SAM: Light_SAM {
-    ammoOverrides[] = {
-        {"ammo_Missile_AMRAAM_C", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}},
-        {"ammo_Missile_AMRAAM_D", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}}
-    };
-    loadable[] = {0, -0.8, 1.8};
-    name = "Strider (SAM)";
-    side[] = {"west"};
-    spawn = "I_MRAP_03_gmg_F";
-    textures[] = {
-        "a3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
-        "a3\data_f\vehicles\turret_co.paa"
-    };
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "PylonMissile_Missile_AMRAAM_D_x1",
-            "PylonMissile_Missile_AMRAAM_D_x1",
-            "PylonMissile_Missile_AMRAAM_D_x1"
-        };
-        addWeapons[] = {
-            "weapon_AMRAAMLauncher"
-        };
-        removeMagazines[] = {
-            "96Rnd_40mm_G_belt"
-        };
-        removeWeapons[] = {
-            "GMG_40mm"
-        };
-        turret[] = {0};
-    };
-};
-
-class O_Nyx_SAM: Light_SAM {
-    ammoOverrides[] = {
-        {"ammo_Missile_AA_R77", {"ammo_Missile_AA_R77_ground", "R-77-ZRK"}}
-    };
+class Nyx_SAM: Light_SAM {
     loadable[] = {0, -1.5, 1.2};
     name = "AWC Nyx (SAM)";
-    side[] = {"east"};
     spawn = "I_LT_01_scout_F";
     textures[] = {
         "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
@@ -114,6 +77,37 @@ class O_Nyx_SAM: Light_SAM {
         "A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa",
         "A3\armor_f\data\cage_olive_co.paa"
     };
+};
+class B_Strider_SAM: Nyx_SAM {
+    ammoOverrides[] = {
+        {"ammo_Missile_AMRAAM_C", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}},
+        {"ammo_Missile_AMRAAM_D", {"ammo_Missile_AMRAAM_ground", "SL-AMRAAM"}}
+    };
+    side[] = {"west"};
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1"
+        };
+        addWeapons[] = {
+            "weapon_AMRAAMLauncher",
+            "Laserdesignator_vehicle"
+        };
+        removeMagazines[] = {
+            "Laserbatteries"
+        };
+        removeWeapons[] = {
+            "Laserdesignator_vehicle"
+        };
+        turret[] = {0};
+    };
+};
+class O_Nyx_SAM: Nyx_SAM {
+    ammoOverrides[] = {
+        {"ammo_Missile_AA_R77", {"ammo_Missile_AA_R77_ground", "R-77-ZRK"}}
+    };
+    side[] = {"east"};
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
