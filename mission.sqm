@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=4055;
+		nextID=4063;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=169;
+		nextID=171;
 	};
 	class Camera
 	{
-		pos[]={18660.484,25.585497,8248.3828};
-		dir[]={0.98133403,-0.11952589,0.15139155};
-		up[]={0.11819287,0.99276316,0.018229136};
-		aside[]={0.15248689,-4.6400237e-07,-0.98842198};
+		pos[]={10655.537,212.69899,20425.496};
+		dir[]={0.97436059,-0.14014964,-0.17670271};
+		up[]={0.13794388,0.99012119,-0.025015291};
+		aside[]={-0.17846294,-3.5652192e-07,-0.98405021};
 	};
 };
 binarizationWanted=0;
@@ -35,13 +35,16 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Exp_Commercial_MultistoryBuilding_03",
-	"A3_Structures_F_Training"
+	"A3_Structures_F_Training",
+	"A3_Structures_F_Enoch_Military_Barracks",
+	"A3_Structures_F_Argo_Military_Bunkers",
+	"A3_Structures_F_Enoch_Military_Radar"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=8;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -84,6 +87,20 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item6
+		{
+			className="A3_Structures_F_Enoch_Military";
+			name="Arma 3 Contact Platform - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="A3_Structures_F_Argo";
+			name="Arma 3 Malden - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -94,7 +111,9 @@ class DynamicSimulation
 dlcs[]=
 {
 	"Jets",
-	"Expansion"
+	"Expansion",
+	"Enoch",
+	"Argo"
 };
 randomSeed=3694325;
 class ScenarioData
@@ -128,7 +147,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=125;
+		items=128;
 		class Item0
 		{
 			dataType="Logic";
@@ -3812,7 +3831,7 @@ class Mission
 			};
 			id=4053;
 			type="Land_MultistoryBuilding_03_F";
-			atlOffset=0.25700188;
+			atlOffset=0.25699997;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3904,6 +3923,166 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item125
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10691.95,208.71674,20396.562};
+				angles[]={0,0.21825342,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=4056;
+			type="Land_ControlTower_01_F";
+			atlOffset=0.69798279;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="DoorStates";
+					expression="['init',_this,_value] call bis_fnc_3DENAttributeDoorStates;";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=170;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item126
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10618.469,199.24831,20388.193};
+				angles[]={0,6.1634908,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4059;
+			type="Land_Bunker_01_big_F";
+			atlOffset=1.5390167;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item127
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10797.888,216.17487,20404.189};
+				angles[]={0,1.353084,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4062;
+			type="Land_MobileRadar_01_radar_F";
+			atlOffset=-1.5258789e-05;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="Rotation_Speed";
+					expression="_this animateSource ['Radar_Rotation',1e6-1,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

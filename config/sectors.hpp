@@ -7,6 +7,9 @@ class CfgWarlordSectors {
         {"Abdera", "AmmolofiAirfield"},
         {"Abdera", "Galati"},
         {"Abdera", "Syrta"},
+        {"AbderaTower", "AmmolofiAirfield"},
+        {"AbderaTower", "Galati"},
+        {"AbderaTower", "Ifestiona"},
         {"Aggelochori", "DieselPowerPlant"},
         {"Aggelochori", "Kavala"},
         {"Aggelochori", "MagosFactory"},
@@ -54,6 +57,7 @@ class CfgWarlordSectors {
         {"AlmyraOutskirts", "SaltFlats"},
         {"AmmolofiAirfield", "Atsalis"},
         {"AmmolofiAirfield", "Frini"},
+        {"AmmolofiAirfield", "KyraNera"},
         {"AmmolofiAirfield", "ThronosCastle"},
         {"Anthrakia", "Charkia"},
         {"Anthrakia", "Rodopoli"},
@@ -119,6 +123,7 @@ class CfgWarlordSectors {
         {"Feres", "TheMaziBouys"},
         {"FeresHill", "TheMaziBouys"},
         {"Frini", "Ifestiona"},
+        {"Frini", "TonosBay"},
         {"Galati", "Ifestiona"},
         {"Galati", "Koroni"},
         {"Galati", "Orino"},
@@ -166,6 +171,7 @@ class CfgWarlordSectors {
         {"KoreFactory", "Negades"},
         {"Koroni", "LakkaFactory"},
         {"Koroni", "Orino"},
+        {"KyraNera", "TonosBay"},
         {"Lakka", "LakkaFactory"},
         {"Lakka", "Neochori"},
         {"Lakka", "Stavros"},
@@ -236,6 +242,13 @@ class CfgWarlordSectors {
         area[] = {100, 110, 77.82, 1};
         location[] = {9439.2, 20249.5, 0};
         name = "Abdera";
+    };
+
+    class AbderaTower {
+        area[] = {150, 125, 3.862, 0};
+        location[] = {10691.3, 20411.7, 0};
+        name = "Abdera Tower";
+        services[] = {"H"};
     };
 
     class Aggelochori {
@@ -597,6 +610,12 @@ class CfgWarlordSectors {
         name = "Koroni";
     };
 
+    class KyraNera {
+        area[] = {90, 40, 167.735, 0};
+        location[] = {9712.0, 22295.0, 0};
+        name = "Kyra Nera";
+    };
+
     class Lakka {
         area[] = {275, 200, 65.703, 0};
         location[] = {12376.5, 15658.2, 0};
@@ -940,6 +959,12 @@ class CfgWarlordSectors {
         area[] = {150, 100, 30.257, 0};
         location[] = {4864.5, 21926.2, 0};
         name = "Thronos Castle";
+    };
+
+    class TonosBay {
+        area[] = {100, 50, 31.618, 1};
+        location[] = {12177.3, 22770.0, 0};
+        name = "Tonos Bay";
     };
 
     class Topolia {

@@ -95,7 +95,7 @@ class I_E_Offroad_01_comms_F: Offroad_IED {
 
 // KH-3A Fenghuang
 class O_T_UAV_04_CAS_F: Remote_Control {
-    cost = 5500;
+    cost = 4500;
     hasHMD = 1;
     loadable[] = {0, -1.0, 0};
     rearm = 300;
@@ -119,22 +119,22 @@ class O_T_UAV_04_CAS_F: Remote_Control {
     };
 };
 
-class Scout_Drone: Remote_Control {
-    cost = 6500;
+class Predator_Drone: Remote_Control {
+    cost = 5500;
     hasHMD = 1;
     loadable[] = {0, -1.0, 0};
     rearm = 300;
     requirements[] = {"H"};
 };
 // Greyhawk
-class B_UAV_02_dynamicLoadout_F: Scout_Drone {
+class B_UAV_02_dynamicLoadout_F: Predator_Drone {
     allowPylonMagazines[] = {
         "PylonRack_12Rnd_PGM_missiles"
     };
     side[] = {"west"};
 };
 // K40 Ababil-3
-class O_UAV_02_dynamicLoadout_F: Scout_Drone {
+class O_UAV_02_dynamicLoadout_F: Predator_Drone {
     allowPylonMagazines[] = {
         "PylonRack_12Rnd_PG_missiles",
         "PylonRack_12Rnd_PGM_missiles"
@@ -148,7 +148,7 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
         "PylonRack_12Rnd_PGM_missiles",
         "PylonRack_1Rnd_AAA_missiles"
     };
-    cost = 7000;
+    cost = 6000;
     hasHMD = 1;
     loadable[] = {0, -2.2, 0.1};
     rearm = 300;

@@ -171,7 +171,7 @@ class Crater_Debris: Special {
     cost = 200;
     obstacle = 3;
     demolishable = 1;
-    demolishStepTime = 40;
+    demolishStepTime = 25;
     lifetime = 1200;
     name = "Debris";
 };
