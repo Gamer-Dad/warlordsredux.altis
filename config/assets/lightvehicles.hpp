@@ -64,6 +64,7 @@ class LSV_Armed: Light_Vehicle {
 
 // Prowler (HMG)
 class B_LSV_01_armed_F: LSV_Armed {
+    loaded = "B_Static_Designator_01_F";
     side[] = {"west"};
 
     class Gunner: WLTurretDefaults {
@@ -85,6 +86,7 @@ class B_LSV_01_armed_F: LSV_Armed {
 
 // Qilin (Minigun)
 class O_LSV_02_armed_F: LSV_Armed {
+    loaded = "O_Static_Designator_02_F";
     side[] = {"east"};
 
     class Gunner: WLTurretDefaults {

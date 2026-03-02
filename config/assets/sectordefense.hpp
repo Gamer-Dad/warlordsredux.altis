@@ -2,6 +2,20 @@ class Sector_Defense {
     category = "Sector Defense";
 };
 
+// Remote Designator
+class Static_Designator: Sector_Defense {
+    cost = 50;
+    loadable[] = {0, -2.5, -0.3};
+    offset[] = {0, 3, 0};
+    rearm = 60;
+};
+class B_Static_Designator_01_F: Static_Designator {
+    side[] = {"west"};
+};
+class O_Static_Designator_02_F: Static_Designator {
+    side[] = {"east"};
+};
+
 // Mk30 HMG .50
 class Static_HMG: Sector_Defense {
     cost = 150;

@@ -38,8 +38,7 @@ class B_T_VTOL_01_vehicle_F: Blackfish {
 // Scout Superiority Fighter
 class Scout_Stealth: Fixed_Wing {
     allowPylonMagazines[] = {
-        "PylonRack_Missile_BIM9X_x2",
-        "PylonMissile_1Rnd_Mk82_F"
+        "PylonRack_Missile_BIM9X_x2"
     };
     cost = 5000;
     disallowMagazines[] = {
@@ -71,23 +70,20 @@ class B_Scout_Wasp: Scout_Stealth {
     name = "SR-181 Scout Wasp";
     side[] = {"west"};
     spawn = "B_Plane_Fighter_01_Stealth_F";
+    requirements[] = {"A"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "4Rnd_70mm_SAAMI_missiles"
+            "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
-            "missiles_SAAMI",
             "Laserdesignator_pilotCamera"
         };
         removeMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine",
-            "magazine_Fighter01_Gun20mm_AA_x450"
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
-            "weapon_Fighter_Gun20mm_AA",
             "Laserdesignator_pilotCamera"
         };
         turret[] = {-1};
@@ -103,20 +99,16 @@ class O_Scout_Shikra: Scout_Stealth {
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "4Rnd_70mm_SAAMI_missiles"
+            "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
-            "missiles_SAAMI",
             "Laserdesignator_pilotCamera",
             "CMFlareLauncher_Singles"
         };
         removeMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine",
-            "magazine_Fighter02_Gun30mm_AA_x180"
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
-            "weapon_Fighter_Gun_30mm",
             "Laserdesignator_pilotCamera",
             "CMFlareLauncher"
         };
