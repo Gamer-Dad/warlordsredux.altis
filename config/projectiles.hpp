@@ -53,15 +53,25 @@ class WLProjectilesConfig {
         speed = 1.1;
     };
 
-    class WLProjectile_RadarSAM: WLProjectile {
+    class WLProjectile_Centurion: WLProjectile {
         ammo[] = {
-            "ammo_Missile_rim162",              // Centurion
+            "ammo_Missile_rim162"               // Centurion
+        };
+        aps = 3;
+        camera = 1;
+        immunity = 3500;
+        sam = 1;
+        speed = 1.1;
+    };
+
+    class WLProjectile_LRSAM: WLProjectile {
+        ammo[] = {
             "ammo_Missile_s750",                // Rhea
             "ammo_Missile_mim145"               // Defender
         };
         aps = 3;
         camera = 1;
-        immunity = 3500;
+        immunity = 3800;
         sam = 1;
         speed = 1.1;
     };

@@ -57,7 +57,7 @@ class CfgWarlordSectors {
         {"AlmyraOutskirts", "SaltFlats"},
         {"AmmolofiAirfield", "Atsalis"},
         {"AmmolofiAirfield", "Frini"},
-        {"AmmolofiAirfield", "KyraNera"},
+        {"AmmolofiAirfield", "KryaNera"},
         {"AmmolofiAirfield", "ThronosCastle"},
         {"Anthrakia", "Charkia"},
         {"Anthrakia", "Rodopoli"},
@@ -171,7 +171,7 @@ class CfgWarlordSectors {
         {"KoreFactory", "Negades"},
         {"Koroni", "LakkaFactory"},
         {"Koroni", "Orino"},
-        {"KyraNera", "TonosBay"},
+        {"KryaNera", "TonosBay"},
         {"Lakka", "LakkaFactory"},
         {"Lakka", "Neochori"},
         {"Lakka", "Stavros"},
@@ -610,10 +610,10 @@ class CfgWarlordSectors {
         name = "Koroni";
     };
 
-    class KyraNera {
+    class KryaNera {
         area[] = {90, 40, 167.735, 0};
         location[] = {9712.0, 22295.0, 0};
-        name = "Kyra Nera";
+        name = "Krya Nera";
     };
 
     class Lakka {

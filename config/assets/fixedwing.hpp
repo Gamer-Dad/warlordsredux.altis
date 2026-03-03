@@ -70,7 +70,6 @@ class B_Scout_Wasp: Scout_Stealth {
     name = "SR-181 Scout Wasp";
     side[] = {"west"};
     spawn = "B_Plane_Fighter_01_Stealth_F";
-    requirements[] = {"A"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
