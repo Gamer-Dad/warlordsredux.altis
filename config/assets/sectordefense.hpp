@@ -133,6 +133,20 @@ class O_static_AT_F: Static_AT {
     side[] = {"east"};
 };
 
+class AT_Minefield: Sector_Defense {
+    cost = 500;
+    demolishable = 1;
+    demolishStepTime = 4;
+    description = "Anti-tank minefield that contains hidden anti-tank mines.";
+    dumbMine = 1;
+    loadable[] = {-0.4, -1, 0.8};
+    name = "Minefield (AT)";
+    offset[] = {0, 3, 0};
+    side[] = {"west", "east", "guer"};
+    showToEnemies = 200;
+    spawn = "Land_Sign_MinesDanger_English_F";
+};
+
 // Mk30 HMG Auto Turret
 class Static_HMG_Auto: Sector_Defense {
     cost = 500;
@@ -207,20 +221,6 @@ class I_Smart_Mine: Smart_Mine {
     name = "XM205 Smart Mine System";
     side[] = {"guer"};
     spawn = "I_UGV_01_F";
-};
-
-class AT_Minefield: Sector_Defense {
-    cost = 2000;
-    demolishable = 1;
-    demolishStepTime = 4;
-    description = "Anti-tank minefield that contains hidden anti-tank mines.";
-    dumbMine = 50;
-    loadable[] = {-0.4, -1, 0.8};
-    name = "AT Minefield";
-    offset[] = {0, 3, 0};
-    side[] = {"west", "east", "guer"};
-    showToEnemies = 200;
-    spawn = "Land_Sign_MinesDanger_English_F";
 };
 
 class Mortar: Sector_Defense {

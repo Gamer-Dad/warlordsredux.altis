@@ -558,13 +558,14 @@ class O_MBT_04_command_F: Angara {
 };
 
 // T-100X Futura
-class O_MBT_02_railgun_F {
+class O_MBT_02_railgun_F: Heavy_Vehicles {
     aps = 3;
     capValue = 6;
     cost = 15000;
     hasHMD = 1;
     hasReconOptics = 1;
     rearm = 300;
+    side[] = {"east"};
 };
 
 class Howitzer_Artillery: Heavy_Vehicles {

@@ -13,10 +13,26 @@ class FOB_Crate: Special {
     offset[] = {0, 5, 0};
 };
 class Land_Cargo20_blue_F: FOB_Crate {
-    side[] = {"west"};
+    loaded = "B_Supply_Boat";
 };
 class Land_Cargo20_brick_red_F: FOB_Crate {
-    side[] = {"east"};
+    loaded = "O_Supply_Boat";
+};
+
+// Supply RHIB
+class Supply_Boat: Naval {
+    conversion = 1;
+    cost = 1500;
+    description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
+    hasFastTravel = 1;
+    name = "Supply RHIB";
+    spawn = "I_C_Boat_Transport_02_F";
+};
+class B_Supply_Boat: Supply_Boat {
+    loaded = "Land_Cargo20_blue_F";
+};
+class O_Supply_Boat: Supply_Boat {
+    loaded = "Land_Cargo20_brick_red_F";
 };
 
 class Team_Rally_Point: Special {
@@ -172,6 +188,7 @@ class Crater_Debris: Special {
     obstacle = 3;
     demolishable = 1;
     demolishStepTime = 25;
+    hideMap = 1;
     lifetime = 1200;
     name = "Debris";
 };

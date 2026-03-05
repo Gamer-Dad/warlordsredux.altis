@@ -215,7 +215,7 @@ class O_APC_Tracked_02_AA_F: SPAAG {
 // Mk49 Spartan
 class Spartan: Air_Defense {
     cost = 4800;
-    description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 1.5 km.";
+    description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 2.5 km.";
     hasHMD = 1;
     loadable[] = {0, -2, 0.8};
     name = "Mk49 Spartan";
@@ -236,7 +236,7 @@ class O_Spartan: Spartan {
 // Defender/Rhea
 class LR_AA: Air_Defense {
     cost = 5500;
-    description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5 km.";
+    description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.8 km.";
     hasHMD = 1;
     loadable[] = {0, 0, 1};
     offset[] = {0, 6, 0};

@@ -1,4 +1,4 @@
-Warlords Redux 2.8.1
+Warlords Redux 2.8.0 Patch 0
 
 Balance
 * PvP bonus: 2->1.75x.
@@ -14,3 +14,30 @@ Bugfixes
 * Corrected typo: Krya Nera.
 * Green stronghold destruction no longer destroys building and cause FF.
 * Scout superiority fighter now has uniform requirements across teams.
+
+Warlords Redux 2.8.0 Patch 1
+
+Balance
+* Reduced cost and demolition reward of AT minefield from $2,000->500.
+* Reduced region income per minute by 25%.
+* Reduced all vehicle kill rewards by 16%.
+* Added slingloader to Xi'an.
+
+Bugfixes
+* Fixed film grain effect when dying in UAV while jammed, faster logic.
+* Updated air defense description for ranges.
+* Fixed green strongholds disappearing on sector re-pick.
+* Fixed repeated squad update errors when other interfaces are open.
+* Fixed combat air patrol not working after 15 seconds.
+* Conscription no longer prompts players if they are within 500m of designate priority point.
+* Disabled non-functioning conscript avoidance mechanic.
+* Removed ewar signal decay.
+* Fixed exploit allowing deployment of Huron Supply in FOB.
+* Fixed exploit allowing installation of deployables from dead assets.
+* Disabled spawning Supply RHIBs; FOB supplies can be converted into boats, which can be converted back into supplies.
+* Hide debris icon on map unless owned, optimized.
+* Region control area display now shows cap contribution.
+* Skip conditional checks for designate team priority.
+* Exclude initial 45s from combat air patrol duration.
+* Fixed bug where Futura could not be purchased on Opfor.
+* Removed buggy red tint in EW interface for enemy hits.

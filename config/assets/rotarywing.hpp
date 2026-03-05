@@ -123,6 +123,7 @@ class B_Heli_Transport_03_F: Transport_Helicopter {
 class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
     loaded = "Land_Cargo20_blue_F";
     name = "CH-67 Huron Supply";
+    requirements[] = {"H", "S"};
     spawn = "B_Heli_Transport_03_F";
     variant = 1;
 };
@@ -158,6 +159,7 @@ class O_Mohawk: Transport_Helicopter {
 class O_Mohawk_Supply: O_Mohawk {
     loaded = "Land_Cargo20_brick_red_F";
     name = "CH-49 Mohawk Supply";
+    requirements[] = {"H", "S"};
     spawn = "I_Heli_Transport_02_F";
     variant = 1;
 };

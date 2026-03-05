@@ -231,6 +231,7 @@ class O_T_VTOL_02_infantry_dynamicLoadout_F: Fixed_Wing {
     hasAirRearm = 1;
     hasGunnerAction = 1;
     hasHMD = 1;
+    hasSling = 1;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 2.4};
     rearm = 300;

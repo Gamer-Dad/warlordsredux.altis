@@ -57,22 +57,6 @@ class I_Boat_Armed_01_minigun_F: Speedboat {
     side[] = {"guer"};
 };
 
-// Supply RHIB
-class Supply_Boat: Naval {
-    cost = 1500;
-    description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
-    hasFastTravel = 1;
-    loaded = "Land_Cargo20_blue_F";
-    name = "Supply RHIB";
-    spawn = "I_C_Boat_Transport_02_F";
-};
-class B_Supply_Boat: Supply_Boat {
-    side[] = {"west"};
-};
-class O_Supply_Boat: Supply_Boat {
-    side[] = {"east"};
-};
-
 // Bomb Boat
 class Bomb_Boat: Naval {
     cost = 1750;
