@@ -119,6 +119,57 @@ class O_T_UAV_04_CAS_F: Remote_Control {
     };
 };
 
+// Scout Stealth Helo
+class Scout_Stealth_Helo: Remote_Control {
+    cost = 5000;
+    disallowMagazines[] = {
+        "PylonRack_12Rnd_PG_missiles",
+        "PylonRack_12Rnd_missiles",
+        "PylonRack_1Rnd_LG_scalpel",
+        "PylonRack_3Rnd_LG_scalpel",
+        "PylonRack_7Rnd_Rocket_04_AP_F"
+    };
+    hasAirRadar = 4000;
+    hasHMD = 1;
+    hasReconOptics = 1;
+    loadable[] = {0, -2.2, 0.1};
+    rearm = 300;
+    requirements[] = {"FA"};
+    spawn = "B_T_UAV_03_dynamicLoadout_F";
+    variant = 1;
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        addWeapons[] = {
+            "CMFlareLauncher_Singles"
+        };
+        removeMagazines[] = {
+            "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
+};
+
+class B_Scout_Falcon: Scout_Stealth_Helo {
+    allowPylonMagazines[] = {
+        "PylonRack_Missile_BIM9X_x2"
+    };
+    name = "RQ-12 Scout Falcon";
+    side[] = {"west"};
+};
+class O_Scout_Falcon: Scout_Stealth_Helo {
+    allowPylonMagazines[] = {
+        "PylonMissile_Missile_AA_R73_x1"
+    };
+    name = "SY-12 Meyu Arrow";
+    side[] = {"east"};
+};
+
 class Predator_Drone: Remote_Control {
     cost = 5500;
     hasHMD = 1;

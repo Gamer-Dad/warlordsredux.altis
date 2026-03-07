@@ -166,12 +166,22 @@ class O_Mohawk_Supply: O_Mohawk {
 
 // AH-9 Pawnee
 class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
-    cost = 3500;
+    cost = 7500;
     hasHMD = 1;
     hasReconOptics = 1;
     loadable[] = {0, -2.2, 0.9};
     rearm = 240;
     side[] = {"west"};
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "5000Rnd_762x51_Belt"
+        };
+        removeWeapons[] = {
+            "M134_minigun"
+        };
+        turret[] = {-1};
+    };
 };
 
 class Hellcat: Rotary_Wing {
