@@ -1,20 +1,26 @@
-Warlords Redux 2.8.0 Patch 3
+Warlords Redux 2.8.0 Patch 4
 
-Balance
-* Stronghold fortification speeds up fortification by 5x->15x.
-* Team with more controlled area gets an additional cap modifier point.
-* Scout superiority jet replaced with scout stealth helo.
-* Pawnee: removed minigun, cost: $3,500->7,500 to emphasize its recon role.
-* Show air defense operator reason for missile failure.
-* Removed green smart mine spawn, increased random AT minefield spawn max 4->5.
-* Reduced region control income by 25%.
+Gameplay
+* Removed strategy option: camouflage.
+* Added option to disable AI fast traveling with player on map.
+* Dragon teeth kit cost: $2,800->1,500.
+* Czech hedgehog kit cost: $3,000->2,000.
 
 Bugfixes
-* Air wreck cleanup more consistent (10 minutes). Wreck timers now show on map.
-* Map now shows region area.
-* Removed sector blinking and non-functional under-attack sounds.
-* Delay loadout on first spawn to debug join BE error.
-* Fixed green stronghold destructing when multiple players are simultaneously demolishing it.
-* Fixed carrier respawning infantry in water or above bridge.
-* Optimized side action broadcasts.
-* Optimized capture power calculations, less frequent.
+* Fixed money sign script errors.
+* Fixed JIP script errors around finding FT vehicles in sector.
+* Fixed log errors regarding non-existent repair localization key.
+* Default player character to empty survivor to reduce initial add magazine calls.
+* Fixed wrecks being moved shown on map for everyon.
+* Fixed sandbags and fighting positions being immune to vehicle ramming.
+* Fixed players clustering around flag when fast traveling home, while base is under attack.
+* Fixed bulldozer bonus not applying FOB/stronghold demolition.
+* Fixed dead planes continuing to fly.
+* Green stronghold health and minefield count now properly take sector size into account.
+* Fixed unopposed capture by low cap power instantly reaching maximum capture speed.
+* Fixed wrong direction arrow keys in capture display.
+* Fixed infantry players getting double attack/defend reward.
+* Fixed players in green stronghold getting more attack/defend reward.
+* Fixed simple objects counting against vehicle asset limit.
+* Fixed non-functional conscription SL check.
+* Optimized performance of AT minefields.

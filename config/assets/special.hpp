@@ -72,6 +72,7 @@ class Land_BagFence_Round_F: Special {
     cost = 200;
     demolishable = 1;
     demolishStepTime = 1;
+    fragile = 200;
     lifetime = 180;
     name = "Temporary Sandbag Wall";
     offset[] = {0, 3, 0};
@@ -81,6 +82,7 @@ class Land_BagBunker_Small_F: Special {
     cost = 1500;
     demolishable = 1;
     demolishStepTime = 1;
+    fragile = 5000;
     hasFastTravel = 1;
     loaded = "Static_HMG_Shielded";
     name = "Fighting Position";

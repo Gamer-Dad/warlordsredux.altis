@@ -397,7 +397,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3812;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -426,7 +426,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3814;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -455,7 +455,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3816;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -484,7 +484,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3818;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -513,7 +513,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3820;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -542,7 +542,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3822;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -571,7 +571,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3824;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -600,7 +600,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3826;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -629,7 +629,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3828;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -658,7 +658,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3830;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -687,7 +687,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3832;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -716,7 +716,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3834;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -745,7 +745,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3836;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -774,7 +774,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3838;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -803,7 +803,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3840;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -832,7 +832,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3842;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -861,7 +861,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3844;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -890,7 +890,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3846;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -919,7 +919,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3848;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -948,7 +948,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3850;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -977,7 +977,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3852;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1006,7 +1006,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3854;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1035,7 +1035,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3856;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1064,7 +1064,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3858;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1093,7 +1093,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3860;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1122,7 +1122,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3862;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1151,7 +1151,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3864;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1180,7 +1180,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3866;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1209,7 +1209,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3868;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1238,7 +1238,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3870;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1267,7 +1267,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3872;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1296,7 +1296,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3874;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1325,7 +1325,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3876;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1354,7 +1354,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3878;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1383,7 +1383,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3880;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1412,7 +1412,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3882;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1441,7 +1441,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3884;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1470,7 +1470,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3886;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1499,7 +1499,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3888;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1528,7 +1528,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3890;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1557,7 +1557,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3892;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1586,7 +1586,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3894;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1615,7 +1615,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3896;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1644,7 +1644,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3898;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1673,7 +1673,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3900;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1702,7 +1702,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3902;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1731,7 +1731,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3904;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1760,7 +1760,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3906;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1789,7 +1789,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3908;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1818,7 +1818,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3910;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1847,7 +1847,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3912;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1876,7 +1876,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3914;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1905,7 +1905,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3916;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1934,7 +1934,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3918;
-					type="B_Soldier_TL_F";
+					type="B_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1963,7 +1963,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3920;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -1992,7 +1992,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3922;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2021,7 +2021,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3924;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2050,7 +2050,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3926;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2079,7 +2079,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3928;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2108,7 +2108,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3930;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2137,7 +2137,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3932;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2166,7 +2166,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3934;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2195,7 +2195,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3936;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2224,7 +2224,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3938;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2253,7 +2253,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3940;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2282,7 +2282,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3942;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2311,7 +2311,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3944;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2340,7 +2340,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3946;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2369,7 +2369,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3948;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2398,7 +2398,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3950;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2427,7 +2427,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3952;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2456,7 +2456,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3954;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2485,7 +2485,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3956;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2514,7 +2514,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3958;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2543,7 +2543,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3960;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2572,7 +2572,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3962;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2601,7 +2601,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3964;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2630,7 +2630,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3966;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2659,7 +2659,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3968;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2688,7 +2688,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3970;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2717,7 +2717,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3972;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2746,7 +2746,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3974;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2775,7 +2775,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3976;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2804,7 +2804,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3978;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2833,7 +2833,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3980;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2862,7 +2862,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3982;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2891,7 +2891,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3984;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2920,7 +2920,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3986;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2949,7 +2949,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3988;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -2978,7 +2978,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3990;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3007,7 +3007,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3992;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3036,7 +3036,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3994;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3065,7 +3065,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3996;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3094,7 +3094,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3998;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3123,7 +3123,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4000;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3152,7 +3152,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4002;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3181,7 +3181,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4004;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3210,7 +3210,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4006;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3239,7 +3239,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4008;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3268,7 +3268,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4010;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3297,7 +3297,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4012;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3326,7 +3326,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4014;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3355,7 +3355,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4016;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3384,7 +3384,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4018;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3413,7 +3413,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4020;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3442,7 +3442,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4022;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3471,7 +3471,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4024;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3500,7 +3500,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4026;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3529,7 +3529,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4028;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3558,7 +3558,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4030;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3587,7 +3587,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4032;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3616,7 +3616,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4034;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3645,7 +3645,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4036;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3674,7 +3674,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4038;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3703,7 +3703,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4040;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3732,7 +3732,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4042;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3761,7 +3761,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4044;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes
@@ -3790,7 +3790,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4046;
-					type="O_Soldier_TL_F";
+					type="O_Survivor_F";
 				};
 			};
 			class Attributes

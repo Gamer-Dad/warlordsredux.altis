@@ -141,9 +141,10 @@ class AT_Minefield: Sector_Defense {
     dumbMine = 1;
     loadable[] = {-0.4, -1, 0.8};
     name = "Minefield (AT)";
+    obstacle = 2;
     offset[] = {0, 3, 0};
     side[] = {"west", "east", "guer"};
-    showToEnemies = 200;
+    showToEnemies = 400;
     spawn = "Land_Sign_MinesDanger_English_F";
 };
 

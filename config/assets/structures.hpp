@@ -103,14 +103,14 @@ class Land_HBarrierWall6_F: Defensive_Kits {
 };
 
 class Land_DragonsTeeth_01_4x2_new_F: Defensive_Kits {
-    cost = 2800;
+    cost = 1500;
     loaded = "Land_DragonsTeeth_01_4x2_new_F";
     name = "Dragon's Teeth Kit";
     side[] = {"west", "east", "guer"};
 };
 
 class Land_CzechHedgehog_01_new_F: Defensive_Kits {
-    cost = 3000;
+    cost = 2000;
     loaded = "Land_CzechHedgehog_01_new_F";
     name = "Czech Hedgehog Kit";
     obstacle = 2;
