@@ -571,7 +571,6 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
 class Howitzer_Artillery: Heavy_Vehicles {
     aps = 1;
     capValue = 4;
-    cost = 20000;
     disallowMagazines[] = {
         "2Rnd_155mm_Mo_Cluster",
         "2Rnd_155mm_Mo_Cluster_O"
@@ -580,11 +579,13 @@ class Howitzer_Artillery: Heavy_Vehicles {
 };
 // M4 Scorcher
 class B_MBT_01_arty_F: Howitzer_Artillery {
+    cost = 25000;
     loaded = "CamoNet_BLUFOR_big_F";
     side[] = {"west"};
 };
 // 2S9 Sochor
 class O_MBT_02_arty_F: Howitzer_Artillery {
+    cost = 20000;
     loaded = "CamoNet_OPFOR_big_F";
     side[] = {"east"};
 };
@@ -592,7 +593,6 @@ class O_MBT_02_arty_F: Howitzer_Artillery {
 class MRLS: Heavy_Vehicles {
     aps = 1;
     capValue = 4;
-    cost = 20000;
     disallowMagazines[] = {
         "12Rnd_230mm_rockets_cluster"
     };
@@ -600,6 +600,7 @@ class MRLS: Heavy_Vehicles {
 };
 // M5 Sandstorm MRLS
 class B_MBT_01_mlrs_F: MRLS {
+    cost = 25000;
     loaded = "CamoNet_BLUFOR_big_F";
     side[] = {"west"};
 };
@@ -608,7 +609,7 @@ class B_MLRS_Guided: B_MBT_01_mlrs_F {
     ammoOverrides[] = {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "GLSDB (Laser-Guided)"}}
     };
-    cost = 24000;
+    cost = 30000;
     hasHMD = 1;
     name = "M5 Sandstorm II";
     spawn = "B_MBT_01_mlrs_F";

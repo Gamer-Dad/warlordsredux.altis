@@ -65,7 +65,7 @@ class O_UAV_02_F: Special {
 
 class B_Integral_Mortar: Special {
     cost = -1;
-    name = "Integral Mortar System";
+    name = "Soltam CO2 Vehicle-Mounted Mortar";
 };
 
 class Land_BagFence_Round_F: Special {

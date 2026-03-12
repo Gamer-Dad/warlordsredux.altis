@@ -123,7 +123,7 @@ class B_Heli_Transport_03_F: Transport_Helicopter {
 class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
     loaded = "Land_Cargo20_blue_F";
     name = "CH-67 Huron Supply";
-    requirements[] = {"H", "S"};
+    requirements[] = {"H", "NF"};
     spawn = "B_Heli_Transport_03_F";
     variant = 1;
 };
@@ -135,9 +135,9 @@ class O_Mohawk: Transport_Helicopter {
     side[] = {"east"};
     spawn = "I_Heli_Transport_02_F";
     textures[] = {
-        "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_1_DAHOMAN_CO.paa",
-        "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_2_DAHOMAN_CO.paa",
-        "A3\Air_F_Beta\Heli_Transport_02\Data\Skins\Heli_Transport_02_3_DAHOMAN_CO.paa",
+        "src\img\camo\mohawk1.jpg",
+        "src\img\camo\mohawk2.jpg",
+        "src\img\camo\mohawk3.jpg",
         "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
     };
     class Pilot: WLTurretDefaults {
@@ -159,14 +159,14 @@ class O_Mohawk: Transport_Helicopter {
 class O_Mohawk_Supply: O_Mohawk {
     loaded = "Land_Cargo20_brick_red_F";
     name = "CH-49 Mohawk Supply";
-    requirements[] = {"H", "S"};
+    requirements[] = {"H", "NF"};
     spawn = "I_Heli_Transport_02_F";
     variant = 1;
 };
 
 // AH-9 Pawnee
 class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
-    cost = 7500;
+    cost = 7000;
     hasHMD = 1;
     hasReconOptics = 1;
     loadable[] = {0, -2.2, 0.9};
@@ -174,6 +174,32 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "5000Rnd_762x51_Belt"
+        };
+        removeWeapons[] = {
+            "M134_minigun"
+        };
+        turret[] = {-1};
+    };
+};
+class O_Beluga: B_Heli_Light_01_dynamicLoadout_F {
+    cost = 3500;
+    name = "Ka-9 Beluga";
+    side[] = {"east"};
+    spawn = "B_Heli_Light_01_dynamicLoadout_F";
+    textures[] = {
+        "src\img\camo\beluga.jpg"
+    };
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_20mm_shells",
+            "300Rnd_20mm_shells"
+        };
+        addWeapons[] = {
+            "gatling_20mm"
+        };
         removeMagazines[] = {
             "5000Rnd_762x51_Belt"
         };
@@ -336,7 +362,8 @@ class B_Heli_Attack_01_pylons_dynamicLoadout_F: B_Heli_Attack_01_dynamicLoadout_
         {"PylonRack_Missile_BIM9X_x2", {"PylonExternalLeft", "PylonExternalRight", "PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
         {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
         {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
-        {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}}
+        {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
+        {"PylonRack_Missile_AMRAAM_D_x1", {"PylonExternalLeft", "PylonExternalRight"}}
     };
     cost = 13000;
     name = "AH-99 Blackfoot Block II";

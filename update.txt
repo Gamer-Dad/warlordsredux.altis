@@ -1,26 +1,43 @@
-Warlords Redux 2.8.0 Patch 4
+Warlords Redux 2.8.0 Patch 5
 
 Gameplay
-* Removed strategy option: camouflage.
-* Added option to disable AI fast traveling with player on map.
-* Dragon teeth kit cost: $2,800->1,500.
-* Czech hedgehog kit cost: $3,000->2,000.
+* Added AMRAAM option to Blackfoot II exterior pylons.
+* Reduced territory win bonus from +1x->+0.5x.
+* Show player rating on scoreboard.
+* Added option for AI follow defaults.
+* Combat air patrol is now expanding circle instead of 45s grace period.
+* Changed conscription prompt to a timed prompt.
+* Allow paradrop to contested sector.
+* Enemies nearby restriction reduced range 150->75m.
+* Added Beluga to Opfor.
+* Changed default Mohawk texture.
+* Sandstorm: $20,000->25,000.
+* Sandstorm II: $24,000->30,000.
+* Scorcher: $20,000->25,000.
+* Hammer: $10,000->22,000.
+* Pawnee: $7,500->7,000.
+
+Map
+* Reduced "effective" area of the three largest water sectors by 50%.
+* Agios Petros: removed.
+* Nifi: removed.
+* Ekali: increased size a lot (22).
+* Faronaki: increased size a lot (19).
+* Kalithea: decreased size a lot (15).
+* Katalaki: reshaped (13).
+* Makrynisi: increased size slightly (6).
+* Pyrgos: increased size slightly (25).
+* Rodopoli: decreased size a lot (14).
+* Katalaki-Sagonisi: connection removed.
+* Molos Airfield-Sideras: connection added.
+* Neochori-Sagonisi: connection added.
 
 Bugfixes
-* Fixed money sign script errors.
-* Fixed JIP script errors around finding FT vehicles in sector.
-* Fixed log errors regarding non-existent repair localization key.
-* Default player character to empty survivor to reduce initial add magazine calls.
-* Fixed wrecks being moved shown on map for everyon.
-* Fixed sandbags and fighting positions being immune to vehicle ramming.
-* Fixed players clustering around flag when fast traveling home, while base is under attack.
-* Fixed bulldozer bonus not applying FOB/stronghold demolition.
-* Fixed dead planes continuing to fly.
-* Green stronghold health and minefield count now properly take sector size into account.
-* Fixed unopposed capture by low cap power instantly reaching maximum capture speed.
-* Fixed wrong direction arrow keys in capture display.
-* Fixed infantry players getting double attack/defend reward.
-* Fixed players in green stronghold getting more attack/defend reward.
-* Fixed simple objects counting against vehicle asset limit.
-* Fixed non-functional conscription SL check.
-* Optimized performance of AT minefields.
+* Fixed both teams getting free +1x bonus when no territory has been captured on either side.
+* Fixed unlimited EW income.
+* Fixed uncommon instances of green units retaking sectors after player team has already captured them.
+* Fixed duplicating sector scans for a sector if called before UAV spawns.
+* Fixed icons shown to enemies considering Z-axis for distance.
+* Fixed wrecks disappearing before timeout if over water and attached to helo or flatbed.
+* Fixed bug where not-fob and safe-sector requirements conflict.
+* Optimized dumb mine handler, large number of minefields no longer affects performance.

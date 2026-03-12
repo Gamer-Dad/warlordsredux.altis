@@ -30,10 +30,6 @@ class CfgWarlordSectors {
         {"AgiosKosmas", "Athanos"},
         {"AgiosKosmas", "CapeMakrinos"},
         {"AgiosKosmas", "Sfaka"},
-        {"AgiosPetros", "GeorgiosBase"},
-        {"AgiosPetros", "Kalithea"},
-        {"AgiosPetros", "Paros"},
-        {"AgiosPetros", "Rodopoli"},
         {"Airbase", "CentralTerminal"},
         {"Airbase", "Gravia"},
         {"Airbase", "Lakka"},
@@ -87,7 +83,6 @@ class CfgWarlordSectors {
         {"Chalkeia", "DidymosTurbines"},
         {"Chalkeia", "Dorida"},
         {"Chalkeia", "Panagia"},
-        {"Charkia", "Nifi"},
         {"Charkia", "PyrgosBase"},
         {"Charkia", "Rodopoli"},
         {"Delfinaki", "HillsideChapel"},
@@ -101,7 +96,6 @@ class CfgWarlordSectors {
         {"DieselPowerPlant", "Negades"},
         {"DieselPowerPlant", "USSFreedom"},
         {"Dorida", "LimniSwamp"},
-        {"Dorida", "Nifi"},
         {"Dorida", "PyrgosBase"},
         {"Drimea", "SkoposCastleRuins"},
         {"Drimea", "Therisa"},
@@ -116,7 +110,6 @@ class CfgWarlordSectors {
         {"Faronaki", "Makrynisi"},
         {"Faronaki", "Pyrgos"},
         {"Faronaki", "PyrgosQuarry"},
-        {"Faronaki", "SagonisiBase"},
         {"Feres", "FeresHill"},
         {"Feres", "Panagia"},
         {"Feres", "SelekanoAirbase"},
@@ -158,7 +151,6 @@ class CfgWarlordSectors {
         {"Kalochori", "Paros"},
         {"Katalaki", "Neochori"},
         {"Katalaki", "Poliakko"},
-        {"Katalaki", "SagonisiBase"},
         {"Kavala", "KavalaCastle"},
         {"Kavala", "Kavirida"},
         {"Kavala", "Neri"},
@@ -187,13 +179,13 @@ class CfgWarlordSectors {
         {"Molos", "Polemistia"},
         {"Molos", "Skiptro"},
         {"Molos", "Sofia"},
+        {"MolosAirfield", "Sideras"},
         {"Negades", "USSFreedom"},
+        {"Neochori", "SagonisiBase"},
         {"Neochori", "Stavros"},
         {"Neri", "Panochori"},
         {"NidasosBase", "Skiptro"},
         {"NidasosBase", "SofiaPowerPlant"},
-        {"Nifi", "NifiSolar"},
-        {"Nifi", "Rodopoli"},
         {"NifiSolar", "Paros"},
         {"NifiSolar", "Rodopoli"},
         {"Oreokastro", "TheDump"},
@@ -279,12 +271,6 @@ class CfgWarlordSectors {
         area[] = {75, 220, 33.45, 1};
         location[] = {8989.58, 7614.1, 0};
         name = "Agios Kosmas";
-    };
-
-    class AgiosPetros {
-        area[] = {225, 225, 147.52, 0};
-        location[] = {19240.5, 17542.7, 0};
-        name = "Agios Petros";
     };
 
     class Airbase {
@@ -458,14 +444,14 @@ class CfgWarlordSectors {
     };
 
     class Ekali {
-        area[] = {125, 220, 88.484, 1};
+        area[] = {225, 320, 88.484, 1};
         location[] = {16984.2, 9950.38, 0};
         name = "Ekali";
     };
 
     class Faronaki {
-        area[] = {40, 160, 48.577, 1};
-        location[] = {15089.0, 11338.9, 0};
+        area[] = {180, 340, 48.577, 1};
+        location[] = {15134.5, 11250.5, 0};
         name = "Faronaki";
     };
 
@@ -550,7 +536,7 @@ class CfgWarlordSectors {
     };
 
     class Kalithea {
-        area[] = {240, 320, 138.140, 1};
+        area[] = {160, 300, 138.140, 1};
         location[] = {17934.5, 17872.9, 0};
         name = "Kalithea";
     };
@@ -562,8 +548,8 @@ class CfgWarlordSectors {
     };
 
     class Katalaki {
-        area[] = {215, 215, 121.177, 0};
-        location[] = {11718.3, 13747.7, 0};
+        area[] = {150, 280, 147.591, 1};
+        location[] = {11627.3, 13853.2, 0};
         name = "Katalaki";
     };
 
@@ -659,8 +645,8 @@ class CfgWarlordSectors {
     };
 
     class Makrynisi {
-        area[] = {180, 100, 120.634, 0};
-        location[] = {13566.2, 12139.0, 0};
+        area[] = {240, 100, 120.634, 0};
+        location[] = {13490.8, 12027.7, 0};
         name = "Makrynisi";
     };
 
@@ -712,12 +698,6 @@ class CfgWarlordSectors {
             {"I_MRAP_03_gmg_F", {23712.5, 21060.7, 2.35946}, 0.0493411},
             {"I_Mora", {23461.9, 21156.1, 2.28936}, 0.254168}
         };
-    };
-
-    class Nifi {
-        area[] = {150, 150, 221.059, 0};
-        location[] = {19466.2, 15418.3, 0};
-        name = "Nifi";
     };
 
     class NifiSolar {
@@ -776,7 +756,7 @@ class CfgWarlordSectors {
     };
 
     class Pyrgos {
-        area[] = {270, 270, 65.703, 0};
+        area[] = {320, 320, 65.703, 0};
         location[] = {16824.6, 12714.3, 0};
         name = "Pyrgos";
     };
@@ -799,7 +779,7 @@ class CfgWarlordSectors {
     };
 
     class Rodopoli {
-        area[] = {340, 340, 0, 0};
+        area[] = {240, 240, 0, 0};
         location[] = {18818.9, 16597.9, 0};
         name = "Rodopoli";
     };

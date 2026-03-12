@@ -239,7 +239,7 @@ class O_Mortar_01_F: Mortar {
 
 // MK45 Hammer
 class B_Ship_Gun_01_F: Sector_Defense {
-    cost = 10000;
+    cost = 22000;
     demolishable = 3;
     disallowMagazines[] = {
         "magazine_ShipCannon_120mm_HE_cluster_shells_x2",

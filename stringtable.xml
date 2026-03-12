@@ -511,23 +511,6 @@
             <Chinesesimp>小队长 %1 已将队伍召集至前线。是否现在快速移动到该位置？</Chinesesimp>
             <Chinese>小隊長 %1 已將隊伍召集至前線。是否現在快速移動到該位置？</Chinese>
         </Key>
-        <Key ID="STR_WL_conscriptTitle">
-            <Original>Called to Frontline</Original>
-            <English>Called to Frontline</English>
-            <Czech>Povolán na frontu</Czech>
-            <French>Appelé au front</French>
-            <German>An die Front beordert</German>
-            <Italian>Chiamato al fronte</Italian>
-            <Polish>Powołany na front</Polish>
-            <Portuguese>Chamado para a linha de frente</Portuguese>
-            <Russian>Вызван на линию фронта</Russian>
-            <Spanish>Llamado al frente</Spanish>
-            <Turkish>Cepheye çağrıldı</Turkish>
-            <Korean>전선으로 소집됨</Korean>
-            <Japanese>前線へ招集</Japanese>
-            <Chinesesimp>被召至前线</Chinesesimp>
-            <Chinese>被召至前線</Chinese>
-        </Key>
         <Key ID="STR_WL_cooldownIndicator">
             <Original>Cooldown: %1</Original>
             <English>Cooldown: %1</English>
@@ -1107,21 +1090,21 @@
             <Chinese>返回</Chinese>
         </Key>
         <Key ID="STR_WL_goButton">
-            <Original>Go (Space)</Original>
-            <English>Go (Space)</English>
-            <Czech>Jít (Mezerník)</Czech>
-            <French>Aller (Espace)</French>
-            <German>Los (Leertaste)</German>
-            <Italian>Vai (Spazio)</Italian>
-            <Polish>Idź (Spacja)</Polish>
-            <Portuguese>Ir (Espaço)</Portuguese>
-            <Russian>Вперёд (Пробел)</Russian>
-            <Spanish>Ir (Espacio)</Spanish>
-            <Turkish>Git (Boşluk)</Turkish>
-            <Korean>이동 (스페이스)</Korean>
-            <Japanese>進む（スペース）</Japanese>
-            <Chinesesimp>前往（空格）</Chinesesimp>
-            <Chinese>前往（空白鍵）</Chinese>
+            <Original>Go</Original>
+            <English>Go</English>
+            <Czech>Jít</Czech>
+            <French>Aller</French>
+            <German>Los</German>
+            <Italian>Vai</Italian>
+            <Polish>Idź</Polish>
+            <Portuguese>Ir</Portuguese>
+            <Russian>Вперёд</Russian>
+            <Spanish>Ir</Spanish>
+            <Turkish>Git</Turkish>
+            <Korean>이동</Korean>
+            <Japanese>進む</Japanese>
+            <Chinesesimp>前往</Chinesesimp>
+            <Chinese>前往</Chinese>
         </Key>
         <Key ID="STR_WL_gotSquadInvite">
             <Original>%1 invited you to join %2.</Original>
@@ -1651,21 +1634,21 @@
             <Chinese>重新武裝車輛。重新武裝前，請確保選擇了正確的掛架。</Chinese>
         </Key>
         <Key ID="STR_WL_refuseButton">
-            <Original>Refuse (Esc)</Original>
-            <English>Refuse (Esc)</English>
-            <Czech>Odmítnout (Esc)</Czech>
-            <French>Refuser (Échap)</French>
-            <German>Ablehnen (Esc)</German>
-            <Italian>Rifiuta (Esc)</Italian>
-            <Polish>Odmów (Esc)</Polish>
-            <Portuguese>Recusar (Esc)</Portuguese>
-            <Russian>Отказать (Esc)</Russian>
-            <Spanish>Rechazar (Esc)</Spanish>
-            <Turkish>Reddet (Esc)</Turkish>
-            <Korean>거부 (Esc)</Korean>
-            <Japanese>拒否（Esc）</Japanese>
-            <Chinesesimp>拒绝（Esc）</Chinesesimp>
-            <Chinese>拒絕（Esc）</Chinese>
+            <Original>Refuse</Original>
+            <English>Refuse</English>
+            <Czech>Odmítnout</Czech>
+            <French>Refuser</French>
+            <German>Ablehnen</German>
+            <Italian>Rifiuta</Italian>
+            <Polish>Odmów</Polish>
+            <Portuguese>Recusar</Portuguese>
+            <Russian>Отказать</Russian>
+            <Spanish>Rechazar</Spanish>
+            <Turkish>Reddet</Turkish>
+            <Korean>거부</Korean>
+            <Japanese>拒否</Japanese>
+            <Chinesesimp>拒绝</Chinesesimp>
+            <Chinese>拒絕</Chinese>
         </Key>
         <Key ID="STR_WL_remoteControl">
             <Original>Remote Control</Original>
