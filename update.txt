@@ -40,4 +40,5 @@ Bugfixes
 * Fixed icons shown to enemies considering Z-axis for distance.
 * Fixed wrecks disappearing before timeout if over water and attached to helo or flatbed.
 * Fixed bug where not-fob and safe-sector requirements conflict.
+* Fixed bug where wrecks may be secured twice.
 * Optimized dumb mine handler, large number of minefields no longer affects performance.
