@@ -495,21 +495,21 @@
             <Chinese>將隊伍徵召至團隊優先點。這會使所有人都能立即快速移動至該位置。</Chinese>
         </Key>
         <Key ID="STR_WL_conscriptMessage">
-            <Original>Squad leader %1 has called the team to the frontline. Do you want to fast travel there now?</Original>
-            <English>Squad leader %1 has called the team to the frontline. Do you want to fast travel there now?</English>
-            <Czech>Velitel družstva %1 povolal tým na frontu. Chcete se tam nyní rychle přesunout?</Czech>
-            <French>Le chef d’escouade %1 a appelé l’équipe au front. Voulez-vous vous y rendre immédiatement par voyage rapide ?</French>
-            <German>Truppführer %1 hat das Team an die Front beordert. Möchtest du jetzt per Schnellreise dorthin reisen?</German>
-            <Italian>Il caposquadra %1 ha chiamato la squadra al fronte. Vuoi effettuare subito il viaggio rapido?</Italian>
-            <Polish>Dowódca drużyny %1 powołał zespół na front. Czy chcesz teraz szybko się tam przenieść?</Polish>
-            <Portuguese>O líder de esquadrão %1 convocou a equipe para a linha de frente. Deseja viajar rapidamente para lá agora?</Portuguese>
-            <Russian>Командир отделения %1 призвал команду на линию фронта. Хотите немедленно быстро переместиться туда?</Russian>
-            <Spanish>El líder de escuadra %1 ha llamado al equipo al frente. ¿Quieres viajar rápidamente allí ahora?</Spanish>
-            <Turkish>Takım lideri %1 takımı cepheye çağırdı. Oraya şimdi hızlı seyahat etmek ister misin?</Turkish>
-            <Korean>분대장 %1이(가) 팀을 전선으로 소집했습니다. 지금 그곳으로 빠른 이동을 하시겠습니까?</Korean>
-            <Japanese>分隊長 %1 がチームを前線へ招集しました。今すぐファストトラベルしますか？</Japanese>
-            <Chinesesimp>小队长 %1 已将队伍召集至前线。是否现在快速移动到该位置？</Chinesesimp>
-            <Chinese>小隊長 %1 已將隊伍召集至前線。是否現在快速移動到該位置？</Chinese>
+            <Original>%1 has called the team to the frontline. Do you want to fast travel there now?</Original>
+            <English>%1 has called the team to the frontline. Do you want to fast travel there now?</English>
+            <Czech>%1 povolal tým na frontu. Chcete se tam nyní rychle přesunout?</Czech>
+            <French>%1 a appelé l’équipe au front. Voulez-vous vous y rendre immédiatement par voyage rapide ?</French>
+            <German>%1 hat das Team an die Front beordert. Möchtest du jetzt per Schnellreise dorthin reisen?</German>
+            <Italian>%1 ha chiamato la squadra al fronte. Vuoi effettuare subito il viaggio rapido?</Italian>
+            <Polish>%1 powołał zespół na front. Czy chcesz teraz szybko się tam przenieść?</Polish>
+            <Portuguese>%1 convocou a equipe para a linha de frente. Deseja viajar rapidamente para lá agora?</Portuguese>
+            <Russian>%1 призвал команду на линию фронта. Хотите немедленно быстро переместиться туда?</Russian>
+            <Spanish>%1 ha llamado al equipo al frente. ¿Quieres viajar rápidamente allí ahora?</Spanish>
+            <Turkish>%1 takımı cepheye çağırdı. Oraya şimdi hızlı seyahat etmek ister misin?</Turkish>
+            <Korean>%1이(가) 팀을 전선으로 소집했습니다. 지금 그곳으로 빠른 이동을 하시겠습니까?</Korean>
+            <Japanese>%1 がチームを前線へ招集しました。今すぐファストトラベルしますか？</Japanese>
+            <Chinesesimp>%1 已将队伍召集至前线。是否现在快速移动到该位置？</Chinesesimp>
+            <Chinese>%1 已將隊伍召集至前線。是否現在快速移動到該位置？</Chinese>
         </Key>
         <Key ID="STR_WL_cooldownIndicator">
             <Original>Cooldown: %1</Original>

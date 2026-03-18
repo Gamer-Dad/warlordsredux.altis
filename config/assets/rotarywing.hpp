@@ -107,6 +107,7 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
 };
 
 class Transport_Helicopter: Rotary_Wing {
+    cost = 700;
     hasSling = 1;
     loaded = "Static_Cannon";
     offset[] = {0, 10, 0};
@@ -115,7 +116,6 @@ class Transport_Helicopter: Rotary_Wing {
 
 // CH-67 Huron
 class B_Heli_Transport_03_F: Transport_Helicopter {
-    cost = 1000;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 2.1};
     side[] = {"west"};
@@ -128,7 +128,6 @@ class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
     variant = 1;
 };
 class O_Mohawk: Transport_Helicopter {
-    cost = 500;
     hasHMD = 1;
     loadable[] = {0, -2.2, 2.1};
     name = "CH-49 Mohawk";
@@ -232,12 +231,10 @@ class Hellcat: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "2000Rnd_20mm_shells"
+            "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles",
-            "Twin_Cannon_20mm_gunpod"
+            "CMFlareLauncher_Singles"
         };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine",
@@ -317,12 +314,13 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
         {"PylonRack_Missile_BIM9X_x2", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
         {"PylonRack_Missile_HARM_x1", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
         {"PylonRack_12Rnd_PGM_missiles", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
-        {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}}
+        {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
+        {"PylonRack_Missile_AMRAAM_D_x1", {"PylonLeft2", "PylonRight2"}}
     };
     ammoOverrides[] = {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
-    cost = 11000;
+    cost = 9000;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -363,8 +361,9 @@ class B_Heli_Attack_01_pylons_dynamicLoadout_F: B_Heli_Attack_01_dynamicLoadout_
         {"PylonRack_Missile_HARM_x1", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
         {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
         {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
-        {"PylonRack_Missile_AMRAAM_D_x1", {"PylonExternalLeft", "PylonExternalRight"}}
+        {"PylonRack_Missile_AMRAAM_D_x1", {"PylonLeft2", "PylonRight2"}},
+        {"PylonRack_Missile_AMRAAM_D_x2", {"PylonExternalLeft", "PylonExternalRight"}}
     };
-    cost = 13000;
+    cost = 11000;
     name = "AH-99 Blackfoot Block II";
 };

@@ -321,61 +321,61 @@ class Gryphon: Fixed_Wing {
     spawn = "I_Plane_Fighter_04_F";
 };
 
-class O_Gryphon_Interceptor: Gryphon {
-    allowPylonMagazines[] = {
-        "PylonMissile_Missile_KH58_x1",
-        "PylonRack_1Rnd_LG_scalpel",
-        "PylonRack_3Rnd_LG_scalpel",
-        "PylonRack_4Rnd_LG_scalpel",
-        "PylonRack_Missile_AMRAAM_D_x1",
-        "PylonRack_Missile_AMRAAM_D_x2",
-        "PylonMissile_Missile_AA_R77_x1",
-        "PylonMissile_Missile_AA_R73_x1"
-    };
-    ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-    };
-    cost = 15500;
-    description = "A-149 Gryphon (Interceptor) is a multirole aircraft designed for air superiority.";
-    disallowMagazines[] = {
-        "PylonRack_Missile_AMRAAM_C_x1",
-        "PylonRack_Missile_AMRAAM_C_x2",
-        "PylonRack_Missile_AGM_02_x1",
-        "PylonRack_Missile_AGM_02_x2",
-        "PylonMissile_Bomb_GBU12_x1"
-    };
-    ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
-    hasAirRadar = 10000;
-    name = "A-149 Gryphon (Interceptor)";
-    side[] = {"east"};
-    textures[] = {
-        "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_co.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_co.paa",
-        "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
-    };
-    threatDetection = 16000;
-    variant = 1;
+// class O_Gryphon_Interceptor: Gryphon {
+//     allowPylonMagazines[] = {
+//         "PylonMissile_Missile_KH58_x1",
+//         "PylonRack_1Rnd_LG_scalpel",
+//         "PylonRack_3Rnd_LG_scalpel",
+//         "PylonRack_4Rnd_LG_scalpel",
+//         "PylonRack_Missile_AMRAAM_D_x1",
+//         "PylonRack_Missile_AMRAAM_D_x2",
+//         "PylonMissile_Missile_AA_R77_x1",
+//         "PylonMissile_Missile_AA_R73_x1"
+//     };
+//     ammoOverrides[] = {
+//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+//     };
+//     cost = 15500;
+//     description = "A-149 Gryphon (Interceptor) is a multirole aircraft designed for air superiority.";
+//     disallowMagazines[] = {
+//         "PylonRack_Missile_AMRAAM_C_x1",
+//         "PylonRack_Missile_AMRAAM_C_x2",
+//         "PylonRack_Missile_AGM_02_x1",
+//         "PylonRack_Missile_AGM_02_x2",
+//         "PylonMissile_Bomb_GBU12_x1"
+//     };
+//     ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
+//     hasAirRadar = 10000;
+//     name = "A-149 Gryphon (Interceptor)";
+//     side[] = {"east"};
+//     textures[] = {
+//         "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_co.paa",
+//         "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_co.paa",
+//         "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
+//         "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+//         "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+//         "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
+//     };
+//     threatDetection = 16000;
+//     variant = 1;
 
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
-        removeMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
-        removeWeapons[] = {
-            "CMFlareLauncher"
-        };
-        turret[] = {-1};
-    };
-};
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "300Rnd_CMFlare_Chaff_Magazine",
+//             "300Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         addWeapons[] = {
+//             "CMFlareLauncher_Singles"
+//         };
+//         removeMagazines[] = {
+//             "240Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeWeapons[] = {
+//             "CMFlareLauncher"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
 class I_Gryphon: Gryphon {
     aircraftSpawn = 1;
@@ -397,7 +397,7 @@ class B_Gryphon: Gryphon {
         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
     };
-    cost = 19000;
+    cost = 15000;
     description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with GPS-guided GBU-12 bombs.";
     disallowMagazines[] = {
         "PylonRack_Missile_AGM_02_x1",
@@ -432,33 +432,32 @@ class B_Gryphon: Gryphon {
     };
 };
 
-class B_Growler: Fixed_Wing {
+class B_Strike_Wasp: Fixed_Wing {
     allowPylonMagazines[] = {
-        "PylonRack_Missile_AMRAAM_D_x2",
-        "PylonRack_Missile_HARM_x1",
-        {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+        "PylonRack_12Rnd_PG_missiles",
+        "PylonRack_12Rnd_PGM_missiles",
+        "PylonRack_4Rnd_LG_scalpel",
+        "PylonRack_7Rnd_Rocket_04_HE_F",
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}},
+        {"PylonMissile_1Rnd_Bomb_03_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}},
+        {"Rocket_04_HE_F", {"R_Incendiary", "M156 White Phosphorus Rocket"}}
     };
-    cost = 19000;
+    cost = 17000;
     disallowMagazines[] = {
-        "PylonRack_Bomb_SDB_x4",
-        "PylonRack_Bomb_GBU12_x2",
-        "PylonMissile_Missile_BIM9X_x1",
-        "PylonMissile_Bomb_GBU12_x1",
-        "PylonRack_Missile_AGM_02_x1",
-        "PylonRack_Missile_AGM_02_x2"
+        "PylonMissile_Missile_AMRAAM_D_x1",
+        "PylonRack_Missile_AMRAAM_D_x1",
+        "PylonRack_Missile_AMRAAM_D_x2"
     };
-    ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
-    hasAirRadar = 14000;
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.6};
-    name = "EF/A-181 Growler";
+    name = "A-181 Strike Wasp";
     rearm = 420;
     side[] = {"west"};
     spawn = "B_Plane_Fighter_01_F";
-    threatDetection = 8000;
     variant = 1;
 
     class Pilot: WLTurretDefaults {
@@ -472,6 +471,47 @@ class B_Growler: Fixed_Wing {
         turret[] = {-1};
     };
 };
+
+// class B_Growler: Fixed_Wing {
+//     allowPylonMagazines[] = {
+//         "PylonRack_Missile_AMRAAM_D_x2",
+//         "PylonRack_Missile_HARM_x1",
+//         {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
+//     };
+//     ammoOverrides[] = {
+//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+//     };
+//     cost = 19000;
+//     disallowMagazines[] = {
+//         "PylonRack_Bomb_SDB_x4",
+//         "PylonRack_Bomb_GBU12_x2",
+//         "PylonMissile_Missile_BIM9X_x1",
+//         "PylonMissile_Bomb_GBU12_x1",
+//         "PylonRack_Missile_AGM_02_x1",
+//         "PylonRack_Missile_AGM_02_x2"
+//     };
+//     ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
+//     hasAirRadar = 14000;
+//     hasHMD = 1;
+//     loadable[] = {0, -2.2, 1.6};
+//     name = "EF/A-181 Growler";
+//     rearm = 420;
+//     side[] = {"west"};
+//     spawn = "B_Plane_Fighter_01_F";
+//     threatDetection = 8000;
+//     variant = 1;
+
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "300Rnd_CMFlare_Chaff_Magazine",
+//             "300Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeMagazines[] = {
+//             "240Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
 // To-201 Shikra
 class O_Plane_Fighter_02_F: Fixed_Wing {

@@ -237,6 +237,52 @@ class O_Mortar_01_F: Mortar {
     side[] = {"east"};
 };
 
+class Mortar_Incendiary: Mortar {
+    ammoOverrides[] = {
+        {"Smoke_82mm_AMOS_White", {"82mm_Incendiary", "82mm Incendiary Shells"}},
+    };
+    cost = 7500;
+    disallowMagazines[] = {
+        "8Rnd_82mm_Mo_shells",
+        "8Rnd_82mm_Mo_Flare_white",
+        "8Rnd_82mm_Mo_Flare_white_illumination",
+        "8Rnd_82mm_Mo_guided",
+        "8Rnd_82mm_Mo_LG"
+    };
+    name = "82mm Incendiary Mortar";
+    variant = 1;
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "8Rnd_82mm_Mo_Smoke_white",
+            "8Rnd_82mm_Mo_Smoke_white"
+        };
+        addWeapons[] = {
+            "mortar_82mm"
+        };
+        removeMagazines[] = {
+            "8Rnd_82mm_Mo_shells",
+            "8Rnd_82mm_Mo_Flare_white",
+            "8Rnd_82mm_Mo_Flare_white_illumination",
+            "8Rnd_82mm_Mo_guided",
+            "8Rnd_82mm_Mo_LG",
+            "8Rnd_82mm_Mo_Smoke_white"
+        };
+        removeWeapons[] = {
+            "mortar_82mm"
+        };
+        turret[] = { 0 };
+    };
+};
+// class B_Mortar_Incendiary: Mortar_Incendiary {
+//     side[] = {"west"};
+//     spawn = "B_Mortar_01_F";
+// };
+// class O_Mortar_Incendiary: Mortar_Incendiary {
+//     side[] = {"east"};
+//     spawn = "O_Mortar_01_F";
+// };
+
 // MK45 Hammer
 class B_Ship_Gun_01_F: Sector_Defense {
     cost = 22000;

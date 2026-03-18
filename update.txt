@@ -1,44 +1,38 @@
-Warlords Redux 2.8.0 Patch 5
+Warlords Redux 2.8.0 Patch 6
+
+Assets
+* Removed: Gryphon Interceptor
+* Removed: Growler
+* Added: Strike Wasp
+* Added: Gorgon (Mortar)
 
 Gameplay
-* Added AMRAAM option to Blackfoot II exterior pylons.
-* Reduced territory win bonus from +1x->+0.5x.
-* Show player rating on scoreboard.
-* Added option for AI follow defaults.
-* Combat air patrol is now expanding circle instead of 45s grace period.
-* Changed conscription prompt to a timed prompt.
-* Allow paradrop to contested sector.
-* Enemies nearby restriction reduced range 150->75m.
-* Added Beluga to Opfor.
-* Changed default Mohawk texture.
-* Sandstorm: $20,000->25,000.
-* Sandstorm II: $24,000->30,000.
-* Scorcher: $20,000->25,000.
-* Hammer: $10,000->22,000.
-* Pawnee: $7,500->7,000.
-
-Map
-* Reduced "effective" area of the three largest water sectors by 50%.
-* Agios Petros: removed.
-* Nifi: removed.
-* Ekali: increased size a lot (22).
-* Faronaki: increased size a lot (19).
-* Kalithea: decreased size a lot (15).
-* Katalaki: reshaped (13).
-* Makrynisi: increased size slightly (6).
-* Pyrgos: increased size slightly (25).
-* Rodopoli: decreased size a lot (14).
-* Katalaki-Sagonisi: connection removed.
-* Molos Airfield-Sideras: connection added.
-* Neochori-Sagonisi: connection added.
+* All players can now call conscription.
+* Conscription cost: $3,000->500.
+* Added incendiary munitions.
+* Demolition charges now do damage to demolishables, limited to 5 deployed at once.
+* Mora: internalized mortar.
+* Hunter Apex: cap power 2->4, aps medium->dazzler.
+* Hellcat: removed internal 20mm cannon.
+* Huron/Mohawk: unified price to $700.
+* Changed EW minigame.
+* Rearm APS: vehicles with heavy APS can now rearm their APS in the field, from outside.
+* Internal vehicle mortars now fire incendiary.
+* Enemy nearby distance lock: 75->50m.
+* Moved remote munitions, ask forgiveness, and squad invites to soft-prompt system.
+* Blackfoot cost reduction by 2k, increased AMRAAM slots.
+* Unified dazzler and aps. Dazzlers now have deadzone and angle check and similar rewards.
 
 Bugfixes
-* Fixed both teams getting free +1x bonus when no territory has been captured on either side.
-* Fixed unlimited EW income.
-* Fixed uncommon instances of green units retaking sectors after player team has already captured them.
-* Fixed duplicating sector scans for a sector if called before UAV spawns.
-* Fixed icons shown to enemies considering Z-axis for distance.
-* Fixed wrecks disappearing before timeout if over water and attached to helo or flatbed.
-* Fixed bug where not-fob and safe-sector requirements conflict.
-* Fixed bug where wrecks may be secured twice.
-* Optimized dumb mine handler, large number of minefields no longer affects performance.
+* Fixed bug where vehicles could be ordered but not placed.
+* Fixed vehicle mortar to have more understandable name.
+* Fixed combat air warning not being visible enough. Now has audio and more prominent visual cues.
+* Fixed combat air caller name not being shown to enemies.
+* Fixed smart mines beeping not deleting after smart mines are killed, removed audio entirely.
+* Fixed spectrum interface showing dead UAVs.
+* Fixed dead players near team priority not being shown conscription notice.
+* Fixed certain cases where UI elements would visually block conscription notices.
+* Fixed bug where certain UAVs would show up on enemy datalink regardless of EW status.
+* Fixed AFK player count affecting AI limits.
+* Performance pass on APS.
+* Disabled spawn empty setting for potential BE kicks.

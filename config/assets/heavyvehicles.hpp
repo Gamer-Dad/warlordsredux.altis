@@ -225,7 +225,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
 class Mora: Heavy_Vehicles {
     aps = 3;
     capValue = 4;
-    loaded = "Light_Mortar";
+    miniMortar[] = {6, {0, -3.5, 0}};
     name = "FV-720 Mora";
     rearm = 180;
     spawn = "I_APC_tracked_03_cannon_F";
@@ -282,6 +282,39 @@ class B_Gorgon: Gorgon {
         "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa",
         "\A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa",
         "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"
+    };
+};
+class B_Gorgon_Mortar: Gorgon {
+    ammoOverrides[] = {
+        {"Smoke_82mm_AMOS_White", {"82mm_Incendiary", "82mm Incendiary Shells"}},
+    };
+    cost = 2900;
+    miniMortar[] = {24, {0.35, -1.5, 0.35}};
+    name = "AFV-4 Gorgon (Mortar)";
+    side[] = {"west"};
+    spawn = "B_APC_Wheeled_03_cannon_F";
+    textures[] = {
+        "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa",
+        "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa",
+        "\A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa",
+        "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"
+    };
+    variant = 1;
+
+    class Gunner: WLTurretDefaults {
+        hideTurret = 1;
+        removeMagazines[] = {
+            "140Rnd_30mm_MP_shells_Tracer_Yellow",
+            "60Rnd_30mm_APFSDS_shells_Tracer_Yellow",
+            "200Rnd_762x51_Belt_Yellow",
+            "2Rnd_GAT_missiles"
+        };
+        removeWeapons[] = {
+            "autocannon_30mm_CTWS",
+            "LMG_coax_ext",
+            "missiles_titan"
+        };
+        turret[] = {0};
     };
 };
 class I_Gorgon: Gorgon {
@@ -434,7 +467,7 @@ class B_MBT_01_cannon_F: Heavy_Vehicles {
     disallowMagazines[] = {
         "4Rnd_120mm_LG_cannon_missiles"
     };
-    hasMiniMortar = 1;
+    miniMortar[] = {6};
     isLight = 1;
     rearm = 300;
     side[] = {"west"};
@@ -497,7 +530,7 @@ class B_Slammer_II: B_MBT_01_TUSK_F {
     cost = 8500;
     description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
     hasHMD = 1;
-    hasMiniMortar = 1;
+    miniMortar[] = {8};
     isLight = 1;
     name = "M2A2 Slammer II";
     spawn = "B_MBT_01_TUSK_F";

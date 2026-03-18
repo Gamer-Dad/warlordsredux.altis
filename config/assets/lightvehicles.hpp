@@ -343,8 +343,6 @@ class O_Truck_03_Repair_F: Transport_Repair {
 
 // Hunter AFV
 class Hunter_Upgraded: Light_Vehicle {
-    aps = 2;
-    capValue = 2;
     loadable[] = {0, -0.8, 1.8};
     rearm = 120;
     spawn = "B_MRAP_01_gmg_F";
@@ -352,6 +350,8 @@ class Hunter_Upgraded: Light_Vehicle {
 };
 
 class B_Hunter_AFV: Hunter_Upgraded {
+    aps = 2;
+    capValue = 2;
     cost = 1200;
     name = "Hunter AFV";
     side[] = {"west"};
@@ -431,6 +431,8 @@ class I_LT_01_AA_F: Nyx_Armed {
 
 // Hunter Apex
 class B_Hunter_Apex: Hunter_Upgraded {
+    aps = 4;
+    capValue = 4;
     cost = 2000;
     disallowMagazines[] = {
         "5Rnd_GAT_missiles",

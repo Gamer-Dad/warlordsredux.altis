@@ -64,6 +64,9 @@ class O_UAV_02_F: Special {
 };
 
 class B_Integral_Mortar: Special {
+    ammoOverrides[] = {
+        {"Smoke_82mm_AMOS_White", {"82mm_Incendiary", "82mm Incendiary Shells"}},
+    };
     cost = -1;
     name = "Soltam CO2 Vehicle-Mounted Mortar";
 };
