@@ -22,6 +22,7 @@ Gameplay
 * Moved remote munitions, ask forgiveness, and squad invites to soft-prompt system.
 * Blackfoot cost reduction by 2k, increased AMRAAM slots.
 * Unified dazzler and aps. Dazzlers now have deadzone and angle check and similar rewards.
+* New imbalance algorithm.
 
 Bugfixes
 * Fixed bug where vehicles could be ordered but not placed.
