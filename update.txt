@@ -35,5 +35,6 @@ Bugfixes
 * Fixed certain cases where UI elements would visually block conscription notices.
 * Fixed bug where certain UAVs would show up on enemy datalink regardless of EW status.
 * Fixed AFK player count affecting AI limits.
+* Fixed some AA missiles getting deleted for friendly fire check.
 * Performance pass on APS.
 * Disabled spawn empty setting for potential BE kicks.
