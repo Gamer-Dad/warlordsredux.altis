@@ -218,7 +218,6 @@ class CfgWarlordSectors {
 
     class AACAirfield {
         area[] = {300, 150, 121.177, 1};
-        disableHome = 1;
         location[] = {11522.6, 11725.7, 0};
         name = "AAC Airfield";
         services[] = {"A", "H"};
@@ -275,7 +274,6 @@ class CfgWarlordSectors {
 
     class Airbase {
         area[] = {300, 400, 46.718, 0};
-        disableHome = 1;
         location[] = {14324.9, 16178.7, 0};
         name = "Airbase";
         services[] = {"A", "H"};
@@ -321,7 +319,6 @@ class CfgWarlordSectors {
 
     class AmmolofiAirfield {
         area[] = {150, 200, 53.352, 1};
-        disableHome = 1;
         location[] = {9126.7, 21516.0, 0};
         name = "Ammolofi Airfield";
         services[] = {"A", "H"};
@@ -353,7 +350,6 @@ class CfgWarlordSectors {
 
     class Atsalis {
         area[] = {200, 120, 0, 1};
-        disableHome = 1;
         location[] = {8471.35, 25075.5, 0};
         name = "Atsalis";
         services[] = {"H"};
@@ -658,7 +654,6 @@ class CfgWarlordSectors {
 
     class MolosAirfield {
         area[] = {150, 280, 221.059, 0};
-        disableHome = 1;
         location[] = {26960.2, 24745.1, 0};
         name = "Molos Airfield";
         services[] = {"A", "H"};
@@ -796,7 +791,6 @@ class CfgWarlordSectors {
 
     class SaltFlats {
         area[] = {225, 300, 147.52, 0};
-        disableHome = 1;
         location[] = {23128.8, 18690.8, 0};
         name = "Salt Flats";
         services[] = {"A", "H"};
@@ -823,7 +817,6 @@ class CfgWarlordSectors {
 
     class SelekanoAirbase {
         area[] = {100, 350, 49.0799, 1};
-        disableHome = 1;
         location[] = {20977.2, 7358.35, 0};
         name = "Selekano Airbase";
         services[] = {"A", "H"};
@@ -956,7 +949,6 @@ class CfgWarlordSectors {
     class USSFreedom {
         area[] = {250, 100, 232, 1};
         carrier = 1;
-        disableHome = 1;
         location[] = {1742.19, 15566.5, 25};
         name = "USS Freedom";
         services[] = {"H", "A"};
@@ -971,7 +963,6 @@ class CfgWarlordSectors {
     class USSIndependence {
         area[] = {250, 100, 0, 1};
         carrier = 1;
-        disableHome = 1;
         location[] = {8856.14, 28796.06, 25};
         name = "USS Independence";
         services[] = {"H", "A"};
@@ -1013,7 +1004,7 @@ class CfgWarlordSectors {
     };
 
     class Zaros {
-        area[] = {300, 250, 194.61, 0};
+        area[] = {300, 200, 194.61, 0};
         location[] = {9004.79, 12038.1, 0.181};
         name = "Zaros";
     };

@@ -23,6 +23,9 @@ Gameplay
 * Blackfoot cost reduction by 2k, increased AMRAAM slots.
 * Unified dazzler and aps. Dazzlers now have deadzone and angle check and similar rewards.
 * New imbalance algorithm.
+* Disabled helipad home sectors.
+* Large water-majority regions: 50->60% area calc.
+* Zaros: reduced height.
 
 Bugfixes
 * Fixed bug where vehicles could be ordered but not placed.
@@ -36,5 +39,8 @@ Bugfixes
 * Fixed bug where certain UAVs would show up on enemy datalink regardless of EW status.
 * Fixed AFK player count affecting AI limits.
 * Fixed some AA missiles getting deleted for friendly fire check.
-* Performance pass on APS.
+* Fixed strongholds disappearing from map.
+* Fixed travel frontline not considering defensive sectors.
+* Fixed anti-air missile detonation message duplicates.
+* Performance pass on APS, strongholds.
 * Disabled spawn empty setting for potential BE kicks.
