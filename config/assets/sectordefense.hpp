@@ -138,14 +138,34 @@ class AT_Minefield: Sector_Defense {
     demolishable = 1;
     demolishStepTime = 4;
     description = "Anti-tank minefield that contains hidden anti-tank mines.";
-    dumbMine = 1;
+    dumbMine[] = {50, 10, 1};
     loadable[] = {-0.4, -1, 0.8};
     name = "Minefield (AT)";
     obstacle = 2;
     offset[] = {0, 3, 0};
     side[] = {"west", "east", "guer"};
-    showToEnemies = 400;
+    showToEnemies = 800;
     spawn = "Land_Sign_MinesDanger_English_F";
+};
+class AT_MinefieldLarge: AT_Minefield {
+    cost = 1000;
+    dumbMine[] = {100, 20, 1};
+    name = "Minefield (AT, Large)";
+    showToEnemies = 1200;
+};
+class AT_MinefieldCircular: AT_Minefield {
+    cost = 1000;
+    dumbMine[] = {50, 50, 0};
+    name = "Minefield (AT, Circular)";
+    side[] = {"west"};
+    showToEnemies = 1200;
+};
+class AT_MinefieldHex: AT_Minefield {
+    cost = 1000;
+    dumbMine[] = {-50, -50, 0};
+    name = "Minefield (AT, Hex)";
+    side[] = {"east"};
+    showToEnemies = 1200;
 };
 
 // Mk30 HMG Auto Turret

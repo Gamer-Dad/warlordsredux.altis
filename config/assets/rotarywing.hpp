@@ -73,6 +73,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
 // UH-80 Ghost Hawk
 class B_Heli_Transport_01_F: Rotary_Wing {
     cost = 800;
+    hasFastTravel = 1;
     hasHMD = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;

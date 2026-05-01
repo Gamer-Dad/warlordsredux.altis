@@ -82,7 +82,10 @@ class Land_BagFence_Round_F: Special {
 };
 
 class Land_BagBunker_Small_F: Special {
-    cost = 1500;
+    container[] = {
+        { "Toolkit", 1 }
+    };
+    cost = 500;
     demolishable = 1;
     demolishStepTime = 1;
     fragile = 5000;
@@ -94,18 +97,17 @@ class Land_BagBunker_Small_F: Special {
 
 class Static_HMG_Shielded: Special {
     cost = 500;
-    name = "M2 HMG .50 (Raised)";
+    name = "Mk19 Grenade Launcher (Static)";
     offset[] = {0, 3, 0};
     rearm = 180;
     spawn = "I_HMG_02_high_F";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "500Rnd_127x99_mag_Tracer_Yellow",
-            "500Rnd_127x99_mag_Tracer_Yellow"
+            "200Rnd_40mm_G_belt"
         };
         addWeapons[] = {
-            "HMG_static"
+            "GMG_40mm"
         };
         removeMagazines[] = {
             "100Rnd_127x99_mag_Tracer_Yellow"

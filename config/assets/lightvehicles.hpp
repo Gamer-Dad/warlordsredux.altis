@@ -309,9 +309,11 @@ class Transport_Ammo: Light_Vehicle {
     hasRearm = 1;
 };
 class B_Truck_01_ammo_F: Transport_Ammo {
+    loaded = "B_Slingload_01_Ammo_F";
     side[] = {"west"};
 };
 class O_Truck_03_ammo_F: Transport_Ammo {
+    loaded = "Land_Pod_Heli_Transport_04_ammo_F";
     side[] = {"east"};
 };
 
@@ -322,9 +324,11 @@ class Transport_Fuel: Light_Vehicle {
     hasRefuel = 1;
 };
 class B_Truck_01_fuel_F: Transport_Fuel {
+    loaded = "B_Slingload_01_Fuel_F";
     side[] = {"west"};
 };
 class O_Truck_03_Fuel_F: Transport_Fuel {
+    loaded = "Land_Pod_Heli_Transport_04_fuel_F";
     side[] = {"east"};
 };
 
@@ -335,9 +339,11 @@ class Transport_Repair: Light_Vehicle {
     hasRepair = 1;
 };
 class B_Truck_01_Repair_F: Transport_Repair {
+    loaded = "B_Slingload_01_Repair_F";
     side[] = {"west"};
 };
 class O_Truck_03_Repair_F: Transport_Repair {
+    loaded = "Land_Pod_Heli_Transport_04_repair_F";
     side[] = {"east"};
 };
 

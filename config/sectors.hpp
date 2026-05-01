@@ -83,8 +83,11 @@ class CfgWarlordSectors {
         {"Chalkeia", "DidymosTurbines"},
         {"Chalkeia", "Dorida"},
         {"Chalkeia", "Panagia"},
+        {"Charkia", "CharkiaMine"},
         {"Charkia", "PyrgosBase"},
         {"Charkia", "Rodopoli"},
+        {"CharkiaMine", "Dorida"},
+        {"CharkiaMine", "PyrgosBase"},
         {"Delfinaki", "HillsideChapel"},
         {"Delfinaki", "Ioannina"},
         {"Delfinaki", "NidasosBase"},
@@ -401,6 +404,12 @@ class CfgWarlordSectors {
         area[] = {275, 275, 65.703, 0};
         location[] = {18117.8, 15218.1, 0};
         name = "Charkia";
+    };
+
+    class CharkiaMine {
+        area[] = {150, 150, 0, 0};
+        location[] = {18480.6, 14274.2, 0};
+        name = "Charkia Mine";
     };
 
     class Delfinaki {

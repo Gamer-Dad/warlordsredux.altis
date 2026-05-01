@@ -437,14 +437,14 @@ class B_Strike_Wasp: Fixed_Wing {
         "PylonRack_12Rnd_PG_missiles",
         "PylonRack_12Rnd_PGM_missiles",
         "PylonRack_4Rnd_LG_scalpel",
-        "PylonRack_7Rnd_Rocket_04_HE_F",
+        "PylonRack_20Rnd_Rocket_03_HE_F",
         {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}},
         {"PylonMissile_1Rnd_Bomb_03_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
     };
     ammoOverrides[] = {
         {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}},
-        {"Rocket_04_HE_F", {"R_Incendiary", "M156 White Phosphorus Rocket"}}
+        {"Rocket_03_HE_F", {"R_Incendiary", "M156 White Phosphorus Rocket"}}
     };
     cost = 17000;
     disallowMagazines[] = {

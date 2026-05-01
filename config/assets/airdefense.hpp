@@ -258,6 +258,7 @@ class Centurion: Air_Defense {
     description = "Medium-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5 km.";
     hasHMD = 1;
     loadable[] = {0, -2, 1};
+    loaded = "Centurion_Decoy";
     name = "Mk21 Centurion";
     offset[] = {0, 5.3, 0};
     rearm = 240;
@@ -270,5 +271,26 @@ class O_Centurion: Centurion {
     side[] = {"east"};
     textures[] = {
         "A3\Static_F_Jets\SAM_System_02\Data\SAM_system_02_olive_co.paa"
+    };
+};
+
+// Centurion Decoy
+class Centurion_Decoy: Air_Defense {
+    cost = 100;
+    decoy = 1;
+    loadable[] = {0, -2, 1};
+    name = "Mk21 Centurion";
+    offset[] = {0, 5.3, 0};
+    rearm = 240;
+    spawn = "B_SAM_System_02_F";
+
+    class Gunner: WLTurretDefaults {
+        removeMagazines[] = {
+            "magazine_Missile_rim162_x8"
+        };
+        removeWeapons[] = {
+            "weapon_rim162Launcher"
+        };
+        turret[] = {0};
     };
 };

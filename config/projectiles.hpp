@@ -14,6 +14,8 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Bomb_SDB"                     // SDB
         };
+        aps[] = {5};
+        consumption = 5;
         camera = 1;
     };
 
@@ -121,7 +123,7 @@ class WLProjectilesConfig {
             "ammo_Missile_HARM",                // AGM-88 HARM
             "ammo_Missile_KH58"                 // Kh-58
         };
-        aps[] = {1, 2, 3};
+        aps[] = {2, 3};
         camera = 1;
         consumption = 25;
         sead = 1;
@@ -131,7 +133,7 @@ class WLProjectilesConfig {
         ammo[] = {
             "M_Sidearm"                         // AGM-122 Sidearm
         };
-        aps[] = {1, 2, 3, 4};
+        aps[] = {2, 3, 4};
         camera = 1;
         consumption = 13;
         sead = 1;
@@ -214,7 +216,7 @@ class WLProjectilesConfig {
         ammo[] = {
             "Missile_AGM_02_Laser_F"
         };
-        aps[] = {1, 2, 3};
+        aps[] = {2, 3, 5};
         camera = 1;
         consumption = 3;
         laser = 1;
@@ -224,7 +226,7 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_SmartMine"
         };
-        aps[] = {1, 2, 3};
+        aps[] = {2, 3, 5};
         consumption = 1;
     };
 
@@ -283,7 +285,7 @@ class WLProjectilesConfig {
             "M_Vorona_HE",                      // Vorona HE
             "M_Vorona_HEAT"                     // Vorona HEAT
         };
-        aps[] = {1, 2, 3, 4};
+        aps[] = {2, 3, 4, 5};
         consumption = 1;
     };
 
@@ -293,7 +295,7 @@ class WLProjectilesConfig {
             "M_120mm_cannon_ATGM_LG",           // 120mm Cannon ATGM (Laser Guided)
             "M_125mm_cannon_ATGM"               // 125mm Cannon ATGM
         };
-        aps[] = {1, 2, 3, 4};
+        aps[] = {2, 3, 4, 5};
         camera = 1;
         consumption = 1;
     };
@@ -305,7 +307,7 @@ class WLProjectilesConfig {
             "M_Jian_AT",                        // Jian - Max loadout: 4
             "Missile_AGM_02_F"                  // Macer I && II (same mag) - Max loadout: 20
         };
-        aps[] = {1, 2, 3, 4};
+        aps[] = {2, 3, 4, 5};
         camera = 1;
         consumption = 2;
     };
@@ -314,7 +316,7 @@ class WLProjectilesConfig {
         ammo[] = {
             "Missile_AGM_01_F"                 // Sharur && KH25 - Max loadout: 8
         };
-        aps[] = {1, 2, 3};
+        aps[] = {2, 3, 4, 5};
         consumption = 3;
     };
 
@@ -322,7 +324,7 @@ class WLProjectilesConfig {
         ammo[] = {
             "M_Vorona_HEAT_Tandem"
         };
-        aps[] = {1, 2, 3};
+        aps[] = {2, 3, 5};
         consumption = 3;
     };
 
@@ -335,7 +337,7 @@ class WLProjectilesConfig {
             "R_PG7_F",                          // RPG-7 HEAT
             "R_TBG32V_F"                        // RPG-42 HE
         };
-        aps[] = {2, 3};
+        aps[] = {1, 2, 3, 5};
         consumption = 1;
     };
 
@@ -349,7 +351,7 @@ class WLProjectilesConfig {
             "Rocket_03_AP_F",                   // Tratnyr AP
             "Rocket_04_AP_F"                    // Shrieker AP
         };
-        aps[] = {1, 2, 3};
+        aps[] = {1, 2, 3, 5};
         consumption = 1;
     };
 

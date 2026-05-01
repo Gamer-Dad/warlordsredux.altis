@@ -124,7 +124,7 @@ class B_APC_Tracked_01_CRV_F: Utility_Vehicle {
     side[] = {"west"};
 };
 class O_Marid_Utility: Utility_Vehicle {
-    cost = 1800;
+    cost = 2000;
     description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
     loadable[] = {0, -0.8, 1.65};
     name = "MSE-3 Marid (Utility)";
@@ -133,7 +133,14 @@ class O_Marid_Utility: Utility_Vehicle {
     variant = 1;
 
     class Gunner: WLTurretDefaults {
-        hideTurret = 1;
+        addMagazines[] = {
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red"
+        };
+        addWeapons[] = {
+            "HMG_127_MBT"
+        };
         removeMagazines[] = {
             "96Rnd_40mm_G_belt",
             "200Rnd_127x99_mag_Tracer_Green"
@@ -159,7 +166,7 @@ class Heavy_Recon: Heavy_Vehicles {
     hasHMD = 1;
     hasScanner = 1;
     isLight = 1;
-    loaded = "Land_IRMaskingCover_01_F";
+    loaded = "Land_BagBunker_Small_F";
     rearm = 120;
     showToEnemies = 2000;
     variant = 1;
@@ -189,7 +196,7 @@ class B_Marshall_Recon: Heavy_Recon {
 
 class O_BTR_Recon: Heavy_Recon {
     description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
-    loaded = "Land_IRMaskingCover_01_F";
+    loadable[] = {0, -1.1, 1.6};
     name = "BTR-K Kamysh (Recon)";
     side[] = {"east"};
     spawn = "O_APC_Tracked_02_cannon_F";
@@ -509,7 +516,6 @@ class Kuma: Heavy_Vehicles {
     rearm = 300;
     spawn = "I_MBT_03_cannon_F";
 };
-
 class B_MBT_03_cannon_F: Kuma {
     side[] = {"west"};
     textures[] = {
@@ -519,15 +525,15 @@ class B_MBT_03_cannon_F: Kuma {
         "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
     };
 };
-
 class I_MBT_03_cannon_F: Kuma {
     side[] = {"guer"};
     vehicleSpawn = 1;
 };
 
 class B_Slammer_II: B_MBT_01_TUSK_F {
+    aps = 5;
     capValue = 6;
-    cost = 8500;
+    cost = 9000;
     description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
     hasHMD = 1;
     miniMortar[] = {8};
@@ -577,22 +583,23 @@ class O_MBT_02_cannon_F: Heavy_Vehicles {
 };
 
 class Angara: Heavy_Vehicles {
-    aps = 3;
     capValue = 6;
     rearm = 300;
 };
 class O_MBT_04_cannon_F: Angara {
+    aps = 3;
     cost = 8500;
     side[] = {"east"};
 };
 class O_MBT_04_command_F: Angara {
+    aps = 5;
     cost = 9500;
     side[] = {"east"};
 };
 
 // T-100X Futura
 class O_MBT_02_railgun_F: Heavy_Vehicles {
-    aps = 3;
+    aps = 5;
     capValue = 6;
     cost = 15000;
     hasHMD = 1;

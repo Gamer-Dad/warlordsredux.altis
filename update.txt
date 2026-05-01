@@ -1,46 +1,47 @@
-Warlords Redux 2.8.0 Patch 6
+Warlords Redux 2.8.0 Patch 7
 
 Assets
-* Removed: Gryphon Interceptor
-* Removed: Growler
-* Added: Strike Wasp
-* Added: Gorgon (Mortar)
+* New: Shahed/LUCAS Drones.
+* Removed: Scout Drones
+* Strike Wasp: increased ammo for incendiary munitions.
+* Marid (Utility): re-added .50 cal, cost $1,800->2,000, now immune to AT minefields.
+* Bobcat: now immune to AT minefields.
+* Slammer II: upgraded APS to Heavy+, which stops SDBs, cost $8,500->9,000.
+* Angara-K, Futura: upgraded APS to Heavy+.
+* AT Minefield: visibility distance on map increased from 400->800m.
+* Large AT Minefields now come in large, circular, and hex shapes.
+* Ghost Hawk: added fast travel option.
+* Ammo/Repair/Fuel trucks: added item deployment option.
+* Heavy Recon: replaced IR tent deployment with fighting position.
 
 Gameplay
-* All players can now call conscription.
-* Conscription cost: $3,000->500.
-* Added incendiary munitions.
-* Demolition charges now do damage to demolishables, limited to 5 deployed at once.
-* Mora: internalized mortar.
-* Hunter Apex: cap power 2->4, aps medium->dazzler.
-* Hellcat: removed internal 20mm cannon.
-* Huron/Mohawk: unified price to $700.
-* Changed EW minigame.
-* Rearm APS: vehicles with heavy APS can now rearm their APS in the field, from outside.
-* Internal vehicle mortars now fire incendiary.
-* Enemy nearby distance lock: 75->50m.
-* Moved remote munitions, ask forgiveness, and squad invites to soft-prompt system.
-* Blackfoot cost reduction by 2k, increased AMRAAM slots.
-* Unified dazzler and aps. Dazzlers now have deadzone and angle check and similar rewards.
-* New imbalance algorithm.
-* Disabled helipad home sectors.
-* Large water-majority regions: 50->60% area calc.
-* Zaros: reduced height.
+* Added Charkia Mine as a sector.
+* Added option to adjust incendiary effect for better performance (does not affect damage).
+* Added queueing system for timed prompt (squad invite, remote munitions, conscription, FF forgive).
+* Removed AI get in, replaced with ability to fast travel AI directly into currently occupied vehicle from map.
+* Reduced balancer count limit: 5->3.
+* Increased incendiary kill radius greatly, reduced airburst height.
+* Show team average player rating on scoreboard.
+* Added deployable decoy for Centurion.
+* Added restock action, grenade turret to fighting positions.
+* Show team priority as circle on map.
+* Reduced FOB upgrade cost $25,000->20,000.
 
 Bugfixes
-* Fixed bug where vehicles could be ordered but not placed.
-* Fixed vehicle mortar to have more understandable name.
-* Fixed combat air warning not being visible enough. Now has audio and more prominent visual cues.
-* Fixed combat air caller name not being shown to enemies.
-* Fixed smart mines beeping not deleting after smart mines are killed, removed audio entirely.
-* Fixed spectrum interface showing dead UAVs.
-* Fixed dead players near team priority not being shown conscription notice.
-* Fixed certain cases where UI elements would visually block conscription notices.
-* Fixed bug where certain UAVs would show up on enemy datalink regardless of EW status.
-* Fixed AFK player count affecting AI limits.
-* Fixed some AA missiles getting deleted for friendly fire check.
-* Fixed strongholds disappearing from map.
-* Fixed travel frontline not considering defensive sectors.
-* Fixed anti-air missile detonation message duplicates.
-* Performance pass on APS, strongholds.
-* Disabled spawn empty setting for potential BE kicks.
+* Fixed light unguided rockets penetrating light aps.
+* Fixed heavier munitions not going through light aps.
+* Fixed duplicate sound source for incendiary munitions.
+* Fixed infantry spawning death in home.
+* Fixed friendly fire auto-punishing when multiple units are team killed.
+* Performance pass on asset map button calculations.
+* Fixed not being able to FT AI to your location if AI is downed or in water.
+* Fixed AI personnel counting into asset limit.
+* Fixed Mohawk universal slingload system not working with some large vehicles.
+* Fixed green air wrecks disappearing when green sector is captured.
+* Performance pass on teamkill forgiveness.
+* Fixed some cases of green jets crashing on spawn.
+* Fixed script error for location scanner.
+* Performance pass on team priority, map buttons.
+* Reworked map selection screen.
+* Fixed exploit where players can call in combat air patrol on non-helipad sectors.
+* Fixed exploit where consumption mechanics can be rearmed for free.

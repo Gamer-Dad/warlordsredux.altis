@@ -72,6 +72,45 @@ class O_UAV_06_F: AR6 {
     side[] = {"east"};
 };
 
+class Loitering_Munition: Remote_Control {
+    cost = 1500;
+    description = "Loitering munition that can be piloted to its target.";
+    detonate = 5;
+    loadable[] = {0, -1.0, 0};
+    requirements[] = {"S"};
+    spawn = "O_T_UAV_04_CAS_F";
+    variant = 1;
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
+    class Gunner: WLTurretDefaults {
+        removeMagazines[] = {
+            "4Rnd_LG_Jian",
+            "Laserbatteries"
+        };
+        removeWeapons[] = {
+            "missiles_Jian",
+            "Laserdesignator_mounted"
+        };
+        turret[] = {0};
+    };
+};
+class B_Lucas: Loitering_Munition {
+    name = "FLM-136 LUCAS";
+    side[] = {"west"};
+};
+class O_Shahed: Loitering_Munition {
+    name = "HESA Shahed-136";
+    side[] = {"east"};
+};
+
 // Offroad (IED)
 class Offroad_IED: Remote_Control {
     aps = 4;
@@ -120,55 +159,55 @@ class O_T_UAV_04_CAS_F: Remote_Control {
 };
 
 // Scout Stealth Helo
-class Scout_Stealth_Helo: Remote_Control {
-    cost = 5000;
-    disallowMagazines[] = {
-        "PylonRack_12Rnd_PG_missiles",
-        "PylonRack_12Rnd_missiles",
-        "PylonRack_1Rnd_LG_scalpel",
-        "PylonRack_3Rnd_LG_scalpel",
-        "PylonRack_7Rnd_Rocket_04_AP_F"
-    };
-    hasAirRadar = 4000;
-    hasHMD = 1;
-    hasReconOptics = 1;
-    loadable[] = {0, -2.2, 0.1};
-    rearm = 300;
-    requirements[] = {"FA"};
-    spawn = "B_T_UAV_03_dynamicLoadout_F";
-    variant = 1;
+// class Scout_Stealth_Helo: Remote_Control {
+//     cost = 5000;
+//     disallowMagazines[] = {
+//         "PylonRack_12Rnd_PG_missiles",
+//         "PylonRack_12Rnd_missiles",
+//         "PylonRack_1Rnd_LG_scalpel",
+//         "PylonRack_3Rnd_LG_scalpel",
+//         "PylonRack_7Rnd_Rocket_04_AP_F"
+//     };
+//     hasAirRadar = 4000;
+//     hasHMD = 1;
+//     hasReconOptics = 1;
+//     loadable[] = {0, -2.2, 0.1};
+//     rearm = 300;
+//     requirements[] = {"FA"};
+//     spawn = "B_T_UAV_03_dynamicLoadout_F";
+//     variant = 1;
 
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
-        removeMagazines[] = {
-            "120Rnd_CMFlare_Chaff_Magazine"
-        };
-        removeWeapons[] = {
-            "CMFlareLauncher"
-        };
-        turret[] = {-1};
-    };
-};
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "300Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         addWeapons[] = {
+//             "CMFlareLauncher_Singles"
+//         };
+//         removeMagazines[] = {
+//             "120Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeWeapons[] = {
+//             "CMFlareLauncher"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
-class B_Scout_Falcon: Scout_Stealth_Helo {
-    allowPylonMagazines[] = {
-        "PylonRack_Missile_BIM9X_x2"
-    };
-    name = "RQ-12 Scout Falcon";
-    side[] = {"west"};
-};
-class O_Scout_Falcon: Scout_Stealth_Helo {
-    allowPylonMagazines[] = {
-        "PylonMissile_Missile_AA_R73_x1"
-    };
-    name = "SY-12 Meyu Arrow";
-    side[] = {"east"};
-};
+// class B_Scout_Falcon: Scout_Stealth_Helo {
+//     allowPylonMagazines[] = {
+//         "PylonRack_Missile_BIM9X_x2"
+//     };
+//     name = "RQ-12 Scout Falcon";
+//     side[] = {"west"};
+// };
+// class O_Scout_Falcon: Scout_Stealth_Helo {
+//     allowPylonMagazines[] = {
+//         "PylonMissile_Missile_AA_R73_x1"
+//     };
+//     name = "SY-12 Meyu Arrow";
+//     side[] = {"east"};
+// };
 
 class Predator_Drone: Remote_Control {
     cost = 5500;
