@@ -6,6 +6,7 @@ class Sector_Defense {
 class Static_Designator: Sector_Defense {
     cost = 50;
     loadable[] = {0, -2.5, -0.3};
+    nameShort = "DESIGNATOR";
     offset[] = {0, 3, 0};
     rearm = 60;
 };
@@ -20,6 +21,7 @@ class O_Static_Designator_02_F: Static_Designator {
 class Static_HMG: Sector_Defense {
     cost = 150;
     loadable[] = {0, -2.5, 0.4};
+    nameShort = "STATIC HMG";
     offset[] = {0, 3, 0};
     rearm = 120;
 
@@ -50,6 +52,7 @@ class O_HMG_01_F: Static_HMG {
 class Static_HMG_Raised: Static_HMG {
     cost = 200;
     loadable[] = {0, -2.5, 0.8};
+    nameShort = "STATIC HMG";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -78,6 +81,7 @@ class O_HMG_01_high_F: Static_HMG_Raised {
 class Static_GMG: Sector_Defense {
     cost = 200;
     loadable[] = {0, -2.5, 0.4};
+    nameShort = "STATIC GMG";
     offset[] = {0, 3, 0};
     rearm = 120;
 };
@@ -92,6 +96,7 @@ class O_GMG_01_F: Static_GMG {
 class Static_GMG_Raised: Static_GMG {
     cost = 250;
     loadable[] = {0, -2.5, 0.8};
+    nameShort = "STATIC GMG";
 };
 class B_GMG_01_high_F: Static_GMG_Raised {
     side[] = {"west"};
@@ -105,6 +110,7 @@ class Static_AT: Sector_Defense {
     cost = 300;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.5, 0.2};
+    nameShort = "TITAN";
     offset[] = {0, 3, 0};
     rearm = 180;
 
@@ -141,6 +147,7 @@ class AT_Minefield: Sector_Defense {
     dumbMine[] = {50, 10, 1};
     loadable[] = {-0.4, -1, 0.8};
     name = "Minefield (AT)";
+    nameShort = "MINEFIELD";
     obstacle = 2;
     offset[] = {0, 3, 0};
     side[] = {"west", "east", "guer"};
@@ -173,6 +180,7 @@ class Static_HMG_Auto: Sector_Defense {
     cost = 500;
     loadable[] = {0, -2.5, 0.4};
     name = "Mk30 HMG Auto Turret";
+    nameShort = "STATIC HMG";
     offset[] = {0, 3, 0};
     rearm = 120;
 
@@ -204,6 +212,7 @@ class Static_GMG_Auto: Sector_Defense {
     cost = 650;
     loadable[] = {0, -2.5, 0.4};
     name = "Mk32 GMG Auto Turret";
+    nameShort = "STATIC GMG";
     offset[] = {0, 3, 0};
     rearm = 120;
 };
@@ -221,6 +230,7 @@ class Smart_Mine: Sector_Defense {
     empty = 1;
     immobile = 1;
     loadable[] = {-0.4, -1, 0.9};
+    nameShort = "SMART MINE";
     offset[] = {0, 5, 0};
     rearm = 900;
     requirements[] = {"S"};
@@ -244,63 +254,18 @@ class I_Smart_Mine: Smart_Mine {
     spawn = "I_UGV_01_F";
 };
 
-class Mortar: Sector_Defense {
-    cost = 5000;
-    loadable[] = {0, -2.5, 0};
-    offset[] = {0, 3, 0};
-    rearm = 900;
-};
-class B_Mortar_01_F: Mortar {
-    side[] = {"west"};
-};
-class O_Mortar_01_F: Mortar {
-    side[] = {"east"};
-};
-
-class Mortar_Incendiary: Mortar {
-    ammoOverrides[] = {
-        {"Smoke_82mm_AMOS_White", {"82mm_Incendiary", "82mm Incendiary Shells"}},
-    };
-    cost = 7500;
-    disallowMagazines[] = {
-        "8Rnd_82mm_Mo_shells",
-        "8Rnd_82mm_Mo_Flare_white",
-        "8Rnd_82mm_Mo_Flare_white_illumination",
-        "8Rnd_82mm_Mo_guided",
-        "8Rnd_82mm_Mo_LG"
-    };
-    name = "82mm Incendiary Mortar";
-    variant = 1;
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "8Rnd_82mm_Mo_Smoke_white",
-            "8Rnd_82mm_Mo_Smoke_white"
-        };
-        addWeapons[] = {
-            "mortar_82mm"
-        };
-        removeMagazines[] = {
-            "8Rnd_82mm_Mo_shells",
-            "8Rnd_82mm_Mo_Flare_white",
-            "8Rnd_82mm_Mo_Flare_white_illumination",
-            "8Rnd_82mm_Mo_guided",
-            "8Rnd_82mm_Mo_LG",
-            "8Rnd_82mm_Mo_Smoke_white"
-        };
-        removeWeapons[] = {
-            "mortar_82mm"
-        };
-        turret[] = { 0 };
-    };
-};
-// class B_Mortar_Incendiary: Mortar_Incendiary {
-//     side[] = {"west"};
-//     spawn = "B_Mortar_01_F";
+// class Mortar: Sector_Defense {
+//     cost = 5000;
+//     loadable[] = {0, -2.5, 0};
+//     nameShort = "MORTAR";
+//     offset[] = {0, 3, 0};
+//     rearm = 900;
 // };
-// class O_Mortar_Incendiary: Mortar_Incendiary {
+// class B_Mortar_01_F: Mortar {
+//     side[] = {"west"};
+// };
+// class O_Mortar_01_F: Mortar {
 //     side[] = {"east"};
-//     spawn = "O_Mortar_01_F";
 // };
 
 // MK45 Hammer
@@ -312,6 +277,7 @@ class B_Ship_Gun_01_F: Sector_Defense {
         "magazine_ShipCannon_120mm_mine_shells_x6",
         "magazine_ShipCannon_120mm_AT_mine_shells_x6"
     };
+    nameShort = "HAMMER";
     offset[] = {0, 9, 0};
     rearm = 1800;
     side[] = {"west"};

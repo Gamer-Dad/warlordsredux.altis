@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=4063;
+		nextID=4095;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=171;
+		nextID=188;
 	};
 	class Camera
 	{
-		pos[]={10655.537,212.69899,20425.496};
-		dir[]={0.97436059,-0.14014964,-0.17670271};
-		up[]={0.13794388,0.99012119,-0.025015291};
-		aside[]={-0.17846294,-3.5652192e-07,-0.98405021};
+		pos[]={25784.926,51.408382,13753.312};
+		dir[]={-0.91580284,-0.30811638,0.25767455};
+		up[]={-0.29660466,0.95134616,0.083454072};
+		aside[]={0.27085131,1.4714897e-07,0.96263111};
 	};
 };
 binarizationWanted=0;
@@ -34,17 +34,20 @@ addons[]=
 	"A3_Boat_F_Jets_Carrier_01",
 	"A3_Characters_F",
 	"A3_Structures_F_Mil_Cargo",
-	"A3_Structures_F_Exp_Commercial_MultistoryBuilding_03",
-	"A3_Structures_F_Training",
 	"A3_Structures_F_Enoch_Military_Barracks",
 	"A3_Structures_F_Argo_Military_Bunkers",
-	"A3_Structures_F_Enoch_Military_Radar"
+	"A3_Structures_F_Enoch_Military_Radar",
+	"A3_Structures_F_Walls",
+	"A3_Structures_F_Exp_Industrial_Port",
+	"A3_Structures_F_Enoch_Infrastructure_Railways",
+	"A3_Structures_F_Naval_Piers",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=8;
+		items=10;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -75,29 +78,43 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="A3_Structures_F_Exp_Commercial";
-			name="Arma 3 Apex - Commercial Buildings";
+			className="A3_Structures_F_Enoch_Military";
+			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item5
+		{
+			className="A3_Structures_F_Argo";
+			name="Arma 3 Malden - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item6
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item7
 		{
-			className="A3_Structures_F_Enoch_Military";
-			name="Arma 3 Contact Platform - Military Buildings and Structures";
+			className="A3_Structures_F_Exp_Industrial";
+			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item8
 		{
-			className="A3_Structures_F_Argo";
-			name="Arma 3 Malden - Buildings and Structures";
+			className="A3_Structures_F_Enoch_Infrastructure";
+			name="Arma 3 Contact Platform - Infrastructure Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -111,9 +128,9 @@ class DynamicSimulation
 dlcs[]=
 {
 	"Jets",
-	"Expansion",
 	"Enoch",
-	"Argo"
+	"Argo",
+	"Expansion"
 };
 randomSeed=3694325;
 class ScenarioData
@@ -147,7 +164,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=128;
+		items=132;
 		class Item0
 		{
 			dataType="Logic";
@@ -342,8 +359,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8868.1328,0,28794.512};
-						angles[]={0,1.5870627,0};
+						position[]={25652.777,0,13657.11};
+						angles[]={0,0.48869219,0};
 					};
 					side="Empty";
 					class Attributes
@@ -353,7 +370,7 @@ class Mission
 					};
 					id=2872;
 					type="Land_Carrier_01_base_F";
-					atlOffset=183.50999;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -374,7 +391,7 @@ class Mission
 				};
 			};
 			id=2613;
-			atlOffset=183.50999;
+			atlOffset=185.97;
 		};
 		class Item4
 		{
@@ -3819,117 +3836,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={18684.26,43.935081,8256.5234};
-				angles[]={0,5.7641768,0};
-			};
-			side="Empty";
-			flags=1;
-			class Attributes
-			{
-				createAsLocalObject=1;
-				disableSimulation=1;
-			};
-			id=4053;
-			type="Land_MultistoryBuilding_03_F";
-			atlOffset=0.25699997;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="DoorStates";
-					expression="['init',_this,_value] call bis_fnc_3DENAttributeDoorStates;";
-					class Value
-					{
-						class data
-						{
-							singleType="ARRAY";
-							class value
-							{
-								items=3;
-								class Item0
-								{
-									class data
-									{
-										singleType="SCALAR";
-										value=1;
-									};
-								};
-								class Item1
-								{
-									class data
-									{
-										singleType="SCALAR";
-										value=0;
-									};
-								};
-								class Item2
-								{
-									class data
-									{
-										singleType="SCALAR";
-										value=0;
-									};
-								};
-							};
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item124
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={18685.816,70.159668,8245.7109};
-				angles[]={0,1.0458362,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				createAsLocalObject=1;
-				disableSimulation=1;
-			};
-			id=4054;
-			type="Land_RampConcrete_F";
-			atlOffset=51.822517;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item125
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={10691.95,208.71674,20396.562};
 				angles[]={0,0.21825342,0};
 			};
@@ -4000,7 +3906,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item126
+		class Item124
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4036,7 +3942,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item127
+		class Item125
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4079,6 +3985,198 @@ class Mission
 						{
 							singleType="BOOL";
 							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item126
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8495.8691,114.25638,25062.605};
+				angles[]={0,3.1415927,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4075;
+			type="Land_Canal_Wall_Stairs_F";
+			atlOffset=1.9030075;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item127
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8481.3359,116.11803,25051.924};
+				angles[]={0,4.712389,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=4077;
+			type="Land_CraneRail_01_F";
+			atlOffset=0.017097473;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item128
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8484.2676,115.05119,25057.289};
+				angles[]={0,4.712389,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4084;
+			type="Land_Rail_ConcreteRamp_F";
+			atlOffset=0.4730072;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item129
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8476.8369,111.81011,25058.023};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=4085;
+			type="Land_Pier_F";
+			atlOffset=0.34500122;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item130
+		{
+			dataType="Layer";
+			name="Catapult platform";
+			id=4091;
+			atlOffset=185.97;
+		};
+		class Item131
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8494.8232,106.43403,25125.453};
+				angles[]={6.1888003,1.1342196,6.127131};
+			};
+			areaSize[]={100,0,100};
+			flags=1;
+			id=4092;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=8;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
 						};
 					};
 				};

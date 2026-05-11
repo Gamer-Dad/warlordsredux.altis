@@ -13,7 +13,6 @@ class CfgVehicleClassName {
     flagOffset = array;                 // when set, if the vehicle spawns a flag, its offset will use this.
     garbageCollect = number (0|1);      // Whether we manually delete the vehicle when it's destroyed. For buildables.
     hasHMD = number (0|1);              // Whether the vehicle supports the helmet mounted display system.
-    hasScanner = number (0|1);          // Whether the vehicle has a scanner.
     hasReconOptics = number (0|1|2);    // Whether the vehicle has recon optics.
     hasTurretVisualizer = number (0|1); // Whether the vehicle has a turret visualizer.
     isLight = number (0|1);             // Whether the vehicle is considered lightweight.

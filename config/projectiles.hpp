@@ -237,7 +237,9 @@ class WLProjectilesConfig {
             "ammo_stormbreaker",
             "ammo_upmk_d30"
         };
+        aps[] = {5};
         camera = 1;
+        consumption = 3;
         gps = 1;
     };
 

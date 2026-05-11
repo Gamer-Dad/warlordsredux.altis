@@ -10,6 +10,7 @@ class FOB_Crate: Special {
     loadable[] = {0, -1.5, 0.5};
     loadableAngle = 90;
     name = "Forward Base Supplies";
+    nameShort = "SUPPLIES";
     offset[] = {0, 5, 0};
 };
 class Land_Cargo20_blue_F: FOB_Crate {
@@ -26,6 +27,7 @@ class Supply_Boat: Naval {
     description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
     hasFastTravel = 1;
     name = "Supply RHIB";
+    nameShort = "RHIB";
     spawn = "I_C_Boat_Transport_02_F";
 };
 class B_Supply_Boat: Supply_Boat {
@@ -42,6 +44,7 @@ class Team_Rally_Point: Special {
     demolishStepTime = 3;
     hasFastTravel = 1;
     name = "Team Rally Point";
+    nameShort = "RALLY";
     offset[] = {0, 8, 0};
     singleton = 1;
     showToEnemies = 1000;
@@ -64,11 +67,9 @@ class O_UAV_02_F: Special {
 };
 
 class B_Integral_Mortar: Special {
-    ammoOverrides[] = {
-        {"Smoke_82mm_AMOS_White", {"82mm_Incendiary", "82mm Incendiary Shells"}},
-    };
     cost = -1;
     name = "Soltam CO2 Vehicle-Mounted Mortar";
+    nameShort = "MORTAR";
 };
 
 class Land_BagFence_Round_F: Special {
@@ -78,6 +79,7 @@ class Land_BagFence_Round_F: Special {
     fragile = 200;
     lifetime = 180;
     name = "Temporary Sandbag Wall";
+    nameShort = "SANDBAG";
     offset[] = {0, 3, 0};
 };
 
@@ -92,12 +94,14 @@ class Land_BagBunker_Small_F: Special {
     hasFastTravel = 1;
     loaded = "Static_HMG_Shielded";
     name = "Fighting Position";
+    nameShort = "BUNKER";
     offset[] = {0, 5, 0};
 };
 
 class Static_HMG_Shielded: Special {
     cost = 500;
     name = "Mk19 Grenade Launcher (Static)";
+    nameShort = "STATIC GMG";
     offset[] = {0, 3, 0};
     rearm = 180;
     spawn = "I_HMG_02_high_F";
@@ -119,29 +123,6 @@ class Static_HMG_Shielded: Special {
     };
 };
 
-class Light_Mortar: Special {
-    cost = 500;
-    loaded = "Land_SandbagBarricade_01_hole_F";
-    name = "Mk6 Mortar (Light Load)";
-    offset[] = {0, 3, 0};
-    rearm = 900;
-    spawn = "I_Mortar_01_F";
-    lifetime = 300;
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "8Rnd_82mm_Mo_shells"
-        };
-        removeMagazines[] = {
-            "8Rnd_82mm_Mo_shells",
-            "8Rnd_82mm_Mo_Flare_white",
-            "8Rnd_82mm_Mo_Flare_white_illumination",
-            "8Rnd_82mm_Mo_Smoke_white"
-        };
-        turret[] = {0};
-    };
-};
-
 class Static_Cannon: Special {
     aps = 2;
     capValue = 2;
@@ -153,6 +134,7 @@ class Static_Cannon: Special {
     loadable[] = {0, -3.4, 0.8};
     loadableAngle = 180;
     name = "Fighting Position (Cannon)";
+    nameShort = "STATIC CANNON";
     offset[] = {0, 8, 0};
     rearm = 300;
     spawn = "B_AFV_Wheeled_01_cannon_F";
@@ -195,9 +177,10 @@ class Crater_Debris: Special {
     obstacle = 3;
     demolishable = 1;
     demolishStepTime = 25;
-    hideMap = 1;
+    hideMap = 2;
     lifetime = 1200;
     name = "Debris";
+    nameShort = "DEBRIS";
 };
 
 class Land_ShellCrater_02_large_F: Crater_Debris {};
@@ -209,17 +192,20 @@ class CraterLong_02_F: Crater_Debris {};
 class Land_Destroyer_01_base_F: Special {
     cost = 40000;
     name = "Destroyer";
+    nameShort = "DESTROYER";
 };
 
 class B_Ship_MRLS_01_F: Special {
     cost = 20000;
     hasHMD = 1;
+    nameShort = "VLS";
 };
 
 class Spawn_Tent: Special {
     cost = 300;
     demolishStepTime = 2;
     name = "Tent";
+    nameShort = "TENT";
 };
 
 class Land_TentA_F: Spawn_Tent {};
@@ -229,4 +215,5 @@ class Land_TentSolar_01_redwhite_F: Spawn_Tent {};
 
 class RuggedTerminal_01_communications_hub_F: Special {
     name = "Forward Base";
+    nameShort = "FOB";
 };

@@ -11,6 +11,7 @@ class Faction_Crate: Gear {
     lifetime = 300;
     loadable[] = {0, -1, 0.5};
     name = "Resupply Crate";
+    nameShort = "CRATE";
     offset[] = {0, 3, 0};
     spawn = "VirtualReammoBox_camonet_F";
 };
@@ -63,6 +64,7 @@ class Huron_Pod: Gear {
     };
     cost = 500;
     loadable[] = {0, -1.5, 0.5};
+    nameShort = "POD";
     offset[] = {0, 8, 0};
 };
 class B_Slingload_01_Fuel_F: Huron_Pod {
@@ -89,6 +91,7 @@ class Taru_Pod: Gear {
     };
     cost = 500;
     loadable[] = {0, -1.8, 0.4};
+    nameShort = "POD";
     offset[] = {0, 8, 0};
 };
 class Land_Pod_Heli_Transport_04_fuel_F: Taru_Pod {

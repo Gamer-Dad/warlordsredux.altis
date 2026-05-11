@@ -7,6 +7,7 @@ class Rotary_Wing {
 class B_Heli_Light_01_F: Rotary_Wing {
     cost = 300;
     loadable[] = {0, -2.2, 0.9};
+    nameShort = "HUMMINGBIRD";
     side[] = {"west"};
 };
 
@@ -16,6 +17,7 @@ class Taru: Rotary_Wing {
     hasFastTravel = 1;
     hasSling = 1;
     loadable[] = {0, -2.2, 2.2};
+    nameShort = "TARU";
     offset[] = {0, 10, 0};
 };
 class O_Heli_Transport_04_covered_F: Taru {
@@ -34,6 +36,7 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     hasHMD = 1;
     hasSling = 1;
     loadable[] = {0, -2.2, 1.3};
+    nameShort = "ORCA";
     offset[] = {0, 10, 0};
     rearm = 240;
     side[] = {"east"};
@@ -50,6 +53,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
     cost = 3500;
+    nameShort = "ORCA ARMED";
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
@@ -78,6 +82,7 @@ class B_Heli_Transport_01_F: Rotary_Wing {
     hasSling = 1;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 1.5};
+    nameShort = "GHOSTHAWK";
     offset[] = {0, 11, 0};
     rearm = 240;
     side[] = {"west"};
@@ -88,6 +93,7 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
     };
     cost = 5000;
     name = "UH-80 Ghost Hawk Block II";
+    nameShort = "GHOSTHAWK II";
     rearm = 300;
 
     class Pilot: WLTurretDefaults {
@@ -119,6 +125,7 @@ class Transport_Helicopter: Rotary_Wing {
 class B_Heli_Transport_03_F: Transport_Helicopter {
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 2.1};
+    nameShort = "HURON";
     side[] = {"west"};
 };
 class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
@@ -132,6 +139,7 @@ class O_Mohawk: Transport_Helicopter {
     hasHMD = 1;
     loadable[] = {0, -2.2, 2.1};
     name = "CH-49 Mohawk";
+    nameShort = "MOHAWK";
     side[] = {"east"};
     spawn = "I_Heli_Transport_02_F";
     textures[] = {
@@ -170,6 +178,7 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
     hasHMD = 1;
     hasReconOptics = 1;
     loadable[] = {0, -2.2, 0.9};
+    nameShort = "PAWNEE";
     rearm = 240;
     side[] = {"west"};
 
@@ -226,6 +235,7 @@ class Hellcat: Rotary_Wing {
     hasSling = 1;
     loadable[] = {0, -2.2, 0.3};
     name = "WY-55 Hellcat";
+    nameShort = "HELLCAT";
     offset[] = {0, 9, 0};
     rearm = 240;
     spawn = "I_Heli_light_03_dynamicLoadout_F";
@@ -279,6 +289,7 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
     hasSling = 1;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 2.0};
+    nameShort = "KAJMAN";
     offset[] = {0, 11, 0};
     rearm = 300;
     side[] = {"east"};
@@ -327,6 +338,7 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
     hasSling = 1;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 0.9};
+    nameShort = "BLACKFOOT";
     offset[] = {0, 10, 0};
     rearm = 300;
     side[] = {"west"};
@@ -367,4 +379,5 @@ class B_Heli_Attack_01_pylons_dynamicLoadout_F: B_Heli_Attack_01_dynamicLoadout_
     };
     cost = 11000;
     name = "AH-99 Blackfoot Block II";
+    nameShort = "BLACKFOOT II";
 };

@@ -3,28 +3,32 @@ class Fixed_Wing {
     requirements[] = {"A"};
 };
 
-class Caesar_BTT: Fixed_Wing {
+class Caesar_Dronehunter: Fixed_Wing {
     cost = 800;
-    description = "Caesar BTT is a light unarmed aircraft.";
+    description = "Caesar Drone Hunter is a light unarmed aircraft used to find and destroy enemy drones.";
     loadable[] = {0, -2.2, 0.9};
-    name = "Caesar BTT";
+    name = "Caesar Drone Hunter";
+    nameShort = "CAESAR";
     spawn = "C_Plane_Civil_01_F";
 };
-class B_Caesar_BTT: Caesar_BTT {
+class B_Caesar: Caesar_Dronehunter {
     side[] = {"west"};
 };
-class O_Caesar_BTT: Caesar_BTT {
+class O_Caesar: Caesar_Dronehunter {
     side[] = {"east"};
 };
-class I_Caesar_BTT: Caesar_BTT {
+class I_Caesar: Caesar_Dronehunter {
     side[] = {"guer"};
 };
 
 // V-44 X Blackfish
 class Blackfish: Fixed_Wing {
-    cost = 2000;
+    cost = 1000;
     hasAirRearm = 1;
+    hasFastTravel = 1;
     hasHMD = 1;
+    hasParadropper = 1;
+    nameShort = "BLACKFISH";
     requirements[] = {"H"};
 };
 class B_T_VTOL_01_infantry_F: Blackfish {
@@ -36,16 +40,12 @@ class B_T_VTOL_01_vehicle_F: Blackfish {
 };
 
 // V-44 X Blackfish (Armed)
-class Blackfish_Armed: Blackfish {
+class B_T_VTOL_01_armed_F: Blackfish {
+    cost = 8000;
     hasHMD = 1;
     hasTurretVisualizer = 1;
     rearm = 300;
     requirements[] = {"A"};
-    spawn = "B_T_VTOL_01_armed_F";
-};
-
-class B_T_VTOL_01_armed_F: Blackfish_Armed {
-    cost = 8000;
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
@@ -59,19 +59,51 @@ class B_T_VTOL_01_armed_F: Blackfish_Armed {
     };
 };
 
-class B_T_VTOL_01_armed_up_F: Blackfish_Armed {
-    cost = 10000;
+class B_Archerfish: Blackfish {
+    ammoOverrides[] = {
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
+    };
+    cost = 11000;
+    hasHMD = 1;
     name = "V-44 J Archerfish";
+    rearm = 420;
+    requirements[] = {"A"};
     side[] = {"west"};
+    spawn = "B_T_VTOL_01_vehicle_F";
     variant = 1;
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles"
+            "CMFlareLauncher_Singles",
+            "weapon_AGM_65Launcher"
         };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
@@ -81,51 +113,97 @@ class B_T_VTOL_01_armed_up_F: Blackfish_Armed {
         };
         turret[] = {-1};
     };
+};
 
-    class Copilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "magazine_Bomb_SDB_x1",
-            "magazine_Bomb_SDB_x1",
-            "magazine_Bomb_SDB_x1",
-            "magazine_Bomb_SDB_x1",
-            "magazine_Bomb_SDB_x1",
-            "magazine_Bomb_SDB_x1"
-        };
-        addWeapons[] = {
-            "weapon_SDBLauncher",
-            "CMFlareLauncher_Singles"
-        };
-        removeMagazines[] = {
-            "Laserbatteries"
-        };
-        removeWeapons[] = {
-            "Laserdesignator_mounted"
-        };
-        turret[] = {0};
+// Scout Stealth
+class Scout_Stealth: Fixed_Wing {
+    ammoOverrides[] = {
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
+    cost = 5000;
+    disallowMagazines[] = {
+        "PylonRack_Bomb_SDB_x4",
+        "PylonRack_Bomb_GBU12_x2",
+        "PylonMissile_Missile_BIM9X_x1",
+        "PylonMissile_Bomb_GBU12_x1",
+        "PylonRack_Missile_AGM_02_x1",
+        "PylonRack_Missile_AGM_02_x2",
+        "PylonRack_Missile_AMRAAM_D_x1",
+        "PylonRack_Missile_AMRAAM_D_x2",
+        "PylonRack_Missile_HARM_x1",
+        "PylonRack_Missile_BIM9X_x1",
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonMissile_Missile_AMRAAM_D_INT_x1",
+        "PylonMissile_Missile_KH58_x1",
+        "PylonMissile_Missile_AGM_KH25_x1",
+        "PylonMissile_Missile_AGM_KH25_INT_x1",
+        "PylonMissile_Bomb_KAB250_x1",
+        "PylonMissile_Missile_KH58_INT_x1",
+        "PylonMissile_Missile_AA_R77_INT_x1",
+        "PylonMissile_Missile_AA_R73_x1",
+        "PylonMissile_Missile_AA_R77_x1"
+    };
+    hasHMD = 1;
+    hasReconOptics = 1;
+    offset[] = {0, 12, 0};
+    scanner = 1000;
+    rearm = 420;
+    requirements[] = {"A"};
+    threatDetection = 8000;
+    variant = 1;
+};
 
-    class RightGunner: WLTurretDefaults {
+class B_Scout_Wasp: Scout_Stealth {
+    loadable[] = {0, -2.2, 1.6};
+    name = "SR-181 Scout Wasp";
+    nameShort = "SCOUT WASP";
+    side[] = {"west"};
+    spawn = "B_Plane_Fighter_01_F";
+
+    class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green"
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "PylonRack_4Rnd_LG_scalpel",
+            "4Rnd_Titan_long_missiles"
         };
         addWeapons[] = {
-            "autocannon_30mm_RCWS"
+            "missiles_SCALPEL",
+            "missiles_titan"
         };
         removeMagazines[] = {
-            "240Rnd_40mm_GPR_Tracer_Red_shells",
-            "160Rnd_40mm_APFSDS_Tracer_Red_shells"
+            "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        turret[] = {-1};
+    };
+};
+
+class O_Scout_Shikra: Scout_Stealth {
+    loadable[] = {0, -2.2, 1.7};
+    name = "Yak-201 Scout Shikra";
+    nameShort = "SCOUT SHIKRA";
+    side[] = {"east"};
+    spawn = "O_Plane_Fighter_02_F";
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "PylonRack_4Rnd_LG_scalpel",
+            "4Rnd_Titan_long_missiles"
+        };
+        addWeapons[] = {
+            "CMFlareLauncher_Singles",
+            "missiles_SCALPEL",
+            "missiles_titan"
+        };
+        removeMagazines[] = {
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
-            "autocannon_40mm_VTOL_01"
+            "CMFlareLauncher"
         };
-        turret[] = {2};
+        turret[] = {-1};
     };
 };
 
@@ -146,14 +224,16 @@ class O_T_VTOL_02_infantry_dynamicLoadout_F: Fixed_Wing {
         {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
-    cost = 12000;
+    cost = 9000;
     ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
     hasAirRearm = 1;
     hasGunnerAction = 1;
     hasHMD = 1;
+    hasParadropper = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.2, 2.4};
+    nameShort = "XIAN";
     rearm = 300;
     requirements[] = {"H"};
     side[] = {"east"};
@@ -212,13 +292,14 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
         {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
     };
-    cost = 13000;
+    cost = 11000;
     disallowMagazines[] = {
         "PylonRack_1Rnd_Missile_AGM_02_F",
         "PylonRack_3Rnd_Missile_AGM_02_F"
     };
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.5};
+    nameShort = "WIPEOUT";
     rearm = 420;
     side[] = {"west"};
 
@@ -238,6 +319,7 @@ class Buzzard_CAS: Fixed_Wing {
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.6};
     name = "A-143 Buzzard (CAS)";
+    nameShort = "BUZZARD";
     rearm = 420;
     spawn = "I_Plane_Fighter_03_dynamicLoadout_F";
 
@@ -287,17 +369,20 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
         "PylonRack_12Rnd_PG_missiles",
         "PylonRack_12Rnd_PGM_missiles",
         {"PylonMissile_1Rnd_Mk82_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
+        {"PylonMissile_Missile_AA_R73_x1", {"Pylons1", "Pylons10"}},
+        {"PylonMissile_Missile_AA_R77_x1", {"Pylons1", "Pylons10"}},
         {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}},
-        {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}},
-        {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}}
+        "PylonRack_1Rnd_Missile_AGM_02_F",
+        "PylonRack_3Rnd_Missile_AGM_02_F"
     };
     ammoOverrides[] = {
         {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
-    cost = 15000;
+    cost = 16000;
     hasHMD = 1;
     loadable[] = {0, -2.2, 2.3};
+    nameShort = "NEO";
     rearm = 420;
     side[] = {"east"};
 
@@ -317,6 +402,7 @@ class Gryphon: Fixed_Wing {
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.4};
     name = "A-149 Gryphon";
+    nameShort = "GRYPHON";
     rearm = 420;
     spawn = "I_Plane_Fighter_04_F";
 };
@@ -345,7 +431,6 @@ class Gryphon: Fixed_Wing {
 //         "PylonMissile_Bomb_GBU12_x1"
 //     };
 //     ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
-//     hasAirRadar = 10000;
 //     name = "A-149 Gryphon (Interceptor)";
 //     side[] = {"east"};
 //     textures[] = {
@@ -437,16 +522,14 @@ class B_Strike_Wasp: Fixed_Wing {
         "PylonRack_12Rnd_PG_missiles",
         "PylonRack_12Rnd_PGM_missiles",
         "PylonRack_4Rnd_LG_scalpel",
-        "PylonRack_20Rnd_Rocket_03_HE_F",
         {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}},
         {"PylonMissile_1Rnd_Bomb_03_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
     };
     ammoOverrides[] = {
         {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}},
-        {"Rocket_03_HE_F", {"R_Incendiary", "M156 White Phosphorus Rocket"}}
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
     };
-    cost = 17000;
+    cost = 19000;
     disallowMagazines[] = {
         "PylonMissile_Missile_AMRAAM_D_x1",
         "PylonRack_Missile_AMRAAM_D_x1",
@@ -455,6 +538,7 @@ class B_Strike_Wasp: Fixed_Wing {
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.6};
     name = "A-181 Strike Wasp";
+    nameShort = "STRIKE WASP";
     rearm = 420;
     side[] = {"west"};
     spawn = "B_Plane_Fighter_01_F";
@@ -491,7 +575,6 @@ class B_Strike_Wasp: Fixed_Wing {
 //         "PylonRack_Missile_AGM_02_x2"
 //     };
 //     ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
-//     hasAirRadar = 14000;
 //     hasHMD = 1;
 //     loadable[] = {0, -2.2, 1.6};
 //     name = "EF/A-181 Growler";
@@ -526,6 +609,7 @@ class O_Plane_Fighter_02_F: Fixed_Wing {
     ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.7};
+    nameShort = "SHIKRA";
     rearm = 420;
     side[] = {"east"};
     threatDetection = 16000;
@@ -557,6 +641,7 @@ class B_Plane_Fighter_01_F: Fixed_Wing {
     cost = 26000;
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.6};
+    nameShort = "WASP";
     rearm = 420;
     side[] = {"west"};
     threatDetection = 12000;
@@ -590,6 +675,7 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
     hasReconOptics = 1;
     loadable[] = {0, -2.2, 1.6};
     name = "F/A-181 Black Wasp II (Stealth/Recon)";
+    nameShort = "STEALTH WASP";
     rearm = 420;
     side[] = {"west"};
     variant = 1;
@@ -628,6 +714,7 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
     hasReconOptics = 1;
     loadable[] = {0, -2.2, 1.7};
     name = "To-201 Shikra (Stealth/Recon)";
+    nameShort = "STEALTH SHIKRA";
     rearm = 420;
     side[] = {"east"};
     threatDetection = 8000;

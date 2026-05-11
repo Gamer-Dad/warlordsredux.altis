@@ -6,6 +6,7 @@ class Remote_Control {
 class UAGS_Demining: Remote_Control {
     cost = 100;
     loadable[] = {0, -1, -0.5};
+    nameShort = "UGAS";
     offset[] = {0, 3, 0};
     rearm = 120;
 };
@@ -20,6 +21,7 @@ class O_UGV_02_Demining_F: UAGS_Demining {
 class UGV: Remote_Control {
     cost = 150;
     loadable[] = {-0.4, -1, 1.1};
+    nameShort = "STOMPER";
     offset[] = {0, 5, 0};
     rearm = 120;
 };
@@ -37,6 +39,7 @@ class AR2: Remote_Control {
     cost = 500;
     fragileDrone = 1;
     hasHMD = 1;
+    nameShort = "DARTER";
     offset[] = {0, 3, 0};
 };
 class B_UAV_01_F: AR2 {
@@ -49,6 +52,7 @@ class O_UAV_01_F: AR2 {
 // UGV Stomper RCWS
 class UGV_RCWS: UGV {
     cost = 500;
+    nameShort = "STOMPER";
 };
 class B_UGV_01_rcws_F: UGV_RCWS {
     side[] = {"west"};
@@ -62,6 +66,7 @@ class AR6: Remote_Control {
     cost = 1000;
     detonate = 1;
     fragileDrone = 1;
+    nameShort = "PELICAN";
     offset[] = {0, 3, 0};
     requirements[] = {"S"};
 };
@@ -75,9 +80,9 @@ class O_UAV_06_F: AR6 {
 class Loitering_Munition: Remote_Control {
     cost = 1500;
     description = "Loitering munition that can be piloted to its target.";
-    detonate = 5;
+    detonate = 7;
     loadable[] = {0, -1.0, 0};
-    requirements[] = {"S"};
+    requirements[] = {"FA"};
     spawn = "O_T_UAV_04_CAS_F";
     variant = 1;
 
@@ -104,11 +109,42 @@ class Loitering_Munition: Remote_Control {
 };
 class B_Lucas: Loitering_Munition {
     name = "FLM-136 LUCAS";
+    nameShort = "LUCAS";
     side[] = {"west"};
 };
 class O_Shahed: Loitering_Munition {
     name = "HESA Shahed-136";
+    nameShort = "SHAHED";
     side[] = {"east"};
+};
+
+class AR7: Remote_Control {
+    cost = 2000;
+    fragileDrone = 1;
+    nameShort = "RAVEN";
+    offset[] = {0, 3, 0};
+    rearm = 240;
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "PylonRack_4Rnd_BombDemine_01_F",
+            "PylonRack_4Rnd_BombDemine_01_F"
+        };
+        addWeapons[] = {
+            "BombDemine_01_F"
+        };
+        turret[] = {-1};
+    };
+};
+class B_AR7: AR7 {
+    name = "AR-7 Raven";
+    side[] = {"west"};
+    spawn = "B_UAV_06_F";
+};
+class O_AR7: AR7 {
+    name = "AR-7 Raven";
+    side[] = {"east"};
+    spawn = "O_UAV_06_F";
 };
 
 // Offroad (IED)
@@ -116,10 +152,11 @@ class Offroad_IED: Remote_Control {
     aps = 4;
     cost = 4000;
     description = "Offroad (IED) is a variant of the Offroad that goes boom.";
-    detonate = 13;
+    detonate = 11;
     drone = 1;
     loadable[] = {0, -1.7, 1.3};
     name = "Offroad (IED)";
+    nameShort = "VBIED";
     offset[] = {0, 5, 0};
     rearm = 900;
     requirements[] = {"S"};
@@ -137,6 +174,7 @@ class O_T_UAV_04_CAS_F: Remote_Control {
     cost = 4500;
     hasHMD = 1;
     loadable[] = {0, -1.0, 0};
+    nameShort = "FENGHUANG";
     rearm = 300;
     requirements[] = {"H"};
     side[] = {"east"};
@@ -168,7 +206,6 @@ class O_T_UAV_04_CAS_F: Remote_Control {
 //         "PylonRack_3Rnd_LG_scalpel",
 //         "PylonRack_7Rnd_Rocket_04_AP_F"
 //     };
-//     hasAirRadar = 4000;
 //     hasHMD = 1;
 //     hasReconOptics = 1;
 //     loadable[] = {0, -2.2, 0.1};
@@ -213,6 +250,7 @@ class Predator_Drone: Remote_Control {
     cost = 5500;
     hasHMD = 1;
     loadable[] = {0, -1.0, 0};
+    nameShort = "PREDATOR";
     rearm = 300;
     requirements[] = {"H"};
 };
@@ -241,6 +279,7 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
     cost = 6000;
     hasHMD = 1;
     loadable[] = {0, -2.2, 0.1};
+    nameShort = "FALCON";
     rearm = 300;
     requirements[] = {"H"};
     side[] = {"west"};
@@ -261,6 +300,7 @@ class B_UAV_05_F: Remote_Control {
     cost = 15000;
     hasHMD = 1;
     loadable[] = {0, -2.2, -0.4};
+    nameShort = "SENTINEL";
     rearm = 420;
     requirements[] = {"A"};
     side[] = {"west"};

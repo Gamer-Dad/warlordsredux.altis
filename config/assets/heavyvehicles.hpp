@@ -11,41 +11,6 @@ class Marid: Heavy_Vehicles {
     spawn = "O_APC_Wheeled_02_rcws_v2_F";
 };
 
-class O_Marid_Spandrel: Marid {
-    ammoOverrides[] = {
-        {"M_Vorona_HEAT", {"M_Vorona_HEAT_Tandem", "9M135 Tandem Missile"}}
-    };
-    cost = 1200;
-    name = "MSE-3 Marid (ATGM)";
-    side[] = {"east"};
-    variant = 1;
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "Vorona_HEAT",
-            "Vorona_HEAT",
-            "Vorona_HEAT",
-            "Vorona_HEAT",
-            "Vorona_HEAT",
-            "Vorona_HEAT",
-            "Vorona_HEAT",
-            "Vorona_HEAT"
-        };
-        addWeapons[] = {
-            "missiles_Vorona"
-        };
-        removeMagazines[] = {
-            "96Rnd_40mm_G_belt",
-            "200Rnd_127x99_mag_Tracer_Green"
-        };
-        removeWeapons[] = {
-            "HMG_127_APC",
-            "GMG_40mm"
-        };
-        turret[] = {0};
-    };
-};
-
 // IFV-6c Panther
 class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
     aps = 2;
@@ -53,6 +18,7 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
     cost = 1300;
     isLight = 1;
     loadable[] = {0, -1.5, 1.2};
+    nameShort = "PANTHER";
     rearm = 180;
     side[] = {"west"};
 
@@ -85,6 +51,7 @@ class B_Nyx_AT: Heavy_Vehicles {
     cost = 1500;
     loadable[] = {0, -1.5, 1.2};
     name = "AWC Nyx (AT)";
+    nameShort = "NYX";
     rearm = 180;
     side[] = {"west"};
     spawn = "I_LT_01_AT_F";
@@ -114,13 +81,14 @@ class Utility_Vehicle: Heavy_Vehicles {
     hasRefuel = 1;
     hasRepair = 1;
     loaded = "Static_Cannon";
-    mineClear = 2;
+    mineClear = 3;
     rearm = 180;
 };
 // CRV-6e Bobcat
 class B_APC_Tracked_01_CRV_F: Utility_Vehicle {
     cost = 1700;
     hasSling = 1;
+    nameShort = "BOBCAT";
     side[] = {"west"};
 };
 class O_Marid_Utility: Utility_Vehicle {
@@ -128,6 +96,7 @@ class O_Marid_Utility: Utility_Vehicle {
     description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
     loadable[] = {0, -0.8, 1.65};
     name = "MSE-3 Marid (Utility)";
+    nameShort = "MARID UTIL";
     side[] = {"east"};
     spawn = "O_APC_Wheeled_02_rcws_v2_F";
     variant = 1;
@@ -156,18 +125,19 @@ class O_Marid_Utility: Utility_Vehicle {
 // MSE-3 Marid
 class O_Marid: Marid {
     cost = 1700;
+    nameShort = "MARID";
     side[] = {"east"};
 };
 
 class Heavy_Recon: Heavy_Vehicles {
-    aps = 4;
+    aps = 5;
     capValue = 1;
     cost = 2200;
     hasHMD = 1;
-    hasScanner = 1;
     isLight = 1;
     loaded = "Land_BagBunker_Small_F";
     rearm = 120;
+    scanner = 350;
     showToEnemies = 2000;
     variant = 1;
 };
@@ -176,6 +146,7 @@ class B_Marshall_Recon: Heavy_Recon {
     description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
     loadable[] = {0, -0.8, 1.7};
     name = "AMV-7 Marshall (Recon)";
+    nameShort = "RECON MARSHALL";
     side[] = {"west"};
     spawn = "B_APC_Wheeled_01_cannon_F";
 
@@ -198,6 +169,7 @@ class O_BTR_Recon: Heavy_Recon {
     description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
     loadable[] = {0, -1.1, 1.6};
     name = "BTR-K Kamysh (Recon)";
+    nameShort = "RECON BTR";
     side[] = {"east"};
     spawn = "O_APC_Tracked_02_cannon_F";
 
@@ -224,6 +196,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
     capValue = 3;
     cost = 2400;
     loadable[] = {0, -0.8, 1.6};
+    nameShort = "MARSHALL";
     rearm = 180;
     side[] = {"west"};
 };
@@ -232,8 +205,9 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
 class Mora: Heavy_Vehicles {
     aps = 3;
     capValue = 4;
-    miniMortar[] = {6, {0, -3.5, 0}};
+    integralWeapon[] = {6, {0, -3.5, 0}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "FV-720 Mora";
+    nameShort = "MORA";
     rearm = 180;
     spawn = "I_APC_tracked_03_cannon_F";
 };
@@ -261,6 +235,7 @@ class Gorgon: Heavy_Vehicles {
         "4Rnd_GAA_missiles"
     };
     name = "AFV-4 Gorgon";
+    nameShort = "GORGON";
     rearm = 180;
 
     class Gunner: WLTurretDefaults {
@@ -292,12 +267,11 @@ class B_Gorgon: Gorgon {
     };
 };
 class B_Gorgon_Mortar: Gorgon {
-    ammoOverrides[] = {
-        {"Smoke_82mm_AMOS_White", {"82mm_Incendiary", "82mm Incendiary Shells"}},
-    };
     cost = 2900;
-    miniMortar[] = {24, {0.35, -1.5, 0.35}};
+    integralWeapon[] = {24, {0.35, -1.5, 0.35}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "AFV-4 Gorgon (Mortar)";
+    nameShort = "GORGON MORTAR";
+    rearm = 420;
     side[] = {"west"};
     spawn = "B_APC_Wheeled_03_cannon_F";
     textures[] = {
@@ -336,6 +310,7 @@ class B_Marshall_UP: B_APC_Wheeled_01_cannon_F {
     cost = 3000;
     description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
     name = "AMV-7 Marshall UP";
+    nameShort = "MARSHALL UP";
     spawn = "B_APC_Wheeled_01_cannon_F";
     variant = 1;
 
@@ -370,50 +345,30 @@ class O_APC_Tracked_02_cannon_F: Heavy_Vehicles {
     disallowMagazines[] = {
         "4Rnd_GAA_missiles"
     };
+    nameShort = "BTR";
     rearm = 180;
     side[] = {"east"};
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "5Rnd_GAT_missiles",
-            "5Rnd_GAT_missiles"
-        };
-        addWeapons[] = {
-            "missiles_titan"
-        };
-        removeMagazines[] = {
-            "2Rnd_GAT_missiles_O"
-        };
-        removeWeapons[] = {
-            "missiles_titan"
-        };
-        turret[] = {0};
-    };
-};
-
-class O_BTR_M: O_APC_Tracked_02_cannon_F {
-    cost = 4800;
-    description = "BTR-KM Kamysh is a heavily-armed variant of the BTR-K Kamysh.";
-    name = "BTR-KM Kamysh";
-    side[] = {"east"};
-    spawn = "O_APC_Tracked_02_cannon_F";
-    variant = 1;
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
             "240Rnd_40mm_GPR_Tracer_Red_shells",
             "160Rnd_40mm_APFSDS_Tracer_Red_shells",
-            "8Rnd_LG_scalpel"
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red",
+            "6Rnd_LG_scalpel"
         };
         addWeapons[] = {
             "autocannon_40mm_VTOL_01",
-            "LMG_coax_ext",
+            "HMG_127_APC",
             "missiles_SCALPEL"
         };
         removeMagazines[] = {
             "2Rnd_GAT_missiles_O",
             "60Rnd_30mm_APFSDS_shells_Tracer_Green",
-            "140Rnd_30mm_MP_shells_Tracer_Green"
+            "140Rnd_30mm_MP_shells_Tracer_Green",
+            "200Rnd_762x51_Belt_Green"
         };
         removeWeapons[] = {
             "missiles_titan",
@@ -432,6 +387,7 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
     isLight = 1;
     loadable[] = {0, -3.4, 1.3};
     loadableAngle = 180;
+    nameShort = "RHINO";
     rearm = 240;
     side[] = {"west"};
 };
@@ -474,8 +430,9 @@ class B_MBT_01_cannon_F: Heavy_Vehicles {
     disallowMagazines[] = {
         "4Rnd_120mm_LG_cannon_missiles"
     };
-    miniMortar[] = {6};
     isLight = 1;
+    integralWeapon[] = {6, {-0.75, -3, 0.8}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    nameShort = "SLAMMER";
     rearm = 300;
     side[] = {"west"};
 };
@@ -484,6 +441,7 @@ class B_MBT_01_cannon_F: Heavy_Vehicles {
 class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
     cost = 6200;
     isLight = 0;
+    nameShort = "SLAMMER UP";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -513,6 +471,7 @@ class Kuma: Heavy_Vehicles {
         "4Rnd_120mm_LG_cannon_missiles"
     };
     name = "MBT-52 Kuma";
+    nameShort = "KUMA";
     rearm = 300;
     spawn = "I_MBT_03_cannon_F";
 };
@@ -536,7 +495,8 @@ class B_Slammer_II: B_MBT_01_TUSK_F {
     cost = 9000;
     description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
     hasHMD = 1;
-    miniMortar[] = {8};
+    integralWeapon[] = {8, {-0.75, -3, 0.8}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    nameShort = "SLAMMER II";
     isLight = 1;
     name = "M2A2 Slammer II";
     spawn = "B_MBT_01_TUSK_F";
@@ -578,6 +538,7 @@ class O_MBT_02_cannon_F: Heavy_Vehicles {
     aps = 3;
     capValue = 4;
     cost = 7500;
+    nameShort = "VARSUK";
     rearm = 300;
     side[] = {"east"};
 };
@@ -589,11 +550,13 @@ class Angara: Heavy_Vehicles {
 class O_MBT_04_cannon_F: Angara {
     aps = 3;
     cost = 8500;
+    nameShort = "ANGARA";
     side[] = {"east"};
 };
 class O_MBT_04_command_F: Angara {
     aps = 5;
     cost = 9500;
+    nameShort = "ANGARA-K";
     side[] = {"east"};
 };
 
@@ -604,6 +567,7 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
     cost = 15000;
     hasHMD = 1;
     hasReconOptics = 1;
+    nameShort = "FUTURA";
     rearm = 300;
     side[] = {"east"};
 };
@@ -615,6 +579,7 @@ class Howitzer_Artillery: Heavy_Vehicles {
         "2Rnd_155mm_Mo_Cluster",
         "2Rnd_155mm_Mo_Cluster_O"
     };
+    nameShort = "ARTY";
     rearm = 1800;
 };
 // M4 Scorcher
@@ -642,6 +607,7 @@ class MRLS: Heavy_Vehicles {
 class B_MBT_01_mlrs_F: MRLS {
     cost = 25000;
     loaded = "CamoNet_BLUFOR_big_F";
+    nameShort = "MRLS";
     side[] = {"west"};
 };
 // M5 Sandstorm MRLS
@@ -652,6 +618,7 @@ class B_MLRS_Guided: B_MBT_01_mlrs_F {
     cost = 30000;
     hasHMD = 1;
     name = "M5 Sandstorm II";
+    nameShort = "MRLS LG";
     spawn = "B_MBT_01_mlrs_F";
     variant = 1;
 
@@ -686,6 +653,7 @@ class O_Truck_02_MRL_F: MRLS {
     cost = 18000;
     loaded = "CamoNet_OPFOR_big_F";
     name = "Zamak MRL";
+    nameShort = "MRLS";
     side[] = {"east"};
     spawn = "I_Truck_02_MRL_F";
     textures[] = {
@@ -701,6 +669,7 @@ class O_MRLS_Guided: O_Truck_02_MRL_F {
     cost = 23000;
     hasHMD = 1;
     name = "Zamak MRL (Guided)";
+    nameShort = "MRLS LG";
     spawn = "I_Truck_02_MRL_F";
     variant = 1;
 

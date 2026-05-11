@@ -1,6 +1,7 @@
 class Structures {
     category = "Structures";
     hideMap = 1;
+    nameShort = "DEF";
 };
 
 // Guard Tower (H-barrier)
@@ -130,10 +131,11 @@ class Land_Cargo_Tower_V4_F: Structures {
 class Land_CraneRail_01_F: Structures {
     cost = 5000;
     demolishable = 3;
-    description = "Aircraft Catapult can be used to launch fighter jets from your forward airbase.";
+    description = "Aircraft Catapult can be used to launch jets and drones.";
     hideMap = 0;
     name = "Aircraft Catapult";
+    nameShort = "CATAPULT";
     offset[] = {0, 14, 0};
-    requirements[] = {"FA"};
+    requirements[] = {"H"};
     side[] = {"west", "east", "guer"};
 };

@@ -7,6 +7,7 @@ class Quadbike: Light_Vehicle {
     capValue = 1;
     cost = 20;
     loadable[] = {0, -1, 0.6};
+    nameShort = "QUAD";
     offset[] = {0, 3, 0};
 };
 class B_Quadbike_01_F: Quadbike {
@@ -24,6 +25,7 @@ class Offroad_Armed: Light_Vehicle {
     capValue = 1;
     cost = 150;
     loadable[] = {0, -1.7, 1.3};
+    nameShort = "OFFROAD";
     offset[] = {0, 5, 0};
     rearm = 120;
 
@@ -65,6 +67,7 @@ class LSV_Armed: Light_Vehicle {
 // Prowler (HMG)
 class B_LSV_01_armed_F: LSV_Armed {
     loaded = "B_Static_Designator_01_F";
+    nameShort = "PROWLER";
     side[] = {"west"};
 
     class Gunner: WLTurretDefaults {
@@ -87,6 +90,7 @@ class B_LSV_01_armed_F: LSV_Armed {
 // Qilin (Minigun)
 class O_LSV_02_armed_F: LSV_Armed {
     loaded = "O_Static_Designator_02_F";
+    nameShort = "QILIN";
     side[] = {"east"};
 
     class Gunner: WLTurretDefaults {
@@ -114,9 +118,11 @@ class Passenger_Transport: Light_Vehicle {
     loaded = "Land_BagBunker_Small_F";
 };
 class B_Truck_01_transport_F: Passenger_Transport {
+    nameShort = "HEMMT";
     side[] = {"west"};
 };
 class O_Truck_03_transport_F: Passenger_Transport {
+    nameShort = "TEMPEST";
     side[] = {"east"};
 };
 
@@ -126,6 +132,7 @@ class Medical_Transport: Light_Vehicle {
     cost = 250;
     hasFastTravel = 1;
     loaded = "Land_BagBunker_Small_F";
+    nameShort = "MEDICAL";
 };
 class B_Truck_01_medical_F: Medical_Transport {
     side[] = {"west"};
@@ -142,6 +149,7 @@ class Flatbed: Light_Vehicle {
     hasLoader = 1;
     isLight = 1;
     name = "HEMTT Flatbed";
+    nameShort = "FLATBED";
     spawn = "B_Truck_01_flatbed_F";
 };
 class B_FlatbedTruck: Flatbed {
@@ -168,18 +176,21 @@ class MRAP_Unarmed: Light_Vehicle {
 // Hunter
 class B_MRAP_01_F: MRAP_Unarmed {
     loadable[] = {0, -0.8, 1.25};
+    nameShort = "HUNTER";
     side[] = {"west"};
 };
 
 // Ifrit
 class O_MRAP_02_F: MRAP_Unarmed {
     loadable[] = {0, -0.8, 1.5};
+    nameShort = "IFRIT";
     side[] = {"east"};
 };
 
 // Strider
 class I_MRAP_03_F: MRAP_Unarmed {
     loadable[] = {0, -0.8, 1.8};
+    nameShort = "STRIDER";
     side[] = {"guer"};
 };
 
@@ -188,6 +199,7 @@ class Offroad_AT: Light_Vehicle {
     capValue = 1;
     cost = 500;
     loadable[] = {0, -1.7, 0.7};
+    nameShort = "OFFROAD AT";
     offset[] = {0, 5, 0};
     rearm = 180;
 
@@ -222,6 +234,7 @@ class LSV_AT: Light_Vehicle {
 
 // Prowler AT
 class B_LSV_01_AT_F: LSV_AT {
+    nameShort = "PROWLER AT";
     side[] = {"west"};
 
     class Gunner: WLTurretDefaults {
@@ -244,6 +257,7 @@ class B_LSV_01_AT_F: LSV_AT {
 
 // Qilin AT
 class O_LSV_02_AT_F: LSV_AT {
+    nameShort = "QILIN AT";
     side[] = {"east"};
 
     class Gunner: WLTurretDefaults {
@@ -273,12 +287,15 @@ class MRAP_HMG: Light_Vehicle {
     rearm = 120;
 };
 class B_MRAP_01_hmg_F: MRAP_HMG {
+    nameShort = "HUNTER HMG";
     side[] = {"west"};
 };
 class O_MRAP_02_hmg_F: MRAP_HMG {
+    nameShort = "IFRIT HMG";
     side[] = {"east"};
 };
 class I_MRAP_03_hmg_F: MRAP_HMG {
+    nameShort = "STRIDER HMG";
     side[] = {"guer"};
     vehicleSpawn = 1;
 };
@@ -292,12 +309,15 @@ class MRAP_GMG: Light_Vehicle {
     rearm = 120;
 };
 class B_MRAP_01_gmg_F: MRAP_GMG {
+    nameShort = "HUNTER GMG";
     side[] = {"west"};
 };
 class O_MRAP_02_gmg_F: MRAP_GMG {
+    nameShort = "IFRIT GMG";
     side[] = {"east"};
 };
 class I_MRAP_03_gmg_F: MRAP_GMG {
+    nameShort = "STRIDER GMG";
     side[] = {"guer"};
     vehicleSpawn = 1;
 };
@@ -307,6 +327,7 @@ class Transport_Ammo: Light_Vehicle {
     capValue = 1;
     cost = 1000;
     hasRearm = 1;
+    nameShort = "AMMO";
 };
 class B_Truck_01_ammo_F: Transport_Ammo {
     loaded = "B_Slingload_01_Ammo_F";
@@ -322,6 +343,7 @@ class Transport_Fuel: Light_Vehicle {
     capValue = 1;
     cost = 1000;
     hasRefuel = 1;
+    nameShort = "FUEL";
 };
 class B_Truck_01_fuel_F: Transport_Fuel {
     loaded = "B_Slingload_01_Fuel_F";
@@ -337,6 +359,7 @@ class Transport_Repair: Light_Vehicle {
     capValue = 1;
     cost = 1000;
     hasRepair = 1;
+    nameShort = "REPAIR";
 };
 class B_Truck_01_Repair_F: Transport_Repair {
     loaded = "B_Slingload_01_Repair_F";
@@ -360,6 +383,7 @@ class B_Hunter_AFV: Hunter_Upgraded {
     capValue = 2;
     cost = 1200;
     name = "Hunter AFV";
+    nameShort = "HUNTER AFV";
     side[] = {"west"};
 
     class Gunner: WLTurretDefaults {
@@ -382,9 +406,10 @@ class Device_Truck: Light_Vehicle {
     aps = 4;
     capValue = 1;
     cost = 750;
-    description = "Provides electronic warfare support to friendly units. Signal boosts are 2x stronger.";
+    description = "Provides a mobile APS platform for vehicle convoys.";
     ewBoost = 1;
-    name = "Electronic Warfare Truck";
+    name = "Device Truck";
+    nameShort = "DEVICE";
     rearm = 120;
     spawn = "O_Truck_03_device_F";
 };
@@ -405,6 +430,7 @@ class Nyx_Armed: Light_Vehicle {
     aps = 1;
     capValue = 4;
     cost = 1500;
+    nameShort = "NYX";
     rearm = 300;
     vehicleSpawn = 1;
 };
@@ -446,6 +472,7 @@ class B_Hunter_Apex: Hunter_Upgraded {
     };
     hasHMD = 1;
     name = "Hunter Apex";
+    nameShort = "APEX";
     side[] = {"west"};
 
     class Gunner: WLTurretDefaults {
@@ -472,4 +499,30 @@ class B_Hunter_Apex: Hunter_Upgraded {
         };
         turret[] = {0};
     };
+};
+
+// Hunter/Ifrit Mortar
+class MRAP_Mortar: Light_Vehicle {
+    aps = 1;
+    capValue = 2;
+    cost = 6000;
+    rearm = 900;
+    showToEnemies = 200;
+    variant = 1;
+};
+class B_Hunter_Mortar: MRAP_Mortar {
+    loadable[] = {0, -0.8, 1.2};
+    integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    name = "Hunter Mortar";
+    nameShort = "HUNTER MORTAR";
+    side[] = {"west"};
+    spawn = "B_MRAP_01_F";
+};
+class O_Ifrit_Mortar: MRAP_Mortar {
+    loadable[] = {0, -0.8, 1.5};
+    integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    name = "Ifrit Mortar";
+    nameShort = "IFRIT MORTAR";
+    side[] = {"east"};
+    spawn = "O_MRAP_02_F";
 };
