@@ -6,6 +6,7 @@ class Fixed_Wing {
 class Caesar_Dronehunter: Fixed_Wing {
     cost = 800;
     description = "Caesar Drone Hunter is a light unarmed aircraft used to find and destroy enemy drones.";
+    hasDroneHunter = 1;
     loadable[] = {0, -2.2, 0.9};
     name = "Caesar Drone Hunter";
     nameShort = "CAESAR";
@@ -27,8 +28,9 @@ class Blackfish: Fixed_Wing {
     hasAirRearm = 1;
     hasFastTravel = 1;
     hasHMD = 1;
-    hasParadropper = 1;
     nameShort = "BLACKFISH";
+    paradrops = 1;
+    rearm = 120;
     requirements[] = {"H"};
 };
 class B_T_VTOL_01_infantry_F: Blackfish {
@@ -36,6 +38,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
 };
 class B_T_VTOL_01_vehicle_F: Blackfish {
     hasLoader = 1;
+    isHeavyLift = 1;
     side[] = {"west"};
 };
 
@@ -61,10 +64,11 @@ class B_T_VTOL_01_armed_F: Blackfish {
 
 class B_Archerfish: Blackfish {
     ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
     };
     cost = 11000;
     hasHMD = 1;
+    hasLoader = 1;
     name = "V-44 J Archerfish";
     rearm = 420;
     requirements[] = {"A"};
@@ -99,11 +103,32 @@ class B_Archerfish: Blackfish {
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1"
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1",
+            "Laserbatteries"
         };
         addWeapons[] = {
             "CMFlareLauncher_Singles",
-            "weapon_AGM_65Launcher"
+            "weapon_AGM_65Launcher",
+            "weapon_BIM9xLauncher",
+            "Laserdesignator_vehicle"
         };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
@@ -120,7 +145,7 @@ class Scout_Stealth: Fixed_Wing {
     ammoOverrides[] = {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
-    cost = 5000;
+    cost = 14000;
     disallowMagazines[] = {
         "PylonRack_Bomb_SDB_x4",
         "PylonRack_Bomb_GBU12_x2",
@@ -162,17 +187,18 @@ class B_Scout_Wasp: Scout_Stealth {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine",
             "PylonRack_4Rnd_LG_scalpel",
-            "4Rnd_Titan_long_missiles"
+            "4Rnd_AAA_missiles"
         };
         addWeapons[] = {
             "missiles_SCALPEL",
-            "missiles_titan"
+            "missiles_ASRAAM"
         };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Singles"
         };
         turret[] = {-1};
     };
@@ -187,15 +213,15 @@ class O_Scout_Shikra: Scout_Stealth {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine",
             "PylonRack_4Rnd_LG_scalpel",
-            "4Rnd_Titan_long_missiles"
+            "PylonRack_1Rnd_Missile_AA_03_F",
+            "PylonRack_1Rnd_Missile_AA_03_F",
+            "PylonRack_1Rnd_Missile_AA_03_F",
+            "PylonRack_1Rnd_Missile_AA_03_F"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles",
             "missiles_SCALPEL",
-            "missiles_titan"
+            "Missile_AA_03_Plane_CAS_02_F"
         };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
@@ -207,8 +233,64 @@ class O_Scout_Shikra: Scout_Stealth {
     };
 };
 
-// Y-32 Xi'an (Infantry Transport)
-class O_T_VTOL_02_infantry_dynamicLoadout_F: Fixed_Wing {
+// Y-32 Xi'an (Vehicle Transport)
+class O_Xian: Fixed_Wing {
+    hasGunnerAction = 1;
+    hasHMD = 1;
+    hasLoader = 1;
+    hasTurretVisualizer = 1;
+    loadable[] = {0, -2.2, 2.4};
+    nameShort = "XIAN";
+    paradrops = 2;
+    requirements[] = {"H"};
+    side[] = {"east"};
+    spawn = "O_T_VTOL_02_vehicle_dynamicLoadout_F";
+};
+
+class O_Xian_Transport: O_Xian {
+    cost = 3000;
+    disallowMagazines[] = {
+        "PylonMissile_1Rnd_Bomb_03_F",
+        "PylonRack_1Rnd_Missile_AA_03_F",
+        "PylonRack_1Rnd_LG_scalpel",
+        "PylonRack_3Rnd_LG_scalpel",
+        "PylonRack_4Rnd_LG_scalpel",
+        "PylonRack_1Rnd_Missile_AGM_01_F",
+        "PylonRack_19Rnd_Rocket_Skyfire",
+        "PylonRack_20Rnd_Rocket_03_HE_F",
+        "PylonRack_20Rnd_Rocket_03_AP_F"
+    };
+    name = "Y-32 Xi'an (Transport)";
+    rearm = 120;
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        addWeapons[] = {
+            "CMFlareLauncher_Singles"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Triples"
+        };
+        turret[] = {-1};
+    };
+    class Gunner : WLTurretDefaults {
+        removeMagazines[] = {
+            "250Rnd_30mm_HE_shells_Tracer_Green",
+            "250Rnd_30mm_APDS_shells_Tracer_Green"
+        };
+        removeWeapons[] = {
+            "gatling_30mm_VTOL_02"
+        };
+        turret[] = {0};
+    };
+};
+
+class O_Xian_Armed: O_Xian {
     allowPylonMagazines[] = {
         "PylonRack_12Rnd_PG_missiles",
         "PylonRack_12Rnd_PGM_missiles",
@@ -217,26 +299,14 @@ class O_T_VTOL_02_infantry_dynamicLoadout_F: Fixed_Wing {
         "PylonMissile_Missile_AA_R77_x1",
         "PylonRack_3Rnd_Missile_AGM_02_F",
         "PylonRack_Missile_BIM9X_x1",
-        "PylonRack_Missile_BIM9X_x2",
-        "PylonFuelTank_UH80"
+        "PylonRack_Missile_BIM9X_x2"
     };
     ammoOverrides[] = {
-        {"DummyPylonAmmo", {"M_ECMPod", "ECM Jammer Pod"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
     cost = 9000;
-    ecm[] = {{"MissileCore"}, 1, 10000, 1, 4, 15};
-    hasAirRearm = 1;
-    hasGunnerAction = 1;
-    hasHMD = 1;
-    hasParadropper = 1;
-    hasSling = 1;
-    hasTurretVisualizer = 1;
-    loadable[] = {0, -2.2, 2.4};
-    nameShort = "XIAN";
+    name = "Y-32 Xi'an (Armed)";
     rearm = 300;
-    requirements[] = {"H"};
-    side[] = {"east"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
@@ -430,7 +500,6 @@ class Gryphon: Fixed_Wing {
 //         "PylonRack_Missile_AGM_02_x2",
 //         "PylonMissile_Bomb_GBU12_x1"
 //     };
-//     ecm[] = {{"ammo_Missile_AMRAAM_C", "ammo_Missile_AMRAAM_D", "ammo_Missile_AA_R77"}, 0, 30000, 5, 2, 30};
 //     name = "A-149 Gryphon (Interceptor)";
 //     side[] = {"east"};
 //     textures[] = {
@@ -574,7 +643,6 @@ class B_Strike_Wasp: Fixed_Wing {
 //         "PylonRack_Missile_AGM_02_x1",
 //         "PylonRack_Missile_AGM_02_x2"
 //     };
-//     ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
 //     hasHMD = 1;
 //     loadable[] = {0, -2.2, 1.6};
 //     name = "EF/A-181 Growler";
@@ -606,7 +674,6 @@ class O_Plane_Fighter_02_F: Fixed_Wing {
     disallowMagazines[] = {
         "PylonMissile_Missile_KH58_INT_x1"
     };
-    ecm[] = {{"MissileCore"}, 0, 30000, 1, 2, 120};
     hasHMD = 1;
     loadable[] = {0, -2.2, 1.7};
     nameShort = "SHIKRA";

@@ -835,21 +835,21 @@
             <Chinese>將你所在區域內最近的建築強化為要塞（每個區域同時只能存在一個）。如果已有要塞，將會被取代。</Chinese>
         </Key>
         <Key ID="STR_WL_ftBuySupplies">
-            <Original>Purchase forward base supplies</Original>
-            <English>Purchase forward base supplies</English>
-            <Czech>Nákup zásob pro předsunutou základnu</Czech>
-            <French>Acheter des fournitures pour la base avancée</French>
-            <German>Vorgeschobene Basisvorräte kaufen</German>
-            <Italian>Acquista rifornimenti per la base avanzata</Italian>
-            <Polish>Kup zaopatrzenie dla wysuniętej bazy</Polish>
-            <Portuguese>Comprar suprimentos para a base avançada</Portuguese>
-            <Russian>Приобрести припасы для передовой базы</Russian>
-            <Spanish>Comprar suministros para la base avanzada</Spanish>
-            <Turkish>İleri üs malzemeleri satın al</Turkish>
-            <Korean>전방 기지 보급품 구매</Korean>
-            <Japanese>前線基地の補給物資を購入</Japanese>
-            <Chinesesimp>购买前线基地补给品</Chinesesimp>
-            <Chinese>購買前線基地補給品</Chinese>
+            <Original>Purchase supplies</Original>
+            <English>Purchase supplies</English>
+            <Czech>Nákup zásob</Czech>
+            <French>Acheter des fournitures</French>
+            <German>Vorräte kaufen</German>
+            <Italian>Acquista rifornimenti</Italian>
+            <Polish>Kup zaopatrzenie</Polish>
+            <Portuguese>Comprar suprimentos</Portuguese>
+            <Russian>Приобрести припасы</Russian>
+            <Spanish>Comprar suministros</Spanish>
+            <Turkish>Malzemeleri satın al</Turkish>
+            <Korean>보급품 구매</Korean>
+            <Japanese>補給物資を購入</Japanese>
+            <Chinesesimp>购买补给品</Chinesesimp>
+            <Chinese>購買補給品</Chinese>
         </Key>
         <Key ID="STR_WL_ftBuySuppliesInfo">
             <Original>Purchases supplies that can be airlifted or deployed into a forward position. It can be used to setup a base or to add supplies to an existing one.</Original>

@@ -19,8 +19,8 @@ class CfgWarlordSectors {
         {"AgiosDionysios", "Orino"},
         {"AgiosDionysios", "Syrta"},
         {"AgiosDionysios", "XirolimniDam"},
+        {"AgiosKonstantinos", "Bomos"},
         {"AgiosKonstantinos", "GoriFactory"},
-        {"AgiosKonstantinos", "Hill275"},
         {"AgiosKonstantinos", "Negades"},
         {"AgiosKonstantinos", "USSFreedom"},
         {"AgiosKosmas", "Athanos"},
@@ -59,10 +59,10 @@ class CfgWarlordSectors {
         {"Atsalis", "Bomos"},
         {"Atsalis", "CapeStrigla"},
         {"Atsalis", "ThronosCastle"},
-        {"Bomos", "Hill275"},
+        {"Bomos", "Oreokastro"},
         {"Bomos", "ThronosCastle"},
         {"CapeKategidis", "CapeThelos"},
-        {"CapeKategidis", "LimniSwamp"},
+        {"CapeKategidis", "NifiSolar"},
         {"CapeKategidis", "USSIndependence"},
         {"CapeMakrinos", "Livadi"},
         {"CapeMakrinos", "SkoposBase"},
@@ -78,10 +78,6 @@ class CfgWarlordSectors {
         {"Charkia", "Rodopoli"},
         {"CharkiaMine", "Dorida"},
         {"CharkiaMine", "PyrgosBase"},
-        {"Delfinaki", "HillsideChapel"},
-        {"Delfinaki", "Ioannina"},
-        {"Delfinaki", "NidasosBase"},
-        {"Delfinaki", "SofiaPowerPlant"},
         {"DidymosTurbines", "Ekali"},
         {"DidymosTurbines", "Panagia"},
         {"DidymosTurbines", "PyrgosQuarry"},
@@ -89,7 +85,7 @@ class CfgWarlordSectors {
         {"DieselPowerPlant", "MagosFactory"},
         {"DieselPowerPlant", "Negades"},
         {"DieselPowerPlant", "USSFreedom"},
-        {"Dorida", "LimniSwamp"},
+        {"Dorida", "NifiSolar"},
         {"Dorida", "PyrgosBase"},
         {"Drimea", "SkoposCastleRuins"},
         {"Drimea", "Therisa"},
@@ -128,15 +124,14 @@ class CfgWarlordSectors {
         {"GhostHotel", "TheaterRuins"},
         {"GhostHotel", "Sideras"},
         {"GoriFactory", "Kore"},
-        {"GoriFactory", "TheDump"},
+        {"GoriFactory", "Oreokastro"},
         {"Gravia", "LakkaFactory"},
-        {"Hill275", "Oreokastro"},
-        {"Hill275", "TheDump"},
         {"HillsideChapel", "SaltFlats"},
         {"HillsideChapel", "SofiaPowerPlant"},
         {"Ifestiona", "Koroni"},
         {"Ioannina", "NidasosBase"},
         {"Ioannina", "SaltFlats"},
+        {"Ioannina", "SofiaPowerPlant"},
         {"Kalithea", "Rodopoli"},
         {"Kalithea", "Telos"},
         {"Kalithea", "TheaterRuins"},
@@ -161,7 +156,6 @@ class CfgWarlordSectors {
         {"Lakka", "LakkaFactory"},
         {"Lakka", "Neochori"},
         {"Lakka", "Orino"},
-        {"LimniSwamp", "NifiSolar"},
         {"Livadi", "Panagia"},
         {"Livadi", "SelakanoOutpost"},
         {"MagosFactory", "Topolia"},
@@ -180,8 +174,8 @@ class CfgWarlordSectors {
         {"NidasosBase", "SofiaPowerPlant"},
         {"NifiSolar", "Paros"},
         {"NifiSolar", "Rodopoli"},
-        {"Oreokastro", "TheDump"},
         {"Oreokastro", "ThronosCastle"},
+        {"Oreokastro", "Syrta"},
         {"Panagia", "SelekanoAirbase"},
         {"Paros", "Rodopoli"},
         {"Paros", "SaltFlats"},
@@ -202,7 +196,6 @@ class CfgWarlordSectors {
         {"SkoposBase", "SkoposCastleRuins"},
         {"Sofia", "SofiaPowerPlant"},
         {"SouthTelosComplex", "Telos"},
-        {"Syrta", "TheDump"},
         {"Telos", "ZeloranBase"},
         {"Topolia", "XirolimniDam"},
         {"XirolimniDam", "Zaros"},
@@ -408,11 +401,11 @@ class CfgWarlordSectors {
         name = "Charkia Mine";
     };
 
-    class Delfinaki {
-        area[] = {150, 150, 221.059, 0};
-        location[] = {23946.1, 20168.2, 0};
-        name = "Delfinaki";
-    };
+    // class Delfinaki {
+    //     area[] = {150, 150, 221.059, 0};
+    //     location[] = {23946.1, 20168.2, 0};
+    //     name = "Delfinaki";
+    // };
 
     class DidymosTurbines {
         area[] = {140, 140, 128.18, 0};
@@ -495,7 +488,7 @@ class CfgWarlordSectors {
     };
 
     class GhostHotel {
-        area[] = {300, 250, 173.715, 0};
+        area[] = {-250, -200, 173.715, 0};
         location[] = {21869, 21101.9, 0};
         name = "Ghost Hotel";
     };
@@ -512,11 +505,11 @@ class CfgWarlordSectors {
         name = "Gravia";
     };
 
-    class Hill275 {
-        area[] = {100, 100, 128.18, 0};
-        location[] = {3558.12, 19991.2, 0};
-        name = "Hill 275";
-    };
+    // class Hill275 {
+    //     area[] = {100, 100, 128.18, 0};
+    //     location[] = {3558.12, 19991.2, 0};
+    //     name = "Hill 275";
+    // };
 
     class HillsideChapel {
         area[] = {150, 150, 221.059, 0};
@@ -543,7 +536,7 @@ class CfgWarlordSectors {
     };
 
     class Kalochori {
-        area[] = {250, 280, 142.732, 1};
+        area[] = {200, 230, 142.732, 1};
         location[] = {21340.3, 16361.0, 0};
         name = "Kalochori";
     };
@@ -621,16 +614,17 @@ class CfgWarlordSectors {
         };
     };
 
-    class LimniSwamp {
-        area[] = {180, 150, 228.118, 0};
-        location[] = {20897.9, 14626.6, 0};
-        name = "Limni Swamp";
-    };
+    // class LimniSwamp {
+    //     area[] = {180, 150, 228.118, 0};
+    //     location[] = {20897.9, 14626.6, 0};
+    //     name = "Limni Swamp";
+    // };
 
     class Livadi {
         area[] = {125, 125, 128.18, 0};
         location[] = {18588.2, 8172.53, 0};
         name = "Livadi";
+        services[] = {"H"};
     };
 
     class MagosFactory {
@@ -812,6 +806,7 @@ class CfgWarlordSectors {
         area[] = {140, 140, 128.18, 0};
         location[] = {20086.5, 6722.54, 0};
         name = "Selakano Outpost";
+        services[] = {"H"};
     };
 
     class Selekano {
@@ -903,7 +898,7 @@ class CfgWarlordSectors {
     };
 
     class SouthTelosComplex {
-        area[] = {170, 170, 0, 0};
+        area[] = {-170, -170, 0, 0};
         location[] = {16085.4, 16997.6, 0};
         name = "South Telos Complex";
     };
@@ -914,11 +909,11 @@ class CfgWarlordSectors {
         name = "Theater Ruins";
     };
 
-    class TheDump {
-        area[] = {140, 140, 128.18, 0};
-        location[] = {5903.35, 20160.4, 0};
-        name = "The Dump";
-    };
+    // class TheDump {
+    //     area[] = {140, 140, 128.18, 0};
+    //     location[] = {5903.35, 20160.4, 0};
+    //     name = "The Dump";
+    // };
 
     class TheMaziBouys {
         area[] = {110, 180, 210.18, 1};
@@ -959,9 +954,9 @@ class CfgWarlordSectors {
     };
 
     class USSFreedom {
-        area[] = {250, 100, 232, 1};
+        area[] = {190, 50, 232, 1};
         carrier = 1;
-        location[] = {1742.19, 15566.5, 25};
+        location[] = {1729.8, 15581.9, 25};
         name = "USS Freedom";
         services[] = {"H", "A"};
         vehicles[] = {
@@ -973,7 +968,7 @@ class CfgWarlordSectors {
     };
 
     class USSIndependence {
-        area[] = {250, 100, 118, 1};
+        area[] = {190, 50, 118, 1};
         carrier = 1;
         location[] = {25652.7, 13657.1, 25};
         name = "USS Independence";
@@ -1018,7 +1013,7 @@ class CfgWarlordSectors {
     };
 
     class XirolimniDam {
-        area[] = {150, 100, 60, 1};
+        area[] = {-200, -150, 60, 0};
         location[] = {9211.58, 13749.5, 0};
         name = "Xirolimni Dam";
         services[] = {"H"};

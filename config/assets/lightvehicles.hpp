@@ -430,13 +430,13 @@ class Nyx_Armed: Light_Vehicle {
     aps = 1;
     capValue = 4;
     cost = 1500;
-    nameShort = "NYX";
     rearm = 300;
     vehicleSpawn = 1;
 };
 
 // AWC Nyx (AT)
 class I_LT_01_AT_F: Nyx_Armed {
+    nameShort = "NYX AT";
     side[] = {"guer"};
 
     class Gunner: WLTurretDefaults {
@@ -453,11 +453,13 @@ class I_LT_01_AT_F: Nyx_Armed {
 
 // AWC Nyx (Autocannon)
 class I_LT_01_cannon_F: Nyx_Armed {
+    nameShort = "NYX";
     side[] = {"guer"};
 };
 
 // AWC Nyx (AA)
 class I_LT_01_AA_F: Nyx_Armed {
+    nameShort = "NYX AA";
     side[] = {"guer"};
 };
 
@@ -499,30 +501,4 @@ class B_Hunter_Apex: Hunter_Upgraded {
         };
         turret[] = {0};
     };
-};
-
-// Hunter/Ifrit Mortar
-class MRAP_Mortar: Light_Vehicle {
-    aps = 1;
-    capValue = 2;
-    cost = 6000;
-    rearm = 900;
-    showToEnemies = 200;
-    variant = 1;
-};
-class B_Hunter_Mortar: MRAP_Mortar {
-    loadable[] = {0, -0.8, 1.2};
-    integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
-    name = "Hunter Mortar";
-    nameShort = "HUNTER MORTAR";
-    side[] = {"west"};
-    spawn = "B_MRAP_01_F";
-};
-class O_Ifrit_Mortar: MRAP_Mortar {
-    loadable[] = {0, -0.8, 1.5};
-    integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
-    name = "Ifrit Mortar";
-    nameShort = "IFRIT MORTAR";
-    side[] = {"east"};
-    spawn = "O_MRAP_02_F";
 };

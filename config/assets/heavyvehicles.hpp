@@ -45,38 +45,39 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
 };
 
 // AWC Nyx (AT)
-class B_Nyx_AT: Heavy_Vehicles {
-    aps = 1;
-    capValue = 3;
-    cost = 1500;
-    loadable[] = {0, -1.5, 1.2};
-    name = "AWC Nyx (AT)";
-    nameShort = "NYX";
-    rearm = 180;
-    side[] = {"west"};
-    spawn = "I_LT_01_AT_F";
-    textures[] = {
-        "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
-        "A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
-        "a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
-        "A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_sand_CO.paa"
-    };
+// class B_Nyx_AT: Heavy_Vehicles {
+//     aps = 1;
+//     capValue = 3;
+//     cost = 1500;
+//     loadable[] = {0, -1.5, 1.2};
+//     name = "AWC Nyx (AT)";
+//     nameShort = "NYX";
+//     rearm = 180;
+//     side[] = {"west"};
+//     spawn = "I_LT_01_AT_F";
+//     textures[] = {
+//         "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
+//         "A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
+//         "a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
+//         "A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_sand_CO.paa"
+//     };
 
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "2Rnd_127mm_Firefist_missiles",
-            "2Rnd_127mm_Firefist_missiles",
-            "2Rnd_127mm_Firefist_missiles",
-            "2Rnd_127mm_Firefist_missiles",
-            "2Rnd_127mm_Firefist_missiles"
-        };
-        turret[] = {0};
-    };
-};
+//     class Gunner: WLTurretDefaults {
+//         addMagazines[] = {
+//             "2Rnd_127mm_Firefist_missiles",
+//             "2Rnd_127mm_Firefist_missiles",
+//             "2Rnd_127mm_Firefist_missiles",
+//             "2Rnd_127mm_Firefist_missiles",
+//             "2Rnd_127mm_Firefist_missiles"
+//         };
+//         turret[] = {0};
+//     };
+// };
 
 class Utility_Vehicle: Heavy_Vehicles {
     aps = 2;
     capValue = 2;
+    hasDroneHunter = 1;
     hasRearm = 1;
     hasRefuel = 1;
     hasRepair = 1;
@@ -132,12 +133,14 @@ class O_Marid: Marid {
 class Heavy_Recon: Heavy_Vehicles {
     aps = 5;
     capValue = 1;
-    cost = 2200;
+    cost = 5000;
+    hasDroneHunter = 1;
     hasHMD = 1;
     isLight = 1;
     loaded = "Land_BagBunker_Small_F";
     rearm = 120;
-    scanner = 350;
+    requirements[] = {"S"};
+    scanner = 175;
     showToEnemies = 2000;
     variant = 1;
 };
@@ -205,7 +208,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
 class Mora: Heavy_Vehicles {
     aps = 3;
     capValue = 4;
-    integralWeapon[] = {6, {0, -3.5, 0}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    integralWeapon[] = {6, {0, -3.5, 0}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "FV-720 Mora";
     nameShort = "MORA";
     rearm = 180;
@@ -268,7 +271,7 @@ class B_Gorgon: Gorgon {
 };
 class B_Gorgon_Mortar: Gorgon {
     cost = 2900;
-    integralWeapon[] = {24, {0.35, -1.5, 0.35}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    integralWeapon[] = {24, {0.35, -1.5, 0.35}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "AFV-4 Gorgon (Mortar)";
     nameShort = "GORGON MORTAR";
     rearm = 420;
@@ -431,7 +434,7 @@ class B_MBT_01_cannon_F: Heavy_Vehicles {
         "4Rnd_120mm_LG_cannon_missiles"
     };
     isLight = 1;
-    integralWeapon[] = {6, {-0.75, -3, 0.8}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    integralWeapon[] = {6, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     nameShort = "SLAMMER";
     rearm = 300;
     side[] = {"west"};
@@ -495,7 +498,7 @@ class B_Slammer_II: B_MBT_01_TUSK_F {
     cost = 9000;
     description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
     hasHMD = 1;
-    integralWeapon[] = {8, {-0.75, -3, 0.8}, "B_Mortar_01_F", "B_Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    integralWeapon[] = {8, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     nameShort = "SLAMMER II";
     isLight = 1;
     name = "M2A2 Slammer II";

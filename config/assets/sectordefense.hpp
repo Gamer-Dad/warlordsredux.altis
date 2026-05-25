@@ -147,9 +147,10 @@ class AT_Minefield: Sector_Defense {
     dumbMine[] = {50, 10, 1};
     loadable[] = {-0.4, -1, 0.8};
     name = "Minefield (AT)";
-    nameShort = "MINEFIELD";
+    nameShort = "MINES";
     obstacle = 2;
     offset[] = {0, 3, 0};
+    requirements[] = {"S"};
     side[] = {"west", "east", "guer"};
     showToEnemies = 800;
     spawn = "Land_Sign_MinesDanger_English_F";
@@ -180,9 +181,10 @@ class Static_HMG_Auto: Sector_Defense {
     cost = 500;
     loadable[] = {0, -2.5, 0.4};
     name = "Mk30 HMG Auto Turret";
-    nameShort = "STATIC HMG";
+    nameShort = "AUTO HMG";
     offset[] = {0, 3, 0};
     rearm = 120;
+    requirements[] = {"S"};
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -212,9 +214,10 @@ class Static_GMG_Auto: Sector_Defense {
     cost = 650;
     loadable[] = {0, -2.5, 0.4};
     name = "Mk32 GMG Auto Turret";
-    nameShort = "STATIC GMG";
+    nameShort = "AUTO GMG";
     offset[] = {0, 3, 0};
     rearm = 120;
+    requirements[] = {"S"};
 };
 class B_GMG_01_A_F: Static_GMG_Auto {
     side[] = {"west"};
@@ -267,6 +270,32 @@ class I_Smart_Mine: Smart_Mine {
 // class O_Mortar_01_F: Mortar {
 //     side[] = {"east"};
 // };
+
+// Hunter/Ifrit Mortar
+class MRAP_Mortar: Sector_Defense {
+    aps = 1;
+    capValue = 2;
+    cost = 6000;
+    rearm = 900;
+    showToEnemies = 200;
+    variant = 1;
+};
+class B_Hunter_Mortar: MRAP_Mortar {
+    loadable[] = {0, -0.8, 1.2};
+    integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    name = "Hunter Mortar";
+    nameShort = "HUNTER MORTAR";
+    side[] = {"west"};
+    spawn = "B_MRAP_01_F";
+};
+class O_Ifrit_Mortar: MRAP_Mortar {
+    loadable[] = {0, -0.8, 1.5};
+    integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    name = "Ifrit Mortar";
+    nameShort = "IFRIT MORTAR";
+    side[] = {"east"};
+    spawn = "O_MRAP_02_F";
+};
 
 // MK45 Hammer
 class B_Ship_Gun_01_F: Sector_Defense {

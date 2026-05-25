@@ -137,6 +137,7 @@ class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
 };
 class O_Mohawk: Transport_Helicopter {
     hasHMD = 1;
+    isHeavyLift = 1;
     loadable[] = {0, -2.2, 2.1};
     name = "CH-49 Mohawk";
     nameShort = "MOHAWK";
@@ -269,6 +270,29 @@ class B_Hellcat: Hellcat {
 class I_Hellcat: Hellcat {
     aircraftSpawn = 1;
     side[] = {"guer"};
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1",
+            "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        addWeapons[] = {
+            "weapon_BIM9xLauncher",
+            "CMFlareLauncher_Singles"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine",
+            "5000Rnd_762x51_Belt"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher",
+            "M134_minigun"
+        };
+        turret[] = {-1};
+    };
 };
 
 // Mi-48 Kajman

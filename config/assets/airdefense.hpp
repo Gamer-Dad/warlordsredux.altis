@@ -7,7 +7,7 @@ class Static_Titan_AA: Air_Defense {
     cost = 300;
     hasTurretVisualizer = 1;
     loadable[] = {0, -2.5, 0.2};
-    nameShort = "TITAN";
+    nameShort = "TITAN AA";
     offset[] = {0, 3, 0};
     rearm = 180;
 
@@ -58,18 +58,6 @@ class I_E_Radar_System_01_F: Radar {
     side[] = {"guer"};
 };
 
-class Radome: Air_Defense {
-    cost = 1500;
-    demolishable = 3;
-    description = "Passively tracks hostile missile launches up to 9 km.";
-    name = "AN/FPS-124 Radome";
-    nameShort = "RADOME";
-    offset[] = {0, 7, 0};
-    spawn = "Land_Radar_Small_F";
-    side[] = {"west", "east", "guer"};
-    threatDetection = 9000;
-};
-
 class Light_SAM: Air_Defense {
     aps = 1;
     capValue = 2;
@@ -103,6 +91,8 @@ class B_Nyx_SAM: Nyx_SAM {
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
             "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
             "PylonMissile_Missile_AMRAAM_D_x1"
         };
         addWeapons[] = {
@@ -128,6 +118,8 @@ class O_Nyx_SAM: Nyx_SAM {
         addMagazines[] = {
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
             "Laserbatteries"
         };
         addWeapons[] = {
@@ -145,13 +137,14 @@ class O_Nyx_SAM: Nyx_SAM {
 };
 
 class Praetorian: Air_Defense {
-    cost = 3500;
+    cost = 6500;
     description = "Short-range point-defense artillery with a high rate of fire.";
     loadable[] = {0, -1, 1.7};
     name = "Praetorian 1C";
     nameShort = "CIWS";
     offset[] = {0, 5.3, 0};
     rearm = 180;
+    requirements[] = {"S"};
     spawn = "B_AAA_System_01_F";
     textures[] = {
         "a3\static_f_jets\aaa_system_01\data\aaa_system_01_olive_co.paa",
@@ -333,6 +326,7 @@ class Mobile_Spartan: Air_Defense {
 };
 class B_Gorgon_AA: Mobile_Spartan {
     integralWeapon[] = {16, {0.35, -1.5, 1.5}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
+    isLight = 1;
     loadable[] = {0, -0.8, 1.7};
     loaded = "B_Deployed_Spartan";
     name = "AFV-4 Medusa";

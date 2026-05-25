@@ -2,24 +2,6 @@ class Special {
     category = "Special";
 };
 
-class FOB_Crate: Special {
-    conversion = 1;
-    cost = 1000;
-    demolishable = 1;
-    demolishStepTime = 3;
-    loadable[] = {0, -1.5, 0.5};
-    loadableAngle = 90;
-    name = "Forward Base Supplies";
-    nameShort = "SUPPLIES";
-    offset[] = {0, 5, 0};
-};
-class Land_Cargo20_blue_F: FOB_Crate {
-    loaded = "B_Supply_Boat";
-};
-class Land_Cargo20_brick_red_F: FOB_Crate {
-    loaded = "O_Supply_Boat";
-};
-
 // Supply RHIB
 class Supply_Boat: Naval {
     conversion = 1;
@@ -66,9 +48,9 @@ class O_UAV_02_F: Special {
     fragileDrone = 1;
 };
 
-class B_Integral_Mortar: Special {
+class Integral_Mortar: Special {
     cost = -1;
-    name = "Soltam CO2 Vehicle-Mounted Mortar";
+    name = "82mm Mortar";
     nameShort = "MORTAR";
 };
 

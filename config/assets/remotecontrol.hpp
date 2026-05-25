@@ -119,8 +119,12 @@ class O_Shahed: Loitering_Munition {
 };
 
 class AR7: Remote_Control {
+    ammoOverrides[] = {
+        {"BombDemine_01_Ammo_F", {"BombDemine_01_Ammo_F", "Grenade"}}
+    };
     cost = 2000;
     fragileDrone = 1;
+    hasHMD = 1;
     nameShort = "RAVEN";
     offset[] = {0, 3, 0};
     rearm = 240;

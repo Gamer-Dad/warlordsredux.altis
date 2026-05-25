@@ -14,8 +14,6 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Bomb_SDB"                     // SDB
         };
-        aps[] = {5};
-        consumption = 5;
         camera = 1;
     };
 
@@ -27,7 +25,7 @@ class WLProjectilesConfig {
         camera = 1;
         immunity = 2500;
         sam = 1;
-        speed = 1.1;
+        speed = 2;
     };
 
     class WLProjectile_Centurion: WLProjectile {
@@ -83,9 +81,9 @@ class WLProjectilesConfig {
             "ammo_Missile_AA_R77_ground"
         };
         camera = 1;
-        immunity = 1000;
+        immunity = 2000;
         sam = 1;
-        speed = 1.1;
+        speed = 0.8;
     };
 
     class WLProjectile_A2ANoLoal: WLProjectile {
@@ -239,7 +237,7 @@ class WLProjectilesConfig {
         };
         aps[] = {5};
         camera = 1;
-        consumption = 3;
+        consumption = 9;
         gps = 1;
     };
 
