@@ -1,7 +1,8 @@
 Warlords Redux 2.8 Patch 10
 
 Assets
-* (New) Xi'an (Vehicle Transport)
+* (New) Xi'an (Vehicle Transport).
+* (New) Supply Boat.
 * (Removed) Radome.
 * (Removed) Nyx AT.
 * AR-7 Raven: added HMD, renamed grenade.
@@ -23,6 +24,7 @@ Gameplay
 * Sectors with remaining reinforcements give +2x capture modifiers.
 * Supplies (formerly FOB supplies) can be added to sectors to increase reinforcement count.
 * Supplies can now only be purchased at non-FOB helipads.
+* Supplies now convert to fortified rally points instead of supply boats.
 * Removed sector fortification mechanic. All captured sectors self-fortify after 5 minutes.
 * Sector income decreased $12->10/km^2/minute.
 * Heavy+ APS: no longer stops SDBs when dropped in manual mode, stops 1 SDB when dropped in GPS guided mode.
@@ -52,8 +54,11 @@ Gameplay
 * Laser guided munitions range increased, targets now shown on pilot HUD.
 * ELO/ratings no longer affected by match duration.
 * Increased ground launched R77/AMRAAM/Zephyr notch immunity range 1->2km, reduced projectile speed 1.1->0.8x.
-* Spartan/SAAMI flight speed doubled.
+* Spartan/SAAMI flight speed doubled, notch immunity range 2,500->3,000m.
 * Anti-air missiles now use consistent damage model, independent of lag/network latency.
+* Renamed Sidearm missiles for Opfor to Kh-31P ARM.
+* Demolishables are no longer claimable.
+* VLS Destroyers disabled.
 
 Map
 * Livadi: added helipad.
@@ -66,6 +71,7 @@ Map
 * Ghost Hotel: reshaped.
 * South Telos Complex: reshaped.
 * Xirolimni Dam: reshaped.
+* New factories mechanic added to sectors: Gori Factory, Kore Factory, Lakka Factory, Sofia, and South Telos.
 
 Bugfixes
 * Significantly reduced delay between spawning vehicle/tent and showing it on map.
@@ -75,11 +81,13 @@ Bugfixes
 * Fixed and optimized sector/fob overlapping calculation. Should be able to deploy FOB snug against sector.
 * Fixed some instances of strongholds being invisible on map.
 * Fixed most instances of catastrophic carrier/catapult launches.
+* Fixed carrier vehicles spawning underwater.
 * Fixed green sectors without buildings having reserves.
 * Fixed green sectors not respawning reserves.
 * Fixed null spawned objects and infantry.
 * Fixed squad invites not clearing when rejected.
 * Fixed simultaneous demolition causing multiple friendly fire punishments for a single asset.
+* Fixed FOB dome not being deleted when FOB is destroyed.
 * Fixed demolition overkill rewarding extra money.
 * Fixed some players showing tracking device instead of Q/E lean for timed prompt accept/reject.
 * Fixed being able to fast travel to unlinked sectors.

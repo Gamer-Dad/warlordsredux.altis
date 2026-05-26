@@ -7,7 +7,6 @@ class Caesar_Dronehunter: Fixed_Wing {
     cost = 800;
     description = "Caesar Drone Hunter is a light unarmed aircraft used to find and destroy enemy drones.";
     hasDroneHunter = 1;
-    loadable[] = {0, -2.2, 0.9};
     name = "Caesar Drone Hunter";
     nameShort = "CAESAR";
     spawn = "C_Plane_Civil_01_F";
@@ -142,9 +141,6 @@ class B_Archerfish: Blackfish {
 
 // Scout Stealth
 class Scout_Stealth: Fixed_Wing {
-    ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-    };
     cost = 14000;
     disallowMagazines[] = {
         "PylonRack_Bomb_SDB_x4",
@@ -179,7 +175,9 @@ class Scout_Stealth: Fixed_Wing {
 };
 
 class B_Scout_Wasp: Scout_Stealth {
-    loadable[] = {0, -2.2, 1.6};
+    ammoOverrides[] = {
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+    };
     name = "SR-181 Scout Wasp";
     nameShort = "SCOUT WASP";
     side[] = {"west"};
@@ -205,7 +203,9 @@ class B_Scout_Wasp: Scout_Stealth {
 };
 
 class O_Scout_Shikra: Scout_Stealth {
-    loadable[] = {0, -2.2, 1.7};
+    ammoOverrides[] = {
+        {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
+    };
     name = "Yak-201 Scout Shikra";
     nameShort = "SCOUT SHIKRA";
     side[] = {"east"};
@@ -239,7 +239,6 @@ class O_Xian: Fixed_Wing {
     hasHMD = 1;
     hasLoader = 1;
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.2, 2.4};
     nameShort = "XIAN";
     paradrops = 2;
     requirements[] = {"H"};
@@ -368,7 +367,6 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
         "PylonRack_3Rnd_Missile_AGM_02_F"
     };
     hasHMD = 1;
-    loadable[] = {0, -2.2, 1.5};
     nameShort = "WIPEOUT";
     rearm = 420;
     side[] = {"west"};
@@ -387,7 +385,6 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
 // A-143 Buzzard (CAS)
 class Buzzard_CAS: Fixed_Wing {
     hasHMD = 1;
-    loadable[] = {0, -2.2, 1.6};
     name = "A-143 Buzzard (CAS)";
     nameShort = "BUZZARD";
     rearm = 420;
@@ -451,7 +448,6 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
     };
     cost = 16000;
     hasHMD = 1;
-    loadable[] = {0, -2.2, 2.3};
     nameShort = "NEO";
     rearm = 420;
     side[] = {"east"};
@@ -470,7 +466,6 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
 // A-149 Gryphon (Interceptor)
 class Gryphon: Fixed_Wing {
     hasHMD = 1;
-    loadable[] = {0, -2.2, 1.4};
     name = "A-149 Gryphon";
     nameShort = "GRYPHON";
     rearm = 420;
@@ -605,7 +600,6 @@ class B_Strike_Wasp: Fixed_Wing {
         "PylonRack_Missile_AMRAAM_D_x2"
     };
     hasHMD = 1;
-    loadable[] = {0, -2.2, 1.6};
     name = "A-181 Strike Wasp";
     nameShort = "STRIKE WASP";
     rearm = 420;
@@ -625,44 +619,43 @@ class B_Strike_Wasp: Fixed_Wing {
     };
 };
 
-// class B_Growler: Fixed_Wing {
-//     allowPylonMagazines[] = {
-//         "PylonRack_Missile_AMRAAM_D_x2",
-//         "PylonRack_Missile_HARM_x1",
-//         {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayCenter4"}}
-//     };
-//     ammoOverrides[] = {
-//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-//     };
-//     cost = 19000;
-//     disallowMagazines[] = {
-//         "PylonRack_Bomb_SDB_x4",
-//         "PylonRack_Bomb_GBU12_x2",
-//         "PylonMissile_Missile_BIM9X_x1",
-//         "PylonMissile_Bomb_GBU12_x1",
-//         "PylonRack_Missile_AGM_02_x1",
-//         "PylonRack_Missile_AGM_02_x2"
-//     };
-//     hasHMD = 1;
-//     loadable[] = {0, -2.2, 1.6};
-//     name = "EF/A-181 Growler";
-//     rearm = 420;
-//     side[] = {"west"};
-//     spawn = "B_Plane_Fighter_01_F";
-//     threatDetection = 8000;
-//     variant = 1;
+class B_Growler: Fixed_Wing {
+    airRadar = 12000;
+    allowPylonMagazines[] = {
+        "PylonRack_Missile_AMRAAM_D_x2",
+        "PylonRack_Missile_HARM_x1",
+        "PylonRack_4Rnd_LG_scalpel"
+    };
+    ammoOverrides[] = {
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+    };
+    cost = 19000;
+    disallowMagazines[] = {
+        "PylonRack_Bomb_SDB_x4",
+        "PylonRack_Bomb_GBU12_x2",
+        "PylonMissile_Missile_BIM9X_x1",
+        "PylonMissile_Bomb_GBU12_x1",
+        "PylonRack_Missile_AGM_02_x1",
+        "PylonRack_Missile_AGM_02_x2"
+    };
+    hasHMD = 1;
+    name = "EF/A-181 Growler";
+    rearm = 420;
+    side[] = {};
+    spawn = "B_Plane_Fighter_01_F";
+    threatDetection = 20000;
 
-//     class Pilot: WLTurretDefaults {
-//         addMagazines[] = {
-//             "300Rnd_CMFlare_Chaff_Magazine",
-//             "300Rnd_CMFlare_Chaff_Magazine"
-//         };
-//         removeMagazines[] = {
-//             "240Rnd_CMFlare_Chaff_Magazine"
-//         };
-//         turret[] = {-1};
-//     };
-// };
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeMagazines[] = {
+            "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        turret[] = {-1};
+    };
+};
 
 // To-201 Shikra
 class O_Plane_Fighter_02_F: Fixed_Wing {
@@ -675,7 +668,6 @@ class O_Plane_Fighter_02_F: Fixed_Wing {
         "PylonMissile_Missile_KH58_INT_x1"
     };
     hasHMD = 1;
-    loadable[] = {0, -2.2, 1.7};
     nameShort = "SHIKRA";
     rearm = 420;
     side[] = {"east"};
@@ -707,7 +699,6 @@ class B_Plane_Fighter_01_F: Fixed_Wing {
     };
     cost = 26000;
     hasHMD = 1;
-    loadable[] = {0, -2.2, 1.6};
     nameShort = "WASP";
     rearm = 420;
     side[] = {"west"};
@@ -740,7 +731,6 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
     cost = 28000;
     hasHMD = 1;
     hasReconOptics = 1;
-    loadable[] = {0, -2.2, 1.6};
     name = "F/A-181 Black Wasp II (Stealth/Recon)";
     nameShort = "STEALTH WASP";
     rearm = 420;
@@ -770,7 +760,7 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
     ammoOverrides[] = {
         {"ammo_Bomb_SDB", {"ammo_upmk_d30", "UMPK D-30SN (GPS-Guided)"}},
         {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}},
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 28000;
     description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
@@ -779,7 +769,6 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
     };
     hasHMD = 1;
     hasReconOptics = 1;
-    loadable[] = {0, -2.2, 1.7};
     name = "To-201 Shikra (Stealth/Recon)";
     nameShort = "STEALTH SHIKRA";
     rearm = 420;

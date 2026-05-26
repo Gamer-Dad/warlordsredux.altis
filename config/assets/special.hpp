@@ -2,23 +2,6 @@ class Special {
     category = "Special";
 };
 
-// Supply RHIB
-class Supply_Boat: Naval {
-    conversion = 1;
-    cost = 1500;
-    description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
-    hasFastTravel = 1;
-    name = "Supply RHIB";
-    nameShort = "RHIB";
-    spawn = "I_C_Boat_Transport_02_F";
-};
-class B_Supply_Boat: Supply_Boat {
-    loaded = "Land_Cargo20_blue_F";
-};
-class O_Supply_Boat: Supply_Boat {
-    loaded = "Land_Cargo20_brick_red_F";
-};
-
 class Team_Rally_Point: Special {
     conversion = 1;
     cost = 5000;
@@ -113,8 +96,8 @@ class Static_Cannon: Special {
     hasRearm = 1;
     immobile = 1;
     loaded = "Land_IRMaskingCover_01_F";
-    loadable[] = {0, -3.4, 0.8};
-    loadableAngle = 180;
+    loadable = 1;
+    loadRotate = 2;
     name = "Fighting Position (Cannon)";
     nameShort = "STATIC CANNON";
     offset[] = {0, 8, 0};
@@ -198,4 +181,16 @@ class Land_TentSolar_01_redwhite_F: Spawn_Tent {};
 class RuggedTerminal_01_communications_hub_F: Special {
     name = "Forward Base";
     nameShort = "FOB";
+};
+
+class Land_Cargo_HQ_V4_F: Special {
+    conversion = 1;
+    cost = 8000;
+    demolishable = 6;
+    demolishStepTime = 3;
+    hasFastTravel = 1;
+    name = "Fortified Rally Point";
+    nameShort = "RALLY";
+    offset[] = {0, 12, 0};
+    showToEnemies = 1000;
 };

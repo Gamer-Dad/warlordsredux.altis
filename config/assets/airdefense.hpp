@@ -1,12 +1,12 @@
 class Air_Defense {
     category = "Air Defense";
+    loadable = 1;
 };
 
 // Static Titan Launcher (AA)
 class Static_Titan_AA: Air_Defense {
     cost = 300;
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.5, 0.2};
     nameShort = "TITAN AA";
     offset[] = {0, 3, 0};
     rearm = 180;
@@ -44,7 +44,6 @@ class Radar: Air_Defense {
     cost = 500;
     description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16 km.";
     isRadar = 1;
-    loadable[] = {0, 0, 1};
     nameShort = "RADAR";
     offset[] = {0, 7, 0};
 };
@@ -70,7 +69,6 @@ class Light_SAM: Air_Defense {
 };
 
 class Nyx_SAM: Light_SAM {
-    loadable[] = {0, -1.5, 1.2};
     name = "AWC Nyx (SAM)";
     nameShort = "NYX AA";
     spawn = "I_LT_01_scout_F";
@@ -139,7 +137,6 @@ class O_Nyx_SAM: Nyx_SAM {
 class Praetorian: Air_Defense {
     cost = 6500;
     description = "Short-range point-defense artillery with a high rate of fire.";
-    loadable[] = {0, -1, 1.7};
     name = "Praetorian 1C";
     nameShort = "CIWS";
     offset[] = {0, 5.3, 0};
@@ -166,6 +163,7 @@ class SPAAG: Air_Defense {
     capValue = 4;
     cost = 3000;
     hasHMD = 1;
+    loadable = 0;
     rearm = 240;
 };
 
@@ -232,7 +230,6 @@ class Spartan: Air_Defense {
     cost = 5500;
     description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 2.5 km.";
     hasHMD = 1;
-    loadable[] = {0, -2, 0.8};
     name = "Mk49 Spartan";
     nameShort = "SPARTAN";
     offset[] = {0, 5.3, 0};
@@ -254,7 +251,6 @@ class LR_AA: Air_Defense {
     cost = 5500;
     description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.8 km.";
     hasHMD = 1;
-    loadable[] = {0, 0, 1};
     offset[] = {0, 6, 0};
     rearm = 240;
 };
@@ -276,7 +272,6 @@ class Centurion: Air_Defense {
     cost = 5500;
     description = "Medium-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5 km.";
     hasHMD = 1;
-    loadable[] = {0, -2, 1};
     loaded = "Centurion_Decoy";
     name = "Mk21 Centurion";
     nameShort = "CENT";
@@ -298,7 +293,6 @@ class O_Centurion: Centurion {
 class Centurion_Decoy: Air_Defense {
     cost = 100;
     decoy = 1;
-    loadable[] = {0, -2, 1};
     name = "Mk21 Centurion";
     nameShort = "CENT";
     offset[] = {0, 5.3, 0};
@@ -327,7 +321,6 @@ class Mobile_Spartan: Air_Defense {
 class B_Gorgon_AA: Mobile_Spartan {
     integralWeapon[] = {16, {0.35, -1.5, 1.5}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
     isLight = 1;
-    loadable[] = {0, -0.8, 1.7};
     loaded = "B_Deployed_Spartan";
     name = "AFV-4 Medusa";
     nameShort = "MEDUSA";
@@ -358,7 +351,6 @@ class B_Gorgon_AA: Mobile_Spartan {
 };
 class O_Marid_AA: Mobile_Spartan {
     integralWeapon[] = {16, {0.2, -1.5, 1.7}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
-    loadable[] = {0, -0.8, 1.65};
     loaded = "O_Deployed_Spartan";
     name = "9K41 Ghost";
     nameShort = "GHOST";
@@ -382,6 +374,7 @@ class O_Marid_AA: Mobile_Spartan {
 class B_Integral_Spartan: Air_Defense {
     cost = -1;
     hasHMD = 1;
+    loadable = 0;
     name = "RIM-116 Missile Launcher";
     nameShort = "SPARTAN";
 };
@@ -392,4 +385,36 @@ class B_Deployed_Spartan: B_Spartan {
 class O_Deployed_Spartan: O_Spartan {
     conversion = 1;
     side[] = {};
+};
+
+class O_Euphrates: SPAAG {
+    ammoOverrides[] = {
+        {"ammo_Missile_s750", {"ammo_Missile_s750m", "S-760 Rhea-M"}}
+    };
+    aps = 5;
+    cost = 12000;
+    name = "ZSU-49 Euphrates";
+    nameShort = "EUPHRATES";
+    side[] = {};
+    spawn = "O_APC_Tracked_02_AA_F";
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "magazine_Missile_s750_x4",
+            "680Rnd_35mm_AA_shells_Tracer_Green"
+        };
+        addWeapons[] = {
+            "autocannon_35mm",
+            "weapon_s750Launcher"
+        };
+        removeMagazines[] = {
+            "4Rnd_Titan_long_missiles_O",
+            "680Rnd_35mm_AA_shells_Tracer_Green"
+        };
+        removeWeapons[] = {
+            "missiles_titan_AA",
+            "autocannon_35mm"
+        };
+        turret[] = {0};
+    };
 };

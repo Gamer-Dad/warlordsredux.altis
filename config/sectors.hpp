@@ -960,10 +960,10 @@ class CfgWarlordSectors {
         name = "USS Freedom";
         services[] = {"H", "A"};
         vehicles[] = {
-            {"I_LT_01_AA_F", {1814.2, 15427.8, 19.8}, 204.7},
-            {"I_LT_01_AA_F", {1791.4, 15470.6, 23.6}, 156},
-            {"I_LT_01_AA_F", {1677.0, 15627.8, 23.6}, 65},
-            {"I_Mora", {1769.6, 15560.2, 23.6}, 104}
+            {"I_LT_01_AA_F", {1814.2, 15427.8, 50}, 204.7},
+            {"I_LT_01_AA_F", {1791.4, 15470.6, 50}, 156},
+            {"I_LT_01_AA_F", {1677.0, 15627.8, 50}, 65},
+            {"I_Mora", {1769.6, 15560.2, 50}, 104}
         };
     };
 
@@ -974,8 +974,8 @@ class CfgWarlordSectors {
         name = "USS Independence";
         services[] = {"H", "A"};
         vehicles[] = {
-            {"I_Mora", {25650.9, 13696.4, 24.6}, 280.110},
-            {"I_MRAP_03_hmg_F", {25736.9, 13766.6, 23.6}, 125.718}
+            {"I_Mora", {25650.9, 13696.4, 50}, 280.110},
+            {"I_MRAP_03_hmg_F", {25736.9, 13766.6, 50}, 125.718}
         };
     };
 
@@ -1063,5 +1063,41 @@ class CfgWarlordRunways {
     };
     class USSIndependence {
         area[] = {{25652.7, 13657.1, 0}, 250, 100, 118};
+    };
+};
+
+class CfgWarlordFactories {
+    factoryTypes[] = {
+        {"B_Ghosthawk_III", 600},
+        {"B_Slammer_X", 600},
+        {"B_Growler", 1200},
+        {"O_Marid_Dragon", 300},
+        {"O_MBT_02_railgun_F", 600},
+        {"O_Euphrates", 1200}
+    };
+
+    class GoriFactory {
+        position[] = {5375.21, 17905.6, 0};
+        direction = 90;
+    };
+
+    class KoreFactory {
+        position[] = {6228.98, 16274.5, 0};
+        direction = 180;
+    };
+
+    class LakkaFactory {
+        position[] = {12572.3, 16328.7, 0};
+        direction = 295;
+    };
+
+    class SofiaFactory {
+        position[] = {25401.4, 20352.9, 0};
+        direction = 145;
+    };
+
+    class TelosFactory {
+        position[] = {16080.7, 16978.1, 0};
+        direction = 270;
     };
 };

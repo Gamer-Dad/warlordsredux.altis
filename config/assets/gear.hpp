@@ -1,5 +1,6 @@
 class Gear {
     category = "Gear";
+    loadable = 1;
 };
 
 class Faction_Crate: Gear {
@@ -9,7 +10,6 @@ class Faction_Crate: Gear {
     description = "Supply crate that can be used to restock infantry weapons or rearm vehicles. Automatically cleaned up. Use other gear containers for longer-term purposes.";
     hasRearm = 1;
     lifetime = 300;
-    loadable[] = {0, -1, 0.5};
     name = "Resupply Crate";
     nameShort = "CRATE";
     offset[] = {0, 3, 0};
@@ -63,7 +63,6 @@ class Huron_Pod: Gear {
         { "Toolkit", 1 }
     };
     cost = 500;
-    loadable[] = {0, -1.5, 0.5};
     nameShort = "POD";
     offset[] = {0, 8, 0};
 };
@@ -90,7 +89,6 @@ class Taru_Pod: Gear {
         { "Toolkit", 1 }
     };
     cost = 500;
-    loadable[] = {0, -1.8, 0.4};
     nameShort = "POD";
     offset[] = {0, 8, 0};
 };
@@ -118,18 +116,16 @@ class FOB_Crate: Gear {
     demolishable = 1;
     demolishStepTime = 3;
     description = "Purchases supplies that can be airlifted or deployed into a forward position or sector. It can be used to setup a base, add supplies to an existing one, or to add reinforcements to a defensive sector.";
-    loadable[] = {0, -1.5, 0.5};
-    loadableAngle = 90;
+    loaded = "Land_Cargo_HQ_V4_F";
+    loadRotate = 1;
     name = "Supplies";
     nameShort = "SUPPLIES";
     offset[] = {0, 5, 0};
     requirements[] = {"H", "NF"};
 };
 class Land_Cargo20_blue_F: FOB_Crate {
-    loaded = "B_Supply_Boat";
     side[] = {"west"};
 };
 class Land_Cargo20_brick_red_F: FOB_Crate {
-    loaded = "O_Supply_Boat";
     side[] = {"east"};
 };

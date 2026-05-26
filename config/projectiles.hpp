@@ -23,7 +23,7 @@ class WLProjectilesConfig {
             "M_70mm_SAAMI"                      // SAAMI
         };
         camera = 1;
-        immunity = 2500;
+        immunity = 3000;
         sam = 1;
         speed = 2;
     };
@@ -36,6 +36,16 @@ class WLProjectilesConfig {
         immunity = 3500;
         sam = 1;
         speed = 1.1;
+    };
+
+    class WLProjectile_VLRSAM: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_s750m"                 // Rhea-M
+        };
+        camera = 1;
+        immunity = 6000;
+        sam = 1;
+        speed = 2;
     };
 
     class WLProjectile_LRSAM: WLProjectile {

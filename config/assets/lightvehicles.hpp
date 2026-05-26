@@ -1,12 +1,12 @@
 class Light_Vehicle {
     category = "Light Vehicles";
+    loadable = 1;
 };
 
 // Quad Bike
 class Quadbike: Light_Vehicle {
     capValue = 1;
     cost = 20;
-    loadable[] = {0, -1, 0.6};
     nameShort = "QUAD";
     offset[] = {0, 3, 0};
 };
@@ -24,7 +24,6 @@ class I_Quadbike_01_F: Quadbike {
 class Offroad_Armed: Light_Vehicle {
     capValue = 1;
     cost = 150;
-    loadable[] = {0, -1.7, 1.3};
     nameShort = "OFFROAD";
     offset[] = {0, 5, 0};
     rearm = 120;
@@ -59,7 +58,6 @@ class I_G_Offroad_01_armed_F: Offroad_Armed {
 class LSV_Armed: Light_Vehicle {
     capValue = 1;
     cost = 200;
-    loadable[] = {0, -1.3, 1.25};
     offset[] = {0, 5, 0};
     rearm = 120;
 };
@@ -115,6 +113,7 @@ class Passenger_Transport: Light_Vehicle {
     capValue = 1;
     cost = 200;
     hasFastTravel = 1;
+    loadable = 0;
     loaded = "Land_BagBunker_Small_F";
 };
 class B_Truck_01_transport_F: Passenger_Transport {
@@ -131,6 +130,7 @@ class Medical_Transport: Light_Vehicle {
     capValue = 1;
     cost = 250;
     hasFastTravel = 1;
+    loadable = 0;
     loaded = "Land_BagBunker_Small_F";
     nameShort = "MEDICAL";
 };
@@ -148,6 +148,7 @@ class Flatbed: Light_Vehicle {
     hasFastTravel = 1;
     hasLoader = 1;
     isLight = 1;
+    loadable = 0;
     name = "HEMTT Flatbed";
     nameShort = "FLATBED";
     spawn = "B_Truck_01_flatbed_F";
@@ -175,21 +176,18 @@ class MRAP_Unarmed: Light_Vehicle {
 
 // Hunter
 class B_MRAP_01_F: MRAP_Unarmed {
-    loadable[] = {0, -0.8, 1.25};
     nameShort = "HUNTER";
     side[] = {"west"};
 };
 
 // Ifrit
 class O_MRAP_02_F: MRAP_Unarmed {
-    loadable[] = {0, -0.8, 1.5};
     nameShort = "IFRIT";
     side[] = {"east"};
 };
 
 // Strider
 class I_MRAP_03_F: MRAP_Unarmed {
-    loadable[] = {0, -0.8, 1.8};
     nameShort = "STRIDER";
     side[] = {"guer"};
 };
@@ -198,7 +196,6 @@ class I_MRAP_03_F: MRAP_Unarmed {
 class Offroad_AT: Light_Vehicle {
     capValue = 1;
     cost = 500;
-    loadable[] = {0, -1.7, 0.7};
     nameShort = "OFFROAD AT";
     offset[] = {0, 5, 0};
     rearm = 180;
@@ -227,7 +224,6 @@ class O_G_Offroad_01_AT_F: Offroad_AT {
 class LSV_AT: Light_Vehicle {
     capValue = 1;
     cost = 750;
-    loadable[] = {0, -1.3, 0.8};
     offset[] = {0, 5, 0};
     rearm = 180;
 };
@@ -283,7 +279,6 @@ class MRAP_HMG: Light_Vehicle {
     aps = 1;
     capValue = 2;
     cost = 950;
-    loadable[] = {0, -0.8, 1.8};
     rearm = 120;
 };
 class B_MRAP_01_hmg_F: MRAP_HMG {
@@ -305,7 +300,6 @@ class MRAP_GMG: Light_Vehicle {
     aps = 1;
     capValue = 2;
     cost = 950;
-    loadable[] = {0, -0.8, 1.8};
     rearm = 120;
 };
 class B_MRAP_01_gmg_F: MRAP_GMG {
@@ -327,6 +321,7 @@ class Transport_Ammo: Light_Vehicle {
     capValue = 1;
     cost = 1000;
     hasRearm = 1;
+    loadable = 0;
     nameShort = "AMMO";
 };
 class B_Truck_01_ammo_F: Transport_Ammo {
@@ -343,6 +338,7 @@ class Transport_Fuel: Light_Vehicle {
     capValue = 1;
     cost = 1000;
     hasRefuel = 1;
+    loadable = 0;
     nameShort = "FUEL";
 };
 class B_Truck_01_fuel_F: Transport_Fuel {
@@ -359,6 +355,7 @@ class Transport_Repair: Light_Vehicle {
     capValue = 1;
     cost = 1000;
     hasRepair = 1;
+    loadable = 0;
     nameShort = "REPAIR";
 };
 class B_Truck_01_Repair_F: Transport_Repair {
@@ -372,7 +369,6 @@ class O_Truck_03_Repair_F: Transport_Repair {
 
 // Hunter AFV
 class Hunter_Upgraded: Light_Vehicle {
-    loadable[] = {0, -0.8, 1.8};
     rearm = 120;
     spawn = "B_MRAP_01_gmg_F";
     variant = 1;
@@ -408,6 +404,7 @@ class Device_Truck: Light_Vehicle {
     cost = 750;
     description = "Provides a mobile APS platform for vehicle convoys.";
     ewBoost = 1;
+    loadable = 0;
     name = "Device Truck";
     nameShort = "DEVICE";
     rearm = 120;

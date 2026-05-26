@@ -5,7 +5,7 @@ class Remote_Control {
 // UGAS demining
 class UAGS_Demining: Remote_Control {
     cost = 100;
-    loadable[] = {0, -1, -0.5};
+    loadable = 1;
     nameShort = "UGAS";
     offset[] = {0, 3, 0};
     rearm = 120;
@@ -20,7 +20,7 @@ class O_UGV_02_Demining_F: UAGS_Demining {
 // UGV Stomper
 class UGV: Remote_Control {
     cost = 150;
-    loadable[] = {-0.4, -1, 1.1};
+    loadable = 1;
     nameShort = "STOMPER";
     offset[] = {0, 5, 0};
     rearm = 120;
@@ -81,7 +81,7 @@ class Loitering_Munition: Remote_Control {
     cost = 1500;
     description = "Loitering munition that can be piloted to its target.";
     detonate = 7;
-    loadable[] = {0, -1.0, 0};
+    loadable = 1;
     requirements[] = {"FA"};
     spawn = "O_T_UAV_04_CAS_F";
     variant = 1;
@@ -158,7 +158,7 @@ class Offroad_IED: Remote_Control {
     description = "Offroad (IED) is a variant of the Offroad that goes boom.";
     detonate = 11;
     drone = 1;
-    loadable[] = {0, -1.7, 1.3};
+    loadable = 1;
     name = "Offroad (IED)";
     nameShort = "VBIED";
     offset[] = {0, 5, 0};
@@ -177,7 +177,6 @@ class I_E_Offroad_01_comms_F: Offroad_IED {
 class O_T_UAV_04_CAS_F: Remote_Control {
     cost = 4500;
     hasHMD = 1;
-    loadable[] = {0, -1.0, 0};
     nameShort = "FENGHUANG";
     rearm = 300;
     requirements[] = {"H"};
@@ -212,7 +211,6 @@ class O_T_UAV_04_CAS_F: Remote_Control {
 //     };
 //     hasHMD = 1;
 //     hasReconOptics = 1;
-//     loadable[] = {0, -2.2, 0.1};
 //     rearm = 300;
 //     requirements[] = {"FA"};
 //     spawn = "B_T_UAV_03_dynamicLoadout_F";
@@ -253,7 +251,6 @@ class O_T_UAV_04_CAS_F: Remote_Control {
 class Predator_Drone: Remote_Control {
     cost = 5500;
     hasHMD = 1;
-    loadable[] = {0, -1.0, 0};
     nameShort = "PREDATOR";
     rearm = 300;
     requirements[] = {"H"};
@@ -282,7 +279,6 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
     };
     cost = 6000;
     hasHMD = 1;
-    loadable[] = {0, -2.2, 0.1};
     nameShort = "FALCON";
     rearm = 300;
     requirements[] = {"H"};
@@ -303,7 +299,6 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
 class B_UAV_05_F: Remote_Control {
     cost = 15000;
     hasHMD = 1;
-    loadable[] = {0, -2.2, -0.4};
     nameShort = "SENTINEL";
     rearm = 420;
     requirements[] = {"A"};

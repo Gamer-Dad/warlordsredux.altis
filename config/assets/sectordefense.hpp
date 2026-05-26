@@ -5,7 +5,7 @@ class Sector_Defense {
 // Remote Designator
 class Static_Designator: Sector_Defense {
     cost = 50;
-    loadable[] = {0, -2.5, -0.3};
+    loadable = 1;
     nameShort = "DESIGNATOR";
     offset[] = {0, 3, 0};
     rearm = 60;
@@ -20,7 +20,7 @@ class O_Static_Designator_02_F: Static_Designator {
 // Mk30 HMG .50
 class Static_HMG: Sector_Defense {
     cost = 150;
-    loadable[] = {0, -2.5, 0.4};
+    loadable = 1;
     nameShort = "STATIC HMG";
     offset[] = {0, 3, 0};
     rearm = 120;
@@ -51,7 +51,7 @@ class O_HMG_01_F: Static_HMG {
 // Mk30 HMG .50 (Raised)
 class Static_HMG_Raised: Static_HMG {
     cost = 200;
-    loadable[] = {0, -2.5, 0.8};
+    loadable = 1;
     nameShort = "STATIC HMG";
 
     class Gunner: WLTurretDefaults {
@@ -80,7 +80,7 @@ class O_HMG_01_high_F: Static_HMG_Raised {
 // Mk32 GMG 20mm
 class Static_GMG: Sector_Defense {
     cost = 200;
-    loadable[] = {0, -2.5, 0.4};
+    loadable = 1;
     nameShort = "STATIC GMG";
     offset[] = {0, 3, 0};
     rearm = 120;
@@ -95,7 +95,7 @@ class O_GMG_01_F: Static_GMG {
 // Mk32 GMG 20mm (Raised)
 class Static_GMG_Raised: Static_GMG {
     cost = 250;
-    loadable[] = {0, -2.5, 0.8};
+    loadable = 1;
     nameShort = "STATIC GMG";
 };
 class B_GMG_01_high_F: Static_GMG_Raised {
@@ -109,7 +109,7 @@ class O_GMG_01_high_F: Static_GMG_Raised {
 class Static_AT: Sector_Defense {
     cost = 300;
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.5, 0.2};
+    loadable = 1;
     nameShort = "TITAN";
     offset[] = {0, 3, 0};
     rearm = 180;
@@ -145,7 +145,7 @@ class AT_Minefield: Sector_Defense {
     demolishStepTime = 4;
     description = "Anti-tank minefield that contains hidden anti-tank mines.";
     dumbMine[] = {50, 10, 1};
-    loadable[] = {-0.4, -1, 0.8};
+    loadable = 1;
     name = "Minefield (AT)";
     nameShort = "MINES";
     obstacle = 2;
@@ -179,7 +179,7 @@ class AT_MinefieldHex: AT_Minefield {
 // Mk30 HMG Auto Turret
 class Static_HMG_Auto: Sector_Defense {
     cost = 500;
-    loadable[] = {0, -2.5, 0.4};
+    loadable = 1;
     name = "Mk30 HMG Auto Turret";
     nameShort = "AUTO HMG";
     offset[] = {0, 3, 0};
@@ -212,7 +212,7 @@ class O_HMG_01_A_F: Static_HMG_Auto {
 // Mk32 GMG Auto Turret
 class Static_GMG_Auto: Sector_Defense {
     cost = 650;
-    loadable[] = {0, -2.5, 0.4};
+    loadable = 1;
     name = "Mk32 GMG Auto Turret";
     nameShort = "AUTO GMG";
     offset[] = {0, 3, 0};
@@ -232,7 +232,7 @@ class Smart_Mine: Sector_Defense {
     description = "Smart anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 4 deployed.";
     empty = 1;
     immobile = 1;
-    loadable[] = {-0.4, -1, 0.9};
+    loadable = 1;
     nameShort = "SMART MINE";
     offset[] = {0, 5, 0};
     rearm = 900;
@@ -259,7 +259,7 @@ class I_Smart_Mine: Smart_Mine {
 
 // class Mortar: Sector_Defense {
 //     cost = 5000;
-//     loadable[] = {0, -2.5, 0};
+//     loadable = 1;
 //     nameShort = "MORTAR";
 //     offset[] = {0, 3, 0};
 //     rearm = 900;
@@ -276,12 +276,12 @@ class MRAP_Mortar: Sector_Defense {
     aps = 1;
     capValue = 2;
     cost = 6000;
+    loadable = 1;
     rearm = 900;
     showToEnemies = 200;
     variant = 1;
 };
 class B_Hunter_Mortar: MRAP_Mortar {
-    loadable[] = {0, -0.8, 1.2};
     integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "Hunter Mortar";
     nameShort = "HUNTER MORTAR";
@@ -289,7 +289,6 @@ class B_Hunter_Mortar: MRAP_Mortar {
     spawn = "B_MRAP_01_F";
 };
 class O_Ifrit_Mortar: MRAP_Mortar {
-    loadable[] = {0, -0.8, 1.5};
     integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "Ifrit Mortar";
     nameShort = "IFRIT MORTAR";

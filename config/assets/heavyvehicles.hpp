@@ -5,7 +5,7 @@ class Heavy_Vehicles {
 class Marid: Heavy_Vehicles {
     aps = 2;
     capValue = 2;
-    loadable[] = {0, -0.8, 1.65};
+    loadable = 1;
     name = "MSE-3 Marid";
     rearm = 180;
     spawn = "O_APC_Wheeled_02_rcws_v2_F";
@@ -17,7 +17,7 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
     capValue = 3;
     cost = 1300;
     isLight = 1;
-    loadable[] = {0, -1.5, 1.2};
+    loadable = 1;
     nameShort = "PANTHER";
     rearm = 180;
     side[] = {"west"};
@@ -49,7 +49,7 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
 //     aps = 1;
 //     capValue = 3;
 //     cost = 1500;
-//     loadable[] = {0, -1.5, 1.2};
+//     loadable = 1;
 //     name = "AWC Nyx (AT)";
 //     nameShort = "NYX";
 //     rearm = 180;
@@ -95,7 +95,7 @@ class B_APC_Tracked_01_CRV_F: Utility_Vehicle {
 class O_Marid_Utility: Utility_Vehicle {
     cost = 2000;
     description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
-    loadable[] = {0, -0.8, 1.65};
+    loadable = 1;
     name = "MSE-3 Marid (Utility)";
     nameShort = "MARID UTIL";
     side[] = {"east"};
@@ -130,6 +130,49 @@ class O_Marid: Marid {
     side[] = {"east"};
 };
 
+// Marid Dragon
+class O_Marid_Dragon: Heavy_Vehicles {
+    aps = 5;
+    capValue = 4;
+    cost = 2500;
+    hasDroneHunter = 1;
+    hasHMD = 1;
+    integralWeapon[] = {16, {0, -3.5, 0}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    loadable = 1;
+    mineClear = 2;
+    name = "MSE-4 Marid Dragon";
+    nameShort = "DRAGON";
+    rearm = 180;
+    side[] = {};
+    spawn = "O_APC_Wheeled_02_rcws_v2_F";
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "60Rnd_30mm_MP_shells_Tracer_Green",
+            "60Rnd_30mm_MP_shells_Tracer_Green",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "5Rnd_GAT_missiles",
+            "4Rnd_70mm_SAAMI_missiles"
+        };
+        addWeapons[] = {
+            "autocannon_30mm_RCWS",
+            "HMG_NSVT",
+            "missiles_titan",
+            "missiles_SAAMI"
+        };
+        removeMagazines[] = {
+            "96Rnd_40mm_G_belt",
+            "200Rnd_127x99_mag_Tracer_Green"
+        };
+        removeWeapons[] = {
+            "HMG_127_APC",
+            "GMG_40mm"
+        };
+        turret[] = {0};
+    };
+};
+
 class Heavy_Recon: Heavy_Vehicles {
     aps = 5;
     capValue = 1;
@@ -147,7 +190,7 @@ class Heavy_Recon: Heavy_Vehicles {
 
 class B_Marshall_Recon: Heavy_Recon {
     description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
-    loadable[] = {0, -0.8, 1.7};
+    loadable = 1;
     name = "AMV-7 Marshall (Recon)";
     nameShort = "RECON MARSHALL";
     side[] = {"west"};
@@ -170,7 +213,7 @@ class B_Marshall_Recon: Heavy_Recon {
 
 class O_BTR_Recon: Heavy_Recon {
     description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
-    loadable[] = {0, -1.1, 1.6};
+    loadable = 1;
     name = "BTR-K Kamysh (Recon)";
     nameShort = "RECON BTR";
     side[] = {"east"};
@@ -198,7 +241,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
     aps = 2;
     capValue = 3;
     cost = 2400;
-    loadable[] = {0, -0.8, 1.6};
+    loadable = 1;
     nameShort = "MARSHALL";
     rearm = 180;
     side[] = {"west"};
@@ -388,8 +431,7 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
     capValue = 4;
     cost = 4000;
     isLight = 1;
-    loadable[] = {0, -3.4, 1.3};
-    loadableAngle = 180;
+    loadable = 1;
     nameShort = "RHINO";
     rearm = 240;
     side[] = {"west"};
@@ -520,6 +562,47 @@ class B_Slammer_II: B_MBT_01_TUSK_F {
         };
         addWeapons[] = {
             "cannon_125mm_advanced",
+            "HMG_NSVT"
+        };
+        removeMagazines[] = {
+            "200Rnd_762x51_Belt_Red",
+            "24Rnd_120mm_APFSDS_shells_Tracer_Red",
+            "12Rnd_120mm_HE_shells_Tracer_Red",
+            "12Rnd_120mm_HEAT_MP_T_Red"
+        };
+        removeWeapons[] = {
+            "cannon_120mm",
+            "LMG_coax"
+        };
+        turret[] = {0};
+    };
+};
+
+class B_Slammer_X: B_Slammer_II {
+    aps = 5;
+    capValue = 6;
+    cost = 12000;
+    description = "M2A4 Slammer X is an advanced variant of the M2A1 Slammer armed with an experimental railgun.";
+    integralWeapon[] = {16, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    nameShort = "SLAMMER X";
+    name = "M2A4 Slammer X";
+    side[] = {};
+    variant = 0;
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "60Rnd_75mm_RailGun_APFSDS_mag",
+            "RailGun_01_DummyMagazine",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball"
+        };
+        addWeapons[] = {
+            "cannon_railgun",
+            "cannon_railgun_fake",
             "HMG_NSVT"
         };
         removeMagazines[] = {

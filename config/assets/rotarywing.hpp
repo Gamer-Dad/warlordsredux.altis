@@ -6,7 +6,6 @@ class Rotary_Wing {
 // MH-9 Hummingbird
 class B_Heli_Light_01_F: Rotary_Wing {
     cost = 300;
-    loadable[] = {0, -2.2, 0.9};
     nameShort = "HUMMINGBIRD";
     side[] = {"west"};
 };
@@ -16,7 +15,6 @@ class Taru: Rotary_Wing {
     cost = 400;
     hasFastTravel = 1;
     hasSling = 1;
-    loadable[] = {0, -2.2, 2.2};
     nameShort = "TARU";
     offset[] = {0, 10, 0};
 };
@@ -35,7 +33,6 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     cost = 500;
     hasHMD = 1;
     hasSling = 1;
-    loadable[] = {0, -2.2, 1.3};
     nameShort = "ORCA";
     offset[] = {0, 10, 0};
     rearm = 240;
@@ -50,7 +47,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
         "PylonRack_Missile_BIM9X_x2"
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 3500;
     nameShort = "ORCA ARMED";
@@ -81,7 +78,6 @@ class B_Heli_Transport_01_F: Rotary_Wing {
     hasHMD = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.2, 1.5};
     nameShort = "GHOSTHAWK";
     offset[] = {0, 11, 0};
     rearm = 240;
@@ -112,6 +108,39 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
         turret[] = {-1};
     };
 };
+class B_Ghosthawk_III: B_Heli_Transport_01_pylons_F {
+    allowPylonMagazines[] = {
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonRack_Missile_AMRAAM_D_x1",
+        "PylonRack_4Rnd_LG_scalpel"
+    };
+    ammoOverrides[] = {
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+    };
+    cost = 8000;
+    name = "UH-80 Ghost Hawk Block III";
+    nameShort = "GHOSTHAWK III";
+    side[] = {};
+    spawn = "B_Heli_Transport_01_pylons_F";
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "2000Rnd_20mm_shells",
+            "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        addWeapons[] = {
+            "gatling_20mm_VTOL_01",
+            "CMFlareLauncher"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
+};
 
 class Transport_Helicopter: Rotary_Wing {
     cost = 700;
@@ -124,7 +153,6 @@ class Transport_Helicopter: Rotary_Wing {
 // CH-67 Huron
 class B_Heli_Transport_03_F: Transport_Helicopter {
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.2, 2.1};
     nameShort = "HURON";
     side[] = {"west"};
 };
@@ -138,7 +166,6 @@ class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
 class O_Mohawk: Transport_Helicopter {
     hasHMD = 1;
     isHeavyLift = 1;
-    loadable[] = {0, -2.2, 2.1};
     name = "CH-49 Mohawk";
     nameShort = "MOHAWK";
     side[] = {"east"};
@@ -178,7 +205,6 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
     cost = 7000;
     hasHMD = 1;
     hasReconOptics = 1;
-    loadable[] = {0, -2.2, 0.9};
     nameShort = "PAWNEE";
     rearm = 240;
     side[] = {"west"};
@@ -234,7 +260,6 @@ class Hellcat: Rotary_Wing {
     description = "WY-55 Hellcat is a light attack helicopter.";
     hasHMD = 1;
     hasSling = 1;
-    loadable[] = {0, -2.2, 0.3};
     name = "WY-55 Hellcat";
     nameShort = "HELLCAT";
     offset[] = {0, 9, 0};
@@ -305,14 +330,13 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
         {"PylonMissile_Missile_AA_R77_x1", {"PylonLeft1", "PylonRight1"}}
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 8000;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.2, 2.0};
     nameShort = "KAJMAN";
     offset[] = {0, 11, 0};
     rearm = 300;
@@ -361,7 +385,6 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
     hasHMD = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;
-    loadable[] = {0, -2.2, 0.9};
     nameShort = "BLACKFOOT";
     offset[] = {0, 10, 0};
     rearm = 300;

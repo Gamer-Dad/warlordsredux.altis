@@ -66,8 +66,7 @@ class Bomb_Boat: Naval {
     description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
     detonate = 7;
     drone = 1;
-    loadable[] = {0, -2.5, 0.5};
-    loadableAngle = 180;
+    loadable = 1;
     name = "Bomb Boat";
     nameShort = "BOMB BOAT";
     spawn = "C_Boat_Civil_01_F";
@@ -76,5 +75,23 @@ class B_Bomb_Boat: Bomb_Boat {
     side[] = {"west"};
 };
 class O_Bomb_Boat: Bomb_Boat {
+    side[] = {"east"};
+};
+
+// Supply RHIB
+class Supply_Boat: Naval {
+    cost = 2000;
+    description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
+    hasFastTravel = 1;
+    name = "Supply RHIB";
+    nameShort = "RHIB";
+    spawn = "I_C_Boat_Transport_02_F";
+};
+class B_Supply_Boat: Supply_Boat {
+    loaded = "Land_Cargo20_blue_F";
+    side[] = {"west"};
+};
+class O_Supply_Boat: Supply_Boat {
+    loaded = "Land_Cargo20_brick_red_F";
     side[] = {"east"};
 };
