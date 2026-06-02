@@ -443,6 +443,159 @@
             <Chinesesimp>呼叫临时战斗空中巡逻，以协助在所选空军基地或直升机停机坪区域上空的团队防空。进入地图标记区域的敌方飞机将被立即发现，而在1公里以上高度飞行的飞机将在被致命的空对空力量自动攻击前获得45秒的撤离时间。建议配合短程防空系统使用，并利用这一时机起飞空中优势单位。</Chinesesimp>
             <Chinese>呼叫臨時戰鬥空中巡邏，以協助在所選空軍基地或直升機停機坪區域上空的團隊防空。進入地圖標記區域的敵方飛機會立即被偵測，而在1公里以上高度飛行的飛機將在被致命的空對空力量自動攻擊前獲得45秒的撤離時間。建議搭配短程防空系統使用，並把握此機會起飛空中優勢單位。</Chinese>
         </Key>
+        <Key ID="STR_WL_commAttack">
+            <Original>Attack</Original>
+            <English>Attack</English>
+            <Czech>Útok</Czech>
+            <French>Attaque</French>
+            <German>Angriff</German>
+            <Italian>Attacco</Italian>
+            <Polish>Atak</Polish>
+            <Portuguese>Ataque</Portuguese>
+            <Russian>Атака</Russian>
+            <Spanish>Ataque</Spanish>
+            <Turkish>Saldırı</Turkish>
+            <Korean>공격</Korean>
+            <Japanese>攻撃</Japanese>
+            <Chinesesimp>攻击</Chinesesimp>
+            <Chinese>攻擊</Chinese>
+        </Key>
+        <Key ID="STR_WL_commFollowMe">
+            <Original>Follow me</Original>
+            <English>Follow me</English>
+            <Czech>Následuj mě</Czech>
+            <French>Suis-moi</French>
+            <German>Folge mir</German>
+            <Italian>Seguimi</Italian>
+            <Polish>Za mną</Polish>
+            <Portuguese>Siga-me</Portuguese>
+            <Russian>Следуй за мной</Russian>
+            <Spanish>Sígueme</Spanish>
+            <Turkish>Beni takip et</Turkish>
+            <Korean>날 따라와</Korean>
+            <Japanese>ついて来い</Japanese>
+            <Chinesesimp>跟着我</Chinesesimp>
+            <Chinese>跟著我</Chinese>
+        </Key>
+        <Key ID="STR_WL_commCoverMe">
+            <Original>Cover me</Original>
+            <English>Cover me</English>
+            <Czech>Kryj mě</Czech>
+            <French>Couvre-moi</French>
+            <German>Gib mir Deckung</German>
+            <Italian>Coprimi</Italian>
+            <Polish>Osłaniaj mnie</Polish>
+            <Portuguese>Cubra-me</Portuguese>
+            <Russian>Прикрой меня</Russian>
+            <Spanish>Cúbreme</Spanish>
+            <Turkish>Beni koru</Turkish>
+            <Korean>엄호해 줘</Korean>
+            <Japanese>援護してくれ</Japanese>
+            <Chinesesimp>掩护我</Chinesesimp>
+            <Chinese>掩護我</Chinese>
+        </Key>
+        <Key ID="STR_WL_commGetAway">
+            <Original>Get away</Original>
+            <English>Get away</English>
+            <Czech>Uteč</Czech>
+            <French>Éloigne-toi</French>
+            <German>Geh weg</German>
+            <Italian>Allontanati</Italian>
+            <Polish>Odejdź</Polish>
+            <Portuguese>Afaste-se</Portuguese>
+            <Russian>Уходи</Russian>
+            <Spanish>Aléjate</Spanish>
+            <Turkish>Uzaklaş</Turkish>
+            <Korean>물러서</Korean>
+            <Japanese>離れろ</Japanese>
+            <Chinesesimp>离开</Chinesesimp>
+            <Chinese>離開</Chinese>
+        </Key>
+        <Key ID="STR_WL_commStop">
+            <Original>Stop</Original>
+            <English>Stop</English>
+            <Czech>Stůj</Czech>
+            <French>Arrête-toi</French>
+            <German>Stopp</German>
+            <Italian>Fermati</Italian>
+            <Polish>Stop</Polish>
+            <Portuguese>Pare</Portuguese>
+            <Russian>Стой</Russian>
+            <Spanish>Alto</Spanish>
+            <Turkish>Dur</Turkish>
+            <Korean>멈춰</Korean>
+            <Japanese>止まれ</Japanese>
+            <Chinesesimp>停下</Chinesesimp>
+            <Chinese>停下</Chinese>
+        </Key>
+        <Key ID="STR_WL_commWaitForMe">
+            <Original>Wait for me</Original>
+            <English>Wait for me</English>
+            <Czech>Počkej na mě</Czech>
+            <French>Attends-moi</French>
+            <German>Warte auf mich</German>
+            <Italian>Aspettami</Italian>
+            <Polish>Poczekaj na mnie</Polish>
+            <Portuguese>Espere por mim</Portuguese>
+            <Russian>Подожди меня</Russian>
+            <Spanish>Espérame</Spanish>
+            <Turkish>Beni bekle</Turkish>
+            <Korean>기다려 줘</Korean>
+            <Japanese>待ってくれ</Japanese>
+            <Chinesesimp>等等我</Chinesesimp>
+            <Chinese>等等我</Chinese>
+        </Key>
+        <Key ID="STR_WL_commStatusBingo">
+            <Original>I'm out of ammo</Original>
+            <English>I'm out of ammo</English>
+            <Czech>Došla mi munice</Czech>
+            <French>Je n'ai plus de munitions</French>
+            <German>Ich habe keine Munition mehr</German>
+            <Italian>Ho finito le munizioni</Italian>
+            <Polish>Skończyła mi się amunicja</Polish>
+            <Portuguese>Estou sem munição</Portuguese>
+            <Russian>У меня кончились боеприпасы</Russian>
+            <Spanish>No tengo munición</Spanish>
+            <Turkish>Mühimmatım bitti</Turkish>
+            <Korean>탄약이 떨어졌어</Korean>
+            <Japanese>弾薬が切れた</Japanese>
+            <Chinesesimp>我没弹药了</Chinesesimp>
+            <Chinese>我沒彈藥了</Chinese>
+        </Key>
+        <Key ID="STR_WL_commStatusDamaged">
+            <Original>I'm damaged</Original>
+            <English>I'm damaged</English>
+            <Czech>Jsem poškozený</Czech>
+            <French>Je suis endommagé</French>
+            <German>Ich bin beschädigt</German>
+            <Italian>Sono danneggiato</Italian>
+            <Polish>Jestem uszkodzony</Polish>
+            <Portuguese>Estou danificado</Portuguese>
+            <Russian>Я повреждён</Russian>
+            <Spanish>Estoy dañado</Spanish>
+            <Turkish>Hasar aldım</Turkish>
+            <Korean>손상됐어</Korean>
+            <Japanese>損傷した</Japanese>
+            <Chinesesimp>我受损了</Chinesesimp>
+            <Chinese>我受損了</Chinese>
+        </Key>
+        <Key ID="STR_WL_commProvideSupply">
+            <Original>Use my supplies</Original>
+            <English>Use my supplies</English>
+            <Czech>Použij moje zásoby</Czech>
+            <French>Utilise mes provisions</French>
+            <German>Benutze meine Vorräte</German>
+            <Italian>Usa i miei rifornimenti</Italian>
+            <Polish>Użyj moich zapasów</Polish>
+            <Portuguese>Use meus suprimentos</Portuguese>
+            <Russian>Используй мои припасы</Russian>
+            <Spanish>Usa mis suministros</Spanish>
+            <Turkish>Malzemelerimi kullan</Turkish>
+            <Korean>내 보급품을 써</Korean>
+            <Japanese>私の物資を使え</Japanese>
+            <Chinesesimp>使用我的补给</Chinesesimp>
+            <Chinese>使用我的補給</Chinese>
+        </Key>
         <Key ID="STR_WL_conscript">
             <Original>Conscript team</Original>
             <English>Conscript team</English>

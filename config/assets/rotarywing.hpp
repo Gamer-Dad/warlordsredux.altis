@@ -6,7 +6,9 @@ class Rotary_Wing {
 // MH-9 Hummingbird
 class B_Heli_Light_01_F: Rotary_Wing {
     cost = 300;
+    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     nameShort = "HUMMINGBIRD";
+    rearm = 120;
     side[] = {"west"};
 };
 
@@ -15,8 +17,10 @@ class Taru: Rotary_Wing {
     cost = 400;
     hasFastTravel = 1;
     hasSling = 1;
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     nameShort = "TARU";
     offset[] = {0, 10, 0};
+    rearm = 120;
 };
 class O_Heli_Transport_04_covered_F: Taru {
     side[] = {"east"};
@@ -33,6 +37,7 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     cost = 500;
     hasHMD = 1;
     hasSling = 1;
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     nameShort = "ORCA";
     offset[] = {0, 10, 0};
     rearm = 240;
@@ -78,6 +83,7 @@ class B_Heli_Transport_01_F: Rotary_Wing {
     hasHMD = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;
+    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     nameShort = "GHOSTHAWK";
     offset[] = {0, 11, 0};
     rearm = 240;
@@ -112,12 +118,15 @@ class B_Ghosthawk_III: B_Heli_Transport_01_pylons_F {
     allowPylonMagazines[] = {
         "PylonRack_Missile_BIM9X_x2",
         "PylonRack_Missile_AMRAAM_D_x1",
+        "PylonRack_12Rnd_PG_missiles",
         "PylonRack_4Rnd_LG_scalpel"
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
+        {"M_PG_AT", {"M_APKWS", "AGR-20 APKWS"}}
     };
     cost = 8000;
+    hasReconOptics = 2;
     name = "UH-80 Ghost Hawk Block III";
     nameShort = "GHOSTHAWK III";
     side[] = {};
@@ -125,11 +134,11 @@ class B_Ghosthawk_III: B_Heli_Transport_01_pylons_F {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "2000Rnd_20mm_shells",
+            "38Rnd_80mm_rockets",
             "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
-            "gatling_20mm_VTOL_01",
+            "rockets_Skyfire",
             "CMFlareLauncher"
         };
         removeMagazines[] = {
@@ -157,7 +166,7 @@ class B_Heli_Transport_03_F: Transport_Helicopter {
     side[] = {"west"};
 };
 class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
-    loaded = "Land_Cargo20_blue_F";
+    loaded = "Land_Cargo20_yellow_F";
     name = "CH-67 Huron Supply";
     requirements[] = {"H", "NF"};
     spawn = "B_Heli_Transport_03_F";
@@ -222,6 +231,7 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
 class O_Beluga: B_Heli_Light_01_dynamicLoadout_F {
     cost = 3500;
     name = "Ka-9 Beluga";
+    nameShort = "BELUGA";
     side[] = {"east"};
     spawn = "B_Heli_Light_01_dynamicLoadout_F";
     textures[] = {

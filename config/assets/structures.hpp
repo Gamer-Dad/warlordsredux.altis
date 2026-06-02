@@ -39,18 +39,6 @@ class Land_IRMaskingCover_01_F: Structures {
     side[] = {"west", "east", "guer"};
 };
 
-// Spawn Bunker
-class Land_BagBunker_01_large_green_F: Structures {
-    cost = 500;
-    demolishable = 3;
-    hasFastTravel = 1;
-    hideMap = 0;
-    name = "Spawn Bunker";
-    offset[] = {0, 10, 0};
-    requirements[] = {"F"};
-    side[] = {"west", "east", "guer"};
-};
-
 class Defensive_Kits: Structures {
     demolishable = 1;
     demolishStepTime = 5;
@@ -73,14 +61,6 @@ class Land_SandbagBarricade_01_hole_F: Defensive_Kits {
     loaded = "Land_SandbagBarricade_01_hole_F";
     name = "Sandbag Barricade Kit";
     offset[] = {0, 4, 0};
-    side[] = {"west", "east", "guer"};
-};
-
-class Land_New_WiredFence_10m_F: Defensive_Kits {
-    cost = 1000;
-    fragile = 200;
-    loaded = "Land_New_WiredFence_10m_F";
-    name = "Razor Wire Fence Kit";
     side[] = {"west", "east", "guer"};
 };
 

@@ -79,7 +79,7 @@ class WLProjectilesConfig {
             "M_Titan_AA_long"                   // Titan AA (Long)
         };
         camera = 1;
-        immunity = 1;
+        immunity = 100;
         sam = 1;
         speed = 0.4;
     };
@@ -101,6 +101,7 @@ class WLProjectilesConfig {
             "M_Zephyr"                          // Zephyr
         };
         camera = 1;
+        immunity = 1500;
         sam = 1;
         speed = 3;
     };
@@ -112,6 +113,7 @@ class WLProjectilesConfig {
             "M_Air_AA",                         // ASRAAM
             "Missile_AA_03_F"                   // Sahr-3
         };
+        immunity = 1500;
         sam = 1;
         speed = 2;
     };
@@ -251,6 +253,15 @@ class WLProjectilesConfig {
         gps = 1;
     };
 
+    class WLProjectile_APKWS: WLProjectile {
+        ammo[] = {
+            "M_APKWS"
+        };
+        aps[] = {2, 3, 4, 5};
+        consumption = 1;
+        laser = 1;
+    };
+
     class WLProjectile_TVGuidedArtillery: WLProjectile {
         ammo[] = {
             "M_Excalibur",
@@ -259,6 +270,20 @@ class WLProjectilesConfig {
         aps[] = {1, 2, 3};
         consumption = 6;
         terminal = 1;
+    };
+
+    class WLProjectile_DroneDeployer: WLProjectile {
+        ammo[] = {
+            "M_DroneDeployer"
+        };
+        deployDrone = 1;
+    };
+
+    class WLProjectile_MineLayer: WLProjectile {
+        ammo[] = {
+            "M_MineLayer"
+        };
+        mineLayer = 1;
     };
 
     class WLProjectile_ExtendedSAM: WLProjectile {

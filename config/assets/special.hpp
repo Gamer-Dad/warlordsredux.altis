@@ -3,7 +3,6 @@ class Special {
 };
 
 class Team_Rally_Point: Special {
-    conversion = 1;
     cost = 5000;
     demolishable = 1;
     demolishStepTime = 3;
@@ -12,14 +11,10 @@ class Team_Rally_Point: Special {
     nameShort = "RALLY";
     offset[] = {0, 8, 0};
     singleton = 1;
-    showToEnemies = 1000;
+    showToEnemies = 30;
 };
-class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {
-    side[] = {"west"};
-};
-class Land_MedicalTent_01_CSAT_brownhex_generic_open_F: Team_Rally_Point {
-    side[] = {"east"};
-};
+class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {};
+class Land_MedicalTent_01_CSAT_brownhex_generic_open_F: Team_Rally_Point {};
 
 // Recon UAV
 class B_UAV_02_F: Special {
@@ -61,6 +56,7 @@ class Land_BagBunker_Small_F: Special {
     name = "Fighting Position";
     nameShort = "BUNKER";
     offset[] = {0, 5, 0};
+    showToEnemies = 100;
 };
 
 class Static_HMG_Shielded: Special {
@@ -135,7 +131,6 @@ class Forward_Base_Dome: Special {
 class Land_Dome_Small_WIP_F: Forward_Base_Dome {};
 class Land_Dome_Small_WIP2_F: Forward_Base_Dome {};
 class Land_Dome_Small_F: Forward_Base_Dome {};
-class Land_TentHangar_V1_F: Forward_Base_Dome {};
 
 class Crater_Debris: Special {
     cost = 200;
@@ -186,11 +181,30 @@ class RuggedTerminal_01_communications_hub_F: Special {
 class Land_Cargo_HQ_V4_F: Special {
     conversion = 1;
     cost = 8000;
-    demolishable = 6;
-    demolishStepTime = 3;
+    demolishable = 12;
+    demolishStepTime = 5;
     hasFastTravel = 1;
+    loaded = "Land_Cargo20_yellow_F";
     name = "Fortified Rally Point";
     nameShort = "RALLY";
     offset[] = {0, 12, 0};
-    showToEnemies = 1000;
+};
+
+class Deployed_AR2: Special {
+    cost = 500;
+    fragileDrone = 1;
+    hasHMD = 1;
+    name = "Deployed AR-2 Darter";
+    nameShort = "DARTER";
+    offset[] = {0, 3, 0};
+    singleton = 1;
+};
+class B_AR2_Deployed: Deployed_AR2 {
+    spawn = "B_UAV_01_F";
+};
+class O_AR2_Deployed: Deployed_AR2 {
+    spawn = "O_UAV_01_F";
+};
+class I_AR2_Deployed: Deployed_AR2 {
+    spawn = "I_UAV_01_F";
 };

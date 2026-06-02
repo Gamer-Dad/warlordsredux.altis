@@ -369,6 +369,7 @@ class O_Truck_03_Repair_F: Transport_Repair {
 
 // Hunter AFV
 class Hunter_Upgraded: Light_Vehicle {
+    hasDroneHunter = 1;
     rearm = 120;
     spawn = "B_MRAP_01_gmg_F";
     variant = 1;
@@ -462,7 +463,7 @@ class I_LT_01_AA_F: Nyx_Armed {
 
 // Hunter Apex
 class B_Hunter_Apex: Hunter_Upgraded {
-    aps = 4;
+    aps = 5;
     capValue = 4;
     cost = 2000;
     disallowMagazines[] = {

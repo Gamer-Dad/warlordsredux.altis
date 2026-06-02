@@ -110,7 +110,7 @@ class Land_Pod_Heli_Transport_04_medevac_F: Taru_Pod {
     side[] = {"east"};
 };
 
-class FOB_Crate: Gear {
+class Land_Cargo20_yellow_F: Gear {
     conversion = 1;
     cost = 1000;
     demolishable = 1;
@@ -118,14 +118,9 @@ class FOB_Crate: Gear {
     description = "Purchases supplies that can be airlifted or deployed into a forward position or sector. It can be used to setup a base, add supplies to an existing one, or to add reinforcements to a defensive sector.";
     loaded = "Land_Cargo_HQ_V4_F";
     loadRotate = 1;
-    name = "Supplies";
+    name = "Supplies (Forward Base, Sector)";
     nameShort = "SUPPLIES";
     offset[] = {0, 5, 0};
     requirements[] = {"H", "NF"};
-};
-class Land_Cargo20_blue_F: FOB_Crate {
-    side[] = {"west"};
-};
-class Land_Cargo20_brick_red_F: FOB_Crate {
-    side[] = {"east"};
+    side[] = {"west", "east"};
 };

@@ -57,6 +57,18 @@ class I_E_Radar_System_01_F: Radar {
     side[] = {"guer"};
 };
 
+class Radome: Air_Defense {
+    cost = 1500;
+    demolishable = 3;
+    description = "Passively tracks hostile missile launches up to 9 km.";
+    name = "AN/FPS-124 Radome";
+    nameShort = "RADOME";
+    offset[] = {0, 7, 0};
+    spawn = "Land_Radar_Small_F";
+    side[] = {"west", "east", "guer"};
+    threatDetection = 9000;
+};
+
 class Light_SAM: Air_Defense {
     aps = 1;
     capValue = 2;
@@ -91,7 +103,8 @@ class B_Nyx_SAM: Nyx_SAM {
             "PylonMissile_Missile_AMRAAM_D_x1",
             "PylonMissile_Missile_AMRAAM_D_x1",
             "PylonMissile_Missile_AMRAAM_D_x1",
-            "PylonMissile_Missile_AMRAAM_D_x1"
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "Laserbatteries"
         };
         addWeapons[] = {
             "weapon_AMRAAMLauncher",
@@ -135,7 +148,7 @@ class O_Nyx_SAM: Nyx_SAM {
 };
 
 class Praetorian: Air_Defense {
-    cost = 6500;
+    cost = 6000;
     description = "Short-range point-defense artillery with a high rate of fire.";
     name = "Praetorian 1C";
     nameShort = "CIWS";
@@ -229,6 +242,7 @@ class O_APC_Tracked_02_AA_F: SPAAG {
 class Spartan: Air_Defense {
     cost = 5500;
     description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 2.5 km.";
+    hasAutoSam = 1;
     hasHMD = 1;
     name = "Mk49 Spartan";
     nameShort = "SPARTAN";
@@ -250,6 +264,7 @@ class O_Spartan: Spartan {
 class LR_AA: Air_Defense {
     cost = 5500;
     description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.8 km.";
+    hasAutoSam = 1;
     hasHMD = 1;
     offset[] = {0, 6, 0};
     rearm = 240;
@@ -271,6 +286,7 @@ class I_E_SAM_System_03_F: LR_AA {
 class Centurion: Air_Defense {
     cost = 5500;
     description = "Medium-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5 km.";
+    hasAutoSam = 1;
     hasHMD = 1;
     loaded = "Centurion_Decoy";
     name = "Mk21 Centurion";

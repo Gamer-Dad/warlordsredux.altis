@@ -140,40 +140,43 @@ class O_static_AT_F: Static_AT {
 };
 
 class AT_Minefield: Sector_Defense {
-    cost = 500;
+    cost = 1000;
     demolishable = 1;
     demolishStepTime = 4;
     description = "Anti-tank minefield that contains hidden anti-tank mines.";
     dumbMine[] = {50, 10, 1};
     loadable = 1;
     name = "Minefield (AT)";
-    nameShort = "MINES";
+    nameShort = "MINEFIELD";
     obstacle = 2;
     offset[] = {0, 3, 0};
     requirements[] = {"S"};
-    side[] = {"west", "east", "guer"};
-    showToEnemies = 800;
+    showToEnemies = 1200;
     spawn = "Land_Sign_MinesDanger_English_F";
 };
 class AT_MinefieldLarge: AT_Minefield {
-    cost = 1000;
     dumbMine[] = {100, 20, 1};
-    name = "Minefield (AT, Large)";
-    showToEnemies = 1200;
+    name = "Minefield (AT, Rectangular)";
+    side[] = {"west", "east", "guer"};
 };
 class AT_MinefieldCircular: AT_Minefield {
-    cost = 1000;
     dumbMine[] = {50, 50, 0};
     name = "Minefield (AT, Circular)";
     side[] = {"west"};
-    showToEnemies = 1200;
 };
 class AT_MinefieldHex: AT_Minefield {
-    cost = 1000;
     dumbMine[] = {-50, -50, 0};
     name = "Minefield (AT, Hex)";
     side[] = {"east"};
-    showToEnemies = 1200;
+};
+class AT_DeployedMinefield: AT_Minefield {
+    cost = 2000;
+    demolishable = 3;
+    demolishStepTime = 60;
+    dumbMine[] = {450, 450, 0};
+    name = "Minefield (GATOR)";
+    showToEnemies = 3000;
+    singleton = 1;
 };
 
 // Mk30 HMG Auto Turret
@@ -257,19 +260,19 @@ class I_Smart_Mine: Smart_Mine {
     spawn = "I_UGV_01_F";
 };
 
-// class Mortar: Sector_Defense {
-//     cost = 5000;
-//     loadable = 1;
-//     nameShort = "MORTAR";
-//     offset[] = {0, 3, 0};
-//     rearm = 900;
-// };
-// class B_Mortar_01_F: Mortar {
-//     side[] = {"west"};
-// };
-// class O_Mortar_01_F: Mortar {
-//     side[] = {"east"};
-// };
+class Mortar: Sector_Defense {
+    cost = 5000;
+    loadable = 1;
+    nameShort = "MORTAR";
+    offset[] = {0, 3, 0};
+    rearm = 900;
+};
+class B_Mortar_01_F: Mortar {
+    side[] = {"west"};
+};
+class O_Mortar_01_F: Mortar {
+    side[] = {"east"};
+};
 
 // Hunter/Ifrit Mortar
 class MRAP_Mortar: Sector_Defense {

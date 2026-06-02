@@ -16,6 +16,7 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
     aps = 2;
     capValue = 3;
     cost = 1300;
+    hasDroneHunter = 1;
     isLight = 1;
     loadable = 1;
     nameShort = "PANTHER";
@@ -88,7 +89,7 @@ class Utility_Vehicle: Heavy_Vehicles {
 // CRV-6e Bobcat
 class B_APC_Tracked_01_CRV_F: Utility_Vehicle {
     cost = 1700;
-    hasSling = 1;
+    hasDroneHunter = 1;
     nameShort = "BOBCAT";
     side[] = {"west"};
 };
@@ -241,6 +242,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
     aps = 2;
     capValue = 3;
     cost = 2400;
+    hasDroneHunter = 1;
     loadable = 1;
     nameShort = "MARSHALL";
     rearm = 180;
@@ -251,6 +253,7 @@ class B_APC_Wheeled_01_cannon_F: Heavy_Vehicles {
 class Mora: Heavy_Vehicles {
     aps = 3;
     capValue = 4;
+    hasDroneHunter = 1;
     integralWeapon[] = {6, {0, -3.5, 0}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "FV-720 Mora";
     nameShort = "MORA";
@@ -280,6 +283,7 @@ class Gorgon: Heavy_Vehicles {
     disallowMagazines[] = {
         "4Rnd_GAA_missiles"
     };
+    hasDroneHunter = 1;
     name = "AFV-4 Gorgon";
     nameShort = "GORGON";
     rearm = 180;
@@ -355,6 +359,7 @@ class B_Marshall_UP: B_APC_Wheeled_01_cannon_F {
     aps = 3;
     cost = 3000;
     description = "AMV-7 Marshall UP is a variant of the AMV-7 Marshall armed with a larger magazine 40mm cannon.";
+    hasDroneHunter = 1;
     name = "AMV-7 Marshall UP";
     nameShort = "MARSHALL UP";
     spawn = "B_APC_Wheeled_01_cannon_F";
@@ -659,6 +664,9 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
 };
 
 class Howitzer_Artillery: Heavy_Vehicles {
+    ammoOverrides[] = {
+        {"Smoke_120mm_AMOS_White", {"M_DroneDeployer", "155mm Drone Deployer"}}
+    };
     aps = 1;
     capValue = 4;
     disallowMagazines[] = {
@@ -697,44 +705,44 @@ class B_MBT_01_mlrs_F: MRLS {
     side[] = {"west"};
 };
 // M5 Sandstorm MRLS
-class B_MLRS_Guided: B_MBT_01_mlrs_F {
-    ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "GLSDB (Laser-Guided)"}}
-    };
-    cost = 30000;
-    hasHMD = 1;
-    name = "M5 Sandstorm II";
-    nameShort = "MRLS LG";
-    spawn = "B_MBT_01_mlrs_F";
-    variant = 1;
+// class B_MLRS_Guided: B_MBT_01_mlrs_F {
+//     ammoOverrides[] = {
+//         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "GLSDB (Laser-Guided)"}}
+//     };
+//     cost = 30000;
+//     hasHMD = 1;
+//     name = "M5 Sandstorm II";
+//     nameShort = "MRLS LG";
+//     spawn = "B_MBT_01_mlrs_F";
+//     variant = 1;
 
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1"
-        };
-        addWeapons[] = {
-            "weapon_AGM_65Launcher"
-        };
-        removeMagazines[] = {
-            "12Rnd_230mm_rockets"
-        };
-        removeWeapons[] = {
-            "rockets_230mm_GAT"
-        };
-        turret[] = {0};
-    };
-};
+//     class Gunner: WLTurretDefaults {
+//         addMagazines[] = {
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1"
+//         };
+//         addWeapons[] = {
+//             "weapon_AGM_65Launcher"
+//         };
+//         removeMagazines[] = {
+//             "12Rnd_230mm_rockets"
+//         };
+//         removeWeapons[] = {
+//             "rockets_230mm_GAT"
+//         };
+//         turret[] = {0};
+//     };
+// };
 class O_Truck_02_MRL_F: MRLS {
     cost = 18000;
     loaded = "CamoNet_OPFOR_big_F";
@@ -748,41 +756,41 @@ class O_Truck_02_MRL_F: MRLS {
         "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
     };
 };
-class O_MRLS_Guided: O_Truck_02_MRL_F {
-    ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
-    };
-    cost = 23000;
-    hasHMD = 1;
-    name = "Zamak MRL (Guided)";
-    nameShort = "MRLS LG";
-    spawn = "I_Truck_02_MRL_F";
-    variant = 1;
+// class O_MRLS_Guided: O_Truck_02_MRL_F {
+//     ammoOverrides[] = {
+//         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
+//     };
+//     cost = 23000;
+//     hasHMD = 1;
+//     name = "Zamak MRL (Guided)";
+//     nameShort = "MRLS LG";
+//     spawn = "I_Truck_02_MRL_F";
+//     variant = 1;
 
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1",
-            "magazine_Missile_AGM_02_x1"
-        };
-        addWeapons[] = {
-            "weapon_AGM_65Launcher"
-        };
-        removeMagazines[] = {
-            "12Rnd_230mm_rockets"
-        };
-        removeWeapons[] = {
-            "rockets_230mm_GAT"
-        };
-        turret[] = {0};
-    };
-};
+//     class Gunner: WLTurretDefaults {
+//         addMagazines[] = {
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1",
+//             "magazine_Missile_AGM_02_x1"
+//         };
+//         addWeapons[] = {
+//             "weapon_AGM_65Launcher"
+//         };
+//         removeMagazines[] = {
+//             "12Rnd_230mm_rockets"
+//         };
+//         removeWeapons[] = {
+//             "rockets_230mm_GAT"
+//         };
+//         turret[] = {0};
+//     };
+// };
