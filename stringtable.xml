@@ -410,38 +410,55 @@
             <Chinese>關閉您的庫存。</Chinese>
         </Key>
         <Key ID="STR_WL_combatAirPatrol">
-            <Original>Combat air patrol</Original>
-            <English>Combat air patrol</English>
-            <Czech>Bojová letecká hlídka</Czech>
-            <French>Patrouille aérienne de combat</French>
-            <German>Kampf-Luftpatrouille</German>
-            <Italian>Pattuglia aerea da combattimento</Italian>
-            <Polish>Boja patrola powietrzna</Polish>
-            <Portuguese>Patrulha aérea de combate</Portuguese>
-            <Russian>Боевая воздушная патрульная служба</Russian>
-            <Spanish>Patrulla aérea de combate</Spanish>
-            <Turkish>Muharebe hava devriyesi</Turkish>
-            <Korean>전투 공중 초계</Korean>
-            <Japanese>戦闘空中哨戒</Japanese>
-            <Chinesesimp>战斗空中巡逻</Chinesesimp>
-            <Chinese>戰鬥空中巡邏</Chinese>
+            <Original>Establish no-fly zone</Original>
+            <English>Establish no-fly zone</English>
+            <Czech>Zřídit bezletovou zónu</Czech>
+            <French>Établir une zone d’exclusion aérienne</French>
+            <German>Flugverbotszone errichten</German>
+            <Italian>Stabilisci una no-fly zone</Italian>
+            <Polish>Ustanów strefę zakazu lotów</Polish>
+            <Portuguese>Estabelecer zona de exclusão aérea</Portuguese>
+            <Russian>Установить бесполётную зону</Russian>
+            <Spanish>Establecer zona de exclusión aérea</Spanish>
+            <Turkish>Uçuşa yasak bölge oluştur</Turkish>
+            <Korean>비행금지구역 설정</Korean>
+            <Japanese>飛行禁止区域を設定</Japanese>
+            <Chinesesimp>建立禁飞区</Chinesesimp>
+            <Chinese>建立禁飛區</Chinese>
+        </Key>
+        <Key ID="STR_WL_combatAirPatrolHome">
+            <Original>Establish no-fly zone (home)</Original>
+            <English>Establish no-fly zone (home)</English>
+            <Czech>Zřídit bezletovou zónu (domácí)</Czech>
+            <French>Établir une zone d’exclusion aérienne (base)</French>
+            <German>Flugverbotszone errichten (Heimatbasis)</German>
+            <Italian>Stabilisci una no-fly zone (base)</Italian>
+            <Polish>Ustanów strefę zakazu lotów (baza)</Polish>
+            <Portuguese>Estabelecer zona de exclusão aérea (base)</Portuguese>
+            <Russian>Установить бесполётную зону (домашняя база)</Russian>
+            <Spanish>Establecer zona de exclusión aérea (base)</Spanish>
+            <Turkish>Uçuşa yasak bölge oluştur (ana üs)</Turkish>
+            <Korean>비행금지구역 설정 (본거지)</Korean>
+            <Japanese>飛行禁止区域を設定（ホーム）</Japanese>
+            <Chinesesimp>建立禁飞区（基地）</Chinesesimp>
+            <Chinese>建立禁飛區（基地）</Chinese>
         </Key>
         <Key ID="STR_WL_combatAirPatrolInfo">
-            <Original>Call in a temporary combat air patrol to assist your team's air defense over the selected airbase/helipad sector. Enemy aircraft that enter the marked map area are immediately spotted, and those flying above 1 km altitude will be given 45 seconds to leave before being automatically engaged by lethal air-to-air assets. Recommended to augment with short range air defenses and to use this opportunity to take off with air superiority assets.</Original>
-            <English>Call in a temporary combat air patrol to assist your team's air defense over the selected airbase/helipad sector. Enemy aircraft that enter the marked map area are immediately spotted, and those flying above 1 km altitude will be given 45 seconds to leave before being automatically engaged by lethal air-to-air assets. Recommended to augment with short range air defenses and to use this opportunity to take off with air superiority assets.</English>
-            <Czech>Přivolejte dočasnou bojovou leteckou hlídku k podpoře protivzdušné obrany vašeho týmu nad vybraným sektorem letiště nebo heliportu. Nepřátelská letadla vstupující do označené oblasti mapy jsou okamžitě odhalena a ta, která letí ve výšce nad 1 km, mají 45 sekund na opuštění oblasti, než budou automaticky napadena smrtícími prostředky vzduch–vzduch. Doporučuje se doplnit krátkodosahovou PVO a využít této příležitosti ke vzletu s prostředky vzdušné nadvlády.</Czech>
-            <French>Appelez une patrouille aérienne de combat temporaire pour soutenir la défense aérienne de votre équipe au-dessus du secteur d’aérodrome ou d’héliport sélectionné. Les aéronefs ennemis entrant dans la zone marquée sur la carte sont immédiatement repérés, et ceux volant au-dessus de 1 km d’altitude disposent de 45 secondes pour quitter la zone avant d’être automatiquement engagés par des moyens air-air létaux. Il est recommandé de renforcer avec des défenses aériennes à courte portée et de profiter de cette fenêtre pour décoller avec des appareils de supériorité aérienne.</French>
-            <German>Rufe eine temporäre Kampf-Luftpatrouille zur Unterstützung der Luftverteidigung deines Teams über dem ausgewählten Flugplatz- oder Helipad-Sektor an. Feindliche Luftfahrzeuge, die das markierte Kartenareal betreten, werden sofort aufgeklärt, und solche über 1 km Flughöhe haben 45 Sekunden Zeit, das Gebiet zu verlassen, bevor sie automatisch von tödlichen Luft-Luft-Waffensystemen bekämpft werden. Es wird empfohlen, dies mit Kurzstrecken-Luftverteidigung zu ergänzen und die Gelegenheit zum Start von Luftüberlegenheitskräften zu nutzen.</German>
-            <Italian>Richiama una pattuglia aerea da combattimento temporanea per supportare la difesa aerea della tua squadra sopra il settore di aeroporto o eliporto selezionato. I velivoli nemici che entrano nell’area evidenziata sulla mappa vengono individuati immediatamente e quelli che volano sopra 1 km di altitudine hanno 45 secondi per lasciare l’area prima di essere ingaggiati automaticamente da risorse aria-aria letali. Si consiglia di integrare con difese aeree a corto raggio e di sfruttare questa opportunità per decollare con assetti di superiorità aerea.</Italian>
-            <Polish>Wezwij tymczasową bojową patrolę powietrzną, aby wesprzeć obronę przeciwlotniczą twojej drużyny nad wybranym sektorem lotniska lub lądowiska. Wrogie statki powietrzne wchodzące na zaznaczony obszar mapy są natychmiast wykrywane, a te lecące powyżej 1 km wysokości mają 45 sekund na opuszczenie obszaru, zanim zostaną automatycznie zaatakowane przez śmiercionośne środki powietrze–powietrze. Zaleca się wsparcie obroną krótkiego zasięgu oraz wykorzystanie tej okazji do startu jednostek przewagi powietrznej.</Polish>
-            <Portuguese>Solicite uma patrulha aérea de combate temporária para apoiar a defesa aérea da sua equipe sobre o setor de base aérea ou heliporto selecionado. Aeronaves inimigas que entrarem na área marcada do mapa são imediatamente detectadas, e aquelas voando acima de 1 km de altitude terão 45 segundos para sair antes de serem automaticamente engajadas por meios letais ar-ar. Recomenda-se complementar com defesas aéreas de curto alcance e aproveitar a oportunidade para decolar com ativos de superioridade aérea.</Portuguese>
-            <Russian>Вызовите временное боевое воздушное патрулирование для поддержки ПВО вашей команды над выбранным сектором аэродрома или вертолётной площадки. Вражеские летательные аппараты, входящие в отмеченную область карты, немедленно обнаруживаются, а те, что летят на высоте выше 1 км, получают 45 секунд на выход из зоны, прежде чем будут автоматически поражены смертоносными средствами «воздух–воздух». Рекомендуется усилить эффект средствами ПВО ближнего радиуса и использовать этот момент для взлёта сил завоевания превосходства в воздухе.</Russian>
-            <Spanish>Solicita una patrulla aérea de combate temporal para apoyar la defensa aérea de tu equipo sobre el sector de base aérea o helipuerto seleccionado. Las aeronaves enemigas que entren en el área marcada del mapa son detectadas de inmediato, y aquellas que vuelen por encima de 1 km de altitud tendrán 45 segundos para retirarse antes de ser atacadas automáticamente por medios aire-aire letales. Se recomienda complementar con defensas aéreas de corto alcance y aprovechar la oportunidad para despegar con activos de superioridad aérea.</Spanish>
-            <Turkish>Seçilen hava üssü veya helikopter pisti sektöründe takımının hava savunmasına destek olmak için geçici bir muharebe hava devriyesi çağır. Haritada işaretlenen alana giren düşman hava araçları anında tespit edilir ve 1 km irtifanın üzerinde uçanlara, ölümcül hava-hava unsurları tarafından otomatik olarak angaje edilmeden önce bölgeden ayrılmaları için 45 saniye tanınır. Kısa menzilli hava savunmalarıyla desteklenmesi ve bu fırsatın hava üstünlüğü unsurlarıyla kalkış yapmak için kullanılması önerilir.</Turkish>
-            <Korean>선택한 공군기지 또는 헬기장 구역 상공에서 아군의 방공을 지원하기 위해 일시적인 전투 공중 초계를 호출합니다. 지도에 표시된 지역에 진입하는 적 항공기는 즉시 탐지되며, 고도 1km 이상에서 비행 중인 항공기는 치명적인 공대공 자산에 의해 자동으로 교전되기 전에 45초의 이탈 시간이 주어집니다. 단거리 방공 수단과 함께 운용하고, 이 기회를 활용해 제공권 자산으로 이륙하는 것이 권장됩니다.</Korean>
-            <Japanese>選択した航空基地またはヘリポートのセクター上空で、味方の防空を支援する一時的な戦闘空中哨戒を要請します。マップ上で指定されたエリアに侵入した敵航空機は即座に探知され、高度1km以上を飛行している機体には、致命的な空対空アセットによって自動的に交戦される前に45秒の退去時間が与えられます。短距離防空と併用し、この機会を利用して制空権アセットで離陸することが推奨されます。</Japanese>
-            <Chinesesimp>呼叫临时战斗空中巡逻，以协助在所选空军基地或直升机停机坪区域上空的团队防空。进入地图标记区域的敌方飞机将被立即发现，而在1公里以上高度飞行的飞机将在被致命的空对空力量自动攻击前获得45秒的撤离时间。建议配合短程防空系统使用，并利用这一时机起飞空中优势单位。</Chinesesimp>
-            <Chinese>呼叫臨時戰鬥空中巡邏，以協助在所選空軍基地或直升機停機坪區域上空的團隊防空。進入地圖標記區域的敵方飛機會立即被偵測，而在1公里以上高度飛行的飛機將在被致命的空對空力量自動攻擊前獲得45秒的撤離時間。建議搭配短程防空系統使用，並把握此機會起飛空中優勢單位。</Chinese>
+            <Original>Establish a temporary no-fly zone to assist your team's air defense over the nearest airbase/helipad sector. Enemy aircraft that enter the marked map area are immediately spotted, and those flying above 1 km altitude will be immediately engaged by lethal air-to-air assets. Recommended to augment with short range air defenses and to use this opportunity to take off with air superiority assets.</Original>
+            <English>Establish a temporary no-fly zone to assist your team's air defense over the nearest airbase/helipad sector. Enemy aircraft that enter the marked map area are immediately spotted, and those flying above 1 km altitude will be immediately engaged by lethal air-to-air assets. Recommended to augment with short range air defenses and to use this opportunity to take off with air superiority assets.</English>
+            <Czech>Zřiďte dočasnou bezletovou zónu k podpoře protivzdušné obrany vašeho týmu nad nejbližším sektorem letiště nebo heliportu. Nepřátelská letadla vstupující do označené oblasti mapy jsou okamžitě odhalena a ta, která letí ve výšce nad 1 km, budou okamžitě napadena smrtícími prostředky vzduch–vzduch. Doporučuje se doplnit krátkodosahovou PVO a využít této příležitosti ke vzletu s prostředky vzdušné nadvlády.</Czech>
+            <French>Établissez une zone d’exclusion aérienne temporaire pour soutenir la défense aérienne de votre équipe au-dessus du secteur d’aérodrome ou d’héliport le plus proche. Les aéronefs ennemis entrant dans la zone marquée sur la carte sont immédiatement repérés, et ceux volant au-dessus de 1 km d’altitude seront immédiatement engagés par des moyens air-air létaux. Il est recommandé de renforcer avec des défenses aériennes à courte portée et de profiter de cette fenêtre pour décoller avec des appareils de supériorité aérienne.</French>
+            <German>Errichte eine temporäre Flugverbotszone zur Unterstützung der Luftverteidigung deines Teams über dem nächstgelegenen Flugplatz- oder Helipad-Sektor. Feindliche Luftfahrzeuge, die das markierte Kartenareal betreten, werden sofort aufgeklärt, und solche über 1 km Flughöhe werden umgehend von tödlichen Luft-Luft-Waffensystemen bekämpft. Es wird empfohlen, dies mit Kurzstrecken-Luftverteidigung zu ergänzen und die Gelegenheit zum Start von Luftüberlegenheitskräften zu nutzen.</German>
+            <Italian>Stabilisci una no-fly zone temporanea per supportare la difesa aerea della tua squadra sopra il settore di aeroporto o eliporto più vicino. I velivoli nemici che entrano nell’area evidenziata sulla mappa vengono individuati immediatamente e quelli che volano sopra 1 km di altitudine saranno ingaggiati immediatamente da risorse aria-aria letali. Si consiglia di integrare con difese aeree a corto raggio e di sfruttare questa opportunità per decollare con assetti di superiorità aerea.</Italian>
+            <Polish>Ustanów tymczasową strefę zakazu lotów, aby wesprzeć obronę przeciwlotniczą twojej drużyny nad najbliższym sektorem lotniska lub lądowiska. Wrogie statki powietrzne wchodzące na zaznaczony obszar mapy są natychmiast wykrywane, a te lecące powyżej 1 km wysokości zostaną natychmiast zaatakowane przez śmiercionośne środki powietrze–powietrze. Zaleca się wsparcie obroną krótkiego zasięgu oraz wykorzystanie tej okazji do startu jednostek przewagi powietrznej.</Polish>
+            <Portuguese>Estabeleça uma zona de exclusão aérea temporária para apoiar a defesa aérea da sua equipe sobre o setor de base aérea ou heliporto mais próximo. Aeronaves inimigas que entrarem na área marcada do mapa são imediatamente detectadas, e aquelas voando acima de 1 km de altitude serão imediatamente engajadas por meios letais ar-ar. Recomenda-se complementar com defesas aéreas de curto alcance e aproveitar a oportunidade para decolar com ativos de superioridade aérea.</Portuguese>
+            <Russian>Установите временную бесполётную зону для поддержки ПВО вашей команды над ближайшим сектором аэродрома или вертолётной площадки. Вражеские летательные аппараты, входящие в отмеченную область карты, немедленно обнаруживаются, а те, что летят на высоте выше 1 км, будут немедленно поражены смертоносными средствами «воздух–воздух». Рекомендуется усилить эффект средствами ПВО ближнего радиуса и использовать этот момент для взлёта сил завоевания превосходства в воздухе.</Russian>
+            <Spanish>Establece una zona de exclusión aérea temporal para apoyar la defensa aérea de tu equipo sobre el sector de base aérea o helipuerto más cercano. Las aeronaves enemigas que entren en el área marcada del mapa son detectadas de inmediato, y aquellas que vuelen por encima de 1 km de altitud serán atacadas inmediatamente por medios aire-aire letales. Se recomienda complementar con defensas aéreas de corto alcance y aprovechar la oportunidad para despegar con activos de superioridad aérea.</Spanish>
+            <Turkish>En yakın hava üssü veya helikopter pisti sektöründe takımının hava savunmasına destek olmak için geçici bir uçuşa yasak bölge oluştur. Haritada işaretlenen alana giren düşman hava araçları anında tespit edilir ve 1 km irtifanın üzerinde uçanlar ölümcül hava-hava unsurları tarafından derhal angaje edilir. Kısa menzilli hava savunmalarıyla desteklenmesi ve bu fırsatın hava üstünlüğü unsurlarıyla kalkış yapmak için kullanılması önerilir.</Turkish>
+            <Korean>가장 가까운 공군기지 또는 헬기장 구역 상공에서 아군의 방공을 지원하기 위해 일시적인 비행금지구역을 설정합니다. 지도에 표시된 지역에 진입하는 적 항공기는 즉시 탐지되며, 고도 1km 이상에서 비행 중인 항공기는 치명적인 공대공 자산에 의해 즉시 교전됩니다. 단거리 방공 수단과 함께 운용하고, 이 기회를 활용해 제공권 자산으로 이륙하는 것이 권장됩니다.</Korean>
+            <Japanese>最寄りの航空基地またはヘリポートのセクター上空で、味方の防空を支援する一時的な飛行禁止区域を設定します。マップ上で指定されたエリアに侵入した敵航空機は即座に探知され、高度1km以上を飛行している機体は致命的な空対空アセットによって即座に交戦されます。短距離防空と併用し、この機会を利用して制空権アセットで離陸することが推奨されます。</Japanese>
+            <Chinesesimp>建立临时禁飞区，以协助最近的空军基地或直升机停机坪区域上空的团队防空。进入地图标记区域的敌方飞机将被立即发现，而在1公里以上高度飞行的飞机将被致命的空对空力量立即攻击。建议配合短程防空系统使用，并利用这一时机起飞空中优势单位。</Chinesesimp>
+            <Chinese>建立臨時禁飛區，以協助最近的空軍基地或直升機停機坪區域上空的團隊防空。進入地圖標記區域的敵方飛機會立即被偵測，而在1公里以上高度飛行的飛機將被致命的空對空力量立即攻擊。建議搭配短程防空系統使用，並把握此機會起飛空中優勢單位。</Chinese>
         </Key>
         <Key ID="STR_WL_commAttack">
             <Original>Attack</Original>

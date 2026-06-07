@@ -240,6 +240,7 @@ class Smart_Mine: Sector_Defense {
     offset[] = {0, 5, 0};
     rearm = 900;
     requirements[] = {"S"};
+    singleton = 4;
     showToEnemies = 100;
     smartMineAP = 6;
     smartMineAT = 2;

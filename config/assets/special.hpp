@@ -10,7 +10,7 @@ class Team_Rally_Point: Special {
     name = "Team Rally Point";
     nameShort = "RALLY";
     offset[] = {0, 8, 0};
-    singleton = 1;
+    singleton = 3;
     showToEnemies = 30;
 };
 class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {};
@@ -197,7 +197,7 @@ class Deployed_AR2: Special {
     name = "Deployed AR-2 Darter";
     nameShort = "DARTER";
     offset[] = {0, 3, 0};
-    singleton = 1;
+    singleton = 2;
 };
 class B_AR2_Deployed: Deployed_AR2 {
     spawn = "B_UAV_01_F";

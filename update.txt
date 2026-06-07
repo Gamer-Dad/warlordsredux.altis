@@ -31,6 +31,7 @@ Assets
 * Xi'an Armed: SDB swapped out for LGMs, added pilot laser, R73.
 
 Gameplay
+* New spawn menu: menu now combines vehicles, squads, and spawn point.
 * Sector reinforcements: player owned sectors now have a limited reinforcement count, depleted by killing defenders.
 * Once depleted of sector reinforcements, these sector features are disabled: conscription, vehicle paradrop, asset purchase, sector scan.
 * Sectors with remaining reinforcements give +2x capture modifiers.
@@ -53,8 +54,9 @@ Gameplay
 * Disabled repairs above 100m altitude.
 * ELO/ratings no longer affected by match duration.
 * Enemies nearby purchase lock radius increased 50->125m.
-* FOB owners can now call for paradrops.
+* Fast travel now generates audio cue.
 * Field repairs now repair turret and cannon.
+* FOB owners can now call for paradrops.
 * Heavy+ APS: no longer stops SDBs when dropped in manual mode, stops 1 SDB when dropped in GPS guided mode.
 * Increased deployment cancel distance for installables and carriers from 30->50m.
 * Increased green sector vehicle difficulty.
@@ -63,27 +65,37 @@ Gameplay
 * Increased tolerance of mine charge, will clear minefields as long as the cable is touching.
 * Laser guided munitions range increased, targets now shown on pilot HUD.
 * Lock stronghold doors against hostile players.
+* Map now includes rearm, refuel, and repair actions for vehicles and AI control on/off for drones.
 * Max mines increased 30->100.
 * Maximum autonomous assets 4->3.
 * Maximum capture time decreased 150->120s, fewer AT minefields.
+* Minefield victims now hear VO.
 * Paradropping vehicles now reward pilots with support points.
 * Paradrops can now be refreshed with rearms.
 * Paradrops over water are no longer allowed. Altitude minimum raised 100->200m.
+* Players no longer spawn with watches.
 * Raised ELO balance algorithm minimum ELO: 1,300->1,500.
 * Raised maximum bank balance $50,000->100,000.
 * Recon vehicles now earn spotting points for owners even if player is not in driver seat.
+* Reduced chance of explosives teamkills.
+* Removed death info screen.
+* Renamed combat air patrol to no-fly zone.
 * Renamed Sidearm missiles for Opfor to Kh-31P ARM.
 * Scale respawn times for territory control in early game and for losing teams (min: 15s).
 * Securing player no longer auto-deletes tent.
 * Securing valuable enemy air wrecks now reveals flying enemy air assets on map.
+* Sector auto-spawn now includes squadmates and tents.
 * Sector income decreased $12->8/km^2/minute.
 * Sector scan: re-enabled on map (not in strategy menu), initial delay 10->20s.
 * Sectors connected to home base get a +1x capture bonus.
 * Slingloading ropes can now be significantly shortened with action.
 * Slingloading/deployables no longer force out/lock crews.
 * Spartan/SAAMI flight speed doubled, notch immunity range 2,500->3,000m.
-* Surrender disabled until 5 hours after game start and team income under $80/m.
+* Squads can now be locked and disbanded. Open squads can be joined by anyone.
+* Squads can now spawn on all players in squad.
+* Surrender disabled.
 * Team rally points are no longer converted from squad leader tents, now deployable from light helos.
+* Tents are much more easily destroyed by any damage, but can be repeatedly respawned onto.
 * USS Phalanx and Archer are now indestructible.
 * VLS destroyers disabled.
 
@@ -123,6 +135,7 @@ Bugfixes
 * Fixed green sectors not respawning reserves.
 * Fixed green sectors without buildings having reserves.
 * Fixed laser-guided munitions tracking from 0 altitude.
+* Fixed LGM/SEAD munitions missing due to low framerate.
 * Fixed most instances of catastrophic carrier/catapult launches.
 * Fixed non-bought vehicles counting into player's asset limit.
 * Fixed not being able to reset vehicles on new destroyers.
@@ -133,6 +146,7 @@ Bugfixes
 * Fixed simultaneous demolition causing multiple friendly fire punishments for a single asset.
 * Fixed some instances of strongholds being invisible on map.
 * Fixed some players showing tracking device instead of Q/E lean for timed prompt accept/reject.
+* Fixed some cases of AI shooting at dead AI.
 * Fixed spelling of Selakano.
 * Fixed squad invites not clearing when rejected.
 * Fixed surrender votes overriding instead of adding.
