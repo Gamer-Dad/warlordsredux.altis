@@ -110,7 +110,7 @@ class Land_Pod_Heli_Transport_04_medevac_F: Taru_Pod {
     side[] = {"east"};
 };
 
-class Land_Cargo20_yellow_F: Gear {
+class Land_Cargo10_military_green_F: Gear {
     conversion = 1;
     cost = 1000;
     demolishable = 1;

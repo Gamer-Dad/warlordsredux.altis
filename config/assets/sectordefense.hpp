@@ -2,21 +2,6 @@ class Sector_Defense {
     category = "Sector Defense";
 };
 
-// Remote Designator
-class Static_Designator: Sector_Defense {
-    cost = 50;
-    loadable = 1;
-    nameShort = "DESIGNATOR";
-    offset[] = {0, 3, 0};
-    rearm = 60;
-};
-class B_Static_Designator_01_F: Static_Designator {
-    side[] = {"west"};
-};
-class O_Static_Designator_02_F: Static_Designator {
-    side[] = {"east"};
-};
-
 // Mk30 HMG .50
 class Static_HMG: Sector_Defense {
     cost = 150;
@@ -145,7 +130,6 @@ class AT_Minefield: Sector_Defense {
     demolishStepTime = 4;
     description = "Anti-tank minefield that contains hidden anti-tank mines.";
     dumbMine[] = {50, 10, 1};
-    loadable = 1;
     name = "Minefield (AT)";
     nameShort = "MINEFIELD";
     obstacle = 2;

@@ -749,6 +749,509 @@
             <Chinesesimp>选择并应用车辆定制。</Chinesesimp>
             <Chinese>選擇並應用車輛定制。</Chinese>
         </Key>
+        <Key ID="STR_WL_deathTip_001">
+            <Original>Watch out for minefields! They become visible on the map when you get close to them.</Original>
+            <English>Watch out for minefields! They become visible on the map when you get close to them.</English>
+            <Czech>Dávejte pozor na minová pole! Když se k nim přiblížíte, objeví se na mapě.</Czech>
+            <French>Attention aux champs de mines ! Ils deviennent visibles sur la carte lorsque vous vous en approchez.</French>
+            <German>Achte auf Minenfelder! Sie werden auf der Karte sichtbar, wenn du dich ihnen näherst.</German>
+            <Italian>Fai attenzione ai campi minati! Diventano visibili sulla mappa quando ti avvicini.</Italian>
+            <Polish>Uważaj na pola minowe! Stają się widoczne na mapie, gdy się do nich zbliżysz.</Polish>
+            <Portuguese>Cuidado com os campos minados! Eles ficam visíveis no mapa quando você se aproxima deles.</Portuguese>
+            <Russian>Остерегайтесь минных полей! Они становятся видны на карте, когда вы приближаетесь к ним.</Russian>
+            <Spanish>¡Cuidado con los campos de minas! Se vuelven visibles en el mapa cuando te acercas a ellos.</Spanish>
+            <Turkish>Mayın tarlalarına dikkat edin! Onlara yaklaştığınızda haritada görünür hale gelirler.</Turkish>
+            <Korean>지뢰 지대를 조심하세요! 가까이 다가가면 지도에 표시됩니다.</Korean>
+            <Japanese>地雷原に注意！近づくとマップ上に表示されます。</Japanese>
+            <Chinesesimp>小心雷区！当你靠近它们时，它们会显示在地图上。</Chinesesimp>
+            <Chinese>小心雷區！當你靠近它們時，它們會顯示在地圖上。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_002">
+            <Original>Unlike most other purchase actions, you can fast travel home even if enemies are nearby.</Original>
+            <English>Unlike most other purchase actions, you can fast travel home even if enemies are nearby.</English>
+            <Czech>Na rozdíl od většiny ostatních nákupních akcí můžete rychle cestovat domů, i když jsou poblíž nepřátelé.</Czech>
+            <French>Contrairement à la plupart des autres actions d'achat, vous pouvez voyager rapidement vers votre base même si des ennemis sont proches.</French>
+            <German>Anders als bei den meisten anderen Kaufaktionen kannst du per Schnellreise nach Hause zurückkehren, selbst wenn Feinde in der Nähe sind.</German>
+            <Italian>A differenza della maggior parte delle altre azioni di acquisto, puoi viaggiare rapidamente a casa anche se ci sono nemici nelle vicinanze.</Italian>
+            <Polish>W przeciwieństwie do większości innych akcji zakupu, możesz szybko wrócić do bazy nawet wtedy, gdy w pobliżu są wrogowie.</Polish>
+            <Portuguese>Ao contrário da maioria das outras ações de compra, você pode viajar rapidamente para casa mesmo com inimigos por perto.</Portuguese>
+            <Russian>В отличие от большинства других действий покупки, вы можете быстро переместиться домой, даже если рядом находятся враги.</Russian>
+            <Spanish>A diferencia de la mayoría de las demás acciones de compra, puedes viajar rápido a casa aunque haya enemigos cerca.</Spanish>
+            <Turkish>Diğer satın alma işlemlerinin çoğundan farklı olarak, yakınlarda düşmanlar olsa bile eve hızlı seyahat edebilirsiniz.</Turkish>
+            <Korean>대부분의 구매 행동과 달리, 적이 근처에 있어도 본거지로 빠른 이동을 할 수 있습니다.</Korean>
+            <Japanese>ほとんどの購入アクションとは異なり、敵が近くにいてもホームへファストトラベルできます。</Japanese>
+            <Chinesesimp>不同于大多数其他购买操作，即使附近有敌人，你也可以快速旅行回基地。</Chinesesimp>
+            <Chinese>不同於大多數其他購買操作，即使附近有敵人，你也可以快速旅行回基地。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_003">
+            <Original>AI can make excellent gunners. Most players use AI gunners for their high accuracy, fast reaction time, and their tendency to avoid friendly fire.</Original>
+            <English>AI can make excellent gunners. Most players use AI gunners for their high accuracy, fast reaction time, and their tendency to avoid friendly fire.</English>
+            <Czech>AI může být výborným střelcem. Většina hráčů používá AI střelce kvůli jejich vysoké přesnosti, rychlé reakci a tendenci vyhýbat se palbě do vlastních.</Czech>
+            <French>L'IA peut faire d'excellents tireurs. La plupart des joueurs utilisent des tireurs IA pour leur grande précision, leur temps de réaction rapide et leur tendance à éviter les tirs fratricides.</French>
+            <German>KI kann hervorragende Schützen stellen. Die meisten Spieler nutzen KI-Schützen wegen ihrer hohen Genauigkeit, schnellen Reaktionszeit und Neigung, Eigenbeschuss zu vermeiden.</German>
+            <Italian>L'IA può essere un ottimo mitragliere. La maggior parte dei giocatori usa mitraglieri IA per la loro alta precisione, i tempi di reazione rapidi e la tendenza a evitare il fuoco amico.</Italian>
+            <Polish>SI może być doskonałym strzelcem. Większość graczy korzysta ze strzelców SI ze względu na ich wysoką celność, szybki czas reakcji i unikanie ognia sojuszniczego.</Polish>
+            <Portuguese>A IA pode ser uma excelente artilheira. A maioria dos jogadores usa artilheiros de IA por sua alta precisão, reação rápida e tendência a evitar fogo amigo.</Portuguese>
+            <Russian>ИИ может быть отличным стрелком. Большинство игроков используют стрелков ИИ за их высокую точность, быструю реакцию и склонность избегать огня по своим.</Russian>
+            <Spanish>La IA puede ser una artillera excelente. La mayoría de los jugadores usa artilleros de IA por su gran precisión, rápido tiempo de reacción y tendencia a evitar el fuego amigo.</Spanish>
+            <Turkish>Yapay zekâ mükemmel nişancılar olabilir. Çoğu oyuncu yüksek isabet oranı, hızlı tepki süresi ve dost ateşinden kaçınma eğilimleri nedeniyle yapay zekâ nişancıları kullanır.</Turkish>
+            <Korean>AI는 훌륭한 사수가 될 수 있습니다. 대부분의 플레이어는 높은 명중률, 빠른 반응 속도, 아군 오사를 피하는 성향 때문에 AI 사수를 사용합니다.</Korean>
+            <Japanese>AIは優秀なガンナーになります。多くのプレイヤーは、高い命中精度、素早い反応、そして味方への誤射を避ける傾向があるためAIガンナーを使います。</Japanese>
+            <Chinesesimp>AI可以成为出色的炮手。大多数玩家使用AI炮手，是因为他们精度高、反应快，并且倾向于避免误伤友军。</Chinesesimp>
+            <Chinese>AI可以成為出色的砲手。大多數玩家使用AI砲手，是因為他們精度高、反應快，並且傾向於避免誤傷友軍。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_004">
+            <Original>Keep buying vehicles! Do not be discouraged after losing one or two. Games are often won not by teams that win battles but by teams that keep rebuying vehicles.</Original>
+            <English>Keep buying vehicles! Do not be discouraged after losing one or two. Games are often won not by teams that win battles but by teams that keep rebuying vehicles.</English>
+            <Czech>Nepřestávejte kupovat vozidla! Nenechte se odradit ztrátou jednoho nebo dvou. Hry často nevyhrávají týmy, které vyhrávají bitvy, ale týmy, které stále dokupují vozidla.</Czech>
+            <French>Continuez à acheter des véhicules ! Ne vous découragez pas après en avoir perdu un ou deux. Les parties sont souvent gagnées non par les équipes qui remportent les combats, mais par celles qui rachètent sans cesse des véhicules.</French>
+            <German>Kaufe weiter Fahrzeuge! Lass dich nicht entmutigen, wenn du ein oder zwei verlierst. Spiele werden oft nicht von Teams gewonnen, die Gefechte gewinnen, sondern von Teams, die immer wieder Fahrzeuge nachkaufen.</German>
+            <Italian>Continua a comprare veicoli! Non scoraggiarti dopo averne perso uno o due. Le partite spesso non vengono vinte dalle squadre che vincono le battaglie, ma da quelle che continuano a ricomprare veicoli.</Italian>
+            <Polish>Kupuj pojazdy dalej! Nie zniechęcaj się po utracie jednego lub dwóch. Gry często wygrywają nie drużyny, które wygrywają bitwy, lecz te, które stale odkupują pojazdy.</Polish>
+            <Portuguese>Continue comprando veículos! Não desanime depois de perder um ou dois. Muitas partidas são vencidas não pelas equipes que ganham batalhas, mas pelas que continuam recomprando veículos.</Portuguese>
+            <Russian>Продолжайте покупать технику! Не расстраивайтесь после потери одной или двух единиц. Матчи часто выигрывают не команды, побеждающие в боях, а команды, которые продолжают заново покупать технику.</Russian>
+            <Spanish>¡Sigue comprando vehículos! No te desanimes tras perder uno o dos. Las partidas a menudo las ganan no los equipos que vencen en las batallas, sino los que siguen recomprando vehículos.</Spanish>
+            <Turkish>Araç satın almaya devam edin! Bir veya iki araç kaybettikten sonra moralinizi bozmayın. Oyunlar genellikle savaşları kazanan takımlar tarafından değil, araçları yeniden satın almaya devam eden takımlar tarafından kazanılır.</Turkish>
+            <Korean>계속 차량을 구매하세요! 한두 대 잃었다고 낙담하지 마세요. 게임은 전투에서 이긴 팀보다 차량을 계속 재구매하는 팀이 이기는 경우가 많습니다.</Korean>
+            <Japanese>車両を買い続けましょう！1、2両失っても落ち込まないでください。試合は戦闘に勝つチームではなく、車両を買い直し続けるチームが勝つことがよくあります。</Japanese>
+            <Chinesesimp>继续购买载具！不要因为损失一两辆就气馁。比赛往往不是由赢下战斗的队伍获胜，而是由不断重新购买载具的队伍获胜。</Chinesesimp>
+            <Chinese>繼續購買載具！不要因為損失一兩輛就氣餒。比賽往往不是由贏下戰鬥的隊伍獲勝，而是由不斷重新購買載具的隊伍獲勝。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_005">
+            <Original>Always be reading the map! Enemies spotted on your side's datalink system will show up on the map. Friendlies, too.</Original>
+            <English>Always be reading the map! Enemies spotted on your side's datalink system will show up on the map. Friendlies, too.</English>
+            <Czech>Neustále sledujte mapu! Nepřátelé zaznamenaní datalinkovým systémem vaší strany se objeví na mapě. Spojenci také.</Czech>
+            <French>Consultez toujours la carte ! Les ennemis repérés par le système de liaison de données de votre camp apparaîtront sur la carte. Les alliés aussi.</French>
+            <German>Behalte immer die Karte im Blick! Feinde, die vom Datenlink-System deiner Seite erfasst werden, erscheinen auf der Karte. Verbündete ebenfalls.</German>
+            <Italian>Controlla sempre la mappa! I nemici individuati dal sistema datalink della tua fazione appariranno sulla mappa. Anche gli alleati.</Italian>
+            <Polish>Zawsze obserwuj mapę! Wrogowie wykryci przez system datalink twojej strony pojawią się na mapie. Sojusznicy również.</Polish>
+            <Portuguese>Esteja sempre de olho no mapa! Inimigos detectados pelo sistema de datalink do seu lado aparecerão no mapa. Aliados também.</Portuguese>
+            <Russian>Всегда следите за картой! Враги, обнаруженные системой передачи данных вашей стороны, появятся на карте. Союзники тоже.</Russian>
+            <Spanish>¡Consulta siempre el mapa! Los enemigos detectados por el sistema de enlace de datos de tu bando aparecerán en el mapa. Los aliados también.</Spanish>
+            <Turkish>Haritayı her zaman okuyun! Tarafınızın veri bağlantısı sisteminde tespit edilen düşmanlar haritada görünecektir. Dost birlikler de.</Turkish>
+            <Korean>항상 지도를 확인하세요! 아군의 데이터링크 시스템에 포착된 적은 지도에 표시됩니다. 아군도 마찬가지입니다.</Korean>
+            <Japanese>常にマップを確認しましょう！味方側のデータリンクシステムで発見された敵はマップに表示されます。味方も同様です。</Japanese>
+            <Chinesesimp>随时查看地图！己方数据链系统发现的敌人会显示在地图上。友军也会显示。</Chinesesimp>
+            <Chinese>隨時查看地圖！己方資料鏈系統發現的敵人會顯示在地圖上。友軍也會顯示。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_006">
+            <Original>You can report unsportsmanlike behavior by going to Settings &gt; Report.</Original>
+            <English>You can report unsportsmanlike behavior by going to Settings &gt; Report.</English>
+            <Czech>Nesportovní chování můžete nahlásit v nabídce Nastavení &gt; Nahlásit.</Czech>
+            <French>Vous pouvez signaler un comportement antisportif en allant dans Paramètres &gt; Signaler.</French>
+            <German>Du kannst unsportliches Verhalten melden, indem du zu Einstellungen &gt; Melden gehst.</German>
+            <Italian>Puoi segnalare comportamenti antisportivi andando su Impostazioni &gt; Segnala.</Italian>
+            <Polish>Możesz zgłosić niesportowe zachowanie, przechodząc do Ustawienia &gt; Zgłoś.</Polish>
+            <Portuguese>Você pode denunciar comportamento antidesportivo acessando Configurações &gt; Denunciar.</Portuguese>
+            <Russian>Вы можете пожаловаться на неспортивное поведение, перейдя в Настройки &gt; Жалоба.</Russian>
+            <Spanish>Puedes denunciar comportamientos antideportivos yendo a Configuración &gt; Denunciar.</Spanish>
+            <Turkish>Sportmenlik dışı davranışları Ayarlar &gt; Bildir yolunu izleyerek bildirebilirsiniz.</Turkish>
+            <Korean>설정 &gt; 신고로 이동하여 비매너 행위를 신고할 수 있습니다.</Korean>
+            <Japanese>設定 &gt; 報告 からスポーツマンシップに反する行為を報告できます。</Japanese>
+            <Chinesesimp>你可以前往设置 &gt; 举报来举报违反体育精神的行为。</Chinesesimp>
+            <Chinese>你可以前往設定 &gt; 檢舉來檢舉違反運動家精神的行為。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_007">
+            <Original>Tents can be deployed by throwing chemlights of any color. You can find chemlights in the arsenal.</Original>
+            <English>Tents can be deployed by throwing chemlights of any color. You can find chemlights in the arsenal.</English>
+            <Czech>Stany lze rozložit hozením chemického světla jakékoli barvy. Chemická světla najdete v arzenálu.</Czech>
+            <French>Les tentes peuvent être déployées en lançant des bâtons lumineux de n'importe quelle couleur. Vous trouverez des bâtons lumineux dans l'arsenal.</French>
+            <German>Zelte können durch das Werfen von Knicklichtern beliebiger Farbe aufgebaut werden. Knicklichter findest du im Arsenal.</German>
+            <Italian>Le tende possono essere schierate lanciando luci chimiche di qualsiasi colore. Puoi trovare le luci chimiche nell'arsenale.</Italian>
+            <Polish>Namioty można rozstawić, rzucając światła chemiczne dowolnego koloru. Światła chemiczne znajdziesz w arsenale.</Polish>
+            <Portuguese>Tendas podem ser implantadas ao lançar bastões luminosos de qualquer cor. Você pode encontrar bastões luminosos no arsenal.</Portuguese>
+            <Russian>Палатки можно развернуть, бросив химсвет любого цвета. Химсветы можно найти в арсенале.</Russian>
+            <Spanish>Las tiendas pueden desplegarse lanzando luces químicas de cualquier color. Puedes encontrar luces químicas en el arsenal.</Spanish>
+            <Turkish>Çadırlar herhangi bir renkte kimyasal ışık atılarak kurulabilir. Kimyasal ışıkları cephanelikte bulabilirsiniz.</Turkish>
+            <Korean>텐트는 아무 색상의 케미라이트를 던져 설치할 수 있습니다. 케미라이트는 무기고에서 찾을 수 있습니다.</Korean>
+            <Japanese>テントは任意の色のケミライトを投げることで展開できます。ケミライトはアーセナルで入手できます。</Japanese>
+            <Chinesesimp>帐篷可以通过投掷任意颜色的化学荧光棒来部署。你可以在军械库中找到化学荧光棒。</Chinesesimp>
+            <Chinese>帳篷可以透過投擲任意顏色的化學螢光棒來部署。你可以在軍械庫中找到化學螢光棒。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_008">
+            <Original>Parachute auto-deploy altitude can be adjusted or even turned off in the Settings menu.</Original>
+            <English>Parachute auto-deploy altitude can be adjusted or even turned off in the Settings menu.</English>
+            <Czech>Výšku automatického otevření padáku lze upravit nebo dokonce vypnout v nabídce Nastavení.</Czech>
+            <French>L'altitude d'ouverture automatique du parachute peut être ajustée, voire désactivée, dans le menu Paramètres.</French>
+            <German>Die Höhe für das automatische Öffnen des Fallschirms kann im Einstellungsmenü angepasst oder sogar deaktiviert werden.</German>
+            <Italian>L'altitudine di apertura automatica del paracadute può essere regolata o persino disattivata nel menu Impostazioni.</Italian>
+            <Polish>Wysokość automatycznego otwarcia spadochronu można dostosować lub nawet wyłączyć w menu Ustawienia.</Polish>
+            <Portuguese>A altitude de abertura automática do paraquedas pode ser ajustada ou até desativada no menu Configurações.</Portuguese>
+            <Russian>Высоту автоматического раскрытия парашюта можно настроить или вовсе отключить в меню настроек.</Russian>
+            <Spanish>La altitud de despliegue automático del paracaídas puede ajustarse o incluso desactivarse en el menú de Configuración.</Spanish>
+            <Turkish>Paraşütün otomatik açılma irtifası Ayarlar menüsünden ayarlanabilir veya tamamen kapatılabilir.</Turkish>
+            <Korean>낙하산 자동 전개 고도는 설정 메뉴에서 조정하거나 완전히 끌 수 있습니다.</Korean>
+            <Japanese>パラシュートの自動展開高度は設定メニューで調整したり、オフにしたりできます。</Japanese>
+            <Chinesesimp>降落伞自动开启高度可以在设置菜单中调整，甚至可以关闭。</Chinesesimp>
+            <Chinese>降落傘自動開啟高度可以在設定選單中調整，甚至可以關閉。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_009">
+            <Original>You can catch the attention of your squad leader by typing @SL in squad chat. Do not abuse this or you may need to find yourself squad-less soon.</Original>
+            <English>You can catch the attention of your squad leader by typing @SL in squad chat. Do not abuse this or you may need to find yourself squad-less soon.</English>
+            <Czech>Pozornost velitele družstva získáte napsáním @SL do chatu družstva. Nezneužívejte to, jinak se brzy můžete ocitnout bez družstva.</Czech>
+            <French>Vous pouvez attirer l'attention de votre chef d'escouade en tapant @SL dans le chat d'escouade. N'en abusez pas, sinon vous risquez bientôt de vous retrouver sans escouade.</French>
+            <German>Du kannst die Aufmerksamkeit deines Gruppenführers erregen, indem du @SL in den Gruppenchat schreibst. Missbrauche das nicht, sonst stehst du bald ohne Gruppe da.</German>
+            <Italian>Puoi attirare l'attenzione del tuo caposquadra scrivendo @SL nella chat di squadra. Non abusarne, o potresti presto ritrovarti senza squadra.</Italian>
+            <Polish>Możesz zwrócić uwagę dowódcy drużyny, wpisując @SL na czacie drużyny. Nie nadużywaj tego, bo wkrótce możesz zostać bez drużyny.</Polish>
+            <Portuguese>Você pode chamar a atenção do seu líder de esquadrão digitando @SL no chat do esquadrão. Não abuse disso, ou talvez você acabe sem esquadrão em breve.</Portuguese>
+            <Russian>Вы можете привлечь внимание командира отделения, написав @SL в чат отделения. Не злоупотребляйте этим, иначе скоро можете остаться без отделения.</Russian>
+            <Spanish>Puedes llamar la atención de tu líder de escuadra escribiendo @SL en el chat de escuadra. No abuses de esto o puede que pronto te quedes sin escuadra.</Spanish>
+            <Turkish>Takım sohbetine @SL yazarak manga liderinizin dikkatini çekebilirsiniz. Bunu kötüye kullanmayın, yoksa yakında mangasız kalabilirsiniz.</Turkish>
+            <Korean>분대 채팅에 @SL을 입력하면 분대장의 주의를 끌 수 있습니다. 이를 남용하지 마세요. 곧 분대 없이 남게 될 수도 있습니다.</Korean>
+            <Japanese>分隊チャットで@SLと入力すると分隊長の注意を引けます。乱用すると、すぐに分隊なしになるかもしれません。</Japanese>
+            <Chinesesimp>你可以在小队聊天中输入@SL来引起小队长的注意。不要滥用，否则你很快可能会无队可待。</Chinesesimp>
+            <Chinese>你可以在小隊聊天中輸入@SL來引起小隊長的注意。不要濫用，否則你很快可能會無隊可待。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_010">
+            <Original>Put the AFK players standing around your homebase flag to good use by conscripting them to the frontline in the Strategy menu.</Original>
+            <English>Put the AFK players standing around your homebase flag to good use by conscripting them to the frontline in the Strategy menu.</English>
+            <Czech>Využijte AFK hráče postávající u vlajky domovské základny tím, že je v nabídce Strategie odvedete na frontovou linii.</Czech>
+            <French>Mettez à profit les joueurs AFK autour du drapeau de votre base en les envoyant au front depuis le menu Stratégie.</French>
+            <German>Nutze AFK-Spieler, die an deiner Heimatbasis-Flagge herumstehen, indem du sie im Strategiemenü an die Front einziehst.</German>
+            <Italian>Metti a frutto i giocatori AFK fermi attorno alla bandiera della base principale arruolandoli al fronte dal menu Strategia.</Italian>
+            <Polish>Wykorzystaj graczy AFK stojących przy fladze bazy głównej, wcielając ich na linię frontu w menu Strategia.</Polish>
+            <Portuguese>Aproveite os jogadores AFK parados perto da bandeira da sua base principal, recrutando-os para a linha de frente no menu Estratégia.</Portuguese>
+            <Russian>Используйте AFK-игроков, стоящих у флага вашей базы, отправив их на передовую через меню стратегии.</Russian>
+            <Spanish>Aprovecha a los jugadores AFK que están junto a la bandera de tu base principal reclutándolos para el frente desde el menú de Estrategia.</Spanish>
+            <Turkish>Ana üs bayrağınızın etrafında duran AFK oyuncuları Strateji menüsünden cepheye alarak işe yarar hale getirin.</Turkish>
+            <Korean>본거지 깃발 주변에 서 있는 AFK 플레이어들을 전략 메뉴에서 최전선으로 징집해 유용하게 활용하세요.</Korean>
+            <Japanese>ホームベースの旗の周りで放置されているAFKプレイヤーは、戦略メニューで前線に徴用して有効活用しましょう。</Japanese>
+            <Chinesesimp>把站在主基地旗帜周围挂机的玩家派上用场，在战略菜单中征召他们前往前线。</Chinesesimp>
+            <Chinese>把站在主基地旗幟周圍掛機的玩家派上用場，在戰略選單中徵召他們前往前線。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_011">
+            <Original>Drones can be countered with the spectrum jammer. Securing enemy drone wrecks increases signal strength.</Original>
+            <English>Drones can be countered with the spectrum jammer. Securing enemy drone wrecks increases signal strength.</English>
+            <Czech>Dronům lze čelit spektrálním rušičem. Zajištění vraků nepřátelských dronů zvyšuje sílu signálu.</Czech>
+            <French>Les drones peuvent être contrés avec le brouilleur de spectre. Sécuriser les épaves de drones ennemis augmente la puissance du signal.</French>
+            <German>Drohnen können mit dem Spektrumstörsender gekontert werden. Das Sichern feindlicher Drohnenwracks erhöht die Signalstärke.</German>
+            <Italian>I droni possono essere contrastati con il disturbatore di spettro. Recuperare relitti di droni nemici aumenta la potenza del segnale.</Italian>
+            <Polish>Dronom można przeciwdziałać za pomocą zagłuszarki spektrum. Zabezpieczanie wraków wrogich dronów zwiększa siłę sygnału.</Polish>
+            <Portuguese>Drones podem ser combatidos com o bloqueador de espectro. Proteger destroços de drones inimigos aumenta a força do sinal.</Portuguese>
+            <Russian>Дронам можно противодействовать с помощью спектрального глушителя. Доставьте обломки вражеского дрона в контролируемый сектор, чтобы увеличить силу сигнала.</Russian>
+            <Spanish>Los drones pueden contrarrestarse con el inhibidor de espectro. Asegurar restos de drones enemigos aumenta la potencia de la señal.</Spanish>
+            <Turkish>Dronlara spektrum karıştırıcı ile karşı koyulabilir. Düşman dron enkazlarını güvenceye almak sinyal gücünü artırır.</Turkish>
+            <Korean>드론은 스펙트럼 재머로 대응할 수 있습니다. 적 드론 잔해를 확보하면 신호 강도가 증가합니다.</Korean>
+            <Japanese>ドローンにはスペクトラムジャマーで対抗できます。敵ドローンの残骸を確保すると信号強度が上がります。</Japanese>
+            <Chinesesimp>无人机可以用频谱干扰器反制。回收敌方无人机残骸会提高信号强度。</Chinesesimp>
+            <Chinese>無人機可以用頻譜干擾器反制。回收敵方無人機殘骸會提高訊號強度。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_012">
+            <Original>If your vehicle flips, you can reset it with Reset Vehicle in the Strategy menu.</Original>
+            <English>If your vehicle flips, you can reset it with Reset Vehicle in the Strategy menu.</English>
+            <Czech>Pokud se vaše vozidlo převrátí, můžete ho resetovat pomocí možnosti Resetovat vozidlo v nabídce Strategie.</Czech>
+            <French>Si votre véhicule se retourne, vous pouvez le réinitialiser avec Réinitialiser le véhicule dans le menu Stratégie.</French>
+            <German>Wenn dein Fahrzeug umkippt, kannst du es mit Fahrzeug zurücksetzen im Strategiemenü zurücksetzen.</German>
+            <Italian>Se il tuo veicolo si ribalta, puoi ripristinarlo con Ripristina veicolo nel menu Strategia.</Italian>
+            <Polish>Jeśli twój pojazd się przewróci, możesz go zresetować opcją Resetuj pojazd w menu Strategia.</Polish>
+            <Portuguese>Se seu veículo capotar, você pode redefini-lo com Redefinir Veículo no menu Estratégia.</Portuguese>
+            <Russian>Если ваша техника перевернулась, вы можете вернуть её в нормальное положение с помощью пункта Сбросить технику в меню стратегии.</Russian>
+            <Spanish>Si tu vehículo vuelca, puedes reiniciarlo con Restablecer vehículo en el menú de Estrategia.</Spanish>
+            <Turkish>Aracınız devrilirse, Strateji menüsündeki Aracı Sıfırla seçeneğiyle onu sıfırlayabilirsiniz.</Turkish>
+            <Korean>차량이 뒤집히면 전략 메뉴의 차량 초기화를 사용해 복구할 수 있습니다.</Korean>
+            <Japanese>車両が横転した場合、戦略メニューの「車両をリセット」で元に戻せます。</Japanese>
+            <Chinesesimp>如果你的载具翻车了，可以在战略菜单中使用重置载具来复位。</Chinesesimp>
+            <Chinese>如果你的載具翻車了，可以在戰略選單中使用重置載具來復位。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_013">
+            <Original>In general, the heavier the vehicle, the more capture power it has. Heavy tanks can out-capture entire squads of infantry.</Original>
+            <English>In general, the heavier the vehicle, the more capture power it has. Heavy tanks can out-capture entire squads of infantry.</English>
+            <Czech>Obecně platí, že čím těžší vozidlo, tím větší má obsazovací sílu. Těžké tanky mohou přeobsadit celé družstvo pěchoty.</Czech>
+            <French>En général, plus le véhicule est lourd, plus sa puissance de capture est élevée. Les chars lourds peuvent surpasser des escouades entières d'infanterie lors d'une capture.</French>
+            <German>Im Allgemeinen gilt: Je schwerer das Fahrzeug, desto mehr Eroberungskraft hat es. Schwere Panzer können ganze Infanteriegruppen beim Erobern übertreffen.</German>
+            <Italian>In generale, più un veicolo è pesante, maggiore è il suo potere di cattura. I carri pesanti possono superare intere squadre di fanteria nella cattura.</Italian>
+            <Polish>Ogólnie im cięższy pojazd, tym większą ma siłę przejmowania. Czołgi ciężkie mogą przejąć punkt szybciej niż całe drużyny piechoty.</Polish>
+            <Portuguese>Em geral, quanto mais pesado o veículo, maior seu poder de captura. Tanques pesados podem superar esquadrões inteiros de infantaria na captura.</Portuguese>
+            <Russian>Как правило, чем тяжелее техника, тем выше её сила захвата. Тяжёлые танки могут перезахватывать точки быстрее целых отделений пехоты.</Russian>
+            <Spanish>En general, cuanto más pesado es el vehículo, mayor poder de captura tiene. Los tanques pesados pueden superar en captura a escuadras enteras de infantería.</Spanish>
+            <Turkish>Genel olarak araç ne kadar ağırsa ele geçirme gücü o kadar fazladır. Ağır tanklar tüm piyade mangalarından daha fazla ele geçirme gücüne sahip olabilir.</Turkish>
+            <Korean>일반적으로 차량이 무거울수록 점령력이 높습니다. 중전차는 보병 분대 전체보다 더 강한 점령력을 가질 수 있습니다.</Korean>
+            <Japanese>一般的に、車両が重いほど占領力が高くなります。重戦車は歩兵分隊全体を上回る占領力を持つことがあります。</Japanese>
+            <Chinesesimp>一般来说，载具越重，占领能力越强。重型坦克的占领能力可以超过整支步兵小队。</Chinesesimp>
+            <Chinese>一般來說，載具越重，佔領能力越強。重型坦克的佔領能力可以超過整支步兵小隊。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_014">
+            <Original>Wreck the wheels on your Rhino? No problem. You can conduct field repairs on your vehicles. Just hop out and look for the option in the scroll action menu.</Original>
+            <English>Wreck the wheels on your Rhino? No problem. You can conduct field repairs on your vehicles. Just hop out and look for the option in the scroll action menu.</English>
+            <Czech>Zničili jste kola na svém Rhinu? Žádný problém. Na vozidlech můžete provádět polní opravy. Stačí vystoupit a najít možnost v rolovacím akčním menu.</Czech>
+            <French>Vous avez détruit les roues de votre Rhino ? Aucun problème. Vous pouvez effectuer des réparations de terrain sur vos véhicules. Descendez simplement et cherchez l'option dans le menu d'action à molette.</French>
+            <German>Die Räder deines Rhino zerstört? Kein Problem. Du kannst Feldreparaturen an deinen Fahrzeugen durchführen. Steig einfach aus und suche die Option im Scroll-Aktionsmenü.</German>
+            <Italian>Hai distrutto le ruote del tuo Rhino? Nessun problema. Puoi effettuare riparazioni sul campo sui tuoi veicoli. Scendi e cerca l'opzione nel menu azione a scorrimento.</Italian>
+            <Polish>Uszkodziłeś koła w swoim Rhino? Żaden problem. Możesz wykonywać naprawy polowe swoich pojazdów. Wysiądź i poszukaj opcji w przewijanym menu akcji.</Polish>
+            <Portuguese>Destruiu as rodas do seu Rhino? Sem problema. Você pode fazer reparos de campo nos seus veículos. Basta sair e procurar a opção no menu de ações rolável.</Portuguese>
+            <Russian>Разбили колёса на своём Rhino? Не проблема. Вы можете выполнять полевой ремонт техники. Просто выйдите и найдите нужный пункт в прокручиваемом меню действий.</Russian>
+            <Spanish>¿Destrozaste las ruedas de tu Rhino? No hay problema. Puedes realizar reparaciones de campo en tus vehículos. Solo bájate y busca la opción en el menú de acción desplazable.</Spanish>
+            <Turkish>Rhino'nuzun tekerleklerini mi mahvettiniz? Sorun değil. Araçlarınızda saha onarımı yapabilirsiniz. Sadece dışarı çıkın ve kaydırmalı eylem menüsündeki seçeneği bulun.</Turkish>
+            <Korean>Rhino의 바퀴가 망가졌나요? 문제없습니다. 차량은 현장 수리가 가능합니다. 내려서 스크롤 액션 메뉴에서 해당 옵션을 찾으세요.</Korean>
+            <Japanese>Rhinoの車輪を壊しましたか？問題ありません。車両は現地修理できます。降車してスクロールアクションメニューからオプションを探しましょう。</Japanese>
+            <Chinesesimp>你的Rhino轮子坏了？没问题。你可以对载具进行野外维修。下车后在滚轮动作菜单中寻找该选项即可。</Chinesesimp>
+            <Chinese>你的Rhino輪子壞了？沒問題。你可以對載具進行野外維修。下車後在滾輪動作選單中尋找該選項即可。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_015">
+            <Original>You may reload your APS by rearming your vehicle. Heavy APS can also be reloaded in the field in the scroll action menu from outside the tank.</Original>
+            <English>You may reload your APS by rearming your vehicle. Heavy APS can also be reloaded in the field in the scroll action menu from outside the tank.</English>
+            <Czech>APS můžete dobít přezbrojením vozidla. Těžký APS lze také dobít v terénu zvenčí tanku přes rolovací akční menu.</Czech>
+            <French>Vous pouvez recharger votre APS en réarmant votre véhicule. Les APS lourds peuvent aussi être rechargés sur le terrain depuis l'extérieur du char via le menu d'action à molette.</French>
+            <German>Du kannst dein APS nachladen, indem du dein Fahrzeug aufmunitionierst. Schwere APS können außerdem im Feld von außerhalb des Panzers über das Scroll-Aktionsmenü nachgeladen werden.</German>
+            <Italian>Puoi ricaricare il tuo APS riarmando il veicolo. Gli APS pesanti possono anche essere ricaricati sul campo dall'esterno del carro tramite il menu azione a scorrimento.</Italian>
+            <Polish>Możesz przeładować APS, uzupełniając uzbrojenie pojazdu. Ciężki APS można także przeładować w terenie z zewnątrz czołgu przez przewijane menu akcji.</Polish>
+            <Portuguese>Você pode recarregar seu APS rearmando o veículo. APS pesados também podem ser recarregados em campo pelo menu de ações rolável do lado de fora do tanque.</Portuguese>
+            <Russian>Вы можете перезарядить APS, пополнив боезапас техники. Тяжёлые APS также можно перезаряжать в поле снаружи танка через прокручиваемое меню действий.</Russian>
+            <Spanish>Puedes recargar tu APS rearmando tu vehículo. Los APS pesados también pueden recargarse en el campo desde fuera del tanque mediante el menú de acción desplazable.</Spanish>
+            <Turkish>APS'nizi aracınızı yeniden ikmal ederek doldurabilirsiniz. Ağır APS ayrıca tankın dışından, kaydırmalı eylem menüsünden sahada da doldurulabilir.</Turkish>
+            <Korean>차량을 재무장하면 APS를 재장전할 수 있습니다. 중형 APS는 전차 밖에서 스크롤 액션 메뉴를 통해 현장에서도 재장전할 수 있습니다.</Korean>
+            <Japanese>車両を再武装することでAPSを再装填できます。重APSは戦車の外からスクロールアクションメニューを使って現地再装填することもできます。</Japanese>
+            <Chinesesimp>你可以通过重新补给载具来装填APS。重型APS也可以在战场上从坦克外部通过滚轮动作菜单装填。</Chinesesimp>
+            <Chinese>你可以透過重新補給載具來裝填APS。重型APS也可以在戰場上從坦克外部透過滾輪動作選單裝填。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_016">
+            <Original>Active protection systems have a deadzone. They are bypassed by rockets launched from very close range.</Original>
+            <English>Active protection systems have a deadzone. They are bypassed by rockets launched from very close range.</English>
+            <Czech>Aktivní ochranné systémy mají mrtvou zónu. Rakety vypálené z velmi malé vzdálenosti je dokážou obejít.</Czech>
+            <French>Les systèmes de protection active ont une zone morte. Les roquettes tirées à très courte portée peuvent les contourner.</French>
+            <German>Aktive Schutzsysteme haben eine Totzone. Raketen, die aus sehr kurzer Entfernung abgefeuert werden, umgehen sie.</German>
+            <Italian>I sistemi di protezione attiva hanno una zona morta. I razzi lanciati da distanza molto ravvicinata li aggirano.</Italian>
+            <Polish>Systemy ochrony aktywnej mają martwą strefę. Rakiety wystrzelone z bardzo bliskiej odległości mogą je ominąć.</Polish>
+            <Portuguese>Sistemas de proteção ativa têm uma zona morta. Foguetes lançados de muito perto conseguem contorná-los.</Portuguese>
+            <Russian>У систем активной защиты есть мёртвая зона. Ракеты, выпущенные с очень близкого расстояния, обходят их.</Russian>
+            <Spanish>Los sistemas de protección activa tienen una zona muerta. Los cohetes lanzados desde muy corta distancia pueden evitarlos.</Spanish>
+            <Turkish>Aktif koruma sistemlerinin bir ölü bölgesi vardır. Çok yakın mesafeden fırlatılan roketler bu sistemleri aşabilir.</Turkish>
+            <Korean>능동 방어 시스템에는 사각지대가 있습니다. 매우 가까운 거리에서 발사된 로켓은 이를 우회할 수 있습니다.</Korean>
+            <Japanese>アクティブ防護システムには死角があります。至近距離から発射されたロケットはこれを突破できます。</Japanese>
+            <Chinesesimp>主动防护系统存在死角。极近距离发射的火箭弹可以绕过它们。</Chinesesimp>
+            <Chinese>主動防護系統存在死角。極近距離發射的火箭彈可以繞過它們。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_017">
+            <Original>If you hit a minefield, do not keep driving forward! That will only cause you to hit more mines and do further damage to your vehicle. Dismount and dismantle the minefield before you continue on.</Original>
+            <English>If you hit a minefield, do not keep driving forward! That will only cause you to hit more mines and do further damage to your vehicle. Dismount and dismantle the minefield before you continue on.</English>
+            <Czech>Pokud najedete do minového pole, nepokračujte v jízdě vpřed! Jen najedete na další miny a ještě více poškodíte vozidlo. Vystupte a před pokračováním minové pole zneškodněte.</Czech>
+            <French>Si vous touchez un champ de mines, ne continuez pas à avancer ! Vous ne feriez que toucher d'autres mines et endommager davantage votre véhicule. Descendez et démantelez le champ de mines avant de continuer.</French>
+            <German>Wenn du in ein Minenfeld gerätst, fahre nicht weiter vorwärts! Dadurch triffst du nur weitere Minen und beschädigst dein Fahrzeug noch stärker. Steig aus und räume das Minenfeld, bevor du weiterfährst.</German>
+            <Italian>Se finisci in un campo minato, non continuare ad avanzare! Colpirai solo altre mine e danneggerai ulteriormente il veicolo. Smonta e smantella il campo minato prima di proseguire.</Italian>
+            <Polish>Jeśli wjedziesz na pole minowe, nie jedź dalej do przodu! Trafisz tylko na kolejne miny i jeszcze bardziej uszkodzisz pojazd. Wysiądź i rozbrój pole minowe, zanim ruszysz dalej.</Polish>
+            <Portuguese>Se você atingir um campo minado, não continue dirigindo para frente! Isso só fará você acertar mais minas e causar mais danos ao veículo. Desembarque e desmonte o campo minado antes de continuar.</Portuguese>
+            <Russian>Если вы наехали на минное поле, не продолжайте ехать вперёд! Так вы лишь подорвётесь на новых минах и ещё сильнее повредите технику. Спешьтесь и разберите минное поле, прежде чем продолжать.</Russian>
+            <Spanish>Si entras en un campo de minas, ¡no sigas conduciendo hacia delante! Solo harás que pises más minas y dañes aún más tu vehículo. Baja y desmonta el campo de minas antes de continuar.</Spanish>
+            <Turkish>Bir mayın tarlasına girerseniz ileri sürmeye devam etmeyin! Bu sadece daha fazla mayına çarpmanıza ve aracınıza daha fazla hasar vermenize neden olur. Devam etmeden önce araçtan inin ve mayın tarlasını sökün.</Turkish>
+            <Korean>지뢰 지대에 걸렸다면 계속 앞으로 운전하지 마세요! 더 많은 지뢰를 밟아 차량에 추가 피해를 줄 뿐입니다. 계속 가기 전에 하차하여 지뢰 지대를 해체하세요.</Korean>
+            <Japanese>地雷原に突っ込んだら、そのまま前進しないでください！さらに地雷を踏んで車両に追加ダメージを与えるだけです。進む前に降車して地雷原を撤去しましょう。</Japanese>
+            <Chinesesimp>如果撞上雷区，不要继续向前开！那只会让你撞上更多地雷，并对载具造成更大损伤。继续前进前先下车并拆除雷区。</Chinesesimp>
+            <Chinese>如果撞上雷區，不要繼續向前開！那只會讓你撞上更多地雷，並對載具造成更大損傷。繼續前進前先下車並拆除雷區。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_018">
+            <Original>Many vehicles and defenses can be loaded onto flatbeds or slingloaded by transport helicopters.</Original>
+            <English>Many vehicles and defenses can be loaded onto flatbeds or slingloaded by transport helicopters.</English>
+            <Czech>Mnoho vozidel a obranných prostředků lze naložit na valníky nebo přepravovat podvěsem transportních vrtulníků.</Czech>
+            <French>De nombreux véhicules et défenses peuvent être chargés sur des plateaux ou hélitreuillés par des hélicoptères de transport.</French>
+            <German>Viele Fahrzeuge und Verteidigungsanlagen können auf Pritschen geladen oder von Transporthubschraubern als Außenlast transportiert werden.</German>
+            <Italian>Molti veicoli e difese possono essere caricati su pianali o trasportati al gancio baricentrico dagli elicotteri da trasporto.</Italian>
+            <Polish>Wiele pojazdów i umocnień można załadować na platformy lub przenosić na podwieszeniu przez śmigłowce transportowe.</Polish>
+            <Portuguese>Muitos veículos e defesas podem ser carregados em caminhões plataforma ou transportados por slingload por helicópteros de transporte.</Portuguese>
+            <Russian>Многие машины и оборонительные сооружения можно грузить на платформы или перевозить на внешней подвеске транспортных вертолётов.</Russian>
+            <Spanish>Muchos vehículos y defensas pueden cargarse en camiones plataforma o transportarse como carga suspendida por helicópteros de transporte.</Spanish>
+            <Turkish>Birçok araç ve savunma unsuru düz kasalara yüklenebilir veya nakliye helikopterleriyle askılı yük olarak taşınabilir.</Turkish>
+            <Korean>많은 차량과 방어 시설은 평판 트럭에 적재하거나 수송 헬리콥터로 슬링로드 운반할 수 있습니다.</Korean>
+            <Japanese>多くの車両や防衛設備はフラットベッドに積載したり、輸送ヘリでスリングロード輸送したりできます。</Japanese>
+            <Chinesesimp>许多载具和防御设施可以装上平板车，或由运输直升机吊挂运输。</Chinesesimp>
+            <Chinese>許多載具和防禦設施可以裝上平板車，或由運輸直升機吊掛運輸。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_019">
+            <Original>Strongholds in green sectors generate reinforcements. Destroy them to stop the AI from respawning and gain a capture advantage.</Original>
+            <English>Strongholds in green sectors generate reinforcements. Destroy them to stop the AI from respawning and gain a capture advantage.</English>
+            <Czech>Opěrné body v zelených sektorech generují posily. Zničte je, abyste zastavili znovuobjevování AI a získali výhodu při obsazování.</Czech>
+            <French>Les bastions dans les secteurs verts génèrent des renforts. Détruisez-les pour empêcher l'IA de réapparaître et obtenir un avantage de capture.</French>
+            <German>Stützpunkte in grünen Sektoren erzeugen Verstärkungen. Zerstöre sie, um das Respawnen der KI zu stoppen und einen Eroberungsvorteil zu erhalten.</German>
+            <Italian>Le roccaforti nei settori verdi generano rinforzi. Distruggile per impedire all'IA di respawnare e ottenere un vantaggio nella cattura.</Italian>
+            <Polish>Twierdze w zielonych sektorach generują posiłki. Zniszcz je, aby powstrzymać odradzanie SI i zyskać przewagę w przejmowaniu.</Polish>
+            <Portuguese>Fortalezas em setores verdes geram reforços. Destrua-as para impedir que a IA reapareça e para ganhar vantagem de captura.</Portuguese>
+            <Russian>Опорные пункты в зелёных секторах создают подкрепления. Уничтожьте их, чтобы остановить возрождение ИИ и получить преимущество при захвате.</Russian>
+            <Spanish>Las fortalezas en sectores verdes generan refuerzos. Destrúyelas para impedir que la IA reaparezca y obtener ventaja de captura.</Spanish>
+            <Turkish>Yeşil sektörlerdeki kaleler takviye üretir. Yapay zekânın yeniden doğmasını durdurmak ve ele geçirme avantajı kazanmak için onları yok edin.</Turkish>
+            <Korean>녹색 구역의 거점은 증원을 생성합니다. 이를 파괴하면 AI의 재생성을 막고 점령 우위를 얻을 수 있습니다.</Korean>
+            <Japanese>緑セクターの拠点は増援を生み出します。破壊すればAIのリスポーンを止め、占領で有利になります。</Japanese>
+            <Chinesesimp>绿色区域中的据点会生成增援。摧毁它们可以阻止AI重生，并获得占领优势。</Chinesesimp>
+            <Chinese>綠色區域中的據點會生成增援。摧毀它們可以阻止AI重生，並獲得佔領優勢。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_020">
+            <Original>Strongholds cut both ways. Enemies in your sector's stronghold will get a massive capture bonus, so make sure to keep it safe.</Original>
+            <English>Strongholds cut both ways. Enemies in your sector's stronghold will get a massive capture bonus, so make sure to keep it safe.</English>
+            <Czech>Opěrné body fungují oběma směry. Nepřátelé v opěrném bodě vašeho sektoru získají obrovský bonus k obsazování, proto ho chraňte.</Czech>
+            <French>Les bastions fonctionnent dans les deux sens. Les ennemis dans le bastion de votre secteur obtiennent un énorme bonus de capture, alors veillez à le protéger.</French>
+            <German>Stützpunkte wirken in beide Richtungen. Feinde im Stützpunkt deines Sektors erhalten einen massiven Eroberungsbonus, also sorge dafür, dass er sicher bleibt.</German>
+            <Italian>Le roccaforti funzionano in entrambi i sensi. I nemici nella roccaforte del tuo settore ottengono un enorme bonus di cattura, quindi assicurati di tenerla al sicuro.</Italian>
+            <Polish>Twierdze działają w obie strony. Wrogowie w twierdzy twojego sektora otrzymają ogromny bonus do przejmowania, więc zadbaj o jej bezpieczeństwo.</Polish>
+            <Portuguese>Fortalezas funcionam para os dois lados. Inimigos na fortaleza do seu setor receberão um enorme bônus de captura, então mantenha-a segura.</Portuguese>
+            <Russian>Опорные пункты работают в обе стороны. Враги в опорном пункте вашего сектора получат огромный бонус к захвату, поэтому обязательно защищайте его.</Russian>
+            <Spanish>Las fortalezas funcionan en ambos sentidos. Los enemigos dentro de la fortaleza de tu sector recibirán una enorme bonificación de captura, así que asegúrate de protegerla.</Spanish>
+            <Turkish>Kaleler iki taraf için de geçerlidir. Sektörünüzün kalesindeki düşmanlar büyük bir ele geçirme bonusu kazanır, bu yüzden onu güvende tutun.</Turkish>
+            <Korean>거점은 양날의 검입니다. 당신 구역의 거점에 있는 적은 막대한 점령 보너스를 받으므로 반드시 안전하게 지키세요.</Korean>
+            <Japanese>拠点の効果は敵にも味方にも働きます。自セクターの拠点にいる敵は大きな占領ボーナスを得るため、必ず守りましょう。</Japanese>
+            <Chinesesimp>据点是双刃剑。位于你方区域据点内的敌人会获得巨大的占领奖励，所以务必保护好它。</Chinesesimp>
+            <Chinese>據點是雙面刃。位於你方區域據點內的敵人會獲得巨大的佔領加成，所以務必保護好它。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_021">
+            <Original>Explosive charges can damage strongholds, forward base, and defensive structures. You can find explosive charges in the arsenal.</Original>
+            <English>Explosive charges can damage strongholds, forward base, and defensive structures. You can find explosive charges in the arsenal.</English>
+            <Czech>Výbušné nálože mohou poškodit opěrné body, předsunutou základnu a obranné struktury. Výbušné nálože najdete v arzenálu.</Czech>
+            <French>Les charges explosives peuvent endommager les bastions, la base avancée et les structures défensives. Vous trouverez des charges explosives dans l'arsenal.</French>
+            <German>Sprengladungen können Stützpunkte, vorgeschobene Basen und Verteidigungsstrukturen beschädigen. Sprengladungen findest du im Arsenal.</German>
+            <Italian>Le cariche esplosive possono danneggiare roccaforti, basi avanzate e strutture difensive. Puoi trovare cariche esplosive nell'arsenale.</Italian>
+            <Polish>Ładunki wybuchowe mogą uszkadzać twierdze, bazę wysuniętą i struktury obronne. Ładunki wybuchowe znajdziesz w arsenale.</Polish>
+            <Portuguese>Cargas explosivas podem danificar fortalezas, bases avançadas e estruturas defensivas. Você pode encontrar cargas explosivas no arsenal.</Portuguese>
+            <Russian>Взрывпакеты могут повреждать опорные пункты, передовую базу и оборонительные сооружения. Взрывпакеты можно найти в арсенале.</Russian>
+            <Spanish>Las cargas explosivas pueden dañar fortalezas, bases avanzadas y estructuras defensivas. Puedes encontrar cargas explosivas en el arsenal.</Spanish>
+            <Turkish>Patlayıcı yükler kalelere, ileri üsse ve savunma yapılarına zarar verebilir. Patlayıcı yükleri cephanelikte bulabilirsiniz.</Turkish>
+            <Korean>폭약은 거점, 전진 기지, 방어 구조물에 피해를 줄 수 있습니다. 폭약은 무기고에서 찾을 수 있습니다.</Korean>
+            <Japanese>爆薬は拠点、前線基地、防衛構造物にダメージを与えられます。爆薬はアーセナルで入手できます。</Japanese>
+            <Chinesesimp>爆炸装药可以破坏据点、前进基地和防御建筑。你可以在军械库中找到爆炸装药。</Chinesesimp>
+            <Chinese>爆炸裝藥可以破壞據點、前進基地和防禦建築。你可以在軍械庫中找到爆炸裝藥。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_022">
+            <Original>Putting down AA and leaving them on the default AI is an effective method of feeding free points to enemy pilots.</Original>
+            <English>Putting down AA and leaving them on the default AI is an effective method of feeding free points to enemy pilots.</English>
+            <Czech>Postavit AA a nechat ho na výchozí AI je účinný způsob, jak nepřátelským pilotům darovat body zdarma.</Czech>
+            <French>Déployer de l'AA et la laisser à l'IA par défaut est un excellent moyen d'offrir des points gratuits aux pilotes ennemis.</French>
+            <German>AA aufzustellen und sie der Standard-KI zu überlassen, ist eine effektive Methode, feindlichen Piloten kostenlose Punkte zu schenken.</German>
+            <Italian>Piazzare AA e lasciarla all'IA predefinita è un metodo efficace per regalare punti gratis ai piloti nemici.</Italian>
+            <Polish>Rozstawienie AA i pozostawienie jej domyślnej SI to skuteczny sposób na karmienie wrogich pilotów darmowymi punktami.</Polish>
+            <Portuguese>Colocar AA e deixá-la com a IA padrão é uma forma eficaz de dar pontos grátis aos pilotos inimigos.</Portuguese>
+            <Russian>Поставить ПВО и оставить его под управлением стандартного ИИ — эффективный способ подарить вражеским пилотам бесплатные очки.</Russian>
+            <Spanish>Colocar AA y dejarla con la IA predeterminada es una forma eficaz de regalar puntos gratis a los pilotos enemigos.</Spanish>
+            <Turkish>AA yerleştirip varsayılan yapay zekâya bırakmak, düşman pilotlara bedava puan kazandırmanın etkili bir yoludur.</Turkish>
+            <Korean>AA를 배치한 뒤 기본 AI에 맡겨두는 것은 적 조종사에게 공짜 점수를 주는 효과적인 방법입니다.</Korean>
+            <Japanese>AAを設置してデフォルトAIに任せたままにするのは、敵パイロットに無料ポイントを与える効果的な方法です。</Japanese>
+            <Chinesesimp>部署防空武器并让它们使用默认AI，是给敌方飞行员送免费分数的有效方法。</Chinesesimp>
+            <Chinese>部署防空武器並讓它們使用預設AI，是給敵方飛行員送免費分數的有效方法。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_023">
+            <Original>If you are struggling with air defense, be sure to read the effective ranges on their description. You can launch missiles from way outside their range, but their chances of connecting are slim.</Original>
+            <English>If you are struggling with air defense, be sure to read the effective ranges on their description. You can launch missiles from way outside their range, but their chances of connecting are slim.</English>
+            <Czech>Pokud máte potíže s protivzdušnou obranou, přečtěte si v popisu její účinné dostřely. Rakety můžete odpalovat i z velké vzdálenosti mimo jejich dosah, ale šance na zásah je malá.</Czech>
+            <French>Si vous avez du mal avec la défense antiaérienne, lisez bien les portées efficaces indiquées dans leur description. Vous pouvez lancer des missiles de bien au-delà de leur portée, mais leurs chances de toucher sont faibles.</French>
+            <German>Wenn du Probleme mit der Luftabwehr hast, lies unbedingt die effektiven Reichweiten in der Beschreibung. Du kannst Raketen weit außerhalb ihrer Reichweite abfeuern, aber die Trefferchancen sind gering.</German>
+            <Italian>Se hai difficoltà con la difesa antiaerea, assicurati di leggere le gittate efficaci nella descrizione. Puoi lanciare missili da molto oltre la loro portata, ma le probabilità di colpire sono basse.</Italian>
+            <Polish>Jeśli masz problemy z obroną przeciwlotniczą, koniecznie przeczytaj skuteczne zasięgi w jej opisie. Możesz odpalać pociski z daleko poza ich zasięgiem, ale szanse trafienia są niewielkie.</Polish>
+            <Portuguese>Se você está com dificuldade na defesa aérea, leia os alcances efetivos na descrição. Você pode lançar mísseis de muito além do alcance deles, mas as chances de acerto são pequenas.</Portuguese>
+            <Russian>Если у вас проблемы с ПВО, обязательно читайте эффективные дальности в описании. Вы можете запускать ракеты далеко за пределами их дальности, но шансы попасть будут малы.</Russian>
+            <Spanish>Si tienes problemas con la defensa aérea, asegúrate de leer los alcances efectivos en su descripción. Puedes lanzar misiles desde muy fuera de su alcance, pero sus probabilidades de impactar son bajas.</Spanish>
+            <Turkish>Hava savunmasında zorlanıyorsanız açıklamalarındaki etkili menzilleri mutlaka okuyun. Füzeleri menzillerinin çok dışından fırlatabilirsiniz, ancak isabet etme şansları düşüktür.</Turkish>
+            <Korean>대공 방어에 어려움을 겪고 있다면 설명에 적힌 유효 사거리를 반드시 확인하세요. 사거리 밖 먼 곳에서도 미사일을 발사할 수는 있지만 명중 확률은 낮습니다.</Korean>
+            <Japanese>対空防衛に苦戦している場合は、説明にある有効射程を必ず確認してください。射程外のかなり遠くからミサイルを発射することはできますが、命中する可能性は低いです。</Japanese>
+            <Chinesesimp>如果你在防空方面遇到困难，请务必阅读其说明中的有效射程。你可以在远超射程的距离外发射导弹，但命中概率很低。</Chinesesimp>
+            <Chinese>如果你在防空方面遇到困難，請務必閱讀其說明中的有效射程。你可以在遠超射程的距離外發射飛彈，但命中機率很低。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_024">
+            <Original>Activating radar gives away your position to most enemy air assets. This makes you an easy target for experienced jet pilots.</Original>
+            <English>Activating radar gives away your position to most enemy air assets. This makes you an easy target for experienced jet pilots.</English>
+            <Czech>Zapnutí radaru prozradí vaši pozici většině nepřátelských leteckých prostředků. Pro zkušené piloty proudových letadel se tak stanete snadným cílem.</Czech>
+            <French>Activer le radar révèle votre position à la plupart des moyens aériens ennemis. Cela fait de vous une cible facile pour les pilotes de jet expérimentés.</French>
+            <German>Das Aktivieren des Radars verrät den meisten feindlichen Luftfahrzeugen deine Position. Dadurch wirst du für erfahrene Jetpiloten zu einem leichten Ziel.</German>
+            <Italian>Attivare il radar rivela la tua posizione alla maggior parte dei mezzi aerei nemici. Questo ti rende un bersaglio facile per i piloti di jet esperti.</Italian>
+            <Polish>Włączenie radaru zdradza twoją pozycję większości wrogich jednostek powietrznych. To czyni cię łatwym celem dla doświadczonych pilotów odrzutowców.</Polish>
+            <Portuguese>Ativar o radar revela sua posição para a maioria dos meios aéreos inimigos. Isso faz de você um alvo fácil para pilotos de jato experientes.</Portuguese>
+            <Russian>Включение радара выдаёт вашу позицию большинству вражеских воздушных средств. Это делает вас лёгкой целью для опытных пилотов реактивной авиации.</Russian>
+            <Spanish>Activar el radar revela tu posición a la mayoría de los medios aéreos enemigos. Esto te convierte en un blanco fácil para pilotos de jet experimentados.</Spanish>
+            <Turkish>Radarı etkinleştirmek konumunuzu çoğu düşman hava unsuruna belli eder. Bu da sizi deneyimli jet pilotları için kolay hedef yapar.</Turkish>
+            <Korean>레이더를 켜면 대부분의 적 항공 전력에게 위치가 노출됩니다. 숙련된 제트기 조종사에게 쉬운 표적이 됩니다.</Korean>
+            <Japanese>レーダーを起動すると、ほとんどの敵航空戦力に位置が知られます。経験豊富なジェット機パイロットにとって格好の標的になります。</Japanese>
+            <Chinesesimp>开启雷达会向大多数敌方空中单位暴露你的位置。这会让你成为有经验喷气机飞行员的容易目标。</Chinesesimp>
+            <Chinese>開啟雷達會向大多數敵方空中單位暴露你的位置。這會讓你成為有經驗噴射機飛行員的容易目標。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_025">
+            <Original>Secure wrecks for money and intel on enemy air assets. You may do this by loading them onto a flatbed truck or a slingloadable helicopter and moving them to a friendly sector.</Original>
+            <English>Secure wrecks for money and intel on enemy air assets. You may do this by loading them onto a flatbed truck or a slingloadable helicopter and moving them to a friendly sector.</English>
+            <Czech>Zajišťujte vraky kvůli penězům a informacím o nepřátelských leteckých prostředcích. Uděláte to tak, že je naložíte na valník nebo na vrtulník schopný podvěsu a přesunete je do spojeneckého sektoru.</Czech>
+            <French>Sécurisez les épaves pour obtenir de l'argent et des renseignements sur les moyens aériens ennemis. Vous pouvez le faire en les chargeant sur un camion plateau ou un hélicoptère capable d'emport sous élingue, puis en les déplaçant vers un secteur allié.</French>
+            <German>Sichere Wracks für Geld und Informationen über feindliche Luftfahrzeuge. Lade sie dazu auf einen Pritschenwagen oder an einen slingloadfähigen Hubschrauber und bringe sie in einen verbündeten Sektor.</German>
+            <Italian>Recupera i relitti per ottenere denaro e informazioni sui mezzi aerei nemici. Puoi farlo caricandoli su un camion pianale o su un elicottero abilitato al trasporto al gancio e spostandoli in un settore alleato.</Italian>
+            <Polish>Zabezpieczaj wraki, aby zdobywać pieniądze i dane o wrogich jednostkach powietrznych. Możesz to zrobić, ładując je na ciężarówkę platformę lub śmigłowiec z podwieszeniem i przewożąc do sektora sojuszniczego.</Polish>
+            <Portuguese>Proteja destroços para ganhar dinheiro e informações sobre meios aéreos inimigos. Você pode fazer isso carregando-os em um caminhão plataforma ou em um helicóptero capaz de slingload e levando-os para um setor aliado.</Portuguese>
+            <Russian>Захватывайте обломки ради денег и разведданных о вражеских воздушных средствах. Для этого погрузите их на платформенный грузовик или вертолёт с внешней подвеской и перевезите в дружественный сектор.</Russian>
+            <Spanish>Asegura restos para obtener dinero e inteligencia sobre medios aéreos enemigos. Puedes hacerlo cargándolos en un camión plataforma o en un helicóptero con capacidad de carga suspendida y llevándolos a un sector aliado.</Spanish>
+            <Turkish>Para ve düşman hava unsurları hakkında istihbarat için enkazları güvenceye alın. Bunu onları düz kasalı kamyona veya askılı yük taşıyabilen bir helikoptere yükleyip dost bir sektöre taşıyarak yapabilirsiniz.</Turkish>
+            <Korean>잔해를 확보하면 돈과 적 항공 전력에 대한 정보를 얻을 수 있습니다. 잔해를 평판 트럭이나 슬링로드 가능한 헬리콥터에 실어 아군 구역으로 옮기면 됩니다.</Korean>
+            <Japanese>残骸を確保すると、資金と敵航空戦力に関する情報を得られます。フラットベッドトラックまたはスリングロード可能なヘリに積み、友軍セクターへ運ぶことで行えます。</Japanese>
+            <Chinesesimp>回收残骸可以获得金钱和敌方空中单位情报。你可以将其装上平板卡车或可吊挂运输的直升机，并运往友方区域。</Chinesesimp>
+            <Chinese>回收殘骸可以獲得金錢和敵方空中單位情報。你可以將其裝上平板卡車或可吊掛運輸的直升機，並運往友方區域。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_026">
+            <Original>In aircraft, you can defeat incoming missiles by flying perpendicular to their approach vector and releasing countermeasures.</Original>
+            <English>In aircraft, you can defeat incoming missiles by flying perpendicular to their approach vector and releasing countermeasures.</English>
+            <Czech>V letadle můžete přilétající střely překonat letem kolmo na jejich směr přiblížení a vypuštěním protiopatření.</Czech>
+            <French>En avion, vous pouvez éviter les missiles entrants en volant perpendiculairement à leur vecteur d'approche et en larguant des contre-mesures.</French>
+            <German>In Luftfahrzeugen kannst du anfliegende Raketen abwehren, indem du rechtwinklig zu ihrem Anflugvektor fliegst und Gegenmaßnahmen ausstößt.</German>
+            <Italian>In aereo, puoi neutralizzare i missili in arrivo volando perpendicolarmente al loro vettore di avvicinamento e rilasciando contromisure.</Italian>
+            <Polish>W samolocie możesz uniknąć nadlatujących pocisków, lecąc prostopadle do ich wektora podejścia i wypuszczając środki przeciwdziałania.</Polish>
+            <Portuguese>Em aeronaves, você pode escapar de mísseis chegando ao voar perpendicularmente ao vetor de aproximação deles e liberar contramedidas.</Portuguese>
+            <Russian>На самолёте можно сорвать наведение входящих ракет, летя перпендикулярно их вектору подхода и выпуская средства противодействия.</Russian>
+            <Spanish>En una aeronave, puedes evadir misiles entrantes volando perpendicularmente a su vector de aproximación y soltando contramedidas.</Spanish>
+            <Turkish>Hava aracındayken yaklaşan füzeleri, geliş vektörlerine dik uçarak ve karşı önlemler bırakarak savuşturabilirsiniz.</Turkish>
+            <Korean>항공기에서는 접근 벡터에 수직으로 비행하고 기만체를 방출하여 날아오는 미사일을 회피할 수 있습니다.</Korean>
+            <Japanese>航空機では、接近してくるミサイルの進入ベクトルに対して垂直に飛行し、対抗手段を放出することで回避できます。</Japanese>
+            <Chinesesimp>驾驶飞机时，你可以通过垂直于来袭导弹的接近方向飞行并释放反制措施来规避导弹。</Chinesesimp>
+            <Chinese>駕駛飛機時，你可以透過垂直於來襲飛彈的接近方向飛行並釋放反制措施來規避飛彈。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_027">
+            <Original>The most effective way to learn how to defeat air assets is by learning to fly yourself.</Original>
+            <English>The most effective way to learn how to defeat air assets is by learning to fly yourself.</English>
+            <Czech>Nejúčinnější způsob, jak se naučit porážet letecké prostředky, je naučit se sám létat.</Czech>
+            <French>La façon la plus efficace d'apprendre à contrer les moyens aériens est d'apprendre à piloter vous-même.</French>
+            <German>Der effektivste Weg zu lernen, wie man Luftfahrzeuge bekämpft, ist, selbst fliegen zu lernen.</German>
+            <Italian>Il modo più efficace per imparare a sconfiggere i mezzi aerei è imparare a volare tu stesso.</Italian>
+            <Polish>Najskuteczniejszym sposobem nauczenia się, jak zwalczać jednostki powietrzne, jest samodzielna nauka latania.</Polish>
+            <Portuguese>A maneira mais eficaz de aprender a derrotar meios aéreos é aprender a pilotar você mesmo.</Portuguese>
+            <Russian>Самый эффективный способ научиться бороться с воздушными средствами — самому научиться летать.</Russian>
+            <Spanish>La forma más eficaz de aprender a derrotar medios aéreos es aprender a volar tú mismo.</Spanish>
+            <Turkish>Hava unsurlarını nasıl alt edeceğinizi öğrenmenin en etkili yolu, kendiniz uçmayı öğrenmektir.</Turkish>
+            <Korean>항공 전력을 격파하는 방법을 배우는 가장 효과적인 방법은 직접 비행을 배우는 것입니다.</Korean>
+            <Japanese>航空戦力を倒す方法を学ぶ最も効果的な方法は、自分で飛べるようになることです。</Japanese>
+            <Chinesesimp>学习如何击败空中单位的最有效方法，就是自己学会飞行。</Chinesesimp>
+            <Chinese>學習如何擊敗空中單位的最有效方法，就是自己學會飛行。</Chinese>
+        </Key>
+
+        <Key ID="STR_WL_deathTip_028">
+            <Original>What goes up must come down. All jets eventually land. Camping enemy airfields is a legitimate tactic and can be a highly efficient way to degrade the enemy airforce.</Original>
+            <English>What goes up must come down. All jets eventually land. Camping enemy airfields is a legitimate tactic and can be a highly efficient way to degrade the enemy airforce.</English>
+            <Czech>Co vzlétne, musí zase přistát. Všechny proudové letouny nakonec přistanou. Číhání u nepřátelských letišť je legitimní taktika a může být velmi účinným způsobem, jak oslabit nepřátelské letectvo.</Czech>
+            <French>Tout ce qui monte doit redescendre. Tous les jets finissent par atterrir. Camper les aérodromes ennemis est une tactique légitime et peut être un moyen très efficace d'affaiblir l'aviation ennemie.</French>
+            <German>Was hochgeht, muss auch wieder herunterkommen. Alle Jets landen irgendwann. Das Campen feindlicher Flugfelder ist eine legitime Taktik und kann eine äußerst effiziente Methode sein, die feindliche Luftwaffe zu schwächen.</German>
+            <Italian>Ciò che sale deve scendere. Tutti i jet prima o poi atterrano. Accamparsi presso gli aeroporti nemici è una tattica legittima e può essere un modo molto efficiente per indebolire l'aviazione nemica.</Italian>
+            <Polish>Co wzleci, musi kiedyś opaść. Wszystkie odrzutowce w końcu lądują. Kampienie wrogich lotnisk to legalna taktyka i może być bardzo skutecznym sposobem osłabiania lotnictwa przeciwnika.</Polish>
+            <Portuguese>Tudo que sobe tem que descer. Todos os jatos acabam pousando. Acampar em aeródromos inimigos é uma tática legítima e pode ser uma forma altamente eficiente de enfraquecer a força aérea inimiga.</Portuguese>
+            <Russian>Что взлетело, то должно приземлиться. Все реактивные самолёты рано или поздно садятся. Засада у вражеских аэродромов — законная тактика и весьма эффективный способ ослабить вражескую авиацию.</Russian>
+            <Spanish>Todo lo que sube tiene que bajar. Todos los jets terminan aterrizando. Campear aeródromos enemigos es una táctica legítima y puede ser una forma muy eficiente de degradar la fuerza aérea enemiga.</Spanish>
+            <Turkish>Yükselen her şey eninde sonunda iner. Tüm jetler sonunda iniş yapar. Düşman havaalanlarını kamp kurarak tutmak meşru bir taktiktir ve düşman hava gücünü yıpratmanın son derece etkili bir yolu olabilir.</Turkish>
+            <Korean>올라간 것은 반드시 내려옵니다. 모든 제트기는 결국 착륙합니다. 적 비행장을 캠핑하는 것은 정당한 전술이며, 적 공군력을 약화시키는 매우 효율적인 방법이 될 수 있습니다.</Korean>
+            <Japanese>上がったものは必ず下りてきます。すべてのジェット機はいずれ着陸します。敵飛行場を待ち伏せするのは正当な戦術であり、敵航空戦力を削ぐ非常に効率的な方法になり得ます。</Japanese>
+            <Chinesesimp>有升必有降。所有喷气机最终都会降落。蹲守敌方机场是合法战术，并且可能是削弱敌方空军的高效方式。</Chinesesimp>
+            <Chinese>有升必有降。所有噴射機最終都會降落。蹲守敵方機場是合法戰術，並且可能是削弱敵方空軍的高效方式。</Chinese>
+        </Key>
         <Key ID="STR_WL_decline">
             <Original>Decline</Original>
             <English>Decline</English>
@@ -2279,90 +2782,56 @@
             <Chinesesimp>清除</Chinesesimp>
             <Chinese>清除</Chinese>
         </Key>
-        <Key ID="STR_WL_wipeAll">
-            <Original>Wipe All</Original>
-            <English>Wipe All</English>
-            <Czech>Smazat vše</Czech>
-            <French>Effacer tout</French>
-            <German>Alles löschen</German>
-            <Italian>Cancella tutto</Italian>
-            <Polish>Usuń wszystko</Polish>
-            <Portuguese>Limpar tudo</Portuguese>
-            <Russian>Удалить все</Russian>
-            <Spanish>Borrar todo</Spanish>
-            <Turkish>Hepsini Sil</Turkish>
-            <Korean>모두 삭제</Korean>
-            <Japanese>すべて消去</Japanese>
-            <Chinesesimp>清除所有</Chinesesimp>
-            <Chinese>清除所有</Chinese>
+        <Key ID="STR_WL_wipeLoadout">
+            <Original>Delete loadout</Original>
+            <English>Delete loadout</English>
+            <Czech>Odstranit vybavení</Czech>
+            <French>Supprimer l’armement</French>
+            <German>Ladung löschen</German>
+            <Italian>Elimina configurazione</Italian>
+            <Polish>Usuń konfigurację</Polish>
+            <Portuguese>Excluir carregamento</Portuguese>
+            <Russian>Удалить комплектацию</Russian>
+            <Spanish>Eliminar configuración</Spanish>
+            <Turkish>Yüklemeyi sil</Turkish>
+            <Korean>장비 삭제</Korean>
+            <Japanese>装備を削除</Japanese>
+            <Chinesesimp>删除配置</Chinesesimp>
+            <Chinese>刪除配置</Chinese>
         </Key>
-        <Key ID="STR_WL_wipeAllInfo">
-            <Original>Clear all saved user loadouts. This will preserve default presets.</Original>
-            <English>Clear all saved user loadouts. This will preserve default presets.</English>
-            <Czech>Vymažte všechny uložené výzbroje uživatele. Tímto budou zachovány výchozí předvolby.</Czech>
-            <French>Effacez toutes les configurations utilisateur enregistrées. Cela préservera les préréglages par défaut.</French>
-            <German>Löschen Sie alle gespeicherten Benutzer-Ausrüstungen. Dies bewahrt die Standardeinstellungen.</German>
-            <Italian>Cancella tutti i carichi utente salvati. Questo manterrà i preset predefiniti.</Italian>
-            <Polish>Wyczyść wszystkie zapisane konfiguracje użytkownika. Zachowane zostaną domyślne ustawienia.</Polish>
-            <Portuguese>Limpe todas as configurações salvas do usuário. Isso preservará os predefinidos padrão.</Portuguese>
-            <Russian>Очистите все сохраненные загрузки пользователя. Это сохранит настройки по умолчанию.</Russian>
-            <Spanish>Borre todas las configuraciones de usuario guardadas. Esto preservará los preajustes predeterminados.</Spanish>
-            <Turkish>Tüm kaydedilmiş kullanıcı yüklemelerini silin. Bu, varsayılan ön ayarları koruyacaktır.</Turkish>
-            <Korean>저장된 모든 사용자 장비를 지웁니다. 기본 사전 설정은 그대로 유지됩니다.</Korean>
-            <Japanese>保存されたすべてのユーザーのロードアウトをクリアします。これにより、デフォルトのプリセットが保持されます。</Japanese>
-            <Chinesesimp>清除所有已保存的用户配置。这将保留默认预设。</Chinesesimp>
-            <Chinese>清除所有已保存的用戶配置。這將保留默認預設。</Chinese>
+        <Key ID="STR_WL_wipeLoadoutInfo">
+            <Original>Delete selected loadout from vehicle save.</Original>
+            <English>Delete selected loadout from vehicle save.</English>
+            <Czech>Odstranit vybrané vybavení z uložených dat vozidla.</Czech>
+            <French>Supprimer l’armement sélectionné de la sauvegarde du véhicule.</French>
+            <German>Ausgewählte Ladung aus dem Fahrzeugspeicher löschen.</German>
+            <Italian>Elimina la configurazione selezionata dal salvataggio del veicolo.</Italian>
+            <Polish>Usuń wybraną konfigurację z zapisu pojazdu.</Polish>
+            <Portuguese>Excluir o carregamento selecionado do salvamento do veículo.</Portuguese>
+            <Russian>Удалить выбранную комплектацию из сохранения транспортного средства.</Russian>
+            <Spanish>Eliminar la configuración seleccionada del guardado del vehículo.</Spanish>
+            <Turkish>Seçili yüklemeyi araç kaydından sil.</Turkish>
+            <Korean>선택한 장비를 차량 저장 데이터에서 삭제합니다.</Korean>
+            <Japanese>選択した装備を車両の保存データから削除します。</Japanese>
+            <Chinesesimp>从车辆保存中删除所选配置。</Chinesesimp>
+            <Chinese>從車輛儲存中刪除所選配置。</Chinese>
         </Key>
-        <Key ID="STR_WL_wipeAllSaved">
-            <Original>Wipe all saved loadouts for this vehicle.</Original>
-            <English>Wipe all saved loadouts for this vehicle.</English>
-            <Czech>Vymazat všechna uložená vybavení pro toto vozidlo.</Czech>
-            <French>Effacer tous les armements sauvegardés pour ce véhicule.</French>
-            <German>Alle gespeicherten Ladungen für dieses Fahrzeug löschen.</German>
-            <Italian>Cancella tutte le configurazioni salvate per questo veicolo.</Italian>
-            <Polish>Wyczyść wszystkie zapisane konfiguracje dla tego pojazdu.</Polish>
-            <Portuguese>Limpar todos os carregamentos salvos para este veículo.</Portuguese>
-            <Russian>Стереть все сохраненные нагрузки для этого транспортного средства.</Russian>
-            <Spanish>Borrar todas las configuraciones guardadas para este vehículo.</Spanish>
-            <Turkish>Bu araç için kaydedilen tüm yüklemeleri silin.</Turkish>
-            <Korean>이 차량에 대한 모든 저장된 장비를 삭제합니다.</Korean>
-            <Japanese>この車両のすべての保存された装備を消去します。</Japanese>
-            <Chinesesimp>清除该车辆的所有保存配置。</Chinesesimp>
-            <Chinese>清除該車輛的所有保存配置。</Chinese>
-        </Key>
-        <Key ID="STR_WL_wipeSaveLoadouts">
-            <Original>This will remove all saved loadouts for this vehicle. Continue?</Original>
-            <English>This will remove all saved loadouts for this vehicle. Continue?</English>
-            <Czech>Tímto odstraníte všechna uložená vybavení pro toto vozidlo. Pokračovat?</Czech>
-            <French>Cela supprimera tous les armements sauvegardés pour ce véhicule. Continuer?</French>
-            <German>Dadurch werden alle gespeicherten Ladungen für dieses Fahrzeug entfernt. Fortsetzen?</German>
-            <Italian>Questo rimuoverà tutte le configurazioni salvate per questo veicolo. Continuare?</Italian>
-            <Polish>Spowoduje to usunięcie wszystkich zapisanych konfiguracji dla tego pojazdu. Kontynuować?</Polish>
-            <Portuguese>Isso removerá todos os carregamentos salvos para este veículo. Continuar?</Portuguese>
-            <Russian>Это удалит все сохраненные нагрузки для этого транспортного средства. Продолжить?</Russian>
-            <Spanish>Esto eliminará todas las configuraciones guardadas para este vehículo. ¿Continuar?</Spanish>
-            <Turkish>Bu, bu araç için kaydedilen tüm yüklemeleri kaldıracaktır. Devam edilsin mi?</Turkish>
-            <Korean>이 차량에 대한 모든 저장된 장비가 제거됩니다. 계속하시겠습니까?</Korean>
-            <Japanese>これにより、この車両のすべての保存された装備が削除されます。続けますか?</Japanese>
-            <Chinesesimp>这将删除该车辆的所有保存配置。继续吗？</Chinesesimp>
-            <Chinese>這將刪除該車輛的所有保存配置。繼續嗎？</Chinese>
-        </Key>
-        <Key ID="STR_WL_wipeSaveWarning">
-            <Original>WIPE SAVE WARNING</Original>
-            <English>WIPE SAVE WARNING</English>
-            <Czech>VAROVÁNÍ O VYMAZÁNÍ ULOŽENÍ</Czech>
-            <French>AVERTISSEMENT D'EFFACEMENT DE SAUVEGARDE</French>
-            <German>SPEICHERLÖSCHUNGSWARNUNG</German>
-            <Italian>AVVISO DI CANCELLAZIONE DEL SALVATAGGIO</Italian>
-            <Polish>OSTRZEŻENIE O WYCZYŚCIENIU ZAPISU</Polish>
-            <Portuguese>AVISO DE LIMPEZA DE SALVAMENTO</Portuguese>
-            <Russian>ПРЕДУПРЕЖДЕНИЕ О СТИРАНИИ СОХРАНЕНИЯ</Russian>
-            <Spanish>ADVERTENCIA DE BORRADO DE GUARDADO</Spanish>
-            <Turkish>KAYDI SİLME UYARISI</Turkish>
-            <Korean>저장 삭제 경고</Korean>
-            <Japanese>セーブデータ削除警告</Japanese>
-            <Chinesesimp>清除保存警告</Chinesesimp>
-            <Chinese>清除保存警告</Chinese>
+        <Key ID="STR_WL_wipeLoadoutWarning">
+            <Original>Are you sure you want to delete loadout %1?</Original>
+            <English>Are you sure you want to delete loadout %1?</English>
+            <Czech>Opravdu chcete odstranit vybavení %1?</Czech>
+            <French>Voulez-vous vraiment supprimer l’armement %1 ?</French>
+            <German>Möchten Sie die Ladung %1 wirklich löschen?</German>
+            <Italian>Sei sicuro di voler eliminare la configurazione %1?</Italian>
+            <Polish>Czy na pewno chcesz usunąć konfigurację %1?</Polish>
+            <Portuguese>Tem certeza de que deseja excluir o carregamento %1?</Portuguese>
+            <Russian>Вы уверены, что хотите удалить комплектацию %1?</Russian>
+            <Spanish>¿Seguro que quieres eliminar la configuración %1?</Spanish>
+            <Turkish>%1 yüklemesini silmek istediğinizden emin misiniz?</Turkish>
+            <Korean>정말로 장비 %1을(를) 삭제하시겠습니까?</Korean>
+            <Japanese>装備 %1 を削除してもよろしいですか？</Japanese>
+            <Chinesesimp>确定要删除配置 %1 吗？</Chinesesimp>
+            <Chinese>確定要刪除配置 %1 嗎？</Chinese>
         </Key>
     </Container>
 </Project>

@@ -166,7 +166,7 @@ class B_Heli_Transport_03_F: Transport_Helicopter {
     side[] = {"west"};
 };
 class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
-    loaded = "Land_Cargo20_yellow_F";
+    loaded = "Land_Cargo10_military_green_F";
     name = "CH-67 Huron Supply";
     requirements[] = {"H", "NF"};
     spawn = "B_Heli_Transport_03_F";
@@ -347,6 +347,7 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
     hasHMD = 1;
     hasSling = 1;
     hasTurretVisualizer = 1;
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     nameShort = "KAJMAN";
     offset[] = {0, 11, 0};
     rearm = 300;

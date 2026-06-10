@@ -463,6 +463,9 @@ class I_LT_01_AA_F: Nyx_Armed {
 
 // Hunter Apex
 class B_Hunter_Apex: Hunter_Upgraded {
+    // ammoOverrides[] = {
+    //     {"B_30mm_MP_Tracer_Green", {"B_Proximity", "30mm Anti-Aircraft"}}
+    // };
     aps = 5;
     capValue = 4;
     cost = 2000;

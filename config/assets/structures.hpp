@@ -98,16 +98,6 @@ class Land_CzechHedgehog_01_new_F: Defensive_Kits {
     side[] = {"west", "east", "guer"};
 };
 
-// Cargo Tower
-class Land_Cargo_Tower_V4_F: Structures {
-    cost = 3500;
-    demolishable = 2;
-    demolishStepTime = 5;
-    name = "Cargo Tower";
-    offset[] = {0, 8, 0};
-    side[] = {"west", "east", "guer"};
-};
-
 class Land_CraneRail_01_F: Structures {
     cost = 5000;
     demolishable = 3;

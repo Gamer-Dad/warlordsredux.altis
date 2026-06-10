@@ -180,6 +180,12 @@ class WLProjectilesConfig {
         remote = 1;
     };
 
+    class WLProjectile_NonRunwayBomb: WLProjectile {
+        ammo[] = {
+            "Bo_Mk82_norunway"
+        };
+    };
+
     class WLProjectile_RunwayBomb: WLProjectile {
         ammo[] = {
             "Bo_Mk82"
@@ -242,14 +248,21 @@ class WLProjectilesConfig {
 
     class WLProjectile_GPSGuidedBomb: WLProjectile {
         ammo[] = {
-            "ammo_gbu12_gps",
-            "ammo_kab250se",
             "ammo_stormbreaker",
             "ammo_upmk_d30"
         };
         aps[] = {5};
         camera = 1;
         consumption = 9;
+        gps = 1;
+    };
+
+    class WLProjectile_GPSGuidedBombHeavy: WLProjectile {
+        ammo[] = {
+            "ammo_gbu12_gps",
+            "ammo_kab250se"
+        };
+        camera = 1;
         gps = 1;
     };
 
@@ -396,6 +409,14 @@ class WLProjectilesConfig {
             "R_Incendiary"
         };
         incendiary = 1;
+    };
+
+    class WLProjectile_Proximity: WLProjectile {
+        ammo[] = {
+            "B_Proximity"
+        };
+        prox = 1;
+        speed = 4000;
     };
 
     class WLProjectile_Mines: WLProjectile {

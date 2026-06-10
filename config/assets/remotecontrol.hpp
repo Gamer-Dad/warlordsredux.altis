@@ -2,6 +2,21 @@ class Remote_Control {
     category = "Remote Control";
 };
 
+// Remote Designator
+class Static_Designator: Remote_Control {
+    cost = 50;
+    loadable = 1;
+    nameShort = "DESIGNATOR";
+    offset[] = {0, 3, 0};
+    rearm = 60;
+};
+class B_Static_Designator_01_F: Static_Designator {
+    side[] = {"west"};
+};
+class O_Static_Designator_02_F: Static_Designator {
+    side[] = {"east"};
+};
+
 // UGAS demining
 class UAGS_Demining: Remote_Control {
     cost = 100;
@@ -310,6 +325,79 @@ class B_UAV_05_F: Remote_Control {
         };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        turret[] = {-1};
+    };
+};
+
+
+class B_Pegasus: B_UAV_05_F {
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"Bo_Mk82_norunway", "Mk82 General Purpose Bomb"}}
+    };
+    cost = 8000;
+    disallowMagazines[] = {
+        "PylonMissile_Bomb_GBU12_x1",
+        "PylonMissile_Missile_HARM_INT_x1",
+        "PylonRack_Bomb_SDB_x4",
+        "PylonMissile_Missile_AGM_02_x2"
+    };
+    name = "BQ-47 Pegasus";
+    nameShort = "PEGASUS";
+    spawn = "B_UAV_05_F";
+    side[] = {};
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F"
+        };
+        addWeapons[] = {
+            "Mk82BombLauncher"
         };
         turret[] = {-1};
     };

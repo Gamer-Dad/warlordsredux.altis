@@ -6,6 +6,8 @@ class Team_Rally_Point: Special {
     cost = 5000;
     demolishable = 1;
     demolishStepTime = 3;
+    disableDamage = 1;
+    fragile = 200;
     hasFastTravel = 1;
     name = "Team Rally Point";
     nameShort = "RALLY";
@@ -179,15 +181,33 @@ class RuggedTerminal_01_communications_hub_F: Special {
 };
 
 class Land_Cargo_HQ_V4_F: Special {
+    aps = 5;
     conversion = 1;
     cost = 8000;
     demolishable = 12;
     demolishStepTime = 5;
+    disableDamage = 1;
     hasFastTravel = 1;
-    loaded = "Land_Cargo20_yellow_F";
+    loaded = "Land_Cargo_Tower_V4_F";
     name = "Fortified Rally Point";
-    nameShort = "RALLY";
+    nameShort = "FORT";
     offset[] = {0, 12, 0};
+    rearm = 60;
+};
+
+class Land_Cargo_Tower_V4_F: Special {
+    aps = 5;
+    conversion = 1;
+    cost = 3500;
+    demolishable = 12;
+    demolishStepTime = 5;
+    disableDamage = 1;
+    hasFastTravel = 1;
+    loaded = "Land_Cargo10_military_green_F";
+    name = "Cargo Tower";
+    nameShort = "TOWER";
+    offset[] = {0, 8, 0};
+    side[] = {"west", "east", "guer"};
 };
 
 class Deployed_AR2: Special {
@@ -207,4 +227,9 @@ class O_AR2_Deployed: Deployed_AR2 {
 };
 class I_AR2_Deployed: Deployed_AR2 {
     spawn = "I_UAV_01_F";
+};
+
+class Steerable_Parachute_F: Special {
+    name = "Steerable Parachute";
+    nameShort = "PARACHUTE";
 };

@@ -18,6 +18,7 @@ Assets
 * Blackfish Infantry: can now deploy 1 AT minefield.
 * Blackfish: can now lift everything a Mohawk can, base cost increased $1,000->2,000.
 * Blufor APCs: added drone hunter.
+* Cargo tower: no longer spawnable, now converted from fortified rally.
 * Heavy recon vehicles: no longer spawnable in sector under attack, cost increased $2,200->5,000, radius decreased 350->175m, added drone hunter.
 * Hunter Apex: APS changed Device -> Heavy+.
 * Hunter/Ifrit Mortar: moved to sector defense category.
@@ -34,7 +35,7 @@ Gameplay
 * New spawn menu: menu now combines vehicles, squads, and spawn point.
 * Sector reinforcements: player owned sectors now have a limited reinforcement count, depleted by killing defenders.
 * Once depleted of sector reinforcements, these sector features are disabled: conscription, vehicle paradrop, asset purchase, sector scan.
-* Sectors with remaining reinforcements give +2x capture modifiers.
+* Sectors with remaining reinforcements give +4x capture modifiers.
 * Supplies (formerly FOB supplies) can be added to sectors to increase reinforcement count.
 * Supplies can now only be purchased at non-FOB helipads.
 * Supplies now convert to fortified rally points instead of supply boats.
@@ -45,6 +46,7 @@ Gameplay
 * Added communication menu options.
 * Added confirmation message when saving to non-empty loadout slot or clearing.
 * Added new cables to carriers.
+* Added option to skip conscription if player is in priority sector.
 * Added option to turn auto-vector off by default.
 * AI ordered into player's vehicles will be force moved into its seat, removed FT AI to vehicle button.
 * Anti-air missiles now use consistent damage model, independent of lag/network latency.
@@ -52,6 +54,7 @@ Gameplay
 * Combat air patrol home: a mini version of combat air patrol can now be called in home base with faster cooldown and smaller area.
 * Demolishables are no longer claimable.
 * Disabled repairs above 100m altitude.
+* Electronic warfare strength is now increased/decreased by securing enemy air drones.
 * ELO/ratings no longer affected by match duration.
 * Enemies nearby purchase lock radius increased 50->125m.
 * Fast travel now generates audio cue.
@@ -70,18 +73,25 @@ Gameplay
 * Maximum autonomous assets 4->3.
 * Maximum capture time decreased 150->120s, fewer AT minefields.
 * Minefield victims now hear VO.
+* Mines and explosives placed by player are now reclaimed by player on respawn.
+* Mine clear charges now delete destructive explosives rather than trigger them.
+* Moved remote designator to remote control category.
 * Paradropping vehicles now reward pilots with support points.
 * Paradrops can now be refreshed with rearms.
-* Paradrops over water are no longer allowed. Altitude minimum raised 100->200m.
+* Paradrop calls over water are no longer allowed. Altitude minimum raised 100->200m.
+* Players can initiate paradrops on paradrop-capable aircraft from the map.
 * Players no longer spawn with watches.
 * Raised ELO balance algorithm minimum ELO: 1,300->1,500.
 * Raised maximum bank balance $50,000->100,000.
 * Recon vehicles now earn spotting points for owners even if player is not in driver seat.
 * Reduced chance of explosives teamkills.
 * Removed death info screen.
+* Removed restrictions around deployment height.
 * Renamed combat air patrol to no-fly zone.
 * Renamed Sidearm missiles for Opfor to Kh-31P ARM.
-* Scale respawn times for territory control in early game and for losing teams (min: 15s).
+* Repair, resupply now reward points to the vehicle owner.
+* RTB now prevented only by jets exceeding $10,000 in value.
+* Scale respawn times for territory control in early game and for losing teams (min: 20s).
 * Securing player no longer auto-deletes tent.
 * Securing valuable enemy air wrecks now reveals flying enemy air assets on map.
 * Sector auto-spawn now includes squadmates and tents.
@@ -91,32 +101,25 @@ Gameplay
 * Slingloading ropes can now be significantly shortened with action.
 * Slingloading/deployables no longer force out/lock crews.
 * Spartan/SAAMI flight speed doubled, notch immunity range 2,500->3,000m.
+* Squad size max is now 9->10.
 * Squads can now be locked and disbanded. Open squads can be joined by anyone.
 * Squads can now spawn on all players in squad.
 * Surrender disabled.
-* Team rally points are no longer converted from squad leader tents, now deployable from light helos.
+* Team rally points are no longer converted from squad leader tents, now deployable from light helos, harder to damage.
 * Tents are much more easily destroyed by any damage, but can be repeatedly respawned onto.
+* Transport rewards are no longer doubled if sector is defensive, scale by type.
 * USS Phalanx and Archer are now indestructible.
+* Vehicle reset is now free, and flipped vehicles will get an option to reset.
 * VLS destroyers disabled.
+* When max AI count is 1, remove AI timer mechanic.
+* Wipe loadout is now delete loadout, which deletes the last selected loadout for a vehicle/aircraft.
 
 Map
+* Carriers moved, along with escorts, to make runways safer.
+* Helipad added to Livadi, Selekano Outpost.
 * New factories mechanic added to sectors.
-* Delfinaki: removed.
-* Dump: removed.
-* Eginio: new sector.
-* Ghost Hotel: reshaped.
-* Hill 275: removed.
-* Kalochori: reduced size.
-* Limni Swamp: removed.
-* Livadi: added helipad.
-* Nychi: new sector.
-* Ochrolimni: removed.
-* Sagonisi: removed helipad.
-* Selakano Outpost: added helipad.
-* South Telos Complex: reshaped.
-* USS Freedom: moved.
-* USS Independence: moved, along with escorts.
-* Xirolimni Dam: reshaped.
+* Several sectors reshaped/added/removed, links changed to promote map movement.
+* Water sectors no longer reduced in effective area calculation.
 
 Bugfixes
 * Fixed air assaults on enemy base.
@@ -140,6 +143,7 @@ Bugfixes
 * Fixed non-bought vehicles counting into player's asset limit.
 * Fixed not being able to reset vehicles on new destroyers.
 * Fixed null spawned objects and infantry.
+* Fixed parachute showing long names in HMD.
 * Fixed players getting pulled out of vehicles by conscription.
 * Fixed players in vehicle menu getting conscripted.
 * Fixed scanned enemy watchtowers showing names on map.
@@ -149,7 +153,9 @@ Bugfixes
 * Fixed some cases of AI shooting at dead AI.
 * Fixed spelling of Selakano.
 * Fixed squad invites not clearing when rejected.
+* Fixed static props becoming indestructible as strongholds.
 * Fixed surrender votes overriding instead of adding.
+* Optimized APS handling code.
 * Optimized map rendering for static objects/defenses.
 * Optimized sector capture handle on server.
 * Reworked and increased responsiveness of hint/timer animation.
