@@ -296,7 +296,14 @@ class WLProjectilesConfig {
         ammo[] = {
             "M_MineLayer"
         };
-        mineLayer = 1;
+        mineLayer = "AT_DeployedMinefield";
+    };
+
+    class WLProjectile_MineLayerSmall: WLProjectile {
+        ammo[] = {
+            "M_MineLayerSmall"
+        };
+        mineLayer = "AT_DeployedMinefieldSmall";
     };
 
     class WLProjectile_ExtendedSAM: WLProjectile {

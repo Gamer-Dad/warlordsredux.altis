@@ -766,7 +766,6 @@
             <Chinesesimp>小心雷区！当你靠近它们时，它们会显示在地图上。</Chinesesimp>
             <Chinese>小心雷區！當你靠近它們時，它們會顯示在地圖上。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_002">
             <Original>Unlike most other purchase actions, you can fast travel home even if enemies are nearby.</Original>
             <English>Unlike most other purchase actions, you can fast travel home even if enemies are nearby.</English>
@@ -784,7 +783,6 @@
             <Chinesesimp>不同于大多数其他购买操作，即使附近有敌人，你也可以快速旅行回基地。</Chinesesimp>
             <Chinese>不同於大多數其他購買操作，即使附近有敵人，你也可以快速旅行回基地。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_003">
             <Original>AI can make excellent gunners. Most players use AI gunners for their high accuracy, fast reaction time, and their tendency to avoid friendly fire.</Original>
             <English>AI can make excellent gunners. Most players use AI gunners for their high accuracy, fast reaction time, and their tendency to avoid friendly fire.</English>
@@ -802,7 +800,6 @@
             <Chinesesimp>AI可以成为出色的炮手。大多数玩家使用AI炮手，是因为他们精度高、反应快，并且倾向于避免误伤友军。</Chinesesimp>
             <Chinese>AI可以成為出色的砲手。大多數玩家使用AI砲手，是因為他們精度高、反應快，並且傾向於避免誤傷友軍。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_004">
             <Original>Keep buying vehicles! Do not be discouraged after losing one or two. Games are often won not by teams that win battles but by teams that keep rebuying vehicles.</Original>
             <English>Keep buying vehicles! Do not be discouraged after losing one or two. Games are often won not by teams that win battles but by teams that keep rebuying vehicles.</English>
@@ -820,7 +817,6 @@
             <Chinesesimp>继续购买载具！不要因为损失一两辆就气馁。比赛往往不是由赢下战斗的队伍获胜，而是由不断重新购买载具的队伍获胜。</Chinesesimp>
             <Chinese>繼續購買載具！不要因為損失一兩輛就氣餒。比賽往往不是由贏下戰鬥的隊伍獲勝，而是由不斷重新購買載具的隊伍獲勝。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_005">
             <Original>Always be reading the map! Enemies spotted on your side's datalink system will show up on the map. Friendlies, too.</Original>
             <English>Always be reading the map! Enemies spotted on your side's datalink system will show up on the map. Friendlies, too.</English>
@@ -838,7 +834,6 @@
             <Chinesesimp>随时查看地图！己方数据链系统发现的敌人会显示在地图上。友军也会显示。</Chinesesimp>
             <Chinese>隨時查看地圖！己方資料鏈系統發現的敵人會顯示在地圖上。友軍也會顯示。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_006">
             <Original>You can report unsportsmanlike behavior by going to Settings &gt; Report.</Original>
             <English>You can report unsportsmanlike behavior by going to Settings &gt; Report.</English>
@@ -856,7 +851,6 @@
             <Chinesesimp>你可以前往设置 &gt; 举报来举报违反体育精神的行为。</Chinesesimp>
             <Chinese>你可以前往設定 &gt; 檢舉來檢舉違反運動家精神的行為。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_007">
             <Original>Tents can be deployed by throwing chemlights of any color. You can find chemlights in the arsenal.</Original>
             <English>Tents can be deployed by throwing chemlights of any color. You can find chemlights in the arsenal.</English>
@@ -874,7 +868,6 @@
             <Chinesesimp>帐篷可以通过投掷任意颜色的化学荧光棒来部署。你可以在军械库中找到化学荧光棒。</Chinesesimp>
             <Chinese>帳篷可以透過投擲任意顏色的化學螢光棒來部署。你可以在軍械庫中找到化學螢光棒。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_008">
             <Original>Parachute auto-deploy altitude can be adjusted or even turned off in the Settings menu.</Original>
             <English>Parachute auto-deploy altitude can be adjusted or even turned off in the Settings menu.</English>
@@ -892,7 +885,6 @@
             <Chinesesimp>降落伞自动开启高度可以在设置菜单中调整，甚至可以关闭。</Chinesesimp>
             <Chinese>降落傘自動開啟高度可以在設定選單中調整，甚至可以關閉。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_009">
             <Original>You can catch the attention of your squad leader by typing @SL in squad chat. Do not abuse this or you may need to find yourself squad-less soon.</Original>
             <English>You can catch the attention of your squad leader by typing @SL in squad chat. Do not abuse this or you may need to find yourself squad-less soon.</English>
@@ -910,7 +902,6 @@
             <Chinesesimp>你可以在小队聊天中输入@SL来引起小队长的注意。不要滥用，否则你很快可能会无队可待。</Chinesesimp>
             <Chinese>你可以在小隊聊天中輸入@SL來引起小隊長的注意。不要濫用，否則你很快可能會無隊可待。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_010">
             <Original>Put the AFK players standing around your homebase flag to good use by conscripting them to the frontline in the Strategy menu.</Original>
             <English>Put the AFK players standing around your homebase flag to good use by conscripting them to the frontline in the Strategy menu.</English>
@@ -928,7 +919,6 @@
             <Chinesesimp>把站在主基地旗帜周围挂机的玩家派上用场，在战略菜单中征召他们前往前线。</Chinesesimp>
             <Chinese>把站在主基地旗幟周圍掛機的玩家派上用場，在戰略選單中徵召他們前往前線。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_011">
             <Original>Drones can be countered with the spectrum jammer. Securing enemy drone wrecks increases signal strength.</Original>
             <English>Drones can be countered with the spectrum jammer. Securing enemy drone wrecks increases signal strength.</English>
@@ -946,7 +936,6 @@
             <Chinesesimp>无人机可以用频谱干扰器反制。回收敌方无人机残骸会提高信号强度。</Chinesesimp>
             <Chinese>無人機可以用頻譜干擾器反制。回收敵方無人機殘骸會提高訊號強度。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_012">
             <Original>If your vehicle flips, you can reset it with Reset Vehicle in the Strategy menu.</Original>
             <English>If your vehicle flips, you can reset it with Reset Vehicle in the Strategy menu.</English>
@@ -964,7 +953,6 @@
             <Chinesesimp>如果你的载具翻车了，可以在战略菜单中使用重置载具来复位。</Chinesesimp>
             <Chinese>如果你的載具翻車了，可以在戰略選單中使用重置載具來復位。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_013">
             <Original>In general, the heavier the vehicle, the more capture power it has. Heavy tanks can out-capture entire squads of infantry.</Original>
             <English>In general, the heavier the vehicle, the more capture power it has. Heavy tanks can out-capture entire squads of infantry.</English>
@@ -982,7 +970,6 @@
             <Chinesesimp>一般来说，载具越重，占领能力越强。重型坦克的占领能力可以超过整支步兵小队。</Chinesesimp>
             <Chinese>一般來說，載具越重，佔領能力越強。重型坦克的佔領能力可以超過整支步兵小隊。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_014">
             <Original>Wreck the wheels on your Rhino? No problem. You can conduct field repairs on your vehicles. Just hop out and look for the option in the scroll action menu.</Original>
             <English>Wreck the wheels on your Rhino? No problem. You can conduct field repairs on your vehicles. Just hop out and look for the option in the scroll action menu.</English>
@@ -1000,7 +987,6 @@
             <Chinesesimp>你的Rhino轮子坏了？没问题。你可以对载具进行野外维修。下车后在滚轮动作菜单中寻找该选项即可。</Chinesesimp>
             <Chinese>你的Rhino輪子壞了？沒問題。你可以對載具進行野外維修。下車後在滾輪動作選單中尋找該選項即可。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_015">
             <Original>You may reload your APS by rearming your vehicle. Heavy APS can also be reloaded in the field in the scroll action menu from outside the tank.</Original>
             <English>You may reload your APS by rearming your vehicle. Heavy APS can also be reloaded in the field in the scroll action menu from outside the tank.</English>
@@ -1018,7 +1004,6 @@
             <Chinesesimp>你可以通过重新补给载具来装填APS。重型APS也可以在战场上从坦克外部通过滚轮动作菜单装填。</Chinesesimp>
             <Chinese>你可以透過重新補給載具來裝填APS。重型APS也可以在戰場上從坦克外部透過滾輪動作選單裝填。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_016">
             <Original>Active protection systems have a deadzone. They are bypassed by rockets launched from very close range.</Original>
             <English>Active protection systems have a deadzone. They are bypassed by rockets launched from very close range.</English>
@@ -1036,7 +1021,6 @@
             <Chinesesimp>主动防护系统存在死角。极近距离发射的火箭弹可以绕过它们。</Chinesesimp>
             <Chinese>主動防護系統存在死角。極近距離發射的火箭彈可以繞過它們。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_017">
             <Original>If you hit a minefield, do not keep driving forward! That will only cause you to hit more mines and do further damage to your vehicle. Dismount and dismantle the minefield before you continue on.</Original>
             <English>If you hit a minefield, do not keep driving forward! That will only cause you to hit more mines and do further damage to your vehicle. Dismount and dismantle the minefield before you continue on.</English>
@@ -1054,7 +1038,6 @@
             <Chinesesimp>如果撞上雷区，不要继续向前开！那只会让你撞上更多地雷，并对载具造成更大损伤。继续前进前先下车并拆除雷区。</Chinesesimp>
             <Chinese>如果撞上雷區，不要繼續向前開！那只會讓你撞上更多地雷，並對載具造成更大損傷。繼續前進前先下車並拆除雷區。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_018">
             <Original>Many vehicles and defenses can be loaded onto flatbeds or slingloaded by transport helicopters.</Original>
             <English>Many vehicles and defenses can be loaded onto flatbeds or slingloaded by transport helicopters.</English>
@@ -1072,7 +1055,6 @@
             <Chinesesimp>许多载具和防御设施可以装上平板车，或由运输直升机吊挂运输。</Chinesesimp>
             <Chinese>許多載具和防禦設施可以裝上平板車，或由運輸直升機吊掛運輸。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_019">
             <Original>Strongholds in green sectors generate reinforcements. Destroy them to stop the AI from respawning and gain a capture advantage.</Original>
             <English>Strongholds in green sectors generate reinforcements. Destroy them to stop the AI from respawning and gain a capture advantage.</English>
@@ -1090,7 +1072,6 @@
             <Chinesesimp>绿色区域中的据点会生成增援。摧毁它们可以阻止AI重生，并获得占领优势。</Chinesesimp>
             <Chinese>綠色區域中的據點會生成增援。摧毀它們可以阻止AI重生，並獲得佔領優勢。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_020">
             <Original>Strongholds cut both ways. Enemies in your sector's stronghold will get a massive capture bonus, so make sure to keep it safe.</Original>
             <English>Strongholds cut both ways. Enemies in your sector's stronghold will get a massive capture bonus, so make sure to keep it safe.</English>
@@ -1108,7 +1089,6 @@
             <Chinesesimp>据点是双刃剑。位于你方区域据点内的敌人会获得巨大的占领奖励，所以务必保护好它。</Chinesesimp>
             <Chinese>據點是雙面刃。位於你方區域據點內的敵人會獲得巨大的佔領加成，所以務必保護好它。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_021">
             <Original>Explosive charges can damage strongholds, forward base, and defensive structures. You can find explosive charges in the arsenal.</Original>
             <English>Explosive charges can damage strongholds, forward base, and defensive structures. You can find explosive charges in the arsenal.</English>
@@ -1126,7 +1106,6 @@
             <Chinesesimp>爆炸装药可以破坏据点、前进基地和防御建筑。你可以在军械库中找到爆炸装药。</Chinesesimp>
             <Chinese>爆炸裝藥可以破壞據點、前進基地和防禦建築。你可以在軍械庫中找到爆炸裝藥。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_022">
             <Original>Putting down AA and leaving them on the default AI is an effective method of feeding free points to enemy pilots.</Original>
             <English>Putting down AA and leaving them on the default AI is an effective method of feeding free points to enemy pilots.</English>
@@ -1144,7 +1123,6 @@
             <Chinesesimp>部署防空武器并让它们使用默认AI，是给敌方飞行员送免费分数的有效方法。</Chinesesimp>
             <Chinese>部署防空武器並讓它們使用預設AI，是給敵方飛行員送免費分數的有效方法。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_023">
             <Original>If you are struggling with air defense, be sure to read the effective ranges on their description. You can launch missiles from way outside their range, but their chances of connecting are slim.</Original>
             <English>If you are struggling with air defense, be sure to read the effective ranges on their description. You can launch missiles from way outside their range, but their chances of connecting are slim.</English>
@@ -1162,7 +1140,6 @@
             <Chinesesimp>如果你在防空方面遇到困难，请务必阅读其说明中的有效射程。你可以在远超射程的距离外发射导弹，但命中概率很低。</Chinesesimp>
             <Chinese>如果你在防空方面遇到困難，請務必閱讀其說明中的有效射程。你可以在遠超射程的距離外發射飛彈，但命中機率很低。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_024">
             <Original>Activating radar gives away your position to most enemy air assets. This makes you an easy target for experienced jet pilots.</Original>
             <English>Activating radar gives away your position to most enemy air assets. This makes you an easy target for experienced jet pilots.</English>
@@ -1180,7 +1157,6 @@
             <Chinesesimp>开启雷达会向大多数敌方空中单位暴露你的位置。这会让你成为有经验喷气机飞行员的容易目标。</Chinesesimp>
             <Chinese>開啟雷達會向大多數敵方空中單位暴露你的位置。這會讓你成為有經驗噴射機飛行員的容易目標。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_025">
             <Original>Secure wrecks for money and intel on enemy air assets. You may do this by loading them onto a flatbed truck or a slingloadable helicopter and moving them to a friendly sector.</Original>
             <English>Secure wrecks for money and intel on enemy air assets. You may do this by loading them onto a flatbed truck or a slingloadable helicopter and moving them to a friendly sector.</English>
@@ -1198,7 +1174,6 @@
             <Chinesesimp>回收残骸可以获得金钱和敌方空中单位情报。你可以将其装上平板卡车或可吊挂运输的直升机，并运往友方区域。</Chinesesimp>
             <Chinese>回收殘骸可以獲得金錢和敵方空中單位情報。你可以將其裝上平板卡車或可吊掛運輸的直升機，並運往友方區域。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_026">
             <Original>In aircraft, you can defeat incoming missiles by flying perpendicular to their approach vector and releasing countermeasures.</Original>
             <English>In aircraft, you can defeat incoming missiles by flying perpendicular to their approach vector and releasing countermeasures.</English>
@@ -1216,7 +1191,6 @@
             <Chinesesimp>驾驶飞机时，你可以通过垂直于来袭导弹的接近方向飞行并释放反制措施来规避导弹。</Chinesesimp>
             <Chinese>駕駛飛機時，你可以透過垂直於來襲飛彈的接近方向飛行並釋放反制措施來規避飛彈。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_027">
             <Original>The most effective way to learn how to defeat air assets is by learning to fly yourself.</Original>
             <English>The most effective way to learn how to defeat air assets is by learning to fly yourself.</English>
@@ -1234,7 +1208,6 @@
             <Chinesesimp>学习如何击败空中单位的最有效方法，就是自己学会飞行。</Chinesesimp>
             <Chinese>學習如何擊敗空中單位的最有效方法，就是自己學會飛行。</Chinese>
         </Key>
-
         <Key ID="STR_WL_deathTip_028">
             <Original>What goes up must come down. All jets eventually land. Camping enemy airfields is a legitimate tactic and can be a highly efficient way to degrade the enemy airforce.</Original>
             <English>What goes up must come down. All jets eventually land. Camping enemy airfields is a legitimate tactic and can be a highly efficient way to degrade the enemy airforce.</English>
@@ -1251,6 +1224,23 @@
             <Japanese>上がったものは必ず下りてきます。すべてのジェット機はいずれ着陸します。敵飛行場を待ち伏せするのは正当な戦術であり、敵航空戦力を削ぐ非常に効率的な方法になり得ます。</Japanese>
             <Chinesesimp>有升必有降。所有喷气机最终都会降落。蹲守敌方机场是合法战术，并且可能是削弱敌方空军的高效方式。</Chinesesimp>
             <Chinese>有升必有降。所有噴射機最終都會降落。蹲守敵方機場是合法戰術，並且可能是削弱敵方空軍的高效方式。</Chinese>
+        </Key>
+        <Key ID="STR_WL_deathTip_029">
+            <Original>Heavy APS can be reloaded in the field. Exit your tank, scroll down, and pick the reload APS option.</Original>
+            <English>Heavy APS can be reloaded in the field. Exit your tank, scroll down, and pick the reload APS option.</English>
+            <Czech>Těžký APS lze dobít přímo v terénu. Vystupte z tanku, sjeďte dolů v nabídce a zvolte možnost dobít APS.</Czech>
+            <French>Le système APS lourd peut être rechargé sur le terrain. Sortez de votre char, faites défiler vers le bas et sélectionnez l’option de rechargement de l’APS.</French>
+            <German>Schwere APS-Systeme können im Feld nachgeladen werden. Verlassen Sie Ihren Panzer, scrollen Sie nach unten und wählen Sie die Option zum Nachladen des APS.</German>
+            <Italian>L'APS pesante può essere ricaricato sul campo. Esci dal carro armato, scorri verso il basso e seleziona l'opzione per ricaricare l'APS.</Italian>
+            <Polish>Ciężki APS można przeładować w terenie. Opuść czołg, przewiń menu w dół i wybierz opcję przeładowania APS.</Polish>
+            <Portuguese>O APS pesado pode ser recarregado em campo. Saia do seu tanque, role para baixo e selecione a opção de recarregar o APS.</Portuguese>
+            <Russian>Тяжёлый КАЗ можно перезарядить прямо в поле. Покиньте танк, прокрутите меню вниз и выберите опцию перезарядки КАЗ.</Russian>
+            <Spanish>El APS pesado puede recargarse en el campo de batalla. Sal de tu tanque, desplázate hacia abajo y selecciona la opción para recargar el APS.</Spanish>
+            <Turkish>Ağır APS sahada yeniden yüklenebilir. Tankınızdan çıkın, aşağı kaydırın ve APS'yi yeniden yükle seçeneğini seçin.</Turkish>
+            <Korean>중(重)형 APS는 야전에서 재장전할 수 있습니다. 전차에서 내린 뒤 아래로 스크롤하여 APS 재장전 옵션을 선택하세요.</Korean>
+            <Japanese>重APSは戦場で再装填できます。戦車から降りて下へスクロールし、APS再装填オプションを選択してください。</Japanese>
+            <Chinesesimp>重型APS可以在战场上重新装填。离开坦克，向下滚动菜单并选择“重新装填APS”选项。</Chinesesimp>
+            <Chinese>重型APS可以在戰場上重新裝填。離開戰車，向下捲動選單並選擇「重新裝填APS」選項。</Chinese>
         </Key>
         <Key ID="STR_WL_decline">
             <Original>Decline</Original>

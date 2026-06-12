@@ -1,6 +1,7 @@
-Warlords Redux 2.8 Patch 10
+Warlords Redux 2.8 Patch 11
 
 Assets
+* (Added) Xi'an (Mine Layer).
 * (Added) Xi'an (Vehicle Transport).
 * (Re-added) Static Mortars.
 * (Re-added) Supply Boat.
@@ -20,6 +21,7 @@ Assets
 * Blufor APCs: added drone hunter.
 * Cargo tower: no longer spawnable, now converted from fortified rally.
 * Heavy recon vehicles: no longer spawnable in sector under attack, cost increased $2,200->5,000, radius decreased 350->175m, added drone hunter.
+* Hummingbird/Orca (unarmed): spawnable in non-helipad sectors.
 * Hunter Apex: APS changed Device -> Heavy+.
 * Hunter/Ifrit Mortar: moved to sector defense category.
 * Nyx AA: missile ammo increased 2->4.
@@ -50,6 +52,7 @@ Gameplay
 * Added option to turn auto-vector off by default.
 * AI ordered into player's vehicles will be force moved into its seat, removed FT AI to vehicle button.
 * Anti-air missiles now use consistent damage model, independent of lag/network latency.
+* Area capture modifier now only applies in PvP sectors, not against green sectors.
 * Combat air patrol: upgraded munition BIM9x->AMRAAM-D, radius decreased 7->6km, cooldown decreased 30->20 minutes.
 * Combat air patrol home: a mini version of combat air patrol can now be called in home base with faster cooldown and smaller area.
 * Demolishables are no longer claimable.
@@ -61,6 +64,7 @@ Gameplay
 * Field repairs now repair turret and cannon.
 * FOB owners can now call for paradrops.
 * Heavy+ APS: no longer stops SDBs when dropped in manual mode, stops 1 SDB when dropped in GPS guided mode.
+* Hold freelook over map to see detailed mode.
 * Increased deployment cancel distance for installables and carriers from 30->50m.
 * Increased green sector vehicle difficulty.
 * Increased ground launched R77/AMRAAM/Zephyr notch immunity range 1->2km, reduced projectile speed 1.1->0.8x.
@@ -85,6 +89,7 @@ Gameplay
 * Raised maximum bank balance $50,000->100,000.
 * Recon vehicles now earn spotting points for owners even if player is not in driver seat.
 * Reduced chance of explosives teamkills.
+* Reduced time to revive/secure players.
 * Removed death info screen.
 * Removed restrictions around deployment height.
 * Renamed combat air patrol to no-fly zone.
@@ -100,6 +105,7 @@ Gameplay
 * Sectors connected to home base get a +1x capture bonus.
 * Slingloading ropes can now be significantly shortened with action.
 * Slingloading/deployables no longer force out/lock crews.
+* Sound effect now plays for proximity hits.
 * Spartan/SAAMI flight speed doubled, notch immunity range 2,500->3,000m.
 * Squad size max is now 9->10.
 * Squads can now be locked and disbanded. Open squads can be joined by anyone.

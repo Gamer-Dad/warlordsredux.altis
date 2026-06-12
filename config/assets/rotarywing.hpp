@@ -9,6 +9,7 @@ class B_Heli_Light_01_F: Rotary_Wing {
     loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     nameShort = "HUMMINGBIRD";
     rearm = 120;
+    requirements[] = {};
     side[] = {"west"};
 };
 
@@ -41,6 +42,7 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     nameShort = "ORCA";
     offset[] = {0, 10, 0};
     rearm = 240;
+    requirements[] = {};
     side[] = {"east"};
 };
 class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
@@ -56,6 +58,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
     };
     cost = 3500;
     nameShort = "ORCA ARMED";
+    requirements[] = {"H"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
@@ -202,7 +205,7 @@ class O_Mohawk: Transport_Helicopter {
     };
 };
 class O_Mohawk_Supply: O_Mohawk {
-    loaded = "Land_Cargo20_brick_red_F";
+    loaded = "Land_Cargo10_military_green_F";
     name = "CH-49 Mohawk Supply";
     requirements[] = {"H", "NF"};
     spawn = "I_Heli_Transport_02_F";

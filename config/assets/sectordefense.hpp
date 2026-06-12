@@ -162,6 +162,15 @@ class AT_DeployedMinefield: AT_Minefield {
     showToEnemies = 3000;
     singleton = 1;
 };
+class AT_DeployedMinefieldSmall: AT_Minefield {
+    cost = 1000;
+    demolishable = 3;
+    demolishStepTime = 30;
+    dumbMine[] = {250, 250, 0};
+    name = "Minefield (Zemledeliye)";
+    showToEnemies = 3000;
+    singleton = 2;
+};
 
 // Mk30 HMG Auto Turret
 class Static_HMG_Auto: Sector_Defense {

@@ -1137,23 +1137,18 @@ class CfgWarlordRunways {
 
 class CfgWarlordFactories {
     factoryTypes[] = {
-        {"B_Ghosthawk_III", 600},
-        {"B_Slammer_X", 600},
-        {"B_Growler", 1800},
-        {"B_Pegasus", 1800},
-        {"O_Marid_Dragon", 300},
-        {"O_MBT_02_railgun_F", 600},
-        {"O_Euphrates", 1200}
+        {"B_Ghosthawk_III", 900},
+        {"B_Slammer_X", 900},
+        {"B_Growler", 2700},
+        {"B_Pegasus", 2700},
+        {"O_Marid_Dragon", 450},
+        {"O_MBT_02_railgun_F", 900},
+        {"O_Euphrates", 1800}
     };
 
     class DoridaFactory {
         position[] = {19265, 13143.5, 0};
         direction = 50;
-    };
-
-    class GoriFactory {
-        position[] = {5375.21, 17905.6, 0};
-        direction = 90;
     };
 
     class KoreFactory {
@@ -1171,6 +1166,16 @@ class CfgWarlordFactories {
         direction = 300;
     };
 
+    class PanagiaFactory {
+        position[] = {20332.3, 8802.4, 0};
+        direction = 240;
+    };
+
+    class PanochoriFactory {
+        position[] = {5284.9, 11071.6, 0};
+        direction = 350;
+    };
+
     class SelakanoFactory {
         position[] = {20084, 6698.79, 0};
         direction = 310;
@@ -1179,5 +1184,10 @@ class CfgWarlordFactories {
     class SofiaFactory {
         position[] = {25401.4, 20352.9, 0};
         direction = 145;
+    };
+
+    class TelosFactory {
+        position[] = {16187.5, 16922, 0};
+        direction = 30;
     };
 };

@@ -36,6 +36,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     ammoOverrides[] = {
         {"Bo_Mk82", {"M_MineLayer", "CBU-89/B Mine Layer"}}
     };
+    description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
     name = "V-44 X Blackfish (Mine Layer)";
     side[] = {"west"};
 
@@ -105,6 +106,7 @@ class B_Archerfish: Blackfish {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
     };
     cost = 11000;
+    description = "V-44 X Blackfish (Archerfish) is a heavy VTOL aircraft that carries a large arsenal of long-range missiles.";
     isHeavyLift = 1;
     hasHMD = 1;
     hasLoader = 1;
@@ -326,6 +328,14 @@ class O_Xian_Transport: O_Xian {
         };
         turret[] = {0};
     };
+};
+
+class O_Xian_MineLayer: O_Xian_Transport {
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
+    };
+    cost = 3000;
+    name = "Y-32 Xi'an (Mine Layer)";
 };
 
 class O_Xian_Armed: O_Xian {
