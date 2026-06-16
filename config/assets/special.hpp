@@ -22,10 +22,12 @@ class Land_MedicalTent_01_CSAT_brownhex_generic_open_F: Team_Rally_Point {};
 class B_UAV_02_F: Special {
     cost = 1000;
     fragileDrone = 1;
+    nameShort = "SCANNER";
 };
 class O_UAV_02_F: Special {
     cost = 1000;
     fragileDrone = 1;
+    nameShort = "SCANNER";
 };
 
 class Integral_Mortar: Special {

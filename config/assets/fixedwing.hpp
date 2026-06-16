@@ -38,6 +38,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     };
     description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
     name = "V-44 X Blackfish (Mine Layer)";
+    nameShort = "BLACKFISH MINES";
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
@@ -61,6 +62,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
 class B_T_VTOL_01_vehicle_F: Blackfish {
     hasLoader = 1;
     isHeavyLift = 1;
+    nameShort = "BLACKFISH VIC";
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
@@ -111,6 +113,7 @@ class B_Archerfish: Blackfish {
     hasHMD = 1;
     hasLoader = 1;
     name = "V-44 J Archerfish";
+    nameShort = "ARCHERFISH";
     rearm = 420;
     requirements[] = {"A"};
     side[] = {"west"};
@@ -299,6 +302,7 @@ class O_Xian_Transport: O_Xian {
         "PylonRack_20Rnd_Rocket_03_AP_F"
     };
     name = "Y-32 Xi'an (Transport)";
+    nameShort = "XIAN VIC";
     rearm = 120;
 
     class Pilot: WLTurretDefaults {
@@ -336,6 +340,7 @@ class O_Xian_MineLayer: O_Xian_Transport {
     };
     cost = 3000;
     name = "Y-32 Xi'an (Mine Layer)";
+    nameShort = "XIAN MINES";
 };
 
 class O_Xian_Armed: O_Xian {
@@ -711,6 +716,7 @@ class B_Growler: Fixed_Wing {
     };
     hasHMD = 1;
     name = "EF/A-181 Growler";
+    nameShort = "GROWLER";
     rearm = 420;
     side[] = {};
     spawn = "B_Plane_Fighter_01_F";

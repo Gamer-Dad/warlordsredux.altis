@@ -1,3 +1,21 @@
+Warlords Redux 2.8 Patch 12
+Gameplay
+* Added see changelog option in strategy menu and in map diary.
+* Map now shows shortened vehicle name. Full names can still be activated by holding freelook (ALT).
+
+Bugfixes
+* Fixed invincible player AIs.
+* Fixed performance issue with minimap and map duplicating redraws.
+* Fixed VTOL default setting breaking with non-VTOL jets.
+* Fixed replaying of vote announcement.
+* Fixed SDBs killing friendlies.
+* Fixed GPS munitions tracking on indestructible props.
+* Fixed issue where killing green strongholds too early would break reserve system.
+* Fixed squad menu blur persisting after display is closed by another display.
+* Fixed Xian paradrops not rearming.
+* Fixed some vehicles not having short names.
+* Reworked capture and vote displays for performance.
+
 Warlords Redux 2.8 Patch 11
 
 Assets

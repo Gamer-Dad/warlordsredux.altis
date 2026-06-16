@@ -47,7 +47,7 @@ class O_SDV_01_F: SDV {
 // Armed Speedboat
 class Speedboat: Naval {
     cost = 500;
-    nameShort = "GMG BOAT";
+    nameShort = "SPEEDBOAT";
     rearm = 120;
 };
 class B_Boat_Armed_01_minigun_F: Speedboat {
