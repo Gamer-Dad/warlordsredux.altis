@@ -584,8 +584,6 @@ class B_Slammer_II: B_MBT_01_TUSK_F {
 };
 
 class B_Slammer_X: B_Slammer_II {
-    aps = 5;
-    capValue = 6;
     cost = 12000;
     description = "M2A4 Slammer X is an advanced variant of the M2A1 Slammer armed with an experimental railgun.";
     integralWeapon[] = {16, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};

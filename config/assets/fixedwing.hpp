@@ -541,73 +541,6 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
 
 // A-149 Gryphon (Interceptor)
 class Gryphon: Fixed_Wing {
-    hasHMD = 1;
-    name = "A-149 Gryphon";
-    nameShort = "GRYPHON";
-    rearm = 420;
-    spawn = "I_Plane_Fighter_04_F";
-};
-
-// class O_Gryphon_Interceptor: Gryphon {
-//     allowPylonMagazines[] = {
-//         "PylonMissile_Missile_KH58_x1",
-//         "PylonRack_1Rnd_LG_scalpel",
-//         "PylonRack_3Rnd_LG_scalpel",
-//         "PylonRack_4Rnd_LG_scalpel",
-//         "PylonRack_Missile_AMRAAM_D_x1",
-//         "PylonRack_Missile_AMRAAM_D_x2",
-//         "PylonMissile_Missile_AA_R77_x1",
-//         "PylonMissile_Missile_AA_R73_x1"
-//     };
-//     ammoOverrides[] = {
-//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-//     };
-//     cost = 15500;
-//     description = "A-149 Gryphon (Interceptor) is a multirole aircraft designed for air superiority.";
-//     disallowMagazines[] = {
-//         "PylonRack_Missile_AMRAAM_C_x1",
-//         "PylonRack_Missile_AMRAAM_C_x2",
-//         "PylonRack_Missile_AGM_02_x1",
-//         "PylonRack_Missile_AGM_02_x2",
-//         "PylonMissile_Bomb_GBU12_x1"
-//     };
-//     name = "A-149 Gryphon (Interceptor)";
-//     side[] = {"east"};
-//     textures[] = {
-//         "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_co.paa",
-//         "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_co.paa",
-//         "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
-//         "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
-//         "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
-//         "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
-//     };
-//     threatDetection = 16000;
-//     variant = 1;
-
-//     class Pilot: WLTurretDefaults {
-//         addMagazines[] = {
-//             "300Rnd_CMFlare_Chaff_Magazine",
-//             "300Rnd_CMFlare_Chaff_Magazine"
-//         };
-//         addWeapons[] = {
-//             "CMFlareLauncher_Singles"
-//         };
-//         removeMagazines[] = {
-//             "240Rnd_CMFlare_Chaff_Magazine"
-//         };
-//         removeWeapons[] = {
-//             "CMFlareLauncher"
-//         };
-//         turret[] = {-1};
-//     };
-// };
-
-class I_Gryphon: Gryphon {
-    aircraftSpawn = 1;
-    cost = 12000;
-};
-
-class B_Gryphon: Gryphon {
     allowPylonMagazines[] = {
         "PylonRack_Missile_AMRAAM_C_x2",
         "PylonMissile_Bomb_GBU12_x1",
@@ -622,22 +555,15 @@ class B_Gryphon: Gryphon {
         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
     };
-    cost = 15000;
-    description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with GPS-guided GBU-12 bombs.";
     disallowMagazines[] = {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
     };
-    side[] = {"west"};
+    hasHMD = 1;
+    name = "A-149 Gryphon";
+    nameShort = "GRYPHON";
+    rearm = 420;
     spawn = "I_Plane_Fighter_04_F";
-    textures[] = {
-        "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_gray_co.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_gray_co.paa",
-        "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
-        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
-    };
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
@@ -654,6 +580,26 @@ class B_Gryphon: Gryphon {
             "CMFlareLauncher"
         };
         turret[] = {-1};
+    };
+};
+
+class I_Gryphon: Gryphon {
+    aircraftSpawn = 1;
+    cost = 12000;
+};
+
+class B_Gryphon: Gryphon {
+    cost = 15000;
+    description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with GPS-guided GBU-12 bombs.";
+    side[] = {"west"};
+    spawn = "I_Plane_Fighter_04_F";
+    textures[] = {
+        "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_01_gray_co.paa",
+        "a3\air_f_jets\plane_fighter_04\data\Fighter_04_fuselage_02_gray_co.paa",
+        "a3\air_f_jets\plane_fighter_04\data\fighter_04_misc_01_co.paa",
+        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa",
+        "a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"
     };
 };
 

@@ -330,10 +330,9 @@ class B_UAV_05_F: Remote_Control {
     };
 };
 
-
 class B_Pegasus: B_UAV_05_F {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"Bo_Mk82_norunway", "Mk82 General Purpose Bomb"}}
+        {"Bo_Mk82", {"Bo_Mk82_norunway", "Paveway IV Light Bunker Buster"}}
     };
     cost = 8000;
     disallowMagazines[] = {
@@ -350,31 +349,6 @@ class B_Pegasus: B_UAV_05_F {
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",

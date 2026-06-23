@@ -4184,7 +4184,7 @@ class Mission
 					name="livadi_tent1";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=5.1230001;
 					b=7.5570002;
@@ -4199,7 +4199,7 @@ class Mission
 					name="livadi_tent2";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=5.1230001;
 					b=7.5570002;
@@ -4214,7 +4214,7 @@ class Mission
 					name="livadi_tent3";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=5.1230001;
 					b=7.5570002;
@@ -4229,7 +4229,7 @@ class Mission
 					name="livadi_tent4";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=5.1230001;
 					b=7.5570002;
@@ -4244,7 +4244,7 @@ class Mission
 					name="livadi_hospital_main";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=9.3970003;
 					b=33.365002;
@@ -4259,7 +4259,7 @@ class Mission
 					name="livadi_hospital_wing";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=18.565001;
 					b=9.3409996;
@@ -4483,7 +4483,7 @@ class Mission
 					name="atsalis_tower";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=7.2909999;
 					b=6.7870002;
@@ -4498,7 +4498,7 @@ class Mission
 					name="atsalis_runway";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=26.464352;
 					b=10.096;
@@ -4633,7 +4633,7 @@ class Mission
 					name="abdera_bunker";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=5.823;
 					b=8.3800001;
@@ -4648,7 +4648,7 @@ class Mission
 					name="abdera_tower";
 					markerType="RECTANGLE";
 					type="";
-					colorName="ColorBlack";
+					colorName="Color6_FD_F";
 					fillName="SolidFull";
 					a=5.1529999;
 					b=5.1030002;

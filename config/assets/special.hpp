@@ -12,7 +12,6 @@ class Team_Rally_Point: Special {
     name = "Team Rally Point";
     nameShort = "RALLY";
     offset[] = {0, 8, 0};
-    singleton = 3;
     showToEnemies = 30;
 };
 class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {};
@@ -172,7 +171,6 @@ class Spawn_Tent: Special {
     nameShort = "TENT";
 };
 
-class Land_TentA_F: Spawn_Tent {};
 class Land_TentDome_F: Spawn_Tent {};
 class Land_TentSolar_01_bluewhite_F: Spawn_Tent {};
 class Land_TentSolar_01_redwhite_F: Spawn_Tent {};

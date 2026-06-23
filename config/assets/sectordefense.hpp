@@ -224,7 +224,7 @@ class O_GMG_01_A_F: Static_GMG_Auto {
 
 // Smart Mine System
 class Smart_Mine: Sector_Defense {
-    cost = 1500;
+    cost = 4000;
     description = "Smart anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 4 deployed.";
     empty = 1;
     immobile = 1;

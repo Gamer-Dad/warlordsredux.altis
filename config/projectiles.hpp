@@ -40,12 +40,10 @@ class WLProjectilesConfig {
 
     class WLProjectile_VLRSAM: WLProjectile {
         ammo[] = {
-            "ammo_Missile_s750m"                 // Rhea-M
+            "ammo_Missile_sosna"                 // Sosna
         };
         camera = 1;
-        immunity = 6000;
-        sam = 1;
-        speed = 2;
+        manualSam[] = {1000, 5000};
     };
 
     class WLProjectile_LRSAM: WLProjectile {
@@ -184,6 +182,7 @@ class WLProjectilesConfig {
         ammo[] = {
             "Bo_Mk82_norunway"
         };
+        bunker = 4;
     };
 
     class WLProjectile_RunwayBomb: WLProjectile {

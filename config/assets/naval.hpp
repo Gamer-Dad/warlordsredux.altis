@@ -79,13 +79,13 @@ class O_Bomb_Boat: Bomb_Boat {
 };
 
 // Supply RHIB
-class Supply_Boat: Naval {
-    cost = 2000;
-    description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
-    hasFastTravel = 1;
-    loaded = "Land_Cargo10_military_green_F";
-    name = "Supply RHIB";
-    nameShort = "RHIB";
-    side[] = {"west", "east"};
-    spawn = "I_C_Boat_Transport_02_F";
-};
+// class Supply_Boat: Naval {
+//     cost = 2000;
+//     description = "The Supply RHIB is a fast, agile transport boat that can deploy a supply crate.";
+//     hasFastTravel = 1;
+//     loaded = "Land_Cargo10_military_green_F";
+//     name = "Supply RHIB";
+//     nameShort = "RHIB";
+//     side[] = {"west", "east"};
+//     spawn = "I_C_Boat_Transport_02_F";
+// };

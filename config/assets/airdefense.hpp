@@ -405,23 +405,34 @@ class O_Deployed_Spartan: O_Spartan {
 
 class O_Euphrates: SPAAG {
     ammoOverrides[] = {
-        {"ammo_Missile_s750", {"ammo_Missile_s750m", "S-760 Rhea-M"}}
+        {"ammo_Missile_AA_R77", {"ammo_Missile_sosna", "9M337 Sosna-R"}}
     };
     aps = 5;
     cost = 12000;
     name = "ZSU-49 Euphrates";
     nameShort = "EUPHRATES";
-    side[] = {};
+    side[] = {"west", "east"};
     spawn = "O_APC_Tracked_02_AA_F";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "magazine_Missile_s750_x4",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
             "680Rnd_35mm_AA_shells_Tracer_Green"
         };
         addWeapons[] = {
             "autocannon_35mm",
-            "weapon_s750Launcher"
+            "weapon_R77Launcher"
         };
         removeMagazines[] = {
             "4Rnd_Titan_long_missiles_O",

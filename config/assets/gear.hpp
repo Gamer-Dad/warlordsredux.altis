@@ -121,6 +121,6 @@ class Land_Cargo10_military_green_F: Gear {
     name = "Supplies (Forward Base, Sector)";
     nameShort = "SUPPLIES";
     offset[] = {0, 5, 0};
-    requirements[] = {"H", "NF"};
+    requirements[] = {"H", "NF", "S"};
     side[] = {"west", "east"};
 };

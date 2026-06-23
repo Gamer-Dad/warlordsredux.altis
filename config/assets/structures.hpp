@@ -40,8 +40,8 @@ class Land_IRMaskingCover_01_F: Structures {
 };
 
 class Defensive_Kits: Structures {
-    demolishable = 1;
-    demolishStepTime = 5;
+    demolishable = 5;
+    demolishStepTime = 3;
     obstacle = 1;
     offset[] = {0, 5, 0};
 };
@@ -106,6 +106,5 @@ class Land_CraneRail_01_F: Structures {
     name = "Aircraft Catapult";
     nameShort = "CATAPULT";
     offset[] = {0, 14, 0};
-    requirements[] = {"H"};
     side[] = {"west", "east", "guer"};
 };
