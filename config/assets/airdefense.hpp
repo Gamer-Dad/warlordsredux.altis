@@ -169,12 +169,9 @@ class O_Praetorian: Praetorian {
 };
 
 class SPAAG: Air_Defense {
-    ammoOverrides[] = {
-        {"M_Zephyr", {"M_Zephyr_SAM", "Zephyr (SAM)"}}
-    };
     aps = 2;
     capValue = 4;
-    cost = 3000;
+    cost = 4000;
     hasHMD = 1;
     loadable = 0;
     rearm = 240;
@@ -182,19 +179,24 @@ class SPAAG: Air_Defense {
 
 // IFV-6a Cheetah
 class B_APC_Tracked_01_AA_F: SPAAG {
+    ammoOverrides[] = {
+        {"ammo_Missile_AMRAAM_D", {"ammo_Missile_starstreak", "Starstreak HVM"}}
+    };
     nameShort = "CHEETAH";
     side[] = {"west"};
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "4Rnd_GAA_missiles",
-            "4Rnd_GAA_missiles",
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
             "680Rnd_35mm_AA_shells_Tracer_Red",
             "6Rnd_LG_scalpel"
         };
         addWeapons[] = {
             "autocannon_35mm",
-            "missiles_titan_AA",
+            "weapon_AMRAAMLauncher",
             "missiles_SCALPEL"
         };
         removeMagazines[] = {
@@ -211,19 +213,24 @@ class B_APC_Tracked_01_AA_F: SPAAG {
 
 // ZSU-39 Tigris
 class O_APC_Tracked_02_AA_F: SPAAG {
+    ammoOverrides[] = {
+        {"ammo_Missile_AA_R77", {"ammo_Missile_sosna", "9M337 Sosna-R"}}
+    };
     nameShort = "TIGRIS";
     side[] = {"east"};
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "4Rnd_GAA_missiles",
-            "4Rnd_GAA_missiles",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
             "680Rnd_35mm_AA_shells_Tracer_Green",
             "6Rnd_LG_scalpel"
         };
         addWeapons[] = {
             "autocannon_35mm",
-            "missiles_titan_AA",
+            "weapon_R77Launcher",
             "missiles_SCALPEL"
         };
         removeMagazines[] = {
@@ -405,23 +412,17 @@ class O_Deployed_Spartan: O_Spartan {
 
 class O_Euphrates: SPAAG {
     ammoOverrides[] = {
-        {"ammo_Missile_AA_R77", {"ammo_Missile_sosna", "9M337 Sosna-R"}}
+        {"ammo_Missile_AA_R77", {"ammo_Missile_sosnam", "9M338 Sosna-M"}}
     };
     aps = 5;
     cost = 12000;
     name = "ZSU-49 Euphrates";
     nameShort = "EUPHRATES";
-    side[] = {"west", "east"};
+    side[] = {};
     spawn = "O_APC_Tracked_02_AA_F";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "magazine_Missile_AA_R77_x1",
-            "magazine_Missile_AA_R77_x1",
-            "magazine_Missile_AA_R77_x1",
-            "magazine_Missile_AA_R77_x1",
-            "magazine_Missile_AA_R77_x1",
-            "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",

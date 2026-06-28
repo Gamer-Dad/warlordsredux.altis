@@ -22,7 +22,7 @@ class CfgWarlordSectors {
         {"AgiosDionysios", "Syrta"},
         {"AgiosDionysios", "Topolia"},
         {"AgiosDionysios", "XirolimniDam"},
-        {"AgiosKonstantinos", "Bomos"},
+        {"AgiosKonstantinos", "Fotia"},
         {"AgiosKonstantinos", "GoriFactory"},
         {"AgiosKonstantinos", "Negades"},
         {"AgiosKonstantinos", "USSFreedom"},
@@ -71,6 +71,7 @@ class CfgWarlordSectors {
         {"Atsalis", "Bomos"},
         {"Atsalis", "CapeStrigla"},
         {"Atsalis", "ThronosCastle"},
+        {"Bomos", "Fotia"},
         {"Bomos", "Oreokastro"},
         {"Bomos", "ThronosCastle"},
         {"CapeKategidis", "CapeThelos"},
@@ -123,6 +124,7 @@ class CfgWarlordSectors {
         {"Feres", "SelakanoAirbase"},
         {"Feres", "MaziBay"},
         {"FeresHill", "MaziBay"},
+        {"Fotia", "OreokastroPower"},
         {"Frini", "Ifestiona"},
         {"Frini", "Nychi"},
         {"Frini", "TonosBay"},
@@ -143,7 +145,7 @@ class CfgWarlordSectors {
         {"GhostHotel", "TheaterRuins"},
         {"GhostHotel", "Sideras"},
         {"GoriFactory", "Kore"},
-        {"GoriFactory", "Oreokastro"},
+        {"GoriFactory", "OreokastroPower"},
         {"Gravia", "LakkaFactory"},
         {"HillsideChapel", "SaltFlats"},
         {"HillsideChapel", "SofiaPower"},
@@ -201,8 +203,9 @@ class CfgWarlordSectors {
         {"NifiSolar", "Paros"},
         {"NifiSolar", "Rodopoli"},
         {"Nychi", "Sideras"},
+        {"Oreokastro", "OreokastroPower"},
         {"Oreokastro", "ThronosCastle"},
-        {"Oreokastro", "Syrta"},
+        {"OreokastroPower", "Syrta"},
         {"Panagia", "SelakanoAirbase"},
         {"Paros", "Rodopoli"},
         {"Paros", "SaltFlats"},
@@ -392,6 +395,7 @@ class CfgWarlordSectors {
         area[] = {150, 60, 40.029, 1};
         location[] = {2678.4, 22116.8, 0};
         name = "Bomos";
+        services[] = {"H"};
     };
 
     class CapeKategidis {
@@ -476,6 +480,13 @@ class CfgWarlordSectors {
         area[] = {250, 200, 190.593, 0};
         location[] = {7095.26, 11113.1, 0};
         name = "Edessa";
+        runways[] = {
+            { 7029.84, 11053.4, 0 },
+            { 7041.39, 11107.1, 0 },
+            { 7022.72, 11214.4, 0 },
+            { 6939.36, 11034.3, 0 }
+        };
+        services[] = {"H", "A"};
     };
 
     class Eginio {
@@ -506,6 +517,13 @@ class CfgWarlordSectors {
         area[] = {150, 150, 228.118, 0};
         location[] = {23056.8, 7272.02, 0};
         name = "Feres Hill";
+        services[] = {"H"};
+    };
+
+    class Fotia {
+        area[] = {200, 200, 0, 0};
+        location[] = {3115.7, 18408.1, 0};
+        name = "Fotia";
         services[] = {"H"};
     };
 
@@ -772,6 +790,13 @@ class CfgWarlordSectors {
         name = "Oreokastro";
     };
 
+    class OreokastroPower {
+        area[] = {200, 75, 0, 1};
+        location[] = {6146.1, 19797.9, 0};
+        name = "Oreokastro Power";
+        services[] = {"H"};
+    };
+
     class Orino {
         area[] = {275, 275, 121.177, 0};
         location[] = {10447.7, 17248, 0};
@@ -832,9 +857,10 @@ class CfgWarlordSectors {
     };
 
     class PyrgosRadioTower {
-        area[] = {50, 50, 0, 0};
+        area[] = {70, 70, 0, 0};
         location[] = {17866.5, 11735.4, 0};
         name = "Pyrgos Radio Tower";
+        services[] = {"H"};
     };
 
     class Rodopoli {
@@ -1024,7 +1050,7 @@ class CfgWarlordSectors {
     };
 
     class USSFreedom {
-        area[] = {190, 50, 232, 1};
+        area[] = {250, 100, 232, 1};
         carrier = 1;
         location[] = {729.8, 15581.9, 25};
         name = "USS Freedom";
@@ -1037,7 +1063,7 @@ class CfgWarlordSectors {
     };
 
     class USSIndependence {
-        area[] = {190, 50, 118, 1};
+        area[] = {250, 100, 118, 1};
         carrier = 1;
         location[] = {28604.6, 13539.4, 25};
         name = "USS Independence";
@@ -1151,14 +1177,14 @@ class CfgWarlordFactories {
         direction = 50;
     };
 
-    class KoreFactory {
-        position[] = {6228.98, 16274.5, 0};
-        direction = 180;
-    };
-
     class LakkaFactory {
         position[] = {12572.3, 16328.7, 0};
         direction = 295;
+    };
+
+    class MagosFactory {
+        position[] = {5475.8, 14629.5, 0};
+        direction = 230;
     };
 
     class NifiFactory {
@@ -1177,8 +1203,8 @@ class CfgWarlordFactories {
     };
 
     class SelakanoFactory {
-        position[] = {20084, 6698.79, 0};
-        direction = 310;
+        position[] = {20355.5, 6106.1, 0};
+        direction = 230;
     };
 
     class SofiaFactory {

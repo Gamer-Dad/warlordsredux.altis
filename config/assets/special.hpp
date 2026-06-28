@@ -7,7 +7,6 @@ class Team_Rally_Point: Special {
     demolishable = 1;
     demolishStepTime = 3;
     disableDamage = 1;
-    fragile = 200;
     hasFastTravel = 1;
     name = "Team Rally Point";
     nameShort = "RALLY";
@@ -64,6 +63,10 @@ class Land_BagBunker_Small_F: Special {
 
 class Static_HMG_Shielded: Special {
     cost = 500;
+    demolishable = 1;
+    demolishStepTime = 1;
+    disableDamage = 1;
+    fragile = 5000;
     name = "Mk19 Grenade Launcher (Static)";
     nameShort = "STATIC GMG";
     offset[] = {0, 3, 0};

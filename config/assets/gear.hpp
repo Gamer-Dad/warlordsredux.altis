@@ -80,7 +80,7 @@ class B_Slingload_01_Repair_F: Huron_Pod {
 };
 class B_Slingload_01_Medevac_F: Huron_Pod {
     hasFastTravel = 1;
-    loaded = "Land_BagBunker_Small_F";
+    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     side[] = {"west"};
 };
 
@@ -106,7 +106,7 @@ class Land_Pod_Heli_Transport_04_repair_F: Taru_Pod {
 };
 class Land_Pod_Heli_Transport_04_medevac_F: Taru_Pod {
     hasFastTravel = 1;
-    loaded = "Land_BagBunker_Small_F";
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     side[] = {"east"};
 };
 

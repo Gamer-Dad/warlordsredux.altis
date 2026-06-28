@@ -114,13 +114,14 @@ class Passenger_Transport: Light_Vehicle {
     cost = 200;
     hasFastTravel = 1;
     loadable = 0;
-    loaded = "Land_BagBunker_Small_F";
 };
 class B_Truck_01_transport_F: Passenger_Transport {
+    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     nameShort = "HEMMT";
     side[] = {"west"};
 };
 class O_Truck_03_transport_F: Passenger_Transport {
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     nameShort = "TEMPEST";
     side[] = {"east"};
 };
@@ -131,13 +132,14 @@ class Medical_Transport: Light_Vehicle {
     cost = 250;
     hasFastTravel = 1;
     loadable = 0;
-    loaded = "Land_BagBunker_Small_F";
     nameShort = "MEDICAL";
 };
 class B_Truck_01_medical_F: Medical_Transport {
+    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     side[] = {"west"};
 };
 class O_Truck_03_medical_F: Medical_Transport {
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     side[] = {"east"};
 };
 
@@ -176,18 +178,21 @@ class MRAP_Unarmed: Light_Vehicle {
 
 // Hunter
 class B_MRAP_01_F: MRAP_Unarmed {
+    loaded = "B_AR2_Deployed";
     nameShort = "HUNTER";
     side[] = {"west"};
 };
 
 // Ifrit
 class O_MRAP_02_F: MRAP_Unarmed {
+    loaded = "O_AR2_Deployed";
     nameShort = "IFRIT";
     side[] = {"east"};
 };
 
 // Strider
 class I_MRAP_03_F: MRAP_Unarmed {
+    loaded = "I_AR2_Deployed";
     nameShort = "STRIDER";
     side[] = {"guer"};
 };

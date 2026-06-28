@@ -38,12 +38,21 @@ class WLProjectilesConfig {
         speed = 1.1;
     };
 
-    class WLProjectile_VLRSAM: WLProjectile {
+    class WLProjectile_ManSAM: WLProjectile {
         ammo[] = {
-            "ammo_Missile_sosna"                 // Sosna
+            "ammo_Missile_sosna",               // Sosna
+            "ammo_Missile_starstreak"           // Starstreak
         };
         camera = 1;
-        manualSam[] = {1000, 5000};
+        manualSam[] = {500, 5000, 6000};
+    };
+
+    class WLProjectile_VLRSAM: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_sosnam"               // Sosna-M
+        };
+        camera = 1;
+        manualSam[] = {1000, 5000, 18000};
     };
 
     class WLProjectile_LRSAM: WLProjectile {
@@ -303,6 +312,13 @@ class WLProjectilesConfig {
             "M_MineLayerSmall"
         };
         mineLayer = "AT_DeployedMinefieldSmall";
+    };
+
+    class WLProjectile_SupplyLayer: WLProjectile {
+        ammo[] = {
+            "M_SupplyLayer"
+        };
+        mineLayer = "Land_Cargo10_military_green_F";
     };
 
     class WLProjectile_ExtendedSAM: WLProjectile {

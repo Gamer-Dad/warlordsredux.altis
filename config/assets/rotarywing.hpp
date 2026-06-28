@@ -376,7 +376,6 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
             "250Rnd_30mm_HE_shells_Tracer_Green",
             "250Rnd_30mm_HE_shells_Tracer_Green"
         };
-        deviceJammer = 1;
         turret[] = {0};
     };
 };
@@ -424,7 +423,6 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
         addMagazines[] = {
             "1000Rnd_20mm_shells"
         };
-        deviceJammer = 1;
         turret[] = {0};
     };
 };

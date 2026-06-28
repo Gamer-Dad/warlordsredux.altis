@@ -223,36 +223,36 @@ class O_GMG_01_A_F: Static_GMG_Auto {
 };
 
 // Smart Mine System
-class Smart_Mine: Sector_Defense {
-    cost = 4000;
-    description = "Smart anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 4 deployed.";
-    empty = 1;
-    immobile = 1;
-    loadable = 1;
-    nameShort = "SMART MINE";
-    offset[] = {0, 5, 0};
-    rearm = 900;
-    requirements[] = {"S"};
-    singleton = 4;
-    showToEnemies = 100;
-    smartMineAP = 6;
-    smartMineAT = 2;
-};
-class B_Smart_Mine: Smart_Mine {
-    name = "XM205 Smart Mine System";
-    side[] = {"west"};
-    spawn = "B_UGV_01_F";
-};
-class O_Smart_Mine: Smart_Mine {
-    name = "PTKM-2 Smart Mine System";
-    side[] = {"east"};
-    spawn = "O_UGV_01_F";
-};
-class I_Smart_Mine: Smart_Mine {
-    name = "XM205 Smart Mine System";
-    side[] = {"guer"};
-    spawn = "I_UGV_01_F";
-};
+// class Smart_Mine: Sector_Defense {
+//     cost = 4000;
+//     description = "Smart anti-tank mine system that launches anti-tank top-attack mines at enemy vehicles. Must be placed outside. Mines: 6 AP, 2 AT. Limit 4 deployed.";
+//     empty = 1;
+//     immobile = 1;
+//     loadable = 1;
+//     nameShort = "SMART MINE";
+//     offset[] = {0, 5, 0};
+//     rearm = 900;
+//     requirements[] = {"S"};
+//     singleton = 4;
+//     showToEnemies = 100;
+//     smartMineAP = 6;
+//     smartMineAT = 2;
+// };
+// class B_Smart_Mine: Smart_Mine {
+//     name = "XM205 Smart Mine System";
+//     side[] = {"west"};
+//     spawn = "B_UGV_01_F";
+// };
+// class O_Smart_Mine: Smart_Mine {
+//     name = "PTKM-2 Smart Mine System";
+//     side[] = {"east"};
+//     spawn = "O_UGV_01_F";
+// };
+// class I_Smart_Mine: Smart_Mine {
+//     name = "XM205 Smart Mine System";
+//     side[] = {"guer"};
+//     spawn = "I_UGV_01_F";
+// };
 
 class Mortar: Sector_Defense {
     cost = 5000;

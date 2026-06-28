@@ -482,6 +482,7 @@ class B_MBT_01_cannon_F: Heavy_Vehicles {
     };
     isLight = 1;
     integralWeapon[] = {6, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    loaded = "Land_BagBunker_Small_F";
     nameShort = "SLAMMER";
     rearm = 300;
     side[] = {"west"};

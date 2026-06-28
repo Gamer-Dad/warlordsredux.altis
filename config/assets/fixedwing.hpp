@@ -34,15 +34,18 @@ class Blackfish: Fixed_Wing {
 };
 class B_T_VTOL_01_infantry_F: Blackfish {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_MineLayer", "CBU-89/B Mine Layer"}}
+        {"Bo_Mk82", {"M_SupplyLayer", "Supply Drop"}}
     };
-    description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
-    name = "V-44 X Blackfish (Mine Layer)";
-    nameShort = "BLACKFISH MINES";
+    description = "V-44 X Blackfish (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
+    name = "V-44 X Blackfish (Supplies)";
+    nameShort = "BLACKFISH SUPPLY";
+    requirements[] = {"H", "NF", "S"};
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",
             "300Rnd_CMFlare_Chaff_Magazine"
         };
@@ -60,16 +63,23 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     };
 };
 class B_T_VTOL_01_vehicle_F: Blackfish {
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"M_MineLayer", "CBU-89/B Mine Layer"}}
+    };
+    description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
     hasLoader = 1;
     isHeavyLift = 1;
-    nameShort = "BLACKFISH VIC";
+    name = "V-44 X Blackfish (Mine Layer)";
+    nameShort = "BLACKFISH MINES";
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
+            "PylonMissile_1Rnd_Mk82_F",
             "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
+            "Mk82BombLauncher",
             "CMFlareLauncher_Singles"
         };
         removeMagazines[] = {
@@ -285,11 +295,11 @@ class O_Xian: Fixed_Wing {
     spawn = "O_T_VTOL_02_vehicle_dynamicLoadout_F";
 };
 
-class O_Xian_Transport: O_Xian {
+class O_Xian_MineLayer: O_Xian {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_DroneDeployer", "Drone Deployer Canister"}}
+        {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
     };
-    cost = 2500;
+    cost = 3000;
     disallowMagazines[] = {
         "PylonMissile_1Rnd_Bomb_03_F",
         "PylonRack_1Rnd_Missile_AA_03_F",
@@ -301,8 +311,8 @@ class O_Xian_Transport: O_Xian {
         "PylonRack_20Rnd_Rocket_03_HE_F",
         "PylonRack_20Rnd_Rocket_03_AP_F"
     };
-    name = "Y-32 Xi'an (Transport)";
-    nameShort = "XIAN VIC";
+    name = "Y-32 Xi'an (Mine Layer)";
+    nameShort = "XIAN MINES";
     rearm = 120;
 
     class Pilot: WLTurretDefaults {
@@ -332,15 +342,6 @@ class O_Xian_Transport: O_Xian {
         };
         turret[] = {0};
     };
-};
-
-class O_Xian_MineLayer: O_Xian_Transport {
-    ammoOverrides[] = {
-        {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
-    };
-    cost = 3000;
-    name = "Y-32 Xi'an (Mine Layer)";
-    nameShort = "XIAN MINES";
 };
 
 class O_Xian_Armed: O_Xian {

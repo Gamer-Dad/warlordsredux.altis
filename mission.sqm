@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=514;
+	toggles=1538;
 	class ItemIDProvider
 	{
-		nextID=4153;
+		nextID=4156;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=232;
+		nextID=238;
 	};
 	class Camera
 	{
-		pos[]={10753.556,29.032709,10924.528};
-		dir[]={-0.74288648,-0.14587118,0.65334481};
-		up[]={-0.10953958,0.98930436,0.096336827};
-		aside[]={0.66040838,-1.5972182e-07,0.75091761};
+		pos[]={7122.1875,15.682526,11061.617};
+		dir[]={-0.97583431,-0.13978767,0.16870871};
+		up[]={-0.13783675,0.99019146,0.023830557};
+		aside[]={0.170379,-1.4748075e-06,0.98547882};
 	};
 };
 binarizationWanted=0;
@@ -36,6 +36,7 @@ addons[]=
 	"A3_Structures_F_Dominants_Hospital",
 	"A3_Modules_F",
 	"A3_Structures_F_Orange_Humanitarian_Camps",
+	"A3_Missions_F_Beta",
 	"A3_Ui_F",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Walls",
@@ -49,7 +50,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=13;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -94,40 +95,47 @@ class AddonsMetaData
 		};
 		class Item6
 		{
+			className="A3_Missions_F_Beta";
+			name="Arma 3 Beta - Playable Content";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item8
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
 		{
 			className="A3_Structures_F_Exp_Industrial";
 			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="A3_Structures_F_Enoch_Infrastructure";
 			name="Arma 3 Contact Platform - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item11
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item12
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
@@ -181,7 +189,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=126;
+		items=127;
 		class Item0
 		{
 			dataType="Logic";
@@ -4652,7 +4660,7 @@ class Mission
 					fillName="SolidFull";
 					a=5.1529999;
 					b=5.1030002;
-					angle=12.504997;
+					angle=12.504996;
 					id=4146;
 					atlOffset=-0.0004119873;
 				};
@@ -4671,6 +4679,107 @@ class Mission
 			id=4142;
 			type="Logic";
 			atlOffset=167.90945;
+		};
+		class Item126
+		{
+			dataType="Layer";
+			name="Edessa";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7005.0176,7.4148283,11088.8};
+						angles[]={0.1687561,4.9444346,0.068961367};
+					};
+					areaSize[]={21.297388,0,197.67416};
+					areaIsRectangle=1;
+					flags=1;
+					id=4153;
+					type="ModuleHideTerrainObjects_F";
+					atlOffset=-1.0399837;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="#filter";
+							expression="_this setVariable [""#filter"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=15;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="#hideLocally";
+							expression="_this setVariable [""#hideLocally"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7340.083,7.4459462,11005.398};
+						angles[]={6.1148868,1.7962574,6.2131066};
+					};
+					areaSize[]={21.297388,0,140.34174};
+					areaIsRectangle=1;
+					flags=1;
+					id=4155;
+					type="ModuleHideTerrainObjects_F";
+					atlOffset=0.9026494;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="#filter";
+							expression="_this setVariable [""#filter"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=15;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="#hideLocally";
+							expression="_this setVariable [""#hideLocally"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			id=4154;
+			atlOffset=3.4159961;
 		};
 	};
 	class Connections

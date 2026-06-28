@@ -1,47 +1,71 @@
 Warlords Redux 2.8 Patch 13
 Assets
+* (Removed) Smart mines.
 * (Removed) Supply boat.
-* Euphrates: missile changed to manual guidance.
+* (Removed) Xian Transport.
+* Blackfish (Mine Layer): changed to drop supplies.
+* Blackfish (Transport): changed to mine layer.
+* Euphrates: missile changed to beam rider.
+* Hunter/Ifrit: now deploys darters.
+* Medical trucks: now deploys rally points instead of bunkers.
 * Pegasus: reduced bombs 45->20, bombs now do 4 destructible damage.
-* Smart mines: cost increased $1,500->4,000.
+* Slammers: now deploys bunkers.
+* SPAAG: replaced Zephyrs with beam riders, cost $3,000->4,000.
 * Supplies: can no longer be spawned in sectors under attack.
 * Team rally: placeable limit (3) removed.
+* Transport trucks: now deploys rally points instead of bunkers.
 
 Gameplay
+* Added badges based on ELO.
 * Added no-fly zone for home as a separate item in buy menu.
 * Added setting to change volume for bird flocks on player TP.
 * Added surrender message.
+* Adding supplies to a sector will reset its stronghold cooldown timer.
 * Air wrecks: now combine if within 500m of another wreck, value shown on map.
+* Airbase camper warning now restricts plane purchases at airbase by default, protection can be disabled in settings.
 * Applied Blufor Gryphon customizations to green Gryphon.
+* Attack helicopters: removed device jammer on laser.
 * Changed custom building on map color from black to gray.
-* Collaborator option: changed to allow control of vehicles on next sector, cost increased to $10,000.
-* Conscription defaults to false when player is already in target sector (can be turned off in settings).
+* Changed icons and colors for unknown sectors.
+* Collaborator option: changed to allow control of vehicles on next sector, cost increased to $8,000.
+* Conscription defaults to false when player is already in target sector (can be overridden in settings).
 * Death info display now persistent until player respawns.
 * Default loadouts.
+* Designate team priority: now free.
 * Drone EW now boosted by all enemy air wreck retrievals instead of just drone wrecks.
+* Enemies nearby lock radius 125->100m.
+* Field repairs now work on helo rotors.
+* Forward base now only considers infantry as intruders.
 * Forward base upgrades now restricted to fob placer.
-* No fly zone: minimum altitude increased 1,000->1,500m, cost reduced $8,000->6,000, cooldown reduced 20->16 minutes, duration increased 6->7 minutes, radius increased 6->7 km, expansion speed increased.
+* HUD now uses arma 3 subtitling system for system messages.
+* Minefield warning: can be disabled or sensitivity adjusted in settings.
+* Minor map balance changes.
+* No-fly zone: minimum altitude increased 1,000->1,500m, cost reduced $8,000->6,000, cooldown reduced 20->16 minutes, duration increased 6->7 minutes, radius increased 6->7 km, expansion speed increased.
 * Player vote power now ELO-dependent.
+* Paradrop: unified under one free control system.
 * Punishment timer now shows hh:mm:ss to be more clear.
 * Reduced size of capture/vote interface.
-* Sector reinforcement capture modifier now scales linearly based on number of reinforcements (1-5x), halves defense value when depleted.
+* Sector reinforcement capture modifier now scales linearly based on number of reinforcements (0-4x), halves cap power when depleted.
 * Sector reinforcement depletion no longer disables conscription.
 * Sector reserves and reinforcements now shown in HUD.
 * Sector total reinforcements reduced, income reduced from 5->3 per minute.
 * Spawn menu refresh rate reduced from 5->1 Hz.
 * Spawn menu cam now disabled when player is alive.
+* Strongholds can now be created in sectors under attack, but destroyed strongholds will add a 5 minute timer.
+* Teamkilling timeout now 5 minutes.
 * Tents are now team-dependent rather than chemlight color dependent for easy team visual identification.
 * Vehicle deployment above ground changed to deploy more precisely.
 
 Bugfixes
 * Fixed AI remaining on map after sector is captured or reset.
-* Fixed AI teleporting into owned vehicles that they've been ordered to leave on new order.
+* Fixed AI teleporting into owned vehicles that they've been ordered to leave when new command is given.
 * Fixed auto-sam firing on far targets when near-targets can't be engaged, option to enable now requires local control.
 * Fixed exploit that allowed paradropping supplies.
 * Fixed glitchy animations in unconscious state.
 * Fixed instances of players dying directly when aircraft is damaged by SAM.
 * Fixed punishment for FF not being triggered after first time.
 * Fixed secure wreck not recognizing some wrecks temporarily.
+* Fixed removed strongholds still showing up on HUD.
 * Fixed Viper helmets being removed on loadout save.
 
 Warlords Redux 2.8 Patch 12
