@@ -388,12 +388,14 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
         {"PylonRack_Missile_HARM_x1", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
         {"PylonRack_12Rnd_PGM_missiles", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
         {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
-        {"PylonRack_Missile_AMRAAM_D_x1", {"PylonLeft2", "PylonRight2"}}
+        {"PylonRack_Missile_AMRAAM_D_x1", {"PylonLeft2", "PylonRight2"}},
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonLeft1", "PylonRight1"}}
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
     };
-    cost = 9000;
+    cost = 10000;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -434,9 +436,11 @@ class B_Heli_Attack_01_pylons_dynamicLoadout_F: B_Heli_Attack_01_dynamicLoadout_
         {"PylonRack_12Rnd_PGM_missiles", {"PylonExternalLeft", "PylonLeft1", "PylonLeft3", "PylonExternalRight", "PylonRight1", "PylonRight3"}},
         {"PylonRack_3Rnd_LG_scalpel", {"PylonLeft1", "PylonLeft3", "PylonRight1", "PylonRight3"}},
         {"PylonRack_Missile_AMRAAM_D_x1", {"PylonLeft2", "PylonRight2"}},
-        {"PylonRack_Missile_AMRAAM_D_x2", {"PylonExternalLeft", "PylonExternalRight"}}
+        {"PylonRack_Missile_AMRAAM_D_x2", {"PylonExternalLeft", "PylonExternalRight"}},
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonLeft1", "PylonRight1"}},
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonExternalLeft", "PylonExternalRight"}}
     };
-    cost = 11000;
+    cost = 12000;
     name = "AH-99 Blackfoot Block II";
     nameShort = "BLACKFOOT II";
 };

@@ -631,21 +631,21 @@
             <Chinese>徵召隊伍</Chinese>
         </Key>
         <Key ID="STR_WL_conscriptFailed">
-            <Original>No team priority designated.</Original>
-            <English>No team priority designated.</English>
-            <Czech>Není určena žádná priorita týmu.</Czech>
-            <French>Aucune priorité d’équipe définie.</French>
-            <German>Keine Team-Priorität festgelegt.</German>
-            <Italian>Nessuna priorità di squadra assegnata.</Italian>
-            <Polish>Nie wyznaczono priorytetu zespołu.</Polish>
-            <Portuguese>Nenhuma prioridade da equipe definida.</Portuguese>
-            <Russian>Приоритет команды не назначен.</Russian>
-            <Spanish>No se ha designado ninguna prioridad del equipo.</Spanish>
-            <Turkish>Takım önceliği belirlenmedi.</Turkish>
-            <Korean>팀 우선순위가 지정되지 않았습니다.</Korean>
-            <Japanese>チーム優先が指定されていません。</Japanese>
-            <Chinesesimp>未指定团队优先点。</Chinesesimp>
-            <Chinese>未指定團隊優先點。</Chinese>
+            <Original>Team priority no longer available.</Original>
+            <English>Team priority no longer available.</English>
+            <Czech>Priorita týmu již není k dispozici.</Czech>
+            <French>La priorité d’équipe n’est plus disponible.</French>
+            <German>Team-Priorität nicht mehr verfügbar.</German>
+            <Italian>La priorità di squadra non è più disponibile.</Italian>
+            <Polish>Priorytet zespołu nie jest już dostępny.</Polish>
+            <Portuguese>A prioridade da equipe não está mais disponível.</Portuguese>
+            <Russian>Приоритет команды больше недоступен.</Russian>
+            <Spanish>La prioridad del equipo ya no está disponible.</Spanish>
+            <Turkish>Takım önceliği artık mevcut değil.</Turkish>
+            <Korean>팀 우선순위를 더 이상 사용할 수 없습니다.</Korean>
+            <Japanese>チーム優先は利用できなくなりました。</Japanese>
+            <Chinesesimp>团队优先级不再可用。</Chinesesimp>
+            <Chinese>團隊優先級不再可用。</Chinese>
         </Key>
         <Key ID="STR_WL_conscriptInfo">
             <Original>Conscript the team to the team priority point. This gives everyone the option to fast travel there immediately.</Original>
@@ -665,21 +665,21 @@
             <Chinese>將隊伍徵召至團隊優先點。這會使所有人都能立即快速移動至該位置。</Chinese>
         </Key>
         <Key ID="STR_WL_conscriptMessage">
-            <Original>%1 has called the team to the frontline. Do you want to fast travel there now?</Original>
-            <English>%1 has called the team to the frontline. Do you want to fast travel there now?</English>
-            <Czech>%1 povolal tým na frontu. Chcete se tam nyní rychle přesunout?</Czech>
-            <French>%1 a appelé l’équipe au front. Voulez-vous vous y rendre immédiatement par voyage rapide ?</French>
-            <German>%1 hat das Team an die Front beordert. Möchtest du jetzt per Schnellreise dorthin reisen?</German>
-            <Italian>%1 ha chiamato la squadra al fronte. Vuoi effettuare subito il viaggio rapido?</Italian>
-            <Polish>%1 powołał zespół na front. Czy chcesz teraz szybko się tam przenieść?</Polish>
-            <Portuguese>%1 convocou a equipe para a linha de frente. Deseja viajar rapidamente para lá agora?</Portuguese>
-            <Russian>%1 призвал команду на линию фронта. Хотите немедленно быстро переместиться туда?</Russian>
-            <Spanish>%1 ha llamado al equipo al frente. ¿Quieres viajar rápidamente allí ahora?</Spanish>
-            <Turkish>%1 takımı cepheye çağırdı. Oraya şimdi hızlı seyahat etmek ister misin?</Turkish>
-            <Korean>%1이(가) 팀을 전선으로 소집했습니다. 지금 그곳으로 빠른 이동을 하시겠습니까?</Korean>
-            <Japanese>%1 がチームを前線へ招集しました。今すぐファストトラベルしますか？</Japanese>
-            <Chinesesimp>%1 已将队伍召集至前线。是否现在快速移动到该位置？</Chinesesimp>
-            <Chinese>%1 已將隊伍召集至前線。是否現在快速移動到該位置？</Chinese>
+            <Original>%1 has called the team to the frontline (%2). Do you want to fast travel there now?</Original>
+            <English>%1 has called the team to the frontline (%2). Do you want to fast travel there now?</English>
+            <Czech>%1 povolal tým na frontu (%2). Chcete se tam nyní rychle přesunout?</Czech>
+            <French>%1 a appelé l’équipe au front (%2). Voulez-vous vous y rendre immédiatement par voyage rapide ?</French>
+            <German>%1 hat das Team an die Front (%2) beordert. Möchtest du jetzt per Schnellreise dorthin reisen?</German>
+            <Italian>%1 ha chiamato la squadra al fronte (%2). Vuoi effettuare subito il viaggio rapido?</Italian>
+            <Polish>%1 powołał zespół na front (%2). Czy chcesz teraz szybko się tam przenieść?</Polish>
+            <Portuguese>%1 convocou a equipe para a linha de frente (%2). Deseja viajar rapidamente para lá agora?</Portuguese>
+            <Russian>%1 призвал команду на линию фронта (%2). Хотите немедленно быстро переместиться туда?</Russian>
+            <Spanish>%1 ha llamado al equipo al frente (%2). ¿Quieres viajar rápidamente allí ahora?</Spanish>
+            <Turkish>%1 takımı cepheye çağırdı (%2). Oraya şimdi hızlı seyahat etmek ister misin?</Turkish>
+            <Korean>%1이(가) 팀을 전선으로 소집했습니다 (%2). 지금 그곳으로 빠른 이동을 하시겠습니까?</Korean>
+            <Japanese>%1 がチームを前線へ招集しました (%2)。今すぐファストトラベルしますか？</Japanese>
+            <Chinesesimp>%1 已将队伍召集至前线 (%2)。是否现在快速移动到该位置？</Chinesesimp>
+            <Chinese>%1 已將隊伍召集至前線 (%2)。是否現在快速移動到該位置？</Chinese>
         </Key>
         <Key ID="STR_WL_cooldownIndicator">
             <Original>Cooldown: %1</Original>
@@ -1394,6 +1394,23 @@
             <Japanese>装備名を入力してください:</Japanese>
             <Chinesesimp>输入配置名称：</Chinesesimp>
             <Chinese>輸入配置名稱：</Chinese>
+        </Key>
+        <Key ID="STR_WL_fileHelpAA">
+            <Original>src\help\aa_english.txt</Original>
+            <English>src\help\aa_english.txt</English>
+            <Czech>src\help\aa_english.txt</Czech>
+            <French>src\help\aa_english.txt</French>
+            <German>src\help\aa_english.txt</German>
+            <Italian>src\help\aa_english.txt</Italian>
+            <Polish>src\help\aa_english.txt</Polish>
+            <Portuguese>src\help\aa_english.txt</Portuguese>
+            <Russian>src\help\aa_russian.txt</Russian>
+            <Spanish>src\help\aa_english.txt</Spanish>
+            <Turkish>src\help\aa_english.txt</Turkish>
+            <Korean>src\help\aa_english.txt</Korean>
+            <Japanese>src\help\aa_english.txt</Japanese>
+            <Chinesesimp>src\help\aa_chinese.txt</Chinesesimp>
+            <Chinese>src\help\aa_chinese.txt</Chinese>
         </Key>
         <Key ID="STR_WL_fixedWing">
             <Original>Fixed Wing</Original>

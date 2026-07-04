@@ -160,8 +160,8 @@ dlcs[]=
 randomSeed=3694325;
 class ScenarioData
 {
-	author="Jezuro+WSV";
-	overviewText="Warlords Redux introduces hundreds of improvements of the original Warlords.";
+	author="Jezuro + WSV";
+	overviewText="Warlords Redux is an actively maintained and developed version of the original Warlords.";
 	overViewPicture="src\img\wl_logo_ca.paa";
 	joinUnassigned=0;
 };

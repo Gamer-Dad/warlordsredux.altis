@@ -46,7 +46,6 @@ class B_T_VTOL_01_infantry_F: Blackfish {
         addMagazines[] = {
             "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
             "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
@@ -351,7 +350,6 @@ class O_Xian_Armed: O_Xian {
         "PylonMissile_Missile_KH58_INT_x1",
         "PylonMissile_Missile_AA_R73_x1",
         "PylonMissile_Missile_AA_R77_x1",
-        "PylonRack_3Rnd_Missile_AGM_02_F",
         "PylonRack_Missile_BIM9X_x1",
         "PylonRack_Missile_BIM9X_x2"
     };
@@ -366,6 +364,10 @@ class O_Xian_Armed: O_Xian {
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",

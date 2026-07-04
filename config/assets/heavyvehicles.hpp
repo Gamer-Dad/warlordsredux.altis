@@ -440,13 +440,6 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
     nameShort = "RHINO";
     rearm = 240;
     side[] = {"west"};
-};
-
-// Rhino MGS UP
-class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
-    aps = 3;
-    cost = 4500;
-    isLight = 0;
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -472,86 +465,26 @@ class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
     };
 };
 
+// Rhino MGS UP
+class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
+    aps = 3;
+    cost = 4500;
+};
+
 // M2A1 Slammer
 class B_MBT_01_cannon_F: Heavy_Vehicles {
     aps = 3;
-    capValue = 4;
+    capValue = 5;
     cost = 5800;
     disallowMagazines[] = {
         "4Rnd_120mm_LG_cannon_missiles"
     };
     isLight = 1;
-    integralWeapon[] = {6, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    integralWeapon[] = {8, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     loaded = "Land_BagBunker_Small_F";
     nameShort = "SLAMMER";
     rearm = 300;
     side[] = {"west"};
-};
-
-// M2A1 Slammer UP
-class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
-    cost = 6200;
-    isLight = 0;
-    nameShort = "SLAMMER UP";
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "450Rnd_127x108_Ball",
-            "450Rnd_127x108_Ball",
-            "450Rnd_127x108_Ball",
-            "450Rnd_127x108_Ball"
-        };
-        addWeapons[] = {
-            "HMG_NSVT"
-        };
-        removeMagazines[] = {
-            "200Rnd_762x51_Belt_Red"
-        };
-        removeWeapons[] = {
-            "LMG_coax"
-        };
-        turret[] = {0};
-    };
-};
-
-class Kuma: Heavy_Vehicles {
-    aps = 3;
-    capValue = 6;
-    cost = 8000;
-    disallowMagazines[] = {
-        "4Rnd_120mm_LG_cannon_missiles"
-    };
-    name = "MBT-52 Kuma";
-    nameShort = "KUMA";
-    rearm = 300;
-    spawn = "I_MBT_03_cannon_F";
-};
-class B_MBT_03_cannon_F: Kuma {
-    side[] = {"west"};
-    textures[] = {
-        "src\img\camo\kuma01.jpg",
-        "src\img\camo\kuma02.jpg",
-        "src\img\camo\kuma03.jpg",
-        "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
-    };
-};
-class I_MBT_03_cannon_F: Kuma {
-    side[] = {"guer"};
-    vehicleSpawn = 1;
-};
-
-class B_Slammer_II: B_MBT_01_TUSK_F {
-    aps = 5;
-    capValue = 6;
-    cost = 9000;
-    description = "M2A2 Slammer II is an advanced variant of the M2A1 Slammer armed with an advanced 125mm cannon.";
-    hasHMD = 1;
-    integralWeapon[] = {8, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
-    nameShort = "SLAMMER II";
-    isLight = 1;
-    name = "M2A2 Slammer II";
-    spawn = "B_MBT_01_TUSK_F";
-    variant = 1;
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -584,7 +517,45 @@ class B_Slammer_II: B_MBT_01_TUSK_F {
     };
 };
 
-class B_Slammer_X: B_Slammer_II {
+// M2A1 Slammer UP
+class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
+    ammoOverrides[] = {
+        {"Sh_125mm_APFSDS_T_Red", {"Sh_140mm_APFSDS", "XM291 ATAC"}}
+    };
+    aps = 5;
+    capValue = 6;
+    cost = 6500;
+    hasHMD = 1;
+    nameShort = "SLAMMER UP";
+};
+
+class Kuma: Heavy_Vehicles {
+    aps = 3;
+    capValue = 6;
+    cost = 8000;
+    disallowMagazines[] = {
+        "4Rnd_120mm_LG_cannon_missiles"
+    };
+    name = "MBT-52 Kuma";
+    nameShort = "KUMA";
+    rearm = 300;
+    spawn = "I_MBT_03_cannon_F";
+};
+class B_MBT_03_cannon_F: Kuma {
+    side[] = {"west"};
+    textures[] = {
+        "src\img\camo\kuma01.jpg",
+        "src\img\camo\kuma02.jpg",
+        "src\img\camo\kuma03.jpg",
+        "\a3\Armor_F\Data\camonet_NATO_Desert_CO.paa"
+    };
+};
+class I_MBT_03_cannon_F: Kuma {
+    side[] = {"guer"};
+    vehicleSpawn = 1;
+};
+
+class B_Slammer_X: B_MBT_01_TUSK_F {
     cost = 12000;
     description = "M2A4 Slammer X is an advanced variant of the M2A1 Slammer armed with an experimental railgun.";
     integralWeapon[] = {16, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
@@ -703,45 +674,6 @@ class B_MBT_01_mlrs_F: MRLS {
     nameShort = "MRLS";
     side[] = {"west"};
 };
-// M5 Sandstorm MRLS
-// class B_MLRS_Guided: B_MBT_01_mlrs_F {
-//     ammoOverrides[] = {
-//         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "GLSDB (Laser-Guided)"}}
-//     };
-//     cost = 30000;
-//     hasHMD = 1;
-//     name = "M5 Sandstorm II";
-//     nameShort = "MRLS LG";
-//     spawn = "B_MBT_01_mlrs_F";
-//     variant = 1;
-
-//     class Gunner: WLTurretDefaults {
-//         addMagazines[] = {
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1"
-//         };
-//         addWeapons[] = {
-//             "weapon_AGM_65Launcher"
-//         };
-//         removeMagazines[] = {
-//             "12Rnd_230mm_rockets"
-//         };
-//         removeWeapons[] = {
-//             "rockets_230mm_GAT"
-//         };
-//         turret[] = {0};
-//     };
-// };
 class O_Truck_02_MRL_F: MRLS {
     cost = 18000;
     loaded = "CamoNet_OPFOR_big_F";
@@ -755,41 +687,3 @@ class O_Truck_02_MRL_F: MRLS {
         "\a3\soft_f_gamma\truck_02\data\truck_02_mrl_OPFOR_co.paa"
     };
 };
-// class O_MRLS_Guided: O_Truck_02_MRL_F {
-//     ammoOverrides[] = {
-//         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
-//     };
-//     cost = 23000;
-//     hasHMD = 1;
-//     name = "Zamak MRL (Guided)";
-//     nameShort = "MRLS LG";
-//     spawn = "I_Truck_02_MRL_F";
-//     variant = 1;
-
-//     class Gunner: WLTurretDefaults {
-//         addMagazines[] = {
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1",
-//             "magazine_Missile_AGM_02_x1"
-//         };
-//         addWeapons[] = {
-//             "weapon_AGM_65Launcher"
-//         };
-//         removeMagazines[] = {
-//             "12Rnd_230mm_rockets"
-//         };
-//         removeWeapons[] = {
-//             "rockets_230mm_GAT"
-//         };
-//         turret[] = {0};
-//     };
-// };

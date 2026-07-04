@@ -1,48 +1,68 @@
 Warlords Redux 2.8 Patch 13
 Assets
+* (Removed) Slammer II.
 * (Removed) Smart mines.
 * (Removed) Supply boat.
+* (Removed) Titan static launchers.
 * (Removed) Xian Transport.
 * Blackfish (Mine Layer): changed to drop supplies.
 * Blackfish (Transport): changed to mine layer.
+* Blackfoot: added LGM pylons, price increase $1,000.
+* Bunkers: are now rearm, repair, refuel.
 * Euphrates: missile changed to beam rider.
 * Hunter/Ifrit: now deploys darters.
 * Medical trucks: now deploys rally points instead of bunkers.
+* Medusa/Ghost: changed missiles to beam rider.
 * Pegasus: reduced bombs 45->20, bombs now do 4 destructible damage.
-* Slammers: now deploys bunkers.
+* Radome: added a directional air radar, resilient to non-bunker busters, cost increased $1,500->2,500.
+* Rhino: upgraded cannon to 125mm.
+* Slammer: applied previous Slammer II upgrades, now deploys bunkers, mortar shell ammo 6->8.
+* Slammer UP: more powerful anti-tank main gun, now deploys bunkers, mortar shell ammo 6->8, cost increased $6,200->6,500.
 * SPAAG: replaced Zephyrs with beam riders, cost $3,000->4,000.
 * Supplies: can no longer be spawned in sectors under attack.
 * Team rally: placeable limit (3) removed.
 * Transport trucks: now deploys rally points instead of bunkers.
+* Xian (Armed): LGMs increased 16->20, removed LGM option on pylons.
 
 Gameplay
 * Added badges based on ELO.
 * Added no-fly zone for home as a separate item in buy menu.
-* Added setting to change volume for bird flocks on player TP.
+* Added setting to change volume for bird flocks on player TP, now only plays for enemies.
+* Added stronghold instructions to HUD: can be disabled in settings.
 * Added surrender message.
-* Adding supplies to a sector will reset its stronghold cooldown timer.
-* Air wrecks: now combine if within 500m of another wreck, value shown on map.
+* Adding supplies to a sector will reset its stronghold cooldown timer and upgrade stronghold health up to 24.
+* Air wrecks: now combine if within 1km of another wreck, value shown on map.
 * Airbase camper warning now restricts plane purchases at airbase by default, protection can be disabled in settings.
 * Applied Blufor Gryphon customizations to green Gryphon.
+* APS reload: all APS types can now be reloaded from outside the vehicle.
 * Attack helicopters: removed device jammer on laser.
+* Camper warning now applies to vehicle purchases above $5,000.
 * Changed custom building on map color from black to gray.
 * Changed icons and colors for unknown sectors.
 * Collaborator option: changed to allow control of vehicles on next sector, cost increased to $8,000.
-* Conscription defaults to false when player is already in target sector (can be overridden in settings).
+* Conscription defaults to false for players who have already accepted, for the same priority, in the same life.
+* Conscription shows destination in message.
 * Death info display now persistent until player respawns.
 * Default loadouts.
 * Designate team priority: now free.
+* Device APS and Advanced APS can now be reloaded inside vehicle by toggling it off, scroll wheel action for toggling APS.
 * Drone EW now boosted by all enemy air wreck retrievals instead of just drone wrecks.
 * Enemies nearby lock radius 125->100m.
 * Field repairs now work on helo rotors.
 * Forward base now only considers infantry as intruders.
 * Forward base upgrades now restricted to fob placer.
-* HUD now uses arma 3 subtitling system for system messages.
+* Heavy+ APS renamed to Advanced APS.
+* Helipads can be home base again.
+* HUD now shows missile tracking percent.
+* HUD now uses arma 3 subtitling system for system messages, some additional subtitle options.
+* Independent jets will now use countermeasures liberally.
+* Laser-guided munitions: lock minimum altitude increased 50->100m.
 * Minefield warning: can be disabled or sensitivity adjusted in settings.
-* Minor map balance changes.
-* No-fly zone: minimum altitude increased 1,000->1,500m, cost reduced $8,000->6,000, cooldown reduced 20->16 minutes, duration increased 6->7 minutes, radius increased 6->7 km, expansion speed increased.
-* Player vote power now ELO-dependent.
+* Minor map balance changes, added more helipads.
+* No-fly zone: minimum altitude increased 1,000->1,500m, cost reduced $8,000->5,000, cooldown reduced 20->16 minutes, duration increased 6->7 minutes, radius increased 6->7 km.
+* Player vote power now ELO-boosted.
 * Paradrop: unified under one free control system.
+* Paradrop requests no longer default to true for infantry on foot.
 * Punishment timer now shows hh:mm:ss to be more clear.
 * Reduced size of capture/vote interface.
 * Sector reinforcement capture modifier now scales linearly based on number of reinforcements (0-4x), halves cap power when depleted.
@@ -52,7 +72,9 @@ Gameplay
 * Spawn menu refresh rate reduced from 5->1 Hz.
 * Spawn menu cam now disabled when player is alive.
 * Strongholds can now be created in sectors under attack, but destroyed strongholds will add a 5 minute timer.
-* Teamkilling timeout now 5 minutes.
+* Strongholds now generate reinforcements for sectors under attack.
+* Teamkilling timeout now 5 minutes, events persistent over longer time.
+* Temporarily removed pylon descriptions to avoid confusion.
 * Tents are now team-dependent rather than chemlight color dependent for easy team visual identification.
 * Vehicle deployment above ground changed to deploy more precisely.
 
@@ -61,10 +83,15 @@ Bugfixes
 * Fixed AI teleporting into owned vehicles that they've been ordered to leave when new command is given.
 * Fixed auto-sam firing on far targets when near-targets can't be engaged, option to enable now requires local control.
 * Fixed exploit that allowed paradropping supplies.
+* Fixed forts being destructible for some players but not others.
 * Fixed glitchy animations in unconscious state.
 * Fixed instances of players dying directly when aircraft is damaged by SAM.
+* Fixed minelayer not deploying if going too fast.
 * Fixed punishment for FF not being triggered after first time.
+* Fixed rare cases of controlling drone causing game lock-out.
 * Fixed secure wreck not recognizing some wrecks temporarily.
+* Fixed some cases of catapult causing kick.
+* Fixed some cases of dying instantly on paradrop.
 * Fixed removed strongholds still showing up on HUD.
 * Fixed Viper helmets being removed on loadout save.
 

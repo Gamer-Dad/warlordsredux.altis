@@ -47,6 +47,14 @@ class WLProjectilesConfig {
         manualSam[] = {500, 5000, 6000};
     };
 
+    class WLProjectile_ManSAMUpgraded: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_starstreak2"          // Starstreak Mark II
+        };
+        camera = 1;
+        manualSam[] = {1000, 2500, 7500};
+    };
+
     class WLProjectile_VLRSAM: WLProjectile {
         ammo[] = {
             "ammo_Missile_sosnam"               // Sosna-M
@@ -463,5 +471,12 @@ class WLProjectilesConfig {
         explosive = 1;
         mine = 1;
         bunker = 2;
+    };
+
+    class WLProjectile_Shell: WLProjectile {
+        ammo[] = {
+            "Sh_140mm_APFSDS"
+        };
+        shell = "M_125mm_cannon_ATGM";
     };
 };

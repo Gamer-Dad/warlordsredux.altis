@@ -3,46 +3,9 @@ class Air_Defense {
     loadable = 1;
 };
 
-// Static Titan Launcher (AA)
-class Static_Titan_AA: Air_Defense {
-    cost = 300;
-    hasTurretVisualizer = 1;
-    nameShort = "TITAN AA";
-    offset[] = {0, 3, 0};
-    rearm = 180;
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "1Rnd_GAA_missiles",
-            "1Rnd_GAA_missiles",
-            "1Rnd_GAA_missiles",
-            "1Rnd_GAA_missiles",
-            "1Rnd_GAA_missiles",
-            "1Rnd_GAA_missiles"
-        };
-        addWeapons[] = {
-            "missiles_titan_static"
-        };
-        removeMagazines[] = {};
-        removeWeapons[] = {
-            "missiles_titan_static"
-        };
-        turret[] = {0};
-    };
-};
-class B_static_AA_F: Static_Titan_AA {
-    side[] = {"west"};
-};
-class O_static_AA_F: Static_Titan_AA {
-    side[] = {"east"};
-};
-class I_static_AA_F: Static_Titan_AA {
-    side[] = {"guer"};
-};
-
 class Radar: Air_Defense {
     cost = 500;
-    description = "Long range radar system, capable of detecting and tracking vehicles within line of sight at up to 16 km.";
+    description = "Long range radar system, capable of detecting and tracking vehicles within line of sight.";
     isRadar = 1;
     nameShort = "RADAR";
     offset[] = {0, 7, 0};
@@ -58,26 +21,27 @@ class I_E_Radar_System_01_F: Radar {
 };
 
 class Radome: Air_Defense {
-    cost = 1500;
+    airRadar = 25000;
+    cost = 2500;
     demolishable = 3;
-    description = "Passively tracks hostile missile launches up to 9 km.";
+    description = "Passively tracks hostile missile launches.";
+    disableDamage = 1;
     name = "AN/FPS-124 Radome";
     nameShort = "RADOME";
     offset[] = {0, 7, 0};
     spawn = "Land_Radar_Small_F";
     side[] = {"west", "east", "guer"};
-    threatDetection = 9000;
+    threatDetection = 25000;
 };
 
 class Light_SAM: Air_Defense {
     aps = 1;
     capValue = 2;
     cost = 3000;
-    description = "Mobile short-range, surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 1.5 km.";
+    description = "Mobile short-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasHMD = 1;
     hasReconOptics = 2;
     rearm = 180;
-    variant = 1;
 };
 
 class Nyx_SAM: Light_SAM {
@@ -248,7 +212,7 @@ class O_APC_Tracked_02_AA_F: SPAAG {
 // Mk49 Spartan
 class Spartan: Air_Defense {
     cost = 5500;
-    description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 2.5 km.";
+    description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasAutoSam = 1;
     hasHMD = 1;
     name = "Mk49 Spartan";
@@ -270,7 +234,7 @@ class O_Spartan: Spartan {
 // Defender/Rhea
 class LR_AA: Air_Defense {
     cost = 5500;
-    description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.8 km.";
+    description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasAutoSam = 1;
     hasHMD = 1;
     offset[] = {0, 6, 0};
@@ -292,7 +256,7 @@ class I_E_SAM_System_03_F: LR_AA {
 // Mk21 Centurion
 class Centurion: Air_Defense {
     cost = 5500;
-    description = "Medium-range surface-to-air missile system, capable of engaging aircraft and helicopters. Lethal range: 3.5 km.";
+    description = "Medium-range surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasAutoSam = 1;
     hasHMD = 1;
     loaded = "Centurion_Decoy";
@@ -339,10 +303,9 @@ class Mobile_Spartan: Air_Defense {
     cost = 6500;
     hasHMD = 1;
     rearm = 240;
-    variant = 1;
 };
 class B_Gorgon_AA: Mobile_Spartan {
-    integralWeapon[] = {16, {0.35, -1.5, 1.5}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
+    integralWeapon[] = {21, {0.35, -1.5, 1.5}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
     isLight = 1;
     loaded = "B_Deployed_Spartan";
     name = "AFV-4 Medusa";
@@ -373,7 +336,7 @@ class B_Gorgon_AA: Mobile_Spartan {
     };
 };
 class O_Marid_AA: Mobile_Spartan {
-    integralWeapon[] = {16, {0.2, -1.5, 1.7}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
+    integralWeapon[] = {21, {0.2, -1.5, 1.7}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
     loaded = "O_Deployed_Spartan";
     name = "9K41 Ghost";
     nameShort = "GHOST";
@@ -395,6 +358,9 @@ class O_Marid_AA: Mobile_Spartan {
 };
 
 class B_Integral_Spartan: Air_Defense {
+    ammoOverrides[] = {
+        {"ammo_Missile_rim116", {"ammo_Missile_starstreak2", "Starstreak Mark II"}}
+    };
     cost = -1;
     hasHMD = 1;
     loadable = 0;

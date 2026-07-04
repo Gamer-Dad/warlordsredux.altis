@@ -10,6 +10,11 @@ class CfgWarlordSectors {
         {"AbderaTower", "AmmolofiAirfield"},
         {"AbderaTower", "Galati"},
         {"AbderaTower", "Ifestiona"},
+        {"AgiaStemma", "AgiosDionysios"},
+        {"AgiaStemma", "Kavirida"},
+        {"AgiaStemma", "Kore"},
+        {"AgiaStemma", "MagosValley"},
+        {"AgiaStemma", "XirolimniDam"},
         {"AgiaTriada", "Frini"},
         {"AgiaTriada", "GhostHotel"},
         {"AgiaTriada", "Nychi"},
@@ -20,7 +25,6 @@ class CfgWarlordSectors {
         {"AgiosDionysios", "Lakka"},
         {"AgiosDionysios", "Orino"},
         {"AgiosDionysios", "Syrta"},
-        {"AgiosDionysios", "Topolia"},
         {"AgiosDionysios", "XirolimniDam"},
         {"AgiosKonstantinos", "Fotia"},
         {"AgiosKonstantinos", "GoriFactory"},
@@ -132,6 +136,7 @@ class CfgWarlordSectors {
         {"Galati", "Koroni"},
         {"Galati", "Orino"},
         {"Galati", "Syrta"},
+        {"GatoliaSolar", "HillsideChapel"},
         {"GatoliaSolar", "Molos"},
         {"GatoliaSolar", "Polemistia"},
         {"GatoliaSolar", "Sofia"},
@@ -165,11 +170,9 @@ class CfgWarlordSectors {
         {"Kavala", "MagosValley"},
         {"Kavala", "Neri"},
         {"Kavala", "USSFreedom"},
-        {"Kavirida", "Topolia"},
         {"Kavirida", "Zaros"},
         {"Kore", "KoreFactory"},
         {"Kore", "Syrta"},
-        {"Kore", "Topolia"},
         {"KoreFactory", "MagosValley"},
         {"KoreFactory", "Negades"},
         {"Koroni", "LakkaFactory"},
@@ -184,7 +187,6 @@ class CfgWarlordSectors {
         {"MagosPower", "MagosValley"},
         {"MagosPower", "Negades"},
         {"MagosPower", "USSFreedom"},
-        {"MagosValley", "Topolia"},
         {"MainPower", "SouthTelos"},
         {"Makrynisi", "SagonisiBase"},
         {"Makrynisi", "SkoposBase"},
@@ -229,7 +231,6 @@ class CfgWarlordSectors {
         {"Sofia", "SofiaPower"},
         {"SouthTelos", "Telos"},
         {"Telos", "ZeloranBase"},
-        {"Topolia", "XirolimniDam"},
         {"XirolimniDam", "Zaros"},
         {"Zaros", "ZarosSolar"},
     };
@@ -265,6 +266,12 @@ class CfgWarlordSectors {
     //     location[] = {3825.53, 13693.9, 0};
     //     name = "Aggelochori";
     // };
+
+    class AgiaStemma {
+        area[] = {175, 175, 121.177, 0};
+        location[] = {7892.65, 14618.1, 0};
+        name = "Agia Stemma";
+    };
 
     class AgiaTriada {
         area[] = {100, 100, 0, 0};
@@ -362,7 +369,7 @@ class CfgWarlordSectors {
 
     class Anthrakia {
         area[] = {225, 225, 65.703, 0};
-        location[] = {16667.7, 16126.1, 0.368};
+        location[] = {16646.3, 16128.5, 0};
         name = "Anthrakia";
     };
 
@@ -376,6 +383,7 @@ class CfgWarlordSectors {
         area[] = {250, 350, 340.303, 0};
         location[] = {13983.8, 18732.6, 0};
         name = "Athira";
+        services[] = {"H"};
     };
 
     class Atsalis {
@@ -544,12 +552,14 @@ class CfgWarlordSectors {
         area[] = {150, 150, 221.059, 0};
         location[] = {27060, 21500.7, 0};
         name = "Gatolia Solar";
+        services[] = {"H"};
     };
 
     class GeorgiosBase {
         area[] = {225, 225, 147.52, 0};
         location[] = {20957.4, 19267.7, 0};
         name = "Georgios Base";
+        services[] = {"H"};
     };
 
     class GhostHotel {
@@ -769,6 +779,7 @@ class CfgWarlordSectors {
         area[] = {150, 250, 233.234, 1};
         location[] = {20646.2, 15649.8, 0};
         name = "Nifi Solar";
+        services[] = {"H"};
     };
 
     class Nychi {
@@ -873,6 +884,7 @@ class CfgWarlordSectors {
         area[] = {100, 70, 0, 1};
         location[] = {14214.5, 13007.4, 0};
         name = "Sagonisi Base";
+        services[] = {"H"};
         vehicles[] = {
             {"I_Gorgon", {14122.2, 12975.5, 2.52924}, 310.553}
         };
@@ -954,6 +966,7 @@ class CfgWarlordSectors {
         area[] = {300, 300, 128.18, 0};
         location[] = {11210.7, 8720.47, 0};
         name = "Skopos Castle Ruins";
+        services[] = {"H"};
     };
 
     class Sofia {
@@ -983,8 +996,9 @@ class CfgWarlordSectors {
 
     class Syrta {
         area[] = {200, 200, 121.177, 0};
-        location[] = {8624.52, 18283.7, 0};
+        location[] = {8590.03, 18271.6, 0};
         name = "Syrta";
+        services[] = {"H"};
     };
 
     class Telos {
@@ -1033,12 +1047,6 @@ class CfgWarlordSectors {
         area[] = {100, 50, 31.618, 1};
         location[] = {12177.3, 22770.0, 0};
         name = "Tonos Bay";
-    };
-
-    class Topolia {
-        area[] = {175, 175, 121.177, 0};
-        location[] = {7396.15, 15400.6, 0};
-        name = "Topolia";
     };
 
     class USSArcher {
@@ -1116,7 +1124,7 @@ class CfgWarlordSectors {
 
     class Zaros {
         area[] = {200, 150, 194.61, 1};
-        location[] = {9004.79, 12038.1, 0.181};
+        location[] = {9020.42, 12019.6, 0};
         name = "Zaros";
     };
 

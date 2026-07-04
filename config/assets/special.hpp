@@ -54,6 +54,9 @@ class Land_BagBunker_Small_F: Special {
     demolishStepTime = 1;
     fragile = 5000;
     hasFastTravel = 1;
+    hasRearm = 1;
+    hasRefuel = 1;
+    hasRepair = 1;
     loaded = "Static_HMG_Shielded";
     name = "Fighting Position";
     nameShort = "BUNKER";
