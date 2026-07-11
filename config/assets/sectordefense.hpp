@@ -155,7 +155,7 @@ class AT_MinefieldHex: AT_Minefield {
 };
 class AT_DeployedMinefield: AT_Minefield {
     cost = 2000;
-    demolishable = 3;
+    demolishable = 1;
     demolishStepTime = 60;
     dumbMine[] = {450, 450, 0};
     name = "Minefield (GATOR)";
@@ -164,10 +164,19 @@ class AT_DeployedMinefield: AT_Minefield {
 };
 class AT_DeployedMinefieldSmall: AT_Minefield {
     cost = 1000;
-    demolishable = 3;
-    demolishStepTime = 30;
+    demolishable = 1;
+    demolishStepTime = 45;
     dumbMine[] = {250, 250, 0};
     name = "Minefield (Zemledeliye)";
+    showToEnemies = 3000;
+    singleton = 2;
+};
+class AT_DeployedMinefieldDense: AT_Minefield {
+    cost = 2000;
+    demolishable = 7;
+    demolishStepTime = 30;
+    dumbMine[] = {-600, -600, 0};
+    name = "Minefield (GATOR, Dense)";
     showToEnemies = 3000;
     singleton = 2;
 };

@@ -489,10 +489,10 @@ class CfgWarlordSectors {
         location[] = {7095.26, 11113.1, 0};
         name = "Edessa";
         runways[] = {
-            { 7029.84, 11053.4, 0 },
-            { 7041.39, 11107.1, 0 },
-            { 7022.72, 11214.4, 0 },
-            { 6939.36, 11034.3, 0 }
+            { 6958.07, 11051.4, 0 },
+            { 6859.59, 11026.2, 0 },
+            { 7050.11, 11114.4, 0 },
+            { 7015.46, 11224.4, 0 }
         };
         services[] = {"H", "A"};
     };
@@ -809,7 +809,7 @@ class CfgWarlordSectors {
     };
 
     class Orino {
-        area[] = {275, 275, 121.177, 0};
+        area[] = {250, 250, 121.177, 0};
         location[] = {10447.7, 17248, 0};
         name = "Orino";
     };
@@ -1149,6 +1149,9 @@ class CfgWarlordRunways {
     class Ammolofi {
         area[] = {{9140.1, 21479.2, 0}, 180, 30, 143.6};
     };
+    class Edessa {
+        area[] = {{7161.44, 11051.7, 0}, 20, 360, 284.0};
+    };
     class MainTakeoff {
         area[] = {{14739.4, 16291.4, 0}, 690, 30, 134.5};
     };
@@ -1171,8 +1174,8 @@ class CfgWarlordRunways {
 
 class CfgWarlordFactories {
     factoryTypes[] = {
-        {"B_Ghosthawk_III", 900},
         {"B_Slammer_X", 900},
+        {"B_Rhino_X", 450},
         {"B_Growler", 2700},
         {"B_Pegasus", 2700},
         {"O_Marid_Dragon", 450},
@@ -1183,6 +1186,16 @@ class CfgWarlordFactories {
     class DoridaFactory {
         position[] = {19265, 13143.5, 0};
         direction = 50;
+    };
+
+    class EginioFactory {
+        position[] = {11565.8, 7052.4, 0};
+        direction = 110;
+    };
+
+    class GoriFactory {
+        position[] = {5378.5, 17906.7, 0};
+        direction = 90;
     };
 
     class LakkaFactory {

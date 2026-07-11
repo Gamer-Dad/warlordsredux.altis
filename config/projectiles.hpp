@@ -24,7 +24,7 @@ class WLProjectilesConfig {
         };
         camera = 1;
         immunity = 3000;
-        sam = 1;
+        sam = 0.6;
         speed = 2;
     };
 
@@ -44,7 +44,7 @@ class WLProjectilesConfig {
             "ammo_Missile_starstreak"           // Starstreak
         };
         camera = 1;
-        manualSam[] = {500, 5000, 6000};
+        manualSam[] = {500, 5000, 6000, 25, 0.4};
     };
 
     class WLProjectile_ManSAMUpgraded: WLProjectile {
@@ -52,15 +52,15 @@ class WLProjectilesConfig {
             "ammo_Missile_starstreak2"          // Starstreak Mark II
         };
         camera = 1;
-        manualSam[] = {1000, 2500, 7500};
+        manualSam[] = {1000, 2500, 12000, 25, 0.8};
     };
 
     class WLProjectile_VLRSAM: WLProjectile {
         ammo[] = {
-            "ammo_Missile_sosnam"               // Sosna-M
+            "ammo_Missile_tianlong"               // Tianlong
         };
         camera = 1;
-        manualSam[] = {1000, 5000, 18000};
+        manualSam[] = {1250, 500, 18000, 25, 1.0};
     };
 
     class WLProjectile_LRSAM: WLProjectile {
@@ -95,7 +95,7 @@ class WLProjectilesConfig {
         };
         camera = 1;
         immunity = 100;
-        sam = 1;
+        sam = 0.25;
         speed = 0.4;
     };
 
@@ -107,7 +107,7 @@ class WLProjectilesConfig {
         };
         camera = 1;
         immunity = 2000;
-        sam = 1;
+        sam = 0.8;
         speed = 0.8;
     };
 
@@ -129,7 +129,7 @@ class WLProjectilesConfig {
             "Missile_AA_03_F"                   // Sahr-3
         };
         immunity = 1500;
-        sam = 1;
+        sam = 0.6;
         speed = 2;
     };
 
@@ -322,6 +322,13 @@ class WLProjectilesConfig {
         mineLayer = "AT_DeployedMinefieldSmall";
     };
 
+    class WLProjectile_MineLayerDense: WLProjectile {
+        ammo[] = {
+            "M_MineLayerDense"
+        };
+        mineLayer = "AT_DeployedMinefieldDense";
+    };
+
     class WLProjectile_SupplyLayer: WLProjectile {
         ammo[] = {
             "M_SupplyLayer"
@@ -367,15 +374,22 @@ class WLProjectilesConfig {
         consumption = 1;
     };
 
-    class WLProjectile_MediumGuidedCamera: WLProjectile {
+    class WLProjectile_CannonLaunchedLG: WLProjectile {
         ammo[] = {
-            "M_120mm_cannon_ATGM",              // 120mm Cannon ATGM
-            "M_120mm_cannon_ATGM_LG",           // 120mm Cannon ATGM (Laser Guided)
-            "M_125mm_cannon_ATGM"               // 125mm Cannon ATGM
+            "M_120mm_cannon_ATGM_LG"            // 120mm Cannon ATGM (Laser Guided)
         };
         aps[] = {2, 3, 4, 5};
         camera = 1;
         consumption = 1;
+    };
+
+    class WLProjectile_CannonLaunched: WLProjectile {
+        ammo[] = {
+            "M_120mm_cannon_ATGM",              // 120mm Cannon ATGM
+            "M_125mm_cannon_ATGM"               // 125mm Cannon ATGM
+        };
+        aps[] = {5};
+        consumption = 8;
     };
 
     class WLProjectile_DoubleGuided: WLProjectile {
@@ -441,14 +455,6 @@ class WLProjectilesConfig {
         incendiary = 1;
     };
 
-    class WLProjectile_Proximity: WLProjectile {
-        ammo[] = {
-            "B_Proximity"
-        };
-        prox = 1;
-        speed = 4000;
-    };
-
     class WLProjectile_Mines: WLProjectile {
         ammo[] = {
             "APERSBoundingMine_Range_Ammo",
@@ -478,5 +484,12 @@ class WLProjectilesConfig {
             "Sh_140mm_APFSDS"
         };
         shell = "M_125mm_cannon_ATGM";
+    };
+
+    class WLProjectile_Railgun: WLProjectile {
+        ammo[] = {
+            "Sh_75mm_Railgun_APFSDS"
+        };
+        shell = "R_80mm_HE";
     };
 };

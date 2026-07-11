@@ -124,3 +124,22 @@ class Land_Cargo10_military_green_F: Gear {
     requirements[] = {"H", "NF", "S"};
     side[] = {"west", "east"};
 };
+
+class Offroad_Truck: Gear {
+    capValue = 1;
+    cost = 1500;
+    description = "Supply van that can be deployed as supplies.";
+    disableParadrop = 1;
+    loadable = 0;
+    loaded = "Land_Cargo10_military_green_F";
+    name = "Supply Van";
+    nameShort = "VAN";
+    requirements[] = {"H", "NF", "S"};
+    showToEnemies = 1000;
+};
+class B_G_Van_02_vehicle_F: Offroad_Truck {
+    side[] = {"west"};
+};
+class O_G_Van_02_vehicle_F: Offroad_Truck {
+    side[] = {"east"};
+};

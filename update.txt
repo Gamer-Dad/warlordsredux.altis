@@ -1,28 +1,42 @@
 Warlords Redux 2.8 Patch 13
 Assets
+* (Added) Rhino X (factory-only).
+* (Added) Supply Van.
+* (Removed) Ghost Hawk III.
+* (Removed) Scout jets.
 * (Removed) Slammer II.
 * (Removed) Smart mines.
 * (Removed) Supply boat.
-* (Removed) Titan static launchers.
+* (Removed) Titan AA static.
 * (Removed) Xian Transport.
+* Archerfish: cost increased $11,000->13,000.
+* AT minefields: reduced to single demolition step.
 * Blackfish (Mine Layer): changed to drop supplies.
 * Blackfish (Transport): changed to mine layer.
 * Blackfoot: added LGM pylons, price increase $1,000.
-* Bunkers: are now rearm, repair, refuel.
+* Bobcat: increased MG ammo 800->1,500.
+* Bunkers: are now rearm, repair, refuel capable, removed MK19.
 * Euphrates: missile changed to beam rider.
+* Futura: removed from buyable menu, now factory-exclusive.
+* Ghosthawk Block II: added pylon option for non-LOAL DAGR.
 * Hunter/Ifrit: now deploys darters.
+* Marid Dragon: increased line charges 2->8.
+* Marid Utility: reduced line charges 3->2.
 * Medical trucks: now deploys rally points instead of bunkers.
 * Medusa/Ghost: changed missiles to beam rider.
-* Pegasus: reduced bombs 45->20, bombs now do 4 destructible damage.
+* Pawnee: added pylon option BIM-9x.
+* Pegasus: reworked factory-only asset loadout.
 * Radome: added a directional air radar, resilient to non-bunker busters, cost increased $1,500->2,500.
 * Rhino: upgraded cannon to 125mm.
 * Slammer: applied previous Slammer II upgrades, now deploys bunkers, mortar shell ammo 6->8.
 * Slammer UP: more powerful anti-tank main gun, now deploys bunkers, mortar shell ammo 6->8, cost increased $6,200->6,500.
+* Slammer X/Futura: added railgun UI.
 * SPAAG: replaced Zephyrs with beam riders, cost $3,000->4,000.
+* Static cannon: final form is now a static Mora.
 * Supplies: can no longer be spawned in sectors under attack.
 * Team rally: placeable limit (3) removed.
 * Transport trucks: now deploys rally points instead of bunkers.
-* Xian (Armed): LGMs increased 16->20, removed LGM option on pylons.
+* Xian (Armed): LGMs increased 16->20, removed LGM option on pylons, cost increased $9,000->11,000.
 
 Gameplay
 * Added badges based on ELO.
@@ -30,52 +44,65 @@ Gameplay
 * Added setting to change volume for bird flocks on player TP, now only plays for enemies.
 * Added stronghold instructions to HUD: can be disabled in settings.
 * Added surrender message.
-* Adding supplies to a sector will reset its stronghold cooldown timer and upgrade stronghold health up to 24.
+* Adding supplies to a sector will reset its stronghold cooldown timer and upgrade stronghold health, up to 24 max.
 * Air wrecks: now combine if within 1km of another wreck, value shown on map.
 * Airbase camper warning now restricts plane purchases at airbase by default, protection can be disabled in settings.
 * Applied Blufor Gryphon customizations to green Gryphon.
 * APS reload: all APS types can now be reloaded from outside the vehicle.
 * Attack helicopters: removed device jammer on laser.
+* Bulk deploy: rapid deployment of defense kits on map buttons.
 * Camper warning now applies to vehicle purchases above $5,000.
+* Cannon-launched missiles (non-LG) are now only stopped by advanced APS.
+* Capture speed scaling based more closely on capture power difference.
 * Changed custom building on map color from black to gray.
 * Changed icons and colors for unknown sectors.
+* Chat commands for help pages: !nfz, !aa, !capture
 * Collaborator option: changed to allow control of vehicles on next sector, cost increased to $8,000.
 * Conscription defaults to false for players who have already accepted, for the same priority, in the same life.
 * Conscription shows destination in message.
 * Death info display now persistent until player respawns.
+* Damage for anti-air missiles should now be consistent, regardless of speed at time of hit.
 * Default loadouts.
 * Designate team priority: now free.
 * Device APS and Advanced APS can now be reloaded inside vehicle by toggling it off, scroll wheel action for toggling APS.
 * Drone EW now boosted by all enemy air wreck retrievals instead of just drone wrecks.
+* ECM system start time decreased 10->5s.
 * Enemies nearby lock radius 125->100m.
 * Field repairs now work on helo rotors.
 * Forward base now only considers infantry as intruders.
 * Forward base upgrades now restricted to fob placer.
 * Heavy+ APS renamed to Advanced APS.
 * Helipads can be home base again.
+* HMD now shows instance, altitude available on freelook button.
 * HUD now shows missile tracking percent.
 * HUD now uses arma 3 subtitling system for system messages, some additional subtitle options.
 * Independent jets will now use countermeasures liberally.
 * Laser-guided munitions: lock minimum altitude increased 50->100m.
-* Minefield warning: can be disabled or sensitivity adjusted in settings.
+* Losing a player sector now triggers an immediate sector vote reset.
+* Mine clear charges: now demolish 1 step instead of directly deleting destructibles.
+* Minefield warning: can be disabled or sensitivity adjusted in settings (default: 4 seconds ahead).
 * Minor map balance changes, added more helipads.
 * No-fly zone: minimum altitude increased 1,000->1,500m, cost reduced $8,000->5,000, cooldown reduced 20->16 minutes, duration increased 6->7 minutes, radius increased 6->7 km.
 * Player vote power now ELO-boosted.
 * Paradrop: unified under one free control system.
 * Paradrop requests no longer default to true for infantry on foot.
+* Priority selection is auto switched to defending sector when enemy starts attack on friendly sector.
 * Punishment timer now shows hh:mm:ss to be more clear.
+* Railgun: added HE damage.
 * Reduced size of capture/vote interface.
-* Sector reinforcement capture modifier now scales linearly based on number of reinforcements (0-4x), halves cap power when depleted.
+* Sector reinforcement capture modifier now scales linearly based on number of reinforcements (0-5x), halves cap power when depleted.
 * Sector reinforcement depletion no longer disables conscription.
 * Sector reserves and reinforcements now shown in HUD.
 * Sector total reinforcements reduced, income reduced from 5->3 per minute.
-* Spawn menu refresh rate reduced from 5->1 Hz.
 * Spawn menu cam now disabled when player is alive.
+* Spawn menu refresh rate reduced from 5->1 Hz.
+* Stronghold and forward base doors are now all locked to owner, can be forced open with explosives.
 * Strongholds can now be created in sectors under attack, but destroyed strongholds will add a 5 minute timer.
 * Strongholds now generate reinforcements for sectors under attack.
 * Teamkilling timeout now 5 minutes, events persistent over longer time.
 * Temporarily removed pylon descriptions to avoid confusion.
 * Tents are now team-dependent rather than chemlight color dependent for easy team visual identification.
+* Unconscious units are no longer seen on screen.
 * Vehicle deployment above ground changed to deploy more precisely.
 
 Bugfixes
@@ -83,205 +110,22 @@ Bugfixes
 * Fixed AI teleporting into owned vehicles that they've been ordered to leave when new command is given.
 * Fixed auto-sam firing on far targets when near-targets can't be engaged, option to enable now requires local control.
 * Fixed exploit that allowed paradropping supplies.
+* Fixed fast traveling to squad member in air causing instant-death.
 * Fixed forts being destructible for some players but not others.
 * Fixed glitchy animations in unconscious state.
+* Fixed hex sector paradrop position.
 * Fixed instances of players dying directly when aircraft is damaged by SAM.
+* Fixed map button ordering for rearm, repair, refuel.
 * Fixed minelayer not deploying if going too fast.
 * Fixed punishment for FF not being triggered after first time.
 * Fixed rare cases of controlling drone causing game lock-out.
+* Fixed removed strongholds still showing up on HUD.
+* Fixed sector scan UAV not becoming wreck when killed.
 * Fixed secure wreck not recognizing some wrecks temporarily.
 * Fixed some cases of catapult causing kick.
 * Fixed some cases of dying instantly on paradrop.
-* Fixed removed strongholds still showing up on HUD.
+* Fixed stolen vehicles disappearing with disconnect.
+* Fixed unlocked manual drones.
+* Fixed timed prompt keys not working in modify vehicle and squad/spawn menus.
+* Fixed timed prompt keys input bleeding through into game.
 * Fixed Viper helmets being removed on loadout save.
-
-Warlords Redux 2.8 Patch 12
-Gameplay
-* Added see changelog option in strategy menu and in map diary.
-* Map now shows shortened vehicle name. Full names can still be activated by holding freelook (ALT).
-
-Bugfixes
-* Fixed invincible player AIs.
-* Fixed performance issue with minimap and map duplicating redraws.
-* Fixed VTOL default setting breaking with non-VTOL jets.
-* Fixed replaying of vote announcement.
-* Fixed SDBs killing friendlies.
-* Fixed GPS munitions tracking on indestructible props.
-* Fixed issue where killing green strongholds too early would break reserve system.
-* Fixed squad menu blur persisting after display is closed by another display.
-* Fixed Xian paradrops not rearming.
-* Fixed some vehicles not having short names.
-* Reworked capture and vote displays for performance.
-
-Warlords Redux 2.8 Patch 11
-
-Assets
-* (Added) Xi'an (Mine Layer).
-* (Added) Xi'an (Vehicle Transport).
-* (Re-added) Static Mortars.
-* (Re-added) Supply Boat.
-* (Removed) MLRS LG.
-* (Removed) Nyx AT.
-* (Removed) Small AT Minefield.
-* (Removed) Spawn Bunker.
-* (Removed) Wire Fence.
-* AR-7 Raven: added HMD, renamed grenade.
-* Archerfish: missile count increased 24->40, added pilot laser, BIM9x.
-* Artillery, Archerfish: added drone deployer.
-* AT minefields: no longer spawnable in sector under attack.
-* Auto turret HMG/GMG: no longer spawnable in sector under attack.
-* Blackfish Armed: cost decreased $8,000->6,500, added recon optics.
-* Blackfish Infantry: can now deploy 1 AT minefield.
-* Blackfish: can now lift everything a Mohawk can, base cost increased $1,000->2,000.
-* Blufor APCs: added drone hunter.
-* Cargo tower: no longer spawnable, now converted from fortified rally.
-* Heavy recon vehicles: no longer spawnable in sector under attack, cost increased $2,200->5,000, radius decreased 350->175m, added drone hunter.
-* Hummingbird/Orca (unarmed): spawnable in non-helipad sectors.
-* Hunter Apex: APS changed Device -> Heavy+.
-* Hunter/Ifrit Mortar: moved to sector defense category.
-* Nyx AA: missile ammo increased 2->4.
-* Praetorian: cost increased $3,500->6,000, no longer spawnable in sector under attack.
-* Scout fighters: cost increased $5,000->14,000, removed flares, removed Titan AA.
-* Shikra: removed ECM jammer.
-* Smart mines: doubled range.
-* Utility vehicles: added drone hunter.
-* Wipeout/Neophron: added ECM.
-* Xi'an Armed: SDB swapped out for LGMs, added pilot laser, R73.
-
-Gameplay
-* New spawn menu: menu now combines vehicles, squads, and spawn point.
-* Sector reinforcements: player owned sectors now have a limited reinforcement count, depleted by killing defenders.
-* Once depleted of sector reinforcements, these sector features are disabled: conscription, vehicle paradrop, asset purchase, sector scan.
-* Sectors with remaining reinforcements give +4x capture modifiers.
-* Supplies (formerly FOB supplies) can be added to sectors to increase reinforcement count.
-* Supplies can now only be purchased at non-FOB helipads.
-* Supplies now convert to fortified rally points instead of supply boats.
-* Lowered forward base upgrade cost 20,000->10,000 supplies.
-* Removed sector fortification mechanic. All captured sectors self-fortify after 5 minutes.
-* Added auto-SAM option that allows players to control SAM open-fire range.
-* Added button to call in combat air patrol on nearest eligible target in Air Defense category.
-* Added communication menu options.
-* Added confirmation message when saving to non-empty loadout slot or clearing.
-* Added new cables to carriers.
-* Added option to skip conscription if player is in priority sector.
-* Added option to turn auto-vector off by default.
-* AI ordered into player's vehicles will be force moved into its seat, removed FT AI to vehicle button.
-* Anti-air missiles now use consistent damage model, independent of lag/network latency.
-* Area capture modifier now only applies in PvP sectors, not against green sectors.
-* Combat air patrol: upgraded munition BIM9x->AMRAAM-D, radius decreased 7->6km, cooldown decreased 30->20 minutes.
-* Combat air patrol home: a mini version of combat air patrol can now be called in home base with faster cooldown and smaller area.
-* Demolishables are no longer claimable.
-* Disabled repairs above 100m altitude.
-* Electronic warfare strength is now increased/decreased by securing enemy air drones.
-* ELO/ratings no longer affected by match duration.
-* Enemies nearby purchase lock radius increased 50->125m.
-* Fast travel now generates audio cue.
-* Field repairs now repair turret and cannon.
-* FOB owners can now call for paradrops.
-* Heavy+ APS: no longer stops SDBs when dropped in manual mode, stops 1 SDB when dropped in GPS guided mode.
-* Hold freelook over map to see detailed mode.
-* Increased deployment cancel distance for installables and carriers from 30->50m.
-* Increased green sector vehicle difficulty.
-* Increased ground launched R77/AMRAAM/Zephyr notch immunity range 1->2km, reduced projectile speed 1.1->0.8x.
-* Increased spectrum jammer range, uses much smaller interface, no longer requires hold click.
-* Increased tolerance of mine charge, will clear minefields as long as the cable is touching.
-* Laser guided munitions range increased, targets now shown on pilot HUD.
-* Lock stronghold doors against hostile players.
-* Map now includes rearm, refuel, and repair actions for vehicles and AI control on/off for drones.
-* Max mines increased 30->100.
-* Maximum autonomous assets 4->3.
-* Maximum capture time decreased 150->120s, fewer AT minefields.
-* Minefield victims now hear VO.
-* Mines and explosives placed by player are now reclaimed by player on respawn.
-* Mine clear charges now delete destructive explosives rather than trigger them.
-* Moved remote designator to remote control category.
-* Paradropping vehicles now reward pilots with support points.
-* Paradrops can now be refreshed with rearms.
-* Paradrop calls over water are no longer allowed. Altitude minimum raised 100->200m.
-* Players can initiate paradrops on paradrop-capable aircraft from the map.
-* Players no longer spawn with watches.
-* Raised ELO balance algorithm minimum ELO: 1,300->1,500.
-* Raised maximum bank balance $50,000->100,000.
-* Recon vehicles now earn spotting points for owners even if player is not in driver seat.
-* Reduced chance of explosives teamkills.
-* Reduced time to revive/secure players.
-* Removed death info screen.
-* Removed restrictions around deployment height.
-* Renamed combat air patrol to no-fly zone.
-* Renamed Sidearm missiles for Opfor to Kh-31P ARM.
-* Repair, resupply now reward points to the vehicle owner.
-* RTB now prevented only by jets exceeding $10,000 in value.
-* Scale respawn times for territory control in early game and for losing teams (min: 20s).
-* Securing player no longer auto-deletes tent.
-* Securing valuable enemy air wrecks now reveals flying enemy air assets on map.
-* Sector auto-spawn now includes squadmates and tents.
-* Sector income decreased $12->8/km^2/minute.
-* Sector scan: re-enabled on map (not in strategy menu), initial delay 10->20s.
-* Sectors connected to home base get a +1x capture bonus.
-* Slingloading ropes can now be significantly shortened with action.
-* Slingloading/deployables no longer force out/lock crews.
-* Sound effect now plays for proximity hits.
-* Spartan/SAAMI flight speed doubled, notch immunity range 2,500->3,000m.
-* Squad size max is now 9->10.
-* Squads can now be locked and disbanded. Open squads can be joined by anyone.
-* Squads can now spawn on all players in squad.
-* Surrender disabled.
-* Team rally points are no longer converted from squad leader tents, now deployable from light helos, harder to damage.
-* Tents are much more easily destroyed by any damage, but can be repeatedly respawned onto.
-* Transport rewards are no longer doubled if sector is defensive, scale by type.
-* USS Phalanx and Archer are now indestructible.
-* Vehicle reset is now free, and flipped vehicles will get an option to reset.
-* VLS destroyers disabled.
-* When max AI count is 1, remove AI timer mechanic.
-* Wipe loadout is now delete loadout, which deletes the last selected loadout for a vehicle/aircraft.
-
-Map
-* Carriers moved, along with escorts, to make runways safer.
-* Helipad added to Livadi, Selekano Outpost.
-* New factories mechanic added to sectors.
-* Several sectors reshaped/added/removed, links changed to promote map movement.
-* Water sectors no longer reduced in effective area calculation.
-
-Bugfixes
-* Fixed air assaults on enemy base.
-* Fixed annoying rare bug where inventory doesn't close when buy menu is open.
-* Fixed and optimized sector/fob overlapping calculation. Should be able to deploy FOB snug against sector.
-* Fixed being able to fast travel to unlinked sectors.
-* Fixed bug where Titan AA was immune to notching further than it should.
-* Fixed buy menu condition evaluation delay.
-* Fixed carrier vehicles spawning underwater.
-* Fixed craters and map hidden items being counted as intruders in FOB.
-* Fixed custom unit name overflow in HUD.
-* Fixed default bugs in HMD settings menu.
-* Fixed demolition overkill rewarding extra money.
-* Fixed FOB dome not being deleted when FOB is destroyed.
-* Fixed getting out of boat on land insta-killing player.
-* Fixed green sectors not respawning reserves.
-* Fixed green sectors without buildings having reserves.
-* Fixed laser-guided munitions tracking from 0 altitude.
-* Fixed LGM/SEAD munitions missing due to low framerate.
-* Fixed most instances of catastrophic carrier/catapult launches.
-* Fixed non-bought vehicles counting into player's asset limit.
-* Fixed not being able to reset vehicles on new destroyers.
-* Fixed null spawned objects and infantry.
-* Fixed parachute showing long names in HMD.
-* Fixed players getting pulled out of vehicles by conscription.
-* Fixed players in vehicle menu getting conscripted.
-* Fixed scanned enemy watchtowers showing names on map.
-* Fixed simultaneous demolition causing multiple friendly fire punishments for a single asset.
-* Fixed some instances of strongholds being invisible on map.
-* Fixed some players showing tracking device instead of Q/E lean for timed prompt accept/reject.
-* Fixed some cases of AI shooting at dead AI.
-* Fixed spelling of Selakano.
-* Fixed squad invites not clearing when rejected.
-* Fixed static props becoming indestructible as strongholds.
-* Fixed surrender votes overriding instead of adding.
-* Optimized APS handling code.
-* Optimized map rendering for static objects/defenses.
-* Optimized sector capture handle on server.
-* Reworked and increased responsiveness of hint/timer animation.
-* Reworked and increased responsiveness of kill feed.
-* Reworked and increased responsiveness of targeting menus, view distance menu.
-* Significantly reduced delay between sector capture and green unit cleanup.
-* Significantly reduced delay between spawning vehicle/tent and showing it on map.
-* Significantly reduced performance hiccup when transitioning between camera views.

@@ -40,8 +40,8 @@ class Land_IRMaskingCover_01_F: Structures {
 };
 
 class Defensive_Kits: Structures {
-    demolishable = 5;
-    demolishStepTime = 3;
+    demolishable = 2;
+    demolishStepTime = 7;
     obstacle = 1;
     offset[] = {0, 5, 0};
 };
@@ -61,6 +61,25 @@ class Land_SandbagBarricade_01_hole_F: Defensive_Kits {
     loaded = "Land_SandbagBarricade_01_hole_F";
     name = "Sandbag Barricade Kit";
     offset[] = {0, 4, 0};
+    side[] = {"west", "east", "guer"};
+};
+
+class Land_BagBunker_Small_F: Structures {
+    container[] = {
+        { "Toolkit", 1 }
+    };
+    cost = 1000;
+    demolishable = 1;
+    demolishStepTime = 1;
+    fragile = 5000;
+    hasFastTravel = 1;
+    hasRearm = 1;
+    hasRefuel = 1;
+    hasRepair = 1;
+    name = "Fighting Position";
+    nameShort = "BUNKER";
+    offset[] = {0, 5, 0};
+    showToEnemies = 100;
     side[] = {"west", "east", "guer"};
 };
 

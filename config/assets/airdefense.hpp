@@ -21,17 +21,18 @@ class I_E_Radar_System_01_F: Radar {
 };
 
 class Radome: Air_Defense {
-    airRadar = 25000;
+    airRadar = 20000;
     cost = 2500;
     demolishable = 3;
-    description = "Passively tracks hostile missile launches.";
+    description = "Directional radar that passively tracks enemy air and hostile missile launches. Personal max: 3.";
     disableDamage = 1;
     name = "AN/FPS-124 Radome";
     nameShort = "RADOME";
     offset[] = {0, 7, 0};
     spawn = "Land_Radar_Small_F";
     side[] = {"west", "east", "guer"};
-    threatDetection = 25000;
+    singleton = 3;
+    threatDetection = 20000;
 };
 
 class Light_SAM: Air_Defense {
@@ -155,6 +156,8 @@ class B_APC_Tracked_01_AA_F: SPAAG {
             "PylonMissile_Missile_AMRAAM_D_x1",
             "PylonMissile_Missile_AMRAAM_D_x1",
             "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
+            "PylonMissile_Missile_AMRAAM_D_x1",
             "680Rnd_35mm_AA_shells_Tracer_Red",
             "6Rnd_LG_scalpel"
         };
@@ -185,6 +188,8 @@ class O_APC_Tracked_02_AA_F: SPAAG {
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
@@ -301,13 +306,13 @@ class Mobile_Spartan: Air_Defense {
     aps = 5;
     capValue = 3;
     cost = 6500;
+    description = "Mobile medium-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasHMD = 1;
     rearm = 240;
 };
 class B_Gorgon_AA: Mobile_Spartan {
-    integralWeapon[] = {21, {0.35, -1.5, 1.5}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
+    integralWeapon[] = {16, {0.35, -1.5, 1.5}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     isLight = 1;
-    loaded = "B_Deployed_Spartan";
     name = "AFV-4 Medusa";
     nameShort = "MEDUSA";
     side[] = {"west"};
@@ -336,8 +341,7 @@ class B_Gorgon_AA: Mobile_Spartan {
     };
 };
 class O_Marid_AA: Mobile_Spartan {
-    integralWeapon[] = {21, {0.2, -1.5, 1.7}, "B_SAM_System_01_F", "B_Integral_Spartan", "weapon_rim116Launcher", "magazine_Missile_rim116_x21", 21};
-    loaded = "O_Deployed_Spartan";
+    integralWeapon[] = {16, {0.2, -1.5, 1.7}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     name = "9K41 Ghost";
     nameShort = "GHOST";
     side[] = {"east"};
@@ -357,28 +361,20 @@ class O_Marid_AA: Mobile_Spartan {
     };
 };
 
-class B_Integral_Spartan: Air_Defense {
+class B_Integral_Centurion: Air_Defense {
     ammoOverrides[] = {
-        {"ammo_Missile_rim116", {"ammo_Missile_starstreak2", "Starstreak Mark II"}}
+        {"ammo_Missile_rim162", {"ammo_Missile_starstreak2", "Starstreak Mark II"}}
     };
     cost = -1;
     hasHMD = 1;
     loadable = 0;
-    name = "RIM-116 Missile Launcher";
-    nameShort = "SPARTAN";
-};
-class B_Deployed_Spartan: B_Spartan {
-    conversion = 1;
-    side[] = {};
-};
-class O_Deployed_Spartan: O_Spartan {
-    conversion = 1;
-    side[] = {};
+    name = "Starstreak-II Launcher";
+    nameShort = "STARSTREAK";
 };
 
 class O_Euphrates: SPAAG {
     ammoOverrides[] = {
-        {"ammo_Missile_AA_R77", {"ammo_Missile_sosnam", "9M338 Sosna-M"}}
+        {"ammo_Missile_AA_R77", {"ammo_Missile_tianlong", "Tianlong-30"}}
     };
     aps = 5;
     cost = 12000;
@@ -389,6 +385,8 @@ class O_Euphrates: SPAAG {
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
+            "magazine_Missile_AA_R77_x1",
+            "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",

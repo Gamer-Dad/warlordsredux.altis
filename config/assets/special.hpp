@@ -45,49 +45,42 @@ class Land_BagFence_Round_F: Special {
     offset[] = {0, 3, 0};
 };
 
-class Land_BagBunker_Small_F: Special {
-    container[] = {
-        { "Toolkit", 1 }
-    };
-    cost = 500;
+class Static_Mora: Special {
+    aps = 3;
+    capValue = 2;
+    conversion = 1;
+    cost = 3000;
     demolishable = 1;
     demolishStepTime = 1;
-    fragile = 5000;
-    hasFastTravel = 1;
-    hasRearm = 1;
-    hasRefuel = 1;
-    hasRepair = 1;
-    loaded = "Static_HMG_Shielded";
-    name = "Fighting Position";
-    nameShort = "BUNKER";
-    offset[] = {0, 5, 0};
-    showToEnemies = 100;
-};
-
-class Static_HMG_Shielded: Special {
-    cost = 500;
-    demolishable = 1;
-    demolishStepTime = 1;
-    disableDamage = 1;
-    fragile = 5000;
-    name = "Mk19 Grenade Launcher (Static)";
-    nameShort = "STATIC GMG";
-    offset[] = {0, 3, 0};
+    drone = 2;
+    immobile = 1;
+    name = "Mora (Static)";
+    nameShort = "STATIC MORA";
     rearm = 180;
-    spawn = "I_HMG_02_high_F";
+    spawn = "I_APC_tracked_03_cannon_F";
+    textures[] = {
+        "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
+        "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
+        "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+        "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
+    };
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "200Rnd_40mm_G_belt"
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "5Rnd_GAT_missiles",
+            "5Rnd_GAT_missiles"
         };
         addWeapons[] = {
-            "GMG_40mm"
+            "HMG_NSVT",
+            "missiles_titan"
         };
         removeMagazines[] = {
-            "100Rnd_127x99_mag_Tracer_Yellow"
+            "200Rnd_762x51_Belt_Yellow"
         };
         removeWeapons[] = {
-            "HMG_M2_Mounted"
+            "LMG_coax"
         };
         turret[] = {0};
     };
@@ -100,7 +93,7 @@ class Static_Cannon: Special {
     conversion = 1;
     hasRearm = 1;
     immobile = 1;
-    loaded = "Land_IRMaskingCover_01_F";
+    loaded = "Static_Mora";
     loadable = 1;
     loadRotate = 2;
     name = "Fighting Position (Cannon)";

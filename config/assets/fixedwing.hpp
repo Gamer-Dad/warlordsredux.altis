@@ -39,6 +39,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     description = "V-44 X Blackfish (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
     name = "V-44 X Blackfish (Supplies)";
     nameShort = "BLACKFISH SUPPLY";
+    rearm = 900;
     requirements[] = {"H", "NF", "S"};
     side[] = {"west"};
 
@@ -116,7 +117,7 @@ class B_Archerfish: Blackfish {
     ammoOverrides[] = {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
     };
-    cost = 11000;
+    cost = 13000;
     description = "V-44 X Blackfish (Archerfish) is a heavy VTOL aircraft that carries a large arsenal of long-range missiles.";
     isHeavyLift = 1;
     hasHMD = 1;
@@ -194,92 +195,92 @@ class B_Archerfish: Blackfish {
 };
 
 // Scout Stealth
-class Scout_Stealth: Fixed_Wing {
-    cost = 14000;
-    disallowMagazines[] = {
-        "PylonRack_Bomb_SDB_x4",
-        "PylonRack_Bomb_GBU12_x2",
-        "PylonMissile_Missile_BIM9X_x1",
-        "PylonMissile_Bomb_GBU12_x1",
-        "PylonRack_Missile_AGM_02_x1",
-        "PylonRack_Missile_AGM_02_x2",
-        "PylonRack_Missile_AMRAAM_D_x1",
-        "PylonRack_Missile_AMRAAM_D_x2",
-        "PylonRack_Missile_HARM_x1",
-        "PylonRack_Missile_BIM9X_x1",
-        "PylonRack_Missile_BIM9X_x2",
-        "PylonMissile_Missile_AMRAAM_D_INT_x1",
-        "PylonMissile_Missile_KH58_x1",
-        "PylonMissile_Missile_AGM_KH25_x1",
-        "PylonMissile_Missile_AGM_KH25_INT_x1",
-        "PylonMissile_Bomb_KAB250_x1",
-        "PylonMissile_Missile_KH58_INT_x1",
-        "PylonMissile_Missile_AA_R77_INT_x1",
-        "PylonMissile_Missile_AA_R73_x1",
-        "PylonMissile_Missile_AA_R77_x1"
-    };
-    hasHMD = 1;
-    hasReconOptics = 1;
-    offset[] = {0, 12, 0};
-    rearm = 420;
-    requirements[] = {"A"};
-    scanner = 1000;
-    showToEnemies = 1000;
-    threatDetection = 8000;
-    variant = 1;
-};
+// class Scout_Stealth: Fixed_Wing {
+//     cost = 14000;
+//     disallowMagazines[] = {
+//         "PylonRack_Bomb_SDB_x4",
+//         "PylonRack_Bomb_GBU12_x2",
+//         "PylonMissile_Missile_BIM9X_x1",
+//         "PylonMissile_Bomb_GBU12_x1",
+//         "PylonRack_Missile_AGM_02_x1",
+//         "PylonRack_Missile_AGM_02_x2",
+//         "PylonRack_Missile_AMRAAM_D_x1",
+//         "PylonRack_Missile_AMRAAM_D_x2",
+//         "PylonRack_Missile_HARM_x1",
+//         "PylonRack_Missile_BIM9X_x1",
+//         "PylonRack_Missile_BIM9X_x2",
+//         "PylonMissile_Missile_AMRAAM_D_INT_x1",
+//         "PylonMissile_Missile_KH58_x1",
+//         "PylonMissile_Missile_AGM_KH25_x1",
+//         "PylonMissile_Missile_AGM_KH25_INT_x1",
+//         "PylonMissile_Bomb_KAB250_x1",
+//         "PylonMissile_Missile_KH58_INT_x1",
+//         "PylonMissile_Missile_AA_R77_INT_x1",
+//         "PylonMissile_Missile_AA_R73_x1",
+//         "PylonMissile_Missile_AA_R77_x1"
+//     };
+//     hasHMD = 1;
+//     hasReconOptics = 1;
+//     offset[] = {0, 12, 0};
+//     rearm = 420;
+//     requirements[] = {"A"};
+//     scanner = 1000;
+//     showToEnemies = 1000;
+//     threatDetection = 8000;
+//     variant = 1;
+// };
 
-class B_Scout_Wasp: Scout_Stealth {
-    ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
-    };
-    name = "SR-181 Scout Wasp";
-    nameShort = "SCOUT WASP";
-    side[] = {"west"};
-    spawn = "B_Plane_Fighter_01_F";
+// class B_Scout_Wasp: Scout_Stealth {
+//     ammoOverrides[] = {
+//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+//     };
+//     name = "SR-181 Scout Wasp";
+//     nameShort = "SCOUT WASP";
+//     side[] = {"west"};
+//     spawn = "B_Plane_Fighter_01_F";
 
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "PylonRack_4Rnd_LG_scalpel"
-        };
-        addWeapons[] = {
-            "missiles_SCALPEL"
-        };
-        removeMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
-        removeWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
-        turret[] = {-1};
-    };
-};
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "PylonRack_4Rnd_LG_scalpel"
+//         };
+//         addWeapons[] = {
+//             "missiles_SCALPEL"
+//         };
+//         removeMagazines[] = {
+//             "240Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeWeapons[] = {
+//             "CMFlareLauncher_Singles"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
-class O_Scout_Shikra: Scout_Stealth {
-    ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
-    };
-    name = "Yak-201 Scout Shikra";
-    nameShort = "SCOUT SHIKRA";
-    side[] = {"east"};
-    spawn = "O_Plane_Fighter_02_F";
+// class O_Scout_Shikra: Scout_Stealth {
+//     ammoOverrides[] = {
+//         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
+//     };
+//     name = "Yak-201 Scout Shikra";
+//     nameShort = "SCOUT SHIKRA";
+//     side[] = {"east"};
+//     spawn = "O_Plane_Fighter_02_F";
 
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "PylonRack_4Rnd_LG_scalpel"
-        };
-        addWeapons[] = {
-            "missiles_SCALPEL"
-        };
-        removeMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
-        removeWeapons[] = {
-            "CMFlareLauncher"
-        };
-        turret[] = {-1};
-    };
-};
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "PylonRack_4Rnd_LG_scalpel"
+//         };
+//         addWeapons[] = {
+//             "missiles_SCALPEL"
+//         };
+//         removeMagazines[] = {
+//             "240Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeWeapons[] = {
+//             "CMFlareLauncher"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
 // Y-32 Xi'an (Vehicle Transport)
 class O_Xian: Fixed_Wing {
@@ -294,11 +295,12 @@ class O_Xian: Fixed_Wing {
     spawn = "O_T_VTOL_02_vehicle_dynamicLoadout_F";
 };
 
-class O_Xian_MineLayer: O_Xian {
+class O_Xian_Supply: O_Xian {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
+        {"Bo_Mk82", {"M_SupplyLayer", "Supply Drop"}}
     };
     cost = 3000;
+    description = "Y-32 Xi'an (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
     disallowMagazines[] = {
         "PylonMissile_1Rnd_Bomb_03_F",
         "PylonRack_1Rnd_Missile_AA_03_F",
@@ -310,9 +312,9 @@ class O_Xian_MineLayer: O_Xian {
         "PylonRack_20Rnd_Rocket_03_HE_F",
         "PylonRack_20Rnd_Rocket_03_AP_F"
     };
-    name = "Y-32 Xi'an (Mine Layer)";
-    nameShort = "XIAN MINES";
-    rearm = 120;
+    name = "Y-32 Xi'an (Supplies)";
+    nameShort = "XIAN SUPPLY";
+    rearm = 900;
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
@@ -343,6 +345,15 @@ class O_Xian_MineLayer: O_Xian {
     };
 };
 
+class O_Xian_MineLayer: O_Xian_Supply {
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
+    };
+    name = "Y-32 Xi'an (Mine Layer)";
+    nameShort = "XIAN MINES";
+    rearm = 120;
+};
+
 class O_Xian_Armed: O_Xian {
     allowPylonMagazines[] = {
         "PylonRack_12Rnd_PG_missiles",
@@ -357,7 +368,7 @@ class O_Xian_Armed: O_Xian {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AKF-98 (Laser-Guided)"}},
         {"Bo_Mk82", {"M_DroneDeployer", "Drone Deployer Canister"}}
     };
-    cost = 9000;
+    cost = 11000;
     name = "Y-32 Xi'an (Armed)";
     rearm = 300;
 

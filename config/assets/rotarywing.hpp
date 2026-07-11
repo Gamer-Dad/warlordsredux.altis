@@ -94,7 +94,8 @@ class B_Heli_Transport_01_F: Rotary_Wing {
 };
 class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
     allowPylonMagazines[] = {
-        "PylonRack_Missile_BIM9X_x2"
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonRack_12Rnd_PG_missiles"
     };
     cost = 5000;
     name = "UH-80 Ghost Hawk Block II";
@@ -117,42 +118,42 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
         turret[] = {-1};
     };
 };
-class B_Ghosthawk_III: B_Heli_Transport_01_pylons_F {
-    allowPylonMagazines[] = {
-        "PylonRack_Missile_BIM9X_x2",
-        "PylonRack_Missile_AMRAAM_D_x1",
-        "PylonRack_12Rnd_PG_missiles",
-        "PylonRack_4Rnd_LG_scalpel"
-    };
-    ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
-        {"M_PG_AT", {"M_APKWS", "AGR-20 APKWS"}}
-    };
-    cost = 8000;
-    hasReconOptics = 2;
-    name = "UH-80 Ghost Hawk Block III";
-    nameShort = "GHOSTHAWK III";
-    side[] = {};
-    spawn = "B_Heli_Transport_01_pylons_F";
+// class B_Ghosthawk_III: B_Heli_Transport_01_pylons_F {
+//     allowPylonMagazines[] = {
+//         "PylonRack_Missile_BIM9X_x2",
+//         "PylonRack_Missile_AMRAAM_D_x1",
+//         "PylonRack_12Rnd_PG_missiles",
+//         "PylonRack_4Rnd_LG_scalpel"
+//     };
+//     ammoOverrides[] = {
+//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
+//         {"M_PG_AT", {"M_APKWS", "AGR-20 APKWS"}}
+//     };
+//     cost = 8000;
+//     hasReconOptics = 2;
+//     name = "UH-80 Ghost Hawk Block III";
+//     nameShort = "GHOSTHAWK III";
+//     side[] = {};
+//     spawn = "B_Heli_Transport_01_pylons_F";
 
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "38Rnd_80mm_rockets",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "rockets_Skyfire",
-            "CMFlareLauncher"
-        };
-        removeMagazines[] = {
-            "168Rnd_CMFlare_Chaff_Magazine"
-        };
-        removeWeapons[] = {
-            "CMFlareLauncher"
-        };
-        turret[] = {-1};
-    };
-};
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "38Rnd_80mm_rockets",
+//             "300Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         addWeapons[] = {
+//             "rockets_Skyfire",
+//             "CMFlareLauncher"
+//         };
+//         removeMagazines[] = {
+//             "168Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeWeapons[] = {
+//             "CMFlareLauncher"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
 class Transport_Helicopter: Rotary_Wing {
     cost = 700;
@@ -214,6 +215,9 @@ class O_Mohawk_Supply: O_Mohawk {
 
 // AH-9 Pawnee
 class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
+    allowPylonMagazines[] = {
+        "PylonRack_Missile_BIM9X_x2"
+    };
     cost = 7000;
     hasHMD = 1;
     hasReconOptics = 1;
@@ -288,7 +292,7 @@ class Hellcat: Rotary_Wing {
         };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine",
-            "5000Rnd_762x51_Belt"
+            "5000Rnd_762x51_Yellow_Belt"
         };
         removeWeapons[] = {
             "CMFlareLauncher",

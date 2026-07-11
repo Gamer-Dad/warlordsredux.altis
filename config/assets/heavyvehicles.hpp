@@ -83,20 +83,39 @@ class Utility_Vehicle: Heavy_Vehicles {
     hasRefuel = 1;
     hasRepair = 1;
     loaded = "Static_Cannon";
-    mineClear = 3;
     rearm = 180;
 };
 // CRV-6e Bobcat
 class B_APC_Tracked_01_CRV_F: Utility_Vehicle {
     cost = 1700;
     hasDroneHunter = 1;
+    mineClear = 3;
     nameShort = "BOBCAT";
     side[] = {"west"};
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red",
+            "500Rnd_127x99_mag_Tracer_Red"
+        };
+        addWeapons[] = {
+            "HMG_127_APC"
+        };
+        removeMagazines[] = {
+            "200Rnd_127x99_mag_Tracer_Red"
+        };
+        removeWeapons[] = {
+            "HMG_127_APC"
+        };
+        turret[] = {0};
+    };
 };
 class O_Marid_Utility: Utility_Vehicle {
     cost = 2000;
     description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
     loadable = 1;
+    mineClear = 2;
     name = "MSE-3 Marid (Utility)";
     nameShort = "MARID UTIL";
     side[] = {"east"};
@@ -140,7 +159,7 @@ class O_Marid_Dragon: Heavy_Vehicles {
     hasHMD = 1;
     integralWeapon[] = {16, {0, -3.5, 0}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     loadable = 1;
-    mineClear = 2;
+    mineClear = 8;
     name = "MSE-4 Marid Dragon";
     nameShort = "DRAGON";
     rearm = 180;
@@ -471,6 +490,42 @@ class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
     cost = 4500;
 };
 
+class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {
+    cost = 7000;
+    description = "Rhino MGS X is an advanced variant of the Rhino MGS armed with an experimental railgun.";
+    nameShort = "RHINO X";
+    name = "Rhino MGS X";
+    side[] = {};
+    spawn = "B_AFV_Wheeled_01_up_cannon_F";
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "60Rnd_75mm_RailGun_APFSDS_mag",
+            "RailGun_01_DummyMagazine",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball"
+        };
+        addWeapons[] = {
+            "cannon_railgun",
+            "cannon_railgun_fake",
+            "HMG_NSVT"
+        };
+        removeMagazines[] = {
+            "12Rnd_120mm_APFSDS_shells_Tracer_Red",
+            "8Rnd_120mm_HE_shells_Tracer_Red",
+            "8Rnd_120mm_HEAT_MP_T_Red",
+            "4Rnd_120mm_LG_cannon_missiles"
+        };
+        removeWeapons[] = {
+            "cannon_120mm",
+            "MMG_02_coax"
+        };
+        turret[] = {0};
+    };
+};
+
 // M2A1 Slammer
 class B_MBT_01_cannon_F: Heavy_Vehicles {
     aps = 3;
@@ -558,10 +613,10 @@ class I_MBT_03_cannon_F: Kuma {
 class B_Slammer_X: B_MBT_01_TUSK_F {
     cost = 12000;
     description = "M2A4 Slammer X is an advanced variant of the M2A1 Slammer armed with an experimental railgun.";
-    integralWeapon[] = {16, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     nameShort = "SLAMMER X";
     name = "M2A4 Slammer X";
     side[] = {};
+    spawn = "B_MBT_01_TUSK_F";
     variant = 0;
 
     class Gunner: WLTurretDefaults {
@@ -630,7 +685,7 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
     hasReconOptics = 1;
     nameShort = "FUTURA";
     rearm = 300;
-    side[] = {"east"};
+    side[] = {};
 };
 
 class Howitzer_Artillery: Heavy_Vehicles {

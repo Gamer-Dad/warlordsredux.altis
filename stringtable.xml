@@ -1412,6 +1412,23 @@
             <Chinesesimp>src\help\aa_chinese.txt</Chinesesimp>
             <Chinese>src\help\aa_chinese.txt</Chinese>
         </Key>
+        <Key ID="STR_WL_fileHelpCapture">
+            <Original>src\help\cap_english.txt</Original>
+            <English>src\help\cap_english.txt</English>
+            <Czech>src\help\cap_english.txt</Czech>
+            <French>src\help\cap_english.txt</French>
+            <German>src\help\cap_english.txt</German>
+            <Italian>src\help\cap_english.txt</Italian>
+            <Polish>src\help\cap_english.txt</Polish>
+            <Portuguese>src\help\cap_english.txt</Portuguese>
+            <Russian>src\help\cap_english.txt</Russian>
+            <Spanish>src\help\cap_english.txt</Spanish>
+            <Turkish>src\help\cap_english.txt</Turkish>
+            <Korean>src\help\cap_english.txt</Korean>
+            <Japanese>src\help\cap_english.txt</Japanese>
+            <Chinesesimp>src\help\cap_english.txt</Chinesesimp>
+            <Chinese>src\help\cap_english.txt</Chinese>
+        </Key>
         <Key ID="STR_WL_fixedWing">
             <Original>Fixed Wing</Original>
             <English>Fixed Wing</English>
@@ -2669,6 +2686,57 @@
             <Japanese>隊</Japanese>
             <Chinesesimp>小队</Chinesesimp>
             <Chinese>小队</Chinese>
+        </Key>
+        <Key ID="STR_WL_strongholdDefend">
+            <Original>Defend your stronghold!</Original>
+            <English>Defend your stronghold!</English>
+            <Czech>Braňte svou pevnost!</Czech>
+            <French>Défendez votre bastion !</French>
+            <German>Verteidigt eure Festung!</German>
+            <Italian>Difendi la tua roccaforte!</Italian>
+            <Polish>Broń swojej twierdzy!</Polish>
+            <Portuguese>Defenda sua fortaleza!</Portuguese>
+            <Russian>Защищайте свой опорный пункт!</Russian>
+            <Spanish>¡Defiende tu fortaleza!</Spanish>
+            <Turkish>Kalenizi savunun!</Turkish>
+            <Korean>아군 거점을 방어하세요!</Korean>
+            <Japanese>味方の拠点を守れ！</Japanese>
+            <Chinesesimp>防守你的据点！</Chinesesimp>
+            <Chinese>防守你的據點！</Chinese>
+        </Key>
+        <Key ID="STR_WL_strongholdDestroy">
+            <Original>Destroy stronghold to stop enemy respawns!</Original>
+            <English>Destroy stronghold to stop enemy respawns!</English>
+            <Czech>Zničte pevnost, abyste zastavili znovuzrození nepřátel!</Czech>
+            <French>Détruisez le bastion pour arrêter les réapparitions ennemies !</French>
+            <German>Zerstört die Festung, um gegnerische Respawns zu stoppen!</German>
+            <Italian>Distruggi la roccaforte per fermare i respawn nemici!</Italian>
+            <Polish>Zniszcz twierdzę, aby zatrzymać odrodzenia wroga!</Polish>
+            <Portuguese>Destrua a fortaleza para impedir o reaparecimento dos inimigos!</Portuguese>
+            <Russian>Уничтожьте опорный пункт, чтобы остановить возрождения врага!</Russian>
+            <Spanish>¡Destruye la fortaleza para detener las reapariciones enemigas!</Spanish>
+            <Turkish>Düşman yeniden doğmalarını durdurmak için kaleyi yok edin!</Turkish>
+            <Korean>적 리스폰을 막으려면 거점을 파괴하세요!</Korean>
+            <Japanese>敵のリスポーンを止めるために拠点を破壊せよ！</Japanese>
+            <Chinesesimp>摧毁据点以阻止敌人重生！</Chinesesimp>
+            <Chinese>摧毀據點以阻止敵人重生！</Chinese>
+        </Key>
+        <Key ID="STR_WL_strongholdOccupy">
+            <Original>Occupy stronghold to increase capture power!</Original>
+            <English>Occupy stronghold to increase capture power!</English>
+            <Czech>Obsaďte pevnost, abyste zvýšili sílu obsazování!</Czech>
+            <French>Occupez le bastion pour augmenter la puissance de capture !</French>
+            <German>Besetzt die Festung, um die Eroberungskraft zu erhöhen!</German>
+            <Italian>Occupa la roccaforte per aumentare la potenza di cattura!</Italian>
+            <Polish>Zajmij twierdzę, aby zwiększyć siłę przejmowania!</Polish>
+            <Portuguese>Ocupe a fortaleza para aumentar o poder de captura!</Portuguese>
+            <Russian>Займите опорный пункт, чтобы увеличить силу захвата!</Russian>
+            <Spanish>¡Ocupa la fortaleza para aumentar la potencia de captura!</Spanish>
+            <Turkish>Ele geçirme gücünü artırmak için kaleyi işgal edin!</Turkish>
+            <Korean>점령력을 높이려면 거점을 점령하세요!</Korean>
+            <Japanese>占領力を高めるために拠点を占拠せよ！</Japanese>
+            <Chinesesimp>占领据点以提高占领力！</Chinesesimp>
+            <Chinese>佔領據點以提高佔領力！</Chinese>
         </Key>
         <Key ID="STR_WL_structures">
             <Original>Structures</Original>

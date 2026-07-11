@@ -147,6 +147,7 @@ class O_Truck_03_medical_F: Medical_Transport {
 class Flatbed: Light_Vehicle {
     capValue = 1;
     cost = 300;
+    disableParadrop = 1;
     hasFastTravel = 1;
     hasLoader = 1;
     isLight = 1;
@@ -468,9 +469,6 @@ class I_LT_01_AA_F: Nyx_Armed {
 
 // Hunter Apex
 class B_Hunter_Apex: Hunter_Upgraded {
-    // ammoOverrides[] = {
-    //     {"B_30mm_MP_Tracer_Green", {"B_Proximity", "30mm Anti-Aircraft"}}
-    // };
     aps = 5;
     capValue = 4;
     cost = 2000;

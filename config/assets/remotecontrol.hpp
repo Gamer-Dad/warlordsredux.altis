@@ -332,46 +332,53 @@ class B_UAV_05_F: Remote_Control {
 
 class B_Pegasus: B_UAV_05_F {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"Bo_Mk82_norunway", "Paveway IV Light Bunker Buster"}}
+        {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
+        {"Bo_Mk82", {"M_MineLayerDense", "CBU-103/B Mine Layer"}}
     };
-    cost = 8000;
     disallowMagazines[] = {
         "PylonMissile_Bomb_GBU12_x1",
         "PylonMissile_Missile_HARM_INT_x1",
         "PylonRack_Bomb_SDB_x4",
         "PylonMissile_Missile_AGM_02_x2"
     };
-    name = "BQ-47 Pegasus";
+    hasReconOptics = 1;
+    name = "RQ-47 Pegasus";
     nameShort = "PEGASUS";
-    spawn = "B_UAV_05_F";
+    rearm = 420;
+    scanner = 1000;
     side[] = {};
+    spawn = "B_UAV_05_F";
+    threatDetection = 8000;
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "300Rnd_CMFlare_Chaff_Magazine",
             "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F"
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1",
+            "magazine_Bomb_GBU12_x1"
         };
         addWeapons[] = {
-            "Mk82BombLauncher"
+            "Mk82BombLauncher",
+            "weapon_GBU12Launcher"
         };
         turret[] = {-1};
     };
