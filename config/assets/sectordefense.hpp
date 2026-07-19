@@ -160,7 +160,7 @@ class AT_DeployedMinefield: AT_Minefield {
     dumbMine[] = {450, 450, 0};
     name = "Minefield (GATOR)";
     showToEnemies = 3000;
-    singleton = 1;
+    singleton = 2;
 };
 class AT_DeployedMinefieldSmall: AT_Minefield {
     cost = 1000;
@@ -169,7 +169,7 @@ class AT_DeployedMinefieldSmall: AT_Minefield {
     dumbMine[] = {250, 250, 0};
     name = "Minefield (Zemledeliye)";
     showToEnemies = 3000;
-    singleton = 2;
+    singleton = 3;
 };
 class AT_DeployedMinefieldDense: AT_Minefield {
     cost = 2000;

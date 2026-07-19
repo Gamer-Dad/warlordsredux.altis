@@ -308,6 +308,7 @@ class Mobile_Spartan: Air_Defense {
     cost = 6500;
     description = "Mobile medium-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasHMD = 1;
+    hideTurret = 1;
     rearm = 240;
 };
 class B_Gorgon_AA: Mobile_Spartan {
@@ -325,7 +326,6 @@ class B_Gorgon_AA: Mobile_Spartan {
     };
 
     class Gunner: WLTurretDefaults {
-        hideTurret = 1;
         removeMagazines[] = {
             "140Rnd_30mm_MP_shells_Tracer_Yellow",
             "60Rnd_30mm_APFSDS_shells_Tracer_Yellow",
@@ -348,7 +348,6 @@ class O_Marid_AA: Mobile_Spartan {
     spawn = "O_APC_Wheeled_02_rcws_v2_F";
 
     class Gunner: WLTurretDefaults {
-        hideTurret = 1;
         removeMagazines[] = {
             "96Rnd_40mm_G_belt",
             "200Rnd_127x99_mag_Tracer_Green"

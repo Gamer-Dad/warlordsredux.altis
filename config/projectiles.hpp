@@ -44,7 +44,7 @@ class WLProjectilesConfig {
             "ammo_Missile_starstreak"           // Starstreak
         };
         camera = 1;
-        manualSam[] = {500, 5000, 6000, 25, 0.4};
+        manualSam[] = {500, 5000, 6000, 25, 0.5};
     };
 
     class WLProjectile_ManSAMUpgraded: WLProjectile {
@@ -57,7 +57,7 @@ class WLProjectilesConfig {
 
     class WLProjectile_VLRSAM: WLProjectile {
         ammo[] = {
-            "ammo_Missile_tianlong"               // Tianlong
+            "ammo_Missile_tianlong"             // Tianlong
         };
         camera = 1;
         manualSam[] = {1250, 500, 18000, 25, 1.0};
@@ -95,7 +95,7 @@ class WLProjectilesConfig {
         };
         camera = 1;
         immunity = 100;
-        sam = 0.25;
+        sam = 0.4;
         speed = 0.4;
     };
 

@@ -24,7 +24,7 @@ class I_Caesar: Caesar_Dronehunter {
 // V-44 X Blackfish
 class Blackfish: Fixed_Wing {
     cost = 2000;
-    hasAirRearm = 1;
+    hasECM = 1;
     hasFastTravel = 1;
     hasHMD = 1;
     nameShort = "BLACKFISH";
@@ -674,6 +674,7 @@ class B_Growler: Fixed_Wing {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
     };
+    hasECM = 1;
     hasHMD = 1;
     name = "EF/A-181 Growler";
     nameShort = "GROWLER";

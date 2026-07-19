@@ -716,7 +716,7 @@ class CfgWarlordSectors {
 
     class MainPower {
         area[] = {220, 150, 88.583, 1};
-        location[] = {15394.6, 16076.6, 0};
+        location[] = {15407.1, 16079.9, 0};
         name = "Main Power";
     };
 
@@ -1174,12 +1174,12 @@ class CfgWarlordRunways {
 
 class CfgWarlordFactories {
     factoryTypes[] = {
-        {"B_Slammer_X", 900},
+        {"B_Slammer_X", 450},
         {"B_Rhino_X", 450},
         {"B_Growler", 2700},
         {"B_Pegasus", 2700},
-        {"O_Marid_Dragon", 450},
-        {"O_MBT_02_railgun_F", 900},
+        {"O_Marid_Dragon", 300},
+        {"O_MBT_02_railgun_F", 450},
         {"O_Euphrates", 1800}
     };
 

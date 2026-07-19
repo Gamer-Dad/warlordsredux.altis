@@ -218,32 +218,12 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
     allowPylonMagazines[] = {
         "PylonRack_Missile_BIM9X_x2"
     };
-    cost = 7000;
+    cost = 4000;
     hasHMD = 1;
     hasReconOptics = 1;
     nameShort = "PAWNEE";
     rearm = 240;
     side[] = {"west"};
-
-    class Pilot: WLTurretDefaults {
-        removeMagazines[] = {
-            "5000Rnd_762x51_Belt"
-        };
-        removeWeapons[] = {
-            "M134_minigun"
-        };
-        turret[] = {-1};
-    };
-};
-class O_Beluga: B_Heli_Light_01_dynamicLoadout_F {
-    cost = 3500;
-    name = "Ka-9 Beluga";
-    nameShort = "BELUGA";
-    side[] = {"east"};
-    spawn = "B_Heli_Light_01_dynamicLoadout_F";
-    textures[] = {
-        "src\img\camo\beluga.jpg"
-    };
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
@@ -260,6 +240,15 @@ class O_Beluga: B_Heli_Light_01_dynamicLoadout_F {
             "M134_minigun"
         };
         turret[] = {-1};
+    };
+};
+class O_Beluga: B_Heli_Light_01_dynamicLoadout_F {
+    name = "Ka-9 Beluga";
+    nameShort = "BELUGA";
+    side[] = {"east"};
+    spawn = "B_Heli_Light_01_dynamicLoadout_F";
+    textures[] = {
+        "src\img\camo\beluga.jpg"
     };
 };
 

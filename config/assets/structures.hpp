@@ -4,15 +4,6 @@ class Structures {
     nameShort = "DEF";
 };
 
-// Guard Tower (H-barrier)
-class Land_HBarrierTower_F: Structures {
-    cost = 70;
-    demolishable = 2;
-    demolishStepTime = 10;
-    offset[] = {0, 7, 0};
-    side[] = {"west", "east", "guer"};
-};
-
 // Camouflage Vehicle Cover
 class CamoNet: Structures {
     cost = 100;
@@ -40,7 +31,7 @@ class Land_IRMaskingCover_01_F: Structures {
 };
 
 class Defensive_Kits: Structures {
-    demolishable = 2;
+    demolishable = 1;
     demolishStepTime = 7;
     obstacle = 1;
     offset[] = {0, 5, 0};
@@ -48,18 +39,20 @@ class Defensive_Kits: Structures {
 
 class Land_BagFence_Long_F: Defensive_Kits {
     cost = 500;
-    fragile = 500;
+    fragile = 3000;
     loaded = "Land_BagFence_Long_F";
     name = "Sandbag Wall Kit";
+    nameShort = "SANDBAG";
     offset[] = {0, 3, 0};
     side[] = {"west", "east", "guer"};
 };
 
 class Land_SandbagBarricade_01_hole_F: Defensive_Kits {
     cost = 750;
-    fragile = 1000;
+    fragile = 5000;
     loaded = "Land_SandbagBarricade_01_hole_F";
     name = "Sandbag Barricade Kit";
+    nameShort = "SANDBAG";
     offset[] = {0, 4, 0};
     side[] = {"west", "east", "guer"};
 };
@@ -76,6 +69,7 @@ class Land_BagBunker_Small_F: Structures {
     hasRearm = 1;
     hasRefuel = 1;
     hasRepair = 1;
+    hideMap = 0;
     name = "Fighting Position";
     nameShort = "BUNKER";
     offset[] = {0, 5, 0};
@@ -88,17 +82,28 @@ class Land_HBarrier_5_F: Defensive_Kits {
     fragile = 10000;
     loaded = "Land_HBarrier_5_F";
     name = "H-Barrier Kit";
+    nameShort = "HESCO";
     offset[] = {0, 3, 0};
     side[] = {"west", "east", "guer"};
 };
 
-// H-barrier wall
 class Land_HBarrierWall6_F: Defensive_Kits {
     cost = 1500;
-    fragile = 15000;
+    fragile = 10000;
     loaded = "Land_HBarrierWall6_F";
     name = "H-Barrier Wall Kit";
+    nameShort = "HESCO";
     offset[] = {0, 3, 0};
+    side[] = {"west", "east", "guer"};
+};
+
+class Land_HBarrierWall_corridor_F: Defensive_Kits {
+    cost = 1500;
+    fragile = 50000;
+    loaded = "Land_HBarrierWall_corridor_F";
+    name = "H-Barrier Wall Corridor Kit";
+    nameShort = "HESCO";
+    offset[] = {0, 5, 0};
     side[] = {"west", "east", "guer"};
 };
 
@@ -106,6 +111,8 @@ class Land_DragonsTeeth_01_4x2_new_F: Defensive_Kits {
     cost = 1500;
     loaded = "Land_DragonsTeeth_01_4x2_new_F";
     name = "Dragon's Teeth Kit";
+    nameShort = "TANK TRAP";
+    obstacle = 2;
     side[] = {"west", "east", "guer"};
 };
 
@@ -113,6 +120,7 @@ class Land_CzechHedgehog_01_new_F: Defensive_Kits {
     cost = 2000;
     loaded = "Land_CzechHedgehog_01_new_F";
     name = "Czech Hedgehog Kit";
+    nameShort = "TANK TRAP";
     obstacle = 2;
     side[] = {"west", "east", "guer"};
 };

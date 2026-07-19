@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=514;
+	toggles=1538;
 	class ItemIDProvider
 	{
-		nextID=4173;
+		nextID=4175;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=307;
+		nextID=325;
 	};
 	class Camera
 	{
-		pos[]={7220.7583,104.0071,10991.963};
-		dir[]={-0.60104114,-0.62735134,0.49519324};
-		up[]={-0.48418918,0.77873385,0.39892113};
-		aside[]={0.63588721,-4.33065e-08,0.77180719};
+		pos[]={7145.3096,56.035969,11001.942};
+		dir[]={0.85557997,-0.51778054,0.0097046383};
+		up[]={0.51780349,0.85546458,0.0058759255};
+		aside[]={0.011344816,6.8160261e-07,-1.0000317};
 	};
 };
 binarizationWanted=0;
@@ -189,7 +189,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=127;
+		items=128;
 		class Item0
 		{
 			dataType="Logic";
@@ -4769,40 +4769,68 @@ class Mission
 				};
 				class Item2
 				{
-					dataType="Object";
+					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={7126.7036,7.3840332,11065.448};
-						angles[]={0,3.3776309,0};
+						position[]={7014.8325,9.3666992,11081.975};
+						angles[]={0.1687561,4.9561758,0.068961367};
 					};
-					side="Empty";
-					class Attributes
-					{
-					};
-					id=4166;
-					type="AirportBase";
-					atlOffset=2.1883068;
+					areaSize[]={56.034527,0,164.04683};
+					areaIsRectangle=1;
+					flags=1;
+					id=4174;
+					type="ModuleHideTerrainObjects_F";
+					atlOffset=1.2452936;
 					class CustomAttributes
 					{
 						class Attribute0
 						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
+							property="#filter";
+							expression="_this setVariable [""#filter"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=15;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="#hideLocally";
+							expression="_this setVariable [""#hideLocally"",_value]";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
-						nAttributes=1;
+						nAttributes=2;
 					};
 				};
 			};
 			id=4154;
-			atlOffset=1.3693366;
+			atlOffset=0.90685987;
+		};
+		class Item127
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7018.4512,10.524658,11105.889};
+				angles[]={0,1.9516793,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=4173;
+			type="DynamicAirport_01_F";
+			atlOffset=2.645937;
 		};
 	};
 	class Connections
