@@ -99,7 +99,6 @@ class B_T_VTOL_01_armed_F: Blackfish {
     hasReconOptics = 1;
     hasTurretVisualizer = 1;
     rearm = 300;
-    requirements[] = {"A"};
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
@@ -315,6 +314,7 @@ class O_Xian_Supply: O_Xian {
     name = "Y-32 Xi'an (Supplies)";
     nameShort = "XIAN SUPPLY";
     rearm = 900;
+    requirements[] = {"H", "NF", "S"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {

@@ -4,7 +4,7 @@
 #include "config\sectors.hpp"
 #include "config\whitelist.hpp"
 
-onLoadName = "Warlords Redux 2.8";
+onLoadName = "$STR_WL_warlordsReduxMissionName";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;
@@ -38,8 +38,7 @@ weaponholderRemovalMaxTime = 180; //36000
 
 disposalCheckPeriod = 20;
 minPlayerDistance[] = {150, 300, 075, 0600, 1800, 0300};
-
-onPauseScript[] = {WL2_fnc_onPause};
+missionGroup = "WarlordsRedux2";
 
 class Header {
 	gameType = Warlords;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Project name="Warlords Redux">
     <Container name="WL2">
         <Key ID="keep_empty">
@@ -34,6 +34,23 @@
             <Japanese>承認</Japanese>
             <Chinesesimp>接受</Chinesesimp>
             <Chinese>接受</Chinese>
+        </Key>
+        <Key ID="STR_WL_afkMessage">
+            <Original>You are too inactive to earn passive income. Mark yourself not afk in the scroll action menu.</Original>
+            <English>You are too inactive to earn passive income. Mark yourself not afk in the scroll action menu.</English>
+            <Czech>Jste příliš dlouho neaktivní, takže nezískáváte pasivní příjem. Označte se jako aktivní v nabídce akcí.</Czech>
+            <French>Vous êtes trop inactif pour gagner un revenu passif. Indiquez que vous n'êtes plus AFK dans le menu d'actions.</French>
+            <German>Du bist zu lange inaktiv, um passives Einkommen zu erhalten. Markiere dich im Aktionsmenü als nicht AFK.</German>
+            <Italian>Sei troppo inattivo per guadagnare reddito passivo. Contrassegnati come non AFK nel menu azioni.</Italian>
+            <Polish>Jesteś zbyt długo nieaktywny, aby otrzymywać pasywny dochód. Oznacz się jako nie AFK w menu akcji.</Polish>
+            <Portuguese>Você está inativo por muito tempo para receber renda passiva. Marque-se como não AFK no menu de ações.</Portuguese>
+            <Russian>Вы слишком долго неактивны, чтобы получать пассивный доход. Отметьте себя как не AFK в меню действий.</Russian>
+            <Spanish>Estás demasiado inactivo para obtener ingresos pasivos. Márcate como no AFK en el menú de acciones.</Spanish>
+            <Turkish>Pasif gelir kazanmak için çok uzun süredir hareketsizsin. Eylem menüsünden AFK olmadığını işaretle.</Turkish>
+            <Korean>너무 오래 비활성 상태여서 자동 수입을 받을 수 없습니다. 행동 메뉴에서 AFK 해제를 선택하세요.</Korean>
+            <Japanese>放置状態が長すぎるため、不労所得を獲得できません。アクションメニューでAFKを解除してください。</Japanese>
+            <Chinesesimp>你长时间未活动，无法获得被动收入。请在动作菜单中将自己标记为非 AFK。</Chinesesimp>
+            <Chinese>你長時間未活動，無法獲得被動收入。請在動作選單中將自己標記為非 AFK。</Chinese>
         </Key>
         <Key ID="STR_WL_airDefense">
             <Original>Air Defense</Original>
@@ -375,6 +392,23 @@
             <Chinesesimp>取消</Chinesesimp>
             <Chinese>取消</Chinese>
         </Key>
+        <Key ID="STR_WL_captureProgress">
+            <Original>CAPTURE PROGRESS</Original>
+            <English>CAPTURE PROGRESS</English>
+            <Czech>PRŮBĚH OBSAZOVÁNÍ</Czech>
+            <French>PROGRESSION DE LA CAPTURE</French>
+            <German>EROBERUNGSFORTSCHRITT</German>
+            <Italian>PROGRESSO CATTURA</Italian>
+            <Polish>POSTĘP PRZEJMOWANIA</Polish>
+            <Portuguese>PROGRESSO DA CAPTURA</Portuguese>
+            <Russian>ПРОГРЕСС ЗАХВАТА</Russian>
+            <Spanish>PROGRESO DE CAPTURA</Spanish>
+            <Turkish>ELE GEÇİRME İLERLEMESİ</Turkish>
+            <Korean>점령 진행도</Korean>
+            <Japanese>制圧状況</Japanese>
+            <Chinesesimp>占领进度</Chinesesimp>
+            <Chinese>佔領進度</Chinese>
+        </Key>
         <Key ID="STR_WL_category">
             <Original>Category</Original>
             <English>Category</English>
@@ -391,6 +425,23 @@
             <Japanese>カテゴリ</Japanese>
             <Chinesesimp>类别</Chinesesimp>
             <Chinese>類別</Chinese>
+        </Key>
+        <Key ID="STR_WL_clearSlot">
+            <Original>Clear Slot</Original>
+            <English>Clear Slot</English>
+            <Czech>Vymazat pozici</Czech>
+            <French>Effacer l'emplacement</French>
+            <German>Speicherplatz löschen</German>
+            <Italian>Cancella slot</Italian>
+            <Polish>Wyczyść slot</Polish>
+            <Portuguese>Limpar slot</Portuguese>
+            <Russian>Очистить слот</Russian>
+            <Spanish>Borrar ranura</Spanish>
+            <Turkish>Yuvayı Temizle</Turkish>
+            <Korean>슬롯 비우기</Korean>
+            <Japanese>スロットをクリア</Japanese>
+            <Chinesesimp>清空存档槽</Chinesesimp>
+            <Chinese>清空存檔槽</Chinese>
         </Key>
         <Key ID="STR_WL_closeInventory">
             <Original>Close your inventory.</Original>
@@ -477,23 +528,6 @@
             <Chinesesimp>攻击</Chinesesimp>
             <Chinese>攻擊</Chinese>
         </Key>
-        <Key ID="STR_WL_commFollowMe">
-            <Original>Follow me</Original>
-            <English>Follow me</English>
-            <Czech>Následuj mě</Czech>
-            <French>Suis-moi</French>
-            <German>Folge mir</German>
-            <Italian>Seguimi</Italian>
-            <Polish>Za mną</Polish>
-            <Portuguese>Siga-me</Portuguese>
-            <Russian>Следуй за мной</Russian>
-            <Spanish>Sígueme</Spanish>
-            <Turkish>Beni takip et</Turkish>
-            <Korean>날 따라와</Korean>
-            <Japanese>ついて来い</Japanese>
-            <Chinesesimp>跟着我</Chinesesimp>
-            <Chinese>跟著我</Chinese>
-        </Key>
         <Key ID="STR_WL_commCoverMe">
             <Original>Cover me</Original>
             <English>Cover me</English>
@@ -510,6 +544,23 @@
             <Japanese>援護してくれ</Japanese>
             <Chinesesimp>掩护我</Chinesesimp>
             <Chinese>掩護我</Chinese>
+        </Key>
+        <Key ID="STR_WL_commFollowMe">
+            <Original>Follow me</Original>
+            <English>Follow me</English>
+            <Czech>Následuj mě</Czech>
+            <French>Suis-moi</French>
+            <German>Folge mir</German>
+            <Italian>Seguimi</Italian>
+            <Polish>Za mną</Polish>
+            <Portuguese>Siga-me</Portuguese>
+            <Russian>Следуй за мной</Russian>
+            <Spanish>Sígueme</Spanish>
+            <Turkish>Beni takip et</Turkish>
+            <Korean>날 따라와</Korean>
+            <Japanese>ついて来い</Japanese>
+            <Chinesesimp>跟着我</Chinesesimp>
+            <Chinese>跟著我</Chinese>
         </Key>
         <Key ID="STR_WL_commGetAway">
             <Original>Get away</Original>
@@ -528,39 +579,22 @@
             <Chinesesimp>离开</Chinesesimp>
             <Chinese>離開</Chinese>
         </Key>
-        <Key ID="STR_WL_commStop">
-            <Original>Stop</Original>
-            <English>Stop</English>
-            <Czech>Stůj</Czech>
-            <French>Arrête-toi</French>
-            <German>Stopp</German>
-            <Italian>Fermati</Italian>
-            <Polish>Stop</Polish>
-            <Portuguese>Pare</Portuguese>
-            <Russian>Стой</Russian>
-            <Spanish>Alto</Spanish>
-            <Turkish>Dur</Turkish>
-            <Korean>멈춰</Korean>
-            <Japanese>止まれ</Japanese>
-            <Chinesesimp>停下</Chinesesimp>
-            <Chinese>停下</Chinese>
-        </Key>
-        <Key ID="STR_WL_commWaitForMe">
-            <Original>Wait for me</Original>
-            <English>Wait for me</English>
-            <Czech>Počkej na mě</Czech>
-            <French>Attends-moi</French>
-            <German>Warte auf mich</German>
-            <Italian>Aspettami</Italian>
-            <Polish>Poczekaj na mnie</Polish>
-            <Portuguese>Espere por mim</Portuguese>
-            <Russian>Подожди меня</Russian>
-            <Spanish>Espérame</Spanish>
-            <Turkish>Beni bekle</Turkish>
-            <Korean>기다려 줘</Korean>
-            <Japanese>待ってくれ</Japanese>
-            <Chinesesimp>等等我</Chinesesimp>
-            <Chinese>等等我</Chinese>
+        <Key ID="STR_WL_commProvideSupply">
+            <Original>Use my supplies</Original>
+            <English>Use my supplies</English>
+            <Czech>Použij moje zásoby</Czech>
+            <French>Utilise mes provisions</French>
+            <German>Benutze meine Vorräte</German>
+            <Italian>Usa i miei rifornimenti</Italian>
+            <Polish>Użyj moich zapasów</Polish>
+            <Portuguese>Use meus suprimentos</Portuguese>
+            <Russian>Используй мои припасы</Russian>
+            <Spanish>Usa mis suministros</Spanish>
+            <Turkish>Malzemelerimi kullan</Turkish>
+            <Korean>내 보급품을 써</Korean>
+            <Japanese>私の物資を使え</Japanese>
+            <Chinesesimp>使用我的补给</Chinesesimp>
+            <Chinese>使用我的補給</Chinese>
         </Key>
         <Key ID="STR_WL_commStatusBingo">
             <Original>I'm out of ammo</Original>
@@ -596,22 +630,39 @@
             <Chinesesimp>我受损了</Chinesesimp>
             <Chinese>我受損了</Chinese>
         </Key>
-        <Key ID="STR_WL_commProvideSupply">
-            <Original>Use my supplies</Original>
-            <English>Use my supplies</English>
-            <Czech>Použij moje zásoby</Czech>
-            <French>Utilise mes provisions</French>
-            <German>Benutze meine Vorräte</German>
-            <Italian>Usa i miei rifornimenti</Italian>
-            <Polish>Użyj moich zapasów</Polish>
-            <Portuguese>Use meus suprimentos</Portuguese>
-            <Russian>Используй мои припасы</Russian>
-            <Spanish>Usa mis suministros</Spanish>
-            <Turkish>Malzemelerimi kullan</Turkish>
-            <Korean>내 보급품을 써</Korean>
-            <Japanese>私の物資を使え</Japanese>
-            <Chinesesimp>使用我的补给</Chinesesimp>
-            <Chinese>使用我的補給</Chinese>
+        <Key ID="STR_WL_commStop">
+            <Original>Stop</Original>
+            <English>Stop</English>
+            <Czech>Stůj</Czech>
+            <French>Arrête-toi</French>
+            <German>Stopp</German>
+            <Italian>Fermati</Italian>
+            <Polish>Stop</Polish>
+            <Portuguese>Pare</Portuguese>
+            <Russian>Стой</Russian>
+            <Spanish>Alto</Spanish>
+            <Turkish>Dur</Turkish>
+            <Korean>멈춰</Korean>
+            <Japanese>止まれ</Japanese>
+            <Chinesesimp>停下</Chinesesimp>
+            <Chinese>停下</Chinese>
+        </Key>
+        <Key ID="STR_WL_commWaitForMe">
+            <Original>Wait for me</Original>
+            <English>Wait for me</English>
+            <Czech>Počkej na mě</Czech>
+            <French>Attends-moi</French>
+            <German>Warte auf mich</German>
+            <Italian>Aspettami</Italian>
+            <Polish>Poczekaj na mnie</Polish>
+            <Portuguese>Espere por mim</Portuguese>
+            <Russian>Подожди меня</Russian>
+            <Spanish>Espérame</Spanish>
+            <Turkish>Beni bekle</Turkish>
+            <Korean>기다려 줘</Korean>
+            <Japanese>待ってくれ</Japanese>
+            <Chinesesimp>等等我</Chinesesimp>
+            <Chinese>等等我</Chinese>
         </Key>
         <Key ID="STR_WL_conscript">
             <Original>Conscript team</Original>
@@ -1701,40 +1752,6 @@
             <Chinesesimp>你的小队队长不可用。</Chinesesimp>
             <Chinese>你的小隊隊長不可用。</Chinese>
         </Key>
-        <Key ID="STR_WL_ftTent">
-            <Original>Fast travel to tent</Original>
-            <English>Fast travel to tent</English>
-            <Czech>Rychlý přesun ke stanu</Czech>
-            <French>Voyage rapide vers la tente</French>
-            <German>Schnellreise zum Zelt</German>
-            <Italian>Viaggio rapido alla tenda</Italian>
-            <Polish>Szybka podróż do namiotu</Polish>
-            <Portuguese>Viagem rápida para a tenda</Portuguese>
-            <Russian>Быстрое перемещение к палатке</Russian>
-            <Spanish>Viaje rápido a la tienda</Spanish>
-            <Turkish>Çadıra hızlı seyahat</Turkish>
-            <Korean>텐트로 빠른 이동</Korean>
-            <Japanese>テントへファストトラベル</Japanese>
-            <Chinesesimp>快速移动至帐篷</Chinesesimp>
-            <Chinese>快速移動至帳篷</Chinese>
-        </Key>
-        <Key ID="STR_WL_ftTentInfo">
-            <Original>Fast travel to your tent. You can deploy a tent by throwing a chemlight of any color.</Original>
-            <English>Fast travel to your tent. You can deploy a tent by throwing a chemlight of any color.</English>
-            <Czech>Rychlý přesun k vašemu stanu. Stan můžete rozložit hozením chemického světla libovolné barvy.</Czech>
-            <French>Voyage rapide vers votre tente. Vous pouvez déployer une tente en lançant un bâton lumineux de n’importe quelle couleur.</French>
-            <German>Schnellreise zu deinem Zelt. Du kannst ein Zelt errichten, indem du ein Knicklicht beliebiger Farbe wirfst.</German>
-            <Italian>Viaggio rapido verso la tua tenda. Puoi schierare una tenda lanciando un chemlight di qualsiasi colore.</Italian>
-            <Polish>Szybka podróż do twojego namiotu. Możesz rozstawić namiot, rzucając chemiczne światło dowolnego koloru.</Polish>
-            <Portuguese>Viagem rápida para a sua tenda. Você pode montar uma tenda lançando um bastão luminoso de qualquer cor.</Portuguese>
-            <Russian>Быстрое перемещение к вашей палатке. Вы можете установить палатку, бросив химический источник света любого цвета.</Russian>
-            <Spanish>Viaje rápido a tu tienda. Puedes desplegar una tienda lanzando una luz química de cualquier color.</Spanish>
-            <Turkish>Çadırına hızlı seyahat et. Herhangi bir renkte kimyasal ışık atarak çadır kurabilirsin.</Turkish>
-            <Korean>자신의 텐트로 빠르게 이동합니다. 어떤 색이든 케미컬 라이트를 던져 텐트를 설치할 수 있습니다.</Korean>
-            <Japanese>自分のテントへファストトラベルします。任意の色のケミカルライトを投げることでテントを設置できます。</Japanese>
-            <Chinesesimp>快速移动至你的帐篷。投掷任意颜色的化学荧光棒即可部署帐篷。</Chinesesimp>
-            <Chinese>快速移動至你的帳篷。投擲任意顏色的化學螢光棒即可部署帳篷。</Chinese>
-        </Key>
         <Key ID="STR_WL_ftStronghold">
             <Original>Fast travel to sector stronghold</Original>
             <English>Fast travel to sector stronghold</English>
@@ -1768,6 +1785,40 @@
             <Japanese>要塞へファストトラベルします。要塞は占領したセクター内の建物から作成できます。要塞内の歩兵は制圧力が7倍になります。</Japanese>
             <Chinesesimp>快速移动至要塞。要塞可由已控制区域内的建筑创建。要塞中的步兵拥有7倍的占领能力。</Chinesesimp>
             <Chinese>快速移動至要塞。要塞可由已控制區域內的建築建立。要塞中的步兵擁有7倍的佔領能力。</Chinese>
+        </Key>
+        <Key ID="STR_WL_ftTent">
+            <Original>Fast travel to tent</Original>
+            <English>Fast travel to tent</English>
+            <Czech>Rychlý přesun ke stanu</Czech>
+            <French>Voyage rapide vers la tente</French>
+            <German>Schnellreise zum Zelt</German>
+            <Italian>Viaggio rapido alla tenda</Italian>
+            <Polish>Szybka podróż do namiotu</Polish>
+            <Portuguese>Viagem rápida para a tenda</Portuguese>
+            <Russian>Быстрое перемещение к палатке</Russian>
+            <Spanish>Viaje rápido a la tienda</Spanish>
+            <Turkish>Çadıra hızlı seyahat</Turkish>
+            <Korean>텐트로 빠른 이동</Korean>
+            <Japanese>テントへファストトラベル</Japanese>
+            <Chinesesimp>快速移动至帐篷</Chinesesimp>
+            <Chinese>快速移動至帳篷</Chinese>
+        </Key>
+        <Key ID="STR_WL_ftTentInfo">
+            <Original>Fast travel to your tent. You can deploy a tent by throwing a chemlight of any color.</Original>
+            <English>Fast travel to your tent. You can deploy a tent by throwing a chemlight of any color.</English>
+            <Czech>Rychlý přesun k vašemu stanu. Stan můžete rozložit hozením chemického světla libovolné barvy.</Czech>
+            <French>Voyage rapide vers votre tente. Vous pouvez déployer une tente en lançant un bâton lumineux de n’importe quelle couleur.</French>
+            <German>Schnellreise zu deinem Zelt. Du kannst ein Zelt errichten, indem du ein Knicklicht beliebiger Farbe wirfst.</German>
+            <Italian>Viaggio rapido verso la tua tenda. Puoi schierare una tenda lanciando un chemlight di qualsiasi colore.</Italian>
+            <Polish>Szybka podróż do twojego namiotu. Możesz rozstawić namiot, rzucając chemiczne światło dowolnego koloru.</Polish>
+            <Portuguese>Viagem rápida para a sua tenda. Você pode montar uma tenda lançando um bastão luminoso de qualquer cor.</Portuguese>
+            <Russian>Быстрое перемещение к вашей палатке. Вы можете установить палатку, бросив химический источник света любого цвета.</Russian>
+            <Spanish>Viaje rápido a tu tienda. Puedes desplegar una tienda lanzando una luz química de cualquier color.</Spanish>
+            <Turkish>Çadırına hızlı seyahat et. Herhangi bir renkte kimyasal ışık atarak çadır kurabilirsin.</Turkish>
+            <Korean>자신의 텐트로 빠르게 이동합니다. 어떤 색이든 케미컬 라이트를 던져 텐트를 설치할 수 있습니다.</Korean>
+            <Japanese>自分のテントへファストトラベルします。任意の色のケミカルライトを投げることでテントを設置できます。</Japanese>
+            <Chinesesimp>快速移动至你的帐篷。投掷任意颜色的化学荧光棒即可部署帐篷。</Chinesesimp>
+            <Chinese>快速移動至你的帳篷。投擲任意顏色的化學螢光棒即可部署帳篷。</Chinese>
         </Key>
         <Key ID="STR_WL_goBack">
             <Original>Go Back</Original>
@@ -2008,21 +2059,21 @@
             <Chinese>Warlords Redux 由 WarSimVets 社区编辑。</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText10">
-            <Original>Join a squad or create your own for maximum teamwork. Scroll with mouse to access Squad menu.</Original>
-            <English>Join a squad or create your own for maximum teamwork. Scroll with mouse to access Squad menu.</English>
-            <Czech>Připojte se k družině nebo si vytvořte vlastní pro maximální týmovou práci.</Czech>
-            <French>Rejoignez une escouade ou créez la vôtre pour un travail d'équipe optimal.</French>
-            <German>Schließe dich einem Team an oder erstelle dein eigenes für maximale Teamarbeit.</German>
-            <Italian>Unisciti a uno squad o creane uno tuo per un lavoro di squadra ottimale.</Italian>
-            <Polish>Dołącz do drużyny lub stwórz własną dla maksymalnej współpracy zespołowej.</Polish>
-            <Portuguese>Junte-se a um esquadrão ou crie o seu para uma cooperação máxima.</Portuguese>
-            <Russian>Присоедининись к отряду или создай свой, прокрутив колёсиком мышки и нажав на "Отряды", для максимальной командной работы.</Russian>
-            <Spanish>Únete a un escuadrón o crea el tuyo para lograr el máximo trabajo en equipo.</Spanish>
-            <Turkish>Maksimum takım çalışması için bir ekibe katılın veya kendi ekibinizi oluşturun.</Turkish>
-            <Korean>최대 팀워크를 위해 분대에 가입하거나 직접 분대를 만드세요.</Korean>
-            <Japanese>最大限のチームワークを発揮するために、分隊に参加するか、自分で作成してください。</Japanese>
-            <Chinesesimp>加入小队或创建自己的小队以实现最佳团队合作。</Chinesesimp>
-            <Chinese>加入小隊或創建自己的小隊以實現最佳團隊合作。</Chinese>
+            <Original>Use your AI as your vehicle gunner. AI gunners are highly lethal and avoid teamkilling.</Original>
+            <English>Use your AI as your vehicle gunner. AI gunners are highly lethal and avoid teamkilling.</English>
+            <Czech>Použijte svou AI jako střelce ve vozidle. Střelci ovládaní AI jsou velmi účinní a vyhýbají se palbě do vlastních řad.</Czech>
+            <French>Utilisez votre IA comme tireur de véhicule. Les tireurs contrôlés par l’IA sont extrêmement efficaces et évitent les tirs fratricides.</French>
+            <German>Setze deine KI als Fahrzeugschützen ein. KI-Schützen sind äußerst tödlich und vermeiden Beschuss auf Verbündete.</German>
+            <Italian>Usa l'IA come mitragliere del veicolo. I mitraglieri controllati dall'IA sono estremamente letali ed evitano il fuoco amico.</Italian>
+            <Polish>Używaj swojej SI jako strzelca pokładowego. Strzelcy sterowani przez SI są niezwykle skuteczni i unikają ostrzału sojuszników.</Polish>
+            <Portuguese>Use sua IA como artilheiro do veículo. Artilheiros controlados pela IA são extremamente letais e evitam fogo amigo.</Portuguese>
+            <Russian>Используйте ИИ в качестве стрелка в вашей технике. Стрелки под управлением ИИ крайне смертоносны и избегают огня по союзникам.</Russian>
+            <Spanish>Usa tu IA como artillero del vehículo. Los artilleros controlados por la IA son extremadamente letales y evitan el fuego amigo.</Spanish>
+            <Turkish>Yapay zekânızı araç nişancısı olarak kullanın. Yapay zekâ nişancıları son derece etkilidir ve dost ateşinden kaçınır.</Turkish>
+            <Korean>AI를 차량 사수로 활용하세요. AI 사수는 매우 치명적이며 아군 오사를 피합니다.</Korean>
+            <Japanese>AIを車両の銃手として活用してください。AI銃手は非常に高い攻撃能力を持ち、味方への誤射を避けます。</Japanese>
+            <Chinesesimp>让 AI 担任你的载具炮手。AI 炮手杀伤力极强，并且会避免误伤友军。</Chinesesimp>
+            <Chinese>讓 AI 擔任你的載具砲手。AI 砲手殺傷力極強，並且會避免誤傷友軍。</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText11">
             <Original>Beware of friendly fire. When in doubt, check the map or press %1 on your target to ensure they are not a teammate.</Original>
@@ -2040,6 +2091,23 @@
             <Japanese>味方への攻撃に注意してください。疑わしい場合は、マップを確認するか、対象に %1 を押して、味方でないことを確認してください。</Japanese>
             <Chinesesimp>注意友军伤害。如有疑问，请查看地图或按 %1 确认目标不是队友。</Chinesesimp>
             <Chinese>注意友軍傷害。如有疑問，請查看地圖或按 %1 確認目標不是隊友。</Chinese>
+        </Key>
+        <Key ID="STR_WL_mapInfoText12">
+            <Original>To buy vehicles, press and hold %1.</Original>
+            <English>To buy vehicles, press and hold %1.</English>
+            <Czech>Chcete-li koupit vozidla, podržte %1.</Czech>
+            <French>Pour acheter des véhicules, appuyez longuement sur %1.</French>
+            <German>Um Fahrzeuge zu kaufen, halte %1 gedrückt.</German>
+            <Italian>Per acquistare veicoli, tieni premuto %1.</Italian>
+            <Polish>Aby kupić pojazdy, przytrzymaj %1.</Polish>
+            <Portuguese>Para comprar veículos, pressione e segure %1.</Portuguese>
+            <Russian>Чтобы купить транспорт, нажмите и удерживайте %1.</Russian>
+            <Spanish>Para comprar vehículos, mantén presionado %1.</Spanish>
+            <Turkish>Araç satın almak için %1 tuşuna basılı tutun.</Turkish>
+            <Korean>차량을 구매하려면 %1을(를) 길게 누르세요.</Korean>
+            <Japanese>車両を購入するには、%1を長押ししてください。</Japanese>
+            <Chinesesimp>要购买载具，请按住 %1。</Chinesesimp>
+            <Chinese>要購買載具，請按住 %1。</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText2">
             <Original>Join our Discord for access to admins, news, and scheduled events.</Original>
@@ -2076,38 +2144,38 @@
             <Chinese>如何遊玩</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText4">
-            <Original>To teleport, press and hold %1, select "Fast Travel".</Original>
-            <English>To teleport, press and hold %1, select "Fast Travel".</English>
-            <Czech>Chcete-li se teleportovat, podržte %1 a vyberte „Rychlý přesun“ vlevo.</Czech>
-            <French>Pour vous téléporter, appuyez longuement sur %1, puis sélectionnez « Voyage rapide » à gauche.</French>
-            <German>Zum Teleportieren halten Sie %1 gedrückt und wählen links „Schnellreise“ aus.</German>
-            <Italian>Per teletrasportarti, tieni premuto %1, seleziona «Viaggio Veloce» a sinistra.</Italian>
-            <Polish>Aby się teleportować, przytrzymaj %1, wybierz „Szybka podróż” po levé straně.</Polish>
-            <Portuguese>Para teletransportar, pressione e segure %1, selecione 'Viagem Rápida' à esquerda.</Portuguese>
-            <Russian>Чтобы телепортироваться, нажми и удерживай %1, затем выбери «Быстрое перемещение» слева.</Russian>
-            <Spanish>Para teletransportarte, mantén presionado %1 y selecciona 'Viaje Rápido' a la izquierda.</Spanish>
-            <Turkish>Işınlanmak için, %1 tuşuna basılı tutun, sol taraftan 'Hızlı Seyahat'i seçin.</Turkish>
-            <Korean>텔레포트하려면, %1을(를) 길게 누르고 왼쪽에서 '빠른 이동'을 선택하세요.</Korean>
-            <Japanese>テレポートするには、%1を長押しし、左側で「高速移動」を選択してください。</Japanese>
-            <Chinesesimp>要传送，按住 %1，然后在左侧选择“快速旅行”。</Chinesesimp>
-            <Chinese>要傳送，按住 %1，然後在左側選擇「快速旅行」。</Chinese>
+            <Original>To teleport, click on a friendly or contested sector, and select "Fast Travel".</Original>
+            <English>To teleport, click on a friendly or contested sector, and select "Fast Travel".</English>
+            <Czech>Chcete-li se teleportovat, klikněte na spřátelený nebo sporný sektor a vyberte „Rychlý přesun“.</Czech>
+            <French>Pour vous téléporter, cliquez sur un secteur allié ou contesté, puis sélectionnez « Voyage rapide ».</French>
+            <German>Um sich zu teleportieren, klicken Sie auf einen verbündeten oder umkämpften Sektor und wählen Sie „Schnellreise“ aus.</German>
+            <Italian>Per teletrasportarti, fai clic su un settore alleato o conteso e seleziona «Viaggio veloce».</Italian>
+            <Polish>Aby się teleportować, kliknij przyjazny lub sporny sektor i wybierz „Szybka podróż”.</Polish>
+            <Portuguese>Para se teletransportar, clique em um setor aliado ou disputado e selecione "Viagem Rápida".</Portuguese>
+            <Russian>Чтобы телепортироваться, нажмите на дружественный или оспариваемый сектор и выберите «Быстрое перемещение».</Russian>
+            <Spanish>Para teletransportarte, haz clic en un sector aliado o disputado y selecciona «Viaje rápido».</Spanish>
+            <Turkish>Işınlanmak için dost veya çekişmeli bir sektöre tıklayın ve “Hızlı Seyahat”i seçin.</Turkish>
+            <Korean>텔레포트하려면 우호 또는 분쟁 중인 구역을 클릭하고 '빠른 이동'을 선택하세요.</Korean>
+            <Japanese>テレポートするには、味方または争奪中のセクターをクリックし、「高速移動」を選択してください。</Japanese>
+            <Chinesesimp>要传送，请点击友方或争夺中的区域，然后选择“快速旅行”。</Chinesesimp>
+            <Chinese>要傳送，請點擊友方或爭奪中的區域，然後選擇「快速旅行」。</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText5">
-            <Original>To customize loadout, press and hold %1, select "Gear" on the left, and then select "Loadouts".</Original>
-            <English>To customize loadout, press and hold %1, select "Gear" on the left, and then select "Loadouts".</English>
-            <Czech>Chcete-li upravit výbavu, podržte %1, vyberte vlevo „Výbava“ a poté zvolte „Loadouts“.</Czech>
-            <French>Pour personnaliser votre équipement, appuyez longuement sur %1, sélectionnez « Équipement » à gauche, puis choisissez « Loadouts ».</French>
-            <German>Um deine Ausrüstung anzupassen, halte %1 gedrückt, wähle links „Ausrüstung“ und dann „Loadouts“.</German>
-            <Italian>Per personalizzare il tuo equipaggiamento, tieni premuto %1, seleziona «Equipaggiamento» a sinistra, quindi scegli «Loadouts».</Italian>
-            <Polish>Aby dostosować zestaw, przytrzymaj %1, wybierz po levé straně „Wyposażenie” i następnie „Loadouts”.</Polish>
-            <Portuguese>Para personalizar seu equipamento, pressione e segure %1, selecione 'Equipamento' à esquerda, e depois 'Loadouts'.</Portuguese>
-            <Russian>Чтобы изменить снаряжение, нажми и удерживай %1, выбери слева «Снаряжение», затем «Арсенал» или «Loadouts».</Russian>
-            <Spanish>Para personalizar tu equipo, mantén presionado %1, selecciona 'Equipo' a la izquierda y luego 'Loadouts'.</Spanish>
-            <Turkish>Yüklemenizi özelleştirmek için, %1 tuşuna basılı tutun, sol taraftan 'Ekipman'ı seçin ve ardından 'Özelleştirme'yi seçin.</Turkish>
-            <Korean>장비를 사용자 지정하려면, %1을(를) 길게 누르고 왼쪽에서 '장비'를 선택한 후 'Loadouts'를 선택하세요.</Korean>
-            <Japanese>ロードアウトをカスタマイズするには、%1を長押しし、左側で「ギア」を選択し、その後「Loadouts」を選んでください。</Japanese>
-            <Chinesesimp>要自定义装备，按住 %1，然后在左侧选择“装备”，再选择“Loadouts”。</Chinesesimp>
-            <Chinese>要自定義裝備，按住 %1，然後在左側選擇「裝備」，再選擇「Loadouts」。</Chinese>
+            <Original>To customize loadout, open your inventory, and select Arsenal.</Original>
+            <English>To customize your loadout, open your inventory and select "Arsenal".</English>
+            <Czech>Chcete-li upravit svou výbavu, otevřete inventář a vyberte „Arzenál“.</Czech>
+            <French>Pour personnaliser votre équipement, ouvrez votre inventaire et sélectionnez « Arsenal ».</French>
+            <German>Um deine Ausrüstung anzupassen, öffne dein Inventar und wähle „Arsenal“ aus.</German>
+            <Italian>Per personalizzare il tuo equipaggiamento, apri l'inventario e seleziona «Arsenale».</Italian>
+            <Polish>Aby dostosować swój zestaw, otwórz ekwipunek i wybierz „Arsenał”.</Polish>
+            <Portuguese>Para personalizar seu equipamento, abra o inventário e selecione "Arsenal".</Portuguese>
+            <Russian>Чтобы изменить снаряжение, откройте инвентарь и выберите «Арсенал».</Russian>
+            <Spanish>Para personalizar tu equipo, abre el inventario y selecciona «Arsenal».</Spanish>
+            <Turkish>Teçhizatınızı özelleştirmek için envanterinizi açın ve “Cephanelik”i seçin.</Turkish>
+            <Korean>장비 구성을 변경하려면 인벤토리를 열고 '무기고'를 선택하세요.</Korean>
+            <Japanese>ロードアウトをカスタマイズするには、インベントリを開き、「アーセナル」を選択してください。</Japanese>
+            <Chinesesimp>要自定义装备配置，请打开物品栏并选择“军械库”。</Chinesesimp>
+            <Chinese>要自訂裝備配置，請開啟物品欄並選擇「軍械庫」。</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText6">
             <Original>To ping the enemy, look at your target and press %1.</Original>
@@ -2161,21 +2229,38 @@
             <Chinese>初學者推薦</Chinese>
         </Key>
         <Key ID="STR_WL_mapInfoText9">
-            <Original>To get 2 times more money for kills, scroll with the mouse, open "Setting", and toggle on "Disable 3rd person view".</Original>
-            <English>To get 2 times more money for kills, scroll with the mouse, open "Setting", and toggle on "Disable 3rd person view".</English>
-            <Czech>Chcete-li získat dvakrát více peněz za zabití, posuňte kolečkem myši, otevřete „Nastavení“ a zapněte „Zakázat pohled ze 3. osoby“.</Czech>
-            <French>Pour obtenir 2 fois plus d'argent par élimination, faites défiler avec la souris, ouvrez « Paramètres » et activez « Désactiver la vue à la troisième personne ».</French>
-            <German>Um 2-mal mehr Geld für Kills zu erhalten, scrolle mit der Maus, öffne die „Einstellungen“ und aktiviere „Dritte-Person-Ansicht deaktivieren“.</German>
-            <Italian>Per ottenere il doppio dei soldi per ogni uccisione, scorri con il mouse, apri «Impostazioni» e attiva «Disabilita vista in terza persona».</Italian>
-            <Polish>Aby otrzymać 2 razy więcej pieniędzy za zabójstwa, przewiń myszą, otwórz „Ustawienia” i włącz „Wyłącz widok z trzeciej osoby”.</Polish>
-            <Portuguese>Para obter o dobro de dinheiro por abates, role com o mouse, abra 'Configurações' e ative 'Desativar visão em terceira pessoa'.</Portuguese>
-            <Russian>Чтобы получать в 2 раза больше денег за убийства, прокрути колёсиком мышки, открой «Настройки», переключи тумблер «Disable 3rd person view»</Russian>
-            <Spanish>Para obtener el doble de dinero por bajas, desplaza el ratón, abre 'Configuración' y activa 'Desactivar vista en tercera persona'.</Spanish>
-            <Turkish>Öldürmelerde 2 kat daha fazla para kazanmak için, fare ile kaydırın, 'Ayarlar'ı açın ve '3. kişi görünümünü devre dışı bırak'ı etkinleştirin.</Turkish>
-            <Korean>킬 시 두 배의 돈을 얻으려면, 마우스를 스크롤하고 '설정'을 열어 '3인칭 시점 비활성화'를 켜세요.</Korean>
-            <Japanese>キルで2倍の報酬を得るには、マウスホイールを回し、『設定』を開いて『3人称視点の無効化』をオンにしてください。</Japanese>
-            <Chinesesimp>要获得击杀奖励的2倍金钱，滚动鼠标，打开“设置”，并启用“禁用第三人称视角”。</Chinesesimp>
-            <Chinese>要獲得擊殺獎勵的2倍金錢，滾動滑鼠，打開「設定」，並啟用「禁用第三人稱視角」。</Chinese>
+            <Original>Always check the map. Enemies spotted by friendly sensors are visible on the map.</Original>
+            <English>Always check the map. Enemies spotted by friendly sensors are visible on the map.</English>
+            <Czech>Vždy kontrolujte mapu. Nepřátelé odhalení spojeneckými senzory jsou na mapě viditelní.</Czech>
+            <French>Consultez régulièrement la carte. Les ennemis repérés par les capteurs alliés y sont visibles.</French>
+            <German>Überprüfe regelmäßig die Karte. Gegner, die von verbündeten Sensoren erfasst wurden, sind auf der Karte sichtbar.</German>
+            <Italian>Controlla sempre la mappa. I nemici rilevati dai sensori alleati sono visibili sulla mappa.</Italian>
+            <Polish>Zawsze sprawdzaj mapę. Wrogowie wykryci przez sojusznicze czujniki są na niej widoczni.</Polish>
+            <Portuguese>Verifique sempre o mapa. Os inimigos detectados por sensores aliados ficam visíveis no mapa.</Portuguese>
+            <Russian>Всегда проверяйте карту. Враги, обнаруженные союзными датчиками, отображаются на карте.</Russian>
+            <Spanish>Consulta siempre el mapa. Los enemigos detectados por sensores aliados aparecen en él.</Spanish>
+            <Turkish>Haritayı daima kontrol edin. Dost sensörler tarafından tespit edilen düşmanlar haritada görünür.</Turkish>
+            <Korean>항상 지도를 확인하세요. 아군 센서가 탐지한 적은 지도에 표시됩니다.</Korean>
+            <Japanese>常にマップを確認してください。味方のセンサーが探知した敵はマップに表示されます。</Japanese>
+            <Chinesesimp>请随时查看地图。友方传感器侦测到的敌人会显示在地图上。</Chinesesimp>
+            <Chinese>請隨時查看地圖。友方感測器偵測到的敵人會顯示在地圖上。</Chinese>
+        </Key>
+        <Key ID="STR_WL_next">
+            <Original>Next</Original>
+            <English>Next</English>
+            <Czech>Další</Czech>
+            <French>Suivant</French>
+            <German>Weiter</German>
+            <Italian>Successivo</Italian>
+            <Polish>Następny</Polish>
+            <Portuguese>Próximo</Portuguese>
+            <Russian>Следующий</Russian>
+            <Spanish>Siguiente</Spanish>
+            <Turkish>Sonraki</Turkish>
+            <Korean>다음</Korean>
+            <Japanese>次へ</Japanese>
+            <Chinesesimp>下一项</Chinesesimp>
+            <Chinese>下一項</Chinese>
         </Key>
         <Key ID="STR_WL_noAlliedPlayers">
             <Original>No allied players available.</Original>
@@ -2244,6 +2329,23 @@
             <Japanese>パイロンは以前の設定で再読み込みされます。</Japanese>
             <Chinesesimp>您的挂架将按其旧设置重新加载。</Chinesesimp>
             <Chinese>您的掛架將按其舊設置重新加載。</Chinese>
+        </Key>
+        <Key ID="STR_WL_previous">
+            <Original>Previous</Original>
+            <English>Previous</English>
+            <Czech>Předchozí</Czech>
+            <French>Précédent</French>
+            <German>Zurück</German>
+            <Italian>Precedente</Italian>
+            <Polish>Poprzedni</Polish>
+            <Portuguese>Anterior</Portuguese>
+            <Russian>Предыдущий</Russian>
+            <Spanish>Anterior</Spanish>
+            <Turkish>Önceki</Turkish>
+            <Korean>이전</Korean>
+            <Japanese>前へ</Japanese>
+            <Chinesesimp>上一项</Chinesesimp>
+            <Chinese>上一項</Chinese>
         </Key>
         <Key ID="STR_WL_pylonApplyTitle">
             <Original>PYLON APPLY WARNING</Original>
@@ -2551,6 +2653,23 @@
             <Chinesesimp>保存配置</Chinesesimp>
             <Chinese>保存配置</Chinese>
         </Key>
+        <Key ID="STR_WL_saveSlot">
+            <Original>Save Slot</Original>
+            <English>Save Slot</English>
+            <Czech>Pozice uložení</Czech>
+            <French>Emplacement de sauvegarde</French>
+            <German>Speicherplatz</German>
+            <Italian>Slot di salvataggio</Italian>
+            <Polish>Slot zapisu</Polish>
+            <Portuguese>Slot de salvamento</Portuguese>
+            <Russian>Слот сохранения</Russian>
+            <Spanish>Ranura de guardado</Spanish>
+            <Turkish>Kayıt Yuvası</Turkish>
+            <Korean>저장 슬롯</Korean>
+            <Japanese>セーブスロット</Japanese>
+            <Chinesesimp>存档槽</Chinesesimp>
+            <Chinese>存檔槽</Chinese>
+        </Key>
         <Key ID="STR_WL_sectorDefense">
             <Original>Sector Defense</Original>
             <English>Sector Defense</English>
@@ -2669,6 +2788,482 @@
             <Japanese>--- 単色 ---</Japanese>
             <Chinesesimp>--- 纯色 ---</Chinesesimp>
             <Chinese>--- 純色 ---</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnAirAssault">
+            <Original>AIR ASSAULT</Original>
+            <English>AIR ASSAULT</English>
+            <Czech>VZDUŠNÝ VÝSADEK</Czech>
+            <French>ASSAUT AÉRIEN</French>
+            <German>LUFTANGRIFF</German>
+            <Italian>ASSALTO AEREO</Italian>
+            <Polish>DESANT POWIETRZNY</Polish>
+            <Portuguese>ASSALTO AÉREO</Portuguese>
+            <Russian>ВОЗДУШНЫЙ ДЕСАНТ</Russian>
+            <Spanish>ASALTO AÉREO</Spanish>
+            <Turkish>HAVA HÜCUMU</Turkish>
+            <Korean>공중강습</Korean>
+            <Japanese>空挺強襲</Japanese>
+            <Chinesesimp>空中突击</Chinesesimp>
+            <Chinese>空中突擊</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnAssetList">
+            <Original>ASSET LIST</Original>
+            <English>ASSET LIST</English>
+            <Czech>SEZNAM PROSTŘEDKŮ</Czech>
+            <French>LISTE DES RESSOURCES</French>
+            <German>ASSETLISTE</German>
+            <Italian>ELENCO RISORSE</Italian>
+            <Polish>LISTA ZASOBÓW</Polish>
+            <Portuguese>LISTA DE RECURSOS</Portuguese>
+            <Russian>СПИСОК РЕСУРСОВ</Russian>
+            <Spanish>LISTA DE RECURSOS</Spanish>
+            <Turkish>VARLIK LİSTESİ</Turkish>
+            <Korean>자산 목록</Korean>
+            <Japanese>アセット一覧</Japanese>
+            <Chinesesimp>资源列表</Chinesesimp>
+            <Chinese>資源列表</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnAttack">
+            <Original>ATTACK</Original>
+            <English>ATTACK</English>
+            <Czech>ÚTOK</Czech>
+            <French>ATTAQUE</French>
+            <German>ANGRIFF</German>
+            <Italian>ATTACCO</Italian>
+            <Polish>ATAK</Polish>
+            <Portuguese>ATAQUE</Portuguese>
+            <Russian>АТАКА</Russian>
+            <Spanish>ATAQUE</Spanish>
+            <Turkish>SALDIRI</Turkish>
+            <Korean>공격</Korean>
+            <Japanese>攻撃</Japanese>
+            <Chinesesimp>进攻</Chinesesimp>
+            <Chinese>進攻</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnBuyAssets">
+            <Original>BUY ASSETS</Original>
+            <English>BUY ASSETS</English>
+            <Czech>KOUPIT PROSTŘEDKY</Czech>
+            <French>ACHETER DES RESSOURCES</French>
+            <German>ASSETS KAUFEN</German>
+            <Italian>ACQUISTA RISORSE</Italian>
+            <Polish>KUP ZASOBY</Polish>
+            <Portuguese>COMPRAR RECURSOS</Portuguese>
+            <Russian>КУПИТЬ РЕСУРСЫ</Russian>
+            <Spanish>COMPRAR RECURSOS</Spanish>
+            <Turkish>VARLIK SATIN AL</Turkish>
+            <Korean>자산 구매</Korean>
+            <Japanese>アセットを購入</Japanese>
+            <Chinesesimp>购买资源</Chinesesimp>
+            <Chinese>購買資源</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnCreateSquad">
+            <Original>CREATE SQUAD</Original>
+            <English>CREATE SQUAD</English>
+            <Czech>VYTVOŘIT DRUŽSTVO</Czech>
+            <French>CRÉER UNE ESCOUADE</French>
+            <German>TRUPP ERSTELLEN</German>
+            <Italian>CREA SQUADRA</Italian>
+            <Polish>UTWÓRZ ODDZIAŁ</Polish>
+            <Portuguese>CRIAR ESQUADRÃO</Portuguese>
+            <Russian>СОЗДАТЬ ОТРЯД</Russian>
+            <Spanish>CREAR ESCUADRÓN</Spanish>
+            <Turkish>MANGA OLUŞTUR</Turkish>
+            <Korean>분대 생성</Korean>
+            <Japanese>分隊を作成</Japanese>
+            <Chinesesimp>创建小队</Chinesesimp>
+            <Chinese>建立小隊</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnDefend">
+            <Original>DEFEND</Original>
+            <English>DEFEND</English>
+            <Czech>OBRANA</Czech>
+            <French>DÉFENDRE</French>
+            <German>VERTEIDIGEN</German>
+            <Italian>DIFENDI</Italian>
+            <Polish>OBRONA</Polish>
+            <Portuguese>DEFENDER</Portuguese>
+            <Russian>ОБОРОНА</Russian>
+            <Spanish>DEFENDER</Spanish>
+            <Turkish>SAVUN</Turkish>
+            <Korean>방어</Korean>
+            <Japanese>防衛</Japanese>
+            <Chinesesimp>防守</Chinesesimp>
+            <Chinese>防守</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnDisableFeed">
+            <Original>DISABLE FEED</Original>
+            <English>DISABLE FEED</English>
+            <Czech>VYPNOUT PŘEHLED</Czech>
+            <French>DÉSACTIVER LE FLUX</French>
+            <German>FEED DEAKTIVIEREN</German>
+            <Italian>DISATTIVA FEED</Italian>
+            <Polish>WYŁĄCZ KANAŁ</Polish>
+            <Portuguese>DESATIVAR FEED</Portuguese>
+            <Russian>ОТКЛЮЧИТЬ ЛЕНТУ</Russian>
+            <Spanish>DESACTIVAR FEED</Spanish>
+            <Turkish>AKIŞI DEVRE DIŞI BIRAK</Turkish>
+            <Korean>피드 비활성화</Korean>
+            <Japanese>フィードを無効化</Japanese>
+            <Chinesesimp>禁用动态</Chinesesimp>
+            <Chinese>停用動態</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnDisableTI">
+            <Original>DISABLE TI</Original>
+            <English>DISABLE TI</English>
+            <Czech>VYPNOUT TI</Czech>
+            <French>DÉSACTIVER L'IMAGERIE THERMIQUE</French>
+            <German>WÄRMEBILD DEAKTIVIEREN</German>
+            <Italian>DISATTIVA TERMOCAMERA</Italian>
+            <Polish>WYŁĄCZ TERMOWIZJĘ</Polish>
+            <Portuguese>DESATIVAR VISÃO TÉRMICA</Portuguese>
+            <Russian>ОТКЛЮЧИТЬ ТЕПЛОВИЗОР</Russian>
+            <Spanish>DESACTIVAR VISIÓN TÉRMICA</Spanish>
+            <Turkish>TERMAL GÖRÜŞÜ DEVRE DIŞI BIRAK</Turkish>
+            <Korean>열화상 비활성화</Korean>
+            <Japanese>サーマルを無効化</Japanese>
+            <Chinesesimp>禁用热成像</Chinesesimp>
+            <Chinese>停用熱成像</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnEnableFeed">
+            <Original>ENABLE FEED</Original>
+            <English>ENABLE FEED</English>
+            <Czech>ZAPNOUT PŘEHLED</Czech>
+            <French>ACTIVER LE FLUX</French>
+            <German>FEED AKTIVIEREN</German>
+            <Italian>ATTIVA FEED</Italian>
+            <Polish>WŁĄCZ KANAŁ</Polish>
+            <Portuguese>ATIVAR FEED</Portuguese>
+            <Russian>ВКЛЮЧИТЬ ЛЕНТУ</Russian>
+            <Spanish>ACTIVAR FEED</Spanish>
+            <Turkish>AKIŞI ETKİNLEŞTİR</Turkish>
+            <Korean>피드 활성화</Korean>
+            <Japanese>フィードを有効化</Japanese>
+            <Chinesesimp>启用动态</Chinesesimp>
+            <Chinese>啟用動態</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnEnableTI">
+            <Original>ENABLE TI</Original>
+            <English>ENABLE TI</English>
+            <Czech>ZAPNOUT TI</Czech>
+            <French>ACTIVER L'IMAGERIE THERMIQUE</French>
+            <German>WÄRMEBILD AKTIVIEREN</German>
+            <Italian>ATTIVA TERMOCAMERA</Italian>
+            <Polish>WŁĄCZ TERMOWIZJĘ</Polish>
+            <Portuguese>ATIVAR VISÃO TÉRMICA</Portuguese>
+            <Russian>ВКЛЮЧИТЬ ТЕПЛОВИЗОР</Russian>
+            <Spanish>ACTIVAR VISIÓN TÉRMICA</Spanish>
+            <Turkish>TERMAL GÖRÜŞÜ ETKİNLEŞTİR</Turkish>
+            <Korean>열화상 활성화</Korean>
+            <Japanese>サーマルを有効化</Japanese>
+            <Chinesesimp>启用热成像</Chinesesimp>
+            <Chinese>啟用熱成像</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnFeedOff">
+            <Original>FEED OFF</Original>
+            <English>FEED OFF</English>
+            <Czech>PŘEHLED VYPNUT</Czech>
+            <French>FLUX DÉSACTIVÉ</French>
+            <German>FEED AUS</German>
+            <Italian>FEED DISATTIVATO</Italian>
+            <Polish>KANAŁ WYŁĄCZONY</Polish>
+            <Portuguese>FEED DESATIVADO</Portuguese>
+            <Russian>ЛЕНТА ВЫКЛ.</Russian>
+            <Spanish>FEED DESACTIVADO</Spanish>
+            <Turkish>AKIŞ KAPALI</Turkish>
+            <Korean>피드 꺼짐</Korean>
+            <Japanese>フィード OFF</Japanese>
+            <Chinesesimp>动态已关闭</Chinesesimp>
+            <Chinese>動態已關閉</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnFOB">
+            <Original>FOB</Original>
+            <English>FOB</English>
+            <Czech>OPZ</Czech>
+            <French>FOB</French>
+            <German>FOB</German>
+            <Italian>FOB</Italian>
+            <Polish>FOB</Polish>
+            <Portuguese>FOB</Portuguese>
+            <Russian>ПОБ</Russian>
+            <Spanish>FOB</Spanish>
+            <Turkish>İOB</Turkish>
+            <Korean>FOB</Korean>
+            <Japanese>FOB</Japanese>
+            <Chinesesimp>前线基地</Chinesesimp>
+            <Chinese>前線基地</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnFull">
+            <Original>FULL</Original>
+            <English>FULL</English>
+            <Czech>PLNÉ</Czech>
+            <French>COMPLÈTE</French>
+            <German>VOLL</German>
+            <Italian>AL COMPLETO</Italian>
+            <Polish>PEŁNY</Polish>
+            <Portuguese>LOTADO</Portuguese>
+            <Russian>ЗАПОЛНЕН</Russian>
+            <Spanish>LLENO</Spanish>
+            <Turkish>DOLU</Turkish>
+            <Korean>가득 참</Korean>
+            <Japanese>満員</Japanese>
+            <Chinesesimp>已满</Chinesesimp>
+            <Chinese>已滿</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnHelp">
+            <Original>HELP</Original>
+            <English>HELP</English>
+            <Czech>NÁPOVĚDA</Czech>
+            <French>AIDE</French>
+            <German>HILFE</German>
+            <Italian>AIUTO</Italian>
+            <Polish>POMOC</Polish>
+            <Portuguese>AJUDA</Portuguese>
+            <Russian>ПОМОЩЬ</Russian>
+            <Spanish>AYUDA</Spanish>
+            <Turkish>YARDIM</Turkish>
+            <Korean>도움말</Korean>
+            <Japanese>ヘルプ</Japanese>
+            <Chinesesimp>帮助</Chinesesimp>
+            <Chinese>幫助</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnHome">
+            <Original>HOME</Original>
+            <English>HOME</English>
+            <Czech>ZÁKLADNA</Czech>
+            <French>BASE</French>
+            <German>BASIS</German>
+            <Italian>BASE</Italian>
+            <Polish>BAZA</Polish>
+            <Portuguese>BASE</Portuguese>
+            <Russian>БАЗА</Russian>
+            <Spanish>BASE</Spanish>
+            <Turkish>ÜS</Turkish>
+            <Korean>기지</Korean>
+            <Japanese>基地</Japanese>
+            <Chinesesimp>基地</Chinesesimp>
+            <Chinese>基地</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnHomeBase">
+            <Original>HOME BASE</Original>
+            <English>HOME BASE</English>
+            <Czech>DOMOVSKÁ ZÁKLADNA</Czech>
+            <French>BASE PRINCIPALE</French>
+            <German>HAUPTSTÜTZPUNKT</German>
+            <Italian>BASE PRINCIPALE</Italian>
+            <Polish>BAZA GŁÓWNA</Polish>
+            <Portuguese>BASE PRINCIPAL</Portuguese>
+            <Russian>ГЛАВНАЯ БАЗА</Russian>
+            <Spanish>BASE PRINCIPAL</Spanish>
+            <Turkish>ANA ÜS</Turkish>
+            <Korean>본진</Korean>
+            <Japanese>本拠地</Japanese>
+            <Chinesesimp>主基地</Chinesesimp>
+            <Chinese>主基地</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnInviteSquad">
+            <Original>INVITE TO SQUAD</Original>
+            <English>INVITE TO SQUAD</English>
+            <Czech>POZVAT DO DRUŽSTVA</Czech>
+            <French>INVITER DANS L'ESCOUADE</French>
+            <German>ZUM TRUPP EINLADEN</German>
+            <Italian>INVITA NELLA SQUADRA</Italian>
+            <Polish>ZAPROŚ DO ODDZIAŁU</Polish>
+            <Portuguese>CONVIDAR PARA O ESQUADRÃO</Portuguese>
+            <Russian>ПРИГЛАСИТЬ В ОТРЯД</Russian>
+            <Spanish>INVITAR AL ESCUADRÓN</Spanish>
+            <Turkish>MANGAYA DAVET ET</Turkish>
+            <Korean>분대로 초대</Korean>
+            <Japanese>分隊に招待</Japanese>
+            <Chinesesimp>邀请加入小队</Chinesesimp>
+            <Chinese>邀請加入小隊</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnJoin">
+            <Original>JOIN</Original>
+            <English>JOIN</English>
+            <Czech>PŘIPOJIT SE</Czech>
+            <French>REJOINDRE</French>
+            <German>BEITRETEN</German>
+            <Italian>UNISCITI</Italian>
+            <Polish>DOŁĄCZ</Polish>
+            <Portuguese>ENTRAR</Portuguese>
+            <Russian>ПРИСОЕДИНИТЬСЯ</Russian>
+            <Spanish>UNIRSE</Spanish>
+            <Turkish>KATIL</Turkish>
+            <Korean>참가</Korean>
+            <Japanese>参加</Japanese>
+            <Chinesesimp>加入</Chinesesimp>
+            <Chinese>加入</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnLeave">
+            <Original>LEAVE</Original>
+            <English>LEAVE</English>
+            <Czech>OPUSTIT</Czech>
+            <French>QUITTER</French>
+            <German>VERLASSEN</German>
+            <Italian>LASCIA</Italian>
+            <Polish>OPUŚĆ</Polish>
+            <Portuguese>SAIR</Portuguese>
+            <Russian>ПОКИНУТЬ</Russian>
+            <Spanish>SALIR</Spanish>
+            <Turkish>AYRIL</Turkish>
+            <Korean>나가기</Korean>
+            <Japanese>退出</Japanese>
+            <Chinesesimp>离开</Chinesesimp>
+            <Chinese>離開</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnLocked">
+            <Original>LOCKED</Original>
+            <English>LOCKED</English>
+            <Czech>UZAMČENÁ</Czech>
+            <French>VERROUILLÉE</French>
+            <German>GESCHLOSSEN</German>
+            <Italian>CHIUSA</Italian>
+            <Polish>ZAMKNIĘTY</Polish>
+            <Portuguese>FECHADO</Portuguese>
+            <Russian>ЗАКРЫТЫЙ</Russian>
+            <Spanish>CERRADO</Spanish>
+            <Turkish>KAPALI</Turkish>
+            <Korean>잠금</Korean>
+            <Japanese>参加不可</Japanese>
+            <Chinesesimp>已锁定</Chinesesimp>
+            <Chinese>已鎖定</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnMenu">
+            <Original>Spawn Menu</Original>
+            <English>Spawn Menu</English>
+            <Czech>Nabídka nasazení</Czech>
+            <French>Menu d'apparition</French>
+            <German>Spawn-Menü</German>
+            <Italian>Menu di schieramento</Italian>
+            <Polish>Menu odrodzenia</Polish>
+            <Portuguese>Menu de spawn</Portuguese>
+            <Russian>Меню появления</Russian>
+            <Spanish>Menú de despliegue</Spanish>
+            <Turkish>Doğma Menüsü</Turkish>
+            <Korean>스폰 메뉴</Korean>
+            <Japanese>スポーンメニュー</Japanese>
+            <Chinesesimp>重生菜单</Chinesesimp>
+            <Chinese>重生選單</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnPriority">
+            <Original>PRIORITY</Original>
+            <English>PRIORITY</English>
+            <Czech>PRIORITA</Czech>
+            <French>PRIORITÉ</French>
+            <German>PRIORITÄT</German>
+            <Italian>PRIORITÀ</Italian>
+            <Polish>PRIORYTET</Polish>
+            <Portuguese>PRIORIDADE</Portuguese>
+            <Russian>ПРИОРИТЕТ</Russian>
+            <Spanish>PRIORIDAD</Spanish>
+            <Turkish>ÖNCELİK</Turkish>
+            <Korean>우선순위</Korean>
+            <Japanese>優先</Japanese>
+            <Chinesesimp>优先</Chinesesimp>
+            <Chinese>優先</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnRandom">
+            <Original>RANDOM</Original>
+            <English>RANDOM</English>
+            <Czech>NÁHODNĚ</Czech>
+            <French>ALÉATOIRE</French>
+            <German>ZUFÄLLIG</German>
+            <Italian>CASUALE</Italian>
+            <Polish>LOSOWO</Polish>
+            <Portuguese>ALEATÓRIO</Portuguese>
+            <Russian>СЛУЧАЙНО</Russian>
+            <Spanish>ALEATORIO</Spanish>
+            <Turkish>RASTGELE</Turkish>
+            <Korean>무작위</Korean>
+            <Japanese>ランダム</Japanese>
+            <Chinesesimp>随机</Chinesesimp>
+            <Chinese>隨機</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnSquad">
+            <Original>SQUAD</Original>
+            <English>SQUAD</English>
+            <Czech>DRUŽSTVO</Czech>
+            <French>ESCOUADE</French>
+            <German>TRUPP</German>
+            <Italian>SQUADRA</Italian>
+            <Polish>ODDZIAŁ</Polish>
+            <Portuguese>ESQUADRÃO</Portuguese>
+            <Russian>ОТРЯД</Russian>
+            <Spanish>ESCUADRÓN</Spanish>
+            <Turkish>MANGA</Turkish>
+            <Korean>분대</Korean>
+            <Japanese>分隊</Japanese>
+            <Chinesesimp>小队</Chinesesimp>
+            <Chinese>小隊</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnSquadmates">
+            <Original>SQUADMATES</Original>
+            <English>SQUADMATES</English>
+            <Czech>ČLENOVÉ DRUŽSTVA</Czech>
+            <French>ÉQUIPIERS</French>
+            <German>TRUPPMITGLIEDER</German>
+            <Italian>COMPAGNI DI SQUADRA</Italian>
+            <Polish>CZŁONKOWIE ODDZIAŁU</Polish>
+            <Portuguese>COMPANHEIROS DE ESQUADRÃO</Portuguese>
+            <Russian>БОЙЦЫ ОТРЯДА</Russian>
+            <Spanish>COMPAÑEROS DE ESCUADRÓN</Spanish>
+            <Turkish>MANGA ARKADAŞLARI</Turkish>
+            <Korean>분대원</Korean>
+            <Japanese>分隊員</Japanese>
+            <Chinesesimp>队友</Chinesesimp>
+            <Chinese>隊友</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnStronghold">
+            <Original>STRONGHOLD</Original>
+            <English>STRONGHOLD</English>
+            <Czech>OPĚRNÝ BOD</Czech>
+            <French>POINT FORTIFIÉ</French>
+            <German>STÜTZPUNKT</German>
+            <Italian>CAPOSALDO</Italian>
+            <Polish>TWIERDZA</Polish>
+            <Portuguese>FORTALEZA</Portuguese>
+            <Russian>ОПОРНЫЙ ПУНКТ</Russian>
+            <Spanish>BASTIÓN</Spanish>
+            <Turkish>KALE</Turkish>
+            <Korean>거점</Korean>
+            <Japanese>拠点</Japanese>
+            <Chinesesimp>据点</Chinesesimp>
+            <Chinese>據點</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnUnassignedPlayer">
+            <Original>UNASSIGNED PLAYERS: %1</Original>
+            <English>UNASSIGNED PLAYERS: %1</English>
+            <Czech>NEPŘIŘAZENÍ HRÁČI: %1</Czech>
+            <French>JOUEURS NON ASSIGNÉS : %1</French>
+            <German>NICHT ZUGEWIESENE SPIELER: %1</German>
+            <Italian>GIOCATORI NON ASSEGNATI: %1</Italian>
+            <Polish>NIEPRZYPISANI GRACZE: %1</Polish>
+            <Portuguese>JOGADORES NÃO ATRIBUÍDOS: %1</Portuguese>
+            <Russian>НЕРАСПРЕДЕЛЁННЫЕ ИГРОКИ: %1</Russian>
+            <Spanish>JUGADORES SIN ASIGNAR: %1</Spanish>
+            <Turkish>ATANMAMIŞ OYUNCULAR: %1</Turkish>
+            <Korean>미배정 플레이어: %1</Korean>
+            <Japanese>未割り当てのプレイヤー: %1</Japanese>
+            <Chinesesimp>未分配的玩家：%1</Chinesesimp>
+            <Chinese>未分配的玩家：%1</Chinese>
+        </Key>
+        <Key ID="STR_WL_spawnVotePower">
+            <Original>Vote Power: %1</Original>
+            <English>Vote Power: %1</English>
+            <Czech>Hlasovací síla: %1</Czech>
+            <French>Pouvoir de vote : %1</French>
+            <German>Stimmkraft: %1</German>
+            <Italian>Potere di voto: %1</Italian>
+            <Polish>Siła głosu: %1</Polish>
+            <Portuguese>Poder de voto: %1</Portuguese>
+            <Russian>Сила голоса: %1</Russian>
+            <Spanish>Poder de voto: %1</Spanish>
+            <Turkish>Oy Gücü: %1</Turkish>
+            <Korean>투표 권한: %1</Korean>
+            <Japanese>投票権: %1</Japanese>
+            <Chinesesimp>投票权：%1</Chinesesimp>
+            <Chinese>投票權：%1</Chinese>
         </Key>
         <Key ID="STR_WL_squads">
             <Original>Squads</Original>
@@ -2839,6 +3434,23 @@
             <Japanese>WARLORDS REDUX 車両マネージャー</Japanese>
             <Chinesesimp>WARLORDS REDUX 车辆管理器</Chinesesimp>
             <Chinese>WARLORDS REDUX 车辆管理器</Chinese>
+        </Key>
+        <Key ID="STR_WL_warlordsReduxMissionName">
+            <Original>Warlords Redux</Original>
+            <English>Warlords Redux</English>
+            <Czech>Váleční páni Redux</Czech>
+            <French>Seigneurs de guerre Redux</French>
+            <German>Kriegsherren Redux</German>
+            <Italian>Signori della guerra Redux</Italian>
+            <Polish>Władcy wojny Redux</Polish>
+            <Portuguese>Senhores da Guerra Redux</Portuguese>
+            <Russian>Военачальники: Редукс</Russian>
+            <Spanish>Señores de la guerra Redux</Spanish>
+            <Turkish>Savaş Lordları Redux</Turkish>
+            <Korean>워로드 리덕스</Korean>
+            <Japanese>ウォーロード リダックス</Japanese>
+            <Chinesesimp>战争领主：里德克斯</Chinesesimp>
+            <Chinese>戰爭領主：里德克斯</Chinese>
         </Key>
         <Key ID="STR_WL_wipe">
             <Original>Wipe</Original>

@@ -400,10 +400,12 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "300Rnd_CMFlare_Chaff_Magazine",
+            "Laserbatteries"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles"
+            "CMFlareLauncher_Singles",
+            "Laserdesignator_pilotCamera"
         };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"

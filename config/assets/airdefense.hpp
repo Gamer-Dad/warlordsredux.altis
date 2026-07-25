@@ -24,14 +24,16 @@ class Radome: Air_Defense {
     airRadar = 20000;
     cost = 2500;
     demolishable = 3;
-    description = "Directional radar that passively tracks enemy air and hostile missile launches. Personal max: 3.";
+    description = "Directional radar that passively tracks enemy air and hostile missile launches. Team max: 5.";
     disableDamage = 1;
+    loadable = 0;
     name = "AN/FPS-124 Radome";
     nameShort = "RADOME";
     offset[] = {0, 7, 0};
     spawn = "Land_Radar_Small_F";
+    showToEnemies = 8000;
     side[] = {"west", "east", "guer"};
-    singleton = 3;
+    teamLimit = 5;
     threatDetection = 20000;
 };
 

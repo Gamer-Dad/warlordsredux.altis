@@ -45,36 +45,6 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
     };
 };
 
-// AWC Nyx (AT)
-// class B_Nyx_AT: Heavy_Vehicles {
-//     aps = 1;
-//     capValue = 3;
-//     cost = 1500;
-//     loadable = 1;
-//     name = "AWC Nyx (AT)";
-//     nameShort = "NYX";
-//     rearm = 180;
-//     side[] = {"west"};
-//     spawn = "I_LT_01_AT_F";
-//     textures[] = {
-//         "A3\armor_f_tank\lt_01\data\lt_01_main_olive_co.paa",
-//         "A3\armor_f_tank\lt_01\data\lt_01_at_olive_co.paa",
-//         "a3\Armor_F\Data\camonet_NATO_Desert_CO.paa",
-//         "A3\Armor_F_Tank\AFV_Wheeled_01\Data\afv_wheeled_01_EXT3_sand_CO.paa"
-//     };
-
-//     class Gunner: WLTurretDefaults {
-//         addMagazines[] = {
-//             "2Rnd_127mm_Firefist_missiles",
-//             "2Rnd_127mm_Firefist_missiles",
-//             "2Rnd_127mm_Firefist_missiles",
-//             "2Rnd_127mm_Firefist_missiles",
-//             "2Rnd_127mm_Firefist_missiles"
-//         };
-//         turret[] = {0};
-//     };
-// };
-
 class Utility_Vehicle: Heavy_Vehicles {
     aps = 2;
     capValue = 2;
@@ -387,7 +357,9 @@ class B_Marshall_UP: B_APC_Wheeled_01_cannon_F {
             "240Rnd_40mm_GPR_Tracer_Red_shells",
             "240Rnd_40mm_GPR_Tracer_Red_shells",
             "160Rnd_40mm_APFSDS_Tracer_Red_shells",
-            "160Rnd_40mm_APFSDS_Tracer_Red_shells"
+            "160Rnd_40mm_APFSDS_Tracer_Red_shells",
+            "2000Rnd_762x51_Belt_Red",
+            "2000Rnd_762x51_Belt_Red"
         };
         addWeapons[] = {
             "autocannon_40mm_VTOL_01",
@@ -395,7 +367,8 @@ class B_Marshall_UP: B_APC_Wheeled_01_cannon_F {
         };
         removeMagazines[] = {
             "60Rnd_40mm_GPR_Tracer_Red_shells",
-            "40Rnd_40mm_APFSDS_Tracer_Red_shells"
+            "40Rnd_40mm_APFSDS_Tracer_Red_shells",
+            "200Rnd_762x51_Belt_Red"
         };
         removeWeapons[] = {
             "autocannon_40mm_CTWS",
@@ -449,7 +422,7 @@ class O_APC_Tracked_02_cannon_F: Heavy_Vehicles {
 
 // Rhino MGS
 class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
-    aps = 2;
+    aps = 3;
     capValue = 4;
     cost = 4000;
     isLight = 1;
@@ -457,7 +430,11 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
     nameShort = "RHINO";
     rearm = 240;
     side[] = {"west"};
+};
 
+// Rhino MGS UP
+class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
+    cost = 4500;
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
             "16Rnd_125mm_APFSDS_T_Red",
@@ -480,12 +457,6 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
         };
         turret[] = {0};
     };
-};
-
-// Rhino MGS UP
-class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
-    aps = 3;
-    cost = 4500;
 };
 
 class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {

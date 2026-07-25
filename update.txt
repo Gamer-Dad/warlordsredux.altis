@@ -1,3 +1,69 @@
+Warlords Redux 2.8 Patch 14
+
+Assets
+* Blackfish Armed: now available in helipad sectors.
+* Blackfoot: laser is now pilot controllable.
+* Fighting Position: no longer destroyed by bumping into tank.
+* Radome: no longer loadable, visible for enemies on map to 8 km, limit changed to team-wide of 5.
+* Rhino MGS: reverted Rhino to 120mm cannon, upgrade APS medium->heavy.
+
+Gameplay
+* Added direction indicator for deployment.
+* Added instruction texts for using integral weapons and spectrum jammer for first time.
+* Added my assets map layer.
+* Always show map layer on map.
+* APS reloader now auto-toggles APS back on when reload is complete.
+* Changed air radar from icon to scan lines.
+* Default HMD profile now has 15km missile range.
+* Integral weapons like mortars are now only usable by the driver.
+* Moved positions of team priority and time left indicators.
+* Naval vehicles above $500 can now only be ordered within 500m of owned sector or FOB.
+* Map air defense mode shows radome circle for enemy radomes when spotted on datalink.
+* Map always show detailed text setting: shows owner names of vehicles on side without having to press alt.
+* New, lighter welcome menu. Credits moved to diary items.
+* People with profanity filtered names are now shown why they are kicked to lobby.
+* Re-added map button shortcut keys.
+* Reinforcements increased 25%.
+* Removed global AT minefield announcement.
+* Removed sabotaging HUD icons.
+* Removed waypoints map display.
+* Sector resupply now shows name of supplier.
+* Updated badge menu to be lighter on performance.
+* Vehicle reset now uses default asset offset.
+* Wrecks now show side color.
+
+Bugfixes
+* Fixed AI TP vehicle enter/leave issues, added settings to disable.
+* Fixed asset deployment instruction text position on tall objects.
+* Fixed boat type vehicle reset not working on water.
+* Fixed bulk deploy being allowed while in vehicle, and when enemies are nearby.
+* Fixed bulk deploy option showing (grayed out) on assets for which it isn't eligible.
+* Fixed bulk remove sometimes causing BE kick.
+* Fixed green units and Atsalis catapult being functionally hidden from player at game start.
+* Fixed deploying integral weapons during paradrop.
+* Fixed downed players not showing as white-red.
+* Fixed errors caused by dying or seat switching while charging railgun that can lead to BE kick.
+* Fixed explosives being demolished rather than exploding when triggered by nearby explosives.
+* Fixed exorbitant rewards for structural demolitions.
+* Fixed flatbed being loaded into blackfish.
+* Fixed green infantry staying around after sector is no longer selected.
+* Fixed init errors for detecting friendly/enemy vehicles.
+* Fixed outdated map instruction/recommendations text.
+* Fixed players seeing others' defenses.
+* Fixed railgun UI blocking killfeed total.
+* Fixed railgun UI shown when player is in map.
+* Fixed reliability issue on APS reloading.
+* Fixed repeated squad join notifications.
+* Fixed SEAD missiles sometimes not tracking even after solid lock sound.
+* Fixed SEAD missiles targeting deployable weapon rather than parent vehicles.
+* Fixed some instances of flatbed unload causing explosion.
+* Fixed some instances of sling attached items glitching into the ground.
+* Fixed some instances of unload sling items causing direct damage to helo.
+* Fixed some wrecks disappearing too soon.
+* Fixed tailhook script capturing aircraft on takeoff. It is now activated by going above 30m altitude.
+* Fixed technical info showing in some diary items.
+* Fixed Xian supply spawnable at FOB and helipads under attack.
+
 Warlords Redux 2.8 Patch 13
 
 Assets

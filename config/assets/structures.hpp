@@ -35,6 +35,7 @@ class Defensive_Kits: Structures {
     demolishStepTime = 7;
     obstacle = 1;
     offset[] = {0, 5, 0};
+    reward = 5;
 };
 
 class Land_BagFence_Long_F: Defensive_Kits {
@@ -64,7 +65,6 @@ class Land_BagBunker_Small_F: Structures {
     cost = 1000;
     demolishable = 1;
     demolishStepTime = 1;
-    fragile = 5000;
     hasFastTravel = 1;
     hasRearm = 1;
     hasRefuel = 1;
