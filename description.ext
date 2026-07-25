@@ -4,7 +4,7 @@
 #include "config\sectors.hpp"
 #include "config\whitelist.hpp"
 
-onLoadName = "$STR_WL_warlordsReduxMissionName";
+onLoadName = "$STR_WL_missionName";
 dev = "Jezuro + WSV";
 author = "Jezuro + WSV";
 allowFunctionsLog = 1;

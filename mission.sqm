@@ -160,8 +160,8 @@ dlcs[]=
 randomSeed=3694325;
 class ScenarioData
 {
-	author="Jezuro+WSV";
-	overviewText="Warlords Redux is an actively developed and maintained mission based on the Warlords.";
+	author="Jezuro + WSV";
+	overviewText="$STR_WL_missionDescription";
 	overViewPicture="src\img\wl_logo_ca.paa";
 	joinUnassigned=0;
 };
@@ -169,7 +169,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Warlords Redux 2.8";
+		briefingName="@STR_WL_missionName";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
