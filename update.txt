@@ -11,10 +11,13 @@ Gameplay
 * Added direction indicator for deployment.
 * Added instruction texts for using integral weapons and spectrum jammer for first time.
 * Added my assets map layer.
+* Air wrecks combine distance 1000->2500m.
 * Always show map layer on map.
 * APS reloader now auto-toggles APS back on when reload is complete.
+* Bulk deploy now has a 120s cooldown.
 * Changed air radar from icon to scan lines.
 * Default HMD profile now has 15km missile range.
+* Hide non-mandatory conscription notices setting now default to true.
 * Integral weapons like mortars are now only usable by the driver.
 * Moved positions of team priority and time left indicators.
 * Naval vehicles above $500 can now only be ordered within 500m of owned sector or FOB.
@@ -33,6 +36,7 @@ Gameplay
 * Wrecks now show side color.
 
 Bugfixes
+* Fixed AI entering enemy vehicles.
 * Fixed AI TP vehicle enter/leave issues, added settings to disable.
 * Fixed asset deployment instruction text position on tall objects.
 * Fixed boat type vehicle reset not working on water.
@@ -50,6 +54,7 @@ Bugfixes
 * Fixed init errors for detecting friendly/enemy vehicles.
 * Fixed outdated map instruction/recommendations text.
 * Fixed players seeing others' defenses.
+* Fixed railgun sound playing for players outside.
 * Fixed railgun UI blocking killfeed total.
 * Fixed railgun UI shown when player is in map.
 * Fixed reliability issue on APS reloading.
@@ -59,6 +64,7 @@ Bugfixes
 * Fixed some instances of flatbed unload causing explosion.
 * Fixed some instances of sling attached items glitching into the ground.
 * Fixed some instances of unload sling items causing direct damage to helo.
+* Fixed some sectors having only 1 infantry spawn.
 * Fixed some wrecks disappearing too soon.
 * Fixed tailhook script capturing aircraft on takeoff. It is now activated by going above 30m altitude.
 * Fixed technical info showing in some diary items.

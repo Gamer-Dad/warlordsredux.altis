@@ -480,8 +480,8 @@ class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {
             "450Rnd_127x108_Ball"
         };
         addWeapons[] = {
-            "cannon_railgun",
             "cannon_railgun_fake",
+            "cannon_railgun",
             "autocannon_40mm_VTOL_01",
             "HMG_NSVT"
         };
@@ -605,8 +605,8 @@ class B_Slammer_X: B_MBT_01_TUSK_F {
             "450Rnd_127x108_Ball"
         };
         addWeapons[] = {
-            "cannon_railgun",
             "cannon_railgun_fake",
+            "cannon_railgun",
             "HMG_NSVT"
         };
         removeMagazines[] = {
