@@ -1,3 +1,24 @@
+Warlords Redux 2.8 Patch 15
+
+Gameplay
+* Adding supplies to sector no longer boosts stronghold if intruders are present inside.
+* Paradrop now uses parachute for most of the fall.
+* Removed radome scanning animation.
+* Slingload short rope length 6->10m.
+
+Bugfixes
+* Fixed chat window being hidden on respawn.
+* Fixed enemy radome arc being invisible.
+* Fixed Huron/Mohawk Supply being spawnable in helipad sector under attack.
+* Fixed large numbers of deployed structures giving spot rewards.
+* Fixed magazine tooltip APS description error.
+* Fixed missing loadouts on vehicle spawn.
+* Fixed obstacle destruction repeating on collision.
+* Fixed obstacles being populated into asset list.
+* Fixed player setup resource leak.
+* Fixed script error on squad join.
+* Fixed Slammer UP cannon shell being detonated on foliage.
+
 Warlords Redux 2.8 Patch 14
 
 Assets
