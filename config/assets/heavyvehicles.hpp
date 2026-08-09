@@ -503,12 +503,12 @@ class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {
 class B_MBT_01_cannon_F: Heavy_Vehicles {
     aps = 3;
     capValue = 5;
-    cost = 5800;
+    cost = 5500;
     disallowMagazines[] = {
         "4Rnd_120mm_LG_cannon_missiles"
     };
     isLight = 1;
-    integralWeapon[] = {8, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    integralWeapon[] = {24, {-0.75, -3, 0.8}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     loaded = "Land_BagBunker_Small_F";
     nameShort = "SLAMMER";
     rearm = 300;
@@ -552,7 +552,7 @@ class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
     };
     aps = 5;
     capValue = 6;
-    cost = 6500;
+    cost = 7500;
     hasHMD = 1;
     nameShort = "SLAMMER UP";
 };
@@ -571,6 +571,7 @@ class Kuma: Heavy_Vehicles {
 };
 class B_MBT_03_cannon_F: Kuma {
     side[] = {"west"};
+    smartMineAP = 3;
     textures[] = {
         "src\img\camo\kuma01.jpg",
         "src\img\camo\kuma02.jpg",

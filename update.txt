@@ -1,13 +1,22 @@
 Warlords Redux 2.8 Patch 15
 
+Assets
+* Kuma: added AP smart mines for close defense.
+* Slammer: cost $5,800->5,500, integral mortar ammo 8->24.
+* Slammer UP: cost $6,500->7,500.
+
 Gameplay
+* Added reinforcements explanation subtitle to hud.
 * Adding supplies to sector no longer boosts stronghold if intruders are present inside.
+* Aircraft notching of weak missiles now easier at short range.
 * Paradrop now uses parachute for most of the fall.
 * Removed radome scanning animation.
 * Slingload short rope length 6->10m.
+* Usability enhancements for air defense map layer.
 
 Bugfixes
 * Fixed chat window being hidden on respawn.
+* Fixed demolition explosive charges tip showing on minefields.
 * Fixed enemy radome arc being invisible.
 * Fixed Huron/Mohawk Supply being spawnable in helipad sector under attack.
 * Fixed large numbers of deployed structures giving spot rewards.
@@ -16,8 +25,10 @@ Bugfixes
 * Fixed obstacle destruction repeating on collision.
 * Fixed obstacles being populated into asset list.
 * Fixed player setup resource leak.
+* Fixed reset vehicle Russian localization.
 * Fixed script error on squad join.
-* Fixed Slammer UP cannon shell being detonated on foliage.
+* Fixed Slammer UP cannon second-stage shell being detonated on foliage.
+* Fixed wrecks remaining on map with no salvage value after player disconnect.
 
 Warlords Redux 2.8 Patch 14
 

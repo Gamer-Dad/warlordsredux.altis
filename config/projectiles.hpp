@@ -254,11 +254,19 @@ class WLProjectilesConfig {
         laser = 1;
     };
 
-    class WLProjectile_SmartMine: WLProjectile {
+    class WLProjectile_SmartMineAT: WLProjectile {
         ammo[] = {
-            "ammo_SmartMine"
+            "ammo_SmartMineAT"
         };
-        aps[] = {2, 3, 5};
+        aps[] = {2, 3, 4, 5};
+        consumption = 1;
+    };
+
+    class WLProjectile_SmartMineAP: WLProjectile {
+        ammo[] = {
+            "ammo_SmartMineAP"
+        };
+        aps[] = {4};
         consumption = 1;
     };
 
