@@ -134,6 +134,23 @@ class B_Praetorian: Praetorian {
 class O_Praetorian: Praetorian {
     side[] = {"east"};
 };
+class I_Praetorian: Praetorian {
+    capValueEmpty = 100;
+    demolishable = 2;
+    demolishStepTime = 4;
+    disableDamage = 1;
+    side[] = {"guer"};
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right"
+        };
+        addWeapons[] = {
+            "Gatling_127mm_HeliPylon_F"
+        };
+        turret[] = {0};
+    };
+};
 
 class SPAAG: Air_Defense {
     aps = 2;
@@ -304,16 +321,17 @@ class Centurion_Decoy: Air_Defense {
     };
 };
 
-class Mobile_Spartan: Air_Defense {
+class Mobile_Starstreak: Air_Defense {
     aps = 5;
     capValue = 3;
     cost = 6500;
     description = "Mobile medium-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasHMD = 1;
     hideTurret = 1;
+    loaded = "Land_VR_Slope_01_F";
     rearm = 240;
 };
-class B_Gorgon_AA: Mobile_Spartan {
+class B_Gorgon_AA: Mobile_Starstreak {
     integralWeapon[] = {16, {0.35, -1.5, 1.5}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     isLight = 1;
     name = "AFV-4 Medusa";
@@ -342,7 +360,7 @@ class B_Gorgon_AA: Mobile_Spartan {
         turret[] = {0};
     };
 };
-class O_Marid_AA: Mobile_Spartan {
+class O_Marid_AA: Mobile_Starstreak {
     integralWeapon[] = {16, {0.2, -1.5, 1.7}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     name = "9K41 Ghost";
     nameShort = "GHOST";

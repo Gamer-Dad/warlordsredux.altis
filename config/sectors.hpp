@@ -1064,9 +1064,9 @@ class CfgWarlordSectors {
         name = "USS Freedom";
         services[] = {"H", "A"};
         vehicles[] = {
-            {"I_MBT_03_cannon_F", {667.6, 15650.9, 50}, 104},
-            {"I_LT_01_AA_F", {749.9 ,15564.6, 50}, 65},
-            {"I_Mora", {798.0, 15474.4, 50}, -5}
+            {"I_Praetorian", {667.6, 15650.9, 50}, 104},
+            {"I_Praetorian", {749.9 ,15564.6, 50}, 65},
+            {"I_Praetorian", {798.0, 15474.4, 50}, -5}
         };
     };
 
@@ -1077,8 +1077,8 @@ class CfgWarlordSectors {
         name = "USS Independence";
         services[] = {"H", "A"};
         vehicles[] = {
-            {"I_Mora", {28587.8, 13507, 50}, 230},
-            {"I_MBT_03_cannon_F", {28668.1, 13622.7, 50}, 350}
+            {"I_Praetorian", {28587.8, 13507, 50}, 230},
+            {"I_Praetorian", {28668.1, 13622.7, 50}, 350}
         };
     };
 

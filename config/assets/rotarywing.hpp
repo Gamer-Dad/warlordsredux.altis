@@ -32,6 +32,25 @@ class O_Heli_Transport_04_F: Taru {
 class O_Heli_Transport_04_medevac_F: Taru {
     side[] = {"east"};
 };
+class O_Heli_Transport_04_box_F: Taru {
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"M_RallyDeployer_O", "Rally Point Deployer"}}
+    };
+    cost = 450;
+    name = "Mi-290 Taru (Rally Deployer)";
+    nameShort = "TARU RALLY";
+    side[] = {"east"};
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "2Rnd_Mk82"
+        };
+        addWeapons[] = {
+            "Mk82BombLauncher"
+        };
+        turret[] = {-1};
+    };
+};
 
 // PO-30 Orca
 class O_Heli_Light_02_unarmed_F: Rotary_Wing {
@@ -51,7 +70,9 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
         "PylonRack_3Rnd_LG_scalpel",
         "PylonRack_4Rnd_LG_scalpel",
         "PylonMissile_Missile_AA_R73_x1",
-        "PylonRack_Missile_BIM9X_x2"
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
@@ -95,9 +116,17 @@ class B_Heli_Transport_01_F: Rotary_Wing {
 class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
     allowPylonMagazines[] = {
         "PylonRack_Missile_BIM9X_x2",
-        "PylonRack_12Rnd_PG_missiles"
+        "PylonRack_12Rnd_PG_missiles",
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
+    };
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"M_MineLayer", "M139 Volcano Mine Dispenser"}}
     };
     cost = 5000;
+    disallowMagazines[] = {
+        "PylonFuelTank_UH80"
+    };
     name = "UH-80 Ghost Hawk Block II";
     nameShort = "GHOSTHAWK II";
     rearm = 300;
@@ -118,42 +147,19 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
         turret[] = {-1};
     };
 };
-// class B_Ghosthawk_III: B_Heli_Transport_01_pylons_F {
-//     allowPylonMagazines[] = {
-//         "PylonRack_Missile_BIM9X_x2",
-//         "PylonRack_Missile_AMRAAM_D_x1",
-//         "PylonRack_12Rnd_PG_missiles",
-//         "PylonRack_4Rnd_LG_scalpel"
-//     };
-//     ammoOverrides[] = {
-//         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
-//         {"M_PG_AT", {"M_APKWS", "AGR-20 APKWS"}}
-//     };
-//     cost = 8000;
-//     hasReconOptics = 2;
-//     name = "UH-80 Ghost Hawk Block III";
-//     nameShort = "GHOSTHAWK III";
-//     side[] = {};
-//     spawn = "B_Heli_Transport_01_pylons_F";
 
-//     class Pilot: WLTurretDefaults {
-//         addMagazines[] = {
-//             "38Rnd_80mm_rockets",
-//             "300Rnd_CMFlare_Chaff_Magazine"
-//         };
-//         addWeapons[] = {
-//             "rockets_Skyfire",
-//             "CMFlareLauncher"
-//         };
-//         removeMagazines[] = {
-//             "168Rnd_CMFlare_Chaff_Magazine"
-//         };
-//         removeWeapons[] = {
-//             "CMFlareLauncher"
-//         };
-//         turret[] = {-1};
-//     };
-// };
+class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
+    allowPylonMagazines[] = {
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonRack_12Rnd_PG_missiles",
+        {"PylonRack_Bomb_SDB_x4", {"camera"}},
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
+    };
+    cost = 5500;
+    name = "MH-80 Direct Action Penetrator";
+    nameShort = "GHOSTHAWK DAP";
+};
 
 class Transport_Helicopter: Rotary_Wing {
     cost = 700;
@@ -216,7 +222,9 @@ class O_Mohawk_Supply: O_Mohawk {
 // AH-9 Pawnee
 class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
     allowPylonMagazines[] = {
-        "PylonRack_Missile_BIM9X_x2"
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
     };
     cost = 4000;
     hasHMD = 1;
@@ -257,7 +265,9 @@ class Hellcat: Rotary_Wing {
         "PylonRack_Missile_HARM_x1",
         "PylonRack_19Rnd_Rocket_Skyfire",
         "PylonRack_12Rnd_PGM_missiles",
-        "PylonRack_Missile_BIM9X_x2"
+        "PylonRack_Missile_BIM9X_x2",
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}

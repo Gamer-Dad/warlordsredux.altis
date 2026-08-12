@@ -443,7 +443,9 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
         {"PylonMissile_1Rnd_Bomb_03_F", {"Pylons4", "Pylons5", "Pylons6", "Pylons7"}},
         {"PylonRack_Bomb_SDB_x4", {"Pylons5", "Pylons6"}},
         {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}},
-        {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}}
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons4", "Pylons7"}},
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
         {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
@@ -494,7 +496,9 @@ class O_Buzzard_CAS: Buzzard_CAS {
         "PylonRack_12Rnd_PGM_missiles",
         {"PylonMissile_1Rnd_Mk82_F", {"Pylons4"}},
         {"PylonRack_1Rnd_Missile_AGM_02_F", {"Pylons2", "Pylons3", "Pylons5", "Pylons6"}},
-        {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons3", "Pylons5"}}
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"Pylons3", "Pylons5"}},
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
         {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
@@ -563,7 +567,9 @@ class Gryphon: Fixed_Wing {
         {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylon5", "Pylon6"}},
         "PylonRack_Missile_HARM_x1",
         "PylonRack_3Rnd_LG_scalpel",
-        {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}}
+        {"PylonRack_Bomb_SDB_x4", {"pylon5", "Pylon6"}},
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
         {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},

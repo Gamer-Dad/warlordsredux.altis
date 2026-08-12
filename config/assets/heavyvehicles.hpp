@@ -430,6 +430,7 @@ class B_AFV_Wheeled_01_cannon_F: Heavy_Vehicles {
     nameShort = "RHINO";
     rearm = 240;
     side[] = {"west"};
+    strongWheels = 1;
 };
 
 // Rhino MGS UP

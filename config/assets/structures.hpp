@@ -65,6 +65,7 @@ class Land_BagBunker_Small_F: Structures {
     cost = 1000;
     demolishable = 1;
     demolishStepTime = 1;
+    disableDamage = 1;
     hasFastTravel = 1;
     hasRearm = 1;
     hasRefuel = 1;

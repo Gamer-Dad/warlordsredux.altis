@@ -16,6 +16,17 @@ class Team_Rally_Point: Special {
 class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {};
 class Land_MedicalTent_01_CSAT_brownhex_generic_open_F: Team_Rally_Point {};
 
+class Land_Pallet_MilBoxes_F: Special {
+    capValueEmpty = 100;
+    cost = 5000;
+    demolishable = 2;
+    demolishStepTime = 4;
+    disableDamage = 1;
+    name = "Cache";
+    nameShort = "CACHE";
+    showToEnemies = 500;
+};
+
 // Recon UAV
 class B_UAV_02_F: Special {
     cost = 1000;
@@ -228,6 +239,18 @@ class I_AR2_Deployed: Deployed_AR2 {
 class Steerable_Parachute_F: Special {
     name = "Steerable Parachute";
     nameShort = "PARACHUTE";
+};
+
+class Land_VR_Slope_01_F: Special {
+    cost = 100;
+    demolishable = 1;
+    demolishStepTime = 1;
+    name = "Mobile Ramp";
+    nameShort = "RAMP";
+    textures[] = {
+        "#(rgb,8,8,3)color(0.08,0.12,0.08,1)",
+        "#(rgb,8,8,3)color(0.04,0.08,0.04,1)"
+    };
 };
 
 class Deployed_Explosives: Special {

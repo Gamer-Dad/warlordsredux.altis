@@ -344,6 +344,13 @@ class WLProjectilesConfig {
         mineLayer = "Land_Cargo10_military_green_F";
     };
 
+    class WLProjectile_RallyLayer: WLProjectile {
+        ammo[] = {
+            "M_RallyDeployer_O"
+        };
+        mineLayer = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
+    };
+
     class WLProjectile_ExtendedSAM: WLProjectile {
         ammo[] = {
             "M_SM6",
