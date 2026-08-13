@@ -22,6 +22,7 @@ Gameplay
 * Enemy team's home base is revealed when friendly player enters the sector.
 * Locked doors now auto-start unlocking animation and inform player about explosive entry.
 * Paradrop now uses parachute for most of the fall.
+* Player side selection is now deferred after the lobby.
 * Removed fuel tank pylon options.
 * Removed radome scanning animation.
 * Securing enemy discovers a random enemy sector, revealing it if previously un-revealed.
