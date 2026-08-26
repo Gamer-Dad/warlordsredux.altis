@@ -195,11 +195,13 @@ class WLProjectilesConfig {
         remote = 1;
     };
 
-    class WLProjectile_NonRunwayBomb: WLProjectile {
+    class WLProjectile_BunkerBusterMissile: WLProjectile {
         ammo[] = {
-            "Bo_Mk82_norunway"
+            "M_RedArrow"
         };
-        bunker = 4;
+        aps[] = {2, 3, 4, 5};
+        bunker = 3;
+        consumption = 1;
     };
 
     class WLProjectile_RunwayBomb: WLProjectile {
@@ -346,7 +348,7 @@ class WLProjectilesConfig {
 
     class WLProjectile_RallyLayer: WLProjectile {
         ammo[] = {
-            "M_RallyDeployer_O"
+            "M_RallyDeployer"
         };
         mineLayer = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     };

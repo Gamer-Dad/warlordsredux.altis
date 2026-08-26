@@ -390,13 +390,7 @@ class CfgWarlordSectors {
         area[] = {200, 120, 0, 1};
         location[] = {8471.35, 25075.5, 0};
         name = "Atsalis";
-        runways[] = {
-            { 8552.38, 25084.9, 0 },
-            { 8542.58, 25077.8, 0 },
-            { 8414.38, 25116.3, 0 },
-            { 8430.18, 25113.1, 0 }
-        };
-        services[] = {"H", "A"};
+        services[] = {"H", "A", "NR"};
     };
 
     class Bomos {

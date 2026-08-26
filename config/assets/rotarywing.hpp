@@ -32,25 +32,6 @@ class O_Heli_Transport_04_F: Taru {
 class O_Heli_Transport_04_medevac_F: Taru {
     side[] = {"east"};
 };
-class O_Heli_Transport_04_box_F: Taru {
-    ammoOverrides[] = {
-        {"Bo_Mk82", {"M_RallyDeployer_O", "Rally Point Deployer"}}
-    };
-    cost = 450;
-    name = "Mi-290 Taru (Rally Deployer)";
-    nameShort = "TARU RALLY";
-    side[] = {"east"};
-
-    class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "2Rnd_Mk82"
-        };
-        addWeapons[] = {
-            "Mk82BombLauncher"
-        };
-        turret[] = {-1};
-    };
-};
 
 // PO-30 Orca
 class O_Heli_Light_02_unarmed_F: Rotary_Wing {
@@ -99,6 +80,98 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
         turret[] = {-1};
     };
 };
+class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
+    allowPylonMagazines[] = {
+        "PylonRadarPod_01_F",
+        "PylonCameraPod_01_F",
+        "PylonRack_3Rnd_LG_scalpel"
+    };
+    ammoOverrides[] = {
+        {"M_Scalpel_AT", {"M_RedArrow", "HJ-9 Red Arrow"}}
+    };
+    cost = 4500;
+    disallowMagazines[] = {
+        "PylonRack_1Rnd_AAA_missiles",
+        "PylonRack_1Rnd_LG_scalpel",
+        "PylonRack_12Rnd_PG_missiles",
+        "PylonRack_12Rnd_PG_missiles_black",
+        "PylonRack_12Rnd_missiles",
+        "PylonRack_12Rnd_missiles_black",
+        "PylonWeapon_300Rnd_20mm_shells",
+        "PylonRack_19Rnd_Rocket_Skyfire"
+    };
+    name = "PO-30 Orca (Bunker Buster)";
+    nameShort = "ORCA BOMBER";
+    replacePylons[] = {
+        {"PylonLeft1", {-1}, "PylonRack_3Rnd_LG_scalpel"},
+        {"PylonRight1", {-1}, "PylonCameraPod_01_F"}
+    };
+    spawn = "O_Heli_Light_02_dynamicLoadout_F";
+    variant = 1;
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "300Rnd_CMFlare_Chaff_Magazine"
+        };
+        addWeapons[] = {
+            "CMFlareLauncher_Singles"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
+};
+// class O_Orca_AA: O_Orca_Bunker {
+//     allowPylonMagazines[] = {
+//         "PylonRadarPod_01_F",
+//         "PylonCameraPod_01_F"
+//     };
+//     ammoOverrides[] = {
+//         {"ammo_Missile_AA_R77", {"ammo_Missile_tianlong", "Tianlong-30"}}
+//     };
+//     disallowMagazines[] = {
+//         "PylonRack_1Rnd_AAA_missiles",
+//         "PylonRack_1Rnd_LG_scalpel",
+//         "PylonRack_12Rnd_PG_missiles",
+//         "PylonRack_12Rnd_PG_missiles_black",
+//         "PylonRack_12Rnd_missiles",
+//         "PylonRack_12Rnd_missiles_black",
+//         "PylonWeapon_300Rnd_20mm_shells",
+//         "PylonWeapon_2000Rnd_65x39_belt",
+//         "PylonRack_19Rnd_Rocket_Skyfire"
+//     };
+//     name = "PO-30 Orca (Air Superiority)";
+//     nameShort = "ORCA AA";
+//     replacePylons[] = {
+//         {"PylonLeft1", {-1}, "PylonRadarPod_01_F"},
+//         {"PylonRight1", {-1}, "PylonCameraPod_01_F"}
+//     };
+//     threatDetection = 2500;
+//     variant = 1;
+
+//     class Pilot: WLTurretDefaults {
+//         addMagazines[] = {
+//             "magazine_Missile_AA_R77_x1",
+//             "magazine_Missile_AA_R77_x1",
+//             "300Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         addWeapons[] = {
+//             "weapon_R77Launcher",
+//             "CMFlareLauncher_Singles"
+//         };
+//         removeMagazines[] = {
+//             "168Rnd_CMFlare_Chaff_Magazine"
+//         };
+//         removeWeapons[] = {
+//             "CMFlareLauncher"
+//         };
+//         turret[] = {-1};
+//     };
+// };
 
 // UH-80 Ghost Hawk
 class B_Heli_Transport_01_F: Rotary_Wing {
@@ -156,9 +229,18 @@ class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
         "PylonRadarPod_01_F",
         "PylonCameraPod_01_F"
     };
-    cost = 5500;
+    cost = 7500;
     name = "MH-80 Direct Action Penetrator";
     nameShort = "GHOSTHAWK DAP";
+    replacePylons[] = {
+        {"pylon1", {-1}, "PylonRack_12Rnd_PG_missiles"},
+        {"pylon2", {-1}, "PylonRack_12Rnd_PG_missiles"},
+        {"pylon3", {-1}, "PylonRack_12Rnd_PG_missiles"},
+        {"pylon4", {-1}, "PylonRack_12Rnd_PG_missiles"},
+        {"wingtip1", {-1}, "PylonRadarPod_01_F"},
+        {"wingtip2", {-1}, "PylonCameraPod_01_F"},
+        {"camera", {-1}, "PylonRack_Bomb_SDB_x4"}
+    };
 };
 
 class Transport_Helicopter: Rotary_Wing {
@@ -235,11 +317,11 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_20mm_shells",
-            "300Rnd_20mm_shells"
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_left",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_left"
         };
         addWeapons[] = {
-            "gatling_20mm"
+            "Gatling_127mm_HeliPylon_F"
         };
         removeMagazines[] = {
             "5000Rnd_762x51_Belt"
@@ -284,9 +366,11 @@ class Hellcat: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_left",
             "300Rnd_CMFlare_Chaff_Magazine"
         };
         addWeapons[] = {
+            "Gatling_127mm_HeliPylon_F",
             "CMFlareLauncher_Singles"
         };
         removeMagazines[] = {

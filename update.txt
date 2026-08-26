@@ -1,53 +1,43 @@
-Warlords Redux 2.8 Patch 15
+Warlords Redux 2.8 Patch 16
 
 Assets
-* (New) MH-80 DAP.
-* (New) Taru Rally Deployer.
-* Fighting position: resilient to damage.
-* Kuma: added AP smart mines for close defense.
-* Rhino: improved wheel survivability against impact.
-* Slammer: cost $5,800->5,500, integral mortar ammo 8->24.
-* Slammer UP: cost $6,500->7,500.
+* (Added) Orca (Bunker Buster)
+* (Removed) Marshall UP
+* (Removed) Taru Rally Deployer
+* Caesar: now deploys rally points.
+* Marshall UP: loadout folded into Marshall.
+* MH-80 DAP: cost increased $5,500->7,500, replaces vanilla loadout by default.
+* Pawnee: 20mm gun changed to 127x99 HEIP.
+* Radome: changed model and name to LR Radar.
+* Static Mora: removed autonomous component.
 
 Gameplay
-* Added reinforcements explanation subtitle to hud.
-* Adding supplies to sector no longer boosts stronghold if intruders are present inside.
-* Aircraft notching of weak missiles now easier at short range.
-* Camera and radar pods added to pylon options: Ghosthawk II, Pawnee, Hellcat, Orca, Wipeout, Buzzard, Gryphon.
-* Base flag is now a billboard that is easier to rearm from, now also has frontline action.
-* Carrier now spawns static defenses instead of infantry, should be much faster to capture for a coordinated team.
-* Decreased night time length.
-* Directly disabled drawing to global.
-* Enemy team's attack target sector is revealed when friendly player enters the sector.
-* Enemy team's home base is revealed when friendly player enters the sector.
-* Locked doors now auto-start unlocking animation and inform player about explosive entry.
-* Paradrop now uses parachute for most of the fall.
-* Player side selection is now deferred after the lobby.
-* Removed fuel tank pylon options.
-* Removed radome scanning animation.
-* Securing enemy discovers a random enemy sector, revealing it if previously un-revealed.
-* Slingload short rope length 6->10m.
-* Starstreak launcher vehicles now deploy ramps.
-* Usability enhancements for air defense map layer.
+* Added low altitude requirement for rearm.
+* Added option to adjust capture interface top %.
+* Atsalis jet spawning is now user-placed, RTB limited to a single position.
+* Base billboard shows instructions.
+* Increased available squad channels from 10->50.
+* Map button for showing default stronghold location.
+* Map markers reset when sector is revealed, reduces marker option pool to camped or none.
+* No-fly zone shows distance on trigger.
+* Player side selection is deferred after the lobby.
+* Restock action now heals player to full health.
+* Stronghold selection algorithm adjusted to favor larger buildings.
+* Stronghold selection for green sectors now exclude destroyed buildings, allowing some sectors to be pre-cleared with explosives.
+* Territory bonus is income, not capture modifier.
 
 Bugfixes
-* Fixed chat window being hidden on respawn.
-* Fixed forced cargo in inventory for objects without containers.
-* Fixed demolition explosive charges tip showing on minefields.
-* Fixed enemy radome arc being invisible.
-* Fixed Huron/Mohawk Supply being spawnable in helipad sector under attack.
-* Fixed integral weapons not saving stats.
-* Fixed large numbers of deployed structures giving spot rewards.
-* Fixed magazine tooltip APS description error.
-* Fixed missing loadouts on vehicle spawn.
-* Fixed obstacle destruction repeating on collision.
-* Fixed obstacles being populated into asset list.
-* Fixed player setup resource leak.
-* Fixed reset vehicle Russian localization.
-* Fixed scanner UAV not cleaning up.
-* Fixed script error on squad join.
-* Fixed SEAD profile messaging issues.
-* Fixed Slammer UP cannon second-stage shell being detonated on foliage.
-* Fixed units drawing beneath minefields on map.
-* Fixed wrecks remaining on map with no salvage value after player disconnect.
-* Improved laser tracking performance.
+* Fixed air radar scanning detecting aircraft at an altitude lower than it should.
+* Fixed base billboard being moved.
+* Fixed duplicate drawing of visible units on map.
+* Fixed enemy scanned assets showing on my asset layer.
+* Fixed enemy target selection VOs playing on neutral, revealed sectors.
+* Fixed reinforcement bar showing for home bases.
+* Fixed sector icon drawing for neutral, revealed sectors attacked by enemy.
+* Fixed some instances of Xian/Bfish item deployer not triggering correctly. Deployers trigger on explosion.
+* Fixed squad chat name becoming outdated when stealing voice slot.
+* Fixed team priority being set to unlinked sector when enemy attacks.
+* Fixed wrecks not detaching from dead carrier.
+* Fixed Xian minelayer requirement conditions to bring it in line with the Blackfish.
+* Optimized sector, vehicle spawning to use multi-threading.
+* Optimized selected targets handler.

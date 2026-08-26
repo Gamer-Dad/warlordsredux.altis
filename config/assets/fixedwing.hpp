@@ -3,21 +3,35 @@ class Fixed_Wing {
     requirements[] = {"A"};
 };
 
-class Caesar_Dronehunter: Fixed_Wing {
+class Caesar: Fixed_Wing {
+    ammoOverrides[] = {
+        {"Bo_Mk82", {"M_RallyDeployer", "Rally Point Deployer"}}
+    };
     cost = 800;
-    description = "Caesar Drone Hunter is a light unarmed aircraft used to find and destroy enemy drones.";
+    description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy rally points.";
     hasDroneHunter = 1;
-    name = "Caesar Drone Hunter";
+    name = "Caesar";
     nameShort = "CAESAR";
     spawn = "C_Plane_Civil_01_F";
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "PylonMissile_1Rnd_Mk82_F",
+            "PylonMissile_1Rnd_Mk82_F"
+        };
+        addWeapons[] = {
+            "Mk82BombLauncher"
+        };
+        turret[] = {-1};
+    };
 };
-class B_Caesar: Caesar_Dronehunter {
+class B_Caesar: Caesar {
     side[] = {"west"};
 };
-class O_Caesar: Caesar_Dronehunter {
+class O_Caesar: Caesar {
     side[] = {"east"};
 };
-class I_Caesar: Caesar_Dronehunter {
+class I_Caesar: Caesar {
     side[] = {"guer"};
 };
 
@@ -352,6 +366,7 @@ class O_Xian_MineLayer: O_Xian_Supply {
     name = "Y-32 Xi'an (Mine Layer)";
     nameShort = "XIAN MINES";
     rearm = 120;
+    requirements[] = {"H"};
 };
 
 class O_Xian_Armed: O_Xian {

@@ -62,7 +62,6 @@ class Static_Mora: Special {
     cost = 3000;
     demolishable = 1;
     demolishStepTime = 1;
-    drone = 2;
     immobile = 1;
     name = "Mora (Static)";
     nameShort = "STATIC MORA";

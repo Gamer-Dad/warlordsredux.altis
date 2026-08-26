@@ -19,6 +19,7 @@ respawnDelay = WL_DURATION_RESPAWN;
 respawnOnStart = -1;
 disabledAI = 1;
 enableDebugConsole = 1;
+skipLobby = WL_SKIP_LOBBY;
 ReviveMode = 0;
 
 corpseManagerMode = 1;

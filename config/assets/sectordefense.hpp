@@ -288,6 +288,10 @@ class MRAP_Mortar: Sector_Defense {
     variant = 1;
 };
 class B_Hunter_Mortar: MRAP_Mortar {
+    attachments[] = {
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -3.1, 0.8}, 0, "", 1},
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -1.1, 0.8}, 180, "", 1}
+    };
     integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "Hunter Mortar";
     nameShort = "HUNTER MORTAR";
@@ -295,6 +299,10 @@ class B_Hunter_Mortar: MRAP_Mortar {
     spawn = "B_MRAP_01_F";
 };
 class O_Ifrit_Mortar: MRAP_Mortar {
+    attachments[] = {
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -3.3, 0.6}, 0, "", 1},
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -1.3, 0.6}, 180, "", 1}
+    };
     integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     name = "Ifrit Mortar";
     nameShort = "IFRIT MORTAR";

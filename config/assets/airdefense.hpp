@@ -20,17 +20,19 @@ class I_E_Radar_System_01_F: Radar {
     side[] = {"guer"};
 };
 
-class Radome: Air_Defense {
+class LR_Radar: Air_Defense {
     airRadar = 20000;
+    attachments[] = {
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, 3, 2}, 0, "", 5}
+    };
     cost = 2500;
     demolishable = 3;
     description = "Directional radar that passively tracks enemy air and hostile missile launches. Team max: 5.";
-    disableDamage = 1;
     loadable = 0;
-    name = "AN/FPS-124 Radome";
-    nameShort = "RADOME";
+    name = "AN/FPS-124 LR Radar";
+    nameShort = "LR RADAR";
     offset[] = {0, 7, 0};
-    spawn = "Land_Radar_Small_F";
+    spawn = "Land_MobileRadar_01_generator_F";
     showToEnemies = 8000;
     side[] = {"west", "east", "guer"};
     teamLimit = 5;
@@ -138,7 +140,6 @@ class I_Praetorian: Praetorian {
     capValueEmpty = 100;
     demolishable = 2;
     demolishStepTime = 4;
-    disableDamage = 1;
     side[] = {"guer"};
 
     class Gunner: WLTurretDefaults {

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1666;
+	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=4995;
+		nextID=5002;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=355;
+		nextID=361;
 	};
 	class Camera
 	{
-		pos[]={2300.8579,13.843,9286.5186};
-		dir[]={0.11349289,-0.57362211,0.81123251};
-		up[]={0.079478264,0.81911135,0.56809819};
-		aside[]={0.99036592,-9.7294105e-08,-0.13855423};
+		pos[]={8533.8643,141.7151,25025.713};
+		dir[]={-0.91677135,-0.39936727,-0.013796766};
+		up[]={-0.39938271,0.91674894,-0.0060104704};
+		aside[]={-0.015052182,-3.4791447e-07,0.99995279};
 	};
 };
 binarizationWanted=0;

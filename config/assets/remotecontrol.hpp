@@ -179,7 +179,6 @@ class Offroad_IED: Remote_Control {
     offset[] = {0, 5, 0};
     rearm = 900;
     requirements[] = {"S"};
-    variant = 1;
 };
 class B_GEN_Offroad_01_comms_F: Offroad_IED {
     side[] = {"west"};
