@@ -227,6 +227,33 @@ class O_G_Offroad_01_AT_F: Offroad_AT {
     side[] = {"east"};
 };
 
+class Light_Recon: Light_Vehicle {
+    capValue = 2;
+    cost = 500;
+    hasDroneHunter = 1;
+    hasHMD = 1;
+    hasReconOptics = 1;
+    offset[] = {0, 5, 0};
+    scanner = 120;
+    variant = 1;
+};
+class B_CTRG_LSV_01_light_F: Light_Recon {
+    attachments[] = {
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -0.2, 0.7}, 0, "", 1}
+    };
+    name = "Prowler (Recon)";
+    nameShort = "PROWLER RECON";
+    side[] = {"west"};
+};
+class O_LSV_02_unarmed_F: Light_Recon {
+    attachments[] = {
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {-0.2, -0.5, 1.2}, 0, "", 1}
+    };
+    name = "Qilin (Recon)";
+    nameShort = "QILIN RECON";
+    side[] = {"east"};
+};
+
 class LSV_AT: Light_Vehicle {
     capValue = 1;
     cost = 750;
@@ -419,6 +446,7 @@ class Device_Truck: Light_Vehicle {
     name = "Device Truck";
     nameShort = "DEVICE";
     rearm = 120;
+    singleton = 2;
     spawn = "O_Truck_03_device_F";
 };
 class B_Truck_03_device_F: Device_Truck {

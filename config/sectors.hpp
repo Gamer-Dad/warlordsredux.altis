@@ -250,7 +250,7 @@ class CfgWarlordSectors {
 
     class Abdera {
         area[] = {100, 110, 77.82, 1};
-        location[] = {9439.2, 20249.5, 0};
+        location[] = {9419.14, 20240, 0};
         name = "Abdera";
     };
 
@@ -408,7 +408,7 @@ class CfgWarlordSectors {
 
     class CapeMakrinos {
         area[] = {150, 150, 128.18, 0};
-        location[] = {13811.1, 6394.95, 0};
+        location[] = {13796.8, 6403.77, 0};
         name = "Cape Makrinos";
     };
 
@@ -432,7 +432,7 @@ class CfgWarlordSectors {
 
     class Chalkeia {
         area[] = {225, 225, 65.703, 0};
-        location[] = {20233.9, 11672.1, 0};
+        location[] = {20239.7, 11660.4, 0};
         name = "Chalkeia";
     };
 
@@ -511,7 +511,7 @@ class CfgWarlordSectors {
 
     class Feres {
         area[] = {200, 200, 65.703, 0};
-        location[] = {21679.6, 7580.26, 0};
+        location[] = {21702.2, 7570.11, 0};
         name = "Feres";
     };
 
@@ -544,7 +544,7 @@ class CfgWarlordSectors {
 
     class GatoliaSolar {
         area[] = {150, 150, 221.059, 0};
-        location[] = {27060, 21500.7, 0};
+        location[] = {27047.5, 21467.4, 0};
         name = "Gatolia Solar";
         services[] = {"H"};
     };
@@ -570,7 +570,7 @@ class CfgWarlordSectors {
 
     class Gravia {
         area[] = {250, 250, 65.703, 0};
-        location[] = {14484.3, 17647.8, 0.468};
+        location[] = {14490.8, 17671.7, 0.468};
         name = "Gravia";
     };
 
@@ -667,7 +667,7 @@ class CfgWarlordSectors {
 
     class Lakka {
         area[] = {275, 200, 65.703, 0};
-        location[] = {12376.5, 15658.2, 0};
+        location[] = {12375.6, 15684.2, 0};
         name = "Lakka";
     };
 
@@ -698,13 +698,13 @@ class CfgWarlordSectors {
 
     class MagosPower {
         area[] = {75, 150, 90, 1};
-        location[] = {4217.16, 15031, 0};
+        location[] = {4216.75, 15045, 0};
         name = "Magos Power";
     };
 
     class MagosValley {
         area[] = {250, 100, 150, 1};
-        location[] = {5430.82, 14593.6, 0};
+        location[] = {5438.49, 14591, 0};
         name = "Magos Valley";
     };
 
@@ -741,7 +741,7 @@ class CfgWarlordSectors {
 
     class Negades {
         area[] = {225, 175, 179.493, 0};
-        location[] = {4890.83, 16187.3, 0};
+        location[] = {4904.54, 16144.3, 0};
         name = "Negades";
     };
 
@@ -771,7 +771,7 @@ class CfgWarlordSectors {
 
     class NifiSolar {
         area[] = {150, 250, 233.234, 1};
-        location[] = {20646.2, 15649.8, 0};
+        location[] = {20660.7, 15647.8, 0};
         name = "Nifi Solar";
         services[] = {"H"};
     };
@@ -791,7 +791,7 @@ class CfgWarlordSectors {
 
     class Oreokastro {
         area[] = {175, 175, 128.18, 0};
-        location[] = {4591.91, 21412.4, 0};
+        location[] = {4597.81, 21421.6, 0};
         name = "Oreokastro";
     };
 
@@ -834,7 +834,7 @@ class CfgWarlordSectors {
 
     class Poliakko {
         area[] = {275, 275, 121.177, 0};
-        location[] = {11006.5, 13402.5, 0};
+        location[] = {11021.1, 13417.1, 0};
         name = "Poliakko";
     };
 
@@ -846,7 +846,7 @@ class CfgWarlordSectors {
 
     class PyrgosBase {
         area[] = {150, 125, 228.118, 1};
-        location[] = {17428.5, 13158, 0};
+        location[] = {17439.9, 13166.3, 0};
         name = "Pyrgos Base";
         services[] = {"H"};
         vehicles[] = {
@@ -900,7 +900,7 @@ class CfgWarlordSectors {
 
     class Selakano {
         area[] = {175, 175, 65.703, 0};
-        location[] = {20796.3, 6731.43, 0};
+        location[] = {20791.9, 6744.08, 0};
         name = "Selakano";
     };
 
@@ -945,7 +945,7 @@ class CfgWarlordSectors {
 
     class Skiptro {
         area[] = {120, 120, 0, 0};
-        location[] = {25270.7, 21810.6, 0};
+        location[] = {25255.7, 21825.3, 0};
         name = "Skiptro";
     };
 
@@ -965,13 +965,13 @@ class CfgWarlordSectors {
 
     class Sofia {
         area[] = {250, 250, 221.059, 0};
-        location[] = {25639.1, 21354.7, 0};
+        location[] = {25694.8, 21348.9, 0};
         name = "Sofia";
     };
 
     class SofiaPower {
         area[] = {150, 150, 221.059, 0};
-        location[] = {25405.8, 20334.8, 0};
+        location[] = {25420.3, 20338.8, 0};
         name = "Sofia Power";
     };
 
@@ -1027,7 +1027,7 @@ class CfgWarlordSectors {
 
     class Therisa {
         area[] = {275, 175, 22.794, 0};
-        location[] = {10672, 12295.3, 0.2};
+        location[] = {10682.2, 12268.1, 0.2};
         name = "Therisa";
     };
 
@@ -1124,7 +1124,7 @@ class CfgWarlordSectors {
 
     class ZarosSolar {
         area[] = {150, 150, 128.18, 0};
-        location[] = {8235.22, 10885.3, 0};
+        location[] = {8267.48, 10851.2, 0};
         name = "Zaros Solar";
     };
 
@@ -1168,12 +1168,12 @@ class CfgWarlordRunways {
 
 class CfgWarlordFactories {
     factoryTypes[] = {
-        {"B_Slammer_X", 450},
-        {"B_Rhino_X", 450},
+        {"B_Slammer_X", 720},
+        {"B_Rhino_X", 720},
         {"B_Growler", 2700},
         {"B_Pegasus", 2700},
-        {"O_Marid_Dragon", 300},
-        {"O_MBT_02_railgun_F", 450},
+        {"O_Marid_Dragon", 600},
+        {"O_MBT_02_railgun_F", 720},
         {"O_Euphrates", 1800}
     };
 

@@ -41,7 +41,7 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
     nameShort = "ORCA";
     offset[] = {0, 10, 0};
-    rearm = 240;
+    rearm = 120;
     requirements[] = {};
     side[] = {"east"};
 };
@@ -60,6 +60,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
     };
     cost = 3500;
     nameShort = "ORCA ARMED";
+    rearm = 240;
     requirements[] = {"H"};
 
     class Pilot: WLTurretDefaults {
@@ -84,10 +85,10 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
     allowPylonMagazines[] = {
         "PylonRadarPod_01_F",
         "PylonCameraPod_01_F",
-        "PylonRack_3Rnd_LG_scalpel"
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonLeft1"}}
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_RedArrow", "HJ-9 Red Arrow"}}
+        {"Missile_AGM_02_F", {"M_RedArrow", "HJ-9 Red Arrow"}}
     };
     cost = 4500;
     disallowMagazines[] = {
@@ -103,10 +104,11 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
     name = "PO-30 Orca (Bunker Buster)";
     nameShort = "ORCA BOMBER";
     replacePylons[] = {
-        {"PylonLeft1", {-1}, "PylonRack_3Rnd_LG_scalpel"},
+        {"PylonLeft1", {-1}, "PylonRack_3Rnd_Missile_AGM_02_F"},
         {"PylonRight1", {-1}, "PylonCameraPod_01_F"}
     };
     spawn = "O_Heli_Light_02_dynamicLoadout_F";
+    threatDetection = 2500;
     variant = 1;
 
     class Pilot: WLTurretDefaults {
@@ -183,7 +185,7 @@ class B_Heli_Transport_01_F: Rotary_Wing {
     loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     nameShort = "GHOSTHAWK";
     offset[] = {0, 11, 0};
-    rearm = 240;
+    rearm = 120;
     side[] = {"west"};
 };
 class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
@@ -219,6 +221,39 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
         };
         turret[] = {-1};
     };
+};
+
+class B_BunkerHawk: B_Heli_Transport_01_pylons_F {
+    allowPylonMagazines[] = {
+        {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylon2"}},
+        {"PylonWeapon_500Rnd_127mm_HEIAP_belt_right", {"pylon3"}}
+    };
+    ammoOverrides[] = {
+        {"Missile_AGM_02_F", {"M_TOW2", "BGM-71H TOW Bunker Buster"}}
+    };
+    cost = 4700;
+    disallowMagazines[] = {
+        "PylonRack_1Rnd_LG_scalpel",
+        "PylonRack_1Rnd_AAA_missiles",
+        "PylonRack_12Rnd_PG_missiles",
+        "PylonRack_12Rnd_PGM_missiles",
+        "PylonRack_12Rnd_PGM_missiles_black",
+        "PylonRack_12Rnd_PG_missiles_black",
+        "PylonRack_12Rnd_missiles",
+        "PylonRack_12Rnd_missiles_black",
+        "PylonMissile_1Rnd_Bomb_04_F",
+        "PylonMissile_1Rnd_Mk82_F"
+    };
+    name = "AH-80 Bunker Hawk";
+    nameShort = "HAWK BOMBER";
+    replacePylons[] = {
+        {"pylon1", {-1}, "PylonRadarPod_01_F"},
+        {"pylon2", {-1}, "PylonRack_3Rnd_Missile_AGM_02_F"},
+        {"pylon3", {-1}, "PylonWeapon_500Rnd_127mm_HEIAP_belt_right"},
+        {"pylon4", {-1}, "PylonCameraPod_01_F"}
+    };
+    spawn = "B_Heli_Transport_01_pylons_F";
+    threatDetection = 2500;
 };
 
 class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {

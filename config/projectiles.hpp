@@ -43,7 +43,9 @@ class WLProjectilesConfig {
             "ammo_Missile_sosna",               // Sosna
             "ammo_Missile_starstreak"           // Starstreak
         };
+        aps[] = {1, 2, 3, 4, 5};
         camera = 1;
+        consumption = 0;
         manualSam[] = {500, 5000, 6000, 25, 0.5};
     };
 
@@ -51,7 +53,9 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Missile_starstreak2"          // Starstreak Mark II
         };
+        aps[] = {1, 2, 3, 4, 5};
         camera = 1;
+        consumption = 0;
         manualSam[] = {1000, 2500, 12000, 25, 0.8};
     };
 
@@ -59,7 +63,9 @@ class WLProjectilesConfig {
         ammo[] = {
             "ammo_Missile_tianlong"             // Tianlong
         };
+        aps[] = {1, 2, 3, 4, 5};
         camera = 1;
+        consumption = 0;
         manualSam[] = {1250, 500, 18000, 25, 1.0};
     };
 
@@ -197,11 +203,11 @@ class WLProjectilesConfig {
 
     class WLProjectile_BunkerBusterMissile: WLProjectile {
         ammo[] = {
-            "M_RedArrow"
+            "M_RedArrow",
+            "M_TOW2"
         };
-        aps[] = {2, 3, 4, 5};
         bunker = 3;
-        consumption = 1;
+        manualSam[] = {250, 500, 4000, 0, 1.0};
     };
 
     class WLProjectile_RunwayBomb: WLProjectile {

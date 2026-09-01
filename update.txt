@@ -1,12 +1,17 @@
 Warlords Redux 2.8 Patch 16
 
 Assets
-* (Added) Orca (Bunker Buster)
+* (Added) Bunker Hawk
+* (Added) Prowler/Qilin Recon
+* (Added) Orca Bunker Buster
 * (Removed) Marshall UP
 * (Removed) Taru Rally Deployer
 * Caesar: now deploys rally points.
+* Device truck: now limited to 2 per player.
+* Ghost Hawk (base): rearm time reduced 240->120s.
 * Marshall UP: loadout folded into Marshall.
 * MH-80 DAP: cost increased $5,500->7,500, replaces vanilla loadout by default.
+* Orca Unarmed: rearm time reduced 240->120s.
 * Pawnee: 20mm gun changed to 127x99 HEIP.
 * Radome: changed model and name to LR Radar.
 * Static Mora: removed autonomous component.
@@ -14,30 +19,42 @@ Assets
 Gameplay
 * Added low altitude requirement for rearm.
 * Added option to adjust capture interface top %.
+* Adjusted several sector locations to avoid placing base center inside building.
 * Atsalis jet spawning is now user-placed, RTB limited to a single position.
 * Base billboard shows instructions.
+* Factory production time increased: Slammer X (7.5->12), Rhino X (7.5->12), Futura (7.5->12), Dragon (5->10).
+* Free airdrop no longer possible when vehicle was recently damaged.
 * Increased available squad channels from 10->50.
+* Manual SAMs are now stopped by APS without consuming APS ammo.
 * Map button for showing default stronghold location.
 * Map markers reset when sector is revealed, reduces marker option pool to camped or none.
 * No-fly zone shows distance on trigger.
 * Player side selection is deferred after the lobby.
+* Poll menu now opens on respawn until vote is cast.
+* Railgun now does -1 structural damage if fully overheated (120%).
 * Restock action now heals player to full health.
+* Steam recording events support (optional).
 * Stronghold selection algorithm adjusted to favor larger buildings.
 * Stronghold selection for green sectors now exclude destroyed buildings, allowing some sectors to be pre-cleared with explosives.
 * Territory bonus is income, not capture modifier.
 
 Bugfixes
 * Fixed air radar scanning detecting aircraft at an altitude lower than it should.
+* Fixed APS triggering on vehicles attached by rope/load.
 * Fixed base billboard being moved.
 * Fixed duplicate drawing of visible units on map.
 * Fixed enemy scanned assets showing on my asset layer.
 * Fixed enemy target selection VOs playing on neutral, revealed sectors.
+* Fixed HARM tracking onto attached object rather than parent vehicle.
 * Fixed reinforcement bar showing for home bases.
+* Fixed script error for conscription JIP.
 * Fixed sector icon drawing for neutral, revealed sectors attacked by enemy.
 * Fixed some instances of Xian/Bfish item deployer not triggering correctly. Deployers trigger on explosion.
 * Fixed squad chat name becoming outdated when stealing voice slot.
 * Fixed team priority being set to unlinked sector when enemy attacks.
+* Fixed unrevealed base flags being slightly larger.
 * Fixed wrecks not detaching from dead carrier.
 * Fixed Xian minelayer requirement conditions to bring it in line with the Blackfish.
+* Optimized kill feed fade-out.
 * Optimized sector, vehicle spawning to use multi-threading.
 * Optimized selected targets handler.
