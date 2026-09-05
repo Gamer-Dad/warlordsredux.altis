@@ -403,6 +403,7 @@ class O_Truck_03_Repair_F: Transport_Repair {
 // Hunter AFV
 class Hunter_Upgraded: Light_Vehicle {
     hasDroneHunter = 1;
+    hasRearm = 1;
     rearm = 120;
     spawn = "B_MRAP_01_gmg_F";
     variant = 1;
@@ -514,6 +515,7 @@ class B_Hunter_Apex: Hunter_Upgraded {
         "4Rnd_GAA_missiles"
     };
     hasHMD = 1;
+    mineClear = 1;
     name = "Hunter Apex";
     nameShort = "APEX";
     side[] = {"west"};

@@ -200,6 +200,7 @@ class Supply_Fort: Special {
     hasRepair = 1;
     hasRefuel = 1;
     rearm = 60;
+    showToEnemies = 100;
 };
 
 class Land_Cargo_HQ_V4_F: Supply_Fort {

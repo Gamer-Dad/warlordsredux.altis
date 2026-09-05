@@ -6,8 +6,11 @@ Assets
 * (Added) Orca Bunker Buster
 * (Removed) Marshall UP
 * (Removed) Taru Rally Deployer
-* Caesar: now deploys rally points.
+* Caesar: now deploys bunkers.
 * Device truck: now limited to 2 per player.
+* Fort/Supplies: now shows on map for enemies within 100m.
+* Hunter AFV: added rearm capability.
+* Hunter Apex: added rearm capability, added line charge.
 * Ghost Hawk (base): rearm time reduced 240->120s.
 * Marshall UP: loadout folded into Marshall.
 * MH-80 DAP: cost increased $5,500->7,500, replaces vanilla loadout by default.
@@ -32,7 +35,9 @@ Gameplay
 * Player side selection is deferred after the lobby.
 * Poll menu now opens on respawn until vote is cast.
 * Railgun now does -1 structural damage if fully overheated (120%).
+* Revamped structural damage icon.
 * Restock action now heals player to full health.
+* Squad leaders with more than 2,000 ELO can skip the squad number check when placing FOB.
 * Steam recording events support (optional).
 * Stronghold selection algorithm adjusted to favor larger buildings.
 * Stronghold selection for green sectors now exclude destroyed buildings, allowing some sectors to be pre-cleared with explosives.
@@ -55,6 +60,13 @@ Bugfixes
 * Fixed unrevealed base flags being slightly larger.
 * Fixed wrecks not detaching from dead carrier.
 * Fixed Xian minelayer requirement conditions to bring it in line with the Blackfish.
+* Optimized action delayed camera.
+* Optimized AI jet flaring.
+* Optimized APS handler.
+* Optimized field repair process.
 * Optimized kill feed fade-out.
+* Optimized missile camera PiP.
 * Optimized sector, vehicle spawning to use multi-threading.
+* Optimized sector capture modifier calculations.
+* Optimized sector respawner to stop in non-relevant sectors.
 * Optimized selected targets handler.

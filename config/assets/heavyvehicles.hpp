@@ -469,7 +469,7 @@ class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {
     hasRailgun = 1;
     nameShort = "RHINO X";
     name = "Rhino MGS X";
-    side[] = {};
+    side[] = {"west"};
     spawn = "B_AFV_Wheeled_01_up_cannon_F";
 
     class Gunner: WLTurretDefaults {
@@ -664,7 +664,7 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
     hasReconOptics = 1;
     nameShort = "FUTURA";
     rearm = 300;
-    side[] = {};
+    side[] = {"west"};
 };
 
 class Howitzer_Artillery: Heavy_Vehicles {

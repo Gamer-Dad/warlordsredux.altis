@@ -122,6 +122,7 @@ class Land_Cargo10_military_green_F: Gear {
     nameShort = "SUPPLIES";
     offset[] = {0, 5, 0};
     requirements[] = {"H", "NF", "S"};
+    showToEnemies = 100;
     side[] = {"west", "east"};
 };
 

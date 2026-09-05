@@ -5,10 +5,10 @@ class Fixed_Wing {
 
 class Caesar: Fixed_Wing {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_RallyDeployer", "Rally Point Deployer"}}
+        {"M_SPG9_HEAT", {"M_BunkerDeployer", "Bunker Deployer"}}
     };
     cost = 800;
-    description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy rally points.";
+    description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy bunkers.";
     hasDroneHunter = 1;
     name = "Caesar";
     nameShort = "CAESAR";
@@ -16,11 +16,13 @@ class Caesar: Fixed_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F"
+            "SPG9_HEAT",
+            "SPG9_HEAT",
+            "SPG9_HEAT",
+            "SPG9_HEAT"
         };
         addWeapons[] = {
-            "Mk82BombLauncher"
+            "launcher_SPG9"
         };
         turret[] = {-1};
     };
