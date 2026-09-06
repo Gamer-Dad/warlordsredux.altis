@@ -58,6 +58,8 @@ Bugfixes
 * Fixed squad chat name becoming outdated when stealing voice slot.
 * Fixed team priority being set to unlinked sector when enemy attacks.
 * Fixed unrevealed base flags being slightly larger.
+* Fixed vote power display using scientific notation when exceeding 1M.
+* Fixed welcome menu text not showing on join.
 * Fixed wrecks not detaching from dead carrier.
 * Fixed Xian minelayer requirement conditions to bring it in line with the Blackfish.
 * Optimized action delayed camera.
@@ -70,3 +72,4 @@ Bugfixes
 * Optimized sector capture modifier calculations.
 * Optimized sector respawner to stop in non-relevant sectors.
 * Optimized selected targets handler.
+* Rewrote report menu.
