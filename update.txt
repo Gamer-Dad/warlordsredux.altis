@@ -72,4 +72,4 @@ Bugfixes
 * Optimized sector capture modifier calculations.
 * Optimized sector respawner to stop in non-relevant sectors.
 * Optimized selected targets handler.
-* Rewrote report menu.
+* Rewrote report menu, scoreboard to be faster.
