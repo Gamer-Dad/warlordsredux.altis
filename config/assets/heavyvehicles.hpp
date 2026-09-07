@@ -25,13 +25,13 @@ class B_APC_Tracked_01_rcws_F: Heavy_Vehicles {
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green"
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right"
         };
         addWeapons[] = {
-            "autocannon_30mm_RCWS",
+            "Gatling_127mm_HeliPylon_F",
             "HMG_127_APC"
         };
         removeMagazines[] = {
@@ -141,18 +141,18 @@ class O_Marid_Dragon: Heavy_Vehicles {
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "60Rnd_30mm_MP_shells_Tracer_Green",
-            "60Rnd_30mm_MP_shells_Tracer_Green",
             "450Rnd_127x108_Ball",
             "450Rnd_127x108_Ball",
-            "5Rnd_GAT_missiles",
-            "4Rnd_70mm_SAAMI_missiles"
+            "24Rnd_PG_missiles",
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1",
+            "magazine_Missile_BIM9X_x1"
         };
         addWeapons[] = {
-            "autocannon_30mm_RCWS",
             "HMG_NSVT",
-            "missiles_titan",
-            "missiles_SAAMI"
+            "missiles_DAGR",
+            "weapon_BIM9xLauncher"
         };
         removeMagazines[] = {
             "96Rnd_40mm_G_belt",
@@ -469,7 +469,7 @@ class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {
     hasRailgun = 1;
     nameShort = "RHINO X";
     name = "Rhino MGS X";
-    side[] = {"west"};
+    side[] = {};
     spawn = "B_AFV_Wheeled_01_up_cannon_F";
 
     class Gunner: WLTurretDefaults {
@@ -664,7 +664,7 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
     hasReconOptics = 1;
     nameShort = "FUTURA";
     rearm = 300;
-    side[] = {"west"};
+    side[] = {};
 };
 
 class Howitzer_Artillery: Heavy_Vehicles {

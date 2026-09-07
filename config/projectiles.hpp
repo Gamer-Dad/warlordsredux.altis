@@ -23,8 +23,8 @@ class WLProjectilesConfig {
             "M_70mm_SAAMI"                      // SAAMI
         };
         camera = 1;
-        immunity = 3000;
-        sam = 0.6;
+        immunity = 2500;
+        sam = 0.45;
         speed = 2;
     };
 
@@ -33,8 +33,8 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162"               // Centurion
         };
         camera = 1;
-        immunity = 3500;
-        sam = 1;
+        immunity = 3000;
+        sam = 0.6;
         speed = 1.1;
     };
 
@@ -61,6 +61,7 @@ class WLProjectilesConfig {
 
     class WLProjectile_VLRSAM: WLProjectile {
         ammo[] = {
+            "ammo_Missile_malice",              // Malice
             "ammo_Missile_tianlong"             // Tianlong
         };
         aps[] = {1, 2, 3, 4, 5};
@@ -75,8 +76,8 @@ class WLProjectilesConfig {
             "ammo_Missile_mim145"               // Defender
         };
         camera = 1;
-        immunity = 3800;
-        sam = 1;
+        immunity = 3200;
+        sam = 0.8;
         speed = 1.1;
     };
 
@@ -418,8 +419,6 @@ class WLProjectilesConfig {
     class WLProjectile_DoubleGuided: WLProjectile {
         ammo[] = {
             "M_127mm_Firefist_AT",              // Firefist AT
-
-            "M_Jian_AT",                        // Jian - Max loadout: 4
             "Missile_AGM_02_F"                  // Macer I && II (same mag) - Max loadout: 20
         };
         aps[] = {2, 3, 4, 5};

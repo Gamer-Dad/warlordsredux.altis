@@ -24,6 +24,16 @@ class UAGS_Demining: Remote_Control {
     nameShort = "UGAS";
     offset[] = {0, 3, 0};
     rearm = 120;
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "200Rnd_65x39_cased_Box_Tracer"
+        };
+        addWeapons[] = {
+            "LMG_Mk200_F"
+        };
+        turret[] = {0};
+    };
 };
 class B_UGV_02_Demining_F: UAGS_Demining {
     side[] = {"west"};
@@ -291,7 +301,7 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
         "PylonRack_12Rnd_PGM_missiles",
         "PylonRack_1Rnd_AAA_missiles"
     };
-    cost = 6000;
+    cost = 3500;
     hasHMD = 1;
     nameShort = "FALCON";
     rearm = 300;

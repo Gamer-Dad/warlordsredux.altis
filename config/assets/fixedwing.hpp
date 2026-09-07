@@ -5,7 +5,7 @@ class Fixed_Wing {
 
 class Caesar: Fixed_Wing {
     ammoOverrides[] = {
-        {"M_SPG9_HEAT", {"M_BunkerDeployer", "Bunker Deployer"}}
+        {"BombDemine_01_DummyAmmo_F", {"M_BunkerDeployer", "Bunker Deployer"}}
     };
     cost = 800;
     description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy bunkers.";
@@ -16,13 +16,10 @@ class Caesar: Fixed_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "SPG9_HEAT",
-            "SPG9_HEAT",
-            "SPG9_HEAT",
-            "SPG9_HEAT"
+            "PylonRack_4Rnd_BombDemine_01_Dummy_F"
         };
         addWeapons[] = {
-            "launcher_SPG9"
+            "BombDemine_01_F"
         };
         turret[] = {-1};
     };
@@ -681,12 +678,14 @@ class B_Strike_Wasp: Fixed_Wing {
 class B_Growler: Fixed_Wing {
     airRadar = 12000;
     allowPylonMagazines[] = {
+        "PylonRack_Missile_AMRAAM_C_x1",
         "PylonRack_Missile_AMRAAM_D_x2",
         "PylonRack_Missile_HARM_x1",
         "PylonRack_4Rnd_LG_scalpel"
     };
     ammoOverrides[] = {
-        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
+        {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
+        {"ammo_Missile_AMRAAM_C", {"ammo_Missile_malice", "AIM-424 Malice"}}
     };
     cost = 19000;
     disallowMagazines[] = {

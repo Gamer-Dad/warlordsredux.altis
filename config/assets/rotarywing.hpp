@@ -4,13 +4,20 @@ class Rotary_Wing {
 };
 
 // MH-9 Hummingbird
-class B_Heli_Light_01_F: Rotary_Wing {
+class Hummingbird: Rotary_Wing {
     cost = 300;
-    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
+    hasFastTravel = 1;
     nameShort = "HUMMINGBIRD";
     rearm = 120;
     requirements[] = {};
+};
+class B_Heli_Light_01_F: Hummingbird {
+    loaded = "Land_MedicalTent_01_NATO_generic_open_F";
     side[] = {"west"};
+};
+class C_Heli_Light_01_civil_F: Hummingbird {
+    loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
+    side[] = {"east"};
 };
 
 // Mi-290 Taru
@@ -42,7 +49,6 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     nameShort = "ORCA";
     offset[] = {0, 10, 0};
     rearm = 120;
-    requirements[] = {};
     side[] = {"east"};
 };
 class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
@@ -264,7 +270,7 @@ class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
         "PylonRadarPod_01_F",
         "PylonCameraPod_01_F"
     };
-    cost = 7500;
+    cost = 6500;
     name = "MH-80 Direct Action Penetrator";
     nameShort = "GHOSTHAWK DAP";
     replacePylons[] = {

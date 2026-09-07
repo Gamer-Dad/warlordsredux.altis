@@ -177,6 +177,7 @@ class Spawn_Tent: Special {
     demolishStepTime = 2;
     name = "Tent";
     nameShort = "TENT";
+    showToEnemies = 20;
 };
 
 class Land_TentDome_F: Spawn_Tent {};

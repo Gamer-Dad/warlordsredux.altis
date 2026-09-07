@@ -234,7 +234,7 @@ class Light_Recon: Light_Vehicle {
     hasHMD = 1;
     hasReconOptics = 1;
     offset[] = {0, 5, 0};
-    scanner = 120;
+    scanner = 100;
     variant = 1;
 };
 class B_CTRG_LSV_01_light_F: Light_Recon {

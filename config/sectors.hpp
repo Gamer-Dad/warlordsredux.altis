@@ -115,7 +115,7 @@ class CfgWarlordSectors {
         {"Edessa", "Kavirida"},
         {"Edessa", "Panochori"},
         {"Edessa", "ZarosSolar"},
-        {"Eginio", "SkoposCastleRuins"},
+        {"Eginio", "SkoposBase"},
         {"Ekali", "Faronaki"},
         {"Ekali", "Livadi"},
         {"Ekali", "PyrgosQuarry"},

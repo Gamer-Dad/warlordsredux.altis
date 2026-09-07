@@ -333,7 +333,7 @@ class Mobile_Starstreak: Air_Defense {
     rearm = 240;
 };
 class B_Gorgon_AA: Mobile_Starstreak {
-    integralWeapon[] = {16, {0.35, -1.5, 1.5}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
+    integralWeapon[] = {12, {0.35, -1.5, 1.5}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     isLight = 1;
     name = "AFV-4 Medusa";
     nameShort = "MEDUSA";
@@ -362,7 +362,7 @@ class B_Gorgon_AA: Mobile_Starstreak {
     };
 };
 class O_Marid_AA: Mobile_Starstreak {
-    integralWeapon[] = {16, {0.2, -1.5, 1.7}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
+    integralWeapon[] = {12, {0.2, -1.5, 1.7}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     name = "9K41 Ghost";
     nameShort = "GHOST";
     side[] = {"east"};
@@ -405,8 +405,6 @@ class O_Euphrates: SPAAG {
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
-            "magazine_Missile_AA_R77_x1",
-            "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
             "magazine_Missile_AA_R77_x1",
