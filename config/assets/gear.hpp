@@ -126,21 +126,24 @@ class Land_Cargo10_military_green_F: Gear {
     side[] = {"west", "east"};
 };
 
-class Offroad_Truck: Gear {
+class Supply_MRAP: Gear {
+    attachments[] = {
+        {"\A3\Structures_F_Heli\Ind\Cargo\Cargo10_military_green_F.p3d", {0.5, -0.8, 1.0}, 0, "", 0.5}
+    };
     capValue = 1;
     cost = 1500;
-    description = "Supply van that can be deployed as supplies.";
+    description = "Supply vehicle that can be deployed as supplies.";
     disableParadrop = 1;
     loadable = 0;
     loaded = "Land_Cargo10_military_green_F";
-    name = "Supply Van";
-    nameShort = "VAN";
+    name = "Supply MRAP";
+    nameShort = "SUPPLY MRAP";
     requirements[] = {"H", "NF", "S"};
-    showToEnemies = 1000;
-};
-class B_G_Van_02_vehicle_F: Offroad_Truck {
-    side[] = {"west"};
-};
-class O_G_Van_02_vehicle_F: Offroad_Truck {
-    side[] = {"east"};
+    showToEnemies = 100;
+    side[] = {"west", "east"};
+    spawn = "I_MRAP_03_F";
+    textures[] = {
+        "\A3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa",
+        "\A3\data_f\vehicles\turret_co.paa"
+    };
 };

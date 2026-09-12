@@ -5,8 +5,11 @@ Assets
 * (Added) M-900
 * (Added) Orca Bunker Buster
 * (Added) Prowler/Qilin Recon
+* (Added) Supply MRAP
 * (Removed) Marshall UP
+* (Removed) Supply Van
 * (Removed) Taru Rally Deployer
+* (Removed) Huron/Mohawk Supply
 * Caesar: now deploys bunkers.
 * Centurion: reduced notch immunity 3,500->3,000m, damage reduced 100->60%.
 * Device truck: now limited to 2 per player.
@@ -30,6 +33,7 @@ Assets
 * Pelter: added LMG.
 * Radome: changed model and name to LR Radar.
 * Spartan/SAAMI: reduced notch immunity 3,000->2,500m, damage reduced 60->45%.
+* Speedboat Armed: removed friendly sector requirement, replaced GMG with 12.7mm.
 * Static Mora: removed autonomous component.
 * Tents: now shows on map for enemies within 20m.
 
@@ -40,14 +44,16 @@ Gameplay
 * Air assault into sector option now requires revealing the sector first.
 * Atsalis jet spawning is now user-placed, RTB limited to a single position.
 * Base billboard shows instructions.
-* Deployers show altitude on HMD.
+* Deployers now drop straight with a parachute and show altitude on HMD.
 * Factory production time increased: Slammer X (7.5->12), Rhino X (7.5->12), Futura (7.5->12), Dragon (5->10).
 * Free airdrop no longer possible when vehicle was recently damaged.
+* HUD now shows supplies in sector within 100m.
 * Increased available squad channels from 10->50.
 * Kill rewards reduced 20%.
 * Manual SAMs are now stopped by APS without consuming APS ammo.
 * Map button for showing default stronghold location.
 * Map markers reset when sector is revealed, reduces marker option pool to camped or none.
+* Naval ordering teleport now only activates once per life.
 * No-fly zone shows distance on trigger.
 * Player side selection is deferred after the lobby.
 * Paradrop to sector: cooldown now 3 minutes, cost $500.
@@ -61,6 +67,8 @@ Gameplay
 * Steam recording events support (optional).
 * Stronghold selection algorithm adjusted to favor larger buildings.
 * Stronghold selection for green sectors now exclude destroyed buildings, allowing some sectors to be pre-cleared with explosives.
+* Supplies in sector can now be activated by enemies, reducing sector reinforcements by 10 each time.
+* Supplies no longer have access control.
 * Territory bonus is income, not capture modifier.
 
 Bugfixes
@@ -75,9 +83,10 @@ Bugfixes
 * Fixed reinforcement bar showing for home bases.
 * Fixed script error for conscription JIP.
 * Fixed sector icon drawing for neutral, revealed sectors attacked by enemy.
-* Fixed some instances of Xian/Bfish item deployer not triggering correctly. Deployers trigger on explosion.
+* Fixed some instances of Xian/Bfish item deployer not triggering correctly.
 * Fixed squad chat name becoming outdated when stealing voice slot.
 * Fixed team priority being set to unlinked sector when enemy attacks.
+* Fixed teamkill messages not showing asset types if they've been deleted by the time of the forgiveness decision.
 * Fixed unrevealed base flags being slightly larger.
 * Fixed vote power display using scientific notation when exceeding 1M.
 * Fixed welcome menu text not showing on join.

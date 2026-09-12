@@ -22,6 +22,9 @@ class C_Heli_Light_01_civil_F: Hummingbird {
 
 // Mi-290 Taru
 class Taru: Rotary_Wing {
+    ammoOverrides[] = {
+        {"BombDemine_01_DummyAmmo_F", {"M_BunkerDeployer", "Bunker Deployer"}}
+    };
     cost = 400;
     hasFastTravel = 1;
     hasSling = 1;
@@ -29,6 +32,16 @@ class Taru: Rotary_Wing {
     nameShort = "TARU";
     offset[] = {0, 10, 0};
     rearm = 120;
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "PylonRack_4Rnd_BombDemine_01_Dummy_F"
+        };
+        addWeapons[] = {
+            "BombDemine_01_F"
+        };
+        turret[] = {-1};
+    };
 };
 class O_Heli_Transport_04_covered_F: Taru {
     side[] = {"east"};
@@ -298,13 +311,6 @@ class B_Heli_Transport_03_F: Transport_Helicopter {
     nameShort = "HURON";
     side[] = {"west"};
 };
-class B_Heli_Transport_03_supply_F: B_Heli_Transport_03_F {
-    loaded = "Land_Cargo10_military_green_F";
-    name = "CH-67 Huron Supply";
-    requirements[] = {"H", "NF", "S"};
-    spawn = "B_Heli_Transport_03_F";
-    variant = 1;
-};
 class O_Mohawk: Transport_Helicopter {
     hasHMD = 1;
     isHeavyLift = 1;
@@ -333,13 +339,6 @@ class O_Mohawk: Transport_Helicopter {
         };
         turret[] = {-1};
     };
-};
-class O_Mohawk_Supply: O_Mohawk {
-    loaded = "Land_Cargo10_military_green_F";
-    name = "CH-49 Mohawk Supply";
-    requirements[] = {"H", "NF", "S"};
-    spawn = "I_Heli_Transport_02_F";
-    variant = 1;
 };
 
 // AH-9 Pawnee

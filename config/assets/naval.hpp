@@ -49,6 +49,23 @@ class Speedboat: Naval {
     cost = 500;
     nameShort = "SPEEDBOAT";
     rearm = 120;
+
+    class Commander: WLTurretDefaults {
+        addMagazines[] = {
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right"
+        };
+        addWeapons[] = {
+            "Gatling_127mm_HeliPylon_F"
+        };
+        removeMagazines[] = {
+            "96Rnd_40mm_G_belt"
+        };
+        removeWeapons[] = {
+            "GMG_40mm"
+        };
+        turret[] = {0};
+    };
 };
 class B_Boat_Armed_01_minigun_F: Speedboat {
     side[] = {"west"};
