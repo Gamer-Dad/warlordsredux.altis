@@ -55,46 +55,6 @@ class Land_BagFence_Round_F: Special {
     offset[] = {0, 3, 0};
 };
 
-class Static_Mora: Special {
-    aps = 3;
-    capValue = 2;
-    conversion = 1;
-    cost = 3000;
-    demolishable = 1;
-    demolishStepTime = 1;
-    immobile = 1;
-    name = "Mora (Static)";
-    nameShort = "STATIC MORA";
-    rearm = 180;
-    spawn = "I_APC_tracked_03_cannon_F";
-    textures[] = {
-        "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
-        "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
-        "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
-        "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
-    };
-
-    class Gunner: WLTurretDefaults {
-        addMagazines[] = {
-            "450Rnd_127x108_Ball",
-            "450Rnd_127x108_Ball",
-            "5Rnd_GAT_missiles",
-            "5Rnd_GAT_missiles"
-        };
-        addWeapons[] = {
-            "HMG_NSVT",
-            "missiles_titan"
-        };
-        removeMagazines[] = {
-            "200Rnd_762x51_Belt_Yellow"
-        };
-        removeWeapons[] = {
-            "LMG_coax"
-        };
-        turret[] = {0};
-    };
-};
-
 class Static_Cannon: Special {
     aps = 2;
     capValue = 2;

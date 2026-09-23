@@ -231,6 +231,55 @@ class O_GMG_01_A_F: Static_GMG_Auto {
     side[] = {"east"};
 };
 
+class Static_Mora: Sector_Defense {
+    attachments[] = {
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {0, 4.5, -1.9}, 0, "", 1},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {3.2, 1.0, -1.9}, 90, "", 1},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {-3.2, 1.0, -1.9}, 270, "", 1},
+        {"\A3\Structures_F\Mil\Shelters\CamoNet_open_F.p3d", {0, 0, 0}, 270, "", 1}
+    };
+    capValue = 6;
+    conversion = 1;
+    cost = 3000;
+    demolishable = 1;
+    demolishStepTime = 5;
+    disableDamage = 1;
+    immobile = 1;
+    name = "Fighting Position (Mora)";
+    nameShort = "STATIC MORA";
+    rearm = 180;
+    showToEnemies = 100;
+    side[] = {"west", "east"};
+    spawn = "I_APC_tracked_03_cannon_F";
+    textures[] = {
+        "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext_eaf_co.paa",
+        "A3\Armor_F_Enoch\apc_tracked_03\data\apc_tracked_03_ext2_eaf_co.paa",
+        "A3\Armor_F_Enoch\apc_tracked_03\Data\camonet_EAF_green_CO.paa",
+        "A3\Armor_F_Enoch\apc_tracked_03\data\cage_EAF_CO.paa"
+    };
+    variant = 1;
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "450Rnd_127x108_Ball",
+            "450Rnd_127x108_Ball",
+            "5Rnd_GAT_missiles",
+            "5Rnd_GAT_missiles"
+        };
+        addWeapons[] = {
+            "HMG_NSVT",
+            "missiles_titan"
+        };
+        removeMagazines[] = {
+            "200Rnd_762x51_Belt_Yellow"
+        };
+        removeWeapons[] = {
+            "LMG_coax"
+        };
+        turret[] = {0};
+    };
+};
+
 // Smart Mine System
 // class Smart_Mine: Sector_Defense {
 //     cost = 4000;

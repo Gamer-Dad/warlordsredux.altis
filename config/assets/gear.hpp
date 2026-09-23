@@ -134,7 +134,6 @@ class Supply_MRAP: Gear {
     cost = 1500;
     description = "Supply vehicle that can be deployed as supplies.";
     disableParadrop = 1;
-    loadable = 0;
     loaded = "Land_Cargo10_military_green_F";
     name = "Supply MRAP";
     nameShort = "SUPPLY MRAP";

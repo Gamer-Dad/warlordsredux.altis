@@ -49,6 +49,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     ammoOverrides[] = {
         {"Bo_Mk82", {"M_SupplyLayer", "Supply Drop"}}
     };
+    cost = 4000;
     description = "V-44 X Blackfish (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
     name = "V-44 X Blackfish (Supplies)";
     nameShort = "BLACKFISH SUPPLY";
@@ -311,7 +312,7 @@ class O_Xian_Supply: O_Xian {
     ammoOverrides[] = {
         {"Bo_Mk82", {"M_SupplyLayer", "Supply Drop"}}
     };
-    cost = 3000;
+    cost = 4000;
     description = "Y-32 Xi'an (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
     disallowMagazines[] = {
         "PylonMissile_1Rnd_Bomb_03_F",
@@ -324,6 +325,7 @@ class O_Xian_Supply: O_Xian {
         "PylonRack_20Rnd_Rocket_03_HE_F",
         "PylonRack_20Rnd_Rocket_03_AP_F"
     };
+    hasSling = 0;
     name = "Y-32 Xi'an (Supplies)";
     nameShort = "XIAN SUPPLY";
     rearm = 900;
@@ -362,6 +364,7 @@ class O_Xian_MineLayer: O_Xian_Supply {
     ammoOverrides[] = {
         {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
     };
+    hasSling = 1;
     name = "Y-32 Xi'an (Mine Layer)";
     nameShort = "XIAN MINES";
     rearm = 120;
