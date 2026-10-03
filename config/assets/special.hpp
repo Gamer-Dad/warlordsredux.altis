@@ -11,7 +11,7 @@ class Team_Rally_Point: Special {
     name = "Team Rally Point";
     nameShort = "RALLY";
     offset[] = {0, 8, 0};
-    showToEnemies = 30;
+    showToEnemies = 100;
 };
 class Land_MedicalTent_01_NATO_generic_open_F: Team_Rally_Point {};
 class Land_MedicalTent_01_CSAT_brownhex_generic_open_F: Team_Rally_Point {};
@@ -137,7 +137,7 @@ class Spawn_Tent: Special {
     demolishStepTime = 2;
     name = "Tent";
     nameShort = "TENT";
-    showToEnemies = 20;
+    showToEnemies = 100;
 };
 
 class Land_TentDome_F: Spawn_Tent {};
@@ -200,6 +200,11 @@ class I_AR2_Deployed: Deployed_AR2 {
 class Steerable_Parachute_F: Special {
     name = "Steerable Parachute";
     nameShort = "PARACHUTE";
+};
+
+class SpaceshipCapsule_01_container_F: Special {
+    name = "Paradroppable Capsule";
+    nameShort = "CAPSULE";
 };
 
 class Land_VR_Slope_01_F: Special {

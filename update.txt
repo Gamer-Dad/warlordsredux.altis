@@ -1,111 +1,30 @@
-Warlords Redux 2.8 Patch 16
-
-Assets
-* (Added) Bunker Hawk
-* (Added) M-900
-* (Added) Orca Bunker Buster
-* (Added) Prowler/Qilin Recon
-* (Added) Supply MRAP
-* (Removed) Marshall UP
-* (Removed) Supply Van
-* (Removed) Taru Rally Deployer
-* (Removed) Huron/Mohawk Supply
-* Blackfish Supply: cost increased $2,000->4,000.
-* Caesar: now deploys bunkers.
-* Centurion: reduced notch immunity 3,500->3,000m, damage reduced 100->60%.
-* Device truck: now limited to 2 per player.
-* Euphrates: ammo reduced 8->6.
-* Falcon: cost reduced $6,000->3,500.
-* Fort/Supplies: now shows on map for enemies within 100m.
-* Ghost: ammo reduced 16->12.
-* Ghost Hawk (base): rearm time reduced 240->120s.
-* Growler: added Malice missile (reload if used with AMRAAMs).
-* Hummingbird: added fast travel point.
-* Hunter AFV: added rearm capability.
-* Hunter Apex: added rearm capability, added line charge.
-* LR AA (Rhea/Defender): reduced notch immunity: 3,800->3,200m, damage reduced 100->80%.
-* Marid Dragon: loadout reworked.
-* Marshall: received former UP variant loadout.
-* MH-80 DAP: cost increased $5,500->6,500, replaces vanilla loadout by default.
-* Medusa: ammo reduced 16->12.
-* Orca Unarmed: rearm time reduced 240->120s, must be spawned in helipad sectors.
-* Panther: switched 30mm for 127x99 HEIP.
-* Pawnee: 20mm gun changed to 127x99 HEIP.
-* Pelter: added LMG.
-* Radome: changed model and name to LR Radar.
-* Spartan/SAAMI: reduced notch immunity 3,000->2,500m, damage reduced 60->45%.
-* Speedboat Armed: removed friendly sector requirement, replaced GMG with 12.7mm.
-* Static Mora: removed autonomous component, removed APS, resilient to projectile damage.
-* Tents: now shows on map for enemies within 20m.
-* Xian Supply: cost increased $3,000->4,000, removed slingloader.
+Warlords Redux 2.8 Patch 17
 
 Gameplay
-* Added low altitude requirement for rearm.
-* Added option to adjust capture interface top %.
-* Adjusted several sector locations to avoid placing base center inside building.
-* Air assault into sector option now requires revealing the sector first.
-* Atsalis jet spawning is now user-placed, RTB limited to a single position.
-* Base billboard shows instructions.
-* Deployers now drop straight with a parachute and show altitude on HMD.
-* Factory production time increased: Slammer X (7.5->12), Rhino X (7.5->12), Futura (7.5->12), Dragon (5->10).
-* Headlights key in map will enable map circle tool. Left/right panel keys to change radius.
-* Free airdrop no longer possible when vehicle was recently damaged.
-* HUD now shows supplies in sector within 100m.
-* Increased available squad channels from 10->50.
-* Increased volume of TK warning.
-* Kill rewards reduced 20%.
-* Manual SAMs are now stopped by APS without consuming APS ammo.
-* Map button for showing default stronghold location.
-* Map markers reset when sector is revealed, reduces marker option pool to camped or none.
-* Naval ordering teleport now only activates once per life.
-* No-fly zone shows distance on trigger.
-* Player side selection is deferred after the lobby.
-* Paradrop to sector: cooldown now 3 minutes, cost $500.
-* Players can now draw circular markers on map. Placing a marker with text "c1000" will draw a circle with a 1km radius.
-* Poll menu now opens on respawn until vote is cast.
-* Railgun now does -1 structural damage if fully overheated (120%).
-* Repair action blocked for recently demolished structure.
-* Restock action now heals player to full health.
-* Revamped structural damage icon.
-* Reward multipliers reduced: first person (+100%->50%), PvP (+75%->25%)
-* Squad leaders with more than 2,000 ELO can skip the squad number check when placing FOB.
-* Sectors lose up to 80% of reinforcements upon changing ownership.
-* Steam recording events support (optional).
-* Stronghold selection algorithm adjusted to favor larger buildings.
-* Stronghold selection for green sectors now exclude destroyed buildings, allowing some sectors to be pre-cleared with explosives.
-* Supplies in sector can now be activated by enemies, reducing sector reinforcements by 10 each time.
-* Supplies no longer have access control.
-* Territory bonus is income, not capture modifier.
+* Bunker enemy map visible distance: 100->500 m.
+* Handheld AT now consumes 2x APS ammo: NLAW, Titan AT, Vorona HEAT, RPG-42 AT, MAAWS HEAT.
+* Income bonus no longer boosts kill money.
+* Laser guided munitions range: 20->12 km, consumes 3->2 APS, now stopped by device.
+* Minefields now show as their team's color.
+* Raised rearm max height 20->25m.
+* Scoreboard now shows players if disconnected.
+* Spawn tent and rally, enemy map visible distance: 100 m.
+* Supply and supply MRAP, enemy map visible distance: 100->500 m.
+* Supply drop max fall speed 50->25 m/s.
+* UI display for APS depletion.
 
 Bugfixes
-* Fixed air radar scanning detecting aircraft at an altitude lower than it should.
-* Fixed APS triggering on vehicles attached by rope/load.
-* Fixed base billboard being moved.
-* Fixed blackout delay when spawning away from base.
-* Fixed duplicate drawing of visible units on map.
-* Fixed enemy scanned assets showing on my asset layer.
-* Fixed enemy target selection VOs playing on neutral, revealed sectors.
-* Fixed HARM tracking onto attached object rather than parent vehicle.
-* Fixed reinforcement bar showing for home bases.
-* Fixed script error for conscription JIP.
-* Fixed sector icon drawing for neutral, revealed sectors attacked by enemy.
-* Fixed some instances of Xian/Bfish item deployer not triggering correctly.
-* Fixed squad chat name becoming outdated when stealing voice slot.
-* Fixed team priority being set to unlinked sector when enemy attacks.
-* Fixed teamkill messages not showing asset types if they've been deleted by the time of the forgiveness decision.
-* Fixed unrevealed base flags being slightly larger.
-* Fixed vote power display using scientific notation when exceeding 1M.
-* Fixed welcome menu text not showing on join.
-* Fixed wrecks not detaching from dead carrier.
-* Fixed Xian minelayer requirement conditions to bring it in line with the Blackfish.
-* Optimized action delayed camera.
-* Optimized AI jet flaring.
-* Optimized APS handler.
-* Optimized field repair process.
-* Optimized kill feed fade-out.
-* Optimized missile camera PiP.
-* Optimized sector, vehicle spawning to use multi-threading.
-* Optimized sector capture modifier calculations.
-* Optimized sector respawner to stop in non-relevant sectors.
-* Optimized selected targets handler.
-* Rewrote report menu, scoreboard to be faster.
+* Fixed AI prematurely firing railguns.
+* Fixed air defense help text being outdated.
+* Fixed capsules not being shown on map.
+* Fixed enemy capture notifications revealing unrevealed sectors.
+* Fixed enemy target markers staying hidden after sector revelation and incorrect rotation when both teams select the same sector.
+* Fixed friendly fire forgiveness prompts showing the killer's name instead of the victim or asset owner's name.
+* Fixed hexagon sector FOB range limits.
+* Fixed scoreboard script error when display ended before render is complete.
+* Fixed some cases where player group is not successfully updated to the right side.
+* Fixed target reset voting hiding the enemy target marker.
+* Fixed team balancer not working exceptions.
+* Fixed wrong endgame faction text.
+* Fixed Xian drone deployer instantly destroying the Xian.
+* Reworked buy menu for more efficient condition checks.

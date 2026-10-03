@@ -383,7 +383,7 @@ class O_Xian_Armed: O_Xian {
     };
     ammoOverrides[] = {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AKF-98 (Laser-Guided)"}},
-        {"Bo_Mk82", {"M_DroneDeployer", "Drone Deployer Canister"}}
+        {"M_SPG9_HE", {"M_DroneDeployer", "Drone Deployer Canister"}}
     };
     cost = 11000;
     name = "Y-32 Xi'an (Armed)";
@@ -414,14 +414,15 @@ class O_Xian_Armed: O_Xian {
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AA_R73_x1",
             "magazine_Missile_AA_R73_x1",
-            "2Rnd_Mk82",
+            "SPG9_HE",
+            "SPG9_HE",
             "Laserbatteries"
         };
         addWeapons[] = {
             "CMFlareLauncher_Singles",
             "weapon_AGM_65Launcher",
             "weapon_R73Launcher",
-            "Mk82BombLauncher",
+            "launcher_SPG9",
             "Laserdesignator_pilotCamera"
         };
         removeMagazines[] = {

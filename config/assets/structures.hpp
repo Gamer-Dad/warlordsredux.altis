@@ -74,7 +74,7 @@ class Land_BagBunker_Small_F: Structures {
     name = "Fighting Position";
     nameShort = "BUNKER";
     offset[] = {0, 5, 0};
-    showToEnemies = 100;
+    showToEnemies = 500;
     side[] = {"west", "east", "guer"};
 };
 

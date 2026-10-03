@@ -122,7 +122,7 @@ class Land_Cargo10_military_green_F: Gear {
     nameShort = "SUPPLIES";
     offset[] = {0, 5, 0};
     requirements[] = {"H", "NF", "S"};
-    showToEnemies = 100;
+    showToEnemies = 500;
     side[] = {"west", "east"};
 };
 
@@ -138,7 +138,7 @@ class Supply_MRAP: Gear {
     name = "Supply MRAP";
     nameShort = "SUPPLY MRAP";
     requirements[] = {"H", "NF", "S"};
-    showToEnemies = 100;
+    showToEnemies = 500;
     side[] = {"west", "east"};
     spawn = "I_MRAP_03_F";
     textures[] = {

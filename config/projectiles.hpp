@@ -257,9 +257,9 @@ class WLProjectilesConfig {
         ammo[] = {
             "Missile_AGM_02_Laser_F"
         };
-        aps[] = {2, 3, 5};
+        aps[] = {2, 3, 4, 5};
         camera = 1;
-        consumption = 3;
+        consumption = 2;
         laser = 1;
     };
 
@@ -378,6 +378,25 @@ class WLProjectilesConfig {
         speed = 1.5;
     };
 
+    class WLProjectile_MediumHandheld: WLProjectile {
+        ammo[] = {
+            "M_Vorona_HEAT",                    // Vorona HEAT
+            "M_Titan_AT",                       // Titan AT
+            "M_NLAW_AT_F"                       // NLAW
+        };
+        aps[] = {2, 3, 4, 5};
+        consumption = 2;
+    };
+
+    class WLProjectile_LightHandheld: WLProjectile {
+        ammo[] = {
+            "R_MRAAWS_HEAT_F",                  // MAAWS HEAT
+            "R_PG32V_F"                         // RPG-42 AT
+        };
+        aps[] = {1, 2, 3, 5};
+        consumption = 2;
+    };
+
     class WLProjectile_MediumGuided: WLProjectile {
         ammo[] = {
             "M_Titan_AT_long",                  // Titan AT (Vehicle)
@@ -387,12 +406,9 @@ class WLProjectilesConfig {
             "M_Scalpel_AT",                     // Scalpel
             "M_Scalpel_AT_hidden",              // Scalpel
 
-            "M_NLAW_AT_F",                      // NLAW
             "M_Titan_AP",                       // Titan AP
-            "M_Titan_AT",                       // Titan AT
             "M_Titan_AT_static",                // Titan AT (Static)
-            "M_Vorona_HE",                      // Vorona HE
-            "M_Vorona_HEAT"                     // Vorona HEAT
+            "M_Vorona_HE"                       // Vorona HE
         };
         aps[] = {2, 3, 4, 5};
         consumption = 1;
@@ -445,9 +461,7 @@ class WLProjectilesConfig {
     class WLProjectile_LightUnguided: WLProjectile {
         ammo[] = {
             "R_MRAAWS_HE_F",                    // MAAWS HE
-            "R_MRAAWS_HEAT_F",                  // MAAWS HEAT
             "R_MRAAWS_HEAT55_F",                // MAAWS HEAT55
-            "R_PG32V_F",                        // RPG-42 AT
             "R_PG7_F",                          // RPG-7 HEAT
             "R_TBG32V_F"                        // RPG-42 HE
         };

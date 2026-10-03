@@ -248,7 +248,7 @@ class Static_Mora: Sector_Defense {
     name = "Fighting Position (Mora)";
     nameShort = "STATIC MORA";
     rearm = 180;
-    showToEnemies = 100;
+    showToEnemies = 500;
     side[] = {"west", "east"};
     spawn = "I_APC_tracked_03_cannon_F";
     textures[] = {
