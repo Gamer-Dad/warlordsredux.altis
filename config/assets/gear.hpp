@@ -128,7 +128,8 @@ class Land_Cargo10_military_green_F: Gear {
 
 class Supply_MRAP: Gear {
     attachments[] = {
-        {"\A3\Structures_F_Heli\Ind\Cargo\Cargo10_military_green_F.p3d", {0.5, -0.8, 1.0}, 0, "", 0.5}
+        {"\A3\Props_F_Orange\Humanitarian\Supplies\FoodSacks_01_cargonet_F.p3d", {-0.8, -2.3, 0.8}, 0, ""},
+        {"\A3\Props_F_Orange\Humanitarian\Supplies\FoodSacks_01_cargonet_F.p3d", {0.8, -2.3, 0.8}, 0, ""}
     };
     capValue = 1;
     cost = 1500;

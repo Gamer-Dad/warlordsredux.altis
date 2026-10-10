@@ -178,7 +178,6 @@ class O_AR7: AR7 {
 
 // Offroad (IED)
 class Offroad_IED: Remote_Control {
-    aps = 4;
     cost = 4000;
     description = "Offroad (IED) is a variant of the Offroad that goes boom.";
     detonate = 11;
@@ -200,6 +199,8 @@ class I_E_Offroad_01_comms_F: Offroad_IED {
 // KH-3A Fenghuang
 class O_T_UAV_04_CAS_F: Remote_Control {
     cost = 4500;
+    flareBursts = 4;
+    flareReload = 8;
     hasHMD = 1;
     nameShort = "FENGHUANG";
     rearm = 300;
@@ -207,11 +208,11 @@ class O_T_UAV_04_CAS_F: Remote_Control {
     side[] = {"east"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -274,10 +275,22 @@ class O_T_UAV_04_CAS_F: Remote_Control {
 
 class Predator_Drone: Remote_Control {
     cost = 5500;
+    flareBursts = 4;
+    flareReload = 8;
     hasHMD = 1;
     nameShort = "PREDATOR";
     rearm = 300;
     requirements[] = {"H"};
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
 };
 // Greyhawk
 class B_UAV_02_dynamicLoadout_F: Predator_Drone {
@@ -302,6 +315,8 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
         "PylonRack_1Rnd_AAA_missiles"
     };
     cost = 3500;
+    flareBursts = 4;
+    flareReload = 8;
     hasHMD = 1;
     nameShort = "FALCON";
     rearm = 300;
@@ -309,11 +324,11 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -322,6 +337,8 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
 // UCAV Sentinel
 class B_UAV_05_F: Remote_Control {
     cost = 15000;
+    flareBursts = 5;
+    flareReload = 8;
     hasHMD = 1;
     nameShort = "SENTINEL";
     rearm = 420;
@@ -329,11 +346,11 @@ class B_UAV_05_F: Remote_Control {
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -361,7 +378,6 @@ class B_Pegasus: B_UAV_05_F {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
             "PylonMissile_1Rnd_Mk82_F",
             "PylonMissile_1Rnd_Mk82_F",
             "magazine_Bomb_GBU12_x1",
@@ -388,6 +404,12 @@ class B_Pegasus: B_UAV_05_F {
         addWeapons[] = {
             "Mk82BombLauncher",
             "weapon_GBU12Launcher"
+        };
+        removeMagazines[] = {
+            "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };

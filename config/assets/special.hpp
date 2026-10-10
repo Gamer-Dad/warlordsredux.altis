@@ -207,18 +207,6 @@ class SpaceshipCapsule_01_container_F: Special {
     nameShort = "CAPSULE";
 };
 
-class Land_VR_Slope_01_F: Special {
-    cost = 100;
-    demolishable = 1;
-    demolishStepTime = 1;
-    name = "Mobile Ramp";
-    nameShort = "RAMP";
-    textures[] = {
-        "#(rgb,8,8,3)color(0.08,0.12,0.08,1)",
-        "#(rgb,8,8,3)color(0.04,0.08,0.04,1)"
-    };
-};
-
 class Deployed_Explosives: Special {
     cost = 100;
     demolishable = 1;

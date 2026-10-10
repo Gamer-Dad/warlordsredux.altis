@@ -1,30 +1,30 @@
-Warlords Redux 2.8 Patch 17
+Warlords Redux 2.8 Patch 18
+
+Asset
+* (Added) Tank decoys
+* (Removed) Hunter/Ifrit Mortar
+* (Removed) Mk30 HMG/Mk32 GMG (low)
+* (Removed) Rectangular Minefield
+* Bunker Hawk: bunker busters 3->5, added an additional 12.7mm gun.
+* Caesar, Taru: bunker deployments 4->2.
+* Orca Bomber: bunker busters 3->5, added radar pod.
+* Offroad (IED): APS removed.
 
 Gameplay
-* Bunker enemy map visible distance: 100->500 m.
-* Handheld AT now consumes 2x APS ammo: NLAW, Titan AT, Vorona HEAT, RPG-42 AT, MAAWS HEAT.
-* Income bonus no longer boosts kill money.
-* Laser guided munitions range: 20->12 km, consumes 3->2 APS, now stopped by device.
-* Minefields now show as their team's color.
-* Raised rearm max height 20->25m.
-* Scoreboard now shows players if disconnected.
-* Spawn tent and rally, enemy map visible distance: 100 m.
-* Supply and supply MRAP, enemy map visible distance: 100->500 m.
-* Supply drop max fall speed 50->25 m/s.
-* UI display for APS depletion.
+* Added minimum rating requirement to artillery assets.
+* Camera swivels towards damage source upon player down.
+* Flare and missile rework.
+* Field repair now allowed when fuel is low, emergency refuels vehicle.
+* Item deployer: removed minimum drop height.
+* Removed first person restriction in manual drone.
+* Removed option to do allied demolitions.
+* Side picker now shows name of players in lobby in tooltip.
+* Stormbreaker/UPMK: no longer stopped by advanced APS.
+* Tents are no longer damageable by teammates.
 
 Bugfixes
-* Fixed AI prematurely firing railguns.
-* Fixed air defense help text being outdated.
-* Fixed capsules not being shown on map.
-* Fixed enemy capture notifications revealing unrevealed sectors.
-* Fixed enemy target markers staying hidden after sector revelation and incorrect rotation when both teams select the same sector.
-* Fixed friendly fire forgiveness prompts showing the killer's name instead of the victim or asset owner's name.
-* Fixed hexagon sector FOB range limits.
-* Fixed scoreboard script error when display ended before render is complete.
-* Fixed some cases where player group is not successfully updated to the right side.
-* Fixed target reset voting hiding the enemy target marker.
-* Fixed team balancer not working exceptions.
-* Fixed wrong endgame faction text.
-* Fixed Xian drone deployer instantly destroying the Xian.
-* Reworked buy menu for more efficient condition checks.
+* Fixed attachments jitter during heavy server load.
+* Fixed edge cases of players spawning as green.
+* Fixed reinforcements turning into uneven number shortly after sector changes ownership.
+* Fixed script error when rendering scoreboard while busy.
+* Reworked turret limit visualizer.

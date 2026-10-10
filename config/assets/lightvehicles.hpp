@@ -239,7 +239,7 @@ class Light_Recon: Light_Vehicle {
 };
 class B_CTRG_LSV_01_light_F: Light_Recon {
     attachments[] = {
-        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -0.2, 0.7}, 0, "", 1}
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -0.2, 0.7}, 0, ""}
     };
     name = "Prowler (Recon)";
     nameShort = "PROWLER RECON";
@@ -247,7 +247,7 @@ class B_CTRG_LSV_01_light_F: Light_Recon {
 };
 class O_LSV_02_unarmed_F: Light_Recon {
     attachments[] = {
-        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {-0.2, -0.5, 1.2}, 0, "", 1}
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {-0.2, -0.5, 1.2}, 0, ""}
     };
     name = "Qilin (Recon)";
     nameShort = "QILIN RECON";
@@ -412,8 +412,8 @@ class Hunter_Upgraded: Light_Vehicle {
 class B_Hunter_AFV: Hunter_Upgraded {
     aps = 2;
     attachments[] = {
-        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {-1.1, -1.7, -0.7}, 90, "", 1},
-        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {1.1, -1.7, -0.7}, 270, "", 1}
+        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {-1.1, -1.7, -0.7}, 90, ""},
+        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {1.1, -1.7, -0.7}, 270, ""}
     };
     capValue = 2;
     cost = 1200;
@@ -504,9 +504,9 @@ class I_LT_01_AA_F: Nyx_Armed {
 class B_Hunter_Apex: Hunter_Upgraded {
     aps = 5;
     attachments[] = {
-        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {-1.1, -1.7, -0.7}, 90, "", 1},
-        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {1.1, -1.7, -0.7}, 270, "", 1},
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {-0.1, 1.5, -1.3}, 180, "", 1}
+        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {-1.1, -1.7, -0.7}, 90, ""},
+        {"A3\Structures_F\Mil\BagFence\BagFence_Short_F.p3d", {1.1, -1.7, -0.7}, 270, ""},
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {-0.1, 1.5, -1.3}, 180, ""}
     };
     capValue = 4;
     cost = 2000;

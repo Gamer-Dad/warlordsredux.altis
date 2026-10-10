@@ -5,6 +5,8 @@ class WLProjectile {
     aps[] = {};
     camera = 0;
     consumption = 0;
+    flareMin = 0;
+    flareMax = 0;
     sam = 0;
     sead = 0;
 };
@@ -23,9 +25,9 @@ class WLProjectilesConfig {
             "M_70mm_SAAMI"                      // SAAMI
         };
         camera = 1;
-        immunity = 2500;
+        flareMin = 500;
+        flareMax = 3500;
         sam = 0.45;
-        speed = 2;
     };
 
     class WLProjectile_Centurion: WLProjectile {
@@ -33,9 +35,9 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162"               // Centurion
         };
         camera = 1;
-        immunity = 3000;
+        flareMin = 2000;
+        flareMax = 6000;
         sam = 0.6;
-        speed = 1.1;
     };
 
     class WLProjectile_ManSAM: WLProjectile {
@@ -76,9 +78,9 @@ class WLProjectilesConfig {
             "ammo_Missile_mim145"               // Defender
         };
         camera = 1;
-        immunity = 3200;
+        flareMin = 2000;
+        flareMax = 8000;
         sam = 0.8;
-        speed = 1.1;
     };
 
     class WLProjectile_A2A: WLProjectile {
@@ -88,10 +90,18 @@ class WLProjectilesConfig {
             "ammo_Missile_AA_R77"               // R-77
         };
         camera = 1;
-        immunity = 4000;
+        flareMin = 5000;
+        flareMax = 7000;
         loal = 1;
         sam = 1;
-        speed = 3;
+    };
+
+    class WLProjectile_CombatAirPatrol: WLProjectile {
+        ammo[] = {
+            "ammo_Missile_CAP"                 // No-fly zone AIM-260 / PL-15 override
+        };
+        flareMin = 6000;
+        flareMax = 6500;
     };
 
     class WLProjectile_MANPADS: WLProjectile {
@@ -101,9 +111,9 @@ class WLProjectilesConfig {
             "M_Titan_AA_long"                   // Titan AA (Long)
         };
         camera = 1;
-        immunity = 100;
+        flareMin = -4000;
+        flareMax = 4000;
         sam = 0.4;
-        speed = 0.4;
     };
 
     class WLProjectile_A2AGround: WLProjectile {
@@ -113,9 +123,9 @@ class WLProjectilesConfig {
             "ammo_Missile_AA_R77_ground"
         };
         camera = 1;
-        immunity = 2000;
+        flareMin = 500;
+        flareMax = 3500;
         sam = 0.8;
-        speed = 0.8;
     };
 
     class WLProjectile_A2ANoLoal: WLProjectile {
@@ -123,9 +133,9 @@ class WLProjectilesConfig {
             "M_Zephyr"                          // Zephyr
         };
         camera = 1;
-        immunity = 1500;
-        sam = 1;
-        speed = 3;
+        flareMin = 500;
+        flareMax = 6000;
+        sam = 0.8;
     };
 
     class WLProjectile_A2AInfrared: WLProjectile {
@@ -135,9 +145,9 @@ class WLProjectilesConfig {
             "M_Air_AA",                         // ASRAAM
             "Missile_AA_03_F"                   // Sahr-3
         };
-        immunity = 1500;
+        flareMin = 500;
+        flareMax = 6000;
         sam = 0.6;
-        speed = 2;
     };
 
     class WLProjectile_AntiShip: WLProjectile {
@@ -284,9 +294,7 @@ class WLProjectilesConfig {
             "ammo_stormbreaker",
             "ammo_upmk_d30"
         };
-        aps[] = {5};
         camera = 1;
-        consumption = 9;
         gps = 1;
     };
 
@@ -367,6 +375,8 @@ class WLProjectilesConfig {
         };
         camera = 1;
         esam = 1;
+        flareMin = 6000;
+        flareMax = 10000;
     };
 
     class WLProjectile_AdvancedSAM: WLProjectile {
@@ -374,8 +384,9 @@ class WLProjectilesConfig {
             "M_RIM116B"
         };
         asam = 1;
+        flareMin = 4000;
+        flareMax = 8000;
         camera = 1;
-        speed = 1.5;
     };
 
     class WLProjectile_MediumHandheld: WLProjectile {

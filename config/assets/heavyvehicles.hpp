@@ -83,8 +83,8 @@ class B_APC_Tracked_01_CRV_F: Utility_Vehicle {
 };
 class O_Marid_Utility: Utility_Vehicle {
     attachments[] = {
-        {"\A3\Structures_F\Items\Vessels\WaterBarrel_F.p3d", {1.0,-4.8, -0.6}, 0, "", 1},
-        {"\A3\Structures_F\Items\Vessels\WaterBarrel_F.p3d", {-0.5, -4.8, -0.6}, 0, "", 1}
+        {"\A3\Structures_F\Items\Vessels\WaterBarrel_F.p3d", {1.0,-4.8, -0.6}, 0, ""},
+        {"\A3\Structures_F\Items\Vessels\WaterBarrel_F.p3d", {-0.5, -4.8, -0.6}, 0, ""}
     };
     cost = 2000;
     description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
@@ -184,7 +184,7 @@ class Heavy_Recon: Heavy_Vehicles {
 
 class B_Marshall_Recon: Heavy_Recon {
     attachments[] = {
-        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -1.7, 0.6}, 0, "", 1}
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -1.7, 0.6}, 0, ""}
     };
     description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
     loadable = 1;
@@ -209,7 +209,7 @@ class B_Marshall_Recon: Heavy_Recon {
 
 class O_BTR_Recon: Heavy_Recon {
     attachments[] = {
-        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -1.7, 0.3}, 0, "", 1}
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -1.7, 0.3}, 0, ""}
     };
     description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
     loadable = 1;
@@ -340,12 +340,13 @@ class B_Gorgon: Gorgon {
 };
 class B_Gorgon_Mortar: Gorgon {
     attachments[] = {
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0.35, -2.2, 0.1}, 0, "", 1},
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0.35, -0.2, 0.1}, 180, "", 1}
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0.35, -2.2, 0.1}, 0, ""},
+        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0.35, -0.2, 0.1}, 180, ""}
     };
     cost = 2900;
     hideTurret = 1;
     integralWeapon[] = {24, {0.35, -1.5, 0.35}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+    minElo = 1500;
     name = "AFV-4 Gorgon (Mortar)";
     nameShort = "GORGON MORTAR";
     rearm = 420;
@@ -677,6 +678,7 @@ class Howitzer_Artillery: Heavy_Vehicles {
         "2Rnd_155mm_Mo_Cluster",
         "2Rnd_155mm_Mo_Cluster_O"
     };
+    minElo = 1500;
     nameShort = "ARTY";
     rearm = 1800;
 };
@@ -700,6 +702,7 @@ class MRLS: Heavy_Vehicles {
         "12Rnd_230mm_rockets_cluster"
     };
     rearm = 1800;
+    minElo = 1500;
 };
 // M5 Sandstorm MRLS
 class B_MBT_01_mlrs_F: MRLS {

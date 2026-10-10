@@ -22,9 +22,6 @@ class I_E_Radar_System_01_F: Radar {
 
 class LR_Radar: Air_Defense {
     airRadar = 20000;
-    attachments[] = {
-        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, 3, 2}, 0, "", 5}
-    };
     cost = 2500;
     demolishable = 3;
     description = "Directional radar that passively tracks enemy air and hostile missile launches. Team max: 5.";
@@ -32,11 +29,29 @@ class LR_Radar: Air_Defense {
     name = "AN/FPS-124 LR Radar";
     nameShort = "LR RADAR";
     offset[] = {0, 7, 0};
-    spawn = "Land_MobileRadar_01_generator_F";
     showToEnemies = 8000;
-    side[] = {"west", "east", "guer"};
     teamLimit = 5;
     threatDetection = 20000;
+};
+class B_LR_Radar: LR_Radar {
+    attachments[] = {
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {0, 3.5, -1.9}, 0, ""},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {3.2, 0, -1.9}, 90, ""},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {-3.2, 0, -1.9}, 270, ""},
+        {"\A3\Static_F_Sams\Radar_System_01\Radar_System_01_F.p3d", {0, -1.0, 0.8}, 180, ""}
+    };
+    side[] = {"west"};
+    spawn = "CamoNet_BLUFOR_big_F";
+};
+class O_LR_Radar: LR_Radar {
+    attachments[] = {
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {0, 3.5, -1.9}, 0, ""},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {3.2, 0, -1.9}, 90, ""},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {-3.2, 0, -1.9}, 270, ""},
+        {"\A3\Static_F_Sams\Radar_System_02\Radar_System_02_F.p3d", {0, -1.0, 0.8}, 180, ""}
+    };
+    side[] = {"east"};
+    spawn = "CamoNet_OPFOR_big_F";
 };
 
 class Light_SAM: Air_Defense {
@@ -329,11 +344,10 @@ class Mobile_Starstreak: Air_Defense {
     description = "Mobile medium-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasHMD = 1;
     hideTurret = 1;
-    loaded = "Land_VR_Slope_01_F";
     rearm = 240;
 };
 class B_Gorgon_AA: Mobile_Starstreak {
-    integralWeapon[] = {12, {0.35, -1.5, 1.5}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
+    integralWeapon[] = {12, {0.35, -1.5, 0.5}, "B_static_AA_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     isLight = 1;
     name = "AFV-4 Medusa";
     nameShort = "MEDUSA";
@@ -362,7 +376,7 @@ class B_Gorgon_AA: Mobile_Starstreak {
     };
 };
 class O_Marid_AA: Mobile_Starstreak {
-    integralWeapon[] = {12, {0.2, -1.5, 1.7}, "B_SAM_System_02_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
+    integralWeapon[] = {12, {0.2, -1.9, 0.7}, "O_static_AA_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
     name = "9K41 Ghost";
     nameShort = "GHOST";
     side[] = {"east"};
@@ -387,6 +401,7 @@ class B_Integral_Centurion: Air_Defense {
     };
     cost = -1;
     hasHMD = 1;
+    hasTurretVisualizer = 1;
     loadable = 0;
     name = "Starstreak-II Launcher";
     nameShort = "STARSTREAK";

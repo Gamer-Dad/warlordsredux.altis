@@ -6,6 +6,8 @@ class Rotary_Wing {
 // MH-9 Hummingbird
 class Hummingbird: Rotary_Wing {
     cost = 300;
+    flareBursts = 2;
+    flareReload = 20;
     hasFastTravel = 1;
     nameShort = "HUMMINGBIRD";
     rearm = 120;
@@ -23,9 +25,11 @@ class C_Heli_Light_01_civil_F: Hummingbird {
 // Mi-290 Taru
 class Taru: Rotary_Wing {
     ammoOverrides[] = {
-        {"BombDemine_01_DummyAmmo_F", {"M_BunkerDeployer", "Bunker Deployer"}}
+        {"M_SPG9_HE", {"M_BunkerDeployer", "Bunker Deployer"}}
     };
     cost = 400;
+    flareBursts = 3;
+    flareReload = 15;
     hasFastTravel = 1;
     hasSling = 1;
     loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
@@ -35,10 +39,17 @@ class Taru: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "PylonRack_4Rnd_BombDemine_01_Dummy_F"
+            "SPG9_HE",
+            "SPG9_HE"
         };
         addWeapons[] = {
-            "BombDemine_01_F"
+            "launcher_SPG9"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -56,6 +67,8 @@ class O_Heli_Transport_04_medevac_F: Taru {
 // PO-30 Orca
 class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     cost = 500;
+    flareBursts = 3;
+    flareReload = 15;
     hasHMD = 1;
     hasSling = 1;
     loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
@@ -63,6 +76,16 @@ class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     offset[] = {0, 10, 0};
     rearm = 120;
     side[] = {"east"};
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
 };
 class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
     allowPylonMagazines[] = {
@@ -78,17 +101,17 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 3500;
+    flareBursts = 4;
+    flareReload = 8;
     nameShort = "ORCA ARMED";
     rearm = 240;
     requirements[] = {"H"};
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
             "1000Rnd_20mm_shells"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles",
             "Twin_Cannon_20mm_gunpod"
         };
         removeMagazines[] = {
@@ -103,8 +126,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
 class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
     allowPylonMagazines[] = {
         "PylonRadarPod_01_F",
-        "PylonCameraPod_01_F",
-        {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonLeft1"}}
+        "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
         {"Missile_AGM_02_F", {"M_RedArrow", "HJ-9 Red Arrow"}}
@@ -123,7 +145,7 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
     name = "PO-30 Orca (Bunker Buster)";
     nameShort = "ORCA BOMBER";
     replacePylons[] = {
-        {"PylonLeft1", {-1}, "PylonRack_3Rnd_Missile_AGM_02_F"},
+        {"PylonLeft1", {-1}, "PylonRadarPod_01_F"},
         {"PylonRight1", {-1}, "PylonCameraPod_01_F"}
     };
     spawn = "O_Heli_Light_02_dynamicLoadout_F";
@@ -132,10 +154,14 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles"
+            "weapon_AGM_65Launcher"
         };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine"
@@ -197,6 +223,8 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
 // UH-80 Ghost Hawk
 class B_Heli_Transport_01_F: Rotary_Wing {
     cost = 800;
+    flareBursts = 3;
+    flareReload = 15;
     hasFastTravel = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -206,6 +234,16 @@ class B_Heli_Transport_01_F: Rotary_Wing {
     offset[] = {0, 11, 0};
     rearm = 120;
     side[] = {"west"};
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
 };
 class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
     allowPylonMagazines[] = {
@@ -221,17 +259,13 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
     disallowMagazines[] = {
         "PylonFuelTank_UH80"
     };
+    flareBursts = 4;
+    flareReload = 8;
     name = "UH-80 Ghost Hawk Block II";
     nameShort = "GHOSTHAWK II";
     rearm = 300;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher"
-        };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine"
         };
@@ -244,7 +278,7 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
 
 class B_BunkerHawk: B_Heli_Transport_01_pylons_F {
     allowPylonMagazines[] = {
-        {"PylonRack_3Rnd_Missile_AGM_02_F", {"pylon2"}},
+        {"PylonWeapon_500Rnd_127mm_HEIAP_belt_left", {"pylon2"}},
         {"PylonWeapon_500Rnd_127mm_HEIAP_belt_right", {"pylon3"}}
     };
     ammoOverrides[] = {
@@ -267,12 +301,32 @@ class B_BunkerHawk: B_Heli_Transport_01_pylons_F {
     nameShort = "HAWK BOMBER";
     replacePylons[] = {
         {"pylon1", {-1}, "PylonRadarPod_01_F"},
-        {"pylon2", {-1}, "PylonRack_3Rnd_Missile_AGM_02_F"},
+        {"pylon2", {-1}, "PylonWeapon_500Rnd_127mm_HEIAP_belt_left"},
         {"pylon3", {-1}, "PylonWeapon_500Rnd_127mm_HEIAP_belt_right"},
         {"pylon4", {-1}, "PylonCameraPod_01_F"}
     };
     spawn = "B_Heli_Transport_01_pylons_F";
     threatDetection = 2500;
+
+    class Pilot: WLTurretDefaults {
+        addMagazines[] = {
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1",
+            "magazine_Missile_AGM_02_x1"
+        };
+        addWeapons[] = {
+            "weapon_AGM_65Launcher"
+        };
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
 };
 
 class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
@@ -284,6 +338,8 @@ class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
         "PylonCameraPod_01_F"
     };
     cost = 6500;
+    flareBursts = 5;
+    flareReload = 8;
     name = "MH-80 Direct Action Penetrator";
     nameShort = "GHOSTHAWK DAP";
     replacePylons[] = {
@@ -299,10 +355,22 @@ class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
 
 class Transport_Helicopter: Rotary_Wing {
     cost = 700;
+    flareBursts = 3;
+    flareReload = 15;
     hasSling = 1;
     loaded = "Static_Cannon";
     offset[] = {0, 10, 0};
     rearm = 240;
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
 };
 
 // CH-67 Huron
@@ -325,12 +393,6 @@ class O_Mohawk: Transport_Helicopter {
         "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_int_02_CO.paa"
     };
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "240Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine"
         };
@@ -349,6 +411,8 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
         "PylonCameraPod_01_F"
     };
     cost = 4000;
+    flareBursts = 4;
+    flareReload = 8;
     hasHMD = 1;
     hasReconOptics = 1;
     nameShort = "PAWNEE";
@@ -396,6 +460,8 @@ class Hellcat: Rotary_Wing {
     };
     cost = 4200;
     description = "WY-55 Hellcat is a light attack helicopter.";
+    flareBursts = 4;
+    flareReload = 8;
     hasHMD = 1;
     hasSling = 1;
     name = "WY-55 Hellcat";
@@ -406,12 +472,10 @@ class Hellcat: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "PylonWeapon_500Rnd_127mm_HEIAP_belt_left",
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_left"
         };
         addWeapons[] = {
-            "Gatling_127mm_HeliPylon_F",
-            "CMFlareLauncher_Singles"
+            "Gatling_127mm_HeliPylon_F"
         };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine",
@@ -441,12 +505,10 @@ class I_Hellcat: Hellcat {
             "magazine_Missile_BIM9X_x1",
             "magazine_Missile_BIM9X_x1",
             "magazine_Missile_BIM9X_x1",
-            "magazine_Missile_BIM9X_x1",
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "magazine_Missile_BIM9X_x1"
         };
         addWeapons[] = {
-            "weapon_BIM9xLauncher",
-            "CMFlareLauncher_Singles"
+            "weapon_BIM9xLauncher"
         };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine",
@@ -473,6 +535,8 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 8000;
+    flareBursts = 5;
+    flareReload = 8;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -484,12 +548,6 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
     side[] = {"east"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
         removeMagazines[] = {
             "192Rnd_CMFlare_Chaff_Magazine"
         };
@@ -523,6 +581,8 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
     };
     cost = 10000;
+    flareBursts = 5;
+    flareReload = 8;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -534,11 +594,9 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
             "Laserbatteries"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles",
             "Laserdesignator_pilotCamera"
         };
         removeMagazines[] = {
@@ -570,6 +628,8 @@ class B_Heli_Attack_01_pylons_dynamicLoadout_F: B_Heli_Attack_01_dynamicLoadout_
         {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonExternalLeft", "PylonExternalRight"}}
     };
     cost = 12000;
+    flareBursts = 6;
+    flareReload = 6;
     name = "AH-99 Blackfoot Block II";
     nameShort = "BLACKFOOT II";
 };

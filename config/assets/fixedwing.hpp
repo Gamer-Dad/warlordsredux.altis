@@ -5,10 +5,12 @@ class Fixed_Wing {
 
 class Caesar: Fixed_Wing {
     ammoOverrides[] = {
-        {"BombDemine_01_DummyAmmo_F", {"M_BunkerDeployer", "Bunker Deployer"}}
+        {"M_SPG9_HE", {"M_BunkerDeployer", "Bunker Deployer"}}
     };
     cost = 800;
     description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy bunkers.";
+    flareBursts = 2;
+    flareReload = 20;
     hasDroneHunter = 1;
     name = "Caesar";
     nameShort = "CAESAR";
@@ -16,10 +18,11 @@ class Caesar: Fixed_Wing {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "PylonRack_4Rnd_BombDemine_01_Dummy_F"
+            "SPG9_HE",
+            "SPG9_HE"
         };
         addWeapons[] = {
-            "BombDemine_01_F"
+            "launcher_SPG9"
         };
         turret[] = {-1};
     };
@@ -37,6 +40,8 @@ class I_Caesar: Caesar {
 // V-44 X Blackfish
 class Blackfish: Fixed_Wing {
     cost = 2000;
+    flareBursts = 5;
+    flareReload = 8;
     hasECM = 1;
     hasFastTravel = 1;
     hasHMD = 1;
@@ -51,6 +56,8 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     };
     cost = 4000;
     description = "V-44 X Blackfish (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
+    flareBursts = 4;
+    flareReload = 8;
     name = "V-44 X Blackfish (Supplies)";
     nameShort = "BLACKFISH SUPPLY";
     rearm = 900;
@@ -60,15 +67,13 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
             "PylonMissile_1Rnd_Mk82_F",
-            "PylonMissile_1Rnd_Mk82_F",
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "PylonMissile_1Rnd_Mk82_F"
         };
         addWeapons[] = {
-            "Mk82BombLauncher",
-            "CMFlareLauncher_Singles"
+            "Mk82BombLauncher"
         };
         removeMagazines[] = {
-            "168Rnd_CMFlare_Chaff_Magazine"
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
             "CMFlareLauncher_Triples"
@@ -81,6 +86,8 @@ class B_T_VTOL_01_vehicle_F: Blackfish {
         {"Bo_Mk82", {"M_MineLayer", "CBU-89/B Mine Layer"}}
     };
     description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
+    flareBursts = 4;
+    flareReload = 8;
     hasLoader = 1;
     isHeavyLift = 1;
     name = "V-44 X Blackfish (Mine Layer)";
@@ -89,15 +96,13 @@ class B_T_VTOL_01_vehicle_F: Blackfish {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "PylonMissile_1Rnd_Mk82_F",
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "PylonMissile_1Rnd_Mk82_F"
         };
         addWeapons[] = {
-            "Mk82BombLauncher",
-            "CMFlareLauncher_Singles"
+            "Mk82BombLauncher"
         };
         removeMagazines[] = {
-            "168Rnd_CMFlare_Chaff_Magazine"
+            "240Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
             "CMFlareLauncher_Triples"
@@ -116,11 +121,11 @@ class B_T_VTOL_01_armed_F: Blackfish {
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Triples"
         };
         turret[] = {-1};
     };
@@ -145,8 +150,6 @@ class B_Archerfish: Blackfish {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
@@ -192,7 +195,6 @@ class B_Archerfish: Blackfish {
             "Laserbatteries"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles",
             "weapon_AGM_65Launcher",
             "weapon_BIM9xLauncher",
             "Laserdesignator_vehicle"
@@ -297,6 +299,8 @@ class B_Archerfish: Blackfish {
 
 // Y-32 Xi'an (Vehicle Transport)
 class O_Xian: Fixed_Wing {
+    flareBursts = 5;
+    flareReload = 8;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -306,6 +310,16 @@ class O_Xian: Fixed_Wing {
     requirements[] = {"H"};
     side[] = {"east"};
     spawn = "O_T_VTOL_02_vehicle_dynamicLoadout_F";
+
+    class Pilot: WLTurretDefaults {
+        removeMagazines[] = {
+            "168Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
+        };
+        turret[] = {-1};
+    };
 };
 
 class O_Xian_Supply: O_Xian {
@@ -325,6 +339,8 @@ class O_Xian_Supply: O_Xian {
         "PylonRack_20Rnd_Rocket_03_HE_F",
         "PylonRack_20Rnd_Rocket_03_AP_F"
     };
+    flareBursts = 4;
+    flareReload = 8;
     hasSling = 0;
     name = "Y-32 Xi'an (Supplies)";
     nameShort = "XIAN SUPPLY";
@@ -333,18 +349,16 @@ class O_Xian_Supply: O_Xian {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "2Rnd_Mk82",
-            "300Rnd_CMFlare_Chaff_Magazine"
+            "2Rnd_Mk82"
         };
         addWeapons[] = {
-            "Mk82BombLauncher",
-            "CMFlareLauncher_Singles"
+            "Mk82BombLauncher"
         };
         removeMagazines[] = {
             "168Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
-            "CMFlareLauncher_Triples"
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -391,7 +405,6 @@ class O_Xian_Armed: O_Xian {
 
     class Pilot: WLTurretDefaults {
         addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
             "magazine_Missile_AGM_02_x1",
@@ -419,7 +432,6 @@ class O_Xian_Armed: O_Xian {
             "Laserbatteries"
         };
         addWeapons[] = {
-            "CMFlareLauncher_Singles",
             "weapon_AGM_65Launcher",
             "weapon_R73Launcher",
             "launcher_SPG9",
@@ -429,7 +441,7 @@ class O_Xian_Armed: O_Xian {
             "168Rnd_CMFlare_Chaff_Magazine"
         };
         removeWeapons[] = {
-            "CMFlareLauncher_Triples"
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -474,6 +486,8 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
         "PylonRack_1Rnd_Missile_AGM_02_F",
         "PylonRack_3Rnd_Missile_AGM_02_F"
     };
+    flareBursts = 5;
+    flareReload = 8;
     hasECM = 1;
     hasHMD = 1;
     nameShort = "WIPEOUT";
@@ -481,11 +495,11 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -493,6 +507,8 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
 
 // A-143 Buzzard (CAS)
 class Buzzard_CAS: Fixed_Wing {
+    flareBursts = 5;
+    flareReload = 8;
     hasHMD = 1;
     name = "A-143 Buzzard (CAS)";
     nameShort = "BUZZARD";
@@ -500,11 +516,11 @@ class Buzzard_CAS: Fixed_Wing {
     spawn = "I_Plane_Fighter_03_dynamicLoadout_F";
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -558,6 +574,8 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
     cost = 16000;
+    flareBursts = 5;
+    flareReload = 8;
     hasECM = 1;
     hasHMD = 1;
     nameShort = "NEO";
@@ -565,11 +583,11 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
     side[] = {"east"};
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "120Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher"
         };
         turret[] = {-1};
     };
@@ -597,6 +615,8 @@ class Gryphon: Fixed_Wing {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
     };
+    flareBursts = 6;
+    flareReload = 6;
     hasHMD = 1;
     name = "A-149 Gryphon";
     nameShort = "GRYPHON";
@@ -604,13 +624,6 @@ class Gryphon: Fixed_Wing {
     spawn = "I_Plane_Fighter_04_F";
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "120Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
         };
@@ -659,6 +672,8 @@ class B_Strike_Wasp: Fixed_Wing {
         "PylonRack_Missile_AMRAAM_D_x1",
         "PylonRack_Missile_AMRAAM_D_x2"
     };
+    flareBursts = 6;
+    flareReload = 6;
     hasHMD = 1;
     name = "A-181 Strike Wasp";
     nameShort = "STRIKE WASP";
@@ -668,12 +683,11 @@ class B_Strike_Wasp: Fixed_Wing {
     variant = 1;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Singles"
         };
         turret[] = {-1};
     };
@@ -700,6 +714,8 @@ class B_Growler: Fixed_Wing {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
     };
+    flareBursts = 30;
+    flareReload = 3;
     hasECM = 1;
     hasHMD = 1;
     name = "EF/A-181 Growler";
@@ -710,12 +726,11 @@ class B_Growler: Fixed_Wing {
     threatDetection = 20000;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Singles"
         };
         turret[] = {-1};
     };
@@ -731,6 +746,8 @@ class O_Plane_Fighter_02_F: Fixed_Wing {
     disallowMagazines[] = {
         "PylonMissile_Missile_KH58_INT_x1"
     };
+    flareBursts = 15;
+    flareReload = 6;
     hasHMD = 1;
     nameShort = "SHIKRA";
     rearm = 420;
@@ -738,13 +755,6 @@ class O_Plane_Fighter_02_F: Fixed_Wing {
     threatDetection = 16000;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
         };
@@ -762,6 +772,8 @@ class B_Plane_Fighter_01_F: Fixed_Wing {
         {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
     };
     cost = 26000;
+    flareBursts = 15;
+    flareReload = 6;
     hasHMD = 1;
     nameShort = "WASP";
     rearm = 420;
@@ -769,12 +781,11 @@ class B_Plane_Fighter_01_F: Fixed_Wing {
     threatDetection = 12000;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Singles"
         };
         turret[] = {-1};
     };
@@ -793,6 +804,8 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
     cost = 28000;
+    flareBursts = 15;
+    flareReload = 6;
     hasHMD = 1;
     hasReconOptics = 1;
     name = "F/A-181 Black Wasp II (Stealth/Recon)";
@@ -802,12 +815,11 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
     variant = 1;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
+        };
+        removeWeapons[] = {
+            "CMFlareLauncher_Singles"
         };
         turret[] = {-1};
     };
@@ -831,6 +843,8 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
     disallowMagazines[] = {
         "PylonMissile_Missile_KH58_INT_x1"
     };
+    flareBursts = 15;
+    flareReload = 6;
     hasHMD = 1;
     hasReconOptics = 1;
     name = "To-201 Shikra (Stealth/Recon)";
@@ -841,13 +855,6 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
     variant = 1;
 
     class Pilot: WLTurretDefaults {
-        addMagazines[] = {
-            "300Rnd_CMFlare_Chaff_Magazine",
-            "300Rnd_CMFlare_Chaff_Magazine"
-        };
-        addWeapons[] = {
-            "CMFlareLauncher_Singles"
-        };
         removeMagazines[] = {
             "240Rnd_CMFlare_Chaff_Magazine"
         };

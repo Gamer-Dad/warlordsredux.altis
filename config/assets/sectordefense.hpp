@@ -26,12 +26,12 @@ class Static_HMG: Sector_Defense {
         turret[] = {0};
     };
 };
-class B_HMG_01_F: Static_HMG {
-    side[] = {"west"};
-};
-class O_HMG_01_F: Static_HMG {
-    side[] = {"east"};
-};
+// class B_HMG_01_F: Static_HMG {
+//     side[] = {"west"};
+// };
+// class O_HMG_01_F: Static_HMG {
+//     side[] = {"east"};
+// };
 
 // Mk30 HMG .50 (Raised)
 class Static_HMG_Raised: Static_HMG {
@@ -70,12 +70,12 @@ class Static_GMG: Sector_Defense {
     offset[] = {0, 3, 0};
     rearm = 120;
 };
-class B_GMG_01_F: Static_GMG {
-    side[] = {"west"};
-};
-class O_GMG_01_F: Static_GMG {
-    side[] = {"east"};
-};
+// class B_GMG_01_F: Static_GMG {
+//     side[] = {"west"};
+// };
+// class O_GMG_01_F: Static_GMG {
+//     side[] = {"east"};
+// };
 
 // Mk32 GMG 20mm (Raised)
 class Static_GMG_Raised: Static_GMG {
@@ -141,7 +141,6 @@ class AT_Minefield: Sector_Defense {
 class AT_MinefieldLarge: AT_Minefield {
     dumbMine[] = {100, 20, 1};
     name = "Minefield (AT, Rectangular)";
-    side[] = {"west", "east", "guer"};
 };
 class AT_MinefieldCircular: AT_Minefield {
     dumbMine[] = {50, 50, 0};
@@ -231,12 +230,46 @@ class O_GMG_01_A_F: Static_GMG_Auto {
     side[] = {"east"};
 };
 
+class Tank_Decoy: Sector_Defense {
+    cost = 1500;
+    decoy = 1;
+    demolishable = 3;
+    demolishStepTime = 5;
+    disableDamage = 1;
+    obstacle = 1;
+    variant = 1;
+};
+class B_Tank_Decoy: Tank_Decoy {
+    name = "M2A1 Slammer UP";
+    nameShort = "SLAMMER UP";
+    side[] = {"west"};
+    spawn = "B_MBT_01_TUSK_F";
+    textures[] = {
+        "#(rgb,8,8,3)color(1,1,1,0.1)",
+        "#(rgb,8,8,3)color(1,1,1,0.1)",
+        "#(rgb,8,8,3)color(1,1,1,0.1)",
+        "#(rgb,8,8,3)color(1,1,1,0.1)"
+    };
+};
+class O_Tank_Decoy: Tank_Decoy {
+    name = "T-140K Angara";
+    nameShort = "ANGARA-K";
+    side[] = {"east"};
+    spawn = "O_MBT_04_command_F";
+    textures[] = {
+        "#(rgb,8,8,3)color(1,1,1,0.02)",
+        "#(rgb,8,8,3)color(1,1,1,0.02)",
+        "#(rgb,8,8,3)color(1,1,1,0.02)",
+        "#(rgb,8,8,3)color(1,1,1,0.02)"
+    };
+};
+
 class Static_Mora: Sector_Defense {
     attachments[] = {
-        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {0, 4.5, -1.9}, 0, "", 1},
-        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {3.2, 1.0, -1.9}, 90, "", 1},
-        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {-3.2, 1.0, -1.9}, 270, "", 1},
-        {"\A3\Structures_F\Mil\Shelters\CamoNet_open_F.p3d", {0, 0, 0}, 270, "", 1}
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {0, 4.5, -1.9}, 0, ""},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {3.2, 1.0, -1.9}, 90, ""},
+        {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {-3.2, 1.0, -1.9}, 270, ""},
+        {"\A3\Structures_F\Mil\Shelters\CamoNet_open_F.p3d", {0, 0, 0}, 270, ""}
     };
     capValue = 6;
     conversion = 1;
@@ -315,6 +348,7 @@ class Static_Mora: Sector_Defense {
 class Mortar: Sector_Defense {
     cost = 5000;
     loadable = 1;
+    minElo = 1500;
     nameShort = "MORTAR";
     offset[] = {0, 3, 0};
     rearm = 900;
@@ -327,37 +361,37 @@ class O_Mortar_01_F: Mortar {
 };
 
 // Hunter/Ifrit Mortar
-class MRAP_Mortar: Sector_Defense {
-    aps = 1;
-    capValue = 2;
-    cost = 6000;
-    loadable = 1;
-    rearm = 900;
-    showToEnemies = 200;
-    variant = 1;
-};
-class B_Hunter_Mortar: MRAP_Mortar {
-    attachments[] = {
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -3.1, 0.8}, 0, "", 1},
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -1.1, 0.8}, 180, "", 1}
-    };
-    integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
-    name = "Hunter Mortar";
-    nameShort = "HUNTER MORTAR";
-    side[] = {"west"};
-    spawn = "B_MRAP_01_F";
-};
-class O_Ifrit_Mortar: MRAP_Mortar {
-    attachments[] = {
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -3.3, 0.6}, 0, "", 1},
-        {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -1.3, 0.6}, 180, "", 1}
-    };
-    integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
-    name = "Ifrit Mortar";
-    nameShort = "IFRIT MORTAR";
-    side[] = {"east"};
-    spawn = "O_MRAP_02_F";
-};
+// class MRAP_Mortar: Sector_Defense {
+//     aps = 1;
+//     capValue = 2;
+//     cost = 6000;
+//     loadable = 1;
+//     rearm = 900;
+//     showToEnemies = 200;
+//     variant = 1;
+// };
+// class B_Hunter_Mortar: MRAP_Mortar {
+//     attachments[] = {
+//         {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -3.1, 0.8}, 0, ""},
+//         {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -1.1, 0.8}, 180, ""}
+//     };
+//     integralWeapon[] = {32, {0, -2.5, 1.3}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+//     name = "Hunter Mortar";
+//     nameShort = "HUNTER MORTAR";
+//     side[] = {"west"};
+//     spawn = "B_MRAP_01_F";
+// };
+// class O_Ifrit_Mortar: MRAP_Mortar {
+//     attachments[] = {
+//         {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -3.3, 0.6}, 0, ""},
+//         {"A3\Structures_F\Mil\BagFence\BagFence_Round_F.p3d", {0, -1.3, 0.6}, 180, ""}
+//     };
+//     integralWeapon[] = {32, {0, -2.6, 1.1}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
+//     name = "Ifrit Mortar";
+//     nameShort = "IFRIT MORTAR";
+//     side[] = {"east"};
+//     spawn = "O_MRAP_02_F";
+// };
 
 // MK45 Hammer
 class B_Ship_Gun_01_F: Sector_Defense {
@@ -368,6 +402,7 @@ class B_Ship_Gun_01_F: Sector_Defense {
         "magazine_ShipCannon_120mm_mine_shells_x6",
         "magazine_ShipCannon_120mm_AT_mine_shells_x6"
     };
+    minElo = 1500;
     nameShort = "HAMMER";
     offset[] = {0, 9, 0};
     rearm = 1800;
