@@ -230,40 +230,6 @@ class O_GMG_01_A_F: Static_GMG_Auto {
     side[] = {"east"};
 };
 
-class Tank_Decoy: Sector_Defense {
-    cost = 1500;
-    decoy = 1;
-    demolishable = 3;
-    demolishStepTime = 5;
-    disableDamage = 1;
-    obstacle = 1;
-    variant = 1;
-};
-class B_Tank_Decoy: Tank_Decoy {
-    name = "M2A1 Slammer UP";
-    nameShort = "SLAMMER UP";
-    side[] = {"west"};
-    spawn = "B_MBT_01_TUSK_F";
-    textures[] = {
-        "#(rgb,8,8,3)color(1,1,1,0.1)",
-        "#(rgb,8,8,3)color(1,1,1,0.1)",
-        "#(rgb,8,8,3)color(1,1,1,0.1)",
-        "#(rgb,8,8,3)color(1,1,1,0.1)"
-    };
-};
-class O_Tank_Decoy: Tank_Decoy {
-    name = "T-140K Angara";
-    nameShort = "ANGARA-K";
-    side[] = {"east"};
-    spawn = "O_MBT_04_command_F";
-    textures[] = {
-        "#(rgb,8,8,3)color(1,1,1,0.02)",
-        "#(rgb,8,8,3)color(1,1,1,0.02)",
-        "#(rgb,8,8,3)color(1,1,1,0.02)",
-        "#(rgb,8,8,3)color(1,1,1,0.02)"
-    };
-};
-
 class Static_Mora: Sector_Defense {
     attachments[] = {
         {"\A3\Structures_F_Argo\Military\Bunkers\Bunker_01_blocks_3_F.p3d", {0, 4.5, -1.9}, 0, ""},

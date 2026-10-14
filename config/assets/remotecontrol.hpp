@@ -199,8 +199,7 @@ class I_E_Offroad_01_comms_F: Offroad_IED {
 // KH-3A Fenghuang
 class O_T_UAV_04_CAS_F: Remote_Control {
     cost = 4500;
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasHMD = 1;
     nameShort = "FENGHUANG";
     rearm = 300;
@@ -275,8 +274,7 @@ class O_T_UAV_04_CAS_F: Remote_Control {
 
 class Predator_Drone: Remote_Control {
     cost = 5500;
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasHMD = 1;
     nameShort = "PREDATOR";
     rearm = 300;
@@ -315,8 +313,7 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
         "PylonRack_1Rnd_AAA_missiles"
     };
     cost = 3500;
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasHMD = 1;
     nameShort = "FALCON";
     rearm = 300;
@@ -337,8 +334,7 @@ class B_T_UAV_03_dynamicLoadout_F: Remote_Control {
 // UCAV Sentinel
 class B_UAV_05_F: Remote_Control {
     cost = 15000;
-    flareBursts = 5;
-    flareReload = 8;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasHMD = 1;
     nameShort = "SENTINEL";
     rearm = 420;

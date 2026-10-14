@@ -9,8 +9,7 @@ class Caesar: Fixed_Wing {
     };
     cost = 800;
     description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy bunkers.";
-    flareBursts = 2;
-    flareReload = 20;
+    flares[] = WL_FLARE_BASIC;
     hasDroneHunter = 1;
     name = "Caesar";
     nameShort = "CAESAR";
@@ -40,9 +39,7 @@ class I_Caesar: Caesar {
 // V-44 X Blackfish
 class Blackfish: Fixed_Wing {
     cost = 2000;
-    flareBursts = 5;
-    flareReload = 8;
-    hasECM = 1;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasFastTravel = 1;
     hasHMD = 1;
     nameShort = "BLACKFISH";
@@ -56,8 +53,7 @@ class B_T_VTOL_01_infantry_F: Blackfish {
     };
     cost = 4000;
     description = "V-44 X Blackfish (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     name = "V-44 X Blackfish (Supplies)";
     nameShort = "BLACKFISH SUPPLY";
     rearm = 900;
@@ -86,8 +82,7 @@ class B_T_VTOL_01_vehicle_F: Blackfish {
         {"Bo_Mk82", {"M_MineLayer", "CBU-89/B Mine Layer"}}
     };
     description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasLoader = 1;
     isHeavyLift = 1;
     name = "V-44 X Blackfish (Mine Layer)";
@@ -299,8 +294,7 @@ class B_Archerfish: Blackfish {
 
 // Y-32 Xi'an (Vehicle Transport)
 class O_Xian: Fixed_Wing {
-    flareBursts = 5;
-    flareReload = 8;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -339,8 +333,7 @@ class O_Xian_Supply: O_Xian {
         "PylonRack_20Rnd_Rocket_03_HE_F",
         "PylonRack_20Rnd_Rocket_03_AP_F"
     };
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasSling = 0;
     name = "Y-32 Xi'an (Supplies)";
     nameShort = "XIAN SUPPLY";
@@ -486,9 +479,7 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
         "PylonRack_1Rnd_Missile_AGM_02_F",
         "PylonRack_3Rnd_Missile_AGM_02_F"
     };
-    flareBursts = 5;
-    flareReload = 8;
-    hasECM = 1;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasHMD = 1;
     nameShort = "WIPEOUT";
     rearm = 420;
@@ -507,8 +498,7 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
 
 // A-143 Buzzard (CAS)
 class Buzzard_CAS: Fixed_Wing {
-    flareBursts = 5;
-    flareReload = 8;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasHMD = 1;
     name = "A-143 Buzzard (CAS)";
     nameShort = "BUZZARD";
@@ -574,9 +564,7 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
     };
     cost = 16000;
-    flareBursts = 5;
-    flareReload = 8;
-    hasECM = 1;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasHMD = 1;
     nameShort = "NEO";
     rearm = 420;
@@ -615,8 +603,7 @@ class Gryphon: Fixed_Wing {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
     };
-    flareBursts = 6;
-    flareReload = 6;
+    flares[] = WL_FLARE_ADVANCED_COMBAT;
     hasHMD = 1;
     name = "A-149 Gryphon";
     nameShort = "GRYPHON";
@@ -672,8 +659,7 @@ class B_Strike_Wasp: Fixed_Wing {
         "PylonRack_Missile_AMRAAM_D_x1",
         "PylonRack_Missile_AMRAAM_D_x2"
     };
-    flareBursts = 6;
-    flareReload = 6;
+    flares[] = WL_FLARE_ADVANCED_COMBAT;
     hasHMD = 1;
     name = "A-181 Strike Wasp";
     nameShort = "STRIKE WASP";
@@ -714,9 +700,7 @@ class B_Growler: Fixed_Wing {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
     };
-    flareBursts = 30;
-    flareReload = 3;
-    hasECM = 1;
+    flares[] = WL_FLARE_GROWLER;
     hasHMD = 1;
     name = "EF/A-181 Growler";
     nameShort = "GROWLER";
@@ -746,8 +730,7 @@ class O_Plane_Fighter_02_F: Fixed_Wing {
     disallowMagazines[] = {
         "PylonMissile_Missile_KH58_INT_x1"
     };
-    flareBursts = 15;
-    flareReload = 6;
+    flares[] = WL_FLARE_TOP_FIGHTER;
     hasHMD = 1;
     nameShort = "SHIKRA";
     rearm = 420;
@@ -772,8 +755,7 @@ class B_Plane_Fighter_01_F: Fixed_Wing {
         {"PylonRack_Bomb_SDB_x4", {"pylonBayCenter2"}}
     };
     cost = 26000;
-    flareBursts = 15;
-    flareReload = 6;
+    flares[] = WL_FLARE_TOP_FIGHTER;
     hasHMD = 1;
     nameShort = "WASP";
     rearm = 420;
@@ -804,8 +786,7 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
     cost = 28000;
-    flareBursts = 15;
-    flareReload = 6;
+    flares[] = WL_FLARE_TOP_FIGHTER;
     hasHMD = 1;
     hasReconOptics = 1;
     name = "F/A-181 Black Wasp II (Stealth/Recon)";
@@ -843,8 +824,7 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
     disallowMagazines[] = {
         "PylonMissile_Missile_KH58_INT_x1"
     };
-    flareBursts = 15;
-    flareReload = 6;
+    flares[] = WL_FLARE_TOP_FIGHTER;
     hasHMD = 1;
     hasReconOptics = 1;
     name = "To-201 Shikra (Stealth/Recon)";

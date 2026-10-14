@@ -338,73 +338,46 @@ class Centurion_Decoy: Air_Defense {
 };
 
 class Mobile_Starstreak: Air_Defense {
+    ammoOverrides[] = {
+        {"ammo_Missile_rim162", {"ammo_Missile_starstreak2", "Starstreak Mark II"}}
+    };
     aps = 5;
+    attachments[] = {
+        {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -2.8, 0.3}, 0, ""}
+    };
     capValue = 3;
     cost = 6500;
     description = "Mobile medium-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
     hasHMD = 1;
-    hideTurret = 1;
-    rearm = 240;
-};
-class B_Gorgon_AA: Mobile_Starstreak {
-    integralWeapon[] = {12, {0.35, -1.5, 0.5}, "B_static_AA_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
-    isLight = 1;
-    name = "AFV-4 Medusa";
-    nameShort = "MEDUSA";
-    side[] = {"west"};
-    spawn = "B_APC_Wheeled_03_cannon_F";
-    textures[] = {
-        "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_co.paa",
-        "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext2_co.paa",
-        "\A3\armor_f_gamma\APC_Wheeled_03\Data\rcws30_co.paa",
-        "\A3\armor_f_gamma\APC_Wheeled_03\Data\apc_wheeled_03_ext_alpha_co.paa"
-    };
-
-    class Gunner: WLTurretDefaults {
-        removeMagazines[] = {
-            "140Rnd_30mm_MP_shells_Tracer_Yellow",
-            "60Rnd_30mm_APFSDS_shells_Tracer_Yellow",
-            "200Rnd_762x51_Belt_Yellow",
-            "2Rnd_GAT_missiles"
-        };
-        removeWeapons[] = {
-            "autocannon_30mm_CTWS",
-            "LMG_coax_ext",
-            "missiles_titan"
-        };
-        turret[] = {0};
-    };
-};
-class O_Marid_AA: Mobile_Starstreak {
-    integralWeapon[] = {12, {0.2, -1.9, 0.7}, "O_static_AA_F", "B_Integral_Centurion", "weapon_rim162Launcher", "magazine_Missile_rim162_x8", 8};
-    name = "9K41 Ghost";
-    nameShort = "GHOST";
-    side[] = {"east"};
-    spawn = "O_APC_Wheeled_02_rcws_v2_F";
-
-    class Gunner: WLTurretDefaults {
-        removeMagazines[] = {
-            "96Rnd_40mm_G_belt",
-            "200Rnd_127x99_mag_Tracer_Green"
-        };
-        removeWeapons[] = {
-            "HMG_127_APC",
-            "GMG_40mm"
-        };
-        turret[] = {0};
-    };
-};
-
-class B_Integral_Centurion: Air_Defense {
-    ammoOverrides[] = {
-        {"ammo_Missile_rim162", {"ammo_Missile_starstreak2", "Starstreak Mark II"}}
-    };
-    cost = -1;
-    hasHMD = 1;
     hasTurretVisualizer = 1;
-    loadable = 0;
-    name = "Starstreak-II Launcher";
-    nameShort = "STARSTREAK";
+    loaded = "Land_VR_Slope_01_F";
+    name = "FV-4333 Stormer";
+    rearm = 240;
+    side[] = {"west", "east"};
+    spawn = "I_E_APC_tracked_03_cannon_F";
+
+    class Gunner: WLTurretDefaults {
+        addMagazines[] = {
+            "magazine_Missile_rim162_x8",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right",
+            "PylonWeapon_500Rnd_127mm_HEIAP_belt_right"
+        };
+        addWeapons[] = {
+            "weapon_rim162Launcher",
+            "Gatling_127mm_HeliPylon_F"
+        };
+        removeMagazines[] = {
+            "140Rnd_30mm_MP_shells_Tracer_Red",
+            "60Rnd_30mm_APFSDS_shells_Tracer_Red",
+            "200Rnd_762x51_Belt_Red"
+        };
+        removeWeapons[] = {
+            "autocannon_30mm",
+            "LMG_coax"
+        };
+        turret[] = {0};
+    };
 };
 
 class O_Euphrates: SPAAG {

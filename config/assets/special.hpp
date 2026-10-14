@@ -216,3 +216,23 @@ class Deployed_Explosives: Special {
 };
 class DemoCharge_Remote_Ammo: Deployed_Explosives {};
 class SatchelCharge_Remote_Ammo: Deployed_Explosives {};
+
+class Land_VR_Slope_01_F: Special {
+    cost = 100;
+    demolishable = 1;
+    demolishStepTime = 1;
+    name = "Mobile Ramp";
+    nameShort = "RAMP";
+    textures[] = {
+        "#(rgb,8,8,3)color(0.08,0.12,0.08,1)",
+        "#(rgb,8,8,3)color(0.04,0.08,0.04,1)"
+    };
+};
+
+#define WL_FLARE_BASIC {2, 20, 0}
+#define WL_FLARE_UTILITY {3, 15, 2}
+#define WL_FLARE_LIGHT_COMBAT {4, 8, 3}
+#define WL_FLARE_MAIN_COMBAT {5, 8, 4}
+#define WL_FLARE_ADVANCED_COMBAT {6, 6, 5}
+#define WL_FLARE_TOP_FIGHTER {15, 6, 5}
+#define WL_FLARE_GROWLER {30, 3, 2.5}

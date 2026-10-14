@@ -42,9 +42,9 @@ class CfgWarlordSectors {
         {"AgiosPetros", "Rodopoli"},
         {"AgiosPetros", "TheaterRuins"},
         {"Airbase", "AirbaseCompound"},
+        {"Airbase", "EastNeochori"},
         {"Airbase", "LakkaFactory"},
         {"Airbase", "MainPower"},
-        {"Airbase", "Neochori"},
         {"AirbaseCompound", "Gravia"},
         {"AirbaseCompound", "MainPower"},
         {"AirbaseCompound", "SouthTelos"},
@@ -53,8 +53,8 @@ class CfgWarlordSectors {
         {"AktinarkiRuins", "Feres"},
         {"AktinarkiRuins", "Panagia"},
         {"Alikampos", "Katalaki"},
-        {"Alikampos", "Neochori"},
         {"Alikampos", "Poliakko"},
+        {"Alikampos", "WestNeochori"},
         {"AlmyraOutskirts", "CapeThelos"},
         {"AlmyraOutskirts", "Kalochori"},
         {"AlmyraOutskirts", "SaltFlats"},
@@ -112,6 +112,7 @@ class CfgWarlordSectors {
         {"Drimea", "SkoposCastleRuins"},
         {"Drimea", "Therisa"},
         {"Drimea", "Zaros"},
+        {"EastNeochori", "WestNeochori"},
         {"Edessa", "Kavirida"},
         {"Edessa", "Panochori"},
         {"Edessa", "ZarosSolar"},
@@ -165,8 +166,8 @@ class CfgWarlordSectors {
         {"Kalithea", "ZeloranBase"},
         {"Kalochori", "NifiSolar"},
         {"Kalochori", "Paros"},
-        {"Katalaki", "Neochori"},
         {"Katalaki", "Poliakko"},
+        {"Katalaki", "WestNeochori"},
         {"Kavala", "MagosPower"},
         {"Kavala", "MagosValley"},
         {"Kavala", "Neri"},
@@ -179,8 +180,8 @@ class CfgWarlordSectors {
         {"Koroni", "LakkaFactory"},
         {"Koroni", "Orino"},
         {"KryaNera", "TonosBay"},
+        {"Lakka", "EastNeochori"},
         {"Lakka", "LakkaFactory"},
-        {"Lakka", "Neochori"},
         {"Lakka", "Orino"},
         {"Livadi", "Panagia"},
         {"Livadi", "SelakanoAirbase"},
@@ -199,7 +200,6 @@ class CfgWarlordSectors {
         {"Molos", "Sofia"},
         {"MolosAirfield", "Sideras"},
         {"Negades", "USSFreedom"},
-        {"Neochori", "SagonisiBase"},
         {"Neri", "Panochori"},
         {"NidasosBase", "Skiptro"},
         {"NidasosBase", "SofiaPower"},
@@ -219,6 +219,7 @@ class CfgWarlordSectors {
         {"Pyrgos", "PyrgosBase"},
         {"Pyrgos", "PyrgosQuarry"},
         {"PyrgosQuarry", "PyrgosRadioTower"},
+        {"SagonisiBase", "WestNeochori"},
         {"Selakano", "SelakanoAirbase"},
         {"Selakano", "SelakanoOutpost"},
         {"Selakano", "SelakanoPower"},
@@ -476,6 +477,12 @@ class CfgWarlordSectors {
         area[] = {220, 100, 310, 0};
         location[] = {10072, 11358.1, 0};
         name = "Drimea";
+    };
+
+    class EastNeochori {
+        area[] = {245, 150, 65.703, 1};
+        location[] = {12626.6, 14457.7, 0};
+        name = "East Neochori";
     };
 
     class Edessa {
@@ -743,12 +750,6 @@ class CfgWarlordSectors {
         area[] = {225, 175, 179.493, 0};
         location[] = {4904.54, 16144.3, 0};
         name = "Negades";
-    };
-
-    class Neochori {
-        area[] = {245, 300, 65.703, 1};
-        location[] = {12476.7, 14387.1, 0};
-        name = "Neochori";
     };
 
     class Neri {
@@ -1107,6 +1108,12 @@ class CfgWarlordSectors {
         disableHome = 1;
         location[] = {2000, 2000, 0};
         name = "Wait";
+    };
+
+    class WestNeochori {
+        area[] = {245, 150, 65.703, 1};
+        location[] = {12335.7, 14326.9, 0};
+        name = "West Neochori";
     };
 
     class XirolimniDam {

@@ -1,10 +1,13 @@
 Warlords Redux 2.8 Patch 18
 
 Asset
-* (Added) Tank decoys
+* (Added) Vehicle decoys
 * (Removed) Hunter/Ifrit Mortar
 * (Removed) Mk30 HMG/Mk32 GMG (low)
 * (Removed) Rectangular Minefield
+* (Removed) Sandbag kits
+* (Removed) Vehicle Camo Cover
+* Bunker: updated object attachment model.
 * Bunker Hawk: bunker busters 3->5, added an additional 12.7mm gun.
 * Caesar, Taru: bunker deployments 4->2.
 * Orca Bomber: bunker busters 3->5, added radar pod.
@@ -13,18 +16,30 @@ Asset
 Gameplay
 * Added minimum rating requirement to artillery assets.
 * Camera swivels towards damage source upon player down.
+* Doors now auto-close.
 * Flare and missile rework.
+* Flag clears objects around home spawn.
 * Field repair now allowed when fuel is low, emergency refuels vehicle.
 * Item deployer: removed minimum drop height.
+* Map sector changes to improve mid-map flow.
+* Recon optics action now shows key.
 * Removed first person restriction in manual drone.
+* Removed manpower timer.
 * Removed option to do allied demolitions.
+* Removed defunct radar operate action.
 * Side picker now shows name of players in lobby in tooltip.
 * Stormbreaker/UPMK: no longer stopped by advanced APS.
 * Tents are no longer damageable by teammates.
 
 Bugfixes
 * Fixed attachments jitter during heavy server load.
+* Fixed dead players revealing sectors.
 * Fixed edge cases of players spawning as green.
+* Fixed rebalance player buy asset list.
 * Fixed reinforcements turning into uneven number shortly after sector changes ownership.
 * Fixed script error when rendering scoreboard while busy.
+* Optimized AI timers.
+* Optimized ewar.
+* Optimized starting setup conditions.
+* Reworked lock system.
 * Reworked turret limit visualizer.

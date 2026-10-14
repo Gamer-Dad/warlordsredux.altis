@@ -6,8 +6,7 @@ class Rotary_Wing {
 // MH-9 Hummingbird
 class Hummingbird: Rotary_Wing {
     cost = 300;
-    flareBursts = 2;
-    flareReload = 20;
+    flares[] = WL_FLARE_BASIC;
     hasFastTravel = 1;
     nameShort = "HUMMINGBIRD";
     rearm = 120;
@@ -28,8 +27,7 @@ class Taru: Rotary_Wing {
         {"M_SPG9_HE", {"M_BunkerDeployer", "Bunker Deployer"}}
     };
     cost = 400;
-    flareBursts = 3;
-    flareReload = 15;
+    flares[] = WL_FLARE_UTILITY;
     hasFastTravel = 1;
     hasSling = 1;
     loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
@@ -67,8 +65,7 @@ class O_Heli_Transport_04_medevac_F: Taru {
 // PO-30 Orca
 class O_Heli_Light_02_unarmed_F: Rotary_Wing {
     cost = 500;
-    flareBursts = 3;
-    flareReload = 15;
+    flares[] = WL_FLARE_UTILITY;
     hasHMD = 1;
     hasSling = 1;
     loaded = "Land_MedicalTent_01_CSAT_brownhex_generic_open_F";
@@ -101,8 +98,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 3500;
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     nameShort = "ORCA ARMED";
     rearm = 240;
     requirements[] = {"H"};
@@ -223,8 +219,7 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
 // UH-80 Ghost Hawk
 class B_Heli_Transport_01_F: Rotary_Wing {
     cost = 800;
-    flareBursts = 3;
-    flareReload = 15;
+    flares[] = WL_FLARE_UTILITY;
     hasFastTravel = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -259,8 +254,7 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
     disallowMagazines[] = {
         "PylonFuelTank_UH80"
     };
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     name = "UH-80 Ghost Hawk Block II";
     nameShort = "GHOSTHAWK II";
     rearm = 300;
@@ -338,8 +332,7 @@ class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
         "PylonCameraPod_01_F"
     };
     cost = 6500;
-    flareBursts = 5;
-    flareReload = 8;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     name = "MH-80 Direct Action Penetrator";
     nameShort = "GHOSTHAWK DAP";
     replacePylons[] = {
@@ -355,8 +348,7 @@ class B_CTRG_Heli_Transport_01_DAP_F: B_Heli_Transport_01_pylons_F {
 
 class Transport_Helicopter: Rotary_Wing {
     cost = 700;
-    flareBursts = 3;
-    flareReload = 15;
+    flares[] = WL_FLARE_UTILITY;
     hasSling = 1;
     loaded = "Static_Cannon";
     offset[] = {0, 10, 0};
@@ -411,8 +403,7 @@ class B_Heli_Light_01_dynamicLoadout_F: Rotary_Wing {
         "PylonCameraPod_01_F"
     };
     cost = 4000;
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasHMD = 1;
     hasReconOptics = 1;
     nameShort = "PAWNEE";
@@ -460,8 +451,7 @@ class Hellcat: Rotary_Wing {
     };
     cost = 4200;
     description = "WY-55 Hellcat is a light attack helicopter.";
-    flareBursts = 4;
-    flareReload = 8;
+    flares[] = WL_FLARE_LIGHT_COMBAT;
     hasHMD = 1;
     hasSling = 1;
     name = "WY-55 Hellcat";
@@ -535,8 +525,7 @@ class O_Heli_Attack_02_dynamicLoadout_F: Rotary_Wing {
         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 8000;
-    flareBursts = 5;
-    flareReload = 8;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -581,8 +570,7 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
         {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
     };
     cost = 10000;
-    flareBursts = 5;
-    flareReload = 8;
+    flares[] = WL_FLARE_MAIN_COMBAT;
     hasGunnerAction = 1;
     hasHMD = 1;
     hasSling = 1;
@@ -628,8 +616,7 @@ class B_Heli_Attack_01_pylons_dynamicLoadout_F: B_Heli_Attack_01_dynamicLoadout_
         {"PylonRack_3Rnd_Missile_AGM_02_F", {"PylonExternalLeft", "PylonExternalRight"}}
     };
     cost = 12000;
-    flareBursts = 6;
-    flareReload = 6;
+    flares[] = WL_FLARE_ADVANCED_COMBAT;
     name = "AH-99 Blackfoot Block II";
     nameShort = "BLACKFOOT II";
 };

@@ -25,8 +25,8 @@ class WLProjectilesConfig {
             "M_70mm_SAAMI"                      // SAAMI
         };
         camera = 1;
-        flareMin = 500;
-        flareMax = 3500;
+        flareMin = 3000;
+        flareMax = 4000;
         sam = 0.45;
     };
 
@@ -35,7 +35,7 @@ class WLProjectilesConfig {
             "ammo_Missile_rim162"               // Centurion
         };
         camera = 1;
-        flareMin = 2000;
+        flareMin = 3000;
         flareMax = 6000;
         sam = 0.6;
     };
@@ -78,8 +78,8 @@ class WLProjectilesConfig {
             "ammo_Missile_mim145"               // Defender
         };
         camera = 1;
-        flareMin = 2000;
-        flareMax = 8000;
+        flareMin = 4000;
+        flareMax = 7000;
         sam = 0.8;
     };
 
@@ -111,7 +111,7 @@ class WLProjectilesConfig {
             "M_Titan_AA_long"                   // Titan AA (Long)
         };
         camera = 1;
-        flareMin = -4000;
+        flareMin = 100;
         flareMax = 4000;
         sam = 0.4;
     };
@@ -123,7 +123,7 @@ class WLProjectilesConfig {
             "ammo_Missile_AA_R77_ground"
         };
         camera = 1;
-        flareMin = 500;
+        flareMin = 1500;
         flareMax = 3500;
         sam = 0.8;
     };
@@ -133,8 +133,8 @@ class WLProjectilesConfig {
             "M_Zephyr"                          // Zephyr
         };
         camera = 1;
-        flareMin = 500;
-        flareMax = 6000;
+        flareMin = 3000;
+        flareMax = 8000;
         sam = 0.8;
     };
 
@@ -145,8 +145,8 @@ class WLProjectilesConfig {
             "M_Air_AA",                         // ASRAAM
             "Missile_AA_03_F"                   // Sahr-3
         };
-        flareMin = 500;
-        flareMax = 6000;
+        flareMin = 2000;
+        flareMax = 4000;
         sam = 0.6;
     };
 

@@ -1,3 +1,5 @@
+#include "assets\special.hpp"
+
 #include "assets\airdefense.hpp"
 #include "assets\fixedwing.hpp"
 #include "assets\gear.hpp"
@@ -8,5 +10,4 @@
 #include "assets\remotecontrol.hpp"
 #include "assets\rotarywing.hpp"
 #include "assets\sectordefense.hpp"
-#include "assets\special.hpp"
 #include "assets\structures.hpp"
