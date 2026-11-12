@@ -6,8 +6,8 @@ class Naval {
 // Water scooter
 class Scooter: Naval {
     cost = 50;
-    name = "Water scooter";
-    nameShort = "SCOOTER";
+    name = "STR_WL_assetWaterScooter";
+    nameShort = "STR_WL_assetScooterShort";
     spawn = "C_Scooter_Transport_01_F";
 };
 class B_Scooter: Scooter {
@@ -23,7 +23,7 @@ class I_Scooter: Scooter {
 // Assault Boat
 class AssaultBoat: Naval {
     cost = 100;
-    nameShort = "ZODIAC";
+    nameShort = "STR_WL_assetZodiacShort";
 };
 class B_Boat_Transport_01_F: AssaultBoat {
     side[] = {"west"};
@@ -35,7 +35,7 @@ class O_Boat_Transport_01_F: AssaultBoat {
 // SDV
 class SDV: Naval {
     cost = 250;
-    nameShort = "SUB";
+    nameShort = "STR_WL_assetSubShort";
 };
 class B_SDV_01_F: SDV {
     side[] = {"west"};
@@ -47,7 +47,7 @@ class O_SDV_01_F: SDV {
 // Armed Speedboat
 class Speedboat: Naval {
     cost = 500;
-    nameShort = "SPEEDBOAT";
+    nameShort = "STR_WL_assetSpeedboatShort";
     rearm = 120;
 
     class Commander: WLTurretDefaults {
@@ -80,12 +80,12 @@ class I_Boat_Armed_01_minigun_F: Speedboat {
 // Bomb Boat
 class Bomb_Boat: Naval {
     cost = 1750;
-    description = "The Bomb Boat is a fast, agile transport boat that goes boom.";
+    description = "STR_WL_descBombBoat";
     detonate = 7;
     drone = 1;
     loadable = 1;
-    name = "Bomb Boat";
-    nameShort = "BOMB BOAT";
+    name = "STR_WL_assetBombBoat";
+    nameShort = "STR_WL_assetBombBoatShort";
     spawn = "C_Boat_Civil_01_F";
 };
 class B_Bomb_Boat: Bomb_Boat {

@@ -7,11 +7,11 @@ class Faction_Crate: Gear {
     cost = 200;
     demolishable = 1;
     demolishStepTime = 5;
-    description = "Supply crate that can be used to restock infantry weapons or rearm vehicles. Automatically cleaned up. Use other gear containers for longer-term purposes.";
+    description = "STR_WL_assetResupplyCrateDesc";
     hasRearm = 1;
     lifetime = 300;
-    name = "Resupply Crate";
-    nameShort = "CRATE";
+    name = "STR_WL_assetResupplyCrate";
+    nameShort = "STR_WL_assetResupplyCrateShort";
     offset[] = {0, 3, 0};
     spawn = "VirtualReammoBox_camonet_F";
 };
@@ -63,7 +63,7 @@ class Huron_Pod: Gear {
         { "Toolkit", 1 }
     };
     cost = 500;
-    nameShort = "POD";
+    nameShort = "STR_WL_assetPodShort";
     offset[] = {0, 8, 0};
 };
 class B_Slingload_01_Fuel_F: Huron_Pod {
@@ -89,7 +89,7 @@ class Taru_Pod: Gear {
         { "Toolkit", 1 }
     };
     cost = 500;
-    nameShort = "POD";
+    nameShort = "STR_WL_assetPodShort";
     offset[] = {0, 8, 0};
 };
 class Land_Pod_Heli_Transport_04_fuel_F: Taru_Pod {
@@ -115,11 +115,11 @@ class Land_Cargo10_military_green_F: Gear {
     cost = 1000;
     demolishable = 1;
     demolishStepTime = 3;
-    description = "Purchases supplies that can be airlifted or deployed into a forward position or sector. It can be used to setup a base, add supplies to an existing one, or to add reinforcements to a defensive sector.";
+    description = "STR_WL_assetSuppliesDesc";
     loaded = "Land_Cargo_HQ_V4_F";
     loadRotate = 1;
-    name = "Supplies (Forward Base, Sector)";
-    nameShort = "SUPPLIES";
+    name = "STR_WL_assetSupplies";
+    nameShort = "STR_WL_assetSuppliesShort";
     offset[] = {0, 5, 0};
     requirements[] = {"H", "NF", "S"};
     showToEnemies = 500;
@@ -133,11 +133,11 @@ class Supply_MRAP: Gear {
     };
     capValue = 1;
     cost = 1500;
-    description = "Supply vehicle that can be deployed as supplies.";
+    description = "STR_WL_assetSupplyMrapDesc";
     disableParadrop = 1;
     loaded = "Land_Cargo10_military_green_F";
-    name = "Supply MRAP";
-    nameShort = "SUPPLY MRAP";
+    name = "STR_WL_assetSupplyMrap";
+    nameShort = "STR_WL_assetSupplyMrapShort";
     requirements[] = {"H", "NF", "S"};
     showToEnemies = 500;
     side[] = {"west", "east"};

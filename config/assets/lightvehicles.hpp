@@ -7,7 +7,7 @@ class Light_Vehicle {
 class Quadbike: Light_Vehicle {
     capValue = 1;
     cost = 20;
-    nameShort = "QUAD";
+    nameShort = "STR_WL_assetQuadShort";
     offset[] = {0, 3, 0};
 };
 class B_Quadbike_01_F: Quadbike {
@@ -24,7 +24,7 @@ class I_Quadbike_01_F: Quadbike {
 class Offroad_Armed: Light_Vehicle {
     capValue = 1;
     cost = 150;
-    nameShort = "OFFROAD";
+    nameShort = "STR_WL_assetOffroadShort";
     offset[] = {0, 5, 0};
     rearm = 120;
 
@@ -132,7 +132,7 @@ class Medical_Transport: Light_Vehicle {
     cost = 250;
     hasFastTravel = 1;
     loadable = 0;
-    nameShort = "MEDICAL";
+    nameShort = "STR_WL_assetMedicalShort";
 };
 class B_Truck_01_medical_F: Medical_Transport {
     loaded = "Land_MedicalTent_01_NATO_generic_open_F";
@@ -152,8 +152,8 @@ class Flatbed: Light_Vehicle {
     hasLoader = 1;
     isLight = 1;
     loadable = 0;
-    name = "HEMTT Flatbed";
-    nameShort = "FLATBED";
+    name = "STR_WL_assetFlatbed";
+    nameShort = "STR_WL_assetFlatbedShort";
     spawn = "B_Truck_01_flatbed_F";
 };
 class B_FlatbedTruck: Flatbed {
@@ -202,7 +202,7 @@ class I_MRAP_03_F: MRAP_Unarmed {
 class Offroad_AT: Light_Vehicle {
     capValue = 1;
     cost = 500;
-    nameShort = "OFFROAD AT";
+    nameShort = "STR_WL_assetOffroadAtShort";
     offset[] = {0, 5, 0};
     rearm = 180;
 
@@ -241,16 +241,16 @@ class B_CTRG_LSV_01_light_F: Light_Recon {
     attachments[] = {
         {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -0.2, 0.7}, 0, ""}
     };
-    name = "Prowler (Recon)";
-    nameShort = "PROWLER RECON";
+    name = "STR_WL_assetProwlerRecon";
+    nameShort = "STR_WL_assetProwlerReconShort";
     side[] = {"west"};
 };
 class O_LSV_02_unarmed_F: Light_Recon {
     attachments[] = {
         {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {-0.2, -0.5, 1.2}, 0, ""}
     };
-    name = "Qilin (Recon)";
-    nameShort = "QILIN RECON";
+    name = "STR_WL_assetQilinRecon";
+    nameShort = "STR_WL_assetQilinReconShort";
     side[] = {"east"};
 };
 
@@ -355,7 +355,7 @@ class Transport_Ammo: Light_Vehicle {
     cost = 1000;
     hasRearm = 1;
     loadable = 0;
-    nameShort = "AMMO";
+    nameShort = "STR_WL_assetAmmoShort";
 };
 class B_Truck_01_ammo_F: Transport_Ammo {
     loaded = "B_Slingload_01_Ammo_F";
@@ -372,7 +372,7 @@ class Transport_Fuel: Light_Vehicle {
     cost = 1000;
     hasRefuel = 1;
     loadable = 0;
-    nameShort = "FUEL";
+    nameShort = "STR_WL_assetFuelShort";
 };
 class B_Truck_01_fuel_F: Transport_Fuel {
     loaded = "B_Slingload_01_Fuel_F";
@@ -389,7 +389,7 @@ class Transport_Repair: Light_Vehicle {
     cost = 1000;
     hasRepair = 1;
     loadable = 0;
-    nameShort = "REPAIR";
+    nameShort = "STR_WL_assetRepairShort";
 };
 class B_Truck_01_Repair_F: Transport_Repair {
     loaded = "B_Slingload_01_Repair_F";
@@ -441,11 +441,11 @@ class Device_Truck: Light_Vehicle {
     aps = 4;
     capValue = 1;
     cost = 750;
-    description = "Provides a mobile APS platform for vehicle convoys.";
+    description = "STR_WL_descDeviceTruck";
     ewBoost = 1;
     loadable = 0;
-    name = "Device Truck";
-    nameShort = "DEVICE";
+    name = "STR_WL_assetDeviceTruck";
+    nameShort = "STR_WL_assetDeviceShort";
     rearm = 120;
     singleton = 2;
     spawn = "O_Truck_03_device_F";

@@ -1,45 +1,45 @@
-Warlords Redux 2.8 Patch 18
+军阀：重装版 2.8 补丁 18
 
-Asset
-* (Added) Vehicle decoys
-* (Removed) Hunter/Ifrit Mortar
-* (Removed) Mk30 HMG/Mk32 GMG (low)
-* (Removed) Rectangular Minefield
-* (Removed) Sandbag kits
-* (Removed) Vehicle Camo Cover
-* Bunker: updated object attachment model.
-* Bunker Hawk: bunker busters 3->5, added an additional 12.7mm gun.
-* Caesar, Taru: bunker deployments 4->2.
-* Orca Bomber: bunker busters 3->5, added radar pod.
-* Offroad (IED): APS removed.
+资产
+* （新增）载具诱饵
+* （移除）猎人/伊弗里特迫击炮
+* （移除）Mk30 重机枪/Mk32 榴弹机枪（低）
+* （移除）矩形雷场
+* （移除）沙袋套件
+* （移除）载具伪装罩
+* 碉堡：更新了物体挂载模型。
+* 碉堡之鹰：碉堡克星 3→5，新增一挺 12.7mm 机枪。
+* 凯撒、塔鲁：碉堡部署 4→2。
+* 虎鲸轰炸机：碉堡克星 3→5，新增雷达吊舱。
+* 越野车（IED）：移除主动防护系统。
 
-Gameplay
-* Added minimum rating requirement to artillery assets.
-* Camera swivels towards damage source upon player down.
-* Doors now auto-close.
-* Flare and missile rework.
-* Flag clears objects around home spawn.
-* Field repair now allowed when fuel is low, emergency refuels vehicle.
-* Item deployer: removed minimum drop height.
-* Map sector changes to improve mid-map flow.
-* Recon optics action now shows key.
-* Removed first person restriction in manual drone.
-* Removed manpower timer.
-* Removed option to do allied demolitions.
-* Removed defunct radar operate action.
-* Side picker now shows name of players in lobby in tooltip.
-* Stormbreaker/UPMK: no longer stopped by advanced APS.
-* Tents are no longer damageable by teammates.
+游戏玩法
+* 火炮资产新增最低评分要求。
+* 玩家倒地时摄像机转向伤害来源。
+* 门现在会自动关闭。
+* 信号弹与导弹重制。
+* 旗帜会清理出生点周围的物体。
+* 燃油不足时现允许进行野战维修，并为载具紧急加油。
+* 物品部署器：移除最低投放高度限制。
+* 地图区域调整以改善地图中部流程。
+* 侦察光学动作现显示按键。
+* 手动无人机中移除第一人称限制。
+* 移除人力计时器。
+* 移除对友方进行拆除的选项。
+* 移除已失效的雷达操作动作。
+* 阵营选择器现于提示框中显示大厅内玩家名称。
+* 风暴破坏者/UPMK：不再被高级主动防护系统拦截。
+* 帐篷不再可被队友破坏。
 
-Bugfixes
-* Fixed attachments jitter during heavy server load.
-* Fixed dead players revealing sectors.
-* Fixed edge cases of players spawning as green.
-* Fixed rebalance player buy asset list.
-* Fixed reinforcements turning into uneven number shortly after sector changes ownership.
-* Fixed script error when rendering scoreboard while busy.
-* Optimized AI timers.
-* Optimized ewar.
-* Optimized starting setup conditions.
-* Reworked lock system.
-* Reworked turret limit visualizer.
+Bug 修复
+* 修复了服务器高负载时附件抖动的问题。
+* 修复了死亡玩家暴露区域的问题。
+* 修复了玩家以绿色阵营出生的边缘情况。
+* 修复了重新平衡后玩家购买资产列表的问题。
+* 修复了区域易主后增援数量变为奇数的问题。
+* 修复了忙碌时渲染记分板的脚本错误。
+* 优化了 AI 计时器。
+* 优化了电子战。
+* 优化了初始设置条件。
+* 重制了锁定系统。
+* 重制了炮塔限制可视化。

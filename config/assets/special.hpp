@@ -8,8 +8,8 @@ class Team_Rally_Point: Special {
     demolishStepTime = 3;
     disableDamage = 1;
     hasFastTravel = 1;
-    name = "Team Rally Point";
-    nameShort = "RALLY";
+    name = "STR_WL_assetTeamRallyPoint";
+    nameShort = "STR_WL_assetTeamRallyPointShort";
     offset[] = {0, 8, 0};
     showToEnemies = 100;
 };
@@ -22,8 +22,8 @@ class Land_Pallet_MilBoxes_F: Special {
     demolishable = 2;
     demolishStepTime = 4;
     disableDamage = 1;
-    name = "Cache";
-    nameShort = "CACHE";
+    name = "STR_WL_assetCache";
+    nameShort = "STR_WL_assetCacheShort";
     showToEnemies = 500;
 };
 
@@ -31,18 +31,18 @@ class Land_Pallet_MilBoxes_F: Special {
 class B_UAV_02_F: Special {
     cost = 1000;
     fragileDrone = 1;
-    nameShort = "SCANNER";
+    nameShort = "STR_WL_assetScannerShort";
 };
 class O_UAV_02_F: Special {
     cost = 1000;
     fragileDrone = 1;
-    nameShort = "SCANNER";
+    nameShort = "STR_WL_assetScannerShort";
 };
 
 class Integral_Mortar: Special {
     cost = -1;
-    name = "82mm Mortar";
-    nameShort = "MORTAR";
+    name = "STR_WL_assetMortar82";
+    nameShort = "STR_WL_assetMortarShort";
 };
 
 class Land_BagFence_Round_F: Special {
@@ -50,8 +50,8 @@ class Land_BagFence_Round_F: Special {
     demolishable = 1;
     demolishStepTime = 1;
     lifetime = 180;
-    name = "Temporary Sandbag Wall";
-    nameShort = "SANDBAG";
+    name = "STR_WL_assetTempSandbagWall";
+    nameShort = "STR_WL_assetSandbagShort";
     offset[] = {0, 3, 0};
 };
 
@@ -65,8 +65,8 @@ class Static_Cannon: Special {
     loaded = "Static_Mora";
     loadable = 1;
     loadRotate = 2;
-    name = "Fighting Position (Cannon)";
-    nameShort = "STATIC CANNON";
+    name = "STR_WL_assetFightingPositionCannon";
+    nameShort = "STR_WL_assetStaticCannonShort";
     offset[] = {0, 8, 0};
     rearm = 300;
     spawn = "B_AFV_Wheeled_01_cannon_F";
@@ -96,7 +96,7 @@ class Static_Cannon: Special {
 
 class Forward_Base_Dome: Special {
     hideMap = 2;
-    name = "Base Dome";
+    name = "STR_WL_assetBaseDome";
 };
 
 class Land_Dome_Small_WIP_F: Forward_Base_Dome {};
@@ -110,8 +110,8 @@ class Crater_Debris: Special {
     demolishStepTime = 25;
     hideMap = 2;
     lifetime = 1200;
-    name = "Debris";
-    nameShort = "DEBRIS";
+    name = "STR_WL_assetDebris";
+    nameShort = "STR_WL_assetDebrisShort";
 };
 
 class Land_ShellCrater_02_large_F: Crater_Debris {};
@@ -122,8 +122,8 @@ class CraterLong_02_F: Crater_Debris {};
 
 class Land_Destroyer_01_base_F: Special {
     cost = 40000;
-    name = "Destroyer";
-    nameShort = "DESTROYER";
+    name = "STR_WL_assetDestroyer";
+    nameShort = "STR_WL_assetDestroyerShort";
 };
 
 class B_Ship_MRLS_01_F: Special {
@@ -135,8 +135,8 @@ class B_Ship_MRLS_01_F: Special {
 class Spawn_Tent: Special {
     cost = 300;
     demolishStepTime = 2;
-    name = "Tent";
-    nameShort = "TENT";
+    name = "STR_WL_assetTent";
+    nameShort = "STR_WL_assetTentShort";
     showToEnemies = 100;
 };
 
@@ -145,7 +145,7 @@ class Land_TentSolar_01_bluewhite_F: Spawn_Tent {};
 class Land_TentSolar_01_redwhite_F: Spawn_Tent {};
 
 class RuggedTerminal_01_communications_hub_F: Special {
-    name = "Forward Base";
+    name = "STR_WL_assetForwardBase";
     nameShort = "FOB";
 };
 
@@ -166,15 +166,15 @@ class Supply_Fort: Special {
 
 class Land_Cargo_HQ_V4_F: Supply_Fort {
     loaded = "Land_Cargo_Tower_V4_F";
-    name = "Fortified Rally Point";
-    nameShort = "FORT";
+    name = "STR_WL_assetFortifiedRallyPoint";
+    nameShort = "STR_WL_assetFortShort";
     offset[] = {0, 12, 0};
 };
 
 class Land_Cargo_Tower_V4_F: Supply_Fort {
     loaded = "Land_Cargo10_military_green_F";
-    name = "Cargo Tower";
-    nameShort = "TOWER";
+    name = "STR_WL_assetCargoTower";
+    nameShort = "STR_WL_assetTowerShort";
     offset[] = {0, 8, 0};
 };
 
@@ -182,7 +182,7 @@ class Deployed_AR2: Special {
     cost = 500;
     fragileDrone = 1;
     hasHMD = 1;
-    name = "Deployed AR-2 Darter";
+    name = "STR_WL_assetDeployedDarter";
     nameShort = "DARTER";
     offset[] = {0, 3, 0};
     singleton = 2;
@@ -198,21 +198,21 @@ class I_AR2_Deployed: Deployed_AR2 {
 };
 
 class Steerable_Parachute_F: Special {
-    name = "Steerable Parachute";
-    nameShort = "PARACHUTE";
+    name = "STR_WL_assetSteerableParachute";
+    nameShort = "STR_WL_assetParachuteShort";
 };
 
 class SpaceshipCapsule_01_container_F: Special {
-    name = "Paradroppable Capsule";
-    nameShort = "CAPSULE";
+    name = "STR_WL_assetParadropCapsule";
+    nameShort = "STR_WL_assetCapsuleShort";
 };
 
 class Deployed_Explosives: Special {
     cost = 100;
     demolishable = 1;
     demolishStepTime = 1;
-    name = "Explosive Charge";
-    nameShort = "CHARGE";
+    name = "STR_WL_assetExplosiveCharge";
+    nameShort = "STR_WL_assetChargeShort";
 };
 class DemoCharge_Remote_Ammo: Deployed_Explosives {};
 class SatchelCharge_Remote_Ammo: Deployed_Explosives {};
@@ -221,8 +221,8 @@ class Land_VR_Slope_01_F: Special {
     cost = 100;
     demolishable = 1;
     demolishStepTime = 1;
-    name = "Mobile Ramp";
-    nameShort = "RAMP";
+    name = "STR_WL_assetMobileRamp";
+    nameShort = "STR_WL_assetRampShort";
     textures[] = {
         "#(rgb,8,8,3)color(0.08,0.12,0.08,1)",
         "#(rgb,8,8,3)color(0.04,0.08,0.04,1)"

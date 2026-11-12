@@ -87,10 +87,10 @@ class O_Marid_Utility: Utility_Vehicle {
         {"\A3\Structures_F\Items\Vessels\WaterBarrel_F.p3d", {-0.5, -4.8, -0.6}, 0, ""}
     };
     cost = 2000;
-    description = "MSE-3 Marid (Utility) is a support variant of the MSE-3 Marid equipped for rearming, refueling, and repairing allied vehicles.";
+    description = "STR_WL_descMaridUtility";
     loadable = 1;
-    name = "MSE-3 Marid (Utility)";
-    nameShort = "MARID UTIL";
+    name = "STR_WL_assetMaridUtility";
+    nameShort = "STR_WL_assetMaridUtilityShort";
     side[] = {"east"};
     spawn = "O_APC_Wheeled_02_rcws_v2_F";
     variant = 1;
@@ -186,10 +186,10 @@ class B_Marshall_Recon: Heavy_Recon {
     attachments[] = {
         {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -1.7, 0.6}, 0, ""}
     };
-    description = "AMV-7 Marshall (Recon) is a variant of the AMV-7 Marshall armed with a powerful scanner.";
+    description = "STR_WL_descMarshallRecon";
     loadable = 1;
-    name = "AMV-7 Marshall (Recon)";
-    nameShort = "RECON MARSHALL";
+    name = "STR_WL_assetMarshallRecon";
+    nameShort = "STR_WL_assetMarshallReconShort";
     side[] = {"west"};
     spawn = "B_APC_Wheeled_01_cannon_F";
 
@@ -211,10 +211,10 @@ class O_BTR_Recon: Heavy_Recon {
     attachments[] = {
         {"\A3\Props_F_Enoch\Military\Camps\SatelliteAntenna_01_F.p3d", {0, -1.7, 0.3}, 0, ""}
     };
-    description = "BTR-K Kamysh (Recon) is a variant of the BTR-K Kamysh armed with a powerful scanner.";
+    description = "STR_WL_descBTRRecon";
     loadable = 1;
-    name = "BTR-K Kamysh (Recon)";
-    nameShort = "RECON BTR";
+    name = "STR_WL_assetBtrRecon";
+    nameShort = "STR_WL_assetBtrReconShort";
     side[] = {"east"};
     spawn = "O_APC_Tracked_02_cannon_F";
 
@@ -347,8 +347,8 @@ class B_Gorgon_Mortar: Gorgon {
     hideTurret = 1;
     integralWeapon[] = {24, {0.35, -1.5, 0.35}, "B_Mortar_01_F", "Integral_Mortar", "mortar_82mm", "8Rnd_82mm_Mo_shells", 8};
     minElo = 1500;
-    name = "AFV-4 Gorgon (Mortar)";
-    nameShort = "GORGON MORTAR";
+    name = "STR_WL_assetGorgonMortar";
+    nameShort = "STR_WL_assetGorgonMortarShort";
     rearm = 420;
     side[] = {"west"};
     spawn = "B_APC_Wheeled_03_cannon_F";
@@ -466,7 +466,7 @@ class B_AFV_Wheeled_01_up_cannon_F: B_AFV_Wheeled_01_cannon_F {
 
 class B_Rhino_X: B_AFV_Wheeled_01_up_cannon_F {
     cost = 7000;
-    description = "Rhino MGS X is an advanced variant of the Rhino MGS armed with an experimental railgun.";
+    description = "STR_WL_descRhinoX";
     hasRailgun = 1;
     nameShort = "RHINO X";
     name = "Rhino MGS X";
@@ -591,7 +591,7 @@ class I_MBT_03_cannon_F: Kuma {
 
 class B_Slammer_X: B_MBT_01_TUSK_F {
     cost = 12000;
-    description = "M2A4 Slammer X is an advanced variant of the M2A1 Slammer armed with an experimental railgun.";
+    description = "STR_WL_descSlammerX";
     hasRailgun = 1;
     nameShort = "SLAMMER X";
     name = "M2A4 Slammer X";
@@ -670,7 +670,7 @@ class O_MBT_02_railgun_F: Heavy_Vehicles {
 
 class Howitzer_Artillery: Heavy_Vehicles {
     ammoOverrides[] = {
-        {"Smoke_120mm_AMOS_White", {"M_DroneDeployer", "155mm Drone Deployer"}}
+        {"Smoke_120mm_AMOS_White", {"M_DroneDeployer", "STR_WL_ammoDroneDeployer155"}}
     };
     aps = 1;
     capValue = 4;
@@ -679,7 +679,7 @@ class Howitzer_Artillery: Heavy_Vehicles {
         "2Rnd_155mm_Mo_Cluster_O"
     };
     minElo = 1500;
-    nameShort = "ARTY";
+    nameShort = "STR_WL_assetArtilleryShort";
     rearm = 1800;
 };
 // M4 Scorcher
@@ -708,14 +708,14 @@ class MRLS: Heavy_Vehicles {
 class B_MBT_01_mlrs_F: MRLS {
     cost = 25000;
     loaded = "CamoNet_BLUFOR_big_F";
-    nameShort = "MRLS";
+    nameShort = "STR_WL_assetMrlsShort";
     side[] = {"west"};
 };
 class O_Truck_02_MRL_F: MRLS {
     cost = 18000;
     loaded = "CamoNet_OPFOR_big_F";
     name = "Zamak MRL";
-    nameShort = "MRLS";
+    nameShort = "STR_WL_assetMrlsShort";
     side[] = {"east"};
     spawn = "I_Truck_02_MRL_F";
     textures[] = {

@@ -24,7 +24,7 @@ class C_Heli_Light_01_civil_F: Hummingbird {
 // Mi-290 Taru
 class Taru: Rotary_Wing {
     ammoOverrides[] = {
-        {"M_SPG9_HE", {"M_BunkerDeployer", "Bunker Deployer"}}
+        {"M_SPG9_HE", {"M_BunkerDeployer", "STR_WL_ammoBunkerDeployer"}}
     };
     cost = 400;
     flares[] = WL_FLARE_UTILITY;
@@ -99,7 +99,7 @@ class O_Heli_Light_02_dynamicLoadout_F: O_Heli_Light_02_unarmed_F {
     };
     cost = 3500;
     flares[] = WL_FLARE_LIGHT_COMBAT;
-    nameShort = "ORCA ARMED";
+    nameShort = "STR_WL_assetOrcaArmedShort";
     rearm = 240;
     requirements[] = {"H"};
 
@@ -125,7 +125,7 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
         "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"M_RedArrow", "HJ-9 Red Arrow"}}
+        {"Missile_AGM_02_F", {"M_RedArrow", "STR_WL_ammoRedArrow"}}
     };
     cost = 4500;
     disallowMagazines[] = {
@@ -138,8 +138,8 @@ class O_Orca_Bunker: O_Heli_Light_02_dynamicLoadout_F {
         "PylonWeapon_300Rnd_20mm_shells",
         "PylonRack_19Rnd_Rocket_Skyfire"
     };
-    name = "PO-30 Orca (Bunker Buster)";
-    nameShort = "ORCA BOMBER";
+    name = "STR_WL_assetOrcaBunkerBuster";
+    nameShort = "STR_WL_assetOrcaBomberShort";
     replacePylons[] = {
         {"PylonLeft1", {-1}, "PylonRadarPod_01_F"},
         {"PylonRight1", {-1}, "PylonCameraPod_01_F"}
@@ -248,7 +248,7 @@ class B_Heli_Transport_01_pylons_F: B_Heli_Transport_01_F {
         "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_MineLayer", "M139 Volcano Mine Dispenser"}}
+        {"Bo_Mk82", {"M_MineLayer", "STR_WL_ammoVolcanoMine"}}
     };
     cost = 5000;
     disallowMagazines[] = {
@@ -276,7 +276,7 @@ class B_BunkerHawk: B_Heli_Transport_01_pylons_F {
         {"PylonWeapon_500Rnd_127mm_HEIAP_belt_right", {"pylon3"}}
     };
     ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"M_TOW2", "BGM-71H TOW Bunker Buster"}}
+        {"Missile_AGM_02_F", {"M_TOW2", "STR_WL_ammoTowBunker"}}
     };
     cost = 4700;
     disallowMagazines[] = {
@@ -292,7 +292,7 @@ class B_BunkerHawk: B_Heli_Transport_01_pylons_F {
         "PylonMissile_1Rnd_Mk82_F"
     };
     name = "AH-80 Bunker Hawk";
-    nameShort = "HAWK BOMBER";
+    nameShort = "STR_WL_assetHawkBomberShort";
     replacePylons[] = {
         {"pylon1", {-1}, "PylonRadarPod_01_F"},
         {"pylon2", {-1}, "PylonWeapon_500Rnd_127mm_HEIAP_belt_left"},
@@ -450,7 +450,7 @@ class Hellcat: Rotary_Wing {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
     cost = 4200;
-    description = "WY-55 Hellcat is a light attack helicopter.";
+    description = "STR_WL_descHellcat";
     flares[] = WL_FLARE_LIGHT_COMBAT;
     hasHMD = 1;
     hasSling = 1;
@@ -567,7 +567,7 @@ class B_Heli_Attack_01_dynamicLoadout_F: Rotary_Wing {
     };
     ammoOverrides[] = {
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoJassmLaser"}}
     };
     cost = 10000;
     flares[] = WL_FLARE_MAIN_COMBAT;

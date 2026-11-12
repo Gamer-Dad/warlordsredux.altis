@@ -6,7 +6,7 @@ class Remote_Control {
 class Static_Designator: Remote_Control {
     cost = 50;
     loadable = 1;
-    nameShort = "DESIGNATOR";
+    nameShort = "STR_WL_assetDesignatorShort";
     offset[] = {0, 3, 0};
     rearm = 60;
 };
@@ -104,7 +104,7 @@ class O_UAV_06_F: AR6 {
 
 class Loitering_Munition: Remote_Control {
     cost = 1500;
-    description = "Loitering munition that can be piloted to its target.";
+    description = "STR_WL_descLoiteringMunition";
     detonate = 7;
     loadable = 1;
     requirements[] = {"FA"};
@@ -145,7 +145,7 @@ class O_Shahed: Loitering_Munition {
 
 class AR7: Remote_Control {
     ammoOverrides[] = {
-        {"BombDemine_01_Ammo_F", {"BombDemine_01_Ammo_F", "Grenade"}}
+        {"BombDemine_01_Ammo_F", {"BombDemine_01_Ammo_F", "STR_WL_ammoGrenade"}}
     };
     cost = 2000;
     fragileDrone = 1;
@@ -179,11 +179,11 @@ class O_AR7: AR7 {
 // Offroad (IED)
 class Offroad_IED: Remote_Control {
     cost = 4000;
-    description = "Offroad (IED) is a variant of the Offroad that goes boom.";
+    description = "STR_WL_descOffroadIED";
     detonate = 11;
     drone = 1;
     loadable = 1;
-    name = "Offroad (IED)";
+    name = "STR_WL_assetOffroadIed";
     nameShort = "VBIED";
     offset[] = {0, 5, 0};
     rearm = 900;
@@ -354,8 +354,8 @@ class B_UAV_05_F: Remote_Control {
 
 class B_Pegasus: B_UAV_05_F {
     ammoOverrides[] = {
-        {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
-        {"Bo_Mk82", {"M_MineLayerDense", "CBU-103/B Mine Layer"}}
+        {"Bomb_04_F", {"ammo_gbu12_gps", "STR_WL_ammoGbu12Gps"}},
+        {"Bo_Mk82", {"M_MineLayerDense", "STR_WL_ammoMineLayerCBU103"}}
     };
     disallowMagazines[] = {
         "PylonMissile_Bomb_GBU12_x1",
