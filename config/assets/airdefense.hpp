@@ -5,9 +5,9 @@ class Air_Defense {
 
 class Radar: Air_Defense {
     cost = 500;
-    description = "Long range radar system, capable of detecting and tracking vehicles within line of sight.";
+    description = "$STR_WL_descRadar";
     isRadar = 1;
-    nameShort = "RADAR";
+    nameShort = "STR_WL_assetRadarShort";
     offset[] = {0, 7, 0};
 };
 class B_Radar_System_01_F: Radar {
@@ -24,10 +24,10 @@ class LR_Radar: Air_Defense {
     airRadar = 20000;
     cost = 2500;
     demolishable = 3;
-    description = "Directional radar that passively tracks enemy air and hostile missile launches. Team max: 5.";
+    description = "$STR_WL_descLRRadar";
     loadable = 0;
-    name = "AN/FPS-124 LR Radar";
-    nameShort = "LR RADAR";
+    name = "STR_WL_assetLrRadar";
+    nameShort = "STR_WL_assetLrRadarShort";
     offset[] = {0, 7, 0};
     showToEnemies = 8000;
     teamLimit = 5;
@@ -58,7 +58,7 @@ class Light_SAM: Air_Defense {
     aps = 1;
     capValue = 2;
     cost = 3000;
-    description = "Mobile short-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
+    description = "$STR_WL_descLightSAM";
     hasHMD = 1;
     hasReconOptics = 2;
     rearm = 180;
@@ -133,7 +133,7 @@ class O_Nyx_SAM: Nyx_SAM {
 
 class Praetorian: Air_Defense {
     cost = 6000;
-    description = "Short-range point-defense artillery with a high rate of fire.";
+    description = "$STR_WL_descPraetorian";
     name = "Praetorian 1C";
     nameShort = "CIWS";
     offset[] = {0, 5.3, 0};
@@ -252,7 +252,7 @@ class O_APC_Tracked_02_AA_F: SPAAG {
 // Mk49 Spartan
 class Spartan: Air_Defense {
     cost = 5500;
-    description = "Short-range surface-to-air missile system, capable of engaging aircraft and helicopters.";
+    description = "$STR_WL_descSpartan";
     hasAutoSam = 1;
     hasHMD = 1;
     name = "Mk49 Spartan";
@@ -274,7 +274,7 @@ class O_Spartan: Spartan {
 // Defender/Rhea
 class LR_AA: Air_Defense {
     cost = 5500;
-    description = "Long-range surface-to-air missile system, capable of engaging aircraft and helicopters.";
+    description = "$STR_WL_descLRAA";
     hasAutoSam = 1;
     hasHMD = 1;
     offset[] = {0, 6, 0};
@@ -296,7 +296,7 @@ class I_E_SAM_System_03_F: LR_AA {
 // Mk21 Centurion
 class Centurion: Air_Defense {
     cost = 5500;
-    description = "Medium-range surface-to-air missile system, capable of engaging aircraft and helicopters.";
+    description = "$STR_WL_descCenturion";
     hasAutoSam = 1;
     hasHMD = 1;
     loaded = "Centurion_Decoy";
@@ -347,7 +347,7 @@ class Mobile_Starstreak: Air_Defense {
     };
     capValue = 3;
     cost = 6500;
-    description = "Mobile medium-range, surface-to-air missile system, capable of engaging aircraft and helicopters.";
+    description = "$STR_WL_descStarstreak";
     hasHMD = 1;
     hasTurretVisualizer = 1;
     loaded = "Land_VR_Slope_01_F";

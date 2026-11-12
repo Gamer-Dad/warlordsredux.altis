@@ -1,7 +1,7 @@
 class Structures {
     category = "Structures";
     hideMap = 1;
-    nameShort = "DEF";
+    nameShort = "STR_WL_assetDefShort";
 };
 
 // Camouflage Vehicle Cover
@@ -49,8 +49,8 @@ class Land_BagBunker_Small_F: Structures {
     hasRefuel = 1;
     hasRepair = 1;
     hideMap = 0;
-    name = "Fighting Position";
-    nameShort = "BUNKER";
+    name = "STR_WL_assetFightingPosition";
+    nameShort = "STR_WL_assetBunkerShort";
     offset[] = {0, 5, 0};
     showToEnemies = 500;
     side[] = {"west", "east", "guer"};
@@ -89,7 +89,7 @@ class Defensive_Kits: Structures {
 //     fragile = 10000;
 //     loaded = "Land_HBarrier_5_F";
 //     name = "H-Barrier Kit";
-//     nameShort = "HESCO";
+//     nameShort = "STR_WL_assetHescoShort";
 //     offset[] = {0, 3, 0};
 //     side[] = {"west", "east", "guer"};
 // };
@@ -98,8 +98,8 @@ class Land_HBarrierWall6_F: Defensive_Kits {
     cost = 1500;
     fragile = 10000;
     loaded = "Land_HBarrierWall6_F";
-    name = "H-Barrier Wall Kit";
-    nameShort = "HESCO";
+    name = "STR_WL_assetHBarrierWallKit";
+    nameShort = "STR_WL_assetHescoShort";
     offset[] = {0, 3, 0};
     side[] = {"west", "east", "guer"};
 };
@@ -108,8 +108,8 @@ class Land_HBarrierWall_corridor_F: Defensive_Kits {
     cost = 1500;
     fragile = 50000;
     loaded = "Land_HBarrierWall_corridor_F";
-    name = "H-Barrier Wall Corridor Kit";
-    nameShort = "HESCO";
+    name = "STR_WL_assetHBarrierCorridorKit";
+    nameShort = "STR_WL_assetHescoShort";
     offset[] = {0, 5, 0};
     side[] = {"west", "east", "guer"};
 };
@@ -117,8 +117,8 @@ class Land_HBarrierWall_corridor_F: Defensive_Kits {
 class Land_DragonsTeeth_01_4x2_new_F: Defensive_Kits {
     cost = 1500;
     loaded = "Land_DragonsTeeth_01_4x2_new_F";
-    name = "Dragon's Teeth Kit";
-    nameShort = "TANK TRAP";
+    name = "STR_WL_assetDragonsTeethKit";
+    nameShort = "STR_WL_assetTankTrapShort";
     obstacle = 2;
     side[] = {"west", "east", "guer"};
 };
@@ -188,8 +188,8 @@ class O_Kajman_Decoy: O_Vehicle_Decoy {
 class Land_CzechHedgehog_01_new_F: Defensive_Kits {
     cost = 2000;
     loaded = "Land_CzechHedgehog_01_new_F";
-    name = "Czech Hedgehog Kit";
-    nameShort = "TANK TRAP";
+    name = "STR_WL_assetCzechHedgehogKit";
+    nameShort = "STR_WL_assetTankTrapShort";
     obstacle = 2;
     side[] = {"west", "east", "guer"};
 };
@@ -197,10 +197,10 @@ class Land_CzechHedgehog_01_new_F: Defensive_Kits {
 class Land_CraneRail_01_F: Structures {
     cost = 5000;
     demolishable = 3;
-    description = "Aircraft Catapult can be used to launch jets and drones.";
+    description = "STR_WL_descCatapult";
     hideMap = 0;
-    name = "Aircraft Catapult";
-    nameShort = "CATAPULT";
+    name = "STR_WL_assetAircraftCatapult";
+    nameShort = "STR_WL_assetCatapultShort";
     offset[] = {0, 14, 0};
     side[] = {"west", "east", "guer"};
 };

@@ -6,7 +6,7 @@ class Sector_Defense {
 class Static_HMG: Sector_Defense {
     cost = 150;
     loadable = 1;
-    nameShort = "STATIC HMG";
+    nameShort = "STR_WL_assetStaticHmgShort";
     offset[] = {0, 3, 0};
     rearm = 120;
 
@@ -37,7 +37,7 @@ class Static_HMG: Sector_Defense {
 class Static_HMG_Raised: Static_HMG {
     cost = 200;
     loadable = 1;
-    nameShort = "STATIC HMG";
+    nameShort = "STR_WL_assetStaticHmgShort";
 
     class Gunner: WLTurretDefaults {
         addMagazines[] = {
@@ -66,7 +66,7 @@ class O_HMG_01_high_F: Static_HMG_Raised {
 class Static_GMG: Sector_Defense {
     cost = 200;
     loadable = 1;
-    nameShort = "STATIC GMG";
+    nameShort = "STR_WL_assetStaticGmgShort";
     offset[] = {0, 3, 0};
     rearm = 120;
 };
@@ -81,7 +81,7 @@ class Static_GMG: Sector_Defense {
 class Static_GMG_Raised: Static_GMG {
     cost = 250;
     loadable = 1;
-    nameShort = "STATIC GMG";
+    nameShort = "STR_WL_assetStaticGmgShort";
 };
 class B_GMG_01_high_F: Static_GMG_Raised {
     side[] = {"west"};
@@ -128,10 +128,10 @@ class AT_Minefield: Sector_Defense {
     cost = 1000;
     demolishable = 1;
     demolishStepTime = 4;
-    description = "Anti-tank minefield that contains hidden anti-tank mines.";
+    description = "STR_WL_descMinefield";
     dumbMine[] = {50, 10, 1};
-    name = "Minefield (AT)";
-    nameShort = "MINEFIELD";
+    name = "STR_WL_assetMinefieldAT";
+    nameShort = "STR_WL_assetMinefieldShort";
     obstacle = 2;
     offset[] = {0, 3, 0};
     requirements[] = {"S"};
@@ -140,16 +140,16 @@ class AT_Minefield: Sector_Defense {
 };
 class AT_MinefieldLarge: AT_Minefield {
     dumbMine[] = {100, 20, 1};
-    name = "Minefield (AT, Rectangular)";
+    name = "STR_WL_assetMinefieldATRect";
 };
 class AT_MinefieldCircular: AT_Minefield {
     dumbMine[] = {50, 50, 0};
-    name = "Minefield (AT, Circular)";
+    name = "STR_WL_assetMinefieldATCircular";
     side[] = {"west"};
 };
 class AT_MinefieldHex: AT_Minefield {
     dumbMine[] = {-50, -50, 0};
-    name = "Minefield (AT, Hex)";
+    name = "STR_WL_assetMinefieldATHex";
     side[] = {"east"};
 };
 class AT_DeployedMinefield: AT_Minefield {
@@ -157,7 +157,7 @@ class AT_DeployedMinefield: AT_Minefield {
     demolishable = 1;
     demolishStepTime = 60;
     dumbMine[] = {450, 450, 0};
-    name = "Minefield (GATOR)";
+    name = "STR_WL_assetMinefieldGator";
     showToEnemies = 3000;
     singleton = 2;
 };
@@ -166,7 +166,7 @@ class AT_DeployedMinefieldSmall: AT_Minefield {
     demolishable = 1;
     demolishStepTime = 45;
     dumbMine[] = {250, 250, 0};
-    name = "Minefield (Zemledeliye)";
+    name = "STR_WL_assetMinefieldZemledeliye";
     showToEnemies = 3000;
     singleton = 3;
 };
@@ -175,7 +175,7 @@ class AT_DeployedMinefieldDense: AT_Minefield {
     demolishable = 7;
     demolishStepTime = 30;
     dumbMine[] = {-600, -600, 0};
-    name = "Minefield (GATOR, Dense)";
+    name = "STR_WL_assetMinefieldGatorDense";
     showToEnemies = 3000;
     singleton = 2;
 };
@@ -184,8 +184,8 @@ class AT_DeployedMinefieldDense: AT_Minefield {
 class Static_HMG_Auto: Sector_Defense {
     cost = 500;
     loadable = 1;
-    name = "Mk30 HMG Auto Turret";
-    nameShort = "AUTO HMG";
+    name = "STR_WL_assetAutoHmgTurret";
+    nameShort = "STR_WL_assetAutoHmgShort";
     offset[] = {0, 3, 0};
     rearm = 120;
     requirements[] = {"S"};
@@ -217,8 +217,8 @@ class O_HMG_01_A_F: Static_HMG_Auto {
 class Static_GMG_Auto: Sector_Defense {
     cost = 650;
     loadable = 1;
-    name = "Mk32 GMG Auto Turret";
-    nameShort = "AUTO GMG";
+    name = "STR_WL_assetAutoGmgTurret";
+    nameShort = "STR_WL_assetAutoGmgShort";
     offset[] = {0, 3, 0};
     rearm = 120;
     requirements[] = {"S"};
@@ -244,8 +244,8 @@ class Static_Mora: Sector_Defense {
     demolishStepTime = 5;
     disableDamage = 1;
     immobile = 1;
-    name = "Fighting Position (Mora)";
-    nameShort = "STATIC MORA";
+    name = "STR_WL_assetFightingPositionMora";
+    nameShort = "STR_WL_assetStaticMoraShort";
     rearm = 180;
     showToEnemies = 500;
     side[] = {"west", "east"};
@@ -315,7 +315,7 @@ class Mortar: Sector_Defense {
     cost = 5000;
     loadable = 1;
     minElo = 1500;
-    nameShort = "MORTAR";
+    nameShort = "STR_WL_assetMortarShort";
     offset[] = {0, 3, 0};
     rearm = 900;
 };

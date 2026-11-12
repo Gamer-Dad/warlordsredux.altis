@@ -5,10 +5,10 @@ class Fixed_Wing {
 
 class Caesar: Fixed_Wing {
     ammoOverrides[] = {
-        {"M_SPG9_HE", {"M_BunkerDeployer", "Bunker Deployer"}}
+        {"M_SPG9_HE", {"M_BunkerDeployer", "STR_WL_ammoBunkerDeployer"}}
     };
     cost = 800;
-    description = "Caesar is a light unarmed aircraft used to find and destroy enemy drones and deploy bunkers.";
+    description = "$STR_WL_descCaesar";
     flares[] = WL_FLARE_BASIC;
     hasDroneHunter = 1;
     name = "Caesar";
@@ -49,13 +49,13 @@ class Blackfish: Fixed_Wing {
 };
 class B_T_VTOL_01_infantry_F: Blackfish {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_SupplyLayer", "Supply Drop"}}
+        {"Bo_Mk82", {"M_SupplyLayer", "STR_WL_ammoSupplyDrop"}}
     };
     cost = 4000;
-    description = "V-44 X Blackfish (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
+    description = "$STR_WL_descBlackfishSupply";
     flares[] = WL_FLARE_LIGHT_COMBAT;
-    name = "V-44 X Blackfish (Supplies)";
-    nameShort = "BLACKFISH SUPPLY";
+    name = "STR_WL_assetBlackfishSupply";
+    nameShort = "STR_WL_assetBlackfishSupplyShort";
     rearm = 900;
     requirements[] = {"H", "NF", "S"};
     side[] = {"west"};
@@ -79,14 +79,14 @@ class B_T_VTOL_01_infantry_F: Blackfish {
 };
 class B_T_VTOL_01_vehicle_F: Blackfish {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_MineLayer", "CBU-89/B Mine Layer"}}
+        {"Bo_Mk82", {"M_MineLayer", "STR_WL_ammoMineLayerCBU89"}}
     };
-    description = "V-44 X Blackfish (Mine Layer) is a heavy VTOL aircraft used to quickly deploy massive AT minefields on the battlefield.";
+    description = "$STR_WL_descBlackfishMine";
     flares[] = WL_FLARE_LIGHT_COMBAT;
     hasLoader = 1;
     isHeavyLift = 1;
-    name = "V-44 X Blackfish (Mine Layer)";
-    nameShort = "BLACKFISH MINES";
+    name = "STR_WL_assetBlackfishMineLayer";
+    nameShort = "STR_WL_assetBlackfishMinesShort";
     side[] = {"west"};
 
     class Pilot: WLTurretDefaults {
@@ -128,10 +128,10 @@ class B_T_VTOL_01_armed_F: Blackfish {
 
 class B_Archerfish: Blackfish {
     ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-158 JASSM (Laser-Guided)"}}
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoJassmLaser"}}
     };
     cost = 13000;
-    description = "V-44 X Blackfish (Archerfish) is a heavy VTOL aircraft that carries a large arsenal of long-range missiles.";
+    description = "$STR_WL_descArcherfish";
     isHeavyLift = 1;
     hasHMD = 1;
     hasLoader = 1;
@@ -318,10 +318,10 @@ class O_Xian: Fixed_Wing {
 
 class O_Xian_Supply: O_Xian {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_SupplyLayer", "Supply Drop"}}
+        {"Bo_Mk82", {"M_SupplyLayer", "STR_WL_ammoSupplyDrop"}}
     };
     cost = 4000;
-    description = "Y-32 Xi'an (Supplies) is a heavy VTOL aircraft used to quickly deploy troops and supplies to the battlefield.";
+    description = "$STR_WL_descXianSupply";
     disallowMagazines[] = {
         "PylonMissile_1Rnd_Bomb_03_F",
         "PylonRack_1Rnd_Missile_AA_03_F",
@@ -335,8 +335,8 @@ class O_Xian_Supply: O_Xian {
     };
     flares[] = WL_FLARE_LIGHT_COMBAT;
     hasSling = 0;
-    name = "Y-32 Xi'an (Supplies)";
-    nameShort = "XIAN SUPPLY";
+    name = "STR_WL_assetXianSupply";
+    nameShort = "STR_WL_assetXianSupplyShort";
     rearm = 900;
     requirements[] = {"H", "NF", "S"};
 
@@ -369,11 +369,11 @@ class O_Xian_Supply: O_Xian {
 
 class O_Xian_MineLayer: O_Xian_Supply {
     ammoOverrides[] = {
-        {"Bo_Mk82", {"M_MineLayerSmall", "TM-82 Mine Layer"}}
+        {"Bo_Mk82", {"M_MineLayerSmall", "STR_WL_ammoMineLayerTM82"}}
     };
     hasSling = 1;
-    name = "Y-32 Xi'an (Mine Layer)";
-    nameShort = "XIAN MINES";
+    name = "STR_WL_assetXianMineLayer";
+    nameShort = "STR_WL_assetXianMinesShort";
     rearm = 120;
     requirements[] = {"H"};
 };
@@ -389,11 +389,11 @@ class O_Xian_Armed: O_Xian {
         "PylonRack_Missile_BIM9X_x2"
     };
     ammoOverrides[] = {
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AKF-98 (Laser-Guided)"}},
-        {"M_SPG9_HE", {"M_DroneDeployer", "Drone Deployer Canister"}}
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoAkf98Laser"}},
+        {"M_SPG9_HE", {"M_DroneDeployer", "STR_WL_ammoDroneDeployerCanister"}}
     };
     cost = 11000;
-    name = "Y-32 Xi'an (Armed)";
+    name = "STR_WL_assetXianArmed";
     rearm = 300;
 
     class Pilot: WLTurretDefaults {
@@ -471,8 +471,8 @@ class B_Plane_CAS_01_dynamicLoadout_F: Fixed_Wing {
         "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
-        {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
+        {"Bomb_03_F", {"Bomb_03_BLU_F", "STR_WL_ammoBlu12Bunker"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoMaverickLaser"}}
     };
     cost = 11000;
     disallowMagazines[] = {
@@ -525,11 +525,11 @@ class O_Buzzard_CAS: Buzzard_CAS {
         "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
-        {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
+        {"Bo_Mk82", {"Bomb_04_PR_F", "STR_WL_ammoKab250LPBunker"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoKh29LLaser"}}
     };
     cost = 13000;
-    description = "A-143 Buzzard (CAS) is a light CAS aircraft. It can optionally be armed with TV-guided KAB-250KR bombs, which can be linked to and controlled at ground support terminals after release. Remote bombs can be controlled at ground support terminals in Buy Menu >> Remote Control >> Ground Support Terminal.";
+    description = "$STR_WL_descBuzzardCAS";
     disallowMagazines[] = {
         "PylonRack_Missile_AGM_02_x1",
         "PylonRack_Missile_AGM_02_x2"
@@ -560,8 +560,8 @@ class O_Plane_CAS_02_dynamicLoadout_F: Fixed_Wing {
         "PylonRack_3Rnd_Missile_AGM_02_F"
     };
     ammoOverrides[] = {
-        {"Bo_Mk82", {"Bomb_04_PR_F", "KAB-250-L-Pr (Bunker Buster)"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "Kh-29L (Laser-Guided)"}}
+        {"Bo_Mk82", {"Bomb_04_PR_F", "STR_WL_ammoKab250LPBunker"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoKh29LLaser"}}
     };
     cost = 16000;
     flares[] = WL_FLARE_MAIN_COMBAT;
@@ -596,8 +596,8 @@ class Gryphon: Fixed_Wing {
         "PylonCameraPod_01_F"
     };
     ammoOverrides[] = {
-        {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
+        {"Bomb_04_F", {"ammo_gbu12_gps", "STR_WL_ammoGbu12Gps"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoMaverickLaser"}}
     };
     disallowMagazines[] = {
         "PylonRack_Missile_AGM_02_x1",
@@ -628,7 +628,7 @@ class I_Gryphon: Gryphon {
 
 class B_Gryphon: Gryphon {
     cost = 15000;
-    description = "A-149 Gryphon is a light multirole aircraft. It can optionally be armed with GPS-guided GBU-12 bombs.";
+    description = "STR_WL_descGryphon";
     side[] = {"west"};
     spawn = "I_Plane_Fighter_04_F";
     textures[] = {
@@ -650,8 +650,8 @@ class B_Strike_Wasp: Fixed_Wing {
         {"PylonMissile_1Rnd_Bomb_03_F", {"pylonBayCenter3", "pylonBayCenter4", "pylonBayCenter5", "pylonBayCenter6"}}
     };
     ammoOverrides[] = {
-        {"Bomb_03_F", {"Bomb_03_BLU_F", "BLU-12 (Bunker Buster)"}},
-        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "AGM-65 Maverick (Laser-Guided)"}}
+        {"Bomb_03_F", {"Bomb_03_BLU_F", "STR_WL_ammoBlu12Bunker"}},
+        {"Missile_AGM_02_F", {"Missile_AGM_02_Laser_F", "STR_WL_ammoMaverickLaser"}}
     };
     cost = 19000;
     disallowMagazines[] = {
@@ -781,7 +781,7 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
         {"PylonRack_Missile_AMRAAM_D_x2", {"pylonBayCenter5", "pylonBayCenter6"}}
     };
     ammoOverrides[] = {
-        {"Bomb_04_F", {"ammo_gbu12_gps", "GBU-12 (GPS-Guided)"}},
+        {"Bomb_04_F", {"ammo_gbu12_gps", "STR_WL_ammoGbu12Gps"}},
         {"ammo_Bomb_SDB", {"ammo_stormbreaker", "GBU-58 Stormbreaker"}},
         {"M_Scalpel_AT", {"M_Sidearm", "AGM-122 Sidearm"}}
     };
@@ -789,8 +789,8 @@ class B_Plane_Fighter_01_Stealth_F: Fixed_Wing {
     flares[] = WL_FLARE_TOP_FIGHTER;
     hasHMD = 1;
     hasReconOptics = 1;
-    name = "F/A-181 Black Wasp II (Stealth/Recon)";
-    nameShort = "STEALTH WASP";
+    name = "STR_WL_assetWaspStealth";
+    nameShort = "STR_WL_assetWaspStealthShort";
     rearm = 420;
     side[] = {"west"};
     variant = 1;
@@ -815,20 +815,20 @@ class O_Plane_Fighter_02_Stealth_F: Fixed_Wing {
         {"PylonRack_4Rnd_LG_scalpel", {"pylonBayCenter1", "pylonBayCenter2", "pylonBayCenter3", "pylonBayLeft2", "pylonBayRight2"}}
     };
     ammoOverrides[] = {
-        {"ammo_Bomb_SDB", {"ammo_upmk_d30", "UMPK D-30SN (GPS-Guided)"}},
-        {"Bomb_03_F", {"ammo_kab250se", "KAB-250S-E (GPS-Guided)"}},
+        {"ammo_Bomb_SDB", {"ammo_upmk_d30", "STR_WL_ammoUpmkGps"}},
+        {"Bomb_03_F", {"ammo_kab250se", "STR_WL_ammoKab250SeGps"}},
         {"M_Scalpel_AT", {"M_Sidearm", "Kh-31P ARM"}}
     };
     cost = 28000;
-    description = "To-201 Shikra (Stealth/Recon) is a stealthy variant of the To-201 Shikra armed with a GPS-guided KAB-250S-E launcher.";
+    description = "STR_WL_descShikraStealth";
     disallowMagazines[] = {
         "PylonMissile_Missile_KH58_INT_x1"
     };
     flares[] = WL_FLARE_TOP_FIGHTER;
     hasHMD = 1;
     hasReconOptics = 1;
-    name = "To-201 Shikra (Stealth/Recon)";
-    nameShort = "STEALTH SHIKRA";
+    name = "STR_WL_assetShikraStealth";
+    nameShort = "STR_WL_assetShikraStealthShort";
     rearm = 420;
     side[] = {"east"};
     threatDetection = 8000;
